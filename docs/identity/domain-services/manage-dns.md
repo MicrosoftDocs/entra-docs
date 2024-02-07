@@ -23,7 +23,7 @@ In a hybrid environment, DNS zones and records configured in other DNS namespace
 
 Domain Services communicates with multiple Azure endpoints during normal operations. Redirecting zones such as file.core.windows.net or blob.core.windows.net puts Domain Services in an unsupportable state. 
 
-Refrain from redirecting DNS zones related to windowsazure.com or core.windows.net. If DNS redirection is required, limit the redirection to induvial host names instead of zones. For example, use server1.file.core.windows.net instead of file.core.windows.net.
+Refrain from redirecting DNS zones related to windowsazure.com or core.windows.net. If DNS redirection is required, limit the redirection to individual host names instead of zones. For example, use server1.file.core.windows.net instead of file.core.windows.net.
 
 >[!NOTE]
 >Creating or changing root hints or server-level DNS forwarders isn't supported and causes issues for the Domain Services managed domain. 

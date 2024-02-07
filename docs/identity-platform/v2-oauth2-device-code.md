@@ -11,7 +11,6 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 #Customer intent: As a developer integrating OAuth 2.0 into my application, I want to understand how to implement the device authorization grant flow, so that users can sign in to input-constrained devices and obtain access tokens and refresh tokens for accessing secured web APIs.
-
 ---
 
 # Microsoft identity platform and the OAuth 2.0 device authorization grant flow

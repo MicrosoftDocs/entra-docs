@@ -19,7 +19,7 @@ ms.topic: conceptual
 > [!div renderon="docs"]
 > Welcome! This probably isn't the page you were expecting. While we work on a fix, this link should take you to the right article:
 >
-> > [Quickstart: Add sign-in with Microsoft to an ASP.NET Core web app](quickstart-web-app-aspnet-core-sign-in.md)
+> > [Quickstart: Add sign-in with Microsoft to an ASP.NET Core web app](quickstart-web-app-dotnet-core-sign-in.md)
 > 
 > We apologize for the inconvenience and appreciate your patience while we work to get this resolved.
 
@@ -150,7 +150,7 @@ ms.topic: conceptual
 > 
 > The GitHub repo that contains the ASP.NET Core code sample referenced in this quickstart includes instructions and more code samples that show you how to:
 > 
-> - Add authentication to a new ASP.NET Core Web application
+> - Add authentication to a new ASP.NET Core web application
 > - Call Microsoft Graph, other Microsoft APIs, or your own web APIs
 > - Add authorization
 > - Sign in users in national clouds or with social identities

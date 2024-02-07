@@ -12,7 +12,7 @@ metadata:
   ms.topic: faq
   ms.date: 01/05/2024
   ms.author: barclayn
-  ms.custom: it-pro, seodec18, has-azure-ad-ps-ref
+  ms.custom: it-pro, seodec18, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
   ms.collection: M365-identity-device-management
 title: Frequently asked questions about Microsoft Entra ID
 summary: |
@@ -81,7 +81,7 @@ sections:
           * *.entra.microsoft.eaglex.ic.gov
           * *.entra.microsoftonline.cn    
     
-          For more information, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/what-is-application-proxy.md).
+          For more information, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/overview-what-is-app-proxy.md).
 
     
       
@@ -172,7 +172,7 @@ sections:
           For Microsoft Entra accounts, admins can reset passwords by using one of the following:
           
           - [Reset a user's password using Microsoft Entra ID](./users-reset-password-azure-portal.md)
-          - [Reset a password using PowerShell](/powershell/module/msonline/set-msoluserpassword)
+          - [Reset a password using PowerShell](/powershell/module/microsoft.graph.users.actions/reset-mguserauthenticationmethodpassword)
           
           
           

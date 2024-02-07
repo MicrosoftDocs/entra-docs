@@ -88,6 +88,7 @@ The following actions are performed as part of the **ForceDelete** operation:
 * Renames the UPN, EmailAddress, and ProxyAddress of users with references to the custom domain name to the initial default domain name.
 * Renames the EmailAddress of groups with references to the custom domain name to the initial default domain name.
 * Renames the identifierUris of applications with references to the custom domain name to the initial default domain name.
+* Disables user accounts impacted by the ForceDelete option in the Azure/Entra Portal and optionally when using the Graph API.
 
 An error is returned when:
 

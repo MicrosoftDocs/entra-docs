@@ -4,7 +4,7 @@ description: Prepare an ASP.NET Core application for authentication using Visual
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.date: 01/02/2024
+ms.date: 01/18/2024
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
@@ -13,13 +13,13 @@ ms.topic: tutorial
 
 # Tutorial: Prepare an application for authentication
 
-After registration is complete, an ASP.NET web application can be created using an integrated development environment (IDE). This tutorial demonstrates how to create an **ASP.NET Core Web App** using an IDE. You'll also create and upload a self-signed certificate to the Azure portal and configure the application for authentication.
+In the [previous tutorial](tutorial-web-app-dotnet-register-app.md), you registered a web application in the Microsoft Entra admin center. This tutorial demonstrates how to create an ASP.NET Core web app using an IDE. You'll also create and upload a self-signed certificate to the Microsoft Entra admin center to secure your application. Finally, you'll configure the application for authentication.
 
 In this tutorial:
 
 > [!div class="checklist"]
 >
-> * Create an **ASP.NET Core Web App**
+> * Create an ASP.NET Core web app
 > * Create a self-signed certificate
 > * Configure the settings for the application
 > * Define platform settings and URLs
@@ -31,7 +31,7 @@ In this tutorial:
   * Visual Studio 2022
   * Visual Studio Code
   * Visual Studio 2022 for Mac
-* A minimum requirement of [.NET Core 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
+* A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
 ## Create an ASP.NET Core project
 
@@ -43,7 +43,7 @@ Use the following tabs to create an ASP.NET Core project within an IDE.
 1. Search for and choose the **ASP.NET Core Web App** template, and then select **Next**.
 1. Enter a name for the project, such as *NewWebAppLocal*.
 1. Choose a location for the project or accept the default option, and then select **Next**.
-1. Accept the default for the **Framework**, **Authentication type**, and **Configure for HTTPS**. **Authentication type** can be set to none as this tutorial will cover this process.
+1. Accept the default for the **Framework**, **Authentication type**, and **Configure for HTTPS**. **Authentication type** can be set to **None** as this tutorial covers the process.
 1. Select **Create**.
 
 ### [Visual Studio Code](#tab/visual-studio-code)
@@ -51,7 +51,7 @@ Use the following tabs to create an ASP.NET Core project within an IDE.
 1. Open Visual Studio Code, select **File > Open Folder...**. Navigate to and select the location in which to create your project.
 1. Create a new folder using the **New Folder...** icon in the **Explorer** pane. Provide a name similar to the one registered previously, for example, *NewWebAppLocal*.
 1. Open a new terminal by selecting **Terminal > New Terminal**.
-1. To create an **ASP.NET Core Web App** template, run the following commands in the terminal to change into the directory and create the project:
+1. To create an ASP.NET Core web app template, run the following commands in the terminal to change into the directory and create the project:
 
     ```powershell
     cd NewWebAppLocal
@@ -105,9 +105,13 @@ The use of certificates is a suggested way of securing communication between cli
     dotnet dev-certs https -ep ./certificate.crt --trust
     ```
 
+>[!NOTE]
+> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
+> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
+
 ---
 
-### Upload certificate to the portal
+### Upload certificate to the Microsoft Entra admin center
 
 To make the certificate available to the application, it must be uploaded into the tenant.
 
@@ -124,9 +128,9 @@ To make the certificate available to the application, it must be uploaded into t
 
 ## Configure the application for authentication and API reference
 
-The values recorded earlier will be used in *appsettings.json* to configure the application for authentication. *appsettings.json* is a configuration file that is used to store application settings used during run-time. As the application will also call into a web API, it must also contain a reference to it.
+The values recorded earlier will be used to configure the application for authentication. The configuration file, *appsettings.json*, is used to store application settings used during run-time. As the application will also call into a web API, it must also contain a reference to it. 
 
-1. In your IDE, open *appsettings.json* and replace the file contents with the following snippet:
+1. In your IDE, open *appsettings.json* and replace the file contents with the following snippet. Replace the text in quotes with the values that were recorded earlier.
   
    :::code language="json" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/appsettings.json":::
 
@@ -140,9 +144,9 @@ The values recorded earlier will be used in *appsettings.json* to configure the 
 1. In the **Properties** folder, open the *launchSettings.json* file.
 1. Find and record the `https` value `applicationURI` within *launchSettings.json*, for example `https://localhost:{port}`. This URL will be used when defining the **Redirect URI**.
 
-## Define the platform and URLs
+## Add a platform redirect URI
 
-1. In the Azure portal, under **Manage**, select **App registrations**, and then select the application that was previously created.
+1. In the Microsoft Entra admin center, under **Manage**, select **App registrations**, and then select the application that was previously created.
 1. In the left menu, under **Manage**, select **Authentication**.
 1. In **Platform configurations**, select **Add a platform**, and then select **Web**.
 

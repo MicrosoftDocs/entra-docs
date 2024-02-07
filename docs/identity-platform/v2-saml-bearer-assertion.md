@@ -9,7 +9,7 @@ ms.reviewer: nickludwig, jelledruyts, paulgarn
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-#Customer intent:
+#Customer intent: As a developer integrating SSO with AD FS and Microsoft Graph, I want to exchange a SAML token issued by AD FS for an OAuth 2.0 access token, so that I can enable SSO in my application and access Microsoft Graph APIs.
 ---
 
 # Exchange a SAML token issued by AD FS for a Microsoft Graph access token

@@ -40,9 +40,7 @@ The following diagram illustrates the Microsoft Entra Verified ID architecture a
 - [Visual Studio Code](https://code.visualstudio.com/Download), [Visual Studio](https://visualstudio.microsoft.com/downloads/) or similar code editor.
 - [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/6.0).
 - Download [ngrok](https://ngrok.com/) and sign up for a free account. If you can't use `ngrok` in your organization, read this [FAQ](verifiable-credentials-faq.md#i-cannot-use-ngrok-what-do-i-do).
-- A mobile device with Microsoft Authenticator:
-  - Android version 6.2310.7174 or later installed.
-  - iOS version 6.7.17 or later installed.
+- A mobile device with the latest version of Microsoft Authenticator.
 
 ## Create the verified credential expert card in Azure
 
@@ -197,7 +195,7 @@ Now you'll make modifications to the sample app's issuer code to update it with 
     1. **DidAuthority**: Your Decentralized Identifier
     1. **Credential Manifest**: Your manifest URL
 
-CredentialType is only needed for presentation, so if all you want to do is issuance, it strictly isn't needed.
+    CredentialType is only needed for presentation, so if all you want to do is issuance, it strictly isn't needed.
 
 1. Save the *appsettings.json* file.
 

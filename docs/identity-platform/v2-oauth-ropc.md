@@ -10,7 +10,7 @@ ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer building an application that requires user authentication, I want to understand how to use the OAuth 2.0 Resource Owner Password Credentials (ROPC) grant in the Microsoft identity platform, so that I can directly handle user passwords and acquire tokens for calling secured web APIs.
 ---
 
 # Microsoft identity platform and OAuth 2.0 Resource Owner Password Credentials
@@ -67,9 +67,6 @@ client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 | `client_secret`| Sometimes required | If your app is a public client, then the `client_secret` or `client_assertion` can't be included.  If the app is a confidential client, then it must be included.|
 | `client_assertion` | Sometimes required | A different form of `client_secret`, generated using a certificate. For more information, see [certificate credentials](./certificate-credentials.md). |
 
-> [!WARNING]
-> As part of not recommending this flow for use, the official SDKs do not support this flow for confidential clients, those that use a secret or assertion. You may find that the SDK you wish to use does not allow you to add a secret while using ROPC. 
-
 ### Successful authentication response
 
 The following example shows a successful token response:
@@ -109,4 +106,4 @@ If the user hasn't provided the correct username or password, or the client hasn
 
 ## Learn more
 
-For an example implementation of the ROPC flow, see the [.NET Core console application](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2) code sample on GitHub.
+For an example implementation of the ROPC flow, see the [.NET console application](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2) code sample on GitHub.

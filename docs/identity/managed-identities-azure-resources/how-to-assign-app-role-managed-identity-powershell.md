@@ -2,10 +2,8 @@
 title: Assign a managed identity to an application role using PowerShell
 description: Step-by-step instructions for assigning a managed identity access to another application's role, using PowerShell.
 services: active-directory
-documentationcenter: 
 author: johndowns
 manager:
-editor: 
 
 ms.service: active-directory
 ms.subservice: msi
@@ -97,7 +95,7 @@ In this article, you learn how to assign a managed identity to an application ro
 
     ```powershell
     New-MgServicePrincipalAppRoleAssignment `
-        -ServicePrincipalId $managedIdentityObjectId `
+        -ServicePrincipalId $serverServicePrincipalObjectId `
         -PrincipalId $managedIdentityObjectId `
         -ResourceId $serverServicePrincipalObjectId `
         -AppRoleId $appRoleId

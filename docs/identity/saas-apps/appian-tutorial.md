@@ -102,6 +102,10 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Copy configuration URLs](common/copy-configuration-urls.png)
 
+1. Appian application expects to enable token encryption in order to make SSO work. To activate token encryption, Browse to **Identity** > **Applications** > **Enterprise applications** > select your application > **Token encryption**. For more information see the article [Configure Microsoft Entra SAML token encryption](~/identity/enterprise-apps/howto-saml-token-encryption.md).
+
+    ![Screenshot shows the activation of Token Encryption.](./media/appian-tutorial/token.png "Token Encryption")
+
 <a name='create-an-azure-ad-test-user'></a>
 
 ### Create a Microsoft Entra test user

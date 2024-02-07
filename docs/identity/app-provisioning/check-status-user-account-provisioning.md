@@ -62,6 +62,8 @@ The **Current Status** should be the first place admins look to check on the ope
 
  ![Summary report](./media/check-status-user-account-provisioning/provisioning-progress-bar-section.png)
 
+You can also use Microsoft Graph to programmatically monitor the status of provisioning to an application.  For more information, see [monitor provisioning](application-provisioning-configuration-api.md#step-5-monitor-provisioning).
+
 ## Provisioning logs 
 
 All activities performed by the provisioning service are recorded in the Microsoft Entra [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). You can access the provisioning logs in the Microsoft Entra admin center. You can search the provisioning data based on the name of the user or the identifier in either the source system or the target system. For details, see [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). 
