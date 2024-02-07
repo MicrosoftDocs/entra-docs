@@ -927,8 +927,10 @@ This role does not provide any permissions for other Dynamics 365 products.
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.directory/subscribedSkus/allProperties/read | Read all properties of product subscriptions |
 > | microsoft.dynamics365.businessCentral/allEntities/allProperties/allTasks | Manage all aspects of Dynamics 365 Business Central |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 
 ## Edge Administrator
 
