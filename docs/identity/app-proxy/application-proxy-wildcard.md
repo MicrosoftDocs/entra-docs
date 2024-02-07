@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: app-proxy
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/06/2024
 ms.author: kenwith
 ms.reviewer: harshja
 ms.custom: it-pro
@@ -162,13 +162,13 @@ The configuration implements the following structure:
 | Color | Description |
 | ---   | ---         |
 | Blue  | Applications explicitly published and visible in the Microsoft Entra admin center. |
-| Gray  | Applications you can accessible through the parent application. |
+| Gray  | Applications you can access through the parent application. |
 
 ## Scenario 2: General wildcard application with exception
 
 In this scenario, you have in addition to the three general applications another application, `finance.adventure-works.com`, which should only be accessible by Finance division. With the current application structure, your finance application would be accessible through the wildcard application and by all employees. To change this, you exclude your application from your wildcard by configuring Finance as a separate application with more restrictive permissions.
 
-You need to make sure that a CNAME records exist that points `finance.adventure-works.com` to the application specific endpoint, specified on the Application Proxy page for the application. For this scenario, `finance.adventure-works.com` points to `https://finance-awcycles.msappproxy.net/`.
+Make sure that a CNAME record exists that points `finance.adventure-works.com` to the application specific endpoint, specified on the Application Proxy page for the application. For this scenario, `finance.adventure-works.com` points to `https://finance-awcycles.msappproxy.net/`.
 
 Following the [documented steps](application-proxy-add-on-premises-application.md), this scenario requires the following settings:
 
@@ -188,7 +188,7 @@ This configuration implements the following scenario:
 
 ![Shows the configuration implemented by the sample scenario](./media/application-proxy-wildcard/09.png)
 
-Because `finance.adventure-works.com` is a more specific URL than `*.adventure-works.com`, it takes precedence. Users navigating to `finance.adventure-works.com` have the experience specified in the Finance Resources application. In this case, only finance employees are able to access `finance.adventure-works.com`.
+Because `finance.adventure-works.com` is a more specific URL then `*.adventure-works.com`, it takes precedence. Users navigating to `finance.adventure-works.com` have the experience specified in the Finance Resources application. In this case, only finance employees are able to access `finance.adventure-works.com`.
 
 If you have multiple applications published for finance and you have `finance.adventure-works.com` as a verified domain, you could publish another wildcard application `*.finance.adventure-works.com`. Because this is more specific than the generic `*.adventure-works.com`, it takes precedence if a user accesses an application in the finance domain.
 

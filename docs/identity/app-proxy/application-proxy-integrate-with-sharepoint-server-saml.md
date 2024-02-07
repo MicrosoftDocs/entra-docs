@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: app-proxy
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/06/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -24,7 +24,7 @@ There are three primary advantages of this setup:
 
 - Microsoft Entra application proxy ensures that authenticated traffic can reach your internal network and SharePoint.
 - Your users can access SharePoint sites as usual without using VPN.
-- You can control the access by user assignment on the Microsoft Entra application proxy level and you can increase the security with Microsoft Entra features like Conditional Access and Multi-Factor Authentication (MFA).
+- You can control the access by user assignment on the Microsoft Entra application proxy level and you can increase the security with Microsoft Entra features like Conditional Access and multifactor authentication (MFA).
 
 This process requires two Enterprise Applications. One is a SharePoint on-premises instance that you publish from the gallery to your list of managed SaaS apps. The second is an on-premises application (non-gallery application) you'll use to publish the first Enterprise Gallery Application.
 
@@ -36,7 +36,7 @@ To complete this configuration, you need the following resources:
 - A Microsoft Office Web Apps Server farm to properly launch Office files from the on-premises SharePoint farm.
 - A [custom, verified domain](~/fundamentals/add-custom-domain.md) in the Microsoft Entra tenant. The verified domain must match the SharePoint URL suffix.
 - An SSL certificate is required. See the details in [custom domain publishing](./how-to-configure-custom-domain.md).
-- On-premises Active Directory users must be synchronized with Microsoft Entra Connect, and must be configure to [sign in to Azure](~/identity/hybrid/connect/plan-connect-user-signin.md). 
+- On-premises Active Directory users must be synchronized with Microsoft Entra Connect, and d to [sign in to Azure](~/identity/hybrid/connect/plan-connect-user-signin.md). 
 - For cloud-only and B2B guest users, you need to [grant access to a guest account to SharePoint on-premises in the Microsoft Entra admin center](~/identity/saas-apps/sharepoint-on-premises-tutorial.md#manage-guest-users-access).
 - An Application Proxy connector installed and running on a machine within the corporate domain.
 
