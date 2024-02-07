@@ -314,7 +314,6 @@ The following articles cover common scenarios that can also be used to create tr
 * [What ports to open for my app](application-proxy-add-on-premises-application.md)
 * [No working connector in a connector group for my app](application-proxy-connectivity-no-working-connector.md)
 * [Configure single sign-on to my app](how-to-configure-sso.md)
-* [Problem creating an app in admin portal](application-proxy-config-problem.md)
 * [Configure Kerberos Constrained Delegation](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
 * [Configure with PingAccess](application-proxy-ping-access-publishing-guide.md)
 * [Can't Access this Corporate Application error](application-proxy-sign-in-bad-gateway-timeout-error.md)
