@@ -24,7 +24,7 @@ The Microsoft Authenticator app provides an additional level of security to your
 Users may receive a notification through the mobile app for them to approve or deny, or use the Authenticator app to generate an OATH verification code that can be entered in a sign-in interface. If you enable both a notification and verification code, users who register the Authenticator app can use either method to verify their identity.
 
 > [!NOTE]
-> In preparation for release of passkey support in Microsoft Authenticator, users may see Authenticator as a passkey provider on iOS and Android devices. Passkeys aren't currently supported in Authenticator, but they will be supported in an upcoming release.
+> In preparation of passkey support in Microsoft Authenticator, users may see Authenticator as a passkey provider on iOS and Android devices. Passkeys aren't currently supported in Authenticator, but they will be supported in an upcoming release.
 
 To use the Authenticator app at a sign-in prompt rather than a username and password combination, see [Enable passwordless sign-in with the Microsoft Authenticator](howto-authentication-passwordless-phone.md).
 
