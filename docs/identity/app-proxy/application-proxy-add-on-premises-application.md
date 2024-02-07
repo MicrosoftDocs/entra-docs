@@ -272,19 +272,42 @@ For troubleshooting, see [Troubleshoot Application Proxy problems and error mess
 
 Don't forget to delete any of the resources you created in this tutorial when you're done.
 
+## Troubleshooting
+
+Learn about common issues and how to troubleshoot them.
+
+### Create the Application/Setting the URLs
+Check the error details for information and suggestions for how to fix the application. Most error messages include a suggested fix. To avoid common errors, verify:
+
+- You are an administrator with permission to create an Application Proxy application
+- The internal URL is unique
+- The external URL is unique
+- The URLs start with http or https, and end with a “/”
+- The URL should be a domain name, not an IP address
+
+The error message should display in the top-right corner when you create the application. You can also select the notification icon to see the error messages.
+
+### Configure connectors/connector groups
+
+If you are having difficulty configuring your application because of warning about the connectors and connector groups, see instructions on enabling Application Proxy for details on how to download connectors. If you want to learn more about connectors, see the [connectors documentation](application-proxy-connectors.md).
+
+If your connectors are inactive, this means that they are unable to reach the service. This is often because all the required ports are not open. To see a list of required ports, see the pre-requisites section of the enabling Application Proxy documentation.
+
+### Upload certificates for custom domains
+
+Custom Domains allow you to specify the domain of your external URLs. To use custom domains, you need to upload the certificate for that domain. For information on using custom domains and certificates, see [Working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md).
+
+If you are encountering issues uploading your certificate, look for the error messages in the portal for additional information on the problem with the certificate. Common certificate problems include:
+
+- Expired certificate
+- Certificate is self-signed
+- Certificate is missing the private key
+
+The error message display in the top-right corner as you try to upload the certificate. You can also select the notification icon to see the error messages.
+
 ## Next steps
 
-In this tutorial, you prepared your on-premises environment to work with Application Proxy, and then installed and registered the Application Proxy connector. Next, you added an application to your Microsoft Entra tenant. You verified that a user can sign on to the application by using a Microsoft Entra account.
-
-You did these things:
-> [!div class="checklist"]
-> * Opened ports for outbound traffic and allowed access to specific URLs
-> * Installed the connector on your Windows server, and registered it with Application Proxy
-> * Verified the connector installed and registered correctly
-> * Added an on-premises application to your Microsoft Entra tenant
-> * Verified a test user can sign on to the application by using a Microsoft Entra account
-
-You're ready to configure the application for single sign-on. Use the following link to choose a single sign-on method and to find single sign-on tutorials.
-
-> [!div class="nextstepaction"]
-> [Configure single sign-on](~/identity/enterprise-apps/plan-sso-deployment.md#choosing-a-single-sign-on-method)
+- [Publish applications using Microsoft Entra application proxy](application-proxy-add-on-premises-application.md)
+- [Enable Application Proxy in the Microsoft Entra admin center](application-proxy-add-on-premises-application.md)
+- [Working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md)
+- [Configure single sign-on](~/identity/enterprise-apps/plan-sso-deployment.md#choosing-a-single-sign-on-method)

@@ -140,8 +140,6 @@ items:
       items:
       - name: Application Proxy troubleshooting
         href: application-proxy-troubleshoot.md
-      - name: Configure in admin portal
-        href: application-proxy-config-how-to.md
       - name: Connector troubleshooting flowchart
         href: application-proxy-debug-connectors.md
       - name: Application troubleshooting flowchart
