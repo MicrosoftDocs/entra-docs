@@ -55,7 +55,7 @@ Use the following list to plan for authentication deployment.
   * See, [Plan a Conditional Access deployment](~/identity/conditional-access/plan-conditional-access.md)
 * **Microsoft Entra self-service password reset (SSPR)** - Help users reset a password without administrator intervention:
   * See, [Passwordless authentication options for Microsoft Entra ID](~/identity/authentication/concept-authentication-passwordless.md)
-  * See, [Plan a Microsoft Entra self-service password reset deployment](~/identity/authentication/howto-sspr-deployment.md) 
+  * See, [Plan a Microsoft Entra self-service password-reset deployment](~/identity/authentication/howto-sspr-deployment.md) 
 * **Passwordless authentication** - Implement passwordless authentication using the Microsoft Authenticator app or FIDO2 Security keys:
   * See, [Enable passwordless sign-in with Microsoft Authenticator](~/identity/authentication/howto-authentication-passwordless-phone.md)
   * See, [Plan a passwordless authentication deployment in Microsoft Entra ID](~/identity/authentication/howto-authentication-passwordless-deployment.md)
