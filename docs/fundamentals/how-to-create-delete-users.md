@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 01/26/2024
+ms.date: 02/07/2024
 ms.author: sarahlipsey
 ms.reviewer: adelle.dimitui
 
@@ -50,7 +50,7 @@ Reviewing the default user permissions may also help you determine the type of u
 
 [!INCLUDE [portal update](../includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Browse to **Identity** > **Users** > **All users**.
 

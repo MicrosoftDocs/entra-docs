@@ -70,9 +70,9 @@ If you selected the **Properties** tab option:
 
 ### Profile categories
 
-There are six categories of profile details you may be able to edit. Review the [user name guidance](#guidance-on-user-name-properties) before adding or editing user names.
+There are six categories of profile details you may be able to edit. 
 
-- **Identity:** Add or update other identity values for the user, such as a married last name. You can set this name independently from the values of First name and Last name. For example, you could use it to include initials, a company name, or to change the sequence of names shown. If you have two users with the same name, such as ‘Chris Green,’ you could use the Identity string to set their names to 'Chris B. Green' and 'Chris R. Green.'
+- **Identity:** Add or update identity values for the user. These values include display name, first and last name, and user principal name. Review the [user name guidance](#guidance-on-user-name-properties) before adding or editing user names.
 
 - **Job information:** Add any job-related information, such as the user's job title, department, or manager.
 
