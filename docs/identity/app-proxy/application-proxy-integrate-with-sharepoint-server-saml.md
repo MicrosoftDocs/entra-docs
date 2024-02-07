@@ -36,7 +36,7 @@ To complete this configuration, you need the following resources:
 - A Microsoft Office Web Apps Server farm to properly launch Office files from the on-premises SharePoint farm.
 - A [custom, verified domain](~/fundamentals/add-custom-domain.md) in the Microsoft Entra tenant. The verified domain must match the SharePoint URL suffix.
 - An SSL certificate is required. See the details in [custom domain publishing](./how-to-configure-custom-domain.md).
-- On-premises Active Directory users must be synchronized with Microsoft Entra Connect, and d to [sign in to Azure](~/identity/hybrid/connect/plan-connect-user-signin.md). 
+- On-premises Active Directory users must be synchronized with Microsoft Entra Connect, and must be configured to [sign in to Azure](~/identity/hybrid/connect/plan-connect-user-signin.md). 
 - For cloud-only and B2B guest users, you need to [grant access to a guest account to SharePoint on-premises in the Microsoft Entra admin center](~/identity/saas-apps/sharepoint-on-premises-tutorial.md#manage-guest-users-access).
 - An Application Proxy connector installed and running on a machine within the corporate domain.
 
