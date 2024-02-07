@@ -404,7 +404,7 @@ Once you've successfully migrated user data, you can validate the end-user exper
       }
       ```
 
-   1. Repeat steps and b for any other groups you wish to target with staged rollout.
+   1. Repeat steps a and b for any other groups you wish to target with staged rollout.
    1. You can view the current policy in place by doing a GET against the following URL:
 
       `https://graph.microsoft.com/v1.0/policies/featureRolloutPolicies/{policyID}?$expand=appliesTo`
