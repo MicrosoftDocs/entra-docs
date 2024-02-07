@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: app-proxy
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 09/14/2023
+ms.date: 02/07/2024
 ms.author: kenwith
 ms.reviewer: asteen
 ---
