@@ -136,7 +136,7 @@ sections:
   - name: Application configuration
     questions:
       - question: |
-         Can I use the domain suffixes `[tenantname].onmicrosoft.com` or `[tenantname].mail.onmicrosoft.com` in the external URL?
+         Can I use the domain suffixes `[tenant name].onmicrosoft.com` or `[tenant name].mail.onmicrosoft.com` in the external URL?
         answer: |
             Although these suffixes appear in the suffix list, you should not use them. These domain suffixes are not meant to be used with Microsoft Entra application proxy. If you use these domain suffixes, the created Microsoft Entra application proxy application won't work.
             You can use either the standard domain suffix `msappproxy.net` or a [custom domain](how-to-configure-custom-domain.md).
@@ -302,7 +302,7 @@ sections:
               Refer to [Publish Remote Desktop with Microsoft Entra application proxy](./application-proxy-integrate-with-remote-desktop-services.md).
           
       - question: |
-         Can I use Kerberos Constrained Delegation (Single Sign-On - Windows Integrated Authentication) in the Remote Desktop Gateway publishing scenario?
+         Can I use Kerberos Constrained Delegation (single sign-on - Windows Integrated Authentication) in the Remote Desktop Gateway publishing scenario?
         answer: |
               No, this scenario isn't supported.  
 

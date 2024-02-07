@@ -188,7 +188,7 @@ This configuration implements the following scenario:
 
 ![Shows the configuration implemented by the sample scenario](./media/application-proxy-wildcard/09.png)
 
-Because `finance.adventure-works.com` is a more specific URL than `*.adventure-works.com`, it takes precedence. Users navigating to `finance.adventure-works.com` have the experience specified in the Finance Resources application. In this case, only finance employees are able to access `finance.adventure-works.com`.
+The URL `finance.adventure-works.com` is specific. The URL `*.adventure-works.com` is not specific. The more specific URL takes precedence. Users navigating to `finance.adventure-works.com` have the experience specified in the Finance Resources application. In this case, only finance employees are able to access `finance.adventure-works.com`.
 
 If you have multiple applications published for finance and you have `finance.adventure-works.com` as a verified domain, you could publish another wildcard application `*.finance.adventure-works.com`. Because this is more specific than the generic `*.adventure-works.com`, it takes precedence if a user accesses an application in the finance domain.
 

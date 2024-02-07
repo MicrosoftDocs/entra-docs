@@ -42,9 +42,9 @@ These three features keep your links working no matter where your users are. Whe
  
 ### Option 1: Microsoft Edge Integration 
 
-You can use Microsoft Edge to further protect your application and content. To use this solution, you need to require/recommend users access the application through Microsoft Edge. All internal URLs published with Application Proxy will be recognized by Edge and redirected to the corresponding external URL. This ensures that all the hard-coded internal URLs work, and if a user goes to the browser and directly types the internal URL, it works even if the user is remote.  
+You can use Microsoft Edge to further protect your application and content. To use this solution, you need to require/recommend users access the application through Microsoft Edge. All internal URLs published with Application Proxy will be recognized by Microsoft Edge and redirected to the corresponding external URL. This ensures that all the hard-coded internal URLs work, and if a user goes to the browser and directly types the internal URL, it works even if the user is remote.  
 
-To learn more, including how to configure this option, please see the [Manage web access by using Edge for iOS and Android with Microsoft Intune](/mem/intune/apps/manage-microsoft-edge) documentation.  
+To learn more, including how to configure this option, please see the [Manage web access by using Microsoft Edge for iOS and Android with Microsoft Intune](/mem/intune/apps/manage-microsoft-edge) documentation.  
 
 ### Option 2: MyApps Browser Extension 
 
@@ -108,7 +108,7 @@ Additionally, within CSS the URL attribute is also translated.
 
 Link translation is enabled for each application, so that you have control over the user experience at the per-app level. Turn on link translation for an app when you want the links *from* that app to be translated, not links *to* that app. 
 
-For example, suppose that you have three applications published through Application Proxy that all link to each other: Benefits, Expenses, and Travel. There's a fourth app, Feedback, that isn't published through Application Proxy.
+For example, suppose that you have three applications published through Application Proxy that all link to each other: Benefits, Expenses, and Travel. There's a fourth app, Feedback that isn't published through Application Proxy.
 
 When you enable link translation for the Benefits app, the links to Expenses and Travel are redirected to the external URLs for those apps, but the link to Feedback is not redirected because there is no external URL. Links from Expenses and Travel back to Benefits don't work, because link translation has not been enabled for those two apps.
 
