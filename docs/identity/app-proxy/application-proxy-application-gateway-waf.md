@@ -1,6 +1,6 @@
 ---
 title: Using Application Gateway WAF to protect your application
-description: How to add Web Application Firewall protection for apps published with Microsoft Entra application proxy.
+description: How to add Web Application Firewall (WAF) protection for apps published with Microsoft Entra application proxy.
 services: active-directory
 author: kenwith
 ms.service: active-directory
@@ -12,54 +12,52 @@ ms.author: kenwith
 ms.reviewer: ashishj, besilvei
 ---
 
-# Using Application Gateway WAF to protect your application
+# Using Application Gateway WAF to protect your applications
 
-When using Microsoft Entra application proxy to expose applications deployed on-premises, on sealed Azure Virtual Networks, or in other public clouds, you can integrate a Web Application Firewall (WAF) in the data flow in order to protect your application from malicious attacks.
+Add Web Application Firewall (WAF) protection for apps published with Microsoft Entra application proxy.
 
-## What is Azure Web Application Firewall?
-
-Azure Web Application Firewall (WAF) on Azure Application Gateway provides centralized protection of your web applications from common exploits and vulnerabilities. Web applications are increasingly targeted by malicious attacks that exploit commonly known vulnerabilities. SQL injection and cross-site scripting are among the most common attacks. For more information about Azure WAF on Application Gateway, see [What is Azure Web Application Firewall on Azure Application Gateway?][waf-overview].
+To learn more about Web Application Firewall (WAF), see  [What is Azure Web Application Firewall on Azure Application Gateway?][waf-overview].
 
 ## Deployment steps
 
-This article guides you through the steps to securely expose a web application on the Internet, by integrating the Microsoft Entra application proxy with Azure WAF on Application Gateway. In this guide we'll be using the Microsoft Entra admin center. The reference architecture for this deployment is represented below.   
+This article guides you through the steps to securely expose a web application on the Internet, by integrating the Microsoft Entra application proxy with Azure WAF on Application Gateway.
 
 ![Diagram of deployment described.](./media/application-proxy-waf/application-proxy-waf.png)
 
-### Configure Azure Application Gateway to send traffic to your internal application.
+### Configure Azure Application Gateway to send traffic to your internal application
 
 Some steps of the Application Gateway configuration will be omitted in this article. For a detailed guide on how to create and configure an Application Gateway, see [Quickstart: Direct web traffic with Azure Application Gateway - Microsoft Entra admin center][appgw_quick].
 
-##### 1. Create a private-facing HTTPS listener.
+### 1. Create a private-facing HTTPS listener
 
 This will allow users to access the web application privately when connected to the corporate network.
 
 ![Screenshot of Application Gateway listener.](./media/application-proxy-waf/application-gateway-listener.png)
 
-##### 2. Create a backend pool with the web servers.
+### 2. Create a backend pool with the web servers
 
 In this example, the backend servers have Internet Information Services (IIS) installed. 
 
 ![Screenshot of Application Gateway backend.](./media/application-proxy-waf/application-gateway-backend.png)
 
-##### 3. Create a backend setting. 
+### 3. Create a backend setting
 
 This will determine how requests will reach the backend pool servers.
 
 ![Screenshot of Application Gateway backend setting.](./media/application-proxy-waf/application-gateway-backend-settings.png)
  
- ##### 4. Create a routing rule that ties the listener, the backend pool, and the backend setting created in the previous steps.
+ ### 4. Create a routing rule that ties the listener, the backend pool, and the backend setting created in the previous steps
  
  ![Screenshot of adding rule to Application Gateway 1.](./media/application-proxy-waf/application-gateway-add-rule-1.png)
  ![Screenshot of adding rule to Application Gateway 2.](./media/application-proxy-waf/application-gateway-add-rule-2.png)
  
- ##### 5. Enable the WAF in the Application Gateway and set it to Prevention mode.
+ ### 5. Enable the WAF in the Application Gateway and set it to Prevention mode
  
  ![Screenshot of enabling waf in Application Gateway.](./media/application-proxy-waf/application-gateway-enable-waf.png)
  
  <a name='configure-your-application-to-be-remotely-accessed-through-application-proxy-in-azure-ad'></a>
 
-### Configure your application to be remotely accessed through Application Proxy in Microsoft Entra ID.
+## Configure your application to be remotely accessed through Application Proxy in Microsoft Entra ID
  
 As represented in the diagram above, both connector VMs, the Application Gateway, and the backend servers were deployed in the same virtual network in Azure. This setup also applies to applications and connectors deployed on-premises. 
 
@@ -71,14 +69,14 @@ In this example, the same URL was configured as the internal and external URL. R
 
 To ensure the connector VMs send requests to the Application Gateway, an [Azure Private DNS zone][private-dns] was created with an A record pointing www.fabrikam.one to the private frontend IP of the Application Gateway.
 
-### Test the application.
+## Test the application
 
 After [adding a user for testing](./application-proxy-add-on-premises-application.md#add-a-user-for-testing), you can test the application by accessing https://www.fabrikam.one. The user will be prompted to authenticate in Microsoft Entra ID, and upon successful authentication, will access the application. 
 
 ![Screenshot of authentication step.](./media/application-proxy-waf/sign-in-2.png)
 ![Screenshot of server response.](./media/application-proxy-waf/application-gateway-response.png)
 
-### Simulate an attack.
+## Simulate an attack
 
 To test if the WAF is blocking malicious requests, you can simulate an attack using a basic SQL injection signature. For example, "https://www.fabrikam.one/api/sqlquery?query=x%22%20or%201%3D1%20--".
 
