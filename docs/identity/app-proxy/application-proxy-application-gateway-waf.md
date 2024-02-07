@@ -65,7 +65,7 @@ For a detailed guide on how to add your application to Application Proxy in Micr
  
 ![Screenshot of Application Proxy configuration.](./media/application-proxy-waf/application-proxy-configuration.png)
 
-In this example, the same URL was configured as the internal and external URL. Remote clients access the application over the Internet on port 443, through the Application Proxy. Clients connected to the corporate network access the application privately through the Application Gateway directly, also on port 443. For a detailed step on how to configure custom domains in Application Proxy, see [Configure custom domains with Microsoft Entra application proxy][appproxy-custom-domain].
+In this example, the same URL was configured as the internal and external URL. Remote clients access the application over the Internet on port 443, through the Application Proxy. A client connected to the corporate network accesses the application privately. Access is through the Application Gateway directly on port 443. For a detailed step on configuring custom domains in Application Proxy, see [Configure custom domains with Microsoft Entra application proxy][appproxy-custom-domain].
 
 An [Azure Private DNS zone][private-dns] is created with an A record. The A record points `www.fabrikam.one` to the private frontend IP address of the Application Gateway. The record ensures the connector VMs send requests to the Application Gateway.
 
@@ -84,7 +84,7 @@ To test if the WAF is blocking malicious requests, you can simulate an attack us
 
 An HTTP 403 response confirms that WAF blocked the request.
 
-The Application Gateway [Firewall logs][waf-logs] provide more details about the request and why it is blocked by the WAF.
+The Application Gateway [Firewall logs][waf-logs] provide more details about the request and why WAF is blocking it.
 
 ![Screenshot of waf logs.](./media/application-proxy-waf/waf-log.png)
 
