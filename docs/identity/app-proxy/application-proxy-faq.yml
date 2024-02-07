@@ -9,7 +9,7 @@ metadata:
   ms.subservice: app-proxy
   ms.workload: identity
   ms.topic: faq
-  ms.date: 01/23/2024
+  ms.date: 02/06/2024
   ms.author: kenwith
   ms.reviewer: ashishj
 title: Microsoft Entra application proxy frequently asked questions
@@ -136,7 +136,7 @@ sections:
   - name: Application configuration
     questions:
       - question: |
-         Can I use the domain suffixes [tenantname].onmicrosoft.com or [tenantname].mail.onmicrosoft.com in the external URL?
+         Can I use the domain suffixes `[tenantname].onmicrosoft.com` or `[tenantname].mail.onmicrosoft.com` in the external URL?
         answer: |
             Although these suffixes appear in the suffix list, you should not use them. These domain suffixes are not meant to be used with Microsoft Entra application proxy. If you use these domain suffixes, the created Microsoft Entra application proxy application won't work.
             You can use either the standard domain suffix `msappproxy.net` or a [custom domain](how-to-configure-custom-domain.md).
@@ -154,7 +154,7 @@ sections:
           
               Here are some tips for troubleshooting this error:
               - Check for problems with the certificate. Install it on your local computer. If you don't experience any issues then the certificate is good.
-              - Ensure that the password does not contain any special characters. For testing, the password should only contain the characters 0-9, A-Z, and a-z.
+              - Ensure that the password does not contain any special characters. The password should only contain the characters 0-9, A-Z, and a-z.
               - If the certificate was created with Microsoft Software Key Storage Provider, the RSA algorithm must be used.
           
       - question: |

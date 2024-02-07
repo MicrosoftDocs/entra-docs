@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: app-proxy
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 09/14/2023
+ms.date: 02/06/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -67,7 +67,7 @@ Use a Microsoft Entra application proxy [custom domain](./how-to-configure-custo
 
 Publish the parent directory of both apps. This solution works especially well if you have only two apps on the web server. Instead of publishing each app separately, you can publish the common parent directory, which results in the same origin.
 
-The following examples show the portal Microsoft Entra application proxy page for the CORSWebClient app.  When the **Internal URL** is set to *contoso.com/CORSWebClient*, the app can't make successful requests to the *contoso.com/CORSWebService* directory, because they're cross-origin. 
+The examples show the Microsoft Entra application proxy pages for the `CORSWebClient` app.  When the **Internal URL** is set to *contoso.com/CORSWebClient*, the app can't make successful requests to the *contoso.com/CORSWebService* directory, because they're cross-origin. 
 
 ![Publish app individually](./media/application-proxy-understand-cors-issues/image4.png)
 
@@ -77,8 +77,8 @@ Instead, set the **Internal URL** to publish the parent directory, which include
 
 The resulting app URLs effectively resolve the CORS issue:
 
-- https:\//corswebclient-contoso.msappproxy.net/CORSWebService
-- https:\//corswebclient-contoso.msappproxy.net/CORSWebClient
+- `https:\//corswebclient-contoso.msappproxy.net/CORSWebService`
+- `https:\//corswebclient-contoso.msappproxy.net/CORSWebClient`
 
 ### Option 3: Update HTTP headers
 

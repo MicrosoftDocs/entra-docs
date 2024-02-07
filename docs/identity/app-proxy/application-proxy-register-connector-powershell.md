@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: app-proxy
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/06/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
 # Create an unattended installation script for the Microsoft Entra application proxy connector
 
-This topic helps you create a Windows PowerShell script that enables unattended installation and registration for your Microsoft Entra application proxy connector.
+This article helps you create a Windows PowerShell script that enables unattended installation and registration for your Microsoft Entra application proxy connector.
 
 This capability is useful when you want to:
 
@@ -50,7 +50,7 @@ There are two methods you can use to register the connector:
 * Register the connector using a token created offline
 
 ### Register the connector using a Windows PowerShell credential object
-1. Create a Windows PowerShell Credentials object `$cred` that contains an administrative username and password for your directory. Run the following command, replacing *\<username\>* , *\<password\>* and *\<tenantid\>*:
+1. Create a Windows PowerShell Credentials object `$cred` that contains an administrative username and password for your directory. Run the following command, replacing *`<username>`* , *`<password>`* and *`<tenantid>`*:
 
    ```powershell
    $User = "<username>"

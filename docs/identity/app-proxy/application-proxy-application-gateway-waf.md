@@ -61,7 +61,7 @@ This will determine how requests will reach the backend pool servers.
 
 ### Configure your application to be remotely accessed through Application Proxy in Microsoft Entra ID.
  
-As represented in the diagram above, both connector VMs, the Application Gateway, and the backend servers were deployed in the same VNET in Azure. This setup also applies to applications and connectors deployed on-premises. 
+As represented in the diagram above, both connector VMs, the Application Gateway, and the backend servers were deployed in the same virtual network in Azure. This setup also applies to applications and connectors deployed on-premises. 
 
 For a detailed guide on how to add your application to Application Proxy in Microsoft Entra ID, see [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID][appproxy-add-app]. For more information about performance considerations concerning the Application Proxy connectors, see [Optimize traffic flow with Microsoft Entra application proxy][appproxy-optimize]. 
  

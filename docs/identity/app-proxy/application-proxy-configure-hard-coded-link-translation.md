@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: app-proxy
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/06/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -80,27 +80,27 @@ There are two common types of internal links in on-premises applications:
 - **Hard-coded internal links** to other on-premises apps like `http://expenses` or published files like `http://expenses/logo.jpg`. The link translation feature works on hard-coded internal links, and changes them to point to the external URLs that remote users need to go through.
 
 The complete list of attributes in HTML code tags that Application Proxy supports link translation for include:
-* a (href)
-* audio (src)
-* base (href)
-* button (formaction)
-* div (data-background, style, data-src)
-* embed (src)
-* form (action)
-* frame (src)
-* head (profile)
-* html (manifest)
-* iframe (longdesc, src)
-* img (longdesc, src)
-* input (formaction, src, value)
-* link (href)
-* menuitem (icon)
-* meta (content)
-* object (archive, data, codebase)
-* script (src)
-* source (src)
-* track (src)
-* video (src, poster)
+* `a (href)`
+* `audio (src)`
+* `base (href)`
+* `button (formaction)`
+* `div (data-background, style, data-src)`
+* `embed (src)`
+* `form (action)`
+* `frame (src)`
+* `head (profile)`
+* `html (manifest)`
+* `iframe (longdesc, src)`
+* `img (longdesc, src)`
+* `input (formaction, src, value)`
+* `link (href)`
+* `menuitem (icon)`
+* `meta (content)`
+* `object (archive, data, codebase)`
+* `script (src)`
+* `source (src)`
+* `track (src)`
+* `video (src, poster)`
 
 Additionally, within CSS the URL attribute is also translated.
 
