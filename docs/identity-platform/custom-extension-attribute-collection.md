@@ -48,11 +48,8 @@ In addition to creating a custom authentication extension for the attribute coll
 In this step, you create an HTTP trigger function API using Azure Functions. The function API is the source of the business logic for your user flows. Follow these steps to create an Azure Function:
 
 1. Sign in to the [Azure portal](https://portal.azure.com) with your administrator account.
-
 1. From the Azure portal menu or the **Home** page, select **Create a resource**.
-
 1. In the **New** page, select **Compute** > **Function App**.
-
 1. On the **Basics** page, use the function app settings as specified in the following table:
 
     | Setting      | Suggested value  | Description |
@@ -67,9 +64,9 @@ In this step, you create an HTTP trigger function API using Azure Functions. The
     | **Operating System** | Windows | The operating system is preselected for you based on your runtime stack selection. |
     | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
 
-1. Select **Review + create** to review the app configuration selections and then select **Create**.
+1. Select **Review + create** to review the app configuration selections and then select **Create**. Deployment takes a few minutes.
 
-1. Select the **Notifications** icon in the upper-right corner of the portal and watch for the **Deployment succeeded** message. Then, select **Go to resource** to view your new function app.
+1. Using either the **Notifications** icon in the upper-right corner of the portal or the screen you've been directed to, watch for the **Deployment succeeded** message. Then, select **Go to resource** to view your new function app.
 
 ### 1.1 Create HTTP trigger functions
 
