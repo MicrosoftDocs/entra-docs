@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 02/06/2024
+ms.date: 02/07/2024
 ms.author: gasinh
 ms.custom: "it-pro, seodec18"
 ms.collection: M365-identity-device-management
@@ -16,7 +16,9 @@ ms.collection: M365-identity-device-management
 
 # Microsoft Entra ID deployment plans
 
-Azure Active Directory is now [Microsoft Entra ID](~/fundamentals/whatis.md), which can safeguard your organization with cloud identity and access management. The solution connects employees, customers, and partners to their apps, devices, and data. Use this article's guidance to help build your plan to deploy Microsoft Entra ID. Learn about plan-building basics and then use the following sections for authentication deployment, apps and devices, hybrid scenarios, Identity Governance, and more.
+Azure Active Directory is now [Microsoft Entra ID](~/fundamentals/whatis.md), which can safeguard your organization with cloud identity and access management. The solution connects employees, customers, and partners to their apps, devices, and data. 
+
+Use this article's guidance to help build your plan to deploy Microsoft Entra ID. Learn about plan-building basics and then use the following sections for authentication deployment, apps and devices, hybrid scenarios, user identity, and more.
 
 ## Stakeholders and roles
 
