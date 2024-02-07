@@ -23,7 +23,7 @@ To learn about the initial configurations and creation of an Application Proxy a
 
 For details on configuring Connectors, see [Enable Application Proxy in the Microsoft Entra admin center](application-proxy-add-on-premises-application.md).
 
-For information on uploading certificates and using custom domains, see [Working with custom domains in Microsoft Entra application proxy](application-proxy-configure-custom-domain.md).
+For information on uploading certificates and using custom domains, see [Working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md).
 
 ## Create the Application/Setting the URLs
 
@@ -47,7 +47,7 @@ If your connectors are inactive, this means that they are unable to reach the se
 
 ## Upload certificates for custom domains
 
-Custom Domains allow you to specify the domain of your external URLs. To use custom domains, you need to upload the certificate for that domain. For information on using custom domains and certificates, see [Working with custom domains in Microsoft Entra application proxy](application-proxy-configure-custom-domain.md).
+Custom Domains allow you to specify the domain of your external URLs. To use custom domains, you need to upload the certificate for that domain. For information on using custom domains and certificates, see [Working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md).
 
 If you are encountering issues uploading your certificate, look for the error messages in the portal for additional information on the problem with the certificate. Common certificate problems include:
 
