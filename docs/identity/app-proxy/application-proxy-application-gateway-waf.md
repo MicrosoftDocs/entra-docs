@@ -26,11 +26,11 @@ This article guides you through the steps to securely expose a web application o
 
 ### Configure Azure Application Gateway to send traffic to your internal application
 
-Some steps of the Application Gateway configuration will be omitted in this article. For a detailed guide on how to create and configure an Application Gateway, see [Quickstart: Direct web traffic with Azure Application Gateway - Microsoft Entra admin center][appgw_quick].
+Some steps of the Application Gateway configuration are omitted in this article. For a detailed guide on how to create and configure an Application Gateway, see [Quickstart: Direct web traffic with Azure Application Gateway - Microsoft Entra admin center][appgw_quick].
 
 ### 1. Create a private-facing HTTPS listener
 
-This will allow users to access the web application privately when connected to the corporate network.
+Create a listener so users can access the web application privately when connected to the corporate network.
 
 ![Screenshot of Application Gateway listener.](./media/application-proxy-waf/application-gateway-listener.png)
 
@@ -42,7 +42,7 @@ In this example, the backend servers have Internet Information Services (IIS) in
 
 ### 3. Create a backend setting
 
-This will determine how requests will reach the backend pool servers.
+A backend setting determines how requests reach the backend pool servers.
 
 ![Screenshot of Application Gateway backend setting.](./media/application-proxy-waf/application-gateway-backend-settings.png)
  
@@ -65,7 +65,7 @@ For a detailed guide on how to add your application to Application Proxy in Micr
  
 ![Screenshot of Application Proxy configuration.](./media/application-proxy-waf/application-proxy-configuration.png)
 
-In this example, the same URL was configured as the internal and external URL. Remote clients will access the application over the Internet on port 443, through the Application Proxy, whereas clients connected to the corporate network will access the application privately through the Application Gateway directly, also on port 443. For a detailed step on how to configure custom domains in Application Proxy, see [Configure custom domains with Microsoft Entra application proxy][appproxy-custom-domain].
+In this example, the same URL was configured as the internal and external URL. Remote clients access the application over the Internet on port 443, through the Application Proxy. Clients connected to the corporate network access the application privately through the Application Gateway directly, also on port 443. For a detailed step on how to configure custom domains in Application Proxy, see [Configure custom domains with Microsoft Entra application proxy][appproxy-custom-domain].
 
 To ensure the connector VMs send requests to the Application Gateway, an [Azure Private DNS zone][private-dns] was created with an A record pointing www.fabrikam.one to the private frontend IP of the Application Gateway.
 
