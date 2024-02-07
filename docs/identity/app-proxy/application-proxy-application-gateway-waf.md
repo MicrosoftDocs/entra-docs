@@ -90,7 +90,9 @@ The Application Gateway [Firewall logs][waf-logs] provide more details about the
 
 ## Next steps
 
-To prevent false positives, learn how to [Customize Web Application Firewall rules](/azure/web-application-firewall/ag/application-gateway-customize-waf-rules-portal), configure [Web Application Firewall exclusion lists](/azure/web-application-firewall/ag/application-gateway-waf-configuration?tabs=portal), or [Web Application Firewall custom rules](/azure/web-application-firewall/ag/create-custom-waf-rules).
+- [Customize Web Application Firewall rules](/azure/web-application-firewall/ag/application-gateway-customize-waf-rules-portal)
+- [Web Application Firewall exclusion lists](/azure/web-application-firewall/ag/application-gateway-waf-configuration?tabs=portal)
+- [Web Application Firewall custom rules](/azure/web-application-firewall/ag/create-custom-waf-rules)
 
 [waf-overview]: /azure/web-application-firewall/ag/ag-overview
 [appgw_quick]: /azure/application-gateway/quick-create-portal
