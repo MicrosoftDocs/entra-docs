@@ -4,9 +4,8 @@ description: How to view information about alerts and alert triggers in the Aler
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: overview
 ms.date: 07/25/2023
 ms.author: jfields
