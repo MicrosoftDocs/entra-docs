@@ -9,13 +9,13 @@ ms.subservice: app-proxy
 ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/07/2024
 ms.author: kenwith
 ms.reviewer: harshja
 ---
 # Set a custom home page for published apps by using Microsoft Entra application proxy
 
-This article discusses how to configure an app to direct a user to a custom home page. When you publish an app with Application Proxy, you set an internal URL, but sometimes that's not the page a user should see first. Set a custom home page so that a user gets the right page when they access the app. A user will see the custom home page that you set, regardless of whether they access the app from the Microsoft Entra My Apps or the Microsoft 365 app launcher.
+This article discusses how to configure an app to direct a user to a custom home page. When you publish an app with Application Proxy, you set an internal URL, but sometimes that's not the page a user should see first. Set a custom home page so that a user gets the right page when they access the app. A user sees the custom home page that you set, regardless of whether they access the app from the Microsoft Entra My Apps or the Microsoft 365 app launcher.
 
 When a user launches the app, they're directed by default to the root domain URL for the published app. The landing page is typically set as the home page URL. Use the Azure AD PowerShell module to define a custom home page URL when you want an app user to land on a specific page within the app.
 
@@ -75,7 +75,7 @@ To install the package, follow these steps:
    Install-Module -Name AzureAD
    ```
 
-    If you're running the command as a non-admin, use the `-scope currentuser` option.
+    If you're running the command without administrative rights, use the `-scope currentuser` option.
 
 1. During the installation, select **Y** to install two packages from Nuget.org. Both packages are required.
 
@@ -119,10 +119,10 @@ You get the ObjectId of the app by searching for the app by its display name or 
 
 Create the home page URL, and update your app with that value. Continue using the same PowerShell window, or if you're using a new PowerShell window, sign in to the Microsoft Entra module again using `Connect-AzureAD`. Then follow these steps:
 
-1. Create a variable to hold the ObjectId value you copied in the previous section. (Replace the ObjectId value used for in this SharePoint example with your app's ObjectId value.)
+1. Create a variable to hold the `ObjectId` value you copied.
 
    ```powershell
-   $objguid = "8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4"
+   $objguid = "<object id>"
    ```
 
 1. Confirm that you have the correct app by running the following command. The output should be identical to the output you saw in the previous section ([Find the ObjectId of the app](#find-the-objectid-of-the-app)).

@@ -64,7 +64,7 @@ Learn how to use Microsoft Entra application proxy to protect your Network Devic
 
 1. Select **+Add** to save your application.
 
-1. Test whether you can access your NDES server via the Microsoft Entra application proxy by pasting the link you copied in step 15 into a browser. You should see a default IIS welcome page.
+1. Test whether you can access your NDES server via the Microsoft Entra application proxy by pasting the link you copied in step 15 into a browser. You should see a default Internet Information Services (IIS) welcome page.
 1. As a final test, add the *mscep.dll* path to the existing URL you pasted in the previous step:
     `https://scep-test93635307549127448334.msappproxy.net/certsrv/mscep/mscep.dll`
 1. You should see an **HTTP Error 403 – Forbidden** response.
