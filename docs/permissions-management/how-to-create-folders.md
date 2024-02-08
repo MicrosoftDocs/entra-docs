@@ -4,9 +4,8 @@ description: How to create folders to organize Authorization Systems - accounts,
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: how-to
 ms.date: 08/09/2023
 ms.author: jfields

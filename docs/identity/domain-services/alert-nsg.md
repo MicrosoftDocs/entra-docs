@@ -8,11 +8,9 @@ manager: amycolannino
 ms.assetid: 95f970a7-5867-4108-a87e-471fa0910b8c
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 09/15/2023
 ms.author: justinha
-
 ---
 # Known issues: Network configuration alerts in Microsoft Entra Domain Services
 

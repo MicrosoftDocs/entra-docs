@@ -8,10 +8,9 @@ ms.service: active-directory
 ms.subservice: msi
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/03/2021
 ms.author: christoc
-ms.collection: M365-identity-device-management 
+ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurecli
 ms.devlang: azurecli
 ---

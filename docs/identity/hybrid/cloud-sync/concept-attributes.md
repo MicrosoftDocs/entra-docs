@@ -2,14 +2,11 @@
 title: 'Understand the Microsoft Entra schema and custom expressions'
 description: This article describes the Microsoft Entra schema, the attributes that the provisioning agent flows, and custom expressions.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 ms.service: active-directory
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath

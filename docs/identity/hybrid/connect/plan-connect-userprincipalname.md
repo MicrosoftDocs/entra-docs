@@ -1,12 +1,11 @@
 ---
 title: Microsoft Entra UserPrincipalName population
-description: The following document describes how the UserPrincipalName attribute is populated.  
+description: The following document describes how the UserPrincipalName attribute is populated.
 author: billmath
 ms.subservice: hybrid
 ms.author: billmath
 ms.date: 11/06/2023
 ms.topic: conceptual
-ms.workload: identity
 ms.service: active-directory
 manager: amycolannino
 ms.collection: M365-identity-device-management

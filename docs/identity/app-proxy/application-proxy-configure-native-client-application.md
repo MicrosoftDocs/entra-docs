@@ -6,7 +6,6 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.custom: devx-track-dotnet
 ms.topic: how-to
 ms.date: 09/14/2023

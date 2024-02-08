@@ -2,14 +2,11 @@
 title: 'What is the provisioning agent?'
 description: This article describes the provisioning agent used by cloud sync and on-premsises app provisioning.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 ms.service: active-directory
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath

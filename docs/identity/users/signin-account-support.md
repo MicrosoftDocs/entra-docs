@@ -1,12 +1,11 @@
 ---
-title: Does my Microsoft Entra sign-in page accept Microsoft accounts 
-description: How on-screen messaging reflects username lookup during sign-in 
+title: Does my Microsoft Entra sign-in page accept Microsoft accounts
+description: How on-screen messaging reflects username lookup during sign-in
 services: active-directory
 author: barclayn
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: enterprise-users
-ms.workload: identity
 ms.topic: overview
 ms.date: 11/21/2023
 ms.author: barclayn

@@ -2,14 +2,11 @@
 title: 'Exchange hybrid writeback with sync'
 description: This article describes the Exchange hybrid writeback feature with sync clients.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 ms.service: active-directory
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath

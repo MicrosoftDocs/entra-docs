@@ -8,7 +8,6 @@ tags: azuread
 ms.service: active-directory
 ms.subservice: hybrid
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 11/06/2023
 ms.reviewer: martincoetzer
 ms.author: billmath

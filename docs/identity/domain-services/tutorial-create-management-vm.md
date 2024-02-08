@@ -6,11 +6,9 @@ manager: amycolannino
 
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/15/2023
 ms.author: justinha
-
 #Customer intent: As an identity administrator, I want to create a management VM and install the required tools to connect to and manage a Microsoft Entra Domain Services managed domain.
 ---
 

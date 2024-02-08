@@ -4,9 +4,8 @@ description: How to onboard an Amazon Web Services (AWS) account to Permissions 
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: how-to
 ms.date: 12/20/2023
 ms.author: jfields

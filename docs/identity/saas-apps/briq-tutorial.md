@@ -7,11 +7,9 @@ manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
 ms.topic: how-to
 ms.date: 01/04/2024
 ms.author: jeedes
-
 ---
 
 # Microsoft Entra SSO integration with Briq

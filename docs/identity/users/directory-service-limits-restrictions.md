@@ -2,15 +2,12 @@
 title: Service limits and restrictions
 description: Usage constraints and other service limits for the Microsoft Entra service
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
-editor: ''
 
 ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: reference
-ms.workload: identity
 ms.date: 06/23/2022
 ms.author: barclayn
 ms.custom: aaddev;it-pro

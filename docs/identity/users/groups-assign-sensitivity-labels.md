@@ -2,12 +2,10 @@
 title: Assign sensitivity labels to groups
 description: Learn how to assign sensitivity labels to groups. See troubleshooting information and view more resources.
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: enterprise-users
-ms.workload: identity
 ms.topic: how-to
 ms.date: 11/08/2023
 ms.author: barclayn

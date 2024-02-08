@@ -1,12 +1,11 @@
 ---
 title: Claims-aware apps - Microsoft Entra application proxy
-description: How to publish on-premises ASP.NET applications that accept AD FS claims for secure remote access by your users. 
+description: How to publish on-premises ASP.NET applications that accept AD FS claims for secure remote access by your users.
 services: active-directory
 author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
 ms.date: 02/06/2024
 ms.author: kenwith

@@ -4,7 +4,6 @@ description: This document provides reference information for the ADSyncConfig.p
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath

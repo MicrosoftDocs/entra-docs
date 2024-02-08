@@ -4,9 +4,8 @@ description: Permissions Management training videos.
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: how-to
 ms.date: 04/20/2022
 ms.author: jfields

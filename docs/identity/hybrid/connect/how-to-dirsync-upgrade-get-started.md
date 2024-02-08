@@ -4,10 +4,8 @@ description: Learn how to upgrade from DirSync to Microsoft Entra Connect. This 
 services: active-directory
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023

@@ -8,11 +8,9 @@ manager: amycolannino
 ms.assetid: 1a14637e-b3d0-4fd9-ba7a-576b8df62ff2
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/21/2023
 ms.author: justinha
-
 ---
 # Custom attributes for Microsoft Entra Domain Services
 

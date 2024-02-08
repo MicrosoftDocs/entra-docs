@@ -9,7 +9,6 @@ manager: amycolannino
 ms.topic: article
 ms.service: active-directory
 ms.subservice: hybrid
-ms.workload: identity
 ---
 # Choose the right authentication method for your Microsoft Entra hybrid identity solution
 

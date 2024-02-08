@@ -9,10 +9,8 @@ ms.reviewer: yuhko, ergreenl
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-ms.workload: identity
 services: active-directory
 zone_pivot_groups: enterprise-apps-with-ms-graph
-#Customer intent:
 ---
 # Update an app's requested permissions in Microsoft Entra ID
 

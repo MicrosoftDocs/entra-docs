@@ -7,7 +7,6 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.workload: identity
 ms.date: 05/11/2023
 ms.author: billmath
 ms.reviewer: arvinh

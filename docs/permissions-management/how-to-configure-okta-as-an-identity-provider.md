@@ -4,9 +4,8 @@ description: How to configure Okta as an identity provider in Microsoft Entra Pe
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: how-to
 ms.date: 10/10/2023
 ms.author: jfields

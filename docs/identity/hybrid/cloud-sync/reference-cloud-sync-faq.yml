@@ -6,7 +6,6 @@ metadata:
   author: billmath
   manager: amycolannino
   ms.service: active-directory
-  ms.workload: identity
   ms.topic: faq
   ms.date: 06/21/2023
   ms.subservice: hybrid

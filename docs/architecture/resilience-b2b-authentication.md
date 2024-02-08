@@ -4,7 +4,6 @@ description: A guide for IT admins and architects to building resilient authenti
 services: active-directory
 author: janicericketts
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 11/16/2022
