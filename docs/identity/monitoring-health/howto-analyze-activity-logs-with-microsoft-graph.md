@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.topic: how-to
 ms.subservice: report-monitor
-ms.date: 02/06/2024
+ms.date: 02/07/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -17,7 +17,7 @@ ms.reviewer: egreenberg
 
 The Microsoft Entra [reporting APIs](/graph/api/resources/azure-ad-auditlog-overview) provide you with programmatic access to the data through a set of REST APIs. You can call these APIs from many programming languages and tools. The Microsoft Graph API isn't designed for pulling large amounts of activity data. Pulling large amounts of activity data using the API might lead to issues with pagination and performance.
 
-This article describes how to get started analyzing Microsoft Entra activity logs with Microsoft Graph.
+This article describes how to analyze Microsoft Entra activity logs with Microsoft Graph Explorer and Microsoft Graph PowerShell.
 
 ## Prerequisites
 
@@ -45,10 +45,24 @@ With all the prerequisites configured, you can run activity log queries in Micro
 
     ![Screenshot of an activity log GET query in Microsoft Graph.](media/howto-configure-prerequisites-for-reporting-api/graph-sample-get-query.png)
 
+### Fine-tune your queries
+
+To search for specific activity log entries, use the $filter query parameter with one of the available properties. 
+
+- [Sign-in log properties](/graph/api/resources/signin#properties)
+- [Audit log properties](/graph/api/resources/directoryaudit#properties)
+
+Try using the following queries:
+
+- For sign-in attempts where Conditional Access failed: GET `https://graph.microsoft.com/v1.0/auditLogs/signIns$filter=conditionalAccessStatus eq 'failure'`
+
+
 ### Related APIs
 
-- [Identity Protection APIs](/graph/api/resources/identityprotection-overview).
-- [Provisioning logs API](/graph/api/resources/provisioningobjectsummary).
+Once you are familiar with the standard sign-in and audit logs, try exploring these other APIs:
+
+- [Identity Protection APIs](/graph/api/resources/identityprotection-overview)
+- [Provisioning logs API](/graph/api/resources/provisioningobjectsummary)
 
 ## Access reports using Microsoft Graph PowerShell
 
