@@ -7,7 +7,6 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.workload: identity
 ms.date: 12/15/2023
 ms.author: billmath
 ms.reviewer: arvinh
@@ -509,4 +508,3 @@ The following instructions illustrate how to check OpenLDAP on Linux.
 
  
 - For more information on what the provisioning service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md) and [on-premises application provisioning architecture](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md).
-
