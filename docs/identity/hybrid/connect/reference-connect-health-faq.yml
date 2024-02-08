@@ -3,13 +3,11 @@ metadata:
   title: Microsoft Entra Connect Health FAQ - Azure
   description: This FAQ answers questions about Microsoft Entra Connect Health. This FAQ covers questions about using the service, including the billing model, capabilities, limitations, and support.
   services: active-directory
-  documentationcenter: ''
   author: billmath
   manager: amycolannino
   ms.assetid: f1b851aa-54d7-4cb4-8f5c-60680e2ce866
   ms.service: active-directory
   ms.subservice: hybrid
-  ms.workload: identity
   ms.tgt_pltfrm: na
   ms.custom: has-azure-ad-ps-ref
   ms.topic: faq

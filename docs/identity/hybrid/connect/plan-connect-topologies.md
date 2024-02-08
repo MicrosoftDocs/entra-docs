@@ -2,14 +2,11 @@
 title: 'Microsoft Entra Connect: Supported topologies'
 description: This topic details supported and unsupported topologies for Microsoft Entra Connect
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 ms.assetid: 1034c000-59f2-4fc8-8137-2416fa5e4bfe
 ms.service: active-directory
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/06/2023
 ms.subservice: hybrid

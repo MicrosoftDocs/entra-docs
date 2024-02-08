@@ -3,7 +3,6 @@ title: 'Microsoft Entra Connect: Configure preferred data location for Microsoft
 description: Describes how to put your Microsoft 365 user resources close to the user with Microsoft Entra Connect Sync.
 author: billmath
 ms.service: active-directory
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 manager: amycolannino
 ms.topic: how-to
