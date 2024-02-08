@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: app-service-web, storage, microsoft-graph
-ms.date: 04/25/2022
+ms.date: 02/07/2024
 ms.reviewer: stsoneff
 ms.service: app-service
 ms.subservice: web-apps

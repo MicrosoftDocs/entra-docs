@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: azureday1, devx-track-azurecli, devx-track-azurepowershell, subject-rbac-steps
-ms.date: 07/31/2023
+ms.date: 02/07/2024
 ms.devlang: csharp, javascript
 ms.reviewer: stsoneff
 ms.service: app-service
