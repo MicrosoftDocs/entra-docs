@@ -5,9 +5,8 @@ description: Review roles and the level of permissions assigned in Microsoft Ent
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: how-to
 ms.date: 08/24/2023
 ms.author: jfields

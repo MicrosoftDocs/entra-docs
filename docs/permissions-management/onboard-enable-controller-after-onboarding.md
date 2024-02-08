@@ -4,9 +4,8 @@ description: How to enable or disable the controller in Permissions Management a
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: how-to
 ms.date: 11/01/2023
 ms.author: jfields
