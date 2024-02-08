@@ -7,12 +7,10 @@ author: shlipsey3
 manager: amycolannino
 ms.service: active-directory
 ms.topic: overview
-ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 08/25/2023
 ms.author: sarahlipsey
-ms.reviewer: tspring  
-
+ms.reviewer: tspring
 # Customer intent: As a Microsoft Entra administrator, I want a tool that gives me the right level of insights into the sign-in activities in my system so that I can easily diagnose and solve problems when they occur.
 ---
 
