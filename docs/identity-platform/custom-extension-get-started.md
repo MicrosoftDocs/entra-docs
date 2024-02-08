@@ -55,7 +55,7 @@ In this step, you create an HTTP trigger function API in the Azure portal. The f
     | **Function App name** | Globally unique name | A name that identifies the new function app. Valid characters are `a-z` (case insensitive), `0-9`, and `-`.  |
     |**Deploy code or container image**| Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
     | **Runtime stack** | .NET | Your preferred programming language. For this tutorial, select **.NET**.  |
-    |**Version**| 6 | Version of the .NET runtime. |
+    |**Version**| 6 (LTS) In=process | Version of the .NET runtime. In-process signifies that you can create and modify functions in the portal |
     |**Region**| Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
     | **Operating System** | Windows | The operating system is pre-selected for you based on your runtime stack selection. |
     | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
