@@ -6,10 +6,9 @@ manager: amycolannino
 
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/15/2023
-ms.author: justinha 
+ms.author: justinha
 ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref
 #Customer intent: As an identity administrator, I want to create a Microsoft Entra Domain Services forest and one-way outbound trust from a Microsoft Entra Domain Services forest to an on-premises Active Directory Domain Services forest using Azure PowerShell to provide authentication and resource access between forests.
 ---
@@ -435,4 +434,3 @@ For more conceptual information about forest types in Domain Services, see [How 
 
 <!-- EXTERNAL LINKS -->
 [powershell-gallery]: https://www.powershellgallery.com/
-
