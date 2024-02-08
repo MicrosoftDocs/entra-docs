@@ -2,13 +2,11 @@
 title: Characteristics of multitenant interaction
 description: Understanding the data independence of your Microsoft Entra organizations
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: overview
-ms.workload: identity
 ms.date: 11/15/2023
 ms.author: barclayn
 ms.custom: it-pro

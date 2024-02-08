@@ -6,7 +6,6 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/06/2024
 ms.author: kenwith
@@ -151,8 +150,6 @@ You can allow connections to `*.msappproxy.net`, `*.servicebus.windows.net`, and
 Public DNS records for Microsoft Entra application proxy endpoints are chained CNAME records pointing to an A record. Setting up the records this way ensures fault tolerance and flexibility. It’s guaranteed that the Microsoft Entra application proxy Connector always accesses host names with the domain suffixes `*.msappproxy.net` or `*.servicebus.windows.net`. However, during the name resolution the CNAME records might contain DNS records with different host names and suffixes. Due to the difference, you must ensure that the device (depending on your setup - connector server, firewall, outbound proxy) can resolve all the records in the chain and allows connection to the resolved IP addresses. Since the DNS records in the chain might be changed from time to time, we can't provide you with any list DNS records.
 
 ## Install and register a connector
-
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To use Application Proxy, install a connector on each Windows server you're using with the Application Proxy service. The connector is an agent that manages the outbound connection from the on-premises application servers to Application Proxy in Microsoft Entra ID. You can install a connector on servers that also have other authentication agents installed such as Microsoft Entra Connect.
 

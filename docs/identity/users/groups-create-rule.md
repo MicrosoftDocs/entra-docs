@@ -2,13 +2,11 @@
 title: Create or edit a dynamic group and get status
 description: How to create or update a group membership rule in the Azure portal, and check its processing status.
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
 
 ms.service: active-directory
 ms.subservice: enterprise-users
-ms.workload: identity
 ms.topic: how-to
 ms.date: 12/07/2023
 ms.author: barclayn

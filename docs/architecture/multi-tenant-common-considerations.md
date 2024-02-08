@@ -1,11 +1,10 @@
 ---
 title: Common considerations for multi-tenant user management in Microsoft Entra ID
-description: Learn about the common design considerations for user access across Microsoft Entra tenants with guest accounts 
+description: Learn about the common design considerations for user access across Microsoft Entra tenants with guest accounts
 services: active-directory
 author: janicericketts
 manager: martinco
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 08/21/2023

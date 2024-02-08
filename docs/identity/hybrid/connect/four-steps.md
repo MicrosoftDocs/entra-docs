@@ -5,7 +5,6 @@ services: active-directory
 author: martincoetzer
 manager: travisgr
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/08/2023

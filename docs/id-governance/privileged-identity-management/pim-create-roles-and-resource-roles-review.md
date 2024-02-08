@@ -2,12 +2,9 @@
 title: Create an access review of Azure resource and Microsoft Entra roles in PIM
 description: Learn how to create an access review of Azure resource and Microsoft Entra roles in Privileged Identity Management (PIM).
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
-editor: ''
 ms.service: active-directory
-ms.workload: identity
 ms.topic: how-to
 ms.subservice: pim
 ms.date: 09/12/2023

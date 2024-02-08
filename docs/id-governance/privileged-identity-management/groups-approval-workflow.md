@@ -7,7 +7,6 @@ manager: amycolannino
 ms.service: active-directory
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.subservice: pim
 ms.date: 09/12/2023
 ms.author: barclayn

@@ -7,7 +7,6 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: compliance
 ms.topic: overview
-ms.workload: identity
 ms.date: 08/24/2023
 ms.author: billmath
 ms.custom: contperf-fy21q3-portal

@@ -5,7 +5,6 @@ services: active-directory
 author: owinfreyATL
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.topic: how-to
 ms.subservice: compliance
 ms.date: 05/31/2023

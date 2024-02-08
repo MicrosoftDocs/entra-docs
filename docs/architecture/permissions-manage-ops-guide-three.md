@@ -7,9 +7,8 @@ manager: martinco
 tags: azuread
 ms.service: active-directory
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 10/23/2023
-ms.author: jricketts  
+ms.author: jricketts
 ---
 
 # Phase 3: Configure Microsoft Entra Permissions Management monitoring and alerting

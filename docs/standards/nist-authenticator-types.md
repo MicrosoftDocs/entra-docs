@@ -1,10 +1,9 @@
 ---
 title: NIST authenticator types and aligned Microsoft Entra methods
 description: Explanations of how Microsoft Entra authentication methods align with NIST authenticator types.
-services: active-directory 
+services: active-directory
 ms.service: active-directory
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh

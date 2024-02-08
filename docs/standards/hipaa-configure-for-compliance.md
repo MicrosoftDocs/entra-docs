@@ -1,10 +1,9 @@
 ---
 title: Configure Microsoft Entra ID for HIPAA compliance
 description: Introduction for guidance on how to configure Microsoft Entra ID for HIPAA compliance level.
-services: active-directory 
+services: active-directory
 ms.service: active-directory
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: how-to
 author: janicericketts
 ms.author: jricketts

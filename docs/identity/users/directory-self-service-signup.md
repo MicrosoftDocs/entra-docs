@@ -2,15 +2,12 @@
 title: Self-service sign up for email-verified users
 description: Use self-service sign-up in a Microsoft Entra organization
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
-editor: ''
 
 ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: overview
-ms.workload: identity
 ms.date: 11/08/2023
 ms.author: barclayn
 ms.reviewer: elkuzmen

@@ -2,11 +2,9 @@
 title: Create and manage downloadable access review history report
 description: Using Microsoft Entra access reviews, you can download a review history for access reviews in your organization.
 services: active-directory
-documentationcenter: ''
 author: owinfreyATL
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.subservice: compliance

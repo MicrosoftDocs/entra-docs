@@ -5,11 +5,10 @@ author: barclayn
 manager: amycolannino
 ms.service: decentralized-identity
 ms.subservice: verifiable-credentials
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 05/25/2023
 ms.author: barclayn
-# Customer intent: As a developer I am looking for information on how to enable my users to control their own information 
+# Customer intent: As a developer I am looking for information on how to enable my users to control their own information
 ---
 
 

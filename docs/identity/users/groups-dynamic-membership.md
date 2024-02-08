@@ -2,12 +2,10 @@
 title: Rules for dynamically populated groups membership
 description: How to create membership rules to automatically populate groups, and a rule reference.
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: enterprise-users
-ms.workload: identity
 ms.topic: overview
 ms.date: 12/04/2023
 ms.author: barclayn

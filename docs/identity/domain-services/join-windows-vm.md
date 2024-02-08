@@ -6,11 +6,9 @@ manager: amycolannino
 
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/15/2023
 ms.author: justinha
-
 #Customer intent: As a server administrator, I want to learn how to join a Windows Server VM to a Microsoft Entra Domain Services managed domain to provide centralized identity and policy.
 ---
 # Tutorial: Join a Windows Server virtual machine to a Microsoft Entra Domain Services managed domain

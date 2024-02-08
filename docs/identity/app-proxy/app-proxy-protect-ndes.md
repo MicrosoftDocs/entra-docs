@@ -6,7 +6,6 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
 ms.date: 02/07/2024
 ms.author: kenwith
@@ -17,8 +16,6 @@ ms.author: kenwith
 Learn how to use Microsoft Entra application proxy to protect your Network Device Enrollment Service (NDES).
 
 ## Install and register the connector on the NDES server
-
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses Application Proxy. If you need to change directories, select **Switch directory** and choose a directory that uses Application Proxy.
@@ -66,7 +63,7 @@ Learn how to use Microsoft Entra application proxy to protect your Network Devic
 
 1. Select **+Add** to save your application.
 
-1. Test whether you can access your NDES server via the Microsoft Entra application proxy by pasting the link you copied in step 15 into a browser. You should see a default IIS welcome page.
+1. Test whether you can access your NDES server via the Microsoft Entra application proxy by pasting the link you copied in step 15 into a browser. You should see a default Internet Information Services (IIS) welcome page.
 1. As a final test, add the *mscep.dll* path to the existing URL you pasted in the previous step:
     `https://scep-test93635307549127448334.msappproxy.net/certsrv/mscep/mscep.dll`
 1. You should see an **HTTP Error 403 – Forbidden** response.

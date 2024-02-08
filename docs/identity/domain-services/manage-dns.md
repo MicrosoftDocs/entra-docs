@@ -7,11 +7,9 @@ manager: amycolannino
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: how-to
 ms.date: 11/26/2023
 ms.author: justinha
-
 ---
 # Administer DNS and create conditional forwarders in a Microsoft Entra Domain Services managed domain
 

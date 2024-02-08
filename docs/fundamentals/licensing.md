@@ -5,7 +5,6 @@ author: barclayn
 manager: amycolannino
 ms.service: active-directory
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 01/17/2024
 ms.subservice: hybrid
 ms.author: barclayn
@@ -82,4 +81,3 @@ This article discusses Microsoft Entra services' licensing. It is intended for I
 
 - [Microsoft Entra pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing)
 - [Azure AD B2C pricing](https://azure.microsoft.com/pricing/details/active-directory-b2c/)
-

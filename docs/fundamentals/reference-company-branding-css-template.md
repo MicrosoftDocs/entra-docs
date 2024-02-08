@@ -6,7 +6,6 @@ author: shlipsey3
 manager: amycolannino
 
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: reference
 ms.date: 12/01/2023

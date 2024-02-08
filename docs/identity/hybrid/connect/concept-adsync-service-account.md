@@ -2,12 +2,9 @@
 title: 'Microsoft Entra Connect: ADSync service account'
 description: This topic describes the ADSync service account and provides best practices regarding the account.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/06/2023

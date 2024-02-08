@@ -7,7 +7,6 @@ ms.author: rolyon
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: fundamentals
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 02/01/2024

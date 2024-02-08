@@ -6,7 +6,6 @@ author: barclayn
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: quickstart
 ms.date: 11/28/2023
 ms.author: barclayn

@@ -2,14 +2,9 @@
 title: 'Microsoft Entra Connect: Select your installation type'
 description: This topic walks you through how to select the installation type to use for Microsoft Entra Connect
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
-
-ms.assetid:
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023

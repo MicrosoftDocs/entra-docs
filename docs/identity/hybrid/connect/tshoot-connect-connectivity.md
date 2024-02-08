@@ -4,10 +4,8 @@ description: Learn how to troubleshoot connectivity issues with Microsoft Entra 
 services: active-directory
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/06/2023

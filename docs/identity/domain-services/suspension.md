@@ -8,11 +8,9 @@ manager: amycolannino
 ms.assetid: 95e1d8da-60c7-4fc1-987d-f48fde56a8cb
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: how-to
 ms.date: 11/01/2023
 ms.author: justinha
-
 ---
 # Understand the health states and resolve suspended domains in Microsoft Entra Domain Services
 

@@ -4,7 +4,6 @@ description: This article explains how to revoke and update AD FS certificates i
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 11/06/2023

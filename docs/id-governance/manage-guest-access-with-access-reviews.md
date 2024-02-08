@@ -2,12 +2,10 @@
 title: Manage guest access with access reviews
 description: Manage guest users as members of a group or assigned to an application with Microsoft Entra access reviews
 services: active-directory
-documentationcenter: ''
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.subservice: compliance
