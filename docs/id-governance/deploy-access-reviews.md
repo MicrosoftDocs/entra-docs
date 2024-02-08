@@ -2,11 +2,9 @@
 title: Plan a Microsoft Entra access reviews deployment
 description: Planning guide for a successful access reviews deployment.
 services: active-directory
-documentationCenter: ''
 author: owinfreyATL
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: compliance
@@ -14,10 +12,7 @@ ms.date: 06/28/2023
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an IT admin, I want to ensure access to resources is appropriate and governed.
-
 ---
 
 # Plan a Microsoft Entra access reviews deployment
