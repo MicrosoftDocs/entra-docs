@@ -37,7 +37,7 @@ In cases where an application doesn't support SCIM, partners have built [custom 
 The descriptions and lists of applications below are provided by the partners themselves. You can use the lists of applications supported to identify a partner that you may want to contact and learn more about.  
 
 
-Aquera
+### Aquera
 
 #### Description
 Aquera is the leading provider of SCIM Gateway Services for Microsoft Entra. The SCIM Gateway for Microsoft Entra from Aquera is a cloud-based service providing out-of-the-box connectivity between Entra ID and the provisioning target applications, directories, databases, devices, or third party IDPs that an organization or their partners operate, which are not covered by the Entra Application Gallery. 
