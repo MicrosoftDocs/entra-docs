@@ -2,12 +2,9 @@
 title: What is Privileged Identity Management?
 description: Provides an overview of Microsoft Entra Privileged Identity Management (PIM).
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
-editor: ''
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: pim
 ms.topic: overview
 ms.date: 10/26/2023
