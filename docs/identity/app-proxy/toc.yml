@@ -140,8 +140,6 @@ items:
       items:
       - name: Application Proxy troubleshooting
         href: application-proxy-troubleshoot.md
-      - name: Configure in admin portal
-        href: application-proxy-config-how-to.md
       - name: Connector troubleshooting flowchart
         href: application-proxy-debug-connectors.md
       - name: Application troubleshooting flowchart
@@ -152,8 +150,6 @@ items:
         href: application-proxy-page-load-speed-problem.md
       - name: Links on application page not working
         href: application-proxy-page-links-broken-problem.md
-      - name: Problem creating an app in admin portal
-        href: application-proxy-config-problem.md
       - name: Configure Kerberos Constrained Delegation
         href: application-proxy-back-end-kerberos-constrained-delegation-how-to.md
       - name: Can't Access this Corporate Application error

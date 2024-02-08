@@ -53,7 +53,7 @@ You can also [create a new app registration](scenario-spa-app-registration.md) i
 
 ## Update your code to MSAL.js 2.x
 
-In MSAL 1.x, you created a application instance by initializing a UserAgentApplication as follows:
+In MSAL 1.x, you created an application instance by initializing a UserAgentApplication as follows:
 
 ```javascript
 // MSAL 1.x

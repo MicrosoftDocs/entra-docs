@@ -28,7 +28,9 @@ With Microsoft Entra ID, you can save time by managing the membership of the mar
 > Group-based assignment is supported only for security groups.
 > Nested group memberships aren't supported for group-based assignment to applications at this time.
 
-## Assign access for a user or group to an SaaS application
+<a name='assign-access-for-a-user-or-group-to-an-saas-application'></a>
+
+## Assign access for a user or group to a SaaS application
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 

@@ -898,7 +898,7 @@ Accept wildcard characters: False
 
 #### -LogFileLocation
 
-Specifies a the location of a log file that will contain the output of this function.
+Specifies the location of a log file that will contain the output of this function.
 
 ```yml
 Type: String

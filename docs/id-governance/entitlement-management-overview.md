@@ -18,7 +18,7 @@ ms.collection: M365-identity-device-management
 ms.custom: contperf-fy21q1
 
 
-#Customer intent: As a administrator, I want learn about entitlement management so that see how I can use it to manage access to resources in my organization.
+#Customer intent: As an administrator, I want learn about entitlement management so that see how I can use it to manage access to resources in my organization.
 
 ---
 # What is entitlement management?

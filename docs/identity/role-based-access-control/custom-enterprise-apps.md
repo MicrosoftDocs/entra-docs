@@ -83,7 +83,7 @@ Granting the update permission is done in two steps:
 
 1. Select **Add assignment**, select the desired user, and then click **Select** to add role assignment to the user.
 
-    ![Add a assignment for the custom role to the user](./media/custom-enterprise-apps/assign-user-to-role.png)
+    ![Add an assignment for the custom role to the user](./media/custom-enterprise-apps/assign-user-to-role.png)
 
 #### Assignment tips
 
