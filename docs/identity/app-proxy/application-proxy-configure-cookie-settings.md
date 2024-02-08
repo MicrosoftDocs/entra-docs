@@ -39,8 +39,6 @@ Additionally, if your back-end application has cookies that need third-party con
 
 ## Set the cookie settings - Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
 To set the cookie settings using the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).

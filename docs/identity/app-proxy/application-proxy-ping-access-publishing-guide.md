@@ -40,8 +40,6 @@ This article is for people to publish an application with this scenario for the 
 
 ### Install an Application Proxy connector
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
 If you've enabled Application Proxy and installed a connector already, you can skip this section and go to [Add your application to Microsoft Entra ID with Application Proxy](#add-your-application-to-azure-ad-with-application-proxy).
 
 The Application Proxy connector is a Windows Server service that directs the traffic from your remote employees to your published applications. For more detailed installation instructions, see [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
