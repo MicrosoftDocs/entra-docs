@@ -1,12 +1,11 @@
 ---
 title: Complex applications for Microsoft Entra application proxy
-description: Provides an understanding of complex application in Microsoft Entra application proxy, and how to configure one. 
+description: Provides an understanding of complex application in Microsoft Entra application proxy, and how to configure one.
 services: active-directory
 author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/15/2023
 ms.author: dhruvinshah
