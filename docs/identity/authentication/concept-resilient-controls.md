@@ -9,7 +9,6 @@ ms.custom: has-azure-ad-ps-ref
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 01/29/2023
 ms.author: martinco
 ms.collection: M365-identity-device-management
