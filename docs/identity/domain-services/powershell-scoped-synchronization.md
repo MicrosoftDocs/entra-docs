@@ -7,10 +7,9 @@ manager: amycolannino
 
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/06/2023
-ms.author: justinha 
+ms.author: justinha
 ms.custom: has-azure-ad-ps-ref, devx-track-azurepowershell
 ---
 
@@ -223,4 +222,3 @@ To learn more about the synchronization process, see [Understand synchronization
 
 <!-- EXTERNAL LINKS -->
 [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0): /powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0
-
