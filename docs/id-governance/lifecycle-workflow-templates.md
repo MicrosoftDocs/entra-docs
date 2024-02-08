@@ -6,8 +6,7 @@ ms.author: owinfrey
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: compliance
-ms.workload: identity
-ms.topic: conceptual 
+ms.topic: conceptual
 ms.date: 05/31/2023
 ms.custom: template-concept
 ---
@@ -209,5 +208,3 @@ The default specific parameters for the **Post-Offboarding of an employee** temp
 - [workflowTemplate resource type](/graph/api/resources/identitygovernance-workflowtemplate?view=graph-rest-beta&preserve-view=true)
 - [Lifecycle Workflow tasks and definitions](lifecycle-workflow-tasks.md)
 - [Create a Lifecycle workflow](create-lifecycle-workflow.md)
-
-

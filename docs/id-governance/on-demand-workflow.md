@@ -6,10 +6,9 @@ ms.author: owinfrey
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: compliance
-ms.workload: identity
-ms.topic: how-to 
+ms.topic: how-to
 ms.date: 05/31/2023
-ms.custom: template-how-to 
+ms.custom: template-how-to
 ---
 
 
