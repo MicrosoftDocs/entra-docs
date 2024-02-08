@@ -13,7 +13,7 @@ ms.author: kenwith
 ms.reviewer: ashishj
 ---
 # Microsoft Entra application proxy and Qlik Sense 
-Microsoft Entra application proxy and Qlik Sense have partnered together to ensure you are easily able to use Application Proxy to provide remote access for your Qlik Sense deployment.  
+Microsoft Entra application proxy and Qlik Sense have partnered together to ensure you're easily able to use Application Proxy to provide remote access for your Qlik Sense deployment.  
 
 ## Prerequisites 
 The remainder of this scenario assumes you completed the following:
@@ -22,7 +22,7 @@ The remainder of this scenario assumes you completed the following:
 - [Installed an Application Proxy connector](~/identity/app-proxy/application-proxy-add-on-premises-application.md#install-and-register-a-connector) 
  
 ## Publish your applications in Azure 
-To publish QlikSense, you will need to publish two applications in Azure.  
+To publish QlikSense, you'll need to publish two applications in Azure.  
 
 ### Application #1: 
 
@@ -52,7 +52,7 @@ Follow the same steps as for Application #1, with the following exceptions:
 Your application is now ready to test. Access the external URL you used to publish QlikSense in Application #1, and sign in as a user assigned to both applications.  
 
 ## Additional references
-For more information about publishing Qlik Sense with Application Proxy, refer to following the Qlik Community Articles: 
+For more information about publishing Qlik Sense with Application Proxy, see following the Qlik Community Articles: 
 - [Microsoft Entra ID with integrated Windows authentication using a Kerberos Constrained Delegation with Qlik Sense](https://community.qlik.com/docs/DOC-20183)
 - [Qlik Sense integration with Microsoft Entra application proxy](https://community.qlik.com/t5/Technology-Partners-Ecosystem/Azure-AD-Application-Proxy/ta-p/1528396)
 
