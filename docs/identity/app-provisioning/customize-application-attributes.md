@@ -6,7 +6,6 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/23/2024
 ms.author: kenwith
