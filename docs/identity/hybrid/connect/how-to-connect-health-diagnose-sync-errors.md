@@ -2,13 +2,11 @@
 title: Microsoft Entra Connect Health - Diagnose duplicated attribute synchronization errors
 description: This document describes the diagnosis process of duplicated attribute synchronization errors and a potential fix of the orphaned object scenarios directly from the [Microsoft Entra admin center](https://entra.microsoft.com).
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
 editor: billmath
 ms.service: active-directory
 ms.subservice: hybrid
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023

@@ -2,13 +2,11 @@
 title: Microsoft Entra Connect Multiple Domains
 description: This document describes setting up and configuring multiple top level domains with Microsoft 365 and Microsoft Entra ID.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
 
 ms.assetid: 5595fb2f-2131-4304-8a31-c52559128ea4
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to

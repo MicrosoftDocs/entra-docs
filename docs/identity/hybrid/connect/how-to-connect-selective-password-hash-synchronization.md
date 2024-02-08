@@ -5,12 +5,10 @@ services: active-directory
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
-ms.reviewer: 
 ms.collection: M365-identity-device-management
 ---
 
