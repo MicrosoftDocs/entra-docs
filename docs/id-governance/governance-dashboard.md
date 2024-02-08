@@ -5,13 +5,11 @@ services: active-directory
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.topic: how-to
 ms.subservice: compliance
 ms.date: 06/20/2023
 ms.author: billmath
-ms.reviewer: 
-ms.custom: 
+ms.custom:
 ---
 # Identity Governance dashboard (Preview)
 
