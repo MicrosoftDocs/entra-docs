@@ -2,13 +2,11 @@
 title: Assign eligibility for a group in Privileged Identity Management
 description: Learn how to assign eligibility for a group in Privileged Identity Management.
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
 ms.service: active-directory
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.subservice: pim
 ms.date: 09/12/2023
 ms.author: barclayn

@@ -2,11 +2,9 @@
 title: Email notifications in Privileged Identity Management (PIM)
 description: Describes email notifications in Microsoft Entra Privileged Identity Management (PIM).
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.subservice: pim
