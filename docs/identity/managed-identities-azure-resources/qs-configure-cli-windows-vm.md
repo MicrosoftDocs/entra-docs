@@ -6,7 +6,6 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: msi
 ms.topic: quickstart
-ms.workload: identity
 ms.date: 01/11/2022
 ms.author: barclayn
 ms.collection: M365-identity-device-management

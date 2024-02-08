@@ -6,12 +6,10 @@ author: shlipsey3
 manager: amycolannino
 ms.service: active-directory
 ms.topic: overview
-ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 08/15/2023
 ms.author: sarahlipsey
 ms.reviewer: besiler
-
 ---
 
 # What is Microsoft Entra monitoring and health?
