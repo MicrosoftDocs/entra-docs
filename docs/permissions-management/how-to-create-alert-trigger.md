@@ -4,9 +4,8 @@ description: How to create and view activity alerts and alert triggers in Micros
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: how-to
 ms.date: 06/16/2023
 ms.author: jfields
