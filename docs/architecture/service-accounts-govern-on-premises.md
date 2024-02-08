@@ -1,11 +1,10 @@
 ---
-title: Govern on-premises service accounts 
+title: Govern on-premises service accounts
 description: Learn to create and run an account lifecycle process for on-premises service accounts
 services: active-directory
 author: jricketts
 manager: martinco
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 02/10/2023
