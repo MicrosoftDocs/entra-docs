@@ -1,13 +1,11 @@
 ---
-title: Group expiration policy quickstart 
+title: Group expiration policy quickstart
 description: Expiration for Microsoft 365 groups
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: enterprise-users
-ms.workload: identity
 ms.topic: quickstart
 ms.date: 11/15/2023
 ms.author: barclayn
