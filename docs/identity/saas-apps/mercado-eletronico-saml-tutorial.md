@@ -108,7 +108,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     | `https://contracts.jbssa.com/<ID>` |
 
     e. In the **Logout URL** text box, type a URL using the following pattern:
-    `https://<SUBDOMAIN>.mercadoeletronico.com/auth/realms/me-trunk/broker/<ID>`
+    `https://<SUBDOMAIN>.mercadoeletronico.com/auth/realms/me-trunk/broker/<ID>/endpoint`
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier, Reply URL, Sign on URL, Relay State and Logout URL. Contact [Mercado Eletronico SAML support team](mailto:suporte@me.com.br) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
