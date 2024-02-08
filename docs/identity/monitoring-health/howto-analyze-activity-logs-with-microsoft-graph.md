@@ -21,12 +21,9 @@ This article describes how to analyze Microsoft Entra activity logs with Microso
 
 ## Prerequisites
 
-To get access to the reporting data through the API, you need to have one of the following roles and permissions:
-
-- Security Reader
-- Security Administrator
-- Global Administrator
-- `AuditLog.Read.All` or `Directory.Read.All` permissions for Microsoft Graph API access
+- For license information, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
+- [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role to consent to required permissions.
+ permissions for Microsoft Graph API access
 
 To make requests to the Microsoft Graph API, you must first:
 
@@ -37,11 +34,18 @@ To make requests to the Microsoft Graph API, you must first:
 
 With all the prerequisites configured, you can run activity log queries in Microsoft Graph. For more information on Microsoft Graph queries for activity logs, see [Activity reports API overview](/graph/api/resources/azure-ad-auditlog-overview)
 
-1. Sign in to https://graph.microsoft.com using the **Security Reader** role.
+1. Start [Microsoft Graph Explorer tool](https://aka.ms/ge).
+
+1. Select your profile and then select **Modify permissions**.
+
+1. Consent to the following required permissions:
+    - `AuditLog.Read.All`
+    - `Directory.Read.All`
 
 1. Use one of the following queries to start using Microsoft Graph for accessing activity logs:
     - GET `https://graph.microsoft.com/v1.0/auditLogs/directoryAudits`
     - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns`
+    - GET `https://graph.microsoft.com/v1.0/auditLogs/provisioning`
 
     ![Screenshot of an activity log GET query in Microsoft Graph.](media/howto-configure-prerequisites-for-reporting-api/graph-sample-get-query.png)
 
@@ -54,7 +58,8 @@ To search for specific activity log entries, use the $filter query parameter wit
 
 Try using the following queries:
 
-- For sign-in attempts where Conditional Access failed: GET `https://graph.microsoft.com/v1.0/auditLogs/signIns$filter=conditionalAccessStatus eq 'failure'`
+- For sign-in attempts where Conditional Access failed:
+  - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns$filter=conditionalAccessStatus eq 'failure'`
 
 
 ### Related APIs
@@ -80,10 +85,6 @@ Microsoft Graph PowerShell cmdlets:
 <a name='troubleshoot-errors-in-azure-active-directory-reporting-api'></a>
 
 **500 HTTP internal server error while accessing Microsoft Graph beta endpoint**: We don't currently support the Microsoft Graph beta endpoint - make sure to access the activity logs using the Microsoft Graph v1.0 endpoint.
-
-- GET `https://graph.microsoft.com/v1.0/auditLogs/directoryAudits`
-- GET `https://graph.microsoft.com/v1.0/auditLogs/signIns`
-- GET `https://graph.microsoft.com/v1.0/auditLogs/provisioning`
 
 **Error: Neither tenant is B2C or tenant doesn't have premium license**: Accessing sign-in reports requires a Microsoft Entra ID P1 or P2 license. If you see this error message while accessing sign-ins, make sure that your tenant is licensed with a Microsoft Entra ID P1 license.
 
