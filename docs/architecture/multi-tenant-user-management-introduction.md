@@ -1,11 +1,10 @@
 ---
 title: Configuring multi-tenant user management in Microsoft Entra ID
-description: Learn about the different patterns used to configure user access across Microsoft Entra tenants with guest accounts 
+description: Learn about the different patterns used to configure user access across Microsoft Entra tenants with guest accounts
 services: active-directory
 author: janicericketts
 manager: martinco
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 04/19/2023

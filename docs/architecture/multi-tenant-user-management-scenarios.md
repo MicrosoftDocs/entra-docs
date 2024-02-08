@@ -1,11 +1,10 @@
 ---
 title: Common scenarios for using multi-tenant user management in Microsoft Entra ID
-description: Learn about common scenarios where guest accounts can be used to configure user access across Microsoft Entra tenants 
+description: Learn about common scenarios where guest accounts can be used to configure user access across Microsoft Entra tenants
 services: active-directory
 author: janicericketts
 manager: martinco
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 04/19/2023

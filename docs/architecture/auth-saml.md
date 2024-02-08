@@ -6,7 +6,6 @@ author: janicericketts
 manager: martinco
 
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 01/10/2023
