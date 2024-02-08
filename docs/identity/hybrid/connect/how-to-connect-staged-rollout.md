@@ -4,7 +4,6 @@ description: This article explains how to migrate from federated authentication,
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.topic: how-to
 ms.date: 01/18/2024
 ms.subservice: hybrid

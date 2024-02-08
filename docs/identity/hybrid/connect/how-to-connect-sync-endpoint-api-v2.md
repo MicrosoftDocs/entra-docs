@@ -4,9 +4,7 @@ description: This document covers updates to the Microsoft Entra Connect Sync v2
 services: active-directory
 author: billmath
 manager: amycolannino
-editor: ''
 ms.service: active-directory
-ms.workload: identity
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.subservice: hybrid
