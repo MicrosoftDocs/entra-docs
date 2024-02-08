@@ -1,10 +1,9 @@
 ---
 title: Build resilience in Customer Identity and Access Management using Azure AD B2C
 description: Methods to build resilience in Customer Identity and Access Management using Azure AD B2C
-services: active-directory 
+services: active-directory
 ms.service: active-directory
-ms.subservice: fundamentals 
-ms.workload: identity
+ms.subservice: fundamentals
 ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
