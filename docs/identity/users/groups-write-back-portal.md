@@ -29,7 +29,7 @@ If you're using Microsoft Entra Connect Sync Group Writeback v2, you need to mov
 >[!NOTE]
 > If you were previously writing Microsoft 365 groups back to on-premises Active Directory as universal distribution groups, they appear in the Azure portal as not enabled for writeback on both the **Groups** page and the properties page for a group. These pages display a new property introduced for the preview, `writeback enabled`. This property isn't set by the current version of Group Writeback to ensure backward compatibility with the legacy version of Group Writeback and to avoid breaking existing customer setups.
 
-To understand the behavior of `No writeback` in the portal, you can view the writeback state via Microsoft Graph. For more information, see [Get group](graph/api/group-get?view=graph-rest-1.0&tabs=http).
+To understand the behavior of `No writeback` in the portal, you can view the writeback state via Microsoft Graph. For more information, see [Get group](/graph/api/group-get?view=graph-rest-1.0&tabs=http).
 
 | Portal | Microsoft Graph| Behavior|
 |--------|---------|---------|
