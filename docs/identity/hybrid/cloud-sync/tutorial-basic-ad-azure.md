@@ -5,7 +5,6 @@ description: Learn how to create a basic AD and Microsoft Entra environment.
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/06/2023
 ms.subservice: hybrid
