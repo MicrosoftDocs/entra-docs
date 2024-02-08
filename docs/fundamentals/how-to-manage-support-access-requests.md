@@ -9,7 +9,6 @@ ms.reviewer: jeffsta
 ms.service: active-directory
 ms.topic: troubleshooting
 ms.subservice: fundamentals
-ms.workload: identity
 ms.date: 12/01/2023
 ---
 # Manage Microsoft Support access requests (preview)

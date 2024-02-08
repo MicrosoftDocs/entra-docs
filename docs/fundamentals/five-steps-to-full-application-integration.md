@@ -6,7 +6,6 @@ author: jricketts
 ms.author: jricketts
 ms.service: active-directory
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 03/01/2023
 ---
