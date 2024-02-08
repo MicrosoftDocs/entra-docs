@@ -31,8 +31,6 @@ Publish your proxy application as you would any other application and assign use
 
 ## Step 2: Register your native application
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
 You now need to register your application in Microsoft Entra ID, as follows:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses Application Proxy. If you need to change directories, select **Switch directory** and choose a directory that uses Application Proxy.
