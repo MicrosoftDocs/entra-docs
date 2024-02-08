@@ -7,7 +7,6 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: msi
 ms.topic: how-to
-ms.workload: identity
 ms.date: 05/10/2023
 ms.author: barclayn
 ms.custom: devx-track-azurecli, devx-track-linux

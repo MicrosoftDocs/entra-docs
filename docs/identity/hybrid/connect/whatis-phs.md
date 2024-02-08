@@ -4,7 +4,6 @@ description: Describes password hash synchronization.
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.topic: overview
 ms.date: 11/06/2023
 ms.subservice: hybrid
