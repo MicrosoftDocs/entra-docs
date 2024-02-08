@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 04/26/2023
+ms.date: 02/07/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -113,7 +113,7 @@ AADProvisioningLogs
 //| take 5
 ```
 
-Timechart actions on the last 30 days, which allows you to identify spikes in the number of specific operations. 
+Identify spikes in specific operations. 
 
 ```kusto
 AADProvisioningLogs
