@@ -2,14 +2,11 @@
 title: 'Microsoft Entra Connect Sync: Understanding the default configuration'
 description: This article describes the default configuration in Microsoft Entra Connect Sync.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: ed876f22-6892-4b9d-acbe-6a2d112f1cd1
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/06/2023
