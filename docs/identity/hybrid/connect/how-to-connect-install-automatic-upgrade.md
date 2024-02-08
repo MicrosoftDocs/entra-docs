@@ -2,16 +2,13 @@
 title: 'Microsoft Entra Connect: Automatic upgrade'
 description: This topic describes the built-in automatic upgrade feature in Microsoft Entra Connect Sync.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: 6b395e8f-fa3c-4e55-be54-392dd303c472
 ms.service: active-directory
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath

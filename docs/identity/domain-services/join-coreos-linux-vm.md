@@ -8,11 +8,9 @@ manager: amycolannino
 ms.assetid: 5db65f30-bf69-4ea3-9ea5-add1db83fdb8
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/23/2023
 ms.author: justinha
-
 ---
 # Join a CoreOS virtual machine to a Microsoft Entra Domain Services managed domain
 

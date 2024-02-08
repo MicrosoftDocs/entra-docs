@@ -8,11 +8,9 @@ manager: amycolannino
 ms.assetid: 54319292-6aa0-4a08-846b-e3c53ecca483
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 09/15/2023
 ms.author: justinha
-
 ---
 # Known issues: Common alerts and resolutions in Microsoft Entra Domain Services
 

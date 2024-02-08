@@ -4,9 +4,8 @@ description: How to use the Analytics dashboard in Permissions Management to vie
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/15/2023
 ms.author: jfields

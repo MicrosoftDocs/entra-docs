@@ -5,7 +5,6 @@ services: active-directory
 author: dhruvinshah
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
 ms.date: 02/06/2024
 ms.author: dhruvinshah

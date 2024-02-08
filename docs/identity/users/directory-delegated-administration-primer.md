@@ -10,12 +10,10 @@ ms.date: 03/13/2023
 ms.topic: overview
 ms.service: active-directory
 ms.subservice: enterprise-users
-ms.workload: identity
 services: active-directory
 ms.custom: "it-pro"
-
-#Customer intent: As a new Microsoft Entra identity administrator, access management requires me to understand the permissions of partners who have access to our resources. 
 ms.collection: M365-identity-device-management
+#Customer intent: As a new Microsoft Entra identity administrator, access management requires me to understand the permissions of partners who have access to our resources.
 ---
 # What is delegated administration?
 

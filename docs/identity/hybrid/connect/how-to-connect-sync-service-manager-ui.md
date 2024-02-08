@@ -2,14 +2,11 @@
 title: 'Microsoft Entra Connect Sync: Synchronization Service Manager UI'
 description: Understand Synchronization Service Manager for Microsoft Entra Connect.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: 5847c33f-aaa2-48f9-abe6-78c4a87a3b7c
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023

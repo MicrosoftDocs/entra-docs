@@ -7,7 +7,6 @@ manager: amycolannino
 
 ms.service: active-directory
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: how-to
 ms.date: 11/30/2023
 ms.author: barclayn

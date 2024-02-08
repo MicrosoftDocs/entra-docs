@@ -6,7 +6,6 @@ keywords: Azure AD Connect pass-through authentication, install Active Directory
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023

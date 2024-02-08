@@ -4,9 +4,8 @@ description: How to view information about active and completed tasks in the Act
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: overview
 ms.date: 02/23/2022
 ms.author: jfields

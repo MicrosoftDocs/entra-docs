@@ -2,12 +2,10 @@
 title: Complete an access review of groups & applications
 description: Learn how to complete an access review of group members or application access in Microsoft Entra access reviews.
 services: active-directory
-documentationcenter: ''
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: compliance

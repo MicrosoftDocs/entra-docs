@@ -7,9 +7,8 @@ manager: martinco
 tags: azuread
 ms.service: active-directory
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 10/23/2023
-ms.author: jricketts  
+ms.author: jricketts
 ---
 
 # Phase 2: Right-size permissions and automate the principle of least privilege

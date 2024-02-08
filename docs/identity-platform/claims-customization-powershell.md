@@ -4,10 +4,8 @@ description: This article describes how to customize claims in Microsoft Entra I
 services: active-directory
 documentationcenter: .net
 author: rahul-nagraj
-manager: 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: how-to
 ms.date: 11/02/2023
 ms.author: rahulnagraj

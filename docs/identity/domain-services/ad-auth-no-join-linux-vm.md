@@ -6,7 +6,6 @@ author: DevOpsStyle
 
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.custom: devx-track-linux
 ms.topic: how-to
 ms.date: 01/29/2023

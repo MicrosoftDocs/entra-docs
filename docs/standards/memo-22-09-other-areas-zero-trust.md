@@ -1,10 +1,9 @@
 ---
 title: Memo 22-09 other areas of Zero Trust
 description: Understand other Zero Trust requirements in Office of Management and Budget memorandum 22-09.
-services: active-directory 
+services: active-directory
 ms.service: active-directory
 ms.subservice: standards
-ms.workload: identity
 ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh

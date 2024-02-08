@@ -7,7 +7,6 @@ author: shlipsey3
 manager: amycolannino
 ms.service: active-directory
 ms.topic: troubleshooting
-ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 11/01/2022
 ms.author: sarahlipsey

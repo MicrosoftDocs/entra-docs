@@ -9,7 +9,6 @@ ms.service: active-directory
 ms.subservice: msi
 ms.topic: tutorial
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 03/30/2023
 ms.author: barclayn
 

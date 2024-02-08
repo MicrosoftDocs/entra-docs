@@ -1,10 +1,9 @@
 ---
 title: Configure Microsoft Entra HIPAA audit control safeguards
 description: Guidance on how to configure Microsoft Entra HIPAA audit control safeguards
-services: active-directory 
+services: active-directory
 ms.service: active-directory
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: how-to
 author: janicericketts
 ms.author: jricketts

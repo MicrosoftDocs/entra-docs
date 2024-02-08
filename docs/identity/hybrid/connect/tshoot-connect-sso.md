@@ -7,7 +7,6 @@ ms.reviewer: swkrish
 manager: amycolannino
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: active-directory
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: troubleshooting
 ms.date: 11/06/2023

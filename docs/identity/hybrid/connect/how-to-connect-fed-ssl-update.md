@@ -6,7 +6,6 @@ manager: amycolannino
 editor: billmath
 ms.assetid: 7c781f61-848a-48ad-9863-eb29da78f53c
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023

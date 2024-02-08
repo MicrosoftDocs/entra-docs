@@ -5,7 +5,6 @@ services: active-directory
 author: kenwith
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
 ms.date: 02/07/2024
 ms.author: kenwith

@@ -5,7 +5,6 @@ services: active-directory
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/06/2023
@@ -122,4 +121,3 @@ In addition to analyzing the object, the troubleshooting task generates an HTML 
 ## Next steps
 
 Learn more about [integrating your on-premises identities with Microsoft Entra ID](../whatis-hybrid-identity.md).
-

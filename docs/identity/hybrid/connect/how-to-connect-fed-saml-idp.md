@@ -6,7 +6,6 @@ author: billmath
 manager: amycolannino
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023

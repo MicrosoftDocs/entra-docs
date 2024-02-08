@@ -7,11 +7,9 @@ author: justinha
 ms.assetid: 56ccb219-11b2-4e43-9f07-5a76e3cd8da8
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/15/2023
 ms.author: justinha
-
 ---
 # Microsoft Entra Domain Services deployment and management for Azure Cloud Solution Providers
 

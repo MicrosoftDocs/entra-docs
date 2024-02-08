@@ -7,12 +7,10 @@ author: shlipsey3
 manager: amycolannino
 ms.service: active-directory
 ms.topic: reference
-ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 10/03/2023
 ms.author: sarahlipsey
-ms.reviewer: sarbar 
-
+ms.reviewer: sarbar
 ---
 
 # Sensitive operations report workbook
@@ -124,4 +122,3 @@ This paragraph lists the supported filters for each section.
 - **Use new permissions granted to service principals** to look out for broad or excessive permissions being added to service principals by actors that may be compromised.  
 
 - **Use modified federation settings** section to confirm that the added or modified target domain/URL is a legitimate admin behavior. Actions that modify or add domain federation trusts are rare and should be treated as high fidelity to be investigated as soon as possible.
-
