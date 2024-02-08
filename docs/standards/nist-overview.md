@@ -1,6 +1,6 @@
 ---
 title: Achieve NIST authenticator assurance levels with Microsoft Entra ID
-description: An overview of
+description: Use Microsoft Entra ID to meet NIST authenticator assurance levels.
 services: active-directory
 ms.service: active-directory
 ms.subservice: fundamentals
