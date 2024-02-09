@@ -5,16 +5,15 @@ services: active-directory
 author: dhruvinshah
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
-ms.date: 08/22/2022
+ms.date: 02/06/2024
 ms.author: dhruvinshah
 ms.reviewer: ashishj
 ---
 
 # Using Azure Front Door to achieve geo-acceleration
 
-This article explains how to configure Microsoft Entra application proxy to work with Azure Front Door (AFD) to achieve reduce latency and better performance.
+This article explains how to configure Microsoft Entra application proxy to work with Azure Front Door (AFD) to achieve reduced latency and better performance.
  
 ## What is Azure Front Door?
 
@@ -97,6 +96,6 @@ To prevent false positives, learn how to [Customize Web Application Firewall rul
 [front-door-origin]: /azure/frontdoor/origin?pivots=front-door-standard-premium#origin-host-header
 [front-door-tier]: /azure/frontdoor/standard-premium/tier-comparison
 [front-door-custom-domain]: /azure/frontdoor/standard-premium/how-to-add-custom-domain
-[appproxy-custom-domain]: ./application-proxy-configure-custom-domain.md
+[appproxy-custom-domain]: ./how-to-configure-custom-domain.md
 [private-dns]: /azure/dns/private-dns-getstarted-portal
 [waf-logs]: /azure/application-gateway/application-gateway-diagnostics#firewall-log

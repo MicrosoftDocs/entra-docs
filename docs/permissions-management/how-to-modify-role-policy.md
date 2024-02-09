@@ -4,9 +4,8 @@ description: How to modify a role/policy in the Remediation dashboard in Microso
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: how-to
 ms.date: 06/16/2023
 ms.author: jfields

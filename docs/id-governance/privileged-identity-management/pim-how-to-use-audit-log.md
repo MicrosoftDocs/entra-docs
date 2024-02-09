@@ -2,13 +2,10 @@
 title: View audit log report for Microsoft Entra roles in Microsoft Entra PIM
 description: Learn how to view the audit log history for Microsoft Entra roles in Microsoft Entra Privileged Identity Management (PIM).
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
-editor: ''
 ms.service: active-directory
 ms.topic: how-to
-ms.workload: identity
 ms.subservice: pim
 ms.date: 09/13/2023
 ms.author: barclayn

@@ -1,9 +1,9 @@
 ---
 title: Get started with custom claims providers (preview)
 description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to source claims from a data store that is external to Microsoft Entra ID.  
-author: omondiatieno
+author: cilwerner
 manager: CelesteDG
-ms.author: jomondi
+ms.author: cwerner
 ms.custom: 
 ms.date: 08/16/2023
 ms.reviewer: JasSuri
@@ -11,16 +11,22 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
-#Customer intent: As an application developer, I want to create and register a custom authentication extensions API so I can source claims from a data store that is external to Microsoft Entra ID.
+
+#Customer intent: As a developer, I want to configure a custom claims provider token issuance event, so that I can add custom claims to a token before it is issued.
 ---
 
 # Configure a custom claim provider token issuance event (preview)
 
-This article describes how to configure and set up a custom claims provider with the [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) type. This event is triggered right before the token is issued, and allows you to call a REST API to add claims to the token. 
+This article describes how to configure and set up a custom claims provider with the [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) type. This event is triggered right before the token is issued, and allows you to call a REST API to add claims to the token.
 
 This how-to guide demonstrates the token issuance start event with a REST API running in Azure Functions and a sample OpenID Connect application. Before you start, take a look at following video, which demonstrates how to configure Microsoft Entra custom claims provider with Function App:
 
 > [!VIDEO https://www.youtube.com/embed/fxQGVIwX8_4]
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=TokenAugmentation)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Add claims to security tokens from a REST API” use case.
 
 ## Prerequisites
 
@@ -190,7 +196,6 @@ Register an application to authenticate your custom authentication extension to 
 1. Sign in to [Graph Explorer](https://aka.ms/ge) using an account whose home tenant is the tenant you wish to manage your custom authentication extension in. The account must have the privileges to create and manage an application registration in the tenant.
 2. Run the following request.
 
-    # [HTTP](#tab/http)
     ```http
     POST https://graph.microsoft.com/v1.0/applications
     Content-type: application/json
@@ -199,29 +204,6 @@ Register an application to authenticate your custom authentication extension to 
         "displayName": "authenticationeventsAPI"
     }
     ```
-
-    # [C#](#tab/csharp)
-    [!INCLUDE [sample-code](~/../microsoft-graph/includes/snippets/csharp/v1/tutorial-application-basics-create-app-csharp-snippets.md)]
-    
-    # [Go](#tab/go)
-    [!INCLUDE [sample-code](~/../microsoft-graph/includes/snippets/go/v1/tutorial-application-basics-create-app-go-snippets.md)]
-    
-    # [Java](#tab/java)
-    [!INCLUDE [sample-code](~/../microsoft-graph/includes/snippets/java/v1/tutorial-application-basics-create-app-java-snippets.md)]
-    
-    # [JavaScript](#tab/javascript)
-    [!INCLUDE [sample-code](~/../microsoft-graph/includes/snippets/javascript/v1/tutorial-application-basics-create-app-javascript-snippets.md)]
-    
-    # [PHP](#tab/php)
-    Snippet not available.
-    
-    # [PowerShell](#tab/powershell)
-    [!INCLUDE [sample-code](~/../microsoft-graph/includes/snippets/powershell/v1/tutorial-application-basics-create-app-powershell-snippets.md)]
-    
-    # [Python](#tab/python)
-    [!INCLUDE [sample-code](~/../microsoft-graph/includes/snippets/python/v1/tutorial-application-basics-create-app-python-snippets.md)]
-    
-    ---
 
 3. From the response, record the value of **id** and **appId** of the newly created app registration. These values will be referenced in this article as `{authenticationeventsAPI_ObjectId}` and `{authenticationeventsAPI_AppId}` respectively.
 
@@ -346,7 +328,7 @@ The following screenshot shows how to register the *My Test application*.
 
 ### 3.1 Get the application ID
 
-In your app registration, under **Overview**, copy the **Application (client) ID**. The app ID is referred to as the `{App_to_enrich_ID}` in later steps. In Microsoft Graph, it's referenced by the **appId** propety.
+In your app registration, under **Overview**, copy the **Application (client) ID**. The app ID is referred to as the `{App_to_enrich_ID}` in later steps. In Microsoft Graph, it's referenced by the **appId** property.
 
 :::image type="content" border="false"source="media/custom-extension-get-started/get-the-test-application-id.png" alt-text="Screenshot that shows how to copy the application ID.":::
 
@@ -451,8 +433,6 @@ Next, create the claims mapping policy, which describes which claims can be issu
 
 1. Still in Graph Explorer, run the following request. You'll need the *Policy.ReadWrite.ApplicationConfiguration* delegated permission.
 
-
-    # [HTTP](#tab/http)
     ```http
     POST https://graph.microsoft.com/v1.0/policies/claimsMappingPolicies
     Content-type: application/json
@@ -465,28 +445,6 @@ Next, create the claims mapping policy, which describes which claims can be issu
         "isOrganizationDefault": false
     }
     ```
-    # [C#](#tab/csharp)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/csharp/create-claimsmappingpolicy-from-claimsmappingpolicies-csharp-snippets.md)]
-    
-    # [Go](#tab/go)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/go/create-claimsmappingpolicy-from-claimsmappingpolicies-go-snippets.md)]
-    
-    # [Java](#tab/java)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/java/create-claimsmappingpolicy-from-claimsmappingpolicies-java-snippets.md)]
-    
-    # [JavaScript](#tab/javascript)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/javascript/create-claimsmappingpolicy-from-claimsmappingpolicies-javascript-snippets.md)]
-    
-    # [PHP](#tab/php)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/php/create-claimsmappingpolicy-from-claimsmappingpolicies-php-snippets.md)]
-    
-    # [PowerShell](#tab/powershell)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/powershell/create-claimsmappingpolicy-from-claimsmappingpolicies-powershell-snippets.md)]
-    
-    # [Python](#tab/python)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/python/create-claimsmappingpolicy-from-claimsmappingpolicies-python-snippets.md)]
-    
-    ---
 
 2. Record the `ID` generated in the response, later it's referred to as `{claims_mapping_policy_ID}`.
 
@@ -504,7 +462,6 @@ Assign the claims mapping policy to the service principal of *My Test Applicatio
 
 1. Run the following request in Graph Explorer. You'll need the *Policy.ReadWrite.ApplicationConfiguration* and *Application.ReadWrite.All* delegated permission.
 
-    # [HTTP](#tab/http)
     ```http
     POST https://graph.microsoft.com/v1.0/servicePrincipals/{test_App_Service_Principal_ObjectId}/claimsMappingPolicies/$ref
     Content-type: application/json
@@ -513,29 +470,6 @@ Assign the claims mapping policy to the service principal of *My Test Applicatio
         "@odata.id": "https://graph.microsoft.com/v1.0/policies/claimsMappingPolicies/{claims_mapping_policy_ID}"
     }
     ```
-
-    # [C#](#tab/csharp)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/csharp/create-claimsmappingpolicy-from-serviceprincipal-csharp-snippets.md)]
-    
-    # [Go](#tab/go)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/go/create-claimsmappingpolicy-from-serviceprincipal-go-snippets.md)]
-    
-    # [Java](#tab/java)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/java/create-claimsmappingpolicy-from-serviceprincipal-java-snippets.md)]
-    
-    # [JavaScript](#tab/javascript)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/javascript/create-claimsmappingpolicy-from-serviceprincipal-javascript-snippets.md)]
-    
-    # [PHP](#tab/php)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/php/create-claimsmappingpolicy-from-serviceprincipal-php-snippets.md)]
-    
-    # [PowerShell](#tab/powershell)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/powershell/create-claimsmappingpolicy-from-serviceprincipal-powershell-snippets.md)]
-    
-    # [Python](#tab/python)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/python/create-claimsmappingpolicy-from-serviceprincipal-python-snippets.md)]
-    
-    ---
 
 ---
 

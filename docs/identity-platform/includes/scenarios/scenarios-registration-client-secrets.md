@@ -6,7 +6,7 @@ author: OwenRichards1
 manager: CelesteDG
 
 ms.service: active-directory
-ms.devlang: na
+
 ms.topic: include
 ms.tgt_pltfrm: na
 

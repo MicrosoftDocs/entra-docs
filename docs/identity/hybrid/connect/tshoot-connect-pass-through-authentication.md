@@ -3,12 +3,10 @@ title: 'Microsoft Entra Connect: Troubleshoot Pass-through Authentication'
 description: This article describes how to troubleshoot Microsoft Entra pass-through authentication.
 services: active-directory
 keywords: Troubleshoot Azure AD Connect Pass-through Authentication, install Active Directory, required components for Azure AD, SSO, Single Sign-on
-documentationcenter: ''
 author: billmath
 manager: amycolannino
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/06/2023

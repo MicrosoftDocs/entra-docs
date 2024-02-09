@@ -4,12 +4,11 @@ description: This document provides reference information for the ADConnectivity
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
 ms.topic: reference
-ms.collection: M365-identity-device-management 
+ms.collection: M365-identity-device-management
 ms.custom:
 ---
 # Microsoft Entra Connect:  ADConnectivityTools PowerShell Reference
@@ -898,7 +897,7 @@ Accept wildcard characters: False
 
 #### -LogFileLocation
 
-Specifies a the location of a log file that will contain the output of this function.
+Specifies the location of a log file that will contain the output of this function.
 
 ```yml
 Type: String

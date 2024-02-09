@@ -18,7 +18,7 @@ ms.reviewer: lhuangnorth
 
 Target resources (formerly Cloud apps, actions, and authentication context) are key signals in a Conditional Access policy. Conditional Access policies allow administrators to assign controls to specific applications, services, actions, or authentication context.
 
-- Administrators can choose from the list of applications or services that include built-in Microsoft applications and any [Microsoft Entra integrated applications](~/identity/enterprise-apps/what-is-application-management.md) including gallery, non-gallery, and applications published through [Application Proxy](~/identity/app-proxy/what-is-application-proxy.md).
+- Administrators can choose from the list of applications or services that include built-in Microsoft applications and any [Microsoft Entra integrated applications](~/identity/enterprise-apps/what-is-application-management.md) including gallery, non-gallery, and applications published through [Application Proxy](~/identity/app-proxy/overview-what-is-app-proxy.md).
 - Administrators might choose to define policy not based on a cloud application but on a [user action](#user-actions) like **Register security information** or **Register or join devices**, allowing Conditional Access to enforce controls around those actions.
 - Administrators can target [traffic forwarding profiles](#traffic-forwarding-profiles) from Global Secure Access for enhanced functionality.
 - Administrators can use [authentication context](#authentication-context) to provide an extra layer of security in applications.
@@ -136,7 +136,7 @@ We're continually adding more administrative portals to the list.
 
 Administrators can add any Microsoft Entra registered application to Conditional Access policies. These applications might include:
 
-- Applications published through [Microsoft Entra application proxy](~/identity/app-proxy/what-is-application-proxy.md)
+- Applications published through [Microsoft Entra application proxy](~/identity/app-proxy/overview-what-is-app-proxy.md)
 - [Applications added from the gallery](~/identity/enterprise-apps/add-application-portal.md)
 - [Custom applications not in the gallery](~/identity/enterprise-apps/view-applications-portal.md)
 - [Legacy applications published through app delivery controllers and networks](~/identity/enterprise-apps/secure-hybrid-access.md)

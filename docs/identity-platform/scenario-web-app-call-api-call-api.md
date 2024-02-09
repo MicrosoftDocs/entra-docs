@@ -65,7 +65,7 @@ public class IndexModel : PageModel
 }
 ```
 
-For a full sample, see [ASP.NET Core Web app that calls Microsoft Graph](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/2-WebApp-graph-user/2-1-Call-MSGraph/README.md)
+For a full sample, see [ASP.NET Core web app that calls Microsoft Graph](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/2-WebApp-graph-user/2-1-Call-MSGraph/README.md)
 
 #### Option 2: Call a downstream web API with the helper class
 
@@ -115,7 +115,7 @@ The `CallWebApiForUserAsync` also has strongly typed generic overrides that enab
     }
    ```
 
-   For a full sample, see [ASP.NET Core Web app that calls an API](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/4-WebApp-your-API/4-1-MyOrg)
+   For a full sample, see [ASP.NET Core web app that calls an API](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/4-WebApp-your-API/4-1-MyOrg)
 
 #### Option 3: Call a downstream web API without the helper class
 

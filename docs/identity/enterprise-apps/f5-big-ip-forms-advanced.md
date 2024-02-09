@@ -163,7 +163,7 @@ SAML SP settings define the SAML SP properties that the APM uses to overlay the 
 2. Select **Local SP Services**.
 3. Select **Create**.
 
-   ![Screenshot of the Create option on the the SAML Service Provider tab.](./media/f5-big-ip-forms-advanced/f5-forms-configuration.png)
+   ![Screenshot of the Create option on the SAML Service Provider tab.](./media/f5-big-ip-forms-advanced/f5-forms-configuration.png)
 
 4. On the **Create New SAML SP Service** pane, for **Name** and **Entity ID**, enter the defined name and entity ID.
 

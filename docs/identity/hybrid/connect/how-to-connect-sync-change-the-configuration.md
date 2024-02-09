@@ -6,7 +6,6 @@ author: billmath
 manager: amycolannino
 ms.assetid: 7b9df836-e8a5-4228-97da-2faec9238b31
 ms.service: active-directory
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 11/06/2023
@@ -196,7 +195,7 @@ By default, the UserType attribute is not enabled for synchronization because th
 
 - Microsoft Entra-only accepts two values for the UserType attribute: **Member** and **Guest**.
 - If the UserType attribute is not enabled for synchronization in Microsoft Entra Connect, Microsoft Entra users created through directory synchronization would have the UserType attribute set to **Member**.
-- Prior to version 1.5.30.0, Microsoft Entra ID did not permit the UserType attribute on existing Microsoft Entra users to be changed by Microsoft Entra Connect. In older versions, it could only be set during the creation of the Microsoft Entra users and [changed via PowerShell](/powershell/module/azuread/set-azureaduser).
+- Prior to version 1.5.30.0, Microsoft Entra ID did not permit the UserType attribute on existing Microsoft Entra users to be changed by Microsoft Entra Connect. In older versions, it could only be set during the creation of the Microsoft Entra users and [changed via PowerShell](/powershell/module/microsoft.graph.users/update-mguser).
 
 Before enabling synchronization of the UserType attribute, you must first decide how the attribute is derived from on-premises Active Directory. The following are the most common approaches:
 

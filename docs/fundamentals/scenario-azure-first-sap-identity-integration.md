@@ -1,18 +1,16 @@
 ---
 title: Scenario - Using Microsoft Entra ID to secure access to SAP platforms and applications
-description: A guide for architects and IT administrators on how to secure access to SAP platforms and applications 
+description: A guide for architects and IT administrators on how to secure access to SAP platforms and applications
 services: active-directory
 author: xstof
 manager: alberts
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 08/26/2021
 ms.author: christoc
-ms.reviewer: 
 ms.custom:
-ms.collection: 
+ms.collection:
 ---
 
 # Scenario - Using Microsoft Entra ID to secure access to SAP platforms and applications

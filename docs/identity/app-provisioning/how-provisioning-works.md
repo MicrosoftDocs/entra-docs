@@ -7,7 +7,6 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 09/15/2023
 ms.author: kenwith
 ms.reviewer: arvinh
@@ -31,7 +30,7 @@ The **Microsoft Entra provisioning service** provisions users to SaaS apps and o
 
 ## Provisioning using SCIM 2.0
 
-The Microsoft Entra provisioning service uses the [SCIM 2.0 protocol](https://techcommunity.microsoft.com/t5/Identity-Standards-Blog/bg-p/IdentityStandards) for automatic provisioning. The service connects to the SCIM endpoint for the application, and uses SCIM user object schema and REST APIs to automate the provisioning and deprovisioning of users and groups. A SCIM-based provisioning connector is provided for most applications in the Microsoft Entra gallery. Developers use the SCIM 2.0 user management API in Microsoft Entra ID to build endpoints for their apps that integrate with the provisioning service. For details, see [Build a SCIM endpoint and configure user provisioning](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md).
+The Microsoft Entra provisioning service uses the [SCIM 2.0 protocol](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/provisioning-with-scim-getting-started/ba-p/880010) for automatic provisioning. The service connects to the SCIM endpoint for the application, and uses SCIM user object schema and REST APIs to automate the provisioning and deprovisioning of users and groups. A SCIM-based provisioning connector is provided for most applications in the Microsoft Entra gallery. Developers use the SCIM 2.0 user management API in Microsoft Entra ID to build endpoints for their apps that integrate with the provisioning service. For details, see [Build a SCIM endpoint and configure user provisioning](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md).
 
 To request an automatic Microsoft Entra provisioning connector for an app that doesn't currently have one, see [Microsoft Entra Application Request](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md).
 
@@ -82,7 +81,7 @@ Follow these general guidelines when configuring SaaS apps for B2B (guest) users
 - In the user attributes, to mitigate any issues with mangled user profile disk (UPD) in guest users, always set the user identifier to **user.mail**.
 
 > [!NOTE]
-> The userPrincipalName for a B2B user represents the external user's email address alias@theirdomain as "alias_theirdomain#EXT#@yourdomain". When the userPrincipalName attribute is included in your attribute mappings as a source attribute, and a B2B user is being provisioned, the #EXT# and your domain is stripped from the userPrincipalName, so only their original alias@theirdomain is used for matching or provisioning. If you require the full user principal name including #EXT# and your domain to be present, replace userPrincipalName with originalUserPrincipalName as the source attribute. <br />
+> The userPrincipalName for a [B2B collaboration user](~/external-id/user-properties.md) represents the external user's email address alias@theirdomain as "alias_theirdomain#EXT#@yourdomain". When the userPrincipalName attribute is included in your attribute mappings as a source attribute, and a B2B user is being provisioned, the #EXT# and your domain is stripped from the userPrincipalName, so only their original alias@theirdomain is used for matching or provisioning. If you require the full user principal name including #EXT# and your domain to be present, replace userPrincipalName with originalUserPrincipalName as the source attribute. <br />
 userPrincipalName = alias@theirdomain<br />
 originalUserPrincipalName = alias_theirdomain#EXT#@yourdomain
 

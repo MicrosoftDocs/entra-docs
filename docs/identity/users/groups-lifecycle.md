@@ -2,19 +2,16 @@
 title: Set expiration for Microsoft 365 groups
 description: Learn how to set up expiration for Microsoft 365 groups in Microsoft Entra ID.
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
-editor: ''
 
 ms.service: active-directory
 ms.subservice: enterprise-users
-ms.workload: identity
 ms.topic: how-to
 ms.date: 11/14/2023
-ms.author: barclayn                   
+ms.author: barclayn
 ms.reviewer: jodah
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ms.collection: M365-identity-device-management
 ---
@@ -35,7 +32,7 @@ Currently, you can configure only one expiration policy for all Microsoft 365 gr
 > [!NOTE]
 > Configuring and using the expiration policy for Microsoft 365 groups requires you to possess but not necessarily assign Microsoft Entra ID P1 or P2 licenses for the members of all groups to which the expiration policy is applied.
 
-For information on how to download and install the Azure Active Directory (Azure AD) PowerShell cmdlets, see [Azure AD PowerShell for Graph 2.0.0.137](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.137).
+For information on how to download and install Microsoft Graph PowerShell cmdlets, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
 [!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
 
@@ -149,61 +146,65 @@ You can configure the retention policy in the Security & Compliance portal. Ther
 
 Here are examples of how you can use PowerShell cmdlets to configure the expiration settings for Microsoft 365 groups in your Microsoft Entra organization:
 
-1. Install the PowerShell v2.0 module and sign in at the PowerShell prompt.
+1. Install the Microsoft Graph PowerShell module and sign in at the PowerShell prompt.
 
    ``` PowerShell
-   Install-Module -Name AzureAD
-   Connect-AzureAD
+   Install-Module Microsoft.Graph -Scope CurrentUser
+   Connect-MgGraph -Scopes "Directory.ReadWrite.All"
    ```
 
-1. Configure the expiration settings. Use the `New-AzureADMSGroupLifecyclePolicy` cmdlet to set the lifetime for all Microsoft 365 groups in the Microsoft Entra organization to 365 days. Renewal notifications for Microsoft 365 groups without owners are sent to `emailaddress@contoso.com`.
+1. Configure the expiration settings. Use the [New-MgGroupLifecyclePolicy](/powershell/module/microsoft.graph.groups/new-mggrouplifecyclepolicy) cmdlet to set the lifetime for all Microsoft 365 groups in the Microsoft Entra organization to 365 days. Renewal notifications for Microsoft 365 groups without owners are sent to `emailaddress@contoso.com`.
   
    ``` PowerShell
-   New-AzureADMSGroupLifecyclePolicy -GroupLifetimeInDays 365 -ManagedGroupTypes All -AlternateNotificationEmails emailaddress@contoso.com
+   New-MgGroupLifecyclePolicy -AlternateNotificationEmails emailaddress@contoso.com `
+      -GroupLifetimeInDays 365 -ManagedGroupTypes All
    ```
 
-1. Retrieve the existing policy `Get-AzureADMSGroupLifecyclePolicy`. This cmdlet retrieves the current Microsoft 365 group expiration settings that were configured. In this example, you can see:
+1. Retrieve the existing policy by using [Get-MgGroupLifecyclePolicy](/powershell/module/microsoft.graph.groups/get-mggrouplifecyclepolicy). This cmdlet retrieves the current Microsoft 365 group expiration settings that were configured.
+  
+   ```powershell
+   Get-MgGroupLifecyclePolicy
+   ```
+
+   In this example, you can see:
 
    - The policy ID.
-   - The lifetime for all Microsoft 365 groups in the Microsoft Entra organization is set to 365 days.
    - Renewal notifications for Microsoft 365 groups without owners are sent to `emailaddress@contoso.com`.
-  
-   ```powershell
-   Get-AzureADMSGroupLifecyclePolicy
-  
-   ID                                    GroupLifetimeInDays ManagedGroupTypes AlternateNotificationEmails
-   --                                    ------------------- ----------------- ---------------------------
-   26fcc232-d1c3-4375-b68d-15c296f1f077  365                 All               emailaddress@contoso.com
+   - The lifetime for all Microsoft 365 groups in the Microsoft Entra organization is set to 365 days.
+
+   ```output
+   Id                                   AlternateNotificationEmails GroupLifetimeInDays ManagedGroupTypes
+   --                                   --------------------------- ------------------- -----------------
+   0d21d969-85ed-4c75-8675-eb1bc4899f4e emailaddress@contoso.com    365                 All
    ```
 
-1. Update the existing policy `Set-AzureADMSGroupLifecyclePolicy`. This cmdlet is used to update an existing policy. In the following example, the group lifetime in the existing policy is changed from 365 days to 180 days.
+1. Update the existing policy by using [Update-MgGroupLifecyclePolicy](/powershell/module/microsoft.graph.groups/update-mggrouplifecyclepolicy). This cmdlet is used to update an existing policy. In the following example, the group lifetime in the existing policy is changed from 365 days to 180 days.
   
    ```powershell
-   Set-AzureADMSGroupLifecyclePolicy -Id "26fcc232-d1c3-4375-b68d-15c296f1f077" -GroupLifetimeInDays 180 -AlternateNotificationEmails "emailaddress@contoso.com"
+   Update-MgGroupLifecyclePolicy -GroupLifecyclePolicyId "0d21d969-85ed-4c75-8675-eb1bc4899f4e" -GroupLifetimeInDays 180 -AlternateNotificationEmails "emailaddress@contoso.com"
    ```
   
-1. Add specific groups to the policy `Add-AzureADMSLifecyclePolicyGroup`. This cmdlet adds a group to the lifecycle policy. As an example:
+1. Add specific groups to the policy by using [Add-MgGroupToLifecyclePolicy](/powershell/module/microsoft.graph.groups/add-mggrouptolifecyclepolicy). This cmdlet adds a group to the lifecycle policy. As an example:
   
    ```powershell
-   Add-AzureADMSLifecyclePolicyGroup -Id "26fcc232-d1c3-4375-b68d-15c296f1f077" -groupId "cffd97bd-6b91-4c4e-b553-6918a320211c"
+   Add-MgGroupToLifecyclePolicy -GroupLifecyclePolicyId "0d21d969-85ed-4c75-8675-eb1bc4899f4e" -GroupId "cffd97bd-6b91-4c4e-b553-6918a320211c"
    ```
   
-1. Remove the existing policy `Remove-AzureADMSGroupLifecyclePolicy`. This cmdlet deletes the Microsoft 365 group expiration settings but requires the policy ID. This cmdlet disables expiration for Microsoft 365 groups.
+1. Remove the existing policy by using [Remove-MgGroupLifecyclePolicy](/powershell/module/microsoft.graph.groups/remove-mggrouplifecyclepolicy). This cmdlet deletes the Microsoft 365 group expiration settings but requires the policy ID. This cmdlet disables expiration for Microsoft 365 groups.
   
    ```powershell
-   Remove-AzureADMSGroupLifecyclePolicy -Id "26fcc232-d1c3-4375-b68d-15c296f1f077"
+   Remove-MgGroupLifecyclePolicy -GroupLifecyclePolicyId "0d21d969-85ed-4c75-8675-eb1bc4899f4e"
    ```
   
-You can use the following cmdlets to configure the policy in more detail. For more information, see [PowerShell documentation](/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true#groups).
+You can use the following cmdlets to configure the policy in more detail. For more information, see [Microsoft Graph PowerShell documentation](/powershell/microsoftgraph/).
 
-- `Get-AzureADMSGroupLifecyclePolicy`
-- `New-AzureADMSGroupLifecyclePolicy`
-- `Set-AzureADMSGroupLifecyclePolicy`
-- `Remove-AzureADMSGroupLifecyclePolicy`
-- `Add-AzureADMSLifecyclePolicyGroup`
-- `Remove-AzureADMSLifecyclePolicyGroup`
-- `Reset-AzureADMSLifeCycleGroup`
-- `Get-AzureADMSLifecyclePolicyGroup`
+- [Get-MgGroupLifecyclePolicy](/powershell/module/microsoft.graph.groups/get-mggrouplifecyclepolicy)
+- [New-MgGroupLifecyclePolicy](/powershell/module/microsoft.graph.groups/new-mggrouplifecyclepolicy)
+- [Remove-MgGroupLifecyclePolicy](/powershell/module/microsoft.graph.groups/remove-mggrouplifecyclepolicy)
+- [Update-MgGroupLifecyclePolicy](/powershell/module/microsoft.graph.groups/update-mggrouplifecyclepolicy)
+- [Add-MgGroupToLifecyclePolicy](/powershell/module/microsoft.graph.groups/add-mggrouptolifecyclepolicy)
+- [Remove-MgGroupFromLifecyclePolicy](/powershell/module/microsoft.graph.groups/remove-mggroupfromlifecyclepolicy)
+- [Invoke-MgRenewGroup](/powershell/module/microsoft.graph.groups/invoke-mgrenewgroup)
 
 ## Next steps
 

@@ -2,13 +2,11 @@
 title: Add and verify custom domain names
 description: Management concepts and how-tos for managing a domain name in Microsoft Entra ID
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
 
 ms.service: active-directory
 ms.subservice: enterprise-users
-ms.workload: identity
 ms.topic: how-to
 ms.date: 03/31/2023
 ms.author: barclayn
@@ -88,6 +86,7 @@ The following actions are performed as part of the **ForceDelete** operation:
 * Renames the UPN, EmailAddress, and ProxyAddress of users with references to the custom domain name to the initial default domain name.
 * Renames the EmailAddress of groups with references to the custom domain name to the initial default domain name.
 * Renames the identifierUris of applications with references to the custom domain name to the initial default domain name.
+* Disables user accounts impacted by the ForceDelete option in the Azure/Entra Portal and optionally when using the Graph API.
 
 An error is returned when:
 

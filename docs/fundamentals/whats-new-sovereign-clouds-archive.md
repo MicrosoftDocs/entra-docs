@@ -6,7 +6,6 @@ author: owinfreyATL
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: overview
 ms.date: 05/31/2023
 ms.author: owinfrey

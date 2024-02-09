@@ -11,7 +11,10 @@ ms.date: 10/03/2023
 ms.author: barclayn
 ---
 
-# Setting up place of work verification on LinkedIn
+# Setting up place of work verification on LinkedIn (Preview)
+
+> [!IMPORTANT]
+> Place of work verification on LinkedIn is in public preview. Currently, customers with 10K seats of more are prioritized.
 
 If your organization wants its employees to get their place of work verified on LinkedIn, you need to follow these few steps:
 

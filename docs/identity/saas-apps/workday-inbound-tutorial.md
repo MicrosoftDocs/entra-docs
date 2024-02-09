@@ -3,12 +3,11 @@ title: 'Tutorial: Configure Workday for automatic user provisioning with on-prem
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Workday.
 
 author: cmmdesai
-manager: CelesteDG
+manager: amycolannino
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.topic: tutorial
-
-ms.date: 11/21/2022
+ms.date: 01/25/2024
 ms.author: chmutali
 ---
 # Tutorial: Configure Workday for automatic user provisioning
@@ -859,7 +858,7 @@ When you click on any of the audit log records, the **Activity Details** page op
 
   To find Provisioning Agent log records corresponding to this AD export operation, open the Windows Event Viewer logs and use the **Find…** menu option to find log entries containing the Matching ID/Joining Property attribute value (in this case *21023*).  
 
-  Look for a HTTP POST record corresponding to the timestamp of the export operation with *Event ID = 2*. This record will contain the attribute values sent by the provisioning service to the provisioning agent.
+  Look for an HTTP POST record corresponding to the timestamp of the export operation with *Event ID = 2*. This record will contain the attribute values sent by the provisioning service to the provisioning agent.
 
   :::image type="content" source="media/workday-inbound-tutorial/wd_event_viewer_05.png" alt-text="Screenshot that shows the 'HTTP POST' record in the 'Provisioning Agent' log." lightbox="media/workday-inbound-tutorial/wd_event_viewer_05.png":::
 

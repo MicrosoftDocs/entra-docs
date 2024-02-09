@@ -6,9 +6,8 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 01/22/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ms.custom: has-adal-ref
@@ -38,7 +37,7 @@ Since Microsoft Entra application proxy authentication and authorization are bui
 To follow this walkthrough, you need:
 
 - Admin access to an Azure directory, with an account that can create and register apps
-- The sample web API and native client apps from [https://github.com/jeevanbisht/API-NativeApp-ADAL-SampleApp](https://github.com/jeevanbisht/API-NativeApp-ADAL-SampleApp)
+- The sample web API and native client apps from the [Microsoft Authentication Library (MSAL)](~/identity-platform/msal-overview.md)
 
 ## Publish the API through Application Proxy
 
@@ -66,7 +65,7 @@ To publish the SecretAPI web API through Application Proxy:
 
    1. Make sure **Pre-Authentication** is set to **Microsoft Entra ID**.
 
-   1. Select **Add** at the top of the page, and wait for the app to be created.
+   1. Select **Create**, and wait for the app to be created.
 
    ![Add API app](./media/application-proxy-secure-api-access/3-add-api-app.png)
 
@@ -93,7 +92,7 @@ You've published your web API through Microsoft Entra application proxy. Now, ad
 1. Back on the **Add Assignment** page, select **Assign**.
 
 > [!NOTE]
-> APIs that use integrated Windows authentication might require [additional steps](./application-proxy-configure-single-sign-on-with-kcd.md).
+> APIs that use integrated Windows authentication might require [additional steps](./how-to-configure-sso-with-kcd.md).
 
 ## Register the native app and grant access to the API
 
@@ -136,53 +135,13 @@ You've now registered the AppProxyNativeAppSample app in Microsoft Entra ID. To 
 
 ## Configure the native app code
 
-The last step is to configure the native app. The code snippet that's used in the following steps is based on [Add the Microsoft Authentication Library to your code (.NET C# sample)](application-proxy-configure-native-client-application.md#step-4-add-the-microsoft-authentication-library-to-your-code-net-c-sample). The code is customized for this example. The code must be added to the *Form1.cs* file in the NativeClient sample app where it will cause the [MSAL library](~/identity-platform/reference-v2-libraries.md) to acquire the token for requesting the API call and attach it as bearer to the header in the request.
+The last step is to configure the native app. The code must be added to the *Form1.cs* file in the NativeClient sample app where it will cause the [MSAL library](~/identity-platform/reference-v2-libraries.md) to acquire the token for requesting the API call and attach it as bearer to the header in the request. For more information about MSAL, see [Add MSAL to your project](~/identity-platform/tutorial-v2-windows-desktop.md#add-msal-to-your-project) and [Add the reference to MSAL](~/identity-platform/tutorial-v2-windows-desktop.md#add-the-code-to-initialize-msal).
 
-> [!NOTE]
-> The sample app uses Azure Active Directory Authentication Library (ADAL). Read how to [add MSAL to your project](~/identity-platform/tutorial-v2-windows-desktop.md#add-msal-to-your-project). Remember to [add the reference to MSAL](~/identity-platform/tutorial-v2-windows-desktop.md#add-the-code-to-initialize-msal) to the class and remove the ADAL reference.
+1. In *Form1.cs*, add the namespace `using Microsoft.Identity.Client;` to the code. 
 
-To configure the native app code:
+1. Edit the native application code in the authentication context of the Microsoft Authentication Library (MSAL) to include this [customized code sample](application-proxy-configure-native-client-application.md#step-4-add-the-microsoft-authentication-library-to-your-code-net-c-sample). 
 
-1. In *Form1.cs*, add the namespace `using Microsoft.Identity.Client;` to the code.
-1. Remove the namespace `using Microsoft.IdentityModel.Clients.ActiveDirectory;` from the code.
-1. Remove lines 26 and 30 because they are no longer needed.
-1. Replace the contents of the `GetTodoList()` method with the following code snippet:
-
-   ```csharp
-   // Acquire Access Token from Azure AD for Proxy Application
-   var clientApp = PublicClientApplicationBuilder
-       .Create(clientId)
-       .WithDefaultRedirectUri() // Will automatically use the default URI for native app
-       .WithAuthority(authority)
-       .Build();
-   var accounts = await clientApp.GetAccountsAsync();
-   var account = accounts.FirstOrDefault();
-
-   var scopes = new string[] { todoListResourceId + "/user_impersonation" };
-
-   AuthenticationResult authResult;
-   try
-   {
-       authResult = await clientApp.AcquireTokenSilent(scopes, account).ExecuteAsync();
-   }
-   catch (MsalUiRequiredException ex)
-   {
-       authResult = await clientApp.AcquireTokenInteractive(scopes).ExecuteAsync();
-   }
-
-   if (authResult != null)
-   {
-       // Use the Access Token to access the Proxy Application
-       var httpClient = new HttpClient();
-       httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
-       // Call the To Do list service
-       var response = await httpClient.GetAsync(todoListBaseAddress + "/api/values/4");
-       var responseString = await response.Content.ReadAsStringAsync();
-       MessageBox.Show(responseString);
-   }
-   ```
-
-To configure the native app to connect to Microsoft Entra ID and call the API App Proxy, update the placeholder values in the *App.config* file of the NativeClient sample app with values from Microsoft Entra ID:
+Next, configure the native app to connect to Microsoft Entra ID and call the API App Proxy, then update the placeholder values in the *App.config* file of the NativeClient sample app with values from Microsoft Entra ID.
 
 1. Paste the **Directory (tenant) ID** in the `<add key="ida:Tenant" value="" />` field. You can find and copy this value (a GUID) from the **Overview** page of either of your apps.
 

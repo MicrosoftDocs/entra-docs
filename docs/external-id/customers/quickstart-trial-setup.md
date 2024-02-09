@@ -8,7 +8,7 @@ ms.service: active-directory
  
 ms.subservice: ciam
 ms.topic: quickstart
-ms.date: 12/14/2023
+ms.date: 02/09/2024
 ms.author: cmulligan
 ms.custom: it-pro
 

@@ -6,7 +6,6 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.topic: reference
-ms.workload: identity
 ms.date: 09/14/2023
 ms.subservice: app-proxy
 ms.author: kenwith

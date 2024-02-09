@@ -8,11 +8,9 @@ manager: amycolannino
 ms.assetid: b9af1792-0b7f-4f3e-827a-9426cdb33ba6
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/15/2023
 ms.author: justinha
-
 ---
 # Configure email notifications for issues in Microsoft Entra Domain Services
 

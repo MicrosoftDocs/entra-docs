@@ -2,15 +2,12 @@
 title: Approve or deny requests for Microsoft Entra roles in PIM
 description: Learn how to approve or deny requests for Microsoft Entra roles in Privileged Identity Management (PIM).
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
-editor: ''
 ms.service: active-directory
 ms.subservice: pim
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 09/12/2023
 ms.author: barclayn
 ms.custom: pim

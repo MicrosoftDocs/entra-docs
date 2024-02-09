@@ -28,7 +28,7 @@ If your on-premises app uses SAML-based authentication, you can easily make thes
 You must do the following:
 
 - Enable Application Proxy and install a connector. For instructions, see [Publish applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
-- Publish the on-premises SAML-based application through Microsoft Entra application proxy by following the instructions in [SAML single sign-on for on-premises applications with Application Proxy](~/identity/app-proxy/application-proxy-configure-single-sign-on-on-premises-apps.md).
+- Publish the on-premises SAML-based application through Microsoft Entra application proxy by following the instructions in [SAML single sign-on for on-premises applications with Application Proxy](~/identity/app-proxy/conceptual-sso-apps.md).
 - Assign Microsoft Entra B2B Users to the SAML Application.
 
 When you've completed the steps above, your app should be up and running. To test Microsoft Entra B2B access:
@@ -40,7 +40,7 @@ When you've completed the steps above, your app should be up and running. To tes
 To provide B2B users access to on-premises applications that are secured with integrated Windows authentication and Kerberos constrained delegation, you need the following components:
 
 - **Authentication through Microsoft Entra application proxy**. B2B users must be able to authenticate to the on-premises application. To do this, you must publish the on-premises app through the Microsoft Entra application proxy. For more information, see [Tutorial: Add an on-premises application for remote access through Application Proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
-- **Authorization via a B2B user object in the on-premises directory**. The application must be able to perform user access checks, and grant access to the correct resources. IWA and KCD require a user object in the on-premises Windows Server Active Directory to complete this authorization. As described in [How single sign-on with KCD works](~/identity/app-proxy/application-proxy-configure-single-sign-on-with-kcd.md#how-single-sign-on-with-kcd-works), Application Proxy needs this user object to impersonate the user and get a Kerberos token to the app. 
+- **Authorization via a B2B user object in the on-premises directory**. The application must be able to perform user access checks, and grant access to the correct resources. IWA and KCD require a user object in the on-premises Windows Server Active Directory to complete this authorization. As described in [How single sign-on with KCD works](~/identity/app-proxy/how-to-configure-sso-with-kcd.md#how-single-sign-on-with-kcd-works), Application Proxy needs this user object to impersonate the user and get a Kerberos token to the app. 
 
    > [!NOTE]
    > When you configure the Microsoft Entra application proxy, ensure that **Delegated Logon Identity** is set to **User principal name** (default) in the single sign-on configuration for integrated Windows authentication (IWA).

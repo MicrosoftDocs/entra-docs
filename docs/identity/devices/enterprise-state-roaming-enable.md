@@ -2,22 +2,20 @@
 title: Enable Enterprise State Roaming in Microsoft Entra ID
 description: Frequently asked questions about Enterprise State Roaming settings in Windows devices.
 
-services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 11/17/2022
+ms.date: 01/04/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: guovivian
 ms.custom: references_regions
-ms.collection: M365-identity-device-management
 ---
 # Enable Enterprise State Roaming in Microsoft Entra ID
 
-Enterprise State Roaming provides users with a unified experience across their Windows devices and reduces the time needed for configuring a new device. Enterprise State Roaming operates similar to the standard [consumer settings sync](https://go.microsoft.com/fwlink/?linkid=2015135) that was first introduced in Windows 8. Enterprise State Roaming is available to any organization with a Microsoft Entra ID P1 or P2 or Enterprise Mobility + Security (EMS) license. For more information on how to get a Microsoft Entra subscription, see the [Microsoft Entra product page](https://azure.microsoft.com/services/active-directory). 
+Enterprise State Roaming provides users with a unified experience across their Windows devices and reduces the time needed for configuring a new device. Enterprise State Roaming operates similar to the standard [consumer settings sync](https://go.microsoft.com/fwlink/?linkid=2015135) that was first introduced in Windows 8. Enterprise State Roaming is available to any organization with a Microsoft Entra ID P1 or P2 or Enterprise Mobility + Security (EMS) license. For more information on how to get a Microsoft Entra subscription, see the [Microsoft Entra product page](https://azure.microsoft.com/services/active-directory).
 
 > [!NOTE]
 > This article applies to the Microsoft Edge Legacy HTML-based browser launched with Windows 10 in July 2015. The article does not apply to the new Microsoft Edge Chromium-based browser released on January 15, 2020. For more information on the Sync behavior for the new Microsoft Edge, see the article [Microsoft Edge Sync](/deployedge/microsoft-edge-enterprise-sync).
@@ -28,7 +26,7 @@ Enterprise State Roaming provides users with a unified experience across their W
 1. Browse to **Identity** > **Devices** > **Overview** > **Enterprise State Roaming**.
 1. Select **Users may sync settings and app data across devices**. For more information, see [how to configure device settings](./manage-device-identities.md).
 
-For a Windows 10 or newer device to use the Enterprise State Roaming service, the device must authenticate using a Microsoft Entra identity. For devices that are joined to Microsoft Entra ID, the user’s primary sign-in identity is their Microsoft Entra identity, so no other configuration is required. For devices that use on-premises Active Directory, the IT admin must [Configure Microsoft Entra hybrid joined devices](./hybrid-join-plan.md). 
+For a Windows 10 or newer device to use the Enterprise State Roaming service, the device must authenticate using a Microsoft Entra identity. For devices that are joined to Microsoft Entra ID, the user’s primary sign-in identity is their Microsoft Entra identity, so no other configuration is required. For devices that use on-premises Active Directory, the IT admin must [Configure Microsoft Entra hybrid joined devices](./hybrid-join-plan.md).
 
 ## Data storage
 
@@ -55,23 +53,23 @@ Follow these steps to view a per-user device sync status report.
 
 ## Data retention
 
-Data synced to the Microsoft cloud using Enterprise State Roaming is retained until it's manually deleted or until the data is determined to be stale. 
+Data synced to the Microsoft cloud using Enterprise State Roaming is retained until manually deleted or the data is determined to be stale.
 
 ### Explicit deletion
 
 Explicit deletion is when an administrator deletes a user, directory, or requests explicitly that data is to be deleted.
 
-* **User deletion**: When a user is deleted in Microsoft Entra ID, the user account roaming data is deleted after 90 to 180 days. 
-* **Directory deletion**: Deleting an entire directory in Microsoft Entra ID is an immediate operation. All the settings data associated with that directory is deleted after 90 to 180 days. 
-* **On request deletion**: If the Microsoft Entra admin wants to manually delete a specific user’s data or settings data, the admin can file a ticket with [Azure support](https://azure.microsoft.com/support/). 
+* **User deletion**: When a user is deleted in Microsoft Entra ID, the user account roaming data is deleted after 90 to 180 days.
+* **Directory deletion**: Deleting an entire directory in Microsoft Entra ID is an immediate operation. All the settings data associated with that directory is deleted after 90 to 180 days.
+* **On request deletion**: If the Microsoft Entra admin wants to manually delete a specific user’s data or settings data, the admin can file a ticket with [Azure support](https://azure.microsoft.com/support/).
 
 ### Stale data deletion
 
-Data that hasn't been accessed for one year (“the retention period”) will be treated as stale and may be deleted from the Microsoft cloud. The retention period is subject to change but won't be less than 90 days. The stale data may be a specific set of Windows/application settings or all settings for a user. For example:
+Data that isn't accessed for one year (“the retention period”) is treated as stale and might be deleted from the Microsoft cloud. The retention period is subject to change but isn't less than 90 days. The stale data might be a specific set of Windows/application settings or all settings for a user. For example:
 
-* If no devices access a particular settings collection like language, then that collection becomes stale after the retention period and may be deleted. 
-* If a user has turned off settings sync on all their devices, then none of the settings data will be accessed. All the settings data for that user will become stale and may be deleted after the retention period. 
-* If the Microsoft Entra directory admin turns off Enterprise State Roaming for the entire directory, then all users in that directory will stop syncing settings. All settings data for all users will become stale and may be deleted after the retention period. 
+* If no devices access a particular settings collection like language, then that collection becomes stale after the retention period and might be deleted.
+* If a user turned off settings sync on all their devices, then none of the settings data is accessed. All the settings data for that user will become stale and might be deleted after the retention period.
+* If the Microsoft Entra directory admin turns off Enterprise State Roaming for the entire directory, then all users in that directory stop syncing settings. All settings data for all users will become stale and might be deleted after the retention period.
 
 ### Deleted data recovery
 

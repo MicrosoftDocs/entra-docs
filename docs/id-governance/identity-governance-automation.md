@@ -2,19 +2,15 @@
 title: Automate Microsoft Entra ID Governance tasks with Azure Automation
 description: Learn how to write PowerShell scripts in Azure Automation to interact with Microsoft Entra entitlement management and other features.
 services: active-directory
-documentationCenter: ''
 author: owinfreyATL
 manager: amycolannino
-editor: 
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
+
 ms.topic: how-to
 ms.subservice: compliance
 ms.date: 9/20/2022
 ms.author: owinfrey
-ms.reviewer: 
 ms.collection: M365-identity-device-management
 ms.custom:
 ---
@@ -75,7 +71,7 @@ Your runbook in Azure Automation retrieves the private key from the `.pfx` file,
 
 ## Add modules for Microsoft Graph to your Azure Automation account
 
-By default, Azure Automation doesn't have any PowerShell modules preloaded for Microsoft Graph.  You'll need to add **Microsoft.Graph.Authentication**, and then additional modules, from the gallery to your Automation account.  Note that you'll need to choose whether to use the beta or v1.0 APIs through those modules, as you can't mix both in a single runbook.
+By default, Azure Automation doesn't have any PowerShell modules preloaded for Microsoft Graph.  You'll need to add **Microsoft.Graph.Authentication**, and then additional modules, from the gallery to your Automation account.
 
 1. In the Azure portal for the Azure Automation account, select **Modules** and then **Browse gallery**.
 

@@ -8,11 +8,9 @@ manager: amycolannino
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/15/2023
 ms.author: justinha
-
 ---
 # Deploy Microsoft Entra application proxy for secure access to internal applications in a Microsoft Entra Domain Services managed domain
 

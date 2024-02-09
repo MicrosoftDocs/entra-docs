@@ -4,7 +4,7 @@ description: The types of apps and scenarios supported by the Microsoft identity
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: fasttrack-edit, devx-track-js
+ms.custom: fasttrack-edit
 ms.date: 11/17/2023
 ms.reviewer: saeeda, jmprieur
 ms.service: active-directory
@@ -124,7 +124,7 @@ In this flow, the app receives an authorization code from the Microsoft identity
 
 ## Server, daemons and scripts
 
-Apps that have long-running processes or that operate without interaction with a user also need a way to access secured resources, such as web APIs. These apps can authenticate and get tokens by using the app's identity, rather than a user's delegated identity, with the OAuth 2.0 client credentials flow. You can prove the app's identity using a client secret or certificate. For more info, see [.NET Core daemon console application using Microsoft identity platform](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2).
+Apps that have long-running processes or that operate without interaction with a user also need a way to access secured resources, such as web APIs. These apps can authenticate and get tokens by using the app's identity, rather than a user's delegated identity, with the OAuth 2.0 client credentials flow. You can prove the app's identity using a client secret or certificate. For more info, see [.NET daemon console application using Microsoft identity platform](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2).
 
 In this flow, the app interacts directly with the `/token` endpoint to obtain access:
 

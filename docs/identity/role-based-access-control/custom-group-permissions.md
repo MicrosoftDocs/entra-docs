@@ -5,12 +5,10 @@ services: active-directory
 author: rolyon
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: roles
 ms.topic: reference
 ms.date: 05/24/2022
 ms.author: rolyon
-ms.reviewer: 
 ms.custom: it-pro
 ---
 

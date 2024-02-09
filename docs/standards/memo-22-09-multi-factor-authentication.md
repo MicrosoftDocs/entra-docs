@@ -1,10 +1,9 @@
 ---
 title: Memo 22-09 multifactor authentication requirements overview
 description: Get guidance on meeting multifactor authentication requirements outlined in the Office of Management and Budget memorandum 22-09.
-services: active-directory 
+services: active-directory
 ms.service: active-directory
 ms.subservice: standards
-ms.workload: identity
 ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh

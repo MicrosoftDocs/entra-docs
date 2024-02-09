@@ -5,10 +5,8 @@ ms.date: 09/15/2023
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.workload: identity
 ms.author: kenwith
 author: kenwith
-manager: 
 ---
 
 # Azure Active Directory application provisioning: What's new

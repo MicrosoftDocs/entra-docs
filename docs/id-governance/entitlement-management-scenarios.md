@@ -2,12 +2,10 @@
 title: Common scenarios in entitlement management
 description: Learn the high-level steps you should follow for common scenarios in Microsoft Entra entitlement management.
 services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: markwahl-msft
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: compliance
@@ -15,10 +13,7 @@ ms.date: 05/31/2023
 ms.author: owinfrey
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an administrator, I want the high-level steps that I should follow so that I can quickly start using entitlement management.
-
 ---
 # Common scenarios in entitlement management
 
@@ -169,7 +164,7 @@ There are several ways that you can configure entitlement management for your or
 
 ## Programmatic administration
 
-You can also manage access packages, catalogs, policies, requests and assignments using Microsoft Graph.  A user in an appropriate role with an application that has the delegated `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can call the [entitlement management API](/graph/tutorial-access-package-api).  An application with those application permissions can also use many of those API functions, with the exception of managing resources in catalogs and access packages. And an application that only needs to operate within specific catalogs can be added to the **Catalog owner** or **Catalog reader** roles of a catalog to be authorized to update or read within that catalog.
+You can also manage access packages, catalogs, policies, requests and assignments using Microsoft Graph.  A user in an appropriate role with an application that has the delegated `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can call the [entitlement management API](/graph/api/resources/entitlementmanagement-overview?view=graph-rest-1.0). For more information, see the [Tutorial: manage access to resources - Microsoft Graph](/graph/tutorial-access-package-api?toc=/azure/active-directory/governance/toc.json&bc=/azure/active-directory/governance/breadcrumb/toc.json).  An application with the `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` application permissions can also use many of those API functions, with the exception of managing resources in catalogs and access packages. And an application that only needs to operate within specific catalogs can be added to the **Catalog owner** or **Catalog reader** roles of a catalog to be authorized to update or read within that catalog.
 
 ## Next steps
 

@@ -2,12 +2,10 @@
 title: Delegate access governance to catalog creators in entitlement management
 description: Learn how to delegate access governance from IT administrators to catalog creators and project managers so that they can manage access themselves.
 services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: markwahl-msft
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: compliance
@@ -15,10 +13,7 @@ ms.date: 05/31/2023
 ms.author: owinfrey
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an administrator, I want to delegate access governance from IT administrators to department managers and project managers so that they can manage access themselves.
-
 ---
 
 # Delegate access governance to catalog creators in entitlement management
@@ -78,7 +73,7 @@ You can also view and update catalog creators and entitlement management catalog
 To retrieve a list of the users and groups assigned to the catalog creators role, the role with definition ID `ba92d953-d8e0-4e39-a797-0cbedb0a89e8`, use the Graph query
 
 ```http
-GET https://graph.microsoft.com/beta/roleManagement/entitlementManagement/roleAssignments?$filter=roleDefinitionId eq 'ba92d953-d8e0-4e39-a797-0cbedb0a89e8'&$expand=principal
+GET https://graph.microsoft.com/v1.0/roleManagement/entitlementManagement/roleAssignments?$filter=roleDefinitionId eq 'ba92d953-d8e0-4e39-a797-0cbedb0a89e8'&$expand=principal
 ```
 
 

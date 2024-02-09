@@ -136,10 +136,7 @@ If you have already downloaded the provisioning agent and configured it for anot
      
  8. Leave the portal and open the provisioning agent installer, agree to the terms of service, and select **next**.
  9. Open the provisioning agent wizard.
- 10. In the **Select Extension** step, select **On-premises application provisioning** and then select **Next**.
-
- :::image type="content" source="media/app-provisioning-sql/sync-agent-select-on-premises.png" alt-text="Screenshot that shows how to select on-premises provisioning." lightbox="media/app-provisioning-sql/sync-agent-select-on-premises.png":::
-    
+ 10. In the **Select Extension** step, select **On-premises application provisioning** and then select **Next**.   
  11. The provisioning agent will use the operating system's web browser to display a popup window for you to authenticate to Microsoft Entra ID, and potentially also your organization's identity provider.  If you are using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
  12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have the Hybrid Identity Administrator or Global Administrator role.
  13. Select **Confirm** to confirm the setting. Once installation is successful, you can select **Exit**, and also close the Provisioning Agent Package installer.
@@ -339,7 +336,6 @@ Follow these steps to confirm that the connector host has started and has read a
      >[!NOTE]
      >If you just assigned the agent to the application, please wait 10 minutes for the registration to complete. The connectivity test won't work until the registration completes. Forcing the agent registration to complete by restarting the provisioning agent on your server can speed up the registration process. Go to your server, search for **services** in the Windows search bar, identify the **Microsoft Entra Connect Provisioning Agent** service, right-click the service, and restart.
  4. Select **Test Connection**, and wait one minute.
-     [![Screenshot that shows assigning an agent.](.\media\app-provisioning-ldap\test-1.png)](.\media\app-provisioning-ldap\test-1.png#lightbox)
  5. After the connection test is successful and indicates that the supplied credentials are authorized to enable provisioning, select **Save**.</br>
      [![Screenshot that shows testing an agent.](.\media\app-provisioning-sql\configure-9.png)](.\media\app-provisioning-sql\configure-9.png#lightbox)
 
@@ -504,7 +500,7 @@ Now that your attributes are mapped and an initial user is assigned, you can tes
  4. Select **Provision on demand**.
  5. Search for one of your test users, and select **Provision**.
  [![Screenshot that shows testing on-demand provisioning.](.\media\app-provisioning-ldap\test-2.png)](.\media\app-provisioning-ldap\test-2.png#lightbox)</br>
- 6. After several seconds, then the message **Successfully created user in target system** will appear, with a list of the user attributes.
+ 6. After several seconds, then the message **Successfully created user in target system** will appear, with a list of the user attributes.  If an error appears instead, see [troubleshooting provisioning errors](#troubleshooting-provisioning-errors).
 
 ## Start provisioning users
  
@@ -524,6 +520,8 @@ If an error is shown, then select **View provisioning logs**.  Look in the log f
 If the error message is **Failed to create User**, then check the attributes that are shown against the requirements of the directory schema.
 
 For more information, change to the **Troubleshooting & Recommendations** tab.
+
+If the troubleshooting error message includes that an objectClass value is `invalid per syntax`, then ensure that the provisioning attribute mapping to the `objectClass` attribute includes only names of object classes recognized by the directory server.
 
 For other errors, see [troubleshooting on-premises application provisioning](~/identity/app-provisioning/on-premises-ecma-troubleshoot.md).
 

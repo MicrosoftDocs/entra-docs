@@ -90,6 +90,8 @@ Microsoft Entra ID limits the number of object IDs that it includes in the group
 ```
 
 Use the `BulkCreateGroups.ps1` provided in the [App Creation Scripts](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/5-WebApp-AuthZ/5-2-Groups/AppCreationScripts) folder to help test overage scenarios.
+> [!Note]
+> The URL returned will be an AAD Graph URL (i.e., graph.windows.net). Instead of relying on this URL, services should instead use the `idtyp` optional claim (which identifies whether the token is an app or app+user token) to construct a Microsoft Graph URL for querying the full list of groups. 
 
 ### v1.0 basic claims
 

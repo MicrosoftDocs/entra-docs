@@ -19,6 +19,10 @@ ms.author: barclayn
   
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
 
+## January 2024
+
+- [FaceCheck](using-facecheck.md) is now in public preview. It allows enterprises to perform high-assurance verifications by performing facial matching between a user’s real-time selfie and a photo in the Verified ID credential. FaceCheck is offered free of cost during the Public Preview period and can be leveraged by any Verified ID project. Later in the year we will announce billing models.
+
 ## December 2023
 
 - [Request Service API](issuance-request-api.md#issuance-request-payload) now supports the issuing application to set the expiry date of the credential during and issuance request when the attestation is using the [idTokenHint flow](how-to-use-quickstart.md).
@@ -32,7 +36,7 @@ This article lists the latest features, improvements, and changes in the Microso
 
 - [Quick setup](verifiable-credentials-configure-tenant-quick.md) introduced as preview which enables an admin to onboard a Microsoft Entra tenant with just one click of a button.
 - [MyAccount available now to simplify issuance of Workplace Credentials](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials)
-- [Manual setup](verifiable-credentials-configure-tenant.md) still available as an option to `Quick setup`.
+- [Advanced setup](verifiable-credentials-configure-tenant.md) still available as an option to `Quick setup`.
 
 ## September 2023
 

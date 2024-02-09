@@ -2,13 +2,10 @@
 title: User management enhancements
 description: Describes how Microsoft Entra ID enables user search, filtering, and more information about your users.
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
-editor: ''
 ms.service: active-directory
 ms.subservice: enterprise-users
-ms.workload: identity
 ms.topic: how-to
 ms.date: 11/21/2023
 ms.author: barclayn

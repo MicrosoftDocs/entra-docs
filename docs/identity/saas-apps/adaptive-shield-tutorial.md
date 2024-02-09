@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 01/12/2024
 ms.author: jeedes
 
 ---
@@ -81,26 +81,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier (Entity ID)** text box, type one of the following URLs:
+    a. In the **Identifier (Entity ID)** text box, type the URL: `https://dashboard.adaptive-shield.com/api/sso/saml`
 
-    | **Environment** | **URL** |
-    |---------|--------|
-    | **Sandbox** |`https://staging-dashboard.adaptive-shield.com/api/sso/saml` |
-    | **Production** |`https://dashboard.adaptive-shield.com/api/sso/saml` |
-
-	b. In the **Reply URL** text box, type one of the following URLs:
-
-    | **Environment** | **URL** |
-    |---------|--------|
-    | **Sandbox** | `https://staging-dashboard.adaptive-shield.com/api/sso/saml` |
-    | **Production** | `https://dashboard.adaptive-shield.com/api/sso/saml` |
+	b. In the **Reply URL** text box, type the URL: `https://dashboard.adaptive-shield.com/api/sso/saml`
     
-    c. In the **Sign on URL** text box, type one of the following URLs:
-
-    | **Environment** | **URL** |
-    |---------|--------|
-    | **Sandbox** | `https://staging-dashboard.adaptive-shield.com` |
-    | **Production** |`https://dashboard.adaptive-shield.com` |
+    c. In the **Sign on URL** text box, type the URL:   `https://dashboard.adaptive-shield.com`
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 

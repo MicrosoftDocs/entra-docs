@@ -2,13 +2,11 @@
 title: Search and filter groups members and owners (preview)
 description: Search and filter groups members and owners in Microsoft Entra.
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
 
 ms.service: active-directory
 ms.subservice: enterprise-users
-ms.workload: identity
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.author: barclayn

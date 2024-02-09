@@ -2,20 +2,15 @@
 title: Tutorial - Onboard external users to Microsoft Entra ID through an approval process
 description: Step-by-step tutorial for how to create an access package for external users requiring approvals in entitlement management.
 services: active-directory
-documentationCenter: ''
 author: Sammak
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
 ms.collection: M365-identity-device-management
-
-
 #Customer intent: As a IT admin, I want step-by-step instructions for creating an access package for managing external users through approvals.
-
 ---
 # Tutorial - Onboard external users to Microsoft Entra ID through an approval process
 

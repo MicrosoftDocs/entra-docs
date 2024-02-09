@@ -40,7 +40,8 @@ The scenario outlined in this tutorial assumes that you already have the followi
 * Determine what data to [map between Microsoft Entra ID and Personify Inc](~/identity/app-provisioning/customize-application-attributes.md).
 
 ## Step 2: Configure Personify Inc to support provisioning with Microsoft Entra ID
-Contact Personify Inc support to configure Personify Inc to support provisioning with Microsoft Entra ID.
+
+Visit [Personify Inc support](https://support.personifyinc.com/s/article/tutorial-azure-active-directory-single-sign-on-sso-integration-with-personify-inc?language=en_US#list-tenant-urls) to configure Personify Inc to support provisioning with Microsoft Entra ID
 
 ## Step 3: Add Personify Inc from the Microsoft Entra application gallery
 
@@ -80,9 +81,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, enter the **Tenant Url** and then click on Authorize, make sure that you enter your Personify Inc account's Admin credentials. Click **Test Connection** to ensure Microsoft Entra ID can connect to Personify Inc. If the connection fails, ensure your Personify Inc account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Personify Inc Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Personify Inc. If the connection fails, ensure your Personify Inc account has Admin permissions and try again.
 
- 	![Screenshot of Token.](media/Personify Inc-provisioning-tutorial/authorize.png)
+ 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
@@ -100,10 +101,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |active|Boolean||&check;
    |displayName|String||
    |title|String||
-   |emails[type eq "work"].value|String||
+   |emails[type eq "work"].value|String||&check;
    |preferredLanguage|String||
-   |name.givenName|String||
-   |name.familyName|String||
+   |name.givenName|String||&check;
+   |name.familyName|String||&check;
    |name.formatted|String||
    |addresses[type eq "work"].formatted|String||
    |addresses[type eq "work"].streetAddress|String||
@@ -114,7 +115,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |phoneNumbers[type eq "work"].value|String||
    |phoneNumbers[type eq "mobile"].value|String||
    |phoneNumbers[type eq "fax"].value|String||
-   |externalId|String||
+   |externalId|String|&check;|
    |name.honorificPrefix|String||
    |name.honorificSuffix|String||
    |nickName|String||

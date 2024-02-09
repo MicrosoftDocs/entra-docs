@@ -10,12 +10,10 @@ ms.date: 11/15/2023
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: enterprise-users
-ms.workload: identity
 services: active-directory
 ms.custom: "it-pro"
-
-#Customer intent: As a new Microsoft Entra identity administrator, user management is at the core of my work, so I need to understand the user management tools such as groups, administrator roles, and licenses to manage users.
 ms.collection: M365-identity-device-management
+#Customer intent: As a new Microsoft Entra identity administrator, user management is at the core of my work, so I need to understand the user management tools such as groups, administrator roles, and licenses to manage users.
 ---
 
 # Group writeback in the Microsoft Entra admin center

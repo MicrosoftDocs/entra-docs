@@ -2,13 +2,11 @@
 title: Configure PIM for Groups settings
 description: Learn how to configure PIM for Groups settings.
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
 ms.service: active-directory
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.subservice: pim
 ms.date: 09/12/2023
 ms.author: barclayn

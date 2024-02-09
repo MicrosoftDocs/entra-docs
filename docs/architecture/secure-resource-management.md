@@ -1,11 +1,10 @@
 ---
-title: Resource management fundamentals in Microsoft Entra ID 
+title: Resource management fundamentals in Microsoft Entra ID
 description: Introduction to resource management in Microsoft Entra ID.
 services: active-directory
 author: gargi-sinha
 manager: martinco
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 3/23/2023

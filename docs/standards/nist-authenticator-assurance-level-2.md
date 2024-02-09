@@ -1,10 +1,9 @@
 ---
 title: Achieve NIST AAL2 with the Microsoft Entra ID
 description: Guidance on achieving NIST authenticator assurance level 2 (AAL2) with Microsoft Entra ID.
-services: active-directory 
+services: active-directory
 ms.service: active-directory
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
@@ -73,7 +72,7 @@ Government agency cryptographic authenticators are validated for FIPS 140 Level 
 
 * Certificate stored in software or hardware (smartcard/security key/TPM)
 
-Microsoft Authenticator app (Push Notification/OTP/passwordless) on iOS uses FIPS 140 level 1 validated cryptographic module and is FIPS 140 compliant. While Microsoft Authenticator app on Android (Push Notification/OTP/passwordless) uses FIPS 140 approved cryptography, it is not FIPS compliant.
+Microsoft Authenticator app on both iOS and Android is FIPS 140 compliant. For more information on the FIPS validated cryptographic modules used by Microsoft Authenticator See [Microsoft Authenticator app](~/identity/authentication/concept-authentication-authenticator-app.md#fips-140-compliant-for-microsoft-entra-authentication)
 
 For OATH hardware tokens and smartcards we recommend you consult with your provider for current FIPS validation status.
 

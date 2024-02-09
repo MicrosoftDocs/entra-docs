@@ -16,14 +16,16 @@ ms.custom: developer, devx-track-js
 
 # Tutorial: Prepare your customer tenant to authorize a Node.js daemon application
 
-In this tutorial, you learn how to acquire an access token, then call a web API in a Node.js daemon application. You enable the client daemon app to acquire an access token using its own identity. To do so, you first register your application in your Microsoft Entra ID for customers tenant.
+This tutorial series demonstrates how to build a Node.js daemon client app and prepare it for authentication in the Microsoft Entra admin center. You'll be using the [OAuth 2.0 client credentials grant flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md), then configure it to acquire an access token for calling a web API.
 
-In this tutorial, you'll:
+In this tutorial;
 
 > [!div class="checklist"]
-> - Register a web API and configure app permissions in the Microsoft Entra admin center.
-> - Register a client daemon application, the grant it app permissions in the Microsoft Entra admin center.
-> - Create a client secret for your daemon application in the Microsoft Entra admin center.
+> * Register a web API in the Microsoft Entra admin center, and record its identifiers
+> * Configure app roles for the web API
+> * Register a client daemon application 
+> * Grant permissions to the daemon app
+> * Create a client secret for your daemon app
 
 If you've already registered a client daemon application and a web API in the Microsoft Entra admin center, you can skip the steps in this tutorial, then proceed to [Acquire access token for calling an API](tutorial-daemon-node-call-api-build-app.md).
 
@@ -65,9 +67,7 @@ In the next step, you prepare your daemon app application. Make sure you've the 
 - The Application (client) ID of the web API app you registered.
 
 
-## Next steps
-
-In the next tutorial, you prepare your daemon Node.js application.
+## Next step
 
 > [!div class="nextstepaction"]
-> [Prepare your daemon application](tutorial-daemon-node-call-api-build-app.md)
+> [Part 2: Prepare your daemon application](tutorial-daemon-node-call-api-build-app.md)

@@ -5,9 +5,8 @@ description: Quickstart guide - How to quickly onboard your Microsoft Entra Perm
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: quickstart
 ms.date: 12/20/2023
 ms.author: jfields

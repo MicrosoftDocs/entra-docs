@@ -6,9 +6,8 @@ ms.author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 10/25/2023
+ms.date: 02/02/2024
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -29,6 +28,7 @@ This article discusses known issues to be aware of when you work with app provis
 - Synchronizing users across clouds
 - Synchronizing photos across tenants
 - Synchronizing contacts and converting contacts to B2B users
+- Synchronizing meeting rooms across tenants
 
 ### Microsoft Teams
 
@@ -39,10 +39,6 @@ External / B2B users of type `member` created by cross-tenant synchronization ca
 An external user from the source (home) tenant can't be provisioned into another tenant. Internal guest users from the source tenant can't be provisioned into another tenant. Only internal member users from the source tenant can be provisioned into the target tenant. For more information, see [Properties of a Microsoft Entra B2B collaboration user](~/external-id/user-properties.md).
 
 In addition, users that are enabled for SMS sign-in cannot be synchronized through cross-tenant synchronization.
-
-### Provisioning manager attributes
-
-Provisioning manager attributes isn't supported.
 
 ### Updating the showInAddressList property fails
 
@@ -76,12 +72,6 @@ When two users in the source tenant have the same mail, and they both need to be
 
 ## Authorization 
 
-::: zone pivot="app-provisioning"
-#### Unable to save
-
-The tenant URL, secret token, and notification email must be filled in to save. You can't provide only one of them. 
-::: zone-end
-
 #### Unable to change provisioning mode back to manual
 
 After you've configured provisioning for the first time, you'll notice that the provisioning mode has switched from manual to automatic. You can't change it back to manual. But you can turn off provisioning through the UI. Turning off provisioning in the UI effectively does the same as setting the dropdown to manual.
@@ -107,6 +97,12 @@ Attribute-mapping expressions can have a maximum of 10,000 characters.
 #### Unsupported scoping filters
 
 The **appRoleAssignments**, **userType**, and **accountExpires** attributes aren't supported as scoping filters.
+
+::: zone pivot="cross-tenant-synchronization"
+#### OtherMails should not be included in your attribute mappings as a target attribute
+
+The otherMails property is automatically computed in the target tenant. Changes to the user object made directly in the target tenant could result in the otherMails property being updated and override the value set by cross-tenant synchronization. As a result, otherMails should not be included in your cross-tenant synchronization attribute mappings as a target attribute. 
+::: zone-end
 
 #### Multivalue directory extensions
 
@@ -207,4 +203,3 @@ The following attributes and objects aren't supported:
 
 ## Next steps
 [How provisioning works](how-provisioning-works.md)
-

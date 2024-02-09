@@ -2,23 +2,16 @@
 title: Change resource roles for an access package in entitlement management
 description: Learn how to change the resource roles for an existing access package in entitlement management.
 services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
-editor: 
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: compliance
 ms.date: 01/25/2023
 ms.author: owinfrey
-ms.reviewer: 
 ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
-
 ---
 # Change resource roles for an access package in entitlement management
 
@@ -108,7 +101,7 @@ You can have entitlement management automatically add users to a group or a team
 - When a membership of a group or team is a resource role that's part of an access package and a user is assigned to that access package, the user is added as a member to that group or team, if not already present.
 - When a user's access package assignment expires, they're removed from the group or team, unless they currently have an assignment to another access package that includes that same group or team.
 
-You can select any [Microsoft Entra security group or Microsoft 365 Group](~/fundamentals/how-to-manage-groups.md). Administrators can add any group to a catalog; catalog owners can add any group to the catalog if they're owner of the group. Keep the following Microsoft Entra constraints in mind when selecting a group:
+You can select any [Microsoft Entra security group or Microsoft 365 Group](~/fundamentals/how-to-manage-groups.md). Users in an administrator role that can manage groups can add any group to a catalog; catalog owners can add any group to the catalog if they're owner of the group. Keep the following Microsoft Entra constraints in mind when selecting a group:
 
 - When a user, including a guest, is added as a member to a group or team, they can see all the other members of that group or team.
 - Microsoft Entra ID can't change the membership of a group that was synchronized from Windows Server Active Directory using Microsoft Entra Connect, or that was created in Exchange Online as a distribution group.  If you plan to manage access to applications that use AD security groups, see [how to set up group writeback with entitlement management](entitlement-management-group-writeback.md).
@@ -157,8 +150,8 @@ Applications can have multiple app roles defined in their manifest and managed t
 
 Once an app role is a resource of an access package:
 
-- When a user is assigned that access package, the user is added to that app role, if not already present.
-- When a user's access package assignment expires, their access is removed from the application, unless they have an assignment to another access package that includes that app role.
+- When a user is assigned that access package, the user is added to that app role, if not already present.  If the application requires attributes, the values of the attributes collected from the request will be written onto the user.
+- When a user's access package assignment expires, their access is removed from the application, unless they have an assignment to another access package that includes that app role.  If the application required attributes, those attributes will be removed from the user.
 
 Here are some considerations when selecting an application:
 
@@ -212,49 +205,55 @@ There are two ways to add a resource role to an access package programmatically,
 
 You can add a resource role to an access package using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission can call the API to:
 
-1. [List the accessPackageResources in the catalog](/graph/api/entitlementmanagement-list-accesspackagecatalogs?tabs=http&view=graph-rest-beta&preserve-view=true) and [create an accessPackageResourceRequest](/graph/api/entitlementmanagement-post-accesspackageresourcerequests?tabs=http&view=graph-rest-beta&preserve-view=true) for any resources that aren't yet in the catalog.
-1. [List the accessPackageResourceRoles](/graph/api/accesspackage-list-accesspackageresourcerolescopes?tabs=http&view=graph-rest-beta&preserve-view=true) of each accessPackageResource in an accessPackageCatalog. This list of roles will then be used to select a role, when subsequently creating an accessPackageResourceRoleScope.
-1. [Create an accessPackageResourceRoleScope](/graph/api/accesspackage-post-accesspackageresourcerolescopes?tabs=http&view=graph-rest-beta&preserve-view=true) for each resource role needed in the access package.
+1. [List the resources in the catalog](/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0&tabs=http&preserve-view=true) and [create an accessPackageResourceRequest](/graph/api/entitlementmanagement-post-resourcerequests?view=graph-rest-1.0&tabs=http&preserve-view=true) for any resources that aren't yet in the catalog.
+1. [Retrieve the roles and scopes of each resource in the catalog](/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0&tabs=http#example-2-retrieve-the-roles-and-scopes-of-a-single-resource-in-a-catalog). This list of roles will then be used to select a role, when subsequently creating a resourceRoleScope.
+1. [Create a resourceRoleScope](/graph/api/accesspackage-post-resourcerolescopes?view=graph-rest-1.0&preserve-view=true) for each resource role needed in the access package.
 
 ### Add resource roles to an access package with Microsoft PowerShell
 
-You can also create an access package in PowerShell with the cmdlets from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) beta module version 2.1.x or later beta module version.  This script illustrates using the Graph `beta` profile and Microsoft Graph PowerShell cmdlets module version 2.4.0.
+You can also add resource roles to an access package in PowerShell with the cmdlets from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module version 2.1.x or later module version.
 
-First, you would retrieve the ID of the catalog, and of the resource and its roles in that catalog that you wish to include in the access package, using a script similar to the following.  This assumes there is a single application resource in the catalog.
+First, retrieve the ID of the catalog, and of the resource in that catalog and its scopes and roles, that you want to include in the access package. Use a script similar to the following example. This assumes there is a single application resource in the catalog.
 
 ```powershell
 Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All"
 
-$catalog = Get-MgBetaEntitlementManagementAccessPackageCatalog -Filter "displayName eq 'Marketing'"
-
-$rsc = Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource -AccessPackageCatalogId $catalog.Id -Filter "resourceType eq 'Application'" -ExpandProperty "accessPackageResourceScopes"
-$filt = "(originSystem eq 'AadApplication' and accessPackageResource/id eq '" + $rsc.Id + "')"
-$rr = Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResourceRole -AccessPackageCatalogId $catalog.Id -Filter $filt -ExpandProperty "accessPackageResource"
+$catalog = Get-MgEntitlementManagementCatalog -Filter "displayName eq 'Marketing'" -All
+if ($catalog -eq $null) { throw "catalog not found" }
+$rsc = Get-MgEntitlementManagementCatalogResource -AccessPackageCatalogId $catalog.id -Filter "originSystem eq 'AadApplication'" -ExpandProperty scopes
+if ($rsc -eq $null) { throw "resource not found" }
+$filt = "(id eq '" + $rsc.Id + "')"
+$rrs = Get-MgEntitlementManagementCatalogResource -AccessPackageCatalogId $catalog.id -Filter $filt -ExpandProperty roles,scopes
 ```
 
-Then, assign the resource role from that resource to the access package.  For example, if you wished to include the second resource role of the resource returned earlier as a resource role of an access package, you would use a script similar to the following.
+
+
+Then, assign the resource role from that resource to the access package.  For example, if you wished to include the first resource role of the resource returned earlier as a resource role of an access package, you would use a script similar to the following.
 
 ```powershell
 $apid = "cdd5f06b-752a-4c9f-97a6-82f4eda6c76d"
 
 $rparams = @{
-	AccessPackageResourceRole = @{
-	   OriginId = $rr[2].OriginId
-	   DisplayName = $rr[2].DisplayName
-	   OriginSystem = $rr[2].OriginSystem
-	   AccessPackageResource = @{
-	      Id = $rsc.Id
-	      ResourceType = $rsc.ResourceType
-	      OriginId = $rsc.OriginId
-	      OriginSystem = $rsc.OriginSystem
-	   }
-	}
-	AccessPackageResourceScope = @{
-	   OriginId = $rsc.OriginId
-	   OriginSystem = $rsc.OriginSystem
-	}
+    role = @{
+        id =  $rrs.Roles[0].Id
+        displayName =  $rrs.Roles[0].DisplayName
+        description =  $rrs.Roles[0].Description
+        originSystem =  $rrs.Roles[0].OriginSystem
+        originId =  $rrs.Roles[0].OriginId
+        resource = @{
+            id = $rrs.Id
+            originId = $rrs.OriginId
+            originSystem = $rrs.OriginSystem
+        }
+    }
+    scope = @{
+        id = $rsc.Scopes[0].Id
+        originId = $rsc.Scopes[0].OriginId
+        originSystem = $rsc.Scopes[0].OriginSystem
+    }
 }
-New-MgBetaEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $apid -BodyParameter $rparams
+
+New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $apid -BodyParameter $rparams
 ```
 
 ## Remove resource roles

@@ -8,12 +8,12 @@ manager: amycolannino
 ms.assetid: d4bc5583-6537-4cd9-bc4b-7712fdd9272a
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: sample
 ms.date: 09/21/2023
 ms.author: justinha
 ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref
 ---
+
 # Enable Microsoft Entra Domain Services using PowerShell
 
 Microsoft Entra Domain Services provides managed domain services such as domain join, group policy, LDAP, Kerberos/NTLM authentication that is fully compatible with Windows Server Active Directory. You consume these domain services without deploying, managing, and patching domain controllers yourself. Domain Services integrates with your existing Microsoft Entra tenant. This integration lets users sign in using their corporate credentials, and you can use existing groups and user accounts to secure access to resources.
@@ -29,8 +29,8 @@ To complete this article, you need the following resources:
 * Install and configure Azure PowerShell.
     * If needed, follow the instructions to [install the Azure PowerShell module and connect to your Azure subscription](/powershell/azure/install-azure-powershell).
     * Make sure that you sign in to your Azure subscription using the [Connect-AzAccount][Connect-AzAccount] cmdlet.
-* Install and configure Azure AD PowerShell.
-    * If needed, follow the instructions to [install the Azure AD PowerShell module and connect to Microsoft Entra ID](/powershell/azure/active-directory/install-adv2).
+* Install and configure MS Graph PowerShell.
+   - If needed, follow the instructions to [install the MS Graph PowerShell module and connect to Microsoft Entra ID](/powershell/microsoftgraph/installation?view=graph-powershell-1.0).
     * Make sure that you sign in to your Microsoft Entra tenant using the [Connect-AzureAD][Connect-AzureAD] cmdlet.
 * You need *global administrator* privileges in your Microsoft Entra tenant to enable Domain Services.
 * You need *Contributor* privileges in your Azure subscription to create the required Domain Services resources.
@@ -377,26 +377,46 @@ To see the managed domain in action, you can [domain-join a Windows VM][windows-
 
 <!-- INTERNAL LINKS -->
 [windows-join]: join-windows-vm.md
+
 [tutorial-ldaps]: tutorial-configure-ldaps.md
+
 [tutorial-phs]: tutorial-configure-password-hash-sync.md
+
 [nsg-overview]: /azure/virtual-network/network-security-groups-overview
+
 [network-ports]: network-considerations.md#network-security-groups-and-required-ports
 
 <!-- EXTERNAL LINKS -->
 [Connect-AzAccount]: /powershell/module/az.accounts/connect-azaccount
+
 [Connect-AzureAD]: /powershell/module/azuread/connect-azuread
+
 [New-AzureADServicePrincipal]: /powershell/module/AzureAD/New-AzureADServicePrincipal
+
 [New-AzureADGroup]: /powershell/module/azuread/new-azureadgroup
+
 [Add-AzureADGroupMember]: /powershell/module/azuread/add-azureadgroupmember
+
 [Get-AzureADGroup]: /powershell/module/azuread/get-azureadgroup
+
 [Get-AzureADUser]: /powershell/module/azuread/get-azureaduser
+
 [Register-AzResourceProvider]: /powershell/module/az.resources/register-azresourceprovider
+
 [New-AzResourceGroup]: /powershell/module/az.resources/new-azresourcegroup
+
 [New-AzVirtualNetworkSubnetConfig]: /powershell/module/az.network/new-azvirtualnetworksubnetconfig
+
 [New-AzVirtualNetwork]: /powershell/module/az.network/new-azvirtualnetwork
+
 [Get-AzSubscription]: /powershell/module/az.accounts/get-azsubscription
+
 [cloud-shell]: /azure/active-directory/develop/configure-app-multi-instancing
+
 [availability-zones]: /azure/reliability/availability-zones-overview
+
 [New-AzNetworkSecurityRuleConfig]: /powershell/module/az.network/new-aznetworksecurityruleconfig
+
 [New-AzNetworkSecurityGroup]: /powershell/module/az.network/new-aznetworksecuritygroup
+
 [Set-AzVirtualNetworkSubnetConfig]: /powershell/module/az.network/set-azvirtualnetworksubnetconfig

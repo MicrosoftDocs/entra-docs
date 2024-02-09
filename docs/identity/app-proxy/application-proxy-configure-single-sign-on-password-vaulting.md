@@ -6,7 +6,6 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/15/2023
 ms.author: kenwith
@@ -22,8 +21,6 @@ Application Proxy supports several [single sign-on modes](~/identity/enterprise-
 You should already have published and tested your app with Application Proxy. If not, follow the steps in [Publish applications using Microsoft Entra application proxy](application-proxy-add-on-premises-application.md) then come back here.
 
 ## Set up password vaulting for your application
-
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.

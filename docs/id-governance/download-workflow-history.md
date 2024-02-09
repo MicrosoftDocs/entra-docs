@@ -4,8 +4,7 @@ description: This article guides a user on downloading the history of a Lifecycl
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: active-directory
-ms.workload: identity
-ms.topic: how-to 
+ms.topic: how-to
 ms.date: 11/17/2023
 
 #CustomerIntent: As an admin, I want to download history reports as a CSV.

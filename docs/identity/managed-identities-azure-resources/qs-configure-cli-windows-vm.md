@@ -6,7 +6,6 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: msi
 ms.topic: quickstart
-ms.workload: identity
 ms.date: 01/11/2022
 ms.author: barclayn
 ms.collection: M365-identity-device-management
@@ -31,7 +30,7 @@ If you don't already have an Azure account, [sign up for a free account](https:/
 
 - If you're unfamiliar with managed identities for Azure resources, see [What are managed identities for Azure resources?](overview.md). To learn about system-assigned and user-assigned managed identity types, see [Managed identity types](overview.md#managed-identity-types).
 
-[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../articles/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../docs/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
 
 ## System-assigned managed identity
 

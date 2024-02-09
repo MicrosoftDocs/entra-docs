@@ -1,19 +1,19 @@
 ---
-title: Provisioning logs in Microsoft Entra ID
-description: Learn about the details included in the provisioning logs in Microsoft Entra ID for when users are provisioned by a third party service.
+title: User provisioning logs in Microsoft Entra ID
+description: Learn about the details included in the user provisioning logs in Microsoft Entra ID for when users are provisioned by a third party service.
 author: shlipsey3
 manager: amycolannino
 ms.service: active-directory
 ms.topic: conceptual
 ms.subservice: report-monitor
-ms.date: 12/15/2023
+ms.date: 01/12/2024
 ms.author: sarahlipsey
 ms.reviewer: arvinh
 
-# Customer intent: As an IT admin, I need to know what information is included in the Microsoft Entra provisioning logs so I know what to look for when I need to troubleshoot an issue.
+# Customer intent: As an IT admin, I need to know what information is included in the Microsoft Entra user provisioning logs so I know what to look for when I need to troubleshoot an issue.
 ---
 
-# What are the Microsoft Entra provisioning logs?
+# What are the Microsoft Entra user provisioning logs?
 
 Microsoft Entra ID integrates with several third party services to provision users into your tenant. If you need to troubleshoot an issue with a provisioned user, you can use the information captured in the Microsoft Entra provisioning logs to help find a solution.
 
@@ -22,7 +22,11 @@ Two other activity logs are also available to help monitor the health of your te
 - **[Sign-ins](concept-sign-ins.md)** – Information about sign-ins and how your resources are used by your users.
 - **[Audit](concept-audit-logs.md)** – Information about changes applied to your tenant such as users and group management or updates applied to your tenant’s resources.
 
-This article gives you an overview of the provisioning logs.
+This article gives you an overview of the user provisioning logs.
+
+## License and role requirements
+
+[!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
 
 ## What can you do with the provisioning logs?
 

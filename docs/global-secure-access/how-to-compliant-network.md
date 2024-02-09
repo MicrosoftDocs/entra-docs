@@ -5,7 +5,7 @@ description: Learn how to require known compliant network locations in order to 
 ms.service: network-access
 ms.subservice: 
 ms.topic: how-to
-ms.date: 01/02/2024
+ms.date: 01/08/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -39,6 +39,7 @@ The compliant network is different than [IPv4, IPv6, or geographic locations](..
 ### Known limitations
 
 - Organizations can protect other Microsoft Entra integrated apps with Conditional Access policies requiring a compliant network check. During the preview, administrators must choose the individual applications from the app picker instead of choosing *All cloud apps*. **Do not choose *All cloud apps*.**
+- Compliant network check with [continuous access evaluation](../identity/conditional-access/concept-continuous-access-evaluation.md) is now supported for SharePoint Online.
 - Compliant network check is currently not supported for private access apps.
 
 ## Enable Global Secure Access signaling for Conditional Access
@@ -60,7 +61,7 @@ To enable the required setting to allow the compliant network check, an administ
 
 The compliant network Conditional Access policy can be used to protect your Microsoft 365 and third-party resources.
 
-The following example shows this type of policy. In addition, you can enforce token theft replay protection using CAE for SharePoint Online.
+The following example shows this type of policy. In addition, token theft replay protection using CAE for SharePoint Online is now supported.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access**.
@@ -80,16 +81,11 @@ The following example shows this type of policy. In addition, you can enforce to
    1. Select **Select**.
 1. Under **Access controls**:
    1. **Grant**, select **Block Access**, and select **Select**.
+1. Confirm your settings and set **Enable policy** to **On**.
+1. Select the **Create** button to create to enable your policy.
 
-  > [!NOTE]
-  > Token theft replay protection is now available for SharePoint Online.
-
-9. If your policy is only targeting SharePoint Online, for **Session**, select **Customize continuous access evaluation** and **Strictly enforce location policies (Preview)** and select **Select**.
-
-   :::image type="content" source="media/how-to-compliant-network/ca-policy-cae-settings.png" alt-text="Screenshot of the session control with the continuous access evaluation option highlighted.":::
-
-10. Confirm your settings and set **Enable policy** to **On**.
-11. Select the **Create** button to create to enable your policy.
+> [!NOTE]
+> Token theft replay protection is now available for SharePoint Online.
 
 ### User exclusions
 
@@ -97,9 +93,8 @@ The following example shows this type of policy. In addition, you can enforce to
 
 ## Try your compliant network policy
 
-1. On an end-user device with the [NaaS client installed and running](how-to-install-windows-client.md)
-1. Browse to [https://outlook.office.com/mail/](https://outlook.office.com/mail/) or `https://yourcompanyname.sharepoint.com/`, you have access to resources.
-1. Pause the NaaS client by right-clicking the application in the Windows tray and selecting **Pause**.
+1. On an end-user device with the [Global Secure Access client installed and running](how-to-install-windows-client.md), browse to [https://outlook.office.com/mail/](https://outlook.office.com/mail/) or `https://yourcompanyname.sharepoint.com/`, you have access to resources.
+1. Pause the Global Secure Access client by right-clicking the application in the Windows tray and selecting **Pause**.
 1. Browse to [https://outlook.office.com/mail/](https://outlook.office.com/mail/) or `https://yourcompanyname.sharepoint.com/`, you're blocked from accessing resources with an error message that says **You cannot access this right now**.
 
 :::image type="content" source="media/how-to-compliant-network/you-cannot-access-this-right-now-error.png" alt-text="Screenshot showing error message in browser window You can't access this right now.":::

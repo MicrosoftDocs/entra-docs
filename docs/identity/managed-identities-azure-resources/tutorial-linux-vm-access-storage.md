@@ -1,17 +1,14 @@
 ---
-title: Tutorial`:` Use a managed identity to access Azure Storage - Linux
+title: "Tutorial: Use a managed identity to access Azure Storage - Linux"
 description: A tutorial that walks you through the process of using a Linux VM system-assigned managed identity to access Azure Storage.
 services: active-directory
-documentationcenter: 
 author: barclayn
 manager: amycolannino
-editor: 
 ms.custom: subject-rbac-steps
 ms.service: active-directory
 ms.subservice: msi
 ms.topic: tutorial
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 03/30/2023
 ms.author: barclayn
 

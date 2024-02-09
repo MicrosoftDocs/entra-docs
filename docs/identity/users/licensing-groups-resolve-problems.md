@@ -4,13 +4,11 @@ title: Resolve group license assignment problems
 description: How to identify and resolve license assignment problems when you're using Microsoft Entra group-based licensing
 services: active-directory
 keywords: Azure AD licensing
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: how-to
-ms.workload: identity
 ms.date: 11/16/2023
 ms.author: barclayn
 ms.reviewer: sumitp
@@ -102,7 +100,7 @@ If you use Exchange Online, some users in your organization might be incorrectly
 > [!TIP]
 > To see if there is a duplicate proxy address, execute the following PowerShell cmdlet against Exchange Online:
 > ```
-> Get-Recipient -Filter "EmailAddresses -eq 'user@contoso.onmicrosoft.com'" | fl Name, RecipientType,Emailaddresses
+> Get-Recipient -Filter "EmailAddresses -eq 'user@contoso.onmicrosoft.com'" | fl DisplayName, RecipientType,Emailaddresses
 > ```
 > For more information about this problem, see ["Proxy address 
 > is already being used" error message in Exchange Online](https://support.microsoft.com/help/3042584/-proxy-address-address-is-already-being-used-error-message-in-exchange-online). The article also includes information on [how to connect to Exchange Online by using remote PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).

@@ -8,11 +8,9 @@ manager: amycolannino
 ms.assetid: c5216ec9-4c4f-4b7e-830b-9d70cf176b20
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/23/2023
 ms.author: justinha
-
 ---
 # Common use-cases and scenarios for Microsoft Entra Domain Services
 

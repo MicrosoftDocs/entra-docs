@@ -1,11 +1,10 @@
 ---
 title: Plan a Microsoft Entra B2B collaboration deployment
-description: A guide for architects and IT administrators on securing and governing external access to internal resources 
+description: A guide for architects and IT administrators on securing and governing external access to internal resources
 services: active-directory
 author: gargi-sinha
 manager: martinco
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 4/28/2023
