@@ -35,6 +35,7 @@ Identity related **NuGet packages** must be installed in the project for authent
 
 1. In the top menu of Visual Studio, select **Tools > NuGet Package Manager > Manage NuGet Packages for Solution**.
 1. With the **Browse** tab selected, search for and select **Microsoft.Identity.Web.UI**. Select the **Project** checkbox, and then select **Install**.
+1. Repeat this for **Microsoft.Identity.Web.Diagnostics** and **Microsoft.Identity.Web.DownstreamApi**.
 
 ### [Visual Studio Code](#tab/visual-studio-code)
 

@@ -6,7 +6,6 @@ metadata:
   author: rolyon
   manager: amycolannino
   ms.service: active-directory
-  ms.workload: identity
   ms.subservice: roles
   ms.topic: faq
   ms.date: 11/05/2020

@@ -4,9 +4,8 @@ description: How to view system reports in the Reports dashboard in Permissions 
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: how-to
 ms.date: 07/21/2023
 ms.author: jfields

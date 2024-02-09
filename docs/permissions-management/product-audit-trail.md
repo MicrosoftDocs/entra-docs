@@ -4,9 +4,8 @@ description: How to filter and query user activity in Microsoft Entra Permission
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: how-to
 ms.date: 06/19/2023
 ms.author: jfields

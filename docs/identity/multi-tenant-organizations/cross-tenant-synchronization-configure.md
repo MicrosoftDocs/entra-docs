@@ -5,13 +5,11 @@ services: active-directory
 author: rolyon
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: multi-tenant-organizations
 ms.topic: how-to
 ms.date: 01/30/2024
 ms.author: rolyon
 ms.custom: it-pro
-
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
@@ -270,7 +268,7 @@ Attribute mappings allow you to define how data should flow between the source t
     | **Guest** | Users will be created as external guests (B2B collaboration users) in the target tenant. |
 
     > [!NOTE]
-    > If the the B2B user already exists in the target tenant then **Member (userType)** will not changed to **Member**, unless the **Apply this mapping** setting is set to **Always**.
+    > If the B2B user already exists in the target tenant then **Member (userType)** will not changed to **Member**, unless the **Apply this mapping** setting is set to **Always**.
     
     The user type you choose has the following limitations for apps or services (but aren't limited to):
     

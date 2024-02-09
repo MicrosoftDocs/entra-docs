@@ -4,15 +4,12 @@ title: Add users with direct licenses to group licensing
 description: How to migrate from individual user licenses to group-based licensing using Microsoft Entra ID
 services: active-directory
 keywords: Azure AD licensing
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
-editor: ''
 
 ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: how-to
-ms.workload: identity
 ms.date: 11/16/2023
 ms.author: barclayn
 ms.reviewer: sumitp

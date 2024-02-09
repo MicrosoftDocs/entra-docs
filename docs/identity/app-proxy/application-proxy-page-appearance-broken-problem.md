@@ -6,7 +6,6 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 09/14/2023
 ms.author: kenwith
@@ -28,7 +27,7 @@ As an example of this case, assume you have published an expenses application us
 
 If it is not possible to publish all resources within the same application, you need to publish multiple applications and enable links between them.
 
-To do so, we recommend using the [custom domains](application-proxy-configure-custom-domain.md) solution. However, this solution requires that you own the certificate for your domain and your applications use fully qualified domain names (FQDNs). For other options, see the [troubleshoot broken links documentation](application-proxy-page-links-broken-problem.md).
+To do so, we recommend using the [custom domains](how-to-configure-custom-domain.md) solution. However, this solution requires that you own the certificate for your domain and your applications use fully qualified domain names (FQDNs). For other options, see the [troubleshoot broken links documentation](application-proxy-page-links-broken-problem.md).
 
 ## Next steps
 [Publish applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md)

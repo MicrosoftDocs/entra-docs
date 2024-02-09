@@ -4,7 +4,6 @@ description: A guide for architects and IT administrators on building a resilien
 services: active-directory
 author: janicericketts
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 11/16/2022
@@ -25,14 +24,14 @@ Hybrid authentication allows users to access cloud-based resources with their id
 Microsoft offers three mechanisms for hybrid authentication. The options are listed in order of resilience. We recommend that you implement password hash synchronization, if possible.
 
 * [Password hash synchronization](~/identity/hybrid/connect/whatis-phs.md) (PHS) uses Microsoft Entra Connect to sync the identity and a hash-of-the-hash of the password to Microsoft Entra ID. It enables users to sign in to cloud-based resources with their password mastered on premises. PHS has on premises dependencies only for synchronization, not for authentication.
-* [Pass-through Authentication](~/identity/hybrid/connect/how-to-connect-pta.md) (PTA) redirects users to Microsoft Entra ID for sign-in. Then, the username and password are validated against Active Directory on premises through an agent that is deployed in the corporate network. PTA has an on premises footprint of its Microsoft Entra PTA agents that reside on servers on premises.
+* [Pass-through Authentication](~/identity/hybrid/connect/how-to-connect-pta.md) (PTA) redirects users to Microsoft Entra ID for sign-in. Then, the username and password are validated against Active Directory on premises through an agent that is deployed in the corporate network. PTA has an on-premises footprint of its Microsoft Entra PTA agents that reside on servers on premises.
 * [Federation](~/identity/hybrid/connect/whatis-fed.md) customers deploy a federation service such as Active Directory Federation Services (ADFS). Then Microsoft Entra ID validates the SAML assertion produced by the federation service. Federation has the highest dependency on on-premises infrastructure and, therefore, more failure points. 
 
 You may be using one or more of these methods in your organization. For more information, see [Choose the right authentication method for your Microsoft Entra hybrid identity solution](~/identity/hybrid/connect/choose-ad-authn.md). This article contains a decision tree that can help you decide on your methodology.
 
 ## Password hash synchronization
 
-The simplest and most resilient hybrid authentication option for Microsoft Entra ID is [Password Hash Synchronization](~/identity/hybrid/connect/whatis-phs.md). It doesn't have any on premises identity infrastructure dependency when processing authentication requests. After identities with password hashes are synchronized to Microsoft Entra ID, users can authenticate to cloud resources with no dependency on the on premises identity components. 
+The simplest and most resilient hybrid authentication option for Microsoft Entra ID is [Password Hash Synchronization](~/identity/hybrid/connect/whatis-phs.md). It doesn't have any on premises identity infrastructure dependency when processing authentication requests. After identities with password hashes are synchronized to Microsoft Entra ID, users can authenticate to cloud resources with no dependency on the on-premises identity components. 
 
 ![Architecture diagram of PHS](./media/resilience-in-hybrid/admin-resilience-password-hash-sync.png)
 
@@ -49,7 +48,7 @@ If your requirements are such that you can't use PHS, use Pass-through Authentic
 
 ## Pass-through Authentication
 
-Pass-through Authentication has a dependency on authentication agents that reside on premises on servers. A persistent connection, or service bus, is present between Microsoft Entra ID and the on premises PTA agents. The firewall, servers hosting the authentication agents, and the on premises Windows Server Active Directory (or other identity provider) are all potential failure points. 
+Pass-through Authentication has a dependency on authentication agents that reside on premises on servers. A persistent connection, or service bus, is present between Microsoft Entra ID and the on-premises PTA agents. The firewall, servers hosting the authentication agents, and the on-premises Windows Server Active Directory (or other identity provider) are all potential failure points. 
 
 ![Architecture diagram of PTA](./media/resilience-in-hybrid/admin-resilience-pass-through-authentication.png)
 

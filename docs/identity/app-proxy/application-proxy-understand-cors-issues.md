@@ -1,14 +1,13 @@
 ---
 title: Understand and solve Microsoft Entra application proxy CORS issues
-description: Provides an understanding of CORS in Microsoft Entra application proxy, and how to identify and solve CORS issues. 
+description: Provides an understanding of CORS in Microsoft Entra application proxy, and how to identify and solve CORS issues.
 services: active-directory
 author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 09/14/2023
+ms.date: 02/06/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -61,13 +60,13 @@ You can resolve the preceding CORS issue in any one of several ways.
 
 ### Option 1: Set up a custom domain
 
-Use a Microsoft Entra application proxy [custom domain](./application-proxy-configure-custom-domain.md) to publish from the same origin, without having to make any changes to app origins, code, or headers. 
+Use a Microsoft Entra application proxy [custom domain](./how-to-configure-custom-domain.md) to publish from the same origin, without having to make any changes to app origins, code, or headers. 
 
 ### Option 2: Publish the parent directory
 
 Publish the parent directory of both apps. This solution works especially well if you have only two apps on the web server. Instead of publishing each app separately, you can publish the common parent directory, which results in the same origin.
 
-The following examples show the portal Microsoft Entra application proxy page for the CORSWebClient app.  When the **Internal URL** is set to *contoso.com/CORSWebClient*, the app can't make successful requests to the *contoso.com/CORSWebService* directory, because they're cross-origin. 
+The examples show the Microsoft Entra application proxy pages for the `CORSWebClient` app.  When the **Internal URL** is set to *contoso.com/CORSWebClient*, the app can't make successful requests to the *contoso.com/CORSWebService* directory, because they're cross-origin. 
 
 ![Publish app individually](./media/application-proxy-understand-cors-issues/image4.png)
 
@@ -77,8 +76,8 @@ Instead, set the **Internal URL** to publish the parent directory, which include
 
 The resulting app URLs effectively resolve the CORS issue:
 
-- https:\//corswebclient-contoso.msappproxy.net/CORSWebService
-- https:\//corswebclient-contoso.msappproxy.net/CORSWebClient
+- `https:\//corswebclient-contoso.msappproxy.net/CORSWebService`
+- `https:\//corswebclient-contoso.msappproxy.net/CORSWebClient`
 
 ### Option 3: Update HTTP headers
 

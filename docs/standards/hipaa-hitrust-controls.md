@@ -1,10 +1,9 @@
 ---
 title: Microsoft Entra ID configuration recommendations for HITRUST controls
 description: Guidance on navigating details and recommendations for services and features to align with HITRUST controls
-services: active-directory 
+services: active-directory
 ms.service: active-directory
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: how-to
 author: jricketts
 ms.author: jricketts

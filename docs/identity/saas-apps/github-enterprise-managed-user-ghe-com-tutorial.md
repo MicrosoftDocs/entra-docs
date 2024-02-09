@@ -7,11 +7,9 @@ manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
 ms.topic: how-to
-ms.date: 01/29/2024
+ms.date: 02/07/2024
 ms.author: jeedes
-
 ---
 
 # Microsoft Entra SSO integration with GitHub Enterprise Managed User - ghe.com
@@ -80,11 +78,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
-    In the **Sign-on URL** text box, type the URL:
-    `https://github.com/login`
+    In the **Sign on URL** text box, type a URL using the following pattern:
+    `https://<ENTERPRISE>.ghe.com/login`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [GitHub Enterprise Managed User - ghe.com support team](https://support.github.com/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [GitHub Enterprise Managed User - ghe.com support team](https://support.github.com/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 

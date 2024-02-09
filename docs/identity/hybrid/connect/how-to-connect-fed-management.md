@@ -3,14 +3,11 @@ title: Microsoft Entra Connect - AD FS management and customization
 description: This article discusses how to manage AD FS with Microsoft Entra Connect and customize the AD FS user sign-in experience with Microsoft Entra Connect and PowerShell.
 keywords: AD FS, ADFS, AD FS management, AAD Connect, Connect, sign-in, AD FS customization, repair trust, M365, federation, relying party
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: 2593b6c6-dc3f-46ef-8e02-a8e2dc4e9fb9
-ms.service: active-directory    
-ms.workload: identity
+ms.service: active-directory
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023

@@ -7,7 +7,6 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.workload: identity
 ms.date: 06/8/2023
 ms.author: billmath
 ms.reviewer: arvinh
@@ -26,7 +25,7 @@ Microsoft Entra ID includes connectivity to provision into applications that sup
 > - [SOAP](on-premises-web-services-connector.md)
 > - [PowerShell](on-premises-powershell-connector.md)
 
-For connectivity to applications that don't support one of the aforementioned protocols and interfaces, customers and [partners](https://social.technet.microsoft.com/wiki/contents/articles/1589.fim-2010-mim-2016-management-agents-from-partners.aspx) have built custom [ECMA 2.0](/previous-versions/windows/desktop/forefront-2010/hh859557(v=vs.100)) connectors for use with Microsoft Identity Manager (MIM) 2016. These same ECMA2 connectors can be used to provision into apps with the Microsoft Entra provisioning agent and Extensible Connectivity(ECMA) Connector host, without needing MIM sync deployed.
+For connectivity to applications that don't support one of the aforementioned protocols and interfaces, customers and [partners](/archive/technet-wiki/1589.fim-2010-mim-2016-management-agents-from-partners) have built custom [ECMA 2.0](/previous-versions/windows/desktop/forefront-2010/hh859557(v=vs.100)) connectors for use with Microsoft Identity Manager (MIM) 2016. These same ECMA2 connectors can be used to provision into apps with the Microsoft Entra provisioning agent and Extensible Connectivity(ECMA) Connector host, without needing MIM sync deployed.
 
 
 ## Exporting and importing a MIM connector
@@ -47,9 +46,9 @@ When updating a connector with a newer build, ensure that the DLL is updated in 
  > [!NOTE]
  > If multiple connectors are using the same custom DLL, you will need to complete step 3.ii and 3.iii for each connector.
  
-## Requirements
+## Troubleshooting
 
-Custom connectors built for MIM rely on the [ECMA framework](/previous-versions/windows/desktop/forefront-2010/hh859557(v=vs.100)). Please ensure that you are following best practices such as:
+Custom connectors built for MIM rely on the [ECMA framework](/previous-versions/windows/desktop/forefront-2010/hh859557(v=vs.100)). If you are having difficulties importing and using a connector, please ensure that you are following best practices:
 * Ensuring that methods in your connector are declared as public
 * Excluding prefixes from method names. For example: 
   * **Correct:** public Schema GetSchema (KeyedCollection<string, ConfigParameter> configParameters)

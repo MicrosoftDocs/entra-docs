@@ -2,12 +2,10 @@
 title: Create and manage a catalog of resources in entitlement management
 description: Learn how to create a new container of resources and access packages in entitlement management.
 services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: HANKI
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: compliance
@@ -15,10 +13,7 @@ ms.date: 05/31/2023
 ms.author: owinfrey
 ms.reviewer: hanki
 ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an administrator, I want detailed information about the options available for creating and managing a catalog so that I can most effectively use catalogs in my organization.
-
 ---
 # Create and manage a catalog of resources in entitlement management
 

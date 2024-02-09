@@ -6,9 +6,8 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/06/2024
 ms.author: kenwith
 ms.reviewer: harshja
 ms.custom: it-pro
@@ -48,7 +47,7 @@ To get started, make sure you've met these requirements.
 
 ### Custom domains
 
-While [custom domains](./application-proxy-configure-custom-domain.md) are optional for all other applications, they are a prerequisite for wildcard applications. Creating custom domains requires you to:
+While [custom domains](./how-to-configure-custom-domain.md) are optional for all other applications, they are a prerequisite for wildcard applications. Creating custom domains requires you to:
 
 1. Create a verified domain within Azure.
 1. Upload a TLS/SSL certificate in the PFX format to your application proxy.
@@ -66,7 +65,7 @@ When using custom domains, you need to create a DNS entry with a CNAME record fo
 To confirm that you have configured your CNAME correctly, you can use [nslookup](/windows-server/administration/windows-commands/nslookup) on one of the target endpoints, for example, `expenses.adventure-works.com`.  Your response should include the already mentioned alias (`<yourAADTenantId>.tenant.runtime.msappproxy.net`).
 
 ### Using connector groups assigned to an App Proxy cloud service region other than the default region
-If you have connectors installed in regions different from your default tenant region, it may be beneficial to change which region your connector group is optimized for to improve performance accessing these applications. To learn more see, [Optimize connector groups to use closest Application Proxy cloud service](application-proxy-network-topology.md#optimize-connector-groups-to-use-closest-application-proxy-cloud-service).
+If you have connectors installed in regions different from your default tenant region, it is beneficial to change which region your connector group is optimized for to improve performance accessing these applications. To learn more see, [Optimize connector groups to use closest Application Proxy cloud service](application-proxy-network-topology.md#optimize-connector-groups-to-use-closest-application-proxy-cloud-service).
  
 If the connector group assigned to the wildcard application uses a **different region than your default region**, you will need to update the CNAME record to point to a regional specific external URL. Use the following table to determine the relevant URL:
 
@@ -117,7 +116,7 @@ The wildcard application is represented with just one tile in the [MyApps panel]
 
 ### Kerberos constrained delegation
 
-For applications using [kerberos constrained delegation (KCD) as the SSO method](./how-to-configure-sso-with-kcd.md), the SPN listed for the SSO method may also need a wildcard. For example, the SPN could be: `HTTP/*.adventure-works.com`. You still need to have the individual SPNs configured on your backend servers (for example, `HTTP/expenses.adventure-works.com and HTTP/travel.adventure-works.com`).
+For applications using [kerberos constrained delegation (KCD) as the SSO method](./how-to-configure-sso-with-kcd.md), the SPN listed for the SSO method needs a wildcard. For example, the SPN could be: `HTTP/*.adventure-works.com`. You still need to have the individual SPNs configured on your backend servers (for example, `HTTP/expenses.adventure-works.com and HTTP/travel.adventure-works.com`).
 
 ## Scenario 1: General wildcard application
 
@@ -162,13 +161,13 @@ The configuration implements the following structure:
 | Color | Description |
 | ---   | ---         |
 | Blue  | Applications explicitly published and visible in the Microsoft Entra admin center. |
-| Gray  | Applications you can accessible through the parent application. |
+| Gray  | Applications you can access through the parent application. |
 
 ## Scenario 2: General wildcard application with exception
 
 In this scenario, you have in addition to the three general applications another application, `finance.adventure-works.com`, which should only be accessible by Finance division. With the current application structure, your finance application would be accessible through the wildcard application and by all employees. To change this, you exclude your application from your wildcard by configuring Finance as a separate application with more restrictive permissions.
 
-You need to make sure that a CNAME records exist that points `finance.adventure-works.com` to the application specific endpoint, specified on the Application Proxy page for the application. For this scenario, `finance.adventure-works.com` points to `https://finance-awcycles.msappproxy.net/`.
+Make sure that a CNAME record exists that points `finance.adventure-works.com` to the application specific endpoint, specified on the Application Proxy page for the application. For this scenario, `finance.adventure-works.com` points to `https://finance-awcycles.msappproxy.net/`.
 
 Following the [documented steps](application-proxy-add-on-premises-application.md), this scenario requires the following settings:
 
@@ -188,11 +187,11 @@ This configuration implements the following scenario:
 
 ![Shows the configuration implemented by the sample scenario](./media/application-proxy-wildcard/09.png)
 
-Because `finance.adventure-works.com` is a more specific URL than `*.adventure-works.com`, it takes precedence. Users navigating to `finance.adventure-works.com` have the experience specified in the Finance Resources application. In this case, only finance employees are able to access `finance.adventure-works.com`.
+The URL `finance.adventure-works.com` is specific. The URL `*.adventure-works.com` is not specific. The more specific URL takes precedence. Users navigating to `finance.adventure-works.com` have the experience specified in the Finance Resources application. In this case, only finance employees are able to access `finance.adventure-works.com`.
 
 If you have multiple applications published for finance and you have `finance.adventure-works.com` as a verified domain, you could publish another wildcard application `*.finance.adventure-works.com`. Because this is more specific than the generic `*.adventure-works.com`, it takes precedence if a user accesses an application in the finance domain.
 
 ## Next steps
 
-- To learn more about **Custom domains**, see [Working with custom domains in Microsoft Entra application proxy](./application-proxy-configure-custom-domain.md).
+- To learn more about **Custom domains**, see [Working with custom domains in Microsoft Entra application proxy](./how-to-configure-custom-domain.md).
 - To learn more about **Publishing applications**, see [Publish applications using Microsoft Entra application proxy](application-proxy-add-on-premises-application.md)

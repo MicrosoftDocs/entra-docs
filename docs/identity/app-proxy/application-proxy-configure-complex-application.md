@@ -1,12 +1,11 @@
 ---
 title: Complex applications for Microsoft Entra application proxy
-description: Provides an understanding of complex application in Microsoft Entra application proxy, and how to configure one. 
+description: Provides an understanding of complex application in Microsoft Entra application proxy, and how to configure one.
 services: active-directory
 author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/15/2023
 ms.author: dhruvinshah
@@ -85,17 +84,33 @@ Your application is now set up to use the configured application segments. Be su
 
 To edit/update an application segment, select respective application segment from the list in Manage and configure application segments page. Upload a certificate for the updated domain, if necessary, and update the DNS record. 
 
+## Configuring SSO
+
+> [!NOTE]
+> The Integrated Windows Authentication (IWA) SSO does not support using wildcard SPN (i.e. http/*.comtoso.com). The single SPN configured (i.e. http/app.comtoso.com) is used for all the segments.
+
 ## DNS updates
 
-When using custom domains, you need to create a DNS entry with a CNAME record for the external URL (for example,  `*.adventure-works.com`) pointing to the external URL of the application proxy endpoint. For wildcard applications, the CNAME record needs to point to the relevant external URL:
+When using custom domains, you need to create a DNS entry with a CNAME record for the external URL (for example, *.adventure-works.com) pointing to the external URL of the application proxy endpoint. For wildcard applications, the CNAME record needs to point to the relevant external URL:
 
 > `<yourAADTenantId>.tenant.runtime.msappproxy.net`
 
-Alternatively, a DNS entry with a CNAME record for every individual application segment can be created as follows:
+Alternatively, a dedicated DNS entry with a CNAME record for every individual application segment can be created as follows:
 
-> `'External URL of application segment'` > `'<External URL without domain>-<tenantname>.msapproxy.net'` <br>
-for example in above instance  >`'home.contoso.ashcorp.us'` points to > `home-ashcorp1.msappproxy.net`
+> `External URL of the application segment` > `<yourAADTenantId>.tenant.runtime.msappproxy.net`
 
+Additionally, adding a CNAME record for the application ID in the same DNS zone is required:
+
+>`<yourAppId>` > `<yourAADTenantId>.tenant.runtime.msappproxy.net`
+
+If the connector group that is assigned to the Complex App is not in the region of the Default connector group, one of the following domain suffix must be used in the DNS entries mentioned above:
+
+| Connector Assigned Region | External URL |
+| ---   | ---         |
+| Asia | `<yourAADTenantId>.asia.tenant.runtime.msappproxy.net`|
+| Australia  | `<yourAADTenantId>.aus.tenant.runtime.msappproxy.net` |
+| Europe  | `<yourAADTenantId>.eur.tenant.runtime.msappproxy.net`|
+| North America  | `<yourAADTenantId>.nam.tenant.runtime.msappproxy.net` |
 
 For more detailed instructions for Application Proxy, see [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
 

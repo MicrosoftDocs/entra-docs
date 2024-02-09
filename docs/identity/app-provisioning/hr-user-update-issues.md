@@ -6,7 +6,6 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.workload: identity
 ms.date: 01/30/2024
 ms.author: jfields
 ms.reviewer: chmutali

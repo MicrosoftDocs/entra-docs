@@ -1,5 +1,5 @@
 ---
-title: Publish on-premises apps with Microsoft Entra application proxy 
+title: Publish on-premises apps with Microsoft Entra application proxy
 description: Understand why to use Application Proxy to publish on-premises web applications externally to remote users. Learn about Application Proxy architecture, connectors, authentication methods, and security benefits.
 services: active-directory
 author: kenwith
@@ -7,7 +7,6 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 09/14/2023
 ms.author: kenwith
 ms.reviewer: ashishj
@@ -94,7 +93,7 @@ App Proxy also supports the following authentication protocols with third-party 
 
 * [**Header-based authentication**](./application-proxy-configure-single-sign-on-with-headers.md). This sign-on method uses a third-party authentication service called PingAccess and is used when the application uses headers for authentication. In this scenario, authentication is handled by PingAccess.
 * [**Forms- or password-based authentication**](./application-proxy-configure-single-sign-on-password-vaulting.md). With this authentication method, users sign on to the application with a username and password the first time they access it. After the first sign-on, Microsoft Entra ID supplies the username and password to the application. In this scenario, authentication is handled by Microsoft Entra ID.
-* [**SAML authentication**](./application-proxy-configure-single-sign-on-on-premises-apps.md). SAML-based single sign-on is supported for applications that use either SAML 2.0 or WS-Federation protocols. With SAML single sign-on, Microsoft Entra authenticates to the application by using the user's Microsoft Entra account.
+* [**SAML authentication**](./conceptual-sso-apps.md). SAML-based single sign-on is supported for applications that use either SAML 2.0 or WS-Federation protocols. With SAML single sign-on, Microsoft Entra authenticates to the application by using the user's Microsoft Entra account.
 
 For more information on supported methods, see [Choosing a single sign-on method](~/identity/enterprise-apps/plan-sso-deployment.md#choosing-a-single-sign-on-method).
 

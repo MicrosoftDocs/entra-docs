@@ -1,12 +1,11 @@
 ---
 title: 'Enable Microsoft Entra Connect group writeback'
-description: This article describes how to enable group writeback in Microsoft Entra Connect by using PowerShell and a wizard. 
+description: This article describes how to enable group writeback in Microsoft Entra Connect by using PowerShell and a wizard.
 services: active-directory
 author: billmath
 manager: amycolannino
 ms.service: active-directory
 ms.topic: how-to
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath

@@ -4,9 +4,8 @@ description: How to view current privileged role assignments in the Microsoft En
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: how-to
 ms.date: 05/22/2023
 ms.author: jfields
@@ -20,7 +19,7 @@ The **Microsoft Entra Insights** tab shows you who is assigned to privileged rol
 > Microsoft recommends that you keep two break glass accounts permanently assigned to the global administrator role. Make sure that these accounts don't require the same multi-factor authentication mechanism to sign in as other administrative accounts. This is described further in [Manage emergency access accounts in Microsoft Entra](~/identity/role-based-access-control/security-emergency-access.md). 
 
 > [!NOTE] 
-> Keep role assignments permanent if a user has a an additional Microsoft account (for example, an account they use to sign in to Microsoft services like Skype or Outlook.com). If you require multi-factor authentication to activate a role assignment, a user with an additional Microsoft account will be locked out.  
+> Keep role assignments permanent if a user has an additional Microsoft account (for example, an account they use to sign in to Microsoft services like Skype or Outlook.com). If you require multi-factor authentication to activate a role assignment, a user with an additional Microsoft account will be locked out.  
 
 ## Prerequisite
 To view information on the Microsoft Entra Insights tab, you must have Permissions Management Administrator role permissions.

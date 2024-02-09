@@ -1,11 +1,10 @@
 ---
-title: Control external access to resources in Microsoft Entra ID with sensitivity labels 
+title: Control external access to resources in Microsoft Entra ID with sensitivity labels
 description: Use sensitivity labels as a part of your overall security plan for external access
 services: active-directory
 author: janicericketts
 manager: martinco
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 02/23/2023

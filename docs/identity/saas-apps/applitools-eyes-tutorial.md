@@ -7,11 +7,9 @@ manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
 ms.topic: how-to
-ms.date: 01/23/2024
+ms.date: 02/07/2024
 ms.author: jeedes
-
 ---
 
 # Microsoft Entra SSO integration with Applitools Eyes
@@ -76,8 +74,8 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier (Entity ID)** text box, type the value:
-    `com.applitools`
+    a. In the **Identifier (Entity ID)** text box, type a value using the following pattern:
+    `<SUBDOMAIN>.applitools.com`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<SUBDOMAIN>.applitools.com`
@@ -89,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://<SUBDOMAIN>.applitools.com/api/auth/logout`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Reply URL, Sign on URL and Logout URL. Contact [Applitools Eyes support team](mailto:support@applitools.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values are not real. Update these values with the actual Identifier, Reply URL, Sign on URL and Logout URL. Contact [Applitools Eyes support team](mailto:support@applitools.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 

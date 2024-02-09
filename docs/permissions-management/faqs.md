@@ -4,9 +4,8 @@ description: Frequently asked questions (FAQs) about Microsoft Entra Permissions
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: faq
 ms.date: 08/23/2023
 ms.author: jfields

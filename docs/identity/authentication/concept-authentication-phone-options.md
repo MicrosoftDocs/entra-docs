@@ -47,7 +47,7 @@ Microsoft doesn't guarantee consistent text message or voice-based Microsoft Ent
 With text message verification during SSPR or Microsoft Entra multifactor authentication, a text message is sent to the mobile phone number containing a verification code. To complete the sign-in process, the verification code provided is entered into the sign-in interface. 
 
 >[!NOTE]
->Updated regulation in India disallows over-the-top apps such as WhatsApp from usage in business commuincations. Meta announced they will block the ability to send authentication messages in WhatsApp to users in India starting March 1st, 2024. 
+>Updated regulation in India disallows over-the-top apps such as WhatsApp from usage in business communications. Meta announced they will block the ability to send authentication messages in WhatsApp to users in India starting March 1st, 2024. 
 >
 >Starting mid-February 2024, users in India who receive OTP messages in WhatsApp will receive them by SMS as they did before. No action is required by users or organizations. Microsoft will divert all authention messages back to the SMS channel by March 1st, 2024.
 
@@ -57,7 +57,7 @@ Android users can enable RCS on their devices. RCS offers encryption and other i
 
 :::image type="content" source="media/concept-authentication-methods/brand.png" alt-text="Screenshot of Microsoft branding in RCS messages.":::
 
-Some users with phone numbers that have country codes belonging to Indonesia may receive their verification codes in WhatsApp. Like RCS, these messages are similar to SMS, but have more Microsoft branding and a verified checkmark. Only users that have WhatsApp receive verification codes through this channel. To check if a user has WhatsApp, we silently try to deliver them a message in the app by using the phone number they registered for text message verification. If users don't have any internet connectivity or they uninstall WhatsApp, they receive SMS verification codes. The phone number associated with Microsoft's WhatsApp Business Agent is: *+1 (217) 302 1989*.
+Some users with phone numbers that have country codes belonging to Indonesia and New Zealand may receive their verification codes in WhatsApp. Like RCS, these messages are similar to SMS, but have more Microsoft branding and a verified checkmark. Only users that have WhatsApp receive verification codes through this channel. To check if a user has WhatsApp, we silently try to deliver them a message in the app by using the phone number they registered for text message verification. If users don't have any internet connectivity or they uninstall WhatsApp, they receive SMS verification codes. The phone number associated with Microsoft's WhatsApp Business Agent is: *+1 (217) 302 1989*.
 
 :::image type="content" border="true" source="media/concept-authentication-methods/code.png" alt-text="Screenshot of confirmation.":::
 

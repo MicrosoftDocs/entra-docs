@@ -2,11 +2,9 @@
 title: Admin role docs across Microsoft 365 services
 description: Find content and API references for administrator roles for Microsoft 365 services in Microsoft Entra ID
 services: active-directory
-documentationcenter: ''
 author: rolyon
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: roles
 ms.topic: reference
 ms.date: 11/05/2020

@@ -5,7 +5,6 @@ services: active-directory
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: reference

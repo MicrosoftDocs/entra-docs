@@ -4,10 +4,8 @@ description: This article describes how to customize claims in Microsoft Entra I
 services: active-directory
 documentationcenter: .net
 author: rahul-nagraj
-manager: 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: how-to
 ms.date: 11/02/2023
 ms.author: rahulnagraj
@@ -31,7 +29,7 @@ In this how-to guide, we'll cover a few common scenarios that can help you under
 
 ## Prerequisites
 
-1. Learn about [how to get an Microsoft Entra tenant](~/external-id/customers/quickstart-tenant-setup.md).
+1. Learn about [how to get a Microsoft Entra tenant](~/external-id/customers/quickstart-tenant-setup.md).
 1. Download the latest [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
 ## Get started

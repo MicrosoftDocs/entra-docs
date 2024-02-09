@@ -1,5 +1,4 @@
 ---
-
 title: Product names and service plan identifiers for licensing
 description: Identifier map to manage Microsoft Entra ID licensing in the Azure portal, the Microsoft 365 admin center, PowerShell, or Microsoft Graph
 services: active-directory
@@ -8,7 +7,6 @@ documentationcenter: ''
 author: Nicholak-MS
 manager: amycolannino
 editor: ''
-
 ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: reference

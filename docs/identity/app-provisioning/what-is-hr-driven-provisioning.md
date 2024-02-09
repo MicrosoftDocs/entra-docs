@@ -5,7 +5,6 @@ services: active-directory
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.topic: overview
 ms.date: 10/20/2022
 ms.subservice: compliance

@@ -1,11 +1,10 @@
 ---
 title: Configuring multi-tenant user management in Microsoft Entra ID
-description: Learn about the different patterns used to configure user access across Microsoft Entra tenants with guest accounts 
+description: Learn about the different patterns used to configure user access across Microsoft Entra tenants with guest accounts
 services: active-directory
 author: janicericketts
 manager: martinco
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 04/19/2023
@@ -110,7 +109,7 @@ Organizations initially focus on requirements that they want in place for immedi
 - **Unified global address list:** Each user can see all other users in the GAL in their home tenant.
 - **Free/busy information:** Enable users to discover each other's availability. You can do so with [Organization relationships in Exchange Online](/exchange/sharing/organization-relationships/create-an-organization-relationship).
 - **Chat and presence:** Enable users to determine others' presence and initiate instant messaging. Configure through [external access in Microsoft Teams](/microsoftteams/trusted-organizations-external-meetings-chat).
-- **Book resources such as meeting rooms:** Enable users to book conference rooms or other resources across the organization. Cross-tenant conference room booking isn't currently available.
+- **Book resources such as meeting rooms:** Enable users to book conference rooms or other resources across the organization. Cross-tenant conference room booking isn't currently available in Exchange Online.
 - **Single email domain:** Enable all users to send and receive mail from a single email domain (for example, `users@contoso.com`). Sending requires an email address rewrite solution.
 
 ### Access requirements

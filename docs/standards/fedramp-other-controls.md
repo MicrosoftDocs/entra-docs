@@ -1,10 +1,9 @@
 ---
 title: Configure additional controls to meet FedRAMP High Impact level
 description: Detailed guidance on how to configure additional controls to meet FedRAMP High Impact levels.
-services: active-directory 
+services: active-directory
 ms.service: active-directory
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh

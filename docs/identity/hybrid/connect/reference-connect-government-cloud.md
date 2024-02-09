@@ -5,7 +5,6 @@ services: active-directory
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.topic: reference
 ms.date: 11/06/2023
 ms.subservice: hybrid

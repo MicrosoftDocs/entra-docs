@@ -1,14 +1,13 @@
 ---
 title: Access Microsoft Entra application proxy apps in Teams
-description: Use Microsoft Entra application proxy to access your on-premises application through Microsoft Teams. 
+description: Use Microsoft Entra application proxy to access your on-premises application through Microsoft Teams.
 services: active-directory
 author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/06/2024
 ms.author: kenwith
 ms.reviewer: harshja
 ---
@@ -21,7 +20,7 @@ Your users can add cloud apps to their Teams channels [using tabs](https://suppo
 
 ## Install the Application Proxy connector and publish your app
 
-If you haven't already, [configure Application Proxy for your tenant and install the connector](~/identity/app-proxy/application-proxy-add-on-premises-application.md). Then, publish your on-premises application for remote access. When you're publishing the app, make note of the external URL because it's used to add the app to Teams.
+If you haven't already, [configure Application Proxy for your tenant and install the connector](~/identity/app-proxy/application-proxy-add-on-premises-application.md). Then, publish your on-premises application for remote access. Make note of the external URL because it's used to add the app to Teams.
 
 If you already have your apps published but don't remember their external URLs, look them up in the [Microsoft Entra admin center](https://entra.microsoft.com). Sign in, then browse to **Identity** > **Applications** > **Enterprise applications** > select your app > **Application proxy**.
 
@@ -46,4 +45,4 @@ Once one member of a team adds the tab, it shows up for everyone in the channel.
 ## Next steps
 
 - Learn how to [publish on-premises SharePoint sites](application-proxy-integrate-with-sharepoint-server.md) with Application Proxy.
-- Configure your apps to use [custom domains](application-proxy-configure-custom-domain.md) for their external URL.
+- Configure your apps to use [custom domains](how-to-configure-custom-domain.md) for their external URL.

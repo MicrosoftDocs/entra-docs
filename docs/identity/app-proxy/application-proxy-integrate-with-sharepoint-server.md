@@ -6,9 +6,8 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/06/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -28,7 +27,7 @@ To perform the configuration, you need the following resources:
 - An Application Proxy connector installed and running on a machine within the corporate domain.
 
 Configuring SharePoint with Application Proxy requires two URLs:
-- An external URL, visible to end-users and determined in Microsoft Entra ID. This URL can use a custom domain. Learn more about [working with custom domains in Microsoft Entra application proxy](application-proxy-configure-custom-domain.md).
+- An external URL, visible to end-users and determined in Microsoft Entra ID. This URL can use a custom domain. Learn more about [working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md).
 - An internal URL, known only within the corporate domain and never used directly.
 
 > [!IMPORTANT]
@@ -195,5 +194,5 @@ If sign-in to the site isn't working, you can get more information about the iss
 
 ## Next steps
 
-* [Working with custom domains in Microsoft Entra application proxy](application-proxy-configure-custom-domain.md)
+* [Working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md)
 * [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md)

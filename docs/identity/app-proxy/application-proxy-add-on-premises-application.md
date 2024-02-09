@@ -6,9 +6,8 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/13/2023
+ms.date: 02/06/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -125,6 +124,9 @@ Open the following ports to **outbound** traffic.
 
 If your firewall enforces traffic according to originating users, also open ports 80 and 443 for traffic from Windows services that run as a Network Service.
 
+> [!NOTE]
+> Other port errors can occur when there's a networking error on your system. Make sure that it's possible to connect from a browser to a public website and that the ports are open as specified in [Application Proxy prerequisites](application-proxy-add-on-premises-application.md#prerequisites). For more information about troubleshooting issues related to connector errors, see [Troubleshoot Application Proxy problems and error messages](application-proxy-troubleshoot.md#connector-errors).
+
 ### Allow access to URLs
 
 Allow access to the following URLs:
@@ -148,8 +150,6 @@ You can allow connections to `*.msappproxy.net`, `*.servicebus.windows.net`, and
 Public DNS records for Microsoft Entra application proxy endpoints are chained CNAME records pointing to an A record. Setting up the records this way ensures fault tolerance and flexibility. It’s guaranteed that the Microsoft Entra application proxy Connector always accesses host names with the domain suffixes `*.msappproxy.net` or `*.servicebus.windows.net`. However, during the name resolution the CNAME records might contain DNS records with different host names and suffixes. Due to the difference, you must ensure that the device (depending on your setup - connector server, firewall, outbound proxy) can resolve all the records in the chain and allows connection to the resolved IP addresses. Since the DNS records in the chain might be changed from time to time, we can't provide you with any list DNS records.
 
 ## Install and register a connector
-
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To use Application Proxy, install a connector on each Windows server you're using with the Application Proxy service. The connector is an agent that manages the outbound connection from the on-premises application servers to Application Proxy in Microsoft Entra ID. You can install a connector on servers that also have other authentication agents installed such as Microsoft Entra Connect.
 
@@ -179,7 +179,7 @@ For information about connectors, capacity planning, and how they stay up-to-dat
 
 ## Verify the connector installed and registered correctly
 
-You can use the Microsoft Entra admin center or your Windows server to confirm that a new connector installed correctly.
+You can use the Microsoft Entra admin center or your Windows server to confirm that a new connector installed correctly. For information about troubleshooting App Proxy issues, see [Debug Application Proxy application issues](application-proxy-debug-apps.md).
 
 ### Verify the installation through Microsoft Entra admin center
 
@@ -221,8 +221,8 @@ Now that you've prepared your environment and installed a connector, you're read
     | **Name** | The name of the application that appears on My Apps and in the Microsoft Entra admin center. |
     | **Maintenance Mode** | Select if you would like to enable maintenance mode and temporarily disable access for all users to the application. |
     | **Internal URL** | The URL for accessing the application from inside your private network. You can provide a specific path on the backend server to publish, while the rest of the server is unpublished. In this way, you can publish different sites on the same server as different apps, and give each one its own name and access rules.<br><br>If you publish a path, make sure that it includes all the necessary images, scripts, and style sheets for your application. For example, if your app is at `https://yourapp/app` and uses images located at `https://yourapp/media`, then you should publish `https://yourapp/` as the path. This internal URL doesn't have to be the landing page your users see. For more information, see [Set a custom home page for published apps](application-proxy-configure-custom-home-page.md). |
-    | **External URL** | The address for users to access the app from outside your network. If you don't want to use the default Application Proxy domain, read about [custom domains in Microsoft Entra application proxy](./application-proxy-configure-custom-domain.md). |
-    | **Pre Authentication** | How Application Proxy verifies users before giving them access to your application.<br><br>**Microsoft Entra ID** - Application Proxy redirects users to sign in with Microsoft Entra ID, which authenticates their permissions for the directory and application. We recommend keeping this option as the default so that you can take advantage of Microsoft Entra security features like Conditional Access and Multi-Factor Authentication. **Microsoft Entra ID** is required for monitoring the application with Microsoft Defender for Cloud Apps.<br><br>**Passthrough** - Users don't have to authenticate against Microsoft Entra ID to access the application. You can still set up authentication requirements on the backend. |
+    | **External URL** | The address for users to access the app from outside your network. If you don't want to use the default Application Proxy domain, read about [custom domains in Microsoft Entra application proxy](./how-to-configure-custom-domain.md). |
+    | **Pre Authentication** | How Application Proxy verifies users before giving them access to your application.<br><br>**Microsoft Entra ID** - Application Proxy redirects users to sign in with Microsoft Entra ID, which authenticates their permissions for the directory and application. We recommend keeping this option as the default so that you can take advantage of Microsoft Entra security features like Conditional Access and multifactor authentication. **Microsoft Entra ID** is required for monitoring the application with Microsoft Defender for Cloud Apps.<br><br>**Passthrough** - Users don't have to authenticate against Microsoft Entra ID to access the application. You can still set up authentication requirements on the backend. |
     | **Connector Group** | Connectors process the remote access to your application, and connector groups help you organize connectors and apps by region, network, or purpose. If you don't have any connector groups created yet, your app is assigned to **Default**.<br><br>If your application uses WebSockets to connect, all connectors in the group must be version 1.5.612.0 or later. |
 
 1. If necessary, configure **Additional settings**. For most applications, you should keep these settings in their default states.
@@ -269,19 +269,42 @@ For troubleshooting, see [Troubleshoot Application Proxy problems and error mess
 
 Don't forget to delete any of the resources you created in this tutorial when you're done.
 
+## Troubleshooting
+
+Learn about common issues and how to troubleshoot them.
+
+### Create the Application/Setting the URLs
+Check the error details for information and suggestions for how to fix the application. Most error messages include a suggested fix. To avoid common errors, verify:
+
+- You are an administrator with permission to create an Application Proxy application
+- The internal URL is unique
+- The external URL is unique
+- The URLs start with http or https, and end with a “/”
+- The URL should be a domain name, not an IP address
+
+The error message should display in the top-right corner when you create the application. You can also select the notification icon to see the error messages.
+
+### Configure connectors/connector groups
+
+If you are having difficulty configuring your application because of warning about the connectors and connector groups, see instructions on enabling Application Proxy for details on how to download connectors. If you want to learn more about connectors, see the [connectors documentation](application-proxy-connectors.md).
+
+If your connectors are inactive, this means that they are unable to reach the service. This is often because all the required ports are not open. To see a list of required ports, see the pre-requisites section of the enabling Application Proxy documentation.
+
+### Upload certificates for custom domains
+
+Custom Domains allow you to specify the domain of your external URLs. To use custom domains, you need to upload the certificate for that domain. For information on using custom domains and certificates, see [Working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md).
+
+If you are encountering issues uploading your certificate, look for the error messages in the portal for additional information on the problem with the certificate. Common certificate problems include:
+
+- Expired certificate
+- Certificate is self-signed
+- Certificate is missing the private key
+
+The error message display in the top-right corner as you try to upload the certificate. You can also select the notification icon to see the error messages.
+
 ## Next steps
 
-In this tutorial, you prepared your on-premises environment to work with Application Proxy, and then installed and registered the Application Proxy connector. Next, you added an application to your Microsoft Entra tenant. You verified that a user can sign on to the application by using a Microsoft Entra account.
-
-You did these things:
-> [!div class="checklist"]
-> * Opened ports for outbound traffic and allowed access to specific URLs
-> * Installed the connector on your Windows server, and registered it with Application Proxy
-> * Verified the connector installed and registered correctly
-> * Added an on-premises application to your Microsoft Entra tenant
-> * Verified a test user can sign on to the application by using a Microsoft Entra account
-
-You're ready to configure the application for single sign-on. Use the following link to choose a single sign-on method and to find single sign-on tutorials.
-
-> [!div class="nextstepaction"]
-> [Configure single sign-on](~/identity/enterprise-apps/plan-sso-deployment.md#choosing-a-single-sign-on-method)
+- [Publish applications using Microsoft Entra application proxy](application-proxy-add-on-premises-application.md)
+- [Enable Application Proxy in the Microsoft Entra admin center](application-proxy-add-on-premises-application.md)
+- [Working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md)
+- [Configure single sign-on](~/identity/enterprise-apps/plan-sso-deployment.md#choosing-a-single-sign-on-method)
