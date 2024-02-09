@@ -39,14 +39,11 @@ The scenario outlined in this tutorial assumes that you already have the followi
 * Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 * Determine what data to [map between Microsoft Entra ID and Puzzel](~/identity/app-provisioning/customize-application-attributes.md).
 
-## Step 2: Configure Puzzel to support provisioning with Microsoft Entra ID
-Contact Puzzel support to configure Puzzel to support provisioning with Microsoft Entra ID.
-
-## Step 3: Add Puzzel from the Microsoft Entra application gallery
+## Step 2: Add Puzzel from the Microsoft Entra application gallery
 
 Add Puzzel from the Microsoft Entra application gallery to start managing provisioning to Puzzel. If you have previously setup Puzzel for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
-## Step 4: Define who will be in scope for provisioning 
+## Step 3: Define who will be in scope for provisioning 
 
 The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users to the application. If you choose to scope who will be provisioned based solely on attributes of the user, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
@@ -55,7 +52,7 @@ The Microsoft Entra provisioning service allows you to scope who will be provisi
 * If you need more roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
 
 
-## Step 5: Configure automatic user provisioning to Puzzel 
+## Step 4: Configure automatic user provisioning to Puzzel 
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users in Puzzel based on user assignments in Microsoft Entra ID.
 
@@ -150,7 +147,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 This operation starts the initial synchronization cycle of all users defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 
-## Step 6: Monitor your deployment
+## Step 5: Monitor your deployment
 Once you've configured provisioning, use the following resources to monitor your deployment:
 
 * Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
