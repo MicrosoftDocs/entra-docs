@@ -37,9 +37,9 @@ This tutorial:
 
 To add an on-premises application to Microsoft Entra ID, you need:
 
-* An [Microsoft Entra ID P1 or P2 subscription](https://azure.microsoft.com/pricing/details/active-directory)
-* An application administrator account
-* To syncronize user identities from an on-premises directory or to create them directly within your Microsoft Entra tenants. Identity synchronization allows Microsoft Entra ID to preauthenticate users before granting them access to App Proxy published applications and to have the necessary user identifier information to perform single sign-on (SSO).
+* An [Microsoft Entra ID P1 or P2 subscription](https://azure.microsoft.com/pricing/details/active-directory).
+* An application administrator account.
+* Syncronized user identities with an on-premises directory.  or to create them directly within your Microsoft Entra tenants. Identity synchronization allows Microsoft Entra ID to preauthenticate users before granting them access to application proxy published applications. Synchronization also provides the necessary user identifier information to perform single sign-on (SSO).
 
 ### Windows server
 
@@ -111,7 +111,7 @@ To enable TLS 1.2:
 Start by enabling communication to Azure data centers to prepare your environment for Microsoft Entra application proxy. If there's a firewall in the path, make sure it's open. An open firewall allows the connector to make HTTPS (TCP) requests to the application proxy.
 
 > [!IMPORTANT]
-> If you are installing the connector for Azure Government cloud follow the [prerequisites](~/identity/hybrid/connect/reference-connect-government-cloud.md#allow-access-to-urls) and [installation steps](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud). This requires enabling access to a different set of URLs and an additional parameter to run the installation.
+> If you're installing the connector for Azure Government cloud follow the [prerequisites](~/identity/hybrid/connect/reference-connect-government-cloud.md#allow-access-to-urls) and [installation steps](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud). This requires enabling access to a different set of URLs and an additional parameter to run the installation.
 
 ### Open ports
 
@@ -233,7 +233,7 @@ Add on-premises applications to Microsoft Entra ID.
     | **Use HTTP-Only Cookie** | Select to have application proxy cookies include the HTTPOnly flag in the HTTP response header. If using Remote Desktop Services, keep the option unselected. |
     | **Use Persistent Cookie**| Keep the option unselected. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see [Cookie settings for accessing on-premises applications in Microsoft Entra ID](./application-proxy-configure-cookie-settings.md).
     | **Translate URLs in Headers** | Keep the option selected unless your application required the original host header in the authentication request. |
-    | **Translate URLs in Application Body** | Keep the option unselected unless you hardcoded HTML links to other on-premises applications and don't use custom domains. For more information, see [Link translation with application proxy](./application-proxy-configure-hard-coded-link-translation.md).<br><br>Select if you plan to monitor this application with Microsoft Defender for Cloud Apps. For more information, see [Configure real-time application access monitoring with Microsoft Defender for Cloud Apps and Microsoft Entra ID](./application-proxy-integrate-with-microsoft-cloud-application-security.md). |
+    | **Translate URLs in Application Body** | Keep the option unselected unless HTML links are hardcoded to other on-premises applications and don't use custom domains. For more information, see [Link translation with application proxy](./application-proxy-configure-hard-coded-link-translation.md).<br><br>Select if you plan to monitor this application with Microsoft Defender for Cloud Apps. For more information, see [Configure real-time application access monitoring with Microsoft Defender for Cloud Apps and Microsoft Entra ID](./application-proxy-integrate-with-microsoft-cloud-application-security.md). |
     | **Validate Backend TLS/SSL Certificate** | Select to enable backend TLS/SSL certificate validation for the application. |
 
 1. Select **Add**.
@@ -276,7 +276,7 @@ Learn about common issues and how to troubleshoot them.
 ### Create the Application/Setting the URLs
 Check the error details for information and suggestions for how to fix the application. Most error messages include a suggested fix. To avoid common errors, verify:
 
-- You are an administrator with permission to create an application proxy application
+- You're an administrator with permission to create an application proxy application
 - The internal URL is unique
 - The external URL is unique
 - The URLs start with http or https, and end with a “/”
@@ -286,15 +286,15 @@ The error message should display in the top-right corner when you create the app
 
 ### Configure connectors/connector groups
 
-If you are having difficulty configuring your application because of warning about the connectors and connector groups, see instructions on enabling application proxy for details on how to download connectors. If you want to learn more about connectors, see the [connectors documentation](application-proxy-connectors.md).
+If you're having difficulty configuring your application because of warning about the connectors and connector groups, see instructions on enabling application proxy for details on how to download connectors. If you want to learn more about connectors, see the [connectors documentation](application-proxy-connectors.md).
 
-If your connectors are inactive, they are unable to reach the service. Often because all of the required ports are not open. To see a list of required ports, see the prerequisites section of the enabling application proxy documentation.
+If your connectors are inactive, they're unable to reach the service. Often because all of the required ports aren't open. To see a list of required ports, see the prerequisites section of the enabling application proxy documentation.
 
 ### Upload certificates for custom domains
 
 Custom Domains allow you to specify the domain of your external URLs. To use custom domains, you need to upload the certificate for that domain. For information on using custom domains and certificates, see [Working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md).
 
-If you are encountering issues uploading your certificate, look for the error messages in the portal for additional information on the problem with the certificate. Common certificate problems include:
+If you're encountering issues uploading your certificate, look for the error messages in the portal for additional information on the problem with the certificate. Common certificate problems include:
 
 - Expired certificate
 - Certificate is self-signed
