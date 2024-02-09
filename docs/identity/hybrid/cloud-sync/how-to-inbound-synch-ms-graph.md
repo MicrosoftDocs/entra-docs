@@ -40,7 +40,7 @@ Use these [Microsoft Graph PowerShell](/powershell/microsoftgraph/) commands to 
 ### Enable tenant flags
 
 ```powershell
-Connect-MgGraph -Scopes "DeviceManagementConfiguration.ReadWrite.All" ('-Environment <AzureEnvironmnet>')
+Connect-MgGraph -Scopes "DeviceManagementConfiguration.ReadWrite.All" ('-Environment <AzureEnvironment>')
 Update-MgOrganization -OrganizationId <ID> -OnPremisesSyncEnabled
 ```
 
