@@ -92,7 +92,7 @@ Allow internal identities such as employees, and external identities such as con
 
 5. In **Tenant restrictions defaults**, create the policy ID (if not created) and configure the policy to block all users, groups, and external applications.  
 
-   [ ![Screenshot of Tenant restrictions, with external users and groups, also external apps.](media/tenant-restrictions-migration/tenant-restrictions-applies.png)](media/tenant-restrictions-migration/tenant-restrictions-applies.png3lightbox)
+   [ ![Screenshot of Tenant restrictions, with external users and groups, also external apps.](media/tenant-restrictions-migration/tenant-restrictions-applies.png)](media/tenant-restrictions-migration/tenant-restrictions-applies.png#lightbox)
 
    > [!NOTE]
    > To target consumer Microsoft accounts (MSAs), add an organization with the following tenant ID: 9188040d-6c67-4c5b-b112-36a304b66dad. 
