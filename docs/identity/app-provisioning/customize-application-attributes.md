@@ -209,7 +209,7 @@ Use the steps in the example to provision application roles for a user to your a
 - Mapping an appRoleAssignment in Microsoft Entra ID to a role in your application requires that you transform the attribute using an [expression](~/identity/app-provisioning/functions-for-customizing-application-data.md). The appRoleAssignment attribute **shouldn't be mapped directly** to a role attribute without using an expression to parse the role details. 
 
 > [!NOTE]
-> When creating roles starting from enterprise applications, the SCIM standard defines enterprise user role attributes differently. For more information, see [Develop and plan provisioning for a SCIM endpoint in Microsoft Entra ID](use-scim-to-provision-users-and-groups#design-your-user-and-group-schema.md).
+> When creating roles starting from enterprise applications, the SCIM standard defines enterprise user role attributes differently. For more information, see [Develop and plan provisioning for a SCIM endpoint in Microsoft Entra ID](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#design-your-user-and-group-schema).
 
 - **SingleAppRoleAssignment**
 
