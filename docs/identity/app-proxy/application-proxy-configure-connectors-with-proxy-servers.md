@@ -14,7 +14,7 @@ ms.reviewer: ashishj
 
 # Work with existing on-premises proxy servers
 
-This article explains how to configure Microsoft Entra application proxy connectors to work with outbound proxy servers. It is intended for customers with network environments that have existing proxies.
+This article explains how to configure Microsoft Entra application proxy connectors to work with outbound proxy servers. It's intended for customers with network environments that have existing proxies.
 
 We start by looking at these main deployment scenarios:
 
@@ -55,7 +55,7 @@ Be sure to make copies of the original files, in case you need to revert to the 
 
 ## Use the outbound proxy server
 
-Some environments require all outbound traffic to go through an outbound proxy, without exception. As a result, bypassing the proxy is not an option.
+Some environments require all outbound traffic to go through an outbound proxy, without exception. As a result, bypassing the proxy isn't an option.
 
 You can configure the connector traffic to go through the outbound proxy, as shown in the following diagram:
 
@@ -70,7 +70,7 @@ As a result of having only outbound traffic, there's no need to configure inboun
 
 If WPAD is enabled in the environment and configured appropriately, the connector automatically discovers the outbound proxy server and attempt to use it. However, you can explicitly configure the connector to go through an outbound proxy.
 
-To do so, edit the `C:\Program Files\Microsoft Azure AD App Proxy Connector\ApplicationProxyConnectorService.exe.config` file, and add the `system.net` section shown in code sample. Change `proxyserver:8080` to reflect your local proxy server name or IP address and port. The value must have the prefix `http://` even if you are using an IP address.
+To do so, edit the `C:\Program Files\Microsoft Azure AD App Proxy Connector\ApplicationProxyConnectorService.exe.config` file, and add the `system.net` section shown in code sample. Change `proxyserver:8080` to reflect your local proxy server name or IP address and port. The value must have the prefix `http://` even if you're using an IP address.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -89,10 +89,10 @@ To do so, edit the `C:\Program Files\Microsoft Azure AD App Proxy Connector\Appl
 </configuration>
 ```
 
-Next, configure the Connector Updater service to use the proxy by making a similar change to the C:\Program Files\Microsoft Azure AD App Proxy Connector Updater\ApplicationProxyConnectorUpdaterService.exe.config file.
+Next, configure the Connector Updater service to use the proxy by making a similar change to the `C:\Program Files\Microsoft Azure AD App Proxy Connector Updater\ApplicationProxyConnectorUpdaterService.exe.config` file.
 
 > [!NOTE]
-> The Connector service evaluates the **defaultProxy** configuration for usage in `%SystemRoot%\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config`, if the **defaultProxy** is not configured (by default) in ApplicationProxyConnectorService.exe.config. The same applies to the Connector Updater service (ApplicationProxyConnectorUpdaterService.exe.config) too. 
+> The Connector service evaluates the **defaultProxy** configuration for usage in `%SystemRoot%\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config`, if the **defaultProxy** isn't configured (by default) in ApplicationProxyConnectorService.exe.config. The same applies to the Connector Updater service (ApplicationProxyConnectorUpdaterService.exe.config) too. 
 
 ### Step 2: Configure the proxy to allow traffic from the connector and related services to flow through
 
@@ -119,11 +119,11 @@ If your firewall or proxy allows you to configure DNS allowlists, you can allow 
 If you can't allow connectivity by Fully Qualified Domain Name (FQDN) and need to specify IP ranges instead, use these options:
 
 * Allow the connector outbound access to all destinations.
-* Allow the connector outbound access to all of the Azure datacenter IP ranges. The challenge with using the list of Azure datacenter IP ranges is that they are updated weekly. You need to put a process in place to ensure that your access rules are updated accordingly. Only using a subset of the IP addresses causes your configuration to break. The latest Azure Data Center IP ranges are downloaded at [https://download.microsoft.com](https://download.microsoft.com). Use the search term, `Azure IP Ranges and Service Tags`. Be sure to select the relevant cloud. For example, the public cloud IP ranges can be found by searching for `Azure IP Ranges and Service Tags – Public Cloud`. The US Government cloud can be found by searching for `Azure IP Ranges and Service Tags – US Government Cloud`.
+* Allow the connector outbound access to all of the Azure datacenter IP ranges. The challenge with using the list of Azure datacenter IP ranges is that they're updated weekly. You need to put a process in place to ensure that your access rules are updated accordingly. Only using a subset of the IP addresses causes your configuration to break. The latest Azure Data Center IP ranges are downloaded at [https://download.microsoft.com](https://download.microsoft.com). Use the search term, `Azure IP Ranges and Service Tags`. Be sure to select the relevant cloud. For example, the public cloud IP ranges can be found by searching for `Azure IP Ranges and Service Tags – Public Cloud`. The US Government cloud can be found by searching for `Azure IP Ranges and Service Tags – US Government Cloud`.
 
 #### Proxy authentication
 
-Proxy authentication is not currently supported. Our current recommendation is to allow the connector anonymous access to the Internet destinations.
+Proxy authentication isn't currently supported. Our current recommendation is to allow the connector anonymous access to the Internet destinations.
 
 #### Proxy ports
 
@@ -134,7 +134,7 @@ The connector makes outbound TLS-based connections by using the CONNECT method. 
 
 #### TLS inspection
 
-Do not use TLS inspection for the connector traffic, because it causes problems for the connector traffic. The connector uses a certificate to authenticate to the Application Proxy service, and that certificate can be lost during TLS inspection.
+Don't use TLS inspection for the connector traffic, because it causes problems for the connector traffic. The connector uses a certificate to authenticate to the Application Proxy service, and that certificate can be lost during TLS inspection.
 
 ## Configure using a proxy between the connector and backend application
 Using a forward proxy for the communication towards the backend application is a special requirement in some environments.
