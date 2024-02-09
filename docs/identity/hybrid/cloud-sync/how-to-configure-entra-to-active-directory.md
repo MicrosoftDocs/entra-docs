@@ -40,11 +40,11 @@ The following prerequisites are required to implement this scenario.
  >```
  >If the permissions are set manually, you need to ensure that Read, Write, Create, and Delete all properties for all descendent Groups and User objects. 
  >
- >These permissions are not applied to AdminSDHolder objects by default
+ >These permissions aren't applied to AdminSDHolder objects by default
 
  [Microsoft Entra Provisioning Agent gMSA PowerShell cmdlets](how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain) 
 
- - The provisioning agent must be able to communicate with the domain controller(s) on ports TCP/389 (LDAP) and TCP/3268 (Global Catalog).
+ - The provisioning agent must be able to communicate with one or more domain controllers on ports TCP/389 (LDAP) and TCP/3268 (Global Catalog).
      - Required for global catalog lookup to filter out invalid membership references
  - Mircorosft Entra Connect with build version [2.2.8.0](../connect/reference-connect-version-history.md#2280) or later
      - Required to support on-premises user membership synchronized using Microsoft Entra Connect 
@@ -57,7 +57,7 @@ For this scenario, only the following is supported:
   - these groups can only contain on-premises synchronized users and / or additional cloud created security groups.
   - the on-premises user accounts that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest.
   - these groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope).  Your on-premises environment must support the universal group scope.
-  - groups that are larger than 50,000 members are not supported.
+  - groups that are larger than 50,000 members aren't supported.
   - each direct child nested group counts as one member in the referencing group
 
 ## License requirements
@@ -109,7 +109,7 @@ You can scope the agent to synchronize all or specific security groups. You can 
  >
  >If you want to nest groups and provision them AD, then you will need to add all of the member groups to the scope also.
 
- 4.  You can use the **Target Container** box to scope groups that use a specific container.  This is done by using the parentDistinguishedName attribute. This is done by using either a constant, direct, or expression mapping.
+ 4.  You can use the **Target Container** box to scope groups that use a specific container.  Accomplish this task by using the parentDistinguishedName attribute. Use either a constant, direct, or expression mapping.
  
   Multiple target containers can be configured using an attribute mapping expression with the Switch() function.  With this expression, if the displayName value is Marketing or Sales, the group is created in the corresponding OU. If there's no match, then the group is created in the default OU.
 
@@ -129,7 +129,7 @@ You can customize the default attribute-mappings according to your business need
 :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png" alt-text="Screenshot of the attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png":::
 
 ### Schema for Entra ID to AD configurations
-Currently, the AD Schema is not discoverable and there is fixed set of mappings.  The following table provides the default mappings and schema for the Entra ID to AD configurations.
+Currently, the AD Schema isn't discoverable and there's fixed set of mappings.  The following table provides the default mappings and schema for the Entra ID to AD configurations.
 
 |Target attribute|Source attribute|Mapping type|Notes|
 |-----|-----|-----|-----|
@@ -148,7 +148,7 @@ Be aware that not all of the above mappings are visible in the portal.  For more
 
 
 ### Attribute scope filtering
-Attribute based scope filtering is supported.  This allows you to scope groups based on certain attributes.  However, be aware that the attribute mapping section for a Microsoft Entra ID to AD configuration is slightly different than the traditional attribute mapping section.
+Attribute based scope filtering is supported.  You can scope groups based on certain attributes.  However, be aware that the attribute mapping section for a Microsoft Entra ID to AD configuration is slightly different than the traditional attribute mapping section.
 
 :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png" alt-text="Screenshot of the attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png":::
 
@@ -186,7 +186,7 @@ The following operators are supported:
 |INCLUDES||
 |IS FALSE| Clause returns "true" if the evaluated attribute contains a Boolean value of false.|
 |IS_MEMBER_OF||
-|IS NOT NULL|Clause returns "true" if the evaluated attribute is not empty.|
+|IS NOT NULL|Clause returns "true" if the evaluated attribute isn't empty.|
 |IS NULL|Clause returns "true" if the evaluated attribute is empty.|
 |IS TRUE|Clause returns "true" if the evaluated attribute contains a Boolean value of true.|
 |!&L||
@@ -214,7 +214,7 @@ For more information, see [attribute mapping](how-to-attribute-mapping.md#add-an
 ## On-demand provisioning
 Microsoft Entra Connect cloud sync allows you to test configuration changes, by applying these changes to a group.  
 
-You can use this to validate and verify that the changes made to the configuration were applied properly and are being correctly synchronized to Microsoft Entra ID.  
+You can use this test to validate and verify that the changes made to the configuration were applied properly and are being correctly synchronized to Microsoft Entra ID.  
 
 The following is true with regrad to on-demand provisioning of groups:
 - On-demand provisioning of groups supports updating up to five members at a time.
@@ -227,7 +227,7 @@ The following is true with regrad to on-demand provisioning of groups:
 To use on-demand provisioning, follow these steps:
 
 >[!NOTE]
->When using on-demand provisioning, members are not automatically provsisioned.  You need to select which members you wish to test on and there is a 5 member limit.
+>When using on-demand provisioning, members aren't automatically provsisioned.  You need to select which members you wish to test on and there's a 5 member limit.
 
  [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
 
