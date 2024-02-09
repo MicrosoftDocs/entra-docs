@@ -28,7 +28,7 @@ With [Microsoft Entra application proxy](application-proxy.md), you can address 
 :::image type="content" source="./media/application-proxy-configure-complex-application/complex-app-flow-1.png" alt-text="Diagram of a Complex application with multiple application segments definition.":::
 
 A complex app has multiple app segments. Each app segment has an internal and external URL.
-One Conditional Access policy is associated with the app. Access to any of the external URLs work with pre-authentication with the same set of policies. These policies are enforced for all app segments.
+One Conditional Access policy is associated with the app. Access to any of the external URLs work with preauthentication with the same set of policies. These policies are enforced for all app segments.
 
 Complex apps provide several benefits: 
 - User authentication
@@ -49,40 +49,40 @@ This article shows you how to configure wildcard application publishing in your 
     > [!NOTE]
     > Regular applications always take precedence over a complex app (wildcard application).
 
-## Pre-requisites
+## Prerequisites
 - Enable application proxy and install a connector that has line of sight to your applications. See the tutorial [Add an on-premises application for remote access through application proxy](application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad) to learn how to prepare your on-premises environment, install and register a connector, and test the connector.
 
 
-## Configure application segment(s) for complex application. 
+## Configure application segments for complex application. 
 
 > [!NOTE]
 > Two application segment per complex distributed application are supported for [Microsoft Entra ID P1 or P2 subscription](https://azure.microsoft.com/pricing/details/active-directory). License requirement for more than two application segments per complex application to be announced soon.
 
-To publish complex distributed app through application proxy with application segments:
+To publish a complex distributed app through application proxy with application segments:
 
 1. [Create a wildcard application.](application-proxy-wildcard.md#create-a-wildcard-application)
 
-1. On the application proxy Basic settings page, select "Add application segments".
+1. On the application proxy basic settings page, select **Add application segments**.
 
     :::image type="content" source="./media/application-proxy-configure-complex-application/add-application-segments.png" alt-text="Screenshot of link to add an application segment.":::
 
-3. On the Manage and configure application segments page, select "+ Add app segment"
+3. On the manage and configure application segments page, select **+ Add app segment**.
 
     :::image type="content" source="./media/application-proxy-configure-complex-application/add-application-segment-1.png" alt-text="Screenshot of Manage and configure application segment page.":::
 
-4. In the Internal Url field, enter the internal URL for your app.
+4. Enter the **Internal Url**.
 
-5. In the External Url field, drop down the list and select the custom domain you want to use.
+5. Select a custom domain from the **External Url** drop down the list.
 
-6. Add CORS Rules (optional).  For more information see [Configuring CORS Rule](/graph/api/resources/corsconfiguration_v2?view=graph-rest-beta&preserve-view=true).
+6. Add CORS Rules (optional).  For more information, see [Configuring CORS Rule](/graph/api/resources/corsconfiguration_v2?view=graph-rest-beta&preserve-view=true).
 
-7. Select Create.
+7. Select **Create**.
 
     :::image type="content" source="./media/application-proxy-configure-complex-application/create-app-segment.png" alt-text="Screenshot of add or edit application segment context plane.":::
 
-Your application is now set up to use the configured application segments. Be sure to assign users to your application before you test or release it.
+8. Assign users to the application. 
 
-To edit/update an application segment, select respective application segment from the list in Manage and configure application segments page. Upload a certificate for the updated domain, if necessary, and update the Domain Name System (DNS) record. 
+To edit/update an application segment, select the application segment from the list on the manage and configure application segments page. Upload a certificate for the updated domain, if necessary, and update the Domain Name System (DNS) record. 
 
 ## Configuring single sign-on (SSO)
 
@@ -101,7 +101,7 @@ Additionally, adding a CNAME record for the application ID in the same DNS zone 
 
 >`<yourAppId>` > `<yourAADTenantId>.tenant.runtime.msappproxy.net`
 
-If the connector group that is assigned to the Complex App is not in the region of the Default connector group, one of the following domain suffixes must be used in the DNS entries mentioned above:
+If the connector group that is assigned to the Complex App is not in the region of the Default connector group, one of the following domain suffixes must be used in the DNS entries:
 
 | Connector Assigned Region | External URL |
 | ---   | ---         |
