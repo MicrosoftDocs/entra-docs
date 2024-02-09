@@ -39,7 +39,7 @@ To add an on-premises application to Microsoft Entra ID, you need:
 
 * An [Microsoft Entra ID P1 or P2 subscription](https://azure.microsoft.com/pricing/details/active-directory).
 * An application administrator account.
-* Syncronized user identities with an on-premises directory. Or create them directly in your Microsoft Entra tenants. Identity synchronization allows Microsoft Entra ID to preauthenticate users before granting them access to application proxy published applications. Synchronization also provides the necessary user identifier information to perform single sign-on (SSO).
+* Synchronized user identities with an on-premises directory. Or create them directly in your Microsoft Entra tenants. Identity synchronization allows Microsoft Entra ID to preauthenticate users before granting them access to application proxy published applications. Synchronization also provides the necessary user identifier information to perform single sign-on (SSO).
 
 ### Windows server
 
