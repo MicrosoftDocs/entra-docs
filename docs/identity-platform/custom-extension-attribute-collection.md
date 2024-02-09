@@ -59,14 +59,14 @@ In this step, you create an HTTP trigger function API using Azure Functions. The
     | **Function App name** | Globally unique name | A name that identifies the new function app. Valid characters are `a-z` (case insensitive), `0-9`, and `-`.  |
     |**Publish**| Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
     | **Runtime stack** | .NET | Your preferred programming language. For this tutorial, select **.NET**.  |
-    |**Version**| 6 (LTS) In=process | Version of the .NET runtime. In-process signifies that you can create and modify functions in the portal |
+    |**Version**| 6 (LTS) In-process | Version of the .NET runtime. In-process signifies that you can create and modify functions in the portal |
     |**Region**| Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
     | **Operating System** | Windows | The operating system is preselected for you based on your runtime stack selection. |
     | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
 
 1. Select **Review + create** to review the app configuration selections and then select **Create**. Deployment takes a few minutes.
 
-1. Using either the **Notifications** icon in the upper-right corner of the portal or the screen you've been directed to, watch for the **Deployment succeeded** message. Then, select **Go to resource** to view your new function app.
+1. Wait for a notification that your deployment is complete. Select **Go to resource**.
 
 ### 1.1 Create HTTP trigger functions
 
@@ -74,7 +74,7 @@ Now that you've created the Azure Function app, you create HTTP trigger function
 
 1. Within your **Function App**, from the menu select **Functions**.
 
-1. From the top menu, select **+ Create**.
+1. Select **Create function** under **Create in Azure portal**.
 
 1. In the **Create Function** window, leave the **Development environment** property as **Develop in portal**, and then select the **HTTP trigger** template.
 
@@ -82,7 +82,7 @@ Now that you've created the Azure Function app, you create HTTP trigger function
 
 1. For the **Authorization level**, select **Function**.
 
-1. Select **Create**
+1. Select **Create**.
 
 ### 1.2 Configure the HTTP trigger for OnAttributeCollectionStart
 

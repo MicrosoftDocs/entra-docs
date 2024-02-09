@@ -19,7 +19,9 @@ titleSuffix: Microsoft identity platform
 
 This article describes how to configure and set up a custom claims provider with the [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) type. This event is triggered right before the token is issued, and allows you to call a REST API to add claims to the token.
 
-This how-to guide demonstrates the token issuance start event with a REST API running in Azure Functions and a sample OpenID Connect application. Before you start, take a look at following video, which demonstrates how to configure Microsoft Entra custom claims provider with Function App:
+This how-to guide demonstrates the token issuance start event with a REST API running in Azure Functions and a sample OpenID Connect application. In this article, you'll create a REST API using Azure Functions in the Azure portal, then register a custom authentication extension in the Microsoft Entra admin center. You'll add some attributes that you expect your custom authentication extension to parse from your REST API. To test the custom authentication extension, you'll register a test web application to get a token and view the claims.
+
+Before you start, take a look at following video, which demonstrates how to configure Microsoft Entra custom claims provider with Function App:
 
 > [!VIDEO https://www.youtube.com/embed/fxQGVIwX8_4]
 
@@ -55,7 +57,7 @@ In this step, you create an HTTP trigger function API in the Azure portal. The f
     | **Function App name** | Globally unique name | A name that identifies the new function app. Valid characters are `a-z` (case insensitive), `0-9`, and `-`.  |
     |**Deploy code or container image**| Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
     | **Runtime stack** | .NET | Your preferred programming language. For this tutorial, select **.NET**.  |
-    |**Version**| 6 (LTS) In=process | Version of the .NET runtime. In-process signifies that you can create and modify functions in the portal |
+    |**Version**| 6 (LTS) In0process | Version of the .NET runtime. In-process signifies that you can create and modify functions in the portal |
     |**Region**| Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
     | **Operating System** | Windows | The operating system is pre-selected for you based on your runtime stack selection. |
     | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
@@ -68,8 +70,7 @@ In this step, you create an HTTP trigger function API in the Azure portal. The f
 
 After the Azure Function app is created, create an HTTP trigger function. The HTTP trigger lets you invoke a function with an HTTP request. This HTTP trigger will be referenced and called by your Microsoft Entra custom authentication extension.
 
-1. Within the **Overview** page of your function app**, scroll down to the **Functions** pane and select **Create function**.
-1. From the top menu, select **+ Create**.
+1. Within the **Overview** page of your function app, scroll down to the **Functions** pane and select **Create function** under **Create in Azure portal**.
 1. In the **Create Function** window, leave the **Development environment** property as **Develop in portal**. Under **Template**, select **HTTP trigger**.
 1. Under **Template details**, enter *CustomAuthenticationExtensionsAPI* for the **New Function** property.
 1. For the **Authorization level**, select **Function**.
@@ -163,10 +164,10 @@ In this step, you configure a custom authentication extension, which will be use
 
 # [Microsoft Entra admin center](#tab/entra-admin-center)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator). If you have access to multiple tenants, check that you're in the same tenant as the [previous step](#step-1-create-an-azure-function-app).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select **Custom authentication extensions**, and then select **Create a custom extension**.
-1. In **Basics**, select the **TokenIssuanceStart** event and select **Next**.
+1. In **Basics**, select the **TokenIssuanceStart** event type and select **Next**.
 1. In **Endpoint Configuration**, fill in the following properties:
 
     - **Name** - A name for your custom authentication extension. For example, *Token issuance event*.
@@ -294,8 +295,8 @@ Next, you register the custom authentication extension. You register the custom 
 
 After your custom authentication extension is created, you need to grant permissions to the API. The custom authentication extension uses `client_credentials` to authenticate to the Azure Function App using the `Receive custom authentication extension HTTP requests` permission.
 
-1. Open **Overview** page of your new custom authentication extension, select **Grant permission**. 
-1. A new window opens requesting permissions to the registered app, which allows the custom authentication extension to authenticate to your API. Select **Accept**. 
+1. Open the **Overview** page of your new custom authentication extension, under **API Authentication**, select **Grant permission**. 
+1. A new window opens requesting permissionsto receive custom authentication HTTP requests. This allows the custom authentication extension to authenticate to your API. Select **Accept**. 
 
     :::image type="content" border="false"source="./media/custom-extension-get-started/custom-extensions-overview.png" alt-text="Screenshot that shows how grant admin consent." lightbox="media/custom-extension-get-started/custom-extensions-overview.png":::
 
@@ -506,12 +507,12 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Navigate and select the function app you [previously published](#step-1-create-an-azure-function-app).
-1. Select **Authentication** in the menu on the left.
+1. Under **Settings**, select **Authentication**.
 1. Select **Add Identity provider**.  
 1. Select **Microsoft** as the identity provider.
 1. Select **Workforce** as the tenant type.
-1. Under **App registration**->**App registration type**, select **Pick an existing app registration in this directory** and pick the *Azure Functions authentication events API* app registration you [previously created](#step-2-register-a-custom-authentication-extension) when registering the custom claims provider.
-1. Enter the following issuer URL, `https://login.microsoftonline.com/{tenantId}/v2.0/.well-known/openid-configuration`, where `{tenantId}` is the tenant ID of your workforce tenant. Your custom authentication extension should be registered here.
+1. Under **App registration** select **Pick an existing app registration in this directory** for the **App registration type**, and pick the *Azure Functions authentication events API* app registration you [previously created](#step-2-register-a-custom-authentication-extension) when registering the custom claims provider.
+1. Enter the following issuer URL, `https://login.microsoftonline.com/{tenantId}/v2.0/`, where `{tenantId}` is the tenant ID of your workforce tenant.
 1. Under **Unauthenticated requests**, select **HTTP 401 Unauthorized** as the identity provider.
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
