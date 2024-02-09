@@ -73,13 +73,13 @@ For high availability in your production environment, we recommend having more t
 
 #### Recommendations for the connector server
 
-1. Physically locate the connector server close to the application servers to optimize performance between the connector and the application. For more information, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-network-topology.md).
+1. To optimize performance between the connector and the application, physically locate the connector server close to the application servers. For more information, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-network-topology.md).
 1. The connector server and the web applications servers should belong to the same Active Directory domain or span trusting domains. Having the servers in the same domain or trusting domains is a requirement for using single sign-on (SSO) with integrated Windows authentication (IWA) and Kerberos Constrained Delegation (KCD). If the connector server and web application servers are in different Active Directory domains, you need to use resource-based delegation for single sign-on. For more information, see [KCD for single sign-on with Application Proxy](./how-to-configure-sso-with-kcd.md).
 
 > [!WARNING]
 > If you've deployed Microsoft Entra Password Protection Proxy, do not install Microsoft Entra application proxy and Microsoft Entra Password Protection Proxy together on the same machine. Microsoft Entra application proxy and Microsoft Entra Password Protection Proxy install different versions of the Microsoft Entra Connect Agent Updater service. These different versions are incompatible when installed together on the same machine.
 
-#### TLS requirements
+#### Transport Layer Security (TLS) requirements
 
 The Windows connector server needs to have TLS 1.2 enabled before you install the Application Proxy connector.
 
@@ -117,7 +117,7 @@ Start by enabling communication to Azure data centers to prepare your environmen
 
 Open the following ports to **outbound** traffic.
 
-| Port number | How it's used |
+| Port number | Use |
 | ----------- | ------------------------------------------------------------ |
 | 80          | Downloading certificate revocation lists (CRLs) while validating the TLS/SSL certificate |
 | 443         | All outbound communication with the Application Proxy service |
@@ -131,7 +131,7 @@ If your firewall enforces traffic according to originating users, also open port
 
 Allow access to the following URLs:
 
-| URL | Port | How it's used |
+| URL | Port | Use |
 | --- | --- | --- |
 | `*.msappproxy.net` <br> `*.servicebus.windows.net` | 443/HTTPS | Communication between the connector and the Application Proxy cloud service |
 | `crl3.digicert.com` <br> `crl4.digicert.com` <br> `ocsp.digicert.com` <br> `crl.microsoft.com` <br> `oneocsp.microsoft.com` <br> `ocsp.msocsp.com`<br> | 80/HTTP   | The connector uses these URLs to verify certificates.        |
@@ -145,7 +145,7 @@ You can allow connections to `*.msappproxy.net`, `*.servicebus.windows.net`, and
 
 <a name='dns-name-resolution-for-azure-ad-application-proxy-endpoints'></a>
 
-### DNS name resolution for Microsoft Entra application proxy endpoints
+### Domain Name System (DNS) for Microsoft Entra application proxy endpoints
 
 Public DNS records for Microsoft Entra application proxy endpoints are chained CNAME records pointing to an A record. Setting up the records this way ensures fault tolerance and flexibility. It’s guaranteed that the Microsoft Entra application proxy Connector always accesses host names with the domain suffixes `*.msappproxy.net` or `*.servicebus.windows.net`. However, during the name resolution the CNAME records might contain DNS records with different host names and suffixes. Due to the difference, you must ensure that the device (depending on your setup - connector server, firewall, outbound proxy) can resolve all the records in the chain and allows connection to the resolved IP addresses. Since the DNS records in the chain might be changed from time to time, we can't provide you with any list DNS records.
 
@@ -167,11 +167,11 @@ To install the connector:
 
 ### General remarks
 
-If you've previously installed a connector, reinstall to get the latest version. To see information about previously released versions and what changes they include, see [Application Proxy: Version Release History](./application-proxy-release-version-history.md).
+If you already installed a connector, reinstall it to get the latest version. To see information about previously released versions and what changes they include, see [Application Proxy: Version Release History](./application-proxy-release-version-history.md).
 
 If you choose to have more than one Windows server for your on-premises applications, you need to install and register the connector on each server. You can organize the connectors into connector groups. For more information, see [Connector groups](./application-proxy-connector-groups.md).
 
-If you have installed connectors in different regions, you can optimize traffic by selecting the closest Application Proxy cloud service region to use with each connector group, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-network-topology.md)
+If you install connectors in different regions, you should optimize traffic by selecting the closest Application Proxy cloud service region with each connector group. To learn more, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-network-topology.md)
 
 If your organization uses proxy servers to connect to the internet, you need to configure them for Application Proxy.  For more information, see [Work with existing on-premises proxy servers](./application-proxy-configure-connectors-with-proxy-servers.md).
 
