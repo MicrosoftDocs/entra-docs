@@ -16,7 +16,7 @@ The application relies upon an SQL database, in which records for users can be c
 - A Windows Server 2016 or a later version. 
 -  Connectivity to the target database system, and with outbound connectivity to login.microsoftonline.com, [other Microsoft Online Services](/microsoft-365/enterprise/urls-and-ip-address-ranges) and [Azure](/azure/azure-portal/azure-portal-safelist-urls) domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy. 
 - At least 3 GB of RAM, to host a provisioning agent. 
-- .NET Framework 4.7.2 
+- .NET Framework 4.7.2. 
 - An ODBC driver for the SQL database.
 
 Configuration of the connection to the application's database is done via a wizard. Depending on the options you select, some of the wizard screens might not be available and the information might be slightly different. Use the following information to guide you in your configuration.
@@ -121,7 +121,7 @@ The generic SQL connector requires a Data Source Name (DSN) file to connect to t
      
      ![Screenshot that shows Finish.](./media/app-provisioning-sql/dsn-5.png)
      
- 6. Now configure the connection. If the SQL Server is located on a different server computer, then enter the name of the server. Then, select **Next**.  The following steps will differ depending upon which ODBC driver you're using.  These settings assume you're using the driver to connect to SQL Server.
+ 6. Now configure the connection.   The following steps will differ depending upon which ODBC driver you're using.  This illustration assumes you're using the driver to connect to SQL Server.  If the SQL Server is located on a different server computer, then enter the name of the server. Then, select **Next**.
      
      ![Screenshot that shows entering a server name.](./media/app-provisioning-sql/dsn-6.png)
 
@@ -230,7 +230,7 @@ To create a generic SQL connector, follow these steps:
      |Property|Description|
      |-----|-----|
      |DSN File|The Data Source Name file you created in the previous step, which is used to connect to the SQL instance.|
-     |User Name|The username of an account with rights to make updates to the table in the SQL instance. If the target database is SQL Server and you're using Windows authentication, the user name must be in the form of hostname\sqladminaccount for standalone servers or domain\sqladminaccount for domain member servers.|
+     |User Name|The username of an account with rights to make updates to the table in the SQL instance. If the target database is SQL Server and you're using Windows authentication, the user name must be in the form of hostname\sqladminaccount for standalone servers or domain\sqladminaccount for domain member servers.  For other databases, the user name will be a local account in the database.|
      |Password|The password of the username provided.|
      |DN is Anchor|Unless your environment is known to require these settings, don't select the **DN is Anchor** and **Export Type:Object Replace** checkboxes.|
 
@@ -254,19 +254,19 @@ After having provided credentials, the ECMA Connector Host will be ready to retr
      |Property|Value|
      |-----|-----|
      |User:Attribute Detection|Table|
-     |User:Table/View/SP|Employees|
+     |User:Table/View/SP|The name of the table in your database, such as Employees|
 
     >[!NOTE]
     >If an error occurs, check your database configuration to ensure that the user you specified on the **Connectivity** page has read access to the database's schema.
 
-7. Once you select **Next**, the next page will automatically appear, for you to select the columns of the `Employees` table that are to be used as the `Anchor` and `DN` of users.  On the **Schema 3** page, fill in the boxes with the values specified in the table that follows the image and select **Next**.
+7. Once you select **Next**, the next page will automatically appear, for you to select the columns of the table you specified earlier, such as the `Employees` table in this sample, that are to be used as the `Anchor` and `DN` of users.  These columns contain unique identifiers in your database.  You can use the same or different columns, but ensure that any rows already in this database have unique values in these columns..  On the **Schema 3** page, fill in the boxes with the values specified in the table that follows the image and select **Next**.
 
      [![Screenshot that shows the Schema 3 page.](.\media\app-provisioning-sql\conn-5.png)](.\media\app-provisioning-sql\conn-5.png#lightbox)
 
      |Property|Description|
      |-----|-----|
-     |Select Anchor for: User|User:ContosoLogin|
-     |Select DN attribute for User|AzureID|
+     |Select Anchor for: User|The column of the database table to be used for the anchor, such as User:ContosoLogin|
+     |Select DN attribute for User|The column of the database to be used for the DN attribute, such as AzureID|
 
 8. Once you select **Next**, the next page will automatically appear, for you to confirm the data type of each of the columns of the `Employee` table, and whether the connector should import or export them. On the **Schema 4** page, leave the defaults and select **Next**.
 
@@ -278,7 +278,9 @@ After having provided credentials, the ECMA Connector Host will be ready to retr
      
      |Property|Description|
      |-----|-----|
-     |Data Source Date Time Format|yyyy-MM-dd HH:mm:ss|
+     |Delta Strategy|For IBM DB2, select `None` |
+     | Water Mark Query |For IBM DB2, type `SELECT CURRENT TIMESTAMP FROM SYSIBM.SYSDUMMY1;` |
+     |Data Source Date Time Format|For SQL Server, `yyyy-MM-dd HH:mm:ss` and for IBM DB2, `YYYY-MM-DD`|
 10. On the **Partitions** page, select **Next**.
 
      [![Screenshot that shows the Partitions page.](.\media\app-provisioning-sql\conn-8.png)](.\media\app-provisioning-sql\conn-8.png#lightbox)
@@ -306,7 +308,7 @@ Continue with the SQL connection configuration:
      |Property|Description|
      |-----|-----|
      |Operation Method|Table|
-     |Table/View/SP|Employees|
+     |Table/View/SP|The same table as configured on the Schema 2 tab, such as `Employees`|
  
 13. On the **Full Import** page, fill in the boxes and select **Next**. Use the table that follows the image for guidance on the individual boxes. 
 
@@ -315,7 +317,7 @@ Continue with the SQL connection configuration:
      |Property|Description|
      |-----|-----|
      |Operation Method|Table|
-     |Table/View/SP|Employees|
+     |Table/View/SP|The same table as configured on the Schema 2 tab, such as `Employees`|
 
 <a name='64-configure-how-attributes-are-surfaced-in-azure-ad'></a>
 
@@ -325,16 +327,16 @@ In the last step of the SQL connection settings, configure how attributes are su
 
 14. On the **Object Types** page, fill in the boxes and select **Next**. Use the table that follows the image for guidance on the individual boxes.   
 
-      - **Anchor**: The values of this attribute should be unique for each object in the target database. The Microsoft Entra provisioning service will query the ECMA connector host by using this attribute after the initial cycle. This anchor value should be the same as the anchor value you configured earlier on the **Schema 3** page.
+      - **Anchor**: The values of this attribute should be unique for each object in the target database. The Microsoft Entra provisioning service will query the ECMA connector host by using this attribute after the initial cycle. This anchor value should be the same as the anchor column you configured earlier on the **Schema 3** page.
       - **Query Attribute**:  This attribute should be the same as the Anchor.
       - **DN**: The **Autogenerated** option should be selected in most cases. If it isn't selected, ensure that the DN attribute is mapped to an attribute in Microsoft Entra ID that stores the DN in this format: CN = anchorValue, Object = objectType.  For more information on anchors and the DN, see [About anchor attributes and distinguished names](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md#about-anchor-attributes-and-distinguished-names).
      
      |Property|Description|
      |-----|-----|
      |Target object|User|
-     |Anchor|ContosoLogin|
-     |Query Attribute|ContosoLogin|
-     |DN|ContosoLogin|
+     |Anchor|The column configured in Schema 3 tab, such as `ContosoLogin`|
+     |Query Attribute|The same column as the Anchor, such as `ContosoLogin`|
+     |DN|The same column as configured in the Schema 3 tab, such as `ContosoLogin`|
      |Autogenerated|Checked|      
 
  15. The ECMA connector host discovers the attributes supported by the target database. You can choose which of those attributes you want to expose to Microsoft Entra ID. These attributes can then be configured in the Azure portal for provisioning. On the **Select Attributes** page, add all the attributes in the dropdown list one at a time.
