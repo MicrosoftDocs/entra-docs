@@ -96,4 +96,4 @@ Microsoft Graph PowerShell cmdlets:
 
 - [Get started with Microsoft Entra ID Protection and Microsoft Graph](../../id-protection/howto-identity-protection-graph-api.md)
 - [Audit API reference](/graph/api/resources/directoryaudit)
-- [Sign-in API reference](/graph/api/resources/signin)
+- [API signIn reference](/graph/api/resources/signin)
