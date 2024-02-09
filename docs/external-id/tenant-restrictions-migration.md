@@ -70,11 +70,11 @@ Allow internal identities, such as employees, to access specific external tenant
 
 3. To block all users and groups and all applications for B2B collaboration, [configure the default cross-tenant access outbound settings](cross-tenant-access-settings-b2b-collaboration.md). 
 
-   ![Screenshot of the Default settings tab under cross-tenant access settings.](media/tenant-restrictions-migration/default-settings.png)
+   [ ![Screenshot of the Default settings tab under cross-tenant access settings.](media/tenant-restrictions-migration/default-settings.png)](media/tenant-restrictions-migration/default-settings.png#lightbox)
 
 4. In **Tenant restrictions** defaults, create the policy ID (if not created) and [configure the policy to block all users, groups, and external applications](tenant-restrictions-v2.md).
 
-   ![Screenshot of the Tenant restrictions defaults.](media/tenant-restrictions-migration/tenant-restrictions-default.png)
+   [ ![Screenshot of the Tenant restrictions defaults.](media/tenant-restrictions-migration/tenant-restrictions-default.png)](media/tenant-restrictions-migration/tenant-restrictions-default.png#lightbox)
 
 ### Allow internal and external identities to access specific external tenants 
 
@@ -84,15 +84,15 @@ Allow internal identities such as employees, and external identities such as con
 2. For each added organization to enable internal identities, configure Outbound access for B2B collaboration to allow all users, groups, and applications.
 3. For each added organization to enable external identities, [configure the organization tenant restrictions](tenant-restrictions-v2.md) to allow all users, groups, and applications.  
 
-   ![Screenshot of Outbound access and Tenant restrictions details under Organizational settings.](media/tenant-restrictions-migration/organizational-settings-outbound.png)
+   [ ![Screenshot of Outbound access and Tenant restrictions details under Organizational settings.](media/tenant-restrictions-migration/organizational-settings-outbound.png)](media/tenant-restrictions-migration/organizational-settings-outbound.png#lightbox)
 
 4. To block all users, groups, and applications for B2B collaboration, [configure the default Cross Tenant Access outbound access settings](cross-tenant-access-settings-b2b-collaboration.md). 
 
-   ![Screenshot of Outbound access settings under Default settings.](media/tenant-restrictions-migration/default-settings-outbound.png)
+   [ ![Screenshot of Outbound access settings under Default settings.](media/tenant-restrictions-migration/default-settings-outbound.png)](media/tenant-restrictions-migration/default-settings-outbound.png#lightbox)
 
 5. In **Tenant restrictions defaults**, create the policy ID (if not created) and configure the policy to block all users, groups, and external applications.  
 
-   ![Screenshot of Tenant restrictions, with external users and groups, also external apps.](media/tenant-restrictions-migration/tenant-restrictions-applies.png)
+   [ ![Screenshot of Tenant restrictions, with external users and groups, also external apps.](media/tenant-restrictions-migration/tenant-restrictions-applies.png)](media/tenant-restrictions-migration/tenant-restrictions-applies.png3lightbox)
 
    > [!NOTE]
    > To target consumer Microsoft accounts (MSAs), add an organization with the following tenant ID: 9188040d-6c67-4c5b-b112-36a304b66dad. 
