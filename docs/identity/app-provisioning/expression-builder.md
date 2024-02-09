@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.date: 09/15/2023
+ms.date: 02/09/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -30,7 +30,7 @@ In application provisioning, you use expressions for attribute mappings. You acc
 
 To use expression builder, select a function and attribute and then enter a suffix if needed. Then select **Add expression** to add the expression to the code box. To learn more about the functions available and how to use them, see [Reference for writing expressions for attribute mappings](functions-for-customizing-application-data.md).
 
-Test the expression by searching for a user or providing values and selecting **Test expression**. The output of the expression test appears in the **View expression output** box.
+From the dropdown list, select the **mail** attribute. Fill in the value with the email domain that starts with the @ sign; for example, `@fabrikam.com`. Then select **Test expression** and the output of the expression test appears in the **View expression output** box.
 
 When you're satisfied with the expression, move it to an attribute mapping. Copy and paste it into the expression box for the attribute mapping you're working on.
 
