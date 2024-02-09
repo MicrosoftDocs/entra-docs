@@ -64,15 +64,15 @@ The following sections discuss the scenarios that are supported with cloud sync 
 
 ## Configuring supported scenarios
 
-If you wish to control whether a user is able to connect to an AD application that users Windows authentication, then this is possible using the application proxy and an Microsoft Entra ID security group.
+If you want to control whether a user is able to connect to an AD application that uses Windows authentication, you can use the application proxy and an Microsoft Entra ID security group.
+If an application checks a user's AD group memberships, via Kerberos or LDAP, then you can use cloud sync group provisioning to ensure an AD user has those group memberships prior to the user accessing the applications.  
 
-If in addition, an application itself checks a user's AD group memberships, via Kerberos or LDAP, to determine whether the user is authorized in the application, then you can use cloud sync group provisioning to ensure an AD user has those group memberships prior to the user accessing the applications.  
 
-The following sections discuss two scenario options that are supported with cloud sync group provisioning, to ensure users assigned to the application have group memberships when they authenticate to the application.
+The following sections discuss two scenario options that are supported with cloud sync group provisioning. The scenario options are meant to ensure users assigned to the application have group memberships when they authenticate to the application.
  - Create a new group and updating the application, if it already exists, to check for the new group, or
  - Create a new group and updating the existing groups, the application was checking for, to include the new group as a member
 
-Before you begin, ensure that you're a domain administrator in the domain where the application is installed, and can sign into a domain controller, or have the [Remote Server Administration tools](/troubleshoot/windows-server/system-management-components/remote-server-administration-tools) for Active Directory Domain Services (AD DS) administration installed on your Windows PC.
+Before you begin, ensure that you're a domain administrator in the domain where the application is installed. Ensure you can sign into a domain controller, or have the [Remote Server Administration tools](/troubleshoot/windows-server/system-management-components/remote-server-administration-tools) for Active Directory Domain Services (AD DS) administration installed on your Windows PC.
 
 
 ### Configuring the new groups option
@@ -82,8 +82,8 @@ In this scenario option, you'll update the application to check for the SID, nam
 Use the following steps for applications to use new groups.
 
 #### Create application and group
- 1.  Using the Entra Portal, create an application in Microsoft Entra ID representing the AD-based application, and configure the application to require user assignment.
- 2.  If application proxy will be used to enable users to connect to the application, then configure the application proxy.
+ 1.  Using the Microsoft Entra admin center, create an application in Microsoft Entra ID representing the AD-based application, and configure the application to require user assignment.
+ 2.  If you are using application proxy to enable users to connect to the application, then configure the application proxy.
  3.	Create a new security group in Microsoft Entra ID.
  4.	Use [Group Provisioning to AD](how-to-configure-entra-to-active-directory.md) to provision this group to AD.  
  5.  Launch Active Directory Users and Computers, and wait for the resulting new AD group to be created in the AD domain.  When it's present, record the distinguished name, domain, account name and SID of the new AD group.
@@ -109,7 +109,7 @@ Nesting that group into the applications’ existing AD group will allow Microso
  3.  If the group has Global scope, change the group to have Universal scope.  A global group can't have universal groups as members.
 
 #### Create application and group
- 1.  Using the Entra Portal, create an application in Microsoft Entra ID representing the AD-based application, and configure the application to require user assignment.
+ 1.  In the Microsoft Entra admin center, create an application in Microsoft Entra ID representing the AD-based application, and configure the application to require user assignment.
  2.  If application proxy will be used to enable users to connect to the application, then configure the application proxy.
  3.	Create a new security group in Microsoft Entra ID.
  4.	Use [Group Provisioning to AD](how-to-configure-entra-to-active-directory.md) to provision this group to AD.  

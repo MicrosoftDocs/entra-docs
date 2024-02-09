@@ -20,7 +20,7 @@ The following document will guide you through configuring cloud sync to synchron
 
  :::image type="content" source="media/how-to-configure/new-ux-configure-19.png" alt-text="Screenshot of enable preview features." lightbox="media/how-to-configure/new-ux-configure-19.png":::
 
-For additional information on this scenario, see [Govern on-premises application access with groups from the cloud](govern-on-premises-groups.md).
+For more information, see [Govern on-premises application access with groups from the cloud](govern-on-premises-groups.md).
 
 ## Prerequisites
 The following prerequisites are required to implement this scenario.
@@ -128,8 +128,8 @@ You can customize the default attribute-mappings according to your business need
 
 :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png" alt-text="Screenshot of the attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png":::
 
-### Schema for Entra ID to AD configurations
-Currently, the AD Schema isn't discoverable and there's fixed set of mappings.  The following table provides the default mappings and schema for the Entra ID to AD configurations.
+### Schema for Microsoft Entra ID to AD configurations
+Currently, the AD Schema isn't discoverable and there's fixed set of mappings.  The following table provides the default mappings and schema for the Microsoft Entra ID to AD configurations.
 
 |Target attribute|Source attribute|Mapping type|Notes|
 |-----|-----|-----|-----|
