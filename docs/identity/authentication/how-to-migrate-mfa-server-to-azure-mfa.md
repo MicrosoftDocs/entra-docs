@@ -155,7 +155,7 @@ Others might include:
 
 - [Adding new NPS infrastructure](/windows-server/networking/technologies/nps/nps-top)
 - [NPS deployment best practices](https://www.youtube.com/watch?v=qV9wddunpCY)
-- [Microsoft Entra multifactor authentication NPS extension health check script](/samples/azure-samples/azure-mfa-nps-extension-health-check/azure-mfa-nps-extension-health-check/)
+- [Microsoft Entra multifactor authentication NPS extension health check script](https://github.com/Azure-Samples/azure-mfa-nps-extension-health-check)
 - [Integrating existing NPS infrastructure with Microsoft Entra multifactor authentication](howto-mfa-nps-extension-vpn.md)
 
 ## Next steps
