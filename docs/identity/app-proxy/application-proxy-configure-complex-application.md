@@ -115,5 +115,5 @@ For more detailed instructions for application proxy, see [Tutorial: Add an on-p
 ## Next steps
 - [Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md) 
 - [Plan a Microsoft Entra application proxy deployment](conceptual-deployment-plan.md) 
-- [Remote access to on-premises applications through Microsoft Entra application proxy](application-proxy.md)
+- [Understand remote access to on-premises applications through Microsoft Entra application proxy](application-proxy.md)
 - [Understand and solve Microsoft Entra application proxy CORS issues](application-proxy-understand-cors-issues.md)

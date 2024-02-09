@@ -1,5 +1,5 @@
 ---
-title: Remote access to on-premises apps - Microsoft Entra application proxy
+title: Understand remote access to on-premises apps - Microsoft Entra application proxy
 description: Microsoft Entra application proxy provides secure remote access to on-premises web applications. After a single sign-on to Microsoft Entra ID, users can access both cloud and on-premises applications through an external URL or an internal application portal. For example, Application Proxy can provide remote access and single sign-on to Remote Desktop, SharePoint, Teams, Tableau, Qlik, and line of business (LOB) applications.
 services: active-directory
 author: kenwith
@@ -12,7 +12,7 @@ ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Remote access to on-premises applications through Microsoft Entra application proxy
+# Understand remote access to on-premises applications through Microsoft Entra application proxy
 
 Microsoft Entra application proxy provides secure remote access to on-premises web applications. After a single sign-on to Microsoft Entra ID, users can access both cloud and on-premises applications through an external URL or an internal application portal. For example, Application Proxy can provide remote access and single sign-on to Remote Desktop, SharePoint, Teams, Tableau, Qlik, and line of business (LOB) applications.
 
