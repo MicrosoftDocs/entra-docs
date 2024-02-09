@@ -39,7 +39,7 @@ To add an on-premises application to Microsoft Entra ID, you need:
 
 * An [Microsoft Entra ID P1 or P2 subscription](https://azure.microsoft.com/pricing/details/active-directory).
 * An application administrator account.
-* Syncronized user identities with an on-premises directory.  or to create them directly within your Microsoft Entra tenants. Identity synchronization allows Microsoft Entra ID to preauthenticate users before granting them access to application proxy published applications. Synchronization also provides the necessary user identifier information to perform single sign-on (SSO).
+* Syncronized user identities with an on-premises directory. Or create them directly in your Microsoft Entra tenants. Identity synchronization allows Microsoft Entra ID to preauthenticate users before granting them access to application proxy published applications. Synchronization also provides the necessary user identifier information to perform single sign-on (SSO).
 
 ### Windows server
 
@@ -73,8 +73,8 @@ For high availability in your production environment, we recommend having more t
 
 #### Recommendations for the connector server
 
-1. To optimize performance between the connector and the application, physically locate the connector server close to the application servers. For more information, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-network-topology.md).
-1. The connector server and the web applications servers should belong to the same Active Directory domain or span trusting domains. Having the servers in the same domain or trusting domains is a requirement for using single sign-on (SSO) with integrated Windows authentication (IWA) and Kerberos Constrained Delegation (KCD). If the connector server and web application servers are in different Active Directory domains, you need to use resource-based delegation for single sign-on. For more information, see [KCD for single sign-on with application proxy](./how-to-configure-sso-with-kcd.md).
+1. Optimize performance between the connector and the application. Physically locate the connector server close to the application servers. For more information, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-network-topology.md).
+1. Make sure the connector server and the web applications servers are in the same Active Directory domain or span trusting domains. Having the servers in the same domain or trusting domains is a requirement for using single sign-on (SSO) with integrated Windows authentication (IWA) and Kerberos Constrained Delegation (KCD). If the connector server and web application servers are in different Active Directory domains, you need to use resource-based delegation for single sign-on. For more information, see [KCD for single sign-on with application proxy](./how-to-configure-sso-with-kcd.md).
 
 > [!WARNING]
 > If you've deployed Microsoft Entra Password Protection Proxy, do not install Microsoft Entra application proxy and Microsoft Entra Password Protection Proxy together on the same machine. Microsoft Entra application proxy and Microsoft Entra Password Protection Proxy install different versions of the Microsoft Entra Connect Agent Updater service. These different versions are incompatible when installed together on the same machine.
@@ -85,7 +85,7 @@ The Windows connector server needs to have TLS 1.2 enabled before you install th
 
 To enable TLS 1.2:
 
-1. Set the following registry keys:
+1. Set registry keys.
 
    ```
    Windows Registry Editor Version 5.00
