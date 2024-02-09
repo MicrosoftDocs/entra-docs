@@ -1,6 +1,6 @@
 ---
 title: How to analyze activity logs with Microsoft Graph
-description: Learn how to anaylze sign-in and audit logs with Microsoft Graph
+description: Learn how to analyze sign-in and audit logs with Microsoft Graph.
 author: shlipsey3
 manager: amycolannino
 ms.service: active-directory
@@ -32,7 +32,7 @@ To make requests to the Microsoft Graph API, you must first:
 
 ## Access reports using Microsoft Graph Explorer
 
-With all the prerequisites configured, you can run activity log queries in Microsoft Graph. For more information on Microsoft Graph queries for activity logs, see [Activity reports API overview](/graph/api/resources/azure-ad-auditlog-overview)
+With all the prerequisites configured, you can run activity log queries in Microsoft Graph. For more information on Microsoft Graph queries for activity logs, see [Activity reports API overview](/graph/api/resources/azure-ad-auditlog-overview).
 
 1. Start [Microsoft Graph Explorer tool](https://aka.ms/ge).
 
@@ -61,10 +61,12 @@ Try using the following queries:
 - For sign-in attempts where Conditional Access failed:
   - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns$filter=conditionalAccessStatus eq 'failure'`
 
+- To find sign-ins to a specific application:
+  - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns?filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2021-01-14T17:43:26Z) and appId eq 'APP ID'`
 
 ### Related APIs
 
-Once you are familiar with the standard sign-in and audit logs, try exploring these other APIs:
+Once you're familiar with the standard sign-in and audit logs, try exploring these other APIs:
 
 - [Identity Protection APIs](/graph/api/resources/identityprotection-overview)
 - [Provisioning logs API](/graph/api/resources/provisioningobjectsummary)
@@ -81,10 +83,8 @@ Microsoft Graph PowerShell cmdlets:
 - Explore the full list of [reporting-related Microsoft Graph PowerShell cmdlets](/powershell/module/microsoft.graph.reports/).
 
 
-## Troubleshoot errors in Microsoft Entra reporting API
+## Common errors
 <a name='troubleshoot-errors-in-azure-active-directory-reporting-api'></a>
-
-**500 HTTP internal server error while accessing Microsoft Graph beta endpoint**: We don't currently support the Microsoft Graph beta endpoint - make sure to access the activity logs using the Microsoft Graph v1.0 endpoint.
 
 **Error: Neither tenant is B2C or tenant doesn't have premium license**: Accessing sign-in reports requires a Microsoft Entra ID P1 or P2 license. If you see this error message while accessing sign-ins, make sure that your tenant is licensed with a Microsoft Entra ID P1 license.
 

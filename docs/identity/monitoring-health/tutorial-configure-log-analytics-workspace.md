@@ -4,7 +4,7 @@ description: Learn how to configure a Log Analytics workspace in Microsoft Entra
 ms.service: active-directory
 ms.subservice: report-monitor
 ms.topic: tutorial
-ms.date: 02/06/2024
+ms.date: 02/09/2024
 ms.author: sarahlipsey
 author: shlipsey3
 manager: amycolannino
@@ -25,9 +25,9 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-To analyze activity logs with Log Analytics, you need:
+To analyze activity logs with Log Analytics, you need the following roles and requirements:
 
-- A Microsoft Entra tenant with a [Premium P1 license](~/fundamentals/get-started-premium.md)
+- [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health)
 
 - A Log Analytics workspace *and* [access to that workspace](/azure/azure-monitor/logs/manage-access)
 
@@ -60,7 +60,7 @@ Familiarize yourself with these articles:
 [!INCLUDE [portal updates](../../includes/portal-update.md)]
 
 This procedure outlines how to configure a Log Analytics workspace for your audit and sign-in logs.
-To configure a Log Analytics workspace you need to **create the workspace** and then **configure diagnostic settings**.
+To configure a Log Analytics workspace, you need to **create the workspace** and then **configure diagnostic settings**.
 
 ### Create the workspace
 
@@ -88,7 +88,7 @@ To configure a Log Analytics workspace you need to **create the workspace** and 
 
     ![Review and create](./media/tutorial-configure-log-analytics-workspace/review-create.png)
 
-1. Select **Create** and wait for the deployment. You may need to refresh the page to see the new workspace.
+1. Select **Create** and wait for the deployment. You might need to refresh the page to see the new workspace.
 
     ![Create](./media/tutorial-configure-log-analytics-workspace/create-workspace.png)
 
@@ -114,7 +114,7 @@ To configure diagnostic settings, you need switch to the Microsoft Entra admin c
 
     ![Select diagnostics settings](./media/tutorial-configure-log-analytics-workspace/select-diagnostics-settings.png)
 
-Your logs can now be queried using the Kusto Query Language (KQL) in Log Analytics. You may need to wait around 15 minutes for the logs to populate.
+Your logs can now be queried using the Kusto Query Language (KQL) in Log Analytics. You might need to wait around 15 minutes for the logs to populate.
 
 ## Run queries in Log Analytics
 
@@ -122,7 +122,7 @@ This procedure shows how to run queries using the **Kusto Query Language (KQL)**
 
 ### Run a query
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader). 
 
 1. Browse to **Identity** > **Monitoring & health** > **Log Analytics**.
 
@@ -135,12 +135,11 @@ Take 10 random entries from the input data:
 
 - `SigninLogs | take 10`
 
-Look at the sign-ins where the Conditional Access was a success
+Look at the sign-ins where the Conditional Access was a success:
 
 - `SigninLogs | where ConditionalAccessStatus == "success" | project UserDisplayName, ConditionalAccessStatus` 
 
-
-Count how many successes there have been
+Count number of successes:
 
 - `SigninLogs | where ConditionalAccessStatus == "success" | project UserDisplayName, ConditionalAccessStatus | count`
 
@@ -152,7 +151,7 @@ View how many times a user does a certain operation in specific time period:
 
 - `AuditLogs | where TimeGenerated > ago(30d) | where OperationName contains "Add member to role" | summarize count() by OperationName, Identity`
 
-Pivot the results on operation name
+Pivot the results on operation name:
 
 - `AuditLogs | where TimeGenerated > ago(30d) | where OperationName contains "Add member to role" | project OperationName, Identity | evaluate pivot(OperationName)`
 
@@ -168,11 +167,11 @@ Count the sign ins by day:
 
 - `SigninLogs | summarize NumberOfEntries=count() by bin(TimeGenerated, 1d)`
 
-Take 5 random entries and project the columns you wish to see in the results:
+Take five random entries and project the columns you wish to see in the results:
 
 - `SigninLogs | take 5 | project ClientAppUsed, Identity, ConditionalAccessStatus, Status, TimeGenerated `
 
-Take the top 5 in descending order and project the columns you wish to see
+Take the top 5 in descending order and project the columns you wish to see:
 
 - `SigninLogs | take 5 | project ClientAppUsed, Identity, ConditionalAccessStatus, Status, TimeGenerated `
 
@@ -184,7 +183,7 @@ Create a new column by combining the values to two other columns:
 
 This procedure shows how to create a new workbook using the quickstart template.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Identity** > **Monitoring & health** > **Workbooks**. 
 
@@ -225,7 +224,7 @@ This procedure shows how to create a new workbook using the quickstart template.
 
 This procedure shows how to add a query to an existing workbook template. The example is based on a query that shows the distribution of conditional access success to failures.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader).
 
 1. Browse to **Identity** > **Monitoring & health** > **Workbooks**. 
 
