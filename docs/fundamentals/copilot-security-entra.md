@@ -16,7 +16,7 @@ ms.workload: identity
 # 
 ---
 
-# Copilot for Security in Microsoft Entra
+# Microsoft Security Copilot (preview) and Microsoft Entra
 
 > [!IMPORTANT]
 > The information in this article applies to the Microsoft Security Copilot Early Access Program, which is an invite-only paid preview program. Some information in this article relates to prereleased product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided in this article.
