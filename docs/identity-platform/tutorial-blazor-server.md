@@ -98,4 +98,4 @@ Browse to the running web application using the URL outputted by the command lin
 Learn about calling building web apps that sign in users in our multi-part scenario series:
 
 > [!div class="nextstepaction"]
-> [Scenario: Web app that signs in users](scenario-web-app-sign-user-overview.md)
+> [Scenario: Web app that signs in users](scenario-web-app-sign-user-app-registration.md)

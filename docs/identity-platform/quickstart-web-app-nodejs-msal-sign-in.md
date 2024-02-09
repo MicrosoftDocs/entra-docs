@@ -116,4 +116,4 @@ npm install @azure/msal-node
 
 Learn more about the web app scenario that the Microsoft identity platform supports:
 > [!div class="nextstepaction"]
-> [Web app that signs in users scenario](scenario-web-app-sign-user-overview.md)
+> [Web app that signs in users scenario](scenario-web-app-sign-user-app-registration.md)

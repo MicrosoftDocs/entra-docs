@@ -45,7 +45,7 @@ With the Microsoft identity platform, you can write code once and reach any user
 Choose your preferred [application scenario](authentication-flows-app-scenarios.md). Each of these scenario paths has an overview and links to a quickstart to help you get started:
 
 - [Single-page app (SPA)](scenario-spa-overview.md)
-- [Web app that signs in users](scenario-web-app-sign-user-overview.md)
+- [Web app that signs in users](scenario-web-app-sign-user-app-registration.md)
 - [Web app that calls web APIs](scenario-web-app-call-api-overview.md)
 - [Protected web API](scenario-protected-web-api-overview.md)
 - [Web API that calls web APIs](scenario-web-api-call-api-overview.md)

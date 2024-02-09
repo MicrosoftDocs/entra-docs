@@ -78,4 +78,4 @@ Learn more about SameSite and the Web app scenario:
 
 - [Chromium SameSite page](https://www.chromium.org/updates/same-site)
 
-- [Scenario: Web app that signs in users](scenario-web-app-sign-user-overview.md)
+- [Scenario: Web app that signs in users](scenario-web-app-sign-user-app-registration.md)

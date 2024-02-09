@@ -47,7 +47,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Web app that signs in users
-            url: scenario-web-app-sign-user-overview.md
+            url: scenario-web-app-sign-user-app-registration.md
           - text: Web app that calls a web API
             url: scenario-web-app-call-api-overview.md
   - title: "Scenarios in depth"
