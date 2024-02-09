@@ -28,7 +28,7 @@ Ensure the following prerequisites are met.
 * Administrator access to proxies injecting the tenant restrictions v1 headers
   * Proxies can use on-premises or a cloud-based service
 * [Microsoft Entra ID P1 or P2](~/fundamentals/get-started-premium.md) licenses
-* Migration feasiblity: [Tenant restrictions v2 unsupported scenarios](tenant-restrictions-v2.md)
+* Migration feasibility: [Tenant restrictions v2 unsupported scenarios](tenant-restrictions-v2.md)
 
 ## Required roles
 
