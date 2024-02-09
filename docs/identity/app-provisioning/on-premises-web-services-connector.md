@@ -73,8 +73,8 @@ Prior to configuring provisioning, ensure that you:
 
  7. Under **On-premises Connectivity**, select **Download and install**, and select **Accept terms & download**.
  
- 8. Leave the portal and open the provisioning agent installer, agree to the terms of service, and select **next**.
- 9. Open the provisioning agent wizard.
+ 8. Leave the portal and run the provisioning agent installer, agree to the terms of service, and select **Install**.
+ 9. Wait for the Microsoft Entra provisioning agent configuration wizard and then select **Next**.
  10. In the **Select Extension** step, select **On-premises application provisioning** and then select **Next**.
 
  :::image type="content" source="~/includes/media/app-provisioning-sql/sync-agent-select-on-premises.png" alt-text="Screenshot that shows how to select on premises provisioning." lightbox="~/includes/media/app-provisioning-sql/sync-agent-select-on-premises.png":::
