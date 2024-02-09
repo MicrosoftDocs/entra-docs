@@ -20,7 +20,7 @@ The user profile is the digital representation of a user's identity that should,
 
 A user's profile information and settings can be managed on an individual basis and for all users in your directory. When you look at these settings together, you can see how permissions, restrictions, and other connections work together.
 
-This article covers how to add user profile information, such as a profile picture and job title. You can also choose to allow users to connect their LinkedIn accounts or restrict access to the Microsoft Entra administration portal. Some settings may be managed in more than one area, such as the uploading [Organizational data in Microsoft 365](/viva/organizational-data). 
+This article covers how to add user profile information, such as a profile picture and job title. You can also choose to allow users to connect their LinkedIn accounts or restrict access to the Microsoft Entra administration portal. Some settings might be managed in more than one area, such as the uploading [Organizational data in Microsoft 365](/viva/organizational-data). 
 
 ## Prerequisites
 
@@ -70,7 +70,7 @@ If you selected the **Properties** tab option:
 
 ### Profile categories
 
-There are six categories of profile details you may be able to edit. 
+There are six categories of profile details you might be able to edit. 
 
 - **Identity:** Add or update identity values for the user. These values include display name, first and last name, and user principal name. Review the [user name guidance](#guidance-on-user-name-properties) before adding or editing user names.
 
@@ -78,7 +78,7 @@ There are six categories of profile details you may be able to edit.
 
 - **Contact info:** Add any relevant contact information for the user.
 
-- **Parental controls:** For organizations like K-12 school districts, the user's age group may need to be provided. *Minors* are 12 and under, *Not adult* are 13-18 years old, and *Adults* are 18 and over. The combination of age group and consent provided by parent options determine the Legal age group classification. The Legal age group classification may limit the user's access and authority.
+- **Parental controls:** For organizations like K-12 school districts, the user's age group might need to be provided. *Minors* are 12 and under, *Not adult* are 13-18 years old, and *Adults* are 18 and over. The combination of age group and consent provided by parent options determine the Legal age group classification. The Legal age group classification might limit the user's access and authority.
 
 - **Settings:** Decide whether the user can sign in to the Microsoft Entra tenant. You can also specify the user's global location.
 
@@ -89,7 +89,7 @@ There are six categories of profile details you may be able to edit.
 
 ## Guidance on user name properties
 
-Microsoft Entra ID provides several fields for specifying full and partial names, departments, and titles. In general, we recommend treating every name-related field in Microsoft Entra ID as user-visible data that Microsoft and third-party apps might use in different contexts. Name fields in Microsoft Entra ID should represent the users's preferred name that can be reflected through all Microsoft products.
+Microsoft Entra ID provides several fields for specifying full and partial names, departments, and titles. In general, we recommend treating every name-related field in Microsoft Entra ID as user-visible data that Microsoft and non-Microsoft apps might use in different contexts. Name fields in Microsoft Entra ID should represent the user's preferred name that can be reflected through all Microsoft products.
 
 Applications in Microsoft 365 display a user's name as defined by either:
 
@@ -125,7 +125,7 @@ Review the following examples to understand how the name properties are used in 
   - Last name: Green
   - Identity: Chris B. Green
 
-- If a user goes by a different name than their legal name that appears on their formal identification documents, store their legal name in your organization's HCM system and enter their preferred name in Microsoft Entra ID.
+- If a user goes by a name other than the legal name that appears on their formal identification documents, store their legal name in your organization's human capital management (HCM) system and enter their preferred name in Microsoft Entra ID.
   - Wang Zhihao goes by John Wang
   - Legal name appears in HCM
   - First name in Microsoft Entra ID: John
