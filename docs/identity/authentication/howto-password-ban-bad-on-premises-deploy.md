@@ -143,7 +143,7 @@ The following requirements apply to the Microsoft Entra Password Protection prox
 The Microsoft Entra Connect Agent Updater service is installed side by side with the Microsoft Entra Password Protection Proxy service. Additional configuration is required in order for the Microsoft Entra Connect Agent Updater service to be able to function:
 
 * If your environment uses an HTTP proxy server, follow the guidelines specified in [Work with existing on-premises proxy servers](~/identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md).
-* The Microsoft Entra Connect Agent Updater service also requires the TLS 1.2 steps specified in [TLS requirements](~/identity/app-proxy/application-proxy-add-on-premises-application.md##transport-layer-security-tls-requirements).
+* The Microsoft Entra Connect Agent Updater service also requires the TLS 1.2 steps specified in [TLS requirements](~/identity/app-proxy/application-proxy-add-on-premises-application.md#transport-layer-security-tls-requirements).
 
 > [!WARNING]
 > Microsoft Entra Password Protection proxy and Microsoft Entra application proxy install different versions of the Microsoft Entra Connect Agent Updater service, which is why the instructions refer to Application Proxy content. These different versions are incompatible when installed side by side and doing so will prevent the Agent Updater service from contacting Azure for software updates, so you should never install Microsoft Entra Password Protection Proxy and Application Proxy on the same machine.
