@@ -36,7 +36,7 @@ MSAL provides multiple ways to get security tokens, with a consistent API for ma
 | Mobile and native applications | [Mobile application calling a web API on behalf of the user who's signed-in interactively](scenario-mobile-overview.md). |
 | Daemons and server-side applications | [Desktop/service daemon application calling web API on behalf of itself](scenario-daemon-overview.md) |
 
-## MSAL documentation
+## MSAL Languages and Frameworks
 
 You can refer to the following documentation to learn more about the different MSAL libraries.
 
