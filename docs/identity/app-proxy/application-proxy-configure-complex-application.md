@@ -14,9 +14,9 @@ ms.reviewer: dhruvinshah
 
 # Understanding Microsoft Entra application proxy Complex application scenario (Preview)
 
-Applications are often made up of multiple individual web application. These situations use different domain suffixes or different ports or paths in the URL. The individual web application instances must be published in separate Microsoft Entra application proxy apps. In these situations, the following problems might arise:
-- **Pre-authentication:** The client must separately acquire an access token or cookie for each Microsoft Entra application proxy app. The multiple acquisitions leads to more redirects at sign in to `microsoftonline.com`.
-- **Cross-Origin Resource Sharing (CORS):** CORS calls, using the `OPTIONS` method, are used to validate access for the URL between the caller web app and the targeted web app. The Microsoft Entra application proxy cloud service blocks these calls. Blocking occurs because the requests cannot contain authentication information.
+Applications are often made up of multiple individual web applications. These situations use different domain suffixes or different ports or paths in the URL. The individual web application instances must be published in separate Microsoft Entra application proxy apps. In these situations, the following problems might arise:
+- **Pre-authentication:** The client must separately acquire an access token or cookie for each Microsoft Entra application proxy app. The multiple acquisitions lead to more redirects at sign in to `microsoftonline.com`.
+- **Cross-Origin Resource Sharing (CORS):** CORS calls, using the `OPTIONS` method, are used to validate access for the URL between the caller web app and the targeted web app. The Microsoft Entra application proxy cloud service blocks these calls. Blocking occurs because the requests can't contain authentication information.
 - **Poor app management:** Multiple enterprise apps are created to enable access to a private app adding friction to the app management experience.
 
 The following figure shows an example for complex application domain structure.
@@ -38,7 +38,7 @@ Complex apps provide several benefits:
 This article shows you how to configure wildcard application publishing in your environment.
 
 ## Characteristics of application segments for complex application. 
-- Application segments can be configured only for a wildcard applications.
+- Application segments are only configured a wildcard application.
 - External and alternate URL should match the wildcard external and alternate URL domain of the application respectively.
 - Application segment URLs (internal and external) need to maintain uniqueness across complex applications.
 - CORS Rules (optional) can be configured per application segment.
@@ -74,7 +74,7 @@ To publish a complex distributed app through application proxy with application 
 
 5. Select a custom domain from the **External Url** drop down the list.
 
-6. Add CORS Rules (optional).  For more information, see [Configuring CORS Rule](/graph/api/resources/corsconfiguration_v2?view=graph-rest-beta&preserve-view=true).
+6. Add CORS Rules (optional). For more information, see [Configuring CORS Rule](/graph/api/resources/corsconfiguration_v2?view=graph-rest-beta&preserve-view=true).
 
 7. Select **Create**.
 
@@ -101,7 +101,7 @@ Additionally, adding a CNAME record for the application ID in the same DNS zone 
 
 >`<yourAppId>` > `<yourAADTenantId>.tenant.runtime.msappproxy.net`
 
-If the connector group that is assigned to the Complex App is not in the region of the Default connector group, one of the following domain suffixes must be used in the DNS entries:
+If the connector group that is assigned to the Complex App isn't in the region of the Default connector group, one of the following domain suffixes must be used in the DNS entries:
 
 | Connector Assigned Region | External URL |
 | ---   | ---         |
@@ -113,7 +113,7 @@ If the connector group that is assigned to the Complex App is not in the region 
 For more detailed instructions for application proxy, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
 
 ## See also
-- [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md) 
+- [Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md) 
 - [Plan a Microsoft Entra application proxy deployment](conceptual-deployment-plan.md) 
 - [Remote access to on-premises applications through Microsoft Entra application proxy](application-proxy.md)
 - [Understand and solve Microsoft Entra application proxy CORS issues](application-proxy-understand-cors-issues.md)
