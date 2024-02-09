@@ -71,7 +71,7 @@ Run the following command to register your app in your tenant and update the .NE
 msidentity-app-sync --username <username/upn> --tenant-id <tenantID>
 ```
 
-> [!Note]
+> [!NOTE]
 > - You don't need to provide the username if you are signed in with only one account in the developer tools.
 > - You don't need to provide the tenant-id if the tenant in which you want to create the application is your home tenant.
 
