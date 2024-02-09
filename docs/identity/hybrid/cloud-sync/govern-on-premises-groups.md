@@ -51,7 +51,7 @@ The following prerequisites are required to implement this scenario.
 ## Supported groups
 For this scenario, only the following groups are supported:
   - only cloud created [Security groups](../../../fundamentals/concept-learn-about-groups.md#group-types) are supported
-  - these groups can have assigned membership or dynamic membership.
+  - these groups can have assigned or dynamic membership.
   - these groups can only contain on-premises synchronized users and / or cloud created security groups.
   - the on-premises user accounts that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest.
   - these groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope).  Your on-premises environment must support the universal group scope.
@@ -77,7 +77,11 @@ Before you begin, ensure that you're a domain administrator in the domain where 
 
 ### Configuring the new groups option
 
-In this scenario option, you'll update the application to check for the SID, name or distinguished name of new groups created by cloud sync group provisioning.  This scenario is applicable to deployments for new applications being connected to AD DS for the first time, new cohorts of users accessing the application, or for application modernization, to reduce the dependency on existing AD DS groups.  Applications which currently check for membership of the `Domain Admins` group will need to be updated to also check for a newly created AD group as well.
+In this scenario option, you update the application to check for the SID, name or distinguished name of new groups created by cloud sync group provisioning.  This scenario is applicable to:
+ - deployments for new applications being connected to AD DS for the first time
+ - new cohorts of users accessing the application
+ - for application modernization, to reduce the dependency on existing AD DS groups.  
+Applications which currently check for membership of the `Domain Admins` group will need to be updated to also check for a newly created AD group as well.
 
 Use the following steps for applications to use new groups.
 
@@ -95,13 +99,17 @@ Use the following steps for applications to use new groups.
  4.  Wait for the new AD group to be updated with the new members.  Using Active Directory Users and Computers, confirm that the correct users are present as members of the group.
  5.  In your AD domain monitoring, allow only the [gMSA account](how-to-prerequisites.md#group-managed-service-accounts) that runs the provisioning agent, [authorization to change the membership](/windows/security/threat-protection/auditing/audit-security-group-management) in the new AD group.
 
-You'll then be able to govern access to the AD application through this new access package.
+You can now govern access to the AD application through this new access package.
 
 ### Configuring the existing groups option
 
-In this scenario option, you'll add a new AD security group as a nested group member of an existing group.  This scenario is applicable to deployments for applications that have a hardcoded dependency on a particular group account name, SID, or distinguished name.
+In this scenario option, you add a new AD security group as a nested group member of an existing group.  This scenario is applicable to deployments for applications that have a hardcoded dependency on a particular group account name, SID, or distinguished name.
 
-Nesting that group into the applications’ existing AD group will allow Microsoft Entra ID users who are assigned by a governance feature and subsequently  access the app to have an appropriate Kerberos ticket containing the existing group’s SID, as allowed by AD group nesting rules.  If the app uses LDAP and follows nested group membership, the app will see the Microsoft Entra ID users as having the existing group as one of their memberships.
+Nesting that group into the applications existing AD group will allow:
+ - Microsoft Entra ID users, who are assigned by a governance feature, and subsequently access the app, 
+ to have an appropriate Kerberos ticket.  This ticket will contain the existing groups SID.  This nesting is allowed by AD group nesting rules. 
+
+ If the app uses LDAP and follows nested group membership, the app will see the Microsoft Entra ID users as having the existing group as one of their memberships.
 
 #### Determine eligibility of existing group
  1.  Launch Active Directory Users and Computers, and record the distinguished name, type and scope of the existing AD group used by the application.  
