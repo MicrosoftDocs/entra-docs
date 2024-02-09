@@ -66,7 +66,7 @@ Allow internal identities, such as employees, to access specific external tenant
 1. In **Cross-tenant access settings**, add each domain/tenant as an organization under Organizational settings.
 2. To allow all users and groups and allow all applications, for each added organization, [configure outbound access for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.md). 
 
-   ![Screenshot of the Organizationsl settings tab under cross-tenant access settings.](media/tenant-restrictions-migration/organizational-settings.png)
+   [ ![Screenshot of the Organizationsl settings tab under cross-tenant access settings.](media/tenant-restrictions-migration/organizational-settings.png)](media/tenant-restrictions-migration/organizational-settings.png#lightbox)
 
 3. To block all users and groups and all applications for B2B collaboration, [configure the default cross-tenant access outbound settings](cross-tenant-access-settings-b2b-collaboration.md). 
 
