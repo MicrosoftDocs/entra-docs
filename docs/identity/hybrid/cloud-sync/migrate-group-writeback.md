@@ -16,7 +16,7 @@ ms.collection: M365-identity-device-management
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
-The following document describes how to migrate group writeback using Microsoft Entra Connect Sync (formerly Azure AD Connect) to Microsoft Entra Cloud Sync.  This scenario is **only** for customers who are currently using Microsoft Entra Connect group writeback v2.  The process outlined in this document pertains only to cloud-created security groups that are written back with a universal scope.  Mail-enabled groups and DLs written back using Microsoft Entra Connect group writeback V1 or V2 aren't supported.
+The following document describes how to migrate group writeback using Microsoft Entra Connect Sync (formerly Azure AD Connect) to Microsoft Entra Cloud Sync. This scenario is **only** for customers who are currently using Microsoft Entra Connect group writeback v2. The process outlined in this document pertains only to cloud-created security groups that are written back with a universal scope. Mail-enabled groups and DLs written back using Microsoft Entra Connect group writeback V1 or V2 aren't supported.
 
 >[!IMPORTANT]
 >This scenario is **only** for customers who are currently using Microsoft Entra Connect group writeback v2
@@ -71,7 +71,7 @@ The following prerequisites are required to implement this scenario.
 
 
 ## Step 3 - Create a custom group inbound rule
-In the Microsoft Entra Connect Synchronization Rules editor, you need to create an inbound sync rule that filters out groups that have NULL for the mail attribute.  The inbound sync rule is a join rule with a target attribute of cloudNoFlow.  This rule tells Microsoft Entra Connect not to synchronize attributes for these groups.  
+In the Microsoft Entra Connect Synchronization Rules editor, you need to create an inbound sync rule that filters out groups that have NULL for the mail attribute. The inbound sync rule is a join rule with a target attribute of cloudNoFlow. This rule tells Microsoft Entra Connect not to synchronize attributes for these groups. 
 
  1. Launch the synchronization editor from the application menu in desktop as shown below:
  2. Select **Inbound** from the drop-down list for Direction and select **Add new rule**.
@@ -104,7 +104,7 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
 
 
 ## Step 4 - Create a custom group outbound rule
-You'll also need an outbound sync rule with a link type of JoinNoFlow and the scoping filter that has the cloudNoFlow attribute set to True.  This rule tells Microsoft Entra Connect not to synchronize attributes for these groups. 
+You'll also need an outbound sync rule with a link type of JoinNoFlow and the scoping filter that has the cloudNoFlow attribute set to True. This rule tells Microsoft Entra Connect not to synchronize attributes for these groups. 
 
  1. Select **Outbound** from the drop-down list for Direction and select **Add rule**.
  2. On the **Description** page, enter the following and select **Next**:
@@ -157,16 +157,16 @@ You'll also need an outbound sync rule with a link type of JoinNoFlow and the sc
     :::image type="content" source="media/migrate-group-writeback/migrate-11.png" alt-text="Screenshot of PowerShell execution." lightbox="media/migrate-group-writeback/migrate-11.png":::
 
 ## Step 6 - Remove the Microsoft Entra Connect Sync server from staging mode
-1.  Start the Entra Connect Sync wizard (Azure AD Connect)
-2.  Click **Configure**
-3.  Select **Configure staging mode** and click **Next**
-4.  Enter Entra ID credentials
-5.  Remove the check from the **Enable staging mode** box and click **Next**
-6.  Click **Configure**
-7.  Click **Exit**
+1. Start the Entra Connect Sync wizard (Azure AD Connect)
+2. Click **Configure**
+3. Select **Configure staging mode** and click **Next**
+4. Enter Entra ID credentials
+5. Remove the check from the **Enable staging mode** box and click **Next**
+6. Click **Configure**
+7. Click **Exit**
 
 ## Step 7 - Configure Microsoft Entra Cloud Sync
-Now that you have successfully removed the groups from the scope of Microsoft Entra Connect Sync, you can seupt and configure Microsoft Entra Cloud Sync to take over synchronization.  See [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
+Now that you have successfully removed the groups from the scope of Microsoft Entra Connect Sync, you can seupt and configure Microsoft Entra Cloud Sync to take over synchronization. See [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
 
 ## Next Steps
 - [Group writeback with Microsoft Entra Cloud Sync (Preview)](../group-writeback-cloud-sync.md)
