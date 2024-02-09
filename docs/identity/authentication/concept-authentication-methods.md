@@ -125,7 +125,7 @@ To learn more about MFA concepts, see [How Microsoft Entra multifactor authentic
 
 Learn more about configuring authentication methods using the [Microsoft Graph REST API](/graph/api/resources/authenticationmethods-overview).
 
-To review what authentication methods are in use, see [Microsoft Entra multifactor authentication authentication method analysis with PowerShell](/samples/azure-samples/azure-mfa-authentication-method-analysis/azure-mfa-authentication-method-analysis/).
+To review what authentication methods are in use, see [Microsoft Entra multifactor authentication authentication method analysis with PowerShell](https://github.com/Azure-Samples/azure-mfa-authentication-method-analysis).
 
 <!-- INTERNAL LINKS -->
 [tutorial-sspr]: tutorial-enable-sspr.md
