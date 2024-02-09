@@ -2,11 +2,9 @@
 title: Preparing for an access review of users' access to an application
 description: Planning for a successful access reviews campaign for a particular application starts with understanding how to model access for that application in Microsoft Entra ID.
 services: active-directory
-documentationCenter: ''
 author: markwahl-msft
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: compliance
@@ -14,10 +12,7 @@ ms.date: 07/29/2022
 ms.author: mwahl
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an IT admin, I want to ensure access to specific applications is governed, by setting up access reviews for those applications.
-
 ---
 
 # Prepare for an access review of users' access to an application

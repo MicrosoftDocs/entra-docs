@@ -8,7 +8,6 @@ manager: amycolannino
 ms.assetid: d4bc5583-6537-4cd9-bc4b-7712fdd9272a
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: sample
 ms.date: 09/21/2023
 ms.author: justinha
@@ -421,4 +420,3 @@ To see the managed domain in action, you can [domain-join a Windows VM][windows-
 [New-AzNetworkSecurityGroup]: /powershell/module/az.network/new-aznetworksecuritygroup
 
 [Set-AzVirtualNetworkSubnetConfig]: /powershell/module/az.network/set-azvirtualnetworksubnetconfig
-

@@ -7,7 +7,6 @@ ms.date: 11/06/2023
 ms.author: billmath
 ms.topic: how-to
 ms.service: active-directory
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.subservice: hybrid
 ---

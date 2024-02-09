@@ -5,7 +5,6 @@ services: active-directory
 author: barclayn
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: enterprise-users
 ms.topic: troubleshooting
 ms.date: 06/24/2022

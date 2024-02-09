@@ -2,14 +2,11 @@
 title: 'On-demand provisioning using cloud sync'
 description: This article describes how to use on-demand provisioning with Microsoft Entra Cloud Sync.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 ms.service: active-directory
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath

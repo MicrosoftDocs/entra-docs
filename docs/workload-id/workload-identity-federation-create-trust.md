@@ -8,7 +8,6 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: workload-identities
 ms.topic: how-to
-ms.workload: identity
 ms.date: 09/15/2023
 ms.author: ryanwi
 ms.custom: aaddev, devx-track-azurecli, devx-track-azurepowershell

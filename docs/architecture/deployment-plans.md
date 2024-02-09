@@ -6,7 +6,6 @@ author: gargi-sinha
 manager: martinco
 ms.service: active-directory
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 02/07/2024
 ms.author: gasinh

@@ -4,9 +4,8 @@ description: Understand potential error codes that may appear during onboarding 
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: reference
 ms.date: 09/07/2023
 ms.author: jfields

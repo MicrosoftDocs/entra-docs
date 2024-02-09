@@ -1,10 +1,9 @@
 ---
 title: include file
-description: include file Microsoft Entra ID preview program information 
+description: include file Microsoft Entra ID preview program information
 author: barclayn
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.topic: include
 ms.date: 09/19/2023
 ms.author: barclayn

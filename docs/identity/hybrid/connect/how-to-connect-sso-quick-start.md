@@ -6,7 +6,6 @@ keywords: what is Azure AD Connect, install Active Directory, required component
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023

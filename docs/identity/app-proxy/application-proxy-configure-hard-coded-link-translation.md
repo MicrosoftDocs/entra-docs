@@ -6,7 +6,6 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
 ms.date: 02/06/2024
 ms.author: kenwith
@@ -126,8 +125,6 @@ To improve performance and security, some links aren't translated:
 If you need to support one of these two scenarios, use the same internal and external URLs instead of link translation.  
 
 ## Enable link translation
-
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Getting started with link translation is as easy as clicking a button:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).

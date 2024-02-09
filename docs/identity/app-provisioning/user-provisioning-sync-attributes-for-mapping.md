@@ -6,7 +6,6 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: troubleshooting
 ms.date: 09/15/2023

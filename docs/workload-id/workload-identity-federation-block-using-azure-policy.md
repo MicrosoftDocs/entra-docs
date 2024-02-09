@@ -8,12 +8,10 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: workload-identities
 ms.topic: how-to
-ms.workload: identity
 ms.date: 03/09/2023
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: cbrooks, udayh, vakarand
-
 #Customer intent: As an application developer or administrator, I want to block the creation of a federated credential on a managed identity so I can block everyone from using workload identity federation.
 ---
 

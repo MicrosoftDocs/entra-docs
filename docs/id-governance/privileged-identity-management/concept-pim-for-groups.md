@@ -2,21 +2,16 @@
 title: Privileged Identity Management (PIM) for Groups
 description: How to manage Microsoft Entra Privileged Identity Management (PIM) for Groups.
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
-ms.assetid: 
 ms.service: active-directory
 ms.subservice: pim
 ms.topic: overview
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 9/12/2023
 ms.author: barclayn
-ms.custom: pim 
+ms.custom: pim
 ms.collection: M365-identity-device-management
-
-
 #Customer intent: As a dev or IT admin, I want to manage group assignments in PIM, so that I can grant eligibility for elevation to a role assigned via group membership
 ---
 

@@ -7,13 +7,11 @@ manager: amycolannino
 
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: overview
 ms.date: 09/15/2023
 ms.author: justinha
 
 ms.custom: contperf-fy21q1
-
 #Customer intent: As an IT administrator or decision maker, I want to understand what Domain Services is and how it can benefit my organization.
 ---
 

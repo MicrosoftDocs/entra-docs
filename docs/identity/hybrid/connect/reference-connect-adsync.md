@@ -4,13 +4,12 @@ description: This document provides reference information for the ADSync.psm1 Po
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
 ms.topic: reference
 
-ms.collection: M365-identity-device-management 
+ms.collection: M365-identity-device-management
 ms.custom:
 ---
 

@@ -4,9 +4,8 @@ description: How to use queries to see how users access information in an author
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: overview
 ms.date: 02/23/2022
 ms.author: jfields

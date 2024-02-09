@@ -2,12 +2,11 @@
 title: Find help and get support for Microsoft Entra ID
 description: Instructions about how to get help and open a support request for Microsoft Entra ID.
 services: active-directory
-author: shlipsey3                
+author: shlipsey3
 manager: amycolannino
 ms.service: active-directory
 ms.topic: troubleshooting
 ms.subservice: fundamentals
-ms.workload: identity
 ms.date: 01/05/2024
 ms.author: sarahlipsey
 ms.reviewer: jeffsta

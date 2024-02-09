@@ -6,13 +6,11 @@ metadata:
   author: shlipsey3
   manager: amycolannino
   ms.service: active-directory
-  ms.workload: identity
   ms.topic: faq
   ms.subservice: report-monitor
   ms.date: 01/08/2024
   ms.author: sarahlipsey
   ms.reviewer: egreenberg14
-
 title: Frequently asked questions around Microsoft Entra monitoring and health
 summary: |
   This article includes answers to frequently asked questions about Microsoft Entra monitoring and health. For more information, see [Microsoft Entra monitoring and health overview](overview-monitoring-health.md). 

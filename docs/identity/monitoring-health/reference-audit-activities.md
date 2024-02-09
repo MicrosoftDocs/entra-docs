@@ -7,12 +7,10 @@ author: shlipsey3
 manager: amycolannino
 ms.service: active-directory
 ms.topic: reference
-ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 09/14/2023
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk
-
 ---
 # Microsoft Entra audit log categories and activities
 

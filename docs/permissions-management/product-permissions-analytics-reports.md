@@ -4,9 +4,8 @@ description: How to view and download the Permissions Analytics Report in Permis
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: how-to
 ms.date: 12/01/2023
 ms.author: jfields

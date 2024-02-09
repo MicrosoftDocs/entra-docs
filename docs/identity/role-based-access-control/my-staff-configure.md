@@ -2,18 +2,15 @@
 title: Use My Staff to delegate user management
 description:  Delegate user management using My Staff and administrative units
 services: active-directory
-documentationcenter: ''
 author: rolyon
 manager: amycolannino
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: user-help
-ms.workload: identity
 ms.date: 05/18/2021
 ms.author: rolyon
 ms.reviewer: sahenry
 ms.custom: oldportal;it-pro;
-
 ---
 # Manage your users with My Staff
 

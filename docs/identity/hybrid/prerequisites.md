@@ -2,14 +2,11 @@
 title: 'Prerequisites for integrating with Active Directory'
 description: This article describes the prerequisites required to integrate with Active Directory.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 ms.service: active-directory
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath

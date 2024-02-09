@@ -6,7 +6,6 @@ ms.author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 02/02/2024
 ms.reviewer: arvinh
@@ -204,4 +203,3 @@ The following attributes and objects aren't supported:
 
 ## Next steps
 [How provisioning works](how-provisioning-works.md)
-

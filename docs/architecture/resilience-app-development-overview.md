@@ -1,10 +1,9 @@
 ---
 title: Increase the resilience of authentication and authorization applications you develop
 description: Resilience guidance for application development using Microsoft Entra ID and the Microsoft identity platform
-services: active-directory 
+services: active-directory
 ms.service: active-directory
-ms.subservice: fundamentals 
-ms.workload: identity
+ms.subservice: fundamentals
 ms.topic: how-to
 author: jricketts
 ms.author: jricketts

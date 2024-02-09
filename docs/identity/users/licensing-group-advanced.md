@@ -3,13 +3,11 @@ title: Group-based licensing additional scenarios
 description: More scenarios for Microsoft Entra group-based licensing
 services: active-directory
 keywords: Azure AD licensing
-documentationcenter: ''
 author: barclayn
-manager: amycolannino  
+manager: amycolannino
 ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: how-to
-ms.workload: identity
 ms.date: 11/15/2023
 ms.author: barclayn
 ms.reviewer: sumitp

@@ -9,11 +9,9 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 09/28/2023
 ms.author: barclayn
 ms.reviewer: krbain
-
 # Customer intent: As an IT admin, I want to understand group-based licensing, so I can effectively assign licenses to users in my organization.
 ---
 

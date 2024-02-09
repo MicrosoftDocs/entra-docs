@@ -7,11 +7,9 @@ manager: amycolannino
 
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/21/2023
 ms.author: justinha
-
 ---
 # Secure remote access to virtual machines in Microsoft Entra Domain Services
 

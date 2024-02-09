@@ -1,12 +1,10 @@
 ---
 title: 'Govern on-premises Active Directory(Kerberos) application access with groups from the cloud'
 description: This article provides an overview of how to use cloud sync to govern on-premises application access using groups.
-documentationcenter: ''
 author: billmath
 manager: amycolannino
 ms.service: active-directory
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath

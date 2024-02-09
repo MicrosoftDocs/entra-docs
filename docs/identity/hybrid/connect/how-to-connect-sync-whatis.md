@@ -2,14 +2,11 @@
 title: 'Microsoft Entra Connect Sync: Understand and customize synchronization'
 description: Explains how Microsoft Entra Connect Sync works and how to customize.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: ee4bf802-045b-4da0-986e-90aba2de58d6
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
