@@ -28,9 +28,9 @@ For more information about how connectors work, see [Understand Microsoft Entra 
 
 Connectors have underlying OS components that make outbound requests. These components automatically attempt to locate a proxy server on the network using Web Proxy Auto-Discovery (WPAD).
 
-The OS components attempt to locate a proxy server by carrying out a Domain Name System (DNS) lookup for wpad.domainsuffix. If the lookup resolves in DNS, an HTTP request is then made to the Internet Protocol (IP) address for `wpad.dat`. This request becomes the proxy configuration script in your environment. The connector uses this script to select an outbound proxy server. However, connector traffic might still not go through, because of additional configuration settings needed on the proxy.
+The OS components attempt to locate a proxy server by carrying out a Domain Name System (DNS) lookup for `wpad.domainsuffix`. If the lookup resolves in DNS, an HTTP request is then made to the Internet Protocol (IP) address for `wpad.dat`. This request becomes the proxy configuration script in your environment. The connector uses this script to select an outbound proxy server. However, connector traffic might continue to fail because more configuration settings are needed on the proxy.
 
-You can configure the connector to bypass your on-premises proxy to ensure that it uses direct connectivity to the Azure services. We recommend this approach, as long as your network policy allows for it, because it means that you have one less configuration to maintain.
+You can configure the connector to bypass your on-premises proxy to ensure that it uses direct connectivity to the Azure service. The approach is recommended, as long as your network policy allows for it, because it means one less configuration to maintain.
 
 To disable outbound proxy usage for the connector, edit the `C:\Program Files\Microsoft Azure AD App Proxy Connector\ApplicationProxyConnectorService.exe.config` file and add the `system.net` section shown in the code sample:
 
@@ -119,7 +119,7 @@ If your firewall or proxy allows you to configure DNS allowlists, you can allow 
 If you can't allow connectivity by Fully Qualified Domain Name (FQDN) and need to specify IP ranges instead, use these options:
 
 * Allow the connector outbound access to all destinations.
-* Allow the connector outbound access to all of the Azure datacenter IP ranges. The challenge with using the list of Azure datacenter IP ranges is that it's updated weekly. You need to put a process in place to ensure that your access rules are updated accordingly. Only using a subset of the IP addresses causes your configuration to break. To download the latest Azure Data Center IP ranges, navigate to [https://download.microsoft.com](https://download.microsoft.com) and search for "Azure IP Ranges and Service Tags". Be sure to select the relevant cloud. For example, the public cloud IP ranges can be found by searching for "Azure IP Ranges and Service Tags – Public Cloud". The US Government cloud can be found by searching for "Azure IP Ranges and Service Tags – US Government Cloud".
+* Allow the connector outbound access to all of the Azure datacenter IP ranges. The challenge with using the list of Azure datacenter IP ranges is that they are updated weekly. You need to put a process in place to ensure that your access rules are updated accordingly. Only using a subset of the IP addresses causes your configuration to break. To download the latest Azure Data Center IP ranges, navigate to [https://download.microsoft.com](https://download.microsoft.com) and search for "Azure IP Ranges and Service Tags". Be sure to select the relevant cloud. For example, the public cloud IP ranges can be found by searching for "Azure IP Ranges and Service Tags – Public Cloud". The US Government cloud can be found by searching for "Azure IP Ranges and Service Tags – US Government Cloud".
 
 #### Proxy authentication
 
@@ -137,25 +137,25 @@ The connector makes outbound TLS-based connections by using the CONNECT method. 
 Do not use TLS inspection for the connector traffic, because it causes problems for the connector traffic. The connector uses a certificate to authenticate to the Application Proxy service, and that certificate can be lost during TLS inspection.
 
 ## Configure using a proxy between the connector and backend application
-Using a forward proxy for the communication towards the backend application might be a special requirement in some environments.
-To enable this, please follow the next steps:
+Using a forward proxy for the communication towards the backend application is a special requirement in some environments.
+To enable a forward proxy, follow these steps:
 
 ### Step 1: Add the required registry value to the server
 1. To enable use of the default proxy, add the registry value **(DWORD)** 
 `UseDefaultProxyForBackendRequests = 1` to the connector configuration registry key located in `HKEY_LOCAL_MACHINE\Software\Microsoft\Microsoft Azure AD App Proxy Connector`.
 
 ### Step 2: Configure the proxy server manually using netsh command
-1. Enable the group policy Make proxy settings per-machine. This is found in: `Computer Configuration\Policies\Administrative Templates\Windows Components\Internet Explorer`. This needs to be set rather than having this policy set to per-user.
-2. Run `gpupdate /force` on the server or reboot the server to ensure it uses the updated group policy settings.
+1. Enable the group policy `Make proxy settings per-machine`. The group policy is found in: `Computer Configuration\Policies\Administrative Templates\Windows Components\Internet Explorer`. The group policy needs to be set rather than having the policy set per user.
+2. Run `gpupdate /force` on the server. Alternatively, to ensure the group policy is updated, reboot the server.
 3. Launch an elevated command prompt with admin rights and enter `control inetcpl.cpl`.
 4. Configure the required proxy settings. 
 
-These settings make the connector use the same forward proxy for the communication to Azure and to the backend application. If the connector to Azure communication requires no forward proxy or a different forward proxy, you can set this up with modifying the file `ApplicationProxyConnectorService.exe.config` as described in the sections *Bypass outbound proxies* and *Use the outbound proxy server*.
+The settings make the connector use the same forward proxy for the communication to Azure and to the backend application. Modify the file `ApplicationProxyConnectorService.exe.config` to change the forward proxy. Forward proxy configuration is described in the sections *Bypass outbound proxies* and *Use the outbound proxy server*.
 
 > [!NOTE]
 > There are various ways to configure the internet proxy in the operating system. Proxy settings configured via `NETSH WINHTTP` (run `NETSH WINHTTP SHOW PROXY` to verify) override the proxy settings you configured in Step 2. 
 
-The connector updater service will use the machine proxy as well. This behavior can be changed by modifying the file `ApplicationProxyConnectorUpdaterService.exe.config`.
+The connector updater service uses the machine proxy. The setting is found in the  `ApplicationProxyConnectorUpdaterService.exe.config` file.
 
 ## Troubleshoot connector proxy problems and service connectivity issues
 
@@ -187,7 +187,7 @@ For initial troubleshooting, perform the following steps:
 
 ### Check if the connector traffic bypasses outbound proxies
 
-If you configured your Application Proxy connector to bypass the proxy servers and connect directly to the Application Proxy service, you want to look in the network capture for failed TCP connection attempts.
+If you configured your Application Proxy connector to bypass the proxy servers and connect directly to the Application Proxy service, you want to look in the network capture for failed Transmission Control Protocol (TCP) connection attempts.
 
 Use the Message Analyzer filter to identify these attempts. Enter `property.TCPSynRetransmit` in the filter box and select **Apply**.
 
