@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.topic: conceptual
 ms.subservice: report-monitor
-ms.date: 12/11/2023
+ms.date: 01/04/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -25,7 +25,7 @@ You can view the Microsoft Entra Health SLA attainment and Scenario monitoring (
 
 ![Screenshot of the Microsoft Entra Health landing page.](media/concept-microsoft-entra-health/identity-health-landing-page.png)
 
-### Enable the Scenario monitoring preview
+### Enable the Scenario monitoring preview 
 
 If you'd like to view the **Scenario monitoring (preview)**:
 
@@ -45,7 +45,7 @@ You can also view SLA attainment using [Microsoft Graph](/graph/api/resources/se
 
 ![Screenshot of the SLA attainment report.](media/concept-microsoft-entra-health/sla-attainment.png)
 
-## Scenario monitoring (preview)
+## Scenario monitoring (preview) 
 
 Many IT administrators spend a considerable amount of time investigating the health of the following key scenarios:
 
@@ -60,7 +60,7 @@ Data is aggregated every 15 minutes, for low latency insights into your tenant's
 
 Select **View details** on a tile to view the metrics for that scenario. You can also view these metric streams using [Microsoft Graph](/graph/api//resources/serviceactivity?view=graph-rest-beta&preserve-view=true).
 
-![Screenshot of the the scenario monitoring landing page.](media/concept-microsoft-entra-health/scenario-monitoring.png)
+![Screenshot of the scenario monitoring landing page.](media/concept-microsoft-entra-health/scenario-monitoring.png)
 
 ### Sign-ins requiring a compliant device
 

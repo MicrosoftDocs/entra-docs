@@ -5,8 +5,8 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: azureday1, devx-track-azurecli, devx-track-azurepowershell, subject-rbac-steps
-ms.date: 07/31/2023
-ms.devlang: csharp, javascript
+ms.date: 02/07/2024
+ms.devlang: csharp
 ms.reviewer: stsoneff
 ms.service: app-service
 ms.subservice: web-apps
@@ -216,9 +216,9 @@ To see this code as part of a sample application, see the [sample on GitHub](htt
 
 ### Install client library packages
 
-Install the [Blob Storage NuGet package](https://www.nuget.org/packages/Azure.Storage.Blobs/) to work with Blob Storage and the [Azure Identity client library for .NET NuGet package](https://www.nuget.org/packages/Azure.Identity/) to authenticate with Microsoft Entra credentials. Install the client libraries by using the .NET Core command-line interface or the Package Manager Console in Visual Studio.
+Install the [Blob Storage NuGet package](https://www.nuget.org/packages/Azure.Storage.Blobs/) to work with Blob Storage and the [Azure Identity client library for .NET NuGet package](https://www.nuget.org/packages/Azure.Identity/) to authenticate with Microsoft Entra credentials. Install the client libraries by using the .NET command-line interface (CLI) or the Package Manager Console in Visual Studio.
 
-#### .NET Core command-line
+#### .NET CLI
 
 Open a command line, and switch to the directory that contains your project file.
 

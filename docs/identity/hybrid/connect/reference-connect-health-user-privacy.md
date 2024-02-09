@@ -6,7 +6,6 @@ author: billmath
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: hybrid
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: reference
 ms.date: 11/06/2023

@@ -2,16 +2,13 @@
 title: Use managed identities on an Azure VM with Azure SDKs
 description: Code samples for using Azure SDKs with an Azure VM that has managed identities for Azure resources.
 services: active-directory
-documentationcenter: 
 author: barclayn
 manager: amycolannino
-editor: 
 
 ms.service: active-directory
 ms.subservice: msi
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 05/23/2023
 ms.author: barclayn
 ms.collection: M365-identity-device-management

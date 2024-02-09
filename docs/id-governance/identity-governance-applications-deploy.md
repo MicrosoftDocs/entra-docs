@@ -2,12 +2,10 @@
 title: Deploying policies for governing access to applications integrated with Microsoft Entra ID| Microsoft Docs
 description: Microsoft Entra ID Governance allows you to balance your organization's need for security and employee productivity with the right processes and visibility.  You can use entitlement management and other identity governance features to enforce the policies for access.
 services: active-directory
-documentationcenter: ''
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.subservice: compliance

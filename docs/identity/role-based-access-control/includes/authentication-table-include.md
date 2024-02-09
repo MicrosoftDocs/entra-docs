@@ -4,7 +4,6 @@ description: include file
 author: rolyon
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: roles
 ms.topic: include
 ms.date: 10/12/2022

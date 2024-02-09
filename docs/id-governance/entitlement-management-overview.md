@@ -2,12 +2,10 @@
 title: What is entitlement management?
 description: Get an overview of entitlement management and how you can use it to manage access to groups, applications, and SharePoint Online sites for internal and external users.
 services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: markwahl-msft
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: overview
 ms.subservice: compliance
@@ -16,10 +14,7 @@ ms.author: owinfrey
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy21q1
-
-
-#Customer intent: As a administrator, I want learn about entitlement management so that see how I can use it to manage access to resources in my organization.
-
+#Customer intent: As an administrator, I want learn about entitlement management so that see how I can use it to manage access to resources in my organization.
 ---
 # What is entitlement management?
 

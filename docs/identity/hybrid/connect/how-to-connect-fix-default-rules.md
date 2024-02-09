@@ -6,7 +6,6 @@ author: billmath
 manager: amycolannino
 ms.reviewer: darora10
 ms.service: active-directory
-ms.workload: identity
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.subservice: hybrid

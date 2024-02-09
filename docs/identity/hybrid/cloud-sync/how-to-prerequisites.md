@@ -5,7 +5,6 @@ services: active-directory
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.subservice: hybrid
@@ -117,10 +116,10 @@ If there's a firewall between your servers and Microsoft Entra ID, configure the
 
   |URL |How it's used|
   |-----|-----|
-  |&#42;.msappproxy.net</br>&#42;.servicebus.windows.net|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
-  |&#42;.microsoftonline.com</br>&#42;.microsoft.com</br>&#42;.msappproxy.com</br>&#42;.windowsazure.com|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
+  |`*.msappproxy.net`</br>`*.servicebus.windows.net`|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
+  |`*.microsoftonline.com`</br>`*.microsoft.com`</br>`*.msappproxy.com`</br>`*.windowsazure.com`|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
    |`mscrl.microsoft.com:80` </br>`crl.microsoft.com:80` </br>`ocsp.msocsp.com:80` </br>`www.microsoft.com:80`| The agent uses these URLs to verify certificates.|
-   |login.windows.net</br>|The agent uses these URLs during the registration process.
+   |`login.windows.net`</br>|The agent uses these URLs during the registration process.
 
 
 
@@ -128,9 +127,9 @@ If there's a firewall between your servers and Microsoft Entra ID, configure the
 
  |URL |How it's used|
  |-----|-----|
- |&#42;.msappproxy.us</br>&#42;.servicebus.usgovcloudapi.net|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
+ |`*.msappproxy.us`</br>`*.servicebus.usgovcloudapi.net`|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
  |`mscrl.microsoft.us:80` </br>`crl.microsoft.us:80` </br>`ocsp.msocsp.us:80` </br>`www.microsoft.us:80`| The agent uses these URLs to verify certificates.|
- |login.windows.us </br>secure.aadcdn.microsoftonline-p.com </br>&#42;.microsoftonline.us </br>&#42;.microsoftonline-p.us </br>&#42;.msauth.net </br>&#42;.msauthimages.net </br>&#42;.msecnd.net</br>&#42;.msftauth.net </br>&#42;.msftauthimages.net</br>&#42;.phonefactor.net </br>enterpriseregistration.windows.net</br>management.azure.com </br>policykeyservice.dc.ad.msft.net</br>ctldl.windowsupdate.us:80 </br>aadcdn.msftauthimages.us </br>*.microsoft.us </br>msauthimages.us </br>mfstauthimages.us| The agent uses these URLs during the registration process.
+ |`login.windows.us` </br>`secure.aadcdn.microsoftonline-p.com` </br>`*.microsoftonline.us` </br>`*.microsoftonline-p.us` </br>`*.msauth.net` </br>`*.msauthimages.net` </br>`*.msecnd.net`</br>`*.msftauth.net` </br>`*.msftauthimages.net`</br>`*.phonefactor.net` </br>`enterpriseregistration.windows.net`</br>`management.azure.com` </br>`policykeyservice.dc.ad.msft.net`</br>`ctldl.windowsupdate.us:80` </br>`aadcdn.msftauthimages.us` </br>`*.microsoft.us` </br>`msauthimages.us` </br>`mfstauthimages.us`| The agent uses these URLs during the registration process.
 
 
 

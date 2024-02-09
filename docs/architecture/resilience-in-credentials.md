@@ -5,7 +5,6 @@ description: A guide for architects
 services: active-directory
 author: janicericketts
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 11/16/2022

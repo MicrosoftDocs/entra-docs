@@ -6,11 +6,9 @@ manager: amycolannino
 
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/15/2023
 ms.author: justinha
-
 #Customer intent: As an identity administrator, I want to create and configure a virtual network subnet or network peering for application workloads in a Microsoft Entra Domain Services managed domain
 ---
 

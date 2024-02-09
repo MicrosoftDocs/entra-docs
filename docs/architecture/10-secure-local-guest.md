@@ -1,7 +1,7 @@
 ---
 title: Convert local guest accounts to Microsoft Entra B2B guest accounts
-description: Learn to convert local guests into Microsoft Entra B2B guest accounts by identifying apps and local guest accounts, migration, and more. 
-services: active-directory 
+description: Learn to convert local guests into Microsoft Entra B2B guest accounts by identifying apps and local guest accounts, migration, and more.
+services: active-directory
 author: gargi-sinha
 ms.author: gasinh
 manager: martinco
@@ -9,7 +9,6 @@ ms.date: 02/23/2023
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: enterprise-users
-ms.workload: identity
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ---

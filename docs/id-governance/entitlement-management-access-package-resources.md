@@ -2,23 +2,16 @@
 title: Change resource roles for an access package in entitlement management
 description: Learn how to change the resource roles for an existing access package in entitlement management.
 services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
-editor: 
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: compliance
 ms.date: 01/25/2023
 ms.author: owinfrey
-ms.reviewer: 
 ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
-
 ---
 # Change resource roles for an access package in entitlement management
 
@@ -157,8 +150,8 @@ Applications can have multiple app roles defined in their manifest and managed t
 
 Once an app role is a resource of an access package:
 
-- When a user is assigned that access package, the user is added to that app role, if not already present.
-- When a user's access package assignment expires, their access is removed from the application, unless they have an assignment to another access package that includes that app role.
+- When a user is assigned that access package, the user is added to that app role, if not already present.  If the application requires attributes, the values of the attributes collected from the request will be written onto the user.
+- When a user's access package assignment expires, their access is removed from the application, unless they have an assignment to another access package that includes that app role.  If the application required attributes, those attributes will be removed from the user.
 
 Here are some considerations when selecting an application:
 

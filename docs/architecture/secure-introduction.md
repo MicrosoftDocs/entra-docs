@@ -1,11 +1,10 @@
 ---
-title: Delegated administration to secure with Microsoft Entra ID 
+title: Delegated administration to secure with Microsoft Entra ID
 description: Introduction to delegated administration and isolated environments in Microsoft Entra ID.
 services: active-directory
 author: gargi-sinha
 manager: martinco
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 7/5/2022

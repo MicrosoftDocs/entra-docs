@@ -7,11 +7,9 @@ manager: amycolannino
 
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 03/23/2023
 ms.author: justinha
-
 ---
 
 # Management concepts for user accounts, passwords, and administration in Microsoft Entra Domain Services

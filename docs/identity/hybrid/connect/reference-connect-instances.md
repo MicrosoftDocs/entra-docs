@@ -2,14 +2,11 @@
 title: 'Microsoft Entra Connect: Sync service instances'
 description: This page documents special considerations for Microsoft Entra instances.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: f340ea11-8ff5-4ae6-b09d-e939c76355a3
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: reference
 ms.date: 11/06/2023

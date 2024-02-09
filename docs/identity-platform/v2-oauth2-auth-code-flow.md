@@ -10,7 +10,7 @@ ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer building a web application, I want to implement the OAuth 2.0 authorization code flow with PKCE and OpenID Connect, so that I can obtain authorized access to protected resources like web APIs and authenticate users in my application.
 ---
 
 # Microsoft identity platform and OAuth 2.0 authorization code flow

@@ -3,7 +3,6 @@ title: 'Microsoft Entra Connect: When you already have Microsoft Entra ID'
 description: This topic describes how to use Connect when you have an existing Microsoft Entra tenant.
 author: billmath
 ms.service: active-directory
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 manager: amycolannino
 ms.topic: how-to
@@ -89,4 +88,3 @@ If the only reason why you plan to add on-premises AD is to support LOBs (Line-o
 
 ## Next steps
 Learn more about [Integrating your on-premises identities with Microsoft Entra ID](../whatis-hybrid-identity.md).
-

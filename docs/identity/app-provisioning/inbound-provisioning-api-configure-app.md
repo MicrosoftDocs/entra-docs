@@ -6,7 +6,6 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/15/2023
 ms.author: kenwith
@@ -28,6 +27,7 @@ To complete the steps in this tutorial, you need access to Microsoft Entra admin
 
 * [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) (if you're configuring inbound user provisioning to Microsoft Entra ID) OR
 * [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) + [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) (if you're configuring inbound user provisioning to on-premises Active Directory)
+* Entra ID Premium P1 license is required to evaluate this feature in public preview.
 
 If you're configuring inbound user provisioning to on-premises Active Directory, you need access to a Windows Server where you can install the provisioning agent for connecting to your Active Directory domain controller. 
 
@@ -61,17 +61,14 @@ Depending on the app you selected, use one of the following sections to complete
 
 1. After setting the Provisioning Mode to **Automatic**, click on **Save** to create the initial configuration of the provisioning job. 
 1. Click on the information banner about the Microsoft Entra provisioning Agent.
-     [![Screenshot of provisioning agent banner.](media/inbound-provisioning-api-configure-app/provisioning-agent-banner.png)](media/inbound-provisioning-api-configure-app/provisioning-agent-banner.png#lightbox)
 1. Click **Accept terms & download** to download the Microsoft Entra provisioning Agent.
 1. Refer to the steps documented here to [install and configure the provisioning agent.](https://go.microsoft.com/fwlink/?linkid=2241216). This step registers your on-premises Active Directory domains with your Microsoft Entra tenant.
 1. Once the agent registration is successful, select your domain in the drop-down **Active Directory domain** and specify the distinguished name of the OU where new user accounts are created by default.
-     [![Screenshot of Active Directory domain selected.](media/inbound-provisioning-api-configure-app/provisioning-select-entra-domain.png)](media/inbound-provisioning-api-configure-app/provisioning-select-entra-domain.png#lightbox)
      > [!NOTE]
      > If your AD domain is not visible in the **Active Directory Domain** dropdown list, reload the provisioning app in the browser. Click on **View on-premises agents for your domain** to ensure that your agent status is healthy.
 1. Click on **Test connection** to ensure that Microsoft Entra ID can connect to the provisioning agent.
 1. Click on **Save** to save your changes.
 1. Once the save operation is successful, you'll see two more expansion panels – one for **Mappings** and one for **Settings**. Before proceeding to the next step, provide a valid notification email ID and save the configuration again.
-     [![Screenshot of the notification email box.](media/inbound-provisioning-api-configure-app/provisioning-notification-email.png)](media/inbound-provisioning-api-configure-app/provisioning-notification-email.png#lightbox)
      > [!NOTE]
      > Providing the **Notification Email** in **Settings** is mandatory. If the Notification Email is left empty, then the provisioning goes into quarantine when you start the execution.
 1. Click on hyperlink in the **Mappings** expansion panel to view the default attribute mappings. 
@@ -88,8 +85,6 @@ Depending on the app you selected, use one of the following sections to complete
 1. After setting the Provisioning Mode to **Automatic**, click on **Save** to create the initial configuration of the provisioning job. 
 1. Once the save operation is successful, you will see two more expansion panels – one for **Mappings** and one for **Settings**. Before proceeding to the next step, make sure you provide a valid notification email ID and Save the configuration once more. 
 
-     [![Screenshot of the notification email box.](media/inbound-provisioning-api-configure-app/provisioning-notification-email.png)](media/inbound-provisioning-api-configure-app/provisioning-notification-email.png#lightbox)
-
      > [!NOTE]
      > Providing the **Notification Email** in **Settings** is mandatory. If the Notification Email is left empty, then the provisioning goes into quarantine when you start the execution.
 1. Click on hyperlink in the **Mappings** expansion panel to view the default attribute mappings. 
@@ -100,7 +95,6 @@ Depending on the app you selected, use one of the following sections to complete
 ## Start accepting provisioning requests
 
 1. Open the provisioning application's **Provisioning** > **Overview** page. 
-      :::image type="content" source="media/inbound-provisioning-api-configure-app/provisioning-api-endpoint.png" alt-text="Screenshot of Provisioning API endpoint." lightbox="media/inbound-provisioning-api-configure-app/provisioning-api-endpoint.png":::
 1. On this page, you can take the following actions: 
      - **Start provisioning** control button – Click on this button to place the provisioning job in **listen mode** to process inbound bulk upload request payloads.  
      - **Stop provisioning** control button – Use this option to pause/stop the provisioning job. 

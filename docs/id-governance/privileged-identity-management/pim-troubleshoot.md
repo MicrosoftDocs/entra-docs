@@ -2,13 +2,10 @@
 title: Troubleshoot resource access denied in Privileged Identity Management
 description: Learn how to troubleshoot system errors with roles in Microsoft Entra Privileged Identity Management (PIM).
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 ms.service: active-directory
 ms.topic: how-to
-ms.workload: identity
 ms.subservice: pim
 ms.date: 10/07/2021
 ms.author: billmath

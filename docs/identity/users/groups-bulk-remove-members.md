@@ -1,7 +1,7 @@
 ---
 title: Bulk remove group members by uploading a CSV file
-description: Remove group members in bulk operations by using a comma-separated values (CSV) file. 
-services: active-directory 
+description: Remove group members in bulk operations by using a comma-separated values (CSV) file.
+services: active-directory
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
@@ -9,7 +9,6 @@ ms.date: 11/10/2023
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: enterprise-users
-ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management

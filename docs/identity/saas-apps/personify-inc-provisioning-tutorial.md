@@ -40,7 +40,8 @@ The scenario outlined in this tutorial assumes that you already have the followi
 * Determine what data to [map between Microsoft Entra ID and Personify Inc](~/identity/app-provisioning/customize-application-attributes.md).
 
 ## Step 2: Configure Personify Inc to support provisioning with Microsoft Entra ID
-Contact Personify Inc support to configure Personify Inc to support provisioning with Microsoft Entra ID.
+
+Visit [Personify Inc support](https://support.personifyinc.com/s/article/tutorial-azure-active-directory-single-sign-on-sso-integration-with-personify-inc?language=en_US#list-tenant-urls) to configure Personify Inc to support provisioning with Microsoft Entra ID
 
 ## Step 3: Add Personify Inc from the Microsoft Entra application gallery
 
@@ -100,10 +101,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |active|Boolean||&check;
    |displayName|String||
    |title|String||
-   |emails[type eq "work"].value|String||
+   |emails[type eq "work"].value|String||&check;
    |preferredLanguage|String||
-   |name.givenName|String||
-   |name.familyName|String||
+   |name.givenName|String||&check;
+   |name.familyName|String||&check;
    |name.formatted|String||
    |addresses[type eq "work"].formatted|String||
    |addresses[type eq "work"].streetAddress|String||
@@ -114,7 +115,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |phoneNumbers[type eq "work"].value|String||
    |phoneNumbers[type eq "mobile"].value|String||
    |phoneNumbers[type eq "fax"].value|String||
-   |externalId|String||
+   |externalId|String|&check;|
    |name.honorificPrefix|String||
    |name.honorificSuffix|String||
    |nickName|String||

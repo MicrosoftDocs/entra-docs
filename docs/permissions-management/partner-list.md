@@ -4,9 +4,8 @@ description: View current Microsoft Entra Permissions Management partners and th
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: reference
 ms.date: 06/16/2023
 ms.author: jfields
@@ -42,14 +41,15 @@ If you're a partner and would like to be considered for the Microsoft Entra Perm
 
 | Permissions Management partner | Website | 
 |:-------------------------|:--------------|
-|![Screenshot of edgile logo.](media/partner-list/partner-edgile.png) | [Quick Start Programs for Microsoft Cloud Security](https://edgile.com/information-security/quick-start-programs-for-microsoft-cloud-security/)
-| ![Screenshot of a invoke logo.](media/partner-list/partner-invoke.png) | [Invoke's Microsoft Entra PM multicloud risk assessment](https://www.invokellc.com/offers/microsoft-entra-permissions-management-multi-cloud-risk-assessment)|
-| ![Screenshot of a Vu logo.](media/partner-list/partner-oxford-computer-group.png) | [Permissions Management implementation and remediation](https://oxfordcomputergroup.com/microsoft-entra-permissions-management-implementation/)|
-| ![Screenshot of a Onfido logo.](media/partner-list/partner-ada-quest.png) | [adaQuest Microsoft Entra Permissions Management Risk Assessment](https://adaquest.com/entra-permission-risk-assessment/)
-| ![Screenshot of Ascent Solutions logo.](media/partner-list/partner-ascent-solutions.png) | [Ascent Solutions Microsoft Entra Permissions Management Rapid Risk Assessment](https://www.meetascent.com/resources/microsoft-entra-permissions-rapid-risk-assessment)
-| ![Screenshot of Synergy Advisors logo.](media/partner-list/partner-synergy-advisors.png) | [Synergy Advisors Identity Optimization](https://synergyadvisors.biz/solutions-item/identity-optimization/)
-| ![Screenshot of BDO Digital logo.](media/partner-list/partner-bdo-digital.png) | [BDO Digital Managing Permissions Across Multicloud](https://www.bdodigital.com/services/security-compliance/cybersecurity/entra-permissions-management)
-| ![Screenshot of Mazzy Technologies logo.](media/partner-list/partner-mazzy-technologies.png) | [Mazzy Technologies Identity](https://mazzytechnologies.com/identity%3A-microsoft-entra)
+| ![Screenshot of Edgile logo.](media/partner-list/partner-edgile.png) | [Quick Start Programs for Microsoft Cloud Security](https://edgile.com/information-security/quick-start-programs-for-microsoft-cloud-security/)|
+| ![Screenshot of Invoke logo.](media/partner-list/partner-invoke.png) | [Invoke's Microsoft Entra PM multicloud risk assessment](https://www.invokellc.com/offers/microsoft-entra-permissions-management-multi-cloud-risk-assessment)|
+| ![Screenshot of Vu logo.](media/partner-list/partner-oxford-computer-group.png) | [Permissions Management implementation and remediation](https://oxfordcomputergroup.com/microsoft-entra-permissions-management-implementation/)|
+| ![Screenshot of Onfido logo.](media/partner-list/partner-ada-quest.png) | [adaQuest Microsoft Entra Permissions Management Risk Assessment](https://adaquest.com/entra-permission-risk-assessment/)|
+| ![Screenshot of Ascent Solutions logo.](media/partner-list/partner-ascent-solutions.png) | [Ascent Solutions Microsoft Entra Permissions Management Rapid Risk Assessment](https://www.meetascent.com/resources/microsoft-entra-permissions-rapid-risk-assessment)|
+| ![Screenshot of Synergy Advisors logo.](media/partner-list/partner-synergy-advisors.png) | [Synergy Advisors Identity Optimization](https://synergyadvisors.biz/solutions-item/identity-optimization/)|
+| ![Screenshot of BDO Digital logo.](media/partner-list/partner-bdo-digital.png) | [BDO Digital Managing Permissions Across Multicloud](https://www.bdodigital.com/services/security-compliance/cybersecurity/entra-permissions-management)|
+| ![Screenshot of Mazzy Technologies logo.](media/partner-list/partner-mazzy-technologies.png) | [Mazzy Technologies Identity](https://mazzytechnologies.com/identity%3A-microsoft-entra)|
+
 ## Next steps
 
 * For an overview of Permissions Management, see [What's Microsoft Entra Permissions Management?](overview.md)

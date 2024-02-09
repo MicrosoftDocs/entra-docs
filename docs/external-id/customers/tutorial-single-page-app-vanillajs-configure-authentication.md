@@ -14,9 +14,9 @@ ms.date: 08/17/2023
 #Customer intent: As a developer, I want to learn how to configure Vanilla JavaScript single-page app (SPA) to sign in and sign out users with my Microsoft Entra ID for customers tenant.
 ---
 
-# Tutorial: Handle authentication flows in a Vanilla JavaScript single-page app
+# Tutorial: Handle authentication flows in a Vanilla JavaScript SPA
 
-In the [previous article](./tutorial-single-page-app-vanillajs-prepare-app.md), you created a Vanilla JavaScript (JS) single-page application (SPA) and a server to host it. This tutorial demonstrates how to configure the application to authenticate and authorize users to access protected resources.
+This tutorial is part 3 of a series that demonstrates building a Vanilla JavaScript (JS) single-page application (SPA) and preparing it for authentication. In [part 2 of this series](./tutorial-single-page-app-vanillajs-prepare-app.md), you created a Vanilla JS SPA and prepared it for authentication with your Microsoft Entra ID for customers tenant. In this tutorial, you'll learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
 
 In this tutorial;
 
@@ -27,7 +27,7 @@ In this tutorial;
 
 ## Prerequisites
 
-* Completion of the prerequisites and steps in [Prepare a single-page application for authentication](tutorial-single-page-app-vanillajs-prepare-app.md).
+* [Tutorial: Prepare your customer tenant to authenticate users in a Vanilla JavaScript SPA](tutorial-single-page-app-vanillajs-prepare-tenant.md).
 
 ## Edit the authentication configuration file
 
@@ -275,7 +275,7 @@ The application uses *authPopup.js* to handle the authentication flow when the u
 
 1. Save the file.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
-> [Sign in and sign out of the Vanilla JS SPA](./tutorial-single-page-app-vanillajs-sign-in-sign-out.md)
+> [Part 4: Sign in and sign out of the Vanilla JS SPA](./tutorial-single-page-app-vanillajs-sign-in-sign-out.md)

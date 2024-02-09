@@ -2,14 +2,11 @@
 title: 'Microsoft Entra Connect: How to recover from LocalDB 10GB limit issue'
 description: This topic describes how to recover Microsoft Entra Connect Synchronization Service when it encounters LocalDB 10GB limit issue.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: 41d081af-ed89-4e17-be34-14f7e80ae358
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/06/2023

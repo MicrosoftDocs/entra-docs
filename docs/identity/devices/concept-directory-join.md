@@ -2,18 +2,15 @@
 title: What is a Microsoft Entra joined device?
 description: Microsoft Entra joined devices can help you to manage devices accessing resources in your environment.
 
-services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 01/24/2023
+ms.date: 01/30/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
-
-ms.collection: M365-identity-device-management
 ---
 # Microsoft Entra joined devices
 
@@ -32,14 +29,14 @@ Any organization can deploy Microsoft Entra joined devices no matter the size or
 |   | Windows Autopilot |
 | **Device sign in options** | Organizational accounts using: |
 |   | Password |
-|   | [Passwordless](~/identity/authentication/concept-authentication-passwordless.md) options like [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-planning-guide) and FIDO2.0 security keys. |
+|   | [Passwordless](../authentication/concept-authentication-passwordless.md) options like [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-planning-guide) and FIDO2.0 security keys. |
 | **Device management** | Mobile Device Management (example: Microsoft Intune) |
 |   | [Configuration Manager standalone or co-management with Microsoft Intune](/mem/configmgr/comanage/overview) |
 | **Key capabilities** | SSO to both cloud and on-premises resources |
 |   | Conditional Access through MDM enrollment and MDM compliance evaluation |
-|   | [Self-service Password Reset and Windows Hello PIN reset on lock screen](~/identity/authentication/howto-sspr-windows.md) |
+|   | [Self-service Password Reset and Windows Hello PIN reset on lock screen](../authentication/howto-sspr-windows.md) |
 
-Microsoft Entra joined devices are signed in to using an organizational Microsoft Entra account. Access to resources can be controlled based on Microsoft Entra account and [Conditional Access policies](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md) applied to the device.
+Microsoft Entra joined devices are signed in to using an organizational Microsoft Entra account. Access to resources can be controlled based on Microsoft Entra account and [Conditional Access policies](../conditional-access/howto-conditional-access-policy-compliant-device.md) applied to the device.
 
 Administrators can secure and further control Microsoft Entra joined devices using Mobile Device Management (MDM) tools like Microsoft Intune or in co-management scenarios using Microsoft Configuration Manager. These tools provide a means to enforce organization-required configurations like: 
 
@@ -73,7 +70,7 @@ The goal of Microsoft Entra joined devices is to simplify:
 - Cloud-based management of work-owned devices
 - Users to sign in to their devices with their Microsoft Entra ID or synced Active Directory work or school accounts.
 
-![Microsoft Entra joined devices](./media/concept-directory-join/azure-ad-joined-device.png)
+![A diagram showing Microsoft Entra joined devices interacting with an on-premises domain.](./media/concept-directory-join/azure-ad-joined-device.png)
 
 Microsoft Entra join can be deployed by using any of the following methods:
 

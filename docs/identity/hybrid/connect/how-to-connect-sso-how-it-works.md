@@ -3,12 +3,10 @@ title: 'Microsoft Entra Connect: Seamless Single Sign-On - How it works'
 description: This article describes how the Microsoft Entra seamless single sign-on feature works.
 services: active-directory
 keywords: what is Azure AD Connect, install Active Directory, required components for Azure AD, SSO, Single Sign-on
-documentationcenter: ''
 author: billmath
 manager: amycolannino
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023

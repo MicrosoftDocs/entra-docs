@@ -5,7 +5,6 @@ services: active-directory
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.topic: overview
 ms.date: 11/06/2023
 ms.subservice: hybrid
@@ -24,7 +23,7 @@ Microsoft Entra Connect is an on-premises Microsoft application that's designed 
 
 
  >[!IMPORTANT]
- >Azure AD Connect V1 has been retired as of August 31, 2022 and is no longer supported. Azure AD Connect V1 installations may **stop working unexpectedly**. If you are still using a Azure AD Connect V1 you need to upgrade to Microsoft Entra Connect V2 immediately.
+ >Azure AD Connect V1 has been retired as of August 31, 2022 and is no longer supported. Azure AD Connect V1 installations may **stop working unexpectedly**. If you are still using an Azure AD Connect V1 you need to upgrade to Microsoft Entra Connect V2 immediately.
 
 <a name='consider-moving-to-azure-ad-connect-cloud-sync'></a>
 

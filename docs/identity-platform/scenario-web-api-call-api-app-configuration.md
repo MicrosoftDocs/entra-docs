@@ -190,7 +190,7 @@ If you want to call an API other than Microsoft Graph, *Microsoft.Identity.Web* 
 
 Here's the code:
 
-   ```csharp
+```csharp
   using Microsoft.Extensions.DependencyInjection;
   using Microsoft.Identity.Client;
   using Microsoft.Identity.Web;
@@ -211,7 +211,7 @@ Here's the code:
 
               app.UseCookieAuthentication(new CookieAuthenticationOptions());
 
-              // Get an TokenAcquirerFactory specialized for OWIN.
+              // Get a TokenAcquirerFactory specialized for OWIN.
               OwinTokenAcquirerFactory owinTokenAcquirerFactory = TokenAcquirerFactory.GetDefaultInstance<OwinTokenAcquirerFactory>();
 
               // Configure the web app.
@@ -225,7 +225,7 @@ Here's the code:
           }
       }
   }
-   ```
+```
 
 # [Java](#tab/java)
 

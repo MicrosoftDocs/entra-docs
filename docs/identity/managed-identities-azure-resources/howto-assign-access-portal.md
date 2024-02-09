@@ -2,17 +2,14 @@
 title: Assign a managed identity access to a resource using the Azure portal
 description: Step-by-step instructions for assigning a managed identity on one resource access to another resource, by using the Azure portal.
 services: active-directory
-documentationcenter: 
 author: barclayn
 manager: amycolannino
-editor: 
 
 ms.custom: subject-rbac-steps
 ms.service: active-directory
 ms.subservice: msi
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 01/05/2024
 ms.author: barclayn
 ms.collection: M365-identity-device-management

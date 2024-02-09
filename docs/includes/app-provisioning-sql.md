@@ -169,9 +169,6 @@ If you have already downloaded the provisioning agent and configured it for anot
  8. Leave the portal and open the provisioning agent installer, agree to the terms of service, and select **next**.
  9. Open the provisioning agent wizard.
  10. In the **Select Extension** step, select **On-premises application provisioning** and then select **Next**.
-
- :::image type="content" source="media/app-provisioning-sql/sync-agent-select-on-premises.png" alt-text="Screenshot that shows how to select on premises provisioning." lightbox="media/app-provisioning-sql/sync-agent-select-on-premises.png":::
-    
  11. The provisioning agent will use the operating system's web browser to display a popup window for you to authenticate to Microsoft Entra ID, and potentially also your organization's identity provider.  If you are using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
  12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have the Hybrid Identity Administrator or Global Administrator role.
  13. Select **Confirm** to confirm the setting. Once installation is successful, you can select **Exit**, and also close the Provisioning Agent Package installer.
@@ -405,16 +402,16 @@ You'll use the Azure portal to configure the mapping between the Microsoft Entra
  1. Ensure that the Microsoft Entra schema includes the attributes that are required by the database. If the database requires users to have an attribute, such as `uidNumber`, and that attribute is not already part of your Microsoft Entra schema for a user, then you will need to use the [directory extension feature](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md) to add that attribute as an extension.
  1. In the Microsoft Entra admin center, under **Enterprise applications**, select the **On-premises ECMA app** application, and then the **Provisioning** page.
  2. Select **Edit provisioning**, and wait 10 seconds.
- 3. Expand **Mappings** and select **Provision Microsoft Entra users**. If this is the first time you've configured the attribute mappings for this application, there will be only one mapping present, for a placeholder.
+ 3. Expand **Mappings** and select the **Provision Azure Active Directory Users** mapping. If this is the first time you've configured the attribute mappings for this application, this will be the only mapping present, for a placeholder.
 
 
      ![Screenshot that shows provisioning a user.](.\media\app-provisioning-sql\configure-10.png)
 
- 1. To confirm that the schema of the database is available in Microsoft Entra ID, select the **Show advanced options** checkbox and select **Edit attribute list for ScimOnPremises**. Ensure that all the attributes selected in the configuration wizard are listed.  If not, then wait several minutes for the schema to refresh, and then reload the page.  Once you see the attributes listed, then cancel from this page to return to the mappings list.
- 2. Now, on the click on the **userPrincipalName** PLACEHOLDER mapping.  This mapping is added by default when you first configure on-premises provisioning.  
+ 1. To confirm that the schema of the database is available in Microsoft Entra ID, select the **Show advanced options** checkbox and select **Edit attribute list for ScimOnPremises**. Ensure that all the attributes selected in the configuration wizard are listed.  If not, then wait several minutes for the schema to refresh, and then reload the page. Once you see the attributes listed, close the page to return to the mappings list.
+ 2. Now, click on the **userPrincipalName** PLACEHOLDER mapping.  This mapping is added by default when you first configure on-premises provisioning.  
  
    :::image type="content" source="media/app-provisioning-sql/configure-11.png" alt-text="Screenshot of placeholder." lightbox="media/app-provisioning-sql/configure-11.png":::
- Change the value to match the following:
+ Change the attribute's values to match the following:
  
  |Mapping type|Source attribute|Target attribute|
  |-----|-----|-----|
@@ -455,7 +452,7 @@ If there are existing users in the SQL database, then you should create applicat
 
 Otherwise, if there are no current users of the application, then select a test user from Microsoft Entra who will be provisioned to the application.
 
- 1. Ensure that the user will select has all the properties that will be mapped to the required attributes of the database schema.
+ 1. Ensure that the user has all the properties that will be mapped to the required attributes of the database schema.
  1. In the Azure portal, select **Enterprise applications**.
  2. Select the **On-premises ECMA app** application.
  3. On the left, under **Manage**, select **Users and groups**.

@@ -6,9 +6,8 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/14/2023
+ms.date: 01/25/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -117,7 +116,7 @@ Increasingly, organizations are moving their networks into hosted environments. 
 
 Additionally, consider organizing your connectors using [connector groups](application-proxy-connector-groups.md) to target apps that are in different locations and networks.
 
-## Common use cases
+## Diagrams for common use cases
 
 In this section, we walk through a few common scenarios. Assume that the Microsoft Entra tenant (and therefore proxy service endpoint) is located in the United States (US). The considerations discussed in these use cases also apply to other regions around the globe.
 
@@ -192,6 +191,6 @@ You can also consider using one other variant in this situation. If most users i
 ## Next steps
 
 - [Enable Application Proxy](application-proxy-add-on-premises-application.md)
-- [Enable single-sign on](application-proxy-configure-single-sign-on-with-kcd.md)
+- [Enable single-sign on](how-to-configure-sso-with-kcd.md)
 - [Enable Conditional Access](./application-proxy-integrate-with-sharepoint-server.md)
 - [Troubleshoot issues you're having with Application Proxy](application-proxy-troubleshoot.md)

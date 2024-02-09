@@ -6,7 +6,6 @@ author: shlipsey3
 manager: amycolannino
 ms.service: active-directory
 ms.topic: reference
-ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 09/22/2023
 ms.author: sarahlipsey

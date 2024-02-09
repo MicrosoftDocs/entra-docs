@@ -2,23 +2,16 @@
 title: View, add, and remove assignments for an access package in entitlement management - Microsoft Entra
 description: Learn how to view, add, and remove assignments for an access package in entitlement management.
 services: active-directory
-documentationCenter: ''
 author: owinfreyATL
 manager: amycolannino
-editor: 
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: compliance
 ms.date: 06/27/2023
 ms.author: owinfrey
-ms.reviewer: 
 ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
-
 ---
 # View, add, and remove assignments for an access package in entitlement management
 

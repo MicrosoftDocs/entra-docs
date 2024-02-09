@@ -5,10 +5,9 @@ author: owinfreyATL
 ms.author: owinfrey
 ms.service: active-directory
 ms.subservice: compliance
-ms.workload: identity
-ms.topic: tutorial 
+ms.topic: tutorial
 ms.date: 05/31/2023
-ms.custom: template-tutorial 
+ms.custom: template-tutorial
 ---
 
 # Tutorial: Automated ServiceNow Ticket Creation with Microsoft Entra Entitlement Management Integration

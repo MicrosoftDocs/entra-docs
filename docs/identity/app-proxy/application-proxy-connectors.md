@@ -6,7 +6,6 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/14/2023
 ms.author: kenwith
@@ -19,7 +18,7 @@ Connectors are what make Microsoft Entra application proxy possible. They're sim
 
 ## What is an Application Proxy connector?
 
-Connectors are lightweight agents that sit on-premises and facilitate the outbound connection to the Application Proxy service. Connectors must be installed on a Windows Server that has access to the backend application. You can organize connectors into connector groups, with each group handling traffic to specific applications. For more information on Application proxy and a diagrammatic representation of application proxy architecture see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](what-is-application-proxy.md#application-proxy-connectors)
+Connectors are lightweight agents that sit on-premises and facilitate the outbound connection to the Application Proxy service. Connectors must be installed on a Windows Server that has access to the backend application. You can organize connectors into connector groups, with each group handling traffic to specific applications. For more information on Application proxy and a diagrammatic representation of application proxy architecture see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](overview-what-is-app-proxy.md#application-proxy-connectors)
 
 ## Requirements and deployment
 
@@ -69,7 +68,9 @@ The connectors are stateless and have no configuration data on the machine. The 
 
 Connectors also poll the server to find out whether there is a newer version of the connector. If one is found, the connectors update themselves.
 
-You can monitor your connectors from the machine they are running on, using either the event log and performance counters. Or you can view their status from the Application Proxy page of the Microsoft Entra admin center:
+You can monitor your connectors from the machine they are running on, using either the event log and performance counters. For more information, see [Monitor and review logs for on-premises Microsoft Entra](~/identity/authentication/howto-password-ban-bad-on-premises-monitor.md)
+
+You can also view their status from the Application Proxy page of the Microsoft Entra admin center:
 
 ![Example: Microsoft Entra application proxy connectors](./media/application-proxy-connectors/app-proxy-connectors.png)
 

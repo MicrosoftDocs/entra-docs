@@ -2,14 +2,11 @@
 title: Microsoft Entra Connect MV Designer'
 description: Understand the Metaverse Designer tab in the Synchronization Service Manager for Microsoft Entra Connect.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: abaa9eb2-f105-42d1-b00a-2a63129a8ffb
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023

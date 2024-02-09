@@ -4,9 +4,8 @@ description: How to clone a role/policy in Microsoft Entra Permissions Managemen
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/14/2023
 ms.author: jfields

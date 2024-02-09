@@ -1,10 +1,9 @@
 ---
 title: Configure identity access controls to meet FedRAMP High Impact level with Microsoft Entra ID
 description: Detailed guidance on how to configure Microsoft Entra ID access controls to meet FedRAMP High Impact level.
-services: active-directory 
+services: active-directory
 ms.service: active-directory
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh

@@ -8,11 +8,9 @@ manager: amycolannino
 ms.assetid: 52602ad8-2b93-4082-8487-427bdcfa8126
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/15/2023
 ms.author: justinha
-
 ---
 # Create an Organizational Unit (OU) in a Microsoft Entra Domain Services managed domain
 

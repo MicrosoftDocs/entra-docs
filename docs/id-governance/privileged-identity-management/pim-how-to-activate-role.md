@@ -2,13 +2,10 @@
 title: Activate Microsoft Entra roles in PIM
 description: Learn how to activate Microsoft Entra roles in Privileged Identity Management (PIM).
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
-editor: ''
 ms.service: active-directory
 ms.topic: how-to
-ms.workload: identity
 ms.subservice: pim
 ms.date: 09/13/2023
 ms.author: barclayn

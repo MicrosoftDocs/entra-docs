@@ -28,13 +28,8 @@ Microsoft Entra ID stores the data in these logs for a limited amount of time. A
 
 The option to download the data of an activity log is available in all editions of Microsoft Entra ID. You can also download activity logs using Microsoft Graph; however, downloading logs programmatically requires a premium license.
 
-The required roles and licenses might vary based on the report. Global Administrators can access all reports, but we recommend using a role with least privilege access to align with the [Zero Trust guidance](/security/zero-trust/zero-trust-overview).
+[!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
 
-| Log / Report | Roles | Licenses |
-|--|--|--|
-| Audit | Report Reader<br>Security Reader<br>Security Administrator<br>Global Reader | All editions of Microsoft Entra ID |
-| Sign-ins | Report Reader<br>Security Reader<br>Security Administrator<br>Global Reader | All editions of Microsoft Entra ID |
-| Provisioning | Same as audit and sign-ins, plus<br>Security Operator<br>Application Administrator<br>Cloud App Administrator<br>A custom role with `provisioningLogs` permission | P1 or P2 |
 
 ## Log download details
 

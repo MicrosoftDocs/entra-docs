@@ -2,13 +2,11 @@
 title: 'Microsoft Entra Connect: User sign-in'
 description: Microsoft Entra Connect user sign-in for custom settings.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
 
 ms.assetid: 547b118e-7282-4c7f-be87-c035561001df
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/06/2023

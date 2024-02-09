@@ -6,7 +6,6 @@ author: billmath
 manager: amycolannino
 ms.service: active-directory
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 02/17/2023
 ms.subservice: hybrid
 ms.author: billmath

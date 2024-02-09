@@ -2,14 +2,12 @@
 title: Microsoft Entra Connect Health Version History
 description: This document describes the releases for Microsoft Entra Connect Health and what has been included in those releases.
 services: active-directory
-documentationcenter: ''
 author: zhiweiwangmsft
 manager: amycolannino
 
 ms.assetid: 8dd4e998-747b-4c52-b8d3-3900fe77d88f
 ms.service: active-directory
 ms.subservice: hybrid
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: reference
 ms.date: 11/06/2023

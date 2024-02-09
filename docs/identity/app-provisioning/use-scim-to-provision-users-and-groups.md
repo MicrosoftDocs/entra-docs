@@ -1,12 +1,11 @@
 ---
 title: Tutorial - Develop a SCIM endpoint for user provisioning to apps from Microsoft Entra ID
-description: System for Cross-domain Identity Management (SCIM) standardizes automatic user provisioning. In this tutorial, you learn to develop a SCIM endpoint, integrate your SCIM API with Microsoft Entra ID, and start automating provisioning users and groups into your cloud applications. 
+description: System for Cross-domain Identity Management (SCIM) standardizes automatic user provisioning. In this tutorial, you learn to develop a SCIM endpoint, integrate your SCIM API with Microsoft Entra ID, and start automating provisioning users and groups into your cloud applications.
 services: active-directory
 author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/15/2023
 ms.author: kenwith
@@ -67,7 +66,7 @@ To design your schema, follow these steps:
 
 The following table lists an example of required attributes:
 
-|Required app attribute|Mapped SCIM attribute|Mapped Microsoft Entra attribute|
+|Required app attribute/example|Mapped SCIM attribute|Mapped Microsoft Entra attribute|
 |--|--|--|
 |loginName|userName|userPrincipalName|
 |firstName|name.givenName|givenName|
@@ -92,7 +91,7 @@ The following JSON payload shows an example SCIM schema:
        "givenName":"Barbara"
      },
      "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
-     "Manager": "123456"
+     "manager": "123456"
    },
      "urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User": {
      "tag": "701984",

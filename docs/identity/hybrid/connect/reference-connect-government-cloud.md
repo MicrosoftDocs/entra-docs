@@ -5,7 +5,6 @@ services: active-directory
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.topic: reference
 ms.date: 11/06/2023
 ms.subservice: hybrid
@@ -35,7 +34,7 @@ Before you deploy the Pass-through Authentication agent, verify whether a firewa
 > [!IMPORTANT]
 > The following guidance applies only to the following:
 > - the pass-through authentication agent
-> - [Microsoft Entra application proxy connector](~/identity/app-proxy/what-is-application-proxy.md) 
+> - [Microsoft Entra application proxy connector](~/identity/app-proxy/overview-what-is-app-proxy.md) 
 >
 > For information on URLS for the Microsoft Entra Provisioning Agent see the [installation pre-requisites](/azure/active-directory/cloud-sync/how-to-prerequisites)  for cloud sync.
 

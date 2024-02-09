@@ -6,7 +6,6 @@ author: twimmers
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/21/2023
 ms.author: thwimmer

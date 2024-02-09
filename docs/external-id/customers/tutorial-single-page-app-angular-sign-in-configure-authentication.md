@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Handle authentication flows in an Angular single-page app
+title: "Tutorial: Handle authentication flows in an Angular SPA"
 description: Learn how to configure authentication for an Angular single-page app (SPA) with your Microsoft Entra External ID for customers tenant.
 services: active-directory
 author: garrodonnell
@@ -14,9 +14,9 @@ ms.date: 10/27/2023
 #Customer intent: As a developer, I want to learn how to configure an Angular single-page app (SPA) to sign in and sign out users with my Microsoft Entra External ID for customers tenant.
 ---
 
-# Tutorial: Handle authentication flows in an Angular single-page app 
+# Tutorial: Handle authentication flows in an Angular SPA 
 
-In the previous article, [Prepare an Angular single-page app for authentication](./tutorial-single-page-app-angular-sign-in-prepare-app.md), you created an Angular single-page app (SPA) and prepared it for authentication with your Microsoft Entra External ID for customers tenant. In this article, you'll learn how to handle authentication flows in your app by adding MSAL components and creating authentication configuration files.
+This tutorial is part 3 of a series that demonstrates building an Angular single-page app (SPA) and preparing it for authentication. In [part 2 of this series](./tutorial-single-page-app-angular-sign-in-prepare-app.md), you created an Angular SPA and prepared it for authentication with your Microsoft Entra External ID for customers tenant. In this tutorial, you'll learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
 
 In this tutorial;
 
@@ -24,6 +24,10 @@ In this tutorial;
 > * Add authentication flows to your application
 > * Import MSAL components
 > * Add routes to home and guarded components of the application.
+
+## Prerequisites
+
+* [Tutorial: Prepare your customer tenant to authenticate users in an Angular SPA](./tutorial-single-page-app-angular-sign-in-prepare-tenant.md).
 
 ## Create the authentication configuration file, auth-config.ts
 
@@ -236,7 +240,7 @@ In this tutorial;
     export class AppRoutingModule { }
     ```
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
-> [Add sign-in and sign-out](./tutorial-single-page-app-angular-sign-in-sign-out.md)
+> [Part 4: Sign in and sign out of the Angular SPA](./tutorial-single-page-app-angular-sign-in-sign-out.md)

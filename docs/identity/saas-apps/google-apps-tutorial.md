@@ -170,7 +170,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	![image](common/default-attributes.png)
 
     > [!NOTE]
-    > Ensure that the the SAML Response doesn't include any non-standard ASCII characters in the Surname attribute.
+    > Ensure that the SAML Response doesn't include any non-standard ASCII characters in the Surname attribute.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 

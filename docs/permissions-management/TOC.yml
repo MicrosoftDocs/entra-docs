@@ -186,3 +186,6 @@
       href: multi-cloud-glossary.md
     - name: Microsoft Entra Permissions Management partners
       href: partner-list.md
+    - name: Microsoft Entra Permissions Management operations reference
+      href: ../architecture/permissions-manage-ops-guide-intro.md
+      

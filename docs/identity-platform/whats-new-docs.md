@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 12/05/2023
+ms.date: 02/01/2024
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
@@ -15,6 +15,21 @@ ms.topic: reference
 # Microsoft identity platform docs: What's new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
+
+## January 2024
+
+### New articles
+
+- [Customize claims emitted in tokens for a specific app in a tenant using PowerShell](claims-customization-powershell.md) - Adding claims customization using PowerShell page
+
+### Updated articles
+
+- [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](v2-oauth2-on-behalf-of-flow.md) - Adding clarity to the article
+- [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](quickstart-web-api-aspnet-core-protect-api.md) - Updated the article with the new code sample.
+
+## December 2023
+
+No new or updated articles.
 
 ## November 2023
 
@@ -32,32 +47,3 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 - [Single-page application: Sign-in and Sign-out](scenario-spa-sign-in.md) - Update to enhance the article's technical accuracy
 - [Configure token lifetime policies (preview)](configure-token-lifetimes.md) - Update on how to add policies to service principals
 - [How to handle third-party cookie blocking in browsers](reference-third-party-cookies-spas.md) - Update to enhance the article's technical accuracy
-
-## October 2023
-
-### Updated articles
-
-- [Tutorial: Access Microsoft Graph from a secured app as the user](multi-service-web-app-access-microsoft-graph-as-user.md) - Updating URLs
-
-## September 2023
-
-### New articles
-
-- [Tutorial: Call an API from a React single-page app](tutorial-single-page-app-react-call-api.md) - Get user data from web API
-
-### Updated articles
-
-- [Access tokens in the Microsoft identity platform](access-tokens.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Add app roles to your application and receive them in the token](howto-add-app-roles-in-apps.md) - Add clarity to distinguish between app and user roles
-- [How and why applications are added to Microsoft Entra ID](how-applications-are-added.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Making your application multitenant](howto-convert-app-to-be-multi-tenant.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Microsoft Entra app manifest](reference-app-manifest.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Microsoft Entra authentication and authorization error codes](reference-error-codes.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using Angular](quickstart-single-page-app-angular-sign-in.md) - Update SPA quickstarts to use new code sample
-- [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript](quickstart-single-page-app-javascript-sign-in.md) - Update SPA quickstarts to use new code sample
-- [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using React](quickstart-single-page-app-react-sign-in.md) - Update SPA quickstarts to use new code sample
-- [Quickstart: Sign in users and call the Microsoft Graph API from an ASP.NET Core web app](quickstart-web-app-aspnet-core-sign-in.md) - Update ASP.NET quickstart to use new code sample
-- [Quickstart: Configure an application to expose a web API](quickstart-configure-app-expose-web-apis.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Single sign-on SAML protocol](single-sign-on-saml-protocol.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Tutorial: Prepare a Single-page application for authentication](tutorial-single-page-app-react-prepare-spa.md) - Add clarity to the content
-

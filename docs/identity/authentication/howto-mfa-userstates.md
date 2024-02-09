@@ -82,10 +82,6 @@ To change the per-user Microsoft Entra multifactor authentication state for a us
 
 After you enable users, notify them via email. Tell the users that a prompt is displayed to ask them to register the next time they sign in. Also, if your organization uses non-browser apps that don't support modern authentication, they need to create app passwords. For more information, see the [Microsoft Entra multifactor authentication end-user guide](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) to help them get started.
 
-### Convert per-user MFA enabled and enforced users to disabled
-
-If your users were enabled using per-user MFA enabled and enforced Microsoft Entra multifactor authentication, we recommend that you enable Conditional Access for all users and then manually disable per-user multifactor authentication. For more information, see [Create a Conditional Access policy](../conditional-access/howto-conditional-access-policy-all-users-mfa.md#create-a-conditional-access-policy).
-
 ## Next steps
 
 To configure Microsoft Entra multifactor authentication settings, see  [Configure Microsoft Entra multifactor authentication settings](howto-mfa-mfasettings.md).
