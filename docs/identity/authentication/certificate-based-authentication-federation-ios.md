@@ -5,7 +5,7 @@ description: Learn about the supported scenarios and the requirements for config
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
 ms.date: 09/30/2022
 
@@ -72,10 +72,10 @@ For more information, see [Customizing the AD FS sign in page](/previous-version
 
 Some Office apps with modern authentication enabled send `prompt=login` to Microsoft Entra ID in their request. By default, Microsoft Entra ID translates `prompt=login` in the request to AD FS as `wauth=usernamepassworduri` (asks AD FS to do U/P Auth) and `wfresh=0` (asks AD FS to ignore SSO state and do a fresh authentication). If you want to enable certificate-based authentication for these apps, modify the default Microsoft Entra behavior.
 
-To update the default behavior, set the '*PromptLoginBehavior*' in your federated domain settings to *Disabled*. You can use the [MSOLDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings) cmdlet to perform this task, as shown in the following example:
+To update the default behavior, set the '*PromptLoginBehavior*' in your federated domain settings to *Disabled*. You can use the [New-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainfederationconfiguration) cmdlet to perform this task, as shown in the following example:
 
 ```powershell
-Set-MSOLDomainFederationSettings -domainname <domain> -PromptLoginBehavior Disabled
+New-MgDomainFederationConfiguration -DomainId <domain> -PromptLoginBehavior Disabled
 ```
 
 ## Support for Exchange ActiveSync clients
