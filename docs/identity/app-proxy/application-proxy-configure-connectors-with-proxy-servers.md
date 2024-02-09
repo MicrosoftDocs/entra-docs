@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/09/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
