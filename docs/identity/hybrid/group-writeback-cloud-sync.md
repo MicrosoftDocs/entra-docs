@@ -21,7 +21,7 @@ With the release of provisioning agent [1.1.1370.0](cloud-sync/reference-version
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
 ## Prerequisites and supported groups for group writeback with Microsoft Entra Cloud Sync
-The following prerequisites and supported groups see [Provision groups to Active Directory using Microsoft Entra Cloud Sync](cloud-sync/how-to-configure-entra-to-active-directory.md).  This doc provides configuration information as we
+For prerequisites and supported groups, see [Provision groups to Active Directory using Microsoft Entra Cloud Sync](cloud-sync/how-to-configure-entra-to-active-directory.md).  This doc provides configuration information as we
 
 
 ## Supported scenarios for group writeback with Microsoft Entra Cloud Sync
