@@ -27,10 +27,10 @@ With [Microsoft Entra application proxy](application-proxy.md), you can address 
 
 :::image type="content" source="./media/application-proxy-configure-complex-application/complex-app-flow-1.png" alt-text="Diagram of a Complex application with multiple application segments definition.":::
 
-A complex app has multiple app segments, each app segment has an internal and external URL.
+A complex app has multiple app segments. Each app segment has an internal and external URL.
 One Conditional Access policy is associated with the app. Access to any of the external URLs work with pre-authentication with the same set of policies. These policies are enforced for all app segments.
 
-Complex apps provide several benefits, these include: 
+Complex apps provide several benefits: 
 - User authentication
 - Mitigation of CORS issues
 - Access for different domain suffixes or different ports or paths in the internal URL
@@ -42,7 +42,7 @@ This article shows you how to configure wildcard application publishing in your 
 - External and alternate URL should match the wildcard external and alternate URL domain of the application respectively.
 - Application segment URLs (internal and external) need to maintain uniqueness across complex applications.
 - CORS Rules (optional) can be configured per application segment.
-- Access will only be granted to defined application segments for a complex application.
+- Access is only granted to defined application segments for a complex application.
     > [!NOTE]
     > If all application segments are deleted, a complex application will behave as a wildcard application opening access to all valid URLs by specified domain. 
 - You can have an internal URL defined both as an application segment and a regular application.
@@ -82,18 +82,16 @@ To publish complex distributed app through application proxy with application se
 
 Your application is now set up to use the configured application segments. Be sure to assign users to your application before you test or release it.
 
-To edit/update an application segment, select respective application segment from the list in Manage and configure application segments page. Upload a certificate for the updated domain, if necessary, and update the DNS record. 
+To edit/update an application segment, select respective application segment from the list in Manage and configure application segments page. Upload a certificate for the updated domain, if necessary, and update the Domain Name System (DNS) record. 
 
-## Configuring SSO
+## Configuring single sign-on (SSO)
 
 > [!NOTE]
-> The Integrated Windows Authentication (IWA) SSO does not support using wildcard SPN (i.e. http/*.comtoso.com). The single SPN configured (i.e. http/app.comtoso.com) is used for all the segments.
+> Integrated Windows Authentication (IWA) single sign-on doesn't support using wildcard SPNs. For example, a wildcard such as `http/*.contoso.com` uses the single configured SPN such as `http/app.contoso.com` for all the segments.
 
 ## DNS updates
 
-When using custom domains, you need to create a DNS entry with a CNAME record for the external URL (for example, *.adventure-works.com) pointing to the external URL of the application proxy endpoint. For wildcard applications, the CNAME record needs to point to the relevant external URL:
-
-> `<yourAADTenantId>.tenant.runtime.msappproxy.net`
+When using custom domains, create a DNS entry with a CNAME record for the external URL. For example, point `*.adventure-works.com` to the external URL of the application proxy endpoint. For wildcard applications, point the CNAME record to the relevant external URL: `<yourAADTenantId>.tenant.runtime.msappproxy.net`.
 
 Alternatively, a dedicated DNS entry with a CNAME record for every individual application segment can be created as follows:
 
