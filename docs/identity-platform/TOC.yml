@@ -223,8 +223,6 @@
       items:
         - name: Web app that signs in users
           items:
-            - name: Overview
-              href: scenario-web-app-sign-user-overview.md
             - name: App registration
               href: scenario-web-app-sign-user-app-registration.md
             - name: Code configuration
@@ -235,8 +233,6 @@
               href: scenario-web-app-sign-user-production.md
         - name: Web app that calls an API
           items:
-            - name: Overview
-              href: scenario-web-app-call-api-overview.md
             - name: App registration
               href: scenario-web-app-call-api-app-registration.md
             - name: Code configuration
