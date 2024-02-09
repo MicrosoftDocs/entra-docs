@@ -6,10 +6,9 @@ manager: amycolannino
 
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: tutorial
-ms.date: 09/28/2023
+ms.date: 02/02/2024
 ms.author: justinha
 #Customer intent: As an identity administrator, I want to create a Microsoft Entra Domain Services managed domain so that I can synchronize identity information with my Microsoft Entra tenant and provide Domain Services connectivity to virtual machines and applications in Azure.
 ---
@@ -54,9 +53,11 @@ In this tutorial, you create and configure the managed domain using the Microsof
 
 To launch the **Enable Microsoft Entra Domain Services** wizard, complete the following steps:
 
-1. On the Microsoft Entra admin center menu or from the **Home** page, select **Create a resource**.
-1. Enter *Domain Services* into the search bar, then choose *Microsoft Entra Domain Services* from the search suggestions.
-1. On the Microsoft Entra Domain Services page, select **Create**. The **Enable Microsoft Entra Domain Services** wizard is launched.
+1. On the Microsoft Entra admin center menu or from the **Home** page, search for *Domain Services*, then choose **Microsoft Entra Domain Services**.
+1. On the Microsoft Entra Domain Services page, select **Create Microsoft Entra Domain Services**.
+
+   :::image type="content" source="./media/tutorial-create-instance/create-instance.png" alt-text="Screenshot of how to create a managed domain.":::
+
 1. Select the Azure **Subscription** in which you would like to create the managed domain.
 1. Select the **Resource group** to which the managed domain should belong. Choose to **Create new** or select an existing resource group.
 
@@ -69,15 +70,15 @@ When you create a managed domain, you specify a DNS name. There are some conside
 > [!TIP]
 > If you create a custom domain name, take care with existing DNS namespaces. Although it's supported, you may want to use a domain name separate from any existing Azure or on-premises DNS namespace.
 >
-> For example, if you have an existing DNS name space of *contoso.com*, create a managed domain with the custom domain name of *aaddscontoso.com*. If you need to use secure LDAP, you must register and own this custom domain name to generate the required certificates.
+> For example, if you have an existing DNS name space of *contoso.com*, create a managed domain with the custom domain name of *dscontoso.com*. If you need to use secure LDAP, you must register and own this custom domain name to generate the required certificates.
 >
 > You may need to create some additional DNS records for other services in your environment, or conditional DNS forwarders between existing DNS name spaces in your environment. For example, if you run a webserver that hosts a site using the root DNS name, there can be naming conflicts that require additional DNS entries.
 >
-> In these tutorials and how-to articles, the custom domain of *aaddscontoso.com* is used as a short example. In all commands, specify your own domain name.
+> In these tutorials and how-to articles, the custom domain of *dscontoso.com* is used as a short example. In all commands, specify your own domain name.
 
 The following DNS name restrictions also apply:
 
-* **Domain prefix restrictions:** You can't create a managed domain with a prefix longer than 15 characters. The prefix of your specified domain name (such as *aaddscontoso* in the *aaddscontoso.com* domain name) must contain 15 or fewer characters.
+* **Domain prefix restrictions:** You can't create a managed domain with a prefix longer than 15 characters. The prefix of your specified domain name (such as *dscontoso* in the *dscontoso.com* domain name) must contain 15 or fewer characters.
 * **Network name conflicts:** The DNS domain name for your managed domain shouldn't already exist in the virtual network. Specifically, check for the following scenarios that would lead to a name conflict:
     * If you already have an Active Directory domain with the same DNS domain name on the Azure virtual network.
     * If the virtual network where you plan to enable the managed domain has a VPN connection with your on-premises network. In this scenario, ensure you don't have a domain with the same DNS domain name on your on-premises network.
@@ -91,19 +92,18 @@ Complete the fields in the *Basics* window of the Microsoft Entra admin center t
     > [!TIP]
     > Availability Zones are unique physical locations within an Azure region. Each zone is made up of one or more datacenters equipped with independent power, cooling, and networking. To ensure resiliency, there's a minimum of three separate zones in all enabled regions.
     >
-    > There's nothing for you to configure for Domain Services to be distributed across zones. The Azure platform automatically handles the zone distribution of resources. For more information and to see region availability, see [What are Availability Zones in Azure?][availability-zones]
+    > There's nothing for you to configure for Domain Services to be distributed across zones. The Azure platform automatically handles the zone distribution of resources. For more information and to see region availability, see [What are Availability Zones in Azure?][availability-zones].
 
 1. The **SKU** determines the performance and backup frequency. You can change the SKU after the managed domain has been created if your business demands or requirements change. For more information, see [Domain Services SKU concepts][concepts-sku].
 
-    For this tutorial, select the *Standard* SKU.
-1. A *forest* is a logical construct used by Active Directory Domain Services to group one or more domains. 
+    For this tutorial, select the *Standard* SKU. The *Basics* window should look like this screenshot:
 
-    ![Configure basic settings for a Microsoft Entra Domain Services managed domain](./media/tutorial-create-instance/basics-window.png)
+   :::image type="content" source="./media/tutorial-create-instance/basics.png" alt-text="Screenshot of Basics configuration page for a managed domain.":::
 
 To quickly create a managed domain, you can select **Review + create** to accept additional default configuration options. The following defaults are configured when you choose this create option:
 
-* Creates a virtual network named *aadds-vnet* that uses the IP address range of *10.0.2.0/24*.
-* Creates a subnet named *aadds-subnet* using the IP address range of *10.0.2.0/24*.
+* Creates a virtual network, named *ds-vnet* by default, which uses the IP address range of *10.0.1.0/24*.
+* Creates a subnet named *ds-subnet* using the IP address range of *10.0.1.0/24*.
 * Synchronizes *All* users from Microsoft Entra ID into the managed domain.
 
 >[!NOTE]
@@ -116,28 +116,24 @@ To quickly create a managed domain, you can select **Review + create** to accept
 >
 >It is strongly recommended to use private IP addresses. If you use a public IP, ensure you are the owner/dedicated user of the chosen IPs in the public range you chose.
 
-Select **Review + create** to accept these default configuration options.
+Select **Review + create** to accept these default configuration options. 
 
 ## Deploy the managed domain
 
 On the **Summary** page of the wizard, review the configuration settings for your managed domain. You can go back to any step of the wizard to make changes. To redeploy a managed domain to a different Microsoft Entra tenant in a consistent way using these configuration options, you can also **Download a template for automation**.
 
 1. To create the managed domain, select **Create**. A note is displayed that certain configuration options such as DNS name or virtual network can't be changed once the Domain Services managed has been created. To continue, select **OK**.
-1. The process of provisioning your managed domain can take up to an hour. A notification is displayed in the portal that shows the progress of your Domain Services deployment. Select the notification to see detailed progress for the deployment.
 
-    ![Notification in the Microsoft Entra admin center of the deployment in progress](./media/tutorial-create-instance/deployment-in-progress.png)
+   :::image type="content" source="./media/tutorial-create-instance/confirm.png" alt-text="Screenshot of configuration options for managed domain.":::
 
-1. The page will load with updates on the deployment process, including the creation of new resources in your directory.
-1. Select your resource group, such as *myResourceGroup*, then choose your managed domain from the list of Azure resources, such as *aaddscontoso.com*. The **Overview** tab shows that the managed domain is currently *Deploying*. You can't configure the managed domain until it's fully provisioned.
+1. The process of provisioning your managed domain can take up to an hour. A notification is displayed in the portal that shows the progress of your Domain Services deployment. 
 
-    ![Domain Services status during the provisioning state](./media/tutorial-create-instance/provisioning-in-progress.png)
+1. When the managed domain is fully provisioned, the **Overview** tab shows the domain status as *Running*. Expans **Deployment details** for links to resources such as the virtual network and network resource group. 
 
-1. When the managed domain is fully provisioned, the **Overview** tab shows the domain status as *Running*.
-
-    ![Domain Services status once successfully provisioned](./media/tutorial-create-instance/successfully-provisioned.png)
+   :::image type="content" source="./media/tutorial-create-instance/deployment-details.png" alt-text="Screenshot of deployment details for a managed domain.":::
 
 > [!IMPORTANT]
-> The managed domain is associated with your Microsoft Entra tenant. During the provisioning process, Domain Services creates two Enterprise Applications named *Domain Controller Services* and *AzureActiveDirectoryDomainControllerServices* in the Microsoft Entra tenant. These Enterprise Applications are needed to service your managed domain. Don't delete these applications.
+> The managed domain is associated with your Microsoft Entra directory. During the provisioning process, Domain Services creates two Enterprise Applications named *Domain Controller Services* and *AzureActiveDirectoryDomainControllerServices* in the Microsoft Entra directory. These Enterprise Applications are needed to service your managed domain. Don't delete these applications.
 
 ## Update DNS settings for the Azure virtual network
 
@@ -145,9 +141,9 @@ With Domain Services successfully deployed, now configure the virtual network to
 
 1. The **Overview** tab for your managed domain shows some **Required configuration steps**. The first configuration step is to update DNS server settings for your virtual network. Once the DNS settings are correctly configured, this step is no longer shown.
 
-    The addresses listed are the domain controllers for use in the virtual network. In this example, those addresses are *10.0.2.4* and *10.0.2.5*. You can later find these IP addresses on the **Properties** tab.
+    The addresses listed are the domain controllers for use in the virtual network. In this example, those addresses are *10.0.1.4* and *10.0.1.5*. You can later find these IP addresses on the **Properties** tab.
 
-    ![Configure DNS settings for your virtual network with the Microsoft Entra Domain Services IP addresses](./media/tutorial-create-instance/configure-dns.png)
+   :::image type="content" source="./media/tutorial-create-instance/overview.png" alt-text="Screenshot of Overview page for a managed domain.":::
 
 1. To update the DNS server settings for the virtual network, select the **Configure** button. The DNS settings are automatically configured for your virtual network.
 
@@ -174,7 +170,7 @@ A cloud-only user account is an account that was created in your Microsoft Entra
 > In this tutorial, let's work with a basic cloud-only user account. For more information on the additional steps required to use Microsoft Entra Connect, see [Synchronize password hashes for user accounts synced from your on-premises AD to your managed domain][on-prem-sync].
 
 > [!TIP]
-> If your Microsoft Entra tenant has a combination of cloud-only users and users from your on-premises AD, you need to complete both sets of steps.
+> If your Microsoft Entra directory has a combination of cloud-only and synced users, you need to complete both sets of steps.
 
 For cloud-only user accounts, users must change their passwords before they can use Domain Services. This password change process causes the password hashes for Kerberos and NTLM authentication to be generated and stored in Microsoft Entra ID. The account isn't synchronized from Microsoft Entra ID to Domain Services until the password is changed. Either expire the passwords for all cloud users in the tenant who need to use Domain Services, which forces a password change on next sign-in, or instruct cloud users to manually change their passwords. For this tutorial, let's manually change a user password.
 
@@ -185,7 +181,7 @@ To change the password for a cloud-only user, the user must complete the followi
 1. Go to the Microsoft Entra ID Access Panel page at [https://myapps.microsoft.com](https://myapps.microsoft.com).
 1. In the top-right corner, select your name, then choose **Profile** from the drop-down menu.
 
-    ![Select profile](./media/tutorial-create-instance/select-profile.png)
+   :::image type="content" source="./media/tutorial-create-instance/select-profile.png" alt-text="Screenshot of how to select a profile.":::
 
 1. On the **Profile** page, select **Change password**.
 1. On the **Change password** page, enter your existing (old) password, then enter and confirm a new password.

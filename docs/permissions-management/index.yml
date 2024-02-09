@@ -9,15 +9,11 @@ metadata:
   services: active-directory
   author: jenniferf-skc
   manager: amycolannino
-  ms.service: active-directory 
+  ms.service: active-directory
   ms.subservice: ciem
-  ms.workload: identity
   ms.topic: landing-page
   ms.date: 11/15/2023
   ms.author: jfields
-
-
-
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
 
 landingContent:
@@ -103,6 +99,9 @@ landingContent:
             url: faqs.md
           - text: Glossary  
             url: multi-cloud-glossary.md
+          - text: Operations reference  
+            url: ../architecture/permissions-manage-ops-guide-intro.md
+            
 # Card
   - title: Troubleshoot
     linkLists:

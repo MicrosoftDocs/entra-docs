@@ -1,11 +1,10 @@
 ---
 title: Data operational considerations
-description: Learn how 
+description: Learn how
 services: active-directory
 author: janicericketts
 manager: martinco
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 01/31/2023

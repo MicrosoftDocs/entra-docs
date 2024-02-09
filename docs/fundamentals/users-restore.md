@@ -6,11 +6,10 @@ author: barclayn
 manager: amycolannino
 
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 12/01/2023
-ms.author: barclayn 
+ms.author: barclayn
 ms.reviewer: jeffsta
 ---
 # Restore or remove a recently deleted user

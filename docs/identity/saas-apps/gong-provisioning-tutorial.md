@@ -11,7 +11,7 @@ ms.assetid: 6c8285d3-4f35-4325-9adb-d1a44668a03a
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 
-ms.devlang: na
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: Thwimmer

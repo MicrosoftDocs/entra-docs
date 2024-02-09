@@ -26,11 +26,11 @@ Your applications might use modern or legacy protocols for authentication. When 
 
 These apps can be reconfigured to authenticate with Microsoft Entra ID either via a built-in connector from the Azure App Gallery, or by registering the custom application in Microsoft Entra ID.
 
-Apps that use older protocols can be integrated using [Application Proxy](~/identity/app-proxy/what-is-application-proxy.md) or any of our [Secure Hybrid Access (SHA) partners](secure-hybrid-access-integrations.md).
+Apps that use older protocols can be integrated using [Application Proxy](~/identity/app-proxy/overview-what-is-app-proxy.md) or any of our [Secure Hybrid Access (SHA) partners](secure-hybrid-access-integrations.md).
 
 For more information, see:
 
-- [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/what-is-application-proxy.md).
+- [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/overview-what-is-app-proxy.md).
 - [What is application management?](what-is-application-management.md)
 - [AD FS application activity report to migrate applications to Microsoft Entra ID](migrate-adfs-application-activity.md).
 - [Monitor AD FS using Microsoft Entra Connect Health](~/identity/hybrid/connect/how-to-connect-health-adfs.md).
@@ -45,7 +45,7 @@ Your migration process might look like this:
 
 ### Stage 1 – Current state: The production app authenticates with AD FS
 
-:::image type="content" source="media/migrate-adfs-apps-stages/stage1.jpg" alt-text="Diagram showing migration stage 1.":::
+:::image type="content" source="media/migrate-adfs-apps-stages/stage-1.png" alt-text="Diagram showing migration stage 1.":::
 
 ### Stage 2 – (Optional) Point a test instance of the app to the test Microsoft Entra tenant
 
@@ -53,19 +53,19 @@ Update the configuration to point your test instance of the app to a test Micros
 
 If it isn't feasible to set up a separate test tenant, skip this stage and point a test instance of the app to your production Microsoft Entra tenant as described in Stage 3 below.
 
-:::image type="content" source="media/migrate-adfs-apps-stages/stage2.jpg" alt-text="Diagram showing migration stage 2.":::
+:::image type="content" source="media/migrate-adfs-apps-stages/stage-2.png" alt-text="Diagram showing migration stage 2.":::
 
 ### Stage 3 – Point a test instance of the app to the production Microsoft Entra tenant
 
 Update the configuration to point your test instance of the app to your production Microsoft Entra tenant. You can now test with users in your production tenant. If necessary, review the section of this article on transitioning users.
 
-:::image type="content" source="media/migrate-adfs-apps-stages/stage3.jpg" alt-text="Diagram showing migration stage 3.":::
+:::image type="content" source="media/migrate-adfs-apps-stages/stage-3.png" alt-text="Diagram showing migration stage 3.":::
 
 ### Stage 4 – Point the production app to the production Microsoft Entra tenant
 
 Update the configuration of your production app to point to your production Microsoft Entra tenant.
 
-:::image type="content" source="media/migrate-adfs-apps-stages/stage4.jpg" alt-text="Diagram showing migration stage 4.":::
+:::image type="content" source="media/migrate-adfs-apps-stages/stage-4.png" alt-text="Diagram showing migration stage 4.":::
 
  Apps that authenticate with AD FS can use Active Directory groups for permissions. Use [Microsoft Entra Connect Sync](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) to sync identity data between your on-premises environment and Microsoft Entra ID before you begin migration. Verify those groups and membership before migration so that you can grant access to the same users when the application is migrated.
 

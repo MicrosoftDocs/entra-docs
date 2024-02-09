@@ -2,12 +2,10 @@
 title: Validate rules for dynamic group membership (preview)
 description: How to test members against a membership rule for a dynamic group in Microsoft Entra ID.
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: enterprise-users
-ms.workload: identity
 ms.topic: how-to
 ms.date: 11/14/2023
 ms.author: barclayn

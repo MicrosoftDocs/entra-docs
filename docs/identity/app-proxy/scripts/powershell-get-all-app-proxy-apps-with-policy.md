@@ -6,10 +6,9 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: sample
-ms.date: 08/29/2022
+ms.date: 01/04/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -22,26 +21,95 @@ This PowerShell script example lists all the Microsoft Entra application proxy a
 
 [!INCLUDE [updated-for-az](~/../azure-docs-pr/includes/updated-for-az.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](~/../azure-docs-pr/includes/cloud-shell-try-it.md)]
-
-This sample requires the [Azure Active Directory PowerShell 2.0 for Graph module preview version](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview&preserve-view=true) (AzureADPreview).
+This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
 ## Sample script
 
-[!code-azurepowershell[main](~/../powershell_scripts/application-proxy/get-all-appproxy-apps-with-policy.ps1 "Get all Application Proxy apps with a token lifetime policy")]
+```powershell
+# This sample script gets all Microsoft Entra proxy applications that have assigned an Azure AD policy (token lifetime) with policy details.
+# Reference:
+# Configurable token lifetimes in Azure Active Directory (Preview)
+# https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-configurable-token-lifetimes
+#
+# Version 1.0
+#
+# This script requires PowerShell 5.1 (x64) or beyond and one of the following modules:
+#
+# Microsoft.Graph.Beta ver 2.10 or newer
+#
+# Before you begin:
+#    
+#    Required Microsoft Entra role: Global Administrator or Application Administrator
+#    or appropriate custom permissions as documented https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-enterprise-app-permissions
+#
+# 
+
+Import-Module Microsoft.Graph.Beta.Applications
+
+Connect-MgGraph -Scope Directory.Read.All -NoWelcome
+
+Write-Host "Reading service principals. This operation might take longer..." -BackgroundColor "Black" -ForegroundColor "Green" 
+
+$aadapServPrinc = Get-MgBetaServicePrincipal -Top 100000 | where-object {$_.Tags -Contains "WindowsAzureActiveDirectoryOnPremApp"}
+
+Write-Host "Reading Microsoft Entra applications. This operation might take longer..." -BackgroundColor "Black" -ForegroundColor "Green"
+
+$allApps = Get-MgBetaApplication -Top 100000
+
+Write-Host "Reading application. This operation might take longer..." -BackgroundColor "Black" -ForegroundColor "Green"
+
+$aadapApp = $null
+
+foreach ($item in $aadapServPrinc) {
+   foreach ($item2 in $allApps) {
+    
+     if ($item.AppId -eq $item2.AppId) {[array]$aadapApp += $item2}
+
+    }
+}
+
+foreach ($item in $aadapApp)
+ {
+  
+  $Policies = $Null
+  $Policies = Get-MgBetaApplicationTokenLifetimePolicy -ApplicationId $item.Id 
+  
+  if ($Policies -ne $Null) {
+
+  Write-Host ("")        
+ 
+  Write-Host $item.DisplayName + " (AppId: " + $item.AppId + ")"  -BackgroundColor "Black" -ForegroundColor "White" 
+ 
+  Write-Host ("") 
+  Write-Host ("Assigned policy:") 
+  Write-Host ("") 
+
+  Write-Host ("Policy Id:    " + $Policies.Id)
+  Write-Host ("DisplayName:  " + $Policies.DisplayName)
+  Write-Host ("Definition:   " + $Policies.Definition)
+  Write-Host ("Org. default: " + $Policies.IsOrganizationDefault)
+  Write-Host ("") 
+
+  }
+          
+ }   
+
+Write-Host ("")
+Write-Host ("Finished.") -BackgroundColor "Black" -ForegroundColor "Green"
+Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGraph cmdlet."
+```
 
 ## Script explanation
 
 | Command | Notes |
 |---|---|
-|[Get-AzureADServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal) | Gets a service principal. |
-|[Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication) | Gets a Microsoft Entra application. |
-|[Get-AzureADPolicy](/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) | Gets a policy in Microsoft Entra ID. |
-|[Get-AzureADServicePrincipalPolicy](/powershell/module/azuread/get-azureadserviceprincipalpolicy?view=azureadps-2.0-preview&preserve-view=true) | Gets the policy of a service principal in Microsoft Entra ID. |
-
+|[Connect-MgGraph](/powershell/module/microsoft.graph.authentication/connect-mggraph)| Connects to Microsoft Graph|
+|[Get-MgBetaServicePrincipal](/powershell/module/microsoft.graph.applications/get-mgserviceprincipal)| Gets a service principal|
+|[Get-MgBetaApplication](/powershell/module/microsoft.graph.beta.applications/get-mgbetaapplication)| Gets an Enterprise Application|
+|[Get-MgBetaApplicationTokenLifetimePolicy](/powershell/module/microsoft.graph.beta.applications/get-mgbetaapplicationtokenlifetimepolicy)| Lists policies assigned to application or service principal|
 
 ## Next steps
 
-For more information on the Azure AD PowerShell module, see [Azure AD PowerShell module overview](/powershell/azure/active-directory/overview).
+For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
 
-For other PowerShell examples for Application Proxy, see [Azure AD PowerShell examples for Microsoft Entra application proxy](../application-proxy-powershell-samples.md).
+For other PowerShell examples for Application Proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).

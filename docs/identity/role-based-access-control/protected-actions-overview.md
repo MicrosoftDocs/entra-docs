@@ -7,7 +7,6 @@ manager: amycolannino
 ms.author: rolyon
 ms.service: active-directory
 ms.subservice: roles
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
 ms.date: 04/10/2023

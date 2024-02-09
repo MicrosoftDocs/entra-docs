@@ -27,7 +27,7 @@ A Temporary Access Pass is a time-limited passcode that can be configured for si
 
 A Temporary Access Pass also makes recovery easier when a user has lost or forgotten their strong authentication factor like a FIDO2 security key or Microsoft Authenticator app, but needs to sign in to register new strong authentication methods.
 
-This article shows you how to enable and use a Temporary Access Pass using the the [Microsoft Entra admin center](https://entra.microsoft.com). 
+This article shows you how to enable and use a Temporary Access Pass using the [Microsoft Entra admin center](https://entra.microsoft.com). 
 You can also perform these actions using the REST APIs. 
 
 ## Enable the Temporary Access Pass policy

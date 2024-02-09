@@ -48,8 +48,8 @@ Azure Monitor provides [two built-in roles](/azure/azure-monitor/roles-permissio
   * Log Analytics Reader
 
 * **View and modify settings**:
-  *Monitoring Contributor
-  *Log Analytics Contributor
+  * Monitoring Contributor
+  * Log Analytics Contributor
 
 For more information on the Azure Monitor built-in roles, see [Roles, permissions, and security in Azure Monitor](/azure/azure-monitor/roles-permissions-security#monitoring-reader).
 

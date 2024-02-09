@@ -2,12 +2,10 @@
 title: Request process & notifications - Microsoft Entra entitlement management
 description: Learn about the request process for an access package and when email notifications are sent in entitlement management.
 services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: mamtakumar
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.subservice: compliance
@@ -15,10 +13,7 @@ ms.date: 05/31/2023
 ms.author: owinfrey
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-
-
 #Customer intent: As a < type of user >, I want < what? > so that < why? >.
-
 ---
 # Request process and email notifications in entitlement management
 

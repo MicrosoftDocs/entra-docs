@@ -6,9 +6,8 @@ ms.author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 01/04/2024
+ms.date: 02/02/2024
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -29,6 +28,7 @@ This article discusses known issues to be aware of when you work with app provis
 - Synchronizing users across clouds
 - Synchronizing photos across tenants
 - Synchronizing contacts and converting contacts to B2B users
+- Synchronizing meeting rooms across tenants
 
 ### Microsoft Teams
 
@@ -71,12 +71,6 @@ When two users in the source tenant have the same mail, and they both need to be
 ::: zone-end
 
 ## Authorization 
-
-::: zone pivot="app-provisioning"
-#### Unable to save
-
-The tenant URL, secret token, and notification email must be filled in to save. You can't provide only one of them. 
-::: zone-end
 
 #### Unable to change provisioning mode back to manual
 
@@ -209,4 +203,3 @@ The following attributes and objects aren't supported:
 
 ## Next steps
 [How provisioning works](how-provisioning-works.md)
-

@@ -2,12 +2,10 @@
 title: Complete an access review of groups & applications
 description: Learn how to complete an access review of group members or application access in Microsoft Entra access reviews.
 services: active-directory
-documentationcenter: ''
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: compliance
@@ -26,7 +24,7 @@ As an administrator, you [create an access review of groups or applications](cre
 ## Prerequisites
  
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance
-- Global administrator, User administrator, or Identity Governance administrator to manage access of reviews on groups and applications. Global administrators and Privileged Role administrators can manage reviews of role-assignable groups See [Use Microsoft Entra groups to manage role assignments](~/identity/role-based-access-control/groups-concept.md)
+- Global administrator, User administrator, or Identity Governance administrator to manage access of reviews on groups and applications. Users who have the Global Administrator role or the Privileged Role Administrator role can manage reviews of role-assignable groups, see [Use Microsoft Entra groups to manage role assignments](~/identity/role-based-access-control/groups-concept.md)
 - Security readers have read access.
  
 For more information, see [License requirements](access-reviews-overview.md#license-requirements).

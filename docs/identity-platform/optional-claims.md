@@ -138,7 +138,7 @@ Complete the following steps to configure groups optional claims through the app
 
 1. Set group name configuration optional claims.
 
-   If you want groups in the token to contain the on premises group attributes in the optional claims section, specify which token type optional claim should be applied to. You also specify the name of optional claim requested and any other properties desired.  
+   If you want groups in the token to contain the on-premises group attributes in the optional claims section, specify which token type optional claim should be applied to. You also specify the name of optional claim requested and any other properties desired.  
    
    Multiple token types can be listed:
 

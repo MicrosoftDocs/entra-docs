@@ -1,9 +1,9 @@
 ---
 title: Source claims from an external store (SAML app)
 description: Use a custom claims provider to augment tokens with claims from an external identity system. Configure a SAML app to receive tokens with external claims. 
-author: omondiatieno
+author: cilwerner
 manager: CelesteDG
-ms.author: jomondi
+ms.author: cwerner
 ms.custom: 
 ms.date: 03/06/2023
 ms.reviewer: JasSuri

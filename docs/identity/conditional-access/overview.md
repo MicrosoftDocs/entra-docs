@@ -14,11 +14,7 @@ ms.reviewer: kvenkit
 ---
 # What is Conditional Access?
 
-The modern security perimeter extends beyond an organization's network perimeter to include user and device identity. Organizations now use identity-driven signals as part of their access control decisions.
-
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4MwZs]
-
-Microsoft Entra Conditional Access brings signals together, to make decisions, and enforce organizational policies. Conditional Access is Microsoft's [Zero Trust policy engine](/security/zero-trust/deploy/identity) taking signals from various sources into account when enforcing policy decisions.
+The modern security perimeter extends beyond an organization's network perimeter to include user and device identity. Organizations now use identity-driven signals as part of their access control decisions. Microsoft Entra Conditional Access brings signals together, to make decisions, and enforce organizational policies. Conditional Access is Microsoft's [Zero Trust policy engine](/security/zero-trust/deploy/identity) taking signals from various sources into account when enforcing policy decisions.
 
 :::image type="content" source="media/overview/conditional-access-signal-decision-enforcement.png" alt-text="Diagram showing concept of Conditional Access signals plus decision to enforce organizational policy.":::
 

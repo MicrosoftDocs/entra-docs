@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://www.okta.com/saml2/service-provider/<token>`
 
 	> [!NOTE]
-	> The Identifier value is not real. Follow the guidance on the step 4 of **Configure Adobe Cloud SSO** section. In that you can open the **Federation Metadata XML file** and get the Entity ID value from it and put that as a Identifier value in Microsoft Entra configuration. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Identifier value is not real. Follow the guidance on the step 4 of **Configure Adobe Cloud SSO** section. In that you can open the **Federation Metadata XML file** and get the Entity ID value from it and put that as an Identifier value in Microsoft Entra configuration. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Adobe Creative Cloud application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 

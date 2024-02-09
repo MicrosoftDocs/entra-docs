@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 01/19/2024
 ms.author: jeedes
 
 ---
@@ -115,13 +115,13 @@ Follow these steps to enable Microsoft Entra SSO.
     > [!NOTE]
     > If ABAC is enabled in AWS IAM Identity Center, the additional attributes may be passed as session tags directly into AWS accounts.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate(Base64)** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
-	![The Certificate download link](common/certificatebase64.png)
+    ![Screenshot shows the Certificate download link.](common/metadataxml.png "Certificate")
 
 1. On the **Set up AWS IAM Identity Center** section, copy the appropriate URL(s) based on your requirement.
 
-	![Copy configuration URLs](common/copy-configuration-urls.png)
+	![Screenshot shows to copy configuration appropriate URL.](common/copy-configuration-urls.png "Metadata")
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -155,26 +155,22 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure AWS IAM Identity Center SSO
 
-
-
-
 1. In a different web browser window, sign in to your AWS IAM Identity Center company site as an administrator
 
 1. Go to the **Services -> Security, Identity, & Compliance -> AWS IAM Identity Center**.
 2. In the left navigation pane, choose **Settings**.
 3. On the **Settings** page, find **Identity source**, click on **Actions** pull-down menu, and select Change **identity source**.
 
-    ![Screenshot for Identity source change service](./media/aws-single-sign-on-tutorial/settings.png)
+    ![Screenshot for Identity source change service.](./media/aws-single-sign-on-tutorial/settings.png)
 
 4. On the Change identity source page, choose **External identity provider**.
 
     
-    ![Screenshot for selecting external identity provider section](./media/aws-single-sign-on-tutorial/external-identity-provider.png)
-
+    ![Screenshot for selecting external identity provider section.](./media/aws-single-sign-on-tutorial/external-identity-provider.png "Identity Provider")
 
 1. Perform the below steps in the **Configure external identity provider** section:
 
-    ![Screenshot for download and upload metadata section](./media/aws-single-sign-on-tutorial/upload-metadata.png)
+    ![Screenshot for download and upload metadata section.](./media/aws-single-sign-on-tutorial/upload-metadata.png "Upload Metadata")
 
     a. In the **Service provider metadata** section, find **AWS SSO SAML metadata**, select **Download metadata file** to download the metadata file and save it on your computer and use this metadata file to upload on Azure portal.
 
@@ -186,7 +182,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 8. In the text box, type **ACCEPT** to change the identity source.
 
-    ![Screenshot for Confirming the configuration](./media/aws-single-sign-on-tutorial/accept.png)
+    ![Screenshot for Confirming the configuration.](./media/aws-single-sign-on-tutorial/accept.png "Configuration")
 
 9. Click **Change identity source**.
 
@@ -206,16 +202,16 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     c. In the **Confirm email address** field, re-enter the email address from the previous step.
 
-    d. In the First name field, enter `Jane`.
+    d. In the First name field, enter `Britta`.
 
-    e. In the Last name field, enter `Doe`.
+    e. In the Last name field, enter `Simon`.
 
-    f. In the Display name field, enter `Jane Doe`.
+    f. In the Display name field, enter `B.Simon`.
 
     g. Choose **Next**, and then **Next** again.
 
     > [!NOTE]
-    > Make sure the username entered in AWS IAM Identity Center  matches the user’s Microsoft Entra sign-in name. This will you help avoid any authentication problems.
+    > Make sure the username and email address entered in AWS IAM Identity Center  matches the user’s Microsoft Entra sign-in name. This will you help avoid any authentication problems.
 
 5. Choose **Add user**.
 6. Next, you will assign the user to your AWS account. To do so, in the left navigation pane of the

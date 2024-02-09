@@ -4,7 +4,6 @@ description: This article explains how to revoke and update AD FS certificates i
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 11/06/2023
@@ -14,7 +13,7 @@ ms.author: billmath
 
 # Emergency rotation of the AD FS certificates
 
-If you need to rotate the Active Directory Federation Services (AD FS) certificates immediately, you can follow the steps in this section.
+If you need to rotate the Active Directory Federation Services (AD FS) certificates immediately, you can follow the steps in this article.
 
 > [!IMPORTANT]
 > Rotating certificates in the AD FS environment revokes the old certificates immediately, and the time it usually takes for your federation partners to consume your new certificate is bypassed. The action might also result in a service outage as trusts update to use the new certificates. The outage should be resolved after all the federation partners have the new certificates.
@@ -27,9 +26,9 @@ If you need to rotate the Active Directory Federation Services (AD FS) certifica
 
 To revoke the old Token Signing Certificate that AD FS is currently using, you need to determine the thumbprint of the token-signing certificate. Do the following:
 
-1. Connect to the Microsoft Online Service by running `PS C:\>Connect-MsolService`.
+1. Connect to the Microsoft Online Service by running in PowerShell `Connect-MsolService`.
 
-1. Document both your on-premises and cloud Token Signing Certificate thumbprint and expiration dates by running `PS C:\>Get-MsolFederationProperty -DomainName <domain>`.
+1. Document both your on-premises and cloud Token Signing Certificate thumbprint and expiration dates by running `Get-MsolFederationProperty -DomainName <domain>`.
 1. Copy down the thumbprint. You'll use it later to remove the existing certificates.
 
 You can also get the thumbprint by using AD FS Management. Go to **Service** > **Certificates**, right-click the certificate, select **View certificate**, and then select **Details**.
@@ -50,33 +49,33 @@ The `AutoCertificateRollover` property describes whether AD FS is configured to 
 In this section, you create *two* token-signing certificates. The first uses the `-urgent` flag, which replaces the current primary certificate immediately. The second is used for the secondary certificate.
 
 >[!IMPORTANT]
-> You're creating two certificates because Azure holds on to information about the previous certificate. By creating a second one, you're forcing Azure to release information about the old certificate and replace it with information about the second one.
+> You're creating two certificates because Microsoft Entra ID holds on to information about the previous certificate. By creating a second one, you're forcing Microsoft Entra ID to release information about the old certificate and replace it with information about the second one.
 >
->If you don't create the second certificate and update Azure with it, it might be possible for the old token-signing certificate to authenticate users.
+>If you don't create the second certificate and update Microsoft Entra ID with it, it might be possible for the old token-signing certificate to authenticate users.
 
 To generate the new token-signing certificates, do the following:
 
 1. Ensure that you're logged in to the primary AD FS server.
 1. Open Windows PowerShell as an administrator.
-1. Make sure that `AutoCertificateRollover` is set to `True` by running:
+1. Make sure that `AutoCertificateRollover` is set to `True` by running in PowerShell:
 
-   `PS C:\>Get-AdfsProperties | FL AutoCert*, Certificate*`
+   `Get-AdfsProperties | FL AutoCert*, Certificate*`
 
 1. To generate a new token signing certificate, run: 
 
-   `Update-ADFSCertificate –CertificateType token-signing -Urgent`
+   `Update-ADFSCertificate -CertificateType Token-Signing -Urgent`
 
 1. Verify the update by running: 
 
-   `Get-ADFSCertificate –CertificateType token-signing`
+   `Get-ADFSCertificate -CertificateType Token-Signing`
 
 1. Now generate the second token signing certificate by running:    
 
-   `Update-ADFSCertificate –CertificateType token-signing`
+   `Update-ADFSCertificate -CertificateType Token-Signing`
 
 1. You can verify the update by running the following command again: 
    
-   `Get-ADFSCertificate –CertificateType token-signing`
+   `Get-ADFSCertificate -CertificateType Token-Signing`
 
 
 ## If AutoCertificateRollover is set to FALSE, generate new certificates manually
@@ -86,9 +85,9 @@ If you're not using the default automatically generated, self-signed token signi
 First, you must obtain two new certificates from your certificate authority and import them into the local machine personal certificate store on each federation server. For instructions, see [Import a Certificate](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754489(v=ws.11)).
 
 >[!IMPORTANT]
->You're creating two certificates because Azure holds on to information about the previous certificate. By creating a second one, you're forcing Azure to release information about the old certificate and replace it with information about the second one.
+>You're creating two certificates because Microsoft Entra ID holds on to information about the previous certificate. By creating a second one, you're forcing Microsoft Entra ID to release information about the old certificate and replace it with information about the second one.
 >
->If you don't create the second certificate and update Azure with it, it might be possible for the old token-signing certificate to authenticate users.
+>If you don't create the second certificate and update Microsoft Entra ID with it, it might be possible for the old token-signing certificate to authenticate users.
 
 ### Configure a new certificate as a secondary certificate
 
@@ -130,12 +129,12 @@ Now that you've added the first certificate, made it primary, and removed the ol
 
    `Connect-MsolService`
    
-1. Enter your Hybrid Identity Administrator credentials.
+1. Enter your [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) credentials.
 
     > [!Note]
     > If you're running these commands on a computer that isn't the primary federation server, enter the following command first: 
     >
-    >   `Set-MsolADFSContext –Computer <servername>`
+    >   `Set-MsolADFSContext -Computer <servername>`
     >
     > Replace \<servername\> with the name of the AD FS server and then, at the prompt, enter the administrator credentials for the AD FS server.
 
@@ -144,7 +143,7 @@ Now that you've added the first certificate, made it primary, and removed the ol
 1. To update the certificate information in Microsoft Entra ID, run the following command: `Update-MsolFederatedDomain` and then enter the domain name when prompted.
 
     > [!Note]
-    > If you receive an error when you run this command, run `Update-MsolFederatedDomain –SupportMultipleDomain` and then, at the prompt, enter the domain name.
+    > If you receive an error when you run this command, run `Update-MsolFederatedDomain -SupportMultipleDomain` and then, at the prompt, enter the domain name.
 
 ## Replace SSL certificates
 
@@ -161,7 +160,7 @@ After you've replaced your old certificates, you should remove the old certifica
 1. Open Windows PowerShell as an administrator.
 1. To remove the old token signing certificate, run: 
 
-   `Remove-ADFSCertificate –CertificateType token-signing -thumbprint <thumbprint>`
+   `Remove-ADFSCertificate -CertificateType Token-Signing -thumbprint <thumbprint>`
 
 ## Update federation partners who can consume federation metadata
 If you've renewed and configure a new token signing or token decryption certificate, you must make sure that all your federation partners have picked up the new certificates. This list includes resource organization or account organization partners that are represented in AD FS by relying party trusts and claims provider trusts. 

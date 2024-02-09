@@ -187,7 +187,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
     >[!NOTE]
     > If you do not assign the users in the Microsoft Entra ID, you get the following error.
 
-    ![Screenshot shows a error message that you can’t be signed in.](media/amazon-business-tutorial/assign-user.png)
+    ![Screenshot shows an error message that you can’t be signed in.](media/amazon-business-tutorial/assign-user.png)
 
 <a name='assign-the-azure-ad-security-group-in-the-azure-portal'></a>
 

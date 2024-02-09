@@ -5,7 +5,6 @@ services: active-directory
 author: janicericketts
 manager: martinco
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: overview
 ms.date: 09/29/2022

@@ -1,10 +1,9 @@
 ---
 title: Achieve NIST AAL3 by using Microsoft Entra ID
 description: This article provides guidance on achieving NIST authenticator assurance level 3 (AAL3) by using Microsoft Entra ID.
-services: active-directory 
+services: active-directory
 ms.service: active-directory
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh

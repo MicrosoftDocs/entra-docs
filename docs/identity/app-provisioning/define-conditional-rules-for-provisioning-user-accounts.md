@@ -6,9 +6,8 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 01/18/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
@@ -105,28 +104,33 @@ Scoping filters are configured as part of the attribute mappings for each Micros
 7. Select **Add scoping filter**.
 8. Define a clause by selecting a source **Attribute Name**, an **Operator**, and an **Attribute Value** to match against. The following operators are supported:
 
-   a. **EQUALS**. Clause returns "true" if the evaluated attribute matches the input string value exactly (case sensitive).
+   a. **&**. Clause returns "true" if the evaluated attribute exists in the input string value. 
 
-   b. **NOT EQUALS**. Clause returns "true" if the evaluated attribute doesn't match the input string value (case sensitive).
-
-   c. **IS TRUE**. Clause returns "true" if the evaluated attribute contains a Boolean value of true.
-
-   d. **IS FALSE**. Clause returns "true" if the evaluated attribute contains a Boolean value of false.
-
-   e. **IS NULL**. Clause returns "true" if the evaluated attribute is empty.
-
-   f. **IS NOT NULL**. Clause returns "true" if the evaluated attribute isn't empty.
-
-   g. **REGEX MATCH**. Clause returns "true" if the evaluated attribute matches a regular expression pattern. For example: `([1-9][0-9])` matches any number between 10 and 99 (case sensitive).
-
-   h. **NOT REGEX MATCH**. Clause returns "true" if the evaluated attribute doesn't match a regular expression pattern. It returns "false" if the attribute is null / empty.
+   b. **!&**. Clause returns "true" if the evaluated attribute does not exist in the input string value. 
    
-   i. **Greater_Than.** Clause returns "true" if the evaluated attribute is greater than the value. The value specified on the scoping filter must be an integer and the attribute on the user must be an integer [0,1,2,...]. 
-   
-   j. **Greater_Than_OR_EQUALS.** Clause returns "true" if the evaluated attribute is greater than or equal to the value. The value specified on the scoping filter must be an integer and the attribute on the user must be an integer [0,1,2,...]. 
-   
-   k. **Includes.** Clause returns "true" if the evaluated attribute contains the string value (case sensitive) as described [here](/dotnet/api/system.string.contains). 
+   c. **ENDS_WITH**. Clause returns "true" if the evaluated attribute ends with the input string value.
 
+   d. **EQUALS**. Clause returns "true" if the evaluated attribute matches the input string value exactly (case sensitive).
+
+   e. **Greater_Than.** Clause returns "true" if the evaluated attribute is greater than the value. The value specified on the scoping filter must be an integer and the attribute on the user must be an integer [0,1,2,...]. 
+ 
+   f. **Greater_Than_OR_EQUALS.** Clause returns "true" if the evaluated attribute is greater than or equal to the value. The value specified on the scoping filter must be an integer and the attribute on the user must be an integer [0,1,2,...]. 
+   
+   g. **Includes.** Clause returns "true" if the evaluated attribute contains the string value (case sensitive) as described [here](/dotnet/api/system.string.contains). 
+
+   h. **IS FALSE**. Clause returns "true" if the evaluated attribute contains a Boolean value of false.
+
+   i. **IS NOT NULL**. Clause returns "true" if the evaluated attribute isn't empty.
+
+   j. **IS NULL**. Clause returns "true" if the evaluated attribute is empty.
+
+   k. **IS TRUE**. Clause returns "true" if the evaluated attribute contains a Boolean value of true.
+
+   l. **NOT EQUALS**. Clause returns "true" if the evaluated attribute doesn't match the input string value (case sensitive).
+
+   m. **NOT REGEX MATCH**. Clause returns "true" if the evaluated attribute doesn't match a regular expression pattern. It returns "false" if the attribute is null / empty.
+
+   n. **REGEX MATCH**. Clause returns "true" if the evaluated attribute matches a regular expression pattern. For example: `([1-9][0-9])` matches any number between 10 and 99 (case sensitive).   
 
 >[!IMPORTANT] 
 > - The IsMemberOf filter is not supported currently.

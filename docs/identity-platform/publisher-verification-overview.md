@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
-ms.date: 08/17/2023
+ms.date: 01/10/2024
 ms.reviewer: xurobert
 ms.service: active-directory
 ms.subservice: develop
@@ -46,7 +46,7 @@ Publisher verification for an app has the following benefits:
 
 App developers must meet a few requirements to complete the publisher verification process. Many Microsoft partners will have already satisfied these requirements.
 
-- The developer must have an Partner One ID for a valid [Microsoft Cloud Partner Program](https://partner.microsoft.com/membership) account that has completed the [verification](/partner-center/verification-responses) process. The CPP account must be the [partner global account (PGA)](/partner-center/account-structure#the-top-level-is-the-partner-global-account-pga) for the developer's organization.
+- The developer must have a Partner One ID for a valid [Microsoft Cloud Partner Program](https://partner.microsoft.com/membership) account that has completed the [verification](/partner-center/verification-responses) process. The CPP account must be the [partner global account (PGA)](/partner-center/account-structure#the-top-level-is-the-partner-global-account-pga) for the developer's organization.
 
   > [!NOTE]
   > The CPP account you use for publisher verification can't be your partner location Partner One ID. Currently, location Partner One IDs aren't supported for the publisher verification process.

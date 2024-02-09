@@ -6,9 +6,8 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/06/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ms.custom: has-adal-ref
@@ -16,19 +15,19 @@ ms.custom: has-adal-ref
 
 # Enable remote access to Power BI Mobile with Microsoft Entra application proxy
 
-This article discusses how to use Microsoft Entra application proxy to enable the Power BI mobile app to connect to Power BI Report Server (PBIRS) and SQL Server Reporting Services (SSRS) 2016 and later. Through this integration, users who are away from the corporate network can access their Power BI reports from the Power BI mobile app and be protected by Microsoft Entra authentication. This protection includes [security benefits](application-proxy-security.md#security-benefits) such as Conditional Access and multi-factor authentication.
+This article discusses how to use Microsoft Entra application proxy to enable the Power BI mobile app to connect to Power BI Report Server (PBIRS) and SQL Server Reporting Services (SSRS) 2016 and later. Through this integration, users who are away from the corporate network can access their Power BI reports from the Power BI mobile app and be protected by Microsoft Entra authentication. This protection includes [security benefits](application-proxy-security.md#security-benefits) such as Conditional Access and multifactor authentication.
 
 ## Prerequisites
 
 This article assumes you've already deployed Report Services and [enabled Application Proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
 
 - Enabling Application Proxy requires installing a connector on a Windows server and completing the [prerequisites](~/identity/app-proxy/application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) so that the connector can communicate with Microsoft Entra services.
-- When publishing Power BI, we recommended you use the same internal and external domains. To learn more about custom domains, see [Working with custom domains in Application Proxy](./application-proxy-configure-custom-domain.md).
+- When publishing Power BI, we recommended you use the same internal and external domains. To learn more about custom domains, see [Working with custom domains in Application Proxy](./how-to-configure-custom-domain.md).
 - This integration is available for the **Power BI Mobile iOS and Android** application.
 
 ## Step 1: Configure Kerberos Constrained Delegation (KCD)
 
-For on-premises applications that use Windows authentication, you can achieve single sign-on (SSO) with the Kerberos authentication protocol and a feature called Kerberos constrained delegation (KCD). When configured, KCD allows the Application Proxy connector to obtain a Windows token for a user, even if the user hasn’t signed into Windows directly. To learn more about KCD, see [Kerberos Constrained Delegation Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj553400(v=ws.11)) and [Kerberos Constrained Delegation for single sign-on to your apps with Application Proxy](application-proxy-configure-single-sign-on-with-kcd.md).
+For on-premises applications that use Windows authentication, you can achieve single sign-on (SSO) with the Kerberos authentication protocol and a feature called Kerberos constrained delegation (KCD). When configured, KCD allows the Application Proxy connector to obtain a Windows token for a user, even if the user hasn’t signed into Windows directly. To learn more about KCD, see [Kerberos Constrained Delegation Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj553400(v=ws.11)) and [Kerberos Constrained Delegation for single sign-on to your apps with Application Proxy](how-to-configure-sso-with-kcd.md).
 
 There isn’t much to configure on the Reporting Services side. Just be sure to have a valid Service Principal Name (SPN) to enable the proper Kerberos authentication to occur. Also make sure the Reporting Services server is enabled for Negotiate authentication.
 
@@ -66,7 +65,7 @@ To configure KCD, repeat the following steps for each connector machine:
 6. Enter the service account that you're using for Reporting Services. This is the account you added the SPN to within the Reporting Services configuration.
 7. Click **OK**. To save the changes, click **OK** again.
 
-For more information, see [Kerberos Constrained Delegation for single sign-on to your apps with Application Proxy](application-proxy-configure-single-sign-on-with-kcd.md).
+For more information, see [Kerberos Constrained Delegation for single sign-on to your apps with Application Proxy](how-to-configure-sso-with-kcd.md).
 
 <a name='step-2-publish-report-services-through-azure-ad-application-proxy'></a>
 
@@ -78,7 +77,7 @@ Now you're ready to configure Microsoft Entra application proxy.
    - **Internal URL**: Enter the URL to the Report Server that the connector can reach in the corporate network. Make sure this URL is reachable from the server the connector is installed on. A best practice is using a top-level domain such as `https://servername/` to avoid issues with subpaths published through Application Proxy. For example, use `https://servername/` and not `https://servername/reports/` or `https://servername/reportserver/`.
      > [!NOTE]
      > We recommend using a secure HTTPS connection to the Report Server. See [Configure SSL connections on a native mode report server](/sql/reporting-services/security/configure-ssl-connections-on-a-native-mode-report-server) for information how to.
-   - **External URL**: Enter the public URL the Power BI mobile app will connect to. For example, it may look like `https://reports.contoso.com` if a custom domain is used. To use a custom domain, upload a certificate for the domain, and point a DNS record to the default msappproxy.net domain for your application. For detailed steps, see [Working with custom domains in Microsoft Entra application proxy](application-proxy-configure-custom-domain.md).
+   - **External URL**: Enter the public URL the Power BI mobile app will connect to. For example, it may look like `https://reports.contoso.com` if a custom domain is used. To use a custom domain, upload a certificate for the domain, and point a DNS record to the default msappproxy.net domain for your application. For detailed steps, see [Working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md).
 
    - **Pre-authentication Method**: Microsoft Entra ID
 
@@ -90,13 +89,13 @@ Now you're ready to configure Microsoft Entra application proxy.
 
    c. Set **Internal Application SPN** to the value that you set earlier.
 
-   d. Choose the **Delegated Login Identity** for the connector to use on behalf of your users. For more information, see [Working with different on-premises and cloud identities](application-proxy-configure-single-sign-on-with-kcd.md#working-with-different-on-premises-and-cloud-identities).
+   d. Choose the **Delegated Login Identity** for the connector to use on behalf of your users. For more information, see [Working with different on-premises and cloud identities](how-to-configure-sso-with-kcd.md#working-with-different-on-premises-and-cloud-identities).
 
    e. Click **Save** to save your changes.
 
 To finish setting up your application, go to **the Users and groups** section and assign users to access this application.
 
-## Step 3: Modify the Reply URI's for the application
+## Step 3: Modify the Reply URIs for the application
 
 Before the Power BI mobile app can connect and access Report Services, you must configure the Application Registration that was automatically created for you in step 2.
 

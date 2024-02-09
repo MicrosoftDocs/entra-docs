@@ -4,7 +4,7 @@ description: Add sign in to an ASP.NET Core application using Visual Studio.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.date: 01/02/2024
+ms.date: 01/18/2024
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
@@ -13,7 +13,7 @@ ms.topic: tutorial
 
 # Tutorial: Add sign in to an application
 
-In the [previous tutorial](tutorial-web-app-dotnet-prepare-app.md), an ASP.NET Core project was created and configured for authentication. This tutorial will install the required packages and add code that implements authentication to the sign in and sign out experience.
+In the [previous tutorial](tutorial-web-app-dotnet-prepare-app.md), an ASP.NET Core project was created and configured for authentication. This tutorial will install the required packages and add code that implements authentication to the sign-in and sign-out experience.
 
 In this tutorial:
 
@@ -35,6 +35,7 @@ Identity related **NuGet packages** must be installed in the project for authent
 
 1. In the top menu of Visual Studio, select **Tools > NuGet Package Manager > Manage NuGet Packages for Solution**.
 1. With the **Browse** tab selected, search for and select **Microsoft.Identity.Web.UI**. Select the **Project** checkbox, and then select **Install**.
+1. Repeat this for **Microsoft.Identity.Web.Diagnostics** and **Microsoft.Identity.Web.DownstreamApi**.
 
 ### [Visual Studio Code](#tab/visual-studio-code)
 
@@ -44,6 +45,7 @@ Identity related **NuGet packages** must be installed in the project for authent
     ```powershell
     dotnet add package Microsoft.Identity.Web.UI
     dotnet add package Microsoft.Identity.Web.Diagnostics
+    dotnet add package Microsoft.Identity.Web.DownstreamApi 
     ```
 
 ### [Visual Studio for Mac](#tab/visual-studio-for-mac)
@@ -53,6 +55,10 @@ Identity related **NuGet packages** must be installed in the project for authent
 1. Modify your search to read **Microsoft.Identity.Web.UI** and select **Add Packages**.
 1. In the pop-up, ensure the correct project is selected, then select **Ok**.
 1. Select **Accept** if additional **License Acceptance** windows appear.
+
+>[!NOTE]
+> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
+> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
 
 ---
 
@@ -64,7 +70,7 @@ Identity related **NuGet packages** must be installed in the project for authent
 
 ## Add the sign in and sign out experience
 
-After installing the NuGet packages and adding necessary code for authentication, add the sign in and sign out experiences.
+After installing the NuGet packages and adding necessary code for authentication, add the sign-in and sign-out experiences.
 
 ### Create the *_LoginPartial.cshtml* file
 

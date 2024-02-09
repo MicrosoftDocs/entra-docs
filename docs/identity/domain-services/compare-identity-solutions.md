@@ -7,11 +7,9 @@ manager: amycolannino
 
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: overview
 ms.date: 09/13/2023
 ms.author: justinha
-
 #Customer intent: As an IT administrator or decision maker, I want to understand the differences between Active Directory Domain Services (AD DS), Microsoft Entra ID, and Domain Services so I can choose the most appropriate identity solution for my organization.
 ---
 

@@ -1,13 +1,11 @@
 ---
 title: Group membership for Microsoft Entra dynamic groups with memberOf
-description: Learn how to create a dynamic membership group that can contain members of other groups in Microsoft Entra ID. 
+description: Learn how to create a dynamic membership group that can contain members of other groups in Microsoft Entra ID.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: enterprise-users
-ms.workload: identity
 ms.topic: overview
 ms.date: 07/15/2022
 ms.author: billmath

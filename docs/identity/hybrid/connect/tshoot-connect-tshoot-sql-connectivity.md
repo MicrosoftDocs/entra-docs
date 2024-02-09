@@ -2,11 +2,9 @@
 title: 'Microsoft Entra Connect: Troubleshoot SQL connectivity issues'
 description: Explains how to troubleshoot SQL connectivity issues that occur with Microsoft Entra Connect.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/06/2023

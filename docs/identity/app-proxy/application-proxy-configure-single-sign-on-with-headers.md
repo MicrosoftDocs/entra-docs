@@ -6,7 +6,6 @@ author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/14/2023
 ms.author: kenwith
@@ -91,5 +90,5 @@ When you've completed all these steps, your app should be running and available.
 ## Next steps
 
 - [What is single sign-on?](~/identity/enterprise-apps/what-is-single-sign-on.md)
-- [What is application proxy?](what-is-application-proxy.md)
+- [What is application proxy?](overview-what-is-app-proxy.md)
 - [Quickstart Series on Application Management](~/identity/enterprise-apps/view-applications-portal.md)

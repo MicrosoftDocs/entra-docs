@@ -4,9 +4,8 @@ description: How to configure ServiceNow with Microsoft Entra Permissions Manage
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.author: jfields

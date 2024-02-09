@@ -4,7 +4,6 @@ description: Describes how shadow attributes work in Microsoft Entra Connect Syn
 services: active-directory
 author: billmath
 ms.service: active-directory
-ms.workload: identity
 manager: amycolannino
 ms.topic: how-to
 ms.date: 11/06/2023

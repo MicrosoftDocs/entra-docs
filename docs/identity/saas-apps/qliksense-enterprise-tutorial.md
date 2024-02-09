@@ -245,7 +245,7 @@ In this section, you'll enable Britta Simon to use Azure single sign-on by grant
 
 19. Open the sp metadata file.  Observe the **entityID** entry and the **AssertionConsumerService** entry.  These values are equivalent to the **Identifier**, **Sign on URL** and the **Reply URL** in the Microsoft Entra application configuration. Paste these values in the **Qlik Sense Enterprise Domain and URLs** section in the Microsoft Entra application configuration if they are not matching, then you should replace them in the Microsoft Entra App configuration wizard.
 
-    ![Screenshot shows a plain text editor with a EntityDescriptor with entityID and AssertionConsumerService called out.][qs53]
+    ![Screenshot shows a plain text editor with an EntityDescriptor with entityID and AssertionConsumerService called out.][qs53]
 
 ### Create Qlik Sense Enterprise test user
 

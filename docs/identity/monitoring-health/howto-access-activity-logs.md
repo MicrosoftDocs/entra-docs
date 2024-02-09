@@ -31,17 +31,7 @@ Each of these methods provides you with capabilities that might align with certa
 
 ## Prerequisites
 
-The required roles and licenses might vary based on the report. Global Administrators can access all reports, but we recommend using a role with least privilege access to align with the [Zero Trust guidance](/security/zero-trust/zero-trust-overview).
-
-| Log / Report | Roles | Licenses |
-|--|--|--|
-| Audit | Reports Reader<br>Security Reader<br>Security Administrator<br>Global Reader | All editions of Microsoft Entra ID |
-| Sign-ins | Reports Reader<br>Security Reader<br>Security Administrator<br>Global Reader | All editions of Microsoft Entra ID |
-| Provisioning | Same as audit and sign-ins, plus<br>Security Operator<br>Application Administrator<br>Cloud App Administrator<br>A custom role with `provisioningLogs` permission | Premium P1 or P2 |
-| Usage and insights | Security Reader<br>Reports Reader<br> Security Administrator | Premium P1 or P2 |
-| Identity Protection* | Security Administrator<br>Security Operator<br>Security Reader<br>Global Reader | Microsoft Entra ID Free/Microsoft 365 Apps<br>Microsoft Entra ID P1 or P2 |
-
-*The level of access and capabilities for Identity Protection vary with the role and license. For more information, see the [license requirements for Identity Protection](../../id-protection/overview-identity-protection.md#license-requirements).
+[!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
 
 Audit logs are available for features that you've licensed. To access the sign-in logs using the Microsoft Graph API, your tenant must have a Microsoft Entra ID P1 or P2 license associated with it.
 

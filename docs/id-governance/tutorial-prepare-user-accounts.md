@@ -5,7 +5,6 @@ services: active-directory
 author: owinfreyATL
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.topic: tutorial
 ms.subservice: compliance
 ms.date: 08/02/2023
@@ -44,7 +43,7 @@ We use the Graph Explorer to quickly create two users needed to execute the Life
 You need to edit the POST and replace the &lt;your tenant name here&gt; portion with the name of your tenant.  For example:   $UPN_manager = "bsimon@&lt;your tenant name here&gt;" to $UPN_manager = "bsimon@contoso.onmicrosoft.com".  
 
 >[!NOTE]
->Be aware that a workflow will not trigger when the employee hire date (Days from event) is prior to the workflow creation date. You must set a employeeHiredate in the future by design.  The dates used in this tutorial are a snapshot in time.  Therefore, you should change the dates accordingly to accommodate for this situation.
+>Be aware that a workflow will not trigger when the employee hire date (Days from event) is prior to the workflow creation date. You must set an employeeHiredate in the future by design.  The dates used in this tutorial are a snapshot in time.  Therefore, you should change the dates accordingly to accommodate for this situation.
 
 First we create our employee, Melva Prince.
 
@@ -189,7 +188,7 @@ For the tutorial, the **mail** attribute only needs to be set on the manager acc
 The employeeHireDate attribute is new to Microsoft Entra ID.  It isn't exposed through the UI and must be updated using Graph.  To edit this attribute, we can use [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 
 >[!NOTE]
->Be aware that a workflow will not trigger when the employee hire date (Days from event) is prior to the workflow creation date. You must set an employeeHiredate in the future by design. The dates used in this tutorial are a snapshot in time. Therefore, you should change the dates accordingly to accommodate for this situation.
+>Be aware that a workflow will not trigger when the employee hire date (Days from event) is prior to the workflow creation date. You must set an `employeeHireDate` in the future by design. The dates used in this tutorial are a snapshot in time. Therefore, you should change the dates accordingly to accommodate for this situation.
 
 In order to do this, we must get the object ID for our user Melva Prince.
 

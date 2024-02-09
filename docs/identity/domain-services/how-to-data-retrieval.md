@@ -7,7 +7,6 @@ manager: amycolannino
 
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/14/2023
 ms.author: justinha

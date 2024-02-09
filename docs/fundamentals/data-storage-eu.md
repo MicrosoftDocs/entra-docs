@@ -8,7 +8,6 @@ ms.author: cmulligan
 
 ms.service: active-directory
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/17/2023
 ms.custom: 'it-pro, seodec18, references-regions'

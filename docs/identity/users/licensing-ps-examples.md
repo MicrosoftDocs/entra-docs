@@ -4,13 +4,11 @@ title: PowerShell and Microsoft Graph examples for group licensing
 description: PowerShell + Graph examples and scenarios for Microsoft Entra group-based licensing
 services: active-directory
 keywords: Azure AD licensing
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: how-to
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.date: 12/02/2020
 ms.author: barclayn
@@ -84,7 +82,8 @@ EMSPREMIUM
 ```
 
 > [!NOTE]
-> The data is limited to product (SKU) information. It is not possible to list the service plans disabled in the license.
+> The data retuned here is limited to product (SKU) information. To generate a list of disabled service plans in the license, see [Microsoft Graph PowerShell examples for group licensing](licensing-powershell-graph-examples.md#view-all-disabled-service-plan-licenses-assigned-to-a-group).
+
 
 Use the following sample to get the same data from Microsoft Graph.
 

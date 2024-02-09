@@ -6,13 +6,12 @@ author: shlipsey3
 manager: amycolannino
 
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 11/28/2023
+ms.date: 01/05/2024
 ms.author: sarahlipsey
 ms.reviewer: krbain
-ms.custom: "it-pro, seodec18"                      
+ms.custom: "it-pro, seodec18"
 ms.collection: M365-identity-device-management
 ---
 # Learn about groups and access rights in Microsoft Entra ID
@@ -42,7 +41,10 @@ There are two group types and three group membership types. Review the options t
 
 **Security:** Used to manage user and computer access to shared resources.
 
-For example, you can create a security group so that all group members have the same set of security permissions. Members of a security group can include users, devices, other groups, and [service principals](~/architecture/service-accounts-principal.md), which define access policy and permissions. Owners of a security group can include users and service principals.
+For example, you can create a security group so that all group members have the same set of security permissions. Members of a security group can include users, devices, [service principals](~/architecture/service-accounts-principal.md), and other groups (also known as nested groups), which define [access policy and permissions](identity-fundamental-concepts.md). Owners of a security group can include users and service principals.
+
+> [!NOTE]
+> When nesting an existing security group to another security group, only members in the parent group will have access to shared resouces and applications. Nested group members don't have the same assigned membership as the parent group members. For more info about managing nested groups, see [How to manage groups](how-to-manage-groups.md#add-or-remove-a-group-from-another-group).
 
 **Microsoft 365:** Provides collaboration opportunities by giving group members access to a shared mailbox, calendar, files, SharePoint sites, and more.
 
@@ -54,7 +56,7 @@ This option also lets you give people outside of your organization access to the
 - **Dynamic device:** Lets you use dynamic group rules to automatically add and remove devices. If a device's attributes change, the system looks at your dynamic group rules for the directory to see if the device meets the rule requirements (is added), or no longer meets the rules requirements (is removed).
 
     > [!IMPORTANT]
-    > You can create a dynamic group for either devices or users, but not for both. You can't create a device group based on the device owners' attributes. Device membership rules can only reference device attributions. For more info about creating a dynamic group for users and devices, see [Create a dynamic group and check status](~/identity/users/groups-create-rule.md)
+    > You can create a dynamic group for either devices or users, but not for both. You can't create a device group based on the device owners' attributes. Device membership rules can only reference device attributions. For more info about creating a dynamic group for users and devices, see [Create a dynamic group and check status](~/identity/users/groups-create-rule.md).
 
 
 ## What to know before adding access rights to a group

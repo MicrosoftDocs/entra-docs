@@ -123,11 +123,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Small Improvements SSO
 
-1. In another browser window, sign on to your Small Improvements company site as an administrator.
+1. In another browser window, sign on to your [Small Improvements](https://small-improvements.com) company site as an administrator.
 
-1. From the main dashboard page, click **Administration** button on the left.
+1. From the main dashboard page, click **Admin** -> **Integrations** on the left.
 
-    ![Screenshot shows the Administration button selected.](./media/smallimprovements-tutorial/admin.png) 
+    ![Screenshot shows the Integrations button selected.](./media/smallimprovements-tutorial/admin.png) 
 
 1. Click the **SAML SSO** button from **Integrations** section.
 
@@ -137,15 +137,17 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     ![Screenshot shows the S S O Setup page where you can enter the values described.](./media/smallimprovements-tutorial/certificate.png)  
 
-    a. In the **HTTP Endpoint** textbox, paste the value of **Login URL**.
+    a. Check **Enable SAML for SSO**.
 
-    b. Open your downloaded certificate in Notepad, copy the content, and then paste it into the **x509 Certificate** textbox. 
+    b. In the **HTTP Endpoint** textbox, paste the value of **Login URL**.
 
-    c. If you wish to have SSO and Login form authentication option available for users, then check the **Enable access via login/password too** option.  
+    c. Open your downloaded certificate in Notepad, copy the content, and then paste it into the **x509 Certificate** textbox. 
 
-    d. Enter the appropriate value to Name the SSO Login button in the **SAML Prompt** textbox.  
+    d. If you wish to have SSO and Login form authentication option available for users, then check the **Enable access via login/password too** option.  
 
-    e. Click **Save**.
+    e. Enter the appropriate value to Name the SSO Login button in the **SAML Prompt** textbox.  
+
+    f. Click **Save**.
 
 ### Create Small Improvements test user
 
@@ -155,15 +157,13 @@ To enable Microsoft Entra users to log in to Small Improvements, they must be pr
 
 1. Sign-on to your Small Improvements company site as an administrator.
 
-1. From the Home page, go to the menu on the left, click **Administration**.
+1. From the Home page, go to the menu on the left, click **Admin** -> **Settings**.
 
-1. Click the **User Directory** button from User Management section.
+    ![Screenshot shows the Settings button selected.](./media/smallimprovements-tutorial/admin-settings.png) 
 
-    ![Screenshot shows the User Directory selected from Administration Overview.](./media/smallimprovements-tutorial/user.png) 
+1. Click the **Add Users** button from User Management section.
 
-1. Click **Add users**.
-
-    ![Screenshot shows the Add users button.](./media/smallimprovements-tutorial/add-user.png) 
+    ![Screenshot shows "Add Users" selected from Administration Overview.](./media/smallimprovements-tutorial/user.png)
 
 1. On the **Add Users** dialog, perform the following steps: 
 

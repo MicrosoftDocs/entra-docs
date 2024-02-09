@@ -2,16 +2,13 @@
 title: 'Microsoft Entra Connect: Upgrade from a previous version'
 description: Explains the different methods to upgrade to the latest release of Microsoft Entra Connect, including an in-place upgrade and a swing migration.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: 31f084d8-2b89-478c-9079-76cf92e6618f
 ms.service: active-directory
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.workload: Identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath

@@ -8,7 +8,7 @@ summary: >
 metadata:
   author: Dickson-Mwendia
   ms.author: dmwendia
-  ms.date: 04/28/2023
+  ms.date: 02/02/2024
   ms.service: active-directory
   ms.subservice: develop
   ms.topic: landing-page
@@ -16,7 +16,7 @@ metadata:
 landingContent:
 
 ## ROW 1 ################################################### ROW 1 ##
-  - title: "Get started fast"
+  - title: "Get started"
     linkLists:
       - linkListType: quickstart
         links:
@@ -28,11 +28,11 @@ landingContent:
     linkLists:
       - linkListType: tutorial
         links:
-          - text: ASP.NET - Register your API
+          - text: ASP.NET Core - Register your API
             url: web-api-tutorial-01-register-app.md
-          - text: ASP.NET - Configure your API
+          - text: ASP.NET Core - Configure your API
             url: web-api-tutorial-02-prepare-api.md
-          - text: ASP.NET - Call your web API
+          - text: ASP.NET Core - Call your web API
             url: web-api-tutorial-03-protect-endpoint.md
         
   - title: "Scenarios in depth"

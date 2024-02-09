@@ -1,12 +1,11 @@
 ---
 title: Build a SCIM endpoint for user provisioning to apps from Microsoft Entra ID
-description: Learn to develop a SCIM endpoint, integrate your SCIM API with Microsoft Entra ID, and automatically provision users and groups into your cloud applications. 
+description: Learn to develop a SCIM endpoint, integrate your SCIM API with Microsoft Entra ID, and automatically provision users and groups into your cloud applications.
 services: active-directory
 author: kenwith
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/15/2023
 ms.author: kenwith
@@ -27,7 +26,7 @@ In this tutorial, you learn how to:
 ## Deploy your SCIM endpoint in Azure
 
 
-The steps here deploy the SCIM endpoint to a service by using [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) and [Visual Studio Code](https://code.visualstudio.com/) with [Azure App Service](/azure/app-service/). The SCIM reference code can run locally, hosted by an on-premises server, or deployed to another external service.
+The steps here deploy the SCIM endpoint to a service by using [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) and [Visual Studio Code](https://code.visualstudio.com/) with [Azure App Service](/azure/app-service/). The SCIM reference code can run locally, hosted by an on-premises server, or deployed to another external service. For information about provisioning an SCIM endpoint, see [Tutorial: Develop and plan provisioning for a SCIM endpoint](use-scim-to-provision-users-and-groups.md).
 
 ### Get and deploy the sample app
 
@@ -42,7 +41,7 @@ Go to the [reference code](https://github.com/AzureAD/SCIMReferenceCode) from Gi
     ![Screenshot that shows the sample file.](media/use-scim-to-build-users-and-groups-endpoints/cloud-publish.png)
 
     > [!NOTE]
-    > To run this solution locally, double-click the project and select **IIS Express** to launch the project as a webpage with a local host URL.
+    > To run this solution locally, double-click the project and select **IIS Express** to launch the project as a webpage with a local host URL. For more information, see [IIS Express Overview](/iis/extensions/introduction-to-iis-express/iis-express-overview). 
 
 1. Select **Create profile** and make sure that **App Service** and **Create new** are selected.
 

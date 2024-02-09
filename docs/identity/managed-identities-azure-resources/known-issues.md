@@ -2,21 +2,16 @@
 title: Known issues with managed identities
 description: Known issues with managed identities for Azure resources.
 services: active-directory
-documentationcenter: 
 author: barclayn
 manager: amycolannino
-editor: 
 ms.assetid: 2097381a-a7ec-4e3b-b4ff-5d2fb17403b6
 ms.service: active-directory
 ms.subservice: msi
-ms.devlang: 
 ms.topic: conceptual
-ms.tgt_pltfrm: 
-ms.workload: identity
 ms.date: 01/11/2022
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.custom: 
+ms.custom:
 ---
 
 # Known issues with managed identities for Azure resources

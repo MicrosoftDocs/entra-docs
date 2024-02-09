@@ -23,7 +23,7 @@ Learn all you need to build a web app that uses the Microsoft identity platform 
 
 If you want to create your first portable (ASP.NET Core) web app that signs in users, follow this quickstart:
 
-[Quickstart: Use ASP.NET Core to add sign-in with Microsoft to a web app](quickstart-web-app-aspnet-core-sign-in.md)
+[Quickstart: Use ASP.NET Core to add sign-in with Microsoft to a web app](quickstart-web-app-dotnet-core-sign-in.md)
 
 # [ASP.NET](#tab/aspnet)
 

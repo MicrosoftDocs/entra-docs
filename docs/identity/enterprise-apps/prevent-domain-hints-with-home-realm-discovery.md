@@ -6,14 +6,12 @@ author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 03/16/2023
 ms.author: jomondi
 ms.reviewer: ludwignick
 zone_pivot_groups: home-realm-discovery
 ms.custom: enterprise-apps, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
 #customer intent: As an administrator managing federated domains, I want to disable auto-acceleration sign-in for certain domains and applications, so that users can always use their managed credentials and have a consistent sign-in experience, improving security and reducing frustration.
 ---
 # Disable auto-acceleration sign-in

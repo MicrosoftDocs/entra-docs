@@ -8,11 +8,9 @@ manager: amycolannino
 ms.assetid: 40eb75b7-827e-4d30-af6c-ca3c2af915c7
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 09/23/2023
 ms.author: justinha
-
 ---
 # Resolve mismatched directory errors for existing Microsoft Entra Domain Services managed domains
 

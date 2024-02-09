@@ -17,7 +17,7 @@ ms.topic: how-to
 
 Protected web APIs need to validate access tokens. Web apps also validate the ID tokens. Token Validation has multiple parts, checking whether the token belongs to the application, has been issued by a trusted Identity Provider (IDP), has a lifetime that's still in range and hasn't been tampered with. There can also be special validations. For instance, the app needs to validate the signature and that signing keys (when embedded in a token) are trusted and that the token isn't being replayed. When the signing keys aren't embedded in the token, they need to be fetched from the identity provider (Discovery or Metadata). Sometimes it's also necessary to obtain keys dynamically at runtime.
 
-Web apps and web APIs need to refresh stale OpenID Connect metadata for them to be resilient. This article helps guide on how to achieve resilient apps. It applies to ASP.NET Core, ASP.NET classic, and Microsoft.IdentityModel.
+Web apps and web APIs need to refresh stale OpenID Connect metadata for them to be resilient. This article helps guide on how to achieve resilient apps. It applies to ASP.NET Core, ASP.NET, and Microsoft.IdentityModel.
 
 ## ASP.NET Core
 
@@ -39,7 +39,7 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 
 Microsoft recommends that you move to ASP.NET Core, as development has stopped on ASP.NET.
 
-If you're using ASP.NET classic, use the latest [Microsoft.IdentityModel.*](https://www.nuget.org/packages?q=Microsoft.IdentityModel).
+If you're using ASP.NET (Classic), use the latest [Microsoft.IdentityModel.*](https://www.nuget.org/packages?q=Microsoft.IdentityModel).
 
 OWIN has an automatic 24-hour refresh interval for the `OpenIdConnectConfiguration`. This refresh will only be triggered if a request is received after the 24-hour time span has passed. As far as we know, there's no way to change this value or trigger a refresh early, aside from restarting the application.
 

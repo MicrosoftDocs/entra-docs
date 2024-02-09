@@ -2,18 +2,15 @@
 title: 'Tutorial: Use a managed identity to access Azure Cosmos DB - Windows'
 description: A tutorial that walks you through the process of using a system-assigned managed identity on a Windows VM, to access Azure Cosmos DB.
 services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
-editor: 
 ms.service: active-directory
 ms.subservice: msi
 ms.topic: tutorial
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 01/11/2022
 ms.author: barclayn
-ms.collection: M365-identity-device-management 
+ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell, ignite-2022
 ROBOTS: NOINDEX
 ---

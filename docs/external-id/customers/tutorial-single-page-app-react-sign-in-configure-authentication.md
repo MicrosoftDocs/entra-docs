@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Handle authentication flows in a React single-page app
+title: "Tutorial: Handle authentication flows in a React SPA"
 description: Learn how to configure authentication for a React single-page app (SPA) with your Microsoft Entra ID for customers tenant.
  
 author: garrodonnell
@@ -14,13 +14,14 @@ ms.date: 06/09/2023
 #Customer intent: As a developer, I want to learn how to configure a React single-page app (SPA) to sign in and sign out users with my Microsoft Entra ID for customers tenant.
 ---
 
-# Tutorial: Handle authentication flows in a React single-page app
+# Tutorial: Handle authentication flows in a React SPA
 
-In the [previous article](./tutorial-single-page-app-react-sign-in-prepare-app.md), you created a React single-page app (SPA) and prepared it for authentication with your Microsoft Entra ID for customers tenant. In this article, you'll learn how to handle authentication flows in your app by adding components.
+This tutorial is part 3 of a series that demonstrates building a React single-page application (SPA) and preparing it for authentication. In [part 2 of this series](./tutorial-single-page-app-react-sign-in-prepare-app.md), you created a React SPA and prepared it for authentication with your Microsoft Entra ID for customers tenant. In this tutorial, you'll learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
 
 In this tutorial;
 
 > [!div class="checklist"]
+>
 > * Add a *DataDisplay* component to the app
 > * Add a *ProfileContent* component to the app
 > * Add a *PageLayout* component to the app
@@ -28,7 +29,7 @@ In this tutorial;
 
 ## Prerequisites
 
-* Completion of the prerequisites and steps in [Prepare an single-page app for authentication](./tutorial-single-page-app-react-sign-in-prepare-app.md).
+* [Tutorial: Prepare your customer tenant to authenticate users in a React SPA](./tutorial-single-page-app-react-sign-in-prepare-tenant.md).
 
 ## Add components to the application
 
@@ -400,7 +401,7 @@ Functional components are the building blocks of React apps, and are used to bui
 
 1. Save the file.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
-> [Sign in and sign out of the React SPA](./tutorial-single-page-app-react-sign-in-sign-out.md)
+> [Part 4: Sign in and sign out of the React SPA](./tutorial-single-page-app-react-sign-in-sign-out.md)

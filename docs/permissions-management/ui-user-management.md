@@ -4,9 +4,8 @@ description: How to manage users and groups in the User management dashboard in 
 services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
+ms.service: active-directory
 ms.subservice: ciem
-ms.workload: identity
 ms.topic: overview
 ms.date: 09/15/2023
 ms.author: jfields

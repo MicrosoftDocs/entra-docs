@@ -6,7 +6,6 @@ author: barclayn
 manager: amycolannino
 
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 11/28/2023
@@ -44,7 +43,7 @@ For more information about subscription roles, see [Azure roles](/azure/role-bas
 After you create your directory, you can add your custom domain name.
 
 > [!IMPORTANT]
-> When updating domain information, you may be unable to complete the process and encounter a HTTP 500 Internal Server Error message. Under some conditions, this error may be expected. This message may appear if you try to use a protected DNS suffix. Protected DNS suffixes may only be used by Microsoft. If you believe that this operation should have been completed successfully, please contact your Microsoft representative for assistance. 
+> When updating domain information, you may be unable to complete the process and encounter an HTTP 500 Internal Server Error message. Under some conditions, this error may be expected. This message may appear if you try to use a protected DNS suffix. Protected DNS suffixes may only be used by Microsoft. If you believe that this operation should have been completed successfully, please contact your Microsoft representative for assistance. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator).
 

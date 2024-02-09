@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 10/25/2023
+ms.date: 01/10/2024
 
 ms.author: justinha
 author: justinha
@@ -114,12 +114,11 @@ The NPS extension requires Windows Server 2008 R2 SP1 or later, with the Network
 
 ### Libraries
 
-The following libraries are installed automatically with the NPS extension:
+The following library is installed automatically with the NPS extension:
 
 - [Visual C++ Redistributable Packages for Visual Studio 2013 (X64)](https://www.microsoft.com/download/details.aspx?id=40784)
-- [Azure AD PowerShell module version 1.1.166.0](https://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=59185)
 
-If the Azure Active Directory PowerShell module is not already present, it is installed with a configuration script that you run as part of the setup process. There is no need to install the module ahead of time if it is not already installed.
+If Microsoft Graph PowerShell module is not already present, it's installed with a configuration script that you run as part of the setup process. There's no need to install Graph PowerShell in advance.
 
 <a name='azure-active-directory-synced-with-on-premises-active-directory'></a>
 
@@ -340,11 +339,9 @@ If the value is set to *TRUE* or is blank, all authentication requests are subje
 
 ### Obtain the directory tenant ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
 As part of the configuration of the NPS extension, you must supply administrator credentials and the ID of your Microsoft Entra tenant. To get the tenant ID, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Identity** > **Settings**.
 
    ![Getting the Tenant ID from the Microsoft Entra admin center](./media/howto-mfa-nps-extension-vpn/tenant-id.png)
@@ -367,9 +364,9 @@ The NPS extension must be installed on a server that has the Network Policy and 
 
     ![The "Setup Successful" confirmation window](./media/howto-mfa-nps-extension-vpn/image37.png)
 
-### Configure certificates for use with the NPS extension by using a PowerShell script
+### Configure certificates for use with the NPS extension by using a Graph PowerShell script
 
-To ensure secure communications and assurance, configure certificates for use by the NPS extension. The NPS components include a PowerShell script that configures a self-signed certificate for use with NPS.
+To ensure secure communications and assurance, configure certificates for use by the NPS extension. The NPS components include a Graph PowerShell script that configures a self-signed certificate for use with NPS.
 
 The script performs the following actions:
 
@@ -383,21 +380,21 @@ If you want to use your own certificates, you must associate the public key of y
 
 To use the script, provide the extension with your Microsoft Entra administrative credentials and the Microsoft Entra tenant ID that you copied earlier. The account must be in the same Microsoft Entra tenant as you wish to enable the extension for. Run the script on each NPS server where you install the NPS extension.
 
-1. Run Windows PowerShell as an administrator.
+1. Run Graph PowerShell as an administrator.
 
 2. At the PowerShell command prompt, enter **cd "c:\Program Files\Microsoft\AzureMfa\Config"**, and then select Enter.
 
-3. At the next command prompt, enter **.\AzureMfaNpsExtnConfigSetup.ps1**, and then select Enter. The script checks to see whether the Azure AD PowerShell module is installed. If it is not installed, the script installs the module for you.
+3. At the next command prompt, enter **.\AzureMfaNpsExtnConfigSetup.ps1**, and then select Enter. The script checks to see whether Graph PowerShell is installed. If it is not installed, the script installs Graph PowerShell for you.
 
     ![Running the AzureMfsNpsExtnConfigSetup.ps1 configuration script](./media/howto-mfa-nps-extension-vpn/image38.png)
 
     If you get a security error due to TLS, enable TLS 1.2 using the `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12` command from your PowerShell prompt.
     
-    After the script verifies the installation of the PowerShell module, it displays the Azure Active Directory PowerShell module sign-in window.
+    After the script verifies the installation of the PowerShell module, it displays the Graph PowerShell module sign-in window.
 
 4. Enter your Microsoft Entra administrator credentials and password, and then select **Sign in**.
 
-    ![Authenticate to Azure AD PowerShell](./media/howto-mfa-nps-extension-vpn/image39.png)
+    ![Authenticate to Graph PowerShell](./media/howto-mfa-nps-extension-vpn/image39.png)
 
 5. At the command prompt, paste the tenant ID that you copied earlier, and then select Enter.
 
@@ -425,23 +422,11 @@ After you've successfully authenticated by using the secondary method, you are g
 
 ### View Event Viewer logs for successful sign-in events
 
-To view successful sign-in events in the Windows Event Viewer logs query the Windows Security log, on the NPS server, by entering the following PowerShell command:
-
-```powershell
-Get-WinEvent -Logname Security | where {$_.ID -eq '6272'} | FL
-```
-
-![PowerShell security Event Viewer](./media/howto-mfa-nps-extension-vpn/image44.png)
-
-You can also view the security log or the Network Policy and Access Services custom view, as shown here:
+To view successful sign-in events in the Windows Event Viewer, you can view the Security log or the Network Policy and Access Services custom view, as shown in the following image:
 
 ![Example Network Policy Server log](./media/howto-mfa-nps-extension-vpn/image45.png)
 
 On the server where you installed the NPS extension for Microsoft Entra multifactor authentication, you can find Event Viewer application logs that are specific to the extension at *Application and Services Logs\Microsoft\AzureMfa*.
-
-```powershell
-Get-WinEvent -Logname Security | where {$_.ID -eq '6272'} | FL
-```
 
 ![Example Event Viewer AuthZ logs pane](./media/howto-mfa-nps-extension-vpn/image46.png)
 

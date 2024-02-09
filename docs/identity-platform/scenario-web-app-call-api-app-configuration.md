@@ -200,7 +200,7 @@ If you want to call an API other than Microsoft Graph, *Microsoft.Identity.Web* 
 
 Here's the code:
 
-   ```csharp
+```csharp
   using Microsoft.Extensions.DependencyInjection;
   using Microsoft.Identity.Client;
   using Microsoft.Identity.Web;
@@ -221,7 +221,7 @@ Here's the code:
 
               app.UseCookieAuthentication(new CookieAuthenticationOptions());
 
-              // Get an TokenAcquirerFactory specialized for OWIN.
+              // Get a TokenAcquirerFactory specialized for OWIN.
               OwinTokenAcquirerFactory owinTokenAcquirerFactory = TokenAcquirerFactory.GetDefaultInstance<OwinTokenAcquirerFactory>();
 
               // Configure the web app.
@@ -238,7 +238,7 @@ Here's the code:
           }
       }
   }
-   ```
+```
 
 ### Summary
 
@@ -411,7 +411,7 @@ services.AddDistributedSqlServerCache(options =>
 });
 ```
 
-For details about the token-cache providers, see also Microsoft.Identity.Web's [Token cache serialization](https://aka.ms/ms-id-web/token-cache-serialization) article, and the [ASP.NET Core Web app tutorials | Token caches](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-2-TokenCache) phase of the web apps tutorial.
+For details about the token-cache providers, see also Microsoft.Identity.Web's [Token cache serialization](https://aka.ms/ms-id-web/token-cache-serialization) article, and the [ASP.NET Core web app tutorials | Token caches](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-2-TokenCache) phase of the web apps tutorial.
 
 # [ASP.NET](#tab/aspnet)
 
@@ -442,7 +442,7 @@ services.AddDistributedSqlServerCache(options =>
 });
 ```
 
-For details about the token-cache providers, see also the *Microsoft.Identity.Web* [Token cache serialization](https://aka.ms/ms-id-web/token-cache-serialization) article, and the [ASP.NET Core Web app tutorials | Token caches](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-2-TokenCache) phase of the web app's tutorial.
+For details about the token-cache providers, see also the *Microsoft.Identity.Web* [Token cache serialization](https://aka.ms/ms-id-web/token-cache-serialization) article, and the [ASP.NET Core web app tutorials | Token caches](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-2-TokenCache) phase of the web app's tutorial.
 
 For details see [Token cache serialization for MSAL.NET](/entra/msal/dotnet/how-to/token-cache-serialization).
 

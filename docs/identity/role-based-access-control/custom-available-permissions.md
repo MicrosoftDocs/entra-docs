@@ -1,11 +1,10 @@
 ---
 title: Custom role permissions for app registration
-description: Delegate custom administrator role permissions for managing app registrations. 
+description: Delegate custom administrator role permissions for managing app registrations.
 services: active-directory
 author: rolyon
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: roles
 ms.topic: how-to
 ms.date: 11/04/2020

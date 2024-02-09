@@ -5,7 +5,6 @@ services: active-directory
 author: gargi-sinha
 manager: martinco
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 09/06/2022

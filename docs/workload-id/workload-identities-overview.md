@@ -1,16 +1,15 @@
 ---
-title: Workload identities 
+title: Workload identities
 description: Understand the concepts and supported scenarios for using workload identity in Microsoft Entra.
 author: rwike77
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: workload-identities
-ms.workload: identity
 ms.topic: conceptual
-ms.date: 08/08/2023
+ms.date: 01/10/2024
 ms.author: ryanwi
 ms.reviewer: arluca, ilanas, naha
-ms.custom: aaddev 
+ms.custom: aaddev
 #Customer intent: As a developer, I want workload identities so I can authenticate with Microsoft Entra ID and access Microsoft Entra protected resources.
 ---
 

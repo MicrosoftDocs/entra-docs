@@ -1,8 +1,8 @@
 ---
 
 title: Download a list of groups in the Azure portal
-description: Download group properties in bulk in the Azure admin center in Microsoft Entra ID. 
-services: active-directory 
+description: Download group properties in bulk in the Azure admin center in Microsoft Entra ID.
+services: active-directory
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
@@ -10,7 +10,6 @@ ms.date: 12/13/2023
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: enterprise-users
-ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management

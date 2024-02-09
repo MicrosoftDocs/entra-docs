@@ -6,12 +6,11 @@ author: billmath
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: hybrid
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.date: 11/06/2023
 ms.topic: how-to
 ms.author: billmath
-ms.collection: M365-identity-device-management 
+ms.collection: M365-identity-device-management
 ms.custom:
 ---
 # Install the Microsoft Entra Connect Health agents
@@ -79,102 +78,7 @@ To download and install the Microsoft Entra Connect Health agent:
   - See the [installation instructions](#install-the-agent-for-azure-ad-ds).
 
 ## Install the agent for AD FS
-
-> [!NOTE]
-> Your AD FS server should be separate from your sync server. Don't install the AD FS agent on your sync server.
->
-
-Before you install the agent, make sure your AD FS server host name is unique and isn't present in the AD FS service.
-
-To start the agent installation, double-click the *.exe* file you downloaded. In the first dialog, select **Install**.
-
-:::image type="content" source="media/how-to-connect-health-agent-install/install-1.png" alt-text="Screenshot that shows the installation window for the Microsoft Entra Connect Health AD FS agent.":::
-
-When you're prompted, sign in by using a Microsoft Entra account that has permissions to register the agent. By default, the Hybrid Identity Administrator account has permissions.
-
-:::image type="content" source="media/how-to-connect-health-agent-install/install3.png" alt-text="Screenshot that shows the sign-in window for Microsoft Entra Connect Health AD FS.":::
-
-After you sign in, the installation process will complete and you can close the window.
-
-:::image type="content" source="media/how-to-connect-health-agent-install/install2.png" alt-text="Screenshot that shows the confirmation message for the Microsoft Entra Connect Health AD FS agent installation.":::
-
-At this point, the agent services should start to automatically allow the agent to securely upload the required data to the cloud service.
-
-To verify that the agent was installed, look for the following services on the server. If you completed the configuration, they should already be running. Otherwise, they're stopped until the configuration is complete.
-
-- Microsoft Azure AD Connect Agent Updater
-- Microsoft Entra Connect Health Agent
-
-:::image type="content" source="media/how-to-connect-health-agent-install/install5.png" alt-text="Screenshot that shows Microsoft Entra Connect Health AD FS services.":::
-
-### Enable auditing for AD FS
-
-> [!NOTE]
-> This section applies only to AD FS servers. You don't have to complete these steps on Web Application Proxy servers.
->
-
-The Usage Analytics feature needs to gather and analyze data, so the Microsoft Entra Connect Health agent needs the information in the AD FS audit logs. These logs aren't enabled by default. Use the following procedures to enable AD FS auditing and to locate the AD FS audit logs on your AD FS servers.
-
-#### To enable auditing for AD FS on Windows Server 2012 R2
-
-1. On the Start screen, open **Server Manager**, and then open **Local Security Policy**. Or, on the taskbar, open **Server Manager**, and then select **Tools/Local Security Policy**.
-1. Go to the *Security Settings\Local Policies\User Rights Assignment* folder. Double-click **Generate security audits**.
-1. On the **Local Security Setting** tab, verify that the AD FS service account is listed. If it's not listed, select **Add User or Group**, and add the AD FS service account to the list. Then select **OK**.
-1. To enable auditing, open a Command Prompt window as administrator, and then run the following command:
-
-    `auditpol.exe /set /subcategory:{0CCE9222-69AE-11D9-BED3-505054503030} /failure:enable /success:enable`
-
-1. Close **Local Security Policy**.
-
-    > [!IMPORTANT]
-    > The remaining steps are required only for primary AD FS servers.
-
-1. Open the **AD FS Management** snap-in. (In **Server Manager**, select **Tools** > **AD FS Management**.)
-1. In the **Actions** pane, select **Edit Federation Service Properties**.
-1. In the **Federation Service Properties** dialog, select the **Events** tab.
-1. Select the **Success audits** and **Failure audits** checkboxes, and then select **OK**.
-1. To enable verbose logging through PowerShell, use the following command:
-
-    `Set-AdfsProperties -LOGLevel Verbose`
-
-#### To enable auditing for AD FS on Windows Server 2016
-
-1. On the Start screen, open **Server Manager**, and then open **Local Security Policy**. Or, on the taskbar, open **Server Manager**, and then select **Tools/Local Security Policy**.
-1. Go to the *Security Settings\Local Policies\User Rights Assignment* folder. Double-click **Generate security audits**.
-1. On the **Local Security Setting** tab, verify that the AD FS service account is listed. If it's not listed, select **Add User or Group**, and add the AD FS service account to the list. Then select **OK**.
-1. To enable auditing, open a Command Prompt window as administrator, and then run the following command:
-
-    `auditpol.exe /set /subcategory:"Application Generated" /failure:enable /success:enable`
-
-1. Close **Local Security Policy**.
-
-    > [!IMPORTANT]
-    > The remaining steps are required only for primary AD FS servers.
-
-1. Open the **AD FS Management** snap-in. (In **Server Manager**, select **Tools** > **AD FS Management**.)
-1. In the **Actions** pane, select **Edit Federation Service Properties**.
-1. In the **Federation Service Properties** dialog, select the **Events** tab.
-1. Select the **Success audits** and **Failure audits** checkboxes, and then select **OK**. Success audits and failure audits should be enabled by default.
-1. Open a PowerShell window and run the following command:
-
-    `Set-AdfsProperties -AuditLevel Verbose`
-
-The "basic" audit level is enabled by default. For more information, see [AD FS audit enhancement in Windows Server 2016](/windows-server/identity/ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server).
-
-#### To locate the AD FS audit logs
-
-1. Open **Event Viewer**.
-2. Go to **Windows Logs**, and then select **Security**.
-3. In the right pane, select **Filter Current Logs**.
-4. For **Event sources**, select **AD FS Auditing**.
-
-    For more information about audit logs, see [Operations questions](./reference-connect-health-faq.yml).
-
-    :::image type="content" source="media/how-to-connect-health-agent-install/adfsaudit.png" alt-text="Screenshot that shows the Filter Current Log window, with AD FS auditing selected.":::
-
-> [!WARNING]
-> A group policy can disable AD FS auditing. If AD FS auditing is disabled, usage analytics about login activities are unavailable. Ensure that you have no group policy that disables AD FS auditing.
->
+For information on installing and monitoring AD FS with the Microsoft Entra Connect Health agent, see [Microsoft Entra Connect Health agents for AD FS](how-to-connect-health-adfs.md).
 
 ## Install the agent for sync
 

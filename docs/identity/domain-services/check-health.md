@@ -8,11 +8,9 @@ manager: amycolannino
 ms.assetid: 8999eec3-f9da-40b3-997a-7a2587911e96
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/13/2023
 ms.author: justinha
-
 ---
 # Check the health of a Microsoft Entra Domain Services managed domain
 

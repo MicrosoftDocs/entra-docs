@@ -5,13 +5,14 @@ description: Use tenant restrictions to control the types of external accounts y
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 10/27/2023
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
+#customer intent: As an IT admin, I want to configure tenant restrictions v2, so that I can control access to external apps and enhance security for users signing in from our networks or devices.
 ---
 
 # Set up tenant restrictions v2
@@ -73,7 +74,7 @@ Tenant restrictions v2 can be scoped to specific users, groups, organizations, o
 - Per-user tenant restrictions for Microsoft Accounts.
 
 
-### Compare Tenant restrictions v1 and v2
+## Compare tenant restrictions v1 and v2
 
 The following table compares the features in each version.
 
@@ -90,8 +91,48 @@ The following table compares the features in each version.
 |**Portal support**        |No user interface in the Microsoft Entra admin center for configuring the policy.         |   User interface available in the Microsoft Entra admin center for setting up the cloud policy.      |
 |**Unsupported apps**      |     N/A    |   Block unsupported app use with Microsoft endpoints by using Windows Defender Application Control (WDAC) or Windows Firewall  (for example, for Chrome, Firefox, and so on). See [Block Chrome, Firefox and .NET applications like PowerShell](#block-chrome-firefox-and-net-applications-like-powershell).      |
 
+## Migrate tenant restrictions v1 policies to v2 on the proxy
 
-### Tenant restrictions vs. inbound and outbound settings
+Migrating tenant restriction policies from v1 to v2 is a one-time operation. After migration, no client-side changes are required. You can make any subsequent server side policy changes via the Microsoft Entra admin center. 
+
+When enabling TRv2 on proxy, you will be able to enforce TRv2 only on authentication plane. To enable TRv2 on both authentication and data plane you should enable TRv2 client side signaling using [Universal TRv2](#option-1-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access-preview)
+
+Step 1: **Configuring allowed list of partner tenants**
+
+**TRv1:** Tenant Restrictions v1 (TRv1) lets you create an allow list of tenant IDs and/or Microsoft sign-in endpoints to ensure that users access external tenants that your organization authorizes. TRv1 achieved it by adding **`Restrict-Access-To-Tenants: <allowed-tenant-list>`** header on the proxy. For ex: `Restrict-Access-To-Tenants: " contoso.com, fabrikam.com, dogfood.com". [Learn more](~/identity/enterprise-apps/tenant-restrictions.md) about tenant restrictions v1.
+  
+**TRv2:** With Tenant Restrictions v2 (TRv2), the configuration is moved to the server side cloud policy and there is no need for the TRv1 header. 
+
+- On your corporate proxy, you should remove tenant restrictions v1 header, **`Restrict-Access-To-Tenants: <allowed-tenant-list>`**.
+- For each tenant in the allowed-tenant-list, create a partner tenant policy by following the steps at [Step 2: Configure tenant restrictions v2 for specific partners](#step-2-configure-tenant-restrictions-v2-for-specific-partners). Be sure to follow these guidelines:
+  
+> [!NOTE]
+> - Keep the tenant restrictions v2 default policy that blocks all external tenant access using foreign identities (for example, `user@externaltenant.com`).
+> - Create a partner tenant policy for each tenant listed in your v1 allowlist by following the steps at [Step 2: Configure tenant restrictions v2 for specific partners](#step-2-configure-tenant-restrictions-v2-for-specific-partners).
+> - Allow only specific users to access specific applications. This design increases your security posture by limiting access to necessary users only.
+
+Step 2: **Blocking Consumer account or Microsoft Account tenant**
+
+**TRv1:** To not allow users to sign in to consumer applications. Trv1 needs the sec-Restrict-Tenant-Access-Policy header to be injected to traffic visiting login.live.com like **sec-Restrict-Tenant-Access-Policy: restrict-msa`**
+
+**TRv2:** With TRv2, the configuration is moved to the server side cloud policy and there is no need for the TRv1 header. 
+
+- On your corporate proxy, you should remove tenant restrictions v1 header **sec-Restrict-Tenant-Access-Policy: restrict-msa`**.
+- Create a partner tenant policy for Microsoft Accounts tenant by following [Step 2: Configure tenant restrictions v2 for specific partners](#step-2-configure-tenant-restrictions-v2-for-specific-partners). Because user-level assignment isn't available for MSA tenants, the policy applies to all MSA users. However, application-level granularity is available, and you should limit the applications that MSA or consumer accounts can access to only those applications that are necessary.
+
+> [!NOTE]
+>Blocking the MSA tenant will not block user-less traffic for devices, including:
+>
+>- Traffic for Autopilot, Windows Update, and organizational telemetry.
+>- B2B authentication of consumer accounts, or "passthrough" authentication, where Azure apps and Office.com apps use Microsoft Entra ID to sign in consumer users in a consumer context.
+
+Step 3: **Enable Tenant restrictions v2 on the corporate proxy**
+
+**TRv2:** You can configure the corporate proxy to enable client-side tagging of the tenant restrictions V2 header by using the following corporate proxy setting: **`sec-Restrict-Tenant-Access-Policy: <DirectoryID>:<policyGUID>`**
+
+where `<DirectoryID>` is your Microsoft Entra tenant ID and `<policyGUID>` is the object ID for your cross-tenant access policy.
+
+## Tenant restrictions vs. inbound and outbound settings
 
 Although tenant restrictions are configured along with your cross-tenant access settings, they operate separately from inbound and outbound access settings. Cross-tenant access settings give you control when users sign in with an account from your organization. By contrast, tenant restrictions give you control when users are using an external account. Your inbound and outbound settings for B2B collaboration and B2B direct connect don't affect (and are unaffected by) your tenant restrictions settings.
 
@@ -101,7 +142,7 @@ Think of the different cross-tenant access settings this way:
 - Outbound settings control *internal* account access to *external* apps.
 - Tenant restrictions control *external* account access to *external* apps.
 
-### Tenant restrictions vs. B2B collaboration
+## Tenant restrictions vs. B2B collaboration
 
 When your users need access to external organizations and apps, we recommend enabling tenant restrictions to block external accounts and use B2B collaboration instead. B2B collaboration gives you the ability to:
 
@@ -109,60 +150,6 @@ When your users need access to external organizations and apps, we recommend ena
 - Manage inbound and outbound access.
 - Terminate sessions and credentials when a B2B collaboration user's employment status changes or their credentials are breached.
 - Use sign-in logs to view details about the B2B collaboration user.
-
-### Tenant restrictions and Microsoft Teams (preview)
-
-Teams by default has open federation, which means we don't block anyone joining a meeting hosted by an external tenant. For greater control over access to Teams meetings, you can use [Federation Controls](/microsoftteams/trusted-organizations-external-meetings-chat) in Teams to allow or block specific tenants, along with tenant restrictions v2 to block anonymous access to Teams meetings. To enforce tenant restrictions for Teams, you need to configure tenant restrictions v2 in your Microsoft Entra cross-tenant access settings. You also need to set up Federation Controls in the Teams Admin portal and restart Teams. Tenant restrictions implemented on the corporate proxy won't block anonymous access to Teams meetings, SharePoint files, and other resources that don't require authentication.
-
-- Teams currently allows users to join <i>any</i> externally hosted meeting using their corporate/home provided identity. You can use outbound cross-tenant access settings to control users with corporate/home provided identity to join externally hosted Teams meetings.
-- Tenant restrictions prevent users from using an externally issued identity to join Teams meetings.
-
-> [!NOTE]
-> Microsoft Teams app has dependency on SharePoint Online and Exchange Online apps. We recommend setting the TRv2 policy on the Office 365 app instead of Microsoft Teams Services or SharePoint Online or Exchange Online separately. If you allow/block one of the applications(SPO or EXO etc.) that is part of Office 365 it will also affect apps like Microsoft Teams. Similarly, if Microsoft Teams app is allowed/blocked, SPO and EXO with in Teams app will be impacted.
-
-#### Pure Anonymous Meeting join
-
-Tenant restrictions v2 automatically block all unauthenticated and externally issued identity access to externally hosted Teams meetings.
-For example, suppose Contoso uses Teams Federation Controls to block the Fabrikam tenant. If someone with a Contoso device uses a Fabrikam account to join a Contoso Teams meeting, they're allowed into the meeting as an anonymous user. Now, if Contoso also enables tenant restrictions v2, Teams blocks anonymous access, and the user isn't able to join the meeting.
-
-#### Meeting join using an externally issued identity
-
-You can configure the tenant restrictions v2 policy to allow specific users or groups with externally issued identities to join specific externally hosted Teams meetings. With this configuration, users can sign in to Teams with their externally issued identities and join the specified tenant's externally hosted Teams meetings.
-
-
-| Auth identity | Authenticated session  | Result |
-|----------------------|---------|---------|
-|Tenant Member users (authenticated session)<br></br> Example: A user uses their home identity as a member user (for example, user@mytenant.com) | Authenticated |  Tenant restrictions v2 allows access to the Teams meeting. TRv2 never get applied to tenant member users. Cross tenant access inbound/outbound policy applies.  |
-|Anonymous (no authenticated session) <br></br> Example: A user tries to use an unauthenticated session, for example in an InPrivate browser window, to access a Teams meeting. | Not authenticated |  Tenant restrictions v2 blocks access to the Teams meeting.  |
-|Externally issued identity (authenticated session)<br></br> Example: A user uses any identity other than their home identity (for example, user@externaltenant.com) | Authenticated as an externally issued identity |  Allow or block access to the Teams meeting per Tenant restrictions v2 policy. If allowed by the policy, the user can join the meeting. Otherwise access is blocked. |   
-
-### Tenant restrictions v2 and SharePoint Online
-
-SharePoint Online supports tenant restrictions v2 on both the authentication plane and the data plane.
-
-#### Authenticated sessions
-
-When tenant restrictions v2 are enabled on a tenant, unauthorized access is blocked during authentication. If a user directly accesses a SharePoint Online resource without an authenticated session, they're prompted to sign in. If the tenant restrictions v2 policy allows access, the user can access the resource; otherwise, access is blocked.
-
-#### Anonymous access (preview)
-
-If a user tries to access an anonymous file using their home tenant/corporate identity, they're able to access the file. But if the user tries to access the anonymous file using any externally issued identity, access is blocked.
-
-For example, say a user is using a managed device configured with tenant restrictions v2 for Tenant A. If they select an anonymous access link generated for a Tenant A resource, they should be able to access the resource anonymously. But if they select an anonymous access link generated for Tenant B SharePoint Online, they're prompted to sign-in. Anonymous access to resources using an externally issued identity is always blocked.
-
-### Tenant restrictions v2 and OneDrive
-
-#### Authenticated sessions
-
-When tenant restrictions v2 are enabled on a tenant, unauthorized access is blocked during authentication. If a user directly accesses a OneDrive for Business without an authenticated session, they're prompted to sign in. If the tenant restrictions v2 policy allows access, the user can access the resource; otherwise, access is blocked.
-
-#### Anonymous access (preview)
-
-Like SharePoint, OneDrive for Business supports tenant restrictions v2 on both the authentication plane and the data plane. Blocking anonymous access to OneDrive for business is also supported. For example, tenant restrictions v2 policy enforcement works at the OneDrive for Business endpoint (microsoft-my.sharepoint.com).
-
-#### Not in scope
-
-OneDrive for consumer accounts (via onedrive.live.com) doesn't support tenant restrictions v2. Some URLs (such as onedrive.live.com) are unconverged and use our legacy stack. When a user accesses the OneDrive consumer tenant through these URLs, the policy isn't enforced. As a workaround, you can block https://onedrive.live.com/ at the proxy level.
 
 ## Prerequisites
 
@@ -369,52 +356,6 @@ Tenant restrictions v2 policies can't be directly enforced on non-Windows 10, Wi
 
    This header enforces your tenant restrictions v2 policy on all sign-ins on your network. This header doesn't block anonymous access to Teams meetings, SharePoint files, or other resources that don't require authentication.
 
-### Migrate tenant restrictions v1 policies to v2
-
-Migrating tenant restriction policies from v1 to v2 is a one-time operation. After migration, no client-side changes are required. You can make any subsequent policy changes via the Microsoft Entra admin center.
-
-On your corporate proxy, you can move from tenant restrictions v1 to tenant restrictions v2 by changing this tenant restrictions v1 header:
-
-`Restrict-Access-To-Tenants: <allowed-tenant-list>`
-
-to this tenant restrictions v2 header:
-
-`sec-Restrict-Tenant-Access-Policy: <DirectoryID>:<policyGUID>`
-
-where `<DirectoryID>` is your Microsoft Entra tenant ID and `<policyGUID>` is the object ID for your cross-tenant access policy.
-
-#### Tenant restrictions v1 settings on the corporate proxy
-
-The following example shows an existing tenant restrictions V1 setting on the corporate proxy:
-
-`Restrict-Access-To-Tenants: contoso.com, fabrikam.com, dogfood.com sec-Restrict-Tenant-Access-Policy: restrict-msa`
-
-[Learn more](~/identity/enterprise-apps/tenant-restrictions.md) about tenant restrictions v1.
-
-#### Tenant restrictions v2 settings on the corporate proxy
-
-You can configure the corporate proxy to enable client-side tagging of the tenant restrictions V2 header by using the following corporate proxy setting:
-
-`sec-Restrict-Tenant-Access-Policy: <DirectoryID>:<policyGUID>`
-   
-where `<DirectoryID>` is your Microsoft Entra tenant ID and `<policyGUID>` is the object ID for your cross-tenant access policy. For details, see [Set up tenant restrictions v2 on your corporate proxy](#option-2-set-up-tenant-restrictions-v2-on-your-corporate-proxy)
-
-You can configure server-side cloud tenant restrictions v2 policies by following the steps at [Step 2: Configure tenant restrictions v2 for specific partners](#step-2-configure-tenant-restrictions-v2-for-specific-partners). Be sure to follow these guidelines:
-
-- Keep the tenant restrictions v2 default policy that blocks all external tenant access using foreign identities (for example, `user@externaltenant.com`).
-
-- Create a partner tenant policy for each tenant listed in your v1 allowlist by following the steps at [Step 2: Configure tenant restrictions v2 for specific partners](#step-2-configure-tenant-restrictions-v2-for-specific-partners).
-
-- Allow only specific users to access specific applications. This design increases your security posture by limiting access to necessary users only.
-
-- Tenant restrictions v2 policies treat MSA as a partner tenant. Create a partner tenant configuration for MSA by following the steps in [Step 2: Configure tenant restrictions v2 for specific partners](#step-2-configure-tenant-restrictions-v2-for-specific-partners). Because user-level assignment isn't available for MSA tenants, the policy applies to all MSA users. However, application-level granularity is available, and you should limit the applications that MSA or consumer accounts can access to only those applications that are necessary.
-
-> [!NOTE]
->Blocking the MSA tenant will not block user-less traffic for devices, including:
->
->- Traffic for Autopilot, Windows Update, and organizational telemetry.
->- B2B authentication of consumer accounts, or "passthrough" authentication, where Azure apps and Office.com apps use Microsoft Entra ID to sign in consumer users in a consumer context.
-
 #### Tenant restrictions v2 with no support for break and inspect
 
 For non-Windows platforms, you can break and inspect traffic to add the tenant restrictions v2 parameters into the header via proxy. However, some platforms don't support break and inspect, so tenant restrictions v2 don't work. For these platforms, the following features of Microsoft Entra ID can provide protection:
@@ -461,9 +402,9 @@ To test the tenant restrictions v2 policy on a device, follow these steps.
    - **Microsoft Entra Directory ID**: Enter the **Tenant ID** you recorded earlier. by signing in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an administrator and browsing to **Identity** > **Overview** and selecting the **Overview** tab.
    - **Policy GUID**: The ID for your cross-tenant access policy. It's the **Policy ID** you recorded earlier. You can also find this ID by using the Graph Explorer command [https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/default](https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/default).
 
-[//]: # (BROKEN LINK HttpLinkUnauthorized ABOVE: https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/default)
+    [//]: # (BROKEN LINK HttpLinkUnauthorized ABOVE: https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/default)
 
-   :::image type="content" source="media/tenant-restrictions-v2/windows-cloud-policy-details.png" alt-text="Screenshot of Windows Cloud Policy Details.":::
+     :::image type="content" source="media/tenant-restrictions-v2/windows-cloud-policy-details.png" alt-text="Screenshot of Windows Cloud Policy Details.":::
 
 1. Select **OK**.
 
@@ -493,6 +434,60 @@ View events related to tenant restrictions in Event Viewer.
 
 1. In Event Viewer, open **Applications and Services Logs**.
 1. Navigate to **Microsoft** > **Windows** > **TenantRestrictions** > **Operational** and look for events.  
+
+## Tenant restrictions and Microsoft Teams (preview)
+
+Teams by default has open federation, which means we don't block anyone joining a meeting hosted by an external tenant. For greater control over access to Teams meetings, you can use [Federation Controls](/microsoftteams/trusted-organizations-external-meetings-chat) in Teams to allow or block specific tenants, along with tenant restrictions v2 to block anonymous access to Teams meetings. To enforce tenant restrictions for Teams, you need to configure tenant restrictions v2 in your Microsoft Entra cross-tenant access settings. You also need to set up Federation Controls in the Teams Admin portal and restart Teams. Tenant restrictions implemented on the corporate proxy won't block anonymous access to Teams meetings, SharePoint files, and other resources that don't require authentication.
+
+- Teams currently allows users to join <i>any</i> externally hosted meeting using their corporate/home provided identity. You can use outbound cross-tenant access settings to control users with corporate/home provided identity to join externally hosted Teams meetings.
+- Tenant restrictions prevent users from using an externally issued identity to join Teams meetings.
+
+> [!NOTE]
+> Microsoft Teams app has dependency on SharePoint Online and Exchange Online apps. We recommend setting the TRv2 policy on the Office 365 app instead of Microsoft Teams Services or SharePoint Online or Exchange Online separately. If you allow/block one of the applications(SPO or EXO etc.) that is part of Office 365 it will also affect apps like Microsoft Teams. Similarly, if Microsoft Teams app is allowed/blocked, SPO and EXO with in Teams app will be impacted.
+
+### Pure anonymous meeting join
+
+Tenant restrictions v2 automatically block all unauthenticated and externally issued identity access to externally hosted Teams meetings.
+For example, suppose Contoso uses Teams Federation Controls to block the Fabrikam tenant. If someone with a Contoso device uses a Fabrikam account to join a Contoso Teams meeting, they're allowed into the meeting as an anonymous user. Now, if Contoso also enables tenant restrictions v2, Teams blocks anonymous access, and the user isn't able to join the meeting.
+
+### Meeting join using an externally issued identity
+
+You can configure the tenant restrictions v2 policy to allow specific users or groups with externally issued identities to join specific externally hosted Teams meetings. With this configuration, users can sign in to Teams with their externally issued identities and join the specified tenant's externally hosted Teams meetings.
+
+
+| Auth identity | Authenticated session  | Result |
+|----------------------|---------|---------|
+|Tenant Member users (authenticated session)<br></br> Example: A user uses their home identity as a member user (for example, user@mytenant.com) | Authenticated |  Tenant restrictions v2 allows access to the Teams meeting. TRv2 never get applied to tenant member users. Cross tenant access inbound/outbound policy applies.  |
+|Anonymous (no authenticated session) <br></br> Example: A user tries to use an unauthenticated session, for example in an InPrivate browser window, to access a Teams meeting. | Not authenticated |  Tenant restrictions v2 blocks access to the Teams meeting.  |
+|Externally issued identity (authenticated session)<br></br> Example: A user uses any identity other than their home identity (for example, user@externaltenant.com) | Authenticated as an externally issued identity |  Allow or block access to the Teams meeting per Tenant restrictions v2 policy. If allowed by the policy, the user can join the meeting. Otherwise access is blocked. |   
+
+## Tenant restrictions v2 and SharePoint Online
+
+SharePoint Online supports tenant restrictions v2 on both the authentication plane and the data plane.
+
+### Authenticated sessions
+
+When tenant restrictions v2 are enabled on a tenant, unauthorized access is blocked during authentication. If a user directly accesses a SharePoint Online resource without an authenticated session, they're prompted to sign in. If the tenant restrictions v2 policy allows access, the user can access the resource; otherwise, access is blocked.
+
+### Anonymous access (preview)
+
+If a user tries to access an anonymous file using their home tenant/corporate identity, they're able to access the file. But if the user tries to access the anonymous file using any externally issued identity, access is blocked.
+
+For example, say a user is using a managed device configured with tenant restrictions v2 for Tenant A. If they select an anonymous access link generated for a Tenant A resource, they should be able to access the resource anonymously. But if they select an anonymous access link generated for Tenant B SharePoint Online, they're prompted to sign-in. Anonymous access to resources using an externally issued identity is always blocked.
+
+## Tenant restrictions v2 and OneDrive
+
+### Authenticated sessions
+
+When tenant restrictions v2 are enabled on a tenant, unauthorized access is blocked during authentication. If a user directly accesses a OneDrive for Business without an authenticated session, they're prompted to sign in. If the tenant restrictions v2 policy allows access, the user can access the resource; otherwise, access is blocked.
+
+### Anonymous access (preview)
+
+Like SharePoint, OneDrive for Business supports tenant restrictions v2 on both the authentication plane and the data plane. Blocking anonymous access to OneDrive for business is also supported. For example, tenant restrictions v2 policy enforcement works at the OneDrive for Business endpoint (microsoft-my.sharepoint.com).
+
+### Not in scope
+
+OneDrive for consumer accounts (via onedrive.live.com) doesn't support tenant restrictions v2. Some URLs (such as onedrive.live.com) are unconverged and use our legacy stack. When a user accesses the OneDrive consumer tenant through these URLs, the policy isn't enforced. As a workaround, you can block https://onedrive.live.com/ at the proxy level.
 
 ## Sign-in logs
 

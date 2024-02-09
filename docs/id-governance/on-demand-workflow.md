@@ -6,10 +6,9 @@ ms.author: owinfrey
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: compliance
-ms.workload: identity
-ms.topic: how-to 
+ms.topic: how-to
 ms.date: 05/31/2023
-ms.custom: template-how-to 
+ms.custom: template-how-to
 ---
 
 
@@ -37,7 +36,7 @@ Use the following steps to run a workflow on-demand:
 
 1. On the **select users** tab, select **add users**.
 
-1. On the add users screen, select the users you want to run the on demand workflow for.
+1. On the add users screen, select the users you want to run the on-demand workflow for.
 
      :::image type="content" source="media/on-demand-workflow/on-demand-add-users.png" alt-text="Screenshot of add users for on-demand workflow.":::
 

@@ -6,7 +6,7 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/02/2024
+ms.date: 01/19/2024
 
 ms.author: justinha
 author: justinha
@@ -86,15 +86,9 @@ You need to manually install the following library:
 
 - [Visual C++ Redistributable for Visual Studio 2015](https://www.microsoft.com/download/details.aspx?id=48145)
 
-The following libraries are installed automatically with the extension.
-
-- [Visual C++ Redistributable Packages for Visual Studio 2013 (X64)](https://www.microsoft.com/download/details.aspx?id=40784)
-- [PowerShell module version 1.1.166.0](https://www.powershellgallery.com/packages/MSOnline/1.1.166.0)
-
-The PowerShell module is also installed through a configuration script you run as part of the setup process, if not already present. There's no need to install this module ahead of time if it's not already installed.
+The [Visual C++ Redistributable Packages for Visual Studio 2013 (X64)](https://www.microsoft.com/download/details.aspx?id=40784) library is installed automatically with the extension. Microsoft Graph PowerShell is also installed through a configuration script you run as part of the setup process, if not already present. There's no need to install a module in advance.
 
 ### Obtain the directory tenant ID
-
 
 As part of the configuration of the NPS extension, you must supply administrator credentials and the ID of your Microsoft Entra tenant. To get the tenant ID, complete the following steps:
 
@@ -120,6 +114,7 @@ The NPS server must be able to communicate with the following URLs over TCP port
 
 Additionally, connectivity to the following URLs is required to complete the [setup of the adapter using the provided PowerShell script](#run-the-powershell-script):
 
+* `https://onegetcdn.azureedge.net`
 * `https://login.microsoftonline.com`
 * `https://provisioningapi.microsoftonline.com`
 * `https://aadcdn.msauth.net`
@@ -245,7 +240,7 @@ To provide load-balancing capabilities or for redundancy, repeat these steps on 
    `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
 
    > [!IMPORTANT]
-   > For customers that use the Azure Government or Microsoft Azure operated by 21Vianet clouds, first edit the *AzureMfaNpsExtnConfigSetup.ps1* script to include the *AzureEnvironment* parameters for the required cloud. For example, specify *-AzureEnvironment USGovernment* or *-AzureEnvironment AzureChinaCloud*.
+   > For customers that use the Azure for US Government or Azure operated by 21Vianet clouds, first edit the *AzureMfaNpsExtnConfigSetup.ps1* script to include the *AzureEnvironment* parameters for the required cloud. For example, specify *-AzureEnvironment USGovernment* or *-AzureEnvironment AzureChinaCloud*.
    
    ```powershell
    .\AzureMfaNpsExtnConfigSetup.ps1
@@ -296,7 +291,7 @@ With release *1.0.1.32* of the NPS extension, reading multiple certificates is n
 
 Certificates created by the `AzureMfaNpsExtnConfigSetup.ps1` script are valid for 2 years. Monitor certificates for expiration. Certificates for the NPS extension are placed in the *Local Computer* certificate store under *Personal* and are *Issued To* the tenant ID provided to the installation script.
 
-When a certificate is approaching the expiration date, a new certificate should be created to replace it.  This process is accomplished by running the `AzureMfaNpsExtnConfigSetup.ps1` again and keeping the same tenant ID when prompted. This process should be repeated on each NPS server in your environment.
+When a certificate is approaching the expiration date, a new certificate should be created to replace it. This process is accomplished by running the `AzureMfaNpsExtnConfigSetup.ps1` again and keeping the same tenant ID when prompted. This process should be repeated on each NPS server in your environment.
 
 ## Configure your NPS extension
 
@@ -340,14 +335,14 @@ The [Microsoft Entra multifactor authentication NPS Extension health check scrip
 
 ### How to fix the error "Service principal was not found" while running `AzureMfaNpsExtnConfigSetup.ps1` script? 
 
-If for any reason the "Azure multifactor authentication Client" service principal was not created in the tenant, it can be manually created by running the `New-MsolServicePrincipal` cmdlet as shown below. 
+If for any reason the "Azure multifactor authentication Client" service principal was not created in the tenant, it can be manually created by running PowerShell. 
 
 ```powershell
-import-module MSOnline
-Connect-MsolService
-New-MsolServicePrincipal -AppPrincipalId 981f26a1-7f43-403b-a875-f8b09b8cd720 -DisplayName "Azure Multi-Factor Auth Client"
+Connect-MgGraph -Scopes 'Application.ReadWrite.All'
+New-MgServicePrincipal -AppId 981f26a1-7f43-403b-a875-f8b09b8cd720 -DisplayName "Azure Multi-Factor Auth Client"
 ```
-Once done, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). Browse to **Identity** > **Applications** > **Enterprise applications** > and search for "Azure multifactor authentication Client". Then click **Check properties for this app**. Confirm if the service principal is enabled or disabled. Click the application entry > **Properties**. If the option **Enabled for users to sign-in?** is set to **No**, set it to **Yes**.
+
+Once done, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). Browse to **Identity** > **Applications** > **Enterprise applications** > and search for "Azure multifactor authentication client". Then click **Check properties for this app**. Confirm if the service principal is enabled or disabled. Click the application entry > **Properties**. If the option **Enabled for users to sign-in?** is set to **No**, set it to **Yes**.
 
 Run the `AzureMfaNpsExtnConfigSetup.ps1` script again and it should not return the **Service principal was not found** error. 
 
@@ -364,24 +359,13 @@ Self-signed certificates generated by the `AzureMfaNpsExtnConfigSetup.ps1` scrip
 Open PowerShell command prompt and run the following commands:
 
 ```powershell
-import-module MSOnline
-Connect-MsolService
-Get-MsolServicePrincipalCredential -AppPrincipalId "981f26a1-7f43-403b-a875-f8b09b8cd720" -ReturnKeyValues 1
+Connect-MgGraph -Scopes 'Application.Read.All'
+(Get-MgServicePrincipal -Filter "appid eq '981f26a1-7f43-403b-a875-f8b09b8cd720'" -Property "KeyCredentials").KeyCredentials | Format-List KeyId, DisplayName, StartDateTime, EndDateTime, @{Name = "Key"; Expression = {[System.Convert]::ToBase64String($_.Key)}}, @{Name = "Thumbprint"; Expression = {$Cert = New-object System.Security.Cryptography.X509Certificates.X509Certificate2; $Cert.Import([System.Text.Encoding]::UTF8.GetBytes([System.Convert]::ToBase64String($_.Key))); $Cert.Thumbprint}}
 ```
 
-These commands print all the certificates associating your tenant with your instance of the NPS extension in your PowerShell session. Look for your certificate by exporting your client cert as a *Base-64 encoded X.509(.cer)* file without the private key, and compare it with the list from PowerShell.
+These commands print all the certificates associating your tenant with your instance of the NPS extension in your PowerShell session. Look for your certificate by exporting your client cert as a *Base-64 encoded X.509(.cer)* file without the private key, and compare it with the list from PowerShell. Compare the thumbprint of the certificate installed on the server to this one. The certificate thumbprints should match.
 
-The following command will create a file named *npscertificate* at the root of your *C:* drive in format *.cer*.
-
-```powershell
-import-module MSOnline
-Connect-MsolService
-Get-MsolServicePrincipalCredential -AppPrincipalId "981f26a1-7f43-403b-a875-f8b09b8cd720" -ReturnKeyValues 1 | select -ExpandProperty "value" | out-file c:\npscertificate.cer
-```
-
-After you run this command, go to the root of your *C:* drive, locate the file, and double-click on it. Go to details, and scroll down to "thumbprint". Compare the thumbprint of the certificate installed on the server to this one. The certificate thumbprints should match.
-
-*Valid-From* and *Valid-Until* timestamps, which are in human-readable form, can be used to filter out obvious misfits if the command returns more than one cert.
+*StartDateTime* and *EndDateTime* timestamps, which are in human-readable form, can be used to filter out obvious misfits if the command returns more than one cert.
 
 ### Why cannot I sign in?
 

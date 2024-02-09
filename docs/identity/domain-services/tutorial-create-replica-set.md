@@ -7,11 +7,9 @@ manager: amycolannino
 
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/15/2023
 ms.author: justinha
-
 #Customer intent: As an identity administrator, I want to create and use replica sets in Microsoft Entra Domain Services to provide resiliency or geographical distributed managed domain data.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Authenticate users in your Node.js CLI application - Build app"
+title: "Tutorial: Authenticate users in a Node.js CLI application"
 description: Learn how to authenticate users in a Node.js CLI application registered in a Microsoft Entra ID for customers tenant
  
 author: Dickson-Mwendia
@@ -16,11 +16,9 @@ ms.custom: developer, devx-track-js
 #Customer intent: As a dev, devops, I want to learn how to authenticate users in a Node.js CLI application registered in a Microsoft Entra ID for customers tenant
 ---
 
-# Authenticate users in a Node.js CLI application - Build app 
+# Tutorial: Authenticate users in a Node.js CLI application
 
-To sign in users in a Node.js CLI application, you implement the authorization code flow by following these steps:
-
-In this article, the last of a three-part tutorial, you'll: 
+This tutorial is the final part of a tutorial series that demonstrates building a Node.js command line interface (CLI) app and preparing it for authentication using the Microsoft Entra admin center. In [part 2 of this series](./tutorial-cli-app-node-sign-in-prepare-app.md), you built a Node.js CLI application and prepared it for authentication. This tutorial shows you how to authenticate users in the Node.js CLI application you built.
 
 > [!div class="checklist"]
 >
@@ -153,9 +151,7 @@ To run and test your Node.js CLI application, ensure you've replaced the placeho
 
 1. Move back to the terminal and see your authentication information including the ID token claims returned by Microsoft Entra.
 
-## Next steps 
-
-Learn how to: 
+## See also 
 
 - [Enable password reset](how-to-enable-password-reset-customers.md)
 - [Customize branding for your sign-in experience](./how-to-customize-branding-customers.md)
