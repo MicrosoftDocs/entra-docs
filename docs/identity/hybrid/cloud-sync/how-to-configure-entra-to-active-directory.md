@@ -273,9 +273,6 @@ For more information on provisioning logs, see [Enabling provisioning logs](how-
 
 
 ## Next steps 
-
+- [Group writeback with Microsoft Entra Cloud Sync (Preview)](../group-writeback-cloud-sync.md)
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 - [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
-- [Set up group writeback in entitlement management](~/id-governance/entitlement-management-group-writeback.md)
-- [What is provisioning?](../what-is-provisioning.md)
-- [What is Microsoft Entra Connect cloud sync?](what-is-cloud-sync.md)

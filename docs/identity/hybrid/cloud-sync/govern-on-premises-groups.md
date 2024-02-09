@@ -136,6 +136,6 @@ If you're using Azure AD Connect group writeback v2, you'll need to move to clou
 
 
 ## Next Steps
-- [What is Microsoft Entra ID Governance?](../../../id-governance/identity-governance-overview.md)
-- [What is provisioning?](../what-is-provisioning.md)
-- [What is Microsoft Entra Cloud Sync?](what-is-cloud-sync.md)
+- [Group writeback with Microsoft Entra Cloud Sync (Preview)](../group-writeback-cloud-sync.md)
+- [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
+- [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
