@@ -40,7 +40,7 @@ For Microsoft Entra Connect version *1.1.443.0* and above, *outbound HTTPS* acce
 * *\*.passwordreset.microsoftonline.com*
 * *\*.servicebus.windows.net*
 
-[Azure for US Goverment endpoints](/azure/azure-government/compare-azure-government-global-azure#guidance-for-developers):
+[Azure for US Government endpoints](/azure/azure-government/compare-azure-government-global-azure#guidance-for-developers):
 
 * *\*.passwordreset.microsoftonline.us*
 * *\*.servicebus.usgovcloudapi.net*
