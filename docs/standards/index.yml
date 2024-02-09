@@ -34,6 +34,8 @@ landingContent:
             url: configure-for-cmmc-compliance.md
           - text: Configure Microsoft Entra ID for HIPAA compliance
             url: hipaa-configure-for-compliance.md
+          - text: Configure Microsoft Entra ID for HITRUST compliance
+            url: hipaa-hitrust-controls.md            
           - text: Configure Microsoft Entra ID for PCI-DSS compliance
             url: pci-dss-guidance.md
 
