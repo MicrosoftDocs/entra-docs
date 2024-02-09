@@ -87,7 +87,7 @@ Use the following steps for applications to use new groups.
 
 #### Create application and group
  1.  Using the Microsoft Entra admin center, create an application in Microsoft Entra ID representing the AD-based application, and configure the application to require user assignment.
- 2.  If you are using application proxy to enable users to connect to the application, then configure the application proxy.
+ 2.  If you're using application proxy to enable users to connect to the application, then configure the application proxy.
  3.	Create a new security group in Microsoft Entra ID.
  4.	Use [Group Provisioning to AD](how-to-configure-entra-to-active-directory.md) to provision this group to AD.  
  5.  Launch Active Directory Users and Computers, and wait for the resulting new AD group to be created in the AD domain.  When it's present, record the distinguished name, domain, account name and SID of the new AD group.
