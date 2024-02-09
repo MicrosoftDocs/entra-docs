@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 02/07/2024
+ms.date: 02/09/2024
 ms.author: sarahlipsey
 ms.reviewer: jeffsta
 
@@ -102,9 +102,9 @@ Use the following tips when adding and editing the name properties of a user:
 - The name a user expects to see might not correspond to their legal name used on formal identity documents.
 - Use the **display name** field to accommodate your organization's approach or policy for displaying names.
 - Don't use the **display name** field as an alternative name for the user, which can lead to an inconsistent representation of the user across those products where first and last name are used and those products where display name is used.
-- We recommend storing legal names or sensitive non-shareable information in a human capital management (HCM) system.
-  - This system should be the source of truth for the user's legal name, with appropriate access controls change management workflows, and safeguards.
-  - Data from your organization's HCM system can be synced to Microsoft Entra ID using HR driven provisioning. For more information, see [What is HR driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md).
+
+> [!NOTE]
+> Data from your organization's HR system can be synced to Microsoft Entra ID using HR driven provisioning. Consider the [user name guidance](#guidance-on-user-name-properties) before syncing the legal name of a user. For more information, see [**What is HR driven provisioning**](../identity/app-provisioning/what-is-hr-driven-provisioning.md).
 
 ### User name examples
 
