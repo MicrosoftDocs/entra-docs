@@ -171,9 +171,9 @@ If you already installed a connector, reinstall it to get the latest version. To
 
 If you choose to have more than one Windows server for your on-premises applications, you need to install and register the connector on each server. You can organize the connectors into connector groups. For more information, see [Connector groups](./application-proxy-connector-groups.md).
 
-If you install connectors in different regions, you should optimize traffic by selecting the closest application proxy cloud service region with each connector group. To learn more, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-network-topology.md)
+If you install connectors in different regions, you should optimize traffic by selecting the closest application proxy cloud service region with each connector group. To learn more, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-network-topology.md).
 
-If your organization uses proxy servers to connect to the internet, you need to configure them for application proxy.  For more information, see [Work with existing on-premises proxy servers](./application-proxy-configure-connectors-with-proxy-servers.md).
+If your organization uses proxy servers to connect to the internet, you need to configure them for application proxy. For more information, see [Work with existing on-premises proxy servers](./application-proxy-configure-connectors-with-proxy-servers.md).
 
 For information about connectors, capacity planning, and how they stay up-to-date, see [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md).
 
