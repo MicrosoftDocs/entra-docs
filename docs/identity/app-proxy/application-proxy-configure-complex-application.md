@@ -56,7 +56,7 @@ This article shows you how to configure wildcard application publishing in your 
 ## Configure application segments for complex application. 
 
 > [!NOTE]
-> Two application segment per complex distributed application are supported for [Microsoft Entra ID P1 or P2 subscription](https://azure.microsoft.com/pricing/details/active-directory). License requirement for more than two application segments per complex application to be announced soon.
+> Two application segment per complex distributed application are supported for [Microsoft Entra ID P1 or P2 subscription](https://azure.microsoft.com/pricing/details/active-directory).
 
 To publish a complex distributed app through application proxy with application segments:
 
