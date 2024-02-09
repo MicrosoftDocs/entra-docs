@@ -112,7 +112,7 @@ If the connector group that is assigned to the Complex App isn't in the region o
 
 For more detailed instructions for application proxy, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
 
-## See also
+## Next steps
 - [Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md) 
 - [Plan a Microsoft Entra application proxy deployment](conceptual-deployment-plan.md) 
 - [Remote access to on-premises applications through Microsoft Entra application proxy](application-proxy.md)
