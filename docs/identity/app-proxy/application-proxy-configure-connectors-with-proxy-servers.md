@@ -119,7 +119,7 @@ If your firewall or proxy allows you to configure DNS allowlists, you can allow 
 If you can't allow connectivity by Fully Qualified Domain Name (FQDN) and need to specify IP ranges instead, use these options:
 
 * Allow the connector outbound access to all destinations.
-* Allow the connector outbound access to all of the Azure datacenter IP ranges. The challenge with using the list of Azure datacenter IP ranges is that they are updated weekly. You need to put a process in place to ensure that your access rules are updated accordingly. Only using a subset of the IP addresses causes your configuration to break. To download the latest Azure Data Center IP ranges, navigate to [https://download.microsoft.com](https://download.microsoft.com) and search for "Azure IP Ranges and Service Tags". Be sure to select the relevant cloud. For example, the public cloud IP ranges can be found by searching for "Azure IP Ranges and Service Tags – Public Cloud". The US Government cloud can be found by searching for "Azure IP Ranges and Service Tags – US Government Cloud".
+* Allow the connector outbound access to all of the Azure datacenter IP ranges. The challenge with using the list of Azure datacenter IP ranges is that they are updated weekly. You need to put a process in place to ensure that your access rules are updated accordingly. Only using a subset of the IP addresses causes your configuration to break. The latest Azure Data Center IP ranges are downloaded at [https://download.microsoft.com](https://download.microsoft.com). Use the search term, `Azure IP Ranges and Service Tags`. Be sure to select the relevant cloud. For example, the public cloud IP ranges can be found by searching for `Azure IP Ranges and Service Tags – Public Cloud`. The US Government cloud can be found by searching for `Azure IP Ranges and Service Tags – US Government Cloud`.
 
 #### Proxy authentication
 
@@ -208,4 +208,4 @@ If you see other response codes, such as 407 or 502, that means that the proxy i
 ## Next steps
 
 - [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md)
-- [Microsoft Question and Answer (Q&A) page for Microsoft Entra ID](/answers/tags/455/entra-id)
+- [Visit the Microsoft Question and Answer (Q&A) page for Microsoft Entra ID](/answers/tags/455/entra-id)
