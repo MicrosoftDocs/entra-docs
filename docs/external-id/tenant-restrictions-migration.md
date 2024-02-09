@@ -6,7 +6,7 @@ manager: martinco
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
-ms.date: 02/08/2024
+ms.date: 02/09/2024
 ms.author: gasinh
 ms.reviewer: jebley
 ms.collection: M365-identity-device-management
@@ -17,18 +17,18 @@ ms.custom: enterprise-apps-article
 
 # Plan a tenant restrictions v1 migration to tenant restrictions v2
 
-Administrators use [tenant restrictions v1 (TRV1)](~/identity/enterprise-apps/tenant-restrictions.md) to control user access to external tenants on their network. However, [tenant restrictions v2 (TRV2)](tenant-restrictions-v2.md) with the cross tenant access settings feature adds tenant-level restrictions and more granularity such as individual user, group, and application controls. TRv2 moves policy management from network proxies to a cloud-based portal. Organizations no longer hit a maximum number of targeted tenants due to proxy header size limitations. 
+Administrators use [tenant restrictions v1](~/identity/enterprise-apps/tenant-restrictions.md) to control user access to external tenants on their network. However, [tenant restrictions v2](tenant-restrictions-v2.md) with the cross tenant access settings feature adds tenant-level restrictions and more granularity such as individual user, group, and application controls. Tenant restrictions v2 moves policy management from network proxies to a cloud-based portal. Organizations no longer hit a maximum number of targeted tenants due to proxy header size limitations. 
 
-Migration from TRV1 to TRV2 is a one-time process with no other licensing requirements. As you plan the migration, include stakeholders from networking and identity teams. 
+Migration from tenant restrictions v1 to tenant restrictions v2 is a one-time process with no other licensing requirements. As you plan the migration, include stakeholders from networking and identity teams. 
 
 ## Prerequisites
 
 Ensure the following prerequisites are met. 
 
-* Administrator access to proxies injecting the TRV1 headers
+* Administrator access to proxies injecting the tenant restrictions v1 headers
   * Proxies can use on-premises or a cloud-based service
 * [Microsoft Entra ID P1 or P2](~/fundamentals/get-started-premium.md) licenses
-* Migration feasiblitiy: [TRV2 unsupported scenarios](tenant-restrictions-v2.md)
+* Migration feasiblitiy: [Tenant restrictions v2 unsupported scenarios](tenant-restrictions-v2.md)
 
 ## Required roles
 
@@ -50,11 +50,11 @@ Microsoft.directory/crossTenantAccessPolicy/
 
 Obtain the current header string that your proxies inject. Evaluate current policy and remove unwanted tenant IDs, or allowed destinations. After the evaluation, create a list of external tenant IDs and/or external domains. 
 
-Configure the cross-tenant access settings and TRV2 policies for the migration. Cross-tenant access outbound settings define tenants that internal identities access. In cross-tenant access settings, TRV2 defines which tenants other external identities access while on your managed network. 
+Configure the cross-tenant access settings and TRV2 policies for the migration. Cross-tenant access outbound settings define tenants that internal identities access. In cross-tenant access settings, tenant restrictions v2 defines which tenants other external identities access while on your managed network. 
 
 ## Technical considerations
 
-When you configure cross-tenant access outbound settings, the policy takes effect within one hour and is evaluated in addition to TRV1 policy. Cross-tenant access settings and TRV1 are evaluated and the most restrictive is applied. Because this action can affect users, mirror the TRV1 policy as much as possible in the new policies to avoid negatively impacting users. The TRV2 policy you configure in cross-tenant access settings takes effect after you update your proxies with the new header. 
+When you configure cross-tenant access outbound settings, the policy takes effect within one hour and is evaluated in addition to tenant restrictions v1 policy. Cross-tenant access settings and tenant restrictions v1 are evaluated and the most restrictive is applied. Because this action can affect users, mirror the tenant restrictions v1 policy as much as possible in the new policies to avoid negatively impacting users. The tenant restrictions v2 policy you configure in cross-tenant access settings takes effect after you update your proxies with the new header. 
 
    > [!NOTE]
    > The following section has migration and configuration management for common scenarios. Use this guidance to help craft the policy your organization needs. 
@@ -98,32 +98,32 @@ Allow internal identities such as employees, and external identities such as con
    > To target consumer Microsoft accounts (MSAs), add an organization with the following tenant ID: 9188040d-6c67-4c5b-b112-36a304b66dad. 
 
    > [!TIP]
-   > The TRV2 policy is created but not in effect.
+   > The tenant restrictions v2 policy is created but not in effect.
 
-## Enable TRV2
+## Enable tenant restrictions v2
 
 Create a new header using your tenant ID and policy ID values. Update your network proxies to inject a new header. 
 
    > [!NOTE]
-   > When you update a network proxy to inject the new sec-Restrict-Tenant-Access-Policy header, remove the two TRV1 headers: Restrict-Access-To-Tenants and Restrict-Access-Context.  
+   > When you update a network proxy to inject the new sec-Restrict-Tenant-Access-Policy header, remove the two tenant restrictions v1 headers: Restrict-Access-To-Tenants and Restrict-Access-Context.  
 
    > [!TIP]
-   > Update the network proxies in a phased rollout. Save the current TRV1 headers and values.  
+   > Update the network proxies in a phased rollout. Save the current tenant restrictions v1 headers and values.  
 
    > [!IMPORTANT]
    > Create a rollback plan in case you experience issues. 
 
 Confirm proxy support for the following options: 
 
-* **Upgrade one proxy at a time with the TRV2 header** - Users who egress through this router receive the updated header and the new policy applies. Monitor for issues. If no issues arise, update the next proxy and continue until you update all proxies. 
+* **Upgrade one proxy at a time with the tenant restrictions v2 header** - Users who egress through this router receive the updated header and the new policy applies. Monitor for issues. If no issues arise, update the next proxy and continue until you update all proxies. 
 * **Update header injection based on users** - Some proxies require authenticated users and might select which header to inject based on users and groups. Roll out the new TRV2 header to a test group of users. Monitor for issues. If no issues arise, add more users in phases until 100% of traffic is in scope. 
-* **Update the service to apply the new TRV2 header all at one time** - This option isn't recommended. 
+* **Update the service to apply the new tenant restrictions v2 header all at one time** - This option isn't recommended. 
 
 As you roll out the new header updates, test and validate that users experience the expected behaviors. 
 
 ## Monitor
 
-When TRV2 and cross-tenant access outbound settings are deployed, monitor your sign-in logs and/or use the [Cross-tenant activity workbook](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md) to verify users don’t access unauthorized tenants. These tools help identify who accesses what external applications. You can configure cross-tenant access outbound settings and tenant restrictions to limit outbound access based on group membership and/or specific applications. 
+When tenant restrictions v2 and cross-tenant access outbound settings are deployed, monitor your sign-in logs and/or use the [Cross-tenant activity workbook](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md) to verify users don’t access unauthorized tenants. These tools help identify who accesses what external applications. You can configure cross-tenant access outbound settings and tenant restrictions to limit outbound access based on group membership and/or specific applications. 
 
 ## Next steps
 
