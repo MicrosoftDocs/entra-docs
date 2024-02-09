@@ -306,5 +306,5 @@ The error message display in the top-right corner as you try to upload the certi
 
 - [Publish applications using Microsoft Entra application proxy](application-proxy-add-on-premises-application.md)
 - [Enable Application Proxy in the Microsoft Entra admin center](application-proxy-add-on-premises-application.md)
-- [Working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md)
+- [Work with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md)
 - [Configure single sign-on](~/identity/enterprise-apps/plan-sso-deployment.md#choosing-a-single-sign-on-method)
