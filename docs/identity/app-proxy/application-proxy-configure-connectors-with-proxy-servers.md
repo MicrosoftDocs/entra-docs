@@ -114,12 +114,12 @@ Allow access to the following URLs:
 | login.windows.net<br>secure.aadcdn.microsoftonline-p.com<br>&ast;.microsoftonline.com<br>&ast;.microsoftonline-p.com<br>&ast;.msauth.net<br>&ast;.msauthimages.net<br>&ast;.msecnd.net<br>&ast;.msftauth.net<br>&ast;.msftauthimages.net<br>&ast;.phonefactor.net<br>enterpriseregistration.windows.net<br>management.azure.com<br>policykeyservice.dc.ad.msft.net<br>ctldl.windowsupdate.com | 443/HTTPS | The connector uses these URLs during the registration process. |
 | ctldl.windowsupdate.com<br>www.microsoft.com/pkiops | 80/HTTP | The connector uses these URLs during the registration process. |
 
-If your firewall or proxy allows you to configure DNS allow lists, you can allow connections to `*.msappproxy.net` and `*.servicebus.windows.net`.
+If your firewall or proxy allows you to configure DNS allowlists, you can allow connections to `*.msappproxy.net` and `*.servicebus.windows.net`.
 
 If you can't allow connectivity by Fully Qualified Domain Name (FQDN) and need to specify IP ranges instead, use these options:
 
 * Allow the connector outbound access to all destinations.
-* Allow the connector outbound access to all of the Azure datacenter IP ranges. The challenge with using the list of Azure datacenter IP ranges is that it's updated weekly. You need to put a process in place to ensure that your access rules are updated accordingly. Only using a subset of the IP addresses may cause your configuration to break. To download the latest Azure Data Center IP ranges, navigate to [https://download.microsoft.com](https://download.microsoft.com) and search for "Azure IP Ranges and Service Tags". Be sure to select the relevant cloud. For example, the public cloud IP ranges can be found by searching for "Azure IP Ranges and Service Tags – Public Cloud". The US Government cloud can be found by searching for "Azure IP Ranges and Service Tags – US Government Cloud".
+* Allow the connector outbound access to all of the Azure datacenter IP ranges. The challenge with using the list of Azure datacenter IP ranges is that it's updated weekly. You need to put a process in place to ensure that your access rules are updated accordingly. Only using a subset of the IP addresses causes your configuration to break. To download the latest Azure Data Center IP ranges, navigate to [https://download.microsoft.com](https://download.microsoft.com) and search for "Azure IP Ranges and Service Tags". Be sure to select the relevant cloud. For example, the public cloud IP ranges can be found by searching for "Azure IP Ranges and Service Tags – Public Cloud". The US Government cloud can be found by searching for "Azure IP Ranges and Service Tags – US Government Cloud".
 
 #### Proxy authentication
 
@@ -141,8 +141,8 @@ Using a forward proxy for the communication towards the backend application migh
 To enable this, please follow the next steps:
 
 ### Step 1: Add the required registry value to the server
-1. To enable using the default proxy add the following registry value (DWORD) 
-`UseDefaultProxyForBackendRequests = 1` to the Connector configuration registry key located in `HKEY_LOCAL_MACHINE\Software\Microsoft\Microsoft Azure AD App Proxy Connector`.
+1. To enable use of the default proxy, add the registry value **(DWORD)** 
+`UseDefaultProxyForBackendRequests = 1` to the connector configuration registry key located in `HKEY_LOCAL_MACHINE\Software\Microsoft\Microsoft Azure AD App Proxy Connector`.
 
 ### Step 2: Configure the proxy server manually using netsh command
 1. Enable the group policy Make proxy settings per-machine. This is found in: `Computer Configuration\Policies\Administrative Templates\Windows Components\Internet Explorer`. This needs to be set rather than having this policy set to per-user.
