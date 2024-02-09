@@ -114,6 +114,7 @@ npm install @azure/msal-node
 
 ## Next steps
 
-Learn more about the web app scenario that the Microsoft identity platform supports:
+Learn more by building an ASP.NET Core web app that signs in users in the following multi-part tutorial series:
+
 > [!div class="nextstepaction"]
-> [Web app that signs in users scenario](scenario-web-app-sign-user-app-registration.md)
+> [Tutorial: Web app that signs in users](tutorial-web-app-dotnet-register-app.md)

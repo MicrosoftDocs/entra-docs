@@ -278,8 +278,6 @@
           href: howto-call-a-web-api-with-curl.md
         - name: Protected web API
           items:
-            - name: Overview
-              href: scenario-protected-web-api-overview.md
             - name: App registration
               href: scenario-protected-web-api-app-registration.md
             - name: Code configuration
@@ -290,8 +288,6 @@
               href: scenario-protected-web-api-production.md
         - name: Web API that calls an API
           items:
-            - name: Overview
-              href: scenario-web-api-call-api-overview.md
             - name: App registration
               href: scenario-web-api-call-api-app-registration.md
             - name: Code configuration
