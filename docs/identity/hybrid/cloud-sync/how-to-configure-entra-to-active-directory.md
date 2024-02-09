@@ -136,7 +136,7 @@ Currently, the AD Schema is not discoverable and there is fixed set of mappings.
 |adminDescription|Append("Group_",[objectId])|Expression|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Used for filtering out AD to cloud sync</br></br>Not visible in UI|
 |cn|Append(Append(Left(Trim([displayName]),51),"_"),Mid([objectId],25,12))|Expression||
 |description|Left(Trim([description]),448)|Expression||
-|dispalyName|displayName|Direct||
+|displayName|displayName|Direct||
 |isSecurityGroup|True|Constant|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Not visible in UI|
 |member|members|Direct|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Not visible in UI|
 |msDS-ExternalDirectoryObjectId|Append("Group_",[objectId])|Expression|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Used for joining - matching in AD</br></br>Not visible in UI|
