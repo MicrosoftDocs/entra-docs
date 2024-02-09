@@ -14,7 +14,7 @@ ms.reviewer: dhruvinshah
 
 # Understanding Microsoft Entra application proxy Complex application scenario (Preview)
 
-When applications are made up of multiple individual web application using different domain suffixes or different ports or paths in the URL, the individual web application instances must be published in separate Microsoft Entra application proxy apps and the following problems might arise:
+Applications are often made up of multiple individual web application. These situations use different domain suffixes or different ports or paths in the URL. The individual web application instances must be published in separate Microsoft Entra application proxy apps. In these situations, the following problems might arise:
 1. Pre-authentication- The client must separately acquire an access token or cookie for each Microsoft Entra application proxy app. This might lead to additional redirects to login.microsoftonline.com and CORS issues.
 2. CORS issues- Cross-origin resource sharing calls (OPTIONS request) might be triggered to validate if the caller web app is allowed to access the URL of the targeted web app. These will be blocked by the Microsoft Entra application proxy Cloud service, since these requests cannot contain authentication information.
 3. Poor app management- Multiple enterprise apps are created to enable access to a private app adding friction to the app management experience.
@@ -68,7 +68,7 @@ To publish complex distributed app through Application Proxy with application se
 
 3. On the Manage and configure application segments page, select "+ Add app segment"
 
-    :::image type="content" source="./media/application-proxy-configure-complex-application/add-application-segment-1.png" alt-text="Screenshot of Manage and configure application segment blade.":::
+    :::image type="content" source="./media/application-proxy-configure-complex-application/add-application-segment-1.png" alt-text="Screenshot of Manage and configure application segment page.":::
 
 4. In the Internal Url field, enter the internal URL for your app.
 
@@ -103,7 +103,7 @@ Additionally, adding a CNAME record for the application ID in the same DNS zone 
 
 >`<yourAppId>` > `<yourAADTenantId>.tenant.runtime.msappproxy.net`
 
-If the connector group that is assigned to the Complex App is not in the region of the Default connector group, one of the following domain suffix must be used in the DNS entries mentioned above:
+If the connector group that is assigned to the Complex App is not in the region of the Default connector group, one of the following domain suffixes must be used in the DNS entries mentioned above:
 
 | Connector Assigned Region | External URL |
 | ---   | ---         |
