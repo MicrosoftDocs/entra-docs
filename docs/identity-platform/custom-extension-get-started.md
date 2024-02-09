@@ -57,7 +57,7 @@ In this step, you create an HTTP trigger function API in the Azure portal. The f
     | **Function App name** | Globally unique name | A name that identifies the new function app. Valid characters are `a-z` (case insensitive), `0-9`, and `-`.  |
     |**Deploy code or container image**| Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
     | **Runtime stack** | .NET | Your preferred programming language. For this tutorial, select **.NET**.  |
-    |**Version**| 6 (LTS) In0process | Version of the .NET runtime. In-process signifies that you can create and modify functions in the portal |
+    |**Version**| 6 (LTS) In-process | Version of the .NET runtime. In-process signifies that you can create and modify functions in the portal |
     |**Region**| Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
     | **Operating System** | Windows | The operating system is pre-selected for you based on your runtime stack selection. |
     | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
@@ -574,11 +574,8 @@ To test your custom claim provider, follow these steps:
 1. Replace `{App_to_enrich_ID}` with the [My Test application registration ID](#31-get-the-application-id).  
 1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `dateOfBirth`.
 
-
 ## Next steps
 
 - Learn how to configure a [SAML application](custom-extension-configure-saml-app.md) to receive tokens with claims sourced from an external store.
-
 - Learn more about custom claims providers with the [custom claims provider reference](custom-claims-provider-reference.md) article.
-
 - Learn how to [troubleshoot your custom authentication extensions API](custom-extension-troubleshoot.md).
