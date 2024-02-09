@@ -138,3 +138,5 @@ Establish policies and procedures to protect data exchange that contains PHI dat
 * [Audit Controls Safeguard guidance](hipaa-audit-controls.md)
 
 * [Other Safeguard guidance](hipaa-other-controls.md)
+
+* [Configure HITRUST controls](hipaa-hitrust-controls.md)
