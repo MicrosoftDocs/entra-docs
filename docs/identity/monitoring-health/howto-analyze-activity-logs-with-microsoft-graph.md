@@ -21,9 +21,9 @@ This article describes how to analyze Microsoft Entra activity logs with Microso
 
 ## Prerequisites
 
-- For license information, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
+- For license and role requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
 - [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role to consent to required permissions.
- permissions for Microsoft Graph API access
+- 
 
 To make requests to the Microsoft Graph API, you must first:
 

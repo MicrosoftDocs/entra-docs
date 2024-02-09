@@ -31,13 +31,13 @@ To analyze activity logs with Log Analytics, you need:
 
 - A Log Analytics workspace *and* [access to that workspace](/azure/azure-monitor/logs/manage-access)
 
-- The appropriate roles for Azure Monitor:
+- The appropriate role for Azure Monitor:
   - Monitoring Reader
   - Log Analytics Reader
   - Monitoring Contributor
   - Log Analytics Contributor
 
-- The appropriate roles for Microsoft Entra ID:
+- The appropriate role for Microsoft Entra ID:
   - Reports Reader
   - Security Reader
   - Global Reader
@@ -64,7 +64,7 @@ To configure a Log Analytics workspace you need to **create the workspace** and 
 
 ### Create the workspace
 
-1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) and the [Log Analytics Contributor](/azure/azure-monitor/logs/manage-access#log-analytics-contributor) built-in Azure role provides this access.
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) and [Log Analytics Contributor](/azure/azure-monitor/logs/manage-access#log-analytics-contributor).
 
 1. Browse to **Log Analytics workspaces**.
 

@@ -23,7 +23,7 @@ To complete the scenario in this quickstart, you need:
 
 - **Access to a Microsoft Entra tenant**: If you don't have access to a Microsoft Entra tenant, see [Create your Azure free account today](https://azure.microsoft.com/free/?WT.mc_id=A261C142F). 
 - **A test account called Isabella Simonsen**: If you don't know how to create a test account, see [Add cloud-based users](../../fundamentals/add-users.md#add-a-new-user).
-- **Access to the Microsoft Graph API**: If you haven't configured access yet, see [How to configure the prerequisites for the reporting API](howto-configure-prerequisites-for-reporting-api.md).
+- **Access to the Microsoft Graph API**: If you haven't configured access yet, see [Microsoft Graph authentication and authorization basics](/graph/auth/auth-concepts).
 
 ## Perform a failed sign-in
 
