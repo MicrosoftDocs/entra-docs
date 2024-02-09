@@ -125,8 +125,6 @@ Cloud sync will automatically discover your extensions in on-premises Active Dir
 1. The new attributes are available in the drop-down under **source attribute**.
 1. Fill in the type of mapping you want and select **Apply**.
 
-   [![Custom attribute mapping](media/user-provisioning-sync-attributes-for-mapping/schema-1.png)](media/user-provisioning-sync-attributes-for-mapping/schema-1.png#lightbox)
-
 For more information, see [Custom attribute mapping in Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/custom-attribute-mapping.md)
 
 <a name='create-an-extension-attribute-using-azure-ad-connect'></a>
@@ -139,19 +137,13 @@ If users who will access the applications originate in on-premises Active Direct
 
 1. Open the Microsoft Entra Connect wizard, choose Tasks, and then choose **Customize synchronization options**.
 
-   ![Microsoft Entra Connect wizard Additional tasks page](./media/user-provisioning-sync-attributes-for-mapping/entra-connect-customize.png)
-
 2. Sign in as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
 3. On the **Optional Features** page, select **Directory extension attribute sync**.
 
-   ![Microsoft Entra Connect wizard Optional features page](./media/user-provisioning-sync-attributes-for-mapping/entra-connect-directory-extension-attribute-sync.png)
-
 4. Select the attribute(s) you want to extend to Microsoft Entra ID.
    > [!NOTE]
    > The search under **Available Attributes** is case sensitive.
-
-   ![Screenshot that shows the "Directory extensions" selection page](./media/user-provisioning-sync-attributes-for-mapping/entra-connect-directory-extensions.png)
 
 5. Finish the Microsoft Entra Connect wizard and allow a full synchronization cycle to run. When the cycle is complete, the schema is extended and the new values are synchronized between your on-premises AD and Microsoft Entra ID.
 
