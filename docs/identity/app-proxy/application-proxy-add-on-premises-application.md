@@ -163,7 +163,7 @@ To install the connector:
 1. At the bottom of the window, select **Run** to install the connector. An install wizard opens.
 1. Install the service by following the instructions in the wizard. When you're prompted to register the connector with the application proxy for your Microsoft Entra tenant, provide your application administrator credentials.
 
-    - For Internet Explorer (IE), if **IE Enhanced Security Configuration** is set to **On**, you won't see the registration screen. To get access, follow the instructions in the error message. Make sure that **Internet Explorer Enhanced Security Configuration** is set to **Off**.
+    - If **IE Enhanced Security Configuration** is set to **On** in Internet Explorer (IE), the registration screen is not visible. To get access, follow the instructions in the error message. Make sure that **Internet Explorer Enhanced Security Configuration** is set to **Off**.
 
 ### General remarks
 
