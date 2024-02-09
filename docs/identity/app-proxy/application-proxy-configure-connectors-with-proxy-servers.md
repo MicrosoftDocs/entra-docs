@@ -28,7 +28,7 @@ For more information about how connectors work, see [Understand Microsoft Entra 
 
 Connectors have underlying OS components that make outbound requests. These components automatically attempt to locate a proxy server on the network using Web Proxy Auto-Discovery (WPAD).
 
-The OS components attempt to locate a proxy server by carrying out a DNS lookup for wpad.domainsuffix. If the lookup resolves in DNS, an HTTP request is then made to the IP address for wpad.dat. This request becomes the proxy configuration script in your environment. The connector uses this script to select an outbound proxy server. However, connector traffic might still not go through, because of additional configuration settings needed on the proxy.
+The OS components attempt to locate a proxy server by carrying out a Domain Name System (DNS) lookup for wpad.domainsuffix. If the lookup resolves in DNS, an HTTP request is then made to the IP address for wpad.dat. This request becomes the proxy configuration script in your environment. The connector uses this script to select an outbound proxy server. However, connector traffic might still not go through, because of additional configuration settings needed on the proxy.
 
 You can configure the connector to bypass your on-premises proxy to ensure that it uses direct connectivity to the Azure services. We recommend this approach, as long as your network policy allows for it, because it means that you have one less configuration to maintain.
 
@@ -101,7 +101,7 @@ There are four aspects to consider at the outbound proxy:
 * Proxy outbound rules
 * Proxy authentication
 * Proxy ports
-* TLS inspection
+* Transport Layer Security (TLS) inspection
 
 #### Proxy outbound rules
 
@@ -116,7 +116,7 @@ Allow access to the following URLs:
 
 If your firewall or proxy allows you to configure DNS allow lists, you can allow connections to \*.msappproxy.net and \*.servicebus.windows.net.
 
-If you can't allow connectivity by FQDN and need to specify IP ranges instead, use these options:
+If you can't allow connectivity by Fully Qualified Domain Name (FQDN) and need to specify IP ranges instead, use these options:
 
 * Allow the connector outbound access to all destinations.
 * Allow the connector outbound access to all of the Azure datacenter IP ranges. The challenge with using the list of Azure datacenter IP ranges is that it's updated weekly. You need to put a process in place to ensure that your access rules are updated accordingly. Only using a subset of the IP addresses may cause your configuration to break. To download the latest Azure Data Center IP ranges, navigate to [https://download.microsoft.com](https://download.microsoft.com) and search for "Azure IP Ranges and Service Tags". Be sure to select the relevant cloud. For example, the public cloud IP ranges can be found with "Azure IP Ranges and Service Tags – Public Cloud". The US Government cloud can be found by searching for "Azure IP Ranges and Service Tags – US Government Cloud".
@@ -130,7 +130,7 @@ Proxy authentication is not currently supported. Our current recommendation is t
 The connector makes outbound TLS-based connections by using the CONNECT method. This method essentially sets up a tunnel through the outbound proxy. Configure the proxy server to allow tunneling to ports 443 and 80.
 
 > [!NOTE]
-> When Service Bus runs over HTTPS, it uses port 443. However, by default, Service Bus attempts direct TCP connections and falls back to HTTPS only if direct connectivity fails.
+> When Service Bus runs over HTTPS, it uses port 443. However, by default, Service Bus attempts direct Transmission Control Protocol (TCP) connections and falls back to HTTPS only if direct connectivity fails.
 
 #### TLS inspection
 
@@ -191,7 +191,7 @@ If you configured your Application Proxy connector to bypass the proxy servers a
 
 Use the Message Analyzer filter to identify these attempts. Enter `property.TCPSynRetransmit` in the filter box and select **Apply**.
 
-A SYN packet is the first packet sent to establish a TCP connection. If this packet doesn’t return a response, the SYN is reattempted. You can use the preceding filter to see any retransmitted SYNs. Then, you can check whether these SYNs correspond to any connector-related traffic.
+A synchronization (SYN) packet is the first packet sent to establish a TCP connection. If this packet doesn’t return a response, the SYN is reattempted. You can use the preceding filter to see any retransmitted SYN packets. Then, you can check whether these SYN packets correspond to any connector-related traffic.
 
 If you expect the connector to make direct connections to the Azure services, SynRetransmit responses on port 443 are an indication that you have a network or firewall problem.
 
@@ -207,5 +207,5 @@ If you see other response codes, such as 407 or 502, that means that the proxy i
 
 ## Next steps
 
-* [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md)
-* If you have problems with connector connectivity issues, ask your question in the [Microsoft Q&A question page for Microsoft Entra ID](/answers/tags/455/entra-id) or create a ticket with our support team.
+- [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md)
+- [Microsoft Question and Answer (Q&A) page for Microsoft Entra ID](/answers/tags/455/entra-id)
