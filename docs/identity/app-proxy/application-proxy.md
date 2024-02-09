@@ -22,7 +22,7 @@ Microsoft Entra application proxy is:
 
 - **Secure**. On-premises applications can use Azure's authorization controls and security analytics. For example, on-premises applications can use Conditional Access and two-step verification. Application Proxy doesn't require you to open inbound connections through your firewall.
 
-- **Cost-effective**. On-premises solutions typically require you to set up and maintain demilitarized zones (DMZs), edge servers, or other complex infrastructures. Application Proxy runs in the cloud, which makes it easy to use. To use Application Proxy, you don't need to change the network infrastructure or install additional appliances in your on-premises environment.
+- **Cost-effective**. On-premises solutions typically require you to setup and maintain demilitarized zones (DMZs), edge servers, or other complex infrastructures. Application Proxy runs in the cloud, which makes it easy to use. To use Application Proxy, you don't need to change the network infrastructure or install additional appliances in your on-premises environment.
 
 ## What is Application Proxy?
 Application Proxy is a feature of Microsoft Entra ID that enables users to access on-premises web applications from a remote client. Application Proxy includes both the Application Proxy service which runs in the cloud, and the Application Proxy connector which runs on an on-premises server. Microsoft Entra ID, the Application Proxy service, and the Application Proxy connector work together to securely pass the user sign-on token from Microsoft Entra ID to the web application.
@@ -37,18 +37,18 @@ Application Proxy works with:
 
 Application Proxy supports single sign-on. For more information on supported methods, see [Choosing a single sign-on method](~/identity/enterprise-apps/plan-sso-deployment.md#choosing-a-single-sign-on-method).
 
-Application Proxy is recommended for giving remote users access to internal resources. Application Proxy replaces the need for a VPN or reverse proxy. It is not intended for internal users on the corporate network.  These users who unnecessarily use Application Proxy can introduce unexpected and undesirable performance issues.
+Application Proxy is recommended for giving remote users access to internal resources. Application Proxy replaces the need for a VPN or reverse proxy. It isn't intended for internal users on the corporate network.  These users who unnecessarily use Application Proxy can introduce unexpected and undesirable performance issues.
 
 ## How Application Proxy works
 
-The following diagram shows how Microsoft Entra ID and Application Proxy work together to provide single sign-on to on-premises applications.
+The diagram shows how Microsoft Entra ID and Application Proxy work together to provide single sign-on to on-premises applications.
 
 ![Microsoft Entra application proxy diagram](./media/application-proxy/azureappproxxy.png)
 
-1. After the user has accessed the application through an endpoint, the user is directed to the Microsoft Entra sign-in page.
-2. After a successful sign-in, Microsoft Entra ID sends a token to the user's client device.
-3. The client sends the token to the Application Proxy service, which retrieves the user principal name (UPN) and security principal name (SPN) from the token. Application Proxy then sends the request to the Application Proxy connector.
-4. If you have configured single sign-on, the connector performs any additional authentication required on behalf of the user.
+1. A user is directed to the Microsoft Entra sign-in page after accessing the application through an endpoint.
+2. Microsoft Entra ID sends a token to the user's client device after a successful sign-in.
+3. The client sends the token to the Application Proxy service. The service retrieves the user principal name (UPN) and security principal name (SPN) from the token. Application proxy then sends the request to the connector.
+4. The connector performs any additional SSO authentication required on behalf of the user.
 5. The connector sends the request to the on-premises application.
 6. The response is sent through the connector and Application Proxy service to the user.
 
@@ -67,4 +67,5 @@ The following diagram shows how Microsoft Entra ID and Application Proxy work to
 | On-premises application | Finally, the user is able to access an on-premises application.
 
 ## Next steps
-To start using Application Proxy, see [Tutorial: Add an on-premises application for remote access through Application Proxy](application-proxy-add-on-premises-application.md).
+
+- [Tutorial: Add an on-premises application for remote access through Application Proxy](application-proxy-add-on-premises-application.md)
