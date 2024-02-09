@@ -15,9 +15,9 @@ ms.reviewer: dhruvinshah
 # Understanding Microsoft Entra application proxy Complex application scenario (Preview)
 
 Applications are often made up of multiple individual web application. These situations use different domain suffixes or different ports or paths in the URL. The individual web application instances must be published in separate Microsoft Entra application proxy apps. In these situations, the following problems might arise:
-1. Pre-authentication- The client must separately acquire an access token or cookie for each Microsoft Entra application proxy app. This might lead to additional redirects to login.microsoftonline.com and CORS issues.
-2. CORS issues- Cross-origin resource sharing calls (OPTIONS request) might be triggered to validate if the caller web app is allowed to access the URL of the targeted web app. These will be blocked by the Microsoft Entra application proxy Cloud service, since these requests cannot contain authentication information.
-3. Poor app management- Multiple enterprise apps are created to enable access to a private app adding friction to the app management experience.
+- **Pre-authentication:** The client must separately acquire an access token or cookie for each Microsoft Entra application proxy app. The multiple acquisitions leads to additional redirects at sign in to `microsoftonline.com`.
+- **Cross-Origin Resource Sharing (CORS):** CORS calls, using the `OPTIONS` method, are used to validate access for the URL between the caller web app and the targeted web app. The calls are blocked by the Microsoft Entra application proxy Cloud service. Blocking occurs because the requests cannot contain authentication information.
+- **Poor app management:** Multiple enterprise apps are created to enable access to a private app adding friction to the app management experience.
 
 The following figure shows an example for complex application domain structure.
 
