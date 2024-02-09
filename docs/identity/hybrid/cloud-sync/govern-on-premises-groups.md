@@ -25,7 +25,7 @@ The following prerequisites are required to implement this scenario.
 
  - Azure AD account with at least a [Hybrid Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
-     - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId 
+     - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId. 
  - Provisioning agent with build version [1.1.1367.0](reference-version-history.md#1113700) or later.
 
  > [!NOTE]
@@ -43,19 +43,19 @@ The following prerequisites are required to implement this scenario.
  [Microsoft Entra Provisioning Agent gMSA PowerShell cmdlets](how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain) 
 
  - The provisioning agent must be able to communicate with one or more domain controllers on ports TCP/389 (LDAP) and TCP/3268 (Global Catalog).
-     - Required for global catalog lookup to filter out invalid membership references
- - Mircorosft Entra Connect with build version [2.2.8.0](../connect/reference-connect-version-history.md#2280) or later
-     - Required to support on-premises user membership synchronized using Microsoft Entra Connect 
-     - Required to synchronize AD:user:objectGUID to AAD:user:onPremisesObjectIdentifier
+     - Required for global catalog lookup to filter out invalid membership references.
+ - Mircorosft Entra Connect with build version [2.2.8.0](../connect/reference-connect-version-history.md#2280) or later.
+     - Required to support on-premises user membership synchronized using Microsoft Entra Connect.
+     - Required to synchronize AD:user:objectGUID to AAD:user:onPremisesObjectIdentifier.
 
 ## Supported groups
 For this scenario, only the following groups are supported:
   - only cloud created [Security groups](../../../fundamentals/concept-learn-about-groups.md#group-types) are supported
-  - these groups can have assigned or dynamic membership.
-  - these groups can only contain on-premises synchronized users and / or cloud created security groups.
-  - the on-premises user accounts that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest.
-  - these groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope).  Your on-premises environment must support the universal group scope.
-  - groups that are larger than 50,000 members aren't supported.
+  - these groups can have assigned or dynamic membership
+  - these groups can only contain on-premises synchronized users and / or cloud created security groups
+  - the on-premises user accounts that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest
+  - these groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope).  Your on-premises environment must support the universal group scope
+  - groups that are larger than 50,000 members aren't supported
   - each direct child nested group counts as one member in the referencing group
 
 
@@ -80,7 +80,7 @@ Before you begin, ensure that you're a domain administrator in the domain where 
 In this scenario option, you update the application to check for the SID, name or distinguished name of new groups created by cloud sync group provisioning.  This scenario is applicable to:
  - deployments for new applications being connected to AD DS for the first time
  - new cohorts of users accessing the application
- - for application modernization, to reduce the dependency on existing AD DS groups.  
+ - for application modernization, to reduce the dependency on existing AD DS groups
 Applications which currently check for membership of the `Domain Admins` group will need to be updated to also check for a newly created AD group as well.
 
 Use the following steps for applications to use new groups.
