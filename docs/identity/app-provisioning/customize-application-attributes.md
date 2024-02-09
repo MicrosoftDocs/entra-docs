@@ -209,7 +209,7 @@ Use the steps in the example to provision application roles for a user to your a
 - Mapping an appRoleAssignment in Microsoft Entra ID to a role in your application requires that you transform the attribute using an [expression](~/identity/app-provisioning/functions-for-customizing-application-data.md). The appRoleAssignment attribute **shouldn't be mapped directly** to a role attribute without using an expression to parse the role details. 
 
 > [!NOTE]
-> When creating roles starting from enterprise applications, the SCIM standard defines enterprise user role attributes differently. For more information, see [Develop and plan provisioning for a SCIM endpoint in Microsoft Entra ID](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#design-your-user-and-group-schema).
+> When provisioning roles from enterprise applications, the SCIM standard defines enterprise user role attributes differently. For more information, see [Develop and plan provisioning for a SCIM endpoint in Microsoft Entra ID](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#design-your-user-and-group-schema).
 
 - **SingleAppRoleAssignment**
 
@@ -278,7 +278,8 @@ The request formats in the PATCH and POST differ. To ensure that POST and PATCH 
   - **Things to consider**
 
     - All roles are provisioned as primary = false.
-    - When integrating applications using SCIM roles, the `id` attribute is not always required, as you can rely on the `value` attribute instead. If the `value` attribute contains the name or identifier of the role, in some cases you can use it to uniquely identify the role. However, relying solely on the `value` attribute may not be sufficient; for example, if there are multiple roles with the same name or identifier. In these cases, it may be necessary to use the `id` attribute to uniquely identify the role. 
+    - When integrating applications using SCIM roles, the `id` attribute is not always required, as for certain cases you can use the `value` attribute instead. For example, if the `value` attribute contains the name or identifier for the role, you can use it to provision the role. However, relying solely on the `value` attribute may not always be sufficient; for example, if there are multiple roles with the same name or identifier. In certain cases, it may be necessary to use the `id` attribute to properly provision the role.
+ 
     
     **Limitations** 
 
