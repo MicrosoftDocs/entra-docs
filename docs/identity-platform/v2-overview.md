@@ -46,7 +46,7 @@ Choose your preferred [application scenario](authentication-flows-app-scenarios.
 
 - [Single-page app (SPA)](scenario-spa-overview.md)
 - [Web app that signs in users](scenario-web-app-sign-user-app-registration.md)
-- [Web app that calls web APIs](scenario-web-app-call-api-overview.md)
+- [Web app that calls web APIs](scenario-web-api-call-api-app-registration.md)
 - [Protected web API](scenario-protected-web-api-overview.md)
 - [Web API that calls web APIs](scenario-web-api-call-api-overview.md)
 - [Desktop app](scenario-desktop-overview.md)

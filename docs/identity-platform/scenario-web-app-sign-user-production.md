@@ -60,4 +60,4 @@ Learn more about the Java web app from this sample on GitHub:
 ## Next Steps
 
 After your web app signs in users, it can call web APIs on behalf of the signed-in users. Calling web APIs from the web app is the object of the following scenario: 
-[Web app that calls web APIs](scenario-web-app-call-api-overview.md).
+[Web app that calls web APIs](scenario-web-api-call-api-app-registration.md).

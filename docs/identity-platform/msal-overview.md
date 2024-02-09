@@ -43,7 +43,7 @@ MSAL can be used in several application scenarios, such as the following:
 
 * [Single page applications (JavaScript)](scenario-spa-overview.md)
 * [Web app signing in users](scenario-web-app-sign-user-app-registration.md)
-* [Web application signing in a user and calling a web API on behalf of the user](scenario-web-app-call-api-overview.md)
+* [Web application signing in a user and calling a web API on behalf of the user](scenario-web-api-call-api-app-registration.md)
 * [Protecting a web API so only authenticated users can access it](scenario-protected-web-api-overview.md)
 * [Web API calling another downstream web API on behalf of the signed-in user](scenario-web-api-call-api-overview.md)
 * [Desktop application calling a web API on behalf of the signed-in user](scenario-desktop-overview.md)
