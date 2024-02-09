@@ -5,7 +5,7 @@ services: active-directory
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
 ms.date: 11/06/2023
 ms.subservice: hybrid
@@ -33,18 +33,18 @@ The structure of how to do this consists of the following steps.  They are:
   - [Review status](#review-status)
   - [Next steps](#next-steps)
 
-Use these [Azure AD PowerShell module](/powershell/module/msonline/) commands to enable synchronization for a production tenant, a prerequisite for being able to call the Administration Web Service for that tenant.
+Use these [Microsoft Graph PowerShell](/powershell/microsoftgraph/) commands to enable synchronization for a production tenant, a prerequisite for being able to call the Administration Web Service for that tenant.
 
 ## Basic setup
 
 ### Enable tenant flags
 
 ```powershell
-Connect-MsolService ('-AzureEnvironment <AzureEnvironmnet>')
- Set-MsolDirSyncEnabled -EnableDirSync $true
+Connect-MgGraph -Scopes "DeviceManagementConfiguration.ReadWrite.All" ('-Environment <AzureEnvironmnet>')
+Update-MgOrganization -OrganizationId <ID> -OnPremisesSyncEnabled
 ```
 
-The first of those two commands, require Microsoft Entra credentials. These cmdlets implicitly identify the tenant and enable it for synchronization.
+The first of those two commands, require Microsoft Entra credentials. These cmdlets implicitly identify the tenant and enable it for synchronization. You can use the [Get-MgOrganization](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgorganization) to get your ID.
 
 ## Create service principals
 
