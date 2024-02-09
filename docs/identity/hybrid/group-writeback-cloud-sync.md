@@ -14,14 +14,14 @@ ms.collection: M365-identity-device-management
 
 # Group writeback with Microsoft Entra Cloud Sync (Preview)
 
-With the release of provisioning agent [1.1.1370.0](cloud-sync/reference-version-history.md#1113700), cloud sync now has the ability to perform group writeback.  This feature means that cloud sync can provision groups directly to your on-premises Active Directory environment.  You can also now use identity governance features to govern access to AD-based applications, such as by including a [group in an entitlement management access package](../../id-governance/entitlement-management-group-writeback.md).
+With the release of provisioning agent [1.1.1370.0](cloud-sync/reference-version-history.md#1113700), cloud sync now has the ability to perform group writeback. This feature means that cloud sync can provision groups directly to your on-premises Active Directory environment. You can also now use identity governance features to govern access to AD-based applications, such as by including a [group in an entitlement management access package](../../id-governance/entitlement-management-group-writeback.md).
 
  :::image type="content" source="media/common-scenarios/group-writeback-1.png" alt-text="Conceptual drawing of group writeback with cloud sync." lightbox="media/common-scenarios/group-writeback-1.png":::
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
 ## Prerequisites and supported groups for group writeback with Microsoft Entra Cloud Sync
-For prerequisites and supported groups, see [Provision groups to Active Directory using Microsoft Entra Cloud Sync](cloud-sync/how-to-configure-entra-to-active-directory.md).  This doc provides configuration information as we
+For prerequisites and supported groups, see [Provision groups to Active Directory using Microsoft Entra Cloud Sync](cloud-sync/how-to-configure-entra-to-active-directory.md). This doc provides configuration information as we
 
 
 ## Supported scenarios for group writeback with Microsoft Entra Cloud Sync
@@ -29,13 +29,13 @@ The following sections describe the supported scenarios for group writeback with
 
 ###  Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
 
-**Scenario:**  Migrate group writeback using Microsoft Entra Connect Sync (formerly Azure AD Connect) to Microsoft Entra Cloud Sync.  This scenario is **only** for customers who are currently using Microsoft Entra Connect group writeback v2.  The process outlined in this document pertains only to cloud-created security groups that are written back with a universal scope.  Mail-enabled groups and DLs written back using Microsoft Entra Connect group writeback V1 or V2 aren't supported.
+**Scenario:**  Migrate group writeback using Microsoft Entra Connect Sync (formerly Azure AD Connect) to Microsoft Entra Cloud Sync. This scenario is **only** for customers who are currently using Microsoft Entra Connect group writeback v2. The process outlined in this document pertains only to cloud-created security groups that are written back with a universal scope. Mail-enabled groups and DLs written back using Microsoft Entra Connect group writeback V1 or V2 aren't supported.
 
 For more information see [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](cloud-sync/migrate-group-writeback.md)
 
 ### Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance (Preview)
 
-**Scenario:**  Manage on-premises applications with Active Directory groups that are provisioned from and managed in the cloud.  Microsoft Entra cloud sync allows you to fully govern application assignments in AD while taking advantage of Microsoft Entra ID Governance features to control and remediate any access related requests.  
+**Scenario:**  Manage on-premises applications with Active Directory groups that are provisioned from and managed in the cloud. Microsoft Entra cloud sync allows you to fully govern application assignments in AD while taking advantage of Microsoft Entra ID Governance features to control and remediate any access related requests. 
 
 For more information see [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance (Preview)](cloud-sync/govern-on-premises-groups.md)
 
