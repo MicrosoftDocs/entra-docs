@@ -50,7 +50,7 @@ For high availability in your production environment, we recommend having more t
 > [!IMPORTANT]
 > **.NET Framework**
 >
-> You must have .NET version 4.7.1 or higher to install, or upgrade, Application Proxy version 1.5.3437.0 or later. Windows Server 2012 R2 and Windows Server 2016 may not have this by default.
+> You must have .NET version 4.7.1 or higher to install, or upgrade, Application Proxy version 1.5.3437.0 or later. Windows Server 2012 R2 and Windows Server 2016 don't have this by default.
 >
 > See [How to: Determine which .NET Framework versions are installed](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) for more information.
 > 
@@ -234,7 +234,7 @@ Now that you've prepared your environment and installed a connector, you're read
     | **Use Persistent Cookie**| Keep the option unselected. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see [Cookie settings for accessing on-premises applications in Microsoft Entra ID](./application-proxy-configure-cookie-settings.md).
     | **Translate URLs in Headers** | Keep the option selected unless your application required the original host header in the authentication request. |
     | **Translate URLs in Application Body** | Keep the option unselected unless you have hardcoded HTML links to other on-premises applications and don't use custom domains. For more information, see [Link translation with Application Proxy](./application-proxy-configure-hard-coded-link-translation.md).<br><br>Select if you plan to monitor this application with Microsoft Defender for Cloud Apps. For more information, see [Configure real-time application access monitoring with Microsoft Defender for Cloud Apps and Microsoft Entra ID](./application-proxy-integrate-with-microsoft-cloud-application-security.md). |
-    | **Validate Backend SSL Certificate** | Select to enable backend SSL certificate validation for the application. |
+    | **Validate Backend TLS/SSL Certificate** | Select to enable backend TLS/SSL certificate validation for the application. |
 
 1. Select **Add**.
 
