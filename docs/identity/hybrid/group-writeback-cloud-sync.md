@@ -27,6 +27,9 @@ For prerequisites and supported groups, see [Provision groups to Active Director
 ## Supported scenarios for group writeback with Microsoft Entra Cloud Sync
 The following sections describe the supported scenarios for group writeback with Microsoft Entra Cloud Sync.
 
+- [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](#migrate-microsoft-entra-connect-sync-group-writeback-v2-to-microsoft-entra-cloud-sync)
+- [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance (Preview)](#govern-on-premises-active-directory-based-apps-kerberos-using-microsoft-entra-id-governance-preview)
+
 ###  Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
 
 **Scenario:**  Migrate group writeback using Microsoft Entra Connect Sync (formerly Azure AD Connect) to Microsoft Entra Cloud Sync. This scenario is **only** for customers who are currently using Microsoft Entra Connect group writeback v2. The process outlined in this document pertains only to cloud-created security groups that are written back with a universal scope. Mail-enabled groups and DLs written back using Microsoft Entra Connect group writeback V1 or V2 aren't supported.
