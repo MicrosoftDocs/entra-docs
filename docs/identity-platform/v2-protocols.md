@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 02/27/2023
+ms.date: 02/09/2024
 ms.reviewer: nickludwig
 ms.service: active-directory
 ms.subservice: develop
