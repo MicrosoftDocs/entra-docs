@@ -188,7 +188,7 @@ To confirm the connector installed and registered correctly:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses Application Proxy. If you need to change directories, select **Switch directory** and choose a directory that uses Application Proxy.
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
-1. Verify a connectors details. The connectors should be expanded by default. If the connector you want to view isn't expanded, expand the connector to view the details. An active green label indicates that your connector can connect to the service. However, even though the label is green, a network issue could still block the connector from receiving messages.
+1. Verify the details of the connector. The connectors should be expanded by default. An active green label indicates that your connector can connect to the service. However, even if the label is green, a network issue could still block the connector from receiving messages.
 
     ![Microsoft Entra application proxy Connectors](./media/application-proxy-add-on-premises-application/app-proxy-connectors.png)
 
