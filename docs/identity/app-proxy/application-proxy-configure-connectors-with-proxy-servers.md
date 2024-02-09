@@ -14,7 +14,7 @@ ms.reviewer: ashishj
 
 # Work with existing on-premises proxy servers
 
-This article explains how to configure Microsoft Entra application proxy connectors to work with outbound proxy servers. It's intended for network environments with existing proxies.
+Configure Microsoft Entra application proxy connectors to use outbound proxy servers. The article assumes the network environment already has a proxy server.
 
 We start by looking at these main deployment scenarios:
 
