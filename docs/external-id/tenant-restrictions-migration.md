@@ -50,7 +50,7 @@ Microsoft.directory/crossTenantAccessPolicy/
 
 Obtain the current header string that your proxies inject. Evaluate current policy and remove unwanted tenant IDs, or allowed destinations. After the evaluation, create a list of external tenant IDs and/or external domains. 
 
-Configure the cross-tenant access settings and TRV2 policies for the migration. Cross-tenant access outbound settings define tenants that internal identities access. In cross-tenant access settings, tenant restrictions v2 defines which tenants other external identities access while on your managed network. 
+Configure the cross-tenant access settings and tenant restrictions v2 policies for the migration. Cross-tenant access outbound settings define tenants that internal identities access. In cross-tenant access settings, tenant restrictions v2 defines which tenants other external identities access while on your managed network. 
 
 ## Technical considerations
 
@@ -116,7 +116,7 @@ Create a new header using your tenant ID and policy ID values. Update your netwo
 Confirm proxy support for the following options: 
 
 * **Upgrade one proxy at a time with the tenant restrictions v2 header** - Users who egress through this router receive the updated header and the new policy applies. Monitor for issues. If no issues arise, update the next proxy and continue until you update all proxies. 
-* **Update header injection based on users** - Some proxies require authenticated users and might select which header to inject based on users and groups. Roll out the new TRV2 header to a test group of users. Monitor for issues. If no issues arise, add more users in phases until 100% of traffic is in scope. 
+* **Update header injection based on users** - Some proxies require authenticated users and might select which header to inject based on users and groups. Roll out the new tenant restrictions v2 header to a test group of users. Monitor for issues. If no issues arise, add more users in phases until 100% of traffic is in scope. 
 * **Update the service to apply the new tenant restrictions v2 header all at one time** - This option isn't recommended. 
 
 As you roll out the new header updates, test and validate that users experience the expected behaviors. 
