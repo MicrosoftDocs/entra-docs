@@ -94,6 +94,8 @@ items:
     items:
     - name: Tenant restrictions V2
       href: tenant-restrictions-v2.md
+    - name: Migrate to tenant restrictions v2
+      href: tenant-restrictions-migration.md
   - name: Configure B2B direct connect 
     href: cross-tenant-access-settings-b2b-direct-connect.md
   - name: Select identity providers
