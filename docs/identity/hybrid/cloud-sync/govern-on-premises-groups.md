@@ -64,7 +64,7 @@ The following sections discuss the scenarios that are supported with cloud sync 
 
 ## Configuring supported scenarios
 
-If you want to control whether a user is able to connect to an AD application that uses Windows authentication, you can use the application proxy and an Microsoft Entra ID security group.
+If you want to control whether a user is able to connect to an AD application that uses Windows authentication, you can use the application proxy and a Microsoft Entra ID security group.
 If an application checks a user's AD group memberships, via Kerberos or LDAP, then you can use cloud sync group provisioning to ensure an AD user has those group memberships prior to the user accessing the applications.  
 
 
@@ -145,5 +145,5 @@ If you're using Azure AD Connect group writeback v2, you'll need to move to clou
 
 ## Next Steps
 - [Group writeback with Microsoft Entra Cloud Sync (Preview)](../group-writeback-cloud-sync.md)
-- [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
-- [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
+- [Group provisioning to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
+- [Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync migration](migrate-group-writeback.md)
