@@ -164,8 +164,3 @@ items:
     href: /graph/extensibility-overview?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
   - name: Frontline worker management
     href: frontline-worker-management.md
-  - name: Legacy and deprecated features
-    expanded: false
-    items:
-    - name: Create or delete a user (legacy)
-      href: add-users.md
