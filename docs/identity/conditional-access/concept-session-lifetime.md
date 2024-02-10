@@ -51,7 +51,7 @@ Sign-in frequency (SIF) works with third-party SAML applications and apps that i
 
 Sign-in frequency previously applied to only to the first factor authentication on devices that were Microsoft Entra joined, Microsoft Entra hybrid joined, and Microsoft Entra registered. There was no easy way for our customers to re-enforce multifactor authentication on those devices. Based on customer feedback, sign-in frequency applies for MFA as well.
 
-[![A diagram showing how Sign in frequency and MFA work together.](media/howto-conditional-access-session-lifetime/conditional-access-flow-chart-small.png)](media/howto-conditional-access-session-lifetime/conditional-access-flow-chart.png#lightbox)
+[![A diagram showing how Sign in frequency and MFA work together.](media/howto-conditional-access-session-lifetime/conditional-access-flow-chart.png)](media/howto-conditional-access-session-lifetime/conditional-access-flow-chart.png#lightbox)
 
 ### User sign-in frequency and device identities
 
