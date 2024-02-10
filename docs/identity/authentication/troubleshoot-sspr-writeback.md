@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 02/09/2024
+ms.date: 02/10/2024
 
 ms.author: justinha
 author: justinha
@@ -56,7 +56,7 @@ For Azure for US Government, see the [list of Microsoft Azure IP Ranges and Serv
 
 These files are updated weekly.
 
-To determine if access to a URL and port are restricted in an environment, run the following cmdlet:
+To determine if access to a URL and port are restricted in an environment such as public Azure cloud, run the following cmdlet:
 
 ```powershell
 Test-NetConnection -ComputerName ssprdedicatedsbprodscu.servicebus.windows.net -Port 443
