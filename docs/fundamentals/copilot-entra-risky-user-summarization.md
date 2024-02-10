@@ -37,7 +37,7 @@ To view and investigate a user’s risky sign-ins, sign in to the [Microsoft Ent
 
 In the **Risky User Details** window, select **Summarize**.  
 
-:::image type="content" source="./media/copilot-entra-risky-user-summarization/risky-user-details.png" alt-text="Screenshot that shows the Identity Protection risky users report.":::
+:::image type="content" source="./media/copilot-entra-risky-user-summarization/risky-user-details.png" alt-text="Screenshot that shows the Identity Protection risky user summarization details.":::
 
 The risky user summary contains three sections:
 

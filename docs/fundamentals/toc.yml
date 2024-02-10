@@ -74,9 +74,10 @@ items:
 - name: Microsoft Copilot for Security + Microsoft Entra
   href: copilot-security-entra.md
   - name: Copilot for Microsoft Entra scenarios
+    expanded: false
     items:
     - name: Respond to identity threats using risky user summarization
-      href: copilot-entra-risky-user-summarization.md
+      href: copilot-entra-risky-user-summarization.md  
 - name: Quick security wins
   expanded: false
   items:
