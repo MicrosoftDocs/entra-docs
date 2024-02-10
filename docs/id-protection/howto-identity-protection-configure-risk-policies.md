@@ -29,7 +29,7 @@ Choosing to apply access control on a **High** risk level reduces the number of 
 
 Configured trusted [network locations](~/identity/conditional-access/location-condition.md) are used by Identity Protection in some risk detections to reduce false positives.
 
-The policy configurations that follow include the [sign-in frequency session control](../identity/conditional-access/howto-conditional-access-session-lifetime.md#require-reauthentication-every-time) requiring a reauthentication for risky users and sign-ins.
+The policy configurations that follow include the [sign-in frequency session control](../identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time) requiring a reauthentication for risky users and sign-ins.
 
 ### Risk remediation
 
@@ -141,4 +141,4 @@ If you have risk policies enabled in Microsoft Entra ID, you should plan to migr
 - [What is risk](concept-identity-protection-risks.md)
 - [Investigate risk detections](howto-identity-protection-investigate-risk.md)
 - [Simulate risk detections](howto-identity-protection-simulate-risk.md)
-- [Require reauthentication every time](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#require-reauthentication-every-time)
+- [Require reauthentication every time](~/identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time)
