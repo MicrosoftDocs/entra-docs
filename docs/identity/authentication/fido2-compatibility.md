@@ -143,7 +143,7 @@ If you're using Chrome or Edge, the browser might prioritize usage of a passkey 
 
 ### PowerShell support
 
-Microsoft Graph PowerShell supports FIDO2. Some PowerShell modules that use Internet Explorer instead of Edge aren't capable of perfrming FIDO2 authentication. For example, PowerShell modules for SharePoint Online or Teams, or any PowerShell scripts that require admin credentials, don't prompt for FIDO2. 
+[Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) supports FIDO2. Some PowerShell modules that use Internet Explorer instead of Edge aren't capable of perfrming FIDO2 authentication. For example, PowerShell modules for SharePoint Online or Teams, or any PowerShell scripts that require admin credentials, don't prompt for FIDO2. 
 
 As a workaround, most vendors can put certificates on the FIDO2 security keys. Certificate-based authentication (CBA) works in all browsers. If you can enable CBA for those admin accounts, you can require CBA instead of FIDO2 in the interim. 
 
