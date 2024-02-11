@@ -199,6 +199,11 @@
       "source_path_from_root": "/docs/identity-platform/web-api-tutorial-03-protect-endpoint.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-protect-endpoint",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/howto-sspr-deployment.md",
+      "redirect_url": "https://support.microsoft.com/account-billing/reset-your-work-or-school-password-using-security-info-23dde81f-08bb-4776-ba72-e6b72b9dda9e",
+      "redirect_document_id": false
     }
   ]
 }
