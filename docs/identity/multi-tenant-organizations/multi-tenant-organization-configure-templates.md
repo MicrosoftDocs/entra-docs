@@ -8,6 +8,7 @@ ms.subservice: multitenant-organizations
 ms.topic: how-to
 ms.date: 09/22/2023
 ms.author: rolyon
+ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
