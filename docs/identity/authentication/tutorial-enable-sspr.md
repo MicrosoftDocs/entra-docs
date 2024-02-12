@@ -7,7 +7,8 @@ ms.topic: tutorial
 ms.date: 01/30/2023
 ms.author: justinha
 author: justinha
-ms.reviewer: tilarso# Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and use self-service password reset so that my end-users can unlock their accounts or reset their passwords through a web browser.
+ms.reviewer: tilarso
+# Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and use self-service password reset so that my end-users can unlock their accounts or reset their passwords through a web browser.
 ---
 
 # Tutorial: Enable users to unlock their account or reset passwords using Microsoft Entra self-service password reset

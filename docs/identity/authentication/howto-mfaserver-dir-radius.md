@@ -11,7 +11,8 @@ ms.date: 01/29/2023
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: michmcla---
+ms.reviewer: michmcla
+---
 # Integrate RADIUS authentication with Azure Multi-Factor Authentication Server
 
 RADIUS is a standard protocol to accept authentication requests and to process those requests. The Azure Multi-Factor Authentication Server can act as a RADIUS server. Insert it between your RADIUS client (VPN appliance) and your authentication target to add two-step verification. Your authentication target could be Active Directory, an LDAP directory, or another RADIUS server. For Azure multifactor authentication to function, you must configure the Azure MFA Server so that it can communicate with both the client servers and the authentication target. The Azure MFA Server accepts requests from a RADIUS client, validates credentials against the authentication target, adds Azure multifactor authentication, and sends a response back to the RADIUS client. The authentication request only succeeds if both the primary authentication and the Azure multifactor authentication succeed.
