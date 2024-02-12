@@ -207,37 +207,53 @@
     },
     {
       "source_path_from_root": "/docs/identity-platform/scenario-spa-overview.md",
-      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-prepare-app",
+      "redirect_url": "/entra/identity-platform/scenario-spa-app-registration",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity-platform/scenario-spa-production.md",
-      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-prepare-app",
+      "redirect_url": "/entra/identity-platform/scenario-spa-app-registration",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity-platform/scenario-web-app-sign-user-overview.md",
-      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-prepare-app",
+      "redirect_url": "/entra/identity-platform/scenario-web-app-sign-user-app-registration",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity-platform/scenario-web-app-sign-user-production.md",
-      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-prepare-app",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity-platform/scenario-web-app-call-api-production.md",
-      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-prepare-app",
+      "redirect_url": "/entra/identity-platform/scenario-web-app-sign-user-app-registration",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity-platform/scenario-web-app-call-api-overview.md",
-      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-prepare-app",
+      "redirect_url": "/entra/identity-platform/scenario-web-app-call-api-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-app-call-api-production.md",
+      "redirect_url": "/entra/identity-platform/scenario-web-app-call-api-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-api-call-api-overview.md",
+      "redirect_url": "/entra/identity-platform/scenario-web-api-call-api-app-registration",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity-platform/scenario-web-api-call-api-production.md",
-      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-prepare-app",
+      "redirect_url": "/entra/identity-platform/scenario-web-api-call-api-app-registration",
+      "redirect_document_id": false
+    },
+
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-protected-web-api-overview.md",
+      "redirect_url": "/entra/identity-platform/scenario-protected-web-api-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-protected-web-api-production.md",
+      "redirect_url": "/entra/identity-platform/scenario-protected-web-api-app-registration",
       "redirect_document_id": false
     }
 
