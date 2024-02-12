@@ -16,8 +16,6 @@ ms.custom: developer, devx-track-dotnet
 ---
 
 # How to run the Android sample app
-
-# How to run the Android sample app
  
 This guide demonstrates how to run an Android sample application that showcases sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID for customers.
  
@@ -44,7 +42,7 @@ The following steps show you how to register your app in the Microsoft Entra adm
 1. Sign in to the <a href="https://entra.microsoft.com/" target="_blank">Microsoft Entra admin center</a>.
 1. If you have access to multiple tenants, make sure you use the directory that contains your Microsoft Entra External ID for customers tenant: 
  
-   1. Select the **Directories + subscriptions** icon <img type="icon" src="../media/portal-directory-subscription-filter.png"> in the toolbar. 
+   1. Select the **Directories + subscriptions** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the toolbar. 
    1. On the **Portal settings | Directories + subscriptions** page, find your Microsoft Entra External ID for customers directory in the **Directory name** list, and then select **Switch**. 
  
 1. On the sidebar menu, select **Identity**. 
@@ -80,8 +78,8 @@ To specify that this app is a public client and can use native authentication, e
 1. Select the **Add permissions** button. 
 1. At this point, you've assigned the permissions correctly. However, since the tenant is a customer's tenant, the consumer users themselves can't consent to these permissions. You as the admin must consent to these permissions on behalf of all the users in the tenant: 
  
-   1. Select **Grant admin consent for <your tenant name>**, then select **Yes**. 
-   1. Select **Refresh**, then verify that **Granted for<your tenant name>** appears under **Status** for both scopes. 
+   1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**. 
+   1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for both scopes. 
  
     :::image type="content" source="media/native-auth/android/api-permissions.jpg" alt-text="Screenshot showing configured permission in Microsoft Entra admin center":::
 
@@ -147,7 +145,7 @@ To associate your user flow with your app, follow these steps.
 3. Find the placeholder: 
  
    1. `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier. 
-   2. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](https://learn.microsoft.com/azure/active-directory/external-identities/customers/how-to-create-customer-tenant-portal#get-the-customer-tenant-details).
+   2. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
    
    The application is now configured and ready to run.
  
@@ -189,7 +187,7 @@ The sample app supports the following flows:
     > [!NOTE] 
     > In the [Create a user flow](#create-a-user-flow) section, you created a user flow where you chose **Email one-time passcode** under **Identity providers > Email Accounts**. For flows 2 through 4, you require a user flow that uses **Email with password** under **Identity providers > Email Accounts**.
  
-Follow the steps in [Create a user flow](#create-a-user-flow) to create a user flow that uses **Email with password** under **Identity providers > Email Accounts**. Remember to [associate the application with the new user flow](#associate-the-app-with-the-user-flow).
+Follow the steps in [Create a user flow](#create-a-user-flow) to create a user flow that uses **Email with password** under **Identity providers > Email Accounts**. Remember to [associate the application with the new user flow](#associate-the--app-with-the-user-flow).
 
 Alternatively, modify the existing user flow to use **Email with password**. To modify the user flow you created earlier, follow these steps:
 
