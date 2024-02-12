@@ -2,8 +2,7 @@
 title: Microsoft Entra Conditional Access for workload identities 
 description: Protecting workload identities with Conditional Access policies
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: workload-identities
 ms.topic: how-to
 ms.date: 11/09/2023
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: swethar
-
-ms.collection: M365-identity-device-management
 ---
 # Conditional Access for workload identities
 
