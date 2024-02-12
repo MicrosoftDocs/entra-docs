@@ -40,7 +40,7 @@ This scenario covers the legacy application using HTTP authorization headers to 
 A BIG-IP in front of the application enables overlay of the service with Microsoft Entra preauthentication and headers-based SSO. This configuration improves overall application security posture.
 
    > [!NOTE] 
-   > Organizations can have remote access to this application type with Microsoft Entra application proxy. Learn more: [Remote access to on-premises applications through Microsoft Entra application proxy](~/identity/app-proxy)
+   > Organizations can have remote access to this application type with Microsoft Entra application proxy. Learn more: [Remote access to on-premises applications through Microsoft Entra application proxy](/identity/app-proxy)
 
 ## Scenario architecture
 
