@@ -85,7 +85,7 @@ With application proxy, Microsoft Entra ID keeps track of users who need to acce
 
 The diagram shows how Microsoft Entra ID and application proxy work together to provide single sign-on to on-premises applications.
 
-![Diagram of Microsoft Entra application proxy.](./media/application-proxy/app-proxy.png)
+![Diagram of Microsoft Entra application proxy.](./media/what-is-application-proxy/app-proxy.png)
 
 1. A user is directed to the Microsoft Entra sign-in page after accessing the application through an endpoint.
 2. Microsoft Entra ID sends a token to the user's client device after a successful sign-in.
