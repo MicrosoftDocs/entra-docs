@@ -70,4 +70,4 @@ One option to ensure the connector logs do not contain personal data is to turn 
 
 ## Next steps
 
-For an overview of Application Proxy, see [How to provide secure remote access to on-premises applications](application-proxy.md).
+For an overview of Application Proxy, see [How to provide secure remote access to on-premises applications](overview-what-is-app-proxy.md).

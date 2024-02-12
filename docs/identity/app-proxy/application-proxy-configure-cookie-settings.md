@@ -19,7 +19,7 @@ Microsoft Entra ID has access and session cookies for accessing on-premises appl
 
 ## What are the cookie settings?
 
-[Application Proxy](application-proxy.md) uses the following access and session cookie settings.
+[Application Proxy](overview-what-is-app-proxy.md) uses the following access and session cookie settings.
 
 | Cookie setting | Default | Description | Recommendations |
 | -------------- | ------- | ----------- | --------------- |
