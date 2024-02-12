@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.date: 10/26/2022
 ms.reviewer: lenalepa, sureshja
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an IT admin, I want to understand how and why applications are added to Microsoft Entra ID and the differences between application objects and service principals, so that I can effectively manage and configure applications in the directory.
 ---

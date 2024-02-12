@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom:
 ms.date: 09/25/2023
 ms.reviewer: kkrishna, jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As a developer, I want to add app roles to my application using RBAC, so I can assign users and groups to those roles.
 ---

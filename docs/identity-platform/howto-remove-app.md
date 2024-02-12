@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: 
 ms.date: 06/21/2023
 ms.reviewer: marsma, aragra, lenalepa, sureshja
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to remove my application from the Microsoft identity registered.
 ---

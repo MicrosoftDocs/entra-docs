@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: 
 ms.date: 11/30/2021
 ms.reviewer: sahmalik, arcrowe
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As a developer, I want to use ROPC in automated integration tests against APIs protected by Microsoft identity platform so I don't have to automate the interactive sign-in prompts.
 ---
