@@ -3,8 +3,7 @@ title: Dynamic groups and B2B collaboration
 description: Shows how to use Microsoft Entra dynamic groups with Microsoft Entra B2B collaboration 
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 05/22/2023
 

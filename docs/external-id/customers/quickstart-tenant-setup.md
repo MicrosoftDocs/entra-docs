@@ -4,9 +4,9 @@ description: In this quickstart, you learn how to create a tenant with customer 
  
 author: csmulligan
 manager: CelesteDG
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: quickstart
 ms.date: 06/19/2023
 ms.author: cmulligan

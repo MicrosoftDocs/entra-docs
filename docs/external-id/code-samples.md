@@ -3,8 +3,7 @@ title: B2B collaboration code and PowerShell samples
 description: Code and PowerShell samples for Microsoft Entra B2B collaboration
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: sample
 ms.date: 01/23/2024
 
