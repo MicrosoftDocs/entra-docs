@@ -1,7 +1,6 @@
 ---
 title: Understand Microsoft Entra application proxy connectors
 description: Learn about the Microsoft Entra application proxy connectors.
-
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
@@ -104,7 +103,7 @@ To learn more about connector groups, see [Publish applications on separate netw
 
 Plan for enough capacity between connectors to handle the expected traffic volume. At least two connectors in a connector group provide high availability and scale. But three connectors are optimal.
 
-The table provides volume and expected latency for different machine specifications. The data is based on expected Transactions Per Second (TPS) rather than by user because usage patterns vary and can't be used to predict load. There are some differences based on the size of the responses and the backend application response time - larger response sizes and slower response times will result in a lower Max TPS. Additional machines distribute load and provide ample buffer. Extra capacity ensures high availability and resiliency.
+The table provides volume and expected latency for different machine specifications. The data is based on expected Transactions Per Second (TPS) rather than by user because usage patterns vary and can't be used to predict load. There are some differences based on the size of the responses and the backend application response time - larger response sizes and slower response times result in a lower Max TPS. More machines distribute load and provide ample buffer. Extra capacity ensures high availability and resiliency.
 
 |Cores|RAM|Expected Latency (MS)-P99|Max TPS|
 | ----- | ----- | ----- | ----- |
@@ -130,13 +129,13 @@ For more information about configuring outbound firewall rules, see [Work with e
 
 ## Performance and scalability
 
-Scale for the application proxy service is transparent, but scale is a factor for connectors. You need to have enough connectors to handle peak traffic. Since connectors are stateless, they aren't affected by the number of users or sessions. Instead, they respond to the number of requests and their payload size. With standard web traffic, an average machine can handle a couple thousand requests per second. The specific capacity depends on the exact machine characteristics.
+Scale for the application proxy service is transparent, but scale is a factor for connectors. You need to have enough connectors to handle peak traffic. Connectors are stateless and the number of users or sessions don't affect them. Instead, they respond to the number of requests and their payload size. With standard web traffic, an average machine can handle a couple thousand requests per second. The specific capacity depends on the exact machine characteristics.
 
-The connector performance is bound by CPU and networking. CPU performance is needed for TLS encryption and decryption, while networking is important to get fast connectivity to the applications and the online service in Azure.
+CPU and network define connector performance. CPU performance is needed for TLS encryption and decryption, while networking is important to get fast connectivity to the applications and the online service.
 
 In contrast, memory is less of an issue for connectors. The online service takes care of much of the processing and all unauthenticated traffic. Everything that can be done in the cloud is done in the cloud.
 
-If for any reason that connector or machine becomes unavailable, the traffic will start going to another connector in the group. This resiliency is also why we recommend having multiple connectors.
+When the connector or machine are unavailable, the traffic goes to another connector in the group. Multiple connectors in a connector group provide resiliency.
 
 Another factor that affects performance is the quality of the networking between the connectors, including:
 
@@ -167,7 +166,7 @@ To provide a secure service, connectors have to authenticate toward the service,
 
 The certificates used are specific to the application proxy service. They get created during the initial registration and are automatically renewed by the connectors every couple of months.
 
-After the first successful certificate renewal the Microsoft Entra application proxy Connector service (Network Service) has no permission to remove the old certificate from the local machine store. If the certificate has expired or it won't be used by the service anymore, you can delete it safely.
+After the first successful certificate renewal the Microsoft Entra application proxy connector service (Network Service) has no permission to remove the old certificate from the local machine store. If the certificate has expired or it won't be used by the service anymore, you can delete it safely.
 
 To avoid problems with the certificate renewal, ensure that the network communication from the connector towards the [documented destinations](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) is enabled.
 
@@ -205,4 +204,4 @@ You can examine the state of the service in the Services window. The connector i
 - [Publish applications on separate networks and locations using connector groups](application-proxy-connector-groups.md)
 - [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md)
 - [Troubleshoot application proxy and connector errors](application-proxy-troubleshoot.md)
-- [How to silently install the Microsoft Entra application proxy Connector](application-proxy-register-connector-powershell.md)
+- [How to silently install the Microsoft Entra application proxy connector](application-proxy-register-connector-powershell.md)
