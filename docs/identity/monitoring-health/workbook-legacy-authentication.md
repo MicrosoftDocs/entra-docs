@@ -2,7 +2,7 @@
 
 title: Sign-ins using legacy authentication workbook in Microsoft Entra ID
 description: Learn how to use the sign-ins using legacy authentication workbook.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id

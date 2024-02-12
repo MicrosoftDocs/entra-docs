@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra recommendation - Remove unused credentials from apps (preview)
 description: Learn why you should remove unused credentials from apps.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id

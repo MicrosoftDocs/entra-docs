@@ -1,7 +1,7 @@
 ---
 title: Migrate from ADAL to MSAL recommendation
 description: Learn why you should migrate from the Azure Active Directory Authentication Library to the Microsoft Authentication Libraries.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id

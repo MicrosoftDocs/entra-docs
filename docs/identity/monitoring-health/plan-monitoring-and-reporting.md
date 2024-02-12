@@ -2,7 +2,7 @@
 
 title: Plan reports & monitoring deployment
 description: Describes how to plan and execute implementation of reporting and monitoring.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id

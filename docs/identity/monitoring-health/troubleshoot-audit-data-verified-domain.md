@@ -2,7 +2,7 @@
 
 title: 'Troubleshoot audit data of verified domain change '
 description: Provides you with information that will appear in the Microsoft Entra activity logs when you change a users verified domain.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id

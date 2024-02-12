@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra recommendation - Remove unused apps (preview)
 description: Learn why you should remove unused apps.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id

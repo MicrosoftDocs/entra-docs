@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra recommendation - Minimize MFA prompts from known devices in Microsoft Entra ID
 description: Learn why you should minimize MFA prompts from known devices in Microsoft Entra ID.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id

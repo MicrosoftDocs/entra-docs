@@ -1,7 +1,7 @@
 ---
 title: Analyze a sign-in with the Microsoft Graph API 
 description: Learn how to access the sign-in log and analyze a single sign-in attempt using the Microsoft Graph API.
-services: active-directory
+
 ms.service: entra-id
 ms.service: monitoring-health
 ms.topic: quickstart

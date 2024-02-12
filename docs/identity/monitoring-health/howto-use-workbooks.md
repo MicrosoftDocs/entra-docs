@@ -1,7 +1,7 @@
 ---
 title: How to use Microsoft Entra workbooks
 description: Learn how to use Azure Monitor workbooks for Microsoft Entra ID, for analyzing identity related activity, trends, and gaps.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id

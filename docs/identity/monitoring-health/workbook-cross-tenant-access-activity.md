@@ -2,7 +2,7 @@
 
 title: Cross-tenant access activity workbook in Microsoft Entra ID
 description: Learn how to use the cross-tenant access activity workbook.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id

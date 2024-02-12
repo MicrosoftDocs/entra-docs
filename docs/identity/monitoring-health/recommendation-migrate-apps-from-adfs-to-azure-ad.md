@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra recommendation - Migrate apps from ADFS to Microsoft Entra ID
 description: Learn why you should migrate apps from ADFS to Microsoft Entra ID
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id

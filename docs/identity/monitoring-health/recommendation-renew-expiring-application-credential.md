@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra recommendation - Renew expiring application credentials (preview)
 description: Learn why you should renew expiring application credentials.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
