@@ -6,7 +6,6 @@ ms.author: rolyon
 manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
-ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 02/01/2024
 ms.collection: M365-identity-device-management

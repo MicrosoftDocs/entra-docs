@@ -3,8 +3,7 @@ title: Providing a default level of security in Microsoft Entra ID
 description: Get protected from common identity threats using Microsoft Entra security defaults
 
 ms.service: entra
-ms.subservice: conditional-access
-ms.custom: has-azure-ad-ps-ref
+ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 01/30/2024
 

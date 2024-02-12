@@ -5,7 +5,6 @@ author: CelesteDG
 manager: CelesteDG
 ms.service: entra
 ms.subservice: fundamentals
-ms.custom: has-azure-ad-ps-ref
 ms.topic: overview
 ms.date: 01/05/2024
 ms.author: celested

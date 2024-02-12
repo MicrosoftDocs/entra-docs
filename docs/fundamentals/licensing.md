@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra
 ms.topic: conceptual
 ms.date: 01/17/2024
-ms.subservice: hybrid
+ms.subservice: fundamentals
 ms.author: barclayn
 ---
 

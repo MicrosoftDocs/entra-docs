@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 
 ms.service: entra
-ms.subservice: develop
+ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 01/10/2024
 ms.author: ryanwi
