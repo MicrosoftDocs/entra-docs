@@ -2,8 +2,8 @@
 title: Plan your Microsoft Entra join deployment
 description: Explains the steps that are required to implement Microsoft Entra joined devices in your environment.
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
 ms.date: 01/24/2023
@@ -13,7 +13,6 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
 
-ms.collection: M365-identity-device-management
 ---
 # How to: Plan your Microsoft Entra join implementation
 

@@ -2,8 +2,8 @@
 title: Log in to a Windows virtual machine in Azure by using Microsoft Entra ID
 description: Learn how to log in to an Azure VM that's running Windows by using Microsoft Entra authentication.
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
 ms.date: 01/05/2024
@@ -13,7 +13,6 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azure-ad-ps-ref
-ms.collection: M365-identity-device-management
 ---
 # Log in to a Windows virtual machine in Azure by using Microsoft Entra ID including passwordless
 

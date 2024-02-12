@@ -2,8 +2,7 @@
 title: Conditional Access insights and reporting workbook
 description: Using the Microsoft Entra Conditional Access insights and reporting workbook to troubleshoot policies
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 03/28/2023
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: kvenkit
-
-ms.collection: M365-identity-device-management
 ---
 # Conditional Access insights and reporting
 

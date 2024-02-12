@@ -2,8 +2,8 @@
 title: User self-remediation with Microsoft Entra ID Protection
 description: How can users self-remediate when administrators allow it? What is the experience when they don't?
 
-ms.service: active-directory
-ms.subservice: identity-protection
+ms.service: entra-id-protection
+
 ms.topic: conceptual
 ms.date: 02/05/2024
 

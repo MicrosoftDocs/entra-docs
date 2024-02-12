@@ -2,7 +2,7 @@
 title: Session controls in Conditional Access policy
 description: What are session controls in a Microsoft Entra Conditional Access policy
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 01/09/2024

@@ -2,9 +2,9 @@
 title: Plan a Microsoft Entra ID Protection deployment
 description: Deploy Microsoft Entra ID Protection
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: identity-protection
+
+ms.service: entra-id-protection
+
 ms.topic: how-to
 ms.date: 03/10/2023
 
@@ -13,7 +13,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: jhenders, tracyyu, chuqiaoshi
 
-ms.collection: M365-identity-device-management
+
 ---
 # Plan an Identity Protection deployment
 

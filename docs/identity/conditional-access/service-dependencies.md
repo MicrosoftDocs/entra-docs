@@ -2,7 +2,7 @@
 title: Conditional Access service dependencies 
 description: Learn how conditions are used in Microsoft Entra Conditional Access to trigger a policy.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 01/03/2024
