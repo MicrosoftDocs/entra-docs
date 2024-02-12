@@ -73,10 +73,12 @@ items:
               href: how-to-desktop-app-maui-sample-sign-in.md
             - name: .NET WPF - sign in users
               href: sample-desktop-wpf-dotnet-sign-in.md
-        - name: Mobile app 2
+        - name: Mobile app
           items:
-            - name: Android (.NET MAUI) - sign in users
-              href: how-to-mobile-app-maui-sample-sign-in.md
+              - name: Browser delegated
+                items:
+                  - name: Android (.NET MAUI) - sign in users
+                    href: how-to-mobile-app-maui-sample-sign-in.md
         - name: Command-line interface (CLI) app
           items:
             - name: Node.js - sign in users
