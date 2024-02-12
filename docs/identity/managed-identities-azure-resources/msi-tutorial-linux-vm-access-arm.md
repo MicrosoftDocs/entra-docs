@@ -1,19 +1,19 @@
 ---
 title: Use a Linux VM user-assigned managed identity to access Azure Resource Manager
 description: A tutorial that walks you through the process of using a user-assigned managed identity on a Linux VM to access Azure Resource Manager.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
 editor: daveba
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.custom: devx-track-arm-template
 ms.date: 01/11/2022
 ms.author: barclayn
 ROBOTS: NOINDEX,NOFOLLOW
-ms.collection: M365-identity-device-management
+
 ---
 
 # Tutorial: Use a user-assigned managed identity on a Linux VM to access Azure Resource Manager
