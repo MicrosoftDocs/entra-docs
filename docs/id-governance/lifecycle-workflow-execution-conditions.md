@@ -27,7 +27,7 @@ The trigger of a workflow defines the conditions for when a workflow runs for us
 - **Time based attribute**: The workflow is triggered on schedule when a time value is met.
 - **On-demand only**: The workflow is only triggered manually.
 - **Attribute changes**: The workflow is triggered on schedule when a change to an attribute is met. 
-- **Scope based**: The workflow is triggered on schedule when a scope criteria attribute is met.
+- **Group membership based**: The workflow is triggered on schedule when a group membership change is met.
 
 ## Time based attribute trigger
 
@@ -75,9 +75,9 @@ When setting a workflow where the trigger type is **Attribute change**, the foll
 |Action/Operator     |  This defines the change to the attribute that triggers the workflow to run.       |
 |Value     |  The value of the trigger attribute.      |
 
-## Scope based trigger
+## Group membership based trigger
 
-For workflows that are scope-based, the workflow runs on a schedule when trigger conditions for the scope are met.
+For workflows that are group membership based, the workflow runs on a schedule when trigger conditions for a group membership change are met.
 
 :::image type="content" source="media/lifecycle-workflow-execution-conditions/scope-details.png" alt-text="Screenshot of scope settings for lifecycle workflows.":::
 
@@ -86,7 +86,7 @@ The scope-based details are made up of the following two parts:
 - Scope type: Narrows the rule.
 - Rule: Where you can set expressions on user properties that define for whom the scheduled workflow runs. You can add extra expressions using **And, And not, Or, Or not** to create complex conditionals, and apply the workflow more granularly across your organization. Lifecycle Workflows supports a [rich set of user properties](/graph/api/resources/identitygovernance-rulebasedsubjectset#supported-user-properties-and-query-parameters) for configuring the scope.
 
-When setting a workflow where the trigger type is **scope based**, the following details are defined:
+When setting a workflow where the trigger type is **Group membership based**, the following details are defined:
 
 |Trigger detail  |Description  |
 |---------|---------|
@@ -95,7 +95,7 @@ When setting a workflow where the trigger type is **scope based**, the following
 |Event user attribute     | The attribute defining the trigger of the workflow. The type of workflow being used determines the attributes available. A joiner workflow can have the attribute value of "*employeeHireDate*" or "*createdDateTime*", while a leaver workflow has an attribute value of "*employeeLeaveDate*". For a list of templates and their event user attributes, see: [Lifecycle Workflows templates and categories](lifecycle-workflow-templates.md).       |
 
 > [!NOTE]
-> The event user attribute must be set within Azure AD for users. For more information on this process, see [How to synchronize attributes for Lifecycle workflows](how-to-lifecycle-workflow-sync-attributes.md).
+> The event user attribute must be set within Microsoft Entra ID for users. For more information on this process, see [How to synchronize attributes for Lifecycle workflows](how-to-lifecycle-workflow-sync-attributes.md).
 
 While newly created workflows are enabled by default, scheduling is an option that must be enabled manually. To verify whether the workflow is scheduled, you can view the **Scheduled** column on the workflow overview page.
 
