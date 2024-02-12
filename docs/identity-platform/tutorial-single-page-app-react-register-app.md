@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.date: 12/13/2023
 ms.reviewer: EmLauber
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As a React developer, I want to know how to register my application with the Microsoft identity platform so that the security token service can issue access tokens to client applications that request them.
 ---

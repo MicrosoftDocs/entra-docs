@@ -7,8 +7,8 @@ ms.author: henrymbugua
 ms.custom:
 ms.date: 02/21/2023
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As a developer creating a Windows Presentation Foundation (WPF) desktop app, I want to learn how to sign in users and call the Microsoft Graph API, so that I can integrate authentication and access protected resources in my application.
 ---

@@ -1,10 +1,10 @@
 ---
 title: Extend API-driven provisioning to sync custom attributes
 description: Learn how to extend API-driven inbound provisioning to sync custom attributes.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 09/15/2023

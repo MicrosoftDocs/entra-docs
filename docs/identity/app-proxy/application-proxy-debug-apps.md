@@ -1,10 +1,10 @@
 ---
 title: Debug Application Proxy applications
 description: Debug issues with Microsoft Entra application proxy applications.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
 ms.date: 09/14/2023

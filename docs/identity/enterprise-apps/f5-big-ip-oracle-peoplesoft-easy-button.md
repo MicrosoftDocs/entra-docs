@@ -4,8 +4,8 @@ description: Implement secure hybrid access with header-based SSO to PeopleSoft 
 
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 05/03/2023

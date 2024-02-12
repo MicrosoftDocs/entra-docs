@@ -1,10 +1,9 @@
 ---
 title: Troubleshoot problems installing the Microsoft Entra application proxy connector
 description: Troubleshoot problems installing the application proxy connector for Microsoft Entra ID.
-services: active-directory
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
 ms.date: 02/12/2024

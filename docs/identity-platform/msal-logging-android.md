@@ -7,8 +7,8 @@ ms.author: henrymbugua
 ms.custom: devx-track-extended-java
 ms.date: 01/25/2021
 ms.reviewer: saeeda, jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an Android developer, I want to enable logging in MSAL for Android using Java, so that I can capture and analyze log messages for troubleshooting and debugging purposes.
 ---

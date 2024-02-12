@@ -7,8 +7,8 @@ ms.author: henrymbugua
 ms.custom: has-adal-ref
 ms.date: 01/24/2023
 ms.reviewer: oldalton
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As a developer integrating Microsoft Authentication Library (MSAL) into my iOS/macOS app, I want to customize the web browser or WebView used for interactive authentication, so that I can provide a seamless and consistent user experience within my app.
 ---

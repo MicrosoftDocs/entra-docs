@@ -1,10 +1,10 @@
 ---
 title: 'Microsoft Entra on-premises application provisioning architecture'
 description: Presents an overview of on-premises application provisioning architecture.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: overview
 ms.date: 09/15/2023
 ms.subservice: hybrid
