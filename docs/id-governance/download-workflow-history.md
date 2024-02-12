@@ -4,6 +4,7 @@ description: This article guides a user on downloading the history of a Lifecycl
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 11/17/2023
 

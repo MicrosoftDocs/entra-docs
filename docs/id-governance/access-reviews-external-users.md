@@ -4,6 +4,7 @@ description: Use Access Reviews to extend of remove access from members of partn
 author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
+ms.subservice: access-reviews
 ms.topic: conceptual
 ms.date: 06/28/2023
 ms.author: owinfrey

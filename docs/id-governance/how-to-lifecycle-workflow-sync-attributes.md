@@ -4,6 +4,7 @@ description: Describes overview of Lifecycle workflow attributes.
 author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: overview
 ms.date: 09/18/2023
 ms.author: owinfrey

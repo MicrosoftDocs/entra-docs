@@ -4,6 +4,7 @@ description: Planning for a successful access reviews campaign for a particular 
 author: markwahl-msft
 manager: amycolannino
 ms.service: entra-id-governance
+ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 07/29/2022
 ms.author: mwahl

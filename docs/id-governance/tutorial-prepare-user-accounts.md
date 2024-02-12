@@ -4,6 +4,7 @@ description: Tutorial for preparing user accounts for Lifecycle workflows.
 author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: tutorial
 ms.date: 08/02/2023
 ms.author: owinfrey
