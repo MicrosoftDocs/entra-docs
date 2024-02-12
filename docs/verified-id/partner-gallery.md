@@ -1,8 +1,8 @@
 ---
 title: Identity Proofing and Verification (IDV) Partner gallery for Microsoft Entra Verified ID
 description: Learn how to integrate with our IDV partners to tailor your end-user experience to your needs.
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 author: barclayn
 manager: amycolannino
 ms.topic: how-to
