@@ -75,7 +75,7 @@ Some Office apps with modern authentication enabled send `prompt=login` to Micro
 To update the default behavior, set the '*PromptLoginBehavior*' in your federated domain settings to *Disabled*. You can use the [New-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainfederationconfiguration) cmdlet to perform this task, as shown in the following example:
 
 ```powershell
-New-MgDomainFederationConfiguration -DomainId <domain> -PromptLoginBehavior Disabled
+New-MgDomainFederationConfiguration -DomainId <domain> -PromptLoginBehavior "disabled"
 ```
 
 ## Support for Exchange ActiveSync clients
