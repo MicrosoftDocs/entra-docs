@@ -1,19 +1,19 @@
 ---
 title: 'Decommissioning Azure AD Connect V1'
 description: This article describes Azure AD Connect V1 decommissioning and how to migrate to V2.
-services: active-directory
+
 documentationcenter: ''
 author: billmath
 manager: amycolannino
 editor: ''
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ms.custom: docutune-disable
 ---
 

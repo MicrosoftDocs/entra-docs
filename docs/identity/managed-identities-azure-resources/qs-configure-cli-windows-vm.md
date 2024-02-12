@@ -3,12 +3,12 @@ title: Configure managed identities on Azure VM using Azure CLI
 description: Step-by-step instructions for configuring system and user-assigned managed identities on an Azure VM using Azure CLI.
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: quickstart
 ms.date: 01/11/2022
 ms.author: barclayn
-ms.collection: M365-identity-device-management
+
 ms.custom: mode-api, devx-track-azurecli, devx-track-linux
 ms.devlang: azurecli
 ---

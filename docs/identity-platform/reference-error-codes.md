@@ -7,8 +7,8 @@ ms.author: ryanwi
 ms.custom: 
 ms.date: 10/17/2023
 ms.reviewer: ludwignick
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
 #Customer intent: As a developer troubleshooting authentication errors, I want to understand the meaning and possible resolutions for the AADSTS error codes returned by the Microsoft Entra security token service, so that I can effectively debug and fix authentication issues in my application.
 ---

@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: devx-track-extended-java, devx-track-js
 ms.date: 09/17/2019
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a web app that signs in users by using the Microsoft identity platform.
 ---

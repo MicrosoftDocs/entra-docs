@@ -2,12 +2,12 @@
 
 title: Microsoft Entra audit log activity reference
 description: Get an overview of the audit activities that can be logged in your audit logs in Microsoft Entra ID.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 09/14/2023
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk

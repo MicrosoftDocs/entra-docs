@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: 
 ms.date: 02/06/2024
 ms.reviewer: jassuri
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
 titleSuffix: Microsoft identity platform
 #Customer intent: As a developer, I want to learn about custom authentication extensions so that I can augment tokens with claims from an external identity system or role management system.

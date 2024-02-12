@@ -1,10 +1,10 @@
 ---
 title: Silent install Microsoft Entra application proxy connector
 description: Covers how to perform an unattended installation of Microsoft Entra application proxy Connector to provide secure remote access to your on-premises apps.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
 ms.date: 02/06/2024

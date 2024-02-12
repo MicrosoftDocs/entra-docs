@@ -12,7 +12,8 @@ ms.date: 04/13/2023
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: mattsmith---
+ms.reviewer: mattsmith
+---
 
 # Microsoft Entra feature availability
 

@@ -2,8 +2,8 @@
 author: rwike77
 ms.author: ryanwi
 ms.date: 03/04/2021
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: include
 # Purpose:
 # Ingested by Microsoft identity platform Windows quickstarts to near the download links

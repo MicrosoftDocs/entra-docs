@@ -1,17 +1,14 @@
 ---
 title: Create a security plan for external access to resources
 description: Plan the security for external access to your organization's resources.
-services: active-directory
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/23/2023
 ms.author: gasinh
 ms.reviewer: ajburnle
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Create a security plan for external access to resources

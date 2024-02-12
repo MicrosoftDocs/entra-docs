@@ -4,8 +4,8 @@ description: Learn how to prevent domain_hint auto-acceleration to federated IDP
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 03/16/2023
 ms.author: jomondi

@@ -1,10 +1,10 @@
 ---
 title: Plan a Microsoft Entra application proxy Deployment
 description: An end-to-end guide for planning the deployment of Application proxy within your organization
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual
 ms.date: 01/19/2024
@@ -13,7 +13,7 @@ ms.author: kenwith
 
 # Plan a Microsoft Entra application proxy deployment
 
-Microsoft Entra application proxy is a secure and cost-effective remote access solution for on-premises applications. It provides an immediate transition path for “Cloud First” organizations to manage access to legacy on-premises applications that aren’t yet capable of using modern protocols. For additional introductory information, see [What is Application Proxy](./application-proxy.md).
+Microsoft Entra application proxy is a secure and cost-effective remote access solution for on-premises applications. It provides an immediate transition path for “Cloud First” organizations to manage access to legacy on-premises applications that aren’t yet capable of using modern protocols. For additional introductory information, see [What is Application Proxy](overview-what-is-app-proxy.md).
 
 Application Proxy is recommended for giving remote users access to internal resources. Application Proxy replaces the need for a VPN or reverse proxy for these remote access use cases. It is not intended for users who are on the corporate network. These users who use Application Proxy for intranet access may experience undesirable performance issues.
 

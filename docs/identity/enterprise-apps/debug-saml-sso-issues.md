@@ -5,8 +5,8 @@ description: Debug SAML-based single sign-on to applications in Microsoft Entra 
 ms.author: alamaral
 author: AllisonAm
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: troubleshooting
 
 ms.date: 06/15/2023
