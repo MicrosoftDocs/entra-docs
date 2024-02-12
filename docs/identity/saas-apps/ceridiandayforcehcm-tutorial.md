@@ -76,7 +76,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Ceridian Dayforce HCM Domain and URLs single sign-on information](common/sp-identifier-reply.png)
 
-    a. In the **Sign On URL** textbox, type the URL used by your users to sign-on to your Ceridian Dayforce HCM application.
+    a. In the **Sign On URL** textbox, type the URL used by your users to sign on to your Ceridian Dayforce HCM application.
 
     | Environment | URL |
     | :-- | :-- |
