@@ -17,7 +17,7 @@ Connectors are what make Microsoft Entra application proxy possible. They're sim
 
 ## What is an application proxy connector?
 
-Connectors are lightweight agents that sit on-premises and facilitate the outbound connection to the application proxy service. Connectors must be installed on a Windows Server that has access to the backend application. You can organize connectors into connector groups, with each group handling traffic to specific applications. For more information on Application proxy and a diagrammatic representation of application proxy architecture, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](overview-what-is-app-proxy.md#application-proxy-connectors)
+Connectors are lightweight agents that sit on-premises and facilitate the outbound connection to the application proxy service. Connectors must be installed on a Windows Server that has access to the backend application. You can organize connectors into connector groups, with each group handling traffic to specific applications. For more information on Application proxy and a diagrammatic representation of application proxy architecture, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](overview-what-is-app-proxy.md#application-proxy-connectors).
 
 ## Requirements and deployment
 
@@ -62,13 +62,13 @@ For more information about the network requirements for the connector server, se
 
 ## Maintenance
 
-The connectors and the service take care of all the high availability tasks. They can be added or removed dynamically. Each time a new request arrives it is routed to one of the connectors that is currently available. If a connector is temporarily not available, it doesn't respond to this traffic.
+The connectors and the service take care of all the high availability tasks. They can be added or removed dynamically. Each time a new request arrives it's routed to one of the connectors that is currently available. If a connector is temporarily not available, it doesn't respond to this traffic.
 
 The connectors are stateless and have no configuration data on the machine. The only data they store is the settings for connecting the service and its authentication certificate. When they connect to the service, they pull all the required configuration data and refresh it every couple of minutes.
 
-Connectors also poll the server to find out whether there is a newer version of the connector. If one is found, the connectors update themselves.
+Connectors also poll the server to find out whether there's a newer version of the connector. If one is found, the connectors update themselves.
 
-You can monitor your connectors from the machine they are running on, using either the event log and performance counters. For more information, see [Monitor and review logs for on-premises Microsoft Entra](~/identity/authentication/howto-password-ban-bad-on-premises-monitor.md)
+You can monitor your connectors from the machine they're running on, using either the event log and performance counters. For more information, see [Monitor and review logs for on-premises Microsoft Entra](~/identity/authentication/howto-password-ban-bad-on-premises-monitor.md).
 
 You can also view their status from the application proxy page of the Microsoft Entra admin center:
 
@@ -84,7 +84,7 @@ If you don't want to wait for an automatic update to come to your connector, you
 
 For tenants with multiple connectors, the automatic updates target one connector at a time in each group to prevent downtime in your environment.
 
-You may experience downtime when your connector updates if:
+You could experience downtime when your connector updates if:
   
 - You only have one connector. A second connector and [create a connector group](application-proxy-connector-groups.md) are recommended to avoid downtime and provide higher availability.  
 - A connector was in the middle of a transaction when the update began. Although the initial transaction is lost, your browser should automatically retry the operation or you can refresh your page. When the request is resent, the traffic is routed to a backup connector.
@@ -115,9 +115,9 @@ The table provides volume and expected latency for different machine specificati
 \* The machine used a custom setting to raise some of the default connection limits beyond .NET recommended settings. We recommend running a test with the default settings before contacting support to get this limit changed for your tenant.
 
 > [!NOTE]
-> There is not much difference in the maximum TPS between 4, 8, and 16 core machines. The main difference is the expected latency.
+> There isn't much difference in the maximum TPS between 4, 8, and 16 core machines. The main difference is the expected latency.
 >
-> The table focuses on the expected performance of a connector based on the type of machine it is installed on. This is separate from the application proxy service's throttling limits, see [Service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
+> The table focuses on the expected performance of a connector based on the type of machine it's installed on. This is separate from the application proxy service's throttling limits, see [Service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
 
 ## Security and networking
 
@@ -129,13 +129,13 @@ For more information about configuring outbound firewall rules, see [Work with e
 
 ## Performance and scalability
 
-Scale for the application proxy service is transparent, but scale is a factor for connectors. You need to have enough connectors to handle peak traffic. Connectors are stateless and the number of users or sessions don't affect them. Instead, they respond to the number of requests and their payload size. With standard web traffic, an average machine can handle a couple thousand requests per second. The specific capacity depends on the exact machine characteristics.
+Scale for the application proxy service is transparent, but scale is a factor for connectors. You need to have enough connectors to handle peak traffic. Connectors are stateless and the number of users or sessions don't affect them. Instead, they respond to the number of requests and their payload size. With standard web traffic, an average machine can handle 2,000 requests per second. The specific capacity depends on the exact machine characteristics.
 
 CPU and network define connector performance. CPU performance is needed for TLS encryption and decryption, while networking is important to get fast connectivity to the applications and the online service.
 
 In contrast, memory is less of an issue for connectors. The online service takes care of much of the processing and all unauthenticated traffic. Everything that can be done in the cloud is done in the cloud.
 
-When the connector or machine are unavailable, the traffic goes to another connector in the group. Multiple connectors in a connector group provide resiliency.
+When connectors or machines are unavailable, traffic goes to another connector in the group. Multiple connectors in a connector group provide resiliency.
 
 Another factor that affects performance is the quality of the networking between the connectors, including:
 
@@ -147,37 +147,38 @@ For more information about optimizing your network, see [Network topology consid
 
 ## Domain joining
 
-Connectors can run on a machine that is not domain-joined. However, if you want single sign-on (SSO) to applications that use integrated Windows authentication (IWA), you need a domain-joined machine. In this case, the connector machines must be joined to a domain that can perform [Kerberos](https://web.mit.edu/kerberos) Constrained Delegation on behalf of the users for the published applications.
+Connectors can run on a machine that isn't domain-joined. However, if you want single sign-on (SSO) to applications that use integrated Windows authentication (IWA), you need a domain-joined machine. In this case, the connector machines must be joined to a domain that can perform [Kerberos](https://web.mit.edu/kerberos) Constrained Delegation on behalf of the users for the published applications.
 
 Connectors can also be joined to domains in forests that have a partial trust, or to read-only domain controllers.
 
 ## Connector deployments on hardened environments
 
-Usually, connector deployment is straightforward and requires no special configuration. However, there are some unique conditions that should be considered:
+Usually, connector deployment is straightforward and requires no special configuration.
 
-- Organizations that limit the outbound traffic must [open required ports](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment).
-- FIPS-compliant machines might be required to change their configuration to allow the connector processes to generate and store a certificate.
-- Organizations that lock down their environment based on the processes that issue the networking requests have to make sure that both connector services are enabled to access all required ports and IPs.
-- In some cases, outbound forward proxies may break the two-way certificate authentication and cause the communication to fail.
+However, there are some unique conditions that should be considered:
+
+- Outbound traffic requires specific ports to be open. To learn more, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment).
+- FIPS-compliant machines might require a configuration change to allow the connector processes to generate and store a certificate.
+- Outbound forward proxies could break the two-way certificate authentication and cause communication to fail.
 
 ## Connector authentication
 
-To provide a secure service, connectors have to authenticate toward the service, and the service has to authenticate toward the connector. This authentication is done using client and server certificates when the connectors initiate the connection. This way the administrator’s username and password are not stored on the connector machine.
+To provide a secure service, connectors have to authenticate toward the service, and the service has to authenticate toward the connector. This authentication is done using client and server certificates when the connectors initiate the connection. This way the administrator’s username and password aren't stored on the connector machine.
 
-The certificates used are specific to the application proxy service. They are created during the initial registration and automatically renewed every couple of months.
+The certificates used are specific to the application proxy service. They're created during the initial registration and automatically renewed every couple of months.
 
-After the first successful certificate renewal, the Microsoft Entra application proxy connector service (Network Service) has no permission to remove the old certificate from the local machine store. If the certificate expires or won't be used by the service, you can delete it safely.
+After the first successful certificate renewal, the Microsoft Entra application proxy connector service (Network Service) has no permission to remove the old certificate from the local machine store. If the certificate expires or isn't used by the service, you can delete it safely.
 
 To avoid problems with the certificate renewal, ensure that the network communication from the connector towards the [documented destinations](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) is enabled.
 
-If a connector is not connected to the service for several months, its certificates may be outdated. In this case, uninstall and reinstall the connector to trigger registration. You can run the following PowerShell commands:
+If a connector isn't connected to the service for several months, its certificates could be outdated. In this case, uninstall and reinstall the connector to trigger registration. You can run the following PowerShell commands:
 
 ```
 Import-module AppProxyPSModule
 Register-AppProxyConnector -EnvironmentName "AzureCloud"
 ```
 
-For government, use `-EnvironmentName "AzureUSGovernment"`. For more details, see [Install Agent for the Azure Government Cloud](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
+For government, use `-EnvironmentName "AzureUSGovernment"`. For more information, see [Install Agent for the Azure Government Cloud](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
 
 To learn how to verify the certificate and troubleshoot problems see [Verify Machine and backend components support for application proxy trust certificate](application-proxy-connector-installation-problem.md).
 
@@ -193,7 +194,7 @@ Connectors are based on Windows Server Web application proxy, so they have most 
 
 The connectors have both **Admin** and **Session** logs. The **Admin** log includes key events and their errors. The **Session** log includes all the transactions and their processing details.
 
-To see the logs, open **Event Viewer** and go to **Applications and Services Logs** > **Microsoft** > **AadApplicationProxy** > **Connector**. To make the **Session** log visible, on the **View** menu, select **Show Analytic and Debug Logs**. The **Session** log is typically used for troubleshooting, and it's disabled by default. Enable it to start collecting events and disable it when it's no longer needed.
+To see the logs, open **Event Viewer** and go to **Applications and Services Logs** > **Microsoft** > **AadApplicationProxy** > **Connector**. To make the **Session** log visible, on the **View** menu, select **Show Analytic and Debug Logs**. The **Session** log is typically used for troubleshooting, and is disabled by default. Enable it to start collecting events and disable it when it's no longer needed.
 
 You can examine the state of the service in the Services window. The connector is made up of two Windows Services: the actual connector, and the updater. Both of them must run all the time.
 
