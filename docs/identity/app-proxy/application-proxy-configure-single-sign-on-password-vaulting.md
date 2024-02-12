@@ -57,7 +57,7 @@ This article requires that an app is published and tested with application proxy
 
 ## Test your app
 
-Go to the My Apps portal. Sign in with your credentials (or the credentials for a test account that you set up with access). Once signed in successfully, select the icon of the app. Opening the My Apps portal might trigger the installation of the My Apps Secure Sign-in browser extension. If you have predefined credentials, the authentication to the app should happen automatically, otherwise you must specify the user name or password for the first time. 
+Go to the My Apps portal. Sign in with your credentials (or the credentials for a test account that you set up with access). Once signed in successfully, select the icon of the app. Opening the My Apps portal might trigger the installation of the My Apps Secure Sign-in browser extension. If credentials are predefined, the authentication to the app should happen automatically, otherwise you must specify the user name or password for the first time. 
 
 ## Next steps
 
