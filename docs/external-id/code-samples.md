@@ -11,7 +11,7 @@ ms.date: 01/23/2024
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref, devx-track-linux, has-azure-ad-ps-ref
+ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref, devx-track-linux, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 #customer intent: As an IT admin managing B2B collaboration, I want to bulk-invite external users to my organization by using PowerShell or by uploading a .csv file to the admin center or portal, so that I can streamline the onboarding process and save time.
 ---
@@ -31,14 +31,13 @@ You can bulk-invite external users to an organization from email addresses you s
    Outlook B2B invitee   | b2binvitee@outlook.com
 
 
-2. Get the latest Azure AD PowerShell
-   To use the new cmdlets, you must install the updated Azure AD PowerShell module, which you can download from [the PowerShell module's release page](https://www.powershellgallery.com/packages/AzureADPreview)
+2. Get the latest Microsoft Graph PowerShell
+   To use the new cmdlets, you must install the updated Microsoft Graph PowerShell module. For more information, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation)
 
 3. Sign in to your tenancy
 
     ```azurepowershell-interactive
-    $cred = Get-Credential
-    Connect-AzureAD -Credential $cred
+    Connect-MgGraph -Scopes "User.Invite.All"
     ```
 
 4. Run the PowerShell cmdlet
@@ -47,7 +46,11 @@ You can bulk-invite external users to an organization from email addresses you s
    $invitations = import-csv C:\data\invitations.csv
    $messageInfo = New-Object Microsoft.Open.MSGraph.Model.InvitedUserMessageInfo
    $messageInfo.customizedMessageBody = "Hey there! Check this out. I created an invitation through PowerShell"
-   foreach ($email in $invitations) {New-AzureADMSInvitation -InvitedUserEmailAddress $email.InvitedUserEmailAddress -InvitedUserDisplayName $email.Name -InviteRedirectUrl https://wingtiptoysonline-dev-ed.my.salesforce.com -InvitedUserMessageInfo $messageInfo -SendInvitationMessage $true}
+   foreach ($email in $invitations) {
+      New-MgInvitation -InviteRedirectUrl "https://wingtiptoysonline-dev-ed.my.salesforce.com" `
+         -InvitedUserDisplayName $email.Name -InvitedUserEmailAddress $email.InvitedUserEmailAddress `
+         -InvitedUserMessageInfo $messageInfo -SendInvitationMessage:$true
+   }
    ```
 
 This cmdlet sends an invitation to the email addresses in invitations.csv. More features of this cmdlet include:
