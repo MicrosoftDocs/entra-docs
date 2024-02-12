@@ -1,12 +1,11 @@
 ---
 title: include file
 description: include file
-services: active-directory
+
 author: kalyankrishna1
 manager: CelesteDG
 
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
 ms.topic: include
 ms.date: 11/05/2020
 ms.author: kkrishna
