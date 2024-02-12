@@ -5,12 +5,13 @@ description: Ban weak passwords in on-premises Active Directory Domain Services 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/29/2023
+ms.date: 02/12/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: jsimmons---
+ms.reviewer: jsimmons
+---
 
 # Enforce on-premises Microsoft Entra Password Protection for Active Directory Domain Services
 
@@ -74,6 +75,7 @@ The on-premises Microsoft Entra Password Protection components work as follows:
 * The DC Agent never listens on a network-available port.
 * The proxy service never calls the DC Agent service.
 * The proxy service is stateless. It never caches policies or any other state downloaded from Azure.
+* Proxy registration works by adding credentials to the AADPasswordProtectionProxy Service Principal. Don't be alarmed by any events in the audit logs when this occurs.
 * The DC Agent service always uses the most recent locally available password policy to evaluate a user's password. If no password policy is available on the local DC, the password is automatically accepted. When that happens, an event message is logged to warn the administrator.
 * Microsoft Entra Password Protection isn't a real-time policy application engine. There can be a delay between when a password policy configuration change is made in Microsoft Entra ID and when that change reaches and is enforced on all DCs.
 * Microsoft Entra Password Protection acts as a supplement to the existing AD DS password policies, not a replacement. This includes any other 3rd-party password filter dlls that may be installed. AD DS always requires that all password validation components agree before accepting a password.

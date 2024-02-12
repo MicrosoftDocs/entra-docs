@@ -1,10 +1,10 @@
 ---
 title: 'Microsoft Entra application proxy: Version release history'
 description: This article lists all releases of Microsoft Entra application proxy and describes new features and fixed issues.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
 ms.date: 09/14/2023
 ms.subservice: app-proxy
@@ -164,5 +164,5 @@ April 15, 2017: Released for download
 If you're using an Application Proxy connector version earlier than 1.5.36.0, update to the latest version to ensure you have the latest fully supported features.
 
 ## Next steps
-- Learn more about [Remote access to on-premises applications through Microsoft Entra application proxy](application-proxy.md).
+- Learn more about [Remote access to on-premises applications through Microsoft Entra application proxy](overview-what-is-app-proxy.md).
 - To start using Application Proxy, see [Tutorial: Add an on-premises application for remote access through Application Proxy](application-proxy-add-on-premises-application.md).

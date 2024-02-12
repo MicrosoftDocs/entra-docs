@@ -7,8 +7,8 @@ ms.author: owenrichards
 ms.custom: has-adal-ref
 ms.date: 11/20/2023
 ms.reviewer: iambmelt
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn about the types of client apps so I can decide if this platform meets my app development requirements.
 ---

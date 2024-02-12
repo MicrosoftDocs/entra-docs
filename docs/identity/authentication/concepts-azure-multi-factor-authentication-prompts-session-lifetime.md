@@ -12,7 +12,8 @@ ms.date: 09/14/2023
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: inbarc---
+ms.reviewer: inbarc
+---
 # Optimize reauthentication prompts and understand session lifetime for Microsoft Entra multifactor authentication
 
 Microsoft Entra ID has multiple settings that determine how often users need to reauthenticate. This reauthentication could be with a first factor such as password, FIDO, or passwordless Microsoft Authenticator, or to perform multifactor authentication. You can configure these reauthentication settings as needed for your own environment and the user experience you want.

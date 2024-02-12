@@ -8,8 +8,8 @@ ms.author: owenrichards
 ms.custom: devx-track-python, scenarios:getting-started, "languages:Python", mode-api
 ms.date: 01/10/2022
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn how my Python app can get an access token and call an API that's protected by the Microsoft identity platform using client credentials flow.
 ---

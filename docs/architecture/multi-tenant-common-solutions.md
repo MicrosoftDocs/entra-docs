@@ -1,16 +1,13 @@
 ---
 title: Common solutions for multi-tenant user management in Microsoft Entra ID
 description: Learn about common solutions used to configure user access across Microsoft Entra tenants with guest accounts
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 04/19/2023
 ms.author: jricketts
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 # Common solutions for multi-tenant user management
 

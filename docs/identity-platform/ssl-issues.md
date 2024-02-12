@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom:
 ms.date: 08/28/2019
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As a developer using MSAL for iOS and macOS, I want to troubleshoot and resolve TLS/SSL issues, so that I can ensure secure connections and resolve any certificate-related problems that may arise during the authentication flow.
 ---

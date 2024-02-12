@@ -1,11 +1,10 @@
 ---
 title: Microsoft Entra security operations guide
 description: Learn to monitor, identify, and alert on security issues with accounts, applications, devices, and infrastructure in Microsoft Entra ID.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: overview
 ms.date: 09/06/2022
 ms.author: jricketts
@@ -13,7 +12,6 @@ ms.custom:
   - it-pro
   - seodec18
   - kr2b-contr-experiment
-ms.collection: M365-identity-device-management
 ---
 
 # Microsoft Entra security operations guide

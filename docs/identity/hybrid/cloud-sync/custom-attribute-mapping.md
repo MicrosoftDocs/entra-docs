@@ -1,16 +1,16 @@
 ---
 title: 'Microsoft Entra Cloud Sync directory extensions and custom attribute mapping'
 description: This topic provides information on custom attribute mapping in cloud sync.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.custom: ignite-2022, has-azure-ad-ps-ref
 ms.topic: conceptual
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Cloud sync directory extensions and custom attribute mapping

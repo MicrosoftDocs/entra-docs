@@ -7,8 +7,8 @@ ms.author: owenrichards
 ms.custom:
 ms.date: 02/06/2024
 ms.reviewer: kenwith
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
 #Customer intent: As a cloud service provider, I want to understand the SAML 2.0 authentication requests and responses supported by Microsoft Entra ID for single sign-on, so that I can implement secure and seamless authentication for my users.
 ---

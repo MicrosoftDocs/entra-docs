@@ -6,7 +6,8 @@ ms.service: entra-id
 ms.subservice: authentication
 author: martincoetzer
 ms.author: martinco
-ms.topic: conceptual---
+ms.topic: conceptual
+---
 
 # Become a Microsoft-compatible FIDO2 security key vendor
 

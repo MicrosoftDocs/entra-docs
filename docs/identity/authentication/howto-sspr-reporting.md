@@ -8,7 +8,8 @@ ms.date: 09/14/2023
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: tilarsoms.custom: ignite-fall-2021
+ms.reviewer: tilarso
+ms.custom: ignite-fall-2021
 ---
 # Reporting options for Microsoft Entra password management
 

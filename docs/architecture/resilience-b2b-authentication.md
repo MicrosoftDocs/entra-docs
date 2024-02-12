@@ -1,15 +1,12 @@
 ---
 title: Build resilience in external user authentication with Microsoft Entra ID
 description: A guide for IT admins and architects to building resilient authentication for external users
-services: active-directory
 author: janicericketts
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 11/16/2022
 ms.author: jricketts
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 # Build resilience in external user authentication
 
