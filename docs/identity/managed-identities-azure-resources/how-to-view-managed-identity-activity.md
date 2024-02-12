@@ -1,16 +1,16 @@
 ---
 title: View update and sign-in activities for Managed identities
 description: Step-by-step instructions for viewing the activities made to managed identities, and authentications carried out by managed identities
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 06/24/2022
 ms.author: barclayn
-ms.collection: M365-identity-device-management
+
 ---
 
 # View update and sign-in activities for Managed identities

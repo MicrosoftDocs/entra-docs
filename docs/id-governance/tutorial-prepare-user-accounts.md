@@ -1,12 +1,10 @@
 ---
 title: 'Tutorial: Preparing user accounts for Lifecycle workflows'
 description: Tutorial for preparing user accounts for Lifecycle workflows.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: tutorial
-ms.subservice: compliance
 ms.date: 08/02/2023
 ms.author: owinfrey
 ms.reviewer: krbain

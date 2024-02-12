@@ -156,7 +156,7 @@ Users get SSO from Microsoft Entra joined devices if the device has access to a 
 > [!NOTE]
 > Microsoft Entra joined devices can seamlessly provide access to both, on-premises and cloud applications. For more information, see [How SSO to on-premises resources works on Microsoft Entra joined devices](device-sso-to-on-premises-resources.md).
 
-**Recommendation:** Deploy [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md) to enable secure access for these applications.
+**Recommendation:** Deploy [Microsoft Entra application proxy](/entra/identity/app-proxy) to enable secure access for these applications.
 
 ### On-premises network shares
 

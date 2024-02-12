@@ -1,10 +1,10 @@
 ---
 title: Debug Application Proxy applications
 description: Debug issues with Microsoft Entra application proxy applications.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
 ms.date: 09/14/2023
@@ -22,7 +22,7 @@ When troubleshooting Application Proxy issues, we recommend you start with the c
 
 For more information about Application Proxy, see:
 
-- [Remote access to on-premises applications through Application Proxy](application-proxy.md)
+- [Remote access to on-premises applications through Application Proxy](overview-what-is-app-proxy.md)
 - [Application Proxy connectors](application-proxy-connectors.md)
 - [Install and register a connector](application-proxy-add-on-premises-application.md)
 - [Troubleshoot Application Proxy problems and error messages](application-proxy-troubleshoot.md)

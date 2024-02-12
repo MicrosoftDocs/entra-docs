@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom: devx-track-js
 ms.date: 05/10/2022
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
 ---

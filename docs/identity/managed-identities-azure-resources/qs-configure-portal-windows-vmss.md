@@ -1,16 +1,16 @@
 ---
 title: Configure managed identities on virtual machine scale set
 description: Step-by-step instructions for configuring managed identities for Azure resources on a virtual machine scale set using the Azure portal.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.date: 01/11/2022
 ms.author: barclayn
-ms.collection: M365-identity-device-management
+
 ms.custom: mode-ui
 ---
 

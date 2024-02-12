@@ -1,10 +1,10 @@
 ---
 title: Plan an automatic user provisioning deployment for Microsoft Entra ID
 description: Guidance for planning and executing automatic user provisioning in Microsoft Entra ID
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
 ms.date: 09/15/2023

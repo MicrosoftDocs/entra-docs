@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom:
 ms.date: 11/17/2023
 ms.reviewer: jmprieur, lenalepa, sureshja, kkrishna
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an Azure user, I want to convert a single tenant app to a Microsoft Entra multitenant app so any Microsoft Entra user can sign in,
 ---

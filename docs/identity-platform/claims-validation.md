@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 04/21/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As a developer building applications with secure authorization, I want to understand the claims based authorization process, so that I can ensure my applications adhere to the most secure practices.
 ---

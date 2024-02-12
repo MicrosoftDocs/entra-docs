@@ -4,9 +4,9 @@ description: Learn how to customize the look and feel of your customers' sign-in
  
 author: csmulligan
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 01/07/2024
 ms.author: cmulligan

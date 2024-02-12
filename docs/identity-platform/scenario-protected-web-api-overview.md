@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: 
 ms.date: 12/15/2023
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a protected web API using the Microsoft identity platform for developers.
 ---

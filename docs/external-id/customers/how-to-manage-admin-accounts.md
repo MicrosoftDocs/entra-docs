@@ -4,9 +4,9 @@ description: Learn how to add and manage admin accounts in your customer tenant 
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 01/19/2024
 ms.author: mimart

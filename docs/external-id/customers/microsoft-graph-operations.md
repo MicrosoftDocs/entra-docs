@@ -5,9 +5,9 @@ description: Learn how to manage user resources in a Microsoft Entra ID for cust
 author: garrodonnell
 manager: celested
 ms.author: godonnell
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 09/04/2023
 ms.custom: developer

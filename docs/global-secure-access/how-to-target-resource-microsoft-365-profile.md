@@ -2,8 +2,8 @@
 title: How to apply Conditional Access policies to the Microsoft 365 traffic profile
 description: Learn how to apply Conditional Access policies to the Microsoft 365 traffic profile.
 
-ms.service: network-access
-ms.subservice: 
+ms.service: global-secure-access
+ms.subservice: entra-internet-access
 ms.topic: how-to
 ms.date: 07/07/2023
 

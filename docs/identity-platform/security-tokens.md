@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 06/02/2023
 ms.reviewer: jmprieur, saeeda, ludwignick
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to understand the basic concepts of security tokens in the Microsoft identity platform.
 ---
