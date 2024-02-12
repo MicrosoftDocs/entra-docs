@@ -16,21 +16,21 @@ ms.reviewer: ashishj
 
 Connectors are what make Microsoft Entra application proxy possible. They're simple, easy to deploy and maintain, and super powerful. This article discusses what connectors are, how they work, and some suggestions for how to optimize your deployment.
 
-## What is an Application Proxy connector?
+## What is an application proxy connector?
 
-Connectors are lightweight agents that sit on-premises and facilitate the outbound connection to the Application Proxy service. Connectors must be installed on a Windows Server that has access to the backend application. You can organize connectors into connector groups, with each group handling traffic to specific applications. For more information on Application proxy and a diagrammatic representation of application proxy architecture, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](overview-what-is-app-proxy.md#application-proxy-connectors)
+Connectors are lightweight agents that sit on-premises and facilitate the outbound connection to the application proxy service. Connectors must be installed on a Windows Server that has access to the backend application. You can organize connectors into connector groups, with each group handling traffic to specific applications. For more information on Application proxy and a diagrammatic representation of application proxy architecture, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](overview-what-is-app-proxy.md#application-proxy-connectors)
 
 ## Requirements and deployment
 
-To deploy Application Proxy successfully, you need at least one connector, but we recommend two or more for greater resiliency. Install the connector on a machine running Windows Server 2012 R2 or later. The connector needs to communicate with the Application Proxy service and the on-premises applications that you publish.
+To deploy application proxy successfully, you need at least one connector, but we recommend two or more for greater resiliency. Install the connector on a machine running Windows Server 2012 R2 or later. The connector needs to communicate with the application proxy service and the on-premises applications that you publish.
 
 ### Windows Server
-You need a server running Windows Server 2012 R2 or later on which you can install the Application Proxy connector. The server needs to connect to the Application Proxy services in Azure, and the on-premises applications that you're publishing.
+You need a server running Windows Server 2012 R2 or later on which you can install the application proxy connector. The server needs to connect to the application proxy services in Azure, and the on-premises applications that you're publishing.
 
 > [!IMPORTANT]
 > Version 1.5.3437.0+ requires .NET version 4.7.1 or greater for installation or upgrade.
 
-The server needs to have Transport Layer Security (TLS) 1.2 enabled before you install the Application Proxy connector. To enable TLS 1.2 on the server:
+The server needs to have Transport Layer Security (TLS) 1.2 enabled before you install the application proxy connector. To enable TLS 1.2 on the server:
 
 1. Set the following registry keys:
 
@@ -59,7 +59,7 @@ The server needs to have Transport Layer Security (TLS) 1.2 enabled before you i
     
 1. Restart the server
 
-For more information about the network requirements for the connector server, see [Get started with Application Proxy and install a connector](application-proxy-add-on-premises-application.md).
+For more information about the network requirements for the connector server, see [Get started with application proxy and install a connector](application-proxy-add-on-premises-application.md).
 
 ## Maintenance
 
@@ -71,7 +71,7 @@ Connectors also poll the server to find out whether there is a newer version of 
 
 You can monitor your connectors from the machine they are running on, using either the event log and performance counters. For more information, see [Monitor and review logs for on-premises Microsoft Entra](~/identity/authentication/howto-password-ban-bad-on-premises-monitor.md)
 
-You can also view their status from the Application Proxy page of the Microsoft Entra admin center:
+You can also view their status from the application proxy page of the Microsoft Entra admin center:
 
 ![Example: Microsoft Entra application proxy connectors](media/application-proxy-connectors/app-proxy-connectors.png)
 
@@ -79,7 +79,7 @@ You don't have to manually delete connectors that are unused. When a connector i
 
 ## Automatic updates
 
-Microsoft Entra ID provides automatic updates for all the connectors that you deploy. As long as the Application Proxy Connector Updater service is running, your connectors [update with the latest major connector release](application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-) automatically. If you don’t see the Connector Updater service on your server, you need to [reinstall your connector](application-proxy-add-on-premises-application.md) to get any updates.
+Microsoft Entra ID provides automatic updates for all the connectors that you deploy. As long as the application proxy Connector Updater service is running, your connectors [update with the latest major connector release](application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-) automatically. If you don’t see the Connector Updater service on your server, you need to [reinstall your connector](application-proxy-add-on-premises-application.md) to get any updates.
 
 If you don't want to wait for an automatic update to come to your connector, you can do a manual upgrade. Go to the [connector download page](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download) on the server where your connector is located and select **Download**. This process kicks off an upgrade for the local connector.
 
@@ -90,7 +90,7 @@ You may experience downtime when your connector updates if:
 - You only have one connector. A second connector and [create a connector group](application-proxy-connector-groups.md) are recommended to avoid downtime and provide higher availability.  
 - A connector was in the middle of a transaction when the update began. Although the initial transaction is lost, your browser should automatically retry the operation or you can refresh your page. When the request is resent, the traffic is routed to a backup connector.
 
-To see information about previously released versions and what changes they include, see [Application Proxy- Version Release History](application-proxy-release-version-history.md).
+To see information about previously released versions and what changes they include, see [Application proxy- Version Release History](application-proxy-release-version-history.md).
 
 ## Creating connector groups
 
@@ -116,21 +116,21 @@ The table provides volume and expected latency for different machine specificati
 \* The machine used a custom setting to raise some of the default connection limits beyond .NET recommended settings. We recommend running a test with the default settings before contacting support to get this limit changed for your tenant.
 
 > [!NOTE]
-> There is not much difference in the maximum TPS between 4, 8, and 16 core machines. The main difference between those is in the expected latency.
+> There is not much difference in the maximum TPS between 4, 8, and 16 core machines. The main difference is the expected latency.
 >
-> This table also focuses on the expected performance of a connector based on the type of machine it is installed on. This is separate from the Application Proxy service's throttling limits, see [Service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
+> The table focuses on the expected performance of a connector based on the type of machine it is installed on. This is separate from the application proxy service's throttling limits, see [Service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
 
 ## Security and networking
 
-Connectors can be installed anywhere on the network that allows them to send requests to the Application Proxy service. What's important is that the computer running the connector also has access to your apps. You can install connectors inside of your corporate network or on a virtual machine that runs in the cloud. Connectors can run within a perimeter network, also known as a demilitarized zone (DMZ), but it's not necessary because all traffic is outbound so your network stays secure.
+Connectors can be installed anywhere on the network that allows them to send requests to the application proxy service. What's important is that the computer running the connector also has access to your apps. You can install connectors inside of your corporate network or on a virtual machine that runs in the cloud. Connectors can run within a perimeter network, also known as a demilitarized zone (DMZ), but it's not necessary because all traffic is outbound so your network stays secure.
 
-Connectors only send outbound requests. The outbound traffic is sent to the Application Proxy service and to the published applications. You don't have to open inbound ports because traffic flows both ways once a session is established. You also don't have to configure inbound access through your firewalls.
+Connectors only send outbound requests. The outbound traffic is sent to the application proxy service and to the published applications. You don't have to open inbound ports because traffic flows both ways once a session is established. You also don't have to configure inbound access through your firewalls.
 
 For more information about configuring outbound firewall rules, see [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md).
 
 ## Performance and scalability
 
-Scale for the Application Proxy service is transparent, but scale is a factor for connectors. You need to have enough connectors to handle peak traffic. Since connectors are stateless, they aren't affected by the number of users or sessions. Instead, they respond to the number of requests and their payload size. With standard web traffic, an average machine can handle a couple thousand requests per second. The specific capacity depends on the exact machine characteristics.
+Scale for the application proxy service is transparent, but scale is a factor for connectors. You need to have enough connectors to handle peak traffic. Since connectors are stateless, they aren't affected by the number of users or sessions. Instead, they respond to the number of requests and their payload size. With standard web traffic, an average machine can handle a couple thousand requests per second. The specific capacity depends on the exact machine characteristics.
 
 The connector performance is bound by CPU and networking. CPU performance is needed for TLS encryption and decryption, while networking is important to get fast connectivity to the applications and the online service in Azure.
 
@@ -140,7 +140,7 @@ If for any reason that connector or machine becomes unavailable, the traffic wil
 
 Another factor that affects performance is the quality of the networking between the connectors, including:
 
-- **The online service**: Slow or high-latency connections to the Application Proxy service in Azure influence the connector performance. For the best performance, connect your organization to Azure with Express Route. Otherwise, have your networking team ensure that connections to Azure are handled as efficiently as possible.
+- **The online service**: Slow or high-latency connections to the application proxy service in Azure influence the connector performance. For the best performance, connect your organization to Azure with Express Route. Otherwise, have your networking team ensure that connections to Azure are handled as efficiently as possible.
 - **The backend applications**: In some cases, there are additional proxies between the connector and the backend applications that can slow or prevent connections. To troubleshoot this scenario, open a browser from the connector server and try to access the application. If you run the connectors in Azure but the applications are on-premises, the experience might not be what your users expect.
 - **The domain controllers**: If the connectors perform single sign-on (SSO) using Kerberos Constrained Delegation, they contact the domain controllers before sending the request to the backend. The connectors have a cache of Kerberos tickets, but in a busy environment the responsiveness of the domain controllers can affect performance. This issue is more common for connectors that run in Azure but communicate with domain controllers that are on-premises.
 
@@ -165,7 +165,7 @@ Usually, connector deployment is straightforward and requires no special configu
 
 To provide a secure service, connectors have to authenticate toward the service, and the service has to authenticate toward the connector. This authentication is done using client and server certificates when the connectors initiate the connection. This way the administrator’s username and password are not stored on the connector machine.
 
-The certificates used are specific to the Application Proxy service. They get created during the initial registration and are automatically renewed by the connectors every couple of months.
+The certificates used are specific to the application proxy service. They get created during the initial registration and are automatically renewed by the connectors every couple of months.
 
 After the first successful certificate renewal the Microsoft Entra application proxy Connector service (Network Service) has no permission to remove the old certificate from the local machine store. If the certificate has expired or it won't be used by the service anymore, you can delete it safely.
 
@@ -180,11 +180,11 @@ Register-AppProxyConnector -EnvironmentName "AzureCloud"
 
 For government, use `-EnvironmentName "AzureUSGovernment"`. For more details, see [Install Agent for the Azure Government Cloud](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
 
-To learn how to verify the certificate and troubleshoot problems see [Verify Machine and backend components support for Application Proxy trust certificate](application-proxy-connector-installation-problem.md).
+To learn how to verify the certificate and troubleshoot problems see [Verify Machine and backend components support for application proxy trust certificate](application-proxy-connector-installation-problem.md).
 
 ## Under the hood
 
-Connectors are based on Windows Server Web Application Proxy, so they have most of the same management tools including Windows Event Logs and Windows performance counters.
+Connectors are based on Windows Server Web application proxy, so they have most of the same management tools including Windows Event Logs and Windows performance counters.
 
 ![Manage event logs with the Event Viewer](media/application-proxy-connectors/event-view-window.png)
 
@@ -204,5 +204,5 @@ You can examine the state of the service in the Services window. The connector i
 
 - [Publish applications on separate networks and locations using connector groups](application-proxy-connector-groups.md)
 - [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md)
-- [Troubleshoot Application Proxy and connector errors](application-proxy-troubleshoot.md)
+- [Troubleshoot application proxy and connector errors](application-proxy-troubleshoot.md)
 - [How to silently install the Microsoft Entra application proxy Connector](application-proxy-register-connector-powershell.md)
