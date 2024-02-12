@@ -1,7 +1,6 @@
 ---
 title: Create an organizational unit (OU) in Microsoft Entra Domain Services | Microsoft Docs'
 description: Learn how to create and manage a custom Organizational Unit (OU) in a Microsoft Entra Domain Services managed domain.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

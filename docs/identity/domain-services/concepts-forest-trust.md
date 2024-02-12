@@ -1,7 +1,6 @@
 ---
 title: How trusts work for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn more about how forest trust work with Microsoft Entra Domain Services
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

@@ -1,7 +1,6 @@
 ---
 title: Microsoft Entra Domain Services for Cloud Solution Providers | Microsoft Docs
 description: Learn how to enable and manage Microsoft Entra Domain Services managed domains for Azure Cloud Solution Providers
-services: active-directory-ds
 author: justinha
 
 ms.assetid: 56ccb219-11b2-4e43-9f07-5a76e3cd8da8

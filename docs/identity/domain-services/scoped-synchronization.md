@@ -1,7 +1,6 @@
 ---
 title: Scoped synchronization for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to use the Microsoft Entra admin center to configure scoped synchronization from Microsoft Entra ID to a Microsoft Entra Domain Services managed domain
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

@@ -1,7 +1,6 @@
 ---
 title: Fix mismatched directory errors in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn what a mismatched directory error means and how to resolve it in Microsoft Entra Domain Services
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

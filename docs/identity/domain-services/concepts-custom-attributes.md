@@ -1,7 +1,6 @@
 ---
 title: Create and manage custom attributes for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to create and manage custom attributes in a Domain Services managed domain.
-services: active-directory-ds
 author: AlexCesarini
 manager: amycolannino
 

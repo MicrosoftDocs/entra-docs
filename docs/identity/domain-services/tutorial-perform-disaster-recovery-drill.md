@@ -1,7 +1,6 @@
 ---
 title: Tutorial - Perform a disaster recovery drill in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to perform a disaster recovery drill using replica sets in Microsoft Entra Domain Services
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

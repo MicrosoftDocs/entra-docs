@@ -1,7 +1,6 @@
 ---
 title: Enable Azure DS Domain Services using PowerShell | Microsoft Docs
 description: Learn how to configure and enable Microsoft Entra Domain Services using Azure AD PowerShell and Azure PowerShell.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

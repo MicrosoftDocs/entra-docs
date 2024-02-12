@@ -1,7 +1,6 @@
 ---
 title: Compare Microsoft directory-based services | Microsoft Docs
 description: In this overview, you compare the different identity offerings for Active Directory Domain Services, Microsoft Entra ID, and Microsoft Entra Domain Services.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

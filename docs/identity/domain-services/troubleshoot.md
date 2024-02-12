@@ -1,7 +1,6 @@
 ---
 title: Microsoft Entra Domain Services troubleshooting | Microsoft Docs'
 description: Learn how to troubleshoot common errors when you create or manage Microsoft Entra Domain Services
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

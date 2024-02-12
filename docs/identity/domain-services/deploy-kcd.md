@@ -1,7 +1,6 @@
 ---
 title: Kerberos constrained delegation for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to enable resource-based Kerberos constrained delegation (KCD) in a Microsoft Entra Domain Services managed domain.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

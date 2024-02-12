@@ -1,7 +1,6 @@
 ---
 title: Group managed service accounts for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to create a group managed service account (gMSA) for use with Microsoft Entra Domain Services managed domains
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

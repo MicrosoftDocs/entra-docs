@@ -1,7 +1,6 @@
 ---
 title: Join a CentOS VM to Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to configure and join a CentOS Linux virtual machine to a Microsoft Entra Domain Services managed domain.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

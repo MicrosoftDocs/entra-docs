@@ -1,7 +1,6 @@
 ---
 title: Enable security and DNS audits for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to enable security audits to centralize the logging of events for analysis and alerts in Microsoft Entra Domain Services
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

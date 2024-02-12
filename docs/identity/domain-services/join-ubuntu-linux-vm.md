@@ -1,7 +1,6 @@
 ---
 title: Join an Ubuntu VM to Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to configure and join an Ubuntu Linux virtual machine to a Microsoft Entra Domain Services managed domain.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

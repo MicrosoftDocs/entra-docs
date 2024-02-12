@@ -1,7 +1,6 @@
 ---
 title: Resolve network security group alerts in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to troubleshoot and resolve network security group configuration alerts for Microsoft Entra Domain Services
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

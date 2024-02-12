@@ -1,7 +1,6 @@
 ---
 title: Instructions for data retrieval from Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to retrieve data from Microsoft Entra Domain Services.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

@@ -1,7 +1,6 @@
 ---
 title: Change the SKU for a Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to the SKU tier for a Microsoft Entra Domain Services managed domain if your business requirements change
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

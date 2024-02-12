@@ -1,7 +1,6 @@
 ---
 title: Resolve secure LDAP alerts in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to troubleshoot and resolve common alerts with secure LDAP for Microsoft Entra Domain Services.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

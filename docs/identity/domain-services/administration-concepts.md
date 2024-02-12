@@ -1,7 +1,6 @@
 ---
 title: Management concepts for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn about how to administer a Microsoft Entra Domain Services managed domain and the behavior of user accounts and passwords
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

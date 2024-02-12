@@ -1,7 +1,6 @@
 ---
 title: Check fleet metrics of Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to check fleet metrics of a Microsoft Entra Domain Services managed domain.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

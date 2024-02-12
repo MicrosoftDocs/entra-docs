@@ -1,7 +1,6 @@
 ---
 title: Troubleshoot account lockout in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to troubleshoot common problems that cause user accounts to be locked out in Microsoft Entra Domain Services.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

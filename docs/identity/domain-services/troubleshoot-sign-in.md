@@ -1,7 +1,6 @@
 ---
 title: Troubleshoot sign in problems in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to troubleshoot common user sign-in problems and errors in Microsoft Entra Domain Services.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

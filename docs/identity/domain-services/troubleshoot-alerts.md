@@ -1,7 +1,6 @@
 ---
 title: Common alerts and resolutions in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to resolve common alerts generated as part of the health status for Microsoft Entra Domain Services
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 

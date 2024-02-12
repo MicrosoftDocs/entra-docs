@@ -1,7 +1,6 @@
 ---
 title: Delete Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to disable, or delete, a Microsoft Entra Domain Services managed domain
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 
