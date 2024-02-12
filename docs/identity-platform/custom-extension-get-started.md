@@ -70,7 +70,7 @@ In this step, you create an HTTP trigger function API in the Azure portal. The f
 
 After the Azure Function app is created, create an HTTP trigger function. The HTTP trigger lets you invoke a function with an HTTP request. This HTTP trigger will be referenced and called by your Microsoft Entra custom authentication extension.
 
-1. Within the **Overview** page of your function app, scroll down to the **Functions** pane and select **Create function** under **Create in Azure portal**.
+1. Within the **Overview** page of your function app, select the **Functions** pane and select **Create function** under **Create in Azure portal**.
 1. In the **Create Function** window, leave the **Development environment** property as **Develop in portal**. Under **Template**, select **HTTP trigger**.
 1. Under **Template details**, enter *CustomAuthenticationExtensionsAPI* for the **New Function** property.
 1. For the **Authorization level**, select **Function**.
@@ -182,7 +182,7 @@ In this step, you configure a custom authentication extension, which will be use
     - customRoles
     - apiVersion
     - correlationId
-1. Select **Next** and **Create**, which registers the custom authentication extension and the associated application registration.
+1. Select **Next**, then **Create**, which registers the custom authentication extension and the associated application registration.
 
 # [Microsoft Graph](#tab/microsoft-graph)
 
@@ -320,7 +320,7 @@ Follow these steps to register the **jwt.ms** web application:
 
 1. In the **Overview** page of your app registration, copy the **Application (client) ID**. The app ID is referred to as the `{App_to_enrich_ID}` in later steps. In Microsoft Graph, it's referenced by the **appId** property.
 
-:::image type="content" border="false"source="media/custom-extension-get-started/get-the-test-application-id.png" alt-text="Screenshot that shows how to copy the application ID.":::
+    :::image type="content" border="false"source="media/custom-extension-get-started/get-the-test-application-id.png" alt-text="Screenshot that shows how to copy the application ID.":::
 
 ### 3.2 Enable implicit flow
 
@@ -354,10 +354,9 @@ The following JSON snippet demonstrates how to configure these properties.
 > Do not set `acceptMappedClaims` property to `true` for multi-tenant apps, which can allow malicious actors to create claims-mapping policies for your app. Instead [configure a custom signing key](/graph/application-saml-sso-configure-api#option-2-create-a-custom-signing-certificate).
 
 # [Customer tenant](#tab/customer-tenant)
-
 ### 3.4 Associate your app with a user flow
 
-A user flow defines the authentication methods a customer can use to sign in to your application and the information they need to provide during sign-up. Complete the steps in [Add an application to a user flow](~/external-id/customers/how-to-user-add-application.md) before continuing.
+A user flow defines the authentication methods a customer can use to sign in to your application and the information they need to provide during sign-up. Ensure that you complete the steps in [Add an application to a user flow](~/external-id/customers/how-to-user-add-application.md) before continuing to add *My test application* to the user flow.
 
 # [Workforce tenant](#tab/workforce-tenant)
 
