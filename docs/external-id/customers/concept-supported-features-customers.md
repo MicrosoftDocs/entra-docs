@@ -128,7 +128,7 @@ The following table compares the features available for user management in each 
 
 |Feature  |Workforce tenant  | Customer tenant |
 |---------|---------|---------|
-|**Ssmart lockout**| [Smart lockout](../../identity/authentication/howto-password-smart-lockout.md) helps lockout bad actors that try to guess your users' passwords or use brute-force methods to get in|Same as workforce. |
+|**Smart lockout**| [Smart lockout](../../identity/authentication/howto-password-smart-lockout.md) helps lockout bad actors that try to guess your users' passwords or use brute-force methods to get in|Same as workforce. |
 | **Custom banned passwords**| Microsoft Entra custom banned password list let you add specific strings to evaluate and block | Not available |
 
 ## Next steps
