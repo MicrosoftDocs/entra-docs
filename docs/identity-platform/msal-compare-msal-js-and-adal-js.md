@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom: has-adal-ref, devx-track-js
 ms.date: 07/06/2021
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer, I want to learn how to change the code in my JavaScript application from using ADAL.js as its authentication library to MSAL.js.
 ---

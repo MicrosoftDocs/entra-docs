@@ -1,13 +1,12 @@
 ---
 title: Microsoft Entra provisioning to LDAP directories
 description: This document describes how to configure Microsoft Entra ID to provision users into an LDAP directory.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.workload: identity
 ms.date: 02/08/2023
 ms.author: billmath
 ms.reviewer: arvinh

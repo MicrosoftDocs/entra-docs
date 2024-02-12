@@ -4,9 +4,9 @@ description: Learn why you should turn off per user MFA in Microsoft Entra ID wi
 author: shlipsey3
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 01/25/2024
 ms.author: sarahlipsey
 ms.reviewer: hafowler

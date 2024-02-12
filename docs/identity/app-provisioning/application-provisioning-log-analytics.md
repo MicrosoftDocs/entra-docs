@@ -1,13 +1,12 @@
 ---
 title: Understand how Provisioning integrates with Azure Monitor logs in Microsoft Entra ID.
 description: Understand how Provisioning integrates with Azure Monitor logs in Microsoft Entra ID.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 04/26/2023
 ms.author: kenwith
 ms.reviewer: arvinh

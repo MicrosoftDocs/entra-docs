@@ -2,11 +2,9 @@
 title: 'Microsoft Entra Connect: msExchUserHoldPolicies and cloudMsExchUserHoldPolicies'
 description: This topic describes attribute behavior of the msExchUserHoldPolicies and cloudMsExchUserHoldPolicies attributes
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: reference
 ms.date: 11/06/2023

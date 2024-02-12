@@ -2,12 +2,10 @@
 title: What are access reviews? - Microsoft Entra
 description: Using access reviews, you can control group membership and application access to meet governance, risk management, and compliance initiatives in your organization.
 services: active-directory
-documentationcenter: ''
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: overview
 ms.subservice: compliance

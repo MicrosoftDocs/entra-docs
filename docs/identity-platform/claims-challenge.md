@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: cwerner
 ms.date: 01/19/2023
 ms.reviewer: kkrishna, kylemar
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
 #Customer intent: As an application developer, I want to learn how to handle claims challenges returned from APIs protected by the Microsoft identity platform.
 ---

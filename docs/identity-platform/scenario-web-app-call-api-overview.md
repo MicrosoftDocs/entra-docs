@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: 
 ms.date: 01/10/2023
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a web app that authenticates users and calls web APIs by using the Microsoft identity platform.
 ---

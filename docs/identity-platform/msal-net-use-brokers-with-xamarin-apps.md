@@ -7,8 +7,8 @@ ms.author: dmwendia
 ms.custom: devx-track-csharp,  has-adal-ref, devx-track-dotnet
 ms.date: 09/08/2019
 ms.reviewer: jmprieur, saeeda
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer, I want to learn how to use brokers with my Xamarin iOS or Android application and MSAL.NET.
 ---

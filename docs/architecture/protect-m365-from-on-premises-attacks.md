@@ -5,7 +5,6 @@ services: active-directory
 author: janicericketts
 manager: martinco
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 08/26/2022
@@ -172,7 +171,7 @@ Deploy Microsoft Entra joined Windows 10 workstations with mobile device managem
 
 - **Legacy applications**
 
-  You can enable authentication, authorization, and remote access to legacy applications that don't support modern authentication. Use [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md). Or, enable them through a network or application delivery controller solution by using secure hybrid access partner integrations. See [Secure legacy apps with Microsoft Entra ID](~/identity/enterprise-apps/secure-hybrid-access.md).
+  You can enable authentication, authorization, and remote access to legacy applications that don't support modern authentication. Use [Microsoft Entra application proxy](/entra/identity/app-proxy). Or, enable them through a network or application delivery controller solution by using secure hybrid access partner integrations. See [Secure legacy apps with Microsoft Entra ID](~/identity/enterprise-apps/secure-hybrid-access.md).
 
   Choose a VPN vendor that supports modern authentication. Integrate its authentication with Microsoft Entra ID. In an on-premises compromise, you can use Microsoft Entra ID to disable or block access by disabling the VPN.
 

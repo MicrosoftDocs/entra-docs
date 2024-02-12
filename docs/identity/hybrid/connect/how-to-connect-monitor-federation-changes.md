@@ -2,11 +2,9 @@
 title: Monitor changes to federation configuration in Microsoft Entra ID
 description: This article explains how to monitor changes to your federation configuration with Microsoft Entra ID.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.subservice: hybrid

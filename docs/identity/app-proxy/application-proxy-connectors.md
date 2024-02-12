@@ -1,12 +1,11 @@
 ---
 title: Understand Microsoft Entra application proxy connectors
 description: Learn about the Microsoft Entra application proxy connectors.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/14/2023
 ms.author: kenwith

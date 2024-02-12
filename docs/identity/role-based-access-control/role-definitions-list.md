@@ -5,7 +5,6 @@ services: active-directory
 author: rolyon
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: roles
 ms.topic: how-to
 ms.date: 02/04/2022

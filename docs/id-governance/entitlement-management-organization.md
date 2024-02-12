@@ -2,12 +2,10 @@
 title: Manage connected organizations in entitlement management
 description: Learn how to allow people outside your organization to request access packages so that you can collaborate on projects.
 services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: markwahl-msft
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: compliance
@@ -15,10 +13,7 @@ ms.date: 05/31/2023
 ms.author: owinfrey
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an administrator, I want to allow users in certain partner organizations to request access packages so that our organizations can collaborate on projects.
-
 ---
 
 # Manage connected organizations in entitlement management

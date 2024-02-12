@@ -1,6 +1,6 @@
 ---
 author: henrymbuguakiarie
-ms.service: active-directory
+ms.service: identity-platform
 ms.topic: include
 ms.date: 09/25/2023
 ms.author: henrymbugua

@@ -2,13 +2,10 @@
 title: Microsoft Entra Connect and federation
 description: This page is the central location for all documentation regarding AD FS operations that use Microsoft Entra Connect.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 ms.assetid: f9107cf5-0131-499a-9edf-616bf3afef4d
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023

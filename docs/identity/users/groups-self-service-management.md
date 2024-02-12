@@ -1,21 +1,17 @@
 ---
 title: Set up self-service group management
 description: Create and manage security groups or Microsoft 365 groups in Microsoft Entra ID and request security group or Microsoft 365 group memberships.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-editor: ''
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 ms.date: 11/16/2023
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
-ms.collection: M365-identity-device-management
 ---
 
 # Set up self-service group management in Microsoft Entra ID

@@ -8,8 +8,8 @@ writer: twimmers
 manager: jeedes
 
 ms.assetid: f006c177-7b35-4af1-84f2-db4a4e2bf96a
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial

@@ -5,8 +5,8 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.date: 05/25/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 zone_pivot_groups: web-api-howto-prereq
 #Customer intent: As a software developer, I want to call a protected ASP.NET Core web API using the Microsoft identity platform with Postman

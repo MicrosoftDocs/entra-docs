@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom:
 ms.date: 01/19/2023
 ms.reviewer: brianmel
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As a developer using MSAL for iOS and macOS, I want to request custom claims in both interactive and silent token acquisition scenarios.
 ---

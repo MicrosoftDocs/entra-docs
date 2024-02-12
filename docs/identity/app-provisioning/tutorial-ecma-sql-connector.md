@@ -1,11 +1,10 @@
 ---
 title:  Microsoft Entra provisioning to SQL applications
 description: This tutorial describes how to provision users from Microsoft Entra ID into a SQL database.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: tutorial
 ms.date: 02/08/2023
 ms.subservice: hybrid

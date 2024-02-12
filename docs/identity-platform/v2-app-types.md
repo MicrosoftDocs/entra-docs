@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: fasttrack-edit
 ms.date: 11/17/2023
 ms.reviewer: saeeda, jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As a developer or admin in the Microsoft identity platform, I want to understand the different types of applications supported by the Microsoft identity platform, so that I can choose the right type of application for my scenario.
 ---

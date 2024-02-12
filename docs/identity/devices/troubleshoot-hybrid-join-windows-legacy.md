@@ -2,8 +2,8 @@
 title: Troubleshoot legacy Microsoft Entra hybrid joined devices
 description: Troubleshooting Microsoft Entra hybrid joined down-level devices. 
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
 ms.date: 01/24/2023
@@ -15,7 +15,6 @@ ms.reviewer: jairoc
 
 #Customer intent: As an IT admin, I want to fix issues with my Microsoft Entra hybrid joined devices so that I can my users can use this feature.
 
-ms.collection: M365-identity-device-management
 ---
 # Troubleshooting Microsoft Entra hybrid joined down-level devices 
 

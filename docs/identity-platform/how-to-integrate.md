@@ -8,8 +8,8 @@ ms.author: cwerner
 ms.custom: seoapril2019
 ms.date: 10/01/2020
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As a developer, I want to integrate my application with the Microsoft identity platform, so that I can provide my users with a streamlined sign-in experience and conform to IT policies.
 ---

@@ -9,7 +9,6 @@ ms.reviewer: jeffsta
 ms.service: active-directory
 ms.topic: troubleshooting
 ms.subservice: fundamentals
-ms.workload: identity
 ms.date: 09/12/2023
 ---
 # View activity logs for Microsoft Support access requests (preview)

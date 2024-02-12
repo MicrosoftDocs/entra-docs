@@ -2,14 +2,12 @@
 title: Using Microsoft Entra Connect Health with AD DS
 description: This is the Microsoft Entra Connect Health page that will discuss how to monitor AD DS.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
 
 ms.assetid: 19e3cf15-f150-46a3-a10c-2990702cd700
 ms.service: active-directory
 ms.subservice: hybrid
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023

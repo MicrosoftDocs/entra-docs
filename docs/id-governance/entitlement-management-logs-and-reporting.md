@@ -2,23 +2,17 @@
 title: Archive & report with Azure Monitor - entitlement management
 description: Learn how to archive logs and create reports with Azure Monitor in entitlement management.
 services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
-ms.reviewer: 
-ms.collection: M365-identity-device-management 
+ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-
-
 #Customer intent: As an administrator, I want to extend data retention in entitlement management past the default period by using Azure Monitor.
-
 ---
 # Archive logs and reporting on entitlement management in Azure Monitor
 

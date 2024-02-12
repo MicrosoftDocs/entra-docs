@@ -6,12 +6,11 @@ author: billmath
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: hybrid
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.date: 11/06/2023
 ms.topic: how-to
 ms.author: billmath
-ms.collection: M365-identity-device-management 
+ms.collection: M365-identity-device-management
 ms.custom:
 ---
 # Install the Microsoft Entra Connect Health agents

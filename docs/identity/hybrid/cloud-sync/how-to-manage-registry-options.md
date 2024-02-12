@@ -2,14 +2,11 @@
 title: 'Microsoft Entra Connect cloud provisioning agent: Manage registry options'
 description: This article describes how to manage registry options in the Microsoft Entra Connect cloud provisioning agent.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 ms.service: active-directory
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.reviewer: chmutali

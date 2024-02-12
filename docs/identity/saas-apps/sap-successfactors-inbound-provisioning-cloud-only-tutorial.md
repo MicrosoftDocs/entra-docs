@@ -4,8 +4,8 @@ description: Learn how to configure inbound provisioning from SuccessFactors to 
 
 author: cmmdesai
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.topic: tutorial
 
 ms.date: 01/25/2024

@@ -1,21 +1,18 @@
 ---
 title: Renew Microsoft Entra role assignments in PIM
 description: Learn how to extend or renew Microsoft Entra role assignments in Microsoft Entra Privileged Identity Management (PIM)
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-editor: ''
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id-governance
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.subservice: pim
+ms.subservice: privileged-identity-management
 ms.date: 09/13/2023
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
-ms.collection: M365-identity-device-management
+
 ---
 
 # Extend or renew Microsoft Entra role assignments in Privileged Identity Management

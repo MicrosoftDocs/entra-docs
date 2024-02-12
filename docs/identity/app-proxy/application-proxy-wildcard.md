@@ -1,12 +1,11 @@
 ---
 title: Wildcard applications in Microsoft Entra application proxy
 description: Learn how to use Wildcard applications in Microsoft Entra application proxy.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
 ms.date: 02/06/2024
 ms.author: kenwith
@@ -16,7 +15,7 @@ ms.custom: it-pro
 
 # Wildcard applications in the Microsoft Entra application proxy
 
-In Microsoft Entra ID, configuring a large number of on-premises applications can quickly become unmanageable and introduces unnecessary risks for configuration errors if many of them require the same settings. With [Microsoft Entra application proxy](application-proxy.md), you can address this issue by using wildcard application publishing to publish and manage many applications at once. This is a solution that allows you to:
+In Microsoft Entra ID, configuring a large number of on-premises applications can quickly become unmanageable and introduces unnecessary risks for configuration errors if many of them require the same settings. With [Microsoft Entra application proxy](overview-what-is-app-proxy.md), you can address this issue by using wildcard application publishing to publish and manage many applications at once. This is a solution that allows you to:
 
 - Simplify your administrative overhead
 - Reduce the number of potential configuration errors

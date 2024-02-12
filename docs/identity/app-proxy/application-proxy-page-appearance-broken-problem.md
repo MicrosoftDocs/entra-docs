@@ -1,12 +1,11 @@
 ---
 title: App page doesn't display correctly for Application Proxy app
 description: Guidance when the page isn’t displaying correctly in an Application Proxy Application you have integrated with Microsoft Entra ID
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 09/14/2023
 ms.author: kenwith

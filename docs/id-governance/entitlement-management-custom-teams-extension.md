@@ -5,10 +5,9 @@ author: owinfreyATL
 ms.author: owinfrey
 ms.service: active-directory
 ms.subservice: compliance
-ms.workload: identity
-ms.topic: tutorial 
+ms.topic: tutorial
 ms.date: 07/05/2023
-ms.custom: template-tutorial 
+ms.custom: template-tutorial
 ---
 
 # Tutorial: Integrating Microsoft Entra Entitlement Management with Microsoft Teams using Custom Extensibility and Logic Apps

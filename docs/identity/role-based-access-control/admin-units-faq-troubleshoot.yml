@@ -3,13 +3,11 @@ metadata:
   title: "Administrative units troubleshooting and FAQ"
   description: Investigate administrative units to grant permissions with restricted scope in Microsoft Entra ID.
   services: active-directory
-  documentationcenter: ''
   author: rolyon
   manager: amycolannino
   ms.service: active-directory
   ms.topic: faq
   ms.subservice: roles
-  ms.workload: identity
   ms.date: 06/09/2023
   ms.author: rolyon
   ms.reviewer: anandy

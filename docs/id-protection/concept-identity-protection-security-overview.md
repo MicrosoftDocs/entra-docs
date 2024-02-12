@@ -2,9 +2,9 @@
 title: Microsoft Entra ID Protection security overview
 description: Learn how the security overview gives you an insight into your organization’s security posture. 
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: identity-protection
+
+ms.service: entra-id-protection
+
 ms.topic: reference
 ms.date: 08/23/2023
 
@@ -13,7 +13,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: chuqiaoshi
 
-ms.collection: M365-identity-device-management
+
 ---
 # Microsoft Entra ID Protection - Security overview
 

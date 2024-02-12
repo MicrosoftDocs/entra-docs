@@ -6,10 +6,9 @@ ms.author: owinfrey
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: compliance
-ms.workload: identity
-ms.topic: conceptual 
+ms.topic: conceptual
 ms.date: 05/31/2023
-ms.custom: template-concept 
+ms.custom: template-concept
 ---
 
 

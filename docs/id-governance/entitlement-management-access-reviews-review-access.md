@@ -2,22 +2,16 @@
 title: Review access of an access package in entitlement management
 description: Learn how to complete an access review of entitlement management access packages in access reviews.
 services: active-directory
-documentationCenter: ''
 author: owinfreyATL
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: compliance
 ms.date: 06/28/2023
 ms.author: owinfrey
-ms.reviewer: 
 ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an administrator, I want to review the active assignments of my users to ensure everyone has the appropriate access.
-
 ---
 # Review access of an access package in entitlement management
 

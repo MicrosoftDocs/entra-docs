@@ -1,10 +1,9 @@
 ---
 title: Microsoft Entra ID configuration recommendations for HITRUST controls
 description: Guidance on navigating details and recommendations for services and features to align with HITRUST controls
-services: active-directory 
+services: active-directory
 ms.service: active-directory
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: how-to
 author: jricketts
 ms.author: jricketts
@@ -39,7 +38,7 @@ The following table lists the acronyms and their spelling in this article.
 |MFA|Microsoft Entra multifactor authentication|
 |NIST|National Institute of Standards and Technology, US Dept. of Commerce|
 |PHI| Protected health information|
-|PIM|Priveleged Identity Management|
+|PIM|Privileged Identity Management|
 |SSO|Single sign-on|
 |TAP|Temporary access pass|
 

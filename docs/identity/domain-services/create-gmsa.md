@@ -8,11 +8,9 @@ manager: amycolannino
 ms.assetid: e6faeddd-ef9e-4e23-84d6-c9b3f7d16567
 ms.service: active-directory
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/23/2023
 ms.author: justinha
-
 ---
 # Create a group managed service account (gMSA) in Microsoft Entra Domain Services
 

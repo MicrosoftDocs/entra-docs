@@ -2,12 +2,10 @@
 title: Configure Verified ID settings for an access package in entitlement management
 description: Learn how to configure verified ID settings for an access package in entitlement management.
 services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: HANKI
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: compliance
@@ -15,7 +13,6 @@ ms.date: 05/31/2023
 ms.author: owinfrey
 ms.reviewer: hanki
 ms.collection: M365-identity-device-management
-
 ---
 
 # Configure Verified ID settings for an access package in entitlement management

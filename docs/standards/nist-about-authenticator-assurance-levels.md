@@ -1,10 +1,9 @@
 ---
 title: NIST authenticator assurance levels with Microsoft Entra ID
 description: An overview of authenticator assurance levels as applied to Microsoft Entra ID
-services: active-directory 
+services: active-directory
 ms.service: active-directory
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh

@@ -13,11 +13,11 @@ The following video provides an overview of on-premises provisioning.
 
 The application relies upon an SQL database, in which records for users can be created, updated, and deleted. The computer that runs the provisioning agent should have:
 
-- A Windows Server 2016 or a later version. 
+- Windows Server 2016 or a later version. 
 -  Connectivity to the target database system, and with outbound connectivity to login.microsoftonline.com, [other Microsoft Online Services](/microsoft-365/enterprise/urls-and-ip-address-ranges) and [Azure](/azure/azure-portal/azure-portal-safelist-urls) domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy. 
-- At least 3 GB of RAM, to host a provisioning agent. 
-- .NET Framework 4.7.2 
-- An ODBC driver for the SQL database.
+- At least 3 GB of RAM. 
+- .NET Framework 4.7.2. 
+- The ODBC driver for the SQL database.
 
 Configuration of the connection to the application's database is done via a wizard. Depending on the options you select, some of the wizard screens might not be available and the information might be slightly different. Use the following information to guide you in your configuration.
 
@@ -44,7 +44,7 @@ Configuration of the connection to the application's database is done via a wiza
 
 In this article, you'll configure the Microsoft Entra SQL connector to interact with your application's relational database. Typically, applications manage access with a table in their SQL database, with one row in the table per user. If you already have an application with a database, then continue at the next section.
 
-If you don't already have a database with a suitable table, then for demonstration purposes, you should create one which Microsoft Entra ID can be permitted to use.  If you're using SQL Server, then run the SQL script found in [Appendix A](#appendix-a). This script creates a sample database with the name CONTOSO, containing a single table `Employees`. This database table that you'll be provisioning users into.
+If you don't already have a database with a suitable table, then for demonstration purposes, you should create one which Microsoft Entra ID can be permitted to use. If you're using SQL Server, then run the SQL script found in [Appendix A](#appendix-a). This script creates a sample database with the name CONTOSO, containing a single table `Employees`. This database table that you'll be provisioning users into.
 
  |Table Column|Source|
  |-----|-----|
@@ -64,27 +64,27 @@ You'll need to have a user account in the SQL instance with the rights to make u
 
 If you have an already existing database for your application, then you'll need to determine how Microsoft Entra ID should interact with that database: direct interaction with tables and views, via stored procedures already present in the database, or via SQL statements you provide for query and updates. This setting is because a more complex application might have in its database other auxiliary tables, require paging for tables with thousands of users, or could require Microsoft Entra ID to call a stored procedure that performs extra data processing, such as encryption, hashing or validity checks.
 
-When you create the configuration for the connector to interact with an application's database, you'll configure first an approach for how the connector host reads the schema of your database, and then configure the approach the connector should use on an ongoing basis, via run profiles. Each run profile specifies how the connector should generate SQL statements.  The choice of run profiles, and the method within a run profile, depends on what your database engine supports and the application requires.
+When you create the configuration for the connector to interact with an application's database, you'll configure first an approach for how the connector host reads the schema of your database, and then configure the approach the connector should use on an ongoing basis, via run profiles. Each run profile specifies how the connector should generate SQL statements. The choice of run profiles, and the method within a run profile, depends on what your database engine supports and the application requires.
 
-- After configuration, when the provisioning service starts, it will automatically perform the interactions configured in the **Full Import** run profile.  In this run profile, the connector will read in all the records for users from the application's database, typically using a **SELECT** statement.  This run profile is necessary so that later, if Microsoft Entra ID needs to make a change for a user, Microsoft Entra ID will know to update an existing record for that user in the database, rather than create a new record for that user.
+- After configuration, when the provisioning service starts, it will automatically perform the interactions configured in the **Full Import** run profile.  In this run profile, the connector will read in all the records for users from the application's database, typically using a **SELECT** statement. This run profile is necessary so that later, if Microsoft Entra ID needs to make a change for a user, Microsoft Entra ID will know to update an existing record for that user in the database, rather than create a new record for that user.
 
 - Each time changes are made in Microsoft Entra ID, such as to assign a new user to the application or update an existing user, the provisioning service will perform the SQL database interactions configured **Export** run profile. In the **Export** run profile, Microsoft Entra ID will issue SQL statements to insert, update and delete records in the database, in order to bring the contents of the database in sync with Microsoft Entra ID.
 
-- If your database supports it, you can also optionally configure a **Delta Import** run profile. In this run profile, Microsoft Entra ID will read in changes that were made in the database, other than by Microsoft Entra ID, since the last full or delta import.  This run profile is optional since it requires the database to be structured to allow changes to be read.
+- If your database supports it, you can also optionally configure a **Delta Import** run profile. In this run profile, Microsoft Entra ID will read in changes that were made in the database, other than by Microsoft Entra ID, since the last full or delta import. This run profile is optional since it requires the database to be structured to allow changes to be read.
 
-In the configuration of each run profile of the connector, you'll specify whether the Microsoft Entra connector should generate its own SQL statements for a table or view, call your stored procedures, or use custom SQL queries you provide.  Typically you'll use the same method for all run profiles in a connector.
+In the configuration of each run profile of the connector, you'll specify whether the Microsoft Entra connector should generate its own SQL statements for a table or view, call your stored procedures, or use custom SQL queries you provide. Typically you'll use the same method for all run profiles in a connector.
 
-- If you select the Table or View method for a run profile, then the Microsoft Entra connector will generate the necessary SQL statements, *SELECT*, *INSERT*, *UPDATE* and *DELETE*, to interact with the table or view in the database.  This method is the simplest approach, if your database has a single  table or an updatable view with few existing rows.
-- If you select the Stored Procedure method, then your database will need to have four stored procedures: read a page of users, add a user, update a user and delete a user, you'll configure the Microsoft Entra connector with the names and parameters of those stored procedures to call.  This approach requires more configuration in your SQL database and would typically only be needed if your application requires more processing for each change to a user, of for paging through large result sets.
+- If you select the Table or View method for a run profile, then the Microsoft Entra connector will generate the necessary SQL statements, *SELECT*, *INSERT*, *UPDATE* and *DELETE*, to interact with the table or view in the database. This method is the simplest approach, if your database has a single  table or an updatable view with few existing rows.
+- If you select the Stored Procedure method, then your database will need to have four stored procedures: read a page of users, add a user, update a user and delete a user, you'll configure the Microsoft Entra connector with the names and parameters of those stored procedures to call. This approach requires more configuration in your SQL database and would typically only be needed if your application requires more processing for each change to a user, of for paging through large result sets.
 - If you select the SQL Query method, then you'll type in the specific SQL statements you want the connector to issue during a run profile.  You'll configure the connector with the parameters that the connector should populate in your SQL statements, such as to page through result sets during an import, or to set the attributes of a new user being created during an export.
 
 This article illustrates how to use the table method to interact with the sample database table `Employees`, in the **Export** and **Full Import** run profiles. To learn more about configuring the Stored Procedure or SQL Query methods, see the [Generic SQL configuration guide](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-genericsql) that provides more details and specific requirements.
 
 ## Choose the unique identifiers in your application's database schema
 
-Most applications will have a unique identifier for each user of the application.  If you're provisioning into an existing database table, you should identify a column of that table that has a value for each user, where that value is unique and doesn't change.  This column will be the **Anchor**, which Microsoft Entra ID uses to identify existing rows to be able to update or delete them. For more information on anchors, see [About anchor attributes and distinguished names](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md#about-anchor-attributes-and-distinguished-names).
+Most applications will have a unique identifier for each user of the application.  If you're provisioning into an existing database table, you should identify a column of that table that has a value for each user, where that value is unique and doesn't change. This column will be the **Anchor**, which Microsoft Entra ID uses to identify existing rows to be able to update or delete them. For more information on anchors, see [About anchor attributes and distinguished names](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md#about-anchor-attributes-and-distinguished-names).
 
-If your application's database already exists, has users in it, and you want to have Microsoft Entra ID keep those users up to date, then you'll need to have an identifier for each user that is the same between the application's database and the Microsoft Entra schema.  For example, if you assign a user to the application in Microsoft Entra ID, and that user is already in that database, then changes to that user in Microsoft Entra ID should update an existing row for that user, rather than add a new row.  Since Microsoft Entra ID likely doesn't store an application's internal identifier for that user, you'll want to select another column for **querying** the database. The value of this column could be a user principal name, or an email address, employee ID, or other identifier that is present in Microsoft Entra ID on each user that is in scope of the application.  If the user identifier that the application uses isn't an attribute stored in the Microsoft Entra representation of the user, then you don't need to extend the Microsoft Entra user schema with an extension attribute, and populate that attribute from your database.  You can extend the Microsoft Entra schema and set extension values using [PowerShell](/powershell/azure/active-directory/using-extension-attributes-sample).
+If your application's database already exists, has users in it, and you want to have Microsoft Entra ID keep those users up to date, then you'll need to have an identifier for each user that is the same between the application's database and the Microsoft Entra schema. For example, if you assign a user to the application in Microsoft Entra ID, and that user is already in that database, then changes to that user in Microsoft Entra ID should update an existing row for that user, rather than add a new row.  Since Microsoft Entra ID likely doesn't store an application's internal identifier for that user, you'll want to select another column for **querying** the database. The value of this column could be a user principal name, or an email address, employee ID, or other identifier that is present in Microsoft Entra ID on each user that is in scope of the application.  If the user identifier that the application uses isn't an attribute stored in the Microsoft Entra representation of the user, then you don't need to extend the Microsoft Entra user schema with an extension attribute, and populate that attribute from your database.  You can extend the Microsoft Entra schema and set extension values using [PowerShell](/powershell/azure/active-directory/using-extension-attributes-sample).
 
 <a name='map-attributes-in-azure-ad-to-the-database-schema'></a>
 
@@ -121,7 +121,7 @@ The generic SQL connector requires a Data Source Name (DSN) file to connect to t
      
      ![Screenshot that shows Finish.](./media/app-provisioning-sql/dsn-5.png)
      
- 6. Now configure the connection. If the SQL Server is located on a different server computer, then enter the name of the server. Then, select **Next**.  The following steps will differ depending upon which ODBC driver you're using.  These settings assume you're using the driver to connect to SQL Server.
+ 6. Now configure the connection. The following steps will differ depending upon which ODBC driver you're using. This illustration assumes you're using the driver to connect to SQL Server.  If the SQL Server is located on a different server computer, then enter the name of the server. Then, select **Next**.
      
      ![Screenshot that shows entering a server name.](./media/app-provisioning-sql/dsn-6.png)
 
@@ -166,12 +166,9 @@ If you have already downloaded the provisioning agent and configured it for anot
  
  :::image type="content" source="media/app-provisioning-sql/download-1.png" alt-text="Screenshot of download location for agent." lightbox="media/app-provisioning-sql/download-1.png":::
      
- 8. Leave the portal and open the provisioning agent installer, agree to the terms of service, and select **next**.
- 9. Open the provisioning agent wizard.
+ 8. Leave the portal and run the provisioning agent installer, agree to the terms of service, and select **Install**.
+ 9. Wait for the Microsoft Entra provisioning agent configuration wizard and then select **Next**.
  10. In the **Select Extension** step, select **On-premises application provisioning** and then select **Next**.
-
- :::image type="content" source="media/app-provisioning-sql/sync-agent-select-on-premises.png" alt-text="Screenshot that shows how to select on premises provisioning." lightbox="media/app-provisioning-sql/sync-agent-select-on-premises.png":::
-    
  11. The provisioning agent will use the operating system's web browser to display a popup window for you to authenticate to Microsoft Entra ID, and potentially also your organization's identity provider.  If you are using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
  12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have the Hybrid Identity Administrator or Global Administrator role.
  13. Select **Confirm** to confirm the setting. Once installation is successful, you can select **Exit**, and also close the Provisioning Agent Package installer.
@@ -233,7 +230,7 @@ To create a generic SQL connector, follow these steps:
      |Property|Description|
      |-----|-----|
      |DSN File|The Data Source Name file you created in the previous step, which is used to connect to the SQL instance.|
-     |User Name|The username of an account with rights to make updates to the table in the SQL instance. If the target database is SQL Server and you're using Windows authentication, the user name must be in the form of hostname\sqladminaccount for standalone servers or domain\sqladminaccount for domain member servers.|
+     |User Name|The username of an account with rights to make updates to the table in the SQL instance. If the target database is SQL Server and you're using Windows authentication, the user name must be in the form of hostname\sqladminaccount for standalone servers or domain\sqladminaccount for domain member servers. For other databases, the user name will be a local account in the database.|
      |Password|The password of the username provided.|
      |DN is Anchor|Unless your environment is known to require these settings, don't select the **DN is Anchor** and **Export Type:Object Replace** checkboxes.|
 
@@ -257,19 +254,19 @@ After having provided credentials, the ECMA Connector Host will be ready to retr
      |Property|Value|
      |-----|-----|
      |User:Attribute Detection|Table|
-     |User:Table/View/SP|Employees|
+     |User:Table/View/SP|The name of the table in your database, such as `Employees`|
 
     >[!NOTE]
     >If an error occurs, check your database configuration to ensure that the user you specified on the **Connectivity** page has read access to the database's schema.
 
-7. Once you select **Next**, the next page will automatically appear, for you to select the columns of the `Employees` table that are to be used as the `Anchor` and `DN` of users.  On the **Schema 3** page, fill in the boxes with the values specified in the table that follows the image and select **Next**.
+7. Once you select **Next**, the next page will automatically appear, for you to select the columns of the table you specified earlier, such as the `Employees` table in this sample, that are to be used as the `Anchor` and `DN` of users. These columns contain unique identifiers in your database.  You can use the same or different columns, but ensure that any rows already in this database have unique values in these columns.  On the **Schema 3** page, fill in the boxes with the values specified in the table that follows the image and select **Next**.
 
      [![Screenshot that shows the Schema 3 page.](.\media\app-provisioning-sql\conn-5.png)](.\media\app-provisioning-sql\conn-5.png#lightbox)
 
      |Property|Description|
      |-----|-----|
-     |Select Anchor for: User|User:ContosoLogin|
-     |Select DN attribute for User|AzureID|
+     |Select Anchor for: User|The column of the database table to be used for the anchor, such as `User:ContosoLogin`|
+     |Select DN attribute for User|The column of the database to be used for the DN attribute, such as `AzureID`|
 
 8. Once you select **Next**, the next page will automatically appear, for you to confirm the data type of each of the columns of the `Employee` table, and whether the connector should import or export them. On the **Schema 4** page, leave the defaults and select **Next**.
 
@@ -281,14 +278,16 @@ After having provided credentials, the ECMA Connector Host will be ready to retr
      
      |Property|Description|
      |-----|-----|
-     |Data Source Date Time Format|yyyy-MM-dd HH:mm:ss|
+     |Delta Strategy|For IBM DB2, select `None` |
+     | Water Mark Query |For IBM DB2, type `SELECT CURRENT TIMESTAMP FROM SYSIBM.SYSDUMMY1;` |
+     |Data Source Date Time Format|For SQL Server, `yyyy-MM-dd HH:mm:ss` and for IBM DB2, `YYYY-MM-DD`|
 10. On the **Partitions** page, select **Next**.
 
      [![Screenshot that shows the Partitions page.](.\media\app-provisioning-sql\conn-8.png)](.\media\app-provisioning-sql\conn-8.png#lightbox)
 
 ### 6.3 Configure the run profiles
 
-Next, you'll configure the **Export** and **Full import** run profiles.  The **Export** run profile will be used when the ECMA Connector host needs to send changes from Microsoft Entra ID to the database, to insert, update and delete records.  The **Full Import** run profile will be used when the ECMA Connector host service starts, to read in the current content of the database.  In this sample, you'll use the Table method in both run profiles, so that the ECMA Connector Host will generate the necessary SQL statements.
+Next, you'll configure the **Export** and **Full import** run profiles. The **Export** run profile will be used when the ECMA Connector host needs to send changes from Microsoft Entra ID to the database, to insert, update and delete records. The **Full Import** run profile will be used when the ECMA Connector host service starts, to read in the current content of the database.  In this sample, you'll use the Table method in both run profiles, so that the ECMA Connector Host will generate the necessary SQL statements.
 
 Continue with the SQL connection configuration:
 
@@ -309,7 +308,7 @@ Continue with the SQL connection configuration:
      |Property|Description|
      |-----|-----|
      |Operation Method|Table|
-     |Table/View/SP|Employees|
+     |Table/View/SP|The same table as configured on the Schema 2 tab, such as `Employees`|
  
 13. On the **Full Import** page, fill in the boxes and select **Next**. Use the table that follows the image for guidance on the individual boxes. 
 
@@ -318,7 +317,7 @@ Continue with the SQL connection configuration:
      |Property|Description|
      |-----|-----|
      |Operation Method|Table|
-     |Table/View/SP|Employees|
+     |Table/View/SP|The same table as configured on the Schema 2 tab, such as `Employees`|
 
 <a name='64-configure-how-attributes-are-surfaced-in-azure-ad'></a>
 
@@ -328,16 +327,16 @@ In the last step of the SQL connection settings, configure how attributes are su
 
 14. On the **Object Types** page, fill in the boxes and select **Next**. Use the table that follows the image for guidance on the individual boxes.   
 
-      - **Anchor**: The values of this attribute should be unique for each object in the target database. The Microsoft Entra provisioning service will query the ECMA connector host by using this attribute after the initial cycle. This anchor value should be the same as the anchor value you configured earlier on the **Schema 3** page.
+      - **Anchor**: The values of this attribute should be unique for each object in the target database. The Microsoft Entra provisioning service will query the ECMA connector host by using this attribute after the initial cycle. This anchor value should be the same as the anchor column you configured earlier on the **Schema 3** page.
       - **Query Attribute**:  This attribute should be the same as the Anchor.
-      - **DN**: The **Autogenerated** option should be selected in most cases. If it isn't selected, ensure that the DN attribute is mapped to an attribute in Microsoft Entra ID that stores the DN in this format: CN = anchorValue, Object = objectType.  For more information on anchors and the DN, see [About anchor attributes and distinguished names](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md#about-anchor-attributes-and-distinguished-names).
+      - **DN**: The **Autogenerated** option should be selected in most cases. If it isn't selected, ensure that the DN attribute is mapped to an attribute in Microsoft Entra ID that stores the DN in this format: `CN = anchorValue, Object = objectType`. For more information on anchors and the DN, see [About anchor attributes and distinguished names](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md#about-anchor-attributes-and-distinguished-names).
      
      |Property|Description|
      |-----|-----|
      |Target object|User|
-     |Anchor|ContosoLogin|
-     |Query Attribute|ContosoLogin|
-     |DN|ContosoLogin|
+     |Anchor|The column configured in Schema 3 tab, such as `ContosoLogin`|
+     |Query Attribute|The same column as the Anchor, such as `ContosoLogin`|
+     |DN|The same column as configured in the Schema 3 tab, such as `ContosoLogin`|
      |Autogenerated|Checked|      
 
  15. The ECMA connector host discovers the attributes supported by the target database. You can choose which of those attributes you want to expose to Microsoft Entra ID. These attributes can then be configured in the Azure portal for provisioning. On the **Select Attributes** page, add all the attributes in the dropdown list one at a time.
@@ -411,7 +410,7 @@ You'll use the Azure portal to configure the mapping between the Microsoft Entra
      ![Screenshot that shows provisioning a user.](.\media\app-provisioning-sql\configure-10.png)
 
  1. To confirm that the schema of the database is available in Microsoft Entra ID, select the **Show advanced options** checkbox and select **Edit attribute list for ScimOnPremises**. Ensure that all the attributes selected in the configuration wizard are listed.  If not, then wait several minutes for the schema to refresh, and then reload the page. Once you see the attributes listed, close the page to return to the mappings list.
- 2. Now, click on the **userPrincipalName** PLACEHOLDER mapping.  This mapping is added by default when you first configure on-premises provisioning.  
+ 2. Now, click on the **userPrincipalName** PLACEHOLDER mapping. This mapping is added by default when you first configure on-premises provisioning.  
  
    :::image type="content" source="media/app-provisioning-sql/configure-11.png" alt-text="Screenshot of placeholder." lightbox="media/app-provisioning-sql/configure-11.png":::
  Change the attribute's values to match the following:
@@ -448,7 +447,7 @@ You'll use the Azure portal to configure the mapping between the Microsoft Entra
 Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft Entra ID, and the attribute mapping configured, you can move on to configuring who's in scope for provisioning.
 
 >[!IMPORTANT]
->If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the Application Administrator, Cloud Application Administrator or Global Administrator role, for this section.  The Hybrid Identity Administrator role does not have permissions to assign users to applications.
+>If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the Application Administrator, Cloud Application Administrator or Global Administrator role, for this section. The Hybrid Identity Administrator role does not have permissions to assign users to applications.
 
 
 If there are existing users in the SQL database, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).
@@ -503,7 +502,7 @@ If an error is shown, then select **View provisioning logs**.  Look in the log f
 
 If the error message is **Failed to create User**, then check the attributes that are shown against the requirements of the database schema.
 
-For more information, change to the **Troubleshooting & Recommendations** tab.  If the ODBC driver returned a message, it could be displayed here.  For example, the message `ERROR [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Cannot insert the value NULL into column 'FirstName', table 'CONTOSO.dbo.Employees'; column does not allow nulls.` is an error from the ODBC driver. In this case, the `column does not allow nulls` might indicate that the `FirstName` column in the database is mandatory but the user being provisioned didn't have a `givenName` attribute, so the user couldn't be provisioned.
+For more information, change to the **Troubleshooting & Recommendations** tab.  If the ODBC driver returned a message, it could be displayed here. For example, the message `ERROR [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Cannot insert the value NULL into column 'FirstName', table 'CONTOSO.dbo.Employees'; column does not allow nulls.` is an error from the ODBC driver. In this case, the `column does not allow nulls` might indicate that the `FirstName` column in the database is mandatory but the user being provisioned didn't have a `givenName` attribute, so the user couldn't be provisioned.
 
 ## Check that users were successfully provisioned
 

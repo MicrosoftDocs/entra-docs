@@ -4,9 +4,8 @@ description: Learn about known issues when you work with automated application p
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 02/02/2024
 ms.reviewer: arvinh
@@ -204,4 +203,3 @@ The following attributes and objects aren't supported:
 
 ## Next steps
 [How provisioning works](how-provisioning-works.md)
-

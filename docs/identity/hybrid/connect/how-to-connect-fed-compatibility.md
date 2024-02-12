@@ -2,12 +2,10 @@
 title: Microsoft Entra federation compatibility list
 description: This page has non-Microsoft identity providers that can be used to implement single sign-on.
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
 ms.assetid: 22c8693e-8915-446d-b383-27e9587988ec
 ms.service: active-directory
-ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023

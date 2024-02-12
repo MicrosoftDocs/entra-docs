@@ -2,11 +2,9 @@
 title: Least privileged roles by task
 description: Least privileged roles to delegate for tasks in Microsoft Entra ID
 services: active-directory
-documentationcenter: ''
 author: rolyon
 manager: amycolannino
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: roles
 ms.topic: reference
 ms.date: 02/12/2024

@@ -2,17 +2,14 @@
 title: 'Microsoft Entra Connect: Design concepts'
 description: This topic details certain implementation design areas
 services: active-directory
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: 4114a6c0-f96a-493c-be74-1153666ce6c9
 ms.service: active-directory
 ms.custom: azure-ad-connect
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: Identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
