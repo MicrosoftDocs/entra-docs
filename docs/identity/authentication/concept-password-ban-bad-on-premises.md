@@ -10,7 +10,8 @@ ms.date: 01/29/2023
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: jsimmons---
+ms.reviewer: jsimmons
+---
 
 # Enforce on-premises Microsoft Entra Password Protection for Active Directory Domain Services
 

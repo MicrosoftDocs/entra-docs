@@ -9,7 +9,8 @@ ms.date: 05/23/2023
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
-ms.reviewer: michmcla---
+ms.reviewer: michmcla
+---
 # Migrate to Microsoft Entra multifactor authentication and Microsoft Entra user authentication
 
 Multifactor authentication helps secure your infrastructure and assets from bad actors. Microsoft Multi-Factor Authentication Server (MFA Server) is no longer offered for new deployments. Customers who are using MFA Server should move to Microsoft Entra multifactor authentication (Microsoft Entra multifactor authentication). 
