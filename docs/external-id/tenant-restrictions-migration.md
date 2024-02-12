@@ -80,7 +80,7 @@ Allow internal identities, such as employees, to access specific external tenant
 
 Allow internal identities such as employees, and external identities such as contractors and vendors to access specific external tenants on your managed network. Block access to nonallow listed tenants for all identities.  
 
-1. In **Cross-tenant access settings**, [add each domain/tenant ID as an organization under Organizational settings](cross-tenant-access-settings-b2b-collaboration.md).
+1. In **Cross-tenant access settings**, [add each domain/tenant ID as an organization under Organizational settings](cross-tenant-access-settings-b2b-collaboration.md#add-an-organization).
 2. For each added organization to enable internal identities, [configure Outbound access for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.md) to allow all users, groups, and applications.
 3. For each added organization to enable external identities, [configure the organization tenant restrictions](tenant-restrictions-v2.md) to allow all users, groups, and applications.  
 
@@ -90,7 +90,7 @@ Allow internal identities such as employees, and external identities such as con
 
    [ ![Screenshot of Outbound access settings under Default settings.](media/tenant-restrictions-migration/default-settings-outbound.png)](media/tenant-restrictions-migration/default-settings-outbound.png#lightbox)
 
-5. In **Tenant restrictions defaults**, create the policy ID (if not created) and configure the policy to block all users, groups, and external applications. This action applies only to tenants not added in [step 1](#allow-internal-and-external-identities-to-access-specific-external-tenants).
+5. In **Tenant restrictions defaults**, [create the policy ID (if not created) and configure the policy to block all users, groups, and external applications](tenant-restrictions-v2.md#configure-server-side-tenant-restrictions-v2-cloud-policy). This action applies only to tenants not added in [step 1](#allow-internal-and-external-identities-to-access-specific-external-tenants).
 
    [ ![Screenshot of Tenant restrictions, with external users and groups, also external apps.](media/tenant-restrictions-migration/tenant-restrictions-applies.png)](media/tenant-restrictions-migration/tenant-restrictions-applies.png#lightbox)
 
