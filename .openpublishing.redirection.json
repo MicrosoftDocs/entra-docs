@@ -206,21 +206,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity-platform/scenario-web-app-sign-user-overview.md",
-      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-prepare-app",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity-platform/scenario-web-app-call-api-overview.md",
-      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-prepare-app",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity-platform/scenario-web-app-call-api-production.md",
-      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-prepare-app",
-      "redirect_document_id": false
-    },
-    {
       "source_path_from_root": "/docs/identity-platform/scenario-spa-overview.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-prepare-app",
       "redirect_document_id": false
@@ -231,11 +216,26 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-app-sign-user-overview.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-app-call-api-production.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-app-call-api-overview.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-prepare-app",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/scenario-web-api-call-api-production.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-prepare-app",
       "redirect_document_id": false
     }
-
+    
   ]
 }
 
