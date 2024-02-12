@@ -207,7 +207,9 @@ items:
         - name: Native auth
           items:
             - name: Prepare Android app
-              href: tutorial-mobile-app-maui-sign-in-prepare-tenant.md
+              href: tutorial-native-auth-android-initialize.md
+            - name: Sign up, sign in and sign out
+              href: tutorial-native-auth-android-sign-up-sign-in-sign-out.md
     - name: Command-line interface (CLI) app
       items:
         - name: Node.js
