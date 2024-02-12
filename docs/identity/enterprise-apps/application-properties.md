@@ -4,8 +4,8 @@ description: Learn about the properties of an enterprise application in Microsof
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: conceptual
 
 ms.date: 08/29/2023

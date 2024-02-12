@@ -4,8 +4,8 @@ description: Learn about single sign-on for enterprise applications in Microsoft
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: overview
 ms.date: 10/30/2023

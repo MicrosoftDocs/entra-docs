@@ -3,8 +3,8 @@ title: What is application management?
 description: An overview of managing the lifecycle of an application in Microsoft Entra ID.
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: overview
 ms.date: 12/19/2023
 ms.author: jomondi
