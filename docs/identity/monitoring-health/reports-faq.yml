@@ -2,12 +2,12 @@
 metadata:
   title: Microsoft Entra monitoring and health FAQ
   description: Frequently asked questions around Microsoft Entra monitoring and health, including logs and reports.
-  services: active-directory
+  
   author: shlipsey3
   manager: amycolannino
-  ms.service: active-directory
+  ms.service: entra-id
   ms.topic: faq
-  ms.subservice: report-monitor
+  ms.subservice: monitoring-health
   ms.date: 01/08/2024
   ms.author: sarahlipsey
   ms.reviewer: egreenberg14
