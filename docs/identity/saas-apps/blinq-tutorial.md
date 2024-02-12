@@ -1,12 +1,12 @@
 ---
 title: Microsoft Entra SSO integration with Blinq
 description: Learn how to configure single sign-on between Microsoft Entra ID and Blinq.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 01/23/2024
 ms.author: jeedes
