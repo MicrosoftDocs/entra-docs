@@ -57,7 +57,7 @@ See the new experience here: https://entra.microsoft.com/
 **Service category:** Conditional Access    
 **Product capability:** Identity Security & Protection    
 
-Filters for apps in Conditional Access simplify policy management by allowing admins to tag applications with custom security and target them in Conditional Access policies, instead of using direct assignments. With this feature, customers can scale up their policies, and protect any number of apps. For more information, see: [Conditional Access: Filter for applications](../identity/conditional-access/concept-filter-for-applications.md)
+Filters for apps in Conditional Access simplify policy management by allowing admins to tag applications with custom security, and target them in Conditional Access policies, instead of using direct assignments. With this feature, customers can scale up their policies, and protect any number of apps. For more information, see: [Conditional Access: Filter for applications](../identity/conditional-access/concept-filter-for-applications.md)
 
 ---
 
