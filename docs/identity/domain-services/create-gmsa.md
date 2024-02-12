@@ -6,7 +6,7 @@ author: justinha
 manager: amycolannino
 
 ms.assetid: e6faeddd-ef9e-4e23-84d6-c9b3f7d16567
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
 ms.date: 09/23/2023

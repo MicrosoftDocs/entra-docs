@@ -6,7 +6,7 @@ author: justinha
 manager: amycolannino
 
 ms.assetid: f168870c-b43a-4dd6-a13f-5cfadc5edf2c
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: has-azure-ad-ps-ref
 ms.topic: troubleshooting

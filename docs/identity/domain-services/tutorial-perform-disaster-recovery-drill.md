@@ -5,7 +5,7 @@ services: active-directory-ds
 author: justinha
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: tutorial
 ms.date: 09/21/2023

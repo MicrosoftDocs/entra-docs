@@ -4,7 +4,7 @@ description: Active Directory authentication non domain joined Linux Virtual Mac
 services: active-directory-ds
 author: DevOpsStyle
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: devx-track-linux
 ms.topic: how-to

@@ -5,7 +5,7 @@ services: active-directory-ds
 author: justinha
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: devx-track-arm-template, has-azure-ad-ps-ref
 ms.topic: sample

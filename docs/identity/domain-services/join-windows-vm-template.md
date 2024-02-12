@@ -6,7 +6,7 @@ author: justinha
 manager: amycolannino
 
 ms.assetid: 4eabfd8e-5509-4acd-86b5-1318147fddb5
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: devx-track-arm-template
 ms.topic: how-to
