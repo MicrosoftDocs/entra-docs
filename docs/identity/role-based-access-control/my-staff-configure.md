@@ -6,7 +6,7 @@ author: rolyon
 manager: amycolannino
 ms.topic: how-to
 ms.service: entra-id
-ms.subservice: user-help
+ms.subservice: role-based-access-control
 ms.date: 05/18/2021
 ms.author: rolyon
 ms.reviewer: sahenry
