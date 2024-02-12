@@ -174,7 +174,9 @@ To specify who can sign in to your application, by changing the `TenantId` prope
 [!INCLUDE [Help and support](includes/error-handling-and-tips/help-support-include.md)]
 
 ## Next steps
+ 
+Learn more by building a protected ASP.NET Core web api in the following tutorial series:
 
-Learn more about the protected web API scenario that the Microsoft identity platform supports.
 > [!div class="nextstepaction"]
-> [Protected web API scenario](scenario-protected-web-api-overview.md)
+> [Protected web API tutorial](tutorial-web-api-dotnet-register-app.md)
+
