@@ -109,6 +109,10 @@ Currently, the Microsoft Entra SAML/WS-Fed federation feature doesn't support se
 
 You need to be an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator) or a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) in your Microsoft Entra tenant to configure a SAML/Ws-Fed identity provider.
 
+**Can we avoid the creation of guest/B2B accounts on our tenant?**
+
+Guests accounts will always be need to be created on the teant in order to grant access to applications, roles or membership to security groups or teams in the teanat, regardless of the federation method used.   
+
 ## Step 1: Determine if the partner needs to update their DNS text records
 
 Depending on the partner's IdP, the partner might need to update their DNS records to enable federation with you. Use the following steps to determine if DNS updates are needed.
