@@ -238,9 +238,9 @@ sections:
       - question: |
           Can I add applications that I'm running on-premises?
         answer: |
-          [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md) provides you with easy and secure access to on-premises web applications that you choose. You can access these applications in the same way that you access your software as a service (SaaS) apps in Microsoft Entra ID. There is no need for a VPN or to change your network infrastructure.  
+          [Microsoft Entra application proxy](/entra/identity/app-proxy) provides you with easy and secure access to on-premises web applications that you choose. You can access these applications in the same way that you access your software as a service (SaaS) apps in Microsoft Entra ID. There is no need for a VPN or to change your network infrastructure.  
           
-          For more information, see [How to provide secure remote access to on-premises applications](~/identity/app-proxy/application-proxy.md).
+          For more information, see [How to provide secure remote access to on-premises applications](/entra/identity/app-proxy).
           
           
           
