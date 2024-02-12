@@ -16,7 +16,7 @@ ms.collection: M365-identity-device-management
 # How to programmatically configure cloud sync using MS Graph API
 
 The following document describes how to replicate a synchronization profile from scratch using only MSGraph APIs.  
-The structure of how to do this consists of the following steps.  They are:
+The structure of how to replicate a synchronization profile consists of the following steps. They are:
 
 - [How to programmatically configure cloud sync using MS Graph API](#how-to-programmatically-configure-cloud-sync-using-ms-graph-api)
   - [Basic setup](#basic-setup)
@@ -41,10 +41,10 @@ Use these [Microsoft Graph PowerShell](/powershell/microsoftgraph/) commands to 
 
 ```powershell
 Connect-MgGraph -Scopes "DeviceManagementConfiguration.ReadWrite.All" ('-Environment <AzureEnvironment>')
-Update-MgOrganization -OrganizationId <ID> -OnPremisesSyncEnabled
+Update-MgOrganization -OrganizationId "<ID>" -OnPremisesSyncEnabled
 ```
 
-The first of those two commands, require Microsoft Entra credentials. These cmdlets implicitly identify the tenant and enable it for synchronization. You can use the [Get-MgOrganization](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgorganization) to get your ID.
+The first of those two commands require Microsoft Entra credentials. These cmdlets implicitly identify the tenant and enable it for synchronization. You can use the [Get-MgOrganization](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgorganization) to get your ID.
 
 ## Create service principals
 
@@ -62,11 +62,11 @@ Content-type: application/json
 
 ## Create sync job
 
-The output of the above command returns the objectId of the service principal that was created. For this example, the objectId is 614ac0e9-a59b-481f-bd8f-79a73d167e1c.  Use Microsoft Graph to add a synchronizationJob to that service principal.
+The output of the preceding command returns the objectId of the service principal that was created. For this example, the objectId is 614ac0e9-a59b-481f-bd8f-79a73d167e1c. Use Microsoft Graph to add a synchronizationJob to that service principal.
 
 Documentation for creating a sync job can be found [here](/graph/api/synchronization-synchronization-post-jobs?tabs=http&preserve-view=true&view=graph-rest-beta).
 
-If you didn't record the ID above, you can find the service principal by running the following MS Graph call. You'll need Directory.Read.All permissions to make that call:
+If you didn't record the ID, you can find the service principal by running the following MS Graph call. You need Directory.Read.All permissions to make that call:
 
 `GET https://graph.microsoft.com/beta/servicePrincipals`
 
@@ -167,7 +167,7 @@ Here, the highlighted "Domain" value is the name of the on-premises Active Direc
 
 ## Enable Sync password hashes on configuration blade
 
- This section covers enabling syncing password hashes for a particular configuration. This is different than the AppKey secret that enables the tenant-level feature flag - this is only for a single domain/config. You need to set the application key to the PHS one for this to work end to end.
+ This section covers enabling syncing password hashes for a particular configuration. This situation is different than the AppKey secret that enables the tenant-level feature flag - this is only for a single domain/config. You need to set the application key to the PHS one for this procedure to work end to end.
 
 1. Grab the schema (warning, it's pretty large):
 
@@ -215,7 +215,7 @@ Here, the highlighted "Domain" value is the name of the on-premises Active Direc
    } 
    ```
 
-   Copy/paste the mapping from the **Create AD2AADProvisioning and AD2AADPasswordHash jobs** step above into the attributeMappings array.
+   Copy/paste the mapping from the **Create AD2AADProvisioning and AD2AADPasswordHash jobs** step into the attributeMappings array.
 
    Order of elements in this array doesn't matter (the backend sorts for you). Be careful about adding this attribute mapping if the name exists already in the array (e.g. if there's already an item in attributeMappings that has the targetAttributeName CredentialData) - you may get conflict errors, or the pre-existing and new mappings may be combined together (usually not desired outcome). Backend doesn't dedupe for you.
 
@@ -272,7 +272,7 @@ Content-type: application/json
 }
 ```
 
-Now check to see if the **mailNickName** attribute is present.  If it is, then your schema is verified and contains the Exchange attributes. If not, review the [prerequisites](exchange-hybrid.md#prerequisites) for Exchange hybrid writeback.
+Now check to see if the **mailNickName** attribute is present. If it is, then your schema is verified and contains the Exchange attributes. If not, review the [prerequisites](exchange-hybrid.md#prerequisites) for Exchange hybrid writeback.
 
 
 
@@ -298,7 +298,7 @@ This section covers how to programmatically enable/disable and use [accidental d
 There are two per job settings that you can use, they are:
 
 - DeleteThresholdEnabled  - Enables accidental delete prevention for the job when set to 'true'. Set to 'true' by default.
-- DeleteThresholdValue    - Defines the maximum number of deletes that is allowed in each execution of the job when accidental deletes prevention is enabled. The value is set to 500 by default.  So, if the value is set to 500, the maximum number of deletes allowed is 499 in each execution.
+- DeleteThresholdValue    - Defines the maximum number of deletes that is allowed in each execution of the job when accidental deletes prevention is enabled. The value is set to 500 by default. So, if the value is set to 500, the maximum number of deletes allowed is 499 in each execution.
 
 The delete threshold settings are a part of the `SyncNotificationSettings` and can be modified via graph.
 
