@@ -1,11 +1,10 @@
 ---
 title: What is Microsoft Entra ID?
 description: Learn about Microsoft Entra ID, including terminology, available licenses, and a list of associated features.
-services: active-directory
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
 ms.date: 01/23/2023

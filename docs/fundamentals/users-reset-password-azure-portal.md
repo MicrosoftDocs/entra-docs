@@ -2,12 +2,11 @@
 
 title: Reset a user's password
 description: Instructions about how to reset a user's password using Microsoft Entra ID.
-services: active-directory
 author: barclayn
 manager: amycolannino
 
 ms.assetid: fad5624b-2f13-4abc-b3d4-b347903a8f16
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 01/23/2023
