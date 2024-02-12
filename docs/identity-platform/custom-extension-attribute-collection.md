@@ -34,8 +34,6 @@ This article describes how to extend the user sign-up experience in Microsoft En
     
 In addition to creating a custom authentication extension for the attribute collection start and submit events, you need to create a REST API that defines the workflow actions to take for each event. You can use any programming language, framework, and hosting environment to create and host your REST API. This article demonstrates a quick way to get started using a C# Azure Function. With Azure Functions, you run your code in a serverless environment without having to first create a virtual machine (VM) or publish a web application.
 
-
-
 ## Prerequisites
 
 - To use Azure services, including Azure Functions, you need an Azure subscription. If you don't have an existing Azure account, you can sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
@@ -45,11 +43,11 @@ In addition to creating a custom authentication extension for the attribute coll
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-In this step, you create an HTTP trigger function API using Azure Functions. The function API is the source of the business logic for your user flows. Follow these steps to create an Azure Function:
+In this step, you create an HTTP trigger function API using Azure Functions. The function API is the source of the business logic for your user flows. <!--CHECK ME--> After creating your trigger function, you can configure it for either [OnAttributeCollectionStart](#12-configure-the-http-trigger-for-onattributecollectionstart) or [OnAttributeCollectionSubmit](#13-configure-the-http-trigger-for-onattributecollectionsubmit) <!--END CHECK--> Follow these steps to create an Azure Function: 
 
 1. Sign in to the [Azure portal](https://portal.azure.com) with your administrator account.
 1. From the Azure portal menu or the **Home** page, select **Create a resource**.
-1. In the **New** page, select **Compute** > **Function App**.
+1. Search for and select **Function App** and select **Create**.
 1. On the **Basics** page, use the function app settings as specified in the following table:
 
     | Setting      | Suggested value  | Description |
@@ -59,37 +57,28 @@ In this step, you create an HTTP trigger function API using Azure Functions. The
     | **Function App name** | Globally unique name | A name that identifies the new function app. Valid characters are `a-z` (case insensitive), `0-9`, and `-`.  |
     |**Publish**| Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
     | **Runtime stack** | .NET | Your preferred programming language. For this tutorial, select **.NET**.  |
-    |**Version**| 6 (LTS) In-process | Version of the .NET runtime. In-process signifies that you can create and modify functions in the portal |
-    |**Region**| Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
+    | **Version** | 6 (LTS) In-process | Version of the .NET runtime. In-process signifies that you can create and modify functions in the portal, which is recommended for this guide |
+    | **Region** | Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
     | **Operating System** | Windows | The operating system is preselected for you based on your runtime stack selection. |
     | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
 
 1. Select **Review + create** to review the app configuration selections and then select **Create**. Deployment takes a few minutes.
-
-1. Wait for a notification that your deployment is complete. Select **Go to resource**.
+1. Once deployed, select **Go to resource** to view your new function app.
 
 ### 1.1 Create HTTP trigger functions
 
 Now that you've created the Azure Function app, you create HTTP trigger functions for the actions you want to invoke with an HTTP request. HTTP triggers are referenced and called by your Microsoft Entra custom authentication extension.
 
-1. Within your **Function App**, from the menu select **Functions**.
-
-1. Select **Create function** under **Create in Azure portal**.
-
-1. In the **Create Function** window, leave the **Development environment** property as **Develop in portal**, and then select the **HTTP trigger** template.
-
+1. Within the **Overview** page of your function app, select the **Functions** pane and select **Create function** under **Create in Azure portal**.
+1. In the **Create Function** window, leave the **Development environment** property as **Develop in portal**. Under **Template**, select **HTTP trigger**.
 1. Under **Template details**, enter *CustomAuthenticationExtensionsAPI* for the **New Function** property.
-
 1. For the **Authorization level**, select **Function**.
-
 1. Select **Create**.
 
 ### 1.2 Configure the HTTP trigger for OnAttributeCollectionStart
 
-1. From the menu, select **Code + Test**
-
+1. From the menu, select **Code + Test**.
 1. Select the tab below for the scenario you want to implement: **Continue**, **Block**, or **SetPrefillValues**. Replace the code with the code snippet(s) provided.
-
 1. After you replace the code, from the top menu, select **Get Function Url**, and copy the URL. You use this URL in [Step 2: Create and register a custom authentication extension](#step-2-create-and-register-a-custom-authentication-extension) for **Target Url**.
 
 # [**Continue**](#tab/start-continue)
@@ -611,11 +600,8 @@ In this step, you register a custom authentication extension that is used by Mic
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an  [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 
 1. Browse to **Identity** > **External Identities** > **Custom authentication extensions**.
-
 1. Select **Create a custom extension**.
-
-1. In **Basics**, select the **AttributeCollectionStart** event or the **AttributeCollectionSubmit** event, and then select **Next**.
-
+1. In **Basics**, select the **AttributeCollectionStart** event or the **AttributeCollectionSubmit** event, and then select **Next**. Be sure that this matches the configuration in the [previous step](#11-create-http-trigger-functions).
 1. In **Endpoint Configuration**, fill in the following properties:
 
     - **Name** - A name for your custom authentication extension. For example, *On Attribute Collection Event*.
@@ -623,13 +609,9 @@ In this step, you register a custom authentication extension that is used by Mic
     - **Description** - A description for your custom authentication extensions.
 
 1. Select **Next**.
-
 1. In **API Authentication**, select the **Create new app registration** option to create an app registration that represents your *function app*.  
-
 1. Give the app a name, for example **Azure Functions authentication events API**.
-
 1. Select **Next**.
-
 1. Select **Create**, which creates the custom authentication extension and the associated application registration.
 
 ### 2.2 Grant admin consent
@@ -637,10 +619,8 @@ In this step, you register a custom authentication extension that is used by Mic
 After your custom authentication extension is created, grant application consent to the registered app, which allows the custom authentication extension to authenticate to your API.
 
 1. Browse to **Identity** > **External Identities** > **Custom authentication extensions (Preview)**.
-
 1. Select your custom authentication extension from the list.
-
-1. On the **Overview** tab, select the **Grant permission** button to give admin consent to the registered app. The custom authentication extension uses `client_credentials` to authenticate to the Azure Function App using the `Receive custom authentication extension HTTP requests` permission.
+1. On the **Overview** tab, select the **Grant permission** button to give admin consent to the registered app. The custom authentication extension uses `client_credentials` to authenticate to the Azure Function App using the `Receive custom authentication extension HTTP requests` permission. Select **Accept**. 
 
 ## Step 3: Add the custom authentication extension to a user flow
 
@@ -651,23 +631,17 @@ Now you can associate the custom authentication extension with one or more of yo
 
 ### 3.1 Add the custom authentication extension to an existing user flow
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an  [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator)
-
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator)
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/custom-extension-attribute-collection/settings-icon.png" border="false"::: in the top menu to switch to your customer tenant.
-
 1. Browse to **Identity** > **External Identities** > **User flows**.
-
 1. Select the user flow from the list.
-
 1. Select **Custom authentication extensions**.
-
 1. On the **Custom authentication extensions** page, you can associate your custom authentication extension with two different steps in your user flow:
 
-   - **Before collecting information from the user** is associated with the OnAttributeCollectionStart event. Select the edit pencil. only those custom extensions configured for the OnAttributeCollectionStart event will be displayed. Select the application you configured for the attribute collection start event, and then choose **Select**.
-   - **When a user submits their information** is associated with the OnAttributeCollectionSubmit event. only those custom extensions configured for the OnAttributeCollectionSubmit event will be displayed. Select the application you configured for the attribute collection submit event, and then choose **Select**.
+   - **Before collecting information from the user** is associated with the *OnAttributeCollectionStart* event. Select the edit pencil. Only those custom extensions configured for the *OnAttributeCollectionStart* event will be displayed. Select the application you configured for the attribute collection start event, and then choose **Select**.
+   - **When a user submits their information** is associated with the *OnAttributeCollectionSubmit* event. only those custom extensions configured for the *OnAttributeCollectionSubmit* event will be displayed. Select the application you configured for the attribute collection submit event, and then choose **Select**.
 
 1. Make sure the applications listed next to both attribute collection steps are correct.
-
 1. Select the **Save** icon.
 
 ## Step 4: Test the application

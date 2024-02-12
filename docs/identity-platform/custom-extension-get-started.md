@@ -47,7 +47,7 @@ In this step, you create an HTTP trigger function API in the Azure portal. The f
 
 1. Sign in to the [Azure portal](https://portal.azure.com) with your administrator account.
 1. From the Azure portal menu or the **Home** page, select **Create a resource**.
-1. Search for or select **Function App** and select **Create**
+1. Search for and select **Function App** and select **Create**
 1. On the **Basics** page, create a function app using the settings as specified in the following table:
 
     | Setting      | Suggested value  | Description |
@@ -57,14 +57,13 @@ In this step, you create an HTTP trigger function API in the Azure portal. The f
     | **Function App name** | Globally unique name | A name that identifies the new function app. Valid characters are `a-z` (case insensitive), `0-9`, and `-`.  |
     |**Deploy code or container image**| Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
     | **Runtime stack** | .NET | Your preferred programming language. For this tutorial, select **.NET**.  |
-    |**Version**| 6 (LTS) In-process | Version of the .NET runtime. In-process signifies that you can create and modify functions in the portal |
+    |**Version**| 6 (LTS) In-process | Version of the .NET runtime. In-process signifies that you can create and modify functions in the portal, which is recommended for this guide |
     |**Region**| Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
     | **Operating System** | Windows | The operating system is pre-selected for you based on your runtime stack selection. |
     | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
 
 1. Select **Review + create** to review the app configuration selections and then select **Create**. Deployment takes a few minutes.
-
-1. Using either the **Notifications** icon in the upper-right corner of the portal or the screen you've been directed to, watch for the **Deployment succeeded** message. Then, select **Go to resource** to view your new function app.
+1. Once deployed, select **Go to resource** to view your new function app.
 
 ### 1.1 Create an HTTP trigger function
 
@@ -296,7 +295,7 @@ Next, you register the custom authentication extension. You register the custom 
 After your custom authentication extension is created, you need to grant permissions to the API. The custom authentication extension uses `client_credentials` to authenticate to the Azure Function App using the `Receive custom authentication extension HTTP requests` permission.
 
 1. Open the **Overview** page of your new custom authentication extension, under **API Authentication**, select **Grant permission**. 
-1. A new window opens requesting permissionsto receive custom authentication HTTP requests. This allows the custom authentication extension to authenticate to your API. Select **Accept**. 
+1. A new window opens requesting permissions to receive custom authentication HTTP requests. This allows the custom authentication extension to authenticate to your API. Select **Accept**. 
 
     :::image type="content" border="false"source="./media/custom-extension-get-started/custom-extensions-overview.png" alt-text="Screenshot that shows how grant admin consent." lightbox="media/custom-extension-get-started/custom-extensions-overview.png":::
 
