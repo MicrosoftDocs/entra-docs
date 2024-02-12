@@ -69,7 +69,7 @@ For a full sample, see [ASP.NET Core web app that calls Microsoft Graph](https:/
 
 #### Option 2: Call a downstream web API with the helper class
 
-You want to call a web API other than Microsoft Graph. In that case, you've added `AddDownstreamApi` in *Startup.cs* as specified in [Code configuration](scenario-web-app-call-api-app-configuration.md#option-2-call-a-downstream-web-api-other-than-microsoft-graph), and you can directly inject an `IDownstreamApi` service in your controller or page constructor and use it in the actions:
+You want to call a web API other than Microsoft Graph. In that case, you add `AddDownstreamApi` in *Startup.cs* as specified in [Code configuration](scenario-web-app-call-api-app-configuration.md#option-2-call-a-downstream-web-api-other-than-microsoft-graph), and you can directly inject an `IDownstreamApi` service in your controller or page constructor and use it in the actions:
 
 ```csharp
 [Authorize]
