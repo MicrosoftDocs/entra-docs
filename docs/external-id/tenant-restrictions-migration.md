@@ -111,7 +111,7 @@ Create a new header using your tenant ID and policy ID values. Update your netwo
    > Update the network proxies in a phased rollout. Save the current tenant restrictions v1 headers and values.  
 
    > [!IMPORTANT]
-   > Create a rollback plan in case you experience issues. 
+   > Create a rollback plan to help you navigate potential issues. 
 
 Use one of the following patterns to migrate your proxy configuration. Ensure that your proxy supports the pattern you select.
 
