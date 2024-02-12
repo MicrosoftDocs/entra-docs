@@ -131,3 +131,5 @@ The following table has HIPAA guidance on the automatic logoff safeguard. Find M
 * [Audit Controls Safeguard guidance](hipaa-audit-controls.md)
 
 * [Other Safeguard guidance](hipaa-other-controls.md)
+
+* [Configure HITRUST controls](hipaa-hitrust-controls.md)
