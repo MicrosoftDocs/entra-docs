@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 10/05/2023
+ms.date: 02/10/2024
 
 ms.author: justinha
 author: justinha
@@ -35,23 +35,28 @@ If you have problems with password writeback for Microsoft Entra Connect, review
 
 The most common point of failure is that firewall or proxy ports, or idle timeouts are incorrectly configured.
 
-For Azure AD Connect version *1.1.443.0* and above, *outbound HTTPS* access is required to the following addresses:
+For Microsoft Entra Connect version *1.1.443.0* and above, *outbound HTTPS* access is required to the following addresses:
 
 * *\*.passwordreset.microsoftonline.com*
 * *\*.servicebus.windows.net*
 
-Azure [GOV endpoints](/azure/azure-government/compare-azure-government-global-azure#guidance-for-developers):
+[Azure for US Government endpoints](/azure/azure-government/compare-azure-government-global-azure#guidance-for-developers):
 
 * *\*.passwordreset.microsoftonline.us*
 * *\*.servicebus.usgovcloudapi.net*
 
+Azure China 21Vianet endpoints:
+
+* *ssprdedicatedsbmcprodcne.servicebus.chinacloudapi.cn*
+* *ssprdedicatedsbmcprodcnn.servicebus.chinacloudapi.cn*
+
 If you need more granularity, see the [list of Microsoft Azure IP Ranges and Service Tags for Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519).
 
-For Azure GOV, see the [list of Microsoft Azure IP Ranges and Service Tags for US Government Cloud](https://www.microsoft.com/download/details.aspx?id=57063).
+For Azure for US Government, see the [list of Microsoft Azure IP Ranges and Service Tags for Azure for US Government Cloud](https://www.microsoft.com/download/details.aspx?id=57063).
 
 These files are updated weekly.
 
-To determine if access to a URL and port are restricted in an environment, run the following cmdlet:
+To determine if access to a URL and port are restricted in an environment such as public Azure cloud, run the following cmdlet:
 
 ```powershell
 Test-NetConnection -ComputerName ssprdedicatedsbprodscu.servicebus.windows.net -Port 443
