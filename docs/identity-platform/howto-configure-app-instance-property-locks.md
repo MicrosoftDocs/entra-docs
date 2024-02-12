@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.date: 10/26/2023
 ms.reviewer: madansr7
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer, I want to learn how to protect properties of my application instance of being modified.
 ---

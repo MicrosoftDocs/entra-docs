@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom: devx-track-js
 ms.date: 10/12/2021
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As a developer building a JavaScript single-page application (SPA), I want to sign in users and call the Microsoft Graph API using the authorization code flow with PKCE, so that I can authenticate users and retrieve data from the Microsoft Graph.
 ---

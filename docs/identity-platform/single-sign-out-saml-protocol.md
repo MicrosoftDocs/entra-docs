@@ -7,8 +7,8 @@ ms.author: owenrichards
 ms.custom:
 ms.date: 01/30/2024
 ms.reviewer: kenwith
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
 #Customer intent: As an application developer integrating with Microsoft Entra ID, I want to understand the workflow and requirements for implementing the single sign-out SAML protocol, so that I can correctly register the LogoutURL and handle the LogoutRequest and LogoutResponse messages.
 ---

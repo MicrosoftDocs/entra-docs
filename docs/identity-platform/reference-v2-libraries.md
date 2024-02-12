@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: 
 ms.date: 10/28/2022
 ms.reviewer: jmprieur, saeeda
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
 #Customer intent: As a developer, I want to know whether there's a Microsoft Authentication Library (MSAL) available for the language/framework I'm using to build my application, and whether the library is GA or in preview.
 ---
