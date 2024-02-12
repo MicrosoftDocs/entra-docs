@@ -6,7 +6,7 @@ manager: martinco
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
-ms.date: 02/09/2024
+ms.date: 02/12/2024
 ms.author: gasinh
 ms.reviewer: jebley
 ms.collection: M365-identity-device-management
@@ -17,7 +17,7 @@ ms.custom: enterprise-apps-article
 
 # Plan a tenant restrictions v1 migration to tenant restrictions v2
 
-Administrators use [tenant restrictions v1](~/identity/enterprise-apps/tenant-restrictions.md) to control user access to external tenants on their network. However, [tenant restrictions v2](tenant-restrictions-v2.md) with the cross tenant access settings feature adds tenant-level restrictions and more granularity such as individual user, group, and application controls. Tenant restrictions v2 moves policy management from network proxies to a cloud-based portal. Organizations no longer hit a maximum number of targeted tenants due to proxy header size limitations. 
+Administrators use [tenant restrictions v1](~/identity/enterprise-apps/tenant-restrictions.md) to control user access to external tenants on their network. However, [tenant restrictions v2](tenant-restrictions-v2.md) with cross tenant access settings adds tenant-level restrictions and more granularity such as individual user, group, and application controls. Tenant restrictions v2 moves policy management from network proxies to a cloud-based portal. Organizations no longer hit a maximum number of targeted tenants due to proxy header size limitations. 
 
 Migration from tenant restrictions v1 to tenant restrictions v2 is a one-time process with no other licensing requirements. As you plan the migration, include stakeholders from networking and identity teams. 
 
@@ -59,20 +59,20 @@ When you configure cross-tenant access outbound settings, the policy takes effec
    > [!NOTE]
    > The following section has migration and configuration management for common scenarios. Use this guidance to help craft the policy your organization needs. 
 
-### Allow internal identity access to specific external tenants
+### Allow only internal identities access to specific external tenants
 
-Allow internal identities, such as employees, to access specific external tenants on your managed network. Block access to nonallow listed tenants. Block external identities such as contractors and vendors from accessing external tenants. 
+Allow internal identities, such as employees, to access specific external tenants on your managed network. Block access to nonallow listed tenants for internal identities. Block external identities, such as contractors and vendors, from accessing all external tenants. 
 
 1. In **Cross-tenant access settings**, add each domain/tenant as an organization under Organizational settings.
 2. To allow all users and groups and allow all applications, for each added organization, [configure outbound access for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.md). 
 
    [ ![Screenshot of the Organizationsl settings tab under cross-tenant access settings.](media/tenant-restrictions-migration/organizational-settings.png)](media/tenant-restrictions-migration/organizational-settings.png#lightbox)
 
-3. To block all users and groups and all applications for B2B collaboration, [configure the default cross-tenant access outbound settings](cross-tenant-access-settings-b2b-collaboration.md). 
+3. To block all users and groups and all applications for B2B collaboration, [configure the default cross-tenant access outbound settings](cross-tenant-access-settings-b2b-collaboration.md). This action applies only to tenants not added in step 1.
 
    [ ![Screenshot of the Default settings tab under cross-tenant access settings.](media/tenant-restrictions-migration/default-settings.png)](media/tenant-restrictions-migration/default-settings.png#lightbox)
 
-4. In **Tenant restrictions** defaults, create the policy ID (if not created) and [configure the policy to block all users, groups, and external applications](tenant-restrictions-v2.md).
+4. In **Tenant restrictions** defaults, create the policy ID (if not created) and [configure the policy to block all users, groups, and external applications](tenant-restrictions-v2.md). This action applies only to tenants not added in step 1.
 
    [ ![Screenshot of the Tenant restrictions defaults.](media/tenant-restrictions-migration/tenant-restrictions-default.png)](media/tenant-restrictions-migration/tenant-restrictions-default.png#lightbox)
 
@@ -81,16 +81,16 @@ Allow internal identities, such as employees, to access specific external tenant
 Allow internal identities such as employees, and external identities such as contractors and vendors to access specific external tenants on your managed network. Block access to nonallow listed tenants for all identities.  
 
 1. In **Cross-tenant access settings**, [add each domain/tenant ID as an organization under Organizational settings](cross-tenant-access-settings-b2b-collaboration.md).
-2. For each added organization to enable internal identities, configure Outbound access for B2B collaboration to allow all users, groups, and applications.
+2. For each added organization to enable internal identities, [configure Outbound access for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.md) to allow all users, groups, and applications.
 3. For each added organization to enable external identities, [configure the organization tenant restrictions](tenant-restrictions-v2.md) to allow all users, groups, and applications.  
 
    [ ![Screenshot of Outbound access and Tenant restrictions details under Organizational settings.](media/tenant-restrictions-migration/organizational-settings-outbound.png)](media/tenant-restrictions-migration/organizational-settings-outbound.png#lightbox)
 
-4. To block all users, groups, and applications for B2B collaboration, [configure the default Cross Tenant Access outbound access settings](cross-tenant-access-settings-b2b-collaboration.md). 
+4. To block all users, groups, and applications for B2B collaboration, [configure the default Cross Tenant Access outbound access settings](cross-tenant-access-settings-b2b-collaboration.md). This action applies only to tenants not added in step 1.
 
    [ ![Screenshot of Outbound access settings under Default settings.](media/tenant-restrictions-migration/default-settings-outbound.png)](media/tenant-restrictions-migration/default-settings-outbound.png#lightbox)
 
-5. In **Tenant restrictions defaults**, create the policy ID (if not created) and configure the policy to block all users, groups, and external applications.  
+5. In **Tenant restrictions defaults**, create the policy ID (if not created) and configure the policy to block all users, groups, and external applications. This action applies only to tenants not added in step 1.
 
    [ ![Screenshot of Tenant restrictions, with external users and groups, also external apps.](media/tenant-restrictions-migration/tenant-restrictions-applies.png)](media/tenant-restrictions-migration/tenant-restrictions-applies.png#lightbox)
 
@@ -113,9 +113,9 @@ Create a new header using your tenant ID and policy ID values. Update your netwo
    > [!IMPORTANT]
    > Create a rollback plan in case you experience issues. 
 
-Confirm proxy support for the following options: 
+Use one of the following patterns to migrate your proxy configuration. Ensure that your proxy supports the pattern you select.
 
-* **Upgrade one proxy at a time with the tenant restrictions v2 header** - Users who egress through this router receive the updated header and the new policy applies. Monitor for issues. If no issues arise, update the next proxy and continue until you update all proxies. 
+* **Upgrade one proxy at a time with the tenant restrictions v2 header** - Users who egress through this proxy receive the updated header and the new policy applies. Monitor for issues. If no issues arise, update the next proxy and continue until you update all proxies. 
 * **Update header injection based on users** - Some proxies require authenticated users and might select which header to inject based on users and groups. Roll out the new tenant restrictions v2 header to a test group of users. Monitor for issues. If no issues arise, add more users in phases until 100% of traffic is in scope. 
 * **Update the service to apply the new tenant restrictions v2 header all at one time** - This option isn't recommended. 
 
