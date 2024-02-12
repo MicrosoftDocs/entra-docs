@@ -1,10 +1,10 @@
 ---
 title: 'Use partner driven integrations to provision accounts into all your applications'
 description: Use partner driven integrations to provision accounts into all your applications.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: overview
 ms.date: 02/06/2024
 ms.subservice: hybrid

@@ -3,7 +3,7 @@ title: Microsoft Entra on-premises app provisioning to SCIM-enabled apps
 description: This article describes how to use the Microsoft Entra provisioning service to provision users into an on-premises app that's SCIM enabled.
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
 ms.date: 04/04/2023

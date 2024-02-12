@@ -1,10 +1,10 @@
 ---
 title: 'What is HR driven provisioning with Microsoft Entra ID?'
 description: Describes overview of HR driven provisioning.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: overview
 ms.date: 10/20/2022
 ms.subservice: compliance

@@ -4,7 +4,7 @@ description: This tutorial describes how to use the Microsoft Entra SCIM Validat
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: tutorial
 ms.date: 09/15/2023
