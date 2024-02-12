@@ -38,7 +38,7 @@ The following table lists the acronyms and their spelling in this article.
 |MFA|Microsoft Entra multifactor authentication|
 |NIST|National Institute of Standards and Technology, US Dept. of Commerce|
 |PHI| Protected health information|
-|PIM|Priveleged Identity Management|
+|PIM|Privileged Identity Management|
 |SSO|Single sign-on|
 |TAP|Temporary access pass|
 

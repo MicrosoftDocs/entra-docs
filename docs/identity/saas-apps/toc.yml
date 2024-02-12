@@ -3298,6 +3298,8 @@
         href: connecter-provisioning-tutorial.md
       - name: Contentful
         href: contentful-provisioning-tutorial.md
+      - name: Contentstack
+        href: contentstack-provisioning-tutorial.md
       - name: Comeet Recruiting Software
         href: comeet-recruiting-software-provisioning-tutorial.md
       - name: Concur

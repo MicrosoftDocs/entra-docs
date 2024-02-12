@@ -74,4 +74,4 @@ Your application is now ready to test. Access the external URL you used to publi
 
 ## Next steps
 
-For more information about Microsoft Entra application proxy, see [How to provide secure remote access to on-premises applications](application-proxy.md).
+For more information about Microsoft Entra application proxy, see [How to provide secure remote access to on-premises applications](overview-what-is-app-proxy.md).

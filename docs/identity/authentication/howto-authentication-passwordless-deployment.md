@@ -2,8 +2,7 @@
 title: Plan a passwordless authentication deployment in Microsoft Entra ID
 description: Directions for deploying passwordless authentication
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 01/29/2023
@@ -12,8 +11,6 @@ ms.author: gasinh
 author: gargi-sinha
 manager: martinco
 ms.reviewer: dawoo
-
-ms.collection: M365-identity-device-management
 ---
 
 # Plan a passwordless authentication deployment in Microsoft Entra ID

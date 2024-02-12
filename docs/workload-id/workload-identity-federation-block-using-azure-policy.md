@@ -1,12 +1,12 @@
 ---
 title: Block workload identity federation using Azure Policy
 description: Learn how to use a built-in Azure Policy to block workload identity federation on user-assigned managed identities. Govern the use of federated identity credentials on managed identities so that no one can access Microsoft Entra protected resources from external workloads.
-services: active-directory
+
 author: rwike77
 manager: CelesteDG
 
-ms.service: active-directory
-ms.subservice: workload-identities
+ms.service: entra-workload-id
+
 ms.topic: how-to
 ms.date: 03/09/2023
 ms.author: ryanwi

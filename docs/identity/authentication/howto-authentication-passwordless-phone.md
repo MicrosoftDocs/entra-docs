@@ -3,8 +3,7 @@ title: Passwordless sign-in with Microsoft Authenticator
 description: Enable passwordless sign-in to Microsoft Entra ID using Microsoft Authenticator
 
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
@@ -15,8 +14,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jogro
-
-ms.collection: M365-identity-device-management
 ---
 # Enable passwordless sign-in with Microsoft Authenticator 
 

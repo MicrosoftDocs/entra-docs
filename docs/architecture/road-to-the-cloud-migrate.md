@@ -316,7 +316,7 @@ Here are key points about usage of Microsoft Entra ID for VPN authentication:
 
 ### Move remote access to internal applications
 
-To simplify your environment, you can use [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md) or [secure hybrid access](~/identity/enterprise-apps/secure-hybrid-access.md) partners to provide remote access. This allows you to remove the dependency on on-premises reverse proxy solutions.
+To simplify your environment, you can use [Microsoft Entra application proxy](/entra/identity/app-proxy) or [secure hybrid access](~/identity/enterprise-apps/secure-hybrid-access.md) partners to provide remote access. This allows you to remove the dependency on on-premises reverse proxy solutions.
 
 It's important to mention that enabling remote access to an application by using the preceding technologies is an interim step. You need to do more work to completely decouple the application from Active Directory. 
 

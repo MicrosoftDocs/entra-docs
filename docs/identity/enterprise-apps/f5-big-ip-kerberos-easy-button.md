@@ -4,8 +4,8 @@ description: Learn to implement secure hybrid access (SHA) with Single Sign-on t
 
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 12/14/2022
@@ -38,7 +38,7 @@ Because it's legacy, the application lacks modern protocols to support direct in
 A BIG-IP in front of the application enables overlay of the service with Microsoft Entra pre-authentication and headers-based SSO, improving the security posture of the application.
 
 > [!NOTE] 
-> Organizations can gain remote access to this type of application with [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md)
+> Organizations can gain remote access to this type of application with [Microsoft Entra application proxy](/entra/identity/app-proxy)
 
 ## Scenario architecture
 
