@@ -164,5 +164,5 @@ April 15, 2017: Released for download
 If you're using an Application Proxy connector version earlier than 1.5.36.0, update to the latest version to ensure you have the latest fully supported features.
 
 ## Next steps
-- Learn more about [Remote access to on-premises applications through Microsoft Entra application proxy](application-proxy.md).
+- Learn more about [Remote access to on-premises applications through Microsoft Entra application proxy](overview-what-is-app-proxy.md).
 - To start using Application Proxy, see [Tutorial: Add an on-premises application for remote access through Application Proxy](application-proxy-add-on-premises-application.md).

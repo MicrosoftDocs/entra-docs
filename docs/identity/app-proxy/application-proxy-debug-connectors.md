@@ -23,7 +23,7 @@ This article assumes you have installed the Application Proxy connector and are 
 
 For more information about Application Proxy and using its connectors, see:
 
-- [Remote access to on-premises applications through Application Proxy](application-proxy.md)
+- [Remote access to on-premises applications through Application Proxy](overview-what-is-app-proxy.md)
 - [Application Proxy connectors](application-proxy-connectors.md)
 - [Install and register a connector](application-proxy-add-on-premises-application.md)
 - [Troubleshoot Application Proxy problems and error messages](application-proxy-troubleshoot.md)

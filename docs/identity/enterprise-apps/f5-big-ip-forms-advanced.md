@@ -2,8 +2,8 @@
 title: Configure F5 BIG-IP Access Policy Manager for form-based SSO
 description: Learn how to configure F5's BIG-IP Access Policy Manager and Microsoft Entra ID for secure hybrid access to form-based applications.
 author: gargi-sinha
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 03/27/2023

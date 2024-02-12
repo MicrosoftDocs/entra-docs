@@ -2,8 +2,8 @@
 title: Terms of use in Microsoft Entra ID
 description: Get started using Microsoft Entra terms of use to present information to employees or guests before getting access.
 
-ms.service: active-directory
-ms.subservice: compliance
+ms.service: entra-id
+ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 01/03/2024
 

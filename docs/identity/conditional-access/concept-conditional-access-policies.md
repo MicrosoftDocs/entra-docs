@@ -2,8 +2,7 @@
 title: Building a Conditional Access policy
 description: What are all of the options available to build a Conditional Access policy and what do they mean?
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 07/07/2023
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: calebb
-
-ms.collection: M365-identity-device-management
 ---
 # Building a Conditional Access policy
 

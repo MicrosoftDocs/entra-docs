@@ -2,8 +2,7 @@
 title: Enable Microsoft Entra multifactor authentication
 description: In this tutorial, you learn how to enable Microsoft Entra multifactor authentication for a group of users and test the secondary factor prompt during a sign-in event.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
 ms.date: 01/16/2024
@@ -11,8 +10,6 @@ ms.date: 01/16/2024
 ms.author: justinha
 author: justinha
 ms.reviewer: jupetter
-
-ms.collection: M365-identity-device-management
 
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and use Microsoft Entra multifactor authentication so that the user accounts in my organization are secured and require an additional form of verification during a sign-in event.
 ---

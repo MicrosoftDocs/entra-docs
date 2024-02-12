@@ -23,7 +23,7 @@ The following figure shows an example for complex application domain structure.
 
 :::image type="content" source="./media/application-proxy-configure-complex-application/complex-app-structure-1.png" alt-text="Diagram of domain structure for a complex application showing resource sharing between primary and secondary application.":::
 
-With [Microsoft Entra application proxy](application-proxy.md), you can address this issue by using complex application publishing that is made up of multiple URLs across various domains. 
+With [Microsoft Entra application proxy](overview-what-is-app-proxy.md), you can address this issue by using complex application publishing that is made up of multiple URLs across various domains. 
 
 :::image type="content" source="./media/application-proxy-configure-complex-application/complex-app-flow-1.png" alt-text="Diagram of a Complex application with multiple application segments definition.":::
 
@@ -115,5 +115,5 @@ For more detailed instructions for application proxy, see [Tutorial: Add an on-p
 ## Next steps
 - [Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md) 
 - [Plan a Microsoft Entra application proxy deployment](conceptual-deployment-plan.md) 
-- [Understand remote access to on-premises applications through Microsoft Entra application proxy](application-proxy.md)
+- [Understand remote access to on-premises applications through Microsoft Entra application proxy](overview-what-is-app-proxy.md)
 - [Understand and solve Microsoft Entra application proxy CORS issues](application-proxy-understand-cors-issues.md)
