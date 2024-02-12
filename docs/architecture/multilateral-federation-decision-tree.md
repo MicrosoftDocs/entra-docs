@@ -1,16 +1,14 @@
 ---
 title: University multilateral federation decision tree
 description: Use this decision tree to help design a multilateral federation solution for universities.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 04/01/2023
 ms.author: jricketts
 ms.custom: "it-pro"
-ms.collection: M365-identity-device-management
 ---
 
 # Decision tree
