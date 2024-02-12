@@ -47,8 +47,6 @@ Choose your preferred [application scenario](authentication-flows-app-scenarios.
 - [React Single-page app (SPA)](quickstart-single-page-app-react-sign-in.md)
 - [ASP.NET Core Web app](quickstart-web-app-dotnet-core-sign-in.md)
 - [ASP.NET Core API](quickstart-web-api-aspnet-core-protect-api.md)
-- [Protected web API](scenario-protected-web-api-overview.md)
-- [Web API that calls web APIs](scenario-web-api-call-api-overview.md)
 - [Desktop app](scenario-desktop-overview.md)
 - [Daemon app](scenario-daemon-overview.md)
 - [Mobile app](scenario-mobile-overview.md)

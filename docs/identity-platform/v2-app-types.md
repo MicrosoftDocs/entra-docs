@@ -107,7 +107,7 @@ A web API can receive access tokens from all types of apps, including web server
 
 ![Shows the web API authentication flow](./media/v2-app-types/convergence-scenarios-webapi.svg)
 
-To learn how to secure a web API by using OAuth2 access tokens, check out the web API code samples in the [protected web API scenario](scenario-protected-web-api-overview.md).
+To learn how to secure a web API by using OAuth2 access tokens, check out the web API code samples in the [protected web API tutorial](tutorial-web-api-dotnet-register-app.md).
 
 In many cases, web APIs also need to make outbound requests to other downstream web APIs secured by Microsoft identity platform. To do so, web APIs can take advantage of the **On-Behalf-Of (OBO)** flow, which allows the web API to exchange an incoming access token for another access token to be used in outbound requests. For more info, see the [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](v2-oauth2-on-behalf-of-flow.md).
 

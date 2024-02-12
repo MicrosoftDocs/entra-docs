@@ -276,8 +276,6 @@
               href: scenario-protected-web-api-app-configuration.md
             - name: Verification of scopes or app roles
               href: scenario-protected-web-api-verification-scope-app-roles.md
-            - name: Move to production
-              href: scenario-protected-web-api-production.md
         - name: Web API that calls an API
           items:
             - name: App registration

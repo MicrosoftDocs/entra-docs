@@ -84,9 +84,7 @@ ms.topic: conceptual
 > For this quickstart, don't change any other values in the *appsettings.json* file.
 > 
 > ## How the sample works
-> 
-> The web API receives a token from a client application, and the code in the web API validates the token. This scenario is explained in more detail in [Scenario: Protected web API](scenario-protected-web-api-overview.md).
-> 
+>
 > ### Startup class
 > 
 > The *Microsoft.AspNetCore.Authentication* middleware uses a `Startup` class that's executed when the hosting process starts. In its `ConfigureServices` method, the `AddMicrosoftIdentityWebApi` extension method provided by *Microsoft.Identity.Web* is called.
