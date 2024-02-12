@@ -46,4 +46,4 @@ The MSAL Angular wrapper takes advantage of the HTTP interceptor to automaticall
 
 ## Next steps
 
-Move on to the next article in this scenario, [Move to production](scenario-spa-production.md).
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).

@@ -288,8 +288,6 @@
               href: scenario-web-api-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-api-call-api-call-api.md
-            - name: Move to production
-              href: scenario-web-api-call-api-production.md
 - name: Desktop
   items:
     - name: Desktop app authentication
