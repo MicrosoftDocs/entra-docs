@@ -268,6 +268,6 @@ A sample demonstrating this flow with MSAL Python is available at [ms-identity-p
 
 ---
 
-## Next 
+## Next steps
 
 Learn more by building an ASP.NET Core web app that signs in users in the following multi-part [tutorial series](tutorial-web-app-dotnet-register-app.md)

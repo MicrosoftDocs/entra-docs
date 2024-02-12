@@ -408,5 +408,4 @@ If you want to learn more about sign-out, read the protocol documentation that's
 
 ## Next steps
 
-Move on to the next article in this scenario,
-[Move to production](scenario-web-app-sign-user-production.md).
+Learn more by building an ASP.NET Core web app that signs in users in the following multi-part [tutorial series](tutorial-web-app-dotnet-register-app.md)
