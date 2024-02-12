@@ -3,7 +3,6 @@ title: Phase 2 Right-size permissions and automate the principle of least privil
 description: Learn about remediation, monitoring, PCI targets for identities, Permissions On-Demand, Approvers, Requestors, also custom role and policy templates
 author: jricketts
 manager: martinco
-tags: azuread
 ms.service: entra
 ms.topic: conceptual
 ms.date: 10/23/2023

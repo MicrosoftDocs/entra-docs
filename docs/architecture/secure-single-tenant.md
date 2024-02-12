@@ -8,8 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 7/5/2022
 ms.author: gasinh
-ms.reviewer: ajburnle
-ms.custom: it-pro, ignite-2022
+ms.reviewer: ajburnle, ignite-2022
 ---
 
 # Resource isolation in a single tenant

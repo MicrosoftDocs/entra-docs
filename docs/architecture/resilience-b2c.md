@@ -8,7 +8,6 @@ author: gargi-sinha
 ms.author: gasinh
 manager: martinco
 ms.date: 12/01/2022
-ms.custom: it-pro
 ---
 
 # Build resilience in your customer identity and access management with Azure Active Directory B2C

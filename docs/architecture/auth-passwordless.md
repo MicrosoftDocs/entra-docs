@@ -8,7 +8,6 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 03/01/2023
 ms.author: jricketts
-ms.custom: template-concept
 ---
 # Passwordless authentication with Microsoft Entra ID
 

@@ -3,7 +3,6 @@ title: Phase 3 Configure Microsoft Entra Permissions Management monitoring and a
 description: Learn about system-generated reports, audit queries, investigation alerts, also response strategies and playbooks
 author: jricketts
 manager: martinco
-tags: azuread
 ms.service: entra
 ms.topic: conceptual
 ms.date: 10/23/2023

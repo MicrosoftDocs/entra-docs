@@ -3,7 +3,6 @@ title: Microsoft Entra authentication management operations reference guide
 description: This operations reference guide describes the checks and actions you should take to secure authentication management
 author: martincoetzer
 manager: travisgr
-tags: azuread
 ms.service: entra
 ms.topic: conceptual
 ms.subservice: architecture

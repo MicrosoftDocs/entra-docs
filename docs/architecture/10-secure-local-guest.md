@@ -7,8 +7,7 @@ manager: martinco
 ms.date: 02/23/2023
 ms.topic: how-to
 ms.service: entra
-ms.subservice: enterprise-users
-ms.custom: it-pro
+ms.subservice: architecture
 ---
 
 # Convert local guest accounts to Microsoft Entra B2B guest accounts 

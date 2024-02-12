@@ -3,7 +3,6 @@ title: Microsoft Entra identity and access management operations reference guide
 description: This operations reference guide describes the checks and actions you should take to secure identity and access management operations
 author: martincoetzer
 manager: travisgr
-tags: azuread
 ms.service: entra
 ms.topic: conceptual
 ms.subservice: architecture

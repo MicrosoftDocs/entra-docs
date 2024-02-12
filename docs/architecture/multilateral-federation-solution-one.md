@@ -8,7 +8,6 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 04/1/2023
 ms.author: jricketts
-ms.custom: "it-pro"
 ---
 
 # Solution 1: Microsoft Entra ID with Cirrus Bridge

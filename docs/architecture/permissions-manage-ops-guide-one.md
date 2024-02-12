@@ -3,7 +3,6 @@ title: Phase 1 Implement the Microsoft Entra Permissions Management framework to
 description: Learn about folder structure, security groups, delegated permissions, lifecycle management, and Permissions Creep Index thresholds
 author: jricketts
 manager: martinco
-tags: azuread
 ms.service: entra
 ms.topic: conceptual
 ms.date: 10/23/2023

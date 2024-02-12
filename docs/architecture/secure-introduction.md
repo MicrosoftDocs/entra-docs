@@ -9,7 +9,6 @@ ms.topic: conceptual
 ms.date: 7/5/2022
 ms.author: gasinh
 ms.reviewer: ajburnle
-ms.custom: "it-pro"
 ---
 
 # Introduction to delegated administration and isolated environments

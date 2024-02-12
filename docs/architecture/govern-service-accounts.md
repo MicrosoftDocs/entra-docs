@@ -9,7 +9,6 @@ ms.topic: conceptual
 ms.date: 02/09/2023
 ms.author: jricketts
 ms.reviewer: ajburnle
-ms.custom: it-pro, seodec18, has-azure-ad-ps-ref
 ---
 
 # Governing Microsoft Entra service accounts

@@ -3,7 +3,6 @@ title: Microsoft Entra Permissions Management alerts guide
 description: Learn to configure alerts for overprivileged accounts, inactive identities, potential threats, service disruptions, anomalous permissions, and more
 author: jricketts
 manager: martinco
-tags: azuread
 ms.service: entra
 ms.topic: conceptual
 ms.date: 10/23/2023

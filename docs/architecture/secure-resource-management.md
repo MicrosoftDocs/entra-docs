@@ -9,7 +9,6 @@ ms.topic: conceptual
 ms.date: 3/23/2023
 ms.author: justinha
 ms.reviewer: ajburnle
-ms.custom: "it-pro"
 ---
 # Azure resource management fundamentals
 

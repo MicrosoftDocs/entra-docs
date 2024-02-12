@@ -8,7 +8,6 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 04/19/2023
 ms.author: jricketts
-ms.custom: it-pro, seodec18, has-azure-ad-ps-ref
 ---
 
 # Multi-tenant user management scenarios

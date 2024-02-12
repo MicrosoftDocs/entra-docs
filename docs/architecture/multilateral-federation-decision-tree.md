@@ -8,7 +8,6 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 04/01/2023
 ms.author: jricketts
-ms.custom: "it-pro"
 ---
 
 # Decision tree

@@ -3,7 +3,6 @@ title: Microsoft Entra Permissions Management operations reference introduction
 description: Learn the checks, actions, and best practices to operate Microsoft Entra Permissions Management in an enterprise environment
 author: jricketts
 manager: martinco
-tags: azuread
 ms.service: entra
 ms.topic: conceptual
 ms.date: 10/23/2023

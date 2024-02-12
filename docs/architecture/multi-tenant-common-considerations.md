@@ -8,7 +8,6 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 08/21/2023
 ms.author: jricketts
-ms.custom: it-pro, seodec18, has-azure-ad-ps-ref
 ---
 # Common considerations for multi-tenant user management
 
