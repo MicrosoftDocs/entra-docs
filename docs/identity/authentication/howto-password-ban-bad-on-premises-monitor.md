@@ -12,7 +12,7 @@ author: justinha
 manager: amycolannino
 ms.reviewer: jsimmons
 
-ms.collection: M365-identity-device-management 
+
 ms.custom:
 ---
 # Monitor and review logs for on-premises Microsoft Entra Password Protection environments

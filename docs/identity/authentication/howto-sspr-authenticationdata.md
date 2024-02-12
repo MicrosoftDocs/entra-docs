@@ -12,7 +12,7 @@ author: justinha
 manager: amycolannino
 ms.reviewer: tilarso
 
-ms.collection: M365-identity-device-management 
+
 ms.custom: has-azure-ad-ps-ref
 ---
 # Prepopulate user authentication contact information for Microsoft Entra self-service password reset (SSPR)

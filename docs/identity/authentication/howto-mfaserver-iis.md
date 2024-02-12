@@ -2,7 +2,7 @@
 title: IIS Authentication and Azure Multi-Factor Authentication Server
 description: Deploying IIS Authentication and Azure Multi-Factor Authentication Server.
 
-services: multi-factor-authentication
+
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
@@ -12,8 +12,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: michmcla
-
-ms.collection: M365-identity-device-management
 ---
 # Configure Azure Multi-Factor Authentication Server for IIS web apps
 

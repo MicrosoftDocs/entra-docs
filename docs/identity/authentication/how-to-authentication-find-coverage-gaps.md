@@ -11,8 +11,6 @@ ms.author: justinha
 author: inbarckMS 
 manager: amycolannino
 ms.reviewer: inbarc
-
-ms.collection: M365-identity-device-management
 ---
 # Find and address gaps in strong authentication coverage for your administrators
 

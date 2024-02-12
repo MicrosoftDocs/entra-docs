@@ -9,9 +9,7 @@ ms.date: 01/24/2024
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: jpettere
-ms.collection: M365-identity-device-management
----
+ms.reviewer: jpettere---
 # Plan a Microsoft Entra multifactor authentication deployment 
 
 Microsoft Entra multifactor authentication helps safeguard access to data and applications, providing another layer of security by using a second form of authentication. Organizations can enable multifactor authentication with [Conditional Access](~/identity/conditional-access/overview.md) to make the solution fit their specific needs.

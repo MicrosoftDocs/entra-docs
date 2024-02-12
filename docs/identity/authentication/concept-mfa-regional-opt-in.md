@@ -11,8 +11,6 @@ author: aloom3
 ms.author: justinha
 manager: amycolannino
 ms.reviewer: aloom3
-
-ms.collection: M365-identity-device-management
 ms.custom: references_regions
 ---
 # Regions that need to opt in for MFA telephony verification  

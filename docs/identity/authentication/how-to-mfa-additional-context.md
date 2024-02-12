@@ -7,8 +7,6 @@ ms.topic: conceptual
 ms.date: 10/11/2023
 ms.author: justinha
 author: mjsantani
-ms.collection: M365-identity-device-management
-
 # Customer intent: As an identity administrator, I want to encourage users to use the Microsoft Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 # How to use additional context in Microsoft Authenticator notifications - Authentication methods policy

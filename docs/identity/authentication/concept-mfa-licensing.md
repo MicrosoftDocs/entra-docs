@@ -2,7 +2,7 @@
 title: Microsoft Entra multifactor authentication versions and consumption plans
 description: Learn about the Microsoft Entra multifactor authentication client and different methods and versions available. 
 
-services: multi-factor-authentication
+
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
@@ -11,9 +11,7 @@ ms.date: 01/29/2023
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: michmcla
-ms.collection: M365-identity-device-management
----
+ms.reviewer: michmcla---
 # Features and licenses for Microsoft Entra multifactor authentication
 
 To protect user accounts in your organization, multifactor authentication should be used. This feature is especially important for accounts that have privileged access to resources. Basic multifactor authentication features are available to Microsoft 365 and Microsoft Entra users and global administrators for no extra cost. If you want to upgrade the features for your admins or extend multifactor authentication to the rest of your users with more authentication methods and greater control, you can purchase Microsoft Entra multifactor authentication in several ways.

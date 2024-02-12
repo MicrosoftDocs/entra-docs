@@ -2,7 +2,7 @@
 title: Use Microsoft Entra multifactor authentication with NPS
 description: Learn how to use Microsoft Entra multifactor authentication capabilities with your existing Network Policy Server (NPS) authentication infrastructure
 
-services: multi-factor-authentication
+
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
@@ -12,8 +12,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jupetter
-
-ms.collection: M365-identity-device-management
 ms.custom: has-azure-ad-ps-ref
 ---
 # Integrate your existing Network Policy Server (NPS) infrastructure with Microsoft Entra multifactor authentication

@@ -10,8 +10,6 @@ ms.author: justinha
 author: aanjusingh
 manager: amycolannino
 ms.reviewer: anjusingh
-
-ms.collection: M365-identity-device-management
 ---
 
 # App support for SMS-based authentication

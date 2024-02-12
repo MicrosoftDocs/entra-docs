@@ -11,8 +11,6 @@ ms.author: justinha
 author: gargi-sinha
 manager: martinco
 ms.reviewer: tilarso
-
-ms.collection: M365-identity-device-management
 adobe-target: true
 ---
 # Plan a Microsoft Entra self-service password reset deployment

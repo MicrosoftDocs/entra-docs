@@ -11,8 +11,6 @@ author: camilasinelli
 ms.author: justinha
 manager: amycolannino
 ms.reviewer: jupetter
-
-ms.collection: M365-identity-device-management
 ---
 # Tutorial: Enable security notifications for audit log events
 

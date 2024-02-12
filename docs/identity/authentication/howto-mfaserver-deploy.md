@@ -2,7 +2,7 @@
 title: Getting started Azure Multi-Factor Authentication Server
 description: Step-by-step get started with Azure Multi-Factor Authentication Server on-premises
 
-services: multi-factor-authentication
+
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
@@ -12,8 +12,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jpettere
-
-ms.collection: M365-identity-device-management
 ---
 # Getting started with the Azure Multi-Factor Authentication Server
 

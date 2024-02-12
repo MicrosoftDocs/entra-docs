@@ -2,7 +2,7 @@
 title: User portal for Azure MFA Server
 description: Get started with Azure MFA and the user portal.
 
-services: multi-factor-authentication
+
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
@@ -12,8 +12,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jpettere
-
-ms.collection: M365-identity-device-management
 ---
 # User portal for the Azure Multi-Factor Authentication Server
 

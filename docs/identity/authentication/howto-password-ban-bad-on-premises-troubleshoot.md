@@ -11,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jsimmons
-
-ms.collection: M365-identity-device-management
 ---
 # Troubleshoot: On-premises Microsoft Entra Password Protection
 

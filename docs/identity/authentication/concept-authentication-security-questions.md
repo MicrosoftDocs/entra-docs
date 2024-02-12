@@ -11,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 
-ms.collection: M365-identity-device-management
-
 # Customer intent: As an identity administrator, I want to understand how to use security questions in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 # Authentication methods in Microsoft Entra ID - security questions

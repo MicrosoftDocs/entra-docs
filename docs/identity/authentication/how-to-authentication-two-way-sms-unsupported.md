@@ -11,8 +11,6 @@ ms.author: justinha
 author: rhicock
 manager: amycolannino
 ms.reviewer: dawoo
-
-ms.collection: M365-identity-device-management
 ---
 # Two-way SMS unsupported
 

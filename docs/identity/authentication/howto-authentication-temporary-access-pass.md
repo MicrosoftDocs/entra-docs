@@ -11,8 +11,6 @@ ms.author: justinha
 author: tilarso 
 manager: amycolannino
 ms.reviewer: tilarso
-
-ms.collection: M365-identity-device-management
 ---
 # Configure Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods
 

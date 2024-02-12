@@ -12,8 +12,6 @@ author: justinha
 manager: amycolannino
 ms.reviewer: sahenry, michmcla
 
-ms.collection: M365-identity-device-management
-
 # Customer intent: As a Microsoft Entra administrator, I want to understand which Microsoft Entra features I can use to secure sign-in and make the user authentication process safe and easy.
 ---
 # What is Microsoft Entra authentication?

@@ -11,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: tilarso
-
-ms.collection: M365-identity-device-management
 ms.custom: contperf-fy20q4, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Password policies and account restrictions in Microsoft Entra ID

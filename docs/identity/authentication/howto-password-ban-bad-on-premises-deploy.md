@@ -11,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: mimanans
-
-ms.collection: M365-identity-device-management
 ---
 # Plan and deploy on-premises Microsoft Entra Password Protection
 

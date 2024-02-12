@@ -11,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: librown, aakapo
-
-ms.collection: M365-identity-device-management
 ---
 # Enable passwordless security key sign-in to Windows 10 devices with Microsoft Entra ID 
 

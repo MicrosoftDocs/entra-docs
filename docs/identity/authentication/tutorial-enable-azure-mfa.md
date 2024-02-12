@@ -11,8 +11,6 @@ ms.author: justinha
 author: justinha
 ms.reviewer: jupetter
 
-ms.collection: M365-identity-device-management
-
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and use Microsoft Entra multifactor authentication so that the user accounts in my organization are secured and require an additional form of verification during a sign-in event.
 ---
 # Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication

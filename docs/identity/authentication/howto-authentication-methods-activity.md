@@ -11,8 +11,6 @@ ms.author: justinha
 author: sopand
 manager: amycolannino
 ms.reviewer: dawoo
-
-ms.collection: M365-identity-device-management
 ---
 # Authentication Methods Activity 
 

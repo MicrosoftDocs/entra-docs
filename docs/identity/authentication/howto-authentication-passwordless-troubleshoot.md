@@ -11,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: aakapo
-
-ms.collection: M365-identity-device-management
 ---
 # Troubleshooting for hybrid deployments of FIDO2 security keys in Microsoft Entra ID 
 

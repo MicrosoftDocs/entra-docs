@@ -2,7 +2,7 @@
 title: Configure the Microsoft Entra multifactor authentication NPS extension
 description: After you install the NPS extension, use these steps for advanced configuration like allowed IP lists and UPN replacement.
 
-services: multi-factor-authentication
+
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
@@ -12,8 +12,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: michmcla
-
-ms.collection: M365-identity-device-management
 ---
 # Advanced configuration options for the NPS extension for multifactor authentication
 

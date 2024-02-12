@@ -8,9 +8,7 @@ ms.date: 09/14/2023
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: tilarso
-ms.collection: M365-identity-device-management
-ms.custom: ignite-fall-2021
+ms.reviewer: tilarsoms.custom: ignite-fall-2021
 ---
 # Reporting options for Microsoft Entra password management
 

@@ -11,8 +11,6 @@ ms.author: gasinh
 author: gargi-sinha
 manager: martinco
 ms.reviewer: dawoo
-
-ms.collection: M365-identity-device-management
 ---
 
 # Plan a passwordless authentication deployment in Microsoft Entra ID

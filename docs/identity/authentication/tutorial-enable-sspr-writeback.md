@@ -10,8 +10,6 @@ ms.date: 09/13/2023
 ms.author: justinha
 author: justinha
 ms.reviewer: tilarso
-
-ms.collection: M365-identity-device-management
 ms.custom: contperf-fy20q4
 adobe-target: true
 

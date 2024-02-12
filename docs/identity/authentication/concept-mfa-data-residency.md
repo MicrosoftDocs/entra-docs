@@ -2,7 +2,7 @@
 title: Microsoft Entra multifactor authentication data residency
 description: Learn what personal and organizational data Microsoft Entra multifactor authentication stores about you and your users and what data remains within the country/region of origin.
 
-services: multi-factor-authentication
+
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
@@ -13,8 +13,6 @@ author: justinha
 manager: amycolannino
 ms.reviewer: inbarc
 ms.custom: references_regions
-
-ms.collection: M365-identity-device-management
 ---
 # Data residency and customer data for Microsoft Entra multifactor authentication
 

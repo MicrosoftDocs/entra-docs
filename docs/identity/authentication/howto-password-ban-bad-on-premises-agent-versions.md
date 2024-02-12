@@ -11,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jsimmons
-
-ms.collection: M365-identity-device-management
 ---
 # Microsoft Entra Password Protection agent version history
 

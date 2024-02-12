@@ -9,9 +9,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 01/29/2023
-ms.author: martinco
-ms.collection: M365-identity-device-management
----
+ms.author: martinco---
 # Create a resilient access control management strategy with Microsoft Entra ID
 
 >[!NOTE]

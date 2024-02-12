@@ -12,8 +12,6 @@ author: custorod
 manager: amycolannino
 ms.reviewer: sahenry, michmcla
 
-ms.collection: M365-identity-device-management
-
 # Customer intent: As a Microsoft Entra administrator, I want to understand which weh browser cookies are used for Microsoft Entra ID.
 ---
 # Web browser cookies used in Microsoft Entra authentication

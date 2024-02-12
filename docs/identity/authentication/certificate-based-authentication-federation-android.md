@@ -12,8 +12,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: annaba
-
-ms.collection: M365-identity-device-management
 ---
 # Microsoft Entra certificate-based authentication with federation on Android
 

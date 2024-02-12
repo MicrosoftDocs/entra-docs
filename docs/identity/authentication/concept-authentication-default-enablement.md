@@ -11,8 +11,6 @@ ms.author: justinha
 author: ChristianCB83
 manager: amycolannino
 
-ms.collection: M365-identity-device-management
-
 # Customer intent: As an identity administrator, I want to encourage users to understand how default protection can improve our security posture.
 ---
 # Protecting authentication methods in Microsoft Entra ID

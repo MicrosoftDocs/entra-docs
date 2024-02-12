@@ -11,8 +11,6 @@ author: justinha
 ms.author: justinha
 manager: amycolannino
 ms.reviewer: calui
-
-ms.collection: M365-identity-device-management
 ---
 # Native app and browser support of FIDO2 passwordless authentication
 

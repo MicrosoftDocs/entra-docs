@@ -11,8 +11,6 @@ ms.author: justinha
 author: justinha
 ms.reviewer: rogoya
 
-ms.collection: M365-identity-device-management
-
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to configure custom banned passwords to prevent users in my organization from using common insecure passwords.
 ---
 # Tutorial: Configure custom banned passwords for Microsoft Entra password protection

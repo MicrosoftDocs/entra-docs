@@ -11,8 +11,6 @@ ms.date: 09/30/2022
 ms.author: justinha
 author: justinha
 manager: amycolannino
-
-ms.collection: M365-identity-device-management
 ---
 # Microsoft Entra certificate-based authentication with federation on iOS
 

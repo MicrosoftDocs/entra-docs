@@ -1,7 +1,7 @@
 ---
 title: Migrate to Microsoft Entra multifactor authentication and Microsoft Entra user authentication
 description: Guidance to move from MFA Server on-premises to Microsoft Entra multifactor authentication and Microsoft Entra user authentication
-services: multi-factor-authentication
+
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
@@ -9,9 +9,7 @@ ms.date: 05/23/2023
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
-ms.reviewer: michmcla
-ms.collection: M365-identity-device-management
----
+ms.reviewer: michmcla---
 # Migrate to Microsoft Entra multifactor authentication and Microsoft Entra user authentication
 
 Multifactor authentication helps secure your infrastructure and assets from bad actors. Microsoft Multi-Factor Authentication Server (MFA Server) is no longer offered for new deployments. Customers who are using MFA Server should move to Microsoft Entra multifactor authentication (Microsoft Entra multifactor authentication). 

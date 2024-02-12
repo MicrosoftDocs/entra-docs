@@ -12,8 +12,6 @@ ms.author: justinha
 author: vimrang
 manager: amycolannino
 ms.reviewer: vraganathan
-
-ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
 ms.localizationpriority: high
 ---

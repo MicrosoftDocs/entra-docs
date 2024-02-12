@@ -11,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: rogoya
-
-ms.collection: M365-identity-device-management
 ---
 # Eliminate bad passwords using Microsoft Entra Password Protection
 

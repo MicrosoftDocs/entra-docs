@@ -10,8 +10,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: anjusingh
-
-ms.collection: M365-identity-device-management
 ---
 
 # Configure and enable users for SMS-based authentication using Microsoft Entra ID 

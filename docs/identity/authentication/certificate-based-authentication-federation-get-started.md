@@ -12,8 +12,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: vraganathan
-
-ms.collection: M365-identity-device-management
 ---
 # Get started with certificate-based authentication in Microsoft Entra ID with federation
 

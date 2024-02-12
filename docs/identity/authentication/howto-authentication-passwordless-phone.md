@@ -14,8 +14,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jogro
-
-ms.collection: M365-identity-device-management
 ---
 # Enable passwordless sign-in with Microsoft Authenticator 
 

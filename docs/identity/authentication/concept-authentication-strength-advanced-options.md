@@ -2,7 +2,7 @@
 title: Overview of custom authentication strengths and advanced options for FIDO2 security keys and certificate-based authentication in Microsoft Entra ID
 description: Learn how admins can create custom authentication strengths with advanced options for FIDO2 security keys and certificate-based authentication.
 
-services: multi-factor-authentication
+
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
@@ -12,8 +12,6 @@ ms.author: justinha
 author: inbarckms
 manager: amycolannino
 ms.reviewer: inbarc
-
-ms.collection: M365-identity-device-management
 ---
 # Custom Conditional Access authentication strengths
 
