@@ -1,7 +1,7 @@
 ---
 title: Migrate to Microsoft Entra multifactor authentication with federations
 description: Step-by-step guidance to move from MFA Server on-premises to Microsoft Entra multifactor authentication with federation
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
@@ -9,9 +9,7 @@ ms.date: 05/23/2023
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
-ms.reviewer: michmcla
-ms.collection: M365-identity-device-management
----
+ms.reviewer: michmcla---
 # Migrate to Microsoft Entra multifactor authentication with federation
 
 Moving your multifactor-authentication (MFA) solution to Microsoft Entra ID is a great first step in your journey to the cloud. Consider also moving to Microsoft Entra ID for user authentication in the future. For more information, see the process for migrating to Microsoft Entra multifactor authentication with cloud authentication.

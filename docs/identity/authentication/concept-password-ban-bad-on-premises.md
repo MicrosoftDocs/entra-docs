@@ -2,8 +2,7 @@
 title: Microsoft Entra Password Protection
 description: Ban weak passwords in on-premises Active Directory Domain Services environments by using Microsoft Entra Password Protection
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 01/29/2023
@@ -11,9 +10,7 @@ ms.date: 01/29/2023
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: jsimmons
-ms.collection: M365-identity-device-management
----
+ms.reviewer: jsimmons---
 
 # Enforce on-premises Microsoft Entra Password Protection for Active Directory Domain Services
 
