@@ -82,7 +82,7 @@ items:
               - name: Native auth
                 items:
                   - name: Run Android (Kotlin) sample
-                    href: how-to-mobile-app-maui-sample-sign-in.md
+                    href: how-to-run-sample-android-app.md
         - name: Command-line interface (CLI) app
           items:
             - name: Node.js - sign in users
