@@ -93,7 +93,7 @@ Import-module AppProxyPSModule
 Register-AppProxyConnector
 ```
 
-To learn more about the `Register-AppProxyConnector` command, see [Create an unattended installation script for the Microsoft Entra application proxy connector](./application-proxy-register-connector-powershell.md).
+To learn more about the `Register-AppProxyConnector` command, see [Create an unattended installation script for the Microsoft Entra application proxy connector](application-proxy-register-connector-powershell.md).
 
 ## Verify admin is used to install the connector
 
