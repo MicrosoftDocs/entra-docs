@@ -34,13 +34,14 @@ Although workforce tenants and customer tenants are built on the same underlying
 |Feature  |Workforce tenant  | Customer tenant |
 |---------|---------|---------|
 | **External Identities** | Invite partners and other external users to your workforce tenant for collaboration. External users become guests in your workforce directory. | Enable self-service sign-up for customers and authorize access to apps. Users are added to your directory as customer accounts.  |
-| **Identity providers** | - Microsoft Entra accounts </br>- Microsoft accounts </br>- Google federation</br>- Facebook federation</br>- SAML/WS-Fed federation | - Google federation</br>- Facebook federation|
-|   **Authentication methods**    | - Username and password</br>- Microsoft Authenticator</br>- FIDO2</br>- SMS</br>- Temporary Access Pass</br>- Third-party software OATH tokens</br>- Voice call</br>- Email one-time passcode</br>- Certificate-based authentication    |   </br>- Username and password</br>- Email one-time passcode    | 
+| **Identity providers** | - Microsoft Entra accounts </br>- Microsoft accounts </br>- Google federation</br>- Facebook federation</br>- SAML/WS-Fed federation | - [Google federation](./how-to-google-federation-customers.md)</br>- [Facebook federation](./how-to-facebook-federation-customers.md)|
+|   **Authentication methods**    | - Username and password</br>- Microsoft Authenticator</br>- FIDO2</br>- SMS</br>- Temporary Access Pass</br>- Third-party software OATH tokens</br>- Voice call</br>- Email one-time passcode</br>- Certificate-based authentication    |   </br>- [Username and password](concept-authentication-methods-customers.md#email-and-password-sign-in)</br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)    | 
+|   **Multifactor authentication**    | - Microsoft Authenticator</br>- Authenticator Lite</br>- FIDO2 </br>- Certificate-based authentication</br>- Temporary Access Pass (TAP)</br>- SMS</br>- Voice call	</br> Third-party software OATH tokens </br> [Learn more](../../identity/authentication/concept-authentication-methods.md)   |   - [Email one-time passcode](./how-to-multifactor-authentication-customers.md)     | 
 | **Groups** | [Groups](~/fundamentals/how-to-manage-groups.md) can be used to manage administrative and user accounts.| Groups can be used to manage administrative accounts. Support for Microsoft Entra groups and [application roles](how-to-use-app-roles-customers.md) is being phased into customer tenants. For the latest updates, see [Groups and application roles support](reference-group-app-roles-support.md). |
 | **Roles and administrators**| [Roles and administrators](~/fundamentals/how-subscriptions-associated-directory.md) are fully supported for administrative and user accounts. | Roles aren't supported with customer accounts. Customer accounts don't have access to tenant resources.|
 | **Custom domain names** |  You can use [custom domains](~/fundamentals/add-custom-domain.md) for administrative accounts only. | Not currently supported. However, the URLs visible to customers in sign-up and sign-in pages are neutral, unbranded URLs. [Learn more](concept-branding-customers.md)|
 |   **Identity protection**    |   Provides ongoing risk detection for your Microsoft Entra tenant. It allows organizations to discover, investigate, and remediate identity-based risks.    |   A subset of the Microsoft Entra ID Protection risk detections is available. [Learn more](how-to-identity-protection-customers.md).    |
-|   **Custom authentication extension**    |   Add claims from external systems.    |   Add claims from external systems.    |  
+|   **Custom authentication extension**    |   Add claims from external systems.    |   [Add claims from external systems](./concept-custom-extensions.md).    |  
 |   **Token customization**    |   Add user attributes, custom authentication extension (preview), claims transformation and security groups membership to token claims.     |   Add user attributes, custom authentication extension and security groups membership to token claims. [Learn more](how-to-add-attributes-to-token.md).    |
 |   **Self-service password reset**    |   Allow users to reset their password using up to two authentication methods (see the next row for available methods).    |   Allow users to reset their password using email with one time passcode. [Learn more](how-to-enable-password-reset-customers.md).     |  
 |   **Company branding**    |   Microsoft Entra tenant supports Microsoft look and feel as a default state for authentication experience. Administrators can customize the default Microsoft sign-in experience.    |   Microsoft provides a neutral branding as the default for the customer tenant, which can be customized to meet the specific needs of your company. The default branding for the customer tenant is neutral and doesn't include any existing Microsoft branding. [Learn more](concept-branding-customers.md).    |  
@@ -61,7 +62,7 @@ Although workforce tenants and customer tenants are built on the same underlying
 | **Authentication** > **Implicit grant and hybrid flows**| Request a token directly from the authorization endpoint. | Same as workforce.|
 | **Certificates & secrets** | <ul><li>[Certificate](../../identity-platform/quickstart-register-app.md#add-a-certificate)</li><li>[Client secrets](../../identity-platform/quickstart-register-app.md#add-a-client-secret)</li><li>[Federated credentials](../../identity-platform/quickstart-register-app.md#add-a-federated-credential)</li></ul>| Same as workforce.|
 |**Token configuration**| <ul><li>[Optional claims](../../identity-platform/optional-claims.md)</li><li>[Groups optional claims](../../identity-platform/optional-claims.md#configure-groups-optional-claims)</li></ul>| <ul><li>Optional claims must be configured through [Attributes & Claims](./how-to-add-attributes-to-token.md) or a [custom claims provider](../../identity-platform/custom-extension-get-started.md)</li><li>[Groups optional claims](../../identity-platform/optional-claims.md#configure-groups-optional-claims) are limited to the group object ID.</li></li></ul>|
-| **API permissions** | Add, remove and replace permissions to an application. After permissions are added to your application, users or admins need to grant consent to the new permissions. Learn more about [updating an app's requested permissions in Microsoft Entra ID](../../identity-platform/howto-update-permissions.md).  | For customer-facing applications, the following are the allowed permissions: Microsoft Graph `offline_access`, `openid` and `User.Read` and your **My APIs** delegated permissions. Only an admin can consent on behalf of the organization.  |
+| **API permissions** | Add, remove, and replace permissions to an application. After permissions are added to your application, users or admins need to grant consent to the new permissions. Learn more about [updating an app's requested permissions in Microsoft Entra ID](../../identity-platform/howto-update-permissions.md).  | For customer-facing applications, the following are the allowed permissions: Microsoft Graph `offline_access`, `openid`, and `User.Read` and your **My APIs** delegated permissions. Only an admin can consent on behalf of the organization.  |
 | **Expose an API** | [Define custom scopes](../../identity-platform/quickstart-configure-app-expose-web-apis.md) to restrict access to data and functionality protected by the API. An application that requires access to parts of this API can request that a user or admin consent to one or more of these scopes. | Define custom scopes to restrict access to data and functionality protected by the API. An application that requires access to parts of this API can request that admin consent to one or more of these scopes. |
 | **App roles**| App roles are [custom roles](../../identity-platform/howto-add-app-roles-in-apps.md) to assign permissions to users or apps. The application defines and publishes the app roles and interprets them as permissions during authorization.| Same as workforce. Learn more about [using role-based access control for applications](how-to-use-app-roles-customers.md) in a customer tenant. |
 | **Owners** | Application owners can view and edit the application registration. Additionally, any user (who might not be listed) with administrative privileges to manage any application (for example, Global Administrator, Cloud App Administrator, etc.) can view and edit the application registration. | Same as workforce. |
@@ -101,7 +102,7 @@ The following JSON shows an example of a .NET application app settings with an a
 
 ## Conditional Access
 
- The following table compares the features available for Conditional Access in each type of tenant.
+The following table compares the features available for Conditional Access in each type of tenant.
 
 |Feature  |Workforce tenant  | Customer tenant |
 |---------|---------|---------|
@@ -111,6 +112,24 @@ The following JSON shows an example of a .NET application app settings with an a
 |**Grant**|[Grant or block access to resources](../../identity/conditional-access/concept-conditional-access-grant.md)|<ul><li>[Block access](../../identity/conditional-access/concept-conditional-access-grant.md#block-access)</li><li>[Require multifactor authentication](./how-to-multifactor-authentication-customers.md)</li></ul>|
 |**Session**|[Session controls](../../identity/conditional-access/concept-conditional-access-session.md)|Not available|
 
+## Account management
+
+The following table compares the features available for user management in each type of tenant.
+
+|Feature  |Workforce tenant  | Customer tenant |
+|---------|---------|---------|
+|**Type of accounts**| [Workforce accounts](../../fundamentals/how-to-create-delete-users.md), and [B2B collaboration](../what-is-b2b.md). | [Admin accounts](./how-to-manage-admin-accounts.md) and [customer accounts](./how-to-manage-customer-accounts.md)|
+| **Manage user profile info** | Programmatically and by [using the Microsoft Entra admin center](../../fundamentals/how-to-manage-user-profile-info.md). |Same as workforce.|
+| **Reset a user's password** | Administrators can [reset a user's password](../../fundamentals/users-reset-password-azure-portal.md) if the password is forgotten, if the user gets locked out of a device, or if the user never received a password. |Same as workforce.|
+|**Restore or remove a recently deleted user**|After you delete a user, the account remains in a suspended state for 30 days. During that 30-day window, the user account can be restored, along with all its properties.|Same as workforce.|
+|**Disable accounts**| Prevent the new user from being able to sign-in. |Same as workforce.|
+
+## Password protection
+
+|Feature  |Workforce tenant  | Customer tenant |
+|---------|---------|---------|
+|**Ssmart lockout**| [Smart lockout](../../identity/authentication/howto-password-smart-lockout.md) helps lockout bad actors that try to guess your users' passwords or use brute-force methods to get in|Same as workforce. |
+| **Custom banned passwords**| Microsoft Entra custom banned password list let you add specific strings to evaluate and block | Not available |
 
 ## Next steps
 
