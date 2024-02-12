@@ -4,8 +4,8 @@ description: Learn to secure SAP ERP using Microsoft Entra ID with F5 BIG-IP Eas
 
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 05/02/2023

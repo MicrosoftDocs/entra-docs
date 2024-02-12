@@ -4,8 +4,8 @@ description: How to troubleshoot when a user sees a consent prompt for an applic
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: troubleshooting
 ms.date: 09/07/2022

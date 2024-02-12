@@ -4,8 +4,8 @@ description: Learn answers to frequently asked questions (FAQ) about managing ce
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: reference
 ms.date: 03/03/2023
