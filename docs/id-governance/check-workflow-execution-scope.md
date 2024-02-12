@@ -1,16 +1,13 @@
 ---
 title: 'Check execution user scope of a workflow - Microsoft Entra ID'
 description: Describes how to check the users who fall into the execution scope of a Lifecycle Workflow.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 05/31/2023
-ms.subservice: compliance
 ms.author: owinfrey
 ms.reviewer: krbain
-ms.collection: M365-identity-device-management
 ---
 
 # Check execution user scope of a workflow 

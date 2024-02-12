@@ -4,10 +4,9 @@ description: This article guides a user on managing workflow versions with Lifec
 author: OWinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 05/31/2023
-ms.subservice: compliance
 ms.custom: template-how-to
 ---
 
