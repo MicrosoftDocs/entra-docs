@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: overview
 ms.date: 11/06/2023
-ms.subservice: compliance
+ms.subservice: hybrid
 ms.author: billmath
 
 ---

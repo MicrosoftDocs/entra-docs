@@ -9,7 +9,7 @@ ms.topic: overview
 ms.date: 11/06/2023
 ms.subservice: hybrid-connect
 ms.author: billmath
-, has-adal-ref
+ms.collection: has-adal-ref
 ---
 
 # Introduction to Microsoft Entra Connect V2
