@@ -18,7 +18,7 @@ Connectors are what make Microsoft Entra application proxy possible. They're sim
 
 ## What is an Application Proxy connector?
 
-Connectors are lightweight agents that sit on-premises and facilitate the outbound connection to the Application Proxy service. Connectors must be installed on a Windows Server that has access to the backend application. You can organize connectors into connector groups, with each group handling traffic to specific applications. For more information on Application proxy and a diagrammatic representation of application proxy architecture see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](overview-what-is-app-proxy.md#application-proxy-connectors)
+Connectors are lightweight agents that sit on-premises and facilitate the outbound connection to the Application Proxy service. Connectors must be installed on a Windows Server that has access to the backend application. You can organize connectors into connector groups, with each group handling traffic to specific applications. For more information on Application proxy and a diagrammatic representation of application proxy architecture, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](overview-what-is-app-proxy.md#application-proxy-connectors)
 
 ## Requirements and deployment
 
@@ -27,9 +27,10 @@ To deploy Application Proxy successfully, you need at least one connector, but w
 ### Windows Server
 You need a server running Windows Server 2012 R2 or later on which you can install the Application Proxy connector. The server needs to connect to the Application Proxy services in Azure, and the on-premises applications that you're publishing.
 
-Starting from the version 1.5.3437.0, having the .NET version 4.7.1 or greater is required for successful installation (upgrade).
+> [!IMPORTANT]
+> Version 1.5.3437.0+ requires .NET version 4.7.1 or greater for installation or upgrade.
 
-The server needs to have TLS 1.2 enabled before you install the Application Proxy connector. To enable TLS 1.2 on the server:
+The server needs to have Transport Layer Security (TLS) 1.2 enabled before you install the Application Proxy connector. To enable TLS 1.2 on the server:
 
 1. Set the following registry keys:
 
@@ -86,7 +87,7 @@ For tenants with multiple connectors, the automatic updates target one connector
 
 You may experience downtime when your connector updates if:
   
-- You only have one connector we recommend you install a second connector and [create a connector group](application-proxy-connector-groups.md). This will avoid downtime and provide higher availability.  
+- You only have one connector. A second connector and [create a connector group](application-proxy-connector-groups.md) are recommended to avoid downtime and provide higher availability.  
 - A connector was in the middle of a transaction when the update began. Although the initial transaction is lost, your browser should automatically retry the operation or you can refresh your page. When the request is resent, the traffic is routed to a backup connector.
 
 To see information about previously released versions and what changes they include, see [Application Proxy- Version Release History](application-proxy-release-version-history.md).
@@ -101,9 +102,9 @@ To learn more about connector groups, see [Publish applications on separate netw
 
 ## Capacity planning
 
-It is important to make sure you have planned enough capacity between connectors to handle the expected traffic volume. We recommend that each connector group has at least two connectors to provide high availability and scale. Having three connectors is optimal in case you may need to service a machine at any point.
+Plan for enough capacity between connectors to handle the expected traffic volume. At least two connectors in a connector group provide high availability and scale. But three connectors are optimal.
 
-In general, the more users you have, the larger a machine you'll need. Below is a table giving an outline of the volume and expected latency different machines can handle. Note it is all based on expected Transactions Per Second (TPS) rather than by user since usage patterns vary and can't be used to predict load. There will also be some differences based on the size of the responses and the backend application response time - larger response sizes and slower response times will result in a lower Max TPS. We also recommend having additional machines so that the distributed load across the machines always provides ample buffer. The extra capacity will ensure that you have high availability and resiliency.
+The table provides volume and expected latency for different machine specifications. The data is based on expected Transactions Per Second (TPS) rather than by user because usage patterns vary and can't be used to predict load. There are some differences based on the size of the responses and the backend application response time - larger response sizes and slower response times will result in a lower Max TPS. Additional machines distribute load and provide ample buffer. Extra capacity ensures high availability and resiliency.
 
 |Cores|RAM|Expected Latency (MS)-P99|Max TPS|
 | ----- | ----- | ----- | ----- |
@@ -112,7 +113,7 @@ In general, the more users you have, the larger a machine you'll need. Below is 
 |8|32|270|1190|
 |16|64|245|1200*|
 
-\* This machine used a custom setting to raise some of the default connection limits beyond .NET recommended settings. We recommend running a test with the default settings before contacting support to get this limit changed for your tenant.
+\* The machine used a custom setting to raise some of the default connection limits beyond .NET recommended settings. We recommend running a test with the default settings before contacting support to get this limit changed for your tenant.
 
 > [!NOTE]
 > There is not much difference in the maximum TPS between 4, 8, and 16 core machines. The main difference between those is in the expected latency.
@@ -183,11 +184,11 @@ To learn how to verify the certificate and troubleshoot problems see [Verify Mac
 
 ## Under the hood
 
-Connectors are based on Windows Server Web Application Proxy, so they have most of the same management tools including Windows Event Logs
+Connectors are based on Windows Server Web Application Proxy, so they have most of the same management tools including Windows Event Logs and Windows performance counters.
 
 ![Manage event logs with the Event Viewer](media/application-proxy-connectors/event-view-window.png)
 
-and Windows performance counters.
+
 
 ![Add counters to the connector with the Performance Monitor](media/application-proxy-connectors/performance-monitor.png)
 
