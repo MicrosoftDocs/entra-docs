@@ -4,10 +4,9 @@ description: This article guides a user on checking the status of a Lifecycle wo
 author: OWinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 06/22/2023
-ms.subservice: compliance
 ms.custom: template-how-to
 ---
 

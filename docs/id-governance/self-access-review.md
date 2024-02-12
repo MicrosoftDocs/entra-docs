@@ -1,18 +1,14 @@
 ---
 title: Review your access to resources in access reviews
 description: Learn how to review your own access to resources in access reviews.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 06/28/2023
 ms.author: owinfrey
 ms.reviewer: mwahl
-ms.collection: M365-identity-device-management
 ---
 
 # Self-review of access packages and resources in Microsoft entitlement management

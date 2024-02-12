@@ -1,13 +1,10 @@
 ---
 title: Use Microsoft Entra ID Governance to review and remove external users who no longer have resource access
 description: Use Access Reviews to extend of remove access from members of partner organizations
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
 ms.topic: conceptual
-ms.subservice: compliance
 ms.date: 06/28/2023
 ms.author: owinfrey
 ---
