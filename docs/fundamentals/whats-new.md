@@ -6,7 +6,7 @@ manager: amycolannino
 featureFlags:
  - clicktale
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 02/01/2024
@@ -35,7 +35,7 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 
 ## January 2024
 
-### Generally available - New Microsoft Entra Home page
+### Generally Availability - New Microsoft Entra Home page
 
 **Type:** Changed feature    
 **Service category:** N/A    
@@ -48,6 +48,16 @@ We redesigned the Microsoft Entra admin center's homepage to help you do the fol
 - Stay up to date with recent announcements, new features, and more!
 
 See the new experience here: https://entra.microsoft.com/
+
+---
+
+### Generally Availability - Conditional Access filters for apps
+
+**Type:** New feature    
+**Service category:** Conditional Access    
+**Product capability:** Identity Security & Protection    
+
+Filters for apps in Conditional Access simplify policy management by allowing admins to tag applications with custom security, and target them in Conditional Access policies, instead of using direct assignments. With this feature, customers can scale up their policies, and protect any number of apps. For more information, see: [Conditional Access: Filter for applications](../identity/conditional-access/concept-filter-for-applications.md)
 
 ---
 

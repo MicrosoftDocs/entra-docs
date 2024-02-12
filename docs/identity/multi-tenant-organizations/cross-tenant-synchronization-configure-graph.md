@@ -1,12 +1,10 @@
 ---
 title: Configure cross-tenant synchronization using PowerShell or Microsoft Graph API
 description: Learn how to configure cross-tenant synchronization in Microsoft Entra ID using Microsoft Graph PowerShell or Microsoft Graph API.
-services: active-directory
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: multi-tenant-organizations
+ms.service: entra-id
+ms.subservice: multitenant-organizations
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.author: rolyon
@@ -1448,7 +1446,7 @@ You are likely trying to create a policy that already exists, possibly from a pr
     (Get-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization -CrossTenantAccessPolicyConfigurationPartnerTenantId $SourceTenantId).UserSyncInbound
     ```
 
-1. If you have an existing policy, you might need to make an update using [Update-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization](/powershell/module/microsoft.graph.identity.signins/update-mgpolicycrosstenantaccesspolicypartneridentitysynchronization) command to enable user synchronization.
+1. If you have an existing policy, you might need to make an update using Update-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization command to enable user synchronization.
 
     ```powershell
     $Params = @{

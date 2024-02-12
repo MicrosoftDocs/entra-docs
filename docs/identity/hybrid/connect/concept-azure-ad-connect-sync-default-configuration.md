@@ -1,19 +1,19 @@
 ---
 title: 'Microsoft Entra Connect Sync: Understanding the default configuration'
 description: This article describes the default configuration in Microsoft Entra Connect Sync.
-services: active-directory
+
 author: billmath
 manager: amycolannino
 
 ms.assetid: ed876f22-6892-4b9d-acbe-6a2d112f1cd1
-ms.service: active-directory
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Microsoft Entra Connect Sync: Understanding the default configuration
 This article explains the out-of-box configuration rules. It documents the rules and how these rules impact the configuration. It also walks you through the default configuration of Microsoft Entra Connect Sync. The goal is that the reader understands how the configuration model, named declarative provisioning, is working in a real-world example. This article assumes that you have already installed and configure Microsoft Entra Connect sync using the installation wizard.

@@ -4,9 +4,9 @@ description: Learn how to use different authentication methods for your customer
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: conceptual
 ms.date: 05/31/2023
 ms.author: mimart

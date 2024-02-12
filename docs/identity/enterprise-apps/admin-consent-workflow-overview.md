@@ -4,8 +4,8 @@ description: Learn about the admin consent workflow in Microsoft Entra ID
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: conceptual
 ms.date: 11/02/2022

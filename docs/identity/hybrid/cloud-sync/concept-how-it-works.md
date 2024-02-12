@@ -1,16 +1,16 @@
 ---
 title: 'Microsoft Entra Cloud Sync deep dive - how it works'
 description: This topic provides deep dive information on how cloud sync works.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.custom: ignite-2022
 ms.topic: conceptual
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Cloud sync deep dive - how it works

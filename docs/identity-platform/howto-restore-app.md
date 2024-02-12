@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: 
 ms.date: 06/21/2023
 ms.reviewer: arcrowe
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to restore or permanently delete my recently deleted application from the Microsoft identity platform.
 ---

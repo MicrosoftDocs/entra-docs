@@ -21,6 +21,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/fundamentals/add-users.md",
+      "redirect_url": "/entra/fundamentals/how-to-create-delete-users",
+      "redirect_document_id": false
+    },
+    {
     "source_path_from_root": "/docs/identity/monitoring-health/howto-configure-prerequisites-for-reporting-api.md",
     "redirect_url": "/entra/identity/monitoring-health/howto-analyze-activity-logs-with-microsoft-graph",
     "redirect_document_id": false
@@ -121,6 +126,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy.md",
+      "redirect_url": "/entra/identity/app-proxy",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/app-proxy/application-proxy-config-how-to.md",
       "redirect_url": "/entra/identity/app-proxy/application-proxy-add-on-premises-application",
       "redirect_document_id": false
@@ -193,6 +203,11 @@
     {
       "source_path_from_root": "/docs/identity-platform/web-api-tutorial-03-protect-endpoint.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-protect-endpoint",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/howto-sspr-deployment.md",
+      "redirect_url": "https://support.microsoft.com/account-billing/reset-your-work-or-school-password-using-security-info-23dde81f-08bb-4776-ba72-e6b72b9dda9e",
       "redirect_document_id": false
     }
   ]

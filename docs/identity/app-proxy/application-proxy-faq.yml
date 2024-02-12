@@ -2,9 +2,9 @@
 metadata:
   title: Microsoft Entra application proxy frequently asked questions
   description: Learn answers to frequently asked questions (FAQ) about using Microsoft Entra application proxy to publish internal, on-premises applications to remote users.
-  services: active-directory
+  
   author: kenwith
-  ms.service: active-directory
+  ms.service: entra-id
   ms.subservice: app-proxy
   ms.topic: faq
   ms.date: 02/06/2024

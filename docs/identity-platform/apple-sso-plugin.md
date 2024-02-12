@@ -7,8 +7,8 @@ ms.author: henrymbugua
 ms.custom:
 ms.date: 09/05/2023
 ms.reviewer: brandwe
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an IT admin managing Apple devices in my organization, I want to enable single sign-on (SSO) for Microsoft Enterprise accounts on macOS, iOS, and iPadOS, so that users can have a seamless authentication experience across all applications that support Apple's enterprise SSO feature.
 ---
@@ -329,7 +329,7 @@ When a user resets their password, all tokens that were issued before that will 
 [Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) is a process in which users are prompted during the sign-in process for an additional form of identification, such as a code on their cellphone or a fingerprint scan. Multifactor authentication can be enabled for specific resources. When the Microsoft Enterprise SSO plug-in is enabled, user will be asked to perform multifactor authentication in the first application that requires it. Microsoft Enterprise SSO plug-in will show its own user interface on top of the application that is currently active. 
 
 ##### User sign-in frequency
-[Sign-in frequency](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#user-sign-in-frequency) defines the time period before a user is asked to sign in again when attempting to access a resource. If a user is trying to access a resource after the time period has passed in various apps, a user would normally need to sign in again in each of those apps. When the Microsoft Enterprise SSO plug-in is enabled, a user will be asked to sign in to the first application that participates in SSO. Microsoft Enterprise SSO plug-in will show its own user interface on top of the application that is currently active.
+[Sign-in frequency](~/identity/conditional-access/concept-session-lifetime.md#user-sign-in-frequency) defines the time period before a user is asked to sign in again when attempting to access a resource. If a user is trying to access a resource after the time period has passed in various apps, a user would normally need to sign in again in each of those apps. When the Microsoft Enterprise SSO plug-in is enabled, a user will be asked to sign in to the first application that participates in SSO. Microsoft Enterprise SSO plug-in will show its own user interface on top of the application that is currently active.
 
 ### Required network configuration
 The Microsoft Enterprise SSO plug-in relies on Apple's [enterprise SSO](https://developer.apple.com/documentation/authenticationservices) framework. Apple's enterprise SSO framework ensures that only an approved SSO plug-in can work for each identity provider by utilizing a technology called [associated domains](https://developer.apple.com/documentation/xcode/supporting-associated-domains). To verify the identity of the SSO plug-in, each Apple device will send a network request to an endpoint owned by the identity provider and read information about approved SSO plug-ins. In addition to reaching out directly to the identity provider, Apple has also implemented another caching for this information. 

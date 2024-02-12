@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.date: 08/25/2022
 ms.reviewer: madansr7
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
 #Customer intent:As a developer registering an application with the Microsoft identity platform, I want to understand the restrictions and limitations of redirect URIs, so that I can correctly configure the redirect URI for successful authorization and token retrieval.
 ---

@@ -2,7 +2,7 @@
 title: Cloud apps, actions, and authentication context in Conditional Access policy
 description: What are cloud apps, actions, and authentication context in a Microsoft Entra Conditional Access policy
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual

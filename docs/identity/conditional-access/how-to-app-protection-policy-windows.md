@@ -2,7 +2,7 @@
 title: Conditional Access - Require app protection policy for Windows
 description: Create a Conditional Access policy to require app protection policy for Windows.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 12/12/2023

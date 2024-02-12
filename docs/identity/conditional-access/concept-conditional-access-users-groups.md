@@ -2,8 +2,7 @@
 title: Users and groups in Conditional Access policy
 description: Who are users and groups in a Microsoft Entra Conditional Access policy
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 01/23/2024
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: calebb
-
-ms.collection: M365-identity-device-management
 ---
 # Conditional Access: Users, groups, and workload identities
 

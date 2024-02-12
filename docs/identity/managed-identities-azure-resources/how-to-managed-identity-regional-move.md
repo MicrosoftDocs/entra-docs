@@ -1,11 +1,11 @@
 ---
 title: Move managed identities to another region
 description: Steps involved in getting a managed identity recreated in another region
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 05/25/2023

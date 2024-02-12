@@ -7,8 +7,8 @@ manager: CelesteDG
 ms.author: cwerner
 ms.date: 06/29/2023
 ms.topic: include
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 
 
 # This include file is currently referenced in the following documentation:

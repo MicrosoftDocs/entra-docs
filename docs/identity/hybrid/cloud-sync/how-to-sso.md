@@ -1,15 +1,15 @@
 ---
 title: 'How to use single sign-on with cloud sync'
 description: This article describes how to install and use single sign-on with cloud sync.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Using single sign-on with cloud sync

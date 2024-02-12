@@ -4,9 +4,8 @@ description: Steps for one-click configuration of  SSO for your application from
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.topic: conceptual
 ms.date: 06/11/2019
 ms.author: jomondi

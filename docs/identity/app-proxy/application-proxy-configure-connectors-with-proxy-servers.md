@@ -1,10 +1,10 @@
 ---
 title: Work with existing on-premises proxy servers and Microsoft Entra ID
 description: Covers how to work with existing on-premises proxy servers with Microsoft Entra ID.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
 ms.date: 02/09/2024

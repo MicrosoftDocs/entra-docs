@@ -2,8 +2,7 @@
 title: Secure your organization's identities with Microsoft Entra ID
 description: Improve your security posture and empower users with Microsoft Entra ID.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 03/28/2023

@@ -1,10 +1,10 @@
 ---
 title: Access on-premises APIs with Microsoft Entra application proxy
 description: Microsoft Entra application proxy lets native apps securely access APIs and business logic you host on-premises or on cloud VMs.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
 ms.date: 01/22/2024

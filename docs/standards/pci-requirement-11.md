@@ -1,8 +1,7 @@
 ---
 title: Microsoft Entra ID and PCI-DSS Requirement 11
 description: Learn PCI-DSS defined approach requirements for regular testing of security and network security
-services: active-directory
-ms.service: active-directory
+ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
 author: jricketts

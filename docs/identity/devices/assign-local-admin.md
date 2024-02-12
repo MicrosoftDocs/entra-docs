@@ -2,8 +2,8 @@
 title: How to manage local administrators on Microsoft Entra joined devices
 description: Learn how to assign Azure roles to the local administrators group of a Windows device.
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
 ms.date: 11/28/2023
@@ -15,7 +15,6 @@ ms.reviewer: ravenn
 
 #Customer intent: As an IT admin, I want to manage the local administrators group assignment during a Microsoft Entra join, so that I can control who can manage Microsoft Entra joined devices
 
-ms.collection: M365-identity-device-management
 ---
 # How to manage the local administrators group on Microsoft Entra joined devices
 

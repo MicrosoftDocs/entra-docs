@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.date: 11/10/2023
 ms.reviewer: saeeda, dmwendia
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: overview
 #Customer intent: As an application developer, I want a quick introduction to the Microsoft identity platform so I can decide if this platform meets my application development requirements.
 ---
