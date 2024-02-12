@@ -81,19 +81,6 @@ items:
                     href: how-to-mobile-app-maui-sample-sign-in.md
               - name: Native auth
                 items:
-                  - name: Android (Kotloin)
-                    items:
-                      - name: Run code sample
-                        href: how-to-mobile-app-maui-sample-sign-in.md
-        - name: Mobile app
-          expanded: true
-          items:
-              - name: Browser delegated
-                items:
-                  - name: Android (.NET MAUI) - sign in users
-                    href: how-to-mobile-app-maui-sample-sign-in.md
-              - name: Native auth
-                items:
                   - name: Run Android (Kotlin) sample
                     href: how-to-run-sample-android-app.md
                   - name: Run iOS sample app
