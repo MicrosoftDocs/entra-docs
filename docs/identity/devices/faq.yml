@@ -2,8 +2,6 @@
 metadata:
   title: Microsoft Entra device management FAQ
   description: Microsoft Entra device management FAQ.
-  
-  
   ms.service: entra-id
   ms.subservice: devices
   ms.custom: has-azure-ad-ps-ref

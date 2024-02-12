@@ -6,7 +6,6 @@ summary: Learn how to configure and manage device identities in Microsoft Entra 
 metadata:
   title: Microsoft Entra device identity documentation
   description: Learn how to configure and manage device identities in Microsoft Entra ID.
-  
   ms.service: entra-id
   ms.subservice: devices
   ms.topic: landing-page
