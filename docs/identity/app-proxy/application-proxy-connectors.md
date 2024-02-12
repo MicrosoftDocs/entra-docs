@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-proxy
 ms.topic: conceptual
-ms.date: 09/14/2023
+ms.date: 02/12/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -72,7 +72,7 @@ You can monitor your connectors from the machine they are running on, using eith
 
 You can also view their status from the Application Proxy page of the Microsoft Entra admin center:
 
-![Example: Microsoft Entra application proxy connectors](./media/application-proxy-connectors/app-proxy-connectors.png)
+![Example: Microsoft Entra application proxy connectors](media/application-proxy-connectors/app-proxy-connectors.png)
 
 You don't have to manually delete connectors that are unused. When a connector is running, it remains active as it connects to the service. Unused connectors are tagged as _inactive_ and are removed after 10 days of inactivity. If you do want to uninstall a connector, though, uninstall both the Connector service and the Updater service from the server. Restart your computer to fully remove the service.
 
@@ -89,7 +89,7 @@ You may experience downtime when your connector updates if:
 - You only have one connector we recommend you install a second connector and [create a connector group](application-proxy-connector-groups.md). This will avoid downtime and provide higher availability.  
 - A connector was in the middle of a transaction when the update began. Although the initial transaction is lost, your browser should automatically retry the operation or you can refresh your page. When the request is resent, the traffic is routed to a backup connector.
 
-To see information about previously released versions and what changes they include, see [Application Proxy- Version Release History](./application-proxy-release-version-history.md).
+To see information about previously released versions and what changes they include, see [Application Proxy- Version Release History](application-proxy-release-version-history.md).
 
 ## Creating connector groups
 
@@ -125,7 +125,7 @@ Connectors can be installed anywhere on the network that allows them to send req
 
 Connectors only send outbound requests. The outbound traffic is sent to the Application Proxy service and to the published applications. You don't have to open inbound ports because traffic flows both ways once a session is established. You also don't have to configure inbound access through your firewalls.
 
-For more information about configuring outbound firewall rules, see [Work with existing on-premises proxy servers](./application-proxy-configure-connectors-with-proxy-servers.md).
+For more information about configuring outbound firewall rules, see [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md).
 
 ## Performance and scalability
 
@@ -168,7 +168,7 @@ The certificates used are specific to the Application Proxy service. They get cr
 
 After the first successful certificate renewal the Microsoft Entra application proxy Connector service (Network Service) has no permission to remove the old certificate from the local machine store. If the certificate has expired or it won't be used by the service anymore, you can delete it safely.
 
-To avoid problems with the certificate renewal, ensure that the network communication from the connector towards the [documented destinations](./application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) is enabled.
+To avoid problems with the certificate renewal, ensure that the network communication from the connector towards the [documented destinations](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) is enabled.
 
 If a connector is not connected to the service for several months, its certificates may be outdated. In this case, uninstall and reinstall the connector to trigger registration. You can run the following PowerShell commands:
 
@@ -179,17 +179,17 @@ Register-AppProxyConnector -EnvironmentName "AzureCloud"
 
 For government, use `-EnvironmentName "AzureUSGovernment"`. For more details, see [Install Agent for the Azure Government Cloud](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
 
-To learn more about how to verify the certificate and troubleshoot problems see [Verify Machine and backend components support for Application Proxy trust certificate](./application-proxy-connector-installation-problem.md#verify-machine-and-backend-components-support-for-application-proxy-trust-certificate).
+To learn how to verify the certificate and troubleshoot problems see [Verify Machine and backend components support for Application Proxy trust certificate](application-proxy-connector-installation-problem.md).
 
 ## Under the hood
 
 Connectors are based on Windows Server Web Application Proxy, so they have most of the same management tools including Windows Event Logs
 
-![Manage event logs with the Event Viewer](./media/application-proxy-connectors/event-view-window.png)
+![Manage event logs with the Event Viewer](media/application-proxy-connectors/event-view-window.png)
 
 and Windows performance counters.
 
-![Add counters to the connector with the Performance Monitor](./media/application-proxy-connectors/performance-monitor.png)
+![Add counters to the connector with the Performance Monitor](media/application-proxy-connectors/performance-monitor.png)
 
 The connectors have both **Admin** and **Session** logs. The **Admin** log includes key events and their errors. The **Session** log includes all the transactions and their processing details.
 
@@ -197,11 +197,11 @@ To see the logs, open **Event Viewer** and go to **Applications and Services Log
 
 You can examine the state of the service in the Services window. The connector is made up of two Windows Services: the actual connector, and the updater. Both of them must run all the time.
 
- ![Example: Services window showing Microsoft Entra services local](./media/application-proxy-connectors/aad-connector-services.png)
+ ![Example: Services window showing Microsoft Entra services local](media/application-proxy-connectors/aad-connector-services.png)
 
 ## Next steps
 
 - [Publish applications on separate networks and locations using connector groups](application-proxy-connector-groups.md)
-- [Work with existing on-premises proxy servers](./application-proxy-configure-connectors-with-proxy-servers.md)
-- [Troubleshoot Application Proxy and connector errors](./application-proxy-troubleshoot.md)
-- [How to silently install the Microsoft Entra application proxy Connector](./application-proxy-register-connector-powershell.md)
+- [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md)
+- [Troubleshoot Application Proxy and connector errors](application-proxy-troubleshoot.md)
+- [How to silently install the Microsoft Entra application proxy Connector](application-proxy-register-connector-powershell.md)
