@@ -34,7 +34,7 @@ This article requires that an app is published and tested with application proxy
    ![Select Single sign-on from the app's overview page](./media/application-proxy-configure-single-sign-on-password-vaulting/select-sso.png)
 
 1. For the SSO mode, choose **Password-based Sign-on**.
-1. For the Sign-on URL, enter the URL for the page where users enter their username and password to sign in to your app outside of the corporate network. This may be the External URL that you created when you published the app through application proxy.
+1. For the Sign-on URL, enter the URL for the page where users enter their username and password to sign in to your app outside of the corporate network. The page could be the External URL that you created when you published the app through application proxy.
 
    ![Choose password-based Sign-on and enter your URL](./media/application-proxy-configure-single-sign-on-password-vaulting/password-sso.png)
 
@@ -57,7 +57,7 @@ This article requires that an app is published and tested with application proxy
 
 ## Test your app
 
-Go to the My Apps portal. Sign in with your credentials (or the credentials for a test account that you set up with access). Once signed in successfully, select on the icon of the app. This might trigger the installation of the My Apps Secure Sign-in browser extension. If your user had predefined credentials the authentication to the app should happen automatically, otherwise you must specify the user name or password for the first time. 
+Go to the My Apps portal. Sign in with your credentials (or the credentials for a test account that you set up with access). Once signed in successfully, select the icon of the app. Opening the My Apps portal might trigger the installation of the My Apps Secure Sign-in browser extension. If you have predefined credentials, the authentication to the app should happen automatically, otherwise you must specify the user name or password for the first time. 
 
 ## Next steps
 
