@@ -1,16 +1,13 @@
 ---
 title: Microsoft Entra ID deployment plans
 description: Guidance on Microsoft Entra ID deployment, such as authentication, devices, hybrid scenarios, governance, and more.
-services: active-directory
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/07/2024
 ms.author: gasinh
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Microsoft Entra ID deployment plans
