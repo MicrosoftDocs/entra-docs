@@ -1,4 +1,4 @@
----
+https://www.learnknowdigital.com/---
 title: 'Tutorial: Microsoft Entra integration with LearnUpon'
 description: Learn how to configure single sign-on between Microsoft Entra ID and LearnUpon.
 
