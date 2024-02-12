@@ -1,18 +1,18 @@
 ---
 title: Assign eligibility for a group in Privileged Identity Management
 description: Learn how to assign eligibility for a group in Privileged Identity Management.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.subservice: pim
+ms.subservice: privileged-identity-management
 ms.date: 09/12/2023
 ms.author: barclayn
 ms.reviewer: ilyal
 ms.custom: pim
-ms.collection: M365-identity-device-management
+
 ---
 
 # Assign eligibility for a group in Privileged Identity Management
