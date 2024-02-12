@@ -62,7 +62,7 @@ For more information about the network requirements for the connector server, se
 
 ## Maintenance
 
-The connectors and the service take care of all the high availability tasks. They can be added or removed dynamically. Each time a new request arrives it's routed to one of the connectors that is currently available. If a connector is temporarily not available, it doesn't respond to this traffic.
+The connectors and the service take care of all the high availability tasks. They can be added or removed dynamically. New requests are routed to one of the available connectors. If a connector is temporarily unavailable, it doesn't respond to this traffic.
 
 The connectors are stateless and have no configuration data on the machine. The only data they store is the settings for connecting the service and its authentication certificate. When they connect to the service, they pull all the required configuration data and refresh it every couple of minutes.
 
