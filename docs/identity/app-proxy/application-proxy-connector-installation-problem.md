@@ -1,6 +1,6 @@
 ---
-title: Problem installing the Microsoft Entra application proxy connector
-description: How to troubleshoot issues installing the application proxy connector for Microsoft Entra ID.
+title: Troubleshoot problems installing the Microsoft Entra application proxy connector
+description: Troubleshoot problems installing the application proxy connector for Microsoft Entra ID.
 services: active-directory
 author: kenwith
 manager: amycolannino
@@ -12,7 +12,7 @@ ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Problem installing the application proxy connector
+# Troubleshoot problems installing the application proxy connector
 
 Microsoft Entra application proxy connector is an internal domain component that uses outbound connections to establish the connectivity from the cloud available endpoint to the internal domain.
 
@@ -29,7 +29,7 @@ When the installation of a connector fails, the root cause is usually one of the
 > [!NOTE]
 > The connector installation logs can be found in the %TEMP% folder and can help provide additional information on what is causing an installation failure.
 
-## Verify connectivity to the Cloud application proxy service and Microsoft Login page
+## Verify connectivity to the cloud application proxy service and Microsoft Login page
 
 **Objective:** Verify that the connector machine can connect to the application proxy registration endpoint and the Microsoft sign in page.
 
