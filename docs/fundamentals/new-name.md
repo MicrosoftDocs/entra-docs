@@ -1,10 +1,9 @@
 ---
 title: New name for Azure Active Directory
 description: Learn how we're unifying the Microsoft Entra product family and how we're renaming Azure Active Directory (Azure AD) to Microsoft Entra ID.
-services: active-directory
 author: CelesteDG
 manager: CelesteDG
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.custom: has-azure-ad-ps-ref
 ms.topic: overview

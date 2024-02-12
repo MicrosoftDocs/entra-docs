@@ -1,10 +1,9 @@
 ---
 title: Add your organization's privacy info
 description: Add your organization's privacy info, privacy contact, and technical contact to your directory.
-services: active-directory
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 12/04/2023

@@ -1,11 +1,10 @@
 ---
 title: Compare Active Directory to Microsoft Entra ID
 description: This document compares Active Directory Domain Services (ADDS) to Microsoft Entra ID. It outlines key concepts in both identity solutions and explains how it's different or similar.
-services: active-directory
 author: martincoetzer
 manager: travisgr
 tags: azuread
-ms.service: active-directory
+ms.service: entra
 ms.topic: conceptual
 ms.subservice: fundamentals
 ms.date: 08/17/2022

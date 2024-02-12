@@ -1,12 +1,11 @@
 ---
 title: Approve Microsoft Support access requests (preview)
 description: How to approve Microsoft Support access requests to Microsoft Entra identity data
-services: active-directory
 author: shlipsey3
 manager: amycolannino
 ms.author: sarahlipsey
 ms.reviewer: jeffsta
-ms.service: active-directory
+ms.service: entra
 ms.topic: troubleshooting
 ms.subservice: fundamentals
 ms.date: 11/29/2023
