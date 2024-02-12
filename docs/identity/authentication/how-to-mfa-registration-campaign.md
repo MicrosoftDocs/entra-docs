@@ -43,7 +43,7 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
     :::image type="content" source="./media/how-to-mfa-registration-campaign/user-prompt.png" alt-text="Screenshot of multifactor authentication."::: 
 
 1. Tap **Next** and step through the Authenticator app setup. 
-   1. First download the app.  
+1. First download the app.  
 
     :::image type="content" source="./media/how-to-mfa-registration-campaign/user-downloads-microsoft-authenticator.png" alt-text="Screenshot of download for Microsoft Authenticator."::: 
 
@@ -63,9 +63,9 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
       :::image type="content" source="./media/how-to-mfa-registration-campaign/test.png" alt-text="Screenshot of test notification."::: 
 
-   1. Authenticator app is now successfully set up as your default sign-in method.
-
-      :::image type="content" source="./media/how-to-mfa-registration-campaign/finish.png" alt-text="Screenshot of installation complete.":::
+   1. Authenticator app is now successfully set up.
+   
+            :::image type="content" source="./media/how-to-mfa-registration-campaign/finish.png" alt-text="Screenshot of installation complete.":::
 
 1. If you don't want to install the Authenticator app, you can tap **Skip for now** to snooze the prompt for up to 14 days, which can be set by an admin. Users with free and trial subscriptions can snooze the prompt up to three times.
 
@@ -103,7 +103,7 @@ To configure the policy using Graph Explorer:
    To open the Permissions panel:
 
    ![Screenshot of Graph Explorer.](./media/how-to-nudge-authenticator-app/permissions.png)
-
+   
 1. Retrieve the Authentication methods policy: 
 
    ```json
@@ -113,10 +113,10 @@ To configure the policy using Graph Explorer:
 1. Update the registrationEnforcement and authenticationMethodsRegistrationCampaign section of the policy to enable the nudge on a user or group.
 
    ![Screenshot of the API response.](media/how-to-mfa-registration-campaign/response.png)
+   
+      To update the policy, perform a PATCH on the Authentication Methods Policy with only the updated registrationEnforcement section: 
 
-   To update the policy, perform a PATCH on the Authentication Methods Policy with only the updated registrationEnforcement section: 
-
-   ```json
+      ```json
    PATCH https://graph.microsoft.com/v1.0/policies/authenticationmethodspolicy
    ```
 
@@ -249,7 +249,7 @@ Here are a few sample JSONs you can use to get started!
 1. When you tap the specific user, you’ll see their **Object ID**, which is the user’s GUID.
 
    ![User object ID](./media/how-to-nudge-authenticator-app/object-id.png)
-
+   
 ### Identify the GUIDs of groups to insert in the JSONs
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
@@ -258,7 +258,7 @@ Here are a few sample JSONs you can use to get started!
 1. Tap the group and get the **Object ID**.
 
    ![Nudge group](./media/how-to-nudge-authenticator-app/group.png)
-
+   
 <!---comment out PS until ready>
 
 ### PowerShell
