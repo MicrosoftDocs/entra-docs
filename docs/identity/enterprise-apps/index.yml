@@ -148,7 +148,7 @@ landingContent:
       - linkListType: concept
         links:
           - text: Application Proxy
-            url: ~/identity/app-proxy/application-proxy.md
+            url: /entra/identity/app-proxy
       - linkListType: how-to-guide
         links:
           - text: Plan application Proxy deployment

@@ -41,7 +41,7 @@ If your users sign in to SaaS apps such as Salesforce, ServiceNow, or Workday, a
 
 Most SaaS applications can be configured in Microsoft Entra ID. Microsoft has many preconfigured connections to SaaS apps in the  [Microsoft Entra app gallery](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps), which makes your transition easier. SAML 2.0 applications can be integrated with Microsoft Entra ID via the Microsoft Entra app gallery or as [non-gallery applications](add-application-portal.md).
 
-Apps that use OAuth 2.0 or OpenID Connect can be similarly integrated with Microsoft Entra ID as [app registrations](~/identity-platform/quickstart-register-app.md). Apps that use legacy protocols can use [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md) to authenticate with Microsoft Entra ID.
+Apps that use OAuth 2.0 or OpenID Connect can be similarly integrated with Microsoft Entra ID as [app registrations](~/identity-platform/quickstart-register-app.md). Apps that use legacy protocols can use [Microsoft Entra application proxy](/entra/identity/app-proxy) to authenticate with Microsoft Entra ID.
 
 For any issues with onboarding your SaaS apps, you can contact the [SaaS Application Integration support alias](mailto:SaaSApplicationIntegrations@service.microsoft.com).
 

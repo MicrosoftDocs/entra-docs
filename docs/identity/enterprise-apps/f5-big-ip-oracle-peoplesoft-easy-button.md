@@ -42,7 +42,7 @@ Legacy applications lack modern protocols to support Microsoft Entra integration
 With a BIG-IP in front of the app, you overlay the service with Microsoft Entra preauthentication and header-based SSO. This action improves the application's security posture.
 
    > [!NOTE]
-   > Gain remote access to this type of application with Microsoft Entra application proxy. </br> See, [Remote access to on-premises applications through Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md).
+   > Gain remote access to this type of application with Microsoft Entra application proxy. </br> See, [Remote access to on-premises applications through Microsoft Entra application proxy](/entra/identity/app-proxy).
 
 ## Scenario architecture
 
