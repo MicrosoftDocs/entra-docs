@@ -156,8 +156,6 @@
       items:
         - name: SPA that signs in users and calls web API
           items:
-            - name: Overview
-              href: scenario-spa-overview.md
             - name: App registration
               href: scenario-spa-app-registration.md
             - name: Code configuration
@@ -168,8 +166,6 @@
               href: scenario-spa-acquire-token.md
             - name: Call a web API
               href: scenario-spa-call-api.md
-            - name: Move to production
-              href: scenario-spa-production.md
 - name: Web app
   items:
     - name: Web app authentication
@@ -229,8 +225,6 @@
               href: scenario-web-app-sign-user-app-configuration.md
             - name: Sign-in and sign-out
               href: scenario-web-app-sign-user-sign-in.md
-            - name: Move to production
-              href: scenario-web-app-sign-user-production.md
         - name: Web app that calls an API
           items:
             - name: App registration
@@ -243,8 +237,6 @@
               href: scenario-web-app-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-app-call-api-call-api.md
-            - name: Move to production
-              href: scenario-web-app-call-api-production.md
         - name: Deploy and setup App Service auth in a pipeline
           href: deploy-web-app-authentication-pipeline.md
 - name: Web API
