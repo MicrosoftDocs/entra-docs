@@ -23,6 +23,7 @@ ms.collection: M365-identity-device-management
 You can bulk-invite external users to an organization from email addresses you store in a .csv file.
 
 1. Prepare the .csv file
+
    Create a new .csv file and name it invitations.csv. In this example, the file is saved in C:\data, and contains the following information:
 
    Name                  |  InvitedUserEmailAddress
@@ -30,8 +31,8 @@ You can bulk-invite external users to an organization from email addresses you s
    Gmail B2B Invitee     | b2binvitee@gmail.com
    Outlook B2B invitee   | b2binvitee@outlook.com
 
-
 2. Get the latest Microsoft Graph PowerShell
+
    To use the new cmdlets, you must install the updated Microsoft Graph PowerShell module. For more information, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation)
 
 3. Sign in to your tenancy
