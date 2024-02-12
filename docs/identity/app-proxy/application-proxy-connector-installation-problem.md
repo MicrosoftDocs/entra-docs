@@ -31,7 +31,7 @@ When the installation of a connector fails, the root cause is usually one of the
 
 ## Verify connectivity to the Cloud application proxy service and Microsoft Login page
 
-**Objective:** Verify that the connector machine can connect to the application proxy registration endpoint and the Microsoft login page.
+**Objective:** Verify that the connector machine can connect to the application proxy registration endpoint and the Microsoft sign in page.
 
 1.  On the connector server, run a port test by using [telnet](/windows-server/administration/windows-commands/telnet) or other port testing tool to verify that ports 443 and 80 are open.
 
@@ -52,7 +52,7 @@ When the installation of a connector fails, the root cause is usually one of the
 
 1.  Verify the machine supports Transport Layer Security (TLS) 1.2 – All Windows versions after 2012 R2 should support TLS 1.2. If your connector machine is from a version of 2012 R2 or prior, make sure that the [required updates](https://support.microsoft.com/help/2973337/sha512-is-disabled-in-windows-when-you-use-tls-1.2) are installed.
 
-2.  Contact your network admin and ask to verify that the backend proxy and firewall do not block SHA512 for outgoing traffic.
+2.  Contact your network admin and ask to verify that the backend proxy and firewall don't block `SHA512` outgoing traffic.
 
 **To verify the client certificate:**
 
@@ -68,7 +68,7 @@ Verify the thumbprint of the current client certificate. The certificate store c
 </ConnectorTrustSettingsFile>
 ```
 
-The possible **IsInUserStore** values are **true** and **false**. A value of **true** means the automatically renewed certificate is stored in the personal container in the user certificate store of the Network Service. A value of **false** means the client certificate was created during the installation or registration initiated by `Register-AppProxyConnector` command and it's stored in the personal container in the certificate store of the local machine.
+The possible **IsInUserStore** values are **true** and **false**. A value of **true** means the certificate is automatically renewed and stored in the personal container in the user certificate store of the Network Service. A value of **false** means the client certificate is created during the installation or registration initiated by `Register-AppProxyConnector`. The certificate is stored in the personal container in the certificate store of the local machine.
 
 If the value is **true**, follow these steps to verify the certificate:
 1. Download [PsTools.zip](/sysinternals/downloads/pstools).
@@ -103,7 +103,7 @@ To learn more about the `Register-AppProxyConnector` command, see [Create an una
 
 **To verify the credentials are correct:**
 
-Connect to `https://login.microsoftonline.com` and use the same credentials. Make sure the login is successful. You can check the user role by going to **Microsoft Entra ID** -&gt; **Users and Groups** -&gt; **All Users**. 
+Connect to `https://login.microsoftonline.com` and use the same credentials. Make sure the sign in is successful. You can check the user role by going to **Microsoft Entra ID** -&gt; **Users and Groups** -&gt; **All Users**. 
 
 Select your user account, then **Directory Role** in the resulting menu. Verify that the selected role is **Application Administrator**. If you're unable to access any of the pages along these steps, you don't have the required role.
 
