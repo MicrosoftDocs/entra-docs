@@ -12,7 +12,7 @@ ms.date: 01/23/2024
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref
+ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 #customer intent: As a B2B collaboration administrator, I want to add Facebook as an identity provider for self-service sign-up user flows, so that users can sign in to applications using their Facebook accounts.
 ---
@@ -77,16 +77,31 @@ Now you set the Facebook client ID and client secret, either by entering it in t
 
 1. Select **Save**.
 ### To configure Facebook federation by using PowerShell
-1. Install the latest version of the Azure AD PowerShell for Graph module ([AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview)).
-2. Run the following command:
-   `Connect-AzureAD`.
-3. At the sign-in prompt, sign in with the managed Global Administrator account.  
-4. Run the following command: 
-   
-   `New-AzureADMSIdentityProvider -Type Facebook -Name Facebook -ClientId [Client ID] -ClientSecret [Client secret]`
- 
+
+1. Install the latest version of the [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation).
+1. Run the following command:
+
+   ```powershell
+   Connect-MgGraph -Scopes "IdentityProvider.ReadWrite.All"
+   ```
+
+1. At the sign-in prompt, sign in with the managed Global Administrator account.  
+1. Run the following commands:
+
+   ```powershell
+   $params = @{
+      "@odata.type" = "microsoft.graph.socialIdentityProvider"
+      displayName = "Facebook"
+      identityProviderType = "Facebook"
+      clientId = "[Client ID]"
+      clientSecret = "[Client secret]"
+   }
+
+   New-MgIdentityProvider -BodyParameter $params
+   ```
+
    > [!NOTE]
-   > Use the client ID and client secret from the app you created in the Facebook developer console. For more information, see the [New-AzureADMSIdentityProvider](/powershell/module/azuread/new-azureadmsidentityprovider?view=azureadps-2.0-preview&preserve-view=true) article. 
+   > Use the client ID and client secret from the app you created in the Facebook developer console. For more information, see the [New-MgIdentityProvider](/powershell/microsoftgraph/authentication-commands) article.
 
 ## How do I remove Facebook federation?
 You can delete your Facebook federation setup. If you do so, any users who have signed up through user flows with their Facebook accounts will no longer be able to sign in. 
@@ -99,15 +114,23 @@ You can delete your Facebook federation setup. If you do so, any users who have 
 1. Select **Yes** to confirm deletion.
 
 ### To delete Facebook federation by using PowerShell: 
-1. Install the latest version of the Azure AD PowerShell for Graph module ([AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview)).
-2. Run `Connect-AzureAD`.  
-4. In the sign-in prompt, sign in with the managed Global Administrator account.  
-5. Enter the following command:
 
-    `Remove-AzureADMSIdentityProvider -Id Facebook-OAUTH`
+1. Install the latest version of the [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation).
+1. Run the following command:
+
+   ```powershell
+   Connect-MgGraph -Scopes "IdentityProvider.ReadWrite.All"
+   ```
+
+1. In the sign-in prompt, sign in with the managed Global Administrator account.  
+1. Enter the following command:
+
+   ```powershell
+   Remove-MgIdentityProvider -IdentityProviderBaseId "Facebook-OAUTH"
+   ```
 
    > [!NOTE]
-   > For more information, see [Remove-AzureADMSIdentityProvider](/powershell/module/azuread/Remove-AzureADMSIdentityProvider?view=azureadps-2.0-preview&preserve-view=true). 
+   > For more information, see [Remove-MgIdentityProvider](/powershell/module/microsoft.graph.identity.signins/remove-mgidentityprovider).
 
 ## Next steps
 
