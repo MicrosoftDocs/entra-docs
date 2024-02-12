@@ -1,6 +1,6 @@
 ---
 title: Understand Microsoft Entra application proxy connectors
-description: Learn about the Microsoft Entra application proxy connectors.
+description: Learn how to use Microsoft Entra application proxy connectors.
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
@@ -140,7 +140,7 @@ When the connector or machine are unavailable, the traffic goes to another conne
 Another factor that affects performance is the quality of the networking between the connectors, including:
 
 - **The online service**: Slow or high-latency connections to the application proxy service in Azure influence the connector performance. For the best performance, connect your organization to Azure with Express Route. Otherwise, have your networking team ensure that connections to Azure are handled as efficiently as possible.
-- **The backend applications**: In some cases, there are additional proxies between the connector and the backend applications that can slow or prevent connections. To troubleshoot this scenario, open a browser from the connector server and try to access the application. If you run the connectors in Azure but the applications are on-premises, the experience might not be what your users expect.
+- **The backend applications**: In some cases, there are extra proxies between the connector and the backend applications that can slow or prevent connections. To troubleshoot this scenario, open a browser from the connector server and try to access the application. If you run the connectors in Azure but the applications are on-premises, the experience might not be what your users expect.
 - **The domain controllers**: If the connectors perform single sign-on (SSO) using Kerberos Constrained Delegation, they contact the domain controllers before sending the request to the backend. The connectors have a cache of Kerberos tickets, but in a busy environment the responsiveness of the domain controllers can affect performance. This issue is more common for connectors that run in Azure but communicate with domain controllers that are on-premises.
 
 For more information about optimizing your network, see [Network topology considerations when using Microsoft Entra application proxy](application-proxy-network-topology.md).
@@ -164,9 +164,9 @@ Usually, connector deployment is straightforward and requires no special configu
 
 To provide a secure service, connectors have to authenticate toward the service, and the service has to authenticate toward the connector. This authentication is done using client and server certificates when the connectors initiate the connection. This way the administrator’s username and password are not stored on the connector machine.
 
-The certificates used are specific to the application proxy service. They get created during the initial registration and are automatically renewed by the connectors every couple of months.
+The certificates used are specific to the application proxy service. They are created during the initial registration and automatically renewed every couple of months.
 
-After the first successful certificate renewal the Microsoft Entra application proxy connector service (Network Service) has no permission to remove the old certificate from the local machine store. If the certificate has expired or it won't be used by the service anymore, you can delete it safely.
+After the first successful certificate renewal, the Microsoft Entra application proxy connector service (Network Service) has no permission to remove the old certificate from the local machine store. If the certificate expires or won't be used by the service, you can delete it safely.
 
 To avoid problems with the certificate renewal, ensure that the network communication from the connector towards the [documented destinations](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) is enabled.
 
