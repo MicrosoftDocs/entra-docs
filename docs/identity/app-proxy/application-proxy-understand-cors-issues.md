@@ -1,10 +1,10 @@
 ---
 title: Understand and solve Microsoft Entra application proxy CORS issues
 description: Provides an understanding of CORS in Microsoft Entra application proxy, and how to identify and solve CORS issues.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
 ms.date: 02/06/2024

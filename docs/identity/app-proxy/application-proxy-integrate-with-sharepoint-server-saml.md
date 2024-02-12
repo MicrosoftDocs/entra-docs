@@ -1,10 +1,10 @@
 ---
 title: Publish an on-premises SharePoint farm with Microsoft Entra application proxy
 description: Covers the basics about how to integrate an on-premises SharePoint farm with Microsoft Entra application proxy for SAML.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
 ms.date: 02/06/2024

@@ -1,10 +1,10 @@
 ---
 title: Problem signing in to on-premises app using Microsoft Entra application proxy
 description: Troubleshooting common issues faced when you are unable to sign in to an on-premises application integrated using the Microsoft Entra application proxy
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
 ms.date: 09/14/2023

@@ -1,10 +1,10 @@
 ---
 title: Application Proxy cookie settings
 description:  Microsoft Entra ID has access and session cookies for accessing on-premises applications through Application Proxy. In this article, you find out how to use and configure the cookie settings. 
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
