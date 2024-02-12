@@ -207,13 +207,14 @@ items:
                 - name: Use role-based access control
                   href: tutorial-mobile-maui-role-based-access-control.md
         - name: Native auth
+          items:
             - name: Android app
               items:
                 - name: Prepare Android app
                   href: tutorial-native-auth-prepare-android-app.md
                 - name: Sign up, sign in and sign out
                   href: tutorial-native-auth-android-sign-up-sign-in-sign-out.md
-                - name: Additional scenarios
+                - name: Scenarios
                   items:
                     - name: Register user with username and attributes
                       href: tutorial-native-auth-android-sign-up-user-with-username-user-attributes.md
@@ -235,7 +236,7 @@ items:
                   href: tutorial-native-auth-prepare-ios-app.md
                 - name: Sign up, sign in and sign sign out
                   href: tutorial-native-auth-ios-sign-up-sign-in-sign-out.md
-                - name: Additional scenarios
+                - name: Scenarios
                   items:
                     - name: Sign up with user attributes
                       href: tutorial-native-auth-ios-sign-up-with-email-one-time-passcode.md
