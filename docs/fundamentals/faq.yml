@@ -2,17 +2,13 @@
 metadata:
   title: Frequently asked questions (FAQ) about Microsoft Entra, Microsoft Entra ID, and Azure
   description: Common questions and answers about Microsoft Entra, Microsoft Entra ID and Azure, such as password management and application access.
-  services: active-directory
   author: barclayn
   manager: amycolannino
-  ms.assetid: b8207760-9714-4871-93d5-f9893de31c8f
-  ms.service: active-directory
+  ms.service: entra
   ms.subservice: fundamentals
   ms.topic: faq
   ms.date: 01/05/2024
   ms.author: barclayn
-  ms.custom: it-pro, seodec18, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-  ms.collection: M365-identity-device-management
 title: Frequently asked questions about Microsoft Entra ID
 summary: |
   Microsoft Entra ID is a cloud-based identity and access management solution. It is a directory and identity management service that operates in the cloud and offers authentication and authorization services to various Microsoft services, such as Microsoft 365, Dynamics 365, and Microsoft Azure.
