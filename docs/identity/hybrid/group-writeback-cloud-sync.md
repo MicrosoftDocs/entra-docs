@@ -3,13 +3,13 @@ title: 'Group writeback with Microsoft Entra Cloud Sync'
 description: This article describes the new feature in Cloud Sync to provision and writeback groups to on-premises AD.
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.date: 02/09/2024
 ms.subservice: hybrid
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Group writeback with Microsoft Entra Cloud Sync (Preview)

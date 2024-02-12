@@ -1,20 +1,20 @@
 ---
 title: Implement password hash synchronization with Microsoft Entra Connect Sync
 description: Provides information about how password hash synchronization works and how to set up.
-services: active-directory
+
 author: billmath
 manager: amycolannino
 ms.assetid: 05f16c3e-9d23-45dc-afca-3d0fa9dbf501
-ms.service: active-directory
+ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 search.appverid:
 - MET150
 
-ms.collection: M365-identity-device-management
+
 ---
 # Implement password hash synchronization with Microsoft Entra Connect Sync
 This article provides information that you need to synchronize your user passwords from an on-premises Active Directory instance to a cloud-based Microsoft Entra instance.
