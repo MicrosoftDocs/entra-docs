@@ -193,7 +193,7 @@ If you want custom administrators to receive the notification emails, use SSPR c
 
 If you have a hybrid environment, you can configure Microsoft Entra Connect to write password change events back from Microsoft Entra ID to an on-premises directory.
 
-![Validating password writeback is enabled and working][Writeback]
+![Validating password writeback is enabled for Microsoft Entra ID to an On-premises integration][Writeback]
 
 Microsoft Entra ID checks your current hybrid connectivity and provides one of the following messages in the Microsoft Entra admin center:
 
