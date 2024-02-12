@@ -74,10 +74,15 @@ items:
             - name: .NET WPF - sign in users
               href: sample-desktop-wpf-dotnet-sign-in.md
         - name: Mobile app
+          expanded: true
           items:
             - name: Browser delegated
               items:
                   - name: Android (.NET MAUI) - sign in users
+                    href: how-to-mobile-app-maui-sample-sign-in.md
+            - name: Native auth
+              items:
+                  - name: Android
                     href: how-to-mobile-app-maui-sample-sign-in.md
         - name: Command-line interface (CLI) app
           items:
