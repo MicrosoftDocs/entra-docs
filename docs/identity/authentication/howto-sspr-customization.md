@@ -2,8 +2,7 @@
 title: Customize self-service password reset
 description: Learn how to customize user display and experience options for Microsoft Entra self-service password reset
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 09/14/2023

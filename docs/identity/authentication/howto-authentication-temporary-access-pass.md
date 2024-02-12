@@ -2,8 +2,7 @@
 title: Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods
 description: Learn how to configure and enable users to register passwordless authentication methods by using a Temporary Access Pass 
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 09/23/2023

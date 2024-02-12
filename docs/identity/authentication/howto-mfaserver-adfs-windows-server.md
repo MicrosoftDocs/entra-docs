@@ -3,7 +3,7 @@ title: Azure MFA Server with AD FS in Windows Server
 description: This article describes how to get started with Azure multifactor authentication and AD FS in Windows Server 2016.
 
 services: multi-factor-authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 10/29/2022

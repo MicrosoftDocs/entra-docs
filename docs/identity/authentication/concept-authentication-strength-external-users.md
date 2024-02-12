@@ -3,7 +3,7 @@ title: How Conditional Access authentication strength works for external users i
 description: Learn how admins can use authentication strength requirements for external users in Microsoft Entra ID.
 
 services: multi-factor-authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 01/12/2024

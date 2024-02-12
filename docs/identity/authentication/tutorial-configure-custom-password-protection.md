@@ -2,8 +2,7 @@
 title: Configure custom Microsoft Entra password protection lists
 description: In this tutorial, you learn how to configure custom banned password protection lists for Microsoft Entra ID to restrict common words in your environment.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
 ms.date: 09/14/2023

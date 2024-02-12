@@ -3,7 +3,7 @@ title: Integrate RDG with Microsoft Entra multifactor authentication NPS extensi
 description: Integrate your Remote Desktop Gateway infrastructure with Microsoft Entra multifactor authentication using the Network Policy Server extension for Microsoft Azure
 
 services: multi-factor-authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to

@@ -3,7 +3,7 @@ title: Use Azure Multi-Factor Authentication Server with AD FS 2.0
 description: Describes how to get started with Microsoft Entra multifactor authentication and AD FS 2.0.
 
 services: multi-factor-authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 09/13/2023

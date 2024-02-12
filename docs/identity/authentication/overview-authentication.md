@@ -2,8 +2,7 @@
 title: Microsoft Entra authentication overview
 description: Learn about the different authentication methods and security features for user sign-ins with Microsoft Entra ID.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: overview
 ms.date: 01/29/2023

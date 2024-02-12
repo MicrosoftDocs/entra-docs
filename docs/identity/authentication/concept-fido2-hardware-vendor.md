@@ -2,8 +2,7 @@
 title: Become a Microsoft-Compatible FIDO2 Security Key Vendor for sign-in to Microsoft Entra ID
 description: Explains process to become a FIDO2 hardware partner
 ms.date: 01/29/2023
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 author: martincoetzer
 ms.author: martinco

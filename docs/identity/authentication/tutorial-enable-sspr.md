@@ -1,8 +1,7 @@
 ---
 title: Enable Microsoft Entra self-service password reset
 description: In this tutorial, you learn how to enable Microsoft Entra self-service password reset for a group of users and test the password reset process.
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
 ms.date: 01/30/2023

@@ -1,7 +1,7 @@
 ---
 title: How number matching works in multifactor authentication push notifications for Microsoft Authenticator
 description: Learn how to use number matching in MFA notifications
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 05/10/2023

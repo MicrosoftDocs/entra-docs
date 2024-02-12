@@ -3,7 +3,7 @@ title: Microsoft Entra multifactor authentication overview
 description: Learn how Microsoft Entra multifactor authentication helps safeguard access to data and applications while meeting user demand for a simple sign-in process.
 
 services: multi-factor-authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 03/13/2023

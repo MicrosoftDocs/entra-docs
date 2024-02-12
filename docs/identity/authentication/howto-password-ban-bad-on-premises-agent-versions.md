@@ -2,8 +2,7 @@
 title: Password protection agent release history
 description: Documents version release and behavior change history
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
 ms.date: 06/02/2023

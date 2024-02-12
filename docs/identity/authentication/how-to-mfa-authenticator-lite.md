@@ -2,8 +2,7 @@
 title: How to enable Microsoft Authenticator Lite for Outlook mobile
 description: Learn about how to you can set up Microsoft Authenticator Lite for Outlook mobile to help users validate their identity
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 10/17/2023

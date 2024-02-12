@@ -3,7 +3,7 @@ title: Secure resources with Microsoft Entra multifactor authentication and ADFS
 description: This is the Microsoft Entra multifactor authentication page that describes how to get started with Microsoft Entra multifactor authentication and AD FS in the cloud.
 
 services: multi-factor-authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 09/13/2023

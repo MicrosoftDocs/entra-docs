@@ -1,7 +1,7 @@
 ---
 title: Deployment considerations for Microsoft Entra multifactor authentication
 description: Learn about deployment considerations and strategy for successful implementation of Microsoft Entra multifactor authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to

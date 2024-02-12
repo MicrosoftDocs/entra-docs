@@ -2,8 +2,7 @@
 title: Regions that need to opt in for Microsoft Entra multifactor authentication telephony verification | Microsoft Entra ID
 description: To protect customers, some regions require a support ticket to request to opt in to receive MFA telephony verification Microsoft Entra ID
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 09/12/2023

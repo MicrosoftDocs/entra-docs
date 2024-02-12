@@ -2,8 +2,7 @@
 title: Deploy on-premises Microsoft Entra Password Protection
 description: Learn how to plan and deploy Microsoft Entra Password Protection in an on-premises Active Directory Domain Services environment
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 09/14/2023

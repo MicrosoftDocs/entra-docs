@@ -2,8 +2,7 @@
 title: How to migrate to the Authentication methods policy 
 description: Learn about how to centrally manage multifactor authentication and self-service password reset (SSPR) settings in the Authentication methods policy.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 09/24/2023

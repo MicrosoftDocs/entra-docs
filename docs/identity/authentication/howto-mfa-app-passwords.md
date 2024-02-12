@@ -3,7 +3,7 @@ title: Configure app passwords for Microsoft Entra multifactor authentication
 description: Learn how to configure and use app passwords for legacy applications in Microsoft Entra multifactor authentication
 
 services: multi-factor-authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 09/13/2023

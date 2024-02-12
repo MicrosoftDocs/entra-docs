@@ -1,8 +1,7 @@
 ---
 title: Self-service password reset reports
 description: Reporting on Microsoft Entra self-service password reset events
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 09/14/2023

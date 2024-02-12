@@ -2,8 +2,7 @@
 title: How to run a registration campaign to set up Microsoft Authenticator
 description: Learn how to move your organization away from less secure authentication methods to Microsoft Authenticator
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: ignite-2022
 ms.topic: conceptual

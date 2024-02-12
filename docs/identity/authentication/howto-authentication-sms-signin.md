@@ -2,8 +2,7 @@
 title: SMS-based user sign-in for Microsoft Entra ID
 description: Learn how to configure and enable users to sign-in to Microsoft Entra ID using SMS
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 09/15/2023

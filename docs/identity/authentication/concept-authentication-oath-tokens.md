@@ -2,8 +2,7 @@
 title: OATH tokens authentication method
 description: Learn about using OATH tokens in Microsoft Entra ID to help improve and secure sign-in events
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 09/13/2023

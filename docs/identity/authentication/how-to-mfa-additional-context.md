@@ -1,7 +1,7 @@
 ---
 title: Use additional context in Microsoft Authenticator notifications
 description: Learn how to use additional context in MFA notifications
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 10/11/2023

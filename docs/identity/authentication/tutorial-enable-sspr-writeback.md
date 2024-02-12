@@ -2,8 +2,7 @@
 title: Enable Microsoft Entra password writeback
 description: In this tutorial, you learn how to enable Microsoft Entra self-service password reset writeback using Microsoft Entra Connect to synchronize changes back to an on-premises Active Directory Domain Services environment.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
 ms.date: 09/13/2023

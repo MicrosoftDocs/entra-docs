@@ -3,7 +3,7 @@ title: Configure Microsoft Entra multifactor authentication
 description: Learn how to configure settings for Microsoft Entra multifactor authentication
 
 services: multi-factor-authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 10/18/2023

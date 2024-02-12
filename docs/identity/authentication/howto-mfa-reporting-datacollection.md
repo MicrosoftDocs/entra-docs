@@ -3,7 +3,7 @@ title: Microsoft Entra user data collection
 description: What information is used to help authenticate users by self-service password reset and Microsoft Entra multifactor authentication?
 
 services: multi-factor-authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 09/13/2021

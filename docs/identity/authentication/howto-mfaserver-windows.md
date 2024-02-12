@@ -3,7 +3,7 @@ title: Windows authentication and Azure MFA Server
 description: Deploying Windows Authentication and Azure Multi-Factor Authentication Server.
 
 services: multi-factor-authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 07/11/2018

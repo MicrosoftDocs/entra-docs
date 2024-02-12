@@ -2,8 +2,7 @@
 title: Enable combined security information registration
 description: Learn how to simplify the end-user experience with combined Microsoft Entra multifactor authentication and self-service password reset registration.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 09/14/2023

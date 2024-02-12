@@ -2,8 +2,7 @@
 title:  Migrate from federation to Microsoft Entra CBA
 description: Learn how to migrate from Federated server to Microsoft Entra ID
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 09/13/2023

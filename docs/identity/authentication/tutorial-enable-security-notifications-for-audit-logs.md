@@ -2,8 +2,7 @@
 title: Enable security notifications for audit log events | Microsoft Entra ID
 description: create an Azure Logic App that monitors Microsoft Entra ID audit logs and sends a security email notification to users based on different audit log events.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
 ms.date: 12/06/2023

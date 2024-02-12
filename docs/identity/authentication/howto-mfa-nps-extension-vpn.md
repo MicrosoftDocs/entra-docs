@@ -3,7 +3,7 @@ title: VPN with Microsoft Entra multifactor authentication using the NPS extensi
 description: Integrate your VPN infrastructure with Microsoft Entra multifactor authentication by using the Network Policy Server extension for Microsoft Azure.
 
 services: multi-factor-authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to

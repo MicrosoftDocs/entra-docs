@@ -3,7 +3,7 @@ title: Microsoft Entra multifactor authentication providers
 description: When should you use an authentication provider with Microsoft Entra multifactor authentication (MFA)?
 
 services: multi-factor-authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 09/14/2023

@@ -2,8 +2,7 @@
 title: Overview of Microsoft Entra certificate-based authentication 
 description: Learn about Microsoft Entra certificate-based authentication without federation
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 01/29/2023

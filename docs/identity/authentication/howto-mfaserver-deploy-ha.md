@@ -3,7 +3,7 @@ title: High availability for Azure MFA Server
 description: Deploy multiple instances of Azure Multi-Factor Authentication Server in configurations that provide high availability.
 
 services: multi-factor-authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 10/29/2022

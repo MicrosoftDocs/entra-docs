@@ -2,8 +2,7 @@
 title: Known issues and troubleshooting for hybrid FIDO2 security keys
 description: Learn about some known issues and ways to troubleshoot passwordless hybrid FIDO2 security key sign-in using Microsoft Entra ID 
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: troubleshooting
 ms.date: 01/29/2023

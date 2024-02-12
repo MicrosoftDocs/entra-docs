@@ -1,12 +1,11 @@
 ---
 title: Create a resilient access control management strategy
 description: This document provides guidance on strategies an organization should adopt to provide resilience to reduce the risk of lockout during unforeseen disruptions
-services: active-directory
 author: martincoetzer
 manager: travisgr
 tags: azuread
 ms.custom: has-azure-ad-ps-ref
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 01/29/2023

@@ -2,8 +2,7 @@
 title: Self-service password reset deep dive
 description: How does self-service password reset work
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 09/14/2023

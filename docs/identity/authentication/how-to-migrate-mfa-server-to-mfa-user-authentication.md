@@ -2,7 +2,7 @@
 title: Migrate to Microsoft Entra multifactor authentication and Microsoft Entra user authentication
 description: Guidance to move from MFA Server on-premises to Microsoft Entra multifactor authentication and Microsoft Entra user authentication
 services: multi-factor-authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 05/23/2023

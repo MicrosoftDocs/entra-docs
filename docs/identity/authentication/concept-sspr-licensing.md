@@ -2,8 +2,7 @@
 title: License self-service password reset
 description: Learn about the difference Microsoft Entra self-service password reset licensing requirements
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 01/29/2023

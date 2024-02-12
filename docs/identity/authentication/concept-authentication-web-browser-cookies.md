@@ -2,8 +2,7 @@
 title: Web browser cookies used in Microsoft Entra authentication
 description: Learn about Web browser cookies used in Microsoft Entra authentication.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: overview
 ms.date: 01/29/2023

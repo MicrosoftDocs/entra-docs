@@ -2,8 +2,7 @@
 title: Two-way SMS no longer supported
 description: Explains how to enable another method for users who still use two-way SMS. 
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 09/15/2023

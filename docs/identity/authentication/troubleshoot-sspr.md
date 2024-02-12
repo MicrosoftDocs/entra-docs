@@ -2,8 +2,7 @@
 title: Troubleshoot self-service password reset
 description: Learn how to troubleshoot common problems and resolution steps for self-service password reset in Microsoft Entra ID
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: troubleshooting
 ms.date: 09/13/2023

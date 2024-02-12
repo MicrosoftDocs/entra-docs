@@ -3,7 +3,7 @@ title: Overview of Microsoft Entra authentication strength
 description: Learn how admins can use Microsoft Entra Conditional Access to distinguish which authentication methods can be used based on relevant security factors.
 
 services: multi-factor-authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 01/12/2024
