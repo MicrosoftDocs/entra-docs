@@ -6,7 +6,7 @@ author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
-ms.service: monitoring-health
+ms.subservice: monitoring-health
 ms.date: 12/15/2023
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14

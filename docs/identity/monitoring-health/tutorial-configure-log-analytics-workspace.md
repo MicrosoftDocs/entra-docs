@@ -2,7 +2,7 @@
 title: Configure a Log Analytics workspace in Microsoft Entra ID
 description: Learn how to configure a Log Analytics workspace in Microsoft Entra ID and run Kusto queries on your identity data.
 ms.service: entra-id
-ms.service: monitoring-health
+ms.subservice: monitoring-health
 ms.topic: tutorial
 ms.date: 02/09/2024
 ms.author: sarahlipsey

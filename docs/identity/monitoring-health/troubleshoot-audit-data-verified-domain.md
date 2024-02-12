@@ -7,7 +7,7 @@ author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
 ms.topic: troubleshooting
-ms.service: monitoring-health
+ms.subservice: monitoring-health
 ms.date: 11/01/2022
 ms.author: sarahlipsey
 ms.collection: M365-identity-device-management

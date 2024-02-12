@@ -5,7 +5,7 @@ author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
-ms.service: monitoring-health
+ms.subservice: monitoring-health
 ms.date: 01/23/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg

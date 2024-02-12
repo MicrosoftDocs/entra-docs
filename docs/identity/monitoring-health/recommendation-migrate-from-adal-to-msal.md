@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: reference
 ms.workload: identityr
-ms.service: monitoring-health
+ms.subservice: monitoring-health
 ms.date: 09/21/2023
 ms.author: sarahlipsey
 ms.reviewer: jamesmantu

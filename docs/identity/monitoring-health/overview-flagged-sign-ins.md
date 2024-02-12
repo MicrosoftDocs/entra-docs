@@ -7,7 +7,7 @@ author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
 ms.topic: overview
-ms.service: monitoring-health
+ms.subservice: monitoring-health
 ms.date: 08/25/2023
 ms.author: sarahlipsey
 ms.reviewer: tspring
