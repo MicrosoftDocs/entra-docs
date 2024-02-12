@@ -10,7 +10,7 @@ ms.topic: conceptual
 ms.date: 02/12/2024
 ms.author: kenwith
 ms.reviewer: ashishj
-ms.custom: has-adal-ref, ignite-2022
+ms.custom:
 ---
 
 # Using Microsoft Entra application proxy to publish on-premises apps for remote users
