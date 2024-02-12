@@ -3,9 +3,9 @@ title: How to analyze activity logs with Microsoft Graph
 description: Learn how to analyze sign-in and audit logs with Microsoft Graph.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: how-to
-ms.subservice: report-monitor
+ms.service: monitoring-health
 ms.date: 02/07/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg

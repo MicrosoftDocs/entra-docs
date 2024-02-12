@@ -4,9 +4,9 @@ description: Describe the Microsoft Entra sign-in log schema for use in Azure Mo
 services: active-directory
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
-ms.subservice: report-monitor
+ms.service: monitoring-health
 ms.date: 10/31/2022
 ms.author: sarahlipsey
 ms.reviewer: besiler

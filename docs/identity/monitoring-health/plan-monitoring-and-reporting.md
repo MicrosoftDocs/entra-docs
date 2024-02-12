@@ -5,9 +5,9 @@ description: Describes how to plan and execute implementation of reporting and m
 services: active-directory
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
-ms.subservice: report-monitor
+ms.service: monitoring-health
 ms.date: 10/04/2023
 ms.author: sarahlipsey
 ms.reviewer: plenzke

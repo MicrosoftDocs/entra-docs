@@ -3,9 +3,9 @@ title: How to configure Microsoft Entra diagnostic settings
 description: Learn how to configure Microsoft Entra diagnostic settings to integrate activity logs with SIEM tools.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: how-to
-ms.subservice: report-monitor
+ms.service: monitoring-health
 ms.date: 02/01/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg

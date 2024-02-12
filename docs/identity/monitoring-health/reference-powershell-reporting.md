@@ -3,9 +3,9 @@ title: Microsoft Graph PowerShell monitoring and health cmdlets
 description: Reference information for Microsoft Graph PowerShell cmdlets for Microsoft Entra monitoring and health.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
-ms.subservice: report-monitor
+ms.service: monitoring-health
 ms.date: 02/06/2024
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk

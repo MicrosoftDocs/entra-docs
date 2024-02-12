@@ -3,9 +3,9 @@ title: How to use Microsoft Entra recommendations
 description: Learn how to use the Microsoft Entra recommendations to monitor and improve the health of your tenant.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: how-to
-ms.subservice: report-monitor
+ms.service: monitoring-health
 ms.date: 12/15/2023
 ms.author: sarahlipsey
 ms.reviewer: deawari

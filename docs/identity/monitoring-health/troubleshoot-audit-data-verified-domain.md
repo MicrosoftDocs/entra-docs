@@ -5,9 +5,9 @@ description: Provides you with information that will appear in the Microsoft Ent
 services: active-directory
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: troubleshooting
-ms.subservice: report-monitor
+ms.service: monitoring-health
 ms.date: 11/01/2022
 ms.author: sarahlipsey
 ms.collection: M365-identity-device-management

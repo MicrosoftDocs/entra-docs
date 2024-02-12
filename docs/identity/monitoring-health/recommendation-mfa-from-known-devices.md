@@ -4,9 +4,9 @@ description: Learn why you should minimize MFA prompts from known devices in Mic
 services: active-directory
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
-ms.subservice: report-monitor
+ms.service: monitoring-health
 ms.date: 09/21/2023
 ms.author: sarahlipsey
 ms.reviewer: hafowler
