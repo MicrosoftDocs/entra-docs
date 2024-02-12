@@ -4,9 +4,9 @@ description: Learn how to add Google as an identity provider for your customer t
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 01/07/2024
 ms.author: mimart

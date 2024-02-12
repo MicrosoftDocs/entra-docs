@@ -4,8 +4,8 @@ description: Learn how to configure your Microsoft Entra External ID for custome
 services: active-directory
 author: garrodonnell
 manager: celestedg
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: tutorial
 ms.date: 10/27/2023
 ms.author: godonnell

@@ -4,7 +4,7 @@ metadata:
   description: Get answers to frequently asked questions about Microsoft Entra B2B collaboration.
   
    
-  ms.service: active-directory
+  ms.service: entra-external-id
   ms.subservice: B2B
   ms.topic: faq
   ms.date: 11/28/2022
