@@ -46,7 +46,6 @@ Aquera also supports over 40 inbound provisioning HRIS sources of record for Mic
 #### Contact Information
 * Company website: https://www.aquera.com 
 * Azure Marketplace Listings: https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=aquera&page=1 
-* Company information: https://www.aquera.com/contact-us.html 
 
 #### Popular applications supported
 * Over 40 HRIS Applications: Oracle Cloud HCM, Dayforce, UKG Pro/Ready/Pro Workforce, ADP (all US and international versions), Workday, SAP HR, Greenhouse, iCIMS, SuccessFactors, HiBob, BambooHR, Paylocity, Paycor, PeopleSoft, Cornerstone, Lever

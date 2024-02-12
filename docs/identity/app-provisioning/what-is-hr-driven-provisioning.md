@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: overview
 ms.date: 10/20/2022
-ms.subservice: compliance
+ms.subservice: app-provisioning
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ---
