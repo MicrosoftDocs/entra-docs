@@ -31,13 +31,13 @@
       href: tutorial-create-forest-trust.md
 - name: Samples
   items:
-    - name: Create a managed domain using Azure PowerShell
+    - name: Create a managed domain using PowerShell
       href: powershell-create-instance.md
     - name: Create a managed domain using a template
       href: template-create-instance.md
-    - name: Configure scoped synchronization using Azure AD PowerShell
+    - name: Configure scoped synchronization using PowerShell
       href: powershell-scoped-synchronization.md
-    - name: Create a forest trust using Azure PowerShell
+    - name: Create a forest trust using PowerShell
       href: create-forest-trust-powershell.md
 - name: Concepts
   items:
@@ -119,7 +119,7 @@
           href: join-ubuntu-linux-vm.md
         - name: SUSE Linux Enterprise
           href: join-suse-linux-vm.md
-    - name: AD authentication through LDAP Linux
+    - name: Active Directory authentication through LDAP Linux
       items:
         - name: Active Directory authentication non domain joined Linux Virtual Machines
           href: ad-auth-no-join-linux-vm.md
@@ -157,8 +157,8 @@
               href: alert-ldaps.md
 - name: Reference
   items:
-    - name: Azure PowerShell
-      href: /powershell/module/az.addomainservices/
+    - name: Graph PowerShell
+      href: /powershell/microsoftgraph/overview
     - name: Azure Policy built-ins
       displayName: samples, policies, definitions
       href: ./policy-reference.md
