@@ -167,7 +167,7 @@ Here, the highlighted "Domain" value is the name of the on-premises Active Direc
 
 ## Enable Sync password hashes on configuration blade
 
- This section covers enabling syncing password hashes for a particular configuration. This situation is different than the AppKey secret that enables the tenant-level feature flag - this is only for a single domain/config. You need to set the application key to the PHS one for this procedure to work end to end.
+ This section covers enabling syncing password hashes for a particular configuration. This situation is different than the AppKey secret that enables the tenant-level feature flag. This procedure is only for a single domain/config. You need to set the application key to the PHS one for this procedure to work end to end.
 
 1. Grab the schema (warning, it's pretty large):
 
@@ -217,11 +217,11 @@ Here, the highlighted "Domain" value is the name of the on-premises Active Direc
 
    Copy/paste the mapping from the **Create AD2AADProvisioning and AD2AADPasswordHash jobs** step into the attributeMappings array.
 
-   Order of elements in this array doesn't matter (the backend sorts for you). Be careful about adding this attribute mapping if the name exists already in the array (e.g. if there's already an item in attributeMappings that has the targetAttributeName CredentialData) - you may get conflict errors, or the pre-existing and new mappings may be combined together (usually not desired outcome). Backend doesn't dedupe for you.
+   Order of elements in this array doesn't matter (the backend sorts for you). Be careful about adding this attribute mapping if the name exists already in the array (for example, if there's already an item in attributeMappings that has the targetAttributeName CredentialData) - you may get conflict errors, or the pre-existing and new mappings might be combined together, usually not the desired outcome. Backend doesn't dedupe for you.
 
-   Remember to do this for both Users and inetOrgpersons.
+   Remember to do this action for both Users and inetOrgpersons.
 
-5. Save the schema you've created:
+5. Save the schema that you create:
 
    ```
    PUT –
@@ -240,7 +240,7 @@ Enabling Exchange hybrid writeback programmatically requires two steps.
 	2.  Create the Exchange hybrid writeback job
 
 ### Schema verification
-Prior to enabling and using Exchange hybrid writeback, cloud sync needs to determine whether or not the on-premises Active Directory has been extended to include the Exchange schema.  
+Before you enable and using Exchange hybrid writeback, cloud sync needs to determine whether or not the on-premises Active Directory has been extended to include the Exchange schema.  
 
 You can use the [directoryDefinition:discover](/graph/api/synchronization-directorydefinition-discover?tabs=http&preserve-view=true&view=graph-rest-beta) to initiate schema discovery. 
 
@@ -250,7 +250,7 @@ POST https://graph.microsoft.com/beta/servicePrincipals/[SERVICE_PRINCIPAL_ID]/s
 The expected response is … 
 HTTP 200/OK
 
-The response should look similar to the following:
+The response should look similar to the following output:
 
 ```
 HTTP/1.1 200 OK
