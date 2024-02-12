@@ -123,7 +123,7 @@ As you roll out the new header updates, test and validate that users experience 
 
 ## Monitor
 
-When tenant restrictions v2 and cross-tenant access outbound settings are deployed, monitor your sign-in logs and/or use the [Cross-tenant activity workbook](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md) to verify users don’t access unauthorized tenants. These tools help identify who accesses what external applications. You can configure cross-tenant access outbound settings and tenant restrictions to limit outbound access based on group membership and/or specific applications. 
+When tenant restrictions v2 and cross-tenant access outbound settings are deployed, monitor your sign-in logs and/or use the [Cross-tenant activity workbook](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md) to verify users don’t access unauthorized tenants. These tools help identify who accesses what external applications. You can configure cross-tenant access outbound settings and tenant restrictions to limit outbound access based on group membership and/or specific applications.  
 
 ## Next steps
 
