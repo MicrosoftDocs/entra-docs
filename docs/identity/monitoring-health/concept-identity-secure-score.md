@@ -3,7 +3,7 @@ title: What is the identity secure score?
 description: Learn how to use the identity secure score to improve the security posture of your Microsoft Entra tenant.
 
 ms.service: entra-id
-ms.subservice: fundamentals
+ms.subservice: monitoring-health
 ms.topic: conceptual
 ms.date: 12/15/2023
 
