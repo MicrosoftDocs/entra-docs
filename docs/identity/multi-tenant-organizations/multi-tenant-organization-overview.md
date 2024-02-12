@@ -1,15 +1,13 @@
 ---
 title: What is a multitenant organization in Microsoft Entra ID? (Preview)
 description: Learn about multitenant organizations in Microsoft Entra ID and Microsoft 365.
-services: active-directory
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: multi-tenant-organizations
+ms.service: entra-id
+ms.subservice: multitenant-organizations
 ms.topic: overview
 ms.date: 11/01/2023
 ms.author: rolyon
-ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
