@@ -1446,7 +1446,7 @@ You are likely trying to create a policy that already exists, possibly from a pr
     (Get-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization -CrossTenantAccessPolicyConfigurationPartnerTenantId $SourceTenantId).UserSyncInbound
     ```
 
-1. If you have an existing policy, you might need to make an update using [Update-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization](/powershell/module/microsoft.graph.identity.signins/update-mgpolicycrosstenantaccesspolicypartneridentitysynchronization) command to enable user synchronization.
+1. If you have an existing policy, you might need to make an update using Update-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization command to enable user synchronization.
 
     ```powershell
     $Params = @{
