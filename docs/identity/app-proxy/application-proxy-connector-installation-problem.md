@@ -20,7 +20,7 @@ Microsoft Entra application proxy connector is an internal domain component that
 
 When the installation of a connector fails, the root cause is usually one of the following areas. **As a precursor to any troubleshooting, be sure to reboot the connector.**
 
-1.  **Connectivity** – to complete a successful installation, the new connector needs to register and establish future trust properties. Thrust is established by connecting to the Microsoft Entra application proxy cloud service.
+1.  **Connectivity** – to complete a successful installation, the new connector needs to register and establish future trust properties. Trust is established by connecting to the Microsoft Entra application proxy cloud service.
 
 2.  **Trust Establishment** – the new connector creates a self-signed cert and registers to the cloud service.
 
@@ -35,18 +35,16 @@ When the installation of a connector fails, the root cause is usually one of the
 
 1.  On the connector server, run a port test by using [telnet](/windows-server/administration/windows-commands/telnet) or other port testing tool to verify that ports 443 and 80 are open.
 
-2.  If any of those ports isn't successful, verify that the Firewall or backend proxy has access to the required domains and ports see, [Prepare your on-premises environment](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment).
+2.  Verify that the Firewall or backend proxy has access to the required domains and ports see, [Prepare your on-premises environment](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment).
 
-3.  Open a browser (separate tab) and go to the following web page: `https://login.microsoftonline.com`, make sure that you can sign in to that page.
+3.  Open a browser tab and enter: `https://login.microsoftonline.com`. Make sure you can sign in.
 
-## Verify Machine and backend components support for application proxy trust certificate
+## Verify machine and backend component certificate support
 
 **Objective:** Verify that the connector machine, backend proxy, and firewall can support the certificate created by the connector. Also, verify the certificate is valid.
 
 >[!NOTE]
->The connector tries to create a SHA512 cert that is supported by Transport Layer Security (TLS) 1.2. If the machine or the backend firewall and proxy does not support TLS 1.2, the installation fails.
->
->
+>The connector tries to create a `SHA512` cert that is supported by Transport Layer Security (TLS) 1.2. If the machine or the backend firewall and proxy does not support TLS 1.2, the installation fails.
 
 **Review the prerequisites required:**
 
