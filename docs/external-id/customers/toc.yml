@@ -322,8 +322,8 @@ items:
       href: ~/identity-platform/developer-support-help-options.md?context=/entra/external-id/customers/context/customers-context
     - name: Native authentication
       items:
-        - name: Native auth overview
-          displayName: Native authentication, Native authentication REST API
+        - name: Native auth APIs
+          displayName: Native authentication, Native authentication API
           href: reference-native-auth-overview.md 
         - name: Native auth with email OTP
           displayName: Native authentication with email and one-time password or passcode
