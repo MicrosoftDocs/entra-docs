@@ -9,7 +9,7 @@ ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 08/17/2022
-ms.custom: "it-pro, seodec18, references_regions"
+ms.custom: it-pro, references_regions
 ms.collection: M365-identity-device-management
 ---
 
