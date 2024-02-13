@@ -16,7 +16,7 @@ ms.date: 02/29/2024
 
 Microsoft Entra ID's native authentication API with email and password allows you to build apps that enable users to sign up and sign in with their email and password. This API also allows you to enable self-service password reset (SSPR) in your apps. The email and password API provides three flows, sign-in, sign-up and SSPR flows.
 
-This API reference article describes details required only when you manually make raw HTTP requests to execute the flow. However, we don't recommend this approach. So, when possible, use a Microsoft-built and supported authentication library such as [Android native SDK](https://github.com/AzureAD/msal-android-native-auth-sample-app-preview) and [iOS native SDK](https://github.com/AzureAD/msal-objc-native-auth-preview), to get security tokens. When you make calls to our endpoints, you'll receive an [ID token](../../identity-platform/id-tokens.md) for user identification and [access token](../../identity-platform/access-tokens.md) to call protected APIs.
+[!INCLUDE [native-auth-api-common-description](./includes/native-auth-api/native-auth-api-common-description.md)]
 
 ## Prerequisites
 
@@ -191,11 +191,11 @@ Here're the possible errors you can encounter (possible values of the `error` pa
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.| 
 |`attribute_validation_failed`|  Validation of one or more attributes failed. This response is possible if the app submits user attributes.|
 |`user_already_exists` |  User already exists.  |
-|`password_too_weak`|Password is too weak as it doesn't meet complexity requirements. [Learn more about Microsoft Entra ID's password policies](../../identity/authentication/concept-password-ban-bad-combined-policy#azure-ad-password-policies). This response is possible if the app submits a user password.|
-|`password_too_short`|New password is less than 8 characters. [Learn more about Microsoft Entra ID's password policies](../../identity/authentication/concept-password-ban-bad-combined-policy#azure-ad-password-policies). This response is possible if the app submits a user password.|
-|`password_too_long` |New password is longer than 256 characters. [Learn more about Microsoft Entra ID's password policies](../../identity/authentication/concept-password-ban-bad-combined-policy#azure-ad-password-policies). This response is possible if the app submits a user password.|
-|`password_recently_used`|The new password must not be the same as one recently used. [Learn more about Microsoft Entra ID's password policies](../../identity/authentication/concept-password-ban-bad-combined-policy#azure-ad-password-policies). This response is possible if the app submits a user password.|
-|`password_banned`|New password contains a word, phrase, or pattern that is banned. [Learn more about Microsoft Entra ID's password policies](../../identity/authentication/concept-password-ban-bad-combined-policy#azure-ad-password-policies). This response is possible if the app submits a user password.|
+|`password_too_weak`|Password is too weak as it doesn't meet complexity requirements. [Learn more about Microsoft Entra ID's password policies](../../identity/authentication/concept-password-ban-bad-combined-policy.md#azure-ad-password-policies). This response is possible if the app submits a user password.|
+|`password_too_short`|New password is less than 8 characters. [Learn more about Microsoft Entra ID's password policies](../../identity/authentication/concept-password-ban-bad-combined-policy.md#azure-ad-password-policies). This response is possible if the app submits a user password.|
+|`password_too_long` |New password is longer than 256 characters. [Learn more about Microsoft Entra ID's password policies](../../identity/authentication/concept-password-ban-bad-combined-policy.md#azure-ad-password-policies). This response is possible if the app submits a user password.|
+|`password_recently_used`|The new password must not be the same as one recently used. [Learn more about Microsoft Entra ID's password policies](../../identity/authentication/concept-password-ban-bad-combined-policy.md#azure-ad-password-policies). This response is possible if the app submits a user password.|
+|`password_banned`|New password contains a word, phrase, or pattern that is banned. [Learn more about Microsoft Entra ID's password policies](../../identity/authentication/concept-password-ban-bad-combined-policy.md#azure-ad-password-policies). This response is possible if the app submits a user password.|
 
 > [!NOTE]
 > If you submit all the required attributes via `/signup/v1.0/start` endpoint, but not all optional attributes, you won't be able to submit any additional optional attributes later via the  `/signup/v1.0/continue` endpoint. This is so because Microsoft Entra ID doesn't explicitly request for optional attributes.
@@ -523,8 +523,7 @@ Content-Type: application/json
 }  
 ```
 
-> [!NOTE]
-> Custom attributes (also known as directory extensions) are named by using the convention, `extension_{appId-without-hyphens}_{attribute-name}` where `{appId-without-hyphens}` is the stripped version of the client ID for the *extensions app*. For example, if the appId of the *extensions app* is `2588a-bcdwh-tfeehj-jeeqw-ertc` and the attribute name is *age*, then the custom attribute is named `extension_2588abcdwhtfeehjjeeqwertc_age`. Learn more about [custom attributes and extension app](how-to-define-custom-attributes.md#create-custom-attributes).
+[!INCLUDE [custom-attribute-note](./includes/native-auth-api/custom-attributes-note.md)]
 
 
 |    Parameter     | Description        |
@@ -894,7 +893,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra Admin center.                |
 | `username`          |    Yes   |   Email of the customer user such as *contoso-consumer@contoso.com*.  |
-| `challenge_type`    |   Yes  | A space-separated list of authorization [challenge type](#challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password sign-in flow, the value is expected to contain `password redirect`.|
+| `challenge_type`    |   Yes  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password sign-in flow, the value is expected to contain `password redirect`.|
 
 #### Success response
 
@@ -996,7 +995,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Miscrosoft Entra Admin center.|
 | `continuation_token` |    Yes   | [continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request. |
-| `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password flow, the value is expected to be `password redirect`.|
+| `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password flow, the value is expected to be `password redirect`.|
 
 #### Success response
 
@@ -1186,11 +1185,11 @@ To use this API, the app interacts with the endpoint shown in the following tabl
 
 |    Endpoint     | Description        |
 |----------------------|------------------------|
-| `/resetpassword/v1.0/start`  | Your app calls this endpoint when the customer user selects **Forgot password** or **Change password** link or button in the app. This endpoint validates the user's username (email), then returns a *continuation token* for use in the password reset flow. If your app requests to use authentication methods that are not supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow. |
-|`/resetpassword/v1.0/challenge`|  Accepts a list of challenge types supported by the client and the *continuation token*. A challenge is issued to one of the preferred recovery credentials. For example, oob challenge issues an out-of-band OTP code to the email associated with the customer user account. If your app requests to use authentication methods that are not supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.    |
-|`/resetpassword/v1.0/continue`| Validates the challenge issued by the `/resetpassword/v1.0/challenge` endpoint, then either returns a *continuation token* for the `/submit` endpoint, or issues another challenge to the user.  |
-|`/resetpassword/v1.0/submit`|  Accepts a new password input by the user along with the *continuation token* to complete the password reset flow. This endpoint issues another *continuation token*. |
-|`/resetpassword/v1.0/poll_completion`|  Finally, the app can use the *continuation token* issued by the `/resetpassword/v1.0/submit` endpoint to check the status of the password reset request.    |
+| `/start`  | Your app calls this endpoint when the customer user selects **Forgot password** or **Change password** link or button in the app. This endpoint validates the user's username (email), then returns a *continuation token* for use in the password reset flow. If your app requests to use authentication methods that are not supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow. |
+|`/challenge`|  Accepts a list of challenge types supported by the client and the *continuation token*. A challenge is issued to one of the preferred recovery credentials. For example, oob challenge issues an out-of-band OTP code to the email associated with the customer user account. If your app requests to use authentication methods that are not supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.    |
+|`/continue`| Validates the challenge issued by the `/challenge` endpoint, then either returns a *continuation token* for the `/submit` endpoint, or issues another challenge to the user.  |
+|`/submit`|  Accepts a new password input by the user along with the *continuation token* to complete the password reset flow. This endpoint issues another *continuation token*. |
+|`/poll_completion`|  Finally, the app can use the *continuation token* issued by the `/submit` endpoint to check the status of the password reset request.    |
 
 ### Self-service password reset challenge types
 
@@ -1205,11 +1204,11 @@ The sequence diagram below demonstrates the flow for the password reset process.
 
 :::image type="content" source="media/reference-native-auth-api/self-service-password-reset.png" alt-text="Diagram of native auth self-service password reset flow."::: 
 
-This diagram indicates that the app collects username (email) and password from the user at different times (and possibly on separate screens). However, you can design your app to collect the username (email) and new password on the same screen. In this case, the app holds the password, then submits it via the `/resetpassword/v1.0/submit` endpoint where it's required.
+This diagram indicates that the app collects username (email) and password from the user at different times (and possibly on separate screens). However, you can design your app to collect the username (email) and new password on the same screen. In this case, the app holds the password, then submits it via the `/submit` endpoint where it's required.
 
 ### Step 1: Request to start the self-service password reset flow
 
-The password reset flow starts with the app making a POST request to the `/resetpassword/v1.0/start` endpoint to start the self-service password reset flow.
+The password reset flow starts with the app making a POST request to the `/start` endpoint to start the self-service password reset flow.
 
 Here's an example of the request (we present the example request in multiple lines for readability):
 
@@ -1228,7 +1227,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra Admin center.                |
 | `username`          |    Yes   |   Email of the customer user such as *contoso-consumer@contoso.com*.  |
-| `challenge_type`    |   Yes  | A space-separated list of authorization [challenge type](#challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For this request, the value is expected to contain `oob redirect`.|
+| `challenge_type`    |   Yes  | A space-separated list of authorization [challenge type](#self-service-password-reset-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For this request, the value is expected to contain `oob redirect`.|
 
 #### Success response
 
@@ -1309,7 +1308,7 @@ Here're the possible errors you can encounter (possible values of the `error` pa
 
 ### Step 2: Select an authentication method
 
-To continue with the flow, the app uses the continuation token acquired from the previous step to request Microsoft Entra to select one of the supported challenge types for the user to authenticate with. The app makes a POST request to the The `/resetpassword/v1.0/challenge` endpoint. If this request is successful, Microsoft Entra sends an OTP code to the user's account email. At the moment, we only support email otp.
+To continue with the flow, the app uses the continuation token acquired from the previous step to request Microsoft Entra to select one of the supported challenge types for the user to authenticate with. The app makes a POST request to the The `/challenge` endpoint. If this request is successful, Microsoft Entra sends an OTP code to the user's account email. At the moment, we only support email otp.
 
 Here's an example (we present the example request in multiple lines for readability):
 
@@ -1328,7 +1327,7 @@ client_id=client_id=111101-14a6-abcd-97bc-abcd1110011
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra Admin center.                |
 | `continuation_token`          |    Yes   |   [continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request. |
-| `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For this request, the value is expected to contain `oob redirect`.|
+| `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#self-service-password-reset-challenge-types) strings that the app supports such as `oob redirect`. The list must always include the `redirect` challenge type. For this request, the value is expected to contain `oob redirect`.|
 
 #### Success response
 
@@ -1419,7 +1418,7 @@ Here're the possible errors you can encounter (possible values of the `error` pa
 
 ### Step 3: Submit OTP code
 
-After successfully completing the previous step, the app then makes a POST request to the `/resetpassword/v1.0/continue` endpoint. In the request, the app need to include the user’s credentials chosen in the previous step and the continuation token issued from the `/resetpassword/v1.0/challenge` endpoint.
+After successfully completing the previous step, the app then makes a POST request to the `/continue` endpoint. In the request, the app need to include the user’s credentials chosen in the previous step and the continuation token issued from the `/challenge` endpoint.
 
 Here's an example of the request (we present the example request in multiple lines for readability):
 
@@ -1440,7 +1439,7 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 | `continuation_token`  | Yes | [continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request. |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra Admin center.|
 |`grant_type` | Yes | The only valid value is oob.  |
-|`oob`| Yes |The OTP code that the customer user received in their email. Replace `{otp_code}` with the OTP code that the customer user received in their email. To **resend an OTP code**, the app needs to make a request to the `/resetpassword/v1.0/challenge` endpoint again. |
+|`oob`| Yes |The OTP code that the customer user received in their email. Replace `{otp_code}` with the OTP code that the customer user received in their email. To **resend an OTP code**, the app needs to make a request to the `/challenge` endpoint again. |
 
 #### Success response
 
@@ -1505,7 +1504,7 @@ Here're the possible errors you can encounter (possible values of the `error` pa
 
 ### Step 4: Submit a new password
 
-The app collects a new password from the user, then uses the *continuation token* issued by the `/resetpassword/v1.0/continue` endpoint to submit the password by making a POST request to the `/resetpassword/v1.0/submit` endpoint.
+The app collects a new password from the user, then uses the *continuation token* issued by the `/continue` endpoint to submit the password by making a POST request to the `/submit` endpoint.
 
 Here's an example (we present the example request in multiple lines for readability):
 
@@ -1545,7 +1544,7 @@ Content-Type: application/json
 |    Parameter     | Description        |
 |----------------------|------------------------|
 | `continuation_token`  |  [continuation_token](#continuation-token) that Microsoft Entra ID returns.  |
-|`poll_interval`|The minimum amount of time in seconds that the app should wait between polling requests to check the status of the password reset request via the `/resetpassword/v1.0/poll_completion` endpoint, see [step 5](#step-5-poll-for-password-reset-status)  |
+|`poll_interval`|The minimum amount of time in seconds that the app should wait between polling requests to check the status of the password reset request via the `/poll_completion` endpoint, see [step 5](#step-5-poll-for-password-reset-status)  |
 
 #### Error response
 
@@ -1592,7 +1591,7 @@ Here're the possible errors you can encounter (possible values of the `error` pa
 
 ### Step 5: Poll for password reset status
 
-Lastly, since updating of the user’s configuration with the new password incurs some delay, the app can use the `/resetpassword/v1.0/poll_completion` endpoint to poll Microsoft Entra ID for password reset status. The minimum amount of time in seconds that the app should wait between polling requests is returned form the `/resetpassword/v1.0/submit` endpoint in the `poll_interval` parameter.  
+Lastly, since updating of the user’s configuration with the new password incurs some delay, the app can use the `/poll_completion` endpoint to poll Microsoft Entra ID for password reset status. The minimum amount of time in seconds that the app should wait between polling requests is returned from the `/submit` endpoint in the `poll_interval` parameter.  
 
 Here's an example (we present the example request in multiple lines for readability):
 
@@ -1628,14 +1627,14 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `status`  | The status of the reset password request. If Microsoft Entra ID returns a status of **, the app can re-submit the new password by making another request to the `/resetpassword/v1.0/submit` endpoint.|
+| `status`  | The status of the reset password request. If Microsoft Entra ID returns a status of **, the app can re-submit the new password by making another request to the `/submit` endpoint.|
 
 Here're the possible statuses that Microsoft Entra ID returns (possible values of the `status` parameter):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
 | `succeeded` |  Password reset completed successfully. |
-| `failed` |Password reset failed. The app can re-submit the new password by making another request to the `/resetpassword/v1.0/submit` endpoint.|
+| `failed` |Password reset failed. The app can re-submit the new password by making another request to the `/submit` endpoint.|
 | `not_started` |Password reset hasn't started. The app can check the status again later. |
 | `in_progress` |Password reset is in progress. The app can check the status again later.|
 
