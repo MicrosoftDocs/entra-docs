@@ -10,7 +10,7 @@ ms.service: active-directory
 
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 02/12/2024
+ms.date: 02/13/2024
 ms.custom: developer, devx-track-dotnet
 #Customer intent: As a dev, devops, I want to learn about sign up user with username and user attributes.
 ---
