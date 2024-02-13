@@ -31,6 +31,10 @@ Here are reasons that you might choose not to migrate AD FS:
 
 Plan a staged application migration rollout and select users to authenticate to Microsoft Entra ID for testing. Use guidance in, [plan application migration to Microsoft Entra ID](/azure/active-directory/manage-apps/migrate-adfs-apps-phases-overview) and, [resources to migrate apps to Microsoft Entra ID](/azure/active-directory/manage-apps/migration-resources).
 
+Learn more in the following video, Effortless Application Migration Using Microsoft Entra ID.
+
+> [!VIDEO https://www.youtube.com/embed/qJYmEOK6UJo]
+
 ### Application migration tool
 
 Currently in preview, [AD FS application migration to move AD FS apps to Microsoft Entra ID](~/identity/enterprise-apps/migrate-ad-fs-application-howto.md) is a guide for IT administrators to migrate AD FS relying party applications from AD FS to Microsoft Entra ID. The AD FS application migration wizard gives you a unified experience to discover, evaluate, and configure new Microsoft Entra ID applications. It has one-click configuration for basic SAML URLs, claims mapping, and user assignments to integrate an application with Microsoft Entra ID. There's end-to-end support to migrate on-premises AD FS applications, with these features:
@@ -118,10 +122,6 @@ As you prepare for authentication migration, decide which [authentication method
 - [Microsoft Entra Connect: Pass-through Authentication](/azure/active-directory/hybrid/connect/how-to-connect-pta) (PTA) uses a software agent to connect to passwords stored on-premises for validation. Users sign in to cloud apps with the same username and password for on-premises resources, working seamlessly with [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md) policies. Smart Lockout prevents brute force attacks. Install authentication agents on-premises with current AD infrastructure. Use PTA if regulatory requirements specify that password hashes can't synchronize to Microsoft Entra ID; otherwise, use PHS.
 - Current SSO experience without AD FS. [Seamless single sign-on (SSO)](/azure/active-directory/hybrid/connect/how-to-connect-sso-faq) provides an SSO experience from domain-joined devices in your corpnet (Kerberos). It works with PHS, PTA, and CBA and needs no other on-premises infrastructure. You can let users [sign in to Microsoft Entra ID with email as an alternate login ID](/azure/active-directory/authentication/howto-authentication-use-email-signin) using the same credentials as their on-premises directory environment. With hybrid authentication, users need one set of credentials.
 - Recommendation: PHS over PTA, [passwordless authentication in Microsoft Entra ID](/azure/active-directory/authentication/howto-authentication-passwordless-deployment) with [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-identity-verification), [FIDO2 security keys](/azure/active-directory/authentication/howto-authentication-passwordless-security-key), or [Microsoft Authenticator](/azure/active-directory/authentication/howto-authentication-passwordless-phone). If you plan to use [Windows Hello for Business hybrid certificate trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cert-trust), migrate to Cloud trust first to re-enroll all users.
-
-Learn more in the following video, Effortless Application Migration Using Microsoft Entra ID.
-
-   [!VIDEO https://www.microsoft.com/videoplayer/embed/qJYmEOK6UJo]
 
 ### Password and authentication policies
 
