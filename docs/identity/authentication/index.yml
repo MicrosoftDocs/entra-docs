@@ -6,14 +6,12 @@ summary: Learn how to manage and deploy Microsoft Entra self-service password re
 metadata:
   title: Microsoft Entra authentication documentation
   description: Learn how to manage and deploy Microsoft Entra self-service password reset, multifactor authentication, custom banned password list, and smart lockout.
-  services: active-directory
-  ms.service: active-directory
+  ms.service: entra-id
   ms.subservice: authentication
   ms.topic: landing-page
   author: justinha
   ms.author: justinha
   ms.date: 01/29/2023
-  ms.collection: M365-identity-device-management
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
 

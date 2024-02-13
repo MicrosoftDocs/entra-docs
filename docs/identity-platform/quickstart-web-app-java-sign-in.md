@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: cwerner 
 ms.custom: scenarios:getting-started, languages:Java, devx-track-java, devx-track-extended-java
 ms.date: 01/18/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: quickstart
 #Customer intent: As a Java web app developer, I want to sign in users and call the Microsoft Graph API, so that I can integrate Microsoft Entra authentication and access user information in my application.
 ---

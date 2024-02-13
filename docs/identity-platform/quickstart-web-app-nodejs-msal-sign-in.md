@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: scenarios:getting-started, languages:js, devx-track-js
 ms.date: 07/27/2023
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: quickstart
 #Customer intent: As an application developer, I want to know how to set up authentication in a web application built using Node.js and MSAL Node.
 ---

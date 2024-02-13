@@ -2,8 +2,7 @@
 title: Self-service password reset deep dive
 description: How does self-service password reset work
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 09/14/2023
@@ -12,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: tilarso
-
-ms.collection: M365-identity-device-management
 ---
 # How it works: Microsoft Entra self-service password reset
 

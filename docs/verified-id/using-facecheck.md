@@ -1,8 +1,8 @@
 ---
 title: Tutorial - Using FaceCheck with Verified ID and unlocking high assurance verifications at scale (Preview)
 description: In this tutorial, you learn how to use FaceCheck with Verified ID
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 author: barclayn
 manager: amycolannino
 ms.author: barclayn

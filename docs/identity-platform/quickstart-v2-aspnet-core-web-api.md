@@ -8,8 +8,8 @@ ms.author: owenrichards
 ms.custom: devx-track-csharp, scenarios:getting-started, "languages:aspnet-core", mode-api
 ms.date: 12/09/2022
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write an ASP.NET Core web API that uses the Microsoft identity platform to authorize API requests from clients.
 ---

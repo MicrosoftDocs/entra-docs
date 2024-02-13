@@ -7,8 +7,8 @@ ms.author: ryanwi
 ms.custom: 
 ms.date: 10/31/2023
 ms.reviewer: joroja
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an IT admin, I want to configure the lifetime of access, ID, and SAML tokens for different types of applications, so that I can help mitigate the actions of a malicous actor who has obtained a token.
 ---

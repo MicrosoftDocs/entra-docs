@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: has-adal-ref
 ms.date: 11/17/2023
 ms.reviewer: saeeda
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn about the Microsoft Authentication Library so I can decide if this platform meets my application development needs and requirements.
 ---

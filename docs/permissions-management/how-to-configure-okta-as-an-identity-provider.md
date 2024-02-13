@@ -1,11 +1,10 @@
 ---
 title: Configure Okta as an identity provider
 description: How to configure Okta as an identity provider in Microsoft Entra Permissions Management.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: ciem
+ms.service: entra-permissions-management
+
 ms.topic: how-to
 ms.date: 10/10/2023
 ms.author: jfields

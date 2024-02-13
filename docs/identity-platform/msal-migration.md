@@ -7,8 +7,8 @@ ms.author: dmwendia
 ms.custom: has-adal-ref
 ms.date: 07/17/2023
 ms.reviewer: saeeda, jmprieur, localden
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn about MSAL so I can migrate my ADAL applications to MSAL.
 ---

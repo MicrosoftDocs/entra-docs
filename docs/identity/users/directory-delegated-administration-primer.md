@@ -8,9 +8,9 @@ ms.author: barclayn
 ms.reviewer: yuank
 ms.date: 03/13/2023
 ms.topic: overview
-ms.service: active-directory
-ms.subservice: enterprise-users
-services: active-directory
+ms.service: entra-id
+ms.subservice: users
+
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
 #Customer intent: As a new Microsoft Entra identity administrator, access management requires me to understand the permissions of partners who have access to our resources.

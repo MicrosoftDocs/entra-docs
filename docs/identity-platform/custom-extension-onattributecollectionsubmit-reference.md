@@ -5,8 +5,8 @@ author: msmimart
 manager: CelesteDG
 ms.author: mimart 
 ms.date: 01/23/2024
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
 titleSuffix: Microsoft identity platform
 #customer intent: As a developer creating a custom authentication extension for user sign-up flows, I want to understand the REST API schema for the OnAttributeCollectionSubmit event, so that I can design and implement my own REST API to handle attribute collection requests and responses when the user submits attribute entries.

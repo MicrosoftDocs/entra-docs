@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: devx-track-js
 ms.date: 11/09/2022
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As a developer building a Node.js and Express web app, I want to learn how to sign in users and acquire access tokens, so that I can implement secure authentication and access Microsoft Graph data in my application.
 ---

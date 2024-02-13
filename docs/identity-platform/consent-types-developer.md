@@ -6,8 +6,8 @@ manager: celesteDG
 ms.author: jomondi
 ms.date: 11/01/2022
 ms.reviewer: jawoods, ludwignick, phsignor
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 
 #Customer intent: As a developer building an application that requires user consent for accessing resources or APIs, I want to understand the different types of consent available (static, incremental, dynamic) and how to request permissions through consent, so that I can implement the appropriate consent approach in my application and provide a better user experience.

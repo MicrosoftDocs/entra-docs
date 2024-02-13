@@ -8,9 +8,9 @@ ms.author: barclayn
 ms.reviewer: jordan.dahl
 ms.date: 11/15/2023
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
-services: active-directory
+ms.service: entra-id
+ms.subservice: users
+
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
 #Customer intent: As a new Microsoft Entra identity administrator, user management is at the core of my work, so I need to understand the user management tools such as groups, administrator roles, and licenses to manage users.

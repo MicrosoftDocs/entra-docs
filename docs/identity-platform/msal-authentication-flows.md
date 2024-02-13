@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: 
 ms.date: 04/03/2023
 ms.reviewer: saeeda
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn about the authentication flows supported by MSAL.
 ---

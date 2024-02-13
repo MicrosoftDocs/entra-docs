@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom: devx-track-js
 ms.date: 07/17/2020
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As a developer currently using MSAL.js 1.x with implicit grant flow, I want to migrate my JavaScript single-page app to MSAL.js 2.x with auth code flow, so that I can improve security and take advantage of new features like PKCE and CORS support.
 ---

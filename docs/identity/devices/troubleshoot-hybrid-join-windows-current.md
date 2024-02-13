@@ -2,7 +2,7 @@
 title: Troubleshoot Microsoft Entra hybrid joined devices
 description: This article helps you troubleshoot Microsoft Entra hybrid joined Windows 10 and Windows Server 2016 devices.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
 ms.date: 01/30/2024

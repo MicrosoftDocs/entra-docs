@@ -1,11 +1,10 @@
 ---
 title: Default user permissions
 description: Learn about the user permissions available in Microsoft Entra ID.
-services: active-directory
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 02/17/2023

@@ -4,8 +4,8 @@ description: Trigger Logic Apps based on custom task extensions
 author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: compliance
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: conceptual
 ms.date: 06/22/2023
 ms.custom: template-howto

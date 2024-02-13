@@ -7,8 +7,8 @@ ms.author: henrymbugua
 ms.custom: devx-track-js
 ms.date: 10/24/2023
 ms.reviewer: joarroyo
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As a developer building an Angular single-page application (SPA), I want to sign in users and call the Microsoft Graph API using the authorization code flow with PKCE, so that I can authenticate enterprise users and access Microsoft cloud services and Microsoft Graph.
 ---

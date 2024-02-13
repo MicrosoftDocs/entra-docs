@@ -3,8 +3,7 @@ title: Elements of the B2B invitation email
 description: Microsoft Entra B2B collaboration invitation email template
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: conceptual
 ms.date: 10/06/2023
 
