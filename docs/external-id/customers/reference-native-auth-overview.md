@@ -14,7 +14,7 @@ ms.date: 02/29/2024
 
 # Overview of native authentication APIs reference
 
-Microsoft Entra ID's [native authentication](refer-to-native-auth-conceptual-article.md) enables you to host the user interface of your app in the client application instead of delegating authentication to browsers, resulting in a natively integrated authentication experience. As a developer, you have full control over the look and feel of the sign-in interface.
+Microsoft Entra ID's [native authentication](overview-customers-ciam.md) enables you to host the user interface of your app in the client application instead of delegating authentication to browsers, resulting in a natively integrated authentication experience. As a developer, you have full control over the look and feel of the sign-in interface.
 
 [!INCLUDE [native-auth-api-common-description](./includes/native-auth-api/native-auth-api-common-description.md)]
 
@@ -25,8 +25,7 @@ Currently, our identity platform's native authentication API supports sign-up an
 - [Email OTP](reference-native-auth-email-otp.md), which supports sign-up and sign-in with email OTP.
 
 
-> [!NOTE]  
-> Currently, the native authentication API endpoints don't support [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
+[!INCLUDE [native-auth-api-cors-note](./includes/native-auth-api/native-auth-api-cors-note.md)]
 
 
 ## Next steps

@@ -18,6 +18,8 @@ Microsoft Entra ID's native authentication API with email and password allows yo
 
 [!INCLUDE [native-auth-api-common-description](./includes/native-auth-api/native-auth-api-common-description.md)]
 
+[!INCLUDE [native-auth-api-cors-note](./includes/native-auth-api/native-auth-api-cors-note.md)]
+
 ## Prerequisites
 
 1. Microsoft Entra External ID for customers tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl).
