@@ -28,12 +28,12 @@ In this tutorial, you learn how to:
  
 - An Android project. 
 - User-flow with an **Email one-time passcode**: 
-  - [Register application in Microsoft Entra External ID for customers tenant](how-to-run-sample-android-app.md#register-android-application-in-azure-ad-for-customers-tenant) 
+  - [Register application in Microsoft Entra External ID for customers tenant](how-to-run-sample-android-app.md#register-an-application) 
   - [Enable public client and native authentication flows](how-to-run-sample-android-app.md#enable-public-client-and-native-authentication-flows) 
   - [Grant API permissions](how-to-run-sample-android-app.md#grant-api-permissions) 
   - [Create a user flow](how-to-run-sample-android-app.md#create-a-user-flow) 
     - In the **User attributes**, select **Country/Region** and **City** in the user flow. 
-  - [Associate the Android app with the user flow](how-to-run-sample-android-app.md#associate-the-android-app-with-the-user-flow). 
+  - [Associate the Android app with the user flow](how-to-run-sample-android-app.md#associate-the-app-with-the-user-flow). 
 - [Android Microsoft Authentication Library (MSAL) configuration file](how-to-run-sample-android-app.md#configure-the-sample-android-mobile-application). 
 - [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-auth-android-sign-up-sign-in-sign-out.md). 
  

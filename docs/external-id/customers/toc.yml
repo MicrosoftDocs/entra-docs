@@ -213,7 +213,7 @@ items:
             - name: Additional scenarios
               items:
                 - name: Sign up user with username and user attributes
-                  href: tutorial-native-auth-android-sign-up-sign-in-sign-out.md
+                  href: tutorial-native-auth-sign-up-user-with-username-user-attributes.md
     - name: Command-line interface (CLI) app
       items:
         - name: Node.js
