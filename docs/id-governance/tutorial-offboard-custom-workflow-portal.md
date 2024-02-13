@@ -4,6 +4,7 @@ description: Learn how to remove users from an organization in real time on thei
 author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: tutorial
 ms.date: 06/22/2023
 ms.author: owinfrey

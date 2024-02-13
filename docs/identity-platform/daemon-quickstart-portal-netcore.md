@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:aspnet-core", mode-api, devx-track-dotnet
 ms.date: 08/22/2022
-ms.reviewer: marsma
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
 ms.topic: conceptual

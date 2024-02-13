@@ -4,6 +4,7 @@ description: Tutorial for onboarding users to an organization using Lifecycle wo
 author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: tutorial
 ms.date: 06/22/2023
 ms.author: owinfrey

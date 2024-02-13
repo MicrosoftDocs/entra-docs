@@ -5,6 +5,7 @@ ms.subservice: customers
 ms.topic: include
 ms.date: 11/22/2023
 ms.author: kengaderdus
+ms.manager: mwongerapk
 ---
 
 1. Under **Manage**, select **Authentication** 
