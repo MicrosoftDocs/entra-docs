@@ -10,7 +10,7 @@ ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: barclayn
 ms.reviewer: jeffsta
-ms.custom: "it-pro, seodec18, seo-update-azuread-jan"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ---
 

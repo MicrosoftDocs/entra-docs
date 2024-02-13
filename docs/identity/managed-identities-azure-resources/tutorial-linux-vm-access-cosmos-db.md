@@ -9,12 +9,9 @@ ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: tutorial
 ms.tgt_pltfrm: na
-ms.custom: ignite-2022
 ms.date: 12/10/2020
 ms.author: barclayn
 ROBOTS: NOINDEX
-
-
 ---
 # Tutorial: Use a Linux VM system-assigned managed identity to access Azure Cosmos DB 
 

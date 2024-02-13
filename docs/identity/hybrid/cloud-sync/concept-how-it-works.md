@@ -5,12 +5,10 @@ description: This topic provides deep dive information on how cloud sync works.
 author: billmath
 manager: amycolannino
 ms.service: entra-id
-ms.custom: ignite-2022
 ms.topic: conceptual
 ms.date: 11/06/2023
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-
 ---
 
 # Cloud sync deep dive - how it works

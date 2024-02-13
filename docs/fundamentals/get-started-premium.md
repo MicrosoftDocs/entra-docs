@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.date: 11/30/2023
 ms.author: barclayn
 ms.reviewer: piotrci
-ms.custom: "it-pro, seodec18"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ---
 # Sign up for Microsoft Entra ID P1 or P2 editions
