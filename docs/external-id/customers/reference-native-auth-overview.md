@@ -1,5 +1,5 @@
 ---
-title: Overview of native authentication APIs reference
+title: Overview of native authentication APIs references
 description: Find out the use, and the available API options for native authentication in Microsoft Entra ID for customers 
 author: kengaderdus
 manager: mwongerapk
@@ -9,10 +9,10 @@ ms.subservice: ciam
 ms.topic: reference
 ms.date: 02/29/2024
 
-#Customer intent: As a dev, devops, I want to know the use, and the API options for native authentication in Microsoft Entra ID for customers
+#Customer intent: As a dev, devops, I want to learn the use, and the API options for native authentication in Microsoft Entra ID for customers.
 ---
 
-# Overview of native authentication APIs reference
+# Overview of native authentication API reference
 
 Microsoft Entra ID's [native authentication](overview-customers-ciam.md) enables you to host the user interface of your app in the client application instead of delegating authentication to browsers, resulting in a natively integrated authentication experience. As a developer, you have full control over the look and feel of the sign-in interface.
 
@@ -22,7 +22,7 @@ Currently, our identity platform's native authentication API supports sign-up an
 
 - [Email with password](reference-native-auth-email-password.md), which supports sign-up and sign-in with an email and password, and self-service password reset (SSPR).
 
-- [Email OTP](reference-native-auth-email-otp.md), which supports sign-up and sign-in with email OTP.
+- [Email one-time password or passcode (OTP)](reference-native-auth-email-otp.md), which supports sign-up and sign-in with email OTP.
 
 
 [!INCLUDE [native-auth-api-cors-note](./includes/native-auth-api/native-auth-api-cors-note.md)]
