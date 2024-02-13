@@ -13,36 +13,35 @@ ms.reviewer: ashishj
 
 # Publish applications on separate networks and locations using connector groups
 
-Customers utilize Microsoft Entra application proxy for more scenarios and applications. So we've made App Proxy even more flexible by enabling more topologies. You can create Application Proxy connector groups so that you can assign specific connectors to serve specific applications. This capability gives you more control and ways to optimize your Application Proxy deployment.
+Use application proxy connector groups to assign specific connectors to specific applications. Connector groups give you more control and let you optimize your deployments.
 
-Each Application Proxy connector is assigned to a connector group. All the connectors that belong to the same connector group act as a separate unit for high-availability and load balancing. All connectors belong to a connector group. If you don't create groups, then all your connectors are in a default group. Your admin can create new groups and assign connectors to them in the Microsoft Entra admin center.
+Each application proxy connector is assigned to a connector group. All the connectors that belong to the same connector group act as a separate unit for high-availability and load balancing. All connectors belong to a connector group. If you don't create groups, then all your connectors are in a default group. You create new connector groups and assign connectors in the Microsoft Entra admin center.
 
-All applications are assigned to a connector group. If you don't create groups, then all your applications are assigned to a default group. But if you organize your connectors into groups, you can set each application to work with a specific connector group. In this case, only the connectors in that group serve the application upon request. This feature is useful if your applications are hosted in different locations. You can create connector groups based on location, so that applications are always served by connectors that are physically close to them.
+Connector groups are useful if your applications are hosted in different locations. You create connector groups based on location, so that applications are always served by connectors that are physically close to them.
 
 > [!TIP]
-> If you have a large Application Proxy deployment, don't assign any applications to the default connector group. That way, new connectors don't receive any live traffic until you assign them to an active connector group. This configuration also enables you to put connectors in an idle mode by moving them back to the default group, so that you can perform maintenance without impacting your users.
+> If you have a large application proxy deployment, don't assign any applications to the default connector group. That way, new connectors don't receive any live traffic until you assign them to an active connector group. This configuration also enables you to put connectors in an idle mode by moving them back to the default group, so that you can perform maintenance without impacting your users.
 
 ## Prerequisites
 
-To group your connectors, you have to make sure you [installed multiple connectors](application-proxy-add-on-premises-application.md). When you install a new connector, it automatically joins the **Default** connector group.
+You must have multiple connectors to use connector groups. New connectors are automatically added to the **Default** connector group. For more information on installing connectors, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md).
 
 ## Create connector groups
-
-Use these steps to create as many connector groups as you want.
+To create a connector group:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
-1. Select **New connector group**. The New Connector Group blade appears.
+1. Browse to **Identity** > **Applications** > **enterprise applications** > **application proxy**.
+1. Select **New connector group**.
 
    ![Shows the screen to select a new connector group](./media/application-proxy-connector-groups/new-group.png)
 
-1. Give your new connector group a name, then use the dropdown menu to select which connectors belong in this group.
+1. Give your new connector group a name, then use the dropdown menu to select which connectors belong in the group.
 1. Select **Save**.
 
 ## Assign applications to your connector groups
 
-Use these steps for each application that you've published with Application Proxy. You can assign an application to a connector group when you first publish it, or you can use these steps to change the assignment whenever you want.
+You assign an application to a connector group when you first publish it. You can also update the group a connector is assigned. To update the group a connector is in:
 
-1. From the management dashboard for your directory, select **Enterprise applications** > **All applications** > the application you want to assign to a connector group > **Application Proxy**.
+1. From the management dashboard for your directory, select **Enterprise applications** > **All applications** > the application you want to assign to a connector group > **application proxy**.
 1. Use the **Connector Group** dropdown menu to select the group you want the application to use.
 1. Select **Save** to apply the change.
 
@@ -74,7 +73,7 @@ With Microsoft Entra application proxy connector groups, you can enable a common
 
 ### Multi-forest – different connector groups for each forest
 
-Most customers who have deployed Application Proxy are using its single-sign-on (SSO) capabilities by performing Kerberos Constrained Delegation (KCD). To achieve this, the connector’s machines need to be joined to a domain that can delegate the users toward the application. KCD supports cross-forest capabilities. But for companies who have distinct multi-forest environments with no trust between them, a single connector cannot be used for all forests. 
+Most customers who have deployed application proxy are using its single-sign-on (SSO) capabilities by performing Kerberos Constrained Delegation (KCD). To achieve this, the connector’s machines need to be joined to a domain that can delegate the users toward the application. KCD supports cross-forest capabilities. But for companies who have distinct multi-forest environments with no trust between them, a single connector cannot be used for all forests. 
 
 In this case, specific connectors can be deployed per forest, and set to serve applications that were published to serve only the users of that specific forest. Each connector group represents a different forest. While the tenant and most of the experience is unified for all forests, users can be assigned to their forest applications using Microsoft Entra groups.
 
@@ -97,7 +96,7 @@ Some examples that you can implement, include the following connector groups.
 
 If you don’t use connector groups, your configuration would look like this:
 
-![Example Microsoft Entra No Connector Groups](./media/application-proxy-connector-groups/application-proxy-sample-config-1.png)
+![Example without connector groups](./media/application-proxy-connector-groups/application-proxy-sample-config-1.png)
 
 This configuration is sufficient for small deployments and tests. It will also work well if your organization has a flat network topology.
 
@@ -105,7 +104,7 @@ This configuration is sufficient for small deployments and tests. It will also w
 
 This configuration is an evolution of the default one, in which there is a specific app that runs in an isolated network such as IaaS virtual network:
 
-![Example Microsoft Entra No Connector Groups and an isolated network](./media/application-proxy-connector-groups/application-proxy-sample-config-2.png)
+![Example Microsoft Entra without connector groups on an isolated network](./media/application-proxy-connector-groups/application-proxy-sample-config-2.png)
 
 ### Recommended configuration – several specific groups and a default group for idle
 
