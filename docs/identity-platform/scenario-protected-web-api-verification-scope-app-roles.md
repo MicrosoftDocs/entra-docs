@@ -374,9 +374,7 @@ To avoid this exception, set the `AllowWebApiToBeAuthorizedByACL` configuration 
 If you set `AllowWebApiToBeAuthorizedByACL` to `true`, this is **your responsibility** to ensure the ACL mechanism.
 
 ## Next steps
- 
-Learn more by building a protected ASP.NET Core web api in the following tutorial series:
 
-> [!div class="nextstepaction"]
-> [Protected web API tutorial](tutorial-web-api-dotnet-register-app.md)
+- Learn more by building an ASP.NET Core web app that signs in users in the following multi-part [tutorial series](tutorial-web-app-dotnet-register-app.md)
 
+- Explore Microsoft identity platform [web API samples](sample-v2-code.md#web-api) 
