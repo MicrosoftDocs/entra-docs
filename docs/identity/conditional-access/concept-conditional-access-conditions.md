@@ -111,7 +111,7 @@ These conditions are commonly used to:
 This setting works with all browsers. However, to satisfy a device policy, like a compliant device requirement, the following operating systems and browsers are supported. Operating Systems and browsers that have fallen out of mainstream support aren’t shown on this list:
 
 > [!IMPORTANT]
-> For Chrome users, Chrome only supports macOS Platform Single Sign-on (PSSO) with browser extensions. Chrome support with PSSO is currently disabled for the  [Microsoft Enterprise SSO plug-in for Apple devices](/entra/identity-platform/apple-sso-plugin). This is a work in progress and will be ready before general availability. 
+> For Chrome users wishing to use macOS Platform Single Sign-on, we recommend using the [Microsoft Enterprise SSO Plugin](/entra/identity-platform/apple-sso-plugin). Because PSSO uses Secure Enclave instead of Keychain, PSSO is currently not compatible with Chrome SSO. A browser extension is being developed to ensure compatibility between Chrome SSO and PSSO and will be ready before general availability. 
 
 | Operating Systems | Browsers |
 | :-- | :-- |
