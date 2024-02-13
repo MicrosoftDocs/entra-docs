@@ -4,9 +4,9 @@ description: Learn foundational information to plan and design your verification
 documentationCenter: ''
 author: barclayn
 manager: martinco
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: how-to
-ms.subservice: verifiable-credentials
+
 ms.date: 07/28/2022
 ms.author: barclayn
 ms.custom: references_regions

@@ -2,8 +2,8 @@
 title: TLS 1.2 enforcement - Microsoft Entra Registration Service
 description: Remove support for TLS 1.0 and 1.1 for the Microsoft Entra Device Registration Service
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: reference
 ms.date: 07/10/2020
@@ -13,7 +13,6 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: spunukol
 
-ms.collection: M365-identity-device-management
 ---
 # Enforce TLS 1.2 for the Microsoft Entra Registration Service
 

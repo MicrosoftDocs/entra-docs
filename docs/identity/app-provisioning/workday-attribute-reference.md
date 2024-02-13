@@ -1,10 +1,10 @@
 ---
 title: Workday attribute reference for Microsoft Entra ID
 description: Learn which which attributes that you can fetch from Workday using XPATH queries in Microsoft Entra ID.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
 ms.date: 09/15/2023

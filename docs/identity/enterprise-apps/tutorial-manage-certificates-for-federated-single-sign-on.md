@@ -4,8 +4,8 @@ description: In this tutorial, you'll learn how to customize the expiration date
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: tutorial
 ms.date: 02/02/2023

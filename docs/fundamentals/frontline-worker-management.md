@@ -2,8 +2,7 @@
 title: Frontline worker management
 description: Learn about frontline worker management capabilities that are provided through the My Staff portal.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 12/18/2023

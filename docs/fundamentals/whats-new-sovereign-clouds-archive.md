@@ -1,10 +1,9 @@
 ---
 title: Archive for What's new in Azure Sovereign Clouds?
 description: The What's new in sovereign cloud release notes in the Overview section of this content set contain six months of activity. After six months, the items are removed from the main article and put into this archive article for the next two years.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
 ms.date: 05/31/2023
@@ -299,7 +298,7 @@ Temporary Access Pass (TAP) is now generally available. TAP can be used to secur
 
 In some scenarios customers may want to require a fresh authentication, every time before a user performs specific actions. Sign-in frequency Every time support requiring a user to reauthenticate during Intune device enrollment, password change for risky users and risky sign-ins.
 
-More information: [Configure authentication session management](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#require-reauthentication-every-time).
+More information: [Configure authentication session management](~/identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time).
  
 ---
 

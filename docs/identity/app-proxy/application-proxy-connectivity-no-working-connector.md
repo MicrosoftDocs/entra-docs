@@ -1,10 +1,10 @@
 ---
 title: No working connector group found for a Microsoft Entra application proxy app
 description: Address problems you might encounter when there is no working Connector in a Connector Group for your application with the Microsoft Entra application proxy
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
 ms.date: 09/14/2023

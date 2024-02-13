@@ -3,7 +3,7 @@ title: include file
 description: include file
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: include
 ms.date: 01/17/2024
 ms.author: barclayn

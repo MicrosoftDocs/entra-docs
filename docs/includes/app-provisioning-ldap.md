@@ -134,8 +134,8 @@ If you have already downloaded the provisioning agent and configured it for anot
  
  :::image type="content" source="media/app-provisioning-sql/download-1.png" alt-text="Screenshot of download location for agent." lightbox="media/app-provisioning-sql/download-1.png":::
      
- 8. Leave the portal and open the provisioning agent installer, agree to the terms of service, and select **next**.
- 9. Open the provisioning agent wizard.
+ 8. Leave the portal and open the provisioning agent installer, agree to the terms of service, and select **Install**.
+ 9. Wait for the Microsoft Entra provisioning agent configuration wizard and then select **Next**.
  10. In the **Select Extension** step, select **On-premises application provisioning** and then select **Next**.   
  11. The provisioning agent will use the operating system's web browser to display a popup window for you to authenticate to Microsoft Entra ID, and potentially also your organization's identity provider.  If you are using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
  12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have the Hybrid Identity Administrator or Global Administrator role.

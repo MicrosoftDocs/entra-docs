@@ -1,10 +1,10 @@
 ---
 title: Synchronize attributes to Microsoft Entra ID for mapping
 description: When configuring user provisioning with Microsoft Entra ID and SaaS apps, use the directory extension feature to add source attributes that aren't synchronized by default.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.custom: has-azure-ad-ps-ref
 ms.topic: troubleshooting

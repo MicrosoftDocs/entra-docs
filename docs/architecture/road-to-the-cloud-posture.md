@@ -4,9 +4,9 @@ description: Determine your cloud transformation posture when planning your migr
 documentationCenter: ''
 author: janicericketts
 manager: martinco
-ms.service: active-directory
+ms.service: entra
 ms.topic: how-to
-ms.subservice: fundamentals
+ms.subservice: architecture
 ms.date: 07/27/2023
 ms.author: jricketts
 ms.custom: references_regions

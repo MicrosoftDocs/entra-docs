@@ -6,8 +6,7 @@ ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: conceptual
 ms.date: 06/09/2023
-ms.service: network-access
-ms.custom: 
+ms.service: global-secure-access
 ms.reviewer: katabish
 ---
 

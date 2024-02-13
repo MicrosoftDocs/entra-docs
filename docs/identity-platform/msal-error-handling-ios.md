@@ -7,8 +7,8 @@ ms.author: henrymbugua
 ms.custom:
 ms.date: 11/26/2020
 ms.reviewer: saeeda, oldalton
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As a developer using MSAL for iOS/macOS, I want to handle errors and exceptions, so that I can provide appropriate error messages to the user and recover from certain error conditions by making interactive token acquisition requests or deciding whether to continue with only the granted scopes.
 ---

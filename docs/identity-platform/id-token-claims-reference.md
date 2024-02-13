@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 05/30/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
 #Customer intent: As a developer integrating authentication into my application, I want to understand the differences between v1.0 and v2.0 ID tokens, and the different claims in ID tokens.
 ---

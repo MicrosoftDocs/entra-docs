@@ -1,10 +1,10 @@
 ---
 title: Microsoft Entra provisioning to applications via web services connector
 description: This document describes how to configure Microsoft Entra ID to provision users with external systems that offer web services based APIs.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 05/11/2023
@@ -72,8 +72,8 @@ Prior to configuring provisioning, ensure that you:
 
  7. Under **On-premises Connectivity**, select **Download and install**, and select **Accept terms & download**.
  
- 8. Leave the portal and open the provisioning agent installer, agree to the terms of service, and select **next**.
- 9. Open the provisioning agent wizard.
+ 8. Leave the portal and run the provisioning agent installer, agree to the terms of service, and select **Install**.
+ 9. Wait for the Microsoft Entra provisioning agent configuration wizard and then select **Next**.
  10. In the **Select Extension** step, select **On-premises application provisioning** and then select **Next**.
  11. The provisioning agent will use the operating system's web browser to display a popup window for you to authenticate to Microsoft Entra ID, and potentially also your organization's identity provider.  If you are using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
  12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have the Hybrid Identity Administrator or Global Administrator role.

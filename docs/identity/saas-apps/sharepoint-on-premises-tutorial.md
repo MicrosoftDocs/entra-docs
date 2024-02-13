@@ -5,8 +5,8 @@ description: Learn how to implement federated authentication between Microsoft E
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.custom:
  - has-azure-ad-ps-ref
  - azure-ad-ref-level-one-done

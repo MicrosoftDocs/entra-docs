@@ -6,10 +6,10 @@ author: SHERMANOUKO
 manager: mwongerapk
 
 ms.author: shermanouko
-ms.service: active-directory
+ms.service: entra-external-id
  
 ms.custom: devx-track-dotnet
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: tutorial
 ms.date: 07/27/2023
 #Customer intent: As a dev, I want to learn how to test a protected web API registered in the Microsoft Entra ID for customers tenant.

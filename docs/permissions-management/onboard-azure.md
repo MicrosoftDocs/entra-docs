@@ -1,11 +1,10 @@
 ---
 title:  Onboard a Microsoft Azure subscription in Permissions Management
 description: How to a Microsoft Azure subscription on Permissions Management.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: ciem
+ms.service: entra-permissions-management
+
 ms.topic: how-to
 ms.date: 12/20/2023
 ms.author: jfields

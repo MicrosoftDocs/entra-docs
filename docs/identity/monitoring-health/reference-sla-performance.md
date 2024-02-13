@@ -3,9 +3,9 @@ title: Service Level Agreement performance for Microsoft Entra ID
 description: Learn about the service level agreement performance and attainment for authentication services in Microsoft Entra ID
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 01/16/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14

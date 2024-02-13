@@ -6,8 +6,8 @@ ms.author: henrymbugua
 ms.custom: devx-track-dotnet
 ms.date: 01/26/2024
 ms.reviewer: janicericketts
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As a developer, I want to add authentication to a Blazor app.
 ---
@@ -71,7 +71,7 @@ Run the following command to register your app in your tenant and update the .NE
 msidentity-app-sync --username <username/upn> --tenant-id <tenantID>
 ```
 
-> [!Note]
+> [!NOTE]
 > - You don't need to provide the username if you are signed in with only one account in the developer tools.
 > - You don't need to provide the tenant-id if the tenant in which you want to create the application is your home tenant.
 
@@ -95,7 +95,7 @@ Browse to the running web application using the URL outputted by the command lin
 
 ## Next steps
 
-Learn about calling building web apps that sign in users in our multi-part scenario series:
+Learn more by building an ASP.NET Core web app that signs in users in the following multi-part tutorial series:
 
 > [!div class="nextstepaction"]
-> [Scenario: Web app that signs in users](scenario-web-app-sign-user-overview.md)
+> [Tutorial: Web app that signs in users](tutorial-web-app-dotnet-register-app.md)

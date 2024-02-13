@@ -6,8 +6,7 @@ ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: how-to
 ms.date: 11/01/2023
-ms.service: network-access
-ms.custom: 
+ms.service: global-secure-access
 ms.reviewer: katabish
 
 # Customer intent: As a network admin, I want to be able to check the health of my remote networks so that I can troubleshoot issues and make improvements to my configurations.

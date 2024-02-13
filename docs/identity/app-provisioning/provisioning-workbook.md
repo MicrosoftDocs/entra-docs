@@ -1,10 +1,10 @@
 ---
 title: 'Provisioning insights workbook'
 description: This article describes the Azure Monitor workbook for provisioning.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
 ms.date: 02/17/2023
 ms.subservice: hybrid

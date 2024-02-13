@@ -1,10 +1,10 @@
 ---
 title: PowerShell samples for Microsoft Entra application proxy
 description: Use these PowerShell samples for Microsoft Entra application proxy to get information about Application Proxy apps and connectors in your directory, assign users and groups to apps, and get certificate information.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: sample
 ms.date: 09/14/2023

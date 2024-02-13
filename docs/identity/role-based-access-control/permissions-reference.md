@@ -1,19 +1,19 @@
 ---
 title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
 search.appverid: MET150
-ms.service: active-directory
+ms.service: entra-id
 ms.workload: identity
-ms.subservice: roles
+ms.subservice: role-based-access-control
 ms.topic: reference
 ms.date: 02/06/2024
 ms.author: rolyon
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit
-ms.collection: M365-identity-device-management
+
 ---
 
 # Microsoft Entra built-in roles

@@ -1,8 +1,7 @@
 ---
 title: Microsoft Entra ID and PCI-DSS Requirement 10
 description: Learn PCI-DSS defined approach requirements about logging and monitoring all access to system components and CHD
-services: active-directory
-ms.service: active-directory
+ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
 author: jricketts

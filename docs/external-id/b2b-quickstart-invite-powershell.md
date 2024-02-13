@@ -7,8 +7,7 @@ author: csmulligan
 manager: CelesteDG
 ms.date: 09/29/2023
 ms.topic: quickstart
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.custom: it-pro, seo-update-azuread-jan, mode-api, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 
