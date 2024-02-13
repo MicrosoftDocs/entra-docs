@@ -33,6 +33,7 @@ Plan a staged application migration rollout and select users to authenticate to 
 
 Learn more in the following video, Effortless Application Migration Using Microsoft Entra ID.
 
+
 > [!VIDEO https://www.youtube.com/embed/qJYmEOK6UJo]
 
 ### Application migration tool
