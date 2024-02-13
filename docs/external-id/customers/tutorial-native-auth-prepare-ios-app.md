@@ -93,5 +93,5 @@ This will output all debug logs from MSAL which can be helpful in diagnosing iss
 
 ## Next steps
 
-- Tutorial: Add sign in and sign up with email one-time passcode
+- [Tutorial: Add sign in and sign up with email one-time passcode](tutorial-native-auth-ios-sign-up-sign-in-sign-out.md)
 

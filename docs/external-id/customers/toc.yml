@@ -208,6 +208,8 @@ items:
           items:
             - name: Prepare iOS app
               href: tutorial-native-auth-prepare-ios-app.md
+            - name: Sign up, sign in and sign sign out
+              href: tutorial-native-auth-ios-sign-up-sign-in-sign-out.md
     - name: Command-line interface (CLI) app
       items:
         - name: Node.js
