@@ -56,7 +56,7 @@ The `ManagedIdentitySignInLogs` provide similar insights as the service principa
 
 ### Provisioning logs
 
-If your organization provisions users through a third-party application such as Workday or ServiceNow, you might want to export the `ProvisioningLogs` reports. For more information, see [Provisioning logs](concept-provisioning-logs.md).
+If your organization provisions users through a non-Microsoft application such as Workday or ServiceNow, you might want to export the `ProvisioningLogs` reports. For more information, see [Provisioning logs](concept-provisioning-logs.md).
 
 ### AD FS sign-in logs
 
@@ -76,11 +76,11 @@ The `NetworkAccessTrafficLogs` are associated with Microsoft Entra Internet Acce
 
 ### Risky service principals
 
-The `RiskyServicePrincipals` logs provide information about service principals that Microsoft Entra ID Protection detected as risky. Service principal risk represents the probability that an identity or account is compromised. These risks are calculated asynchronously using data and patterns from Microsoft's internal and external threat intelligence sources. These sources might include security researchers, law enforcement professionals, and security teams at Microsoft. For more information, see [Securing workload identities](~/id-protection/concept-workload-identity-risk.md)
+The `RiskyServicePrincipals` logs provide information about service principals that Microsoft Entra ID Protection detected as risky. Service principal risk represents the probability that an identity or account is compromised. These risks are calculated asynchronously using data and patterns from Microsoft's internal and external threat intelligence sources. These sources might include security researchers, law enforcement professionals, and security teams at Microsoft. For more information, see [Securing workload identities](~/id-protection/concept-workload-identity-risk.md).
 
 ### Service principal risk events
 
-The `ServicePrincipalRiskEvents` provide details around the risky sign-in events for service principals. These logs might include any identified suspicious events related to the service principal accounts. For more information, see [Securing workload identities](~/id-protection/concept-workload-identity-risk.md)
+The `ServicePrincipalRiskEvents` provide details around the risky sign-in events for service principals. These logs might include any identified suspicious events related to the service principal accounts. For more information, see [Securing workload identities](~/id-protection/concept-workload-identity-risk.md).
 
 ### Enriched Microsoft 365 audit logs
 
