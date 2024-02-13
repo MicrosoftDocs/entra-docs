@@ -26,7 +26,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- [Sign in users in a sample native iOS mobile application](how-to-run-sample-ios-app.md.md)
+- [Sign in users in a sample native iOS mobile application](how-to-run-sample-ios-app.md)
 - [Tutorial: Add built-in attributes to sign up with email one-time passcode](tutorial-native-auth-ios-sign-up-with-email-one-time-passcode.md)
 
 ## Sign in after sign up

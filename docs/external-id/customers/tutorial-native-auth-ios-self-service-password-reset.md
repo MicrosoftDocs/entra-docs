@@ -217,5 +217,5 @@ extension ViewController: SignInAfterSignUpDelegate {
 
 ## Next Steps
 
-[Tutorial: Support web fallback](7-support-web-fallback.md)
+[Tutorial: Support web fallback](tutorial-native-auth-ios-support-web-fallback.md)
 

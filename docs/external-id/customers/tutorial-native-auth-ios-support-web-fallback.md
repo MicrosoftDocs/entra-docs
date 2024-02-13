@@ -74,7 +74,7 @@ When we will call the `signUp(username:delegate)` method from the SDK instance, 
 To handle this kind of error we need to launch a browser and let the user perform the authentication flow there. This can be done by calling `acquireTokenWithParameters()` method. In order to use this method, a few additional configurations need to be done:
 
 - [Configure URL schemes in our Xcode project](../../identity-platform/tutorial-v2-ios.md#for-ios-only-configure-url-schemes)
-- [Configure the redirect URI in Microsoft Entra Admin centre](../../identity-platform/quickstart-mobile-app-ios-sign-in.md#step-1-register-your-application-1)
+- [Configure the redirect URI in Microsoft Entra Admin centre](../../identity-platform/quickstart-mobile-app-ios-sign-in.md#register-your-quickstart-app)
 
 Now we can get a token and an account interactively. Here's an example of how to do it:
 
