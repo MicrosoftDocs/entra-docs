@@ -32,7 +32,7 @@ The table lists common capabilities required for header-based authentication app
 |Requirement   |Description|
 |----------|-----------|
 |Federated SSO |In preauthenticated mode, all applications are protected with Microsoft Entra authentication and users have single sign-on. |
-|Remote access |Application proxy provides remote access to the app. Users access the application from the internet on any web browser using the external Uniform Resource Locator (URL). Application proxy is not intended for general corporate access. For general corporate access, see [Microsoft Entra Private Access](/entra/global-secure-access). |
+|Remote access |Application proxy provides remote access to the app. Users access the application from the internet on any web browser using the external Uniform Resource Locator (URL). Application proxy isn't intended for general corporate access. For general corporate access, see [Microsoft Entra Private Access](/entra/global-secure-access). |
 |Header-based integration |Application proxy handles SSO integration with Microsoft Entra ID and then passes identity or other application data as HTTP headers to the application. |
 |Application authorization |Common policies are specified based on the application being accessed, the user’s group membership, and other policies. In Microsoft Entra ID, policies are implemented using [Conditional Access](~/identity/conditional-access/overview.md). Application authorization policies only apply to the initial authentication request. |
 |Step-up authentication |Policies are defined to force added authentication, for example, to gain access to sensitive resources. |
@@ -55,7 +55,7 @@ The table lists common capabilities required for header-based authentication app
 
 1. Publish your application according to the instructions described in [Publish applications with application proxy](application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).  
     - The internal URL value determines the scope of the application. You configure the internal URL value at the root path of the application, and all sub paths underneath the root receive the same header and application configuration. 
-    - Create a new application to set a different header configuration or user assignment for a more granular path than the application you configured. In the new application, configure the internal URL with the specific path you require and then configure the specific headers needed for this URL. Application proxy always matchs your configuration settings to the most granular path set for an application. 
+    - Create a new application to set a different header configuration or user assignment for a more granular path than the application you configured. In the new application, configure the internal URL with the specific path you require and then configure the specific headers needed for this URL. Application proxy always matches your configuration settings to the most granular path set for an application. 
 
 2. Select **Microsoft Entra ID** as the **pre-authentication method**. 
 3. Assign a test user by navigating to **Users and groups** and assigning the appropriate users and groups. 
