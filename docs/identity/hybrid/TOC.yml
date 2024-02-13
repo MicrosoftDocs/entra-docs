@@ -47,6 +47,8 @@
     items: 
     - name:  Provision users on-demand
       href:  on-demand-provision.md
+    - name:  Group writeback
+      href:  group-writeback-cloud-sync.md
     - name:  Scheduling imports
       href:  connect/how-to-connect-sync-feature-scheduler.md
     - name:  Prevent accidental deletions

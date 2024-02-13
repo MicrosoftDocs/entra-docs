@@ -4,8 +4,8 @@ description: Learn how to prepare your Microsoft Entra ID for customers tenant t
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
-ms.service: active-directory 
-ms.subservice: ciam
+ms.service: entra-external-id 
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 01/27/2024
 ms.custom: developer, devx-track-js

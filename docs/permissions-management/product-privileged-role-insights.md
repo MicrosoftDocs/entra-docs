@@ -1,11 +1,10 @@
 ---
 title: View privileged role assignments in Microsoft Entra Insights
 description: How to view current privileged role assignments in the Microsoft Entra Insights tab.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: ciem
+ms.service: entra-permissions-management
+
 ms.topic: how-to
 ms.date: 05/22/2023
 ms.author: jfields

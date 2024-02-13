@@ -2,7 +2,7 @@
 author: madansr7
 ms.author: saumadan
 ms.date: 08/22/2022
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: develop
 ms.topic: include
 ---

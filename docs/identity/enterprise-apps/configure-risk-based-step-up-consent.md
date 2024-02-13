@@ -4,8 +4,8 @@ description: Learn how to disable and enable risk-based step-up consent to reduc
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: how-to
 ms.date: 11/17/2021

@@ -2,8 +2,8 @@
 title: Troubleshooting the Microsoft Enterprise SSO Extension plugin on Apple devices
 description: This article helps to troubleshoot deploying the Microsoft Enterprise SSO plug-in on Apple devices
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.custom: devx-track-linux
 ms.topic: troubleshooting
@@ -14,7 +14,6 @@ author: ryschwa-msft
 manager: 
 ms.reviewer: 
 
-ms.collection: M365-identity-device-management
 #Customer intent: As an IT admin, I want to learn how to discover and fix issues related to the Microsoft Enterprise SSO plug-in on macOS and iOS.
 ---
 # Troubleshooting the Microsoft Enterprise SSO Extension plugin on Apple devices

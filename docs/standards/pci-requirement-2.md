@@ -1,8 +1,7 @@
 ---
 title: Microsoft Entra ID and PCI-DSS Requirement 2
 description: Learn PCI-DSS defined approach requirements for applying secure configurations to all system components
-services: active-directory
-ms.service: active-directory
+ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
 author: jricketts

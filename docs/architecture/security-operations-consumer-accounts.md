@@ -1,16 +1,13 @@
 ---
 title: Microsoft Entra security operations for consumer accounts
 description: Guidance to establish baselines and how to monitor and alert on potential security issues with consumer accounts.
-services: active-directory
 author: jricketts
 manager: martinco
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/28/2023
 ms.author: jricketts
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Microsoft Entra security operations for consumer accounts

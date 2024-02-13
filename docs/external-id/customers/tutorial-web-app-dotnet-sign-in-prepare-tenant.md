@@ -6,8 +6,8 @@ author: cilwerner
 manager: celestedg
 
 ms.author: cwerner
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.topic: tutorial
 ms.date: 05/23/2023

@@ -64,6 +64,8 @@
       href: concept-sspr-policy.md
     - name: Licenses
       href: concept-sspr-licensing.md
+    - name: Deployment guide
+      href: concept-sspr-deploy.md
   - name: Multifactor authentication
     items:
     - name: How MFA works
@@ -180,8 +182,6 @@
     href: howto-authentication-use-email-signin.md
   - name: Self-service password reset
     items:
-    - name: Deployment guide
-      href: howto-sspr-deployment.md
     - name: User customization options
       href: howto-sspr-customization.md
     - name: Pre-register authentication data

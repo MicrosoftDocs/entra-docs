@@ -1,18 +1,17 @@
 ---
 title: Group-based licensing additional scenarios
 description: More scenarios for Microsoft Entra group-based licensing
-services: active-directory
+
 keywords: Azure AD licensing
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.collection: M365-identity-device-management
 ---
 
 # Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID

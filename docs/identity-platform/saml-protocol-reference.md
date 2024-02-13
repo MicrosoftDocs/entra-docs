@@ -7,8 +7,8 @@ ms.author: owenrichards
 ms.custom:
 ms.date: 11/4/2022
 ms.reviewer: kenwith
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
 #Customer intent: As an application developer, I want to understand how the Microsoft identity platform uses the SAML protocol, so that I can implement single sign-on (SSO) functionality in my application and provide a seamless user experience.
 ---

@@ -5,8 +5,8 @@ description: Learn how to configure your Microsoft Entra ID for customers tenant
 author: garrodonnell
 manager: celestedg
 
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: tutorial
 ms.date: 05/23/2023
 ms.author: godonnell
