@@ -201,9 +201,7 @@ You can examine the state of the service in the Services window. The connector i
  ![Example: Services window showing Microsoft Entra services local](media/application-proxy-connectors/aad-connector-services.png)
 
 ## Inactive connectors
-A common issue is that connectors appear as inactive in a connector group. A common cause for inactive connectors is when all the necessary ports are blocked by a firewall.
-
-see the ports Troubleshoot document for details on investigating this problem.
+A common issue is that connectors appear as inactive in a connector group. A firewall blocking the required ports is a common cause for inactive connectors.
 
 ## Next steps
 
