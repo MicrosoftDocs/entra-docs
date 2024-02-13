@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: compliance
 ms.workload: identity
 ms.topic: conceptual 
-ms.date: 01/31/2024
+ms.date: 02/13/2024
 ms.custom: template-concept 
 
 #CustomerIntent: As an IT administrator, I want to learn about hybrid support with Lifecycle workflows so that I can manage synced on-premises users using workflows.
@@ -16,14 +16,14 @@ ms.custom: template-concept
 
 # Lifecycle Workflow hybrid capabilities (preview)
 
-Lifecycle Workflows allow you to create workflows that can be triggered for users based on joiner, mover, or leaver scenarios. These workflows allow you to streamline the process of managing users in your hybrid environment via tasks. You're able to enable a synced hybrid user via a user account task, run workflows when the user changes a team or job role, disable an account when the user leaves, and even delete the user account when they're no longer in your organization. These capabilities can be extended to hybrid users either out of the box, or with some prerequisites. In this article, you'll learn what is needed to use workflow features in your hybrid environment.
+Lifecycle Workflows allow you to create workflows that can be triggered for users based on joiner, mover, or leaver scenarios. These workflows allow you to streamline the process of managing users in your hybrid environment via tasks. You're able to enable a synced hybrid user via a user account task, run workflows when the user changes a team or job role, disable an account when the user leaves, and even delete the user account when they're no longer in your organization. These capabilities can be extended to hybrid users either out of the box, or with some prerequisites. In this article, you learn what is needed to use workflow features in your hybrid environment.
 
 
 ## Workflow triggers and hybrid capabilities
 
-In Lifecycle Workflows, a workflow runs based on if a user meets its execution conditions. Each execution condition must have a trigger, which defines when a user meets the execution condition of a workflow. The trigger you set for an execution condition depends on the user situation for which you'll want the workflow to run. For more information on these execution conditions, and when you would use each, see: **Execution Condition conceptual article**.
+In Lifecycle Workflows, a workflow runs based on if a user meets its execution conditions. Each execution condition must have a trigger, which defines when a user meets the execution condition of a workflow. The trigger you set for an execution condition depends on the user situation for which you want the workflow to run. For more information on these execution conditions, and when you would use each, see: **Execution Condition conceptual article**.
 
-The following table shows what is required to use workflow triggers in a hybrid environment:
+The following table shows what is required to use each workflow trigger in an hybrid environment:
 
 |Workflow Trigger  |Hybrid requirements  |
 |---------|---------|

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to 
-ms.date: 1/12/2024
+ms.date: 2/13/2024
 ms.subservice: compliance
 ms.custom: template-how-to 
 
@@ -17,7 +17,7 @@ ms.custom: template-how-to
 
 # Manage user account tasks for hybrid users (preview)
 
-Workflows created by Lifecycle Workflows can be used to manage the lifecycle of synced on-premises users. This allows for greater, and simplified, control of the lifecycle of users within your organization in hybrid environments. In this article, you're walked through the steps of enabling an user account task to be run for an on-premises user.
+Workflows created by Lifecycle Workflows can be used to manage the lifecycle of synced on-premises users. Synced on-premises support allows for greater, and simplified, control of the lifecycle of users within your organization in hybrid environments. In this article, you're walked through the steps of enabling an user account task to be run for an on-premises user.
 
 ## Prerequisites
 
