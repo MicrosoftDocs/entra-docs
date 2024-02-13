@@ -1,10 +1,9 @@
 ---
 title: Data protection considerations
 description: Learn how services store and retrieve Microsoft Entra object data through an RBAC authorization layer.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 01/31/2023

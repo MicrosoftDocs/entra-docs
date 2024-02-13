@@ -1,12 +1,11 @@
 ---
 title: Check the health of Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to check the health of a Microsoft Entra Domain Services managed domain and understand status messages.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 
 ms.assetid: 8999eec3-f9da-40b3-997a-7a2587911e96
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
 ms.date: 09/13/2023

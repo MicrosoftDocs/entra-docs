@@ -1,11 +1,11 @@
 ---
 title: Add users to a dynamic group
 description: Use groups with user membership rules to add or remove users automatically
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.topic: tutorial
 ms.date: 09/08/2023
 ms.author: barclayn

@@ -2,8 +2,7 @@
 title: Require reauthentication with Conditional Access
 description: Create a custom Conditional Access policy requiring reauthentication
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 07/18/2023
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
-
-ms.collection: M365-identity-device-management
 ---
 # Common Conditional Access policy: Require reauthentication and disable browser persistence
 
@@ -35,7 +32,7 @@ Protect user access on unmanaged devices by preventing browser sessions from rem
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
 1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
 1. Under **Conditions** > **Filter for devices**, set **Configure** to **Yes**. 
-   1. Under **Devices matching the rule:**, set to **Exclude filtered devices in policy**.
+   1. Under **Devices matching the rule:**, set to **Include filtered devices in policy**.
    1. Under **Rule syntax** select the **Edit** pencil and paste the following expressing in the box, then select **Apply**. 
       1. device.trustType -ne "ServerAD" -or device.isCompliant -ne True
    1. Select **Done**.

@@ -1,18 +1,18 @@
 ---
 title: 'Attributes synchronized by Microsoft Entra Connect'
 description: Lists the attributes that are synchronized to Microsoft Entra ID.
-services: active-directory
+
 author: billmath
 manager: amycolannino
 ms.assetid: c2bb36e0-5205-454c-b9b6-f4990bcedf51
-ms.service: active-directory
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: reference
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Microsoft Entra Connect Sync: Attributes synchronized to Microsoft Entra ID
 This topic lists the attributes that are synchronized by Microsoft Entra Connect Sync.  

@@ -3,7 +3,7 @@ title: What's deprecated in Microsoft Entra ID?
 description: Learn about features being deprecated in Microsoft Entra ID
 author: janicericketts
 manager: martinco
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 12/02/2023

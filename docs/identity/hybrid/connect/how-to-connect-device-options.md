@@ -1,19 +1,19 @@
 ---
 title: 'Microsoft Entra Connect: Device options'
 description: This document details device options available in Microsoft Entra Connect
-services: active-directory
+
 author: billmath
 manager: amycolannino
 editor: billmath
 ms.assetid: c0ff679c-7ed5-4d6e-ac6c-b2b6392e7892
-ms.service: active-directory
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 
 # Microsoft Entra Connect: Device options

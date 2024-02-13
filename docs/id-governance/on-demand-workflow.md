@@ -4,8 +4,7 @@ description: This article guides a user to running a workflow on demand using Li
 author: OWinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: compliance
+ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 05/31/2023
 ms.custom: template-how-to

@@ -2,9 +2,7 @@
 title: Continuous access evaluation for workload identities in Microsoft Entra ID
 description: Respond to changes to applications with continuous access evaluation for workload identities in Microsoft Entra ID
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: workload-identities
+ms.service: entra-workload-id
 ms.topic: conceptual
 ms.date: 07/22/2022
 
@@ -12,8 +10,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: joroja
-
-ms.collection: M365-identity-device-management
 ---
 # Continuous access evaluation for workload identities
 

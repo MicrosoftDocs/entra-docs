@@ -1,8 +1,7 @@
 ---
 title: On-premises password writeback with self-service password reset
 description: Learn how password change or reset events in Microsoft Entra ID can be written back to an on-premises directory environment
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 09/14/2023
@@ -10,7 +9,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: tilarso
-ms.collection: M365-identity-device-management
 ms.custom: ignite-fall-2021
 ---
 # How does self-service password reset writeback work in Microsoft Entra ID?

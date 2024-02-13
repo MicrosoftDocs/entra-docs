@@ -2,8 +2,8 @@
 title: Azure MFA Server and Active Directory
 description: How to integrate the Azure Multi-Factor Authentication Server with Active Directory so you can synchronize the directories.
 
-services: multi-factor-authentication
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 01/29/2023
@@ -14,8 +14,6 @@ manager: amycolannino
 ms.reviewer: michmcla
 
 ms.custom: seo-update-azuread-jan
-
-ms.collection: M365-identity-device-management
 ---
 # Directory integration between Azure MFA Server and Active Directory
 

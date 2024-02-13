@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: scenarios:getting-started, has-adal-ref
 ms.date: 08/11/2023
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an app developer, I want to learn about authentication flows and application scenarios so I can create applications protected by the Microsoft identity platform.
 ---

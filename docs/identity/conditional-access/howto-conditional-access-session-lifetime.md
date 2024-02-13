@@ -2,7 +2,7 @@
 title: Configure adaptive session lifetime policies
 description: Customize Microsoft Entra authentication session configuration including user sign-in frequency and browser session persistence.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 01/08/2024

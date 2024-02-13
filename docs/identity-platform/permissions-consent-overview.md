@@ -7,8 +7,8 @@ ms.author: jomondi
 ms.custom:
 ms.date: 11/17/2023
 ms.reviewer: jawoods, ludwignick, phsignor
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: overview
 
 #Customer intent: As an application developer, I want to understand the different types of permissions and consent in order to properly request authorization from users and administrators for accessing protected resources in my application.

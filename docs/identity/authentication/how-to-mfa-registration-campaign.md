@@ -2,8 +2,7 @@
 title: How to run a registration campaign to set up Microsoft Authenticator
 description: Learn how to move your organization away from less secure authentication methods to Microsoft Authenticator
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: ignite-2022
 ms.topic: conceptual
@@ -12,8 +11,6 @@ ms.date: 02/05/2024
 ms.author: justinha
 author: mjsantani
 manager: amycolannino
-
-ms.collection: M365-identity-device-management
 #Customer intent: As an identity administrator, I want to encourage users to use the Microsoft Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 

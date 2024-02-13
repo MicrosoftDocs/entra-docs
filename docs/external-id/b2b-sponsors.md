@@ -3,8 +3,7 @@ title: Add sponsors to a guest user in the Microsoft Entra admin center - Extern
 description: Shows how an admin can add sponsors to guest users in Microsoft Entra B2B collaboration.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 07/24/2023
 

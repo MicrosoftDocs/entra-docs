@@ -2,8 +2,8 @@
 title: Microsoft Graph PowerShell SDK and Microsoft Entra ID Protection
 description: Query Microsoft Graph risk detections and associated information from Microsoft Entra ID
 
-ms.service: active-directory
-ms.subservice: identity-protection
+ms.service: entra-id-protection
+
 ms.topic: how-to
 ms.date: 01/16/2024
 

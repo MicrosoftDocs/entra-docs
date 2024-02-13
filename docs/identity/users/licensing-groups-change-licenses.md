@@ -1,18 +1,17 @@
 ---
 title: Change license plans for users and groups
 description: How to migrate users within a group to different service plans using group licensing in Microsoft Entra ID
-services: active-directory
+
 keywords: Azure AD licensing
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 ms.date: 11/16/2023
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: "it-pro;seo-update-azuread-jan"
-ms.collection: M365-identity-device-management
 ---
 
 # Change license assignments for a user or group in Microsoft Entra ID

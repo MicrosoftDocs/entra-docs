@@ -4,9 +4,9 @@ description: Learn how to add built-in user attributes and custom attributes as 
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 01/19/2024
 ms.author: mimart
