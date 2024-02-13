@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
-ms.date: 09/14/2024
+ms.date: 02/13/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
