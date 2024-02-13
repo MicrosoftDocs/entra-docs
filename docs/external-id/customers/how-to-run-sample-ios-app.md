@@ -78,10 +78,10 @@ To specify that this app is a public client and can use native authentication, e
 1. Select the **Add permissions** button.
 1. At this point, you've assigned the permissions correctly. However, since the tenant is a customer's tenant, the consumer users themselves can't consent to these permissions. You as the admin must consent to these permissions on behalf of all the users in the tenant:
 
-   1. Select **Grant admin consent for <your tenant name>**, then select **Yes**.
-   1. Select **Refresh**, then verify that **Granted for <your tenant name>** appears under **Status** for both scopes.
+   1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
+   1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for both scopes.
 
-    :::image type="content" source="media/native-auth/android/api-permissions.jpg" alt-text="Screenshot showing configured permission in Microsoft Entra admin center":::
+    :::image type="content" source="media/native-auth/ios/api-permissions.jpg" alt-text="Screenshot showing configured permission in Microsoft Entra admin center":::
 
 ## Create a user flow
 
