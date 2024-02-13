@@ -220,6 +220,8 @@ items:
                   href: tutorial-native-auth-sign-up-user-with-username-password.md
                 - name: Sign in user with username and password
                   href: tutorial-native-auth-sign-in-user-with-username-password.md
+                - name: Self-service password reset
+                  href: tutorial-native-auth-self-service-password-reset.md
     - name: Command-line interface (CLI) app
       items:
         - name: Node.js
