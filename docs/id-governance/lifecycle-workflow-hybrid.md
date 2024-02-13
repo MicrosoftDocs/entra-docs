@@ -23,7 +23,7 @@ Lifecycle Workflows allow you to create workflows that can be triggered for user
 
 In Lifecycle Workflows, a workflow runs based on if a user meets its execution conditions. Each execution condition must have a trigger, which defines when a user meets the execution condition of a workflow. The trigger you set for an execution condition depends on the user situation for which you want the workflow to run. For more information on these execution conditions, and when you would use each, see: **Execution Condition conceptual article**.
 
-The following table shows what is required to use each workflow trigger in an hybrid environment:
+The following table shows what is required to use each workflow trigger in a hybrid environment:
 
 |Workflow Trigger  |Hybrid requirements  |
 |---------|---------|
@@ -35,15 +35,15 @@ The following table shows what is required to use each workflow trigger in an hy
 
 ## Workflow tasks and hybrid capabilities
 
-All of the Lifecycle Workflow tasks work the same for both cloud and hybrid users out of the box except for limitations listed on specific tasks further in this article. For more information on all Lifecycle Workflow tasks, see: [Lifecycle Workflow built-in tasks](lifecycle-workflow-tasks.md).
+All of the Lifecycle Workflow tasks work the same for both cloud, and hybrid, users out of the box except for limitations listed on specific tasks further in this article. For more information on all Lifecycle Workflow tasks, see: [Lifecycle Workflow built-in tasks](lifecycle-workflow-tasks.md).
 
 ### Group tasks
 
-Tasks related to adding and removing users to a group work except for that the hybrid group that you're adding, or removing, a user to must also be synced to Microsoft Entra ID. You can enable access from on premise active directory to Microsoft Entra ID by using [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
+Tasks related to adding and removing users to a group work except for that the hybrid group that you're adding a user to, or removing a user from, must also be synced to Microsoft Entra ID. You can enable access from on-premises Active Directory to Microsoft Entra ID by using [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
 
 ## User account tasks 
 
-Tasks related to managing users when they're enabled, disabled, or deleted work with hybrid users as long as you have satisfied the following prerequisites in setting up your hybrid environment:
+Tasks related to managing user accounts when they're enabled, disabled, or deleted, work with hybrid users as long as you have satisfied the following prerequisites in setting up your hybrid environment:
 
 - You must have the [Microsoft Entra provisioning agent](../identity/hybrid/cloud-sync/what-is-provisioning-agent.md) installed in your environment. You can follow the existing installation [prerequisites](../identity/hybrid/cloud-sync/how-to-prerequisites.md) and [steps](../identity/hybrid/cloud-sync/how-to-install.md) in our public documentation. During installation, choose “**HR-driven provisioning / Azure AD Connect Cloud Sync**” as “**extension configuration**”. You aren't required to add any other configuration for the provisioning agent, such as the cloud sync configuration, and you can install the provisioning agent even if you're currently using Microsoft Entra Connect Sync for your user synchronization (side-by-side).
 
