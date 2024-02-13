@@ -13,7 +13,7 @@ ms.reviewer: martinco
 ---
 
 
-# Best practices to migrate applications and authentication to Microsoft Entra ID
+# Best practices to migrate applications and authentication to Microsoft Entra ID 
 
 You've heard that [Azure Active Directory is now Microsoft Entra ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-id) and you're thinking it's a good time to migrate your Active Directory Federation Service (AD FS) [to cloud authentication in Microsoft Entra ID](/azure/active-directory/hybrid/connect/migrate-from-federation-to-cloud-authentication). As you review your options, see our extensive [resources to migrate apps to Microsoft Entra ID](/azure/active-directory/manage-apps/migration-resources), and best practices.
 
