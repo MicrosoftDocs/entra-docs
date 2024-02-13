@@ -6,7 +6,7 @@ author: rolyon
 manager: amycolannino
 search.appverid: MET150
 ms.service: entra-id
-ms.workload: identity
+: identity
 ms.subservice: role-based-access-control
 ms.topic: reference
 ms.date: 02/06/2024

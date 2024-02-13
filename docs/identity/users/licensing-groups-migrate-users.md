@@ -13,7 +13,7 @@ ms.topic: how-to
 ms.date: 11/16/2023
 ms.author: barclayn
 ms.reviewer: sumitp
-ms.custom: "seohack1;it-pro"
+ms.custom: it-pro
 ---
 
 # How to migrate users with individual licenses to groups for licensing
