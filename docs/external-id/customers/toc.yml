@@ -210,6 +210,10 @@ items:
               href: tutorial-native-auth-prepare-ios-app.md
             - name: Sign up, sign in and sign sign out
               href: tutorial-native-auth-ios-sign-up-sign-in-sign-out.md
+            - name: Additional scenarios
+              items:
+                - name: Sign up with user attributes
+                  href: tutorial-native-auth-ios-sign-up-with-email-one-time-passcode.md
     - name: Command-line interface (CLI) app
       items:
         - name: Node.js

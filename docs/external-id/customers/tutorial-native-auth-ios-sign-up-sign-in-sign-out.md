@@ -232,33 +232,33 @@ To sign out a user, use the reference to the `MSALNativeAuthUserAccountResult` t
 
 1. Update the `signInCompleted` handler to store the account result:
 
-```swift
-func onSignInCompleted(result: MSALNativeAuthUserAccountResult) {
-    resultTextView.text = "Signed in successfully"
-
-    accountResult = result
-}
-```
+    ```swift
+    func onSignInCompleted(result: MSALNativeAuthUserAccountResult) {
+        resultTextView.text = "Signed in successfully"
+    
+        accountResult = result
+    }
+    ```
 
 1. Add a Sign Out button and use the following code to sign out user:
 
-```swift
-@IBAction func signOutPressed(_: Any) {
-    guard let accountResult = accountResult else {
-        print("Not currently signed in")
-        return
+    ```swift
+    @IBAction func signOutPressed(_: Any) {
+        guard let accountResult = accountResult else {
+            print("Not currently signed in")
+            return
+        }
+    
+        accountResult.signOut()
+    
+        self.accountResult = nil
+    
+        resultTextView.text = "Signed out"
     }
-
-    accountResult.signOut()
-
-    self.accountResult = nil
-
-    resultTextView.text = "Signed out"
-}
-```
+    ```
 
 Well, you have done everything that is required to successfully sign out a user on your app. Build and run your application. If all good, you should be able to select sign out button to successfully sign out.
 
 ## Next Steps
 
-Tutorial: Add built-in attributes to your native iOS authentication
+[Tutorial: Add built-in attributes to your native iOS authentication](tutorial-native-auth-ios-sign-up-with-email-one-time-passcode.md)
