@@ -210,6 +210,10 @@ items:
               href: tutorial-native-auth-android-initialize.md
             - name: Sign up, sign in and sign out
               href: tutorial-native-auth-android-sign-up-sign-in-sign-out.md
+            - name: Configure identity providers
+              items:
+                - name: Google federation
+                  href: how-to-google-federation-customers.md
             - name: Additional scenarios
               items:
                 - name: Sign up user with username and user attributes
