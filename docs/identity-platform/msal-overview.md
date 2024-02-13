@@ -51,7 +51,7 @@ You can refer to the following documentation to learn more about the different M
 | [MSAL Node](/javascript/api/%40azure/msal-node/) | [MSAL Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node)|Web apps with Express, desktop apps with Electron, Cross-platform console apps |
 | [MSAL Python](/entra/msal/python/) | [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python)|Windows, macOS, Linux|
 | [MSAL React](/javascript/api/%40azure/msal-react/) | [MSAL React](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-react)| Single-page apps with React and React-based libraries (Next.js, Gatsby.js)|
-| [MSAL Go (Preview)](https://github.com/AzureAD/microsoft-authentication-library-for-go) | [MSAL Go (Preview)](https://github.com/AzureAD/microsoft-authentication-library-for-go)|Windows, macOS, Linux|
+| [MSAL Go (Preview)](/entra/msal/go/) | [MSAL Go (Preview)](https://github.com/AzureAD/microsoft-authentication-library-for-go)|Windows, macOS, Linux|
 
 ## Migrate apps that use ADAL to MSAL
 
