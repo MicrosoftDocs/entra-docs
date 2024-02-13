@@ -18,7 +18,10 @@ ms.collection: M365-identity-device-management
 
 # Group writeback in the Microsoft Entra admin center
 
-With the release of provisioning agent [1.1.1370.0](~/identity/hybrid/cloud-sync/reference-version-history.md#1113700), Cloud Sync now has the ability to provision groups directly to your on-premises Active Directory environment. With this capability, you can use identity governance features to govern access to Active Directory-based applications. For example, you can include a [group in an entitlement management access package](~/id-governance/entitlement-management-group-writeback.md).
+>[!NOTE]
+>This article discusses how to perform operations in the Microsoft Entra admin center with regard to group writeback.  For information on setup and configuration see[](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md)
+
+With the release of provisioning agent [1.1.1370.0](~/identity/hybrid/cloud-sync/reference-version-history.md#1113700), Cloud Sync now has the ability to provision groups directly to your on-premises Active Directory environment. With this capability, you can use identity governance features to govern access to Active Directory-based applications. For example, you can include a [group in an entitlement management access package](~/id-governance/entitlement-management-group-writeback.md). This is currently in public preview.  
 
 For more information, see [Group provisioning to Active Directory](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) and [Govern on-premises Active Directory-based apps (Kerberos) using Microsoft Entra ID Governance (preview)](~/identity/hybrid/cloud-sync/govern-on-premises-groups.md).
 
