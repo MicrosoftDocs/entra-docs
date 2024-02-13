@@ -5,7 +5,7 @@ author: shlipsey3
 ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: how-to
-ms.date: 11/01/2023
+ms.date: 02/13/2024
 ms.service: global-secure-access
 ms.reviewer: katabish
 
@@ -15,7 +15,7 @@ ms.reviewer: katabish
 
 # What are remote network health logs?
 
-Remote networks such as a branch office rely on customer premises equipment (CPE) to connect users in those locations to the online resources and services they need. Users expect that CPE to function so they can do their work.
+Remote networks, such as a branch office, rely on customer premises equipment (CPE) to connect users in those locations to the online resources and services they need. Users expect that CPE to function so they can do their work.
 
 To keep everyone connected, you need to ensure the health of the IPSec tunnel and the BGP route advertisement. This long-running tunnel and routing information are the keys to your remote network health.
 
@@ -23,7 +23,7 @@ To keep everyone connected, you need to ensure the health of the IPSec tunnel an
 
 To view the Remote network health logs, you need:
 
-- One of the following roles: Global Reader, Global Secure Access Administrator, Security Administrator or Global Administrator.
+- One of the following roles: Global Reader, Global Secure Access Administrator, or Security Administrator.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## How to access the logs
