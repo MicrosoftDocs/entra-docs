@@ -32,7 +32,7 @@ In this tutorial, you learn how to:
   - [Enable public client and native authentication flows](how-to-run-sample-android-app.md#enable-public-client-and-native-authentication-flows) 
   - [Grant API permissions](how-to-run-sample-android-app.md#grant-api-permissions) 
   - [Create a user flow](how-to-run-sample-android-app.md#create-a-user-flow) 
-  - [Associate the Android app with the user flow](how-to-run-sample-android-app.md#associate-the-android-app-with-the-user-flow) 
+  - [Associate the Android app with the user flow](how-to-run-sample-android-app.md#associate-the--app-with-the-user-flow) 
 - [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-auth-android-sign-up-sign-in-sign-out.md) 
  
 ## Sign up user with username and password 

@@ -218,6 +218,8 @@ items:
                   href: tutorial-native-auth-sign-user-with-username-password-user-attributes.md
                 - name: Register user with username and password
                   href: tutorial-native-auth-sign-up-user-with-username-password.md
+                - name: Sign in user with username and password
+                  href: tutorial-native-auth-sign-in-user-with-username-password.md
     - name: Command-line interface (CLI) app
       items:
         - name: Node.js
