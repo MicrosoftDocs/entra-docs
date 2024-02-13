@@ -1,12 +1,11 @@
 ---
 title: Customer data storage for Japan customers
 description: Learn about where Microsoft Entra ID stores customer-related data for its Japan customers.
-services: active-directory
 author: justinha
 manager: amycolannino
 ms.author: justinha
 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 08/08/2022

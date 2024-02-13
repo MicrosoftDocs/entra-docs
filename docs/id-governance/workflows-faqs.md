@@ -1,12 +1,10 @@
 ---
 title: 'Lifecycle workflows FAQs'
 description: Frequently asked questions about Lifecycle workflows.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
 ms.reviewer: krbain

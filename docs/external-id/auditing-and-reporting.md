@@ -3,8 +3,7 @@ title: Auditing and reporting a B2B collaboration user
 description: Guest user properties are configurable in Microsoft Entra B2B collaboration
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 12/18/2023
 

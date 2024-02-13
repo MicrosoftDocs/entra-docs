@@ -1,10 +1,10 @@
 ---
 title: Microsoft Entra application proxy and Tableau
 description: Learn how to use Microsoft Entra application proxy to provide remote access for your Tableau deployment.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
 ms.date: 09/14/2023

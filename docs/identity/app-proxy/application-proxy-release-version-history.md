@@ -1,10 +1,10 @@
 ---
 title: 'Microsoft Entra application proxy: Version release history'
 description: This article lists all releases of Microsoft Entra application proxy and describes new features and fixed issues.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
 ms.date: 09/14/2023
 ms.subservice: app-proxy

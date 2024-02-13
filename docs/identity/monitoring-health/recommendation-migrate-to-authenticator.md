@@ -1,12 +1,12 @@
 ---
 title: Microsoft Entra recommendation - Migrate to Microsoft authenticator
 description: Learn why you should migrate your users to the Microsoft authenticator app in Microsoft Entra ID.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 09/21/2023
 ms.author: sarahlipsey
 ms.reviewer: hafowler

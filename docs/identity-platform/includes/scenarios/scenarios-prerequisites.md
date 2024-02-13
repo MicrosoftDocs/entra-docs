@@ -5,7 +5,7 @@ description: include file
 author: OwenRichards1
 manager: CelesteDG
 
-ms.service: active-directory
+ms.service: identity-platform
 ms.topic: include
 
 ms.date: 09/25/2020

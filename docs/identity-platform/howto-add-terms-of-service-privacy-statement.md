@@ -7,8 +7,8 @@ ms.author: ryanwi
 ms.custom:
 ms.date: 12/15/2023
 ms.reviewer: sureshja
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer building a multi-tenant app, I want to configure the terms of service and privacy statement for my app, so that I can help gain user's trust and encourage them to consent to using my app.
 ---

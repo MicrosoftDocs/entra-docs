@@ -1,17 +1,15 @@
 ---
 title: Best practices to migrate applications and authentication to Microsoft Entra ID
 description: Learn best practices to migrate Active Directory Federation Service (AD FS) to cloud authentication in Microsoft Entra ID
-services: active-directory
 author: gargisinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 2/06/2023
 ms.author: gasinh
 ms.reviewer: martinco
-ms.collection: M365-identity-device-management
 ---
 
 

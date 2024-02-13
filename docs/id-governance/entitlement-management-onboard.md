@@ -1,18 +1,15 @@
 ---
 title: Onboard external users with entitlement management
 description: Learn how to simplify approving access to applications and resources for onboarding external users to your organization.
-services: active-directory
 author: owinfreyatl
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: conceptual
-ms.subservice: compliance
 ms.date: 01/04/2023
 ms.author: owinfrey
 ms.reviewer: mwahl
-ms.collection: M365-identity-device-management
 #Customer intent: As an administrator, I want to simplify onboarding external users to resources using access governance features.
 ---
 

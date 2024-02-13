@@ -6,7 +6,7 @@ manager: amycolannino
 featureFlags:
  - clicktale
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 02/01/2024
@@ -48,6 +48,16 @@ We redesigned the Microsoft Entra admin center's homepage to help you do the fol
 - Stay up to date with recent announcements, new features, and more!
 
 See the new experience here: https://entra.microsoft.com/
+
+---
+
+### Public Preview - Granular Certificate-Based Authentication Configuration in Conditional Access
+
+**Type:** New feature    
+**Service category:** Conditional Access    
+**Product capability:** Identity Security & Protection    
+
+With the authentication strength capability in Conditional Access, you can now create a custom authentication strength policy, with advanced certificate-based authentication (CBA) options to allow access based on certificate issuer or policy OIDs. For external users whose MFA is trusted from partners' Microsoft Entra ID tenant, access can also be restricted based on these properties. For more information, see: [Custom Conditional Access authentication strengths](../identity/authentication/concept-authentication-strength-advanced-options.md).
 
 ---
 

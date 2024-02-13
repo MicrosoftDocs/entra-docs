@@ -1,7 +1,7 @@
 ---
 title: The Global Secure Access Client for Android (preview)
 description: Install the Global Secure Access Android Client to connect to Microsoft's Security Edge Solutions, Microsoft Entra Internet Access and Private Access.
-ms.service: network-access
+ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 01/24/2024
 ms.author: kenwith

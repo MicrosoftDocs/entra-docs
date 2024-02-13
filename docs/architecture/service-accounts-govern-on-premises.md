@@ -1,17 +1,14 @@
 ---
 title: Govern on-premises service accounts
 description: Learn to create and run an account lifecycle process for on-premises service accounts
-services: active-directory
 author: jricketts
 manager: martinco
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/10/2023
 ms.author: jricketts
 ms.reviewer: ajburnle
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Govern on-premises service accounts

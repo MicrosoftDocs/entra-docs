@@ -5,8 +5,8 @@ description: Include file that explains the common steps you need to take for al
 author: cilwerner
 manager: CelesteDG
 
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 
 ms.topic: include
 ms.date: 09/08/2021
