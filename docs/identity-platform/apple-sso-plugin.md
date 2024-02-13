@@ -36,10 +36,10 @@ The Microsoft Enterprise SSO plug-in for Apple devices offers the following bene
 
 macOS Platform Single Sign-on (PSSO) is a new feature powered by the Microsoft Enterprise SSO plug-in which enables users to sign in to Mac devices using their Microsoft Entra ID credentials. PSSO;
 
-- Allows users to go passwordless by using Touch ID.
 - Uses phish resistant credentials, based on Windows Hello for Business technology.
 - Saves customer organizations money by removing the need for security keys.
-- Advances Zero Trust objectives using integration with Secure Enclave, and smart card authentication methods.
+- Advances Zero Trust objectives using integration with secure enclave, and smart card authentication methods.
+- Allows users to go passwordless by using Touch ID (optional), or by using secure enclave, smart card methods.
 
 Refer to the [macOS Platform Single Sign On (PSSO) overview](../identity/devices/macos-psso.md) documentation for further details.
 
