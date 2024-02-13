@@ -37,10 +37,8 @@ The flowchart contains the steps for debugging common issues. The table after th
 |8 | See more troubleshooting help | If issues persist, find more troubleshooting articles in the [Application proxy troubleshooting documentation](application-proxy-troubleshoot.md). |
 
 ## Next steps
-- [Application proxy connectors](application-proxy-connectors.md)
+
+- [Understand application proxy connectors](application-proxy-connectors.md)
 - [Publish applications on separate networks and locations using connector groups](application-proxy-connector-groups.md)
 - [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md)
 - [Troubleshoot application proxy and connector errors](application-proxy-troubleshoot.md)
-- [How to silently install the Microsoft Entra application proxy connector](application-proxy-register-connector-powershell.md)
-- [Remote access to on-premises applications through application proxy](overview-what-is-app-proxy.md)
-- [Install and register a connector](application-proxy-add-on-premises-application.md)
