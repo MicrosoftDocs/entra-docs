@@ -9,7 +9,7 @@ ms.subservice: ciam
 ms.topic: reference
 ms.date: 02/29/2024
 
-#Customer intent: As a dev, devops, I want to learn the use, and the API options for native authentication in Microsoft Entra ID for customers.
+#Customer intent: As a dev, devops, I want to learn how to integrate apps with native authentication's APIs that Microsoft Entra ID for customers supports.
 ---
 
 # Overview of native authentication API reference

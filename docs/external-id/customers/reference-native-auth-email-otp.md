@@ -9,7 +9,7 @@ ms.subservice: ciam
 ms.topic: reference
 ms.date: 02/29/2024
 
-#Customer intent: As a dev, devops, I want to know the use Native authentication's email OTP API reference in Microsoft Entra ID for customers
+#Customer intent: As a dev, devops, I want to learn how to integrate customer apps with Native authentication's email OTP API that in Microsoft Entra ID for customers supports.
 ---
 
 # Native authentication with email OTP API reference

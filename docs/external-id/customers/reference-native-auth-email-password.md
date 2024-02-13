@@ -9,7 +9,7 @@ ms.subservice: ciam
 ms.topic: reference
 ms.date: 02/29/2024
 
-#Customer intent: As a dev, devops, I want to know how to use the Native authentication's email and password API reference in Microsoft Entra ID for customers
+#Customer intent: As a dev, devops, I want to learn how to integrate customer apps with Native authentication's email and password API that Microsoft Entra ID for customers supports.
 ---
 
 # Native authentication with email and password API reference
