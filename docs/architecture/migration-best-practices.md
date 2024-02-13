@@ -17,7 +17,7 @@ ms.reviewer: martinco
 
 You've heard that [Azure Active Directory is now Microsoft Entra ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-id) and you're thinking it's a good time to migrate your Active Directory Federation Service (AD FS) [to cloud authentication in Microsoft Entra ID](/azure/active-directory/hybrid/connect/migrate-from-federation-to-cloud-authentication). As you review your options, see our extensive [resources to migrate apps to Microsoft Entra ID](/azure/active-directory/manage-apps/migration-resources), and best practices.
 
-Until you're able to migrate AD FS to Microsoft Entra ID, protect your on-premises resources with [Microsoft Defender for Identity](/defender-for-identity/what-is). You can find and correct vulnerabilities proactively. Use assessments, analytics and data intelligence, user investigation priority scoring, and automatic response to compromised identities. Migration to the cloud means your organization benefits from modern authentication, such as the Passwordless feature.
+Until you're able to migrate AD FS to Microsoft Entra ID, protect your on-premises resources with [Microsoft Defender for Identity](/defender-for-identity/what-is). You can find and correct vulnerabilities proactively. Use assessments, analytics and data intelligence, user investigation priority scoring, and automatic response to compromised identities. Migration to the cloud means your organization can benefit from modern authentication, such as passwordless methods to autheticate.
 
 Here are reasons that you might choose not to migrate AD FS:
 
