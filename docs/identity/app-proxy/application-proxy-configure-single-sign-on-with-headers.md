@@ -22,8 +22,7 @@ Microsoft Entra application proxy natively supports single sign-on (SSO) access 
 * **Wide list of attributes and transformations available** - All header values available are based on standard claims that are issued by Microsoft Entra ID. All attributes and transformations available for [configuring claims for Security Assertion Markup Language (SAML) or OpenID Connect (OIDC) applications](~/identity-platform/saml-claims-customization.md#attributes) are also available as header values. 
 
 ## Prerequisites
-Before you get started with single sign-on for header-based authentication apps, check settings and configurations:
-- Enable application proxy and install a connector that has direct network access to your applications. To learn more, see [Add an on-premises application for remote access through application proxy](application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).
+Enable application proxy and install a connector that has direct network access to your applications. To learn more, see [Add an on-premises application for remote access through application proxy](application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).
 
 ## Supported capabilities
 
