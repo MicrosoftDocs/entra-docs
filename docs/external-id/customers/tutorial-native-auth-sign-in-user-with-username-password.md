@@ -39,7 +39,7 @@ In this tutorial, you learn how to:
 
 The following wire frame shows a high-level view of the sign in user with username and password flow:
 
-<img src="../../media/signin-email-password.png"> 
+:::image type="content" source="media/native-auth/android/signin-email-password.png" alt-text="A mock-up image illustrates sign in a user with a username and password.":::
 
 To sign in the sign user using username and password, use the following code snippet:
 
