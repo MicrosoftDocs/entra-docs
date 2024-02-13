@@ -37,6 +37,9 @@ Follow these steps to use the **Run user flow** feature to test your user flow.
 
 1. Select your user flow from the list. At least one application with a redirect URI must be associated with this user flow (see the [Prerequisites](#prerequisites)).
 
+   > [!NOTE]
+   > If the application you want to test hasn't been added to the user flow yet, you can add it now. After adding the application, there may be a short delay before it becomes available for testing with the **Run user flow** feature.
+
 1. Select the **Run user flow** button.
 
    :::image type="content" source="media/how-to-test-user-flows/run-user-flow-button.png" alt-text="Screenshot showing the Run user flow button.":::
