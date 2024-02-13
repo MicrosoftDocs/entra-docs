@@ -3,6 +3,8 @@ author: OwenRichards1
 ms.author: owenrichards
 ms.date: 10/22/2020
 ms.service: identity-platform
+manager: CelesteDG 
+ms.topic: include
 
 ms.topic: include
 # Purpose:
