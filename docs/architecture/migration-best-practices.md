@@ -17,7 +17,7 @@ ms.reviewer: martinco
 
 You've heard that [Azure Active Directory is now Microsoft Entra ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-id) and you're thinking it's a good time to migrate your Active Directory Federation Service (AD FS) [to cloud authentication in Microsoft Entra ID](/azure/active-directory/hybrid/connect/migrate-from-federation-to-cloud-authentication). As you review your options, see our extensive [resources to migrate apps to Microsoft Entra ID](/azure/active-directory/manage-apps/migration-resources), and best practices.
 
-Until you're able to migrate AD FS to Microsoft Entra ID, protect your on-premises resources with [Microsoft Defender for Identity](/defender-for-identity/what-is). You can find and correct vulnerabilities proactively. Use assessments, analytics and data intelligence, user investigation priority scoring, and automatic response to compromised identities. Migration to the cloud means your organization can benefit from modern authentication, such as passwordless methods to autheticate.
+Until you're able to migrate AD FS to Microsoft Entra ID, protect your on-premises resources with [Microsoft Defender for Identity](/defender-for-identity/what-is). You can find and correct vulnerabilities proactively. Use assessments, analytics and data intelligence, user investigation priority scoring, and automatic response to compromised identities. Migration to the cloud means your organization can benefit from modern authentication, such as passwordless methods to authenticate.
 
 Here are reasons that you might choose not to migrate AD FS:
 
@@ -39,7 +39,7 @@ Learn more in the following video, Effortless Application Migration Using Micros
 Currently in preview, [AD FS application migration to move AD FS apps to Microsoft Entra ID](~/identity/enterprise-apps/migrate-ad-fs-application-howto.md) is a guide for IT administrators to migrate AD FS relying party applications from AD FS to Microsoft Entra ID. The AD FS application migration wizard gives you a unified experience to discover, evaluate, and configure new Microsoft Entra ID applications. It has one-click configuration for basic SAML URLs, claims mapping, and user assignments to integrate an application with Microsoft Entra ID. There's end-to-end support to migrate on-premises AD FS applications, with these features:
 
 - To help identify application usage and impact, evaluate AD FS relying party application sign-in activities
-- To help determine migration blockers and required actions to migrate applications to Microsoft Entra ID, analyze AD FS to Microsoft Entra ID migration feasibility.
+- To help determine migration blockers and required actions to migrate applications to Microsoft Entra ID, analyze AD FS to Microsoft Entra ID migration feasibility
 - To automatically configure a new Microsoft Entra ID application for an AD FS application, configure new Microsoft Entra ID applications with a one-click application migration process
 
 ### Phase 1: Discover and scope apps
