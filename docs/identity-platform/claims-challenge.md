@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.date: 01/19/2023
-ms.reviewer: kkrishna, kylemar
+ms.reviewer: kylemar
 ms.service: identity-platform
 
 ms.topic: reference
