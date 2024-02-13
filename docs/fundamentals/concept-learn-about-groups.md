@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.date: 01/05/2024
 ms.author: sarahlipsey
 ms.reviewer: krbain
-ms.custom: "it-pro, seodec18"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ---
 # Learn about groups and access rights in Microsoft Entra ID
