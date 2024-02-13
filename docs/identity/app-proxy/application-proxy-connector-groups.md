@@ -55,13 +55,13 @@ Large organizations use multiple datacenters. You want to keep as much traffic w
 
 ### Applications installed on isolated networks
 
-Applications can be hosted in networks that are not part of the main corporate network. You can use connector groups to install dedicated connectors on isolated networks to also isolate applications to the network. The scenario is common for third-party vendors that maintain a specific application.
+Applications can be hosted in networks that aren't part of the main corporate network. You can use connector groups to install dedicated connectors on isolated networks to also isolate applications to the network. The scenario is common for vendors that maintain a specific application.
 
 ### Applications installed on Infrastructure as a Service (IaaS)
 
-For applications installed on Infrastructure as a Service (IaaS) for cloud access, connector groups provide a common service to secure access to all apps. Connector groups don't create morel dependencies on your corporate network, or fragment the app experience. Connectors are installed on every cloud datacenter and serve only applications that reside in that network. You install several connectors to achieve high availability.
+For applications installed on Infrastructure as a Service (IaaS) for cloud access, connector groups provide a common service to secure access to all apps. Connector groups don't create more dependencies on your corporate network, or fragment the app experience. Connectors are installed on every cloud datacenter and serve only applications that reside in that network. You install several connectors to achieve high availability.
 
-Take as an example an organization that has several virtual machines connected to their own IaaS hosted virtual network. To allow employees to use these applications, these private networks are connected to the corporate network using site-to-site Virtual Private Network (VPN). Site-to-site VPN provides a good experience for employees that are located on-premises. But, it may not be ideal for remote employees, because it requires more on-premises infrastructure to route access, as illustrated in the diagram:
+Take as an example an organization that has several virtual machines connected to their own IaaS hosted virtual network. To allow employees to use these applications, these private networks are connected to the corporate network using site-to-site Virtual Private Network (VPN). Site-to-site VPN provides a good experience for employees that are located on-premises. But, it is not ideal for remote employees, because it requires more on-premises infrastructure to route access, as illustrated in the diagram:
 
 ![Diagram that illustrates the Microsoft Entra IaaS network](./media/application-proxy-connector-groups/application-proxy-iaas-network.png)
   
@@ -71,13 +71,13 @@ With Microsoft Entra application proxy connector groups, you enable a common ser
 
 ### Multi-forest – different connector groups for each forest
 
-Single-sign-on capabilities are commonly achieved using Kerberos Constrained Delegation (KCD). The connector’s machines are joined to a domain that can delegate the users to the application. KCD supports cross-forest capabilities. But for companies who have distinct multi-forest environments with no trust between them, a single connector cannot be used for all forests. Instead, specific connectors are deployed per forest, and set to serve applications that are published to serve only the users of that specific forest. Each connector group represents a different forest. While the tenant and most of the experience is unified for all forests, users can be assigned to their forest applications using Microsoft Entra groups.
+Single-sign-on is commonly achieved using Kerberos Constrained Delegation (KCD). The connector’s machines are joined to a domain that can delegate the users to the application. KCD supports cross-forest capabilities. But for companies who have distinct multi-forest environments with no trust between them, a single connector can't be used for all forests. Instead, specific connectors are deployed per forest, and set to serve applications that are published to serve only the users of that specific forest. Each connector group represents a different forest. While the tenant and most of the experience is unified for all forests, users can be assigned to their forest applications using Microsoft Entra groups.
 
 ### Disaster Recovery sites
 
 There are two approaches to consider for disaster recovery (DR) sites:
 
-* Your DR site is built in active-active mode where it is exactly like the main site. The site also has the same networking and Active Directory (AD) settings. You can create the connectors on the DR site in the same connector group as the main site. Microsoft Entra ID detects failovers for you.
+* Your DR site is built in active-active mode where it's exactly like the main site. The site also has the same networking and Active Directory (AD) settings. You can create the connectors on the DR site in the same connector group as the main site. Microsoft Entra ID detects failovers for you.
 * Your DR site is separate from the main site. You create a different connector group in the DR site. You either have backup applications, or manually divert existing application to the DR connector group as needed.
 
 ### Serve multiple companies from a single tenant
