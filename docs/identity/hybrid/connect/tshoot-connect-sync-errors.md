@@ -11,9 +11,7 @@ ms.topic: troubleshooting
 ms.date: 01/16/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
-ms.custom: contperf-fy21q3-portal, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
-
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Understanding errors during Microsoft Entra synchronization
 

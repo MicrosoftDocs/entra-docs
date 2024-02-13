@@ -10,7 +10,7 @@ ms.topic: quickstart
 ms.date: 11/15/2023
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro, seo-update-azuread-jan, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Restore a deleted Microsoft 365 group in Microsoft Entra ID
 

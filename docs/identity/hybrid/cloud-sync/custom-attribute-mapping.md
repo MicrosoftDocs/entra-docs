@@ -5,12 +5,11 @@ description: This topic provides information on custom attribute mapping in clou
 author: billmath
 manager: amycolannino
 ms.service: entra-id
-ms.custom: ignite-2022, has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
 ms.date: 11/06/2023
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-
 ---
 
 # Cloud sync directory extensions and custom attribute mapping
