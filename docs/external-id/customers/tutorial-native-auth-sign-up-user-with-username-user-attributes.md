@@ -125,5 +125,5 @@ To handle `isInvalidAttributes()` and `AttributesRequired`, use the following co
  
 ## Next Steps 
  
-Tutorial: Sign up user with username, password and user attributes
+[Tutorial: Sign up user with username, password and user attributes](tutorial-native-auth-sign-user-with-username-password-user-attributes.md)
 

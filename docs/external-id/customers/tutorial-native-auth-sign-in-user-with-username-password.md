@@ -98,4 +98,4 @@ if (actionResult is SignInResult.Complete) -> {
 
 ## Next Steps
 
-Tutorial: Sign in user after sign up
+[Tutorial: Sign in user after sign up](tutorial-native-auth-sign-in-after-sign-up.md)
