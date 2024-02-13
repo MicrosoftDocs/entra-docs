@@ -84,7 +84,7 @@ AADProvisioningLogs
 | extend ServicePrincipal = parse_json(ServicePrincipal)
 | where tostring(SourceIdentity.identityType) == "Group"
 | project tostring(ServicePrincipal.Id), tostring(ServicePrincipal.Name), ModifiedProperties, JobId, Id, CycleId, ChangeId, Action, SourceIdentity.identityType, SourceIdentity.details, TargetIdentity.identityType, TargetIdentity.details, ProvisioningSteps
-|take 100
+| take 100
 ```
 
 Retrieve groups with skipped members due to problems resolving references.
@@ -98,7 +98,7 @@ AADProvisioningLogs
 | where ProvisioningSteps matches regex "UnableToResolveReferenceAttributeValue"
 | parse tostring(ProvisioningSteps.[2].description) with "We were unable to assign " userObjectId " as the members of " groupDisplayName "." *
 | project groupDisplayName, userObjectId,  JobId
-| take 100 // (limit number of results shown for testing purposes)
+| take 100
 ```
 
 Summarize actions by application.
@@ -110,7 +110,7 @@ AADProvisioningLogs
 | extend eventName = tostring(ProvisioningSteps.[-1].name)
 | summarize count() by eventName, JobId
 | order by JobId asc
-//| take 5
+| take 5
 ```
 
 Identify spikes in specific operations. 
