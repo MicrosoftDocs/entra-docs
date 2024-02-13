@@ -213,7 +213,4 @@ If a back-end API doesn't require a scope, which isn't recommended, you can use 
 
 ## Next steps
 
-If you'd like to dive deeper into JavaScript single-page application development on the Microsoft identity platform, see our multi-part scenario series:
-
-> [!div class="nextstepaction"]
-> [Scenario: Single-page application](scenario-spa-overview.md)
+ - Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).
