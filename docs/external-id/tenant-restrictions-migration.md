@@ -34,7 +34,8 @@ Ensure the following prerequisites are met.
 
 This section has the least-privileged roles required for the deployment. Use the Security Administrator role, or a custom role with at least the following permissions. 
 
-Microsoft.directory/crossTenantAccessPolicy/ 
+### Microsoft.directory/crossTenantAccessPolicy/ 
+
 
 * Standard/read 
 * Partners/standard/read 
