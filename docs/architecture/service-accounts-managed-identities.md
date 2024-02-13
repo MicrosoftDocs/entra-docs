@@ -95,17 +95,14 @@ You can filter these requests. For more information, see [GET servicePrincipal](
 To assess managed identity security:
 
 * Examine privileges to ensure the least-privileged model is selected
-  * Use the following PowerShell cmdlet to get the permissions assigned to your managed identities:
+  * Use the following Microsoft Graph cmdlet to get the permissions assigned to your managed identities:
 
-   `Get-AzureADServicePrincipal | % { Get-AzureADServiceAppRoleAssignment -ObjectId $_ }`
+   `Get-MgServicePrincipalAppRoleAssignment -ServicePrincipalId <String>`
 
 * Ensure the managed identity is not part of a privileged group, such as an administrators group. 
-  * To enumerate the members of your highly privileged groups with PowerShell:
+  * To enumerate the members of your highly privileged groups with Microsoft Graph:
 
-   `Get-AzureADGroupMember -ObjectId <String> [-All <Boolean>] [-Top <Int32>] [<CommonParameters>]`
-
-* Confirm what resources the managed identity accesses
-  * See, [List Azure role assignments using Azure PowerShell](/azure/role-based-access-control/role-assignments-list-powershell).
+   `Get-MgGroupMember -GroupId <String> [-All <Boolean>] [-Top <Int32>] [<CommonParameters>]`
 
 ## Move to managed identities
 
