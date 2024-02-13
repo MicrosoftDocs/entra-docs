@@ -5,7 +5,7 @@ author: shlipsey3
 ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: how-to
-ms.date: 02/13/2024
+ms.date: 11/02/2023
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
@@ -85,7 +85,7 @@ To create a new app, you provide a name, select a connector group, and then add 
 
 The **Add application segment** process is where you define the FQDNs and IP addresses that you want to include in the traffic for the Global Secure Access app. You can add sites when you create the app and return to add more or edit them later.
 
-You can add fully qualified domain names (FQDN), IP addresses, and IP address ranges. Within each application segment, you can add multiple ports and port ranges.
+You can add fully qualified domain names (FQDN), IP addresses, and IP address ranges.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Global Secure Access (preview)** > **Applications** > **Enterprise applications**.
@@ -105,7 +105,6 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
     - **Fully qualified domain name** (including wildcard FQDNs):
         - Domain name that specifies the exact location of a computer or a host in the Domain Name System (DNS).
         - Provide the ports that you want to include.
-        - NetBIOS is not supported. For example, use `contoso.local/app1` instead of `contoso/app1.`
     - **IP address range (CIDR)**:
         - Classless Inter-Domain Routing is a way of representing a range of IP addresses in which an IP address is followed by a suffix indicating the number of network bits in the subnet mask.
         - For example 192.0.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.
@@ -114,15 +113,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
         - Range of IP addresses from start IP (such as 192.0.2.1) to end IP (such as 192.0.2.10).
         - Provide the IP address start, end, and ports.
 
-1. Enter the ports and select the **Apply** button.
-    - Separate multiple ports with a comma.
-    - Specify port ranges with a hyphen.
-    - Spaces between values are removed when you apply the changes.
-    - For example, `400-500, 80, 443`.
-
-    ![Screenshot of the create app segment panel with multiple ports added.](media/how-to-configure-per-app-access/app-segment-multiple-ports.png)
-
-    The following table provides the most commonly used ports and their associated networking protocols:
+1. Enter the port. The following table provides the most commonly used ports and their associated networking protocols:
 
     | Port | Protocol |
     | --- | --- |
