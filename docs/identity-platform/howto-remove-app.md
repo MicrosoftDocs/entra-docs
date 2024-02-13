@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
 ms.date: 06/21/2023
-ms.reviewer: marsma, aragra, lenalepa, sureshja
+ms.reviewer: aragra, lenalepa, sureshja
 ms.service: identity-platform
 
 ms.topic: how-to
