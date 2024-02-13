@@ -5,6 +5,7 @@ ms.subservice: customers
 ms.topic: include
 ms.date: 07/12/2023
 ms.author: kengaderdus
+ms.manager: mwongerapk
 ---
 Once you've added app roles in your application, administrator can assign users and groups to the roles. Assignment of users and groups to roles can be done through the admin center, or programmatically using [Microsoft Graph](/graph/api/user-post-approleassignments). When the users assigned to the various app roles sign in to the application, their tokens have their assigned roles in the `roles` claim.
 

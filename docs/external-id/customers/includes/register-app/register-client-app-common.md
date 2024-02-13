@@ -5,6 +5,7 @@ ms.subservice: customers
 ms.topic: include
 ms.date: 03/30/2023
 ms.author: kengaderdus
+ms.manager: mwongerapk
 ---
 <!--Doesn't apply to daemon app-->
 
