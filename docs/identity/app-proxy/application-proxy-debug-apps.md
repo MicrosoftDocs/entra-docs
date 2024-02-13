@@ -17,7 +17,7 @@ This article includes steps to troubleshoot issues with Microsoft Entra applicat
 
 ## Before you begin
 
-The first thing to check is the connector. Follow the troubleshooting flow in [Debug application proxy connector issues](application-proxy-debug-connectors.md) to confirm application proxy connectors are configured correctly. If you're still having issues, return to this article to troubleshoot the application.  
+The first thing to check is the connector. To learn how to debug an application proxy connector, see [Debug application proxy connector issues](application-proxy-debug-connectors.md). If you're still having issues, return to this article to troubleshoot the application.  
 
 ## Flowchart for application issues
 
