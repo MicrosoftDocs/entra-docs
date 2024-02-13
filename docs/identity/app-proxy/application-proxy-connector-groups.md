@@ -61,7 +61,7 @@ Applications can be hosted in networks that aren't part of the main corporate ne
 
 For applications installed on Infrastructure as a Service (IaaS) for cloud access, connector groups provide a common service to secure access to all apps. Connector groups don't create more dependencies on your corporate network, or fragment the app experience. Connectors are installed on every cloud datacenter and serve only applications that reside in that network. You install several connectors to achieve high availability.
 
-Take as an example an organization that has several virtual machines connected to their own IaaS hosted virtual network. To allow employees to use these applications, these private networks are connected to the corporate network using site-to-site Virtual Private Network (VPN). Site-to-site VPN provides a good experience for employees that are located on-premises. But, it is not ideal for remote employees, because it requires more on-premises infrastructure to route access, as illustrated in the diagram:
+Take as an example an organization that has several virtual machines connected to their own IaaS hosted virtual network. To allow employees to use these applications, these private networks are connected to the corporate network using site-to-site Virtual Private Network (VPN). Site-to-site VPN provides a good experience for employees that are located on-premises. But, it isn't ideal for remote employees, because it requires more on-premises infrastructure to route access, as illustrated in the diagram:
 
 ![Diagram that illustrates the Microsoft Entra IaaS network](./media/application-proxy-connector-groups/application-proxy-iaas-network.png)
   
