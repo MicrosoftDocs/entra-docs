@@ -4,6 +4,7 @@ description: Frequently asked questions about Lifecycle workflows.
 author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 05/31/2023
 ms.author: owinfrey

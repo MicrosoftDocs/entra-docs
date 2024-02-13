@@ -5,6 +5,7 @@ author: OWinfreyATL
 ms.author: owinfrey
 manager: amycolannino
 ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 05/31/2023
 ms.custom: template-how-to

@@ -4,6 +4,7 @@ description: Planning guide for a successful access reviews deployment.
 author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
+ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 06/28/2023
 ms.author: owinfrey
