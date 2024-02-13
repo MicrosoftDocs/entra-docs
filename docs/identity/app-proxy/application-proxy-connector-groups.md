@@ -17,7 +17,7 @@ Use application proxy connector groups to assign specific connectors to specific
 
 Each application proxy connector is assigned to a connector group. All the connectors that belong to the same connector group act as a separate unit for high-availability and load balancing. All connectors belong to a connector group. If you don't create groups, then all your connectors are in a default group. You create new connector groups and assign connectors in the Microsoft Entra admin center.
 
-Connector groups are useful if your applications are hosted in different locations. You create connector groups based on location. Applications are served by connectors that are physically close to them.
+Connector groups are useful if your applications are hosted in different locations. You create connector groups based on location. Applications use connectors that are physically close to them.
 
 > [!TIP]
 > If you have a large application proxy deployment, don't assign any applications to the default connector group. That way, new connectors don't receive any live traffic until you assign them to an active connector group. This configuration also enables you to put connectors in an idle mode by moving them back to the default group, so that you can perform maintenance without impacting your users.
@@ -71,18 +71,18 @@ With Microsoft Entra application proxy connector groups, you enable a common ser
 
 ### Multi-forest – different connector groups for each forest
 
-Single-sign-on (SSO) capabilities are commonly achieved using Kerberos Constrained Delegation (KCD). The connector’s machines are joined to a domain that can delegate the users to the application. KCD supports cross-forest capabilities. But for companies who have distinct multi-forest environments with no trust between them, a single connector cannot be used for all forests. Instead, specific connectors are deployed per forest, and set to serve applications that are published to serve only the users of that specific forest. Each connector group represents a different forest. While the tenant and most of the experience is unified for all forests, users can be assigned to their forest applications using Microsoft Entra groups.
+Single-sign-on capabilities are commonly achieved using Kerberos Constrained Delegation (KCD). The connector’s machines are joined to a domain that can delegate the users to the application. KCD supports cross-forest capabilities. But for companies who have distinct multi-forest environments with no trust between them, a single connector cannot be used for all forests. Instead, specific connectors are deployed per forest, and set to serve applications that are published to serve only the users of that specific forest. Each connector group represents a different forest. While the tenant and most of the experience is unified for all forests, users can be assigned to their forest applications using Microsoft Entra groups.
 
 ### Disaster Recovery sites
 
 There are two approaches to consider for disaster recovery (DR) sites:
 
-* If your DR site is built in active-active mode where it is exactly like the main site and has the same networking and Active Directory (AD) settings, you can create the connectors on the DR site in the same connector group as the main site. This enables Microsoft Entra ID to detect failovers for you.
-* If your DR site is separate from the main site, you can create a different connector group in the DR site, and either have backup applications, or manually divert the existing application to the DR connector group as needed.
+* Your DR site is built in active-active mode where it is exactly like the main site. The site also has the same networking and Active Directory (AD) settings. You can create the connectors on the DR site in the same connector group as the main site. Microsoft Entra ID detects failovers for you.
+* Your DR site is separate from the main site. You create a different connector group in the DR site. You either have backup applications, or manually divert existing application to the DR connector group as needed.
 
 ### Serve multiple companies from a single tenant
 
-You can implement a model in which a single service provider deploys and maintains Microsoft Entra related services for multiple companies. Connector groups help you segregate the connectors and applications into different groups. One way, which is suitable for small companies, is to have a single Microsoft Entra tenant while the different companies have their own domain name and networks. This is also true for merger scenarios and situations where a single IT division serves several companies for regulatory or business reasons.
+You can implement a model in which a single service provider deploys and maintains Microsoft Entra related services for multiple companies. Connector groups help you segregate the connectors and applications into different groups. One way, which is suitable for small companies, is to have a single Microsoft Entra tenant while the different companies have their own domain name and networks. The same approach works for merger scenarios and situations where a single division serves several companies for regulatory or business reasons.
 
 ## Sample configurations
 
@@ -106,11 +106,11 @@ The configuration is an evolution of the default, a specific app runs in an isol
 
 The recommended configuration for large and complex organizations is to have the default connector group as a group that doesn’t serve any applications and is used for idle or newly installed connectors. All applications are served using customized connector groups.
 
-In the example, the company has two datacenters, A and B, with two connectors that serve each site. Each site has different applications that run on it.
+In the example, the company has two datacenters, A, and B, with two connectors that serve each site. Each site has different applications that run on it.
 
 ![Example of company with 2 datacenters and 2 connectors](./media/application-proxy-connector-groups/application-proxy-sample-config-3.png)
 
 ## Next steps
 
-[Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md)
-[Enable single-sign on](~/identity/enterprise-apps/what-is-single-sign-on.md)
+- [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md)
+- [Enable single-sign on](~/identity/enterprise-apps/what-is-single-sign-on.md)
