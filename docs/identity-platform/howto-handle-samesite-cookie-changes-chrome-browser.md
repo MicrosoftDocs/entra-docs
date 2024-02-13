@@ -50,7 +50,7 @@ The following table presents the pull requests that worked around the SameSite c
 | [ASP.NET MVC web app sample](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect)                                    | [Same site cookie fix #35](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/pull/35)               |
 | [active-directory-dotnet-admin-restricted-scopes-v2](https://github.com/azure-samples/active-directory-dotnet-admin-restricted-scopes-v2) | [Same site cookie fix #28](https://github.com/Azure-Samples/active-directory-dotnet-admin-restricted-scopes-v2/pull/28)    |
 
-for details on how to handle SameSite cookies in ASP.NET and ASP.NET Core, see also:
+For details on how to handle SameSite cookies in ASP.NET and ASP.NET Core, see also:
 
 - [Work with SameSite cookies in ASP.NET Core](/aspnet/core/security/samesite) .
 - [ASP.NET Blog on SameSite issue](https://devblogs.microsoft.com/aspnet/upcoming-samesite-cookie-changes-in-asp-net-and-asp-net-core/)
