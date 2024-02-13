@@ -3,6 +3,7 @@ author: cilwerner
 ms.author: cwerner
 ms.date: 11/25/2020
 ms.service: identity-platform
+manager: CelesteDG 
 
 ms.topic: include
 # Purpose:
