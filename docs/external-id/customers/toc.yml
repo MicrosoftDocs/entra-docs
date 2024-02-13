@@ -191,17 +191,23 @@ items:
               href: tutorial-desktop-wpf-dotnet-sign-in-build-app.md
               displayName: Windows Presentation Form
     - name: Mobile
-      items: 
-      - name: .NET MAUI
-        items:
-        - name: Prepare tenant
-          href: tutorial-mobile-app-maui-sign-in-prepare-tenant.md
-        - name: Create .NET MAUI app
-          href: tutorial-mobile-app-maui-sign-in-prepare-app.md
-        - name: Sign in and sign out
-          href: tutorial-mobile-app-maui-sign-in-sign-out.md
-        - name: Use role-based access control
-          href: tutorial-mobile-maui-role-based-access-control.md
+      items:
+        - name: Browser delegated
+          items:
+            - name: .NET MAUI
+              items:
+              - name: Prepare tenant
+                href: tutorial-mobile-app-maui-sign-in-prepare-tenant.md
+              - name: Create .NET MAUI app
+                href: tutorial-mobile-app-maui-sign-in-prepare-app.md
+              - name: Sign in and sign out
+                href: tutorial-mobile-app-maui-sign-in-sign-out.md
+              - name: Use role-based access control
+                href: tutorial-mobile-maui-role-based-access-control.md
+        - name: Native auth
+          items:
+            - name: Prepare iOS app
+              href: tutorial-native-auth-prepare-ios-app.md
     - name: Command-line interface (CLI) app
       items:
         - name: Node.js

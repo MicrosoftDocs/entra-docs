@@ -10,7 +10,7 @@ ms.service: active-directory
 
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 02/12/2024
+ms.date: 02/13/2024
 ms.custom: developer, devx-track-dotnet
 #Customer intent: As a dev, devops, I want to learn about how to configure native auth iOS sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID for customers.
 ---
@@ -147,7 +147,7 @@ Although many applications can be associated with your user flow, a single appli
 1. Find the placeholder:
 
    1. `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
-   1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use contoso. If you don't have your tenant subdomain, learn how to [read your tenant details](https://learn.microsoft.com/azure/active-directory/external-identities/customers/how-to-create-customer-tenant-portal#get-the-customer-tenant-details).
+   1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use contoso. If you don't have your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 
 > [!NOTE]
 > Remember to select a scheme to build and destination where you run the built products. Each scheme contains a list of real or simulated devices that represent the available destinations.
@@ -187,5 +187,5 @@ After linking your application with the new user flow or modifying the existing 
 
 ## Next steps
 
-- Tutorial: Prepare your iOS app for native authentication.
+- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-auth-prepare-ios-app.md).
 
