@@ -45,23 +45,36 @@ If you matched your objects with a soft-match, then the **sourceAnchor** is adde
 > Microsoft strongly recommends against synchronizing on-premises accounts with pre-existing administrative accounts in Microsoft Entra ID.
 
 ### Hard-match vs Soft-match
-For a new installation of Connect, there is no practical difference between a soft- and a hard-match. The difference is in a disaster recovery situation. If you have lost your server with Microsoft Entra Connect, you can reinstall a new instance without losing any data. An object with a sourceAnchor is sent to Connect during initial install. The match can then be evaluated by the client (Microsoft Entra Connect), which is a lot faster than doing the same in Microsoft Entra ID. A hard match is evaluated both by Connect and by Microsoft Entra ID. A soft match is only evaluated by Microsoft Entra ID.
+By default, the SourceAnchor value of "abcdefghijklmnopqrstuv==" is calculated by Microsoft Entra Connect by using MsDs-ConsistencyGUID attribute (or ObjectGUID depending on the configuration) from on-premises Active Directory. This attribute value will be the corresponding ImmutableId in Microsoft Entra ID.
+When Microsoft Entra Connect (sync engine) instructs Microsoft Entra ID to add or update objects, Microsoft Entra ID matches the incoming object by using the sourceAnchor value and matching it to the ImmutableId attribute of existent objects in Microsoft Entra ID. If there is a match Microsoft Entra ID will take over that object and update it with the properties of the incoming on-premises Active Directory object in what is called a ”hard-match”.
+When Microsoft Entra ID doesn't find any object with an ImmutableId that matches the same SouceAnchor value of the incoming object, it tries to use the proxyAddresses and userPrincipalName attributes to find a match in what it’s called a ”soft-match”. The soft match tries to match objects already present in Microsoft Entra ID (that are sourced in Microsoft Entra ID) with the new objects being added or updated during synchronization that represent the same entity on-premises (like users and groups).
+If Microsoft Entra ID is not able to find a hard match or soft match for the incoming object, it provisions a new object in Microsoft Entra ID directory.
+We have added a configuration option to disable the hard matching feature in Microsoft Entra ID. We advise customers to disable hard matching unless they need it to take over cloud only accounts.
 
-We have added a configuration option to disable the Soft Matching feature in Microsoft Entra Connect. We advise customers to disable soft matching unless they need it to take over cloud only accounts. 
+To disable hard match, use the [Update-MgDirectoryOnPremiseSynchronization](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryonpremisesynchronization) Microsoft Graph PowerShell cmdlet:
+
+```powershell
+Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"
+
+$OnPremSync = Get-MgDirectoryOnPremiseSynchronization
+$OnPremSync.Features.BlockCloudObjectTakeoverThroughHardMatchEnabled = $true
+Update-MgDirectoryOnPremiseSynchronization `
+    -OnPremisesDirectorySynchronizationId $OnPremSync.Id `
+    -Features $OnPremSync.Features
+```
+
+
 
 To disable Soft Matching, use the [Update-MgDirectoryOnPremiseSynchronization](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryonpremisesynchronization) Microsoft Graph PowerShell cmdlet:
 
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement 
-
 Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"
-$onPremisesDirectorySynchronizationId = "<TenantID>"  
-$params = @{ 
-	features = @{ 
-		blockSoftMatchEnabled = $true 
-	} 
-} 
-Update-MgDirectoryOnPremiseSynchronization -OnPremisesDirectorySynchronizationId $onPremisesDirectorySynchronizationId -BodyParameter $params
+
+$OnPremSync = Get-MgDirectoryOnPremiseSynchronization
+$OnPremSync.Features.BlockSoftMatchEnabled = $true
+Update-MgDirectoryOnPremiseSynchronization `
+    -OnPremisesDirectorySynchronizationId $OnPremSync.Id `
+    -Features $OnPremSync.Features
 ```
 
 > [!NOTE]
