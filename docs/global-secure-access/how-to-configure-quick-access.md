@@ -119,8 +119,9 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
     ![Screenshot of the create app segment panel with multiple ports added.](media/how-to-configure-per-app-access/app-segment-multiple-ports.png)
 
     The following table provides the most commonly used ports and their associated networking protocols:
+
     | Port | Protocol |
-    | -- | -- |
+    | --- | --- |
     | 22 | Secure Shell (SSH) |
     | 80 | Hypertext Transfer Protocol (HTTP) |
     | 443 | Hypertext Transfer Protocol Secure (HTTPS) |
