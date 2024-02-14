@@ -46,12 +46,12 @@ If you matched your objects with a soft-match, then the **sourceAnchor** is adde
 
 ### Hard-match vs Soft-match
 By default, the SourceAnchor value of "abcdefghijklmnopqrstuv==" is calculated by Microsoft Entra Connect by using MsDs-ConsistencyGUID attribute (or ObjectGUID depending on the configuration) from on-premises Active Directory. This attribute value will be the corresponding ImmutableId in Microsoft Entra ID.
-When Microsoft Entra Connect (sync engine) instructs Microsoft Entra ID to add or update objects, Microsoft Entra ID matches the incoming object by using the sourceAnchor value and matching it to the ImmutableId attribute of existent objects in Microsoft Entra ID. If there is a match Microsoft Entra ID will take over that object and update it with the properties of the incoming on-premises Active Directory object in what is called a ”hard-match”.
-When Microsoft Entra ID doesn't find any object with an ImmutableId that matches the same SouceAnchor value of the incoming object, it tries to use the proxyAddresses and userPrincipalName attributes to find a match in what it’s called a ”soft-match”. The soft match tries to match objects already present in Microsoft Entra ID (that are sourced in Microsoft Entra ID) with the new objects being added or updated during synchronization that represent the same entity on-premises (like users and groups).
-If Microsoft Entra ID is not able to find a hard match or soft match for the incoming object, it provisions a new object in Microsoft Entra ID directory.
+When Microsoft Entra Connect (sync engine) instructs Microsoft Entra ID to add or update objects, Microsoft Entra ID matches the incoming object by using the sourceAnchor value and matching it to the ImmutableId attribute of existent objects in Microsoft Entra ID. If there is a match, Microsoft Entra ID will take over that object and update it with the properties of the incoming on-premises Active Directory object in what is called a *”hard-match”*.
+When Microsoft Entra ID doesn't find any object with an ImmutableId that matches the same SouceAnchor value of the incoming object, it tries to use the proxyAddresses and userPrincipalName attributes to find a match in what it’s called a *”soft-match”*. The soft match tries to match objects already present in Microsoft Entra ID (that are sourced in Microsoft Entra ID) with the new objects being added or updated during synchronization that represent the same entity on-premises (like users and groups).
+If Microsoft Entra ID is not able to find a *hard-match* or *soft-match* for the incoming object, it provisions a new object in Microsoft Entra ID directory.
 We have added a configuration option to disable the hard matching feature in Microsoft Entra ID. We advise customers to disable hard matching unless they need it to take over cloud only accounts.
 
-To disable hard match, use the [Update-MgDirectoryOnPremiseSynchronization](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryonpremisesynchronization) Microsoft Graph PowerShell cmdlet:
+To disable hard matching, use the [Update-MgDirectoryOnPremiseSynchronization](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryonpremisesynchronization) Microsoft Graph PowerShell cmdlet:
 
 ```powershell
 Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"
@@ -63,9 +63,9 @@ Update-MgDirectoryOnPremiseSynchronization `
     -Features $OnPremSync.Features
 ```
 
+Similarly, we have added a configuration option to disable the soft-matching option in Microsoft Entra ID. We advise customers to disable soft matching unless they need it to take over cloud only accounts.
 
-
-To disable Soft Matching, use the [Update-MgDirectoryOnPremiseSynchronization](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryonpremisesynchronization) Microsoft Graph PowerShell cmdlet:
+To disable soft matching, use the [Update-MgDirectoryOnPremiseSynchronization](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryonpremisesynchronization) Microsoft Graph PowerShell cmdlet:
 
 ```powershell
 Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"
@@ -78,9 +78,7 @@ Update-MgDirectoryOnPremiseSynchronization `
 ```
 
 > [!NOTE]
-> 
-> blockSoftMatchEnabled - Use to block soft match for all objects if enabled for the tenant. Customers are encouraged to enable this feature and keep it enabled until soft matching is required again for their tenancy. This flag should be enabled again after any soft matching has been completed and is no longer needed.
-
+> BlockCloudObjectTakeoverThroughHardMatchEnabled and BlockSoftMatchEnabled are used to block matching for all objects if enabled for the tenant. Customers are encouraged to disable these features only during the period when a matching procedure is required for their tenancy. This flag should be set to *True* again after any matching has been completed and is no longer needed.
 ### Other objects than users
 For mail-enabled groups and contacts, you can soft-match based on proxyAddresses. Hard-match is not applicable since you can only update the sourceAnchor/immutableID (using PowerShell) on Users only. For groups that aren't mail-enabled, there is currently no support for soft-match or hard-match.
 
