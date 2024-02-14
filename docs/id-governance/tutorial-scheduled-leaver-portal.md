@@ -4,6 +4,7 @@ description: Tutorial for post off-boarding users from an organization using Lif
 author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: tutorial
 ms.date: 08/18/2022
 ms.author: owinfrey

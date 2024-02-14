@@ -35,9 +35,9 @@ If you've already registered a web application in the Microsoft Entra admin cent
 
 * A Microsoft Entra ID for customers tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-    * Application administrator
-    * Application developer
-    * Cloud application administrator
+    * Application Administrator
+    * Application Developer
+    * Cloud Application Administrator
 
 ## Register the web app
 

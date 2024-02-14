@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.date: 02/04/2022
-ms.reviewer: j-mantu, samuelkubai, Dickson-Mwendia
+ms.reviewer: emilylauber
 ms.service: identity-platform
 
 ms.topic: conceptual

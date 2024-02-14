@@ -10,7 +10,7 @@ ms.date: 01/23/2024
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.custom: "it-pro, seo-update-azuread-jan"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
 #customer intent: As an IT admin managing B2B collaboration, I want to configure an allowlist or blocklist for specific organizations, so that I can control  where B2B invitations can be sent by users in my organization.
 ---
@@ -164,8 +164,3 @@ Remove-AzureADPolicy -Id $currentpolicy.Id
 
 - [Cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md)
 - [External collaboration settings](external-collaboration-settings-configure.md).
-
-
-
-
-

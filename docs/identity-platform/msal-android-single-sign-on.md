@@ -4,6 +4,7 @@ description: How to use the Microsoft Authentication Library (MSAL) for Android 
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
+ms,reviewer: negoe
 ms.date: 01/18/2023
 ms.devlang: java
 ms.service: identity-platform

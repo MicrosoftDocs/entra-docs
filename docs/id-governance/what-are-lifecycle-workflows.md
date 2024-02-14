@@ -4,6 +4,7 @@ description: Get an overview of the lifecycle workflow feature of Microsoft Entr
 author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: overview
 ms.date: 06/22/2023
 ms.author: owinfrey

@@ -8,7 +8,7 @@ manager: celestedg
 ms.date: 12/14/2023
 ms.topic: quickstart
 ms.service: entra-external-id
-ms.custom: it-pro, seo-update-azuread-jan, mode-ui
+ms.custom: it-pro, mode-ui
 ms.collection: M365-identity-device-management
 #Customer intent: As an administrator, I want to add a guest user to my Microsoft Entra directory and send them an invitation, so that they can collaborate with my organization using their own work, school, or social account.
 ---
@@ -27,7 +27,7 @@ If you don’t have an Azure subscription, create a [free account](https://azure
 
 To complete the scenario in this quickstart, you need:
 
-- A role that allows you to create users in your tenant directory, such as at least a [Guest Inviter role](~/identity/role-based-access-control/permissions-reference.md#guest-inviter) or a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+- A role that allows you to create users in your tenant directory, such as at least a [Guest Inviter role](~/identity/role-based-access-control/permissions-reference.md#guest-inviter) or a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 - Access to a valid email address outside of your Microsoft Entra tenant, such as a separate work, school, or social email address. You'll use this email to create the guest account in your tenant directory and access the invitation.
 
@@ -35,7 +35,7 @@ To complete the scenario in this quickstart, you need:
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Browse to **Identity** > **Users** > **All users**.
 
@@ -91,7 +91,7 @@ Now sign in as the guest user to see the invitation.
 
 When no longer needed, delete the test guest user.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **User settings**.
 1. Select the test user, and then select **Delete user**.
 
