@@ -36,7 +36,24 @@ An event listener is a procedure that waits for an event to occur. The custom au
 
 For an example using a custom claims provider with the **token issuance start** event listener, check out the [get started with custom claims providers](custom-extension-get-started.md) article.
 
-## Next steps
+## Authentication events trigger for Azure Functions client library for .NET
+
+<!--As an API developer, to be able to handle token issuance start custom extensions, I need to easily interact with the request object and easily build a response object without necessarily needing to know the exact format of the request or response
+
+I should be able to build an Azure function in minutes as a basic function structure is there, the request is read for a particular event and there's no need to specify the format. As long as you know its token issuance event, once the request is parsed automatically into a tokenissuancestart event request and the response you are responding with, you can respond for that particular event.
+
+For local testing of a URL, you'd get one similar to https://localhost:7071/api/onTokenIssuanceStart
+
+AuthenticationEventResponse -> Whatever is coming in, parse it to the correct response
+-->
+
+The authentication events trigger for Azure Functions allows you to implement a custom extension to handle Microsoft Entra ID authentication events. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events and provides the developer with
+
+- Token validation for securing the API call
+- Object model, typing and IDE intellisense
+- Inbound and outbound validation of the API request and response schemas
+
+## See also
 
 - Learn how to [create and register a custom claims provider](custom-extension-get-started.md) with a sample OpenID Connect application.
 - If you already have a custom claims provider registered, you can configure a [SAML application](custom-extension-configure-saml-app.md) to receive tokens with claims sourced from an external store.

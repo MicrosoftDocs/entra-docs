@@ -68,6 +68,7 @@ Attribute collection start and submit events can be used with custom authenticat
 > [!NOTE]
 > Attribute collection start and submit events are currently available only for user flows in Microsoft Entra External ID for customers. For details, see [Add your own business logic](~/external-id/customers/concept-custom-extensions.md).
 
-## Next steps
+## See also
 
+l 
 - Learn how to [create custom authentication extensions for attribute collection start and submit events](custom-extension-attribute-collection.md) with a sample OpenID Connect application.

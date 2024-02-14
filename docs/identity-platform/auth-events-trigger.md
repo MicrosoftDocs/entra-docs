@@ -12,7 +12,7 @@ ms.topic: how-to
 titleSuffix: Microsoft identity platform
 ---
 
-# Authentication events trigger for Azure Functions client library for .NET
+# Scenario 1: 
 
 The authentication events trigger for Azure Functions allows you to implement a custom extension to handle Microsoft Entra ID authentication events. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events and provides the developer with
 
