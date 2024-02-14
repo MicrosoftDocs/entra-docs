@@ -1,17 +1,17 @@
 ---
 title: Assign Microsoft Entra roles at different scopes
 description: Learn how to assign roles at different scopes in Microsoft Entra ID
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 02/04/2022
 ms.author: rolyon
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
-ms.collection: M365-identity-device-management
+
 ---
 # Assign Microsoft Entra roles at different scopes
 

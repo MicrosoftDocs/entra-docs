@@ -2,19 +2,14 @@
 
 title: Add B2B collaboration users as an information worker
 description: B2B collaboration allows information workers and app owners to add guest users to Microsoft Entra ID for access
-
- 
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 06/30/2023
-
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.custom: "it-pro, seo-update-azuread-jan"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
-
 # Customer intent: As an application owner in Microsoft Entra, I want to be able to invite guest users to an app and manage their access, so that I can easily share the app with external users and control their permissions.
 ---
 

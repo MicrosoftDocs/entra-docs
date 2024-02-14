@@ -7,8 +7,8 @@ ms.author: billmath
 ms.date: 11/06/2023
 manager: amycolannino
 ms.topic: article
-ms.service: active-directory
-ms.subservice: hybrid
+ms.service: entra-id
+ms.subservice: hybrid-connect
 ---
 # Choose the right authentication method for your Microsoft Entra hybrid identity solution
 

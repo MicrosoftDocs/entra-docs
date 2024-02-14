@@ -2,8 +2,7 @@
 title: Configure B2B direct connect cross-tenant access
 description: Use cross-tenant access settings to manage how you collaborate with other Microsoft Entra organizations. Learn how to configure  outbound access to external organizations and inbound access from external Microsoft Entra organizations for B2B direct connect.
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 01/23/2024
 

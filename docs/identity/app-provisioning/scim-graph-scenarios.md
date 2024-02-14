@@ -1,10 +1,10 @@
 ---
 title: Use SCIM, Microsoft Graph, and Microsoft Entra ID to provision users and enrich apps with data
 description: Using SCIM and the Microsoft Graph together to provision users and enrich your application with the data it needs in Microsoft Entra ID.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
 ms.date: 09/15/2023

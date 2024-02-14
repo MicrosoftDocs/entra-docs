@@ -7,8 +7,8 @@ ms.author: henrymbugua
 ms.custom: has-adal-ref
 ms.date: 08/28/2019
 ms.reviewer: 
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As a developer using ADAL and MSAL apps on macOS and iOS, I want to understand how to implement Single Sign-On (SSO) between these apps, so that I can provide a seamless user experience and migrate from ADAL to MSAL smoothly.
 ---

@@ -1,10 +1,10 @@
 ---
 title: SAML single sign-on for on-premises apps with Microsoft Entra application proxy
 description: Learn how to provide single sign-on for on-premises applications that are secured with SAML authentication. Provide remote access to on-premises apps with Application Proxy.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual
 ms.date: 02/06/2024

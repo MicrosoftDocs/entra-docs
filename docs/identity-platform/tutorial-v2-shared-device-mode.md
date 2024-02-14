@@ -7,8 +7,8 @@ ms.author: henrymbugua
 ms.custom:
 ms.date: 10/24/2023
 ms.reviewer: brandwe
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As an Android developer, I want to learn how to enable shared-device mode for an Android app, so that I can configure Android devices to be shared by multiple employees and provide Microsoft Identity backed management of the device.
 ---

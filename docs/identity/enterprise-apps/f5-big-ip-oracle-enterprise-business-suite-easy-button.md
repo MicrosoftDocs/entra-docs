@@ -4,8 +4,8 @@ description: Learn to implement SHA with header-based SSO to Oracle EBS using F5
 
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 03/23/2023

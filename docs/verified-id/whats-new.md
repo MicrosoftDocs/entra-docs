@@ -3,8 +3,8 @@ title: What's new for Microsoft Entra Verified ID
 description: Recent updates for Microsoft Entra Verified ID
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 ms.topic: reference
 ms.date: 10/31/2023
 ms.custom: references_regions

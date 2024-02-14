@@ -1,10 +1,10 @@
 ---
 title: Problem signing in to on-premises app using Microsoft Entra application proxy
 description: Troubleshooting common issues faced when you are unable to sign in to an on-premises application integrated using the Microsoft Entra application proxy
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
 ms.date: 09/14/2023
@@ -27,7 +27,6 @@ The following documents can help you to resolve some of the most common issues i
 ## I'm having a connectivity problem my application
   The following documents can help you to resolve some of the most common issues in this category.
   * [I don't know what ports to open for my application](application-proxy-add-on-premises-application.md)
-  * [I encountered a problem because there was no working connector in a connector group for my application](application-proxy-connectivity-no-working-connector.md)
 
 <a name='im-having-a-problem-configuring-the-azure-ad-application-proxy-in-the-admin-portal'></a>
 
@@ -49,4 +48,4 @@ The following documents can help you to resolve some of the most common issues i
   * [I am having issues installing the Application Proxy Agent Connector](application-proxy-connector-installation-problem.md)
 
 ## Next steps
-[How to provide secure remote access to on-premises applications](application-proxy.md)
+[How to provide secure remote access to on-premises applications](overview-what-is-app-proxy.md)

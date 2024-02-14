@@ -1,10 +1,11 @@
 ---
 author: henrymbuguakiarie
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: include
 ms.date: 07/12/2023
 ms.author: henrymbugua
+ms.manager: mwongerapk
 ---
 
 Security groups manage user and computer access to shared resources. You can create a security group so that all group members have the same set of security permissions.

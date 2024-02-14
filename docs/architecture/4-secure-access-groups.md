@@ -1,17 +1,14 @@
 ---
 title: Secure external access with groups in Microsoft Entra ID and Microsoft 365
 description: Microsoft Entra ID and Microsoft 365 Groups can be used to increase security when external users access your resources.
-services: active-directory
 author: jricketts
 manager: martinco
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/09/2023
 ms.author: jricketts
 ms.reviewer: ajburnle
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Secure external access with groups in Microsoft Entra ID and Microsoft 365  

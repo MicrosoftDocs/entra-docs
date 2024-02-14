@@ -1,6 +1,6 @@
 ---
 author: owinfreyATL
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: include
 ms.date: 02/09/2022
 ms.author: owinfrey

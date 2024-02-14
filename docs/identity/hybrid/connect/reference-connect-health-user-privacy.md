@@ -1,16 +1,16 @@
 ---
 title: Microsoft Entra Connect Health and user privacy
 description: Learn about user privacy and data collection with Microsoft Entra Connect Health.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: hybrid
+ms.service: entra-id
+ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: reference
 ms.date: 11/06/2023
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # User privacy and Microsoft Entra Connect Health

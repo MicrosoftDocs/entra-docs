@@ -7,9 +7,8 @@ author: csmulligan
 manager: celestedg
 ms.date: 12/14/2023
 ms.topic: quickstart
-ms.service: active-directory
-ms.subservice: B2B
-ms.custom: it-pro, seo-update-azuread-jan, mode-ui
+ms.service: entra-external-id
+ms.custom: it-pro, mode-ui
 ms.collection: M365-identity-device-management
 #Customer intent: As an administrator, I want to add a guest user to my Microsoft Entra directory and send them an invitation, so that they can collaborate with my organization using their own work, school, or social account.
 ---

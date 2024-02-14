@@ -1,11 +1,10 @@
 ---
 title: Topologies for cross-tenant synchronization
 description: Learn about topologies for cross-tenant synchronization in Microsoft Entra ID.
-services: active-directory
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: multi-tenant-organizations
+ms.service: entra-id
+ms.subservice: multitenant-organizations
 ms.topic: conceptual
 ms.date: 11/03/2023
 ms.author: rolyon

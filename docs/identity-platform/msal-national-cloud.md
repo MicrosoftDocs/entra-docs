@@ -7,8 +7,8 @@ ms.author: henrymbugua
 ms.custom: 
 ms.date: 09/21/2021
 ms.reviewer: negoe, nacanuma
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn about how the Microsoft Authentication Library works in national cloud scenarios so I can decide if this platform meets my application development needs.
 ---

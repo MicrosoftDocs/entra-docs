@@ -4,8 +4,8 @@ description: Learn about the capabilities of the AD FS application migration wiz
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: conceptual
 
 ms.date: 10/25/2023

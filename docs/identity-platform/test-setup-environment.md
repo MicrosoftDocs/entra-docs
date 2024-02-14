@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: cwerner
 ms.date: 05/11/2022
 ms.reviewer: ryanwi, arcrowe
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As a developer, I want to set up a test environment so that I can test my app integrated with Microsoft identity platform.
 ---

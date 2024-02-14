@@ -1,17 +1,16 @@
 ---
 title: Username lookup during sign-in
 description: How on-screen messaging reflects username lookup during sign-in in Microsoft Entra ID
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.topic: overview
 ms.date: 11/21/2023
 ms.author: barclayn
 ms.reviewer: kexia
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Home realm discovery for Microsoft Entra sign-in pages

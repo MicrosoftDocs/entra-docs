@@ -1,19 +1,19 @@
 ---
 title: 'Microsoft Entra Connect Synchronization Service Manager Operations'
 description: Understand the Operations tab in the Synchronization Service Manager for Microsoft Entra Connect.
-services: active-directory
+
 author: billmath
 manager: amycolannino
 
 ms.assetid: 97a26565-618f-4313-8711-5925eeb47cdc
-ms.service: active-directory
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
-ms.collection: M365-identity-device-management
+
 ---
 # Using the Sync Service Manager Operations tab
 

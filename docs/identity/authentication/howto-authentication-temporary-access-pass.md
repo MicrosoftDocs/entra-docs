@@ -2,8 +2,7 @@
 title: Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods
 description: Learn how to configure and enable users to register passwordless authentication methods by using a Temporary Access Pass 
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 09/23/2023
@@ -12,8 +11,6 @@ ms.author: justinha
 author: tilarso 
 manager: amycolannino
 ms.reviewer: tilarso
-
-ms.collection: M365-identity-device-management
 ---
 # Configure Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods
 
@@ -76,8 +73,10 @@ These roles can perform the following actions related to a Temporary Access Pass
 - Global Reader can view the Temporary Access Pass details on the user (without reading the code itself).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods**.
-1. Select **Temporary Access Pass**.
+1. Browse to **Identity** > **Users**.
+1. Select the user you would like to create a Temporary Access Pass for. 
+2. Select **Authentication methods** and clicke **Add authentication method**. 
+4. Select **Temporary Access Pass**.
 1. Define a custom activation time or duration and select **Add**.
 
    ![Screenshot of how to create a Temporary Access Pass.](./media/how-to-authentication-temporary-access-pass/create.png)
