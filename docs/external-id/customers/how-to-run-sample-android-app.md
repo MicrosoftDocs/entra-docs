@@ -11,13 +11,13 @@ ms.service: active-directory
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 02/12/2024
-ms.custom: developer, devx-track-dotnet
+ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn about how to configure native auth Android Kotlin sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID for customers.
 ---
 
 # How to run the Android sample app
- 
-This guide demonstrates how to run an Android sample application that showcases sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID for customers.
+
+This guide shows how to run an Android sample application that demonstrates sign-up, sign in, sign out, and password reset scenarios using Microsoft Entra External ID for customers.
  
 In this article, you learn how to:
  
@@ -50,21 +50,21 @@ The following steps show you how to register your app in the Microsoft Entra adm
 1. Select **+ New registration**. 
 1. In the **Register an application** page that appears; 
  
-   1. Enter a meaningful application **Name** that will be displayed to users of the app, for example _ciam-client-app_. 
+   1. Enter a meaningful application **Name** that is displayed to users of the app, for example _ciam-client-app_. 
    1. Under **Supported account types**, select **Accounts in this organizational directory only**. 
  
 1. Select **Register**. 
-1. The application's **Overview** pane will display upon successful registration. Record the **Application (client) ID** to be used in your application source code.
+1. The application's **Overview** pane displays upon successful registration. Record the **Application (client) ID** to be used in your application source code.
  
 ## Enable public client and native authentication flows
  
 To specify that this app is a public client and can use native authentication, enable public client and native authentication flows: 
 
 1. Select the created application from the App registrations page 
-2. Under **Manage**, select **Authentication**. 
-3. Under **Advanced settings**, for **Enable the following mobile and desktop flows**, select **Yes**.
-4. Under **Advanced settings**, for **Enable native authentication**, select **Yes**.
-5. Select **Save** button. 
+1. Under **Manage**, select **Authentication**. 
+1. Under **Advanced settings**, for **Enable the following mobile and desktop flows**, select **Yes**.
+1. Under **Advanced settings**, for **Enable native authentication**, select **Yes**.
+1. Select **Save** button. 
  
 ## Grant API permissions 
  
@@ -108,7 +108,7 @@ Follow these steps to create a user flow.
         > [!NOTE] 
         > Email one-time passcode must be enabled at the tenant level (**All Identity Providers** > **Email One-time passcode**) for this option to be available at the user flow level. 
  
-   1. Under **User attributes**, you can choose the attributes you want to collect from the user upon sign-up. For this guide select **Country/Region** and **City**. 
+   1. Under **User attributes**, you can choose the attributes you want to collect from the user upon sign-up. For this guide, select **Country/Region** and **City**. 
    1. Select **OK**. (Users can be prompted for attributes when they sign up for the first time)
  
 1. Select **Create**. The new user flow appears in the **User flows** list. If necessary, refresh the page. 
@@ -160,15 +160,15 @@ To build and run your app, follow these steps:
  
 1. Select **Run** button. 
  
-1. The app will open on the email and one-time passcode screen. 
+1. The app opens on the email and one-time passcode screen. 
 
     :::image type="content" source="media/native-auth/android/android-email-otp.png" alt-text="Screenshot of user prompt to enter email in Android application.":::
  
-1. Enter a valid email address and select **Sign up**. The app will launch submit code screen. 
+1. Enter a valid email address and select **Sign up**. The app launches the submit code screen. 
  
-    :::image type="content" source="media/native-auth/android/android-submit-code.png" alt-text="Screenshot of user prompt to enter OTP in Android application.":::
+    :::image type="content" source="media/native-auth/android/android-submit-code.png" alt-text="Screenshot of user prompt to enter one-time passcode (OTP) in Android application.":::
  
-1. You'll receive an email containing a one-time passcode. Enter the one-time passcode and select **Next**. If the sign-up was successful, you will automatically be signed in.
+1. You'll receive an email containing a one-time passcode. Enter the one-time passcode and select **Next**. If the sign-up was successful, you'll automatically be signed in.
 
     :::image type="content" source="media/native-auth/android/android-sign-in-account-display.png" alt-text="Screenshot showing sign-in successfully completed in the Android application.":::
 
@@ -179,8 +179,8 @@ To build and run your app, follow these steps:
 The sample app supports the following flows: 
  
 1. _Email + one-time passcode_: Follow this flow to sign in or sign up with an email and a one-time passcode. 
-1. _Email + password_: Follow this flow to sign in or sign up with an email, password and one-time passcode. 
-1. _Email + password sign up with user attributes_: Follow this flow to sign up with email, password and user attributes. 
+1. _Email + password_: Follow this flow to sign in or sign up with an email, password, and one-time passcode. 
+1. _Email + password sign up with user attributes_: Follow this flow to sign up with email, password, and user attributes. 
 1. _Password reset_: Follow this flow to reset the password. 
 1. _Fallback to web browser_: Follow this flow to use the browser to sign in or sign up. 
  

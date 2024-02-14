@@ -11,7 +11,7 @@ ms.service: active-directory
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 02/13/2024
-ms.custom: developer, devx-track-dotnet
+ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn about sign up user with username and user attributes.
 ---
 
@@ -28,14 +28,14 @@ In this tutorial, you learn how to:
  
 - An Android project. 
 - User-flow with an **Email one-time passcode**: 
-  - [Register application in Microsoft Entra External ID for customers tenant](how-to-run-sample-android-app.md#register-an-application) 
-  - [Enable public client and native authentication flows](how-to-run-sample-android-app.md#enable-public-client-and-native-authentication-flows) 
-  - [Grant API permissions](how-to-run-sample-android-app.md#grant-api-permissions) 
-  - [Create a user flow](how-to-run-sample-android-app.md#create-a-user-flow) 
-    - In the **User attributes**, select **Country/Region** and **City** in the user flow. 
-  - [Associate the Android app with the user flow](how-to-run-sample-android-app.md#associate-the--app-with-the-user-flow). 
-- [Android Microsoft Authentication Library (MSAL) configuration file](how-to-run-sample-android-app.md#configure-the-sample-android-mobile-application). 
-- [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-auth-android-sign-up-sign-in-sign-out.md). 
+  - [Register application in Microsoft Entra External ID for customers tenant](how-to-run-sample-android-app.md#register-an-application).
+  - [Enable public client and native authentication flows](how-to-run-sample-android-app.md#enable-public-client-and-native-authentication-flows).
+  - [Grant API permissions](how-to-run-sample-android-app.md#grant-api-permissions).
+  - [Create a user flow](how-to-run-sample-android-app.md#create-a-user-flow).
+    - In the **User attributes**, select **Country/Region** and **City** in the user flow.
+  - [Associate the Android app with the user flow](how-to-run-sample-android-app.md#associate-the--app-with-the-user-flow).
+- [Android Microsoft Authentication Library (MSAL) configuration file](how-to-run-sample-android-app.md#configure-the-sample-android-mobile-application).
+- [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-auth-android-sign-up-sign-in-sign-out.md).
  
 ## Sign up user using username and user attributes 
  
@@ -59,7 +59,7 @@ To include a user attribute, use the `UserAttribute.Builder` utility class as sh
     }  
 ``` 
  
-In the most common scenario `signUp()` will return `SignUpResult.CodeRequired`, which will provide access to `submitCode()` and `resendCode()`. To complete the flow, you can use `submitCode()` to submit the OTP using the following code snippet: 
+In the most common scenario `signUp()` returns `SignUpResult.CodeRequired`, which will provide access to `submitCode()` and `resendCode()`. To complete the flow, you can use `submitCode()` to submit the OTP using the following code snippet: 
  
 ```kotlin 
     CoroutineScope(Dispatchers.Main).launch {
@@ -95,9 +95,9 @@ In the case of `SignUpError`, the SDK provides utility methods  for further anal
 
 Errors such as these indicate that the previous operation was unsuccessful, and because of that they don't include a reference to a new state.
  
-The utility method `isInvalidAttributes()` returns true when one or more attributes that were sent failed input validation. It will contain an `invalidAttributes` parameter which is a list of all attributes that were sent by the developer that failed input validation. 
+The utility method `isInvalidAttributes()` returns true when one or more attributes that were sent failed input validation. It contains an `invalidAttributes` parameter, which is a list of all attributes that were sent by the developer that failed input validation. 
  
-The result `SignUpResult.AttributesRequired` indicates that the server requires one or more attributes to be sent, before the user account can be created. This happens when one or more attributes is set as mandatory in the tenant configuration. This result will contain a `requiredAttributes` parameter which is a list of `RequiredUserAttribute` objects, which outline details about the user attributes that the API requires. 
+The result `SignUpResult.AttributesRequired` indicates that the server requires one or more attributes to be sent, before the user account can be created. This happens when one or more attributes is set as mandatory in the tenant configuration. This result contains a `requiredAttributes` parameter, which is a list of `RequiredUserAttribute` objects, which outline details about the user attributes that the API requires. 
  
 To handle `isInvalidAttributes()` and `AttributesRequired`, use the following code snippet: 
  
@@ -125,5 +125,5 @@ To handle `isInvalidAttributes()` and `AttributesRequired`, use the following co
  
 ## Next Steps 
  
-[Tutorial: Sign up user with username, password and user attributes](tutorial-native-auth-sign-user-with-username-password-user-attributes.md)
+[Tutorial: Sign up user with username, password, and user attributes](tutorial-native-auth-sign-user-with-username-password-user-attributes.md).
 

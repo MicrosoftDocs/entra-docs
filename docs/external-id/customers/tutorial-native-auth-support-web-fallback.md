@@ -11,13 +11,13 @@ ms.service: active-directory
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 02/13/2024
-ms.custom: developer, devx-track-dotnet
+ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to support web fallback.
 ---
 
 # Tutorial: Support web fallback
  
-This tutorial demonstrates how `isBrowserRequired()` can happen and how it can be resolved. The utility method `isBrowserRequired()` supports fallback mechanism for various scenarios where native authentication is not sufficient to complete the flow in functional and safe manner.
+This tutorial demonstrates how `isBrowserRequired()` can happen and how it can be resolved. The utility method `isBrowserRequired()` supports fallback mechanism for various scenarios where native authentication isn't sufficient to complete the flow in functional and safe manner.
  
 In this tutorial, you learn how to: 
  
@@ -31,16 +31,16 @@ In this tutorial, you learn how to:
  
 ## Check isBrowserRequired()
  
-To ensure stability of your application and avoid interruption of the authentication flow, it is highly recommended to use the SDK's `acquireToken()` method to continue the flow in the browser.
+To ensure stability of your application and avoid interruption of the authentication flow, it's highly recommended to use the SDK's `acquireToken()` method to continue the flow in the browser.
  
 When we initialize the SDK, we need to specify which challenge types our mobile application can support. Here are the list of challenge types that the SDK accepts: 
  
 - `oob` (out of band): add this challenge type when your application can handle a one-time-passcode, in this case an email code. 
 - `password`: add this challenge type when your application is able to handle password based authentication. 
  
-The utility method `isBrowserRequired()` returns true when Microsoft Entra ID requires capabilities that the client can't provide. For example, the SDK is initialised with only challenge type `oob`, but in the Microsoft Entra admin centre the application is configured with a email with password user flow. 
+The utility method `isBrowserRequired()` returns true when Microsoft Entra ID requires capabilities that the client can't provide. For example, the SDK is initialized with only challenge type `oob`, but in the Microsoft Entra admin center the application is configured with an email with password user flow. 
  
-Insufficient challenge types is only one example of where `isBrowserRequired()` can be used. It is a general fallback mechanism that can happen in various scenarios. 
+Insufficient challenge types are only one example of where `isBrowserRequired()` can be used. It's a general fallback mechanism that can happen in various scenarios. 
  
 ## Sample flow 
  
@@ -73,9 +73,9 @@ The `native_auth_config.json` configuration has the following code snippet:
 } 
 ``` 
  
-In this case we are specifying only the challenge type `oob`. Suppose that in the Microsoft Entra admin centre, the application is configured with an **Email with password** user flow.  
+In this case we're specifying only the challenge type `oob`. Suppose that in the Microsoft Entra admin center, the application is configured with an **Email with password** user flow.  
  
-When we call the `signUp(username)` method from the SDK instance, we will get a `SignUpError` that passes the `isBrowserRequired()` check, because the server requires different challenge type (`password` in this case) than the one configured in the client (`oob` in this case). 
+When we call the `signUp(username)` method from the SDK instance, we'll get a `SignUpError` that passes the `isBrowserRequired()` check, because the server requires different challenge type (`password` in this case) than the one configured in the client (`oob` in this case). 
 
 To check and handle the `isBrowserRequired()`, use the following code snippet:
  
@@ -96,7 +96,7 @@ To handle this error, a browser needs to be launched and the authentication flow
  
 In order to use this method, a few additional configurations need to be done: 
  
-- [Register the application's redirect URI in Microsoft Entra admin centre](../../identity-platform/tutorial-v2-android.md#register-your-application-with-microsoft-entra-id). 
+- [Register the application's redirect URI in Microsoft Entra admin center](../../identity-platform/tutorial-v2-android.md#register-your-application-with-microsoft-entra-id). 
 - [Configure the redirect URI in SDK's configuration](../../identity-platform/tutorial-v2-android.md#configure-your-application). 
  
 Now we can get a token and an account interactively. Here's an example of how to use `acquireToken()`: 
@@ -118,7 +118,7 @@ if (actionResult is SignUpError && actionResult.isBrowserRequired()) {
 } 
 ```
 
-Tokens obtained through native authentication flows can combine with browser-based flows, and vice versa. In other words, the authentication mechanism (native or web-based) does not limit the functionality of the tokens acquired through it.
+Tokens obtained through native authentication flows can combine with browser-based flows, and vice versa. In other words, the authentication mechanism (native or web-based) doesn't limit the functionality of the tokens acquired through it.
 
 ## Related content
 

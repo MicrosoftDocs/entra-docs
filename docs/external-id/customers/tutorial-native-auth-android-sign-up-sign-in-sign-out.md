@@ -1,6 +1,6 @@
 ---
 title: Add sign up, sign in and sign out in native iOS app
-description: Learn how to add sign up, sign in and sign out with email one-time passcode.
+description: Learn how to add sign-up, sign in and sign out with email one-time passcode.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -11,7 +11,7 @@ ms.service: active-directory
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 02/12/2024
-ms.custom: developer, devx-track-dotnet
+ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn about Add sign up, sign in and sign out with email one-time passcode.
 ---
 
@@ -31,16 +31,16 @@ In this tutorial, you learn how to:
 
 ## Sign up a user
 
-To sign up a user using the **Email one-time passcode** flow, capture the email and send an email containing a one-time passcode for the user to verify their email. When the user enters a valid one-time passcode, the app will sign them up and display a toast message to notify the user about the operation.
+To sign up a user using the **Email one-time passcode** flow, capture the email and send an email containing a one-time passcode for the user to verify their email. When the user enters a valid one-time passcode, the app signs them up and displays a toast message to notify the user about the operation.
 
-To sign up user using **Email one-time-passcode** you need to:
+To sign up user using **Email one-time-passcode**, you need to:
 
 1. Create your user interface that includes:
 
    1. A form to submit an Email.
-   1. A form to submit one-time passcode:
+   1. A form to submit one-time passcode.
 
-1. To sign up the user, we are going to use the library's `signUp(username)` method, which is going to return a result that can be interpreted as an `actionResult`. Add a button to the application that calls the following code snippet when selected:
+1. To sign up the user, we're going to use the library's `signUp(username)` method, which is going to return a result that can be interpreted as an `actionResult`. Add a button to the application that calls the following code snippet when selected:
 
    ```kotlin
    CoroutineScope(Dispatchers.Main).launch {
@@ -60,16 +60,16 @@ To sign up user using **Email one-time-passcode** you need to:
    ```
 
     > [!NOTE]
-    > You should add user inputs to you app to collect user email and one time passcode.
+    > You should add user inputs to your app to collect user email and one time passcode.
 
-   In the library's `signUp(username)` method, we pass in the email address that user supplied us in the email submit form. In most common scenario, the `actionResult` will be of type `SignUpResult.CodeRequired`, which indicates that the API expects a code to be sent, in this case to verify the email address. The `SignUpResult.CodeRequired` contains a new state reference, which we can retrieve through `actionResult.nextState`. This new state will be of type `SignUpCodeRequiredState`, which gives us access to 2 new method:
+   In the library's `signUp(username)` method, we pass in the email address that user supplied us in the email submit form. In most common scenario, the `actionResult` is of type `SignUpResult.CodeRequired`, which indicates that the API expects a code to be sent, in this case to verify the email address. The `SignUpResult.CodeRequired` contains a new state reference, which we can retrieve through `actionResult.nextState`. This new state is of type `SignUpCodeRequiredState`, which gives us access to two new methods:
 
    - `submitCode()` is used to submit the code that user supplies in the form to submit one-time passcode.
    - `resendCode()` is used to resend the one-time passcode if the user doesn't receive the code.
 
 ### Handle errors during sign up
 
-During sign-up, not all actions will succeed. For instance, the user might attempt to sign up with an already used email address or submit an invalid code.
+During sign-up, not all actions succeed. For instance, the user might attempt to sign up with an already used email address or submit an invalid code.
 
 1. To handle errors in library's `signUp(username)` method, use the following code snippet:
 
@@ -91,7 +91,7 @@ During sign-up, not all actions will succeed. For instance, the user might attem
    }
    ```
 
-   `signUp(username)` can return SignUpError. We have provided utility methods to determine the type of error, such as `isUserAlreadyExists()`. Errors of this kind indicate an unsuccessful action and will not include a reference to the new state. You should notify the user that the email is already in use.
+   `signUp(username)` can return SignUpError. We have provided utility methods to determine the type of error, such as `isUserAlreadyExists()`. Errors of this kind indicate an unsuccessful action and won't include a reference to the new state. You should notify the user that the email is already in use.
 
 1. To handle errors in `submitCode()`, use the following code snippet:
 
@@ -114,7 +114,7 @@ During sign-up, not all actions will succeed. For instance, the user might attem
    }
    ```
 
-   `submitCode()` can return `SignUpError`. We have provided utility methods to determine the type of error, such as `isInvalidCode()`. Errors of this kind indicate an unsuccessful action and will not include a reference to the new state. In this case, the previous state reference must be used to reperform the action. To retrieve a new one-time passcode, use the following code snippet:
+   `submitCode()` can return `SignUpError`. We have provided utility methods to determine the type of error, such as `isInvalidCode()`. Errors of this kind indicate an unsuccessful action and won't include a reference to the new state. In this case, the previous state reference must be used to reperform the action. To retrieve a new one-time passcode, use the following code snippet:
 
     ```kotlin
     val submitCodeActionResult = nextState.submitCode(
@@ -129,21 +129,21 @@ During sign-up, not all actions will succeed. For instance, the user might attem
     }
     ```
 
-Do not forget to add the import statements, Android Studio does that for you automatically (on Mac click on Alt + Enter on each error detected by the code editor).
+Don't forget to add the import statements, Android Studio does that for you automatically (on Mac select on Alt + Enter on each error detected by the code editor).
 
-Well, you have done everything that is required to successfully sign up a user on your app. Build and run your application. If all good, you should be able to provide an email id, receive a code on the email and use that to successfully sign up user.
+You have successfully completed all the necessary steps to sign up a user on your app. Build and run your application. If all good, you should be able to provide an email ID, receive a code on the email, and use that to successfully sign up user.
 
 ## Sign in a user
 
-To sign in a user using the **Email one-time passcode** flow, capture the email and send an email containing a one-time passcode for the user to verify their email. When the user enters a valid one-time passcode, the app will sign them in.
+To sign in a user using the **Email one-time passcode** flow, capture the email and send an email containing a one-time passcode for the user to verify their email. When the user enters a valid one-time passcode, the app signs them in.
 
-To sign in user using **Email one-time-passcode** you need to:
+To sign in user using **Email one-time-passcode**, you need to:
 
 1. Create your user interface that includes:
 
    1. A form to submit an Email.
-   1. A form to submit one-time passcode:
-   1. A page to display the account details:
+   1. A form to submit one-time passcode.
+   1. A page to display the account details.
 
 1. To sign in the user, we are going to use the library's `signIn(username)` method, which is going to return a result that can be interpreted as an `actionResult`. Add a button to the application that calls the following code snippet when selected:
 
@@ -167,16 +167,16 @@ To sign in user using **Email one-time-passcode** you need to:
    ```
 
     > [!NOTE]
-    > You should add user inputs to you app to collect user email and one time passcode.
+    > You should add user inputs to your app to collect user email and one time passcode.
 
-   In the library's `signIn(username)` method, we pass in the email address that user supplied us in the email submit form. In most common scenario, the `actionResult` will be of type `SignInResult.CodeRequired`, which indicates that the API expects a code to be sent, in this case to verify the email address. The `SignInResult.CodeRequired` contains a new state reference, which we can retrieve through `actionResult.nextState`. This new state will be of type `SignInCodeRequiredState`, which gives us access to 2 new method:
+   In the library's `signIn(username)` method, we pass in the email address that user supplied us in the email submit form. In most common scenario, the `actionResult` is of type `SignInResult.CodeRequired`, which indicates that the API expects a code to be sent, in this case to verify the email address. The `SignInResult.CodeRequired` contains a new state reference, which we can retrieve through `actionResult.nextState`. This new state is of type `SignInCodeRequiredState`, which gives us access to two new methods:
 
    - `submitCode()` is used to submit the code that user supplies in the form to submit one-time passcode.
    - `resendCode()` is used to resend the one-time passcode if the user doesn't receive the code.
 
 ### Handle errors during sign in
 
-During sign-in, not all actions will succeed. For instance, the user might attempt to sign in with an email address that doesn't exist or submit an invalid code.
+During sign-in, not all actions succeed. For instance, the user might attempt to sign in with an email address that doesn't exist or submit an invalid code.
 
 1. To handle errors in library's `signIn(username)` method, use the following code snippet:
 
@@ -199,7 +199,7 @@ During sign-in, not all actions will succeed. For instance, the user might attem
    }
    ```
 
-    `SignInError` indicates an unsuccessful action result returned by `signIn()` and will not include a reference to the new state, while the utility method `isUserNotFound()` checks for the specific error type of `SignInError`: the user used an email address that doesn't exist.
+    `SignInError` indicates an unsuccessful action result returned by `signIn()` and won't include a reference to the new state, while the utility method `isUserNotFound()` checks for the specific error type of `SignInError`: the user used an email address that doesn't exist.
 
 2. To handle errors in `submitCode()`, use the following code snippet:
 
@@ -214,7 +214,7 @@ During sign-in, not all actions will succeed. For instance, the user might attem
    }
    ```
 
-  The `SubmitCodeError` error indicates an unsuccessful action result returned by `submitCode()` and will not include a reference to the new state, while the utility method `isInvalidCode()` checks for the specific error type of `SubmitCodeError`. In this case, the previous state reference must be used to reperform the action. To retrieve a new one-time passcode, use the following code snippet:
+  The `SubmitCodeError` error indicates an unsuccessful action result returned by `submitCode()` and won't include a reference to the new state, while the utility method `isInvalidCode()` checks for the specific error type of `SubmitCodeError`. In this case, the previous state reference must be used to reperform the action. To retrieve a new one-time passcode, use the following code snippet:
 
    ```kotlin
    val submitCodeActionResult = nextState.submitCode(
@@ -229,11 +229,11 @@ During sign-in, not all actions will succeed. For instance, the user might attem
    }
    ```
 
-Well, you have done everything that is required to successfully sign in a user on your app. Build and run your application. If all good, you should be able to provide an email id, receive a code on the email and use that to successfully sign in user.
+You have completed all the necessary steps to successfully sign in a user on your app. Build and run your application. If everything is working properly, you should be able to input an email ID, receive a code via email, and use that to sign in the user successfully.
 
 ## Sign out a user
 
-To sign out a user using the **Email one-time passcode** flow, you need to have a `Sign out` button, which a user can select to remove the currently stored account from the cache. The user will only be signed out of the local app, not from any other app they are logged in to.
+To sign out a user using the **Email one-time passcode** flow, you need to have a `Sign out` button, which a user can select to remove the currently stored account from the cache. The user will only be signed out of the local app, not from any other app they're logged in to.
 
 To sign out user using **Email one-time-passcode** you need to:
 
@@ -288,10 +288,10 @@ if (actionResult is SignOutResult.Complete) {
 }
 ```
 
-Do not forget to add the import statements, Android Studio does that for you automatically (on Mac click on Alt + Enter on each error detected by the code editor).
+Don't forget to add the import statements, Android Studio does that for you automatically (on Mac select on Alt + Enter on each error detected by the code editor).
 
 Well, you have done everything that is required to successfully sign out a user on your app. Build and run your application. If all good, you should be able to select sign out button to successfully sign out.
 
 ## Next Steps
 
-Tutorial: Sign up user with username and user attributes
+[Tutorial: Sign up user with username and user attributes](tutorial-native-auth-sign-up-user-with-username-user-attributes.md)

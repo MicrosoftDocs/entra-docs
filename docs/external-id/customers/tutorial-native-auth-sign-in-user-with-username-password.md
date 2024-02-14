@@ -11,13 +11,13 @@ ms.service: active-directory
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 02/13/2024
-ms.custom: developer, devx-track-dotnet
+ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to Sign in user with username and password.
 ---
 
 # Tutorial: Sign in user with username and password
 
-This tutorial demonstrates how to sign in a user with a username and password, and use one-time passcode for validation of the user's email address.
+This tutorial demonstrates how to sign in a user with a username and password, and uses one-time passcode for validation of the user's email address.
 
 In this tutorial, you learn how to:
 
@@ -28,12 +28,12 @@ In this tutorial, you learn how to:
 
 - An Android project.
 - User-flow with an **Email with password**:
-  - [Register application in Microsoft Entra External ID for customers tenant](how-to-run-sample-android-app.md#register-an-application)
-  - [Enable public client and native authentication flows](how-to-run-sample-android-app.md#enable-public-client-and-native-authentication-flows)
-  - [Grant API permissions](how-to-run-sample-android-app.md#grant-api-permissions)
-  - [Create a user flow](how-to-run-sample-android-app.md#create-a-user-flow)
-  - [Associate the Android app with the user flow](how-to-run-sample-android-app.md#associate-the--app-with-the-user-flow)
-- [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-auth-android-sign-up-sign-in-sign-out.md)
+  - [Register application in Microsoft Entra External ID for customers tenant](how-to-run-sample-android-app.md#register-an-application).
+  - [Enable public client and native authentication flows](how-to-run-sample-android-app.md#enable-public-client-and-native-authentication-flows).
+  - [Grant API permissions](how-to-run-sample-android-app.md#grant-api-permissions).
+  - [Create a user flow](how-to-run-sample-android-app.md#create-a-user-flow).
+  - [Associate the Android app with the user flow](how-to-run-sample-android-app.md#associate-the--app-with-the-user-flow).
+- [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-auth-android-sign-up-sign-in-sign-out.md).
 
 ## Sign in user with username and password
 
@@ -57,7 +57,7 @@ CoroutineScope(Dispatchers.Main).launch {
 }
 ```
 
-In most common scenario `signIn(username, password)` will return `SignInResult.Complete`, which indicates that the flow is complete and the user has been signed in. This object will contain a reference to the `AccountState`, accessible through the resultValue field. `AccountState` can be used to retrieve account details and access tokens.
+In most common scenario `signIn(username, password)` returns `SignInResult.Complete`, which indicates that the flow is complete and the user has been signed in. This object contains a reference to the `AccountState`, accessible through the resultValue field. `AccountState` can be used to retrieve account details and access tokens.
 
 ## Handle errors
 

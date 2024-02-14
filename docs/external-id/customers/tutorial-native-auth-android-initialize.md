@@ -1,6 +1,6 @@
 ---
 title: Prepare your Android app for native authentication 
-description: Learn how to add Microsoft Authentication Library (MSAL) native auth SDK framework to your Android app..
+description: Learn how to add Microsoft Authentication Library (MSAL) native auth SDK framework to your Android app.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -11,7 +11,7 @@ ms.service: active-directory
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 02/12/2024
-ms.custom: developer, devx-track-dotnet
+ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn about how to add Microsoft Authentication Library (MSAL) native auth SDK framework to your Android app.
 ---
 
@@ -27,8 +27,8 @@ In this tutorial, you learn how to:
  
 ## Prerequisites 
  
-- [How to run the Android sample app](how-to-run-sample-android-app.md)
-- Android project 
+- [How to run the Android sample app](how-to-run-sample-android-app.md).
+- Android project.
  
 ## Add MSAL dependencies 
  
@@ -54,8 +54,7 @@ In this tutorial, you learn how to:
 1. Open your app's `build.gradle` and add the following dependencies: 
  
    ```gradle 
-   implementation 'com.microsoft.identity.client:msal:4.7.0-native-auth-1.0.0' 
-   implementation 'com.microsoft.identity:common:15.0.0-native-auth-1.0.0' 
+   implementation 'com.microsoft.identity.client:msal:5.1.0'
    ``` 
  
 1. Select **File** > **Sync Project with Gradle Files**. 
@@ -95,7 +94,7 @@ Follow these steps to create configuration file:
    1. Find the `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
 
 ### Optional: Logging configuration
-Turn logging on at app creation by creating a logging callback. Without a logging method the library will not be able to output logs.
+Turn logging on at app creation by creating a logging callback. Without a logging method, the library won't be able to output logs.
 
 ```kotlin 
 import com.microsoft.identity.client.Logger
@@ -119,7 +118,7 @@ To configure the logger a logging section needs to be added in the configuration
    ``` 
 
 1. **logcat_enabled**: Enables the logging functionality of the library.
-2. **pii_enabled**: Specifies whether messages containing personal data, or organizational data are logged. When set to false, logs will not contain personal data. When set to true, the logs might contain personal data.
+2. **pii_enabled**: Specifies whether messages containing personal data, or organizational data are logged. When set to false, logs won't contain personal data. When set to true, the logs might contain personal data.
 3. **log_level**: Used to decide which level of logging to enable. The supported log levels are:
    1. ERROR 
    2. WARNING
@@ -176,7 +175,7 @@ The cached account can be retrieved through `getCurrentAccount()`, which will re
     } 
 ``` 
  
-Do not forget to add the import statements, Android Studio does that for you automatically (on Mac click on Alt + Enter on each error detected by the code editor). 
+Don't forget to add the import statements, Android Studio does that for you automatically (on Mac select on Alt + Enter on each error detected by the code editor). 
  
 ## Next steps 
  

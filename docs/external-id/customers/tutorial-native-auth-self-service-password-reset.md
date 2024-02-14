@@ -11,28 +11,28 @@ ms.service: active-directory
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 02/13/2024
-ms.custom: developer, devx-track-dotnet
+ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to self-service password reset.
 ---
 
 # Tutorial: Self-service password reset 
  
-This tutorial demonstrates how to gives users the ability to change or reset their password, with no administrator or help desk involvement. 
+This tutorial demonstrates how to give users the ability to change or reset their password, with no administrator or help desk involvement. 
  
 In this tutorial, you learn how to: 
  
-- Add self-service password reset flow. 
-- Handle errors. 
+- Add self-service password reset flow.
+- Handle errors.
  
 ## Prerequisites 
  
-- [Sign in users in a sample native Android mobile application](how-to-run-sample-android-app.md) 
-- [Enable self-service password reset](how-to-enable-password-reset-customers.md) 
-- [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-auth-android-sign-up-sign-in-sign-out.md) 
+- [Sign in users in a sample native Android mobile application](how-to-run-sample-android-app.md).
+- [Enable self-service password reset](how-to-enable-password-reset-customers.md).
+- [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-auth-android-sign-up-sign-in-sign-out.md).
  
 ## Add self-service password reset flow 
  
-To add self-service password reset flow to your Android application, you need a password reset user interface which has: 
+To add self-service password reset flow to your Android application, you need a password reset user interface, which has: 
  
 - One text field for email 
 - One text field for one-time passcode (OTP) 
@@ -87,7 +87,7 @@ authClient = PublicClientApplication.createNativeAuthPublicClientApplication(
         } 
     } 
    ``` 
-    The code snippet will generate a one-time passcode and send it to the user's email for verification. 
+    The code snippet generates a one-time passcode and sends it to the user's email for verification. 
 
     The return result of the `resetPassword()` action is either `ResetPasswordStartResult.CodeRequired` or `ResetPasswordError`.
 
@@ -95,9 +95,9 @@ authClient = PublicClientApplication.createNativeAuthPublicClientApplication(
       - `isUserNotFound()`
       - `isBrowserRequired()`
 
-    Errors such as these indicate that the previous operations was unsuccessful, and because of that they don't include a reference to a new state.
+    Errors such as these indicate that the previous operations were unsuccessful, and because of that they don't include a reference to a new state.
  
-2. The use will receive a one-time passcode in their email. The following image shows how to capture the one-time passcode: 
+2. The use receives a one-time passcode in their email. The following image shows how to capture the one-time passcode: 
  
     :::image type="content" source="media/native-auth/android/code_text_field.png" alt-text="Screenshot showing OTP input form.":::
  
@@ -127,9 +127,9 @@ authClient = PublicClientApplication.createNativeAuthPublicClientApplication(
       - `isInvalidCode()`
       - `isBrowserRequired()`
     
-    Errors such as these indicate that the previous operations was unsuccessful, and because of that they don't include a reference to a new state.
+    Errors such as these indicate that the previous operations were unsuccessful, and because of that they don't include a reference to a new state.
 
-    If the submitted OTP is valid, the code will set the `nextState` to process a new user password. If the user does not receive the OTP in their email, they have the option to use "Resend Passcode" to request a new OTP. 
+    If the submitted OTP is valid, the code sets the `nextState` to process a new user password. If the user doesn't receive the OTP in their email, they have the option to use "Resend Passcode" to request a new OTP. 
     
     To process this request, use the following code snippet: 
  
@@ -157,7 +157,7 @@ authClient = PublicClientApplication.createNativeAuthPublicClientApplication(
 
     The return result of the `resendCode()` action is either `ResetPasswordResendCodeResult.Success` or `ResendCodeError`.
 
-    If it is `ResendCodeError`, it is an unexpected error for SDK. The previous operation was unsuccessful, and because of that they don't include a reference to a new state.
+    If it's `ResendCodeError`, it's an unexpected error for SDK. The previous operation was unsuccessful, and because of that they don't include a reference to a new state.
 
  
 3. After verifying the user's email, you need to have the user create a new password. 
@@ -190,7 +190,7 @@ authClient = PublicClientApplication.createNativeAuthPublicClientApplication(
       - `isInvalidPassword()`
       - `isPasswordResetFailed()`
 
-    Errors such as these indicate that the previous operations was unsuccessful, and because of that they don't include a reference to a new state.
+    Errors such as these indicate that the previous operations were unsuccessful, and because of that they don't include a reference to a new state.
 
 Assuming no errors occur during the process, you have built a self-service password reset flow. 
 
@@ -198,7 +198,7 @@ Assuming no errors occur during the process, you have built a self-service passw
 
 This is an advanced version of the sign in flows [earlier described](tutorial-native-auth-sign-in-user-with-username-password.md), which has the added benefit of automatically signing in after successfully reset password. 
 
-The `ResetPasswordResult.Complete` will return `SignInContinuationState` object. And `SignInContinuationState` provides access to `signIn()` method. 
+The `ResetPasswordResult.Complete` returns `SignInContinuationState` object. And `SignInContinuationState` provides access to `signIn()` method. 
 
 To reset a user's password and then sign them in, you can use the following code snippet: 
 
@@ -244,7 +244,7 @@ To reset a user's password and then sign them in, you can use the following code
 ```
 
 ## Handle errors
-A few common, expected error states exist. For example, the user might attempt to reset the password with a non-existent email or provide a password that doesn't meet the password requirements. Giving your users a hint to those errors is the most simplest way to handle them.
+A few common, expected error states exist. For example, the user might attempt to reset the password with a nonexistent email or provide a password that doesn't meet the password requirements. Giving your users a hint to those errors is the simplest way to handle them.
 
 To handle the errors during password reset, use the following code snippet:
 
@@ -286,5 +286,5 @@ private fun handleSubmitPasswordError(error: ResetPasswordSubmitPasswordError) {
  
 ## Next Steps 
  
-Tutorial: Support web fallback in Android app 
+[Tutorial: Support web fallback in Android app ](tutorial-native-auth-support-web-fallback.md)
 
