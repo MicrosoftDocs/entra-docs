@@ -7,7 +7,6 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 02/07/2024
 ms.author: kenwith
 ms.reviewer: arvinh

@@ -5,7 +5,6 @@ author: gargisinha
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 2/06/2023
 ms.author: gasinh

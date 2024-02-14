@@ -9,7 +9,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: tilarso
-ms.custom: ignite-fall-2021
 ---
 # How does self-service password reset writeback work in Microsoft Entra ID?
 

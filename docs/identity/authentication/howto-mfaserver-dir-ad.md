@@ -12,8 +12,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: michmcla
-
-ms.custom: seo-update-azuread-jan
 ---
 # Directory integration between Azure MFA Server and Active Directory
 
