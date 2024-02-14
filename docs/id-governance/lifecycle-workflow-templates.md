@@ -14,9 +14,7 @@ ms.custom: template-concept
 
 # Lifecycle Workflows templates and categories
 
-Lifecycle Workflows allows you to automate the lifecycle management process for your organization by creating workflows that contain both built-in tasks, and custom task extensions. These workflows, and the tasks within them, all fall into categories based on the Joiner-Mover-Leaver(JML) model of lifecycle management. To make this process even more efficient, Lifecycle Workflows also provide you with templates, which you can use to accelerate the set up, creation, and configuration of common lifecycle management processes. You can create workflows based on these templates as is, or you can customize them even further to match the requirements for users within your organization. In this article you get the complete list of workflow templates, common template parameters, default template parameters for specific templates, and the list of compatible tasks for each template. For full task definitions, see [Lifecycle Workflow tasks and definitions](lifecycle-workflow-tasks.md).
-
-
+Lifecycle Workflows allows you to automate the lifecycle management process for your organization by creating workflows that contain both built-in tasks, and custom task extensions. These workflows, and the tasks within them, all fall into categories based on the Joiner-Mover-Leaver(JML) model of lifecycle management. To make this process even more efficient, Lifecycle Workflows also provide you with templates, which you can use to accelerate the setup, creation, and configuration of common lifecycle management processes. You can create workflows based on these templates as is, or you can customize them even further to match the requirements for users within your organization. In this article, you get the complete list of workflow templates, common template parameters, default template parameters for specific templates, and the list of compatible tasks for each template. For full task definitions, see [Lifecycle Workflow tasks and definitions](lifecycle-workflow-tasks.md).
 
 ## Lifecycle Workflows built-in templates
 
@@ -47,19 +45,16 @@ For a complete guide on creating a new workflow from a template, see: [Tutorial:
 
 The default specific parameters and properties for the **Onboard pre-hire employee** template are as follows:
 
-
-
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
 |Category     |  Joiner       |  ❌       |
-|Trigger Type     | Trigger and Scope Based        |  ❌       |
+|Trigger Type     | Time based attribute, Attribute changes, Group Membership change        |  ✔️       |
 |Days from event     | -7        | ✔️        |
 |Event timing     | Before        |  ❌       |
 |Event User attribute     | EmployeeHireDate        |   ❌      |
 |Scope type     | Rule based        | ❌        |
 |Execution conditions     | (department eq 'Marketing')      |  ✔️       |
 |Tasks     | **Generate TAP And Send Email**     |  ✔️       |
-
 
 ### Onboard new hire employee
 
@@ -69,18 +64,16 @@ The **Onboard new-hire employee** template is designed to configure tasks that a
 
 The default specific parameters for the **Onboard new hire employee** template are as follows:
 
-
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
 |Category     |  Joiner       |  ❌       |
-|Trigger Type     | Trigger and Scope Based        |  ❌       |
+|Trigger Type     | Time based attribute, Attribute changes, Group Membership change          |  ✔️       |
 |Days from event     | 0        | ❌        |
 |Event timing     | On        |  ❌       |
 |Event User attribute     | EmployeeHireDate, createdDateTime        |   ✔️      |
 |Scope type     | Rule based        | ❌        |
 |Execution conditions     | (department eq 'Marketing')        |  ✔️       |
 |Tasks     | **Add User To Group**, **Enable User Account**, **Send Welcome Email**      |  ✔️       |
-
 
 ### Post-Onboarding of an employee
 
@@ -90,18 +83,16 @@ The **Post-Onboarding of an employee** template is designed to configure tasks t
 
 The default specific parameters for the **Post-Onboarding of an employee** template are as follows:
 
-
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
 |Category     |  Joiner       |  ❌       |
-|Trigger Type     | Trigger and Scope Based        |  ❌       |
+|Trigger Type     | Time based attribute, Attribute changes, Group Membership change       |  ✔️       |
 |Days from event     | 7       | ✔️        |
 |Event timing     | After        |  ❌       |
 |Event User attribute     | EmployeeHireDate, createdDateTime        |   ✔️      |
 |Scope type     | Rule based        | ❌        |
 |Execution conditions     | (department eq 'Marketing')        |  ✔️       |
 |Tasks     | **Add User To Group**, **Add user to selected teams**    |  ✔️       |
-
 
 ### Real-time employee change
 
@@ -128,7 +119,6 @@ The **Real-time employee termination** template is designed to configure tasks t
 
 The default specific parameters for the **Real-time employee termination** template are as follows:
 
-
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
 |Category     |  Leaver       |  ❌       |
@@ -138,8 +128,6 @@ The default specific parameters for the **Real-time employee termination** templ
 > [!NOTE]
 > As this template is designed to run on-demand, no execution condition is present.
 
-
-
 ### Pre-Offboarding of an employee
 
 The **Pre-Offboarding of an employee** template is designed to configure tasks that are completed before an employee's last day of work.
@@ -148,20 +136,16 @@ The **Pre-Offboarding of an employee** template is designed to configure tasks t
 
 The default specific parameters for the **Pre-Offboarding of an employee** template are as follows:
 
-
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
 |Category     |  Leaver       |  ❌       |
-|Trigger Type     | Trigger and Scope Based        |  ❌       |
+|Trigger Type     | Time based attribute, Attribute changes, Group Membership change         |  ✔️       |
 |Days from event     | 7        | ✔️        |
 |Event timing     | Before        |  ❌       |
 |Event User attribute     | employeeLeaveDateTime        |   ❌      |
 |Scope type     | Rule based        | ❌        |
 |Execution condition     | None       |  ✔️       |
 |Tasks     | **Remove user from selected groups**, **Remove user from selected Teams**     |  ✔️       |
-
-
-
 
 ### Offboard an employee
 
@@ -171,18 +155,16 @@ The **Offboard an employee** template is designed to configure tasks that are co
 
 The default specific parameters for the **Offboard an employee** template are as follows:
 
-
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
 |Category     |  Leaver       |  ❌       |
-|Trigger Type     | Trigger and Scope Based        |  ❌       |
+|Trigger Type     | Time based attribute, Attribute changes, Group Membership change        |  ✔️       |
 |Days from event     | 0        | ✔️        |
 |Event timing     | On        |  ❌       |
 |Event User attribute     | employeeLeaveDateTime      |   ❌      |
 |Scope type     | Rule based        | ❌        |
 |Execution condition     | (department eq 'Marketing')        |  ✔️       |
 |Tasks     | **Disable User Account**, **Remove user from all groups**, **Remove user from all Teams**     |  ✔️       |
-
 
 ### Post-Offboarding of an employee
 
@@ -195,23 +177,22 @@ The default specific parameters for the **Post-Offboarding of an employee** temp
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
 |Category     |  Leaver       |  ❌       |
-|Trigger Type     | Trigger and Scope Based        |  ❌       |
+|Trigger Type     | Time based attribute, Attribute changes, Group Membership change        |  ✔️       |
 |Event User attribute     | employeeLeaveDateTime      |   ❌      |
 |Scope type     | Rule based        | ❌        |
 |Execution condition     | (department eq 'Marketing')        |  ✔️       |
 |Tasks     | **Remove all licenses for user**, **Remove user from all Teams**, **Delete User Account**     |  ✔️       |
 
-
 ### Employee group membership changes
 
-The **Employee group membership changes** template is designed to configure tasks that will be completed when an employees has a change in a group membership.
+The **Employee group membership changes** template is designed to configure tasks that are completed when an employee has a change in a group membership.
 
 The default specific parameters for the **Employee group membership changes** template are as follows:
 
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
 |Category     |  mover       |  ❌       |
-|Trigger Type     | Membership change trigger        |  ❌       |
+|Trigger Type     | Time based attribute, Attribute changes, Group Membership change        |  ✔️       |
 |Event User attribute     | employeeLeaveDateTime      |   ❌      |
 |Scope type     | Rule based        | ❌        |
 |Execution condition     | (department eq 'Marketing')        |  ✔️       |
@@ -219,14 +200,14 @@ The default specific parameters for the **Employee group membership changes** te
 
 ### Employee job profile change
 
-The **Employee job profile change** template is designed to configure tasks that will be completed when an employees has a change in job title.
+The **Employee job profile change** template is designed to configure tasks that are completed when an employee has a change in job title.
 
 The default specific parameters for the **Employee job profile change** template are as follows:
 
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
 |Category     |  mover       |  ❌       |
-|Trigger Type     | Trigger and Scope Based        |  ❌       |
+|Trigger Type     | Time based attribute, Attribute changes, Group Membership change        |  ✔️       |
 |Event User attribute     | employeeLeaveDateTime      |   ❌      |
 |Scope type     | Rule based        | ❌        |
 |Execution condition     | (department eq 'Marketing')        |  ✔️       |
