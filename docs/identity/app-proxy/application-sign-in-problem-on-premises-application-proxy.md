@@ -21,7 +21,7 @@ Learn troubleshooting steps for sign in issues.
 
 [I can get to my application, but the links on the application page don't work](application-proxy-page-links-broken-problem.md).
 
-## I'm having a connectivity problem my application
+## I'm having a connectivity problem with my application
 [I don't know what ports to open for my application](application-proxy-add-on-premises-application.md).
 
 ## I'm having a problem configuring the Microsoft Entra application proxy in the admin portal
