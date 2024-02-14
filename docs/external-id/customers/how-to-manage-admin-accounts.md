@@ -81,7 +81,7 @@ You can assign a role when you create a user or invite a guest user. You can add
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select the user you want to change the roles for. Then select **Assigned roles**.
-1. Select **Add assignments**, select the role to assign (for example, *Application administrator*), and then choose **Add**.
+1. Select **Add assignments**, select the role to assign (for example, *Application Administrator*), and then choose **Add**.
 
 ## Remove a role assignment
 
@@ -91,7 +91,7 @@ If you need to remove a role assignment from a user, follow these steps:
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select the user you want to change the roles for. Then select **Assigned roles**.
-1. Select the role you want to remove, for example *Application administrator*, and then select **Remove assignment**.
+1. Select the role you want to remove, for example *Application Administrator*, and then select **Remove assignment**.
 
 ## Review administrator account role assignments
 
