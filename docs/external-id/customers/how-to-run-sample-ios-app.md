@@ -54,7 +54,7 @@ The following steps show you how to register your app in the Microsoft Entra adm
    1. Under **Supported account types**, select **Accounts in this organizational directory only**.
 
 1. Select **Register**.
-1. The application's **Overview** pane will display upon successful registration. Record the **Application (client) ID** to be used in your application source code.
+1. The application's **Overview** pane displays upon successful registration. Record the **Application (client) ID** to be used in your application source code.
 
 ## Enable public client flow and native authentication flows
 
@@ -108,7 +108,7 @@ Follow these steps to create a user flow a customer can use to sign in or sign u
         > [!NOTE]
         > Email one-time passcode must be enabled at the tenant level (**All Identity Providers** > **Email one-time passcode**) for this option to be available at the user flow level.
 
-   1. Under **User attributes**, you can choose the attributes you want to collect from the user upon sign-up. For this guide select **Country/Region** and **City**. 
+   1. Under **User attributes**, you can choose the attributes you want to collect from the user upon sign-up. For this guide, select **Country/Region** and **City**. 
 
 1. Select **Create**. The new user flow appears in the **User flows** list. If necessary, refresh the page.
 
@@ -162,7 +162,7 @@ This guide tests **Email one-time-passcode** usage. Enter a valid email address,
 
 :::image type="content" source="media/native-auth/ios/enter-one-time-pass-code.png" alt-text="Screenshot of user prompt to enter OTP in iOS app.":::
 
-After you enter your email address on the previous screen, the application will send a verification code to it. Once you submit the received code, the application will take you back to the previous screen and automatically sign you in. 
+After you enter your email address on the previous screen, the application will send a verification code to it. Once you submit the received code, the application takes you back to the previous screen and automatically sign you in. 
 
 ## Other flows
 
@@ -170,14 +170,14 @@ The sample app supports the following flows:
 
 1. _Email + one-time passcode_: Follow this flow to sign in or sign up with an email and a one-time passcode.
 1. _Email + password_: Follow this flow to sign in or sign up with email and a password.
-1. _Email + password sign up with custom attributes_: Follow this flow to sign up with email, password and custom attributes.
+1. _Email + password sign up with custom attributes_: Follow this flow to sign up with email, password, and custom attributes.
 1. _Password reset_: Follow this flow to reset the password.
 1. _Fallback to web browser_: Follow this flow to use the browser to sign in or sign up.
 
     > [!NOTE]
     > In the [Create a user flow](#create-a-user-flow) section, you created a user flow where you chose **Email one-time passcode** under **Identity providers** > **Email Accounts**. For flows 2 through 4, you require a user flow that uses **Email with password** under **Identity providers** > **Email Accounts**.
 
-Follow the steps in [Create a user flow](#create-a-user-flow) to create a user flow that uses **Email with password** under **Identity providers** > **Email Accounts**. Remember to [associate the application with the new user flow](#associate-the-application-with-the-user-flow)
+Follow the steps in [Create a user flow](#create-a-user-flow) to create a user flow that uses **Email with password** under **Identity providers** > **Email Accounts**. Remember to [associate the application with the new user flow.](#associate-the-application-with-the-user-flow)
 
 Alternatively, modify the existing user flow to use **Email with password**. To modify the user flow you created earlier, follow these steps:
 

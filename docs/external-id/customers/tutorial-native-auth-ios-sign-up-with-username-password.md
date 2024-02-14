@@ -21,8 +21,8 @@ This tutorial demonstrates how to sign up using username and password.
 
 In this tutorial, you learn how to:
 
-- Sign up using username and password.
-- Handle errors
+- Sign up using username, and password.
+- Handle errors.
 
 ## Prerequisites
 
@@ -38,7 +38,7 @@ In this tutorial, you learn how to:
 
 To sign up user using username (email address) and password, we need to verify the email through email one-time passcode (OTP).
 
-We will use the `signUp(username:password:delegate)` method, which will respond asynchronously by calling one of the methods on the passed delegate object which must implement the `SignUpStartDelegate` protocol.
+We use the `signUp(username:password:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignUpStartDelegate` protocol.
 
 1. In the `signUp(username:password:delegate)` method, we pass in the email address that the user supplied us with, their password, and pass `self` for the delegate:
 
@@ -65,9 +65,9 @@ nativeAuth.signUp(username: email, password: password, delegate: self)
    }
    ```
 
-   The call to `signUp(username:password:delegate)` will result in a call to either `onSignUpCodeRequired()` or `onSignUpStartError()` delegate methods.
+   The call to `signUp(username:password:delegate)` results in a call to either `onSignUpCodeRequired()` or `onSignUpStartError()` delegate methods.
 
-   The `onSignUpCodeRequired(newState:sentTo:channelTargetType:codeLength)` will be called to indicate that a code has been sent to verify the user's email address. Along with some details of where the code has been sent, and how many digits it contains, this delegate method also has a `newState` parameter of type `SignUpCodeRequiredState`, which gives us access to two new methods:
+   The `onSignUpCodeRequired(newState:sentTo:channelTargetType:codeLength)` is called to indicate that a code has been sent to verify the user's email address. Along with some details of where the code has been sent, and how many digits it contains, this delegate method also has a `newState` parameter of type `SignUpCodeRequiredState`, which gives us access to two new methods:
 
    - `submitCode(code:delegate)`
    - `resendCode(delegate)`
@@ -92,11 +92,11 @@ nativeAuth.signUp(username: email, password: password, delegate: self)
    }
    ```
 
-   The `submitCode(code:delegate)` accepts a delegate parameter and we must implement the required methods in the `SignUpVerifyCodeDelegate` protocol.In the most common scenario, we will receive a call to `onSignUpCompleted(newState)` indicating that the user has been signed up and the flow is complete.
+   The `submitCode(code:delegate)` accepts a delegate parameter and we must implement the required methods in the `SignUpVerifyCodeDelegate` protocol. In the most common scenario, we'll receive a call to `onSignUpCompleted(newState)` indicating that the user has been signed up and the flow is complete.
 
 ## Handle errors
 
-In our earlier implementation of `SignUpStartDelegate` protocol we displayed the error when we handled the `onSignUpStartError(error)` delegate function.
+In our earlier implementation of `SignUpStartDelegate` protocol, we displayed the error when we handled the `onSignUpStartError(error)` delegate function.
 
 We can enhance the user experience by handling the specific error type as follows:
 

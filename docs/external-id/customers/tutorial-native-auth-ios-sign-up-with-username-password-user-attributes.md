@@ -1,6 +1,6 @@
 ---
-title: Sign up using username, password and user attributes
-description: Learn how to sign up using username, password and user attributes.
+title: Sign up using username, password, and user attributes
+description: Learn how to sign up using username, password, and user attributes.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -15,13 +15,13 @@ ms.custom: developer, devx-track-dotnet
 #Customer intent: As a dev, devops, I want to learn about sign up using username, password and user attributes.
 ---
 
-# Tutorial: Sign up using username, password and user attributes
+# Tutorial: Sign up using username, password, and user attributes
 
-This tutorial demonstrates how to sign up using username, password and user attributes.
+This tutorial demonstrates how to sign up using username, password, and user attributes.
 
 In this tutorial, you learn how to:
 
-- Sign up using username, password and custom attributes.
+- Sign up using username, password, and custom attributes.
 - Handle errors.
 - Use user attributes across one or more pages.
 
@@ -38,9 +38,9 @@ In this tutorial, you learn how to:
 
 ## Sign up user
 
-To sign up user using username (email address), password and user attributes, we need to verify the email through email one-time passcode (OTP).
+To sign up user using username (email address), password, and user attributes, we need to verify the email through email one-time passcode (OTP).
 
-We will use the `signUp(username:password:attributes:delegate)` method, which will respond asynchronously by calling one of the methods on the passed delegate object which must implement the `SignUpStartDelegate` protocol.
+We use the `signUp(username:password:attributes:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignUpStartDelegate` protocol.
 
 1. In the `signUp(username:password:attributes:delegate)` method, we pass in the user's email address, chosen password, attributes, and pass `self` as the delegate:
 
@@ -53,7 +53,7 @@ We will use the `signUp(username:password:attributes:delegate)` method, which wi
     nativeAuth.signUp(username: email, password: password, attributes: attributes, delegate: self)
     ```
 
-   The call to `signUp(username:attributes:delegate)` results in a call to either `onSignUpCodeRequired()` or `onSignUpStartError()` delegate methods, or in a call to `onSignUpAttributesInvalid(attributeNames: [String])` if it is implemented in the delegate.
+   The call to `signUp(username:attributes:delegate)` results in a call to either `onSignUpCodeRequired()` or `onSignUpStartError()` delegate methods, or in a call to `onSignUpAttributesInvalid(attributeNames: [String])` if it's implemented in the delegate.
 
 1. To implement the `SignUpStartDelegate` protocol as an extension to our class, use the following code snippet:
 
@@ -105,11 +105,11 @@ We will use the `signUp(username:password:attributes:delegate)` method, which wi
    }
    ```
 
-   In the most common scenario, we receive a call to `onSignUpCompleted(newState)` which indicates that the user has been signed up and the flow is complete.
+   In the most common scenario, we receive a call to `onSignUpCompleted(newState)`, which indicates that the user has been signed up and the flow is complete.
 
 ## Handle errors
 
-In our earlier implementation of `SignUpStartDelegate` protocol we displayed the error when we handled the `onSignUpStartError` delegate function.
+In our earlier implementation of `SignUpStartDelegate` protocol, we displayed the error when we handled the `onSignUpStartError` delegate function.
 
 We can enhance the user experience by handling the specific error type as follows:
 
@@ -127,9 +127,9 @@ func onSignUpStartError(error: MSAL.SignUpStartError) {
 
 ## User attributes across one or more pages
 
-To spread the attributes across one or more pages, we must set the attributes we intend to collect across different pages as mandatory in the CIAM tenant configuration.
+To spread the attributes across one or more pages, we must set the attributes we intend to collect across different pages as mandatory in the customer identity and access management (CIAM) tenant configuration.
 
-We'll call `signUp(username:password:delegate)` without passing any attributes. The next step will be to call `submitCode(code: userSuppliedCode, delegate: self)` to verify user's email.
+We call `signUp(username:password:delegate)` without passing any attributes. The next step will be to call `submitCode(code: userSuppliedCode, delegate: self)` to verify user's email.
 
 We implement the `SignUpVerifyCodeDelegate` protocol as an extension to our class as before, but this time we must implement the optional method `onSignUpAttributesRequired(attributes:newState)` in addition to the required methods:
 
@@ -186,12 +186,12 @@ extension ViewController: SignUpAttributesRequiredDelegate {
 }
 ```
 
-When the user doesn't provide all the required attributes, or the attributes are invalid, these delegate methods will be called:
+When the user doesn't provide all the required attributes, or the attributes are invalid, these delegate methods are called:
 
-- onSignUpAttributesInvalid: indicates that one or more attributes that were sent failed input validation. This error will contain an invalidAttributes parameter which is a list of all attributes that were sent by the developer that failed input validation.
-- onSignUpAttributesRequired: indicates that the server requires one or more attributes to be sent, before the user account can be created. This happens when one or more attributes is set as mandatory in the tenant configuration. This result will contain a attributes parameter which is a list of `MSALNativeAuthRequiredAttribute` objects, which outline details about the user attributes that the API requires.
+- onSignUpAttributesInvalid: indicates that one or more attributes that were sent failed input validation. This error contains an invalidAttributes parameter, which is a list of all attributes that were sent by the developer that failed input validation.
+- onSignUpAttributesRequired: indicates that the server requires one or more attributes to be sent, before the user account can be created. This happens when one or more attributes is set as mandatory in the tenant configuration. This result contains attributes parameter, which is a list of `MSALNativeAuthRequiredAttribute` objects, which outline details about the user attributes that the API requires.
 
-Both delegate methods will contain a new state reference. We will use the `newState` parameter to call `submitAttributes(attributes:delegate)` again with the new attributes.
+Both delegate methods contain a new state reference. We'll use the `newState` parameter to call `submitAttributes(attributes:delegate)` again with the new attributes.
 
 ## Next Steps
 

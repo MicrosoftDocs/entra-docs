@@ -35,7 +35,7 @@ In this tutorial, you learn how to:
 
 ## Sign in using username and password
 
-To sign in a user using username (email address) and password, will use the `signIn(username:password:delegate)` method, which will respond asynchronously by calling one of the methods on the passed delegate object which must implement the `SignInStartDelegate` protocol.
+To sign in a user using username (email address) and password, will use the `signIn(username:password:delegate)` method, which will respond asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignInStartDelegate` protocol.
 
 1. In the `signIn(username:password:delegate)` method, we pass in the email address that the user supplied us with, their password, and pass `self` for the delegate:
 
@@ -59,7 +59,7 @@ To sign in a user using username (email address) and password, will use the `sig
 
 ## Handle errors
 
-In our earlier implementation of `SignInStartDelegate` protocol we displayed the error when we handled the `onSignInError(error)` delegate function.
+In our earlier implementation of `SignInStartDelegate` protocol, we displayed the error when we handled the `onSignInError(error)` delegate function.
 
 We can enhance the user experience by handling the specific error type as follows:
 

@@ -44,7 +44,7 @@ In this tutorial, you learn how to:
 1. Select **Add Package Dependencies...** from the **File** menu.
 1. Enter `https://github.com/AzureAD/microsoft-authentication-library-for-objc` as the Package URL and choose **Add Package**
 
-For more details and other mechanisms to add MSAL to your project see the [project Readme file](https://github.com/AzureAD/microsoft-authentication-library-for-objc?tab=readme-ov-file#installation).
+For more information and other mechanisms to add MSAL to your project, see the [project Readme file](https://github.com/AzureAD/microsoft-authentication-library-for-objc?tab=readme-ov-file#installation).
 
 ## Create SDK instance
 
@@ -89,7 +89,7 @@ MSALGlobalConfig.loggerConfig.setLogCallback { logLevel, message, containsPII in
 }
 ```
 
-This will output all debug logs from MSAL which can be helpful in diagnosing issues and learning how the Native Auth flows work. To learn more about configuring log levels and best practices see [Logging in MSAL for iOS/macOS](../../identity-platform/msal-logging-ios.md).
+This outputs all debug logs from MSAL, which can be helpful in diagnosing issues and learning how the Native Auth flows work. To learn more about configuring log levels and best practices see [Logging in MSAL for iOS/macOS](../../identity-platform/msal-logging-ios.md).
 
 ## Next steps
 

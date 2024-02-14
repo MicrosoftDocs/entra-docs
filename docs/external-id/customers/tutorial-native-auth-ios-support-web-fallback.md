@@ -17,7 +17,7 @@ ms.custom: developer, devx-track-dotnet
 
 # Tutorial: Support web fallback
 
-This tutorial demonstrates how to acquire a token through a browser where native authentication is not sufficient to complete the user flow.
+This tutorial demonstrates how to acquire a token through a browser where native authentication isn't sufficient to complete the user flow.
 
 In this tutorial, you learn how to:
 
@@ -30,18 +30,18 @@ In this tutorial, you learn how to:
 
 ## Browser required
 
-`BrowserRequired` is a fallback mechanism for various scenarios where native authentication is not sufficient to complete the user flow.
+`BrowserRequired` is a fallback mechanism for various scenarios where native authentication isn't sufficient to complete the user flow.
 
-To ensure stability of your application and avoid interruption of the authentication flow, it is highly recommended to use the SDK's `acquireToken()` method to continue the flow in the browser.
+To ensure stability of your application and avoid interruption of the authentication flow, it's highly recommended to use the SDK's `acquireToken()` method to continue the flow in the browser.
 
 When we initialize the SDK, we need to specify which challenge types our mobile application can support. Here are the list of challenge types that the SDK accepts:
 
 - OOB (out of band): add this challenge type when your iOS application can handle a one-time-passcode, in this case an email code.
 - Password: add this challenge type when your application is able to handle password based authentication.
 
-When Microsoft Entra requires capabilities that the client can't provide the `BrowserRequired` error will be returned. For example, suppose we initialize the SDK instance specifying only the challenge type OOB, but in Microsoft Entra admin centre, the application is configured with an **Email with password** user flow. When we will call the **signUp(username)** method from the SDK instance, we will get a `BrowserRequired` error, because Microsoft Entra requires different challenge type (password in this case) than the one configured in the SDK.
+When Microsoft Entra requires capabilities that the client can't provide the `BrowserRequired` error will be returned. For example, suppose we initialize the SDK instance specifying only the challenge type OOB, but in Microsoft Entra admin center, the application is configured with an **Email with password** user flow. When we call the **signUp(username)** method from the SDK instance, we get a `BrowserRequired` error, because Microsoft Entra requires different challenge type (password in this case) than the one configured in the SDK.
 
-Insufficient challenge types is only one example of when `BrowserRequired` can occur. `BrowserRequired` is a general fallback mechanism that can happen in various scenarios.
+Insufficient challenge type is only one example of when `BrowserRequired` can occur. `BrowserRequired` is a general fallback mechanism that can happen in various scenarios.
 
 ## Sample flow
 
@@ -55,7 +55,7 @@ nativeAuth = try MSALNativeAuthPublicClientApplication(
 )
 ```
 
-In this case we are specifying only the challenge type OOB. Suppose that in the Microsoft Entra admin centre, the application is configured with an **Email with password** user flow.
+In this case we're specifying only the challenge type OOB. Suppose that in the Microsoft Entra admin center, the application is configured with an **Email with password** user flow.
 
 ```swift
 nativeAuth.signUp(username: email, delegate: self)
@@ -67,14 +67,14 @@ func onSignUpStartError(error: MSAL.SignUpStartError) {
 }
 ```
 
-When we will call the `signUp(username:delegate)` method from the SDK instance, we will get a `BrowserRequired` error, because Microsoft Entra requires a different challenge type (password in this case) than the one configured in the SDK.
+When we call the `signUp(username:delegate)` method from the SDK instance, we get a `BrowserRequired` error, because Microsoft Entra requires a different challenge type (password in this case) than the one configured in the SDK.
 
 ## Handle BrowserRequired error
 
-To handle this kind of error we need to launch a browser and let the user perform the authentication flow there. This can be done by calling `acquireTokenWithParameters()` method. In order to use this method, a few additional configurations need to be done:
+To handle this kind of error, we need to launch a browser and let the user perform the authentication flow there. This can be done by calling `acquireTokenWithParameters()` method. In order to use this method, a few additional configurations need to be done:
 
 - [Configure URL schemes in our Xcode project](../../identity-platform/tutorial-v2-ios.md#for-ios-only-configure-url-schemes)
-- [Configure the redirect URI in Microsoft Entra Admin centre](../../identity-platform/quickstart-mobile-app-ios-sign-in.md#register-your-quickstart-app)
+- [Configure the redirect URI in Microsoft Entra admin center](../../identity-platform/quickstart-mobile-app-ios-sign-in.md#register-your-quickstart-app)
 
 Now we can get a token and an account interactively. Here's an example of how to do it:
 

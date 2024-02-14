@@ -17,7 +17,7 @@ ms.custom: developer, devx-track-dotnet
 
 # Tutorial: Reset password of a user
 
-This tutorial demonstrates how to gives users the ability to change or reset their password, with no administrator or help desk involvement.
+This tutorial demonstrates how to give users the ability to change or reset their password, with no administrator or help desk involvement.
 
 In this tutorial, you learn how to:
 
@@ -57,7 +57,7 @@ To reset the password of an existing user, we need to validate the email address
    }
    ```
 
-   The call to `resetPassword(username:delegate)` will result in a call to either `onResetPasswordCodeRequired()` or `onResetPasswordStartError()` delegate methods.
+   The call to `resetPassword(username:delegate)` results in a call to either `onResetPasswordCodeRequired()` or `onResetPasswordStartError()` delegate methods.
 
    In the most common scenario `onResetPasswordCodeRequired(newState:sentTo:channelTargetType:codeLength)` will be called to indicate that a code has been sent to verify the user's email address. Along with some details of where the code has been sent, and how many digits it contains, this delegate method also has a `newState` parameter of type `ResetPasswordCodeRequiredState`, which gives us access to two new methods:
 
@@ -88,7 +88,7 @@ To reset the password of an existing user, we need to validate the email address
    }
    ```
 
-   In the most common scenario, we will receive a call to `onPasswordRequired(newState)` indicating that we can provide the new password using the `newState` instance.
+   In the most common scenario, we receive a call to `onPasswordRequired(newState)` indicating that we can provide the new password using the `newState` instance.
 
    ```swift
    newState.submitPassword(password: newPassword, delegate: self)
@@ -112,11 +112,11 @@ To reset the password of an existing user, we need to validate the email address
    }
    ```
 
-   In the most common scenario, we will receive a call to `onResetPasswordCompleted(newState)` indicating that the password reset flow has completed.
+   In the most common scenario, we receive a call to `onResetPasswordCompleted(newState)` indicating that the password reset flow has completed.
 
 ## Handle errors
 
-In our earlier implementation of `ResetPasswordStartDelegate` protocol we displayed the error when we handled the `onResetPasswordStartError(error)` delegate function.
+In our earlier implementation of `ResetPasswordStartDelegate` protocol, we displayed the error when we handled the `onResetPasswordStartError(error)` delegate function.
 
 We can enhance the user experience by handling the specific error type as follows:
 
@@ -136,9 +136,9 @@ func onResetPasswordStartError(error: MSAL.ResetPasswordStartError) {
 
 ### Handle errors with states
 
-Some errors include a reference to a new state. For example, if the user enters an incorrect email verification code, the error handler will include a reference to a `ResetPasswordCodeRequiredState` that can be used to submit a new verification code. Let's look at an example of this.
+Some errors include a reference to a new state. For example, if the user enters an incorrect email verification code, the error handler includes a reference to a `ResetPasswordCodeRequiredState` that can be used to submit a new verification code.
 
-In our previous implementation of `ResetPasswordVerifyCodeDelegate` protocol we simply displayed the error when we handled the `onResetPasswordError(error:newState)` delegate function.
+In our previous implementation of `ResetPasswordVerifyCodeDelegate` protocol, we simply displayed the error when we handled the `onResetPasswordError(error:newState)` delegate function.
 
 We can improve the user experience by asking the user to enter the correct code and resubmitting it as follows:
 
@@ -158,7 +158,7 @@ func onResetPasswordVerifyCodeError(
 }
 ```
 
-Another example where the error handler includes a reference to a new state is when the user enters an invalid password. In this case, the error handler will include a reference to a `ResetPasswordRequiredState` that can be used to submit a new password. Here's an example:
+Another example where the error handler includes a reference to a new state is when the user enters an invalid password. In this case, the error handler includes a reference to a `ResetPasswordRequiredState` that can be used to submit a new password. Here's an example:
 
 ```swift
 func onResetPasswordRequiredError(
@@ -200,7 +200,7 @@ extension ViewController: ResetPasswordRequiredDelegate {
 
 The `signIn(delegate)` accepts a delegate parameter and we must implement the required methods in the `SignInAfterResetPasswordDelegate` protocol.
 
-In the most common scenario, we will receive a call to `onSignInCompleted(result)` indicating that the user has been signed in and the flow is complete.
+In the most common scenario, we receive a call to `onSignInCompleted(result)` indicating that the user has been signed in and the flow is complete.
 
 ```swift
 extension ViewController: SignInAfterSignUpDelegate {
