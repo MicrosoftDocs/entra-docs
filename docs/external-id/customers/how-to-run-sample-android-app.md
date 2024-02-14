@@ -180,7 +180,7 @@ The sample app supports the following flows:
  
 1. _Email + one-time passcode_: Follow this flow to sign in or sign up with an email and a one-time passcode. 
 1. _Email + password_: Follow this flow to sign in or sign up with an email, password, and one-time passcode. 
-1. _Email + password sign up with user attributes_: Follow this flow to sign up with email, password, and user attributes. 
+1. _Email + password sign-up with user attributes_: Follow this flow to sign up with email, password, and user attributes. 
 1. _Password reset_: Follow this flow to reset the password. 
 1. _Fallback to web browser_: Follow this flow to use the browser to sign in or sign up. 
  

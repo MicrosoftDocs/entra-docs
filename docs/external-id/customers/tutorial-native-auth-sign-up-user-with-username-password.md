@@ -39,7 +39,7 @@ In this tutorial, you learn how to:
  
 To sign up user using username (email address) and password, we need to verify the email through email one-time passcode (OTP). 
 
-The following wire frame shows a high-level view of the sign up user with username and password flow:
+The following wire frame shows a high-level view of the sign-up user with username and password flow:
 
 :::image type="content" source="media/native-auth/android/signup-email-password.png" alt-text="A mock-up image illustrates registering a user with a username and password.":::
  

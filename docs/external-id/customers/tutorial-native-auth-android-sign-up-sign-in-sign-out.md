@@ -294,4 +294,4 @@ Well, you have done everything that is required to successfully sign out a user 
 
 ## Next Steps
 
-[Tutorial: Sign up user with username and user attributes](tutorial-native-auth-sign-up-user-with-username-user-attributes.md)
+[Tutorial: Sign up user with username and user attributes](tutorial-native-auth-sign-up-user-with-username-user-attributes.md).
