@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
 ms.date: 01/10/2024
-ms.reviewer: xurobert
+ms.reviewer:
 ms.service: identity-platform
 
 ms.topic: conceptual

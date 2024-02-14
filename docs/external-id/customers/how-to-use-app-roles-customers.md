@@ -96,7 +96,7 @@ The following table shows which features are currently available.
 | Create/update/delete a customer (local user) via the Microsoft Entra admin center | Yes |
 | Reset a password for a customer (local user) via the Microsoft Entra admin center | Yes |
 | Create/update/delete a customer (local user) via Microsoft Graph | Yes |
-| Reset a password for a customer (local user) via Microsoft Graph | Yes, only if the service principal is added to the Global administrator role |
+| Reset a password for a customer (local user) via Microsoft Graph | Yes, only if the service principal is added to the Global Administrator role |
 | Create/update/delete a security group via the Microsoft Entra admin center | Yes |
 | Create/update/delete a security group via the Microsoft Graph API | Yes |
 | Change security group members using the Microsoft Entra admin center | Yes |

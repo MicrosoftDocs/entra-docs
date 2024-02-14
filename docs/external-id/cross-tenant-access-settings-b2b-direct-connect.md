@@ -37,7 +37,7 @@ Learn more about using cross-tenant access settings to [manage B2B direct connec
 - Identify any Microsoft Entra organizations that need customized settings.
 - Contact organizations with which you want to set up B2B direct connect. Because B2B direct connect is established through mutual trust, both you and the other organization need to enable B2B direct connect with each other in your cross-tenant access settings.
 - Obtain any required information from external organizations. If you want to apply access settings to specific users, groups, or applications within an external organization, you need to obtain these IDs from the organization before you can configure access settings.
-- To configure cross-tenant access settings in the Microsoft Entra admin center, you need an account with a Global administrator or Security administrator role. Teams administrators can read cross-tenant access settings, but they can't update these settings.
+- To configure cross-tenant access settings in the Microsoft Entra admin center, you need an account with a Global Administrator or Security Administrator role. Teams administrators can read cross-tenant access settings, but they can't update these settings.
 
 ## Configure default settings
 
@@ -45,7 +45,7 @@ Learn more about using cross-tenant access settings to [manage B2B direct connec
 
  Default cross-tenant access settings apply to all external tenants for which you haven't created organization-specific customized settings. If you want to modify the Microsoft Entra ID-provided default settings, follow these steps.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
 1. Select the **Default settings** tab and review the summary page.
 
@@ -65,7 +65,7 @@ Learn more about using cross-tenant access settings to [manage B2B direct connec
 
 Follow these steps to configure customized settings for specific organizations.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
 3. Select **Organizational settings**.
 4. Select **Add organization**.
@@ -88,7 +88,7 @@ Follow these steps to configure customized settings for specific organizations.
 
 With inbound settings, you select which external users and groups can access the internal applications you choose. Whether you're configuring default settings or organization-specific settings, the steps for changing inbound cross-tenant access settings are the same. As described in this section, you navigate to either the **Default** tab or an organization on the **Organizational settings** tab, and then make your changes.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
 
@@ -202,7 +202,7 @@ With inbound settings, you select which external users and groups can access the
 
 With outbound settings, you select which of your users and groups are able to access the external applications you choose. The detailed steps for modifying outbound cross-tenant access settings are the same whether you're configuring default or organization-specific settings. As described in this section, navigate to the **Default** tab or an organization on the **Organizational settings** tab, and then make your changes.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
 
@@ -295,7 +295,7 @@ When you remove an organization from your Organizational settings, the default c
 > [!NOTE]
 > If the organization is a cloud service provider for your organization (the isServiceProvider property in the Microsoft Graph [partner-specific configuration](/graph/api/resources/crosstenantaccesspolicyconfigurationpartner) is true), you won't be able to remove the organization.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
 

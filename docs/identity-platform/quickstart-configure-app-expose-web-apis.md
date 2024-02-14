@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: has-adal-ref 
 ms.date: 06/29/2023
-ms.reviewer: aragra, lenalepa, sureshja
+ms.reviewer: sureshja
 ms.service: identity-platform
 
 ms.topic: quickstart

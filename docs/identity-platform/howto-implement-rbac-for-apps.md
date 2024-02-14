@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.date: 01/06/2023
-ms.reviewer: johngarland, mamarxen, ianbe
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: how-to

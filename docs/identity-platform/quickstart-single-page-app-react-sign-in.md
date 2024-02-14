@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js
 ms.date: 12/13/2023
-ms.reviewer: EmLauber
+ms.reviewer: emilylauber
 ms.service: identity-platform
 
 ms.topic: quickstart
