@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.date: 12/13/2023
-ms.reviewer: EmLauber
+ms.reviewer: emilylauber
 ms.service: identity-platform
 
 ms.topic: tutorial

@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom:
 ms.date: 10/24/2023
-ms.reviewer: brandwe
+ms.reviewer: negoe
 ms.service: identity-platform
 
 ms.topic: tutorial

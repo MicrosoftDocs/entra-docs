@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
 ms.date: 08/31/2020
-ms.reviewer: saeeda
+ms.reviewer: saeeda, negoe
 ms.service: identity-platform
 
 ms.topic: conceptual
