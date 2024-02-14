@@ -1,6 +1,6 @@
 ---
 title: Troubleshoot problems signing in to on premises applications using Microsoft Entra application proxy
-description: Troubleshooting common issues faced when you are unable to sign in to on premises applications using the Microsoft Entra application proxy.
+description: Troubleshooting common issues faced when you're unable to sign in to on premises applications using the Microsoft Entra application proxy.
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
@@ -11,15 +11,15 @@ ms.author: kenwith
 ms.reviewer: asteen
 ---
 
-# Problems signing in to an on-premises application using the Microsoft Entra application proxy
-This articles walks through troubleshooting steps for sign in issues.
+# Problems signing in to applications using Microsoft Entra application proxy
+Learn troubleshooting steps for sign in issues.
 
 ## I can load my application, but something on the page looks broken
 [I can get to my application, but the application page isn't displaying correctly](application-proxy-page-appearance-broken-problem.md).
 
 [I can get to my application, but the application takes too long to load](application-proxy-page-load-speed-problem.md).
 
-[I can get to my application, but the links on the application page do not work](application-proxy-page-links-broken-problem.md).
+[I can get to my application, but the links on the application page don't work](application-proxy-page-links-broken-problem.md).
 
 ## I'm having a connectivity problem my application
 [I don't know what ports to open for my application](application-proxy-add-on-premises-application.md).
@@ -35,7 +35,7 @@ This articles walks through troubleshooting steps for sign in issues.
 [I get a "Can't Access this Corporate Application" error](application-proxy-sign-in-bad-gateway-timeout-error.md).
 
 ## I'm having a problem with the application proxy connector
-[I am having issues installing the application proxy connector](application-proxy-connector-installation-problem.md).
+[I have issues installing the application proxy connector](application-proxy-connector-installation-problem.md).
 
 ## Next steps
 [How to provide secure remote access to on-premises applications](overview-what-is-app-proxy.md)
