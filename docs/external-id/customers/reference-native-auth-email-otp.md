@@ -172,7 +172,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |Request parameter validation failed such as when a continuation token fails validation.|
+| `invalid_request`  |Request parameter validation failed such as when the challenge_type parameter value contains an unsupported authentication method.|
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.|
 |`unauthorized_client`|The client ID included in the request doesn't exist.  |  
 |`attribute_validation_failed`|  Validation of one or more attributes failed. This response is possible if the app submits user attributes.|
