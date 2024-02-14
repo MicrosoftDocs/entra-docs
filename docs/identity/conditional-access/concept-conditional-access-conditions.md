@@ -5,7 +5,7 @@ description: What are conditions in a Microsoft Entra Conditional Access policy
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 07/17/2023
+ms.date: 02/14/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -25,6 +25,12 @@ When users access a sensitive application, an administrator may factor multiple 
 - Sign-in risk information from Identity Protection
 - Network location
 - Device information
+
+## Insider risk
+
+PLACEHOLDER TEXT
+
+Administrators with access to [Microsoft Purview adaptive protection](/purview/insider-risk-management-adaptive-protection) can incorporate risk signals from  Purview into Conditional Access policy decisions. 
 
 ## Sign-in risk
 

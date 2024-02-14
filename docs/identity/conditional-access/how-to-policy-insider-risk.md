@@ -16,6 +16,8 @@ ms.reviewer: poulomib
 
 Most users have a normal behavior that can be tracked, when they fall outside of this norm it could be risky to allow them to just sign in. You may want to block that user or maybe just ask them to perform multifactor authentication to prove that they're really who they say they are. 
 
+[Insider risk as a condition](concept-conditional-access-conditions.md#insider-risk)
+
 INSERT MORE TEXT ABOUT INSIDER RISK POLICY HERE For more information, see the article[Help dynamically mitigate risks with adaptive protection](/purview/insider-risk-management-adaptive-protection).
 
 ## Template deployment
