@@ -222,7 +222,7 @@ Suppose you use tenant restrictions to block access by default, but you want to 
 
 #### Example: Configure tenant restrictions v2 to allow Microsoft Accounts
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) or a [Conditional Access administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) or a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
 

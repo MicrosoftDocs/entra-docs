@@ -79,7 +79,7 @@ To complete the scenario in this tutorial, you need:
 
 ## Create a Conditional Access policy that requires MFA
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Identity** > **Protection** > **Security Center**.
 1. Under **Protect**, select **Conditional Access**.
 1. On the **Conditional Access** page, in the toolbar on the top, select **Create new policy**.
