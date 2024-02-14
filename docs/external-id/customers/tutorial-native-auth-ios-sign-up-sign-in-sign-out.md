@@ -114,7 +114,7 @@ func onSignUpStartError(error: MSAL.SignUpStartError) {
 }
 ```
 
-You've successfully completed all the necessary steps to sign up a user on your app. Build and run your application. If all good, you should be able to provide an email ID, receive a code on the email, and use that to successfully sign up user.
+You've successfully completed all the necessary steps to sign up a user on your app. Build and run your application. If all good, you should be able to provide an email ID, receive a code on the email, and use that to successfully sign-up user.
 
 ## Sign in user
 
@@ -257,7 +257,7 @@ To sign out a user, use the reference to the `MSALNativeAuthUserAccountResult` t
     }
     ```
 
-You have successfully completed all the necessary steps to sign out a user on your app.. Build and run your application. If all good, you should be able to select sign out button to successfully sign out.
+You have successfully completed all the necessary steps to sign out a user on your app. Build and run your application. If all good, you should be able to select sign out button to successfully sign out.
 
 ## Next Steps
 
