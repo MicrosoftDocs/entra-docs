@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.date: 10/26/2022
-ms.reviewer: lenalepa, sureshja
+ms.reviewer: sureshja
 ms.service: identity-platform
 
 ms.topic: conceptual

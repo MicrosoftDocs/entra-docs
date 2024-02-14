@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom:
 ms.date: 09/05/2023
-ms.reviewer: brandwe
+ms.reviewer: brianmel
 ms.service: identity-platform
 
 ms.topic: conceptual
