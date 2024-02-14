@@ -52,6 +52,10 @@ items:
               items:
                 - name: Sign in users
                   href: sample-web-app-dotnet-sign-in.md
+            - name: Python
+              items:
+                - name: Sign in users
+                  href: sample-web-app-python-sign-in.md
         - name: Browserless app
           items: 
           - name: Node.js - sign in users
