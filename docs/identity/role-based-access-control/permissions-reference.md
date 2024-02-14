@@ -2537,8 +2537,7 @@ Users with this role can manage [Teams-certified devices](https://www.microsoft.
 Assign the Teams Telephony Administrator role to users who need to do the following tasks: 
 
 - Manage voice and telephony, including calling policies, phone number management and assignment, and voice applications
-- Troubleshoot user call quality issues using advanced tools
-- Access, monitor, and troubleshoot tenant call quality and reliability using data exposed in the Call Quality Dashboard (CQD), including the users who are impacted by poor call quality
+- Access to only Public Switched Telephone Network (PSTN) usage reports from Teams admin center
 - View user profile page
 - Create and manage support tickets in Azure and the Microsoft 365 admin center
 
@@ -2553,7 +2552,6 @@ Assign the Teams Telephony Administrator role to users who need to do the follow
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
-> | microsoft.teams/callQuality/allProperties/read | Read all data in the Call Quality Dashboard (CQD) |
 > | microsoft.teams/voice/allProperties/allTasks | Manage voice including calling policies and phone number inventory and assignment |
 
 ## Tenant Creator
