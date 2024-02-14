@@ -31,7 +31,7 @@ Here are reasons that you might choose not to migrate AD FS:
 
 Plan a staged application migration rollout and select users to authenticate to Microsoft Entra ID for testing. Use guidance in, [plan application migration to Microsoft Entra ID](/azure/active-directory/manage-apps/migrate-adfs-apps-phases-overview) and, [resources to migrate apps to Microsoft Entra ID](/azure/active-directory/manage-apps/migration-resources).
 
-Learn more in the following video, Effortless Application Migration Using Microsoft Entra ID. </br>
+Learn more in the following video, Effortless Application Migration Using Microsoft Entra ID. </br></br>
 > [!VIDEO https://www.youtube.com/embed/qJYmEOK6UJo]
 
 ### Application migration tool
