@@ -9,7 +9,7 @@ ms.author: ryanwi
 manager: celestedg
 ms.date: 02/09/2024
 ms.topic: conceptual
-ms.prod: entra
+ms.service: entra
 ms.custom: microsoft-copilot
 
 #Customer intent: As a SOC analyst or IT admin using Security Copilot, I want to get an understanding of the Microsoft Entra integration, so that I can use it to respond to and remediate identity risks.
