@@ -165,7 +165,7 @@ Programmable OATH TOTP hardware tokens that can be reseeded can also be set up w
 
 OATH hardware tokens are supported as part of a public preview. For more information about previews, see [Supplemental Terms of Use for Microsoft Azure Previews](https://aka.ms/EntraPreviewsTermsOfUse).
 
-![Screenshot that shows the OATH tokens section.](media/concept-authentication-methods/mfa-server-oath-tokens-azure-ad.png)
+![Screenshot that shows the OATH tokens section.](media/concept-authentication-methods/oath-tokens.png)
 
 After you acquire tokens, you need to upload them in a comma-separated values (CSV) file format. Include the UPN, serial number, secret key, time interval, manufacturer, and model, as shown in this example:
 
