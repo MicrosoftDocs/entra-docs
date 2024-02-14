@@ -57,7 +57,7 @@ To complete a user sign-up flow, your app interacts with four endpoints, `/signu
 
 ### Sign-up challenge types
 
-The API allows the app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra ID. To do so, the app uses the `challenge_type` parameter in the its requests. This parameter holds pre-defined values (see table below), which represent different authentication methods. The following table contains the authentication methods the API supports. New values will be added in the future when the API supports new authentication methods.
+The API allows the app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra ID. To do so, the app uses the `challenge_type` parameter in the its requests. This parameter holds pre-defined values, which represent different authentication methods. The following table contains the authentication methods the API supports. New values will be added in the future when the API supports new authentication methods.
 
 |    Challenge type     | Description                                |
 |-----------------------|--------------------------------------------|
@@ -67,7 +67,7 @@ The API allows the app to advertise the authentication methods it supports, when
 
 ### Sign-up flow protocol details
 
-The sequence diagram below demonstrates the flow of the sign-up process.
+The sequence diagram demonstrates the flow of the sign-up process.
 
 :::image type="content" source="media/reference-native-auth-api/sign-up-email-with-password.png" alt-text="Diagram of native auth sign up with email and password option."::: 
 
@@ -530,7 +530,7 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `error`  | This attribute is set if Microsoft Entra ID can't create the user account. This happens if an attribute needs to be verified or submitted.  |  
+| `error`  | This attribute is set if Microsoft Entra ID can't create the user account because an attribute needs to be verified or submitted.  |  
 |`error_description` | A specific error message that can help you to identify the cause of the error. |
 |`error_codes`| A list of Microsoft Entra ID-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
@@ -773,7 +773,7 @@ Content-Type: application/json
 |`token_type` |  Indicates the token type value. The only type that Microsoft Entra ID supports is *Bearer*.|
 |`expires_in`|   The length of time in seconds the access token remains valid.|
 |`scopes`|  A space-separated list of scopes that the access token is valid for.|
-|`refresh_token` |  An OAuth 2.0 refresh token. The app can use this token to acquire other access tokens after the current access token expires. Refresh tokens are long-lived. They can maintain access to resources for extended periods. For more detail on refreshing an access token, refer to [Refresh the access token later in this](../../identity-platform/v2-oauth2-auth-code-flow.md#refresh-the-access-token). <br> **Note**: Only issued if *offline_access* scope was requested.   |
+|`refresh_token` |  An OAuth 2.0 refresh token. The app can use this token to acquire other access tokens after the current access token expires. Refresh tokens are long-lived. They can maintain access to resources for extended periods. For more detail on refreshing an access token, refer to [Refresh the access token](../../identity-platform/v2-oauth2-auth-code-flow.md#refresh-the-access-token) article. <br> **Note**: Only issued if *offline_access* scope was requested.   |
 |`id_token`|  A JSON Web Token (Jwt) used to identify the customer user. The app can decode the token to request information about the user who signed in. The app can cache the values and display them, and confidential clients can use this token for authorization. For more information about ID tokens, see [ID tokens](../../identity-platform/id-tokens.md).<br> **Note**: Only issued if *openid* scope is requested. |
 
 #### Error response
@@ -856,7 +856,7 @@ To request your security tokens, your app interacts with three endpoints, `/init
 
 ### Sign-in challenge types
 
-The API allows the app to advertise the authentication methods it supports to Microsoft Entra ID. To do so, the app includes the `challenge_type` parameter in its requests. This parameter holds pre-defined values (see table below), which represent different authentication methods. The following table contains the authentication methods the API supports. New values will be added in the future when the API supports new authentication methods.
+The API allows the app to advertise the authentication methods it supports to Microsoft Entra ID. To do so, the app includes the `challenge_type` parameter in its requests. This parameter holds pre-defined values, which represent different authentication methods. The following table contains the authentication methods the API supports. New values will be added in the future when the API supports new authentication methods.
 
 |    Challenge type     | Description                                |
 |-----------------------|--------------------------------------------|
@@ -866,7 +866,7 @@ The API allows the app to advertise the authentication methods it supports to Mi
 
 ### Sign-in flow protocol details
 
-The sequence diagram below demonstrates the flow of the sign in process.
+The sequence diagram demonstrates the flow of the sign in process.
 
 :::image type="content" source="media/reference-native-auth-api/sign-in-email-with-password.png" alt-text="Diagram of native auth sign in with email and password option."::: 
 
@@ -1105,7 +1105,7 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra Admin center.|
 | `continuation_token`          |    Yes   |  [continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request. |
 |`grant_type`| Yes |The value must be *password*. |
-|`scope`| Yes | A space-separated list of scopes. All the scopes must be from a single resource, along with OIDC scopes, such as *profile*, *openid* and *email*. The app needs to include *openid* scope for Microsoft Entra ID to issue an ID token. The app needs to includes *offline_access* scope for Microsoft Entra ID to issue a refresh token. Learn more about [Permissions and consent in the Microsoft identity platform](../../identity-platform/permissions-consent-overview.md). |
+|`scope`| Yes | A space-separated list of scopes. All the scopes must be from a single resource, along with OpenID Connect (OIDC) scopes, such as *profile*, *openid* and *email*. The app needs to include *openid* scope for Microsoft Entra ID to issue an ID token. The app needs to includes *offline_access* scope for Microsoft Entra ID to issue a refresh token. Learn more about [Permissions and consent in the Microsoft identity platform](../../identity-platform/permissions-consent-overview.md). |
 |   `password`    | Yes | The password value that the app collects from the customer user. Replace `{secure_password}` with the password value that the app collects from the customer user.|
 
 #### Successful response
@@ -1134,7 +1134,7 @@ Content-Type: application/json
 |`scopes`|  A space-separated list of scopes that the access token is valid for.|
 |`expires_in`|   The length of time in seconds the access token remains valid.|
 | `access_token`  |    The access token that the app requested from the `/token` endpoint. The app can use this access token to request access to secured resources such as web APIs.| 
-|`refresh_token` |  An OAuth 2.0 refresh token. The app can use this token to acquire other access tokens after the current access token expires. Refresh tokens are long-lived. They can maintain access to resources for extended periods. For more detail on refreshing an access token, refer to [Refresh the access token later in this](../../identity-platform/v2-oauth2-auth-code-flow.md#refresh-the-access-token). <br> **Note**: Only issued if *offline_access* scope is requested.   |
+|`refresh_token` |  An OAuth 2.0 refresh token. The app can use this token to acquire other access tokens after the current access token expires. Refresh tokens are long-lived. They can maintain access to resources for extended periods. For more detail on refreshing an access token, refer to [Refresh the access token](../../identity-platform/v2-oauth2-auth-code-flow.md#refresh-the-access-token) article. <br> **Note**: Only issued if *offline_access* scope is requested.   |
 |`id_token`|  A JSON Web Token (Jwt) used to identify the customer user. The app can decode the token to request information about the user who signed in. The app can cache the values and display them, and confidential clients can use this token for authorization. For more information about ID tokens, see [ID tokens](../../identity-platform/id-tokens.md).<br> **Note**: Only issued if *openid* scope was requested. |
 
 #### Error response 
@@ -1172,7 +1172,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |  Request parameter validation failed. Use the message in the error description to learn what happened.   |  
+| `invalid_request`  |  Request parameter validation failed. To understand what happened, use the message in the error description.   |  
 |`invalid_grant`|The continuation token included in the request isn't valid or customer user sign in credentials included in the request are invalid or the grant type included in the request is unknown.  |
 |`expired_token`|The continuation token included in the request is is expired. |
 |`invalid_scope`| One or more of the scoped included in the request are invalid.|
@@ -1202,7 +1202,7 @@ To use this API, the app interacts with the endpoint shown in the following tabl
 
 ### Self-service password reset flow protocol details
 
-The sequence diagram below demonstrates the flow for the password reset process.
+The sequence diagram demonstrates the flow for the password reset process.
 
 :::image type="content" source="media/reference-native-auth-api/self-service-password-reset.png" alt-text="Diagram of native auth self-service password reset flow."::: 
 
@@ -1652,7 +1652,7 @@ Content-Type: application/json
 ```json
 { 
     "error": "expired_token", 
-    "error_description": "AADSTS901007: The continuation_token is expired..\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: The continuation_token is expired.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         552003 
     ], 

@@ -1,6 +1,6 @@
 ---
 title: Native authentication with email OTP API reference
-description: Find out how to use native authentication with email OTP API reference for Microsoft Entra ID for customers 
+description: Find out how to use native authentication with email OTP API reference for Microsoft Entra ID for customers. 
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
@@ -42,7 +42,7 @@ Microsoft Entra ID's native authentication API for email OTP allows you to build
 
 ## Sign up API reference
 
-To complete a sign-up flow using email OTP, your app interacts with four endpoints,  `/signup/v1.0/start`, `/signup/v1.0/challenge`,  `/signup/v1.0/continue` and `/token`.
+To complete a sign-up flow using email OTP, your app interacts with four endpoints,  `/signup/v1.0/start`, `/signup/v1.0/challenge`,  `/signup/v1.0/continue`, and `/token`.
 
 ### Sign-up API endpoints
 
@@ -293,7 +293,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type or continuation token validation failed.   |
 |`invalid_client`|The client ID included in the request doesn't exist or isn't for a public client. |
-|`expired_token`|The continuation token is expired.. |
+|`expired_token`|The continuation token is expired. |
 |`unsupported_challenge_type`|The `challenge_type` parameter value isn't supported or doesn't include the `redirect` challenge type.|
 
 ### Step 3: Submit OTP
@@ -371,7 +371,7 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `error`  | This attribute is set if Microsoft Entra can't create the user account. This happens if an attribute needs to be verified or submitted.  |  
+| `error`  | This attribute is set if Microsoft Entra ID can't create the user account because an attribute needs to be verified or submitted.  |  
 |`error_description` | A specific error message that can help you to identify the cause of the error. |
 |`error_codes`| A list of Microsoft Entra ID-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
@@ -449,7 +449,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 | `invalid_request`  |  Request parameter validation failed such as when the continuation token or OTP validation fails. OTP code validation can fail as a result of the code expiring or providing an incorrect OTP code.|  
 |`invalid_grant`|The grant type provided isn't valid or supported.|
 |`invalid_client`|The client ID included in the request doesn't exist. |
-|`expired_token`|The continuation token is expired.. |
+|`expired_token`|The continuation token is expired. |
 |`attribute_validation_failed`  |  Validation of one or more attributes failed. |
 
 ### Step 4: Authenticate and get token to sign in
@@ -613,7 +613,7 @@ Content-Type: application/json
 |`scope`|  A space-separated list of scopes that the access token is valid for.|
 |`expires_in`|   The length of time in seconds the access token remains valid.|
 | `access_token`  |    The access token that the app requested from the `/token` endpoint. The app can use this access token to request access to secured resources such as web APIs.|  
-|`refresh_token` |  An OAuth 2.0 refresh token. The app can use this token to acquire other access tokens after the current access token expires. Refresh tokens are long-lived. They can maintain access to resources for extended periods. For more detail on refreshing an access token, refer to [Refresh the access token later in this](../../identity-platform/v2-oauth2-auth-code-flow.md#refresh-the-access-token). <br> **Note**: Only issued if *offline_access* scope is requested.   |
+|`refresh_token` |  An OAuth 2.0 refresh token. The app can use this token to acquire other access tokens after the current access token expires. Refresh tokens are long-lived. They can maintain access to resources for extended periods. For more detail on refreshing an access token, refer to [Refresh the access token](../../identity-platform/v2-oauth2-auth-code-flow.md#refresh-the-access-token) article. <br> **Note**: Only issued if *offline_access* scope is requested.   |
 |`id_token`|  A JSON Web Token (Jwt) used to identify the customer user. The app can decode the token to request information about the user who signed in. The app can cache the values and display them, and confidential clients can use this token for authorization. For more information about ID tokens, see [ID tokens](../../identity-platform/id-tokens.md).<br> **Note**: Only issued if *openid* scope is requested. |
 
 #### Error response 
@@ -691,11 +691,11 @@ Sign in with email OTP uses similar endpoints as email with password as describe
 
 ### Challenge types
 
-The API allows the app to advertise the authentication methods it supports to Microsoft Entra ID. To do so, the app include the `challenge_type` parameter in its requests. Sign in with mail OTP uses *oob* and *redirect* challenge types as described in [Challenge types](reference-native-auth-email-password.md#sign-in-challenge-types).
+The API allows the app to advertise the authentication methods it supports to Microsoft Entra ID. To do so, s the `challenge_type` parameter in its requests. Sign in with mail OTP uses *oob* and *redirect* challenge types as described in [Challenge types](reference-native-auth-email-password.md#sign-in-challenge-types).
 
 ### Sign-in flow protocol details
 
-The sequence diagram below demonstrates the basic flow of email OTP sign in process.
+The sequence diagram demonstrates the basic flow of email OTP sign in process.
 
 :::image type="content" source="media/reference-native-auth-api/sign-in-email-otp.png" alt-text="Diagram of native auth sign in with email with OTP."::: 
 
@@ -910,7 +910,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type or *continuation token* validation failed.   |
 |`invalid_grant`|The continuation token isn't valid. |
-|`expired_token`|The continuation token is expired.. |
+|`expired_token`|The continuation token is expired. |
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.|
 
 ### Step 3: Request for security tokens
@@ -938,7 +938,7 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra Admin center.|
 |`grant_type` | Yes | Value must be *oob* for email OTP flow.  |
 |`oob`| Yes |The OTP code that the customer user received in their email. Replace `{otp_code}` with the OTP code that the customer user received in their email. To **resend an OTP code**, the app needs to make a request to the `/challenge` endpoint again. |
-|`scope`| Yes |A space-separated list of scopes. All the scopes must be from a single resource, along with OIDC scopes, such as *profile*, *openid* and *email*. The app needs to include *openid* scope for Microsoft Entra ID to issue an ID token. The app needs to include *offline_access* scope for Microsoft Entra ID to issue a refresh token. Learn more about [Permissions and consent in the Microsoft identity platform](../../identity-platform/permissions-consent-overview.md).|
+|`scope`| Yes |A space-separated list of scopes. All the scopes must be from a single resource, along with OpenID Connect (OIDC) scopes, such as *profile*, *openid* and *email*. The app needs to include *openid* scope for Microsoft Entra ID to issue an ID token. The app needs to include *offline_access* scope for Microsoft Entra ID to issue a refresh token. Learn more about [Permissions and consent in the Microsoft identity platform](../../identity-platform/permissions-consent-overview.md).|
 
 #### Successful response
 
@@ -966,7 +966,7 @@ Content-Type: application/json
 |`scopes`|  A space-separated list of scopes that the access token is valid for.|
 |`expires_in`|   The length of time in seconds the access token remains valid.|
 | `access_token`  |    The access token that the app requested from the `/token` endpoint. The app can use this access token to request access to secured resources such as web APIs.|  
-|`refresh_token` |  An OAuth 2.0 refresh token. The app can use this token to acquire other access tokens after the current access token expires. Refresh tokens are long-lived. They can maintain access to resources for extended periods. For more detail on refreshing an access token, refer to [Refresh the access token later in this](../../identity-platform/v2-oauth2-auth-code-flow.md#refresh-the-access-token). <br> **Note**: Only issued if *offline_access* scope was requested.   |
+|`refresh_token` |  An OAuth 2.0 refresh token. The app can use this token to acquire other access tokens after the current access token expires. Refresh tokens are long-lived. They can maintain access to resources for extended periods. For more detail on refreshing an access token, refer to [refresh the access token](../../identity-platform/v2-oauth2-auth-code-flow.md#refresh-the-access-token) article. <br> **Note**: Only issued if *offline_access* scope was requested.   |
 |`id_token`|  A JSON Web Token (Jwt) used to identify the customer user. The app can decode the token to request information about the user who signed in. The app can cache the values and display them, and confidential clients can use this token for authorization. For more information about ID tokens, see [ID tokens](../../identity-platform/id-tokens.md).<br> **Note**: Only issued if *openid* scope was requested. |
 
 #### Error response 
@@ -1004,7 +1004,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |  Request parameter validation failed. Use the message in the error description to learn what happened.   |  
+| `invalid_request`  |  Request parameter validation failed. To understand what happened, use the message in the error description.|  
 |`invalid_grant`|The continuation token included in the request isn't valid or OTP code included in the request is invalid or the grant type included in the request is unknown.|
 |`expired_token`|The continuation token included in the request is expired. |
 |`invalid_scope`| One or more of the scoped included in the request are invalid.|
@@ -1014,4 +1014,4 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 - [Native authentication email with password API reference](reference-native-auth-email-password.md).
 
-- Leant how to [create custom attributes](how-to-define-custom-attributes.md#create-custom-user-attributes).
+- Learn how to [create custom attributes](how-to-define-custom-attributes.md#create-custom-user-attributes).
