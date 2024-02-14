@@ -15,15 +15,6 @@ ms.reviewer: ashishj
 
 This article helps you troubleshoot issues with Microsoft Entra application proxy connectors. If you're using the application proxy service for remote access to an on-premises web application, but you're having trouble connecting to the application, use this flowchart to debug connector issues. 
 
-## Before you begin
-
-When troubleshooting application proxy issues, we recommend you start with this troubleshooting flow to determine if application proxy connectors are configured correctly. If you're still having trouble connecting to the application, follow the troubleshooting flow in [Debug application proxy application issues](application-proxy-debug-apps.md).  
-
-
-For more information about application proxy and using its connectors, see:
-
-
-
 ## Flowchart for connector issues
 
 This flowchart walks you through the steps for debugging some of the more common connector issues. For details about each step, see the table following the flowchart.
@@ -45,8 +36,9 @@ This flowchart walks you through the steps for debugging some of the more common
 
 ## Next steps
 
+- [Debug application proxy application issues](application-proxy-debug-apps.md)
 - [Publish applications on separate networks and locations using connector groups](application-proxy-connector-groups.md)
 - [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md)
-- [Application proxy connectors](application-proxy-connectors.md)
+- [Understand application proxy connectors](application-proxy-connectors.md)
 - [Install and register a connector](application-proxy-add-on-premises-application.md)
 - [Troubleshoot application proxy problems and error messages](application-proxy-troubleshoot.md)
