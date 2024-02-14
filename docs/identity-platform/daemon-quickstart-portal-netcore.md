@@ -59,17 +59,17 @@ ms.topic: conceptual
 > 
 > #### Step 3: Admin consent
 > 
-> If you try to run the application at this point, you'll receive an *HTTP 403 - Forbidden* error: "Insufficient privileges to complete the operation." This error happens because any app-only permission requires a global administrator of your directory to give consent to your application. Select one of the following options, depending on your role.
+> If you try to run the application at this point, you'll receive an *HTTP 403 - Forbidden* error: "Insufficient privileges to complete the operation." This error happens because any app-only permission requires a Global Administrator of your directory to give consent to your application. Select one of the following options, depending on your role.
 > 
 > ##### Global tenant administrator
 > 
-> If you're a global administrator, go to the **API Permissions** page and select **Grant admin consent for Enter_the_Tenant_Name_Here**.
+> If you're a Global Administrator, go to the **API Permissions** page and select **Grant admin consent for Enter_the_Tenant_Name_Here**.
 > > [!div id="apipermissionspage"]
 > > [Go to the API Permissions page]()
 > 
 > ##### Standard user
 > 
-> If you're a standard user of your tenant, ask a global administrator to grant admin consent for your application. To do this, give the following URL to your administrator:
+> If you're a standard user of your tenant, ask a Global Administrator to grant admin consent for your application. To do this, give the following URL to your administrator:
 > 
 > ```url
 > https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_id=Enter_the_Application_Id_Here

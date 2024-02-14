@@ -57,7 +57,7 @@ To complete the scenario in this tutorial, you need:
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user**, and then select **Invite external user**.
 
@@ -144,7 +144,7 @@ To complete the scenario in this tutorial, you need:
 
 When no longer needed, remove the test user and the test Conditional Access policy.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select the test user, and then select **Delete user**.
 1. Browse to **Identity** > **Protection** > **Security Center**.

@@ -80,7 +80,7 @@ Self-service app management requires some initial setup by a Global Administrato
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Groups** > **All groups**.
 4. Under **Settings**, select **General**.
 5. Under **Self Service Group Management**, next to **Owners can manage group membership requests in the Access Panel**, select **Yes**.
@@ -88,7 +88,7 @@ Self-service app management requires some initial setup by a Global Administrato
 
 ### Create a group to assign to the app and make the user an owner
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Groups** > **All groups**.
 4. Select **New group**.
 5. Under **Group type**, select **Security**.
@@ -100,7 +100,7 @@ Self-service app management requires some initial setup by a Global Administrato
 
 ### Configure the app for self-service and assign the group to the app
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 4. Select **All applications**, in the application list, find and open the app.
 5. Under **Manage**, select **Single sign-on**, and configure the application for single sign-on. (For details, see [how to manage single sign-on for enterprise apps](~/identity/enterprise-apps/add-application-portal-setup-sso.md).)

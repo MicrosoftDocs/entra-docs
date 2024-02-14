@@ -155,7 +155,7 @@ When your users need access to external organizations and apps, we recommend ena
 To configure tenant restrictions, you need:
 
 - Microsoft Entra ID P1 or P2
-- Account with a role of Global administrator or Security administrator
+- Account with a role of Global Administrator or Security Administrator
 - Windows devices running Windows 10, Windows 11 with the latest updates
 
 ## Configure server-side tenant restrictions v2 cloud policy
@@ -168,7 +168,7 @@ Settings for tenant restrictions v2 are located in the Microsoft Entra admin cen
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**, then select  **Cross-tenant access settings**.
 
@@ -222,7 +222,7 @@ Suppose you use tenant restrictions to block access by default, but you want to 
 
 #### Example: Configure tenant restrictions v2 to allow Microsoft Accounts
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) or a [Conditional Access administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) or a [Conditional Access administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
 
