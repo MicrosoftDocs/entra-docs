@@ -87,8 +87,8 @@ Microsoft recommends using [Report suspicious activity](#report-suspicious-activ
 
 The following fraud alert configuration options are available:
 
-* **Automatically block users who report fraud**. If a user reports fraud, the Azure AD Multi-Factor Authentication attempts for the user  account are blocked for 90 days or until an administrator unblocks the account. An administrator can review sign-ins by using the sign-in report, and take appropriate action to prevent future fraud. An administrator can then [unblock](#unblock-a-user) the user's account.
-* **Code to report fraud during initial greeting**. When users receive a phone call to perform multi-factor authentication, they normally press **#** to confirm their sign-in. To report fraud, the user enters a code before pressing **#**. This code is **0** by default, but you can customize it. If automatic blocking is enabled, after the user presses **0#** to report fraud, they need to press **1** to confirm the account blocking.
+* **Automatically block users who report fraud**. If a user reports fraud, the Azure AD Multifactor Authentication attempts for the user  account are blocked for 90 days or until an administrator unblocks the account. An administrator can review sign-ins by using the sign-in report, and take appropriate action to prevent future fraud. An administrator can then [unblock](#unblock-a-user) the user's account.
+* **Code to report fraud during initial greeting**. When users receive a phone call to perform multifactor authentication, they normally press **#** to confirm their sign-in. To report fraud, the user enters a code before pressing **#**. This code is **0** by default, but you can customize it. If automatic blocking is enabled, after the user presses **0#** to report fraud, they need to press **1** to confirm the account blocking.
 
    > [!NOTE]
    > The default voice greetings from Microsoft instruct users to press **0#** to submit a fraud alert. If you want to use a code other than **0**, record and upload your own custom voice greetings with appropriate instructions for your users.
@@ -365,7 +365,7 @@ To enable trusted IPs by using Conditional Access policies, complete the followi
       `c:[Type== "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"] => issue(claim = c);`
 
      >[!NOTE]
-     >The **Skip multi-factor authentication for requests from federated users on my intranet** option will affect the Conditional Access evaluation for locations. Any request with the **insidecorporatenetwork** claim would be treated as coming from a Trusted location if that option is selected.
+     >The **Skip multifactor authentication for requests from federated users on my intranet** option will affect the Conditional Access evaluation for locations. Any request with the **insidecorporatenetwork** claim would be treated as coming from a Trusted location if that option is selected.
 
    * **For requests from a specific range of public IPs**: To choose this option, enter the IP addresses in the text box, in CIDR notation.
       * For IP addresses that are in the range *xxx.xxx.xxx*.1 through *xxx.xxx.xxx*.254, use notation like ***xxx.xxx.xxx*.0/24**.
@@ -419,7 +419,7 @@ To enable or disable verification methods, complete the following steps:
 1. On the **Service settings** page, under **Verification options**, select or clear the appropriate checkboxes.
 1. Select **Save**.
 
-<a name='remember-multi-factor-authentication'></a>
+<a name='remember-multifactor-authentication'></a>
 
 ### Remember multifactor authentication
 
@@ -447,7 +447,7 @@ The feature reduces the number of authentications on web apps, which normally pr
 >
 > The **remember multifactor authentication** feature isn't compatible with the Sign-in frequency Conditional Access control. For more information, see [Configure authentication session management with Conditional Access](~/identity/conditional-access/concept-session-lifetime.md#configuring-authentication-session-controls).
 
-<a name='enable-remember-multi-factor-authentication'></a>
+<a name='enable-remember-multifactor-authentication'></a>
 
 #### Enable remember multifactor authentication
 
