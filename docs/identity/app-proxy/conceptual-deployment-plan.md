@@ -316,4 +316,4 @@ The following articles cover common scenarios that can also be used to create tr
 * [Configure with PingAccess](application-proxy-ping-access-publishing-guide.md)
 * [Can't Access this Corporate Application error](application-proxy-sign-in-bad-gateway-timeout-error.md)
 * [Problem installing the Application Proxy Agent Connector](application-proxy-connector-installation-problem.md)
-* [Sign-in problem](application-sign-in-problem-on-premises-application-proxy.md)
+* [Sign-in problem](application-proxy-troubleshoot.md)

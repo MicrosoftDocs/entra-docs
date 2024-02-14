@@ -32,9 +32,9 @@ This article shows you how to call a protected ASP.NET Core web API using [Postm
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/).
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-  - Application administrator
-  - Application developer
-  - Cloud application administrator
+  - Application Administrator
+  - Application Developer
+  - Cloud Application Administrator
 - [Download and install Postman](https://www.postman.com/downloads/).
 - A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
@@ -44,9 +44,9 @@ This article shows you how to call a protected ASP.NET Core web API using [Postm
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/).
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-  - Application administrator
-  - Application developer
-  - Cloud application administrator
+  - Application Administrator
+  - Application Developer
+  - Cloud Application Administrator
 - Completion of the tutorial series:
   - [Tutorial: Register web API with the Microsoft identity platform](web-api-tutorial-01-register-app.md).
   - [Tutorial: Create and configure an ASP.NET Core project for authentication](web-api-tutorial-02-prepare-api.md).
