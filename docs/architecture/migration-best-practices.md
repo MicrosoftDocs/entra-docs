@@ -105,12 +105,12 @@ Your app migration plan needs specific attention when your environment includes 
 Consider including the following steps in your application migration process.
 
 - **Clone the AD FS app configuration.** Set up a test instance of the app, or use a mock app on a test Microsoft Entra ID tenant. Map AD FS settings to Microsoft Entra ID configurations. Plan for a rollback. Switch the test instance to Microsoft Entra ID and validate.
-- **Configure claims and identifiers.** Mimic production apps to confirm and troubleshoot. Point a test instance of the app to the Microsoft Entra ID test application. Validate and troubleshoot access, updating configuration as needed.
+- **Configure claims and identifiers.** To confirm and troubleshoot, mimic production apps. Point a test instance of the app to the Microsoft Entra ID test application. Validate and troubleshoot access, updating configuration as needed.
 - **Prepare the production instance for migration.** Add the production application to Microsoft Entra ID based on the test results. For applications that allow multiple identity providers (IdP), configure Microsoft Entra ID as an added IdP to the production instance.
 - **Switch production instance to use Microsoft Entra ID.** For applications that allow multiple simultaneous IdPs, change the default IdP to Microsoft Entra ID. Otherwise, configure Microsoft Entra ID as the IdP to the production instance. Update the production instance to use the Microsoft Entra ID production application as primary IdP.
 - **Migrate first app, run migration tests, and fix issues.** Reference migration status in [AD FS application activity reports](/azure/active-directory/manage-apps/migrate-adfs-application-activity) that provide guidance on how to address potential migration issues.
 - **Migrate at scale.** Migrate apps and users in phases. Use Microsoft Entra ID to manage migrated apps and users while sufficiently testing authentication.
-- **Remove the federation.** Confirm that your AD FS farm is no longer used for authentication. Use fail-back, back-up, and export related configurations.
+- **Remove the federation.** Confirm that your AD FS farm is no longer used for authentication. Use fail-back, back-up, and export related configurations. 
 
 ## Migrate authentication
 
