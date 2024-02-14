@@ -97,7 +97,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra Admin center.                |
 | `username`          |    Yes   | Email of the customer user that they want to sign up with, such as *contoso-consumer@contoso.com*.  |
 | `challenge_type`    |   Yes  | A space-separated list of authorization [challenge type](#challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email OTP sign-up flow, the value is expected to contain `oob redirect`.|
-|`attributes`| No | The user attributes values that the app collects from the customer user. The value is a string, but formatted as a JSON object whose key values are names of user attributes. These attributes can be built in or custom, and required or optional. The key names of the object depend on the attributes that the administrator configured in Microsoft Entra Admin center. You can submit some or all user attributes via the `/signup/v1.0/start` endpoint or later in the `/signup/v1.0/continue` endpoint. If you submit all the required attributes via the `/signup/v1.0/start` endpoint, you're required to submit any attributes. However, if you submit some required attributes via `/signup/v1.0/start` endpoint, you can submit the remaining required later in the `/signup/v1.0/continue` endpoint. Replace `{user_name}`, `{user_age}` and `{user_phone}` with the name, age and phone number values respectively that the app collects from the customer user. **Microsoft Entra ID ignores any attributes that you submit, but don't exist**.|
+|`attributes`| No | The user attributes values that the app collects from the customer user. The value is a string, but formatted as a JSON object whose key values are names of user attributes. These attributes can be built-in or custom, and required or optional. The key names of the object depend on the attributes that the administrator configured in Microsoft Entra Admin center. You can submit some or all user attributes via the `/signup/v1.0/start` endpoint or later in the `/signup/v1.0/continue` endpoint. If you submit all the required attributes via the `/signup/v1.0/start` endpoint, you're required to submit any attributes. However, if you submit some required attributes via `/signup/v1.0/start` endpoint, you can submit the remaining required later in the `/signup/v1.0/continue` endpoint. Replace `{user_name}`, `{user_age}` and `{user_phone}` with the name, age and phone number values respectively that the app collects from the customer user. **Microsoft Entra ID ignores any attributes that you submit, but don't exist**.|
 
 #### Success response
 
@@ -206,7 +206,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 #### Success response
 
-If the tenant administrator configured email OTP in the Microsoft Entra Admin Center as the user’s authentication method, Microsoft Entra ID sends an OTP code to the user’s email. Subsequently, Microsoft Entra ID responds with a challenge type of *oob* and provides more information about the OTP code:
+If the tenant administrator configured email OTP in the Microsoft Entra Admin Center as the user’s authentication method, Microsoft Entra ID sends an OTP code to the user’s email, then responds with a challenge type of *oob* and provides more information about the OTP code:
 
 
 
@@ -232,12 +232,12 @@ Content-Type: application/json
 |`interval`| The length of time in seconds the app needs to wait before it attempts to resend OTP. |
 | `continuation_token`  | [continuation_token](#continuation-token) that Microsoft Entra IDreturns. |
 |`challenge_type`| Challenge type selected for the user to authenticate with.|
-|`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer additional ways to the user to enter the OTP code. Issued if `challenge_type` is *oob*  |
+|`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer more ways for the user to enter the OTP code. Issued if `challenge_type` is *oob*  |
 |`challenge_channel`| The type of the channel through which the OTP code was sent. At the moment, only email channel is supported. |
 |`challenge_target_label` |An obfuscated email where the OTP code was sent.|
 |`code_length`|The length of the OTP code that Microsoft Entra ID generates. |
 
-If an app can't support a required authentication method by Microsoft Entra ID, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra ID informs the app by returning a *redirect* challenge type in its response::
+If an app can't support a required authentication method by Microsoft Entra ID, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra ID informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
@@ -293,7 +293,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type or continuation token validation failed.   |
 |`invalid_client`|The client ID included in the request doesn't exist or isn't for a public client. |
-|`expired_token`|The continuation token has expired. |
+|`expired_token`|The continuation token is expired.. |
 |`unsupported_challenge_type`|The `challenge_type` parameter value isn't supported or doesn't include the `redirect` challenge type.|
 
 ### Step 3: Submit OTP
@@ -324,7 +324,7 @@ continuation_token = uY29tL2F1dGhlbnRpY...
 
 #### Success response
 
-If the request is successful, but no attributes were configured in the Microsoft Entra Admin center or all the required user attributes were submitted via the `/signup/v1.0/start` endpoint, the app gets a continuation token without submitting any attributes, see success response in [step 4](#step-4-authenticate-and-get-token-to-sign-in). In this case, the app can use the continuation token to request for security tokens as shown in [step 5](#step-5-request-for-security-tokens). Otherwise, Microsoft Entra ID's response indicates that the app needs to submit the required attributes. These attributes, built in or custom, were configured in the Microsoft Entra Admin center by the tenant administrator.
+If the request is successful, but no attributes were configured in the Microsoft Entra Admin center or all the required user attributes were submitted via the `/signup/v1.0/start` endpoint, the app gets a continuation token without submitting any attributes, see success response in [step 4](#step-4-authenticate-and-get-token-to-sign-in). In this case, the app can use the continuation token to request for security tokens as shown in [step 5](#step-5-request-for-security-tokens). Otherwise, Microsoft Entra ID's response indicates that the app needs to submit the required attributes. These attributes, built-in or custom, were configured in the Microsoft Entra Admin center by the tenant administrator.
 
 Example:
 
@@ -386,7 +386,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |----------------------|------------------------|
 | `invalid_request`  | Request parameter validation failed, or when continuation token validation fails.|  
 |`invalid_grant`| The grant type included in the request isn't valid or supported. The possible values for the `grant_type` are *oob*, *password*, *attributes* |
-|`expired_token`| The continuation token included in the request has expired. |
+|`expired_token`| The continuation token included in the request is expired. |
 |`attributes_required`  |  One or more of user attributes is required.   |
 
 If an app can't support a required authentication method by Microsoft Entra ID, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra ID informs the app by returning a *redirect* challenge type in its response:
@@ -449,7 +449,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 | `invalid_request`  |  Request parameter validation failed such as when the continuation token or OTP validation fails. OTP code validation can fail as a result of the code expiring or providing an incorrect OTP code.|  
 |`invalid_grant`|The grant type provided isn't valid or supported.|
 |`invalid_client`|The client ID included in the request doesn't exist. |
-|`expired_token`|The continuation token has expired. |
+|`expired_token`|The continuation token is expired.. |
 |`attribute_validation_failed`  |  Validation of one or more attributes failed. |
 
 ### Step 4: Authenticate and get token to sign in
@@ -475,7 +475,7 @@ Content-Type: application/x-www-form-urlencoded
 |`continuation_token` | Yes | [continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request. |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra Admin center.|
 |`grant_type` | Yes | A request to the `/signup/v1.0/continue` endpoint can be used to submit OTP code or user attributes. In this case, we use the `grant_type` value to differentiate between these two use cases. The possible values for the `grant_type` are *oob*, and *attributes*. In this call, since we're sending user attributes, the value expected to be *attributes*.|
-|`attributes`| Yes | The user attribute values that the app collects from the customer user. The value is a string, but formatted as a JSON object whose keys are names of user attributes, built in or custom. The key names of the object depend on the attributes that the administrator configured in the Microsoft Entra Admin center. Replace `{user_name}`, `{user_age}` and `{comma_separated_hobbies}` with the name, age and hobbies values respectively that the app collects from the customer user. In the portal, you can configure user attributes values to be collected using different **User Input Type**, such as **TextBox**, **RadioSingleSelect** and **CheckboxMultiSelect**. In this case, we collect name and age using a TextBox, and hobbies using a CheckboxMultiSelect. **Microsoft Entra ID ignores any attributes that you submit, which don't exist**. Learn [how to configure user attribute collection during sign-up](how-to-define-custom-attributes.md).|
+|`attributes`| Yes | The user attribute values that the app collects from the customer user. The value is a string, but formatted as a JSON object whose keys are names of user attributes, built-in or custom. The key names of the object depend on the attributes that the administrator configured in the Microsoft Entra Admin center. Replace `{user_name}`, `{user_age}` and `{comma_separated_hobbies}` with the name, age and hobbies values respectively that the app collects from the customer user. In the portal, you can configure user attributes values to be collected using different **User Input Type**, such as **TextBox**, **RadioSingleSelect** and **CheckboxMultiSelect**. In this case, we collect name and age using a TextBox, and hobbies using a CheckboxMultiSelect. **Microsoft Entra ID ignores any attributes that you submit, which don't exist**. Learn [how to configure user attribute collection during sign-up](how-to-define-custom-attributes.md).|
 
 #### Success response
 
@@ -555,7 +555,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |`invalid_request`  |Request parameter validation failed such as when a continuation token fails validation.|
 |`invalid_client`|The client ID included in the request doesn't exist.  |  
 |`invalid_grant`|The grant type provided isn't valid or supported.|
-|`expired_token`|The continuation token included in the request has expired.|
+|`expired_token`|The continuation token included in the request is expired.|
 |`user_already_exists` |  User already exists.  |
 |`attributes_required`  |  One or more of user attributes is required.   |
 |`attribute_validation_failed`|  Validation of one or more attributes failed. |
@@ -658,7 +658,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Format of user attributes values
 
-You specify the information you want to collect from the user by configuring the [user flow](how-to-user-flow-sign-up-sign-in-customers.md#create-and-customize-a-user-flow) settings in the Microsoft Entra Admin center. Use the [Collect user attributes during sign-up](how-to-define-custom-attributes.md) article to learn how to collect values for both built in and custom attributes.
+You specify the information you want to collect from the user by configuring the [user flow](how-to-user-flow-sign-up-sign-in-customers.md#create-and-customize-a-user-flow) settings in the Microsoft Entra Admin center. Use the [Collect user attributes during sign-up](how-to-define-custom-attributes.md) article to learn how to collect values for both built-in and custom attributes.
 
 You can also specify the **User Input Type** for the attributes you configure. The following table summarizes supported user input types, and how to submit values collected by the UI controls to Microsoft Entra ID.
 
@@ -691,7 +691,7 @@ Sign in with email OTP uses similar endpoints as email with password as describe
 
 ### Challenge types
 
-The API allows the app to advertise the authentication methods it supports to Microsoft Entra ID. To do so, the app uses the `challenge_type` parameter in the its requests. Sign in with mail OTP uses *oob* and *redirect* challenge types as described in [Challenge types](reference-native-auth-email-password.md#sign-in-challenge-types).
+The API allows the app to advertise the authentication methods it supports to Microsoft Entra ID. To do so, the app include the `challenge_type` parameter in its requests. Sign in with mail OTP uses *oob* and *redirect* challenge types as described in [Challenge types](reference-native-auth-email-password.md#sign-in-challenge-types).
 
 ### Sign-in flow protocol details
 
@@ -699,7 +699,7 @@ The sequence diagram below demonstrates the basic flow of email OTP sign in proc
 
 :::image type="content" source="media/reference-native-auth-api/sign-in-email-otp.png" alt-text="Diagram of native auth sign in with email with OTP."::: 
 
-After the app verifies the user's email with OTP, it receives security tokens. If the delivery of the OTP code delays or is never delivered to the user's email, the user can request to be sent another OTP code. Microsoft Entra ID re-sends another OTP code if the previous one hasn't been verified. When Microsoft Entra ID re-sends an OTP code, it invalidates the previously sent code.
+After the app verifies the user's email with OTP, it receives security tokens. If the delivery of the OTP code delays or is never delivered to the user's email, the user can request to be sent another OTP code. Microsoft Entra ID resends another OTP code if the previous one hasn't been verified. When Microsoft Entra ID resends an OTP code, it invalidates the previously sent code.
 
 ### Step 1: Request to start the sign-in flow
 
@@ -827,7 +827,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 #### Success response
 
-If the tenant administrator configured email OTP in the Microsoft Entra Admin Center as the user’s authentication method, Microsoft Entra ID sends an OTP code to the user’s email. Subsequently, Microsoft Entra ID responds with a challenge type of *oob* and provides more information about the OTP code.
+If the tenant administrator configured email OTP in the Microsoft Entra Admin Center as the user’s authentication method, Microsoft Entra ID sends an OTP code to the user’s email, then responds with a challenge type of *oob* and provides more information about the OTP code.
 
 ```http
 HTTP/1.1 200 OK
@@ -849,7 +849,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `continuation_token`  | [continuation_token](#continuation-token) that Microsoft Entra ID returns. |
 |`challenge_type`| Challenge type selected for the user to authenticate with.|
-|`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer additional ways to the user to enter the OTP code. Issued if `challenge_type` is *oob*  |
+|`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer more ways for the user to enter the OTP code. Issued if `challenge_type` is *oob*  |
 |`challenge_channel`| The type of the channel through which the OTP code was sent. At the moment, we support email. |
 |`challenge_target_label` |An obfuscated email where the OTP code was sent.|
 |`code_length`|The length of the OTP code that Microsoft Entra IDgenerates. |
@@ -910,7 +910,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type or *continuation token* validation failed.   |
 |`invalid_grant`|The continuation token isn't valid. |
-|`expired_token`|The continuation token has expired. |
+|`expired_token`|The continuation token is expired.. |
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.|
 
 ### Step 3: Request for security tokens
@@ -981,7 +981,7 @@ Content-Type: application/json
 ```json
 { 
     "error": "expired_token", 
-    "error_description": "AADSTS55112: The continuation_token has expired.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS55112: The continuation_token is expired.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         552003 
     ], 
@@ -1006,7 +1006,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed. Use the message in the error description to learn what happened.   |  
 |`invalid_grant`|The continuation token included in the request isn't valid or OTP code included in the request is invalid or the grant type included in the request is unknown.|
-|`expired_token`|The continuation token included in the request has expired. |
+|`expired_token`|The continuation token included in the request is expired. |
 |`invalid_scope`| One or more of the scoped included in the request are invalid.|
 |`invalid_client`| The client ID included in the request isn't for a public client. |
 

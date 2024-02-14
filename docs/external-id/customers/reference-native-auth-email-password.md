@@ -312,7 +312,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |    Error value     | Description        |
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as client ID is empty or invalid.   |
-|`expired_token`|The continuation token has expired. |
+|`expired_token`|The continuation token is expired. |
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.|
 |`invalid_grant` | The continuation token is invalid. |
 
@@ -387,7 +387,7 @@ Once the OTP code has been submitted successfully, Microsoft Entra ID's response
     |`credential_required`|Authentication is required for account creation, so you've to make a call to the `/signup/v1.0/challenge` endpoint to determine the credential the user is required to provide.|
     |`invalid_request`  |  Request parameter validation failed such as if the continuation token validation failed .   |  
     |`invalid_grant`|The grant type included in the request isn't valid or supported.|
-    |`expired_token`|The continuation token included in the request has expired. |
+    |`expired_token`|The continuation token included in the request is expired. |
 
     For the password credential to be collected from the user, the app needs to make a call to the `/signup/v1.0/challenge` endpoint to determine the credential the user is required to provide.
 
@@ -545,7 +545,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |----------------------|------------------------|
 | `invalid_request`  | Request parameter validation failed, or when continuation token validation fails.|  
 |`invalid_grant`| The grant type included in the request isn't valid or supported. The possible values for the `grant_type` are *oob*, *password*, *attributes* |
-|`expired_token`| The continuation token included in the request has expired. |
+|`expired_token`| The continuation token included in the request is expired. |
 |`attributes_required`  |  One or more of user attributes is required.   |
 
 If an app can't support a required authentication method by Microsoft Entra ID, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra ID informs the app by returning a *redirect* challenge type in its response:
@@ -604,7 +604,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type.   |  
 |`invalid_grant`|The grant type provided isn't valid or supported.|
-|`expired_token`|The continuation token has expired. |
+|`expired_token`|The continuation token is expired. |
 |`attributes_required`  |  One or more of user attributes is required.   |
 |`password_too_weak`|Password is too weak as it doesn't meet complexity requirements. [Learn more about Microsoft Entra ID's password policies](../../identity/authentication/concept-password-ban-bad-combined-policy.md#azure-ad-password-policies).|
 |`password_too_short`|New password is less than 8 characters. [Learn more about Microsoft Entra ID's password policies](../../identity/authentication/concept-password-ban-bad-combined-policy.md#azure-ad-password-policies).|
@@ -687,7 +687,7 @@ Content-Type: application/json
 ```json
 {  
     "error": "expired_token",
-    "error_description": "AADSTS901007: The continuation_token has expired.  .\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...", 
+    "error_description": "AADSTS901007: The continuation_token is expired.  .\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...", 
     "error_codes": [
         552003
     ], 
@@ -716,7 +716,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |----------------------|------------------------|
 | `invalid_request`  |Request parameter validation failed such as when a continuation token fails validation or client ID is invalid.|
 |`invalid_grant`|The grant type provided isn't valid or supported.|
-|`expired_token`|The continuation token included in the request has expired.|
+|`expired_token`|The continuation token included in the request is expired.|
 |`attributes_required`  |  One or more of user attributes is required.   |
 |`attribute_validation_failed`|  Validation of one or more attributes failed. |
 
@@ -856,7 +856,7 @@ To request your security tokens, your app interacts with three endpoints, `/init
 
 ### Sign-in challenge types
 
-The API allows the app to advertise the authentication methods it supports to Microsoft Entra ID. To do so, the app uses the `challenge_type` parameter in the its requests. This parameter holds pre-defined values (see table below), which represent different authentication methods. The following table contains the authentication methods the API supports. New values will be added in the future when the API supports new authentication methods.
+The API allows the app to advertise the authentication methods it supports to Microsoft Entra ID. To do so, the app includes the `challenge_type` parameter in its requests. This parameter holds pre-defined values (see table below), which represent different authentication methods. The following table contains the authentication methods the API supports. New values will be added in the future when the API supports new authentication methods.
 
 |    Challenge type     | Description                                |
 |-----------------------|--------------------------------------------|
@@ -1078,7 +1078,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |--------------------|--------------------|
 | `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type. |  
 |`invalid_grant`|The continuation token included in the request isn't valid.  |
-|`expired_token`|The continuation token included in the request has expired. |
+|`expired_token`|The continuation token included in the request is expired. |
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type. |
 
 ### Step 3: Request for security tokens
@@ -1174,7 +1174,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed. Use the message in the error description to learn what happened.   |  
 |`invalid_grant`|The continuation token included in the request isn't valid or customer user sign in credentials included in the request are invalid or the grant type included in the request is unknown.  |
-|`expired_token`|The continuation token included in the request is has expired. |
+|`expired_token`|The continuation token included in the request is is expired. |
 |`invalid_scope`| One or more of the scoped included in the request are invalid.|
 
 ## Self-service password reset (SSPR)
@@ -1415,7 +1415,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |    Error value     | Description        |
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type or *continuation token* validation failed.   |  
-|`expired_token`|The continuation token has expired.  |
+|`expired_token`|The continuation token is expired.  |
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.|
 
 ### Step 3: Submit OTP code
@@ -1501,7 +1501,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as a validation of *continuation token* failed.   |
 |`invalid_grant` |The grant type is unknown or doesn't match the expected grant type value. |
-|`expired_token`|The OTP code provided by the user or  *continuation token* has expired.    |
+|`expired_token`|The OTP code provided by the user or  *continuation token* is expired.    |
 |`invalid_oob_value`|The OTP code provided by the user is invalid.|
 
 ### Step 4: Submit a new password
@@ -1584,7 +1584,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |    Error value     | Description        |
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as a validation of *continuation token* failed.   |
-|`expired_token`|The *continuation token* has expired.    |
+|`expired_token`|The *continuation token* is expired.    |
 |`password_too_weak`|Password is too weak as it doesn't meet complexity requirements. [Learn more about Microsoft Entra ID's password policies](../../identity/authentication/concept-password-ban-bad-combined-policy.md#azure-ad-password-policies).|
 |`password_too_short`|New password is less than 8 characters. [Learn more about Microsoft Entra ID's password policies](../../identity/authentication/concept-password-ban-bad-combined-policy.md#azure-ad-password-policies).|
 |`password_too_long` |New password is longer than 256 characters. [Learn more about Microsoft Entra ID's password policies](../../identity/authentication/concept-password-ban-bad-combined-policy.md#azure-ad-password-policies). |
@@ -1652,7 +1652,7 @@ Content-Type: application/json
 ```json
 { 
     "error": "expired_token", 
-    "error_description": "AADSTS901007: The continuation_token has expired..\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: The continuation_token is expired..\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         552003 
     ], 
@@ -1676,7 +1676,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |    Error value     | Description        |
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as validation of *continuation token* failed.   |
-|`expired_token`|The *continuation token* has expired.    |
+|`expired_token`|The *continuation token* is expired.    |
 
 ## Next steps
 
