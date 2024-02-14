@@ -1,17 +1,15 @@
 ---
 title: Troubleshoot Microsoft Entra application proxy
 description: Covers how to troubleshoot errors in Microsoft Entra application proxy.
-
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
-ms.date: 02/06/2024
+ms.date: 02/14/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
-
 
 # Troubleshoot Application Proxy problems and error messages
 
@@ -28,6 +26,29 @@ If errors occur in accessing a published application or in publishing applicatio
 You could have problems with your application rendering or functioning incorrectly without receiving specific error messages. This can occur if you published the article path, but the application requires content that exists outside that path.
 
 For example, if you publish the path `https://yourapp/app` but the application calls images in `https://yourapp/media`, they won't be rendered. Make sure that you publish the application using the highest level path you need to include all relevant content. In this example, it would be `http://yourapp/`.
+
+## I can load my application, but something on the page looks broken
+[I can get to my application, but the application page isn't displaying correctly](application-proxy-page-appearance-broken-problem.md).
+
+[I can get to my application, but the application takes too long to load](application-proxy-page-load-speed-problem.md).
+
+[I can get to my application, but the links on the application page don't work](application-proxy-page-links-broken-problem.md).
+
+## I'm having a connectivity problem with my application
+[I don't know what ports to open for my application](application-proxy-add-on-premises-application.md).
+
+## I'm having a problem configuring the Microsoft Entra application proxy in the admin portal
+[I don't know how to configure single sign-on to my application Proxy application](how-to-configure-sso.md).
+
+## I'm having a problem setting up back-end authentication to my application
+[I don't know how to configure Kerberos Constrained Delegation](application-proxy-back-end-kerberos-constrained-delegation-how-to.md).
+[I don't know how to configure my application with PingAccess](application-proxy-ping-access-publishing-guide.md).
+
+## I'm having a problem when signing in to my application
+[I get a "Can't Access this Corporate Application" error](application-proxy-sign-in-bad-gateway-timeout-error.md).
+
+## I'm having a problem with the application proxy connector
+[I have issues installing the application proxy connector](application-proxy-connector-installation-problem.md).
 
 ## Connector errors
 
