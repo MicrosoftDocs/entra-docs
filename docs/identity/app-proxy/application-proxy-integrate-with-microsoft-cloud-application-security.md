@@ -1,6 +1,6 @@
 ---
 title: Use application proxy to integrate on-premises apps with Defender for Cloud Apps
-description: Configure an on-premises application in Microsoft Entra ID to work with Microsoft Defender for Cloud Apps. Use the Defender for Cloud Apps Conditional Access App Control to monitor and control sessions in real-time based on Conditional Access policies. You can apply these policies to on-premises applications that use application proxy in Microsoft Entra ID.
+description: Use Microsoft Defender for Cloud Apps with on-premises applications in Microsoft Entra ID. Use the Defender for Cloud Apps Conditional Access App Control to monitor and control sessions in real-time based on Conditional Access policies. You apply these policies to on-premises applications that use application proxy in Microsoft Entra ID.
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
@@ -35,12 +35,10 @@ Configure Microsoft Entra ID to use application proxy. Configuring application p
 
 ## Add on-premises application to Microsoft Entra ID
 
-Add an on-premises application to Microsoft Entra ID. For a quickstart, see [Add an on-premises app to Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad). When adding the application, be sure to set the following two settings in the **Add your on-premises application** page:
+Add an on-premises application to Microsoft Entra ID. For a quickstart, see [Add an on-premises app to Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad). When adding the application, be sure to set the following two settings in the **Add your on-premises application** page so it'll work Defender for Cloud Apps:
 
 - **Pre Authentication**: Enter **Microsoft Entra ID**.
 - **Translate URLs in Application Body**: Choose **Yes**.
-
-Those two settings are required for the application to work with Defender for Cloud Apps.
 
 ## Test the on-premises application
 
