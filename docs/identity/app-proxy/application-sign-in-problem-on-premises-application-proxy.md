@@ -12,39 +12,30 @@ ms.reviewer: asteen
 ---
 
 # Problems signing in to an on-premises application using the Microsoft Entra application proxy
-
-If you are having problems signing in an on-premises application, you can try following the steps below to resolving your problem.
+This articles walks through troubleshooting steps for sign in issues.
 
 ## I can load my application, but something on the page looks broken
+[I can get to my application, but the application page isn't displaying correctly](application-proxy-page-appearance-broken-problem.md).
 
-The following documents can help you to resolve some of the most common issues in this category.
+[I can get to my application, but the application takes too long to load](application-proxy-page-load-speed-problem.md).
 
-  * [I can get to my application, but the application page isn't displaying correctly](application-proxy-page-appearance-broken-problem.md)
-  * [I can get to my application, but the application takes too long to load](application-proxy-page-load-speed-problem.md)
-  * [I can get to my application, but the links on the application page do not work](application-proxy-page-links-broken-problem.md)
+[I can get to my application, but the links on the application page do not work](application-proxy-page-links-broken-problem.md).
 
 ## I'm having a connectivity problem my application
-  The following documents can help you to resolve some of the most common issues in this category.
-  * [I don't know what ports to open for my application](application-proxy-add-on-premises-application.md)
-
-<a name='im-having-a-problem-configuring-the-azure-ad-application-proxy-in-the-admin-portal'></a>
+[I don't know what ports to open for my application](application-proxy-add-on-premises-application.md).
 
 ## I'm having a problem configuring the Microsoft Entra application proxy in the admin portal
-  The following documents can help you to resolve some of the most common issues in this category.
-  * [I don't know how to configure single sign-on to my application Proxy application](how-to-configure-sso.md)
+[I don't know how to configure single sign-on to my application Proxy application](how-to-configure-sso.md).
 
 ## I'm having a problem setting up back-end authentication to my application
-  The following documents can help you to resolve some of the most common issues in this category.
-  * [I don't know how to configure Kerberos Constrained Delegation](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
-  * [I don't know how to configure my application with PingAccess](application-proxy-ping-access-publishing-guide.md)
+[I don't know how to configure Kerberos Constrained Delegation](application-proxy-back-end-kerberos-constrained-delegation-how-to.md).
+[I don't know how to configure my application with PingAccess](application-proxy-ping-access-publishing-guide.md).
 
 ## I'm having a problem when signing in to my application
-  The following documents can help you to resolve some of the most common issues in this category.
-  * [I get a "Can't Access this Corporate Application" error](application-proxy-sign-in-bad-gateway-timeout-error.md)
+[I get a "Can't Access this Corporate Application" error](application-proxy-sign-in-bad-gateway-timeout-error.md).
 
-## I'm having a problem with the Application Proxy Agent Connector
-  The following documents can help you to resolve some of the most common issues in this category.
-  * [I am having issues installing the Application Proxy Agent Connector](application-proxy-connector-installation-problem.md)
+## I'm having a problem with the application proxy connector
+[I am having issues installing the application proxy connector](application-proxy-connector-installation-problem.md).
 
 ## Next steps
 [How to provide secure remote access to on-premises applications](overview-what-is-app-proxy.md)
