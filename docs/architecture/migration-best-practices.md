@@ -220,7 +220,7 @@ Monitor AD FS activity from [Connect Health Usage Analytics for AD FS](/azure/ac
 1. Delete AD FS Secure Socket Layer (SSL) certificates from each server storage.
 1. Reimage AD FS servers with full disk formatting.
 1. Delete your AD FS account.
-1. Use ADSI Edit to remove the content of the **CertificateSharingContainer** DN.
+1. Use Active Directory Service Interfaces (ADSI) Edit to remove the content of the **CertificateSharingContainer** DN.
 
 ## Next steps
 
