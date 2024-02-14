@@ -1,12 +1,10 @@
 ---
 title: View notification settings for a rule in the Autopilot dashboard in Permissions Management
 description: How to view notification settings for a rule  in the Autopilot dashboard in Microsoft Entra Permissions Management.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
-ms.subservice: ciem
-ms.workload: identity
+ms.service: entra-permissions-management
+
 ms.topic: how-to
 ms.date: 06/16/2023
 ms.author: jfields

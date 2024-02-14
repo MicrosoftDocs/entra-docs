@@ -8,8 +8,8 @@ ms.author: owenrichards
 ms.custom: devx-track-csharp, scenarios:getting-started, "languages:aspnet-core", mode-api
 ms.date: 12/09/2022
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write an ASP.NET Core web API that uses the Microsoft identity platform to authorize API requests from clients.
 ---
@@ -132,9 +132,7 @@ This quickstart will be deprecated in the near future and will be updated to use
 >   ```
 >
 > ## How the sample works
-> 
-> The web API receives a token from a client application, and the code in the web API validates the token. This scenario is explained in more detail in [Scenario: Protected web API](scenario-protected-web-api-overview.md).
-> 
+>
 > ### Startup class
 > 
 > The *Microsoft.AspNetCore.Authentication* middleware uses a `Startup` class that's executed when the hosting process starts. In its `ConfigureServices` method, the `AddMicrosoftIdentityWebApi` extension method provided by *Microsoft.Identity.Web* is called.

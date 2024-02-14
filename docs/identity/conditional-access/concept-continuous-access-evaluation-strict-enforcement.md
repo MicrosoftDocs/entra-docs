@@ -2,8 +2,7 @@
 title: Continuous access evaluation strict location enforcement in Microsoft Entra ID
 description: Responding to changes in user state faster with continuous access evaluation strict location enforcement in Microsoft Entra ID
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 07/27/2023
@@ -12,7 +11,7 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sreyanthmora
-ms.collection: M365-identity-device-management
+
 ---
 # Strictly enforce location policies using continuous access evaluation (preview)
 
@@ -58,7 +57,7 @@ If you haven't already, create a new Azure Workbook using the public template "C
   
   This behavior can be verified in the sign-in logs. Look for **IP address (seen by resource)** and investigate adding this IP to [named locations](location-condition.md#named-locations) if experiencing unexpected blocks from Conditional Access on users.
 
-     ![Screenshot of an sign-in log entry with both IP address and IP address seen by resource.](./media/concept-continuous-access-evaluation-strict-enforcement/activity-details-ip-differs.png)
+     ![Screenshot of a sign-in log entry with both IP address and IP address seen by resource.](./media/concept-continuous-access-evaluation-strict-enforcement/activity-details-ip-differs.png)
   
   Looking at the **Conditional Access Policy details** tab provides more details of blocked sign-in events. 
 

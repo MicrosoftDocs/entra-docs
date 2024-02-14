@@ -4,11 +4,11 @@ description: Learn how to create a customer tenant in the  Microsoft Entra admin
  
 author: csmulligan
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
-ms.date: 07/12/2023
+ms.date: 02/02/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -45,9 +45,6 @@ In this article, you learn how to:
     :::image type="content" source="media/how-to-create-customer-tenant-portal/select-tenant-type.png" alt-text="Screenshot of the select tenant type screen.":::
 
 1. If you're creating a customer tenant for the first time, you have the option to create a trial tenant that doesn't require an Azure subscription. Otherwise, use the Azure Subscription option to continue to the next step.
- 
-    :::image type="content" source="media/how-to-create-customer-tenant-portal/create-first-customer-tenant.png" alt-text="Screenshot of the two customer tenant options available during the initial CIAM tenant creation.":::
-
 1. If you choose the 30-day free trial, an Azure subscription isn't required.
 1. If you choose **Use Azure Subscription** option, then the admin center displays the tenant creation page. On the **Basics** tab, in the **Create a tenant for customers** page, enter the following information:
 

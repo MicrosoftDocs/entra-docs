@@ -1,12 +1,11 @@
 ---
 title: Can't access this Corporate Application error with Microsoft Entra application proxy app
 description: How to resolve common access issues with Microsoft Entra application proxy applications.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 09/14/2023
 ms.author: kenwith

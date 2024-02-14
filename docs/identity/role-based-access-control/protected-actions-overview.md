@@ -1,13 +1,12 @@
 ---
 title: What are protected actions in Microsoft Entra ID?
 description: Learn about protected actions in Microsoft Entra ID.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
 ms.author: rolyon
-ms.service: active-directory
-ms.subservice: roles
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
 ms.date: 04/10/2023
@@ -29,7 +28,7 @@ We recommend using multi-factor authentication on all accounts, especially accou
 
 - Stronger MFA authentication strengths, such as [Passwordless MFA](~/identity/authentication/concept-authentication-strengths.md#built-in-authentication-strengths) or [Phishing-resistant MFA](~/identity/authentication/concept-authentication-strengths.md#built-in-authentication-strengths),  
 - Privileged access workstations, by using Conditional Access policy [device filters](~/identity/conditional-access/concept-condition-filters-for-devices.md).
-- Shorter session timeouts, by using Conditional Access [sign-in frequency session controls](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#user-sign-in-frequency). 
+- Shorter session timeouts, by using Conditional Access [sign-in frequency session controls](~/identity/conditional-access/concept-session-lifetime.md#user-sign-in-frequency). 
 
 ## What permissions can be used with protected actions?
 

@@ -2,8 +2,8 @@
 title: Configure Microsoft Entra multifactor authentication
 description: Learn how to configure settings for Microsoft Entra multifactor authentication
 
-services: multi-factor-authentication
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 10/18/2023
@@ -12,9 +12,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jupetter
-
-ms.collection: M365-identity-device-management
-ms.custom: contperf-fy20q4
 ---
 # Configure Microsoft Entra multifactor authentication settings
 
@@ -425,7 +422,7 @@ The feature reduces the number of authentications on web apps, which normally pr
 >
 > The **remember multifactor authentication** feature isn't compatible with B2B users and won't be visible for B2B users when they sign in to the invited tenants.
 >
-> The **remember multifactor authentication** feature isn't compatible with the Sign-in frequency Conditional Access control. For more information, see [Configure authentication session management with Conditional Access](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#configuring-authentication-session-controls).
+> The **remember multifactor authentication** feature isn't compatible with the Sign-in frequency Conditional Access control. For more information, see [Configure authentication session management with Conditional Access](~/identity/conditional-access/concept-session-lifetime.md#configuring-authentication-session-controls).
 
 <a name='enable-remember-multi-factor-authentication'></a>
 

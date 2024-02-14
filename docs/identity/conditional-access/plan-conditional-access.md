@@ -2,7 +2,7 @@
 title: Plan a Microsoft Entra Conditional Access deployment
 description: Learn how to design Conditional Access policies and effectively deploy in your organization.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 01/03/2024

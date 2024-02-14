@@ -8,19 +8,20 @@ ms.author: barclayn
 ms.reviewer: jordan.dahl
 ms.date: 11/15/2023
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
-services: active-directory
-ms.custom: "it-pro"
+ms.service: entra-id
+ms.subservice: users
 
-#Customer intent: As a new Microsoft Entra identity administrator, user management is at the core of my work, so I need to understand the user management tools such as groups, administrator roles, and licenses to manage users.
+ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
+#Customer intent: As a new Microsoft Entra identity administrator, user management is at the core of my work, so I need to understand the user management tools such as groups, administrator roles, and licenses to manage users.
 ---
 
 # Group writeback in the Microsoft Entra admin center
 
-With the release of provisioning agent [1.1.1370.0](~/identity/hybrid/cloud-sync/reference-version-history.md#1113700), Cloud Sync now has the ability to provision groups directly to your on-premises Active Directory environment. With this capability, you can use identity governance features to govern access to Active Directory-based applications. For example, you can include a [group in an entitlement management access package](~/id-governance/entitlement-management-group-writeback.md).
+>[!NOTE]
+>This article discusses how to perform operations in the Microsoft Entra admin center with regard to group writeback.  For information on setup and configuration see [Provision groups to Active Directory using Microsoft Entra Cloud Sync (Preview)](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md)
+
+With the release of provisioning agent [1.1.1370.0](~/identity/hybrid/cloud-sync/reference-version-history.md#1113700), Cloud Sync now has the ability to provision groups directly to your on-premises Active Directory environment. With this capability, you can use identity governance features to govern access to Active Directory-based applications. For example, you can include a [group in an entitlement management access package](~/id-governance/entitlement-management-group-writeback.md). This is currently in public preview.  
 
 For more information, see [Group provisioning to Active Directory](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) and [Govern on-premises Active Directory-based apps (Kerberos) using Microsoft Entra ID Governance (preview)](~/identity/hybrid/cloud-sync/govern-on-premises-groups.md).
 

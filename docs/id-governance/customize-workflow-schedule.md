@@ -1,17 +1,14 @@
 ---
 title: Customize a workflow schedule
 description: Learn how to customize the schedule of a lifecycle workflow.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 05/31/2023
-ms.subservice: compliance
 ms.author: owinfrey
 ms.reviewer: krbain
-ms.collection: M365-identity-device-management
 ---
 
 # Customize the schedule of workflows

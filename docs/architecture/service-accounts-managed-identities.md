@@ -1,18 +1,14 @@
 ---
 title: Securing managed identities in Microsoft Entra ID
 description: Learn to find, assess, and increase the security of managed identities in Microsoft Entra ID
-services: active-directory
 author: jricketts
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/07/2023
 ms.author: jricketts
 ms.reviewer: ajburnle
-ms.custom: it-pro, seodec18, ignite-2022, has-azure-ad-ps-ref
-ms.collection: M365-identity-device-management
 ---
 
 # Securing managed identities in Microsoft Entra ID

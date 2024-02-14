@@ -5,7 +5,7 @@ description: include file for confidential client scenario landing pages (daemon
 author: OwenRichards1
 manager: CelesteDG
 
-ms.service: active-directory
+ms.service: identity-platform
 
 ms.topic: include
 ms.tgt_pltfrm: na

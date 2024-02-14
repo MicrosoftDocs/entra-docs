@@ -1,12 +1,10 @@
 ---
 title: View and configure settings for data collection
 description: How to view and configure settings for collecting data from your authorization system.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
-ms.subservice: ciem
-ms.workload: identity
+ms.service: entra-permissions-management
+
 ms.topic: how-to
 ms.date: 06/19/2023
 ms.author: jfields

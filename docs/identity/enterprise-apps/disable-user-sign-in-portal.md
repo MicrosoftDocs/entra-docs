@@ -4,8 +4,8 @@ description: How to disable an enterprise application so that no users may sign 
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: how-to
 ms.date: 2/23/2023

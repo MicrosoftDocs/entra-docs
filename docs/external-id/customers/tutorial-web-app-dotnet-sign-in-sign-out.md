@@ -5,8 +5,8 @@ description: Learn how to configure an ASP.NET Core web application to sign in a
 author: cilwerner
 ms.author: cwerner
 manager: celestedg
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: tutorial
 ms.date: 05/23/2023
 #Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own ASP.NET Core web app with Microsoft Entra ID for customers tenant.

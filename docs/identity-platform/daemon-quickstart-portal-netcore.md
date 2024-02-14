@@ -7,9 +7,9 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:aspnet-core", mode-api, devx-track-dotnet
 ms.date: 08/22/2022
-ms.reviewer: marsma
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: jmprieur
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn how my .NET app can get an access token and call an API that's protected by the Microsoft identity platform by using the client credentials flow.
 ---

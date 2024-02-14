@@ -2,8 +2,7 @@
 title: Native app and browser support of FIDO2 passwordless authentication | Microsoft Entra ID
 description: Browsers and operating system combinations support FIDO2 passwordless authentication for apps using Microsoft Entra ID
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 02/06/2024
@@ -12,8 +11,6 @@ author: justinha
 ms.author: justinha
 manager: amycolannino
 ms.reviewer: calui
-
-ms.collection: M365-identity-device-management
 ---
 # Native app and browser support of FIDO2 passwordless authentication
 
