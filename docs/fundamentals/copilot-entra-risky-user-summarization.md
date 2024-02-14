@@ -9,9 +9,8 @@ ms.author: ryanwi
 manager: celestedg
 ms.date: 02/09/2024
 ms.topic: conceptual
-ms.service: active-directory
-ms.subservice: fundamentals
-ms.workload: identity
+ms.service: entra
+ms.custom: microsoft-copilot
 
 # Customer intent: As a SOC analyst or IT admin, I want to learn about risky user summarization in the Identity Protection UX so that I can quickly respond to identity threats.
 ---
