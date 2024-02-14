@@ -7,7 +7,7 @@ ms.service: entra
 ms.subservice: architecture
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 02/13/2023
+ms.date: 02/14/2023
 ms.author: gasinh
 ms.reviewer: martinco
 ---
