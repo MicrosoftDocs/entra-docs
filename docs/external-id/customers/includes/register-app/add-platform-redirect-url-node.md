@@ -5,6 +5,7 @@ ms.subservice: customers
 ms.topic: include
 ms.date: 06/13/2023
 ms.author: kengaderdus
+ms.manager: mwongerapk
 ---
 
 To specify your app type to your app registration, follow these steps:

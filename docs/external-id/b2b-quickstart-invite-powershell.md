@@ -8,9 +8,8 @@ manager: CelesteDG
 ms.date: 09/29/2023
 ms.topic: quickstart
 ms.service: entra-external-id
-ms.custom: it-pro, seo-update-azuread-jan, mode-api, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro, mode-api, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
-
 #Customer intent: As an administrator, I want to add a guest user to my Microsoft Entra directory and send them an invitation via PowerShell, so that they can collaborate with my organization using their own work, school, or social account.
 ---
 

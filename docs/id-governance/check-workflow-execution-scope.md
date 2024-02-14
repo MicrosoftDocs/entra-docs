@@ -4,6 +4,7 @@ description: Describes how to check the users who fall into the execution scope 
 author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 05/31/2023
 ms.author: owinfrey

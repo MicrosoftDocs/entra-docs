@@ -8,7 +8,7 @@ ms.date: 05/23/2023
 tags: active-directory
 ms.author: cmulligan
 author: csmulligan
-ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
 # Customer intent: As an IT admin troubleshooting Microsoft Entra B2B collaboration, I want to find remedies for common problems, so that I can resolve issues and ensure smooth collaboration between organizations.
 ---

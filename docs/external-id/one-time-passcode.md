@@ -10,9 +10,8 @@ ms.date: 01/23/2024
 ms.author: mimart
 author: msmimart
 manager: CelesteDG
-ms.custom: "it-pro, seo-update-azuread-jan"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
-
 #customer intent: As a B2B collaboration administrator, I want to make sure invited users can authenticate using email one-time passcode, so that invited users can sign in using a passcode even when other authentication methods are not available.
 ---
 

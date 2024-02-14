@@ -5,11 +5,11 @@ author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
 ms.service: entra-id-governance
+ms.subservice: access-reviews
 ms.topic: overview
 ms.date: 06/28/2023
 ms.author: owinfrey
 ms.reviewer: mwahl
-ms.custom: contperf-fy21q1
 ---
 
 # What are access reviews?

@@ -4,6 +4,7 @@ ms.service: identity-platform
 ms.topic: include
 ms.date: 09/25/2023
 ms.author: henrymbugua
+manager: CelesteDG 
 ---
 
 | Language / framework | Project on<br/>GitHub                                                                                                                | Package                                                               |                                 Getting<br/>started                                  |                     Sign in users                     |                         Access web APIs                         | Generally available (GA) _or_<br/>Public preview<sup>1</sup> |

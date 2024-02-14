@@ -4,6 +4,7 @@ description: Describes an overview of Lifecycle workflows and the various parts.
 author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: overview
 ms.date: 06/22/2023
 ms.author: owinfrey

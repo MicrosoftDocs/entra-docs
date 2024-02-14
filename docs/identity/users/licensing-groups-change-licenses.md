@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 11/16/2023
 ms.author: barclayn
 ms.reviewer: sumitp
-ms.custom: "it-pro;seo-update-azuread-jan"
+ms.custom: it-pro
 ---
 
 # Change license assignments for a user or group in Microsoft Entra ID

@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.date: 02/01/2024
 ms.author: owinfrey
 ms.reviewer: dhanyahk
-ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref, has-azure-ad-ps-ref
+ms.custom: it-pro, has-adal-ref, has-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
 ---
 

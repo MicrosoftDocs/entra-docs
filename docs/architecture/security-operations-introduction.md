@@ -10,7 +10,6 @@ ms.date: 09/06/2022
 ms.author: jricketts
 ms.custom:
   - it-pro
-  - seodec18
   - kr2b-contr-experiment
 ---
 

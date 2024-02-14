@@ -12,7 +12,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jupetter
-ms.custom: contperf-fy20q4
 ---
 # Configure Microsoft Entra multifactor authentication settings
 
