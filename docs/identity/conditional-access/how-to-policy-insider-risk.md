@@ -18,7 +18,7 @@ Most users have a normal behavior that can be tracked, when they fall outside of
 
 [Insider risk as a condition](concept-conditional-access-conditions.md#insider-risk)
 
-INSERT MORE TEXT ABOUT INSIDER RISK POLICY HERE For more information, see the article[Help dynamically mitigate risks with adaptive protection](/purview/insider-risk-management-adaptive-protection).
+INSERT MORE TEXT ABOUT INSIDER RISK POLICY HERE For more information, see the article [Help dynamically mitigate risks with adaptive protection](/purview/insider-risk-management-adaptive-protection).
 
 ## Template deployment
 
