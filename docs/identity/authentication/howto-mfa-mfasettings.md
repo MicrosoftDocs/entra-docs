@@ -6,7 +6,7 @@ description: Learn how to configure settings for Microsoft Entra multifactor aut
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/18/2023
+ms.date: 02/14/2024
 
 ms.author: justinha
 author: justinha
@@ -77,6 +77,26 @@ To unblock a user, complete the following steps:
 1. In the **Action** column next to the user, select **Unblock**.
 1. Enter a comment in the **Reason for unblocking** box.
 1. Select **OK** to unblock the user.
+
+## Fraud alert
+
+The fraud alert feature lets users report fraudulent attempts to access their resources. When an unknown and suspicious MFA prompt is received, users can report the fraud attempt by using the Microsoft Authenticator app or through their phone.
+
+The following fraud alert configuration options are available:
+
+* **Automatically block users who report fraud**. If a user reports fraud, the Azure AD Multi-Factor Authentication attempts for the user  account are blocked for 90 days or until an administrator unblocks the account. An administrator can review sign-ins by using the sign-in report, and take appropriate action to prevent future fraud. An administrator can then [unblock](#unblock-a-user) the user's account.
+* **Code to report fraud during initial greeting**. When users receive a phone call to perform multi-factor authentication, they normally press **#** to confirm their sign-in. To report fraud, the user enters a code before pressing **#**. This code is **0** by default, but you can customize it. If automatic blocking is enabled, after the user presses **0#** to report fraud, they need to press **1** to confirm the account blocking.
+
+   > [!NOTE]
+   > The default voice greetings from Microsoft instruct users to press **0#** to submit a fraud alert. If you want to use a code other than **0**, record and upload your own custom voice greetings with appropriate instructions for your users.
+
+To enable and configure fraud alerts, complete the following steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Browse to **Protection** > **Multifactor authentication** > **Fraud alert**.
+1. Set **Allow users to submit fraud alerts** to **On**.
+1. Configure the **Automatically block users who report fraud** or **Code to report fraud during initial greeting** setting as needed.
+1. Select **Save**.
 
 ## Report suspicious activity
 
