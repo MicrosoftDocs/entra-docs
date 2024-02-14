@@ -81,7 +81,9 @@ To unblock a user, complete the following steps:
 
 ## Fraud alert
 
-The fraud alert feature lets users report fraudulent attempts to access their resources. When an unknown and suspicious MFA prompt is received, users can report the fraud attempt by using the Microsoft Authenticator app or through their phone.
+The Fraud alert feature lets users report fraudulent attempts to access their resources. When an unknown and suspicious MFA prompt is received, users can report the fraud attempt by using the Microsoft Authenticator app or through their phone.
+
+Microsoft recommends using [Report suspicious activity](#report-suspicious-activity) instead of Fraud alert due to its integration with Identity Protection for risk-driven remediation, better reporting capabilities, and least-privileged administration.
 
 The following fraud alert configuration options are available:
 
