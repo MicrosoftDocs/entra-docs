@@ -63,13 +63,13 @@ This section guides you through connecting your Microsoft Entra ID to GitHub's S
 
 4. Set the **Provisioning Mode** to **Automatic**.
 
-   ![GitHub Provisioning](./media/github-provisioning-tutorial/github1.png)
-
 5. In the Azure portal, input **Tenant URL** and click **Test Connection** to ensure Microsoft Entra ID can connect to your GitHub Organization. If the connection fails, ensure your GitHub account has Admin permissions and **Tenant URl** is entered correctly, then try the "Authorize" step again (you can constitute **Tenant URL** by rule: `https://api.github.com/scim/v2/organizations/<Organization_name>`, you can find your organizations under your GitHub account: **Settings** > **Organizations**).
 
    ![Screenshot shows Organizations page in GitHub.](./media/github-provisioning-tutorial/github3.png)
 
 6. Under the **Admin Credentials** section, click **Authorize**. This operation opens a GitHub authorization dialog in a new browser window. Note that you need to ensure you are approved to authorize access. Follow the directions described [here](https://help.github.com/github/setting-up-and-managing-organizations-and-teams/approving-oauth-apps-for-your-organization).
+
+   ![GitHub Provisioning](./media/github-provisioning-tutorial/github1.png)
 
 7. In the new window, sign into GitHub using your Admin account. In the resulting authorization dialog, select the GitHub Organization that you want to enable provisioning for, and then select **Authorize**. Once completed, return to the Azure portal to complete the provisioning configuration.
 
