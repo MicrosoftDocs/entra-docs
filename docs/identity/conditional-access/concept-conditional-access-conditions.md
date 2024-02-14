@@ -30,7 +30,7 @@ When users access a sensitive application, an administrator may factor multiple 
 
 PLACEHOLDER TEXT
 
-Administrators with access to [Microsoft Purview adaptive protection](/purview/insider-risk-management-adaptive-protection) can incorporate risk signals from  Purview into Conditional Access policy decisions. 
+Administrators with access to [Microsoft Purview adaptive protection](/purview/insider-risk-management-adaptive-protection) can incorporate risk signals from  Purview into Conditional Access policy decisions. [Configure and enable an insider risk based policy](how-to-policy-insider-risk.md).
 
 ## Sign-in risk
 
