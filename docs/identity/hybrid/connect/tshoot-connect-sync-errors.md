@@ -41,11 +41,37 @@ Errors during export to Microsoft Entra ID indicate that an operation like add, 
 
 This section discusses data mismatch errors.
 
+### InvalidHardMatch
+
+#### Description
+
+* When Microsoft Entra Connect (sync engine) instructs Microsoft Entra ID to add or update objects, Microsoft Entra ID matches the incoming object by using the **sourceAnchor** attribute and matching it to the **immutableId** attribute of existing objects in Microsoft Entra ID. This match is called a hard match.
+* An InvalidHardMatch error occurs when there’s an attempt to hard match objects present in Microsoft Entra ID with a new object being added or updated during synchronization which have the same source anchor value, but *BlockCloudObjectTakeoverThroughHardMatchEnabled* feature is enabled on the tenant.
+
+#### Example scenarios for an InvalidHardMatch error
+
+* DirSync has been disabled and re-enabled on the tenant and the same objects are synchronized again with the same sourceanchor, however *BlockCloudObjectTakeoverThroughHardMatchEnabled* feature is enabled and prevents the hard match to occur.
+* User was excluded from sync scope and restored from Entra ID Recycle Bin. Then later, the user is re-added to sync scope and needs to take over the object already present in Microsoft Entra ID based on a hard match with the same source anchor, however *BlockCloudObjectTakeoverThroughHardMatchEnabled* feature is enabled and prevents the hard match to occur.
+
+#### Example case
+
+1. Bob Smith is a synced user in Microsoft Entra ID from the on-premises Active Directory of contoso.com.
+1. By default, the SourceAnchor value of **"abcdefghijklmnopqrstuv=="** is calculated by Microsoft Entra Connect by using Bob Smith's **MsDs-ConsistencyGUID** attribute (or ObjectGUID depending on the configuration) from on-premises Active Directory. This attribute value is the **immutableId** for Bob Smith in Microsoft Entra ID.
+1. Admin removes Bob Smith from sync scope and Entra Connect exports a deletion of the object.
+1. The object representing Bob Smith in the cloud gets soft-deleted and its DirSyncEnabled attribute is switched to False – This however does not convert the object to a cloud-only object, it’s still an object synchronized from on-premises Active Directory but the DirSyncEnabled=False indicates that it’s currently out of sync scope.
+1. Admin re-adds Bob Smith into sync scope and Entra Connect re-synchronizes the object.
+1. Normally, the Hard match would take over the object already present in Microsoft Entra ID based on the same SourceAnchor and switch DirSyncEnabled attribute back to 'True’, however, when *BlockCloudObjectTakeoverThroughHardMatchEnabled* is enabled, this operation is not allowed and an InvalidHardMatch is thrown.
+
+#### Fix the InvalidHardMatch error
+
+We advise customers to enable *BlockCloudObjectTakeoverThroughHardMatchEnabled* unless they need it to take over existent accounts in Microsoft Entra ID.
+
+If you need to clear an **InvalidHardtMatch** error and match the account successfully, you can enable hard match again as descripted in [Hard-match vs Soft-match](/how-to-connect-install-existing-tenant#hard-match-vs-soft-match).
+
 ### InvalidSoftMatch
 
 #### Description
 
-* When Microsoft Entra Connect \(sync engine\) instructs Microsoft Entra ID to add or update objects, Microsoft Entra ID matches the incoming object by using the **sourceAnchor** attribute and matching it to the **immutableId** attribute of objects in Microsoft Entra ID. This match is called a *hard match*.
 * When Microsoft Entra ID *doesn't find* any object that matches the **immutableId** attribute with the **sourceAnchor** attribute of the incoming object, before Microsoft Entra ID provisions a new object, it falls back to use the **proxyAddresses** and **userPrincipalName** attributes to find a match. This match is called a *soft match*. The soft match matches objects already present in Microsoft Entra ID (that are sourced in Microsoft Entra ID) with the new objects being added or updated during synchronization that represent the same entity (like users and groups) on-premises.
 * The InvalidSoftMatch error occurs when the hard match doesn't find any matching object *and* the soft match finds a matching object, but that object has a different **immutableId** value than the incoming object's **sourceAnchor** attribute. This mismatch suggests that the matching object was synced with another object from on-premises Active Directory.
 
@@ -57,6 +83,7 @@ Microsoft Entra schema doesn't allow two or more objects to have the same value 
 * userPrincipalName
 * onPremisesSecurityIdentifier
 * objectId
+* immutableId
 
 [Microsoft Entra attribute duplicate attribute resiliency](how-to-connect-syncservice-duplicate-attribute-resiliency.md) is also being rolled out as the default behavior of Microsoft Entra ID. This feature reduces the number of synchronization errors seen by Microsoft Entra Connect and other sync clients. It makes Microsoft Entra more resilient in the way it handles duplicated **proxyAddresses** and **userPrincipalName** attributes present in on-premises Active Directory environments. 
 
