@@ -419,7 +419,7 @@ To enable or disable verification methods, complete the following steps:
 1. On the **Service settings** page, under **Verification options**, select or clear the appropriate checkboxes.
 1. Select **Save**.
 
-<a name='remember-multifactor-authentication'></a>
+<a name='remember-multi-factor-authentication'></a>
 
 ### Remember multifactor authentication
 
