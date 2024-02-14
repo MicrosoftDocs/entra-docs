@@ -1,6 +1,6 @@
 ---
 title: Add sign up, sign in and sign out in native iOS app
-description: Learn how to add sign up, sign in and sign out with email one-time passcode.
+description: Learn how to add sign-up, sign in and sign out with email one-time passcode.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -67,7 +67,7 @@ To sign up user using **Email one-time-passcode** you need to:
     }
     ```
 
-    The call to `signUp(username:delegate)` will result to a call to delegate methods. In the most common scenario `onSignUpCodeRequired(newState:sentTo:channelTargetType:codeLength)` will be called to indicate that a code has been sent to verify the user's email address. Along with some details of where the code has been sent, and how many digits it contains, this delegate method also has a `newState` parameter of type `SignUpCodeRequiredState`, which gives us access to the following two new methods:
+    The call to `signUp(username:delegate)` results to a call to delegate methods. In the most common scenario `onSignUpCodeRequired(newState:sentTo:channelTargetType:codeLength)` will be called to indicate that a code has been sent to verify the user's email address. Along with some details of where the code has been sent, and how many digits it contains, this delegate method also has a `newState` parameter of type `SignUpCodeRequiredState`, which gives us access to the following two new methods:
 
     - `submitCode(code:delegate)`
     - `resendCode(delegate)`
@@ -96,9 +96,9 @@ To sign up user using **Email one-time-passcode** you need to:
 
     In the most common scenario, we receive a call to `onSignUpCompleted(newState)` indicating that the user has been signed up and the flow is complete.
 
-### Handle errors during sign up
+### Handle errors during sign-up
 
-During sign up, not every action succeeds. For example, the user might try to sign up with an email address that's already in use, or submit an invalid code.
+During sign-up, not every action succeeds. For example, the user might try to sign up with an email address that's already in use, or submit an invalid code.
 
 In our earlier implementation of `SignUpStartDelegate` protocol we simply displayed the error when we handled the `onSignUpStartError(error)` delegate function.
 
@@ -114,7 +114,7 @@ func onSignUpStartError(error: MSAL.SignUpStartError) {
 }
 ```
 
-Well, you have done everything that is required to successfully sign up a user on your app. Build and run your application. If all good, you should be able to provide an email ID, receive a code on the email, and use that to successfully sign up user.
+You've successfully completed all the necessary steps to sign up a user on your app. Build and run your application. If all good, you should be able to provide an email ID, receive a code on the email, and use that to successfully sign up user.
 
 ## Sign in user
 
@@ -155,7 +155,7 @@ To  sign in user using **Email one-time-passcode** you need to:
     }
     ```
 
-    The `signIn(username:delegate)` will result in a call to delegate methods. In the most common scenario `onSignInCodeRequired(newState:sentTo:channelTargetType:codeLength)` will be called to indicate that a code has been sent to verify the user's email address. Along with some details of where the code has been sent, and how many digits it contains, this delegate method also has a `newState` parameter of type `SignInCodeRequiredState`, which gives us access to the following two new methods:
+    The `signIn(username:delegate)` results in a call to delegate methods. In the most common scenario `onSignInCodeRequired(newState:sentTo:channelTargetType:codeLength)` will be called to indicate that a code has been sent to verify the user's email address. Along with some details of where the code has been sent, and how many digits it contains, this delegate method also has a `newState` parameter of type `SignInCodeRequiredState`, which gives us access to the following two new methods:
 
     - `submitCode(code:delegate)`
     - `resendCode(delegate)`

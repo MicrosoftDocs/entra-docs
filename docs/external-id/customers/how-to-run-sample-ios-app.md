@@ -11,13 +11,13 @@ ms.service: active-directory
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 02/13/2024
-ms.custom: developer, devx-track-dotnet
+ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn about how to configure native auth iOS sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID for customers.
 ---
 
 # How to run the iOS sample app
 
-This guide demonstrates how to run an iOS sample application that showcases sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID for customers.
+This guide shows how to run an iOS sample application that demonstrates sign-up, sign in, sign out, and reset password scenarios using Microsoft Entra External ID for customers.
 
 In this article, you learn how to:
 
@@ -170,7 +170,7 @@ The sample app supports the following flows:
 
 1. _Email + one-time passcode_: Follow this flow to sign in or sign up with an email and a one-time passcode.
 1. _Email + password_: Follow this flow to sign in or sign up with email and a password.
-1. _Email + password sign up with custom attributes_: Follow this flow to sign up with email, password, and custom attributes.
+1. _Email + password sign-up with custom attributes_: Follow this flow to sign up with email, password, and custom attributes.
 1. _Password reset_: Follow this flow to reset the password.
 1. _Fallback to web browser_: Follow this flow to use the browser to sign in or sign up.
 
