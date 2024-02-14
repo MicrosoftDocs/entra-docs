@@ -81,6 +81,8 @@ Administrators can grant consent for themselves or for the entire organization. 
 
 Authentication requests are prompted for admin consent if consent wasn't granted and if one of those high-privilege permissions is requested.
 
+Custom application scopes are not considered high-privilege for administrator consent authentication request purposes.
+
 ### Preauthorization
 
 Preauthorization allows a resource application owner to grant permissions without requiring users to see a consent prompt for the same set of permissions that have been preauthorized. This way, an application that has been preauthorized won't ask users to consent to permissions. Resource owners can preauthorize client apps in the Azure portal or by using PowerShell and APIs, like Microsoft Graph.
