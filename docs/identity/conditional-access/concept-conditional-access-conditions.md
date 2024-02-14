@@ -28,9 +28,17 @@ When users access a sensitive application, an administrator may factor multiple 
 
 ## Insider risk
 
-PLACEHOLDER TEXT
+Insider risk takes into account your data governance, data security, and risk and compliance configurations in Microsoft Purview. These signals are based on contextual factors like:
 
-Administrators with access to [Microsoft Purview adaptive protection](/purview/insider-risk-management-adaptive-protection) can incorporate risk signals from  Purview into Conditional Access policy decisions. [Configure and enable an insider risk based policy](how-to-policy-insider-risk.md).
+- User behavior
+- Historical patterns
+- Anomaly detections
+
+This condition allows administrators to use Conditional Access policies to take actions like blocking or requiring multifactor authentication. 
+
+This functionality involves incorporating parameters that specifically address potential risks arising from within an organization. By configuring conditional access to consider Insider Risk, administrators can tailor access permissions based on contextual factors such as user behavior, historical patterns, and anomaly detection.
+
+Administrators with access to [Microsoft Purview adaptive protection](/purview/insider-risk-management-adaptive-protection) can incorporate risk signals from Microsoft Purview into Conditional Access policy decisions. For more information, see the article[Configure and enable an insider risk based policy](how-to-policy-insider-risk.md).
 
 ## Sign-in risk
 
