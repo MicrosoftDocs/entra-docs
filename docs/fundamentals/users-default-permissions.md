@@ -172,10 +172,10 @@ Users can perform the following actions on owned groups.
 | microsoft.directory/groups/restore | Restore groups in Microsoft Entra ID. |
 | microsoft.directory/groups/settings/update | Update the `groups.settings` property in Microsoft Entra ID. |
 
-## Next steps
+## Related content
 
 * To learn more about the **Guest user access restrictions** setting, see [Restrict guest access permissions in Microsoft Entra ID](~/identity/users/users-restrict-guest-permissions.md).
 * To learn more about how to assign Microsoft Entra administrator roles, see [Assign a user to administrator roles in Microsoft Entra ID](./how-subscriptions-associated-directory.md).
 * To learn more about how resource access is controlled in Microsoft Azure, see [Understanding resource access in Azure](/azure/role-based-access-control/rbac-and-directory-admin-roles).
-* For more information on how Microsoft Entra ID relates to your Azure subscription, see [How Azure subscriptions are associated with Microsoft Entra ID](./how-subscriptions-associated-directory.md).
-* [Manage users](./add-users.md).
+* For more information about how Microsoft Entra ID relates to your Azure subscription, see [How Azure subscriptions are associated with Microsoft Entra ID](./how-subscriptions-associated-directory.md).
+* For details about how to manage users, see [Manage users](./add-users.md).
