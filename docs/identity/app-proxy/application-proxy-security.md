@@ -84,7 +84,7 @@ Applications published through application proxy are protected against Distribut
 
 Microsoft Entra application proxy consists of two parts:
 
-* The cloud-based service: This service runs in Azure, and is where the external client/user connections are made.
+* The cloud-based service: This service runs in the Microsoft cloud, and is where the external client/user connections are made.
 * [The on-premises connector](application-proxy-connectors.md): An on-premises component, the connector listens for requests from the Microsoft Entra application proxy service and handles connections to the internal applications. 
 
 A flow between the connector and the application proxy service is established when:
