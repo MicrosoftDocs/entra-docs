@@ -42,7 +42,7 @@ The EmployeeHireDate and EmployeeLeaveDateTime contain dates and times that must
 |-----|-----|-----|-----|
 |Workday to Active Directory User Provisioning|FormatDateTime([StatusHireDate], ,"yyyy-MM-ddzzz", "yyyyMMddHHmmss.fZ")|On-premises AD string attribute|[Attribute mappings for Workday](~/identity/saas-apps/workday-inbound-tutorial.md#below-are-some-example-attribute-mappings-between-workday-and-active-directory-with-some-common-expressions)|
 |SuccessFactors to Active Directory User Provisioning|FormatDateTime([endDate], ,"M/d/yyyy hh:mm:ss tt","yyyyMMddHHmmss.fZ")|On-premises AD string attribute|[Attribute mappings for SAP Success Factors](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)|
-|Custom import to Active Directory|Must be in the format "yyyyMMddHHmmss.fZ"|On-premises AD string attribute||
+|Custom import to Active Directory|Must be in the format "yyyyMMddHHmmss.fZ"|On-premises AD string attribute|[Attribute mappings for any other system of record](../identity/app-provisioning/inbound-provisioning-api-configure-app.md)|
 |Microsoft Graph User API|Must be in the format "YYYY-MM-DDThh:mm:ssZ"|EmployeeHireDate and EmployeeLeaveDateTime||
 |Workday to Microsoft Entra user provisioning|Can use a direct mapping.  No expression is needed but can be used to adjust the time portion of EmployeeHireDate and EmployeeLeaveDateTime|EmployeeHireDate and EmployeeLeaveDateTime||
 |SuccessFactors to Microsoft Entra user provisioning|Can use a direct mapping.  No expression is needed but can be used to adjust the time portion of EmployeeHireDate and EmployeeLeaveDateTime|EmployeeHireDate and EmployeeLeaveDateTime||
@@ -153,7 +153,7 @@ For more information, see [How to customize a synchronization rule](~/identity/h
 
 ## Edit attribute mapping in the provisioning application
 
-Once you have set up your provisioning application, you're able to edit its attribute mapping. When the app is created, you get a list of default mappings between your HRM and Active Directory. From there you can either edit the existing mapping, or add new mapping. 
+Once you have set up your provisioning application, you're able to edit its attribute mapping. When the app is created, you get a list of default mappings between your HRM and Active Directory. From there, you can either edit the existing mapping, or add new mapping. 
 
 To update this mapping, you'd do the following:
 
@@ -168,12 +168,12 @@ To update this mapping, you'd do the following:
 1.  Select **Show advanced options**, and then select edit Attribute list for On Premise Active Directory.
     :::image type="content" source="media/how-to-lifecycle-workflow-sync-attributes/edit-on-prem-attribute.png" alt-text="Screenshot of editing on-premises attribute.":::
 1.  Add your source attribute or attributes created as Type String, and select on the CheckBox for required.
-    :::image type="content" source="media/how-to-lifecycle-workflow-sync-attributes/edit-attribute-list.png" alt-text="Screenshot of source api list.":::
+    :::image type="content" source="media/how-to-lifecycle-workflow-sync-attributes/edit-attribute-list.png" alt-text="Screenshot of source API list.":::
     > [!NOTE]
     > The number, and name, of source attributes added will depend on which attributes you are syncing from Active Directory.
 1.  Select Save. 
 
-1. From there you must map the HRM attributes to the added Active Directory attributes. To do this, Add New Mapping using an Expression. 
+1. From there, you must map the HRM attributes to the added Active Directory attributes. To do this, Add New Mapping using an Expression. 
 
 1. Your expression must match the formatting found in the [Understanding EmployeeHireDate and EmployeeLeaveDateTime formatting](how-to-lifecycle-workflow-sync-attributes.md#understanding-employeehiredate-and-employeeleavedatetime-formatting) section.
     :::image type="content" source="media/how-to-lifecycle-workflow-sync-attributes/attribute-formatting-expression.png" alt-text="Screenshot of setting attribute format.":::
@@ -193,10 +193,12 @@ $Scopes =@("User.Read.All", "User-LifeCycleInfo.Read.All")
 
 # Connect using the scopes defined and select the Beta API Version
 Connect-MgGraph -Scopes $Scopes
-Select-MgProfile -Name beta
+
 
 # Query a user, using its user ID, and return the desired properties
-Get-MgUser -UserId "44198096-38ea-440d-9497-bb6b06bcaf9b" | Select-Object DisplayName, EmployeeLeaveDateTime
+$user = Get-MgUser -UserID "9093a415-2968-48b5-808b-a1a6f006f7a3" -Property EmployeeLeaveDateTime
+$User.EmployeeLeaveDateTime
+
 ```
 ![Screenshot of the result.](media/how-to-lifecycle-workflow-sync-attributes/user-lifecycle-properties-return.png)
 

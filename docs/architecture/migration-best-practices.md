@@ -1,22 +1,22 @@
 ---
 title: Best practices to migrate applications and authentication to Microsoft Entra ID
-description: Learn best practices to migrate Active Directory Federation Service (AD FS) to cloud authentication in Microsoft Entra ID
+description: Learn best practices to migrate Active Directory Federation Service (AD FS) to cloud authentication in Microsoft Entra ID.
 author: gargisinha
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 2/06/2023
+ms.date: 02/14/2023
 ms.author: gasinh
 ms.reviewer: martinco
 ---
 
 
-# Best practices to migrate applications and authentication to Microsoft Entra ID
+# Best practices to migrate applications and authentication to Microsoft Entra ID 
 
 You've heard that [Azure Active Directory is now Microsoft Entra ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-id) and you're thinking it's a good time to migrate your Active Directory Federation Service (AD FS) [to cloud authentication in Microsoft Entra ID](/azure/active-directory/hybrid/connect/migrate-from-federation-to-cloud-authentication). As you review your options, see our extensive [resources to migrate apps to Microsoft Entra ID](/azure/active-directory/manage-apps/migration-resources), and best practices.
 
-Until you're able to migrate AD FS to Microsoft Entra ID, protect your on-premises resources with [Microsoft Defender for Identity](/defender-for-identity/what-is). You can find and correct vulnerabilities proactively. Use assessments, analytics and data intelligence, user investigation priority scoring, and automatic response to compromised identities.
+Until you're able to migrate AD FS to Microsoft Entra ID, protect your on-premises resources with [Microsoft Defender for Identity](/defender-for-identity/what-is). You can find and correct vulnerabilities proactively. Use assessments, analytics and data intelligence, user investigation priority scoring, and automatic response to compromised identities. Migration to the cloud means your organization can benefit from modern authentication, such as passwordless methods to authenticate.
 
 Here are reasons that you might choose not to migrate AD FS:
 
@@ -30,13 +30,16 @@ Here are reasons that you might choose not to migrate AD FS:
 
 Plan a staged application migration rollout and select users to authenticate to Microsoft Entra ID for testing. Use guidance in, [plan application migration to Microsoft Entra ID](/azure/active-directory/manage-apps/migrate-adfs-apps-phases-overview) and, [resources to migrate apps to Microsoft Entra ID](/azure/active-directory/manage-apps/migration-resources).
 
+Learn more in the following video, Effortless Application Migration Using Microsoft Entra ID. </br></br>
+> [!VIDEO https://www.youtube.com/embed/qJYmEOK6UJo]
+
 ### Application migration tool
 
 Currently in preview, [AD FS application migration to move AD FS apps to Microsoft Entra ID](~/identity/enterprise-apps/migrate-ad-fs-application-howto.md) is a guide for IT administrators to migrate AD FS relying party applications from AD FS to Microsoft Entra ID. The AD FS application migration wizard gives you a unified experience to discover, evaluate, and configure new Microsoft Entra ID applications. It has one-click configuration for basic SAML URLs, claims mapping, and user assignments to integrate an application with Microsoft Entra ID. There's end-to-end support to migrate on-premises AD FS applications, with these features:
 
-- Evaluate AD FS relying party application sign-in activities to help you identify application usage and impact.
-- Analyze AD FS to Microsoft Entra ID migration feasibility to help you identify migration blockers and required actions to migrate applications to Microsoft Entra ID.
-- Configure new Microsoft Entra ID applications with a one-click application migration process that automatically configures a new Microsoft Entra ID application for an AD FS application.
+- To help identify application usage and impact, evaluate AD FS relying party application sign-in activities
+- To help determine migration blockers and required actions to migrate applications to Microsoft Entra ID, analyze AD FS to Microsoft Entra ID migration feasibility
+- To automatically configure a new Microsoft Entra ID application for an AD FS application, configure new Microsoft Entra ID applications with a one-click application migration process
 
 ### Phase 1: Discover and scope apps
 
@@ -46,9 +49,13 @@ Use the [activity report to move AD FS apps to Microsoft Entra ID](/azure/active
 
 Use the [AD FS to Microsoft Entra ID App Migration Tool](https://github.com/AzureAD/Deployment-Plans/tree/master/ADFS%20to%20AzureAD%20App%20Migration) to collect relying party applications from your AD FS server and analyze configuration. From this analysis, the report shows which apps are eligible for migration to Microsoft Entra ID. For ineligible apps, you can review explanations of why they can't migrate.
 
+Install [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) for on-premises environments with [Microsoft Entra Connect AD FS health agents](https://go.microsoft.com/fwlink/?LinkID=518973).
+
+Learn more on, [What is Microsoft Entra Connect?](~/identity/hybrid/connect/whatis-azure-ad-connect.md)
+
 ### Phase 2: Classify apps and plan pilot
 
-[Classifying the migration of apps](/azure/active-directory/manage-apps/migrate-adfs-classify-apps-plan-pilot) is an important exercise. Plan app migration and transition in phases after you decide the order in which you'll migrate apps. Include the following criteria for app classification:
+[Classifying the migration of apps](/azure/active-directory/manage-apps/migrate-adfs-classify-apps-plan-pilot) is an important exercise. Plan app migration and transition in phases after you decide the order in which you migrate apps. Include the following criteria for app classification:
 
 - Modern authentication protocols, such as third-party Software-as-a-Service (SaaS) apps in the [Microsoft Entra application gallery](/azure/active-directory/manage-apps/overview-application-gallery) but not through Microsoft Entra ID.
 - Legacy authentication protocols to modernize, such as third-party SaaS apps (not in the gallery, but you can add to the gallery).
@@ -97,22 +104,22 @@ Your app migration plan needs specific attention when your environment includes 
 Consider including the following steps in your application migration process.
 
 - **Clone the AD FS app configuration.** Set up a test instance of the app, or use a mock app on a test Microsoft Entra ID tenant. Map AD FS settings to Microsoft Entra ID configurations. Plan for a rollback. Switch the test instance to Microsoft Entra ID and validate.
-- **Configure claims and identifiers.** Mimic production apps to confirm and troubleshoot. Point a test instance of the app to the Microsoft Entra ID test application. Validate and troubleshoot access, updating configuration as needed.
+- **Configure claims and identifiers.** To confirm and troubleshoot, mimic production apps. Point a test instance of the app to the Microsoft Entra ID test application. Validate and troubleshoot access, updating configuration as needed.
 - **Prepare the production instance for migration.** Add the production application to Microsoft Entra ID based on the test results. For applications that allow multiple identity providers (IdP), configure Microsoft Entra ID as an added IdP to the production instance.
 - **Switch production instance to use Microsoft Entra ID.** For applications that allow multiple simultaneous IdPs, change the default IdP to Microsoft Entra ID. Otherwise, configure Microsoft Entra ID as the IdP to the production instance. Update the production instance to use the Microsoft Entra ID production application as primary IdP.
 - **Migrate first app, run migration tests, and fix issues.** Reference migration status in [AD FS application activity reports](/azure/active-directory/manage-apps/migrate-adfs-application-activity) that provide guidance on how to address potential migration issues.
 - **Migrate at scale.** Migrate apps and users in phases. Use Microsoft Entra ID to manage migrated apps and users while sufficiently testing authentication.
-- **Remove the federation.** Confirm that your AD FS farm is no longer used for authentication. Use fail-back, back-up, and export related configurations.
+- **Remove the federation.** Confirm that your AD FS farm is no longer used for authentication. Use fail-back, back-up, and export related configurations. 
 
 ## Migrate authentication
 
 As you prepare for authentication migration, decide which [authentication methods](/azure/active-directory/hybrid/connect/choose-ad-authn) are needed for your organization.
 
-- Enable [password hash synchronization (PHS) with Microsoft Entra ID](/azure/active-directory/hybrid/connect/whatis-phs) as a failover, or as the primary end user authentication. Configure [risk detection](/azure/active-directory/identity-protection/concept-identity-protection-risks) as part of Microsoft Entra ID Protection. Review the [identify and remediate risk using Microsoft Graph APIs](/graph/tutorial-riskdetection-api) tutorial and learn how to [implement password hash synchronization with Microsoft Entra Connect Sync](/azure/active-directory/hybrid/connect/how-to-connect-password-hash-synchronization).
-- [Microsoft Entra certificate-based authentication (CBA)](/azure/active-directory/authentication/concept-certificate-based-authentication) authenticates directly against Microsoft Entra ID without the need for a federated IdP. Key benefits include features that help improve security with phish-resistant CBA; meet Executive Order (EO) 14028 requirements for phish-resistant MFA, cut costs and risks associated with on-premises federation infrastructure, and simplify management experience in Microsoft Entra ID with granular controls.
+- [Password hash synchronization (PHS) with Microsoft Entra ID](/azure/active-directory/hybrid/connect/whatis-phs) is available for failover, or as the primary end user authentication. Configure [risk detection](/azure/active-directory/identity-protection/concept-identity-protection-risks) as part of Microsoft Entra ID Protection. Review the [identify and remediate risk using Microsoft Graph APIs](/graph/tutorial-riskdetection-api) tutorial and learn how to [implement password hash synchronization with Microsoft Entra Connect Sync](/azure/active-directory/hybrid/connect/how-to-connect-password-hash-synchronization).
+- [Microsoft Entra certificate-based authentication (CBA)](/azure/active-directory/authentication/concept-certificate-based-authentication) authenticates directly against Microsoft Entra ID without the need for a federated IdP. Key benefits include features that help improve security with phish-resistant CBA, and meet Executive Order (EO) 14028 requirements for phish-resistant MFA. You cut costs and risks associated with on-premises federation infrastructure, and simplify management experience in Microsoft Entra ID with granular controls.
 - [Microsoft Entra Connect: Pass-through Authentication](/azure/active-directory/hybrid/connect/how-to-connect-pta) (PTA) uses a software agent to connect to passwords stored on-premises for validation. Users sign in to cloud apps with the same username and password for on-premises resources, working seamlessly with [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md) policies. Smart Lockout prevents brute force attacks. Install authentication agents on-premises with current AD infrastructure. Use PTA if regulatory requirements specify that password hashes can't synchronize to Microsoft Entra ID; otherwise, use PHS.
-- Keep the current SSO experience without AD FS. [Seamless single sign-on (SSO)](/azure/active-directory/hybrid/connect/how-to-connect-sso-faq) provides an SSO experience from domain-joined devices in your corpnet (Kerberos). It works with PHS, PTA, and CBA and needs no other on-premises infrastructure. You can let users [sign in to Microsoft Entra ID with email as an alternate login ID](/azure/active-directory/authentication/howto-authentication-use-email-signin) using the same credentials as their on-premises directory environment. With hybrid authentication, users need one set of credentials.
-- Recommended: PHS over PTA, [passwordless authentication in Microsoft Entra ID](/azure/active-directory/authentication/howto-authentication-passwordless-deployment) with [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-identity-verification), [FIDO2 security keys](/azure/active-directory/authentication/howto-authentication-passwordless-security-key), or [Microsoft Authenticator](/azure/active-directory/authentication/howto-authentication-passwordless-phone). If you plan to use [Windows Hello for Business hybrid certificate trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cert-trust), migrate to Cloud trust first to re-enroll all users.
+- Current SSO experience without AD FS. [Seamless single sign-on (SSO)](/azure/active-directory/hybrid/connect/how-to-connect-sso-faq) provides an SSO experience from domain-joined devices in your corpnet (Kerberos). It works with PHS, PTA, and CBA and needs no other on-premises infrastructure. You can let users [sign in to Microsoft Entra ID with email as an alternate login ID](/azure/active-directory/authentication/howto-authentication-use-email-signin) using the same credentials as their on-premises directory environment. With hybrid authentication, users need one set of credentials.
+- Recommendation: PHS over PTA, [passwordless authentication in Microsoft Entra ID](/azure/active-directory/authentication/howto-authentication-passwordless-deployment) with [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-identity-verification), [FIDO2 security keys](/azure/active-directory/authentication/howto-authentication-passwordless-security-key), or [Microsoft Authenticator](/azure/active-directory/authentication/howto-authentication-passwordless-phone). If you plan to use [Windows Hello for Business hybrid certificate trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cert-trust), migrate to Cloud trust first to re-enroll all users.
 
 ### Password and authentication policies
 
@@ -136,14 +143,15 @@ With Microsoft Entra ID, you can [prevent attacks using smart lockout](/azure/ac
 
 Conditional Access policy flexibility requires careful planning. Go to [plan a Microsoft Entra Conditional Access deployment](/azure/active-directory/conditional-access/plan-conditional-access) for planning steps. Here are key points to keep in mind:
 
-- Draft [Conditional Access policies](/azure/active-directory/conditional-access/concept-conditional-access-policies) with meaningful naming conventions.
+- Draft [Conditional Access policies](/azure/active-directory/conditional-access/concept-conditional-access-policies) with meaningful naming conventions
 - Use a design decision points spreadsheet with the following fields:
   - [Assignment factors](/azure/active-directory/conditional-access/concept-conditional-access-users-groups): user, cloud apps
   - [Conditions](/azure/active-directory/conditional-access/concept-conditional-access-conditions): locations, device type, type of client apps, sign-in risk
   - [Controls](/azure/active-directory/conditional-access/concept-conditional-access-grant): block, MFA required, hybrid AD joined, compliant device required, approved client app type
-- Select small sets of test users for Conditional Access policies.
-- Test Conditional Access policies in [reporting-only mode](/azure/active-directory/conditional-access/concept-conditional-access-report-only).
-- Validate Conditional Access polices with the [what if policy tool](/azure/active-directory/conditional-access/what-if-tool).
+- Select small sets of test users for Conditional Access policies
+- Test Conditional Access policies in [reporting-only mode](/azure/active-directory/conditional-access/concept-conditional-access-report-only)
+- Validate Conditional Access polices with the [what if policy tool](/azure/active-directory/conditional-access/what-if-tool)
+- Use [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md), especially if your organization is new to Conditional Access
 
 ### Conditional Access policies
 
@@ -189,7 +197,7 @@ Plan domain cutover during off-business hours, in case a rollback is needed. To 
 
 Include conversion of managed domains to federated domains in your rollback process. Use the [New-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainfederationconfiguration?view=graph-powershell-1.0&preserve-view=true) cmdlet. If necessary, configure extra claims rules. To ensure a completed process, leave Rollback Staged Rollout for 24 to 48 hours after cutover. Remove users and groups from Staged Rollout and then turn it off.
 
-After cutover, every thirty days, roll over the key for [seamless SSO](/azure/active-directory/hybrid/connect/how-to-connect-sso-faq):
+After cutover, every 30 days, roll over the key for [seamless SSO](/azure/active-directory/hybrid/connect/how-to-connect-sso-faq):
 
 ```azurecli
 Update-AzureADSSOForest -OnPremCredentials $creds -PreserveCustomPermissionsOnDesktopSsoAccount
@@ -211,15 +219,15 @@ Monitor AD FS activity from [Connect Health Usage Analytics for AD FS](/azure/ac
 1. Delete AD FS Secure Socket Layer (SSL) certificates from each server storage.
 1. Reimage AD FS servers with full disk formatting.
 1. Delete your AD FS account.
-1. Use ADSI Edit to remove the content of the **CertificateSharingContainer** DN.
+1. Use Active Directory Service Interfaces (ADSI) Edit to remove the content of the **CertificateSharingContainer** DN.
 
 ## Next steps
 
-- [Migrate from federation to cloud authentication in Microsoft Entra ID](~/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication.md) explains how to deploy cloud user authentication with Microsoft Entra ID Password hash synchronization (PHS) or pass-through authentication (PTA).
-- [Resources for migrating apps to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md) helps you migrate application access and authentication to Microsoft Entra ID.
-- [Plan application migration to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-phases-overview.md) describes benefits of Microsoft Entra ID and how to plan to migrate your application authentication.
-- [Using Microsoft Entra Connect Health with AD FS](~/identity/hybrid/connect/how-to-connect-health-adfs.md) has documentation about monitoring your AD FS infrastructure with Microsoft Entra Connect Health
-- [Manage authentication methods](~/identity/authentication/concept-authentication-methods-manage.md) describes authentication methods to support various sign-in scenarios.
-- [Plan Conditional Access deployment](~/identity/conditional-access/plan-conditional-access.md) explains how to use Conditional Access to automate decisions and enforce organizational access policies for resources.
-- [Microsoft Entra Connect: Cloud authentication via Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) describes how to selectively test groups of users with cloud authentication capabilities before cutting over your domains.
-- [Active Directory Federation Services (AD FS) decommission guide](/windows-server/identity/ad-fs/decommission/adfs-decommission-guide) has decommissioning recommendations.
+- [Migrate from federation to cloud authentication in Microsoft Entra ID](~/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication.md) explains how to deploy cloud user authentication with Microsoft Entra ID Password hash synchronization (PHS) or pass-through authentication (PTA)
+- [Resources to migrate apps to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md) helps you migrate application access and authentication to Microsoft Entra ID
+- [Plan application migration to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-phases-overview.md) describes benefits of Microsoft Entra ID and how to plan to migrate your application authentication
+- [Use Microsoft Entra Connect Health with AD FS](~/identity/hybrid/connect/how-to-connect-health-adfs.md) documentation about monitoring your AD FS infrastructure with Microsoft Entra Connect Health
+- [Manage authentication methods](~/identity/authentication/concept-authentication-methods-manage.md) has authentication methods that support sign-in scenarios
+- [Plan Conditional Access deployment](~/identity/conditional-access/plan-conditional-access.md) explains how to use Conditional Access to automate decisions and enforce organizational access policies for resources
+- [Microsoft Entra Connect: Cloud authentication via Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) describes how to selectively test groups of users with cloud authentication capabilities before cutting over your domains
+- [Active Directory Federation Services (AD FS) decommission guide](/windows-server/identity/ad-fs/decommission/adfs-decommission-guide) has decommissioning recommendations
