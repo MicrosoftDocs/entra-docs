@@ -1,17 +1,15 @@
 ---
 title: Microsoft Entra SSO integration with MyGeotab
 description: Learn how to configure single sign-on between Microsoft Entra ID and MyGeotab.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 12/04/2023
 ms.author: jeedes
-
 ---
 
 # Microsoft Entra SSO integration with MyGeotab
@@ -70,7 +68,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
+1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Microsoft Entra.
 
 1. MyGeotab application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 

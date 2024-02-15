@@ -1,15 +1,11 @@
 ---
 title: Create and manage downloadable access review history report
 description: Using Microsoft Entra access reviews, you can download a review history for access reviews in your organization.
-services: active-directory
-documentationcenter: ''
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: access-reviews
 ms.topic: conceptual
-ms.subservice: compliance
 ms.date: 06/28/2023
 ms.author: owinfrey
 ---
@@ -20,7 +16,7 @@ With access reviews, you can create a downloadable review history to help your o
  
 ## Who can access and request review history
 
-Review history and request review history are available for any user if they're authorized to view access reviews. To see which roles can view and create access reviews, see [What resource types can be reviewed?](deploy-access-reviews.md#what-resource-types-can-be-reviewed). Global Administrator and Global Reader can see all access reviews. All other users are only allowed to see reports on access reviews that they've generated.
+Review history and request review history are available for any user if they're authorized to view access reviews. To see which roles can view and create access reviews, see [What resource types can be reviewed?](deploy-access-reviews.md#what-resource-types-can-be-reviewed). Global Administrator and Global Reader  can see history reports for all access reviews. All other users are only allowed to see reports on access reviews that they've generated.
 
 ## How to create a review history report
 

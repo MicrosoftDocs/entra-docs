@@ -4,41 +4,40 @@ description: Learn how to build a desktop app that calls web APIs to acquire a t
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom: 
-ms.date: 07/10/2022
-ms.service: active-directory
-ms.subservice: develop
+ms.date: 01/15/2024
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---
 
-# Desktop app that calls web APIs: Acquire a token using Username and Password
+# Desktop app that calls web APIs: Acquire a token using username and password
 
-You can also acquire a token by providing the username and password. This flow is limited and not recommended, but there are still use cases where it's necessary.
+In your desktop applications, you can use the username and password flow, also known as Resource Owner Password Credentials (ROPC), to acquire a token silently.
 
-## This flow isn't recommended
+>[!WARNING]
+> The username and password flow is **not recommended** as the application will be asking a user for their password directly, which is an insecure pattern. For more information about the risks and challenges the ROPC flow poses, refer to ["What’s the solution to the growing problem of passwords?](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/).
 
-The username and password flow is *not recommended* because having your application ask a user for their password isn't secure. For more information, see [What's the solution to the growing problem of passwords?](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/) The preferred flow for acquiring a token silently on Windows domain joined machines is [integrated Windows authentication](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Integrated-Windows-Authentication). You can also use [device code flow](https://aka.ms/msal-net-device-code-flow).
+Additionally, by using a username and password, developers give up a number of things, including:
 
-Using a username and password is useful in some cases, such as DevOps scenarios. But if you want to use a username and password in interactive scenarios where you provide your own UI, think about how to move away from it. By using a username and password, you're giving up a number of things:
+- Core tenets of modern identity - A password can get phished and replayed because a shared secret can be intercepted.
+- Multi-factor authentication (MFA) - Users can't sign in because there's no interaction.
+- Single sign-on (SSO) capabilities.
 
-- Core tenets of modern identity. A password can get phished and replayed because a shared secret can be intercepted. It's incompatible with passwordless.
-- Users who need to do MFA can't sign in because there's no interaction.
-- Users can't do single sign-on (SSO).
+The username and password flow also has the following constraints:
 
-## Constraints
+- The username and password flow isn't compatible with Conditional Access and multi-factor authentication. If your app runs in a Microsoft Entra tenant where the admin requires multi-factor authentication, like most organizations do, you can't use this flow.
+- It only works for work and school accounts, not personal Microsoft Accounts.
+- The flow is available on .NET desktop and .NET, but not on UWP.
 
-The following constraints also apply:
+Using a username and password is useful in some cases, such as DevOps scenarios. However, if you want to use a username and password in interactive scenarios where you provide your own UI, consider moving away from it.
 
-- The username and password flow isn't compatible with Conditional Access and multi-factor authentication. As a consequence, if your app runs in a Microsoft Entra tenant where the tenant admin requires multi-factor authentication, you can't use this flow. Many organizations do that.
-- It works only for work and school accounts (not MSA).
-- The flow is available on .NET desktop and .NET Core, but not on UWP.
+The preferred flow for acquiring a token silently on Windows is using the [Windows authentication broker](scenario-desktop-acquire-token-wam.md). Alternatively, developers can also use the [Device code flow](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/device-code-flow) on devices without access to the web browser.
 
-## B2C specifics
+If you're building a desktop application that signs in users with social identities using the Resource Owner Password Credentials (ROPC) flow, see [how to sign in users with social identities by using Azure AD B2C](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/social-identities)
 
-For more information, see [Resource Owner Password Credentials (ROPC) with B2C](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/AAD-B2C-specifics#resource-owner-password-credentials-ropc-with-b2c).
 
-## Use it
+## Use the ROPC flow
 
 # [.NET](#tab/dotnet)
 
@@ -132,10 +131,10 @@ static async Task GetATokenForGraph()
    // 1. Click "Add a permission" and add all the delegated permissions corresponding to the scopes you want (for instance
    // User.Read and User.ReadBasic.All)
    // 2. Click "Grant/revoke admin consent for <tenant>") and click "yes".
-   // Dynamically, if you are not using .NET Core (which does not have any Web UI) by
+   // Dynamically, if you are not using .NET (which does not have any Web UI) by
    // calling (once only) AcquireTokenInteractive.
    // remember that Username/password is for public client applications that is desktop/mobile applications.
-   // If you are using .NET core or don't want to call AcquireTokenInteractive, you might want to:
+   // If you are using .NET or don't want to call AcquireTokenInteractive, you might want to:
    // - use device code flow (See https://aka.ms/msal-net-device-code-flow)
    // - or suggest the user to navigate to a URL to consent: https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id={clientId}&response_type=code&scope=user.read
    // ------------------------------------------------------------------------
@@ -318,11 +317,11 @@ The following extract is from the [MSAL Java code samples](https://github.com/Az
 
 # [macOS](#tab/macOS)
 
-This flow isn't supported on MSAL for macOS.
+The ROPC flow isn't supported on MSAL for macOS.
 
 # [Node.js](#tab/nodejs)
 
-This extract is from the [MSAL Node dev samples](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/username-password). In the code snippet below, the username and password are hardcoded for illustration purposes only. This should be avoided in production. Instead, a basic UI prompting the user to enter her username/password would be recommended.
+This extract is from the [MSAL Node dev samples](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/username-password). In the following code snippet, the username and password are hardcoded for illustration purposes only. This should be avoided in production. Instead, a basic UI prompting the user to enter her username/password would be recommended.
 
 ```javascript
 const msal = require("@azure/msal-node");

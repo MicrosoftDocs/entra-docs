@@ -1,14 +1,14 @@
 ---
-title: Call a web api from a web app
-description: Learn how to build a web app that calls web APIs (calling a protected web API)
+title: Call a web API from a web app
+description: Learn how to build a web app that calls web APIs (calling a protected web API).
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
 ms.date: 09/25/2020
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a web app that calls web APIs by using the Microsoft identity platform.
 ---
@@ -31,7 +31,7 @@ When you use *Microsoft.Identity.Web*, you have three usage options for calling 
 
 #### Option 1: Call Microsoft Graph with the SDK
 
-You want to call Microsoft Graph. In this scenario, In this scenario, you've added the **Microsoft.Identity.Web.GraphServiceClient** NuGet package and added `.AddMicrosoftGraph()` in *Startup.cs* as specified in [Code configuration](scenario-web-app-call-api-app-configuration.md#option-1-call-microsoft-graph), and you can directly inject the `GraphServiceClient` in your controller or page constructor for use in the actions. The following example Razor page displays the photo of the signed-in user.
+In this scenario, you call Microsoft Graph by adding the **Microsoft.Identity.Web.GraphServiceClient** NuGet package and including `.AddMicrosoftGraph()` in *Startup.cs* as specified in [Code configuration](scenario-web-app-call-api-app-configuration.md#option-1-call-microsoft-graph). You can then directly inject the `GraphServiceClient` into your controller or page constructor to use it in the actions. The following example Razor page displays the photo of the signed-in user.
 
 ```csharp
 [Authorize]
@@ -65,11 +65,11 @@ public class IndexModel : PageModel
 }
 ```
 
-For a full sample, see [ASP.NET Core Web app that calls Microsoft Graph](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/2-WebApp-graph-user/2-1-Call-MSGraph/README.md)
+For a full sample, see [ASP.NET Core web app that calls Microsoft Graph](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/2-WebApp-graph-user/2-1-Call-MSGraph/README.md).
 
 #### Option 2: Call a downstream web API with the helper class
 
-You want to call a web API other than Microsoft Graph. In that case, you've added `AddDownstreamApi` in *Startup.cs* as specified in [Code configuration](scenario-web-app-call-api-app-configuration.md#option-2-call-a-downstream-web-api-other-than-microsoft-graph), and you can directly inject an `IDownstreamApi` service in your controller or page constructor and use it in the actions:
+You want to call a web API other than Microsoft Graph. In that case, you add `AddDownstreamApi` in *Startup.cs* as specified in [Code configuration](scenario-web-app-call-api-app-configuration.md#option-2-call-a-downstream-web-api-other-than-microsoft-graph), and you can directly inject an `IDownstreamApi` service in your controller or page constructor and use it in the actions:
 
 ```csharp
 [Authorize]
@@ -115,7 +115,7 @@ The `CallWebApiForUserAsync` also has strongly typed generic overrides that enab
     }
    ```
 
-   For a full sample, see [ASP.NET Core Web app that calls an API](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/4-WebApp-your-API/4-1-MyOrg)
+   For a full sample, see [ASP.NET Core web app that calls an API](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/4-WebApp-your-API/4-1-MyOrg)
 
 #### Option 3: Call a downstream web API without the helper class
 
@@ -309,5 +309,6 @@ After successfully retrieving a token, the code uses the requests package to que
 
 ## Next steps
 
-Move on to the next article in this scenario,
-[Move to production](scenario-web-app-call-api-production.md).
+- Learn more by building an ASP.NET Core web app that signs in users in the following multi-part [tutorial series](tutorial-web-app-dotnet-register-app.md)
+
+- Explore Microsoft identity platform [web app samples](sample-v2-code.md#web-applications)

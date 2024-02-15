@@ -2,8 +2,8 @@
 title: Enable downlevel devices for Microsoft Entra hybrid join
 description: Configure older operating systems for Microsoft Entra hybrid join
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
 ms.date: 01/24/2023
@@ -13,7 +13,6 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
 
-ms.collection: M365-identity-device-management
 ---
 # Enable older operating systems
 

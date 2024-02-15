@@ -1,19 +1,17 @@
 ---
 title: The Global Secure Access Client for Windows (preview)
 description: Install the Global Secure Access Client for Windows to enable connectivity to Microsoft's Security Edge Solutions, Microsoft Entra Internet Access and Microsoft Entra Private Access.
-ms.service: network-access
+ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 08/04/2023
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.date: 10/27/2023
+ms.author: kenwith
+author: kenwith
 manager: amycolannino
 ms.reviewer: lirazb
 ---
-# The Global Secure Access Client for Windows (preview)
+# Global Secure Access Client for Windows (preview)
 
-The Global Secure Access Client allows organizations control over network traffic at the end-user computing device, giving organizations the ability to route specific traffic profiles through Microsoft Entra Internet Access and Microsoft Entra Private Access. Routing traffic in this method allows for more controls like continuous access evaluation (CAE), device compliance, or multifactor authentication to be required for resource access.
-
-The Global Secure Access Client acquires traffic using a lightweight filter (LWF) driver, while many other security service edge (SSE) solutions integrate as a virtual private network (VPN) connection. This distinction allows the Global Secure Access Client to coexist with these other solutions. The Global Secure Access Client acquires the traffic based on the traffic forwarding profiles you configure prior to other solutions.
+Learn how to install the Global Secure Access Client for Windows.
 
 ## Prerequisites
 
@@ -32,6 +30,7 @@ The Global Secure Access Client acquires traffic using a lightweight filter (LWF
 - Connecting to networks that use a captive portal, like some guest wireless network solutions, might fail. As a workaround you can [pause the Global Secure Access Client](#troubleshooting).
 - Virtual machines where both the host and guest Operating Systems have the Global Secure Access Client installed aren't supported. Individual virtual machines with the client installed are supported.
 - If the Global Secure Access Client isn't able to connect to the service (for example due to an authorization or Conditional Access failure), the service *bypasses* the traffic. Traffic is sent direct-and-local instead of being blocked. In this scenario, you can create a Conditional Access policy for the [compliant network check](how-to-compliant-network.md), to block traffic if the client isn't able to connect to the service.
+- Currently Global Secure Access Client on ARM64 architecture is not yet supported, however this is on the roadmap.
 
 
 There are several other limitations based on the traffic forwarding profile in use:
@@ -49,8 +48,8 @@ There are several other limitations based on the traffic forwarding profile in u
 The most current version of the Global Secure Access Client can be downloaded from the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (Preview)** > **Devices** > **Clients**.
-1. Select **Download**.
+1. Browse to **Global Secure Access (Preview)** > **Connect** > **Client download**.
+1. Select **Download Client**.
 
     ![Screenshot of the download Windows client button.](media/how-to-install-windows-client/client-download-screen.png)
     
@@ -59,7 +58,7 @@ The most current version of the Global Secure Access Client can be downloaded fr
 Organizations can install the client interactively, silently with the `/quiet` switch, or use mobile device management platforms like [Microsoft Intune to deploy it](/mem/intune/apps/apps-win32-app-management) to their devices.
 
 1. Copy the Global Secure Access Client setup file to your client machine.
-1. Run the setup file, like *GlobalSecureAccessInstaller 1.5.527*. Accept the software license terms.
+1. Run the setup file, like *GlobalSecureAccessClient.exe*. Accept the software license terms.
 1. After the client is installed, users are prompted to sign in with their Microsoft Entra credentials.
 
    :::image type="content" source="media/how-to-install-windows-client/client-install-first-sign-in.png" alt-text="Screenshot showing the sign-in box appears after client installation completes." lightbox="media/how-to-install-windows-client/client-install-first-sign-in.png":::
@@ -74,7 +73,7 @@ To troubleshoot the Global Secure Access Client, right-click the client icon in 
 
 :::image type="content" source="media/how-to-install-windows-client/client-install-menu-options.png" alt-text="Screenshot showing the context menu of the Global Secure Access Client.":::
 
-- **Switch user**
+- **Login as different user**
    - Forces sign-in screen to change user or reauthenticate the existing user.
 - **Pause**
    - This option can be used to temporarily disable traffic tunneling. As this client is part of your organization's security posture we recommend leaving it running always.

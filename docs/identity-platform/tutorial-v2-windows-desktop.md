@@ -7,10 +7,10 @@ ms.author: henrymbugua
 ms.custom:
 ms.date: 02/21/2023
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
-#Customer intent:
+#Customer intent: As a developer creating a Windows Presentation Foundation (WPF) desktop app, I want to learn how to sign in users and call the Microsoft Graph API, so that I can integrate authentication and access protected resources in my application.
 ---
 
 # Tutorial: Sign in users and call Microsoft Graph in Windows Presentation Foundation (WPF) desktop app
@@ -74,7 +74,7 @@ Create the application using the following steps:
 1. Search for and choose the **WPF App (.NET Framework)** template, and then select Next.
 1. In the **Project name** box, enter a name like _Win-App-calling-MsGraph_.
 1. Choose a **Location** for the project or accept the default option.
-1. In the **Framework**, select **.NET framework 4.8**.
+1. In the **Framework**, select **.NET Framework 4.8**.
 1. Select **Create**.
 
 ## Add MSAL to your project

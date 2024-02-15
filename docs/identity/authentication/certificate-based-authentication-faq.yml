@@ -2,9 +2,7 @@
 metadata:
   title: Microsoft Entra certificate-based authentication (CBA) FAQ
   description: Frequently asked questions and answers related to Microsoft Entra certificate-based authentication (CBA). 
-  
-  services: multi-factor-authentication
-  ms.service: active-directory
+  ms.service: entra-id
   ms.subservice: authentication
   ms.custom: has-azure-ad-ps-ref
   ms.topic: faq
@@ -13,7 +11,6 @@ metadata:
   author: justinha
   manager: amycolannino
   ms.reviewer: vimrang
-  ms.collection: M365-identity-device-management
 title: Frequently asked questions about Microsoft Entra certificate-based authentication (CBA)
 summary: |
   This article addresses frequently asked questions about how Microsoft Entra certificate-based authentication (CBA) works. 
@@ -65,6 +62,14 @@ sections:
           No, CDP supports only HTTP URLs.
 
       - question: |
+          How do I validate the Certificate Authority configuration?
+        answer: |
+          It's important to ensure that the Certificate Authority configuration in the trust store result is Microsoft Entra ID ability to both validate the certificate authority trust chain and successfully acquire the certificate 
+          revocation list (CRL) from the configured certificate authority CRL distribution point (CDP). To assist with this task, it's recommended to install the 
+          [MSIdentity Tools](https://aka.ms/msid) PowerShell module and run [Test-MsIdCBATrustStoreConfiguration](https://github.com/AzureAD/MSIdentityTools/wiki/Test-MsIdCBATrustStoreConfiguration). 
+          This PowerShell cmdlet will review the Entra tenant certificate authority configuration and surface errors/warnings for common mis-configuration issues. 
+          
+      - question: |
           How do I turn certificate revocation checking on or off for a particular CA?
         answer: |
           We highly recommend against disabling certificate revocation list (CRL) checking as you won't be able to revoke certificates. 
@@ -84,7 +89,7 @@ sections:
           The following CRL size limits apply: 
 
            - Interactive sign in download limit: 20 MB (Azure Global includes GCC), 45 MB for (Azure US government, includes GCC High, Dept. of Defense)
-           - Service download limit: 45 MB (Azure Global includes GCC), 150 MB for (Azure US government, includes GCC High, Dept. of Defense)
+           - Service download limit: 65 MB (Azure Global includes GCC), 150 MB for (Azure US government, includes GCC High, Dept. of Defense)
 
             When a CRL download fails, the following message appears: 
             
@@ -158,7 +163,7 @@ sections:
       - question: |
            Can Microsoft Entra CBA be used on SurfaceHub?
         answer: |
-           Yes. This will work out of the box for most smart card / smart card reader combinations. If the smart card / smart card reader combination requires additional drivers these must be installed prior to using the smart card / smart card reader combination on the surface hub.
+           Yes. This works out of the box for most smart card / smart card reader combinations. If the smart card / smart card reader combination requires additional drivers these must be installed prior to using the smart card / smart card reader combination on the surface hub.
       
 additionalContent: |
   ## Next steps

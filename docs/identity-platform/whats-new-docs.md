@@ -1,55 +1,49 @@
 ---
 title: "What's new in the Microsoft identity platform docs"
-description: "New and updated documentation for the Microsoft identity platform."
+description: "New and updated articles in the Microsoft identity platform documentation."
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 10/04/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.date: 02/01/2024
+ms.service: identity-platform
+
 ms.topic: reference
-#Customer intent:
+#Customer intent: As a developer or IT admin, I want to stay updated on the latest changes and additions to the Microsoft identity platform documentation, so that I can ensure that my applications and systems are using the most current and relevant information.
 ---
 
 # Microsoft identity platform docs: What's new
 
-Welcome to what's new in the Microsoft identity platform documentation. This article lists new docs that have been added and those that have had significant updates in the last three months.
+Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
-## October 2023
-
-### Updated articles
-
-- [Tutorial: Access Microsoft Graph from a secured app as the user](multi-service-web-app-access-microsoft-graph-as-user.md) - Updating URLs
-
-## September 2023
+## January 2024
 
 ### New articles
 
-- [Tutorial: Call an API from a React single-page app](tutorial-single-page-app-react-call-api.md) - Get user data from web API
+- [Customize claims emitted in tokens for a specific app in a tenant using PowerShell](claims-customization-powershell.md) - Adding claims customization using PowerShell page
 
 ### Updated articles
 
-- [Access tokens in the Microsoft identity platform](access-tokens.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Add app roles to your application and receive them in the token](howto-add-app-roles-in-apps.md) - Add clarity to distinguish between app and user roles
-- [How and why applications are added to Microsoft Entra ID](how-applications-are-added.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Making your application multitenant](howto-convert-app-to-be-multi-tenant.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Microsoft Entra app manifest](reference-app-manifest.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Microsoft Entra authentication and authorization error codes](reference-error-codes.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using Angular](quickstart-single-page-app-angular-sign-in.md) - Update SPA quickstarts to use new code sample
-- [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript](quickstart-single-page-app-javascript-sign-in.md) - Update SPA quickstarts to use new code sample
-- [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using React](quickstart-single-page-app-react-sign-in.md) - Update SPA quickstarts to use new code sample
-- [Quickstart: Sign in users and call the Microsoft Graph API from an ASP.NET Core web app](quickstart-web-app-aspnet-core-sign-in.md) - Update ASP.NET quickstart to use new code sample
-- [Quickstart: Configure an application to expose a web API](quickstart-configure-app-expose-web-apis.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Single sign-on SAML protocol](single-sign-on-saml-protocol.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Tutorial: Prepare a Single-page application for authentication](tutorial-single-page-app-react-prepare-spa.md) - Add clarity to the content
+- [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](v2-oauth2-on-behalf-of-flow.md) - Adding clarity to the article
+- [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](quickstart-web-api-aspnet-core-protect-api.md) - Updated the article with the new code sample.
 
-## August 2023
+## December 2023
+
+No new or updated articles.
+
+## November 2023
+
+### New articles
+
+- [Update an app's requested permissions in Microsoft Entra ID](howto-update-permissions.md)
 
 ### Updated articles
 
-- [Call an ASP.NET Core web API with cURL](howto-call-a-web-api-with-curl.md) - Updated sign-in steps for admin center
-- [Troubleshoot publisher verification](troubleshoot-publisher-verification.md) - Removed references to aad.portal.azure.com and terminology updates for partner program updates
-- [Configure a custom claim provider token issuance event (preview)](custom-extension-get-started.md) - Updated MS Graph sections - custom claim provider token issuance event tutorial and custom authentication extensions references
-- [Customize claims issued in the JSON web token (JWT) for enterprise applications](jwt-claims-customization.md) - Updated sign-in steps for admin center
-- [Access tokens in the Microsoft identity platform](access-tokens.md) - Updated details about issuer validation
+- [Public client and confidential client applications](msal-client-applications.md) - Update to enhance the article's technical accuracy
+- [Convert single-tenant app to multitenant on Microsoft Entra ID](howto-convert-app-to-be-multi-tenant.md) - Update to enhance the article's technical accuracy
+- [Overview of the Microsoft Authentication Library (MSAL)](msal-overview.md) - Update to enhance the article's technical accuracy
+- [Scopes and permissions in the Microsoft identity platform](scopes-oidc.md) - Update to enhance the article's technical accuracy
+- [Application types for the Microsoft identity platform](v2-app-types.md) - Update to enhance the article's technical accuracy
+- [Single-page application: Sign-in and Sign-out](scenario-spa-sign-in.md) - Update to enhance the article's technical accuracy
+- [Configure token lifetime policies (preview)](configure-token-lifetimes.md) - Update on how to add policies to service principals
+- [How to handle third-party cookie blocking in browsers](reference-third-party-cookies-spas.md) - Update to enhance the article's technical accuracy

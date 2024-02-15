@@ -4,11 +4,11 @@ description: Learn how to add built-in user attributes and custom attributes as 
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
-ms.date: 06/14/2023
+ms.date: 01/19/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -19,6 +19,12 @@ ms.custom: it-pro
 User attributes are values collected from the user during self-service sign-up. In addition to built-in user attributes, you can create custom attributes when you need to collect additional information. Because your application might rely on certain user attributes to function as designed, you can add any of these attributes to the token that is sent from Microsoft Entra ID to your application.
 
 You can specify which built-in or custom attributes you want to include as claims in the token that Microsoft Entra ID sends to your application.
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=TokenAugmentation)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Add claims to security tokens from a REST API” use case.
+
 
 ## Prerequisites
 
@@ -57,7 +63,7 @@ You can specify which built-in or custom attributes you want to include as claim
 
 1. On the **Attributes & Claims** page, select **Add new claim**.
 1. Enter a **Name**.
-1. Next to **Source**, select **Directory schema extension (Preview)**.
+1. Next to **Source**, select **Directory schema extension**.
 
     :::image type="content" source="media/how-to-add-attributes-to-token/manage-claim-directory-schema.png" alt-text="Screenshot of the Directory schema extension option.":::
 

@@ -5,8 +5,8 @@ description: Include file warning that access tokens acquired by the middle-tier
 author: iambmelt
 manager: CelesteDG
 
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 
 ms.topic: include
 ms.date: 12/7/2021

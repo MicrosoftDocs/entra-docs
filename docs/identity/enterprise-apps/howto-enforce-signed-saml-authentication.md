@@ -4,8 +4,8 @@ description: Learn how to enforce signed SAML authentication requests.
  
 author: omondiatieno
 manager: CelesteDG 
-ms.service: active-directory 
-ms.subservice: app-mgmt 
+ms.service: entra-id 
+ms.subservice: enterprise-apps 
  
 ms.topic: conceptual 
 ms.date: 07/18/2023
@@ -13,6 +13,8 @@ ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
+
+#customer intent: As an IT Admin, I want to enable and disable the enforcement of signed authentication requests and upload public keys for validation, so that I can ensure the security and integrity of the requests made to Microsoft Entra ID.
 --- 
 
 
@@ -61,9 +63,9 @@ To configure SAML request signature verification, you need:
 
 1. In the new blade, you're able to enable the verification of signed requests and opt-in for weak algorithm verification in case your application still uses RSA-SHA1 to sign the authentication requests.   
 
-1. To enable the verification of signed requests, select **Enable verification certificates** and upload a verification public key that matches with the private key used to sign the request. 
+1. To enable the verification of signed requests, select **Require verification certificates** and upload a verification public key that matches with the private key used to sign the request. 
     
-    ![Screenshot of enable verification certificates in Enterprise Applications page.](./media/howto-enforce-signed-saml-authentication/samlsignaturevalidation4.png) 
+    ![Screenshot of require verification certificates in Enterprise Applications page.](./media/howto-enforce-signed-saml-authentication/samlsignaturevalidation4.png) 
 
 1. Once you have your verification certificate uploaded, select **Save**. 
 

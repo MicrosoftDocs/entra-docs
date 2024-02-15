@@ -2,8 +2,7 @@
 title: What is Conditional Access report-only mode?
 description: How can report-only mode help with Conditional Access policy deployment
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 03/30/2023
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: dawoo
-
-ms.collection: M365-identity-device-management
 ---
 # What is Conditional Access report-only mode?
 

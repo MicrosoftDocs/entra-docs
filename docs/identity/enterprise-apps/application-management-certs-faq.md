@@ -4,14 +4,16 @@ description: Learn answers to frequently asked questions (FAQ) about managing ce
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: reference
 ms.date: 03/03/2023
 ms.author: jomondi
 ms.reviewer: sureshja, saumadan
 ms.custom: enterprise-apps
+
+#customer intent: As an application administrator managing certificates for apps using Microsoft Entra ID as an Identity Provider, I want to generate a list of expiring SAML signing certificates, so that I can proactively renew them before they expire.
 ---
 
 # Application Management certificates frequently asked questions
@@ -71,7 +73,7 @@ To replace certificates for Microsoft Entra application proxy applications, see 
 
 ## How do I manage certificates for custom domains in Microsoft Entra application proxy?
 
-To configure an on-premises app to use a custom domain, you need a verified Microsoft Entra custom domain, a PFX certificate for the custom domain, and an on-premises app to configure. To learn more, see [Custom domains in Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-configure-custom-domain.md).
+To configure an on-premises app to use a custom domain, you need a verified Microsoft Entra custom domain, a PFX certificate for the custom domain, and an on-premises app to configure. To learn more, see [Custom domains in Microsoft Entra application proxy](~/identity/app-proxy/how-to-configure-custom-domain.md).
 
 ## I need to update the token signing certificate on the application side. Where can I get it on Microsoft Entra ID side?
 

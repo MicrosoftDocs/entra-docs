@@ -4,8 +4,8 @@ description: In this tutorial, you'll learn how to customize the expiration date
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: tutorial
 ms.date: 02/02/2023
@@ -14,7 +14,7 @@ ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
 
-#customer intent: As an admin of an application, I want to learn how to manage federated SAML certificates by customizing expiration dates and renewing certificates.
+#customer intent: As an administrator of an application using Microsoft Entra SSO, I want to manage certificates for federated single sign-on, so that I can generate, customize, renew, and add email notification addresses for certificate expiration dates.
 ---
 
 # Tutorial: Manage certificates for federated single sign-on
@@ -36,7 +36,6 @@ In this tutorial, an administrator of the application learns how to:
 - An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - One of the following roles: Global Administrator, Privileged Role Administrator, Cloud Application Administrator, or Application Administrator.
 - An enterprise application that has been configured in your Microsoft Entra tenant.
-
 
 ## Auto-generated certificate for gallery and non-gallery applications
 
@@ -64,7 +63,7 @@ The following two sections help you perform these steps.
 
 First, create and save new certificate with a different expiration date:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. Under the **Manage** section, select **Single sign-on**.

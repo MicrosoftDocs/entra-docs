@@ -1,20 +1,17 @@
 ---
 title: Configure security alerts for Azure roles in Privileged Identity Management
 description: Learn how to configure security alerts for Azure resource roles in Privileged Identity Management (PIM).
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: how-to
-ms.tgt_pltfrm: na
-ms.workload: identity
-ms.subservice: pim
+ms.subservice: privileged-identity-management
 ms.date: 3/29/2023
 ms.author: barclayn
 ms.reviewer: rianakarim
 ms.custom: pim
-ms.collection: M365-identity-device-management
+
 ---
 
 # Configure security alerts for Azure roles in Privileged Identity Management
@@ -42,7 +39,7 @@ Alert | Severity | Trigger | Recommendation
 **Roles are being assigned outside of Privileged Identity Management** | High | A role is managed directly through the Azure IAM resource, or the Azure Resource Manager API. | Review the users in the list and remove them from privileged roles assigned outside of Privilege Identity Management. 
 
 >[!NOTE]
-> For the **Roles are being assigned outside of Privileged Identity Management** alerts, you may encounter duplicate notifications. These duplications may primarily be related to a potential live site incident where notifications are being sent again.
+> For the **Roles are being assigned outside of Privileged Identity Management** alerts, you may encounter duplicate notifications. These duplications may primarily be related to a potential live site incident where notifications are being sent again. 
 
 ### Severity
 
@@ -65,6 +62,9 @@ Follow these steps to configure security alerts for Azure roles in Privileged Id
 1. Customize settings on the different alerts to work with your environment and security goals.
 
     ![Screenshot of the alert setting.](media/pim-resource-roles-configure-alerts/rbac-alert-settings.png)
+
+>[!NOTE]
+>"Roles are being assigned outside of Privileged Identity Management" alert is triggered for role assignments created for Azure subscriptions and is not triggered for role assignments on Management Groups, Resource Groups or Resource scope."
 
 ## Next steps
 

@@ -5,12 +5,12 @@ author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
 ms.custom: 
-ms.date: 08/26/2022
+ms.date: 12/19/2023
 ms.reviewer: ludwignick
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
-#Customer intent:
+#Customer intent: As a developer integrating authentication into my application, I want to programmatically find the UserInfo endpoint, so that I can retrieve information about an authenticated user without hard-coding the endpoint.
 ---
 
 # Microsoft identity platform UserInfo endpoint

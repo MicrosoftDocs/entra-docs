@@ -5,9 +5,9 @@ description: Reference of error codes for Microsoft Entra Verified ID APIs
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: reference
-ms.subservice: verifiable-credentials
+
 ms.date: 07/29/2022
 ms.author: barclayn
 
@@ -16,8 +16,7 @@ ms.author: barclayn
 
 # Request Service API error codes
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 Microsoft Entra Verified ID includes the Request Service REST API that allows you to issue and verify a credential. This article specifies the error codes for the Request Service API.
 
 ## Error object

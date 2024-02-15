@@ -1,19 +1,16 @@
 ---
 title: 'Verify your version of cloud sync or connect sync'
 description: This article describes the steps to verify the version of the provisioning agent or connect sync.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Verify your version of the provisioning agent or connect sync
@@ -24,7 +21,7 @@ To see what version of the provisioning agent your using, use the following step
 
 [!INCLUDE [active-directory-cloud-sync-how-to-verify-installation](~/includes/entra-cloud-sync-how-to-verify-installation.md)]
 
-## Verfiy connect sync
+## Verify connect sync
 To see what version of connect sync your using, use the following steps:
 
 ### On the local server

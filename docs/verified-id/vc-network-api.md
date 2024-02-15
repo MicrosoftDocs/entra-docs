@@ -5,9 +5,9 @@ description: Learn how to use the Microsoft Entra Verified ID Network API
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: reference
-ms.subservice: verifiable-credentials
+
 ms.date: 07/29/2022
 ms.author: barclayn
 
@@ -16,8 +16,7 @@ ms.author: barclayn
 
 # Microsoft Entra Verified ID network API
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 The Microsoft Entra Verified ID Network API enables you to search for published credentials in the [Microsoft Entra Verified ID Network](how-use-vcnetwork.md). 
 
 >[!NOTE] 

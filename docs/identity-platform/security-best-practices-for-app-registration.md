@@ -1,16 +1,17 @@
 ---
 title: Security best practices for application properties
 description: Learn about the best practices and general guidance for security related application properties in Microsoft Entra ID.
-author: omondiatieno
+author: OwenRichards1
 manager: CelesteDG
-ms.author: jomondi
+ms.author: owenrichards
 ms.custom: template-concept
 ms.date: 01/06/2023
-ms.reviewer: saumadan
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer:
+ms.service: identity-platform
+
 ms.topic: conceptual
-#Customer intent:
+
+#Customer intent: As an application developer, I want to follow security best practices for application properties in Microsoft Entra ID, so that I can ensure the security and health of my applications and protect them from compromise or downtime.
 ---
 
 # Security best practices for application properties in Microsoft Entra ID

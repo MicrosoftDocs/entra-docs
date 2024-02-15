@@ -3,8 +3,7 @@ title: B2B collaboration user claims mapping
 description: Customize the user claims that are issued in the SAML token for Microsoft Entra B2B users.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: conceptual
 ms.date: 08/30/2023
 
@@ -14,6 +13,9 @@ manager: celestedg
 
 
 ms.collection: M365-identity-device-management
+
+# Customer intent: As a B2B collaboration user, I want to customize the claims issued in the SAML token for my application in Microsoft Entra External ID, so that I can ensure the token contains the specific information I need for user identification and authentication.
+
 ---
 
 # B2B collaboration user claims mapping in Microsoft Entra External ID

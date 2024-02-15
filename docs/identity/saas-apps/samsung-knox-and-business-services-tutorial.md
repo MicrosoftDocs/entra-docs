@@ -5,11 +5,11 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 01/11/2024
 ms.author: jeedes
 
 ---
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Samsung Knox and Business Services supports **SP** initiated SSO.
+* Samsung Knox and Business Services support only **SP** initiated SSO.
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
@@ -79,16 +79,18 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, enter the values for the following fields:
 
-	* In the **Sign on URL** text box, type the URL:
-	`https://www2.samsungknox.com/en/sso/login/ad`
-	* In the **Reply URL (assertion consumer service URL)** text box, type the URL: 
-	`https://central.samsungknox.com/ams/ad/saml/acs`
-	
-	![Basic SAML Configuration values](https://docs.samsungknox.com/assets/merge/ad-sso/basic-saml-configuration.png)
+    a. In the **Identifier (Entity ID)** text box, type the URL:
+    `https://www.samsungknox.com/`
 
+    b. In the **Reply URL** text box, type the URL:
+    `https://central.samsungknox.com/ams/ad/saml/acs`
+
+    c. In the **Sign on URL** text box, type the URL:
+    `https://accounts.samsung.com/`
+	
 1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
-	![The Certificate download link](common/copy-metadataurl.png)
+	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -128,19 +130,21 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     ![Samsung Knox avatar](./media/samsung-knox-and-business-services-tutorial/avatar.png)
 
-1. In the left sidebar, click **ACTIVE DIRECTORY SETTINGS** and perform the following steps.
+1. Go to **My account** > **SSO SETTINGS** and perform the following steps.
 
-    ![ACTIVE DIRECTORY SETTINGS](https://docs.samsungknox.com/assets/merge/ad-sso/ad-5.png)
+    ![Screenshot shows the Samsung knox settings.](./media/samsung-knox-and-business-services-tutorial/settings.png "Settings")
 
-    a. In the **Identifier(entity ID)** textbox, paste the **Identifier** value which you have entered.
+    a. In the **Identifier (entity ID)** text box, paste the **Identifier** URL which you have copied from the Microsoft Entra admin center.
 
-    b. In the **App federation metadata URL** textbox, paste the **App Federation Metadata Url** value which you copied previously.
+    b. Copy **Reply URL (assertion consumer service URL)** value, paste this value into the **Reply URL** text box in the **Basic SAML Configuration** section in Microsoft Entra admin center.
 
-    c. Click on **CONNECT TO AD SSO**.
+    c. In the **App federation metadata URL** text box, paste the **App federation metadata URL** which you have copied From the Microsoft Entra admin center.
+
+    d. Click **CONNECT TO SSO**.
 
 ### Create Samsung Knox and Business Services test user
 
-In this section, you create a user called Britta Simon in Samsung Knox and Business Services. Refer to the [Knox Configure](https://docs.samsungknox.com/admin/knox-configure/Administrators.htm) or [Knox Mobile Enrollment](https://docs.samsungknox.com/admin/knox-mobile-enrollment/kme-add-an-admin.htm) admin guides for instructions on how to invite a sub-administrator, or test user, to your Samsung Knox organization. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Samsung Knox and Business Services. Refer to the [Knox Configure](https://docs.samsungknox.com/admin/knox-configure/Administrators.htm) or [Knox Mobile Enrollment](https://docs.samsungknox.com/admin/knox-mobile-enrollment/kme-add-an-admin.htm) admin guides for instructions on how to invite a subadministrator, or test user, to your Samsung Knox organization. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 

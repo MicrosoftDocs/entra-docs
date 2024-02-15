@@ -1,10 +1,11 @@
 ---
 author: kengaderdus
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: include
 ms.date: 11/22/2023
 ms.author: kengaderdus
+ms.manager: mwongerapk
 ---
 
 1. Under **Manage**, select **Authentication** 

@@ -2,9 +2,8 @@
 title: Microsoft Entra ID's backup authentication system
 description: Increasing the resilience of the authentication plane with the backup authentication system.
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 06/02/2023
 
@@ -13,7 +12,6 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: joroja
 
-ms.collection: M365-identity-device-management
 ---
 # Microsoft Entra ID's backup authentication system
 
@@ -39,7 +37,7 @@ The backup authentication system automatically provides incremental resilience t
 
 - Native applications using the OAuth 2.0 protocol to access resource applications, such as popular non-Microsoft e-mail and IM clients like: Apple Mail, Aqua Mail, Gmail, Samsung Email, and Spark.
 - Line of business web applications configured to authenticate with OpenID Connect using only ID tokens.
-- Web applications authenticating with the SAML protocol, when configured for IDP-Initiated Single Sign On (SSO) like: ADP, Atlassian Cloud, AWS, GoToMeeting, Kronos, Marketo, Palo Alto Networks, SAP Cloud Identity Trello, Workday, and Zscaler.
+- Web applications authenticating with the SAML protocol, when configured for IDP-Initiated Single Sign On (SSO) like: ADP, Atlassian Cloud, AWS, GoToMeeting, Kronos, Marketo, Palo Alto Networks, SAP Cloud Identity Services, Trello, Workday, and Zscaler.
 
 ### Non-Microsoft application types that aren't protected
 

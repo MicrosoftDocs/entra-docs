@@ -4,8 +4,8 @@ description: Create an enterprise application using the client ID for a multi-te
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 07/26/2022
@@ -13,7 +13,9 @@ ms.author: jomondi
 ms.reviewer: karavar
 ms.custom: mode-other, devx-track-azurecli
 zone_pivot_groups: enterprise-apps-cli
-#Customer intent: As an administrator of a Microsoft Entra tenant, I want to create an enterprise application using client ID for a multi-tenant application provided by a service provider or independent software vendor.
+#Customer intent: As an IT admin managing a Microsoft Entra tenant, I want to create an enterprise application from a multi-tenant application, so that I can grant tenant-wide admin consent and add the application to my tenant.
+
+
 ---
 
 # Create an enterprise application from a multi-tenant application in Microsoft Entra ID

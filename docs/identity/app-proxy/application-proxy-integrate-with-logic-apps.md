@@ -1,22 +1,19 @@
 ---
 title: Securely integrate Azure Logic Apps with on-premises APIs using Microsoft Entra application proxy
 description: Microsoft Entra application proxy lets cloud-native logic apps securely access on-premises APIs to bridge your workload.
-services: active-directory
+
 author: kfriede
-manager: 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/07/2024
 ms.author: kfriedemann
-ms.reviewer: 
-ms.custom: 
+ms.custom:
 ---
 # Securely integrate Azure Logic Apps with on-premises APIs using Microsoft Entra application proxy
 
 Azure Logic Apps is a service allowing easy creation of managed workflows in a no-code environment that can integrate with various external services and systems. This can help automate a wide range of business processes, such as data integration, data processing, and event-driven scenarios.
-While Logic Apps easily integrate with other public and cloud-based services, the need may arise to utilize Logic Apps with protected, on-premises applications and services without exposing the service to the public via port forwarding or a traditional reverse proxy.
+While Logic Apps easily integrates with other public and cloud-based services, the need may arise to utilize Logic Apps with protected, on-premises applications and services without exposing the service to the public via port forwarding or a traditional reverse proxy.
 
 This article describes the steps necessary to utilize the Microsoft Entra application proxy solution to provide secure access to a Logic App, while protecting the internal application from unwanted actors. The process and end result is similar to [Access on-premises APIs with Microsoft Entra application proxy](./application-proxy-secure-api-access.md) with special attention paid to utilizing the API from within a Logic App.
 
@@ -34,18 +31,18 @@ The Microsoft Entra application proxy and associated connector facilitate secure
 
 ## Prerequisites
 
-To follow this tutorial, you will need:
+To follow this tutorial, you need:
 
 - Admin access to an Azure directory, with an account that can create and register apps
 - The *Logic App Contributor* role (or higher) in an active tenant
 - Azure Application Proxy connector deployed and an application configured as detailed in [Add an on-premises app - Application Proxy in Microsoft Entra ID](./application-proxy-add-on-premises-application.md)
 
 > [!NOTE]
-> While granting a user entitlement and testing the sign on is recommended, it is not required for this guide.
+> While granting a user entitlement and testing the sign on is recommended, it's not required for this guide.
 
 ## Configure the Application Access
 
-When a new Enterprise Application is created, a matching App Registration is also created. The App Registration allows configuration of secure programmatic access using certificates, secrets, or federated credentials. For integration with a Logic App, we will need to configure a client secret key, and configure the API permissions.
+When a new Enterprise Application is created, a matching App Registration is also created. The App Registration allows configuration of secure programmatic access using certificates, secrets, or federated credentials. For integration with a Logic App, configure a client secret key, and configure the API permissions.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 
@@ -53,10 +50,10 @@ When a new Enterprise Application is created, a matching App Registration is als
 
 1. From the *App Registrations* window, select the **All applications** tab option
 
-1. Navigate to the application with a matching name to your deployed App Proxy application. For example, if you deployed *Sample App 1* as an Enterprise Application, click the **Sample App 1** registration item
+1. Navigate to the application with a matching name to your deployed App Proxy application. For example, if you deployed *Sample App 1* as an Enterprise Application, select the **Sample App 1** registration item
 
     > [!NOTE]
-    > If an associated application cannot be found, it may have not been automatically created or may have been deleted. A registration can be created using the **New Registration** button.
+    > If an associated application can't be found, it may have not been automatically created or may have been deleted. A registration can be created using the **New Registration** button.
 
 1. From the *Sample App 1* detail page, take note of the *Application (client) ID* and *Directory (tenant) ID* fields. These will be used later.
 
@@ -68,7 +65,7 @@ When a new Enterprise Application is created, a matching App Registration is als
 
 1. From the *API permissions* page:
 
-    1. Click the **Add a permission** button
+    1. Select the **Add a permission** button
 
     2. In the *Request API permissions* pop-up:
 
@@ -78,7 +75,7 @@ When a new Enterprise Application is created, a matching App Registration is als
 
         3. Ensure *Delegated Permissions* is **selected**, then **check** the box for *user_impersonation*
 
-        4. Click **Add permissions**
+        4. Select **Add permissions**
 
     3. Verify the configured permission appears
 
@@ -92,17 +89,17 @@ When a new Enterprise Application is created, a matching App Registration is als
 
     1. Select the **Client secrets** tab item
 
-    2. Click the **New client secret** button
+    2. Select the **New client secret** button
 
     3. From the *Add a client secret* pop-up:
 
         1. Enter a **Description** and desired expiration
 
-        2. Click **Add**
+        2. Select **Add**
 
     4. Verify the new client secret appears
 
-    5. Click the **Copy** button for the *Value* of the newly created secret. Save this securely for use later, this value is only shown one time.
+    5. Select the **Copy** button for the *Value* of the newly created secret. Save this securely for use later, this value is only shown one time.
 
         ![Screenshot of the Microsoft Entra App Registration Client Secret Detail.](./media/application-proxy-integrate-with-logic-apps/client-secret-detail.png)
 
@@ -123,7 +120,7 @@ When a new Enterprise Application is created, a matching App Registration is als
     2. *URI*: Fill in with the *public* FQDN of your application registered in Microsoft Entra ID, along with the additional URI required for API access (e.g. *sampleapp1.msappproxy.net/api/1/status*)
 
         > [!NOTE]
-        > Specific values for API will depend on your internal application. Refer to your application's documentation for more information.
+        > Specific values for API will depend on your internal application.
 
     3. *Headers*: Enter any desired headers to be sent to the internal API
 
@@ -133,7 +130,7 @@ When a new Enterprise Application is created, a matching App Registration is als
 
     6. *Cookie*: Enter any desired cookie(s) to be sent to the internal API
 
-    7. Click *Add new parameter*, then check *Authentication*
+    7. Select *Add new parameter*, then check *Authentication*
 
     8. From the *Authentication type*, select *Active Directory OAuth*
 
@@ -157,12 +154,12 @@ When a new Enterprise Application is created, a matching App Registration is als
 
 ## Caveats
 
-- APIs that require authentication/authorization require special handling when using this method. Since Microsoft Entra ID OAuth is being used for access, the requests sent already contain an *Authorization* field that cannot also be utilized by the internal API (unless SSO is configured). As a workaround, some applications offer authentication or authorization that uses methods other than an *Authorization* header. For example, GitLab allows for a header titled *PRIVATE-TOKEN*, and Atlassian JIRA allows for requesting a Cookie that can be used in later requests
+- APIs that require authentication/authorization require special handling when using this method. Since Microsoft Entra ID OAuth is being used for access, the requests sent already contain an *Authorization* field that can't also be utilized by the internal API (unless SSO is configured). As a workaround, some applications offer authentication or authorization that uses methods other than an *Authorization* header. For example, GitLab allows for a header titled *PRIVATE-TOKEN*, and Atlassian JIRA allows for requesting a Cookie that can be used in later requests
 
-- While the Logic App HTTP action shows cleartext values, it is highly recommended to store the App Registration Secret Key in Azure Key Vault for secure retrieval and use.
+- While the Logic App HTTP action shows cleartext values, it's highly recommended to store the App Registration Secret Key in Azure Key Vault for secure retrieval and use.
 
 ## See Also
 
-- [How to configure an Application Proxy application](./application-proxy-config-how-to.md)
+- [How to configure an Application Proxy application](application-proxy-add-on-premises-application.md)
 - [Access on-premises APIs with Microsoft Entra application proxy](./application-proxy-secure-api-access.md)
 - [Common scenarios, examples, tutorials, and walkthroughs for Azure Logic Apps](/azure/logic-apps/logic-apps-examples-and-scenarios)

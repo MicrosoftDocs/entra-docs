@@ -1,15 +1,14 @@
 ---
 title: PowerShell sample - Replace certificate in Microsoft Entra application proxy apps
 description: PowerShell example that bulk replaces a certificate across Microsoft Entra application proxy applications.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: sample
-ms.date: 08/29/2022
+ms.date: 01/04/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -22,25 +21,131 @@ This PowerShell script example allows you to replace the certificate in bulk for
 
 [!INCLUDE [updated-for-az](~/../azure-docs-pr/includes/updated-for-az.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](~/../azure-docs-pr/includes/cloud-shell-try-it.md)]
-
-This sample requires the [Azure Active Directory PowerShell 2.0 for Graph module](/powershell/azure/active-directory/install-adv2) or the [Azure Active Directory PowerShell 2.0 for Graph module preview version](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview&preserve-view=true) (AzureADPreview).
+This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
 ## Sample script
 
-[!code-azurepowershell[main](~/../powershell_scripts/application-proxy/get-custom-domain-replace-cert.ps1 "Get all Application Proxy applications published with the identical certificate and replace it")]
+```powershell
+# This sample script gets all Microsoft Entra application proxy applications published with the identical certificate.
+#
+# .\replace_with_the_script_name.ps1 -CurrentThumbprint <thumbprint of the current certificate> -PFXFilePath <full path with PFX filename>
+#
+# Version 1.0
+#
+# This script requires PowerShell 5.1 (x64) and one of the following modules:
+#
+# Microsoft.Graph ver 2.10 or newer
+#
+# Before you begin:
+#    
+#    Required Microsoft Entra role: Global Administrator or Application Administrator or Application Developer 
+#    or appropriate custom permissions as documented https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-enterprise-app-permissions
+#
+# 
+
+param(
+[parameter(Mandatory=$true)]
+[string] $CurrentThumbprint = "null",
+[parameter(Mandatory=$true)]
+[string] $PFXFilePath = "null"
+)
+
+$certThumbprint = $CurrentThumbprint
+$certPfxFilePath = $PFXFilePath
+
+If (($certThumbprint -eq "null") -or ($certPfxFilePath -eq "null")) {
+
+    Write-Host "Parameter is missing." -BackgroundColor "Black" -ForegroundColor "Green"
+    Write-Host " "
+    Write-Host ".\get-custom-domain-replace-cert.ps1 -CurrentThumbprint <thumbprint of the current certificate> -PFXFilePath <full path with PFX filename>" -BackgroundColor "Black" -ForegroundColor "Green"
+    Write-Host " "
+
+    Exit
+}
+
+If ((Test-Path -Path $certPfxFilePath) -eq $False) {
+
+    Write-Host "The pfx file does not exist." -BackgroundColor "Black" -ForegroundColor "Red"
+    Write-Host " "
+
+    Exit
+}
+
+$securePassword = Read-Host -AsSecureString // please provide the password of the pfx file
+
+Import-Module Microsoft.Graph.Beta.Applications
+
+Connect-MgGraph -Scope Directory.ReadWrite.All -NoWelcome
+
+Write-Host "Reading service principals. This operation might take longer..." -BackgroundColor "Black" -ForegroundColor "Green"
+
+$allApps = Get-MgBetaServicePrincipal -Top 100000 | where-object {$_.Tags -Contains "WindowsAzureActiveDirectoryOnPremApp"}
+
+$numberofAadapApps = 0
+
+Write-Host ("")
+Write-Host ("SSL certificate change for the Microsoft Entra application proxy apps below:")
+Write-Host ("")
+
+foreach ($item in $allApps) {
+
+ $aadapApp, $aadapAppConf, $aadapAppConf1 = $null, $null, $null
+ 
+ $aadapAppId =  Get-MgBetaApplication | where-object {$_.AppId -eq $item.AppId}
+ $aadapAppConf = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing 
+ $aadapAppConf1 = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing `
+  | select verifiedCustomDomainCertificatesMetadata -expand verifiedCustomDomainCertificatesMetadata 
+
+  if ($aadapAppConf -ne $null) {
+   
+   if ($aadapAppConf1.VerifiedCustomDomainCertificatesMetadata.Thumbprint -match $certThumbprint) {
+  
+     Write-Host $item.DisplayName"(AppId: " $item.AppId ", ObjId:" $item.Id")" -BackgroundColor "Black" -ForegroundColor "White"
+     Write-Host
+     Write-Host "External Url: " $aadapAppConf.ExternalUrl
+     Write-Host "Internal Url: " $aadapAppConf.InternalUrl
+     Write-Host "Pre-authentication: " $aadapAppConf.ExternalAuthenticationType
+     Write-Host
+
+     $params = @{
+         onPremisesPublishing = @{
+            verifiedCustomDomainKeyCredential = @{
+                  type="X509CertAndPassword";
+                  value = [convert]::ToBase64String((Get-Content $certPfxFilePath -Encoding byte));
+                 };
+                  verifiedCustomDomainPasswordCredential = @{ value = $securePassword };
+         }
+     }
+
+     Update-MgBetaApplication -ApplicationId $aadapAppId.Id -BodyParameter $params
+  
+     $numberofAadapApps = $numberofAadapApps + 1              
+    }
+  
+   }
+  
+}
+
+Write-Host
+Write-Host "Number of the updated Microsoft Entra application proxy applications: " $numberofAadapApps -BackgroundColor "Black" -ForegroundColor "White"
+Write-Host ("")
+
+Write-Host
+Write-Host "Finished." -BackgroundColor "Black" -ForegroundColor "Green"
+Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGraph cmdlet."
+```
 
 ## Script explanation
 
 | Command | Notes |
 |---|---|
-|[Get-AzureADServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal) | Gets a service principal. |
-|[Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication) | Gets a Microsoft Entra application. |
-|[Get-AzureADApplicationProxyApplication](/powershell/module/azuread/get-azureadapplicationproxyapplication) | Retrieves an application configured for Application Proxy in Microsoft Entra ID. |
-|[Set-AzureADApplicationProxyApplicationCustomDomainCertificate](/powershell/module/azuread/set-azureadapplicationproxyapplicationcustomdomaincertificate) | Assigns a certificate to an application configured for Application Proxy in Microsoft Entra ID. This command uploads the certificate and allows the application to use Custom Domains. |
+|[Connect-MgGraph](/powershell/module/microsoft.graph.authentication/connect-mggraph)| Connects to Microsoft Graph|
+|[Get-MgBetaServicePrincipal](/powershell/module/microsoft.graph.applications/get-mgserviceprincipal)| Gets a service principal|
+|[Get-MgBetaApplication](/powershell/module/microsoft.graph.beta.applications/get-mgbetaapplication)| Gets an Enterprise Application|
+|[Update-MgBetaApplication](/powershell/module/microsoft.graph.beta.applications/update-mgbetaapplication)| updates an application|
 
 ## Next steps
 
-For more information on the Azure AD PowerShell module, see [Azure AD PowerShell module overview](/powershell/azure/active-directory/overview).
+For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
 
-For other PowerShell examples for Application Proxy, see [Azure AD PowerShell examples for Microsoft Entra application proxy](../application-proxy-powershell-samples.md).
+For other PowerShell examples for Application Proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).

@@ -4,12 +4,12 @@ description: PowerShell example that exports all app registrations with expiring
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.custom:
 ms.topic: sample
-ms.date: 07/11/2023
+ms.date: 01/15/2024
 ms.author: jomondi
 ms.reviewer: mifarca
 ---
@@ -56,7 +56,7 @@ Microsoft has been advised of the possibility of such damages.
 
 #################################################################################>
 
-Connect-MgGraph -Scopes 'Application.ReadWrite.All'
+Connect-MgGraph -Scopes 'Application.Read.All'
 
 $Messages = @{
     ExpirationDays = @{

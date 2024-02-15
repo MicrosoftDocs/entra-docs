@@ -4,11 +4,11 @@ description: Learn how to create and define new custom attributes to be collecte
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
-ms.date: 11/27/2023
+ms.date: 01/23/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -50,6 +50,12 @@ In this example:
 - The **terms of use** and **privacy policy** custom attributes are separate, single-select checkboxes with labels containing hyperlinks. You can configure a single checkbox using the **Boolean** data type, which defaults to the **CheckboxSingleSelect** user input type. Use Markdown language to add hyperlinks to the checkbox label.
 
 Other input types are available, including multiselect checkboxes, radio buttons, and free-form text entry fields. Learn how to [create custom user attributes](#create-custom-user-attributes) in this article.
+
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomAttributes)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Collect user attributes during sign-up” use case.
 
 ### Where custom user attributes are stored
 
@@ -158,6 +164,13 @@ On the **Page layout** page, you can indicate which attributes are required and 
 ### To configure a single-select checkbox (CheckboxSingleSelect)
 
 An attribute with a Boolean data type has a user input type of CheckboxSingleSelect. You can modify the text that displays next to the checkbox and include hyperlinks.
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PolicyAgreement)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Add links to terms of use and privacy policies” use case.
+
+To configure a single-select checkbox, follow these steps:
 
 1. On the **Page layouts** page, find the attribute with data type of **Boolean** that you want to configure.
 

@@ -1,16 +1,12 @@
 ---
 title: 'What is provisioning with Microsoft Entra ID?'
 description: Describes overview of identity provisioning and the ILM scenarios.
-services: active-directory
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id-governance
 ms.topic: overview
 ms.date: 01/05/2023
-ms.subservice: compliance
 ms.author: billmath
-ms.collection: M365-identity-device-management
 ---
 
 # What is provisioning?

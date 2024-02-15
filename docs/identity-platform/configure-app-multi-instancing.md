@@ -1,16 +1,17 @@
 ---
 title: Configure app multi-instancing
 description: Learn about multi-instancing, which is needed for configuring multiple instances of the same application within a tenant.
-author: omondiatieno
+author: cilwerner
 manager: CelesteDG
-ms.author: jomondi
+ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 06/09/2023
 ms.reviewer: rahulnagraj, alamaral, jeedes
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
-#Customer intent:
+
+#Customer intent: As an IT admin responsible for managing multiple instances of the same application within a tenant, I want to configure app multi-instancing, so that I can handle instance-specific claims mapping and roles assignment for each instance.
 ---
 
 # Configure app multi-instancing

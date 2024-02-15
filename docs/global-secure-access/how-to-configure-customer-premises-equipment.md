@@ -6,8 +6,7 @@ ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: how-to
 ms.date: 09/22/2023
-ms.service: network-access
-ms.custom: 
+ms.service: global-secure-access
 
 # Customer Intent: As a Global Secure Access administrator, I need to know how to configure the connection between my customer premises equipment and Microsoft's network so that I can create a tunnel from my remote network to the Global Secure Access network.
 ---
@@ -49,7 +48,7 @@ The following diagram highlights each of the major sections of the device config
 
 - The `branchId` and `branchName` represent the remote network details.
 - The `displayName` is the device link name.
-- The `endpoint`, `asn`, `bdpAddress`, and `region` represent the Microsoft connectivity details. Enter these details on your CPE.
+- The `endpoint`, `asn`, `bgpAddress`, and `region` represent the Microsoft connectivity details. Enter these details on your CPE.
 - For zone redundant device links, a second set of details are generated.
 - `PeerConfiguration` and the subsequent details represent the CPE connectivity details. 
 - If you've configured more devices, their details follow.

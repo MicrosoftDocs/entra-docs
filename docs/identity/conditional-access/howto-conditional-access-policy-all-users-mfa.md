@@ -2,8 +2,7 @@
 title: Require MFA for all users with Conditional Access
 description: Create a custom Conditional Access policy to require all users do multifactor authentication
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 07/18/2023
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: calebb, lhuangnorth
-
-ms.collection: M365-identity-device-management
 ---
 # Common Conditional Access policy: Require MFA for all users
 
@@ -32,7 +29,7 @@ Organizations may have many cloud applications in use. Not all of those applicat
 
 ### Subscription activation
 
-Organizations that use [Subscription Activation](/windows/deployment/windows-10-subscription-activation) to enable users to “step-up” from one version of Windows to another, may want to exclude the Universal Store Service APIs and Web Application, AppID 45a330b1-b1ec-4cc1-9161-9f03992aa49f from their all users all cloud apps MFA policy.
+Organizations that use [Subscription Activation](/windows/deployment/windows-10-subscription-activation) to enable users to “step-up” from one version of Windows to another, may want to exclude the Windows Store for Business, AppID 45a330b1-b1ec-4cc1-9161-9f03992aa49f from their all users all cloud apps MFA policy.
 
 [!INCLUDE [active-directory-policy-deploy-template](~/includes/entra-policy-deploy-template.md)]
 

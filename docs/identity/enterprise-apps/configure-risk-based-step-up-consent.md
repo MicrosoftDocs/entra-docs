@@ -4,15 +4,15 @@ description: Learn how to disable and enable risk-based step-up consent to reduc
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: how-to
 ms.date: 11/17/2021
 ms.author: jomondi
 ms.reviewer: phsignor
 ms.custom: enterprise-apps, has-azure-ad-ps-ref
-#customer intent: As an admin, I want to configure risk-based step-up consent.
+#customer intent: As an IT admin, I want to configure risk-based step-up consent in Microsoft Entra ID using PowerShell, so that I can reduce user exposure to malicious apps and ensure that admin approval is required for risky consent requests.
 ---
 # Configure risk-based step-up consent using PowerShell
 

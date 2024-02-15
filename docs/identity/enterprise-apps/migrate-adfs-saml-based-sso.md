@@ -4,13 +4,15 @@ description: This article explains how to configure an application for SAML-base
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: conceptual
 
 ms.date: 05/31/2023
 ms.author: jomondi
 ms.reviewer: gasinh
+
+#customer intent: As an IT admin migrating app authentication to Microsoft Entra ID, I want to understand the SAML-based single sign-on (SSO) configuration steps and limitations, so that I can successfully set up SSO for my SaaS applications and map users to specific application roles based on rules.
 ---
 # SAML-based single sign-on: Configuration and Limitations
 
@@ -39,7 +41,7 @@ If your users sign in to SaaS apps such as Salesforce, ServiceNow, or Workday, a
 
 Most SaaS applications can be configured in Microsoft Entra ID. Microsoft has many preconfigured connections to SaaS apps in the  [Microsoft Entra app gallery](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps), which makes your transition easier. SAML 2.0 applications can be integrated with Microsoft Entra ID via the Microsoft Entra app gallery or as [non-gallery applications](add-application-portal.md).
 
-Apps that use OAuth 2.0 or OpenID Connect can be similarly integrated with Microsoft Entra ID as [app registrations](~/identity-platform/quickstart-register-app.md). Apps that use legacy protocols can use [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md) to authenticate with Microsoft Entra ID.
+Apps that use OAuth 2.0 or OpenID Connect can be similarly integrated with Microsoft Entra ID as [app registrations](~/identity-platform/quickstart-register-app.md). Apps that use legacy protocols can use [Microsoft Entra application proxy](/entra/identity/app-proxy) to authenticate with Microsoft Entra ID.
 
 For any issues with onboarding your SaaS apps, you can contact the [SaaS Application Integration support alias](mailto:SaaSApplicationIntegrations@service.microsoft.com).
 

@@ -6,9 +6,9 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: devx-track-js
 ms.date: 03/07/2023
-ms.reviewer: nacanuma, negoe
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: negoe
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn how MSAL.js can be used with Azure AD B2C for authentication and authorization in my organization's web apps and web APIs that my customers log in to and use.
 ---

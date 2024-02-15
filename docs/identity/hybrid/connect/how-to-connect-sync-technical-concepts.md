@@ -1,33 +1,30 @@
 ---
 title: 'Microsoft Entra Connect Sync: Technical concepts'
 description: Explains the technical concepts of Microsoft Entra Connect Sync.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: 731cfeb3-beaf-4d02-aef4-b02a8f99fd11
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Microsoft Entra Connect Sync: Technical Concepts
 This article is a summary of the topic [Understanding architecture](how-to-connect-sync-technical-concepts.md).
 
 Microsoft Entra Connect Sync builds upon a solid metadirectory synchronization platform.
 The following sections introduce the concepts for metadirectory synchronization.
-Building upon MIIS (Microsoft Identity Integration Server), ILM (Identity Lifecycle Manager), and FIM (Forefront Identity Manager), the Azure Active Directory Sync Services provides the next platform for connecting to data sources, synchronizing data between data sources, as well as the provisioning and deprovisioning of identities.
+The Azure Active Directory Sync Services provides a platform for connecting to data sources, synchronizing data between data sources, as well as the provisioning and deprovisioning of identities.
 
 ![Technical Concepts](./media/how-to-connect-sync-technical-concepts/scenario.png)
 
-The following sections provide more details about the following aspects of the FIM Synchronization Service:
+The following sections provide more details about the following aspects of the Synchronization Service:
 
 * Connector
 * Attribute flow

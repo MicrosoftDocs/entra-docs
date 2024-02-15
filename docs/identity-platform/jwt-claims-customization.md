@@ -7,10 +7,10 @@ ms.author: cwerner
 ms.custom: curation-claims, devx-track-dotnet
 ms.date: 05/01/2023
 ms.reviewer: rahulnagraj, alamaral
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
-#Customer intent:
+#Customer intent: As an application developer, I want to customize the claims issued in the JSON web tokens so that I can tailor the information about the user that is included in the token for my enterprise application.
 ---
 
 # Customize claims issued in the JSON web token (JWT) for enterprise applications
@@ -204,6 +204,9 @@ Add the following information to the service principal:
 Extract the private and public key base-64 encoded from the PFX file export of your certificate. Make sure that the `keyId` for the `keyCredential` used for "Sign" matches the `keyId` of the `passwordCredential`. You can generate the `customkeyIdentifier` by getting the hash of the cert's thumbprint.
 
 ## Request
+> [!NOTE]
+> First disable any [service principal lock configuration](howto-configure-app-instance-property-locks.md) on newly created apps from the Microsoft Entra Portal app registrations blade before attempting to do a PATCH on the service principal, resulting in a 400 Bad Request.
+
 The following example shows the format of the HTTP PATCH request to add a custom signing key to a service principal. The "key" value in the `keyCredentials` property is shortened for readability. The value is base-64 encoded. For the private key, the property usage is `Sign`. For the public key, the property usage is `Verify`.
 
 ```

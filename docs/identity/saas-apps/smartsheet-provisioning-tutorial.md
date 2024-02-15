@@ -7,10 +7,10 @@ author: twimmers
 writer: Thwimmer
 manager: jeedes
 ms.assetid: 9d391bd3-b0d3-4c7d-af8a-70bc0a538706
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
-ms.devlang: na
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: Thwimmer

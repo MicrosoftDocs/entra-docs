@@ -1,18 +1,14 @@
 ---
-title: Resource management fundamentals in Microsoft Entra ID 
+title: Resource management fundamentals in Microsoft Entra ID
 description: Introduction to resource management in Microsoft Entra ID.
-services: active-directory
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 3/23/2023
 ms.author: justinha
 ms.reviewer: ajburnle
-ms.custom: "it-pro"
-ms.collection: M365-identity-device-management
 ---
 # Azure resource management fundamentals
 
@@ -133,7 +129,7 @@ Azure ABAC builds on Azure RBAC by adding role assignment conditions based on at
 
 ## Conditional Access
 
-Microsoft Entra [Conditional Access](~/identity/conditional-access/concept-conditional-access-cloud-apps.md) can be used to manage access to Azure management endpoints. Conditional Access policies can be applied to the Microsoft Azure Management cloud app to protect the Azure resource management endpoints such as:
+Microsoft Entra [Conditional Access](~/identity/conditional-access/concept-conditional-access-cloud-apps.md) can be used to manage access to Azure management endpoints. Conditional Access policies can be applied to the Windows Azure Service Management API cloud app to protect the Azure resource management endpoints such as:
 
 * Azure Resource Manager Provider (services)
 

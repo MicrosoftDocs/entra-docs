@@ -1,18 +1,25 @@
-This article lists the versions and features of Azure Active Directory Connect Provisioning Agent that have been released. The Azure AD team regularly updates the Provisioning Agent with new features and functionality. 
+This article lists the versions and features of Microsoft Entra Provisioning Agent that have been released. The Microsoft Entra ID team regularly updates the Provisioning Agent with new features and functionality. 
 > [!NOTE]
 > All new Provisioning Agent releases are made available through auto upgrade for existing installations and can be downloaded for new installations.
 
 >[!NOTE]
-> Azure Active Directory (Azure AD) Connect Provisioning agent follows the [Modern Lifecycle Policy](/lifecycle/policies/modern). Changes for products and services  under the Modern Lifecycle Policy may be more frequent and require customers to be alert for forthcoming modifications to their product or service.
+> Microsoft Entra Provisioning agent follows the [Modern Lifecycle Policy](/lifecycle/policies/modern). Changes for products and services  under the Modern Lifecycle Policy may be more frequent and require customers to be alert for forthcoming modifications to their product or service.
 >
 > Products governed by the Modern Policy follow a [continuous support and servicing model](/lifecycle/overview/product-end-of-support-overview). Customers must take the latest update to remain supported. 
 >
 > For products and services governed by the Modern Lifecycle Policy, Microsoft's policy is to provide a minimum 30 days' notification when customers are required to take action in order to avoid significant degradation to the normal use of the product or service.
 
 ## Download link
-Go to the [Azure AD Connect - Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted) click on the "Manage" tab to download the "Provisioning Agent".
+Go to the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted), click on "Cloud Sync" and the "Agents" tab to download the "Provisioning Agent".
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
+
+## 1.1.1373.0
+
+Release date: January 19th, 2024
+
+### Fixed issues
+Fixed an issue with case-sensitive comparison of domain names and enhanced the error handling.
 
 ## 1.1.1370.0
 
@@ -22,6 +29,9 @@ Release date: October 16th, 2023
 
 - Added Public Preview feature:  [Group provisioning to Active Directory](../identity/hybrid/cloud-sync/govern-on-premises-groups.md)
 - Rebranded the agent for Microsoft Entra
+
+
+
 
 
 ## 1.1.1365.0

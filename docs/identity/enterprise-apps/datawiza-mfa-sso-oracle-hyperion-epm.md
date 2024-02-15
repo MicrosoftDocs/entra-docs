@@ -4,14 +4,16 @@ description: Enable Microsoft Entra multifactor authentication and single sign-o
 
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 11/01/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT admin, I want to configure Datawiza to enable Microsoft Entra multifactor authentication and single sign-on to Oracle Hyperion EPM, so that I can enhance the security of user sign-ins and provide seamless access to the application.
 ---
 
 # Tutorial: Configure Datawiza to enable Microsoft Entra multifactor authentication and single sign-on to Oracle Hyperion EPM

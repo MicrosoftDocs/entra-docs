@@ -8,17 +8,17 @@ ms.author: ryanwi
 ms.custom: 
 ms.date: 05/18/2020
 ms.reviewer: jmprieur, saeeda
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer building apps for Microsoft Entra ID, I want to understand how my app is impacted by Conditional Access challenges, so that I can secure my app and protect the services it accesses.
 ---
 
 # Developer guidance for Microsoft Entra Conditional Access
 
 The Conditional Access feature in Microsoft Entra ID offers one of several ways that you can use to secure your app and protect a service. Conditional Access enables developers and enterprise customers to protect services in a multitude of ways including:
 
-* [Multi-factor authentication](~/identity/authentication/concept-mfa-howitworks.md)
+* [Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
 * Allowing only Intune enrolled devices to access specific services
 * Restricting user locations and IP ranges
 
@@ -26,7 +26,7 @@ For more information on the full capabilities of Conditional Access, see the art
 
 For developers building apps for Microsoft Entra ID, this article shows how you can use Conditional Access and you'll also learn about the impact of accessing resources that you don't have control over that may have Conditional Access policies applied. The article also explores the implications of Conditional Access in the on-behalf-of flow, web apps, accessing Microsoft Graph, and calling APIs.
 
-Knowledge of [single](quickstart-register-app.md) and [multi-tenant](howto-convert-app-to-be-multi-tenant.md) apps and [common authentication patterns](./authentication-vs-authorization.md) is assumed.
+Knowledge of [single](quickstart-register-app.md) and [multitenant](howto-convert-app-to-be-multi-tenant.md) apps and [common authentication patterns](./authentication-vs-authorization.md) is assumed.
 
 > [!NOTE]
 > Using this feature requires a Microsoft Entra ID P1 license. To find the right license for your requirements, see [Comparing generally available features of the Free, Basic, and Premium editions](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
@@ -36,7 +36,7 @@ Knowledge of [single](quickstart-register-app.md) and [multi-tenant](howto-conve
 
 ### App types impacted
 
-In most common cases, Conditional Access does not change an app's behavior or requires any changes from the developer. Only in certain cases when an app indirectly or silently requests a token for a service, an app requires code changes to handle Conditional Access challenges. It may be as simple as performing an interactive sign-in request.
+In most common cases, Conditional Access doesn't change an app's behavior or requires any changes from the developer. Only in certain cases when an app indirectly or silently requests a token for a service, an app requires code changes to handle Conditional Access challenges. It may be as simple as performing an interactive sign-in request.
 
 Specifically, the following scenarios require code to handle Conditional Access challenges:
 
@@ -51,16 +51,16 @@ Depending on the scenario, an enterprise customer can apply and remove Condition
 
 ### Conditional Access examples
 
-Some scenarios require code changes to handle Conditional Access whereas others work as is. Here are a few scenarios using Conditional Access to do multi-factor authentication that gives some insight into the difference.
+Some scenarios require code changes to handle Conditional Access whereas others work as is. Here are a few scenarios using Conditional Access to do multifactor authentication that gives some insight into the difference.
 
-* You are building a single-tenant iOS app and apply a Conditional Access policy. The app signs in a user and doesn't request access to an API. When the user signs in, the policy is automatically invoked and the user needs to perform multi-factor authentication (MFA).
-* You are building a native app that uses a middle tier service to access a downstream API. An enterprise customer at the company using this app applies a policy to the downstream API. When an end user signs in, the native app requests access to the middle tier and sends the token. The middle tier performs on-behalf-of flow to request access to the downstream API. At this point, a claims "challenge" is presented to the middle tier. The middle tier sends the challenge back to the native app, which needs to comply with the Conditional Access policy.
+* You are building a single-tenant iOS app and apply a Conditional Access policy. The app signs in a user and doesn't request access to an API. When the user signs in, the policy is automatically invoked and the user needs to perform multifactor authentication (MFA).
+* You're building a native app that uses a middle tier service to access a downstream API. An enterprise customer at the company using this app applies a policy to the downstream API. When an end user signs in, the native app requests access to the middle tier and sends the token. The middle tier performs on-behalf-of flow to request access to the downstream API. At this point, a claims "challenge" is presented to the middle tier. The middle tier sends the challenge back to the native app, which needs to comply with the Conditional Access policy.
 
 #### Microsoft Graph
 
 Microsoft Graph has special considerations when building apps in Conditional Access environments. Generally, the mechanics of Conditional Access behave the same, but the policies your users see will be based on the underlying data your app is requesting from the graph.
 
-Specifically, all Microsoft Graph scopes represent some dataset that can individually have policies applied. Since Conditional Access policies are assigned the specific datasets, Microsoft Entra ID will enforce Conditional Access policies based on the data behind Graph - rather than Graph itself.
+Specifically, all Microsoft Graph scopes represent some dataset that can individually have policies applied. Since Conditional Access policies are assigned the specific datasets, Microsoft Entra ID enforces Conditional Access policies based on the data behind Graph - rather than Graph itself.
 
 For example, if an app requests the following Microsoft Graph scopes,
 
@@ -104,7 +104,7 @@ In this scenario, we walk through the case in which a native app calls a web ser
 
 ![App performing the on-behalf-of flow diagram](./media/v2-conditional-access-dev-guide/app-performing-on-behalf-of-scenario.png)
 
-The initial token request for Web API 1 does not prompt the end user for multi-factor authentication as Web API 1 may not always hit the downstream API. Once Web API 1 tries to request a token on-behalf-of the user for Web API 2, the request fails since the user has not signed in with multi-factor authentication.
+The initial token request for Web API 1 does not prompt the end user for multifactor authentication as Web API 1 may not always hit the downstream API. Once Web API 1 tries to request a token on-behalf-of the user for Web API 2, the request fails since the user has not signed in with multifactor authentication.
 
 Microsoft Entra ID returns an HTTP response with some interesting data:
 
@@ -118,7 +118,7 @@ error_description=AADSTS50076: Due to a configuration change made by your admini
 claims={"access_token":{"polids":{"essential":true,"Values":["<GUID>"]}}}
 ```
 
-In Web API 1, we catch the error `error=interaction_required`, and send back the `claims` challenge to the desktop app. At that point, the desktop app can make a new `acquireToken()` call and append the `claims`challenge as an extra query string parameter. This new request requires the user to do multi-factor authentication and then send this new token back to Web API 1 and complete the on-behalf-of flow.
+In Web API 1, we catch the error `error=interaction_required`, and send back the `claims` challenge to the desktop app. At that point, the desktop app can make a new `acquireToken()` call and append the `claims`challenge as an extra query string parameter. This new request requires the user to do multifactor authentication and then send this new token back to Web API 1 and complete the on-behalf-of flow.
 
 To try out this scenario, see our [.NET code sample](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/2.%20Web%20API%20now%20calls%20Microsoft%20Graph#handling-required-interactions-with-the-user-dynamic-consent-mfa-etc-). It demonstrates how to pass the claims challenge back from Web API 1 to the native app and construct a new request inside the client app.
 
@@ -130,7 +130,7 @@ Let's assume we have web service A and B and web service B has our Conditional A
 
 ![App accessing multiple-services flow diagram](./media/v2-conditional-access-dev-guide/app-accessing-multiple-services-scenario.png)
 
-Alternatively, if the app initially requests a token for web service A, the end user does not invoke the Conditional Access policy. This allows the app developer to control the end-user experience and not force the Conditional Access policy to be invoked in all cases. The tricky case is if the app subsequently requests a token for web service B. At this point, the end user needs to comply with the Conditional Access policy. When the app tries to `acquireToken`, it may generate the following error (illustrated in the following diagram):
+Alternatively, if the app initially requests a token for web service A, the end user does not invoke the Conditional Access policy. This allows the app developer to control the end-user experience and not force the Conditional Access policy to be invoked in all cases. The tricky case is if the app later requests a token for web service B. At this point, the end user needs to comply with the Conditional Access policy. When the app tries to `acquireToken`, it may generate the following error (illustrated in the following diagram):
 
 ```
 HTTP 400; Bad Request
@@ -156,7 +156,7 @@ When an app needs an access token to call a web API, it attempts an `acquireToke
 
 ![Single-page app using MSAL flow diagram](./media/v2-conditional-access-dev-guide/spa-using-msal-scenario.png)
 
-Let's walk through an example with our Conditional Access scenario. The end user just landed on the site and doesn’t have a session. We perform a `loginPopup()` call, get an ID token without multi-factor authentication. Then the user hits a button that requires the app to request data from a web API. The app tries to do an `acquireTokenSilent()` call but fails since the user has not performed multi-factor authentication yet and needs to comply with the Conditional Access policy.
+Let's walk through an example with our Conditional Access scenario. The end user just landed on the site and doesn’t have a session. We perform a `loginPopup()` call, get an ID token without multifactor authentication. Then the user hits a button that requires the app to request data from a web API. The app tries to do an `acquireTokenSilent()` call but fails since the user has not performed multifactor authentication yet and needs to comply with the Conditional Access policy.
 
 Microsoft Entra ID sends back the following HTTP response:
 
@@ -166,7 +166,7 @@ error=interaction_required
 error_description=AADSTS50076: Due to a configuration change made by your administrator, or because you moved to a new location, you must use multi-factor authentication to access '<Web API App/Client ID>'.
 ```
 
-Our app needs to catch the `error=interaction_required`. The application can then use either `acquireTokenPopup()` or `acquireTokenRedirect()` on the same resource. The user is forced to do a multi-factor authentication. After the user completes the multi-factor authentication, the app is issued a fresh access token for the requested resource.
+Our app needs to catch the `error=interaction_required`. The application can then use either `acquireTokenPopup()` or `acquireTokenRedirect()` on the same resource. The user is forced to do a multifactor authentication. After the user completes the multifactor authentication, the app is issued a fresh access token for the requested resource.
 
 To try out this scenario, see our [React SPA calling Node.js web API using on-behalf-of flow](https://github.com/Azure-Samples/ms-identity-javascript-react-tutorial/tree/main/6-AdvancedScenarios/1-call-api-obo) code sample. This code sample uses the Conditional Access policy and web API you registered earlier with a React SPA to demonstrate this scenario. It shows how to properly handle the claims challenge and get an access token that can be used for your web API.
 
@@ -174,6 +174,6 @@ To try out this scenario, see our [React SPA calling Node.js web API using on-be
 
 * To learn more about the capabilities, see [Conditional Access in Microsoft Entra ID](~/identity/conditional-access/overview.md).
 * For more Microsoft Entra code samples, see [samples](sample-v2-code.md).
-* For more info on the MSAL SDK's and access the reference documentation, see the [Microsoft Authentication Library overview](msal-overview.md).
-* To learn more about multi-tenant scenarios, see [How to sign in users using the multi-tenant pattern](howto-convert-app-to-be-multi-tenant.md).
+* For more info on the MSAL SDKs and access the reference documentation, see the [Microsoft Authentication Library overview](msal-overview.md).
+* To learn more about multitenant scenarios, see [How to sign in users using the multitenant pattern](howto-convert-app-to-be-multi-tenant.md).
 * Learn more about [Conditional Access and securing access to IoT apps](/azure/architecture/reference-architectures/iot).

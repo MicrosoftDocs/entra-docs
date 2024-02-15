@@ -4,11 +4,11 @@ description: Learn about CIAM security and governance features.
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: conceptual
-ms.date: 04/28/2023
+ms.date: 01/18/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -21,6 +21,16 @@ The integration of customer capabilities into Microsoft Entra ID means that your
 > [!NOTE]
 > In Conditional Access, MFA, and Identity Protection aren't available in free trial customer tenants.
 
+## Conditional Access
+
+Microsoft Entra Conditional Access brings signals together, to make decisions, and enforce security policies. Conditional Access policies at their simplest are if-then statements; **if** a user wants to access your application, **then** they must complete an action.
+
+Conditional Access policies are enforced after the user has completed first-factor authentication. For example, if a user's sign-in risk level is high, they must perform multifactor authentication to gain access. Alternatively, the most restrictive approach is to block access to the application.
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CA)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Conditional Access and Multifactor authentication” use case.
 
 ## Multifactor authentication
 

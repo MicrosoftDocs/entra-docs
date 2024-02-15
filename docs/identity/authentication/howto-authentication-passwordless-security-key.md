@@ -2,18 +2,15 @@
 title: Passwordless security key sign-in
 description: Enable passwordless security key sign-in to Microsoft Entra ID using FIDO2 security keys
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/09/2023
+ms.date: 12/06/2023
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: librown, aakapo
-
-ms.collection: M365-identity-device-management
+ms.reviewer: calui
 ---
 # Enable passwordless security key sign-in 
 
@@ -23,13 +20,16 @@ This document focuses on enabling security key based passwordless authentication
 
 ## Requirements
 
-- [Microsoft Entra multifactor authentication](howto-mfa-getstarted.md)
+- [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md)
 - Enable [Combined security information registration](concept-registration-mfa-sspr-combined.md)
 - Compatible [FIDO2 security keys](concept-authentication-passwordless.md#fido2-security-keys)
 - WebAuthN requires Windows 10 version 1903 or higher
 
 To use security keys for logging in to web apps and services, you must have a browser that supports the WebAuthN protocol. 
 These include Microsoft Edge, Chrome, Firefox, and Safari. For more information, see [Browser support of FIDO2 passwordless authentication](fido2-compatibility.md).
+
+>[!NOTE]
+>Passkeys (FIDO2) stored on computers and mobile devices along with registering and signing in via WebAuthn QR code is not yet supported by Entra ID.
 
 ## Prepare devices
 
@@ -41,7 +41,7 @@ Hybrid-joined devices must run Windows 10 version 2004 or higher.
 
 ### Enable the combined registration experience
 
-Registration features for passwordless authentication methods rely on the combined registration feature. Follow the steps in the article [Enable combined security information registration](howto-registration-mfa-sspr-combined.md), to enable combined registration.
+Registration features for passwordless authentication methods rely on combined MFA/SSPR registration. [Learn more about combined registration](howto-registration-mfa-sspr-combined.md). 
 
 ### Enable FIDO2 security key method
 
@@ -96,22 +96,33 @@ There are two ways to get your AAGUID. You can either ask your security key prov
 
 1. Browse to [https://myprofile.microsoft.com](https://myprofile.microsoft.com).
 1. Sign in if not already.
-1. Click **Security Info**.
-   1. If the user already has at least one Microsoft Entra multifactor authentication method registered, they can immediately register a FIDO2 security key.
-   1. If they don't have at least one Microsoft Entra multifactor authentication method registered, they must add one.
-   1. An Administrator can issue a [Temporary Access Pass](howto-authentication-temporary-access-pass.md) to allow the user to register a Passwordless authentication method.
-1. Add a FIDO2 Security key by clicking **Add method** and choosing **Security key**.
+1. Click **Security info**.
+   1. If you already have at least one MFA method registered, you can immediately register a FIDO2 security key.
+   1. If you don't have at least one MFA method registered, you must add one.
+   1. An Authentication Policy Administrator can also issue a [Temporary Access Pass](howto-authentication-temporary-access-pass.md) to allow a user to register a passwordless authentication method.
+1. To add a FIDO2 security key, click **Add method**, and choose **Security key**.
 1. Choose **USB device** or **NFC device**.
-1. Have your key ready and choose **Next**.
-1. A box will appear and ask the user to create/enter a PIN for your security key, then perform the required gesture for the key, either biometric or touch.
-1. The user will be returned to the combined registration experience and asked to provide a meaningful name for the key to identify it easily. Click **Next**.
+1. Have your key ready and choose **Next**. If you're using Chrome or Edge, the browser might prioritize registration of a passkey that's stored on a mobile device over a passkey that's stored on a security key. 
+
+   - Beginning with Windows 11 version 23H2, the OS will show the following prompt during sign-in. Below **More choices**, choose **Security key** and click **Next**.
+
+     :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/save-security-key.png" alt-text="Screenshot of option to save a security key on Windows 11 version 23 H2."::: 
+
+   - On earlier versions of Windows, the browser may show the QR pairing screen to register a passkey that's stored on another mobile device. To register a passkey that's stored on a security key instead, insert your security key and touch it to continue. 
+
+     :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/try-another-way.png" alt-text="Screenshot of option to choose security key on Windows 10."::: 
+
+1. You're prompted to create or enter a PIN for your security key, then perform the required gesture for the key.
+1. You return to the combined registration experience, where you can provide a meaningful name for the key to identify it easily. Click **Next**.
 1. Click **Done** to complete the process.
 
 ## Sign in with passwordless credential
 
-In the example below a user has already provisioned their FIDO2 security key. The user can choose to sign in on the web with their FIDO2 security key inside of a supported browser on Windows 10 version 1903 or higher.
+In this screenshot, a user has already provisioned their FIDO2 security key. The user can choose to sign in on the web with their FIDO2 security key inside of a supported browser on Windows 10 version 1903 or higher.
 
-![Security key sign-in Microsoft Edge](./media/howto-authentication-passwordless-security-key/fido2-windows-10-1903-edge-sign-in.png)
+For more information about browsers and operating systems that support sign in to Microsoft Entra ID with FIDO2 security keys, see [Browser support of FIDO2 passwordless authentication](fido2-compatibility.md).
+
+:::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/fido2-windows-10-1903-edge-sign-in.png" alt-text="Screenshot of option to choose security key on Windows 10 version 1903 or higher."::: 
 
 ## Troubleshooting and feedback
 

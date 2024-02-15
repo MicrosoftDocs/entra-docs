@@ -1,18 +1,16 @@
 ---
 title: Bulk restore deleted users in the Azure portal
 description: Restore deleted users in bulk in the Azure portal in Microsoft Entra ID
-services: active-directory 
+
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 09/08/2022
+ms.date: 11/21/2022
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.custom: it-pro, has-azure-ad-ps-ref
 ms.reviewer: jeffsta
-ms.collection: M365-identity-device-management
 ---
 
 # Bulk restore deleted users in Microsoft Entra ID
@@ -23,7 +21,7 @@ Microsoft Entra ID, part of Microsoft Entra, supports bulk user restore operatio
 
 Download and fill in the CSV template to help you successfully restore Microsoft Entra users in bulk. The CSV template you download might look like this example:
 
-![Spreadsheet for upload and call-outs explaining the purpose and values for each row and column](./media/users-bulk-restore/understand-template.png)
+:::image type="content" source="./media/users-bulk-restore/understand-template.png" alt-text="Screenshot of spreadsheet for uploading and call-outs explaining the purpose and values for each row and column.":::
 
 ### CSV template structure
 
@@ -49,15 +47,15 @@ The rows in a downloaded CSV template are as follows:
 1. Select **All users**  > **Users** > **Deleted**.
 1. On the **Deleted users** page, select **Bulk restore** to upload a valid CSV file of properties of the users to restore.
 
-    ![Select the bulk restore command on the Deleted users page](./media/users-bulk-restore/bulk-restore.png)
+   :::image type="content" source="./media/users-bulk-restore/bulk-restore.png" alt-text="Screenshot of selecting the bulk restore command on the Deleted users page.":::
 
 1. Open the CSV template and add a line for each user you want to restore. The only required value is **ObjectID**. Then save the file.
 
-    :::image type="content" source="./media/users-bulk-restore/upload-button.png" alt-text="Select a local CSV file in which you list the users you want to add":::
+    :::image type="content" source="./media/users-bulk-restore/upload-button.png" alt-text="Screenshot of selecting a local CSV file in which you list the users you want to add":::
 
 1. On the **Bulk restore** page, under **Upload your csv file**, browse to the file. When you select the file and click **Submit**, validation of the CSV file starts.
 1. When the file contents are validated, you’ll see **File uploaded successfully**. If there are errors, you must fix them before you can submit the job.
-1. When your file passes validation, select **Submit** to start the Azure bulk operation that restores the users.
+1. When your file passes validation, select **Submit** to start the bulk operation that restores the users.
 1. When the restore operation completes, you'll see a notification that the bulk operation succeeded.
 
 If there are errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error.
@@ -68,9 +66,9 @@ If there are errors, you can download and view the results file on the **Bulk op
 
 You can see the status of all of your pending bulk requests in the **Bulk operation results** page.
 
-[![Check status in the Bulk Operations Results page.](./media/users-bulk-restore/bulk-center.png)](./media/users-bulk-restore/bulk-center.png#lightbox)
+:::image type="content" source="./media/users-bulk-restore/bulk-center.png" alt-text="Screenshot of checking the status in the Bulk Operations Results page.." lightbox="./media/users-bulk-restore/bulk-center.png":::
 
-Next, you can check to see that the users you restored exist in the Microsoft Entra organization via either the Azure portal or PowerShell.
+Next, you can check to see that the users you restored exist in the Microsoft Entra organization via either Microsoft Entra ID or PowerShell.
 
 ## View restored users in the Azure portal
 
@@ -88,6 +86,8 @@ Get-MgUser -Filter "UserType eq 'Member'"
 ```
 
 You should see that the users that you restored are listed.
+
+[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
 
 ## Next steps
 

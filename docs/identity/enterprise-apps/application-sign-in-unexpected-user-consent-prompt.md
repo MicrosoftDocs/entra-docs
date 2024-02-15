@@ -4,8 +4,8 @@ description: How to troubleshoot when a user sees a consent prompt for an applic
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: troubleshooting
 ms.date: 09/07/2022
@@ -13,6 +13,8 @@ ms.author: jomondi
 ms.reviewer: phsignor, yuhko
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin troubleshooting issues with user access to Microsoft applications, I want to understand and troubleshoot errors that occur during the process of consenting to an application, so that I can successfully grant the necessary permissions and access the application.
 ---
 
 # Unexpected consent prompt when signing in to an application
@@ -50,9 +52,9 @@ Further prompts can be expected in various scenarios:
 
 ### Compare permissions requested and granted for the applications
 
-To ensure the permissions granted for the application are up-to-date, you can compare the permissions that are being requested by the application with the permissions already granted in the tenant. 
+To ensure the permissions granted for the application are up-to-date, you can compare the permissions that are being requested by the application with the permissions already granted in the tenant.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. Under Security in the left-hand navigation, choose **Permissions**
@@ -66,7 +68,7 @@ If the application requires assignment, individual users can't consent for thems
 
 1. On the application's page, Select **Properties** under **Manage**.
 1. Check to see if **Assignment required?** is set to **Yes**.
-1. If set to yes, then an admin must consent to the permissions on behalf of the entire organization. 
+1. If set to yes, then an admin must consent to the permissions on behalf of the entire organization.
 
 ### Review tenant-wide user consent settings
 

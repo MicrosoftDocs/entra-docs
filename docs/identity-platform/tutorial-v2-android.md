@@ -6,11 +6,11 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
 ms.date: 04/04/2023
-ms.reviewer: brandwe
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: negoe
+ms.service: identity-platform
+
 ms.topic: tutorial
-#Customer intent:
+#Customer intent: As an Android developer, I want to integrate the Microsoft Entra ID into my Android app, so that users can sign in with their personal Microsoft accounts or work/school accounts and access the Microsoft Graph API.
 ---
 
 # Tutorial: Sign in users and call the Microsoft Graph API from an Android application

@@ -156,8 +156,6 @@
       items:
         - name: SPA that signs in users and calls web API
           items:
-            - name: Overview
-              href: scenario-spa-overview.md
             - name: App registration
               href: scenario-spa-app-registration.md
             - name: Code configuration
@@ -168,8 +166,6 @@
               href: scenario-spa-acquire-token.md
             - name: Call a web API
               href: scenario-spa-call-api.md
-            - name: Move to production
-              href: scenario-spa-production.md
 - name: Web app
   items:
     - name: Web app authentication
@@ -179,7 +175,7 @@
         - name: ASP.NET 
           href: quickstart-web-app-aspnet-sign-in.md
         - name: ASP.NET Core
-          href: quickstart-web-app-aspnet-core-sign-in.md
+          href: quickstart-web-app-dotnet-core-sign-in.md
         - name: Node.js - MSAL
           href: quickstart-web-app-nodejs-msal-sign-in.md
         - name: Java
@@ -188,16 +184,16 @@
           href: quickstart-web-app-python-sign-in.md
     - name: Tutorials
       items:
-        - name: ASP.NET
+        - name: ASP.NET Core
           items:
-          - name: 1 - Register your app
-            href: web-app-tutorial-01-register-application.md 
-          - name: 2 - Prepare your app
-            href: web-app-tutorial-02-prepare-application.md
-          - name: 3 - Sign in users
-            href: web-app-tutorial-03-sign-in-users.md
-          - name: 4 - Get user data from web API
-            href: web-app-tutorial-04-call-web-api.md
+          - name: Register your app
+            href: tutorial-web-app-dotnet-register-app.md
+          - name: Prepare your app
+            href: tutorial-web-app-dotnet-prepare-app.md
+          - name: Sign in users
+            href: tutorial-web-app-dotnet-sign-in-users.md
+          - name: Get user data from web API
+            href: tutorial-web-app-dotnet-call-api.md
         - name: Node.js
           href: tutorial-v2-nodejs-webapp-msal.md
         - name: Spring
@@ -223,20 +219,14 @@
       items:
         - name: Web app that signs in users
           items:
-            - name: Overview
-              href: scenario-web-app-sign-user-overview.md
             - name: App registration
               href: scenario-web-app-sign-user-app-registration.md
             - name: Code configuration
               href: scenario-web-app-sign-user-app-configuration.md
             - name: Sign-in and sign-out
               href: scenario-web-app-sign-user-sign-in.md
-            - name: Move to production
-              href: scenario-web-app-sign-user-production.md
         - name: Web app that calls an API
           items:
-            - name: Overview
-              href: scenario-web-app-call-api-overview.md
             - name: App registration
               href: scenario-web-app-call-api-app-registration.md
             - name: Code configuration
@@ -247,8 +237,6 @@
               href: scenario-web-app-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-app-call-api-call-api.md
-            - name: Move to production
-              href: scenario-web-app-call-api-production.md
         - name: Deploy and setup App Service auth in a pipeline
           href: deploy-web-app-authentication-pipeline.md
 - name: Web API
@@ -263,14 +251,14 @@
           href: quickstart-web-api-aspnet-core-protect-api.md
     - name: Tutorials
       items:
-        - name: ASP.NET
+        - name: ASP.NET Core
           items: 
-          - name: 1 - Register the API
-            href: web-api-tutorial-01-register-app.md
-          - name: 2 - Create and configure project 
-            href: web-api-tutorial-02-prepare-api.md
-          - name: 3 - Protect API endpoint
-            href: web-api-tutorial-03-protect-endpoint.md
+          - name: Register the API
+            href: tutorial-web-api-dotnet-register-app.md
+          - name: Create and configure project 
+            href: tutorial-web-api-dotnet-prepare-app.md
+          - name: Protect API endpoint
+            href: tutorial-web-api-dotnet-protect-endpoint.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#web-api
@@ -282,20 +270,14 @@
           href: howto-call-a-web-api-with-curl.md
         - name: Protected web API
           items:
-            - name: Overview
-              href: scenario-protected-web-api-overview.md
             - name: App registration
               href: scenario-protected-web-api-app-registration.md
             - name: Code configuration
               href: scenario-protected-web-api-app-configuration.md
             - name: Verification of scopes or app roles
               href: scenario-protected-web-api-verification-scope-app-roles.md
-            - name: Move to production
-              href: scenario-protected-web-api-production.md
         - name: Web API that calls an API
           items:
-            - name: Overview
-              href: scenario-web-api-call-api-overview.md
             - name: App registration
               href: scenario-web-api-call-api-app-registration.md
             - name: Code configuration
@@ -304,8 +286,6 @@
               href: scenario-web-api-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-api-call-api-call-api.md
-            - name: Move to production
-              href: scenario-web-api-call-api-production.md
 - name: Desktop
   items:
     - name: Desktop app authentication
@@ -426,7 +406,7 @@
       href: index-service.yml
     - name: Quickstart
       items:
-        - name: .NET Core
+        - name: .NET
           href: quickstart-console-app-netcore-acquire-token.md
         - name: Java
           href: quickstart-daemon-app-java-acquire-token.md
@@ -436,7 +416,7 @@
           href: quickstart-daemon-app-python-acquire-token.md
     - name: Tutorials
       items:
-        - name: ASP.NET
+        - name: .NET
           href: tutorial-v2-aspnet-daemon-web-app.md
         - name: Node.js
           href: tutorial-v2-nodejs-console.md
@@ -504,10 +484,12 @@
               href: optional-claims.md
             - name: Configure role claim
               href: enterprise-app-role-management.md
-            - name: Customize JWT claims
+            - name: Customize JWT claims using admin center
               href: jwt-claims-customization.md
-            - name: Customize SAML claims
+            - name: Customize SAML claims using admin center
               href: saml-claims-customization.md
+            - name: Customize claims using PowerShell
+              href: claims-customization-powershell.md
             - name: Set an access token lifetime policy
               href: configure-token-lifetimes.md    
             - name: Configure app multi-instancing
@@ -576,8 +558,6 @@
           href: test-setup-environment.md
         - name: Run automated integration tests as a user
           href: test-automate-integration-testing.md
-        - name: Throttling and service limits
-          href: test-throttle-service-limits.md
         - name: Create a service principal using the Azure portal
           href: howto-create-service-principal-portal.md
         - name: Create a service principal using Azure PowerShell
@@ -762,7 +742,7 @@
           displayName: ASP.NET Core, Xamarin
           href: /entra/msal/dotnet
         - name: Microsoft.Identity.Web (MSAL wrapper)
-          displayName: auth, library, .NET Core, msal
+          displayName: auth, library, .NET, msal
           href: /entra/msal/dotnet/microsoft-identity-web/
         - name: Application configuration
           href: msal-client-application-configuration.md

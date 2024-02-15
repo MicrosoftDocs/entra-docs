@@ -5,9 +5,9 @@ author: shlipsey3
 ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: how-to
-ms.date: 07/03/2023
-ms.service: network-access
-ms.custom: 
+ms.date: 12/01/2023
+ms.service: global-secure-access
+ms.subservie: entra-internet-access
 ---
 # How to enable and manage the Microsoft 365 traffic forwarding profile
 
@@ -29,6 +29,7 @@ To enable the Microsoft 365 traffic forwarding profile for your tenant, you must
 
 - Teams is currently not supported as part of the Microsoft 365 Common endpoints. Only Microsoft Entra ID and Microsoft Graph are supported.
 - For details on limitations for the Microsoft 365 traffic profile, see [Windows Client known limitations](how-to-install-windows-client.md#known-limitations)
+
 ## Enable the Microsoft 365 traffic profile
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
@@ -39,7 +40,7 @@ To enable the Microsoft 365 traffic forwarding profile for your tenant, you must
 
 ## Microsoft 365 traffic policies
 
-To manage the details included in the Microsoft 365 traffic forwarding policy, select the **View** link for **Microsoft 365 traffic policies**. 
+To manage the details included in the Microsoft 365 traffic forwarding policy, select the **View** link for **Microsoft 365 traffic policies**.
 
 :::image type="content" source="media/how-to-manage-microsoft-365-profile/microsoft-365-traffic-policies.png" alt-text="Screenshot of the Private access profile, with the view applications link highlighted." lightbox="media/how-to-manage-microsoft-365-profile/microsoft-365-traffic-policies-expanded.png":::
 
@@ -57,7 +58,7 @@ The policy groups include the following details:
 
 You can choose to bypass certain traffic. Users can still access the site; however, the service doesn't process the traffic. You can bypass traffic to a specific FQDN or IP address, an entire policy group within the profile, or the entire Microsoft 365 profile itself. If you only need to forward some of the Microsoft 365 resources within a policy group, enable the group then change the **Action** in the details accordingly.
 
-The following example shows setting the `*.sharepoint.com` FQDN to **Bypass** so the traffic won't be forwarded to the service.
+The following example shows setting the `*.sharepoint.com` FQDN to **Bypass** so the traffic isn't forwarded to the service.
 
 ![Screenshot of the Action dropdown menu.](media/how-to-manage-microsoft-365-profile/microsoft-365-policies-forward-bypass.png)
 
@@ -65,9 +66,9 @@ If the Global Secure Access client isn't able to connect to the service (for exa
 
 ## Linked Conditional Access policies
 
-[Conditional Access policies](/azure/active-directory/conditional-access/overview) are created and applied to the traffic forwarding profile in the Conditional Access area of Microsoft Entra ID. For example, you can create a policy that requires using compliant devices when accessing Microsoft 365 services.
+[Conditional Access policies](../identity/conditional-access/overview.md) are created and applied to the traffic forwarding profile in the Conditional Access area of Microsoft Entra ID. For example, you can create a policy that requires using compliant devices when accessing Microsoft 365 services.
 
-If you see "None" in the **Linked Conditional Access policies** section, there isn't a Conditional Access policy linked to the traffic forwarding profile. To create a Conditional Access policy, see [Universal Conditional Access through Global Secure Access.](how-to-target-resource-microsoft-365-profile.md).
+If you see "None" in the **Linked Conditional Access policies** section, there isn't a Conditional Access policy linked to the traffic forwarding profile. To create a Conditional Access policy, see [Universal Conditional Access through Global Secure Access](how-to-target-resource-microsoft-365-profile.md).
 
 ### Edit an existing Conditional Access policy
 
@@ -77,7 +78,7 @@ If the traffic forwarding profile has a linked Conditional Access policy, you ca
 
     ![Screenshot of traffic forwarding profiles with Conditional Access link highlighted.](media/how-to-manage-microsoft-365-profile/microsoft-365-conditional-access-policy-link.png)
 
-1. Select a policy from the list. The details of the policy open in Conditional Access. 
+1. Select a policy from the list. The details of the policy open in Conditional Access.
 
     ![Screenshot of the applied Conditional Access policies.](media/how-to-manage-microsoft-365-profile/conditional-access-applied-policies.png)
 
@@ -89,7 +90,7 @@ Traffic profiles can be assigned to remote networks, so that the network traffic
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
 1. Browse to **Global Secure Access (preview)** > **Traffic forwarding**.
-1. Select the **Add assignments** button for the profile. 
+1. Select the **Add assignments** button for the profile.
     - If you're editing the remote network assignments, select the **Add/edit assignments** button.
 1. Select a remote network from the list and select **Add**.
 

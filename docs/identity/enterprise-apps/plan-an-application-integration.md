@@ -5,17 +5,19 @@ description: This article is a getting started guide for integrating Microsoft E
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: conceptual
 
 ms.date: 04/05/2021
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin responsible for integrating applications with Microsoft Entra ID, I want to understand the process and requirements for integrating applications, so that I can successfully manage user access and authentication for these applications.
 ---
 
-# Integrating Microsoft Entra ID with applications getting started guide 
+# Integrating Microsoft Entra ID with applications getting started guide
 
 This topic summarizes the process for integrating applications with Microsoft Entra ID. Each of the sections below contain a brief summary of a more detailed topic so you can identify which parts of this getting started guide are relevant to you.
 

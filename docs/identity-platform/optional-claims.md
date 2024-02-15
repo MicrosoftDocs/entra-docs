@@ -7,10 +7,10 @@ ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 06/07/2023
 ms.reviewer: ludwignick
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
-#Customer intent:
+#Customer intent: As an application developer, I want to configure optional claims for my application, so that I can customize the claims returned in ID tokens, access tokens, and SAML tokens based on my specific requirements and scenarios.
 ---
 
 # Configure optional claims
@@ -138,7 +138,7 @@ Complete the following steps to configure groups optional claims through the app
 
 1. Set group name configuration optional claims.
 
-   If you want groups in the token to contain the on premises group attributes in the optional claims section, specify which token type optional claim should be applied to. You also specify the name of optional claim requested and any other properties desired.  
+   If you want groups in the token to contain the on-premises group attributes in the optional claims section, specify which token type optional claim should be applied to. You also specify the name of optional claim requested and any other properties desired.  
    
    Multiple token types can be listed:
 

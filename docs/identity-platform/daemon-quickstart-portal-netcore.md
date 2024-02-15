@@ -1,17 +1,17 @@
 ---
 title: "Quickstart: Get token & call Microsoft Graph in a console app"
-description: In this quickstart, you learn how a .NET Core sample app can use the client credentials flow to get a token and call Microsoft Graph.
+description: In this quickstart, you learn how a .NET sample app can use the client credentials flow to get a token and call Microsoft Graph.
 ROBOTS: NOINDEX
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:aspnet-core", mode-api, devx-track-dotnet
 ms.date: 08/22/2022
-ms.reviewer: marsma
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: jmprieur
+ms.service: identity-platform
+
 ms.topic: conceptual
-#Customer intent: As an application developer, I want to learn how my .NET Core app can get an access token and call an API that's protected by the Microsoft identity platform by using the client credentials flow.
+#Customer intent: As an application developer, I want to learn how my .NET app can get an access token and call an API that's protected by the Microsoft identity platform by using the client credentials flow.
 ---
 
 # Quickstart: Get a token and call the Microsoft Graph API by using a console app's identity
@@ -19,18 +19,18 @@ ms.topic: conceptual
 > [!div renderon="docs"]
 > Welcome! This probably isn't the page you were expecting. While we work on a fix, this link should take you to the right article:
 > 
-> > [Quickstart: Acquire a token and call Microsoft Graph in a .NET Core console app](quickstart-console-app-netcore-acquire-token.md)
+> > [Quickstart: Acquire a token and call Microsoft Graph in a .NET console app](quickstart-console-app-netcore-acquire-token.md)
 > 
 > We apologize for the inconvenience and appreciate your patience while we work to get this resolved.
 
 > [!div renderon="portal" id="display-on-portal" class="sxs-lookup"]
 > # Quickstart: Get a token and call the Microsoft Graph API by using a console app's identity
 > 
-> In this quickstart, you download and run a code sample that demonstrates how a .NET Core console application can get an access token to call the Microsoft Graph API and display a [list of users](/graph/api/user-list) in the directory. The code sample also demonstrates how a job or a Windows service can run with an application identity, instead of a user's identity. The sample console application in this quickstart is also a daemon application, so it's a confidential client application.
+> In this quickstart, you download and run a code sample that demonstrates how a .NET console application can get an access token to call the Microsoft Graph API and display a [list of users](/graph/api/user-list) in the directory. The code sample also demonstrates how a job or a Windows service can run with an application identity, instead of a user's identity. The sample console application in this quickstart is also a daemon application, so it's a confidential client application.
 > 
 > ## Prerequisites
 > 
-> This quickstart requires [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download) but will also work with .NET 6.0 SDK.
+> [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet/6.0)
 > 
 > > [!div class="sxs-lookup"]
 > ### Download and configure your quickstart app
@@ -59,17 +59,17 @@ ms.topic: conceptual
 > 
 > #### Step 3: Admin consent
 > 
-> If you try to run the application at this point, you'll receive an *HTTP 403 - Forbidden* error: "Insufficient privileges to complete the operation." This error happens because any app-only permission requires a global administrator of your directory to give consent to your application. Select one of the following options, depending on your role.
+> If you try to run the application at this point, you'll receive an *HTTP 403 - Forbidden* error: "Insufficient privileges to complete the operation." This error happens because any app-only permission requires a Global Administrator of your directory to give consent to your application. Select one of the following options, depending on your role.
 > 
 > ##### Global tenant administrator
 > 
-> If you're a global administrator, go to the **API Permissions** page and select **Grant admin consent for Enter_the_Tenant_Name_Here**.
+> If you're a Global Administrator, go to the **API Permissions** page and select **Grant admin consent for Enter_the_Tenant_Name_Here**.
 > > [!div id="apipermissionspage"]
 > > [Go to the API Permissions page]()
 > 
 > ##### Standard user
 > 
-> If you're a standard user of your tenant, ask a global administrator to grant admin consent for your application. To do this, give the following URL to your administrator:
+> If you're a standard user of your tenant, ask a Global Administrator to grant admin consent for your application. To do this, give the following URL to your administrator:
 > 
 > ```url
 > https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_id=Enter_the_Application_Id_Here
@@ -80,6 +80,9 @@ ms.topic: conceptual
 > #### Step 4: Run the application
 > 
 > If you're using Visual Studio or Visual Studio for Mac, press **F5** to run the application. Otherwise, run the application via command prompt, console, or terminal:
+>
+> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
+> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
 > 
 > ```dotnetcli
 > cd {ProjectFolder}\1-Call-MSGraph\daemon-console
@@ -93,7 +96,7 @@ ms.topic: conceptual
 > This quickstart application uses a client secret to identify itself as a confidential client. The client secret is added as a plain-text file to your project files. For security reasons, we recommend that you use a certificate instead of a client secret before considering the application as a production application. For more information on how to use a certificate, see [these instructions](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/#variation-daemon-application-using-client-credentials-with-certificates) in the GitHub repository for this sample.
 > 
 > ## More information
-> This section gives an overview of the code required to sign in users. This overview can be useful to understand how the > code works, what the main arguments are, and how to add sign-in to an existing .NET Core console application.
+> This section gives an overview of the code required to sign in users. This overview can be useful to understand how the > code works, what the main arguments are, and how to add sign-in to an existing .NET console application.
 > 
 > > [!div class="sxs-lookup"]
 > ### How the sample works

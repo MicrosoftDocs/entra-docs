@@ -3,12 +3,11 @@ title: Automated ServiceNow Ticket Creation with Microsoft Entra Entitlement Man
 description: This tutorial walks you through Ticketed provisioning via ServiceNow integration with entitlement management using custom extensions and Logic Apps.
 author: owinfreyATL
 ms.author: owinfrey
-ms.service: active-directory
-ms.subservice: compliance
-ms.workload: identity
-ms.topic: tutorial 
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
+ms.topic: tutorial
 ms.date: 05/31/2023
-ms.custom: template-tutorial 
+ms.custom: template-tutorial
 ---
 
 # Tutorial: Automated ServiceNow Ticket Creation with Microsoft Entra Entitlement Management Integration
@@ -164,7 +163,7 @@ At this point it's time to configure ServiceNow for resuming the entitlement man
     1. Go to the REST API Messages section under System Web Services.
     1. Select the "New" button to create a new REST API message.
     1. Fill in all the required fields, which include providing the Endpoint URL: 
-        `` https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/${AccessPackageAssignmentRequestId}/resume ``
+        `` https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/${AccessPackageAssignmentRequestId}/resume ``
     1. For Authentication, select OAuth2.0 and choose the OAuth profile that was created during the app registration process.
     1. Select the "*Submit*" button to save the changes.
     1. Go back to the REST API Messages section under System Web Services.

@@ -4,8 +4,8 @@ description: Learn the steps required to perform in Salesforce and Microsoft Ent
 
 author: jeevansd
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
@@ -15,9 +15,6 @@ ms.author: jeedes
 
 The objective of this tutorial is to show the steps required to perform in Salesforce and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Salesforce.
 
-> [!Note]
-> Microsoft uses v28 of the Salesforce API for automatic provisioning. Microsoft is aware of the upcoming deprecation of v21 through v30 and is working with Salesforce to migrate to a supported version prior to the deprecation date. No customer action is required.
-> 
 ## Prerequisites
 
 The scenario outlined in this tutorial assumes that you already have the following items:
@@ -31,17 +28,17 @@ The scenario outlined in this tutorial assumes that you already have the followi
 > [!IMPORTANT]
 > If you are using a Salesforce.com trial account, then you will be unable to configure automated user provisioning. Trial accounts do not have the necessary API access enabled until they are purchased. You can get around this limitation by using a free [developer account](https://developer.salesforce.com/signup) to complete this tutorial.
 
-If you are using a Salesforce Sandbox environment, please see the [Salesforce Sandbox integration tutorial](./salesforce-sandbox-tutorial.md).
+If you are using a Salesforce Sandbox environment, see the [Salesforce Sandbox integration tutorial](./salesforce-sandbox-tutorial.md).
 
 ## Assigning users to Salesforce
 
-Microsoft Entra ID uses a concept called "assignments" to determine which users should receive access to selected apps. In the context of automatic user account provisioning, only the users and groups that have been "assigned" to an application in Microsoft Entra ID is synchronized.
+Microsoft Entra ID uses a concept called "assignments" to determine which users should receive access to selected apps. In the context of automatic user account provisioning, only the users and groups that are "assigned" to an application in Microsoft Entra ID are synchronized.
 
-Before configuring and enabling the provisioning service, you need to decide which users or groups in Microsoft Entra ID need access to your Salesforce app. After you've made this decision, you can assign these users to your Salesforce app by following the instructions in [Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
+Before configuring and enabling the provisioning service, you need to decide which users or groups in Microsoft Entra ID need access to your Salesforce app. You can assign these users to your Salesforce app by following the instructions in [Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
 
 ### Important tips for assigning users to Salesforce
 
-* It is recommended that a single Microsoft Entra user is assigned to Salesforce to test the provisioning configuration. Additional users and/or groups may be assigned later.
+* It is recommended that a single Microsoft Entra user is assigned to Salesforce to test the provisioning configuration. More users and/or groups may be assigned later.
 
 * When assigning a user to Salesforce, you must select a valid user role. The "Default Access" role does not work for provisioning
 
@@ -50,7 +47,7 @@ Before configuring and enabling the provisioning service, you need to decide whi
 
 ## Enable automated user provisioning
 
-This section guides you through connecting your Microsoft Entra ID to [Salesforce's user account provisioning API - v40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api.meta/api/implementation_considerations.htm), and configuring the provisioning service to create, update, and disable assigned user accounts in Salesforce based on user and group assignment in Microsoft Entra ID.
+This section guides you through connecting your Microsoft Entra ID to [Salesforce's user account provisioning API - v40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api.meta/api/implementation_considerations.htm)
 
 > [!Tip]
 > You may also choose to enabled SAML-based Single Sign-On for Salesforce, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features compliment each other.
@@ -62,7 +59,7 @@ The objective of this section is to outline how to enable user provisioning of A
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
-2. If you have already configured Salesforce for single sign-on, search for your instance of Salesforce using the search field. Otherwise, select **Add** and search for **Salesforce** in the application gallery. Select Salesforce from the search results, and add it to your list of applications.
+2. If you have configured Salesforce for single sign-on, search for your instance of Salesforce using the search field. Otherwise, select **Add** and search for **Salesforce** in the application gallery. Select Salesforce from the search results, and add it to your list of applications.
 
 3. Select your instance of Salesforce, then select the **Provisioning** tab.
 
@@ -111,7 +108,7 @@ The objective of this section is to outline how to enable user provisioning of A
 > [!NOTE]
 > Once the users are provisioned in the Salesforce application, administrator need to configure the language specific settings for them. Please see [this](https://help.salesforce.com/articleView?id=setting_your_language.htm&type=5) article for more details on language configuration.
 
-This starts the initial synchronization of any users and/or groups assigned to Salesforce in the Users and Groups section. Note that the initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service on your Salesforce app.
+This starts the initial synchronization of any users and/or groups assigned to Salesforce in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service on your Salesforce app.
 
 For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 

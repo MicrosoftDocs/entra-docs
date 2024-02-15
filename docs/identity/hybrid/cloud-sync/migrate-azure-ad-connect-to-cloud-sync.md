@@ -1,17 +1,16 @@
 ---
 title: 'Migrate Microsoft Entra Connect to Microsoft Entra Cloud Sync| Microsoft Docs'
 description: Describes steps to migrate Microsoft Entra Connect to Microsoft Entra Cloud Sync.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: overview
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 
@@ -29,7 +28,7 @@ Microsoft Entra Cloud Sync is the future for accomplishing your hybrid identity 
 |-----|-----|
 |Choose the best sync tool|Before moving to cloud sync, you should verify that cloud sync is currently the best synchronization tool for you.  You can do this task by going through the wizard [here](https://aka.ms/EvaluateSyncOptions).|
 |Verify the pre-requisites for migrating|The following guidance is only for users who have installed Microsoft Entra Connect using the Express settings and aren't synchronizing devices.  Also you should verify the cloud sync [pre-requisites](how-to-prerequisites.md).|
-|Back up your Microsoft Entra Connect configuration|Before making any changes, you should back up your Microsoft Entra Connect configuration.  This way, you can role-back.  For more information, see [Import and export Microsoft Entra Connect configuration settings](../connect/how-to-connect-import-export-config.md).|
+|Back up your Microsoft Entra Connect configuration|Before making any changes, you should back up your Microsoft Entra Connect configuration.  This way, you can rollback.  For more information, see [Import and export Microsoft Entra Connect configuration settings](../connect/how-to-connect-import-export-config.md).|
 |Review the migration tutorial|To become familiar with the migration process, review the [Migrate to Microsoft Entra Cloud Sync for an existing synced AD forest](tutorial-pilot-aadc-aadccp.md) tutorial.  This tutorial guides you through the migration process in a sandbox environment.|
 |Create or identify an OU for the migration|Create a new OU or identify an existing OU that contains the users you'll test migration on.|
 |Move users into new OU (optional)|If you're using a new OU, move the users that are in scope for this pilot into that OU now.  Before continuing, let Microsoft Entra Connect pick up the changes so that it's synchronizing them in the new OU.| 

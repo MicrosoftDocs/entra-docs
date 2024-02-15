@@ -4,13 +4,11 @@ description: Learn how to use Azure Monitor Workbooks to review security audits 
 author: justinha
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/21/2023
 ms.author: justinha
-
 ---
 # Review security audit events in Microsoft Entra Domain Services using Azure Monitor Workbooks
 

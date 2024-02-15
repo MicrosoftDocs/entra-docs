@@ -1,18 +1,16 @@
 ---
 title: Monitor and clean up stale guest accounts
-description: Monitor and clean up stale guest accounts using access reviews 
-services: active-directory 
+description: Monitor and clean up stale guest accounts using access reviews
+
 author: billmath
 ms.author: billmath
 manager: amycolannino
 ms.date: 06/29/2023
 ms.reviewer: gasinh
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Monitor and clean up stale guest accounts using access reviews 
@@ -84,7 +82,7 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
    |Property | Value |
    |:------------|:-------------|
    | **First stage review** |     |
-   | (Preview) Multi-stage review| Check the box|
+   | Multi-stage review| Check the box|
    |Select reviewers | **Users review their own access**|
    | Stage duration (in days) | Enter the number of days |
    |**Second stage review** |            |

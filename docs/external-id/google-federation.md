@@ -4,16 +4,16 @@ title: Add Google as an identity provider for B2B
 description: Federate with Google to enable guest users to sign in to your Microsoft Entra apps with their own Gmail accounts.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 11/28/2023
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref, has-azure-ad-ps-ref
+ms.custom: it-pro, has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
+#customer intent: As a B2B collaboration administrator, I want to add Google as an identity provider, so that invited users can sign in to shared apps and resources using their Gmail accounts.
 ---
 
 # Add Google as an identity provider for B2B guest users
@@ -60,7 +60,7 @@ You can also give Google guest users a direct link to an application or resource
 
 Starting September 30, 2021, Google is [deprecating embedded web-view sign-in support](https://developers.googleblog.com/2021/06/upcoming-security-changes-to-googles-oauth-2.0-authorization-endpoint.html). If your apps authenticate users with an embedded web-view and you're using Google federation with [Azure AD B2C](/azure/active-directory-b2c/identity-provider-google) or Microsoft Entra B2B for [external user invitations](google-federation.md) or [self-service sign-up](identity-providers.md), Google Gmail users won't be able to authenticate.
 
-The following are known scenarios that will impact Gmail users:
+The following are known scenarios that affect Gmail users:
 - Microsoft apps (for example, Teams and Power Apps) on Windows 
 - Windows apps that use the [WebView](/windows/communitytoolkit/controls/wpf-winforms/webview) control, [WebView2](/microsoft-edge/webview2/), or the older WebBrowser control, for authentication. These apps should migrate to using the Web Account Manager (WAM) flow.
 - Android applications using the WebView UI element 
@@ -76,7 +76,7 @@ This change does not affect:
 
 ### Action needed for embedded web-views
 
-Modify your apps to use the system browser for sign-in. For details, see [Embedded vs System Web UI](/entra/msal/dotnet/acquiring-tokens/using-web-browsers#embedded-vs-system-web-ui) in the MSAL.NET documentation. All MSAL SDKs use the system web-view by default.
+Modify your apps to use the system browser for sign-in. For details, see [Embedded web view vs system browser](/entra/msal/dotnet/acquiring-tokens/using-web-browsers#embedded-web-view-vs-system-browser) in the MSAL.NET documentation. All MSAL SDKs use the system browser by default.
 
 ### What to expect
 
@@ -203,16 +203,26 @@ You'll now set the Google client ID and client secret. You can use the Microsoft
    ![Screenshot that shows the Add Google identity provider page.](media/google-federation/google-identity-provider.png)
 
 **To configure Google federation by using PowerShell**
-1. Install the latest version of the Azure AD PowerShell for Graph module ([AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview)).
-2. Run this command:
-   `Connect-AzureAD`
+
+1. Install the latest version of the [Microsoft Graph PowerShell module](/powershell/microsoftgraph/installation).
+2. Connect to your tenant by using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) command.
 3. At the sign-in prompt, sign in with the managed Global Administrator account.  
-4. Run the following command: 
-   
-   `New-AzureADMSIdentityProvider -Type Google -Name Google -ClientId <client ID> -ClientSecret <client secret>`
- 
+4. Run the following commands:
+
+   ```powershell
+   $params = @{
+      "@odata.type" = "microsoft.graph.socialIdentityProvider"
+      displayName = "Login with Google"
+      identityProviderType = "Google"
+      clientId = "<client ID>"
+      clientSecret = "<client secret>"
+   }
+
+   New-MgIdentityProvider -BodyParameter $params
+   ```
+
    > [!NOTE]
-   > Use the client ID and client secret from the app you created in "Step 1: Configure a Google developer project." For more information, see [New-AzureADMSIdentityProvider](/powershell/module/azuread/new-azureadmsidentityprovider?view=azureadps-2.0-preview&preserve-view=true). 
+   > Use the client ID and client secret from the app you created in "Step 1: Configure a Google developer project." For more information, see [New-MgIdentityProvider](/powershell/module/microsoft.graph.identity.signins/new-mgidentityprovider).
 
 ## Add Google identity provider to a user flow
 
@@ -242,12 +252,15 @@ You can delete your Google federation setup. If you do so, Google guest users wh
 1. Select **Yes** to confirm the deletion. 
 
 **To delete Google federation by using PowerShell** 
-1. Install the latest version of the Azure AD PowerShell for Graph module ([AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview)).
-2. Run `Connect-AzureAD`.  
-4. In the sign-in prompt, sign in with the managed Global Administrator account.  
-5. Enter the following command:
 
-    `Remove-AzureADMSIdentityProvider -Id Google-OAUTH`
+1. Install the latest version of the [Microsoft Graph PowerShell module](/powershell/microsoftgraph/installation).
+2. Connect to your tenant by using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) command.
+3. In the sign-in prompt, sign in with the managed Global Administrator account.  
+4. Enter the following command:
+
+   ```powershell
+   Remove-MgIdentityProvider -IdentityProviderBaseId Google-OAUTH
+   ```
 
    > [!NOTE]
-   > For more information, see [Remove-AzureADMSIdentityProvider](/powershell/module/azuread/Remove-AzureADMSIdentityProvider?view=azureadps-2.0-preview&preserve-view=true).
+   > For more information, see [Remove-MgIdentityProvider](/powershell/module/microsoft.graph.identity.signins/remove-mgidentityprovider).

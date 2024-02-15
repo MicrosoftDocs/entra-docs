@@ -1,20 +1,17 @@
 ---
 title: How managed identities for Azure resources work with Azure virtual machines
 description: Description of managed identities for Azure resources work with Azure virtual machines.
-services: active-directory
-documentationcenter:
+
 author: barclayn
 manager: amycolannino
-editor:
 ms.assetid: 0232041d-b8f5-4bd2-8d11-27999ad69370
-ms.service: active-directory
-ms.subservice: msi
-ms.devlang:
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: conceptual
-ms.custom: mvc
+
 ms.date: 11/15/2022
 ms.author: barclayn
-ms.collection: M365-identity-device-management
+
 ---
 
 # How managed identities for Azure resources work with Azure virtual machines

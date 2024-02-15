@@ -7,10 +7,10 @@ ms.author: henrymbugua
 ms.custom: "devx-track-csharp"
 ms.date: 11/10/2023
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
-#Customer intent:
+#Customer intent: As a developer building a Universal Windows Platform (UWP) application, I want to learn how to call the Microsoft Graph API and obtain an access token, so that I can integrate Microsoft Graph functionality into my application and access protected resources.
 ---
 
 # Tutorial: Call the Microsoft Graph API from a Universal Windows Platform (UWP) application

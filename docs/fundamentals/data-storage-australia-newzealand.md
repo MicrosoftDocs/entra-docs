@@ -1,17 +1,15 @@
 ---
 title: Customer data storage for Australian and New Zealand customers
 description: Learn about where Microsoft Entra ID stores customer-related data for its Australian and New Zealand customers.
-services: active-directory
 author: barclayn
 manager: amycolannino
 ms.author: barclayn
 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/17/2022
-ms.custom: "it-pro, seodec18, references_regions"
+ms.custom: it-pro, references_regions
 ms.collection: M365-identity-device-management
 ---
 

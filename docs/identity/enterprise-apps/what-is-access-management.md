@@ -4,14 +4,16 @@ description: Describes how Microsoft Entra ID enables organizations to specify t
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: conceptual
 ms.date: 07/18/2023
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
+
+#customer intent: As an IT administrator responsible for managing access to applications, I want a solution that allows me to easily assign users and groups to applications, so that I can efficiently control access and ensure the right users have the appropriate permissions.
 ---
 
 # Manage access to an application

@@ -7,8 +7,8 @@ manager: CelesteDG
 ms.author: dmwendia
 ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:ASP.NET", mode-other
 ms.date: 08/16/2022
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to see a sample ASP.NET web app that can sign in Microsoft Entra users.
 ---
@@ -19,7 +19,7 @@ ms.topic: conceptual
 > Welcome! This probably isn't the page you were expecting. While we work on a fix, this link should take you to the right article:
 >
 > > [Quickstart: Add sign-in with Microsoft to an ASP.NET web app](quickstart-web-app-aspnet-sign-in.md)
-> 
+>
 > We apologize for the inconvenience and appreciate your patience while we work to get this resolved.
 
 > [!div renderon="portal" id="display-on-portal" class="sxs-lookup"]
@@ -159,4 +159,4 @@ ms.topic: conceptual
 > For a complete step-by-step guide on building applications and new features, including a full explanation of this quickstart, try out the ASP.NET tutorial.
 > 
 > > [!div class="nextstepaction"]
-> > [Add sign-in to an ASP.NET web app](./web-app-tutorial-01-register-application.md)
+> > [Add sign-in to an ASP.NET web app](tutorial-web-app-dotnet-register-app.md)

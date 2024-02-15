@@ -4,8 +4,8 @@ description: Discusses errors that can occur during the process of consenting to
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: troubleshooting
 ms.date: 09/06/2022
@@ -13,6 +13,8 @@ ms.author: jomondi
 ms.reviewer: phsignor, yuhko
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin troubleshooting issues with user access to Microsoft applications, I want to understand and troubleshoot errors that occur during the process of consenting to an application, so that I can successfully grant the necessary permissions and access the application.
 ---
 
 # Unexpected error when performing consent to an application

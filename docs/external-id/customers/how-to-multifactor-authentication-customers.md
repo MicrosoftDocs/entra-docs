@@ -4,11 +4,11 @@ description: Learn how to add multifactor authentication (MFA) to your customer-
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
-ms.date: 07/12/2023
+ms.date: 01/11/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -19,8 +19,11 @@ ms.custom: it-pro
 
 [Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) (MFA) adds a layer of security to your customer-facing applications. With MFA, customers who sign in with a username and password are prompted for a one-time passcode as a second verification method. This article describes how to enforce MFA for your customers by creating a Microsoft Entra Conditional Access policy and adding MFA to your sign-up and sign-in user flow.
 
-> [!NOTE]
-> If you want to enable MFA, set your local account authentication method to **Email with password**. If you set your local account option to **Email with one-time passcode**, customers who use this method won't be able to sign in because the one-time passcode is already their first-factor sign-in method and can't be used as a second factor. Currently, one-time passcode is the only method available for MFA in customer tenants.
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=MFA)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “[Multi-factor authentication](https://woodgrovedemo.com/#usecase=MFA)” use case.
 
 ## Prerequisites
 
@@ -28,6 +31,9 @@ ms.custom: it-pro
 - A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 - An app that's registered in your customer tenant, added to the sign-up and sign-in user flow, and updated to point to the user flow for authentication.
 - An account with Conditional Access Administrator, Security Administrator, or Global Administrator privileges to configure Conditional Access policies and MFA.
+
+> [!NOTE]
+> If you want to enable MFA, set your local account authentication method to **Email with password**. If you set your local account option to **Email with one-time passcode**, customers who use this method won't be able to sign in because the one-time passcode is already their first-factor sign-in method and can't be used as a second factor. Currently, one-time passcode is the only method available for MFA in customer tenants.
 
 ## Create a Conditional Access policy
 

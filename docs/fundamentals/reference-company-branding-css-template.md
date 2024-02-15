@@ -1,15 +1,13 @@
 ---
 title: CSS reference guide for customizing company branding
 description: Reference guide for the CSS template selectors for customizing Microsoft Entra sign-in page company branding.
-services: active-directory
 author: shlipsey3
 manager: amycolannino
 
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 08/23/2023
+ms.date: 12/01/2023
 ms.author: sarahlipsey
 ms.reviewer: almars
 ---
@@ -41,7 +39,7 @@ Use the following CSS selectors to configure the details of the sign-in experien
 - `.ext-header` - Header at the top of the container
 - `.ext-header-logo` - Header logo at the top of the container
 
-    ![Screenshot of the sign-in screen with the .ext-header and .ext-header-logo areas highlighted.](media/reference-company-branding-css-template/header-logo.png)
+   :::image type="content" source="media/reference-company-branding-css-template/header-logo.png" alt-text="Screenshot of the sign-in screen with the .ext-header and .ext-header-logo areas highlighted.":::
 
 - `.ext-middle` - Style for the full-screen background that aligns the sign-in box vertically to the middle and horizontally to the center
 - `.ext-vertical-split-main-section` - Style for the container of the partial-screen background in the vertical split template that contains both a sign-in box and a background (This style is also known as the Active Directory Federation Services (ADFS) template.)
@@ -49,8 +47,7 @@ Use the following CSS selectors to configure the details of the sign-in experien
 - `.ext-sign-in-box` - Sign-in box container
 - `.ext-title` - Title text
 
-    ![Screenshot of the sign-in box, with the portion of the box that is styled with the .ext-sign-in-box selector.](media/reference-company-branding-css-template/sign-in-box-title.png)
-
+   :::image type="content" source="media/reference-company-branding-css-template/sign-in-box-title.png" alt-text="Screenshot of the sign-in box, with the portion of the box that is styled with the .ext-sign-in-box selector.":::
 
 - `.ext-subtitle` - Subtitle text
 
@@ -61,7 +58,7 @@ Use the following CSS selectors to configure the details of the sign-in experien
     - `.ext-button.ext-primary:focus:hover` - When the button has focus *and* the mouse is over the button
     - `.ext-button.ext-primary:active` - When the button is being clicked
 
-    ![Screenshot of the sign-in box with the primary - Next - button highlighted.](media/reference-company-branding-css-template/primary-button.png)
+   :::image type="content" source="media/reference-company-branding-css-template/primary-button.png" alt-text="Screenshot of the sign-in box with the primary - Next - button highlighted.":::
 
 - Styles for secondary buttons:
     - `.ext-button.ext-secondary` - Secondary buttons
@@ -70,11 +67,11 @@ Use the following CSS selectors to configure the details of the sign-in experien
     - `.ext-button.ext-secondary:focus:hover` - When the button has focus *and* the mouse is over the button
     - `.ext-button.ext-secondary:active` - When the button is being clicked
 
-    ![Screenshot of the sign-in box at the Sign-in options step, with the secondary - Back - button highlighted.](media/reference-company-branding-css-template/secondary-button.png)
+   :::image type="content" source="media/reference-company-branding-css-template/secondary-button.png" alt-text="Screenshot of the sign-in box at the Sign-in options step, with the secondary - Back - button highlighted.":::
 
 - `.ext-error` - Error text
 
-    ![Screenshot of the sign-in box with error text highlighted.](media/reference-company-branding-css-template/error-text.png)
+   :::image type="content" source="media/reference-company-branding-css-template/error-text.png" alt-text="Screenshot of the sign-in box with error text highlighted.":::
 
 - Styles for text boxes:
     - `.ext-input.ext-text-box` - Text boxes
@@ -83,12 +80,12 @@ Use the following CSS selectors to configure the details of the sign-in experien
     - `.ext-input.ext-text-box:focus` - When the text box has focus
     - `.ext-input.ext-text-box:focus:hover` - When the text box has focus *and* the mouse is over the text box
 
-    ![Screenshot of the sign-in box with the text box with sample text highlighted.](media/reference-company-branding-css-template/ext-text-box.png)
+   :::image type="content" source="media/reference-company-branding-css-template/ext-text-box.png" alt-text="Screenshot of the sign-in box with the text box with sample text highlighted.":::
 
 - `.ext-boilerplate-text` - Custom message text at the bottom of the sign-in box
 - `.ext-promoted-fed-cred-box` - Sign-in options text box
 
-    ![Screenshot of the sign-in box with the optional boilerplate text area highlighted.](media/reference-company-branding-css-template/boilerplate-fed-cred.png)
+   :::image type="content" source="media/reference-company-branding-css-template/boilerplate-fed-cred.png" alt-text="Screenshot of the sign-in box with the optional boilerplate text area highlighted.":::
 
 -  Styles for the footer:
     - `.ext-footer` - Footer area at the bottom of the page

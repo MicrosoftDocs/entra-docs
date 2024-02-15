@@ -1,24 +1,14 @@
 ---
 title: Change approval settings for an access package in entitlement management - Microsoft Entra
 description: Learn how to change approval and requestor information settings for an access package in entitlement management.
-services: active-directory
-documentationCenter: ''
 author: owinfreyATL
 manager: amycolannino
-editor: 
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
-ms.reviewer: 
-ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
-
 ---
 # Change approval and requestor information settings for an access package in entitlement management
 
@@ -216,5 +206,6 @@ In order to make sure users are getting access to the right access packages, you
 After you have configured requestor information in your access package's policy, can view the requestor's responses to the questions. For guidance on seeing requestor information, see [View requestor's answers to questions](entitlement-management-request-approve.md#view-requestors-answers-to-questions).
 
 ## Next steps
+
 - [Change lifecycle settings for an access package](entitlement-management-access-package-lifecycle-policy.md)
 - [View requests for an access package](entitlement-management-access-package-requests.md)

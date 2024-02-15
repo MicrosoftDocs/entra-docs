@@ -4,9 +4,9 @@ description: Learn how to use a quickstart to create custom credentials with mul
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: how-to
-ms.subservice: verifiable-credentials
+
 ms.date: 07/06/2022
 ms.author: barclayn
 
@@ -15,8 +15,7 @@ ms.author: barclayn
 
 # Create verifiable credentials with multiple attestations
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 
 A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses multiple attestations types produces an issuance flow where claims come from more than one source. For instance you may be required to present an existing credential and also manually enter values for claims in Microsoft Authenticator.  
 

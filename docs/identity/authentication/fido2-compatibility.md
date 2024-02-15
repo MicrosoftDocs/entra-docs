@@ -1,27 +1,42 @@
 ---
-title: Browser support of FIDO2 passwordless authentication | Microsoft Entra ID
+title: Native app and browser support of FIDO2 passwordless authentication | Microsoft Entra ID
 description: Browsers and operating system combinations support FIDO2 passwordless authentication for apps using Microsoft Entra ID
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/09/2023
+ms.date: 02/06/2024
 
 author: justinha
 ms.author: justinha
 manager: amycolannino
 ms.reviewer: calui
-
-ms.collection: M365-identity-device-management
 ---
-# Browser support of FIDO2 passwordless authentication
+# Native app and browser support of FIDO2 passwordless authentication
 
-Microsoft Entra ID allows [FIDO2 security keys](./concept-authentication-passwordless.md#fido2-security-keys) to be used as a passwordless device. The availability of FIDO2 authentication for Microsoft accounts was [announced in 2018](https://techcommunity.microsoft.com/t5/identity-standards-blog/all-about-fido2-ctap2-and-webauthn/ba-p/288910), and it became [generally available](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/passwordless-authentication-is-now-generally-available/ba-p/1994700) in March 2021. The following diagram shows which browsers and operating system combinations support passwordless authentication using FIDO2 authentication keys with Microsoft Entra ID. Microsoft Entra ID currently supports only hardware FIDO2 keys and doesn't support passkeys for any platform.
+Microsoft Entra ID allows [FIDO2 security keys](./concept-authentication-passwordless.md#fido2-security-keys) to be used as a passwordless device. The availability of FIDO2 authentication for Microsoft accounts was [announced in 2018](https://techcommunity.microsoft.com/t5/identity-standards-blog/all-about-fido2-ctap2-and-webauthn/ba-p/288910), and it became [generally available](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/passwordless-authentication-is-now-generally-available/ba-p/1994700) in March 2021. This topic covers which browsers, native apps, and operating systems support passwordless authentication using FIDO2 security keys with Microsoft Entra ID. Microsoft Entra ID currently supports only hardware FIDO2 keys and doesn't support passkeys for any platform.
 
-## Supported browsers
+## Native app support (preview)
 
-This table shows support for authenticating Microsoft Entra ID and Microsoft Accounts (MSA). Microsoft accounts are created by consumers for services such as Xbox, Skype, or Outlook.com. 
+Microsoft applications provide native support for FIDO2 authentication in preview for all users who have an authentication broker installed for their operating system. The following tables lists which authentication brokers are supported for different operating systems.
+
+| Operating system | Authentication broker           | Supports FIDO2 |
+|------------------|---------------------------------|----------------|
+| iOS              | Microsoft Authenticator         | &#x2705;       |
+| macOS            | Microsoft Intune Company Portal <sup>1</sup> | &#x2705;       |
+| Android<sup>2</sup> | Authenticator or Company Portal | &#10060;    |
+
+<sup>1</sup>On macOS, the [Microsoft Enterprise SSO plug-in](/entra/identity-platform/apple-sso-plugin) is required to enable Company Portal as an authentication broker. Devices that run macOS must meet SSO plug-in requirements, including enrollment in mobile device management. For FIDO2 authentication, make sure that you run the latest version of native applications. 
+
+<sup>2</sup>Native app support for FIDO2 on Android is in development.
+
+If a user installed an authentication broker, they can choose to sign in with a security key when they access an application such as Outlook. They're redirected to sign in with FIDO2, and redirected back to Outlook as a signed in user after successful authentication.
+
+If the user hasn't installed an authentication broker, they can still sign in with a security key when they access MSAL-enabled applications that meet the requirements as listed in [Support for FIDO2 authentication](/entra/identity-platform/support-fido2-authentication).
+
+## Browser support
+
+This table shows browser support for authenticating Microsoft Entra ID and Microsoft accounts by using FIDO2. Microsoft accounts are created by consumers for services such as Xbox, Skype, or Outlook.com. 
 
 | OS  | Chrome | Edge | Firefox | Safari |
 |:---:|:------:|:----:|:-------:|:------:|
@@ -31,9 +46,6 @@ This table shows support for authenticating Microsoft Entra ID and Microsoft Acc
 | **Linux**  | &#x2705; | &#10060; | &#10060; | N/A |
 | **iOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
 | **Android**  | &#10060; | &#10060; | &#10060; | N/A |
-
->[!NOTE]
->This is the view for web support. Authentication for native apps in macOS, iOS and Android isn't available yet.
 
 ## Browser support for each platform
 
@@ -98,7 +110,7 @@ The following tables show which transports are supported for each platform. Supp
 | Chrome  | &#10060;  | &#10060; | &#10060; |
 | Firefox | &#10060;  | &#10060; | &#10060; |
 
-<sup>1</sup>Security key biometrics or PIN for user verficiation are currently supported on Android by Google. Microsoft Entra ID requires user verification for all FIDO2 authentications.
+<sup>1</sup>Security key biometrics or PIN for user verification are currently supported on Android by Google. Microsoft Entra ID requires user verification for all FIDO2 authentications.
 
 ## Minimum browser version
 
@@ -111,6 +123,18 @@ The following are the minimum browser version requirements.
 | Firefox | 66 |
 
 <sup>1</sup>All versions of the new Chromium-based Microsoft Edge support FIDO2. Support on Microsoft Edge legacy was added in 1903.
+
+## Known issues
+
+If you're using Chrome or Edge, the browser might prioritize usage of a passkey that's stored on a mobile device over a passkey that's stored on a security key. 
+
+- Beginning with Windows 11 version 23H2, the OS will show the following prompt during sign-in. Below **More choices**, choose **Security key** and click **Next**.
+
+  :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/security-key.png" alt-text="Screenshot of option to choose security key on Windows 11."::: 
+
+- On earlier versions of Windows, the browser may show the QR pairing screen to continue with using a passkey that's stored on a mobile device. To use a passkey that's stored on a security key instead, insert your security key and touch it to continue. 
+
+  :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/insert-device-bound-passkey.png" alt-text="Screenshot of option to insert a device-bound passkey on Windows 10."::: 
 
 ## Next steps
 [Enable passwordless security key sign-in](./howto-authentication-passwordless-security-key.md)

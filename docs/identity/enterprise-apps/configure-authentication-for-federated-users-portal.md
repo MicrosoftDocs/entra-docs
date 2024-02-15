@@ -4,17 +4,16 @@ description: Learn how to force federated IdP acceleration for an application us
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.workload: infrastructure-services
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 03/16/2023
 ms.author: jomondi
 ms.reviewer: ludwignick
-ms.custom: seoapril2019, enterprise-apps, has-azure-ad-ps-ref
+ms.custom: enterprise-apps, has-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
 zone_pivot_groups: home-realm-discovery
-#customer intent: As and admin, I want to configure Home Realm Discovery for Microsoft Entra authentication for federated users.
+#customer intent: As an IT admin configuring sign-in behavior for federated users in Microsoft Entra ID, I want to understand how to use Home Realm Discovery (HRD) policy to enable auto-acceleration sign-in and direct username/password authentication, so that I can streamline the sign-in process for specific applications and improve user experience.
 ---
 
 # Configure sign-in behavior using Home Realm Discovery

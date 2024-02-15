@@ -7,10 +7,10 @@ ms.author: owenrichards
 ms.custom:
 ms.date: 02/13/2023
 ms.reviewer: ludwignick
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer building a web service, I want to understand how to implement the OAuth 2.0 client credentials flow, so that I can authenticate my web service when calling another web service without impersonating a user.
 ---
 
 # Microsoft identity platform and the OAuth 2.0 client credentials flow
@@ -152,7 +152,7 @@ Content-Type: application/x-www-form-urlencoded
 
 client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
-&client_secret=sampleCredentia1s
+&client_secret=sampleCredentials
 &grant_type=client_credentials
 ```
 
@@ -281,6 +281,6 @@ Read the [client credentials overview documentation](https://aka.ms/msal-net-cli
 
 | Sample | Platform |Description |
 |--------|----------|------------|
-|[active-directory-dotnetcore-daemon-v2](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) | .NET Core 6.0+ | A .NET Core application that displays the users of a tenant querying the Microsoft Graph using the identity of the application, instead of on behalf of a user. The sample also illustrates the variation using certificates for authentication. |
+|[active-directory-dotnetcore-daemon-v2](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) | .NET 6.0+ | An ASP.NET Core application that displays the users of a tenant querying the Microsoft Graph using the identity of the application, instead of on behalf of a user. The sample also illustrates the variation using certificates for authentication. |
 |[active-directory-dotnet-daemon-v2](https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2)| ASP.NET MVC | A web application that syncs data from the Microsoft Graph using the identity of the application, instead of on behalf of a user. |
 |[ms-identity-javascript-nodejs-console](https://github.com/Azure-Samples/ms-identity-javascript-nodejs-console)| Node.js Console | A Node.js application that displays the users of a tenant by querying the Microsoft Graph using the identity of the application |

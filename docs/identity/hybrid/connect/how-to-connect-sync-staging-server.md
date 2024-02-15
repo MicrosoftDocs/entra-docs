@@ -1,21 +1,18 @@
 ---
 title: 'Microsoft Entra Connect Sync: Operational tasks and considerations'
 description: This topic describes operational tasks for Microsoft Entra Connect Sync and how to prepare for operating this component.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
 ms.assetid: b29c1790-37a3-470f-ab69-3cee824d220d
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 
 # Microsoft Entra Connect: Staging server and disaster recovery
@@ -398,4 +395,3 @@ else
 
 * [Microsoft Entra Connect Sync: Understand and customize synchronization](how-to-connect-sync-whatis.md)  
 * [Integrating your on-premises identities with Microsoft Entra ID](../whatis-hybrid-identity.md)  
-

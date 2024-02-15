@@ -6,10 +6,10 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 04/21/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer building applications with secure authorization, I want to understand the claims based authorization process, so that I can ensure my applications adhere to the most secure practices.
 ---
 
 # Secure applications and APIs by validating claims
@@ -26,7 +26,7 @@ To make sure that your authorization logic is secure, you must validate the foll
 * The actor (client app) is authorized.
 
 > [!NOTE]
->Access tokens are only validated in the web APIs for which they were acquired by a client. The client should not validate access tokens.
+> Access tokens are only validated in the web APIs for which they were acquired by a client. The client should not validate access tokens.
 
 For more information about the claims mentioned in this article, see [Microsoft identity platform access tokens](access-tokens.md).
 
@@ -43,6 +43,8 @@ For more information about the appID URI of an application, see [Application ID 
 ## Validate the tenant
 
 Always check that the `tid` in a token matches the tenant ID used to store data with the application. When information is stored for an application in the context of a tenant, it should only be accessed again later in the same tenant. Never allow data in one tenant to be accessed from another tenant.
+
+Validation of the tenant is only the first step, and the checks on subject and actor described in this article are still required. If your intention is to authorize all users in a tenant, it's strongly recommended to explicitly add these users into a group and authorize based on the group. For example, by only checking the tenant ID and the presence of an `oid` claim, your API could inadvertently authorize all service principals in that tenant in addition to users.
 
 ## Validate the subject
 
@@ -63,10 +65,10 @@ The `roles`, `groups` or `wids` claims can also be used to determine if the subj
 
 A client application that's acting on behalf of a user (referred to as the *actor*), must also be authorized. Use the `scp` claim (scope) to validate that the application has permission to perform an operation. The permissions in `scp` should be limited to what the user actually needs and follows the principles of [least privilege](secure-least-privileged-access.md). 
 
-However, there are known scenarios where `scp` isn't present in the token: 
+However, there are occurrences where `scp` isn't present in the token. You should check for the absence of the `scp` claim for the following scenarios:
 
-* Daemon apps / app only permission - validate the role claims instead of the `scp` claim.
-* A separate role-based access control system is used - validate roles instead of `scp`.
+* Daemon apps / app only permission
+* ID tokens
 
 For more information about scopes and permissions, see [Scopes and permissions in the Microsoft identity platform](scopes-oidc.md).
 

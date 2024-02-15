@@ -4,8 +4,8 @@ description: Learn how to use advanced certificate signing options in the SAML t
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: conceptual
 ms.date: 07/18/2023
@@ -13,6 +13,8 @@ ms.author: jomondi
 ms.reviewer: saumadan
 ms.custom: enterprise-apps
 ms.collection: M365-identity-device-management
+
+#customer intent: As an administrator managing SAML-based single sign-on in Microsoft Entra ID, I want to change the certificate signing options and signing algorithm for an application, so that I can ensure the security and compatibility of the SAML tokens used for authentication.
 ---
 
 # Advanced certificate signing options in a SAML token

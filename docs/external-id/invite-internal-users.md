@@ -3,18 +3,17 @@ title: Invite internal users to B2B collaboration
 description: If you have internal user accounts for partners, distributors, suppliers, vendors, and other guests, you can change to Microsoft Entra B2B collaboration by inviting them to sign in with their own external credentials or sign-in. Use either PowerShell or the Microsoft Graph invitation API.
 
  
-ms.service: active-directory
-ms.subservice: B2B
-ms.custom: has-azure-ad-ps-ref
+ms.service: entra-external-id
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 07/27/2023
+ms.date: 11/10/2023
 
 ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
 
 ms.collection: M365-identity-device-management
-# Customer intent: As a tenant administrator, I want to know how to invite internal users to B2B collaboration.
+# Customer intent: As an IT admin managing internal guest users, I want to invite them to use B2B collaboration, so that they can sign in using their own identities and credentials, eliminating the need for password maintenance or account lifecycle management.
 ---
 
 # Invite internal users to B2B collaboration
@@ -73,14 +72,12 @@ You can use the Microsoft Entra admin center, PowerShell, or the invitation API 
 
 ## Use PowerShell to send a B2B invitation
 
-You'll need Azure AD PowerShell module version 2.0.2.130 or later. Use the following command to update to the latest module and invite the internal user to B2B collaboration:
+You'll need the [latest Microsoft Graph PowerShell module](/powershell/microsoftgraph/installation). Use the following command to update to the latest module and invite the internal user to B2B collaboration:
 
 ```powershell
-Uninstall-Module AzureAD
-Install-Module AzureAD
-$ADGraphUser = Get-AzureADUser -objectID "UPN of Internal User"
-$msGraphUser = New-Object Microsoft.Open.MSGraph.Model.User -ArgumentList $ADGraphUser.ObjectId
-New-AzureADMSInvitation -InvitedUserEmailAddress <<external email>> -SendInvitationMessage $True -InviteRedirectUrl "http://myapps.microsoft.com" -InvitedUser $msGraphUser
+Update-Module Microsoft.Graph
+Get-MgUser -UserId '11111111-aaaa-2222-bbbb-333333333333' 
+New-MgInvitation -InvitedUserEmailAddress John@contoso.com -SendInvitationMessage:$true -InviteRedirectUrl "https://myapplications.microsoft.com" -InvitedUser $msGraphUser
 ```
 
 ## Use the invitation API to send a B2B invitation

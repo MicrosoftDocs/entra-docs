@@ -5,10 +5,10 @@ author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
 ms.custom: 
-ms.date: 12/01/2021
+ms.date: 02/01/2024
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform for developers.
 ---
@@ -19,7 +19,7 @@ For a daemon application, here's what you need to know when you register the app
 
 ## Supported account types
 
-Daemon applications make sense only in Microsoft Entra tenants. So when you create the application, choose one of the following options:
+When creating the application in your in Microsoft Entra tenant, choose one of the following options for your app registration:
 
 - **Accounts in this organizational directory only**. This choice is the most common one because daemon applications are written by line-of-business (LOB) developers.
 - **Accounts in any organizational directory**. You'll make this choice if you're an Independent Software Vendor (ISV) providing a utility tool to your customers. You'll need your customers' tenant admins to approve it.
@@ -32,7 +32,7 @@ In the case where your confidential client application uses _only_ the client cr
 
 A daemon application can request only application permissions to APIs (not delegated permissions). On the **API permissions** page for the application registration, after you've selected **Add a permission** and chosen the API family, choose **Application permissions**, and then select your permissions.
 
-![App permissions and admin consent](media/scenario-daemon-app/app-permissions-and-admin-consent.png)
+:::image type="content" source="media/scenario-daemon-app/app-permissions-and-admin-consent.png" alt-text="Screenshot of app permissions and admin consent." lightbox="media/scenario-daemon-app/app-permissions-and-admin-consent.png":::
 
 The web API that you want to call needs to define _Application permissions (app roles)_, not delegated permissions. For details on how to expose such an API, see [Protected web API: App registration - when your web API is called by a daemon app](scenario-protected-web-api-app-registration.md#if-your-web-api-is-called-by-a-service-or-daemon-app).
 

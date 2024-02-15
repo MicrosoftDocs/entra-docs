@@ -2,9 +2,7 @@
 metadata:
   title: Microsoft Entra device management FAQ
   description: Microsoft Entra device management FAQ.
-  
-  services: active-directory
-  ms.service: active-directory
+  ms.service: entra-id
   ms.subservice: devices
   ms.custom: has-azure-ad-ps-ref
   ms.topic: faq
@@ -13,7 +11,7 @@ metadata:
   author: MicrosoftGuyJFlo
   manager: amycolannino
   ms.reviewer: ravenn
-  ms.collection: M365-identity-device-management
+  
 title: Microsoft Entra device management FAQ
 summary: |
 
@@ -45,7 +43,9 @@ sections:
           - [Troubleshooting Microsoft Entra hybrid joined Windows 10 and Windows Server 2016 devices](troubleshoot-hybrid-join-windows-current.md)
           - [Troubleshooting Microsoft Entra hybrid joined down-level devices](troubleshoot-hybrid-join-windows-legacy.md)
           
-          
+      - question: My org on-premises AD users are split into two or more different tenants in Microsoft Entra ID. Do I get Windows PRT for each tenant on client machine?
+        answer: |
+          Windows clients fetch the PRT from Microsoft Entra ID if the user and the device belong to the same tenant. User will not get PRT for another tenant if the device is not registered or user is not a member there. If two tenant users trust each other via B2B access you can always create cross tenant B2B access and trust device claims from your home tenant.
           
       - question: I see the device record under the USER info and I see the state as registered. Am I set up correctly to use Conditional Access?
         answer: |

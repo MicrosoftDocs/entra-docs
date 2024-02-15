@@ -4,8 +4,8 @@ description: The Active Directory Federation Services (AD FS) application activi
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: conceptual
 
 ms.date: 03/23/2023
@@ -13,6 +13,8 @@ ms.author: jomondi
 ms.collection: M365-identity-device-management
 ms.reviewer: alamaral
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT admin managing Active Directory Federation Services (AD FS) applications, I want to use the AD FS application activity report in the Microsoft Entra admin center to identify which applications can be migrated to Microsoft Entra ID, so that I can prioritize and plan the migration process efficiently.
 ---
 
 # Review the application activity report

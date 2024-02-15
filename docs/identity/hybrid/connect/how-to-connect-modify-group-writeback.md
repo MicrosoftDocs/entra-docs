@@ -1,17 +1,16 @@
 ---
 title: 'Modify group writeback in Microsoft Entra Connect'
-description: This article describes how to modify the default behavior for group writeback in Microsoft Entra Connect. 
-services: active-directory
+description: This article describes how to modify the default behavior for group writeback in Microsoft Entra Connect.
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: how-to
-ms.workload: identity
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 
 # Modify Microsoft Entra Connect group writeback default behavior 

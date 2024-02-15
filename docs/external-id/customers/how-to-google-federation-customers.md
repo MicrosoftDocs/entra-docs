@@ -4,11 +4,11 @@ description: Learn how to add Google as an identity provider for your customer t
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
-ms.date: 11/28/2023
+ms.date: 01/07/2024
 ms.author: mimart
 ms.custom: it-pro, has-azure-ad-ps-ref
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -17,6 +17,11 @@ ms.custom: it-pro, has-azure-ad-ps-ref
 # Add Google as an identity provider
 
 By setting up federation with Google, you allow customers to sign in to your applications with their own Google accounts. After you add Google as one of your user flow's sign-in options, customers can sign up and sign in to your application with a Google account. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=Social)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Sign-in with a social account” use case.
 
 ## Prerequisites
 

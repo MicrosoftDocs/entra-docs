@@ -2,7 +2,7 @@
 title: Cloud apps, actions, and authentication context in Conditional Access policy
 description: What are cloud apps, actions, and authentication context in a Microsoft Entra Conditional Access policy
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
@@ -18,7 +18,7 @@ ms.reviewer: lhuangnorth
 
 Target resources (formerly Cloud apps, actions, and authentication context) are key signals in a Conditional Access policy. Conditional Access policies allow administrators to assign controls to specific applications, services, actions, or authentication context.
 
-- Administrators can choose from the list of applications or services that include built-in Microsoft applications and any [Microsoft Entra integrated applications](~/identity/enterprise-apps/what-is-application-management.md) including gallery, non-gallery, and applications published through [Application Proxy](~/identity/app-proxy/what-is-application-proxy.md).
+- Administrators can choose from the list of applications or services that include built-in Microsoft applications and any [Microsoft Entra integrated applications](~/identity/enterprise-apps/what-is-application-management.md) including gallery, non-gallery, and applications published through [Application Proxy](~/identity/app-proxy/overview-what-is-app-proxy.md).
 - Administrators might choose to define policy not based on a cloud application but on a [user action](#user-actions) like **Register security information** or **Register or join devices**, allowing Conditional Access to enforce controls around those actions.
 - Administrators can target [traffic forwarding profiles](#traffic-forwarding-profiles) from Global Secure Access for enhanced functionality.
 - Administrators can use [authentication context](#authentication-context) to provide an extra layer of security in applications.
@@ -29,7 +29,7 @@ Target resources (formerly Cloud apps, actions, and authentication context) are 
 
 Many of the existing Microsoft cloud applications are included in the list of applications you can select from.
 
-Administrators can assign a Conditional Access policy to the following cloud apps from Microsoft. Some apps like Office 365 and Microsoft Azure Management include multiple related child apps or services. We continually add more apps, so the following list isn't exhaustive and is subject to change.
+Administrators can assign a Conditional Access policy to the following cloud apps from Microsoft. Some apps like Office 365 and Windows Azure Service Management API include multiple related child apps or services. We continually add more apps, so the following list isn't exhaustive and is subject to change.
 
 - [Office 365](#office-365)
 - Azure Analysis Services
@@ -41,7 +41,7 @@ Administrators can assign a Conditional Access policy to the following cloud app
 - Common Data Service
 - Microsoft Application Insights Analytics
 - [Microsoft Azure Information Protection](/azure/information-protection/faqs#i-see-azure-information-protection-is-listed-as-an-available-cloud-app-for-conditional-accesshow-does-this-work)
-- [Microsoft Azure Management](#microsoft-azure-management)
+- [Windows Azure Service Management API](#windows-azure-service-management-api)
 - Microsoft Defender for Cloud Apps
 - Microsoft Commerce Tools Access Control Portal
 - Microsoft Commerce Tools Authentication Service
@@ -82,9 +82,9 @@ Administrators can exclude the entire Office 365 suite or specific Office 365 cl
 
 A complete list of all services included can be found in the article [Apps included in Conditional Access Office 365 app suite](reference-office-365-application-contents.md).
 
-### Microsoft Azure Management
+### Windows Azure Service Management API
 
-When you target the Microsoft Azure Management application, policy is enforced for tokens issued to a set of services closely bound to the portal. This grouping includes the application IDs of:
+When you target the Windows Azure Service Management API application, policy is enforced for tokens issued to a set of services closely bound to the portal. This grouping includes the application IDs of:
 
 - Azure Resource Manager
 - Azure portal, which also covers the Microsoft Entra admin center
@@ -108,9 +108,9 @@ Because the policy is applied to the Azure management portal and API, services, 
 - Microsoft IoT Central
 
 > [!NOTE]
-> The Microsoft Azure Management application applies to [Azure PowerShell](/powershell/azure/what-is-azure-powershell), which calls the [Azure Resource Manager API](/azure/azure-resource-manager/management/overview). It does not apply to [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview), which calls the [Microsoft Graph API](/graph/overview).
+> The Windows Azure Service Management API application applies to [Azure PowerShell](/powershell/azure/what-is-azure-powershell), which calls the [Azure Resource Manager API](/azure/azure-resource-manager/management/overview). It does not apply to [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview), which calls the [Microsoft Graph API](/graph/overview).
 
-For more information on how to set up a sample policy for Microsoft Azure Management, see [Conditional Access: Require MFA for Azure management](howto-conditional-access-policy-azure-management.md).
+For more information on how to set up a sample policy for Windows Azure Service Management API, see [Conditional Access: Require MFA for Azure management](howto-conditional-access-policy-azure-management.md).
 
 > [!TIP]
 > For Azure Government, you should target the Azure Government Cloud Management API application.
@@ -130,20 +130,20 @@ When a Conditional Access policy targets the Microsoft Admin Portals cloud app, 
 We're continually adding more administrative portals to the list.
 
 > [!NOTE]
-> The Microsoft Admin Portals app applies to interactive sign-ins to the listed admin portals only. Sign-ins to the underlying resources or services like Microsoft Graph or Azure Resource Manager APIs are not covered by this application. Those resources are protected by the [Microsoft Azure Management](#microsoft-azure-management) app. This enables customers to move along the MFA adoption journey for admins without impacting automation that relies on APIs and PowerShell. When you are ready, Microsoft recommends using a [policy requiring administrators perform MFA always](howto-conditional-access-policy-admin-mfa.md) for comprehensive protection.
+> The Microsoft Admin Portals app applies to interactive sign-ins to the listed admin portals only. Sign-ins to the underlying resources or services like Microsoft Graph or Azure Resource Manager APIs are not covered by this application. Those resources are protected by the [Windows Azure Service Management API](#windows-azure-service-management-api) app. This enables customers to move along the MFA adoption journey for admins without impacting automation that relies on APIs and PowerShell. When you are ready, Microsoft recommends using a [policy requiring administrators perform MFA always](howto-conditional-access-policy-admin-mfa.md) for comprehensive protection.
 
 ### Other applications
 
 Administrators can add any Microsoft Entra registered application to Conditional Access policies. These applications might include:
 
-- Applications published through [Microsoft Entra application proxy](~/identity/app-proxy/what-is-application-proxy.md)
+- Applications published through [Microsoft Entra application proxy](~/identity/app-proxy/overview-what-is-app-proxy.md)
 - [Applications added from the gallery](~/identity/enterprise-apps/add-application-portal.md)
 - [Custom applications not in the gallery](~/identity/enterprise-apps/view-applications-portal.md)
 - [Legacy applications published through app delivery controllers and networks](~/identity/enterprise-apps/secure-hybrid-access.md)
 - Applications that use [password based single sign-on](~/identity/enterprise-apps/configure-password-single-sign-on-non-gallery-applications.md)
 
 > [!NOTE]
-> Since Conditional Access policy sets the requirements for accessing a service you are not able to apply it to a client (public/native) application. In other words, the policy is not set directly on a client (public/native) application, but is applied when a client calls a service. For example, a policy set on SharePoint service applies to the clients calling SharePoint. A policy set on Exchange applies to the attempt to access the email using Outlook client. That is why client (public/native) applications are not available for selection in the Cloud Apps picker and Conditional Access option is not available in the application settings for the client (public/native) application registered in your tenant.
+> Since Conditional Access policy sets the requirements for accessing a service you are not able to apply it to a client (public/native) application. In other words, the policy is not set directly on a client (public/native) application, but is applied when a client calls a service. For example, a policy set on SharePoint service applies to all clients calling SharePoint. A policy set on Exchange applies to the attempt to access the email using Outlook client. That is why client (public/native) applications are not available for selection in the Cloud Apps picker and Conditional Access option is not available in the application settings for the client (public/native) application registered in your tenant.
 
 Some applications don't appear in the picker at all. The only way to include these applications in a Conditional Access policy is to include **All cloud apps**.
 

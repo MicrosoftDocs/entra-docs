@@ -4,14 +4,16 @@ description: Learn to implement secure hybrid access (SHA) with Single Sign-on t
 
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 12/14/2022
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT admin, I want to configure F5 BIG-IP Easy Button for Kerberos single sign-on with Microsoft Entra ID, so that I can improve the security posture of legacy applications and enable SSO between Microsoft Entra ID and BIG-IP published services.
 ---
 
 # Tutorial: Configure F5 BIG-IP Easy Button for Kerberos single sign-on
@@ -36,7 +38,7 @@ Because it's legacy, the application lacks modern protocols to support direct in
 A BIG-IP in front of the application enables overlay of the service with Microsoft Entra pre-authentication and headers-based SSO, improving the security posture of the application.
 
 > [!NOTE] 
-> Organizations can gain remote access to this type of application with [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md)
+> Organizations can gain remote access to this type of application with [Microsoft Entra application proxy](/entra/identity/app-proxy)
 
 ## Scenario architecture
 
