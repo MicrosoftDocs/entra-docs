@@ -33,7 +33,7 @@ Microsoft Entra application proxy offers many security benefits. The list of ben
 
 Only authenticated connections can access your network when you use Microsoft Entra pre authentication.
 
-Microsoft Entra application proxy relies on the Microsoft Entra security token service (STS) for all authentication.  Pre authentication, by its very nature, blocks a significant number of anonymous attacks, because only authenticated identities can access the back-end application.
+Microsoft Entra application proxy relies on the Microsoft Entra security token service (STS) for all authentication. Pre authentication, by its very nature, blocks a significant number of anonymous attacks, because only authenticated identities can access the back-end application.
 
 If you choose Passthrough as your pre authentication method, you don't get this benefit. 
 
@@ -43,7 +43,7 @@ Apply richer policy controls before connections to your network are established.
 
 With [Conditional Access](~/identity/conditional-access/concept-conditional-access-cloud-apps.md), you can define restrictions on how users are allowed to access your applications. You can create policies that restrict sign-ins based on location, strength of authentication, and user risk profile.
 
-You can also use Conditional Access to configure Multi-Factor Authentication policies, adding another layer of security to your user authentications. Additionally, your applications can also be routed to Microsoft Defender for Cloud Apps via Microsoft Entra Conditional Access to provide real-time monitoring and controls, via [access](/defender-cloud-apps/access-policy-aad) and [session](/defender-cloud-apps/session-policy-aad) policies
+You can also use Conditional Access to configure Multi-Factor Authentication policies, adding another layer of security to your user authentications. Additionally, your applications can also be routed to Microsoft Defender for Cloud Apps via Microsoft Entra Conditional Access to provide real-time monitoring and controls, via [access](/defender-cloud-apps/access-policy-aad) and [session](/defender-cloud-apps/session-policy-aad) policies.
 
 ### Traffic termination
 
@@ -112,8 +112,9 @@ When the connector is first set up, the following flow events take place:
 Whenever the application proxy service updates the configuration settings, the following flow events take place:
 
 1. The connector connects to the configuration endpoint within the application proxy service by using its client certificate.
-2. After the client certificate is validated, the application proxy service returns configuration data to the connector (for example, the connector group that the connector should be part of).
-3. If the current certificate is more than 180 days old, the connector generates a new certificate request, which effectively updates the client certificate every 180 days.
+1. The client certificate is validated.
+1. The application proxy service returns configuration data to the connector (for example, the connector group that the connector should be part of).
+1. The connector generates a new certificate request if the current certificate is more than 180 days old.
 
 ### Accessing published applications
 
@@ -130,28 +131,24 @@ To learn more about what takes place in each of these steps, keep reading.
 
 #### 1. The service authenticates the user for the app
 
-If you configured the app to use Passthrough as its preauthentication method, the steps in this section are skipped.
+If you configured the app to use Passthrough as its pre authentication method, the steps in this section are skipped.
 
-If you configured the app to preauthenticate with Microsoft Entra ID, users are redirected to the Microsoft Entra STS to authenticate, and the following steps take place:
+If you configured the app to pre authenticate with Microsoft Entra ID, users are redirected to the Microsoft Entra STS to authenticate, and the following steps take place:
 
 1. Application proxy checks for Conditional Access policy requirements. The step ensures the user is assigned to the application. If two-step verification is required, the authentication sequence prompts the user for a second authentication method.
-
-2. After all checks pass, the Microsoft Entra STS issues a signed token for the application and redirects the user back to the application proxy service.
-
-3. Application proxy verifies that the token was issued to the correct application. It performs other checks also, such as ensuring that the token was signed by Microsoft Entra ID, and that it is still within the valid window.
-
-4. Application proxy sets an encrypted authentication cookie to indicate successful authentication to the application. The cookie includes an expiration timestamp that's based on the token from Microsoft Entra ID. The cookie also includes the user name that the authentication is based on. The cookie is encrypted with a private key known only to the application proxy service.
-
+2. The Microsoft Entra STS issues a signed token for the application and redirects the user back to the application proxy service.
+3. Application proxy verifies that the token was issued to the correct application. It also ensures the token is signed by Microsoft Entra ID, and that it is still valid.
+4. Application proxy sets an encrypted authentication cookie to indicate successful authentication to the application. The cookie includes an expiration timestamp based on the token from Microsoft Entra ID. The cookie also includes the user name that the authentication is based on. The cookie is encrypted with a private key known only to the application proxy service.
 5. Application proxy redirects the user back to the originally requested URL.
 
-If any part of the preauthentication steps fails, the user’s request is denied, and the user is shown a message indicating the source of the problem.
+If any part of the pre authentication steps fails, the user’s request is denied, and the user is shown a message indicating the source of the problem.
 
 
 #### 2. The service places a request in the connector queue
 
 Connectors keep an outbound connection open to the application proxy service. When a request comes in, the service queues up the request on one of the open connections for the connector to pick up.
 
-The request includes items from the application, such as the request headers, data from the encrypted cookie, the user making the request, and the request ID. Although data from the encrypted cookie is sent with the request, the authentication cookie itself is not.
+The request includes request headers, data from the encrypted cookie, the user making the request, and the request ID. Although data from the encrypted cookie is sent with the request, the authentication cookie itself is not.
 
 #### 3. The connector processes the request from the queue. 
 
@@ -172,7 +169,5 @@ After it receives a response, the connector makes an outbound connection to the 
 Some processing of the application may occur here. If you configured application proxy to translate headers or URLs in your application, that processing happens as needed during this step.
 
 ## Next steps
-
-[Network topology considerations when using Microsoft Entra application proxy](application-proxy-network-topology.md)
-
-[Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md)
+- [Network topology considerations when using Microsoft Entra application proxy](application-proxy-network-topology.md)
+- [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md)
