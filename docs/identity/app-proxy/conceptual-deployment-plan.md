@@ -308,7 +308,6 @@ Learn more about common issues and how to resolve them with our guide to [troubl
 The following articles cover common scenarios that can also be used to create troubleshooting guides for your support organization.
 
 * [Problem displaying app page](application-proxy-page-appearance-broken-problem.md)
-* [Application load is too long](application-proxy-page-load-speed-problem.md)
 * [Links on application page not working](application-proxy-page-links-broken-problem.md)
 * [What ports to open for my app](application-proxy-add-on-premises-application.md)
 * [Configure single sign-on to my app](how-to-configure-sso.md)
