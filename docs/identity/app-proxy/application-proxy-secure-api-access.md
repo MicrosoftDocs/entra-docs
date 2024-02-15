@@ -107,7 +107,7 @@ To register the AppProxyNativeAppSample native app:
 
 1. Select **New registration**.
 
-1. On the **Register an application** page:
+1. Enter information on the **Register an application** page.
 
    1. Under **Name**, enter *AppProxyNativeAppSample*.
 
@@ -163,7 +163,6 @@ After you configure the parameters, build and run the native app. When you selec
 ![Screenshot shows a message Secret A P I Successful and an OK button.](./media/application-proxy-secure-api-access/success.png)
 
 ## Next steps
-
-- [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md)
-- [Quickstart: Configure a client application to access web APIs](~/identity-platform/quickstart-configure-app-access-web-apis.md)
-- [How to enable native client applications to interact with proxy applications](application-proxy-configure-native-client-application.md)
+- [Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md)
+- [Configure a client application to access web APIs](~/identity-platform/quickstart-configure-app-access-web-apis.md)
+- [Enable native client applications to interact with proxy applications](application-proxy-configure-native-client-application.md)
