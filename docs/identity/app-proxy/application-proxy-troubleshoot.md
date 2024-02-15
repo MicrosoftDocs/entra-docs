@@ -27,7 +27,7 @@ You have problems with your application rendering or functioning incorrectly wit
 
 For example, if you publish the path `https://yourapp/app` but the application calls images in `https://yourapp/media`, they aren't rendered. Make sure that you publish the application using the highest level path you need to include all relevant content. In this example, it would be `http://yourapp/`.
 
-# An application proxy application takes too long to load
+## An application proxy application takes too long to load
 Applications can be functional but experience a long latency. Network topology tweaks can make improves to speed. For an evaluation of different topologies, see the [network considerations document](application-proxy-network-topology.md).
 
 ## I can load my application, but something on the page looks broken
