@@ -43,7 +43,7 @@ Apply richer policy controls before connections to your network are established.
 
 With [Conditional Access](~/identity/conditional-access/concept-conditional-access-cloud-apps.md), you can define restrictions on how users are allowed to access your applications. You can create policies that restrict sign-ins based on location, strength of authentication, and user risk profile.
 
-You can also use Conditional Access to configure Multi-Factor Authentication policies, adding another layer of security to your user authentications. Additionally, your applications can also be routed to Microsoft Defender for Cloud Apps via Microsoft Entra Conditional Access to provide real-time monitoring and controls, via [access](/defender-cloud-apps/access-policy-aad) and [session](/defender-cloud-apps/session-policy-aad) policies.
+You can also use Conditional Access to configure multifactor authentication policies, adding another layer of security to your user authentications. Additionally, your applications can also be routed to Microsoft Defender for Cloud Apps via Microsoft Entra Conditional Access to provide real-time monitoring and controls, via [access](/defender-cloud-apps/access-policy-aad) and [session](/defender-cloud-apps/session-policy-aad) policies.
 
 ### Traffic termination
 
@@ -55,7 +55,7 @@ Because Microsoft Entra application proxy is a reverse-proxy, all traffic to bac
 
 You don't need to open inbound connections to the corporate network.
 
-Application proxy connectors only use outbound connections to the Microsoft Entra application proxy service. There is no need to open firewall ports for incoming connections. Traditional proxies require a perimeter network (also known as *DMZ*, *demilitarized zone*, or *screened subnet*) and allow access to unauthenticated connections at the network edge. With application proxy, you don't need a perimeter network because all connections are outbound and take place over a secure channel.
+Application proxy connectors only use outbound connections to the Microsoft Entra application proxy service. There's no need to open firewall ports for incoming connections. Traditional proxies require a perimeter network (also known as *DMZ*, *demilitarized zone*, or *screened subnet*) and allow access to unauthenticated connections at the network edge. With application proxy, you don't need a perimeter network because all connections are outbound and take place over a secure channel.
 
 For more information about connectors, see [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md).
 
@@ -166,7 +166,7 @@ After it receives a response, the connector makes an outbound connection to the 
 
 #### 5. The service streams data to the user. 
 
-Some processing of the application may occur here. If you configured application proxy to translate headers or URLs in your application, that processing happens as needed during this step.
+Some processing of the application occurs at this time. For example, application proxy translates headers or URLs.
 
 ## Next steps
 - [Application proxy network topology](application-proxy-network-topology.md)
