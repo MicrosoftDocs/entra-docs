@@ -131,9 +131,6 @@ The following instructions help you create a tenant app registration to authoriz
 3. Navigate to **Access > Guided Configuration**.
 4. Select **Microsoft Integration**.
 5. Select **Microsoft Entra Application**.
-
-   ![Screenshot of the Microsoft Entra Application option under Guided Configuration.](./media/f5-big-ip-easy-button-ldap/easy-button-template.png)
-
 6. Review the configuration sequence.
 7. Select **Next**
 
