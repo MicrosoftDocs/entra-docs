@@ -12,13 +12,13 @@ ms.date:  02/12/2023
 ms.author: cmulligan
 ms.custom: it-pro
 
-#Customer intent: As an it admin, 
+#Customer intent: As an it admin, I want to learn more about native authentication so that I can understand how to use it in my organization.
 ---
 # Native authentication for customer apps
 
-Developers can create seamless authentication experiences for customer-facing mobile and desktop applications using the private preview Microsoft Authentication Library (MSAL) for iOS and Android. Native authentication enables you to host the user interface in the client application instead of delegating authentication to browsers, resulting in a natively integrated authentication experience. You also have the flexibility to choose from different authentication methods to create the authentication experience that suits your needs.
+Native authentication enables you to host the user interface in the client application instead of delegating authentication to browsers, resulting in a natively integrated authentication experience. With native authentication you can create seamless authentication experiences for customer-facing mobile and desktop applications using the private preview Microsoft Authentication Library (MSAL) for iOS and Android. You also have the flexibility to choose from different authentication methods to create the authentication experience that suits your needs.  
 
-   ![Image of available native authentication experiences.](media/native-auth-experiences.png)
+:::image type="content" source="media/concept-native-auth/native-auth-experiences.png" alt-text="Native authentication experiences.":::
 
 With native authentication, the application code controls the authentication experience. As the developer, you have full control over the look and feel of the user interface using the language of your choice. For example, you can define the background design, logo placement, layouts, and other elements that give your app a consistently branded look.
 
