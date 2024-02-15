@@ -58,7 +58,7 @@ To find personal data logged by an application that uses Kerberos Constrained De
 
 To delete specific data:
 
-1. Generate a new log file, restart the Microsoft Entra application proxy connector service. The new log file enables you to delete or modify the old log files. 
+1. Generate a new log file. Restart the Microsoft Entra application proxy connector service. The new log file enables you to delete or modify the old log files. 
 1. Follow the [View or export specific data](#view-or-export-specific-data) process described previously to find information that needs to be deleted. Search all of the connector logs.
 1. Either delete the relevant log files or selectively delete the fields that contain personal data. You can also delete all old log files if you don’t need them anymore.
 
