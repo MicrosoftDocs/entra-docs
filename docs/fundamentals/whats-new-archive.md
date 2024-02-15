@@ -268,7 +268,7 @@ Monitor guest accounts at scale with intelligent insights into inactive guest us
 **Service category:** Privileged Identity Management                            
 **Product capability:** Privileged Identity Management                  
 
-You can minimize the number of persistent administrators in applications such as [AWS](~/identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups-preview)/[GCP](~/identity/saas-apps/g-suite-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups-preview) and get JIT access to groups in AWS and GCP. While PIM for Groups is publicly available, we’ve released a public preview that integrates PIM with provisioning and reduces the activation delay from 40+ minutes to 1 – 2 minutes.
+You can minimize the number of persistent administrators in applications such as [AWS](~/identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups-preview)/[GCP](~/identity/saas-apps/g-suite-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups-preview) and get JIT access to groups in AWS and GCP. While PIM for Groups is publicly available, we also released a public preview that integrates PIM with provisioning and reduces the activation delay from 40+ minutes to 1 – 2 minutes.
 
 ---
 
@@ -288,7 +288,7 @@ Announcing API support (beta) for managing PIM security alerts for Azure AD role
 **Service category:** Other                            
 **Product capability:** End User Experiences                
 
-The Azure mobile app has been enhanced to empower admins with specific permissions to conveniently reset their users' passwords. Self Service Password Reset will not be supported at this time. However, users can still more efficiently control and streamline their own sign-in and auth methods. The mobile app can be downloaded for each platform here:
+The Azure mobile app has been enhanced to empower admins with specific permissions to conveniently reset their users' passwords. Self Service Password Reset won't be supported at this time. However, users can still more efficiently control and streamline their own sign-in and auth methods. The mobile app can be downloaded for each platform here:
 
 - Android: https://aka.ms/AzureAndroidWhatsNew
 - IOS: https://aka.ms/ReferAzureIOSWhatsNew
@@ -301,7 +301,7 @@ The Azure mobile app has been enhanced to empower admins with specific permissio
 **Service category:** Provisioning                              
 **Product capability:** Inbound to Azure AD                  
 
-With API-driven inbound provisioning, Microsoft Entra ID provisioning service now supports integration with any system of record. Customers and partners can use any automation tool of their choice to retrieve workforce data from any system of record for provisioning into Entra ID and connected on-premises Active Directory domains. The IT admin has full control on how the data is processed and transformed with attribute mappings. Once the workforce data is available in Entra ID, the IT admin can configure appropriate joiner-mover-leaver business processes using Entra ID Governance Lifecycle Workflows. For more information, see: [API-driven inbound provisioning concepts (Public preview)](~/identity/app-provisioning/inbound-provisioning-api-concepts.md).
+With API-driven inbound provisioning, Microsoft Entra ID provisioning service now supports integration with any system of record. Customers and partners can use any automation tool of their choice to retrieve workforce data from any system of record for provisioning into Microsoft Entra ID and connected on-premises Active Directory domains. The IT admin has full control on how the data is processed and transformed with attribute mappings. Once the workforce data is available in Microsoft Entra ID, the IT admin can configure appropriate joiner-mover-leaver business processes using Microsoft Entra ID Governance Lifecycle Workflows. For more information, see: [API-driven inbound provisioning concepts (Public preview)](~/identity/app-provisioning/inbound-provisioning-api-concepts.md).
 
 ---
 
@@ -509,7 +509,7 @@ The integration is available for all providers: PIM for Azure AD roles, PIM for 
 **Service category:** MFA                       
 **Product capability:** Identity Security & Protection              
 
-As part of ongoing service improvements, we're making updates to the per-user MFA admin configuration experience to align with the look and feel of Azure. This change doesn't include any changes to the core functionality and will only include visual improvements. For more information, see: [Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events](~/identity/authentication/howto-mfa-userstates.md).
+As part of ongoing service improvements, we're making updates to the per-user MFA admin configuration experience to align with the look and feel of Azure. This change doesn't include any changes to the core functionality and will only include visual improvements. For more information, see: [Enable per-user Microsoft Entra multifactor authentication to secure sign-in events](~/identity/authentication/howto-mfa-userstates.md).
 
 ---
 
@@ -549,7 +549,7 @@ Restricted Management Administrative Units allow you to restrict modification of
 **Service category:** Identity Protection                        
 **Product capability:** Identity Security & Protection              
 
-Report suspicious activity is an updated implementation of the MFA fraud alert, where users can report a voice or phone app MFA prompt as suspicious. If enabled, users reporting prompts have their user risk set to high, enabling admins to use Identity Protection risk based policies or risk detection APIs to take remediation actions.  Report suspicious activity operates in parallel with the legacy MFA fraud alert at this time. For more information, see: [Configure Azure AD Multi-Factor Authentication settings](~/identity/authentication/howto-mfa-mfasettings.md).
+Report suspicious activity is an updated implementation of the MFA fraud alert, where users can report a voice or phone app MFA prompt as suspicious. If enabled, users reporting prompts have their user risk set to high, enabling admins to use Identity Protection risk based policies or risk detection APIs to take remediation actions.  Report suspicious activity operates in parallel with the legacy MFA fraud alert at this time. For more information, see: [Configure Microsoft Entra multifactor authentication settings](~/identity/authentication/howto-mfa-mfasettings.md).
 
 ---
 
@@ -1524,173 +1524,5 @@ And more. For an up-to-date list, refer to our [migration guide](~/identity-plat
 To make the migration process easier, we published a [comprehensive guide](~/identity-platform/msal-migration.md#how-to-migrate-to-msal) that documents the migration paths across different platforms and programming languages. 
 
 In addition to the Microsoft Authentication Library to Microsoft Authentication Library update, we recommend migrating from Azure AD Graph API to Microsoft Graph. This change enables you to take advantage of the latest additions and enhancements, such as CAE, across the Microsoft service offering through a single, unified endpoint. You can read more in our [Migrate your apps from Azure AD Graph to Microsoft Graph](/graph/migrate-azure-ad-graph-overview) guide. You can post any questions to [Microsoft Q&A](/answers/topics/azure-active-directory.html) or [Stack Overflow](https://stackoverflow.com/questions/tagged/msal).
-
----
-
-## November 2022
-
-### General Availability - Use Web Sign-in on Windows for password-less recovery with Temporary Access Pass
-
-
-
-**Type:** Changed feature   
-**Service category:** N/A          
-**Product capability:** User Authentication     
-
-The Temporary Access Pass can now be used to recover Azure AD-joined PCs when the EnableWebSignIn policy is enabled on the device. This is useful for when your users don't know, or have, a password. For more information, see: [Authentication/EnableWebSignIn](/windows/client-management/mdm/policy-csp-authentication#authentication-enablewebsignin).
-
-
----
-
-### Public Preview - Workload Identity Federation for Managed Identities
-
-
-
-**Type:** New feature   
-**Service category:** Managed identities for Azure resources         
-**Product capability:** Developer Experience       
-
-Developers can now use managed identities for their software workloads running anywhere, and for accessing Azure resources, without needing secrets. Key scenarios include:
-
-- Accessing Azure resources from Kubernetes pods running on-premises or in any cloud.
-- GitHub workflows to deploy to Azure, no secrets necessary.
-- Accessing Azure resources from other cloud platforms that support OIDC, such as Google Cloud.
-
-For more information, see: 
-- [Configure a user-assigned managed identity to trust an external identity provider (preview)](~/workload-id/workload-identity-federation-create-trust-user-assigned-managed-identity.md)
-- [Workload identity federation](~/workload-id/workload-identity-federation.md)
-- [Use an Azure AD workload identity (preview) on Azure Kubernetes Service (AKS)](/azure/aks/workload-identity-overview)
-
-
----
-
-### General Availability - Authenticator on iOS is FIPS 140 compliant
-
-
-
-**Type:** New feature   
-**Service category:** Microsoft Authenticator App              
-**Product capability:** User Authentication     
-
-Authenticator version 6.6.8 and higher on iOS will be FIPS 140 compliant for all Azure AD authentications using push multi-factor authentications (MFA), Password-less Phone Sign-In (PSI), and time-based one-time pass-codes (TOTP). No changes in configuration are required in the Authenticator app or Azure portal to enable this capability. For more information, see: [FIPS 140 compliant for Azure AD authentication](~/identity/authentication/concept-authentication-authenticator-app.md#fips-140-compliant-for-azure-ad-authentication).
-
-
----
-
-### General Availability - New Federated Apps available in Azure AD Application gallery - November 2022
-
-
-
-**Type:** New feature   
-**Service category:** Enterprise Apps                 
-**Product capability:** 3rd Party Integration        
-
-In November 2022, we've added the following 22 new applications in our App gallery with Federation support
-
-[Adstream](~/identity/saas-apps/adstream-tutorial.md), [Databook](~/identity/saas-apps/databook-tutorial.md), [Ecospend IAM](https://ecospend.com/), [Digital Pigeon](~/identity/saas-apps/digital-pigeon-tutorial.md), [Drawboard Projects](~/identity/saas-apps/drawboard-projects-tutorial.md), [Vellum](https://www.vellum.ink/request-demo), [Veracity](https://aie-veracity.com/connect/azure), [Microsoft OneNote to Bloomberg Note Sync](https://www.bloomberg.com/professional/support/software-updates/), [DX NetOps Portal](~/identity/saas-apps/dx-netops-portal-tutorial.md), [itslearning Outlook integration](https://itslearning.com/global/), [Tranxfer](~/identity/saas-apps/tranxfer-tutorial.md), [Occupop](https://app.occupop.com/), [Nialli Workspace](https://ws.nialli.com/), [Tideways](https://app.tideways.io/login), [SOWELL](https://manager.sowellapp.com/#/?sso=true), [Prewise Learning](https://prewiselearning.com/), [CAPTOR for Intune](https://www.inkscreen.com/microsoft), [wayCloud Platform](https://app.way-cloud.de/login), [Nura Space Meeting Room](https://play.google.com/store/apps/details?id=com.meetingroom.prod), [Flexopus Exchange Integration](https://help.flexopus.com/de/microsoft-graph-integration), [Ren Systems](https://app.rensystems.com/login), [Nudge Security](https://www.nudgesecurity.io/login)
-
-You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial,
-
-For listing your application in the Azure AD app gallery, read the details here https://aka.ms/AzureADAppRequest
-
-
----
-
-### General Availability - New provisioning connectors in the Azure AD Application Gallery - November 2022
-
-
-
-**Type:** New feature   
-**Service category:** App Provisioning               
-**Product capability:** 3rd Party Integration        
-
-We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
-
-- [Keepabl](~/identity/saas-apps/keepabl-provisioning-tutorial.md)
-- [Uber](~/identity/saas-apps/uber-provisioning-tutorial.md)
-
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
-
-
----
-
-### Public Preview - Dynamic Group pause functionality 
-
-
-
-**Type:** New feature   
-**Service category:** Group Management           
-**Product capability:** Directory     
-
-Admins can now pause, and resume, the processing of individual dynamic groups in the Entra Admin Center. For more information, see: [Create or update a dynamic group in Azure Active Directory](~/identity/users/groups-create-rule.md).
-
-
----
-
-### Public Preview - Enabling extended customization capabilities for sign-in and sign-up pages in Company Branding capabilities.
-
-
-
-**Type:** New feature   
-**Service category:** Authentications (Logins)          
-**Product capability:** User Authentication     
-
-Update the Azure AD and Microsoft 365 sign-in experience with new company branding capabilities. You can apply your company’s brand guidance to authentication experiences with predefined templates. For more information, see: [Configure your company branding](./how-to-customize-branding.md).
-
-
----
-
-### Public Preview - Enabling customization capabilities for the Self-Service Password Reset (SSPR) hyperlinks, footer hyperlinks and browser icons in Company Branding.
-
-
-
-**Type:** New feature   
-**Service category:** Directory Management             
-**Product capability:** Directory       
-
-Update the company branding functionality on the Azure AD/Microsoft 365 sign-in experience to allow customizing Self Service Password Reset (SSPR) hyperlinks, footer hyperlinks and browser icon. For more information, see: [Configure your company branding](./how-to-customize-branding.md).
-
-
----
-
-### General Availability - Soft Delete for Administrative Units
-
-
-
-**Type:** New feature   
-**Service category:** Directory Management           
-**Product capability:** Directory      
-
-Administrative Units now support soft deletion. Admins can now list, view properties of, or restore deleted Administrative Units using the Microsoft Graph. This functionality restores all configuration for the Administrative Unit when restored from soft delete, including memberships, admin roles, processing rules, and processing rules state.
-
-This functionality greatly enhances recoverability and resilience when using Administrative Units. Now, when an Administrative Unit is accidentally deleted, you can restore it quickly to the same state it was at time of deletion. This removes uncertainty around configuration and makes restoration quick and easy. For more information, see: [List deletedItems (directory objects)](/graph/api/directory-deleteditems-list).
-
-
----
-
-### Public Preview - IPv6 coming to Azure AD
-
-
-
-**Type:** Plan for change      
-**Service category:** Identity Protection            
-**Product capability:** Platform     
-
-With the growing adoption and support of IPv6 across enterprise networks, service providers, and devices, many customers are wondering if their users can continue to access their services and applications from IPv6 clients and networks. Today, we’re excited to announce our plan to bring IPv6 support to Microsoft Azure Active Directory (Azure AD). This allows customers to reach the Azure AD services over both IPv4 and IPv6 network protocols (dual stack).
-For most customers, IPv4 won't completely disappear from their digital landscape, so we aren't planning to require IPv6 or to deprioritize IPv4 in any Azure Active Directory features or services.
-We'll begin introducing IPv6 support into Azure AD services in a phased approach, beginning March 31, 2023.
-We have guidance that is specifically for Azure AD customers who use IPv6 addresses and also use Named Locations in their Conditional Access policies.
-
-Customers who use named locations to identify specific network boundaries in their organization need to:
-1. Conduct an audit of existing named locations to anticipate potential risk.
-1. Work with your network partner to identify egress IPv6 addresses in use in your environment.
-1. Review and update existing named locations to include the identified IPv6 ranges.
-
-Customers who use Conditional Access location based policies to restrict and secure access to their apps from specific networks need to:
-1. Conduct an audit of existing Conditional Access policies to identify use of named locations as a condition to anticipate potential risk.
-1. Review and update existing Conditional Access location based policies to ensure they continue to meet your organization’s security requirements.
-
-We continue to share additional guidance on IPv6 enablement in Azure AD at this link: https://aka.ms/azureadipv6.
-
 
 ---
