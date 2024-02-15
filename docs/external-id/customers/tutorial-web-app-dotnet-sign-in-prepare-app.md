@@ -5,9 +5,9 @@ description: Learn how to prepare an ASP.NET Core web app for authentication wit
 author: cilwerner
 ms.author: cwerner
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
 
-ms.subservice: ciam
+ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.topic: tutorial
 ms.date: 05/23/2023

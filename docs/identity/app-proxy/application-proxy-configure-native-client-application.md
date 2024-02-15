@@ -1,39 +1,38 @@
 ---
 title: Publish native client apps
-description: Covers how to enable native client apps to communicate with Microsoft Entra application proxy Connector to provide secure remote access to your on-premises apps.
-services: active-directory
+description: Covers how to enable native client apps to communicate with the Microsoft Entra application proxy connector to provide secure remote access to your on-premises apps.
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom: devx-track-dotnet
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/12/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
 # How to enable native client applications to interact with proxy applications
 
-You can use Microsoft Entra application proxy to publish web apps, but it also can be used to publish native client applications that are configured with the Microsoft Authentication Library (MSAL). Native client applications differ from web apps because they're installed on a device, while web apps are accessed through a browser.
+Microsoft Entra application proxy is used to publish web apps. You can also use it to publish native client applications configured with the Microsoft Authentication Library (MSAL). Client applications differ from web apps because they're installed on a device, while web apps are accessed through a browser.
 
-To support native client applications, Application Proxy accepts Microsoft Entra ID-issued tokens that are sent in the header. The Application Proxy service does the authentication for the users. This solution doesn't use application tokens for authentication.
+To support native client applications, application proxy accepts Microsoft Entra ID-issued tokens that are sent in the header. The application proxy service does the authentication for the users. This solution doesn't use application tokens for authentication.
 
 ![Relationship between end users, Microsoft Entra ID, and published applications](./media/application-proxy-configure-native-client-application/richclientflow.png)
 
-To publish native applications, use the Microsoft Authentication Library, which takes care of authentication and supports many client environments. Application Proxy fits into the [Desktop app that calls a web API on behalf of a signed-in user](~/identity-platform/authentication-flows-app-scenarios.md#desktop-app-that-calls-a-web-api-on-behalf-of-a-signed-in-user) scenario.
+To publish native applications, use the Microsoft Authentication Library, which takes care of authentication and supports many client environments. Application proxy fits into the [Desktop app that calls a web API on behalf of a signed-in user](~/identity-platform/authentication-flows-app-scenarios.md#desktop-app-that-calls-a-web-api-on-behalf-of-a-signed-in-user) scenario.
 
-This article walks you through the four steps to publish a native application with Application Proxy and the Azure AD Authentication Library.
+This article walks you through the four steps to publish a native application with application proxy and the Microsoft Authentication Library (MSAL).
 
 ## Step 1: Publish your proxy application
 
-Publish your proxy application as you would any other application and assign users to access your application. For more information, see [Publish applications with Application Proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
+Publish your proxy application as you would any other application and assign users to access your application. For more information, see [Publish applications with application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
 
 ## Step 2: Register your native application
 
 You now need to register your application in Microsoft Entra ID, as follows:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses Application Proxy. If you need to change directories, select **Switch directory** and choose a directory that uses Application Proxy.
+1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses application proxy. If you need to change directories, select **Switch directory** and choose a directory that uses application proxy.
 1. Browse to **Identity** > **Applications** > **App registrations**. The list of all app registrations appears.
 1. Select **New registration**. The **Register an application** page appears.
 
@@ -52,7 +51,7 @@ For more detailed information about creating a new application registration, see
 
 ## Step 3: Grant access to your proxy application
 
-Now that you've registered your native application, you can give it access to other applications in your directory, in this case to access the proxy application. To enable the native application to be exposed to the proxy application:
+Your native application is registered. Give it access to the proxy application:
 
 1. In the sidebar of the new application registration page, select **API permissions**. The **API permissions** page for the new application registration appears.
 1. Select **Add a permission**. The **Request API permissions** page appears.
@@ -66,7 +65,7 @@ Now that you've registered your native application, you can give it access to ot
 Edit the native application code in the authentication context of the Microsoft Authentication Library (MSAL) to include the following text: 
 
 ```         
-// Acquire Access Token from AAD for Proxy Application
+// Acquire access token from Microsoft Entra ID for proxy application
 IPublicClientApplication clientApp = PublicClientApplicationBuilder
 .Create(<App ID of the Native app>)
 .WithDefaultRedirectUri() // will automatically use the default Uri for native app
@@ -107,7 +106,7 @@ The required info in the sample code can be found in the Microsoft Entra admin c
 | \<Scope> | **Application registration** > *your native application* > **API permissions** > Click on the Permission API (user_impersonation) > A panel with the caption **user_impersonation** appears on the right hand side. > The scope is the URL in the edit box.
 | \<Proxy App URL> | the External URL and path to the API
 
-After you edit the MSAL code with these parameters, your users can authenticate to native client applications even when they are outside of the corporate network.
+After you edit the MSAL code with these parameters, your users can authenticate to native client applications even when they're outside of the corporate network.
 
 ## Next steps
 

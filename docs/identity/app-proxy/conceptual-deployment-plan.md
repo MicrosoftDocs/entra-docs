@@ -1,10 +1,10 @@
 ---
 title: Plan a Microsoft Entra application proxy Deployment
 description: An end-to-end guide for planning the deployment of Application proxy within your organization
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual
 ms.date: 01/19/2024
@@ -13,7 +13,7 @@ ms.author: kenwith
 
 # Plan a Microsoft Entra application proxy deployment
 
-Microsoft Entra application proxy is a secure and cost-effective remote access solution for on-premises applications. It provides an immediate transition path for “Cloud First” organizations to manage access to legacy on-premises applications that aren’t yet capable of using modern protocols. For additional introductory information, see [What is Application Proxy](./application-proxy.md).
+Microsoft Entra application proxy is a secure and cost-effective remote access solution for on-premises applications. It provides an immediate transition path for “Cloud First” organizations to manage access to legacy on-premises applications that aren’t yet capable of using modern protocols. For additional introductory information, see [What is Application Proxy](overview-what-is-app-proxy.md).
 
 Application Proxy is recommended for giving remote users access to internal resources. Application Proxy replaces the need for a VPN or reverse proxy for these remote access use cases. It is not intended for users who are on the corporate network. These users who use Application Proxy for intranet access may experience undesirable performance issues.
 
@@ -311,10 +311,9 @@ The following articles cover common scenarios that can also be used to create tr
 * [Application load is too long](application-proxy-page-load-speed-problem.md)
 * [Links on application page not working](application-proxy-page-links-broken-problem.md)
 * [What ports to open for my app](application-proxy-add-on-premises-application.md)
-* [No working connector in a connector group for my app](application-proxy-connectivity-no-working-connector.md)
 * [Configure single sign-on to my app](how-to-configure-sso.md)
 * [Configure Kerberos Constrained Delegation](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
 * [Configure with PingAccess](application-proxy-ping-access-publishing-guide.md)
 * [Can't Access this Corporate Application error](application-proxy-sign-in-bad-gateway-timeout-error.md)
 * [Problem installing the Application Proxy Agent Connector](application-proxy-connector-installation-problem.md)
-* [Sign-in problem](application-sign-in-problem-on-premises-application-proxy.md)
+* [Sign-in problem](application-proxy-troubleshoot.md)

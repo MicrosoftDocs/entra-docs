@@ -4,8 +4,8 @@ description: Learn how to prepare a React single-page app (SPA) for authenticati
  
 author: garrodonnell
 manager: celestedg
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: tutorial
 ms.date: 11/27/2023
 ms.author: godonnell

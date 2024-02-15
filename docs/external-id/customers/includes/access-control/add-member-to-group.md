@@ -1,10 +1,11 @@
 ---
 author: kengaderdus
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: include
 ms.date: 07/12/2023
 ms.author: kengaderdus
+ms.manager: mwongerapk
 ---
 Now that you've added app groups claim in your application, add users to the security groups. If you don't have security group, [create one](~/fundamentals/how-to-manage-groups.md#create-a-basic-group-and-add-members).
 

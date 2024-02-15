@@ -3,10 +3,10 @@ title: Remove personal data - Microsoft Entra application proxy
 description:  Remove personal data from connectors installed on devices for Microsoft Entra application proxy.
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/14/2024
 ms.author: kenwith
 ms.reviewer: harshja
 ---
@@ -17,9 +17,9 @@ Microsoft Entra application proxy requires that you install connectors on your d
 
 ## Where is the personal data?
 
-It is possible for Application Proxy to write personal data to the following log types:
+It's possible for application proxy to write personal data to the following log types:
 
-- Connector event logs
+- connector event logs
 - Windows event logs
 
 ## Remove personal data from Windows event logs
@@ -28,9 +28,9 @@ For information on how to configure data retention for the Windows event logs, s
 
 [!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-hybrid-note.md)]
 
-## Remove personal data from Connector event logs
+## Remove personal data from connector event logs
 
-To ensure the Application Proxy logs do not have personal data, you can either:
+To ensure the application proxy logs don't have personal data, you can either:
 
 - Delete or view data when needed, or
 - Turn off logging
@@ -41,7 +41,7 @@ Use the following sections to remove personal data from connector event logs. Yo
 
 ### View or export specific data
 
-To view or export specific data, search for related entries in each of the connector event logs. The logs are located at `C:\ProgramData\Microsoft\Microsoft AAD Application Proxy Connector\Trace`.
+To view or export specific data, search for related entries in each of the connector event logs. The logs are located at `C:\ProgramData\Microsoft\Microsoft AAD Application Proxy connector\Trace`.
 
 Since the logs are text files, you can use [findstr](/windows-server/administration/windows-commands/findstr) to search for text entries related to a user.  
 
@@ -58,16 +58,16 @@ To find personal data logged by an application that uses Kerberos Constrained De
 
 To delete specific data:
 
-1. Restart the Microsoft Entra application proxy Connector service to generate a new log file. The new log file enables you to delete or modify the old log files. 
+1. Generate a new log file. Restart the Microsoft Entra application proxy connector service. The new log file enables you to delete or modify the old log files. 
 1. Follow the [View or export specific data](#view-or-export-specific-data) process described previously to find information that needs to be deleted. Search all of the connector logs.
 1. Either delete the relevant log files or selectively delete the fields that contain personal data. You can also delete all old log files if you don’t need them anymore.
 
 ### Turn off connector logs
 
-One option to ensure the connector logs do not contain personal data is to turn off the log generation. To stop generating connector logs, remove the following highlighted line from `C:\Program Files\Microsoft AAD App Proxy Connector\ApplicationProxyConnectorService.exe.config`.
+One option to ensure the connector logs don't contain personal data is to turn off the log generation. To stop generating connector logs, remove the following highlighted line from `C:\Program Files\Microsoft AAD App Proxy Connector\ApplicationProxyConnectorService.exe.config`.
 
 ![Shows a code snippet with the highlighted code to remove](./media/application-proxy-remove-personal-data/01.png)
 
 ## Next steps
 
-For an overview of Application Proxy, see [How to provide secure remote access to on-premises applications](application-proxy.md).
+For an overview of application proxy, see [How to provide secure remote access to on-premises applications](overview-what-is-app-proxy.md).

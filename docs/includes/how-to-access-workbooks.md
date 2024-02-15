@@ -3,7 +3,7 @@ title: how to access workbooks
 description: include file Microsoft Entra workbook instructions
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: include
 ms.date: 10/04/2023
 ms.author: sarahlipsey

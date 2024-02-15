@@ -1,12 +1,11 @@
 ---
 title: View activity logs for Microsoft Support access requests (preview)
 description: How to view activity logs for Microsoft Support access requests.
-services: active-directory
 author: shlipsey3
 manager: amycolannino
 ms.author: sarahlipsey
 ms.reviewer: jeffsta
-ms.service: active-directory
+ms.service: entra
 ms.topic: troubleshooting
 ms.subservice: fundamentals
 ms.date: 09/12/2023

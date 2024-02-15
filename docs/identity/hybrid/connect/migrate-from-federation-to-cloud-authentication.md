@@ -2,16 +2,16 @@
 title: Migrate from federation to cloud authentication in Microsoft Entra ID
 description: This article has information about moving your hybrid identity environment from federation to cloud authentication
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: hybrid
+
+ms.service: entra-id
+ms.subservice: hybrid-connect
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
 ms.date: 11/06/2023
 ms.author: billmath
 author: gargi-sinha
 manager: amycolannino
-ms.collection: M365-identity-device-management
+
 ---
 # Migrate from federation to cloud authentication  
 

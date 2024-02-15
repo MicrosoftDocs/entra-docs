@@ -5,8 +5,8 @@ description: Learn how to configure a Vanilla JavaScript single-page app (SPA) t
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.custom: devx-track-js
 ms.topic: tutorial
 ms.date: 08/02/2023

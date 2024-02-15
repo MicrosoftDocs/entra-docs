@@ -3,15 +3,14 @@ title: B2B collaboration code and PowerShell samples
 description: Code and PowerShell samples for Microsoft Entra B2B collaboration
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: sample
 ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref, devx-track-linux, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro, has-adal-ref, devx-track-linux, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 #customer intent: As an IT admin managing B2B collaboration, I want to bulk-invite external users to my organization by using PowerShell or by uploading a .csv file to the admin center or portal, so that I can streamline the onboarding process and save time.
 ---

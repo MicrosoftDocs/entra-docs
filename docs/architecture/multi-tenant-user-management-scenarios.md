@@ -1,16 +1,13 @@
 ---
 title: Common scenarios for using multi-tenant user management in Microsoft Entra ID
 description: Learn about common scenarios where guest accounts can be used to configure user access across Microsoft Entra tenants
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 04/19/2023
 ms.author: jricketts
-ms.custom: it-pro, seodec18, has-azure-ad-ps-ref
-ms.collection: M365-identity-device-management
 ---
 
 # Multi-tenant user management scenarios
@@ -59,7 +56,6 @@ Invited users can also try to directly access the resource, referred to as just-
 During JIT redemption, the following considerations may apply.
 
 - If administrators haven't [suppressed consent prompts](~/external-id/cross-tenant-access-settings-b2b-collaboration.md), the user must consent before accessing the resource.
-- PowerShell allows control over whether an email is sent when [using PowerShell](https://microsoft-my.sharepoint.com/powershell/module/azuread/new-azureadmsinvitation?view=azureadps-2.0&preserve-view=true) to invite users.
 - You can allow or block invitations to external users from specific organizations by using an [allowlist or a blocklist](~/external-id/allow-deny-list.md).
 
 For more information, see [Microsoft Entra B2B collaboration invitation redemption](~/external-id/redemption-experience.md).

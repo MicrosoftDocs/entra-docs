@@ -4,9 +4,9 @@ description: Learn how to create a customer tenant in the  Microsoft Entra admin
  
 author: csmulligan
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 02/02/2024
 ms.author: cmulligan
@@ -28,13 +28,13 @@ In this article, you learn how to:
 ## Prerequisites
 
 - An Azure subscription. If you don't have one, create a <a href="https://azure.microsoft.com/free/?WT.mc_id=A261C142F" target="_blank">free account</a> before you begin.
-- An Azure account that's been assigned at least the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) role scoped to the subscription or to a resource group within the subscription.
+- An Azure account that's been assigned at least the [Tenant Creator](/entra/identity/role-based-access-control/permissions-reference#tenant-creator) role scoped to the subscription or to a resource group within the subscription.
 
 [!INCLUDE [preview-alert](../customers/includes/preview-alert/preview-alert-ciam.md)]
 
 ## Create a new customer tenant  
 
-1. Sign in to your organization's [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Contributor](/azure/role-based-access-control/built-in-roles#contributor). 
+1. Sign in to your organization's [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Tenant Creator](/entra/identity/role-based-access-control/permissions-reference#tenant-creator). 
 1. Browse to **Identity** > **Overview** > **Manage tenants**.
 1. Select **Create**.
 

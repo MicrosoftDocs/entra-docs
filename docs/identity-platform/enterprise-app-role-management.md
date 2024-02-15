@@ -7,11 +7,11 @@ ms.author: cwerner
 ms.custom: 
 ms.date: 06/09/2023
 ms.reviewer: jeedes
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 
-#Customer intent: As a cloud application administrator, I want to customize the role claim in the access token for an enterprise application, so that I can define custom roles and assign them to user accounts.
+#Customer intent: As a cloud Application Administrator, I want to customize the role claim in the access token for an enterprise application, so that I can define custom roles and assign them to user accounts.
 ---
 
 # Configure the role claim

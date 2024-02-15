@@ -1,12 +1,11 @@
 ---
 title: Automate employee offboarding tasks after their last day of work with the Microsoft Entra admin center
 description: Tutorial for post off-boarding users from an organization using Lifecycle workflows with the Microsoft Entra admin center.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: tutorial
-ms.subservice: compliance
 ms.date: 08/18/2022
 ms.author: owinfrey
 ms.reviewer: krbain

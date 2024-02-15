@@ -1,12 +1,11 @@
 ---
 title: Resolve service principal alerts in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to troubleshoot service principal configuration alerts for Microsoft Entra Domain Services
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 
 ms.assetid: f168870c-b43a-4dd6-a13f-5cfadc5edf2c
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: has-azure-ad-ps-ref
 ms.topic: troubleshooting
