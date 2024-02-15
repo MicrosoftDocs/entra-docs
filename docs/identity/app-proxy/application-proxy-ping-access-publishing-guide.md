@@ -13,32 +13,30 @@ ms.reviewer: ashishj
 
 # Header-based authentication for single sign-on with application proxy and PingAccess
 
-Microsoft Entra application proxy has partnered with PingAccess so that your Microsoft Entra customers can access more of your applications. PingAccess provides another option beyond integrated [header-based single sign-on](application-proxy-configure-single-sign-on-with-headers.md).
+Microsoft partnered with PingAccess to provide more access applications. PingAccess provides another option beyond integrated [header-based single sign-on](application-proxy-configure-single-sign-on-with-headers.md).
 
 ## What's PingAccess for Microsoft Entra ID?
 
-With PingAccess for Microsoft Entra ID, you can give users access and single sign-on (SSO) to applications that use headers for authentication. Application proxy treats these applications like any other, using Microsoft Entra ID to authenticate access and then passing traffic through the connector service. PingAccess sits in front of the applications and translates the access token from Microsoft Entra ID into a header. The application then receives the authentication in the format it can read.
+With PingAccess for Microsoft Entra ID, you give users access and single sign-on (SSO) to applications that use headers for authentication. Application proxy treats these applications like any other, using Microsoft Entra ID to authenticate access and then passing traffic through the connector service. PingAccess sits in front of the applications and translates the access token from Microsoft Entra ID into a header. The application then receives the authentication in the format it can read.
 
-Your users won't notice anything different when they sign in to use your corporate applications. They can still work from anywhere on any device. The application proxy connectors direct remote traffic to all apps without regard to their authentication type, so they'll still balance loads automatically.
+Users don't notice anything different when they sign in to use corporate applications. Applications still work from anywhere on any device. The application proxy connectors direct remote traffic to all apps without regard to their authentication type, so they still balance loads automatically.
 
 ## How do I get access?
 
-Since this scenario comes from a partnership between Microsoft Entra ID and PingAccess, you need licenses for both services. However, Microsoft Entra ID P1 or P2 subscriptions include a basic PingAccess license that covers up to 20 applications. If you need to publish more than 20 header-based applications, you can purchase an additional license from PingAccess.
+You need a license for PingAccess and Microsoft Entra ID. However, Microsoft Entra ID P1 or P2 subscriptions include a basic PingAccess license that covers up to 20 applications. If you need to publish more than 20 header-based applications, you can purchase an additional license from PingAccess.
 
 For more information, see [Microsoft Entra editions](~/fundamentals/whatis.md).
 
 ## Publish your application in Azure
 
-This article is for people to publish an application with this scenario for the first time. Besides detailing the publishing steps, it guides you in getting started with both application proxy and PingAccess. If you've already configured both services but want a refresher on the publishing steps, skip to the [Add your application to Microsoft Entra ID with application proxy](#add-your-application-to-azure-ad-with-application-proxy) section.
+This article outlines the steps to publish an application for the first time. The article provides guidance for both application proxy and PingAccess.
 
 > [!NOTE]
-> Since this scenario is a partnership between Microsoft Entra ID and PingAccess, some of the instructions exist on the Ping Identity site.
+> Some of the instructions exist on the Ping Identity site.
 
 ### Install an application proxy connector
 
-If you've enabled application proxy and installed a connector already, you can skip this section and go to [Add your application to Microsoft Entra ID with application proxy](#add-your-application-to-azure-ad-with-application-proxy).
-
-The application proxy connector is a Windows Server service that directs the traffic from your remote employees to your published applications. For more detailed installation instructions, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
+The application proxy connector is a Windows Server service that directs traffic from your remote employees to your published applications. For more detailed installation instructions, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
@@ -49,24 +47,24 @@ Downloading the connector should automatically enable application proxy for your
 
 ### Add your application to Microsoft Entra ID with application proxy
 
-There are two actions you need to take in the Microsoft Entra admin center. First, you need to publish your application with application proxy. Then, you need to collect some information about the application that you can use during the PingAccess steps.
+There are two steps to add your application to Microsoft Entra ID. First, you need to publish your application with application proxy. Then, you need to collect information about the application that you can use during the PingAccess steps.
 
 #### Publish your application
 
-You'll first have to publish your application. This action involves:
+First, publish your application. This action involves:
 
-- Adding your on-premises application to Microsoft Entra ID
-- Assigning a user for testing the application and choosing header-based SSO
-- Setting up the application's redirect URL
-- Granting permissions for users and other applications to use your on-premises application
+- Adding your on-premises application to Microsoft Entra ID.
+- Assigning a user for testing the application and choosing header-based single sign-on.
+- Setting up the application's redirect URL.
+- Granting permissions for users and other applications to use your on-premises application.
 
-To publish your own on-premises application:
+To publish your own on premises application:
 
-1. If you didn't in the previous section, sign in to the [Microsoft Entra admin center](https://portal.azure.com) as an Application Administrator.
+1. Sign in to the [Microsoft Entra admin center](https://portal.azure.com) as an Application Administrator.
 1. Browse to **Enterprise applications** > **New application** > **Add an on-premises application**. The **Add your own on-premises application** page appears.
 
    ![Add your own on-premises application](./media/application-proxy-configure-single-sign-on-with-ping-access/add-your-own-on-premises-application.png)
-1. Fill out the required fields with information about your new application. Use the guidance below for the settings.
+1. Fill in the required fields with information about your new application. Use the guidance below for the settings.
 
    > [!NOTE]
    > For a more detailed walkthrough of this step, see [Add an on-premises app to Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).
@@ -74,9 +72,9 @@ To publish your own on-premises application:
    1. **Internal URL**: Normally you provide the URL that takes you to the app's sign-in page when you're on the corporate network. For this scenario, the connector needs to treat the PingAccess proxy as the front page of the application. Use this format: `https://<host name of your PingAccess server>:<port>`. The port is 3000 by default, but you can configure it in PingAccess.
 
       > [!WARNING]
-      > For this type of single sign-on, the internal URL must use `https` and can't use `http`. Also, there is a constraint when configuring an application that no two apps should have the same internal URL as this allows App Proxy to maintain distinction between applications.
+      > For this type of single sign-on, the internal URL must use `https` and not `http`. Also, no two applications should have the same internal URL so application proxy can maintain a distinction between them.
 
-   1. **Pre-authentication method**: Choose **Microsoft Entra ID**.
+   1. **Pre authentication method**: Choose **Microsoft Entra ID**.
    1. **Translate URL in Headers**: Choose **No**.
 
    > [!NOTE]
