@@ -23,8 +23,7 @@ When users, groups, or devices in an administrative unit no longer need access, 
 - Microsoft Entra ID P1 or P2 license for each administrative unit administrator
 - Microsoft Entra ID Free licenses for administrative unit members
 - Privileged Role Administrator or Global Administrator
-- Azure AD PowerShell module when using PowerShell
-- AzureADPreview module when using PowerShell for devices
+- Microsoft Graph PowerShell module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
