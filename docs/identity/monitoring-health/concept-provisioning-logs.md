@@ -3,9 +3,9 @@ title: User provisioning logs in Microsoft Entra ID
 description: Learn about the details included in the user provisioning logs in Microsoft Entra ID for when users are provisioned by a third party service.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 01/12/2024
 ms.author: sarahlipsey
 ms.reviewer: arvinh
@@ -23,6 +23,10 @@ Two other activity logs are also available to help monitor the health of your te
 - **[Audit](concept-audit-logs.md)** – Information about changes applied to your tenant such as users and group management or updates applied to your tenant’s resources.
 
 This article gives you an overview of the user provisioning logs.
+
+## License and role requirements
+
+[!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
 
 ## What can you do with the provisioning logs?
 

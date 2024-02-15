@@ -6,9 +6,9 @@ manager: CelesteDG
 ms.author: jomondi
 ms.custom: 
 ms.date: 12/15/2023
-ms.reviewer: jesakowi, asteen, jawoods
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: jesakowi, jawoods
+ms.service: identity-platform
+
 ms.topic: conceptual
 
 #Customer intent: As an application developer, I want to understand the consent experience in Microsoft Entra ID, so that I can intelligently manage applications for my organization and develop applications with a more seamless consent experience.

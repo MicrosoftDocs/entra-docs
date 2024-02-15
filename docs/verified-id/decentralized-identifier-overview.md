@@ -1,11 +1,11 @@
 ---
 title: Introduction to Microsoft Entra Verified ID
 description: An overview Azure Verifiable Credentials.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 ms.topic: overview
 ms.date: 10/24/2023
 ms.author: barclayn

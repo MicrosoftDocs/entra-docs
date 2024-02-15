@@ -3,9 +3,9 @@ title: Analyze activity logs using Log Analytics
 description: Learn how to analyze audit, sign-in, and provisioning logs Microsoft Entra ID using Log Analytics queries.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: how-to
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 12/15/2023
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
@@ -48,8 +48,8 @@ Azure Monitor provides [two built-in roles](/azure/azure-monitor/roles-permissio
   * Log Analytics Reader
 
 * **View and modify settings**:
-  *Monitoring Contributor
-  *Log Analytics Contributor
+  * Monitoring Contributor
+  * Log Analytics Contributor
 
 For more information on the Azure Monitor built-in roles, see [Roles, permissions, and security in Azure Monitor](/azure/azure-monitor/roles-permissions-security#monitoring-reader).
 

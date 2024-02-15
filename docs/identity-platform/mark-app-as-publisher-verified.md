@@ -6,9 +6,9 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
 ms.date: 08/17/2023
-ms.reviewer: xurobert
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: 
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As a developer integrating my app with the Microsoft identity platform, I want to complete the publisher verification process for my app registration, so that users can see that my app is publisher verified and trust its authenticity.
 ---

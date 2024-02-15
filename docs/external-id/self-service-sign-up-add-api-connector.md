@@ -2,16 +2,16 @@
 title: Add API connectors to self-service sign-up flows
 description: Configure a web API to be used in a user flow.
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/16/2023
+ms.date: 02/05/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
+#customer intent: As a User Administrator in Microsoft Entra, I want to add an API connector to a user flow after the authentication step or before creating the user, so that I can integrate with web APIs, customize the sign-up experience, and integrate with external systems.
 ---
 
 # Add an API connector to a user flow
@@ -144,7 +144,7 @@ A continuation response indicates that the user flow should continue to the next
 
 In a continuation response, the API can return claims. If a claim is returned by the API, the claim does the following:
 
-- Pre-fills the input field in the attribute collection page.
+- Prefills the input field in the attribute collection page.
 
 See an example of a [continuation response](#example-of-a-continuation-response).
 
@@ -304,8 +304,8 @@ Ensure that:
 * Your API explicitly checks for null values of received claims that it depends on.
 * Your API implements an authentication method outlined in [secure your API Connector](self-service-sign-up-secure-api-connector.md).
 * Your API responds as quickly as possible to ensure a fluid user experience.
-    * Microsoft Entra ID will wait for a maximum of *20 seconds* to receive a response. If none is received, it will make *one more attempt (retry)* at calling your API.
-    * If using a serverless function or scalable web service, use a hosting plan that keeps the API "awake" or "warm" in production. For Azure Functions, it's recommended to use at minimum the [Premium plan](/azure/azure-functions/functions-scale#overview-of-plans)
+    * Microsoft Entra ID waits for a maximum of *20 seconds* to receive a response. If none is received, it makes *one more attempt (retry)* at calling your API.
+    * If using a serverless function or scalable web service, use a hosting plan that keeps the API "awake" or "warm" in production. For Azure Functions, we recommended using at a minimum the [Premium plan](/azure/azure-functions/functions-scale#overview-of-plans).
 * Ensure high availability of your API.
 * Monitor and optimize performance of downstream APIs, databases, or other dependencies of your API.
 * Your endpoints must comply with the Microsoft Entra TLS and cipher security requirements. For more information, see [TLS and cipher suite requirements](/azure/active-directory-b2c/https-cipher-tls-requirements). 

@@ -2,7 +2,7 @@
 title: Windows roaming settings reference
 description: Settings that can roam or backed up in Windows with ESR
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: reference
 ms.date: 01/04/2024

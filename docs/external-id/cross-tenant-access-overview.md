@@ -2,10 +2,9 @@
 title: Cross-tenant access overview
 description: Get an overview of cross-tenant access in Microsoft Entra External ID. Learn how to manage your B2B collaboration with other Microsoft Entra organizations through this overview of cross-tenant access settings.
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 01/24/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -90,9 +89,6 @@ Primary identity providers are the ones that have federations with other sources
 
 Fallback identity providers can be either Microsoft account (MSA), email one-time passcode, or both. You can't disable both fallback identity providers, but you can disable all primary identity providers and only use fallback identity providers for redemption options. 
 
-> [!NOTE]
-> The Microsoft Entra admin center settings for the configurable redemption feature are currently rolling out to customers. Until the settings are available in the admin center, you can configure the invitation redemption order using the Microsoft Graph REST API (beta version). See [Example 2: Update default invitation redemption configuration](/graph/api/crosstenantaccesspolicyconfigurationdefault-update?view=graph-rest-beta&tabs=http#example-2-update-default-invitation-redemption-configuration&preserve-view=true) in the Microsoft Graph reference documentation.
-
 ### Direct federation for Microsoft Entra ID verified domains (Preview)
 
 SAML/WS-Fed identity provider federation (Direct federation) is now supported for Microsoft Entra ID verified domains. This feature allows you to set up a Direct federation with an external identity provider for a domain that is verified in Microsoft Entra. This feature is currently in public preview.
@@ -166,7 +162,7 @@ To collaborate with a partner tenant in a different Microsoft Azure cloud, both 
 > [!IMPORTANT]
 > Changing the default inbound or outbound settings to block access could block existing business-critical access to apps in your organization or partner organizations. Be sure to use the tools described in this article and consult with your business stakeholders to identify the required access.
 
-- To configure cross-tenant access settings in the Azure portal, you'll need an account with a Global administrator, Security administrator, or a [custom role](#custom-roles-for-managing-cross-tenant-access-settings) you've defined.
+- To configure cross-tenant access settings in the Azure portal, you'll need an account with a Global Administrator, Security Administrator, or a [custom role](#custom-roles-for-managing-cross-tenant-access-settings) you've defined.
 
 - To configure trust settings or apply access settings to specific users, groups, or applications, you'll need a Microsoft Entra ID P1 license. The license is required on the tenant that you configure. For B2B direct connect, where mutual trust relationship with another Microsoft Entra organization is required, you'll need a Microsoft Entra ID P1 license in both tenants. 
 

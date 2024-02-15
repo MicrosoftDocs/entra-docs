@@ -1,13 +1,11 @@
 ---
 title: Assign or remove licenses
 description: Instructions about how to assign or remove Microsoft Entra ID licenses from your users or groups.
-services: active-directory
 author: barclayn
 manager: amycolannino
 ms.assetid: f8b932bc-8b4f-42b5-a2d3-f2c076234a78
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: how-to
 ms.date: 12/01/2023
 ms.author: barclayn

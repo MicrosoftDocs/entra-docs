@@ -6,10 +6,10 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom: devx-track-js
 ms.date: 07/17/2020
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
-#Customer intent:
+#Customer intent: As a developer currently using MSAL.js 1.x with implicit grant flow, I want to migrate my JavaScript single-page app to MSAL.js 2.x with auth code flow, so that I can improve security and take advantage of new features like PKCE and CORS support.
 ---
 
 # Migrate a JavaScript single-page app from implicit grant to auth code flow
@@ -53,7 +53,7 @@ You can also [create a new app registration](scenario-spa-app-registration.md) i
 
 ## Update your code to MSAL.js 2.x
 
-In MSAL 1.x, you created a application instance by initializing a UserAgentApplication as follows:
+In MSAL 1.x, you created an application instance by initializing a UserAgentApplication as follows:
 
 ```javascript
 // MSAL 1.x
@@ -85,9 +85,6 @@ When you uncheck the implicit grant settings in the app registration, the implic
 
 ## Next steps
 
-To learn more about the authorization code flow, including the differences between the implicit and auth code flows, see the [Microsoft identity platform and OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md).
+- To learn more about the authorization code flow, including the differences between the implicit and auth code flows, see the [Microsoft identity platform and OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md).
 
-If you'd like to dive deeper into JavaScript single-page application development on the Microsoft identity platform, the multi-part [Scenario: Single-page application](scenario-spa-overview.md) series of articles can help you get started.
-
-<!-- LINKS - external -->
-[msal-js-publicclientapplication]: https://azuread.github.io/microsoft-authentication-library-for-js/ref/classes/_azure_msal_node.PublicClientApplication.html
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).

@@ -1,12 +1,10 @@
 ---
 title: How to find your tenant ID
 description: Instructions about how to find and Microsoft Entra tenant ID to an existing Azure subscription.
-services: active-directory
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 09/12/2023

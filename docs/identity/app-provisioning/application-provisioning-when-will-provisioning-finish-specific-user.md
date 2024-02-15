@@ -1,12 +1,11 @@
 ---
 title: Find out when a specific user is able to access an app in Microsoft Entra Application Provisioning
 description: How to find out when a critically important user is able to access an application you have configured for user provisioning with Microsoft Entra ID.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/15/2023
 ms.author: kenwith
@@ -33,6 +32,8 @@ After a provisioning cycle is complete, the **Statistics to date** section shows
 The provisioning progress is viewed in the Microsoft Entra admin center at **Identity** > **Applications** > **Enterprise applications** > \[*application name*\] > **Provisioning**.
 
 ![Provisioning page progress bar](./media/application-provisioning-when-will-provisioning-finish-specific-user/provisioning-progress-bar-section.png)
+
+You can also use Microsoft Graph to programmatically monitor the status of provisioning to an application.  For more information, see [monitor provisioning](application-provisioning-configuration-api.md#step-5-monitor-provisioning).
 
 ## Use provisioning logs to check a user's provisioning status
 

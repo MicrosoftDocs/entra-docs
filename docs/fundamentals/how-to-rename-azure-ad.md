@@ -1,10 +1,9 @@
 ---
 title: How to rename Azure Active Directory (Azure AD)
 description: Learn about best practices and tips on how customers and organizations can update their documentation or content to use the Microsoft Entra ID product name and icon.
-services: active-directory
 author: CelesteDG
 manager: CelesteDG
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 10/26/2023

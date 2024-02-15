@@ -1,20 +1,16 @@
 ---
 title: How to manage groups
 description: Instructions about how to create and update Microsoft Entra groups, such as membership and settings.
-services: active-directory
 author: shlipsey3
 manager: amycolannino
 
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 01/05/2024
 ms.author: sarahlipsey
 ms.reviewer: krbain
-
 # Customer Intent: As an IT admin, I want to learn how to create groups, add members, and adjust setting so that I can grant the right access to the right services for the right people.
-
 ---
 # Manage Microsoft Entra groups and group membership
 

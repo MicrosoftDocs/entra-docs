@@ -2,8 +2,8 @@
 title: Upgrading Azure MFA Server
 description: Steps and guidance to upgrade the Azure Multi-Factor Authentication Server to a newer version. 
 
-services: multi-factor-authentication
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 10/10/2022
@@ -12,8 +12,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jpettere
-
-ms.collection: M365-identity-device-management
 ---
 # Upgrade to the latest Azure Multi-Factor Authentication Server
 

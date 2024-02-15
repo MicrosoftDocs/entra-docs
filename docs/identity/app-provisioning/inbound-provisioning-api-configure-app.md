@@ -1,12 +1,11 @@
 ---
 title: Configure API-driven inbound provisioning app
 description: Learn how to configure API-driven inbound provisioning app.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/15/2023
 ms.author: kenwith
@@ -28,6 +27,7 @@ To complete the steps in this tutorial, you need access to Microsoft Entra admin
 
 * [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) (if you're configuring inbound user provisioning to Microsoft Entra ID) OR
 * [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) + [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) (if you're configuring inbound user provisioning to on-premises Active Directory)
+* Entra ID Premium P1 license is required to evaluate this feature in public preview.
 
 If you're configuring inbound user provisioning to on-premises Active Directory, you need access to a Windows Server where you can install the provisioning agent for connecting to your Active Directory domain controller. 
 

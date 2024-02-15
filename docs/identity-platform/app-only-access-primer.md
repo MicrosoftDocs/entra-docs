@@ -6,8 +6,8 @@ manager: celesteDG
 ms.author: jomondi
 ms.date: 03/15/2023
 ms.reviewer: jawoods, ludwignick, phsignor
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 
 #Customer intent: As a developer, I want to understand how application-only access works and when to use it, so that I can configure the appropriate app roles and permissions for my application and ensure secure access to resources without user interaction.

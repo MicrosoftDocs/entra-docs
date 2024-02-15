@@ -1,20 +1,14 @@
 ---
 title: Services and integration partners - Microsoft Entra
-description: Learn about partners who can help with deployment and integration of identity governance scenarios.  
-services: active-directory
-documentationcenter: ''
+description: Learn about partners who can help with deployment and integration of identity governance scenarios.
 author: markwahl-msft
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
 ms.topic: conceptual
-ms.subservice: compliance
 ms.date: 6/12/2023
 ms.author: mwahl
 ms.reviewer: mwahl
-ms.collection: M365-identity-device-management
 ---
 
 # Services and integration partners for Microsoft Entra ID Governance

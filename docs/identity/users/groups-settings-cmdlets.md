@@ -1,19 +1,17 @@
 ---
 title: Configure group settings using PowerShell
 description: How manage the settings for groups using Microsoft Entra cmdlets
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.collection: M365-identity-device-management
+
 ---
 # Microsoft Entra cmdlets for configuring group settings
 

@@ -1,21 +1,17 @@
 ---
 title: Sharing accounts and credentials
 description: Describes how Microsoft Entra ID enables organizations to securely share accounts for on-premises apps and consumer cloud services.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-editor: ''
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 ms.date: 06/24/2022
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
 
-ms.collection: M365-identity-device-management
 ---
 # Sharing accounts with Microsoft Entra ID
 
@@ -58,7 +54,7 @@ Microsoft Entra features that enable account sharing include:
 * Custom Password apps
 * [App usage dashboard/reports](~/identity/authentication/howto-sspr-reporting.md)
 * End-user access portals
-* [App proxy](~/identity/app-proxy/application-proxy.md)
+* [App proxy](/entra/identity/app-proxy)
 * [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureActiveDirectory)
 
 ## Sharing an account

@@ -1,17 +1,16 @@
 ---
 title: Configure managed identities on virtual machine scale set - Azure CLI
 description: Step-by-step instructions for configuring system and user-assigned managed identities on an Azure virtual machine scale set, using Azure CLI.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: quickstart
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 05/25/2023
 ms.author: barclayn
-ms.collection: M365-identity-device-management
+
 ms.custom: mode-api, devx-track-azurecli, devx-track-linux
 ms.devlang: azurecli
 ---
@@ -44,7 +43,7 @@ If you don't already have an Azure account, [sign up for a free account](https:/
   > [!NOTE]
   > No additional Microsoft Entra directory role assignments required.
 
-[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../articles/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../docs/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
 
 ## System-assigned managed identity
 
