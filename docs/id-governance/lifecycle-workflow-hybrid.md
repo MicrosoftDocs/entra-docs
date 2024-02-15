@@ -16,7 +16,7 @@ ms.custom: template-concept
 
 # Lifecycle Workflow hybrid capabilities (preview)
 
-Lifecycle Workflows allow you to create workflows that can be triggered for users based on joiner, mover, or leaver scenarios. These workflows allow you to streamline the process of managing users in your hybrid environment via tasks. You're able to enable a synced hybrid user via a user account task, run workflows when the user changes a team or job role, disable an account when the user leaves, and even delete the user account when they're no longer in your organization. These capabilities can be extended to hybrid users either out of the box, or with some prerequisites. In this article, you learn what is needed to use workflow features in your hybrid environment.
+Lifecycle Workflows allow you to create workflows that can be triggered for users based on joiner, mover, or leaver scenarios. With these workflows you can streamline the process of managing users in your hybrid environment via tasks. You're able to enable a synced hybrid user via a user account task, run workflows when the user changes a team or job role, disable an account when the user leaves, and even delete the user account when they're no longer in your organization. These capabilities work either out of the box, or with some configuration. In this article, you learn what is needed to use workflow features in your hybrid environment.
 
 
 ## Workflow triggers and hybrid capabilities
@@ -45,7 +45,7 @@ Tasks related to adding and removing users to a group work except for that the h
 
 Tasks related to managing user accounts when they're enabled, disabled, or deleted, work with hybrid users as long as you have satisfied the following prerequisites in setting up your hybrid environment:
 
-- You must have the [Microsoft Entra provisioning agent](../identity/hybrid/cloud-sync/what-is-provisioning-agent.md) installed in your environment. You can follow the existing installation [prerequisites](../identity/hybrid/cloud-sync/how-to-prerequisites.md) and [steps](../identity/hybrid/cloud-sync/how-to-install.md) in our public documentation. During installation, choose “**HR-driven provisioning / Azure AD Connect Cloud Sync**” as “**extension configuration**”. You aren't required to add any other configuration for the provisioning agent, such as the cloud sync configuration, and you can install the provisioning agent even if you're currently using Microsoft Entra Connect Sync for your user synchronization (side-by-side).
+- You must have the [Microsoft Entra provisioning agent](../identity/hybrid/cloud-sync/what-is-provisioning-agent.md) installed in your environment. You can follow the existing installation [prerequisites](../identity/hybrid/cloud-sync/how-to-prerequisites.md) and [steps](../identity/hybrid/cloud-sync/how-to-install.md) in our public documentation. During installation, choose “**HR-driven provisioning / Microsoft Entra Connect Sync**” as “**extension configuration**”. You aren't required to add any other configuration for the provisioning agent, such as the cloud sync configuration, and you can install the provisioning agent even if you're currently using Microsoft Entra Connect Sync for your user synchronization (side-by-side).
 
 - Ensure the gMSA used by the provisioning agent has the [appropriate permissions](../identity/hybrid/cloud-sync/how-to-prerequisites.md#custom-gmsa-account) to delete user accounts.
 
