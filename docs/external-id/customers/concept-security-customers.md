@@ -4,9 +4,9 @@ description: Learn about CIAM security and governance features.
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: conceptual
 ms.date: 01/18/2024
 ms.author: mimart

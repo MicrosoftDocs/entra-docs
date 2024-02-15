@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: devx-track-extended-java
 ms.date: 01/25/2021
-ms.reviewer: saeeda, jmprieur
+ms.reviewer: saeeda, negoe
 ms.service: identity-platform
 
 ms.topic: conceptual

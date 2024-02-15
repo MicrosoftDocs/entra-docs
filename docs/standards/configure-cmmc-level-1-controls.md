@@ -8,7 +8,7 @@ ms.subservice: standards
 ms.topic: conceptual
 ms.date: 1/3/2023
 ms.author: jricketts
-ms.custom: "it-pro, seodec18"
+ms.custom: it-pro
 ---
 
 # Configure CMMC Level 1 controls

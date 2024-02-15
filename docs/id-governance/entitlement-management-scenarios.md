@@ -1,18 +1,15 @@
 ---
 title: Common scenarios in entitlement management
 description: Learn the high-level steps you should follow for common scenarios in Microsoft Entra entitlement management.
-services: active-directory
 author: owinfreyatl
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
 ms.reviewer: mwahl
-ms.collection: M365-identity-device-management
 #Customer intent: As an administrator, I want the high-level steps that I should follow so that I can quickly start using entitlement management.
 ---
 # Common scenarios in entitlement management

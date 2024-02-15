@@ -24,8 +24,9 @@ Configuration of the connection to the application's database is done via a wiza
 #### Supported databases
 
 - Microsoft SQL Server and Azure SQL
-- IBM DB2 10.x
 - IBM DB2 9.x
+- IBM DB2 10.x
+- IBM DB2 11.5
 - Oracle 10g and 11g
 - Oracle 12c and 18c
 - MySQL 5.x

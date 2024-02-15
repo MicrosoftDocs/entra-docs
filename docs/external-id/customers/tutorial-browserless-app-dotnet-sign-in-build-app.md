@@ -5,10 +5,10 @@ author: SHERMANOUKO
 manager: mwongerapk
 
 ms.author: shermanouko
-ms.service: active-directory
+ms.service: entra-external-id
  
 ms.custom: devx-track-dotnet
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: tutorial
 ms.date: 07/27/2023
 #Customer intent: As a dev, devops, I want to learn about how to enable authentication in my .NET browserless app with Microsoft Entra ID for customers tenant

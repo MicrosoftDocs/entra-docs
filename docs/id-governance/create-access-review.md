@@ -1,18 +1,15 @@
 ---
 title: Create an access review of groups and applications
 description: Learn how to create an access review of group members or application access in Microsoft Entra ID.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: access-reviews
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 06/30/2023
 ms.author: owinfrey
 ms.reviewer: mwahl
-ms.collection: M365-identity-device-management
 ---
  
 # Create an access review of groups and applications in Microsoft Entra ID

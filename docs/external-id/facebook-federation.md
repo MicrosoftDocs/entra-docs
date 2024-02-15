@@ -4,15 +4,14 @@ title: Add Facebook as an identity provider
 description: Federate with Facebook to enable external users (guests) to sign in to your Microsoft Entra apps with their own Facebook accounts.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 #customer intent: As a B2B collaboration administrator, I want to add Facebook as an identity provider for self-service sign-up user flows, so that users can sign in to applications using their Facebook accounts.
 ---
