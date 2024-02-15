@@ -57,7 +57,7 @@ To publish the SecretAPI web API through application proxy:
 
 1. On the **Browse Microsoft Entra Gallery** page, locate section **On-premises applications** and select **Add an on-premises application**. The **Add your own on-premises application** page appears.
 
-1. If you don't have an application proxy connector installed, you are prompted to install it. Select **Download application proxy connector** to download and install the connector.
+1. If you don't have an application proxy connector installed, you're prompted to install it. Select **Download application proxy connector** to download and install the connector.
 
 1. Add information on the **Add your own on-premises application** page.
 
