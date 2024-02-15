@@ -58,7 +58,7 @@ First, publish your application. This action involves:
 - Setting up the application's redirect URL.
 - Granting permissions for users and other applications to use your on-premises application.
 
-To publish your own on premises application:
+To publish your own on-premises application:
 
 1. Sign in to the [Microsoft Entra admin center](https://portal.azure.com) as an Application Administrator.
 1. Browse to **Enterprise applications** > **New application** > **Add an on-premises application**. The **Add your own on-premises application** page appears.
@@ -110,7 +110,7 @@ In addition to the external URL, an authorize endpoint of Microsoft Entra ID on 
 `https://*.msappproxy.net/pa/oidc/cb`
 `https://*.msappproxy.net/`
 
-Finally, set up the on premises application so that users have `read` access and other applications have `read/write` access:
+Finally, set up the on-premises application so that users have `read` access and other applications have `read/write` access:
 
 1. From the **App registrations** sidebar for your application, select **API permissions** > **Add a permission** > **Microsoft APIs** > **Microsoft Graph**. The **Request API permissions** page for **Microsoft Graph** appears, which contains the permissions for Microsoft Graph.
 
@@ -181,7 +181,7 @@ Example to include email address into the access_token that PingAccess consumes:
 
 ### Use of claims mapping policy (optional)
 
-Claims mapping lets you migrate old on premises apps to the cloud by adding more custom claims that back your Active Directory Federation Services (ADFS) or user objects. For more information, see [Claims Mapping Policy (preview)](~/identity-platform/reference-claims-mapping-policy-type.md#claims-mapping-policy-properties).
+Claims mapping lets you migrate old on-premises apps to the cloud by adding more custom claims that back your Active Directory Federation Services (ADFS) or user objects. For more information, see [Claims Mapping Policy (preview)](~/identity-platform/reference-claims-mapping-policy-type.md#claims-mapping-policy-properties).
 
 To use a custom claim and include more fields in your application. [Created a custom claims mapping policy and assigned it to the application](~/identity-platform/saml-claims-customization.md).
 
