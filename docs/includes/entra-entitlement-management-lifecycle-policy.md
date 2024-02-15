@@ -1,10 +1,10 @@
 ---
 title: include file
 description: include file
-services: active-directory
+
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: include
 ms.date: 02/27/2023
 ms.author: owinfrey

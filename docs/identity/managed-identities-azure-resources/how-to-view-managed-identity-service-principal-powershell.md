@@ -1,20 +1,17 @@
 ---
 title: View the service principal of a managed identity using PowerShell
 description: Step-by-step instructions for viewing the service principal of a managed identity using PowerShell.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-editor: ''
 
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 02/15/2022
 ms.author: barclayn
-ms.collection: M365-identity-device-management 
+
 ms.custom: devx-track-azurepowershell
 ---
 

@@ -1,18 +1,15 @@
 ---
 title: Managed identities for Azure resources
 description: An overview of the managed identities for Azure resources.
-services: active-directory
-documentationcenter:
 author: barclayn
 manager: amycolannino
 ms.assetid: 0232041d-b8f5-4bd2-8d11-27999ad69370
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: overview
-ms.custom: mvc
 ms.date: 01/23/2023
 ms.author: barclayn
-ms.collection: M365-identity-device-management
+
 
 #Customer intent: As a developer, I'd like to securely manage the credentials that my application uses for authenticating to cloud services without having the credentials in my code or checked into source control.
 ---

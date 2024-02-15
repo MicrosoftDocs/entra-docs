@@ -1,8 +1,8 @@
 ---
 title: Tutorial - Configure Microsoft Entra Verified ID verifier
 description: In this tutorial, you learn how to configure your tenant to verify credentials.
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 author: barclayn
 manager: amycolannino
 ms.author: barclayn
@@ -97,7 +97,7 @@ Now make modifications to the sample app's issuer code to update it with your ve
     1. **DidAuthority**: Your decentralized identifier
     1. **CredentialType**: Your credential type
 
-CredentialManifest is only needed for issuance, so if all you want to do is presentation, it strictly isn't needed.
+    CredentialManifest is only needed for issuance, so if all you want to do is presentation, it strictly isn't needed.
 
 1. Save the *appsettings.json* file.
 

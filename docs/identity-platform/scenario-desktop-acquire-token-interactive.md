@@ -5,9 +5,9 @@ author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
 ms.custom: has-adal-ref
-ms.date: 08/25/2021
-ms.service: active-directory
-ms.subservice: develop
+ms.date: 01/15/2024
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform for developers.
 ---
@@ -21,19 +21,23 @@ The following example shows minimal code to get a token interactively for readin
 ### Code in MSAL.NET
 
 ```csharp
-string[] scopes = new string[] {"user.read"};
-var app = PublicClientApplicationBuilder.Create(clientId).Build();
+string[] scopes = new string[] { "user.read" };
+
+var app = PublicClientApplicationBuilder.Create("YOUR_CLIENT_ID")
+    .WithDefaultRedirectUri()
+    .Build();
+
 var accounts = await app.GetAccountsAsync();
+
 AuthenticationResult result;
 try
 {
- result = await app.AcquireTokenSilent(scopes, accounts.FirstOrDefault())
-             .ExecuteAsync();
+    result = await app.AcquireTokenSilent(scopes, accounts.FirstOrDefault())
+      .ExecuteAsync();
 }
-catch(MsalUiRequiredException)
+catch (MsalUiRequiredException)
 {
- result = await app.AcquireTokenInteractive(scopes)
-             .ExecuteAsync();
+    result = await app.AcquireTokenInteractive(scopes).ExecuteAsync();
 }
 ```
 
@@ -180,7 +184,7 @@ options = new SystemWebViewOptions
 };
 
 var result = app.AcquireTokenInteractive(scopes)
-                .WithEmbeddedWebView(false)       // The default in .NET Core
+                .WithEmbeddedWebView(false)       // The default in .NET
                 .WithSystemWebViewOptions(options)
                 .Build();
 ```

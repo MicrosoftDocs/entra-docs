@@ -4,9 +4,9 @@ description: Learn how to build a desktop app that calls web APIs to acquire a t
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.date: 12/18/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.date: 01/15/2024
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---
@@ -28,7 +28,7 @@ The username and password flow also has the following constraints:
 
 - The username and password flow isn't compatible with Conditional Access and multi-factor authentication. If your app runs in a Microsoft Entra tenant where the admin requires multi-factor authentication, like most organizations do, you can't use this flow.
 - It only works for work and school accounts, not personal Microsoft Accounts.
-- The flow is available on .NET desktop and .NET Core, but not on UWP.
+- The flow is available on .NET desktop and .NET, but not on UWP.
 
 Using a username and password is useful in some cases, such as DevOps scenarios. However, if you want to use a username and password in interactive scenarios where you provide your own UI, consider moving away from it.
 
@@ -131,10 +131,10 @@ static async Task GetATokenForGraph()
    // 1. Click "Add a permission" and add all the delegated permissions corresponding to the scopes you want (for instance
    // User.Read and User.ReadBasic.All)
    // 2. Click "Grant/revoke admin consent for <tenant>") and click "yes".
-   // Dynamically, if you are not using .NET Core (which does not have any Web UI) by
+   // Dynamically, if you are not using .NET (which does not have any Web UI) by
    // calling (once only) AcquireTokenInteractive.
    // remember that Username/password is for public client applications that is desktop/mobile applications.
-   // If you are using .NET core or don't want to call AcquireTokenInteractive, you might want to:
+   // If you are using .NET or don't want to call AcquireTokenInteractive, you might want to:
    // - use device code flow (See https://aka.ms/msal-net-device-code-flow)
    // - or suggest the user to navigate to a URL to consent: https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id={clientId}&response_type=code&scope=user.read
    // ------------------------------------------------------------------------

@@ -4,8 +4,8 @@ description: Configure the properties of an enterprise application in Microsoft 
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 01/26/2023

@@ -4,9 +4,9 @@ description: Use our quickstart guide to customize your tenant in just a few ste
  
 author: csmulligan
 manager: CelesteDG
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: quickstart
 ms.date: 09/26/2023
 ms.author: cmulligan

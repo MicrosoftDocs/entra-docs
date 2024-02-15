@@ -6,8 +6,8 @@ author: twimmers
 writer: twimmers
 manager: beatrizd
 ms.assetid: 9032d0da-f472-4e8d-a14d-d84f472411ee
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 04/27/2023

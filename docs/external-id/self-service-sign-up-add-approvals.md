@@ -2,10 +2,9 @@
 title: Add custom approvals to self-service sign-up flows
 description: Add API connectors for custom approval workflows in External Identities self-service sign-up
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/23/2024
+ms.date: 02/05/2024
 
 ms.author: mimart
 author: msmimart

@@ -132,6 +132,8 @@
         href: alohi-tutorial.md
       - name: Altamira HRM
         href: altamira-hrm-tutorial.md
+      - name: Alteryx Server
+        href: alteryx-server-tutorial.md
       - name: Altoura
         href: altoura-tutorial.md
       - name: Amazing People Schools
@@ -1093,6 +1095,8 @@
         href: freedcamp-tutorial.md
       - name: Freight Audit
         href: freight-audit-tutorial.md
+      - name: Freightender SSO for TRP (Tender Response Platform)
+        href: freightender-sso-for-trp-tender-response-platform-tutorial.md
       - name: FreshDesk
         href: freshdesk-tutorial.md
       - name: FreshGrade
@@ -1125,6 +1129,8 @@
         href: google-apps-tutorial.md
       - name: GaggleAMP
         href: gaggleamp-tutorial.md
+      - name: Genius
+        href: genius-tutorial.md
       - name: Getabstract
         href: getabstract-tutorial.md
       - name: GetThere
@@ -1143,6 +1149,8 @@
         href: github-enterprise-cloud-enterprise-account-tutorial.md  
       - name: GitHub Enterprise Managed User
         href: github-enterprise-managed-user-tutorial.md
+      - name: GitHub Enterprise Managed User - ghe.com
+        href: github-enterprise-managed-user-ghe-com-tutorial.md
       - name: GlassFrog
         href: glassfrog-tutorial.md
       - name: Glia Hub
@@ -1963,6 +1971,8 @@
         href: orgvitality-sso-tutorial.md  
       - name: Origami
         href: origami-tutorial.md
+      - name: Othership Workplace Scheduler
+        href: othership-workplace-scheduler-tutorial.md
       - name: OutSystems
         href: outsystems-tutorial.md
       - name: OU Campus
@@ -2809,6 +2819,8 @@
         href: trend-micro-tutorial.md
       - name: TrendMiner
         href: trendminer-tutorial.md
+      - name: Trevanna Tracks
+        href: trevanna-tracks-tutorial.md
       - name: Tribeloo
         href: tribeloo-tutorial.md
       - name: Navan
@@ -3286,6 +3298,8 @@
         href: connecter-provisioning-tutorial.md
       - name: Contentful
         href: contentful-provisioning-tutorial.md
+      - name: Contentstack
+        href: contentstack-provisioning-tutorial.md
       - name: Comeet Recruiting Software
         href: comeet-recruiting-software-provisioning-tutorial.md
       - name: Concur

@@ -4,9 +4,9 @@ description: Learn about the default permissions for users in a customer tenant.
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: reference
 ms.date: 05/01/2023
 ms.author: mimart

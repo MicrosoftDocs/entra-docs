@@ -1,14 +1,13 @@
 ---
 title: Microsoft Entra provisioning to applications via PowerShell
 description: This document describes how to configure Microsoft Entra ID to provision users with external systems that offer Windows PowerShell based APIs.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.workload: identity
-ms.date: 05/11/2023
+ms.date: 02/13/2024
 ms.author: billmath
 ms.reviewer: arvinh
 ---
@@ -61,8 +60,8 @@ If you have already downloaded the provisioning agent and configured it for anot
    > [!NOTE]
    > Please use different provisioning agents for on-premises application provisioning and Microsoft Entra Connect cloud sync / HR-driven provisioning. All three scenarios should not be managed on the same agent. 
 
-1. Open the provisioning agent installer, agree to the terms of service, and select **next**.
-1. When the provisioning agent wizard opens, continue to the **Select Extension** tab and select **On-premises application provisioning** when prompted for the extension you want to enable.
+1. Open the provisioning agent installer, agree to the terms of service, and select **Install**.
+1. When the Microsoft Entra provisioning agent configuration wizard opens, continue to the **Select Extension** tab and select **On-premises application provisioning** when prompted for the extension you want to enable.
 1. The provisioning agent uses the operating system's web browser to display a popup window for you to authenticate to Microsoft Entra ID, and potentially also your organization's identity provider.  If you are using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
 1. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have the Hybrid Identity Administrator or Global Administrator role.
 1. Select **Confirm** to confirm the setting. Once installation is successful, you can select **Exit**, and also close the Provisioning Agent Package installer.

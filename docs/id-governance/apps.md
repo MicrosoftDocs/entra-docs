@@ -1,16 +1,12 @@
 ---
 title: Microsoft Entra ID Governance integrations
 description: This page provides an overview of the Microsoft Entra ID Governance integrations available to automate provisioning and governance controls.
-services: active-directory
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: compliance
+ms.service: entra-id-governance
 ms.topic: overview
-ms.workload: identity
 ms.date: 08/24/2023
 ms.author: billmath
-ms.custom: contperf-fy21q3-portal
 ms.reviewer: amycolannino
 ---
 
@@ -24,6 +20,7 @@ ms.reviewer: amycolannino
 | :--- | :--- |
 | HR | [SuccessFactors - User Provisioning](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) |
 | HR | [Workday - User Provisioning](~/identity/saas-apps/workday-inbound-cloud-only-tutorial.md)|
+| HR | [API-driven connector from any HR source](~/identity/app-provisioning/inbound-provisioning-api-concepts.md)|
 |[LDAP directory](~/identity/app-provisioning/on-premises-ldap-connector-configure.md)| OpenLDAP<br>Microsoft Active Directory Lightweight Directory Services<br>389 Directory Server<br>Apache Directory Server<br>IBM Tivoli DS<br>Isode Directory<br>NetIQ eDirectory<br>Novell eDirectory<br>Open DJ<br>Open DS<br>Oracle (previously Sun ONE) Directory Server Enterprise Edition<br>RadiantOne Virtual Directory Server (VDS) |
 | [SQL database](~/identity/app-provisioning/tutorial-ecma-sql-connector.md)| Microsoft SQL Server and Azure SQL<br>IBM DB2 10.x<br>IBM DB2 9.x<br>Oracle 10g and 11g<br>Oracle 12c and 18c<br>MySQL 5.x|
 | Cloud platform| [AWS IAM Identity Center](~/identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md) |
@@ -96,6 +93,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Appinux](~/identity/saas-apps/appinux-tutorial.md) |  | ● |
 | [Apple Business Manager](~/identity/saas-apps/apple-business-manager-provision-tutorial.md) | ● |  |
 | [Apple School Manager](~/identity/saas-apps/apple-school-manager-provision-tutorial.md) | ● |  |
+| [Applitools Eyes](~/identity/saas-apps/applitools-eyes-tutorial.md) |  | ● |
 | [AppNeta Performance Monitor](~/identity/saas-apps/appneta-tutorial.md) |  | ● |
 | [ARC Facilities](~/identity/saas-apps/arc-facilities-tutorial.md) |  | ● |
 | [Arc Publishing - SSO](~/identity/saas-apps/arc-tutorial.md) |  | ● |
@@ -322,6 +320,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [FourKites SAML2.0 SSO for Tracking](~/identity/saas-apps/fourkites-tutorial.md) |  | ● |
 | [Frankli.io](~/identity/saas-apps/frankli-io-provisioning-tutorial.md) | ● | |
 | [Freight Audit](~/identity/saas-apps/freight-audit-tutorial.md) |  | ● |
+| [Freightender SSO for TRP (Tender Response Platform)](~/identity/saas-apps/freightender-sso-for-trp-tender-response-platform-tutorial.md) |  | ● |
 | [Fresh Relevance](~/identity/saas-apps/fresh-relevance-tutorial.md) |  | ● |
 | [Freshservice Provisioning](~/identity/saas-apps/freshservice-provisioning-tutorial.md) | ● | ● |
 | [FTAPI](~/identity/saas-apps/ftapi-tutorial.md) |  | ● |
@@ -690,6 +689,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [ServiceChannel](~/identity/saas-apps/servicechannel-tutorial.md) |  | ● |
 | [ServiceNow](~/identity/saas-apps/servicenow-provisioning-tutorial.md) | ● | ● |
 | [ServusConnect](~/identity/saas-apps/servusconnect-tutorial.md) |  | ● |
+| [ShareCal](~/identity/saas-apps/sharecal-tutorial.md) |  | ● |
 | [ShareVault](~/identity/saas-apps/sharevault-tutorial.md) |  | ● |
 | [SharingCloud](~/identity/saas-apps/sharingcloud-tutorial.md) |  | ● |
 | [ShipHazmat](~/identity/saas-apps/shiphazmat-tutorial.md) |  | ● |
@@ -702,6 +702,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Signiant Media Shuttle](~/identity/saas-apps/signiant-media-shuttle-tutorial.md) |  | ● |
 | [Sigstr](~/identity/saas-apps/sigstr-tutorial.md) |  | ● |
 | [Simple In/Out](~/identity/saas-apps/simple-in-out-provisioning-tutorial.md) | ● |  |
+| [SIS Enterprise](~/identity/saas-apps/sis-enterprise-tutorial.md) |  | ● |
 | [Sketch](~/identity/saas-apps/sketch-tutorial.md) |  | ● |
 | [Skilljar](~/identity/saas-apps/skilljar-tutorial.md) |  | ● |
 | [Skills Base](~/identity/saas-apps/skillsbase-tutorial.md) |  | ● |

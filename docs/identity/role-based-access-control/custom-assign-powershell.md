@@ -1,18 +1,17 @@
 ---
 title: Assign custom roles using Azure AD PowerShell
 description: Manage members of a Microsoft Entra administrator custom role with Azure AD PowerShell.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 05/10/2022
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, has-azure-ad-ps-ref
-ms.collection: M365-identity-device-management
+
 ---
 # Assign custom roles with resource scope using PowerShell in Microsoft Entra ID
 

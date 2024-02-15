@@ -1,8 +1,8 @@
 ---
 title: Tutorial - Issue Microsoft Entra Verified ID credentials from an application
 description: In this tutorial, you learn how to issue verifiable credentials by using a sample app.
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 author: barclayn
 manager: amycolannino
 ms.author: barclayn
@@ -195,7 +195,7 @@ Now you'll make modifications to the sample app's issuer code to update it with 
     1. **DidAuthority**: Your Decentralized Identifier
     1. **Credential Manifest**: Your manifest URL
 
-CredentialType is only needed for presentation, so if all you want to do is issuance, it strictly isn't needed.
+    CredentialType is only needed for presentation, so if all you want to do is issuance, it strictly isn't needed.
 
 1. Save the *appsettings.json* file.
 

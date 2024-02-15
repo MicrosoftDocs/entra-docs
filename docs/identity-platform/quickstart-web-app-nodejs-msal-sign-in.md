@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: scenarios:getting-started, languages:js, devx-track-js
 ms.date: 07/27/2023
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: quickstart
 #Customer intent: As an application developer, I want to know how to set up authentication in a web application built using Node.js and MSAL Node.
 ---
@@ -114,6 +114,7 @@ npm install @azure/msal-node
 
 ## Next steps
 
-Learn more about the web app scenario that the Microsoft identity platform supports:
+Learn more by building an ASP.NET Core web app that signs in users in the following multi-part tutorial series:
+
 > [!div class="nextstepaction"]
-> [Web app that signs in users scenario](scenario-web-app-sign-user-overview.md)
+> [Tutorial: Web app that signs in users](tutorial-web-app-dotnet-register-app.md)

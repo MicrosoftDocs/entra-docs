@@ -7,8 +7,8 @@ ms.author: ryanwi
 ms.custom: fasttrack-edit, mode-other
 ms.date: 01/10/2024
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: quickstart
 #Customer intent: As an application developer, I need to create a Microsoft identity environment so I can use it to register applications.
 ---

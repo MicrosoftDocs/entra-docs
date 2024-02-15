@@ -1,8 +1,8 @@
 ---
 title: Tutorial - Quick setup of your tenant for Microsoft Entra Verified ID
 description: In this tutorial, you learn how to quickly configure your tenant to support the Verified ID service. 
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 author: barclayn
 manager: amycolannino
 ms.author: barclayn
@@ -28,11 +28,11 @@ Specifically, you learn how to:
 ## Prerequisites
 
 - Ensure that you have the [global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [authentication policy administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) permission for the directory you want to configure. If you're not the global administrator, you need the [application administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) permission to complete the app registration including granting admin consent.
-- Ensure that you have a [custom domain registered](~/identity/users/domains-manage.md) for the Microsoft Entra tenant. If you don't have one registered, the setup defaults to the manual setup experience.
+- Ensure that you have a [custom domain registered](~/identity/users/domains-manage.md) for the Microsoft Entra tenant. If you don't have one registered, the setup defaults to the advanced setup experience.
 
 ## Set up Verified ID
 
-If you have a custom domain registered for your Microsoft Entra tenant, you see this `Get started` option. If you don't have a custom domain registered, either register it before setting up Verified ID or continue using the [manual setup](verifiable-credentials-configure-tenant.md).
+If you have a custom domain registered for your Microsoft Entra tenant, you see this `Get started` option. If you don't have a custom domain registered, either register it before setting up Verified ID or continue using the [advanced setup](verifiable-credentials-configure-tenant.md).
 
 :::image type="content" source="media/verifiable-credentials-configure-tenant-quick/verifiable-credentials-getting-started.png" alt-text="Screenshot that shows how to set up Verifiable Credentials.":::
 
@@ -72,7 +72,7 @@ As an admin, you can either remove the option in MyAccount and create your custo
 
 ## Register an application in Microsoft Entra ID
 
-If you're planning to use custom credentials or set up your own application for issuing or verification Verified ID, you need to register an application and grant the appropriate permissions for it. Follow this section in the manual setup to [register an application](verifiable-credentials-configure-tenant.md#register-an-application-in-microsoft-entra-id)
+If you're planning to use custom credentials or set up your own application for issuing or verification Verified ID, you need to register an application and grant the appropriate permissions for it. Follow this section in the advanced setup to [register an application](verifiable-credentials-configure-tenant.md#register-an-application-in-microsoft-entra-id)
 
 ## Next steps
 

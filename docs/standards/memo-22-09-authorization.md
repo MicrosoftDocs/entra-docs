@@ -1,10 +1,8 @@
 ---
-title: Meet authorization requirements of memorandum 22-09 
+title: Meet authorization requirements of memorandum 22-09
 description: Learn how to meet authorization requirements outlined in OMB memorandum 22-09.
-services: active-directory 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: standards
-ms.workload: identity
 ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
@@ -12,7 +10,6 @@ manager: martinco
 ms.reviewer: martinco
 ms.date: 05/01/2023
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Meet authorization requirements of memorandum 22-09
