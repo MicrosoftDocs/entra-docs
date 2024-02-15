@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.date: 12/13/2023
-ms.reviewer: EmLauber
+ms.reviewer: emilylauber
 ms.service: identity-platform
 
 ms.topic: tutorial
@@ -28,9 +28,9 @@ In this tutorial:
 
 * An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/).
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-  * Application administrator
+  * Application Administrator
   * Application developer
-  * Cloud application administrator
+  * Cloud Application Administrator
 
 ## Register the application and record identifiers
 
