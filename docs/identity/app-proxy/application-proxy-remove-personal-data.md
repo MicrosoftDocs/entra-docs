@@ -17,7 +17,7 @@ Microsoft Entra application proxy requires that you install connectors on your d
 
 ## Where is the personal data?
 
-It is possible for application proxy to write personal data to the following log types:
+It's possible for application proxy to write personal data to the following log types:
 
 - connector event logs
 - Windows event logs
@@ -30,7 +30,7 @@ For information on how to configure data retention for the Windows event logs, s
 
 ## Remove personal data from connector event logs
 
-To ensure the application proxy logs do not have personal data, you can either:
+To ensure the application proxy logs don't have personal data, you can either:
 
 - Delete or view data when needed, or
 - Turn off logging
@@ -58,13 +58,13 @@ To find personal data logged by an application that uses Kerberos Constrained De
 
 To delete specific data:
 
-1. Restart the Microsoft Entra application proxy connector service to generate a new log file. The new log file enables you to delete or modify the old log files. 
+1. Generate a new log file, restart the Microsoft Entra application proxy connector service. The new log file enables you to delete or modify the old log files. 
 1. Follow the [View or export specific data](#view-or-export-specific-data) process described previously to find information that needs to be deleted. Search all of the connector logs.
 1. Either delete the relevant log files or selectively delete the fields that contain personal data. You can also delete all old log files if you don’t need them anymore.
 
 ### Turn off connector logs
 
-One option to ensure the connector logs do not contain personal data is to turn off the log generation. To stop generating connector logs, remove the following highlighted line from `C:\Program Files\Microsoft AAD App Proxy Connector\ApplicationProxyConnectorService.exe.config`.
+One option to ensure the connector logs don't contain personal data is to turn off the log generation. To stop generating connector logs, remove the following highlighted line from `C:\Program Files\Microsoft AAD App Proxy Connector\ApplicationProxyConnectorService.exe.config`.
 
 ![Shows a code snippet with the highlighted code to remove](./media/application-proxy-remove-personal-data/01.png)
 
