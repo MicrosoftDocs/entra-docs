@@ -28,6 +28,7 @@ Microsoft Entra application proxy offers many security benefits. The list of ben
 - All outbound access
 - Cloud scale analytics and machine learning
 - Remote access as a service
+- Microsoft Distributed Denial of Service (DDoS) protection service
 
 ### Authenticated access 
 
@@ -75,7 +76,7 @@ Unpatched software still accounts for a large number of attacks. Microsoft Entra
 
 To improve the security of applications published by Microsoft Entra application proxy, we block web crawler robots from indexing and archiving your applications. Each time a web crawler robot tries to retrieve the robot's settings for a published app, application proxy replies with a robots.txt file that includes `User-agent: * Disallow: /`.
 
-#### Microsoft Distributed Denail of Service (DDoS) protection service
+#### Microsoft Distributed Denial of Service (DDoS) protection service
 
 Applications published through application proxy are protected against Distributed Denial of Service (DDoS) attacks. Microsoft automatically enables this protection in all datacenters. The Microsoft DDoS protection service provides always-on traffic monitoring and real-time mitigation of common network-level attacks. 
 
