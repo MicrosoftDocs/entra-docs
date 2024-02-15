@@ -21,15 +21,15 @@ When you see this error, find the status code on the error page. The status code
 
 - **Gateway Timeout**: The application proxy service is unable to reach the connector. The error typically indicates a problem with the connector assignment, connector itself, or the networking rules around the connector.
 - **Bad Gateway**: The connector is unable to reach the backend application. The error could indicate a misconfiguration of the application.
-- **Forbidden**: The user is not authorized to access the application. The error can happen either when the user is not assigned to the application in Microsoft Entra ID, or if on the backend the user does not have permission to access the application.
+- **Forbidden**: The user is not authorized to access the application. The error can happen when the user is not assigned to the application in Microsoft Entra ID. The error can also happen if the user does not have permission to access the application on the backend.
 
-To find the code, look at the text at the bottom left of the error message for the `Status Code` field. Look for any additional tips at the bottom of the page.
+To find the code, look at the text at the bottom left of the error message for the `Status Code` field.
 
 ![Example: Gateway timeout error](./media/application-proxy-sign-in-bad-gateway-timeout-error/connection-problem.png)
 
 ## Gateway Timeout errors
 
-A gateway timeout occurs when the service tries to reach the connector and fails within the timeout window. The error is typically caused by an application assigned to a connector group with no working connectors, or some ports required by the connector are not open.
+A gateway timeout occurs when the service tries to reach the connector and fails within the timeout window. The error is seen when an application is assigned to a connector group with no working connectors. The error is also seen when the required ports are not open.
 
 ## Bad Gateway errors
 
@@ -42,7 +42,7 @@ A bad gateway error indicates that the connector is unable to reach the backend 
 
 ## Forbidden errors
 
-If you see a forbidden error, the user has not been assigned to the application. This error could be either in Microsoft Entra ID or on the backend application.
+If you see a forbidden error, the user isn't assigned to the application. This error could be either in Microsoft Entra ID or on the backend application.
 
 To learn how to assign users to the application in Azure, see the [configuration documentation](application-proxy-add-on-premises-application.md#test-the-application).
 
@@ -50,7 +50,7 @@ If you confirm the user is assigned to the application in Azure, check the user 
 
 ## Check the application's internal URL
 
-As a first quick step, double check and fix the internal URL by opening the application through **Enterprise Applications**, then selecting the **application proxy** menu. Verify the internal URL is the one used from your on premises network to access the application.
+As a first quick step, double check and fix the internal URL by opening the application through **Enterprise Applications**, then selecting the **application proxy** menu. Verify the internal URL of the application is the one used from your on premises network.
 
 ## Check the application is assigned to a working connector group
 
@@ -61,9 +61,9 @@ To verify the application is assigned to a working connector group:
 1. If the wrong connector group is showing, use the drop-down to select the correct group, and confirm you no longer see any warnings. If the intended connector group is showing, click the warning message to open the page with connector management.
 1. From here, there are a few ways to drill in further:
 
-   - Move an active connector into the group: If you have an active connector that should belong to this group and has line of sight to the target backend application, you can move the connector into the assigned group. To do so, click the connector. In the "connector group" field, use the drop-down to select the correct group, and click save.
-   - Download a new connector for that group: From this page, you can get the link to [download a new connector](https://download.msappproxy.net/Subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/Download). Install the connector on a machine with direct line of sight to the backend application. Typically, the connector is installed on the same server as the application. Use the download connector link to download a connector onto the target machine. Next, click the connector, and use the "connector group" drop-down to make sure it belongs to the right group.
-   - Investigate an inactive connector: If a connector shows as inactive, it is unable to reach the service. This error is typically due to some required ports being blocked. To solve this issue, move on to verify all required ports are allowed.
+   - Move an active connector into the group: Move a connector into the assigned group. To do so, click the connector. In the **connector group** field, use the drop-down to select the correct group, and click **save**.
+   - Download a new connector for the group: Install the connector on a machine with direct line of sight to the backend application. Typically, the connector is installed on the same server as the application. Use the download connector link to download a connector onto the target machine. Next, click the connector, and use the **connector group** drop-down to make sure it belongs to the right group. For more information on downloading and installing a connector, see [application proxy connectors](application-proxy-connectors.md).
+   - Investigate an inactive connector: If a connector shows as inactive, it is unable to reach the service. This error is typically due to blocked ports that are required. To solve this issue, move on to verify all required ports are allowed.
 
 After using these steps to ensure the application is assigned to a group with working connectors, test the application again. If it is still not working, continue to the next section.
 
@@ -73,17 +73,15 @@ Verify that all required ports are open. For required ports, see the open ports 
 
 ## Check for other connector errors
 
-If none of the above resolve the issue, the next step is to look for issues or errors with the connector itself. You can see some common errors in the [Troubleshoot document](./application-proxy-troubleshoot.md#connector-errors).
+Look for issues or errors with the connector itself. For more information about common errors, see [application proxy troubleshooting](application-proxy-troubleshoot.md).
 
-You can also look directly at the connector logs to identify any errors. Many of the error messages share specific recommendations for fixes. To view the logs, see the [connectors documentation](application-proxy-connectors.md#under-the-hood).
+Look directly at the connector logs to identify any errors. Many of the error messages share specific recommendations for fixes. To view the logs, see the [application proxy connectors](application-proxy-connectors.md).
 
 ## Additional Resolutions
 
-If the above didn't fix the problem, there are a few different possible causes. To identify the issue:
+If your application is configured to use integrated Windows authentication (IWA), test the application without single sign-on. To check the application without single sign-on, open your application through **Enterprise Applications,** and go to the **Single Sign-On** menu. Change the drop-down from "Integrated Windows authentication" to "Microsoft Entra single sign-on disabled".
 
-If your application is configured to use integrated Windows authentication (IWA), test the application without single sign-on. If not, move to the next paragraph. To check the application without single sign-on, open your application through **Enterprise Applications,** and go to the **Single Sign-On** menu. Change the drop-down from "Integrated Windows authentication" to "Microsoft Entra single sign-on disabled".
-
-Now open a browser and try to access the application again. You should be prompted for authentication and get into the application. If you are able to authenticate, the problem is with the Kerberos Constrained Delegation (KCD) configuration that enables the single sign-on. For more information, see the KCD Troubleshoot page.
+Now open a browser and try to access the application again. You should be prompted for authentication and get into the application. If you are able to authenticate, the problem is with the Kerberos Constrained Delegation (KCD) configuration that enables the single sign-on.
 
 If you continue to see the error, go to the machine where the connector is installed, open a browser and attempt to reach the internal URL used for the application. The connector acts like another client from the same machine. If you can't reach the application, investigate why that machine is unable to reach the application, or use a connector on a server that is able to access the application.
 
