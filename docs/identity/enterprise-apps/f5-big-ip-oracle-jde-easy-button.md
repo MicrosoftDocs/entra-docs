@@ -127,9 +127,6 @@ The following instructions help you create a tenant app registration to authoriz
 3. Navigate to **Access > Guided Configuration**.
 4. Select **Microsoft Integration**.
 5. Select **Microsoft Entra Application**.
-
-   ![Screenshot of the Microsoft Entra Application option under Guided Configuration.](./media/f5-big-ip-easy-button-ldap/easy-button-template.png)
-
 6. Review the configuration sequence.
 7. Select **Next**
 
@@ -220,8 +217,6 @@ If needed, include other Microsoft Entra attributes. The Oracle JDE scenario req
 #### Additional User Attributes
 
 The **Additional User Attributes** tab supports distributed systems that require attributes are stored in other directories for session augmentation. Attributes from an LDAP source are injected as more SSO headers to control access based on roles, Partner IDs, etc.  
-
-   ![Screenshot of options and selections for Additional User Attributes.](./media/f5-big-ip-easy-button-header/additional-user-attributes.png)
 
    >[!NOTE] 
    >This feature has no correlation to Microsoft Entra ID; it's another attribute source.

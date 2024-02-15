@@ -133,9 +133,6 @@ Create a tenant app registration to authorize the Easy Button access to Graph. T
 2. Start the **Easy Button** template.
 3. Navigate to **Access > Guided Configuration > Microsoft Integration**.
 4. Select **Microsoft Entra Application**.
-
-   ![Screenshot of the Microsoft Entra Application option.](./media/f5-big-ip-easy-button-ldap/easy-button-template.png)
-
 5. Review the configuration options.
 6. Select **Next**.
 

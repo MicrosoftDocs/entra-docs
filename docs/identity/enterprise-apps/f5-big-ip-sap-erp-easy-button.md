@@ -124,9 +124,6 @@ Register the Easy Button client in Microsoft Entra ID, then it's allowed to esta
 3. From a browser, sign-in to the F5 BIG-IP management console.
 4. Navigate to **Access > Guided Configuration > Microsoft Integration**.
 5. Select **Microsoft Entra Application**.
-
-  ![Screenshot of the Microsoft Entra Application option on Guided Configuration.](./media/f5-big-ip-easy-button-ldap/easy-button-template.png)
-
 6. Review the configuration list.
 7. Select **Next**.
 
@@ -226,8 +223,6 @@ Learn more: [Tutorial: Configure F5 BIG-IP Access Policy Manager for Kerberos au
 #### Additional User Attributes
 
 The **Additional User Attributes** tab supports distributed systems requiring attributes stored in other directories, for session augmentation. Thus, attributes from an LDAP source are injected as more SSO headers to control role-based access, Partner IDs, etc.
-
-   ![Screenshot of the Additional User Attributes tab.](./media/f5-big-ip-easy-button-header/additional-user-attributes.png)
 
    >[!NOTE] 
    >This feature has no correlation to Microsoft Entra ID but is another attribute source.

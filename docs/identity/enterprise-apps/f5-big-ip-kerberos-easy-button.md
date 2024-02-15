@@ -118,9 +118,6 @@ Initiate the APM Guided Configuration to launch the Easy Button template.
 
 1. Navigate to **Access > Guided Configuration > Microsoft Integration** and select **Microsoft Entra Application**.
 
-
-    ![Screenshot of the Microsoft Entra Application option on Guided Configuration.](./media/f5-big-ip-easy-button-ldap/easy-button-template.png)
-
 2. Review the configuration steps and select **Next**
 
     ![Screenshot of the Next option.](./media/f5-big-ip-easy-button-ldap/config-steps.png)
