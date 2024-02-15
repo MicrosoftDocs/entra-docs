@@ -14,7 +14,6 @@ ms.date: 09/15/2023
 
 # Advanced Microsoft Entra Verified ID setup
 
-  
 Advanced Verified ID setup is the classic way of setting up Verified ID where you as an admin have to configure Azure KeyVault, take care of registering your decentralized ID and verifying your domain.
 
 In this tutorial, you learn how to use the advanced setup to configure your Microsoft Entra tenant to use the verifiable credentials service.
@@ -35,34 +34,22 @@ The following diagram illustrates the Verified ID architecture and the component
 - You need an Azure tenant with an active subscription. If you don't have an Azure subscription, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - Ensure that you have the [global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [authentication policy administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) permission for the directory you want to configure. If you're not the global administrator, you need the [application administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) permission to complete the app registration including granting admin consent.
 - Ensure that you have the [contributor](/azure/role-based-access-control/built-in-roles#contributor) role for the Azure subscription or the resource group where you are deploying Azure Key Vault.
+- Ensure that you provide access permissions for Key Vault. For more information, see [Provide access to Key Vault keys, certificates, and secrets with an Azure role-based access control](/azure/key-vault/general/rbac-guide).
 
 ## Create a key vault
 
-[Azure Key Vault](/azure/key-vault/general/basic-concepts) is a cloud service that enables the secure storage and access of secrets and keys. The Verified ID service stores public and private keys in Azure Key Vault. These keys are used to sign and verify credentials.
+[Azure Key Vault](/azure/key-vault/general/basic-concepts) is a cloud service that enables the secure storage and access management of secrets and keys. The Verified ID service stores public and private keys in Azure Key Vault. These keys are used to sign and verify credentials.
 
 If you don't have an Azure Key Vault instance available, follow [these steps](/azure/key-vault/general/quick-create-portal) to create a key vault using the Azure portal.
 
 >[!NOTE]
->By default, the account that creates a vault is the only one with access. The Verified ID service needs access to the key vault. You must configure your key vault with access policies allowing the account used during configuration to create and delete keys. The account used during configuration also requires permissions to sign so that it can create the domain binding for Verified ID. If you use the same account while testing, modify the default policy to grant the account sign permission, in addition to the default permissions granted to vault creators.
+>By default, the account that creates a vault is the only one with access. The Verified ID service needs access to the key vault. You must [authenticate your key vault](/azure/key-vault/general/basic-concepts.md#authentication), allowing the account used during configuration to create and delete keys. The account used during configuration also requires permissions to sign so that it can create the domain binding for Verified ID. If you use the same account while testing, modify the default policy to grant the account sign permission, in addition to the default permissions granted to vault creators.
 
-### Set access policies for the key vault
+### Manage access to the key vault
 
-A Key Vault [access policy](/azure/key-vault/general/assign-access-policy) defines whether a specified security principal can perform operations on Key Vault secrets and keys. Set access policies in your key vault for both the Verified ID service administrator account, and for the Request Service API principal that you created.
+Before you can set up Verified ID, you need to provide Key Vault [access](/azure/key-vault/general/rbac-guide). This defines whether a specified admin can perform operations on Key Vault secrets and keys. Provide access permissions to your key vault for both the Verified ID administrator account, and for the Request Service API principal that you created.
+
 After you create your key vault, Verifiable Credentials generates a set of keys used to provide message security. These keys are stored in Key Vault. You use a key set for signing, updating, and recovering verifiable credentials.
-
-### Set access policies for the Verified ID Admin user
-
-1. Sign in to the [Azure portal](https://portal.azure.com) with your administrative account.
-1. Go to the key vault you use for this tutorial.
-1. Under **Settings**, select **Access policies**.
-
-1. In **Add access policies**, under **USER**, select the account you use to follow this tutorial.
-
-1. For **Key permissions**, verify that the following permissions are selected: **Get**, **Create**, **Delete**, and **Sign**. By default, **Create** and **Delete** are already enabled. **Sign** should be the only key permission you need to update.
-
-    :::image type="content" source="media/verifiable-credentials-configure-tenant/set-key-vault-admin-access-policy.png" alt-text="Screenshot that shows how to configure the admin access policy." border="false":::
-
-1. To save the changes, select **Save**.
 
 ## Set up Verified ID
 
@@ -76,7 +63,7 @@ To set up Verified ID, follow these steps:
 
 1. From the left menu, select **Setup**.
 
-1. From the middle menu, select **Configure organization settings**
+1. From the middle menu, select **Configure organization settings**.
 
 1. Set up your organization by providing the following information:
 
@@ -92,20 +79,6 @@ To set up Verified ID, follow these steps:
 1. Select **Save**.  
 
     :::image type="content" source="media/verifiable-credentials-configure-tenant/verifiable-credentials-getting-started-save.png" alt-text="Screenshot that shows how to set up Verifiable Credentials first step.":::
-
-### Set access policies for the Verified ID service principals
-
-When you set up Verified ID in the previous step, the access policies in Azure Key Vault are automatically updated to give service principals for Verified ID the required permissions.  
-If you ever are in need of manually resetting the permissions, the access policy should look like below.
-
-| Service Principal | AppId | Key Permissions |
-| -------- | -------- | -------- |
-| Verifiable Credentials Service | bb2a64ee-5d29-4b07-a491-25806dc854d3 | Get, Sign |
-| Verifiable Credentials Service Request | 3db474b9-6a0c-4840-96ac-1fceb342124f | Sign |
-
-:::image type="content" source="media/verifiable-credentials-configure-tenant/sp-key-vault-admin-access-policy.png" alt-text="Screenshot of key vault access policies for security principals.":::
-
-<a name='register-an-application-in-azure-ad'></a>
 
 ## Register an application in Microsoft Entra ID
 
@@ -161,7 +134,7 @@ After Azure Key Vault is setup, and the service have a signing key, you must com
 :::image type="content" source="media/verifiable-credentials-configure-tenant/verifiable-credentials-getting-started-step-2-3.png" alt-text="Screenshot that shows how to set up Verifiable Credentials step 2 and 3.":::
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Select **Verifiable credentials**
+1. Select **Verifiable credentials**.
 1. From the left menu, select **Setup**.
 1. From the middle menu, select **Register decentralized ID** to register your DID document, as per instructions in article [How to register your decentralized ID for did:web](how-to-register-didwebsite.md). You must complete this step before you can continue to verify your domain. If you selected did:ion as your trust system, you should skip this step.
 1. From the middle menu, select **Verify domain ownership** to verify your domain, as per instructions in article [Verify domain ownership to your Decentralized Identifier (DID)](how-to-dnsbind.md)
