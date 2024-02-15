@@ -23,7 +23,7 @@ Users don't notice anything different when they sign in to use corporate applica
 
 ## How do I get access?
 
-You need a license for PingAccess and Microsoft Entra ID. However, Microsoft Entra ID P1 or P2 subscriptions include a basic PingAccess license that covers up to 20 applications. If you need to publish more than 20 header-based applications, you can purchase an additional license from PingAccess.
+You need a license for PingAccess and Microsoft Entra ID. However, Microsoft Entra ID P1 or P2 subscriptions include a basic PingAccess license that covers up to 20 applications. If you need to publish more than 20 header-based applications, you can purchase more licenses from PingAccess.
 
 For more information, see [Microsoft Entra editions](~/fundamentals/whatis.md).
 
@@ -64,7 +64,7 @@ To publish your own on premises application:
 1. Browse to **Enterprise applications** > **New application** > **Add an on-premises application**. The **Add your own on-premises application** page appears.
 
    ![Add your own on-premises application](./media/application-proxy-configure-single-sign-on-with-ping-access/add-your-own-on-premises-application.png)
-1. Fill in the required fields with information about your new application. Use the guidance below for the settings.
+1. Fill in the required fields with information about your new application. Use the guidance for the settings.
 
    > [!NOTE]
    > For a more detailed walkthrough of this step, see [Add an on-premises app to Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).
@@ -102,7 +102,7 @@ Now assign a user for application testing and choose header-based single sign-on
 Then make sure your redirect URL is set to your external URL:
 
 1. Browse to **Identity** > **Applications** > **App registrations** and select your application.
-1. Select the link next to **Redirect URIs**, showing the number of redirect URIs set up for web and public clients. The **\<application name> - Authentication** page appears.
+1. Select the link next to **Redirect URIs**, showing the number of redirect Uniform Resource Identifier (URI)s set up for web and public clients. The **\<application name> - Authentication** page appears.
 1. Check whether the external URL that you assigned to your application earlier is in the **Redirect URIs** list. If it isn't, add the external URL now, using a redirect URI type of **Web**, and select **Save**.
 
 In addition to the external URL, an authorize endpoint of Microsoft Entra ID on the external URL should be added to the Redirect URIs list.
@@ -110,7 +110,7 @@ In addition to the external URL, an authorize endpoint of Microsoft Entra ID on 
 `https://*.msappproxy.net/pa/oidc/cb`
 `https://*.msappproxy.net/`
 
-Finally, set up your on-premises application so that users have read access and other applications have read/write access:
+Finally, set up your on premises application so that users have `read` access and other applications have `read/write` access:
 
 1. From the **App registrations** sidebar for your application, select **API permissions** > **Add a permission** > **Microsoft APIs** > **Microsoft Graph**. The **Request API permissions** page for **Microsoft Graph** appears, which contains the permissions for Microsoft Graph.
 
@@ -123,7 +123,7 @@ Finally, set up your on-premises application so that users have read access and 
 
 #### Collect information for the PingAccess steps
 
-You need to collect these three pieces of information (all GUIDs) to set up your application with PingAccess:
+Collect three Globally Unique Identifiers (GUIDs) to set up your application with PingAccess:
 
 | Name of Microsoft Entra ID field | Name of PingAccess field | Data format |
 | --- | --- | --- |
@@ -162,7 +162,7 @@ To collect this information:
 Optional claims allow you to add standard-but-not-included-by-default claims that every user and tenant has. 
 You can configure optional claims for your application by modifying the application manifest. For more info, see the [Understanding the Microsoft Entra application manifest article](~/identity-platform/reference-app-manifest.md)
 
-Example to include email address into the access_token that PingAccess will consume:
+Example to include email address into the access_token that PingAccess consumes:
 
 ```json
     "optionalClaims": {
@@ -181,12 +181,12 @@ Example to include email address into the access_token that PingAccess will cons
 
 ### Use of claims mapping policy (optional)
 
-[Claims Mapping Policy (preview)](~/identity-platform/reference-claims-mapping-policy-type.md#claims-mapping-policy-properties) for attributes which do not exist in Microsoft Entra ID. Claims mapping allows you to migrate old on-premises apps to the cloud by adding additional custom claims that are backed by your ADFS or user objects
+[Claims Mapping Policy (preview)](~/identity-platform/reference-claims-mapping-policy-type.md#claims-mapping-policy-properties) for attributes which do not exist in Microsoft Entra ID. Claims mapping allows you to migrate old on premises apps to the cloud by adding more custom claims that back your Active Directory Federation Services (AD FS) or user objects.
 
-To make your application use a custom claim and include additional fields, be sure you've also [created a custom claims mapping policy and assigned it to the application](~/identity-platform/saml-claims-customization.md).
+[Created a custom claims mapping policy and assigned it to the application](~/identity-platform/saml-claims-customization.md) to make your application use a custom claim and include more fields.
 
 > [!NOTE]
-> To use a custom claim, you must also have a custom policy defined and assigned to the application. This policy should include all required custom attributes.
+> To use a custom claim, you must also have a custom policy defined and assigned to the application. The policy should include all required custom attributes.
 >
 > You can do policy definition and assignment through PowerShell or Microsoft Graph. If you're doing them in PowerShell, you may need to first use `New-AzureADPolicy` and then assign it to the application with `Add-AzureADServicePrincipalPolicy`. For more information, see [Claims mapping policy assignment](~/identity-platform/saml-claims-customization.md).
 
@@ -199,7 +199,7 @@ Add-AzureADServicePrincipalPolicy -Id "<<The object Id of the Enterprise Applica
 
 ### Enable PingAccess to use custom claims
 
-Enabling PingAccess to use custom claims is optional, but required if you expect the application to consume additional claims.
+Enabling PingAccess to use custom claims is optional, but required if you expect the application to consume more claims.
 
 When you will configure PingAccess in the following step, the Web Session you will create (Settings->Access->Web Sessions) must have **Request Profile** deselected and **Refresh User Attributes** set to **No**
 
