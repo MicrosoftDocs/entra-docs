@@ -27,7 +27,7 @@ You need a license for PingAccess and Microsoft Entra ID. However, Microsoft Ent
 
 For more information, see [Microsoft Entra editions](~/fundamentals/whatis.md).
 
-## Publish your application in Azure
+## Publish your application in Microsoft Entra
 
 This article outlines the steps to publish an application for the first time. The article provides guidance for both application proxy and PingAccess.
 
@@ -93,7 +93,7 @@ Now assign a user for application testing and choose header-based single sign-on
 1. From the application sidebar, select **Single sign-on** > **Header-based**.
 
    > [!TIP]
-   > If this is your first time using header-based single sign-on, you need to install PingAccess. To make sure your Azure subscription is automatically associated with your PingAccess installation, use the link on this single sign-on page to download PingAccess. You can open the download site now, or come back to this page later.
+   > If this is your first time using header-based single sign-on, you need to install PingAccess. To make sure your Microsoft Entra ID subscription is automatically associated with your PingAccess installation, use the link on this single sign-on page to download PingAccess. You can open the download site now, or come back to this page later.
 
    ![Shows header-based sign-on screen and PingAccess](./media/application-proxy-configure-single-sign-on-with-ping-access/sso-header.png)
 
