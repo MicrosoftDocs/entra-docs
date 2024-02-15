@@ -1,7 +1,6 @@
 ---
-title: Access on-premises APIs with Microsoft Entra application proxy
-description: Microsoft Entra application proxy lets native apps securely access APIs and business logic you host on-premises or on cloud VMs.
-
+title: Access on-premises Application Programming Interface (API) with Microsoft Entra application proxy
+description: Use Microsoft Entra application proxy to provide secure access to an Application Programming Interface (API) hosted in a private cloud or on premises.
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
@@ -12,9 +11,12 @@ ms.author: kenwith
 ms.reviewer: ashishj
 ms.custom: has-adal-ref
 ---
-# Secure access to on-premises APIs with Microsoft Entra application proxy
+# Use Microsoft Entra application proxy to provide secure access to an Application Programming Interface (API) hosted in a private cloud or on premises
 
-You may have business logic APIs running on-premises, or hosted on virtual machines in the cloud. Your native Android, iOS, Mac, or Windows apps need to interact with the API endpoints to use data or provide user interaction. Microsoft Entra application proxy and the [Microsoft Authentication Library (MSAL)](~/identity-platform/reference-v2-libraries.md) let your native apps securely access your on-premises APIs. Microsoft Entra application proxy is a faster and more secure solution than opening firewall ports and controlling authentication and authorization at the app layer.
+Business logic often lives in in a private Application Programming Interface (API). The API runs on premises or in a private cloud. Your native Android, iOS, Mac, or Windows apps need to interact with the API endpoints to use data or provide user interaction. Microsoft Entra application proxy and the [Microsoft Authentication Library (MSAL)](~/identity-platform/reference-v2-libraries.md) let your native apps securely access your private cloud APIs. Microsoft Entra application proxy is a faster and more secure solution than opening firewall ports and controlling authentication and authorization at the app layer.
+
+> [!TIP]
+> On premises is a legacy term dating back to the time when physical servers were located on the premises of the corporate office. Now days, many self hosted workloads run on a virtual machine in a datacenter. The term on premises and private cloud are used interchangeably.
 
 This article walks you through setting up a Microsoft Entra application proxy solution for hosting a web API service that native apps can access.
 
