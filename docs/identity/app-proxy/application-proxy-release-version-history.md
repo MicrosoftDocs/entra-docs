@@ -16,7 +16,7 @@ This article lists the versions and features of Microsoft Entra application prox
 
 Make sure that auto updates are enabled for your connectors to get the latest features and bug fixes. Microsoft Support might ask you to install the latest connector version to resolve a problem.
 
-Here is a list of related resources:
+Here's a list of related resources:
 
 | Resource                                         | Details                                                      |
 | ------------------------------------------------ | ------------------------------------------------------------ |
@@ -43,9 +43,7 @@ June 20, 2023: Released for download. This version is only available for install
 > [!IMPORTANT]
 > **.NET Framework**
 >
-> You must have .NET version 4.7.1 or higher to install, or upgrade, application proxy version 1.5.3437.0 or later. Windows Server 2012 R2 and Windows Server 2016 may not have this by default.
->
-> See [How to: Determine which .NET Framework versions are installed](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) for more information.
+> You must have .NET version 4.7.1 or higher to install, or upgrade, application proxy version 1.5.3437.0 or later. Windows Server 2012 R2 and Windows Server 2016 may not have this by default. For more information, see [How to: Determine which .NET Framework versions are installed](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
 
 ## Version 1.5.2846.0
 
@@ -67,7 +65,7 @@ March 22, 2022: Released for download. This version is only available for instal
 
 ### Release status
 
-July 22, 2020: Released for download
+July 22, 2020: Released for download.
 This version is only available for install via the download page. 
 
 ### New features and improvements
@@ -88,18 +86,18 @@ July 17, 2020: Released for download.
 This version is only available for install via the download page. 
 
 ### Fixed issues
-- Resolved memory leak issues present in previous version
-- General improvements for websocket support
+- Resolved memory leak issues present in previous version.
+- Completed general improvements for websocket support.
 
 ## Version 1.5.1526.0
 
 ### Release status
 
-April 07, 2020: Released for download
+April 07, 2020: Released for download.
 This version is only available for install via the download page. 
 
 ### New features and improvements
-- Connectors only use Transport Layer Security (TLS) 1.2 for all connections. See [connector pre-requisites](application-proxy-add-on-premises-application.md#prerequisites) for more details.
+- Connectors only use Transport Layer Security (TLS) 1.2 for all connections. See [connector prerequisites](application-proxy-add-on-premises-application.md#prerequisites) for more details.
 - Improved signaling between the connector and Azure services. The signaling supports reliable sessions for Windows Communication Foundation (WCF) communication between the connector and Azure services and Domain Name System (DNS) caching improvements for WebSocket communications.
 - Support for configuring a proxy between the connector and the backend application. For more information, see [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md).
 
@@ -112,7 +110,7 @@ This version is only available for install via the download page.
 
 ### Release status
 
-September 20, 2018: Released for download
+September 20, 2018: Released for download.
 
 ### New features and improvements
 
@@ -130,7 +128,7 @@ September 20, 2018: Released for download
 
 ### Release status
 
-January 19, 2018: Released for download
+January 19, 2018: Released for download.
 
 ### Fixed issues
 
@@ -140,7 +138,7 @@ January 19, 2018: Released for download
 
 ### Release status 
 
-May 25, 2017: Released for download 
+May 25, 2017: Released for download.
 
 ### New features and improvements 
 
@@ -150,7 +148,7 @@ Improved control over connectors' outbound connection limits.
 
 ### Release status
 
-April 15, 2017: Released for download
+April 15, 2017: Released for download.
 
 ### New features and improvements
 
@@ -163,5 +161,5 @@ April 15, 2017: Released for download
 If you're using an application proxy connector version earlier than 1.5.36.0, update to the latest version to ensure you have the latest fully supported features.
 
 ## Next steps
-- Learn more about [Remote access to on-premises applications through Microsoft Entra application proxy](overview-what-is-app-proxy.md).
-- To start using application proxy, see [Tutorial: Add an on-premises application for remote access through application proxy](application-proxy-add-on-premises-application.md).
+- [Remote access to on-premises applications through Microsoft Entra application proxy](overview-what-is-app-proxy.md)
+- [Tutorial: Add an on-premises application for remote access through application proxy](application-proxy-add-on-premises-application.md)
