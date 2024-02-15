@@ -12,16 +12,16 @@ ms.reviewer: ashishj
 ---
 
 # Microsoft Entra application proxy: Version release history
-This article lists the versions and features of Microsoft Entra application proxy that have been released. The Microsoft Entra ID team regularly updates application proxy with new features and functionality. Application proxy connectors are [updated automatically when a new major version is released](application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-). 
+This article lists the versions and features of Microsoft Entra application proxy. The Microsoft Entra ID team regularly updates application proxy with new features and functionality. Application proxy connectors are [updated automatically when a new major version is released](application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-). 
 
-We recommend making sure that auto-updates are enabled for your connectors to ensure you have the latest features and bug fixes. Microsoft Support might ask you to install the latest connector version to resolve a problem.
+Make sure that auto updates are enabled for your connectors to get the latest features and bug fixes. Microsoft Support might ask you to install the latest connector version to resolve a problem.
 
 Here is a list of related resources:
 
 | Resource                                         | Details                                                      |
 | ------------------------------------------------ | ------------------------------------------------------------ |
-| How to enable application proxy                  | Pre-requisites for enabling application proxy and installing and registering a connector are described in this [tutorial](application-proxy-add-on-premises-application.md). |
-| Understand Microsoft Entra application proxy connectors | Find out more about [connector management](application-proxy-connectors.md) and how connectors [auto-upgrade](application-proxy-connectors.md#automatic-updates). |
+| How to enable application proxy                  | Prerequisites for enabling application proxy and installing and registering a connector are described in this [tutorial](application-proxy-add-on-premises-application.md). |
+| Understand Microsoft Entra application proxy connectors | Find out more about [connector management](application-proxy-connectors.md) and how connectors [autoupgrade](application-proxy-connectors.md#automatic-updates). |
 | Microsoft Entra application proxy connector Download    | [Download the latest connector](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download). |
 
 ## 1.5.3437.0
@@ -33,7 +33,7 @@ June 20, 2023: Released for download. This version is only available for install
 ### New features and improvements
 
 - Support for Microsoft Entra Private Access.
-- Updated “Third-Party Notices”.
+- Updated third party notices.
 
 ### Fixed issues
 - Silent registration of connector with credentials. See [Create an unattended installation script for the Microsoft Entra application proxy connector](application-proxy-register-connector-powershell.md) for more details.
@@ -71,7 +71,7 @@ July 22, 2020: Released for download
 This version is only available for install via the download page. 
 
 ### New features and improvements
--	Improved support for Azure Government cloud environments. For steps on how to properly install the connector for Azure Government cloud review the [pre-requisites](~/identity/hybrid/connect/reference-connect-government-cloud.md#allow-access-to-urls) and [installation steps](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
+-	Improved support for Azure Government cloud environments. For steps on how to properly install the connector for Azure Government cloud review the [prerequisites](~/identity/hybrid/connect/reference-connect-government-cloud.md#allow-access-to-urls) and [installation steps](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
 - Support for using the Remote Desktop Services web client with application proxy. See [Publish Remote Desktop with Microsoft Entra application proxy](application-proxy-integrate-with-remote-desktop-services.md) for more details.
 - Improved websocket extension negotiations. 
 - Support for optimized routing between connector groups and application proxy cloud services based on region. See [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-network-topology.md) for more details. 
@@ -88,7 +88,7 @@ July 17, 2020: Released for download.
 This version is only available for install via the download page. 
 
 ### Fixed issues
-- Resolved memory leak issue present in previous version
+- Resolved memory leak issues present in previous version
 - General improvements for websocket support
 
 ## 1.5.1526.0
@@ -100,8 +100,8 @@ This version is only available for install via the download page.
 
 ### New features and improvements
 - Connectors only use TLS 1.2 for all connections. See [connector pre-requisites](application-proxy-add-on-premises-application.md#prerequisites) for more details.
-- Improved signaling between the connector and Azure services. This includes supporting reliable sessions for WCF communication between the connector and Azure services and DNS caching improvements for WebSocket communications.
-- Support for configuring a proxy between the connector and the backend application. For more information see [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md).
+- Improved signaling between the connector and Azure services. The signaling supports reliable sessions for WCF communication between the connector and Azure services and DNS caching improvements for WebSocket communications.
+- Support for configuring a proxy between the connector and the backend application. For more information, see [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md).
 
 ### Fixed issues
 - Removed falling back to port 8080 for communications from the connector to Azure services.
@@ -123,8 +123,8 @@ September 20, 2018: Released for download
 
 ### Fixed issues
 
-- Fixed a bug that caused some memory leaks in the connector.
-- Updated the Azure Service Bus version, which includes a bug fix for connector timeout issues.
+- A bug that caused memory leaks in the connector was fixed.
+- Azure Service Bus version updated, which includes a bug fix for connector timeout issues.
 
 ## 1.5.402.0
 
