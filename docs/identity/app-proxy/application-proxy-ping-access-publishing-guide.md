@@ -40,7 +40,7 @@ The application proxy connector is a Windows Server service that directs traffic
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
-1. Select **Download connector service**. The **application proxy connector download** page appears.
+1. Select **Download connector service**.
 1. Follow the installation instructions.
 
 Downloading the connector should automatically enable application proxy for your directory, but if not, you can select **Enable application proxy**.
@@ -102,7 +102,7 @@ Now assign a user for application testing and choose header-based single sign-on
 Then make sure your redirect URL is set to your external URL:
 
 1. Browse to **Identity** > **Applications** > **App registrations** and select your application.
-1. Select the link next to **Redirect URIs**, showing the number of redirect Uniform Resource Identifier (URI)s set up for web and public clients. The **\<application name> - Authentication** page appears.
+1. Select the link next to **Redirect URIs**. The link shows the amount of redirect Uniform Resource Identifiers (URIs) setup for web and public clients. The **\<application name> - Authentication** page appears.
 1. Check whether the external URL that you assigned to your application earlier is in the **Redirect URIs** list. If it isn't, add the external URL now, using a redirect URI type of **Web**, and select **Save**.
 
 In addition to the external URL, an authorize endpoint of Microsoft Entra ID on the external URL should be added to the Redirect URIs list.
@@ -110,7 +110,7 @@ In addition to the external URL, an authorize endpoint of Microsoft Entra ID on 
 `https://*.msappproxy.net/pa/oidc/cb`
 `https://*.msappproxy.net/`
 
-Finally, set up your on premises application so that users have `read` access and other applications have `read/write` access:
+Finally, setup your on premises application so that users have `read` access and other applications have `read/write` access:
 
 1. From the **App registrations** sidebar for your application, select **API permissions** > **Add a permission** > **Microsoft APIs** > **Microsoft Graph**. The **Request API permissions** page for **Microsoft Graph** appears, which contains the permissions for Microsoft Graph.
 
@@ -123,7 +123,7 @@ Finally, set up your on premises application so that users have `read` access an
 
 #### Collect information for the PingAccess steps
 
-Collect three Globally Unique Identifiers (GUIDs) to set up your application with PingAccess:
+Collect three Globally Unique Identifiers (GUIDs). Use these to set up your application with PingAccess. 
 
 | Name of Microsoft Entra ID field | Name of PingAccess field | Data format |
 | --- | --- | --- |
@@ -160,7 +160,7 @@ To collect this information:
 ### Use of optional claims (optional)
 
 Optional claims allow you to add standard-but-not-included-by-default claims that every user and tenant has. 
-You can configure optional claims for your application by modifying the application manifest. For more info, see the [Understanding the Microsoft Entra application manifest article](~/identity-platform/reference-app-manifest.md)
+You can configure optional claims for your application by modifying the application manifest. For more info, see the [Understanding the Microsoft Entra application manifest article](~/identity-platform/reference-app-manifest.md).
 
 Example to include email address into the access_token that PingAccess consumes:
 
@@ -181,9 +181,9 @@ Example to include email address into the access_token that PingAccess consumes:
 
 ### Use of claims mapping policy (optional)
 
-[Claims Mapping Policy (preview)](~/identity-platform/reference-claims-mapping-policy-type.md#claims-mapping-policy-properties) for attributes which do not exist in Microsoft Entra ID. Claims mapping allows you to migrate old on premises apps to the cloud by adding more custom claims that back your Active Directory Federation Services (AD FS) or user objects.
+Claims mapping lets you migrate old on premises apps to the cloud by adding more custom claims that back your Active Directory Federation Services (AD FS) or user objects. For more information, see [Claims Mapping Policy (preview)](~/identity-platform/reference-claims-mapping-policy-type.md#claims-mapping-policy-properties).
 
-[Created a custom claims mapping policy and assigned it to the application](~/identity-platform/saml-claims-customization.md) to make your application use a custom claim and include more fields.
+To use a custom claim and include more fields in your application. [Created a custom claims mapping policy and assigned it to the application](~/identity-platform/saml-claims-customization.md).
 
 > [!NOTE]
 > To use a custom claim, you must also have a custom policy defined and assigned to the application. The policy should include all required custom attributes.
@@ -201,11 +201,9 @@ Add-AzureADServicePrincipalPolicy -Id "<<The object Id of the Enterprise Applica
 
 Enabling PingAccess to use custom claims is optional, but required if you expect the application to consume more claims.
 
-When you will configure PingAccess in the following step, the Web Session you will create (Settings->Access->Web Sessions) must have **Request Profile** deselected and **Refresh User Attributes** set to **No**
+When you configure PingAccess in the following step, the Web Session you create (Settings->Access->Web Sessions) must have **Request Profile** deselected and **Refresh User Attributes** set to **No**.
 
 ## Download PingAccess and configure your application
-
-Now that you've completed all the Microsoft Entra setup steps, you can move on to configuring PingAccess.
 
 The detailed steps for the PingAccess part of this scenario continue in the Ping Identity documentation. Follow the instructions in [Configuring PingAccess for Microsoft Entra ID](https://docs.pingidentity.com/access/sources/dita/topic?category=pingaccess&Releasestatus_ce=Current&resourceid=pa_configuring_apps_for_azure) on the Ping Identity web site and download the [latest version of PingAccess](https://www.pingidentity.com/en/lp/azure-download.html).
 
