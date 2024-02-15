@@ -193,10 +193,12 @@ $Scopes =@("User.Read.All", "User-LifeCycleInfo.Read.All")
 
 # Connect using the scopes defined and select the Beta API Version
 Connect-MgGraph -Scopes $Scopes
-Select-MgProfile -Name beta
+
 
 # Query a user, using its user ID, and return the desired properties
-Get-MgUser -UserId "44198096-38ea-440d-9497-bb6b06bcaf9b" | Select-Object DisplayName, EmployeeLeaveDateTime
+$user = Get-MgUser -UserID "9093a415-2968-48b5-808b-a1a6f006f7a3" -Property EmployeeLeaveDateTime
+$User.EmployeeLeaveDateTime
+
 ```
 ![Screenshot of the result.](media/how-to-lifecycle-workflow-sync-attributes/user-lifecycle-properties-return.png)
 
