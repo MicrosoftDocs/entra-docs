@@ -12,7 +12,7 @@ ms.subservice: saas-apps
 
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 02/25/2024
 ms.author: thwimmer
 ---
 
@@ -56,7 +56,6 @@ The Microsoft Entra provisioning service allows you to scope who will be provisi
 
 * If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
 
-
 ## Step 4: Configure automatic user provisioning to Zoom 
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in TestApp based on user and/or group assignments in Microsoft Entra ID.
@@ -99,14 +98,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Zoom in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Zoom for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Zoom API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-   |Attribute|Type|
-   |---|---|
-   |userName|String|
-   |active|Boolean|
-   |name.givenName|String|
-   |name.familyName|String|
-   |emails[type eq "work"]|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
+   |Attribute|Type|Supported for filtering|Required by Zoom|
+   |---------|----|-----------------------|----------------|
+   |userName|String|&check;|&check;
+   |active|Boolean||
+   |name.givenName|String||
+   |name.familyName|String||
+   |emails[type eq "work"]|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
+   |userType|String||
 
 1. To configure scoping filters, refer to the following instructions provided in the [Screenshot of the Scoping filter tutorial.](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
