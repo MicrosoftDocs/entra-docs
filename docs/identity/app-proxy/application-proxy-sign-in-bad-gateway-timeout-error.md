@@ -21,7 +21,7 @@ When you see this error, find the status code on the error page. The status code
 
 - **Gateway Timeout**: The application proxy service is unable to reach the connector. The error typically indicates a problem with the connector assignment, connector itself, or the networking rules around the connector.
 - **Bad Gateway**: The connector is unable to reach the backend application. The error could indicate a misconfiguration of the application.
-- **Forbidden**: The user is not authorized to access the application. The error can happen when the user is not assigned to the application in Microsoft Entra ID. The error can also happen if the user does not have permission to access the application on the backend.
+- **Forbidden**: The user isn't authorized to access the application. The error can happen when the user isn't assigned to the application in Microsoft Entra ID. The error can also happen if the user doesn't have permission to access the application on the backend.
 
 To find the code, look at the text at the bottom left of the error message for the `Status Code` field.
 
@@ -29,7 +29,7 @@ To find the code, look at the text at the bottom left of the error message for t
 
 ## Gateway Timeout errors
 
-A gateway timeout occurs when the service tries to reach the connector and fails within the timeout window. The error is seen when an application is assigned to a connector group with no working connectors. The error is also seen when the required ports are not open.
+A gateway timeout occurs when the service tries to reach the connector and fails within the timeout window. The error is seen when an application is assigned to a connector group with no working connectors. The error is also seen when the required ports aren't open.
 
 ## Bad Gateway errors
 
@@ -45,8 +45,6 @@ A bad gateway error indicates that the connector is unable to reach the backend 
 If you see a forbidden error, the user isn't assigned to the application. This error could be either in Microsoft Entra ID or on the backend application.
 
 To learn how to assign users to the application in Azure, see the [configuration documentation](application-proxy-add-on-premises-application.md#test-the-application).
-
-If you confirm the user is assigned to the application in Azure, check the user configuration in the backend application. If you are using Kerberos Constrained Delegation/Integrated Windows Authentication, see the KCD Troubleshoot page for guidelines.
 
 ## Check the application's internal URL
 
@@ -69,7 +67,7 @@ Look directly at the connector logs to identify any errors. Many of the error me
 
 If your application is configured to use integrated Windows authentication (IWA), test the application without single sign-on. To check the application without single sign-on, open your application through **Enterprise Applications,** and go to the **Single Sign-On** menu. Change the drop-down from *Integrated Windows authentication* to *Microsoft Entra single sign-on disabled*.
 
-Now open a browser and try to access the application again. You should be prompted for authentication and get into the application. If you are able to authenticate, the problem is with the Kerberos Constrained Delegation (KCD) configuration that enables the single sign-on.
+Now open a browser and try to access the application again. You should be prompted for authentication and get into the application. If you're able to authenticate, the problem is with the Kerberos Constrained Delegation (KCD) configuration that enables the single sign-on.
 
 If you continue to see the error, go to the machine where the connector is installed, open a browser and attempt to reach the internal URL used for the application. The connector acts like another client from the same machine. If you can't reach the application, investigate why that machine is unable to reach the application, or use a connector on a server that is able to access the application.
 
