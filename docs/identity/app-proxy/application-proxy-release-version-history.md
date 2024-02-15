@@ -33,7 +33,7 @@ June 20, 2023: Released for download. This version is only available for install
 ### New features and improvements
 
 - Support for Microsoft Entra Private Access.
-- Updated third party notices.
+- Updated partner notices.
 
 ### Fixed issues
 - Silent registration of connector with credentials. For more information, see [Create an unattended installation script for the Microsoft Entra application proxy connector](application-proxy-register-connector-powershell.md).
@@ -54,7 +54,7 @@ March 22, 2022: Released for download. This version is only available for instal
 ### New features and improvements
 
 - Increased the number of HTTP headers supported on HTTP requests from 41 to 60.
-- Improved error handling of SSL failures between the connector and Azure services.
+- Improved error handling of TLS failures between the connector and Azure services.
 - Updated the default connection limit to 200 for connector traffic when going through outbound proxy. To learn more about outbound proxy, see [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md#use-the-outbound-proxy-server).
 - Deprecated the use of Active Directory Authentication Library (ADAL) and implemented Microsoft Authentication Library (MSAL) as part of the connector installation flow.
 
@@ -97,7 +97,7 @@ April 07, 2020: Released for download.
 This version is only available for install via the download page. 
 
 ### New features and improvements
-- Connectors only use Transport Layer Security (TLS) 1.2 for all connections. See [connector prerequisites](application-proxy-add-on-premises-application.md#prerequisites) for more details.
+- Connectors only use Transport Layer Security (TLS) 1.2 for all connections. For more information, see [connector prerequisites](application-proxy-add-on-premises-application.md#prerequisites).
 - Improved signaling between the connector and Azure services. The signaling supports reliable sessions for Windows Communication Foundation (WCF) communication between the connector and Azure services and Domain Name System (DNS) caching improvements for WebSocket communications.
 - Support for configuring a proxy between the connector and the backend application. For more information, see [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md).
 
