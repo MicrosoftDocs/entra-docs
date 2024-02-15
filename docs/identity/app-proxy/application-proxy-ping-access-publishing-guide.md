@@ -1,28 +1,25 @@
 ---
 title: Header-based authentication with PingAccess for Microsoft Entra application proxy
 description: Publish applications with PingAccess and App Proxy to support header-based authentication.
-
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/15/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Header-based authentication for single sign-on with Application Proxy and PingAccess
+# Header-based authentication for single sign-on with application proxy and PingAccess
 
 Microsoft Entra application proxy has partnered with PingAccess so that your Microsoft Entra customers can access more of your applications. PingAccess provides another option beyond integrated [header-based single sign-on](application-proxy-configure-single-sign-on-with-headers.md).
 
-<a name='whats-pingaccess-for-azure-ad'></a>
-
 ## What's PingAccess for Microsoft Entra ID?
 
-With PingAccess for Microsoft Entra ID, you can give users access and single sign-on (SSO) to applications that use headers for authentication. Application Proxy treats these applications like any other, using Microsoft Entra ID to authenticate access and then passing traffic through the connector service. PingAccess sits in front of the applications and translates the access token from Microsoft Entra ID into a header. The application then receives the authentication in the format it can read.
+With PingAccess for Microsoft Entra ID, you can give users access and single sign-on (SSO) to applications that use headers for authentication. Application proxy treats these applications like any other, using Microsoft Entra ID to authenticate access and then passing traffic through the connector service. PingAccess sits in front of the applications and translates the access token from Microsoft Entra ID into a header. The application then receives the authentication in the format it can read.
 
-Your users won't notice anything different when they sign in to use your corporate applications. They can still work from anywhere on any device. The Application Proxy connectors direct remote traffic to all apps without regard to their authentication type, so they'll still balance loads automatically.
+Your users won't notice anything different when they sign in to use your corporate applications. They can still work from anywhere on any device. The application proxy connectors direct remote traffic to all apps without regard to their authentication type, so they'll still balance loads automatically.
 
 ## How do I get access?
 
@@ -32,29 +29,27 @@ For more information, see [Microsoft Entra editions](~/fundamentals/whatis.md).
 
 ## Publish your application in Azure
 
-This article is for people to publish an application with this scenario for the first time. Besides detailing the publishing steps, it guides you in getting started with both Application Proxy and PingAccess. If you've already configured both services but want a refresher on the publishing steps, skip to the [Add your application to Microsoft Entra ID with Application Proxy](#add-your-application-to-azure-ad-with-application-proxy) section.
+This article is for people to publish an application with this scenario for the first time. Besides detailing the publishing steps, it guides you in getting started with both application proxy and PingAccess. If you've already configured both services but want a refresher on the publishing steps, skip to the [Add your application to Microsoft Entra ID with application proxy](#add-your-application-to-azure-ad-with-application-proxy) section.
 
 > [!NOTE]
 > Since this scenario is a partnership between Microsoft Entra ID and PingAccess, some of the instructions exist on the Ping Identity site.
 
-### Install an Application Proxy connector
+### Install an application proxy connector
 
-If you've enabled Application Proxy and installed a connector already, you can skip this section and go to [Add your application to Microsoft Entra ID with Application Proxy](#add-your-application-to-azure-ad-with-application-proxy).
+If you've enabled application proxy and installed a connector already, you can skip this section and go to [Add your application to Microsoft Entra ID with application proxy](#add-your-application-to-azure-ad-with-application-proxy).
 
-The Application Proxy connector is a Windows Server service that directs the traffic from your remote employees to your published applications. For more detailed installation instructions, see [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
+The application proxy connector is a Windows Server service that directs the traffic from your remote employees to your published applications. For more detailed installation instructions, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
-1. Select **Download connector service**. The **Application Proxy Connector Download** page appears.
+1. Select **Download connector service**. The **application proxy connector download** page appears.
 1. Follow the installation instructions.
 
-Downloading the connector should automatically enable Application Proxy for your directory, but if not, you can select **Enable Application Proxy**.
+Downloading the connector should automatically enable application proxy for your directory, but if not, you can select **Enable application proxy**.
 
-<a name='add-your-application-to-azure-ad-with-application-proxy'></a>
+### Add your application to Microsoft Entra ID with application proxy
 
-### Add your application to Microsoft Entra ID with Application Proxy
-
-There are two actions you need to take in the Microsoft Entra admin center. First, you need to publish your application with Application Proxy. Then, you need to collect some information about the application that you can use during the PingAccess steps.
+There are two actions you need to take in the Microsoft Entra admin center. First, you need to publish your application with application proxy. Then, you need to collect some information about the application that you can use during the PingAccess steps.
 
 #### Publish your application
 
@@ -158,7 +153,7 @@ To collect this information:
 **Update the `acceptMappedClaims` field:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses Application Proxy. If you need to change directories, select **Switch directory** and choose a directory that uses Application Proxy.
+1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses application proxy. If you need to change directories, select **Switch directory** and choose a directory that uses application proxy.
 1. Browse to **Identity** > **Applications** > **App registrations** and select your application.
 1. From the sidebar of the **App registrations** page for your application, select **Manifest**. The manifest JSON code for your application's registration appears.
 1. Search for the `acceptMappedClaims` field, and change the value to `True`.
@@ -226,4 +221,4 @@ When you've completed all these steps, your application should be up and running
 
 - [Configuring PingAccess to use Microsoft Entra ID as the token provider](https://docs.pingidentity.com/access/sources/dita/topic?category=pingaccess&Releasestatus_ce=Current&resourceid=pa_configure_pa_to_use_azure_ad_as_the_token_provider)
 - [Single sign-on to applications in Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md)
-- [Troubleshoot Application Proxy problems and error messages](application-proxy-troubleshoot.md)
+- [Troubleshoot application proxy problems and error messages](application-proxy-troubleshoot.md)
