@@ -110,7 +110,7 @@ In addition to the external URL, an authorize endpoint of Microsoft Entra ID on 
 `https://*.msappproxy.net/pa/oidc/cb`
 `https://*.msappproxy.net/`
 
-Finally, setup your on premises application so that users have `read` access and other applications have `read/write` access:
+Finally, set up the on premises application so that users have `read` access and other applications have `read/write` access:
 
 1. From the **App registrations** sidebar for your application, select **API permissions** > **Add a permission** > **Microsoft APIs** > **Microsoft Graph**. The **Request API permissions** page for **Microsoft Graph** appears, which contains the permissions for Microsoft Graph.
 
@@ -123,7 +123,7 @@ Finally, setup your on premises application so that users have `read` access and
 
 #### Collect information for the PingAccess steps
 
-Collect three Globally Unique Identifiers (GUIDs). Use these to set up your application with PingAccess. 
+Collect three Globally Unique Identifiers (GUIDs). Use the GUIDs to set up your application with PingAccess. 
 
 | Name of Microsoft Entra ID field | Name of PingAccess field | Data format |
 | --- | --- | --- |
@@ -181,7 +181,7 @@ Example to include email address into the access_token that PingAccess consumes:
 
 ### Use of claims mapping policy (optional)
 
-Claims mapping lets you migrate old on premises apps to the cloud by adding more custom claims that back your Active Directory Federation Services (AD FS) or user objects. For more information, see [Claims Mapping Policy (preview)](~/identity-platform/reference-claims-mapping-policy-type.md#claims-mapping-policy-properties).
+Claims mapping lets you migrate old on premises apps to the cloud by adding more custom claims that back your Active Directory Federation Services (ADFS) or user objects. For more information, see [Claims Mapping Policy (preview)](~/identity-platform/reference-claims-mapping-policy-type.md#claims-mapping-policy-properties).
 
 To use a custom claim and include more fields in your application. [Created a custom claims mapping policy and assigned it to the application](~/identity-platform/saml-claims-customization.md).
 
@@ -207,11 +207,10 @@ When you configure PingAccess in the following step, the Web Session you create 
 
 The detailed steps for the PingAccess part of this scenario continue in the Ping Identity documentation. Follow the instructions in [Configuring PingAccess for Microsoft Entra ID](https://docs.pingidentity.com/access/sources/dita/topic?category=pingaccess&Releasestatus_ce=Current&resourceid=pa_configuring_apps_for_azure) on the Ping Identity web site and download the [latest version of PingAccess](https://www.pingidentity.com/en/lp/azure-download.html).
 
-The steps in the PingAccess article walk you through obtaining a PingAccess account. To create a Microsoft Entra ID OpenID Connect (OIDC) connection, set up a token provider with the **Directory (tenant) ID** value that you copied from the Microsoft Entra admin center. Create a web session on PingAccess, use the **Application (client) ID** and `PingAccess key` values. Set up identity mapping and create a virtual host, site, and application.
+The steps in the PingAccess article walk you through obtaining a PingAccess account. To create a Microsoft Entra ID OpenID Connect (OIDC) connection, set up a token provider with the **Directory (tenant) ID** value that you copied from the Microsoft Entra admin center. Create a web session on PingAccess. Use the `Application (client) ID` and `PingAccess key` values. Set up identity mapping and create a virtual host, site, and application.
 
 ### Test your application
-
-When you've completed all these steps, your application should be up and running. To test it, open a browser and navigate to the external URL that you created when you published the application in Azure. Sign in with the test account that you assigned to the application.
+The application sis up and running. To test it, open a browser and navigate to the external URL that you created when you published the application in Microsoft Entra. Sign in with the test account you assigned to the application.
 
 ## Next steps
 
