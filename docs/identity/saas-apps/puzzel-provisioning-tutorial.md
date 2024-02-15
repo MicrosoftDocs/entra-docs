@@ -6,8 +6,8 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: f666af23-f97f-4df8-8580-6124f47ea840
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 12/18/2023
@@ -82,8 +82,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Admin Credentials** section, enter the **Tenant Url** and then click on Authorize, make sure that you enter your Puzzel account's Admin credentials. Click **Test Connection** to ensure Microsoft Entra ID can connect to Puzzel. If the connection fails, ensure your Puzzel account has Admin permissions and try again.
 
- 	![Screenshot of Token.](media/puzzel-provisioning-tutorial/authorize.png)
-
+ 	![Screenshot of Token.](media/puzzel-provisioning-tutorial/test-connection.png)
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
 	![Screenshot of Notification Email.](common/provisioning-notification-email.png)

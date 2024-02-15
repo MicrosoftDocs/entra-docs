@@ -6,10 +6,9 @@ summary: Microsoft Entra role-based access control manages access to Microsoft E
 
 metadata:
   title: Microsoft Entra roles documentation
-  description: Learn how to use Microsoft Entra roles to manage access in your organization.
-  services: active-directory
-  ms.service: active-directory
-  ms.subservice: roles
+  description: Learn how to use Microsoft Entra roles to manage access in your organization.  
+  ms.service: entra-id
+  ms.subservice: role-based-access-control
   manager: amycolannino
   ms.topic: landing-page
   ms.date: 12/17/2021

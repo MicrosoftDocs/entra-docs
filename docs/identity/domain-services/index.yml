@@ -6,8 +6,7 @@ summary: Learn how to use Microsoft Entra Domain Services to provide Kerberos or
 metadata:
   title: Microsoft Entra Domain Services documentation
   description: Learn how to use Microsoft Entra Domain Services to provide Kerberos or NTLM authentication to applications or join Azure VMs to a managed domain.
-  services: service
-  ms.service: active-directory
+  ms.service: entra-id
   ms.subservice: domain-services
   ms.topic: landing-page
   ms.collection: collection

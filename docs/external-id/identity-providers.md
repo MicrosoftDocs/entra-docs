@@ -2,16 +2,16 @@
 title: Identity providers for External Identities
 description: Learn how to use Microsoft Entra ID as your default identity provider for sharing with external users.
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: conceptual
-ms.date: 01/19/2024
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
 
 ms.collection: M365-identity-device-management
+#customer intent: As a B2B collaboration administrator, I want to configure and enable multiple identity providers (such as Microsoft Entra ID, Microsoft accounts, email one-time passcode, Google, Facebook, and SAML/WS-Fed) for external users, so that they can easily sign in and access our apps and resources.
 ---
 
 # Identity Providers for External Identities

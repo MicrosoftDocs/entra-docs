@@ -1,19 +1,18 @@
 ---
 title: Use Microsoft Entra groups to manage role assignments
 description: Use Microsoft Entra groups to simplify role assignment management in Microsoft Entra ID.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: conceptual
 ms.date: 04/10/2023
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 
-ms.collection: M365-identity-device-management
+
 ---
 
 # Use Microsoft Entra groups to manage role assignments

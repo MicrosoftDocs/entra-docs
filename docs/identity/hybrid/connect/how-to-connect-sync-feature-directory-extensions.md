@@ -1,22 +1,19 @@
 ---
 title: 'Microsoft Entra Connect Sync: Directory extensions'
 description: This topic describes the directory extensions feature in Microsoft Entra Connect.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: 995ee876-4415-4bb0-a258-cca3cbb02193
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 
 # Microsoft Entra Connect Sync: Directory extensions

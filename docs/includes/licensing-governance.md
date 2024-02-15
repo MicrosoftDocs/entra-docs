@@ -1,18 +1,17 @@
 ---
 title: include file
 description: include file
-services: active-directory
 author: billmath
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: include
-ms.date: 12/13/2023
+ms.date: 01/17/2024
 ms.author: billmath
 ms.custom: include file
 ---
 
-The following tables show the licensing requirements for Microsoft Entra ID Governance features.
+The following table shows the licensing requirements for Microsoft Entra ID Governance features. Licensing information and example license scenarios for Entitlement management, Access reviews, and Lifecycle Workflows are provided following the table.
 
-## Features by license
+### Features by license
 
 The following table shows what features are available with each license.  Not all features are available in all clouds; see [Microsoft Entra feature availability](~/identity/authentication/feature-availability.md) for Azure Government.
 
@@ -48,11 +47,11 @@ The following table shows what features are available with each license.  Not al
 |[Identity governance dashboard (Preview)](~/id-governance/governance-dashboard.md)| | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Insights and reporting - Inactive guest accounts(Preview)](~/identity/users/clean-up-stale-guest-accounts.md)|||| :white_check_mark: |
 
-## Entitlement Management
+### Entitlement Management
 
 Using this feature requires Microsoft Entra ID Governance subscriptions for your organization's users. Some capabilities within this feature can operate with a Microsoft Entra ID P2 subscription.
 
-### Example license scenarios
+#### Example license scenarios
 
 Here are some example license scenarios to help you determine the number of licenses you must have.
 
@@ -62,11 +61,11 @@ Here are some example license scenarios to help you determine the number of lice
 | An Identity Governance Administrator at Woodgrove Bank creates initial catalogs. One of the policies specifies that **All employees** (2,000 employees) can request a specific set of access packages. 150 employees request the access packages. | 2,000 employees need licenses. | 2,000 |
 | An Identity Governance Administrator at Woodgrove Bank creates initial catalogs. They create an auto-assignment policy that grants **All members of the Sales department** (350 employees) access to a specific set of access packages. 350 employees are auto-assigned to the access packages. | 350 employees need licenses. | 351 |
 
-## Access reviews
+### Access reviews
 
 Using this feature requires Microsoft Entra ID Governance subscriptions for your organization's users, including for all employees who are reviewing access or having their access reviewed. Some capabilities within this feature might operate with a Microsoft Entra ID P2 subscription.
 
-### Example license scenarios
+#### Example license scenarios
 
 Here are some example license scenarios to help you determine the number of licenses you must have.
 
@@ -78,7 +77,7 @@ Here are some example license scenarios to help you determine the number of lice
 | An administrator creates an access review of Group C with 50 member users. Makes it a self-review. | 50 licenses for each user as self-reviewers. | 50 |
 | An administrator creates an access review of Group D with 6 member users. Makes it a self-review. | 6 licenses for each user as self-reviewers. No additional licenses are required.  | 6 |
 
-## Lifecycle Workflows
+### Lifecycle Workflows
 
 With Microsoft Entra ID Governance licenses for Lifecycle Workflows, you can:
 
@@ -89,7 +88,7 @@ With Microsoft Entra ID Governance licenses for Lifecycle Workflows, you can:
 
 Using this feature requires Microsoft Entra ID Governance subscriptions for your organization's users.
 
-### Example license scenarios
+#### Example license scenarios
 
 | Scenario | Calculation | Number of licenses |
 | --- | --- | --- |

@@ -1,22 +1,18 @@
 ---
 title: Self-service sign up for email-verified users
 description: Use self-service sign-up in a Microsoft Entra organization
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-editor: ''
 
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.topic: overview
-ms.workload: identity
 ms.date: 11/08/2023
 ms.author: barclayn
 ms.reviewer: elkuzmen
 ms.custom: it-pro, has-azure-ad-ps-ref
 
-ms.collection: M365-identity-device-management
 ---
 # What is self-service sign-up for Microsoft Entra ID?
 

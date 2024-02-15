@@ -1,19 +1,17 @@
 ---
 title: Admin role docs across Microsoft 365 services
 description: Find content and API references for administrator roles for Microsoft 365 services in Microsoft Entra ID
-services: active-directory
-documentationcenter: ''
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: reference
 ms.date: 11/05/2020
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
+
 #Customer intent: As a Microsoft Entra administrator, to delegate permissions across Microsoft 365 services quickly and accurately I want to know where the content is for admin roles.
 ---
 

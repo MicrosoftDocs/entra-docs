@@ -4,14 +4,12 @@ description: In this tutorial, learn how to enable password hash synchronization
 author: justinha
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/21/2023
 ms.author: justinha
-
-#Customer intent: As an server administrator, I want to learn how to enable password hash synchronization with Microsoft Entra Connect to create a hybrid environment using an on-premises AD DS domain.
+#Customer intent: As a server administrator, I want to learn how to enable password hash synchronization with Microsoft Entra Connect to create a hybrid environment using an on-premises AD DS domain.
 ---
 
 # Tutorial: Enable password synchronization in Microsoft Entra Domain Services for hybrid environments

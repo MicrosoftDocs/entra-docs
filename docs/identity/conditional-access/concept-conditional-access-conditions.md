@@ -2,8 +2,7 @@
 title: Conditions in Conditional Access policy
 description: What are conditions in a Microsoft Entra Conditional Access policy
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 07/17/2023
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth, sandeo
-
-ms.collection: M365-identity-device-management
 ---
 # Conditional Access: Conditions
 

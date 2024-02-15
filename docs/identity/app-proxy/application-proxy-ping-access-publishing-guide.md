@@ -1,12 +1,11 @@
 ---
 title: Header-based authentication with PingAccess for Microsoft Entra application proxy
 description: Publish applications with PingAccess and App Proxy to support header-based authentication.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/14/2023
 ms.author: kenwith
@@ -40,8 +39,6 @@ This article is for people to publish an application with this scenario for the 
 
 ### Install an Application Proxy connector
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
 If you've enabled Application Proxy and installed a connector already, you can skip this section and go to [Add your application to Microsoft Entra ID with Application Proxy](#add-your-application-to-azure-ad-with-application-proxy).
 
 The Application Proxy connector is a Windows Server service that directs the traffic from your remote employees to your published applications. For more detailed installation instructions, see [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
@@ -49,9 +46,6 @@ The Application Proxy connector is a Windows Server service that directs the tra
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
 1. Select **Download connector service**. The **Application Proxy Connector Download** page appears.
-
-   ![Application proxy connector download](./media/application-proxy-configure-single-sign-on-with-ping-access/application-proxy-connector-download.png)
-
 1. Follow the installation instructions.
 
 Downloading the connector should automatically enable Application Proxy for your directory, but if not, you can select **Enable Application Proxy**.
@@ -172,7 +166,7 @@ To collect this information:
 
 ### Use of optional claims (optional)
 
-Optional claims allows you to add standard-but-not-included-by-default claims that every user and tenant has. 
+Optional claims allow you to add standard-but-not-included-by-default claims that every user and tenant has. 
 You can configure optional claims for your application by modifying the application manifest. For more info, see the [Understanding the Microsoft Entra application manifest article](~/identity-platform/reference-app-manifest.md)
 
 Example to include email address into the access_token that PingAccess will consume:
@@ -194,7 +188,7 @@ Example to include email address into the access_token that PingAccess will cons
 
 ### Use of claims mapping policy (optional)
 
-[Claims Mapping Policy (preview)](~/identity-platform/reference-claims-mapping-policy-type.md#claims-mapping-policy-properties) for attributes which do not exist in Microsoft Entra ID. Claims mapping allows you to migrate old on-prem apps to the cloud by adding additional custom claims that are backed by your ADFS or user objects
+[Claims Mapping Policy (preview)](~/identity-platform/reference-claims-mapping-policy-type.md#claims-mapping-policy-properties) for attributes which do not exist in Microsoft Entra ID. Claims mapping allows you to migrate old on-premises apps to the cloud by adding additional custom claims that are backed by your ADFS or user objects
 
 To make your application use a custom claim and include additional fields, be sure you've also [created a custom claims mapping policy and assigned it to the application](~/identity-platform/saml-claims-customization.md).
 
@@ -222,7 +216,7 @@ Now that you've completed all the Microsoft Entra setup steps, you can move on t
 
 The detailed steps for the PingAccess part of this scenario continue in the Ping Identity documentation. Follow the instructions in [Configuring PingAccess for Microsoft Entra ID](https://docs.pingidentity.com/access/sources/dita/topic?category=pingaccess&Releasestatus_ce=Current&resourceid=pa_configuring_apps_for_azure) on the Ping Identity web site and download the [latest version of PingAccess](https://www.pingidentity.com/en/lp/azure-download.html).
 
-Those steps help you install PingAccess and set up a PingAccess account (if you don't already have one). Then, to create a Microsoft Entra ID OpenID Connect (OIDC) connection, you set up a token provider with the **Directory (tenant) ID** value that you copied from the Microsoft Entra admin center. Next, to create a web session on PingAccess, you use the **Application (client) ID** and `PingAccess key` values. After that, you can set up identity mapping and create a virtual host, site, and application.
+The steps in the PingAccess article walk you through obtaining a PingAccess account. To create a Microsoft Entra ID OpenID Connect (OIDC) connection, set up a token provider with the **Directory (tenant) ID** value that you copied from the Microsoft Entra admin center. Create a web session on PingAccess, use the **Application (client) ID** and `PingAccess key` values. Set up identity mapping and create a virtual host, site, and application.
 
 ### Test your application
 

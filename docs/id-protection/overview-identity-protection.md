@@ -2,18 +2,15 @@
 title: What is Microsoft Entra ID Protection?
 description: Automation to detect, remediate, investigate, and analyze risk data with Microsoft Entra ID Protection
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: identity-protection
+ms.service: entra-id-protection
+
 ms.topic: overview
-ms.date: 06/14/2023
+ms.date: 02/06/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: chuqiaoshi
-
-ms.collection: M365-identity-device-management
 ---
 # What is Identity Protection?
 
@@ -30,7 +27,7 @@ Microsoft continually adds and updates detections in our catalog to protect orga
 - Leaked credentials 
 - and more... 
 
-During each sign-in, Identity Protection runs all real-time sign-in detections generating a sign-in session risk level, indicating how likely the sign-in has been compromised. Based on this risk level, policies are then applied to protect the user and the organization.
+During each sign-in, Identity Protection runs all real-time sign-in detections generating a sign-in session risk level, indicating how likely the sign-in is compromised. Based on this risk level, policies are then applied to protect the user and the organization.
 
 For a full listing of risks and how they're detected, see the article [What is risk](concept-identity-protection-risks.md).
 
@@ -42,7 +39,7 @@ Any risks detected on an identity are tracked with reporting. Identity Protectio
 - **Risky sign-ins:** A risky sign-in is reported when there are one or more risk detections reported for that sign-in.
 - **Risky users:** A Risky user is reported when either or both of the following are true:
    - The user has one or more Risky sign-ins.
-   - One or more risk detections have been reported.
+   - One or more risk detections are reported.
 
 For more information about how to use the reports, see the article [How To: Investigate risk](howto-identity-protection-investigate-risk.md).
 
@@ -72,7 +69,7 @@ Data from Identity Protection can be exported to other tools for archive, furthe
 
 Information about integrating Identity Protection information with Microsoft Sentinel can be found in the article, [Connect data from Microsoft Entra ID Protection](/azure/sentinel/data-connectors-reference#microsoft). 
 
-Organizations may store data for longer periods by changing the diagnostic settings in Microsoft Entra ID. They can choose to send data to a Log Analytics workspace, archive data to a storage account, stream data to Event Hubs, or send data to another solution. Detailed information about how to do so can be found in the article, [How To: Export risk data](howto-export-risk-data.md). 
+Organizations might store data for longer periods by changing the diagnostic settings in Microsoft Entra ID. They can choose to send data to a Log Analytics workspace, archive data to a storage account, stream data to Event Hubs, or send data to another solution. Detailed information about how to do so can be found in the article, [How To: Export risk data](howto-export-risk-data.md). 
 
 ## Required roles
 
@@ -106,6 +103,8 @@ Conditional Access administrators can create policies that factor in user or sig
 | MFA registration policy |   | No | No | Yes |
 
 More information on these rich reports can be found in the article, [How To: Investigate risk](howto-identity-protection-investigate-risk.md#navigating-the-reports).
+
+To make use of workload identity risk, including the **Risky workload identities** and **Workload identity detections** tab in the **Risk detections** panes in the admin center, you must have Workload Identities Premium licensing. For more information, see the article [Securing workload identities](concept-workload-identity-risk.md).
 
 ## Next steps
 

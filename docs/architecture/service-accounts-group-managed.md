@@ -1,17 +1,14 @@
 ---
 title: Secure group managed service accounts
-description: A guide to securing group managed service accounts (gMSAs) 
+description: A guide to securing group managed service accounts (gMSAs)
 author: jricketts
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/09/2023
 ms.author: jricketts
 ms.reviewer: ajburnle
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Secure group managed service accounts

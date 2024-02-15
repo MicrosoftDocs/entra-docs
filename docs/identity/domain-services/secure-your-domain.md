@@ -1,17 +1,15 @@
 ---
 title: Secure Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to disable weak ciphers, old protocols, and NTLM password hash synchronization for a Microsoft Entra Domain Services managed domain.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 
 ms.assetid: 6b4665b5-4324-42ab-82c5-d36c01192c2a
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/23/2023
-ms.author: justinha 
+ms.author: justinha
 ms.custom: has-azure-ad-ps-ref
 ---
 # Harden a Microsoft Entra Domain Services managed domain

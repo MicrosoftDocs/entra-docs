@@ -1,9 +1,9 @@
 ---
 title: include file
 description: include file
-services: active-directory
+
 author: Barclayn
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: include
 ms.date: 12/09/2020
 ms.author: barclayn
