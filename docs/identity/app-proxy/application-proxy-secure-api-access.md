@@ -13,7 +13,7 @@ ms.custom: has-adal-ref
 ---
 # Use Microsoft Entra application proxy to provide secure access to an Application Programming Interface (API) hosted in a private cloud or on premises
 
-Business logic often lives in in a private Application Programming Interface (API). The API runs on premises or in a private cloud. Your native Android, iOS, Mac, or Windows apps need to interact with the API endpoints to use data or provide user interaction. Microsoft Entra application proxy and the [Microsoft Authentication Library (MSAL)](~/identity-platform/reference-v2-libraries.md) let your native apps securely access your private cloud APIs. Microsoft Entra application proxy is a faster and more secure solution than opening firewall ports and controlling authentication and authorization at the app layer.
+Business logic often lives in a private Application Programming Interface (API). The API runs on premises or in a private cloud. Your native Android, iOS, Mac, or Windows apps need to interact with the API endpoints to use data or provide user interaction. Microsoft Entra application proxy and the [Microsoft Authentication Library (MSAL)](~/identity-platform/reference-v2-libraries.md) let your native apps securely access your private cloud APIs. Microsoft Entra application proxy is a faster and more secure solution than opening firewall ports and controlling authentication and authorization at the app layer.
 
 > [!TIP]
 > On premises is a legacy term dating back to the time when physical servers were located on the premises of the corporate office. Now days, many self hosted workloads run on a virtual machine in a datacenter. The term on premises and private cloud are used interchangeably.
@@ -57,9 +57,9 @@ To publish the SecretAPI web API through application proxy:
 
 1. On the **Browse Microsoft Entra Gallery** page, locate section **On-premises applications** and select **Add an on-premises application**. The **Add your own on-premises application** page appears.
 
-1. If you don't have an application proxy connector installed, you'll be prompted to install it. Select **Download application proxy connector** to download and install the connector.
+1. If you don't have an application proxy connector installed, you are prompted to install it. Select **Download application proxy connector** to download and install the connector.
 
-1. Once you've installed the application proxy connector, on the **Add your own on-premises application** page:
+1. On the **Add your own on-premises application** page:
 
    1. Next to **Name**, enter *SecretAPI*.
 
@@ -79,7 +79,7 @@ To publish the SecretAPI web API through application proxy:
 
    ![Not visible to users](./media/application-proxy-secure-api-access/5-not-visible-to-users.png)
 
-You've published your web API through Microsoft Entra application proxy. Now, add users who can access the app.
+The web API is now published through Microsoft Entra application proxy. Next, add users who can access the app.
 
 1. On the **SecretAPI - Overview** page, select **Users and groups** in the left navigation.
 
@@ -119,7 +119,7 @@ To register the AppProxyNativeAppSample native app:
 
       ![New application registration](./media/application-proxy-secure-api-access/8-create-reg-ga.png)
 
-You've now registered the AppProxyNativeAppSample app in Microsoft Entra ID. To give your native app access to the SecretAPI web API:
+The `AppProxyNativeAppSample` app is now registered in Microsoft Entra ID. Give your native app access to the `SecretAPI` web API:
 
 1. On the **App registrations** page, select the **AppProxyNativeAppSample** app.
 
@@ -137,7 +137,7 @@ You've now registered the AppProxyNativeAppSample app in Microsoft Entra ID. To 
 
 ## Configure the native app code
 
-The last step is to configure the native app. The code must be added to the *Form1.cs* file in the NativeClient sample app where it will cause the [MSAL library](~/identity-platform/reference-v2-libraries.md) to acquire the token for requesting the API call and attach it as bearer to the header in the request. For more information about MSAL, see [Add MSAL to your project](~/identity-platform/tutorial-v2-windows-desktop.md#add-msal-to-your-project) and [Add the reference to MSAL](~/identity-platform/tutorial-v2-windows-desktop.md#add-the-code-to-initialize-msal).
+The last step is to configure the native app. The code must be added to the `Form1.cs` file in the `NativeClient` sample app. The code uses the [MSAL library](~/identity-platform/reference-v2-libraries.md) to acquire the token. The token requests the API call and attaches it to the header in the request. The token is attached as a bearer certificate. For more information about MSAL, see [Add MSAL to your project](~/identity-platform/tutorial-v2-windows-desktop.md#add-msal-to-your-project) and [Add the reference to MSAL](~/identity-platform/tutorial-v2-windows-desktop.md#add-the-code-to-initialize-msal).
 
 1. In *Form1.cs*, add the namespace `using Microsoft.Identity.Client;` to the code. 
 
@@ -149,9 +149,9 @@ Next, configure the native app to connect to Microsoft Entra ID and call the API
 
 1. Paste the AppProxyNativeAppSample **Application (client) ID** in the `<add key="ida:ClientId" value="" />` field. You can find and copy this value (a GUID) from the AppProxyNativeAppSample's **Overview** page, in the left navigation under **Manage**.
 
-1. *This step is optional as MSAL uses the method PublicClientApplicationBuilder.WithDefaultRedirectUri() to insert the recommended reply URI.* Paste the AppProxyNativeAppSample **Redirect URI** in the `<add key="ida:RedirectUri" value="" />` field. You can find and copy this value (a URI) from the AppProxyNativeAppSample's **Authentication** page, in the left navigation under **Manage**.
+1. Paste the AppProxyNativeAppSample **Redirect URI** in the `<add key="ida:RedirectUri" value="" />` field. You can find and copy this value (a URI) from the AppProxyNativeAppSample's **Authentication** page, in the left navigation under **Manage**. This step is optional as MSAL uses the method `PublicClientApplicationBuilder.WithDefaultRedirectUri()` to insert the recommended reply Uniform Resource Identifier (URI). 
 
-1. Paste the SecretAPI **Application ID URI** in the `<add key="todo:TodoListResourceId" value="" />` field. This is the same value as `todo:TodoListBaseAddress` below. You can find and copy this value (a URI) from the SecretAPI's **Expose an API** page, in the left navigation under **Manage**.
+1. Paste the SecretAPI **Application ID URI** in the `<add key="todo:TodoListResourceId" value="" />` field. The value is the same as `todo:TodoListBaseAddress`. The URI value is located on the **Expose an API** page of the `SecretAPI` application. Look in the left navigation under **Manage**.
 
 1. Paste the SecretAPI **Home Page URL** in the `<add key="todo:TodoListBaseAddress" value="" />` field. You can find and copy this value (a URL) from the SecretAPI **Branding & properties** page, in the left navigation under **Manage**.
 
