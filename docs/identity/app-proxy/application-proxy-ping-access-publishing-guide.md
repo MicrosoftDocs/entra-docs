@@ -210,7 +210,7 @@ The detailed steps for the PingAccess part of this scenario continue in the Ping
 The steps in the PingAccess article walk you through obtaining a PingAccess account. To create a Microsoft Entra ID OpenID Connect (OIDC) connection, set up a token provider with the **Directory (tenant) ID** value that you copied from the Microsoft Entra admin center. Create a web session on PingAccess. Use the `Application (client) ID` and `PingAccess key` values. Set up identity mapping and create a virtual host, site, and application.
 
 ### Test your application
-The application sis up and running. To test it, open a browser and navigate to the external URL that you created when you published the application in Microsoft Entra. Sign in with the test account you assigned to the application.
+The application is up and running. To test it, open a browser and navigate to the external URL that you created when you published the application in Microsoft Entra. Sign in with the test account you assigned to the application.
 
 ## Next steps
 
