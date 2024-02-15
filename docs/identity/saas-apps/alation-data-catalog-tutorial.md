@@ -95,7 +95,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
 
     > [!NOTE]
-    > Choose name identifier format as **Persistent** for **Name identifier format** from the dropdown.
+    > In the **Attributes &  Claims** section, click **Edit** button in  the right corner of Step 2  and click on Unique User Identifier (Name ID) claim and choose **Name identifier format** as **Persistent** from the drop-down menu under **Manage claim** section and click **Save**.
  
 1. In addition to above, Alation Data Catalog application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	
