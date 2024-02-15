@@ -40,7 +40,7 @@ You can use the [Microsoft Graph PowerShell beta module](/powershell/microsoftgr
 > [!IMPORTANT]
 > Make sure you're using the Microsoft Graph PowerShell Beta cmdlets module.
 
-1. Run the following commands:
+1. Run the following command:
 
     ```powershell
     Install-Module Microsoft.Graph.Beta
@@ -120,7 +120,7 @@ You can use the [Microsoft Graph PowerShell beta module](/powershell/microsoftgr
             }
         )
     }
-    Update-MgBetaDirectorySetting -DirectorySettingId $Settings.Id -BodyParameter $params
+    Update-MgBetaDirectorySetting -DirectorySettingId $settings.Id -BodyParameter $params
     ```
 
 ## Next steps
