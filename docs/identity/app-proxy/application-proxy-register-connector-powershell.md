@@ -1,13 +1,12 @@
 ---
 title: Silent install Microsoft Entra application proxy connector
-description: Covers how to perform an unattended installation of Microsoft Entra application proxy Connector to provide secure remote access to your on-premises apps.
-
+description: Covers how to perform an unattended installation of Microsoft Entra application proxy connector to provide secure remote access to your on-premises apps.
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/06/2024
+ms.date: 02/15/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -23,7 +22,7 @@ This capability is useful when you want to:
 * Integrate the connector installation and registration as part of another procedure.
 * Create a standard server image that contains the connector bits but is not registered.
 
-For the [Application Proxy connector](application-proxy-connectors.md) to work, it has to be registered with your Microsoft Entra directory using an application administrator and password. Ordinarily this information is entered during Connector installation in a pop-up dialog box, but you can use PowerShell to automate this process instead.
+For the [application proxy connector](application-proxy-connectors.md) to work, it has to be registered with your Microsoft Entra directory using an application administrator and password. Ordinarily this information is entered during connector installation in a pop-up dialog box, but you can use PowerShell to automate this process instead.
 
 There are two steps for an unattended installation. First, install the connector. Second, register the connector with Microsoft Entra ID.
 
@@ -199,4 +198,4 @@ There are two methods you can use to register the connector:
 ## Next steps
 * [Publish applications using your own domain name](how-to-configure-custom-domain.md)
 * [Enable single-sign on](how-to-configure-sso-with-kcd.md)
-* [Troubleshoot issues you're having with Application Proxy](application-proxy-troubleshoot.md)
+* [Troubleshoot issues you're having with application proxy](application-proxy-troubleshoot.md)
