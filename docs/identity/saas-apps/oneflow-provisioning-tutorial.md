@@ -44,7 +44,12 @@ The scenario outlined in this tutorial assumes that you already have the followi
 <a name='step-2-configure-oneflow-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure Oneflow to support provisioning with Microsoft Entra ID
-Contact Oneflow support to configure Oneflow to support provisioning with Microsoft Entra ID.
+
+Use the following information for [Step 5](oneflow-provisioning-tutorial#to-configure-automatic-user-provisioning-for-oneflow-in-microsoft-entra-id)-6.
+ 
+- Tenant URL: [https://api.oneflow.com/scim/v1/](https://api.oneflow.com/scim/v1/)
+ 
+- Secret Token: The oneflow SCIM token serves as the secret token in provisioning. Please follow the steps provided in this [tutorial](https://developer.oneflow.com/docs/enable-scim-api-extension) for generating a Oneflow SCIM token.
 
 <a name='step-3-add-oneflow-from-the-azure-ad-application-gallery'></a>
 
