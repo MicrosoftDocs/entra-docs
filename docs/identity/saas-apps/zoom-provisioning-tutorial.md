@@ -1,6 +1,6 @@
 ---
 title: 'Tutorial: Configure Zoom for automatic user provisioning with Microsoft Entra ID'
-description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Zoom.
+description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zoom.
 
 documentationcenter: ''
 author: twimmers
@@ -18,7 +18,7 @@ ms.author: thwimmer
 
 # Tutorial: Configure Zoom for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both Zoom and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Zoom](https://zoom.us/pricing/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This tutorial describes the steps you need to perform in both Zoom and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Zoom](https://zoom.us/pricing/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities supported
@@ -135,7 +135,7 @@ Once you've configured provisioning, use the following resources to monitor your
 * Zoom only allows a maximum of 9,999 basic users today.
 
 ## Change log
-* 05/14/2020 - Support for UPDATE operations  added for emails[type eq "work"] attribute.
+* 05/14/2020 - Supports for UPDATE operations  added for emails[type eq "work"] attribute.
 * 10/20/2020 - Added support for two new roles **Licensed** and **on-premises** to replace existing roles **Pro** and **Corp**. Support for roles **Pro** and **Corp** will be removed in the future.
 * 05/30/2023 - Added support for new authentication method i.e. **OAuth 2.0**.
 
