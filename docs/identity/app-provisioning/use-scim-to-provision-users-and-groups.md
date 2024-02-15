@@ -1174,7 +1174,7 @@ In the sample code, the request is translated into a call to the CreateAsync met
 Task<Resource> CreateAsync(IRequest<Resource> request);
 ```
 
-In a request for user provisioning, the value of the resource argument is an instance of the Microsoft.SCIM.Core2EnterpriseUser class. This class is defined in the Microsoft.SCIM.Schemas library.  If the request to provision the user succeeds, then the implementation of the method is expected to return an instance of the Microsoft.SCIM.Core2EnterpriseUser class. The value of the `Identifier` property is set to the unique identifier of the newly provisioned user.  
+In a request for user provisioning, the value of the resource argument is an instance of the `Microsoft.SCIM.Core2EnterpriseUser` class. This class is defined in the `Microsoft.SCIM.Schemas` library.  If the request to provision the user succeeds, then the implementation of the method is expected to return an instance of the `Microsoft.SCIM.Core2EnterpriseUser` class. The value of the `Identifier` property is set to the unique identifier of the newly provisioned user.  
 
 ***Example 3. Query the current state of a user*** 
 
