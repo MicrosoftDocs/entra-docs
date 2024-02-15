@@ -43,7 +43,7 @@ The following diagram illustrates the Verified ID architecture and the component
 If you don't have an Azure Key Vault instance available, follow [these steps](/azure/key-vault/general/quick-create-portal) to create a key vault using the Azure portal.
 
 >[!NOTE]
->By default, the account that creates a vault is the only one with access. The Verified ID service needs access to the key vault. You must [authenticate your key vault](/azure/key-vault/general/basic-concepts.md#authentication), allowing the account used during configuration to create and delete keys. The account used during configuration also requires permissions to sign so that it can create the domain binding for Verified ID. If you use the same account while testing, modify the default policy to grant the account sign permission, in addition to the default permissions granted to vault creators.
+>By default, the account that creates a vault is the only one with access. The Verified ID service needs access to the key vault. You must [authenticate your key vault](/azure/key-vault/general/basic-concepts), allowing the account used during configuration to create and delete keys. The account used during configuration also requires permissions to sign so that it can create the domain binding for Verified ID. If you use the same account while testing, modify the default policy to grant the account sign permission, in addition to the default permissions granted to vault creators.
 
 ### Manage access to the key vault
 

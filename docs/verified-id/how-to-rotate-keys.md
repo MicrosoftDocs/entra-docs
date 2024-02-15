@@ -20,7 +20,7 @@ In this article, we review the steps to rotate your Microsoft Entra Verified ID 
 ## Prerequisites
 
 - Verified ID authority is [manually onboarded](verifiable-credentials-configure-tenant.md), and the signing keys are in your own Azure Key Vault instance. [Quick setup](verifiable-credentials-configure-tenant-quick.md) uses a shared signing key, managed by Microsoft, that you can't rotate yourself.
-- The admin user performing key rotation must have [permission to the keys](verifiable-credentials-configure-tenant.md#set-access-policies-for-the-verified-id-admin-user) in Key Vault.
+- The admin user performing key rotation must have [permission to the keys](verifiable-credentials-configure-tenant.md) in Key Vault.
 
 ## Rotate the signing keys
 
