@@ -1,5 +1,5 @@
 ---
-title: Lifecycle workflow hybrid capabilities (preview)
+title: Lifecycle workflow hybrid capabilities
 description: Conceptual article discussing Lifecycle Workflow's hybrid compatibility
 author: owinfreyATL
 ms.author: owinfrey
@@ -14,7 +14,7 @@ ms.custom: template-concept
 #CustomerIntent: As an IT administrator, I want to learn about hybrid support with Lifecycle workflows so that I can use workflows to manage users in a hybrid environment.
 ---
 
-# Lifecycle workflow hybrid capabilities (preview)
+# Lifecycle workflow hybrid capabilities
 
 Lifecycle workflows allow you to create workflows that can be triggered for users based on where they fall in the joiner, mover, or leaver(JML) lifecycle within your organization. With these workflows you can also streamline the process of managing users in your hybrid environment via tasks. For example, you're able to enable synced hybrid user accounts, onboard users while also sending required information to their manager, automatically add users to groups or teams when their job role changes, disable accounts when users are no longer active, and even delete the user account. These capabilities work either out of the box, or with some configuration. In this article, you learn what is needed to use workflow features in your hybrid environment.
 
@@ -27,8 +27,8 @@ The following table shows what is required to use each workflow trigger in a hyb
 
 |Workflow Trigger  |Hybrid requirements  |
 |---------|---------|
-|Attribute changes     | No further configuration needed as long as attributes are synced.       |
-|Group membership based     | No further configuration needed. Also works for on-premises groups as long as they're synced.        |
+|Attribute changes (preview)     | No further configuration needed as long as attributes are synced.       |
+|Group membership based  (preview)   | No further configuration needed. Also works for on-premises groups as long as they're synced.        |
 |On-demand     |   No further configuration needed.      |
 |Time based    |  **employeeHireDate**, **employeeLeaveDateTime**: These attributes must be synced before being used. For more information on this process, see: [How to synchronize attributes for Lifecycle workflows](./how-to-lifecycle-workflow-sync-attributes.md).<br></br>**createdDateTime**: No further requirements needed. This date is the day the user account is synced to Microsoft Entra ID, not when they were created within Active Directory.       |
 
@@ -41,7 +41,7 @@ All Lifecycle workflow tasks work for both cloud, and hybrid, users out of the b
 
 Tasks related to adding and removing users to a group work as long as the hybrid groups that you're adding users to, or removing users from, are also be synced to Microsoft Entra ID. You can enable access from on-premises Active Directory to Microsoft Entra ID by using [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
 
-## User account tasks 
+## User account tasks (preview)
 
 Tasks related to enabling, disabling, and deleting user accounts work with hybrid users as long as you have satisfied the following prerequisites in setting up your hybrid environment:
 
