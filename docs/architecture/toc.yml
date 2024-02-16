@@ -11,7 +11,7 @@ items:
       href: architecture-icons.md
     - name: Road to the cloud
       items:
-      - name: Introduction
+      - name: Introduction 
         href: road-to-the-cloud-introduction.md
       - name: Cloud transformation posture
         href: road-to-the-cloud-posture.md
