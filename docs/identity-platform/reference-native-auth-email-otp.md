@@ -24,17 +24,15 @@ Microsoft Entra ID's native authentication API for email OTP allows you to build
 
 1. Microsoft Entra External ID for customers tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl).
 
-1. If you haven't already done so, [Register an application in the Microsoft Entra admin center](tutorial-web-app-node-sign-in-prepare-tenant.md#register-the-web-app), then [enable public client flows](tutorial-web-app-node-sign-in-prepare-tenant.md#register-the-web-app).
+1. If you haven't already done so, [Register an application in the Microsoft Entra admin center](../external-id/customers/how-to-register-ciam-app.md?tabs=nativeauth#choose-your-app-type). Make sure you grant delegated permissions, and enable public client and native authentication flows.
 
-1. If you haven't already done so, [Grant API permissions](tutorial-web-app-node-sign-in-prepare-tenant.md#grant-api-permissions) to your app registration.
+1. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers#to-add-a-new-user-flow). While you create the user flow, take note of the user attributes you select as these attributes are the ones that Microsoft Entra ID expects your app to submit. Under **Identity providers**, select **Email one-time-passcode** option.
 
-1. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](tutorial-web-app-node-sign-in-prepare-tenant.md#associate-the-web-application-with-the-user-flow). While you create the user flow, take note of the user attributes you select as these attributes are the ones that Microsoft Entra expects your app to submit. Under **Identity providers**, select **Email one-time-passcode** option.
+1. [Associate your app registration with the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
-1. [Associate your app registration with the user flow](tutorial-web-app-node-sign-in-prepare-tenant.md#associate-the-web-application-with-the-user-flow).
+1. If you haven't already done so, [enable email one-time passcode](../external-id/customers/how-to-enable-password-reset-customers.md#enable-email-one-time-passcode).
 
-1. If you haven't already done so, [enable email one-time passcode](how-to-enable-password-reset-customers.md#enable-email-one-time-passcode).
-
-1. For sign-in flow, [register a customer user](how-to-manage-customer-accounts.md#create-a-customer-account), which you use for test the sign in APIs. Alternatively, you get this test user after you run the sign-up flow.
+1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use for test the sign in APIs. Alternatively, you get this test user after you run the sign-up flow.
 
 ## Continuation token
 
@@ -46,11 +44,11 @@ To complete a sign-up flow using email OTP, your app interacts with four endpoin
 
 ### Sign-up API endpoints
 
-A sign-up flow with email OTP uses similar endpoints as sign-up with email with password as described in [Sign-up API endpoints](reference-native-auth-email-password.md#sign-up-api-endpoints).
+A sign-up flow with email OTP uses similar endpoints as sign-up with email with password as described in [Sign-up API endpoints](/entra/identity-platform/reference-native-auth-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json#sign-up-api-endpoints).
 
 ### Challenge types
 
-The API allows the app to advertise the authentication methods it supports to Microsoft Entra ID. To do so, the app uses the `challenge_type` parameter in its request. A sign-up flow with email OTP uses *oob* and *redirect* challenge types as described in [Challenge types](reference-native-auth-email-password.md#self-service-password-reset-challenge-types).
+The API allows the app to advertise the authentication methods it supports to Microsoft Entra ID. To do so, the app uses the `challenge_type` parameter in its request. A sign-up flow with email OTP uses *oob* and *redirect* challenge types as described in [Challenge types](/entra/identity-platform/reference-native-auth-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json#self-service-password-reset-challenge-types).
 
 ### Sign-up flow protocol details
 
@@ -93,7 +91,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 |    Parameter     | Required                     |           Description        |
 |-----------------------|-------------------------|------------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.                |
 | `username`          |    Yes   | Email of the customer user that they want to sign up with, such as *contoso-consumer@contoso.com*.  |
 | `challenge_type`    |   Yes  | A space-separated list of authorization [challenge type](#challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email OTP sign-up flow, the value is expected to contain `oob redirect`.|
@@ -199,7 +197,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 |    Parameter     | Required                     |           Description        |
 |-----------------------|-------------------------|------------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password sign-up flow, the value is expected to contain `oob redirect`.|
 |`continuation_token`| Yes | [continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request.|
@@ -316,7 +314,7 @@ continuation_token = uY29tL2F1dGhlbnRpY...
 
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 | `continuation_token`  | Yes | [continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request. |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | A request to the `/signup/v1.0/continue` endpoint can be used for submitting OTP code or user attributes. In this case, the `grant_type` value is used to differentiate between these two use cases. For email OTP flow, the possible values for the `grant_type` are *oob* and *attributes*. In this request, since we're sending OTP code, the value is expected to be *oob*.|
@@ -471,11 +469,11 @@ Content-Type: application/x-www-form-urlencoded
 
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
-| `tenant_subdomain` | Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain` | Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 |`continuation_token` | Yes | [continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request. |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | A request to the `/signup/v1.0/continue` endpoint can be used to submit OTP code or user attributes. In this case, we use the `grant_type` value to differentiate between these two use cases. The possible values for the `grant_type` are *oob*, and *attributes*. In this call, since we're sending user attributes, the value expected to be *attributes*.|
-|`attributes`| Yes | The user attribute values that the app collects from the customer user. The value is a string, but formatted as a JSON object whose keys are names of user attributes, built-in or custom. The key names of the object depend on the attributes that the administrator configured in the Microsoft Entra admin center. Replace `{user_name}`, `{user_age}` and `{comma_separated_hobbies}` with the name, age and hobbies values respectively that the app collects from the customer user. In the portal, you can configure user attributes values to be collected using different **User Input Type**, such as **TextBox**, **RadioSingleSelect, and **CheckboxMultiSelect**. In this case, we collect name and age using a TextBox, and hobbies using a CheckboxMultiSelect. **Microsoft Entra ID ignores any attributes that you submit, which don't exist**. Learn [how to configure user attribute collection during sign-up](how-to-define-custom-attributes.md).|
+|`attributes`| Yes | The user attribute values that the app collects from the customer user. The value is a string, but formatted as a JSON object whose keys are names of user attributes, built-in or custom. The key names of the object depend on the attributes that the administrator configured in the Microsoft Entra admin center. Replace `{user_name}`, `{user_age}` and `{comma_separated_hobbies}` with the name, age and hobbies values respectively that the app collects from the customer user. In the portal, you can configure user attributes values to be collected using different **User Input Type**, such as **TextBox**, **RadioSingleSelect, and **CheckboxMultiSelect**. In this case, we collect name and age using a TextBox, and hobbies using a CheckboxMultiSelect. **Microsoft Entra ID ignores any attributes that you submit, which don't exist**. Learn [how to configure user attribute collection during sign-up](../external-id/customers/how-to-define-custom-attributes.md).|
 
 #### Success response
 
@@ -580,7 +578,7 @@ continuation_token=ABAAEAAAAtyo...
 
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
-| `tenant_subdomain`  | Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  | Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | The parameter value must be *continuation token*. |
 |`continuation_token`|Yes    | [continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous call. |
@@ -658,7 +656,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Format of user attributes values
 
-You specify the information you want to collect from the user by configuring the [user flow](how-to-user-flow-sign-up-sign-in-customers.md#create-and-customize-a-user-flow) settings in the Microsoft Entra admin center. Use the [Collect user attributes during sign-up](how-to-define-custom-attributes.md) article to learn how to collect values for both built-in and custom attributes.
+You specify the information you want to collect from the user by configuring the [user flow](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md#create-and-customize-a-user-flow) settings in the Microsoft Entra admin center. Use the [Collect user attributes during sign-up](../external-id/customers/how-to-define-custom-attributes.md) article to learn how to collect values for both built-in and custom attributes.
 
 You can also specify the **User Input Type** for the attributes you configure. The following table summarizes supported user input types, and how to submit values collected by the UI controls to Microsoft Entra ID.
 
@@ -687,11 +685,11 @@ To request your security tokens, your app interacts with three endpoints, `/init
 
 ### Sign-in API Endpoints
 
-Sign in with email OTP uses similar endpoints as email with password as described in [Sign-in API endpoints](reference-native-auth-email-password.md#sign-in-api-endpoints).
+Sign in with email OTP uses similar endpoints as email with password as described in [Sign-in API endpoints](/entra/identity-platform/reference-native-auth-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json.md#sign-in-api-endpoints).
 
 ### Challenge types
 
-The API allows the app to advertise the authentication methods it supports to Microsoft Entra ID. To do so, s the `challenge_type` parameter in its requests. Sign in with mail OTP uses *oob* and *redirect* challenge types as described in [Challenge types](reference-native-auth-email-password.md#sign-in-challenge-types).
+The API allows the app to advertise the authentication methods it supports to Microsoft Entra ID. To do so, s the `challenge_type` parameter in its requests. Sign in with mail OTP uses *oob* and *redirect* challenge types as described in [Challenge types](/entra/identity-platform/reference-native-auth-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json#sign-in-challenge-types).
 
 ### Sign-in flow protocol details
 
@@ -719,7 +717,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 |    Parameter     | Required                     |           Description        |
 |-----------------------|-------------------------|------------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.                |
 | `username`          |    Yes   |   Email of the customer user such as *contoso-consumer@contoso.com*.  |
 | `challenge_type`    |   Yes  | A space-separated list of authorization [challenge type](#challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email OTP sign in flow, the value is expected to contain `oob redirect`.|
@@ -820,7 +818,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 |    Parameter     | Required                     |           Description        |
 |-----------------------|-------------------------|------------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `continuation_token` | Yes | [continuation_token](#continuation-token) that Microsoft Entra ID returned from the previous request. |
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email OTP sign in flow, the value is expected to be `oob redirect`.|
@@ -933,7 +931,7 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 | `continuation_token`  | Yes | [continuation_token](#continuation-token) that Microsoft Entra ID returned from the previous request. |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | Value must be *oob* for email OTP flow.  |
@@ -1014,4 +1012,4 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 - [Native authentication email with password API reference](/entra/identity-platform/reference-native-auth-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json)).
 
-- Learn how to [create custom attributes](how-to-define-custom-attributes.md#create-custom-user-attributes).
+- Learn how to [create custom attributes](../external-id/customers/how-to-define-custom-attributes.md#create-custom-user-attributes).
