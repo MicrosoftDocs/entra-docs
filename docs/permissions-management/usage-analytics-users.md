@@ -1,11 +1,10 @@
 ---
 title: View analytic information about users in Permissions Management
 description: How to view analytic information about users in Permissions Management.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: ciem
+ms.service: entra-permissions-management
+
 ms.topic: how-to
 ms.date: 09/15/2023
 ms.author: jfields

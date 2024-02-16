@@ -4,9 +4,9 @@ description: Learn how to rotate Microsoft Entra Verified ID signing keys.
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: how-to
-ms.subservice: verifiable-credentials
+
 ms.date: 12/06/2023
 ms.author: barclayn
 

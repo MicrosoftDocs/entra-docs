@@ -6,8 +6,8 @@ author: garrodonnell
 manager: CelesteDG
 
 ms.author: godonnell
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: tutorial
 ms.date: 06/09/2023
 

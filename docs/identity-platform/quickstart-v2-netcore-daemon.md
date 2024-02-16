@@ -8,8 +8,8 @@ ms.author: owenrichards
 ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:aspnet-core", mode-api, devx-track-dotnet
 ms.date: 04/13/2023
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn how my .NET app can get an access token and call an API that's protected by the Microsoft identity platform by using the client credentials flow.
 ---
@@ -57,7 +57,7 @@ ms.topic: conceptual
 >
 > #### Step 3: Admin consent
 >
-> Running the application now results in the output `HTTP 403 - Forbidden* error: "Insufficient privileges to complete the operation`. This error occurs because any app-only permission requires a global administrator of the directory to give consent to the application. Select one of the following options, depending on the role.
+> Running the application now results in the output `HTTP 403 - Forbidden* error: "Insufficient privileges to complete the operation`. This error occurs because any app-only permission requires a Global Administrator of the directory to give consent to the application. Select one of the following options, depending on the role.
 >
 > ##### Global tenant administrator
 >
@@ -67,7 +67,7 @@ ms.topic: conceptual
 >
 > ##### Standard user
 >
-> For a standard user of your tenant, ask a global administrator to grant admin consent to the application. To do this, provide the following URL to the administrator:
+> For a standard user of your tenant, ask a Global Administrator to grant admin consent to the application. To do this, provide the following URL to the administrator:
 >
 > ```url
 > https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_id=Enter_the_Application_Id_Here

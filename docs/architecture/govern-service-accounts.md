@@ -1,17 +1,15 @@
 ---
 title: Governing Microsoft Entra service accounts
 description: Principles and procedures for managing the lifecycle of service accounts in Microsoft Entra ID.
-services: active-directory
 author: jricketts
 manager: martinco
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/09/2023
 ms.author: jricketts
 ms.reviewer: ajburnle
-ms.custom: it-pro, seodec18, has-azure-ad-ps-ref
-ms.collection: M365-identity-device-management
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done 
 ---
 
 # Governing Microsoft Entra service accounts
@@ -56,10 +54,10 @@ We recommend the following practices for service account privileges.
 * The service principal is assigned a privileged role
   * [Create and assign a custom role in Microsoft Entra ID](~/identity/role-based-access-control/custom-create.md)
 * Don't include service accounts as members of any groups with elevated permissions
-  * See, [Get-AzureADDirectoryRoleMember](/powershell/module/azuread/get-azureaddirectoryrolemember):
+  * See, [Get-MgDirectoryRoleMember](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryrolemember):
    
->`Get-AzureADDirectoryRoleMember`, and filter for objectType "Service Principal", or use</br>
->`Get-AzureADServicePrincipal | % { Get-AzureADServiceAppRoleAssignment -ObjectId $_ }`
+>`Get-MgDirectoryRoleMember`, and filter for objectType "Service Principal", or use</br>
+>`Get-MgServicePrincipal | % { Get-MgServicePrincipalAppRoleAssignment -ObjectId $_ }`
 
 * See, [Introduction to permissions and consent](~/identity-platform/permissions-consent-overview.md) to limit the functionality a service account can access on a resource
 * Service principals and managed identities can use OAuth 2.0 scopes in a delegated context impersonating a signed-on user, or as service account in the application context. In the application context, no one is signed in.
@@ -116,14 +114,11 @@ We recommend you export Microsoft Entra sign-in logs, and then import them into 
 
 Regularly review service account permissions and accessed scopes to see if they can be reduced or eliminated.
 
-* See, [Get-AzureADServicePrincipalOAuth2PermissionGrant](/powershell/module/azuread/get-azureadserviceprincipaloauth2permissiongrant)
-  * [Script to list all delegated permissions and application permissions in Microsoft Entra ID](https://gist.github.com/psignoret/41793f8c6211d2df5051d77ca3728c09) scopes for service account
+* See, [Get-MgServicePrincipalOauth2PermissionGrant](/powershell/module/microsoft.graph.applications/get-mgserviceprincipaloauth2permissiongrant)
 * See, [`AzureADAssessment`](https://github.com/AzureAD/AzureADAssessment) and confirm validity
 * Don't set service principal credentials to **Never expire**
 * Use certificates or credentials stored in Azure Key Vault, when possible
   * [What is Azure Key Vault?](/azure/key-vault/general/basic-concepts)
-
-The free PowerShell sample collects service principal OAuth2 grants and credential information, records them in a comma-separated values (CSV) file, and a Power BI sample dashboard. For more information, see [`AzureADAssessment`](https://github.com/AzureAD/AzureADAssessment).
 
 ### Recertify service account use
 

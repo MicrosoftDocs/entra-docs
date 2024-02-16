@@ -4,8 +4,8 @@ description: Understand how users get assigned to an app that is using Microsoft
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: reference
 ms.date: 01/07/2021

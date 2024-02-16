@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom: azureday1
 ms.date: 04/05/2023
-ms.devlang: csharp, javascript
+ms.devlang: csharp
 ms.reviewer: stsoneff
 ms.service: app-service
 ms.subservice: web-apps

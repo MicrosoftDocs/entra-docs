@@ -3,7 +3,7 @@ title: Microsoft Entra on-premises app provisioning to Azure Databricks with Pri
 description: This article describes how to use the Microsoft Entra provisioning service to provision users into Azure Databricks with Private Link Workspace.
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: tutorial
 

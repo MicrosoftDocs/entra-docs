@@ -1,10 +1,11 @@
 ---
 author: kengaderdus
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: include
 ms.date: 07/12/2023
 ms.author: kengaderdus
+ms.manager: mwongerapk
 ---
 
 To use your client app certificate, you need to associate the app you registered in the Microsoft Entra admin center with the certificate:

@@ -4,7 +4,7 @@ description: In this article, learn how to create and configure a Microsoft Entr
 author: justinha
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
 ms.date: 09/15/2023

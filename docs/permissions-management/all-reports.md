@@ -1,11 +1,10 @@
 ---
 title: View a list and description of all system reports available in Permissions Management reports
 description: View a list and description of all system reports available in Permissions Management.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: ciem
+ms.service: entra-permissions-management
+
 ms.topic: overview
 ms.date: 06/13/2023
 ms.author: jfields

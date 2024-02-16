@@ -1,17 +1,16 @@
 ---
 title: Admin consent for LinkedIn account connections
 description: Explains how to enable or disable LinkedIn integration account connections in Microsoft apps in Microsoft Entra ID
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 ms.date: 11/21/2023
 ms.author: barclayn
 ms.reviewer: beengen
 ms.custom: it-pro, has-azure-ad-ps-ref
-ms.collection: M365-identity-device-management
 ---
 
 # Integrate LinkedIn account connections in Microsoft Entra ID

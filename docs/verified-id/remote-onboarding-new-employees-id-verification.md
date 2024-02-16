@@ -4,8 +4,8 @@ description: A design pattern describing how to onboard new employees remotely
 services: decentralized-identity
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 ms.topic: conceptual
 ms.date: 04/06/2023
 ms.author: barclayn

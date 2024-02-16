@@ -3,7 +3,7 @@ title: What's new in Azure Sovereign Clouds? Release notes
 description: Learn what is new with Azure Sovereign Clouds.
 author: owinfreyATL
 ms.author: owinfrey
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 05/31/2023
