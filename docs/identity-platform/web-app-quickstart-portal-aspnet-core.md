@@ -7,8 +7,8 @@ manager: CelesteDG
 ms.author: dmwendia
 ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:aspnet-core", mode-other
 ms.date: 08/16/2022
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write an ASP.NET Core web app that can sign in personal accounts, as well as work and school accounts, from any Microsoft Entra instance.
 ---
@@ -18,7 +18,7 @@ ms.topic: conceptual
 > [!div renderon="docs"]
 > Welcome! This probably isn't the page you were expecting. While we work on a fix, this link should take you to the right article:
 >
-> > [Quickstart: Add sign-in with Microsoft to an ASP.NET Core web app](quickstart-web-app-aspnet-core-sign-in.md)
+> > [Quickstart: Add sign-in with Microsoft to an ASP.NET Core web app](quickstart-web-app-dotnet-core-sign-in.md)
 > 
 > We apologize for the inconvenience and appreciate your patience while we work to get this resolved.
 

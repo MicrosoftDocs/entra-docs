@@ -1,18 +1,14 @@
 ---
 title: Recoverability best practices in Microsoft Entra ID
 description: Learn the best practices for increasing recoverability.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 08/26/2022
 ms.author: jricketts
 ms.reviewer: jricketts
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Recoverability best practices

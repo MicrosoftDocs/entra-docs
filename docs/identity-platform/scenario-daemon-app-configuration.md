@@ -5,10 +5,10 @@ author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
 ms.custom: 
-ms.date: 09/19/2020
+ms.date: 02/01/2024
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform.
 ---
@@ -48,7 +48,7 @@ The configuration file defines:
 
 # [.NET](#tab/idweb)
 
-Here's an example of defining the configuration in an [*appsettings.json*](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/daemon-console/appsettings.json) file. This example is taken from the [.NET Core console daemon](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) code sample on GitHub.
+Here's an example of defining the configuration in an [*appsettings.json*](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/daemon-console/appsettings.json) file. This example is taken from the [.NET console daemon](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) code sample on GitHub.
 
 ```json
 {
@@ -129,7 +129,7 @@ When you build a confidential client with certificates, the [parameters.json](ht
 
 # [.NET (low level)](#tab/dotnet)
 
-Here's an example of defining the configuration in an [*appsettings.json*](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/daemon-console/appsettings.json) file. This example is taken from the [.NET Core console daemon](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) code sample on GitHub.
+Here's an example of defining the configuration in an [*appsettings.json*](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/daemon-console/appsettings.json) file. This example is taken from the [.NET console daemon](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) code sample on GitHub.
 
 ```json
 {
@@ -351,7 +351,7 @@ Here's the code to build an application with a certificate:
 
 The code itself is exactly the same. The certificate is described in the configuration. 
 There are many ways to get the certificate. For details see https://aka.ms/ms-id-web-certificates.
-Here's how you would do to get your certificate from KeyVault. Microsoft identity delegates to Azure Identity's DefaultAzureCredential, and used Managed identity when available to access the certificate from KeyVault. You can debug your application locally as it, then, uses your developer credentials.
+Here's how you would do to get your certificate from KeyVault. Microsoft identity delegates to Azure Identity's DefaultAzureCredential, and used Managed identity when available to access the certificate from KeyVault. You can debug your application locally as it then uses your developer credentials.
 
 ```json
   "ClientCredentials": [
@@ -448,7 +448,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
 
 # [.NET](#tab/idweb)
 
-Instead of a client secret or a certificate, the confidential client application can also prove its identity by using client assertions. See
+In addition to using a client secret or certificate, confidential client applications can also prove their identity by using client assertions. See
 [CredentialDescription](/dotnet/api/microsoft.identity.abstractions.credentialdescription?view=msal-model-dotnet-latest&preserve-view=true) for details.
 
 # [Java](#tab/java)

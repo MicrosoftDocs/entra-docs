@@ -5,8 +5,7 @@ titleSuffix: Microsoft Entra External ID
 description: Shows how a Microsoft Entra B2B guest user can leave an organization by using the Access Panel.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 07/27/2023
 

@@ -2,17 +2,15 @@
 
 title: Conditional Access gap analyzer workbook in  Microsoft Entra ID
 description: Learn how to use the Conditional Access gap analyzer workbook.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
-ms.workload: identity
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 10/03/2023
 ms.author: sarahlipsey
-ms.reviewer: sarbar 
-
+ms.reviewer: sarbar
 ---
 
 # Conditional Access gap analyzer workbook

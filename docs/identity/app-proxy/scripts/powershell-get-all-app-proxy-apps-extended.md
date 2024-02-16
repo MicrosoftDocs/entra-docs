@@ -1,12 +1,11 @@
 ---
 title: PowerShell sample - List extended info for Microsoft Entra application proxy apps
 description: PowerShell example that lists all Microsoft Entra application proxy applications along with the application ID (AppId), name (DisplayName), external URL (ExternalUrl), internal URL (InternalUrl), and authentication type (ExternalAuthenticationType).
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: sample
 ms.date: 01/04/2024
@@ -23,8 +22,6 @@ Changing the value of the $ssoMode variable enables a filtered output by SSO mod
 [!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
 
 [!INCLUDE [updated-for-az](~/../azure-docs-pr/includes/updated-for-az.md)]
-
-[!INCLUDE [cloud-shell-try-it.md](~/../azure-docs-pr/includes/cloud-shell-try-it.md)]
 
 This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 

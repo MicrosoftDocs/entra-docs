@@ -2,19 +2,16 @@
 
 title: What are Microsoft Entra workbooks?
 description: Learn how to create and work with Microsoft Entra workbooks, for identity monitoring, alerts, and data visualization.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: overview
-ms.workload: identity
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 10/03/2023
 ms.author: sarahlipsey
-ms.reviewer: tspring  
-
+ms.reviewer: tspring
 # Customer intent: As a Microsoft Entra administrator, I want a visualization tool that I can customize for my tenant.
-
 ---
 
 # What are Microsoft Entra workbooks?

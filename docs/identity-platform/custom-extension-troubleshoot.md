@@ -1,14 +1,14 @@
 ---
 title: Troubleshoot a custom claims provider
 description: Troubleshoot and monitor your custom claims provider API.  Learn how to use logging and Microsoft Entra sign-in logs to find errors and issues in your custom claims provider API.
-author: omondiatieno
+author: cilwerner
 manager: CelesteDG
-ms.author: jomondi
+ms.author: cwerner
 ms.custom: 
 ms.date: 03/06/2023
 ms.reviewer: JasSuri
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
 

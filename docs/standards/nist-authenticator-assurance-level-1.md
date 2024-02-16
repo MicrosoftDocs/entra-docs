@@ -1,10 +1,8 @@
 ---
 title: Achieve NIST AAL1 with Microsoft Entra ID
 description: Guidance on achieving NIST authenticator assurance level 1 (AAL1) with Microsoft Entra ID.
-services: active-directory 
-ms.service: active-directory
-ms.subservice: fundamentals
-ms.workload: identity
+ms.service: entra
+ms.subservice: standards
 ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
@@ -12,7 +10,6 @@ manager: martinco
 ms.reviewer: martinco
 ms.date: 12/8/2022
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # NIST authenticator assurance level 1 with Microsoft Entra ID 

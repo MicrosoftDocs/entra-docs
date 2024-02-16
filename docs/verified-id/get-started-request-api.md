@@ -4,9 +4,9 @@ description: Learn how to issue and verify by using the Request Service REST API
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: how-to
-ms.subservice: verifiable-credentials
+
 ms.date: 06/16/2022
 ms.author: barclayn
 
@@ -468,7 +468,7 @@ Presentation request with [claims constraints](presentation-request-api.md#const
 
 # [With FaceCheck](#tab/facecheck)
 
-Presentation request with FaceCheck:
+Presentation request with FaceCheck. When using FaceCheck, the `includeReceipt` must be false as receipt is not supported then.
 
 ```JSON
 {

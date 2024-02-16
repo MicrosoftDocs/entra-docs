@@ -1,6 +1,6 @@
 ---
 author: joflore
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: include
 ms.date: 09/15/2022
 ms.author: joflore

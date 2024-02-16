@@ -4,9 +4,9 @@ title: How to troubleshoot sign-in errors
 description: Learn how to troubleshoot sign-in errors using Microsoft Entra reports in the Microsoft Entra admin center
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: troubleshooting
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 12/15/2023
 ms.author: sarahlipsey
 ms.reviewer: egreenberg

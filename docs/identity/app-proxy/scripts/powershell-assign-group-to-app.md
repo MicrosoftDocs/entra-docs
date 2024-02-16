@@ -1,12 +1,11 @@
 ---
 title: PowerShell sample - Assign group to a Microsoft Entra application proxy app
 description: PowerShell example that assigns a group to a Microsoft Entra application proxy application.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: sample
 ms.date: 01/04/2024
@@ -21,8 +20,6 @@ This PowerShell script example allows you to assign a specific group to a Micros
 [!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
 
 [!INCLUDE [updated-for-az](~/../azure-docs-pr/includes/updated-for-az.md)]
-
-[!INCLUDE [cloud-shell-try-it.md](~/../azure-docs-pr/includes/cloud-shell-try-it.md)]
 
 This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 

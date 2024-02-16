@@ -2,7 +2,7 @@
 title: Session controls in Conditional Access policy
 description: What are session controls in a Microsoft Entra Conditional Access policy
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 01/09/2024
@@ -55,13 +55,13 @@ Sign-in frequency setting works with apps that implement OAUTH2 or OIDC protocol
 - Dynamics CRM Online
 - Azure portal
 
-For more information, see the article [Configure authentication session management with Conditional Access](howto-conditional-access-session-lifetime.md#user-sign-in-frequency).
+For more information, see the article [Configure authentication session management with Conditional Access](concept-session-lifetime.md#user-sign-in-frequency).
 
 ## Persistent browser session
 
 A persistent browser session allows users to remain signed in after closing and reopening their browser window.
 
-For more information, see the article [Configure authentication session management with Conditional Access](howto-conditional-access-session-lifetime.md#persistence-of-browsing-sessions).
+For more information, see the article [Configure authentication session management with Conditional Access](concept-session-lifetime.md#persistence-of-browsing-sessions).
 
 ## Customize continuous access evaluation
 

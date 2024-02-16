@@ -3,16 +3,16 @@ title: Allow or block invites to specific organizations
 description: Shows how an administrator can use the Microsoft Entra admin center or PowerShell to set an access or blocklist to allow or block B2B users from certain domains.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 08/04/2023
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.custom: "it-pro, seo-update-azuread-jan"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
+#customer intent: As an IT admin managing B2B collaboration, I want to configure an allowlist or blocklist for specific organizations, so that I can control  where B2B invitations can be sent by users in my organization.
 ---
 
 # Allow or block invitations to B2B users from specific organizations
@@ -29,8 +29,8 @@ This article discusses two ways to configure an allow or blocklist for B2B colla
 - You can create either an allowlist or a blocklist. You can't set up both types of lists. By default, whatever domains aren't in the allowlist are on the blocklist, and vice versa. 
 - You can create only one policy per organization. You can update the policy to include more domains, or you can delete the policy to create a new one. 
 - The number of domains you can add to an allowlist or blocklist is limited only by the size of the policy. This limit applies to the number of characters, so you can have a greater number of shorter domains or fewer longer domains. The maximum size of the entire policy is 25 KB (25,000 characters), which includes the allowlist or blocklist and any other parameters configured for other features.
-- This list works independently from OneDrive for Business and SharePoint Online allow/block lists. If you want to restrict individual file sharing in SharePoint Online, you need to set up an allow or blocklist for OneDrive for Business and SharePoint Online. For more information, see [Restricted domains sharing in SharePoint Online and OneDrive for Business](https://support.office.com/article/restricted-domains-sharing-in-sharepoint-online-and-onedrive-for-business-5d7589cd-0997-4a00-a2ba-2320ec49c4e9).
-- The list doesn't apply to external users who have already redeemed the invitation. The list will be enforced after the list is set up. If a user invitation is in a pending state, and you set a policy that blocks their domain, the user's attempt to redeem the invitation will fail.
+- This list works independently from OneDrive and SharePoint Online allow/block lists. If you want to restrict individual file sharing in SharePoint Online, you need to set up an allow or blocklist for OneDrive and SharePoint Online. For more information, see [Restrict sharing of SharePoint and OneDrive content by domain](https://support.office.com/article/restricted-domains-sharing-in-sharepoint-online-and-onedrive-for-business-5d7589cd-0997-4a00-a2ba-2320ec49c4e9).
+- The list doesn't apply to external users who already redeemed the invitation. The list will be enforced after the list is set up. If a user invitation is in a pending state, and you set a policy that blocks their domain, the user's attempt to redeem the invitation fails.
 - Both allow/block list and cross-tenant access settings are checked at the time of invitation.
 
 ## Set the allow or blocklist policy in the portal
@@ -45,36 +45,32 @@ This is the most typical scenario, where your organization wants to work with al
 
 To add a blocklist:
 
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator).
-2. Browse to **Identity** > **Users** > **User settings**.
-3. Under **External users**, select **Manage external collaboration settings**.
-4. Under **Collaboration restrictions**, select **Deny invitations to the specified domains**.
-5. Under **Target domains**, enter the name of one of the domains that you want to block. For multiple domains, enter each domain on a new line. For example:
+1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
+1. Under **Collaboration restrictions**, select **Deny invitations to the specified domains**.
+1. Under **Target domains**, enter the name of one of the domains that you want to block. For multiple domains, enter each domain on a new line. For example:
 
-    :::image type="content" source="media/allow-deny-list/DenyListSettings.PNG" alt-text="Screenshot showing the deny option with added domains.":::
+    :::image type="content" source="media/allow-deny-list/deny-list-settings.png" alt-text="Screenshot showing the option to deny with added domains.":::
  
-6. When you're done, select **Save**.
+1. When you're done, select **Save**.
 
 After you set the policy, if you try to invite a user from a blocked domain, you receive a message saying that the domain of the user is currently blocked by your invitation policy.
  
 ### Add an allowlist
 
-This is a more restrictive configuration, where you can set specific domains in the allowlist and restrict invitations to any other organizations or domains that aren't mentioned.
+With this more restrictive configuration, you can set specific domains in the allowlist and restrict invitations to any other organizations or domains that aren't mentioned.
 
-If you want to use an allowlist, make sure that you spend time to fully evaluate what your business needs are. If you make this policy too restrictive, your users may choose to send documents over email, or find other non-IT sanctioned ways of collaborating.
+If you want to use an allowlist, make sure that you spend time to fully evaluate what your business needs are. If you make this policy too restrictive, your users can choose to send documents over email, or find other non-IT sanctioned ways of collaborating.
 
 
 To add an allowlist:
 
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator).
-2. Browse to **Identity** > **Users** > **User settings**.
-3. Under **External users**, select **Manage external collaboration settings**.
+1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
 4. Under **Collaboration restrictions**, select **Allow invitations only to the specified domains (most restrictive)**.
 5. Under **Target domains**, enter the name of one of the domains that you want to allow. For multiple domains, enter each domain on a new line. For example:
 
-    :::image type="content" source="media/allow-deny-list/AllowlistSettings.PNG" alt-text="Screenshot showing the allow option with added domains.":::
+    :::image type="content" source="media/allow-deny-list/allow-list-settings.png" alt-text="Screenshot showing the allow option with added domains.":::
  
 6. When you're done, select **Save**.
 
@@ -82,7 +78,7 @@ After you set the policy, if you try to invite a user from a domain that's not o
 
 ### Switch from allowlist to blocklist and vice versa 
 
-If you switch from one policy to the other, this discards the existing policy configuration. Make sure to back up details of your configuration before you perform the switch. 
+Switching from one policy to another discards the existing policy configuration. Make sure to back up details of your configuration before you perform the switch. 
 
 ## Set the allow or blocklist policy using PowerShell
 
@@ -102,7 +98,7 @@ To check the version of the module (and see if it's installed):
    Get-Module -ListAvailable AzureAD*
    ```
 
-If the module is not installed, or you don't have a required version, do one of the following:
+If the module isn't installed, or you don't have a required version, do one of the following:
 
 - If no results are returned, run the following command to install the latest version of the `AzureADPreview` module:
   
@@ -168,8 +164,3 @@ Remove-AzureADPolicy -Id $currentpolicy.Id
 
 - [Cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md)
 - [External collaboration settings](external-collaboration-settings-configure.md).
-
-
-=======
-
-

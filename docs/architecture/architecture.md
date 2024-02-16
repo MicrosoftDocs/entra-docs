@@ -1,19 +1,15 @@
 ---
 title: Architecture overview
 description: Learn what a Microsoft Entra tenant is and how to manage Azure using Microsoft Entra ID.
-services: active-directory
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
-ms.subservice: fundamentals
-ms.workload: identity
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 08/17/2022
 ms.author: barclayn
 ms.reviewer: jeffsta
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # What is the Microsoft Entra architecture?

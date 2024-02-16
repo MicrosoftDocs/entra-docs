@@ -1,12 +1,10 @@
 ---
 title: Microsoft Entra Permissions Management glossary
 description: Microsoft Entra Permissions Management glossary
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
-ms.subservice: ciem
-ms.workload: identity
+ms.service: entra-permissions-management
+
 ms.topic: conceptual
 ms.date: 06/16/2023
 ms.author: jfields

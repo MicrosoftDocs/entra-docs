@@ -1,19 +1,16 @@
 ---
 title: Configure PIM for Groups settings
 description: Learn how to configure PIM for Groups settings.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: how-to
-ms.tgt_pltfrm: na
-ms.workload: identity
-ms.subservice: pim
+ms.subservice: privileged-identity-management
 ms.date: 09/12/2023
 ms.author: barclayn
 ms.custom: pim
-ms.collection: M365-identity-device-management
+
 ---
 
 # Configure PIM for Groups settings

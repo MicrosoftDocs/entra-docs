@@ -3,7 +3,8 @@ title: Configure a Logic App for Lifecycle Workflow use
 description: Configure an Azure Logic App for use with Lifecycle Workflows
 author: owinfreyATL
 ms.author: owinfrey
-ms.service: active-directory
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: reference
 ms.date: 06/22/2023
 ms.custom: template-how-to
@@ -218,13 +219,11 @@ To configure those you follow these steps:
 ## Configure authorization policy for custom task extension with POP security token type
 If the security token type is **Proof of Possession (POP)** for your custom task extension, you'd set the authorization policy by following these steps:
 
-1. For Logic Apps authorization policy, we need the managed identities **Application ID**. Since the Microsoft Entra admin center only shows the Object ID, we need to look up the Application ID. You can search for the managed identity by Object ID under **Enterprise Applications** in the Microsoft Entra admin center to find the required Application ID.
+1. Go to the logic app you created and select **Authorization**.
 
-1. Go back to the logic app you created, and select **Authorization**.
+1. Create an authorization policy based on the following table:
 
-1. Create two authorization policies based on these tables:
-
-    Policy name: `POP-Policy`
+    Policy name: `POP-Policy` 
 
     Policy type: `AADPOP`
     

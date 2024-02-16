@@ -1,16 +1,13 @@
 ---
 title: 'How to synchronize attributes for Lifecycle workflows'
 description: Describes overview of Lifecycle workflow attributes.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: overview
 ms.date: 09/18/2023
-ms.subservice: compliance
 ms.author: owinfrey
-ms.collection: M365-identity-device-management
 ---
 
 # How to synchronize attributes for Lifecycle workflows
@@ -39,20 +36,20 @@ This document explains how to set up synchronization from on-premises Microsoft 
 
 ## Understanding EmployeeHireDate and EmployeeLeaveDateTime formatting
 
-The EmployeeHireDate and EmployeeLeaveDateTime contain dates and times that must be formatted in a specific way.  This means that you may need to use an expression to convert the value of your source attribute to a format that will be accepted by the EmployeeHireDate or EmployeeLeaveDateTime.  The following table outlines the format that is expected and provides an example expression on how to convert the values.
+The EmployeeHireDate and EmployeeLeaveDateTime contain dates and times that must be formatted in a specific way.  This means that you might need to use an expression to convert the value of your source attribute to a format the EmployeeHireDate or EmployeeLeaveDateTime accepts. The following table outlines the format that is expected and provides an example expression on how to convert the values.
 
 |Scenario|Expression/Format|Target|More Information|
 |-----|-----|-----|-----|
 |Workday to Active Directory User Provisioning|FormatDateTime([StatusHireDate], ,"yyyy-MM-ddzzz", "yyyyMMddHHmmss.fZ")|On-premises AD string attribute|[Attribute mappings for Workday](~/identity/saas-apps/workday-inbound-tutorial.md#below-are-some-example-attribute-mappings-between-workday-and-active-directory-with-some-common-expressions)|
 |SuccessFactors to Active Directory User Provisioning|FormatDateTime([endDate], ,"M/d/yyyy hh:mm:ss tt","yyyyMMddHHmmss.fZ")|On-premises AD string attribute|[Attribute mappings for SAP Success Factors](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)|
-|Custom import to Active Directory|Must be in the format "yyyyMMddHHmmss.fZ"|On-premises AD string attribute||
+|Custom import to Active Directory|Must be in the format "yyyyMMddHHmmss.fZ"|On-premises AD string attribute|[Attribute mappings for any other system of record](../identity/app-provisioning/inbound-provisioning-api-configure-app.md)|
 |Microsoft Graph User API|Must be in the format "YYYY-MM-DDThh:mm:ssZ"|EmployeeHireDate and EmployeeLeaveDateTime||
-|Workday to Microsoft Entra user provisioning|Can use a direct mapping.  No expression is needed but may be used to adjust the time portion of EmployeeHireDate and EmployeeLeaveDateTime|EmployeeHireDate and EmployeeLeaveDateTime||
-|SuccessFactors to Microsoft Entra user provisioning|Can use a direct mapping.  No expression is needed but may be used to adjust the time portion of EmployeeHireDate and EmployeeLeaveDateTime|EmployeeHireDate and EmployeeLeaveDateTime||
+|Workday to Microsoft Entra user provisioning|Can use a direct mapping.  No expression is needed but can be used to adjust the time portion of EmployeeHireDate and EmployeeLeaveDateTime|EmployeeHireDate and EmployeeLeaveDateTime||
+|SuccessFactors to Microsoft Entra user provisioning|Can use a direct mapping.  No expression is needed but can be used to adjust the time portion of EmployeeHireDate and EmployeeLeaveDateTime|EmployeeHireDate and EmployeeLeaveDateTime||
 
-For more information on expressions, see [Reference for writing expressions for attribute mappings in Microsoft Entra ID](~/identity/app-provisioning/functions-for-customizing-application-data.md)
+For more information on expressions, see [Reference for writing expressions for attribute mappings in Microsoft Entra ID](~/identity/app-provisioning/functions-for-customizing-application-data.md).
 
-The expression examples in the table use endDate for SAP and StatusHireDate for Workday.  However, you may opt to use different attributes.
+The expression examples in the table use endDate for SAP and StatusHireDate for Workday.  However, you can opt to use different attributes.
 
 For example, you might use StatusContinuousFirstDayOfWork instead of StatusHireDate for Workday.  In this instance your expression would be:  
 
@@ -76,14 +73,14 @@ StatusOriginalHireDate|Workday|Joiner|EmployeeHireDate|
 |lastDateWorked|SAP SF|Leaver|EmployeeLeaveDateTime|
 |endDate|SAP SF|Leaver|EmployeeLeaveDateTime|
 
-For more attributes, see the [Workday attribute reference](~/identity/app-provisioning/workday-attribute-reference.md) and [SAP SuccessFactors attribute reference](~/identity/app-provisioning/sap-successfactors-attribute-reference.md)
+For more attributes, see the [Workday attribute reference](~/identity/app-provisioning/workday-attribute-reference.md) and [SAP SuccessFactors attribute reference](~/identity/app-provisioning/sap-successfactors-attribute-reference.md).
 
 ## Importance of time
 To ensure timing accuracy of scheduled workflows it’s crucial to consider:
 
 - The time portion of the attribute must be set accordingly, for example the `employeeHireDate` should have a time at the beginning of the day like 1AM or 5AM and the `employeeLeaveDateTime` should have time at the end of the day like 9PM or 11PM
-- The Workflows won't run earlier than the time specified in the attribute, however the [tenant schedule (default 3h)](customize-workflow-schedule.md) may delay the workflow run.  For instance, if you set the `employeeHireDate` to 8AM but the tenant schedule doesn't run until 9AM, the workflow won't be processed until then.  If a new hire is starting at 8AM, you would want to set the time to something like (start time - tenant schedule) to ensure it runs before the employee arrives.
-- It's recommended, that if you're using temporary access pass (TAP), that you set the maximum lifetime to 24 hours.  Doing this will help ensure that the TAP hasn't expired after being sent to an employee who may be in a different timezone.  For more information, see [Configure Temporary Access Pass in Microsoft Entra ID to register Passwordless authentication methods.](~/identity/authentication/howto-authentication-temporary-access-pass.md#enable-the-temporary-access-pass-policy)
+- The Workflows won't run earlier than the time specified in the attribute, however the [tenant schedule (default 3h)](customize-workflow-schedule.md) can delay the workflow run.  For instance, if you set the `employeeHireDate` to 8AM but the tenant schedule doesn't run until 9AM, the workflow won't be processed until then.  If a new hire is starting at 8AM, you would want to set the time to something like (start time - tenant schedule) to ensure it runs before the employee arrives.
+- It's recommended, that if you're using temporary access pass (TAP), that you set the maximum lifetime to 24 hours.  Doing this will help ensure that the TAP hasn't expired after being sent to an employee who might be in a different timezone.  For more information, see [Configure Temporary Access Pass in Microsoft Entra ID to register Passwordless authentication methods.](~/identity/authentication/howto-authentication-temporary-access-pass.md#enable-the-temporary-access-pass-policy)
 - When importing the data, you should understand if and how the source provides time zone information for your users to potentially make adjustments to ensure timing accuracy.
 
 
@@ -156,7 +153,7 @@ For more information, see [How to customize a synchronization rule](~/identity/h
 
 ## Edit attribute mapping in the provisioning application
 
-Once you have set up your provisioning application, you're able to edit its attribute mapping. When the app is created, you get a list of default mappings between your HRM and Active Directory. From there you can either edit the existing mapping, or add new mapping. 
+Once you have set up your provisioning application, you're able to edit its attribute mapping. When the app is created, you get a list of default mappings between your HRM and Active Directory. From there, you can either edit the existing mapping, or add new mapping. 
 
 To update this mapping, you'd do the following:
 
@@ -170,13 +167,13 @@ To update this mapping, you'd do the following:
 
 1.  Select **Show advanced options**, and then select edit Attribute list for On Premise Active Directory.
     :::image type="content" source="media/how-to-lifecycle-workflow-sync-attributes/edit-on-prem-attribute.png" alt-text="Screenshot of editing on-premises attribute.":::
-1.  Add your source attribute(s) created as Type String, and select on the CheckBox for required.
-    :::image type="content" source="media/how-to-lifecycle-workflow-sync-attributes/edit-attribute-list.png" alt-text="Screenshot of source api list.":::
+1.  Add your source attribute or attributes created as Type String, and select on the CheckBox for required.
+    :::image type="content" source="media/how-to-lifecycle-workflow-sync-attributes/edit-attribute-list.png" alt-text="Screenshot of source API list.":::
     > [!NOTE]
     > The number, and name, of source attributes added will depend on which attributes you are syncing from Active Directory.
 1.  Select Save. 
 
-1. From there you must map the HRM attributes to the added Active Directory attributes. To do this, Add New Mapping using an Expression. 
+1. From there, you must map the HRM attributes to the added Active Directory attributes. To do this, Add New Mapping using an Expression. 
 
 1. Your expression must match the formatting found in the [Understanding EmployeeHireDate and EmployeeLeaveDateTime formatting](how-to-lifecycle-workflow-sync-attributes.md#understanding-employeehiredate-and-employeeleavedatetime-formatting) section.
     :::image type="content" source="media/how-to-lifecycle-workflow-sync-attributes/attribute-formatting-expression.png" alt-text="Screenshot of setting attribute format.":::
@@ -196,10 +193,12 @@ $Scopes =@("User.Read.All", "User-LifeCycleInfo.Read.All")
 
 # Connect using the scopes defined and select the Beta API Version
 Connect-MgGraph -Scopes $Scopes
-Select-MgProfile -Name beta
+
 
 # Query a user, using its user ID, and return the desired properties
-Get-MgUser -UserId "44198096-38ea-440d-9497-bb6b06bcaf9b" | Select-Object DisplayName, EmployeeLeaveDateTime
+$user = Get-MgUser -UserID "9093a415-2968-48b5-808b-a1a6f006f7a3" -Property EmployeeLeaveDateTime
+$User.EmployeeLeaveDateTime
+
 ```
 ![Screenshot of the result.](media/how-to-lifecycle-workflow-sync-attributes/user-lifecycle-properties-return.png)
 
@@ -208,4 +207,3 @@ Get-MgUser -UserId "44198096-38ea-440d-9497-bb6b06bcaf9b" | Select-Object Displa
 - [Create a custom workflow using the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md)
 - [Configure API-driven inbound provisioning app (Public preview)](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md)
 - [Create a Lifecycle workflow](create-lifecycle-workflow.md)
-

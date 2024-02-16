@@ -1,13 +1,12 @@
 ---
 title: Manage user-assigned managed identities
 description: Create user-assigned managed identities.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: how-to
-ms.workload: identity
 ms.date: 05/10/2023
 ms.author: barclayn
 ms.custom: devx-track-azurecli, devx-track-linux
@@ -104,7 +103,7 @@ In this article, you learn how to create, list, delete, or assign a role to a us
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before you continue.
 
 
-[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../articles/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../docs/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
 
 > [!IMPORTANT]
 > To modify user permissions when you use an app service principal by using the CLI, you must provide the service principal more permissions in the Azure Active Directory Graph API because portions of the CLI perform GET requests against the Graph API. Otherwise, you might end up receiving an "Insufficient privileges to complete the operation" message. To do this step, go into the **App registration** in Microsoft Entra ID, select your app, select **API permissions**, and scroll down and select **Azure Active Directory Graph**. From there, select **Application permissions**, and then add the appropriate permissions.

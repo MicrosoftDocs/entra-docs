@@ -1,13 +1,12 @@
 ---
 title: Microsoft Entra ID and SAP SuccessFactors integration reference
 description: Technical deep dive into SAP SuccessFactors-HR driven provisioning for Microsoft Entra ID.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.workload: identity
 ms.date: 09/15/2023
 ms.author: kenwith
 ms.reviewer: chmutali
@@ -323,8 +322,8 @@ This section describes how you can update the JSONPath settings to definitely re
 
     | **String to find** | **String to use for replace** | **Purpose**  |
     | ------------------ | ----------------------------- | ------------ |
-    | `$.employmentNav.results[0].<br>jobInfoNav.results[0].emplStatus` | `$.employmentNav..jobInfoNav..results[?(@.emplStatusNav.externalCode == 'A' || @.emplStatusNav.externalCode == 'U' || @.emplStatusNav.externalCode == 'P' )].emplStatusNav.externalCode` | With this find-replace, we're adding the ability to expand emplStatusNav OData object.    |
-    | `$.employmentNav.results[0].<br>jobInfoNav.results[0]`            | `$.employmentNav..jobInfoNav..results[?(@.emplStatusNav.externalCode == 'A' || @.emplStatusNav.externalCode == 'U' || @.emplStatusNav.externalCode == 'P')]`                             | With this find-replace, we instruct the connector to always retrieve attributes associated with the active SuccessFactors EmpJobInfo record. Attributes associated with terminated/inactive records in SuccessFactors are ignored. |
+    | `$.employmentNav.results[0].jobInfoNav.results[0].emplStatus` | `$.employmentNav..jobInfoNav..results[?(@.emplStatusNav.externalCode == 'A' || @.emplStatusNav.externalCode == 'U' || @.emplStatusNav.externalCode == 'P' )].emplStatusNav.externalCode` | With this find-replace, we're adding the ability to expand emplStatusNav OData object.    |
+    | `$.employmentNav.results[0].jobInfoNav.results[0]`            | `$.employmentNav..jobInfoNav..results[?(@.emplStatusNav.externalCode == 'A' || @.emplStatusNav.externalCode == 'U' || @.emplStatusNav.externalCode == 'P')]`                             | With this find-replace, we instruct the connector to always retrieve attributes associated with the active SuccessFactors EmpJobInfo record. Attributes associated with terminated/inactive records in SuccessFactors are ignored. |
     | `$.employmentNav.results[0]`                                    | `$.employmentNav..results[?(@.jobInfoNav..results[?(@.emplStatusNav.externalCode == 'A' || @.emplStatusNav.externalCode == 'U' || @.emplStatusNav.externalCode == 'P')])]`             | With this find-replace, we instruct the connector to always retrieve attributes associated with the active SuccessFactors Employment record. Attributes associated with terminated/inactive records in SuccessFactors are ignored. |
 
 1. Save the schema.

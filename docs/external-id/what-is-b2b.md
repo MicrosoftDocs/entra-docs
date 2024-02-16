@@ -1,18 +1,16 @@
 ---
-title: Microsoft Entra B2B collaboration overview
+title: What is Microsoft Entra B2B collaboration
 description: Microsoft Entra B2B collaboration supports guest user access so you can securely share resources and collaborate with external partners.
 
- 
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: overview
-ms.date: 12/19/2023
+ms.date: 01/18/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.custom: "it-pro, seo-update-azuread-jan"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
-# Customer intent: As an administrator managing external collaboration, I want to easily invite guest users from the Azure portal, so that I can securely share my company's applications and services with external partners and maintain control over my corporate data.
+# Customer intent: As an administrator managing B2B collaboration, I want to easily invite guest users from the Entra admin center, so that I can securely share my company's applications and services with external partners and maintain control over my corporate data.
 ---
 
 # B2B collaboration overview
@@ -21,7 +19,7 @@ B2B collaboration is a feature within Microsoft Entra External ID that lets you 
 
 ![Diagram illustrating B2B collaboration.](media/what-is-b2b/b2b-collaboration-overview.png)
 
-A simple invitation and redemption process lets partners use their own credentials to access your company's resources. You can also enable self-service sign-up user flows to let external users sign up for apps or resources themselves. Once the external user has redeemed their invitation or completed sign-up, they're represented in your directory as a [user object](user-properties.md). The user type for these B2B collaboration users is typically set to "guest" and their user principal name contains the #EXT# identifier.
+A simple invitation and redemption process lets partners use their own credentials to access your company's resources. You can also enable self-service sign-up user flows to let external users sign up for apps or resources themselves. Once the external user has redeemed their invitation or completed sign-up, they're represented in your directory as a user object. The user type for these B2B collaboration users is typically set to "guest" and their user principal name contains the #EXT# identifier.
 
 Developers can use Microsoft Entra business-to-business APIs to customize the invitation process or write applications like self-service sign-up portals. For licensing and pricing information related to guest users, refer to [Microsoft Entra External ID pricing](https://azure.microsoft.com/pricing/details/active-directory/external-identities/).
 
@@ -36,7 +34,7 @@ With Microsoft Entra B2B, the partner uses their own identity management solutio
 - You don't need to manage external accounts or passwords.
 - You don't need to sync accounts or manage account lifecycles.
 
-## Manage collaboration with other organizations and clouds
+## Manage B2B collaboration with other organizations and clouds
 
 B2B collaboration is enabled by default, but comprehensive admin settings let you control your inbound and outbound B2B collaboration with external partners and organizations:
 
@@ -46,9 +44,9 @@ B2B collaboration is enabled by default, but comprehensive admin settings let yo
 
 - Use [Microsoft cloud settings](cross-cloud-settings.md) to establish mutual B2B collaboration between the Microsoft Azure global cloud and [Microsoft Azure Government](/azure/azure-government/) or [Microsoft Azure operated by 21Vianet](/azure/china/).
 
-## Easily invite guest users from the Azure portal
+## Easily invite guest users from the Microsoft Entra admin center
 
-As an administrator, you can easily add guest users to your organization in the Azure portal.
+As an administrator, you can easily add guest users to your organization in the admin center.
 
 - [Create a new guest user](b2b-quickstart-add-guest-users-portal.md) in Microsoft Entra ID, similar to how you'd add a new user.
 - Assign guest users to apps or groups.
@@ -56,7 +54,7 @@ As an administrator, you can easily add guest users to your organization in the 
 
 :::image type="content" source="media/what-is-b2b/add-a-b2b-user.png" alt-text="Screenshot showing the Invite a new guest user invitation entry page." lightbox="media/what-is-b2b/add-a-b2b-user.png":::
 
-- Guest users follow a few simple [redemption steps](redemption-experience.md) to sign in.
+- Guest users follow a few simple redemption steps to sign in.
 
 :::image type="content" source="media/what-is-b2b/consent-screen.png" alt-text="Screenshot showing the Review permissions page.":::
 
@@ -64,7 +62,7 @@ As an administrator, you can easily add guest users to your organization in the 
 
 With a self-service sign-up user flow, you can create a sign-up experience for external users who want to access your apps. As part of the sign-up flow, you can provide options for different social or enterprise identity providers, and collect information about the user. Learn about [self-service sign-up and how to set it up](self-service-sign-up-overview.md).
 
-You can also use [API connectors](api-connectors-overview.md) to integrate your self-service sign-up user flows with external cloud systems. You can connect with custom approval workflows, perform identity verification, validate user-provided information, and more.
+You can also use API connectors to integrate your self-service sign-up user flows with external cloud systems. You can connect with custom approval workflows, perform identity verification, validate user-provided information, and more.
 
 :::image type="content" source="media/what-is-b2b/self-service-sign-up-user-flow-overview.png" alt-text="Screenshot showing the user flows page.":::
 
@@ -109,5 +107,5 @@ You can [enable integration with SharePoint and OneDrive](/sharepoint/sharepoint
 ## Next steps
 
 - [Invitation email](invitation-email-elements.md)
-- [Add B2B collaboration guest users in the portal](add-users-administrator.md)
+- [Add B2B collaboration guest users in the admin center](add-users-administrator.md)
 - [B2B direct connect](b2b-direct-connect-overview.md)

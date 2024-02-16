@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom: azureday1
 ms.date: 04/05/2023
-ms.devlang: csharp, javascript
+ms.devlang: csharp
 ms.reviewer: stsoneff
 ms.service: app-service
 ms.subservice: web-apps
@@ -132,9 +132,9 @@ To see this code as part of a sample application, see the [sample on GitHub](htt
 
 ### Install the Microsoft.Identity.Web.GraphServiceClient client library package
 
-Install the [Microsoft.Identity.Web.GraphServiceClient NuGet package](https://www.nuget.org/packages/Microsoft.Identity.Web.GraphServiceClient) in your project by using the .NET Core command-line interface or the Package Manager Console in Visual Studio.
+Install the [Microsoft.Identity.Web.GraphServiceClient NuGet package](https://www.nuget.org/packages/Microsoft.Identity.Web.GraphServiceClient) in your project by using the .NET command-line interface (CLI) or the Package Manager Console in Visual Studio.
 
-#### .NET Core command-line
+#### .NET CLI
 
 Open a command line, and switch to the directory that contains your project file.
 

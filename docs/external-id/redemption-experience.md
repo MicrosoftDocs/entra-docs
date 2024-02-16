@@ -4,8 +4,7 @@ title: Invitation redemption in B2B collaboration
 description: Describes the Microsoft Entra B2B collaboration invitation redemption experience for end users, including the agreement to privacy terms.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: conceptual
 ms.date: 05/05/2023
 ms.author: cmulligan

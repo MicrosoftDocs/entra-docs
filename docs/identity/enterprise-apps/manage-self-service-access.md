@@ -3,8 +3,8 @@ title: Enable self-service application assignment
 description: Enable self-service application access to allow users to find their own applications from their My Apps portal
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 01/04/2024
 ms.author: jomondi
@@ -19,7 +19,7 @@ ms.custom: enterprise-apps
 
 In this article, you learn how to enable self-service application access using the Microsoft Entra admin center.
 
-Before your users can self-discover applications from the [My Apps portal](./myapps-overview.md), you need to enable **Self-service application access** for the applications. This functionality is available for applications that were added from the Microsoft Entra Gallery, [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md), or were added using [user or admin consent](~/identity-platform/application-consent-experience.md).
+Before your users can self-discover applications from the [My Apps portal](./myapps-overview.md), you need to enable **Self-service application access** for the applications. This functionality is available for applications that were added from the Microsoft Entra Gallery, [Microsoft Entra application proxy](/entra/identity/app-proxy), or were added using [user or admin consent](~/identity-platform/application-consent-experience.md).
 
 Using this feature, you can:
 
@@ -39,7 +39,7 @@ Using this feature, you can:
 
 To enable self-service application access, you need:
 
-- An Microsoft Entra user account. If you don't already have one, [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator.
 - A Microsoft Entra P1 or P2 license is required for users to request to join a self-service app and for owners to approve or deny requests. Without a Microsoft Entra ID P1 or P2 license, users can't add self-service apps.
 

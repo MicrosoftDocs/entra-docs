@@ -1,19 +1,17 @@
 ---
 title: Assign or list Microsoft Entra roles with administrative unit scope
 description: Use administrative units to restrict the scope of role assignments in Microsoft Entra ID.
-services: active-directory
-documentationcenter: ''
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: how-to
-ms.subservice: roles
-ms.workload: identity
+ms.subservice: role-based-access-control
 ms.date: 11/15/2022
 ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal, it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.collection: M365-identity-device-management
+
 ---
 
 # Assign Microsoft Entra roles with administrative unit scope

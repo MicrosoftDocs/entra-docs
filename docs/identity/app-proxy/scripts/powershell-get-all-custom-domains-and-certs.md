@@ -1,12 +1,11 @@
 ---
 title: PowerShell sample - Microsoft Entra application proxy apps using custom domains
 description: PowerShell example that lists all Microsoft Entra application proxy applications that are using custom domains and certificate information.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: sample
 ms.date: 01/04/2024
@@ -21,8 +20,6 @@ This PowerShell script example lists all Microsoft Entra application proxy appli
 [!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
 
 [!INCLUDE [updated-for-az](~/../azure-docs-pr/includes/updated-for-az.md)]
-
-[!INCLUDE [cloud-shell-try-it.md](~/../azure-docs-pr/includes/cloud-shell-try-it.md)]
 
 This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
