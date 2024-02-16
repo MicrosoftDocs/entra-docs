@@ -16,7 +16,7 @@ ms.reviewer: brianmel
 
 # Deploy macOS Platform Single Sign-on as an administrator (preview)
 
-In this tutorial, you will learn how to deploy macOS Platform Single sign-on (PSSO) for a Mac device as an administrator in the Microsoft Intune admin center. PSSO is a feature that enables users to sign in to Mac devices using their Microsoft Entra ID credentials. This feature provides benefits for admins by simplifying the sign-in process for users and reducing the number of passwords they need to remember. PSSO is supported on Macs enrolled using both Automated Device Enrollment and Device Enrollment, running macOS 13 Ventura or later.
+macOS Platform Single Sign-on (PSSO) is a feature that enables users to sign in to Mac devices using their Microsoft Entra ID credentials. This feature provides benefits for admins by simplifying the sign-in process for users and reducing the number of passwords they need to remember. PSSO is supported on Macs enrolled using both Automated Device Enrollment and Device Enrollment, running macOS 13 Ventura or later.
 
 ## Prerequisites
 
