@@ -136,8 +136,6 @@ Create a tenant app registration to authorize the Easy Button access to Graph. T
 5. Review the configuration options.
 6. Select **Next**.
 
-   ![Screenshot of configuration options and the Next option.](./media/f5-big-ip-easy-button-ldap/config-steps.png)
-
 7. Use the graphic to help publish your application.
 
    ![Screenshot of graphic indicating configuration areas.](./media/f5-big-ip-easy-button-ldap/config-steps-flow.png#lightbox)
@@ -193,16 +191,11 @@ Easy Button has application templates for Oracle PeopleSoft, Oracle E-Business S
 1. Select **Oracle E-Business Suite**.
 2. Select **Add**.
 
-   ![Screenshot of the Oracle E-Business Suite option under Azure Configuration.](./media/f5-big-ip-oracle/azure-configuration-add-big-ip-application.png)
-
 #### Azure Configuration
 
 1. Enter a **Display Name** for the app BIG-IP creates in your Microsoft Entra tenant, and the icon on MyApps.
 2. In **Sign On URL (optional)**, enter the EBS application public FQDN.
 3. Enter the default path for the Oracle EBS homepage.
-
-    ![Screenshot for Azure configuration add display info](./media/f5-big-ip-oracle/azure-configuration-add-display-info.png)
-
 3. Next to the **Signing Key** and **Signing Certificate**, select the **refresh** icon.
 4. Locate the certificate you imported.
 5. In **Signing Key Passphrase**, enter the certificate password.

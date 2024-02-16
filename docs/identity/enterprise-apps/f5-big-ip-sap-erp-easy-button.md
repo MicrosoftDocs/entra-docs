@@ -126,9 +126,6 @@ Register the Easy Button client in Microsoft Entra ID, then it's allowed to esta
 5. Select **Microsoft Entra Application**.
 6. Review the configuration list.
 7. Select **Next**.
-
-  ![Screenshot of the configuration list and the Next button.](./media/f5-big-ip-easy-button-ldap/config-steps.png)
-
 8. Follow the configuration sequence under **Microsoft Entra Application Configuration**.
 
   ![Screenshot of configuration sequence.](./media/f5-big-ip-easy-button-ldap/config-steps-flow.png#lightbox)

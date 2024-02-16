@@ -119,8 +119,6 @@ Initiate the APM **Guided Configuration** to launch the **Easy Button** template
 
 2. Review the list of steps and select **Next**
 
-    ![Screenshot of the Next option.](./media/f5-big-ip-easy-button-ldap/config-steps.png)
-
 3. Follow the steps to publish your application.
 
    ![Screenshot of the configuration flow on Guided Configuration.](./media/f5-big-ip-easy-button-ldap/config-steps-flow.png#lightbox)

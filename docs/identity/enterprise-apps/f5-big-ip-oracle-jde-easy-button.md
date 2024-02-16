@@ -129,9 +129,6 @@ The following instructions help you create a tenant app registration to authoriz
 5. Select **Microsoft Entra Application**.
 6. Review the configuration sequence.
 7. Select **Next**
-
-   ![Screenshot of a configuration sequence.](./media/f5-big-ip-easy-button-ldap/config-steps.png)
-
 8. Follow the configuration sequence.
 
    ![Screenshot of configuration sequence under Microsoft Entra Application Configuration.](./media/f5-big-ip-easy-button-ldap/config-steps-flow.png#lightbox)
@@ -186,15 +183,10 @@ The Easy Button has templates for Oracle PeopleSoft, Oracle E-Business Suite, Or
 1. Select **JD Edwards Protected by F5 BIG-IP**.
 2. Select **Add**. 
 
-   ![Screenshot of the JD Edwards Protected by F5 BIG-IP option under Azure Configuration.](./media/f5-big-ip-easy-button-oracle-jde/azure-configuration-add-big-ip-application.png)
-
 #### Azure Configuration
 
 1. Enter **Display Name** for the app BIG-IP creates in the tenant. The name appears on an icon in [My Apps](https://myapplications.microsoft.com/).
 2. (Optional) For **Sign On URL** enter the PeopleSoft application public FQDN.
-
-    ![Screenshot of Display Name and Sign On URL options under Azure Configuration.](./media/f5-big-ip-easy-button-oracle-jde/azure-configuration-add-display-info.png)
-
 3. Next to the **Signing Key** and **Signing Certificate**, select **refresh**. This action locates the certificate you imported.
 4. For **Signing Key Passphrase**, enter the certificate password.
 5. (Optional) For **Signing Option**, select an option. This selection ensures BIG-IP accepts tokens and claims signed by Microsoft Entra ID.

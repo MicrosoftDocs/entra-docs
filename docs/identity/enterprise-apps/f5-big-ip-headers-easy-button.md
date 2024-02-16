@@ -134,8 +134,6 @@ Create a tenant app registration to authorize the Easy Button access to Graph. W
 6. Review the configuration steps.
 7. Select **Next**.
 
-   ![Screenshot of configuration steps.](./media/f5-big-ip-easy-button-ldap/config-steps.png)
-
 8. Use the illustrated steps sequence to publish your application.
 
    ![Diagram of the publication sequence.](./media/f5-big-ip-easy-button-ldap/config-steps-flow.png#lightbox)
