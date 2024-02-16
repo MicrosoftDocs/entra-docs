@@ -16,6 +16,8 @@ ms.reviewer: chuqiaoshi
 
 The Identity Protection risk analysis workbook helps administrators understand what would happen if you create and enable [Microsoft Entra ID Protection risk based Conditional Access policies](howto-identity-protection-configure-risk-policies.md) in your environment. [Workbooks](/entra/identity/monitoring-health/overview-workbooks) are a collection of information, including queries, tables, and visualizations over a period of time, to help you make sense of underlying data from an existing Log Analytics workspace.
 
+:::image type="content" source="media/workbook-risk-based-policy-impact/workbook-risk-based-impact.png" alt-text="A screenshot of the impact analysis of risk-based access policies workbook." lightbox="media/workbook-risk-based-policy-impact/workbook-risk-based-impact.png":::
+
 ## Description
 
 The workbook helps you understand your environment before enabling policies that might block your users from signing in, require multifactor authentication, or perform a secure password change. It provides you with a breakdown based on a date range of your choosing of sign-ins including:
