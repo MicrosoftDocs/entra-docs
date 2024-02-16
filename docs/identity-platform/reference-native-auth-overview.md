@@ -20,7 +20,7 @@ Microsoft Entra ID's [native authentication](overview-customers-ciam.md) enables
 
 Currently, our identity platform's native authentication API supports sign-up and sign-in for two authentication methods:
 
-- [Email with password](reference-native-auth-email-password.md), which supports sign-up and sign-in with an email and password, and self-service password reset (SSPR).
+- [Email with password](/entra/identity-platform/reference-native-auth-email-otp?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), which supports sign-up and sign-in with an email and password, and self-service password reset (SSPR).
 
 - [Email one-time password or passcode (OTP)](reference-native-auth-email-otp.md), which supports sign-up and sign-in with email OTP.
 
@@ -30,7 +30,7 @@ Currently, our identity platform's native authentication API supports sign-up an
 
 ## Next steps
 
-- [Native authentication API reference with Email OTP](reference-native-auth-email-otp.md).
+- [Native authentication API reference with Email OTP](/entra/identity-platform/reference-native-auth-email-otp?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 
 - [Native authentication API reference with Email and password](reference-native-auth-email-password.md).
 
