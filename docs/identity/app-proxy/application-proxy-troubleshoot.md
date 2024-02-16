@@ -30,16 +30,16 @@ For example, if you publish the path `https://yourapp/app` but the application c
 ## An application proxy application takes too long to load
 Applications can be functional but experience a long latency. Network topology tweaks can make improvements to speed. For an evaluation of different topologies, see the [network considerations document](application-proxy-network-topology.md).
 
-## Application page does not display correctly for an Application Proxy application
-When you publish an Application Proxy app, only pages under your root are accessible when accessing the application. If the page isn’t displaying correctly, the root internal URL used for the application may be missing some page resources. To resolve, publish *all* the resources for the page as part of your application.
+## Application page doesn't display correctly for an application proxy application
+When you publish an application proxy app, only pages under your root are accessible when accessing the application. If the page isn’t displaying correctly, the root internal URL used for the application may be missing some page resources. To resolve, publish *all* the resources for the page as part of your application.
 
-You can verify if missing resources is the issue by opening your network tracker (such as Fiddler, or F12 tools in Internet Explorer/Microsoft Edge), loading the page, and looking for 404 errors. That indicates the pages currently cannot be found and that you need to publish them.
+Verify if missing resources is the issue. Opening your network tracker, such as Fiddler, or F12 tools in Microsoft Edge. Load the page, and looking for 404 errors. The errors indicate the pages can't be found and that you need to publish them.
 
-As an example, assume you published an expenses application using the internal URL `http://myapps/expenses`, but the app uses the stylesheet `http://myapps/style.css`. The stylesheet is not published in your application, so loading the expenses app throws a `404` error trying to load `style.css`. In this example, resolve the problem by publishing the application with the internal URL `http://myapp/`.
+As an example, assume you published an expenses application using the internal URL `http://myapps/expenses`, but the app uses the stylesheet `http://myapps/style.css`. The stylesheet isn't published in your application, so loading the expenses app throws a `404` error trying to load `style.css`. In this example, resolve the problem by publishing the application with the internal URL `http://myapp/`.
 
 ## Problems with publishing as one application
 
-If it is not possible to publish all resources within the same application, you need to publish multiple applications and enable links between them.
+If it isn't possible to publish all resources within the same application, you need to publish multiple applications and enable links between them.
 
 To do so, we recommend using the [custom domains](how-to-configure-custom-domain.md) solution. However, this solution requires that you own the certificate for your domain and your applications use fully qualified domain names (FQDNs). For other options, see the [troubleshoot broken links documentation](application-proxy-page-links-broken-problem.md).
 
