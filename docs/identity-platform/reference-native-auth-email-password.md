@@ -26,7 +26,7 @@ Microsoft Entra ID's native authentication API with email and password allows yo
 
 1. If you haven't already done so, [Register an application in the Microsoft Entra admin center](../external-id/customers/how-to-register-ciam-app.md?tabs=nativeauth#choose-your-app-type). Make sure you grant delegated permissions, and enable public client and native authentication flows.
 
-1. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers#to-add-a-new-user-flow). While you create the user flow, take note of the user attributes you select as these attributes are the ones that Microsoft Entra ID expects your app to submit. Under **Identity providers**, select **Email one-time-passcode** option.
+1. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md#to-add-a-new-user-flow). While you create the user flow, take note of the user attributes you select as these attributes are the ones that Microsoft Entra ID expects your app to submit. Under **Identity providers**, select **Email one-time-passcode** option.
 
 1. [Associate your app registration with the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
@@ -816,7 +816,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Format of user attributes values
 
-You specify the information you want to collect from the user by configuring the user flow settings in the Microsoft Entra admin center. Use the [Collect user attributes during sign-up](how-to-define-custom-attributes.md) article to learn how to collect values for both built-in and custom attributes.
+You specify the information you want to collect from the user by configuring the user flow settings in the Microsoft Entra admin center. Use the [Collect user attributes during sign-up](../external-id/customers/how-to-define-custom-attributes.md) article to learn how to collect values for both built-in and custom attributes.
 
 You can also specify the **User Input Type** for the attributes you configure. The following table summarizes supported user input types, and how to submit values collected by the UI controls to Microsoft Entra ID.
 
