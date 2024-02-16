@@ -4,11 +4,11 @@ description: Learn how to add and manage admin accounts in your customer tenant 
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
-ms.date: 07/12/2023
+ms.date: 01/19/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -31,14 +31,15 @@ To create a new admin account, follow these steps:
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Create new user**.
-1. Enter information for this admin:
+1. On the **New user** page, under **Select template**, select **Create user**.
+1. Under **Identity**, enter information for this admin:
   
    - **User name**. *Required*. The user name of the new user. For example, `mary@contoso.com`.
-    - **Name**. *Required*. The first and last name of the new user. For example, *Mary Parker*.
+   - **Name**. *Required*. The first and last name of the new user. For example, *Mary Parker*.
    - **First name**. The first name of the new user. For example, *Mary*.
    - **Last name**. The last name of the new user. For example, *Parker*.
    - **Groups**. *Optional*. You can add the user to one or more existing groups. You can also add the user to groups at a later time.
-   - **Roles**: To add administrative permissions for the user, add them to a Microsoft Entra role. You can assign the user to be a Global administrator or one or more of the limited administrator roles in Microsoft Entra ID.
+   - **Roles**: To add administrative permissions for the user, add them to a Microsoft Entra role. You can assign the user to be a Global Administrator or one or more of the limited administrator roles in Microsoft Entra ID.
    - **Settings**: Use the yes or no toggle to set **Block sign in**, and the select the admin's primary location in the **Usage location** list.
    - **Job info**: You can add more information about the user here, or do it later.
 
@@ -55,10 +56,13 @@ You can also invite a new guest user to manage your tenant. To invite an admin, 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Invite external user**.
-1. On the **New user** page, enter information for the admin:
+1. On the **New user** page, under **Select template**, select **Invite user**.
+1. Under **Identity**, enter information for the admin:
 
    - **Name**. *Required*. The first and last name of the new user. For example, *Mary Parker*.
    - **Email address**. *Required*. The email address of the user you would like to invite.
+   - **First name**. The first name of the new user. For example, *Mary*.
+   - **Last name**. The last name of the new user. For example, *Parker*.
    - **Personal message**: You add a personal message that will be included in the invite email.
    - **Groups**. *Optional*. You can add the user to one or more existing groups. You can also add the user to groups at a later time.
    - **Roles**: To add administrative permissions for the user, add them to a Microsoft Entra role. You can assign the user to be a Global administrator or one or more of the limited administrator roles in Microsoft Entra ID.
@@ -77,7 +81,7 @@ You can assign a role when you create a user or invite a guest user. You can add
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select the user you want to change the roles for. Then select **Assigned roles**.
-1. Select **Add assignments**, select the role to assign (for example, *Application administrator*), and then choose **Add**.
+1. Select **Add assignments**, select the role to assign (for example, *Application Administrator*), and then choose **Add**.
 
 ## Remove a role assignment
 
@@ -87,7 +91,7 @@ If you need to remove a role assignment from a user, follow these steps:
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select the user you want to change the roles for. Then select **Assigned roles**.
-1. Select the role you want to remove, for example *Application administrator*, and then select **Remove assignment**.
+1. Select the role you want to remove, for example *Application Administrator*, and then select **Remove assignment**.
 
 ## Review administrator account role assignments
 
@@ -96,11 +100,11 @@ As part of an auditing process, you typically review which users are assigned to
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with Global Administrator or Privileged Role Administrator permissions.
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
-2. Select a role, such as **Global administrator**. The **Assignments** page lists the users with that role.
+2. Select a role, such as **Global Administrator**. The **Assignments** page lists the users with that role.
 
 ## Delete an administrator account
 
-To delete an existing user, you must have a *Global administrator* role assignment. Global admins can delete any user, including other admins. *User administrators* can delete any non-admin user.
+To delete an existing user, you must have a *Global Administrator* role assignment. Global admins can delete any user, including other admins. *User Administrators* can delete any non-admin user.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with Global Administrator or Privileged Role Administrator permissions.
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.

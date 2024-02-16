@@ -2,8 +2,7 @@
 title: Customize self-service password reset
 description: Learn how to customize user display and experience options for Microsoft Entra self-service password reset
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 09/14/2023
@@ -12,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: tilarso
-
-ms.collection: M365-identity-device-management
 ---
 # Customize the user experience for Microsoft Entra self-service password reset
 
@@ -31,7 +28,7 @@ To help users reach out for assistance with self-service password reset, a "Cont
 
     ![Sample request to reset email sent to administrator](./media/howto-sspr-customization/sspr-contact-admin.png)
 
-* If customized, sends the user to a webpage or email address specified by the administrator for assistance.
+* If customized, sends the user to a webpage or sends an email to the address specified by the administrator for assistance.
     * If you customize this, we recommend setting this to something users are already familiar with for support.
 
     > [!WARNING]
@@ -53,7 +50,7 @@ To find out more about the different administrator roles and how to assign them,
 
 If your organization doesn't want to notify administrators about password reset requests, the following configuration options can be used:
 
-* Customize the helpdesk link to provide a web URL or mailto: address that users can use to get assistance. This option is under **Password Reset** > **Customization** > **Custom helpdesk email or URL**.
+* Customize the helpdesk link to provide a web URL address that users can use to get assistance. This option is under **Password Reset** > **Customization** > **Custom helpdesk email or URL**.
 * Enable self-service password reset for all users. This option is under **Password Reset** > **Properties**. If you don't want users to reset their own passwords, you can scope access to an empty group. *We don't recommend this option.*
 
 ## Customize the sign-in page and access panel

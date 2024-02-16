@@ -5,11 +5,11 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 01/29/2024
 ms.author: jeedes
 ---
 
@@ -127,7 +127,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure CloudSign SSO
 
-To configure single sign-on on CloudSign side, you need to send the downloaded **Federation Metadata XML** which you downloaded by following the instructions on the [CloudSign support page](https://help.cloudsign.jp/ja/articles/4000055).
+To configure single sign-on on CloudSign side, follow the instructions on the [CloudSign support page](https://help.cloudsign.jp/ja/articles/4000055).
 
 ### Create CloudSign test user
 

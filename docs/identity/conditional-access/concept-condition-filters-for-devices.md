@@ -1,7 +1,7 @@
 ---
 title: Filter for devices as a condition in Conditional Access policy
 description: Use filter for devices in Conditional Access to enhance security posture
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 07/18/2023
@@ -9,7 +9,7 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
-ms.collection: M365-identity-device-management
+
 ---
 # Conditional Access: Filter for devices
 

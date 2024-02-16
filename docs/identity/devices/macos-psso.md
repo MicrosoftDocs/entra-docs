@@ -67,5 +67,5 @@ You can learn more about using macOS Platform SSO to meet NIST requirements in t
 
 ## Troubleshooting 
 
-If you experience issues when implementing macOS Platform SSO, refer to our documentation on [MacOS Platform single sign-on known issues and troubleshooting](troubleshoot-macos-platform-single-sign-on-extension.md)
+If you experience issues when implementing macOS Platform SSO, refer to our documentation on [macOS Platform single sign-on known issues and troubleshooting](troubleshoot-macos-platform-single-sign-on-extension.md)
 

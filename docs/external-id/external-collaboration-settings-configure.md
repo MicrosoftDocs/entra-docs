@@ -3,17 +3,17 @@ title: Enable B2B external collaboration settings
 description: Learn how to enable Active Directory B2B external collaboration and manage who can invite guest users. Use the Guest Inviter role to delegate invitations.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 10/24/2022
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
 
 ms.collection: M365-identity-device-management
+#customer intent: As an administrator managing external collaboration settings in Microsoft Entra, I want to configure guest user access, invite settings, self-service sign-up, and collaboration restrictions, so that I can control the level of access and permissions for external users and ensure secure collaboration with other organizations.
 ---
 
 # Configure external collaboration settings
@@ -56,7 +56,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
     ![Screenshot showing Guest invite settings.](./media/external-collaboration-settings-configure/guest-invite-settings.png)
 
-   - **Anyone in the organization can invite guest users including guests and non-admins (most inclusive)**: To allow guests in the organization to invite other guests including those who aren't members of an organization, select this radio button.
+   - **Anyone in the organization can invite guest users including guests and non-admins (most inclusive)**: To allow guests in the organization to invite other guests including users who aren't members of an organization, select this radio button.
    - **Member users and users assigned to specific admin roles can invite guest users including guests with member permissions**: To allow member users and users who have specific administrator roles to invite guests, select this radio button.
    - **Only users assigned to specific admin roles can invite guest users**: To allow only those users with administrator roles to invite guests, select this radio button. The administrator roles include [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator), [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator), and [Guest Inviter](~/identity/role-based-access-control/permissions-reference.md#guest-inviter).
    - **No one in the organization can invite guest users including admins (most restrictive)**: To deny everyone in the organization from inviting guests, select this radio button.
@@ -65,10 +65,10 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
     ![Screenshot showing Self-service sign up via user flows setting.](./media/external-collaboration-settings-configure/self-service-sign-up-setting.png)
 
-1. Under **External user leave settings**, you can control whether external users can remove themselves from your organization. If you set this option to **No**, external users will need to contact your admin or privacy contact to be removed.
+1. Under **External user leave settings**, you can control whether external users can remove themselves from your organization.
 
    - **Yes**: Users can leave the organization themselves without approval from your admin or privacy contact.
-   - **No**: Users can't leave your organization themselves. They'll see a message guiding them to contact your admin or privacy contact to request removal from your organization.
+   - **No**: Users can't leave your organization themselves. They see a message guiding them to contact your admin or privacy contact to request removal from your organization.
 
    > [!IMPORTANT]
    > You can configure **External user leave settings** only if you have [added your privacy information](~/fundamentals/properties-area.md) to your Microsoft Entra tenant. Otherwise, this setting will be unavailable.
@@ -77,7 +77,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
 1. Under **Collaboration restrictions**, you can choose whether to allow or deny invitations to the domains you specify and enter specific domain names in the text boxes. For multiple domains, enter each domain on a new line. For more information, see [Allow or block invitations to B2B users from specific organizations](allow-deny-list.md).
 
-    ![Screenshot showing Collaboration restrictions settings.](./media/external-collaboration-settings-configure/collaboration-restrictions.png)
+   :::image type="content" source="./media/external-collaboration-settings-configure/collaboration-restrictions.png" alt-text="Screenshot showing Collaboration restrictions settings."::: 
 
 ## Configure settings with Microsoft Graph
 
@@ -89,7 +89,7 @@ External collaboration settings can be configured by using the Microsoft Graph A
 
 ## Assign the Guest Inviter role to a user
 
-With the Guest Inviter role, you can give individual users the ability to invite guests without assigning them a global administrator or other admin role. Assign the Guest inviter role to individuals. Then make sure you set **Admins and users in the guest inviter role can invite** to **Yes**.
+With the [Guest Inviter](~/identity/role-based-access-control/permissions-reference.md#guest-inviter) role, you can give individual users the ability to invite guests without assigning them a Global Administrator or other admin role. Users with the Guest Inviter role are able to invite guests even when the option **Only users assigned to specific admin roles can invite guest users** is selected (under **Guest invite settings**).
 
 Here's an example that shows how to use Microsoft Graph PowerShell to add a user to the `Guest Inviter` role:
 

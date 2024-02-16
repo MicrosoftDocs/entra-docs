@@ -2,16 +2,16 @@
 title: Migrate from federation to cloud authentication in Microsoft Entra ID
 description: This article has information about moving your hybrid identity environment from federation to cloud authentication
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: hybrid
+
+ms.service: entra-id
+ms.subservice: hybrid-connect
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
 ms.date: 11/06/2023
 ms.author: billmath
 author: gargi-sinha
 manager: amycolannino
-ms.collection: M365-identity-device-management
+
 ---
 # Migrate from federation to cloud authentication  
 
@@ -423,7 +423,7 @@ Migration requires assessing how the application is configured on-premises, and 
 
 > [!VIDEO https://www.youtube.com/embed/D0M-N-RQw0I]
 
-If you plan to keep using AD FS with on-premises & SaaS Applications using SAML / WS-FED or Oauth protocol, you'll use both AD FS and Microsoft Entra ID after you convert the domains for user authentication. In this case, you can protect your on-premises applications and resources with Secure Hybrid Access (SHA) through [Microsoft Entra application proxy](~/identity/app-proxy/what-is-application-proxy.md) or one of [Microsoft Entra ID partner integrations](~/identity/enterprise-apps/secure-hybrid-access.md). Using Application Proxy or one of our partners can provide secure remote access to your on-premises applications. Users benefit by easily connecting to their applications from any device after a [single sign-on](~/identity/enterprise-apps/add-application-portal-setup-sso.md).
+If you plan to keep using AD FS with on-premises & SaaS Applications using SAML / WS-FED or Oauth protocol, you'll use both AD FS and Microsoft Entra ID after you convert the domains for user authentication. In this case, you can protect your on-premises applications and resources with Secure Hybrid Access (SHA) through [Microsoft Entra application proxy](~/identity/app-proxy/overview-what-is-app-proxy.md) or one of [Microsoft Entra ID partner integrations](~/identity/enterprise-apps/secure-hybrid-access.md). Using Application Proxy or one of our partners can provide secure remote access to your on-premises applications. Users benefit by easily connecting to their applications from any device after a [single sign-on](~/identity/enterprise-apps/add-application-portal-setup-sso.md).
 
 You can move SaaS applications that are currently federated with ADFS to Microsoft Entra ID. Reconfigure to authenticate with Microsoft Entra ID either via a built-in connector from the [Azure App gallery](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps), or by [registering the application in Microsoft Entra ID](~/identity-platform/quickstart-register-app.md).
 

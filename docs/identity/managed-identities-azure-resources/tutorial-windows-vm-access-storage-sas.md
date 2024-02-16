@@ -1,20 +1,18 @@
 ---
 title: Tutorial`:` Use managed identity to access Azure Storage using SAS credential
 description: A tutorial that shows you how to use a Windows VM system-assigned managed identity to access Azure Storage, using a SAS credential instead of a storage account access key.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
 editor: daveba
 
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: tutorial
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 01/05/2024
 ms.author: barclayn
-ms.collection: M365-identity-device-management 
+
 ms.custom: devx-track-azurepowershell, subject-rbac-steps, devx-track-arm-template
 ---
 

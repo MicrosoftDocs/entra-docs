@@ -1,11 +1,9 @@
 ---
 title: Quickstart - Create a group with members and view all groups and members
 description: Instructions about how to search for and view your organization's groups and their assigned members.
-services: active-directory
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: quickstart
 ms.date: 11/29/2023

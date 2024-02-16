@@ -1,22 +1,18 @@
 ---
 title: Microsoft Entra Connect - LargeObject errors caused by userCertificate attribute
 description: This topic provides the remediation steps for LargeObject errors caused by userCertificate attribute.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: 146ad5b3-74d9-4a83-b9e8-0973a19828d9
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.custom: seohack1
-ms.collection: M365-identity-device-management
+
 ---
 
 # Microsoft Entra Connect Sync: Handling LargeObject errors caused by userCertificate attribute

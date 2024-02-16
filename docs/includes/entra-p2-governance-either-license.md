@@ -1,6 +1,6 @@
 ---
 author: billmath
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: include
 ms.date: 06/27/2023
 ms.author: billmath

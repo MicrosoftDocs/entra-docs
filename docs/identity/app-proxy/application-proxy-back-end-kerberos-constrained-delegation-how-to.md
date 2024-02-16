@@ -1,14 +1,13 @@
 ---
 title: Troubleshoot Kerberos constrained delegation - App Proxy
 description: Troubleshoot Kerberos Constrained Delegation configurations for Application Proxy
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 09/14/2023
+ms.date: 02/01/2024
 ms.author: kenwith
 ms.reviewer: asteen, ashishj
 ---
@@ -32,7 +31,7 @@ This article makes the following assumptions:
 
 Microsoft Entra application proxy can be deployed into many types of infrastructures or environments. The architectures vary from organization to organization. The most common causes of KCD-related issues aren't the environments. Simple misconfigurations or general mistakes cause most issues.
 
-For this reason, it's best to make sure you've met all the prerequisites in [Using KCD SSO with the Application Proxy](application-proxy-configure-single-sign-on-with-kcd.md) before you start troubleshooting. Note the section on configuring Kerberos constrained delegation on 2012R2. This process employs a different approach to configuring KCD on previous versions of Windows. Also, be mindful of these considerations:
+For this reason, it's best to make sure you've met all the prerequisites in [Using KCD SSO with the Application Proxy](how-to-configure-sso-with-kcd.md) before you start troubleshooting. Note the section on configuring Kerberos constrained delegation on 2012R2. This process employs a different approach to configuring KCD on previous versions of Windows. Also, be mindful of these considerations:
 
 - It's not uncommon for a domain member server to open a secure channel dialog with a specific domain controller (DC). Then the server might move to another dialog at any given time. So connector hosts aren't restricted to communication with only specific local site DCs.
 - Cross-domain scenarios rely on referrals that direct a connector host to DCs that might be outside of the local network perimeter. In these cases, it's equally important to also send traffic onward to DCs that represent other respective domains. If not, delegation fails.
@@ -58,7 +57,7 @@ How you troubleshoot depends on the issue and the symptoms you observe. Before y
 
 - [Troubleshoot Application Proxy problems and error messages](application-proxy-troubleshoot.md)
 - [Kerberos errors and symptoms](application-proxy-troubleshoot.md#kerberos-errors)
-- [Working with SSO when on-premises and cloud identities aren't identical](application-proxy-configure-single-sign-on-with-kcd.md#working-with-different-on-premises-and-cloud-identities)
+- [Working with SSO when on-premises and cloud identities aren't identical](how-to-configure-sso-with-kcd.md#working-with-different-on-premises-and-cloud-identities)
 
 If you got to this point, then your main issue exists. To start, separate the flow into the following three stages that you can troubleshoot.
 
@@ -78,12 +77,8 @@ As mentioned previously, the browser error messages provides some good clues abo
 
 The corresponding entries seen in the event log show as events 13019 or 12027. Find the connector event logs in **Applications and Services Logs** &gt; **Microsoft** &gt; **AadApplicationProxy** &gt; **Connector** &gt; **Admin**.
 
-![Event 13019 from Application Proxy event log](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic4.png)
-
-![Event 12027 from Application Proxy event log](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic5.png)
-
 1. Use an **A** record in your internal DNS for the application’s address, not a **CName**.
-1. Reconfirm that the connector host has been granted the right to delegate to the designated target account’s SPN. Reconfirm that **Use any authentication protocol** is selected. For more information, see the [SSO configuration article](application-proxy-configure-single-sign-on-with-kcd.md).
+1. Reconfirm that the connector host has been granted the right to delegate to the designated target account’s SPN. Reconfirm that **Use any authentication protocol** is selected. For more information, see the [SSO configuration article](how-to-configure-sso-with-kcd.md).
 1. Verify that there's only one instance of the SPN in existence in Microsoft Entra ID. Issue `setspn -x` from a command prompt on any domain member host.
 1. Check that a domain policy is enforced that limits the [maximum size of issued Kerberos tokens](/archive/blogs/askds/maxtokensize-and-windows-8-and-windows-server-2012). This policy stops the connector from getting a token if it's found to be excessive.
 
@@ -131,8 +126,6 @@ The consumer of the Kerberos ticket provided by the connector. At this stage, ex
 
    - Check the SPN defined against the application’s settings in the portal. Make sure that the same SPN configured against the target Microsoft Entra account is used by the application’s app pool.
 
-      ![SPN configuration in the Microsoft Entra admin center](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic11.png)
-
    - Go into IIS and select the **Configuration Editor** option for the application. Navigate to **system.webServer/security/authentication/windowsAuthentication**. Make sure the value **UseAppPoolCredentials** is **True**.
 
       ![IIS configuration app pools credential option](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic12.png)
@@ -142,8 +135,6 @@ The consumer of the Kerberos ticket provided by the connector. At this stage, ex
       ```powershell
       Get-WmiObject Win32_LogonSession | Where-Object {$_.AuthenticationPackage -ne 'NTLM'} | ForEach-Object {klist.exe purge -li ([Convert]::ToString($_.LogonId, 16))}
       ```
-
-For more information, see [Purge the Kerberos client ticket cache for all sessions](https://gallery.technet.microsoft.com/scriptcenter/Purge-the-Kerberos-client-b56987bf).
 
 If you leave Kernel mode enabled, it improves the performance of Kerberos operations. But it also causes the ticket for the requested service to be decrypted by using the machine account. This account is also called the Local system. Set this value to **True** to break KCD when the application is hosted across more than one server in a farm.
 
@@ -155,7 +146,7 @@ If you still can't make progress, Microsoft support can assist you. Create a sup
 
 ## Other scenarios
 
-- Azure Application Proxy requests a Kerberos ticket before sending its request to an application. Some third-party applications don't like this method of authenticating. These applications expect the more conventional negotiations to take place. The first request is anonymous, which allows the application to respond with the authentication types that it supports through a 401. This type of Kerberos negotiation can be enabled using the steps outlined in this document: [Kerberos Constrained Delegation for single sign-on](application-proxy-configure-single-sign-on-with-kcd.md).
+- Azure Application Proxy requests a Kerberos ticket before sending its request to an application. Some third-party applications don't like this method of authenticating. These applications expect the more conventional negotiations to take place. The first request is anonymous, which allows the application to respond with the authentication types that it supports through a 401. This type of Kerberos negotiation can be enabled using the steps outlined in this document: [Kerberos Constrained Delegation for single sign-on](how-to-configure-sso-with-kcd.md).
 - Multi-hop authentication is commonly used in scenarios where an application is tiered, with a back end and front end, where both require authentication, such as SQL Server Reporting Services. For more details, see [How to configure Kerberos Constrained Delegation for Web Enrollment proxy pages](/troubleshoot/windows-server/identity/configure-kerberos-constrained-delegation).
 
 ## Next steps

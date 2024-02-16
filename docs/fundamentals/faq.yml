@@ -2,18 +2,13 @@
 metadata:
   title: Frequently asked questions (FAQ) about Microsoft Entra, Microsoft Entra ID, and Azure
   description: Common questions and answers about Microsoft Entra, Microsoft Entra ID and Azure, such as password management and application access.
-  services: active-directory
   author: barclayn
   manager: amycolannino
-  ms.assetid: b8207760-9714-4871-93d5-f9893de31c8f
-  ms.service: active-directory
+  ms.service: entra
   ms.subservice: fundamentals
-  ms.workload: identity
   ms.topic: faq
   ms.date: 01/05/2024
   ms.author: barclayn
-  ms.custom: it-pro, seodec18, has-azure-ad-ps-ref
-  ms.collection: M365-identity-device-management
 title: Frequently asked questions about Microsoft Entra ID
 summary: |
   Microsoft Entra ID is a cloud-based identity and access management solution. It is a directory and identity management service that operates in the cloud and offers authentication and authorization services to various Microsoft services, such as Microsoft 365, Dynamics 365, and Microsoft Azure.
@@ -81,7 +76,7 @@ sections:
           * *.entra.microsoft.eaglex.ic.gov
           * *.entra.microsoftonline.cn    
     
-          For more information, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/what-is-application-proxy.md).
+          For more information, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/overview-what-is-app-proxy.md).
 
     
       
@@ -172,7 +167,7 @@ sections:
           For Microsoft Entra accounts, admins can reset passwords by using one of the following:
           
           - [Reset a user's password using Microsoft Entra ID](./users-reset-password-azure-portal.md)
-          - [Reset a password using PowerShell](/powershell/module/msonline/set-msoluserpassword)
+          - [Reset a password using PowerShell](/powershell/module/microsoft.graph.users.actions/reset-mguserauthenticationmethodpassword)
           
           
           
@@ -239,9 +234,9 @@ sections:
       - question: |
           Can I add applications that I'm running on-premises?
         answer: |
-          [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md) provides you with easy and secure access to on-premises web applications that you choose. You can access these applications in the same way that you access your software as a service (SaaS) apps in Microsoft Entra ID. There is no need for a VPN or to change your network infrastructure.  
+          [Microsoft Entra application proxy](/entra/identity/app-proxy) provides you with easy and secure access to on-premises web applications that you choose. You can access these applications in the same way that you access your software as a service (SaaS) apps in Microsoft Entra ID. There is no need for a VPN or to change your network infrastructure.  
           
-          For more information, see [How to provide secure remote access to on-premises applications](~/identity/app-proxy/application-proxy.md).
+          For more information, see [How to provide secure remote access to on-premises applications](/entra/identity/app-proxy).
           
           
           

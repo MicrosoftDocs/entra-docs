@@ -1,20 +1,18 @@
 ---
 title: Microsoft Entra Connect Health with the AD FS Risky IP report
 description: This article describes the Microsoft Entra Connect Health AD FS Risky IP report.
-services: active-directory
-documentationcenter: ''
+
 ms.reviewer: zhiweiwangmsft
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: hybrid
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
-ms.collection: M365-identity-device-management
+
 ---
 
 # The Risky IP report (preview)
@@ -34,7 +32,7 @@ Microsoft Entra Connect Health now provides the *Risky IP report*, which detects
 - Provides downloadable reports for offline analysis and integration with other systems via automation
 
 > [!NOTE]
-> To use this report, you must ensure that AD FS auditing is enabled. For more information, see [Enable auditing for AD FS](how-to-connect-health-agent-install.md#enable-auditing-for-ad-fs).
+> To use this report, you must ensure that AD FS auditing is enabled. For more information, see [Enable auditing for AD FS](how-to-connect-health-adfs.md#enable-auditing-for-ad-fs).
 >
 > To access this preview release, you need Global Administrator or [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) permissions.  
 

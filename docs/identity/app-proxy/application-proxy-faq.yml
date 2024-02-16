@@ -1,15 +1,13 @@
 ### YamlMime:FAQ
 metadata:
   title: Microsoft Entra application proxy frequently asked questions
-  description: Learn answers to frequently asked questions (FAQ) about using Microsoft Entra application proxy to publish internal, on-premises applications to remote users.  
-  services: active-directory
+  description: Learn answers to frequently asked questions (FAQ) about using Microsoft Entra application proxy to publish internal, on-premises applications to remote users.
+  
   author: kenwith
-  manager: 
-  ms.service: active-directory
+  ms.service: entra-id
   ms.subservice: app-proxy
-  ms.workload: identity
   ms.topic: faq
-  ms.date: 10/02/2023
+  ms.date: 02/06/2024
   ms.author: kenwith
   ms.reviewer: ashishj
 title: Microsoft Entra application proxy frequently asked questions
@@ -136,10 +134,16 @@ sections:
   - name: Application configuration
     questions:
       - question: |
-         Can I use the domain suffixes [tenantname].onmicrosoft.com or [tenantname].mail.onmicrosoft.com in the external URL?
+         Can I use the domain suffixes `[tenant name].onmicrosoft.com` or `[tenant name].mail.onmicrosoft.com` in the external URL?
         answer: |
             Although these suffixes appear in the suffix list, you should not use them. These domain suffixes are not meant to be used with Microsoft Entra application proxy. If you use these domain suffixes, the created Microsoft Entra application proxy application won't work.
-            You can use either the standard domain suffix `msappproxy.net` or a [custom domain](application-proxy-configure-custom-domain.md).
+            You can use either the standard domain suffix `msappproxy.net` or a [custom domain](how-to-configure-custom-domain.md).
+
+      - question: |
+         Does App Proxy support for sovereign and regional clouds?
+        answer: |
+            Microsoft Entra ID has an App Proxy service that enables users to access on-premises applications by signing in with their Microsoft Entra account.
+            If you have installed connectors in different regions, you can optimize traffic by selecting the closest Application Proxy cloud service region to use with each connector group, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-add-on-premises-application.md).
 
       - question: |
          I am receiving an error about an invalid certificate or possible wrong password
@@ -148,7 +152,7 @@ sections:
           
               Here are some tips for troubleshooting this error:
               - Check for problems with the certificate. Install it on your local computer. If you don't experience any issues then the certificate is good.
-              - Ensure that the password does not contain any special characters. For testing, the password should only contain the characters 0-9, A-Z, and a-z.
+              - Ensure that the password does not contain any special characters. The password should only contain the characters 0-9, A-Z, and a-z.
               - If the certificate was created with Microsoft Software Key Storage Provider, the RSA algorithm must be used.
           
       - question: |
@@ -192,7 +196,7 @@ sections:
               
               Possible solutions/  alternatives:
 
-              - Setup a redirection from `https://www.contoso.com` to `https://contoso.com/#/home/index.html`. The user must first access `https://www.contoso.com`.
+              - Set up a redirection from `https://www.contoso.com` to `https://contoso.com/#/home/index.html`. The user must first access `https://www.contoso.com`.
               - The URL used for the first access attempt must include the “#” character in encoded form (%23). The published server might not accept this.
               - Configure passthrough preauthentication type (not recommended).
               
@@ -225,7 +229,7 @@ sections:
               
               As best practice it is advised to use identical external and internal URLs. External and internal URLs are considered to be identical, if the `protocol://hostname:port/path/` in both URLs are identical.
               
-              This can be achieved by using the [Custom Domains](application-proxy-configure-custom-domain.md) feature.
+              This can be achieved by using the [Custom Domains](how-to-configure-custom-domain.md) feature.
               
               Examples:
               
@@ -296,7 +300,7 @@ sections:
               Refer to [Publish Remote Desktop with Microsoft Entra application proxy](./application-proxy-integrate-with-remote-desktop-services.md).
           
       - question: |
-         Can I use Kerberos Constrained Delegation (Single Sign-On - Windows Integrated Authentication) in the Remote Desktop Gateway publishing scenario?
+         Can I use Kerberos Constrained Delegation (single sign-on - Windows Integrated Authentication) in the Remote Desktop Gateway publishing scenario?
         answer: |
               No, this scenario isn't supported.  
 
@@ -362,7 +366,7 @@ sections:
         answer: |
               Yes. Link translation affects performance. The Application Proxy service scans the application for hardcoded links and replaces them with their respective, published external URLs before presenting them to the user. 
           
-              For best performance, we recommend using identical internal and external URLs by configuring [custom domains](./application-proxy-configure-custom-domain.md). If using custom domains isn't possible, you can improve link translation performance by using the My Apps Secure Sign in Extension or Microsoft Edge Browser on mobile. See [Redirect hardcoded links for apps published with Microsoft Entra application proxy](./application-proxy-configure-hard-coded-link-translation.md).
+              For best performance, we recommend using identical internal and external URLs by configuring [custom domains](./how-to-configure-custom-domain.md). If using custom domains isn't possible, you can improve link translation performance by using the My Apps Secure Sign in Extension or Microsoft Edge Browser on mobile. See [Redirect hardcoded links for apps published with Microsoft Entra application proxy](./application-proxy-configure-hard-coded-link-translation.md).
           
   - name: Wildcards
     questions:

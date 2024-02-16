@@ -4,8 +4,8 @@ description: This article discusses the advantages of Microsoft Entra ID and pro
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: conceptual
 
 ms.date: 05/31/2023

@@ -1,18 +1,15 @@
 ---
 title: Create and use password policies in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how and why to use fine-grained password policies to secure and control account passwords in a Domain Services managed domain.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 
 ms.assetid: 1a14637e-b3d0-4fd9-ba7a-576b8df62ff2
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/21/2023
 ms.author: justinha
-
 ---
 # Password and account lockout policies on Microsoft Entra Domain Services managed domains
 

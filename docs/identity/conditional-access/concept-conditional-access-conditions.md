@@ -2,8 +2,7 @@
 title: Conditions in Conditional Access policy
 description: What are conditions in a Microsoft Entra Conditional Access policy
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 07/17/2023
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth, sandeo
-
-ms.collection: M365-identity-device-management
 ---
 # Conditional Access: Conditions
 
@@ -109,6 +106,9 @@ These conditions are commonly used to:
 ### Supported browsers
 
 This setting works with all browsers. However, to satisfy a device policy, like a compliant device requirement, the following operating systems and browsers are supported. Operating Systems and browsers that have fallen out of mainstream support aren’t shown on this list:
+
+> [!IMPORTANT]
+> macOS Platform Single Sign-on (PSSO) is currently incompatible with Chrome SSO. A browser extension is being developed to ensure compatibility between PSSO and Chrome SSO, which will be ready before PSSO General Availability.  
 
 | Operating Systems | Browsers |
 | :-- | :-- |

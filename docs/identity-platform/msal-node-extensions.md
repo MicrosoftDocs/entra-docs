@@ -5,9 +5,9 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.date: 02/04/2022
-ms.reviewer: j-mantu, samuelkubai, Dickson-Mwendia
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: emilylauber
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn how to use the Microsoft Authentication Extensions for Node to perform cross-platform token cache serialization and persistence.
 ---

@@ -1,7 +1,7 @@
 ---
 title: System-preferred multifactor authentication (MFA)
 description: Learn how to use system-preferred multifactor authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 09/13/2023
@@ -9,8 +9,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: msft-poulomi
-ms.collection: M365-identity-device-management
-
 
 # Customer intent: As an identity administrator, I want to encourage users to use the Microsoft Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
 ---
