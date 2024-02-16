@@ -55,10 +55,10 @@ Configure and test Microsoft Entra SSO with Othership Workplace Scheduler using 
 To configure and test Microsoft Entra SSO with Othership Workplace Scheduler, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+   1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+   1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Othership Workplace Scheduler SSO](#configure-othership-workplace-scheduler-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Othership Workplace Scheduler test user](#create-othership-workplace-scheduler-test-user)** - to have a counterpart of B.Simon in Othership Workplace Scheduler that is linked to the Microsoft Entra ID representation of user.
+   1. **[Create Othership Workplace Scheduler test user](#create-othership-workplace-scheduler-test-user)** - to have a counterpart of B.Simon in Othership Workplace Scheduler that is linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -130,23 +130,23 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 1. In the **Add SAML Configuration** page, perform the following steps:
 
-    ![Screenshot shows the Configuration.](./media/othership-workplace-scheduler-tutorial/configure.png "Configuration")
+   ![Screenshot shows the Configuration.](./media/othership-workplace-scheduler-tutorial/configure.png "Configuration")
 
-    1. Select **Microsoft Entra ID** as a **Provider** from the drop-down.
+   1. Select **Microsoft Entra ID** as a **Provider** from the drop-down.
 
-    1. In the **SAML SSO (Sign On URL)** text box, paste the **Login URL** value, which you have copied from the Microsoft Entra admin center.
+   1. In the **SAML SSO (Sign On URL)** text box, paste the **Login URL** value, which you have copied from the Microsoft Entra admin center.
 
-    1. In the **Identity Provider Issuer** textbox, paste the **Microsoft Entra Identifier** value, which you have copied from the Microsoft Entra admin center.
+   1. In the **Identity Provider Issuer** textbox, paste the **Microsoft Entra Identifier** value, which you have copied from the Microsoft Entra admin center.
 
-    1. Open the downloaded **Federation Metadata XML** into Notepad and paste the content into the **Public Certificate** textbox.
+   1. Click Import IDP Metadata to import the **Federation Metadata XML** file you previously downloaded, after then the Certificate will be appear in **Public Certificate** textbox.
 
-    1. Click **Save Configuration**.
+   1. Click **Save Configuration**.
 
 ### Create Othership Workplace Scheduler test user
 
 In this section, a user called Britta Simon is created in Othership Workplace Scheduler. Othership Workplace Scheduler supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Othership Workplace Scheduler, a new one is created after authentication.
 
-## Test SSO 
+## Test SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
