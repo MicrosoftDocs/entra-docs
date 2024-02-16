@@ -63,7 +63,7 @@ The API allows the app to advertise the authentication methods it supports, when
 |-----------------------|--------------------------------------------|
 | password              | This challenge type indicates that the app supports the collection of a password credential from the user.                   |
 | oob   | This challenge type indicates that the application supports the use of one-time password or passcode (OTP) codes sent to the user using a secondary channel. Currently, the API supports only email OTPs.|
-| redirect  | This challenge type indicates that the application supports fallback to the web-based authentication. All Native Auth compliant applications must support this authentication method. In every call that the app makes, it must include this challenge type. If Microsoft Entra ID returns this challenges type as a response, then it indicates that the app needs to fall back to the web-based authentication. In this case, we recommend that you use a [Microsoft-built and supported authentication library](../../identity-platform/reference-v2-libraries.md).|
+| redirect  | This challenge type indicates that the application supports fallback to the web-based authentication. All Native Auth compliant applications must support this authentication method. In every call that the app makes, it must include this challenge type. If Microsoft Entra ID returns this challenges type as a response, then it indicates that the app needs to fall back to the web-based authentication. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).|
 
 ### Sign-up flow protocol details
 
@@ -150,7 +150,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `challenge_type`  | Microsoft Entra ID returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |
 
-This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](../../identity-platform/reference-v2-libraries.md).
+This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
 #### Error response
 
@@ -274,7 +274,7 @@ Content-Type: application/json 
 |----------------------|------------------------|
 | `challenge_type`  | Microsoft Entra ID returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
-This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](../../identity-platform/reference-v2-libraries.md).
+This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
 #### Error response
 
@@ -448,7 +448,7 @@ Once the OTP code has been submitted successfully, Microsoft Entra ID's response
     |----------------------|------------------------|
     | `challenge_type`  | Microsoft Entra ID returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
     
-    This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](../../identity-platform/reference-v2-libraries.md).
+    This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
 ### Step 4: Authenticate and get token to sign in
 
@@ -565,7 +565,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `challenge_type`  | Microsoft Entra ID returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
-This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](../../identity-platform/reference-v2-libraries.md).
+This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
 #### Error response
 
@@ -673,7 +673,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `challenge_type`  | Microsoft Entra ID returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
-This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](../../identity-platform/reference-v2-libraries.md).
+This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
 #### Error response
 
@@ -773,8 +773,8 @@ Content-Type: application/json
 |`token_type` |  Indicates the token type value. The only type that Microsoft Entra ID supports is *Bearer*.|
 |`expires_in`|   The length of time in seconds the access token remains valid.|
 |`scopes`|  A space-separated list of scopes that the access token is valid for.|
-|`refresh_token` |  An OAuth 2.0 refresh token. The app can use this token to acquire other access tokens after the current access token expires. Refresh tokens are long-lived. They can maintain access to resources for extended periods. For more detail on refreshing an access token, refer to [Refresh the access token](../../identity-platform/v2-oauth2-auth-code-flow.md#refresh-the-access-token) article. <br> **Note**: Only issued if *offline_access* scope was requested.   |
-|`id_token`|  A JSON Web Token (Jwt) used to identify the customer user. The app can decode the token to request information about the user who signed in. The app can cache the values and display them, and confidential clients can use this token for authorization. For more information about ID tokens, see [ID tokens](../../identity-platform/id-tokens.md).<br> **Note**: Only issued if *openid* scope is requested. |
+|`refresh_token` |  An OAuth 2.0 refresh token. The app can use this token to acquire other access tokens after the current access token expires. Refresh tokens are long-lived. They can maintain access to resources for extended periods. For more detail on refreshing an access token, refer to [Refresh the access token](v2-oauth2-auth-code-flow.md#refresh-the-access-token) article. <br> **Note**: Only issued if *offline_access* scope was requested.   |
+|`id_token`|  A JSON Web Token (Jwt) used to identify the customer user. The app can decode the token to request information about the user who signed in. The app can cache the values and display them, and confidential clients can use this token for authorization. For more information about ID tokens, see [ID tokens](id-tokens.md).<br> **Note**: Only issued if *openid* scope is requested. |
 
 #### Error response
 
@@ -862,7 +862,7 @@ The API allows the app to advertise the authentication methods it supports to Mi
 |-----------------------|--------------------------------------------|
 | password              | This challenge type indicates that the app supports the collection of a password credential from the user.                   |
 | oob   | This challenge type indicates that the application supports the use of OTP codes sent to the user using a secondary channel. Currently, the API supports only email OTPs.|
-| redirect  | This challenge type indicates that the application supports fallback to web-based authentication. All Native Auth compliant applications must support this authentication method. In every call that the app makes, it must include this challenge type. If Microsoft Entra ID returns this challenges type as a response, then it indicates that the app needs to fall back to web-based authentication. In this case, we recommend that you use a [Microsoft-built and supported authentication library](../../identity-platform/reference-v2-libraries.md).|
+| redirect  | This challenge type indicates that the application supports fallback to web-based authentication. All Native Auth compliant applications must support this authentication method. In every call that the app makes, it must include this challenge type. If Microsoft Entra ID returns this challenges type as a response, then it indicates that the app needs to fall back to web-based authentication. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).|
 
 ### Sign-in flow protocol details
 
@@ -934,7 +934,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `challenge_type`  | Microsoft Entra ID returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
-This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](../../identity-platform/reference-v2-libraries.md).
+This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
 #### Error response
 
@@ -1039,7 +1039,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `challenge_type`  | Microsoft Entra ID returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
-This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](../../identity-platform/reference-v2-libraries.md).
+This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
 #### Error response
 
@@ -1105,7 +1105,7 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `continuation_token`          |    Yes   |  [continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request. |
 |`grant_type`| Yes |The value must be *password*. |
-|`scope`| Yes | A space-separated list of scopes. All the scopes must be from a single resource, along with OpenID Connect (OIDC) scopes, such as *profile*, *openid, and *email*. The app needs to include *openid* scope for Microsoft Entra ID to issue an ID token. The app needs to includes *offline_access* scope for Microsoft Entra ID to issue a refresh token. Learn more about [Permissions and consent in the Microsoft identity platform](../../identity-platform/permissions-consent-overview.md). |
+|`scope`| Yes | A space-separated list of scopes. All the scopes must be from a single resource, along with OpenID Connect (OIDC) scopes, such as *profile*, *openid, and *email*. The app needs to include *openid* scope for Microsoft Entra ID to issue an ID token. The app needs to includes *offline_access* scope for Microsoft Entra ID to issue a refresh token. Learn more about [Permissions and consent in the Microsoft identity platform](permissions-consent-overview.md). |
 |   `password`    | Yes | The password value that the app collects from the customer user. Replace `{secure_password}` with the password value that the app collects from the customer user.|
 
 #### Successful response
@@ -1134,8 +1134,8 @@ Content-Type: application/json
 |`scopes`|  A space-separated list of scopes that the access token is valid for.|
 |`expires_in`|   The length of time in seconds the access token remains valid.|
 | `access_token`  |    The access token that the app requested from the `/token` endpoint. The app can use this access token to request access to secured resources such as web APIs.| 
-|`refresh_token` |  An OAuth 2.0 refresh token. The app can use this token to acquire other access tokens after the current access token expires. Refresh tokens are long-lived. They can maintain access to resources for extended periods. For more detail on refreshing an access token, refer to [Refresh the access token](../../identity-platform/v2-oauth2-auth-code-flow.md#refresh-the-access-token) article. <br> **Note**: Only issued if *offline_access* scope is requested.   |
-|`id_token`|  A JSON Web Token (Jwt) used to identify the customer user. The app can decode the token to request information about the user who signed in. The app can cache the values and display them, and confidential clients can use this token for authorization. For more information about ID tokens, see [ID tokens](../../identity-platform/id-tokens.md).<br> **Note**: Only issued if *openid* scope was requested. |
+|`refresh_token` |  An OAuth 2.0 refresh token. The app can use this token to acquire other access tokens after the current access token expires. Refresh tokens are long-lived. They can maintain access to resources for extended periods. For more detail on refreshing an access token, refer to [Refresh the access token](v2-oauth2-auth-code-flow.md#refresh-the-access-token) article. <br> **Note**: Only issued if *offline_access* scope is requested.   |
+|`id_token`|  A JSON Web Token (Jwt) used to identify the customer user. The app can decode the token to request information about the user who signed in. The app can cache the values and display them, and confidential clients can use this token for authorization. For more information about ID tokens, see [ID tokens](id-tokens.md).<br> **Note**: Only issued if *openid* scope was requested. |
 
 #### Error response 
 
@@ -1198,7 +1198,7 @@ To use this API, the app interacts with the endpoint shown in the following tabl
 |    Challenge type     | Description                                |
 |-----------------------|--------------------------------------------|
 | oob   | This challenge type indicates that the application supports the use of OTP codes sent to the user using a secondary channel. Currently, the API supports only email OTPs.|
-| redirect  | This challenge type indicates that the application supports fallback to web-based authentication. All Native Auth compliant applications must support this authentication method. In every call that the app makes, it must include this challenge type. If Microsoft Entra ID returns this challenge type as a response, then it indicates that the app needs to fall back to web-based authentication. In this case, we recommend that you use a [Microsoft-built and supported authentication library](../../identity-platform/reference-v2-libraries.md).|
+| redirect  | This challenge type indicates that the application supports fallback to web-based authentication. All Native Auth compliant applications must support this authentication method. In every call that the app makes, it must include this challenge type. If Microsoft Entra ID returns this challenge type as a response, then it indicates that the app needs to fall back to web-based authentication. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).|
 
 ### Self-service password reset flow protocol details
 
@@ -1267,7 +1267,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `challenge_type`  | Microsoft Entra ID returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
-This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](../../identity-platform/reference-v2-libraries.md).
+This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
 #### Error response
 
@@ -1377,7 +1377,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `challenge_type`  | Microsoft Entra ID returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
-This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](../../identity-platform/reference-v2-libraries.md).
+This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
 #### Error response
 
