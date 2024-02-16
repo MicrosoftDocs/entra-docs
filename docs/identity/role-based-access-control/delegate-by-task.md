@@ -157,7 +157,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Update enterprise application provisioning | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
 > | Update enterprise application self-service | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
 > | Update single sign-on properties | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
-> | Create and modify custom authentication extensions | [Authentication Extensibility Administrator](permissions-reference.md#authentication-extensibility-administrator) |  |
+> | Create and modify custom authentication extensions | [Authentication Extensibility Administrator](permissions-reference.md#authentication-extensibility-administrator) | [Application Administrator](permissions-reference.md#application-administrator) |
 
 ## Entitlement management
 
