@@ -11,6 +11,7 @@ ms.author: jricketts
 ms.reviewer: jricketts
 ms.custom: "it-pro"
 ms.collection:
+# Customer intent: As a cloud service customer, I want to understand the data protection considerations for Microsoft Entra, so that I can ensure the security and privacy of my data stored in the service.
 ---
 
 # Data protection considerations 

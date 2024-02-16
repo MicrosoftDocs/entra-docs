@@ -108,6 +108,8 @@
         href: akashi-tutorial.md
       - name: AlacrityLaw
         href: alacritylaw-tutorial.md
+      - name: Alation Data Catalog
+        href: alation-data-catalog-tutorial.md
       - name: Alchemer
         href: alchemer-tutorial.md
       - name: Alcumus Info Exchange
@@ -1725,6 +1727,8 @@
         href: menlosecurity-tutorial.md
       - name: Meraki Dashboard
         href: meraki-dashboard-tutorial.md
+      - name: Mercado Eletronico SAML
+        href: mercado-eletronico-saml-tutorial.md
       - name: Mercell
         href: mercell-tutorial.md
       - name: Mercer BenefitsCentral (MBC)
@@ -1795,6 +1799,8 @@
         href: moveittransfer-tutorial.md
       - name: Movement by project44
         href: movement-by-project44-tutorial.md
+      - name: Moveworks
+        href: moveworks-tutorial.md
       - name: Moxi Engage
         href: moxiengage-tutorial.md
       - name: Moxtra
@@ -2009,6 +2015,8 @@
         href: panorays-tutorial.md
       - name: Pantheon
         href: pantheon-tutorial.md 
+      - name: Papirfly SSO
+        href: papirfly-sso-tutorial.md
       - name: Parallels Desktop
         href: parallels-desktop-tutorial.md
       - name: Parkalot - Car park management
