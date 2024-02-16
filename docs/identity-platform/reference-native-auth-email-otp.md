@@ -1012,6 +1012,6 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Next steps
 
-- [Native authentication email with password API reference](reference-native-auth-email-password.md).
+- [Native authentication email with password API reference](/entra/identity-platform/reference-native-auth-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json)).
 
 - Learn how to [create custom attributes](how-to-define-custom-attributes.md#create-custom-user-attributes).
