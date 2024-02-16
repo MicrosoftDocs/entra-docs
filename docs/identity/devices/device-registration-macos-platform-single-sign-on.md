@@ -134,11 +134,40 @@ To register a Mac device with PSSO, you must first enroll your device in Microso
 
 ## Check your device registration status
 
-Once you've completed the steps above, it's a good idea to check your device registration status in the **Settings** app.
+Once you've completed the steps above, it's a good idea to check your device registration status.
+
+### [macOS 14 Somona](#tab/macos-14-somona)
 
 1. To check that registration has completed successfully, navigate to **Settings** and select **Users & Groups**. 
 1. Select **Edit** next to **Network Account Server** and check that **Platform SSO** is listed as **Registered**.
 1. To verify the method used for authentication, navigate to your username in the **Users & Groups** window and select the **Information** icon. Check the method listed, which should be **Secure enclave**, **Smart Card**, or **Password**.
+
+> [!NOTE]
+>
+> You can also use the **Terminal** app to check the registration status. Run the following command to check the status of your device registration. You should see in the bottom of the output that SSO tokens are retrieved.
+>
+> ```console
+> app-sso platform -s
+> ```
+
+
+### [macOS 13 Ventura](#tab/macos-13-ventura)
+
+1. To check that registration has completed successfully, open the **Terminal** app and run the following command:
+
+    ```console
+    app-sso platform -s
+    ```
+1. Check the bottom of the output, and confirm that information similar to the following snippet is shown, which signifies that SSO tokens are retrieved.
+
+    ```console
+    SSO Tokens:
+    Received:
+    YYYY-MM-DD T HH:MM:SS
+    Expiration:
+    YYYY-MM-DD T HH:MM:SS (Not Expired)
+    ```
+---
 
 ## Update your Mac device to enable PSSO
 
