@@ -44,7 +44,7 @@ To deploy Platform SSO for macOS, you need the meet following minimum requiremen
 You can find more information and instructions on how to deploy Platform SSO for macOS in these articles.
 
 * [Join a Mac device with Microsoft Entra ID during the out of box experience](device-join-macos-platform-single-sign-on.md)
-* [Register a Mac device with macOS Platform Single Sign-On using Company Portal](device-registration-macos-platform-single-sign-on.md)
+* [Register a Mac device with macOS Platform single sign-on using Company Portal](device-registration-macos-platform-single-sign-on.md)
 
 ## Passwordless authentication
 
@@ -67,5 +67,5 @@ You can learn more about using macOS Platform SSO to meet NIST requirements in t
 
 ## Troubleshooting 
 
-If you experience issues when implementing macOS Platform SSO, refer to our documentation on [MacOS Platform single sign-on known issues and troubleshooting](troubleshoot-macos-platform-single-sign-on-extension.md)
+If you experience issues when implementing macOS Platform SSO, refer to our documentation on [macOS Platform single sign-on known issues and troubleshooting](troubleshoot-macos-platform-single-sign-on-extension.md)
 
