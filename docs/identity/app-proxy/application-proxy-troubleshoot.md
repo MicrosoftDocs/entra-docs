@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
-ms.date: 02/14/2024
+ms.date: 02/15/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -27,10 +27,11 @@ You have problems with your application rendering or functioning incorrectly wit
 
 For example, if you publish the path `https://yourapp/app` but the application calls images in `https://yourapp/media`, they aren't rendered. Make sure that you publish the application using the highest level path you need to include all relevant content. In this example, it would be `http://yourapp/`.
 
+## An application proxy application takes too long to load
+Applications can be functional but experience a long latency. Network topology tweaks can make improvements to speed. For an evaluation of different topologies, see the [network considerations document](application-proxy-network-topology.md).
+
 ## I can load my application, but something on the page looks broken
 [I can get to my application, but the application page isn't displaying correctly](application-proxy-page-appearance-broken-problem.md).
-
-[I can get to my application, but the application takes too long to load](application-proxy-page-load-speed-problem.md).
 
 [I can get to my application, but the links on the application page don't work](application-proxy-page-links-broken-problem.md).
 
