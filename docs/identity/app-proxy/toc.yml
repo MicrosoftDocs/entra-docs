@@ -142,8 +142,6 @@ items:
         href: application-proxy-debug-connectors.md
       - name: Application troubleshooting flowchart
         href: application-proxy-debug-apps.md
-      - name: Problem displaying app page
-        href: application-proxy-page-appearance-broken-problem.md
       - name: Links on application page not working
         href: application-proxy-page-links-broken-problem.md
       - name: Configure Kerberos Constrained Delegation
