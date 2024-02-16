@@ -23,7 +23,7 @@ Workflows created by Lifecycle workflows can be used to manage the lifecycle of 
 
 [!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
-To manage synced on-premises users with user account tasks with Lifecycle workflows, you must first set up prerequisites within your hybrid environment. For more information on these prerequisites, see:  [User account tasks](lifecycle-workflow-hybrid.md#user-account-tasks).
+To manage synced on-premises users with user account tasks with Lifecycle workflows, you must first set up prerequisites within your hybrid environment. For more information on these prerequisites, see:  [User account tasks](lifecycle-workflow-hybrid.md#user-account-tasks-preview).
 
 ## Edit a user account task to be compatible with synced on-premises users using the Microsoft Entra admin center
 
