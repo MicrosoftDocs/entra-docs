@@ -26,7 +26,7 @@ Microsoft Entra ID's native authentication API for email OTP allows you to build
 
 1. If you haven't already done so, [Register an application in the Microsoft Entra admin center](../external-id/customers/how-to-register-ciam-app.md?tabs=nativeauth#choose-your-app-type). Make sure you grant delegated permissions, and enable public client and native authentication flows.
 
-1. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers#to-add-a-new-user-flow). While you create the user flow, take note of the user attributes you select as these attributes are the ones that Microsoft Entra ID expects your app to submit. Under **Identity providers**, select **Email one-time-passcode** option.
+1. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md#to-add-a-new-user-flow). While you create the user flow, take note of the user attributes you select as these attributes are the ones that Microsoft Entra ID expects your app to submit. Under **Identity providers**, select **Email one-time-passcode** option.
 
 1. [Associate your app registration with the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 

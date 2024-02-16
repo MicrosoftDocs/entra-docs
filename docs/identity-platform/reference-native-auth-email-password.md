@@ -55,7 +55,7 @@ To complete a user sign-up flow, your app interacts with four endpoints, `/signu
 
 ### Sign-up challenge types
 
-The API allows the app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra ID. To do so, the app uses the `challenge_type` parameter in its requests. This parameter holds predefined values, which represent different authentication methods. The following table contains the authentication methods the API supports. New values will be added in the future when the API supports new authentication methods.
+The API allows the app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra ID. To do so, the app uses the `challenge_type` parameter in its requests. This parameter holds predefined values, which represent different authentication methods. The following table contains the authentication methods that the API supports. New values will be added in the future when the API supports new authentication methods.
 
 |    Challenge type     | Description                                |
 |-----------------------|--------------------------------------------|
