@@ -71,8 +71,12 @@ items:
       href: licensing.md
     - name: Sign up for Microsoft Entra ID P1 or P2
       href: get-started-premium.md 
-- name: Security Copilot + Microsoft Entra
-  href: copilot-security-entra.md
+- name: Microsoft Copilot for Security + Microsoft Entra
+  items:
+  - name: Overview
+    href: copilot-security-entra.md
+  - name: Investigate incidents using Microsoft Copilot for Security
+    href: copilot-security-entra-investigate-incident.md
 - name: Quick security wins
   expanded: false
   items:
