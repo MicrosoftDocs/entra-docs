@@ -8,6 +8,7 @@ ms.subservice: standards
 ms.topic: conceptual
 ms.date: 1/3/2023
 ms.author: jricketts
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # Configure CMMC Level 2 Identification and Authentication (IA) controls
