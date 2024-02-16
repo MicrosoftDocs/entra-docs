@@ -1,8 +1,8 @@
 ---
 # required metadata
 
-title: Use Security Copilot to respond to identity threats quickly
-description: You can use Security Copilot for Microsoft Entra to investigate and resolve identity risks, assess identities and access with AI-driven intelligence, and complete complex tasks quickly.
+title: Use Microsoft Security Copilot to respond to identity threats
+description: You can use Microsoft Security Copilot for Microsoft Entra to investigate and resolve identity risks, assess identities and access with AI-driven intelligence, and complete complex tasks quickly.
 keywords:
 author: rwike77
 ms.author: ryanwi
@@ -43,23 +43,23 @@ This article introduces you to Security Copilot and includes sample prompts that
 
 - Security Copilot saves your prompt sessions. To see the previous sessions, in Security Copilot, go to the menu > **My Sessions**:
 
-  :::image type="content" source="./media/copilot-security-entra/security-copilot-menu-my-sessions.png" alt-text="Screenshot that shows the Microsoft Security Copilot menu and My investigations with previous sessions.":::
+  :::image type="content" source="./media/copilot-security-entra/security-copilot-menu-my-sessions.png" alt-text="Screenshot that shows the Security Copilot menu and My investigations with previous sessions.":::
 
-  For a walkthrough on Security Copilot, including the pin and share feature, go to [Navigating Microsoft Security Copilot](/security-copilot/navigating-security-copilot).
+  For a walkthrough on Security Copilot, including the pin and share feature, go to [Navigating Security Copilot](/security-copilot/navigating-security-copilot).
 
-For more information on writing Security Copilot prompts, go to [Microsoft Security Copilot prompting tips](/security-copilot/prompting-tips).
+For more information on writing Security Copilot prompts, go to [Security Copilot prompting tips](/security-copilot/prompting-tips).
 
 ## Open Security Copilot
 
-1. Go to [Microsoft Security Copilot](https://go.microsoft.com/fwlink/?linkid=2247989) and sign in with your credentials.
-2. By default, Microsoft Entra should be enabled. To confirm, select **plugins** (bottom left corner):
+1. Browse to [Microsoft Security Copilot](https://go.microsoft.com/fwlink/?linkid=2247989) and sign in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader).  Read [getting started](/security-copilot/get-started-security-copilot) if you're new to Security Copilot.
+2. By default, the Microsoft Entra plugin should be enabled. To confirm, select **plugins** (bottom left corner):
 
-    :::image type="content" source="./media/copilot-security-entra/security-copilot-plugins.png" alt-text="Screenshot that shows the plugins that are available, enabled, and disabled in Microsoft Security Copilot.":::
+    :::image type="content" source="./media/copilot-security-entra/security-copilot-plugins.png" alt-text="Screenshot that shows the plugins that are available, enabled, and disabled in Security Copilot.":::
 
     In **My plugins**, confirm Microsoft Entra is on. Close **Plugins**.
 
     > [!NOTE]
-    > Some roles can enable or disable plugins, like Microsoft Entra. For more information, go to [Manage plugins in Microsoft Security Copilot](/security-copilot/manage-plugins).
+    > Some roles can enable or disable plugins, like Microsoft Entra. For more information, go to [Manage plugins in Security Copilot](/security-copilot/manage-plugins).
 
 3. Enter your prompt.
 
@@ -151,7 +151,7 @@ Get the details for Microsoft Entra users carrying an elevated risk of compromis
 
 Your feedback on the Microsoft Entra integration with Security Copilot helps with development. To provide feedback, in Security Copilot, use the feedback buttons at the bottom of each completed prompt:
 
-:::image type="content" source="./media/copilot-security-entra/security-copilot-prompt-feedback.png" alt-text="Screenshot that shows how to submit feedback on the prompt results in Microsoft Security Copilot.":::
+:::image type="content" source="./media/copilot-security-entra/security-copilot-prompt-feedback.png" alt-text="Screenshot that shows how to submit feedback on the prompt results in Security Copilot.":::
 
 Your options:
 
@@ -165,7 +165,7 @@ Whenever possible, and when the result is **Needs improvement**, write a few wor
 
 When you interact with the Security Copilot to get Microsoft Entra data, Security Copilot pulls that data from Microsoft Entra. The prompts, the Microsoft Entra data that's retrieved, and the output shown in the prompt results is processed and stored within the Security Copilot service.
 
-For more information about data privacy in Security Copilot, go to [Privacy and data security in Microsoft Security Copilot](/security-copilot/privacy-data-security).
+For more information about data privacy in Security Copilot, go to [Privacy and data security in Security Copilot](/security-copilot/privacy-data-security).
 
 ## Related articles
 
