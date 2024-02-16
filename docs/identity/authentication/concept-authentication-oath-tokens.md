@@ -74,7 +74,7 @@ At times, there may be conflicts or issues that occur with the processing of an 
   
 To determine the error message, be sure and select **View Details**. The **Hardware token status** blade opens and provides the summary of the status of the upload. It shows that there's been a failure, or multiple failures, as in the following example:
 
-:::image type="content" border="true" source="./media/concept-authentication-methods/hardware-token-status" alt-text="Screenshot of hardware token status example.":::
+:::image type="content" border="true" source="./media/concept-authentication-methods/hardware-token-status.png" alt-text="Screenshot of hardware token status example.":::
 
 To determine the cause of the failure listed, make sure to click the checkbox next to the status you want to view, which activates the **Download** option. This downloads a CSV file that contains the error identified. 
 
