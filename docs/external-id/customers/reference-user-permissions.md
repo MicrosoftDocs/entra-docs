@@ -30,6 +30,6 @@ The following table indicates the API operations that enable customers to manage
 
 | User operation  | API operation                                           | Permissions required       |
 |-----------------|---------------------------------------------------------|----------------------------|
-| Read profile    | `GET /me` or `GET /users/{id or userPrincipalName}`     | User.Read                  |
-| Update profile  | `PATCH /me` or `PATCH /users/{id or userPrincipalName}` <br/><br/> The following properties are updatable: city, country, displayName, givenName, jobTitle, postalCode, state, streetAddress, surname, and preferredLanguage | User.ReadWrite             |
-| Change password | `POST /me/changePassword`                               | Directory.AccessAsUser.All |
+| Read profile    | [GET /me](/graph/api/user-get) or [GET /users/{id or userPrincipalName}](/graph/api/user-get)     | User.Read                  |
+| Update profile  | [PATCH /me](/graph/api/user-update) or [PATCH /users/{id or userPrincipalName}](/graph/api/user-update) <br/><br/> The following properties are updatable: city, country, displayName, givenName, jobTitle, postalCode, state, streetAddress, surname, and preferredLanguage | User.ReadWrite             |
+| Change password | [POST /me/changePassword](/graph/api/user-changepassword)   | Directory.AccessAsUser.All |
