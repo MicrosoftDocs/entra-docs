@@ -170,7 +170,9 @@ items:
       - name: Introduction
         href: sse-deployment-guide-intro.md
       - name: Deploying Microsoft Entra Internet Access for Microsoft 365
-        href: sse-deployment-guide-m365.md 
+        href: sse-deployment-guide-m365.md
+      - name: Deploying Microsoft Entra Internet Access
+        href: sse-deployment-guide-internet-access.md
       - name: Deploying Microsoft Entra Private Access
         href: sse-deployment-guide-private-access.md 
   - name: Migration best practices
