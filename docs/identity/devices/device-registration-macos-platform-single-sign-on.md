@@ -142,13 +142,13 @@ Once you've completed the steps above, it's a good idea to check your device reg
 1. Select **Edit** next to **Network Account Server** and check that **Platform SSO** is listed as **Registered**.
 1. To verify the method used for authentication, navigate to your username in the **Users & Groups** window and select the **Information** icon. Check the method listed, which should be **Secure enclave**, **Smart Card**, or **Password**.
 
-> [!NOTE]
->
-> You can also use the **Terminal** app to check the registration status. Run the following command to check the status of your device registration. You should see in the bottom of the output that SSO tokens are retrieved.
->
-> ```console
-> app-sso platform -s
-> ```
+    > [!NOTE]
+    >
+    > You can also use the **Terminal** app to check the registration status. Run the following command to check the status of your device registration. You should see in the bottom of the output that SSO tokens are retrieved.
+    >
+    > ```console
+    > app-sso platform -s
+    > ```
 
 
 ### [macOS 13 Ventura](#tab/macos-13-ventura)
