@@ -1,18 +1,17 @@
 ---
 title: Complex applications for Microsoft Entra application proxy
-description: Provides an understanding of complex application in Microsoft Entra application proxy, and how to configure one.
-
+description: Understand complex applications in Microsoft Entra application proxy.
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/08/2024
-ms.author: dhruvinshah
+ms.date: 02/16/2024
+ms.author: kenwith
 ms.reviewer: dhruvinshah
 ---
 
-# Understanding Microsoft Entra application proxy Complex application scenario (Preview)
+# Understand complex applications in Microsoft Entra application proxy
 
 Applications are often made up of multiple individual web applications. These situations use different domain suffixes or different ports or paths in the URL. The individual web application instances must be published in separate Microsoft Entra application proxy apps. In these situations, the following problems might arise:
 - **Pre-authentication:** The client must separately acquire an access token or cookie for each Microsoft Entra application proxy app. The multiple acquisitions lead to more redirects at sign in to `microsoftonline.com`.
