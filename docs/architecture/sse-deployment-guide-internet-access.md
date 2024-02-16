@@ -42,7 +42,7 @@ Microsoft Internet Access allows you to configure a security profile with a prio
 
 1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> **[Web content filtering policies](web-content-filtering-policies.md)**.
 
-   [ ![Screenshot of Global Secure Access, Secure, Web content filtering policies.](/media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png)](/media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png#lightbox)
+   [ ![Screenshot of Global Secure Access Secure Web content filtering policies.](/media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png)](/media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png#lightbox)
 
 1. On **Create a web content filtering policy** \> **Basics**, provide the following details.
    1. **Name**: Baseline Internet Access block rule
