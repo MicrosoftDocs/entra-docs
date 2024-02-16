@@ -17,7 +17,7 @@ The [Microsoft identity-centric Security Service Edge solution](../global-secure
 
 Protecting enterprise users and managed devices from malicious Internet traffic and malware infection concerns all companies. [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) Secure Web Gateway functionality enables you to block traffic based on web categories and a fully qualified domain name (FQDN) by integrating with Microsoft Entra ID conditional access.
 
-The guidance in this article helps you to deploy [Microsoft Entra Internet Access](https://learn.microsoft.com/entra/global-secure-access/) (Preview) as a Proof of Concept in your production or test environment. It includes setup and configuring web content filtering. You can review prerequisites in the [Microsoft Security Service Edge Solution Deployment Guide Introduction](sse-deployment-guide-intro.md) that includes how to scope your configuration and testing for specific test users and groups.
+The guidance in this article helps you to deploy [Microsoft Entra Internet Access](~/entra/global-secure-access/) (Preview) as a Proof of Concept in your production or test environment. It includes setup and configuring web content filtering. You can review prerequisites in the [Microsoft Security Service Edge Solution Deployment Guide Introduction](sse-deployment-guide-intro.md) that includes how to scope your configuration and testing for specific test users and groups.
 
 ## Deploy and test Microsoft Entra Internet Access
 
@@ -461,6 +461,8 @@ In some cases, you may have users that require access to blocked sites for group
 
    1. **Target resources** \> **Select what this policy applies to** \> **Global Secure Access (Preview)**.
    1. **Select the traffic profiles this policy applies to** \> **Internet traffic**.
+
+   [ ![Screenshot of Conditional Access, New Conditional Access policy to allow blocked Internet Access Policy, Target resources.](media/sse-deployment-guide-internet-access/new-conditional-access-policy-allow-blocked-target-resources.png)](media/sse-deployment-guide-internet-access/new-conditional-access-policy-allow-blocked-target-resources.png#lightbox)
 
         :::image type="content" source="../media/sse-deployment-guide-internet-access/new-conditional-access-policy-allow-blocked-target-resources.png" alt-text="Screenshot of Conditional Access, New Conditional Access policy to allow blocked Internet Access Policy, Target resources.":::
 1. **Session** \> select **Use Global Secure Access security profile**, select **Allow FQDNs Internet Access Profile**. Click **Select**.
