@@ -12,7 +12,7 @@ ms.author: jfields
 
 # What's new in Microsoft Entra Permissions Management
 
-Stay updated on the latest Public Preview and General Availability of features in Microsoft Entra Permissions Management. 
+This article provides the latest Public Preview and General Availability of features in Microsoft Entra Permissions Management. 
 
 ## December 2023
 
@@ -55,7 +55,7 @@ Get the ServiceNow app in the [ServiceNow app store](https://store.servicenow.co
 **Service category:**                        
 **Product capability:** Permissions Management
 
-Why does Permissions Management support third party identity providers (IdP) integration? By getting the insight of single sign-on data regarding permissions assigned in cloud environments, Permissions Management can provide more accurate analytics. By reading role assignments and user data from the IdP side, Permissions Management can more effectively calculate permissions granted, and as a result, read more precise permissions creep. 
+Permissions Management supports third party identity providers (IdP) integration to get more insight of single sign-on data of permissions assigned in cloud environments. With this information, Permissions Management can provide more accurate analytics. By reading role assignments and user data from the IdP side, Permissions Management more effectively calculates permissions granted, and as a result, reads more precise data on permissions creep. 
 
 For [Okta Identity Provider integration](how-to-configure-okta-as-an-identity-provider.md), an admin needs to configure the API application to give the access to read Okta users, groups, and apps via Okta APIs. Permissions Management reads Okta users, groups, and apps via Okta APIs. 
 
