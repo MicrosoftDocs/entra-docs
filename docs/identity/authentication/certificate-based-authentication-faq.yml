@@ -72,7 +72,7 @@ sections:
           |Subject |=|Issuer |
           |Subject Key Identifier |=|Authority Key Identifier (KeyID) |
 
-          :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/certificate-crl-compare.png" alt-text="Compare CA Certificate with CRL Information.":::
+          :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/certificate-crl-compare.png" alt-text="Screenshot comparing CA Certificate with CRL Information.":::
       
       - question: |
           How do I validate the Certificate Authority configuration?
