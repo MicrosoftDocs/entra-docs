@@ -93,6 +93,8 @@ landingContent:
     linkLists:
       - linkListType: reference
         links:
+          - text: What's new
+            url: whats-new-in-permissions-management.md
           - text: FAQs
             url: faqs.md
           - text: Glossary  
