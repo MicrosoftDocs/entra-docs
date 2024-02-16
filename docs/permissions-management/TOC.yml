@@ -180,6 +180,8 @@
   - name: Reference
     expanded: false
     items:
+    - name: What's new
+      href: whats-new-in-permissions-management.md 
     - name: FAQs
       href: faqs.md
     - name: Glossary
