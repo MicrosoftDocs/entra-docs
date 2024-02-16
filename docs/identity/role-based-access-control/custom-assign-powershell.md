@@ -11,8 +11,8 @@ ms.date: 05/10/2022
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
 ---
+
 # Assign custom roles with resource scope using PowerShell in Microsoft Entra ID
 
 This article describes how to create a role assignment at organization-wide scope in Microsoft Entra ID. Assigning a role at organization-wide scope grants access across the Microsoft Entra organization. To create a role assignment with a scope of a single Microsoft Entra resource, see [Create and assign a custom role in Microsoft Entra ID](custom-create.md). This article uses the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation) module.
@@ -33,19 +33,20 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 1. Sign in by executing the command `Connect-MgGraph`.
 1. Create a new role using the following PowerShell script.
 
-```powershell
-## Assign a role to a user or service principal with resource scope
-# Get the user and role definition you want to link
-$user = Get-MgUser -Filter "UserPrincipalName eq 'cburl@f128.info'"
-$roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "DisplayName eq 'Application Support Administrator'"
+   ```powershell
+   ## Assign a role to a user or service principal with resource scope
+   # Get the user and role definition you want to link
+   $user = Get-MgUser -Filter "UserPrincipalName eq 'cburl@f128.info'"
+   $roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "DisplayName eq 'Application Support Administrator'"
 
-# Get app registration and construct resource scope for assignment.
-$appRegistration = Get-MgApplication -Filter "displayName eq 'f/128 Filter Photos'"
-$directoryScope = '/' + $appRegistration.Id
+   # Get app registration and construct resource scope for assignment.
+   $appRegistration = Get-MgApplication -Filter "displayName eq 'f/128 Filter Photos'"
+   $directoryScope = '/' + $appRegistration.Id
 
-# Create a scoped role assignment
-$roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId $directoryScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.Id
-```
+   # Create a scoped role assignment
+   $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId $directoryScope `
+      -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.Id
+   ```
 
 To assign the role to a service principal instead of a user, use the [Get-MgServicePrincipal](/powershell/module/Microsoft.Graph.Applications/Get-MgServicePrincipal) cmdlet.
 
@@ -70,7 +71,8 @@ $rolePermissions = @{
 }
 
 # Create new custom directory role
-$customAdmin = New-MgRoleManagementDirectoryRoleDefinition -RolePermissions $rolePermissions -DisplayName $displayName -Description $description -TemplateId $templateId -IsEnabled:$true
+$customAdmin = New-MgRoleManagementDirectoryRoleDefinition -RolePermissions $rolePermissions `
+   -DisplayName $displayName -Description $description -TemplateId $templateId -IsEnabled:$true
 ```
 
 ### Read and list role definitions
@@ -92,7 +94,8 @@ Get-MgRoleManagementDirectoryRoleDefinition -Filter "TemplateId eq 'c4e39bd9-110
 # Update role definition
 # This works for any writable property on role definition. You can replace display name with other
 # valid properties.
-Update-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId c4e39bd9-1100-46d3-8c65-fb160da0071f -DisplayName "Updated DisplayName"
+Update-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId c4e39bd9-1100-46d3-8c65-fb160da0071f `
+   -DisplayName "Updated DisplayName"
 ```
 
 ### Delete a role definition
@@ -118,7 +121,8 @@ $appRegistration = Get-MgApplication -Filter "displayName eq 'f/128 Filter Photo
 $directoryScope = '/' + $appRegistration.Id
 
 # Create a scoped role assignment
-$roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId $directoryScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.Id
+$roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId $directoryScope `
+   -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.Id
 ```
 
 ### Read and list role assignments
