@@ -72,26 +72,27 @@ At times, there may be conflicts or issues that occur with the processing of an 
 
 :::image type="content" border="true" source="./media/concept-authentication-methods/upload-error-example.png" alt-text="Screenshot of upload error example."
   
-To determine the error message, be sure and select **View Details**. The **Hardware token status** blade opens and provides the summary of the status of the upload. It shows that there was a failure (or multiple failures). See the following example:
+To determine the error message, be sure and select **View Details**. The **Hardware token status** blade opens and provides the summary of the status of the upload. It shows that there's been a failure, or multiple failures, as in the following example:
 
 :::image type="content" border="true" source="./media/concept-authentication-methods/oath-tokens.png" alt-text="Screenshot of status example."
 
-To determine the cause of the failure listed, make sure to check the checkbox next to the status you want to view, which activates the **Download** option to then download a CSV file that contains the error identified. 
+To determine the cause of the failure listed, make sure to click the checkbox next to the status you want to view, which activates the **Download** option. This downloads a CSV file that contains the error identified. 
 
 :::image type="content" border="true" source="./media/concept-authentication-methods/error-example.png" alt-text="Screenshot of download error example."
 
-The file downloaded should be named **Failures_filename.csv** where _filename_ is the name of the file uploaded. It downloads to your default downloads directory for your browser. Once open, it provides the error that needs to be addressed. 
+The downloaded file is named **Failures_filename.csv** where _filename_ is the name of the file uploaded. It's saved to your default downloads directory for your browser. 
 
 :::image type="content" border="true" source="./media/concept-authentication-methods/download-status-example.png" alt-text="Screenshot of download status example."
 
-In this example, it was that the user didn't exist in the tenant directory:  
+This example shows the error identified as a user who doesn't currently exist in the tenant directory:  
 
 :::image type="content" border="true" source="./media/concept-authentication-methods/error-reason-example.png" alt-text="Screenshot of error reason example."
 
-Once the errors listed are addressed, the CSV can be uploaded again to process successfully. The status information for each attempt remains for 30 days, or they can be manually removed by checking the checkbox next to the status and then clicking **Delete status** if so desired. 
+Once you've addressed the errors listed, upload the CSV again until it processes successfully. The status information for each attempt remains for 30 days. The CSV can be manually removed by clicking the checkbox next to the status, then selecting **Delete status** if so desired. 
 
-## Determine OATH token registration type in mysecurityinfo 
-Users can manage and add OATH token registrations by acc    essing https://aka.ms/mysecurityinfo or by selecting Security info from My Account. Specific icons are used to differentiate whether the OATH token registration is hardware or software based.  
+## Determine OATH token registration type
+
+Users can manage and add OATH token registrations by accessing [mysecurityinfo](https://aka.ms/mysecurityinfo) or by selecting **Security info** from **My account**. Specific icons are used to differentiate whether the OATH token registration is hardware or software based.  
 
 Token registration type | Icon |
 ------ | ------ |
