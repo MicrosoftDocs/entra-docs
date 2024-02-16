@@ -17,7 +17,7 @@ First, make sure the application proxy connectors are configured correctly. For 
 
 If errors occur in accessing a published application or in publishing applications, check the following options to see if Microsoft Entra application proxy is working correctly:
 
-* Open the Windows Services console. Verify that the **Microsoft Entra application proxy connector** service is enabled and running. Look at the application proxy service properties page, as shown in the image:  
+* Open the Windows Services console. Verify that the **Microsoft Entra application proxy connector** service is enabled and running. Look at the application proxy service properties page, as shown in the image.  
   ![Microsoft Entra application proxy connector Properties window screenshot](./media/application-proxy-troubleshoot/connectorproperties.png)
 * Open Event Viewer and look for application proxy connector events in **Applications and Services Logs** > **Microsoft** > **AadApplicationProxy** > **Connector** > **Admin**.
 * Review detailed logs. [Turn on application proxy connector session logs](application-proxy-connectors.md#under-the-hood).
@@ -31,11 +31,11 @@ For example, if you publish the path `https://yourapp/app` but the application c
 Applications can be functional but experience a long latency. Network topology tweaks can make improvements to speed. For an evaluation of different topologies, see the [network considerations document](application-proxy-network-topology.md).
 
 ## Application page does not display correctly for an Application Proxy application
-When you publish an Application Proxy app, only pages under your root are accessible when accessing the application. If the page isn’t displaying correctly, the root internal URL used for the application may be missing some page resources. To resolve, make sure you have published *all* the resources for the page as part of your application.
+When you publish an Application Proxy app, only pages under your root are accessible when accessing the application. If the page isn’t displaying correctly, the root internal URL used for the application may be missing some page resources. To resolve, publish *all* the resources for the page as part of your application.
 
 You can verify if missing resources is the issue by opening your network tracker (such as Fiddler, or F12 tools in Internet Explorer/Microsoft Edge), loading the page, and looking for 404 errors. That indicates the pages currently cannot be found and that you need to publish them.
 
-As an example of this case, assume you have published an expenses application using the internal URL `http://myapps/expenses`, but the app uses the stylesheet `http://myapps/style.css`. In this case, the stylesheet is not published in your application, so loading the expenses app throw a 404 error while trying to load style.css. In this example, the problem is resolved by publishing the application with an internal URL `http://myapp/`.
+As an example, assume you published an expenses application using the internal URL `http://myapps/expenses`, but the app uses the stylesheet `http://myapps/style.css`. The stylesheet is not published in your application, so loading the expenses app throws a `404` error trying to load `style.css`. In this example, resolve the problem by publishing the application with the internal URL `http://myapp/`.
 
 ## Problems with publishing as one application
 
