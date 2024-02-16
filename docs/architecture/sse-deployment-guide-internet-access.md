@@ -7,13 +7,13 @@ author: jricketts
 manager: martinco
 ms.service: network-access
 ms.topic: conceptual
-ms.date: 2/5/2024
+ms.date: 02/16/2024
 ms.author: jricketts
 ---
 
 # Microsoft Security Service Edge Solution Deployment Guide for Microsoft Entra Internet Access Proof of Concept
 
-[Microsoft's identity-centric Security Service Edge solution](../global-secure-access/overview-what-is-global-secure-access.md) converges network and identity access controls so that you can secure access to any app or resource from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. You can continuously monitor and adjust user access in real time if permissions or risk levels change to your private apps, SaaS apps, and M365 endpoints.
+The [Microsoft identity-centric Security Service Edge solution](../global-secure-access/overview-what-is-global-secure-access.md) converges network and identity access controls so that you can secure access to any app or resource from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. You can continuously monitor and adjust user access in real time if permissions or risk levels change to your private apps, SaaS apps, and M365 endpoints.
 
 Protecting enterprise users and managed devices from malicious Internet traffic and malware infection concerns all companies. [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) Secure Web Gateway functionality enables you to block traffic based on web categories and a fully qualified domain name (FQDN) by integrating with Microsoft Entra ID conditional access.
 
@@ -42,32 +42,38 @@ Microsoft Internet Access allows you to configure a security profile with a prio
 
 1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> **[Web content filtering policies](web-content-filtering-policies.md)**.
 
-    :::image type="content" source="../media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png" alt-text="Screenshot of Global Secure Access, Secure, Web content filtering policies." lightbox="../media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-expanded.png":::
+   [ ![Screenshot of Global Secure Access, Secure, Web content filtering policies.](/media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png)](/media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png#lightbox)
+
 1. On **Create a web content filtering policy** \> **Basics**, provide the following details.
    1. **Name**: Baseline Internet Access block rule
    1. **Description:**
    1. **Action**: Block
 
-        :::image type="content" source="../media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-basics-baseline-inline.png" alt-text="Screenshot of Global Secure Access, Web content filtering policies, Create a web content filtering policy, Basics for baseline policy." lightbox="../media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-basics-baseline-expanded.png":::
+   [ ![Screenshot of Global Secure Access, Web content filtering policies, Create a web content filtering policy, Basics for baseline policy.](/media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-basics-baseline-inline.png)](/media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-basics-baseline-inline.png#lightbox)
+      
 1. Select **Next**.
 1. On **Create a web content filtering policy** \> **Policy Rules**, select **Add Rule**.
 
-    :::image type="content" source="../media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-rules-baseline.png" alt-text="Screenshot of Global Secure Access, Create a web content filtering policy, Policy Rules for baseline policy.":::
+   [ ![Screenshot of Global Secure Access, Create a web content filtering policy, Policy Rules for baseline policy.](/media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-rules-baseline.png)](/media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-rules-baseline.png#lightbox)
+   
 1. In the **Add Rule** dialog box, provide the following details.
    1. **Name**: Baseline blocked web categories
    1. **Destination type:** webCategory
    1. **Search**: select a few risky categories, confirm they are in the Selected items list.
 
-        :::image type="content" source="../media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-add-rule-baseline.png" alt-text="Screenshot of Global Secure Access, Create a web content filtering policy, Add Rule for baseline policy.":::
+   [ ![Screenshot of Global Secure Access, Create a web content filtering policy, Add Rule for baseline policy.](/media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-add-rule-baseline.png)](/media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-add-rule-baseline.png#lightbox)
+      
 1. Select **Add**.
 1. On **Create a web content filtering policy** \> **Policy Rules**, confirm your selections.
 
-    :::image type="content" source="../media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-review-baseline-inline.png" alt-text="Screenshot of Global Secure Access, Create a web content filtering policy, Review for baseline policy." lightbox="../media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-review-baseline-expanded.png":::
+   [ ![Screenshot of Global Secure Access, Create a web content filtering policy, Review for baseline policy.](/media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-review-baseline-inline.png)](/media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-review-baseline-inline.png#lightbox)
+   
 1. Select **Next**.
 1. On **Create a web content filtering policy** \> **Review**, confirm your policy configuration.
 1. Select **Create policy**.
 
     :::image type="content" source="../media/sse-deployment-guide-internet-access/security-profiles-create-policy-review-baseline-inline.png" alt-text="Screenshot of Global Secure Access, Security profiles, Review tab for baseline policy." lightbox="../media/sse-deployment-guide-internet-access/security-profiles-create-policy-review-baseline-expanded.png":::
+   
 1. Confirm policy creation by viewing it in the **Manage web content filtering policies** list.
 
 ### Create a security policy profile
@@ -75,6 +81,7 @@ Microsoft Internet Access allows you to configure a security profile with a prio
 1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Security profiles**. Select **Create profile**.
 
     :::image type="content" source="../media/sse-deployment-guide-internet-access/security-profiles-inline.png" alt-text="Screenshot of Global Secure Access, Security profiles." lightbox="../media/sse-deployment-guide-internet-access/security-profiles-expanded.png":::
+   
 1. On **Create a profile** \> **Basics**, provide the following details.
    1. **Profile name**: Baseline Internet Access Block Profile
    1. **Description:**
@@ -82,6 +89,7 @@ Microsoft Internet Access allows you to configure a security profile with a prio
    1. **Priority:** 65000
 
         :::image type="content" source="../media/sse-deployment-guide-internet-access/security-profiles-create-profile-basics-baseline-inline.png" alt-text="Screenshot of Global Secure Access, Security profiles, Basics for baseline policy." lightbox="../media/sse-deployment-guide-internet-access/security-profiles-create-profile-basics-baseline-expanded.png":::
+      
 1. Select **Next**.
 1. On **Create a profile** \> **Link policies**, select **Link a policy**. Select **Existing policy**.
    1. In the **Link a policy** dialog box, select **Policy name** and select **Baseline Internet Access block rule**.
@@ -93,6 +101,7 @@ Microsoft Internet Access allows you to configure a security profile with a prio
 1. On **Create a profile** \> **Review**, confirm your profile configuration.
 
     :::image type="content" source="../media/sse-deployment-guide-internet-access/security-profiles-create-profile-review-baseline.png" alt-text="Screenshot of Global Secure Access, Security profiles, Review for baseline policy.":::
+   
 1. Select **Create a profile**.
 
 ### Attempt to access blocked sites
@@ -101,10 +110,12 @@ Microsoft Internet Access allows you to configure a security profile with a prio
 1. In the system tray, right-click **Global Secure Access Client**. Select **Advanced Diagnostics**.
 
     :::image type="content" source="../media/sse-deployment-guide-internet-access/global-secure-access-client-options-advanced-diagnostics.png" alt-text="Screenshot of Global Secure Access System Tray options, Advanced diagnostics.":::
+   
 1. In the **Global Secure Access Client -- Advanced Diagnostics** dialog box, select **Traffic**.
 1. On **Network traffic**, select **Start collecting**.
 
     :::image type="content" source="../media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-start-collecting-inline.png" alt-text="Screenshot of Global Secure Access Client, Advanced diagnostics, Traffic, Network traffic, Start collecting." lightbox="../media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-start-collecting-expanded.png":::
+   
 1. Attempt to open the FQDN that you blocked to confirm blocked access. It can take up to 20 minutes for the policy to apply to your client device.
 
 ### Stop the agent and confirm restored access
@@ -113,9 +124,11 @@ Microsoft Internet Access allows you to configure a security profile with a prio
 1. Scroll to observe the traffic from your attempt to open the FQDN as well as associated data.
 
     :::image type="content" source="../media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-fqdn-traffic-inline.png" alt-text="Screenshot of Network traffic for FQDN." lightbox="../media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-fqdn-traffic-expanded.png":::
+   
 1. On your test device \> System Tray \> expand options \> right-click **Global Secure Access client**. Select **Pause**.
 
     :::image type="content" source="../media/sse-deployment-guide-internet-access/global-secure-access-client-options-pause.png" alt-text="Screenshot of Global Secure Access System Tray options, Pause.":::
+   
 1. After the confirmation notification appears, open the previously blocked site to confirm restored access.
 
 ### View activity in the traffic log
