@@ -10,6 +10,7 @@ ms.date: 12/02/2023
 ms.author: jricketts
 ms.reviewer: merill
 ms.custom: it-pro, has-azure-ad-ps-ref
+# Customer intent: As an IT admin currently using Microsoft Entra ID, I want to stay informed about upcoming changes, retirements, and feature changes, so that I can plan for any necessary actions or adjustments to my organization's deployment and configurations.
 ---
 
 # What's deprecated in Microsoft Entra ID?
