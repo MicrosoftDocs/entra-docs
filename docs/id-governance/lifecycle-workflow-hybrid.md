@@ -30,7 +30,7 @@ The following table shows what is required to use each workflow trigger in a hyb
 |Attribute changes     | No further configuration needed as long as attributes are synced.       |
 |Group membership based     | No further configuration needed. Also works for on-premises groups as long as they're synced.        |
 |On-demand     |   No further configuration needed.      |
-|Time-based    |  **employeeHireDate**, **employeeLeaveDateTime**: These attributes must be synced before being used. For more information on this process, see: [How to synchronize attributes for Lifecycle workflows](./how-to-lifecycle-workflow-sync-attributes.md).<br></br>**createdDateTime**: No further requirements needed. This date is the day the user account is synced to Microsoft Entra ID, not when they were created within Active Directory.       |
+|Time based    |  **employeeHireDate**, **employeeLeaveDateTime**: These attributes must be synced before being used. For more information on this process, see: [How to synchronize attributes for Lifecycle workflows](./how-to-lifecycle-workflow-sync-attributes.md).<br></br>**createdDateTime**: No further requirements needed. This date is the day the user account is synced to Microsoft Entra ID, not when they were created within Active Directory.       |
 
 
 ## Workflow tasks and hybrid capabilities
