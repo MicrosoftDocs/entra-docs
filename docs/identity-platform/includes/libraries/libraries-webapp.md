@@ -1,3 +1,12 @@
+---
+author: henrymbuguakiarie
+ms.service: identity-platform
+ms.topic: include
+ms.date: 09/25/2023
+ms.author: henrymbugua
+manager: CelesteDG 
+---
+
 | Language / framework | Project on<br/>GitHub                                                                                           | Package                                                                                                    | Getting<br/>started                                                                                | Sign in users                                                        | Access web APIs                                                                | Generally available (GA) *or*<br/>Public preview<sup>1</sup> |
 |----------------------|-----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------:|:------------------------------------------------------------------------------:|:------------------------------------------------------------:|
 | .NET                 | [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)                              | [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client)                      | —                                                                                                  | ![Library cannot request ID tokens for user sign-in.][n]             | ![Library can request access tokens for protected web APIs.][y]                | GA                                                           |

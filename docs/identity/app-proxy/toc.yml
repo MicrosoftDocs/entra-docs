@@ -1,19 +1,19 @@
 items:
-  - name: Application Proxy documentation
+  - name: Application proxy documentation
     href: index.yml
   - name: Overview
     expanded: true
     items:
-    - name: What is Application Proxy?
+    - name: What is application proxy?
       href: overview-what-is-app-proxy.md
   - name: Tutorials
     expanded: true
     items:
     - name: List of app integration tutorials
       href: ~/identity/saas-apps/tutorial-list.md
-    - name: Add an on-premises app with Application Proxy
+    - name: Add an on-premises app with application proxy
       href: application-proxy-add-on-premises-application.md
-    - name: Configure Application Proxy - Microsoft Graph
+    - name: Configure application proxy - Microsoft Graph
       href: /graph/application-proxy-configure-api?context=/entra/identity/app-proxy/context/app-proxy-context.json
   - name: Samples
     expanded: false
@@ -55,7 +55,7 @@ items:
     items: 
     - name: Single sign-on with on-premises apps
       href: how-to-configure-sso.md
-    - name: Planning an Application Proxy deployment
+    - name: Planning an application proxy deployment
       href: conceptual-deployment-plan.md
     - name: Connectors
       href: application-proxy-connectors.md
@@ -110,9 +110,9 @@ items:
       href: application-proxy-remove-personal-data.md
     - name: Publishing walkthroughs
       items:
-      - name: Integrate with Application Proxy on an NDES server
+      - name: Integrate with Network Device Enrollment Service (NDES)
         href: ./app-proxy-protect-ndes.md
-      - name: Integrate with Application Proxy using PingAccess
+      - name: Integrate with application proxy using PingAccess
         href: application-proxy-ping-access-publishing-guide.md
       - name: Integrate with Microsoft Entra Domain Services
         href: /entra/identity/domain-services/deploy-azure-app-proxy?toc=/entra/identity/app-proxy/toc.json&bc=/entra/identity/app-proxy/breadcrumb/toc.json
@@ -132,39 +132,31 @@ items:
         href: application-proxy-integrate-with-tableau.md
       - name: Integrate with Qlik
         href: application-proxy-qlik.md
-      - name: Integrate with WAF on Azure Application Gateway
+      - name: Integrate with Web Application Firewall (WAF) on Azure Application Gateway
         href: application-proxy-application-gateway-waf.md
     - name: Troubleshoot
       items:
-      - name: Application Proxy troubleshooting
+      - name: Application proxy troubleshooting
         href: application-proxy-troubleshoot.md
       - name: Connector troubleshooting flowchart
         href: application-proxy-debug-connectors.md
       - name: Application troubleshooting flowchart
         href: application-proxy-debug-apps.md
-      - name: Problem displaying app page
-        href: application-proxy-page-appearance-broken-problem.md
-      - name: Application load is too long
-        href: application-proxy-page-load-speed-problem.md
       - name: Links on application page not working
         href: application-proxy-page-links-broken-problem.md
       - name: Configure Kerberos Constrained Delegation
         href: application-proxy-back-end-kerberos-constrained-delegation-how-to.md
       - name: Can't Access this Corporate Application error
         href: application-proxy-sign-in-bad-gateway-timeout-error.md
-      - name: Problem installing the Application Proxy Agent Connector
+      - name: Problem installing the application proxy connector
         href: application-proxy-connector-installation-problem.md
-      - name: No working connector in a connector group for my app
-        href: application-proxy-connectivity-no-working-connector.md
-      - name: Sign in problem
-        href: application-sign-in-problem-on-premises-application-proxy.md
-      - name: CORS issues in Application Proxy
+      - name: CORS issues in application proxy
         href: application-proxy-understand-cors-issues.md
   - name: Reference
     items:
     - name: App Proxy FAQ
       href: application-proxy-faq.yml
-    - name: Application Proxy version history
+    - name: Application proxy version history
       href: application-proxy-release-version-history.md
   - name: Resources
     items:
@@ -172,7 +164,7 @@ items:
       href: ~/identity-platform/developer-support-help-options.md?toc=/entra/identity/app-proxy/toc.json&bc=/entra/identity/app-proxy/breadcrumb/toc.json
     - name: Azure feedback forum
       href: https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789
-    - name: Microsoft Q&A question page
+    - name: Microsoft Question and Answer page
       href: /answers/tags/455/entra-id
     - name: Pricing
       href: https://azure.microsoft.com/pricing/details/active-directory/

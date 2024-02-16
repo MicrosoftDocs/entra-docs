@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom: template-concept
 ms.date: 01/06/2023
-ms.reviewer: nichola, arielsc
+ms.reviewer:
 ms.service: identity-platform
 
 ms.topic: conceptual

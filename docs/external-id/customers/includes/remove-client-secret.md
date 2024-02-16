@@ -1,10 +1,11 @@
 ---
 author: cilwerner
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: include
 ms.date: 08/28/2023
 ms.author: cwerner
+ms.manager: celestedg
 ---
 
 If you've a client secret already in place for your application, you need to delete it to avoid a malicious application for impersonating your application:

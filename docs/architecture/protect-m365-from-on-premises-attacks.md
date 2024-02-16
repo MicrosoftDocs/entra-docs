@@ -1,20 +1,17 @@
 ---
 title: Protecting Microsoft 365 from on-premises attacks
 description: Learn how to configure your systems to help protect your Microsoft 365 cloud environment from on-premises compromise.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: how-to
 ms.date: 08/26/2022
 ms.author: jricketts
 ms.reviewer: ajburnle
 ms.custom:
   - it-pro
-  - seodec18
   - kr2b-contr-experiment
-ms.collection: M365-identity-device-management
 ---
   
 # Protecting Microsoft 365 from on-premises attacks

@@ -1,8 +1,7 @@
 ---
 title: Memo 22-09 identity requirements overview
 description: Get guidance on meeting requirements outlined in US government OMB memorandum 22-09.
-services: active-directory
-ms.service: active-directory
+ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
 author: gargi-sinha
@@ -11,7 +10,6 @@ manager: martinco
 ms.reviewer: martinco
 ms.date: 04/28/2023
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Meet identity requirements of memorandum 22-09 with Microsoft Entra ID

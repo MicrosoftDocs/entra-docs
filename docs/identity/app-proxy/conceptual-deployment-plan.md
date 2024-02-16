@@ -307,14 +307,11 @@ Learn more about common issues and how to resolve them with our guide to [troubl
 
 The following articles cover common scenarios that can also be used to create troubleshooting guides for your support organization.
 
-* [Problem displaying app page](application-proxy-page-appearance-broken-problem.md)
-* [Application load is too long](application-proxy-page-load-speed-problem.md)
 * [Links on application page not working](application-proxy-page-links-broken-problem.md)
 * [What ports to open for my app](application-proxy-add-on-premises-application.md)
-* [No working connector in a connector group for my app](application-proxy-connectivity-no-working-connector.md)
 * [Configure single sign-on to my app](how-to-configure-sso.md)
 * [Configure Kerberos Constrained Delegation](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
 * [Configure with PingAccess](application-proxy-ping-access-publishing-guide.md)
 * [Can't Access this Corporate Application error](application-proxy-sign-in-bad-gateway-timeout-error.md)
 * [Problem installing the Application Proxy Agent Connector](application-proxy-connector-installation-problem.md)
-* [Sign-in problem](application-sign-in-problem-on-premises-application-proxy.md)
+* [Sign-in problem](application-proxy-troubleshoot.md)

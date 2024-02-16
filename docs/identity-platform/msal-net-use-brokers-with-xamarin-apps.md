@@ -268,19 +268,36 @@ You can compute the signature yourself, similar to how MSAL does it:
 
    private string GetCurrentSignatureForPackage(string packageName)
    {
-            PackageInfo info = Application.Context.PackageManager.GetPackageInfo(packageName,
-               PackageInfoFlags.Signatures);
-            if (info != null && info.Signatures != null && info.Signatures.Count > 0)
-            {
-               // First available signature. Applications can be signed with multiple signatures.
-               // The order of Signatures is not guaranteed.
-               Signature signature = info.Signatures[0];
-               MessageDigest md = MessageDigest.GetInstance("SHA");
-               md.Update(signature.ToByteArray());
-               return Convert.ToBase64String(md.Digest(), Base64FormattingOptions.None);
-               // Server side needs to register all other tags. ADAL will
-               // send one of them.
-            }
+      Android.Content.PM.Signature signature = null;
+      if (Build.VERSION.SdkInt >= BuildVersionCodes.Tiramisu)
+      {
+          var packageInfo = Application.Context.PackageManager.GetPackageInfo(packageName, PackageManager.PackageInfoFlags.Of((long)PackageInfoFlags.SigningCertificates));
+          if (packageInfo.SigningInfo != null)
+          {
+              var signatures = packageInfo.SigningInfo.GetApkContentsSigners();
+              if (signatures != null && signatures.Length > 0)
+                  signature = signatures[0];
+          }
+      }
+      else
+      {
+#pragma warning disable CS0618 // Type or member is obsolete
+          var packageInfo = Application.Context.PackageManager.GetPackageInfo(packageName, PackageInfoFlags.Signatures);
+          if (packageInfo != null && packageInfo.Signatures != null && packageInfo.Signatures.Count > 0)
+              signature = packageInfo.Signatures[0];
+#pragma warning restore CS0618 // Type or member is obsolete
+      }
+    
+      if (signature != null)
+      {
+          // First available signature. Applications can be signed with multiple signatures.
+          // The order of Signatures is not guaranteed.
+          var md = MessageDigest.GetInstance("SHA");
+          md.Update(signature.ToByteArray());
+          return Convert.ToBase64String(md.Digest(), Base64FormattingOptions.None);
+          // Server side needs to register all other tags. ADAL will
+          // send one of them.
+      }
    }
 ```
 

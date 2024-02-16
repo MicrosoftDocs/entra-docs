@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.date: 08/25/2022
-ms.reviewer: madansr7
+ms.reviewer:
 ms.service: identity-platform
 
 ms.topic: reference

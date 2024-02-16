@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: devx-track-js
 ms.date: 03/07/2023
-ms.reviewer: nacanuma, negoe
+ms.reviewer: negoe
 ms.service: identity-platform
 
 ms.topic: conceptual

@@ -5,7 +5,6 @@ description: Learn how to extend or renew Microsoft Entra role assignments in Mi
 author: barclayn
 manager: amycolannino
 ms.service: entra-id-governance
-ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: privileged-identity-management
 ms.date: 09/13/2023

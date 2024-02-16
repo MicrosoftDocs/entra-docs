@@ -1,19 +1,17 @@
 ---
 title: What is Microsoft Entra ID?
 description: Learn about Microsoft Entra ID, including terminology, available licenses, and a list of associated features.
-services: active-directory
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
 ms.date: 01/23/2023
 ms.author: barclayn
-ms.custom: "it-pro, seodec18, seo-update-azuread-jan, contperf-fy20q4"
-
-# Customer intent: As a new administrator, I want to understand what Microsoft Entra ID is, which license is right for me, and what features are available.
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
+# Customer intent: As a new administrator, I want to understand what Microsoft Entra ID is, which license is right for me, and what features are available.
 ---
 
 # What is Microsoft Entra ID?

@@ -5,9 +5,9 @@ description: Learn how to manage your Microsoft Entra ID for customers tenant by
 author: garrodonnell
 manager: celested
 ms.author: godonnell
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 05/23/2023
 ms.custom: developer
