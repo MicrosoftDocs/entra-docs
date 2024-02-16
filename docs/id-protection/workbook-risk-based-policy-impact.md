@@ -44,7 +44,7 @@ Administrators can use this information to see which users might be impacted ove
 
 This workbook doesn't require that you create any Conditional Access policies, even ones in report-only mode. The only prerequisite is that you have your sign-in logs sent to a Log Analytics workspace. For more information about how to enable this prerequisite, see the article [How to use Microsoft Entra Workbooks](../identity/monitoring-health/howto-use-workbooks.md).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
 1. Select the **Impact analysis of risk-based access policies** workbook under **Identity Protection**.
 
