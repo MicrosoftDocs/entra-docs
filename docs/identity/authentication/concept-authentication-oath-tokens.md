@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 # Authentication methods in Microsoft Entra ID - OATH tokens 
 
-OATH TOTP (Time-based One Time Password) is an open standard that specifies how one-time password (OTP) codes are generated. OATH TOTP can be implemented using either software or hardware to generate the codes. Microsoft Entra ID doesn't support OATH HOTP, a different code generation standard.
+OATH time-based one-time password (TOTP) is an open standard that specifies how one-time password (OTP) codes are generated. OATH TOTP can be implemented using either software or hardware to generate the codes. Microsoft Entra ID doesn't support OATH HOTP, a different code generation standard.
 
 ## OATH software tokens
 
@@ -70,23 +70,21 @@ Users can have a combination of up to five OATH hardware tokens or authenticator
 
 At times, there may be conflicts or issues that occur with the processing of an upload of the CSV file. If any conflict or issue occurs, you'll receive a notification similar to the following:  
 
-:::image type="content" border="true" source="./media/concept-authentication-methods/upload-error-example.png" alt-text="Screenshot of upload error example."
+:::image type="content" border="true" source="./media/concept-authentication-methods/upload-error-example.png" alt-text="Screenshot of upload error example.":::
   
 To determine the error message, be sure and select **View Details**. The **Hardware token status** blade opens and provides the summary of the status of the upload. It shows that there's been a failure, or multiple failures, as in the following example:
 
-:::image type="content" border="true" source="./media/concept-authentication-methods/oath-tokens.png" alt-text="Screenshot of status example."
+:::image type="content" border="true" source="./media/concept-authentication-methods/hardware-token-status" alt-text="Screenshot of hardware token status example.":::
 
 To determine the cause of the failure listed, make sure to click the checkbox next to the status you want to view, which activates the **Download** option. This downloads a CSV file that contains the error identified. 
 
-:::image type="content" border="true" source="./media/concept-authentication-methods/error-example.png" alt-text="Screenshot of download error example."
+:::image type="content" border="true" source="./media/concept-authentication-methods/download-status-example.png" alt-text="Screenshot of download status example.":::
 
 The downloaded file is named **Failures_filename.csv** where _filename_ is the name of the file uploaded. It's saved to your default downloads directory for your browser. 
 
-:::image type="content" border="true" source="./media/concept-authentication-methods/download-status-example.png" alt-text="Screenshot of download status example."
-
 This example shows the error identified as a user who doesn't currently exist in the tenant directory:  
 
-:::image type="content" border="true" source="./media/concept-authentication-methods/error-reason-example.png" alt-text="Screenshot of error reason example."
+:::image type="content" border="true" source="./media/concept-authentication-methods/error-reason-example.png" alt-text="Screenshot of error reason example.":::
 
 Once you've addressed the errors listed, upload the CSV again until it processes successfully. The status information for each attempt remains for 30 days. The CSV can be manually removed by clicking the checkbox next to the status, then selecting **Delete status** if so desired. 
 
