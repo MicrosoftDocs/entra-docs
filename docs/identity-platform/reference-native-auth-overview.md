@@ -16,22 +16,22 @@ ms.date: 02/29/2024
 
 Microsoft Entra ID's [native authentication](overview-customers-ciam.md) enables you to host the user interface of your app in the client application instead of delegating authentication to browsers, resulting in a natively integrated authentication experience. As a developer, you have full control over the look and feel of the sign-in interface.
 
-<!--[!INCLUDE [native-auth-api-common-description](./includes/native-auth-api/native-auth-api-common-description.md)]-->
+[!INCLUDE [native-auth-api-common-description](./includes/native-auth-api/native-auth-api-common-description.md)]
 
 Currently, our identity platform's native authentication API supports sign-up and sign-in for two authentication methods:
 
-- [Email with password](/entra/identity-platform/reference-native-auth-email-otp?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), which supports sign-up and sign-in with an email and password, and self-service password reset (SSPR).
+- [Email with password](/entra/identity-platform/reference-native-auth-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), which supports sign-up and sign-in with an email and password, and self-service password reset (SSPR).
 
-- [Email one-time password or passcode (OTP)](reference-native-auth-email-otp.md), which supports sign-up and sign-in with email OTP.
+- [Email one-time password or passcode (OTP)](/entra/identity-platform/reference-native-auth-email-otp?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), which supports sign-up and sign-in with email OTP.
 
 
-<!--[!INCLUDE [native-auth-api-cors-note](./includes/native-auth-api/native-auth-api-cors-note.md)]-->
+[!INCLUDE [native-auth-api-cors-note](./includes/native-auth-api/native-auth-api-cors-note.md)]
 
 
 ## Next steps
 
 - [Native authentication API reference with Email OTP](/entra/identity-platform/reference-native-auth-email-otp?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 
-- [Native authentication API reference with Email and password](reference-native-auth-email-password.md).
+- [Native authentication API reference with Email and password](/entra/identity-platform/reference-native-auth-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 
-- [Native authentication API reference with Email and password - Self-service password reset option](reference-native-auth-email-password.md#self-service-password-reset-sspr).
+- [Native authentication API reference with Email and password - Self-service password reset option](/entra/identity-platform/reference-native-auth-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json#self-service-password-reset-sspr).
