@@ -165,7 +165,8 @@ There are currently a few known limitations to on-demand provisioning. Post your
 ::: zone pivot="app-provisioning"
 > [!NOTE]
 > The following limitations are specific to the on-demand provisioning capability. For information about whether an application supports provisioning groups, deletions, or other capabilities, check the tutorial for that application.
-* On-demand provisioning of groups supports updating up to five members at a time. Connectors for cross-tenant synchronization, Workday, etc. do not support group provisioning and as a result do not support on-demand provisioning of groups.  
+* On-demand provisioning of groups supports updating up to five members at a time. Connectors for cross-tenant synchronization, Workday, etc. do not support group provisioning and as a result do not support on-demand provisioning of groups.
+* The on-demand provisioning request API can only accept a single group with up to 5 members at a time.
 ::: zone-end
 ::: zone pivot="cross-tenant-synchronization"
 * On-demand provisioning of groups is not supported for cross-tenant synchronization. 
@@ -175,7 +176,6 @@ There are currently a few known limitations to on-demand provisioning. Post your
 * On-demand provisioning of roles isn't supported.
 * On-demand provisioning supports disabling users that have been unassigned from the application. However, it doesn't support disabling or deleting users that have been disabled or deleted from Microsoft Entra ID. Those users don't appear when you search for a user.
 * On-demand provisioning doesn't support nested groups that aren't directly assigned to the application.
-* The on-demand provisioning request API can only accept a single group with up to 5 members at a time.
 
 ## Next steps
 
