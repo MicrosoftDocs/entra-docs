@@ -1183,11 +1183,12 @@ Content-type: application/json
     "name": "contractname",
     "status": "Enabled",
     "issueNotificationEnabled": false,
-    "availableInVcDirectory": false,
+    "availableInVcDirectory": true,
     "manifestUrl": "https://...",
     "issueNotificationAllowedToGroupOids" : null,
     "rules": rulesModel,
-    "displays": displayModel[]
+    "displays": displayModel[],
+    "allowOverrideValidityIntervalOnIssuance": true
 }
 ```
 
