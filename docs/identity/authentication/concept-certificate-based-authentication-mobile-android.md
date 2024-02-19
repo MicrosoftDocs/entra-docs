@@ -97,6 +97,7 @@ Certain Exchange ActiveSync applications on Android 5.0 (Lollipop) or later are 
 |Word / Excel / PowerPoint	 |  &#x2705; |
 |Yammer	 |  &#x2705; |
 |Edge browser with profile login	 |  &#x2705; |
+|Managed Home Screen	 |  &#x2705; |
 
 ### Browsers
 
