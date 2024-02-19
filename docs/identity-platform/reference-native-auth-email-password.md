@@ -1678,4 +1678,4 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Next steps
 
-- [Native authentication email OTP API reference](/entra/identity-platform/reference-native-auth-email-otp?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
+- [Native authentication email OTP API reference](reference-native-auth-email-otp.md).
