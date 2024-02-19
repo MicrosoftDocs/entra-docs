@@ -25,7 +25,6 @@ In this tutorial, you'll learn how to integrate Othership Workplace Scheduler wi
 To integrate Microsoft Entra ID with Othership Workplace Scheduler, you need:
 
 - A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-- Othership Workplace Scheduler single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
