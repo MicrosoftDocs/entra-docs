@@ -30,8 +30,8 @@ Currently, our identity platform's native authentication API supports sign-up an
 
 ## Next steps
 
-- [Native authentication API reference with Email OTP](reference-native-auth-email-otp.md).
+- [Native authentication API reference with Email OTP](reference-native-auth-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 
-- [Native authentication API reference with Email and password](reference-native-auth-email-password.md).
+- [Native authentication API reference with Email and password](reference-native-auth-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 
-- [Native authentication API reference with Email and password - Self-service password reset option](reference-native-auth-email-password.md).
+- [Native authentication API reference with Email and password - Self-service password reset option](reference-native-auth-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json#self-service-password-reset-sspr).
