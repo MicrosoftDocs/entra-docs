@@ -20,9 +20,9 @@ Microsoft Entra ID's [native authentication](../external-id/customers/overview-c
 
 Currently, our identity platform's native authentication API supports sign-up and sign-in for two authentication methods:
 
-- [Email with password](reference-native-auth-email-password.md), which supports sign-up and sign-in with an email and password, and self-service password reset (SSPR).
+- [Email with password](reference-native-auth-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), which supports sign-up and sign-in with an email and password, and self-service password reset (SSPR).
 
-- [Email one-time password or passcode (OTP)](reference-native-auth-email-otp.md), which supports sign-up and sign-in with email OTP.
+- [Email one-time password or passcode (OTP)](reference-native-auth-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), which supports sign-up and sign-in with email OTP.
 
 
 [!INCLUDE [native-auth-api-cors-note](./includes/native-auth-api/native-auth-api-cors-note.md)]

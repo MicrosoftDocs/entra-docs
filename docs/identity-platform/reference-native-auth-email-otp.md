@@ -44,11 +44,11 @@ To complete a sign-up flow using email OTP, your app interacts with four endpoin
 
 ### Sign-up API endpoints
 
-A sign-up flow with email OTP uses similar endpoints as sign-up with email with password as described in [Sign-up API endpoints](reference-native-auth-email-password.md#sign-up-api-endpoints).
+A sign-up flow with email OTP uses similar endpoints as sign-up with email with password as described in [Sign-up API endpoints](reference-native-auth-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json#sign-up-api-endpoints).
 
 ### Challenge types
 
-The API allows the app to advertise the authentication methods it supports to Microsoft Entra ID. To do so, the app uses the `challenge_type` parameter in its request. A sign-up flow with email OTP uses *oob* and *redirect* challenge types as described in [Challenge types](reference-native-auth-email-password.md#self-service-password-reset-challenge-types).
+The API allows the app to advertise the authentication methods it supports to Microsoft Entra ID. To do so, the app uses the `challenge_type` parameter in its request. A sign-up flow with email OTP uses *oob* and *redirect* challenge types as described in [Challenge types](reference-native-auth-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json#self-service-password-reset-challenge-types).
 
 ### Sign-up flow protocol details
 
@@ -685,11 +685,11 @@ To request your security tokens, your app interacts with three endpoints, `/init
 
 ### Sign-in API Endpoints
 
-Sign in with email OTP uses similar endpoints as email with password as described in [Sign-in API endpoints](reference-native-auth-email-password.md#sign-in-api-endpoints).
+Sign in with email OTP uses similar endpoints as email with password as described in [Sign-in API endpoints](reference-native-auth-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json#sign-in-api-endpoints).
 
 ### Challenge types
 
-The API allows the app to advertise the authentication methods it supports to Microsoft Entra ID. To do so, the app includes the `challenge_type` parameter in its requests. Sign in with mail OTP uses *oob* and *redirect* challenge types as described in [Challenge types](reference-native-auth-email-password.md#sign-in-challenge-types).
+The API allows the app to advertise the authentication methods it supports to Microsoft Entra ID. To do so, the app includes the `challenge_type` parameter in its requests. Sign in with mail OTP uses *oob* and *redirect* challenge types as described in [Challenge types](/entra/identity-platform/reference-native-auth-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json#sign-in-challenge-types).
 
 ### Sign-in flow protocol details
 
@@ -1010,6 +1010,6 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Next steps
 
-- [Native authentication email with password API reference](reference-native-auth-email-password.md).
+- [Native authentication email with password API reference](reference-native-auth-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 
 - Learn how to [create custom attributes](../external-id/customers/how-to-define-custom-attributes.md#create-custom-user-attributes).
