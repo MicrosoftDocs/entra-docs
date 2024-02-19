@@ -11,25 +11,25 @@ ms.author: jricketts
 ms.reviewer: ajburnle
 ---
 
-# Secure external access with groups in Microsoft Entra ID and Microsoft 365  
+# Secure external access with groups in Microsoft Entra ID and Microsoft 365
 
 Groups are part of an access control strategy. You can use Microsoft Entra security groups and Microsoft 365 Groups as the basis for securing access to resources. Use groups for the following access-control mechanisms:
 
-* Conditional Access policies
-  * [What is Conditional Access?](~/identity/conditional-access/overview.md)
-* Entitlement management access packages
-  *  [What is entitlement management?](~/id-governance/entitlement-management-overview.md)
-* Access to Microsoft 365 resources, Microsoft Teams, and SharePoint sites
+- Conditional Access policies
+  - [What is Conditional Access?](~/identity/conditional-access/overview.md)
+- Entitlement management access packages
+  - [What is entitlement management?](~/id-governance/entitlement-management-overview.md)
+- Access to Microsoft 365 resources, Microsoft Teams, and SharePoint sites
 
 Groups have the following roles:
 
-* **Group owners** – manage group settings and its membership
-* **Members** – inherit permissions and access assigned to the group
-* **Guests** – are members outside your organization
+- **Group owners** – manage group settings and its membership
+- **Members** – inherit permissions and access assigned to the group
+- **Guests** – are members outside your organization
 
 ## Before you begin
 
-This article is number 4 in a series of 10 articles. We recommend you review the articles in order. Go to the **Next steps** section to see the entire series. 
+This article is number 4 in a series of 10 articles. We recommend you review the articles in order. Go to the **Next steps** section to see the entire series.
 
 ## Group strategy
 
@@ -37,34 +37,34 @@ To develop a group strategy to secure external access to your resources, conside
 
 Learn more: [Determine your security posture for external access](1-secure-access-posture.md)
 
-### Group creation 
+### Group creation
 
 Determine who is granted permissions to create groups: Administrators, employees, and/or external users. Consider the following scenarios:
 
-* Tenant members can create Microsoft Entra security groups
-* Internal and external users can join groups in your tenant
-* Users can create Microsoft 365 Groups
-* [Manage who can create Microsoft 365 Groups](/microsoft-365/solutions/manage-creation-of-groups?view=o365-worldwide&preserve-view=true) 
-  * Use PowerShell to configure this setting
-* [Restrict your Microsoft Entra app to a set of users in a Microsoft Entra tenant](~/identity-platform/howto-restrict-your-app-to-a-set-of-users.md)
-* [Set up self-service group management in Microsoft Entra ID](~/identity/users/groups-self-service-management.md) 
-* [Troubleshoot and resolve groups issues](~/identity/users/groups-troubleshooting.md) 
+- Tenant members can create Microsoft Entra security groups
+- Internal and external users can join groups in your tenant
+- Users can create Microsoft 365 Groups
+- [Manage who can create Microsoft 365 Groups](/microsoft-365/solutions/manage-creation-of-groups?view=o365-worldwide&preserve-view=true)
+  - Use PowerShell to configure this setting
+- [Restrict your Microsoft Entra app to a set of users in a Microsoft Entra tenant](~/identity-platform/howto-restrict-your-app-to-a-set-of-users.md)
+- [Set up self-service group management in Microsoft Entra ID](~/identity/users/groups-self-service-management.md)
+- [Troubleshoot and resolve groups issues](~/identity/users/groups-troubleshooting.md)
 
 ### Invitations to groups
 
-As part of the group strategy, consider who can invite people, or add them, to groups. Group members can add other members, or group owners can add members. Decide who can be invited. By default, external users can be added to groups. 
+As part of the group strategy, consider who can invite people, or add them, to groups. Group members can add other members, or group owners can add members. Decide who can be invited. By default, external users can be added to groups.
 
 ### Assign users to groups
 
 Users are assigned to groups manually, based on user attributes in their user object, or users are assigned based on other criteria. Users are assigned to groups dynamically based on their attributes. For example, you can assign users to groups based on:
 
-* Job title or department
-* Partner organization to which they belong 
-  * Manually, or through connected organizations
-* Member or guest user type
-* Participation in a project 
-  * Manually
-* Location
+- Job title or department
+- Partner organization to which they belong
+  - Manually, or through connected organizations
+- Member or Guest User type
+- Participation in a project
+  - Manually
+- Location
 
 Dynamic groups have users or devices, but not both. To assign users to the dynamic group, add queries based on user attributes. The following screenshot has queries that add users to the group if they are finance department members.
 
@@ -76,9 +76,9 @@ Learn more: [Create or update a dynamic group in Microsoft Entra ID](~/identity/
 
 When using groups, it's important they have a single function. If a group is used to grant access to resources, don't use it for another purpose. We recommend a security-group naming convention that makes the purpose clear:
 
-* Secure_access_finance_apps
-* Team_membership_finance_team
-* Location_finance_building
+- Secure_access_finance_apps
+- Team_membership_finance_team
+- Location_finance_building
 
 ### Group types
 
@@ -94,44 +94,44 @@ You can create Microsoft Entra security groups and Microsoft 365 Groups in the A
 | Can be used with| Conditional Access<br>entitlement management<br>group licensing| Conditional Access<br>entitlement management<br>sensitivity labels |
 
 > [!NOTE]
-> Use Microsoft 365 Groups to create and manage a set of Microsoft 365 resources, such as a Team and its associated sites and content. 
+> Use Microsoft 365 Groups to create and manage a set of Microsoft 365 resources, such as a Team and its associated sites and content.
 
 <a name='azure-ad-security-groups-'></a>
 
-## Microsoft Entra security groups 
+## Microsoft Entra security groups
 
 Microsoft Entra security groups can have users or devices. Use these groups to manage access to:
 
-* Azure resources
-  * Microsoft 365 apps
-  * Custom apps
-  * Software as a Service (SaaS) apps such as Dropbox ServiceNow
-* Azure data and subscriptions
-* Azure services
+- Azure resources
+  - Microsoft 365 Apps
+  - Custom apps
+  - Software as a Service (SaaS) apps such as Dropbox ServiceNow
+- Azure data and subscriptions
+- Azure services
 
 Use Microsoft Entra security groups to assign:
 
-* Licenses for services
-  * Microsoft 365
-  * Dynamics 365
-  * Enterprise mobility and security
-  * See, [What is group-based licensing in Microsoft Entra ID?](~/fundamentals/concept-group-based-licensing.md)
-* Elevated permissions
-  * See, [Use Microsoft Entra groups to manage role assignments](~/identity/role-based-access-control/groups-concept.md)
+- Licenses for services
+  - Microsoft 365
+  - Dynamics 365
+  - Enterprise Mobility + Security
+  - See, [What is group-based licensing in Microsoft Entra ID?](~/fundamentals/concept-group-based-licensing.md)
+- Elevated permissions
+  - See, [Use Microsoft Entra groups to manage role assignments](~/identity/role-based-access-control/groups-concept.md)
 
 Learn more:
 
-* [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.md)
-* [Microsoft Entra version 2 cmdlets for group management](~/identity/users/groups-settings-v2-cmdlets.md). 
+- [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.md)
+- [Microsoft Entra version 2 cmdlets for group management](~/identity/users/groups-settings-v2-cmdlets.md).
 
 > [!NOTE]
-> Use security groups to assign up to 1,500 applications. 
+> Use security groups to assign up to 1,500 applications.
 
    ![Screenshot of entries and options under New Group.](media/secure-external-access/4-create-security-group.png)
 
 ### Mail-enabled security group
 
-To create a mail-enabled security group, go to the [Microsoft 365 admin center](https://admin.microsoft.com/). Enable a security group for mail during creation. You can’t enable it later. You can't create the group in the Azure portal. 
+To create a mail-enabled security group, go to the [Microsoft 365 admin center](https://admin.microsoft.com/). Enable a security group for mail during creation. You can't enable it later. You can't create the group in the Azure portal.
 
 <a name='hybrid-organizations-and-azure-ad-security-groups'></a>
 
@@ -148,35 +148,35 @@ Microsoft 365 Groups is the membership service for access across Microsoft 365. 
 
 Learn more:
 
-* [Overview of Microsoft 365 Groups for administrators](/microsoft-365/admin/create-groups/office-365-groups?view=o365-worldwide&preserve-view=true)
-* [Create a group in the Microsoft 365 admin center](/microsoft-365/admin/create-groups/create-groups?view=o365-worldwide&preserve-view=true)
-* [Microsoft Entra admin center](https://entra.microsoft.com)
-* [Microsoft 365 admin center](https://admin.microsoft.com/)
+- [Overview of Microsoft 365 Groups for administrators](/microsoft-365/admin/create-groups/office-365-groups?view=o365-worldwide&preserve-view=true)
+- [Create a group in the Microsoft 365 admin center](/microsoft-365/admin/create-groups/create-groups?view=o365-worldwide&preserve-view=true)
+- [Microsoft Entra admin center](https://entra.microsoft.com)
+- [Microsoft 365 admin center](https://admin.microsoft.com/)
 
 ### Microsoft 365 Groups roles
 
-* **Group owners**
-  * Add or remove members
-  * Delete conversations from the shared inbox
-  * Change group settings
-  * Rename the group
-  * Update the description or picture
-* **Members**
-  * Access everything in the group
-  * Can't change group settings
-  * Can invite guests to join the group
-  * [Manage guest access in Microsoft 365 groups](/microsoft-365/admin/create-groups/manage-guest-access-in-groups)
-* **Guests**
-  * Are members from outside your organization 
-  * Have some limits to functionality in Teams
+- **Group owners**
+  - Add or remove members
+  - Delete conversations from the shared inbox
+  - Change group settings
+  - Rename the group
+  - Update the description or picture
+- **Members**
+  - Access everything in the group
+  - Can't change group settings
+  - Can invite guests to join the group
+  - [Manage guest access in Microsoft 365 groups](/microsoft-365/admin/create-groups/manage-guest-access-in-groups)
+- **Guests**
+  - Are members from outside your organization
+  - Have some limits to functionality in Teams
 
 ### Microsoft 365 Group settings
 
-Select email alias, privacy, and whether to enable the group for teams. 
+Select email alias, privacy, and whether to enable the group for teams.
 
    ![Screenshot of options and entries under Edit settings.](media/secure-external-access/4-edit-group-settings.png)
 
-After setup, add members, and configure settings for email usage, etc.
+After setup, add members, and configure settings for email usage, and so on.
 
 ## Next steps
 
@@ -196,8 +196,8 @@ Use the following series of articles to learn about securing external access to 
 
 7. [Manage external access to resources with Conditional Access policies](7-secure-access-conditional-access.md)
 
-8. [Control external access to resources in Microsoft Entra ID with sensitivity labels](8-secure-access-sensitivity-labels.md) 
+8. [Control external access to resources in Microsoft Entra ID with sensitivity labels](8-secure-access-sensitivity-labels.md)
 
-9. [Secure external access to Microsoft Teams, SharePoint, and OneDrive for Business with Microsoft Entra ID](9-secure-access-teams-sharepoint.md) 
+9. [Secure external access to Microsoft Teams, SharePoint, and OneDrive for Business with Microsoft Entra ID](9-secure-access-teams-sharepoint.md)
 
 10. [Convert local guest accounts to Microsoft Entra B2B guest accounts](10-secure-local-guest.md)
