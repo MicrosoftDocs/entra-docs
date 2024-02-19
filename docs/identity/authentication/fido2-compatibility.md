@@ -126,7 +126,7 @@ The following are the minimum browser version requirements.
 
 ## Known issues
 
-### Mobile device miight be prioritized over security key
+### Mobile device might be prioritized over security key
 
 If you're using Chrome or Edge, the browser might prioritize usage of a passkey that's stored on a mobile device over a passkey that's stored on a security key. 
 
