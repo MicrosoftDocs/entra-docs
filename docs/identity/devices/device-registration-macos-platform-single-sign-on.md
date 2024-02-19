@@ -1,21 +1,23 @@
 ---
-title: Register a Mac device with macOS Platform single sign-on using Company Portal
+title: Register a Mac device with macOS Platform Single Sign-on using Company Portal (preview)
 description: How users can set up a new macOS with macOS Platform single sign-on extension, using Company Portal.
 
 ms.service: active-directory
 ms.subservice: devices
-ms.topic: how-to
+ms.topic: tutorial
 ms.date: 09/26/2023
 
 ms.author: cwerner
 author: cilwerner
 manager: CelesteDG
 ms.reviewer: brianmel
+# Customer intent: As a user, I want to register my Mac device with macOS Platform single sign-on using Company Portal. I need to know the differences between the three methods of registration, secure enclave, smart card, and password, and how to register my device with each method.
 ---
 
-# Register a Mac device with macOS Platform Single Sign-On using Company Portal (preview)
+#  Register a Mac device with macOS Platform Single Sign-on using Company Portal (preview)
 
-You can register a Mac device with the macOS Platform Single Sign-On (PSSO) using Company Portal and the Intune MDM enrollment with Microsoft Entra Join.
+
+In this tutorial, you will learn how to register a Mac device with macOS Platform Single Sign-on (PSSO) using Company Portal and the Intune MDM enrollment with Microsoft Entra Join. There are three methods in which you can register a Mac device with PSSO, secure enclave, smart card, or password. We recommend using secure enclave or smart card for the best passwordless experience, however its important to note that this method will be preset by your company administrator using Microsoft Intune.
 
 ## Prerequisites
 
@@ -25,6 +27,8 @@ You can register a Mac device with the macOS Platform Single Sign-On (PSSO) usin
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended), the user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) to complete device registration.
 
 ## Intune MDM and Microsoft Entra Join using Company Portal
+
+To register a Mac device with PSSO, you must first enroll your device in Microsoft Intune using the Company Portal app. Once enrolled, you can use secure enclave, smart card, or password to register your device with PSSO. 
 
 ### [Secure Enclave](#tab/secure-enclave)
 
@@ -62,7 +66,7 @@ You can register a Mac device with the macOS Platform Single Sign-On (PSSO) usin
 
 1. You can now use PSSO to access Microsoft app resources.
 
-### [Smart card](#tab/smart-card)
+### [Smart Card](#tab/smart-card)
 
 1. Open the **Company Portal** app and select **Sign in**.
 1. Enter your Microsoft Entra ID credentials and select **Next**.
@@ -70,28 +74,33 @@ You can register a Mac device with the macOS Platform Single Sign-On (PSSO) usin
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-register-device-prompt.png" alt-text="Screenshot of the registration window prompting sign in with Microsoft.":::
 
-1. If the certificate is not already paired with the local account, the user will see a prompt to use the smart card. Select **Smart card**.
-1. You're prompted to enter the pin for your smart card. Enter your pin and select **OK**. Upon entering the correct pin, PSSO registration with smart card authentication is complete.
-1. To check that registration has completed successfully, open the **Terminal** app and run the following command:
+1. When prompted to **Choose a way to sign in**, select **Use a certificate or smart card**. Select the certificate to use and select **Choose**.
 
-    ```console
-    app-sso platform -s
-    ```
+    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/platform-single-sign-on-certificate-selection.png" alt-text="Screenshot of the window showing the prompt to choose a certificate.":::
 
-    >[!NOTE]
-    > On macOS 14 Somona, you can check the PSSO registration status by navigating to **Settings** > **Users and Groups** > **Select user**. To see your device registration status, navigate to **Settings** > **Users and Groups** > **Network account server**. Select **Edit** to see your device status.
+1. Enter the smart card pin in the **Company Portal** window and select **OK**. 
+1. You're prompted to **Set up {Company} access**. The placeholder "Company" is different depending on your setup. Select **Begin**, then on the next screen, select **Continue**.
 
-1. Check the bottom of the output, and confirm that information similar to the following snippet is shown, which signifies that SSO tokens are retrieved.
+    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-company-portal-set-up-access.png" alt-text="Screenshot of the Company portal access setup window.":::
 
-    ```console
-    SSO Tokens:
-    Received:
-    YYYY-MM-DD T HH:MM:SS
-    Expiration:
-    YYYY-MM-DD T HH:MM:SS (Not Expired)
-    ```
+1. You're presented with steps to install the management profile, which should be set up by an administrator using Microsoft Intune. Select **Download profile**.
 
-1. Now that the Mac is correctly set up, you can now use PSSO to access Microsoft app resources, and unlock the device with the smart card pin. You'll need to use the local password to log in after a reboot to unlock the keychain access.
+    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-company-portal-install-management-profile.png" alt-text="Screenshot of a Company Portal window requesting the user to download the management profile.":::
+
+1. Open **Settings** > **Privacy & Security** > **Profiles** if it doesn't automatically appear. Select **Management Profile**, then select **Install** to get access to company resources.
+
+    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-settings-profiles-install-management-profile.png" alt-text="Screenshot the prompt to install the management profile in settings.":::
+
+1. Enter your local device password in the **Profiles** window that appears and select **Enroll**.
+1. A **Registration Required** notification appears in the top right of the screen. Hover over the notification and select **Register**.
+
+    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-registration-required-notification.png" alt-text="Screenshot of the Registration Required notification.":::
+
+1. Enter the smart card pin in the **Platform SSO** window and select **OK**. Repeat this step if prompted to enter the smart card pin again. 
+
+    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/platform-single-sign-on-enter-pin.png" alt-text="Screenshot of the Platform SSO pin entry window.":::
+
+1. You can now use PSSO to access Microsoft app resources, and unlock the device with the smart card pin. You'll need to use the local password to log in after a reboot to unlock the keychain access.
 
 ### [Password](#tab/password)
 
@@ -121,6 +130,43 @@ You can register a Mac device with the macOS Platform Single Sign-On (PSSO) usin
 
 1. Your device will now show as being in compliance in Company Portal. You can now use PSSO to access Microsoft app resources.
 
+---
+
+## Check your device registration status
+
+Once you've completed the steps above, it's a good idea to check your device registration status.
+
+### [macOS 14 Somona](#tab/macos-14-somona)
+
+1. To check that registration has completed successfully, navigate to **Settings** and select **Users & Groups**. 
+1. Select **Edit** next to **Network Account Server** and check that **Platform SSO** is listed as **Registered**.
+1. To verify the method used for authentication, navigate to your username in the **Users & Groups** window and select the **Information** icon. Check the method listed, which should be **Secure enclave**, **Smart Card**, or **Password**.
+
+    > [!NOTE]
+    >
+    > You can also use the **Terminal** app to check the registration status. Run the following command to check the status of your device registration. You should see in the bottom of the output that SSO tokens are retrieved.
+    >
+    > ```console
+    > app-sso platform -s
+    > ```
+
+
+### [macOS 13 Ventura](#tab/macos-13-ventura)
+
+1. To check that registration has completed successfully, open the **Terminal** app and run the following command:
+
+    ```console
+    app-sso platform -s
+    ```
+1. Check the bottom of the output, and confirm that information similar to the following snippet is shown, which signifies that SSO tokens are retrieved.
+
+    ```console
+    SSO Tokens:
+    Received:
+    YYYY-MM-DD T HH:MM:SS
+    Expiration:
+    YYYY-MM-DD T HH:MM:SS (Not Expired)
+    ```
 ---
 
 ## Update your Mac device to enable PSSO

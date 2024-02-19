@@ -1,6 +1,6 @@
 ---
-title: Join a Mac device with Microsoft Entra ID during the out of box experience
-description: How users can set up a Microsoft Entra with a new Mac device with macOS Platform Single Sign On
+title: Join a Mac device with Microsoft Entra ID during the out of box experience with macOS PSSO
+description: How users can set up a Microsoft Entra with a new Mac device with macOS Platform Single Sign-on
 
 ms.service: active-directory
 ms.subservice: devices
@@ -11,9 +11,10 @@ ms.author: cwerner
 author: cilwerner
 manager: CelesteDG
 ms.reviewer: brianmel
+#Customer intent: As a user I want to understand how to set up a Mac device with macOS Platform Single Sign-on (PSSO) during the out of box experience. I want to know the difference betwwen setting up with secure enclave, smart card or password based authentication methods.
 ---
 
-# Join a Mac device with Microsoft Entra ID during the out of box experience (preview)
+# Join a Mac device with Microsoft Entra ID during the out of box experience with macOS PSSO (preview)
 
 Mac users can join their new device to Microsoft Entra ID during the first-run out-of-box experience (OOBE). The macOS Platform single sign-on (PSSO) is a capability on macOS that is enabled using the [Microsoft Enterprise Single Sign-on Extension](../../identity-platform/apple-sso-plugin.md). PSSO allows users to sign in to a Mac device using a hardware-bound key, smart card or their Microsoft Entra ID password. This tutorial shows you how to set up a Mac device during the OOBE to use PSSO using Automated Device Enrollment.
 
@@ -62,26 +63,7 @@ It's recommended for your system administrator to have the Mac enrolled using se
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-2fa-challenge.png" alt-text="Screenshot of a two-factor authentication window, prompting the user to open the Authenticator app.":::
 
-1. When the MFA flow completes and the loading screen disappears, your device should be registered with PSSO. To check that registration has completed successfully, open the **Terminal** app and run the following command:
-
-    ```console
-    app-sso platform -s
-    ```
-
-    >[!NOTE]
-    > On macOS 14 Somona, you can check the PSSO registration status by navigating to **Settings** > **Users and Groups** > **Select user**. To see your device registration status, navigate to **Settings** > **Users and Groups** > **Network account server**. Select **Edit** to see your device status.
-
-1. Check the bottom of the output, and confirm that information similar to the following snippet is shown, which signifies that SSO tokens are retrieved.
-
-    ```console
-    SSO Tokens:
-    Received:
-    YYYY-MM-DD T HH:MM:SS
-    Expiration:
-    YYYY-MM-DD T HH:MM:SS (Not Expired)
-    ```
-
-1. Now that the Mac is correctly set up, you can now use PSSO to access Microsoft app resources.
+1. When the MFA flow completes and the loading screen disappears, your device should be registered with PSSO. You can now use PSSO to access Microsoft app resources.
 
 ### Enable macOS Platform Credentials for use as a passkey
 
@@ -92,7 +74,7 @@ Setting up your device using secure enclave method enables you to use the result
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/password-options-enable-passkeys.png" alt-text="Screenshot of the Password Options window indicating that the use of passwords and passkeys from Company Portal has been enabled by a switch.":::
 
-### [Smart card](#tab/smart-card)
+### [Smart Card](#tab/smart-card)
 
 1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**.
     1. Your administrator may have configured MFA for the device registration flow. If so, open your **Authenticator** app on your mobile device and complete the MFA flow.
@@ -101,26 +83,7 @@ Setting up your device using secure enclave method enables you to use the result
 
 1. If the certificate is not already paired with the local account, the user will see a prompt to use the smart card. Select **Smart card**.
 1. You're prompted to enter the pin for your smart card. Enter your pin and select **Enter pin for the smart card**. When the correct pin is entered, PSSO registration with smart card authentication is complete.
-1. To check that registration has completed successfully, open the **Terminal** app and run the following command:
-
-    ```console
-    app-sso platform -s
-    ```
-
-    >[!NOTE]
-    > On macOS 14 Somona, you can check the PSSO registration status by navigating to **Settings** > **Users and Groups** > **Select user**. To see your device registration status, navigate to **Settings** > **Users and Groups** > **Network account server**. Select **Edit** to see your device status.
-
-1. Check the bottom of the output, and confirm that information similar to the following snippet is shown, which signifies that SSO tokens are retrieved.
-
-    ```console
-    SSO Tokens:
-    Received:
-    YYYY-MM-DD T HH:MM:SS
-    Expiration:
-    YYYY-MM-DD T HH:MM:SS (Not Expired)
-    ```
-
-1. Now that the Mac is correctly set up, you can now use PSSO to access Microsoft app resources, and unlock the device with the smart card pin. You'll need to use the local password to log in after a reboot to unlock the keychain access.
+1. You can now use PSSO to access Microsoft app resources, and unlock the device with the smart card pin. You'll need to use the local password to log in after a reboot to unlock the keychain access.
 
 ### [Password](#tab/password)
 
@@ -144,6 +107,43 @@ Setting up your device using secure enclave method enables you to use the result
 
 1. After unlocking the Mac, you can now use PSSO to access Microsoft app resources. From this point on, your old password doesn't work because PSSO is enabled for your device.
 
+---
+
+## Check your device registration status
+
+Once you've completed the steps above, it's a good idea to check your device registration status.
+
+### [macOS 14 Somona](#tab/macos-14-somona)
+
+1. To check that registration has completed successfully, navigate to **Settings** and select **Users & Groups**. 
+1. Select **Edit** next to **Network Account Server** and check that **Platform SSO** is listed as **Registered**.
+1. To verify the method used for authentication, navigate to your username in the **Users & Groups** window and select the **Information** icon. Check the method listed, which should be **Secure enclave**, **Smart Card**, or **Password**.
+
+    > [!NOTE]
+    >
+    > You can also use the **Terminal** app to check the registration status. Run the following command to check the status of your device registration. You should see in the bottom of the output that SSO tokens are retrieved.
+    >
+    > ```console
+    > app-sso platform -s
+    > ```
+
+
+### [macOS 13 Ventura](#tab/macos-13-ventura)
+
+1. To check that registration has completed successfully, open the **Terminal** app and run the following command:
+
+    ```console
+    app-sso platform -s
+    ```
+1. Check the bottom of the output, and confirm that information similar to the following snippet is shown, which signifies that SSO tokens are retrieved.
+
+    ```console
+    SSO Tokens:
+    Received:
+    YYYY-MM-DD T HH:MM:SS
+    Expiration:
+    YYYY-MM-DD T HH:MM:SS (Not Expired)
+    ```
 ---
 
 ## See also

@@ -10,7 +10,7 @@ ms.reviewer: brianmel
 author: garrodonnell
 manager: celested
 
-#Customer intent: As a customer, I want to understand how to configure macOS Platform Single Sign On (PSSO) for Microsoft Entra ID registered devices.
+#Customer intent: As a customer, I want to understand how to configure macOS Platform Single Sign-on (PSSO) for Microsoft Entra ID registered devices.
 ---
 
 # macOS Platform Single Sign-on (PSSO) overview (preview)
@@ -44,7 +44,7 @@ To deploy Platform SSO for macOS, you need the meet following minimum requiremen
 You can find more information and instructions on how to deploy Platform SSO for macOS in these articles.
 
 * [Join a Mac device with Microsoft Entra ID during the out of box experience](device-join-macos-platform-single-sign-on.md)
-* [Register a Mac device with macOS Platform single sign-on using Company Portal](device-registration-macos-platform-single-sign-on.md)
+* [Register a Mac device with macOS Platform Single Sign-on using Company Portal](device-registration-macos-platform-single-sign-on.md)
 
 ## Passwordless authentication
 
