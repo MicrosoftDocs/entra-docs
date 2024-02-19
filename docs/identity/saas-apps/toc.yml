@@ -2263,6 +2263,8 @@
         href: retrievermediadatabase-tutorial.md
       - name: Reviewsnap
         href: reviewsnap-tutorial.md
+      - name: RevSpace
+        href: revspace-tutorial.md
       - name: Reward Gateway
         href: reward-gateway-tutorial.md
       - name: Rewatch
@@ -2717,8 +2719,6 @@
         href: teamviewer-tutorial.md
       - name: Teamwork.com
         href: teamwork-tutorial.md
-      - name: RevSpace
-        href: revspace-tutorial.md
       - name: Templafy SAML2
         href: templafy-tutorial.md
       - name: TencentCloud IDaaS
