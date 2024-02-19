@@ -11,45 +11,45 @@ ms.author: jricketts
 ms.reviewer: ajburnle
 ---
 
-# Control external access to resources in Microsoft Entra ID with sensitivity labels 
+# Control external access to resources in Microsoft Entra ID with sensitivity labels
 
-Use sensitivity labels to help control access to your content in Office 365 applications, and in containers like Microsoft Teams, Microsoft 365 Groups, and SharePoint sites. They protect content without hindering user collaboration. Use sensitivity labels to send organization-wide content across devices, apps, and services, while protecting data. Sensitivity labels help organizations meet compliance and security policies. 
- 
-See, [Learn about sensitivity labels](/purview/sensitivity-labels?preserve-view=true&view=o365-worldwide)
+Use sensitivity labels to help control access to your content in Office 365 applications, and in containers like Microsoft Teams, Microsoft 365 Groups, and SharePoint sites. They protect content without hindering user collaboration. Use sensitivity labels to send organization-wide content across devices, apps, and services, while protecting data. Sensitivity labels help organizations meet compliance and security policies.
+
+See, Learn about [sensitivity labels](/purview/sensitivity-labels?preserve-view=true&view=o365-worldwide)
 
 ## Before you begin
 
-This article is number 8 in a series of 10 articles. We recommend you review the articles in order. Go to the **Next steps** section to see the entire series. 
+This article is number 8 in a series of 10 articles. We recommend you review the articles in order. Go to the **Next steps** section to see the entire series.
 
 ## Assign classification and enforce protection settings
 
-You can classify content without adding any protection settings. Content classification assignment stays with the content while it’s used and shared. The classification generates usage reports with sensitive-content activity data.
+You can classify content without adding any protection settings. Content classification assignment stays with the content while it's used and shared. The classification generates usage reports with sensitive-content activity data.
 
 Enforce protection settings such as encryption, watermarks, and access restrictions. For example, users apply a Confidential label to a document or email. The label can encrypt the content and add a Confidential watermark. In addition, you can apply a sensitivity label to a container like a SharePoint site, and help manage external users access.
 
 Learn more:
 
-* [Restrict access to content by using sensitivity labels to apply encryption](/purview/encryption-sensitivity-labels?preserve-view=true&view=o365-worldwide)
-* [Use sensitivity labels to protect content in Microsoft Teams, Microsoft 365 Groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
+- [Restrict access to content by using sensitivity labels to apply encryption](/purview/encryption-sensitivity-labels?preserve-view=true&view=o365-worldwide)
+- [Use sensitivity labels to protect content in Microsoft Teams, Microsoft 365 Groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
 
 Sensitivity labels on containers can restrict access to the container, but content in the container doesn't inherit the label. For example, a user takes content from a protected site, downloads it, and then shares it without restrictions, unless the content had a sensitivity label.
 
  >[!NOTE]
->To apply sensitivity labels users sign into their Microsoft work or school account.
+> To apply sensitivity labels users sign in to their Microsoft work or school account.
 
 ## Permissions to create and manage sensitivity levels
 
-Team members who need to create sensitivity labels require permissions to: 
+Team members who need to create sensitivity labels require permissions to:
 
-* Microsoft 365 Defender portal,
-* Microsoft Purview compliance portal, or 
-* [Microsoft Purview compliance portal](/purview/microsoft-365-compliance-center?view=o365-worldwide&preserve-view=true)
+- Microsoft 365 Defender portal,
+- Microsoft Purview compliance portal, or
+- [Microsoft Purview compliance portal](/purview/microsoft-365-compliance-center?view=o365-worldwide&preserve-view=true)
 
-By default, tenant Global Administrators have access to admin centers and can provide access, without granting tenant Admin permissions. For this delegated limited admin access, add users to the following role groups: 
+By default, tenant Global Administrators have access to admin centers and can provide access, without granting tenant Admin permissions. For this delegated limited admin access, add users to the following role groups:
 
-* Compliance Data Administrator,
-* Compliance Administrator, or 
-* Security Administrator
+- Compliance Data Administrator,
+- Compliance Administrator, or
+- Security Administrator
 
 ## Sensitivity label strategy
 
@@ -57,35 +57,35 @@ As you plan the governance of external access to your content, consider content,
 
 ### High, Medium, or Low Business Impact
 
-To define High, Medium, or Low Business Impact (HBI, MBI, LBI) for data, sites, and groups, consider the effect on your organization if the wrong content types are shared. 
+To define High, Medium, or Low Business Impact (high business impact (HBI), MBI, LBI) for data, sites, and groups, consider the effect on your organization if the wrong content types are shared.
 
-* Credit card, passport, national/regional ID numbers
-  * [Apply a sensitivity label to content automatically](/purview/apply-sensitivity-label-automatically?preserve-view=true&view=o365-worldwide)
-* Content created by corporate officers: compliance, finance, executive, etc.
-* Strategic or financial data in libraries or sites. 
+- Credit card, passport, national/regional ID numbers
+  - [Apply a sensitivity label to content automatically](/purview/apply-sensitivity-label-automatically?preserve-view=true&view=o365-worldwide)
+- Content created by corporate officers: compliance, finance, executive, and so on.
+- Strategic or financial data in libraries or sites.
 
-Consider the content categories that external users can't have access to, such as containers and encrypted content. You can use sensitivity labels, enforce encryption, or use container access restrictions. 
+Consider the content categories that external users can't have access to, such as containers and encrypted content. You can use sensitivity labels, enforce encryption, or use container access restrictions.
 
 ### Email and content
 
-Sensitivity labels can be applied automatically or manually to content. 
+Sensitivity labels can be applied automatically or manually to content.
 
 See, [Apply a sensitivity label to content automatically](/purview/apply-sensitivity-label-automatically?view=o365-worldwide&preserve-view=true)
 
 #### Sensitivity labels on email and content
 
-A sensitivity label in a document or email is customizable, clear text, and persistent. 
+A sensitivity label in a document or email is customizable, clear text, and persistent.
 
-* **Customizable** - create labels for your organization and determine the resulting actions 
-* **Clear text** - is incorporated in metadata and readable by applications and services
-* **Persistency** - ensures the label and associated protections stay with the content, and help enforce policies
+- **Customizable** - create labels for your organization and determine the resulting actions
+- **Clear text** - is incorporated in metadata and readable by applications and services
+- **Persistency** - ensures the label and associated protections stay with the content, and help enforce policies
 
 > [!NOTE]
 > Each content item can have one sensitivity label applied.
 
 ### Containers
 
-Determine the access criteria if Microsoft 365 Groups, Teams, or SharePoint sites are restricted with sensitivity labels. You can label content in containers or use automatic labeling for files in SharePoint, OneDrive, etc.
+Determine the access criteria if Microsoft 365 Groups, Teams, or SharePoint sites are restricted with sensitivity labels. You can label content in containers or use automatic labeling for files in SharePoint, OneDrive, and so on.
 
 Learn more: [Get started with sensitivity labels](/purview/get-started-with-sensitivity-labels?preserve-view=true&view=o365-worldwide)
 
@@ -93,9 +93,9 @@ Learn more: [Get started with sensitivity labels](/purview/get-started-with-sens
 
 You can apply sensitivity labels to containers such as Microsoft 365 Groups, Microsoft Teams, and SharePoint sites. Sensitivity labels on a supported container apply the classification and protection settings to the connected site or group. Sensitivity labels on these containers can control:
 
-* **Privacy** - select the users who can see the site
-* **External user access** - determine if group owners can add guests to a group
-* **Access from unmanaged devices** - decide if and how unmanaged devices access content
+- **Privacy** - select the users who can see the site
+- **External user access** - determine whether group owners can add guests to a group
+- **Access from unmanaged devices** - decide whether and how unmanaged devices access content
 
    ![Screenshot of options and entries under Site and group settings.](media/secure-external-access/8-edit-label.png)
 
@@ -103,17 +103,17 @@ Sensitivity labels applied to a container, such as a SharePoint site, aren't app
 
 Learn more:
 
-* [Enable sensitivity labels for Office files in SharePoint and OneDrive](/purview/sensitivity-labels-sharepoint-onedrive-files?view=o365-worldwide&preserve-view=true).
-* [Use sensitivity labels to protect content in Microsoft Teams, Microsoft 365 Groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
-* [Assign sensitivity labels to Microsoft 365 groups in Microsoft Entra ID](~/identity/users/groups-assign-sensitivity-labels.md)
+- [Enable sensitivity labels for Office files in SharePoint and OneDrive](/purview/sensitivity-labels-sharepoint-onedrive-files?view=o365-worldwide&preserve-view=true).
+- [Use sensitivity labels to protect content in Microsoft Teams, Microsoft 365 Groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
+- [Assign sensitivity labels to Microsoft 365 groups in Microsoft Entra ID](~/identity/users/groups-assign-sensitivity-labels.md)
 
 ### Implement sensitivity labels
 
 After you determine use of sensitivity labels, see the following documentation for implementation.
 
-* [Get started with sensitivity labels](/purview/get-started-with-sensitivity-labels?view=o365-worldwide&preserve-view=true)
-* [Create and publish sensitivity labels](/purview/create-sensitivity-labels?view=o365-worldwide&preserve-view=true)
-* [Restrict access to content by using sensitivity labels to apply encryption](/purview/encryption-sensitivity-labels?view=o365-worldwide&preserve-view=true)
+- [Get started with sensitivity labels](/purview/get-started-with-sensitivity-labels?view=o365-worldwide&preserve-view=true)
+- [Create and publish sensitivity labels](/purview/create-sensitivity-labels?view=o365-worldwide&preserve-view=true)
+- [Restrict access to content by using sensitivity labels to apply encryption](/purview/encryption-sensitivity-labels?view=o365-worldwide&preserve-view=true)
 
 ## Next steps
 
@@ -125,16 +125,16 @@ Use the following series of articles to learn about securing external access to 
 
 3. [Create a security plan for external access to resources](3-secure-access-plan.md)
 
-4. [Secure external access with groups in Microsoft Entra ID and Microsoft 365](4-secure-access-groups.md) 
+4. [Secure external access with groups in Microsoft Entra ID and Microsoft 365](4-secure-access-groups.md)
 
-5. [Transition to governed collaboration with Microsoft Entra B2B collaboration](5-secure-access-b2b.md) 
+5. [Transition to governed collaboration with Microsoft Entra B2B collaboration](5-secure-access-b2b.md)
 
-6. [Manage external access with Microsoft Entra entitlement management](6-secure-access-entitlement-managment.md) 
+6. [Manage external access with Microsoft Entra entitlement management](6-secure-access-entitlement-managment.md)
 
-7. [Manage external access to resources with Conditional Access policies](7-secure-access-conditional-access.md) 
+7. [Manage external access to resources with Conditional Access policies](7-secure-access-conditional-access.md)
 
 8. [Control external access to resources in Microsoft Entra ID with sensitivity labels](8-secure-access-sensitivity-labels.md) (You're here)
 
-9. [Secure external access to Microsoft Teams, SharePoint, and OneDrive for Business with Microsoft Entra ID](9-secure-access-teams-sharepoint.md) 
+9. [Secure external access to Microsoft Teams, SharePoint, and OneDrive for Business with Microsoft Entra ID](9-secure-access-teams-sharepoint.md)
 
 10. [Convert local guest accounts to Microsoft Entra B2B guest accounts](10-secure-local-guest.md)
