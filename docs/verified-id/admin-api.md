@@ -826,8 +826,9 @@ Content-type: application/json
     "availableInVcDirectory": false,
     "manifestUrl": "...",
     "issueNotificationAllowedToGroupOids" : null,
-    "rules": rulesModel,
-    "displays": displayModel[]
+    "rules": <rulesModel>,
+    "displays": <displayModel[]>,
+    "allowOverrideValidityIntervalOnIssuance": false
 }
 ```
 
@@ -846,6 +847,7 @@ The response contains the following properties
 | `availableInVcDirectory` | boolean | Is this contract published in the Verifiable Credential Network |
 | [rules](#rulesmodel-type) | rulesModel | rules definition |
 | [displays](#displaymodel-type) | displayModel array| display definitions |
+| `allowOverrideValidityIntervalOnIssuance` | boolean | If the createIssuanceRequest API call is allowed to override expiry of the credential. This is only valid for [idTokenHint](admin-api.md#idtokenhintattestation-type) flows. |
 
 #### rulesModel type
 
@@ -1163,6 +1165,8 @@ Example request:
 {
     "rules": "<rules JSON>",
     "displays": [{<display JSON}],}
+    "availableInVcDirectory": true
+    "allowOverrideValidityIntervalOnIssuance": true
 }
 ```
 
