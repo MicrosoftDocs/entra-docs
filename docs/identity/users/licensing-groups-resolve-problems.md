@@ -2,20 +2,17 @@
 
 title: Resolve group license assignment problems
 description: How to identify and resolve license assignment problems when you're using Microsoft Entra group-based licensing
-services: active-directory
+
 keywords: Azure AD licensing
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
-ms.workload: identity
 ms.date: 11/16/2023
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Identify and resolve license assignment problems for a group in Microsoft Entra ID

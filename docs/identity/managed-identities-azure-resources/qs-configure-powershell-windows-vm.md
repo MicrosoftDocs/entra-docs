@@ -1,17 +1,16 @@
 ---
 title: Configure managed identities on an Azure VM using PowerShell
 description: Step-by-step instructions for configuring managed identities for Azure resources on an Azure VM using PowerShell.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: quickstart
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 05/10/2023
 ms.author: barclayn
-ms.collection: M365-identity-device-management
+
 ms.custom: devx-track-azurepowershell, mode-api, has-azure-ad-ps-ref
 ---
 

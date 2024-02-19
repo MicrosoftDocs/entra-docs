@@ -1,24 +1,16 @@
 --- 
 title: Govern access for external users in entitlement management
 description: Learn about the settings you can specify to govern access for external users in entitlement management.
-services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 08/04/2023
 ms.author: owinfrey
 ms.reviewer: mwahl
-ms.collection: M365-identity-device-management
-
-
-#Customer intent: As a administrator, I want understand how I can govern access for external users in entitlement management.
-
+#Customer intent: As an administrator, I want understand how I can govern access for external users in entitlement management.
 ---
 
 # Govern access for external users in entitlement management
@@ -161,7 +153,7 @@ You can select what happens when an external user, who was invited to your direc
 1. Once an external user loses their last assignment to any access packages, if you want to remove their guest user account in this directory, set **Remove external user** to **Yes**.
 
     > [!NOTE]
-    > Entitlement management only removes external guest user accounts that were invited through entitlement management or  that were added to entitlement management for lifecycle management by having their guest user account [converted to governed](entitlement-management-access-package-manage-lifecycle.md). Also, note that a user will be removed from this directory even if that user was added to resources in this directory that were not access package assignments. If the guest was present in this directory prior to receiving access package assignments, they will remain. However, if the guest was invited through an access package assignment, and after being invited was also assigned to a OneDrive for Business or SharePoint Online site, they will still be removed.  Changing the **Remove external user** setting to **No** only affects users who subsequently lose their last access package assignment; users that were scheduled for deletion and are blcoked from sign in will still be deleted on their original schedule.
+    > Entitlement management only removes external guest user accounts that were invited through entitlement management or  that were added to entitlement management for lifecycle management by having their guest user account [converted to governed](entitlement-management-access-package-manage-lifecycle.md). Also, note that a user will be removed from this directory even if that user was added to resources in this directory that were not access package assignments. If the guest was present in this directory prior to receiving access package assignments, they will remain. However, if the guest was invited through an access package assignment, and after being invited was also assigned to a OneDrive for Business or SharePoint Online site, they will still be removed.  Changing the **Remove external user** setting to **No** only affects users who subsequently lose their last access package assignment; users that were scheduled for deletion and are blocked from sign in will still be deleted on their original schedule.
 
 1. If you want to remove the guest user account in this directory, you can set the number of days before it's removed.  While an external user is notified when their access package expires, there is no notification when their account is removed. If you want to remove the guest user account as soon as they lose their last assignment to any access packages, set **Number of days before removing external user from this directory** to **0**.  Changes to this value only affect users who subsequently use their last access package assignment; users that were scheduled for deletion will still be deleted on their original schedule.
 

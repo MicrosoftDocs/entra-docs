@@ -2,10 +2,9 @@
 title: Add a self-service sign-up user flow
 description: Create user flows for apps that your organization builds. Then, users who visit that app can gain a guest account using the options configured in the user flow.
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/31/2024
+ms.date: 02/05/2024
 
 ms.author: mimart
 author: msmimart

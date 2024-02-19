@@ -1,12 +1,11 @@
 ---
 title: Understand single sign-on with an on-premises app using Application Proxy
 description: Understand single sign-on with an on-premises app using Application Proxy.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 01/25/2024
 ms.author: kenwith
@@ -39,7 +38,7 @@ Configure the specific type of single sign-on. The sign-on methods are classifie
 
 -   **Header-based sign-on:** Header-based sign-on is used to provide single sign-on capabilities using HTTP headers. To learn more, see [Header-based single sign-on](application-proxy-configure-single-sign-on-with-headers.md).
 
--   **SAML single sign-on:** With SAML single sign-on, Microsoft Entra authenticates to the application by using the user's Microsoft Entra account. Microsoft Entra ID communicates the sign-on information to the application through a connection protocol. With SAML-based single sign-on, you can map users to specific application roles based on rules you define in your SAML claims. For information about setting up SAML single sign-on, see [SAML for single sign-on with Application Proxy](application-proxy-configure-single-sign-on-on-premises-apps.md).
+-   **SAML single sign-on:** With SAML single sign-on, Microsoft Entra authenticates to the application by using the user's Microsoft Entra account. Microsoft Entra ID communicates the sign-on information to the application through a connection protocol. With SAML-based single sign-on, you can map users to specific application roles based on rules you define in your SAML claims. For information about setting up SAML single sign-on, see [SAML for single sign-on with Application Proxy](conceptual-sso-apps.md).
 
 Each of these options can be found by going to your application in **Enterprise Applications**, and opening the **single sign-on** page on the left menu. If your application was created in the old portal, you may not see all these options.
 
@@ -51,4 +50,4 @@ This option allows an admin to create a link to an application that users first 
 - [Password vaulting for single sign-on with Application Proxy](application-proxy-configure-single-sign-on-password-vaulting.md)
 - [Kerberos Constrained Delegation for single sign-on with Application Proxy](how-to-configure-sso-with-kcd.md)
 - [Header-based authentication for single sign-on with Application Proxy](application-proxy-configure-single-sign-on-with-headers.md) 
-- [SAML for single sign-on with Application Proxy](application-proxy-configure-single-sign-on-on-premises-apps.md).
+- [SAML for single sign-on with Application Proxy](conceptual-sso-apps.md).

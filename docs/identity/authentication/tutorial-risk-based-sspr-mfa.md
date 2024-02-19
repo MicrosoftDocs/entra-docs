@@ -2,7 +2,7 @@
 title: Risk-based user sign-in protection in Microsoft Entra ID
 description: In this tutorial, you learn how to enable Microsoft Entra ID Protection to protect users when risky sign-in behavior is detected on their account.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
 ms.date: 02/05/2024
@@ -19,7 +19,7 @@ ms.reviewer: chuqiaoshi
 To protect your users, you can configure risk-based Microsoft Entra Conditional Access policies that automatically respond to risky behaviors. These policies can automatically block a sign-in attempt or require extra action, such as require a secure password change or prompting for Microsoft Entra multifactor authentication. These policies work with existing Microsoft Entra Conditional Access policies as an extra layer of protection for your organization. Users might never trigger a risky behavior in one of these policies, but your organization is protected if an attempt to compromise your security is made.
 
 > [!IMPORTANT]
-> This tutorial shows an administrator how to enable risk-based multifactor authentication.
+> This tutorial shows an administrator how to enable risk-based multifactor authentication (MFA).
 >
 > If your IT team hasn't enabled the ability to use Microsoft Entra multifactor authentication or you have problems during sign-in, reach out to your helpdesk for additional assistance.
 
@@ -58,34 +58,32 @@ Some of the following actions might trigger Microsoft Entra ID Protection risk d
 * Sign-ins from IP addresses with suspicious activity.
 * Sign-ins from unfamiliar locations.
 
-The following three policies are available in Microsoft Entra ID Protection to protect users and respond to suspicious activity. You can choose to turn the policy enforcement on or off, select users or groups for the policy to apply to, and decide if you want to block access at sign-in or prompt for extra action.
+This article guides you through enabling three policies to protect users and automate the response to suspicious activity.
 
-* User risk policy
-   * Identifies and responds to user accounts that might have compromised credentials. Can prompt the user to create a new password.
-* Sign in risk policy
-   * Identifies and responds to suspicious sign-in attempts. Can prompt the user to provide extra forms of verification using Microsoft Entra multifactor authentication.
-* MFA registration policy
+* Multifactor authentication registration policy
    * Makes sure users are registered for Microsoft Entra multifactor authentication. If a sign-in risk policy prompts for MFA, the user must already be registered for Microsoft Entra multifactor authentication.
+* User risk policy
+   * Identifies and automates response to user accounts that might have compromised credentials. Can prompt the user to create a new password.
+* Sign in risk policy
+   * Identifies and automates response to suspicious sign-in attempts. Can prompt the user to provide extra forms of verification using Microsoft Entra multifactor authentication.
 
-When you enable a policy user or sign in risk policy, you can also choose the threshold for risk level - *low and above*, *medium and above*, or *high*. This flexibility lets you decide how aggressive you want to be in enforcing any controls for suspicious sign-in events.
+When you enable a risk-based policy, you can also choose the threshold for risk level - *low*, *medium*, or *high*. This flexibility lets you decide how aggressive you want to be in enforcing any controls for suspicious sign-in events. Microsoft recommends the following policy configurations.
 
 For more information about Microsoft Entra ID Protection, see [What is Microsoft Entra ID Protection?](~/id-protection/overview-identity-protection.md)
 
-## Enable MFA registration policy
-
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+## Enable multifactor authentication registration policy
 
 Microsoft Entra ID Protection includes a default policy that can help get users registered for Microsoft Entra multifactor authentication. If you use other policies to protect sign-in events, you would need users to have already registered for MFA. When you enable this policy, it doesn't require users to perform MFA at each sign-in event. The policy only checks the registration status for a user and asks them to preregister if needed.
 
-It's recommended to enable the MFA registration policy for users that use multifactor authentication. To enable this policy, complete the following steps:
+It's recommended to enable this registration policy for users that use multifactor authentication. To enable this policy, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
-1. Browse to **Protection** > **Multifactor authentication** > **MFA registration policy**.
+1. Browse to **Protection** > **Identity Protection** > **Multifactor authentication registration policy**.
 1. By default, the policy applies to *All users*. If desired, select **Assignments**, then choose the users or groups to apply the policy on.
 1. Under *Controls*, select **Access**. Make sure the option for *Require Microsoft Entra multifactor authentication registration* is checked, then choose **Select**.
 1. Set **Enforce Policy** to *On*, then select **Save**.
 
-    ![Screenshot of how to require users to register for MFA.](./media/tutorial-risk-based-sspr-mfa/enable-mfa-registration.png)
+:::image type="content" source="media/tutorial-risk-based-sspr-mfa/enable-mfa-registration.png" alt-text="Screenshot of how to require users to register for MFA." lightbox="media/tutorial-risk-based-sspr-mfa/enable-mfa-registration.png":::
 
 ## Enable user risk policy for password change
 

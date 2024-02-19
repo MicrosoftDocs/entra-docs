@@ -1,12 +1,11 @@
 ---
 title: Plan a Microsoft Entra application proxy Deployment
 description: An end-to-end guide for planning the deployment of Application proxy within your organization
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 01/19/2024
 ms.author: kenwith
@@ -14,7 +13,7 @@ ms.author: kenwith
 
 # Plan a Microsoft Entra application proxy deployment
 
-Microsoft Entra application proxy is a secure and cost-effective remote access solution for on-premises applications. It provides an immediate transition path for “Cloud First” organizations to manage access to legacy on-premises applications that aren’t yet capable of using modern protocols. For additional introductory information, see [What is Application Proxy](./application-proxy.md).
+Microsoft Entra application proxy is a secure and cost-effective remote access solution for on-premises applications. It provides an immediate transition path for “Cloud First” organizations to manage access to legacy on-premises applications that aren’t yet capable of using modern protocols. For additional introductory information, see [What is Application Proxy](overview-what-is-app-proxy.md).
 
 Application Proxy is recommended for giving remote users access to internal resources. Application Proxy replaces the need for a VPN or reverse proxy for these remote access use cases. It is not intended for users who are on the corporate network. These users who use Application Proxy for intranet access may experience undesirable performance issues.
 
@@ -54,13 +53,13 @@ You need to meet the following prerequisites before beginning your implementatio
 
 The following core requirements must be met in order to configure and implement Microsoft Entra application proxy.
 
-*  **Azure onboarding**: Before deploying application proxy, user identities must be synchronized from an on-premises directory or created directly within your Microsoft Entra tenants. Identity synchronization allows Microsoft Entra ID to pre-authenticate users before granting them access to App Proxy published applications and to have the necessary user identifier information to perform single sign-on (SSO).
+*  **Azure onboarding**: Before you deploy application proxy, user identities must be synchronized from an on-premises directory or created directly within your Microsoft Entra tenants. Identity synchronization allows Microsoft Entra ID to pre-authenticate users before granting them access to App Proxy published applications and to have the necessary user identifier information to perform single sign-on (SSO).
 
 * **Conditional Access requirements**: We do not recommend using Application Proxy for intranet access because this adds latency that will impact users. We recommend using Application Proxy with pre-authentication and Conditional Access policies for remote access from the internet.  An  approach to provide Conditional Access for intranet use is to modernize applications so they can directly authenticate with Microsoft Entra ID. Refer to [Resources for migrating applications to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md) for more information.
 
-* **Service limits**: To protect against overconsumption of resources by individual tenants there are throttling limits set per application and tenant. To see these limits refer to [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md). These throttling limits are based on a benchmark far above typical usage volume and provides ample buffer for a majority of deployments.
+* **Service limits**: To protect against overconsumption of resources by individual tenants there are throttling limits set per application and tenant. To see these limits refer to [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md). These throttling limits are based on a benchmark far above typical usage volume and provide ample buffer for a majority of deployments.
 
-* **Public certificate**: If you are using custom domain names, you must procure a TLS/SSL certificate. Depending on your organizational requirements, getting a certificate can take some time and we recommend beginning the process as early as possible. Azure Application Proxy supports standard, [wildcard](application-proxy-wildcard.md), or SAN-based certificates. For more details see [Configure custom domains with Microsoft Entra application proxy](application-proxy-configure-custom-domain.md).
+* **Public certificate**: If you are using custom domain names, you must procure a TLS/SSL certificate. Depending on your organizational requirements, getting a certificate can take some time and we recommend beginning the process as early as possible. Azure Application Proxy supports standard, [wildcard](application-proxy-wildcard.md), or SAN-based certificates. For more details see [Configure custom domains with Microsoft Entra application proxy](how-to-configure-custom-domain.md).
 
 * **Domain requirements**: Single sign-on to your published applications using Kerberos Constrained Delegation (KCD) requires that the server running the Connector and the server running the app are domain joined and part of the same domain or trusting domains.
 For detailed information on the topic, see [KCD for single sign-on](how-to-configure-sso-with-kcd.md) with Application Proxy. The connector service runs in the context of the local system and should not be configured to use a custom identity.
@@ -90,7 +89,7 @@ Compile an inventory of all in-scope applications that are being published via A
 | Domain membership| Web server’s fully qualified domain name (FQDN) |
 | Application location | Where the web server or farm is located in your infrastructure |
 | Internal access | The exact URL used when accessing the application internally. <br> If a farm, what type of load balancing is in use? <br> Whether the application draws content from sources other than itself.<br> Determine if the application operates over WebSockets. |
-| External access | The vendor solution that the application may already be exposed throught, externally. <br> The URL you want to use for external access. If SharePoint, ensure Alternate Access Mappings are configured per [this guidance](/SharePoint/administration/configure-alternate-access-mappings). If not, you will need to define external URLs. |
+| External access | The vendor solution that the application may already be exposed through, externally. <br> The URL you want to use for external access. If SharePoint, ensure Alternate Access Mappings are configured per [this guidance](/SharePoint/administration/configure-alternate-access-mappings). If not, you will need to define external URLs. |
 | Public certificate | If using a custom domain, procure a certificate with a corresponding subject name. if a certificate exists note the serial number and location from where it can be obtained. |
 | Authentication type| The type of authentication supported by the application support such as Basic, Windows Integration Authentication, forms-based, header-based, and claims. <br>If the application is configured to run under a specific domain account, note the Fully Qualified Domain Name (FQDN) of the service account.<br> If SAML-based, the identifier and reply URLs. <br> If header-based, the vendor solution and specific requirement for handling authentication type. |
 | Connector group name | The logical name for the group of connectors that will be designated to provide the conduit and SSO to this backend application. |
@@ -143,7 +142,7 @@ The following design elements should increase the success of your pilot implemen
 
 * Your workforce is most likely to remember an external URL is familiar and relevant. Avoid publishing your application using our pre-defined msappproxy.net or onmicrosoft.com suffixes. Instead, provide a familiar top-level verified domain, prefixed with a logical hostname such as *intranet.<customers_domain>.com*.
 
-* Restrict visibility of the pilot application’s icon to a pilot group by hiding its launch icon form the Azure MyApps portal. When ready for production you can scope the app to its respective targeted audience, either in the same pre-production tenant, or by also publishing the  application in your production tenant.
+* Restrict visibility of the pilot application’s icon to a pilot group by hiding its launch icon from the Azure MyApps portal. When ready for production you can scope the app to its respective targeted audience, either in the same pre-production tenant, or by also publishing the  application in your production tenant.
 
 **Single sign-on settings**:
 Some SSO settings have specific dependencies that can take time to set up, so avoid change control delays by ensuring dependencies are addressed ahead of time. This includes domain joining connector hosts to perform SSO using Kerberos Constrained Delegation (KCD) and taking care of other time-consuming activities.
@@ -192,7 +191,7 @@ Below are some best practices to follow when publishing an application:
 
 For scenarios where a published app links to other published apps, enable link translation for each application so that you have control over the user experience at the per-app level.
 
-For example, suppose that you have three applications published through Application Proxy that all link to each other: Benefits, Expenses, and Travel, plus a fourth app, Feedback, that isn't published through Application Proxy.
+For example, suppose that you have three applications published through Application Proxy that all link to each other: Benefits, Expenses, and Travel, plus a fourth app, Feedback that isn't published through Application Proxy.
 
 ![Picture 1](media/App-proxy-deployment-plan/link-translation.png)
 
@@ -235,7 +234,7 @@ Verify that your application is accessible through Application Proxy accessing i
 
 With pre-authentication enabled, Microsoft Entra ID will challenge users first for authentication and if single sign-on is configured then the back-end application will also verify the user before access to the application is granted. Changing the pre-authentication mode from Passthrough to Microsoft Entra ID also configures the external URL with HTTPS, so any application initially configured for HTTP will now be secured with HTTPS.
 
-### Enable Single Sign-On
+### Enable single sign-on
 
 SSO provides the best possible user experience and security because users only need to sign in once when accessing Microsoft Entra ID. Once a user has pre-authenticated, SSO is performed by the Application Proxy connector authenticating to the on-premises application, on behalf of the user. The backend application processes the login as if it were the user themselves.
 
@@ -308,16 +307,11 @@ Learn more about common issues and how to resolve them with our guide to [troubl
 
 The following articles cover common scenarios that can also be used to create troubleshooting guides for your support organization.
 
-* [Problem displaying app page](application-proxy-page-appearance-broken-problem.md)
-* [Application load is too long](application-proxy-page-load-speed-problem.md)
 * [Links on application page not working](application-proxy-page-links-broken-problem.md)
 * [What ports to open for my app](application-proxy-add-on-premises-application.md)
-* [No working connector in a connector group for my app](application-proxy-connectivity-no-working-connector.md)
-* [Configure in admin portal](application-proxy-config-how-to.md)
 * [Configure single sign-on to my app](how-to-configure-sso.md)
-* [Problem creating an app in admin portal](application-proxy-config-problem.md)
 * [Configure Kerberos Constrained Delegation](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
 * [Configure with PingAccess](application-proxy-ping-access-publishing-guide.md)
 * [Can't Access this Corporate Application error](application-proxy-sign-in-bad-gateway-timeout-error.md)
 * [Problem installing the Application Proxy Agent Connector](application-proxy-connector-installation-problem.md)
-* [Sign-in problem](application-sign-in-problem-on-premises-application-proxy.md)
+* [Sign-in problem](application-proxy-troubleshoot.md)

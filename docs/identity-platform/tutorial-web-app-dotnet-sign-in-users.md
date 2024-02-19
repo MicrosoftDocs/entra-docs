@@ -5,8 +5,8 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.date: 01/18/2024
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As an application developer, I want to install the NuGet packages necessary for authentication in my IDE, and implement authentication in my web app.
 ---
@@ -35,6 +35,7 @@ Identity related **NuGet packages** must be installed in the project for authent
 
 1. In the top menu of Visual Studio, select **Tools > NuGet Package Manager > Manage NuGet Packages for Solution**.
 1. With the **Browse** tab selected, search for and select **Microsoft.Identity.Web.UI**. Select the **Project** checkbox, and then select **Install**.
+1. Repeat this for **Microsoft.Identity.Web.Diagnostics** and **Microsoft.Identity.Web.DownstreamApi**.
 
 ### [Visual Studio Code](#tab/visual-studio-code)
 

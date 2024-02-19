@@ -1,16 +1,15 @@
 ---
 title: 'Microsoft Entra Connect: Hybrid identity considerations for Azure Government cloud'
 description: Special considerations for deploying Microsoft Entra Connect with the Azure Government cloud.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: reference
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Hybrid identity considerations for the Azure Government cloud

@@ -2,18 +2,14 @@
 title: How to run a registration campaign to set up Microsoft Authenticator
 description: Learn how to move your organization away from less secure authentication methods to Microsoft Authenticator
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
-ms.custom: ignite-2022
 ms.topic: conceptual
 ms.date: 02/05/2024
 
 ms.author: justinha
 author: mjsantani
 manager: amycolannino
-
-ms.collection: M365-identity-device-management
 #Customer intent: As an identity administrator, I want to encourage users to use the Microsoft Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 
@@ -107,13 +103,22 @@ To configure the policy using Graph Explorer:
 
    ![Screenshot of Graph Explorer.](./media/how-to-nudge-authenticator-app/permissions.png)
 
-1. Retrieve the Authentication methods policy: `GET https://graph.microsoft.com/beta/policies/authenticationmethodspolicy`
+1. Retrieve the Authentication methods policy: 
+
+   ```json
+   GET https://graph.microsoft.com/v1.0/policies/authenticationmethodspolicy
+   ```
 
 1. Update the registrationEnforcement and authenticationMethodsRegistrationCampaign section of the policy to enable the nudge on a user or group.
 
    ![Screenshot of the API response.](media/how-to-mfa-registration-campaign/response.png)
 
-To update the policy, perform a PATCH on the Authentication Methods Policy with only the updated registrationEnforcement section: `PATCH https://graph.microsoft.com/beta/policies/authenticationmethodspolicy`
+   To update the policy, perform a PATCH on the Authentication Methods Policy with only the updated registrationEnforcement section: 
+
+   ```json
+   PATCH https://graph.microsoft.com/v1.0/policies/authenticationmethodspolicy
+   ```
+
 
 The following table lists **authenticationMethodsRegistrationCampaign** properties.
 
@@ -350,4 +355,3 @@ No, there are no such plans.
 ## Next steps
 
 [Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md)
-

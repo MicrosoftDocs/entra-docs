@@ -1,18 +1,17 @@
 ---
 title: Remove limits on creating app registrations
 description: Assign a custom role to grant unrestricted app registrations in the Microsoft Entra Active Directory
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: quickstart
 ms.date: 02/04/2022
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, mode-other, has-azure-ad-ps-ref
-ms.collection: M365-identity-device-management
+
 ---
 # Quickstart: Grant permission to create unlimited app registrations
 

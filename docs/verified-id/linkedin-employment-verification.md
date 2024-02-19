@@ -4,16 +4,16 @@ description: A design pattern describing how to configure employment verificatio
 services: decentralized-identity
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 ms.topic: conceptual
 ms.date: 10/03/2023
 ms.author: barclayn
 ---
 
-# Setting up place of work verification on LinkedIn
+# Setting up place of work verification on LinkedIn (Preview)
 
-> [!NOTE]
+> [!IMPORTANT]
 > Place of work verification on LinkedIn is in public preview. Currently, customers with 10K seats of more are prioritized.
 
 If your organization wants its employees to get their place of work verified on LinkedIn, you need to follow these few steps:

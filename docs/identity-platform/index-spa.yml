@@ -10,8 +10,7 @@ metadata:
   manager: CelesteDG
   ms.author: dmwendia
   ms.date: 02/02/2024
-  ms.service: active-directory
-  ms.subservice: develop
+  ms.service: identity-platform  
   ms.topic: landing-page
 
 landingContent:
@@ -39,22 +38,20 @@ landingContent:
             url: tutorial-v2-javascript-auth-code.md
           - text: Blazor WebAssembly
             url: tutorial-blazor-webassembly.md
-  - title: "Scenario in depth"
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: SPA that signs in users and calls an API
-            url: scenario-spa-overview.md
-          # - text: Register the application
-          #   url: scenario-spa-app-registration.md
-          # - text: Initialize the auth library
-          #   url: scenario-spa-app-configuration.md
-          # - text: Add sign-in and sign-out
-          #   url: scenario-spa-sign-in.md
-          # - text: Get access token for web API
-          #   url: scenario-spa-acquire-token.md
-          # - text: Call web API with access token
-          #   url: scenario-spa-call-api.md
+  # - title: "Scenario in depth"
+  #   linkLists:
+  #     - linkListType: how-to-guide
+  #       links:
+  #         - text: SPA that signs in users and calls an API
+  #           url: scenario-spa-app-registration.md
+  #         # - text: Initialize the auth library
+  #         #   url: scenario-spa-app-configuration.md
+  #         # - text: Add sign-in and sign-out
+  #         #   url: scenario-spa-sign-in.md
+  #         # - text: Get access token for web API
+  #         #   url: scenario-spa-acquire-token.md
+  #         # - text: Call web API with access token
+  #         #   url: scenario-spa-call-api.md
 ## ROW 2 ################################################### ROW 2 ##
   # - title: $CARD_TITLE
   #   linkLists:

@@ -1,8 +1,8 @@
 ---
 title: Tutorial - Using FaceCheck with Verified ID and unlocking high assurance verifications at scale (Preview)
 description: In this tutorial, you learn how to use FaceCheck with Verified ID
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 author: barclayn
 manager: amycolannino
 ms.author: barclayn
@@ -32,7 +32,7 @@ You can easily get started using Face Check by using [MyAccount](https://myaccou
 
 1. Create a test user in your [Entra tenant](https://entra.microsoft.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/AllUsers/menuId/) and upload a photo of [yourself](https://support.microsoft.com/office/add-your-profile-photo-to-microsoft-365-2eaf93fd-b3f1-43b9-9cdc-bdcd548435b7#:~:text=1%20Find%20a%20photo%20you%20want%20to%20use,your%20initials%20or%20an%20icon%20...%20See%20More)
 1. Go to [MyAccount](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials), sign in as the test user and issue a `VerifiedEmployee` credential for the user.
-1. Use the [public test app](https://aka.ms/verifiedfacecheck) to present your `VerifiedEmployee` credential using Face Check.
+1. Use the [public test app](https://aka.ms/vcempver) to present your `VerifiedEmployee` credential using Face Check.
 
 When the Microsoft Authenticator gets a presentation request including a Face Check, there's an extra item after the credential type the user is asked to share. When the user clicks on that item, the actual Face Check is performed and the user can then share the requested credential and the confidence score of the check with the public test app (relying party). You could review the results on the Test app.
 

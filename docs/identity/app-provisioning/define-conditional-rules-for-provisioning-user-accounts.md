@@ -1,12 +1,11 @@
 ---
 title: Scoping users or groups to be provisioned with scoping filters in Microsoft Entra ID
 description: Learn how to use scoping filters to define attribute-based rules that determine which users or groups are provisioned in Microsoft Entra ID.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: how-to
 ms.date: 01/18/2024
 ms.author: kenwith

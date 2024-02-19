@@ -5,8 +5,7 @@ description: Learn about customizing the attributes for your self-service sign-u
 author: msmimart
 manager: celestedg
 
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 01/23/2024
 ms.author: mimart

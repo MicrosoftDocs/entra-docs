@@ -1,19 +1,18 @@
 ---
 title: View roles assigned to a group in Microsoft Entra ID
 description: Learn how the roles assigned to a group can be viewed using the Microsoft Entra admin center. Viewing groups and assigned roles are default user permissions.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 08/08/2023
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, has-azure-ad-ps-ref
 
-ms.collection: M365-identity-device-management
+
 ---
 
 

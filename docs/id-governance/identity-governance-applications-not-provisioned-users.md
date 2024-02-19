@@ -1,23 +1,14 @@
 ---
 title: Govern the existing users of an application that does not support provisioning in Microsoft Entra ID with Microsoft PowerShell
 description: Planning for a successful access reviews campaign for a particular application includes identifying if any users in that application have access that doesn't derive from Microsoft Entra ID.  If the application does not support provisioning, then you will need to create application role assignments for the application, and supply the list of changes when a review completes.
-services: active-directory
-documentationCenter: ''
 author: markwahl-msft
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 12/20/2022
 ms.author: mwahl
 ms.reviewer: mwahl
-ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an IT admin, I want to ensure that access to specific applications is governed by setting up access reviews for those applications. For this, I need to have the existing users of that application assigned to the application in Microsoft Entra ID.
-
 ---
 
 # Govern the users of an application that does not support provisioning - Microsoft PowerShell
