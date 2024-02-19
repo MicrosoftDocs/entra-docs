@@ -70,6 +70,8 @@ Using Microsoft Graph explorer, you can run queries to help you with the followi
 - View tenant activities such as who made a change to a group and when.
 - Mark a Microsoft Entra sign-in event as safe or confirmed compromised.
 - Retrieve a list of application sign-ins for the last 30 days.
+> [!NOTE]
+> Graph API calls are subject to throttling. Please review the [limits](https://learn.microsoft.com/en-us/graph/throttling-limits#identity-and-access-service-limits) to ensure your usage is within appropriate limits.
 
 ### Quick steps
 
