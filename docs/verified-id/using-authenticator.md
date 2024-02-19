@@ -1,8 +1,8 @@
 ---
 title: Tutorial - Set up and use Microsoft Authenticator with VerifiedID
 description: In this tutorial, you learn how to install and use Microsoft Authenticator for VerifiedID
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 author: barclayn
 manager: amycolannino
 ms.author: barclayn

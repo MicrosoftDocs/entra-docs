@@ -7,8 +7,8 @@ ms.author: henrymbugua
 ms.custom: has-adal-ref
 ms.date: 10/14/2020
 ms.reviewer: janicericketts
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an app developer, I want to know how to implement an app that supports single sign-on and app protection policies using the Microsoft identity platform and integrating with Microsoft Entra ID.
 ---

@@ -2,7 +2,7 @@
 title: Conditional Access adaptive session lifetime policies
 description: Learn where and when to use adaptive session lifetimes in Conditional Access policies.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 01/08/2024

@@ -1,17 +1,14 @@
 ---
 title: Monitor application sign-in health for resilience in Microsoft Entra ID
 description: Create queries and notifications to monitor the sign-in health of your applications.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 06/16/2023
 ms.author: jricketts
 ms.reviewer: ajburnle
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 # Monitoring application sign-in health for resilience
 

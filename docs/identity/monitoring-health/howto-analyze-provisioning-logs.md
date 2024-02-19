@@ -3,10 +3,10 @@ title: How to analyze the Microsoft Entra provisioning logs
 description: Learn how to download, view, and analyze the details in the provisioning logs from Microsoft Entra ID.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: how-to
-ms.subservice: report-monitor
-ms.date: 12/15/2023
+ms.subservice: monitoring-health
+ms.date: 02/15/2023
 ms.author: sarahlipsey
 ms.reviewer: arvinh
 
@@ -160,7 +160,7 @@ Use the following table to better understand how to resolve errors that you find
 | InvitationCreation<br/>FailureInvalidPropertyValue | Potential causes:<br/>* The Primary SMTP Address is an invalid value.<br/>* UserType is not guest or member<br/>* Group email Address isn't supported | Potential solutions:<br/>* The Primary SMTP Address has an invalid value. Resolving this issue will likely require updating the mail property of the source user. For more information, see [Prepare for directory synchronization to Microsoft 365](https://aka.ms/DirectoryAttributeValidations)<br/>* Ensure that the userType property is provisioned as type guest or member. This can be fixed by checking your attribute mappings to understand how the userType attribute is mapped.<br/>* The email address of the user matches with the email address of a group in the tenant. Update the email address for one of the two objects.|
 | InvitationCreation<br/>FailureAmbiguousUser| The invited user has a proxy address that matches an internal user in the target tenant. The proxy address must be unique. | To resolve this error, delete the existing internal user in the target tenant or remove this user from sync scope.|
 | Microsoft Entra ID<br/>CannotUpdateObjects<br/>MasteredOnPremises| If the user in the target tenant was originally synchronized from AD to Microsoft Entra ID and converted to an external user, the source of authority is still on-premises and the user can't be updated.| The user can't be updated by cross-tenant synchronization|
-
+|EntityTypeNotSupported|Groups can be used to determine what users are in scope for provisioning. Groups objects cannot be synchronized. | No customer action is required. This is a skipped event. If you are using the provisioning on-demand, ensure that you choose a user rather than a group to provision.|
 ## Next steps
 
 - [Check the status of user provisioning](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md)

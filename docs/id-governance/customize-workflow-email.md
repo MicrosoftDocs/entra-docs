@@ -4,8 +4,8 @@ description: Get a step-by-step guide for customizing emails that you send by us
 author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: compliance
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 06/22/2023
 ms.custom: template-how-to

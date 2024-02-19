@@ -1,18 +1,18 @@
 ---
 title: Security alerts for Microsoft Entra roles in PIM
 description: Configure security alerts for Microsoft Entra roles Privileged Identity Management.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: how-to
-ms.subservice: pim
-ms.date: 09/13/2023
+ms.subservice: privileged-identity-management
+ms.date: 02/13/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
-ms.collection: M365-identity-device-management
+
 ---
 # Configure security alerts for Microsoft Entra roles in Privileged Identity Management
 
@@ -35,6 +35,11 @@ This section lists all the security alerts for Microsoft Entra roles, along with
 - **Medium**: Doesn't require immediate action but signals a potential policy violation.
 - **Low**: Doesn't require immediate action but suggests a preferable policy change.
 
+>[!NOTE]
+> PIM sends email notifications for the **Role assigned outside of PIM** alert when the alert is enabled from [alert settings](#customize-security-alert-settings) For Microsoft Entra roles in PIM, emails are sent to **Privileged Role Administrators**, **Security Administrators**, and **Global Administrators** that have enabled Privileged Identity Management. For Azure resources in PIM, emails are sent to **Owners** and **User Access Administrators**.
+
+
+
 ### Administrators aren't using their privileged roles
 
 Severity: **Low**
@@ -48,16 +53,16 @@ Severity: **Low**
 | **Trigger** | Triggered if a user goes over a specified number of days without activating a role. |
 | **Number of days** | This setting specifies the maximum number of days, from 0 to 100, that a user can go without activating a role.|
 
-### Roles don't require multi-factor authentication for activation
+### Roles don't require multifactor authentication for activation
 
 Severity: **Low**
 
 | | Description |
 | --- | --- |
-| **Why do I get this alert?** | Without multi-factor authentication, compromised users can activate privileged roles. |
-| **How to fix?** | Review the list of roles and [require multi-factor authentication](pim-how-to-change-default-settings.md) for every role. |
+| **Why do I get this alert?** | Without multifactor authentication, compromised users can activate privileged roles. |
+| **How to fix?** | Review the list of roles and [require multifactor authentication](pim-how-to-change-default-settings.md) for every role. |
 | **Prevention** | [Require MFA](pim-how-to-change-default-settings.md) for every role.  |
-| **In-portal mitigation action** | Makes multi-factor authentication required for activation of the privileged role. |
+| **In-portal mitigation action** | Makes multifactor authentication required for activation of the privileged role. |
 
 <a name='the-organization-doesnt-have-microsoft-entra-premium-p2-or-microsoft-entra-id-governance'></a>
 
@@ -77,7 +82,7 @@ Severity: **Medium**
 
 | | Description |
 | --- | --- |
-| **Why do I get this alert?** | This alert is no longer triggered based on the last password change date of for an account. This alert is for accounts in a privileged role that haven't signed in during the past *n* days, where *n* is a number of days that is configurable between 1-365 days. These accounts might be service or shared accounts that aren't being maintained and are vulnerable to attackers. |
+| **Why do I get this alert?** | This alert is no longer triggered based on the last password change date of for an account. This alert is for accounts in a privileged role that haven't signed in during the past *n* days, where *n* is many days that is configurable between 1-365 days. These accounts might be service or shared accounts that aren't being maintained and are vulnerable to attackers. |
 | **How to fix?** | Review the accounts in the list. If they no longer need access, remove them from their privileged roles. |
 | **Prevention** | Ensure that accounts that are shared are rotating strong passwords when there's a change in the users that know the password. </br>Regularly review accounts with privileged roles using [access reviews](./pim-create-roles-and-resource-roles-review.md) and remove role assignments that are no longer needed. |
 | **In-portal mitigation action** | Removes the account from their privileged role. |
@@ -100,7 +105,7 @@ Severity: **Low**
 
 | | Description |
 | --- | --- |
-| **Why do I get this alert?** | Global administrator is the highest privileged role. If a Global Administrator is compromised, the attacker gains access to all of their permissions, which puts your whole system at risk. |
+| **Why do I get this alert?** | Global administrator is the highest privileged role. If a Global Administrator is compromised, the attacker gains access to all of their permissions, which put your whole system at risk. |
 | **How to fix?** | Review the users in the list and remove any that don't absolutely need the Global administrator role. </br>Assign lower privileged roles to these users instead. |
 | **Prevention** | Assign users the least privileged role they need. |
 | **In-portal mitigation action** | Removes the account from their privileged role. |
@@ -116,7 +121,7 @@ Severity: **Low**
 | --- | --- |
 | **Why do I get this alert?** | Multiple activations to the same privileged role by the same user is a sign of an attack. |
 | **How to fix?** | Review the users in the list and ensure that the [activation duration](pim-how-to-change-default-settings.md) for their privileged role is set long enough for them to perform their tasks. |
-| **Prevention** | Ensure that the [activation duration](pim-how-to-change-default-settings.md) for privileged roles is set long enough for users to perform their tasks.</br>[Require multi-factor authentication](pim-how-to-change-default-settings.md) for privileged roles that have accounts shared by multiple administrators. |
+| **Prevention** | Ensure that the [activation duration](pim-how-to-change-default-settings.md) for privileged roles is set long enough for users to perform their tasks.</br>[Require multifactor authentication](pim-how-to-change-default-settings.md) for privileged roles that have accounts shared by multiple administrators. |
 | **In-portal mitigation action** | N/A |
 | **Trigger** | Triggered if a user activates the same privileged role multiple times within a specified period. You can configure both the time period and the number of activations. |
 | **Activation renewal timeframe** | This setting specifies in days, hours, minutes, and second the time period you want to use to track suspicious renewals. |

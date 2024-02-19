@@ -1,8 +1,7 @@
 ---
 title: Microsoft Entra PCI-DSS guidance
 description: Guidance on meeting payment card industry (PCI) compliance with Microsoft Entra ID
-services: active-directory
-ms.service: active-directory
+ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
 author: jricketts

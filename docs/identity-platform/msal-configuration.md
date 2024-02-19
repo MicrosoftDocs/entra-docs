@@ -6,9 +6,9 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
 ms.date: 09/12/2019
-ms.reviewer: shoatman
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: shoatman, negoe
+ms.service: identity-platform
+
 ms.topic: reference
 #Customer intent: As a developer using the MSAL for Android, I want to understand the configuration JSON file, so that I can customize the behavior of my public client app and specify the default authority and other settings.
 ---

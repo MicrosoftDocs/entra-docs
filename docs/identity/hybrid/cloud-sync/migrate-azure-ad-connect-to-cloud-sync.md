@@ -1,16 +1,16 @@
 ---
 title: 'Migrate Microsoft Entra Connect to Microsoft Entra Cloud Sync| Microsoft Docs'
 description: Describes steps to migrate Microsoft Entra Connect to Microsoft Entra Cloud Sync.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: overview
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 

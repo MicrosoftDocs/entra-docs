@@ -126,6 +126,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy.md",
+      "redirect_url": "/entra/identity/app-proxy",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/app-proxy/application-proxy-config-how-to.md",
       "redirect_url": "/entra/identity/app-proxy/application-proxy-add-on-premises-application",
       "redirect_document_id": false
@@ -133,6 +138,26 @@
     {
       "source_path_from_root": "/docs/identity/app-proxy/application-proxy-config-problem.md",
       "redirect_url": "/entra/identity/app-proxy/application-proxy-add-on-premises-application",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-connectivity-no-working-connector.md",
+      "redirect_url": "/entra/identity/app-proxy/application-proxy-connectors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/application-sign-in-problem-on-premises-application-proxy.md",
+      "redirect_url": "/entra/identity/app-proxy/application-proxy-troubleshoot",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-page-load-speed-problem.md",
+      "redirect_url": "/entra/identity/app-proxy/application-proxy-troubleshoot",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-page-appearance-broken-problem.md",
+      "redirect_url": "/entra/identity/app-proxy/application-proxy-troubleshoot",
       "redirect_document_id": false
     },
     {
@@ -204,7 +229,59 @@
       "source_path_from_root": "/docs/identity/authentication/howto-sspr-deployment.md",
       "redirect_url": "https://support.microsoft.com/account-billing/reset-your-work-or-school-password-using-security-info-23dde81f-08bb-4776-ba72-e6b72b9dda9e",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-spa-overview.md",
+      "redirect_url": "/entra/identity-platform/scenario-spa-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-spa-production.md",
+      "redirect_url": "/entra/identity-platform/scenario-spa-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-app-sign-user-overview.md",
+      "redirect_url": "/entra/identity-platform/scenario-web-app-sign-user-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-app-sign-user-production.md",
+      "redirect_url": "/entra/identity-platform/scenario-web-app-sign-user-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-app-call-api-overview.md",
+      "redirect_url": "/entra/identity-platform/scenario-web-app-call-api-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-app-call-api-production.md",
+      "redirect_url": "/entra/identity-platform/scenario-web-app-call-api-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-api-call-api-overview.md",
+      "redirect_url": "/entra/identity-platform/scenario-web-api-call-api-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-api-call-api-production.md",
+      "redirect_url": "/entra/identity-platform/scenario-web-api-call-api-app-registration",
+      "redirect_document_id": false
+    },
+
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-protected-web-api-overview.md",
+      "redirect_url": "/entra/identity-platform/scenario-protected-web-api-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-protected-web-api-production.md",
+      "redirect_url": "/entra/identity-platform/scenario-protected-web-api-app-registration",
+      "redirect_document_id": false
     }
+
   ]
 }
 

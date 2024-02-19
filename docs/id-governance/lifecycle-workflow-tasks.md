@@ -4,8 +4,8 @@ description: This article guides a user on Workflow task definitions and task pa
 author: OWinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: compliance
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: conceptual
 ms.date: 01/26/2023
 ---
@@ -307,7 +307,7 @@ Example of usage within the workflow:
 
 ### Request user access package assignment
 
-Allows you to request an access package assignment for users. For more information on access packages, see [What are access packages and what resources can I manage with them?](entitlement-management-overview.md#what-are-access-packages-and-what-resources-can-i-manage-with-them).
+Allows you to request an access package assignment for users. If an approval process is configured for the access package and should take place, you must opt-into the `Enforce policy approval setting for admin direct assignments` Entitlement Management setting. For more information on access packages, see [What are access packages and what resources can I manage with them?](entitlement-management-overview.md#what-are-access-packages-and-what-resources-can-i-manage-with-them).
 
 You're able to customize the task name and task description for this task. You must also select the access package and policy that is being requested for the user.
 :::image type="content" source="media/lifecycle-workflow-task/request-user-access-package-assignment-task.png" alt-text="Screenshot of the request user access package assignment task.":::

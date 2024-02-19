@@ -4,9 +4,9 @@ description: Learn to plan your end-to-end issuance solution.
 documentationCenter: ''
 author: barclayn
 manager: martinco
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: how-to
-ms.subservice: verifiable-credentials
+
 ms.date: 07/28/2022
 ms.author: barclayn
 ms.custom: references_regions

@@ -3,8 +3,7 @@ title: Federation with a SAML/WS-Fed identity provider (IdP) for B2B
 description: Directly federate with a SAML or WS-Fed identity provider so guests can sign in to your Microsoft Entra apps
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 01/31/2024
 

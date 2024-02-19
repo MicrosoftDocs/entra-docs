@@ -1,19 +1,19 @@
 ---
 title: Microsoft Entra Connect Health agents for AD FS
 description: This is the Microsoft Entra Connect Health page how to monitor your on-premises AD FS infrastructure.
-services: active-directory
+
 ms.reviewer: zhiweiwangmsft
 author: billmath
 manager: amycolannino
 ms.assetid: dc0e53d8-403e-462a-9543-164eaa7dd8b3
-ms.service: active-directory
-ms.subservice: hybrid
+ms.service: entra-id
+ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
-ms.collection: M365-identity-device-management
+
 ---
 
 # Microsoft Entra Connect Health agents for AD FS

@@ -1,17 +1,17 @@
 ---
 title: Least privileged roles by task
 description: Least privileged roles to delegate for tasks in Microsoft Entra ID
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 01/05/2023
+ms.date: 02/16/2024
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
+
 #Customer intent: As a Microsoft Entra administrator, I want to know which role has the least privilege for a given task to make my Microsoft Entra organization more secure.
 ---
 
@@ -157,6 +157,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Update enterprise application provisioning | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
 > | Update enterprise application self-service | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
 > | Update single sign-on properties | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
+> | Create and modify custom authentication extensions | [Authentication Extensibility Administrator](permissions-reference.md#authentication-extensibility-administrator) | [Application Administrator](permissions-reference.md#application-administrator) |
 
 ## Entitlement management
 

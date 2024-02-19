@@ -1,16 +1,14 @@
 ---
 title: Security operations for privileged accounts in Microsoft Entra ID
 description: Learn about baselines, and how to monitor and alert on potential security issues with privileged accounts in Microsoft Entra ID.
-services: active-directory
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: how-to
 ms.date: 09/06/2022
 ms.author: jricketts
 ms.custom: kr2b-contr-experiment
-ms.collection: M365-identity-device-management
 ---
 
 # Security operations for privileged accounts in Microsoft Entra ID

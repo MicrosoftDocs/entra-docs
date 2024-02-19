@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: 
 ms.date: 10/27/2023
 ms.reviewer: JasSuri
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 titleSuffix: Microsoft identity platform
 

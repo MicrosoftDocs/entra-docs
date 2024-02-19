@@ -1,11 +1,10 @@
 ---
 title: Manage Microsoft Entra user roles
 description: Instructions about how to assign and update user roles with Microsoft Entra ID.
-services: active-directory
 author: shlipsey3
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 12/01/2023

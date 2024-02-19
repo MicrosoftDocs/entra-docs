@@ -1,15 +1,13 @@
 ---
 title: 'Understanding lifecycle workflows'
 description: Describes an overview of Lifecycle workflows and the various parts.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: overview
 ms.date: 06/22/2023
-ms.subservice: compliance
 ms.author: owinfrey
-ms.collection: M365-identity-device-management
 ---
 # Understanding lifecycle workflows 
 

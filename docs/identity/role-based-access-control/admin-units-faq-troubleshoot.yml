@@ -1,18 +1,17 @@
 ### YamlMime:FAQ
 metadata:
   title: "Administrative units troubleshooting and FAQ"
-  description: Investigate administrative units to grant permissions with restricted scope in Microsoft Entra ID.
-  services: active-directory
+  description: Investigate administrative units to grant permissions with restricted scope in Microsoft Entra ID.  
   author: rolyon
   manager: amycolannino
-  ms.service: active-directory
+  ms.service: entra-id
   ms.topic: faq
-  ms.subservice: roles
+  ms.subservice: role-based-access-control
   ms.date: 06/09/2023
   ms.author: rolyon
   ms.reviewer: anandy
   ms.custom: oldportal;it-pro;
-  ms.collection: M365-identity-device-management
+  
 title: "Microsoft Entra administrative units: Troubleshooting and FAQ"
 summary: |
   For more granular administrative control in Microsoft Entra ID, you can assign users to a Microsoft Entra role with a scope that's limited to one or more administrative units. For sample PowerShell scripts for common tasks, see [Work with administrative units](/powershell/azure/active-directory/working-with-administrative-units).

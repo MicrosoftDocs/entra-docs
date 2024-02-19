@@ -6,8 +6,8 @@ ms.author: henrymbugua
 ms.custom: devx-track-dotnet
 ms.date: 02/09/2023
 ms.reviewer: janicericketts
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As a developer, I want to add authentication and authorization to a Blazor WebAssembly app and call Microsoft Graph.
 ---

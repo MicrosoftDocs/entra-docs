@@ -1,8 +1,7 @@
 ---
 title: Microsoft Entra PCI-DSS Multi-Factor Authentication guidance
 description: Learn the authentication methods supported by Microsoft Entra ID to meet PCI MFA requirements
-services: active-directory
-ms.service: active-directory
+ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
 author: jricketts

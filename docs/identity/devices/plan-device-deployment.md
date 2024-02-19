@@ -2,8 +2,8 @@
 title: Plan your Microsoft Entra device deployment
 description: Choose the Microsoft Entra device integration strategies that meet your organizational needs.
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
 ms.date: 09/30/2022
@@ -15,7 +15,6 @@ ms.reviewer: sandeo
 
 #Customer intent: As an IT admin, I want to choose the best device integration methods for my organization.
 
-ms.collection: M365-identity-device-management
 ---
 # Plan your Microsoft Entra device deployment
 

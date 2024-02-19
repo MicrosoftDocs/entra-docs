@@ -1,16 +1,16 @@
 ---
 title: AD FS sign-ins in Microsoft Entra ID with Connect Health
 description: This document describes how to integrate AD FS sign-ins with the Microsoft Entra Connect Health sign-ins report.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: hybrid
+ms.service: entra-id
+ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # AD FS sign-ins in Microsoft Entra ID with Connect Health - preview

@@ -1,8 +1,8 @@
 ---
 title: Tutorial - Using the Microsoft Entra Wallet Library demo application
 description: In this tutorial, you learn how to build and use the Microsoft Entra Wallet Library demo app on Android and iOS
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 author: barclayn
 manager: amycolannino
 ms.author: barclayn
