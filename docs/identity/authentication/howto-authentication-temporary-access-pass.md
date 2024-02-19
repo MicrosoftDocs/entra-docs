@@ -12,7 +12,7 @@ author: tilarso
 manager: amycolannino
 ms.reviewer: tilarso
 ---
-# Configure Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods
+# Configure Temporary Access Pass to register passwordless authentication methods
 
 Passwordless authentication methods, such as FIDO2 and passwordless phone sign-in through the Microsoft Authenticator app, enable users to sign in securely without a password. 
 
@@ -25,9 +25,7 @@ A Temporary Access Pass (TAP) is a time-limited passcode that can be configured 
 
 A TAP also makes recovery easier when a user has lost or forgotten their strong authentication factor like a FIDO2 security key or Microsoft Authenticator app, but needs to sign in to register new strong authentication methods.
 
-This article shows you how to enable and use a TAP using the [Microsoft Entra admin center](https://entra.microsoft.com). 
-
-You can also perform these actions using REST APIs. 
+This article shows you how to enable and use a TAP using the [Microsoft Entra admin center](https://entra.microsoft.com). You can also perform these actions using REST APIs. 
 
 ## Enable the Temporary Access Pass policy
 
