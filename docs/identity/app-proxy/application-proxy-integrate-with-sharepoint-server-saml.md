@@ -1,14 +1,13 @@
 ---
 title: Publish an on-premises SharePoint farm with Microsoft Entra application proxy
 description: Covers the basics about how to integrate an on-premises SharePoint farm with Microsoft Entra application proxy for SAML.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/06/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -18,27 +17,27 @@ ms.reviewer: ashishj
 This step-by-step guide explains how to secure the access to the [Microsoft Entra integrated on-premises SharePoint (SAML)](~/identity/saas-apps/sharepoint-on-premises-tutorial.md) using Microsoft Entra application proxy, where users in your organization (Microsoft Entra ID, B2B) connect to SharePoint through the Internet.
 
 > [!NOTE]
-> If you're new to Microsoft Entra application proxy and want to learn more, see [Remote access to on-premises applications through Microsoft Entra application proxy](./application-proxy.md).
+> If you're new to Microsoft Entra application proxy and want to learn more, see [Remote access to on-premises applications through Microsoft Entra application proxy](overview-what-is-app-proxy.md).
 
 There are three primary advantages of this setup:
 
 - Microsoft Entra application proxy ensures that authenticated traffic can reach your internal network and SharePoint.
 - Your users can access SharePoint sites as usual without using VPN.
-- You can control the access by user assignment on the Microsoft Entra application proxy level and you can increase the security with Microsoft Entra features like Conditional Access and Multi-Factor Authentication (MFA).
+- You can control the access by user assignment on the Microsoft Entra application proxy level and you can increase the security with Microsoft Entra features like Conditional Access and multifactor authentication (MFA).
 
 This process requires two Enterprise Applications. One is a SharePoint on-premises instance that you publish from the gallery to your list of managed SaaS apps. The second is an on-premises application (non-gallery application) you'll use to publish the first Enterprise Gallery Application.
 
 ## Prerequisites
 
 To complete this configuration, you need the following resources:
- - A SharePoint 2013 farm or newer. The SharePoint farm must be [integrated with Microsoft Entra ID](~/identity/saas-apps/sharepoint-on-premises-tutorial.md).
- - A Microsoft Entra tenant with a plan that includes Application Proxy. Learn more about [Microsoft Entra ID plans and pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
- - A [custom, verified domain](~/fundamentals/add-custom-domain.md) in the Microsoft Entra tenant. The verified domain must match the SharePoint URL suffix.
- - An SSL certificate is required. See the details in [custom domain publishing](./application-proxy-configure-custom-domain.md).
- - On-premises Active Directory users must be synchronized with Microsoft Entra Connect, and must be configure to [sign in to Azure](~/identity/hybrid/connect/plan-connect-user-signin.md). 
- - For cloud-only and B2B guest users, you need to [grant access to a guest account to SharePoint on-premises in the Microsoft Entra admin center](~/identity/saas-apps/sharepoint-on-premises-tutorial.md#manage-guest-users-access).
- - An Application Proxy connector installed and running on a machine within the corporate domain.
-
+- A SharePoint 2013 farm or newer. The SharePoint farm must be [integrated with Microsoft Entra ID](~/identity/saas-apps/sharepoint-on-premises-tutorial.md).
+- A Microsoft Entra tenant with a plan that includes Application Proxy. Learn more about [Microsoft Entra ID plans and pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+- A Microsoft Office Web Apps Server farm to properly launch Office files from the on-premises SharePoint farm.
+- A [custom, verified domain](~/fundamentals/add-custom-domain.md) in the Microsoft Entra tenant. The verified domain must match the SharePoint URL suffix.
+- An SSL certificate is required. See the details in [custom domain publishing](./how-to-configure-custom-domain.md).
+- On-premises Active Directory users must be synchronized with Microsoft Entra Connect, and must be configured to [sign in to Azure](~/identity/hybrid/connect/plan-connect-user-signin.md). 
+- For cloud-only and B2B guest users, you need to [grant access to a guest account to SharePoint on-premises in the Microsoft Entra admin center](~/identity/saas-apps/sharepoint-on-premises-tutorial.md#manage-guest-users-access).
+- An Application Proxy connector installed and running on a machine within the corporate domain.
 
 <a name='step-1-integrate-sharepoint-on-premises-with-azure-ad'></a>
 
@@ -58,7 +57,7 @@ In this step, you create an application in your Microsoft Entra tenant that uses
    ![Screenshot that shows the Sign on URL value.](./media/application-proxy-integrate-with-sharepoint-server/sso-url-saml.png)
 
 
- 1. Create a new Microsoft Entra application proxy application with custom domain. For step-by-step instructions, see [Custom domains in Microsoft Entra application proxy](./application-proxy-configure-custom-domain.md).
+ 1. Create a new Microsoft Entra application proxy application with custom domain. For step-by-step instructions, see [Custom domains in Microsoft Entra application proxy](./how-to-configure-custom-domain.md).
 
     - Internal URL: 'https://portal.contoso.com/'
     - External URL: 'https://portal.contoso.com/'

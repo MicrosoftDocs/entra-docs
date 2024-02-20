@@ -1,7 +1,7 @@
 ---
 title: Filter for applications in Conditional Access policy
 description: Use filter for applications in Conditional Access to manage conditions.
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 01/02/2024
@@ -12,8 +12,6 @@ manager: amycolannino
 ms.reviewer: calebb, oanae
 
 ms.custom: subject-rbac-steps
-
-ms.collection: M365-identity-device-management
 ---
 # Conditional Access: Filter for applications
 

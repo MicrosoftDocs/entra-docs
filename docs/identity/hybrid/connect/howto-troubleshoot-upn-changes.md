@@ -1,16 +1,16 @@
 ---
 title: Plan and troubleshoot User Principal Name changes in Microsoft Entra ID
 description: Understand known issues and mitigations for User Principal Name (UPN) changes
-services: active-directory
-ms.service: active-directory
-ms.subservice: hybrid
+
+ms.service: entra-id
+ms.subservice: hybrid-connect
 ms.topic: how-to
 ms.date: 05/23/2023
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
 ms.reviewer: jsimmons, andresc
-ms.collection: M365-identity-device-management
+
 ---
 
 # Plan and troubleshoot User Principal Name changes in Microsoft Entra ID

@@ -4,8 +4,8 @@ description: Restore a soft deleted enterprise application in Microsoft Entra ID
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 06/21/2023
@@ -178,30 +178,9 @@ Remove-AzureADMSDeletedDirectoryObject -Id <id>
 
 To permanently delete a soft deleted enterprise application, run the following query in Microsoft Graph explorer
 
-# [HTTP](#tab/http)
 ```http
 DELETE https://graph.microsoft.com/v1.0/directory/deletedItems/{object-id}
 ```
-
-# [C#](#tab/csharp)
-[!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/csharp/delete-directory-deleteditem-csharp-snippets.md)]
-
-# [JavaScript](#tab/javascript)
-[!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/javascript/delete-directory-deleteditem-javascript-snippets.md)]
-
-# [Java](#tab/java)
-[!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/java/delete-directory-deleteditem-java-snippets.md)]
-
-# [Go](#tab/go)
-[!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/go/delete-directory-deleteditem-go-snippets.md)]
-
-# [PowerShell](#tab/powershell)
-[!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/powershell/delete-directory-deleteditem-powershell-snippets.md)]
-
-# [PHP](#tab/php)
-[!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/php/delete-directory-deleteditem-php-snippets.md)]
-
----
 
 :::zone-end
 

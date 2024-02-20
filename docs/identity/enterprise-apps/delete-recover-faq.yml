@@ -4,8 +4,8 @@ metadata:
   description: Find answers to frequently asked questions (FAQs) about recovering deleted apps and service principals.
   
   
-  ms.service: active-directory
-  ms.subservice: app-mgmt
+  ms.service: entra-id
+  ms.subservice: enterprise-apps
   ms.topic: faq
   
   ms.date: 06/21/2023

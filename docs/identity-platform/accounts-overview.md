@@ -8,8 +8,8 @@ ms.custom: devx-track-java, has-adal-ref
 ms.date: 09/14/2019
 ms.devlang: java
 ms.reviewer: shoatman
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an Android developer, I want to understand the concept of accounts in the Microsoft identity platform when using MSAL for Android so that I can properly manage and authenticate users across multiple organizations and systems of record.
 ---

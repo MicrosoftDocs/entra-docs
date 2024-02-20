@@ -1,12 +1,10 @@
 ---
 title: Active Directory authentication non domain joined Linux Virtual Machines
 description: Active Directory authentication non domain joined Linux Virtual Machines.
-services: active-directory-ds
 author: DevOpsStyle
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.custom: devx-track-linux
 ms.topic: how-to
 ms.date: 01/29/2023

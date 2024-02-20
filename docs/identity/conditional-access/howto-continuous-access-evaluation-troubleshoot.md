@@ -2,8 +2,7 @@
 title: Monitor and troubleshoot sign-ins with continuous access evaluation in Microsoft Entra ID
 description: Troubleshoot and respond to changes in user state faster with continuous access evaluation in Microsoft Entra ID
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: troubleshooting
 ms.date: 04/03/2023
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: vmahtani
-
-ms.collection: M365-identity-device-management
 ---
 # Monitor and troubleshoot continuous access evaluation
 

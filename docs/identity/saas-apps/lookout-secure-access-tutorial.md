@@ -1,17 +1,15 @@
 ---
 title: Microsoft Entra SSO integration with Lookout Secure Access
 description: Learn how to configure single sign-on between Microsoft Entra ID and Lookout Secure Access.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 12/06/2023
 ms.author: jeedes
-
 ---
 
 # Microsoft Entra SSO integration with Lookout Secure Access

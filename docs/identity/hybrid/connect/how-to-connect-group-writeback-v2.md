@@ -1,17 +1,16 @@
 ---
 title: 'Microsoft Entra Connect: Group writeback'
-description: This article describes group writeback in Microsoft Entra Connect. 
-services: active-directory
+description: This article describes group writeback in Microsoft Entra Connect.
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: how-to
-ms.workload: identity
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 
 # Plan for Microsoft Entra Connect group writeback

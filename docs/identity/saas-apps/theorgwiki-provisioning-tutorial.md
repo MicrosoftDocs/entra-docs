@@ -5,8 +5,8 @@ description: Learn how to configure Microsoft Entra ID to automatically provisio
 author: twimmers
 writer: twimmers
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
@@ -57,7 +57,7 @@ Before configuring TheOrgWiki for automatic user provisioning with Microsoft Ent
 	
 3. Navigate to **Service Accounts**.
 
-	![Screenshot of the Service Accounts page in the the Org Wiki Admin Console.](media/theorgwiki-provisioning-tutorial/serviceaccount.png)
+	![Screenshot of the Service Accounts page in the Org Wiki Admin Console.](media/theorgwiki-provisioning-tutorial/serviceaccount.png)
 
 4. Click on **+Service Account**. Under **Service Account Type**,select **Token Based**. Click **Save**.
 

@@ -8,8 +8,8 @@ ms.author: ryanwi
 ms.custom: 
 ms.date: 05/18/2020
 ms.reviewer: jmprieur, saeeda
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As a developer building apps for Microsoft Entra ID, I want to understand how my app is impacted by Conditional Access challenges, so that I can secure my app and protect the services it accesses.
 ---

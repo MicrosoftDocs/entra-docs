@@ -1,24 +1,16 @@
 ---
 title: Request an access package - entitlement management
 description: Learn how to use the My Access portal to request access to an access package in Microsoft Entra entitlement management.
-services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: mamtakumar
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 10/23/2023
 ms.author: owinfrey
 ms.reviewer: mamkumar
-ms.collection: M365-identity-device-management
-
-
 #Customer intent: As a requestor, I want simple steps for how to request resources I need so that I can start using the resources to perform my job.
-
 ---
 # Request access to an access package in entitlement management
 

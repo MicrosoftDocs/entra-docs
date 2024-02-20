@@ -1,17 +1,16 @@
 ---
 title: 'Microsoft Entra Connect and Microsoft Entra Connect Health installation roadmap.'
 description: This document provides an overview of the installation options and paths available for installing Microsoft Entra Connect and Connect Health.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Microsoft Entra Connect and Microsoft Entra Connect Health installation roadmap

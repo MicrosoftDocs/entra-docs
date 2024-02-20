@@ -5,8 +5,8 @@ description: Learn how to configure Microsoft Entra ID to automatically provisio
 author: zhchia
 writer: zhchia
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022

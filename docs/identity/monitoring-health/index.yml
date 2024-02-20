@@ -6,13 +6,12 @@ summary: Learn how to access and use logs, reports, monitoring integrations, wor
 metadata:
   title: Microsoft Entra monitoring and health documentation
   description: Learn how to use the logs, reports, and monitoring tools in Microsoft Entra ID.
-  services: active-directory
-  ms.service: active-directory
-  ms.subservice: devices
+  ms.service: entra-id
+  ms.subservice: monitoring-health
   ms.topic: landing-page
   author: shlipsey3
   ms.author: sarahlipsey
-  ms.date: 08/15/2023
+  ms.date: 02/12/2024
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
 

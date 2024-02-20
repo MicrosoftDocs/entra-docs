@@ -2,7 +2,7 @@
 title: Conditional Access service dependencies 
 description: Learn how conditions are used in Microsoft Entra Conditional Access to trigger a policy.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 01/03/2024
@@ -66,6 +66,9 @@ The below table lists some more service dependencies, where the client apps must
 | Microsoft Forms     | Exchange                                    | Early-bound |
 |                     | SharePoint                                  | Early-bound |
 | Microsoft To-Do     | Exchange                                    | Early-bound |
+| SharePoint          | SharePoint Online Web Client Extensibility  | Early-bound |
+|                     | SharePoint Online Web Client Extensibility Isolated | Early-bound |
+|                     | SharePoint Client Extensibility web application principal (where present) | Early-bound |
 
 ## Troubleshooting service dependencies
 

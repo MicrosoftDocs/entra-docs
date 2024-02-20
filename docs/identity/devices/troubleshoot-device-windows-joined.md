@@ -2,8 +2,8 @@
 title: Troubleshoot registered, hybrid, and Microsoft Entra joined Windows machines
 description: This article helps you troubleshoot Microsoft Entra hybrid joined Windows 10 and Windows 11 devices
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
 ms.date: 08/29/2022

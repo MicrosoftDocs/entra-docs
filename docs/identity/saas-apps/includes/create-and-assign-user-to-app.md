@@ -2,8 +2,8 @@
 author: omondiatieno
 ms.author: jomondi
 ms.date: 10/27/2023
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.topic: include
 # Purpose:
 # This is used to include the content for creating and assigning a user to application into SaaS apps tutorials

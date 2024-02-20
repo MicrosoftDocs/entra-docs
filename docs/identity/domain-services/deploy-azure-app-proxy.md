@@ -1,18 +1,15 @@
 ---
 title: Deploy Microsoft Entra application proxy for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to provide secure access to internal applications for remote workers by deploying and configuring Microsoft Entra application proxy in a Microsoft Entra Domain Services managed domain
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/15/2023
 ms.author: justinha
-
 ---
 # Deploy Microsoft Entra application proxy for secure access to internal applications in a Microsoft Entra Domain Services managed domain
 

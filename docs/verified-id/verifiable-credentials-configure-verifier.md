@@ -1,8 +1,8 @@
 ---
 title: Tutorial - Configure Microsoft Entra Verified ID verifier
 description: In this tutorial, you learn how to configure your tenant to verify credentials.
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 author: barclayn
 manager: amycolannino
 ms.author: barclayn
@@ -35,9 +35,7 @@ In this article, you learn how to:
 - [Visual Studio Code](https://code.visualstudio.com/Download), [Visual Studio](https://visualstudio.microsoft.com/downloads/) or similar code editor.
 - [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/6.0).
 - Download [ngrok](https://ngrok.com/) and sign up for a free account. If you can't use `ngrok` in your organization, read this [FAQ](verifiable-credentials-faq.md#i-cannot-use-ngrok-what-do-i-do).
-- A mobile device with Microsoft Authenticator:
-  - Android version 6.2310.7174 or later installed.
-  - iOS version 6.7.17 or later installed.
+- A mobile device with the latest version of Microsoft Authenticator.
 
 ## Gather tenant details to set up your sample application
 
@@ -99,7 +97,7 @@ Now make modifications to the sample app's issuer code to update it with your ve
     1. **DidAuthority**: Your decentralized identifier
     1. **CredentialType**: Your credential type
 
-CredentialManifest is only needed for issuance, so if all you want to do is presentation, it strictly isn't needed.
+    CredentialManifest is only needed for issuance, so if all you want to do is presentation, it strictly isn't needed.
 
 1. Save the *appsettings.json* file.
 

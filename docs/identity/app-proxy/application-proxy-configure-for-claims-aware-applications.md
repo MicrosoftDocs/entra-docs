@@ -1,14 +1,13 @@
 ---
 title: Claims-aware apps - Microsoft Entra application proxy
-description: How to publish on-premises ASP.NET applications that accept AD FS claims for secure remote access by your users. 
-services: active-directory
+description: How to publish on-premises ASP.NET applications that accept AD FS claims for secure remote access by your users.
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/06/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -17,7 +16,7 @@ ms.reviewer: ashishj
 [Claims-aware apps](/previous-versions/windows/desktop/legacy/bb736227(v=vs.85)) perform a redirection to the Security Token Service (STS). The STS requests credentials from the user in exchange for a token and then redirects the user to the application. There are a few ways to enable Application Proxy to work with these redirects. Use this article to configure your deployment for claims-aware apps. 
 
 ## Prerequisites
-Make sure that the STS that the claims-aware app redirects to is available outside of your on-premises network. You can make the STS available by exposing it through a proxy or by allowing outside connections. 
+The STS that the claims-aware app redirects to must be available outside of your on-premises network. Expose it through a proxy or by allowing outside connections. 
 
 ## Publish your application
 
@@ -31,7 +30,7 @@ You can configure ADFS for claims-aware apps in one of two ways. The first is by
 
 ### Option 1: Custom domains
 
-If all the internal URLs for your applications are fully qualified domain names (FQDNs), then you can configure [custom domains](application-proxy-configure-custom-domain.md) for your applications. Use the custom domains to create external URLs that are the same as the internal URLs. When your external URLs match your internal URLs, then the STS redirections work whether your users are on-premises or remote. 
+If all the internal URLs for your applications are fully qualified domain names (FQDNs), then you can configure [custom domains](how-to-configure-custom-domain.md) for your applications. Use the custom domains to create external URLs that are the same as the internal URLs. When your external URLs match your internal URLs, then the STS redirections work whether your users are on-premises or remote. 
 
 ### Option 2: WS-Federation
 
@@ -41,7 +40,7 @@ If all the internal URLs for your applications are fully qualified domain names 
    ![Relying Party Trusts right-click on app name - screenshot](./media/application-proxy-configure-for-claims-aware-applications/appproxyrelyingpartytrust.png)  
 
 3. On the **Endpoints** tab, under **Endpoint type**, select **WS-Federation**.
-4. Under **Trusted URL**, enter the URL you entered in the Application Proxy under **External URL** and click **OK**.  
+4. Under **Trusted URL**, enter the URL you entered in the Application Proxy under **External URL** and select **OK**.  
 
    ![Add an Endpoint - set Trusted URL value - screenshot](./media/application-proxy-configure-for-claims-aware-applications/appproxyendpointtrustedurl.png)  
 

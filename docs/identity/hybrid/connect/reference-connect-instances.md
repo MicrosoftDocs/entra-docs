@@ -1,22 +1,19 @@
 ---
 title: 'Microsoft Entra Connect: Sync service instances'
 description: This page documents special considerations for Microsoft Entra instances.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: f340ea11-8ff5-4ae6-b09d-e939c76355a3
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: reference
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Microsoft Entra Connect: Special considerations for instances
 Microsoft Entra Connect is most commonly used with the world-wide instance of Microsoft Entra ID and Microsoft 365. But there are also other instances and these have different requirements for URLs and other special considerations.

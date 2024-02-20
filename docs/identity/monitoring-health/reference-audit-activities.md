@@ -2,17 +2,15 @@
 
 title: Microsoft Entra audit log activity reference
 description: Get an overview of the audit activities that can be logged in your audit logs in Microsoft Entra ID.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
-ms.workload: identity
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 09/14/2023
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk
-
 ---
 # Microsoft Entra audit log categories and activities
 
@@ -135,7 +133,7 @@ Each time an account is provisioned in your Microsoft Entra tenant, a log for th
 
 ## Application proxy
 
-If you're utilizing [Application Proxy](~/identity/app-proxy/what-is-application-proxy.md) to provide your users with remote access to internal apps, the Application Proxy audit logs can help you keep track of changes to available applications or [Connector groups](~/identity/app-proxy/application-proxy-connector-groups.md).
+If you're utilizing [Application Proxy](~/identity/app-proxy/overview-what-is-app-proxy.md) to provide your users with remote access to internal apps, the Application Proxy audit logs can help you keep track of changes to available applications or [Connector groups](~/identity/app-proxy/application-proxy-connector-groups.md).
 
 |Audit Category|Activity|
 |---|---|

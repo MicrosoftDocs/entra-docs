@@ -1,24 +1,16 @@
 ---
 title: Delegate access governance to access package managers in entitlement management
 description: Learn how to delegate access governance from IT administrators to access package managers and project managers so that they can manage access themselves.
-services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
 ms.reviewer: mwahl
-ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an administrator, I want to delegate access governance from IT administrators to department managers and project managers so that they can manage access themselves.
-
 ---
 
 # Delegate access governance to access package managers in entitlement management

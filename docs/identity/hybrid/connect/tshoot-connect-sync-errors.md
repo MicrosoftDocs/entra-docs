@@ -1,21 +1,17 @@
 ---
 title: 'Microsoft Entra Connect: Troubleshoot errors during synchronization'
 description: This article explains how to troubleshoot errors that occur during synchronization with Microsoft Entra Connect.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
 ms.assetid: 2209d5ce-0a64-447b-be3a-6f06d47995f8
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.date: 01/16/2024
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.custom: contperf-fy21q3-portal, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
-ms.collection: M365-identity-device-management
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Understanding errors during Microsoft Entra synchronization
 
@@ -227,10 +223,66 @@ Ensure that the **userPrincipalName** attribute has supported characters and the
 
 Microsoft Entra ID protects cloud-only objects from being updated through Microsoft Entra Connect. While it isn't possible to update these objects through Microsoft Entra Connect, calls can be made directly to the AADConnect cloud-side back end to attempt to change cloud-only objects. When doing so, the following errors can be returned:
 
-* This synchronization operation, Delete, isn't valid. Contact Technical Support.
+* This synchronization operation, Delete, isn't valid. Contact Technical Support (Error Type 114).
 * Unable to process this update because one or more cloud-only users' credential update is included in the current request.
 * Deleting a cloud-only object isn't supported. Contact Microsoft Customer Support.
 * The password change request can't be executed because it contains changes to one or more cloud-only user objects, which isn't supported. Contact Microsoft Customer Support.
+
+### Resolve Error Type 114
+
+This section discussess potential causes and solutions to resolving Error Type 114. 
+
+> [!WARNING]
+> Microsoft recommends that customers set up a break glass account before logging in to Microsft Entra Connect. For more info, see [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md).
+
+#### Description
+
+This is a scenario when a customer wants to migrate from hybrid to cloud-only. The admin initiates a call to Entra Connect in attempt to move users out of scope, but Entra Connect returns the Error Type 114: "This synchronization operation, Delete, isn't valid. Contact Technical Support."
+
+Possible causes of this error include: 
+
+- The call to Entra Connect has no UPN, a new or unique GUID, or other required information.
+- AAD Connect is trying to export data, but it has `DirSync Enabled` set to False.
+- AAD Sync is trying to delete a restored user or other object. This is usually because a user or other object reference has been moved to an unsynced organizational unit (OU) or Lost & Found app. 
+
+#### Possible scenarios
+
+The AADConnect client is failing to delete users during migration from hybrid to cloud only, resulting in Error Type 114. 
+
+Potential reasons for users to not be deleted include: 
+
+- The rule created by the customer to move users out of scope is based on the `Admin` attribute. 
+- Error Type 114 is being returned during the synchronization (AAD Sync) operation, resulting in a failure to delete users.
+- AAD Sync fails for specific features, resulting in users not being deleted accordingly.
+
+#### Error example 
+
+Example of the export error:
+
+```
+TimeOccurred (UTC) 2021-10-20 23:51:28
+MachineId 321d15e1-4ad6-49c7-918b-40a62a5140bd
+Connector Name IDEXX.onmicrosoft.com - AAD
+ErrorType 114
+ErrorCode 0x8023134a
+ErrorLiteral This synchronization operation, Delete, is not valid. Contact Technical Support. Tracking Id: 09fb1e9b-3ff7-4163-9731-581785e347e5
+ServerErrorDetail N/A
+CsObjectIdentifier {2819A5C8-BE27-EC11-A970-000D3A1B4EEE}
+Dn CN={783456306961654236304B58786A66746377643748773D3D}
+```
+
+#### Fix the error
+
+To resolve this issue:
+
+1. Identify the problem object reference. 
+1. Use PowerShell to move the cloud account to the *Azure Recycle Bin*:
+   - Run `Start-ADSyncSyncCyle -PolicyType Delta` which should successfully import the data.
+1. Confirm that the deletion was successful.
+1. Restore the user from the Recycle Bin.
+1. Run `Start-ADSyncSyncCyle -PolicyType Delta` on the server to confirm the error does not occur again.
+
+If the steps above do not work, your case may be eligible for an Incident Reponse (IR) escalation. For more info, see [Security incident management overview](/compliance/assurance/assurance-incident-management)
 
 ## LargeObject or ExceededAllowedLength
 

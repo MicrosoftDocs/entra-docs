@@ -4,9 +4,9 @@ description: Find code samples for applications you can run in a customer tenant
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: sample
 ms.date: 08/17/2023
 ms.author: mimart
