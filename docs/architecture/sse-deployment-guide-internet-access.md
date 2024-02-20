@@ -249,7 +249,7 @@ Use Microsoft Entra Internet Access to block or allow access to internet sites b
 1. On **Network traffic**, select **Stop collecting**.
 1. Scroll to observe the traffic related to your attempt to open the FQDN and associated data. Note the **Internet Access** in the **Channel** columns. Conditional Access policies are written as claims to your token that have a one-hour lifetime. It can take up to one hour for new Conditional Access policies to apply to your client device. Because changes propagate across Microsoft Entra, it can take up to 20 minutes for web-filtering policy and security-profile changes to apply to your client device.
 
-   [ ![Screenshot of Global Secure Access - Advanced diagnostic, Network traffic.](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-internet-access-traffic-expanded.png)](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-internet-access-traffic-expanded.png#lightbox)
+   [ ![Screenshot of Global Secure Access - Advanced diagnostic, Network traffic.](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-internet-access-traffic-inline.png)](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-internet-access-traffic-inline.png#lightbox)
     
 1. On your test device \> System Tray \>, expand options \> right-click **Global Secure Access client**. Select **Pause**.
 
