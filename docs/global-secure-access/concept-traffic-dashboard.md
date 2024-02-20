@@ -6,7 +6,7 @@ ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: conceptual
 ms.date: 01/25/2024
-ms.service: network-access
+ms.service: global-secure-access
 ---
 
 # Global Secure Access (preview) network traffic dashboard

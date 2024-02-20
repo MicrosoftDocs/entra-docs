@@ -53,6 +53,8 @@
       href: concept-continuous-access-evaluation-strict-enforcement.md
     - name: CAE for workload identities
       href: concept-continuous-access-evaluation-workload.md
+  - name: Adaptive session lifetimes
+    href: concept-session-lifetime.md
   - name: Filter for devices
     href: concept-condition-filters-for-devices.md
   - name: What if tool

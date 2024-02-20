@@ -4,8 +4,8 @@ description: View the enterprise applications that are registered to use your Mi
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: quickstart
 ms.date: 03/23/2023

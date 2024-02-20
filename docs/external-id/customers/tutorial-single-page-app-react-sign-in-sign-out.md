@@ -5,8 +5,8 @@ description: Learn how to configure a React single-page app (SPA) to sign in and
 author: godonnell
 manager: celestedg
 
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: tutorial
 ms.date: 05/23/2023
 ms.author: godonnell

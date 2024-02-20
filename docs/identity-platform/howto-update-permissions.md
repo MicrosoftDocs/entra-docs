@@ -6,13 +6,11 @@ manager: celesteDG
 ms.author: jomondi
 ms.date: 12/05/2023
 ms.reviewer: yuhko, ergreenl
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
-ms.workload: identity
 services: active-directory
 zone_pivot_groups: enterprise-apps-with-ms-graph
-#Customer intent:
 ---
 # Update an app's requested permissions in Microsoft Entra ID
 

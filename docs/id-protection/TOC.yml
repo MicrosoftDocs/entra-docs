@@ -46,6 +46,8 @@
       href: howto-identity-protection-graph-api.md
   - name: Provide feedback on risk detections
     href: howto-identity-protection-risk-feedback.md
+  - name: Impact analysis workbook
+    href: workbook-risk-based-policy-impact.md
   - name: FAQs
     href: troubleshooting-identity-protection-faq.yml
 - name: Reference

@@ -1,19 +1,16 @@
 ---
 title: 'Tools used for synchronization'
 description: This article introduces the various tools that can be used to synchronize the cloud with on-premises environments.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Tools used for synchronization

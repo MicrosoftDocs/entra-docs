@@ -6,14 +6,12 @@ summary: Learn how to use Microsoft Entra ID Protection to identify and address 
 metadata:
   title: Microsoft Entra ID Protection documentation
   description: Learn how to use Microsoft Entra ID Protection to identify and address identity risks in your organization
-  services: active-directory
-  ms.service: active-directory
-  ms.subservice: identity-protection
+  ms.service: entra-id-protection
   ms.topic: landing-page
   author: MicrosoftGuyJFlo
   ms.author: joflore
   ms.date: 06/20/2023
-  ms.collection: M365-identity-device-management
+  
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
 

@@ -1,18 +1,14 @@
 ---
-title: Manage external access to resources with Conditional Access 
+title: Manage external access to resources with Conditional Access
 description: Learn to use Conditional Access policies to secure external access to resources.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/23/2023
 ms.author: jricketts
 ms.reviewer: ajburnle
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Manage external access to resources with Conditional Access policies 

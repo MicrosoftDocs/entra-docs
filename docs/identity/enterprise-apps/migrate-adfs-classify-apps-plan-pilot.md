@@ -4,8 +4,8 @@ description: This article describes phase 2 of planning migration of application
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: conceptual
 
 ms.date: 05/30/2023

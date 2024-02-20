@@ -4,9 +4,9 @@ description: Learn how to add an application to a user flow to associate the app
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 07/24/2023
 ms.author: mimart

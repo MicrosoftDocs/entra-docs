@@ -1,6 +1,6 @@
 ---
 author: barclayn
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: include
 ms.date: 10/26/2023
 ms.author: barclayn

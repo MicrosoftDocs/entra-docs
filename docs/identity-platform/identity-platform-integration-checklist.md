@@ -6,9 +6,9 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom: scenarios:getting-started, has-adal-ref
 ms.date: 11/22/2023
-ms.reviewer: lenalepa, sureshja, jesakowi
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: sureshja, jesakowi
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn about best practices so I can integrate my application with the Microsoft identity platform.
 ---

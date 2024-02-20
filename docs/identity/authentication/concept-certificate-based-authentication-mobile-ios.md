@@ -2,8 +2,7 @@
 title: Microsoft Entra certificate-based authentication on Apple devices
 description: Learn about Microsoft Entra certificate-based authentication on Apple devices that run macOS or iOS
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 02/09/2023
@@ -12,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: vimrang
-
-ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
 ---
 # Microsoft Entra certificate-based authentication on iOS and macOS

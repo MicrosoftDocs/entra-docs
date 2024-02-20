@@ -1,14 +1,12 @@
 ---
 title: Microsoft Entra Domain Services troubleshooting | Microsoft Docs'
 description: Learn how to troubleshoot common errors when you create or manage Microsoft Entra Domain Services
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 
 ms.assetid: 4bc8c604-f57c-4f28-9dac-8b9164a0cf0b
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: troubleshooting
 ms.date: 11/26/2023

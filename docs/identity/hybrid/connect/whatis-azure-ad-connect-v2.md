@@ -1,16 +1,15 @@
 ---
 title: 'Introduction to Microsoft Entra Connect V2'
 description: Learn about the next version of Microsoft Entra Connect.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: overview
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management, has-adal-ref
+ms.collection: has-adal-ref
 ---
 
 # Introduction to Microsoft Entra Connect V2

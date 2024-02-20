@@ -1,12 +1,11 @@
 ---
 title: Understand and solve Microsoft Entra application proxy CORS issues
-description: Provides an understanding of CORS in Microsoft Entra application proxy, and how to identify and solve CORS issues. 
-services: active-directory
+description: Provides an understanding of CORS in Microsoft Entra application proxy, and how to identify and solve CORS issues.
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 02/06/2024
 ms.author: kenwith
@@ -114,4 +113,4 @@ Some CORS issues can't be resolved, such as when your app redirects to *login.mi
 ## See also
 - [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md) 
 - [Plan a Microsoft Entra application proxy deployment](conceptual-deployment-plan.md) 
-- [Remote access to on-premises applications through Microsoft Entra application proxy](application-proxy.md)
+- [Remote access to on-premises applications through Microsoft Entra application proxy](overview-what-is-app-proxy.md)

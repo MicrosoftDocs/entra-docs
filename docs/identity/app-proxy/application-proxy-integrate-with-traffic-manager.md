@@ -4,7 +4,7 @@ description: Learn how to combine the Application Proxy service with a Traffic M
 author: kenwith
 ms.author: kenwith
 ms.reviewer: ashishj
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
 ms.date: 09/14/2023

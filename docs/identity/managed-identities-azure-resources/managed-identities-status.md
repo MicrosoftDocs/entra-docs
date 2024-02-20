@@ -1,15 +1,15 @@
 ---
 title: Azure Services with managed identities support
 description: List of services supporting managed identities
-services: active-directory
+
 author: barclayn
 ms.author: barclayn
 ms.date: 05/25/2023
 ms.topic: conceptual
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 manager: amycolannino
-ms.collection: M365-identity-device-management
+
 ---
 
 # Azure services that can use managed identities to access other services

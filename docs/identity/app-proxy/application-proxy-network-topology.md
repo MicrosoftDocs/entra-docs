@@ -1,12 +1,11 @@
 ---
 title: Network topology considerations for Microsoft Entra application proxy
 description: Covers network topology considerations when using Microsoft Entra application proxy.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 01/25/2024
 ms.author: kenwith

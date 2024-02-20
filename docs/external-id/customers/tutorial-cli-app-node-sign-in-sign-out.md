@@ -6,9 +6,9 @@ author: Dickson-Mwendia
 manager: mwongerapk
 
 ms.author: dmwendia
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: tutorial
 ms.date: 08/04/2023
 ms.custom: developer, devx-track-js

@@ -6,8 +6,8 @@ ms.author: kenwith
 manager: amycolannino
 ms.topic: reference
 ms.date: 11/03/2023
-ms.service: network-access
-ms.custom:
+ms.service: global-secure-access
+ms.subservice: entra-internet-access
 ---
 # Global Secure Access (preview) Web content filtering categories
 

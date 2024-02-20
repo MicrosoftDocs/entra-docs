@@ -4,9 +4,9 @@ title: Common sign-in diagnostics AD scenarios
 description: Learn about the scenarios supported by the sign-in diagnostics for Microsoft Entra ID.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 12/15/2023
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14

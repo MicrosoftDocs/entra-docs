@@ -5,8 +5,8 @@ description: Admin guide to use Atlassian Jira and Confluence with Microsoft Ent
 author: dhivyagana
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022

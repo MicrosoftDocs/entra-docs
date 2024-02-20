@@ -1,10 +1,8 @@
 ---
 title: Configure Microsoft Entra HIPAA additional safeguards
 description: Guidance on how to configure Microsoft Entra HIPAA additional control safeguards
-services: active-directory 
-ms.service: active-directory
-ms.subservice: fundamentals
-ms.workload: identity
+ms.service: entra
+ms.subservice: standards
 ms.topic: how-to
 author: janicericketts
 ms.author: jricketts
@@ -12,7 +10,6 @@ manager: martinco
 ms.reviewer: martinco
 ms.date: 04/13/2023
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Other safeguard guidance 
@@ -139,3 +136,5 @@ Establish policies and procedures to protect data exchange that contains PHI dat
 * [Audit Controls Safeguard guidance](hipaa-audit-controls.md)
 
 * [Other Safeguard guidance](hipaa-other-controls.md)
+
+* [Configure HITRUST controls](hipaa-hitrust-controls.md)

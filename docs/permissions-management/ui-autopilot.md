@@ -1,12 +1,10 @@
 ---
 title: View rules in the Autopilot dashboard in Permissions Management
 description: How to view rules in the Autopilot dashboard in Permissions Management.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
-ms.subservice: ciem
-ms.workload: identity
+ms.service: entra-permissions-management
+
 ms.topic: overview
 ms.date: 02/16/2023
 ms.author: jfields

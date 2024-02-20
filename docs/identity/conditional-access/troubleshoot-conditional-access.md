@@ -2,8 +2,7 @@
 title: Troubleshooting sign-in problems with Conditional Access
 description: This article describes what to do when your Conditional Access policies result in unexpected outcomes
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: troubleshooting
 ms.date: 03/31/2023
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: calebb
-
-ms.collection: M365-identity-device-management
 ---
 # Troubleshooting sign-in problems with Conditional Access
 

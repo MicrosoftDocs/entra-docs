@@ -2,8 +2,8 @@
 title: Primary Refresh Token (PRT) and Microsoft Entra ID
 description:  What is the role of and how do we manage the Primary Refresh Token (PRT) in Microsoft Entra ID?
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
 ms.date: 01/31/2024
@@ -12,7 +12,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: ravenn
-ms.collection: M365-identity-device-management
 ---
 # What is a Primary Refresh Token?
 

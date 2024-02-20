@@ -4,11 +4,11 @@ description: Use our quickstart to set up the customer tenant free trial.
  
 author: csmulligan
 manager: CelesteDG
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: quickstart
-ms.date: 12/14/2023
+ms.date: 02/09/2024
 ms.author: cmulligan
 ms.custom: it-pro
 

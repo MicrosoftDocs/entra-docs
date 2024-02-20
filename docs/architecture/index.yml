@@ -8,12 +8,10 @@ metadata:
   description: "Learn how to securely manage access to your services and resources using Microsoft Entra ID."
   ms.author: martinco
   manager: travisgr
-  ms.collection: na
   ms.date: 07/26/2023
-  ms.service: active-directory
-  ms.subservice: fundamentals
+  ms.service: entra
+  ms.subservice: architecture
   ms.topic: landing-page
-  services: active-directory
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
 

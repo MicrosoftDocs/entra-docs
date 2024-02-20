@@ -1,11 +1,10 @@
 ---
 title: Microsoft Entra ID Governance service limits
-description: This article details service limits for offerings within Microsoft Entra ID Governance 
+description: This article details service limits for offerings within Microsoft Entra ID Governance
 author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 10/30/2023
 

@@ -1,22 +1,14 @@
 ---
 title: Configure separation of duties for an access package in entitlement management
 description: Learn how to configure separation of duties enforcement for requests for an access package in entitlement management.
-services: active-directory
-documentationCenter: ''
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
-ms.reviewer: 
-ms.collection: M365-identity-device-management
-
 #Customer intent: As a global administrator or access package manager, I want to configure that a user cannot request an access package if they already have incompatible access.
-
 ---
 # Configure separation of duties checks for an access package in entitlement management
 

@@ -1,22 +1,19 @@
 ---
 title: 'Microsoft Entra Connect: Features in preview'
 description: This topic describes in more detail features which are in preview in Microsoft Entra Connect.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: c75cd8cf-3eff-4619-bbca-66276757cc07
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # More details about features in preview
 This topic describes how to use features currently in preview.

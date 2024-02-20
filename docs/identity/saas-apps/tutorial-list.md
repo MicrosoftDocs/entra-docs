@@ -4,8 +4,8 @@ description: Configure Microsoft Entra single sign-on integration with a variety
 
 author: jeevansd
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.topic: landing-page
 
 ms.date: 01/30/2024

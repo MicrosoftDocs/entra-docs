@@ -2,19 +2,16 @@
 title: Configure Microsoft Entra multifactor authentication
 description: Learn how to configure settings for Microsoft Entra multifactor authentication
 
-services: multi-factor-authentication
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/18/2023
+ms.date: 02/14/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jupetter
-
-ms.collection: M365-identity-device-management
-ms.custom: contperf-fy20q4
 ---
 # Configure Microsoft Entra multifactor authentication settings
 
@@ -26,6 +23,7 @@ The following Microsoft Entra multifactor authentication settings are available:
 | ------- | ----------- |
 | [Account lockout (MFA Server only)](#account-lockout-mfa-server-only) | Temporarily lock accounts from using Microsoft Entra multifactor authentication if there are too many denied authentication attempts in a row. This feature applies only to users who use MFA Server to enter a PIN to authenticate. |
 | [Block/unblock users](#block-and-unblock-users) | Block specific users from being able to receive Microsoft Entra multifactor authentication requests. Any authentication attempts for blocked users are automatically denied. Users remain blocked for 90 days from the time that they're blocked or until they're manually unblocked. |
+| [Fraud alert](#fraud-alert) | Configure settings that allow users to report fraudulent verification requests. |
 | [Report suspicious activity](#report-suspicious-activity) | Configure settings that allow users to report fraudulent verification requests. |
 | [Notifications](#notifications) | Enable notifications of events from MFA Server. |
 | [OATH tokens](concept-authentication-oath-tokens.md) | Used in cloud-based Microsoft Entra multifactor authentication environments to manage OATH tokens for users. |
@@ -80,6 +78,28 @@ To unblock a user, complete the following steps:
 1. In the **Action** column next to the user, select **Unblock**.
 1. Enter a comment in the **Reason for unblocking** box.
 1. Select **OK** to unblock the user.
+
+## Fraud alert
+
+The Fraud alert feature lets users report fraudulent attempts to access their resources. When an unknown and suspicious MFA prompt is received, users can report the fraud attempt by using the Microsoft Authenticator app or through their phone.
+
+Microsoft recommends using [Report suspicious activity](#report-suspicious-activity) instead of Fraud alert due to its integration with Identity Protection for risk-driven remediation, better reporting capabilities, and least-privileged administration.
+
+The following fraud alert configuration options are available:
+
+* **Automatically block users who report fraud**. If a user reports fraud, the Azure AD Multifactor Authentication attempts for the user  account are blocked for 90 days or until an administrator unblocks the account. An administrator can review sign-ins by using the sign-in report, and take appropriate action to prevent future fraud. An administrator can then [unblock](#unblock-a-user) the user's account.
+* **Code to report fraud during initial greeting**. When users receive a phone call to perform multifactor authentication, they normally press **#** to confirm their sign-in. To report fraud, the user enters a code before pressing **#**. This code is **0** by default, but you can customize it. If automatic blocking is enabled, after the user presses **0#** to report fraud, they need to press **1** to confirm the account blocking.
+
+   > [!NOTE]
+   > The default voice greetings from Microsoft instruct users to press **0#** to submit a fraud alert. If you want to use a code other than **0**, record and upload your own custom voice greetings with appropriate instructions for your users.
+
+To enable and configure fraud alerts, complete the following steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Browse to **Protection** > **Multifactor authentication** > **Fraud alert**.
+1. Set **Allow users to submit fraud alerts** to **On**.
+1. Configure the **Automatically block users who report fraud** or **Code to report fraud during initial greeting** setting as needed.
+1. Select **Save**.
 
 ## Report suspicious activity
 
@@ -145,7 +165,7 @@ Programmable OATH TOTP hardware tokens that can be reseeded can also be set up w
 
 OATH hardware tokens are supported as part of a public preview. For more information about previews, see [Supplemental Terms of Use for Microsoft Azure Previews](https://aka.ms/EntraPreviewsTermsOfUse).
 
-![Screenshot that shows the OATH tokens section.](media/concept-authentication-methods/mfa-server-oath-tokens-azure-ad.png)
+![Screenshot that shows the OATH tokens section.](media/concept-authentication-methods/oath-tokens.png)
 
 After you acquire tokens, you need to upload them in a comma-separated values (CSV) file format. Include the UPN, serial number, secret key, time interval, manufacturer, and model, as shown in this example:
 
@@ -345,7 +365,7 @@ To enable trusted IPs by using Conditional Access policies, complete the followi
       `c:[Type== "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"] => issue(claim = c);`
 
      >[!NOTE]
-     >The **Skip multi-factor authentication for requests from federated users on my intranet** option will affect the Conditional Access evaluation for locations. Any request with the **insidecorporatenetwork** claim would be treated as coming from a Trusted location if that option is selected.
+     >The **Skip multifactor authentication for requests from federated users on my intranet** option will affect the Conditional Access evaluation for locations. Any request with the **insidecorporatenetwork** claim would be treated as coming from a Trusted location if that option is selected.
 
    * **For requests from a specific range of public IPs**: To choose this option, enter the IP addresses in the text box, in CIDR notation.
       * For IP addresses that are in the range *xxx.xxx.xxx*.1 through *xxx.xxx.xxx*.254, use notation like ***xxx.xxx.xxx*.0/24**.
@@ -425,9 +445,9 @@ The feature reduces the number of authentications on web apps, which normally pr
 >
 > The **remember multifactor authentication** feature isn't compatible with B2B users and won't be visible for B2B users when they sign in to the invited tenants.
 >
-> The **remember multifactor authentication** feature isn't compatible with the Sign-in frequency Conditional Access control. For more information, see [Configure authentication session management with Conditional Access](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#configuring-authentication-session-controls).
+> The **remember multifactor authentication** feature isn't compatible with the Sign-in frequency Conditional Access control. For more information, see [Configure authentication session management with Conditional Access](~/identity/conditional-access/concept-session-lifetime.md#configuring-authentication-session-controls).
 
-<a name='enable-remember-multi-factor-authentication'></a>
+<a name='enable-remember-multifactor-authentication'></a>
 
 #### Enable remember multifactor authentication
 

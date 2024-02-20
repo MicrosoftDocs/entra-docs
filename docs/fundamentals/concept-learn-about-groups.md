@@ -1,18 +1,16 @@
 ---
 title: Learn about groups and group membership
 description: Information about Microsoft Entra groups and access rights
-services: active-directory
 author: shlipsey3
 manager: amycolannino
 
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 01/05/2024
 ms.author: sarahlipsey
 ms.reviewer: krbain
-ms.custom: "it-pro, seodec18"                      
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ---
 # Learn about groups and access rights in Microsoft Entra ID

@@ -2,8 +2,8 @@
 title: Join a new Windows 11 device with Microsoft Entra ID during the out of box experience
 description: How users can set up Microsoft Entra join during OOBE.
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: tutorial
 ms.date: 08/31/2022
@@ -13,7 +13,6 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: ravenn
 
-ms.collection: M365-identity-device-management
 ---
 # Microsoft Entra join a new Windows device during the out of box experience
 

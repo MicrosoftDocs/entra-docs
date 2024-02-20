@@ -2,9 +2,9 @@
 title: Remediate risks and unblock users in Microsoft Entra ID Protection
 description: Learn about the options you have close active risk detections.
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: identity-protection
+
+ms.service: entra-id-protection
+
 ms.topic: how-to
 ms.date: 10/30/2023
 
@@ -13,7 +13,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: chuqiaoshi
 
-ms.collection: M365-identity-device-management
+
 ---
 # Remediate risks and unblock users
 

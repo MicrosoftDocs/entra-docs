@@ -1,13 +1,12 @@
 ---
 title: Configure provisioning using Microsoft Graph APIs
 description: Learn how to save time by using the Microsoft Graph APIs to automate the configuration of automatic provisioning.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 09/15/2023
 ms.author: kenwith
 ms.reviewer: arvinh

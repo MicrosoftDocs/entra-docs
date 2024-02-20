@@ -6,8 +6,8 @@ author: SHERMANOUKO
 manager: mwongerapk
 
 ms.author: shermanouko
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.topic: sample
 ms.date: 07/13/2023

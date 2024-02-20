@@ -1,7 +1,6 @@
 ---
 author: billmath
-ms.service: active-directory
-ms.subservice: governance
+ms.service: entra-id-governance
 ms.topic: include
 ms.date: 10/16/2019
 ms.author: billmath

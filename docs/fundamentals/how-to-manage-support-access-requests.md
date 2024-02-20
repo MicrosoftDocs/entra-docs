@@ -1,15 +1,13 @@
 ---
 title: Manage Microsoft Support access requests (preview)
 description: How to view and control support access requests to Microsoft Entra identity data
-services: active-directory
 author: shlipsey3
 manager: amycolannino
 ms.author: sarahlipsey
 ms.reviewer: jeffsta
-ms.service: active-directory
+ms.service: entra
 ms.topic: troubleshooting
 ms.subservice: fundamentals
-ms.workload: identity
 ms.date: 12/01/2023
 ---
 # Manage Microsoft Support access requests (preview)

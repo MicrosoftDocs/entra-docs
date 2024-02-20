@@ -1,12 +1,11 @@
 ---
 title: Translate links and URLs Microsoft Entra application proxy
 description: Learn how to redirect hard-coded links for apps published with Microsoft Entra application proxy.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
 ms.date: 02/06/2024
 ms.author: kenwith
@@ -126,8 +125,6 @@ To improve performance and security, some links aren't translated:
 If you need to support one of these two scenarios, use the same internal and external URLs instead of link translation.  
 
 ## Enable link translation
-
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Getting started with link translation is as easy as clicking a button:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).

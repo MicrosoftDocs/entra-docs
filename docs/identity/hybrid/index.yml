@@ -10,10 +10,10 @@ metadata:
   ms.author: billmath
   ms.collection: na
   ms.date: 05/01/2023
-  ms.service: active-directory
+  ms.service: entra-id
   ms.subservice: hybrid
   ms.topic: landing-page
-  services: active-directory
+  
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
 
