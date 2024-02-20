@@ -49,7 +49,7 @@ An application often has many resources and opens multiple connections when it's
 
 - Avoid all forms of inline inspection on outbound TLS communications between connectors and Azure. This type of inline inspection causes degradation to the communication flow.
 
-- Make sure to keep automatic updates running for your connectors. If the application proxy Connector Updater service is running, your connectors update automatically and receive the latest upgraded. If you don’t see the Connector Updater service on your server, you need to reinstall your connector to get any updates.
+- Make sure to keep automatic updates running for your connectors. If the application proxy connector Updater service is running, your connectors update automatically and receive the latest upgraded. If you don’t see the Connector Updater service on your server, you need to reinstall your connector to get any updates.
 
 ## Traffic flow between connectors and back-end application servers
 

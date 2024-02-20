@@ -15,7 +15,7 @@ ms.author: kenwith
 
 Microsoft Entra application proxy is a secure and cost-effective remote access solution for on-premises applications. It provides an immediate transition path for “Cloud First” organizations to manage access to legacy on-premises applications that aren’t yet capable of using modern protocols. For additional introductory information, see [What is application proxy](overview-what-is-app-proxy.md).
 
-application proxy is recommended for giving remote users access to internal resources. Application proxy replaces the need for a VPN or reverse proxy for these remote access use cases. It is not intended for users who are on the corporate network. These users who use application proxy for intranet access may experience undesirable performance issues.
+Application proxy is recommended for giving remote users access to internal resources. Application proxy replaces the need for a VPN or reverse proxy for these remote access use cases. It is not intended for users who are on the corporate network. These users who use application proxy for intranet access may experience undesirable performance issues.
 
 This article includes the resources you need to plan, operate, and manage Microsoft Entra application proxy.
 
@@ -32,7 +32,7 @@ You need to meet the following prerequisites before beginning your implementatio
    * A VM hosted within any hypervisor solution
    * A VM hosted in Azure to enable outbound connection to the application proxy service.
 
-* See [Understand Microsoft Entra application proxy Connectors](application-proxy-connectors.md) for a more detailed overview.
+* See [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md) for a more detailed overview.
 
      * Connector machines must [be enabled for TLS 1.2](application-proxy-add-on-premises-application.md) before installing the connectors.
 
@@ -291,15 +291,15 @@ Microsoft Entra ID provides additional insights into your organization’s appli
 
 These logs provide detailed information about logins to applications configured with application proxy and the device and the user accessing the application. [Audit logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context) are located in the Microsoft Entra admin center and in [Audit API](/graph/api/resources/directoryaudit) for export. Additionally, [usage and insights reports](~/identity/monitoring-health/concept-usage-insights-report.md?context=azure/active-directory/manage-apps/context/manage-apps-context) are also available for your application.
 
-#### application proxy Connector monitoring
+#### Application proxy connector monitoring
 
-The connectors and the service take care of all the high availability tasks. You can monitor the status of your connectors from the application proxy page in the Microsoft Entra admin center. For more information about connector maintenance see [Understand Microsoft Entra application proxy Connectors](./application-proxy-connectors.md#maintenance).
+The connectors and the service take care of all the high availability tasks. You can monitor the status of your connectors from the application proxy page in the Microsoft Entra admin center. For more information about connector maintenance see [Understand Microsoft Entra application proxy connectors](./application-proxy-connectors.md#maintenance).
 
 ![Example: Microsoft Entra application proxy connectors](./media/application-proxy-connectors/app-proxy-connectors.png)
 
 #### Windows event logs and performance counters
 
-Connectors have both admin and session logs. The admin logs include key events and their errors. The session logs include all the transactions and their processing details. Logs and counters are located in Windows Event Logs for more information see [Understand Microsoft Entra application proxy Connectors](./application-proxy-connectors.md#under-the-hood). Follow this [tutorial to configure event log data sources in Azure Monitor](/azure/azure-monitor/agents/data-sources-windows-events).
+Connectors have both admin and session logs. The admin logs include key events and their errors. The session logs include all the transactions and their processing details. Logs and counters are located in Windows Event Logs for more information see [Understand Microsoft Entra application proxy connectors](./application-proxy-connectors.md#under-the-hood). Follow this [tutorial to configure event log data sources in Azure Monitor](/azure/azure-monitor/agents/data-sources-windows-events).
 
 ### Troubleshooting guide and steps
 

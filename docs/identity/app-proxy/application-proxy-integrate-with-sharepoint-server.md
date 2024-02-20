@@ -60,7 +60,7 @@ In this step, you create an application in your Microsoft Entra tenant that uses
    1. On the application page in the portal, select **Single sign-on**.
    1. For **Single Sign-on Mode**, select **Integrated Windows Authentication**.
    1. Set **Internal Application SPN** to the value you set earlier. For this example, the value is `HTTP/sharepoint`.
-   1. Under **Delegated Login Identity**, select the most suitable option for your Active Directory forest configuration. For example if you have a single Active Directory domain in your forest, select **On-premises SAM account name** (as shown in the following screenshot). But if your users aren't in the same domain as SharePoint and the application proxy Connector servers, select **On-premises user principal name** (not shown in the screenshot).
+   1. Under **Delegated Login Identity**, select the most suitable option for your Active Directory forest configuration. For example if you have a single Active Directory domain in your forest, select **On-premises SAM account name** (as shown in the following screenshot). But if your users aren't in the same domain as SharePoint and the application proxy connector servers, select **On-premises user principal name** (not shown in the screenshot).
 
    ![Configure integrated Windows authentication for SSO](./media/application-proxy-integrate-with-sharepoint-server/configure-iwa.png)
 

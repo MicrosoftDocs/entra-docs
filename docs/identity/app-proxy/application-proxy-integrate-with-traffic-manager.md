@@ -23,7 +23,7 @@ This article explains how to configure Microsoft Entra application proxy to work
 - Apps that exist in different regions. Geo-routing is enabled per connector group co-located with the app.
 - A custom domain to use for each app.
 
-## application proxy configuration
+## Application proxy configuration
 
 To use Traffic Manager, you must configure application proxy. The configuration steps that follow refer to the following URL definitions:
 

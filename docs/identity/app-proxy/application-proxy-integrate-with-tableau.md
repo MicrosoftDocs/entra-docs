@@ -27,7 +27,7 @@ The scenario in this article assumes that you have:
  
 ## Enabling application proxy for Tableau 
 
-application proxy supports the OAuth 2.0 Grant Flow, which is required for Tableau to work properly. This means that there are no longer any special steps required to enable this application, other than configuring it by following the publishing steps below.
+Application proxy supports the OAuth 2.0 Grant Flow, which is required for Tableau to work properly. This means that there are no longer any special steps required to enable this application, other than configuring it by following the publishing steps below.
 
 
 ## Publish your applications in Azure 

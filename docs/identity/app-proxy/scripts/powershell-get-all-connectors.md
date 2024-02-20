@@ -26,7 +26,7 @@ This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mi
 ## Sample script
 
 ```powershell
-# This sample script gets all Microsoft Entra application proxy Connector groups with the included connectors.
+# This sample script gets all Microsoft Entra application proxy connector groups with the included connectors.
 #
 # Version 1.0
 #
@@ -72,7 +72,7 @@ foreach ($item in $aadapConnectorGroups) {
 }  
 
 Write-Host ("")
-Write-Host ("Number of Microsoft Entra application proxy Connector Groups: $CountOfConnectorGroups")
+Write-Host ("Number of Microsoft Entra application proxy connector Groups: $CountOfConnectorGroups")
 Write-Host ("")
 Write-Host ("Finished.") -BackgroundColor "Black" -ForegroundColor "Green"
 Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGraph cmdlet."

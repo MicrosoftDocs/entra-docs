@@ -1,6 +1,6 @@
 ---
 title: List Microsoft Entra application proxy connector groups for apps
-description: PowerShell example that lists all Microsoft Entra application proxy Connector groups with the assigned applications.
+description: PowerShell example that lists all Microsoft Entra application proxy connector groups with the assigned applications.
 
 author: kenwith
 manager: amycolannino
@@ -15,7 +15,7 @@ ms.reviewer: ashishj
 
 # Get all application proxy apps and list by connector group
 
-This PowerShell script example lists information about all Microsoft Entra application proxy Connector groups with the assigned applications.
+This PowerShell script example lists information about all Microsoft Entra application proxy connector groups with the assigned applications.
 
 [!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
 

@@ -174,9 +174,9 @@ The following examples are specific to Message Analyzer, but the principles can 
 
 For initial troubleshooting, perform the following steps:
 
-1. From services.msc, stop the Microsoft Entra application proxy Connector service.
+1. From services.msc, stop the Microsoft Entra application proxy connector service.
 
-   ![Microsoft Entra application proxy Connector service in services.msc](./media/application-proxy-configure-connectors-with-proxy-servers/services-local.png)
+   ![Microsoft Entra application proxy connector service in services.msc](./media/application-proxy-configure-connectors-with-proxy-servers/services-local.png)
 
 1. Run Message Analyzer as an administrator.
 1. Select **Start local trace**.

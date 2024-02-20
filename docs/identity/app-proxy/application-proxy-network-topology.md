@@ -49,9 +49,9 @@ In order to optimize the traffic flow and reduce latency to a connector group as
     :::image type="content" source="./media/application-proxy-network-topology/geo-routing.png" alt-text="Configure a new connector group." lightbox="./media/application-proxy-network-topology/geo-routing.png":::
 
 1. Once the new connector group is created, you can select which connectors to assign to this connector group. 
-   - You can only move connectors to your connector group if it is in a connector group using the default region. The best approach is to always start with your connectors placed in the “Default group” and then move it to the appropriate connector group.
+   - You can only move connectors to your connector group if it is in a connector group using the default region. The best approach is to always start with your connector placed in the “Default group” and then move it to the appropriate connector group.
    - You can only change the region of a connector group if there are **no** connectors assigned to it or apps assigned to it.
-1. Next assign the connector group to your applications. When accessing the apps, traffic should now go to the application proxy cloud service in the region the connector group is optimized for.
+1. Next assign the connector group to your applications. When a user accesses the app, traffic goes to the application proxy cloud service in the region the connector group is optimized for.
 
 ## Considerations for reducing latency
 
@@ -63,7 +63,7 @@ The next sections contain additional suggestions to help you reduce latency even
 
 ### Connector placement
 
-application proxy chooses the location of instances for you, based on your tenant location. However, you get to decide where to install the connector, giving you the power to define the latency characteristics of your network traffic.
+Application proxy chooses the location of instances for you, based on your tenant location. However, you get to decide where to install the connector, giving you the power to define the latency characteristics of your network traffic.
 
 When setting up the application proxy service, ask the following questions:
 

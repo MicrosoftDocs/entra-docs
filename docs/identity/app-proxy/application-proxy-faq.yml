@@ -44,7 +44,7 @@ sections:
       - question: |
          Why is the "Enable application proxy button grayed out?
         answer: |
-              Make sure you have at least a Microsoft Entra ID P1 or P2 license and a Microsoft Entra application proxy Connector installed. After you successfully install your first connector, the Microsoft Entra application proxy service is enabled automatically.
+              Make sure you have at least a Microsoft Entra ID P1 or P2 license and a Microsoft Entra application proxy connector installed. After you successfully install your first connector, the Microsoft Entra application proxy service is enabled automatically.
 
   - name: Connector configuration
     questions:
@@ -61,16 +61,16 @@ sections:
               To manually upgrade a connector:
           
               - Download the latest version of the connector. (You can find it under application proxy on the Microsoft Entra admin center. You can also find the link at [Microsoft Entra application proxy: Version release history](./application-proxy-release-version-history.md).
-              -	The installer restarts the Microsoft Entra application proxy Connector services. In some cases, a reboot of the server might be required if the installer cannot replace all files. Therefore we recommend closing all applications (i.e. Event Viewer) before you start the upgrade.
+              -	The installer restarts the Microsoft Entra application proxy connector services. In some cases, a reboot of the server might be required if the installer cannot replace all files. Therefore we recommend closing all applications (i.e. Event Viewer) before you start the upgrade.
               -	Run the installer. The upgrade process is quick and does not require providing any credentials and the connector is not re-registered.
           
       - question: |
-         Can application proxy Connector services run in a different user context than the default?
+         Can application proxy connector services run in a different user context than the default?
         answer: |
           No, this scenario isn't supported. The default settings are:
           
-          - Microsoft Entra application proxy Connector - WAPCSvc - Network Service
-          - Microsoft Entra application proxy Connector Updater - WAPCUpdaterSvc - NT Authority\System
+          - Microsoft Entra application proxy connector - WAPCSvc - Network Service
+          - Microsoft Entra application proxy connector Updater - WAPCUpdaterSvc - NT Authority\System
           
       - question: |
          Can a guest user with the Global Administrator or the Application Administrator role register the connector for the (guest) tenant?
@@ -85,7 +85,7 @@ sections:
       - question: |
          Is TLS termination (TLS/HTTPS inspection or acceleration) on traffic from the connector servers to Azure supported?
         answer: |
-              The application proxy Connector performs certificate-based authentication to Azure. TLS Termination (TLS/HTTPS inspection or acceleration) breaks this authentication method and isn't supported. Traffic from the connector to Azure must bypass any devices that are performing TLS Termination.  
+              The application proxy connector performs certificate-based authentication to Azure. TLS Termination (TLS/HTTPS inspection or acceleration) breaks this authentication method and isn't supported. Traffic from the connector to Azure must bypass any devices that are performing TLS Termination.  
 
       - question: |
          Is TLS 1.2 required for all connections?
@@ -109,7 +109,7 @@ sections:
           
           1. Select **Start**, type "Perfmon", and press ENTER.
           2. Select **Performance Monitor** and click the green **+** icon.
-          3. Add the **Microsoft Entra application proxy Connector** counters you want to monitor.
+          3. Add the **Microsoft Entra application proxy connector** counters you want to monitor.
           
       - question: |
          Does the Microsoft Entra application proxy connector have to be on the same subnet as the resource?
