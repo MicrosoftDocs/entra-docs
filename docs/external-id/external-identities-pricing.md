@@ -2,17 +2,17 @@
 title: MAU billing model for Microsoft Entra External ID
 description: Learn about Microsoft Entra External ID monthly active users (MAU) billing model for guest user collaboration (B2B) in Microsoft Entra External ID. Learn how to link your Microsoft Entra tenant to an Azure subscription.
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: B2B
+ 
+ms.service: entra-external-id
 ms.topic: conceptual
-ms.date: 10/05/2023
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.workload: identity
-ms.collection: engagement-fy23, M365-identity-device-management
+ 
+ms.collection: M365-identity-device-management
+#customer intent: As a Microsoft Entra tenant administrator, I want to link my tenant to an Azure subscription, so that I can take advantage of the monthly active users (MAU) billing model and activate MAU billing for guest user collaboration.
 ---
 
 # Billing model for Microsoft Entra External ID
@@ -30,12 +30,12 @@ To take advantage of MAU billing, your Microsoft Entra tenant must be linked to 
 
 |If your tenant is:  |You need to:  |
 |---------|---------|
-| A Microsoft Entra tenant already linked to a subscription     | Do nothing. When you use External Identities features to collaborate with guest users, you'll be automatically billed using the MAU model.        |
+| A Microsoft Entra tenant already linked to a subscription     | Do nothing. When you use External Identities features to collaborate with guest users, you're automatically billed using the MAU model.        |
 | A Microsoft Entra tenant not yet linked to a subscription     | [Link your Microsoft Entra tenant to a subscription](#link-your-azure-ad-tenant-to-a-subscription) to activate MAU billing.        |
 
 ## About monthly active users (MAU) billing
 
-In your Microsoft Entra tenant, guest user collaboration usage is billed based on the count of unique guest users with authentication activity within a calendar month. This model replaces the 1:5 ratio billing model, which allowed up to five guest users for each Microsoft Entra ID P1 or P2 license in your tenant. When your tenant is linked to a subscription and you use External Identities features to collaborate with guest users, you'll be automatically billed using the MAU-based billing model.
+In your Microsoft Entra tenant, guest user collaboration usage is billed based on the count of unique guest users with authentication activity within a calendar month. This model replaces the 1:5 ratio billing model, which allowed up to five guest users for each Microsoft Entra ID P1 or P2 license in your tenant. When your tenant is linked to a subscription and you use External Identities features to collaborate with guest users, you're automatically billed using the MAU-based billing model.
 
 Your first 50,000 MAUs per month are free for both Premium P1 and Premium P2 features. To determine the total number of MAUs, we combine MAUs from all your tenants (both External ID and Azure AD B2C) that are linked to the same subscription.
 
@@ -47,7 +47,7 @@ The pricing tier that applies to your guest users is based on the highest pricin
 
 A Microsoft Entra tenant must be linked to a resource group within an Azure subscription for proper billing and access to features.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) with an account that's been assigned at least the Contributor role within the subscription or a resource group within the subscription.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) with an account that's assigned at least the Contributor role within the subscription or a resource group within the subscription.
 
 2. Select the directory you want to link: In the Microsoft Entra admin center toolbar, select the **Settings** icon in the portal toolbar. Then on the **Portal settings | Directories + subscriptions** page, find your directory in the **Directory name** list, and then select **Switch**.
 
@@ -69,9 +69,9 @@ After you complete these steps, your Azure subscription is billed based on your 
 
 If no subscriptions are available in the **Link a subscription** pane, here are some possible reasons:
 
-- You don't have the appropriate permissions. Be sure to sign in with an Azure account that's been assigned at least the Contributor role within the subscription or a resource group within the subscription.
+- You don't have the appropriate permissions. Be sure to sign in with an Azure account that's assigned at least the Contributor role within the subscription or a resource group within the subscription.
 
-- A subscription exists, but it hasn't been associated with your directory yet. You can [associate an existing subscription to your tenant](~/fundamentals/how-subscriptions-associated-directory.md) and then repeat the steps for [linking it to your tenant](#link-your-azure-ad-tenant-to-a-subscription).
+- A subscription exists, but it isn't associated with your directory yet. You can [associate an existing subscription to your tenant](~/fundamentals/how-subscriptions-associated-directory.md) and then repeat the steps for [linking it to your tenant](#link-your-azure-ad-tenant-to-a-subscription).
 
 - No subscription exists. In the **Link a subscription** pane, you can create a subscription by selecting the link **if you don't already have a subscription you may create one here**. After you create a new subscription, you'll need to [create a resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) in the new subscription, and then repeat the steps for [linking it to your tenant](#link-your-azure-ad-tenant-to-a-subscription).
 

@@ -1,19 +1,19 @@
 ---
 title: 'Properties of an enterprise application'
 description: Learn about the properties of an enterprise application in Microsoft Entra ID.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 08/29/2023
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
 
-#Customer intent: As an administrator of a Microsoft Entra tenant, I want to learn more about the properties of an enterprise application that I can configure.
+#Customer intent: As an administrator managing enterprise applications in Microsoft Entra ID, I want to configure the properties of an application, so that I can control user access, customize the application name and logo, and manage assignment requirements.
 ---
 
 # Properties of an enterprise application

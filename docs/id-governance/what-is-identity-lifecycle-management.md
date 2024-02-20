@@ -1,25 +1,21 @@
 ---
 title: 'What is identity lifecycle management with Microsoft Entra ID?'
 description: Describes overview of identity lifecycle management.
-services: active-directory
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 08/01/2022
-ms.subservice: compliance
+ms.date: 12/20/2023
 ms.author: billmath
-ms.collection: M365-identity-device-management
 ---
 
 # What is identity lifecycle management?
 
-Identity Governance helps organizations achieve a balance between productivity. How quickly can a person have access to the resources they need, such as when they join my organization? And security. And how should their access change over time, such as due to changes to that person's employment status?
+Identity Governance helps organizations achieve a balance between *productivity* - How quickly can a person have access to the resources they need, such as when they join my organization? And *security* - How should their access change over time, such as due to changes to that person's employment status?
 
-**Identity lifecycle management** is the foundation for Identity Governance, and effective governance at scale requires modernizing the identity lifecycle management infrastructure for applications. Identity Lifecycle Management aims to automate and manage the entire digital identity lifecycle process. 
+**Identity lifecycle management** is the foundation for Identity Governance, and effective governance at scale requires modernizing the identity lifecycle management infrastructure for applications. Identity Lifecycle Management aims to automate and manage the entire digital identity lifecycle process for individuals affiliated with an organization.
 
-![Diagram of the cloud provisioning](media/what-is-provisioning/cloud-1.png)
+![Diagram of the Microsoft Entra ID relationship in provisioning with other sources and targets.](media/what-is-identity-lifecycle-management/cloud-1-id-governance.png)
 
 ## What is a digital identity?
 
@@ -31,13 +27,15 @@ Managing digital identities is a complex task, especially as it relates correlat
 
 The typical process for establishing identity lifecycle management in an organization follows these steps:
 
-1. Determine whether there are already systems of record - data sources, which the organization treats as authoritative.  For example, the organization may have an HR system Workday, and that system is authoritative for providing the current list of employees, and some of their properties such as the employee's name or department.  Or an email system such as Exchange Online may be authoritative for an employee's email address.
+1. Determine whether there are already systems of record - data sources, which the organization treats as authoritative.  For example, the organization may have an HR system such as Workday or SuccessFactors, and that system is authoritative for providing the current list of employees, and some of their properties such as the employee's name or department.  In addition, an email system such as Exchange Online may be authoritative for an additional attributes, employee's email address.
 
-2. Connect those systems of record with one or more directories and databases used by applications, and resolve any inconsistencies between the directories and the systems of record. For example, a directory may have obsolete data, such as an account for a former employee that is no longer needed. 
+2. Connect those systems of record with Microsoft Entra ID, and resolve any inconsistencies between existing users in Microsoft Entra ID and the systems of record. For example, Microsoft Entra ID may have been populated with now-obsolete data, such as a user account for a former employee that is no longer affiliated with the organization.
+
+2. Once Microsoft Entra ID has the correct users, connect Microsoft Entra ID with one or more directories and databases used by applications, and resolve any inconsistencies between those directories and the copy of the system of record data in Microsoft Entra ID. For example, a directory for an application that was previously disconnected may have obsolete data, such as an account for a former employee.
 
 3. Determine what processes can be used to supply authoritative information in the absence of a system of record.  For example, if there are digital identities for visitors, but the organization has no database for visitors, then it may be necessary to find an alternate way to determine when a digital identity for a visitor is no longer needed.
 
-4. Ensure that changes from the system of record or other processes are replicated to each of the directories or databases that require an update.
+4. Ensure that changes from the system of record or other processes are replicated through Microsoft Entra ID to each of the directories or databases that require an update.
 
 ## Identity lifecycle management for representing employees and other individuals with an organizational relationship
 
@@ -51,20 +49,26 @@ So for example, if a new employee joins your organization and that employee has 
 
 ## Identity lifecycle management for guests
 
-Similar processes are also needed for guests and other users.  Microsoft Entra entitlement management utilizes Microsoft Entra business-to-business (B2B) to provide the lifecycle controls needed to collaborate with people outside your organization who require access to your organization's resources. With Microsoft Entra B2B, external users authenticate to their home directory, but have a representation in your directory. The representation in your directory enables the user to be assigned access to your resources.  Entitlement management enables individuals outside your organization to request access, creating a digital identity for them as needed. These digital identities are automatically removed when the user loses access.  
+Similar processes are also needed for additional identities, for partners, suppliers and other guests, to enable them to collaborate or have access to resources.  Microsoft Entra entitlement management utilizes Microsoft Entra External Identities business-to-business (B2B) to provide the lifecycle controls needed to collaborate with people outside your organization who require access to your organization's resources. With Microsoft Entra B2B, external users authenticate to their home directory or identity provider, but have a representation in your organization's directory. The representation in your organization's directory enables the user to be assigned access to your resources.  Entitlement management enables individuals outside your organization to request access, creating a digital identity for them as needed. These digital identities are automatically removed when the user loses access.  
 
 <a name='how-does-azure-ad-automate-identity-lifecycle-management'></a>
 
 ## How does Microsoft Entra ID automate identity lifecycle management?
 
-Microsoft Entra ID currently provides these features:
+In Microsoft Entra ID Governance, you can automate identity lifecycle processes using:
 
-* Users representing employees can be automatically created and updated in Microsoft Entra ID and Active Directory using [HR-driven provisioning](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)
-* Users already present in Active Directory can be automatically created and maintained in Microsoft Entra ID using [inter-directory provisioning](~/identity/hybrid/what-is-inter-directory-provisioning.md)
-* Users can be automatically assigned to groups based on their properties, using [dynamic groups](~/external-id/use-dynamic-groups.md#what-are-dynamic-groups) and can, upon request, be assigned to groups, Teams, Microsoft Entra roles, Azure resource roles, and SharePoint Online sites, using [entitlement management](entitlement-management-scenarios.md) and [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md)
-* Updates to users can be automatically sent to more applications using [app provisioning](~/identity/app-provisioning/user-provisioning.md)
+- [Inbound provisioning from your organization's HR sources](~/identity/app-provisioning/plan-cloud-hr-provision.md), retrieves worker information from Workday and SuccessFactors, to automatically maintain user identities in both Active Directory and Microsoft Entra ID.
+- Users already present in Active Directory can be automatically created and maintained in Microsoft Entra ID using [inter-directory provisioning](~/identity/hybrid/what-is-inter-directory-provisioning.md).
+- [Lifecycle workflows](what-are-lifecycle-workflows.md) automate workflow tasks that run at certain key events, such before a new employee is scheduled to start work at the organization, as they change status during their time in the organization, and as they leave the organization. For example, a workflow can be configured to send an email with a temporary access pass to a new user's manager, or a welcome email to the user, on their first day.
+- [Automatic assignment policies in entitlement management](entitlement-management-access-package-auto-assignment-policy.md) add and remove a user's group memberships, application roles, and SharePoint site roles, based on changes to the user's attributes. Users can also upon request, be assigned to groups, Teams, Microsoft Entra roles, Azure resource roles, and SharePoint Online sites, using [entitlement management](entitlement-management-scenarios.md) and [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md).
+- Once the users are in Microsoft Entra ID with the correct group memberships and app role assignments, [user provisioning](what-is-provisioning.md) can create, update and remove user accounts in other applications, with connectors to hundreds of cloud and on-premises applications via SCIM, LDAP and SQL.
+- For guest lifecycle, you can specify in [entitlement management](entitlement-management-overview.md) the other organizations whose users are allowed to request access to your organization's resources. When one of those users's request is approved, they are automatically added by entitlement management as a [B2B](~/external-id/what-is-b2b.md) guest to your organization's directory, and assigned appropriate access. And entitlement management automatically removes the B2B guest user from your organization's directory when their access rights expire or are revoked.
+- [Access reviews](access-reviews-overview.md) automates recurring reviews of existing guests already in your organization's directory, and removes those users from your organization's directory when they no longer need access.
 
-## Next steps 
+## License requirements
+[!INCLUDE [active-directory-entra-governance-license.md](~/includes/entra-entra-governance-license.md)]
+
+## Next steps
 
 - [What is provisioning?](what-is-provisioning.md)
 - [Govern access for external users in Microsoft Entra entitlement management](./entitlement-management-external-users.md)

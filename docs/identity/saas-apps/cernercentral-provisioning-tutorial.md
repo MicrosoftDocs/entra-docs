@@ -1,12 +1,12 @@
 ---
 title: 'Tutorial: User provisioning for Cerner Central'
 description: Learn how to configure Microsoft Entra ID to automatically provision users to a roster in Cerner Central.
-services: active-directory
+
 author: ArvindHarinder1
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: arvinh

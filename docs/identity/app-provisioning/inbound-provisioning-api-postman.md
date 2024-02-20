@@ -1,19 +1,18 @@
 ---
 title: Quickstart API-driven inbound provisioning with Postman
 description: Learn how to get started quickly with API-driven inbound provisioning using Postman
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.author: kenwith
 ms.reviewer: cmmdesai
 ---
 
-# Quickstart API-driven inbound provisioning with Postman
+# Quickstart API-driven inbound provisioning with Postman (Public preview)
 
 This tutorial describes how you can quickly test [API-driven inbound provisioning](inbound-provisioning-api-concepts.md) with Postman.
 
@@ -41,7 +40,6 @@ In this step, you'll configure the Postman app and invoke the API using the conf
 1. Paste the values in the table for each variable under the column **Initial value** and **Current value**. 
      :::image type="content" source="media/inbound-provisioning-api-postman/postman-authentication-variables.png" alt-text="Screenshot of authentication variables" lightbox="media/inbound-provisioning-api-postman/postman-authentication-variables.png":::     
 1. Open your provisioning app landing page and copy-paste the value of **Job ID** for the `jobId` variable and the value of **Provisioning API endpoint** for the `bulk_upload_endpoint` variable
-      :::image type="content" source="media/inbound-provisioning-api-configure-app/provisioning-api-endpoint.png" alt-text="Screenshot of Provisioning API endpoint." lightbox="media/inbound-provisioning-api-configure-app/provisioning-api-endpoint.png":::
 1. Leave the value of **ms_graph_resource_id** unchanged and save the environment collection. Make sure that both **Initial value** and **Current value** columns are populated. 
 1. Next, open the collection **Microsoft Entra Inbound Provisioning**.
 1. From the **Environment** dropdown, select **Test-API2AAD**.
@@ -75,7 +73,6 @@ You can verify the processing either from the Microsoft Entra admin center or us
 
 1. Click on any record in the provisioning logs to view additional processing details.
 1. The provisioning log details screen displays all the steps executed for a specific user. 
-      [![Screenshot of provisioning logs details.](media/inbound-provisioning-api-curl-tutorial/provisioning-log-details.png)](media/inbound-provisioning-api-curl-tutorial/provisioning-log-details.png#lightbox)
       * Under the **Import from API** step, see details of user data extracted from the bulk request.
       * The **Match user** step shows details of any user match based on the matching identifier. If a user match happens, then the provisioning service performs an update operation. If there is no user match, then the provisioning service performs a create operation.
       * The **Determine if User is in scope** step shows details of scoping filter evaluation. By default, all users are processed. If you have set a scoping filter (example, process only users belonging to the Sales department), the evaluation details of the scoping filter displays in this step.

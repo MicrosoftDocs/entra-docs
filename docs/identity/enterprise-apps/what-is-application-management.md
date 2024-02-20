@@ -1,26 +1,26 @@
 ---
 title: What is application management?
 description: An overview of managing the lifecycle of an application in Microsoft Entra ID.
-services: active-directory
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: overview
-ms.workload: identity
-ms.date: 12/07/2022
+ms.date: 12/19/2023
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
+
+#customer intent: As an IT administrator managing applications in Microsoft Entra ID, I want to understand the process of application management, including developing, adding, connecting, managing access, configuring properties, securing the application, governing and monitoring, and cleaning up, so that I can effectively manage applications in the cloud.
 ---
 
 # What is application management in Microsoft Entra ID?
 
-Application management in Microsoft Entra ID is the process of creating, configuring, managing, and monitoring applications in the cloud. When an [application](~/identity-platform/app-objects-and-service-principals.md) is registered in a Microsoft Entra tenant, users who have been assigned to it can securely access it. Many types of applications can be registered in Microsoft Entra ID. For more information, see [Application types for the Microsoft identity platform](~/identity-platform/v2-app-types.md).
+Application management in Microsoft Entra ID is the process of creating, configuring, managing, and monitoring applications in the cloud. When an [application](~/identity-platform/app-objects-and-service-principals.md) is registered in a Microsoft Entra tenant, users who are already assigned to it can securely access it. Many types of applications can be registered in Microsoft Entra ID. For more information, see [Application types for the Microsoft identity platform](~/identity-platform/v2-app-types.md).
 
 In this article, you learn these important aspects of managing the lifecycle of an application:
 
-- **Develop, add, or connect** – You take different paths depending on whether you're developing your own application, using a pre-integrated application, or connecting to an on-premises application.
+- **Develop, add, or connect** – You take different paths depending on whether you're developing your own application, using a preintegrated application, or connecting to an on-premises application.
 - **Manage access** – Access can be managed by using single sign-on (SSO), assigning resources, defining the way access is granted and consented to, and using automated provisioning.
 - **Configure properties** – Configure the requirements for signing into the application and how the application is represented in user portals.
 - **Secure the application** – Manage configuration of permissions, multifactor authentication, Conditional Access, tokens, and certificates.
@@ -29,25 +29,25 @@ In this article, you learn these important aspects of managing the lifecycle of 
 
 ## Develop, add, or connect
 
-There are several ways that you might manage applications in Microsoft Entra ID. The easiest way to start managing an application is to use a pre-integrated application from the Microsoft Entra gallery. Developing your own application and registering it in Microsoft Entra ID is an option, or you can continue to use an on-premises application.
+There are several ways that you might manage applications in Microsoft Entra ID. The easiest way to start managing an application is to use a preintegrated application from the Microsoft Entra gallery. Developing your own application and registering it in Microsoft Entra ID is an option, or you can continue to use an on-premises application.
 
 The following image shows how these applications interact with Microsoft Entra ID.
 
-:::image type="content" source="media/what-is-application-management/app-management-overview.png" alt-text="Diagram showing how your own developed apps, pre-integrated apps, and on-premises apps can be used as enterprise apps.":::
+:::image type="content" source="media/what-is-application-management/app-management-overview.png" alt-text="Diagram showing how your own developed apps, preintegrated apps, and on-premises apps can be used as enterprise apps.":::
 
-### Pre-integrated applications
+### Preintegrated applications
 
-Many applications are already pre-integrated (shown as “Cloud applications” in the image above) and can be set up with minimal effort. Each application in the Microsoft Entra gallery has an article available that shows you the steps required to [configure the application](~/identity/saas-apps/tutorial-list.md). For a simple example of how an application can be added to your Microsoft Entra tenant from the gallery, see [Quickstart: Add an enterprise application](add-application-portal.md).
+Many applications are already preintegrated (shown as “Cloud applications” in the previous image in this article) and can be set up with minimal effort. Each application in the Microsoft Entra gallery has an article available that shows you the steps required to [configure the application](~/identity/saas-apps/tutorial-list.md). For a simple example of how an application can be added to your Microsoft Entra tenant from the gallery, see [Quickstart: Add an enterprise application](add-application-portal.md).
 
 ### Your own applications
 
-If you develop your own business application, you can register it with Microsoft Entra ID to take advantage of the security features that the tenant provides. You can register your application in **App Registrations**, or you can register it using the **Create your own application** link when adding a new application in **Enterprise applications**. Consider how [authentication](~/identity-platform/authentication-flows-app-scenarios.md) is implemented in your application for integration with Microsoft Entra ID. 
+If you develop your own business application, you can register it with Microsoft Entra ID to take advantage of the security features that the tenant provides. You can register your application in **App Registrations**, or you can register it using the **Create your own application** link when adding a new application in **Enterprise applications**. Consider how [authentication](~/identity-platform/authentication-flows-app-scenarios.md) is implemented in your application for integration with Microsoft Entra ID.
 
-If you want to make your application available through the gallery, you can [submit a request to have it added](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md).
+If you want to make your application available through the gallery, you can [submit a request to make it available](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md).
 
 ### On-premises applications
 
-If you want to continue using an on-premises application, but take advantage of what Microsoft Entra ID offers, connect it with Microsoft Entra ID using [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md). Application Proxy can be implemented when you want to publish on-premises applications externally. Remote users who need access to internal applications can then access them in a secure manner.
+If you want to continue using an on-premises application, but take advantage of what Microsoft Entra ID offers, connect it with Microsoft Entra ID using [Microsoft Entra application proxy](/entra/identity/app-proxy). Application Proxy can be implemented when you want to publish on-premises applications externally. Remote users who need access to internal applications can then access them in a secure manner.
 
 ## Manage access
 
@@ -55,9 +55,9 @@ To [manage access](what-is-access-management.md) for an application, you want to
 
 - How is access granted and consented for the application?
 - Does the application support SSO?
-- Which users, groups, and owners should be assigned to the application? 
+- Which users, groups, and owners should be assigned to the application?
 - Are there other identity providers that support the application?
-- Will it be helpful to automate the provisioning of user identities and roles?
+- Is it helpful to automate the provisioning of user identities and roles?
 
 ### Access and consent
 
@@ -65,7 +65,7 @@ You can [manage user consent settings](configure-user-consent.md) to choose whet
 
 In situations where users are unable to consent to the permissions an application is requesting, consider configuring the admin consent workflow. The workflow allows users to provide a justification and request an administrator's review and approval of an application. To learn how to configure admin consent workflow in your Microsoft Entra tenant, see [Configure admin consent workflow](configure-admin-consent-workflow.md).
 
-As an administrator, you can [grant tenant-wide admin consent](grant-admin-consent.md) to an application. Tenant-wide admin consent is necessary when an application requires permissions that regular users aren't allowed to grant. Granting tenant-wide admin consent also allows organizations to implement their own review processes. Always carefully review the permissions the application is requesting before granting consent. When an application has been granted tenant-wide admin consent, all users are able to sign into the application unless it has been configured to require user assignment.
+As an administrator, you can [grant tenant-wide admin consent](grant-admin-consent.md) to an application. Tenant-wide admin consent is necessary when an application requires permissions that regular users aren't allowed to grant. Granting tenant-wide admin consent also allows organizations to implement their own review processes. Always carefully review the permissions the application is requesting before granting consent. When an application is granted tenant-wide admin consent, all users are able to sign into the application unless you configure it to require user assignment.
 
 ### Single sign-on
 
@@ -73,11 +73,11 @@ Consider implementing SSO in your application. You can manually configure most a
 
 ### User, group, and owner assignment
 
-By default, all users can access your enterprise applications without being assigned to them. However, if you want to assign the application to a set of users, configure the application to require user assignment and assign the select users to the application. For a simple example of how to create and assign a user account to an application, see [Quickstart: Create and assign a user account](add-application-portal-assign-users.md). 
+By default, all users can access your enterprise applications without being assigned to them. However, if you want to assign the application to a set of users, configure the application to require user assignment and assign the select users to the application. For a simple example of how to create and assign a user account to an application, see [Quickstart: Create and assign a user account](add-application-portal-assign-users.md).
 
 If included in your subscription, [assign groups to an application](assign-user-or-group-access-portal.md) so that you can delegate ongoing access management to the group owner.
 
-[Assigning owners](assign-app-owners.md) is a simple way to grant the ability to manage all aspects of Microsoft Entra configuration for an application. As an owner, a user can manage the organization-specific configuration of the application. As a best practice, you should proactively monitor applications in your tenant to ensure they have at least two owners, to avoid the situation of ownerless applications. 
+[Assigning owners](assign-app-owners.md) is a simple way to grant the ability to manage all aspects of Microsoft Entra configuration for an application. As an owner, a user can manage the organization-specific configuration of the application. As a best practice, you should proactively monitor applications in your tenant to ensure they have at least two owners, to avoid the situation of ownerless applications.
 
 ### Automate provisioning
 
@@ -89,7 +89,7 @@ Do you have an identity provider that you want Microsoft Entra ID to interact wi
 
 ### User portals
 
-Microsoft Entra ID provides customizable ways to deploy applications to users in your organization. For example, the [My Apps portal or the Microsoft 365 application launcher](end-user-experiences.md). My Apps gives users a single place to start their work and find all the applications to which they have access. As an administrator of an application, you should [plan how the users in your organization will use My Apps](./myapps-overview.md).
+Microsoft Entra ID provides customizable ways to deploy applications to users in your organization. For example, the [My Apps portal or the Microsoft 365 application launcher](end-user-experiences.md). My Apps gives users a single place to start their work and find all the applications to which they have access. As an administrator of an application, you should [plan how the users in your organization use My Apps](./myapps-overview.md).
 
 ## Configure properties
 
@@ -113,17 +113,17 @@ Organizations can enable MFA with [Conditional Access](~/identity/conditional-ac
 
 ### Tokens and certificates
 
-Different types of security tokens are used in an authentication flow in Microsoft Entra ID depending on the protocol used. For example, [SAML tokens](~/identity-platform/reference-saml-tokens.md) are used for the SAML protocol, and [ID tokens](~/identity-platform/id-tokens.md) and [access tokens](~/identity-platform/access-tokens.md) are used for the OpenID Connect protocol. Tokens are signed with the unique certificate that's generated in Microsoft Entra ID and by specific standard algorithms. 
+Different types of security tokens are used in an authentication flow in Microsoft Entra ID depending on the protocol used. For example, [SAML tokens](~/identity-platform/reference-saml-tokens.md) are used for the SAML protocol, and [ID tokens](~/identity-platform/id-tokens.md) and [access tokens](~/identity-platform/access-tokens.md) are used for the OpenID Connect protocol. Tokens are signed with the unique certificate that Microsoft Entra ID generates and by specific standard algorithms.
 
 You can provide more security by [encrypting the token](howto-saml-token-encryption.md). You can also manage the information in a token including the [roles that are allowed](~/identity-platform/howto-add-app-roles-in-apps.md) for the application.
 
-Microsoft Entra ID uses the [SHA-256 algorithm](certificate-signing-options.md) by default to sign the SAML response. Use SHA-256 unless the application requires SHA-1. Establish a process for [managing the lifetime of the certificate](./tutorial-manage-certificates-for-federated-single-sign-on.md). The maximum lifetime of a signing certificate is three years. To prevent or minimize outage due to a certificate expiring, use roles and email distribution lists to ensure that certificate-related change notifications are closely monitored. 
+Microsoft Entra ID uses the [SHA-256 algorithm](certificate-signing-options.md) by default to sign the SAML response. Use SHA-256 unless the application requires SHA-1. Establish a process for [managing the lifetime of the certificate](./tutorial-manage-certificates-for-federated-single-sign-on.md). The maximum lifetime of a signing certificate is three years. To prevent or minimize outage due to a certificate expiring, use roles and email distribution lists to ensure that certificate-related change notifications are closely monitored.
 
 ## Govern and monitor
 
 [Entitlement management](~/id-governance/entitlement-management-scenarios.md) in Microsoft Entra ID enables you to manage interaction between applications and administrators, catalog owners, access package managers, approvers, and requestors.
 
-Your Microsoft Entra reporting and monitoring solution depends on your legal, security, and operational requirements and your existing environment and processes. There are several logs that are maintained in Microsoft Entra ID and you should [plan for reporting and monitoring deployment](~/identity/monitoring-health/plan-monitoring-and-reporting.md) to maintain the best experience as possible for your application.
+Your Microsoft Entra reporting and monitoring solution depends on your legal, security, and operational requirements and your existing environment and processes. There are several logs that are maintained in Microsoft Entra ID. Therefore, you should [plan for reporting and monitoring deployment](~/identity/monitoring-health/plan-monitoring-and-reporting.md) to maintain the best experience as possible for your application.
 
 ## Clean up
 

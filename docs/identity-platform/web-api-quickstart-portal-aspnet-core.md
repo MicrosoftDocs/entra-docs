@@ -1,17 +1,15 @@
 ---
 title: "Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform"
 description: In this quickstart, you download and modify a code sample that demonstrates how to protect an ASP.NET Core web API by using the Microsoft identity platform for authorization.
-services: active-directory
+ROBOTS: NOINDEX
 author: Dickson-Mwendia
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.workload: identity
-ms.date: 08/16/2022
-ROBOTS: NOINDEX
 ms.author: dmwendia
-ms.custom: devx-track-csharp, "scenarios:getting-started", "languages:aspnet-core", mode-api
+ms.custom: devx-track-csharp, scenarios:getting-started, "languages:aspnet-core", mode-api
+ms.date: 08/16/2022
+ms.service: identity-platform
+
+ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write an ASP.NET Core web API that uses the Microsoft identity platform to authorize API requests from clients.
 ---
 
@@ -33,7 +31,7 @@ ms.custom: devx-track-csharp, "scenarios:getting-started", "languages:aspnet-cor
 > 
 > - Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 > - [Microsoft Entra tenant](quickstart-create-new-tenant.md)
-> - [.NET Core SDK 3.1+](https://dotnet.microsoft.com/)
+> - A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/)
 > - [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
 > 
 > ## Step 1: Register the application
@@ -86,9 +84,7 @@ ms.custom: devx-track-csharp, "scenarios:getting-started", "languages:aspnet-cor
 > For this quickstart, don't change any other values in the *appsettings.json* file.
 > 
 > ## How the sample works
-> 
-> The web API receives a token from a client application, and the code in the web API validates the token. This scenario is explained in more detail in [Scenario: Protected web API](scenario-protected-web-api-overview.md).
-> 
+>
 > ### Startup class
 > 
 > The *Microsoft.AspNetCore.Authentication* middleware uses a `Startup` class that's executed when the hosting process starts. In its `ConfigureServices` method, the `AddMicrosoftIdentityWebApi` extension method provided by *Microsoft.Identity.Web* is called.

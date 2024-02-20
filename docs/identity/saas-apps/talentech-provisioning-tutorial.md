@@ -1,16 +1,16 @@
 ---
 title: 'Tutorial: Configure Talentech for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Talentech.
-services: active-directory
+
 documentationcenter: ''
 author: twimmers
 writer: twimmers
 manager: jeedes
 
 ms.assetid: 0a83529b-b150-4af8-bc5b-a0f4345c3356
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022

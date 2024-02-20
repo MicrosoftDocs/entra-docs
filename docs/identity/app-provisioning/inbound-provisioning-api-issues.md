@@ -3,16 +3,15 @@ title: Troubleshoot inbound provisioning API
 description: Learn how to troubleshoot issues with the inbound provisioning API.
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.workload: identity
 ms.date: 11/15/2023
 ms.author: kenwith
 ms.reviewer: chmutali
 ---
 
-# Troubleshoot inbound provisioning API issues
+# Troubleshoot inbound provisioning API issues (Public preview)
 
 ## Introduction
 

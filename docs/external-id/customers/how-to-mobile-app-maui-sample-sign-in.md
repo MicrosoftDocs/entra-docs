@@ -1,14 +1,14 @@
 ---
 title: Sign in users in a sample .NET MAUI mobile application by using Microsoft Entra ID for customers tenant
 description: Learn how to configure a sample .NET MAUI mobile to sign in and sign out users by using Microsoft Entra ID for customers tenant.
-services: active-directory
+ 
 author: henrymbuguakiarie
 manager: mwongerapk
 
 ms.author: henrymbugua
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: ciam
+ms.service: entra-external-id
+ 
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 05/22/2023
 ms.custom: developer, devx-track-dotnet

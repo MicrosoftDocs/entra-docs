@@ -1,18 +1,15 @@
 ---
 title: Build a daemon app that calls web APIs
 description: Learn how to build a daemon app that calls web APIs
-services: active-directory
 author: Dickson-Mwendia
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.workload: identity
-ms.date: 12/19/2022
 ms.author: dmwendia
+ms.custom: 
+ms.date: 02/01/2024
 ms.reviewer: jmprieur
-ms.custom: aaddev, identityplatformtop40, engagement-fy23
+ms.service: identity-platform
+
+ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform.
 ---
 
@@ -42,7 +39,7 @@ Examples of non-daemon applications:
 
 Applications that acquire a token for their own identities:
 
-- Confidential client applications, given that they access resources independently of users, need to prove their identity. As they're rather sensitive apps, they need to be approved by the Microsoft Entra tenant admins.
+- Confidential client applications, given that they access resources independently of users, need to prove their identity. Microsoft Entra tenant admins need to grant approval to these rather sensitive apps. 
 - Have registered a secret (application password or certificate) with Microsoft Entra ID. This secret is passed in during the call to Microsoft Entra ID to get a token.
 
 ## Specifics
@@ -53,7 +50,7 @@ Because users can't interact with daemon applications, incremental consent isn't
 
 For developers, the end-to-end experience for this scenario has the following aspects:
 
-- Daemon applications can work only in Microsoft Entra tenants. It wouldn't make sense to build a daemon application that attempts to manipulate Microsoft personal accounts. If you're a line-of-business (LOB) app developer, you'll create your daemon app in your tenant. If you're an ISV, you might want to create a multitenant daemon application. Each tenant admin will need to provide consent.
+- Daemon applications can work only in Microsoft Entra tenants. It wouldn't make sense to build a daemon application that attempts to manipulate Microsoft personal accounts. If you're a line-of-business (LOB) app developer, you'll create your daemon app in your tenant. If you're an ISV, you might want to create a multitenant daemon application. Each tenant admin needs to provide consent.
 - During [application registration](./scenario-daemon-app-registration.md), the reply URI isn't needed. Share secrets or certificates or signed assertions with Microsoft Entra ID. You also need to request application permissions and grant admin consent to use those app permissions.
 - The [application configuration](./scenario-daemon-app-configuration.md) needs to provide client credentials as shared with Microsoft Entra ID during the application registration.
 - The [scope](scenario-daemon-acquire-token.md#scopes-to-request) used to acquire a token with the client credentials flow needs to be a static scope.

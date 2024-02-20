@@ -1,13 +1,13 @@
 ---
 title: Sign in users in a sample Angular single-page application.
 description: Learn how to configure a sample Angular Single Page Application (SPA) using Microsoft Entra ID for customers
-services: active-directory
+ 
 author: garrodonnell
 manager: celestedg
 ms.author: godonnell
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: ciam
+ms.service: entra-external-id
+ 
+ms.subservice: customers
 ms.topic: sample
 ms.date: 06/23/2023
 ms.custom: developer

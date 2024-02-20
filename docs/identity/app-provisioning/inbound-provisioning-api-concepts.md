@@ -1,21 +1,23 @@
 ---
 title: API-driven inbound provisioning concepts
-description: An overview of API-driven inbound provisioning. 
-services: active-directory
+description: An overview of API-driven inbound provisioning.
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: reference
-ms.date: 11/15/2023
+ms.date: 09/15/2023
 ms.author: kenwith
 ms.reviewer: chmutali
 ---
 
-# API-driven inbound provisioning concepts
+# API-driven inbound provisioning concepts (Public preview)
 
 This document provides a conceptual overview of the Microsoft Entra API-driven inbound user provisioning.
+
+> [!IMPORTANT]
+> API-driven inbound provisioning is currently in public preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
 ## Introduction
 

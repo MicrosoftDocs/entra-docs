@@ -1,15 +1,15 @@
 ---
 title: Test a protected web API
 description: Learn how to test a protected web API registered in a customer tenant
-services: active-directory
+ 
 author: SHERMANOUKO
 manager: mwongerapk
 
 ms.author: shermanouko
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-external-id
+ 
 ms.custom: devx-track-dotnet
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: tutorial
 ms.date: 07/27/2023
 #Customer intent: As a dev, I want to learn how to test a protected web API registered in the Microsoft Entra ID for customers tenant.
@@ -17,7 +17,7 @@ ms.date: 07/27/2023
 
 # Test your protected API
 
-This tutorial is part of a series that helps you build and test a protected web API that is registered in a Microsoft Entra ID for customers tenant. 
+This tutorial is the final part of a series that demonstrates building and testing a protected web API that is registered in a Microsoft Entra ID for customers tenant. In [part 1 of this series](./tutorial-protect-web-api-dotnet-core-build-app.md), you created an ASP.NET Core web API and protected its endpoints. In this final step, you'll register the daemon app, and test your API.
 
 In this tutorial, you learn how to:
 
@@ -27,7 +27,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-Before going through this article, ensure you have a [protected web API](./tutorial-protect-web-api-dotnet-core-build-app.md) to use for testing purposes.
+[Tutorial: Secure an ASP.NET Core web API registered in a customer tenant](./tutorial-protect-web-api-dotnet-core-build-app.md)
 
 ## Register the daemon app 
 
@@ -99,3 +99,7 @@ Apps authenticating by themselves require app permissions.
     ```
 
     Navigate to the daemon app root directory and run app using the command `dotnet run`. This code sends a request with a valid access token. You should see the string: *Your response is: OK* printed in your console.
+
+## See also
+
+> [Enable self-service password reset](./how-to-enable-password-reset-customers.md)

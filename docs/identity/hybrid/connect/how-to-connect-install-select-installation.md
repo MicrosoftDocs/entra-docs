@@ -1,22 +1,17 @@
 ---
 title: 'Microsoft Entra Connect: Select your installation type'
 description: This topic walks you through how to select the installation type to use for Microsoft Entra Connect
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
-
-ms.assetid:
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Select which installation type to use for Microsoft Entra Connect
 Microsoft Entra Connect has two installation types for new installation: Express and customized. This topic helps you to decide which option to use during installation.
@@ -66,8 +61,8 @@ If you are currently using Azure AD Sync, then you can follow the [same steps](h
 - In-place upgrade to install Connect on the same server.
 - Swing-migration to install Connect on a new server while the existing Azure AD Sync server is still operational.
 
-## Migrate from FIM2010 or MIM2016
-If you are currently using Forefront Identity Manager 2010 or Microsoft Identity Manager 2016 with the Microsoft Entra Connector, then your only option is a migration. Follow the steps described in [swing-migration](how-to-upgrade-previous-version.md#swing-migration). In the steps, replace any mention of Azure AD Sync with FIM2010/MIM2016.
+## Migrate from MIM
+If you are currently using Microsoft Identity Manager 2016 with the Microsoft Entra Connector, then your only option is a migration. Follow the steps described in [swing-migration](how-to-upgrade-previous-version.md#swing-migration). In the steps, replace any mention of Azure AD Sync with MIM 2016.
 
 ## Next steps
 Depending on the option you have selected to use, use the table of content to the left to find your article with the detailed steps.

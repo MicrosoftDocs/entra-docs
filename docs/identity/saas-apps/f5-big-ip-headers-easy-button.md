@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with F5’s BIG-IP Easy Button for header-based SSO'
 description: Learn how to Configure SSO between Microsoft Entra ID and F5’s BIG-IP Easy Button for header-based SSO.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -33,7 +33,7 @@ Being legacy, the application lacks modern protocols to support a direct integra
 Having a BIG-IP in front of the application enables us to overlay the service with Microsoft Entra pre-authentication and headers-based SSO, significantly improving the overall security posture of the application.
 
 > [!NOTE] 
-> Organizations can also gain remote access to this type of application with [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md).
+> Organizations can also gain remote access to this type of application with [Microsoft Entra application proxy](/entra/identity/app-proxy).
 
 ## Scenario architecture
 

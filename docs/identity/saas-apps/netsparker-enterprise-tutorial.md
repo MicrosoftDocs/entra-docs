@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with Invicti'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Invicti.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -37,6 +37,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 * Invicti supports **SP and IDP** initiated SSO.
 * Invicti supports **Just In Time** user provisioning.
+* Invicti supports [Automated user provisioning](netsparker-enterprise-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.

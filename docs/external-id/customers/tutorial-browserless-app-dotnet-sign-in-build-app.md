@@ -1,25 +1,24 @@
 ---
-title: "Tutorial: Sign in users in your .NET browserless app"
-description: Learn about how to build a .NET browserless app that signs in users by using Device Code flow.
-services: active-directory
+title: "Tutorial: Add sign-in and sign-out to a .NET browserless app for a customer tenant"
+description: Learn about how to build a .NET browserless app that signs in users by using the Device Code flow.
 author: SHERMANOUKO
 manager: mwongerapk
 
 ms.author: shermanouko
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-external-id
+ 
 ms.custom: devx-track-dotnet
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: tutorial
 ms.date: 07/27/2023
 #Customer intent: As a dev, devops, I want to learn about how to enable authentication in my .NET browserless app with Microsoft Entra ID for customers tenant
 ---
 
-# Tutorial: Sign in users to your .NET browserless application
+# Tutorial: Add sign in and sign-out to a .NET browserless app for a customer tenant
 
-In this tutorial, you build your own .NET browserless app and authenticate a user using Microsoft Entra ID for customers.
+This tutorial is the final part of a series to build a .NET browserless app and prepare it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md) you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. In this tutorial, you build your own .NET browserless app and authenticate a user. Finally, you'll test your app by signing in a user.
 
-In this tutorial, you learn how to:
+In this tutorial;
 
 > [!div class="checklist"]
 >
@@ -28,10 +27,8 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- Registration details for the browserless app you created in the [prepare tenant tutorial](./tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md). You need the following details:
-  - The Application (client) ID of the .NET browserless app that you registered.
-  - The Directory (tenant) subdomain where you registered your .NET browserless app.
-- [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later.
+- [Tutorial: Prepare your customer tenant to authenticate users in a .NET browserless app](./tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md).
+- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later.
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 ## Create an ASP.NET browserless app

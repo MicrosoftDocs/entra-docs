@@ -10,6 +10,8 @@
     items:
     - name: Quickstart guide - Microsoft Entra Permissions Management
       href: permissions-management-quickstart-guide.md  
+    - name: Microsoft Entra Permissions Management operations reference
+      href: ../architecture/permissions-manage-ops-guide-intro.md
     - name: Onboard Permissions Management on the Microsoft Entra tenant
       expanded: true
       items:
@@ -164,6 +166,12 @@
     items:
     - name: Discover, remediate, and monitor with Permissions Management APIs
       href: https://go.microsoft.com/fwlink/?linkid=2252615
+    - name: API operations for AWS authorization systems
+      href: /graph/permissions-management-how-to-authorization-system-aws
+    - name: API operations for Azure authorization systems
+      href: /graph/permissions-management-how-to-authorization-system-azure
+    - name: API operations for GCP authorization systems
+      href: /graph/permissions-management-how-to-authorization-system-gcp
   - name: Troubleshoot
     expanded: false
     items:
@@ -174,9 +182,12 @@
   - name: Reference
     expanded: false
     items:
+    - name: What's new
+      href: whats-new-in-permissions-management.md 
     - name: FAQs
       href: faqs.md
     - name: Glossary
       href: multi-cloud-glossary.md
     - name: Microsoft Entra Permissions Management partners
       href: partner-list.md
+      

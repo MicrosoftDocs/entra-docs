@@ -2,14 +2,12 @@
 
 title: Reset a user's password
 description: Instructions about how to reset a user's password using Microsoft Entra ID.
-services: active-directory
 author: barclayn
 manager: amycolannino
 
 ms.assetid: fad5624b-2f13-4abc-b3d4-b347903a8f16
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: how-to
 ms.date: 01/23/2023
 ms.author: barclayn
@@ -40,7 +38,7 @@ Administrators can reset a user's password if the password is forgotten, if the 
 
     The **Alain Charon - Profile** page appears with the **Reset password** option.
 
-    ![User's profile page, with Reset password option highlighted](media/users-reset-password-azure-portal/user-profile-reset-password-link.png)
+   :::image type="content" source="media/users-reset-password-azure-portal/user-profile-reset-password-link.png" alt-text="Screenshot of the User's profile page, with Reset password option highlighted." lightbox="media/users-reset-password-azure-portal/user-profile-reset-password-link.png":::
 
 1. In the **Reset password** page, select **Reset password**.
 

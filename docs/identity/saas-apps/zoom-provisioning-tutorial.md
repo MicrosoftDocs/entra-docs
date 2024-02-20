@@ -1,24 +1,24 @@
 ---
 title: 'Tutorial: Configure Zoom for automatic user provisioning with Microsoft Entra ID'
-description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Zoom.
-services: active-directory
+description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zoom.
+
 documentationcenter: ''
 author: twimmers
 writer: Thwimmer
 manager: jeedes
 ms.assetid: d9bd44ed-2e9a-4a1b-b33c-cb9e9fe8ff47
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
-ms.devlang: na
+ms.service: entra-id
+ms.subservice: saas-apps
+
+
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 02/25/2024
 ms.author: thwimmer
 ---
 
 # Tutorial: Configure Zoom for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both Zoom and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Zoom](https://zoom.us/pricing/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This tutorial describes the steps you need to perform in both Zoom and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Zoom](https://zoom.us/pricing/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities supported
@@ -55,7 +55,6 @@ The Microsoft Entra provisioning service allows you to scope who will be provisi
 * Start small. Test with a small set of users and groups before rolling out to everyone. When scope for provisioning is set to assigned users and groups, you can control this by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 * If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
-
 
 ## Step 4: Configure automatic user provisioning to Zoom 
 
@@ -99,14 +98,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Zoom in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Zoom for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Zoom API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-   |Attribute|Type|
-   |---|---|
-   |userName|String|
-   |active|Boolean|
-   |name.givenName|String|
-   |name.familyName|String|
-   |emails[type eq "work"]|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
+   |Attribute|Type|Supported for filtering|Required by Zoom|
+   |---------|----|-----------------------|----------------|
+   |userName|String|&check;|&check;
+   |active|Boolean||
+   |name.givenName|String||
+   |name.familyName|String||
+   |emails[type eq "work"]|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
+   |userType|String||
 
 1. To configure scoping filters, refer to the following instructions provided in the [Screenshot of the Scoping filter tutorial.](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -135,7 +135,7 @@ Once you've configured provisioning, use the following resources to monitor your
 * Zoom only allows a maximum of 9,999 basic users today.
 
 ## Change log
-* 05/14/2020 - Support for UPDATE operations  added for emails[type eq "work"] attribute.
+* 05/14/2020 - Supports for UPDATE operations  added for emails[type eq "work"] attribute.
 * 10/20/2020 - Added support for two new roles **Licensed** and **on-premises** to replace existing roles **Pro** and **Corp**. Support for roles **Pro** and **Corp** will be removed in the future.
 * 05/30/2023 - Added support for new authentication method i.e. **OAuth 2.0**.
 

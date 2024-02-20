@@ -1,31 +1,40 @@
 ---
 title: Create attribute collection events (preview)
-titleSuffix: Microsoft identity platform
 description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to add logic to attribute collection.  
-services: active-directory
 author: msmimart
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: how-to
-ms.workload: identity
-ms.date: 10/27/2023
 ms.author: mimart
+ms.date: 01/23/2024
+ms.service: identity-platform
 
-#Customer intent: As an application developer, I want to create and register a custom authentication extensions API so I can add logic to the authentication flow before or after attribute collection.
+ms.topic: how-to
+titleSuffix: Microsoft identity platform
+#customer intent: As a Microsoft Entra External ID customer, I want to extend the user sign-up experience by adding custom actions before and after attribute collection, so that I can customize the attribute collection process and validate user entries.
 ---
 
-# Custom authentication extensions for attribute collection start and submit events
+# Custom authentication extensions for attribute collection start and submit events (preview)
 
 **Applies to:** Microsoft Entra External ID customer configurations
 
 This article describes how to extend the user sign-up experience in Microsoft Entra External ID for customers. In customer sign-up user flows, event listeners can be used to extend the attribute collection process before attribute collection and at the time of attribute submission:
 
 - The **OnAttributeCollectionStart** event occurs at the beginning of the attribute collection step, before the attribute collection page renders. You can add actions such as prefilling values and displaying a blocking error.
+
+    > [!TIP]
+    > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PreAttributeCollection)
+    > 
+    > To try out this feature, go to the Woodgrove Groceries demo and start the “[Prepopulate sign-up attributes](https://woodgrovedemo.com/#usecase=PreAttributeCollection)” use case.
+    
 - The **OnAttributeCollectionSubmit** event occurs after the user enters and submits attributes. You can add actions such as validating or modifying the user's entries.
 
+    > [!TIP]
+    > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PostAttributeCollection)
+    > 
+    > To try out this feature, go to the Woodgrove Groceries demo and start the “[Validate sign-up attributes](https://woodgrovedemo.com/#usecase=PostAttributeCollection)” use case, or the “[Block a user from continuing the sign-up process](https://woodgrovedemo.com/#usecase=BlockSignUp)” use case.
+    
 In addition to creating a custom authentication extension for the attribute collection start and submit events, you need to create a REST API that defines the workflow actions to take for each event. You can use any programming language, framework, and hosting environment to create and host your REST API. This article demonstrates a quick way to get started using a C# Azure Function. With Azure Functions, you run your code in a serverless environment without having to first create a virtual machine (VM) or publish a web application.
+
+
 
 ## Prerequisites
 
@@ -682,7 +691,7 @@ Follow these steps to register the **jwt.ms** web application:
 
 ### 4.2 Get the application ID
 
-In your app registration, under **Overview**, copy the **Application (client) ID**. The app ID is referred to as the `{App_to_enrich_ID}` in later steps. In Microsoft Graph, it's referenced by the **appId** property.
+In your app registration, under **Overview**, copy the **Application (client) ID**. The app ID is referred to as the `<client_id>` in later steps. In Microsoft Graph, it's referenced by the **appId** property.
 
 ### 4.3 Enable implicit flow
 
@@ -702,7 +711,7 @@ To test your custom authentication extension, follow these steps:
     https://<domainName>.ciamlogin.com/<tenant_id>/oauth2/v2.0/authorize?client_id=<client_id>&response_type=code+id_token&redirect_uri=https://jwt.ms&scope=openid&state=12345&nonce=12345
     ```
 
-   - Replace `domainName>` with your customer tenant name, and replace `<tenant-id>` with your customer tenant ID.
+   - Replace `<domainName>` with your customer tenant name, and replace `<tenant-id>` with your customer tenant ID.
    - Replace `<client_id>` with the ID for the application you added to the user flow.
 
 1. After signing in, you'll be presented with your decoded token at `https://jwt.ms`.
@@ -717,7 +726,7 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 > If the Azure function app is hosted in a different Azure tenant than the tenant in which your custom authentication extension is registered, skip to [5.1 Using OpenID Connect identity provider](#51-using-openid-connect-identity-provider) step.
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
-1. Navigate and select the function app you previously published.
+1. In the Function App service, navigate to and select the function app you previously published.
 1. Select **Authentication** in the menu on the left.
 1. Select **Add Identity provider**.  
 1. Select **Microsoft** as the identity provider.

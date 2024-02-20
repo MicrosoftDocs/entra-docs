@@ -1,18 +1,15 @@
 ---
 title: Configure mobile apps that call web APIs
 description: Learn how to configure your mobile app's code to call a web API
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: how-to
-ms.workload: identity
-ms.date: 06/16/2020
 ms.author: henrymbugua
+ms.custom: 
+ms.date: 06/16/2020
 ms.reviewer: jmprieur
-ms.custom: aaddev
+ms.service: identity-platform
+
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a mobile app that calls web APIs using the Microsoft identity platform.
 ---
 

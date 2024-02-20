@@ -1,21 +1,18 @@
 ---
 title: Roles you cannot manage in Privileged Identity Management
 description: Describes the roles you cannot manage in Microsoft Entra Privileged Identity Management (PIM).
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-editor: ''
 
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: conceptual
-ms.workload: identity
-ms.subservice: pim
-ms.date: 09/13/2023
+ms.subservice: privileged-identity-management
+ms.date: 11/28/2023
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim ; H1Hack27Feb2017;oldportal;it-pro;
-ms.collection: M365-identity-device-management
+
 ---
 
 # Roles you can't manage in Privileged Identity Management
@@ -37,7 +34,7 @@ For more information about the classic subscription administrator roles, see [Az
 We support all Microsoft 365 roles in the Microsoft Entra roles and Administrators portal experience, such as Exchange Administrator and SharePoint Administrator, but we don't support specific roles within Exchange RBAC or SharePoint RBAC. For more information about these Microsoft 365 services, see [Microsoft 365 admin roles](/microsoft-365/admin/add-users/about-admin-roles).
 
 > [!NOTE]
-> For information about delays activating the Azure AD Joined Device Local Administrator role, see [How to manage the local administrators group on Microsoft Entra joined devices](~/identity/devices/assign-local-admin.md#manage-the-azure-ad-joined-device-local-administrator-role).
+> For information about delays activating the Microsoft Entra Joined Device Local Administrator role, see [How to manage the local administrators group on Microsoft Entra joined devices](../../identity/devices/assign-local-admin.md#manage-the-microsoft-entra-joined-device-local-administrator-role).
 
 ## Next steps
 

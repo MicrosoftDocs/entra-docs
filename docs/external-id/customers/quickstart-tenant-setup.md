@@ -1,12 +1,12 @@
 ---
 title: Quickstart - Set up a tenant
 description: In this quickstart, you learn how to create a tenant with customer configurations.
-services: active-directory
+ 
 author: csmulligan
 manager: CelesteDG
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: ciam
+ms.service: entra-external-id
+ 
+ms.subservice: customers
 ms.topic: quickstart
 ms.date: 06/19/2023
 ms.author: cmulligan
@@ -40,9 +40,6 @@ In this quickstart, you'll learn how to create a tenant with customer configurat
     :::image type="content" source="media/how-to-create-customer-tenant-portal/select-tenant-type.png" alt-text="Screenshot of the select tenant type screen.":::
 
 1. Select **Use an Azure Subscription**. If you're creating a tenant with customer configurations for the first time, you have the option to create a trial tenant that doesn't require an Azure subscription. For more information about the free trial, see [Set up a free trial](quickstart-trial-setup.md).
- 
-    :::image type="content" source="media/how-to-create-customer-tenant-portal/create-first-customer-tenant.png" alt-text="Screenshot of the two tenants with customer configurations options available during the initial tenant creation.":::
-
 1. On the **Basics** tab, in the **Create a tenant for customers** page, enter the following information:
 
     :::image type="content" source="media/how-to-create-customer-tenant-portal/add-basics-to-customer-tenant.png" alt-text="Screenshot of the Basics tab.":::
@@ -78,7 +75,7 @@ Our guide will walk you through the process of setting up a user and configuring
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
-1. Browse to **Home** > **Go to Microsoft Entra ID** 
+1. Browse to **Home** > **Tenant overview**. 
 1. On the Get started tab, select **Start the guide**.
 
     :::image type="content" source="media/how-to-create-customer-tenant-portal/guide-link.png" alt-text="Screenshot that shows how to start the guide.":::

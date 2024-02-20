@@ -1,15 +1,15 @@
 ---
 title: "Quickstart: Add sign in to ASP.NET web app"
 description: Learn how to run a sample ASP.NET web app to sign in users
-services: active-directory
+ 
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-external-id
+ 
 ms.custom: devx-track-dotnet
 ROBOTS: NOINDEX
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: conceptual
 ms.date: 06/06/2023
 ---

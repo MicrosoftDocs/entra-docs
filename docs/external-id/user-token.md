@@ -2,19 +2,18 @@
 title: Understand user tokens in B2B collaboration
 description: User token reference for Microsoft Entra B2B collaboration.
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: B2B
+ 
+ms.service: entra-external-id
 ms.topic: conceptual
-ms.date: 12/12/2022
+ms.date: 12/19/2023
 
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
 
-ms.collection: engagement-fy23, M365-identity-device-management
+ms.collection: M365-identity-device-management
 
-# Customer intent: As a tenant administrator, I want to know what the token looks like for a B2B collaboration user in the resource tenant.
+# Customer intent: As a user of Microsoft Entra B2B collaboration, I want to understand the details and content of user tokens, so that I can effectively manage and authenticate guest accounts in my organization.
 ---
 
 # Understand user tokens in Microsoft Entra B2B collaboration
@@ -37,4 +36,4 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ilk0dWVLMm9hSU
 
 * [B2B collaboration overview](what-is-b2b.md)
 * [B2B collaboration for hybrid organizations](hybrid-organizations.md)
-* [B2B collaboration user claims mapping](claims-mapping.md)
+

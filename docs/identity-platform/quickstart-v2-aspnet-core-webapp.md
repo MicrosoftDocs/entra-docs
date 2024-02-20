@@ -1,18 +1,16 @@
 ---
 title: "Quickstart: Add sign-in with Microsoft Identity to an ASP.NET Core web app"
 description: In this quickstart, you learn how an app implements Microsoft sign-in on an ASP.NET Core web app by using OpenID Connect
-services: active-directory
+ROBOTS: NOINDEX
 author: OwenRichards1
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.workload: identity
-ms.date: 11/22/2021
-ROBOTS: NOINDEX
 ms.author: owenrichards
+ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:aspnet-core", mode-other
+ms.date: 11/22/2021
 ms.reviewer: jmprieur
-ms.custom: devx-track-csharp, aaddev, identityplatformtop40, "scenarios:getting-started", "languages:aspnet-core", mode-other
+ms.service: identity-platform
+
+ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write an ASP.NET Core web app that can sign in personal accounts, as well as work and school accounts, from any Microsoft Entra instance.
 ---
 
@@ -22,7 +20,7 @@ ms.custom: devx-track-csharp, aaddev, identityplatformtop40, "scenarios:getting-
 > [!div renderon="docs"]
 > Welcome! This probably isn't the page you were expecting. While we work on a fix, this link should take you to the right article:
 >
-> > [Quickstart: Add sign-in with Microsoft to an ASP.NET Core web app](quickstart-web-app-aspnet-core-sign-in.md)
+> > [Quickstart: Add sign-in with Microsoft to an ASP.NET Core web app](quickstart-web-app-dotnet-core-sign-in.md)
 > 
 > We apologize for the inconvenience and appreciate your patience while we work to get this resolved.
 

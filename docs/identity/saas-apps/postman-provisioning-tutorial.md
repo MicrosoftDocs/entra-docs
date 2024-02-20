@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Postman for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Postman.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: f3687101-9bec-4f18-9884-61833f4f58c3
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 08/16/2023
 ms.author: thwimmer

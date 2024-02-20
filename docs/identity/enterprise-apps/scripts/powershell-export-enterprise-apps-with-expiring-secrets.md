@@ -1,14 +1,14 @@
 ---
 title: PowerShell sample - Export enterprise apps with expiring secrets and certificates in Microsoft Entra tenant.
 description: PowerShell example that exports all enterprise apps with expiring secrets and certificates for the specified enterprise apps in your Microsoft Entra tenant.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: enterprise-apps
+
 ms.topic: sample
-ms.date: 07/11/2023
+ms.date: 01/15/2024
 ms.author: jomondi
 ms.reviewer: mifarca
 ---
@@ -55,7 +55,7 @@ Microsoft has been advised of the possibility of such damages.
 
 #################################################################################>
 
-Connect-MgGraph -Scopes 'Application.ReadWrite.All'
+Connect-MgGraph -Scopes 'Application.Read.All'
 
 $Applications = Get-MgServicePrincipal -all
 $Logs = @()

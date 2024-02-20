@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Cybozu for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cybozu.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 338f2546-2e46-4c9e-b4e9-69146f3afaf8
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 09/21/2023
 ms.author: thwimmer

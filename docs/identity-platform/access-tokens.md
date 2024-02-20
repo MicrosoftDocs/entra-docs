@@ -1,16 +1,15 @@
 ---
 title: Access tokens in the Microsoft identity platform
 description: Learn about access tokens used in the Microsoft identity platform.
-services: active-directory
 author: cilwerner
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: develop
-ms.workload: identity
-ms.topic: conceptual
-ms.date: 8/1/2023
 ms.author: cwerner
-ms.custom: aaddev, curation-claims
+ms.custom: curation-claims
+ms.date: 8/1/2023
+ms.service: identity-platform
+
+ms.topic: conceptual
+#Customer intent: As a developer, I want to understand how to validate access tokens, so that I can ensure the security and integrity of the tokens being used in my application.
 ---
 
 # Access tokens in the Microsoft identity platform
@@ -68,7 +67,7 @@ Adjust the lifetime of an access token to control how often the client applicati
 
 Apply default token lifetime variation to organizations that have Continuous Access Evaluation (CAE) enabled. Apply default token lifetime variation even if the organizations use CTL policies. The default token lifetime for long lived token lifetime ranges from 20 to 28 hours. When the access token expires, the client must use the refresh token to silently acquire a new refresh token and access token.
 
-Organizations that use [Conditional Access sign-in frequency (SIF)](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#user-sign-in-frequency) to enforce how frequently sign-ins occur can't override default access token lifetime variation. When organizations use SIF, the time between credential prompts for a client is the token lifetime that ranges from 60 - 90 minutes plus the sign-in frequency interval.  
+Organizations that use [Conditional Access sign-in frequency (SIF)](~/identity/conditional-access/concept-session-lifetime.md#user-sign-in-frequency) to enforce how frequently sign-ins occur can't override default access token lifetime variation. When organizations use SIF, the time between credential prompts for a client is the token lifetime that ranges from 60 - 90 minutes plus the sign-in frequency interval.  
 
 Here's an example of how default token lifetime variation works with sign-in frequency.  Let's say an organization sets sign-in frequency to occur every hour. When the token has lifetime ranging from 60-90 minutes due to token lifetime variation, the actual sign-in interval occurs anywhere between 1 hour to 2.5 hours.
 
@@ -163,7 +162,7 @@ The following information describes the metadata document:
 
 Doing signature validation is outside the scope of this document. There are many open-source libraries available for helping with signature validation if necessary.  However, the Microsoft identity platform has one token signing extension to the standards, which are custom signing keys.
 
-If the application has custom signing keys as a result of using the [claims-mapping](./saml-claims-customization.md) feature, append an `appid` query parameter that contains the application ID. For validation, use `jwks_uri` that points to the signing key information of the application. For example: `https://login.microsoftonline.com/{tenant}/.well-known/openid-configuration?appid=6731de76-14a6-49ae-97bc-6eba6914391e` contains a `jwks_uri` of `https://login.microsoftonline.com/{tenant}/discovery/keys?appid=6731de76-14a6-49ae-97bc-6eba6914391e`.
+If the application has custom signing keys as a result of using the [claims-mapping](./saml-claims-customization.md) feature, append an `appid` query parameter that contains the application ID. For validation, use `jwks_uri` that points to the signing key information of the application. For example: `https://login.microsoftonline.com/{tenant}/.well-known/openid-configuration?appid=535fb089-9ff3-47b6-9bfb-4f1264799865` contains a `jwks_uri` of `https://login.microsoftonline.com/{tenant}/discovery/keys?appid=535fb089-9ff3-47b6-9bfb-4f1264799865`.
 
 ### Validate the issuer
 

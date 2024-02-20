@@ -1,21 +1,15 @@
 ---
 title: What are access reviews? - Microsoft Entra
 description: Using access reviews, you can control group membership and application access to meet governance, risk management, and compliance initiatives in your organization.
-services: active-directory
-documentationcenter: ''
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: access-reviews
 ms.topic: overview
-ms.subservice: compliance
 ms.date: 06/28/2023
 ms.author: owinfrey
 ms.reviewer: mwahl
-ms.collection: M365-identity-device-management
-ms.custom: contperf-fy21q1
 ---
 
 # What are access reviews?
@@ -51,12 +45,12 @@ Microsoft Entra ID enables you to collaborate with users from inside your organi
 
 ## Where do you create reviews?
 
-Depending on what you want to review, you'll either create your access review in access reviews, Microsoft Entra enterprise apps (in preview), PIM, or entitlement management.
+Depending on what you want to review, you'll either create your access review in access reviews, Microsoft Entra enterprise apps, PIM, or entitlement management.
 
 | Access rights of users | Reviewers can be | Review created in | Reviewer experience |
 | --- | --- | --- | --- |
 | Security group members</br>Office group members | Specified reviewers</br>Group owners</br>Self-review | access reviews</br>Microsoft Entra groups | Access panel |
-| Assigned to a connected app | Specified reviewers</br>Self-review | access reviews</br>Microsoft Entra enterprise apps (in preview) | Access panel |
+| Assigned to a connected app | Specified reviewers</br>Self-review | access reviews</br>Microsoft Entra enterprise apps | Access panel |
 | Microsoft Entra role | Specified reviewers</br>Self-review | [PIM](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra Admin Center |
 | Azure resource role | Specified reviewers</br>Self-review | [PIM](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra Admin Center |
 | Access package assignments | Specified reviewers</br>Group members</br>Self-review | entitlement management | Access panel |

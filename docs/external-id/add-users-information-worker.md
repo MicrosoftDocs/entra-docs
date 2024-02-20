@@ -2,20 +2,15 @@
 
 title: Add B2B collaboration users as an information worker
 description: B2B collaboration allows information workers and app owners to add guest users to Microsoft Entra ID for access
-
-services: active-directory
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 06/30/2023
-
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.custom: "it-pro, seo-update-azuread-jan"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
-
-# Customer intent: As a tenant administrator, I want to learn how can my users invite guest users to an app.
+# Customer intent: As an application owner in Microsoft Entra, I want to be able to invite guest users to an app and manage their access, so that I can easily share the app with external users and control their permissions.
 ---
 
 # How users in your organization can invite guest users to an app
@@ -85,7 +80,7 @@ Self-service app management requires some initial setup by a Global Administrato
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Groups** > **All groups**.
 4. Under **Settings**, select **General**.
 5. Under **Self Service Group Management**, next to **Owners can manage group membership requests in the Access Panel**, select **Yes**.
@@ -93,7 +88,7 @@ Self-service app management requires some initial setup by a Global Administrato
 
 ### Create a group to assign to the app and make the user an owner
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Groups** > **All groups**.
 4. Select **New group**.
 5. Under **Group type**, select **Security**.
@@ -105,7 +100,7 @@ Self-service app management requires some initial setup by a Global Administrato
 
 ### Configure the app for self-service and assign the group to the app
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 4. Select **All applications**, in the application list, find and open the app.
 5. Under **Manage**, select **Single sign-on**, and configure the application for single sign-on. (For details, see [how to manage single sign-on for enterprise apps](~/identity/enterprise-apps/add-application-portal-setup-sso.md).)

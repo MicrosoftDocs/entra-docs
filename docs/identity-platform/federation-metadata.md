@@ -1,22 +1,20 @@
 ---
 title: Microsoft Entra federation metadata
 description: This article describes the federation metadata document that Microsoft Entra ID publishes for services that accept Microsoft Entra tokens.
-services: active-directory
 author: rwike77
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: azuread-dev
-ms.workload: identity
-ms.topic: conceptual
-ms.date: 09/07/2023
 ms.author: ryanwi
+ms.custom:
+ms.date: 09/07/2023
 ms.reviewer: ludwignick
-ms.custom: aaddev
+ms.service: identity-platform
+ms.topic: conceptual
+#Customer intent: As a developer integrating with Microsoft Entra ID, I want to understand the federation metadata document format and endpoints, so that I can configure my application to validate the issuer and token signing certificates of security tokens issued by Microsoft Entra ID.
 ---
 
 # Federation metadata
 
-Microsoft Entra ID publishes a federation metadata document for services that is configured to accept the security tokens that Microsoft Entra ID issues. The federation metadata document format is described in the [Web Services Federation Language (WS-Federation) Version 1.2](https://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html), which extends [Metadata for the OASIS Security Assertion Markup Language (SAML) v2.0](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf).
+Microsoft Entra ID publishes a federation metadata document for services that are configured to accept the security tokens that Microsoft Entra ID issues. The federation metadata document format is described in the [Web Services Federation Language (WS-Federation) Version 1.2](https://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html), which extends [Metadata for the OASIS Security Assertion Markup Language (SAML) v2.0](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf).
 
 ## Tenant-specific and tenant-independent metadata endpoints
 

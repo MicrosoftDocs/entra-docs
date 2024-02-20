@@ -1,17 +1,16 @@
 ---
 title: Microsoft identity platform delegated access scenario
 description: Learn about when and how to use delegated access in the Microsoft identity platform endpoint.
-services: active-directory
 author: omondiatieno
 manager: celesteDG
-ms.service: active-directory
-ms.subservice: develop
-ms.workload: identity
-ms.topic: conceptual
-ms.date: 03/15/2023
 ms.author: jomondi
+ms.date: 03/15/2023
 ms.reviewer: jawoods, ludwignick, phsignor
+ms.service: identity-platform
 
+ms.topic: conceptual
+
+#Customer intent: As a developer integrating with Microsoft Entra ID, I want to understand how delegated access works, so that I can properly authorize my client app and ensure that the signed-in user has the necessary permissions to access resources on their behalf.
 ---
 # Understanding delegated access
 
@@ -41,7 +40,6 @@ Always follow the principle of least privilege: you should never request scopes 
 
 If you’re building an API and want to allow delegated access on behalf of users, you’ll need to create scopes that other apps can request. These scopes should describe the actions or resources available to the client. You should consider developer scenarios when designing your scopes.
 
-
 ## How does delegated access work?
 
 The most important thing to remember about delegated access is that both your client app and the signed-in user need to be properly authorized. Granting a scope isn't enough. If either the client app doesn’t have the right scope, or the user doesn’t have sufficient rights to read or modify the resource, then the call will fail.
@@ -51,16 +49,16 @@ The most important thing to remember about delegated access is that both your cl
 
 ## Delegated access example – OneDrive via Microsoft Graph
 
-Consider the following example: 
+Consider the following example:
 
-Alice wants to use a client app to open a file protected by a resource API, Microsoft Graph. For user authorization, the OneDrive service will check whether the file is stored in Alice’s drive. If it’s stored in another user’s drive, then OneDrive will deny Alice’s request as unauthorized, since Alice doesn't have the right to read other users’ drives. 
+Alice wants to use a client app to open a file protected by a resource API, Microsoft Graph. For user authorization, the OneDrive service will check whether the file is stored in Alice’s drive. If it’s stored in another user’s drive, then OneDrive will deny Alice’s request as unauthorized, since Alice doesn't have the right to read other users’ drives.
 
 For client app authorization, OneDrive will check whether the client making the call has been granted the `Files.Read` scope on behalf of the signed-in user. In this case, the signed-in user is Alice. If `Files.Read` hasn’t been granted to the app for Alice, then OneDrive will also fail the request.
 
 | GET /drives/{id}/files/{id} | Client app granted `Files.Read` scope for Alice | Client app not granted `Files.Read` scope for Alice |
 | ----- | ----- | ----- |
 | The document is in Alice’s OneDrive. | 200 – Access granted. | 403 - Unauthorized. Alice (or her admin) hasn’t allowed this client to read her files. |
-| The document is in another user’s OneDrive*. | 403 - Unauthorized. Alice doesn’t have rights to read this file. Even though the client has been granted `Files.Read` it should be denied when acting on Alice’s behalf. | 403 – Unauthorized. Alice doesn’t have rights to read this file, and the client isn’t allowed to read files she has access to either. | 
+| The document is in another user’s OneDrive*. | 403 - Unauthorized. Alice doesn’t have rights to read this file. Even though the client has been granted `Files.Read` it should be denied when acting on Alice’s behalf. | 403 – Unauthorized. Alice doesn’t have rights to read this file, and the client isn’t allowed to read files she has access to either. |
 
 The example given is simplified to illustrate delegated authorization. The production OneDrive service supports many other access scenarios, such as shared files.
 

@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra integration with Creatio'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Creatio.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -80,18 +80,13 @@ Follow these steps to enable Microsoft Entra SSO.
     | Identifier |
     |-------------|
     | `https://<SUBDOMAIN>.creatio.com/` |
-    | `https://<SUBDOMAIN>.terrasoft.ru/` |
-    | `https://<SUBDOMAIN>.terrasoft.ua/` |
-    |
 
     b. In the **Reply URL** text box, type a URL using one of the following patterns:
 
     | Reply URL |
     |-------------|
     | `https://<SUBDOMAIN>.creatio.com/ServiceModel/AuthService.svc/SsoLogin` |
-    | `https://<SUBDOMAIN>.terrasoft.ru/ServiceModel/AuthService.svc/SsoLogin` |
-    | `https://<SUBDOMAIN>.terrasoft.ua/ServiceModel/AuthService.svc/SsoLogin` |
-    |
+
 
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
@@ -100,9 +95,7 @@ Follow these steps to enable Microsoft Entra SSO.
     | Sign-on URL |
     |-------------|
     | `https://<SUBDOMAIN>.creatio.com/` |
-    | `https://<SUBDOMAIN>.terrasoft.ru/` |
-    | `https://<SUBDOMAIN>.terrasoft.ua/` |
-    |
+
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Creatio Client support team](mailto:support@creatio.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.

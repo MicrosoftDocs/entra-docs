@@ -1,14 +1,14 @@
 ---
 title: Sign in users in a sample Node.js browserless application using the Device Code flow
 description: Learn how to configure a sample browserless application to sign in users in a Microsoft Entra ID for customers tenant
-services: active-directory
+ 
 author: Dickson-Mwendia
 manager: mwongerapk
 
 ms.author: dmwendia
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: ciam
+ms.service: entra-external-id
+ 
+ms.subservice: customers
 ms.topic: sample
 ms.date: 06/23/2023
 ms.custom: developer, devx-track-js

@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with LanSchool Air'
 description: Learn how to configure single sign-on between Microsoft Entra ID and LanSchool Air.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -34,6 +34,7 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * LanSchool Air supports **SP and IDP** initiated SSO.
+* LanSchool Air supports [Automated user provisioning](lanschool-air-provisioning-tutorial.md).
 
 ## Adding LanSchool Air from the gallery
 

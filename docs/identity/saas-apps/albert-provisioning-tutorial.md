@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Albert for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Albert.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: b5672366-08ad-40ba-9cdf-7a24feff6c66
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 07/05/2023
 ms.author: thwimmer

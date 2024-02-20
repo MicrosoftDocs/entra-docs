@@ -1,17 +1,19 @@
 ---
 title: 'Phase 1: Discover and scope apps'
 description: This article describes phase 1 of planning migration of applications from AD FS to Microsoft Entra ID
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 05/30/2023
 ms.author: jomondi
 ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
+
+#customer intent: As an IT admin responsible for app migration, I want to discover and scope the applications in my organization, so that I can determine which apps to migrate, modernize, keep as-is, or deprecate.
 ---
 
 # Phase 1: Discover and scope apps
@@ -92,7 +94,7 @@ For certain apps using legacy authentication protocols, sometimes modernizing th
 
 Microsoft Entra ID can bring great benefits to these legacy apps. You can enable modern Microsoft Entra security and governance features like [Multi-Factor Authentication](~/identity/authentication/concept-mfa-howitworks.md), [Conditional Access](~/identity/conditional-access/overview.md), [Identity Protection](~/id-protection/index.yml), [Delegated Application Access](./manage-self-service-access.md), and [Access Reviews](~/id-governance/manage-user-access-with-access-reviews.md#create-and-perform-an-access-review) against these apps without touching the app at all!
 
-- Start by extending these apps into the cloud with [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md).
+- Start by extending these apps into the cloud with [Microsoft Entra application proxy](/entra/identity/app-proxy).
 - Or explore using on of our [Secure Hybrid Access (SHA) partner integrations](secure-hybrid-access.md) that you might have deployed already.
 
 ### New Line of Business (LoB) apps

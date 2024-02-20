@@ -1,20 +1,18 @@
 ---
 title: Tutorial - Web app accesses Microsoft Graph as the user
 description: In this tutorial, you learn how to access data in Microsoft Graph from a web app for a signed-in user.
-services: microsoft-graph, app-service-web
 author: rwike77
 manager: CelesteDG
-
-ms.service: app-service
-ms.topic: tutorial
-ms.workload: identity
-ms.date: 09/15/2023
 ms.author: ryanwi
-ms.reviewer: stsoneff
-ms.devlang: csharp, javascript
 ms.custom: azureday1
-#Customer intent: As an application developer, I want to learn how to access data in Microsoft Graph from a web app for a signed-in user.
+ms.date: 09/15/2023
+ms.devlang: csharp
+ms.reviewer: stsoneff
+ms.service: app-service
 ms.subservice: web-apps
+ms.topic: tutorial
+services: microsoft-graph, app-service-web
+#Customer intent: As an application developer, I want to learn how to access data in Microsoft Graph from a web app for a signed-in user.
 ---
 
 # Tutorial: Access Microsoft Graph from a secured app as the user
@@ -139,9 +137,9 @@ To see this code as part of a sample application, see the [sample on GitHub](htt
 
 ### Install client library packages
 
-Install the [Microsoft.Identity.Web](https://www.nuget.org/packages/Microsoft.Identity.Web/) and [Microsoft.Identity.Web.GraphServiceClient](https://www.nuget.org/packages/Microsoft.Identity.Web.GraphServiceClient) NuGet packages in your project by using the .NET Core command-line interface or the Package Manager Console in Visual Studio.
+Install the [Microsoft.Identity.Web](https://www.nuget.org/packages/Microsoft.Identity.Web/) and [Microsoft.Identity.Web.GraphServiceClient](https://www.nuget.org/packages/Microsoft.Identity.Web.GraphServiceClient) NuGet packages in your project by using the .NET command-line interface (CLI) or the Package Manager Console in Visual Studio.
 
-#### .NET Core command line
+#### .NET CLI
 
 Open a command line, and switch to the directory that contains your project file.
 

@@ -1,24 +1,24 @@
 ---
 title: Configure risk-based step-up consent
 description: Learn how to disable and enable risk-based step-up consent to reduce user exposure to malicious apps that make illicit consent requests.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: enterprise-apps
+
 ms.topic: how-to
 ms.date: 11/17/2021
 ms.author: jomondi
 ms.reviewer: phsignor
-ms.custom: contperf-fy21q2, enterprise-apps, has-azure-ad-ps-ref
-#customer intent: As an admin, I want to configure risk-based step-up consent.
+ms.custom: enterprise-apps, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+#customer intent: As an IT admin, I want to configure risk-based step-up consent in Microsoft Entra ID using PowerShell, so that I can reduce user exposure to malicious apps and ensure that admin approval is required for risky consent requests.
 ---
 # Configure risk-based step-up consent using PowerShell
 
 In this article, you'll learn how to configure risk-based step-up consent in Microsoft Entra ID. Risk-based step-up consent helps reduce user exposure to malicious apps that make [illicit consent requests](/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants). 
 
-For example, consent requests for newly registered multi-tenant apps that are not [publisher verified](~/identity-platform/publisher-verification-overview.md) and require non-basic permissions are considered risky. If a risky user consent request is detected, the request requires a "step-up" to admin consent instead. This step-up capability is enabled by default, but it results in a behavior change only when user consent is enabled.
+For example, consent requests for newly registered multitenant apps that are not [publisher verified](~/identity-platform/publisher-verification-overview.md) and require non-basic permissions are considered risky. If a risky user consent request is detected, the request requires a "step-up" to admin consent instead. This step-up capability is enabled by default, but it results in a behavior change only when user consent is enabled.
 
 When a risky consent request is detected, the consent prompt displays a message that indicates that admin approval is needed. If the [admin consent request workflow](configure-admin-consent-workflow.md) is enabled, the user can send the request to an admin for further review directly from the consent prompt. If the admin consent request workflow isn't enabled, the following message is displayed:
 
@@ -35,63 +35,92 @@ To configure risk-based step-up consent, you need:
 
 ## Disable or re-enable risk-based step-up consent
 
-You can use the Azure AD PowerShell Preview module, [AzureADPreview](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview), to disable the step-up to admin consent that's required in cases where a risk is detected, or to enable it if it was previously disabled.
+You can use the [Microsoft Graph PowerShell beta module](/powershell/microsoftgraph/installation) to disable the step-up to admin consent that's required in cases where a risk is detected, or to enable it if it was previously disabled.
 
 > [!IMPORTANT]
-> Make sure you're using the AzureADPreview module. This is important if you've installed both the [`AzureAD`](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0) module and the `AzureADPreview` module.
-1. Run the following commands:
+> Make sure you're using the Microsoft Graph PowerShell Beta cmdlets module.
+
+1. Run the following command:
 
     ```powershell
-    Remove-Module AzureAD
-    Import-Module AzureADPreview
+    Install-Module Microsoft.Graph.Beta
     ```
 
-1. Connect to Azure AD PowerShell:
+1. Connect to Microsoft Graph PowerShell:
 
    ```powershell
-   Connect-AzureAD
+   Connect-MgGraph -Scopes "Directory.ReadWrite.All"
    ```
 
 1. Retrieve the current value for the **Consent Policy Settings** directory settings in your tenant. Doing so requires checking to see whether the directory settings for this feature have been created. If they haven't been created, use the values from the corresponding directory settings template.
 
     ```powershell
     $consentSettingsTemplateId = "dffd5d46-495d-40a9-8e21-954ff55e198a" # Consent Policy Settings
-    $settings = Get-AzureADDirectorySetting -All $true | Where-Object { $_.TemplateId -eq $consentSettingsTemplateId }
+    $settings = Get-MgBetaDirectorySetting -All | Where-Object { $_.TemplateId -eq $consentSettingsTemplateId }
     if (-not $settings) {
-        $template = Get-AzureADDirectorySettingTemplate -Id $consentSettingsTemplateId
-        $settings = $template.CreateDirectorySetting()
+        $params = @{
+            TemplateId = $consentSettingsTemplateId
+            Values = @(
+                @{ 
+                    Name = "BlockUserConsentForRiskyApps"
+                    Value = "True"
+                }
+                @{ 
+                    Name = "ConstrainGroupSpecificConsentToMembersOfGroupId"
+                    Value = "<groupId>"
+                }
+                @{ 
+                    Name = "EnableAdminConsentRequests"
+                    Value = "True"
+                }
+                @{ 
+                    Name = "EnableGroupSpecificConsent"
+                    Value = "True"
+                }
+            )
+        }
+        $settings = New-MgBetaDirectorySetting -BodyParameter $params
     }
     $riskBasedConsentEnabledValue = $settings.Values | ? { $_.Name -eq "BlockUserConsentForRiskyApps" }
     ```
 
-1. Understand the settings value:
+1. Check the value:
+
+    ```powershell
+    $riskBasedConsentEnabledValue
+    ```
+
+    Understand the settings value:
 
     | Setting       | Type         | Description  |
     | ------------- | ------------ | ------------ |
-    | _BlockUserConsentForRiskyApps_   | Boolean |  A flag indicating whether user consent will be blocked when a risky request is detected. |
+    | BlockUserConsentForRiskyApps   | Boolean |  A flag indicating whether user consent will be blocked when a risky request is detected. |
 
-1. Update the settings value for the desired configuration:
-
-    ```powershell
-    # Disable risk-based step-up consent entirely
-    $riskBasedConsentEnabledValue.Value = "False"
-    ```
+1. To change the value of `BlockUserConsentForRiskyApps`, use the [Update-MgBetaDirectorySetting](/powershell/module/microsoft.graph.beta.identity.directorymanagement/update-mgbetadirectorysetting) cmdlet.
 
     ```powershell
-    # Re-enable risk-based step-up consent, if disabled previously
-    $riskBasedConsentEnabledValue.Value = "True"
-    ```
-
-1. Save your settings:
-
-    ```powershell
-    if ($settings.Id) {
-        # Update an existing directory settings
-        Set-AzureADDirectorySetting -Id $settings.Id -DirectorySetting $settings
-    } else {
-        # Create a new directory settings to override the default setting 
-        New-AzureADDirectorySetting -DirectorySetting $settings
+    $params = @{
+        TemplateId = $consentSettingsTemplateId
+        Values = @(
+            @{ 
+                Name = "BlockUserConsentForRiskyApps"
+                Value = "False"
+            }
+            @{ 
+                Name = "ConstrainGroupSpecificConsentToMembersOfGroupId"
+                Value = "<groupId>"
+            }
+            @{ 
+                Name = "EnableAdminConsentRequests"
+                Value = "True"
+            }
+            @{ 
+                Name = "EnableGroupSpecificConsent"
+                Value = "True"
+            }
+        )
     }
+    Update-MgBetaDirectorySetting -DirectorySettingId $settings.Id -BodyParameter $params
     ```
 
 ## Next steps

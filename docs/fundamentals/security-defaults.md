@@ -2,12 +2,10 @@
 title: Providing a default level of security in Microsoft Entra ID
 description: Get protected from common identity threats using Microsoft Entra security defaults
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: conditional-access
-ms.custom: has-azure-ad-ps-ref
+ms.service: entra
+ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 11/07/2023
+ms.date: 01/30/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -54,7 +52,7 @@ To configure security defaults in your directory, you must be assigned at least 
 
 To enable security defaults:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
 1. Browse to **Identity** > **Overview** > **Properties**.
 1. Select **Manage security defaults**.
 1. Set **Security defaults** to **Enabled**.
@@ -115,7 +113,10 @@ After these attackers gain access, they can request access to privileged informa
 One common method to improve protection for all users is to require a stronger form of account verification, such as multifactor authentication, for everyone. After users complete registration, they'll be prompted for another authentication whenever necessary. Microsoft decides when a user is prompted for multifactor authentication, based on factors such as location, device, role and task. This functionality protects all registered applications, including SaaS applications.
 
 > [!NOTE]
-> In case of [B2B direct connect](~/external-id/b2b-direct-connect-overview.md) users, any multifactor authentication requirement from security defaults enabled in resource tenant will need to be satisfied, including multifactor authentication registration by the direct connect user in their home tenant.  
+> In case of [B2B direct connect](~/external-id/b2b-direct-connect-overview.md) users, any multifactor authentication requirement from security defaults enabled in resource tenant will need to be satisfied, including multifactor authentication registration by the direct connect user in their home tenant.
+
+> [!IMPORTANT]
+> For non-interactive sign ins that require MFA, there is a change that this will now require MFA to be fulfilled before proceeding. This change will be active on all tenants created after February 2, 2024 and all other impacted tenants will be contacted when we roll out the change for their tenant.
 
 ### Block legacy authentication protocols
 
@@ -188,7 +189,7 @@ Organizations that choose to implement Conditional Access policies that replace 
 
 To disable security defaults in your directory:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
 1. Browse to **Identity** > **Overview** > **Properties**.
 1. Select **Manage security defaults**.
 1. Set **Security defaults** to **Disabled (not recommended)**.

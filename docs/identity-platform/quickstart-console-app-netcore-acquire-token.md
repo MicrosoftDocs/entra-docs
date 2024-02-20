@@ -1,23 +1,21 @@
 ---
-title: "Quickstart: Acquire a token and call Microsoft Graph in a .NET Core console app"
-description: In this quickstart, you learn how a .NET Core sample app can use the client credentials flow to get a token and call Microsoft Graph.
-services: active-directory
+title: "Quickstart: Acquire a token and call Microsoft Graph in a .NET console app"
+description: In this quickstart, you learn how a .NET sample app can use the client credentials flow to get a token and call Microsoft Graph.
 author: OwenRichards1
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: quickstart
-ms.workload: identity
-ms.date: 03/13/2023
 ms.author: owenrichards
+ms.custom: devx-track-csharp,  'scenarios:getting-started', 'languages:aspnet-core', mode-other, devx-track-dotnet
+ms.date: 03/13/2023
 ms.reviewer: jmprieur
-ms.custom: devx-track-csharp, aaddev, identityplatformtop40, 'scenarios:getting-started', 'languages:aspnet-core', mode-other, devx-track-dotnet
-#Customer intent: As an application developer, I want to learn how my .NET Core app can get an access token and call an API that's protected by the Microsoft identity platform by using the client credentials flow.
+ms.service: identity-platform
+
+ms.topic: quickstart
+#Customer intent: As an application developer, I want to learn how my .NET app can get an access token and call an API that's protected by the Microsoft identity platform by using the client credentials flow.
 ---
 
-# Quickstart: Acquire a token and call Microsoft Graph in a .NET Core console app
+# Quickstart: Acquire a token and call Microsoft Graph in a .NET console app
 
-The following quickstart uses a code sample to demonstrates how a .NET Core console application can get an access token to call the Microsoft Graph API and display a [list of users](/graph/api/user-list) in the directory. It also demonstrates how a job or a Windows service can run with an application identity, instead of a user's identity. The sample console application in this quickstart is also a daemon application, therefore it's a confidential client application.
+The following quickstart uses a code sample to demonstrates how a .NET console application can get an access token to call the Microsoft Graph API and display a [list of users](/graph/api/user-list) in the directory. It also demonstrates how a job or a Windows service can run with an application identity, instead of a user's identity. The sample console application in this quickstart is also a daemon application, therefore it's a confidential client application.
 
 The following diagram shows how the sample app works:
 
@@ -25,7 +23,7 @@ The following diagram shows how the sample app works:
 
 ## Prerequisites
 
-This quickstart requires [.NET Core 6.0 SDK](https://dotnet.microsoft.com/download).
+A minimum requirement of [.NET 7.0 SDK](https://dotnet.microsoft.com/download).
 
 ## Register and download the app
 
@@ -69,6 +67,10 @@ To register the application and add the registration information to the solution
 
 This project can be run in either Visual Studio or Visual Studio for Mac and can be downloaded from the [code sample](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/archive/master.zip).
 
+>[!NOTE]
+> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
+> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
+
 [!INCLUDE [active-directory-develop-path-length-tip](includes/error-handling-and-tips/path-length-tip.md)]
 
 #### Step 3: Configure your Visual Studio project
@@ -92,7 +94,7 @@ This project can be run in either Visual Studio or Visual Studio for Mac and can
 
 #### Step 4: Admin consent
 
-Running the application now results in the output `HTTP 403 - Forbidden* error: "Insufficient privileges to complete the operation`. This error occurs because any app-only permission requires a global administrator of the directory to give consent to the application. Select one of the following options, depending on the role.
+Running the application now results in the output `HTTP 403 - Forbidden* error: "Insufficient privileges to complete the operation`. This error occurs because any app-only permission requires a Global Administrator of the directory to give consent to the application. Select one of the following options, depending on the role.
 
 ##### Global tenant administrator
 
@@ -100,7 +102,7 @@ For a global tenant administrator, go to **Enterprise applications** in the Micr
 
 ##### Standard user
 
-For a standard user of your tenant, ask a global administrator to grant admin consent to the application. To do this, provide the following URL to the administrator:
+For a standard user of your tenant, ask a Global Administrator to grant admin consent to the application. To do this, provide the following URL to the administrator:
 
 ```url
 https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_id=Enter_the_Application_Id_Here
@@ -132,7 +134,7 @@ This quickstart application uses a client secret to identify itself as a confide
 
 ## More information
 
-This section provides an overview of the code required to sign in users. The overview can be useful to understand how the code works, what the main arguments are, and how to add sign-in to an existing .NET Core console application.
+This section provides an overview of the code required to sign in users. The overview can be useful to understand how the code works, what the main arguments are, and how to add sign-in to an existing .NET console application.
 
 ### Microsoft.Identity.Web.GraphServiceClient
 

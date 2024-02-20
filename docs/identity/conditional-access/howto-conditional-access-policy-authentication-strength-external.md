@@ -2,8 +2,7 @@
 title: Conditional Access - Authentication strength for external users
 description: Create a custom Conditional Access policy with authentication strength to require specific multifactor authentication (MFA) methods for external users.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 07/18/2023
@@ -11,8 +10,6 @@ ms.date: 07/18/2023
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-
-ms.collection: M365-identity-device-management
 ---
 # Conditional Access: Require an authentication strength for external users
 

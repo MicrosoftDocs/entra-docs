@@ -1,15 +1,15 @@
 ---
 title: "Quickstart: Register an app in the Microsoft identity platform"
 description: In this quickstart, you learn how to register an application with the Microsoft identity platform.
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.date: 06/29/2023
 ms.topic: include
-ms.service: active-directory
-ms.subservice: develop
-ms.workload: identity
+ms.service: identity-platform
+
+
 
 # This include file is currently referenced in the following documentation:
 
@@ -27,7 +27,7 @@ The Microsoft identity platform performs identity and access management (IAM) on
 ## Prerequisites
 
 - An Azure account that has an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- The Azure account must be at least a [Cloud application administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+- The Azure account must be at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 - Completion of the [Set up a tenant](~/identity-platform/quickstart-create-new-tenant.md) quickstart.
 
 ## Register an application
@@ -55,7 +55,7 @@ Follow these steps to create the app registration:
 1. Don't enter anything for **Redirect URI (optional)**. You'll configure a redirect URI in the next section.
 1. Select **Register** to complete the initial app registration.
 
-   :::image type="content" source="/azure/active-directory/develop/media/quickstart-register-app/portal-02-app-reg-01.png" alt-text="Screenshot of the Azure portal in a web browser, showing the Register an application pane.":::
+   :::image type="content" source="../../media/quickstart-register-app/portal-02-app-reg-01.png" alt-text="Screenshot of Microsoft Entra admin center in a web browser, showing the Register an application pane." lightbox="../../media/quickstart-register-app/portal-02-app-reg-01.png":::
 
 When registration finishes, the Microsoft Entra admin center displays the app registration's **Overview** pane. You see the **Application (client) ID**. Also called the _client ID_, this value uniquely identifies your application in the Microsoft identity platform.
 
@@ -64,7 +64,7 @@ When registration finishes, the Microsoft Entra admin center displays the app re
 
 Your application's code, or more typically an authentication library used in your application, also uses the client ID. The ID is used as part of validating the security tokens it receives from the identity platform.
 
-:::image type="content" source="/azure/active-directory/develop/media/quickstart-register-app/portal-03-app-reg-02.png" alt-text="Screenshot of the Azure portal in a web browser, showing an app registration's Overview pane.":::
+:::image type="content" source="../../media/quickstart-register-app/portal-03-app-reg-02.png" alt-text="Screenshot of the Microsoft Entra admin center in a web browser, showing an app registration's Overview pane." lightbox="../../media/quickstart-register-app/portal-03-app-reg-02.png":::
 
 ## Add a redirect URI
 
@@ -107,7 +107,7 @@ Credentials are used by [confidential client applications](../../msal-client-app
 
 You can add certificates, client secrets (a string), or federated identity credentials as credentials to your confidential client app registration.
 
-:::image type="content" source="/azure/active-directory/develop/media/quickstart-register-app/portal-05-app-reg-04-credentials.png" alt-text="Screenshot of the Azure portal, showing the Certificates and secrets pane in an app registration.":::
+:::image type="content" source="../../media/quickstart-register-app/portal-05-app-reg-04-credentials.png" alt-text="Screenshot of the Microsoft Entra admin center, showing the Certificates and secrets pane in an app registration." lightbox="../../media/quickstart-register-app/portal-05-app-reg-04-credentials.png":::
 
 ### Add a certificate
 

@@ -1,16 +1,15 @@
 ---
 title: 'Attribute mapping in Microsoft Entra Cloud Sync'
 description: This article describes how to use the cloud sync feature of Microsoft Entra Connect to map attributes.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Attribute mapping in Microsoft Entra Cloud Sync
@@ -123,7 +122,7 @@ Use the following steps for configuring attribute mapping with a [AD to Microsof
 
  :::image type="content" source="media/how-to-attribute-mapping/new-ux-mapping-6.png" alt-text="Screenshot of successful schema save." lightbox="media/how-to-attribute-mapping/new-ux-mapping-6.png":::
 
-## Add an attribute mapping - Microsoft Entra ID to AD
+## Add an attribute mapping - Microsoft Entra ID to AD (Preview)
 Use the following steps for configuring attribute mapping with a [Microsoft Entra ID to AD configuration](how-to-configure-entra-to-active-directory.md).
 
 [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]

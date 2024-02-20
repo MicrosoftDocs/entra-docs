@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Simple In/Out for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Simple In/Out.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 34336710-62c5-4430-8a93-e07760f3ee4e
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 10/27/2023
 ms.author: thwimmer

@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Teamgo'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Teamgo.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -35,6 +35,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 * Teamgo supports **SP and IDP** initiated SSO.
 * Teamgo supports **Just In Time** user provisioning.
+* Teamgo supports [Automated user provisioning](teamgo-provisioning-tutorial.md).
 
 ## Adding Teamgo from the gallery
 

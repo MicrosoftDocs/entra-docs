@@ -1,13 +1,13 @@
 ---
 title: Microsoft Entra SSO integration with Diffchecker
 description: Learn how to configure single sign-on between Microsoft Entra ID and Diffchecker.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: how-to
 ms.date: 09/22/2023
 ms.author: jeedes
@@ -34,6 +34,7 @@ To integrate Microsoft Entra ID with Diffchecker, you need:
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * Diffchecker supports **SP and IDP** initiated SSO.
+* Diffchecker supports [Automated user provisioning](diffchecker-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.

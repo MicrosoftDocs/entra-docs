@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Configure Workday writeback in Microsoft Entra ID'
 description: Learn how to configure attribute writeback from Microsoft Entra ID to Workday
-services: active-directory
+
 author: cmmdesai
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.topic: tutorial
-ms.workload: identity
+
 ms.date: 11/21/2022
 ms.author: chmutali
 ---

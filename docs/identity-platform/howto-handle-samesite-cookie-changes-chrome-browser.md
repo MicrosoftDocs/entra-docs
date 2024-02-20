@@ -1,18 +1,16 @@
 ---
 title: How to handle SameSite cookie changes in Chrome browser
 description: Learn how to handle SameSite cookie changes in Chrome browser.
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.workload: identity
-ms.topic: conceptual
-ms.date: 02/07/2023
 ms.author: henrymbugua
-ms.reviewer: kkrishna, jmprieur
-ms.custom: aaddev
+ms.custom:
+ms.date: 02/09/2024
+ms.reviewer: jmprieur
+ms.service: identity-platform
+
+ms.topic: conceptual
+#Customer intent: As a web app developer, I want to handle SameSite cookie changes in the Chrome browser, so that I can ensure authentication works correctly and prevent CSRF attacks in my web applications.
 ---
 
 # Handle SameSite cookie changes in Chrome browser
@@ -52,7 +50,7 @@ The following table presents the pull requests that worked around the SameSite c
 | [ASP.NET MVC web app sample](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect)                                    | [Same site cookie fix #35](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/pull/35)               |
 | [active-directory-dotnet-admin-restricted-scopes-v2](https://github.com/azure-samples/active-directory-dotnet-admin-restricted-scopes-v2) | [Same site cookie fix #28](https://github.com/Azure-Samples/active-directory-dotnet-admin-restricted-scopes-v2/pull/28)    |
 
-for details on how to handle SameSite cookies in ASP.NET and ASP.NET Core, see also:
+For details on how to handle SameSite cookies in ASP.NET and ASP.NET Core, see also:
 
 - [Work with SameSite cookies in ASP.NET Core](/aspnet/core/security/samesite) .
 - [ASP.NET Blog on SameSite issue](https://devblogs.microsoft.com/aspnet/upcoming-samesite-cookie-changes-in-asp-net-and-asp-net-core/)
@@ -77,7 +75,5 @@ for details on how to handle SameSite cookies in ASP.NET and ASP.NET Core, see a
 Learn more about SameSite and the Web app scenario:
 
 - [Google Chrome's FAQ on SameSite](https://www.chromium.org/updates/same-site/faq)
-
 - [Chromium SameSite page](https://www.chromium.org/updates/same-site)
-
-- [Scenario: Web app that signs in users](scenario-web-app-sign-user-overview.md)
+- [Tutorial: Web app that signs in users](tutorial-web-app-dotnet-register-app.md)

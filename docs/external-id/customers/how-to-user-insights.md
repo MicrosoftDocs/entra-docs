@@ -1,15 +1,15 @@
 ---
 title: Analyze user activity in Microsoft Entra ID for customers
 description: Learn about how to analyze user activity and engagement for your registered application in the customer tenant.
-services: active-directory
+ 
 author: csmulligan
 ms.author: cmulligan
 manager: CelesteDG
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: ciam
+ms.service: entra-external-id
+ 
+ms.subservice: customers
 ms.topic: how-to
-ms.date: 11/03/2023
+ms.date: 01/16/2024
 
 ms.custom: it-pro
 
@@ -19,6 +19,11 @@ ms.custom: it-pro
 
 The Application user activity (Preview) feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can use this feature to view, query, and analyze user activity data in the Microsoft Entra admin center. This can help you uncover valuable insights that can aid strategic decisions and drive business growth.
 
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=UserInsights)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Application user activity” use case.
+
 ## Supported scenarios
 
 You can use the user insights feature for the following scenarios:
@@ -26,6 +31,7 @@ You can use the user insights feature for the following scenarios:
 - **Monitoring new users added** - You want to track and identify how many users have been added to your tenant in the last month. This data is valuable for monitoring the growth of your user base.
 - **Analyzing daily and monthly application sign-ins** - You want to gather data on the number of users who sign in to your applications on a daily and monthly basis. This can help you gauge user engagement over time and spot trends.
 - **Assessing MFA usage success and failure** - You want to compare the multifactor authentication (MFA) usage success and failure rates for your applications. This can provide insights into the security and user experience of your authentication processes.
+
 
 ## Prerequisites
 

@@ -1,17 +1,14 @@
 ---
 title: Known issues for multitenant organizations (Preview)
 description: Learn about known issues when you work with multitenant organizations in Microsoft Entra ID.
-services: active-directory
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: multi-tenant-organizations
+ms.service: entra-id
+ms.subservice: multitenant-organizations
 ms.topic: troubleshooting
 ms.date: 08/22/2023
 ms.author: rolyon
 ms.custom: it-pro
-
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 

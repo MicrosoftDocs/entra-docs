@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: App Proxy configuration for Microsoft Entra SAML SSO for Confluence'
 description: Learn App Proxy configuration for Microsoft Entra SAML SSO for Confluence.
-services: active-directory
+
 author: dhivyagana
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: dhivyag

@@ -2,13 +2,11 @@
 title: Become a Microsoft-Compatible FIDO2 Security Key Vendor for sign-in to Microsoft Entra ID
 description: Explains process to become a FIDO2 hardware partner
 ms.date: 01/29/2023
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 author: martincoetzer
 ms.author: martinco
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ---
 
 # Become a Microsoft-compatible FIDO2 security key vendor
@@ -62,7 +60,7 @@ The following table lists partners who are Microsoft-compatible FIDO2 security k
 | [Precision Biometric](https://www.innait.com/product/fido/) | ![n] | ![y]| ![n]| ![n]|
 | [RSA](https://www.rsa.com/products/securid/) | ![n] | ![y]| ![n]| ![n]|
 | [Sentry](https://sentryenterprises.com/) | ![n] | ![n]| ![y]| ![n]|
-| [SmartDisplayer](https://www.smartdisplayer.com/fido) | ![n] | ![n]| ![y]| ![y]|
+| [SmartDisplayer](https://www.smartdisplayer.com/fido) | ![y] | ![y]| ![y]| ![y]|
 | [Swissbit](https://www.swissbit.com/en/products/ishield-key/) | ![n] | ![y]| ![y]| ![n]|
 | [Thales Group](https://cpl.thalesgroup.com/access-management/authenticators/fido-devices) | ![n] | ![y]| ![y]| ![n]|
 | [Thetis](https://thetis.io/collections/fido2) | ![y] | ![y]| ![y]| ![y]|

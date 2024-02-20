@@ -1,17 +1,16 @@
 ---
 title: 'Microsoft Entra Connect and Microsoft Entra Connect Health installation roadmap.'
 description: This document provides an overview of the installation options and paths available for installing Microsoft Entra Connect and Connect Health.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Microsoft Entra Connect and Microsoft Entra Connect Health installation roadmap
@@ -90,7 +89,7 @@ The [prevent accidental deletes](how-to-connect-sync-feature-prevent-accidental-
 ## Customize Microsoft Entra Connect Sync
 Microsoft Entra Connect Sync comes with a default configuration that is intended to work for most customers and topologies. But there are always situations where the default configuration does not work and must be adjusted. It is supported to make changes as documented in this section and linked topics.
 
-If you have not worked with a synchronization topology before you want to start to understand the basics and the terms used as described in the [technical concepts](how-to-connect-sync-technical-concepts.md). Microsoft Entra Connect is the evolution of MIIS2003, ILM2007, and FIM2010. Even if some things are identical, a lot has changed as well.
+If you have not worked with a synchronization topology before you want to start to understand the basics and the terms used as described in the [technical concepts](how-to-connect-sync-technical-concepts.md). Even if some things are similar, a lot has changed as well.
 
 The [default configuration](concept-azure-ad-connect-sync-default-configuration.md) assumes there might be more than one forest in the configuration. In those topologies a user object might be represented as a contact in another forest. The user might also have a linked mailbox in another resource forest. The behavior of the default configuration is described in [users and contacts](concept-azure-ad-connect-sync-user-and-contacts.md).
 
@@ -184,7 +183,7 @@ The Microsoft Entra Connect Health portal shows views of alerts, performance mon
 - [Hardware and prerequisites](how-to-connect-install-prerequisites.md) 
 - [Express settings](how-to-connect-install-express.md)
 - [Customized settings](how-to-connect-install-custom.md)
-- [Password hash synchronization](how-to-connect-password-hash-synchronization.md)|
+- [Password hash synchronization](how-to-connect-password-hash-synchronization.md)
 - [Pass-through authentication](how-to-connect-pta.md)
 - [Microsoft Entra Connect and federation](how-to-connect-fed-whatis.md)
 - [Install Microsoft Entra Connect Health agents](how-to-connect-health-agent-install.md) 

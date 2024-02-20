@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Headspace for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Headspace.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 5d1a7185-dd04-46c3-ab58-525aaef2e25d
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 06/05/2023
 ms.author: thwimmer

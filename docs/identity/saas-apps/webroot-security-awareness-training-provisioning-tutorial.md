@@ -1,16 +1,16 @@
 ---
 title: 'Tutorial: Configure Webroot Security Awareness Training for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Webroot Security Awareness Training.
-services: active-directory
+
 documentationcenter: ''
 author: twimmers
 writer: twimmers
 manager: jeedes
 
 ms.assetid: 455f4396-930e-4db5-a167-d3ea6a860a17
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022

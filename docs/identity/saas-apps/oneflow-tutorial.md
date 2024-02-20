@@ -1,15 +1,15 @@
 ---
 title: Microsoft Entra SSO integration with Oneflow
 description: Learn how to configure single sign-on between Microsoft Entra ID and Oneflow.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: how-to
-ms.date: 07/05/2023
+ms.date: 11/21/2023
 ms.author: jeedes
 
 ---
@@ -22,7 +22,8 @@ In this article, you learn how to integrate Oneflow with Microsoft Entra ID. One
 * Enable your users to be automatically signed-in to Oneflow with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
-You configure and test Microsoft Entra single sign-on for Oneflow in a test environment. Oneflow supports **SP** and **IDP** initiated single sign-on.
+You configure and test Microsoft Entra single sign-on for Oneflow in a test environment. Oneflow supports **SP** and **IDP** initiated single sign-on. Oneflow also supports [Automated user provisioning](oneflow-provisioning-tutorial.md).
+
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.

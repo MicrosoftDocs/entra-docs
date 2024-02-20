@@ -1,17 +1,15 @@
 ---
 title: "Tutorial: Create a JavaScript single-page application that uses the Microsoft identity platform for authentication"
 description: In this tutorial, you build a JavaScript single-page application (SPA) that uses the Microsoft identity platform to sign in users and get an access token to call the Microsoft Graph API on their behalf.
-services: active-directory
 author: OwenRichards1
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: tutorial
-ms.workload: identity
-ms.date: 09/26/2022
 ms.author: owenrichards
-ms.custom: aaddev, identityplatformtop40, devx-track-js
+ms.custom: devx-track-js
+ms.date: 09/26/2022
+ms.service: identity-platform
+
+ms.topic: tutorial
+#Customer intent: As a developer building a JavaScript single-page application, I want to learn how to sign in users and call the Microsoft Graph API, so that I can integrate user authentication and access Microsoft Graph data in my application.
 ---
 
 # Tutorial: Sign in users and call the Microsoft Graph API from a JavaScript single-page application
@@ -583,7 +581,5 @@ The Microsoft Graph API requires the `User.Read` scope to read a user's profile.
 
 ## Next steps
 
-Delve deeper into SPA development on the Microsoft identity platform in the first part of a scenario series:
+ - Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).
 
-> [!div class="nextstepaction"]
-> [Scenario: Single-page application](scenario-spa-overview.md)

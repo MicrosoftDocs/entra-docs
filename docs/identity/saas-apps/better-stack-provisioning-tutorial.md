@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Better Stack for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Better Stack.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: beatrizd
 ms.assetid: ceb66a35-ca28-4a43-b9be-c8074cd406ff
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 04/10/2023
 ms.author: thwimmer

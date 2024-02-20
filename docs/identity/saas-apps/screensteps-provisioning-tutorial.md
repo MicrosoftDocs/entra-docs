@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure ScreenSteps for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to ScreenSteps.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: e6e21ae5-f1d4-479c-b5d9-1377a85ecb71
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 10/04/2023
 ms.author: thwimmer

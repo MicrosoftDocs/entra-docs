@@ -1,20 +1,15 @@
 ---
 title: OnAttributeCollectionSubmit reference
-titleSuffix: Microsoft identity platform
 description: Reference documentation for a custom authentication extension that invokes the OnAttributeCollectionSubmit event for External ID customer configurations.
-services: active-directory
 author: msmimart
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.workload: identity
-ms.topic: reference
-ms.date: 10/27/2023
 ms.author: mimart 
+ms.date: 01/23/2024
+ms.service: identity-platform
 
-#Customer intent: As a developer, I want to learn about the REST API schema so that I can add workflows to the attribute collection submit event in the sign-up flow.
-
+ms.topic: reference
+titleSuffix: Microsoft identity platform
+#customer intent: As a developer creating a custom authentication extension for user sign-up flows, I want to understand the REST API schema for the OnAttributeCollectionSubmit event, so that I can design and implement my own REST API to handle attribute collection requests and responses when the user submits attribute entries.
 ---
 # Custom Extension for OnAttributeCollectionSubmit event (preview)
 
@@ -29,6 +24,11 @@ To modify the sign-up experience for your customer self-service sign-up user flo
 
 This article describes the REST API schema for the OnAttributeCollectionSubmit event. (See also the related article [Custom Extension for OnAttributeCollectionStart event](custom-extension-OnAttributeCollectionStart-reference.md).)
 
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PostAttributeCollection)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “[Validate sign-up attributes](https://woodgrovedemo.com/#usecase=PostAttributeCollection)” use case, or the “[Block a user from continuing the sign-up process](https://woodgrovedemo.com/#usecase=BlockSignUp)” use case.
+    
 ## REST API schema
 
 To develop your own REST API for the attribute collection submit event, use the following REST API data contract. The schema describes the contract to design the request and response handler.

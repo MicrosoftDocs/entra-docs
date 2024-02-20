@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Configure Foodee for automatic user provisioning by using Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Foodee.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer

@@ -1,18 +1,16 @@
 ---
 title: Microsoft identity platform and OAuth 2.0 Resource Owner Password Credentials
 description: Support browser-less authentication flows using the resource owner password credential (ROPC) grant.
-services: active-directory
 author: OwenRichards1
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.workload: identity
-ms.topic: conceptual
-ms.date: 08/11/2023
 ms.author: owenrichards
+ms.custom:
+ms.date: 08/11/2023
 ms.reviewer: ludwignick
-ms.custom: aaddev
+ms.service: identity-platform
+
+ms.topic: conceptual
+#Customer intent: As a developer building an application that requires user authentication, I want to understand how to use the OAuth 2.0 Resource Owner Password Credentials (ROPC) grant in the Microsoft identity platform, so that I can directly handle user passwords and acquire tokens for calling secured web APIs.
 ---
 
 # Microsoft identity platform and OAuth 2.0 Resource Owner Password Credentials
@@ -51,7 +49,7 @@ POST {tenant}/oauth2/v2.0/token
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &scope=user.read%20openid%20profile%20offline_access
 &username=MyUsername@myTenant.com
 &password=SuperS3cret
@@ -68,9 +66,6 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 | `scope` | Recommended | A space-separated list of [scopes](./permissions-consent-overview.md), or permissions, that the app requires. In an interactive flow, the admin or the user must consent to these scopes ahead of time. |
 | `client_secret`| Sometimes required | If your app is a public client, then the `client_secret` or `client_assertion` can't be included.  If the app is a confidential client, then it must be included.|
 | `client_assertion` | Sometimes required | A different form of `client_secret`, generated using a certificate. For more information, see [certificate credentials](./certificate-credentials.md). |
-
-> [!WARNING]
-> As part of not recommending this flow for use, the official SDKs do not support this flow for confidential clients, those that use a secret or assertion. You may find that the SDK you wish to use does not allow you to add a secret while using ROPC. 
 
 ### Successful authentication response
 
@@ -111,4 +106,4 @@ If the user hasn't provided the correct username or password, or the client hasn
 
 ## Learn more
 
-For an example implementation of the ROPC flow, see the [.NET Core console application](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2) code sample on GitHub.
+For an example implementation of the ROPC flow, see the [.NET console application](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2) code sample on GitHub.

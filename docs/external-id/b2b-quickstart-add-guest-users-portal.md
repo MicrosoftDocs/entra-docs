@@ -1,17 +1,16 @@
 ---
 title: 'Quickstart: Add a guest user and send an invitation'
 description: Use this quickstart to learn how Microsoft Entra admins can add B2B guest users in the Microsoft Entra admin center and walk through the B2B invitation workflow.
-services: active-directory
+ 
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.date: 09/22/2023
+ms.date: 12/14/2023
 ms.topic: quickstart
-ms.service: active-directory
-ms.subservice: B2B
-ms.custom: engagement-fy23, it-pro, seo-update-azuread-jan, mode-ui
+ms.service: entra-external-id
+ms.custom: it-pro, mode-ui
 ms.collection: M365-identity-device-management
-#Customer intent: As a tenant admin, I want to walk through the B2B invitation workflow so that I can understand how to add a guest user in the Microsoft Entra admin center, and understand the end user experience.
+#Customer intent: As an administrator, I want to add a guest user to my Microsoft Entra directory and send them an invitation, so that they can collaborate with my organization using their own work, school, or social account.
 ---
 
 # Quickstart: Add a guest user and send an invitation
@@ -20,17 +19,15 @@ With Microsoft Entra [B2B collaboration](what-is-b2b.md), you can invite anyone 
 
 In this quickstart, you'll learn how to add a new guest user to your Microsoft Entra directory in the Microsoft Entra admin center. You'll also send an invitation and see what the guest user's invitation redemption process looks like. 
 
+This guide provides the basic steps to invite an external user. To learn about all of the properties and settings that you can include when you invite an external user, see [How to create and delete a user](~/fundamentals/how-to-create-delete-users.md).
+
 If you don’t have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
-
-The updated experience for creating new users covered in this article is available as a Microsoft Entra ID preview feature. This feature is enabled by default, but you can opt out by going to **Identity** > **Settings** > **Preview hub** and disabling the **Create user experience** feature. For more information about previews, see [Universal License Terms for Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
-
-Instructions for the legacy create user process can be found in the [Add or delete users](~/fundamentals/add-users.md) article.
 
 ## Prerequisites
 
 To complete the scenario in this quickstart, you need:
 
-- A role that allows you to create users in your tenant directory, such as at least a [Guest Inviter role](~/identity/role-based-access-control/permissions-reference.md#guest-inviter) or a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+- A role that allows you to create users in your tenant directory, such as at least a [Guest Inviter role](~/identity/role-based-access-control/permissions-reference.md#guest-inviter) or a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 - Access to a valid email address outside of your Microsoft Entra tenant, such as a separate work, school, or social email address. You'll use this email to create the guest account in your tenant directory and access the invitation.
 
@@ -38,15 +35,15 @@ To complete the scenario in this quickstart, you need:
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-This quickstart guide provides the basic steps to invite an external user. To learn about all of the properties and settings that you can include when you invite an external user, see [How to create and delete a user](~/fundamentals/how-to-create-delete-users.md).
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Browse to **Identity** > **Users** > **All users**.
 
+   :::image type="content" source="media/quickstart-add-users-portal/all-users-page.png" alt-text="Screenshot of the All users page.":::
+
 1. Select **Invite external user** from the menu. 
 
-    ![Screenshot of the invite external user menu option.](media/quickstart-add-users-portal/invite-external-user-menu.png)
+    :::image type="content" source="media/quickstart-add-users-portal/invite-external-user-menu.png" alt-text="Screenshot of the invite external user menu option.":::
 
 ### Basics for external users
 
@@ -58,7 +55,7 @@ In this section, you're inviting the guest to your tenant using *their email add
 
 -  **Invitation message**: Select the **Send invite message** checkbox to send an invitation message. When enabling this checkbox, you can also set up the customized short message and additional CC recipient.
 
-![Screenshot of the invite external user Basics tab.](media/quickstart-add-users-portal/invite-external-user-basics-tab.png)
+:::image type="content" source="media/quickstart-add-users-portal/invite-external-user-basics-tab.png" alt-text="Screenshot of the invite external user Basics tab.":::
 
 Select the **Review and invite** button to finalize the process.
 
@@ -94,7 +91,7 @@ Now sign in as the guest user to see the invitation.
 
 When no longer needed, delete the test guest user.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **User settings**.
 1. Select the test user, and then select **Delete user**.
 

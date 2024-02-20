@@ -1,21 +1,16 @@
 ---
 title: Move a daemon app that calls web APIs to production
 description: Learn how to move a daemon app that calls web APIs to production
-services: active-directory
 author: Dickson-Mwendia
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.workload: identity
-ms.date: 10/30/2019
 ms.author: dmwendia
+ms.custom: 
+ms.date: 02/01/2024
 ms.reviewer: jmprieur
-ms.custom: aaddev
+ms.service: identity-platform
 
+ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform.
-
 ---
 
 # Daemon app that calls web APIs - move to production
@@ -29,7 +24,7 @@ If you're an ISV creating a daemon application that can run in several tenants, 
 - Provisions a service principal for the application.
 - Grants consent to the application.
 
-You'll need to explain to your customers how to perform these operations. For more info, see [Requesting consent for an entire tenant](./permissions-consent-overview.md#requesting-consent-for-an-entire-tenant).
+You'll need to explain to your customers how to perform these operations. For more info, see [admin consent](./permissions-consent-overview.md#administrator-consent).
 
 [!INCLUDE [Pre-requisites](./includes/scenarios/scenarios-production.md)]
 
@@ -41,17 +36,17 @@ You'll need to explain to your customers how to perform these operations. For mo
   - Instantiating [ConfidentialClientApplication](/dotnet/api/microsoft.identity.client.confidentialclientapplicationbuilder).
   - Calling [AcquireTokenForClient](/dotnet/api/microsoft.identity.client.acquiretokenforclientparameterbuilder?preserve-view=true&view=msal-dotnet-latest&viewFallbackFrom=azure-dotnet).
 - Other samples/tutorials:
-  - [microsoft-identity-platform-console-daemon](https://github.com/Azure-Samples/microsoft-identity-platform-console-daemon) features a small .NET Core daemon console application that displays the users of a tenant querying Microsoft Graph.
+  - [microsoft-identity-platform-console-daemon](https://github.com/Azure-Samples/microsoft-identity-platform-console-daemon) features a small .NET daemon console application that displays the users of a tenant querying Microsoft Graph.
 
-    ![Sample daemon app topology](media/scenario-daemon-app/daemon-app-sample.svg)
+    ![Sample daemon app topology](media/scenario-daemon-app/daemon-app-sample.png)
 
     The same sample also illustrates a variation with certificates:
 
-    ![Sample daemon app topology - certificates](media/scenario-daemon-app/daemon-app-sample-with-certificate.svg)
+    ![Sample daemon app topology - certificates](media/scenario-daemon-app/daemon-app-sample-with-certificate.png)
 
   - [microsoft-identity-platform-aspnet-webapp-daemon](https://github.com/Azure-Samples/microsoft-identity-platform-aspnet-webapp-daemon) features an ASP.NET MVC web application that syncs data from Microsoft Graph by using the identity of the application instead of on behalf of a user. This sample also illustrates the admin consent process.
 
-    ![topology](media/scenario-daemon-app/damon-app-sample-web.svg)
+    ![topology](media/scenario-daemon-app/daemon-app-sample-web.png)
 
 # [Java](#tab/java)
 
@@ -68,7 +63,7 @@ Try the quickstart [Acquire a token and call Microsoft Graph API from a Java con
 
 # [Python](#tab/python)
 
-Try the quickstart [Acquire a token and call Microsoft Graph API from a Python console app using app's identity](quickstart-v2-python-daemon.md).
+Try the quickstart [Acquire a token and call Microsoft Graph API from a Python console app using app's identity](quickstart-daemon-app-python-acquire-token.md).
 
 ---
 
@@ -78,7 +73,7 @@ Here are a few links to help you learn more:
 
 # [.NET](#tab/dotnet)
 
-Try the quickstart [Acquire a token and call Microsoft Graph API from a .NET Core console app using app's identity](quickstart-v2-netcore-daemon.md).
+Try the quickstart [Acquire a token and call Microsoft Graph API from a .NET console app using app's identity](quickstart-v2-netcore-daemon.md).
 
 # [Java](#tab/java)
 

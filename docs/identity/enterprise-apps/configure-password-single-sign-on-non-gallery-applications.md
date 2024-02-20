@@ -1,18 +1,18 @@
 ---
 title: Add password-based single sign-on to an application
 description: Add password-based single sign-on to an application in Microsoft Entra ID.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 04/25/2023
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps
-# Customer intent: As an IT admin, I need to know how to implement password-based single sign-on in Microsoft Entra ID.
+# Customer intent: As an application administrator, I want to configure password-based single sign-on (SSO) in Microsoft Entra ID, so that users can sign in to the application with a username and password and have their credentials securely stored and sent to the application after the first sign-on.
 ---
 
 # Add password-based single sign-on to an application
@@ -64,6 +64,15 @@ If the parsing attempt by Microsoft Entra ID fails, you can configure sign-on ma
 1. Select **OK**. The browser extension updates the capture status page with the message **Metadata has been updated for the application**. The browser tab closes.
 1. In the Microsoft Entra ID Configure sign-on page, select **Ok, I was able to sign-in to the app successfully**.
 1. Select **OK**.
+
+## Limitations
+
+For password-based SSO, the end user’s browsers can be:
+
+- Internet Explorer 8, 9, 10, 11 -- on Windows 7 or later (limited support)
+- Edge on Windows 10 Anniversary Edition or later
+- Chrome -- on Windows 7 or later, and on MacOS X or later
+- Firefox 26.0 or later -- on Windows XP SP2 or later, and on Mac OS X 10.6 or later
 
 ## Next steps
 

@@ -1,17 +1,15 @@
 ---
 title: Configure a web API that calls web APIs
 description: Learn how to build a web API that calls web APIs (app's code configuration)
-services: active-directory
 author: cilwerner
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.workload: identity
-ms.date: 05/08/2023
 ms.author: cwerner
+ms.custom: 
+ms.date: 05/08/2023
 ms.reviewer: jmprieur
-ms.custom: aaddev
+ms.service: identity-platform
+
+ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a web API that calls web APIs by using the Microsoft identity platform.
 ---
 
@@ -192,7 +190,7 @@ If you want to call an API other than Microsoft Graph, *Microsoft.Identity.Web* 
 
 Here's the code:
 
-   ```csharp
+```csharp
   using Microsoft.Extensions.DependencyInjection;
   using Microsoft.Identity.Client;
   using Microsoft.Identity.Web;
@@ -213,7 +211,7 @@ Here's the code:
 
               app.UseCookieAuthentication(new CookieAuthenticationOptions());
 
-              // Get an TokenAcquirerFactory specialized for OWIN.
+              // Get a TokenAcquirerFactory specialized for OWIN.
               OwinTokenAcquirerFactory owinTokenAcquirerFactory = TokenAcquirerFactory.GetDefaultInstance<OwinTokenAcquirerFactory>();
 
               // Configure the web app.
@@ -227,7 +225,7 @@ Here's the code:
           }
       }
   }
-   ```
+```
 
 # [Java](#tab/java)
 

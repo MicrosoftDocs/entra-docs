@@ -3,8 +3,8 @@ title: Frequently asked questions - Azure Verifiable Credentials
 description: Find answers to common questions about Verifiable Credentials
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 ms.topic: conceptual
 ms.date: 08/11/2022
 ms.author: barclayn
@@ -13,13 +13,11 @@ ms.author: barclayn
 
 # Frequently Asked Questions (FAQ)
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 This page contains commonly asked questions about Verifiable Credentials and Decentralized Identity. Questions are organized into the following sections.
 
 - [Vocabulary and basics](#the-basics)
 - [Conceptual questions about decentralized identity](#conceptual-questions)
-- [Questions about using Verifiable Credentials preview](#using-the-preview)
 
 
 ## The basics
@@ -53,37 +51,20 @@ We implement [the Decentralized Identity Foundation's Well Known DID Configurati
 
 Microsoft now offers two different trust systems, Web and ION. You can choose to use either one of them during tenant onboarding. ION is a decentralized, permissionless, scalable decentralized identifier Layer 2 network that runs atop Bitcoin. It achieves scalability without including a special crypto asset token, trusted validators, or centralized consensus mechanisms. We use Bitcoin for the base Layer 1 substrate because of the strength of the decentralized network to provide a high degree of immutability for a chronological event record system.
 
-## Using the preview
-
-### Is any of the code used in the preview open source?
-
-Yes! The following repositories are the open-sourced components of our services.
-
-1. [SideTree, on GitHub](https://github.com/decentralized-identity/sidetree)
-1. An [Android SDK for building decentralized identity wallets, on GitHub](https://github.com/microsoft/VerifiableCredential-SDK-Android)
-1. An [iOS SDK for building decentralized identity wallets, on GitHub](https://github.com/microsoft/VerifiableCredential-SDK-iOS)
-
-
 ### What are the licensing requirements?
 
-There are no special licensing requirements to issue Verifiable credentials. All you need is An Azure account that has an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-
-
-
-<a name='how-do-i-reset-the-entra-verified-id-service'></a>
+There are no special licensing requirements to issue Verifiable credentials.
 
 ### How do I reset the Microsoft Entra Verified ID service?
 
-Resetting requires that you opt out and opt back into the Microsoft Entra Verified ID service. Your existing verifiable credentials configuration is reset and your tenant will obtain a new DID to use during issuance and presentation.
+Resetting requires that you opt out and opt back into the Microsoft Entra Verified ID service. Your existing verifiable credentials configuration is reset and your tenant obtains a new DID to use during issuance and presentation.
 
-1. Follow the [opt-out](how-to-opt-out.md) instructions.
-1. Go over the Microsoft Entra Verified ID [deployment steps](verifiable-credentials-configure-tenant.md) to reconfigure the service.
-    1. If you're in the European region, it's recommended that your Azure Key Vault, and container are in the same European region to avoid performance and latency issues. Create new instances of these services in the same EU region as needed.
+1. Follow the [opt out](how-to-opt out.md) instructions.
+1. Go over the Microsoft Entra Verified ID [deployment steps](verifiable-credentials-configure-tenant-quick.md) to reconfigure the service.
+    1. If you're manually setting up Verified ID, choose a location for your Azure Key Vault to be in the same or closest region. This avoids performance and latency issues.
 1. Finish [setting up](verifiable-credentials-configure-tenant.md#set-up-verified-id) your verifiable credentials service. You need to recreate your credentials.
     1. If your tenant needs to be configured as an issuer, it's recommended that your storage account is in the European region as your Verifiable Credentials service.
     2. You also need to issue new credentials because your tenant now holds a new DID.
-
-<a name='how-can-i-check-my-azure-ad-tenants-region'></a>
 
 ### How can I check my Microsoft Entra tenant's region?
 
@@ -124,7 +105,32 @@ Resetting requires that you opt out and opt back into the Microsoft Entra Verifi
     ],
 ```
 
-<a name='if-i-reconfigure-the-entra-verified-id-service-do-i-need-to-relink-my-did-to-my-domain'></a>
+### How do I move to did:web from did:ion?
+
+If you want to move to `did:web` from `did:ion`, you can follow these steps via the [Admin API](admin-api.md). Note that changing authority requires reissuance of all credentials:
+
+#### Export existing did:ion credential definitions
+
+1. For the `did:ion` authority, use the [portal](https://entra.microsoft.com/#view/Microsoft_AAD_DecentralizedIdentity/CardsListBlade) to copy out all display and rules definition of the existing credentials. 
+1. If you have more than one authority, you have to use the Admin APIs if the `did:ion` authority isn't the default authority. On the Verified ID tenant, connect using Admin API,  [list the authorities](admin-api.md#list-authorities) to get the authority id for the `did:ion` authority. Then use the [list contracts](admin-api.md#list-contracts) API to export them and save the result to a file so you can recreate them.
+
+#### Creating new did:web authority
+
+1. Using the [onboard](admin-api.md#onboarding) API, create the new `did:web` authority. Alternatively, if your tenant has only one did:ion authority, you could also perform a service opt out followed by an opt-in operation to restart with Verified ID configurations. In this case, you could choose between [Quick](verifiable-credentials-configure-tenant-quick.md) and [Manual](verifiable-credentials-configure-tenant.md) setup.
+1. If you are setting up a did:web authority using Admin API, you need to call [generate DID document](admin-api.md#generate-did-document) to generate your did document and call [generate well-known document](admin-api.md#well-known-did-configuration) and then upload JSON files to the respective well-known path.
+
+#### Recreate credential definitions
+
+After you have created your new `did:web` authority, you need to recreate your credential definitions. You can either do that via the [portal](https://entra.microsoft.com/#view/Microsoft_AAD_DecentralizedIdentity/CardsListBlade) if you opted-out and reonboarded, or you need to use the [create contract](admin-api.md#create-contract) to recreate them.
+
+#### Update existing applications
+
+1. Update any of your existing application (issuer/verifier apps) to use the new `did:web authority`. For issuance apps, update the credential manifest URL too.
+1. Test issuance and verification flows from the new did:web authority. Once the tests are successful, proceed to the next step for did:ion authority deletion.
+
+#### Delete did:ion authority
+
+If you didn't opt out and reonboarded, you need to remove your old `did:ion` authority. Use the [delete authority](admin-api.md#delete-authority) API to delete the did:ion authority. 
 
 ### If I reconfigure the Microsoft Entra Verified ID service, do I need to relink my DID to my domain?
 
@@ -132,18 +138,18 @@ Yes, after reconfiguring your service, your tenant has a new DID use to issue an
 
 ### Is it possible to request Microsoft to retrieve "old DIDs"?
 
-No, at this point it isn't possible to keep your tenant's DID after you have opt-out of the service.
+No, at this point it isn't possible to keep your tenant's DID after you have opt out of the service.
 
 ### I cannot use ngrok, what do I do?
 
-The tutorials for deploying and running the [samples](verifiable-credentials-configure-issuer.md#prerequisites) describes the use of the `ngrok` tool as an application proxy. This tool is sometimes blocked by IT admins from being used in corporate networks. An alternative is to deploy the sample to [Azure App Service](/azure/app-service/overview) and run it in the cloud. The following links help you deploy the respective sample to Azure App Service. The Free pricing tier will be sufficient for hosting the sample. For each tutorial, you need to start by first creating the Azure App Service instance, then skip creating the app since you already have an app and then continue the tutorial with deploying it.
+The tutorials for deploying and running the [samples](verifiable-credentials-configure-issuer.md#prerequisites) describes the use of the `ngrok` tool as an application proxy. This tool is sometimes blocked by IT admins from being used in corporate networks. An alternative is to deploy the sample to [Azure App Service](/azure/app-service/overview) and run it in the cloud. The following links help you deploy the respective sample to Azure App Service. The Free pricing tier is sufficient for hosting the sample. For each tutorial, you need to start by first creating the Azure App Service instance, then skip creating the app since you already have an app and then continue the tutorial with deploying it.
 
 - Dotnet - [Publish to App Service](/azure/app-service/quickstart-dotnetcore?tabs=net60&pivots=development-environment-vs#2-publish-your-web-app)
 - Node - [Deploy to App Service](/azure/app-service/quickstart-nodejs?tabs=linux&pivots=development-environment-vscode#deploy-to-azure)
 - Java - [Deploy to App Service](/azure/app-service/quickstart-java?tabs=javase&pivots=platform-linux-development-environment-maven#4---deploy-the-app). You need to add the maven plugin for Azure App Service to the sample.
 - Python - [Deploy using Visual Studio Code](/azure/app-service/quickstart-python?tabs=flask%2Cwindows%2Cazure-cli%2Cvscode-deploy%2Cdeploy-instructions-azportal%2Cterminal-bash%2Cdeploy-instructions-zip-azcli#3---deploy-your-application-code-to-azure)
 
-Regardless of which language of the sample you are using, they will pickup the Azure AppService hostname `https://something.azurewebsites.net` and use it as the public endpoint. You don't need to configure something extra to make it work. If you make changes to the code or configuration, you need to redeploy the sample to Azure AppServices. Troubleshooting/debugging will not be as easy as running the sample on your local machine, where traces to the console window shows you errors, but you can achieve almost the same by using the [Log Stream](/azure/app-service/troubleshoot-diagnostic-logs#stream-logs).
+Regardless of which language of the sample you're using, the Azure AppService hostname `https://something.azurewebsites.net` is used as the public endpoint. You don't need to configure something extra to make it work. If you make changes to the code or configuration, you need to redeploy the sample to Azure AppServices. Troubleshooting/debugging is not as easy as running the sample on your local machine, where traces to the console window show you errors, but you can achieve almost the same by using the [Log Stream](/azure/app-service/troubleshoot-diagnostic-logs#stream-logs).
  
 ## Next steps
 

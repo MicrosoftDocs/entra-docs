@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with JIRA SAML SSO by Microsoft'
 description: Learn how to configure single sign-on between Microsoft Entra ID and JIRA SAML SSO by Microsoft.
-services: active-directory
+
 author: dhivyagana
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: dhivyag
@@ -260,7 +260,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	k. **Enable Use of Application Proxy** checkbox, if you have configured your on-premises atlassian application in an App Proxy setup.
 
-	* For App proxy setup , follow the steps on the [Microsoft Entra application proxy Documentation](~/identity/app-proxy/what-is-application-proxy.md).
+	* For App proxy setup , follow the steps on the [Microsoft Entra application proxy Documentation](~/identity/app-proxy/overview-what-is-app-proxy.md).
 
 	l. Click **Save** button to save the settings.
 

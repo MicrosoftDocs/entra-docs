@@ -1,19 +1,16 @@
 ---
 title: Authentication flow support in the Microsoft Authentication Library (MSAL)
 description: Learn about the authorization grants and authentication flows supported by MSAL.
-services: active-directory
 author: cilwerner
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.workload: identity
-ms.date: 04/03/2023
 ms.author: cwerner
+ms.custom: 
+ms.date: 04/03/2023
 ms.reviewer: saeeda
-ms.custom: engagement-fy23
-# Customer intent: As an application developer, I want to learn about the authentication flows supported by MSAL.
+ms.service: identity-platform
+
+ms.topic: conceptual
+#Customer intent: As an application developer, I want to learn about the authentication flows supported by MSAL.
 ---
 
 # Authentication flow support in MSAL
@@ -22,11 +19,11 @@ The Microsoft Authentication Library (MSAL) supports several authorization grant
 
 | Authentication flow                                                               | Enables                                                                                                                                                                                          | Supported application types                                                                                                                                                                             |
 |-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Authorization code](#authorization-code)                                         | User sign-in and access to web APIs on behalf of the user.                                                                                                                                       | [Desktop](scenario-desktop-overview.md) <br /> [Mobile](scenario-mobile-overview.md) <br /> [Single-page app (SPA)](scenario-spa-overview.md) (requires PKCE) <br /> [Web](scenario-web-app-call-api-overview.md) |
+| [Authorization code](#authorization-code)                                         | User sign-in and access to web APIs on behalf of the user.                                                                                                                                       | [Desktop](scenario-desktop-overview.md) <br /> [Mobile](scenario-mobile-overview.md) <br /> [Single-page app (SPA)](scenario-spa-app-registration.md) (requires PKCE) <br /> [Web](scenario-web-api-call-api-app-registration.md) |
 | [Client credentials](#client-credentials)                                         | Access to web APIs by using the identity of the application itself. Typically used for server-to-server communication and automated scripts requiring no user interaction.                       | [Daemon](scenario-daemon-overview.md)                                                                                                                                                                   |
 | [Device code](#device-code)                                                       | User sign-in and access to web APIs on behalf of the user on input-constrained devices like smart TVs and IoT devices. Also used by command line interface (CLI) applications.                   | [Desktop, Mobile](scenario-desktop-acquire-token-device-code-flow.md)                                                                                                                                   |
-| [Implicit grant](#implicit-grant)                                                 | User sign-in and access to web APIs on behalf of the user. _The implicit grant flow is no longer recommended - use authorization code with PKCE instead._                                        | * [Single-page app (SPA)](scenario-spa-overview.md) <br /> * [Web](scenario-web-app-call-api-overview.md)                                                                                                 |
-| [On-behalf-of (OBO)](#on-behalf-of-obo)                                           | Access from an "upstream" web API to a "downstream" web API on behalf of the user. The user's identity and delegated permissions are passed through to the downstream API from the upstream API. | [Web API](scenario-web-api-call-api-overview.md)                                                                                                                                                        |
+| [Implicit grant](#implicit-grant)                                                 | User sign-in and access to web APIs on behalf of the user. _The implicit grant flow is no longer recommended - use authorization code with PKCE instead._                                        | * [Single-page app (SPA)](scenario-spa-app-registration.md) <br /> * [Web](scenario-web-api-call-api-app-registration.md)                                                                                                 |
+| [On-behalf-of (OBO)](#on-behalf-of-obo)                                           | Access from an "upstream" web API to a "downstream" web API on behalf of the user. The user's identity and delegated permissions are passed through to the downstream API from the upstream API. | [Web API](scenario-web-api-call-api-app-registration.md)                                                                                                                                                        |
 | [Username/password (ROPC)](#usernamepassword-ropc)                                | Allows an application to sign in the user by directly handling their password. _The ROPC flow is NOT recommended._                                                                                                | [Desktop, Mobile](scenario-desktop-acquire-token-username-password.md)                                                                                                                                  |
 | [Integrated Windows authentication (IWA)](#integrated-windows-authentication-iwa) | Allows applications on domain or Microsoft Entra joined computers to acquire a token silently (without any UI interaction from the user).                                      | [Desktop, Mobile](scenario-desktop-acquire-token-integrated-windows-authentication.md)                                                                                                                  |
 
@@ -132,7 +129,7 @@ In the following diagram:
 
 ## Implicit grant
 
-The implicit grant has been replaced by the [authorization code flow with PKCE](scenario-spa-overview.md) as the preferred and more secure token grant flow for client-side single page-applications (SPAs). If you're building a SPA, use the authorization code flow with PKCE instead.
+The implicit grant has been replaced by the [authorization code flow with PKCE](v2-oauth2-auth-code-flow.md) as the preferred and more secure token grant flow for client-side single page-applications (SPAs). If you're building a SPA, use the authorization code flow with PKCE instead.
 
 Single-page web apps written in JavaScript (including frameworks like Angular, Vue.js, or React.js) are downloaded from the server and their code runs directly in the browser. Because their client-side code runs in the browser and not on a web server, they have different security characteristics than traditional server-side web applications. Prior to the availability of Proof Key for Code Exchange (PKCE) for the authorization code flow, the implicit grant flow was used by SPAs for improved responsiveness and efficiency in getting access tokens.
 
@@ -187,7 +184,7 @@ The following constraints apply to the applications using the ROPC flow:
 - Conditional Access is **unsupported**.
 - ROPC works _only_ for work and school accounts.
 - Personal Microsoft accounts (MSA) are **unsupported** by ROPC.
-- ROPC is **supported** in .NET desktop and .NET Core applications.
+- ROPC is **supported** in .NET desktop and ASP.NET Core applications.
 - ROPC is **unsupported** in Universal Windows Platform (UWP) applications.
 - ROPC in Azure AD B2C is supported _only_ for local accounts.
   - For information about ROPC in MSAL.NET and Azure AD B2C, see [Using ROPC with Azure AD B2C](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/social-identities#resource-owner-password-credentials-ropc).
@@ -207,7 +204,7 @@ In the following diagram, the application:
 
 **Compatibility**
 
-Integrated Windows authentication (IWA) is enabled for .NET desktop, .NET Core, and Windows Universal Platform apps.
+Integrated Windows authentication (IWA) is enabled for .NET desktop, .NET, and Windows Universal Platform apps.
 
 IWA supports AD FS-federated users *only* - users created in Active Directory and backed by Microsoft Entra ID. Users created directly in Microsoft Entra ID without Active Directory backing (managed users) can't use this authentication flow.
 

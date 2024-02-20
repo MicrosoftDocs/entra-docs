@@ -1,17 +1,19 @@
 ---
 title: Tutorial to configure Conditional Access policies in Cloudflare Access
 description: Configure Conditional Access to enforce application and user policies in Cloudflare Access
-services: active-directory
+
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 05/11/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
+
+#customer intent: As an administrator configuring access policies in Cloudflare Access, I want to learn how to configure Conditional Access policies in Microsoft Entra ID, so that I can enforce organizational policies and provide secure access to self-hosted, SaaS, or nonweb applications.
 ---
 
 # Tutorial: Configure Conditional Access policies in Cloudflare Access

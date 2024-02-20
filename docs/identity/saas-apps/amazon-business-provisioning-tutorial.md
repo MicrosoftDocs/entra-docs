@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Amazon Business for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Amazon Business.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 48a929c5-6cfa-44ca-8471-641fa5a35ee0
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 09/08/2023
 ms.author: thwimmer
@@ -55,8 +55,13 @@ Before configuring and enabling the provisioning service, you need to identify a
    * Default SCIM Users Group
       * Users who are assigned to your Amazon Business app will be placed into this group by default with a Requisitioner role. It is recommended to have this group at the same level as the Default SCIM Parent Group.
       * If a user is provisioned without a group assignment, they will be placed into this group by default with a Requisitioner role.
+      * Any de-activated user will remain in this group. Hence, it is recommended to not use any role other than Requisitioner for this group.
+>[!NOTE]  
+>- The Default SCIM Parent Group can be the same as the default group selected for your SSO configuration. 
+>- The Default SCIM Parent Group can be a Legal Entity group. Choosing Legal Entity as the default group is recommended if you have different invoicing templates set up for different groups in your AB Account.
+>- We currently support enabling SCIM for only one Legal Entity in an Amazon Business account.
 
-Once you identify/create the Default SCIM Groups, send a URL link for both these groups to your Account Manager. An Amazon Business Integrations Specialist initializes both the groups for your SCIM integration. It is necessary to complete this step before proceeding to the next step.
+Once your Default SCIM Groups have been identified, go to your Amazon Business account > Business Settings > Identity Management (SCIM) page, enter the details and click Activate. It is necessary to complete this step before proceeding to the next step.
 
 <a name='step-3-add-amazon-business-from-the-azure-ad-application-gallery'></a>
 
@@ -185,6 +190,9 @@ Once you've configured provisioning, use the following resources to monitor your
    * Turn off purchasing for the old groups.
 * Email / Username Update - Updating email and / or username via SCIM is not supported at this time. 
 * Password Sync - Password sync is not supported.
+* SSO Requirement - While the Amazon Business app allows the activation of SCIM provisioning without SSO, provisioned users will require SSO Authentication in order to access Amazon Business. 
+* Multi-Legal Entity (MLE) accounts - We currently do not support enabling SCIM for more than one Legal Entity in an Amazon Business Account.
+* When provisioning a group with the same name as already existing one in Amazon Business, these groups will be automatically linked (new group will be created in Amazon Business).
 
 ## Troubleshooting tips
 

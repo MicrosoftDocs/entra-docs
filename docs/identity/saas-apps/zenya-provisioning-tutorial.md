@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Configure Zenya for automatic user provisioning with Microsoft Entra ID'
-description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Zenya.
-services: active-directory
+description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Zenya.
+
 author: twimmers
 writer: twimmers
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
@@ -15,7 +15,7 @@ ms.author: thwimmer
 
 # Tutorial: Configure Zenya for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in Zenya and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to [Zenya](https://www.infoland.nl/). For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). Before you attempt to use this tutorial, be sure that you know and meet all requirements. If you have questions, contact Infoland.
+The objective of this tutorial is to demonstrate the steps to be performed in Zenya and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and deprovision users and/or groups to [Zenya](https://www.infoland.nl/). For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). Before you attempt to use this tutorial, be sure that you know and meet all requirements. If you have questions, contact Infoland.
 
 ## Capabilities supported
 > * Create users in Zenya
@@ -155,7 +155,6 @@ For more information (in dutch) also read: [`Implementatie SCIM koppeling`](http
 
 This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 
-
 ## Step 6: Monitor your deployment
 Once you've configured provisioning, use the following resources to monitor your deployment:
 
@@ -165,7 +164,8 @@ Once you've configured provisioning, use the following resources to monitor your
 
 ## Change log
 
-* 06/17/2020 - Enterprise extension attribute "Manager" has been removed.
+* 06/17/2020 - Removed support for enterprise extension attribute **urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager**.
+* 10/11/2023 - Added support for core attribute **title** and added support for enterprise extension attributes **urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department** and **urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager**.
 
 ## Additional resources
 

@@ -1,19 +1,18 @@
 ---
 title: 'Microsoft Entra Connect: Accounts and permissions'
 description: Learn about accounts that are used and created and the permissions that are required to install and use Microsoft Entra Connect.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: reference
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Microsoft Entra Connect: Accounts and permissions
 
@@ -270,12 +269,23 @@ The name of the server the account is used on can be identified in the second pa
 
 A server account is created with a long, complex password that doesn't expire. The account is granted a special Directory Synchronization Accounts role that has permissions to perform only directory synchronization tasks. This special built-in role can't be granted outside of the Microsoft Entra Connect wizard. The [Microsoft Entra admin center](https://entra.microsoft.com) shows this account with the User role.
 
-Microsoft Entra ID has a limit of 20 sync service accounts. To get the list of existing Microsoft Entra service accounts in your Microsoft Entra instance, run the following Azure AD PowerShell cmdlet: `Get-AzureADDirectoryRole | where {$_.DisplayName -eq "Directory Synchronization Accounts"} | Get-AzureADDirectoryRoleMember`
+Microsoft Entra ID has a limit of 20 sync service accounts.
 
-To remove unused Microsoft Entra service accounts, run the following Azure AD PowerShell cmdlet: `Remove-AzureADUser -ObjectId <ObjectId-of-the-account-you-wish-to-remove>`
+- To get the list of existing Microsoft Entra service accounts in your Microsoft Entra instance, run the following command:
+
+  ```powershell
+  $directoryRoleId = Get-MgDirectoryRole | where {$_.DisplayName -eq "Directory Synchronization Accounts"}
+  Get-MgDirectoryRoleMember -DirectoryRoleId $directoryRoleId.Id | Select -ExpandProperty AdditionalProperties
+  ```
+
+- To remove unused Microsoft Entra service accounts, run the following command:
+
+  ```powershell
+  Remove-MgUser -UserId <Id-of-the-account-to-remove>
+  ```
 
 > [!NOTE]
-> Before you can use these PowerShell commands, you must install the [Azure Active Directory PowerShell for Graph module](/powershell/azure/active-directory/install-adv2#installing-the-azure-ad-module) and connect to your instance of Microsoft Entra ID by using [Connect-AzureAD](/powershell/module/azuread/connect-azuread).
+> Before you can use these PowerShell commands, you must install the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview#install-the-microsoft-graph-powershell-sdk) module and connect to your instance of Microsoft Entra ID by using [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph).
 
 For more information about how to manage or reset the password for the Microsoft Entra Connect account, see [Manage the Microsoft Entra Connect account](how-to-connect-azureadaccount.md).
 

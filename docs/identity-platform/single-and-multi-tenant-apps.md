@@ -1,18 +1,16 @@
 ---
 title: Single and multi-tenant apps in Microsoft Entra ID
 description: Learn about the features and differences between single-tenant and multi-tenant apps in Microsoft Entra ID.
-services: active-directory
 author: rwike77
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.workload: identity
-ms.date: 10/17/2023
 ms.author: ryanwi
+ms.custom:
+ms.date: 10/17/2023
 ms.reviewer: justhu
-ms.custom: aaddev
+ms.service: identity-platform
+
+ms.topic: conceptual
+#Customer intent: As a developer, I want to understand the concept of tenancy in Microsoft Entra ID, so that I can configure my app to be either single-tenant or multi-tenant during app registration and determine who can sign in to my app.
 ---
 
 # Tenancy in Microsoft Entra ID

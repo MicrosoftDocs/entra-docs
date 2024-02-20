@@ -1,17 +1,15 @@
 ---
 title: "How to configure app instance property lock in your applications"
 description: How to increase app security by configuring property modification locks for sensitive properties of the application.
-services: active-directory
-manager: CelesteDG
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: how-to
-ms.workload: identity
-ms.date: 10/26/2023
 author: henrymbuguakiarie
+manager: CelesteDG
 ms.author: henrymbugua
-ms.reviewer: madansr7
-# Customer intent: As an application developer, I want to learn how to protect properties of my application instance of being modified.
+ms.date: 10/26/2023
+ms.reviewer:
+ms.service: identity-platform
+
+ms.topic: how-to
+#Customer intent: As an application developer, I want to learn how to protect properties of my application instance of being modified.
 ---
 
 # How to configure app instance property lock for your applications

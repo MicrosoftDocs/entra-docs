@@ -1,17 +1,16 @@
 ---
 title: Deploy a web app with App Service auth in a pipeline
 description: Describes how to set up a pipeline in Azure Pipelines to build and deploy a web app to Azure and enable the Azure App Service built-in authentication. The article provides step-by-step instructions on how to configure Azure resources, build and deploy a web application, create a Microsoft Entra app registration, and configure App Service built-in authentication using Azure Pipelines.
-services: active-directory
 author: rwike77
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.custom: 
-ms.topic: how-to
-ms.date: 07/17/2023
 ms.author: ryanwi
-ms.reviewer: mahender, jukullam
+ms.custom: 
+ms.date: 07/17/2023
+ms.reviewer:
+ms.service: identity-platform
+
+ms.topic: how-to
+#Customer intent: As a developer, I want to deploy a web app in a pipeline and configure App Service authentication using Azure Pipelines, so that I can automate the deployment process and secure access to the web app.
 ---
 
 # Deploy a web app in a pipeline and configure App Service authentication
@@ -32,7 +31,7 @@ You'll learn how to:
     - To use Microsoft-hosted agents, your Azure DevOps organization must have access to Microsoft-hosted parallel jobs. [Check your parallel jobs and request a free grant](/azure/devops/pipelines/troubleshooting/troubleshooting#check-for-available-parallel-jobs).
 - A Microsoft Entra [tenant](./quickstart-create-new-tenant.md).
 - A [GitHub account](https://github.com) and Git [setup locally](https://docs.github.com/en/get-started/quickstart/set-up-git).
-- .NET 6.0 SDK or later.
+- A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
 ## Create a sample ASP.NET Core web app
 
@@ -57,7 +56,7 @@ cd PipelinesTest
 
 ### Create an ASP.NET Core web app
 
-1. Open a terminal window on your machine to a working directory. Create a new .NET web app using the [dotnet new webapp](/dotnet/core/tools/dotnet-new#web-options) command, and then change directories into the newly created app.
+1. Open a terminal window on your machine to a working directory. Create a new ASP.NET Core web app using the [dotnet new webapp](/dotnet/core/tools/dotnet-new#web-options) command, and then change directories into the newly created app.
 
     ```dotnetcli
     dotnet new webapp -n PipelinesTest --framework net7.0
@@ -74,7 +73,7 @@ cd PipelinesTest
 
 1. To verify the web app is running, open a web browser and navigate to the app at `https://localhost:5001`.
 
-You see the template ASP.NET Core 7.0 web app displayed in the page. 
+You see the template ASP.NET Core web app displayed in the page. 
 
 :::image type="content" alt-text="Screen shot that shows web app running locally." source="./media/deploy-web-app-authentication-pipeline/web-app-local.png" border="true":::
 

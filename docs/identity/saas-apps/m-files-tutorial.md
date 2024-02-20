@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra integration with M-Files'
 description: Learn how to configure single sign-on between Microsoft Entra ID and M-Files.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -32,6 +32,7 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
 
 * M-Files supports **SP** initiated SSO.
+* M-Files supports [Automated user provisioning](m-files-provisioning-tutorial.md).
 
 ## Add M-Files from the gallery
 

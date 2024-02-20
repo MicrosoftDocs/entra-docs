@@ -1,19 +1,16 @@
 ---
 title: 'Exchange hybrid writeback with sync'
 description: This article describes the Exchange hybrid writeback feature with sync clients.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Exchange hybrid writeback 
@@ -23,7 +20,7 @@ To accomplish this scenario and allow your on-premises users to take full advant
 
  :::image type="content" source="cloud-sync/media/exchange-hybrid/exchange-hybrid.png" alt-text="Conceptual image of exchange hybrid scenario." lightbox="cloud-sync/media/exchange-hybrid/exchange-hybrid.png":::
 
-## Cloud sync (Public Preview)
+## Cloud sync
 You can enable this scenario using cloud sync by ensuring you're using the latest provisioning agent and following the documentation.  For more information, see [Exchange hybrid writeback with cloud sync](cloud-sync/exchange-hybrid.md)
 
 ## Connect sync

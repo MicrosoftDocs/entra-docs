@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Tailscale for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Tailscale.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 9bf5ef32-c9ba-4fef-acab-3c16f976af5c
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 08/03/2023
 ms.author: thwimmer
@@ -24,7 +24,7 @@ This tutorial describes the steps you need to perform in both Tailscale and Micr
 > * Create users in Tailscale.
 > * Remove users in Tailscale when they do not require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Tailscale.
-> * Provision groups and group memberships in Better Stack.
+> * Provision groups and group memberships in Tailscale.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Tailscale (recommended).
 
 ## Prerequisites
@@ -154,6 +154,10 @@ Once you've configured provisioning, use the following resources to monitor your
 * Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
 * Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it's to completion
 * If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
+
+## Change log
+
+* 11/21/2023 - Added support for **Group Provisioning**.
 
 ## More resources
 

@@ -1,20 +1,20 @@
 ---
 title: 'Configure enterprise application properties'
 description: Configure the properties of an enterprise application in Microsoft Entra ID.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 01/26/2023
 ms.author: jomondi
 ms.reviewer: ergreenl
 zone_pivot_groups: enterprise-apps-minus-former-powershell
 ms.custom: enterprise-apps
 
-#Customer intent: As an administrator of a Microsoft Entra tenant, I want to configure the properties of an enterprise application.
+#customer intent: As an IT admin managing user accounts in Microsoft Entra, I want to create a new user account and assign it to an enterprise application, so that I can provide access to the application for the user.
 ---
 
 # Configure enterprise application properties

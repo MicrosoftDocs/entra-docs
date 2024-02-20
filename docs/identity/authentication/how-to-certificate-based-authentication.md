@@ -2,7 +2,7 @@
 title: How to configure Microsoft Entra certificate-based authentication
 description: Topic that shows how to configure Microsoft Entra certificate-based authentication in Microsoft Entra ID
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 11/04/2023
@@ -11,8 +11,6 @@ ms.author: justinha
 author: vimrang
 manager: amycolannino
 ms.reviewer: vraganathan
-
-ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref, has-azure-ad-ps-ref
 ---
 # How to configure Microsoft Entra certificate-based authentication
@@ -78,7 +76,7 @@ To enable the certificate-based authentication and configure user bindings in th
 >[!NOTE]
 >Upload of a new CA fails if any existing CA expired. A Global Administrator should delete any expired CA, and retry to upload the new CA.
 
-### Configure certification authorities(CA) using PowerShell
+### Configure certificate authorities (CA) using PowerShell
 
 Only one CRL Distribution Point (CDP) for a trusted CA is supported. The CDP can only be HTTP URLs. Online Certificate Status Protocol (OCSP) or Lightweight Directory Access Protocol (LDAP) URLs aren't supported.
 
@@ -96,7 +94,7 @@ Only one CRL Distribution Point (CDP) for a trusted CA is supported. The CDP can
 >[!NOTE]
 >Upload of new CAs will fail when any of the existing CAs are expired. Tenant Admin should delete the expired CAs and then upload the new CA.
 
-[!INCLUDE [New-AzureAD](~/includes/entra-authentication-new-trusted.md)]
+Follow the preceding steps to add a CA in the Microsoft Entra admin center. 
 
 **AuthorityType**
 - Use 0 to indicate a Root certification authority
@@ -116,11 +114,11 @@ The following table and graphic show how to map information from the CA certific
 :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/certificate-crl-compare.png" alt-text="Compare CA Certificate with CRL Information.":::
 
 >[!TIP]
->The value for crlDistributionPoint in the preceding example is the http location for the CA’s Certificate Revocation List (CRL). This can be found in a few places.
+>The value for crlDistributionPoint in the preceding example is the http location for the CA’s Certificate Revocation List (CRL). This value can be found in a few places:
 >
 >- In the CRL Distribution Point (CDP) attribute of a certificate issued from the CA.
 >
->If Issuing CA is Windows Server:
+>If the issuing CA runs Windows Server:
 >
 >- On the [Properties](/windows-server/networking/core-network-guide/cncg/server-certs/configure-the-cdp-and-aia-extensions-on-ca1#to-configure-the-cdp-and-aia-extensions-on-ca1)
  of the CA in the certification authority Microsoft Management Console (MMC).
@@ -128,13 +126,10 @@ The following table and graphic show how to map information from the CA certific
 
 For more information, see [Understanding the certificate revocation process](./concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process).
 
-### Remove
 
-[!INCLUDE [Remove-Entra-ID](~/includes/entra-authentication-remove-trusted.md)]
+### Validate Certificate Authority configuration
 
-### Modify
-
-[!INCLUDE [Set-Entra-ID](~/includes/entra-authentication-set-trusted.md)]
+It is important to ensure that the above configuration steps result is Entra ID ability to both validate the certificate authority trust chain and succsessfully aquire the certificate revocation list (CRL) from the configured certificate authority CRL distribution point (CDP) . To assist with this task, it is recommended to install the [MSIdentity Tools](https://aka.ms/msid) PowerShell module and run [Test-MsIdCBATrustStoreConfiguration](https://github.com/AzureAD/MSIdentityTools/wiki/Test-MsIdCBATrustStoreConfiguration). This PowerShell cmdlet will review the Entra tenant certificate authority configuration and surface errors/warnings for common mis-configuration issues. 
 
 ## Step 2: Enable CBA on the tenant
 
@@ -171,10 +166,10 @@ To enable CBA and configure user bindings in the Microsoft Entra admin center, c
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/policy.png" alt-text="Screenshot of Authentication policy.":::
 
 1. Select **Configure** to set up authentication binding and username binding.
-1. The protection level attribute has a default value of **Single-factor authentication**. Select **Multifactor authentication** to change the default value to MFA.
+1. The protection level attribute has a default value of **Single-factor authentication**. Select **Multi-factor authentication** to change the default value to MFA.
 
    >[!NOTE] 
-   >The default protection level value will be in effect if no custom rules are added. If custom rules are added, the protection level defined at the rule level will be honored instead.
+   >The default protection level value is in effect if no custom rules are added. If custom rules are added, the protection level defined at the rule level is honored instead.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/change-default.png" alt-text="Screenshot of how to change the default policy to MFA.":::
 
@@ -189,14 +184,14 @@ To enable CBA and configure user bindings in the Microsoft Entra admin center, c
    To create a rule by certificate issuer, select **Certificate issuer**.
 
    1. Select a **Certificate issuer identifier** from the list box.
-   1. Select **Multifactor authentication**.
+   1. Select **Multi-factor authentication**, **Low** affinity binding, and then click **Add**. When prompted, click **I acknowledge** to finish adding the rule. 
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/multifactor-issuer.png" alt-text="Screenshot of multifactor authentication policy.":::
 
    To create a rule by Policy OID, select **Policy OID**.
 
    1. Enter a value for **Policy OID**.
-   1. Select **Multifactor authentication**.
+   1. Select **Multi-factor authentication**, **Low** affinity binding, and then click **Add**. When prompted, click **I acknowledge** to finish adding the rule. .
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/multifactor-policy-oid.png" alt-text="Screenshot of mapping to Policy OID.":::
 
@@ -204,7 +199,7 @@ To enable CBA and configure user bindings in the Microsoft Entra admin center, c
 
    1. Select **Certificate Issuer** and **Policy OID**.
    1. Select an issuer and enter the policy OID.
-   1. For Authentication strength, select **Single-factor authentication** or **Multifactor authentication**.
+   1. For Authentication strength, select **Single-factor authentication** or **Multi-factor authentication**.
    1. For Affinity binding, select **Low**.
  
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/issuer-and-policy-oid.png" alt-text="Screenshot of how to select a low affinity binding.":::
@@ -214,6 +209,19 @@ To enable CBA and configure user bindings in the Microsoft Entra admin center, c
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/add-issuer-and-policy-oid.png" alt-text="Screenshot of how to add a low affinity binding.":::
 
    1. Authenticate with a certificate that has policy OID of 3.4.5.6 and Issued by CN=CBATestRootProd. Authentication should pass and get a multifactor claim.
+
+>[!IMPORTANT]
+>There is a known issue where an Entra tenant admin configures a CBA authentication policy rule using both Issuer and Policy OID impacts some device registration scenarios including:
+>- Windows Hello For Business enrollment
+>- Fido2 Security Key registration
+>- Windows Passwordless Phone Sign-in
+>  
+>Device registration with Workplace Join, Entra ID and Hybrid Entra ID device join scenarios are not impacted. CBA authentication policy rules using either Issuer OR Policy OID are not impacted.
+>To mitigate, admins should :
+>- Edit the certificate-based authentication policy rules currently using both Issuer and Policy OID options and remove either the Issuer or OID requirement and save. OR
+>- Remove the authentication policy rule currently using both Issuer and Policy OID and create rules using only issuer or policy OID
+>  
+>We are working to fix the issue.
 
    To create a rule by Issuer and Serial Number:
 
@@ -238,7 +246,7 @@ To enable CBA and configure user bindings in the Microsoft Entra admin center, c
 1. Select **Ok** to save any custom rule.
 
 >[!IMPORTANT]
->PolicyOID should be in object identifier format as per https://www.rfc-editor.org/rfc/rfc5280#section-4.2.1.4. For ex: If the certificate policies says "All Issuance Policies" you should enter the OID as 2.5.29.32.0 in the add rules editor. Entering the string "All Issuance Policies" in rules editor is invalid and will not take effect.
+>Enter the PolicyOID by using the [object identifier format](https://www.rfc-editor.org/rfc/rfc5280#section-4.2.1.4). For example, if the certificate policy says **All Issuance Policies**, enter the OID as **2.5.29.32.0** when you add the rule. The string **All Issuance Policies** is invalid for the rules editor and won't take effect.
 
 ## Step 4: Configure username binding policy
 
@@ -246,8 +254,10 @@ The username binding policy helps validate the certificate of the user. By defau
 
 To determine how to configure username binding, see [How username binding works](concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-username-binding-policy).
 
+For more information on scenarios using certificateUserIds attribute see [Certificate user IDs](~/identity/authentication/concept-certificate-based-authentication-certificateuserids.md).
+
 >[!IMPORTANT]
->If a username binding policy uses synchronized attributes, such as the onPremisesUserPrincipalName attribute of the user object, be aware that any user with Active Directory Administrators privileges can make changes that impact the onPremisesUserPrincipalName value in Microsoft Entra ID for any synchronized accounts, including users with delegated administrative privilege over synchronized user accounts or administrative rights over the Microsoft Entra Connect Servers.
+>If a username binding policy uses synchronized attributes, such as the certificateUserIds, onPremisesUserPrincipalName, and userPrincipalName attribute of the user object, be aware that accounts with administrative privileges in Active Directory (such as those with delegated rights on user objects or administive rights on the Entra Connect Server) can make changes that impact these attributes in Entra ID. 
 
 1. Create the username binding by selecting one of the X.509 certificate fields to bind with one of the user attributes. The username binding order represents the priority level of the binding. The first one has the highest priority, and so on.
 
@@ -398,7 +408,7 @@ The SerialNumber value to be added in CertificateUserId is:
 CertificateUserId: 
 
 ```
-X509:<I> C=US,O=U.SGovernment,OU=DoD,OU=PKI,OU=CONTRACTOR,CN=CRL.BALA.SelfSignedCertificate<SR> b24134139f069b49997212a86ba0ef48 
+X509:<I>C=US,O=U.SGovernment,OU=DoD,OU=PKI,OU=CONTRACTOR,CN=CRL.BALA.SelfSignedCertificate<SR> b24134139f069b49997212a86ba0ef48 
 ```
 
 #### Issue and Subject manual mapping

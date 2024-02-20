@@ -1,16 +1,15 @@
 ---
 title: Glossary of terms in the Microsoft identity platform
 description: Definitions of terms commonly found in Microsoft identity platform documentation, Microsoft Entra admin center, and authentication SDKs like the Microsoft Authentication Library (MSAL).
-services: active-directory
 author: rwike77
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: reference
-ms.date: 03/15/2023
 ms.author: ryanwi
-ms.reviewer: 
+ms.date: 03/15/2023
+ms.reviewer:
+ms.service: identity-platform
+
+ms.topic: reference
+#Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand the terminology and concepts related to authentication and authorization, so that I can effectively implement secure access to protected resources in my application.
 ---
 
 # Glossary: Microsoft identity platform

@@ -1,21 +1,19 @@
 ---
 title: Access Azure Storage using a Windows VM system-assigned managed identity
 description: A tutorial that walks you through the process of using a Windows VM system-assigned managed identity to access Azure Storage.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
 editor: daveba
 
 ms.custom: subject-rbac-steps
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: tutorial
 ms.tgt_pltfrm: na
-ms.workload: identity
-ms.date: 02/18/2022
+ms.date: 01/05/2024
 ms.author: barclayn
-ms.collection: M365-identity-device-management
+
 ---
 
 # Tutorial: Use a Windows VM system-assigned managed identity to access Azure Storage
@@ -92,7 +90,7 @@ This section shows how to grant your VM access to an Azure Storage container. Yo
     | System-assigned | Virtual Machine |
     | Select | &lt;your virtual machine&gt; |
 
-    ![Add role assignment page in Azure portal.](~/../azure-docs-pr/includes/role-based-access-control/media/add-role-assignment-page.png)
+    ![Screenshot that shows the page for adding a role assignment.](../../media/common/add-role-assignment-page.png)
 
 ## Access data 
 

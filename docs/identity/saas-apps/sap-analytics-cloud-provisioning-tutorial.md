@@ -1,16 +1,16 @@
 ---
 title: 'Tutorial: Configure SAP Analytics Cloud for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP Analytics Cloud.
-services: active-directory
+
 documentationcenter: ''
 author: twimmers
 writer: twimmers
 manager: jeedes
 
 ms.assetid: 27d12989-efa8-4254-a4ad-8cb6bf09d839
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022

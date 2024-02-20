@@ -2,17 +2,16 @@
 title: Frontline worker management
 description: Learn about frontline worker management capabilities that are provided through the My Staff portal.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 06/16/2022
+ms.date: 02/16/2024
 ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
 ms.reviewer: stevebal
 
-#Customer intent: As a manager of frontline workers, I want an intuitive portal so that I can easily onboard new workers and provision shared devices.
+#Customer Intent: As a manager of frontline workers, I want an intuitive portal so that I can easily onboard new workers and provision shared devices.
 ---
 
 # Frontline worker management
@@ -33,7 +32,7 @@ Microsoft Entra ID in the My Staff portal enables delegation of user management.
 
 ## Accelerated onboarding with simplified authentication
 
-My Staff also enables frontline managers to register their team members' phone numbers for [SMS sign-in](~/identity/authentication/howto-authentication-sms-signin.md). In many verticals, frontline workers maintain a local username and password combination, a solution that is often cumbersome, expensive, and error-prone. When IT enables authentication using SMS sign-in, frontline workers can log in with [Single Sign-On (SSO)](~/identity/enterprise-apps/what-is-single-sign-on.md) for Microsoft Teams and other applications using just their phone number and a one-time passcode (OTP) sent via SMS. Single Sign-On makes signing in for frontline workers simple and secure, delivering quick access to the apps they need most.
+My Staff also enables frontline managers to register their team members' phone numbers for [SMS sign-in](~/identity/authentication/howto-authentication-sms-signin.md). In many verticals, frontline workers maintain a local username and password combination, a solution that is often cumbersome, expensive, and error-prone. When IT enables authentication using SMS sign-in, frontline workers can sign in with [single sign-on (SSO)](~/identity/enterprise-apps/what-is-single-sign-on.md) for Microsoft Teams and other applications using just their phone number and a one-time passcode (OTP) sent via SMS. Single sign-on makes signing in for frontline workers simple and secure, delivering quick access to the apps they need most.
 
 ![SMS sign-in](media/concept-fundamentals-frontline-worker/sms-signin.png)
 

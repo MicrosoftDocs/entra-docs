@@ -1,18 +1,15 @@
 ---
 title: Register mobile apps that call web APIs
 description: Learn how to build a mobile app that calls web APIs (app's registration)
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: how-to
-ms.workload: identity
-ms.date: 08/18/2021
 ms.author: henrymbugua
-ms.reviewer: brandwe, jmprieur
-ms.custom: aaddev
+ms.custom: 
+ms.date: 08/18/2021
+ms.reviewer: brianmel, jmprieur
+ms.service: identity-platform
+
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a mobile app that calls web APIs by using the Microsoft identity platform for developers.
 ---
 
@@ -50,19 +47,19 @@ When you build a mobile app that uses interactive authentication, the most criti
 1. Select **Register**.
 1. Select **Authentication** and then select **Add a platform**.
 
-   ![Add a platform](https://user-images.githubusercontent.com/13203188/60799366-4c01ad00-a173-11e9-934f-f02e26c9429e.png)
+   :::image type="content" source="./media/scenario-mobile-app-registration/add-a-platform.png" alt-text="Add a platform." lightbox="./media/scenario-mobile-app-registration/add-a-platform.png":::
 
 1. When the list of platforms is supported, select **iOS / macOS**.
 
-   ![Choose a mobile application](https://user-images.githubusercontent.com/13203188/60799411-60de4080-a173-11e9-9dcc-d39a45826d42.png)
+   :::image type="content" source="./media/scenario-mobile-app-registration/choose-a-mobile-application.png" alt-text="Choose a mobile application." lightbox="./media/scenario-mobile-app-registration/choose-a-mobile-application.png":::
 
 1. Enter your bundle ID, and then select **Configure**.
 
-   ![Enter your bundle ID](https://user-images.githubusercontent.com/13203188/60799477-7eaba580-a173-11e9-9f8b-431f5b09344e.png)
+   :::image type="content" source="./media/scenario-mobile-app-registration/enter-your-bundle-id.png" alt-text="Enter your bundle ID." lightbox="./media/scenario-mobile-app-registration/enter-your-bundle-id.png":::
 
 When you complete the steps, the redirect URI is computed for you, as in the following image.
 
-![The resulting redirect URI](https://user-images.githubusercontent.com/13203188/60799538-9e42ce00-a173-11e9-860a-015a1840fd19.png)
+:::image type="content" source="./media/scenario-mobile-app-registration/resulting-redirect-uri.png" alt-text="Resulting redirect URI." lightbox="./media/scenario-mobile-app-registration/resulting-redirect-uri.png":::
 
 If you prefer to manually configure the redirect URI, you can do so through the application manifest. Here's the recommended format for the manifest:
 

@@ -2,8 +2,7 @@
 title: Overview of Microsoft Entra certificate-based authentication 
 description: Learn about Microsoft Entra certificate-based authentication without federation
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 01/29/2023
@@ -12,8 +11,6 @@ ms.author: justinha
 author: vimrang
 manager: amycolannino
 ms.reviewer: vranganathan
-
-ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
 ---
 
@@ -61,6 +58,7 @@ The following scenarios are supported:
 - Configuring certificate-to-user account bindings by using any of the certificate fields:
   - Subject Alternate Name (SAN) PrincipalName and SAN RFC822Name
   - Subject Key Identifier (SKI) and SHA1PublicKey
+  - Issuer + Subject, Subject and Issuer + SerialNumber
 - Configuring certificate-to-user account bindings by using any of the user object attributes:
   - User Principal Name
   - onPremisesUserPrincipalName
@@ -73,7 +71,6 @@ The following scenarios aren't supported:
 - Certificate Authority hints aren't supported, so the list of certificates that appears for users in the certificate picker UI isn't scoped.
 - Only one CRL Distribution Point (CDP) for a trusted CA is supported.
 - The CDP can be only HTTP URLs. We don't support Online Certificate Status Protocol (OCSP), or Lightweight Directory Access Protocol (LDAP) URLs.
-- Configuring other certificate-to-user account bindings, such as using the **Subject**, **Subject + Issuer**, or **Issuer + Serial Number**, aren’t available in this release.
 - Password as an authentication method cannot be disabled and the option to sign in using a password is displayed even with Microsoft Entra CBA method available to the user.
 
 ## Known Limitation with Windows Hello For Business certificates

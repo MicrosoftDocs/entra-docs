@@ -1,14 +1,12 @@
 ---
 title: Add your organization's privacy info
 description: Add your organization's privacy info, privacy contact, and technical contact to your directory.
-services: active-directory
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: how-to
-ms.date: 09/12/2023
+ms.date: 12/04/2023
 ms.author: barclayn
 ms.reviewer: bpham
 ---
@@ -30,9 +28,9 @@ Your privacy and technical information is located in the **Properties** area of 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
-1. Browse to **Identity** > **Properties**.
+1. Browse to **Identity** > **Overview** > **Properties**.
 
-   :::image type="content" source="media/properties-area/properties-area.png" alt-text="Screenshot showing the properties area highlighting the privacy info area.":::
+   :::image type="content" source="media/properties-area/properties-area.png" alt-text="Screenshot showing the properties area highlighting the privacy info area." lightbox="media/properties-area/properties-area.png":::
  
 1. Add your privacy info for your users:
 

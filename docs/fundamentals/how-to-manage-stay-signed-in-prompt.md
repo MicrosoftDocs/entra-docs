@@ -1,18 +1,16 @@
 ---
 title: Manage the 'Stay signed in' prompt in Microsoft Entra ID
-description: Instructions about how to set up the 'Stay signed in' prompt for Microsoft Entra users.
-services: active-directory
+description: Learn how the 'Stay signed in' prompt for Microsoft Entra users works and how to configure it in Microsoft Entra ID.
 author: shlipsey3
 manager: amycolannino
-
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 08/09/2023
+ms.date: 01/16/2024
 ms.author: sarahlipsey
 ms.reviewer: almars
 
+# Customer intent: As an IT admin, I want to know how to configure the 'Stay signed in' prompt for Microsoft Entra users, so their sign-in experience is not interrupted unnecessarily.
 ---
 # Manage the 'Stay signed in?' prompt
 
@@ -20,17 +18,7 @@ The **Stay signed in?** prompt appears after a user successfully signs in. This 
 
 This article covers how the KMSI process works, how to enable it for customers, and how to troubleshoot KMSI issues.
 
-## How does it work? 
-
-If a user answers **Yes** to the **'Stay signed in?'** prompt, a persistent authentication cookie is issued. The cookie must be stored in session for KMSI to work. KMSI doesn't work with locally stored cookies. If KMSI isn't enabled, a non-persistent cookie is issued and lasts for 24 hours or until the browser is closed. 
-
-The following diagram shows the user sign-in flow for a managed tenant and federated tenant using the KMSI in prompt. This flow contains smart logic so that the **Stay signed in?** option isn't displayed if the machine learning system detects a high-risk sign-in or a sign-in from a shared device. For federated tenants, the prompt will show after the user successfully authenticates with the federated identity service.
-
-Some features of SharePoint Online and Office 2010 depend on users being able to choose to remain signed in. If you uncheck the **Show option to remain signed in** option, your users may see other unexpected prompts during the sign-in process.
-
-![Diagram showing the user sign-in flow for a managed vs. federated tenant.](media/how-to-manage-stay-signed-in-prompt/kmsi-workflow.png)
-
-## License and role requirements
+## Prerequisites
 
 Configuring the 'keep me signed in' (KMSI) option requires one of the following licenses:
 
@@ -40,23 +28,36 @@ Configuring the 'keep me signed in' (KMSI) option requires one of the following 
 
 You must have the **Global Administrator** role to enable the 'Stay signed in?' prompt.
 
+## How does it work?
+
+If a user answers **Yes** to the **'Stay signed in?'** prompt, a persistent authentication cookie is issued. The cookie must be stored in session for KMSI to work. KMSI doesn't work with locally stored cookies. If KMSI isn't enabled, a non-persistent cookie is issued and lasts for 24 hours or until the browser is closed. 
+
+The following diagram shows the user sign-in flow for a managed tenant and federated tenant using the KMSI in prompt. This flow contains smart logic so that the **Stay signed in?** option isn't displayed if the machine learning system detects a high-risk sign-in or a sign-in from a shared device. For federated tenants, the prompt will show after the user successfully authenticates with the federated identity service.
+
+Some features of SharePoint Online and Office 2010 depend on users being able to choose to remain signed in. If you uncheck the **Show option to remain signed in** option, your users might see other unexpected prompts during the sign-in process.
+
+:::image type="content" source="media/how-to-manage-stay-signed-in-prompt/kmsi-workflow.png" alt-text="Diagram showing the user sign-in flow for a managed vs. federated tenant.":::
+
 ## Enable the 'Stay signed in?' prompt
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal update](../includes/portal-update.md)]
 
 The KMSI setting is managed in **User settings**.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Identity** > **Users** > **User settings**.
+
+   :::image type="content" source="media/how-to-manage-stay-signed-in-prompt/user-settings-page.png" alt-text="Screenshot of the User settings page in Microsoft Entra ID.":::
+
 1. Set the **Show keep user signed in** toggle to **Yes**.
 
-    ![Screenshot of the Show keep user signed in prompt.](media/how-to-manage-stay-signed-in-prompt/show-keep-user-signed-in.png)
+   :::image type="content" source="media/how-to-manage-stay-signed-in-prompt/show-keep-user-signed-in.png" alt-text="Screenshot of the Show keep user signed in prompt." lightbox="media/how-to-manage-stay-signed-in-prompt/show-keep-user-signed-in-expanded.png":::
 
 ## Troubleshoot 'Stay signed in?' issues
 
 If a user doesn't act on the **Stay signed in?** prompt but abandons the sign-in attempt, a sign-in log entry appears in the Microsoft Entra sign-in logs. The prompt the user sees is called an "interrupt."
 
-![Sample 'Stay signed in?' prompt](media/how-to-manage-stay-signed-in-prompt/kmsi-stay-signed-in-prompt.png)
+:::image type="content" source="media/how-to-manage-stay-signed-in-prompt/kmsi-stay-signed-in-prompt.png" alt-text="Screenshot of the Sample Stay signed in? prompt.":::
 
 Details about the sign-in error are found in the **Sign-in logs**. Select the impacted user from the list and locate the following details in the **Basic info** section.
 

@@ -1,12 +1,12 @@
 ---
 title: 'Tutorial: User provisioning for LinkedIn Elevate'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to LinkedIn Elevate.
-services: active-directory
+
 author: ArvindHarinder1
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: arvinh

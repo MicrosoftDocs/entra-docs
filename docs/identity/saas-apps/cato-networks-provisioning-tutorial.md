@@ -5,9 +5,9 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: bdaa6863-c0fe-40b0-8989-3632900464ef
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer

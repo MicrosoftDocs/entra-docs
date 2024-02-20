@@ -1,18 +1,16 @@
 ---
 title: "Quickstart: ASP.NET Core web app that signs in users and calls Microsoft Graph"
 description: In this quickstart, you learn how an app uses Microsoft.Identity.Web to implement Microsoft sign-in in an ASP.NET Core web app using OpenID Connect and calls Microsoft Graph.
-services: active-directory
+ROBOTS: NOINDEX
 author: OwenRichards1
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.workload: identity
-ms.date: 11/22/2021
-ROBOTS: NOINDEX
 ms.author: owenrichards
+ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:aspnet-core", mode-other
+ms.date: 11/22/2021
 ms.reviewer: jmprieur
-ms.custom: devx-track-csharp, aaddev, "scenarios:getting-started", "languages:aspnet-core", mode-other
+ms.service: identity-platform
+
+ms.topic: conceptual
 #Customer intent: As an application developer, I want to download and run a demo ASP.NET Core web app that can sign in users with personal Microsoft accounts (MSA) and work/school accounts from any Microsoft Entra instance, then access their data in Microsoft Graph on their behalf.
 ---
 
@@ -21,7 +19,7 @@ ms.custom: devx-track-csharp, aaddev, "scenarios:getting-started", "languages:as
 > [!div renderon="docs"]
 > Welcome! This probably isn't the page you were expecting. While we work on a fix, this link should take you to the right article:
 >
-> > [Quickstart: Add sign-in with Microsoft to an ASP.NET Core web app](quickstart-web-app-aspnet-core-sign-in.md)
+> > [Quickstart: Add sign-in with Microsoft to an ASP.NET Core web app](quickstart-web-app-dotnet-core-sign-in.md)
 > 
 > We apologize for the inconvenience and appreciate your patience while we work to get this resolved.
 
@@ -152,7 +150,7 @@ ms.custom: devx-track-csharp, aaddev, "scenarios:getting-started", "languages:as
 > 
 > The GitHub repo that contains the ASP.NET Core code sample referenced in this quickstart includes instructions and more code samples that show you how to:
 > 
-> - Add authentication to a new ASP.NET Core Web application
+> - Add authentication to a new ASP.NET Core web application
 > - Call Microsoft Graph, other Microsoft APIs, or your own web APIs
 > - Add authorization
 > - Sign in users in national clouds or with social identities
