@@ -40,7 +40,7 @@ Microsoft Internet Access has features to configure a security profile with a pr
 
 ### Create a web filtering policy
 
-1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> **[Web content filtering policies](web-content-filtering-policies.md)**.
+1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> **[Configure Global Secure Access content filtering](../global-secure-access/how-to-configure-web-content-filtering.md)**.
 
    [ ![Screenshot of Global Secure Access Secure Web content filtering policies.](media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png)](media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png#lightbox) 
 
@@ -151,7 +151,7 @@ Use Microsoft Entra Internet Access to block or allow access to internet sites b
 
 ### Create a web filtering policy
 
-1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> **[Web content filtering policies](web-content-filtering-policies.md)**.
+1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> **[Configure Global Secure Access content filtering](../global-secure-access/how-to-configure-web-content-filtering.md)**.
 
    [ ![Screenshot of Global Secure Access, Secure, Web content filtering policies.](media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png)](media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png#lightbox)
    
@@ -278,7 +278,7 @@ In some cases, it's necessary to block specific websites rather than using broad
 
 ### Create a web filtering policy
 
-1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> **[Web content filtering policies](web-content-filtering-policies.md)**.
+1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> **[Configure Global Secure Access content filtering](../global-secure-access/how-to-configure-web-content-filtering.md)**.
 
    [ ![Screenshot of Global Secure Access, Secure, Web content filtering policies.](media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png)](media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png#lightbox)
    
@@ -397,7 +397,7 @@ In some cases, you might have users that require access to blocked sites for gro
 
 ### Create a web filtering policy
 
-1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> **[Web content filtering policies](web-content-filtering-policies.md)**.
+1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> **[Configure Global Secure Access content filtering](../global-secure-access/how-to-configure-web-content-filtering.md)**.
 
    [ ![Screenshot of Global Secure Access, Secure, Web content filtering policies.](media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png)](media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png#lightbox)
 
