@@ -64,7 +64,7 @@ extension ViewController: SignInAfterSignUpDelegate {
 }
 ```
 
-## Next Steps
+## Next steps
 
 - [Tutorial: Reset password of a user](tutorial-native-auth-ios-self-service-password-reset.md)
 

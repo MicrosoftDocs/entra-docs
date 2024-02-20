@@ -81,7 +81,7 @@ To specify that this app is a public client and can use native authentication, e
    1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
    1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for both scopes.
 
-    :::image type="content" source="media/native-auth/ios/api-permissions.jpg" alt-text="Screenshot showing configured permission in Microsoft Entra admin center":::
+    :::image type="content" source="media/native-auth/ios/api-permissions.jpg" alt-text="Screenshot showing configured permission in Microsoft Entra admin center" lightbox="media/native-auth/ios/api-permissions.jpg":::
 
 ## Create a user flow
 
@@ -147,8 +147,8 @@ Although many applications can be associated with your user flow, a single appli
 1. Open _native-authentication/NativeAuthSampleApp/NativeAuthSampleApp/Configuration.swift_ file.
 1. Find the placeholder:
 
-   1. `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
-   1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use contoso. If you don't have your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+   - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
+   - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use contoso. If you don't have your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 
 > [!NOTE]
 > Remember to select a scheme to build and destination where you run the built products. Each scheme contains a list of real or simulated devices that represent the available destinations.
@@ -157,11 +157,11 @@ Although many applications can be associated with your user flow, a single appli
 
 To build and run your code, select **Run** from the **Product** menu in Xcode. After a successful build, Xcode will launch the sample app in the Simulator.
 
-:::image type="content" source="media/native-auth/ios/naitive-auth-sign-in-sign-up.png" alt-text="Screenshot of user prompt to enter email in iOS app.":::
+:::image type="content" source="media/native-auth/ios/native-auth-sign-in-sign-up.png" alt-text="Screenshot of user prompt to enter email in iOS app." lightbox="media/native-auth/ios/native-auth-sign-in-sign-up-expanded.png":::
 
 This guide tests **Email one-time-passcode** usage. Enter a valid email address, select **Sign Up**, and launch the submit code screen:
 
-:::image type="content" source="media/native-auth/ios/enter-one-time-pass-code.png" alt-text="Screenshot of user prompt to enter one-time passcode (OTP) in iOS app.":::
+:::image type="content" source="media/native-auth/ios/enter-one-time-pass-code.png" alt-text="Screenshot of user prompt to enter one-time passcode (OTP) in iOS app." lightbox="media/native-auth/ios/enter-one-time-pass-code-expanded.png":::
 
 After you enter your email address on the previous screen, the application will send a verification code to it. Once you submit the received code, the application takes you back to the previous screen and automatically sign you in. 
 
@@ -169,11 +169,11 @@ After you enter your email address on the previous screen, the application will 
 
 The sample app supports the following flows:
 
-1. _Email + one-time passcode_: Follow this flow to sign in or sign up with an email and a one-time passcode.
-1. _Email + password_: Follow this flow to sign in or sign up with email and a password.
-1. _Email + password sign-up with custom attributes_: Follow this flow to sign up with email, password, and custom attributes.
-1. _Password reset_: Follow this flow to reset the password.
-1. _Fallback to web browser_: Follow this flow to use the browser to sign in or sign up.
+- _Email + one-time passcode_: Follow this flow to sign in or sign up with an email and a one-time passcode.
+- _Email + password_: Follow this flow to sign in or sign up with email and a password.
+- _Email + password sign-up with custom attributes_: Follow this flow to sign up with email, password, and custom attributes.
+- _Password reset_: Follow this flow to reset the password.
+- _Fallback to web browser_: Follow this flow to use the browser to sign in or sign up.
 
     > [!NOTE]
     > In the [Create a user flow](#create-a-user-flow) section, you created a user flow where you chose **Email one-time passcode** under **Identity providers** > **Email Accounts**. For flows 2 through 4, you require a user flow that uses **Email with password** under **Identity providers** > **Email Accounts**.

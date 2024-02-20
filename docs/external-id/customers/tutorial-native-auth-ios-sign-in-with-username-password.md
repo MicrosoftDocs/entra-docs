@@ -73,7 +73,7 @@ func onSignInStartError(error: MSAL.SignInStartError) {
 }
 ```
 
-## Next Steps
+## Next steps
 
 - [Tutorial: Sign in user after sign up](tutorial-native-auth-ios-sign-in-user-after-sign-up.md)
 

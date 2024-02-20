@@ -193,7 +193,7 @@ When the user doesn't provide all the required attributes, or the attributes are
 
 Both delegate methods contain a new state reference. We'll use the `newState` parameter to call `submitAttributes(attributes:delegate)` again with the new attributes.
 
-## Next Steps
+## Next steps
 
 - [Tutorial: Sign up using username and password](tutorial-native-auth-ios-sign-up-with-username-password.md)
 

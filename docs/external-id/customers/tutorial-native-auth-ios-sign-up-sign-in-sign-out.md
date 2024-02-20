@@ -37,8 +37,8 @@ To sign up user using **Email one-time-passcode**, you need to:
 
 1. Create your user interface that includes:
 
-    1. A form to submit an Email.
-    1. A form to submit one-time passcode.
+    - A form to submit an Email.
+    - A form to submit one-time passcode.
 
 1. To sign up the user, we're going to use the library's `signUp(username:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignUpStartDelegate` protocol. To implement the `signUp(username:delegate)`, use the following code snippet:
 
@@ -124,9 +124,9 @@ To  sign in user using **Email one-time-passcode** you need to:
 
 1. Create your user interface that includes:
 
-    1. A form to submit an Email.
-    1. A form to submit one-time passcode.
-    1. A page to display the account details.
+    - A form to submit an Email.
+    - A form to submit one-time passcode.
+    - A page to display the account details.
 
 1. To sign in user, we're going to use `signIn(username:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignInStartDelegate` protocol. To implement the `signIn(username:delegate)`, use the following code snippet:
 
@@ -259,6 +259,6 @@ To sign out a user, use the reference to the `MSALNativeAuthUserAccountResult` t
 
 You have successfully completed all the necessary steps to sign out a user on your app. Build and run your application. If all good, you should be able to select sign out button to successfully sign out.
 
-## Next Steps
+## Next steps
 
 [Tutorial: Add built-in attributes to your native iOS authentication.](tutorial-native-auth-ios-sign-up-with-email-one-time-passcode.md)

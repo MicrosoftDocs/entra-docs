@@ -42,9 +42,9 @@ We use the `signUp(username:password:delegate)` method, which responds asynchron
 
 1. In the `signUp(username:password:delegate)` method, we pass in the email address that the user supplied us with, their password, and pass `self` for the delegate:
 
-```swift
-nativeAuth.signUp(username: email, password: password, delegate: self)
-```
+    ```swift
+    nativeAuth.signUp(username: email, password: password, delegate: self)
+    ```
 
 1. To implement `SignUpStartDelegate` protocol as an extension to our class, use:
 
@@ -114,7 +114,7 @@ func onSignUpStartError(error: MSAL.SignUpStartError) {
 }
 ```
 
-## Next Steps
+## Next steps
 
 - [Tutorial: Sign in using username and password](tutorial-native-auth-ios-sign-in-with-username-password.md)
 
