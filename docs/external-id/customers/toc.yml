@@ -214,6 +214,8 @@ items:
       href: concept-supported-features-customers.md
     - name: Authentication methods and identity providers
       href: concept-authentication-methods-customers.md
+    - name: Native authentication
+      href: concept-native-auth.md
     - name: Customizing the sign-in look and feel
       href: concept-branding-customers.md
     - name: Add your own business logic

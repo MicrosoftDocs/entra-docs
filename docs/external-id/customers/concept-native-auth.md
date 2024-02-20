@@ -16,64 +16,64 @@ ms.custom: it-pro
 ---
 # Native authentication for customer apps
 
-Native authentication enables you to host the user interface in the client application instead of delegating authentication to browsers, resulting in a natively integrated authentication experience. With native authentication you can create seamless authentication experiences for customer-facing mobile and desktop applications using the private preview Microsoft Authentication Library (MSAL) for iOS and Android. You also have the flexibility to choose from different authentication methods to create the authentication experience that suits your needs.  
+With native authentication you can create streamlined and sleek authentication experiences for your customer-facing mobile and desktop applications using Microsoft Authentication Library (MSAL) for iOS and Android. You can also choose from different authentication methods to create the authentication experience that suits your needs. 
 
-:::image type="content" source="media/concept-native-auth/native-auth-experiences.png" alt-text="Native authentication experiences.":::
+## What is native authentication?
 
-With native authentication, the application code controls the authentication experience. As the developer, you have full control over the look and feel of the user interface using the language of your choice. For example, you can define the background design, logo placement, layouts, and other elements that give your app a consistently branded look.
+Native authentication provides a deeply integrated experience within an application, without the need for browser delegation. Native authentication allows you to host the user interface within the client application, resulting in a seamless, natively integrated authentication experience. With full control over the user interface, you can customize the design, logo placement, layout, and other elements to create a consistent, branded look using the language of your choice. Whether creating a single screen or splitting it into multiple screens, native authentication enables you to achieve a pixel-perfect experience, all within the application code.
+
+In contrast, browser-delegated methods, such as using a system browser for authentication, may not be suitable for everyone. While these methods can reduce attack vectors and support single sign-on (SSO), the look and feel is limited by the customization capabilities of the identity provider. Matching the browser user interface to the application’s design can be challenging, and the redirection process can be disruptive and slow to load. 
 
 Watch this [video](https://www.youtube.com/embed/20Tp0CM55rw) for an overview of native authentication capabilities.
 
-## When should I use native authentication?
+## What authentication methods are available with native authentication?
 
-Whether you choose native authentication over browser-delegated authentication depends on your requirements. In general, native authentication is an ideal solution for any of the following conditions:
+You can create fully native experiences for local account sign-up, sign-in, and sign-out for your first party applications. We provide the following capabilities: 
 
-- Streamlined sign-up and sign-in experiences are critical, and any friction encountered by users may impact revenue, retention, etc.
+- Passwordless authentication with email one-time passcode (OTP) (for sign-up, sign-in, and sign-out)
+- Password authentication (for sign-up, sign-in, and sign-out)  
+- Collection of user attributes
+- Self-service password reset with email OTP verification  
+
+:::image type="content" source="media/concept-native-auth/native-auth-experiences.png" alt-text="Native authentication experiences.":::
+
+## When should I use native authentication? 
+<!--This section will be updated once I have the most up-to-date content from the PM.-->
+Whether you choose native authentication over browser-delegated authentication depends on your requirements. In general, native authentication is an ideal solution for any of the following conditions:  
+
+- Streamlined sign-up and sign-in experiences are critical, and any friction encountered by users may affect revenue, retention, etc.
 - A consistently branded experience across touchpoints and applications is of paramount importance.
 - Your onboarding transactions are low risk, and acquisition far outweighs governance.
 - Your browser-delegated capabilities don’t meet all of your UI customization and layout needs.
 - The features you require are currently available via native authentication.
 
-Native authentication is not a supported solution for:
+Native authentication isn't a supported solution for:
 
-- Third-party or multi-tenant applications
+- Third-party or multitenant applications
 - Microsoft first-party client applications
-- B2B or B2E apps (only Entra External ID for customers applications are in scope)
-
-## What's available in private preview?
-
-In this private preview, you can create fully native experiences for local account sign-up, sign-in, and sign-out for your first party applications.
-
-The following capabilities for local accounts are available in this private preview:
-
-- Passwordless authentication with email one-time passcode (OTP) (for sign-up, sign-in, and sign-out)
-- Password authentication (for sign-up, sign-in, and sign-out)  
-- Self-service password reset with email OTP verification  
-- Collection of user attributes
+- B2B or B2E apps (Native authentication is available only for Microsoft Entra ID for customers applications.)
 
 ## Capabilities that are out of scope 
-
+<!--This section will be updated once I have the most up-to-date content from the PM.-->
 The following capabilities are out of scope:
 
-- Multi factor authentication during sign-in
+- Multifactor authentication during sign-in
 - Conditional Access
-- Some of the [Custom authentication extensions (preview)](https://learn.microsoft.com/entra/identity-platform/custom-extension-overview) events are not triggered when Microsoft Entra ID does not  render the UI. For example, when using native authentication the following event will not trigger:
-   - [Custom authentication extensions for attribute collection start and submit events](https://learn.microsoft.com/entra/identity-platform/custom-extension-attribute-collection?tabs=start-continue%2Csubmit-continue). For applications that use native authentication, it's up to app developer to call the REST API directly from their applications.
+- Some of the [Custom authentication extensions (preview)](/entra/identity-platform/custom-extension-overview) events aren't triggered when Microsoft Entra ID doesn't  render the UI. For example, when using native authentication the following event won't trigger:
+   - [Custom authentication extensions for attribute collection start and submit events](/entra/identity-platform/custom-extension-attribute-collection?tabs=start-continue%2Csubmit-continue). For applications that use native authentication, it's up to app developer to call the REST API directly from their applications.
    - [Brand your apps via custom authentication extensions](https://github.com/microsoft/entra-previews/blob/PP4/docs/Branding-per-app-via-custom-auth-extension.md). For applications that use native authentication, the developer of the app has full control on the UI.
   
-## Samples and documentation for native authentication
+## Available languages for native authentication
 
-This private preview contains samples and documentation for the languages and platforms listed in the following table.
+For native authentication you can use the unified Microsoft Authentication Library (MSAL) for iOS and Android. It enables you to create applications using Kotlin, Swift, Java, and Objective-C. You can find the underlying native API documentation here, allowing you  to create mobile, desktop, and web applications using the language and framework of your  choice.
+
+:::image type="content" source="media/concept-native-auth/native-auth-sdk-api.png" alt-text="Native authentication SDK and API options.":::
 
 For a demonstration of sample application using iOS MSAL native authentication, see the following [video](https://www.youtube.com/embed/ykf3sm5nxRc).
 
-### Recommended path for this preview:
-
-1. Start with the **Code sample guide** below in your preferred language and explore the sample application.
-2. Follow the **Build and integrate guide** to add login experience to your app.
-3. Optionally, explore the API reference in Postman.
-
 ### Mobile and desktop apps
+<!--This section will be updated once I have the most up-to-date content from the PM an the correct links.-->
+The following table provides a list of the available languages and platforms for native authentication, along with the corresponding code sample and build and integrate guide.
 
 | Language/Platform   | Code sample guide | Build and integrate guide |
 | ------------------- |  ---------------- | ------------------------- |
@@ -81,6 +81,8 @@ For a demonstration of sample application using iOS MSAL native authentication, 
 | **iOS (Swift)         | [Sign in users in a sample native iOS mobile application](Developer-guides/1-iOS-Swift/0-Run-code-sample.md) | [Add authentication to your native iOS mobile application](Developer-guides/1-iOS-Swift/1-Add-authentication-prepare-app.md) |
 
 ### API and SDK Reference
+<!--This section will be updated once I have the most up-to-date content from the PM an the correct links.-->
+The following table provides a list of the available API and SDK references for native authentication.
 
 |  Documentation  | 
 |   ---------------- |
@@ -88,21 +90,6 @@ For a demonstration of sample application using iOS MSAL native authentication, 
 |  [MSAL Android Native Auth SDK reference](./Developer-guides/2-Native-SDK-reference/1-Android-SDK-reference.md)   |
 |  [MSAL iOS Native Auth SDK reference](./Developer-guides/2-Native-SDK-reference/iOS/msal-ios-sdk-reference.md)   |
 
-## Known issues
-
-The following table describes known issues and important considerations related to this preview release. We don't currently have a preview target or timeline to share regarding when individual issues will be resolved.
-
-| Issue | Impact | Workaround(s) |To be fixed | 
-| ----- | ------ | ------------- | ------| 
-| When specifying a custom attribute, the required key syntax is </br>`extension_<b2c-extensions-app-id>_<custom-attribute-name>` </br>where: </br>- `<b2c-extensions-app-id>` is the ID of the *b2c-extensions-app* registered in your customer tenant with no hyphens </br>- `<custom-attribute-name>` is the name you assigned to the custom attribute      | This key syntax is required for custom attributes.        |  NA             |  NA     |
-| When signing in with an SLT after sign-up with email and password, the ID token `username` claim will show the principal username instead of the email address the user entered during sign-up.      |  Creates confusion.      |   If the username claim is needed, then sign in through email + password instead of SLT            | yes, timeline TBD      |
-| Unconfigured attributes that are sent by the client are silently ignored by the API.      | No indication is given that attributes are being ignored.       | NA               | yes, timeline TBD       |
-| When using the MSAL Native Auth SDKs, an access token can't be requested for multiple scopes belonging to multiple API resources.      | NA       | NA              | yes, timeline TBD      |
-| When you enable native authentication APIs in the Microsoft Entra Admin center, you might experience some delays. | Delay in changing configuration       | NA              | TBD      |
-
-<!--
-## Frequently asked questions
-
-### Question...
-Answer...
--->
+## Next steps
+<!--This section will be updated with the correct links.-->
+- Tutorials 
