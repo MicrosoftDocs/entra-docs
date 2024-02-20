@@ -14,7 +14,7 @@ ms.date: 02/29/2024
 
 # Overview of native authentication API reference
 
-Microsoft Entra ID's [native authentication](../external-id/customers/overview-customers-ciam.md) enables you to host the user interface of your app in the client application instead of delegating authentication to browsers, resulting in a natively integrated authentication experience. As a developer, you have full control over the look and feel of the sign-in interface.
+Microsoft Entra ID's [native authentication](../external-id/customers/concept-native-auth.md) enables you to host the user interface of your app in the client application instead of delegating authentication to browsers, resulting in a natively integrated authentication experience. As a developer, you have full control over the look and feel of the sign-in interface.
 
 [!INCLUDE [native-auth-api-common-description](./includes/native-auth-api/native-auth-api-common-description.md)]
 
@@ -29,6 +29,7 @@ Currently, our identity platform's native authentication API supports sign-up an
 
 
 ## Next steps
+- [Learn more about native authentication](../external-id/customers/concept-native-auth.md)
 
 - [Native authentication API reference with Email OTP](reference-native-auth-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 
