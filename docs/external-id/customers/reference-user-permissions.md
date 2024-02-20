@@ -1,7 +1,6 @@
 ---
 title: User default permissions in customer tenants
-description: Learn about the default permissions for users in a customer tenant.
- 
+description: Learn about the default permissions for users in a customer tenant. 
 author: msmimart
 manager: celestedg
 ms.service: entra-external-id

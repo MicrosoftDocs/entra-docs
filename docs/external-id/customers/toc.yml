@@ -322,6 +322,19 @@ items:
       href: /entra/fundamentals/reference-company-branding-css-template
     - name: Help and support options
       href: ~/identity-platform/developer-support-help-options.md?context=/entra/external-id/customers/context/customers-context
+    - name: Native authentication
+      items:
+        - name: Native auth APIs
+          displayName: Native authentication, Native authentication API
+          #href: reference-native-auth-overview.md 
+          href: /entra/identity-platform/reference-native-auth-overview?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
+        - name: Native auth with email OTP
+          displayName: Native authentication with email and one-time password or passcode
+          #href: reference-native-auth-email-otp.md
+          href: /entra/identity-platform/reference-native-auth-email-otp?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
+        - name: Native auth with email & password
+          #href: reference-native-auth-email-password.md
+          href: /entra/identity-platform/reference-native-auth-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
     - name: MSAL references 
       items:
         - name: MSAL.NET
