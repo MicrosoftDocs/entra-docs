@@ -69,7 +69,7 @@ The sequence diagram demonstrates the flow of the sign-up process.
 
 :::image type="content" source="media/reference-native-auth-api/sign-up-email-with-password.png" alt-text="Diagram of native auth sign-up with email and password option."::: 
 
-This diagram indicates that the app collects username (email), password, and attributes from the user at different times (and possibly on separate screens). However, you can design your app to collect the username (email), password and all the required, and optional attribute values in the same screen, then submit all of them via the `/signup/v1.0/start` endpoint. In this case, the app doesn't need to make calls and handle responses indicated as optional steps. This approach gives you the flexibility to collect information from the user in whichever order you want.  
+This diagram indicates that the app collects username (email), password, and attributes from the user at different times (and possibly on separate screens). However, you can design your app to collect the username (email), password and all the required, and optional attribute values in the same screen, then submit all of them via the `/signup/v1.0/start` endpoint. In this case, the app doesn't need to make calls and handle responses indicated as optional steps.
 
 ### Step 1: Request to start the sign-up flow
 
