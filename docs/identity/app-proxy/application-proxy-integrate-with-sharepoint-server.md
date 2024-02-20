@@ -36,11 +36,9 @@ Configuring SharePoint with application proxy requires two URLs:
 > - In the corporate Domain Name System (DNS), create a host (A) to point to the SharePoint WFE (or load balancer), and not an alias (CName).
 
 This article uses the following values:
-- Internal URL: `https://sharepoint`
-- External URL: `https://spsites-demo1984.msappproxy.net/`
-- Application pool account for the SharePoint web application: `Contoso\spapppool`
-
-<a name='step-1-configure-an-application-in-azure-ad-that-uses-application-proxy'></a>
+- Internal URL: `https://sharepoint`.
+- External URL: `https://spsites-demo1984.msappproxy.net/`.
+- Application pool account for the SharePoint web application: `Contoso\spapppool`.
 
 ## Step 1: Configure an application in Microsoft Entra ID that uses application proxy
 
@@ -63,7 +61,7 @@ In this step, you create an application in your Microsoft Entra tenant that uses
 
    ![Configure integrated Windows authentication for SSO](./media/application-proxy-integrate-with-sharepoint-server/configure-iwa.png)
 
-1. To finish setting up your application, go to the **Users and groups** section and assign users to access this application. 
+1. Finish setting up your application, go to the **Users and groups** section and assign users to access this application. 
 
 ## Step 2: Configure the SharePoint web application
 
@@ -167,7 +165,7 @@ To register SPN `HTTP/sharepoint` for the SharePoint application pool account `C
 
 `setspn -S HTTP/sharepoint Contoso\spapppool`
 
-The `Setspn` command searches for the SPN before it adds it. If the SPN already exists, you see a **Duplicate SPN Value** error. Consider removing the existing SPN that's not s    et under the correct application pool account. You can verify that the SPN was added successfully by running the `Setspn` command with the -L option. To learn more about this command, see [Setspn](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731241(v=ws.11)).
+The `Setspn` command searches for the SPN before it adds it. If the SPN already exists, you see a **Duplicate SPN Value** error. Consider removing the existing SPN that's not set under the correct application pool account. You can verify that the SPN was added successfully by running the `Setspn` command with the -L option. To learn more about this command, see [Setspn](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731241(v=ws.11)).
 
 ### Make sure the connector is trusted for delegation to the SPN that was added to the SharePoint application pool account
 
