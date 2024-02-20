@@ -38,8 +38,6 @@ Microsoft Entra ID's native authentication API with email and password allows yo
 
 [!INCLUDE [entra-external-id-continuation-token](./includes/native-auth-api/continuation-token.md)]
 
-Each continuation token is valid for a specific period and can only be used for the subsequent requests within the same flow.
-
 ## Sign-up API reference
 
 To complete a user sign-up flow, your app interacts with four endpoints, `/signup/v1.0/start`, `/signup/v1.0/challenge`,  `/signup/v1.0/continue`, and `/token`.
