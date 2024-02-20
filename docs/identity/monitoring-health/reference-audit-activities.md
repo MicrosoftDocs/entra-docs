@@ -166,7 +166,7 @@ If you're utilizing [Application Proxy](~/identity/app-proxy/overview-what-is-ap
 
 The Audit logs for Authentication Methods can be used to make sure that your users have registered their mobile device properly to enable multifactor authentication.
 
-Audit events related to GDPR and data protection are also found in this service. These events are found in the `DirectoryManagement` category. The events contain strings such as `MFA.CosmosDB.mfa-prd-cust-rpt-eu.activations` and `DSR Export: MFA.PostgreSQL.bypassed_users_creations`. 
+Audit events related to GDPR and data protection are also found in this service and are found in the `DirectoryManagement` category. The events contain strings such as `MFA.CosmosDB.mfa-prd-cust-rpt-eu.activations` and `DSR Export: MFA.PostgreSQL.bypassed_users_creations`. 
 
 [!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-dsr-and-stp-note.md)] 
 
@@ -263,39 +263,12 @@ Audit events related to GDPR and data protection are also found in this service.
 |DirectoryManagement|POST Tenant.GenerateNewActivationCredentials|
 |DirectoryManagement|POST Tenant.RemoveBlockedUser|
 |DirectoryManagement|POST TenantRemoveBypassedUser|
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-|UserManagement|User deleted security info|
-|UserManagement|User registered security info|
-|UserManagement|User updated security info|
 |UserManagement|Admin deleted security info|
 |UserManagement|Admin registered security info|
 |UserManagement|Admin started password reset|
 |UserManagement|Admin updated security info|
-|UserManagement|User canceled security info registration|
+|UserManagement|Get passkey creation options|
+|UserManagement|User cancelled security info registration|
 |UserManagement|User changed default security info|
 |UserManagement|User deleted security info|
 |UserManagement|User registered all required security info|
@@ -304,6 +277,7 @@ Audit events related to GDPR and data protection are also found in this service.
 |UserManagement|User started password change|
 |UserManagement|user started password reset|
 |UserManagement|User started security info registration|
+|UserManagement|User updated security info|
 
 <a name='azure-ad-recommendations'></a>
 
