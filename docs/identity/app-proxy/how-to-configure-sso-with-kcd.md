@@ -16,7 +16,7 @@ ms.reviewer: ashishj
 
 You can provide single sign-on for on-premises applications published through Application Proxy that are secured with integrated Windows authentication. These applications require a Kerberos ticket for access. Application proxy uses Kerberos Constrained Delegation (KCD) to support these applications.
 
-To learn more about Single Sign-On (SSO), see [What is Single Sign-On?](~/identity/enterprise-apps/what-is-single-sign-on.md).
+To learn more about single sign-on (SSO), see [What is single sign-on?](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 You can enable single sign-on to your applications using integrated Windows authentication (IWA) by giving Application Proxy connectors permission in Active Directory to impersonate users. The connectors use this permission to send and receive tokens on their behalf.
 
