@@ -83,8 +83,6 @@ We have replaced the 'Selected' option that specifies a list of users with the o
    }
    ```
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
-
 To use the group from step two as the selected group in the LinkedIn account connections setting in the Azure portal, see [Enable LinkedIn account connections in the Azure portal](#enable-linkedin-account-connections-in-the-azure-portal).
 
 ## Use Group Policy to enable LinkedIn account connections
