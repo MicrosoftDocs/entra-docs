@@ -216,7 +216,7 @@ Use Microsoft Entra Internet Access to block or allow access to internet sites b
 
    [ ![Screenshot of Conditional Access, New Conditional Access policy for Internet Access Policy.](media/sse-deployment-guide-internet-access/new-conditional-access-policy-internet-access.png)](media/sse-deployment-guide-internet-access/new-conditional-access-policy-internet-access.png#lightbox)
       
-   1. **Target resources**.
+1. **Target resources**.
    1. **Select what this policy applies to** \> **Global Secure Access (Preview)**.
    1. **Select the traffic profiles this policy applies to** \> **Internet traffic**.
 
