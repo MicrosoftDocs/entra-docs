@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
-ms.date: 02/14/2024
+ms.date: 02/15/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -17,7 +17,7 @@ First, make sure the application proxy connectors are configured correctly. For 
 
 If errors occur in accessing a published application or in publishing applications, check the following options to see if Microsoft Entra application proxy is working correctly:
 
-* Open the Windows Services console. Verify that the **Microsoft Entra application proxy connector** service is enabled and running. Look at the application proxy service properties page, as shown in the image:  
+* Open the Windows Services console. Verify that the **Microsoft Entra application proxy connector** service is enabled and running. Look at the application proxy service properties page, as shown in the image.  
   ![Microsoft Entra application proxy connector Properties window screenshot](./media/application-proxy-troubleshoot/connectorproperties.png)
 * Open Event Viewer and look for application proxy connector events in **Applications and Services Logs** > **Microsoft** > **AadApplicationProxy** > **Connector** > **Admin**.
 * Review detailed logs. [Turn on application proxy connector session logs](application-proxy-connectors.md#under-the-hood).
@@ -27,10 +27,21 @@ You have problems with your application rendering or functioning incorrectly wit
 
 For example, if you publish the path `https://yourapp/app` but the application calls images in `https://yourapp/media`, they aren't rendered. Make sure that you publish the application using the highest level path you need to include all relevant content. In this example, it would be `http://yourapp/`.
 
-## I can load my application, but something on the page looks broken
-[I can get to my application, but the application page isn't displaying correctly](application-proxy-page-appearance-broken-problem.md).
+## An application proxy application takes too long to load
+Applications can be functional but experience a long latency. Network topology tweaks can make improvements to speed. For an evaluation of different topologies, see the [network considerations document](application-proxy-network-topology.md).
 
-[I can get to my application, but the application takes too long to load](application-proxy-page-load-speed-problem.md).
+## Application page doesn't display correctly for an application proxy application
+When you publish an application proxy app, only pages under your root are accessible when accessing the application. If the page isn’t displaying correctly, the root internal URL used for the application may be missing some page resources. To resolve, publish *all* the resources for the page as part of your application.
+
+Verify if missing resources is the issue. Opening your network tracker, such as Fiddler, or F12 tools in Microsoft Edge. Load the page, and looking for 404 errors. The errors indicate the pages can't be found and that you need to publish them.
+
+As an example, assume you published an expenses application using the internal URL `http://myapps/expenses`, but the app uses the stylesheet `http://myapps/style.css`. The stylesheet isn't published in your application, so loading the expenses app throws a `404` error trying to load `style.css`. In this example, resolve the problem by publishing the application with the internal URL `http://myapp/`.
+
+## Problems with publishing as one application
+
+If it isn't possible to publish all resources within the same application, you need to publish multiple applications and enable links between them.
+
+To do so, we recommend using the [custom domains](how-to-configure-custom-domain.md) solution. However, this solution requires that you own the certificate for your domain and your applications use fully qualified domain names (FQDNs). For other options, see the [troubleshoot broken links documentation](application-proxy-page-links-broken-problem.md).
 
 [I can get to my application, but the links on the application page don't work](application-proxy-page-links-broken-problem.md).
 
