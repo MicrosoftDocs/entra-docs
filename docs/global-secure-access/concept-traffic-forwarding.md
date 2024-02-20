@@ -1,6 +1,6 @@
 ---
 title: Global Secure Access (preview) traffic forwarding profiles
-description: Learn about how traffic forwarding profiles for Global Secure Access (preview) streamlines how you route traffic through your network.
+description: Learn about how traffic forwarding profiles for Global Secure Access (preview) streamline how you route traffic through your network.
 author: shlipsey3
 ms.author: sarahlipsey
 manager: amycolannino
@@ -24,7 +24,7 @@ When traffic comes through Global Secure Access, the service evaluates the type 
 
 For each traffic forwarding profile, you can configure three main details:
 
-- What traffic to forward to the service
+- Which traffic to forward to the service
 - What Conditional Access policies to apply
 - How your end-users connect to the service
 
@@ -32,7 +32,7 @@ For each traffic forwarding profile, you can configure three main details:
 
 The Microsoft 365 traffic forwarding profile includes SharePoint Online, Exchange Online, and Microsoft 365 apps. All of the destinations for these apps are automatically included in the profile. Within each of the three main groups of destinations, you can choose to forward that traffic to Global Secure Access or bypass the service. 
 
-Microsoft 365 traffic  is forwarded to the service by either connecting through a [remote network](concept-remote-network-connectivity.md), such as branch office location, or through the [Global Secure Access desktop client](how-to-install-windows-client.md).
+Microsoft 365 traffic is forwarded to the service through either [remote network connectivity](concept-remote-network-connectivity.md), such as branch office location, or through the [Global Secure Access client](how-to-install-windows-client.md).
 
 ## Private access
 
