@@ -6,8 +6,8 @@ author: barclayn
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: how-to
+ms.date: 01/22/2024
 ms.subservice: privileged-identity-management
-ms.date: 09/13/2023
 ms.author: barclayn
 ms.reviewer: shaunliu
 
@@ -21,6 +21,9 @@ You can use Privileged Identity Management (PIM) in Microsoft Entra ID, to impro
 - Management group and subscription owners who are trying to secure production resources
 
 When you first set up Privileged Identity Management for Azure resources, you need to discover and select the resources you want to protect with Privileged Identity Management. When you discover resources through Privileged Identity Management, PIM creates the PIM service principal (MS-PIM) assigned as User Access Administrator on the resource. There's no limit to the number of resources that you can manage with Privileged Identity Management. However, we recommend starting with your most critical production resources.
+
+>[!NOTE]
+>PIM can now automatically manage Azure resources in a tenant with no onboarding required. The updated user experience uses the latest PIM ARM API, allowing for improved performance and granularity in choosing the correct scope you want to manage. 
 
 ## Required permissions
 

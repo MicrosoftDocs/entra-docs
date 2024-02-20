@@ -1,23 +1,21 @@
 ---
 title: Activate Microsoft Entra roles in PIM
 description: Learn how to activate Microsoft Entra roles in Privileged Identity Management (PIM).
-
 author: barclayn
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: how-to
+ms.date: 02/20/2024
 ms.subservice: privileged-identity-management
-ms.date: 09/13/2023
 ms.author: barclayn
 ms.reviewer: ilyal
-ms.custom: pim
 
 ---
 # Activate a Microsoft Entra role in PIM
 
 Microsoft Entra Privileged Identity Management (PIM) simplifies how enterprises manage privileged access to resources in Microsoft Entra ID and other Microsoft online services like Microsoft 365 or Microsoft Intune.  
 
-If you have been made *eligible* for an administrative role, then you must *activate* the role assignment when you need to perform privileged actions. For example, if you occasionally manage Microsoft 365 features, your organization's privileged role administrators might not make you a permanent Global Administrator, since that role impacts other services, too. Instead, they would make you eligible for Microsoft Entra roles such as Exchange Online Administrator. You can request to activate that role when you need its privileges, and then you'll have administrator control for a predetermined time period.
+If you have been made *eligible* for an administrative role, then you must *activate* the role assignment when you need to perform privileged actions. For example, if you occasionally manage Microsoft 365 features, your organization's privileged role administrators might not make you a permanent Global Administrator, since that role impacts other services, too. Instead, they would make you eligible for Microsoft Entra roles such as Exchange Online Administrator. You can request to activate that role when you need its privileges, and then have administrator control for a predetermined time period.
 
 This article is for administrators who need to activate their Microsoft Entra role in Privileged Identity Management.
 
@@ -29,6 +27,9 @@ This article is for administrators who need to activate their Microsoft Entra ro
 ## Activate a role
 
 When you need to assume a Microsoft Entra role, you can request activation by opening **My roles** in Privileged Identity Management.
+
+>[!NOTE]
+> PIM is now available in the Azure mobile app (iOS | Android) for Microsoft Entra and Azure resource roles. Easily activate eligible assignments, request renewals for ones that are expiring, or check the status of pending requests. [Read more below](#activate-pim-roles-using-the-azure-mobile-app)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged role administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
@@ -62,7 +63,7 @@ When you need to assume a Microsoft Entra role, you can request activation by op
 
 1. Select **Activate**.
 
-    If the [role requires approval](pim-resource-roles-approval-workflow.md) to activate, a notification will appear in the upper right corner of your browser informing you the request is pending approval.
+    If the [role requires approval](pim-resource-roles-approval-workflow.md) to activate, a notification appears in the upper right corner of your browser informing you the request is pending approval.
 
     ![Activation request is pending approval notification](./media/pim-resource-roles-activate-your-roles/resources-my-roles-activate-notification.png)
 
@@ -213,7 +214,7 @@ You can view the status of your pending requests to activate.
 
 1. When you select **My requests** you see a list of your Microsoft Entra role and Azure resource role requests.
 
-    ![My requests - Microsoft Entra ID page showing your pending requests](./media/pim-how-to-activate-role/my-requests-page.png)
+    :::image type="content" source="./media/pim-how-to-activate-role/my-requests-page.png" alt-text="Screenshot of My requests - Microsoft Entra ID page showing your pending requests" lightbox="./media/pim-how-to-activate-role/my-requests-page.png":::
 
 1. Scroll to the right to view the **Request Status** column.
 
@@ -227,13 +228,37 @@ If you don't require activation of a role that requires approval, you can cancel
 
 1. For the role that you want to cancel, select the **Cancel** link.
 
-    When you select Cancel, the request will be canceled. To activate the role again, you'll have to submit a new request for activation.
+    When you select Cancel, the request is canceled. To activate the role again, you have to submit a new request for activation.
 
    ![My request list with Cancel action highlighted](./media/pim-resource-roles-activate-your-roles/resources-my-requests-cancel.png)
 
 ## Deactivate a role assignment
 
-When a role assignment is activated, you'll see a **Deactivate** option in the PIM portal for the role assignment. Also, you can't deactivate a role assignment within five minutes after activation.
+When a role assignment is activated, you see a **Deactivate** option in the PIM portal for the role assignment. Also, you can't deactivate a role assignment within five minutes after activation.
+
+## Activate PIM roles using the Azure mobile app
+
+PIM is now available in the Microsoft Entra and Azure resource roles mobile apps in both iOS and Android.
+
+1.	To activate an eligible Microsoft Entra role assignment, start by downloading the Azure mobile app ([iOS](https://apps.apple.com/us/app/microsoft-azure/id1219013620) | [Android](https://play.google.com/store/apps/details?id=com.microsoft.azure)). You can also download the app by selecting ‘Open in mobile’  from Privileged Identity Management > My roles > Microsoft Entra roles.
+
+    :::image type="content" source="./media/pim-how-to-activate-role/open-mobile.png" alt-text="Screenshot shows how to download the mobile app." lightbox="./media/pim-resource-roles-assign-roles/resources-abac-update-remove.png":::
+
+1. Open the Azure mobile app and sign in. Select the **Privileged Identity Management** card and select **My Microsoft Entra roles** to view your eligible and active role assignments.
+
+:::image type="content" source="./media/pim-how-to-activate-role/mobile-app-select-part-1.png" alt-text="Screenshots of the mobile app showing how a user would view available roles." lightbox="./media/pim-how-to-activate-role/mobile-app-select-part-1.png":::
+
+1. Select the role assignment and click on **Action > Activate** under the role assignment details. Complete the steps to active and fill in any required details before clicking ‘Activate’ at the bottom.
+
+:::image type="content" source="./media/pim-how-to-activate-role/mobile-app-select-part-2.png" alt-text="Screenshot of the mobile app showing how a user fill out the required information" lightbox="./media/pim-how-to-activate-role/mobile-app-select-part-2.png":::
+
+1. View the status of your activation requests and your role assignments under **My Microsoft Entra roles**.
+
+:::image type="content" source="./media/pim-how-to-activate-role/mobile-app-select-part-3.png" alt-text="Screenshot of the mobile app showing the user's role status." lightbox="./media/pim-how-to-activate-role/mobile-app-select-part-3.png":::
+
+
+
+
 
 ## Next steps
 
