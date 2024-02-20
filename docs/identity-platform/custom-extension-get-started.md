@@ -524,8 +524,9 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 
 If the Azure Function is hosted under a different tenant than the tenant in which your custom authentication extension is registered, follow these steps to protect your function:
 
-1. Sign in to the [Azure portal](https://portal.azure.com), then navigate and select the function app you previously published.
-1. Select **Authentication** in the menu on the left.
+1. Sign in to the [Azure portal](https://portal.azure.com)
+1. Navigate and select the function app you previously published.
+1. Under **Settings**, select **Authentication**.
 1. Select **Add Identity provider**.  
 1. Select **OpenID Connect** as the identity provider.
 1. Provide a name, such as *Contoso Microsoft Entra ID*.
@@ -537,7 +538,7 @@ If the Azure Function is hosted under a different tenant than the tenant in whic
 
 1. Under the **App registration**, enter the application ID (client ID) of the *Azure Functions authentication events API* app registration [you created previously](#step-2-register-a-custom-authentication-extension).
 
-1. In the Microsoft Entra admin center:
+1. Next, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator):
     1. Select the *Azure Functions authentication events API* app registration [you created previously](#step-2-register-a-custom-authentication-extension).
     1. Select **Certificates & secrets** > **Client secrets** > **New client secret**.
     1. Add a description for your client secret.
@@ -582,7 +583,7 @@ To test your custom claim provider, follow these steps:
 
 ---
 
-## Next steps
+## See also
 
 - Learn how to configure a [SAML application](custom-extension-configure-saml-app.md) to receive tokens with claims sourced from an external store.
 - Learn more about custom claims providers with the [custom claims provider reference](custom-claims-provider-reference.md) article.
