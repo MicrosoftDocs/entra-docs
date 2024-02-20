@@ -97,6 +97,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddInMemoryTokenCaches();
 // ...
 ```
+
+where;
+- `MyApi` denotes the name of the downstream web API that your web API intends to call
+- `MyApiScope` is the scope necessary for your web API to request in order to interact with the downstream web API.
+
 If the web app needs to call another API resource, repeat the `.AddDownstreamApi()` method with the relevant scope as shown in the following snippet:
 
 ```csharp
