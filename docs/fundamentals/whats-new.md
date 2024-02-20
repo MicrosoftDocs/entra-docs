@@ -35,7 +35,7 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 
 ## February 2024
 
-### Plan for change - Microsoft Entra ID Identity protection - "Low" risk age out
+### Plan for change - Microsoft Entra ID Identity protection: "Low" risk age out
 
 **Type:** Plan for change    
 **Service category:** Identity Protection    
@@ -51,7 +51,7 @@ Starting March 31st, 2024, all "*low*" risk detections and users in Microsoft En
 **Service category:** Authentications (Logins)    
 **Product capability:** Extensibility    
 
-Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems. A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory. For more information, see:
+Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems. A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens, and can be assigned to one or many applications in your directory. For more information, see:
 
 - [Custom authentication extensions](../identity-platform/custom-extension-overview.md)
 - [Custom claims provider](../identity-platform/custom-claims-provider-overview.md)
@@ -102,13 +102,13 @@ Conditional access policies can now be filtered on actor, target resources, cond
 
 ---
 
-### End of support - FIM WAAD Connector
+### End of support - Windows Azure Active Directory Connector for Forefront Identity Manager (FIM WAAD Connector)
 
 **Type:** Deprecated    
 **Service category:** Microsoft Identity Manager    
 **Product capability:** Inbound to Microsoft Entra ID    
 
-The FIM WAAD Connector from 2014 was deprecated in 2021. The standard support for this connector will end in April 2024. Customers should remove this connector from their MIM sync deployment, and instead use an alternative provisioning mechanism. For more information, see: [Migrate a Microsoft Entra provisioning scenario from the FIM Connector for Microsoft Entra ID](/microsoft-identity-manager/migrate-from-the-fim-connector-for-azure-active-directory).
+The Windows Azure Active Directory Connector for Forefront Identity Manager(FIM WAAD Connector) from 2014 was deprecated in 2021. The standard support for this connector will end in April 2024. Customers should remove this connector from their MIM sync deployment, and instead use an alternative provisioning mechanism. For more information, see: [Migrate a Microsoft Entra provisioning scenario from the FIM Connector for Microsoft Entra ID](/microsoft-identity-manager/migrate-from-the-fim-connector-for-azure-active-directory).
 
 ---
 
