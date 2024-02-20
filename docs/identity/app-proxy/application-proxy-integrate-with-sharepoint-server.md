@@ -46,13 +46,13 @@ In this step, you create an application in your Microsoft Entra tenant that uses
 
 1. Create the app as described with the following settings. For step-by-step instructions, see [Publishing applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).
    * **Internal URL**: SharePoint internal URL that is set later in SharePoint, such as `https://sharepoint`.
-   * **Pre-Authentication**: Microsoft Entra ID
-   * **Translate URLs in Headers**: No
-   * **Translate URLs in Application Body**: No
+   * **Pre-Authentication**: `Microsoft Entra ID`.
+   * **Translate URLs in Headers**: `No`.
+   * **Translate URLs in Application Body**: `No`.
 
    ![Publish SharePoint as application](./media/application-proxy-integrate-with-sharepoint-server/publish-app.png)
 
-1. After your app is published, follow these steps to configure the single sign-on settings:
+1. After your app is published, follow these steps to configure the single sign-on settings.
 
    1. On the application page in the portal, select **Single sign-on**.
    1. For **Single Sign-on Mode**, select **Integrated Windows Authentication**.
@@ -68,7 +68,7 @@ In this step, you create an application in your Microsoft Entra tenant that uses
 The SharePoint web application must be configured with Kerberos and the appropriate alternate access mappings to work correctly with Microsoft Entra application proxy. There are two possible options:
 
 - Create a new web application and use only the **default** zone. Using the default zone is the preferred option, it offers the best experience with SharePoint. For example, the links in email alerts that SharePoint generates point to the **default** zone.
-- Extend an existing web application to configure Kerberos in a non-default zone.
+- Extend an existing web application to configure Kerberos in a non default zone.
 
 > [!IMPORTANT]
 > Regardless of the zone that's used, the application pool account of the SharePoint web application must be a domain account for Kerberos to work correctly.
@@ -77,7 +77,7 @@ The SharePoint web application must be configured with Kerberos and the appropri
 
 - The script shows an example of creating a new web application using the **default** zone. using the default zone is the preferred option.
 
-    1. Start the **SharePoint Management Shell** and run the following script:
+    1. Start the **SharePoint Management Shell** and run the script.
 
        ```powershell
        # This script creates a web application and configures the Default zone with the internal/external URL needed to work with Azure AD application proxy
@@ -91,15 +91,15 @@ The SharePoint web application must be configured with Kerberos and the appropri
        New-SPAlternateURL -Url $internalUrl -WebApplication $wa -Zone Default -Internal
        ```
 
-    2. Open the **SharePoint Central Administration** site.
+    1. Open the **SharePoint Central Administration** site.
     1. Under **System Settings**, select **Configure Alternate Access Mappings**. The **Alternate Access Mapping Collection** box opens.
-    1. Filter the display with the new web application and confirm that you see something like this:
+    1. Filter the display with the new web application.
 
        ![Alternate Access Mappings of web application](./media/application-proxy-integrate-with-sharepoint-server/new-webapp-aam.png)
 
 - If you extend an existing web application to a new zone.
 
-    1. Start the SharePoint Management Shell and run the following script:
+    1. Start the SharePoint Management Shell and run the following script.
 
        ```powershell
        # This script extends an existing web application to Internet zone with the internal/external URL needed to work with Azure AD application proxy
@@ -114,9 +114,9 @@ The SharePoint web application must be configured with Kerberos and the appropri
        New-SPAlternateURL -Url $internalUrl -WebApplication $wa -Zone Extranet -Internal
        ```
 
-    2. Open the **SharePoint Central Administration** site.
+    `. Open the **SharePoint Central Administration** site.
     1. Under **System Settings**, select **Configure Alternate Access Mappings**. The **Alternate Access Mapping Collection** box opens.
-    1. Filter the display with the web application that was extended and confirm that you see something like this:
+    1. Filter the display with the web application that was extended.
 
         ![Alternate Access Mappings of extended application](./media/application-proxy-integrate-with-sharepoint-server/extend-webapp-aam.png)
 
@@ -132,12 +132,12 @@ To identify the account running the application pool of the SharePoint web appli
 
 1. Confirm that **Select an account for this component** returns a domain account, and remember it, since it is needed in the next step.
 
-### Make sure that an HTTPS certificate is configured for the IIS site of the Extranet zone
+### Make sure that an HTTPS certificate is configured for the IIS site of the extranet zone
 
 Because the Internal URL uses HTTPS protocol (`https://SharePoint/`), a certificate must be set on the Internet Information Services (IIS) site.
 
 1. Open the Windows PowerShell console.
-1. Run the following script to generate a self-signed certificate and add it to the computer's MY store:
+1. Run the following script to generate a self-signed certificate and add it to the computer's `MY store`.
 
    ```powershell
    # Replace "SharePoint" with the actual hostname of the Internal URL of your Azure AD proxy application
@@ -165,7 +165,7 @@ To register SPN `HTTP/sharepoint` for the SharePoint application pool account `C
 
 `setspn -S HTTP/sharepoint Contoso\spapppool`
 
-The `Setspn` command searches for the SPN before it adds it. If the SPN already exists, you see a **Duplicate SPN Value** error. Consider removing the existing SPN that's not set under the correct application pool account. You can verify that the SPN was added successfully by running the `Setspn` command with the -L option. To learn more about this command, see [Setspn](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731241(v=ws.11)).
+The `Setspn` command searches for the SPN before it adds it. If the SPN already exists, you see a **Duplicate SPN Value** error. Remove the existing SPN. Verify that the SPN was added successfully by running the `Setspn` command with the `-L` option. To learn more about the command, see [Setspn](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731241(v=ws.11)).
 
 ### Make sure the connector is trusted for delegation to the SPN that was added to the SharePoint application pool account
 
