@@ -27,7 +27,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- [Tutorial: Prepare your Android app for native authentication](tutorial-native-auth-android-initialize.md)
+- [Tutorial: Prepare your Android app for native authentication](tutorial-native-auth-prepare-android-app.md)
 
 ## Sign up a user
 
