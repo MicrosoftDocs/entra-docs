@@ -82,13 +82,13 @@ The external to internal user conversion feature includes the ability to convert
 
 ---
 
-### General Availability - A new premium Identity Protection detection, Suspicious API Traffic, is available
+### General Availability - New premium user risk detection, Suspicious API Traffic, is available in Identity Protection
 
 **Type:** New feature    
 **Service category:** Identity Protection    
 **Product capability:** Identity Security & Protection    
 
-We've released a new premium detection on Identity Protection called *Suspicious API Traffic* that runs for users. This detection is reported when abnormal Graph traffic, or directory enumeration, is observed by a user. Suspicious API traffic might suggest that a user is compromised, and conducting reconnaissance in their environment. For more information about Identity Protection detections, see: [What are risks detections?](../id-protection/concept-identity-protection-risks.md).
+We've released a new premium user risk detection in Identity Protection called *Suspicious API Traffic*. This detection is reported when Identity Protection detects anomalous Graph traffic by a user. Suspicious API traffic might suggest that a user is compromised and conducting reconnaissance in their environment. For more information about Identity Protection detections including this one, please visit our public documentation at the following link: [What are risks detections?](../id-protection/concept-identity-protection-risks.md).
 
 ---
 
@@ -192,7 +192,7 @@ The *Suspicious sending patterns* risk detection type is discovered using inform
 **Service category:** MFA        
 **Product capability:** User Authentication        
 
-We've released a new premium user risk detection in Identity Protection called *Suspicious API Traffic*. This detection is reported when Identity Protection detects anomalous Graph traffic by a user. Suspicious API traffic might suggest that a user is compromised and conducting reconnaissance in their environment. For more information about Identity Protection detections including this one, please visit our public documentation at the following link: [Migrate from MFA Server to Microsoft Entra multifactor authentication](../identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md).
+We've released a new recommendation in the Microsoft Entra admin center for customers to move off MFA Server to Microsoft Entra multifactor authentication. MFA Server will be retired on September 30, 2024. Any customers with MFA Server activity in the last seven days see the recommendation that includes details about their current usage, and steps on how to move to Microsoft Entra multifactor authentication. For more information, see:  [Migrate from MFA Server to Microsoft Entra multifactor authentication](../identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md).
 
 ---
 
