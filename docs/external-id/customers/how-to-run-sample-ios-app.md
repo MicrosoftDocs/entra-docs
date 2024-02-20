@@ -48,7 +48,7 @@ The following steps show you how to register your app in the Microsoft Entra adm
 1. On the sidebar menu, select **Identity**.
 1. Select **Applications** > **App Registrations**.
 1. Select **+ New registration**.
-1. In the **Register an application** page that appears;
+1. In the **Register an application** page that appears:
 
    1. Enter a meaningful application **Name**, for example _ciam-client-app_.
    1. Under **Supported account types**, select **Accounts in this organizational directory only**.
@@ -134,6 +134,7 @@ Although many applications can be associated with your user flow, a single appli
    ```bash
    git clone https://github.com/Azure-Samples/ms-identity-ciam-native-auth-ios-sample.git
    ```
+
 1. Navigate to the directory where the repo was cloned:
 
    ```bash
@@ -160,7 +161,7 @@ To build and run your code, select **Run** from the **Product** menu in Xcode. A
 
 This guide tests **Email one-time-passcode** usage. Enter a valid email address, select **Sign Up**, and launch the submit code screen:
 
-:::image type="content" source="media/native-auth/ios/enter-one-time-pass-code.png" alt-text="Screenshot of user prompt to enter OTP in iOS app.":::
+:::image type="content" source="media/native-auth/ios/enter-one-time-pass-code.png" alt-text="Screenshot of user prompt to enter one-time passcode (OTP) in iOS app.":::
 
 After you enter your email address on the previous screen, the application will send a verification code to it. Once you submit the received code, the application takes you back to the previous screen and automatically sign you in. 
 
@@ -170,7 +171,7 @@ The sample app supports the following flows:
 
 1. _Email + one-time passcode_: Follow this flow to sign in or sign up with an email and a one-time passcode.
 1. _Email + password_: Follow this flow to sign in or sign up with email and a password.
-1. _Email + password sign up with custom attributes_: Follow this flow to sign up with email, password, and custom attributes.
+1. _Email + password sign-up with custom attributes_: Follow this flow to sign up with email, password, and custom attributes.
 1. _Password reset_: Follow this flow to reset the password.
 1. _Fallback to web browser_: Follow this flow to use the browser to sign in or sign up.
 
