@@ -121,7 +121,7 @@ Microsoft Internet Access has features to configure a security profile with a pr
 ### Stop the agent and confirm restored access
 
 1. On **Network traffic**, select **Stop collecting**.
-1. Scroll to observe the traffic related to your attempt to open the FQDN, and associated data.
+1. Scroll to observe the traffic related to opening the FQDN, and associated data.
 
    [ ![Screenshot of Network traffic for FQDN.](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-fqdn-traffic-inline.png)](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-fqdn-traffic-inline.png#lightbox)
 
@@ -247,7 +247,7 @@ Use Microsoft Entra Internet Access to block or allow access to internet sites b
 ### Stop the agent and confirm restored access
 
 1. On **Network traffic**, select **Stop collecting**.
-1. Scroll to observe the traffic related to your attempt to open the FQDN and associated data. Note the **Internet Access** in the **Channel** columns. Conditional Access policies are written as claims to your token that have a one-hour lifetime. It can take up to one hour for new Conditional Access policies to apply to your client device. Because changes propagate across Microsoft Entra, it can take up to 20 minutes for web-filtering policy and security-profile changes to apply to your client device.
+1. Scroll to observe the traffic related to opening the FQDN and associated data. Note the **Internet Access** in the **Channel** columns. Conditional Access policies are written as claims to your token that have a one-hour lifetime. It can take up to one hour for new Conditional Access policies to apply to your client device. Because changes propagate across Microsoft Entra, it can take up to 20 minutes for web-filtering policy and security-profile changes to apply to your client device.
 
    [ ![Screenshot of Global Secure Access - Advanced diagnostic, Network traffic.](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-internet-access-traffic-inline.png)](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-internet-access-traffic-inline.png#lightbox)
     
@@ -269,9 +269,9 @@ Use Microsoft Entra Internet Access to block or allow access to internet sites b
 
 In some cases, it's necessary to block specific websites rather than using broad web categories. Complete the following tasks to block access to the site based on FQDN. Ensure you include relevant fully qualified domain names (FQDNs) in use by the site that you want to block.
 
-- Configure a block rule for a specific FQDN of your choosing by [creating a web filtering policy](#create-a-web-filtering-policy-2).
-- Group and prioritize your web filtering policies by [creating a security profile](#create-a-security-policy-profile-2).
-- Configure your test group (that includes your test user as a member) to use the security profile by [creating and assigning a conditional access policy](#create-a-conditional-access-policy-1).
+- Configure a block rule for a specific FQDN. [Create a web filtering policy](#create-a-web-filtering-policy-2).
+- Group and prioritize your web filtering policies. [Create a security profile](#create-a-security-policy-profile-2).
+- Configure your test group (the user is a member) to use the security profile. [Create and assign a Conditional Access policy](#create-a-conditional-access-policy-1).
 - Confirm rule application by using your test user to [attempt to access a blocked site](#attempt-to-access-blocked-sites-2).
 - [Stop the agent and confirm test user access](#stop-the-agent-and-confirm-restored-access-2) to the previously blocked site.
 - [View activity in the traffic log](#view-activity-in-the-traffic-log-2).
@@ -368,7 +368,7 @@ In some cases, it's necessary to block specific websites rather than using broad
 ### Stop the agent and confirm restored access
 
 1. On **Network traffic**, select **Stop collecting**.
-1. Scroll to observe the traffic related to your attempt to open the FQDN, and associated data.
+1. Scroll to observe the traffic related to opening the FQDN, and associated data.
 
    [ ![Screenshot of Global Secure Access - Advanced diagnostic, Network traffic to block FQDN Internet Access.](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-block-fqdn-traffic-inline.png)](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-block-fqdn-traffic-inline.png#lightbox)
 
@@ -486,7 +486,7 @@ In some cases, you might have users that require access to blocked sites for gro
 ### Stop the agent and confirm restored access
 
 1. On **Network traffic**, select **Stop collecting**.
-1. Scroll to observe the traffic related to your attempt to open the FQDN.
+1. Scroll to observe the traffic related to opening the FQDN.
 
 ### View activity in the traffic log
 
