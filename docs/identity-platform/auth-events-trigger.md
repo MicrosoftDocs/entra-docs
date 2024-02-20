@@ -157,11 +157,9 @@ So far we've set up the project to install the NuGet packages and starter code a
 1. Select **Custom authentication extensions**, and then select **Create a custom authentication extension**.
 1. In **Basics**, select the **tokenIssuanceStart** event and select **Next**.
 1. In **Endpoint Configuration**, fill in the following properties:
-
     - **Name** - A name for your custom authentication extension. For example, *NuGet Token issuance event*.
     - **Target Url** - The `{Function_Url}` of your Azure Function URL from [Step 1: Create an Azure Function app](#step-1-create-an-azure-function-app). 
     - **Description** - A description for your custom authentication extensions.
-
 1. Select **Next**.
 1. In **API Authentication**, select the **Create new app registration** option to create an app registration that represents your *function app*.  
 1. Give the app a name, for example **Azure Functions NuGet Authentication events API**.

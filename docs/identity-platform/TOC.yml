@@ -532,6 +532,12 @@
               href: custom-extension-OnAttributeCollectionStart-reference.md
             - name: OnAttributeCollectionSubmit event reference
               href: custom-extension-OnAttributeCollectionSubmit-reference.md
+        - name: Authentication Events NuGet client library
+          items:
+            - name: Create a Azure trigger function with NuGet library
+              href: auth-events-trigger.md
+            - name: Test token augmentation with PostManage
+              href: auth-events-nuget-postman.md
         - name: Handle browser cookie restrictions
           items:
             - name: How to handle third-party cookie blocking in browsers
