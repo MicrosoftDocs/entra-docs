@@ -42,7 +42,7 @@ Private access traffic can be forwarded to the service by connecting through the
 
 ## Internet access
 
-With the Internet access profile, you can route traffic to the public internet and SaaS apps. This traffic forwarding profile consists of a pre-populated list of regular expressions for fully qualified domain names (FQDNs) and IP addresses representing the public internet. 
+With the Internet access profile, you can route traffic to the public internet, including SaaS apps. This traffic forwarding profile consists of a pre-populated list of regular expressions for fully qualified domain names (FQDNs) and IP addresses representing the public internet. 
 
 Internet access traffic can be forwarded to the service by connecting through the [Global Secure Access desktop client](how-to-install-windows-client.md).
 
