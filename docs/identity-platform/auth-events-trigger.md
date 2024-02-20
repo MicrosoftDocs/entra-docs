@@ -28,7 +28,7 @@ In this how-to guide, you'll learn how to set up and test the Authentication eve
 
 In this step, you'll create a HTTP trigger function using your chosen integrated development environment (IDE). 
 
-# [Visual Studio](#tab/visual-studio) <!--Visual Studio only? Or can it be done also in VSC. Is a VSC version also needed for GA? -->
+# [Visual Studio](#tab/visual-studio)
 
 1. Open Visual Studio, and select **Create a new project**.
 1. Search for and select **Azure Functions**, then select **Next**.
@@ -244,9 +244,6 @@ Microsoft Entra custom authentication extension uses server to server flow to ob
 
 To protect your Azure function, follow these steps to integrate Microsoft Entra authentication, for validating incoming tokens with your *Azure Functions authentication events API* application registration.
 
-> [!NOTE]
-> If the Azure function app is hosted in a different Azure tenant than the tenant in which your custom authentication extension is registered, skip to [using OpenID Connect identity provider](#51-using-openid-connect-identity-provider) step.
-
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Navigate and select the function app you previously published.
 1. Select **Authentication** in the menu on the left.
@@ -284,7 +281,7 @@ To test your custom claim provider, follow these steps:
     ```
 
 1. Replace `{tenant-id}` with your tenant ID, tenant name, or one of your verified domain names. For example, `contoso.onmicrosoft.com`.
-1. Replace `{App_to_enrich_ID}` with the [Test JWT NuGet application ID](#31-get-the-application-id).  
+1. Replace `{App_to_enrich_ID}` with the *Test JWT NuGet* application ID.  
 1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `dateOfBirth`.
 
 ## See also
