@@ -22,7 +22,7 @@ The scenario in this article assumes that you have:
 
 - [Tableau](https://onlinehelp.tableau.com/current/server/en-us/proxy.htm#azure) configured. 
 
-- An [Application Proxy connector](~/identity/app-proxy/application-proxy-add-on-premises-application.md) installed. 
+- An [Application proxy connector](~/identity/app-proxy/application-proxy-add-on-premises-application.md) installed. 
 
  
 ## Enabling Application Proxy for Tableau 

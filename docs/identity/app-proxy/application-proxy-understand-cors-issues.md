@@ -52,7 +52,7 @@ The following example shows a typical Microsoft Entra application proxy CORS sce
 
 The CORSWebClient app works when you host it on-premises, but either fails to load or errors out when published through Microsoft Entra application proxy. If you published the CORSWebClient and CORSWebService apps separately as different apps through Application Proxy, the two apps are hosted at different domains. An AJAX request from CORSWebClient to CORSWebService is a cross-origin request, and it fails.
 
-![Application Proxy CORS request](./media/application-proxy-understand-cors-issues/image2.png)
+![Application proxy CORS request](./media/application-proxy-understand-cors-issues/image2.png)
 
 ## Solutions for Application Proxy CORS issues
 
