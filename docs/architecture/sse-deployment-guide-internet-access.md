@@ -204,7 +204,7 @@ Use Microsoft Entra Internet Access to block or allow access to internet sites b
 
 1. Select **Create a profile**.
 
-### Create a conditional access policy
+### Create a Conditional Access policy
 
 1. In the **Microsoft Entra admin center**, go to **Protection** \> **Conditional Access**. Select **Create new policy**.
 1. In the **New Conditional Access Policy** dialog box, configure the following details.
@@ -216,9 +216,9 @@ Use Microsoft Entra Internet Access to block or allow access to internet sites b
 
    [ ![Screenshot of Conditional Access, New Conditional Access policy for Internet Access Policy.](media/sse-deployment-guide-internet-access/new-conditional-access-policy-internet-access.png)](media/sse-deployment-guide-internet-access/new-conditional-access-policy-internet-access.png#lightbox)
       
-   1. **Target resources**.
-   1. **Select what this policy applies to** \> **Global Secure Access (Preview)**.
-   1. **Select the traffic profiles this policy applies to** \> **Internet traffic**.
+   f. **Target resources**.
+   g. **Select what this policy applies to** \> **Global Secure Access (Preview)**.
+   h. **Select the traffic profiles this policy applies to** \> **Internet traffic**.
 
    [ ![Screenshot of Conditional Access, New Conditional Access policy for Internet Access Policy, Target resources.](media/sse-deployment-guide-internet-access/new-conditional-access-policy-internet-access-target-resources.png)](media/sse-deployment-guide-internet-access/new-conditional-access-policy-internet-access-target-resources.png#lightbox)
         
