@@ -105,7 +105,7 @@ Use the Microsoft Graph Explorer to add roles to an enterprise application.
     }
     ```
 
-    You can only add new roles after msiam_access for the patch operation. Also, you can add as many roles as your organization needs. The value of these roles is sent as the claim value in the SAML response. To generate the GUID values for the ID of new roles use the web tools, such as the [Online GUID / UUID Generator](https://www.guidgenerator.com/). The appRoles property should represent what was in the request body of the query.
+    You must include the `msiam_access` role object in addition to any new roles in the request body. Failure to include any existing roles in the request body removes them from the **appRoles** object. Also, you can add as many roles as your organization needs. The value of these roles is sent as the claim value in the SAML response. To generate the GUID values for the ID of new roles use the web tools, such as the [Online GUID / UUID Generator](https://www.guidgenerator.com/). The appRoles property in the response includes what was in the request body of the query.
 
 ## Edit attributes
 
