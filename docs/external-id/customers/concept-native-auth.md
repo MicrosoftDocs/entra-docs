@@ -26,22 +26,22 @@ In contrast, browser-delegated methods, such as using a system browser for authe
 
 Watch this [video](https://www.youtube.com/embed/20Tp0CM55rw) for an overview of native authentication capabilities.
 
-## What authentication methods are available with native authentication?
+## Available authentication methods
 
 You can create fully native experiences for local account sign-up, sign-in, and sign-out for your first party applications. We provide the following capabilities: 
 
-- Passwordless authentication with email one-time passcode (OTP) (for sign-up, sign-in, and sign-out)
-- Password authentication (for sign-up, sign-in, and sign-out)  
-- Collection of user attributes
-- Self-service password reset with email OTP verification  
+- Passwordless authentication with email one-time passcode (OTP) (for sign-up, sign-in, and sign-out).
+- Password authentication (for sign-up, sign-in, and sign-out). 
+- Collection of user attributes.
+- Self-service password reset with email OTP verification.  
 
 :::image type="content" source="media/concept-native-auth/native-auth-experiences.png" alt-text="Native authentication experiences.":::
 
-## When should I use native authentication? 
+## When to use native authentication
 <!--This section will be updated once I have the most up-to-date content from the PM.-->
 Whether you choose native authentication over browser-delegated authentication depends on your requirements. In general, native authentication is an ideal solution for any of the following conditions:  
 
-- Streamlined sign-up and sign-in experiences are critical, and any friction encountered by users may affect revenue, retention, etc.
+- Streamlined sign-up and sign-in experiences are critical, and any friction encountered by users may affect revenue or retention.
 - A consistently branded experience across touchpoints and applications is of paramount importance.
 - Your onboarding transactions are low risk, and acquisition far outweighs governance.
 - Your browser-delegated capabilities don’t meet all of your UI customization and layout needs.
@@ -49,16 +49,16 @@ Whether you choose native authentication over browser-delegated authentication d
 
 Native authentication isn't a supported solution for:
 
-- Third-party or multitenant applications
-- Microsoft first-party client applications
-- B2B or B2E apps (Native authentication is available only for Microsoft Entra ID for customers applications.)
+- Third-party or multitenant applications.
+- Microsoft first-party client applications.
+- B2B or B2E apps. Native authentication is available only for Microsoft Entra ID for customers applications.
 
-## Capabilities that are out of scope 
+## Out of scope capabilities
 <!--This section will be updated once I have the most up-to-date content from the PM.-->
 The following capabilities are out of scope:
 
-- Multifactor authentication during sign-in
-- Conditional Access
+- Multifactor authentication during sign-in.
+- Conditional Access.
 - Some of the [Custom authentication extensions (preview)](/entra/identity-platform/custom-extension-overview) events aren't triggered when Microsoft Entra ID doesn't  render the UI. For example, when using native authentication the following event won't trigger:
    - [Custom authentication extensions for attribute collection start and submit events](/entra/identity-platform/custom-extension-attribute-collection?tabs=start-continue%2Csubmit-continue). For applications that use native authentication, it's up to app developer to call the REST API directly from their applications.
    - [Brand your apps via custom authentication extensions](https://github.com/microsoft/entra-previews/blob/PP4/docs/Branding-per-app-via-custom-auth-extension.md). For applications that use native authentication, the developer of the app has full control on the UI.
