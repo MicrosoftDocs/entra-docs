@@ -14,7 +14,7 @@ ms.reviewer: ergreenl
 zone_pivot_groups: enterprise-apps-minus-former-powershell
 ms.custom: enterprise-apps
 
-#customer intent: As an IT admin managing user accounts in Microsoft Entra ID, I want to create a new user account and assign it to an enterprise application, so that I can provide access to the application for the user.
+#customer intent: As a Microsoft Entra admin, I want to configure the properties of an enterprise application, so that I can control how the application is represented and accessed by users.
 ---
 
 # Configure enterprise application properties
