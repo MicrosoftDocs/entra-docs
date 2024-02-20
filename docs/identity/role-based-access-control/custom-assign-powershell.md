@@ -128,7 +128,6 @@ $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId 
 ### Read and list role assignments
 
 ```powershell
-
 # Get role assignments for a given principal
 Get-MgRoleManagementDirectoryRoleAssignment -Filter "PrincipalId eq '27c8ca78-ab1c-40ae-bd1b-eaeebd6f68ac'"
 
