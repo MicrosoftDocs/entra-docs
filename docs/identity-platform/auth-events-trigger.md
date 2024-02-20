@@ -13,6 +13,8 @@ ms.topic: how-to
 
 # Set up Authentication events trigger for Azure Functions client library for .NET
 
+**Applies to:** Microsoft Entra ID workforce configurations
+
 In this how-to guide, you'll learn how to set up and test the Authentication events trigger for Azure Functions client library for .NET. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events. 
 
 ## Prerequisites
@@ -101,96 +103,9 @@ In this step, you'll create a HTTP trigger function using your chosen integrated
 
 ---
 
-### 1.2 Test the function locally using Postman (optional)
+At this point, you can [test authentication events token augmentation using Postman](./auth-events-nuget-postman.md) or continue on to deployment.
 
-This is an optional step to test the function locally using Postman. If you want to continue to deployment, you can skip to [Deploy the function to Azure](#step-3-deploy-function-to-azure).
-
-We can test the function locally, and thereby check that the function is working as expected.
-
-1. To test the function locally, we can bypass the token validation steps. Open the *local.settings.json* file, and add the `AuthenticationEvents__BypassTokenValidation` parameter.  <!--Really? Why would we bypass the token validation here?-->
-
-    ```json
-    {
-        "IsEncrypted": false,
-        "Values": {
-            "AzureWebJobsStorage": "AzureWebJobsStorageConnectionStringValue",
-            "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-            "AuthenticationEvents__BypassTokenValidation": true
-        }
-    }
-    ```
-
-1. Open Postman and select **Post** from the left dropdown. Paste in the Function url you copied earlier.
-1. Under the main bar, select **Body**, then **raw**, and paste in the following JSON. Modify the values as needed.
-
-    ```json
-    {
-        "type": "microsoft.graph.authenticationEvent.tokenIssuanceStart",
-        "source": "/tenants/{Enter tenant ID here}/applications/{Enter test JWT app ID here}",
-        "data": {
-            "@odata.type": "microsoft.graph.onTokenIssuanceStartCalloutData",
-            "tenantId": "Enter tenant ID here",
-            "authenticationEventListenerId": "Enter authentication event listener ID here", ## What is this corresponding to?
-            "customAuthenticationExtensionId": "Enter custom authentication extension ID here",
-            "authenticationContext": {
-                "correlationId": "Enter correlation ID here", ## Do we know this?
-                "client": {
-                    "ip": "Enter client IP here", ##
-                    "locale": "en-us",
-                    "market": "en-us"
-                },
-                "protocol": "OAUTH2.0",
-                "clientServicePrincipal": {
-                    "id": "Enter correlation ID here", ##
-                    "appId": "Enter test JWT app ID here", ##
-                    "appDisplayName": "Enter test JWT app display name here", ##
-                    "displayName": "Enter test JWT app display name here" ##
-                },
-                "user": {
-                    "createdDateTime": "2023-08-16T00:00:00Z",
-                    "displayName": "Enter user display name here", ##
-                    "givenName": "Enter user given name here", ##
-                    "id": "Enter user ID here", ##
-                    "mail": "Enter user email here", ##
-                    "preferredLanguage": "en-us",
-                    "surname": "Enter user surname here", ##
-                    "userPrincipalName": "Enter user principal name here", ##
-                    "userType": "Member"
-                }
-            }
-        }
-    }
-    ```
-
-1. Select **Send**. 
-1. You should receive a similar output to the following JSON.
-
-    ```json
-    {
-        "data": {
-            "@odata.type": "microsoft.graph.onTokenIssuanceStartResponseData",
-            "actions": [
-                {
-                    "@odata.type": "microsoft.graph.tokenIssuanceStart.provideClaimsForToken",
-                    "claims": {
-                        "dateOfBirth": "01/01/2000",
-                        "customRoles": [
-                            "Writer",
-                            "Editor" ## What about nested Json?
-                        ]
-                    }
-                }
-    
-            ]
-        }
-    }
-    ```
-
-This confirms that the function is working as expected. You can now close Postman and continue to deploy your function to Azure.
-
-<!--Does the Postman account need to be associated with the same email address as your Azure subscription?-->
-
-### 1.3 Deploy function and publish to Azure 
+### 1.2 Deploy function and publish to Azure 
 
 So far we've set up the project to install the NuGet packages and starter code and have tested it locally in Postman. Now we will deploy this to Azure using our IDE.
 
