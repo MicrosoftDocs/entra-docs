@@ -4,9 +4,9 @@ description: In this article, you learn how to use the Microsoft Entra Verified 
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: how-to
-ms.subservice: verifiable-credentials
+
 ms.date: 12/06/2023
 ms.author: barclayn
 

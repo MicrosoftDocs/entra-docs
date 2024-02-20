@@ -1,19 +1,14 @@
 ---
 title: Assign Azure resource roles in Privileged Identity Management
 description: Learn how to assign Azure resource roles in Privileged Identity Management (PIM).
-services: active-directory
-documentationcenter: ''
 author: barclayn
-manager: amycolannino
-ms.service: active-directory
-ms.topic: how-to
-ms.tgt_pltfrm: na
-ms.workload: identity
-ms.subservice: pim
-ms.date: 01/22/2024
 ms.author: barclayn
-ms.custom: pim
-ms.collection: M365-identity-device-management
+manager: amycolannino
+ms.service: entra-id-governance
+ms.topic: how-to
+ms.date: 01/22/2024
+ms.subservice: privileged-identity-management
+
 ---
 
 # Assign Azure resource roles in Privileged Identity Management

@@ -1,21 +1,18 @@
 ---
 title: 'Microsoft Entra Connect Sync: Changing the default configuration'
 description: Provides best practices for changing the default configuration of Microsoft Entra Connect Sync.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
 ms.assetid: 7638a031-1635-4942-94c3-fce8f09eed5e
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Microsoft Entra Connect Sync: Best practices for changing the default configuration
 The purpose of this topic is to describe supported and unsupported changes to Microsoft Entra Connect Sync.

@@ -4,9 +4,8 @@ description: In this tutorial, you learn how to create and configure a customize
 author: justinha
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: tutorial
 ms.date: 09/15/2023

@@ -8,15 +8,14 @@ summary: >
 metadata:
   author: Dickson-Mwendia
   ms.author: dmwendia
-  ms.date: 09/21/2023
-  ms.service: active-directory
-  ms.subservice: develop
+  ms.date: 02/02/2024
+  ms.service: identity-platform  
   ms.topic: landing-page
 
 landingContent:
 
 ## ROW 1 ################################################### ROW 1 ##
-  - title: "Get started fast"
+  - title: "Get started"
     linkLists:
       - linkListType: quickstart
         links:
@@ -34,7 +33,7 @@ landingContent:
     linkLists:
       - linkListType: tutorial
         links:
-          - text: ASP.NET
+          - text: ASP.NET Core
             url: tutorial-web-app-dotnet-register-app.md
           - text: Blazor Server
             url: tutorial-blazor-server.md
@@ -47,9 +46,9 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Web app that signs in users
-            url: scenario-web-app-sign-user-overview.md
+            url: scenario-web-app-sign-user-app-registration.md
           - text: Web app that calls a web API
-            url: scenario-web-app-call-api-overview.md
+            url: scenario-web-api-call-api-app-registration.md
   - title: "Scenarios in depth"
     linkLists:
       - linkListType: tutorial

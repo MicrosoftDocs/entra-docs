@@ -4,17 +4,15 @@ title: One-time passcode authentication for B2B guest users
 description: How to use Email one-time passcode to authenticate B2B guest users without the need for a Microsoft account.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/19/2024
+ms.date: 01/23/2024
 ms.author: mimart
 author: msmimart
 manager: CelesteDG
-ms.custom: "it-pro, seo-update-azuread-jan"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
-
-# Customer intent: As a tenant administrator, I want to make sure that my users can authenticate themselves with one-time passcode.
+#customer intent: As a B2B collaboration administrator, I want to make sure invited users can authenticate using email one-time passcode, so that invited users can sign in using a passcode even when other authentication methods are not available.
 ---
 
 # Email one-time passcode authentication
@@ -26,6 +24,10 @@ The email one-time passcode feature is a way to authenticate B2B collaboration u
 > [!IMPORTANT]
 >
 > - The email one-time passcode feature is now turned on by default for all new tenants and for any existing tenants where you haven’t explicitly turned it off. This feature provides a seamless fallback authentication method for your guest users. If you don’t want to use this feature, you can [disable it](#enable-or-disable-email-one-time-passcodes), in which case users will be prompted to create a Microsoft account instead.
+
+> [!NOTE]
+> 
+> Currently you cannot apply authentication strength policies via Conditional Access to email one-time passcode accounts. Use the Conditional Access grant control 'Require MFA' instead. For more information, see the [Authentication strength policies for external users](authentication-conditional-access.md#authentication-strength-policies-for-external-users) section of the [Authentication and Conditional Access for External ID](authentication-conditional-access.md) page.
 
 ## Sign-in endpoints
 
@@ -92,7 +94,7 @@ The email one-time passcode feature is now turned on by default for all new tena
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 

@@ -4,8 +4,8 @@ description: Find partner solutions to integrate your legacy on-premises, public
 
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 01/17/2023
@@ -20,9 +20,9 @@ ms.custom: not-enterprise-apps
 In this article, learn to protect your on-premises and cloud legacy authentication applications by connecting them to Microsoft Entra ID.
 
 * **[Application Proxy](#secure-hybrid-access-with-application-proxy)**:
-  * [Remote access to on-premises applications through Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md)
+  * [Remote access to on-premises applications through Microsoft Entra application proxy](/entra/identity/app-proxy)
   * Protect users, apps, and data in the cloud and on-premises 
-  * [Use it to publish on-premises web applications externally](~/identity/app-proxy/what-is-application-proxy.md)
+  * [Use it to publish on-premises web applications externally](~/identity/app-proxy/overview-what-is-app-proxy.md)
   
 * **[Secure hybrid access through Microsoft Entra partner integrations](#partner-integrations-for-apps-on-premises-and-legacy-authentication)**:
 
@@ -43,10 +43,10 @@ Use Application Proxy to protect users, apps, and data in the cloud, and on prem
 
 Learn more:
 
-* [Remote access to on-premises applications through Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md)
+* [Remote access to on-premises applications through Microsoft Entra application proxy](/entra/identity/app-proxy)
 * [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md)
-* [How to configure SSO to an Application Proxy application](~/identity/app-proxy/application-proxy-config-sso-how-to.md)
-* [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/what-is-application-proxy.md)
+* [How to configure SSO to an Application Proxy application](~/identity/app-proxy/how-to-configure-sso.md)
+* [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/overview-what-is-app-proxy.md)
 
 ### Application publishing and access management
 

@@ -1,8 +1,8 @@
 ---
-title: Tutorial - Manual Microsoft Entra Verified ID setup
+title: Tutorial - Advanced Microsoft Entra Verified ID setup
 description: In this tutorial, you learn how to manually configure your tenant to support the Verified ID service. 
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 author: barclayn
 manager: amycolannino
 ms.author: barclayn
@@ -12,18 +12,18 @@ ms.date: 09/15/2023
 
 ---
 
-# Manual Microsoft Entra Verified ID setup
+# Advanced Microsoft Entra Verified ID setup
 
   
-Manual Verified ID setup is the classic way of setting up Verified ID where you as an admin have to configure Azure KeyVault, take care of registering your decentralized ID and verifying your domain.
+Advanced Verified ID setup is the classic way of setting up Verified ID where you as an admin have to configure Azure KeyVault, take care of registering your decentralized ID and verifying your domain.
 
-In this tutorial, you learn how to use the manual setup to configure your Microsoft Entra tenant to use the verifiable credentials service.
+In this tutorial, you learn how to use the advanced setup to configure your Microsoft Entra tenant to use the verifiable credentials service.
 
 Specifically, you learn how to:
 
 > [!div class="checklist"]
 > - Create an Azure Key Vault instance.
-> - Configure your the Verified ID service using the manual setup.
+> - Configure your the Verified ID service using the advanced setup.
 > - Register an application in Microsoft Entra ID.
 
 The following diagram illustrates the Verified ID architecture and the component you configure.

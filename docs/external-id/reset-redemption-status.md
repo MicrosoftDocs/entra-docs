@@ -4,8 +4,7 @@ title: Reset redemption status for a guest user
 description: Learn how to reset the invitation redemption status for a Microsoft Entra B2B guest users in Microsoft Entra External ID.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 05/31/2023
 
@@ -78,7 +77,6 @@ If a user wants to sign in using a different email:
 
 ```powershell
 Install-Module Microsoft.Graph
-Select-MgProfile -Name v1.0
 Connect-MgGraph -Scopes "User.ReadWrite.All"
 
 $user = Get-MgUser -Filter "startsWith(mail, 'john.doe@fabrikam.net')"

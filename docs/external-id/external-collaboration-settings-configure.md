@@ -3,17 +3,17 @@ title: Enable B2B external collaboration settings
 description: Learn how to enable Active Directory B2B external collaboration and manage who can invite guest users. Use the Guest Inviter role to delegate invitations.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 01/18/2024
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
 
 ms.collection: M365-identity-device-management
+#customer intent: As an administrator managing external collaboration settings in Microsoft Entra, I want to configure guest user access, invite settings, self-service sign-up, and collaboration restrictions, so that I can control the level of access and permissions for external users and ensure secure collaboration with other organizations.
 ---
 
 # Configure external collaboration settings
@@ -68,7 +68,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 1. Under **External user leave settings**, you can control whether external users can remove themselves from your organization.
 
    - **Yes**: Users can leave the organization themselves without approval from your admin or privacy contact.
-   - **No**: Users can't leave your organization themselves. They'll see a message guiding them to contact your admin or privacy contact to request removal from your organization.
+   - **No**: Users can't leave your organization themselves. They see a message guiding them to contact your admin or privacy contact to request removal from your organization.
 
    > [!IMPORTANT]
    > You can configure **External user leave settings** only if you have [added your privacy information](~/fundamentals/properties-area.md) to your Microsoft Entra tenant. Otherwise, this setting will be unavailable.

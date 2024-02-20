@@ -1,16 +1,15 @@
 ---
 title: Deployment considerations for Microsoft Entra multifactor authentication
 description: Learn about deployment considerations and strategy for successful implementation of Microsoft Entra multifactor authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 01/24/2024
 ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jpettere
-ms.collection: M365-identity-device-management
 ---
 # Plan a Microsoft Entra multifactor authentication deployment 
 
@@ -40,7 +39,7 @@ Methods include:
 
 - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
 - [Microsoft Authenticator app](concept-authentication-authenticator-app.md)
-- [FIDO2 security key (preview)](concept-authentication-passwordless.md#fido2-security-keys)
+- [FIDO2 security key](concept-authentication-passwordless.md#fido2-security-keys)
 - [OATH hardware tokens (preview)](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview)
 - [OATH software tokens](concept-authentication-oath-tokens.md#oath-software-tokens)
 - [SMS verification](concept-authentication-phone-options.md#mobile-phone-verification)
@@ -55,7 +54,7 @@ To learn more about the strength and security of these methods and how they work
 - [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
 - [Video: Choose the right authentication methods to keep your organization safe](https://youtu.be/LB2yj4HSptc)
 
-You can use this [PowerShell script](/samples/azure-samples/azure-mfa-authentication-method-analysis/azure-mfa-authentication-method-analysis/) to analyze users' MFA configurations and suggest the appropriate MFA authentication method. 
+You can use this [PowerShell script](https://github.com/Azure-Samples/azure-mfa-authentication-method-analysis) to analyze users' MFA configurations and suggest the appropriate MFA authentication method. 
 
 For the best flexibility and usability, use the Microsoft Authenticator app. This authentication method provides the best user experience and multiple modes, such as passwordless, MFA push notifications, and OATH codes. The Microsoft Authenticator app also meets the National Institute of Standards and Technology (NIST) [Authenticator Assurance Level 2 requirements](~/standards/nist-authenticator-assurance-level-2.md).
 

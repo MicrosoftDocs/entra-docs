@@ -2,7 +2,7 @@
 title: How to get the most from Microsoft Entra documentation
 description: What is least privilege and how to navigate using Microsoft Entra documentation?
 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 11/27/2023

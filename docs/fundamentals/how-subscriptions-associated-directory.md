@@ -1,12 +1,10 @@
 ---
 title: Add an existing Azure subscription to your tenant
 description: Instructions about how to add an existing Azure subscription to your Microsoft Entra tenant.
-services: active-directory
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 11/29/2023

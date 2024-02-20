@@ -1,12 +1,10 @@
 ---
 title: Clone a role/policy in the Remediation dashboard in Microsoft Entra Permissions Management
 description: How to clone a role/policy in Microsoft Entra Permissions Management.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
-ms.subservice: ciem
-ms.workload: identity
+ms.service: entra-permissions-management
+
 ms.topic: how-to
 ms.date: 09/14/2023
 ms.author: jfields

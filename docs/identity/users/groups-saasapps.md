@@ -1,19 +1,16 @@
 ---
 title: Use a group to manage access to SaaS apps
 description: Learn how to use groups in Microsoft Entra ID to assign access to SaaS applications that are integrated with Microsoft Entra ID.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 # Use a group to manage access to SaaS applications
 
@@ -28,7 +25,9 @@ With Microsoft Entra ID, you can save time by managing the membership of the mar
 > Group-based assignment is supported only for security groups.
 > Nested group memberships aren't supported for group-based assignment to applications at this time.
 
-## Assign access for a user or group to an SaaS application
+<a name='assign-access-for-a-user-or-group-to-an-saas-application'></a>
+
+## Assign access for a user or group to a SaaS application
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 

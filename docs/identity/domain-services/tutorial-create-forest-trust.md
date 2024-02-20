@@ -1,17 +1,14 @@
 ---
 title: Tutorial - Create a forest trust in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to create a one-way outbound forest to an on-premises AD DS domain in the Microsoft Entra admin center for Microsoft Entra Domain Services
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/01/2023
 ms.author: justinha
-
 #Customer intent: As an identity administrator, I want to create a one-way outbound forest from a Microsoft Entra Domain Services forest to an on-premises Active Directory Domain Services forest to provide authentication and resource access between forests.
 ---
 

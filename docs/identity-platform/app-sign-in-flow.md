@@ -7,8 +7,8 @@ ms.author: ryanwi
 ms.custom: scenarios:getting-started
 ms.date: 08/11/2023
 ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to understand the sign-in flow of web, desktop, and mobile apps in Microsoft identity platform
 ---
@@ -28,7 +28,7 @@ When a user navigates in the browser to a web app, the following happens:
 When the user has successfully authenticated:
 
 * The Microsoft identity platform sends a token to the web app.
-* A cookie is saved, associated with a Microsoft Entra domain, that contains the identity of the user in the browser's cookie jar. The next time an app uses the browser to navigate to the the Microsoft identity platform authorization endpoint, the browser presents the cookie so that the user doesn't have to sign in again. This is also the way that SSO is achieved. The cookie is produced by Microsoft Entra ID and can only be understood by Microsoft Entra ID.
+* A cookie is saved, associated with a Microsoft Entra domain, that contains the identity of the user in the browser's cookie jar. The next time an app uses the browser to navigate to the Microsoft identity platform authorization endpoint, the browser presents the cookie so that the user doesn't have to sign in again. This is also the way that SSO is achieved. The cookie is produced by Microsoft Entra ID and can only be understood by Microsoft Entra ID.
 * The web app then validates the token. If the validation succeeds, the web app displays the protected page and saves a session cookie in the browser's cookie jar. When the user navigates to another page, the web app knows that the user is authenticated based on the session cookie.
 
 The following sequence diagram summarizes this interaction:

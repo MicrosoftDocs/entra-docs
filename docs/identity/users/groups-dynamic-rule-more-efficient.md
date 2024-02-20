@@ -1,19 +1,16 @@
 ---
 title: Create simpler and faster rules for dynamic groups
 description: How to optimize your membership rules to automatically populate groups.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.topic: overview
 ms.date: 11/07/2023
 ms.author: barclayn
 ms.reviewer: jordandahl
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 

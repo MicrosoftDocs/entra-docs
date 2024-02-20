@@ -1,12 +1,11 @@
 ---
 title: PowerShell sample - List users & groups for a Microsoft Entra application proxy app
 description: PowerShell example that lists all the users and groups assigned to a specific Microsoft Entra application proxy application.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: sample
 ms.date: 01/04/2024

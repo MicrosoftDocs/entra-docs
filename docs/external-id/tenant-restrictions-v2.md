@@ -2,16 +2,16 @@
 title: Configure tenant restrictions - Microsoft Entra ID
 description: Use tenant restrictions to control the types of external accounts your users can use on your networks and the devices you manage. You can scope settings to apps, groups, and users for specified tenants.
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 10/27/2023
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
+#customer intent: As an IT admin, I want to configure tenant restrictions v2, so that I can control access to external apps and enhance security for users signing in from our networks or devices.
 ---
 
 # Set up tenant restrictions v2
@@ -155,7 +155,7 @@ When your users need access to external organizations and apps, we recommend ena
 To configure tenant restrictions, you need:
 
 - Microsoft Entra ID P1 or P2
-- Account with a role of Global administrator or Security administrator
+- Account with a role of Global Administrator or Security Administrator
 - Windows devices running Windows 10, Windows 11 with the latest updates
 
 ## Configure server-side tenant restrictions v2 cloud policy
@@ -168,7 +168,7 @@ Settings for tenant restrictions v2 are located in the Microsoft Entra admin cen
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**, then select  **Cross-tenant access settings**.
 
@@ -222,7 +222,7 @@ Suppose you use tenant restrictions to block access by default, but you want to 
 
 #### Example: Configure tenant restrictions v2 to allow Microsoft Accounts
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) or a [Conditional Access administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) or a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
 

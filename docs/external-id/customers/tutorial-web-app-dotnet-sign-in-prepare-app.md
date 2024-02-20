@@ -1,55 +1,55 @@
 ---
-title: Tutorial - Prepare an ASP.NET web app for authentication in a customer tenant
-description: Learn how to prepare an ASP.NET web app for authentication with your Microsoft Entra ID for customers tenant.
+title: Tutorial - Prepare an ASP.NET Core web app for authentication in a customer tenant
+description: Learn how to prepare an ASP.NET Core web app for authentication with your Microsoft Entra ID for customers tenant.
  
 author: cilwerner
 ms.author: cwerner
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
 
-ms.subservice: ciam
+ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.topic: tutorial
 ms.date: 05/23/2023
 #Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own ASP.NET web app with Microsoft Entra ID for customers tenant.
 ---
 
-# Tutorial: Prepare an ASP.NET web app for authentication in a customer tenant
+# Tutorial: Prepare an ASP.NET Core web app for authentication in a customer tenant
 
-In the [previous article](./tutorial-web-app-dotnet-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant.
+This tutorial is part 2 of a series that demonstrates how to build an ASP.NET Core web application and prepare it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-web-app-dotnet-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to create an ASP.NET Core web app, and configure it for authentication.
 
 In this tutorial you'll;
 
 > [!div class="checklist"]
-> * Create an ASP.NET project in Visual Studio Code
+> * Create an ASP.NET Core project in Visual Studio Code
 > * Add the required NuGet packages
 > * Configure the settings for the application
 > * Add code to implement authentication
 
 ## Prerequisites
 
-* Completion of the prerequisites and steps in [Prepare your customer tenant for building an ASP.NET web app](./tutorial-web-app-dotnet-sign-in-prepare-tenant.md).
-* Although any integrated development environment (IDE) that supports ASP.NET applications can be used, this tutorial uses **Visual Studio Code**. You can download it [here](https://visualstudio.microsoft.com/downloads/).
+* [Tutorial: Prepare your customer tenant for building an ASP.NET Core web app](./tutorial-web-app-dotnet-sign-in-prepare-tenant.md).
+* Although any integrated development environment (IDE) that supports ASP.NET Core applications can be used, this tutorial uses **Visual Studio Code**. You can download it [here](https://visualstudio.microsoft.com/downloads/).
 * [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
-## Create an ASP.NET project
+## Create an ASP.NET Core project
 
 1. Open Visual Studio Code, select **File** > **Open Folder...**. Navigate to and select the location in which to create your project.
 1. Open a new terminal by selecting **Terminal** > **New Terminal**.
-1. Enter the following command to make a Model View Controller (MVC) ASP.NET project.
+1. Enter the following command to make a Model View Controller (MVC) ASP.NET Core project.
 
     ```powershell
-    dotnet new mvc -n aspnet_webapp
+    dotnet new mvc -n dotnetcore_webapp
     ```
 
 ## Install identity packages
 
 Identity related NuGet packages must be installed in the project to authenticate users.
 
-1. Enter the following commands to change into the *aspnet_webapp* folder and install the relevant NuGet package:
+1. Enter the following commands to change into the *dotnetcore_webapp* folder and install the relevant NuGet package:
 
     ```powershell
-    cd aspnet_webapp
+    cd dotnetcore_webapp
     dotnet add package Microsoft.Identity.Web.UI
     ```
 
@@ -178,7 +178,7 @@ The *Program.cs* needs to be modified to add authentication and authorization to
 
     ```
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
-> [Sign in and sign out](tutorial-web-app-dotnet-sign-in-sign-out.md)
+> [Step 3: Add sign-in and sign-out to an ASP.NET Core web application for a customer tenant](tutorial-web-app-dotnet-sign-in-sign-out.md)

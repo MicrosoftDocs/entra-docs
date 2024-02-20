@@ -1,22 +1,19 @@
 ---
 title: Upgrade from DirSync and Azure AD Sync
 description: Describes how to upgrade from DirSync and Azure AD Sync to Microsoft Entra Connect.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: bd68fb88-110b-4d76-978a-233e15590803
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: reference
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
-ms.collection: M365-identity-device-management
+
 ---
 
 # Upgrade Windows Azure Active Directory Sync and Azure Active Directory Sync

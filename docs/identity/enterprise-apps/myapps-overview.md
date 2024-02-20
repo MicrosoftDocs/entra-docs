@@ -4,8 +4,8 @@ description: Learn about how to manage applications in the My Apps portal.
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: conceptual
 
 ms.date: 10/18/2023
