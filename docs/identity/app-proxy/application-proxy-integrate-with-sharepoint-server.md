@@ -73,7 +73,7 @@ The SharePoint web application must be configured with Kerberos and the appropri
 > [!IMPORTANT]
 > Regardless of the zone that's used, the application pool account of the SharePoint web application must be a domain account for Kerberos to work correctly.
 
-### Provision the SharePoint web application
+### Create the SharePoint web application
 
 - The script shows an example of creating a new web application using the **default** zone. using the default zone is the preferred option.
 
@@ -130,7 +130,7 @@ To identify the account running the application pool of the SharePoint web appli
 
    ![Choices for configuring a service account](./media/application-proxy-integrate-with-sharepoint-server/service-web-application.png)
 
-1. Confirm that **Select an account for this component** returns a domain account, and remember it, since it is needed in the next step.
+1. Confirm that **Select an account for this component** returns a domain account, and remember it, since it's needed in the next step.
 
 ### Make sure that an HTTPS certificate is configured for the IIS site of the extranet zone
 
