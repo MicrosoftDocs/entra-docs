@@ -13,7 +13,7 @@ ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Get all Application Proxy apps using default domains (.msappproxy.net)
+# Get all application proxy apps using default domains (.msappproxy.net)
 
 This PowerShell script example lists all the Microsoft Entra application proxy applications that are using default domains (.msappproxy.net).
 
@@ -94,4 +94,4 @@ Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGrap
 
 For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
 
-For other PowerShell examples for Application Proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).
+For other PowerShell examples for application proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).

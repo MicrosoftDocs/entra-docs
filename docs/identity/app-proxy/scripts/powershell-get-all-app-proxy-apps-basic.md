@@ -1,5 +1,5 @@
 ---
-title: PowerShell sample - List basic info for Application Proxy apps
+title: PowerShell sample - List basic info for application proxy apps
 description: PowerShell example that lists Microsoft Entra application proxy applications along with the application ID (AppId), name (DisplayName), and object ID (ObjId).
 
 author: kenwith
@@ -13,7 +13,7 @@ ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Get all Application Proxy apps and list basic information
+# Get all application proxy apps and list basic information
 
 This PowerShell script example lists information about all Microsoft Entra application proxy applications, including the application ID (AppId), name (DisplayName), and object ID (ObjId).
 
@@ -26,7 +26,7 @@ This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mi
 ## Sample script
 
 ```powershell
-# This sample script gets all Microsoft Entra Application Proxy applications (AppId, Name of the app, ObjID).
+# This sample script gets all Microsoft Entra application proxy applications (AppId, Name of the app, ObjID).
 #
 # Version 1.0
 #
@@ -91,4 +91,4 @@ Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGrap
 
 For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
 
-For other PowerShell examples for Application Proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).
+For other PowerShell examples for application proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).

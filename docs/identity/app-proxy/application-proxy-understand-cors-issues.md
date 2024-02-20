@@ -44,17 +44,17 @@ In the following screenshot, selecting the **Try It** button caused a CORS error
 
 ![CORS issue](./media/application-proxy-understand-cors-issues/image3.png)
 
-## CORS challenges with Application Proxy
+## CORS challenges with application proxy
 
 The following example shows a typical Microsoft Entra application proxy CORS scenario. The internal server hosts a **CORSWebService** web API controller, and a **CORSWebClient** that calls **CORSWebService**. There's an AJAX request from **CORSWebClient** to **CORSWebService**.
 
 ![On-premises same-origin request](./media/application-proxy-understand-cors-issues/image1.png)
 
-The CORSWebClient app works when you host it on-premises, but either fails to load or errors out when published through Microsoft Entra application proxy. If you published the CORSWebClient and CORSWebService apps separately as different apps through Application Proxy, the two apps are hosted at different domains. An AJAX request from CORSWebClient to CORSWebService is a cross-origin request, and it fails.
+The CORSWebClient app works when you host it on-premises, but either fails to load or errors out when published through Microsoft Entra application proxy. If you published the CORSWebClient and CORSWebService apps separately as different apps through application proxy, the two apps are hosted at different domains. An AJAX request from CORSWebClient to CORSWebService is a cross-origin request, and it fails.
 
-![Application Proxy CORS request](./media/application-proxy-understand-cors-issues/image2.png)
+![Application proxy CORS request](./media/application-proxy-understand-cors-issues/image2.png)
 
-## Solutions for Application Proxy CORS issues
+## Solutions for application proxy CORS issues
 
 You can resolve the preceding CORS issue in any one of several ways.
 
@@ -111,6 +111,6 @@ You can change your app to support CORS by adding the Access-Control-Allow-Origi
 Some CORS issues can't be resolved, such as when your app redirects to *login.microsoftonline.com* to authenticate, and the access token expires. The CORS call then fails. A workaround for this scenario is to extend the lifetime of the access token, to prevent it from expiring during a user’s session. For more information about how to do this, see [Configurable token lifetimes in Microsoft Entra ID](~/identity-platform/configurable-token-lifetimes.md).
 
 ## See also
-- [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md) 
+- [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md) 
 - [Plan a Microsoft Entra application proxy deployment](conceptual-deployment-plan.md) 
 - [Remote access to on-premises applications through Microsoft Entra application proxy](overview-what-is-app-proxy.md)
