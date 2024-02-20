@@ -15,7 +15,7 @@ ms.author: kenwith
 
 Microsoft Entra application proxy is a secure and cost-effective remote access solution for on-premises applications. It provides an immediate transition path for “Cloud First” organizations to manage access to legacy on-premises applications that aren’t yet capable of using modern protocols. For additional introductory information, see [What is Application Proxy](overview-what-is-app-proxy.md).
 
-Application Proxy is recommended for giving remote users access to internal resources. Application Proxy replaces the need for a VPN or reverse proxy for these remote access use cases. It is not intended for users who are on the corporate network. These users who use Application Proxy for intranet access may experience undesirable performance issues.
+Application Proxy is recommended for giving remote users access to internal resources. Application proxy replaces the need for a VPN or reverse proxy for these remote access use cases. It is not intended for users who are on the corporate network. These users who use Application Proxy for intranet access may experience undesirable performance issues.
 
 This article includes the resources you need to plan, operate, and manage Microsoft Entra application proxy.
 
@@ -285,7 +285,7 @@ However, users still need to carry out day to day privileged operations, so enfo
 
 ### Reporting and monitoring
 
-Microsoft Entra ID provides additional insights into your organization’s application usage and operational health through [audit logs and reports](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). Application Proxy also makes it very easy to monitor connectors from the Microsoft Entra admin center and Windows Event Logs.
+Microsoft Entra ID provides additional insights into your organization’s application usage and operational health through [audit logs and reports](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). Application proxy also makes it very easy to monitor connectors from the Microsoft Entra admin center and Windows Event Logs.
 
 #### Application audit logs
 

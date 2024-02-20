@@ -14,7 +14,7 @@ ms.reviewer: ashishj
 
 # Kerberos Constrained Delegation for single sign-on (SSO) to your apps with Application Proxy
 
-You can provide single sign-on for on-premises applications published through Application Proxy that are secured with integrated Windows authentication. These applications require a Kerberos ticket for access. Application Proxy uses Kerberos Constrained Delegation (KCD) to support these applications.
+You can provide single sign-on for on-premises applications published through Application Proxy that are secured with integrated Windows authentication. These applications require a Kerberos ticket for access. Application proxy uses Kerberos Constrained Delegation (KCD) to support these applications.
 
 To learn more about Single Sign-On (SSO), see [What is Single Sign-On?](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
@@ -26,9 +26,9 @@ This diagram explains the flow when a user attempts to access an on-premises app
 ![Microsoft Entra authentication flow diagram](./media/application-proxy-configure-single-sign-on-with-kcd/authdiagram.png)
 
 1. The user enters the URL to access the on-premises application through Application Proxy.
-2. Application Proxy redirects the request to Microsoft Entra authentication services to preauthenticate. At this point, Microsoft Entra ID applies any applicable authentication and authorization policies, such as multifactor authentication. If the user is validated, Microsoft Entra ID creates a token and sends it to the user.
+2. Application proxy redirects the request to Microsoft Entra authentication services to preauthenticate. At this point, Microsoft Entra ID applies any applicable authentication and authorization policies, such as multifactor authentication. If the user is validated, Microsoft Entra ID creates a token and sends it to the user.
 3. The user passes the token to Application Proxy.
-4. Application Proxy validates the token and retrieves the User Principal Name (UPN) from it, and then the Connector pulls the UPN, and the Service Principal Name (SPN) through a dually authenticated secure channel.
+4. Application proxy validates the token and retrieves the User Principal Name (UPN) from it, and then the Connector pulls the UPN, and the Service Principal Name (SPN) through a dually authenticated secure channel.
 5. The Connector performs Kerberos Constrained Delegation (KCD) negotiation with the on-premises AD, impersonating the user to get a Kerberos token to the application.
 6. Active Directory sends the Kerberos token for the application to the Connector.
 7. The Connector sends the original request to the application server, using the Kerberos token it received from AD.

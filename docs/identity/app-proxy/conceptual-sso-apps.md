@@ -21,7 +21,7 @@ This configuration doesn't apply to applications using an on-premises identity p
 
 SAML SSO with Application Proxy also works with the SAML token encryption feature. For more info, see [Configure Microsoft Entra SAML token encryption](~/identity/enterprise-apps/howto-saml-token-encryption.md).
 
-The protocol diagrams describe the single sign-on sequence for both a service provider-initiated (SP-initiated) flow and an identity provider-initiated (IdP-initiated) flow. Application Proxy works with SAML SSO by caching the SAML request and response to and from the on-premises application.
+The protocol diagrams describe the single sign-on sequence for both a service provider-initiated (SP-initiated) flow and an identity provider-initiated (IdP-initiated) flow. Application proxy works with SAML SSO by caching the SAML request and response to and from the on-premises application.
 
   ![Diagram shows interactions of Application, Application Proxy, Client, and Microsoft Entra ID for S P-Initiated single sign-on.](./media/application-proxy-configure-single-sign-on-on-premises-apps/saml-sp-initiated-flow.png)
 

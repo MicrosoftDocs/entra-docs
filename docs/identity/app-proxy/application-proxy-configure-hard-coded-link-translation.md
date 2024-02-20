@@ -71,7 +71,7 @@ Application Proxy assumes that applications are encoded in UTF-8. If that's not 
 
 ### Which links are affected?
 
-The link translation feature only looks for links that are in code tags in the body of an app. Application Proxy has a separate feature for translating cookies or URLs in headers. 
+The link translation feature only looks for links that are in code tags in the body of an app. Application proxy has a separate feature for translating cookies or URLs in headers. 
 
 There are two common types of internal links in on-premises applications:
 

@@ -42,7 +42,7 @@ Configure the specific type of single sign-on. The sign-on methods are classifie
 
 Each of these options can be found by going to your application in **Enterprise Applications**, and opening the **single sign-on** page on the left menu. If your application was created in the old portal, you may not see all these options.
 
-On this page, you also see one more Sign-On option: Linked Sign-On. Application Proxy supports this option. However, this option doesn't add single sign-on to the application. That said the application may already have single sign-on implemented using another service such as Active Directory Federation Services. 
+On this page, you also see one more Sign-On option: Linked Sign-On. Application proxy supports this option. However, this option doesn't add single sign-on to the application. That said the application may already have single sign-on implemented using another service such as Active Directory Federation Services. 
 
 This option allows an admin to create a link to an application that users first land on when accessing the application. For example, an application that is configured to authenticate users using Active Directory Federation Services 2.0 can use the “Linked Sign-On” option to create a link to it on the My Apps page.
 
