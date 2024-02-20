@@ -56,7 +56,7 @@ The following steps show you how to register your app in the Microsoft Entra adm
 1. Select **Register**.
 1. The application's **Overview** pane displays upon successful registration. Record the **Application (client) ID** to be used in your application source code.
 
-## Enable public client flow and native authentication flows
+## Enable public client and native authentication flows
 
 To specify that this app is a public client and can use native authentication, enable public client and native authentication flows:
 
