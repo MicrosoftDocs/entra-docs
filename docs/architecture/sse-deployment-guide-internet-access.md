@@ -13,7 +13,7 @@ ms.author: jricketts
 
 # Microsoft Security Service Edge Solution Deployment Guide for Microsoft Entra Internet Access Proof of Concept
 
-The [Microsoft identity-centric Security Service Edge solution](../global-secure-access/overview-what-is-global-secure-access.md) converges network and identity access controls so you can secure access to any app or resource from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. You can monitor and adjust user access continuously in real time if permissions or risk levels change for private apps, SaaS apps, and M365 endpoints.
+The [Microsoft identity-centric Security Service Edge solution](../global-secure-access/overview-what-is-global-secure-access.md) converges network and identity access controls so you can secure access to any app or resource from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. You can monitor and adjust user access continuously in real time if permissions or risk levels change for private apps, SaaS apps, and Microsoft 365 endpoints.
 
 Protecting enterprise users and managed devices from malicious internet traffic and malware infection concerns all companies. Use [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) Secure Web Gateway functionality to block traffic based on web categories, and a fully qualified domain name (FQDN), by integrating with Microsoft Entra ID Conditional Access.
 
@@ -106,12 +106,12 @@ Microsoft Internet Access has features to configure a security profile with a pr
 
 ### Attempt to access blocked sites
 
-1. Log into the test device where you installed the global secure access (GSA) agent.
+1. Sign in to the test device where you installed the global secure access (GSA) agent.
 1. In the system tray, right-click **Global Secure Access Client**. Select **Advanced Diagnostics**.
 
    [ ![Screenshot of Global Secure Access System Tray options, Advanced diagnostics.](media/sse-deployment-guide-internet-access/global-secure-access-client-options-advanced-diagnostics.png)](media/sse-deployment-guide-internet-access/global-secure-access-client-options-advanced-diagnostics.png#lightbox)
    
-1. In the **Global Secure Access Client -- Advanced Diagnostics** dialog box, select **Traffic**.
+1. In the **Global Secure Access Client - Advanced Diagnostics** dialog box, select **Traffic**.
 1. On **Network traffic**, select **Start collecting**.
 
    [ ![Screenshot of Global Secure Access Client, Advanced diagnostics, Traffic, Network traffic, Start collecting.](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-start-collecting-inline.png)](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-start-collecting-inline.png#lightbox)
@@ -140,7 +140,7 @@ Microsoft Internet Access has features to configure a security profile with a pr
 
 ## Sample PoC scenario: Block a group from accessing websites based on category
 
-Use Microsoft Entra Internet Access to block or allow access to internet sites based on category. These areas include gambling, alcohol, and tobacco sites. Manually managing block lists is not required. Complete the following tasks to configure Microsoft Entra Internet Access to block alcohol and tobacco sites for your test user.
+Use Microsoft Entra Internet Access to block or allow access to internet sites based on category. These areas include gambling, alcohol, and tobacco sites. Manually managing blocklists isn't required. Complete the following tasks to configure Microsoft Entra Internet Access to block alcohol and tobacco sites for your test user.
 
 - Configure a block rule for category sites. [Create a web filtering policy](#create-a-web-filtering-policy-1).
 - Group and prioritize your web filtering policies. [Create a security profile](#create-a-security-policy-profile-1).
@@ -232,12 +232,12 @@ Use Microsoft Entra Internet Access to block or allow access to internet sites b
 
 ### Attempt to access blocked sites
 
-1. Log into your test device where you installed the GSA agent.
+1. Sign in to your test device where you installed the GSA agent.
 1. In the system tray, right-click **Global Secure Access Client**. Select **Advanced Diagnostics**.
 
    [ ![Screenshot of Global Secure Access System Tray options, Advanced diagnostics.](media/sse-deployment-guide-internet-access/global-secure-access-client-options-advanced-diagnostics.png)](media/sse-deployment-guide-internet-access/global-secure-access-client-options-advanced-diagnostics.png#lightbox)
    
-1. In the **Global Secure Access Client -- Advanced Diagnostics** dialog box, select **Traffic**.
+1. In the **Global Secure Access Client - Advanced Diagnostics** dialog box, select **Traffic**.
 1. On **Network traffic**, select **Start collecting**.
 
    [ ![Screenshot of Global Secure Access Client, Advanced diagnostics, Traffic, Network traffic, Start collecting.](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-start-collecting-inline.png)](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-start-collecting-inline.png#lightbox)
@@ -255,7 +255,7 @@ Use Microsoft Entra Internet Access to block or allow access to internet sites b
 
    [ ![Screenshot of Global Secure Access System Tray options, Pause.](media/sse-deployment-guide-internet-access/global-secure-access-client-options-pause.png)](media/sse-deployment-guide-internet-access/global-secure-access-client-options-pause.png#lightbox)
    
-1. After confirmation notification appears, open the previously blocked site to confirm restored access. Functioinality to access the GSA client menu is administratively controllable when the product moves to General Availability.
+1. After confirmation notification appears, open the previously blocked site to confirm restored access. Functionality to access the GSA client menu is administratively controllable when the product moves to General Availability.
 
 ### View activity in the traffic log
 
@@ -358,7 +358,7 @@ In some cases, it's necessary to block specific websites rather than using broad
 
    [ ![Screenshot of Global Secure Access System Tray options, Advanced diagnostics.](media/sse-deployment-guide-internet-access/global-secure-access-client-options-advanced-diagnostics.png)](media/sse-deployment-guide-internet-access/global-secure-access-client-options-advanced-diagnostics.png#lightbox)
 
-1. In the **Global Secure Access Client -- Advanced Diagnostics** dialog box, select **Traffic**.
+1. In the **Global Secure Access Client - Advanced Diagnostics** dialog box, select **Traffic**.
 1. On **Network traffic**, select **Start collecting**.
 
    [ ![Screenshot of Global Secure Access Client, Advanced diagnostics, Traffic, Network traffic, Start collecting.](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-start-collecting-inline.png)](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-start-collecting-inline.png#lightbox)
@@ -476,7 +476,7 @@ In some cases, you might have users that require access to blocked sites for gro
 
    [ ![Screenshot of Global Secure Access System Tray options, Advanced diagnostics](media/sse-deployment-guide-internet-access/global-secure-access-client-options-advanced-diagnostics.png)](media/sse-deployment-guide-internet-access/global-secure-access-client-options-advanced-diagnostics.png#lightbox)
 
-1. In the **Global Secure Access Client -- Advanced Diagnostics** dialog box, select **Traffic**.
+1. In the **Global Secure Access Client - Advanced Diagnostics** dialog box, select **Traffic**.
 1. On **Network traffic**, select **Start collecting**.
 
    [ ![Screenshot of Global Secure Access Client, Advanced diagnostics, Traffic, Network traffic, Start collecting.](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-start-collecting-inline.png)](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-start-collecting-inline.png#lightbox)
