@@ -67,7 +67,7 @@ When link translation is enabled, the application proxy service searches through
 
 After authentication, when the proxy server passes the application data to the user, application proxy scans the application for hard-coded links and replaces them with their respective, published external URLs.
 
-application proxy assumes that applications are encoded in UTF-8. If that's not the case, specify the encoding type in an HTTP response header, like `Content-Type:text/html;charset=utf-8`.
+Application proxy assumes that applications are encoded in UTF-8. If that's not the case, specify the encoding type in an HTTP response header, like `Content-Type:text/html;charset=utf-8`.
 
 ### Which links are affected?
 
