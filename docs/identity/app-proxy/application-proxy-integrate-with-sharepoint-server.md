@@ -77,7 +77,7 @@ The SharePoint web application must be configured with Kerberos and the appropri
 
 ### Provision the SharePoint web application
 
-- If you create a new web application and use only the **default** zone (preferred option).
+- The script shows an example of creating a new web application using the **default** zone. using the default zone is the preferred option.
 
     1. Start the **SharePoint Management Shell** and run the following script:
 
@@ -160,7 +160,7 @@ You can now access the SharePoint site externally through Microsoft Entra applic
 
 Users initially authenticate in Microsoft Entra ID and then to SharePoint by using Kerberos through the Microsoft Entra ID Proxy connector. To allow the connector to obtain a Kerberos token on behalf of the Microsoft Entra user, you must configure Kerberos Constrained Delegation (KCD) with protocol transition. To learn more about KCD, see [Kerberos Constrained Delegation overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj553400(v=ws.11)).
 
-### Set the SPN for the SharePoint service account
+### Set the Service Principal Name (SPN) for the SharePoint service account
 
 In this article, the internal URL is `https://sharepoint`, and so the service principal name (SPN) is `HTTP/sharepoint`. You must replace those values with the values that correspond to your environment.
 To register SPN `HTTP/sharepoint` for the SharePoint application pool account `Contoso\spapppool`, run the following command from a command prompt, as an administrator of the domain:
@@ -180,7 +180,7 @@ To configure the KCD, follow these steps for each connector machine:
 1. Double-click the computer, and then select the **Delegation** tab.
 1. Make sure the delegation options are set to **Trust this computer for delegation to the specified services only**. Then, select **Use any authentication protocol**.
 1. Select the **Add** button, select **Users or Computers**, and locate the SharePoint application pool account. For example: `Contoso\spapppool`.
-1. In the list of SPNs, select the one that you created earlier for the service account.
+1. In the SPN list, select the one that you created earlier for the service account.
 1. Select **OK** and then select **OK** again to save your changes.
   
    ![Delegation settings](./media/application-proxy-integrate-with-sharepoint-server/delegation-box2.png)
