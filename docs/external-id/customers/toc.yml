@@ -75,8 +75,14 @@ items:
               href: sample-desktop-wpf-dotnet-sign-in.md
         - name: Mobile app
           items:
-            - name: Android (.NET MAUI) - sign in users
-              href: how-to-mobile-app-maui-sample-sign-in.md
+            - name: Browser delegated
+              items: 
+                - name: Android (.NET MAUI) - sign in users
+                  href: how-to-mobile-app-maui-sample-sign-in.md
+            - name: Native auth
+              items:
+                - name: Run iOS sample app
+                  href: how-to-run-sample-ios-app.md
         - name: Command-line interface (CLI) app
           items:
             - name: Node.js - sign in users
@@ -185,17 +191,41 @@ items:
               href: tutorial-desktop-wpf-dotnet-sign-in-build-app.md
               displayName: Windows Presentation Form
     - name: Mobile
-      items: 
-      - name: .NET MAUI
-        items:
-        - name: Prepare tenant
-          href: tutorial-mobile-app-maui-sign-in-prepare-tenant.md
-        - name: Create .NET MAUI app
-          href: tutorial-mobile-app-maui-sign-in-prepare-app.md
-        - name: Sign in and sign out
-          href: tutorial-mobile-app-maui-sign-in-sign-out.md
-        - name: Use role-based access control
-          href: tutorial-mobile-maui-role-based-access-control.md
+      items:
+        - name: Browser delegated
+          items:
+            - name: .NET MAUI
+              items:
+              - name: Prepare tenant
+                href: tutorial-mobile-app-maui-sign-in-prepare-tenant.md
+              - name: Create .NET MAUI app
+                href: tutorial-mobile-app-maui-sign-in-prepare-app.md
+              - name: Sign in and sign out
+                href: tutorial-mobile-app-maui-sign-in-sign-out.md
+              - name: Use role-based access control
+                href: tutorial-mobile-maui-role-based-access-control.md
+        - name: Native auth
+          items:
+            - name: Prepare iOS app
+              href: tutorial-native-auth-prepare-ios-app.md
+            - name: Sign up, sign in and sign sign out
+              href: tutorial-native-auth-ios-sign-up-sign-in-sign-out.md
+            - name: Additional scenarios
+              items:
+                - name: Sign up with user attributes
+                  href: tutorial-native-auth-ios-sign-up-with-email-one-time-passcode.md
+                - name: Sign up with username, password and user attributes
+                  href: tutorial-native-auth-ios-sign-up-with-username-password-user-attributes.md
+                - name: Sign up with username and password
+                  href: tutorial-native-auth-ios-sign-up-with-username-password.md
+                - name: Sign in with username and password
+                  href: tutorial-native-auth-ios-sign-in-with-username-password.md
+                - name: Sign in user after sign up
+                  href: tutorial-native-auth-ios-sign-in-user-after-sign-up.md
+                - name: Self-service password reset
+                  href: tutorial-native-auth-ios-self-service-password-reset.md
+                - name: Support web fallback
+                  href: tutorial-native-auth-ios-support-web-fallback.md
     - name: Command-line interface (CLI) app
       items:
         - name: Node.js
