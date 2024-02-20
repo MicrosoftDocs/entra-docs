@@ -33,6 +33,101 @@ Microsoft Entra ID (previously known as Azure Active Directory) receives improve
 
 This page updates monthly, so revisit it regularly. If you're looking for items older than six months, you can find them in [Archive for What's new in Microsoft Entra ID?](whats-new-archive.md).
 
+## February 2024
+
+### Plan for change - Microsoft Entra ID Identity protection - "Low" risk age out
+
+**Type:** Plan for change    
+**Service category:** Identity Protection    
+**Product capability:** Identity Security & Protection    
+
+Starting March 31st, 2024, all "*low*" risk detections and users in Microsoft Entra ID Identity Protection that are older than 6 months will be automatically aged out and dismissed. This will allow customers to focus on more relevant risk and provide a cleaner investigation environment. For more information, see: [What are risk detections?](../id-protection/concept-identity-protection-risks.md).
+
+---
+
+### General Availability - Custom Claims Providers enable token claim augmentation from external data sources
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** Extensibility    
+
+Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems. A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory. For more information, see:
+
+- [Custom authentication extensions](../identity-platform/custom-extension-overview.md)
+- [Custom claims provider](../identity-platform/custom-claims-provider-overview.md)
+- [Configure a custom claim provider token issuance event](../identity-platform/custom-extension-get-started.md)
+- [Custom claims providers](../identity-platform/custom-claims-provider-reference.md)
+
+---
+
+### Public Preview - Expansion of the Conditional Access reauthentication policy for additional scenarios  
+
+**Type:** Changed feature    
+**Service category:** Conditional Access    
+**Product capability:** Identity Security & Protection    
+
+Reauthentication policy lets you require users to interactively provide their credentials again, typically before accessing critical applications and taking sensitive actions. Combined with Conditional Access session control of Sign-in frequency, you can require reauthentication for users and sign-ins with risk, or for Intune enrollment. With this public preview, you can now require reauthentication on any resource protected by Conditional Access. For more information, see: [Require reauthentication every time](../identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time).
+
+---
+
+### Public Preview - Convert external users to internal
+
+**Type:** New feature    
+**Service category:** User Management    
+**Product capability:** User Management    
+
+External user conversion enables customers to convert external users to internal members without needing to delete, and create, new user objects. Maintaining the same underlying object ensures the user’s account and access to resources isn’t disrupted, and that their history of activities remains intact as their relationship with the host organization changes. 
+
+The external to internal user conversion feature includes the ability to convert on-premises synchronized users as well.
+
+---
+
+### General Availability - A new premium Identity Protection detection, Suspicious API Traffic, is available
+
+**Type:** New feature    
+**Service category:** Identity Protection    
+**Product capability:** Identity Security & Protection    
+
+We've released a new premium detection on Identity Protection called *Suspicious API Traffic* that runs for users. This detection is reported when abnormal Graph traffic, or directory enumeration, is observed by a user. Suspicious API traffic might suggest that a user is compromised, and conducting reconnaissance in their environment. For more information about Identity Protection detections, see: [What are risks detections?](../id-protection/concept-identity-protection-risks.md).
+
+---
+
+### General Availability - Granular filtering of Conditional Access policy list
+
+**Type:** New feature    
+**Service category:** Conditional Access    
+**Product capability:** Access Control    
+
+Conditional access policies can now be filtered on actor, target resources, conditions, grant control and session control. The granular filtering experience can help admins quickly discover policies containing specific configurations. For more information, see: [What is Conditional Access?](../identity/conditional-access/overview.md).
+
+---
+
+### End of support - FIM WAAD Connector
+
+**Type:** Deprecated    
+**Service category:** Microsoft Identity Manager    
+**Product capability:** Inbound to Microsoft Entra ID    
+
+The FIM WAAD Connector from 2014 was deprecated in 2021. The standard support for this connector will end in April 2024. Customers should remove this connector from their MIM sync deployment, and instead use an alternative provisioning mechanism. For more information, see: [Migrate a Microsoft Entra provisioning scenario from the FIM Connector for Microsoft Entra ID](/microsoft-identity-manager/migrate-from-the-fim-connector-for-azure-active-directory).
+
+---
+
+### General Availability - New provisioning connectors in the Microsoft Entra Application Gallery - February 2024
+
+**Type:** New feature
+**Service category:** App Provisioning
+**Product capability:** 3rd Party Integration
+
+We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
+
+- [Alohi](../identity/saas-apps/alohi-provisioning-tutorial.md)
+- [Insightly SAML](../identity/saas-apps/insightly-saml-provisioning-tutorial.md)
+- [Starmind](../identity/saas-apps/starmind-provisioning-tutorial.md)
+
+For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
+
+---
+
 ## January 2024
 
 ### Generally Availability - New Microsoft Entra Home page
