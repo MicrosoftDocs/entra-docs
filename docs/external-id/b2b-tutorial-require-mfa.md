@@ -3,17 +3,15 @@ title: 'Tutorial - multifactor authentication for B2B'
 description: In this tutorial, learn how to require multifactor authentication when you use Microsoft Entra B2B to collaborate with external users and partner organizations.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: tutorial
 ms.date: 07/28/2023
 
 ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
-ms.custom: "it-pro, seo-update-azuread-jan"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
-
 # Customer intent: As an IT admin managing external B2B guest users, I want to enforce multifactor authentication for access to cloud or on-premises applications, so that I can ensure the security of our resources and protect against unauthorized access.
 ---
 
@@ -59,7 +57,7 @@ To complete the scenario in this tutorial, you need:
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user**, and then select **Invite external user**.
 
@@ -81,7 +79,7 @@ To complete the scenario in this tutorial, you need:
 
 ## Create a Conditional Access policy that requires MFA
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Identity** > **Protection** > **Security Center**.
 1. Under **Protect**, select **Conditional Access**.
 1. On the **Conditional Access** page, in the toolbar on the top, select **Create new policy**.
@@ -146,7 +144,7 @@ To complete the scenario in this tutorial, you need:
 
 When no longer needed, remove the test user and the test Conditional Access policy.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select the test user, and then select **Delete user**.
 1. Browse to **Identity** > **Protection** > **Security Center**.

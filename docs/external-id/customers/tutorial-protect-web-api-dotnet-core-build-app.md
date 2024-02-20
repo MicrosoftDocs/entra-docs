@@ -6,9 +6,9 @@ author: SHERMANOUKO
 manager: mwongerapk
 
 ms.author: shermanouko
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: tutorial
 ms.date: 07/27/2023
 ms.custom: developer, devx-track-dotnet
@@ -22,7 +22,7 @@ This tutorial series demonstrates how to secure a registered web API in the Micr
 In this tutorial;
 
 > [!div class="checklist"]
-> * Configure your web API to use it's app registration details
+> * Configure your web API to use its app registration details
 > * Configure your web API to use delegated and application permissions registered in the app registration
 > * Protect your web API endpoints
 

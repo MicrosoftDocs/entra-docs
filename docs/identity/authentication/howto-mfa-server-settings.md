@@ -2,8 +2,8 @@
 title: Configure MFA Server
 description: Learn how to configure settings for Azure MFA Server
 
-services: multi-factor-authentication
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 09/13/2023
@@ -12,8 +12,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jpettere
-
-ms.collection: M365-identity-device-management
 ---
 # Configure MFA Server settings
 

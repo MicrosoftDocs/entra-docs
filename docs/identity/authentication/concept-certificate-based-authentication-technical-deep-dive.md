@@ -2,8 +2,7 @@
 title: Microsoft Entra certificate-based authentication technical deep dive
 description: Learn how Microsoft Entra certificate-based authentication works
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 12/14/2023
@@ -13,8 +12,6 @@ ms.author: justinha
 author: vimrang
 manager: amycolannino
 ms.reviewer: vraganathan
-
-ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
 ms.localizationpriority: high
 ---

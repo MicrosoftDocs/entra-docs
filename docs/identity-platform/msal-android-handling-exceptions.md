@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.date: 01/27/2023
 ms.reviewer: negoe
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: troubleshooting
 #Customer intent: As an Android app developer, I want to handle exceptions and errors in MSAL, so that I can troubleshoot my application and provide appropriate error handling to the users.
 ---

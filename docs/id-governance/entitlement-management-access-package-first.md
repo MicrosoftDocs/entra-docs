@@ -1,18 +1,15 @@
 ---
 title: Tutorial - Manage access to resources in entitlement management
 description: Step-by-step tutorial for how to create your first access package using the Microsoft Entra admin center in entitlement management.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: tutorial
-ms.subservice: compliance
 ms.date: 10/25/2023
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
-ms.collection: M365-identity-device-management
 #Customer intent: As a IT admin, I want step-by-step instructions of the entire workflow for how to use entitlement management so that I can start to use in my organization.
 ---
 # Tutorial: Manage access to resources in entitlement management

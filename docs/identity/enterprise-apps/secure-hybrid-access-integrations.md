@@ -4,8 +4,8 @@ description: Help customers discover and migrate SaaS applications into Microsof
 
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 01/19/2023

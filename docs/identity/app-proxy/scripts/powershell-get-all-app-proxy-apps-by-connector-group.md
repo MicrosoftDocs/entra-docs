@@ -1,10 +1,10 @@
 ---
 title: List Microsoft Entra application proxy connector groups for apps
 description: PowerShell example that lists all Microsoft Entra application proxy Connector groups with the assigned applications.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom: has-azure-ad-ps-ref
 ms.topic: sample

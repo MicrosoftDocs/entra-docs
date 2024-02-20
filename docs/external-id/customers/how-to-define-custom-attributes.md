@@ -4,9 +4,9 @@ description: Learn how to create and define new custom attributes to be collecte
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 01/23/2024
 ms.author: mimart

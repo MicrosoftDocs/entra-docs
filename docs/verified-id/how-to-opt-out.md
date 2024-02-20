@@ -4,9 +4,9 @@ description: Learn how to opt out of Microsoft Entra Verified ID.
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: how-to
-ms.subservice: verifiable-credentials
+
 ms.date: 06/02/2022
 ms.author: barclayn
 

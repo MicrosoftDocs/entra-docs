@@ -5,8 +5,8 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.date: 03/14/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 zone_pivot_groups: web-api-howto-prereq
 #Customer intent: As a software developer, I want to call a protected ASP.NET Core web API using the Microsoft identity platform with cURL
@@ -32,9 +32,9 @@ This article shows you how to call a protected ASP.NET Core web API using Client
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/). 
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-  - Application administrator 
-  - Application developer 
-  - Cloud application administrator 
+  - Application Administrator 
+  - Application Developer 
+  - Cloud Application Administrator 
 - [Download and install cURL](https://curl.se/download.html) on your workstation computer.  
 - A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
@@ -44,9 +44,9 @@ This article shows you how to call a protected ASP.NET Core web API using Client
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/). 
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-  - Application administrator 
-  - Application developer 
-  - Cloud application administrator 
+  - Application Administrator 
+  - Application Developer 
+  - Cloud Application Administrator 
 - Completion of the tutorial series: 
   - [Tutorial: Register web API with the Microsoft identity platform](web-api-tutorial-01-register-app.md).
   - [Tutorial: Create and configure an ASP.NET Core project for authentication](web-api-tutorial-02-prepare-api.md).

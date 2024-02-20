@@ -1,10 +1,10 @@
 ---
 title: Troubleshoot Kerberos constrained delegation - App Proxy
 description: Troubleshoot Kerberos Constrained Delegation configurations for Application Proxy
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
 ms.date: 02/01/2024
@@ -77,10 +77,6 @@ As mentioned previously, the browser error messages provides some good clues abo
 
 The corresponding entries seen in the event log show as events 13019 or 12027. Find the connector event logs in **Applications and Services Logs** &gt; **Microsoft** &gt; **AadApplicationProxy** &gt; **Connector** &gt; **Admin**.
 
-![Event 13019 from Application Proxy event log](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic4.png)
-
-![Event 12027 from Application Proxy event log](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic5.png)
-
 1. Use an **A** record in your internal DNS for the application’s address, not a **CName**.
 1. Reconfirm that the connector host has been granted the right to delegate to the designated target account’s SPN. Reconfirm that **Use any authentication protocol** is selected. For more information, see the [SSO configuration article](how-to-configure-sso-with-kcd.md).
 1. Verify that there's only one instance of the SPN in existence in Microsoft Entra ID. Issue `setspn -x` from a command prompt on any domain member host.
@@ -129,8 +125,6 @@ The consumer of the Kerberos ticket provided by the connector. At this stage, ex
       ![Shows the SetSPN command window](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic10.png)
 
    - Check the SPN defined against the application’s settings in the portal. Make sure that the same SPN configured against the target Microsoft Entra account is used by the application’s app pool.
-
-      ![SPN configuration in the Microsoft Entra admin center](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic11.png)
 
    - Go into IIS and select the **Configuration Editor** option for the application. Navigate to **system.webServer/security/authentication/windowsAuthentication**. Make sure the value **UseAppPoolCredentials** is **True**.
 

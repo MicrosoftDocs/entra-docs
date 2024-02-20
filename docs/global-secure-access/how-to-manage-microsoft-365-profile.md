@@ -6,8 +6,8 @@ ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: how-to
 ms.date: 12/01/2023
-ms.service: network-access
-
+ms.service: global-secure-access
+ms.subservie: entra-internet-access
 ---
 # How to enable and manage the Microsoft 365 traffic forwarding profile
 

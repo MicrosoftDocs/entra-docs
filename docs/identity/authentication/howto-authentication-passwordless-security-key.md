@@ -2,8 +2,7 @@
 title: Passwordless security key sign-in
 description: Enable passwordless security key sign-in to Microsoft Entra ID using FIDO2 security keys
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 12/06/2023
@@ -12,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: calui
-
-ms.collection: M365-identity-device-management
 ---
 # Enable passwordless security key sign-in 
 

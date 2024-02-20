@@ -1,11 +1,10 @@
 ---
 title: Create or approve a request for permissions in the Remediation dashboard
 description: How to create or approve a request for permissions in the Remediation dashboard.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: ciem
+ms.service: entra-permissions-management
+
 ms.topic: how-to
 ms.date: 09/15/2023
 ms.author: jfields

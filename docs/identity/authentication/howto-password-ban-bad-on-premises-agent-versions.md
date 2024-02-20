@@ -2,8 +2,7 @@
 title: Password protection agent release history
 description: Documents version release and behavior change history
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
 ms.date: 06/02/2023
@@ -12,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jsimmons
-
-ms.collection: M365-identity-device-management
 ---
 # Microsoft Entra Password Protection agent version history
 

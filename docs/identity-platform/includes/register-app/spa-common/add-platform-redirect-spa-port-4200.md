@@ -6,8 +6,8 @@ ms.author: owenrichards
 ms.custom:
 ms.date: 12/13/2023
 ms.reviewer:
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: include
 #Customer intent:
 ---

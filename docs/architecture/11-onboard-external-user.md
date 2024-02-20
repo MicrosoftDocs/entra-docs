@@ -1,17 +1,14 @@
 ---
 title: Onboard external users to Line-of-business applications using Microsoft Entra B2B
 description: Learn how to onboard external users to Line-of-business applications using Microsoft Entra B2B
-services: active-directory
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 5/08/2023
 ms.author: gasinh
 ms.reviewer: ajburnle
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Onboard external users to Line-of-business applications using Microsoft Entra B2B 

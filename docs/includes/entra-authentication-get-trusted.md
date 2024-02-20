@@ -1,6 +1,6 @@
 ---
 author: justinha
-ms.service: active-directory
+ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: include
 ms.date: 08/14/2023

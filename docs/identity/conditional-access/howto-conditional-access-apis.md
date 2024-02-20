@@ -2,8 +2,7 @@
 title: Conditional Access APIs and PowerShell
 description: Using the Microsoft Entra Conditional Access APIs and PowerShell to manage policies like code
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
@@ -13,8 +12,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: videor, jeevanb
-
-ms.collection: M365-identity-device-management
 ---
 # Conditional Access: Programmatic access
 

@@ -4,8 +4,8 @@ description: The Active Directory Federation Services (AD FS) application activi
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: conceptual
 
 ms.date: 03/23/2023

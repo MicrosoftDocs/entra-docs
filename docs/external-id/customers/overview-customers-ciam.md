@@ -4,9 +4,9 @@ description: Learn about customer identity access management (CIAM), a solution 
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: overview
 ms.date: 11/27/2023
 ms.author: mimart

@@ -1,16 +1,16 @@
 ---
 title: Troubleshoot an attribute not synchronizing in Microsoft Entra Connect'
 description: This topic provides steps for how to troubleshoot issues with attribute synchronization using the troubleshooting task.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 
