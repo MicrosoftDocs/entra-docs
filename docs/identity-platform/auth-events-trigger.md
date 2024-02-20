@@ -35,9 +35,6 @@ In this step, you'll create a HTTP trigger function using your chosen integrated
 1. Give the project a name, such as *AuthEventsTrigger*. It's a good idea to match the solution name with the project name Select a location for the project. Select **Next**.
 1. Select **.NET 6.0 (Long Term Support)** as the target framework. <!--Why? Why .NET 6.0 and not a later version-->
 1. Select *HTTP trigger* as the **Function** type, and that **Authorization level** is set to *Function*. Select **Create**.
-1. In the top menu of Visual Studio, select **Project**, then **Manage NuGet packages**.
-1. Select the **Browse** tab, then search for and select *Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents*. In the right pane, Select **Install**.
-1. Apply and accept the changes in the popups that appear.
 1. In your *Function1.cs* file, replace the entire contents of the file with the following code:
 
     ```csharp
@@ -91,23 +88,129 @@ In this step, you'll create a HTTP trigger function using your chosen integrated
     }
     ```
 
+1. Next, open the *local.settings.json* file and add the AzureWebJobsStorage value
+
+    ```json
+    {
+      "IsEncrypted": false,
+      "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+      }
+    }
+    ```
+
+# [Visual Studio Code](#tab/visual-studio-code)
+
+1. Open Visual Studio Code.
+1. Select the **New Folder** icon in the **Explorer** window, and create a new folder for your project, for example *AuthEventsTrigger*.
+1. Select the Azure extension icon on the left-hand side of the screen. Sign in to your Azure account if you haven't already. **TODO**
+1. Under the **Workspace** bar, select the **Azure Functions** icon > **Create New Project**.
+
+    :::image type="content" border="true"  source="media/auth-events-trigger/visual-studio-code-add-azure-function.png" alt-text="Screenshot that shows how to add an Azure function in Visual Studio Code.":::
+
+1. In the top bar, select the location to create the project.
+1. Select **C#** as the language, and **.NET 6.0 LTS** as the .NET runtime.
+1. Provide a name for the project, such as *AuthEventsTrigger*.
+1. Select **HTTP trigger** as the template, and accept **Company.Function** as the namespace, with **AccessRights** set to *Function*. 
+1. In the main window, a file called *AuthEventsTrigger.cs* will open. Replace the entire contents of the file with the following code:
+
+    ```csharp
+    using System;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Azure.WebJobs;
+    using Microsoft.Extensions.Logging;
+    using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.TokenIssuanceStart.Actions;
+    using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.TokenIssuanceStart;
+    using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.Framework;
+    using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents;
+    
+    namespace AuthEventTrigger
+    {
+        public static class Function1
+        {
+            [FunctionName("onTokenIssuanceStart")]
+            public static async Task<AuthenticationEventResponse> Run(
+                [AuthenticationEventsTrigger] TokenIssuanceStartRequest request, ILogger log)
+            // [AuthenticationEventsTrigger(TenantId = "Enter tenant ID here", AudienceAppId = "Enter application client ID here")] TokenIssuanceStartRequest request, ILogger log)
+            // This is required. The only way that [AuthenticationEventsTrigger] TokenIssuanceStartRequest request, ILogger log) will work is if the settings are set in local.settings.json are set to bypass token validation. i.e. "AuthenticationEvents__BypassTokenValidation": true. This is only recommended for local development and testing.
+            {
+                try
+                {
+                    // Checks if the request is successful and did the token validation pass
+                    if (request.RequestStatus == RequestStatusType.Successful)
+                    {
+                        // Fetches information about the user from external data store
+                        // request.Response = null;
+                        // request.Response.Actions = null;
+                        // Add new claims to the token's response
+                        request.Response.Actions.Add(new ProvideClaimsForToken(
+                                                      new TokenClaim("dateOfBirth", "01/01/2000"),
+                                                      new TokenClaim("customRoles", "Writer", "Editor")
+                                                 ));
+                    }
+                    else
+                    {
+                        // If the request fails, such as in token validation, output the failed request status
+                        log.LogInformation(request.StatusMessage);
+                    }
+                    return await request.Completed();
+                }
+                catch (Exception ex) 
+                { 
+                    return await request.Failed(ex);
+                }
+            }
+        }
+    }
+    ```
+
+1. Next, open the *local.settings.json* file and add the AzureWebJobsStorage value
+
+    ```json
+    {
+      "IsEncrypted": false,
+      "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+      }
+    }
+    ```
+---
+
+### 1.2 Install NuGet packages and build the project
+
+After creating the project, you'll need to install the required NuGet packages and build the project.
+
+# [Visual Studio](#tab/visual-studio)
+
+1. In the top menu of Visual Studio, select **Project**, then **Manage NuGet packages**.
+1. Select the **Browse** tab, then search for and select *Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents*. In the right pane, Select **Install**.
+1. Apply and accept the changes in the popups that appear.
 1. Navigate to **Build** in the top menu, and select **Build Solution**.
 1. Press **F5** or select *AuthEventsTrigger* from the top menu to run the function. 
 1. Copy the **Function url** from the terminal that popups up when running the function. 
 
 # [Visual Studio Code](#tab/visual-studio-code)
 
-> [!NOTE]
->
-> The steps required for this section are not yet available.
+1. Open the **Terminal** in Visual Studio Code, and navigate to the project folder.
+1. Enter the following command into the console to install the *Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents* NuGet package.
+
+    ```console
+    dotnet add package Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents --prerelease
+    ```
+
+1. In the top menu, select **Run** > **Start Debugging** or press **F5** to run the function.
+1. In the terminal, copy the **Function url** that appears.
 
 ---
 
 At this point, you can [test authentication events token augmentation using Postman](./auth-events-nuget-postman.md) or continue on to deployment.
 
-### 1.2 Deploy function and publish to Azure 
+### 1.3 Deploy function and publish to Azure 
 
-So far we've set up the project to install the NuGet packages and starter code and have tested it locally in Postman. Now we will deploy this to Azure using our IDE.
+So far we've set up the project to install the NuGet packages and added soem starter code. We'll now deploy this to Azure using our IDE.
 
 # [Visual Studio](#tab/visual-studio)
 
