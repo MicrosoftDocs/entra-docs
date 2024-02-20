@@ -69,7 +69,9 @@ When setting up App protection policies for shared devices, we recommend using [
 
 ## Next steps
 
-We support iOS and Android platforms for shared device mode. For more information, see:
+We support iOS and Android platforms for shared device mode. MAUI apps do not support shared device mode - see [2910](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/2910)
+
+For more information, see:
 
 - [Supporting shared device mode for iOS](msal-ios-shared-devices.md)
 - [Supporting shared device mode for Android](msal-android-shared-devices.md)
