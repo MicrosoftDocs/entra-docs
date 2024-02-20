@@ -207,7 +207,7 @@ items:
         - name: Native auth
           items:
             - name: Prepare Android app
-              href: tutorial-native-auth-android-initialize.md
+              href: tutorial-native-auth-prepare-android-app.md
             - name: Sign up, sign in and sign out
               href: tutorial-native-auth-android-sign-up-sign-in-sign-out.md
             - name: Additional scenarios

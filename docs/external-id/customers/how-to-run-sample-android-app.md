@@ -197,4 +197,4 @@ After linking your application with the new user flow or modifying the existing 
 
 ## Next steps 
  
-- [Tutorial: Prepare your Android app for native authentication](tutorial-native-auth-android-initialize.md).
+- [Tutorial: Prepare your Android app for native authentication](tutorial-native-auth-prepare-android-app.md).
