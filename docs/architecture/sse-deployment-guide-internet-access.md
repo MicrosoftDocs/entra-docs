@@ -495,7 +495,7 @@ In some cases, you might have users that require access to blocked sites for gro
 
    [ ![Screenshot of Global Secure Access - Advanced diagnostic, Network traffic to allow blocked Internet Access.](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-allow-blocked-traffic-inline.png)](media/sse-deployment-guide-internet-access/global-secure-access-client-advanced-diagnostics-network-traffic-allow-blocked-traffic-inline.png#lightbox)
 
-See important information about [Terms of Use](../global-secure-access/includes/public-preview-important-note.md)
+[!INCLUDE [Public preview important note](../global-secure-access/includes/public-preview-important-note.md)]
 
 ## Next steps
 
