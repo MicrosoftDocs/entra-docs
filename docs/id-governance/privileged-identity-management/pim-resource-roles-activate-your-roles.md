@@ -55,7 +55,7 @@ When you need to take on an Azure resource role, you can request activation by u
 
     ![The opened Activate pane with scope, start time, duration, and reason](./media/pim-resource-roles-activate-your-roles/azure-role-eligible-activate.png)
 
-1. If your role requires multi-factor authentication, select **Verify your identity before proceeding**. You only have to authenticate once per session.
+1. If your role requires multifactor authentication, select **Verify your identity before proceeding**. You only have to authenticate once per session.
 
 1. Select **Verify my identity** and follow the instructions to provide additional security verification.
 
@@ -229,7 +229,7 @@ PIM is now available in the Microsoft Entra and Azure resource roles mobile apps
 
 1.	To activate an eligible Microsoft Entra role assignment, start by downloading the Azure mobile app ([iOS](https://apps.apple.com/us/app/microsoft-azure/id1219013620) | [Android](https://play.google.com/store/apps/details?id=com.microsoft.azure)). You can also download the app by selecting **Open in mobile**  from Privileged Identity Management > My roles > Microsoft Entra roles.
 
-    :::image type="content" source="./media/pim-resource-roles-activate-your-roles/download-mobile-app.png" alt-text="Screenshot shows how to download the the mobile app." lightbox="./media/pim-resource-roles-activate-your-roles/download-mobile-app.png":::
+    :::image type="content" source="./media/pim-resource-roles-activate-your-roles/download-mobile-app.png" alt-text="Screenshot shows how to download the mobile app." lightbox="./media/pim-resource-roles-activate-your-roles/download-mobile-app.png":::
 
 1. Open the Azure mobile app and sign in. Click on the ‘Privileged Identity Management’ card and select **My Azure Resource roles** to view your eligible and active role assignments.
 
