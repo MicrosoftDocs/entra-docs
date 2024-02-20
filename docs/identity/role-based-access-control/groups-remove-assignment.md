@@ -49,7 +49,10 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 ### Create a group that can be assigned to role
 
 ```powershell
-$group = New-MgGroup -DisplayName "Contoso_Helpdesk_Administrators" -Description "This group is assigned to Helpdesk Administrator built-in role in Microsoft Entra ID." -MailNickname "contosohelpdeskadministrators" -IsAssignableToRole:$true -MailEnabled:$true -SecurityEnabled:$true
+$group = New-MgGroup -DisplayName "Contoso_Helpdesk_Administrators" `
+   -Description "This group is assigned to Helpdesk Administrator built-in role in Microsoft Entra ID." `
+   -MailNickname "contosohelpdeskadministrators" -IsAssignableToRole:$true `
+   -MailEnabled:$true -SecurityEnabled:$true
 ```
 
 ### Get the role definition you want to assign the group to
