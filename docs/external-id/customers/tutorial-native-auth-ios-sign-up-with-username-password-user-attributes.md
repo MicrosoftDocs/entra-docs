@@ -28,7 +28,7 @@ In this tutorial, you learn how to:
 ## Prerequisites
 
 - [Register iOS application in Microsoft Entra External ID for customers tenant](how-to-run-sample-ios-app.md#register-an-application)
-- [Enable public client and native authentication flows](how-to-run-sample-ios-app.md#enable-public-client-flow-and-native-authentication-flows)
+- [Enable public client and native authentication flows](how-to-run-sample-ios-app.md#nable-public-client-and-native-authentication-flows)
 - [Grant API permissions](how-to-run-sample-ios-app.md#grant-api-permissions)
 - User-flow Email with password:
   - [Create a user flow](how-to-run-sample-ios-app.md#create-a-user-flow)
