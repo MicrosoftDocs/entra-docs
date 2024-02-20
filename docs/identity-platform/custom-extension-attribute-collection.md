@@ -43,7 +43,10 @@ In addition to creating a custom authentication extension for the attribute coll
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-In this step, you create an HTTP trigger function API using Azure Functions. The function API is the source of the business logic for your user flows. <!--CHECK ME--> After creating your trigger function, you can configure it for either [OnAttributeCollectionStart](#12-configure-the-http-trigger-for-onattributecollectionstart) or [OnAttributeCollectionSubmit](#13-configure-the-http-trigger-for-onattributecollectionsubmit) <!--END CHECK--> Follow these steps to create an Azure Function: 
+In this step, you create an HTTP trigger function API using Azure Functions. The function API is the source of the business logic for your user flows. After creating your trigger function, you can configure it for either of the following events:
+
+- [OnAttributeCollectionStart](#12-configure-the-http-trigger-for-onattributecollectionstart) 
+- [OnAttributeCollectionSubmit](#13-configure-the-http-trigger-for-onattributecollectionsubmit) 
 
 1. Sign in to the [Azure portal](https://portal.azure.com) with your administrator account.
 1. From the Azure portal menu or the **Home** page, select **Create a resource**.
@@ -272,10 +275,8 @@ public class SetPrefillValuesAction {
 
 ### 1.3 Configure the HTTP trigger for OnAttributeCollectionSubmit
 
-1. From the menu, select **Code + Test**
-
+1. From the menu, select **Code + Test**.
 1. Select the tab below for the scenario you want to implement: **Continue**, **Block**, **Modify values**, or **Validation error**. Replace the code with the code snippet(s) provided.
-
 1. After you replace the code, from the top menu, select **Get Function Url**, and copy the URL. You use this URL in [Step 2: Create and register a custom authentication extension](#step-2-create-and-register-a-custom-authentication-extension) for **Target Url**.
 
 # [Continue](#tab/submit-continue)
@@ -672,21 +673,6 @@ The **jwt.ms** test application uses the implicit flow. Enable implicit flow in 
 1. Under **Implicit grant and hybrid flows**, select the **ID tokens (used for implicit and hybrid flows)** checkbox.
 1. Select **Save**.
 
-## 4.4 Test the application
-
-To test your custom authentication extension, follow these steps:
-
-1. Open a new private browser and navigate to the following URL:
-
-    ```http
-    https://<domainName>.ciamlogin.com/<tenant_id>/oauth2/v2.0/authorize?client_id=<client_id>&response_type=code+id_token&redirect_uri=https://jwt.ms&scope=openid&state=12345&nonce=12345
-    ```
-
-   - Replace `<domainName>` with your customer tenant name, and replace `<tenant-id>` with your customer tenant ID.
-   - Replace `<client_id>` with the ID for the application you added to the user flow.
-
-1. After signing in, you'll be presented with your decoded token at `https://jwt.ms`.
-
 ## Step 5: Protect your Azure Function
 
 Microsoft Entra custom authentication extension uses server to server flow to obtain an access token that is sent in the HTTP `Authorization` header to your Azure function. When publishing your function to Azure, especially in a production environment, you need to validate the token sent in the authorization header.
@@ -694,7 +680,9 @@ Microsoft Entra custom authentication extension uses server to server flow to ob
 To protect your Azure function, follow these steps to integrate Microsoft Entra authentication, for validating incoming tokens with your *Azure Functions authentication events API* application registration.
 
 > [!NOTE]
-> If the Azure function app is hosted in a different Azure tenant than the tenant in which your custom authentication extension is registered, skip to [5.1 Using OpenID Connect identity provider](#51-using-openid-connect-identity-provider) step.
+> If the Azure function app is hosted in a different Azure tenant than the tenant in which your custom authentication extension is registered, skip to [5.1 Using OpenID Connect identity provider](#52-using-openid-connect-identity-provider) step.
+
+### 5.1 Add an identity provider to your Azure Function
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Navigate and select the function app you [previously published](#step-1-create-a-custom-authentication-extensions-rest-api-azure-function-app).
@@ -703,7 +691,7 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 1. Select **Microsoft** as the identity provider.
 1. Select **Customer** as the tenant type.
 1. Under **App registration**, enter the `client_id` of the *Azure Functions authentication events API* app registration you [previously created](#step-2-create-and-register-a-custom-authentication-extension) when registering the custom claims provider.
-1. For the **Issuer URL**, enter the following URL, where
+1. For the **Issuer URL**, enter the following URL `https://{domainName}.ciamlogin.com/{tenant_id}/v2.0`, where
     - `{domainName}` is the domain name of your customer tenant.
     - `{tenantId}` is the tenant ID of your customer tenant. Your custom authentication extension should be registered here.
 1. Under **Unauthenticated requests**, select **HTTP 401 Unauthorized** as the identity provider.
@@ -712,7 +700,7 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 
     :::image type="content" border="true"  source="media/custom-extension-get-started/add-identity-provider-auth-function-app-customer.png" alt-text="Screenshot that shows how to add authentication to your function app while in a customer tenant." lightbox="media/custom-extension-get-started/add-identity-provider-auth-function-app-customer.png":::
 
-### 5.1 Using OpenID Connect identity provider
+### 5.2 Using OpenID Connect identity provider
 
 If you configured [Step 5: Protect your Azure Function](#step-5-protect-your-azure-function), skip this step. Otherwise, if the Azure Function is hosted under a different tenant than the tenant in which your custom authentication extension is registered, follow these steps to protect your function:
 
@@ -739,6 +727,21 @@ If you configured [Step 5: Protect your Azure Function](#step-5-protect-your-azu
 1. Back to the Azure Function, under the **App registration**, enter the **Client secret**.
 1. Unselect the **Token store** option.
 1. Select **Add** to add the OpenID Connect identity provider.
+
+## Step 6: Test the application
+
+To test your custom authentication extension, follow these steps:
+
+1. Open a new private browser and navigate to the following URL:
+
+    ```http
+    https://<domainName>.ciamlogin.com/<tenant_id>/oauth2/v2.0/authorize?client_id=<client_id>&response_type=code+id_token&redirect_uri=https://jwt.ms&scope=openid&state=12345&nonce=12345
+    ```
+
+   - Replace `<domainName>` with your customer tenant name, and replace `<tenant-id>` with your customer tenant ID.
+   - Replace `<client_id>` with the ID for the application you added to the user flow.
+
+1. After signing in, you'll be presented with your decoded token at `https://jwt.ms`.
 
 ## Next steps
 

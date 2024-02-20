@@ -17,6 +17,8 @@ titleSuffix: Microsoft identity platform
 
 # Configure a custom claim provider token issuance event (preview)
 
+**Applies to:** Microsoft Entra External ID customer configuration, Microsoft Entra ID workforce configuration,
+
 This article describes how to configure and set up a custom claims provider with the [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) type. This event is triggered right before the token is issued, and allows you to call a REST API to add claims to the token.
 
 This how-to guide demonstrates the token issuance start event with a REST API running in Azure Functions and a sample OpenID Connect application. In this article, you'll create a REST API using Azure Functions in the Azure portal, then register a custom authentication extension in the Microsoft Entra admin center. You'll add some attributes that you expect your custom authentication extension to parse from your REST API. To test the custom authentication extension, you'll register a test web application to get a token and view the claims.
@@ -479,10 +481,10 @@ Assign the claims mapping policy to the service principal of *My Test Applicatio
 
 Microsoft Entra custom authentication extension uses server to server flow to obtain an access token that is sent in the HTTP `Authorization` header to your Azure function. When publishing your function to Azure, especially in a production environment, you need to validate the token sent in the authorization header.
 
-To protect your Azure function, follow these steps to integrate Microsoft Entra authentication, for validating incoming tokens with your *Azure Functions authentication events API* application registration.
+To protect your Azure function, follow these steps to integrate Microsoft Entra authentication, for validating incoming tokens with your *Azure Functions authentication events API* application registration. Choose one of the following tabs based on your tenant type.
 
 > [!NOTE]
-> If the Azure function app is hosted in a different Azure tenant than the tenant in which your custom authentication extension is registered, skip to [using OpenID Connect identity provider](#51-using-openid-connect-identity-provider) step.
+> If the Azure function app is hosted in a different Azure tenant than the tenant in which your custom authentication extension is registered, choose the [Open ID Connect](#52-using-openid-connect-identity-provider) tab.
 
 # [Customer tenant](#tab/customer-tenant)
 
@@ -511,20 +513,16 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 1. Select **Microsoft** as the identity provider.
 1. Select **Workforce** as the tenant type.
 1. Under **App registration** select **Pick an existing app registration in this directory** for the **App registration type**, and pick the *Azure Functions authentication events API* app registration you [previously created](#step-2-register-a-custom-authentication-extension) when registering the custom claims provider.
-1. Enter the following issuer URL, `https://login.microsoftonline.com/{tenantId}/v2.0/`, where `{tenantId}` is the tenant ID of your workforce tenant.
+1. Enter the following issuer URL, `https://login.microsoftonline.com/{tenantId}/v2.0`, where `{tenantId}` is the tenant ID of your workforce tenant.
 1. Under **Unauthenticated requests**, select **HTTP 401 Unauthorized** as the identity provider.
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
 
     :::image type="content" border="true"  source="media/custom-extension-get-started/add-identity-provider-auth-function-app-workforce.png" alt-text="Screenshot that shows how to add authentication to your function app while in a workforce tenant." lightbox="media/custom-extension-get-started/add-identity-provider-auth-function-app-workforce.png":::
 
----
+# [OpenID Connect](#tab/openid-connect)
 
-### 5.1 Using OpenID Connect identity provider
-
-If you configured the [Microsoft identity provider](#step-5-protect-your-azure-function), skip this step and proceed to [test the application](#step-6-test-the-application). 
-
-Otherwise, if the Azure Function is hosted under a different tenant than the tenant in which your custom authentication extension is registered, follow these steps to protect your function:
+If the Azure Function is hosted under a different tenant than the tenant in which your custom authentication extension is registered, follow these steps to protect your function:
 
 1. Sign in to the [Azure portal](https://portal.azure.com), then navigate and select the function app you previously published.
 1. Select **Authentication** in the menu on the left.
@@ -549,6 +547,8 @@ Otherwise, if the Azure Function is hosted under a different tenant than the ten
 1. Back to the Azure Function, under the **App registration**, enter the **Client secret**.
 1. Unselect the **Token store** option.
 1. Select **Add** to add the OpenID Connect identity provider.
+
+---
 
 ## Step 6: Test the application
 
@@ -579,6 +579,8 @@ To test your custom claim provider, follow these steps:
 1. Replace `{App_to_enrich_ID}` with the [My Test application registration ID](#31-get-the-application-id).  
 1. Go through the sign in user flow that you've configured, and accept the requested permissions.
 1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `dateOfBirth`.
+
+---
 
 ## Next steps
 
