@@ -1,18 +1,17 @@
 ---
 title: Sharing accounts and credentials
 description: Describes how Microsoft Entra ID enables organizations to securely share accounts for on-premises apps and consumer cloud services.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 ms.date: 06/24/2022
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
 
-ms.collection: M365-identity-device-management
 ---
 # Sharing accounts with Microsoft Entra ID
 

@@ -1,19 +1,18 @@
 ---
 title: Assign licenses to a group
 description: How to assign licenses to users with Microsoft Entra group licensing
-services: active-directory
+
 keywords: Azure AD licensing
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 ms.date: 11/16/2023
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Assign licenses to users by group membership in Microsoft Entra ID

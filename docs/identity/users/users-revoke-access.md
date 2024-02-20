@@ -1,9 +1,9 @@
 ---
 title: Revoke user access in an emergency in Microsoft Entra ID
 description: How to revoke all access for a user in Microsoft Entra ID
-services: active-directory
-ms.service: active-directory
-ms.subservice: enterprise-users
+
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 author: barclayn
 ms.author: barclayn
@@ -11,7 +11,6 @@ manager: amycolannino
 ms.reviewer: krbain
 ms.date: 11/21/2023
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.collection: M365-identity-device-management
 ---
 
 # Revoke user access in Microsoft Entra ID

@@ -1,18 +1,17 @@
 ---
 title: Change subdomain authentication type using PowerShell and Graph
 description: Change default subdomain authentication settings inherited from root domain settings in Microsoft Entra ID.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 ms.date: 01/09/2024
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro, has-azure-ad-ps-ref
 
-ms.collection: M365-identity-device-management
 ---
 
 # Change subdomain authentication type in Microsoft Entra ID

@@ -1,17 +1,16 @@
 ---
 title: Does my Microsoft Entra sign-in page accept Microsoft accounts
 description: How on-screen messaging reflects username lookup during sign-in
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.topic: overview
 ms.date: 11/21/2023
 ms.author: barclayn
 ms.reviewer: kexia
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Sign-in options for Microsoft accounts in Microsoft Entra ID
