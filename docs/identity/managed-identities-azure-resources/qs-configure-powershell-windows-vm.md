@@ -69,19 +69,19 @@ After you have enabled system assigned identity on a VM, you can add it to a gro
 
 1. Retrieve and note the `ObjectID` (as specified in the `Id` field of the returned values) of the VM's service principal:
 
-   ```azurepowershell-interactive
+   ```azurepowershell
    Get-AzADServicePrincipal -displayname "myVM"
    ```
 
 1. Retrieve and note the `ObjectID` (as specified in the `Id` field of the returned values) of the group:
 
-   ```azurepowershell-interactive
+   ```azurepowershell
    Get-AzADGroup -searchstring "myGroup"
    ```
 
 1. Add the VM's service principal to the group:
 
-   ```azurepowershell-interactive
+   ```azurepowershell
    New-MgGroupMember -GroupId "<Id of group>" -DirectoryObjectId "<Id of VM service principal>" 
    ```
 
