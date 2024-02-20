@@ -49,7 +49,7 @@ In order to optimize the traffic flow and reduce latency to a connector group as
     :::image type="content" source="./media/application-proxy-network-topology/geo-routing.png" alt-text="Configure a new connector group." lightbox="./media/application-proxy-network-topology/geo-routing.png":::
 
 1. Once the new connector group is created, you can select which connectors to assign to this connector group. 
-   - You can only move connectors to your connector group if it is in a connector group using the default region. The best approach is to always start with your connector placed in the “Default group” and then move it to the appropriate connector group.
+   - You can only move connectors to your connector group if it is in a connector group using the default region. Start with a connector in the **default** connector group. Then move it to the appropriate connector group.
    - You can only change the region of a connector group if there are **no** connectors assigned to it or apps assigned to it.
 1. Next assign the connector group to your applications. When a user accesses the app, traffic goes to the application proxy cloud service in the region the connector group is optimized for.
 
