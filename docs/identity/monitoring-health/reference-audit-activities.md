@@ -166,6 +166,10 @@ If you're utilizing [Application Proxy](~/identity/app-proxy/overview-what-is-ap
 
 The Audit logs for Authentication Methods can be used to make sure that your users have registered their mobile device properly to enable multifactor authentication.
 
+Audit events related to GDPR and data protection are also found in this service. These events are found in the `DirectoryManagement` category. The events contain strings such as `MFA.CosmosDB.mfa-prd-cust-rpt-eu.activations` and `DSR Export: MFA.PostgreSQL.bypassed_users_creations`. 
+
+[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-dsr-and-stp-note.md)] 
+
 |Audit Category|Activity|
 |---|---|
 |ApplicationManagement|Assign Hardware Oath Token|
@@ -200,6 +204,90 @@ The Audit logs for Authentication Methods can be used to make sure that your use
 |ApplicationManagement|POST Tenant.RemoveBlockedUser|
 |ApplicationManagement|POST Tenant.RemoveBypassedUser|
 |ApplicationManagement|Update Hardware Oath Token|
+|DirectoryManagement|DELETE Subscription.DeleteProviders|
+|DirectoryManagement|DELETE Tenant.DeleteAgentStatuses|
+|DirectoryManagement|DELETE Tenant.DeleteCaches|
+|DirectoryManagement|DELETE Tenant.DeleteGreetings|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-au.activations|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-au.authentications|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-cn.activations|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-cn.authentications|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-eu.activations|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-eu.authentications|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-ff.activations|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-ff.authentications|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-ge.activations|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-ge.authentications|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-gv.activations|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-gv.authentications|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-ww.activations|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-ww.authentications|
+|DirectoryManagement|DSR Delete: MFA.PostgreSQL.blocked_users|
+|DirectoryManagement|DSR Delete: MFA.PostgreSQL.blocked_users_completions|
+|DirectoryManagement|DSR Delete: MFA.PostgreSQL.blocked_creations|
+|DirectoryManagement|DSR Delete: MFA.PostgreSQL.bypassed_users_completions|
+|DirectoryManagement|DSR Delete: MFA.PostgreSQL.bypassed_users_creations|
+|DirectoryManagement|DSR Delete: MFA.PostgreSQL.change_request_statuses|
+|DirectoryManagement|DSR Delete: MFA.PostgreSQL.change_request|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-au.activations|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-au.authentications|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-cn.activations|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-cn.authentications|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-eu.activations|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-eu.authentications|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-ff.activations|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-ff.authentications|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-ge.activations|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-ge.authentications|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-gv.activations|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-gv.authentications|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-ww.activations|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-ww.authentications|
+|DirectoryManagement|DSR Export: MFA.PostgreSQL.blocked_users|
+|DirectoryManagement|DSR Export: MFA.PostgreSQL.blocked_users_completions|
+|DirectoryManagement|DSR Export: MFA.PostgreSQL.blocked_creations|
+|DirectoryManagement|DSR Export: MFA.PostgreSQL.bypassed_users_completions|
+|DirectoryManagement|DSR Export: MFA.PostgreSQL.bypassed_users_creations|
+|DirectoryManagement|DSR Export: MFA.PostgreSQL.change_request_statuses|
+|DirectoryManagement|DSR Export: MFA.PostgreSQL.change_request|
+|DirectoryManagement|PATCH Tenant.Patch|
+|DirectoryManagement|PATCH Tenant.PatchCaches|
+|DirectoryManagement|POST SoundFile.Post|
+|DirectoryManagement|POST Subscription.CreateProvider|
+|DirectoryManagement|POST Subscription.CreateSubscription|
+|DirectoryManagement|POST Tenant.CreateBlockedUser|
+|DirectoryManagement|POST Tenant.CreateBypassedUser|
+|DirectoryManagement|POST Tenant.CreateCacheConfig|
+|DirectoryManagement|POST Tenant.CreateGreeting|
+|DirectoryManagement|POST Tenant.CreateTenant|
+|DirectoryManagement|POST Tenant.GenerateNewActivationCredentials|
+|DirectoryManagement|POST Tenant.RemoveBlockedUser|
+|DirectoryManagement|POST TenantRemoveBypassedUser|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 |UserManagement|User deleted security info|
 |UserManagement|User registered security info|
 |UserManagement|User updated security info|
