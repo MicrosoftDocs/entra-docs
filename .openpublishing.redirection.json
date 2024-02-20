@@ -37,7 +37,7 @@
     },
     {
       "source_path_from_root": "/docs/identity/monitoring-health/aws-multi-accounts-tutorial.md",
-      "redirect_url": "/entra/identity/monitoring-health/howto-analyze-activity-logs-with-microsoft-graph",
+      "redirect_url": "/entra/identity/monitoring-health/tutorial-list",
       "redirect_document_id": false
     },
     {
