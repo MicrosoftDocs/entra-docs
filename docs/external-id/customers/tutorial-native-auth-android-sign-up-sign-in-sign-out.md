@@ -67,7 +67,7 @@ To sign up user using **Email one-time-passcode**, you need to:
    - `submitCode()` is used to submit the code that user supplies in the form to submit one-time passcode.
    - `resendCode()` is used to resend the one-time passcode if the user doesn't receive the code.
 
-### Handle errors during sign up
+### Handle errors during sign-up
 
 During sign-up, not all actions succeed. For instance, the user might attempt to sign up with an already used email address or submit an invalid code.
 
@@ -91,7 +91,7 @@ During sign-up, not all actions succeed. For instance, the user might attempt to
    }
    ```
 
-   `signUp(username)` can return SignUpError. We have provided utility methods to determine the type of error, such as `isUserAlreadyExists()`. Errors of this kind indicate an unsuccessful action and won't include a reference to the new state. You should notify the user that the email is already in use.
+   `signUp(username)` can return SignUpError. We have provided utility methods to determine the type of error, such as `isUserAlreadyExists()`. Errors of this kind indicate an unsuccessful action and doesn't include a reference to the new state. You should notify the user that the email is already in use.
 
 1. To handle errors in `submitCode()`, use the following code snippet:
 
@@ -145,7 +145,7 @@ To sign in user using **Email one-time-passcode**, you need to:
    1. A form to submit one-time passcode.
    1. A page to display the account details.
 
-1. To sign in the user, we are going to use the library's `signIn(username)` method, which is going to return a result that can be interpreted as an `actionResult`. Add a button to the application that calls the following code snippet when selected:
+1. To sign in the user, we're going to use the library's `signIn(username)` method, which is going to return a result that can be interpreted as an `actionResult`. Add a button to the application that calls the following code snippet when selected:
 
    ```kotlin
    CoroutineScope(Dispatchers.Main).launch {
@@ -199,7 +199,7 @@ During sign-in, not all actions succeed. For instance, the user might attempt to
    }
    ```
 
-    `SignInError` indicates an unsuccessful action result returned by `signIn()` and won't include a reference to the new state, while the utility method `isUserNotFound()` checks for the specific error type of `SignInError`: the user used an email address that doesn't exist.
+    `SignInError` indicates an unsuccessful action result returned by `signIn()` and doesn't include a reference to the new state, while the utility method `isUserNotFound()` checks for the specific error type of `SignInError`: the user used an email address that doesn't exist.
 
 2. To handle errors in `submitCode()`, use the following code snippet:
 
@@ -214,7 +214,7 @@ During sign-in, not all actions succeed. For instance, the user might attempt to
    }
    ```
 
-  The `SubmitCodeError` error indicates an unsuccessful action result returned by `submitCode()` and won't include a reference to the new state, while the utility method `isInvalidCode()` checks for the specific error type of `SubmitCodeError`. In this case, the previous state reference must be used to reperform the action. To retrieve a new one-time passcode, use the following code snippet:
+  The `SubmitCodeError` error indicates an unsuccessful action result returned by `submitCode()` and doesn't include a reference to the new state, while the utility method `isInvalidCode()` checks for the specific error type of `SubmitCodeError`. In this case, the previous state reference must be used to reperform the action. To retrieve a new one-time passcode, use the following code snippet:
 
    ```kotlin
    val submitCodeActionResult = nextState.submitCode(
