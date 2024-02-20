@@ -13,7 +13,7 @@ ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Get all Application Proxy apps with a token lifetime policy
+# Get all application proxy apps with a token lifetime policy
 
 This PowerShell script example lists all the Microsoft Entra application proxy applications in your directory that have a token lifetime policy and lists details about the policy.
 
@@ -112,4 +112,4 @@ Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGrap
 
 For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
 
-For other PowerShell examples for Application Proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).
+For other PowerShell examples for application proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).

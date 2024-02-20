@@ -41,7 +41,7 @@ Use the following sections to remove personal data from connector event logs. Yo
 
 ### View or export specific data
 
-To view or export specific data, search for related entries in each of the connector event logs. The logs are located at `C:\ProgramData\Microsoft\Microsoft AAD Application Proxy connector\Trace`.
+To view or export specific data, search for related entries in each of the connector event logs. The logs are located at `C:\ProgramData\Microsoft\Microsoft AAD application proxy connector\Trace`.
 
 Since the logs are text files, you can use [findstr](/windows-server/administration/windows-commands/findstr) to search for text entries related to a user.  
 

@@ -20,13 +20,13 @@ This step-by-step guide explains how to integrate an on-premises SharePoint farm
 
 To perform the configuration, you need the following resources:
 - A SharePoint 2013 farm or newer. The SharePoint farm must be [integrated with Microsoft Entra ID](~/identity/saas-apps/sharepoint-on-premises-tutorial.md).
-- A Microsoft Entra tenant with a plan that includes Application Proxy. Learn more about [Microsoft Entra ID plans and pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+- A Microsoft Entra tenant with a plan that includes application proxy. Learn more about [Microsoft Entra ID plans and pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 - A Microsoft Office Web Apps Server farm to properly launch Office files from the on-premises SharePoint farm.
 - A [custom, verified domain](~/fundamentals/add-custom-domain.md) in the Microsoft Entra tenant.
 - On-premises Active Directory synchronized with Microsoft Entra Connect, through which users can [sign in to Azure](~/identity/hybrid/connect/plan-connect-user-signin.md).
-- An Application Proxy connector installed and running on a machine within the corporate domain.
+- An application proxy connector installed and running on a machine within the corporate domain.
 
-Configuring SharePoint with Application Proxy requires two URLs:
+Configuring SharePoint with application proxy requires two URLs:
 - An external URL, visible to end-users and determined in Microsoft Entra ID. This URL can use a custom domain. Learn more about [working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md).
 - An internal URL, known only within the corporate domain and never used directly.
 
@@ -43,9 +43,9 @@ This article uses the following values:
 
 <a name='step-1-configure-an-application-in-azure-ad-that-uses-application-proxy'></a>
 
-## Step 1: Configure an application in Microsoft Entra ID that uses Application Proxy
+## Step 1: Configure an application in Microsoft Entra ID that uses application proxy
 
-In this step, you create an application in your Microsoft Entra tenant that uses Application Proxy. You set the external URL and specify the internal URL, both of which are used later in SharePoint.
+In this step, you create an application in your Microsoft Entra tenant that uses application proxy. You set the external URL and specify the internal URL, both of which are used later in SharePoint.
 
 1. Create the app as described with the following settings. For step-by-step instructions, see [Publishing applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).
    * **Internal URL**: SharePoint internal URL that will be set later in SharePoint, such as `https://sharepoint`.
@@ -60,7 +60,7 @@ In this step, you create an application in your Microsoft Entra tenant that uses
    1. On the application page in the portal, select **Single sign-on**.
    1. For **Single Sign-on Mode**, select **Integrated Windows Authentication**.
    1. Set **Internal Application SPN** to the value you set earlier. For this example, the value is `HTTP/sharepoint`.
-   1. Under **Delegated Login Identity**, select the most suitable option for your Active Directory forest configuration. For example if you have a single Active Directory domain in your forest, select **On-premises SAM account name** (as shown in the following screenshot). But if your users aren't in the same domain as SharePoint and the Application Proxy Connector servers, select **On-premises user principal name** (not shown in the screenshot).
+   1. Under **Delegated Login Identity**, select the most suitable option for your Active Directory forest configuration. For example if you have a single Active Directory domain in your forest, select **On-premises SAM account name** (as shown in the following screenshot). But if your users aren't in the same domain as SharePoint and the application proxy Connector servers, select **On-premises user principal name** (not shown in the screenshot).
 
    ![Configure integrated Windows authentication for SSO](./media/application-proxy-integrate-with-sharepoint-server/configure-iwa.png)
 
@@ -83,7 +83,7 @@ The SharePoint web application must be configured with Kerberos and the appropri
     1. Start the **SharePoint Management Shell** and run the following script:
 
        ```powershell
-       # This script creates a web application and configures the Default zone with the internal/external URL needed to work with Azure AD Application Proxy
+       # This script creates a web application and configures the Default zone with the internal/external URL needed to work with Azure AD application proxy
        # Edit variables below to fit your environment. Note that the managed account must exist and it must be a domain account
        $internalUrl = "https://sharepoint"
        $externalUrl = "https://spsites-demo1984.msappproxy.net/"
@@ -105,7 +105,7 @@ The SharePoint web application must be configured with Kerberos and the appropri
     1. Start the SharePoint Management Shell and run the following script:
 
        ```powershell
-       # This script extends an existing web application to Internet zone with the internal/external URL needed to work with Azure AD Application Proxy
+       # This script extends an existing web application to Internet zone with the internal/external URL needed to work with Azure AD application proxy
        # Edit variables below to fit your environment
        $webAppUrl = "http://spsites/"
        $internalUrl = "https://sharepoint"
@@ -172,7 +172,7 @@ The `Setspn` command searches for the SPN before it adds it. If the SPN already 
 
 ### Make sure the connector is trusted for delegation to the SPN that was added to the SharePoint application pool account
 
-Configure the KCD so that the Microsoft Entra application proxy service can delegate user identities to the SharePoint application pool account. Configure KCD by enabling the Application Proxy connector to retrieve Kerberos tickets for your users who have been authenticated in Microsoft Entra ID. Then, that server passes the context to the target application (SharePoint in this case).
+Configure the KCD so that the Microsoft Entra application proxy service can delegate user identities to the SharePoint application pool account. Configure KCD by enabling the application proxy connector to retrieve Kerberos tickets for your users who have been authenticated in Microsoft Entra ID. Then, that server passes the context to the target application (SharePoint in this case).
 
 To configure the KCD, follow these steps for each connector machine:
 

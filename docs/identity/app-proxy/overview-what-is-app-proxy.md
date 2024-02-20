@@ -1,6 +1,6 @@
 ---
 title: Publish on-premises apps with Microsoft Entra application proxy
-description: Understand why to use Application Proxy to publish on-premises web applications externally to remote users. Learn about Application Proxy architecture, connectors, authentication methods, and security benefits.
+description: Understand why to use application proxy to publish on-premises web applications externally to remote users. Learn about application proxy architecture, connectors, authentication methods, and security benefits.
 
 author: kenwith
 manager: amycolannino

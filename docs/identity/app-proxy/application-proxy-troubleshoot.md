@@ -66,7 +66,7 @@ I get the error `Can't Access this Corporate Application`. To solve this issue, 
 If registration fails during the connector wizard installation, there are two ways to view the reason for the failure. Either look in the event log under `Windows Logs\Application (filter by Source = "Microsoft Entra application proxy connector"` , or run the following Windows PowerShell command:
 
 ```powershell
-Get-EventLog application –source "Microsoft AAD Application Proxy Connector" –EntryType "Error" –Newest 1
+Get-EventLog application –source "Microsoft AAD application proxy Connector" –EntryType "Error" –Newest 1
 ```
 
 Once you find the connector error from the event log, use this table of common errors to resolve the problem:
