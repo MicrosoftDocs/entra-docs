@@ -107,7 +107,7 @@ The following table compares the features available for Conditional Access in ea
 |Feature  |Workforce tenant  | Customer tenant |
 |---------|---------|---------|
 | **Assignments**| [Users, groups](../../identity/conditional-access/concept-conditional-access-users-groups.md), and [workload identities](../../identity/conditional-access/concept-conditional-access-users-groups.md#workload-identities) | Include **all users**, and exclude users and groups. For more information, [Add multifactor authentication (MFA) to a customer-facing app](./how-to-multifactor-authentication-customers.md).|
-|**Target resources**|<ul><li>[Cloud apps](../../identity/conditional-access/concept-conditional-access-cloud-apps.md)</li><li>[User actions](../../identity/conditional-access/concept-conditional-access-cloud-apps.md#user-actions)</li><li>[Global Secure Access](../../identity/conditional-access/concept-conditional-access-cloud-apps.md#traffic-forwarding-profiles)</li><li>[Authentication context](../../identity/conditional-access/concept-conditional-access-cloud-apps.md#authentication-context)</li></ul>|<ul><li>[All cloud apps, or selected apps](./how-to-multifactor-authentication-customers.md)</li><li>[Authentication context](../../identity/conditional-access/concept-conditional-access-cloud-apps.md#authentication-context)</li></ul>|
+|**Target resources**|<ul><li>[Cloud apps](../../identity/conditional-access/concept-conditional-access-cloud-apps.md)</li><li>[User actions](../../identity/conditional-access/concept-conditional-access-cloud-apps.md#user-actions)</li><li>[Global Secure Access](../../identity/conditional-access/concept-conditional-access-cloud-apps.md#traffic-forwarding-profiles)</li><li>[Authentication context](../../identity/conditional-access/concept-conditional-access-cloud-apps.md#authentication-context)</li></ul>|<ul><li>[All cloud apps, selected apps](./how-to-multifactor-authentication-customers.md), or [filter applications](../../identity/conditional-access/concept-filter-for-applications.md).</li><li>[Authentication context](../../identity/conditional-access/concept-conditional-access-cloud-apps.md#authentication-context)</li></ul>|
 | **Conditions**|<ul><li>[Sign-in risk](../../identity/conditional-access/concept-conditional-access-conditions.md#sign-in-risk)</li><li>[User risk](../../identity/conditional-access/concept-conditional-access-conditions.md#user-risk)</li><li>[Device platforms](../../identity/conditional-access/concept-conditional-access-conditions.md#device-platforms)</li><li>[Locations](../../identity/conditional-access/concept-conditional-access-conditions.md#locations)</li><li>[Client apps](../../identity/conditional-access/concept-conditional-access-conditions.md#client-apps)</li><li>[Filter for devices](../../identity/conditional-access/concept-conditional-access-conditions.md#filter-for-devices)</li></ul>|<ul><li>[Sign-in risk](../../identity/conditional-access/concept-conditional-access-conditions.md#sign-in-risk)</li><li>[Locations](../../identity/conditional-access/concept-conditional-access-conditions.md#locations)</li></ul>|
 |**Grant**|[Grant or block access to resources](../../identity/conditional-access/concept-conditional-access-grant.md)|<ul><li>[Block access](../../identity/conditional-access/concept-conditional-access-grant.md#block-access)</li><li>[Require multifactor authentication](./how-to-multifactor-authentication-customers.md)</li></ul>|
 |**Session**|[Session controls](../../identity/conditional-access/concept-conditional-access-session.md)|Not available|
@@ -118,18 +118,18 @@ The following table compares the features available for user management in each 
 
 |Feature  |Workforce tenant  | Customer tenant |
 |---------|---------|---------|
-|**Type of accounts**| [Workforce accounts](../../fundamentals/how-to-create-delete-users.md), and [B2B collaboration](../what-is-b2b.md). | [Admin accounts](./how-to-manage-admin-accounts.md) and [customer accounts](./how-to-manage-customer-accounts.md)|
+|**Type of accounts**| <ul><li>Internal user (employee, admin)</li><li>External guest (business guest invited via [B2B collaboration](../what-is-b2b.md)) | <ul><li>Internal user (admin)</li><li>External guest (admin invited via [B2B collaboration](../what-is-b2b.md))</li><li>[External customer](./how-to-manage-customer-accounts.md) (app user with limited privileges in the tenant)</li></ul>|
 | **Manage user profile info** | Programmatically and by [using the Microsoft Entra admin center](../../fundamentals/how-to-manage-user-profile-info.md). |Same as workforce.|
 | **Reset a user's password** | Administrators can [reset a user's password](../../fundamentals/users-reset-password-azure-portal.md) if the password is forgotten, if the user gets locked out of a device, or if the user never received a password. |Same as workforce.|
 |**Restore or remove a recently deleted user**|After you delete a user, the account remains in a suspended state for 30 days. During that 30-day window, the user account can be restored, along with all its properties.|Same as workforce.|
-|**Disable accounts**| Prevent the new user from being able to sign-in. |Same as workforce.|
+|**Disable accounts**| Prevent the new user from being able to sign in. |Same as workforce.|
 
 ## Password protection
 
 |Feature  |Workforce tenant  | Customer tenant |
 |---------|---------|---------|
-|**Smart lockout**| [Smart lockout](../../identity/authentication/howto-password-smart-lockout.md) helps lockout bad actors that try to guess your users' passwords or use brute-force methods to get in|Same as workforce. |
-| **Custom banned passwords**| Microsoft Entra custom banned password list let you add specific strings to evaluate and block | Not available |
+|**Smart lockout**| [Smart lockout](../../identity/authentication/howto-password-smart-lockout.md) helps lock out bad actors that try to guess your users' passwords or use brute-force methods to get in|Same as workforce. |
+| **Custom banned passwords**| The Microsoft Entra custom banned password list lets you add specific strings to evaluate and block. | Not available. |
 
 ## Next steps
 
