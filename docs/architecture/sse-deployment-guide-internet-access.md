@@ -11,7 +11,7 @@ ms.date: 02/20/2024
 ms.author: jricketts
 ---
 
-# Microsoft Security Service Edge Solution Deployment Guide for Microsoft Entra Internet Access Proof of Concept 
+# Microsoft Security Service Edge Solution Deployment Guide for Microsoft Entra Internet Access Proof of Concept
 
 The [Microsoft identity-centric Security Service Edge solution](../global-secure-access/overview-what-is-global-secure-access.md) converges network and identity access controls so you can secure access to any app or resource from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. You can monitor and adjust user access continuously in real time if permissions or risk levels change for private apps, SaaS apps, and Microsoft 365 endpoints.
 
