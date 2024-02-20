@@ -130,14 +130,14 @@ If delegated login identity is used, the value might not be unique across all th
 If **On-premises SAM account name** is used for the logon identity, the computer hosting the connector must be added to the domain in which the user account is located.
 
 ### Configure SSO for different identities
-1. Configure Microsoft Entra Connect settings so the main identity is the email address (mail). This is done as part of the customize process, by changing the **User Principal Name** field in the sync settings. These settings also determine how users log in to Office365, Windows10 devices, and other applications that use Microsoft Entra ID as their identity store.  
+1. Configure Microsoft Entra Connect settings so the main identity is the email address (mail). This is done as part of the customize process, by changing the **User Principal Name** field in the sync settings. These settings also determine how users sign in to Microsoft 365, Windows computers, and other applications that use Microsoft Entra ID as their identity store.  
    ![Identifying users screenshot - User Principal Name dropdown](./media/application-proxy-configure-single-sign-on-with-kcd/app_proxy_sso_diff_id_connect_settings.png)  
 2. In the Application Configuration settings for the application you would like to modify, select the **Delegated Login Identity** to be used:
 
-   * User Principal Name (for example, joe@contoso.com)
-   * Alternate User Principal Name (for example, joed@contoso.local)
-   * Username part of User Principal Name (for example, joe)
-   * Username part of Alternate User Principal Name (for example, joed)
+   * User Principal Name (for example, `joe@contoso.com`)
+   * Alternate User Principal Name (for example, `joed@contoso.local`)
+   * Username part of User Principal Name (for example, `joe`)
+   * Username part of Alternate User Principal Name (for example, `joed`)
    * On-premises SAM account name (depends on the domain controller configuration)
 
 ### Troubleshooting SSO for different identities

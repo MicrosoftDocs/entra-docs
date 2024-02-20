@@ -77,7 +77,7 @@ As mentioned previously, the browser error messages provides some good clues abo
 
 The corresponding entries seen in the event log show as events 13019 or 12027. Find the connector event logs in **Applications and Services Logs** &gt; **Microsoft** &gt; **AadApplicationProxy** &gt; **Connector** &gt; **Admin**.
 
-1. Use an **A** record in your internal DNS for the application’s address, not a **CName**.
+1. Use an **A** record in your internal DNS for the application’s address, not a **`CName`**.
 1. Reconfirm that the connector host has been granted the right to delegate to the designated target account’s SPN. Reconfirm that **Use any authentication protocol** is selected. For more information, see the [SSO configuration article](how-to-configure-sso-with-kcd.md).
 1. Verify that there's only one instance of the SPN in existence in Microsoft Entra ID. Issue `setspn -x` from a command prompt on any domain member host.
 1. Check that a domain policy is enforced that limits the [maximum size of issued Kerberos tokens](/archive/blogs/askds/maxtokensize-and-windows-8-and-windows-server-2012). This policy stops the connector from getting a token if it's found to be excessive.
