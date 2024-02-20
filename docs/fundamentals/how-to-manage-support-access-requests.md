@@ -57,7 +57,7 @@ When viewing the details of a pending support access request, you can approve or
     - A message appears, indicating this choice may result in slower resolution of your support request.
     - Your support engineer may ask you for data needed to diagnose the issue, and you must collect and provide that information to your support engineer. 
 
-:::image type="content" source="media/how-to-manage-support-access-requests/pending-request-details.png" alt-text="Screenshot of the Support Access requests details page with the Reject and Approve buttons highlighted." lightbox="media/how-to-approve-support-access-requests/pending-request-details.png":::
+:::image type="content" source="media/how-to-manage-support-access-requests/pending-request-details.png" alt-text="Screenshot of the Support Access requests details page with the Reject and Approve buttons highlighted.":::
 
 ## Revoke access to an approved support access request
 
@@ -69,7 +69,7 @@ To revoke access to an approved support access request:
 
 1. Select the **Support request ID** link for the request you need to revoke.
 
-   :::image type="content" source="media/how-to-manage-support-access-requests/approved-access.png" alt-text="Screenshot of the pending request with links to view details highlighted.":::
+   :::image type="content" source="media/how-to-manage-support-access-requests/approved-access.png" alt-text="Screenshot of approved requests with links to view details highlighted.":::
 
 1. Select the **Remove access** button to revoke access to an approved support access request. 
 
