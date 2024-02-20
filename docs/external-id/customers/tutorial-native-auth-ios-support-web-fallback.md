@@ -95,5 +95,6 @@ The tokens and account that are returned are identical to the ones that would be
 
 ## Related content
 
-[Sample web fallback implementation](https://github.com/AzureAD/msal-objc-native-auth-preview/blob/preview-main/Samples/ios-native-auth-simple/NativeAuthSampleApp/NativeAuthSampleApp/WebFallbackViewController.swift)
+- [Overview of native authentication API reference](../../identity-platform/reference-native-auth-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json)
+- [Sample web fallback implementation](https://github.com/AzureAD/msal-objc-native-auth-preview/blob/preview-main/Samples/ios-native-auth-simple/NativeAuthSampleApp/NativeAuthSampleApp/WebFallbackViewController.swift)
 
