@@ -38,7 +38,7 @@ Only authorized users in your tenant can view and manage Microsoft Support acces
 
 You can approve or reject a support request from the Microsoft Support Access Requests (Preview) section. If you have a pending request, a banner message appears at the top of the page with a link to manage pending requests. 
 
-:::image type="content" source="media/how-to-approve-support-access-requests/diagnose-solve-problems-banner.png" alt-text="Screenshot of the Diagnose and solve problems page with the banner notification highlighted.":::
+:::image type="content" source="media/how-to-manage-support-access-requests/diagnose-solve-problems-banner.png" alt-text="Screenshot of the Diagnose and solve problems page with the banner notification highlighted.":::
 
 To view pending support requests:
 
@@ -46,7 +46,7 @@ To view pending support requests:
 
 1. Select the **Support request ID** link for the request you need to approve.
 
-   :::image type="content" source="media/how-to-manage-support-access-requests/approved-access.png" alt-text="Screenshot of the pending request with links to view details highlighted.":::
+   :::image type="content" source="media/how-to-manage-support-access-requests/pending-request-view-details-links.png" alt-text="Screenshot of the pending request with links to view details highlighted.":::
 
 When viewing the details of a pending support access request, you can approve or reject the request.
 
@@ -57,15 +57,23 @@ When viewing the details of a pending support access request, you can approve or
     - A message appears, indicating this choice may result in slower resolution of your support request.
     - Your support engineer may ask you for data needed to diagnose the issue, and you must collect and provide that information to your support engineer. 
 
-:::image type="content" source="media/how-to-approve-support-access-requests/pending-request-details.png" alt-text="Screenshot of the Support Access requests details page with the Reject and Approve buttons highlighted." lightbox="media/how-to-approve-support-access-requests/pending-request-details.png":::
+:::image type="content" source="media/how-to-manage-support-access-requests/pending-request-details.png" alt-text="Screenshot of the Support Access requests details page with the Reject and Approve buttons highlighted." lightbox="media/how-to-approve-support-access-requests/pending-request-details.png":::
 
 ## Revoke access to an approved support access request
 
 Closing a support request automatically revokes the support engineer's access to your identity diagnostic data. You can manually revoke Microsoft Support's access to identity diagnostic data for the support request *before* your support request is closed. 
 
-Select the **Remove access** button to revoke access to an approved support access request. 
+To revoke access to an approved support access request:
 
-:::image type="content" source="media/how-to-manage-support-access-requests/remove-approved-access.png" alt-text="Screenshot of the Support access requests history with the Revoke button highlighted.":::
+1. Select **Approved access** from the **Microsoft Support Access Requests (Preview)** section.
+
+1. Select the **Support request ID** link for the request you need to revoke.
+
+   :::image type="content" source="media/how-to-manage-support-access-requests/approved-access.png" alt-text="Screenshot of the pending request with links to view details highlighted.":::
+
+1. Select the **Remove access** button to revoke access to an approved support access request. 
+
+    :::image type="content" source="media/how-to-manage-support-access-requests/remove-approved-access.png" alt-text="Screenshot of the Support access requests history with the Revoke button highlighted.":::
 
 When your support request is closed, the status of an approved Microsoft Support access request is automatically set to **Completed.** Microsoft Support access requests remain in the **Approved access** list for 30 days.
 
