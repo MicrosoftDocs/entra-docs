@@ -169,7 +169,7 @@ To unblock the accounts, use **Active Directory Users and Computers** to modify 
 
 * [How is Microsoft Entra Kerberos linked to my on-premises Active Directory Domain Services environment?](#how-is-azure-ad-kerberos-linked-to-my-on-premises-active-directory-domain-services-environment)
 * [Where can I view these Kerberos server objects that are created in AD and published in Microsoft Entra ID?](#where-can-i-view-these-kerberos-server-objects-that-are-created-in-ad-ds-and-published-in-azure-ad)
-* [Why can't we have the public key registered to on-premises AD DS so there's no dependency on the internet?](#why-cant-we-have-the-public-key-registered-to-on-premises-ad-ds-so-there-is-no-dependency-on-the-internet)
+* [Why can't we have the public key registered to on-premises AD DS so there's no dependency on the internet?](#why-cant-we-have-the-public-key-registered-to-on-premises-ad-ds-so-theres-no-dependency-on-the-internet)
 * [How are the keys rotated on the Kerberos server object?](#how-are-the-keys-rotated-on-the-kerberos-server-object)
 * [Why do we need Microsoft Entra Connect? Does it write any info back to AD DS from Microsoft Entra ID?](#why-do-we-need-azure-ad-connect-does-it-write-any-info-back-to-ad-ds-from-azure-ad)
 * [What does the HTTP request/response look like when requesting PRT+ partial TGT?](#what-does-the-http-requestresponse-look-like-when-requesting-prt-partial-tgt)
