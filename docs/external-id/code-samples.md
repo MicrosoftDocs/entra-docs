@@ -36,13 +36,13 @@ You can bulk-invite external users to an organization from email addresses you s
 
 3. Sign in to your tenancy
 
-    ```azurepowershell-interactive
+    ```powershell
     Connect-MgGraph -Scopes "User.Invite.All"
     ```
 
 4. Run the PowerShell cmdlet
 
-   ```azurepowershell-interactive
+   ```powershell
    $invitations = import-csv C:\data\invitations.csv
    $messageInfo = New-Object Microsoft.Open.MSGraph.Model.InvitedUserMessageInfo
    $messageInfo.customizedMessageBody = "Hey there! Check this out. I created an invitation through PowerShell"
