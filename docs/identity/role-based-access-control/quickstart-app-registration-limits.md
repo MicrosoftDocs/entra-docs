@@ -104,8 +104,8 @@ Assign the role using the following PowerShell script:
 
 ```powershell
 # Get the user and role definition you want to link
-$user = Get-AzureADUser -Filter "userPrincipalName eq 'Adam@contoso.com'"
-$roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "displayName eq 'Application Registration Creator'"
+$user = Get-MgUser -Filter "UserPrincipalName eq 'Adam@contoso.com'"
+$roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "DisplayName eq 'Application Registration Creator'"
 
 # Get resource scope for assignment
 $resourceScope = '/'
