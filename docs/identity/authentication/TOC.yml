@@ -74,6 +74,8 @@
       href: concept-authentication-default-enablement.md
     - name: System-preferred MFA 
       href: concept-system-preferred-multifactor-authentication.md
+    - name: External authentication methods
+      href: concept-external-authentication-method.md
     - name: Prompts and session lifetime
       href: concepts-azure-multi-factor-authentication-prompts-session-lifetime.md
     - name: Understanding telephony fraud
