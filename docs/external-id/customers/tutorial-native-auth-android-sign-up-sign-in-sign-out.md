@@ -292,6 +292,6 @@ Do not forget to add the import statements, Android Studio does that for you aut
 
 Well, you have done everything that is required to successfully sign out a user on your app. Build and run your application. If all good, you should be able to select sign out button to successfully sign out.
 
-## Next Steps
+## Next steps
 
 [Tutorial: Sign up user with username and user attributes](tutorial-native-auth-android-sign-up-user-with-username-user-attributes.md)

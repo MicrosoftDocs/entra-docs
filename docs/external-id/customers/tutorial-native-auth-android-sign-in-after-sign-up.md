@@ -100,6 +100,6 @@ private fun displayAccount(accountState: AccountState) {
 }
 ``` 
  
-## Next Steps 
+## Next steps 
  
 [Tutorial: Reset password of a user](tutorial-native-auth-android-self-service-password-reset.md) 

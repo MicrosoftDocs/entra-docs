@@ -161,6 +161,6 @@ if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvali
 } 
 ``` 
  
-## Next Steps 
+## Next steps 
  
 [Tutorial: Sign in user with username and password](tutorial-native-auth-android-sign-in-user-with-username-password.md)

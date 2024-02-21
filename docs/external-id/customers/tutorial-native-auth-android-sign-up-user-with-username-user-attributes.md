@@ -123,7 +123,7 @@ To handle `isInvalidAttributes()` and `AttributesRequired`, use the following co
     }
 ``` 
  
-## Next Steps 
+## Next steps 
  
 [Tutorial: Sign up user with username, password, and user attributes](tutorial-native-auth-android-sign-user-with-username-password-user-attributes.md).
 
