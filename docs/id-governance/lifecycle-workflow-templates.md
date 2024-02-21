@@ -53,7 +53,7 @@ The default specific parameters and properties for the **Onboard pre-hire employ
 |Event timing     | Before        |  ❌       |
 |Event User attribute     | EmployeeHireDate        |   ❌      |
 |Scope type     | Depends on trigger. <br> Role based: Time based attribute, Attribute changes.<br> Group based: Group membership change.         | ❌        |
-|Execution conditions     | (department eq 'Marketing')      |  ✔️       |
+|Execution conditions     | Role based scope: (department eq 'Marketing')      |  ✔️       |
 |Tasks     | **Generate TAP And Send Email**     |  ✔️       |
 
 ### Onboard new hire employee
@@ -72,7 +72,7 @@ The default specific parameters for the **Onboard new hire employee** template a
 |Event timing     | On        |  ❌       |
 |Event User attribute     | EmployeeHireDate, createdDateTime        |   ✔️      |
 |Scope type     | Depends on trigger. <br> Role based: Time based attribute, Attribute changes.<br> Group based: Group membership change.        | ❌        |
-|Execution conditions     | (department eq 'Marketing')        |  ✔️       |
+|Execution conditions     | Role based scope: (department eq 'Marketing')        |  ✔️       |
 |Tasks     | **Add User To Group**, **Enable User Account**, **Send Welcome Email**      |  ✔️       |
 
 ### Post-Onboarding of an employee
@@ -91,7 +91,7 @@ The default specific parameters for the **Post-Onboarding of an employee** templ
 |Event timing     | After        |  ❌       |
 |Event User attribute     | EmployeeHireDate, createdDateTime        |   ✔️      |
 |Scope type     | Depends on trigger. <br> Role based: Time based attribute, Attribute changes.<br> Group based: Group membership change.         | ❌        |
-|Execution conditions     | (department eq 'Marketing')        |  ✔️       |
+|Execution conditions     | Role based scope: (department eq 'Marketing')       |  ✔️       |
 |Tasks     | **Add User To Group**, **Add user to selected teams**    |  ✔️       |
 
 ### Real-time employee change
@@ -144,7 +144,7 @@ The default specific parameters for the **Pre-Offboarding of an employee** templ
 |Event timing     | Before        |  ❌       |
 |Event User attribute     | employeeLeaveDateTime        |   ❌      |
 |Scope type     | Depends on trigger. <br> Role based: Time based attribute, Attribute changes.<br> Group based: Group membership change.        | ❌        |
-|Execution condition     | None       |  ✔️       |
+|Execution condition     | Role based scope: (department eq 'Marketing')       |  ✔️       |
 |Tasks     | **Remove user from selected groups**, **Remove user from selected Teams**     |  ✔️       |
 
 ### Offboard an employee
@@ -163,7 +163,7 @@ The default specific parameters for the **Offboard an employee** template are as
 |Event timing     | On        |  ❌       |
 |Event User attribute     | employeeLeaveDateTime      |   ❌      |
 |Scope type     | Depends on trigger. <br> Role based: Time based attribute, Attribute changes.<br> Group based: Group membership change.         | ❌        |
-|Execution condition     | (department eq 'Marketing')        |  ✔️       |
+|Execution condition     | Role based scope: (department eq 'Marketing')     |  ✔️       |
 |Tasks     | **Disable User Account**, **Remove user from all groups**, **Remove user from all Teams**     |  ✔️       |
 
 ### Post-Offboarding of an employee
@@ -180,7 +180,7 @@ The default specific parameters for the **Post-Offboarding of an employee** temp
 |Trigger Type     | Time based attribute, Attribute changes, Group Membership change        |  ✔️       |
 |Event User attribute     | employeeLeaveDateTime      |   ❌      |
 |Scope type     | Depends on trigger. <br> Role based: Time based attribute, Attribute changes.<br> Group based: Group membership change.         | ❌        |
-|Execution condition     | (department eq 'Marketing')        |  ✔️       |
+|Execution condition     | Role based scope: (department eq 'Marketing')    |  ✔️       |
 |Tasks     | **Remove all licenses for user**, **Remove user from all Teams**, **Delete User Account**     |  ✔️       |
 
 ### Employee group membership changes
@@ -195,7 +195,7 @@ The default specific parameters for the **Employee group membership changes** te
 |Trigger Type     | Time based attribute, Attribute changes, Group Membership change        |  ✔️       |
 |Event User attribute     | employeeLeaveDateTime      |   ❌      |
 |Scope type     | Depends on trigger. <br> Role based: Time based attribute, Attribute changes.<br> Group based: Group membership change.        | ❌        |
-|Execution condition     | (department eq 'Marketing')        |  ✔️       |
+|Execution condition     | Role based scope: (department eq 'Marketing')        |  ✔️       |
 |Tasks     | **Remove access package assignment for user**, **Remove user from all Teams**, **Send email to notify manager of user move**     |  ✔️       |
 
 ### Employee job profile change
@@ -210,7 +210,7 @@ The default specific parameters for the **Employee job profile change** template
 |Trigger Type     | Time based attribute, Attribute changes, Group Membership change        |  ✔️       |
 |Event User attribute     | employeeLeaveDateTime      |   ❌      |
 |Scope type     | Depends on trigger. <br> Role based: Time based attribute, Attribute changes.<br> Group based: Group membership change.         | ❌        |
-|Execution condition     | (department eq 'Marketing')        |  ✔️       |
+|Execution condition     | Role based scope: (department eq 'Marketing')        |  ✔️       |
 |Tasks     | **Send email to notify manager of user move**, **Remove user from selected groups**, **Remove user from selected Teams**, **Request user access package assignment**    |  ✔️       |
 
 ## Next steps
