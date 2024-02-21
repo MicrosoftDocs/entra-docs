@@ -1,36 +1,38 @@
 ---
-title: Understand and solve Microsoft Entra application proxy CORS issues
-description: Provides an understanding of CORS in Microsoft Entra application proxy, and how to identify and solve CORS issues.
-
+title: Understand and solve Microsoft Entra application proxy cross-origin resource sharing (CORS) issues.
+description: Provides an understanding of cross-origin resource sharing (CORS) in Microsoft Entra application proxy. Learn how to identify and solve CORS issues.
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
-ms.date: 02/06/2024
+ms.date: 02/21/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Understand and solve Microsoft Entra application proxy CORS issues
+# Understand and solve Microsoft Entra application proxy cross-origin resource sharing (CORS) issues
 
-[Cross-origin resource sharing (CORS)](https://www.w3.org/TR/cors/) can sometimes present challenges for the apps and APIs you publish through the Microsoft Entra application proxy. This article discusses Microsoft Entra application proxy CORS issues and solutions.
+[Cross-origin resource sharing (CORS)](https://www.w3.org/TR/cors/) can present challenges for the apps and APIs you publish through Microsoft Entra application proxy. This article discusses Microsoft Entra application proxy CORS issues and solutions.
 
-Browser security usually prevents a web page from making AJAX requests to another domain. This restriction is called the *same-origin policy*, and prevents a malicious site from reading sensitive data from another site. However, sometimes you might want to let other sites call your web API. CORS is a W3C standard that lets a server relax the same-origin policy and allow some cross-origin requests while rejecting others.
+> [!TIP]
+> Asynchronous JavaScript and eXtemsible Markup Language is known as (AJAX). AJAX contains an acronym within an acronym in that eXtensible Markup Language (XML) makes up the last `X` in AJAX. AJAX stands for Asynchronous JavaScript and XML and XML stands for eXtensible Markup Language.
+
+Browser security usually prevents a web page from making requests to another domain. This restriction is called the *same-origin policy*, and prevents a malicious site from reading sensitive data from another site. However, sometimes you might want to let other sites call your web API. CORS is a W3C standard that lets a server relax the same-origin policy and allow some cross-origin requests while rejecting others.
 
 ## Understand and identify CORS issues
 
-Two URLs have the same origin if they have identical schemes, hosts, and ports ([RFC 6454](https://tools.ietf.org/html/rfc6454)), such as:
+Two URLs have the same origin if they have identical schemes, hosts, and ports ([Request For Comments (RFC) 6454](https://tools.ietf.org/html/rfc6454)), such as:
 
--   http:\//contoso.com/foo.html
--   http:\//contoso.com/bar.html
+-   `http://contoso.com/foo.html`
+-   `http://contoso.com/bar.html`
 
-The following URLs have different origins than the previous two:
+These URLs have different origins than the previous two:
 
--   http:\//contoso.net - Different domain
--   http:\//contoso.com:9000/foo.html - Different port
--   https:\//contoso.com/foo.html - Different scheme
--   http:\//www.contoso.com/foo.html - Different subdomain
+-   `http://contoso.net` - Different domain
+-   `http://contoso.com:9000/foo.html` - Different port
+-   `https://contoso.com/foo.html` - Different scheme
+-   `http://www.contoso.com/foo.html` - Different subdomain
 
 Same-origin policy prevents apps from accessing resources from other origins unless they use the correct access control headers. If the CORS headers are absent or incorrect, cross-origin requests fail. 
 
@@ -40,13 +42,13 @@ You can identify CORS issues by using browser debug tools:
 1. Press **F12** to bring up the debug console.
 1. Try to reproduce the transaction, and review the console message. A CORS violation produces a console error about origin.
 
-In the following screenshot, selecting the **Try It** button caused a CORS error message that https:\//corswebclient-contoso.msappproxy.net wasn't found in the Access-Control-Allow-Origin header.
+In the following screenshot, selecting the **Try It** button caused a CORS error message that `https://corswebclient-contoso.msappproxy.net` wasn't found in the `Access-Control-Allow-Origin` header.
 
 ![CORS issue](./media/application-proxy-understand-cors-issues/image3.png)
 
 ## CORS challenges with application proxy
 
-The following example shows a typical Microsoft Entra application proxy CORS scenario. The internal server hosts a **CORSWebService** web API controller, and a **CORSWebClient** that calls **CORSWebService**. There's an AJAX request from **CORSWebClient** to **CORSWebService**.
+The following example shows a typical Microsoft Entra application proxy CORS scenario. The internal server hosts a **CORSWebService** web API controller, and a **CORSWebClient** that calls **CORSWebService**. There's an Asynchronous JavaScript and XML (AJAX) request from **CORSWebClient** to **CORSWebService**.
 
 ![On-premises same-origin request](./media/application-proxy-understand-cors-issues/image1.png)
 
@@ -66,7 +68,7 @@ Use a Microsoft Entra application proxy [custom domain](./how-to-configure-custo
 
 Publish the parent directory of both apps. This solution works especially well if you have only two apps on the web server. Instead of publishing each app separately, you can publish the common parent directory, which results in the same origin.
 
-The examples show the Microsoft Entra application proxy pages for the `CORSWebClient` app.  When the **Internal URL** is set to *contoso.com/CORSWebClient*, the app can't make successful requests to the *contoso.com/CORSWebService* directory, because they're cross-origin. 
+The examples show the Microsoft Entra application proxy pages for the `CORSWebClient` app. When the **Internal URL** is set to *contoso.com/CORSWebClient*, the app can't make successful requests to the *contoso.com/CORSWebService* directory, because they're cross-origin. 
 
 ![Publish app individually](./media/application-proxy-understand-cors-issues/image4.png)
 
@@ -81,11 +83,11 @@ The resulting app URLs effectively resolve the CORS issue:
 
 ### Option 3: Update HTTP headers
 
-Add a custom HTTP response header on the web service to match the origin request. For websites running in Internet Information Services (IIS), use IIS Manager to modify the header:
+To match the origin request, add a custom HTTP response header on the web service. Websites running in Internet Information Services (IIS), use IIS Manager to modify the header.
 
 ![Add custom response header in IIS Manager](./media/application-proxy-understand-cors-issues/image6.png)
 
-This modification doesn't require any code changes. You can verify it in the Fiddler traces:
+The modification doesn't require any code changes. You can verify it in the Fiddler trace.
 
 ```output
 **Post the Header Addition**\
@@ -108,7 +110,7 @@ You can change your app to support CORS by adding the Access-Control-Allow-Origi
 
 ### Option 5: Extend the lifetime of the access token
 
-Some CORS issues can't be resolved, such as when your app redirects to *login.microsoftonline.com* to authenticate, and the access token expires. The CORS call then fails. A workaround for this scenario is to extend the lifetime of the access token, to prevent it from expiring during a user’s session. For more information about how to do this, see [Configurable token lifetimes in Microsoft Entra ID](~/identity-platform/configurable-token-lifetimes.md).
+Some CORS issues can't be resolved, such as when your app redirects to *login.microsoftonline.com* to authenticate, and the access token expires. The CORS call then fails. A workaround for this scenario is to extend the lifetime of the access token, to prevent it from expiring during a user’s session. For more information, see [Configurable token lifetimes in Microsoft Entra ID](~/identity-platform/configurable-token-lifetimes.md).
 
 ## See also
 - [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md) 
