@@ -491,6 +491,18 @@ This failure happens when the older AADLoginForLinux VM extension is still insta
 
 The solution is to uninstall the older AADLoginForLinux VM extension from the VM. The status of the new AADSSHLoginForLinux VM extension will then change to **Provisioning succeeded** in the portal.
 
+#### Installation failures when using an HTTP proxy
+
+The extension needs an HTTP connection to install packages and check for the existence of a system identity. It runs in the context of `walinuxagent.service` and requires a change to let the agent know about the proxy settings. Open ` /lib/systemd/system/walinuxagent.service` file on the target machine and add the following line after `[Service]`:
+```
+[Service]
+Environment="http_proxy=http://proxy.example.com:80/"
+Environment="https_proxy=http://proxy.example.com:80/"
+Environment="no_proxy=169.254.169.254"
+```
+
+Restart the agent (`sudo systemctl restart walinuxagent`). Now try again.
+
 #### The az ssh vm command fails with KeyError access_token
 
 If the `az ssh vm` command fails, you're using an outdated version of the Azure CLI client.
