@@ -83,7 +83,7 @@ The resulting app URLs effectively resolve the CORS issue:
 
 ### Option 3: Update HTTP headers
 
-Tomatch the origin request, add a custom HTTP response header on the web service. Websites running in Internet Information Services (IIS), use IIS Manager to modify the header.
+To match the origin request, add a custom HTTP response header on the web service. Websites running in Internet Information Services (IIS), use IIS Manager to modify the header.
 
 ![Add custom response header in IIS Manager](./media/application-proxy-understand-cors-issues/image6.png)
 
