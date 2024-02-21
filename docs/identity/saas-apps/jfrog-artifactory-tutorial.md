@@ -73,7 +73,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier** text box, type a value using the following pattern::
+    a. In the **Identifier** text box, type a value using the following pattern:
     `<SERVERNAME>.jfrog.io`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
