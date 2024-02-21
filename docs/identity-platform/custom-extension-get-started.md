@@ -302,9 +302,9 @@ After your custom authentication extension is created, you need to grant permiss
 
 To get a token and test the custom authentication extension, you can use the <https://jwt.ms> app. It's a Microsoft-owned web application that displays the decoded contents of a token (the contents of the token never leave your browser).
 
-Follow these steps to register the **jwt.ms** web application:
-
 ### 3.1 Register a test web application
+
+Follow these steps to register the **jwt.ms** web application:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer).
 1. Browse to **Identity** > **Applications** > **App registrations**.
@@ -484,6 +484,8 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 
 ### 5.1 Using Microsoft Entra identity provider
 
+USe the following steps to add Microsoft Entra as an identity provider to your Azure Function app.
+
 # [Workforce tenant](#tab/workforce-tenant)
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
@@ -564,7 +566,7 @@ To test your custom claim provider, follow these steps:
     ```
 
 1. Replace `{tenantId}` with your tenant ID, tenant name, or one of your verified domain names. For example, `contoso.onmicrosoft.com`.
-1. Replace `{App_to_enrich_ID}` with the [My Test application registration ID](#31-get-the-application-id).  
+1. Replace `{App_to_enrich_ID}` with the *My Test application* client ID.  
 1. Go through the sign in user flow that you've configured, and accept the requested permissions.
 1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `dateOfBirth`.
 
@@ -577,7 +579,7 @@ To test your custom claim provider, follow these steps:
     ```
 1. Replace `{domainName}` with your domain name, for example, `contoso`.
 1. Replace `{tenantId}` with your tenant ID, tenant name, or one of your verified domain names. For example, `contoso.onmicrosoft.com`.
-1. Replace `{App_to_enrich_ID}` with the [My Test application registration ID](#31-get-the-application-id).  
+1. Replace `{App_to_enrich_ID}` with the *My Test application* client ID. 
 1. Go through the sign in user flow that you've configured, and accept the requested permissions.
 1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `dateOfBirth`.
 
