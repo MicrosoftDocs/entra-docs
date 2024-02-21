@@ -280,6 +280,11 @@
       "source_path_from_root": "/docs/identity-platform/scenario-protected-web-api-production.md",
       "redirect_url": "/entra/identity-platform/scenario-protected-web-api-app-registration",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-blazor-webassembly.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-blazor-wasm-sign-in",
+      "redirect_document_id": false
     }
 
   ]
