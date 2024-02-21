@@ -100,6 +100,8 @@ Now you set the Facebook client ID and client secret, either by entering it in t
    New-MgIdentityProvider -BodyParameter $params
    ```
 
+   You might need to [enable self-service sign-up for your tenant](/entra/external-id/self-service-sign-up-user-flow#enable-self-service-sign-up-for-your-tenant).
+
    > [!NOTE]
    > Use the client ID and client secret from the app you created in the Facebook developer console. For more information, see the [New-MgIdentityProvider](/powershell/microsoftgraph/authentication-commands) article.
 
