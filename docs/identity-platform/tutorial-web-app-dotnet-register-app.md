@@ -27,9 +27,9 @@ In this tutorial:
 
 * An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/).
 * This Azure account must have permissions to manage applications. Use any of the following roles needed to register the application:
-  * Application administrator
+  * Application Administrator
   * Application developer
-  * Cloud application administrator
+  * Cloud Application Administrator
 
 ## Register the application and record identifiers
 

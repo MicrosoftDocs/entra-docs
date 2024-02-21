@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.date: 04/04/2023
+ms.date: 02/13/2024
 ms.author: billmath
 ms.reviewer: arvinh
 ---
@@ -41,7 +41,7 @@ The Microsoft Entra provisioning service supports a [SCIM 2.0](https://techcommu
  7. Under **On-premises Connectivity**, select **Download and install**, and select **Accept terms & download**.
 
  :::image type="content" source="~/includes/media/app-provisioning-sql/download-1.png" alt-text="Screenshot of download location for agent." lightbox="~/includes/media/app-provisioning-sql/download-1.png":::
-     
+
  8. Leave the portal and open the provisioning agent installer, agree to the terms of service, and select **Install**.
  9. Wait for the Microsoft Entra provisioning agent configuration wizard and then select **Next**.
  10. In the **Select Extension** step, select **On-premises application provisioning** and then select **Next**.    

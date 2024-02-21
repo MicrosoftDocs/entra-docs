@@ -12,7 +12,6 @@ ms.author: jricketts
 ms.reviewer: ajburnle
 ms.custom:
   - it-pro
-  - seodec18
   - kr2b-contr-experiment
 ---
 

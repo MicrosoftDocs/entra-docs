@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.date: 10/26/2022
-ms.reviewer: lenalepa, sureshja
+ms.reviewer: sureshja
 ms.service: identity-platform
 
 ms.topic: conceptual
@@ -120,7 +120,7 @@ Applications are added to Microsoft Entra ID to use one or more of the services 
 
 ## Who has permission to add applications to my Microsoft Entra instance?
 
-While there are some tasks that only global administrators can do (such as adding applications from the app gallery, and configuring an application to use the Application Proxy) by default all users in your directory have rights to register application objects that they're developing and discretion over which applications they share/give access to their organizational data through consent. If a person is the first user in your directory to sign in to an application and grant consent, that will create a service principal in your tenant. Otherwise, the consent grant information will be stored on the existing service principal.
+While there are some tasks that only Global Administrators can do (such as adding applications from the app gallery, and configuring an application to use the Application Proxy) by default all users in your directory have rights to register application objects that they're developing and discretion over which applications they share/give access to their organizational data through consent. If a person is the first user in your directory to sign in to an application and grant consent, that will create a service principal in your tenant. Otherwise, the consent grant information will be stored on the existing service principal.
 
 Allowing users to register and consent to applications might initially sound concerning, but keep the following reasons in mind:
 

@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom:
 ms.date: 11/15/2022
-ms.reviewer: joflore, kkrishna
+ms.reviewer: joflore
 ms.service: identity-platform
 
 ms.topic: conceptual

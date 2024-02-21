@@ -10,8 +10,6 @@ ms.date: 06/07/2023
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.custom: contperf-fy20q4
-
 # Customer intent: As an identity administrator, I want to understand what authentication options are available in Microsoft Entra ID and how or why I can use them to improve and secure user sign-in events.
 ---
 # What authentication and verification methods are available in Microsoft Entra ID?

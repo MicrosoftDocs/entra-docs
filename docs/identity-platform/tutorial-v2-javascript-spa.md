@@ -581,7 +581,5 @@ The Microsoft Graph API requires the `User.Read` scope to read a user's profile.
 
 ## Next steps
 
-Delve deeper into SPA development on the Microsoft identity platform in the first part of a scenario series:
+ - Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).
 
-> [!div class="nextstepaction"]
-> [Scenario: Single-page application](scenario-spa-overview.md)

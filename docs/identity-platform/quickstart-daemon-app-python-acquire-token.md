@@ -72,7 +72,7 @@ To register your application and add the app's registration information to your 
 
 #### Step 4: Admin consent
 
-If you try to run the application at this point, you'll receive *HTTP 403 - Forbidden* error: `Insufficient privileges to complete the operation`. This error happens because any *app-only permission* requires Admin consent: a global administrator of your directory must give consent to your application. Select one of the options below depending on your role:
+If you try to run the application at this point, you'll receive *HTTP 403 - Forbidden* error: `Insufficient privileges to complete the operation`. This error happens because any *app-only permission* requires Admin consent: a Global Administrator of your directory must give consent to your application. Select one of the options below depending on your role:
 
 ##### Global tenant administrator
 

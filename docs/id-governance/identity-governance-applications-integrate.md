@@ -1,18 +1,14 @@
 ---
 title: Integrate your applications for identity governance and establishing a baseline of reviewed access
 description: Microsoft Entra ID Governance allows you to balance your organization's need for security and employee productivity with the right processes and visibility.  You can integrate your existing business critical third party on-premises and cloud-based applications with Microsoft Entra ID for identity governance scenarios.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
 ms.topic: conceptual
-ms.subservice: compliance
 ms.date: 7/29/2022
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
-ms.collection: M365-identity-device-management
 ---
 
 # Integrating applications with Microsoft Entra ID and establishing a baseline of reviewed access

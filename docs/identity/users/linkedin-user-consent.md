@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.date: 11/21/2023
 ms.author: barclayn
 ms.reviewer: beengen
-ms.custom: "it-pro;seo-update-azuread-jan"
+ms.custom: it-pro
 ---
 
 # LinkedIn account connections data sharing and consent

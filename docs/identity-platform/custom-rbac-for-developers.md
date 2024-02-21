@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom: template-concept
 ms.date: 01/06/2023
-ms.reviewer: john.garland, maggie.marxen, ian.bennett
+ms.reviewer:
 ms.service: identity-platform
 
 ms.topic: conceptual

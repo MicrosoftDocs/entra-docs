@@ -10,8 +10,7 @@ ms.topic: overview
 ms.date: 10/26/2023
 ms.author: barclayn
 ms.reviewer: ilyal
-ms.custom: pim,azuread-video-2020,contperf-fy21q3-portal, content-engagement
-
+ms.custom: pim, azuread-video-2020, content-engagement
 ---
 
 # What is Microsoft Entra Privileged Identity Management?

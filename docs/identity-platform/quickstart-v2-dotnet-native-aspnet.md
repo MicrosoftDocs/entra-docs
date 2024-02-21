@@ -192,6 +192,6 @@ ms.topic: conceptual
 > 
 > ## Next steps
 > 
-> Learn more about the protected web API scenario that the Microsoft identity platform supports.
+> Learn more by building a protected ASP.NET Core web api in the following tutorial series:
 > > [!div class="nextstepaction"]
-> > [Protected web API scenario](scenario-protected-web-api-overview.md)
+> > [Protected web API tutorial](tutorial-web-api-dotnet-register-app.md)

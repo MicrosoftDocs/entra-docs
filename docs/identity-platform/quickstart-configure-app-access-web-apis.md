@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: mode-api
 ms.date: 06/29/2023
-ms.reviewer: lenalepa, aragra, sureshja
+ms.reviewer: sureshja
 ms.service: identity-platform
 
 ms.topic: quickstart

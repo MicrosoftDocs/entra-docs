@@ -1004,7 +1004,4 @@ As you add scopes, your users might be prompted to provide extra consent for the
 
 ## Next steps
 
-Delve deeper into single-page application (SPA) development on the Microsoft identity platform in our multi-part article series.
-
-> [!div class="nextstepaction"]
-> [Scenario: Single-page application](scenario-spa-overview.md)
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).

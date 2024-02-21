@@ -10,7 +10,7 @@ ms.reviewer: rahulnagraj, alamaral, jeedes
 ms.service: identity-platform
 
 ms.topic: how-to
-#Customer intent: As an application administrator, I want to customize the SAML token claims, so that I can control the information that is sent to applications during SSO authentication using the Microsoft identity platform.
+#Customer intent: As an Application Administrator, I want to customize the SAML token claims, so that I can control the information that is sent to applications during SSO authentication using the Microsoft identity platform.
 ---
 
 # Customize SAML token claims

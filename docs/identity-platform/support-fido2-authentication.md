@@ -4,7 +4,7 @@ description: This deployment guide explains how to support passwordless authenti
 author: henrymbuguakiarie
 ms.author: henrymbugua
 ms.date: 1/29/2021
-ms.reviewer: calui
+ms.reviewer:
 ms.service: identity-platform
 
 ms.topic: reference

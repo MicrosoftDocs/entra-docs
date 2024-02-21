@@ -8,7 +8,7 @@ ms.subservice: fundamentals
 ms.topic: quickstart
 ms.date: 11/28/2023
 ms.author: barclayn
-ms.custom: it-pro, seodec18, fasttrack-edit, mode-other
+ms.custom: it-pro, fasttrack-edit, mode-other
 ms.collection: M365-identity-device-management
 ---
 # Quickstart: Create a new tenant in Microsoft Entra ID

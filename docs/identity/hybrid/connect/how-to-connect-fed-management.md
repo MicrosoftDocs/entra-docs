@@ -13,7 +13,6 @@ ms.topic: how-to
 ms.date: 11/06/2023
 ms.subservice: hybrid-connect
 ms.author: billmath
-ms.custom: seohack1
 
 ---
 # Manage and customize AD FS by using Microsoft Entra Connect

@@ -1,3 +1,11 @@
+---
+author: cilwerner
+ms.author: cwerner
+manager: CelesteDG 
+ms.date: 02/12/2024
+ms.service: identity-platform
+ms.topic: include
+---
 The following steps for updating code apply across all the confidential client scenarios:
 
 1. Add the MSAL.NET namespace in your source code: `using Microsoft.Identity.Client;`.

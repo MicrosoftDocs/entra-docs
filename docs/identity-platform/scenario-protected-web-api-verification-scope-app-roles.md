@@ -375,5 +375,6 @@ If you set `AllowWebApiToBeAuthorizedByACL` to `true`, this is **your responsibi
 
 ## Next steps
 
-Move on to the next article in this scenario,
-[Move to production](scenario-protected-web-api-production.md).
+- Learn more by building an ASP.NET Core web app that signs in users in the following multi-part [tutorial series](tutorial-web-app-dotnet-register-app.md)
+
+- Explore Microsoft identity platform [web API samples](sample-v2-code.md#web-api) 

@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom:
 ms.date: 02/06/2024
-ms.reviewer: kenwith
+ms.reviewer: jeedes
 ms.service: identity-platform
 
 ms.topic: reference

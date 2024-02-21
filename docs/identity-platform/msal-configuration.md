@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
 ms.date: 09/12/2019
-ms.reviewer: shoatman
+ms.reviewer: shoatman, negoe
 ms.service: identity-platform
 
 ms.topic: reference

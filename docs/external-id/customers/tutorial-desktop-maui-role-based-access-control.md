@@ -5,9 +5,9 @@ author: henrymbuguakiarie
 manager: mwongerapk
 
 ms.author: henrymbugua
-ms.service: active-directory
+ms.service: entra-external-id
 ms.topic: tutorial
-ms.subservice: ciam
+ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.date: 07/17/2023
 ---

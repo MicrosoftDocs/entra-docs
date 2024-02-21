@@ -10,8 +10,7 @@ ms.topic: how-to
 ms.date: 11/16/2023
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # Set up self-service group management in Microsoft Entra ID

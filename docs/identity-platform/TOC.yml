@@ -156,8 +156,6 @@
       items:
         - name: SPA that signs in users and calls web API
           items:
-            - name: Overview
-              href: scenario-spa-overview.md
             - name: App registration
               href: scenario-spa-app-registration.md
             - name: Code configuration
@@ -168,8 +166,6 @@
               href: scenario-spa-acquire-token.md
             - name: Call a web API
               href: scenario-spa-call-api.md
-            - name: Move to production
-              href: scenario-spa-production.md
 - name: Web app
   items:
     - name: Web app authentication
@@ -223,20 +219,14 @@
       items:
         - name: Web app that signs in users
           items:
-            - name: Overview
-              href: scenario-web-app-sign-user-overview.md
             - name: App registration
               href: scenario-web-app-sign-user-app-registration.md
             - name: Code configuration
               href: scenario-web-app-sign-user-app-configuration.md
             - name: Sign-in and sign-out
               href: scenario-web-app-sign-user-sign-in.md
-            - name: Move to production
-              href: scenario-web-app-sign-user-production.md
         - name: Web app that calls an API
           items:
-            - name: Overview
-              href: scenario-web-app-call-api-overview.md
             - name: App registration
               href: scenario-web-app-call-api-app-registration.md
             - name: Code configuration
@@ -247,8 +237,6 @@
               href: scenario-web-app-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-app-call-api-call-api.md
-            - name: Move to production
-              href: scenario-web-app-call-api-production.md
         - name: Deploy and setup App Service auth in a pipeline
           href: deploy-web-app-authentication-pipeline.md
 - name: Web API
@@ -282,20 +270,14 @@
           href: howto-call-a-web-api-with-curl.md
         - name: Protected web API
           items:
-            - name: Overview
-              href: scenario-protected-web-api-overview.md
             - name: App registration
               href: scenario-protected-web-api-app-registration.md
             - name: Code configuration
               href: scenario-protected-web-api-app-configuration.md
             - name: Verification of scopes or app roles
               href: scenario-protected-web-api-verification-scope-app-roles.md
-            - name: Move to production
-              href: scenario-protected-web-api-production.md
         - name: Web API that calls an API
           items:
-            - name: Overview
-              href: scenario-web-api-call-api-overview.md
             - name: App registration
               href: scenario-web-api-call-api-app-registration.md
             - name: Code configuration
@@ -304,8 +286,6 @@
               href: scenario-web-api-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-api-call-api-call-api.md
-            - name: Move to production
-              href: scenario-web-api-call-api-production.md
 - name: Desktop
   items:
     - name: Desktop app authentication

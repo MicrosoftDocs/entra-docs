@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: identitypla | Azuretformtop40
 ms.date: 12/05/2023
-ms.reviewer: brandwe
+ms.reviewer: brianmel
 ms.service: identity-platform
 
 ms.topic: conceptual

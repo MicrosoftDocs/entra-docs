@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: devx-track-csharp,  devx-track-dotnet
 ms.date: 10/30/2019
-ms.reviewer: saeeda, Dickson-Mwendia
+ms.reviewer: saeeda, dmwendia, negoe
 ms.service: identity-platform
 
 ms.topic: conceptual

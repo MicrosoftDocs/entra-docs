@@ -6,7 +6,6 @@ author: barclayn
 manager: amycolannino
 editor: markwahl-msft
 ms.service: entra-id-governance
-ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: privileged-identity-management
 ms.date: 09/13/2023

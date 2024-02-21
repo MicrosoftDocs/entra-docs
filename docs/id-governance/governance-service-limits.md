@@ -4,7 +4,7 @@ description: This article details service limits for offerings within Microsoft 
 author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 10/30/2023
 

@@ -1,17 +1,17 @@
 ---
 title: Administrative units in Microsoft Entra ID
 description: Use administrative units for more granular delegation of permissions in Microsoft Entra ID.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: overview
-ms.subservice: roles
+ms.subservice: role-based-access-control
 ms.date: 03/07/2023
 ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
-ms.collection: M365-identity-device-management
+
 ---
 
 # Administrative units in Microsoft Entra ID

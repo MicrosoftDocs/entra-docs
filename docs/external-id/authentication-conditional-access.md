@@ -3,8 +3,7 @@ title: Authentication and Conditional Access for B2B users
 description: Learn how to enforce multifactor authentication policies for Microsoft Entra B2B users.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
 ms.date: 02/05/2024

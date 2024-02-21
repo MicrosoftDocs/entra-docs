@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # Enforce a naming policy on Microsoft 365 groups in Microsoft Entra ID

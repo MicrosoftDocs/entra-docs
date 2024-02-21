@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom:
 ms.date: 09/25/2023
-ms.reviewer: kkrishna, jmprieur
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
 ms.topic: how-to

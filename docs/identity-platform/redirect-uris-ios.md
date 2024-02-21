@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
 ms.date: 01/18/2023
-ms.reviewer: jak
+ms.reviewer:
 ms.service: identity-platform
 
 ms.topic: how-to

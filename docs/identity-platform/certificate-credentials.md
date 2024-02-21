@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom: has-adal-ref
 ms.date: 02/27/2023
-ms.reviewer: kenwith
+ms.reviewer: jeedes
 ms.service: identity-platform
 
 ms.topic: reference

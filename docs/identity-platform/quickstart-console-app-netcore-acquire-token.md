@@ -94,7 +94,7 @@ This project can be run in either Visual Studio or Visual Studio for Mac and can
 
 #### Step 4: Admin consent
 
-Running the application now results in the output `HTTP 403 - Forbidden* error: "Insufficient privileges to complete the operation`. This error occurs because any app-only permission requires a global administrator of the directory to give consent to the application. Select one of the following options, depending on the role.
+Running the application now results in the output `HTTP 403 - Forbidden* error: "Insufficient privileges to complete the operation`. This error occurs because any app-only permission requires a Global Administrator of the directory to give consent to the application. Select one of the following options, depending on the role.
 
 ##### Global tenant administrator
 
@@ -102,7 +102,7 @@ For a global tenant administrator, go to **Enterprise applications** in the Micr
 
 ##### Standard user
 
-For a standard user of your tenant, ask a global administrator to grant admin consent to the application. To do this, provide the following URL to the administrator:
+For a standard user of your tenant, ask a Global Administrator to grant admin consent to the application. To do this, provide the following URL to the administrator:
 
 ```url
 https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_id=Enter_the_Application_Id_Here

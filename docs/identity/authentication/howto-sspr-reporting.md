@@ -9,7 +9,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: tilarso
-ms.custom: ignite-fall-2021
 ---
 # Reporting options for Microsoft Entra password management
 

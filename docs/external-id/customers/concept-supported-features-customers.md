@@ -4,9 +4,9 @@ description: Learn about supported features in customer tenants.
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: conceptual
 ms.date: 02/05/2024
 ms.author: mimart

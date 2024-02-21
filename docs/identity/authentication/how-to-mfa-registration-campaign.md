@@ -4,7 +4,6 @@ description: Learn how to move your organization away from less secure authentic
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: ignite-2022
 ms.topic: conceptual
 ms.date: 02/05/2024
 
@@ -356,4 +355,3 @@ No, there are no such plans.
 ## Next steps
 
 [Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md)
-

@@ -7,7 +7,6 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: overview
-ms.tgt_pltfrm: na
 ms.date: 9/12/2023
 ms.author: barclayn
 ms.custom: pim

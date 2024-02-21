@@ -10,8 +10,7 @@ ms.date: 09/12/2022
 ms.topic: overview
 ms.service: entra-id
 ms.subservice: users
-
-ms.custom: "it-pro;seo-update-azuread-jan"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
 #Customer intent: As a new Microsoft Entra identity administrator, user management is at the core of my work so I need to understand the user management tools such as groups, administrator roles, and licenses to manage users.
 ---

@@ -10,8 +10,7 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.date: 01/11/2022
 ms.author: barclayn
-
-ms.custom: devx-track-azurepowershell, ignite-2022
+ms.custom: devx-track-azurepowershell
 ROBOTS: NOINDEX
 ---
 

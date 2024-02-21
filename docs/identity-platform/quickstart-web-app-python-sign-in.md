@@ -110,10 +110,7 @@ You can also use an integrated development environment to open the folder.
 
 ## Next steps
 
-Learn more about web apps that sign in users in our multi-part scenario series.
+Learn more by building an ASP.NET Core web app that signs in users in the following multi-part tutorial series:
 
 > [!div class="nextstepaction"]
-> [Scenario: Web app that signs in users](scenario-web-app-sign-user-overview.md)
-
-> [!div class="nextstepaction"]
-> [Scenario: Web app that calls web APIs](scenario-web-app-call-api-overview.md)
+> [Tutorial: Web app that signs in users](tutorial-web-app-dotnet-register-app.md)

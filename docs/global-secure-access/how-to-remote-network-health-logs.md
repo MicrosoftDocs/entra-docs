@@ -5,7 +5,7 @@ author: shlipsey3
 ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: how-to
-ms.date: 11/01/2023
+ms.date: 02/13/2024
 ms.service: global-secure-access
 ms.reviewer: katabish
 
@@ -15,15 +15,15 @@ ms.reviewer: katabish
 
 # What are remote network health logs?
 
-Remote networks such as a branch office rely on customer premises equipment (CPE) to connect users in those locations to the online resources and services they need. Users expect that CPE to function so they can do their work.
+Remote networks, such as a branch office, rely on customer premises equipment (CPE) to connect users in those locations to the online resources and services they need. Users expect that CPE to function so they can do their work.
 
-To keep everyone connected, you need to ensure the health of the IPSec tunnel and the BGP route advertisement. This long-running tunnel and routing information are the keys to your remote network health.
+To keep everyone connected, you need to ensure the health of the IPSec tunnel and the Border Gateway Protocol (BGP) route advertisement. This long-running tunnel and routing information are the keys to your remote network health.
 
 ## Prerequisites
 
 To view the Remote network health logs, you need:
 
-- One of the following roles: Global Reader, Global Secure Access Administrator, Security Administrator or Global Administrator.
+- One of the following roles: Global Reader, Global Secure Access Administrator, or Security Administrator.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## How to access the logs
@@ -85,11 +85,11 @@ The following table describes each of the fields in the Remote network health lo
 | Created date time | Time of original event generation |
 | Source IP Address | The IP address of the CPE.</br> The Source IP/Destination IP address pair is unique for each IPsec tunnel. |
 | Destination IP Address | The IP address of the Microsoft Entra gateway.</br> The Source IP/Destination IP address pair is unique for each IPsec tunnel. |
-| Status | five possible values:</br> **TunnelConnect:** This event is generated when an IPsec tunnel is successfully established.</br> **TunnelDisconnect:** This event is generated when an IPsec tunnel is disconnected.</br> **BGPConnect:** This event is generated when a BGP connectivity is successfully established.</br> **BGPDisconnect:** This event is generated when a BGP connectivity goes down.</br> **Alive:** This periodic statistic is generated every 15 minutes for all the active tunnels. |
+| Status | **Tunnel connected:** This event is generated when an IPsec tunnel is successfully established.</br> **Tunnel disconnected:** This event is generated when an IPsec tunnel is disconnected.</br> **BGP connected:** This event is generated when a BGP connectivity is successfully established.</br> **BGP disconnected:** This event is generated when a BGP connectivity goes down.</br> **Remote network alive:** This periodic statistic is generated every 15 minutes for all the active tunnels. |
 | Description | Optional description of the event. |
-| BGP Routes Advertised Count | Optional count of BGP routes advertised over the IPsec tunnel.</br> This value is 0 for TunnelConnect, TunnelDisconnect, BGPConnect and BGPDisconnect events. |
-| Sent Bytes | Optional number of bytes sent from source to destination over a tunnel during the last 15 minutes.</br> This value is 0 for TunnelConnect, TunnelDisconnect, BGPConnect and BGPDisconnect events. |
-| Received Bytes | Optional number of bytes received by source from destination over a tunnel during the last 15 minutes.</br> This value is 0 for TunnelConnect, TunnelDisconnect, BGPConnect and BGPDisconnect events. |
+| BGP Routes Advertised Count | Optional count of BGP routes advertised over the IPsec tunnel.</br> This value is 0 for Tunnel connected, Tunnel disconnected, BGP connected and BGP disconnected events. |
+| Sent Bytes | Optional number of bytes sent from source to destination over a tunnel during the last 15 minutes.</br> This value is 0 for Tunnel connected, Tunnel disconnected, BGP connected and BGP disconnected events. |
+| Received Bytes | Optional number of bytes received by source from destination over a tunnel during the last 15 minutes.</br> This value is 0 for Tunnel connected, Tunnel disconnected, BGP connected and BGP disconnected events. |
 | Remote network ID | ID of the remote network the tunnel is associated with. |
 
 ## Next steps
