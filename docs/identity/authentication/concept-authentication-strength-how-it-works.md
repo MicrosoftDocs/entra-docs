@@ -58,7 +58,7 @@ As a result, users on a compliant device would be able to use a Temporary Access
 >[!NOTE] 
 >- If multiple Conditional Access policies target the **Register security information** user action, and they each apply an authentication strength, the user must satisfy all such authentication strengths to sign in. 
 >
->- Some passwordless and phishing-resistant methods cannot be registered from the Interrupt mode. For more information, see [Register passwordless authentication methods](/entra/identity/authentication/concept-authentication-strength-how-it-works#register-passwordless-authentication-methods).
+>- Some passwordless and phishing-resistant methods can't be registered from the Interrupt mode. For more information, see [Register passwordless authentication methods](/entra/identity/authentication/concept-authentication-strength-how-it-works#register-passwordless-authentication-methods).
 
 ## User experience
 
