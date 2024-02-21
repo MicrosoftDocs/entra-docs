@@ -286,5 +286,5 @@ private fun handleSubmitPasswordError(error: ResetPasswordSubmitPasswordError) {
  
 ## Next Steps 
  
-[Tutorial: Support web fallback in Android app ](tutorial-native-auth-android-support-web-fallback.md)
+[Tutorial: Support web fallback in Android app](tutorial-native-auth-android-support-web-fallback.md)
 
