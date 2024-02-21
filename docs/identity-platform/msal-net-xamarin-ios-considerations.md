@@ -6,9 +6,9 @@ manager: CelesteDG
 ms.author: dmwendia
 ms.custom: devx-track-csharp,  has-adal-ref, devx-track-dotnet
 ms.date: 09/09/2020
-ms.reviewer: saeeda
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: saeeda, brianmel
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn about considerations for using Xamarin iOS and MSAL.NET.
 ---

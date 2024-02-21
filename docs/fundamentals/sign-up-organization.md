@@ -1,17 +1,16 @@
 ---
 title: Sign up your organization
 description: Instructions about how to sign up your organization to use Azure and Microsoft Entra ID.
-services: active-directory
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: barclayn
 ms.reviewer: jeffsta
-ms.custom: "it-pro, seodec18, seo-update-azuread-jan"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ---
 

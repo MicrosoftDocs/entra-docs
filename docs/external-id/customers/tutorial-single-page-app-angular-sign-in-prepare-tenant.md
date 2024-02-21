@@ -4,8 +4,8 @@ description: Learn how to configure your Microsoft Entra External ID for custome
 services: active-directory
 author: garrodonnell
 manager: celestedg
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: tutorial
 ms.date: 10/27/2023
 ms.author: godonnell
@@ -30,9 +30,9 @@ In this tutorial:
 
 * A Microsoft Entra ID for customers tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-    * Application administrator
-    * Application developer
-    * Cloud application administrator
+    * Application Administrator
+    * Application Developer
+    * Cloud Application Administrator
 
 ## Register the SPA and record identifiers
 

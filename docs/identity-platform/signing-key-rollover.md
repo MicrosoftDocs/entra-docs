@@ -7,8 +7,8 @@ ms.author: ryanwi
 ms.custom:
 ms.date: 03/16/2023
 ms.reviewer: paulgarn, ludwignick
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As a developer using the Microsoft identity platform for authentication in my web application, I want to ensure that my application can handle public key rollover automatically, so that my application will continue to validate token signatures without manual intervention.
 ---

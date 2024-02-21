@@ -1,18 +1,15 @@
 ---
 title: Using multi-stage reviews to meet your attestation and certification needs - Microsoft Entra
 description: Learn how to use multi-stage reviews to design more efficient reviews with Microsoft Entra.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
 editor: florianf
-ms.service: active-directory
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: access-reviews
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 06/28/2023
 ms.author: owinfrey
 ms.reviewer: florianf
-ms.collection: M365-identity-device-management
 ---
  
 # Using multi-stage reviews to meet your attestation and certification needs with Microsoft Entra 

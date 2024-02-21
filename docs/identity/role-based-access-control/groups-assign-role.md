@@ -1,18 +1,18 @@
 ---
 title: Assign Microsoft Entra roles to groups
 description: Assign Microsoft Entra roles to role-assignable groups in the Microsoft Entra admin center, PowerShell, or Microsoft Graph API.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 04/10/2023
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, has-azure-ad-ps-ref
 
-ms.collection: M365-identity-device-management
+
 ---
 
 # Assign Microsoft Entra roles to groups

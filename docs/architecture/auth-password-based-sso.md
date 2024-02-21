@@ -1,18 +1,15 @@
 ---
 title: Password-based authentication with Microsoft Entra ID
 description: Architectural guidance on achieving password-based authentication with Microsoft Entra ID.
-services: active-directory
 author: janicericketts
 manager: martinco
 
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 01/10/2023
 ms.author: jricketts
 ms.reviewer: ajburnle
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Password-based authentication with Microsoft Entra ID

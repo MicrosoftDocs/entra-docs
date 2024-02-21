@@ -1,19 +1,17 @@
 ---
 title: 'Microsoft Entra Connect: Troubleshoot errors during synchronization'
 description: This article explains how to troubleshoot errors that occur during synchronization with Microsoft Entra Connect.
-services: active-directory
+
 author: billmath
 manager: amycolannino
 ms.assetid: 2209d5ce-0a64-447b-be3a-6f06d47995f8
-ms.service: active-directory
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 01/16/2024
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.custom: contperf-fy21q3-portal, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
-ms.collection: M365-identity-device-management
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Understanding errors during Microsoft Entra synchronization
 

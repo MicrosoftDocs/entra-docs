@@ -1,11 +1,10 @@
 ---
 title: Replica sets concepts for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn what replica sets are in Microsoft Entra Domain Services and how they provide redundancy to applications that require identity services.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
 ms.date: 09/23/2023

@@ -1,16 +1,13 @@
 ---
 title: Reprocess assignments for an access package in entitlement management
 description: Learn how to reprocess assignments for an access package in entitlement management.
-services: active-directory
 author: owinfreyatl
 manager: amycolannino
-ms.service: active-directory
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
-ms.collection: M365-identity-device-management
 #Customer intent: As a global administrator or access package manager, I want detailed information about how I can reprocess assignments for an access package in the event of a partial delivery, so that requestors have all of the resources they need to perform their job.
 ---
 # Reprocess assignments for an access package in entitlement management

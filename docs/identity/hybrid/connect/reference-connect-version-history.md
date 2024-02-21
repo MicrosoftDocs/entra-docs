@@ -3,14 +3,14 @@ title: 'Microsoft Entra Connect: Version release history'
 description: This article lists all releases of Microsoft Entra Connect and Azure AD Sync.
 author: billmath
 ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
-ms.service: active-directory
+ms.service: entra-id
 manager: amycolannino
 ms.topic: reference
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 ms.custom: has-adal-ref, has-azure-ad-ps-ref
-ms.collection: M365-identity-device-management
+
 ---
 
 # Microsoft Entra Connect: Version release history
@@ -47,7 +47,7 @@ Required permissions | For permissions required to apply an update, see [Microso
 > We will begin retiring past versions of Microsoft Entra Connect Sync 2.x 12 months from the date they are superseded by a newer version. 
 > This policy will go into effect on 15 March 2023, when we will retire all versions that are superseded by a newer version on 15 March 2022.
 > 
-> Currently only builds 2.1.20.0 (release November 9th 2022) or later are supported.  Version 2.1.20 was superseded by build 2.2.1.0 which was released June 6th 2023.  This means that 2.1.20 will be supported until June 6th, 2024.
+> Currently only builds 2.1.20.0 (release November 9th 2022) or later are supported.  Version 2.1.20 was superseded by build 2.2.1.0 which was released June 19th 2023.  This means that 2.1.20 will be supported until June 19th, 2024.
 >
 > Build 2.1.19 was released on November 2nd, 2022.  It was superseded by 2.1.20 which was released on November 9th 2022.  Since twelves months (November 9th 2023) have past since this release, 2.1.19 is no longer supported.
 > 

@@ -1,16 +1,13 @@
 ---
 title: Plan a Lifecycle Workflow deployment
 description: Planning guide for a successful Lifecycle Workflow deployment.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 10/12/2023
 ms.author: owinfrey
-ms.collection: M365-identity-device-management
 ---
 
 # Plan a Lifecycle Workflow deployment

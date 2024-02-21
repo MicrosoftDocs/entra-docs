@@ -1,17 +1,17 @@
 ---
 title: 'Microsoft Entra Connect: Use a SAML 2.0 Identity Provider for Single Sign On - Azure'
 description: This document describes using a SAML 2.0 compliant Idp for single sign-on.
-services: active-directory
+
 author: billmath
 manager: amycolannino
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.service: active-directory
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 #  Use a SAML 2.0 Identity Provider (IdP) for Single Sign On

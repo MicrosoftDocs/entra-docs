@@ -7,7 +7,7 @@ metadata:
   manager: amycolannino
   
   ms.assetid: 48731820-9e8c-4ec2-95e8-83dba1e58775
-  ms.service: active-directory
+  ms.service: entra-id
   ms.subservice: domain-services
   ms.topic: faq
   ms.date: 01/22/2024

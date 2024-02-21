@@ -1,9 +1,9 @@
 ---
 title: Securely integrate Azure Logic Apps with on-premises APIs using Microsoft Entra application proxy
 description: Microsoft Entra application proxy lets cloud-native logic apps securely access on-premises APIs to bridge your workload.
-services: active-directory
+
 author: kfriede
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
 ms.date: 02/07/2024
@@ -25,7 +25,7 @@ The following diagram shows a traditional way to publish on-premises APIs for ac
 
 The following diagram shows how you can use Microsoft Entra application proxy to securely publish APIs for use with Logic Apps (or other Azure Cloud services) without opening any incoming ports:
 
-![Diagram that shows Logic App to API connection via Azure Application Proxy.](./media/application-proxy-integrate-with-logic-apps/azure-logic-app-to-api-connection-app-proxy.png)
+![Diagram that shows Logic App to API connection via Azure application proxy.](./media/application-proxy-integrate-with-logic-apps/azure-logic-app-to-api-connection-app-proxy.png)
 
 The Microsoft Entra application proxy and associated connector facilitate secure authorization and integration to your on-premises services without additional configuration to your network security infrastructure.  
 
@@ -35,7 +35,7 @@ To follow this tutorial, you need:
 
 - Admin access to an Azure directory, with an account that can create and register apps
 - The *Logic App Contributor* role (or higher) in an active tenant
-- Azure Application Proxy connector deployed and an application configured as detailed in [Add an on-premises app - Application Proxy in Microsoft Entra ID](./application-proxy-add-on-premises-application.md)
+- Azure application proxy connector deployed and an application configured as detailed in [Add an on-premises app - application proxy in Microsoft Entra ID](./application-proxy-add-on-premises-application.md)
 
 > [!NOTE]
 > While granting a user entitlement and testing the sign on is recommended, it's not required for this guide.
@@ -160,6 +160,6 @@ When a new Enterprise Application is created, a matching App Registration is als
 
 ## See Also
 
-- [How to configure an Application Proxy application](application-proxy-add-on-premises-application.md)
+- [How to configure an application proxy application](application-proxy-add-on-premises-application.md)
 - [Access on-premises APIs with Microsoft Entra application proxy](./application-proxy-secure-api-access.md)
 - [Common scenarios, examples, tutorials, and walkthroughs for Azure Logic Apps](/azure/logic-apps/logic-apps-examples-and-scenarios)

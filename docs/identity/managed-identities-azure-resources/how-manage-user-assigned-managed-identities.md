@@ -1,11 +1,11 @@
 ---
 title: Manage user-assigned managed identities
 description: Create user-assigned managed identities.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: how-to
 ms.date: 05/10/2023
 ms.author: barclayn

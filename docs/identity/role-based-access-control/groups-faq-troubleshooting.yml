@@ -1,19 +1,18 @@
 ### YamlMime:FAQ
 metadata:
   title: Troubleshoot Microsoft Entra roles assigned to groups
-  description: Learn some common questions and troubleshooting tips for assigning roles to groups in Microsoft Entra ID.
-  services: active-directory
+  description: Learn some common questions and troubleshooting tips for assigning roles to groups in Microsoft Entra ID.  
   author: rolyon
   manager: amycolannino
-  ms.service: active-directory
-  ms.subservice: roles
+  ms.service: entra-id
+  ms.subservice: role-based-access-control
   ms.topic: faq
   ms.date: 11/05/2020
   ms.author: rolyon
   ms.reviewer: vincesm
   ms.custom: it-pro, has-azure-ad-ps-ref
   
-  ms.collection: M365-identity-device-management
+  
 title: Troubleshoot Microsoft Entra roles assigned to groups
 summary: Here are some common questions and troubleshooting tips for assigning Microsoft Entra roles to Microsoft Entra groups.
 

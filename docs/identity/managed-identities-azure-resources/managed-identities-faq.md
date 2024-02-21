@@ -1,11 +1,11 @@
 ---
 title: Managed identities for Azure resources frequently asked questions"
 description: Frequently asked questions about managed identities
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: conceptual
 ms.date: 07/27/2022
 ms.author: barclayn

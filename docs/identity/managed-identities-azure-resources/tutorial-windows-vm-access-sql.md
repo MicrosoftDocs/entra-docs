@@ -1,17 +1,17 @@
 ---
 title: 'Tutorial: Use a managed identity to access Azure SQL Database - Windows'
 description: A tutorial that walks you through the process of using a Windows VM system-assigned managed identity to access Azure SQL Database.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.date: 05/25/2023
 ms.author: barclayn
-ms.collection: M365-identity-device-management
+
 ---
 # Tutorial: Use a Windows VM system-assigned managed identity to access Azure SQL
 

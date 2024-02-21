@@ -1,18 +1,18 @@
 ---
 title: Create a role-assignable group in Microsoft Entra ID
 description: Learn how to a role-assignable group in Microsoft Entra ID using the Microsoft Entra admin center, PowerShell, or Microsoft Graph API.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 10/12/2023
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, has-azure-ad-ps-ref
 
-ms.collection: M365-identity-device-management
+
 ---
 
 # Create a role-assignable group in Microsoft Entra ID

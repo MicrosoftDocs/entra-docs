@@ -1,18 +1,18 @@
 ---
 title: Microsoft Entra pass-through authentication security deep dive
 description: Learn how Microsoft Entra pass-through authentication protects your on-premises accounts.
-services: active-directory
+
 keywords: Azure AD Connect pass-through authentication, install Active Directory, required components for Azure AD, SSO, Single Sign-on
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Microsoft Entra pass-through authentication security deep dive
 

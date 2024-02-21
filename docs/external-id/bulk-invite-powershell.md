@@ -4,8 +4,7 @@ title: Tutorial for bulk inviting B2B collaboration users
 description: In this tutorial, you learn how to use PowerShell and a CSV file to send bulk invitations to external Microsoft Entra B2B collaboration guest users.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: tutorial
 ms.date: 01/03/2024
 

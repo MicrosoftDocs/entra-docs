@@ -4,7 +4,7 @@ description: In this tutorial, you learn how to create and configure a Microsoft
 author: justinha
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: has-azure-ad-ps-ref
 ms.topic: tutorial
@@ -87,7 +87,7 @@ The following DNS name restrictions also apply:
 Complete the fields in the *Basics* window of the Microsoft Entra admin center to create a managed domain:
 
 1. Enter a **DNS domain name** for your managed domain, taking into consideration the previous points.
-1. Choose the Azure **Location** in which the managed domain should be created. If you choose a region that supports Azure Availability Zones, the Domain Services resources are distributed across zones for additional redundancy.
+1. Choose the Azure **Region** in which the managed domain should be created. If you choose a region that supports Azure Availability Zones, the Domain Services resources are distributed across zones for additional redundancy.
 
     > [!TIP]
     > Availability Zones are unique physical locations within an Azure region. Each zone is made up of one or more datacenters equipped with independent power, cooling, and networking. To ensure resiliency, there's a minimum of three separate zones in all enabled regions.

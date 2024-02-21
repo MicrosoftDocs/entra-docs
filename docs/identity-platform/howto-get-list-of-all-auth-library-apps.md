@@ -7,8 +7,8 @@ ms.author: shermanouko
 ms.custom: has-adal-ref
 ms.date: 01/15/2024
 ms.reviewer: dmwendia
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to 
 #Customer intent: As an application developer / IT admin, I need to know / identify which of my apps are using ADAL.
 ---

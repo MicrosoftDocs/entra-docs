@@ -2,16 +2,13 @@
 metadata:
   title: B2B collaboration FAQs
   description: Get answers to frequently asked questions about Microsoft Entra B2B collaboration.
-  
-   
-  ms.service: active-directory
-  ms.subservice: B2B
+  ms.service: entra-external-id
   ms.topic: faq
   ms.date: 11/28/2022
   ms.author: mimart
   author: msmimart
   manager: celestedg
-  ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+  ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
   ms.collection: M365-identity-device-management
 title: Microsoft Entra B2B collaboration FAQs
 summary: |
@@ -94,7 +91,7 @@ sections:
         answer: |
           Yes, you can create a Conditional Access policy that blocks all guest and external users from accessing the Microsoft Entra admin center. When you configure this policy, be careful to avoid accidentally blocking access to members and admins.
           
-          1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as a security administrator or a Conditional Access administrator.
+          1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as a Security Administrator or a Conditional Access Administrator.
           2. In the Microsoft Entra admin center, under **Protection**, select **Security Center**. 
           4. Under **Protect**, select **Conditional Access**. Select **New policy**.
           5. On the **New** page, in the **Name** textbox, enter a name for the policy (for example "Block guests from accessing the portal").

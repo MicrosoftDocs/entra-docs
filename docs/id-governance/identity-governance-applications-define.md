@@ -1,18 +1,14 @@
 ---
 title: Define organizational policies for governing access to applications in your environment
 description: Microsoft Entra ID Governance allows you to balance your organization's need for security and employee productivity with the right processes and visibility.  You can define policies for how users should obtain access to your business critical applications integrated with Microsoft Entra ID Governance.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
 ms.topic: conceptual
-ms.subservice: compliance
 ms.date: 06/28/2023
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
-ms.collection: M365-identity-device-management
 ---
 
 # Define organizational policies for governing access to applications in your environment

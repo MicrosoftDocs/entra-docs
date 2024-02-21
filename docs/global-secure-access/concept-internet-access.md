@@ -6,8 +6,8 @@ ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
 ms.date: 11/02/2023
-ms.service: network-access
-ms.custom: 
+ms.service: global-secure-access
+ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
 
 ---

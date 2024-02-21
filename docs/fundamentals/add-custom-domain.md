@@ -1,11 +1,10 @@
 ---
 title: Add your custom domain
 description: Instructions about how to add your custom domain name to your tenant.
-services: active-directory
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 11/28/2023

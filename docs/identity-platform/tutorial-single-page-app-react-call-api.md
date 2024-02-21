@@ -4,8 +4,8 @@ description: Call an API from a React single-page app.
 author: OwenRichards1
 ms.author: owenrichards
 ms.date: 09/25/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As a React developer, I want to know how to create a user interface and access the Microsoft Graph API
 ---

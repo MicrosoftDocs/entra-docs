@@ -2,7 +2,7 @@
 title: The Conditional Access What If tool
 description: Learn how you can understand the possible result of Conditional Access policies in your environment.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 01/03/2024

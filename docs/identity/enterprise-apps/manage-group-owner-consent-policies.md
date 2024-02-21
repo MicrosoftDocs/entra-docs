@@ -4,8 +4,8 @@ description: Learn how to manage built-in and custom app consent policies for gr
 
 manager: CelesteDG
 author: omondiatieno
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: how-to
 ms.date: 08/25/2023

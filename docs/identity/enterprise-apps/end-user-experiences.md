@@ -4,8 +4,8 @@ description: Learn about the customizable ways to deploy applications to end use
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: conceptual
 ms.date: 12/08/2022

@@ -5,10 +5,10 @@ author: SHERMANOUKO
 manager: mwongerapk
 
 ms.author: shermanouko
-ms.service: active-directory
+ms.service: entra-external-id
  
 ms.custom: devx-track-dotnet
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: tutorial
 ms.date: 07/24/2023
 #Customer intent: As a dev, devops, I want to learn how to register and configure .NET browserless app authentication details in a customer tenant so as to sign in users using Device Code flow.
@@ -30,9 +30,9 @@ In this tutorial, you learn how to:
 
 * A Microsoft Entra ID for customer tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-    * Application administrator
-    * Application developer
-    * Cloud application administrator
+    * Application Administrator
+    * Application Developer
+    * Cloud Application Administrator
 
 ## Register the browserless app
 

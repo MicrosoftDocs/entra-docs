@@ -1,10 +1,10 @@
 ---
 title: Tutorial - Add an on-premises app - Application proxy in Microsoft Entra ID
 description:  Microsoft Entra ID has an application proxy service that enables users to access on-premises applications by signing in with their Microsoft Entra account. This tutorial shows you how to prepare your environment for use with application proxy. Then, it uses the Microsoft Entra admin center to add an on-premises application to your Microsoft Entra tenant.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: tutorial
 ms.date: 02/06/2024
@@ -190,9 +190,9 @@ To confirm the connector installed and registered correctly:
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
 1. Verify the details of the connector. The connectors should be expanded by default. An active green label indicates that your connector can connect to the service. However, even if the label is green, a network issue could still block the connector from receiving messages.
 
-    ![Microsoft Entra application proxy Connectors](./media/application-proxy-add-on-premises-application/app-proxy-connectors.png)
+    ![Microsoft Entra application proxy connectors](./media/application-proxy-add-on-premises-application/app-proxy-connectors.png)
 
-For more help with installing a connector, see [Problem installing the application proxy Connector](./application-proxy-connector-installation-problem.md).
+For more help with installing a connector, see [Problem installing the application proxy connector](./application-proxy-connector-installation-problem.md).
 
 ### Verify the installation through your Windows server
 
@@ -200,8 +200,8 @@ To confirm the connector installed and registered correctly:
 
 1. Open the Windows Services Manager by clicking the **Windows** key and entering *services.msc*.
 1. Check to see if the status for the following two services is **Running**.
-   - **Microsoft Entra application proxy Connector** enables connectivity.
-   - **Microsoft Entra application proxy Connector Updater** is an automated update service. The updater checks for new versions of the connector and updates the connector as needed.
+   - **Microsoft Entra application proxy connector** enables connectivity.
+   - **Microsoft Entra application proxy connector Updater** is an automated update service. The updater checks for new versions of the connector and updates the connector as needed.
 
 1. If the status for the services isn't **Running**, right-click to select each service and choose **Start**.
 

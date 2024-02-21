@@ -1,18 +1,15 @@
 ---
 title: View reports & logs in entitlement management
 description: Learn how to view the user assignments report and audit logs in entitlement management.
-services: active-directory
 author: owinfreyatl
 manager: amycolannino
 editor: jocastel-MSFT
-ms.service: active-directory
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
 ms.reviewer: jocastel
-ms.collection: M365-identity-device-management
 #Customer intent: As an administrator, I want view resources a user has access to and view request logs for auditing purposes.
 ---
 

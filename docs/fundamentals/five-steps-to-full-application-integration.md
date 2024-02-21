@@ -1,13 +1,14 @@
 ---
 title: Five steps to integrate your apps with Microsoft Entra ID
 description: Learn to integrate your applications with Microsoft Entra ID by adding apps, discovery, and integration methods.
-services: active-directory
 author: jricketts
 ms.author: jricketts
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 03/01/2023
+# Customer intent: As an IT admin responsible for application integration, I want to learn how to integrate my company's applications with Microsoft Entra ID, so that I can improve security, reduce costs, increase productivity, and enable compliance through centralized identity and access management.
+
 ---
 
 # Five steps to integrate your apps with Microsoft Entra ID

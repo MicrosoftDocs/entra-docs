@@ -83,6 +83,8 @@ items:
                 items:
                   - name: Run Android (Kotlin) sample
                     href: how-to-run-sample-android-app.md
+                  - name: Run iOS sample app
+                    href: how-to-run-sample-ios-app.md
         - name: Command-line interface (CLI) app
           items:
             - name: Node.js - sign in users
@@ -205,27 +207,50 @@ items:
                 - name: Use role-based access control
                   href: tutorial-mobile-maui-role-based-access-control.md
         - name: Native auth
-          items:
-            - name: Prepare Android app
-              href: tutorial-native-auth-prepare-android-app.md
-            - name: Sign up, sign in and sign out
-              href: tutorial-native-auth-android-sign-up-sign-in-sign-out.md
-            - name: Additional scenarios
+            - name: Android app
               items:
-                - name: Register user with username and attributes
-                  href: tutorial-native-auth-android-sign-up-user-with-username-user-attributes.md
-                - name: Register user with username, password and attributes
-                  href: tutorial-native-auth-android-sign-user-with-username-password-user-attributes.md
-                - name: Register user with username and password
-                  href: tutorial-native-auth-android-sign-up-user-with-username-password.md
-                - name: Sign in user with username and password
-                  href: tutorial-native-auth-android-sign-in-user-with-username-password.md
-                - name: Self-service password reset
-                  href: tutorial-native-auth-android-self-service-password-reset.md
-                - name: Sign in after sign up
-                  href: tutorial-native-auth-android-sign-in-after-sign-up.md
-                - name: Support web fallback
-                  href: tutorial-native-auth-android-support-web-fallback.md
+                - name: Prepare Android app
+                  href: tutorial-native-auth-prepare-android-app.md
+                - name: Sign up, sign in and sign out
+                  href: tutorial-native-auth-android-sign-up-sign-in-sign-out.md
+                - name: Additional scenarios
+                  items:
+                    - name: Register user with username and attributes
+                      href: tutorial-native-auth-android-sign-up-user-with-username-user-attributes.md
+                    - name: Register user with username, password and attributes
+                      href: tutorial-native-auth-android-sign-user-with-username-password-user-attributes.md
+                    - name: Register user with username and password
+                      href: tutorial-native-auth-android-sign-up-user-with-username-password.md
+                    - name: Sign in user with username and password
+                      href: tutorial-native-auth-android-sign-in-user-with-username-password.md
+                    - name: Self-service password reset
+                      href: tutorial-native-auth-android-self-service-password-reset.md
+                    - name: Sign in after sign up
+                      href: tutorial-native-auth-android-sign-in-after-sign-up.md
+                    - name: Support web fallback
+                      href: tutorial-native-auth-android-support-web-fallback.md
+            - name: iOS app
+              items:
+                - name: Prepare iOS app
+                  href: tutorial-native-auth-prepare-ios-app.md
+                - name: Sign up, sign in and sign sign out
+                  href: tutorial-native-auth-ios-sign-up-sign-in-sign-out.md
+                - name: Additional scenarios
+                  items:
+                    - name: Sign up with user attributes
+                      href: tutorial-native-auth-ios-sign-up-with-email-one-time-passcode.md
+                    - name: Sign up with username, password and user attributes
+                      href: tutorial-native-auth-ios-sign-up-with-username-password-user-attributes.md
+                    - name: Sign up with username and password
+                      href: tutorial-native-auth-ios-sign-up-with-username-password.md
+                    - name: Sign in with username and password
+                      href: tutorial-native-auth-ios-sign-in-with-username-password.md
+                    - name: Sign in user after sign up
+                      href: tutorial-native-auth-ios-sign-in-user-after-sign-up.md
+                    - name: Self-service password reset
+                      href: tutorial-native-auth-ios-self-service-password-reset.md
+                    - name: Support web fallback
+                      href: tutorial-native-auth-ios-support-web-fallback.md
     - name: Command-line interface (CLI) app
       items:
         - name: Node.js
@@ -264,6 +289,8 @@ items:
         displayName: disable sign-up, disable sign up 
       - name: Add an application to the user flow
         href: how-to-user-flow-add-application.md
+      - name: Test the user flow
+        href: how-to-test-user-flows.md
       - name: Enable password reset
         href: how-to-enable-password-reset-customers.md
       - name: Configure identity providers
@@ -350,6 +377,19 @@ items:
       href: /entra/fundamentals/reference-company-branding-css-template
     - name: Help and support options
       href: ~/identity-platform/developer-support-help-options.md?context=/entra/external-id/customers/context/customers-context
+    - name: Native authentication
+      items:
+        - name: Native auth APIs
+          displayName: Native authentication, Native authentication API
+          #href: reference-native-auth-overview.md 
+          href: /entra/identity-platform/reference-native-auth-overview?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
+        - name: Native auth with email OTP
+          displayName: Native authentication with email and one-time password or passcode
+          #href: reference-native-auth-email-otp.md
+          href: /entra/identity-platform/reference-native-auth-email-otp?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
+        - name: Native auth with email & password
+          #href: reference-native-auth-email-password.md
+          href: /entra/identity-platform/reference-native-auth-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
     - name: MSAL references 
       items:
         - name: MSAL.NET
