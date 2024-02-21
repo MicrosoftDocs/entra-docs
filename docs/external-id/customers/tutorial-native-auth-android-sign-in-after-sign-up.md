@@ -1,5 +1,5 @@
 ---
-title: Sign in user after sign-up
+title: Sign in user after sign-up in Android
 description: Learn how to implement sign in user after sign-up.
 
 author: henrymbuguakiarie
@@ -32,7 +32,7 @@ In this tutorial, you learn how to:
  
 ## Sign in after sign-up 
  
-This is an advanced version of the sign in flows [earlier described](tutorial-native-auth-sign-in-user-with-username-password.md), which has the added benefit of automatically signing in after successfully signing up. 
+This is an advanced version of the sign in flows [earlier described](tutorial-native-auth-android-sign-in-user-with-username-password.md), which has the added benefit of automatically signing in after successfully signing up. 
 
 The following wire frame shows a high-level view of the sign in after sign-up  flow:
 

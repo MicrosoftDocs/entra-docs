@@ -1,6 +1,6 @@
 ---
-title: Self-service password reset
-description: Learn how to implement self-service password reset.
+title: Android self-service password reset
+description: Learn how to implement self-service password reset in Android.
 
 author: henrymbuguakiarie
 manager: mwongerapk

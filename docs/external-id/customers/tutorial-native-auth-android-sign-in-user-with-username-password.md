@@ -1,5 +1,5 @@
 ---
-title: Sign in user with username and password
+title: Sign in user with username and password in Android
 description: Learn how to sign in user with username and password.
 
 author: henrymbuguakiarie
@@ -98,4 +98,4 @@ if (actionResult is SignInResult.Complete) -> {
 
 ## Next Steps
 
-[Tutorial: Sign in user after sign up](tutorial-native-auth-sign-in-after-sign-up.md)
+[Tutorial: Sign in user after sign up](tutorial-native-auth-android-sign-in-after-sign-up.md)

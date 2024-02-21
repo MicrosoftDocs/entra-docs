@@ -1,5 +1,5 @@
 ---
-title: Add sign up, sign in and sign out in native iOS app
+title: Add sign up, sign in and sign out in native Android app
 description: Learn how to add sign up, sign in and sign out with email one-time passcode.
 
 author: henrymbuguakiarie
@@ -15,7 +15,7 @@ ms.custom: developer, devx-track-dotnet
 #Customer intent: As a dev, devops, I want to learn about Add sign up, sign in and sign out with email one-time passcode.
 ---
 
-# Tutorial: Add sign up, sign in and sign out with email one-time passcode
+# Tutorial: Add sign up, sign in and sign out with email one-time passcode in Android
 
 This tutorial demonstrates how to sign up, sign in and sign out a user using email one-time passcode (OTP) in your native auth Android app.
 
@@ -294,4 +294,4 @@ Well, you have done everything that is required to successfully sign out a user 
 
 ## Next Steps
 
-Tutorial: Sign up user with username and user attributes
+[Tutorial: Sign up user with username and user attributes](tutorial-native-auth-android-sign-up-user-with-username-user-attributes.md)
