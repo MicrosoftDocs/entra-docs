@@ -50,7 +50,7 @@ If application ID *2565bd9d-da50-47d4-8b85-4c97f669dc36* is missing from your Mi
     Install-Module Microsoft.Graph -Scope CurrentUser
     ```
 
-1. Now recreate the service principal using the [New-AzureAdServicePrincipal][New-AzureAdServicePrincipal] cmdlet:
+1. Now recreate the service principal using the [New-MgServicePrincipal][/powershell/module/microsoft.graph.applications/new-mgserviceprincipal] cmdlet:
 
     ```powershell
     New-MgServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
@@ -108,4 +108,4 @@ If you still have issues, [open an Azure support request][azure-support] for add
 [azure-support]: /azure/active-directory/fundamentals/how-to-get-support
 
 <!-- EXTERNAL LINKS -->
-[New-AzureAdServicePrincipal]: /powershell/module/azuread/new-azureadserviceprincipal
+
