@@ -81,7 +81,7 @@ To specify that this app is a public client and can use native authentication, e
    1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
    1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for both scopes.
  
-    :::image type="content" source="media/native-auth/android/api-permissions.jpg" alt-text="Screenshot showing configured permission in Microsoft Entra admin center":::
+    :::image type="content" source="media/native-auth/android/api-permissions.jpg" alt-text="Screenshot showing configured permission in Microsoft Entra admin center" lightbox="media/native-auth/android/api-permissions.jpg":::
 
 ## Create a user flow 
  
@@ -144,8 +144,8 @@ To associate your user flow with your app, follow these steps.
 2. Open `app/src/main/res/raw/native_auth_sample_app_config.json` file.
 3. Find the placeholder:
  
-   1. `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
-   2. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+   - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
+   - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
    
    The application is now configured and ready to run.
  
@@ -162,15 +162,15 @@ To build and run your app, follow these steps:
  
 1. The app opens on the email and one-time passcode screen. 
 
-    :::image type="content" source="media/native-auth/android/android-email-otp.png" alt-text="Screenshot of user prompt to enter email in Android application.":::
+    :::image type="content" source="media/native-auth/android/android-email-otp.png" alt-text="Screenshot of user prompt to enter email in Android application." lightbox="media/native-auth/android/android-email-otp-expanded.png":::
  
 1. Enter a valid email address and select **Sign up**. The app launches the submit code screen. 
  
-    :::image type="content" source="media/native-auth/android/android-submit-code.png" alt-text="Screenshot of user prompt to enter one-time passcode (OTP) in Android application.":::
+    :::image type="content" source="media/native-auth/android/android-submit-code.png" alt-text="Screenshot of user prompt to enter one-time passcode (OTP) in Android application." lightbox="media/native-auth/android/android-submit-code-expanded.png":::
  
 1. You'll receive an email containing a one-time passcode. Enter the one-time passcode and select **Next**. If the sign-up was successful, you'll automatically be signed in.
 
-    :::image type="content" source="media/native-auth/android/android-sign-in-account-display.png" alt-text="Screenshot showing sign-in successfully completed in the Android application.":::
+    :::image type="content" source="media/native-auth/android/android-sign-in-account-display.png" alt-text="Screenshot showing sign-in successfully completed in the Android application." lightbox="media/native-auth/android/android-sign-in-account-display-expanded.png":::
 
 1. Select **Sign out** to clear the signed in account from the cache. After signing out, the application will allow a new user to sign up or sign in. 
  
