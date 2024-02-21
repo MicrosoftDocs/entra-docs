@@ -11,6 +11,6 @@ ms.date: 02/21/2024
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: gregkmsft
+ms.reviewer: gregkmsft, msgustavosa
 ---
 # Microsoft Entra multifactor authentication external method provider reference
