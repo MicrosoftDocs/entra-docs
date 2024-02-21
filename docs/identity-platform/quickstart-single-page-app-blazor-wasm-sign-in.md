@@ -20,7 +20,7 @@ This quickstart uses a sample Blazor WebAssembly (WASM) single-page app (SPA) ap
 ## Prerequisites
 
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Node.js](https://nodejs.org/en/download/)
+* [.NET SDK](https://dotnet.microsoft.com/download/dotnet)
 * [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Register the application and record identifiers
