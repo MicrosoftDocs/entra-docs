@@ -23,7 +23,6 @@ This article describes how to analyze Microsoft Entra activity logs with Microso
 
 - For license and role requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
 - [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role to consent to required permissions.
-- 
 
 To make requests to the Microsoft Graph API, you must first:
 
@@ -51,7 +50,7 @@ With all the prerequisites configured, you can run activity log queries in Micro
 
 ### Fine-tune your queries
 
-To search for specific activity log entries, use the $filter query parameter with one of the available properties. 
+To search for specific activity log entries, use the $filter and createdDateTime query parameters with one of the available properties. Some of the queries below use the `beta` endpoint. The `beta` endpoint is subject to change and isn't recommended for production use.
 
 - [Sign-in log properties](/graph/api/resources/signin#properties)
 - [Audit log properties](/graph/api/resources/directoryaudit#properties)
@@ -63,6 +62,24 @@ Try using the following queries:
 
 - To find sign-ins to a specific application:
   - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns?filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2021-01-14T17:43:26Z) and appId eq 'APP ID'`
+
+- For non-interactive sign-ins:
+  - GET `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2021-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'nonInteractiveUser')`
+
+- For service principal sign-ins: 
+  - GET `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2021-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'servicePrincipal')`
+
+- For managed identity sign-ins: 
+  - GET `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2021-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'managedIdentity')`
+
+- To get the authentication method of a user: 
+  - GET `https://graph.microsoft.com/beta/users/{userObjectId}/authentication/methods`
+
+- To see the user registration details report:
+  - GET `https://graph.microsoft.com/beta/reports/authenticationMethods/userRegistrationDetails`
+
+- For the registration details of specific user:
+  - GET `https://graph.microsoft.com/beta/reports/authenticationMethods/userRegistrationDetails/{userId}`
 
 ### Related APIs
 
