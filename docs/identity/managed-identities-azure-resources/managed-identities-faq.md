@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: conceptual
-ms.date: 02/20/2024
+ms.date: 02/21/2024
 ms.author: barclayn
 ---
 
@@ -145,7 +145,7 @@ Managed identity tokens are cached by the underlying Azure infrastructure for pe
 
 ### Are managed identities soft deleted? 
 
-Yes, Managed Identities are soft deleted on default for 30 days. You can view the soft deleted managed identity service principal, but you cannot restore or permanently delete it. 
+Yes, Managed Identities are soft deleted for 30 days. You can view the soft deleted managed identity service principal, but you cannot restore or permanently delete it.
 
 ### What happens to tokens after a managed identity is deleted?
 
