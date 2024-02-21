@@ -1,36 +1,38 @@
 ---
-title: Understand and solve Microsoft Entra application proxy CORS issues
-description: Provides an understanding of CORS in Microsoft Entra application proxy, and how to identify and solve CORS issues.
-
+title: Understand and solve Microsoft Entra application proxy cross-origin resource sharing (CORS) issues.
+description: Provides an understanding of cross-origin resource sharing (CORS) in Microsoft Entra application proxy. Learn how to identify and solve CORS issues.
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
-ms.date: 02/06/2024
+ms.date: 02/21/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
 # Understand and solve Microsoft Entra application proxy CORS issues
 
-[Cross-origin resource sharing (CORS)](https://www.w3.org/TR/cors/) can sometimes present challenges for the apps and APIs you publish through the Microsoft Entra application proxy. This article discusses Microsoft Entra application proxy CORS issues and solutions.
+[Cross-origin resource sharing (CORS)](https://www.w3.org/TR/cors/) can present challenges for the apps and APIs you publish through Microsoft Entra application proxy. This article discusses Microsoft Entra application proxy CORS issues and solutions.
 
-Browser security usually prevents a web page from making AJAX requests to another domain. This restriction is called the *same-origin policy*, and prevents a malicious site from reading sensitive data from another site. However, sometimes you might want to let other sites call your web API. CORS is a W3C standard that lets a server relax the same-origin policy and allow some cross-origin requests while rejecting others.
+> [!TIP]
+> Asynchronous JavaScript and eXtemsible Markup Language is known as (AJAX). AJAX contains an acronymn within an acronymn in that eXtensible Markup Language (XML) makes up the last `X` in AJAX. AJAX stands for Asynchronous JavaScript and XML and XML stands for eXtensible Markup Language.
+
+Browser security usually prevents a web page from making requests to another domain. This restriction is called the *same-origin policy*, and prevents a malicious site from reading sensitive data from another site. However, sometimes you might want to let other sites call your web API. CORS is a W3C standard that lets a server relax the same-origin policy and allow some cross-origin requests while rejecting others.
 
 ## Understand and identify CORS issues
 
 Two URLs have the same origin if they have identical schemes, hosts, and ports ([RFC 6454](https://tools.ietf.org/html/rfc6454)), such as:
 
--   http:\//contoso.com/foo.html
--   http:\//contoso.com/bar.html
+-   `http://contoso.com/foo.html`
+-   `http://contoso.com/bar.html`
 
-The following URLs have different origins than the previous two:
+These URLs have different origins than the previous two:
 
--   http:\//contoso.net - Different domain
--   http:\//contoso.com:9000/foo.html - Different port
--   https:\//contoso.com/foo.html - Different scheme
--   http:\//www.contoso.com/foo.html - Different subdomain
+-   `http://contoso.net` - Different domain
+-   `http://contoso.com:9000/foo.html` - Different port
+-   `https://contoso.com/foo.html` - Different scheme
+-   `http://www.contoso.com/foo.html` - Different subdomain
 
 Same-origin policy prevents apps from accessing resources from other origins unless they use the correct access control headers. If the CORS headers are absent or incorrect, cross-origin requests fail. 
 
