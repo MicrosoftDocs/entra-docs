@@ -142,14 +142,12 @@ Notes:
     ![Screenshot of Organization SAML Settings section.](./media/veracode-tutorial/saml.png "Administration")
 
     a.  For **Issuer**, paste the value of the **Microsoft Entra Identifier** that you've copied.
-    
-    b. For **IdP Server URL**, paste the value of the **Logout URL** that you've copied.
 
-    c. For **Assertion Signing Certificate**, select **Choose File** to upload your downloaded certificate.
+    b. For **Assertion Signing Certificate**, select **Choose File** to upload your downloaded certificate.
 
-    d. Note the values of the three URLs (**SAML Assertion URL**, **SAML Audience URL**, **Relay state URL**).
+    c. Note the values of the three URLs (**SAML Assertion URL**, **SAML Audience URL**, **Relay state URL**).
 
-    e. Click **Save**. 
+    d. Click **Save**. 
     
 1. Take the values of the **SAML Assertion URL**, **SAML Audience URL** and **Relay state URL** and update them in the Microsoft Entra settings for the Veracode integration (follow the table below for proper conversions) NOTE: **Relay State** is NOT optional.
 
