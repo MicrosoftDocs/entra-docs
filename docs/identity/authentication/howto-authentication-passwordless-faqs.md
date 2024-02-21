@@ -62,7 +62,7 @@ No, not at this time.
 
 ### Why I am getting "NotAllowedError" in the browser, when registering FIDO2 keys?
 
-You will receive "NotAllowedError" from fido2 key registration page. This typically happens when user is in private (Incognito) window or using remote desktop where FIDO2 Private key access is not possible.
+You will receive "NotAllowedError" from fido2 key registration page. This typically happens when an error occurs while Windows attempts a CTAP2 authenticatorMakeCredential operation against the security key. You will see more details in the Microsoft-Windows-WebAuthN/Operational event log. 
 
 ## Prerequisites
 
