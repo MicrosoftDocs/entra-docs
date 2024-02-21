@@ -10,7 +10,7 @@ ms.topic: quickstart
 ms.date: 02/04/2022
 ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro, mode-other, has-azure-ad-ps-ref
+ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ---
 # Quickstart: Grant permission to create unlimited app registrations
@@ -23,7 +23,7 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 
 - Microsoft Entra ID P1 or P2 license
 - Privileged Role Administrator or Global Administrator
-- AzureADPreview module when using PowerShell
+- Microsoft Graph PowerShell module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
@@ -81,7 +81,6 @@ There are two permissions available for granting the ability to create applicati
 Create a new role using the following PowerShell script:
 
 ```powershell
-
 # Basic role information
 $displayName = "Application Registration Creator"
 $description = "Can create an unlimited number of application registrations."
@@ -96,7 +95,7 @@ $allowedResourceAction =
 $rolePermissions = @{'allowedResourceActions'= $allowedResourceAction}
 
 # Create new custom admin role
-$customRole = New-AzureAdMSRoleDefinition -RolePermissions $rolePermissions -DisplayName $displayName -Description $description -TemplateId $templateId -IsEnabled $true
+$customRole = New-MgRoleManagementDirectoryRoleDefinition -DisplayName $displayName -Description $description -RolePermissions $rolePermissions -TemplateId $templateId -IsEnabled:$true
 ```
 
 ### Assign the role
@@ -106,13 +105,13 @@ Assign the role using the following PowerShell script:
 ```powershell
 # Get the user and role definition you want to link
 $user = Get-AzureADUser -Filter "userPrincipalName eq 'Adam@contoso.com'"
-$roleDefinition = Get-AzureADMSRoleDefinition -Filter "displayName eq 'Application Registration Creator'"
+$roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "displayName eq 'Application Registration Creator'"
 
 # Get resource scope for assignment
 $resourceScope = '/'
 
 # Create a scoped role assignment
-$roleAssignment = New-AzureADMSRoleAssignment -ResourceScope $resourceScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.objectId
+$roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId $resourceScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.Id
 ```
 
 ## Microsoft Graph API
