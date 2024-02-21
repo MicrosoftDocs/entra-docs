@@ -26,7 +26,7 @@ Application proxy supports the OAuth 2.0 Grant Flow, which is required for Table
 ## Publish your applications in Microsoft Entra
 To publish Tableau, you need to publish an application in the Microsoft Entra admin center.
 - For detailed instructions of steps 1-8, see [Publish applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md). 
-- Information about how to find Tableau values for the application proxy fields, see the Tableau documentation.  
+- Information about how to find Tableau values for the application proxy fields, see the Tableau documentation.
 
 **To publish your app**: 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
