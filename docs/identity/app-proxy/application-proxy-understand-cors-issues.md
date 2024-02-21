@@ -22,7 +22,7 @@ Browser security usually prevents a web page from making requests to another dom
 
 ## Understand and identify CORS issues
 
-Two URLs have the same origin if they have identical schemes, hosts, and ports ([RFC 6454](https://tools.ietf.org/html/rfc6454)), such as:
+Two URLs have the same origin if they have identical schemes, hosts, and ports ([Request For Comments (RFC) 6454](https://tools.ietf.org/html/rfc6454)), such as:
 
 -   `http://contoso.com/foo.html`
 -   `http://contoso.com/bar.html`
@@ -42,7 +42,7 @@ You can identify CORS issues by using browser debug tools:
 1. Press **F12** to bring up the debug console.
 1. Try to reproduce the transaction, and review the console message. A CORS violation produces a console error about origin.
 
-In the following screenshot, selecting the **Try It** button caused a CORS error message that https:\//corswebclient-contoso.msappproxy.net wasn't found in the Access-Control-Allow-Origin header.
+In the following screenshot, selecting the **Try It** button caused a CORS error message that `https://corswebclient-contoso.msappproxy.net` wasn't found in the `Access-Control-Allow-Origin` header.
 
 ![CORS issue](./media/application-proxy-understand-cors-issues/image3.png)
 
