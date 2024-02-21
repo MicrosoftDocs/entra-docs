@@ -178,11 +178,11 @@ To build and run your app, follow these steps:
  
 The sample app supports the following flows: 
  
-1. _Email + one-time passcode_: Follow this flow to sign in or sign up with an email and a one-time passcode. 
-1. _Email + password_: Follow this flow to sign in or sign up with an email, password, and one-time passcode. 
-1. _Email + password sign up with user attributes_: Follow this flow to sign up with email, password, and user attributes. 
-1. _Password reset_: Follow this flow to reset the password. 
-1. _Fallback to web browser_: Follow this flow to use the browser to sign in or sign up. 
+- _Email + one-time passcode_: Follow this flow to sign in or sign up with an email and a one-time passcode. 
+- _Email + password_: Follow this flow to sign in or sign up with an email, password, and one-time passcode. 
+- _Email + password sign up with user attributes_: Follow this flow to sign up with email, password, and user attributes. 
+- _Password reset_: Follow this flow to reset the password. 
+- _Fallback to web browser_: Follow this flow to use the browser to sign in or sign up. 
  
     > [!NOTE] 
     > In the [Create a user flow](#create-a-user-flow) section, you created a user flow where you chose **Email one-time passcode** under **Identity providers > Email Accounts**. For flows 2 through 4, you require a user flow that uses **Email with password** under **Identity providers > Email Accounts**.

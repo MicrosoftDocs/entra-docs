@@ -141,9 +141,9 @@ To sign in user using **Email one-time-passcode** you need to:
 
 1. Create your user interface that includes:
 
-   1. A form to submit an Email.
-   1. A form to submit one-time passcode:
-   1. A page to display the account details:
+   - A form to submit an Email.
+   - A form to submit one-time passcode:
+   - A page to display the account details:
 
 1. To sign in the user, we are going to use the library's `signIn(username)` method, which is going to return a result that can be interpreted as an `actionResult`. Add a button to the application that calls the following code snippet when selected:
 

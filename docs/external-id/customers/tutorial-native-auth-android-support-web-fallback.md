@@ -1,6 +1,6 @@
 ---
-title: Support web fallback
-description: Learn how to implement support web fallback.
+title: Support web fallback in Android app
+description: Learn how to implement support web fallback in Android app.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -15,7 +15,7 @@ ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to support web fallback.
 ---
 
-# Tutorial: Support web fallback
+# Tutorial: Support web fallback in Android app
  
 This tutorial demonstrates how `isBrowserRequired()` can happen and how it can be resolved. The utility method `isBrowserRequired()` supports fallback mechanism for various scenarios where native authentication isn't sufficient to complete the flow in functional and safe manner.
  

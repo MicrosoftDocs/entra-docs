@@ -15,7 +15,7 @@ ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to sign in user after sign up.
 ---
 
-# Tutorial: Sign in user after sign-up 
+# Tutorial: Sign in user after sign-up in Android
  
 This tutorial demonstrates how to sign in user after sign-up. 
  
