@@ -49,9 +49,9 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 1. Open *wwwroot/appsettings.json* and update the following values with the information recorded earlier in the admin center.
 
     :::code language="JavaScript" source="~/../ms-identity-docs-code-dotnet/spa-blazor-wasm/wwwroot/appsettings.json":::
-
-    * `clientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the **Application (client) ID** value that was recorded earlier.
-    * `authority` - The authority is a URL that indicates a directory that MSAL can request tokens from. Replace *Enter_the_Tenant_Info_Here* with the **Directory (tenant) ID** value that was recorded earlier.
+    
+    * `Authority` - The authority is a URL that indicates a directory that MSAL can request tokens from. Replace *Enter_the_Tenant_Info_Here* with the **Directory (tenant) ID** value that was recorded earlier.
+    * `ClientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the **Application (client) ID** value that was recorded earlier.
 
 ## Run the application and sign in
 
