@@ -42,7 +42,7 @@ Follow the same steps as for Application #1, with the following exceptions:
 
 **Step #5**: The Internal URL should now be the Qlik Sense URL with the authentication port used by the application. The default is **4244** for HTTPS, and **4248** for HTTP for Qlik Sense releases before April 2018. The default for Qlik Sense releases after April 2018 is **443** for HTTPS and **80** for HTTP. For example, `https//demo.qlik.com:4244`.
 
-**Step #10:** Don’t set up single sign-on. Leave the **single sign-on disabled** option disabled.
+**Step #10:** Don’t set up single sign-on. Leave the **single sign-on** option disabled.
  
 ## Testing 
 Your application is now ready to test. Access the external URL you used to publish Qlik Sense in Application #1, and sign in as a user assigned to both applications.  
