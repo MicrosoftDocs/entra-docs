@@ -555,7 +555,7 @@ If you configured the [Microsoft identity provider](#step-5-protect-your-azure-f
 
 ## Step 6: Test the application
 
-To test your custom claim provider, follow these steps:
+To test your custom claims provider, follow these steps:
 
 # [Workforce tenant](#tab/workforce-tenant)
 
