@@ -48,7 +48,7 @@ In the following screenshot, selecting the **Try It** button caused a CORS error
 
 ## CORS challenges with application proxy
 
-The following example shows a typical Microsoft Entra application proxy CORS scenario. The internal server hosts a **CORSWebService** web API controller, and a **CORSWebClient** that calls **CORSWebService**. There's an AJAX request from **CORSWebClient** to **CORSWebService**.
+The following example shows a typical Microsoft Entra application proxy CORS scenario. The internal server hosts a **CORSWebService** web API controller, and a **CORSWebClient** that calls **CORSWebService**. There's an Asynchronous JavaScript and XML (AJAX) request from **CORSWebClient** to **CORSWebService**.
 
 ![On-premises same-origin request](./media/application-proxy-understand-cors-issues/image1.png)
 
@@ -68,7 +68,7 @@ Use a Microsoft Entra application proxy [custom domain](./how-to-configure-custo
 
 Publish the parent directory of both apps. This solution works especially well if you have only two apps on the web server. Instead of publishing each app separately, you can publish the common parent directory, which results in the same origin.
 
-The examples show the Microsoft Entra application proxy pages for the `CORSWebClient` app.  When the **Internal URL** is set to *contoso.com/CORSWebClient*, the app can't make successful requests to the *contoso.com/CORSWebService* directory, because they're cross-origin. 
+The examples show the Microsoft Entra application proxy pages for the `CORSWebClient` app. When the **Internal URL** is set to *contoso.com/CORSWebClient*, the app can't make successful requests to the *contoso.com/CORSWebService* directory, because they're cross-origin. 
 
 ![Publish app individually](./media/application-proxy-understand-cors-issues/image4.png)
 
@@ -83,11 +83,11 @@ The resulting app URLs effectively resolve the CORS issue:
 
 ### Option 3: Update HTTP headers
 
-Add a custom HTTP response header on the web service to match the origin request. For websites running in Internet Information Services (IIS), use IIS Manager to modify the header:
+Tomatch the origin request, add a custom HTTP response header on the web service. Websites running in Internet Information Services (IIS), use IIS Manager to modify the header.
 
 ![Add custom response header in IIS Manager](./media/application-proxy-understand-cors-issues/image6.png)
 
-This modification doesn't require any code changes. You can verify it in the Fiddler traces:
+The modification doesn't require any code changes. You can verify it in the Fiddler trace.
 
 ```output
 **Post the Header Addition**\
@@ -110,7 +110,7 @@ You can change your app to support CORS by adding the Access-Control-Allow-Origi
 
 ### Option 5: Extend the lifetime of the access token
 
-Some CORS issues can't be resolved, such as when your app redirects to *login.microsoftonline.com* to authenticate, and the access token expires. The CORS call then fails. A workaround for this scenario is to extend the lifetime of the access token, to prevent it from expiring during a user’s session. For more information about how to do this, see [Configurable token lifetimes in Microsoft Entra ID](~/identity-platform/configurable-token-lifetimes.md).
+Some CORS issues can't be resolved, such as when your app redirects to *login.microsoftonline.com* to authenticate, and the access token expires. The CORS call then fails. A workaround for this scenario is to extend the lifetime of the access token, to prevent it from expiring during a user’s session. For more information, see [Configurable token lifetimes in Microsoft Entra ID](~/identity-platform/configurable-token-lifetimes.md).
 
 ## See also
 - [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md) 
