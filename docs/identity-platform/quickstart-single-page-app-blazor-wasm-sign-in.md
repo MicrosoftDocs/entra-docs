@@ -19,8 +19,8 @@ This quickstart uses a sample Blazor WebAssembly (WASM) single-page app (SPA) ap
 
 ## Prerequisites
 
-* A single-page application (SPA) registered in the [Microsoft Entra admin center](https://entra.microsoft.com). For more information, see [Register a single-page application in the Microsoft identity platform](registration-single-page-app.md).
-* [.NET SDK](https://dotnet.microsoft.com/download)
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* [Node.js](https://nodejs.org/en/download/)
 * [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Register the application and record identifiers
