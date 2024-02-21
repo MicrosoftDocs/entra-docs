@@ -388,4 +388,3 @@ To test your custom claim provider, follow these steps:
 ## See also
 
 [Monitoring Azure Functions with Azure Monitor Logs](/azure/azure-functions/functions-monitor-log-analytics?tabs=csharp)
-
