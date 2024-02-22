@@ -25,7 +25,7 @@ There are some extra concerns you need to consider when you started to manage us
 <a name='sync-with-existing-users-in-azure-ad'></a>
 
 ## Sync with existing users in Microsoft Entra ID
-When you start synchronizing with Microsoft Entra Connect, the Microsoft Entra ID servide API checks every new incoming object and tries to find an existing object to match. There are three attributes used for this process: **userPrincipalName**, **proxyAddresses**, and **sourceAnchor**/**immutableID**. A match on **userPrincipalName** or **proxyAddresses** is known as a "**soft-match**." A match on **sourceAnchor** is known as "**hard=match**." For the **proxyAddresses** attribute only the value with **SMTP:**, that is the primary email address, is used for the evaluation.
+When you start synchronizing with Microsoft Entra Connect, the Microsoft Entra ID service API checks every new incoming object and tries to find an existing object to match. There are three attributes used for this process: **userPrincipalName**, **proxyAddresses**, and **sourceAnchor**/**immutableID**. A match on **userPrincipalName** or **proxyAddresses** is known as a "**soft-match**." A match on **sourceAnchor** is known as "**hard=match**." For the **proxyAddresses** attribute only the value with **SMTP:**, that is the primary email address, is used for the evaluation.
 
 The match is only evaluated for new objects coming from Connect. If you change an existing object so it matches any of these attributes, then you see an error instead.
 
