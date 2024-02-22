@@ -28,11 +28,11 @@ In this tutorial, you learn how to:
  
 - Reference to SDK doc 
 - [Sign in users in a sample native Android mobile application](how-to-run-sample-android-app.md) 
-- [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-auth-android-sign-up-sign-in-sign-out.md) 
+- [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-up-sign-in-sign-out.md) 
  
 ## Sign in after sign-up 
  
-This is an advanced version of the sign in flows [earlier described](tutorial-native-auth-android-sign-in-user-with-username-password.md), which has the added benefit of automatically signing in after successfully signing up. 
+This is an advanced version of the sign in flows [earlier described](tutorial-native-authentication-android-sign-in-user-with-username-password.md), which has the added benefit of automatically signing in after successfully signing up. 
 
 The following wire frame shows a high-level view of the sign in after sign-up  flow:
 
@@ -102,4 +102,4 @@ private fun displayAccount(accountState: AccountState) {
  
 ## Next steps 
  
-[Tutorial: Reset password of a user](tutorial-native-auth-android-self-service-password-reset.md) 
+[Tutorial: Reset password of a user](tutorial-native-authentication-android-self-service-password-reset.md) 

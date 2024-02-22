@@ -179,4 +179,4 @@ Don't forget to add the import statements, Android Studio does that for you auto
  
 ## Next steps 
  
-- [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-auth-android-sign-up-sign-in-sign-out.md)
+- [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-up-sign-in-sign-out.md)

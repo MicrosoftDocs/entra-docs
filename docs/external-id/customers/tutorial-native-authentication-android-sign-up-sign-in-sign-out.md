@@ -27,7 +27,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- [Tutorial: Prepare your Android app for native authentication](tutorial-native-auth-prepare-android-app.md)
+- [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md)
 
 ## Sign up a user
 
@@ -294,4 +294,4 @@ Well, you have done everything that is required to successfully sign out a user 
 
 ## Next steps
 
-[Tutorial: Sign up user with username and user attributes](tutorial-native-auth-android-sign-up-user-with-username-user-attributes.md).
+[Tutorial: Sign up user with username and user attributes](tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md).

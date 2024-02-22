@@ -28,7 +28,7 @@ In this tutorial, you learn how to:
  
 - [Sign in users in a sample native Android mobile application](how-to-run-sample-android-app.md).
 - [Enable self-service password reset](how-to-enable-password-reset-customers.md).
-- [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-auth-android-sign-up-sign-in-sign-out.md).
+- [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-up-sign-in-sign-out.md).
  
 ## Add self-service password reset flow 
  
@@ -286,5 +286,5 @@ private fun handleSubmitPasswordError(error: ResetPasswordSubmitPasswordError) {
  
 ## Next steps 
  
-[Tutorial: Support web fallback in Android app](tutorial-native-auth-android-support-web-fallback.md)
+[Tutorial: Support web fallback in Android app](tutorial-native-authentication-android-support-web-fallback.md)
 
