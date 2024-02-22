@@ -41,7 +41,7 @@ To add self-service password reset flow to your Android application, you need a 
 
 The following wire frame shows a high-level view of the self-service password reset flow:
 
-:::image type="content" source="media/native-auth/android/SSPR_flow_image.png" alt-text="A mock-up image illustrates Self-service password reset flow.":::
+:::image type="content" source="media/native-authentication/android/SSPR-flow-image.png" alt-text="A mock-up image illustrates Self-service password reset flow.":::
 
  
 To initialize the native authentication, import the Microsoft Authentication Library (MSAL) configuration in the `onCreateView` lifecycle as demonstrated in the following code: 
@@ -55,7 +55,7 @@ authClient = PublicClientApplication.createNativeAuthPublicClientApplication(
  
 1. When a user forgets their password, they need a form to input their email. Here's sample user interface: 
     
-    :::image type="content" source="media/native-auth/android/email_text_field.png" alt-text="Screenshot showing email input form.":::
+    :::image type="content" source="media/native-authentication/android/email-text-field.png" alt-text="Screenshot showing email input form.":::
 
     To handle the request when the user selects the **Forget Password** button, use the following code snippet: 
  
@@ -99,7 +99,7 @@ authClient = PublicClientApplication.createNativeAuthPublicClientApplication(
  
 2. The use receives a one-time passcode in their email. The following image shows how to capture the one-time passcode: 
  
-    :::image type="content" source="media/native-auth/android/code_text_field.png" alt-text="Screenshot showing OTP input form.":::
+    :::image type="content" source="media/native-authentication/android/code-text-field.png" alt-text="Screenshot showing OTP input form.":::
  
    To process the code submitted by the user, use the following code snippet: 
  
@@ -162,7 +162,7 @@ authClient = PublicClientApplication.createNativeAuthPublicClientApplication(
  
 3. After verifying the user's email, you need to have the user create a new password. 
  
-    :::image type="content" source="media/native-auth/android/password_text_field.png" alt-text="Screenshot showing password input form.":::
+    :::image type="content" source="media/native-authentication/android/password-text-field.png" alt-text="Screenshot showing password input form.":::
  
    To create new user password, use the following code snippet: 
  

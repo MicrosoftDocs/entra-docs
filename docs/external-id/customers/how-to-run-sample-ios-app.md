@@ -12,7 +12,7 @@ ms.subservice: ciam
 ms.topic: how-to
 ms.date: 02/20/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to learn about how to configure native auth iOS sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID for customers.
+#Customer intent: As a dev, devops, I want to learn about how to configure native authentication iOS sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID for customers.
 ---
 
 # How to run the iOS sample app
@@ -81,7 +81,7 @@ To specify that this app is a public client and can use native authentication, e
    1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
    1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for both scopes.
 
-    :::image type="content" source="media/native-auth/ios/api-permissions.jpg" alt-text="Screenshot showing configured permission in Microsoft Entra admin center" lightbox="media/native-auth/ios/api-permissions.jpg":::
+    :::image type="content" source="media/native-authentication/ios/api-permissions.jpg" alt-text="Screenshot showing configured permission in Microsoft Entra admin center" lightbox="media/native-authentication/ios/api-permissions.jpg":::
 
 ## Create a user flow
 
@@ -157,11 +157,11 @@ Although many applications can be associated with your user flow, a single appli
 
 To build and run your code, select **Run** from the **Product** menu in Xcode. After a successful build, Xcode will launch the sample app in the Simulator.
 
-:::image type="content" source="media/native-auth/ios/native-auth-sign-in-sign-up.png" alt-text="Screenshot of user prompt to enter email in iOS app." lightbox="media/native-auth/ios/native-auth-sign-in-sign-up-expanded.png":::
+:::image type="content" source="media/native-authentication/ios/native-auth-sign-in-sign-up.png" alt-text="Screenshot of user prompt to enter email in iOS app." lightbox="media/native-authentication/ios/native-auth-sign-in-sign-up-expanded.png":::
 
 This guide tests **Email one-time-passcode** usage. Enter a valid email address, select **Sign Up**, and launch the submit code screen:
 
-:::image type="content" source="media/native-auth/ios/enter-one-time-pass-code.png" alt-text="Screenshot of user prompt to enter one-time passcode (OTP) in iOS app." lightbox="media/native-auth/ios/enter-one-time-pass-code-expanded.png":::
+:::image type="content" source="media/native-authentication/ios/enter-one-time-pass-code.png" alt-text="Screenshot of user prompt to enter one-time passcode (OTP) in iOS app." lightbox="media/native-authentication/ios/enter-one-time-pass-code-expanded.png":::
 
 After you enter your email address on the previous screen, the application will send a verification code to it. Once you submit the received code, the application takes you back to the previous screen and automatically sign you in. 
 

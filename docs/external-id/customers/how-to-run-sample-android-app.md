@@ -12,7 +12,7 @@ ms.subservice: ciam
 ms.topic: how-to
 ms.date: 02/12/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to learn about how to configure native auth Android Kotlin sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID for customers.
+#Customer intent: As a dev, devops, I want to learn about how to configure native authentication Android Kotlin sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID for customers.
 ---
 
 # How to run the Android sample app
@@ -81,7 +81,7 @@ To specify that this app is a public client and can use native authentication, e
    1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
    1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for both scopes.
  
-    :::image type="content" source="media/native-auth/android/api-permissions.jpg" alt-text="Screenshot showing configured permission in Microsoft Entra admin center" lightbox="media/native-auth/android/api-permissions.jpg":::
+    :::image type="content" source="media/native-authentication/android/api-permissions.jpg" alt-text="Screenshot showing configured permission in Microsoft Entra admin center" lightbox="media/native-authentication/android/api-permissions.jpg":::
 
 ## Create a user flow 
  
@@ -162,15 +162,15 @@ To build and run your app, follow these steps:
  
 1. The app opens on the email and one-time passcode screen. 
 
-    :::image type="content" source="media/native-auth/android/android-email-otp.png" alt-text="Screenshot of user prompt to enter email in Android application." lightbox="media/native-auth/android/android-email-otp-expanded.png":::
+    :::image type="content" source="media/native-authentication/android/android-email-otp.png" alt-text="Screenshot of user prompt to enter email in Android application." lightbox="media/native-authentication/android/android-email-otp-expanded.png":::
  
 1. Enter a valid email address and select **Sign up**. The app launches the submit code screen. 
  
-    :::image type="content" source="media/native-auth/android/android-submit-code.png" alt-text="Screenshot of user prompt to enter one-time passcode (OTP) in Android application." lightbox="media/native-auth/android/android-submit-code-expanded.png":::
+    :::image type="content" source="media/native-authentication/android/android-submit-code.png" alt-text="Screenshot of user prompt to enter one-time passcode (OTP) in Android application." lightbox="media/native-authentication/android/android-submit-code-expanded.png":::
  
 1. You'll receive an email containing a one-time passcode. Enter the one-time passcode and select **Next**. If the sign-up was successful, you'll automatically be signed in.
 
-    :::image type="content" source="media/native-auth/android/android-sign-in-account-display.png" alt-text="Screenshot showing sign-in successfully completed in the Android application." lightbox="media/native-auth/android/android-sign-in-account-display-expanded.png":::
+    :::image type="content" source="media/native-authentication/android/android-sign-in-account-display.png" alt-text="Screenshot showing sign-in successfully completed in the Android application." lightbox="media/native-authentication/android/android-sign-in-account-display-expanded.png":::
 
 1. Select **Sign out** to clear the signed in account from the cache. After signing out, the application will allow a new user to sign up or sign in. 
  
@@ -180,7 +180,7 @@ The sample app supports the following flows:
  
 - _Email + one-time passcode_: Follow this flow to sign in or sign up with an email and a one-time passcode. 
 - _Email + password_: Follow this flow to sign in or sign up with an email, password, and one-time passcode. 
-- _Email + password sign up with user attributes_: Follow this flow to sign up with email, password, and user attributes. 
+- _Email + password sign-up with user attributes_: Follow this flow to sign up with email, password, and user attributes. 
 - _Password reset_: Follow this flow to reset the password. 
 - _Fallback to web browser_: Follow this flow to use the browser to sign in or sign up. 
  
