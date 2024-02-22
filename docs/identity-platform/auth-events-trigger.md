@@ -234,17 +234,22 @@ So far we've set up the project to install the NuGet packages and added soem sta
     
 
 1. Wait a few moments for your function app to be deployed. Once the window closes, select **Finish** on the **Publish** screen.
-1. You'll still need to wait ~5 minutes for your function app to be deployed.
+1. You'll need to wait 5-10 minutes for your function app to be deployed and show up in the Azure portal.
 
 # [Visual Studio Code](#tab/visual-studio-code)
 
-> [!NOTE]
->
-> The steps required for this section are not yet available.
+1. Select the **Azure** extension icon. In **Resources**, select the **+** icon to **Create a resource**.
+1. Select **Create Function App in Azure**. Use the following settings for setting up your function app.
+1. Give the function app a name, such as *AuthEventsTriggerNuGet*, and press **Enter**.
+1. Select the **.NET 6 (LTS) In-Process** runtime stack.
+1. Select a location for the function app, such as *East US*.
+1. You'll need to wait 5-10 minutes for your function app to be deployed and show up in the Azure portal.
 
 ---
 
-## Step 2: Add environment variables <!--So this is workforce tenant only, can we add a note saying that CIAM is expected shortly-->
+## Step 2: Add environment variables 
+
+<!--So this is workforce tenant only, can we add a note saying that CIAM is expected shortly. Can we specify the EasyAuth here?-->
 
 1. Sign in to the [Azure portal](https://portal.azure.com/) with your administrator account.
 1. Search for and select **Function App** to navigate to the function app you just deployed. You may need to refresh the page to see the new function app.
@@ -260,9 +265,9 @@ So far we've set up the project to install the NuGet packages and added soem sta
 1. Select **Custom authentication extensions**, and then select **Create a custom authentication extension**.
 1. In **Basics**, select the **tokenIssuanceStart** event and select **Next**.
 1. In **Endpoint Configuration**, fill in the following properties:
-    - **Name** - A name for your custom authentication extension. For example, *NuGet Token issuance event*.
-    - **Target Url** - The `{Function_Url}` of your Azure Function URL from [Step 1: Create an Azure Function app](#step-1-create-an-azure-function-app). 
-    - **Description** - A description for your custom authentication extensions.
+    - **Name**: A name for your custom authentication extension. For example, *NuGet Token issuance event*.
+    - **Target Url**: The `{Function_Url}` of your Azure Function URL from [Step 1: Create an Azure Function app](#step-1-create-an-azure-function-app). 
+    - **Description**: A description for your custom authentication extensions.
 1. Select **Next**.
 1. In **API Authentication**, select the **Create new app registration** option to create an app registration that represents your *function app*.  
 1. Give the app a name, for example **Azure Functions NuGet Authentication events API**.
@@ -352,7 +357,7 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 1. Select **Workforce** as the tenant type.
 <!--This next step is different -->
 1. Under App registration select **App registration type** <!-- Why not "Pick an existing app registration in this directory"?-->. Enter the app ID of the custom authentication extension you created earlier. 
-1. Enter the following issuer URL, `https://login.microsoftonline.com/{tenantId}/v2.0/`, where `{tenantId}` is the tenant ID of your workforce tenant. <!--Why was this not entered? This is a bug-->
+1. Enter the following issuer URL, `https://login.microsoftonline.com/{tenantId}/v2.0`, where `{tenantId}` is the tenant ID of your workforce tenant. <!--Why was this not entered? This is a bug-->
 <!-- 
 EasyAuth setup, why then do the env variables not matter?
 -->
