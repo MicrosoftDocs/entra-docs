@@ -37,9 +37,9 @@ To add an on-premises application to Microsoft Entra ID, you need:
 
 ### Windows server
 
-To use application proxy, you need a Windows server running Windows Server 2012 R2 or later. You install the application proxy connector on the server. This connector server needs to connect to the application proxy services in Azure, and the on-premises applications that you plan to publish.
+To use application proxy, you need a Windows server running Windows Server 2012 R2 or later. You install the application proxy connector on the server. This connector server needs to connect to the application proxy services in Microsoft Entra ID, and the on-premises applications that you plan to publish.
 
-For high availability in your production environment, we recommend having more than one Windows server. For this tutorial, one Windows server is sufficient.
+For high availability in your production environment, use more than one Windows server. For this tutorial, one Windows server is sufficient.
 
 > [!IMPORTANT]
 > **.NET Framework**
@@ -50,7 +50,7 @@ For high availability in your production environment, we recommend having more t
 > 
 > **HTTP 2.0**
 >
->  If you're installing the connector on Windows Server 2019 or later, you must disable HTTP2 protocol support in the WinHttp component for Kerberos Constrained Delegation to properly work. This is disabled by default in earlier versions of supported operating systems. Adding the following registry key and restarting the server disables it on Windows Server 2019. Note that this is a machine-wide registry key.
+>  If you're installing the connector on *Windows Server 2019* or later, you must disable `HTTP2` protocol support in the `WinHttp` component for *Kerberos Constrained Delegation* to properly work. This is disabled by default in earlier versions of supported operating systems. Adding the following registry key and restarting the server disables it on Windows Server 2019. Note that this is a machine-wide registry key.
 >
 > ```
 > Windows Registry Editor Version 5.00
