@@ -57,7 +57,7 @@ As you plan the governance of external access to your content, consider content,
 
 ### High, Medium, or Low Business Impact
 
-To define High, Medium, or Low Business Impact (high business impact (HBI), MBI, LBI) for data, sites, and groups, consider the effect on your organization if the wrong content types are shared.
+To define high business impact (HBI), medium business impact (MBI), or low business impact (LBI) for data, sites, and groups, consider the effect on your organization if the wrong content types are shared.
 
 - Credit card, passport, national/regional ID numbers
   - [Apply a sensitivity label to content automatically](/purview/apply-sensitivity-label-automatically?preserve-view=true&view=o365-worldwide)
