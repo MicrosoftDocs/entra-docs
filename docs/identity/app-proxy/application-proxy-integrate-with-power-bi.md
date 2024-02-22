@@ -1,7 +1,6 @@
 ---
 title: Enable remote access to Power BI with Microsoft Entra application proxy
 description: Covers the basics about how to integrate an on-premises Power BI with Microsoft Entra application proxy.
-
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
@@ -19,11 +18,9 @@ This article discusses how to use Microsoft Entra application proxy to enable th
 
 ## Prerequisites
 
-This article assumes you've already deployed Report Services and [enabled application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
-
-- Enabling application proxy requires installing a connector on a Windows server and completing the [prerequisites](~/identity/app-proxy/application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) so that the connector can communicate with Microsoft Entra services.
-- When publishing Power BI, we recommended you use the same internal and external domains. To learn more about custom domains, see [Working with custom domains in application proxy](./how-to-configure-custom-domain.md).
-- This integration is available for the **Power BI Mobile iOS and Android** application.
+- Deploy Report Services in your environment.
+- Enable [Microsoft Entra application proxy](application-proxy-add-on-premises-application.md).
+- It is recommended to use the same internal and external domains for Power BI. To learn more about custom domains, see [Working with custom domains in application proxy](how-to-configure-custom-domain.md).
 
 ## Step 1: Configure Kerberos Constrained Delegation (KCD)
 
