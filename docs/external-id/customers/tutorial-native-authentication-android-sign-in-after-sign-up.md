@@ -36,7 +36,7 @@ This is an advanced version of the sign in flows [earlier described](tutorial-na
 
 The following wire frame shows a high-level view of the sign in after sign-up  flow:
 
-:::image type="content" source="media/native-authentication/android/android-sign-in-after-sign-up-flow.png" alt-text="Screenshot that illustrates how to sign in user after sign up":::
+:::image type="content" source="media/native-authentication/android/android-sign-in-after-sign-up-flow.png" alt-text="Screenshot that illustrates how to sign in user after sign up.":::
  
 The `SignUpResult.Complete` returns `SignInContinuationState` object. And `SignInContinuationState` provides access to `signIn()` method. 
  
