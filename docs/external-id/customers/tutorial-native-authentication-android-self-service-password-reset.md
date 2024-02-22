@@ -41,7 +41,7 @@ To add self-service password reset flow to your Android application, you need a 
 
 The following wire frame shows a high-level view of the self-service password reset flow:
 
-:::image type="content" source="media/native-authentication/android/SSPR-flow-image.png" alt-text="A mock-up image illustrates Self-service password reset flow.":::
+:::image type="content" source="media/native-authentication/android/SSPR-flow-image.png" alt-text="Screenshot that illustrates Self-service password reset flow.":::
 
  
 To initialize the native authentication, import the Microsoft Authentication Library (MSAL) configuration in the `onCreateView` lifecycle as demonstrated in the following code: 

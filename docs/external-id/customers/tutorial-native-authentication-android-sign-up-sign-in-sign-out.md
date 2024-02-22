@@ -31,7 +31,7 @@ In this tutorial, you learn how to:
 
 ## Sign up a user
 
-To sign up a user using the **Email one-time passcode** flow, capture the email and send an email containing a one-time passcode for the user to verify their email. When the user enters a valid one-time passcode, the app signs them up and display a toast message to notify the user about the operation.
+To sign up a user using the **Email one-time passcode** flow, capture the email and send an email containing a one-time passcode for the user to verify their email. When the user enters a valid one-time passcode, the app signs them up and displays a toast message to notify the user about the operation.
 
 To sign up user using **Email one-time-passcode**, you need to:
 
@@ -62,12 +62,12 @@ To sign up user using **Email one-time-passcode**, you need to:
     > [!NOTE]
     > You should add user inputs to your app to collect user email and one time passcode.
 
-   In the library's `signUp(username)` method, we pass in the email address that user supplied us in the email submit form. In most common scenario, the `actionResult` is of type `SignUpResult.CodeRequired`, which indicates that the API expects a code to be sent, in this case to verify the email address. The `SignUpResult.CodeRequired` contains a new state reference, which we can retrieve through `actionResult.nextState`. This new state is of type `SignUpCodeRequiredState`, which gives us access to two new method:
+   In the library's `signUp(username)` method, we pass in the email address that user supplied us in the email submit form. In most common scenario, the `actionResult` is of type `SignUpResult.CodeRequired`, which indicates that the API expects a code to be sent, in this case to verify the email address. The `SignUpResult.CodeRequired` contains a new state reference, which we can retrieve through `actionResult.nextState`. This new state is of type `SignUpCodeRequiredState`, which gives us access to two new methods:
 
    - `submitCode()` is used to submit the code that user supplies in the form to submit one-time passcode.
    - `resendCode()` is used to resend the one-time passcode if the user doesn't receive the code.
 
-### Handle errors during sign up
+### Handle errors during sign-up
 
 During sign-up, not all actions succeed. For instance, the user might attempt to sign up with an already used email address or submit an invalid code.
 
