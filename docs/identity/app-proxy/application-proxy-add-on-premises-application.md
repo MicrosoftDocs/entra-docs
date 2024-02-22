@@ -37,9 +37,9 @@ To add an on-premises application to Microsoft Entra ID, you need:
 
 ### Windows server
 
-To use application proxy, you need a Windows server running Windows Server 2012 R2 or later. You install the application proxy connector on the server. This connector server needs to connect to the application proxy services in Microsoft Entra ID, and the on-premises applications that you plan to publish.
+Application proxy requires Windows Server 2012 R2 or later. You install the application proxy connector on the server. The connector server communicates with the application proxy services in Microsoft Entra ID, and the on-premises applications that you plan to publish.
 
-For high availability in your production environment, use more than one Windows server. For this tutorial, one Windows server is sufficient.
+Use more than one Windows server for high availability in your production environment. One Windows server is sufficient for testing.
 
 > [!IMPORTANT]
 > **.NET Framework**
@@ -102,10 +102,10 @@ To enable TLS 1.2:
 
 ## Prepare your on-premises environment
 
-Start by enabling communication to Azure data centers to prepare your environment for Microsoft Entra application proxy. If there's a firewall in the path, make sure it's open. An open firewall allows the connector to make HTTPS (TCP) requests to the application proxy.
+Enable communication to Microsoft data centers to prepare your environment for Microsoft Entra application proxy. The connector must make HTTPS (TCP) requests to application proxy. A common issue occurs when a firewall is blocking network traffic.
 
 > [!IMPORTANT]
-> If you're installing the connector for Azure Government cloud follow the [prerequisites](~/identity/hybrid/connect/reference-connect-government-cloud.md#allow-access-to-urls) and [installation steps](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud). This requires enabling access to a different set of URLs and an additional parameter to run the installation.
+> If you're installing the connector for Azure Government cloud follow the [prerequisites](~/identity/hybrid/connect/reference-connect-government-cloud.md#allow-access-to-urls) and [installation steps](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud). Azure Government cloud requires access to a different set of URLs and an additional parameter to run the installation.
 
 ### Open ports
 
@@ -119,7 +119,7 @@ Open the following ports to **outbound** traffic.
 If your firewall enforces traffic according to originating users, also open ports 80 and 443 for traffic from Windows services that run as a Network Service.
 
 > [!NOTE]
-> Other port errors can occur when there's a networking error on your system. Make sure that it's possible to connect from a browser to a public website and that the ports are open as specified in [Application proxy prerequisites](application-proxy-add-on-premises-application.md#prerequisites). For more information about troubleshooting issues related to connector errors, see [Troubleshoot application proxy problems and error messages](application-proxy-troubleshoot.md#connector-errors).
+> Other port errors can occur when there's a networking error on your system. Make sure that it's possible to connect from a browser to a public website and that the required ports are open. For more information about troubleshooting issues related to connector errors, see [Troubleshoot application proxy problems and error messages](application-proxy-troubleshoot.md#connector-errors).
 
 ### Allow access to URLs
 
@@ -127,17 +127,15 @@ Allow access to the following URLs:
 
 | URL | Port | Use |
 | --- | --- | --- |
-| `*.msappproxy.net` <br> `*.servicebus.windows.net` | 443/HTTPS | Communication between the connector and the application proxy cloud service |
-| `crl3.digicert.com` <br> `crl4.digicert.com` <br> `ocsp.digicert.com` <br> `crl.microsoft.com` <br> `oneocsp.microsoft.com` <br> `ocsp.msocsp.com`<br> | 80/HTTP   | The connector uses these URLs to verify certificates.        |
-| `login.windows.net` <br> `secure.aadcdn.microsoftonline-p.com` <br> `*.microsoftonline.com` <br> `*.microsoftonline-p.com` <br> `*.msauth.net` <br> `*.msauthimages.net` <br> `*.msecnd.net` <br> `*.msftauth.net` <br> `*.msftauthimages.net` <br> `*.phonefactor.net` <br> `enterpriseregistration.windows.net` <br> `management.azure.com` <br> `policykeyservice.dc.ad.msft.net` <br> `ctldl.windowsupdate.com` <br> `www.microsoft.com/pkiops` | 443/HTTPS | The connector uses these URLs during the registration process. |
-| `ctldl.windowsupdate.com` <br> `www.microsoft.com/pkiops` | 80/HTTP | The connector uses these URLs during the registration process. |
+| `*.msappproxy.net` <br> `*.servicebus.windows.net` | `443/HTTPS` | Communication between the connector and the application proxy cloud service. |
+| `crl3.digicert.com` <br> `crl4.digicert.com` <br> `ocsp.digicert.com` <br> `crl.microsoft.com` <br> `oneocsp.microsoft.com` <br> `ocsp.msocsp.com`<br> | `80/HTTP`   | The connector uses these URLs to verify certificates.        |
+| `login.windows.net` <br> `secure.aadcdn.microsoftonline-p.com` <br> `*.microsoftonline.com` <br> `*.microsoftonline-p.com` <br> `*.msauth.net` <br> `*.msauthimages.net` <br> `*.msecnd.net` <br> `*.msftauth.net` <br> `*.msftauthimages.net` <br> `*.phonefactor.net` <br> `enterpriseregistration.windows.net` <br> `management.azure.com` <br> `policykeyservice.dc.ad.msft.net` <br> `ctldl.windowsupdate.com` <br> `www.microsoft.com/pkiops` | `443/HTTPS` | The connector uses these URLs during the registration process. |
+| `ctldl.windowsupdate.com` <br> `www.microsoft.com/pkiops` | `80/HTTP` | The connector uses these URLs during the registration process. |
 
 You can allow connections to `*.msappproxy.net`, `*.servicebus.windows.net`, and other URLs if your firewall or proxy lets you configure access rules based on domain suffixes. If not, you need to allow access to the [Azure IP ranges and Service Tags - Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519). The IP ranges are updated each week.
 
 > [!IMPORTANT]
-> Avoid all forms of inline inspection and termination on outbound TLS communications between Microsoft Entra application proxy connectors and Microsoft Entra application proxy Cloud services.
-
-<a name='dns-name-resolution-for-azure-ad-application-proxy-endpoints'></a>
+> Avoid all forms of inline inspection and termination on outbound TLS communications between Microsoft Entra application proxy connectors and Microsoft Entra application proxy services.
 
 ### Domain Name System (DNS) for Microsoft Entra application proxy endpoints
 
