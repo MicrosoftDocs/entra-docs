@@ -49,10 +49,10 @@ Additionally, the Risky sign-ins report provides a detailed overview of suspicio
 
 Stay ahead of identity risks effortlessly with Identity Protection on the Azure Mobile app. These capabilities are intended to provide user with the tools to maintain a secure environment and peace of mind for their organization.
 
-The mobile app can be downloaded here:
-Android: https://aka.ms/AzureAndroidWhatsNew
+The mobile app can be downloaded at the following links:
 
-IOS: https://aka.ms/ReferAzureIOSWhatsNew
+- Android: https://aka.ms/AzureAndroidWhatsNew
+- IOS: https://aka.ms/ReferAzureIOSWhatsNew
 
 ---
 
