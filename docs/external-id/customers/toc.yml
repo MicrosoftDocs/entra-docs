@@ -237,7 +237,7 @@ items:
             - name: iOS app
               items:
                 - name: Prepare iOS app
-                  href: tutorial-native-auth-prepare-ios-app.md
+                  href: tutorial-native-authentication-prepare-ios-app.md
                 - name: Sign up
                   href: tutorial-native-authentication-ios-sign-up.md
                 - name: sign in and sign out

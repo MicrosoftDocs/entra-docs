@@ -188,5 +188,5 @@ After linking your application with the new user flow or modifying the existing 
 
 ## Next steps
 
-- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-auth-prepare-ios-app.md).
+- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md).
 

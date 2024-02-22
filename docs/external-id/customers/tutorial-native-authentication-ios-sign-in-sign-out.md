@@ -26,7 +26,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-ios-sign-up-sign-in-sign-out.md)
+- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-ios-sign-up.md)
 
 ## Sign in user
 
