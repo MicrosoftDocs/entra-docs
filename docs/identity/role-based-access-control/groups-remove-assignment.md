@@ -66,8 +66,8 @@ $roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "displayNa
 ```powershell
 $Params = @{
    "directoryScopeId" = "/" 
-   "principalId" = "$group.Id"
-   "roleDefinitionId" = "$roleDefinition.Id"
+   "principalId" = $group.Id
+   "roleDefinitionId" = $roleDefinition.Id
 }
 $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -BodyParameter $Params
 ```
