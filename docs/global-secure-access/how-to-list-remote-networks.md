@@ -6,8 +6,7 @@ ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
 ms.date: 06/01/2023
-ms.service: network-access
-ms.custom: 
+ms.service: global-secure-access
 ---
 
 # How to list remote networks for Global Secure Access (preview)

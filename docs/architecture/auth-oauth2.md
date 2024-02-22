@@ -1,19 +1,15 @@
 ---
 title: OAUTH 2.0 authorization with Microsoft Entra ID
 description: Architectural guidance on achieving OAUTH 2.0 authorization with Microsoft Entra ID.
-services: active-directory
 author: janicericketts
 manager: martinco
 
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 01/10/2023
 ms.author: jricketts
 ms.reviewer: ajburnle
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # OAuth 2.0 authorization with Microsoft Entra ID

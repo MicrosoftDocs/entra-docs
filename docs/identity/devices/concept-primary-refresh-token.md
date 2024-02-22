@@ -2,17 +2,16 @@
 title: Primary Refresh Token (PRT) and Microsoft Entra ID
 description:  What is the role of and how do we manage the Primary Refresh Token (PRT) in Microsoft Entra ID?
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 02/27/2023
+ms.date: 01/31/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: ravenn
-ms.collection: M365-identity-device-management
 ---
 # What is a Primary Refresh Token?
 
@@ -78,7 +77,7 @@ Once issued, a PRT is valid for 14 days and is continuously renewed as long as t
 A PRT is used by two key components in Windows:
 
 * **Microsoft Entra CloudAP plugin**: During Windows sign in, the Microsoft Entra CloudAP plugin requests a PRT from Microsoft Entra ID using the credentials provided by the user. It also caches the PRT to enable cached sign in when the user doesn't have access to an internet connection.
-* **Microsoft Entra WAM plugin**: When users try to access applications, the Microsoft Entra WAM plugin uses the PRT to enable SSO on Windows 10 or newer. Microsoft Entra WAM plugin uses the PRT to request refresh and access tokens for applications that rely on WAM for token requests. It also enables SSO on browsers by injecting the PRT into browser requests. Browser SSO in Windows 10 or newer is supported on Microsoft Edge (natively), Chrome (via the [Windows 10 Accounts](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji?hl=en) or [Office Online](https://chrome.google.com/webstore/detail/office/ndjpnladcallmjemlbaebfadecfhkepb?hl=en) extensions) or Mozilla Firefox v91+ (Firefox [Windows SSO setting](https://support.mozilla.org/kb/windows-sso))
+* **Microsoft Entra WAM plugin**: When users try to access applications, the Microsoft Entra WAM plugin uses the PRT to enable SSO on Windows 10 or newer. Microsoft Entra WAM plugin uses the PRT to request refresh and access tokens for applications that rely on WAM for token requests. It also enables SSO on browsers by injecting the PRT into browser requests. Browser SSO in Windows 10 or newer is supported on Microsoft Edge (natively), Chrome (via the [Windows 10 Accounts](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji?hl=en) or Mozilla Firefox v91+ (Firefox [Windows SSO setting](https://support.mozilla.org/kb/windows-sso))
   > [!NOTE]
   >  In instances where a user has two accounts from the same Microsoft Entra tenant signed in to a browser application, the device authentication provided by the PRT of the primary account is automatically applied to the second account as well. As a result, the second account also satisfies any device-based Conditional Access policy on the tenant.
 
@@ -105,10 +104,10 @@ Windows transport endpoints are required for password authentication only when a
 * In Microsoft Entra joined and Microsoft Entra hybrid joined devices, the CloudAP plugin is the primary authority for a PRT. If a PRT is renewed during a WAM-based token request, the PRT is sent back to CloudAP plugin, which verifies the validity of the PRT with Microsoft Entra ID before accepting it.
 
 #### Android Platform: 
-* A PRT is valid for 90 days and is continuously renewed as long as the device is in use. However, it's only valid for 14 days if the device is not in use.
+* A PRT is valid for 90 days and is continuously renewed as long as the device is in use. However, it's only valid for 14 days if the device isn't in use.
 * A PRT is only issued and renewed during native app authentication. A PRT isn't renewed or issued during a browser session.
 * It's possible to obtain a PRT without the need for device registration ([Workplace Join](/windows-server/identity/ad-fs/operations/walkthrough--workplace-join-to-an-android-device)) and enable SSO.
-* PRTs obtained without device registration cannot satisfy the authorization criteria for Conditional Access that relies on the device's status or compliance.
+* PRTs obtained without device registration can't satisfy the authorization criteria for Conditional Access that relies on the device's status or compliance.
 
 
 ## How is the PRT protected?
@@ -150,7 +149,7 @@ A PRT is invalidated in the following scenarios:
 * **Invalid user**: If a user is deleted or disabled in Microsoft Entra ID, their PRT is invalidated and can't be used to obtain tokens for applications. If a deleted or disabled user already signed in to a device before, cached sign-in would log them in, until CloudAP is aware of their invalid state. Once CloudAP determines that the user is invalid, it blocks subsequent logons. An invalid user is automatically blocked from sign in to new devices that don’t have their credentials cached.
 * **Invalid device**: If a device is deleted or disabled in Microsoft Entra ID, the PRT obtained on that device is invalidated and can't be used to obtain tokens for other applications. If a user is already signed in to an invalid device, they can continue to do so. But all tokens on the device are invalidated and the user doesn't have SSO to any resources from that device.
 * **Password change**: If a user obtained the PRT with their password, the PRT is invalidated by Microsoft Entra ID when the user changes their password. Password change results in the user getting a new PRT. This invalidation can happen in two different ways:
-   * If user signs in to Windows with their new password, CloudAP discards the old PRT and requests Microsoft Entra ID to issue a new PRT with their new password. If user doesn't have an internet connection, the new password can't be validated, Windows may require the user to enter their old password.
+   * If user signs in to Windows with their new password, CloudAP discards the old PRT and requests Microsoft Entra ID to issue a new PRT with their new password. If user doesn't have an internet connection, the new password can't be validated, Windows might require the user to enter their old password.
    * If a user has logged in with their old password or changed their password after signing into Windows, the old PRT is used for any WAM-based token requests. In this scenario, the user is prompted to reauthenticate during the WAM token request and a new PRT is issued.
 * **TPM issues**: Sometimes, a device’s TPM can falter or fail, leading to inaccessibility of keys secured by the TPM. In this case, the device is incapable of getting a PRT or requesting tokens using an existing PRT as it can't prove possession of the cryptographic keys. As a result, any existing PRT is invalidated by Microsoft Entra ID. When Windows 10 detects a failure, it initiates a recovery flow to re-register the device with new cryptographic keys. With Microsoft Entra hybrid join, just like the initial registration, the recovery happens silently without user input. For Microsoft Entra joined or Microsoft Entra registered devices, the recovery needs to be performed by a user who has administrator privileges on the device. In this scenario, the recovery flow is initiated by a Windows prompt that guides the user to successfully recover the device.
 

@@ -5,8 +5,7 @@ description: Learn about customizing the language experience in your user flows 
 author: msmimart
 manager: celestedg
 
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 01/23/2024
 ms.author: mimart

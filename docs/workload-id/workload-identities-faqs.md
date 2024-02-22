@@ -1,18 +1,16 @@
 ---
 title: Microsoft Entra Workload ID license plans FAQ
 
-description: Learn about Microsoft Entra Workload ID license plans, features and capabilities. 
+description: Learn about Microsoft Entra Workload ID license plans, features and capabilities.
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: workload-identities
-ms.workload: identity
+ms.service: entra-workload-id
+
 ms.topic: conceptual
 ms.date: 10/03/2023
 ms.author: gasinh
-ms.reviewer: 
-ms.custom: aaddev 
-#Customer intent: I want to know about Microsoft Entra Workload ID licensing plans 
+ms.custom: aaddev
+#Customer intent: I want to know about Microsoft Entra Workload ID licensing plans
 ---
 
 # Frequently asked questions about Microsoft Entra Workload ID license plans

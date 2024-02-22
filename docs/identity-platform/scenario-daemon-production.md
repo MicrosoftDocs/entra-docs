@@ -5,10 +5,10 @@ author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
 ms.custom: 
-ms.date: 10/30/2019
+ms.date: 02/01/2024
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform.
 ---
@@ -36,7 +36,7 @@ You'll need to explain to your customers how to perform these operations. For mo
   - Instantiating [ConfidentialClientApplication](/dotnet/api/microsoft.identity.client.confidentialclientapplicationbuilder).
   - Calling [AcquireTokenForClient](/dotnet/api/microsoft.identity.client.acquiretokenforclientparameterbuilder?preserve-view=true&view=msal-dotnet-latest&viewFallbackFrom=azure-dotnet).
 - Other samples/tutorials:
-  - [microsoft-identity-platform-console-daemon](https://github.com/Azure-Samples/microsoft-identity-platform-console-daemon) features a small .NET Core daemon console application that displays the users of a tenant querying Microsoft Graph.
+  - [microsoft-identity-platform-console-daemon](https://github.com/Azure-Samples/microsoft-identity-platform-console-daemon) features a small .NET daemon console application that displays the users of a tenant querying Microsoft Graph.
 
     ![Sample daemon app topology](media/scenario-daemon-app/daemon-app-sample.png)
 
@@ -46,7 +46,7 @@ You'll need to explain to your customers how to perform these operations. For mo
 
   - [microsoft-identity-platform-aspnet-webapp-daemon](https://github.com/Azure-Samples/microsoft-identity-platform-aspnet-webapp-daemon) features an ASP.NET MVC web application that syncs data from Microsoft Graph by using the identity of the application instead of on behalf of a user. This sample also illustrates the admin consent process.
 
-    ![topology](media/scenario-daemon-app/damon-app-sample-web.png)
+    ![topology](media/scenario-daemon-app/daemon-app-sample-web.png)
 
 # [Java](#tab/java)
 
@@ -63,7 +63,7 @@ Try the quickstart [Acquire a token and call Microsoft Graph API from a Java con
 
 # [Python](#tab/python)
 
-Try the quickstart [Acquire a token and call Microsoft Graph API from a Python console app using app's identity](quickstart-v2-python-daemon.md).
+Try the quickstart [Acquire a token and call Microsoft Graph API from a Python console app using app's identity](quickstart-daemon-app-python-acquire-token.md).
 
 ---
 
@@ -73,7 +73,7 @@ Here are a few links to help you learn more:
 
 # [.NET](#tab/dotnet)
 
-Try the quickstart [Acquire a token and call Microsoft Graph API from a .NET Core console app using app's identity](quickstart-v2-netcore-daemon.md).
+Try the quickstart [Acquire a token and call Microsoft Graph API from a .NET console app using app's identity](quickstart-v2-netcore-daemon.md).
 
 # [Java](#tab/java)
 

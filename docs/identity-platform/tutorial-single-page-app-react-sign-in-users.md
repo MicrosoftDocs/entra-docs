@@ -5,8 +5,8 @@ author: OwenRichards1
 ms.author: owenrichards
 ms.custom: devx-track-js
 ms.date: 09/26/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As a React developer, I want to know how to use functional components to add sign in and sign out experiences in my React application.
 ---

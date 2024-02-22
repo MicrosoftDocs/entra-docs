@@ -1,12 +1,10 @@
 ---
 title: Configure AWS IAM Identity Center as an identity provider
 description: How to configure AWS IAM Identity Center as an identity provider.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
-ms.subservice: ciem
-ms.workload: identity
+ms.service: entra-permissions-management
+
 ms.topic: how-to
 ms.date: 10/16/2023
 ms.author: jfields

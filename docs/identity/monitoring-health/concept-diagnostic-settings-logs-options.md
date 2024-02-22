@@ -3,10 +3,10 @@ title: Logs available for streaming from Microsoft Entra ID
 description: Learn about the Microsoft Entra logs available for streaming to an endpoint for storage, analysis, or monitoring.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
-ms.subservice: report-monitor
-ms.date: 12/15/2023
+ms.subservice: monitoring-health
+ms.date: 02/13/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -21,7 +21,7 @@ This article describes the logs that you can route to an endpoint with Microsoft
 
 ## Log streaming requirements and options
 
-Setting up an endpoint, such as an event hub or storage account, might require different roles and licenses. To create or edit a new diagnostic setting, you need a user who's a **Security Administrator** or **Global Administrator** for the Microsoft Entra tenant.
+Setting up an endpoint, such as an event hub or storage account, might require different roles and licenses. To create or edit a new diagnostic setting, you need a user who's a **Security Administrator** for the Microsoft Entra tenant.
 
 To help decide which log routing option is best for you, see [How to access activity logs](howto-access-activity-logs.md). The overall process and requirements for each endpoint type are covered in the following articles:
 
@@ -56,7 +56,7 @@ The `ManagedIdentitySignInLogs` provide similar insights as the service principa
 
 ### Provisioning logs
 
-If your organization provisions users through a third-party application such as Workday or ServiceNow, you might want to export the `ProvisioningLogs` reports. For more information, see [Provisioning logs](concept-provisioning-logs.md).
+If your organization provisions users through a non-Microsoft application such as Workday or ServiceNow, you might want to export the `ProvisioningLogs` reports. For more information, see [Provisioning logs](concept-provisioning-logs.md).
 
 ### AD FS sign-in logs
 
@@ -70,22 +70,30 @@ The `RiskyUsers` logs identify users who are at risk based on their sign-in acti
 
 The `UserRiskEvents` logs are part of Microsoft Entra ID Protection. These logs capture details about risky sign-in events. For more information, see [How to investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md#risky-sign-ins).
 
+### Network access traffic logs
+
+The `NetworkAccessTrafficLogs` are associated with Microsoft Entra Internet Access and Microsoft Entra Private Access. The logs are visible in Microsoft Entra ID, but selecting this option doesn't add new logs to your workspace unless your organization is using Microsoft Entra Internet Access and Microsoft Entra Private Access to secure access to your corporate resources. For more information, see [What is Global Secure Access?](/entra/global-secure-access/overview-what-is-global-secure-access).
+
 ### Risky service principals
 
-The `RiskyServicePrincipals` logs provide information about service principals that Microsoft Entra ID Protection detected as risky. Service principal risk represents the probability that an identity or account is compromised. These risks are calculated asynchronously using data and patterns from Microsoft's internal and external threat intelligence sources. These sources might include security researchers, law enforcement professionals, and security teams at Microsoft. For more information, see [Securing workload identities](~/id-protection/concept-workload-identity-risk.md)
+The `RiskyServicePrincipals` logs provide information about service principals that Microsoft Entra ID Protection detected as risky. Service principal risk represents the probability that an identity or account is compromised. These risks are calculated asynchronously using data and patterns from Microsoft's internal and external threat intelligence sources. These sources might include security researchers, law enforcement professionals, and security teams at Microsoft. For more information, see [Securing workload identities](~/id-protection/concept-workload-identity-risk.md).
 
 ### Service principal risk events
 
-The `ServicePrincipalRiskEvents` logs provide details around the risky sign-in events for service principals. These logs might include any identified suspicious events related to the service principal accounts. For more information, see [Securing workload identities](~/id-protection/concept-workload-identity-risk.md)
+The `ServicePrincipalRiskEvents` provide details around the risky sign-in events for service principals. These logs might include any identified suspicious events related to the service principal accounts. For more information, see [Securing workload identities](~/id-protection/concept-workload-identity-risk.md).
 
 ### Enriched Microsoft 365 audit logs
 
-The `EnrichedOffice365AuditLogs` logs are associated with the enriched logs you can enable for Microsoft Entra Internet Access. Selecting this option doesn't add new logs to your workspace unless your organization is using Microsoft Entra Internet to secure access to your Microsoft 365 traffic *and* you enabled the enriched logs. For more information, see [How to use the Global Secure Access enriched Microsoft 365 logs](/entra/global-secure-access/how-to-view-enriched-logs).
+The `EnrichedOffice365AuditLogs` are associated with the enriched logs you can enable for Microsoft Entra Internet Access. Selecting this option doesn't add new logs to your workspace unless your organization is using Microsoft Entra Internet to secure access to your Microsoft 365 traffic *and* you enabled the enriched logs. For more information, see [How to use the Global Secure Access enriched Microsoft 365 logs](/entra/global-secure-access/how-to-view-enriched-logs).
 
 ### Microsoft Graph activity logs
 
 The `MicrosoftGraphActivityLogs` provide administrators full visibility into all HTTP requests accessing your tenant's resources through the Microsoft Graph API. You can use these logs to identify activities that a compromised user account conducted in your tenant or to investigate problematic or unexpected behaviors for client applications, such as extreme call volumes. Route these logs to the same Log Analytics workspace with `SignInLogs` to cross-reference details of token requests for sign-in logs. For more information, see [Access Microsoft Graph activity logs (preview)](/graph/microsoft-graph-activity-logs-overview).
 
-### Network access traffic logs
+### Remote network health logs
 
-The `NetworkAccessTrafficLogs` logs are associated with Microsoft Entra Internet Access and Microsoft Entra Private Access. The logs are visible in Microsoft Entra ID, but selecting this option doesn't add new logs to your workspace unless your organization is using Microsoft Entra Internet Access and Microsoft Entra Private Access to secure access to your corporate resources. For more information, see [What is Global Secure Access?](/entra/global-secure-access/overview-what-is-global-secure-access).
+The `RemoteNetworkHealthLogs` provide insights into the health of your remote network configured through Global Secure Access. Selecting this option doesn't add new logs to your workspace unless your organization is using Microsoft Entra Internet Access and Microsoft Entra Private Access to secure access to your corporate resources. For more information, see [Remote network health logs](../../global-secure-access/how-to-remote-network-health-logs.md).
+
+### Custom security attribute audit logs
+
+The `CustomSecurityAttributeAuditLogs` are configured in the **Custom security attributes** section of diagnostic settings. These logs capture changes to custom security attributes in your Microsoft Entra tenant. To view these logs in the Microsoft Entra audit logs, you need the [Attribute Log Reader](../../identity/role-based-access-control/permissions-reference.md#attribute-log-reader) role. To route these logs to an endpoint, you need the [Attribute Log Administrator](../../identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) role and the [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator).

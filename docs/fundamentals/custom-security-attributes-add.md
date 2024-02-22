@@ -1,14 +1,11 @@
 ---
 title: Add or deactivate custom security attribute definitions in Microsoft Entra ID
 description: Learn how to add new custom security attribute definitions or deactivate custom security attribute definitions in Microsoft Entra ID.
-services: active-directory
 author: rolyon
 manager: amycolannino
 ms.author: rolyon
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
-ms.workload: identity
-ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.collection: M365-identity-device-management

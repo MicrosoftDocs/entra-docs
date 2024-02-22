@@ -1,12 +1,11 @@
 ---
 title: PowerShell sample - List all Microsoft Entra application proxy connector groups
 description: PowerShell example that lists all Microsoft Entra application proxy connector groups and connectors in your directory.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: sample
 ms.date: 01/04/2024
@@ -14,7 +13,7 @@ ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Get all Application Proxy connector groups and connectors in the directory
+# Get all application proxy connector groups and connectors in the directory
 
 This PowerShell script example lists all Microsoft Entra application proxy connector groups and connectors in your directory.
 
@@ -27,7 +26,7 @@ This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mi
 ## Sample script
 
 ```powershell
-# This sample script gets all Microsoft Entra application proxy Connector groups with the included connectors.
+# This sample script gets all Microsoft Entra application proxy connector groups with the included connectors.
 #
 # Version 1.0
 #
@@ -73,7 +72,7 @@ foreach ($item in $aadapConnectorGroups) {
 }  
 
 Write-Host ("")
-Write-Host ("Number of Microsoft Entra application proxy Connector Groups: $CountOfConnectorGroups")
+Write-Host ("Number of Microsoft Entra application proxy connector Groups: $CountOfConnectorGroups")
 Write-Host ("")
 Write-Host ("Finished.") -BackgroundColor "Black" -ForegroundColor "Green"
 Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGraph cmdlet."
@@ -91,4 +90,4 @@ Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGrap
 
 For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
 
-For other PowerShell examples for Application Proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).
+For other PowerShell examples for application proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).

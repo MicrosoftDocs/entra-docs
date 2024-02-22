@@ -1,19 +1,16 @@
 ---
 title: Configure Microsoft Entra role settings in PIM
 description: Learn how to configure Microsoft Entra role settings in Privileged Identity Management (PIM).
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-editor: ''
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: how-to
-ms.workload: identity
-ms.subservice: pim
+ms.subservice: privileged-identity-management
 ms.date: 6/7/2023
 ms.author: barclayn
 ms.custom: pim
-ms.collection: M365-identity-device-management
+
 ---
 # Configure Microsoft Entra role settings in Privileged Identity Management
 

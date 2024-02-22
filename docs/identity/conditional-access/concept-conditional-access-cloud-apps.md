@@ -2,7 +2,7 @@
 title: Cloud apps, actions, and authentication context in Conditional Access policy
 description: What are cloud apps, actions, and authentication context in a Microsoft Entra Conditional Access policy
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
@@ -18,7 +18,7 @@ ms.reviewer: lhuangnorth
 
 Target resources (formerly Cloud apps, actions, and authentication context) are key signals in a Conditional Access policy. Conditional Access policies allow administrators to assign controls to specific applications, services, actions, or authentication context.
 
-- Administrators can choose from the list of applications or services that include built-in Microsoft applications and any [Microsoft Entra integrated applications](~/identity/enterprise-apps/what-is-application-management.md) including gallery, non-gallery, and applications published through [Application Proxy](~/identity/app-proxy/what-is-application-proxy.md).
+- Administrators can choose from the list of applications or services that include built-in Microsoft applications and any [Microsoft Entra integrated applications](~/identity/enterprise-apps/what-is-application-management.md) including gallery, non-gallery, and applications published through [Application Proxy](~/identity/app-proxy/overview-what-is-app-proxy.md).
 - Administrators might choose to define policy not based on a cloud application but on a [user action](#user-actions) like **Register security information** or **Register or join devices**, allowing Conditional Access to enforce controls around those actions.
 - Administrators can target [traffic forwarding profiles](#traffic-forwarding-profiles) from Global Secure Access for enhanced functionality.
 - Administrators can use [authentication context](#authentication-context) to provide an extra layer of security in applications.
@@ -136,14 +136,14 @@ We're continually adding more administrative portals to the list.
 
 Administrators can add any Microsoft Entra registered application to Conditional Access policies. These applications might include:
 
-- Applications published through [Microsoft Entra application proxy](~/identity/app-proxy/what-is-application-proxy.md)
+- Applications published through [Microsoft Entra application proxy](~/identity/app-proxy/overview-what-is-app-proxy.md)
 - [Applications added from the gallery](~/identity/enterprise-apps/add-application-portal.md)
 - [Custom applications not in the gallery](~/identity/enterprise-apps/view-applications-portal.md)
 - [Legacy applications published through app delivery controllers and networks](~/identity/enterprise-apps/secure-hybrid-access.md)
 - Applications that use [password based single sign-on](~/identity/enterprise-apps/configure-password-single-sign-on-non-gallery-applications.md)
 
 > [!NOTE]
-> Since Conditional Access policy sets the requirements for accessing a service you are not able to apply it to a client (public/native) application. In other words, the policy is not set directly on a client (public/native) application, but is applied when a client calls a service. For example, a policy set on SharePoint service applies to the clients calling SharePoint. A policy set on Exchange applies to the attempt to access the email using Outlook client. That is why client (public/native) applications are not available for selection in the Cloud Apps picker and Conditional Access option is not available in the application settings for the client (public/native) application registered in your tenant.
+> Since Conditional Access policy sets the requirements for accessing a service you are not able to apply it to a client (public/native) application. In other words, the policy is not set directly on a client (public/native) application, but is applied when a client calls a service. For example, a policy set on SharePoint service applies to all clients calling SharePoint. A policy set on Exchange applies to the attempt to access the email using Outlook client. That is why client (public/native) applications are not available for selection in the Cloud Apps picker and Conditional Access option is not available in the application settings for the client (public/native) application registered in your tenant.
 
 Some applications don't appear in the picker at all. The only way to include these applications in a Conditional Access policy is to include **All cloud apps**.
 

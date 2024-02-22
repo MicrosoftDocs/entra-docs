@@ -2,18 +2,15 @@
 title: Risk policies - Microsoft Entra ID Protection
 description: Enable and configure risk policies in Microsoft Entra ID Protection
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: identity-protection
+ms.service: entra-id-protection
+
 ms.topic: how-to
-ms.date: 01/19/2024
+ms.date: 02/05/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: chuqiaoshi
-
-ms.collection: M365-identity-device-management
 ---
 # Configure and enable risk policies
 
@@ -28,11 +25,11 @@ As we learned in the previous article, [Risk-based access policies](concept-iden
 
 Organizations must decide the level of risk they want to require access control on balancing user experience and security posture. 
 
-Choosing to apply access control on a **High** risk level reduces the number of times a policy is triggered and minimizes the impact to users. However, it excludes **Low** and **Medium** risks from the policy, which might not block an attacker from exploiting a compromised identity. Selecting a **Low** risk level to require access control introduces more user interrupts.
+Choosing to apply access control on a **High** risk level reduces the number of times a policy is triggered and minimizes friction for users. However, it excludes **Low** and **Medium** risks from the policy, which might not block an attacker from exploiting a compromised identity. Selecting a **Low** risk level to require access control introduces more user interrupts.
 
 Configured trusted [network locations](~/identity/conditional-access/location-condition.md) are used by Identity Protection in some risk detections to reduce false positives.
 
-The policy configurations that follow include a the [sign-in frequency session control](../identity/conditional-access/howto-conditional-access-session-lifetime.md#require-reauthentication-every-time) requiring a reauthentication for risky users and sign-ins.
+The policy configurations that follow include the [sign-in frequency session control](../identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time) requiring a reauthentication for risky users and sign-ins.
 
 ### Risk remediation
 
@@ -116,30 +113,26 @@ After administrators confirm the settings using [report-only mode](~/identity/co
 
 After administrators confirm the settings using [report-only mode](~/identity/conditional-access/howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
 
-## Migrate risk policies from Identity Protection to Conditional Access
+## Migrate risk policies to Conditional Access
 
-While Identity Protection also provides two risk policies with limited conditions, we highly recommend setting up risk-based policies in Conditional Access for the following benefits:
+> [!WARNING]
+> The legacy risk policies configured in Microsoft Entra ID Protection will be retired on **October 1, 2026**.
 
-   - Enhanced diagnostic data
-   - Report-only mode integration
-   - Graph API support
-   - Use more Conditional Access attributes like sign-in frequency in the policy
-
-If you already have risk policies enabled in Identity Protection, we highly recommend that you migrate them to Conditional Access:
+If you have risk policies enabled in Microsoft Entra ID, you should plan to migrate them to Conditional Access:
 
 ![Screenshots showing the migration of a sign-in risk policy to Conditional Access.](./media/howto-identity-protection-configure-risk-policies/sign-in-risk-policy-migration.png)
 
 ### Migrating to Conditional Access
 
 1. **Create an equivalent** [user risk-based](#user-risk-policy-in-conditional-access) and [sign-in risk-based](#sign-in-risk-policy-in-conditional-access) policy in Conditional Access in report-only mode. You can create a policy with the previous steps or using [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md) based on Microsoft's recommendations and your organizational requirements.
-    1. Ensure that the new Conditional Access risk policy works as expected by testing it in [report-only mode](~/identity/conditional-access/howto-conditional-access-insights-reporting.md).
-1. **Enable** the new Conditional Access risk policy. You can choose to have both policies running side-by-side to confirm the new policies are working as expected before turning off the Identity Protection risk policies.
-    1. Browse back to **Protection** > **Conditional Access**. 
-    1. Select this new policy to edit it.
-    1. Set **Enable policy** to **On** to enable the policy
-1. **Disable** the old risk policies in Identity Protection.
-    1. Browse to **Protection** > **Identity Protection** > Select the **User risk** or **Sign-in risk** policy.
-    1. Set **Enforce policy** to **Off**
+   1. Ensure that the new Conditional Access risk policy works as expected by testing it in [report-only mode](~/identity/conditional-access/howto-conditional-access-insights-reporting.md).
+1. **Enable** the new Conditional Access risk policy. You can choose to have both policies running side-by-side to confirm the new policies are working as expected before turning off the ID Protection risk policies.
+   1. Browse back to **Protection** > **Conditional Access**. 
+   1. Select this new policy to edit it.
+   1. Set **Enable policy** to **On** to enable the policy
+1. **Disable** the old risk policies in ID Protection.
+   1. Browse to **Protection** > **Identity Protection** > Select the **User risk** or **Sign-in risk** policy.
+   1. Set **Enforce policy** to **Disabled**
 1. Create other risk policies if needed in [Conditional Access](~/identity/conditional-access/concept-conditional-access-policy-common.md).
 
 ## Next steps
@@ -148,4 +141,4 @@ If you already have risk policies enabled in Identity Protection, we highly reco
 - [What is risk](concept-identity-protection-risks.md)
 - [Investigate risk detections](howto-identity-protection-investigate-risk.md)
 - [Simulate risk detections](howto-identity-protection-simulate-risk.md)
-- [Require reauthentication every time](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#require-reauthentication-every-time)
+- [Require reauthentication every time](~/identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time)

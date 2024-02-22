@@ -1,20 +1,15 @@
 ---
 title: Manage access with access reviews
 description: Learn how to manage user and guest access as membership of a group or assignment to an application with Microsoft Entra access reviews
-services: active-directory
-documentationcenter: ''
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: access-reviews
 ms.topic: conceptual
-ms.subservice: compliance
 ms.date: 06/28/2023
 ms.author: owinfrey
 ms.reviewer: mwahl
-ms.collection: M365-identity-device-management
 ---
  
 # Manage user and guest user access with access reviews

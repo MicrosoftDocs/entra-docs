@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: "devx-track-csharp,  scenarios:getting-started, languages:aspnet-core"
 ms.date: 01/18/2024
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: quickstart
 #Customer intent: As an application developer, I want to know how to write an ASP.NET Core web app that can sign in personal Microsoft accounts and work/school accounts from any Microsoft Entra instance,  then access their data in Microsoft Graph on their behalf.
 ---
@@ -20,7 +20,7 @@ This quickstart uses a sample ASP.NET Core web app to show you how to sign in us
 ## Prerequisites
 
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [.NET Core](https://dotnet.microsoft.com/download)
+* A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet)
 * [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Register the application and record identifiers
@@ -94,3 +94,4 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 * Learn by building this ASP.NET web app with the series [Tutorial: Register an application with the Microsoft identity platform](./tutorial-web-app-dotnet-sign-in-users.md).
 * [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](./quickstart-web-api-aspnet-core-protect-api.md).
+* [Quickstart: Deploy an ASP.NET web app to Azure App Service](/azure/app-service/quickstart-dotnetcore?tabs=net70&pivots=development-environment-vs)

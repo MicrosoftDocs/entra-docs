@@ -5,8 +5,8 @@ author: msmimart
 manager: CelesteDG
 ms.author: mimart
 ms.date: 01/23/2024
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
 #customer intent: As a Microsoft Entra External ID customer, I want to extend the user sign-up experience by adding custom actions before and after attribute collection, so that I can customize the attribute collection process and validate user entries.

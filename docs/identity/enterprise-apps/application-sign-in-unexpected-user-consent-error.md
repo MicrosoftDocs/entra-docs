@@ -4,8 +4,8 @@ description: Discusses errors that can occur during the process of consenting to
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: troubleshooting
 ms.date: 09/06/2022

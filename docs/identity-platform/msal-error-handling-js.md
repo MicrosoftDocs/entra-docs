@@ -7,8 +7,8 @@ ms.author: dmwendia
 ms.custom: devx-track-js
 ms.date: 12/19/2023
 ms.reviewer: saeeda, hahamil
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As a developer using MSAL.js for authentication, I want to handle errors and exceptions effectively, so that I can troubleshoot and resolve issues in my application.
 

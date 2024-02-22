@@ -1,18 +1,16 @@
 ---
 title: Bulk upload to add or create members of a group
 description: Add group members in bulk by using a comma-separated values (CSV) file.
-services: active-directory 
+
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
 ms.date: 11/10/2023
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.custom: it-pro
 ms.reviewer: jeffsta
-ms.collection: M365-identity-device-management
 ---
 
 # Bulk add group members in Microsoft Entra ID

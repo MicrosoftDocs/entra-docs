@@ -4,8 +4,8 @@ description: Learn how to grant consent on behalf of a single user when user con
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: how-to
 ms.date: 12/20/2023

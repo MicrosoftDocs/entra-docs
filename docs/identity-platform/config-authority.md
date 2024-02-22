@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom:
 ms.date: 05/09/2023
 ms.reviewer: oldalton
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As a developer configuring MSAL for iOS and macOS, I want to understand how to use Microsoft Entra ID, B2C, sovereign clouds, so that I can implement the appropriate authority configuration for my app.
 ---

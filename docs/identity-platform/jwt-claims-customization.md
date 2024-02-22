@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: curation-claims, devx-track-dotnet
 ms.date: 05/01/2023
 ms.reviewer: rahulnagraj, alamaral
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer, I want to customize the claims issued in the JSON web tokens so that I can tailor the information about the user that is included in the token for my enterprise application.
 ---

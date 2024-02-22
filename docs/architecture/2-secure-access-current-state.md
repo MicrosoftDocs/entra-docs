@@ -1,18 +1,14 @@
 ---
 title: Discover the current state of external collaboration in your organization
 description: Discover the current state of an organization's collaboration with audit logs, reporting, allowlist, blocklist, and more.
-services: active-directory
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/23/2023
 ms.author: gasinh
 ms.reviewer: ajburnle
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Discover the current state of external collaboration in your organization

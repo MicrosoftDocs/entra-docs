@@ -1,18 +1,14 @@
 ---
 title: Recover from deletions in Microsoft Entra ID
 description: Learn how to recover from unintended deletions.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 11/14/2022
 ms.author: jricketts
 ms.reviewer: jricketts
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Recover from deletions

@@ -1,20 +1,18 @@
 ---
 title: Using Microsoft Entra Connect Health with sync
 description: This is the Microsoft Entra Connect Health page that will discuss how to monitor Microsoft Entra Connect Sync.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
 ms.assetid: 1dfbeaba-bda2-4f68-ac89-1dbfaf5b4015
-ms.service: active-directory
-ms.subservice: hybrid
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
-ms.collection: M365-identity-device-management
+
 ---
 # Monitor Microsoft Entra Connect Sync with Microsoft Entra Connect Health
 The following documentation is specific to monitoring Microsoft Entra Connect (Sync) with Microsoft Entra Connect Health.  For information on monitoring AD FS with Microsoft Entra Connect Health see [Using Microsoft Entra Connect Health with AD FS](how-to-connect-health-adfs.md). Additionally, for information on monitoring Active Directory Domain Services with Microsoft Entra Connect Health see [Using Microsoft Entra Connect Health with AD DS](how-to-connect-health-adds.md).
@@ -37,7 +35,7 @@ If Microsoft Entra Connect is NOT using the default configuration (for example, 
 
 This limits the evaluation of alerts by the service. You will see a banner that indicates this condition in the [Microsoft Entra admin center](https://entra.microsoft.com) under your service.
 
-![Screenshot of the the alert banner that says Alert evaluation is limited. Update your settings to enable all alerts.](./media/how-to-connect-health-sync/banner.png)
+![Screenshot of the alert banner that says Alert evaluation is limited. Update your settings to enable all alerts.](./media/how-to-connect-health-sync/banner.png)
 
 You can change this by clicking "Settings" and allowing Microsoft Entra Connect Health agent to upload all error logs.
 

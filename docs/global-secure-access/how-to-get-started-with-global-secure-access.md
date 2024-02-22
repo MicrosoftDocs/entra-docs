@@ -6,8 +6,7 @@ ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: how-to
 ms.date: 11/02/2023
-ms.service: network-access
-
+ms.service: global-secure-access
 ---
 # Get started with Global Secure Access
 

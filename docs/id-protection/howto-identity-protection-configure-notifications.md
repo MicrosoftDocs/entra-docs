@@ -2,8 +2,8 @@
 title: Microsoft Entra ID Protection notifications
 description: Learn how notifications support your investigation activities.
 
-ms.service: active-directory
-ms.subservice: identity-protection
+ms.service: entra-id-protection
+
 ms.topic: how-to
 ms.date: 01/16/2024
 
