@@ -1,6 +1,6 @@
 ---
 title: Configure group settings using PowerShell
-description: How manage the settings for groups using Microsoft Entra cmdlets
+description: How to manage the settings for groups using Microsoft Entra cmdlets
 
 author: barclayn
 manager: amycolannino
