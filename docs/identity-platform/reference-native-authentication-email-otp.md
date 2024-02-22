@@ -1,6 +1,6 @@
 ---
-title: Native authentication with email OTP API reference
-description: Find out how to use native authentication with email OTP API reference for Microsoft Entra ID for customers. 
+title: Native Authentication with email OTP API reference
+description: Find out how to use Native Authentication with email OTP API reference for Microsoft Entra ID for customers. 
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
@@ -9,12 +9,12 @@ ms.subservice: ciam
 ms.topic: reference
 ms.date: 02/29/2024
 
-#Customer intent: As a dev, devops, I want to learn how to integrate customer apps with Native authentication's email OTP API that in Microsoft Entra ID for customers supports.
+#Customer intent: As a dev, devops, I want to learn how to integrate customer apps with Native Authentication's email OTP API that in Microsoft Entra ID for customers supports.
 ---
 
-# Native authentication with email OTP API reference
+# Native Authentication with email OTP API reference
 
-Microsoft Entra ID's native authentication API for email OTP allows you to build apps that sign up and sign in users with their email and a one-time password or passcode (OTP).
+Microsoft Entra ID's Native Authentication API for email OTP allows you to build apps that sign up and sign in users with their email and a one-time password or passcode (OTP).
 
 [!INCLUDE [native-auth-api-common-description](./includes/native-auth-api/native-auth-api-common-description.md)]
 
@@ -24,7 +24,7 @@ Microsoft Entra ID's native authentication API for email OTP allows you to build
 
 1. Microsoft Entra External ID for customers tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl).
 
-1. If you haven't already done so, [Register an application in the Microsoft Entra admin center](../external-id/customers/how-to-register-ciam-app.md?tabs=nativeauth#choose-your-app-type). Make sure you grant delegated permissions, and enable public client and native authentication flows.
+1. If you haven't already done so, [Register an application in the Microsoft Entra admin center](../external-id/customers/how-to-register-ciam-app.md?tabs=nativeauthentication #choose-your-app-type). Make sure you grant delegated permissions, and enable public client and Native Authentication flows.
 
 1. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md#to-add-a-new-user-flow). While you create the user flow, take note of the user attributes you select as these attributes are the ones that Microsoft Entra ID expects your app to submit. Under **Identity providers**, select **Email one-time-passcode** option.
 
@@ -54,7 +54,7 @@ The API allows the app to advertise the authentication methods it supports to Mi
 
 The sequence diagram demonstrates the basic flow of the sign-up process.
 
-:::image type="content" source="media/reference-native-auth-api/sign-up-email-with-otp.png" alt-text="Diagram of native auth sign-up with email with OTP."::: 
+:::image type="content" source="media/reference-native-auth-api/sign-up-email-with-otp.png" alt-text="Diagram of Native Authentication sign-up with email with OTP."::: 
 
 This diagram indicates that the app collects all the sign-up information, then submits them via the `/signup/v1.0/start`. However, if the app doesn't submit all the required user attributes via the `/signup/v1.0/start`, it can do so via the `/signup/v1.0/continue` endpoint. Although submitting the user attributes via the `/signup/v1.0/continue` endpoint is marked as an optional step, it's a mandatory step if the app doesn't submit all the required user attributes via the `/signup/v1.0/start` endpoint.
 
@@ -695,7 +695,7 @@ The API allows the app to advertise the authentication methods it supports to Mi
 
 The sequence diagram demonstrates the basic flow of email OTP sign in process.
 
-:::image type="content" source="media/reference-native-auth-api/sign-in-email-otp.png" alt-text="Diagram of native auth sign in with email with OTP."::: 
+:::image type="content" source="media/reference-native-auth-api/sign-in-email-otp.png" alt-text="Diagram of Native Authentication sign in with email with OTP."::: 
 
 After the app verifies the user's email with OTP, it receives security tokens. If the delivery of the OTP code delays or is never delivered to the user's email, the user can request to be sent another OTP code. Microsoft Entra ID resends another OTP code if the previous one hasn't been verified. When Microsoft Entra ID resends an OTP code, it invalidates the previously sent code.
 
@@ -1010,6 +1010,6 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Next steps
 
-- [Native authentication email with password API reference](reference-native-authentication-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
+- [Native Authentication email with password API reference](reference-native-authentication-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 
 - Learn how to [create custom attributes](../external-id/customers/how-to-define-custom-attributes.md#create-custom-user-attributes).
