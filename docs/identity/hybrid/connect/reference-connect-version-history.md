@@ -76,7 +76,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ## 2.3.6.0
 
 ### Release status
-2/21/2024: Released for download
+2/21/2024: Released for download and autoupgrade.
 
 ### Bug Fixes:
 - Improvements to auto-upgrade detection. Auto-upgrade will no longer retry if it detects the machine does not meet the OS or .NET runtime requirements.
@@ -102,11 +102,11 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 10/11/2023: Released for download
 
 ### Functional Changes
- - The attribute onPremisesObjectIdentifier has been added to the default sync rules. This attribute is required by Microsoft Entra Cloud Sync's Group Provisioning to AD feature.
+- The attribute onPremisesObjectIdentifier has been added to the default sync rules. This attribute is required by Microsoft Entra Cloud Sync's Group Provisioning to AD feature.
  - The minimum .NET runtime requirement has been increased to 4.7.1.
 
 ### Bug Fixes
- - Improvements to upgrade and auto-upgrade components.
+- Improvements to upgrade and auto-upgrade components.
  - Fixed an issue preventing deprovisioning of group when deletions of both the group and a member belonging to a different domain are processed in the same sync cycle.
 
 ## 2.2.1.0
@@ -115,13 +115,13 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 6/19/2023: Released for download.
 
 ### Functional Changes
- - We have enabled Auto Upgrade for tenants with custom synchronization rules. Note that deleted (not disabled) default rules will be re-created and enabled upon Auto Upgrade.
+- We have enabled Auto Upgrade for tenants with custom synchronization rules. Note that deleted (not disabled) default rules will be re-created and enabled upon Auto Upgrade.
  - We have added Microsoft Entra Connect Agent Updater service to the install. This new service will be used for future auto upgrades.
  - We have removed the Synchronization Service WebService Connector Config program from the install.
  - Default sync rule “In from AD – User Common” was updated to flow the employeeType attribute.
 
 ### Bug Fixes
- - We have made improvements to accessibility.
+- We have made improvements to accessibility.
  - We have made the Microsoft Privacy Statement accessible in more places.
 
 
@@ -156,7 +156,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 10/5/2022: Released for download
 
 ### Bug fixes
- - we fixed a bug where upgrade from version 1.6 to version 2.1 got stuck in a loop due to IsMemberOfLocalGroup enumeration.
+- we fixed a bug where upgrade from version 1.6 to version 2.1 got stuck in a loop due to IsMemberOfLocalGroup enumeration.
  - we fixed a bug where the Microsoft Entra Connect Configuration Wizard was sending incorrect credentials (username format) while validating if Enterprise Admin. 
 
 ## 2.1.16.0
@@ -176,7 +176,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 > We have discovered a security vulnerability in the Microsoft Entra Connect Admin Agent. If you have installed the Admin Agent previously it is important that you update your Microsoft Entra Connect server(s) to this version to mitigate the vulnerability.
 
 ### Functional changes
- - We have removed the public preview functionality for the Admin Agent from Microsoft Entra Connect. We won't provide this functionality going forward.
+- We have removed the public preview functionality for the Admin Agent from Microsoft Entra Connect. We won't provide this functionality going forward.
  - We added support for two new attributes: employeeOrgDataCostCenter and employeeOrgDataDivision.
  - We added CertificateUserIds attribute to Microsoft Entra Connector static schema.
  - The Microsoft Entra Connect wizard will now abort if write event logs permission is missing.
@@ -208,7 +208,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 3/24/2022: Released for download only, not available for auto upgrade
 
 ### Bug fixes
- - Fixed an issue where some sync rule functions weren't parsing surrogate pairs properly.
+- Fixed an issue where some sync rule functions weren't parsing surrogate pairs properly.
  - Fixed an issue where, under certain circumstances, the sync service wouldn't start due to a model db corruption. You can read more about the model db corruption issue in [this article](/troubleshoot/azure/active-directory/resolve-model-database-corruption-sqllocaldb)
 
 ## 2.0.91.0
