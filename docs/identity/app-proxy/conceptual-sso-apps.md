@@ -46,7 +46,7 @@ The protocol diagrams describe the single sign-on sequence for both a service pr
 
 ## Publish the on-premises application with application proxy
 
-Before you provide SSO for on-premises applications, enable application proxy and install a connector. Learn more about [how to prepare your on-premises environment, install and register a connector, and test the connector](application-proxy-add-on-premises-application.md). Once you have the connector set up, follow these steps to publish your new application with application proxy. For other settings not mentioned, refer to the [Add an on-premises app to Microsoft Entra ID](application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad) section in the tutorial.
+Before you provide SSO for on-premises applications, enable application proxy and install a connector. Learn more about [how to prepare your on-premises environment, install and register a connector, and test the connector](application-proxy-add-on-premises-application.md). Once you have the connector set up, follow these steps to publish your new application with application proxy.
 
 1. With the application still open in the Microsoft Entra admin center, select **application proxy**. Provide the **Internal URL** for the application. If you're using a custom domain, you also need to upload the TLS/SSL certificate for your application. 
    > [!NOTE]

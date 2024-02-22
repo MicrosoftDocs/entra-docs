@@ -73,7 +73,7 @@ For more information, see [Kerberos Constrained Delegation for single sign-on to
 
 Now you're ready to configure Microsoft Entra application proxy.
 
-1. Publish Report Services through application proxy with the following settings. For step-by-step instructions on how to publish an application through application proxy, see [Publishing applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).
+1. Publish Report Services through application proxy with the following settings. For step-by-step instructions on how to publish an application through application proxy, see [Publishing applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
    - **Internal URL**: Enter the URL to the Report Server that the connector can reach in the corporate network. Make sure this URL is reachable from the server the connector is installed on. A best practice is using a top-level domain such as `https://servername/` to avoid issues with subpaths published through application proxy. For example, use `https://servername/` and not `https://servername/reports/` or `https://servername/reportserver/`.
      > [!NOTE]
      > We recommend using a secure HTTPS connection to the Report Server. See [Configure SSL connections on a native mode report server](/sql/reporting-services/security/configure-ssl-connections-on-a-native-mode-report-server) for information how to.
