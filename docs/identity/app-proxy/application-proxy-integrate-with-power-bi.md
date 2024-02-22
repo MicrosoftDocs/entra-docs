@@ -99,13 +99,13 @@ Configure the Application Registration that was automatically created in step 2.
 3. Select the application, then select **Authentication**.
 4. Add the redirect URI for the platform.
 
-   When configuring the app for Power BI Mobile **iOS**, add the redirect Uniform Resource Identifiers (URIs) of type Public Client (Mobile & Desktop):
+   When configuring the app for Power BI Mobile **iOS**, add the redirect Uniform Resource Identifiers (URIs) of type Public Client (Mobile & Desktop).
    - `msauth://code/mspbi-adal%3a%2f%2fcom.microsoft.powerbimobile`
    - `msauth://code/mspbi-adalms%3a%2f%2fcom.microsoft.powerbimobilems`
    - `mspbi-adal://com.microsoft.powerbimobile`
    - `mspbi-adalms://com.microsoft.powerbimobilems`
 
-   When configuring the app for Power BI Mobile **Android**, add the redirect URIs of type Public Client (Mobile & Desktop):
+   When configuring the app for Power BI Mobile **Android**, add the redirect URIs of type Public Client (Mobile & Desktop).
    - `urn:ietf:wg:oauth:2.0:oob`
    - `mspbi-adal://com.microsoft.powerbimobile`
    - `msauth://com.microsoft.powerbim/g79ekQEgXBL5foHfTlO2TPawrbI%3D`
@@ -129,17 +129,17 @@ Configure the Application Registration that was automatically created in step 2.
 You can use Microsoft Intune to manage the client apps that your company's workforce uses. Intune provides capabilities such as data encryption and access requirements. Enable the Power BI mobile application with the Intune policy.
 
 1. Browse to **Identity** > **Applications** > **App registrations**.
-2. Select the application configured in Step 3 when registering your native client application.
-3. On the application’s page, select **API Permissions**.
-4. Click **Add a permission**.
-5. Under **APIs my organization uses**, search for “Microsoft Mobile Application Management” and select it.
-6. Add the **DeviceManagementManagedApps.ReadWrite** permission to the application
-7. Click **Grant admin consent** to grant the permission access to the application.
-8. Configure the Intune policy you want by referring to [How to create and assign app protection policies](/mem/intune/apps/app-protection-policies).
+1. Select the application configured in Step 3 when registering your native client application.
+1. On the application’s page, select **API Permissions**.
+1. Click **Add a permission**.
+1. Under **APIs my organization uses**, search for and select *Microsoft Mobile Application Management*.
+1. Add the **DeviceManagementManagedApps.ReadWrite** permission to the application.
+1. Click **Grant admin consent** to grant the permission access to the application.
+1. Configure the Intune policy you want by referring to [How to create and assign app protection policies](/mem/intune/apps/app-protection-policies).
 
 ## Troubleshooting
 
-If the application returns an error page after trying to load a report for more than a few minutes, you might need to change the timeout setting. By default, application proxy supports applications that take up to 85 seconds to respond to a request. To lengthen this setting to 180 seconds, select the back-end timeout to **Long** in the App Proxy settings page for the application. For tips on how to create fast and reliable reports see [Power BI Reports Best Practices](/power-bi/guidance/power-bi-optimization).
+If the application returns an error page after trying to load a report for more than a few minutes, you might need to change the timeout setting. By default, application proxy supports applications that take up to 85 seconds to respond to a request. To lengthen this setting to 180 seconds, select the back-end timeout to **Long** in the application proxy settings page for the application. For tips on how to create fast and reliable reports see [Power BI Reports Best Practices](/power-bi/guidance/power-bi-optimization).
 
 Using Microsoft Entra application proxy to enable the Power BI mobile app to connect to on premises Power BI Report Server is not supported with Conditional Access policies that require the Microsoft Power BI app as an approved client app.
 
