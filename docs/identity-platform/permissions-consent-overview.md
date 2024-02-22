@@ -81,7 +81,7 @@ Administrators can grant consent for themselves or for the entire organization. 
 
 Authentication requests are prompted for admin consent if consent wasn't granted and if one of those high-privilege permissions is requested.
 
-Custom application scopes are not considered high-privilege for administrator consent authentication request purposes.
+Permission requests that contain custom application scopes aren't considered high-privilege and thus, they don't require admin consent.
 
 ### Preauthorization
 
