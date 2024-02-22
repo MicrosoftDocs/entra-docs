@@ -1,7 +1,7 @@
 ---
 
-title: Troubleshoot mass user updates without Actor information in audit logs
-description: Learn about the symptoms and causes of mass object changes in the Microsoft Entra ID audit logs related to verified domain changes.
+title: Troubleshoot bulk changes to the verified domains of users in the audit logs
+description: Troubleshoot changes to UserPrincipalName verified domain in the Microsoft Entra ID audit logs.
 
 author: shlipsey3
 manager: amycolannino
@@ -13,23 +13,63 @@ ms.author: sarahlipsey
 
 ---
 
-# Troubleshoot: Audit data on verified domain change 
+# How to troubleshoot bulk changes to UserPrincipalName verified domain
 
-This article describes a common scenario where the audit logs display multiple user updates without any **Actor** information. When troubleshooting changes to users, many IT admins want to know *who* made a particular change, but without the **Actor** information, it's difficult to determine the cause of the mass changes to users.
+This article describes a common scenario where the audit logs display `UserPrincipalName` updates where the domain changed for multiple users. This article explains the causes and considerations for these changes and provides a deep dive into the backend operation that triggers mass object changes in Microsoft Entra ID.
 
 ## Symptoms
 
-The Microsoft Entra audit logs show multiple user updates occurred in my Microsoft Entra tenant. These **Update User** events don't display **Actor** information.
+The Microsoft Entra audit logs show multiple user updates occurred in my Microsoft Entra tenant. The **Actor** information for these events is empty or shows N/A.
+
+The bulk updates involve changing the domain for the `UserPrincipalName` changed from the organization's preferred domain to the default `*.onmicrosoft.com` domain suffix.
+
+### Sample audit log entry
+
+**Activity Date (UTC)**: 2022-01-27 07:44:05
+
+**Activity**: Update user
+
+**Actor Type**: Other
+
+**Actor UPN**: N/A
+
+**Status**: success
+
+**Category**: UserManagement
+
+**Service**: Core Directory
+
+**Target Id**: aaaaaaaaa-bbbb-0000-11111-bbbbbbbbbbbbb
+
+**Target Name**: user@contoso.com
+
+**Target Type**: User
+
+**Details**:
+
+`{ "id": "Directory_0000000-1111111", "category": "UserManagement", "correlationId": "aaaaaa-111111-0000-bbbbbbb", "result": "success", "resultReason": "", "activityDisplayName": "Update user", "activityDateTime": "2022-01-27T07:44:05.7673032Z", "loggedByService": "Core Directory", "operationType": "Update", "userAgent": null, "initiatedBy": { "user": null, "app": null }, "targetResources": [ { "id": "aaaaaaaaa-bbbb-0000-11111-bbbbbbbbbbbbb", "displayName": null, "type": "User", "userPrincipalName": "user@contoso.com", "groupType": null, "modifiedProperties": [ { "displayName": "UserPrincipalName", "oldValue": "[\"user@contoso.onmicrosoft.com\"]", "newValue": "[\"user@contoso.com\"]" }, { "displayName": "Included Updated Properties", "oldValue": null, "newValue": "\"UserPrincipalName\"" }, { "displayName": "Action Client Name", "oldValue": null, "newValue": "\"DirectorySync\"" }, { "displayName": "TargetId.UserType", "oldValue": null, "newValue": "\"Member\"" } ] } ], "additionalDetails": [ { "key": "UserType", "value": "Member" } ] }`
 
 ## Causes
 
-One common reason behind mass object changes is related to a non-synchronous backend operation.  This operation determines the appropriate `UserPrincipalName` and `proxyAddresses` that are updated in Microsoft Entra users, groups, or contacts.
+One common reason behind mass object changes is due to a non-synchronous backend operation. This operation determines the appropriate `UserPrincipalName` and `proxyAddresses` that are updated in Microsoft Entra users, groups, or contacts.
 
 The purpose of this backend operation ensures that `UserPrincipalName` and `proxyAddresses` are consistent in Microsoft Entra ID at any time. The operation must be triggered by an explicit change, such as a verified domain change.   
 
-For example, if you add a verified domain Fabrikam.com to your Contoso.onmicrosoft.com tenant, this action triggers the backend operation on all objects in the tenant. This event is captured in the Microsoft Entra audit logs as **Update User** events preceded by an **Add verified domain** event.
+For example, if you add a verified domain Fabrikam.com to your Contoso.onmicrosoft.com tenant, this action triggers the backend operation on *all* objects in the tenant. This event is captured in the Microsoft Entra audit logs as **Update User** events preceded by an **Add verified domain** event.
 
 If Fabrikam.com was removed from the Contoso.onmicrosoft.com tenant, then all the **Update User** events will be preceded by a **Remove verified domain** event.   
+
+## Resolution
+
+If you encountered this issue, you might benefit from using Microsoft Entra Connect to sync data between your on-premises directory and Microsoft Entra ID. This action ensures that the `UserPrincipalName` and `proxyAddresses` are consistent in both environments.
+
+When you try to manually add or maintain these objects, you run the risk of another backend operation triggering a bulk change.
+
+Review the following articles to become familiar with these concepts:
+
+- [Microsoft Entra UserPrincipalName population](../../identity/hybrid/connect/plan-connect-userprincipalname.md)
+
+- [How the proxyAddresses attribute is populated in Microsoft Entra ID](/troubleshoot/azure/active-directory/proxyaddresses-attribute-populate)
 
 ## Considerations
 
@@ -57,7 +97,7 @@ In most cases, there are no changes to users as their `UserPrincipalName` and `p
 
 ## Deep dive
 
-Want to learn more about what's happening behind the scenes? Here's a deep dive into the backend operation that triggers mass object changes in Microsoft Entra ID. Before you dive in, check out the [Microsoft Entra Connect Sync service shadow attributes](..//identity/hybrid/connect/how-to-connect-syncservice-shadow-attributes.md) article to understand the shadow attributes.
+Want to learn more about what's happening behind the scenes? Here's a deep dive into the backend operation that triggers mass object changes in Microsoft Entra ID. Before you dive in, check out the [Microsoft Entra Connect Sync service shadow attributes](../../identity/hybrid/connect/how-to-connect-syncservice-shadow-attributes.md) article to understand the shadow attributes.
 
 ### UserPrincipalName
 
