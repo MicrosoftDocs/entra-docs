@@ -1,6 +1,6 @@
 ---
-title: Add sign up, sign in and sign out in native Android app
-description: Learn how to add sign up, sign in and sign out with email one-time passcode.
+title: Add sign up with email one-time passcode in Android app
+description: Learn how to add sign up with email one-time passcode.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,18 +12,16 @@ ms.subservice: ciam
 ms.topic: how-to
 ms.date: 02/12/2024
 ms.custom: developer, devx-track-dotnet
-#Customer intent: As a dev, devops, I want to learn about Add sign up, sign in and sign out with email one-time passcode.
+#Customer intent: As a dev, devops, I want to learn about Add sign up with email one-time passcode.
 ---
 
-# Tutorial: Add sign up, sign in and sign out with email one-time passcode in Android
+# Tutorial: Add sign up with email one-time passcode in Android app
 
 This tutorial demonstrates how to sign up, sign in and sign out a user using email one-time passcode (OTP) in your native auth Android app.
 
 In this tutorial, you learn how to:
 
 - Sign up a user.
-- Sign in a user.
-- Sign out a user.
 
 ## Prerequisites
 
