@@ -44,7 +44,7 @@ To aid in troubleshooting protocol tracking related errors, we’ve added a new 
 
 ## Troubleshooting unexpected blocks 
 
-If you have a sign-in unexpectedly blocked by a Conditional Access policy, you should confirm whether the policy was an authentication flows policy. You can do this by going to **sign-in logs**, clicking on the blocked sign-in, and then navigating to the **Conditional Access** tab in the **Activity details: sign-ins** pane. If the policy enforced was an authentication flows policy, click on the policy to determine which authentication flow was matched. For example, if device code flow was matched, this is what you should expect to see:  
+If you have a sign-in unexpectedly blocked by a Conditional Access policy, you should confirm whether the policy was an authentication flows policy. You can do this by going to **sign-in logs**, clicking on the blocked sign-in, and then navigating to the **Conditional Access** tab in the **Activity details: sign-ins** pane. If the policy enforced was an authentication flows policy, select the policy to determine which authentication flow was matched. For example, if device code flow was matched, this is what you should expect to see:  
 
 If device code flow was matched but device code flow wasn't the flow performed for that sign-in that means the refresh token was protocol tracked. You can verify this case by clicking on the blocked sign-in and searching for the **Original transfer method** property in the **Basic info** portion of the **Activity details: sign-ins** pane.
 
