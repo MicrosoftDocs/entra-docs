@@ -73,6 +73,14 @@ If you want all the latest features and updates, check this page and install wha
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
+## 2.3.6.0
+
+### Release status
+2/21/2024: Released for download
+
+### Bug Fixes:
+- Improvements to auto-upgrade detection. Auto-upgrade will no longer retry if it detects the machine does not meet the OS or .NET runtime requirements.
+
 ## 2.3.2.0
 
 ### Release status
