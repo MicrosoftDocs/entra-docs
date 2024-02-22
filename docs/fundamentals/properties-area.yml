@@ -19,7 +19,7 @@ metadata:
   #customer intent: As a <role>, I want <what> so that <why>.
 
 title: |
-  "Add your organization's privacy info to Microsoft Entra"
+  Add your organization's privacy info to Microsoft Entra
 
 introduction: |
   This article explains how an administrator can add privacy-related info to an organization's directory, through the Microsoft Entra admin center.
@@ -30,7 +30,7 @@ introduction: |
 
 procedureSection:
   - title: | 
-        "Add your privacy info"
+        Add your privacy info
     summary: |
       Your privacy and technical information is located in the **Properties** area of the Microsoft Entra admin center.
 
@@ -57,7 +57,7 @@ procedureSection:
           > [!IMPORTANT]
           > If you don't include either your own privacy statement or your privacy contact, your external guests will see text in the **Review Permissions** box that says, **<_your org name_> has not provided links to their terms for you to review**. For example, a guest user will see this message when they receive an invitation to access an organization through B2B collaboration.
 
-        :::image type="content" source="media/properties-area/no-privacy-statement-or-contact.png" alt-text="Screenshot showing the B2B Collaboration Review Permissions box with message.":::
+          :::image type="content" source="media/properties-area/no-privacy-statement-or-contact.png" alt-text="Screenshot showing the B2B Collaboration Review Permissions box with message.":::
       - |
         Select **Save**.
 
