@@ -222,15 +222,17 @@ procedureSection:
       - |
         Select **Delete**.
 
-nextStep:
-  text: Learn about groups and assigning access rights to groups
-  url: concept-learn-about-groups.md
-#- text: Learn about groups and assigning access rights to groups
-#url: concept-learn-about-groups.md
-#- text: Manage groups using PowerShell commands
-#        url: ~/identity/users/groups-settings-v2-cmdlets.md
-#    - text: Manage dynamic rules for users in a group
-#        url: ~/identity/users/groups-create-rule.md
+relatedContent:
+  - text: Learn about groups and assigning access rights to groups
+    url: concept-learn-about-groups.md
+  - text: Learn about groups and assigning access rights to groups
+    url: concept-learn-about-groups.md
+  - text: Manage groups using PowerShell commands
+    url: ~/identity/users/groups-settings-v2-cmdlets.md
+  
+#  - text: Manage dynamic rules for users in a group
+#    url: ~/identity/users/groups-create-rule.md
+
 #    - text: Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID
 #        url: ~/identity/users/licensing-group-advanced.md#limitations-and-known-issues
 #    - text: Associate or add an Azure subscription to Microsoft Entra ID
