@@ -85,7 +85,7 @@ items:
                 items:
                   - name: Android (Kotlin) - sign in users
                     href: how-to-run-native-authentication-sample-android-app.md
-                  - name: Run iOS sample app
+                  - name: iOS (Swift) - sign in users
                     href: how-to-run-sample-ios-app.md
         - name: Command-line interface (CLI) app
           items:
@@ -223,7 +223,7 @@ items:
                     - name: Sign up with username and user attributes
                       href: tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md
                     - name: Sign up with username, password and user attributes
-                      href: tutorial-native-authentication-android-sign-up-user-with-username-password-user-attributes.md
+                      href: tutorial-native-authentication-android-sign-user-with-username-password-user-attributes.md
                     - name: Sign up with username and password
                       href: tutorial-native-authentication-android-sign-up-user-with-username-password.md
                     - name: Sign in user with username and password
@@ -240,7 +240,7 @@ items:
                   href: tutorial-native-auth-prepare-ios-app.md
                 - name: Sign up, sign in and sign out
                   href: tutorial-native-auth-ios-sign-up-sign-in-sign-out.md
-                - name: Scenarios
+                - name: Additional Scenarios
                   items:
                     - name: Sign up with user attributes
                       href: tutorial-native-auth-ios-sign-up-with-email-one-time-passcode.md

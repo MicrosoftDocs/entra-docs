@@ -143,8 +143,8 @@ Although many applications can be associated with your user flow, a single appli
 
 ## Configure the sample iOS mobile application
 
-1. In Xcode, open _native-authentication/NativeAuthSampleApp/NativeAuthSampleApp.xcodeproj_ project.
-1. Open _native-authentication/NativeAuthSampleApp/NativeAuthSampleApp/Configuration.swift_ file.
+1. In Xcode, open _NativeAuthSampleApp.xcodeproj_ project.
+1. Open _NativeAuthSampleApp/Configuration.swift_ file.
 1. Find the placeholder:
 
    - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
