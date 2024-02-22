@@ -72,7 +72,7 @@ Now you're ready to configure Microsoft Entra application proxy.
    - **Internal URL**: Enter the URL to the Report Server that the connector can reach in the corporate network. Make sure this URL is reachable from the server the connector is installed on. A best practice is using a top-level domain such as `https://servername/` to avoid issues with subpaths published through application proxy. For example, use `https://servername/` and not `https://servername/reports/` or `https://servername/reportserver/`.
      > [!NOTE]
      > We recommend using a secure HTTPS connection to the Report Server. See [Configure SSL connections on a native mode report server](/sql/reporting-services/security/configure-ssl-connections-on-a-native-mode-report-server) for information how to.
-   - **External URL**: Enter the public URL the Power BI mobile app connects to. For example, it may look like `https://reports.contoso.com` if a custom domain is used. To use a custom domain, upload a certificate for the domain, and point a Domain Name System (DNS) record to the default `msappproxy.net` domain for your application. For detailed steps, see [Working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md).
+   - **External URL**: Enter the public URL the Power BI mobile app connects to. For example, it looks like `https://reports.contoso.com` if a custom domain is used. To use a custom domain, upload a certificate for the domain, and point a Domain Name System (DNS) record to the default `msappproxy.net` domain for your application. For detailed steps, see [Working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md).
 
    - **Pre-authentication Method**: Microsoft Entra ID.
 
