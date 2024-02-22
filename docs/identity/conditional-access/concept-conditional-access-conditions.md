@@ -1,6 +1,6 @@
 ---
 title: Conditions in Conditional Access policy
-description: What are conditions in a Microsoft Entra Conditional Access policy
+description: What are conditions in a Microsoft Entra Conditional Access policy?
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -14,13 +14,13 @@ ms.reviewer: lhuangnorth, sandeo
 ---
 # Conditional Access: Conditions
 
-Within a Conditional Access policy, an administrator can make use of signals from conditions like risk, device platform, or location to enhance their policy decisions. 
+Within a Conditional Access policy, an administrator can make use of one or more signals to enhance their policy decisions.
 
 [![Define a Conditional Access policy and specify conditions](./media/concept-conditional-access-conditions/conditional-access-conditions.png)](./media/concept-conditional-access-conditions/conditional-access-conditions.png#lightbox)
 
 Multiple conditions can be combined to create fine-grained and specific Conditional Access policies.
 
-When users access a sensitive application, an administrator may factor multiple conditions into their access decisions like: 
+When users access a sensitive application, an administrator might factor multiple conditions into their access decisions like: 
 
 - Sign-in risk information from Identity Protection
 - Network location
@@ -28,11 +28,11 @@ When users access a sensitive application, an administrator may factor multiple 
 
 ## Sign-in risk
 
-Administrators with access to [Identity Protection](~/id-protection/overview-identity-protection.md), can evaluate sign-in risk as part of a Conditional Access policy. Sign-in risk represents the probability that a given authentication request wasn't made by the identity owner. More information about sign-in risk can be found in the articles, [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
+Administrators with access to [Identity Protection](~/id-protection/overview-identity-protection.md), can evaluate sign-in risk as part of a Conditional Access policy. Sign-in risk represents the probability that a given authentication request wasn't made by the identity owner. More information about sign-in risk can be found in the articles [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
 
 ## User risk 
 
-Administrators with access to [Identity Protection](~/id-protection/overview-identity-protection.md), can evaluate user risk as part of a Conditional Access policy. User risk represents the probability that a given identity or account is compromised. More information about user risk can be found in the articles, [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
+Administrators with access to [Identity Protection](~/id-protection/overview-identity-protection.md), can evaluate user risk as part of a Conditional Access policy. User risk represents the probability that a given identity or account is compromised. More information about user risk can be found in the articles [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
 
 ## Device platforms
 
@@ -55,11 +55,11 @@ We don't support selecting macOS or Linux device platforms when selecting **Requ
 
 ## Locations
 
-When administrators configure location as a condition, they can choose to include or exclude locations. These named locations may include the public IPv4 or IPv6 network information, country or region, unknown areas that don't map to specific countries or regions, and [Global Secure Access' compliant network](/entra/global-secure-access/how-to-compliant-network).
+When administrators configure location as a condition, they can choose to include or exclude locations. These named locations might include the public IPv4 or IPv6 network information, country/region, unknown areas that don't map to specific countries/regions, and [Global Secure Access' compliant network](/entra/global-secure-access/how-to-compliant-network).
 
 When including **any location**, this option includes any IP address on the internet not just configured named locations. When administrators select **any location**, they can choose to exclude **all trusted** or **selected locations**.
 
-Administrators can create policies that target specific locations along with other conditions. More information about locations can be found in the article, [What is the location condition in Microsoft Entra Conditional Access](location-condition.md).
+Administrators can create policies that target specific locations along with other conditions. More information about locations can be found in the article [What is the location condition in Microsoft Entra Conditional Access](location-condition.md).
 
 ## Client apps
 
@@ -211,6 +211,11 @@ By selecting **Other clients**, you can specify a condition that affects apps th
 ## Filter for devices
 
 When administrators configure filter for devices as a condition, they can choose to include or exclude devices based on a filter using a rule expression on device properties. The rule expression for filter for devices can be authored using rule builder or rule syntax. This experience is similar to the one used for dynamic membership rules for groups. For more information, see the article [Conditional Access: Filter for devices](concept-condition-filters-for-devices.md).
+
+## Authentication flows
+
+<!--- PLACEHOLDER TEXT --->
+[Conditional Access: Authentication flows](concept-authentication-flows.md)
 
 ## Next steps
 
