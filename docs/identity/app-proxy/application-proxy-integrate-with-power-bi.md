@@ -20,7 +20,7 @@ This article discusses how to use Microsoft Entra application proxy to enable th
 
 - Deploy Report Services in your environment.
 - Enable [Microsoft Entra application proxy](application-proxy-add-on-premises-application.md).
-- It's recommended to use the same internal and external domains for Power BI. To learn more about custom domains, see [Working with custom domains in application proxy](how-to-configure-custom-domain.md).
+- When possible, use the same internal and external domains for Power BI. To learn more about custom domains, see [Working with custom domains in application proxy](how-to-configure-custom-domain.md).
 
 ## Step 1: Configure Kerberos Constrained Delegation (KCD)
 
