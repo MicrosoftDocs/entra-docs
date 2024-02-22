@@ -4,16 +4,14 @@ title: One-time passcode authentication for B2B guest users
 description: How to use Email one-time passcode to authenticate B2B guest users without the need for a Microsoft account.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 01/23/2024
 ms.author: mimart
 author: msmimart
 manager: CelesteDG
-ms.custom: "it-pro, seo-update-azuread-jan"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
-
 #customer intent: As a B2B collaboration administrator, I want to make sure invited users can authenticate using email one-time passcode, so that invited users can sign in using a passcode even when other authentication methods are not available.
 ---
 
@@ -96,7 +94,7 @@ The email one-time passcode feature is now turned on by default for all new tena
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 

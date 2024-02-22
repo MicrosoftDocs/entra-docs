@@ -7,8 +7,8 @@ manager: CelesteDG
 ms.author: dmwendia
 ms.custom: scenarios:getting-started, "languages:UWP", mode-api
 ms.date: 08/18/2022
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn how my Universal Windows Platform (XAML) application can get an access token and call an API that's protected by the Microsoft identity platform.
 ---

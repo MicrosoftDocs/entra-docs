@@ -5,8 +5,8 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.date: 01/18/2024
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As an application developer, I want to use an IDE to set up an ASP.NET Core project, set up and upload a self signed certificate to the Azure portal and configure the application for authentication.
 ---

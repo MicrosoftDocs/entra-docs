@@ -2,8 +2,8 @@
 title: Provide risk feedback in Microsoft Entra ID Protection
 description: How and why should you provide feedback on ID Protection risk detections.
 
-ms.service: active-directory
-ms.subservice: identity-protection
+ms.service: entra-id-protection
+
 ms.topic: how-to
 ms.date: 01/16/2024
 

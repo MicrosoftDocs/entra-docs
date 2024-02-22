@@ -4,8 +4,8 @@ description: Use My Apps collections to Customize My Apps pages for a simpler My
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: how-to
 ms.date: 09/02/2021

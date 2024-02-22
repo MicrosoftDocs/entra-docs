@@ -4,8 +4,8 @@ description: Learn about how to prepare your Node.js client web app to call an A
 author: kengaderdus
 manager: mwongerapz
 ms.author: kengaderdus
-ms.service: active-directory 
-ms.subservice: ciam
+ms.service: entra-external-id 
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 01/27/2024
 ms.custom: developer, devx-track-js

@@ -1,10 +1,10 @@
 ---
 title: PowerShell sample - Replace certificate in Microsoft Entra application proxy apps
 description: PowerShell example that bulk replaces a certificate across Microsoft Entra application proxy applications.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom: has-azure-ad-ps-ref
 ms.topic: sample
@@ -148,4 +148,4 @@ Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGrap
 
 For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
 
-For other PowerShell examples for Application Proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).
+For other PowerShell examples for application proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).

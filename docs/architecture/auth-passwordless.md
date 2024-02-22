@@ -1,15 +1,13 @@
 ---
 title: Passwordless authentication with Microsoft Entra ID
 description: Microsoft Entra ID enables integration with passwordless authentication protocols that include certificate-based authentication, passwordless security key sign-in, Windows Hello for Business, and passwordless sign-in with Microsoft Authenticator.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 03/01/2023
 ms.author: jricketts
-ms.custom: template-concept
 ---
 # Passwordless authentication with Microsoft Entra ID
 

@@ -1,8 +1,7 @@
 ---
 title: Microsoft Entra ID and PCI-DSS Requirement 8
 description: Learn PCI-DSS defined approach requirements to identify users and authenticate access to system components
-services: active-directory
-ms.service: active-directory
+ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
 author: jricketts

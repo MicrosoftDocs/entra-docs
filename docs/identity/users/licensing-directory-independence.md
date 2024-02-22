@@ -1,17 +1,16 @@
 ---
 title: Characteristics of multitenant interaction
 description: Understanding the data independence of your Microsoft Entra organizations
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.topic: overview
 ms.date: 11/15/2023
 ms.author: barclayn
 ms.custom: it-pro
 ms.reviewer: sumitp
-ms.collection: M365-identity-device-management
 ---
 
 # Understand how multiple Microsoft Entra tenant organizations interact

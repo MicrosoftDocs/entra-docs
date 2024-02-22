@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 06/07/2023
 ms.reviewer: ludwignick
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
 #Customer intent: As a developer integrating with the Microsoft identity platform, I want a list of the different optional claims and their uses, so that I can select the specific claims to include in tokens for my application and customize the behavior of certain claims.
 ---

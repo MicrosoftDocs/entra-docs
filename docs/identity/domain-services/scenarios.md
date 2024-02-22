@@ -1,12 +1,11 @@
 ---
 title: Common deployment scenarios for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn about some of the common scenarios and use-cases for Microsoft Entra Domain Services to provide value and meet business needs.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 
 ms.assetid: c5216ec9-4c4f-4b7e-830b-9d70cf176b20
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
 ms.date: 09/23/2023

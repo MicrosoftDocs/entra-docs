@@ -3,10 +3,10 @@ title: 'Microsoft Entra ID licensing'
 description: This article documents licensing requirements for Microsoft Entra ID features.
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra
 ms.topic: conceptual
 ms.date: 01/17/2024
-ms.subservice: hybrid
+ms.subservice: fundamentals
 ms.author: barclayn
 ---
 

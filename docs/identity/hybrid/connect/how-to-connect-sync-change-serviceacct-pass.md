@@ -1,19 +1,19 @@
 ---
 title: 'Microsoft Entra Connect Sync:  Changing the ADSync service account'
 description: This topic document describes the encryption key and how to abandon it after the password is changed.
-services: active-directory
+
 keywords: Azure AD sync service account, password
 author: billmath
 manager: amycolannino
 ms.assetid: 76b19162-8b16-4960-9e22-bd64e6675ecc
-ms.service: active-directory
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Changing the ADSync service account password
 If you change the ADSync service account password, the Synchronization Service will not be able start correctly until you have abandoned the encryption key and reinitialized the ADSync service account password. 

@@ -7,8 +7,8 @@ ms.author: henrymbugua
 ms.custom: has-adal-ref
 ms.date: 06/27/2023
 ms.reviewer: oldalton
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As a developer building an iOS or macOS app, I want to integrate with the Microsoft identity platform to sign users in and get an access token to call the Microsoft Graph API, so that I can securely authenticate users and retrieve data from Microsoft Graph on their behalf.
 ---

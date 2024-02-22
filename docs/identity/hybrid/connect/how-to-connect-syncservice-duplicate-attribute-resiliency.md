@@ -1,20 +1,20 @@
 ---
 title: Identity synchronization and duplicate attribute resiliency
 description: New behavior of how to handle objects with UPN or ProxyAddress conflicts during directory sync using Microsoft Entra Connect.
-services: active-directory
+
 author: billmath
 manager: amycolannino
 
 ms.assetid: 537a92b7-7a84-4c89-88b0-9bce0eacd931
-ms.service: active-directory
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Identity synchronization and duplicate attribute resiliency
 Duplicate Attribute Resiliency is a feature in Microsoft Entra ID that will eliminate friction caused by **UserPrincipalName** and SMTP **ProxyAddress** conflicts when running one of Microsoft’s synchronization tools.

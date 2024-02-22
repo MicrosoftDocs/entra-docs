@@ -1,11 +1,11 @@
 ---
 title: App permissions for custom roles in Microsoft Entra ID
 description: Preview enterprise app permissions for custom Microsoft Entra roles in the Microsoft Entra admin center, PowerShell, or Graph API.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: overview
 ms.date: 01/31/2023
 ms.author: rolyon

@@ -1,12 +1,12 @@
 ---
 title: What are protected actions in Microsoft Entra ID?
 description: Learn about protected actions in Microsoft Entra ID.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
 ms.author: rolyon
-ms.service: active-directory
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
 ms.date: 04/10/2023
@@ -28,7 +28,7 @@ We recommend using multi-factor authentication on all accounts, especially accou
 
 - Stronger MFA authentication strengths, such as [Passwordless MFA](~/identity/authentication/concept-authentication-strengths.md#built-in-authentication-strengths) or [Phishing-resistant MFA](~/identity/authentication/concept-authentication-strengths.md#built-in-authentication-strengths),  
 - Privileged access workstations, by using Conditional Access policy [device filters](~/identity/conditional-access/concept-condition-filters-for-devices.md).
-- Shorter session timeouts, by using Conditional Access [sign-in frequency session controls](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#user-sign-in-frequency). 
+- Shorter session timeouts, by using Conditional Access [sign-in frequency session controls](~/identity/conditional-access/concept-session-lifetime.md#user-sign-in-frequency). 
 
 ## What permissions can be used with protected actions?
 
@@ -97,7 +97,7 @@ If an application or service attempts to perform a protection action, it must be
 
 - Microsoft Entra administrator experiences for the actions in the [Microsoft Entra admin center](https://entra.microsoft.com)
 - [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview?branch=main)
-- [Microsoft Graph Explorer](/graph/graph-explorer/graph-explorer-overview?branch=main)
+- [Graph Explorer](/graph/graph-explorer/graph-explorer-overview?branch=main)
 
 There are some known and expected limitations. The following applications will fail if they attempt to perform a protected action.
  

@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom: has-adal-ref
 ms.date: 05/31/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As a developer seeking assistance with integrating applications with the Microsoft identity platform, I want to explore support options such as creating an Azure support request, posting a question on Microsoft Q&A, and opening a GitHub issue for MSAL libraries, so that I can get the help I need to solve problems and find answers to my questions.
 ---

@@ -3,7 +3,7 @@ title: Manage the 'Stay signed in' prompt in Microsoft Entra ID
 description: Learn how the 'Stay signed in' prompt for Microsoft Entra users works and how to configure it in Microsoft Entra ID.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 01/16/2024

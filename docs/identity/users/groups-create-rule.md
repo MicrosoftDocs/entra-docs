@@ -1,18 +1,17 @@
 ---
 title: Create or edit a dynamic group and get status
 description: How to create or update a group membership rule in the Azure portal, and check its processing status.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 ms.date: 12/07/2023
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Create or update a dynamic group in Microsoft Entra ID

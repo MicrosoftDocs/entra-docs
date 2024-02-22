@@ -1,11 +1,11 @@
 ---
 title: Microsoft Entra Verified ID-supported standards
 description: This article outlines current and upcoming standards
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 ms.topic: how-to
 ms.date: 10/31/2023
 ms.author: barclayn

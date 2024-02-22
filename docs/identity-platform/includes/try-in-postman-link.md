@@ -5,8 +5,8 @@ description: Standard link to use the Postman files
 author: henrymbuguakiarie
 manager: CelesteDG
 
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 
 ms.topic: include
 ms.date: 06/25/2021

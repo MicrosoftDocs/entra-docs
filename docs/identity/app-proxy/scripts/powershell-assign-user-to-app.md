@@ -1,10 +1,10 @@
 ---
 title: PowerShell sample - Assign user to a Microsoft Entra application proxy app
 description: PowerShell example that assigns a user to a Microsoft Entra application proxy application.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom: has-azure-ad-ps-ref
 ms.topic: sample
@@ -59,7 +59,7 @@ If (($servicePrincipalObjectId -eq "null") -or ($userObjectId -eq "null")) {
 
     Write-Host "Parameter is missing." -BackgroundColor "Black" -ForegroundColor "Green"
     Write-Host " "
-    Write-Host ".\assign-user-to-app.ps1 -ServicePrincipalObjectId <ObjectId of the Microsoft Entra Application Proxy application service principal> -UserObjectId <ObjectId of the User>" -BackgroundColor "Black" -ForegroundColor "Green"
+    Write-Host ".\assign-user-to-app.ps1 -ServicePrincipalObjectId <ObjectId of the Microsoft Entra application proxy application service principal> -UserObjectId <ObjectId of the User>" -BackgroundColor "Black" -ForegroundColor "Green"
     Write-Host " "
     Write-Host "Hints:" -BackgroundColor "Black" -ForegroundColor "Green"
     Write-Host "You can easily identify the parameters by using the following PS commands:" -BackgroundColor "Black" -ForegroundColor "Green"
@@ -95,4 +95,4 @@ Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGrap
 
 For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
 
-For other PowerShell examples for Application Proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).
+For other PowerShell examples for application proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).

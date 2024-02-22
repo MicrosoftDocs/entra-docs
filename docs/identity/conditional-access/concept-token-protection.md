@@ -1,7 +1,7 @@
 ---
 title: Token protection in Microsoft Entra Conditional Access
 description: Learn how to use token protection in Conditional Access policies.
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 08/14/2023
@@ -10,8 +10,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: paulgarn
-
-ms.collection: M365-identity-device-management
 ---
 # Conditional Access: Token protection (preview)
 

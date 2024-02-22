@@ -1,17 +1,16 @@
 ---
 title: Rules for dynamically populated groups membership
 description: How to create membership rules to automatically populate groups, and a rule reference.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.topic: overview
 ms.date: 12/04/2023
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Dynamic membership rules for groups in Microsoft Entra ID

@@ -7,8 +7,8 @@ ms.author: henrymbugua
 ms.custom: 
 ms.date: 12/08/2022
 ms.reviewer: phsignor, jawoods
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
 #Customer intent:As an application developer, I want to troubleshoot and resolve the issue of exceeding the configured permissions limit for my app, so that I can ensure that my app can continue to add new permissions and function properly within the limits set by the platform.
 ---

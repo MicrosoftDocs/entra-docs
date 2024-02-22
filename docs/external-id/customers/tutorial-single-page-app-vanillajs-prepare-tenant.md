@@ -6,8 +6,8 @@ author: OwenRichards1
 manager: CelesteDG
 
 ms.author: owenrichards
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.custom: devx-track-js
 ms.topic: tutorial
 ms.date: 08/17/2023
@@ -31,9 +31,9 @@ In this tutorial;
 
 * A Microsoft Entra ID for customers tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-    * Application administrator
-    * Application developer
-    * Cloud application administrator.
+    * Application Administrator
+    * Application Developer
+    * Cloud Application Administrator.
 
 ## Register the SPA and record identifiers
 

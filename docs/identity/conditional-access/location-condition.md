@@ -2,8 +2,7 @@
 title: Using networks and countries/regions in Microsoft Entra ID
 description: Use GPS locations and public IPv4 and IPv6 networks in Conditional Access policy to make access decisions.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 02/01/2024
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
-
-ms.collection: M365-identity-device-management
 ---
 # Using the location condition in a Conditional Access policy 
 

@@ -1,10 +1,11 @@
 ---
 author: kengaderdus
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: include
 ms.date: 03/30/2023
 ms.author: kengaderdus
+ms.manager: mwongerapk
 ---
 
 An API needs to publish a minimum of one scope, also called [Delegated Permission](~/identity-platform/permissions-consent-overview.md), for the client apps to obtain an access token for a user successfully. To publish a scope, follow these steps:

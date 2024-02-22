@@ -5,8 +5,8 @@ description: Include file warning that access tokens for Microsoft Graph should 
 author: OwenRichards1
 manager: CelesteDG
 
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 
 ms.topic: include
 ms.date: 06/25/2021

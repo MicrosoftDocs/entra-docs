@@ -1,11 +1,10 @@
 ---
 title: How to manage groups
 description: Instructions about how to create and update Microsoft Entra groups, such as membership and settings.
-services: active-directory
 author: shlipsey3
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 01/05/2024

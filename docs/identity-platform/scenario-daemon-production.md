@@ -7,8 +7,8 @@ ms.author: dmwendia
 ms.custom: 
 ms.date: 02/01/2024
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform.
 ---

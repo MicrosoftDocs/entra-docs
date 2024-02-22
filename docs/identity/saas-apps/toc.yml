@@ -96,8 +96,6 @@
         href: air-tutorial.md
       - name: Airbase
         href: airbase-tutorial.md
-      - name: Airstack
-        href: airstack-tutorial.md
       - name: Airtable
         href: airtable-tutorial.md  
       - name: AirWatch
@@ -108,6 +106,8 @@
         href: akashi-tutorial.md
       - name: AlacrityLaw
         href: alacritylaw-tutorial.md
+      - name: Alation Data Catalog
+        href: alation-data-catalog-tutorial.md
       - name: Alchemer
         href: alchemer-tutorial.md
       - name: Alcumus Info Exchange
@@ -144,8 +144,6 @@
         href: amazon-managed-grafana-tutorial.md  
       - name: AWS Single-Account Access
         href: amazon-web-service-tutorial.md
-      - name: Amazon Web Services (AWS) to connect multiple accounts
-        href: aws-multi-accounts-tutorial.md
       - name: AMMS
         href: amms-tutorial.md
       - name: Amplitude
@@ -1463,6 +1461,8 @@
         href: jdacloud-tutorial.md
       - name: Jedox
         href: jedox-tutorial.md
+      - name: JFrog Artifactory
+        href: jfrog-artifactory-tutorial.md
       - name: JLL TRIRIGA
         href: jll-tririga-tutorial.md
       - name: JIRA SAML SSO by Microsoft
@@ -1725,6 +1725,8 @@
         href: menlosecurity-tutorial.md
       - name: Meraki Dashboard
         href: meraki-dashboard-tutorial.md
+      - name: Mercado Eletronico SAML
+        href: mercado-eletronico-saml-tutorial.md
       - name: Mercell
         href: mercell-tutorial.md
       - name: Mercer BenefitsCentral (MBC)
@@ -1795,6 +1797,8 @@
         href: moveittransfer-tutorial.md
       - name: Movement by project44
         href: movement-by-project44-tutorial.md
+      - name: Moveworks
+        href: moveworks-tutorial.md
       - name: Moxi Engage
         href: moxiengage-tutorial.md
       - name: Moxtra
@@ -2009,6 +2013,8 @@
         href: panorays-tutorial.md
       - name: Pantheon
         href: pantheon-tutorial.md 
+      - name: Papirfly SSO
+        href: papirfly-sso-tutorial.md
       - name: Parallels Desktop
         href: parallels-desktop-tutorial.md
       - name: Parkalot - Car park management
@@ -2255,6 +2261,8 @@
         href: retrievermediadatabase-tutorial.md
       - name: Reviewsnap
         href: reviewsnap-tutorial.md
+      - name: RevSpace
+        href: revspace-tutorial.md
       - name: Reward Gateway
         href: reward-gateway-tutorial.md
       - name: Rewatch
@@ -2709,8 +2717,6 @@
         href: teamviewer-tutorial.md
       - name: Teamwork.com
         href: teamwork-tutorial.md
-      - name: RevSpace
-        href: revspace-tutorial.md
       - name: Templafy SAML2
         href: templafy-tutorial.md
       - name: TencentCloud IDaaS
@@ -3298,6 +3304,8 @@
         href: connecter-provisioning-tutorial.md
       - name: Contentful
         href: contentful-provisioning-tutorial.md
+      - name: Contentstack
+        href: contentstack-provisioning-tutorial.md
       - name: Comeet Recruiting Software
         href: comeet-recruiting-software-provisioning-tutorial.md
       - name: Concur
