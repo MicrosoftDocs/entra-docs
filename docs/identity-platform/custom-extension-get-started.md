@@ -1,12 +1,12 @@
 ---
-title: Get started with custom claims providers (preview)
+title: Configure a custom claims provider token issuance event (preview)
 description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to source claims from a data store that is external to Microsoft Entra ID.  
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
 ms.date: 08/16/2023
-ms.reviewer: JasSuri
+ms.reviewer: JasSuri, stsoneff
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
@@ -17,18 +17,11 @@ titleSuffix: Microsoft identity platform
 
 # Configure a custom claim provider token issuance event (preview)
 
-This article describes how to configure and set up a custom claims provider with the [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) type. This event is triggered right before the token is issued, and allows you to call a REST API to add claims to the token.
+This article describes how to configure and set up a custom claims provider using a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener). You'll create a REST API using Azure Functions in the Azure portal, then register a custom authentication extension. You'll add some attributes that you expect your custom authentication extension to parse from your REST API. To test the custom authentication extension, you'll register a sample OpenID Connect application to get a token and view the claims.
 
-This how-to guide demonstrates the token issuance start event with a REST API running in Azure Functions and a sample OpenID Connect application. In this article, you'll create a REST API using Azure Functions in the Azure portal, then register a custom authentication extension in the Microsoft Entra admin center. You'll add some attributes that you expect your custom authentication extension to parse from your REST API. To test the custom authentication extension, you'll register a test web application to get a token and view the claims.
-
-Before you start, take a look at following video, which demonstrates how to configure Microsoft Entra custom claims provider with Function App:
+The following video outlines the steps you'll replicate in this article to configure a Microsoft Entra custom claims provider with an Azure Function App:
 
 > [!VIDEO https://www.youtube.com/embed/fxQGVIwX8_4]
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=TokenAugmentation)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Add claims to security tokens from a REST API” use case.
 
 ## Prerequisites
 
@@ -157,7 +150,7 @@ After the Azure Function app is created, create an HTTP trigger function. The HT
 
 ## Step 2: Register a custom authentication extension
 
-In this step, you configure a custom authentication extension, which will be used by Microsoft Entra ID to call your Azure function. The custom authentication extension contains information about your REST API endpoint, the claims that it parses from your REST API, and how to authenticate to your REST API. Follow these steps to register a custom authentication extension:
+You'll now configure a custom authentication extension, which will be used by Microsoft Entra ID to call your Azure function. The custom authentication extension contains information about your REST API endpoint, the claims that it parses from your REST API, and how to authenticate to your REST API. Follow these steps to register a custom authentication extension:
 
 # [Microsoft Entra admin center](#tab/entra-admin-center)
 
@@ -201,7 +194,7 @@ Register an application to authenticate your custom authentication extension to 
 
 Create a service principal in the tenant for the authenticationeventsAPI app registration.
 
-Still in Graph Explorer, run the following request. Replace `{authenticationeventsAPI_AppId}` with the value of **appId** that you recorded from the previous step.
+While in Graph Explorer, run the following request. Replace `{authenticationeventsAPI_AppId}` with the value of **appId** that you recorded from the previous step.
 
 ```http
 POST https://graph.microsoft.com/v1.0/servicePrincipals
@@ -587,6 +580,6 @@ To test your custom claims provider, follow these steps:
 
 ## See also
 
-- Learn how to configure a [SAML application](custom-extension-configure-saml-app.md) to receive tokens with claims sourced from an external store.
-- Learn more about custom claims providers with the [custom claims provider reference](custom-claims-provider-reference.md) article.
-- Learn how to [troubleshoot your custom authentication extensions API](custom-extension-troubleshoot.md).
+- [Configure a SAML app to receive tokens with claims from an external store](custom-extension-configure-saml-app.md)
+- [Custom claims provider reference](custom-claims-provider-reference.md)
+- [Troubleshoot your custom authentication extensions API](custom-extension-troubleshoot.md)
