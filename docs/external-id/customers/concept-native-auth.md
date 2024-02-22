@@ -26,8 +26,8 @@ Watch this [video](https://www.youtube.com/embed/20Tp0CM55rw) for an overview of
 
 You can create fully native experiences for local account sign-up, sign-in, and sign-out for your first party applications. We provide the following capabilities: 
 
-- [Passwordless](/entra/identity-platform/reference-native-auth-email-otp) authentication with email one-time passcode (OTP).
-- [Password authentication](/entra/identity-platform/reference-native-auth-email-password) with self-service password reset (SSPR). 
+- Passwordless authentication with email one-time passcode (OTP).
+- Password authentication with self-service password reset (SSPR). 
 
 :::image type="content" source="media/concept-native-auth/native-auth-experiences.png" alt-text="Native authentication experiences.":::
 
