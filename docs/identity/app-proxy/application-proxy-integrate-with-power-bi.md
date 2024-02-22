@@ -54,11 +54,11 @@ To configure KCD, repeat the following steps for each connector machine:
 
 1. Sign in to a domain controller as a domain administrator, and then open **Active Directory Users and Computers**.
 2. Find the computer that the connector is running on.
-3. Double-click the computer, and then select the **Delegation** tab.
+3. Select the computer by double clicking, and then select the **Delegation** tab.
 4. Set the delegation settings to **Trust this computer for delegation to the specified services only**. Then, select **Use any authentication protocol**.
 5. Select **Add**, and then select **Users or Computers**.
 6. Enter the service account you set up for Reporting Services.
-7. Click **OK**. To save the changes, click **OK** again.
+7. Select **OK**. To save the changes, select **OK** again.
 
 For more information, see [Kerberos Constrained Delegation for single sign-on to your apps with application proxy](how-to-configure-sso-with-kcd.md).
 
@@ -86,7 +86,7 @@ Now you're ready to configure Microsoft Entra application proxy.
 
    d. Choose the **Delegated Login Identity** for the connector to use on behalf of your users. For more information, see [Working with different on-premises and cloud identities](how-to-configure-sso-with-kcd.md#working-with-different-on-premises-and-cloud-identities).
 
-   e. Click **Save** to save your changes.
+   e. Select **Save** to save your changes.
 
 To finish setting up your application, go to **the Users and groups** section and assign users to access this application.
 
@@ -131,10 +131,10 @@ You can use Microsoft Intune to manage the client apps that your company's workf
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Select the application configured in Step 3 when registering your native client application.
 1. On the application’s page, select **API Permissions**.
-1. Click **Add a permission**.
+1. Select **Add a permission**.
 1. Under **APIs my organization uses**, search for and select *Microsoft Mobile Application Management*.
 1. Add the **DeviceManagementManagedApps.ReadWrite** permission to the application.
-1. Click **Grant admin consent** to grant the permission access to the application.
+1. Select **Grant admin consent** to grant the permission access to the application.
 1. Configure the Intune policy you want by referring to [How to create and assign app protection policies](/mem/intune/apps/app-protection-policies).
 
 ## Troubleshooting
