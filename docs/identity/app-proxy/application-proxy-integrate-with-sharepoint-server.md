@@ -44,7 +44,7 @@ This article uses the following values:
 
 In this step, you create an application in your Microsoft Entra tenant that uses application proxy. You set the external URL and specify the internal URL, both of which are used later in SharePoint.
 
-1. Create the app as described with the following settings. For step-by-step instructions, see [Publishing applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).
+1. Create the app as described with the following settings. For step-by-step instructions, see [Publishing applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
    * **Internal URL**: SharePoint internal URL that is set later in SharePoint, such as `https://sharepoint`.
    * **Pre-Authentication**: `Microsoft Entra ID`.
    * **Translate URLs in Headers**: `No`.
