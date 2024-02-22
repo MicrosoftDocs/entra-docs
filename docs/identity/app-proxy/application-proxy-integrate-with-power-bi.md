@@ -20,7 +20,7 @@ This article discusses how to use Microsoft Entra application proxy to enable th
 
 - Deploy Report Services in your environment.
 - Enable [Microsoft Entra application proxy](application-proxy-add-on-premises-application.md).
-- It is recommended to use the same internal and external domains for Power BI. To learn more about custom domains, see [Working with custom domains in application proxy](how-to-configure-custom-domain.md).
+- It's recommended to use the same internal and external domains for Power BI. To learn more about custom domains, see [Working with custom domains in application proxy](how-to-configure-custom-domain.md).
 
 ## Step 1: Configure Kerberos Constrained Delegation (KCD)
 
@@ -141,7 +141,7 @@ You can use Microsoft Intune to manage the client apps that your company's workf
 
 If the application returns an error page after trying to load a report for more than a few minutes, you might need to change the timeout setting. By default, application proxy supports applications that take up to 85 seconds to respond to a request. To lengthen this setting to 180 seconds, select the back-end timeout to **Long** in the application proxy settings page for the application. For tips on how to create fast and reliable reports see [Power BI Reports Best Practices](/power-bi/guidance/power-bi-optimization).
 
-Using Microsoft Entra application proxy to enable the Power BI mobile app to connect to on premises Power BI Report Server is not supported with Conditional Access policies that require the Microsoft Power BI app as an approved client app.
+Using Microsoft Entra application proxy to enable the Power BI mobile app to connect to on premises Power BI Report Server isn't supported with Conditional Access policies that require the Microsoft Power BI app as an approved client app.
 
 ## Next steps
 
