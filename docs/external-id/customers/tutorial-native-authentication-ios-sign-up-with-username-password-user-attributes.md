@@ -195,5 +195,5 @@ Both delegate methods contain a new state reference. We'll use the `newState` pa
 
 ## Next steps
 
-- [Tutorial: Sign up using username and password](tutorial-native-auth-ios-sign-up-with-username-password.md)
+- [Tutorial: Sign up using username and password](tutorial-native-authentication-ios-sign-up-with-username-password.md)
 

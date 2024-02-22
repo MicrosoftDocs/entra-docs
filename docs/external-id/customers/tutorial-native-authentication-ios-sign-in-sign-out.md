@@ -26,7 +26,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-auth-ios-sign-up-sign-in-sign-out.md)
+- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-ios-sign-up-sign-in-sign-out.md)
 
 ## Sign in user
 
@@ -173,4 +173,4 @@ You have successfully completed all the necessary steps to sign out a user on yo
 
 ## Next steps
 
-[Tutorial: Add built-in attributes to your native iOS authentication.](tutorial-native-auth-ios-sign-up-with-email-one-time-passcode.md)
+[Tutorial: Add built-in attributes to your native iOS authentication.](tutorial-native-authentication-ios-sign-up-with-email-one-time-passcode.md)

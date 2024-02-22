@@ -116,6 +116,6 @@ func onSignUpStartError(error: MSAL.SignUpStartError) {
 
 ## Next steps
 
-- [Tutorial: Sign in using username and password](tutorial-native-auth-ios-sign-in-with-username-password.md)
+- [Tutorial: Sign in using username and password](tutorial-native-authentication-ios-sign-in-with-username-password.md)
 
 

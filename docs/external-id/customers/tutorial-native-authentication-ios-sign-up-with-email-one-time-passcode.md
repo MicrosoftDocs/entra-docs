@@ -125,5 +125,5 @@ func onSignUpStartError(error: MSAL.SignUpStartError) {
 
 ## Next steps
 
-- [Tutorial: Sign up using username, password, and user attributes](tutorial-native-auth-ios-sign-up-with-username-password-user-attributes.md)
+- [Tutorial: Sign up using username, password, and user attributes](tutorial-native-authentication-ios-sign-up-with-username-password-user-attributes.md)
 

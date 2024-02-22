@@ -93,5 +93,5 @@ This outputs all debug logs from MSAL, which can be helpful in diagnosing issues
 
 ## Next steps
 
-- [Tutorial: Add sign in and sign up with email one-time passcode](tutorial-native-auth-ios-sign-up-sign-in-sign-out.md)
+- [Tutorial: Add sign up with email one-time passcode](tutorial-native-authentication-ios-sign-up.md)
 
