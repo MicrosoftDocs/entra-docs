@@ -196,7 +196,7 @@ Assuming no errors occur during the process, you have built a self-service passw
 
 ## Sign in after password reset
 
-This is an advanced version of the sign in flows [earlier described](tutorial-native-auth-android-sign-in-user-with-username-password.md), which has the added benefit of automatically signing in after successfully reset password. 
+This is an advanced version of the sign in flows [earlier described](tutorial-native-authentication-android-sign-in-user-with-username-password.md), which has the added benefit of automatically signing in after successfully reset password. 
 
 The `ResetPasswordResult.Complete` returns `SignInContinuationState` object. And `SignInContinuationState` provides access to `signIn()` method. 
 
