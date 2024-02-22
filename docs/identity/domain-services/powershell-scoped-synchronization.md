@@ -1,6 +1,6 @@
 ---
 title: Scoped synchronization using PowerShell for Microsoft Entra Domain Services | Microsoft Docs
-description: Learn how to use Azure AD PowerShell to configure scoped synchronization from Microsoft Entra ID to a Microsoft Entra Domain Services managed domain
+description: Learn how to use Microsoft Graph PowerShell to configure scoped synchronization from Microsoft Entra ID to a Microsoft Entra Domain Services managed domain
 author: justinha
 manager: amycolannino
 
@@ -9,7 +9,7 @@ ms.subservice: domain-services
 ms.topic: how-to
 ms.date: 09/06/2023
 ms.author: justinha
-ms.custom: has-azure-ad-ps-ref, devx-track-azurepowershell
+ms.custom: has-azure-ad-ps-ref, devx-track-azurepowershell, azure-ad-ref-level-one-done
 ---
 
 # Configure scoped synchronization from Microsoft Entra ID to Microsoft Entra Domain Services using MS Graph PowerShell
@@ -59,8 +59,8 @@ param (
     [String[]]$groupsToAdd
 )
 
-Connect-AzureAD
-$sp = Get-AzureADServicePrincipal -Filter "AppId eq '2565bd9d-da50-47d4-8b85-4c97f669dc36'"
+Connect-MgGraph -Scopes "Directory.Read.All","AppRoleAssignment.ReadWrite.All"
+$sp = Get-MgServicePrincipal -Filter "AppId eq '2565bd9d-da50-47d4-8b85-4c97f669dc36'"
 $role = $sp.AppRoles | where-object -FilterScript {$_.DisplayName -eq "User"}
 
 Write-Output "`n****************************************************************************"
@@ -71,10 +71,10 @@ foreach ($groupName in $groupsToAdd)
 {
     try
     {
-        $group = Get-AzureADGroup -Filter "DisplayName eq '$groupName'"
-        $newGroupIds.Add($group.ObjectId)
+        $group = Get-MgGroup -Filter "DisplayName eq '$groupName'"
+        $newGroupIds.Add($group.Id)
 
-        Write-Output "Group-Name: $groupName, Id: $($group.ObjectId)"
+        Write-Output "Group-Name: $groupName, Id: $($group.Id)"
     }
     catch
     {
@@ -85,8 +85,8 @@ foreach ($groupName in $groupsToAdd)
 Write-Output "****************************************************************************`n"
 Write-Output "`n****************************************************************************"
 
-$currentAssignments = Get-AzureADServiceAppRoleAssignment -ObjectId $sp.ObjectId -All $true
-Write-Output "Total current group-assignments: $($currentAssignments.Count), SP-ObjectId: $($sp.ObjectId)"
+$currentAssignments = Get-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $sp.Id -All:$true
+Write-Output "Total current group-assignments: $($currentAssignments.Count), SP-ObjectId: $($sp.Id)"
 
 $currAssignedObjectIds = New-Object 'System.Collections.Generic.HashSet[string]'
 foreach ($assignment in $currentAssignments)
@@ -96,7 +96,7 @@ foreach ($assignment in $currentAssignments)
     if ($newGroupIds.Contains($assignment.PrincipalId) -eq $false)
     {
         Write-Output "This assignment is not needed anymore. Removing it! Assignment-ObjectId: $($assignment.PrincipalId)"
-        Remove-AzureADServiceAppRoleAssignment -ObjectId $sp.ObjectId -AppRoleAssignmentId $assignment.ObjectId
+        Remove-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $sp.Id -AppRoleAssignmentId $currentassignment.Id
     }
     else
     {
@@ -113,8 +113,13 @@ foreach ($id in $newGroupIds)
     {
         if ($currAssignedObjectIds.Contains($id) -eq $false)
         {
-            Write-Output "Adding new group-assignment. Role-Id: $($role.Id), Group-Object-Id: $id, ResourceId: $($sp.ObjectId)"
-            New-AzureADGroupAppRoleAssignment -Id $role.Id -ObjectId $id -PrincipalId $id -ResourceId $sp.ObjectId
+            Write-Output "Adding new group-assignment. Role-Id: $($role.Id), Group-Object-Id: $id, ResourceId: $($sp.Id)"
+            $appRoleAssignment = @{
+                "principalId"= "$group.Id"
+                "resourceId"= "$sp.Id"
+                "appRoleId"= "$role.Id"
+            }
+            New-MgGroupAppRoleAssignment -GroupId $group.Id -BodyParameter $appRoleAssignment 
         }
         else
         {
