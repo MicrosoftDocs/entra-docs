@@ -10,7 +10,7 @@ ms.subservice: domain-services
 ms.topic: sample
 ms.date: 09/21/2023
 ms.author: justinha
-ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref
+ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # Enable Microsoft Entra Domain Services using PowerShell
@@ -30,7 +30,7 @@ To complete this article, you need the following resources:
     * Make sure that you sign in to your Azure subscription using the [Connect-AzAccount][Connect-AzAccount] cmdlet.
 * Install and configure MS Graph PowerShell.
    - If needed, follow the instructions to [install the MS Graph PowerShell module and connect to Microsoft Entra ID](/powershell/microsoftgraph/installation?view=graph-powershell-1.0).
-    * Make sure that you sign in to your Microsoft Entra tenant using the [Connect-AzureAD][Connect-AzureAD] cmdlet.
+    * Make sure that you sign in to your Microsoft Entra tenant using the [Connect-MgGraph][Connect-MgGraph] cmdlet.
 * You need *global administrator* privileges in your Microsoft Entra tenant to enable Domain Services.
 * You need *Contributor* privileges in your Azure subscription to create the required Domain Services resources.
 
@@ -50,28 +50,27 @@ Domain Services requires a service principal to authenticate and communicate and
 
 First, create a Microsoft Entra service principal by using a specific application ID named *Domain Controller Services*. The ID value is *2565bd9d-da50-47d4-8b85-4c97f669dc36* for global Azure and *6ba9a5d4-8456-4118-b521-9c5ca10cdf84* for other Azure clouds. Don't change this application ID.
 
-Create a Microsoft Entra service principal using the [New-AzureADServicePrincipal][New-AzureADServicePrincipal] cmdlet:
+Create a Microsoft Entra service principal using the [New-MgServicePrincipal][New-MgServicePrincipal] cmdlet:
 
 ```powershell
-New-AzureADServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
+New-MgServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
 ```
 
 Now create a Microsoft Entra group named *AAD DC Administrators*. Users added to this group are then granted permissions to perform administration tasks on the managed domain.
 
-First, get the *AAD DC Administrators* group object ID using the [Get-AzureADGroup][Get-AzureADGroup] cmdlet. If the group doesn't exist, create it with the *AAD DC Administrators* group using the [New-AzureADGroup][New-AzureADGroup] cmdlet:
+First, get the *AAD DC Administrators* group object ID using the [Get-MgGroup][Get-MgGroup] cmdlet. If the group doesn't exist, create it with the *AAD DC Administrators* group using the [New-MgGroup][New-MgGroup] cmdlet:
 
 ```powershell
 # First, retrieve the object ID of the 'AAD DC Administrators' group.
-$GroupObjectId = Get-AzureADGroup `
-  -Filter "DisplayName eq 'AAD DC Administrators'" | `
-  Select-Object ObjectId
+$GroupObject = Get-MgGroup `
+  -Filter "DisplayName eq 'AAD DC Administrators'"
 
 # If the group doesn't exist, create it
-if (!$GroupObjectId) {
-  $GroupObjectId = New-AzureADGroup -DisplayName "AAD DC Administrators" `
+if (!$GroupObject) {
+  $GroupObject = New-MgGroup -DisplayName "AAD DC Administrators" `
     -Description "Delegated group to administer Azure AD Domain Services" `
-    -SecurityEnabled $true `
-    -MailEnabled $false `
+    -SecurityEnabled:$true `
+    -MailEnabled:$false `
     -MailNickName "AADDCAdministrators"
   }
 else {
@@ -79,18 +78,18 @@ else {
 }
 ```
 
-With the *AAD DC Administrators* group created, get the desired user's object ID using the [Get-AzureADUser][Get-AzureADUser] cmdlet, then add the user to the group using the [Add-AzureADGroupMember][Add-AzureADGroupMember] cmdlet.
+With the *AAD DC Administrators* group created, get the desired user's object ID using the [Get-MgUser][Get-MgUser] cmdlet, then add the user to the group using the [New-MgGroupMember][New-MgGroupMember] cmdlet.
 
 In the following example, the user object ID for the account with a UPN of `admin@contoso.onmicrosoft.com`. Replace this user account with the UPN of the user you wish to add to the *AAD DC Administrators* group:
 
 ```powershell
 # Retrieve the object ID of the user you'd like to add to the group.
-$UserObjectId = Get-AzureADUser `
+$UserObjectId = Get-MgUser `
   -Filter "UserPrincipalName eq 'admin@contoso.onmicrosoft.com'" | `
-  Select-Object ObjectId
+  Select-Object Id
 
 # Add the user to the 'AAD DC Administrators' group.
-Add-AzureADGroupMember -ObjectId $GroupObjectId.ObjectId -RefObjectId $UserObjectId.ObjectId
+New-MgGroupMember -GroupId $GroupObject.Id -DirectoryObjectId $UserObjectId.Id
 ```
 
 ## Create network resources
@@ -244,39 +243,39 @@ $AzureLocation = "westus"
 $AzureSubscriptionId = "YOUR_AZURE_SUBSCRIPTION_ID"
 $ManagedDomainName = "aaddscontoso.com"
 
-# Connect to your Azure AD directory.
-Connect-AzureAD
+# Connect to your Microsoft Entra directory.
+Connect-MgGraph -Scopes "Directory.ReadWrite.All"
 
 # Login to your Azure subscription.
 Connect-AzAccount
 
 # Create the service principal for Azure AD Domain Services.
-New-AzureADServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
+New-MgServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
 
-# First, retrieve the object ID of the 'AAD DC Administrators' group.
-$GroupObjectId = Get-AzureADGroup `
-  -Filter "DisplayName eq 'AAD DC Administrators'" | `
-  Select-Object ObjectId
+# First, retrieve the object of the 'AAD DC Administrators' group.
+$GroupObject = Get-MgGroup `
+  -Filter "DisplayName eq 'AAD DC Administrators'"
 
 # Create the delegated administration group for Azure AD Domain Services if it doesn't already exist.
-if (!$GroupObjectId) {
-  $GroupObjectId = New-AzureADGroup -DisplayName "AAD DC Administrators" `
+if (!$GroupObject) {
+  $GroupObject = New-MgGroup -DisplayName "AAD DC Administrators" `
     -Description "Delegated group to administer Azure AD Domain Services" `
-    -SecurityEnabled $true `
-    -MailEnabled $false `
+    -SecurityEnabled:$true `
+    -MailEnabled:$false `
     -MailNickName "AADDCAdministrators"
   }
 else {
   Write-Output "Admin group already exists."
 }
 
+
 # Now, retrieve the object ID of the user you'd like to add to the group.
-$UserObjectId = Get-AzureADUser `
+$UserObjectId = Get-MgUser `
   -Filter "UserPrincipalName eq '$AaddsAdminUserUpn'" | `
-  Select-Object ObjectId
+  Select-Object Id
 
 # Add the user to the 'AAD DC Administrators' group.
-Add-AzureADGroupMember -ObjectId $GroupObjectId.ObjectId -RefObjectId $UserObjectId.ObjectId
+New-MgGroupMember -GroupId $GroupObject.Id -DirectoryObjectId $UserObjectId.Id
 
 # Register the resource provider for Azure AD Domain Services with Resource Manager.
 Register-AzResourceProvider -ProviderNamespace Microsoft.AAD
@@ -388,17 +387,17 @@ To see the managed domain in action, you can [domain-join a Windows VM][windows-
 <!-- EXTERNAL LINKS -->
 [Connect-AzAccount]: /powershell/module/az.accounts/connect-azaccount
 
-[Connect-AzureAD]: /powershell/module/azuread/connect-azuread
+[Connect-MgGraph]: /powershell/microsoftgraph/authentication-commands#using-connect-mggraph
 
-[New-AzureADServicePrincipal]: /powershell/module/AzureAD/New-AzureADServicePrincipal
+[New-MgServicePrincipal]: /powershell/module/microsoft.graph.applications/new-mgserviceprincipal
 
-[New-AzureADGroup]: /powershell/module/azuread/new-azureadgroup
+[New-MgGroup]: /powershell/module/microsoft.graph.groups/new-mggroup
 
-[Add-AzureADGroupMember]: /powershell/module/azuread/add-azureadgroupmember
+[New-MgGroupMember]: /powershell/module/microsoft.graph.groups/new-mggroupmember
 
-[Get-AzureADGroup]: /powershell/module/azuread/get-azureadgroup
+[Get-MgGroup]: /powershell/module/microsoft.graph.groups/get-mggroup
 
-[Get-AzureADUser]: /powershell/module/azuread/get-azureaduser
+[Get-MgUser]: /powershell/module/microsoft.graph.users/get-mguser
 
 [Register-AzResourceProvider]: /powershell/module/az.resources/register-azresourceprovider
 
