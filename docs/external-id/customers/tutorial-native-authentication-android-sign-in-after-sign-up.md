@@ -28,7 +28,7 @@ In this tutorial, you learn how to:
  
 - Reference to SDK doc 
 - [Sign in users in a sample native Android mobile application](how-to-run-sample-android-app.md) 
-- [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-up-sign-in-sign-out.md) 
+- [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md) 
  
 ## Sign in after sign-up 
  

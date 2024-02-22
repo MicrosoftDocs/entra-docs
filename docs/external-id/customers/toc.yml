@@ -212,8 +212,10 @@ items:
               items:
                 - name: Prepare Android app
                   href: tutorial-native-authentication-prepare-android-app.md
-                - name: Sign up, sign in and sign out
-                  href: tutorial-native-authentication-android-sign-up-sign-in-sign-out.md
+                - name: Sign up
+                  href: tutorial-native-authentication-android-sign-up.md
+                - name: Sign in and sign out
+                  href: tutorial-native-authentication-android-sign-in-sign-out.md
                 - name: Scenarios
                   items:
                     - name: Register user with username and attributes

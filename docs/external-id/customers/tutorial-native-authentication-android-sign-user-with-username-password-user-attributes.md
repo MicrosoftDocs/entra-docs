@@ -35,7 +35,7 @@ In this tutorial, you learn how to:
     - In the **User attributes**, select **Country/Region** and **City** in the user flow.
   - [Associate the Android app with the user flow](how-to-run-sample-android-app.md#associate-the--app-with-the-user-flow).
 - [Android Microsoft Authentication Library (MSAL) configuration file](how-to-run-sample-android-app.md#configure-the-sample-android-mobile-application).
-- [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-up-sign-in-sign-out.md).
+- [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md).
  
 ## Sign up user using username, password, and user attributes 
  

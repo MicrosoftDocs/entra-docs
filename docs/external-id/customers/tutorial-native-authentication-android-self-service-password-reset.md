@@ -28,7 +28,7 @@ In this tutorial, you learn how to:
  
 - [Sign in users in a sample native Android mobile application](how-to-run-sample-android-app.md).
 - [Enable self-service password reset](how-to-enable-password-reset-customers.md).
-- [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-up-sign-in-sign-out.md).
+- [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md).
  
 ## Add self-service password reset flow 
  

@@ -10,7 +10,7 @@ ms.service: active-directory
 
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 02/12/2024
+ms.date: 02/22/2024
 ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn about how to configure native authentication Android Kotlin sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID for customers.
 ---
