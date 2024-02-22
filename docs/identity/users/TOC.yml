@@ -98,7 +98,7 @@
       href: ~/fundamentals/how-to-manage-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json  
     - name: Manage groups PowerShell for Graph (v2)   
       href: groups-settings-v2-cmdlets.md
-    - name: Manage groups with PowerShell MSOnline    
+    - name: Configure group settings with PowerShell
       href: groups-settings-cmdlets.md
     - name: Search group and member lists   
       href: groups-members-owners-search.md
