@@ -140,9 +140,9 @@ Write-Output "******************************************************************
 To enable group-based scoped synchronization for a managed domain, complete the following steps:
 
 1. First set *"filteredSync" = "Enabled"* on the Domain Services resource, then update the managed domain.
- When prompted, specify the credentials for a *global admin* to sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0) cmdlet:
-    
-```powershell
+ When prompted, specify the credentials for a *global admin* to sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0&preserve-view=true) cmdlet:
+
+    ```powershell
     # Connect to your Entra ID tenant
     Connect-MgGraph -Scopes "Application.ReadWrite.All","Group.ReadWrite.All"
 
@@ -190,8 +190,7 @@ Changing the scope of synchronization causes the managed domain to resynchronize
 
 To disable group-based scoped synchronization for a managed domain, set *"filteredSync" = "Disabled"* on the Domain Services resource, then update the managed domain. When complete, all users and groups are set to synchronize from Microsoft Entra ID.
 
-When prompted, specify the credentials for a *global admin* to sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0) cmdlet:
-
+When prompted, specify the credentials for a *global admin* to sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0&preserve-view=true) cmdlet:
 
 ```powershell
 # Connect to your Entra ID tenant
@@ -225,4 +224,4 @@ To learn more about the synchronization process, see [Understand synchronization
 [associate-azure-ad-tenant]: /azure/active-directory/fundamentals/how-subscriptions-associated-directory
 
 <!-- EXTERNAL LINKS -->
-[Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0): /powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0
+[Connect-MgGraph]: /powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0&preserve-view=true
