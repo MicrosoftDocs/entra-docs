@@ -20,9 +20,9 @@ Microsoft Entra ID's [Native Authentication](../external-id/customers/overview-c
 
 Currently, our identity platform's Native Authentication API supports sign-up and sign-in for two authentication methods:
 
-- [Email with password](reference-native-auth-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), which supports sign-up and sign-in with an email and password, and self-service password reset (SSPR).
+- [Email with password](reference-native-authentication-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), which supports sign-up and sign-in with an email and password, and self-service password reset (SSPR).
 
-- [Email one-time password or passcode (OTP)](reference-native-auth-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), which supports sign-up and sign-in with email OTP.
+- [Email one-time password or passcode (OTP)](reference-native-authentication-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), which supports sign-up and sign-in with email OTP.
 
 
 [!INCLUDE [native-auth-api-cors-note](./includes/native-auth-api/native-auth-api-cors-note.md)]
@@ -30,8 +30,8 @@ Currently, our identity platform's Native Authentication API supports sign-up an
 
 ## Next steps
 
-- [Native Authentication API reference with Email OTP](reference-native-auth-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
+- [Native Authentication API reference with Email OTP](reference-native-authentication-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 
-- [Native Authentication API reference with Email and password](reference-native-auth-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
+- [Native Authentication API reference with Email and password](reference-native-authentication-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 
-- [Native Authentication API reference with Email and password - Self-service password reset option](reference-native-auth-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json#self-service-password-reset-sspr).
+- [Native Authentication API reference with Email and password - Self-service password reset option](reference-native-authentication-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json#self-service-password-reset-sspr).
