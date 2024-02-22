@@ -33,7 +33,7 @@ A group Managed Service Account is a managed domain account that provides automa
 ### Prerequisites for gMSA
 
 1. The Active Directory schema in the gMSA domain's forest needs to be updated to Windows Server 2012 or later.
-2. [PowerShell RSAT modules](/windows-server/remote/remote-server-administration-tools.md) on a domain controller.
+2. [PowerShell RSAT modules](/windows-server/remote/remote-server-administration-tools) on a domain controller.
 3. At least one domain controller in the domain must be running Windows Server 2012 or later.
 4. A domain joined server where the agent is being installed needs to be either Windows Server 2016 or later.
 
@@ -58,12 +58,12 @@ For more information on how to prepare your Active Directory for group Managed S
 
 ### In the Microsoft Entra admin center
 
-1. Create a cloud-only hybrid identity administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant if your on-premises services fail or become unavailable. Learn about how to [add a cloud-only hybrid identity administrator account](/fundamentals/add-users.md). Finishing this step is critical to ensure that you don't get locked out of your tenant.
-1. Add one or more [custom domain names](/fundamentals/add-custom-domain.md) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
+1. Create a cloud-only hybrid identity administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant if your on-premises services fail or become unavailable. Learn about how to [add a cloud-only hybrid identity administrator account](~/fundamentals/add-users.md). Finishing this step is critical to ensure that you don't get locked out of your tenant.
+1. Add one or more [custom domain names](~/fundamentals/add-custom-domain.md) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
 
 ### In your directory in Active Directory
 
-Run the [IdFix tool](/microsoft-365/enterprise/set-up-directory-synchronization.md) to prepare the directory attributes for synchronization.
+Run the [IdFix tool](/microsoft-365/enterprise/set-up-directory-synchronization) to prepare the directory attributes for synchronization.
 
 ### In your on-premises environment
 
