@@ -92,9 +92,9 @@ The group settings enable you to control who can create security and Microsoft 3
 | Setting | Value | Effect on your tenant |
 | --- | :---: | --- |
 | Users can create security groups in the Azure portal, API, or PowerShell. | Yes | All users in your Microsoft Entra organization are allowed to create new security groups and add members to these groups in the Azure portal, API, or PowerShell. These new groups also show up in the Access Panel for all other users. If the policy setting on the group allows it, other users can create requests to join these groups. |
-|  | No | Users can't change existing groups for which they're an owner. They can still manage the memberships of those groups and approve requests from other users to join their groups. |
+|  | No | Users can’t create security groups. They can still manage the membership of groups for which they’re an owner and approve requests from other users to join their groups. |
 | Users can create Microsoft 365 groups in the Azure portal, API, or PowerShell. | Yes | All users in your Microsoft Entra organization are allowed to create new Microsoft 365 groups and add members to these groups in the Azure portal, API, or PowerShell. These new groups also show up in the Access Panel for all other users. If the policy setting on the group allows it, other users can create requests to join these groups. |
-|  | No | Users can't create Microsoft 365 groups and can't change existing groups for which they're an owner. They can still manage the memberships of those groups and approve requests from other users to join their groups. |
+|  | No | Users can’t create M365 Groups. They can still manage the membership of groups for which they’re an owner and approve requests from other users to join their groups. |
 
 Here are some more details about these group settings:
 
