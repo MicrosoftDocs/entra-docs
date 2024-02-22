@@ -2,13 +2,13 @@
 title: API-driven inbound provisioning concepts
 description: An overview of API-driven inbound provisioning.
 
-author: kenwith
+author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 09/15/2023
-ms.author: kenwith
+ms.date: 02/22/2024
+ms.author: jfields
 ms.reviewer: chmutali
 ---
 
@@ -75,6 +75,21 @@ In all the above scenarios, the integration is greatly simplified as Microsoft E
 - Admins can check provisioning progress by viewing the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md). 
 - API clients can track progress by querying [provisioning logs API](/graph/api/resources/provisioningobjectsummary).
 
+### API usage guidance
+
+The ```/bulkUpload``` API endpoint expands the number of ways in which you can manage users in Entra ID. To help you determine if ```/bulkUpload``` API endpoint is right for your integration scenario, refer to this table that compares it with other API-based integration options.
+
+| Use Case Scenario to API mapping | User creation API | HR inbound bulk API |  User invitation API | Direct assignment API (preview) |
+|-------|-------|-------|-------|-------|
+| *When your identity creation scenario is...*  | Ad-hoc user creation in Entra ID, for a user not associated with any worker in an HR source. | Sourcing worker records from an authoritative HR source, and you want those workers to have "member" accounts in Entra ID or on-premises Active Directory  | Ad-hoc guest user creation in Entra ID, for sharing purposes, where the guest will have unique access rights  | Guest Creation in Entra ID, where the guest user will have standardized access. |
+| *...use the API...* | [Create user](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fgraph%2Fapi%2Fuser-post-users%3Fview%3Dgraph-rest-beta%26tabs%3Dhttp&data=05%7C01%7CChetan.Desai%40microsoft.com%7Cef7f19b5a94c40d2fc3908dbbdfbca8b%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C638312661367929924%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=vobyDSGZMD8okuDKi54Szv2v6TX81jTxhWG3soq1WZc%3D&reserved=0) | [Perform bulkUpload](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fgraph%2Fapi%2Fsynchronization-synchronizationjob-post-bulkupload%3Fview%3Dgraph-rest-beta%26tabs%3Dhttp&data=05%7C01%7CChetan.Desai%40microsoft.com%7Cef7f19b5a94c40d2fc3908dbbdfbca8b%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C638312661367938459%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=8KK3VEsw1qu46JLaNECVEaF1osPRX%2B7pOMnWl3CV024%3D&reserved=0). | [Create invitation](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fgraph%2Fapi%2Finvitation-post%3Fview%3Dgraph-rest-beta%26tabs%3Dhttp&data=05%7C01%7CChetan.Desai%40microsoft.com%7Cef7f19b5a94c40d2fc3908dbbdfbca8b%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C638312661367946506%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=rETORZZmDg82te4lZaBaBF3oqJLi8kVezQFYsZ6Q9XU%3D&reserved=0) | [Create accessPackageAssignmentRequest](https://learn.microsoft.com/en-us/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-beta&tabs=http) |
+| *The resulting user is first created in...* | Entra ID | On-premises Active Directory or Entra ID | Entra ID | Entra ID |
+| *The resulting user authenticates to...* | Entra ID, with the password you supply | On-premises Active Directory of Entra ID, with a [Temporary Access Pass provided by Entra Lifecycle workflows](https://go.microsoft.com/fwlink/?linkid=2261471) | Home tenant or other identity provider | Home tenant or other idenity provider | 
+| *Subsequent updates to the user can be done via* | Graph API or Entra portal | Graph API or HR inbound bulk API or Entra portal | Graph API or Entra portal | Graph API or Entra portal |
+| *The lifecycle of user when their employment starts, is determined by...* | Manual processes | [Entra onboarding Lifecycle workflows](/entra-docs-pr/docs/id-governance/tutorial-onboard-custom-workflow-portal.md) that trigger based on the ```employeeHireDate``` attribute | Entitlement management | [Automatic assignment](entra-docs-pr/docs/id-governance/entitlement-management-access-package-auto-assignment-policy.md) using Entitlement management access packages |
+| *The lifecycle of user when their employment is terminated is determined by...* | Manual processes | [Entra offboarding lifecycle workflows](/entra-docs-pr/docs/id-governance/tutorial-scheduled-leaver-portal.md) that trigger based on the ```employeeLeaveDateTime``` attribute | Access reviews | Entitlement management when the user loses their last access package assignment, they're removed. |
+
+
 ### Recommended learning path
 
 | # | Learning objective | Guidance |
@@ -85,10 +100,26 @@ In all the above scenarios, the integration is greatly simplified as Microsoft E
 | 4. | With a service account or managed identity, you want to quickly test the inbound provisioning API. | * Create [API-driven inbound provisioning app](inbound-provisioning-api-configure-app.md) <br> * Grant [API permissions](inbound-provisioning-api-grant-access.md) <br> * [Test API using cURL](inbound-provisioning-api-curl-tutorial.md) or [Postman](inbound-provisioning-api-postman.md) |
 | 5. | You want to extend the API-driven provisioning app to process more custom attributes. | Refer to the tutorial [Extend API-driven provisioning to sync custom attributes](inbound-provisioning-api-custom-attributes.md) |
 | 6. | You want to automate data upload from your system of record to the inbound provisioning API endpoint. | Refer to the tutorials <br> * [Quick start with PowerShell](inbound-provisioning-api-powershell.md) <br> * [Quick start with Azure Logic Apps](inbound-provisioning-api-logic-apps.md) |
-| 7. | You want to troubleshoot inbound provisioning API issues | Refer to the [troubleshooting guide](inbound-provisioning-api-issues.md). |
+| 7. | You want to troubleshoot inbound provisioning API issues | Refer to the [Troubleshooting guide](inbound-provisioning-api-issues.md). | 
+
+### External learning resources
+
+The following content, created by our partners and Microsoft MVPs, offers additional guidence on how to deploy and configure API-driven provisioning for various integration scenarios.
+
+- Video tutorials
+     - John Savill explains [how API-driven provisioning works](https://www.youtube.com/watch?v=olkOYEyJB1o)
+     - Microsoft MVP Nick Ross explains [how to configure API-driven provisioning](https://www.youtube.com/watch?v=4FLEroQ8zmQ)
+     - Microsoft MVP Nick Ross explains [how to source HR data from an Excel file in SharePoint using Power Automate and API-driven provisioning](https://www.youtube.com/watch?v=QN6SsamvS9c)
+     - Microsoft partner [IdentityXP 4-part series on API-driven provisioning](https://www.youtube.com/watch?v=7ZPDnhwKz_w)
+
+- Blog posts, presentations, and other useful links
+     - Microsoft MVP Pim Jacob's article explaining [how to perform Bamboo HR API-driven provisioning to on-premises Active Directory](https://identity-man.eu/2023/10/25/using-the-brand-new-entra-inbound-provisioning-api-for-identity-lifecycle-management/)
+     - Microsoft MVP Pim Jacob's presentation on [how to configure the joiner and leaver process using API-driven provisioning and lifecycle workflows](https://github.com/IdentityMan/presentations/blob/main/DutchMicrosoftSecurityMeetup/Dutch%20SecMeetup%20-%20Securing%20Joiner%20&%20Leaver%20process%20with%20Inbound%20Provisioning%20and%20LCW.pdf)
+     - Microsoft MVP Marius Solbakken's article explaining [how to source Excel data using PowerShell script and API-driven provisioning](https://goodworkaround.com/2023/08/01/testing-out-the-entra-id-inbound-provisioning-api/)
+     - Suryendu Bhattacharyya's article on [how to invoke API-driving provisioning using custom GitHub Action](https://suryendub.github.io/2023-11-25-github-action-for-inbound-api-provisioning/)
+     - Microsoft MVP Jan Vidar Elven's [Bicep template for API-driven provisioning](https://github.com/JanVidarElven/ExpertsLiveEurope2023/tree/main/EntraIDGovernance/Elven%20Inbound%20Provisioning%20API)
 
 
 ## Next steps
 - [Configure API-driven inbound provisioning app](inbound-provisioning-api-configure-app.md)
 - [Frequently asked questions about API-driven inbound provisioning](inbound-provisioning-api-faqs.md)
-- [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](user-provisioning.md)
