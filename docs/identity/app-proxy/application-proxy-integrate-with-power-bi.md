@@ -18,7 +18,7 @@ This article discusses how to use Microsoft Entra application proxy to enable th
 
 ## Prerequisites
 
-- Deploy Report Services in your environment.
+- Deploy Reporting Services in your environment.
 - Enable [Microsoft Entra application proxy](application-proxy-add-on-premises-application.md).
 - When possible, use the same internal and external domains for Power BI. To learn more about custom domains, see [Working with custom domains in application proxy](how-to-configure-custom-domain.md).
 
@@ -47,7 +47,7 @@ To enable a report server to use Kerberos authentication, configure the Authenti
 
 For more information, see [Modify a Reporting Services Configuration File](/sql/reporting-services/report-server/modify-a-reporting-services-configuration-file-rsreportserver-config) and [Configure Windows Authentication on a Report Server](/sql/reporting-services/security/configure-windows-authentication-on-the-report-server).
 
-### Ensure the Connector is trusted for delegation to the SPN added to the Reporting Services application pool account
+### Ensure the connector is trusted for delegation to the SPN added to the Reporting Services application pool account
 Configure KCD so that the Microsoft Entra application proxy service can delegate user identities to the Reporting Services application pool account. Configure the application proxy connector to retrieve Kerberos tickets for Microsoft Entra ID authenticated users. The server passes the context to the Reporting Services application.
 
 To configure KCD, repeat the following steps for each connector machine:
@@ -64,11 +64,11 @@ For more information, see [Kerberos Constrained Delegation for single sign-on to
 
 <a name='step-2-publish-report-services-through-azure-ad-application-proxy'></a>
 
-## Step 2: Publish Report Services through Microsoft Entra application proxy
+## Step 2: Publish Reporting Services through Microsoft Entra application proxy
 
 Now you're ready to configure Microsoft Entra application proxy.
 
-1. Publish Report Services through application proxy with the following settings. For step-by-step instructions on how to publish an application through application proxy, see [Publishing applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
+1. Publish Reporting Services through application proxy with the following settings. For step-by-step instructions on how to publish an application through application proxy, see [Publishing applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
    - **Internal URL**: Enter the URL to the Report Server that the connector can reach in the corporate network. Make sure this URL is reachable from the server the connector is installed on. A best practice is using a top-level domain such as `https://servername/` to avoid issues with subpaths published through application proxy. For example, use `https://servername/` and not `https://servername/reports/` or `https://servername/reportserver/`.
      > [!NOTE]
      > Use a secure HTTPS connection to the Report Server. For more information on configuring a secure connection, See [Configure secure connections on a native mode report server](/sql/reporting-services/security/configure-ssl-connections-on-a-native-mode-report-server).
@@ -99,13 +99,13 @@ Configure the Application Registration that was automatically created in step 2.
 3. Select the application, then select **Authentication**.
 4. Add the redirect URI for the platform.
 
-   When configuring the app for Power BI Mobile **iOS**, add the redirect Uniform Resource Identifiers (URIs) of type Public Client (Mobile & Desktop).
+   When configuring the app for Power BI Mobile on **iOS**, add the redirect Uniform Resource Identifiers (URIs) of type `Public Client (Mobile & Desktop)`.
    - `msauth://code/mspbi-adal%3a%2f%2fcom.microsoft.powerbimobile`
    - `msauth://code/mspbi-adalms%3a%2f%2fcom.microsoft.powerbimobilems`
    - `mspbi-adal://com.microsoft.powerbimobile`
    - `mspbi-adalms://com.microsoft.powerbimobilems`
 
-   When configuring the app for Power BI Mobile **Android**, add the redirect URIs of type Public Client (Mobile & Desktop).
+   When configuring the app for Power BI Mobile on **Android**, add the redirect Uniform Resource Identifiers (URIs) of type `Public Client (Mobile & Desktop)`.
    - `urn:ietf:wg:oauth:2.0:oob`
    - `mspbi-adal://com.microsoft.powerbimobile`
    - `msauth://com.microsoft.powerbim/g79ekQEgXBL5foHfTlO2TPawrbI%3D`
