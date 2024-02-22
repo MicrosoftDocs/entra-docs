@@ -57,7 +57,7 @@ To configure KCD, repeat the following steps for each connector machine:
 3. Double-click the computer, and then select the **Delegation** tab.
 4. Set the delegation settings to **Trust this computer for delegation to the specified services only**. Then, select **Use any authentication protocol**.
 5. Select **Add**, and then select **Users or Computers**.
-6. Enter the service account that you're using for Reporting Services. This is the account you added the SPN to within the Reporting Services configuration.
+6. Enter the service account you set up for Reporting Services.
 7. Click **OK**. To save the changes, click **OK** again.
 
 For more information, see [Kerberos Constrained Delegation for single sign-on to your apps with application proxy](how-to-configure-sso-with-kcd.md).
@@ -74,7 +74,7 @@ Now you're ready to configure Microsoft Entra application proxy.
      > We recommend using a secure HTTPS connection to the Report Server. See [Configure SSL connections on a native mode report server](/sql/reporting-services/security/configure-ssl-connections-on-a-native-mode-report-server) for information how to.
    - **External URL**: Enter the public URL the Power BI mobile app connects to. For example, it may look like `https://reports.contoso.com` if a custom domain is used. To use a custom domain, upload a certificate for the domain, and point a Domain Name System (DNS) record to the default `msappproxy.net` domain for your application. For detailed steps, see [Working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md).
 
-   - **Pre-authentication Method**: Microsoft Entra ID
+   - **Pre-authentication Method**: Microsoft Entra ID.
 
 2. Once your app is published, configure the single sign-on settings with the following steps:
 
@@ -95,28 +95,28 @@ To finish setting up your application, go to **the Users and groups** section an
 Configure the Application Registration that was automatically created in step 2.
 
 1. On the Microsoft Entra ID **Overview** page, select **App registrations**.
-2. Under the **All applications** tab search for the application you created in step 2.
+2. On the **All applications** tab, search for the application you created in step 2.
 3. Select the application, then select **Authentication**.
-4. Add the following Redirect URIs based on which platform you are using.
+4. Add the redirect URI for the platform.
 
-   When configuring the app for Power BI Mobile **iOS**, add the following Redirect URIs of type Public Client (Mobile & Desktop):
+   When configuring the app for Power BI Mobile **iOS**, add the redirect Uniform Resource Identifiers (URIs) of type Public Client (Mobile & Desktop):
    - `msauth://code/mspbi-adal%3a%2f%2fcom.microsoft.powerbimobile`
    - `msauth://code/mspbi-adalms%3a%2f%2fcom.microsoft.powerbimobilems`
    - `mspbi-adal://com.microsoft.powerbimobile`
    - `mspbi-adalms://com.microsoft.powerbimobilems`
 
-   When configuring the app for Power BI Mobile **Android**, add the following Redirect URIs of type Public Client (Mobile & Desktop):
+   When configuring the app for Power BI Mobile **Android**, add the redirect URIs of type Public Client (Mobile & Desktop):
    - `urn:ietf:wg:oauth:2.0:oob`
    - `mspbi-adal://com.microsoft.powerbimobile`
    - `msauth://com.microsoft.powerbim/g79ekQEgXBL5foHfTlO2TPawrbI%3D`
    - `msauth://com.microsoft.powerbim/izba1HXNWrSmQ7ZvMXgqeZPtNEU%3D`
 
    > [!IMPORTANT]
-   > The Redirect URIs must be added for the application to work correctly. If you are configuring the app for both Power BI Mobile iOS and Android, add the following Redirect URI of type Public Client (Mobile & Desktop) to the list of Redirect URIs configured for iOS: `urn:ietf:wg:oauth:2.0:oob`.
+   > The redirect URIs must be added for the application to work correctly. If you are configuring the app for both Power BI Mobile iOS and Android, add the redirect URI of type Public Client (Mobile & Desktop) to the list of redirect URIs configured for iOS: `urn:ietf:wg:oauth:2.0:oob`.
 
 ## Step 4: Connect from the Power BI Mobile App
 
-1. In the Power BI mobile app, connect to your Reporting Services instance. To do this, enter the **External URL** for the application you published through application proxy.
+1. In the Power BI mobile app, connect to your Reporting Services instance. Enter the **External URL** for the application you published through application proxy.
 
    ![Power BI mobile app with External URL](media/application-proxy-integrate-with-power-bi/app-proxy-power-bi-mobile-app.png)
 
