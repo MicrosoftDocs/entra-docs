@@ -35,6 +35,27 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 
 ## February 2024
 
+### General Availability - Identity Protection and Risk Remediation on the Azure Mobile App
+
+**Type:** New feature    
+**Service category:** Identity Protection    
+**Product capability:** Identity Security & Protection    
+
+Previously supported only on the portal, Identity Protection is a powerful tool that empowers administrators to proactively manage identity risks. Now available on the Azure Mobile app, administrators can respond to potential threats with ease and efficiency. This feature includes comprehensive reporting, offering insights into risky behaviors such as compromised user accounts and suspicious sign-ins.
+
+With the Risky users report, administrators gain visibility into accounts flagged as compromised or vulnerable. Actions such as blocking/unblocking sign-ins, confirming the legitimacy of compromises, or resetting passwords are conveniently accessible, ensuring timely risk mitigation.
+
+Additionally, the Risky sign-ins report provides a detailed overview of suspicious sign-in activities, aiding administrators in identifying potential security breaches. While capabilities on mobile are limited to viewing sign-in details, administrators can take necessary actions through the portal, such as blocking sign-ins. Alternatively, admins can choose to manage the corresponding risky user's account until all risks are mitigated.
+
+Stay ahead of identity risks effortlessly with Identity Protection on the Azure Mobile app. These capabilities are intended to provide user with the tools to maintain a secure environment and peace of mind for their organization.
+
+The mobile app can be downloaded here:
+Android: https://aka.ms/AzureAndroidWhatsNew
+
+IOS: https://aka.ms/ReferAzureIOSWhatsNew
+
+---
+
 ### Plan for change - Microsoft Entra ID Identity protection: "Low" risk age out
 
 **Type:** Plan for change    
