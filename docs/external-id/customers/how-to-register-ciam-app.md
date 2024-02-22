@@ -186,7 +186,7 @@ A daemon app signs-in as itself using the [OAuth 2.0 client credentials flow](~/
 ### Create a client secret 
 [!INCLUDE [add app client secret](../customers/includes/register-app/add-app-client-secret.md)]
 
-# [Native auth](#tab/nativeauthentication)
+# [Native Authentication](#tab/nativeauthentication)
 
 ## Register a Native Authentication application
 [!INCLUDE [register client app](../customers/includes/register-app/register-client-app-common.md)]
