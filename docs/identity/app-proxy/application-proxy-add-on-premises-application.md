@@ -119,7 +119,7 @@ Open the following ports to **outbound** traffic.
 If your firewall enforces traffic according to originating users, also open ports 80 and 443 for traffic from Windows services that run as a Network Service.
 
 > [!NOTE]
-> Other port errors can occur when there's a networking error on your system. Make sure that it's possible to connect from a browser to a public website and that the required ports are open. For more information about troubleshooting issues related to connector errors, see [Troubleshoot application proxy problems and error messages](application-proxy-troubleshoot.md#connector-errors).
+> Errors occur when there's a networking issue. Check if the required ports are open. For more information about troubleshooting issues related to connector errors, see [Troubleshoot application proxy problems and error messages](application-proxy-troubleshoot.md#connector-errors).
 
 ### Allow access to URLs
 
@@ -132,7 +132,7 @@ Allow access to the following URLs:
 | `login.windows.net` <br> `secure.aadcdn.microsoftonline-p.com` <br> `*.microsoftonline.com` <br> `*.microsoftonline-p.com` <br> `*.msauth.net` <br> `*.msauthimages.net` <br> `*.msecnd.net` <br> `*.msftauth.net` <br> `*.msftauthimages.net` <br> `*.phonefactor.net` <br> `enterpriseregistration.windows.net` <br> `management.azure.com` <br> `policykeyservice.dc.ad.msft.net` <br> `ctldl.windowsupdate.com` <br> `www.microsoft.com/pkiops` | `443/HTTPS` | The connector uses these URLs during the registration process. |
 | `ctldl.windowsupdate.com` <br> `www.microsoft.com/pkiops` | `80/HTTP` | The connector uses these URLs during the registration process. |
 
-You can allow connections to `*.msappproxy.net`, `*.servicebus.windows.net`, and other URLs if your firewall or proxy lets you configure access rules based on domain suffixes. If not, you need to allow access to the [Azure IP ranges and Service Tags - Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519). The IP ranges are updated each week.
+Allow connections to `*.msappproxy.net`, `*.servicebus.windows.net`, and other URLs if your firewall or proxy lets you configure access rules based on domain suffixes. Or, allow access to the [Azure IP ranges and Service Tags - Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519). The IP ranges are updated each week.
 
 > [!IMPORTANT]
 > Avoid all forms of inline inspection and termination on outbound TLS communications between Microsoft Entra application proxy connectors and Microsoft Entra application proxy services.
@@ -143,7 +143,7 @@ Public DNS records for Microsoft Entra application proxy endpoints are chained C
 
 ## Install and register a connector
 
-To use application proxy, install a connector on each Windows server you're using with the application proxy service. The connector is an agent that manages the outbound connection from the on-premises application servers to application proxy in Microsoft Entra ID. You can install a connector on servers that also have other authentication agents installed such as Microsoft Entra Connect.
+To use application proxy, install a connector on each Windows server you're using with the application proxy service. The connector is an agent that manages the outbound connection from the on-premises application servers to application proxy in Microsoft Entra ID. The connector can install on servers with authentication agents such as Microsoft Entra Connect.
 
 To install the connector:
 
@@ -159,19 +159,19 @@ To install the connector:
 
 ### General remarks
 
-If you already installed a connector, reinstall it to get the latest version. To see information about previously released versions and what changes they include, see [Application proxy: Version Release History](./application-proxy-release-version-history.md).
+If you already installed a connector, reinstall it to get the latest version. To see information about previously released versions and what changes they include, see [Application proxy: Version Release History](application-proxy-release-version-history.md).
 
-If you choose to have more than one Windows server for your on-premises applications, you need to install and register the connector on each server. You can organize the connectors into connector groups. For more information, see [Connector groups](./application-proxy-connector-groups.md).
+If you choose to have more than one Windows server for your on-premises applications, you need to install and register the connector on each server. You can organize the connectors into connector groups. For more information, see [Connector groups](application-proxy-connector-groups.md).
 
 If you install connectors in different regions, you should optimize traffic by selecting the closest application proxy cloud service region with each connector group. To learn more, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-network-topology.md).
 
-If your organization uses proxy servers to connect to the internet, you need to configure them for application proxy. For more information, see [Work with existing on-premises proxy servers](./application-proxy-configure-connectors-with-proxy-servers.md).
+If your organization uses proxy servers to connect to the internet, you need to configure them for application proxy. For more information, see [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md).
 
 For information about connectors, capacity planning, and how they stay up-to-date, see [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md).
 
 ## Verify the connector installed and registered correctly
 
-You can use the Microsoft Entra admin center or your Windows server to confirm that a new connector installed correctly. For information about troubleshooting App Proxy issues, see [Debug application proxy application issues](application-proxy-debug-apps.md).
+You can use the Microsoft Entra admin center or your Windows server to confirm that a new connector installed correctly. For information about troubleshooting application proxy issues, see [Debug application proxy application issues](application-proxy-debug-apps.md).
 
 ### Verify the installation through Microsoft Entra admin center
 
@@ -184,7 +184,7 @@ To confirm the connector installed and registered correctly:
 
     ![Microsoft Entra application proxy connectors](./media/application-proxy-add-on-premises-application/app-proxy-connectors.png)
 
-For more help with installing a connector, see [Problem installing the application proxy connector](./application-proxy-connector-installation-problem.md).
+For more help with installing a connector, see [Problem installing the application proxy connector](application-proxy-connector-installation-problem.md).
 
 ### Verify the installation through your Windows server
 
@@ -196,8 +196,6 @@ To confirm the connector installed and registered correctly:
    - **Microsoft Entra application proxy connector Updater** is an automated update service. The updater checks for new versions of the connector and updates the connector as needed.
 
 1. If the status for the services isn't **Running**, right-click to select each service and choose **Start**.
-
-<a name='add-an-on-premises-app-to-azure-ad'></a>
 
 ## Add an on-premises app to Microsoft Entra ID
 
@@ -249,7 +247,7 @@ To add a test user:
 
 ### Test the sign-on
 
-To test the sign-on to the application:
+To test authentication to the application:
 
 1. From the application you want to test, select **application proxy**.
 2. At the top of the page, select **Test Application** to run a test on the application and check for any configuration issues.
