@@ -243,7 +243,7 @@ $AzureSubscriptionId = "YOUR_AZURE_SUBSCRIPTION_ID"
 $ManagedDomainName = "me-iddscontoso.com"
 
 # Connect to your Microsoft Entra directory.
-Connect-MgGraph -Scopes ,"Application.ReadWrite.All","Directory.ReadWrite.All"
+Connect-MgGraph -Scopes "Application.ReadWrite.All","Directory.ReadWrite.All"
 
 # Login to your Azure subscription.
 Connect-AzAccount
