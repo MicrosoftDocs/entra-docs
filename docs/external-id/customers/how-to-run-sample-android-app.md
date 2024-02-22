@@ -81,7 +81,7 @@ To specify that this app is a public client and can use native authentication, e
    1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
    1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for both scopes.
  
-    :::image type="content" source="media/native-authentication/android/api-permissions.jpg" alt-text="Screenshot showing configured permission in Microsoft Entra admin center" lightbox="media/native-authentication/android/api-permissions.jpg":::
+    :::image type="content" source="media/native-authentication/android/api-permissions.jpg" alt-text="Screenshot showing configured permission in Microsoft Entra admin center." lightbox="media/native-authentication/android/api-permissions.jpg":::
 
 ## Create a user flow 
  
