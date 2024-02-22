@@ -29,7 +29,7 @@ To complete this article, you need the following resources:
     * If needed, follow the instructions to [install the Azure PowerShell module and connect to your Azure subscription](/powershell/azure/install-azure-powershell).
     * Make sure that you sign in to your Azure subscription using the [Connect-AzAccount][Connect-AzAccount] cmdlet.
 * Install and configure MS Graph PowerShell.
-   - If needed, follow the instructions to [install the MS Graph PowerShell module and connect to Microsoft Entra ID](/powershell/microsoftgraph/installation?view=graph-powershell-1.0).
+   - If needed, follow the instructions to [install the MS Graph PowerShell module and connect to Microsoft Entra ID](/powershell/microsoftgraph/installation).
     * Make sure that you sign in to your Microsoft Entra tenant using the [Connect-MgGraph][Connect-MgGraph] cmdlet.
 * You need *global administrator* privileges in your Microsoft Entra tenant to enable Domain Services.
 * You need *Contributor* privileges in your Azure subscription to create the required Domain Services resources.
