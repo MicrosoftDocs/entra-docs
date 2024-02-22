@@ -124,4 +124,4 @@ To learn more about the synchronization process, see [How objects and credential
 [Get-AzResource]: /powershell/module/az.resources/get-azresource
 [Set-AzResource]: /powershell/module/az.resources/set-azresource
 [Connect-AzAccount]: /powershell/module/Az.Accounts/Connect-AzAccount
-[Connect-MgGraph]: /powershell/microsoftgraph/authentication-commands
+[Connect-MgGraph]: /powershell/microsoftgraph/authentication-commands#using-connect-mggraph
