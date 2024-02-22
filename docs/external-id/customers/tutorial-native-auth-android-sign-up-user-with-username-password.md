@@ -41,7 +41,7 @@ To sign up user using username (email address) and password, we need to verify t
 
 The following wire frame shows a high-level view of the sign-up user with username and password flow:
 
-:::image type="content" source="media/native-authentication/android/signup-email-password.png" alt-text="A mock-up image illustrates registering a user with a username and password.":::
+:::image type="content" source="media/native-authentication/android/sign-up-email-password.png" alt-text="A mock-up image illustrates registering a user with a username and password.":::
  
 We'll use the `signUp(username, password)` method, which in most common scenario responds with `SignUpResult.CodeRequired`, which indicates that the API expects a code to be sent back to verify the email address. 
  
