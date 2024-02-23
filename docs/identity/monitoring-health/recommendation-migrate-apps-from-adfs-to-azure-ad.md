@@ -5,7 +5,7 @@ description: Learn why you should migrate apps from ADFS to Microsoft Entra ID
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
-ms.topic: reference
+ms.topic: how-to
 ms.subservice: monitoring-health
 ms.date: 09/22/2023
 ms.author: sarahlipsey

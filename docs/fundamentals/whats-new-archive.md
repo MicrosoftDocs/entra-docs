@@ -5,7 +5,7 @@ author: owinfreyATL
 manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: whats-new
 ms.date: 02/01/2024
 ms.author: owinfrey
 ms.reviewer: dhanyahk
