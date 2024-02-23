@@ -22,12 +22,13 @@ After completing the get started guide, you can edit and customize the initial c
 ## Prerequisites
 
 - External ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a> or [create a tenant with customer configurations in the Microsoft Entra admin center](quickstart-tenant-setup.md). 
+- Tenant configuration set up following the [Get started guide](quickstart-get-started-guide.md).
 
 ## Customize your sign-in experience
 
 The first step in the guide is to customize the sign-in experience for your customers.
 
-    :::image type="content" source="media/how-to-create-customer-tenant-portal/guide-link.png" alt-text="Screenshot that shows how to start the guide.":::
+:::image type="content" source="media/how-to-create-customer-tenant-portal/guide-link.png" alt-text="Screenshot that shows how to start the guide.":::
 
 You configured email and password, or one-time passcode sign-in. After the initial configuration in the guide, you can change this setting and even  [enable self-service password reset](how-to-enable-password-reset-customers.md) in the [admin center](https://entra.microsoft.com/). At this stage, you can also configure social accounts to allow your customers to sign in using their [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers account.md). You can also [define custom attributes](how-to-define-custom-attributes.md) to collect additional information during sign-up.
 On the same first page of the guide, you might have also customized the company logo, background color, and layout of your sign-in page. If you’d like to add more details and customization to your sign-in page, you can customize [customize the default branding](how-to-customize-branding-customers.md) and [add languages](how-to-customize-languages-customers.md) later.
@@ -36,7 +37,7 @@ On the same first page of the guide, you might have also customized the company 
 
 During the initial setup, you might have created your first user to test the sign-in experience. 
 
-    :::image type="content" source="media/quickstart-trial-setup/successful-trial-setup.png" alt-text="Screenshot that shows the successful creation of the sign-up experience.":::
+:::image type="content" source="media/quickstart-trial-setup/successful-trial-setup.png" alt-text="Screenshot that shows the successful creation of the sign-up experience.":::
 
 You can find the user in the users list as a [customer user](how-to-manage-customer-accounts.md) in the [admin center](https://entra.microsoft.com/). You can also manage your own account as a [tenant admin](how-to-manage-admin-accounts.md). If you’d like to see data on user activity and engagement for registered applications in your tenant, you can use the [Application user activity dashboards](how-to-user-insights.md).
 
@@ -48,7 +49,7 @@ Using role-based access control (RBAC), you can enforce authorizations in applic
 
 In the guide, you configured a sample app. The guide provides a limited set of app samples to test the features of your new tenant. 
 
-    :::image type="content" source="media/quickstart-trial-setup/sample-app-setup.png" alt-text="Screenshot of the sample app setup.":::
+:::image type="content" source="media/quickstart-trial-setup/sample-app-setup.png" alt-text="Screenshot of the sample app setup.":::
 
 You can find the comprehensive list of app samples and guides [here](https://learn.microsoft.com/en-us/entra/external-id/customers/samples-ciam-all?tabs=apptype). 
 
