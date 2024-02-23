@@ -7,8 +7,8 @@ ms.author: henrymbugua
 ms.custom:
 ms.date: 01/25/2021
 ms.reviewer: saeeda, jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As a developer using MSAL for iOS and macOS, I want to configure logging levels and capture MSAL logging in my own application's logging, so that I can troubleshoot and track down issues effectively.
 ---

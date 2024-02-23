@@ -5,9 +5,9 @@ description: Learn how to use the Microsoft Entra Verified ID Network API
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: reference
-ms.subservice: verifiable-credentials
+
 ms.date: 07/29/2022
 ms.author: barclayn
 

@@ -1,17 +1,17 @@
 ---
 title: Create or delete administrative units
 description: Create administrative units to restrict the scope of role permissions in Microsoft Entra ID.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: how-to
-ms.subservice: roles
+ms.subservice: role-based-access-control
 ms.date: 06/09/2023
 ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal, it-pro, has-azure-ad-ps-ref
-ms.collection: M365-identity-device-management
+
 ---
 
 # Create or delete administrative units
@@ -90,14 +90,13 @@ $adminUnitObj = New-MgDirectoryAdministrativeUnit -BodyParameter $params
 Use the [New-MgBetaDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.beta.identity.directorymanagement/new-mgbetadirectoryadministrativeunit) command to create a new restricted management administrative unit. Set the `IsMemberManagementRestricted` property to `$true`.
 
 ```powershell
-Select-MgProfile -Name beta
 $params = @{
     DisplayName = "Contoso Executive Division"
     Description = "Contoso Executive Division administration"
     Visibility = "HiddenMembership"
     IsMemberManagementRestricted = $true
 }
-$restrictedAU = New-MgDirectoryAdministrativeUnit -BodyParameter $params
+$restrictedAU = New-MgBetaDirectoryAdministrativeUnit -BodyParameter $params
 ```
 
 # [Azure AD PowerShell](#tab/aad-powershell)

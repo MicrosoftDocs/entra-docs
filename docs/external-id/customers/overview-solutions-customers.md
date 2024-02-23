@@ -4,9 +4,9 @@ description: Learn about the customer identity and access management solutions f
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: conceptual
 ms.date: 01/07/2024
 ms.author: mimart

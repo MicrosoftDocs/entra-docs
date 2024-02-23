@@ -1,20 +1,19 @@
 ### YamlMime:FAQ
 metadata:
   title: 'Microsoft Entra Connect'
-  description: Answers to frequently asked questions about Microsoft Entra seamless single sign-on.
-  services: active-directory
+  description: Answers to frequently asked questions about Microsoft Entra seamless single sign-on.  
   keywords: what is Azure AD Connect, install Active Directory, required components for Azure AD, SSO, Single Sign-on
   author: billmath
   manager: amycolannino
   ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
-  ms.service: active-directory
+  ms.service: entra-id
   ms.tgt_pltfrm: na
   ms.custom: has-azure-ad-ps-ref
   ms.topic: faq
   ms.date: 02/08/2023
-  ms.subservice: hybrid
+  ms.subservice: hybrid-connect
   ms.author: billmath
-  ms.collection: M365-identity-device-management
+  
 title: 'Microsoft Entra seamless single sign-on: Frequently asked questions'
 summary: In this article, we address frequently asked questions about Microsoft Entra seamless single sign-on (Seamless SSO). Keep checking back for new content.
 

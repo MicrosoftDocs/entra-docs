@@ -4,8 +4,8 @@ description: PowerShell example that exports all enterprise apps with expiring s
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: sample
 ms.date: 01/15/2024

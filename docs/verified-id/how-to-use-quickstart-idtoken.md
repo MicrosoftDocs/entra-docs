@@ -4,9 +4,9 @@ description: Learn how to use a quickstart to create custom credentials for ID t
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: how-to
-ms.subservice: verifiable-credentials
+
 ms.date: 07/06/2022
 ms.author: barclayn
 

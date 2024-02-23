@@ -1,10 +1,10 @@
 ---
 title: Microsoft Entra Connect Provisioning Agent - Version release history
 description: This article lists all releases of Microsoft Entra Connect Provisioning Agent and describes new features and fixed issues.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
 ms.date: 09/15/2023
 ms.subservice: app-provisioning

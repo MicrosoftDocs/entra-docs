@@ -1,11 +1,10 @@
 ---
 title: What are custom security attributes in Microsoft Entra ID?
 description: Learn about custom security attributes in Microsoft Entra ID.
-services: active-directory
 author: rolyon
 manager: amycolannino
 ms.author: rolyon
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 11/15/2023

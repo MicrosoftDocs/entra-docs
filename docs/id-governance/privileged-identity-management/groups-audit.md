@@ -1,16 +1,16 @@
 ---
 title: Audit activity history for group assignments in Privileged Identity Management
 description: View activity and audit activity history for group assignments in Privileged Identity Management (PIM).
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: article
-ms.subservice: pim
+ms.subservice: privileged-identity-management
 ms.date: 09/12/2023
 ms.author: barclayn
 ms.reviewer: shaunliu
-ms.collection: M365-identity-device-management
+
 ---
 # Audit activity history for group assignments in Privileged Identity Management
 

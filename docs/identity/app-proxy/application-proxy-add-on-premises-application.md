@@ -1,51 +1,45 @@
 ---
-title: Tutorial - Add an on-premises app - Application proxy in Microsoft Entra ID
-description:  Microsoft Entra ID has an application proxy service that enables users to access on-premises applications by signing in with their Microsoft Entra account. This tutorial shows you how to prepare your environment for use with application proxy. Then, it uses the Microsoft Entra admin center to add an on-premises application to your Microsoft Entra tenant.
-services: active-directory
+title:  Add an on-premises application for remote access through application proxy in Microsoft Entra ID.
+description:  Microsoft Entra ID has an application proxy service that enables users to access on-premises applications by signing in with their Microsoft Entra ID account. This tutorial shows you how to prepare your environment for use with application proxy. Then, it uses the Microsoft Entra admin center to add an on-premises application to your Microsoft Entra tenant.
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: tutorial
-ms.date: 02/06/2024
+ms.date: 02/22/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID
+# Add an on-premises application for remote access through application proxy in Microsoft Entra ID
 
-Microsoft Entra ID has an application proxy service that enables users to access on-premises applications by signing in with their Microsoft Entra account. To learn more about application proxy, see [What is App Proxy?](overview-what-is-app-proxy.md). This tutorial prepares your environment for use with application proxy. Once your environment is ready, use the Microsoft Entra admin center to add an on-premises application to your tenant.
+Microsoft Entra ID has an application proxy service that enables users to access on-premises applications by signing in with their Microsoft Entra account. To learn more about application proxy, see [What is application proxy?](overview-what-is-app-proxy.md). This tutorial prepares your environment for use with application proxy. Once your environment is ready, use the Microsoft Entra admin center to add an on-premises application to your tenant.
 
 :::image type="content" source="./media/application-proxy-add-on-premises-application/app-proxy-diagram.png" alt-text="Application proxy Overview Diagram" lightbox="./media/application-proxy-add-on-premises-application/app-proxy-diagram.png":::
 
-Before you get started, make sure you're familiar with app management and **single sign-on (SSO)** concepts. Check out the following links:
-- [Quickstart Series on App Management in Microsoft Entra ID](~/identity/enterprise-apps/view-applications-portal.md)
-- [What is single sign-on (SSO)?](~/identity/enterprise-apps/what-is-single-sign-on.md)
-
 Connectors are a key part of application proxy. To learn more about connectors, see [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md).
 
-This tutorial:
-
-> [!div class="checklist"]
-> * Opens ports for outbound traffic and allows access to specific URLs
-> * Installs the connector on your Windows server, and registers it with application proxy
-> * Verifies the connector installed and registered correctly
-> * Adds an on-premises application to your Microsoft Entra tenant
-> * Verifies a test user can sign on to the application by using a Microsoft Entra account
+In this tutorial, you:
+- Open ports for outbound traffic and allows access to specific URLs.
+- Install the connector on your Windows server, and registers it with application proxy.
+- Verify the connector installed and registered correctly.
+- Add an on-premises application to your Microsoft Entra tenant.
+- Verify a test user can sign on to the application by using a Microsoft Entra account.
 
 ## Prerequisites
 
 To add an on-premises application to Microsoft Entra ID, you need:
-
-* An [Microsoft Entra ID P1 or P2 subscription](https://azure.microsoft.com/pricing/details/active-directory).
-* An application administrator account.
-* A synchronized set of user identities with an on-premises directory. Or create them directly in your Microsoft Entra tenants. Identity synchronization allows Microsoft Entra ID to preauthenticate users before granting them access to application proxy published applications. Synchronization also provides the necessary user identifier information to perform single sign-on (SSO).
+- An [Microsoft Entra ID P1 or P2 subscription](https://azure.microsoft.com/pricing/details/active-directory).
+- An application administrator account.
+- A synchronized set of user identities with an on-premises directory. Or create them directly in your Microsoft Entra tenants. Identity synchronization allows Microsoft Entra ID to preauthenticate users before granting them access to application proxy published applications. Synchronization also provides the necessary user identifier information to perform single sign-on (SSO).
+- An understanding of application management in Microsoft Entra, see [View enterprise applications in Microsoft Entra](~/identity/enterprise-apps/view-applications-portal.md).
+- An understanding of single sign-on (SSO), see [Understand single sign-on](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ### Windows server
 
-To use application proxy, you need a Windows server running Windows Server 2012 R2 or later. You install the application proxy connector on the server. This connector server needs to connect to the application proxy services in Azure, and the on-premises applications that you plan to publish.
+Application proxy requires Windows Server 2012 R2 or later. You install the application proxy connector on the server. The connector server communicates with the application proxy services in Microsoft Entra ID, and the on-premises applications that you plan to publish.
 
-For high availability in your production environment, we recommend having more than one Windows server. For this tutorial, one Windows server is sufficient.
+Use more than one Windows server for high availability in your production environment. One Windows server is sufficient for testing.
 
 > [!IMPORTANT]
 > **.NET Framework**
@@ -56,7 +50,7 @@ For high availability in your production environment, we recommend having more t
 > 
 > **HTTP 2.0**
 >
->  If you're installing the connector on Windows Server 2019 or later, you must disable HTTP2 protocol support in the WinHttp component for Kerberos Constrained Delegation to properly work. This is disabled by default in earlier versions of supported operating systems. Adding the following registry key and restarting the server disables it on Windows Server 2019. Note that this is a machine-wide registry key.
+>  If you're installing the connector on *Windows Server 2019* or later, you must disable `HTTP2` protocol support in the `WinHttp` component for *Kerberos Constrained Delegation* to properly work. This is disabled by default in earlier versions of supported operating systems. Adding the following registry key and restarting the server disables it on Windows Server 2019. Note that this is a machine-wide registry key.
 >
 > ```
 > Windows Registry Editor Version 5.00
@@ -74,14 +68,14 @@ For high availability in your production environment, we recommend having more t
 #### Recommendations for the connector server
 
 - Optimize performance between the connector and the application. Physically locate the connector server close to the application servers. For more information, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-network-topology.md).
-- Make sure the connector server and the web applications servers are in the same Active Directory domain or span trusting domains. Having the servers in the same domain or trusting domains is a requirement for using single sign-on (SSO) with integrated Windows authentication (IWA) and Kerberos Constrained Delegation (KCD). If the connector server and web application servers are in different Active Directory domains, you need to use resource-based delegation for single sign-on. For more information, see [KCD for single sign-on with application proxy](./how-to-configure-sso-with-kcd.md).
+- Make sure the connector server and the web application servers are in the same Active Directory domain or span trusting domains. Having the servers in the same domain or trusting domains is a requirement for using single sign-on (SSO) with integrated Windows authentication (IWA) and Kerberos Constrained Delegation (KCD). If the connector server and web application servers are in different Active Directory domains, use resource-based delegation for single sign-on. For more information, see [KCD for single sign-on with application proxy](how-to-configure-sso-with-kcd.md).
 
 > [!WARNING]
 > If you've deployed Microsoft Entra Password Protection Proxy, do not install Microsoft Entra application proxy and Microsoft Entra Password Protection Proxy together on the same machine. Microsoft Entra application proxy and Microsoft Entra Password Protection Proxy install different versions of the Microsoft Entra Connect Agent Updater service. These different versions are incompatible when installed together on the same machine.
 
 #### Transport Layer Security (TLS) requirements
 
-The Windows connector server needs to have TLS 1.2 enabled before you install the application proxy connector.
+The Windows connector server must have TLS 1.2 enabled before you install the application proxy connector.
 
 To enable TLS 1.2:
 
@@ -108,10 +102,10 @@ To enable TLS 1.2:
 
 ## Prepare your on-premises environment
 
-Start by enabling communication to Azure data centers to prepare your environment for Microsoft Entra application proxy. If there's a firewall in the path, make sure it's open. An open firewall allows the connector to make HTTPS (TCP) requests to the application proxy.
+Enable communication to Microsoft data centers to prepare your environment for Microsoft Entra application proxy. The connector must make HTTPS (TCP) requests to application proxy. A common issue occurs when a firewall is blocking network traffic.
 
 > [!IMPORTANT]
-> If you're installing the connector for Azure Government cloud follow the [prerequisites](~/identity/hybrid/connect/reference-connect-government-cloud.md#allow-access-to-urls) and [installation steps](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud). This requires enabling access to a different set of URLs and an additional parameter to run the installation.
+> If you're installing the connector for Azure Government cloud follow the [prerequisites](~/identity/hybrid/connect/reference-connect-government-cloud.md#allow-access-to-urls) and [installation steps](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud). Azure Government cloud requires access to a different set of URLs and an additional parameter to run the installation.
 
 ### Open ports
 
@@ -125,7 +119,7 @@ Open the following ports to **outbound** traffic.
 If your firewall enforces traffic according to originating users, also open ports 80 and 443 for traffic from Windows services that run as a Network Service.
 
 > [!NOTE]
-> Other port errors can occur when there's a networking error on your system. Make sure that it's possible to connect from a browser to a public website and that the ports are open as specified in [Application proxy prerequisites](application-proxy-add-on-premises-application.md#prerequisites). For more information about troubleshooting issues related to connector errors, see [Troubleshoot application proxy problems and error messages](application-proxy-troubleshoot.md#connector-errors).
+> Errors occur when there's a networking issue. Check if the required ports are open. For more information about troubleshooting issues related to connector errors, see [Troubleshoot application proxy problems and error messages](application-proxy-troubleshoot.md#connector-errors).
 
 ### Allow access to URLs
 
@@ -133,17 +127,15 @@ Allow access to the following URLs:
 
 | URL | Port | Use |
 | --- | --- | --- |
-| `*.msappproxy.net` <br> `*.servicebus.windows.net` | 443/HTTPS | Communication between the connector and the application proxy cloud service |
-| `crl3.digicert.com` <br> `crl4.digicert.com` <br> `ocsp.digicert.com` <br> `crl.microsoft.com` <br> `oneocsp.microsoft.com` <br> `ocsp.msocsp.com`<br> | 80/HTTP   | The connector uses these URLs to verify certificates.        |
-| `login.windows.net` <br> `secure.aadcdn.microsoftonline-p.com` <br> `*.microsoftonline.com` <br> `*.microsoftonline-p.com` <br> `*.msauth.net` <br> `*.msauthimages.net` <br> `*.msecnd.net` <br> `*.msftauth.net` <br> `*.msftauthimages.net` <br> `*.phonefactor.net` <br> `enterpriseregistration.windows.net` <br> `management.azure.com` <br> `policykeyservice.dc.ad.msft.net` <br> `ctldl.windowsupdate.com` <br> `www.microsoft.com/pkiops` | 443/HTTPS | The connector uses these URLs during the registration process. |
-| `ctldl.windowsupdate.com` <br> `www.microsoft.com/pkiops` | 80/HTTP | The connector uses these URLs during the registration process. |
+| `*.msappproxy.net` <br> `*.servicebus.windows.net` | `443/HTTPS` | Communication between the connector and the application proxy cloud service. |
+| `crl3.digicert.com` <br> `crl4.digicert.com` <br> `ocsp.digicert.com` <br> `crl.microsoft.com` <br> `oneocsp.microsoft.com` <br> `ocsp.msocsp.com`<br> | `80/HTTP`   | The connector uses these URLs to verify certificates.        |
+| `login.windows.net` <br> `secure.aadcdn.microsoftonline-p.com` <br> `*.microsoftonline.com` <br> `*.microsoftonline-p.com` <br> `*.msauth.net` <br> `*.msauthimages.net` <br> `*.msecnd.net` <br> `*.msftauth.net` <br> `*.msftauthimages.net` <br> `*.phonefactor.net` <br> `enterpriseregistration.windows.net` <br> `management.azure.com` <br> `policykeyservice.dc.ad.msft.net` <br> `ctldl.windowsupdate.com` <br> `www.microsoft.com/pkiops` | `443/HTTPS` | The connector uses these URLs during the registration process. |
+| `ctldl.windowsupdate.com` <br> `www.microsoft.com/pkiops` | `80/HTTP` | The connector uses these URLs during the registration process. |
 
-You can allow connections to `*.msappproxy.net`, `*.servicebus.windows.net`, and other URLs if your firewall or proxy lets you configure access rules based on domain suffixes. If not, you need to allow access to the [Azure IP ranges and Service Tags - Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519). The IP ranges are updated each week.
+Allow connections to `*.msappproxy.net`, `*.servicebus.windows.net`, and other URLs if your firewall or proxy lets you configure access rules based on domain suffixes. Or, allow access to the [Azure IP ranges and Service Tags - Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519). The IP ranges are updated each week.
 
 > [!IMPORTANT]
-> Avoid all forms of inline inspection and termination on outbound TLS communications between Microsoft Entra application proxy connectors and Microsoft Entra application proxy Cloud services.
-
-<a name='dns-name-resolution-for-azure-ad-application-proxy-endpoints'></a>
+> Avoid all forms of inline inspection and termination on outbound TLS communications between Microsoft Entra application proxy connectors and Microsoft Entra application proxy services.
 
 ### Domain Name System (DNS) for Microsoft Entra application proxy endpoints
 
@@ -151,7 +143,7 @@ Public DNS records for Microsoft Entra application proxy endpoints are chained C
 
 ## Install and register a connector
 
-To use application proxy, install a connector on each Windows server you're using with the application proxy service. The connector is an agent that manages the outbound connection from the on-premises application servers to application proxy in Microsoft Entra ID. You can install a connector on servers that also have other authentication agents installed such as Microsoft Entra Connect.
+To use application proxy, install a connector on each Windows server you're using with the application proxy service. The connector is an agent that manages the outbound connection from the on-premises application servers to application proxy in Microsoft Entra ID. The connector can install on servers with authentication agents such as Microsoft Entra Connect.
 
 To install the connector:
 
@@ -167,19 +159,19 @@ To install the connector:
 
 ### General remarks
 
-If you already installed a connector, reinstall it to get the latest version. To see information about previously released versions and what changes they include, see [Application proxy: Version Release History](./application-proxy-release-version-history.md).
+If you already installed a connector, reinstall it to get the latest version. To see information about previously released versions and what changes they include, see [Application proxy: Version Release History](application-proxy-release-version-history.md).
 
-If you choose to have more than one Windows server for your on-premises applications, you need to install and register the connector on each server. You can organize the connectors into connector groups. For more information, see [Connector groups](./application-proxy-connector-groups.md).
+If you choose to have more than one Windows server for your on-premises applications, you need to install and register the connector on each server. You can organize the connectors into connector groups. For more information, see [Connector groups](application-proxy-connector-groups.md).
 
 If you install connectors in different regions, you should optimize traffic by selecting the closest application proxy cloud service region with each connector group. To learn more, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-network-topology.md).
 
-If your organization uses proxy servers to connect to the internet, you need to configure them for application proxy. For more information, see [Work with existing on-premises proxy servers](./application-proxy-configure-connectors-with-proxy-servers.md).
+If your organization uses proxy servers to connect to the internet, you need to configure them for application proxy. For more information, see [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md).
 
 For information about connectors, capacity planning, and how they stay up-to-date, see [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md).
 
 ## Verify the connector installed and registered correctly
 
-You can use the Microsoft Entra admin center or your Windows server to confirm that a new connector installed correctly. For information about troubleshooting App Proxy issues, see [Debug application proxy application issues](application-proxy-debug-apps.md).
+You can use the Microsoft Entra admin center or your Windows server to confirm that a new connector installed correctly. For information about troubleshooting application proxy issues, see [Debug application proxy application issues](application-proxy-debug-apps.md).
 
 ### Verify the installation through Microsoft Entra admin center
 
@@ -190,9 +182,9 @@ To confirm the connector installed and registered correctly:
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
 1. Verify the details of the connector. The connectors should be expanded by default. An active green label indicates that your connector can connect to the service. However, even if the label is green, a network issue could still block the connector from receiving messages.
 
-    ![Microsoft Entra application proxy Connectors](./media/application-proxy-add-on-premises-application/app-proxy-connectors.png)
+    ![Microsoft Entra application proxy connectors](./media/application-proxy-add-on-premises-application/app-proxy-connectors.png)
 
-For more help with installing a connector, see [Problem installing the application proxy Connector](./application-proxy-connector-installation-problem.md).
+For more help with installing a connector, see [Problem installing the application proxy connector](application-proxy-connector-installation-problem.md).
 
 ### Verify the installation through your Windows server
 
@@ -200,12 +192,10 @@ To confirm the connector installed and registered correctly:
 
 1. Open the Windows Services Manager by clicking the **Windows** key and entering *services.msc*.
 1. Check to see if the status for the following two services is **Running**.
-   - **Microsoft Entra application proxy Connector** enables connectivity.
-   - **Microsoft Entra application proxy Connector Updater** is an automated update service. The updater checks for new versions of the connector and updates the connector as needed.
+   - **Microsoft Entra application proxy connector** enables connectivity.
+   - **Microsoft Entra application proxy connector Updater** is an automated update service. The updater checks for new versions of the connector and updates the connector as needed.
 
 1. If the status for the services isn't **Running**, right-click to select each service and choose **Start**.
-
-<a name='add-an-on-premises-app-to-azure-ad'></a>
 
 ## Add an on-premises app to Microsoft Entra ID
 
@@ -257,7 +247,7 @@ To add a test user:
 
 ### Test the sign-on
 
-To test the sign-on to the application:
+To test authentication to the application:
 
 1. From the application you want to test, select **application proxy**.
 2. At the top of the page, select **Test Application** to run a test on the application and check for any configuration issues.

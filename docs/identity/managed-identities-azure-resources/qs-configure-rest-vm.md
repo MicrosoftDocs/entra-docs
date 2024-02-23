@@ -1,16 +1,16 @@
 ---
 title: Configure managed identities on Azure VM using REST
 description: Step-by-step instructions for configuring a system and user-assigned managed identities on an Azure VM using CURL to make REST API calls.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.date: 05/25/2023
 ms.author: barclayn
-ms.collection: M365-identity-device-management
+
 ms.custom: mode-api, devx-track-azurecli
 ms.devlang: azurecli
 ---

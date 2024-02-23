@@ -1,17 +1,16 @@
 ---
 title: Default user permissions
 description: Learn about the user permissions available in Microsoft Entra ID.
-services: active-directory
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 02/17/2023
 ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: "it-pro, seodec18, contperf-fy21q1"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ---
 # What are the default user permissions in Microsoft Entra ID?

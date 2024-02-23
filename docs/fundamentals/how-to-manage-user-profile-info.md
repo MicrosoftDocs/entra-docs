@@ -4,7 +4,7 @@ description: Instructions for IT admins to learn how to manage a user's profile 
 author: shlipsey3
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 02/09/2024

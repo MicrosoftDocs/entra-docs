@@ -3,8 +3,8 @@ title: Issuer service communication examples - Microsoft Entra Verified ID
 description: Details of communication between identity provider and issuer service
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 ms.topic: conceptual
 ms.date: 05/25/2023
 ms.author: barclayn

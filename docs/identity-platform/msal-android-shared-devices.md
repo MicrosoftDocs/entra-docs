@@ -6,9 +6,9 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: identitypla | Azuretformtop40
 ms.date: 12/05/2023
-ms.reviewer: brandwe
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: brianmel
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As a developer, I want to understand how to create a shared device mode app for Android devices, so that I can enable multiple employees to easily share a device and access customer information securely.
 ---

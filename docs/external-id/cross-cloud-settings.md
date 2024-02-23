@@ -2,8 +2,7 @@
 title: Configure B2B collaboration Microsoft cloud settings
 description: Use Microsoft cloud settings to enable cross-cloud B2B collaboration between sovereign (national) Microsoft Azure clouds.
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 02/05/2024
 
@@ -50,7 +49,7 @@ After each organization completes these steps, Microsoft Entra B2B collaboration
 
 In your Microsoft cloud settings, enable the Microsoft Azure cloud you want to collaborate with.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**, then select **Microsoft cloud settings**.
 1. Select the checkboxes next to the external Microsoft Azure clouds you want to enable.
 
@@ -63,7 +62,7 @@ In your Microsoft cloud settings, enable the Microsoft Azure cloud you want to c
 
 Follow these steps to add the tenant you want to collaborate with to your Organizational settings.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**, then select **Organizational settings**.
 1. Select **Add organization**.
 1. On the **Add organization** pane, type the tenant ID for the organization (cross-cloud lookup by domain name isn't currently available).

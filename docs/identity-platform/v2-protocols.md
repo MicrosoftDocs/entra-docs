@@ -7,8 +7,8 @@ ms.author: henrymbugua
 ms.custom: has-adal-ref
 ms.date: 02/09/2024
 ms.reviewer: nickludwig
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As a developer integrating authentication into my app using the Microsoft identity platform, I want to understand the roles and concepts of OAuth 2.0 and OpenID Connect, so that I can effectively use the platform's documentation, authentication libraries, and endpoints to add authentication to my application.
 ---

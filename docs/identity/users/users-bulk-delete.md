@@ -1,17 +1,16 @@
 ---
 title: Bulk delete users in Microsoft Entra ID
 description: Delete users in bulk in Microsoft Entra ID
-services: active-directory
+
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
 ms.date: 11/21/2023
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.custom: it-pro
 ms.reviewer: jeffsta
-ms.collection: M365-identity-device-management
 ---
 
 # Bulk delete users in Microsoft Entra ID

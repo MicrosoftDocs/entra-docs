@@ -4,8 +4,8 @@ description: A design pattern describing how to configure employment verificatio
 services: decentralized-identity
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 ms.topic: conceptual
 ms.date: 10/03/2023
 ms.author: barclayn

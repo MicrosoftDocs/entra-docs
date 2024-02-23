@@ -2,8 +2,7 @@
 title: Sign-in risk-based multifactor authentication
 description: Create Conditional Access policies using Identity Protection sign-in risk
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 07/18/2023
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: calebb, lhuangnorth
-
-ms.collection: M365-identity-device-management
 ---
 # Common Conditional Access policy: Sign-in risk-based multifactor authentication
 

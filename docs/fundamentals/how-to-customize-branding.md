@@ -4,7 +4,7 @@ description: Instructions about how to add your organization's custom branding t
 author: shlipsey3
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 02/06/2024

@@ -6,8 +6,7 @@ ms.author: kenwith
 manager: amycolannino
 ms.topic: overview
 ms.date: 07/27/2023
-ms.service: network-access
-ms.custom: 
+ms.service: global-secure-access
 ---
 
 # Understand remote network connectivity

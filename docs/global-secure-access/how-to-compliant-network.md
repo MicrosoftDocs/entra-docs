@@ -2,8 +2,7 @@
 title: Enable compliant network check with Conditional Access
 description: Learn how to require known compliant network locations in order to connect to your secured resources with Conditional Access.
 
-ms.service: network-access
-ms.subservice: 
+ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 01/08/2024
 

@@ -4,7 +4,7 @@ description: In this tutorial, learn how to join a Windows Server virtual machin
 author: justinha
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: tutorial
 ms.date: 09/15/2023

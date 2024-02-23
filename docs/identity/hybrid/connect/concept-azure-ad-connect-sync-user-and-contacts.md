@@ -1,19 +1,19 @@
 ---
 title: 'Microsoft Entra Connect Sync: Understanding Users, Groups, and Contacts'
 description: Explains users, groups, and contacts in Microsoft Entra Connect Sync.
-services: active-directory
+
 author: billmath
 manager: amycolannino
 
 ms.assetid: 8d204647-213a-4519-bd62-49563c421602
-ms.service: active-directory
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Microsoft Entra Connect Sync: Understanding Users, Groups, and Contacts
 There are several different reasons why you would have multiple Active Directory forests and there are several different deployment topologies. Common models include an account-resource deployment and GAL sync’ed forests after a merger & acquisition. But even if there are pure models, hybrid models are common as well. The default configuration in Microsoft Entra Connect Sync doesn't assume any particular model but depending on how user matching was selected in the installation guide, different behaviors can be observed.

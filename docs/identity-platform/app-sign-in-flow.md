@@ -7,8 +7,8 @@ ms.author: ryanwi
 ms.custom: scenarios:getting-started
 ms.date: 08/11/2023
 ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to understand the sign-in flow of web, desktop, and mobile apps in Microsoft identity platform
 ---

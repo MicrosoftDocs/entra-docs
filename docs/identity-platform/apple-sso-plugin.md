@@ -6,9 +6,9 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom:
 ms.date: 09/05/2023
-ms.reviewer: brandwe
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: brianmel
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an IT admin managing Apple devices in my organization, I want to enable single sign-on (SSO) for Microsoft Enterprise accounts on macOS, iOS, and iPadOS, so that users can have a seamless authentication experience across all applications that support Apple's enterprise SSO feature.
 ---

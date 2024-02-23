@@ -1,12 +1,12 @@
 ---
 title: include file
 description: include file
-services: active-directory
+
 documentationcenter: dev-center-name
 author: CelesteDG
 manager: mtillman
 
-ms.service: active-directory
+ms.service: entra-id
 
 ms.topic: include
 ms.tgt_pltfrm: na

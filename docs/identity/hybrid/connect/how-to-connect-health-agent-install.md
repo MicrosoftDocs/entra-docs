@@ -1,16 +1,16 @@
 ---
 title: Install the Microsoft Entra Connect Health agents in Microsoft Entra ID
 description: Learn how to install the Microsoft Entra Connect Health agents for Active Directory Federation Services (AD FS) and for sync.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: hybrid
+ms.service: entra-id
+ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.date: 11/06/2023
 ms.topic: how-to
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ms.custom:
 ---
 # Install the Microsoft Entra Connect Health agents

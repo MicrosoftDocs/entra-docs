@@ -4,8 +4,8 @@ description: In this tutorial, you learn how to govern and monitor an applicatio
 author: omondiatieno
 manager: CelesteDG
 ms.author: jomondi
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: tutorial
 ms.date: 09/07/2023
 ms.reviewer: saibandaru

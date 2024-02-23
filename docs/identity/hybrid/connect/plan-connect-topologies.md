@@ -1,17 +1,17 @@
 ---
 title: 'Microsoft Entra Connect: Supported topologies'
 description: This topic details supported and unsupported topologies for Microsoft Entra Connect
-services: active-directory
+
 author: billmath
 manager: amycolannino
 ms.assetid: 1034c000-59f2-4fc8-8137-2416fa5e4bfe
-ms.service: active-directory
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 # Topologies for Microsoft Entra Connect
 This article describes various on-premises and Microsoft Entra topologies that use Microsoft Entra Connect Sync as the key integration solution. This article includes both supported and unsupported configurations.

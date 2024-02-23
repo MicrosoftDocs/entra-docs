@@ -5,9 +5,9 @@ description: Learn about how to analyze user activity and engagement for your re
 author: csmulligan
 ms.author: cmulligan
 manager: CelesteDG
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 01/16/2024
 

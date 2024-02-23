@@ -1,11 +1,10 @@
 ---
 title:  Microsoft Entra Permissions Management partners
 description: View current Microsoft Entra Permissions Management partners and their websites.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: ciem
+ms.service: entra-permissions-management
+
 ms.topic: reference
 ms.date: 06/16/2023
 ms.author: jfields

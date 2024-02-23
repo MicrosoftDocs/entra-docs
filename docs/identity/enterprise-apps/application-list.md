@@ -4,8 +4,8 @@ description: Understand how to view all applications using your Microsoft Entra 
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: reference
 ms.date: 07/14/2023

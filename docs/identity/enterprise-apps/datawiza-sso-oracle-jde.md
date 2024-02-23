@@ -3,8 +3,8 @@ title: Configure Microsoft Entra multifactor authentication and SSO for Oracle J
 description: Enable Microsoft Entra multifactor authentication and SSO for Oracle JD Edwards application using Datawiza Access Proxy
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 01/30/2024
 ms.author: gasinh

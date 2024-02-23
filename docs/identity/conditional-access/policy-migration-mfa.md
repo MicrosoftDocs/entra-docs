@@ -2,7 +2,7 @@
 title: Migrate a classic Conditional Access policy 
 description: This article shows how to migrate a classic Conditional Access policy.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 01/03/2024

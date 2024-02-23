@@ -1,15 +1,12 @@
 ---
 title: Manage the lifecycle of group-based licenses in Microsoft Entra ID
 description: This step-by-step tutorial shows how to create an access package for managing group-based licenses in entitlement management.
-services: active-directory
 author: owinfreyATL
-ms.service: active-directory
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: tutorial
-ms.subservice: compliance
 ms.date: 05/25/2023
 ms.author: owinfrey
-ms.collection: M365-identity-device-management
 #Customer intent: As an IT admin, I want step-by-step instructions for creating an access package for managing the lifecycle of group-based licenses.
 ---
 # Tutorial: Manage the lifecycle of your group-based licenses in Microsoft Entra ID

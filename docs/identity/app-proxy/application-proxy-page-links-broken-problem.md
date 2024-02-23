@@ -1,10 +1,10 @@
 ---
 title: Links on the page don't work for a Microsoft Entra application proxy application
-description:  Troubleshoot issues with broken links on Application Proxy applications integrated with Microsoft Entra ID
-services: active-directory
+description:  Troubleshoot issues with broken links on application proxy applications integrated with Microsoft Entra ID
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
 ms.date: 02/06/2024
@@ -12,14 +12,14 @@ ms.author: kenwith
 ms.reviewer: asteen
 ---
 
-# Links on the page don't work for an Application Proxy application
+# Links on the page don't work for an application proxy application
 
 This article helps you troubleshoot why links on your Microsoft Entra application proxy application don't work correctly.
 
 ## Overview
-After you publish an Application Proxy app, the only links that work by default in the application are links to destinations contained within the published root URL. The links within the applications aren’t working, the internal URL for the application probably does not include all the destinations of links within the application.
+After you publish an application proxy app, the only links that work by default in the application are links to destinations contained within the published root URL. The links within the applications aren’t working, the internal URL for the application probably does not include all the destinations of links within the application.
 
-**Why does this happen?** When a user clicks a link in an application, Application Proxy tries to resolve the URL as either an internal URL within the same application, or as an externally available URL. If the link points to an internal URL that is not within the same application, it does not belong to either of these buckets and result in a not found error.
+**Why does this happen?** When a user clicks a link in an application, application proxy tries to resolve the URL as either an internal URL within the same application, or as an externally available URL. If the link points to an internal URL that is not within the same application, it does not belong to either of these buckets and result in a not found error.
 
 ## Ways you can resolve broken links
 
@@ -34,7 +34,7 @@ There are three ways to resolve this issue. The choices are in listed in increas
 
 2.  If your applications use fully qualified domain names (FQDNs), use [custom domains](how-to-configure-custom-domain.md) to publish your applications. This feature allows the same URL to be used both internally and externally.
 
-    This option ensures that the links in your application are externally accessible through Application Proxy since the links within the application to internal URLs are also recognized externally. All links still need to belong to a published application. However, with this option, the links do not need to belong to the same application and can belong to multiple applications.
+    This option ensures that the links in your application are externally accessible through application proxy since the links within the application to internal URLs are also recognized externally. All links still need to belong to a published application. However, with this option, the links do not need to belong to the same application and can belong to multiple applications.
 
 3.  If neither of these options are feasible, there are multiple options for enabling inline link translation. These options include using the Intune Managed Browser, My Apps extension, or using the link translation setting on your application. To learn more about each of these options and how to enable them, see [Redirect hardcoded links for apps published with Microsoft Entra application proxy](application-proxy-configure-hard-coded-link-translation.md).
 

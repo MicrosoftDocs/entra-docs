@@ -6,9 +6,9 @@ author: Dickson-Mwendia
 manager: mwongerapk
 
 ms.author: dmwendia
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: tutorial
 ms.date: 08/04/2023
 ms.custom: developer, devx-track-js
@@ -34,9 +34,9 @@ In this tutorial;
 
 * A Microsoft Entra ID for customer tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-    * Application administrator
-    * Application developer
-    * Cloud application administrator
+    * Application Administrator
+    * Application Developer
+    * Cloud Application Administrator
 
 ## Register the Node.js CLI app
 

@@ -2,9 +2,8 @@
 title: Microsoft Entra ID's backup authentication system
 description: Increasing the resilience of the authentication plane with the backup authentication system.
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 06/02/2023
 
@@ -13,7 +12,6 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: joroja
 
-ms.collection: M365-identity-device-management
 ---
 # Microsoft Entra ID's backup authentication system
 

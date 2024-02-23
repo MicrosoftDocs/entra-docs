@@ -2,8 +2,8 @@
 title: What are risks in Microsoft Entra ID Protection
 description: Explaining risk in Microsoft Entra ID Protection
 
-ms.service: active-directory
-ms.subservice: identity-protection
+ms.service: entra-id-protection
+
 ms.topic: conceptual
 ms.date: 02/05/2024
 

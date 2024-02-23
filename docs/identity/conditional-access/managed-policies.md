@@ -2,7 +2,7 @@
 title: Secure your resources with Microsoft-managed Conditional Access policies
 description: Microsoft-managed policies take action to require multifactor authentication to reduce the risk of compromise.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 02/08/2024

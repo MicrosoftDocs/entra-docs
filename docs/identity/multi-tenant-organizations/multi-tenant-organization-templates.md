@@ -1,11 +1,10 @@
 ---
 title: Multitenant organization templates (Preview)
 description: Learn about multitenant organization templates in Microsoft Entra ID.
-services: active-directory
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: multi-tenant-organizations
+ms.service: entra-id
+ms.subservice: multitenant-organizations
 ms.topic: conceptual
 ms.date: 08/22/2023
 ms.author: rolyon

@@ -8,8 +8,8 @@ ms.author: henrymbugua
 ms.custom: scenarios:getting-started, "languages:iOS", mode-api
 ms.date: 01/14/2022
 ms.reviewer: jmprieur, saeeda
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn how to sign in users and call Microsoft Graph from my iOS or macOS application.
 ---

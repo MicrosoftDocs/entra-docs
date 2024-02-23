@@ -1,13 +1,13 @@
 ---
 title: Managed identities for Azure resources frequently asked questions"
 description: Frequently asked questions about managed identities
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: conceptual
-ms.date: 07/27/2022
+ms.date: 02/21/2024
 ms.author: barclayn
 ---
 
@@ -143,7 +143,12 @@ Moving a user-assigned managed identity to a different resource group isn't supp
 
 Managed identity tokens are cached by the underlying Azure infrastructure for performance and resiliency purposes: the back-end services for managed identities maintain a cache per resource URI for around 24 hours. It can take several hours for changes to a managed identity's permissions to take effect, for example. Today, it is not possible to force a managed identity's token to be refreshed before its expiry. For more information, see [Limitation of using managed identities for authorization](managed-identity-best-practice-recommendations.md#limitation-of-using-managed-identities-for-authorization).
 
+### Are managed identities soft deleted? 
+
+Yes, Managed Identities are soft deleted for 30 days. You can view the soft deleted managed identity service principal, but you cannot restore or permanently delete it.
+
 ### What happens to tokens after a managed identity is deleted?
+
 When a managed identity is deleted, an Azure resource that was previously associated with that identity can no longer request new tokens for that identity. Tokens that were issued before the identity was deleted will still be valid until their original expiry. Some target endpoints' authorization systems may carry out additional checks in the directory for the identity, in which case the request will fail as the object can't be found. However some systems, like Azure RBAC, will continue to accept requests from that token until it expires.
 
 ## Next steps

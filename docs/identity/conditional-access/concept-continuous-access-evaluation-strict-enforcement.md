@@ -2,8 +2,7 @@
 title: Continuous access evaluation strict location enforcement in Microsoft Entra ID
 description: Responding to changes in user state faster with continuous access evaluation strict location enforcement in Microsoft Entra ID
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 07/27/2023
@@ -12,7 +11,7 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sreyanthmora
-ms.collection: M365-identity-device-management
+
 ---
 # Strictly enforce location policies using continuous access evaluation (preview)
 
