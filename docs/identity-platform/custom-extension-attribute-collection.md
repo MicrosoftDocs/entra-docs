@@ -698,7 +698,7 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
 
-    :::image type="content" border="true"  source="media/custom-extension-get-started/add-identity-provider-auth-function-app-customer.png" alt-text="Screenshot that shows how to add authentication to your function app while in a customer tenant." lightbox="media/custom-extension-get-started/add-identity-provider-auth-function-app-customer.png":::
+    :::image type="content" border="true"  source="media/custom-extension-attribute-collection/add-identity-provider-auth-function-app-customer.png" alt-text="Screenshot that shows how to add authentication to your function app while in a customer tenant." lightbox="media/custom-extension-attribute-collection/add-identity-provider-auth-function-app-customer.png":::
 
 ### 5.2 Using OpenID Connect identity provider
 

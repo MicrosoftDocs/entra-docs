@@ -470,7 +470,7 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 
 ### 5.1 Using Microsoft Entra identity provider
 
-USe the following steps to add Microsoft Entra as an identity provider to your Azure Function app.
+Use the following steps to add Microsoft Entra as an identity provider to your Azure Function app.
 
 # [Workforce tenant](#tab/workforce-tenant)
 
