@@ -51,11 +51,11 @@ In the guide, you configured a sample app. The guide provides a limited set of a
 
 :::image type="content" source="media/quickstart-trial-setup/sample-app-setup.png" alt-text="Screenshot of the sample app setup.":::
 
-You can find the comprehensive list of app samples and guides [here](https://learn.microsoft.com/en-us/entra/external-id/customers/samples-ciam-all?tabs=apptype). 
+You can find the comprehensive list of app samples and guides [here](samples-ciam-all.md). 
 
 The **Code sample guide** links will point to the relevant sample articles and will guide you through the process of registering your app, creating a user flow, associating your app with the user flow, and running your project to sign in. In some cases, it will also guide you on how to call an API.
 
-For more information on configuring your app for authentication, refer to the **Build and integrate guide** links. These tutorials will assist you in building and integrating your own apps with Microsoft Entra ID for customers. You can also add [custom authentication extensions](concept-custom-extensions) at specific points within the authentication flow. 
+For more information on configuring your app for authentication, refer to the **Build and integrate guide** links. These tutorials will assist you in building and integrating your own apps with Microsoft Entra ID for customers. You can also add [custom authentication extensions](concept-custom-extensions.md) at specific points within the authentication flow. 
 
 To have an overview of all the supported features in your new tenant visit the [Supported features in Microsoft Entra ID for customers (preview)](concept-supported-features-customers.md) page. 
 
