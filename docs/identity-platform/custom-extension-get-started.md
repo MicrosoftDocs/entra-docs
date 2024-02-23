@@ -253,7 +253,7 @@ So far we've set up the project to install the NuGet packages and added soem sta
 1. Select a location for the function app, such as *East US*.
 1. You'll need to wait 5-10 minutes for your function app to be deployed and show up in the Azure portal.
 
-# [Azure portal](#tab/azure-portal)
+# [Azure portal](#tab/azure-portal-setup)
 
 This setup is done entirely in the Azure portal. You'll create an Azure Function app and create a HTTP trigger function.
 
