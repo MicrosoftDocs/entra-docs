@@ -85,7 +85,13 @@ Use the following table to diagnose an error code.
 
 ## Call your REST API directly
 
-Your REST API is protected by a Microsoft Entra access token. You can test your API by obtaining an access token with the [application registration](custom-extension-get-started.md#22-grant-admin-consent) associated with the custom authentiction extensions. After you acquire an access token, pass it the HTTP `Authorization` header. To obtain an access token, follow these steps:
+Your REST API is protected by a Microsoft Entra access token. You can test your API by;
+- Obtaining an access token with an [application registration](custom-extension-get-started.md#22-grant-admin-consent) associated with the custom authentiction extensions
+- Test your API locally using Postman. 
+
+# [Obtain an access token](#tab/obtain-an-access-token)
+
+After you acquire an access token, pass it the HTTP `Authorization` header. To obtain an access token, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Application registrations**.
@@ -119,10 +125,22 @@ Your REST API is protected by a Microsoft Entra access token. You can test your 
 1. Compare the `iss` with the issuer name you [configured in your API](custom-extension-get-started.md#step-5-protect-your-azure-function).
 1. Compare the `aud` with the client ID you [configured in your API](custom-extension-get-started.md#step-5-protect-your-azure-function).
 
-To test your API directly from the Postman, follow these steps:
+# [Postman](#tab/postman)
+
+To test your API directly from Postman, follow these steps:
+
+> [!NOTE]
+>
+> If you used the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet package, turn off token validation for testing purposes. Open the *local.settings.json* file and add the following parameter
+>
+> ```json
+> "AuthenticationEvents__BypassTokenValidation": true
+> ```
+>
+> Once you've finished testing, ensure that you turn token validation back on.
 
 1. In your REST API, disable the `appid` or `azp` [claim validation](custom-extension-overview.md#protect-your-rest-api). Check out how to [edit the function API](custom-extension-get-started.md#12-edit-the-function) you created earlier.
-1. In Postman, create new HTTP request
+1. In Postman, create new HTTP request.
 1. Set the **HTTP method** to `POST`
 1. In the **Body**, select **Raw** and then select **JSON**.
 1. Pase the following JSON that imitates the request Microsoft Entra ID sends to your REST API.
@@ -137,7 +155,7 @@ To test your API directly from the Postman, follow these steps:
             "authenticationEventListenerId": "<GUID>",
             "customAuthenticationExtensionId": "<Your custom authentication extension ID>",
             "authenticationContext": {
-                "correlationId": "fcef74ef-29ea-42ca-b150-8f45c8f31ee6",
+                "correlationId": "<Enter correlation ID here>",
                 "client": {
                     "ip": "127.0.0.1",
                     "locale": "en-us",
@@ -157,7 +175,7 @@ To test your API directly from the Postman, follow these steps:
                     "displayName": "My Test application"
                 },
                 "user": {
-                    "createdDateTime": "2016-03-01T15:23:40Z",
+                    "createdDateTime": "2023-08-16T00:00:00Z",
                     "displayName": "John Smith",
                     "givenName": "John",
                     "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471",

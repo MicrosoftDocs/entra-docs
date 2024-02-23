@@ -249,7 +249,7 @@ So far we've set up the project to install the NuGet packages and added soem sta
     | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
     | **Location** | Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
     | **Azure Storage** | General-purpose storage account | An Azure storage account is required by the Functions runtime. Select New to configure a general-purpose storage account. |
-    | **Application Insights** | ***TODO*** | ***TODO*** |
+    | **Application Insights** | ***TODO*** | How the logs are put together |
     
 
 1. Wait a few moments for your function app to be deployed. Once the window closes, select **Finish** on the **Publish** screen.
@@ -260,7 +260,7 @@ So far we've set up the project to install the NuGet packages and added soem sta
 1. Select the **Azure** extension icon. In **Resources**, select the **+** icon to **Create a resource**.
 1. Select **Create Function App in Azure**. Use the following settings for setting up your function app.
 1. Give the function app a name, such as *AuthEventsTriggerNuGet*, and press **Enter**.
-1. Select the **.NET 6 (LTS) In-Process** runtime stack.
+1. Select the **.NET 6 (LTS) In-Process** runtime stack. 
 1. Select a location for the function app, such as *East US*.
 1. You'll need to wait 5-10 minutes for your function app to be deployed and show up in the Azure portal.
 
@@ -302,7 +302,7 @@ After your custom authentication extension is created, open the **Overview** tab
 
 From the **Overview** page, select the **Grant permission** button to give admin consent to the registered app, which allows the custom authentication extension to authenticate to your API. The custom authentication extension uses `client_credentials` to authenticate to the Azure Function App using the `Receive custom authentication extension HTTP requests` permission. Select **Accept**.
 
-1. On the **Overview** page of your custom extension, copy the App ID, and store it somewhere for use later. This enables ASTS to call this API during *onTokenIssuanceStart*. This API will then respond back with the custom claims.
+1. On the **Overview** page of your custom extension, copy the App ID, and store it somewhere for use later. This enables Microsoft Entra ID to call this API during *onTokenIssuanceStart*. This API will then respond back with the custom claims.
 
 <!--
 
@@ -372,7 +372,7 @@ Next, assign the attributes from the custom claims provider, which should be iss
 Microsoft Entra custom authentication extension uses server to server flow to obtain an access token that is sent in the HTTP `Authorization` header to your Azure function. When publishing your function to Azure, especially in a production environment, you need to validate the token sent in the authorization header.
 
 To protect your Azure function, follow these steps to integrate Microsoft Entra authentication, for validating incoming tokens with your *Azure Functions authentication events API* application registration.
-
+<!--This is EasyAuth setup-->
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Navigate and select the function app you previously published.
 1. Select **Authentication** in the menu on the left.
