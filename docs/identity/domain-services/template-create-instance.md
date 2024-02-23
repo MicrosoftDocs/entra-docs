@@ -6,7 +6,7 @@ manager: amycolannino
 
 ms.service: entra-id
 ms.subservice: domain-services
-ms.custom: devx-track-arm-template, has-azure-ad-ps-ref
+ms.custom: devx-track-arm-template, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: sample
 ms.date: 09/15/2023
 ms.author: justinha
@@ -91,17 +91,17 @@ In the following example, the user object ID for the account with a UPN of `admi
 
 ```powershell
 # First, retrieve the object ID of the newly created 'AAD DC Administrators' group.
-$GroupObjectId = Get-AzureADGroup `
+$GroupObjectId = Get-MgGroup `
   -Filter "DisplayName eq 'AAD DC Administrators'" | `
-  Select-Object ObjectId
+  Select-Object Id
 
 # Now, retrieve the object ID of the user you'd like to add to the group.
-$UserObjectId = Get-AzureADUser `
+$UserObjectId = Get-MgUser `
   -Filter "UserPrincipalName eq 'admin@contoso.onmicrosoft.com'" | `
-  Select-Object ObjectId
+  Select-Object Id
 
 # Add the user to the 'AAD DC Administrators' group.
-Add-AzureADGroupMember -ObjectId $GroupObjectId.ObjectId -RefObjectId $UserObjectId.ObjectId
+New-MgGroupMember -GroupId $GroupObjectId.Id -DirectoryObjectId $UserObjectId.Id
 ```
 
 Finally, create a resource group using the [New-AzResourceGroup][New-AzResourceGroup] cmdlet. In the following example, the resource group is named *myResourceGroup* and is created in the *westus* region. Use your own name and desired region:
@@ -358,17 +358,17 @@ To see the managed domain in action, you can [domain-join a Windows VM][windows-
 <!-- EXTERNAL LINKS -->
 [Connect-AzAccount]: /powershell/module/Az.Accounts/Connect-AzAccount
 
-[Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0): /powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0
+[Connect-MgGraph]: /powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0
 
-[New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal): /powershell/module/microsoft.graph.applications/new-mgserviceprincipal
+[New-MgServicePrincipal]: /powershell/module/microsoft.graph.applications/new-mgserviceprincipal
 
-[New-MgGroup](/powershell/module/microsoft.graph.groups/new-mggroup): /powershell/module/microsoft.graph.groups/new-mggroup
+[New-MgGroup]: /powershell/module/microsoft.graph.groups/new-mggroup
 
-[New-MgGroupMember](/powershell/module/microsoft.graph.groups/new-mggroupmember): /powershell/module/microsoft.graph.groups/new-mggroupmember
+[New-MgGroupMember]: /powershell/module/microsoft.graph.groups/new-mggroupmember
 
-[Get-MgGroup](/powershell/module/microsoft.graph.groups/get-mggroup): /powershell/module/microsoft.graph.groups/get-mggroup
+[Get-MgGroup]: /powershell/module/microsoft.graph.groups/get-mggroup
 
-[Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser): /powershell/module/microsoft.graph.users/get-mguser
+[Get-MgUser]: /powershell/module/microsoft.graph.users/get-mguser
 
 [Register-AzResourceProvider]: /powershell/module/Az.Resources/Register-AzResourceProvider
 
