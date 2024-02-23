@@ -29,9 +29,235 @@ The following video outlines the steps you'll replicate in this article to confi
 - A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.
     - For customer tenants, you'll need a [sign-up and sign-in user flow](~/external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md).
 
-## Step 1: Create an Azure Function app
+## Step 1: Create an Azure Function app and HTTP trigger function
 
-In this step, you create an HTTP trigger function API in the Azure portal. The function API is the source of extra claims for your token. Follow these steps to create an Azure Function:
+In this step, you create an HTTP trigger function API in the Azure portal. The function API is the source of extra claims for your token. Follow these steps to create an Azure Function. Choose one of the following tabs based on your development setup.
+
+# [Visual Studio](#tab/visual-studio)
+
+This setup uses the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events. 
+
+### 1.1 Create the Azure Function app
+
+1. Open Visual Studio, and select **Create a new project**.
+1. Search for and select **Azure Functions**, then select **Next**.
+1. Give the project a name, such as *AuthEventsTrigger*. It's a good idea to match the solution name with the project name.
+1. Select a location for the project. Select **Next**.
+1. Select **.NET 6.0 (Long Term Support)** as the target framework. <!--Why? Why .NET 6.0 and not a later version-->
+1. Select *Http trigger* as the **Function** type, and that **Authorization level** is set to *Function*. Select **Create**.
+1. In your *Function1.cs* file, replace the entire contents of the file with the following code:
+
+    ```csharp
+    using System;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Azure.WebJobs;
+    using Microsoft.Extensions.Logging;
+    using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.TokenIssuanceStart.Actions;
+    using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.TokenIssuanceStart;
+    using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.Framework;
+    using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents;
+    
+    namespace AuthEventTrigger
+    {
+        public static class Function1
+        {
+            [FunctionName("onTokenIssuanceStart")]
+            public static async Task<AuthenticationEventResponse> Run(
+                [AuthenticationEventsTrigger] TokenIssuanceStartRequest request, ILogger log)
+            // [AuthenticationEventsTrigger(TenantId = "Enter tenant ID here", AudienceAppId = "Enter application client ID here")] TokenIssuanceStartRequest request, ILogger log)
+            // This is required. The only way that [AuthenticationEventsTrigger] TokenIssuanceStartRequest request, ILogger log) will work is if the settings are set in local.settings.json are set to bypass token validation. i.e. "AuthenticationEvents__BypassTokenValidation": true. This is only recommended for local development and testing.
+            {
+                try
+                {
+                    // Checks if the request is successful and did the token validation pass
+                    if (request.RequestStatus == RequestStatusType.Successful)
+                    {
+                        // Fetches information about the user from external data store
+                        // request.Response = null;
+                        // request.Response.Actions = null;
+                        // Add new claims to the token's response
+                        request.Response.Actions.Add(new ProvideClaimsForToken(
+                                                      new TokenClaim("dateOfBirth", "01/01/2000"),
+                                                      new TokenClaim("customRoles", "Writer", "Editor")
+                                                 ));
+                    }
+                    else
+                    {
+                        // If the request fails, such as in token validation, output the failed request status
+                        log.LogInformation(request.StatusMessage);
+                    }
+                    return await request.Completed();
+                }
+                catch (Exception ex) 
+                { 
+                    return await request.Failed(ex);
+                }
+            }
+        }
+    }
+    ```
+
+1. Next, open the *local.settings.json* file and check that the *.json* file matches the following snippet:
+
+    ```json
+    {
+      "IsEncrypted": false,
+      "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+      }
+    }
+    ```
+
+### 1.2 Install NuGet packages and build the project
+
+After creating the project, you'll need to install the required NuGet packages and build the project.
+
+1. In the top menu of Visual Studio, select **Project**, then **Manage NuGet packages**.
+1. Select the **Browse** tab, then search for and select *Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents*. In the right pane, Select **Install**.
+1. Apply and accept the changes in the popups that appear.
+1. Navigate to **Build** in the top menu, and select **Build Solution**.
+1. Press **F5** or select *AuthEventsTrigger* from the top menu to run the function. 
+1. Copy the **Function url** from the terminal that popups up when running the function. 
+
+### 1.3 Deploy function and publish to Azure 
+
+So far we've set up the project to install the NuGet packages and added soem starter code. We'll now deploy this to Azure using our IDE.
+
+1. In the Solution Explorer, right-click on the project and select **Publish**. 
+1. In **Target**, select **Azure**, then select **Next**.
+1. Select **Azure Function App (Windows)** for the **Specific Target**, select **Azure Function App (Windows)**, then select **Next**.
+1. You may need to re-enter your credentials to be able to publish your app to your Azure account. Select **Re-enter your credentials**, and follow the steps to sign in.
+1. In the **Function instance**, use the **Subscription name** dropdown to select the subscription under which the new function app will be created in.
+1. Select where you want to publish the new function app, and select **Create New**.
+1. On the **Function App (Windows)** page, use the function app settings as specified in the following table, then select **Create**.
+ 
+    |   Setting    | Suggested value  | Description |
+    | ------------ | ---------------- | ----------- |
+    | **Name** | Globally unique name | A name that identifies the new function app. Valid characters are `a-z` (case insensitive), `0-9`, and `-`. |
+    | **Subscription** | Your subscription | The subscription under which the new function app will be created in. |
+    | **[Resource Group](/azure/azure-resource-manager/management/overview)** |  *myResourceGroup* | Select an existing resource group, or name the new one in which you'll create your function app. |
+    | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
+    | **Location** | Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
+    | **Azure Storage** | General-purpose storage account | An Azure storage account is required by the Functions runtime. Select New to configure a general-purpose storage account. |
+    | **Application Insights** | ***TODO*** | How the logs are put together |
+    
+
+1. Wait a few moments for your function app to be deployed. Once the window closes, select **Finish** on the **Publish** screen.
+1. You'll need to wait 5-10 minutes for your function app to be deployed and show up in the Azure portal.
+
+# [Visual Studio Code](#tab/visual-studio-code)
+
+This setup uses the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events. 
+
+1. Open Visual Studio Code.
+1. Select the **New Folder** icon in the **Explorer** window, and create a new folder for your project, for example *AuthEventsTrigger*.
+1. Select the Azure extension icon on the left-hand side of the screen. Sign in to your Azure account if you haven't already. <!--Extra instructions maybe?-->
+1. Under the **Workspace** bar, select the **Azure Functions** icon > **Create New Project**.
+
+    :::image type="content" border="true"  source="media/auth-events-trigger/visual-studio-code-add-azure-function.png" alt-text="Screenshot that shows how to add an Azure function in Visual Studio Code.":::
+
+1. In the top bar, select the location to create the project.
+1. Select **C#** as the language, and **.NET 6.0 LTS** as the .NET runtime. <!--again mhy 6?-->
+1. Select **HTTP trigger** as the template
+1. Provide a name for the project, such as *AuthEventsTrigger*.
+1. accept **Company.Function** as the namespace, with **AccessRights** set to *Function*. 
+1. In the main window, a file called *AuthEventsTrigger.cs* will open. Replace the entire contents of the file with the following code:
+
+    ```csharp
+    using System;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Azure.WebJobs;
+    using Microsoft.Extensions.Logging;
+    using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.TokenIssuanceStart.Actions;
+    using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.TokenIssuanceStart;
+    using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.Framework;
+    using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents;
+    
+    namespace AuthEventTrigger
+    {
+        public static class Function1
+        {
+            [FunctionName("onTokenIssuanceStart")]
+            public static async Task<AuthenticationEventResponse> Run(
+                [AuthenticationEventsTrigger] TokenIssuanceStartRequest request, ILogger log)
+            // [AuthenticationEventsTrigger(TenantId = "Enter tenant ID here", AudienceAppId = "Enter application client ID here")] TokenIssuanceStartRequest request, ILogger log)
+            // This is required. The only way that [AuthenticationEventsTrigger] TokenIssuanceStartRequest request, ILogger log) will work is if the settings are set in local.settings.json are set to bypass token validation. i.e. "AuthenticationEvents__BypassTokenValidation": true. This is only recommended for local development and testing.
+            {
+                try
+                {
+                    // Checks if the request is successful and did the token validation pass
+                    if (request.RequestStatus == RequestStatusType.Successful)
+                    {
+                        // Fetches information about the user from external data store
+                        // request.Response = null;
+                        // request.Response.Actions = null;
+                        // Add new claims to the token's response
+                        request.Response.Actions.Add(new ProvideClaimsForToken(
+                                                      new TokenClaim("dateOfBirth", "01/01/2000"),
+                                                      new TokenClaim("customRoles", "Writer", "Editor")
+                                                 ));
+                    }
+                    else
+                    {
+                        // If the request fails, such as in token validation, output the failed request status
+                        log.LogInformation(request.StatusMessage);
+                    }
+                    return await request.Completed();
+                }
+                catch (Exception ex) 
+                { 
+                    return await request.Failed(ex);
+                }
+            }
+        }
+    }
+    ```
+
+1. Next, open the *local.settings.json* file and add the `AzureWebJobsStorage` value as shown in the following snippet: <!--Added automatically in Visual Studio?-->
+
+    ```json
+    {
+      "IsEncrypted": false,
+      "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+      }
+    }
+    ```
+
+### 1.2 Install NuGet packages and build the project
+
+After creating the project, you'll need to install the required NuGet packages and build the project.
+
+1. Open the **Terminal** in Visual Studio Code, and navigate to the project folder.
+1. Enter the following command into the console to install the *Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents* NuGet package.
+
+    ```console
+    dotnet add package Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents --prerelease
+    ```
+
+1. In the top menu, select **Run** > **Start Debugging** or press **F5** to run the function.
+1. In the terminal, copy the **Function url** that appears.
+
+### 1.3 Deploy function and publish to Azure 
+
+So far we've set up the project to install the NuGet packages and added soem starter code. We'll now deploy this to Azure using our IDE.
+
+1. Select the **Azure** extension icon. In **Resources**, select the **+** icon to **Create a resource**.
+1. Select **Create Function App in Azure**. Use the following settings for setting up your function app.
+1. Give the function app a name, such as *AuthEventsTriggerNuGet*, and press **Enter**.
+1. Select the **.NET 6 (LTS) In-Process** runtime stack. 
+1. Select a location for the function app, such as *East US*.
+1. You'll need to wait 5-10 minutes for your function app to be deployed and show up in the Azure portal.
+
+# [Azure portal](#tab/azure-portal)
+
+This setup is done entirely in the Azure portal. You'll create an Azure Function app and create a HTTP trigger function.
+
+### 1.1 Create the Azure Function app
 
 1. Sign in to the [Azure portal](https://portal.azure.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. From the Azure portal menu or the **Home** page, select **Create a resource**.
@@ -144,6 +370,8 @@ After the Azure Function app is created, create an HTTP trigger function. The HT
     The code starts with reading the incoming JSON object. Microsoft Entra ID sends the [JSON object](./custom-claims-provider-reference.md) to your API. In this example, it reads the correlation ID value. Then, the code returns a collection of customized claims, including the original `CorrelationId`, the `ApiVersion` of your Azure Function, a `DateOfBirth` and `CustomRoles` that is returned to Microsoft Entra ID.
 
 1. From the top menu, select **Get Function Url**, and copy the **URL** value. In the next step, the function URL will be used and referred to as `{Function_Url}`. It's a good idea to leave your Azure portal window open, as it'll be used again in later steps.
+
+---
 
 ## Step 2: Register a custom authentication extension
 

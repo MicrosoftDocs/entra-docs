@@ -225,8 +225,6 @@ After creating the project, you'll need to install the required NuGet packages a
 
 ---
 
-At this point, you can [test authentication events token augmentation using Postman](./auth-events-nuget-postman.md) or continue on to deployment.
-
 ### 1.3 Deploy function and publish to Azure 
 
 So far we've set up the project to install the NuGet packages and added soem starter code. We'll now deploy this to Azure using our IDE.
