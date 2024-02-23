@@ -173,11 +173,11 @@ The following examples are specific to Message Analyzer, but the principles can 
 
 For initial troubleshooting, perform the following steps:
 
-1. From services.msc, stop the Microsoft Entra application proxy connector service.
+1. From `services.msc`, stop the Microsoft Entra application proxy connector service.
 
    ![Microsoft Entra application proxy connector service in services.msc](./media/application-proxy-configure-connectors-with-proxy-servers/services-local.png)
 
-1. Run Message Analyzer as an administrator.
+1. Run *Message Analyzer* as an administrator.
 1. Select **Start local trace**.
 1. Start the Microsoft Entra application proxy connector service.
 1. Stop the network capture.
@@ -186,19 +186,20 @@ For initial troubleshooting, perform the following steps:
 
 ### Check if the connector traffic bypasses outbound proxies
 
-If you configured your application proxy connector to bypass the proxy servers and connect directly to the application proxy service, you want to look in the network capture for failed Transmission Control Protocol (TCP) connection attempts.
+Identify failed Transmission Control Protocol (TCP) connection attempts. The failed attempts are useful for troubleshooting. The failed attempts show when the application proxy connector bypasses the proxy servers and connects directly to the application proxy service.
 
 Use the Message Analyzer filter to identify these attempts. Enter `property.TCPSynRetransmit` in the filter box and select **Apply**.
 
 A synchronization (SYN) packet is the first packet sent to establish a TCP connection. If this packet doesn’t return a response, the SYN is reattempted. You can use the preceding filter to see any retransmitted SYN packets. Then, you can check whether these SYN packets correspond to any connector-related traffic.
 
-If you expect the connector to make direct connections to the Azure services, SynRetransmit responses on port 443 are an indication that you have a network or firewall problem.
+If you expect the connector to make direct connections to application proxy services, `SynRetransmit` responses on port 443 are an indication that you have a network or firewall problem.
 
 ### Check if the connector traffic uses outbound proxies
 
-If you configured your application proxy connector traffic to go through the proxy servers, you want to look for failed https connections to your proxy.
+Identify failed HTTPS connections on the proxy server. 
+If you configured your application proxy connector traffic to go through the proxy servers, look for failed `https` connections to your proxy.
 
-To filter the network capture for these connection attempts, enter `(https.Request or https.Response) and tcp.port==8080` in the Message Analyzer filter, replacing 8080 with your proxy service port. Select **Apply** to see the filter results.
+To filter the network capture for these connection attempts, enter `(https.Request or https.Response) and tcp.port==8080` in the Message Analyzer filter, replacing `8080` with your proxy service port. Select **Apply** to see the filter results.
 
 The preceding filter shows just the HTTPs requests and responses to/from the proxy port. You're looking for the CONNECT requests that show communication with the proxy server. Upon success, you get an HTTP OK (200) response.
 
