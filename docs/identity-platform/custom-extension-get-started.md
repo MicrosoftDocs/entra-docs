@@ -16,6 +16,10 @@ titleSuffix: Microsoft identity platform
 
 # Configure a custom claim provider token issuance event (preview)
 
+> [!NOTE]
+>
+> This article is a work in progress and not yet complete.
+
 This article describes how to configure and set up a custom claims provider using a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener). You'll create a REST API using Azure Functions in the Azure portal, then register a custom authentication extension. You'll add some attributes that you expect your custom authentication extension to parse from your REST API. To test the custom authentication extension, you'll register a sample OpenID Connect application to get a token and view the claims.
 
 The following video outlines the steps you'll replicate in this article to configure a Microsoft Entra custom claims provider with an Azure Function App:
@@ -764,8 +768,6 @@ Next, we'll add the OpenID Connect identity provider to your Azure Function app.
 1. Return to the Azure Function, under the **App registration**, enter the **Client secret**.
 1. Unselect the **Token store** option.
 1. Select **Add** to add the OpenID Connect identity provider.
-
----
 
 ## Step 6: Test the application
 

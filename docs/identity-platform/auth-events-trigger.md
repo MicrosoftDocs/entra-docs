@@ -15,11 +15,9 @@ ms.topic: how-to
 
 **Applies to:** Microsoft Entra ID workforce configurations
 
-<!--
-
-Any notes or blog info that I can create a short conceptual article/overview for?
-
--->
+> [!NOTE]
+>
+> This article is a work in progress and not yet complete.
 
 In this article, you'll learn how to set up and test the Authentication events trigger for Azure Functions client library for .NET. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events. 
 
