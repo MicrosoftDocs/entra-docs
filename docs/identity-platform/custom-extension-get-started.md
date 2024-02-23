@@ -63,7 +63,7 @@ After the Azure Function app is created, create an HTTP trigger function. The HT
 1. For the **Authorization level**, select **Function**.
 1. Select **Create**.
 
-:::image type="content" border="false"source="media/custom-extension-get-started/create-http-trigger-function.png" alt-text="Screenshot that shows how to choose the development environment, and template." lightbox="media/custom-extension-get-started/create-http-trigger-function.png":::
+    :::image type="content" border="false"source="media/custom-extension-get-started/create-http-trigger-function.png" alt-text="Screenshot that shows how to choose the development environment, and template." lightbox="media/custom-extension-get-started/create-http-trigger-function.png":::
 
 ### 1.2 Edit the function
 
