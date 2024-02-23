@@ -355,7 +355,7 @@ For tokens to be issued with claims incoming from the custom authentication exte
 
 Follow these steps to connect the *My Test application* with your custom authentication extension:
 
-# [Microsoft Entra admin center](#tab/entra-admin-center)
+# [Azure portal](#tab/azure-portal)
 
 To assign the custom authentication extension as a custom claims provider source;
 
