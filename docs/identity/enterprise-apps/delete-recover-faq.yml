@@ -61,7 +61,7 @@ sections:
       - question: |
           Can I soft delete managed identities?
         answer: |
-            > Yes, you can delete managed identities. You can view the soft-deleted managed identity service principal from the recycle bin within 30 days after deletion, but you can't restore or permanently delete it. The managed identity service principal is permanently deleted after 30 days. 
+            > Yes, you can delete managed identities. You can view the soft-deleted managed identity service principal from the recycle bin within 30 days after deletion, but you can't restore or permanently delete it. The managed identity service principal is permanently deleted after 30 days. For more information on how to view soft-deleted managed identities service principals, see [View deleted service principals](restore-application.md).
             >
       - question: |
           I can't see the provisioning data from a recovered service principal. How can I recover it? 

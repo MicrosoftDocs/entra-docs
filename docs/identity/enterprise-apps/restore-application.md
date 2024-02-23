@@ -145,7 +145,7 @@ Replace ID with the object ID of the service principal that you want to restore.
 :::zone-end
 
 >[!NOTE]
-> Managed identity service principals can be viewed but can't be recovered or permanently deleted by customers. Customers should contact Microsoft support for assistance with managed identity deleting or restoring service principals.
+> Soft-deleted managed identity service principals can be viewed but can't be recovered or permanently deleted by customers.
 
 >[!WARNING]
 > Permanently deleting an enterprise application is an irreversible action. Any present configurations on the app will be completely lost. Carefully review the details of the enterprise application to be sure you still want to hard delete it.
