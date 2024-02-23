@@ -141,7 +141,7 @@ To test your API directly from Postman, follow these steps:
 
 1. In your REST API, disable the `appid` or `azp` [claim validation](custom-extension-overview.md#protect-your-rest-api). Check out how to [edit the function API](custom-extension-get-started.md#12-edit-the-function) you created earlier.
 1. In Postman, create new HTTP request.
-1. Set the **HTTP method** to `POST`
+1. Set the **HTTP method** to `POST`.
 1. In the **Body**, select **Raw** and then select **JSON**.
 1. Pase the following JSON that imitates the request Microsoft Entra ID sends to your REST API.
 
@@ -191,7 +191,28 @@ To test your API directly from Postman, follow these steps:
     ```
 
 1. Select **Authorization** and then select **Bearer token**.
-1. Paste the access token you received from Microsoft Entra ID, and run the query.
+1. Paste the access token you received from Microsoft Entra ID, and run the query. The resulting JSON should be similar to the following:
+
+    ```json
+    {
+        "data": {
+            "@odata.type": "microsoft.graph.onTokenIssuanceStartResponseData",
+            "actions": [
+                {
+                    "@odata.type": "microsoft.graph.tokenIssuanceStart.provideClaimsForToken",
+                    "claims": {
+                        "customClaim1": "customClaimValue1",
+                        "customClaim2": [
+                            "customClaimString1",
+                            "customClaimString2" 
+                        ]
+                    }
+                }
+    
+            ]
+        }
+    }
+    ```
 
 ---
 
