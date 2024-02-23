@@ -4,7 +4,7 @@ title: Microsoft Entra application proxy documentation
 summary: Microsoft Entra application proxy provides secure remote access and cloud scale security to your private applications.
 
 metadata:
-  title: application proxy documentation
+  title: Application proxy documentation
   description: Microsoft Entra application proxy provides secure remote access and cloud scale security to your private applications.
   ms.service: entra-id
   ms.subservice: app-proxy
