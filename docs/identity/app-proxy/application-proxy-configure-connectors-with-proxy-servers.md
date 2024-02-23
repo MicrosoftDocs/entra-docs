@@ -29,7 +29,7 @@ Connectors have underlying OS components that make outbound requests. These comp
 
 The OS components attempt to locate a proxy server by carrying out a Domain Name System (DNS) lookup for `wpad.domainsuffix`. If the lookup resolves in DNS, an HTTP request is then made to the Internet Protocol (IP) address for `wpad.dat`. This request becomes the proxy configuration script in your environment. The connector uses this script to select an outbound proxy server. However, connector traffic might continue to fail because more configuration settings are needed on the proxy.
 
-You can configure the connector to bypass your on-premises proxy to ensure that it uses direct connectivity to the Azure service. The approach is recommended, as long as your network policy allows for it, because it means one less configuration to maintain.
+You can configure the connector to bypass your on-premises proxy to ensure that it uses direct connectivity to the Microsoft Entra application proxy service. Direct connections are recommended because they require less configuration. However, some network policies require traffic going through a local proxy server.
 
 To disable outbound proxy usage for the connector, edit the `C:\Program Files\Microsoft Azure AD App Proxy Connector\ApplicationProxyConnectorService.exe.config` file and add the `system.net` section shown in the code sample:
 
