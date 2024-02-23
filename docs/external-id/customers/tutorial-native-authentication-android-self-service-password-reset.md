@@ -10,7 +10,7 @@ ms.service: active-directory
 
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 02/13/2024
+ms.date: 02/23/2024
 ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to self-service password reset.
 ---
@@ -19,7 +19,7 @@ ms.custom: developer
  
 This tutorial demonstrates how to give users the ability to change or reset their password, with no administrator or help desk involvement. 
  
-In this tutorial, you learn how to: 
+In this tutorial, you learn how to:
  
 - Add self-service password reset flow.
 - Handle errors.
