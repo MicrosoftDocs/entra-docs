@@ -21,7 +21,7 @@ This document provides a conceptual overview of the Microsoft Entra API-driven i
 
 ## Introduction
 
-Today enterprises have various authoritative systems of record. To establish end-to-end identity lifecycle, strengthen security posture and stay compliant with regulations, identity data in Microsoft Entra ID must be kept in sync with workforce data managed in these systems of record. The *system of record* could be an HR app, a payroll app, a spreadsheet or SQL tables in a database hosted either on-premises or in the cloud. 
+Today enterprises have various authoritative systems of record. To establish end-to-end identity lifecycle, strengthen security posture and stay compliant with regulations, identity data in Microsoft Entra ID must be kept in sync with workforce data managed in these systems of record. The *system of record* could be an HR app, a payroll app, a spreadsheet, or SQL tables in a database hosted either on-premises or in the cloud. 
 
 With API-driven inbound provisioning, the Microsoft Entra provisioning service now supports integration with *any* system of record. Customers and partners can use *any* automation tool of their choice to retrieve workforce data from the system of record and ingest it into Microsoft Entra ID. The IT admin has full control on how the data is processed and transformed with attribute mappings. Once the workforce data is available in Microsoft Entra ID, the IT admin can configure appropriate joiner-mover-leaver business processes using [Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md).  
 
@@ -32,7 +32,7 @@ Several inbound user provisioning scenarios are enabled using API-driven inbound
 :::image type="content" source="media/inbound-provisioning-api-concepts/api-workflow-scenarios.png" alt-text="Diagram showing API workflow scenarios." lightbox="media/inbound-provisioning-api-concepts/api-workflow-scenarios.png":::
 
 ### Scenario 1: Enable IT teams to import HR data extracts using any automation tool
-Flat files, CSV files and SQL staging tables are commonly used in enterprise integration scenarios. Employee, contractor and vendor information are periodically exported into one of these formats and an automation tool is used to sync this data with enterprise identity directories. With API-driven inbound provisioning, IT teams can use any automation tool of their choice (example: PowerShell scripts or Azure Logic Apps) to modernize and simplify this integration.   
+Flat files, CSV files and SQL staging tables are commonly used in enterprise integration scenarios. Employee, contractor, and vendor information are periodically exported into one of these formats and an automation tool is used to sync this data with enterprise identity directories. With API-driven inbound provisioning, IT teams can use any automation tool of their choice (example: PowerShell scripts or Azure Logic Apps) to modernize and simplify this integration.   
 
 <a name='scenario-2-enable-isvs-to-build-direct-integration-with-azure-ad'></a>
 
@@ -57,8 +57,8 @@ In all of the above scenarios, integration is simplified as the Microsoft Entra 
      >[!NOTE] 
      > The API client doesn't need to perform any comparisons between the source attributes and the target attribute values to determine what operation (create/update/enable/disable) to invoke. This is automatically handled by the provisioning service. The API client simply uploads the identity data read from the source system by packaging it as bulk request using SCIM schema constructs. 
 1. If successful, an ```Accepted 202 Status``` is returned. 
-1. The Microsoft Entra provisioning service processes the data received, applies the attribute mapping rules and completes user provisioning.
-1. Depending on the provisioning app configured, the user is provisioned either into on-premises Active Directory (for hybrid users) or Microsoft Entra ID (for cloud-only users).
+1. The Microsoft Entra provisioning service processes the data received, applies the attribute mapping rules, and completes user provisioning.
+1. Depending on the provisioning app that's configured, the user is provisioned either into on-premises Active Directory (for hybrid users) or Microsoft Entra ID (for cloud-only users).
 1. The API Client then queries the provisioning logs API endpoint for the status of each record sent.
 1. If the processing of any record fails, the API client can check the error details and include records corresponding to the failed operations in the next bulk request (step 5). 
 1. At any time, the IT Admin can check the status of the provisioning job and view events in the provisioning logs.
@@ -81,12 +81,12 @@ The ```/bulkUpload``` API endpoint expands the number of ways in which you can m
 
 | Use Case Scenario to API mapping | User creation API | HR inbound bulk API |  User invitation API | Direct assignment API (preview) |
 |-------|-------|-------|-------|-------|
-| *When your identity creation scenario is...*  | Ad-hoc user creation in Entra ID, for a user not associated with any worker in an HR source. | Sourcing worker records from an authoritative HR source, and you want those workers to have "member" accounts in Entra ID or on-premises Active Directory  | Ad-hoc guest user creation in Entra ID, for sharing purposes, where the guest has unique access rights  | Guest Creation in Entra ID, where the guest user has standardized access. |
+| *When your identity creation scenario is...*  | Ad-hoc user creation in Entra ID, for a user not associated with any worker in an HR source. | Sourcing employee records from an authoritative HR source, and you want those employees to have "member" accounts in Entra ID or on-premises Active Directory  | Ad-hoc guest user creation in Entra ID, for sharing purposes, where the guest has unique access rights  | Guest Creation in Entra ID, where the guest user has standardized access. |
 | *...use the API...* | [Create user](https://go.microsoft.com/fwlink/?linkid=2261811) | [Perform bulkUpload](https://go.microsoft.com/fwlink/?linkid=2261471). | [Create invitation](https://go.microsoft.com/fwlink/?linkid=2261635) | [Create accessPackageAssignmentRequest](https://go.microsoft.com/fwlink/?linkid=2261812) |
 | *The resulting user is first created in...* | Entra ID | On-premises Active Directory or Entra ID | Entra ID | Entra ID |
-| *The resulting user authenticates to...* | Entra ID, with the password you supply | On-premises Active Directory of Entra ID, with a [Temporary Access Pass provided by Entra Lifecycle workflows](https://go.microsoft.com/fwlink/?linkid=2261471) | Home tenant or other identity provider | Home tenant or other idenity provider | 
+| *The resulting user authenticates to...* | Entra ID, with the password you supply | On-premises Active Directory of Entra ID, with a [Temporary Access Pass provided by Entra Lifecycle workflows](https://go.microsoft.com/fwlink/?linkid=2261471) | Home tenant or other identity provider | Home tenant or other identity provider | 
 | *Subsequent updates to the user can be done via* | Graph API or Entra portal | Graph API or HR inbound bulk API or Entra portal | Graph API or Entra portal | Graph API or Entra portal |
-| *The lifecycle of user when their employment starts, is determined by...* | Manual processes | [Entra onboarding Lifecycle workflows](~/id-governance/tutorial-onboard-custom-workflow-portal.md) that trigger based on the ```employeeHireDate``` attribute | Entitlement management | [Automatic assignment](~id-governance/entitlement-management-access-package-auto-assignment-policy.md) using Entitlement management access packages |
+| *The lifecycle of user when their employment starts, is determined by...* | Manual processes | [Entra onboarding Lifecycle workflows](~/id-governance/tutorial-onboard-custom-workflow-portal.md) that trigger based on the ```employeeHireDate``` attribute | Entitlement management | [Automatic assignment](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md) using Entitlement management access packages |
 | *The lifecycle of user when their employment is terminated is determined by...* | Manual processes | [Entra offboarding lifecycle workflows](~/id-governance/tutorial-scheduled-leaver-portal.md) that trigger based on the ```employeeLeaveDateTime``` attribute | Access reviews | Entitlement management when the user loses their last access package assignment, they're removed. |
 
 
@@ -104,7 +104,7 @@ The ```/bulkUpload``` API endpoint expands the number of ways in which you can m
 
 ### External learning resources
 
-The following content, created by our partners and Microsoft MVPs, offers extra guidence on how to deploy and configure API-driven provisioning for various integration scenarios.
+The following content, created by our partners and Microsoft MVPs, offers extra guidance on how to deploy and configure API-driven provisioning for various integration scenarios.
 
 - Video tutorials
      - John Savill explains [how API-driven provisioning works](https://www.youtube.com/watch?v=olkOYEyJB1o)
