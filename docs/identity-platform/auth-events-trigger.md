@@ -15,26 +15,44 @@ ms.topic: how-to
 
 **Applies to:** Microsoft Entra ID workforce configurations
 
-In this how-to guide, you'll learn how to set up and test the Authentication events trigger for Azure Functions client library for .NET. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events. 
+<!--
+
+Any notes or blog info that I can create a short conceptual article/overview for?
+
+-->
+
+In this article, you'll learn how to set up and test the Authentication events trigger for Azure Functions client library for .NET. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events. 
+
+> [!NOTE]
+>
+> The authentication events trigger for Azure Functions client library for .NET is currently only available for workforce configurations. <!---->
 
 ## Prerequisites
 
 - To use Azure services, including Azure Functions, you need an Azure subscription. If you don't have an existing Azure account, you may sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
-- A Visual Studio Enterprise subscription.
-- Visual Studio or Visual Studio Code 
-- Azure Functions extension for Visual Studio Code, Azure Development workload for Visual Studio
+- A Visual Studio Enterprise subscription, with one of the following IDEs;
+    - Visual Studio, with Azure Development workload for Visual Studio installed 
+    - Visual Studio Code, with Azure Functions extension enabled
+
 
 ## Step 1: Create an Azure Function app
 
 In this step, you'll create a HTTP trigger function using your chosen integrated development environment (IDE). 
 
+<!--
+
+Should we be adding the [AuthenticationEventsTrigger(TenantId = "Enter tenant ID here", AudienceAppId = "Enter application client ID here")] <-- which one is AudienceAppId?
+
+-->
+
 # [Visual Studio](#tab/visual-studio)
 
 1. Open Visual Studio, and select **Create a new project**.
 1. Search for and select **Azure Functions**, then select **Next**.
-1. Give the project a name, such as *AuthEventsTrigger*. It's a good idea to match the solution name with the project name Select a location for the project. Select **Next**.
+1. Give the project a name, such as *AuthEventsTrigger*. It's a good idea to match the solution name with the project name.
+1. Select a location for the project. Select **Next**.
 1. Select **.NET 6.0 (Long Term Support)** as the target framework. <!--Why? Why .NET 6.0 and not a later version-->
-1. Select *HTTP trigger* as the **Function** type, and that **Authorization level** is set to *Function*. Select **Create**.
+1. Select *Http trigger* as the **Function** type, and that **Authorization level** is set to *Function*. Select **Create**.
 1. In your *Function1.cs* file, replace the entire contents of the file with the following code:
 
     ```csharp
@@ -88,7 +106,7 @@ In this step, you'll create a HTTP trigger function using your chosen integrated
     }
     ```
 
-1. Next, open the *local.settings.json* file and add the AzureWebJobsStorage value
+1. Next, open the *local.settings.json* file and check that the *.json* file matches the following snippet:
 
     ```json
     {
@@ -104,15 +122,16 @@ In this step, you'll create a HTTP trigger function using your chosen integrated
 
 1. Open Visual Studio Code.
 1. Select the **New Folder** icon in the **Explorer** window, and create a new folder for your project, for example *AuthEventsTrigger*.
-1. Select the Azure extension icon on the left-hand side of the screen. Sign in to your Azure account if you haven't already. **TODO**
+1. Select the Azure extension icon on the left-hand side of the screen. Sign in to your Azure account if you haven't already. <!--Extra instructions maybe?-->
 1. Under the **Workspace** bar, select the **Azure Functions** icon > **Create New Project**.
 
     :::image type="content" border="true"  source="media/auth-events-trigger/visual-studio-code-add-azure-function.png" alt-text="Screenshot that shows how to add an Azure function in Visual Studio Code.":::
 
 1. In the top bar, select the location to create the project.
-1. Select **C#** as the language, and **.NET 6.0 LTS** as the .NET runtime.
+1. Select **C#** as the language, and **.NET 6.0 LTS** as the .NET runtime. <!--again mhy 6?-->
+1. Select **HTTP trigger** as the template
 1. Provide a name for the project, such as *AuthEventsTrigger*.
-1. Select **HTTP trigger** as the template, and accept **Company.Function** as the namespace, with **AccessRights** set to *Function*. 
+1. accept **Company.Function** as the namespace, with **AccessRights** set to *Function*. 
 1. In the main window, a file called *AuthEventsTrigger.cs* will open. Replace the entire contents of the file with the following code:
 
     ```csharp
@@ -166,7 +185,7 @@ In this step, you'll create a HTTP trigger function using your chosen integrated
     }
     ```
 
-1. Next, open the *local.settings.json* file and add the AzureWebJobsStorage value
+1. Next, open the *local.settings.json* file and add the `AzureWebJobsStorage` value as shown in the following snippet: <!--Added automatically in Visual Studio?-->
 
     ```json
     {
@@ -230,7 +249,7 @@ So far we've set up the project to install the NuGet packages and added soem sta
     | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
     | **Location** | Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
     | **Azure Storage** | General-purpose storage account | An Azure storage account is required by the Functions runtime. Select New to configure a general-purpose storage account. |
-    | **Application Insights** | TODO | TODO |
+    | **Application Insights** | ***TODO*** | ***TODO*** |
     
 
 1. Wait a few moments for your function app to be deployed. Once the window closes, select **Finish** on the **Publish** screen.
@@ -251,7 +270,7 @@ So far we've set up the project to install the NuGet packages and added soem sta
 
 <!--So this is workforce tenant only, can we add a note saying that CIAM is expected shortly. Can we specify the EasyAuth here?-->
 
-1. Sign in to the [Azure portal](https://portal.azure.com/) with your administrator account.
+1. Sign in to the [Azure portal](https://portal.azure.com/) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Search for and select **Function App** to navigate to the function app you just deployed. You may need to refresh the page to see the new function app.
 <!--Environment variables, do we need to add these for each deployment?-->
 1. In the left menu, navigate to **Settings** > **Environment variables**, and enter name and values for the *AuthenticationEvents__TenantID* and *AuthenticationEvents__TenantIDAudienceAppID*. You'll need to define additional values for the object ID for token metadata and the token issuer. 
@@ -285,7 +304,11 @@ From the **Overview** page, select the **Grant permission** button to give admin
 
 1. On the **Overview** page of your custom extension, copy the App ID, and store it somewhere for use later. This enables ASTS to call this API during *onTokenIssuanceStart*. This API will then respond back with the custom claims.
 
-<!--Why does the popup not disappear-->
+<!--
+
+Why does the popup not disappear
+
+-->
 
 ## Step 4: Configure an OpenID Connect app to receive enriched tokens
 
@@ -313,7 +336,7 @@ A claims mapping policy is used to select which attributes returned from the cus
 
 1. In your *Test JWT NuGet* registration, under **Manage**, select **Manifest**.
 1. In the manifest, locate the `acceptMappedClaims` attribute, and set the value to `true`
-1. Set the `accessTokenAcceptedVersion` to `2`.  <!--Does this matter-->,
+1. Set the `accessTokenAcceptedVersion` to `2`.  <!--Does this matter now-->,
 1. Select **Save** to save the changes.
 
 > [!WARNING]
@@ -355,9 +378,9 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 1. Select **Authentication** in the menu on the left.
 1. Select **Add Identity provider**.  
 1. Select **Workforce** as the tenant type.
-<!--This next step is different -->
+<!--This next step is different, why -->
 1. Under App registration select **App registration type** <!-- Why not "Pick an existing app registration in this directory"?-->. Enter the app ID of the custom authentication extension you created earlier. 
-1. Enter the following issuer URL, `https://login.microsoftonline.com/{tenantId}/v2.0`, where `{tenantId}` is the tenant ID of your workforce tenant. <!--Why was this not entered? This is a bug-->
+1. Enter the following issuer URL, `https://login.microsoftonline.com/{tenantId}/v2.0`, where `{tenantId}` is the tenant ID of your workforce tenant. <!--Why was this not entered? Is this a bug-->
 <!-- 
 EasyAuth setup, why then do the env variables not matter?
 -->
@@ -371,9 +394,8 @@ EasyAuth setup, why then do the env variables not matter?
 1. Navigate back to the **Environment variables** tab. 
 1. Add the *AuthenticationEvents__TenantID* and *AuthenticationEvents__TenantIDAudienceAppID* (custom extension), if not done so already. 
 
-<!--TODO sign in the user with Easy Auth and Sign in with internal token validation
+<!--TODO sign in the user with Easy Auth and XXX Sign in with internal token validation XXX <-- Don't use this, it's not working
 
-We need to signify why one would use one over the other.
 -->
 
 ## Step 7: Test the application
@@ -392,4 +414,4 @@ To test your custom claim provider, follow these steps:
 
 ## See also
 
-[Monitoring Azure Functions with Azure Monitor Logs](/azure/azure-functions/functions-monitor-log-analytics?tabs=csharp)
+- TBD
