@@ -193,6 +193,8 @@ To test your API directly from Postman, follow these steps:
 1. Select **Authorization** and then select **Bearer token**.
 1. Paste the access token you received from Microsoft Entra ID, and run the query.
 
+---
+
 ## Common performance improvements
 
 One of the most common issues is that your custom claims provider API doesn't respond within the two-seconds timeout. If your REST API doesn't respond in subsequent retries, then the authentication fails. To improve the performance of your REST API, follow the below suggestions:
