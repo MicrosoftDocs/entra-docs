@@ -22,7 +22,7 @@ Microsoft Entra application proxy natively supports single sign-on (SSO) access 
 * **Wide list of attributes and transformations available** - All header values available are based on standard claims that are issued by Microsoft Entra ID. All attributes and transformations available for [configuring claims for Security Assertion Markup Language (SAML) or OpenID Connect (OIDC) applications](~/identity-platform/saml-claims-customization.md#attributes) are also available as header values. 
 
 ## Prerequisites
-Enable application proxy and install a connector that has direct network access to your applications. To learn more, see [Add an on-premises application for remote access through application proxy](application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).
+Enable application proxy and install a connector that has direct network access to your applications. To learn more, see [Add an on-premises application for remote access through application proxy](application-proxy-add-on-premises-application.md).
 
 ## Supported capabilities
 
@@ -52,7 +52,7 @@ The table lists common capabilities required for header-based authentication app
 
 ## Publish the application with application proxy
 
-1. Publish your application according to the instructions described in [Publish applications with application proxy](application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).  
+1. Publish your application according to the instructions described in [Publish applications with application proxy](application-proxy-add-on-premises-application.md).  
     - The internal URL value determines the scope of the application. You configure the internal URL value at the root path of the application, and all sub paths underneath the root receive the same header and application configuration. 
     - Create a new application to set a different header configuration or user assignment for a more granular path than the application you configured. In the new application, configure the internal URL with the specific path you require and then configure the specific headers needed for this URL. Application proxy always matches your configuration settings to the most granular path set for an application. 
 

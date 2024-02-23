@@ -31,7 +31,7 @@ This flowchart walks you through the steps for debugging some of the more common
 |6 | Update the connector and updater settings with the back-end proxy information | If a back-end proxy is in use, make sure the connector is using the same proxy. For details about troubleshooting and configuring connectors to work with proxy servers, see [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md). |
 |7 | Load the app's internal URL on the connector server | On the connector server, load the app's internal URL. |
 |8 | Check internal network connectivity | There's a connectivity issue in your internal network that this debugging flow is unable to diagnose. The application must be accessible internally for the connectors to work. You can enable and view connector event logs as described in [application proxy connectors](application-proxy-connectors.md#under-the-hood). |
-|9 | Lengthen the time-out value on the back end | In the **Additional Settings** for your application, change the **Backend Application Timeout** setting to **Long**. See [Add an on-premises app to Microsoft Entra ID](application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad). |
+|9 | Lengthen the time-out value on the back end | In the **Additional Settings** for your application, change the **Backend Application Timeout** setting to **Long**. See [Add an on-premises app to Microsoft Entra ID](application-proxy-add-on-premises-application.md). |
 |10 | If issues persist, debug applications. | [Debug application proxy application issues](application-proxy-debug-apps.md). |
 
 ## Next steps
