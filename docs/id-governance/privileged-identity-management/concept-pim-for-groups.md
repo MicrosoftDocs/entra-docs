@@ -72,7 +72,7 @@ One group can be an eligible member of another group, even if one of those group
 
 If a user is an active member of Group A, and Group A is an eligible member of Group B, the user can activate their membership in Group B. This activation is only for the user that requested the activation for, it doesn't mean that the entire Group A becomes an active member of Group B.
 
-## Privileged Identity Management and app provisioning (Public Preview)
+## Privileged Identity Management and app provisioning
 
 If the group is configured for [app provisioning](~/identity/app-provisioning/index.yml), activation of group membership will trigger provisioning of group membership (and user account itself if it wasn’t provisioned previously) to the application using SCIM protocol. 
 
