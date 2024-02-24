@@ -52,8 +52,6 @@
     href: troubleshooting-identity-protection-faq.yml
 - name: Reference
   items:
-  - name: Security overview
-    href: concept-identity-protection-security-overview.md
   - name: Microsoft Graph APIs
     items: 
     - name: riskDetection API
