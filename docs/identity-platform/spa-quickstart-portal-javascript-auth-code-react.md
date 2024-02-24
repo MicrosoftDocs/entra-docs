@@ -9,7 +9,7 @@ ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js, mode-
 ms.date: 08/16/2022
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: quickstart
 #Customer intent: As an app developer, I want to learn how to login, logout, conditionally render components to authenticated users, and acquire an access token for a protected resource such as Microsoft Graph by using the Microsoft identity platform so that my JavaScript React app can sign in users of personal accounts, work accounts, and school accounts.
 ---
 > # Quickstart: Sign in and get an access token in a React SPA using the auth code flow
