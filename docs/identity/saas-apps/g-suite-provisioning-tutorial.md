@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 07/05/2023
+ms.date: 02/23/2024
 ms.author: thwimmer
 ---
 
