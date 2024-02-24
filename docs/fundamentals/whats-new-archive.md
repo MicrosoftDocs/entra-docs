@@ -268,7 +268,7 @@ Monitor guest accounts at scale with intelligent insights into inactive guest us
 **Service category:** Privileged Identity Management                            
 **Product capability:** Privileged Identity Management                  
 
-You can minimize the number of persistent administrators in applications such as [AWS](~/identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups-preview)/[GCP](~/identity/saas-apps/g-suite-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups-preview) and get JIT access to groups in AWS and GCP. While PIM for Groups is publicly available, we also released a public preview that integrates PIM with provisioning and reduces the activation delay from 40+ minutes to 1 – 2 minutes.
+You can minimize the number of persistent administrators in applications such as [AWS](~/identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups)/[GCP](~/identity/saas-apps/g-suite-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups-preview) and get JIT access to groups in AWS and GCP. While PIM for Groups is publicly available, we also released a public preview that integrates PIM with provisioning and reduces the activation delay from 40+ minutes to 1 – 2 minutes.
 
 ---
 
