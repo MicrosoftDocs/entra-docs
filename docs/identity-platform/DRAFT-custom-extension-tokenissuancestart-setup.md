@@ -5,8 +5,8 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 08/16/2023
-ms.reviewer: JasSuri, stsoneff
+ms.date: 02/26/2024
+ms.reviewer: stsoneff
 ms.service: identity-platform
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
@@ -59,7 +59,7 @@ This article describes how to create a HTTP trigger function API and deploy it t
 
 ::: zone pivot="visual-studio"
 
-## Create the Azure function app
+## Create the Azure Function app
 
 In this step, you create an HTTP trigger function API using Visual Studio. The function API is the source of extra claims for your token.
 
@@ -175,7 +175,7 @@ So far we've set up the project to install the NuGet packages and added soem sta
 
 ::: zone pivot="visual-studio-code"
 
-## Create the Azure function app
+## Create the Azure Function app
 
 In this step, you create an HTTP trigger function API using Visual Studio Code. The function API is the source of extra claims for your token.
 
@@ -270,7 +270,7 @@ After creating the project, you'll need to install the required NuGet packages a
 1. In the top menu, select **Run** > **Start Debugging** or press **F5** to run the function.
 1. In the terminal, copy the **Function url** that appears.
 
-## Deploy function and publish to Azure 
+## Deploy the function and publish to Azure 
 
 So far we've set up the project to install the NuGet packages and added soem starter code. We'll now deploy this to Azure using our IDE.
 
@@ -322,6 +322,8 @@ After the Azure Function app is created, create an HTTP trigger function. The HT
     :::image type="content" border="false"source="media/custom-extension-get-started/create-http-trigger-function.png" alt-text="Screenshot that shows how to choose the development environment, and template." lightbox="media/custom-extension-get-started/create-http-trigger-function.png":::
 
 ## Edit the function
+
+The code reads the incoming JSON object and Microsoft Entra ID sends the [JSON object](./custom-claims-provider-reference.md) to your API. In this example, it reads the correlation ID value. Then, the code returns a collection of customized claims, including the original `CorrelationId`, the `ApiVersion` of your Azure Function, a `DateOfBirth` and `CustomRoles` that is returned to Microsoft Entra ID.
 
 1. From the menu, under **Developer**, select **Code + Test**.
 1. Replace the entire code with the following snippet, then select **Save**.
@@ -396,8 +398,6 @@ After the Azure Function app is created, create an HTTP trigger function. The HT
         }
     }
     ```
-
-    The code starts with reading the incoming JSON object. Microsoft Entra ID sends the [JSON object](./custom-claims-provider-reference.md) to your API. In this example, it reads the correlation ID value. Then, the code returns a collection of customized claims, including the original `CorrelationId`, the `ApiVersion` of your Azure Function, a `DateOfBirth` and `CustomRoles` that is returned to Microsoft Entra ID.
 
 1. From the top menu, select **Get Function Url**, and copy the **URL** value. In the next step, the function URL will be used and referred to as `{Function_Url}`. It's a good idea to leave your Azure portal window open, as it'll be used again in later steps.
 
