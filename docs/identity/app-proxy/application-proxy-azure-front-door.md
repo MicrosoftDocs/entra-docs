@@ -12,7 +12,7 @@ ms.reviewer: ashishj
 
 # Using Azure Front Door to achieve geo-acceleration
 
-This article describes configuring Microsoft Entra application proxy with Azure Front Door (AFD) to achieve reduced latency and better performance.
+This article describes configuring Microsoft Entra application proxy with Azure Front Door to achieve reduced latency and better performance.
  
 ## What is Azure Front Door?
 
