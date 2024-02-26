@@ -148,7 +148,7 @@ items:
     href: concept-sign-in-diagnostics-scenarios.md
   - name: Troubleshoot sign-in errors for a user
     href: howto-troubleshoot-sign-in-errors.md
-  - name: Audit data on verified domain change
+  - name: Troubleshoot bulk changes to UserPrincipalName
     href: troubleshoot-audit-data-verified-domain.md
 
 - name: Reference
