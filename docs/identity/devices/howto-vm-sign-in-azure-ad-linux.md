@@ -6,7 +6,7 @@ description: Learn how to log in to an Azure VM that's running Linux by using Mi
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 01/05/2024
+ms.date: 02/26/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -40,11 +40,12 @@ The following Linux distributions are currently supported for deployments in a s
 | --- | --- |
 | Common Base Linux Mariner (CBL-Mariner) | CBL-Mariner 1, CBL-Mariner 2 |
 | CentOS | CentOS 7, CentOS 8 |
-| Debian | Debian 9, Debian 10, Debian 11 |
+| Debian | Debian 9, Debian 10, Debian 11, Debian 12 |
 | openSUSE | openSUSE Leap 42.3, openSUSE Leap 15.1+ |
+| Oracle | Oracle Linux 8, Oracle Linux 9 |
 | RedHat Enterprise Linux (RHEL) | RHEL 7.4 to RHEL 7.9, RHEL 8.3+ |
 | SUSE Linux Enterprise Server (SLES) | SLES 12, SLES 15.1+ |
-| Ubuntu Server | Ubuntu Server 16.04 to Ubuntu Server 22.04 |
+| Ubuntu Server | Ubuntu Server 16.04 to Ubuntu Server 22.04, all minor version after Ubuntu 22.04 |
 
 The following Azure regions are currently supported for this feature:
 
