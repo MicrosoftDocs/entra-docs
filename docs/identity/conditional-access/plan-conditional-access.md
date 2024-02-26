@@ -36,7 +36,7 @@ Microsoft provides [security defaults](~/fundamentals/security-defaults.md) that
       * [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)
       * [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator)
 * A test user (not an administrator) that allows you to verify policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
-* A group that the test user is a member of. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.md).
+* A group that the test user is a member of. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml).
 
 ### Communicating change
 

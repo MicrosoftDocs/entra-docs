@@ -64,7 +64,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Manage groups and group membership
-            url: how-to-manage-groups.md
+            url: how-to-manage-groups.yml
 
 
    # Card
