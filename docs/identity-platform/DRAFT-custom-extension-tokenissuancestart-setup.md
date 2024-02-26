@@ -1,6 +1,6 @@
 ---
 title: Create a token issuance start event HTTP trigger function
-description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to source claims from a data store that is external to Microsoft Entra ID.  
+description: Learn how to use the Authentication events trigger for Azure Functions library to create a trigger function that uses the token issuance start event.  
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
@@ -48,6 +48,8 @@ This article describes how to create a HTTP trigger function API and deploy it t
 ::: zone-end
 
 ::: zone pivot="azure-portal"
+
+This article describes how to create a HTTP trigger function REST API in the Azure portal. You'll use Azure Functions in the Azure portal to create your REST API and add some custom claims which can be called in a custom extension. You'll add a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) to your HTTP trigger You'll 
 
 ## Prerequisites
 
@@ -168,8 +170,8 @@ So far we've set up the project to install the NuGet packages and added soem sta
     | **Application Insights** | ***TODO*** | How the logs are put together |
     
 
-1. Wait a few moments for your function app to be deployed. Once the window closes, select **Finish** on the **Publish** screen.
-1. You'll need to wait 5-10 minutes for your function app to be deployed and show up in the Azure portal.
+1. Wait a few moments for your function app to be deployed. Once the window closes, select **Finish**
+1. A new **Publish** pane opens. At the top, select **Publish**. You'll need to wait a few minutes for your function app to be deployed and show up in the Azure portal.
 
 ::: zone-end
 
@@ -340,10 +342,10 @@ The code reads the incoming JSON object and Microsoft Entra ID sends the [JSON o
         string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
         dynamic data = JsonConvert.DeserializeObject(requestBody);
         
-        // Read the correlation ID from the Azure AD  request    
+        // Read the correlation ID from the Microsoft Entra request    
         string correlationId = data?.data.authenticationContext.correlationId;
         
-        // Claims to return to Azure AD
+        // Claims to return to Microsoft Entra
         ResponseContent r = new ResponseContent();
         r.data.actions[0].claims.CorrelationId = correlationId;
         r.data.actions[0].claims.ApiVersion = "1.0.0";
