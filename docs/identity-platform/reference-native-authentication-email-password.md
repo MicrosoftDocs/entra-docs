@@ -588,7 +588,8 @@ Content-Type: application/json
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
     "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6" 
+    "correlation_id": "72f57f26-...-3fa6",
+    "suberror": "password_too_weak"
 }  
 ```
 
