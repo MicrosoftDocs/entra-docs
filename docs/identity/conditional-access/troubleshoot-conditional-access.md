@@ -101,7 +101,7 @@ To determine the service dependency, check the sign-in log for the application a
 
 :::image type="content" source="media/troubleshoot-conditional-access/service-dependency-example-sign-in.png" alt-text="Screenshot that shows an example sign-in log showing an Application calling a Resource. This scenario is also known as a service dependency." lightbox="media/troubleshoot-conditional-access/service-dependency-example-sign-in.png":::
 
-## What to do if you're locked out?
+## What to do if you're locked out
 
 If you're locked out of the due to an incorrect setting in a Conditional Access policy:
 
