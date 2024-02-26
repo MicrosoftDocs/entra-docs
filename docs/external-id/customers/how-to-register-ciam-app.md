@@ -9,7 +9,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 02/16/2024
+ms.date: 02/29/2024
 
 ms.custom: it-pro
 
@@ -187,7 +187,7 @@ A daemon app signs-in as itself using the [OAuth 2.0 client credentials flow](~/
 [!INCLUDE [add app client secret](../customers/includes/register-app/add-app-client-secret.md)]
 
 # [Native authentication](#tab/nativeauthentication)
-## Register a Native authentication application
+## Register a native authentication application
 [!INCLUDE [register client app](../customers/includes/register-app/register-client-app-common.md)]
 
 ### Add delegated permissions
@@ -195,16 +195,17 @@ This app signs in users. You can add delegated permissions to it, by following t
 
 [!INCLUDE [grant permission for signing in users](../customers/includes/register-app/grant-api-permission-sign-in.md)]
 
-## Enable public client and Native authentication flows
+## Enable public client and native authentication flows
 
-To specify that this app is a public client and can use Native authentication, enable public client and Native authentication flows:
+To specify that this app is a public client and can use native authentication, enable public client and native authentication flows:
  
-1. From the app registrations page, select the app registration for which you want to enable public client and Native authentication flows.  
+1. From the app registrations page, select the app registration for which you want to enable public client and native authentication flows.  
 1. Under **Manage**, select **Authentication**.
 1. Under **Advanced settings**, for **Enable the following mobile and desktop flows**, select **Yes**.
 1. Under **Advanced settings**, for **Enable native authentication**, select **Yes**.
 1. Select **Save** button.
 
+If you don't see the **Enable native authentication** option, add a *enableNativeAuthConfiguration=true* query parameter to your Microsoft Entra admin center URL. For example, if the URL in your browser address bar is *https://entra.microsoft.com/#view/Overview/appId/9b0eb21e-0c23-abc34t-98uhd*, update it to look similar to *https://entra.microsoft.com/#view/Overview/appId/9b0eb21e-0c23-abc34t-98uhd?enableNativeAuthConfiguration=true*, then press Enter on your keyboard to load the page again. 
 ---
 
 [!INCLUDE [find the application ID](../customers/includes/register-app/find-application-id.md)] 
