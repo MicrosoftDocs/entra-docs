@@ -167,4 +167,4 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 Once you configure Guru you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
 
-For any additional information, please visit [Guru's Help Center](https://help.getguru.com/s/)
+For any additional information, please visit [Guru's Help Center](https://help.getguru.com/s/).
