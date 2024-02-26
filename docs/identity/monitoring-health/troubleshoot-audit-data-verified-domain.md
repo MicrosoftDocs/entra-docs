@@ -1,21 +1,21 @@
 ---
 
 title: Troubleshoot bulk changes to the verified domains of users in the audit logs
-description: Troubleshoot changes to UserPrincipalName verified domain in the Microsoft Entra ID audit logs.
+description: Troubleshoot bulk changes to UserPrincipalName in the audit logs when a verified domain changes in a Microsoft Entra ID tenant.
 
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
 ms.topic: troubleshooting
 ms.subservice: monitoring-health
-ms.date: 02/21/2024
+ms.date: 02/26/2024
 ms.author: sarahlipsey
 
 ---
 
-# How to troubleshoot bulk changes to UserPrincipalName verified domain
+# Troubleshoot bulk changes to UserPrincipalName
 
-This article describes a common scenario where the audit logs display `UserPrincipalName` updates where the domain changed for multiple users. This article explains the causes and considerations for these changes and provides a deep dive into the backend operation that triggers mass object changes in Microsoft Entra ID.
+This article describes a common scenario where the audit logs display many `UserPrincipalName` updates triggered by a verified domain change. This article explains the causes and considerations for these changes and provides a deep dive into the backend operation that triggers mass object changes in Microsoft Entra ID.
 
 ## Symptoms
 
@@ -51,13 +51,13 @@ The bulk updates involve changing the domain for the `UserPrincipalName` changed
 
 ## Causes
 
-One common reason behind mass object changes is due to a non-synchronous backend operation. This operation determines the appropriate `UserPrincipalName` and `proxyAddresses` that are updated in Microsoft Entra users, groups, or contacts.
+One common reason behind mass object changes is due to a nonsynchronous backend operation. This operation determines the appropriate `UserPrincipalName` and `proxyAddresses` that are updated in Microsoft Entra users, groups, or contacts.
 
-The purpose of this backend operation ensures that `UserPrincipalName` and `proxyAddresses` are consistent in Microsoft Entra ID at any time. The operation must be triggered by an explicit change, such as a verified domain change.   
+The purpose of this backend operation ensures that `UserPrincipalName` and `proxyAddresses` are consistent in Microsoft Entra ID at any time. An explicit change, such as a verified domain change, triggers this operation.
 
 For example, if you add a verified domain Fabrikam.com to your Contoso.onmicrosoft.com tenant, this action triggers the backend operation on *all* objects in the tenant. This event is captured in the Microsoft Entra audit logs as **Update User** events preceded by an **Add verified domain** event.
 
-If Fabrikam.com was removed from the Contoso.onmicrosoft.com tenant, then all the **Update User** events will be preceded by a **Remove verified domain** event.   
+If Fabrikam.com was removed from the Contoso.onmicrosoft.com tenant, then all the **Update User** events are preceded by a **Remove verified domain** event.   
 
 ## Resolution
 
@@ -91,9 +91,9 @@ This backend operation doesn't cause changes to certain objects that:
         - `ACLableMailboxUser`
         - `ACLableTeamMailboxUser`
   
-To build more correlation between these two disparate events, Microsoft is working on updating the **Actor** info in the audit logs to identify these changes as triggered by a verified domain change. This action will help check when the verified domain change event took place and started to mass update the objects in their tenant. 
+To build more correlation between these two disparate events, Microsoft is working on updating the **Actor** info in the audit logs to identify these changes as triggered by a verified domain change. This action helps check when the verified domain change event took place and started to mass update the objects in their tenant. 
 
-In most cases, there are no changes to users as their `UserPrincipalName` and `proxyAddresses` are consistent, so we're working to only display in the audit Logs those updates that caused an actual change to the object. This action will prevent noise in the audit logs and help admins correlate the remaining user changes to verified domain change event as explained above. 
+In most cases, there are no changes to users as their `UserPrincipalName` and `proxyAddresses` are consistent, so we're working to only display in the audit logs those updates that caused an actual change to the object. This action prevents noise in the audit logs and help admins correlate the remaining user changes to verified domain change events. 
 
 ## Deep dive
 
@@ -103,13 +103,15 @@ Want to learn more about what's happening behind the scenes? Here's a deep dive 
 
 For cloud-only users, the `UserPrincipalName` is set to a verified domain suffix. When an inconsistent `UserPrincipalName` is processed, the operation converts it to the default onmicrosoft.com suffix, for example: `username@Contoso.onmicrosoft.com`.
 
-For synchronized users, the `UserPrincipalName` is set to a verified domain suffix and matches the on-premises value, `ShadowUserPrincipalName`. When an inconsistent `UserPrincipalName` is processed, the operation reverts to the same value as the `ShadowUserPrincipalName` or, in the case that domain suffix has been removed from the tenant, converts it to the default `*.onmicrosoft.com` domain suffix. 
+For synchronized users, the `UserPrincipalName` is set to a verified domain suffix and matches the on-premises value, `ShadowUserPrincipalName`. When an inconsistent `UserPrincipalName` is processed, the operation reverts to the same value as the `ShadowUserPrincipalName` or, in the case that domain suffix was removed from the tenant, converts it to the default `*.onmicrosoft.com` domain suffix. 
 
 ### ProxyAddresses  
 
-For cloud-only users, consistency means that the `proxyAddresses` match a verified domain suffix. When an inconsistent `proxyAddresses` is processed, ProxyCalc converts it to the default `*.onmicrosoft.com` domain suffix, for example: `SMTP:username@Contoso.onmicrosoft.com`.
+For cloud-only users, consistency means that the `proxyAddresses` match a verified domain suffix. When an inconsistent `proxyAddresses` is processed, the backend operation converts it to the default `*.onmicrosoft.com` domain suffix, for example: `SMTP:username@Contoso.onmicrosoft.com`.
 
-For synchronized users, consistency means that the `proxyAddresses` match the on-premises `proxyAddresses` value (i.e ShadowProxyAddresses). `proxyAddresses` are expected to be in sync with **ShadowProxyAddresses**. If the synchronized user has an Exchange license assigned, then the Proxy Addresses must match the on-premises Proxy Address(es) value(s) and must also match a verified domain suffix. In this scenario, **ProxyCalc** will sanitize the inconsistent Proxy Address with an unverified domain suffix and will be removed from the object in Microsoft Entra ID. If that unverified domain is verified later, **ProxyCalc** will recompute and add the Proxy Address from **ShadowProxyAddresses** back to the object in Microsoft Entra ID.  
+For synchronized users, consistency means that the `proxyAddresses` match the on-premises `proxyAddresses` value (i.e ShadowProxyAddresses). The `proxyAddresses` are expected to be in sync with `ShadowProxyAddresses`. If the synchronized user has an Exchange license assigned, then the cloud and on-premises values must match. These values must also match a verified domain suffix.
+
+In this scenario, the backend operation sanitizes the inconsistent `proxyAddresses` with an unverified domain suffix and is removed from the object in Microsoft Entra ID. If that unverified domain is verified later, the backend operation recomputes and adds the `proxyAddresses` from `ShadowProxyAddresses` back to the object in Microsoft Entra ID.  
 
 > [!NOTE]
 > For synchronized objects, to avoid the backend operation logic from calculating unexpected results, it's best to set `proxyAddresses` to a Microsoft Entra verified domain on the on-premises object.  
