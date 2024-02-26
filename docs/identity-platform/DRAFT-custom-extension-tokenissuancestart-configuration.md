@@ -42,12 +42,12 @@ You'll now configure a custom authentication extension, which will be used by Mi
 
 ### Register a custom authentication extension
 
-1. From the **Home** page in the Azure portal, select **Microsoft Entra ID** and select **Enterprise applications**.
+1. From the **Home** page in the Azure portal, search for and select **Microsoft Entra ID** and select **Enterprise applications**.
 1. Select **Custom authentication extensions**, and then select **Create a custom extension**.
 1. In **Basics**, select the **TokenIssuanceStart** event type and select **Next**.
 1. In **Endpoint Configuration**, fill in the following properties:
     - **Name** - A name for your custom authentication extension. For example, *Token issuance event*.
-    - **Target Url** - The `{Function_Url}` of your Azure Function URL.
+    - **Target Url** - The `{Function_Url}` of your Azure Function URL. Navigate to the **Overview** page of your Azure Function app, then select the function you created. In the function **Overview** page, select **Get Function Url** and use the copy icon to copy the URL.
     - **Description** - A description for your custom authentication extensions.
 1. Select **Next**.
 1. In **API Authentication**, select the **Create new app registration** option to create an app registration that represents your *function app*.  
@@ -72,6 +72,7 @@ If you haven't used this library in your Azure Function, you can skip this step 
 1. Under **Application settings**, select **New application setting**.
 1. For **Name**, enter `AuthenticationEvents__TenantId` and for **Value**, enter the tenant ID of your Microsoft Entra tenant, then select **OK**.
 1. Repeat this to add another variable with the name `AuthenticationEvents__AudienceAppId` and the app ID of the custom authentication extension you created in the [previous step](#register-a-custom-authentication-extension).
+1. Selct **Save** to save the application settings.
 
 > [!IMPORTANT]
 > 
@@ -204,8 +205,8 @@ To get a token and test the custom authentication extension, you can use the <ht
 
 Follow these steps to register the **jwt.ms** web application:
 
-1. From the **Home** page in the Azure portal, select **App registrations**.
-1. Select **New registration**.
+1. From the **Home** page in the Azure portal, select **Microsoft Entra ID** 
+1. Select **App registrations** > **New registration**.
 1. Enter a **Name** for the application. For example, **My Test application**.
 1. Under **Supported account types**, select **Accounts in this organizational directory only**.
 1. In the **Select a platform** dropdown in **Redirect URI**, select **Web** and then enter `https://jwt.ms` in the URL text box.
@@ -269,8 +270,8 @@ Follow these steps to connect the *My Test application* with your custom authent
 
 To assign the custom authentication extension as a custom claims provider source;
 
-1. From the **Home** page in the Azure portal, select **Enterprise applications**.
-1. Under **Manage**, select **All applications**, and then select *My Test application* from the list.
+1. From the **Home** page in the Azure portal, select **Microsoft Entra ID**.
+1. Select**Enterprise applications**, then under **Manage**, select **All applications**. Find and select *My Test application* from the list.
 1. From the **Overview** page of *My Test application*, navigate to **Manage**, and select **Single sign-on**.
 1. Under **Attributes & Claims**, select **Edit**.
 
@@ -461,7 +462,6 @@ To test your custom claims provider, follow these steps:
 
 1. Replace `{tenantId}` with your tenant ID, tenant name, or one of your verified domain names. For example, `contoso.onmicrosoft.com`.
 1. Replace `{App_to_enrich_ID}` with the *My Test application* client ID.  
-1. Go through the sign in user flow that you've configured, and accept the requested permissions.
 1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `dateOfBirth`.
 
 # [Customer tenant](#tab/customer-tenant)

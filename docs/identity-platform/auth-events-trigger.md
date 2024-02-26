@@ -383,7 +383,7 @@ EasyAuth setup, why then do the env variables not matter?
 1. Under **Additional checks** <!--What is this??-->, select **Allow requests from specific client applications**
 1. Under Unauthenticated requests, select **HTTP 401 Unauthorized**.
 1. Unselect the **Token store** option.
-1. Select Add to add authentication to your Azure Function.
+1. Select **Add** to add authentication to your Azure Function.
 
 ## Set the environment variables (non Easy Auth)
 
