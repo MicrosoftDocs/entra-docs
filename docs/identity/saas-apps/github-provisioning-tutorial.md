@@ -1,6 +1,6 @@
 ---
 title: 'Tutorial: User provisioning for GitHub'
-description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user organization membership in GitHub Enterprise Cloud.
+description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user organization membership in GitHub Enterprise Cloud.
 
 author: twimmers
 manager: CelesteDG
@@ -63,7 +63,7 @@ This section guides you through connecting your Microsoft Entra ID to GitHub's S
 
 4. Set the **Provisioning Mode** to **Automatic**.
 
-5. In the Azure portal, input **Tenant URL** and click **Test Connection** to ensure Microsoft Entra ID can connect to your GitHub Organization. If the connection fails, ensure your GitHub account has Admin permissions and **Tenant URl** is entered correctly, then try the "Authorize" step again (you can constitute **Tenant URL** by rule: `https://api.github.com/scim/v2/organizations/<Organization_name>`, you can find your organizations under your GitHub account: **Settings** > **Organizations**).
+5. In the Azure portal, input **Tenant URL** and click **Test Connection** to ensure Microsoft Entra ID can connect to your GitHub Organization. If the connection fails, ensure your GitHub account has Admin permissions and **Tenant URL** is entered correctly, then try the "Authorize" step again (you can constitute **Tenant URL** by rule: `https://api.github.com/scim/v2/organizations/<Organization_name>`, you can find your organizations under your GitHub account: **Settings** > **Organizations**).
 
    ![Screenshot shows Organizations page in GitHub.](./media/github-provisioning-tutorial/github3.png)
 
