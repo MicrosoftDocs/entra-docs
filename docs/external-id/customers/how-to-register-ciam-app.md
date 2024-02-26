@@ -186,8 +186,8 @@ A daemon app signs-in as itself using the [OAuth 2.0 client credentials flow](~/
 ### Create a client secret 
 [!INCLUDE [add app client secret](../customers/includes/register-app/add-app-client-secret.md)]
 
-# [Native Authentication](#tab/nativeauthentication)
-## Register a Native Authentication application
+# [Native authentication](#tab/nativeauthentication)
+## Register a Native authentication application
 [!INCLUDE [register client app](../customers/includes/register-app/register-client-app-common.md)]
 
 ### Add delegated permissions
@@ -195,11 +195,11 @@ This app signs in users. You can add delegated permissions to it, by following t
 
 [!INCLUDE [grant permission for signing in users](../customers/includes/register-app/grant-api-permission-sign-in.md)]
 
-## Enable public client and Native Authentication flows
+## Enable public client and Native authentication flows
 
-To specify that this app is a public client and can use Native Authentication, enable public client and Native Authentication flows:
+To specify that this app is a public client and can use Native authentication, enable public client and Native authentication flows:
  
-1. From the app registrations page, select the app registration for which you want to enable public client and Native Authentication flows.  
+1. From the app registrations page, select the app registration for which you want to enable public client and Native authentication flows.  
 1. Under **Manage**, select **Authentication**.
 1. Under **Advanced settings**, for **Enable the following mobile and desktop flows**, select **Yes**.
 1. Under **Advanced settings**, for **Enable native authentication**, select **Yes**.
