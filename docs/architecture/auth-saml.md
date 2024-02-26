@@ -7,7 +7,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 01/10/2023
+ms.date: 02/26/2024
 ms.author: jricketts
 ms.reviewer: ajburnle
 ---
