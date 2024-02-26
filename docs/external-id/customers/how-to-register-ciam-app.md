@@ -205,7 +205,7 @@ To specify that this app is a public client and can use native authentication, e
 1. Under **Advanced settings**, for **Enable native authentication**, select **Yes**.
 1. Select **Save** button.
 
-If you don't see the **Enable native authentication** option, add a *enableNativeAuthConfiguration=true* query parameter to your Microsoft Entra admin center URL. For example, if the URL in your browser address bar is *https://entra.microsoft.com/#view/Overview/appId/9b0eb21e-0c23-abc34t-98uhd*, update it to look similar to *https://entra.microsoft.com/#view/Overview/appId/9b0eb21e-0c23-abc34t-98uhd?enableNativeAuthConfiguration=true*, then press Enter on your keyboard to load the page again. 
+If you don't see the **Enable native authentication** option, add a *enableNativeAuthConfiguration=true* query parameter to your Microsoft Entra admin center URL. For example, if the URL in your browser address bar is *https://entra.microsoft.com/#view/Overview/appId/9b0eb21e-0c23-abc34t-98uhd*, update it to look similar to *https://entra.microsoft.com/#view/Overview/appId/9b0eb21e-0c23-abc34t-98uhd?enableNativeAuthConfiguration=true*, then press the **Enter** key on your keyboard to load the page again. 
 ---
 
 [!INCLUDE [find the application ID](../customers/includes/register-app/find-application-id.md)] 
