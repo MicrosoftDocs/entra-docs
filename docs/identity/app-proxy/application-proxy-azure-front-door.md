@@ -59,7 +59,7 @@ Azure Front Door is offered in different tiers including Standard, Premium, and 
 The configuration steps refer to these definitions.
 - **Endpoint name** - A globally unique name for the endpoint. You use the setting to onboard custom domains as well. For example, the front door endpoint name `contoso-nam` generates the endpoint host name `contoso-nam.azurefd.net` and utilizes custom domain host name `contoso.org`. 
 - **Origin** - The setting refers to your application servers. Azure Front Door routes your client requests to origins. Routing is based on the type, port, priority, and weight you specify.
-- **Origin Type** - The type of resource you want to add. Front Door supports autodiscovery of your application backends from *App Service*, *Cloud Service*, or *Storage*. For a different resource in Azure or even a non-Azure backend, select *Custom* host. For example, select *Custom* host for a backend on the application proxy service.
+- **Origin type** - The type of resource you want to add. Front Door supports autodiscovery of your application backends from *App Service*, *Cloud Service*, or *Storage*. For a different resource in Azure or even a non-Azure backend, select *Custom* host. For example, select *Custom* host for a backend on the application proxy service.
 - **Origin host name** - The setting represents the backend origin host name. For example, `contoso.msappproxy.net`. 
 - **Origin host header** - The setting represents the host header value being sent to the backend for each request. For example, `contoso.org`. For more information about origin and origin groups, see [Origins and origin groups – Azure Front Door][front-door-origin].
 
