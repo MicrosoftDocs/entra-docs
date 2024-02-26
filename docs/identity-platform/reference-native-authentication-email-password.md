@@ -581,8 +581,8 @@ Content-Type: application/json
 
 ```json
 {  
-    "error": "password_too_weak",
-    "error_description": "Password too weak",  
+    "error": "invalid_grant",
+    "error_description": "New password is too weak",  
     "error_codes": [
         399246
     ], 
