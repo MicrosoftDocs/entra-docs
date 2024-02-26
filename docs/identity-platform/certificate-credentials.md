@@ -6,11 +6,11 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom: has-adal-ref
 ms.date: 02/27/2023
-ms.reviewer: kenwith
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: jeedes
+ms.service: identity-platform
+
 ms.topic: reference
-#Customer intent:
+#Customer intent: As a developer, I want to authenticate my application using its own credentials, so that I can securely access resources using the Microsoft identity platform.
 ---
 
 # Microsoft identity platform application authentication certificate credentials
@@ -136,4 +136,4 @@ Client assertions can be used anywhere a client secret would be used. For exampl
 
 The [MSAL.NET library handles this scenario](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/confidential-client-assertions) in a single line of code.
 
-The [.NET Core daemon console application using Microsoft identity platform](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) code sample on GitHub shows how an application uses its own credentials for authentication. It also shows how you can [create a self-signed certificate](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/tree/master/1-Call-MSGraph#optional-use-the-automation-script) using the `New-SelfSignedCertificate` PowerShell cmdlet. You can also use the [app creation scripts](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/AppCreationScripts/AppCreationScripts.md) in the sample repo to create certificates, compute the thumbprint, and so on.
+The [.NET daemon console application using Microsoft identity platform](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) code sample on GitHub shows how an application uses its own credentials for authentication. It also shows how you can [create a self-signed certificate](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/tree/master/1-Call-MSGraph#optional-use-the-automation-script) using the `New-SelfSignedCertificate` PowerShell cmdlet. You can also use the [app creation scripts](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/AppCreationScripts/AppCreationScripts.md) in the sample repo to create certificates, compute the thumbprint, and so on.

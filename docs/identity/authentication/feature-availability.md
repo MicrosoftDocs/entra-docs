@@ -2,8 +2,8 @@
 title: Microsoft Entra feature availability in Azure Government
 description: Learn which Microsoft Entra features are available in Azure Government. 
 
-services: multi-factor-authentication
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 04/13/2023
@@ -13,7 +13,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: mattsmith
-ms.collection: M365-identity-device-management
 ---
 
 # Microsoft Entra feature availability

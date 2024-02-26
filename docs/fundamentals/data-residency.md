@@ -1,11 +1,9 @@
 ---
 title: Microsoft Entra ID and data residency
 description: Use residency data to manage access, achieve mobility scenarios, and secure your organization.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 11/03/2023
@@ -13,6 +11,7 @@ ms.author: jricketts
 ms.reviewer: jricketts
 ms.custom: "it-pro"
 ms.collection:
+# Customer intent: As a cloud administrator, I want to understand how Microsoft Entra ID handles data residency, so that I can ensure compliance with data residency requirements and make informed decisions about storing and managing identity and access data in the cloud.
 ---
 
 # Microsoft Entra ID and data residency 

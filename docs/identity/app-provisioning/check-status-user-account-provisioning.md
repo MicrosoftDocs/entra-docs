@@ -1,12 +1,11 @@
 ---
 title: Report automatic user account provisioning from Microsoft Entra ID to Software as a Service (SaaS) applications
 description: 'Learn how to check the status of automatic user account provisioning jobs, and how to troubleshoot the provisioning of individual users.'
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/15/2023
 ms.author: kenwith
@@ -61,6 +60,8 @@ The [provisioning progress bar](application-provisioning-when-will-provisioning-
 The **Current Status** should be the first place admins look to check on the operational health of the provisioning job.
 
  ![Summary report](./media/check-status-user-account-provisioning/provisioning-progress-bar-section.png)
+
+You can also use Microsoft Graph to programmatically monitor the status of provisioning to an application.  For more information, see [monitor provisioning](application-provisioning-configuration-api.md#step-5-monitor-provisioning).
 
 ## Provisioning logs 
 

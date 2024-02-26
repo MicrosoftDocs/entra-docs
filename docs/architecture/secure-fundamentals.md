@@ -1,18 +1,14 @@
 ---
-title: Fundamentals of securing with Microsoft Entra ID 
+title: Fundamentals of securing with Microsoft Entra ID
 description: Fundamentals of securing your tenants in Microsoft Entra ID.
-services: active-directory
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 7/5/2022
 ms.author: gasinh
 ms.reviewer: ajburnle
-ms.custom: "it-pro"
-ms.collection: M365-identity-device-management
 ---
 
 # Microsoft Entra fundamentals

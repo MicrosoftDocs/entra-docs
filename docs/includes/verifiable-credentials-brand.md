@@ -2,8 +2,7 @@
  title: include file
  description: include file
  author: barclayn
- ms.service: decentralized-identity
- ms.subservice: verifiable-credentials
+ ms.service: entra-verified-id
  ms.topic: include
  ms.date: 08/11/2022
  ms.author: barclayn

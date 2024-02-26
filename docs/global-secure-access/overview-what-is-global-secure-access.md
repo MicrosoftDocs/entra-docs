@@ -6,7 +6,7 @@ ms.author: kenwith
 manager: amycolannino
 ms.topic: overview
 ms.date: 01/22/2024
-ms.service: network-access
+ms.service: global-secure-access
 ms.custom: references_regions
 ---
 

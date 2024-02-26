@@ -1,20 +1,14 @@
 ---
 title: Integrate your applications for identity governance and establishing a baseline of reviewed access
 description: Microsoft Entra ID Governance allows you to balance your organization's need for security and employee productivity with the right processes and visibility.  You can integrate your existing business critical third party on-premises and cloud-based applications with Microsoft Entra ID for identity governance scenarios.
-services: active-directory
-documentationcenter: ''
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
 ms.topic: conceptual
-ms.subservice: compliance
 ms.date: 7/29/2022
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
-ms.collection: M365-identity-device-management
 ---
 
 # Integrating applications with Microsoft Entra ID and establishing a baseline of reviewed access
@@ -59,9 +53,9 @@ Next, if the application implements a provisioning protocol, then you should con
 
      |Application supports| Next steps|
      |----|-----|
-     | SAML 2.0| Deploy the [application proxy](~/identity/app-proxy/application-proxy.md) and configure an application for [SAML SSO](~/identity/app-proxy/application-proxy-configure-single-sign-on-on-premises-apps.md) |
-     | Integrated Windows Auth (IWA) | Deploy the [application proxy](~/identity/app-proxy/application-proxy.md), configure an application for [Integrated Windows authentication SSO](~/identity/app-proxy/how-to-configure-sso-with-kcd.md), and set firewall rules to prevent access to the application's endpoints except via the proxy.|
-     | header-based authentication | Deploy the [application proxy](~/identity/app-proxy/application-proxy.md) and configure an application for [header-based SSO](~/identity/app-proxy/application-proxy-configure-single-sign-on-with-headers.md) |
+     | SAML 2.0| Deploy the [application proxy](/entra/identity/app-proxy) and configure an application for [SAML SSO](~/identity/app-proxy/conceptual-sso-apps.md) |
+     | Integrated Windows Auth (IWA) | Deploy the [application proxy](/entra/identity/app-proxy), configure an application for [Integrated Windows authentication SSO](~/identity/app-proxy/how-to-configure-sso-with-kcd.md), and set firewall rules to prevent access to the application's endpoints except via the proxy.|
+     | header-based authentication | Deploy the [application proxy](/entra/identity/app-proxy) and configure an application for [header-based SSO](~/identity/app-proxy/application-proxy-configure-single-sign-on-with-headers.md) |
 
 1. If your application has multiple roles, each user has only one role in the application, and the application relies upon Microsoft Entra ID to send a user's single application-specific role as a claim of a user signing into the application, then configure those app roles in Microsoft Entra ID on your application, and then assign each user to the application role. You can use  the [app roles UI](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui) to add those roles to the application manifest.  If you're using the Microsoft Authentication Libraries, there is a [code sample](~/identity-platform/sample-v2-code.md) for how to use app roles inside your application for access control.  If a user could have multiple roles simultaneously, then you may wish to implement the application to check security groups, either in the token claims or available via Microsoft Graph, instead of using app roles from the app manifest for access control.
 

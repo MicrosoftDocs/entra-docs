@@ -1,17 +1,16 @@
 ---
 title: Admin consent for LinkedIn account connections
 description: Explains how to enable or disable LinkedIn integration account connections in Microsoft apps in Microsoft Entra ID
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 ms.date: 11/21/2023
 ms.author: barclayn
 ms.reviewer: beengen
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 ---
 
@@ -67,19 +66,22 @@ We have replaced the 'Selected' option that specifies a list of users with the o
 1. Create a CSV file of the users who are selected for LinkedIn account connections.
 1. Sign into Microsoft 365 with your administrator account.
 1. Launch PowerShell.
-1. Install the Azure AD PowerShell module by running `Install-Module AzureAD`.
+1. Install the Microsoft Graph PowerShell module by running `Install-Module Microsoft.Graph -Scope CurrentUser`.
 1. Run the following script:
 
-  ``` PowerShell
-  $groupId = "GUID of the target group"
+   ``` PowerShell
+   $groupId = "GUID of the target group"
   
-  $users = Get-Content 
-  Path to the CSV file
+   $users = Get-Content
+   Path to the CSV file
   
-  $i = 1
-  foreach($user in $users} { Add-AzureADGroupMember -ObjectId $groupId -RefObjectId $user ; Write-Host $i Added $user ; $i++ ; Start-Sleep -Milliseconds 10 }
-  ```
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+   $i = 1
+   foreach($user in $users) { 
+      New-MgGroupMember -GroupId "$groupId" -DirectoryObjectId "$user" ;
+      Write-Host $i Added $user ; $i++ ;
+      Start-Sleep -Milliseconds 10
+   }
+   ```
 
 To use the group from step two as the selected group in the LinkedIn account connections setting in the Azure portal, see [Enable LinkedIn account connections in the Azure portal](#enable-linkedin-account-connections-in-the-azure-portal).
 

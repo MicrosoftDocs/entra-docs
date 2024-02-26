@@ -5,10 +5,10 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: devx-track-csharp,  devx-track-dotnet
-ms.date: 08/28/2020
-ms.reviewer: saeeda, Dickson-Mwendia
-ms.service: active-directory
-ms.subservice: develop
+ms.date: 01/30/2024
+ms.reviewer: saeeda, dmwendia, negoe
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn about special requirements for using Xamarin Android and MSAL.NET.
 ---

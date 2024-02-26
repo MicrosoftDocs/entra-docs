@@ -2,25 +2,26 @@
 title: VPN with Microsoft Entra multifactor authentication using the NPS extension
 description: Integrate your VPN infrastructure with Microsoft Entra multifactor authentication by using the Network Policy Server extension for Microsoft Azure.
 
-services: multi-factor-authentication
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 01/10/2024
+ms.date: 02/10/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: michmcla
-
-ms.collection: M365-identity-device-management
 ---
 # Integrate your VPN infrastructure with Microsoft Entra multifactor authentication by using the Network Policy Server extension for Azure
 
 The Network Policy Server (NPS) extension for Azure allows organizations to safeguard Remote Authentication Dial-In User Service (RADIUS) client authentication using cloud-based [Microsoft Entra multifactor authentication](howto-mfaserver-nps-rdg.md), which provides two-step verification.
 
-This article provides instructions for integrating NPS infrastructure with MFA by using the NPS extension for Azure. This process enables secure two-step verification for users who attempt to connect to your network by using a VPN.
+This article provides instructions for integrating NPS infrastructure with MFA by using the NPS extension for Azure. This process enables secure two-step verification for users who attempt to connect to your network by using a VPN. 
+
+>[!NOTE]
+>Although the NPS MFA extension supports time-based one-time password (TOTP), certain VPN clients like Windows VPN don't. Make sure the VPN clients that you're using support TOTP as an authentication method before you enable it in the NPS extension. 
 
 Network Policy and Access Services gives organizations the ability to:
 

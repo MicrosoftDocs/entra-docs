@@ -5,9 +5,9 @@ description: Learn how to manage your verifiable credential deployment using Adm
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: reference
-ms.subservice: verifiable-credentials
+
 ms.date: 07/28/2022
 ms.author: barclayn
 
@@ -46,6 +46,8 @@ The `Verifiable Credentials Service Admin` service supports the following applic
 | VerifiableCredential.Network.Read | Permission to read entries from the [Verified ID Network](vc-network-api.md) |
 
 The app registration needs to have the API Permission for `Verifiable Credentials Service Admin` and permissions required from the above table. When acquiring the access token, via the [client credentials flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md), the app should use scope `6a8b4b39-c021-437c-b060-5a14a3fd65f3/.default`.
+
+If the app intends to create a new authority, it needs two things. First, the app registration needs the `VerifiableCredential.Authority.ReadWrite` permission. Second, the app needs have `Create Key` permission in Key Vaults Access Policies. If the app only read/writes existing authorities, it does not need the Key Vault permission.
 
 ## Onboarding
 
@@ -826,8 +828,9 @@ Content-type: application/json
     "availableInVcDirectory": false,
     "manifestUrl": "...",
     "issueNotificationAllowedToGroupOids" : null,
-    "rules": rulesModel,
-    "displays": displayModel[]
+    "rules": <rulesModel>,
+    "displays": <displayModel[]>,
+    "allowOverrideValidityIntervalOnIssuance": false
 }
 ```
 
@@ -846,6 +849,7 @@ The response contains the following properties
 | `availableInVcDirectory` | boolean | Is this contract published in the Verifiable Credential Network |
 | [rules](#rulesmodel-type) | rulesModel | rules definition |
 | [displays](#displaymodel-type) | displayModel array| display definitions |
+| `allowOverrideValidityIntervalOnIssuance` | boolean | If the createIssuanceRequest API call is allowed to override expiry of the credential. This is only valid for [idTokenHint](admin-api.md#idtokenhintattestation-type) flows. |
 
 #### rulesModel type
 
@@ -1163,6 +1167,8 @@ Example request:
 {
     "rules": "<rules JSON>",
     "displays": [{<display JSON}],}
+    "availableInVcDirectory": true
+    "allowOverrideValidityIntervalOnIssuance": true
 }
 ```
 
@@ -1179,11 +1185,12 @@ Content-type: application/json
     "name": "contractname",
     "status": "Enabled",
     "issueNotificationEnabled": false,
-    "availableInVcDirectory": false,
+    "availableInVcDirectory": true,
     "manifestUrl": "https://...",
     "issueNotificationAllowedToGroupOids" : null,
     "rules": rulesModel,
-    "displays": displayModel[]
+    "displays": displayModel[],
+    "allowOverrideValidityIntervalOnIssuance": true
 }
 ```
 

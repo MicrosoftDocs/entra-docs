@@ -4,9 +4,9 @@ description: Learn how to customize the sign-in and sign-up experiences for your
  
 author: csmulligan
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: conceptual
 ms.date:  04/21/2023
 ms.author: cmulligan

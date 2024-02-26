@@ -1,13 +1,12 @@
 ---
 title: Configure provisioning using Microsoft Graph APIs
 description: Learn how to save time by using the Microsoft Graph APIs to automate the configuration of automatic provisioning.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 09/15/2023
 ms.author: kenwith
 ms.reviewer: arvinh
@@ -89,7 +88,7 @@ Use the template ID retrieved for your application in the last step to [create a
 
 
 ```msgraph-interactive
-POST https://graph.microsoft.com/beta/applicationTemplates/{id}/instantiate
+POST https://graph.microsoft.com/beta/applicationTemplates/{applicationTemplateId}/instantiate
 Content-type: application/json
 
 {
@@ -140,7 +139,7 @@ Content-type: application/json
 
 ### Retrieve the template for the provisioning connector
 
-Applications in the gallery that are enabled for provisioning have templates to streamline configuration. Use the request below to [retrieve the template for the provisioning configuration](/graph/api/synchronization-synchronization-list-templates?preserve-view=true&tabs=http&view=graph-rest-beta). Note that you will need to provide the ID. The ID refers to the preceding resource, which in this case is the servicePrincipal resource. 
+Applications in the gallery that are enabled for provisioning have templates to streamline configuration. Use the request below to [retrieve the template for the provisioning configuration](/graph/api/synchronization-synchronization-list-templates?preserve-view=true&tabs=http&view=graph-rest-beta). Note that you will need to provide the ID. The ID is that of the servicePrincipal resource, created in the preceding step.
 
 #### Request
 
@@ -217,7 +216,7 @@ Test the connection with the third-party application. The following example is f
 
 #### Request
 ```msgraph-interactive
-POST https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs/{id}/validateCredentials
+POST https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs/{jobId}/validateCredentials
 
 { 
     "credentials": [ 
@@ -281,11 +280,11 @@ HTTP/1.1 204 No Content
 
 ### Monitor the provisioning job status
 
-Now that the provisioning job is running, use the following command to track the progress of the current provisioning cycle as well as statistics to date such as the number of users and groups that have been created in the target system. 
+Now that the provisioning job is running, use the following command to track the progress. Each [synchronization job](/graph/api/resources/synchronization-synchronizationjob) in the response includes the [status](/graph/api/resources/synchronization-synchronizationstatus) of the current provisioning cycle as well as statistics to date such as the number of users and groups that have been created in the target system.
 
 #### Request
 ```msgraph-interactive
-GET https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs/{jobId}/
+GET https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs
 ```
 
 #### Response
@@ -293,6 +292,7 @@ GET https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs
 HTTP/1.1 200 OK
 Content-type: application/json
 
+{ "value": [
 {
     "id": "{jobId}",
     "templateId": "aws",
@@ -321,6 +321,8 @@ Content-type: application/json
           "value": "500"
       }
     ]
+}
+]
 }
 ```
 

@@ -1,11 +1,11 @@
 ---
 title: Configure Verified ID by AU10TIX as your Identity Verification Partner 
 description: This article shows you the steps you need to follow to configure AU10TIX as your identity verification partner
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 ms.topic: how-to
 ms.date: 10/12/2023
 ms.author: barclayn

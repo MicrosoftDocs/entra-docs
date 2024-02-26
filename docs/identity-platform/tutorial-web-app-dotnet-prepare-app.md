@@ -5,21 +5,21 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.date: 01/18/2024
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As an application developer, I want to use an IDE to set up an ASP.NET Core project, set up and upload a self signed certificate to the Azure portal and configure the application for authentication.
 ---
 
 # Tutorial: Prepare an application for authentication
 
-In the [previous tutorial](tutorial-web-app-dotnet-register-app.md), you registered a web application in the Microsoft Entra admin center. This tutorial demonstrates how to create an **ASP.NET Core Web App** using an IDE. You'll also create and upload a self-signed certificate to the Microsoft Entra admin center to secure your application. Finally, you'll configure the application for authentication.
+In the [previous tutorial](tutorial-web-app-dotnet-register-app.md), you registered a web application in the Microsoft Entra admin center. This tutorial demonstrates how to create an ASP.NET Core web app using an IDE. You'll also create and upload a self-signed certificate to the Microsoft Entra admin center to secure your application. Finally, you'll configure the application for authentication.
 
 In this tutorial:
 
 > [!div class="checklist"]
 >
-> * Create an **ASP.NET Core Web App**
+> * Create an ASP.NET Core web app
 > * Create a self-signed certificate
 > * Configure the settings for the application
 > * Define platform settings and URLs
@@ -31,7 +31,7 @@ In this tutorial:
   * Visual Studio 2022
   * Visual Studio Code
   * Visual Studio 2022 for Mac
-* A minimum requirement of [.NET 6.0](https://dotnet.microsoft.com/download/dotnet).
+* A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
 ## Create an ASP.NET Core project
 
@@ -51,7 +51,7 @@ Use the following tabs to create an ASP.NET Core project within an IDE.
 1. Open Visual Studio Code, select **File > Open Folder...**. Navigate to and select the location in which to create your project.
 1. Create a new folder using the **New Folder...** icon in the **Explorer** pane. Provide a name similar to the one registered previously, for example, *NewWebAppLocal*.
 1. Open a new terminal by selecting **Terminal > New Terminal**.
-1. To create an **ASP.NET Core Web App** template, run the following commands in the terminal to change into the directory and create the project:
+1. To create an ASP.NET Core web app template, run the following commands in the terminal to change into the directory and create the project:
 
     ```powershell
     cd NewWebAppLocal
@@ -142,7 +142,7 @@ The values recorded earlier will be used to configure the application for authen
     * `DownstreamApi` - Is an identifier that defines an endpoint for accessing Microsoft Graph. The application URI is combined with the specified scope. To define the configuration for an application owned by the organization, the value of the `Scopes` attribute is slightly different.
 1. Save changes to the file.
 1. In the **Properties** folder, open the *launchSettings.json* file.
-1. Find and record the `https` value `applicationURI` within *launchSettings.json*, for example `https://localhost:{port}`. This URL will be used when defining the **Redirect URI**.
+1. Find and record the `https` value `applicationURI` within *launchSettings.json*, for example `https://localhost:{port}`. This URL will be used when defining the **Redirect URI**. Do not use the `http` value. 
 
 ## Add a platform redirect URI
 

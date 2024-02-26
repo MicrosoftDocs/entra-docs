@@ -2,8 +2,7 @@
 title: Require multifactor authentication for Microsoft admin portals
 description: Create a Conditional Access policy requiring multifactor authentication for admins accessing Microsoft admin portals.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 07/18/2023
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
-
-ms.collection: M365-identity-device-management
 ---
 # Common Conditional Access policy: Require multifactor authentication for admins accessing Microsoft admin portals
 
