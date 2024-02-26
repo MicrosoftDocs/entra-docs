@@ -103,6 +103,8 @@ When a guest signs in to a resource in a partner organization for the first time
 
 1. The guest reviews the **Review permissions** page describing the inviting organization's privacy statement. A user must **Accept** the use of their information in accordance to the inviting organization's privacy policies to continue.
 
+    By agreeing to this consent prompt, you acknowledge that certain elements of your account will be shared. These include your name, photo, and email address, as well as directory identifiers which may be used by the other organization to better manage your account, and to improve your cross-organization experience. 
+
    :::image type="content" source="media/redemption-experience/new-review-permissions.png" alt-text="Screenshot showing the Review permissions page.":::
 
    > [!NOTE]
@@ -120,12 +122,6 @@ When a guest signs in to a resource in a partner organization for the first time
 
 In your directory, the guest's **Invitation accepted** value changes to **Yes**. If an MSA was created, the guest’s **Source** shows **Microsoft Account**. For more information about guest user account properties, see [Properties of a Microsoft Entra B2B collaboration user](user-properties.md). 
 If you see an error that requires admin consent while accessing an application, see [how to grant admin consent to apps](~/identity-platform/v2-admin-consent.md).
-
-### Consent experience for multitenant organizations
-
-As a user in a multitentant organization, you will see the same consent experience when you have been invited to join another organization, which will enable collaboration with users of, and access to data stored by, that organization. 
-
-By agreeing to this consent prompt, you acknowledge that certain elements of your account will be shared. These include your name, photo, and email address, as well as directory identifiers which may be used by the other organization to better manage your account, and to improve your cross-organization experience. 
 
 ### Automatic redemption process setting
 
