@@ -1,20 +1,15 @@
 ---
 title: Manage users excluded from Conditional Access policies
 description: Learn how to use access reviews to manage users that have been excluded from Conditional Access policies
-services: active-directory
-documentationcenter: ''
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: access-reviews
 ms.topic: conceptual
-ms.subservice: compliance
 ms.date: 06/28/2023
 ms.author: owinfrey
 ms.reviewer: mwahl
-ms.collection: M365-identity-device-management
 ---
 
 # Use access reviews to manage users excluded from Conditional Access policies
@@ -142,7 +137,7 @@ that is excluded from the policy. Here is a recommended access review where memb
 1. Enable mail notifications so users are notified about the start and completion of the access review.
 
 >[!IMPORTANT] 
->If you have many exclusion groups and therefore need to create multiple access reviews, we now have an API in the Microsoft Graph beta   endpoint that allows you to create and manage them programmatically. To get started, see the [access reviews API reference](/graph/api/resources/accessreviewsv2-overview) and [Example of retrieving access reviews via Microsoft Graph](https://techcommunity.microsoft.com/t5/Azure-Active-Directory/Example-of-retrieving-Azure-AD-access-reviews-via-Microsoft/td-p/236096).
+>If you have many exclusion groups and therefore need to create multiple access reviews, Microsoft Graph allows you to create and manage them programmatically. To get started, see the [access reviews API reference](/graph/api/resources/accessreviewsv2-overview) and [tutorial using the access reviews API in Microsoft Graph](/graph/tutorial-accessreviews-securitygroup).
 
 ## Access review results and audit logs
 

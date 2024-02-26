@@ -1,18 +1,16 @@
 ---
 title: Customize browsers & WebViews (MSAL iOS/macOS)
 description: Learn how to customize the MSAL iOS/macOS browser experience to sign in users.
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.workload: identity
-ms.date: 01/24/2023
 ms.author: henrymbugua
+ms.custom: has-adal-ref
+ms.date: 01/24/2023
 ms.reviewer: oldalton
-ms.custom: aaddev, has-adal-ref
+ms.service: identity-platform
+
+ms.topic: conceptual
+#Customer intent: As a developer integrating Microsoft Authentication Library (MSAL) into my iOS/macOS app, I want to customize the web browser or WebView used for interactive authentication, so that I can provide a seamless and consistent user experience within my app.
 ---
 
 # Customize browsers and WebViews for iOS/macOS

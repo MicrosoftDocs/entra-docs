@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Colloquial for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Colloquial.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 8ea5fa0c-d3f1-4398-8051-9051e2df01f5
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 10/12/2023
 ms.author: thwimmer

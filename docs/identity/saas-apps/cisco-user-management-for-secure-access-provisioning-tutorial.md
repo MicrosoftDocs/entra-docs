@@ -1,16 +1,16 @@
 ---
 title: 'Tutorial: Configure Cisco User Management for Secure Access for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Cisco User Management for Secure Access.
-services: active-directory
+
 documentationcenter: ''
 author: twimmers
 writer: twimmers
 manager: jeedes
 
 ms.assetid: 1aa20f40-19ec-4213-9a3b-5eb2bcdd9bbd
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022

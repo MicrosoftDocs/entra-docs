@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Resource Central – SAML SSO for Meeting Room Booking System'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Resource Central – SAML SSO for Meeting Room Booking System.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes

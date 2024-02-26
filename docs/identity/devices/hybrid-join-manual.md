@@ -2,8 +2,8 @@
 title: Manual configuration for Microsoft Entra hybrid join devices
 description: Learn how to manually configure Microsoft Entra hybrid join devices.
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.custom: has-azure-ad-ps-ref
 ms.topic: tutorial
@@ -14,7 +14,6 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
 
-ms.collection: M365-identity-device-management
 ---
 # Configure Microsoft Entra hybrid join manually
 
@@ -255,7 +254,7 @@ In the preceding claim, `<verified-domain-name>` is a placeholder. Replace it wi
 
 For more information about verified domain names, see [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.md).  
 
-To get a list of your verified company domains, you can use the [Get-MsolDomain](/powershell/module/msonline/get-msoldomain) cmdlet.
+To get a list of your verified company domains, you can use the [Get-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomain) cmdlet.
 
 ![List of company domains](./media/hybrid-join-manual/01.png)
 

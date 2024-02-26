@@ -1,13 +1,11 @@
 ---
 title: Configure group claims for applications by using Microsoft Entra ID
 description: Get information on how to configure group claims for use with Microsoft Entra ID.
-services: active-directory
-documentationcenter: ''
+
 ms.reviewer: paulgarn
 manager: amycolannino
-ms.subservice: hybrid
-ms.service: active-directory
-ms.workload: identity
+ms.subservice: hybrid-connect
+ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.author: billmath

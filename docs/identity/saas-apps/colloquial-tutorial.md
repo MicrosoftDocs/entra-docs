@@ -1,15 +1,15 @@
 ---
 title: Microsoft Entra SSO integration with Colloquial
 description: Learn how to configure single sign-on between Microsoft Entra ID and Colloquial.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: how-to
-ms.date: 06/20/2023
+ms.date: 11/21/2023
 ms.author: jeedes
 
 ---
@@ -22,7 +22,8 @@ In this article, you'll learn how to integrate Colloquial with Microsoft Entra I
 * Enable your users to be automatically signed-in to Colloquial with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
-You'll configure and test Microsoft Entra single sign-on for Colloquial in a test environment. Colloquial supports **SP** initiated single sign-on and **Just In Time** user provisioning.
+You'll configure and test Microsoft Entra single sign-on for Colloquial in a test environment. Colloquial supports **SP** initiated single sign-on and **Just In Time** user provisioning. Colloquial also supports [Automated user provisioning](colloquial-provisioning-tutorial.md).
+
 
 ## Prerequisites
 

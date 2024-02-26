@@ -1,17 +1,19 @@
 ---
 title: Application Management certificates frequently asked questions
 description: Learn answers to frequently asked questions (FAQ) about managing certificates for apps using Microsoft Entra ID as an Identity Provider (IdP).  
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: enterprise-apps
+
 ms.topic: reference
 ms.date: 03/03/2023
 ms.author: jomondi
 ms.reviewer: sureshja, saumadan
 ms.custom: enterprise-apps
+
+#customer intent: As an application administrator managing certificates for apps using Microsoft Entra ID as an Identity Provider, I want to generate a list of expiring SAML signing certificates, so that I can proactively renew them before they expire.
 ---
 
 # Application Management certificates frequently asked questions
@@ -24,7 +26,7 @@ You can export all app registrations with expiring secrets, certificates and the
 
 ## Where can I find the information about soon to expire certificates renewal steps?
 
-You can find the steps [here](./tutorial-manage-certificates-for-federated-single-sign-on.md#renew-a-certificate-that-will-soon-expire).
+You can find the steps [here](./tutorial-manage-certificates-for-federated-single-sign-on.md#renew-a-certificate-that-is-set-to-expire-soon).
 
 <a name='how-can-i-customize-the-expiration-date-for-the-certificates-issued-by-azure-ad'></a>
 
@@ -71,7 +73,7 @@ To replace certificates for Microsoft Entra application proxy applications, see 
 
 ## How do I manage certificates for custom domains in Microsoft Entra application proxy?
 
-To configure an on-premises app to use a custom domain, you need a verified Microsoft Entra custom domain, a PFX certificate for the custom domain, and an on-premises app to configure. To learn more, see [Custom domains in Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-configure-custom-domain.md).
+To configure an on-premises app to use a custom domain, you need a verified Microsoft Entra custom domain, a PFX certificate for the custom domain, and an on-premises app to configure. To learn more, see [Custom domains in Microsoft Entra application proxy](~/identity/app-proxy/how-to-configure-custom-domain.md).
 
 ## I need to update the token signing certificate on the application side. Where can I get it on Microsoft Entra ID side?
 

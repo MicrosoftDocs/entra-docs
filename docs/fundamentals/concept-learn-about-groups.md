@@ -1,18 +1,16 @@
 ---
 title: Learn about groups and group membership
 description: Information about Microsoft Entra groups and access rights
-services: active-directory
 author: shlipsey3
 manager: amycolannino
 
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 08/29/2022
+ms.date: 01/05/2024
 ms.author: sarahlipsey
 ms.reviewer: krbain
-ms.custom: "it-pro, seodec18"                      
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ---
 # Learn about groups and access rights in Microsoft Entra ID
@@ -42,7 +40,10 @@ There are two group types and three group membership types. Review the options t
 
 **Security:** Used to manage user and computer access to shared resources.
 
-For example, you can create a security group so that all group members have the same set of security permissions. Members of a security group can include users, devices, other groups, and [service principals](~/architecture/service-accounts-principal.md), which define access policy and permissions. Owners of a security group can include users and service principals.
+For example, you can create a security group so that all group members have the same set of security permissions. Members of a security group can include users, devices, [service principals](~/architecture/service-accounts-principal.md), and other groups (also known as nested groups), which define [access policy and permissions](identity-fundamental-concepts.md). Owners of a security group can include users and service principals.
+
+> [!NOTE]
+> When nesting an existing security group to another security group, only members in the parent group will have access to shared resouces and applications. Nested group members don't have the same assigned membership as the parent group members. For more info about managing nested groups, see [How to manage groups](how-to-manage-groups.md#add-or-remove-a-group-from-another-group).
 
 **Microsoft 365:** Provides collaboration opportunities by giving group members access to a shared mailbox, calendar, files, SharePoint sites, and more.
 
@@ -54,7 +55,7 @@ This option also lets you give people outside of your organization access to the
 - **Dynamic device:** Lets you use dynamic group rules to automatically add and remove devices. If a device's attributes change, the system looks at your dynamic group rules for the directory to see if the device meets the rule requirements (is added), or no longer meets the rules requirements (is removed).
 
     > [!IMPORTANT]
-    > You can create a dynamic group for either devices or users, but not for both. You can't create a device group based on the device owners' attributes. Device membership rules can only reference device attributions. For more info about creating a dynamic group for users and devices, see [Create a dynamic group and check status](~/identity/users/groups-create-rule.md)
+    > You can create a dynamic group for either devices or users, but not for both. You can't create a device group based on the device owners' attributes. Device membership rules can only reference device attributions. For more info about creating a dynamic group for users and devices, see [Create a dynamic group and check status](~/identity/users/groups-create-rule.md).
 
 
 ## What to know before adding access rights to a group
@@ -67,7 +68,7 @@ After creating a Microsoft Entra group, you need to grant it the appropriate acc
 
 Microsoft Entra ID helps you give access to your organization's resources by providing access rights to a single user or to an entire Microsoft Entra group. Using groups lets the resource owner or Microsoft Entra directory owner assign a set of access permissions to all the members of the group. The resource or directory owner can also give management rights to someone such as a department manager or a help desk administrator, letting that person add and remove members. For more information about how to manage group owners, see the [Manage groups](how-to-manage-groups.md) article.
 
-![Diagram of Microsoft Entra ID access management.](./media/concept-learn-about-groups/access-management-overview.png)
+:::image type="content" source="./media/concept-learn-about-groups/access-management-overview.png" alt-text="Screenshot of a diagram of Microsoft Entra ID access management..":::
 
 ### Ways to assign access rights
 
@@ -81,7 +82,7 @@ After creating a group, you need to decide how to assign access rights. Explore 
 
 - **External authority assignment.** Access comes from an external source, such as an on-premises directory or a SaaS app. In this situation, the resource owner assigns a group to provide access to the resource and then the external source manages the group members.
 
-   ![Diagram of access management overview.](./media/concept-learn-about-groups/access-management-process.png)
+   :::image type="content" source="./media/concept-learn-about-groups/access-management-process.png" alt-text="Screenshot of a diagram of access management overview..":::
 
 ### Can users join groups without being assigned?
 The group owner can let users find their own groups to join, instead of assigning them. The owner can also set up the group to automatically accept all users that join or to require approval.

@@ -1,12 +1,11 @@
 ---
 title: Quickstart API-driven inbound provisioning with cURL
 description: Learn how to get started with API-driven inbound provisioning using cURL.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/15/2023
 ms.author: kenwith
@@ -16,6 +15,7 @@ ms.reviewer: cmmdesai
 # Quickstart API-driven inbound provisioning with cURL (Public preview)
 
 ## Introduction
+
 [cURL](https://curl.se/) is a popular, free, open-source, command-line tool used by API developers, and it's [available by default on Windows 10/11](https://curl.se/windows/microsoft.html). This tutorial describes how you can quickly test [API-driven inbound provisioning](inbound-provisioning-api-concepts.md) with cURL. 
 
 ## Pre-requisites
@@ -50,7 +50,6 @@ ms.reviewer: cmmdesai
 
 1. Click on any record in the provisioning logs to view more processing details.
 1. The provisioning log details screen displays all the steps executed for a specific user. 
-      [![Screenshot of provisioning logs details.](media/inbound-provisioning-api-curl-tutorial/provisioning-log-details.png)](media/inbound-provisioning-api-curl-tutorial/provisioning-log-details.png#lightbox)
       * Under the **Import from API** step, see details of user data extracted from the bulk request.
       * The **Match user** step shows details of any user match based on the matching identifier. If a user match happens, then the provisioning service performs an update operation. If there is no user match, then the provisioning service performs a create operation.
       * The **Determine if User is in scope** step shows details of scoping filter evaluation. By default, all users are processed. If you have set a scoping filter (example, process only users belonging to the Sales department), the evaluation details of the scoping filter displays in this step.
@@ -59,8 +58,10 @@ ms.reviewer: cmmdesai
 
 ## Appendix
 
+View this section for information on the bulk request with SCIM Enterprise User Schema. 
+
 ### Bulk request with SCIM Enterprise User Schema
-The bulk request shown below uses the SCIM standard Core User and Enterprise User schema. 
+The bulk request shown below uses the SCIM standard Core User and Enterprise User Schema. 
 
 **Request body**
 

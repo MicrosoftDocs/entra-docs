@@ -1,14 +1,14 @@
 ---
 title: Sign in users and call an API in sample Node.js web application 
 description: Learn how to configure a sample web app to sign in users and call an API.
-services: active-directory
+ 
 author: kengaderdus
 manager: mwongerapk
 
 ms.author: kengaderdus
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: ciam
+ms.service: entra-external-id
+ 
+ms.subservice: customers
 ms.topic: sample
 ms.date: 06/23/2023
 ms.custom: developer, devx-track-js

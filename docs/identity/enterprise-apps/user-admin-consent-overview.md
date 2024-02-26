@@ -1,18 +1,20 @@
 ---
 title: Overview of user and admin consent
 description: Learn about the fundamental concepts of user and admin consent in Microsoft Entra ID
-services: active-directory
+
 author: omondiatieno
 manager: celesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: enterprise-apps
+
 ms.topic: overview
 ms.date: 04/04/2023
 ms.author: jomondi
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin managing user access to applications, I want to understand the concepts and scenarios around user and admin consent in Microsoft Entra ID, so that I can configure the appropriate settings and permissions for my organization's applications.
 ---
 
 # User and admin consent in Microsoft Entra ID

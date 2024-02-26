@@ -1,18 +1,20 @@
 ---
 title: Frequently asked questions about the admin consent workflow
 description: Find answers to frequently asked questions (FAQs) about the admin consent workflow.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: enterprise-apps
+
 ms.topic: reference
 ms.date: 05/27/2022
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
+
+#customer intent: As a user of the Microsoft Entra admin consent workflow, I want to understand the functionality and troubleshooting steps, so that I can effectively enable and manage access requests for applications in my organization.
 ---
 
 # Microsoft Entra admin consent workflow frequently asked questions

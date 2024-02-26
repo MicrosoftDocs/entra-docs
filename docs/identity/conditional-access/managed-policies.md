@@ -2,10 +2,10 @@
 title: Secure your resources with Microsoft-managed Conditional Access policies
 description: Microsoft-managed policies take action to require multifactor authentication to reduce the risk of compromise.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 10/26/2023
+ms.date: 02/08/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -35,11 +35,14 @@ Administrators with at least the [Conditional Access Administrator](../role-base
 
 Administrators have the ability to **Edit** the **State** (On, Off, or Report-only) and the **Excluded identities** (Users, Groups, and Roles) in the policy. Organizations should [exclude their break-glass or emergency access accounts](../role-based-access-control/security-emergency-access.md) from these policies the same as they would in other Conditional Access policies.
 
+> [!TIP]
+> Using the **Edit** pencil at the top to modify the Microsoft-managed per-user multifactor authentication policy might result in a **failed to update** error. To work around this issue, select **Edit** under the **Excluded identities** section of the policy.
+
 Microsoft will enable these policies after no less than 90 days after they're introduced in your tenant if they're left in the **Report-only** state. Administrators might choose to enable these policies sooner if they wish.
 
 ## Policies
 
-These Microsoft-managed policies allow administrators to make simple modifications like excluding users or turning them from report-only mode to on or off. As Administrators get more comfortable with Conditional Access policy, they might choose to clone the policy and make custom versions.
+These Microsoft-managed policies allow administrators to make simple modifications like excluding users or turning them from report-only mode to on or off, however they won't be able to rename or delete the Microsoft-managed policies. As Administrators get more comfortable with Conditional Access policy, they might choose to clone the policy and make custom versions.
 
 As threats evolve over time, Microsoft might change these policies in the future to take advantage of new features and functionality to improve their function.
 
@@ -51,15 +54,15 @@ This policy targets Microsoft Entra ID P1 and P2 tenants where security defaults
 
 ### Multifactor authentication for per-user multifactor authentication users
 
-This policy covers users with [per-user MFA](/azure/active-directory/authentication/howto-mfa-userstates), a configuration that Microsoft no longer recommends. These users are targeted by Conditional Access and required to perform multifactor authentication for all cloud apps.
+This policy covers users [per-user MFA](../authentication/howto-mfa-userstates.md), a configuration that Microsoft no longer recommends. [Conditional Access](concept-conditional-access-policies.md) offers a better admin experience with many additional features. Consolidating all MFA policies in Conditional Access can help you be more targeted in requiring MFA, lowering end user friction while maintaining security posture. 
 
-This policy targets Microsoft Entra ID P1 and P2 tenants where security defaults aren't enabled and there are less than 500 per-user MFA enabled/enforced users.
+This policy targets licensed users with Microsoft Entra ID P1 and P2, where security defaults policy isn't enabled and there are less than 500 per-user MFA enabled/enforced users. 
 
 ### Multifactor authentication and reauthentication for risky sign-ins
 
-This policy covers all users and requires MFA and reauthentication when we detect high-risk sign-in. High-risk in this case means something about the way the user signed in is out of the ordinary. These high-risk sign-ins might include: travel that isn't normal, password spray attacks, or issues with a token. For more information about these risk definitions, see the article [What are risk detections](/entra/id-protection/concept-identity-protection-risks#sign-in-risk-detections).
+This policy covers all users and requires MFA and reauthentication when we detect high-risk sign-ins. High-risk in this case means something about the way the user signed in is out of the ordinary. These high-risk sign-ins might include: travel that is highly abnormal, password spray attacks, or token replay attacks. For more information about these risk definitions, see the article [What are risk detections](/entra/id-protection/concept-identity-protection-risks#sign-in-risk-detections).
 
-This policy targets Microsoft Entra ID P2 tenants where there are enough licenses for each user.
+This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled and there are enough licenses for each user. Microsoft Entra ID doesn't allow risky users to register for MFA, so to avoid locking them out of the system this policy is only available to organizations where every user is already registered for MFA. 
 
 ## How do I see the effects?
 

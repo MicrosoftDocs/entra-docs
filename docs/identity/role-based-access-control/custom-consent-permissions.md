@@ -1,17 +1,16 @@
 ---
 title: App consent permissions for custom roles in Microsoft Entra ID
 description: Preview app consent permissions for custom Microsoft Entra roles in the Microsoft Entra admin center, PowerShell, or Graph API.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: overview
 ms.date: 01/31/2023
 ms.author: rolyon
 ms.reviewer: psignoret
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # App consent permissions for custom roles in Microsoft Entra ID
@@ -27,7 +26,7 @@ This article contains the currently available app consent permissions for custom
 Use the permissions listed in this article to manage app consent policies, as well as the permission to grant consent to apps.
 
 > [!NOTE]
-> The Microsoft Entra admin center does not yet support adding the permissions listed in this article to a custom directory role definition. You must [use Azure AD PowerShell to create a custom directory role](custom-create.md#create-a-role-using-powershell) with the permissions listed in this article.
+> The Microsoft Entra admin center does not yet support adding the permissions listed in this article to a custom directory role definition. You must [use Microsoft Graph PowerShell to create a custom directory role](custom-create.md#create-a-role-using-powershell) with the permissions listed in this article.
 
 #### Granting delegated permissions to apps on behalf of self (user consent)
 

@@ -6,18 +6,12 @@ summary: Microsoft Entra Permissions Management is a cloud infrastructure entitl
 metadata:
   title: Microsoft Entra Permissions Management
   description: Strengthen your cloud environment with the key features and best practices of Permissions Management
-  services: active-directory
   author: jenniferf-skc
   manager: amycolannino
-  ms.service: active-directory 
-  ms.subservice: ciem
-  ms.workload: identity
+  ms.service: entra-permissions-management
   ms.topic: landing-page
   ms.date: 11/15/2023
   ms.author: jfields
-
-
-
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
 
 landingContent:
@@ -83,15 +77,31 @@ landingContent:
             url: how-to-configure-aws-iam.md 
           - text: Okta identity provider   
             url: how-to-configure-okta-as-an-identity-provider.md
+          - text: ServiceNow app
+            url: how-to-configure-servicenow-application.md
+          - text: Permissions Management for Defender for Cloud    
+            url: permissions-management-for-defender-for-cloud.md
+  # Card
+  - title: APIs 
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Discover, remediate, and monitor with Permissions Management APIs
+            url: https://go.microsoft.com/fwlink/?linkid=2252615
   # Card
   - title: Reference 
     linkLists:
       - linkListType: reference
         links:
+          - text: What's new
+            url: whats-new-in-permissions-management.md
           - text: FAQs
             url: faqs.md
           - text: Glossary  
             url: multi-cloud-glossary.md
+          - text: Operations reference  
+            url: ../architecture/permissions-manage-ops-guide-intro.md
+            
 # Card
   - title: Troubleshoot
     linkLists:

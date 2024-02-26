@@ -1,24 +1,16 @@
 ---
 title: Request an access package - entitlement management
 description: Learn how to use the My Access portal to request access to an access package in Microsoft Entra entitlement management.
-services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: mamtakumar
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 10/23/2023
 ms.author: owinfrey
 ms.reviewer: mamkumar
-ms.collection: M365-identity-device-management
-
-
 #Customer intent: As a requestor, I want simple steps for how to request resources I need so that I can start using the resources to perform my job.
-
 ---
 # Request access to an access package in entitlement management
 
@@ -76,7 +68,7 @@ Once you have found the access package in the My Access portal, you can submit a
 
 ### Select a policy
 
-If you request access to an access package that has multiple policies that apply, you might be asked to select a policy. For example, an access package manager might configure an access package with two policies for two groups of internal employees. The first policy might allow access for 60 days and require approval. The second policy might allow access for two days and not require approval. If you encounter this scenario, you must select the policy you want to use.
+If you request access to an access package that has multiple policies that apply, you might be asked to select a policy. For example, an access package manager might configure an access package with two policies for two groups of employees. The first policy might allow access for 60 days and require approval. The second policy might allow access for two days and not require approval. If you encounter this scenario, you must select the policy you want to use.
 
 ![My Access portal - Request access - multiple policies](./media/entitlement-management-request-access/my-access-multiple-policies.png)
 

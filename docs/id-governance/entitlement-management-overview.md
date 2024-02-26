@@ -1,37 +1,28 @@
 ---
 title: What is entitlement management?
 description: Get an overview of entitlement management and how you can use it to manage access to groups, applications, and SharePoint Online sites for internal and external users.
-services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: overview
-ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
-ms.collection: M365-identity-device-management
-ms.custom: contperf-fy21q1
-
-
-#Customer intent: As a administrator, I want learn about entitlement management so that see how I can use it to manage access to resources in my organization.
-
+#Customer intent: As an administrator, I want learn about entitlement management so that see how I can use it to manage access to resources in my organization.
 ---
 # What is entitlement management?
 
 Entitlement management is an [identity governance](identity-governance-overview.md) feature that  enables organizations to manage identity and access lifecycle at scale, by automating access request workflows, access assignments, reviews, and expiration.
 
-Employees in organizations need access to various groups, applications, and SharePoint Online sites to perform their job. Managing this access is challenging, as requirements change. New applications are added or users need more access rights.  This scenario gets more complicated when you collaborate with outside organizations. You may not know who in the other organization needs access to your organization's resources, and they won't know what applications, groups, or sites your organization is using.
+People in organizations need access to various groups, applications, and SharePoint Online sites to perform their job. Managing this access is challenging, as requirements change. New applications are added or users need more access rights.  This scenario gets more complicated when you collaborate with outside organizations. You may not know who in the other organization needs access to your organization's resources, and they won't know what applications, groups, or sites your organization is using.
 
 Entitlement management can help you more efficiently manage access to groups, applications, and SharePoint Online sites for internal users, and also for users outside your organization who need access to those resources.
 
 ## Why use entitlement management?
 
-Enterprise organizations often face challenges when managing employee access to resources such as:
+Enterprise organizations often face challenges when managing workforce access to resources such as:
 
 - Users may not know what access they should have, and even if they do, they may have difficulty locating the right individuals to approve their access
 - Once users find and receive access to a resource, they may hold on to access longer than is required for business purposes
@@ -65,7 +56,7 @@ You can also read the [common scenarios](entitlement-management-scenarios.md), o
 
 ## What are access packages and what resources can I manage with them?
 
-Entitlement management introduces the concept of an *access package*. An access package is a bundle of all the resources with the access a user needs to work on a project or perform their task. Access packages are used to govern access for your internal employees, and also users outside your organization.
+Entitlement management introduces the concept of an *access package*. An access package is a bundle of all the resources with the access a user needs to work on a project or perform their task. Access packages can be used to govern access for your employees, and also for users who originate outside your organization.
 
  Here are the types of resources you can manage user's access to, with entitlement management:
 
@@ -108,8 +99,8 @@ The following diagram shows an example of the different elements in entitlement 
 Access packages don't replace other mechanisms for access assignment.  They're most appropriate in situations such as:
 
 - Migrating access policy definitions from a third party [enterprise role management](identity-governance-organizational-roles.md) to Microsoft Entra ID.
-- Employees need time-limited access for a particular task.  For example, you might use group-based licensing and a dynamic group to ensure all employees have an Exchange Online mailbox, and then use access packages for situations in which employees need more access rights. For example, rights to read departmental resources from another department.
-- Access that requires the approval of an employee's manager or other designated individuals.
+- Users need time-limited access for a particular task.  For example, you might use group-based licensing and a dynamic group to ensure all employees have an Exchange Online mailbox, and then use access packages for situations in which employees need more access rights. For example, rights to read departmental resources from another department.
+- Access that requires the approval of a person's manager or other designated individuals.
 - Access that should be assigned automatically to people in a particular part of an organization during their time in that job role, but also available for people elsewhere in the organization, or in a business partner organization, to request.
 - Departments wish to manage their own access policies for their resources without IT involvement.
 - Two or more organizations are collaborating on a project, and as a result, multiple users from one organization will need to be brought in via Microsoft Entra B2B to access another organization's resources.

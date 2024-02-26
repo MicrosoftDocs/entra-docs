@@ -1,17 +1,17 @@
 ---
 title: About API connectors in self-service sign-up flows
 description: Use Microsoft Entra API connectors to customize and extend your self-service sign-up user flows by using web APIs. 
-services: active-directory
-ms.service: active-directory
-ms.subservice: B2B
+ 
+ms.service: entra-external-id
 ms.topic: conceptual
-ms.date: 11/28/2022
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: "it-pro"                 
-ms.collection: engagement-fy23, M365-identity-device-management
+ms.collection: M365-identity-device-management
+#customer intent: As a developer or IT administrator, I want to use API connectors to customize and extend the self-service sign-up user flows, so that I can integrate with web APIs, customize the sign-up experience, and integrate with external systems for tasks such as approval workflows, identity verification, data validation, attribute manipulation, and running custom business logic.
 ---
 
 # Use API connectors to customize and extend self-service sign-up 
@@ -41,7 +41,7 @@ There are two places in a user flow where you can enable an API connector:
 
 An API connector at this step in the sign-up process is invoked immediately after the user authenticates with an identity provider (like Google, Facebook, & Microsoft Entra ID). This step precedes the [***attribute collection page***](self-service-sign-up-user-flow.md#select-the-layout-of-the-attribute-collection-form), which is the form presented to the user to collect user attributes. This step isn't invoked if a user is registering with a local account. The following are examples of API connector scenarios you might enable at this step:
 
-- Use the email or federated identity that the user provided to look up claims in an existing system. Return these claims from the existing system, pre-fill the attribute collection page, and make them available to return in the token.
+- Use the email or federated identity that the user provided to look up claims in an existing system. Return these claims from the existing system, prefill the attribute collection page, and make them available to return in the token.
 - Implement an allow or blocklist based on social identity.
 
 ### Before creating the user

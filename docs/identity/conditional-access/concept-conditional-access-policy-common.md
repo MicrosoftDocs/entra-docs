@@ -2,8 +2,7 @@
 title: Secure your resources with Conditional Access policy templates
 description: Deploy recommended Conditional Access policies from easy to use templates.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 10/11/2023
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
-
-ms.collection: M365-identity-device-management
 ---
 # Conditional Access templates
 

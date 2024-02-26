@@ -2,16 +2,12 @@
 title: Build resilience with credential management in Microsoft Entra ID
 description: A guide for architects
  and IT administrators on building a resilient credential strategy.
-services: active-directory
 author: janicericketts
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 11/16/2022
 ms.author: jricketts
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 # Build resilience with credential management
 
@@ -46,7 +42,7 @@ In addition to individual user resiliency described above, enterprises should pl
 * Deploy [Passwordless credentials](~/identity/authentication/howto-authentication-passwordless-deployment.md) such as Windows Hello for Business, Phone Authentication, and FIDO2 security keys to reduce dependencies.
 * Deploy the [Microsoft Authenticator App](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) as a second factor.
 * Turn on [password hash synchronization](~/identity/hybrid/connect/whatis-phs.md) for hybrid accounts that are synchronized from Windows Server Active Directory. This option can be enabled alongside federation services such as Active Directory Federation Services (AD FS) and provides a fallback in case the federation service fails.
-* [Analyze usage of multifactor authentication methods](/samples/azure-samples/azure-mfa-authentication-method-analysis/azure-mfa-authentication-method-analysis/) to improve user experience.
+* [Analyze usage of multifactor authentication methods](~/identity/authentication/howto-authentication-methods-activity.md) to improve user experience.
 * [Implement a resilient access control strategy](~/identity/authentication/concept-resilient-controls.md)
 
 ## Next steps

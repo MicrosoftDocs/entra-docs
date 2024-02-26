@@ -1,21 +1,15 @@
 ---
 title: What are access reviews? - Microsoft Entra
 description: Using access reviews, you can control group membership and application access to meet governance, risk management, and compliance initiatives in your organization.
-services: active-directory
-documentationcenter: ''
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: access-reviews
 ms.topic: overview
-ms.subservice: compliance
 ms.date: 06/28/2023
 ms.author: owinfrey
 ms.reviewer: mwahl
-ms.collection: M365-identity-device-management
-ms.custom: contperf-fy21q1
 ---
 
 # What are access reviews?
@@ -43,7 +37,7 @@ Microsoft Entra ID enables you to collaborate with users from inside your organi
 - **When a group is used for a new purpose:** If you have a group that is going to be synced to Microsoft Entra ID, or if you plan to enable the application Salesforce for everyone in the Sales team group, it would be useful to ask the group owner to review the group membership prior to the group being used in a different risk content.
 - **Business critical data access:** for certain resources, such as [business critical applications](identity-governance-applications-prepare.md), it might be required as part of compliance processes to ask people to regularly reconfirm and give a justification on why they need continued access.
 - **To maintain a policy's exception list:** In an ideal world, all users would follow the access policies to secure access to your organization's resources. However, sometimes there are business cases that require you to make exceptions. As the IT admin, you can manage this task, avoid oversight of policy exceptions, and provide auditors with proof that these exceptions are reviewed regularly.
-- **Ask group owners to confirm they still need guests in their groups:** Employee access might be automated with some on premises Identity and Access Management (IAM), but not invited guests. If a group gives guests access to business sensitive content, then it's the group owner's responsibility to confirm the guests still have a legitimate business need for access.
+- **Ask group owners to confirm they still need guests in their groups:** Employee access might be automated with other identity and access management features such lifecycle workflows based on data from an HR source, but not invited guests. If a group gives guests access to business sensitive content, then it's the group owner's responsibility to confirm the guests still have a legitimate business need for access.
 - **Have reviews recur periodically:** You can set up recurring access reviews of users at set frequencies such as weekly, monthly, quarterly or annually, and the reviewers are notified at the start of each review. Reviewers can approve or deny access with a friendly interface and with the help of smart recommendations.
 
 >[!NOTE]
@@ -51,12 +45,12 @@ Microsoft Entra ID enables you to collaborate with users from inside your organi
 
 ## Where do you create reviews?
 
-Depending on what you want to review, you'll either create your access review in access reviews, Microsoft Entra enterprise apps (in preview), PIM, or entitlement management.
+Depending on what you want to review, you'll either create your access review in access reviews, Microsoft Entra enterprise apps, PIM, or entitlement management.
 
 | Access rights of users | Reviewers can be | Review created in | Reviewer experience |
 | --- | --- | --- | --- |
 | Security group members</br>Office group members | Specified reviewers</br>Group owners</br>Self-review | access reviews</br>Microsoft Entra groups | Access panel |
-| Assigned to a connected app | Specified reviewers</br>Self-review | access reviews</br>Microsoft Entra enterprise apps (in preview) | Access panel |
+| Assigned to a connected app | Specified reviewers</br>Self-review | access reviews</br>Microsoft Entra enterprise apps | Access panel |
 | Microsoft Entra role | Specified reviewers</br>Self-review | [PIM](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra Admin Center |
 | Azure resource role | Specified reviewers</br>Self-review | [PIM](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra Admin Center |
 | Access package assignments | Specified reviewers</br>Group members</br>Self-review | entitlement management | Access panel |

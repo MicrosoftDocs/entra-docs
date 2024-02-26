@@ -1,20 +1,15 @@
 ---
 title: Managed identities for Azure resources
 description: An overview of the managed identities for Azure resources.
-services: active-directory
-documentationcenter:
 author: barclayn
 manager: amycolannino
-editor:
 ms.assetid: 0232041d-b8f5-4bd2-8d11-27999ad69370
-ms.service: active-directory
-ms.subservice: msi
-ms.devlang:
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: overview
-ms.custom: mvc
 ms.date: 01/23/2023
 ms.author: barclayn
-ms.collection: M365-identity-device-management
+
 
 #Customer intent: As a developer, I'd like to securely manage the credentials that my application uses for authenticating to cloud services without having the credentials in my code or checked into source control.
 ---
@@ -77,7 +72,7 @@ You can use managed identities by following the steps below:
 
 Managed identities for Azure resources can be used to authenticate to services that support Microsoft Entra authentication. For a list of supported Azure services, see [services that support managed identities for Azure resources](./managed-identities-status.md).
 
-## Which operations can I perform using managed identities?
+## Which operations can I perform on managed identities?
 
 Resources that support system assigned managed identities allow you to:
 

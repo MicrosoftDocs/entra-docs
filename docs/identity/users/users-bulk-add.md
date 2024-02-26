@@ -1,23 +1,21 @@
 ---
 title: Bulk create users in the Azure portal
-description: Add users in bulk in the Azure portal in Microsoft Entra ID
-services: active-directory 
+description: Add users in bulk in Microsoft Entra ID
+
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
 ms.date: 09/08/2023
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.custom: it-pro
 ms.reviewer: jeffsta
-ms.collection: M365-identity-device-management
 ---
 
 # Bulk create users in Microsoft Entra ID
 
-Microsoft Entra ID, part of Microsoft Entra, supports bulk user create and delete operations and supports downloading lists of users. Just fill out comma-separated values (CSV) template you can download from the Azure portal.
+Microsoft Entra ID, part of Microsoft Entra, supports bulk user create and delete operations and supports downloading lists of users. Just fill out comma-separated values (CSV) template you can download from Microsoft Entra ID.
 
 ## Required permissions
 
@@ -67,7 +65,7 @@ The rows in a downloaded CSV template are as follows:
 
 1. On the **Bulk create user** page, under Upload your CSV file, browse to the file. When you select the file and click **Submit**, validation of the CSV file starts.
 1. After the file contents are validated, you’ll see **File uploaded successfully**. If there are errors, you must fix them before you can submit the job.
-1. When your file passes validation, select **Submit** to start the Azure bulk operation that imports the new users.
+1. When your file passes validation, select **Submit** to start the bulk operation that imports the new users.
 1. When the import operation completes, you'll see a notification of the bulk operation job status.
 
 If there are errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names.
@@ -82,7 +80,7 @@ You can see the status of all of your pending bulk requests in the **Bulk operat
 
 Next, you can check to see that the users you created exist in the Microsoft Entra organization either in the Azure portal or by using PowerShell.
 
-## Verify users in the Azure portal
+## Verify users
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Select Microsoft Entra ID.

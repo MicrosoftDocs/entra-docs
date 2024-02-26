@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Sign In Enterprise for automatic host provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision hosts from Microsoft Entra ID to Sign In Enterprise.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: beatrizd
 ms.assetid: 9032d0da-f472-4e8d-a14d-d84f472411ee
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 04/27/2023
 ms.author: thwimmer

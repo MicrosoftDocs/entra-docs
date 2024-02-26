@@ -19,6 +19,8 @@
     href: tutorial-configure-custom-password-protection.md
   - name: Enable risk-based sign-in protection
     href: tutorial-risk-based-sspr-mfa.md
+  - name: Enable security notifications
+    href: tutorial-enable-security-notifications-for-audit-logs.md
 - name: Concepts
   expanded: true
   items:
@@ -38,10 +40,18 @@
       href: concept-authentication-phone-options.md
     - name: Security questions
       href: concept-authentication-security-questions.md
-  - name: Authentication strengths
+  - name: Conditional Access authentication strength
     items:
     - name: Overview
       href: concept-authentication-strengths.md
+    - name: How authentication strength works
+      href: concept-authentication-strength-how-it-works.md
+    - name: Built-in authentication strengths
+      href: concept-authentication-strengths.md
+    - name: Custom authentication strengths
+      href: concept-authentication-strength-advanced-options.md
+    - name: External users
+      href: concept-authentication-strength-external-users.md
     - name: Troubleshoot
       href: troubleshoot-authentication-strengths.md
   - name: Self-service password reset
@@ -54,6 +64,8 @@
       href: concept-sspr-policy.md
     - name: Licenses
       href: concept-sspr-licensing.md
+    - name: Deployment guide
+      href: concept-sspr-deploy.md
   - name: Multifactor authentication
     items:
     - name: How MFA works
@@ -76,8 +88,6 @@
       href: /microsoft-365/admin/security-and-compliance/set-up-multi-factor-authentication
     - name: FAQ
       href: multi-factor-authentication-faq.yml
-    - name: Operator assistance
-      href: concept-authentication-operator-assistance.md
   - name: Password protection
     items:
     - name: Combined password policy check 
@@ -172,8 +182,6 @@
     href: howto-authentication-use-email-signin.md
   - name: Self-service password reset
     items:
-    - name: Deployment guide
-      href: howto-sspr-deployment.md
     - name: User customization options
       href: howto-sspr-customization.md
     - name: Pre-register authentication data
@@ -184,8 +192,6 @@
     items:
     - name: Deployment guide
       href: howto-mfa-getstarted.md
-    - name: Configure MFA using the portal guide
-      href: multi-factor-authentication-wizard.md
     - name: Configure settings
       href: howto-mfa-mfasettings.md
     - name: Configure users
@@ -324,7 +330,7 @@
     href: /powershell/azure/
   - name: Authentication methods APIs - Microsoft Graph
     href: /graph/api/resources/authenticationmethods-overview
-  - name: Authentication strengths APIs - Microsoft Graph (preview)
+  - name: Authentication strengths APIs - Microsoft Graph 
     href: /graph/api/resources/authenticationstrengths-overview
   - name: Authentication methods policy - Microsoft Graph
     href: /graph/api/resources/authenticationmethodspolicies-overview

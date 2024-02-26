@@ -1,18 +1,15 @@
 ---
 title: Acquire and cache tokens with Microsoft Authentication Library (MSAL)
 description: Learn about acquiring and caching tokens using MSAL.
-services: active-directory
 author: cilwerner
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.workload: identity
-ms.date: 02/27/2023
 ms.author: cwerner
+ms.custom: has-adal-ref 
+ms.date: 02/27/2023
 ms.reviewer: saeeda
-ms.custom: aaddev, has-adal-ref, engagement-fy23
+ms.service: identity-platform
+
+ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn about acquiring and caching tokens so my app can support authentication and authorization.
 ---
 
@@ -88,7 +85,7 @@ In public client applications like desktop and mobile apps, you can:
 
 - Get tokens interactively by having the user sign in through a UI or pop-up window.
 - Get a token silently for the signed-in user using [integrated Windows authentication](msal-authentication-flows.md#integrated-windows-authentication-iwa) (IWA/Kerberos) if the desktop application is running on a Windows computer joined to a domain or to Azure.
-- Get a token with a [username and password](msal-authentication-flows.md#usernamepassword-ropc) in .NET framework desktop client applications (not recommended). Do not use username/password in confidential client applications.
+- Get a token with a [username and password](msal-authentication-flows.md#usernamepassword-ropc) in .NET Framework desktop client applications (not recommended). Do not use username/password in confidential client applications.
 - Get a token through the [device code flow](msal-authentication-flows.md#device-code) in applications running on devices that don't have a web browser. The user is provided with a URL and a code, who then goes to a web browser on another device and enters the code and signs in. Microsoft Entra ID then sends a token back to the browser-less device.
 
 ### Confidential client applications

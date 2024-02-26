@@ -2,18 +2,15 @@
 title: Plan a Microsoft Entra Conditional Access deployment
 description: Learn how to design Conditional Access policies and effectively deploy in your organization.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 03/09/2023
+ms.date: 01/03/2024
 
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
 ms.reviewer: joflore
-
-ms.collection: M365-identity-device-management
 ---
 # Plan a Conditional Access deployment
 
@@ -25,7 +22,7 @@ With this evaluation and enforcement, Conditional Access defines the basis of [M
 
 ![Diagram showing a high level Conditional Access overview](./media/plan-conditional-access/conditional-access-overview-how-it-works.png)
 
-Microsoft provides [security defaults](~/fundamentals/security-defaults.md) that ensure a basic level of security enabled in tenants that don't have Microsoft Entra ID P1 or P2. With Conditional Access, you can create policies that provide the same protection as security defaults, but with granularity. Conditional Access and security defaults aren't meant to be combined as creating Conditional Access policies will prevent you from enabling security defaults.
+Microsoft provides [security defaults](~/fundamentals/security-defaults.md) that ensure a basic level of security enabled in tenants that don't have Microsoft Entra ID P1 or P2. With Conditional Access, you can create policies that provide the same protection as security defaults, but with granularity. Conditional Access and security defaults aren't meant to be combined as creating Conditional Access policies prevent you from enabling security defaults.
 
 ## Prerequisites
 
@@ -38,16 +35,16 @@ Microsoft provides [security defaults](~/fundamentals/security-defaults.md) that
    * Create or modify Conditional Access policies 
       * [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)
       * [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator)
-* A test user (non-administrator) that allows you to verify policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
-* A group that the non-administrator user is a member of. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.md).
+* A test user (not an administrator) that allows you to verify policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
+* A group that the test user is a member of. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.md).
 
 ### Communicating change
 
-Communication is critical to the success of any new functionality. You should proactively communicate with your users how their experience will change, when it will change, and how to get support if they experience issues.
+Communication is critical to the success of any new functionality. You should proactively communicate with your users how their experience changes, when it changes, and how to get support if they experience issues.
 
 ## Conditional Access policy components
 
-Conditional Access policies answer questions about who can access your resources, what resources they can access, and under what conditions. Policies can be designed to grant access, limit access with session controls, or to block access. You [build a Conditional Access policy](concept-conditional-access-policies.md) by defining the if-then statements like: 
+Conditional Access policies answer questions about who can access your resources, what resources they can access, and under what conditions. Policies can be designed to grant access, limit access with session controls, or to block access. You [build a Conditional Access policy](concept-conditional-access-policies.md) by defining the if-then statements like:
 
 | If an assignment is met | Apply the access controls |
 | --- | --- |
@@ -65,23 +62,23 @@ Here are some common questions about [Assignments and Access Controls](concept-c
 
 #### Users or workload identities
 
-* Which users, groups, directory roles, or workload identities will be included in or excluded from the policy?
+* Which users, groups, directory roles, or workload identities are included in or excluded from the policy?
 * What emergency access accounts or groups should be excluded from policy?
 
 #### Cloud apps or actions
 
 Will this policy apply to any application, user action, or authentication context? If yes-
 
-*	What application(s) or services will the policy apply to?
-*	What user actions will be subject to this policy?
-*	What authentication contexts will this policy be applied to?
+* What application(s) or services will the policy apply to?
+* What user actions are subject to this policy?
+* What authentication contexts will this policy be applied to?
 
 #### Conditions
 
-* Which device platforms will be included in or excluded from the policy?
+* Which device platforms are included in or excluded from the policy?
 * What are the organization’s known network locations?
-   * What locations will be included in or excluded from the policy?
-* What client app types will be included in or excluded from the policy?
+   * What locations are included in or excluded from the policy?
+* What client app types are included in or excluded from the policy?
 * Do you need to target specific device attributes? 
 * If using [Identity Protection](~/id-protection/concept-identity-protection-risks.md), do you want to incorporate sign-in or user risk?
 
@@ -117,20 +114,20 @@ Do you want to enforce any of the following access controls on cloud apps?
 
 ### Combining policies
 
-When creating and assigning policies, you must take into account how access tokens work. [Access tokens](~/identity-platform/access-tokens.md) grant or deny access based on whether the users making a request have been authorized and authenticated. If the requestor can prove they're who they claim to be, they can access the protected resources or functionality. 
+When creating and assigning policies, you must take into account how access tokens work. [Access tokens](~/identity-platform/access-tokens.md) grant or deny access based on whether the users making a request have been authorized and authenticated. If the requestor can prove they're who they claim to be, they can access the protected resources or functionality.
 
-**Access tokens are issued by default if a Conditional Access policy condition does not trigger an access control**. 
+**Access tokens are issued by default if a Conditional Access policy condition does not trigger an access control**.
 
-This policy doesn’t prevent the app having its own ability to block access. 
+This policy doesn’t prevent the app having its own ability to block access.
 
-For example, consider a simplified policy example where: 
+For example, consider a simplified policy example where:
 
 Users: FINANCE GROUP <br>
 Accessing: PAYROLL APP <br>
 Access control: Multifactor authentication<br>
   
-- User A is in the FINANCE GROUP, they're required to perform multifactor authentication to access the **PAYROLL APP**.
-- User B is **not** in the FINANCE GROUP, is issued an access token and is allowed to access the **PAYROLL APP** without performing multifactor authentication.
+* User A is in the FINANCE GROUP, they're required to perform multifactor authentication to access the **PAYROLL APP**.
+* User B is **not** in the FINANCE GROUP, is issued an access token and is allowed to access the **PAYROLL APP** without performing multifactor authentication.
 
 To ensure users outside of finance group can't access the payroll app, a separate policy could be created to block all other users, like the following simplified policy:
 
@@ -155,19 +152,22 @@ Taking into account our learnings in the use of Conditional Access and supportin
 
 Creating a policy for each app isn’t efficient and leads to difficult administration. Conditional Access has a limit of 195 policies per-tenant. We recommend that you **analyze your apps and group them into applications that have the same resource requirements for the same users**. For example, if all Microsoft 365 apps or all HR apps have the same requirements for the same users, create a single policy and include all the apps to which it applies.
 
+Conditional Access policies are contained in a JSON file and that file is bound by a size limit we don't expect a single policy to grow beyond. If you use a long list of GUIDs in your policy, you might hit this limit. If you encounter these limits, we recommend alternatives like:
+
+* [Use groups or roles to include or exclude Users instead of listing each user individually](concept-conditional-access-users-groups.md).
+* [Use filter for applications to include or exclude applications instead of individually specifying them](concept-filter-for-applications.md).
+
 ### Configure report-only mode
 
 By default, each policy created from template is created in report-only mode. We recommended organizations test and monitor usage, to ensure the intended result, before turning on each policy.
 
 [Enable policies in report-only mode](howto-conditional-access-insights-reporting.md). Once you save a policy in report-only mode, you can see the effect on real-time sign-ins in the sign-in logs. From the sign-in logs, select an event and navigate to the **Report-only** tab to see the result of each report-only policy.
 
-You can view the aggregate affects of your Conditional Access policies in the **Insights and Reporting workbook**. To access the workbook, you need an Azure Monitor subscription and you'll need to [stream your sign-in logs to a log analytics workspace](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
+You can view the aggregate affects of your Conditional Access policies in the **Insights and Reporting workbook**. To access the workbook, you need an Azure Monitor subscription and you need to [stream your sign-in logs to a log analytics workspace](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
 
 ### Plan for disruption
 
-If you rely on a single access control such as multifactor authentication or a network location to secure your IT systems, you're susceptible to access failures if that single access control becomes unavailable or misconfigured. 
-
-**To reduce the risk of lockout during unforeseen disruptions, [plan resilience strategies](~/identity/authentication/concept-resilient-controls.md) for your organization**.
+To reduce the risk of lockout during unforeseen disruptions, [plan resilience strategies](~/identity/authentication/concept-resilient-controls.md) for your organization.
 
 ### Set naming standards for your policies
 
@@ -199,7 +199,7 @@ In addition to your active policies, implement disabled policies that act as sec
 
 * EM01 - ENABLE IN EMERGENCY: MFA Disruption [1/4] - Exchange SharePoint: Require Microsoft Entra hybrid join For VIP users.
 
-### Block countries/regions from which you never expect a sign-in.
+### Block countries/regions from which you never expect a sign-in
 
 Microsoft Entra ID allows you to create [named locations](location-condition.md). Create the list of countries/regions that are allowed, and then create a network block policy with these "allowed countries/regions" as an exclusion. This is less overhead for customers who are based in smaller geographic locations. **Be sure to exempt your emergency access accounts from this policy**.
 
@@ -215,12 +215,12 @@ Refer to [Conditional Access policy templates](concept-conditional-access-policy
 
 We recommend that you use the following tools to evaluate the effect of your policies both before and after making changes. A simulated run gives you a good idea of the effect a Conditional Access policy has, it doesn't replace an actual test run in a properly configured development environment.
 
-- [Report-only mode](concept-conditional-access-report-only.md) and the Conditional Access insights and Reporting workbook.
-- The [What If tool](concept-conditional-access-policies.md)
+* [Report-only mode](concept-conditional-access-report-only.md) and the Conditional Access insights and Reporting workbook.
+* The [What If tool](concept-conditional-access-policies.md)
 
 ### Test your policies
 
-**Ensure you test the exclusion criteria of a policy**. For example, you may exclude a user or group from a policy that requires MFA. Test if the excluded users are prompted for MFA, because the combination of other policies might require MFA for those users.
+**Ensure you test the exclusion criteria of a policy**. For example, you might exclude a user or group from a policy that requires MFA. Test if the excluded users are prompted for MFA, because the combination of other policies might require MFA for those users.
 
 Perform each test in your test plan with test users. The test plan is important to have a comparison between the expected results and the actual results. The following table outlines some example test cases. Adjust the scenarios and expected results based on how your Conditional Access policies are configured.
 
@@ -263,7 +263,7 @@ If the user received a message with a More details link, they can collect most o
 
 ![Screenshots of an example error message and more details](media/plan-conditional-access/cant-get-to-app.png)
 
-Once you've collected the information, See the following resources:
+Once you collect the information, see the following resources:
 
 * [Sign-in problems with Conditional Access](troubleshoot-conditional-access.md) – Understand unexpected sign-in outcomes related to Conditional Access using error messages and Microsoft Entra sign-in log.
 * [Using the What-If tool](troubleshoot-conditional-access-what-if.md) - Understand why a policy was or wasn't applied to a user in a specific circumstance or if a policy would apply in a known state.

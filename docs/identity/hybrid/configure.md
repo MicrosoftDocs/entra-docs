@@ -1,22 +1,19 @@
 ---
-title: 'Configure your integrating with Active Directory'
+title: 'Configure your integration with Active Directory'
 description: This article describes how you can configure the synchronization tools with Active Directory.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
-# Configure your integrating with Active Directory
+# Configure your integration with Active Directory
 
 
 How you configure your synchronization, depends on which synchronization tool you're using and what your business goals are.  Use the tables to determine which features you would

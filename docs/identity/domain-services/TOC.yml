@@ -104,7 +104,7 @@
         - name: Secure remote access to VMs
           href: secure-remote-vm-access.md
         - name: Security baseline
-          href: /security/benchmark/azure/baselines/azure-active-directory-domain-services-security-baseline?toc=/entra/identity/domain-services/toc.json&bc=/entra/identity/domain-services/breadcrumb/toc.json          
+          href: /security/benchmark/azure/baselines/azure-active-directory-domain-services-security-baseline?context=/domain-services/context/domain-services-context.json    
     - name: Domain-join VMs
       items:
         - name: Windows Server VM from template

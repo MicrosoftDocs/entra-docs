@@ -1,19 +1,16 @@
 ---
 title: Custom claims provider overview
-titleSuffix: Microsoft identity platform
 description: Conceptual article describing the custom claims provider as part of the custom authentication extension framework.
-services: active-directory
 author: cilwerner
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.workload: identity
-ms.topic: conceptual
-ms.date: 04/10/2023
 ms.author: cwerner
+ms.custom: 
+ms.date: 04/10/2023
 ms.reviewer: JasSuri
-ms.custom: aaddev 
+ms.service: identity-platform
+
+ms.topic: conceptual
+titleSuffix: Microsoft identity platform
 #Customer intent: As a developer, I want to learn about custom claims provider so that I can augment tokens with claims from an external identity system or role management system.
 ---
 
@@ -38,6 +35,11 @@ Use a custom claims provider for the following scenarios:
 An event listener is a procedure that waits for an event to occur. The custom authentication extension uses the **token issuance start** event listener. The  event is triggered when a token is about to be issued to your application. When the event is triggered the custom authentication extension REST API is called to fetch attributes from external systems.
 
 For an example using a custom claims provider with the **token issuance start** event listener, check out the [get started with custom claims providers](custom-extension-get-started.md) article.
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=TokenAugmentation)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Add claims to security tokens from a REST API” use case.
 
 ## Next steps
 

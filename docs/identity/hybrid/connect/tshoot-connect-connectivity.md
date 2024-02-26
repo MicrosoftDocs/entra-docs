@@ -1,20 +1,18 @@
 ---
 title: 'Microsoft Entra Connect: Troubleshoot Microsoft Entra connectivity issues'
 description: Learn how to troubleshoot connectivity issues with Microsoft Entra Connect.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-editor: ''
 
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ms.custom: has-adal-ref, has-azure-ad-ps-ref
 ---
 # Troubleshoot Microsoft Entra Connect connectivity issues
@@ -206,58 +204,21 @@ Microsoft Entra Connect failed to authorize the user to perform an action in Mic
 
 The MFA challenge was canceled.
 
-<div id="connect-msolservice-failed">
-<!--
-  Empty div just to act as an alias for the "Connect To MSOnline Failed" header
-  because we used the mentioned id in the code to jump to this section.
--->
-</div>
-
 ### Connect to MSOnline failed
 
 Authentication was successful, but Azure AD PowerShell has an authentication problem.
-
-<div id="get-msoluserrole-failed">
-<!--
-  Empty div just to act as an alias for the "Azure AD Global Administrator Role Needed" header
-  because we used the mentioned id in the code to jump to this section.
--->
-</div>
-
-<a name='azure-ad-global-administrator-role-needed'></a>
 
 ### Microsoft Entra Global Administrator role needed
 
 The user was authenticated successfully, but the user isn't assigned the Global Administrator role. You can [assign the Global Administrator role](~/identity/role-based-access-control/permissions-reference.md) to the user.
 
-<div id="privileged-identity-management">
-<!--
-  Empty div just to act as an alias for the "Privileged Identity Management Enabled" header
-  because we used the mentioned id in the code to jump to this section.
--->
-</div>
-
 ### Privileged Identity Management enabled
 
 Authentication was successful, but Privileged Identity Management has been enabled and the user currently isn't a Hybrid Identity Administrator. For more information, see [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-getting-started.md).
 
-<div id="get-msolcompanyinformation-failed">
-<!--
-  Empty div just to act as an alias for the "Company Information Unavailable" header
-  because we used the mentioned id in the code to jump to this section.
--->
-</div>
-
 ### Company information unavailable
 
 Authentication was successful, but company information couldn't be retrieved from Microsoft Entra ID.
-
-<div id="get-msoldomain-failed">
-<!--
-  Empty div just to act as an alias for the "Domain Information Unavailable" header
-  because we used the mentioned id in the code to jump to this section.
--->
-</div>
 
 ### Domain information unavailable
 

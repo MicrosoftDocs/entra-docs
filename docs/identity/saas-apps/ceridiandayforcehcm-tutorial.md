@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra integration with Ceridian Dayforce HCM'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Ceridian Dayforce HCM.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -76,7 +76,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Ceridian Dayforce HCM Domain and URLs single sign-on information](common/sp-identifier-reply.png)
 
-    a. In the **Sign On URL** textbox, type the URL used by your users to sign-on to your Ceridian Dayforce HCM application.
+    a. In the **Sign On URL** textbox, type the URL used by your users to sign on to your Ceridian Dayforce HCM application.
 
     | Environment | URL |
     | :-- | :-- |
@@ -98,7 +98,7 @@ Follow these steps to enable Microsoft Entra SSO.
     | For test | `https://fs-test.dayforcehcm.com/sp/ACS.saml2` |
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Sign-On URL, Identifier and Reply URL. Contact [Ceridian Dayforce HCM Client support team](https://www.ceridian.com/support) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values are not real. Update these values with the actual Sign-On URL, Identifier and Reply URL. Contact [Ceridian Dayforce HCM Client support team](https://www.dayforce.com/resources/help-center) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 5. Ceridian Dayforce HCM application expects the SAML assertions in a specific format. Configure the following claims for this application. You can manage the values of these attributes from the **User Attributes** section on application integration page. On the **Set up Single Sign-On with SAML** page, click **Edit** button to open **User Attributes** dialog.
 
@@ -168,11 +168,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ### Configure Ceridian Dayforce HCM SSO
 
-To configure single sign-on on **Ceridian Dayforce HCM** side, you need to send the downloaded **Metadata XML** and appropriate copied URLs from the application configuration to [Ceridian Dayforce HCM support team](https://www.ceridian.com/support). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Ceridian Dayforce HCM** side, you need to send the downloaded **Metadata XML** and appropriate copied URLs from the application configuration to [Ceridian Dayforce HCM support team](https://www.dayforce.com/resources/help-center). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Ceridian Dayforce HCM test user
 
-In this section, you create a user called Britta Simon in Ceridian Dayforce HCM. Work with [Ceridian Dayforce HCM support team](https://www.ceridian.com/support) to add the users in the Ceridian Dayforce HCM platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Ceridian Dayforce HCM. Work with [Ceridian Dayforce HCM support team](https://www.dayforce.com/resources/help-center) to add the users in the Ceridian Dayforce HCM platform. Users must be created and activated before you use single sign-on.
 
 ### Test SSO 
 

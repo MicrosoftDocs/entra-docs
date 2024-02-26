@@ -12,18 +12,18 @@
   items:
   - name: Quick setup
     href: verifiable-credentials-configure-tenant-quick.md
-  - name: Manual setup
+  - name: Advanced setup
     href: verifiable-credentials-configure-tenant.md
   - name: Issue a verifiable credential
     href: verifiable-credentials-configure-issuer.md
   - name: Verify a verifiable credential
     href: verifiable-credentials-configure-verifier.md
-  - name: Using the Authenticator
-    href: using-authenticator.md
-  - name: Using the Wallet Library
-    href: using-wallet-library.md
+  - name: Using FaceCheck
+    href: using-facecheck.md
   - name: LinkedIn employment verification
     href: linkedin-employment-verification.md
+  - name: Using Verified ID with Entitlement Management
+    href: ~/id-governance/entitlement-management-verified-id-settings.md
 - name: Concepts
   expanded: true
   items:
@@ -66,8 +66,14 @@
     href: how-to-register-didwebsite.md
   - name: Verify domain ownership
     href: how-to-dnsbind.md
+  - name: Rotate signing keys
+    href: how-to-rotate-keys.md
   - name: Opt out of Verified ID service
     href: how-to-opt-out.md
+  - name: Using the Authenticator
+    href: using-authenticator.md
+  - name: Using the Wallet Library
+    href: using-wallet-library.md
   - name: Using the Request Service REST API
     href: get-started-request-api.md
   - name: Partner gallery

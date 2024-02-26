@@ -1,19 +1,16 @@
 ---
 title: "Quickstart: Sign in users and call the Microsoft Graph API from an ASP.NET web app"
 description: Download and run a code sample that shows how an ASP.NET web app can sign in Microsoft Entra users.
-services: active-directory
 author: cilwerner
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: quickstart
-ms.date: 07/28/2023
 ms.author: cwerner
-
+ms.custom: devx-track-csharp,  scenarios:getting-started, languages:ASP.NET
+ms.date: 07/28/2023
 ms.reviewer: jmprieur
-ms.custom: "devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET, contperf-fy21q1"
-# Customer intent: As an application developer, I want to see a sample ASP.NET web app that can sign in Microsoft Entra users.
+ms.service: identity-platform
+
+ms.topic: quickstart
+#Customer intent: As an application developer, I want to see a sample ASP.NET web app that can sign in Microsoft Entra users.
 ---
 
 # Quickstart: Sign in users and call the Microsoft Graph API from an ASP.NET web app
@@ -187,4 +184,4 @@ You can call Microsoft Graph from the controller by getting the instance of Grap
 For a complete step-by-step guide on building applications and new features, including a full explanation of this quickstart, try out the ASP.NET tutorial.
 
 > [!div class="nextstepaction"]
-> [Add sign-in to an ASP.NET web app](./web-app-tutorial-01-register-application.md)
+> [Add sign-in to an ASP.NET web app](tutorial-web-app-dotnet-register-app.md)

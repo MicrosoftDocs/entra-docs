@@ -1,13 +1,13 @@
 ---
 title: 'Configure an OpenID Connect OAuth application from Microsoft Entra app gallery'
 description: Steps to Configure an OpenID Connect OAuth application from Microsoft Entra app gallery.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes

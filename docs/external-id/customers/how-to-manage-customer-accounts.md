@@ -1,12 +1,12 @@
 ---
 title: Add and manage customer accounts
 description: Learn how to add and manage customer accounts in Microsoft Entra ID for customers.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: ciam
+ms.service: entra-external-id
+ 
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 07/12/2023
 ms.author: mimart
@@ -17,7 +17,7 @@ ms.custom: it-pro
 
 There might be scenarios in which you want to manually create customer accounts in your Microsoft Entra customer tenant. Although customer accounts are most commonly created when users sign up to use one of your applications, you can create them programmatically and by using the Microsoft Entra admin center. This article focuses on the Microsoft Entra admin center method of user creation and deletion.
 
-To add or delete users, your account must be assigned the *User administrator* or *Global administrator* role.
+To add or delete users, your account must be assigned the *User Administrator* or *Global Administrator* role.
 
 ## Prerequisites
 

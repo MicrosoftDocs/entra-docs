@@ -1,17 +1,19 @@
 ---
 title: Configure F5 BIG-IP Easy Button for SSO to Oracle EBS
 description: Learn to implement SHA with header-based SSO to Oracle EBS using F5 BIG-IP Easy Button Guided Configuration
-services: active-directory
+
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 03/23/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT admin responsible for securing Oracle E-Business Suite using Microsoft Entra ID, I want to configure F5 BIG-IP Easy Button for SSO to Oracle EBS, so that I can improve application security posture and enable SSO between Microsoft Entra ID and BIG-IP published services.
 ---
 
 # Tutorial: Configure F5 BIG-IP Easy Button for SSO to Oracle EBS
@@ -131,13 +133,8 @@ Create a tenant app registration to authorize the Easy Button access to Graph. T
 2. Start the **Easy Button** template.
 3. Navigate to **Access > Guided Configuration > Microsoft Integration**.
 4. Select **Microsoft Entra Application**.
-
-   ![Screenshot of the Microsoft Entra Application option.](./media/f5-big-ip-easy-button-ldap/easy-button-template.png)
-
 5. Review the configuration options.
 6. Select **Next**.
-
-   ![Screenshot of configuration options and the Next option.](./media/f5-big-ip-easy-button-ldap/config-steps.png)
 
 7. Use the graphic to help publish your application.
 
@@ -194,16 +191,11 @@ Easy Button has application templates for Oracle PeopleSoft, Oracle E-Business S
 1. Select **Oracle E-Business Suite**.
 2. Select **Add**.
 
-   ![Screenshot of the Oracle E-Business Suite option under Azure Configuration.](./media/f5-big-ip-oracle/azure-configuration-add-big-ip-application.png)
-
 #### Azure Configuration
 
 1. Enter a **Display Name** for the app BIG-IP creates in your Microsoft Entra tenant, and the icon on MyApps.
 2. In **Sign On URL (optional)**, enter the EBS application public FQDN.
 3. Enter the default path for the Oracle EBS homepage.
-
-    ![Screenshot for Azure configuration add display info](./media/f5-big-ip-oracle/azure-configuration-add-display-info.png)
-
 3. Next to the **Signing Key** and **Signing Certificate**, select the **refresh** icon.
 4. Locate the certificate you imported.
 5. In **Signing Key Passphrase**, enter the certificate password.

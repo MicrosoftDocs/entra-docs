@@ -3,17 +3,16 @@
 title: Add Microsoft Entra account as an identity provider
 description: Use Microsoft Entra ID to enable an external user (guest) to sign in to your Microsoft Entra apps with their Microsoft Entra work or school account.
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: B2B
+ 
+ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 03/27/2023
+ms.date: 01/23/2024
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.collection: M365-identity-device-management
-ms.custom: engagement-fy23
-# Customer intent: As a tenant administrator, I want to add Microsoft Entra ID as an identity provider for external guest users.
+ms.custom:  
+#customer intent: As a B2B collaboration administrator, I want to understand the built-in capability for using Microsoft Entra ID as an identity provider for external guests, so that guest users can use their Microsoft Entra ID work or school account to sign in without additional configuration.
 ---
 
 # Add Microsoft Entra ID as an identity provider for External ID
@@ -24,15 +23,13 @@ Microsoft Entra ID is available as an identity provider option for B2B collabora
 
 ## Guest sign-in using Microsoft Entra accounts
 
-If you want to enable guest users to sign in with their Microsoft Entra account, you can use either the invitation flow or a self-service sign-up user flow. No additional configuration is required.
-
-:::image type="content" source="media/default-account/default-account-identity-provider.png" alt-text="Screenshot of Microsoft Entra account in the identity provider list." lightbox="media/default-account/default-account-identity-provider.png":::
+If you want to enable guest users to sign in with their Microsoft Entra account, you can use either the invitation flow or a self-service sign-up user flow. No further configuration is required.
 
 <a name='azure-ad-account-in-the-invitation-flow'></a>
 
 ### Microsoft Entra account in the invitation flow
 
-When you [invite a guest user](add-users-administrator.md) to B2B collaboration, you can specify their Microsoft Entra account as the **Email address** they'll use to sign in.
+When you [invite a guest user](add-users-administrator.md) to B2B collaboration, you can specify their Microsoft Entra account as the **Email address** they use to sign in.
 
 :::image type="content" source="media/default-account/default-account-invite.png" alt-text="Screenshot of inviting a guest user using the Microsoft Entra account." lightbox="media/default-account/default-account-invite.png":::
 
@@ -40,7 +37,7 @@ When you [invite a guest user](add-users-administrator.md) to B2B collaboration,
 
 ### Microsoft Entra account in self-service sign-up user flows
 
-Microsoft Entra account is an identity provider option for your self-service sign-up user flows. Users can sign up for your applications using their own Microsoft Entra accounts. First, you'll need to [enable self-service sign-up](self-service-sign-up-user-flow.md) for your tenant. Then you can set up a user flow for the application and select Microsoft Entra ID as one of the sign-in options.
+Microsoft Entra account is an identity provider option for your self-service sign-up user flows. Users can sign up for your applications using their own Microsoft Entra accounts. First, you need to [enable self-service sign-up](self-service-sign-up-user-flow.md) for your tenant. Then you can set up a user flow for the application and select Microsoft Entra ID as one of the sign-in options.
 
 :::image type="content" source="media/default-account/default-account-user-flow.png" alt-text="Screenshot of Microsoft Entra account in a self-service sign-up user flow." lightbox="media/default-account/default-account-user-flow.png":::
 

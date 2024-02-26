@@ -2,14 +2,15 @@
 title: Troubleshooting the configured permissions limits
 description: Learn why some apps may exceed the limits on configured permissions and how to address this issue.
 author: henrymbuguakiarie
-ms.author: henrymbugua
 manager: CelesteDG
+ms.author: henrymbugua
+ms.custom: 
 ms.date: 12/08/2022
-ms.topic: reference
-ms.subservice: develop
-ms.custom: aaddev
-ms.service: active-directory
 ms.reviewer: phsignor, jawoods
+ms.service: identity-platform
+
+ms.topic: reference
+#Customer intent:As an application developer, I want to troubleshoot and resolve the issue of exceeding the configured permissions limit for my app, so that I can ensure that my app can continue to add new permissions and function properly within the limits set by the platform.
 ---
 
 # Troubleshooting the configured permissions limits

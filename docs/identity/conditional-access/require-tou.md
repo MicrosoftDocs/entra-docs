@@ -2,8 +2,7 @@
 title: Quickstart require Terms of Use at sign-in
 description: Quickstart require terms of use acceptance before access to selected cloud apps is granted with Microsoft Entra Conditional Access.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: quickstart
 ms.date: 09/22/2022
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: calebb
-
-ms.collection: M365-identity-device-management
 ---
 # Quickstart: Require terms of use to be accepted before accessing cloud apps
 
@@ -76,7 +73,7 @@ The scenario in this quickstart uses:
 1. Under Assignments, select **Cloud apps or actions**.
 1. Select **Cloud apps or actions**.
    1. Under Include, choose **Select apps**.
-   1. Select **Microsoft Azure Management**, and then choose **Select**.
+   1. Select **Windows Azure Service Management API**, and then choose **Select**.
 1. Under **Access controls**, select **Grant**.
    1. Select **Grant access**.
    1. Select the terms of use you created previously called **My TOU** and choose **Select**.

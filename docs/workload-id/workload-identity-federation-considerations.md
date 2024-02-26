@@ -1,19 +1,17 @@
 ---
 title: Workload identity federation for app considerations
-description: Important considerations and restrictions for creating a federated identity credential on an app. 
-services: active-directory
+description: Important considerations and restrictions for creating a federated identity credential on an app.
+
 author: rwike77
 manager: CelesteDG
 
-ms.service: active-directory
-ms.subservice: workload-identities
-ms.workload: identity
+ms.service: entra-workload-id
+
 ms.topic: conceptual
 ms.date: 10/04/2023
 ms.author: ryanwi
 ms.reviewer: shkhalid
 ms.custom: aaddev, references_regions
-
 ---
 
 # Important considerations and restrictions for federated identity credentials

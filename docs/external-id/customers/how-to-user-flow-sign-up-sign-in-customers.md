@@ -1,14 +1,14 @@
 ---
 title: Create a sign-up and sign-in user flow
 description: Learn how to create a sign-up and sign-in user flow for your customer-facing app.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: ciam
+ms.service: entra-external-id
+ 
+ms.subservice: customers
 ms.topic: how-to
-ms.date: 11/07/2023
+ms.date: 01/07/2024
 ms.author: mimart
 ms.reviewer: kengaderdus
 ms.custom: it-pro
@@ -22,9 +22,16 @@ You can create a simple sign-up and sign-in experience for your customers by add
 
 You can create multiple user flows if you have multiple applications that you want to offer to customers. Or, you can use the same user flow for many applications. However, an application can have only one user flow.
 
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=OnlineRetail)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Online retail” use case.
+
+
 ## Prerequisites
 
-- **a Microsoft Entra customer tenant**: Before you begin, create your Microsoft Entra customer tenant. You can set up a <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">free trial</a>, or you can create a new customer tenant in Microsoft Entra ID.
+- **A Microsoft Entra customer tenant**: Before you begin, create your Microsoft Entra customer tenant. You can set up a <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">free trial</a>, or you can create a new customer tenant in Microsoft Entra ID.
 - **Email one-time passcode enabled (optional)**: If you want customers to use their email address and a one-time passcode each time they sign in, make sure Email one-time passcode is enabled at the tenant level (in the [Microsoft Entra admin center](https://entra.microsoft.com/), navigate to **External Identities** > **All Identity Providers** > **Email One-time-passcode**).
 - **Custom attributes defined (optional)**: User attributes are values collected from the user during self-service sign-up. Microsoft Entra ID comes with a built-in set of attributes, but you can [define custom attributes to collect during sign-up](how-to-define-custom-attributes.md). Define custom attributes in advance so they're available when you set up your user flow. Or you can create and add them later.
 - **Identity providers defined (optional)**: You can set up federation with [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md) in advance, and then select them as sign-in options as you create the user flow.
@@ -84,7 +91,7 @@ If you want your customer users to only sign in and not sign up, you can disable
     1. In the left menu, under **Use**, select **Applications**.
     1. From the list, under **Application (client) ID** column, copy the Application (client) ID.
     
-1. Identify the ID of the user flow whose sign-up you want to disable. To do so, [List the user flow associated with the specific application](/graph/api/identitycontainer-list-authenticationeventsflows#example-4-list-user-flow-associated-with-specific-application-id). This's a Microsoft Graph API, which requires you to know the application ID you obtained from the previous step. 
+1. Identify the ID of the user flow whose sign-up you want to disable. To do so, [List the user flow associated with the specific application](/graph/api/identitycontainer-list-authenticationeventsflows#example-4-list-user-flow-associated-with-specific-application-id). This is a Microsoft Graph API, which requires you to know the application ID you obtained from the previous step. 
 
 1. [Update your user flow](/graph/api/authenticationeventsflow-update) to disable sign-up. 
 

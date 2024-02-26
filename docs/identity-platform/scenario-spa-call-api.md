@@ -1,17 +1,14 @@
 ---
 title: Build single-page app calling a web API
 description: Learn how to build a single-page application that calls a web API
-services: active-directory
 author: OwenRichards1
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.workload: identity
-ms.date: 11/25/2022
 ms.author: owenrichards
-ms.custom: aaddev, engagement-fy23
+ms.custom: 
+ms.date: 11/25/2022
+ms.service: identity-platform
+
+ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
 ---
 
@@ -49,4 +46,6 @@ The MSAL Angular wrapper takes advantage of the HTTP interceptor to automaticall
 
 ## Next steps
 
-Move on to the next article in this scenario, [Move to production](scenario-spa-production.md).
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).
+
+- Explore Microsoft identity platform [single-page application code samples](sample-v2-code.md#single-page-applications) 

@@ -3,8 +3,8 @@ title: What's new for Microsoft Entra Verified ID
 description: Recent updates for Microsoft Entra Verified ID
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 ms.topic: reference
 ms.date: 10/31/2023
 ms.custom: references_regions
@@ -16,9 +16,17 @@ ms.author: barclayn
 
 # What's new in Microsoft Entra Verified ID
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
+
+## January 2024
+
+- [FaceCheck](using-facecheck.md) is now in public preview. It allows enterprises to perform high-assurance verifications by performing facial matching between a user’s real-time selfie and a photo in the Verified ID credential. FaceCheck is offered free of cost during the Public Preview period and can be leveraged by any Verified ID project. Later in the year we will announce billing models.
+
+## December 2023
+
+- [Request Service API](issuance-request-api.md#issuance-request-payload) now supports the issuing application to set the expiry date of the credential during and issuance request when the attestation is using the [idTokenHint flow](how-to-use-quickstart.md).
+- The option of selecting `did:ion` as a trust system is removed. The only trust system available is `did:web`. Please see the FAQ for [help on how move to did:web from did:ion](verifiable-credentials-faq.md#how-do-i-move-to-didweb-from-didion).
 
 ## November 2023
 
@@ -28,7 +36,7 @@ This article lists the latest features, improvements, and changes in the Microso
 
 - [Quick setup](verifiable-credentials-configure-tenant-quick.md) introduced as preview which enables an admin to onboard a Microsoft Entra tenant with just one click of a button.
 - [MyAccount available now to simplify issuance of Workplace Credentials](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials)
-- [Manual setup](verifiable-credentials-configure-tenant.md) still available as an option to `Quick setup`.
+- [Advanced setup](verifiable-credentials-configure-tenant.md) still available as an option to `Quick setup`.
 
 ## September 2023
 
@@ -104,7 +112,7 @@ Microsoft Entra Verified ID is now generally available (GA) as the new member of
 
 ### Known issues
 
-- Tenants that [opt-out](verifiable-credentials-faq.md?#how-do-i-reset-the-entra-verified-id-service) without issuing any Verifiable Credential gets a `Specified resource does not exist` error from the Admin API and/or the Microsoft Entra admin center. A fix for this issue should be available by August 20, 2022.
+- Tenants that [opt-out](verifiable-credentials-faq.md#how-do-i-reset-the-microsoft-entra-verified-id-service) without issuing any Verifiable Credential gets a `Specified resource does not exist` error from the Admin API and/or the Microsoft Entra admin center. A fix for this issue should be available by August 20, 2022.
 
 ## July 2022
 
@@ -122,7 +130,7 @@ Microsoft Entra Verified ID is now generally available (GA) as the new member of
 
 ## June 2022
 
-- We're adding support for the [did:web](https://w3c-ccg.github.io/did-method-web/) method. Any new tenant that starts using the Verifiable Credentials Service after June 14, 2022 will have Web as a new, default, trust system when [onboarding](verifiable-credentials-configure-tenant.md#set-up-verified-id). VC Administrators can still choose to use ION when setting a tenant. If you want to use did:web instead of ION or viceversa, you need to [reconfigure your tenant](verifiable-credentials-faq.md?#how-do-i-reset-the-entra-verified-id-service).
+- We're adding support for the [did:web](https://w3c-ccg.github.io/did-method-web/) method. Any new tenant that starts using the Verifiable Credentials Service after June 14, 2022 will have Web as a new, default, trust system when [onboarding](verifiable-credentials-configure-tenant.md#set-up-verified-id). VC Administrators can still choose to use ION when setting a tenant. If you want to use did:web instead of ION or viceversa, you need to [reconfigure your tenant](verifiable-credentials-faq.md#how-do-i-reset-the-microsoft-entra-verified-id-service).
 - We're rolling out several features to improve the overall experience of creating verifiable credentials in the Microsoft Entra Verified ID platform:
   - Introducing Managed Credentials, which are verifiable credentials that no longer use Azure Storage to store the [display & rules JSON definitions](rules-and-display-definitions-model.md). Their display and rule definitions are different from earlier versions.
   - Create Managed Credentials using the [new quickstart experience](how-to-use-quickstart.md).
@@ -164,7 +172,7 @@ We're rolling out some breaking changes to our service. These updates require Mi
 - We made updates to Microsoft Authenticator that change the interaction between the Issuer of a verifiable credential and the user presenting the verifiable credential. This update forces all Verifiable Credentials to be reissued in Microsoft Authenticator for Android. [More information](whats-new.md?#microsoft-authenticator-did-generation-update)
 
 >[!IMPORTANT]
-> All Azure AD Verifiable Credential customers receiving a banner notice in the Azure portal need to go through a service reconfiguration before March 31st 2022. On March 31st 2022 tenants that have not been reconfigured will lose access to any previous configuration. Administrators will have to set up a new instance of the Azure AD Verifiable Credential service. Learn more about how to [reconfigure your tenant](verifiable-credentials-faq.md?#how-do-i-reset-the-entra-verified-id-service).
+> All Azure AD Verifiable Credential customers receiving a banner notice in the Azure portal need to go through a service reconfiguration before March 31st 2022. On March 31st 2022 tenants that have not been reconfigured will lose access to any previous configuration. Administrators will have to set up a new instance of the Azure AD Verifiable Credential service. Learn more about how to [reconfigure your tenant](verifiable-credentials-faq.md#how-do-i-reset-the-microsoft-entra-verified-id-service).
 
 ### Microsoft Entra Verified ID available in Europe
 
@@ -176,11 +184,11 @@ Since the beginning of the Microsoft Entra Verified ID service public preview, t
 
 Take the following steps to configure the Verifiable Credentials service in Europe:
 
-1. [Check the location](verifiable-credentials-faq.md#how-can-i-check-my-azure-ad-tenants-region) of your Azure Active Directory to make sure is in Europe.
-1. [Reconfigure the Verifiable Credentials service](verifiable-credentials-faq.md?#how-do-i-reset-the-entra-verified-id-service) in your tenant.
+1. [Check the location](verifiable-credentials-faq.md#how-can-i-check-my-microsoft-entra-tenants-region) of your Azure Active Directory to make sure is in Europe.
+1. [Reconfigure the Verifiable Credentials service](verifiable-credentials-faq.md#how-do-i-reset-the-microsoft-entra-verified-id-service) in your tenant.
 
 >[!IMPORTANT]
-> On March 31st, 2022 European tenants that have not been [reconfigured](verifiable-credentials-faq.md?#how-do-i-reset-the-entra-verified-id-service) in Europe will lose access to any previous configuration and will require to configure a new instance of the Azure AD Verifiable Credential service.
+> On March 31st, 2022 European tenants that have not been [reconfigured](verifiable-credentials-faq.md#how-do-i-reset-the-microsoft-entra-verified-id-service) in Europe will lose access to any previous configuration and will require to configure a new instance of the Azure AD Verifiable Credential service.
 
 #### Are there any changes to the way that we use the Request API as a result of this move?
 
@@ -201,7 +209,7 @@ To uptake this feature, follow the next steps:
 
 1. [Check if your tenant has the Hub endpoint](verifiable-credentials-faq.md#how-can-i-check-if-my-tenant-has-the-new-hub-endpoint).
     1. If so, go to the next step.
-    1. If not, [reconfigure the Verifiable Credentials service](verifiable-credentials-faq.md?#how-do-i-reset-the-entra-verified-id-service) in your tenant and go to the next step.
+    1. If not, [reconfigure the Verifiable Credentials service](verifiable-credentials-faq.md#how-do-i-reset-the-microsoft-entra-verified-id-service) in your tenant and go to the next step.
 1. Create new verifiable credentials contracts. In the rules file you must add the ` "credentialStatusConfiguration": "anonymous" ` property to start using the new feature in combination with the Hub endpoint for your credentials:
 
 Sample contract file:

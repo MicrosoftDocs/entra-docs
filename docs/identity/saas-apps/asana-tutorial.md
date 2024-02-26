@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with Asana'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Asana.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 05/03/2023
 ms.author: jeedes
@@ -86,7 +86,10 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://app.asana.com/-/saml/consume`
 
     c. In the **Sign on URL** text box, type the URL:
-    `https://app.asana.com/`
+    `https://app.asana.com/a/<email_suffix>`
+
+    > [!Note]
+    > If you own many email domains, feel free to use any one of them.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 

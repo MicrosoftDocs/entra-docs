@@ -2,16 +2,16 @@
 title: Migrate from federation to cloud authentication in Microsoft Entra ID
 description: This article has information about moving your hybrid identity environment from federation to cloud authentication
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: hybrid
-ms.custom: has-azure-ad-ps-ref
+
+ms.service: entra-id
+ms.subservice: hybrid-connect
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
 ms.date: 11/06/2023
 ms.author: billmath
 author: gargi-sinha
 manager: amycolannino
-ms.collection: M365-identity-device-management
+
 ---
 # Migrate from federation to cloud authentication  
 
@@ -138,8 +138,7 @@ The following table explains the behavior for each option. For more information,
 | enforceMfaByFederatedIdp | Microsoft Entra ID accepts MFA that federated identity provider performs.  If the federated identity provider didn't perform MFA, it redirects the request to federated identity provider to perform MFA. |
 | rejectMfaByFederatedIdp | Microsoft Entra ID always performs MFA and rejects MFA that federated identity provider performs. |
 
->[!NOTE]
-> The **federatedIdpMfaBehavior** setting is an evolved version of the **SupportsMfa** property of the [Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainfederationconfiguration?view=graph-powershell-1.0&preserve-view=true). 
+The **federatedIdpMfaBehavior** setting is an evolved version of the **SupportsMfa** property of the [Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainfederationconfiguration?view=graph-powershell-1.0&preserve-view=true).
 
 For domains that have already set the **SupportsMfa** property, these rules determine how **federatedIdpMfaBehavior** and **SupportsMfa** work together:
 
@@ -152,18 +151,7 @@ You can check the status of protection by running [Get-MgDomainFederationConfigu
 
 ```powershell
 Get-MgDomainFederationConfiguration -DomainId yourdomain.com
-``` 
-
-You can also check the status of your SupportsMfa flag with [Get-MsolDomainFederationSettings](/powershell/module/msonline/get-msoldomainfederationsettings):
-
-```powershell
-Get-MsolDomainFederationSettings –DomainName yourdomain.com
 ```
-
->[!NOTE] 
->Microsoft MFA Server is nearing the end of support life, and if you're using it you must move to Microsoft Entra multifactor authentication. 
-For more information, see **[Migrate from Microsoft MFA Server to Azure multifactor authentication documentation](~/identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md)**.
->If you plan to use Microsoft Entra multifactor authentication, we recommend that you use **[combined registration for self-service password reset (SSPR) and multifactor authentication](~/identity/authentication/concept-registration-mfa-sspr-combined.md)** to have your users register their authentication methods once. 
 
 ## Plan for implementation
 
@@ -435,14 +423,11 @@ Migration requires assessing how the application is configured on-premises, and 
 
 > [!VIDEO https://www.youtube.com/embed/D0M-N-RQw0I]
 
-If you plan to keep using AD FS with on-premises & SaaS Applications using SAML / WS-FED or Oauth protocol, you'll use both AD FS and Microsoft Entra ID after you convert the domains for user authentication. In this case, you can protect your on-premises applications and resources with Secure Hybrid Access (SHA) through [Microsoft Entra application proxy](~/identity/app-proxy/what-is-application-proxy.md) or one of [Microsoft Entra ID partner integrations](~/identity/enterprise-apps/secure-hybrid-access.md). Using Application Proxy or one of our partners can provide secure remote access to your on-premises applications. Users benefit by easily connecting to their applications from any device after a [single sign-on](~/identity/enterprise-apps/add-application-portal-setup-sso.md).
+If you plan to keep using AD FS with on-premises & SaaS Applications using SAML / WS-FED or Oauth protocol, you'll use both AD FS and Microsoft Entra ID after you convert the domains for user authentication. In this case, you can protect your on-premises applications and resources with Secure Hybrid Access (SHA) through [Microsoft Entra application proxy](~/identity/app-proxy/overview-what-is-app-proxy.md) or one of [Microsoft Entra ID partner integrations](~/identity/enterprise-apps/secure-hybrid-access.md). Using Application Proxy or one of our partners can provide secure remote access to your on-premises applications. Users benefit by easily connecting to their applications from any device after a [single sign-on](~/identity/enterprise-apps/add-application-portal-setup-sso.md).
 
 You can move SaaS applications that are currently federated with ADFS to Microsoft Entra ID. Reconfigure to authenticate with Microsoft Entra ID either via a built-in connector from the [Azure App gallery](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps), or by [registering the application in Microsoft Entra ID](~/identity-platform/quickstart-register-app.md).
 
-For more information, see – 
-
-- [Moving application authentication from Active Directory Federation Services to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-stages.md) and
-- [AD FS to Microsoft Entra application migration playbook for developers](/samples/azure-samples/ms-identity-adfs-to-aad/ms-identity-dotnet-adfs-to-aad/)
+For more information, see [Moving application authentication from Active Directory Federation Services to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-stages.md).
 
 ### Remove relying party trust
 

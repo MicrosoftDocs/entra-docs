@@ -1,11 +1,9 @@
 ---
 title: Data protection considerations
 description: Learn how services store and retrieve Microsoft Entra object data through an RBAC authorization layer.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 01/31/2023
@@ -13,6 +11,7 @@ ms.author: jricketts
 ms.reviewer: jricketts
 ms.custom: "it-pro"
 ms.collection:
+# Customer intent: As a cloud service customer, I want to understand the data protection considerations for Microsoft Entra, so that I can ensure the security and privacy of my data stored in the service.
 ---
 
 # Data protection considerations 
@@ -75,7 +74,7 @@ For more information about Secret encryption at rest, see the following table.
 |SSL certificates for Microsoft Entra application</br>Proxy published applications |AES-GCM 256-bit |
 |Disk-level encryption|XTS-AES 128|
 |[Seamless single sign-on (SSO)](~/identity/hybrid/connect/how-to-connect-sso-how-it-works.md) service account password</br>SaaS application provisioning credentials|AES-CBC 128-bit |
-|Microsoft Entra managed identities|AES-GCM 256-bit|
+|Managed identities for Azure resources|AES-GCM 256-bit|
 |Microsoft Authenticator app: Passwordless sign-in to Microsoft Entra ID |Asymmetric RSA Key 2048-bit|
 |Microsoft Authenticator app: Backup and restore of enterprise account metadata |AES-256  |
 

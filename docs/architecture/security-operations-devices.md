@@ -1,17 +1,13 @@
 ---
 title: Microsoft Entra security operations for devices
 description: Learn to establish baselines, and monitor and report on devices to identity potential security risks with devices.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 09/06/2022
 ms.author: jricketts
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Microsoft Entra security operations for devices

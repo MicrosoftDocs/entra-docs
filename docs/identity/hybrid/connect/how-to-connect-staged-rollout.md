@@ -3,23 +3,25 @@ title: 'Microsoft Entra Connect: Cloud authentication via Staged Rollout'
 description: This article explains how to migrate from federated authentication, to cloud authentication, by using a Staged Rollout.
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.date: 01/18/2024
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 
 # Migrate to cloud authentication using Staged Rollout
 
-Staged Rollout allows you to selectively test groups of users with cloud authentication capabilities like Microsoft Entra multifactor authentication, Conditional Access, Identity Protection for leaked credentials, Identity Governance, and others, before cutting over your domains. This article discusses how to make the switch. Before you begin the Staged Rollout, however, you should consider the implications if one or more of the following conditions is true:
+Staged Rollout allows you to selectively test groups of users with cloud authentication capabilities like Microsoft Entra multifactor authentication, Conditional Access, Identity Protection for leaked credentials, Identity Governance, and others, before cutting over your domains. This article discusses how to make the switch. 
+
+Before you begin the Staged Rollout, you should consider the implications if one or more of the following conditions is true:
     
 -  You're currently using an on-premises Multi-Factor Authentication Server. 
 -  You're using smart cards for authentication. 
 -  Your current server offers certain federation-only features.
+-  You're moving from a third-party federation solution to managed services. 
 
 Before you try this feature, we suggest that you review our guide on choosing the right authentication method. For more information, see the "Comparing methods" table in [Choose the right authentication method for your Microsoft Entra hybrid identity solution](./choose-ad-authn.md#comparing-methods).
 
@@ -43,6 +45,8 @@ For an overview of the feature, view this "What is Staged Rollout?" video:
     For Windows 10, Windows Server 2016 and later versions, it's recommended to use SSO via [Primary Refresh Token (PRT)](~/identity/devices/concept-primary-refresh-token.md) with [Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md), [Microsoft Entra hybrid joined devices](~/identity/devices/concept-hybrid-join.md) or [personal registered devices](~/identity/devices/concept-device-registration.md) via Add Work or School Account.
 
 -   You have configured all the appropriate tenant-branding and Conditional Access policies you need for users who are being migrated to cloud authentication.
+
+-   If you have moved from federated to cloud authentication, you must verify that the DirSync setting `SynchronizeUpnForManagedUsers` is enabled, otherwise Microsoft Entra doesn't allow sync updates to the UPN or alternate login ID for licensed user accounts that use managed authentication. For more information, see [Microsoft Entra Connect Sync service features](how-to-connect-syncservice-features.md).
 
 -   If you plan to use Microsoft Entra multifactor authentication, we recommend that you use [combined registration for self-service password reset (SSPR) and multifactor authentication](~/identity/authentication/concept-registration-mfa-sspr-combined.md) to have your users register their authentication methods once. Note- when using SSPR to reset password or change password using MyProfile page while in Staged Rollout, Microsoft Entra Connect needs to sync the new password hash that can take up to 2 minutes after reset.
 
@@ -272,4 +276,3 @@ A: Yes. To learn how to use PowerShell to perform Staged Rollout, see [Microsoft
 - [Microsoft Entra ID 2.0 preview](/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true#staged_rollout)
 - [Change the sign-in method to password hash synchronization](./migrate-from-federation-to-cloud-authentication.md)
 - [Change sign-in method to pass-through authentication](./migrate-from-federation-to-cloud-authentication.md)
-- [Staged Rollout interactive guide](https://mslearn.cloudguides.com/en-us/guides/Test%20migration%20to%20cloud%20authentication%20using%20staged%20rollout%20in%20Azure%20AD)

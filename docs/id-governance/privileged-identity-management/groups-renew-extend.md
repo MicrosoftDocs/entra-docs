@@ -1,20 +1,17 @@
 ---
 title: Extend or renew PIM for groups assignments
 description: Learn how to extend or renew PIM for groups assignments.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
 ms.reviewer: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
 ms.topic: how-to
-ms.subservice: pim
+ms.subservice: privileged-identity-management
 ms.date: 6/7/2023
 ms.author: barclayn
 ms.custom: pim
-ms.collection: M365-identity-device-management
+
 ---
 
 # Extend or renew PIM for groups assignments 

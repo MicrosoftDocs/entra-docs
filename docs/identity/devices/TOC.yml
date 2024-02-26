@@ -77,7 +77,10 @@
     href: howto-device-identity-virtual-desktop-infrastructure.md
   - name: Frequently asked questions
     href: faq.yml
+  - name: Troubleshoot SSO on Apple devices
+    href: troubleshoot-mac-sso-extension-plugin.md
   - name: Enterprise state roaming
+    expanded: false
     items:
     - name: Enable enterprise state roaming
       href: enterprise-state-roaming-enable.md
@@ -89,8 +92,6 @@
       href: enterprise-state-roaming-group-policy-settings.md
     - name: Enterprise state roaming Windows settings
       href: enterprise-state-roaming-windows-settings-reference.md
-  - name: Troubleshoot SSO on Apple devices
-    href: troubleshoot-mac-sso-extension-plugin.md
 - name: Reference
   items:
   - name: Microsoft Entra hybrid join reference

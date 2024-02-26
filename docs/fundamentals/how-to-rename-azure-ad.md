@@ -1,10 +1,9 @@
 ---
 title: How to rename Azure Active Directory (Azure AD)
 description: Learn about best practices and tips on how customers and organizations can update their documentation or content to use the Microsoft Entra ID product name and icon.
-services: active-directory
 author: CelesteDG
 manager: CelesteDG
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 10/26/2023
@@ -140,7 +139,7 @@ $terminology = @(
     @{ Key = 'Azure AD Identity Protection'; Value = 'Microsoft Entra ID Protection' },
     @{ Key = 'Azure AD pass-through'; Value = 'Microsoft Entra pass-through' },
     @{ Key = 'Azure AD password'; Value = 'Microsoft Entra password' },
-    @{ Key = 'Azure AD Privileged Identity Management'; Value = 'Microsoft Entra Privilegd Identity Management' },
+    @{ Key = 'Azure AD Privileged Identity Management'; Value = 'Microsoft Entra Privileged Identity Management' },
     @{ Key = 'Azure AD registered'; Value = 'Microsoft Entra registered' },
     @{ Key = 'Azure AD reporting and monitoring'; Value = 'Microsoft Entra reporting and monitoring' },
     @{ Key = 'Azure AD enterprise app'; Value = 'Microsoft Entra enterprise app' },
@@ -197,7 +196,7 @@ $terminology = @(
     @{ Key = 'Azure Active Directory Identity Protection'; Value = 'Microsoft Entra ID Protection' },
     @{ Key = 'Azure Active Directory pass-through'; Value = 'Microsoft Entra pass-through' },
     @{ Key = 'Azure Active Directory password'; Value = 'Microsoft Entra password' },
-    @{ Key = 'Azure Active Directory Privileged Identity Management'; Value = 'Microsoft Entra Privilegd Identity Management' },
+    @{ Key = 'Azure Active Directory Privileged Identity Management'; Value = 'Microsoft Entra Privileged Identity Management' },
     @{ Key = 'Azure Active Directory registered'; Value = 'Microsoft Entra registered' },
     @{ Key = 'Azure Active Directory reporting and monitoring'; Value = 'Microsoft Entra reporting and monitoring' },
     @{ Key = 'Azure Active Directory enterprise app'; Value = 'Microsoft Entra enterprise app' },
@@ -251,7 +250,7 @@ $terminology = @(
     @{ Key = 'AAD Identity Protection'; Value = 'Microsoft Entra ID Protection' },
     @{ Key = 'AAD pass-through'; Value = 'Microsoft Entra pass-through' },
     @{ Key = 'AAD password'; Value = 'Microsoft Entra password' },
-    @{ Key = 'AAD Privileged Identity Management'; Value = 'Microsoft Entra Privilegd Identity Management' },
+    @{ Key = 'AAD Privileged Identity Management'; Value = 'Microsoft Entra Privileged Identity Management' },
     @{ Key = 'AAD registered'; Value = 'Microsoft Entra registered' },
     @{ Key = 'AAD reporting and monitoring'; Value = 'Microsoft Entra reporting and monitoring' },
     @{ Key = 'AAD enterprise app'; Value = 'Microsoft Entra enterprise app' },

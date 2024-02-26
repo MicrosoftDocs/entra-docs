@@ -2,18 +2,17 @@
 title: Log in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH
 description: Learn how to log in to an Azure VM that's running Linux by using Microsoft Entra ID and OpenSSH certificate-based authentication.
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 06/20/2022
+ms.date: 01/05/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-track-linux
-ms.collection: M365-identity-device-management
 ---
 # Log in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH
 
@@ -213,7 +212,7 @@ To configure role assignments for your Microsoft Entra ID-enabled Linux VMs:
     | Role | **Virtual Machine Administrator Login** or **Virtual Machine User Login** |
     | Assign access to | User, group, service principal, or managed identity |
 
-    ![Screenshot that shows the page for adding a role assignment.](~/../azure-docs-pr/includes/role-based-access-control/media/add-role-assignment-page.png)
+    ![Screenshot that shows the page for adding a role assignment.](../../media/common/add-role-assignment-page.png)
 
 After a few moments, the security principal is assigned the role at the selected scope.
 
@@ -491,6 +490,18 @@ If you get exit code 23, the status of the AADSSHLoginForLinux VM extension show
 This failure happens when the older AADLoginForLinux VM extension is still installed.
 
 The solution is to uninstall the older AADLoginForLinux VM extension from the VM. The status of the new AADSSHLoginForLinux VM extension will then change to **Provisioning succeeded** in the portal.
+
+#### Installation failures when using an HTTP proxy
+
+The extension needs an HTTP connection to install packages and check for the existence of a system identity. It runs in the context of `walinuxagent.service` and requires a change to let the agent know about the proxy settings. Open ` /lib/systemd/system/walinuxagent.service` file on the target machine and add the following line after `[Service]`:
+```
+[Service]
+Environment="http_proxy=http://proxy.example.com:80/"
+Environment="https_proxy=http://proxy.example.com:80/"
+Environment="no_proxy=169.254.169.254"
+```
+
+Restart the agent (`sudo systemctl restart walinuxagent`). Now try again.
 
 #### The az ssh vm command fails with KeyError access_token
 

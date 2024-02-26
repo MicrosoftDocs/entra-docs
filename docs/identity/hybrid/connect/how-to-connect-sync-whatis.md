@@ -1,32 +1,29 @@
 ---
 title: 'Microsoft Entra Connect Sync: Understand and customize synchronization'
 description: Explains how Microsoft Entra Connect Sync works and how to customize.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: ee4bf802-045b-4da0-986e-90aba2de58d6
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Microsoft Entra Connect Sync: Understand and customize synchronization
-The Microsoft Entra Connect synchronization services (Microsoft Entra Connect Sync) is a main component of Microsoft Entra Connect. It takes care of all the operations that are related to synchronize identity data between your on-premises environment and Microsoft Entra ID. Microsoft Entra Connect Sync is the successor of DirSync, Azure AD Sync, and Forefront Identity Manager with the Microsoft Entra Connector configured.
+The Microsoft Entra Connect synchronization services (Microsoft Entra Connect Sync) is a main component of Microsoft Entra Connect. It takes care of all the operations that are related to synchronize identity data between your on-premises environment and Microsoft Entra ID. Microsoft Entra Connect Sync is the successor of DirSync and Azure AD Sync.
 
 This topic is the home for **Microsoft Entra Connect Sync** (also called **sync engine**) and lists links to all other topics related to it. For links to Microsoft Entra Connect, see [Integrating your on-premises identities with Microsoft Entra ID](../whatis-hybrid-identity.md).
 
 The sync service consists of two components, the on-premises **Microsoft Entra Connect Sync** component and the service side in Microsoft Entra ID called **Microsoft Entra Connect Sync service**.
 
 > [!IMPORTANT]
-> Microsoft Entra Connect cloud sync is a new offering from Microsoft designed to meet and accomplish your hybrid identity goals for synchronization of users, groups, and contacts to Microsoft Entra ID. It accomplishes this by using the Microsoft Entra cloud provisioning agent instead of the Microsoft Entra Connect application. Microsoft Entra Connect cloud sync is replacing Microsoft Entra Connect Sync, which will be retired after cloud sync has full functional parity with Microsoft Entra Connect Sync. The remainder of this article is about Microsoft Entra Connect Sync, but we encourage customers to review the features and advantages of cloud sync before deploying AADConnect sync. 
+> Microsoft Entra Connect cloud sync is a new offering from Microsoft designed to meet and accomplish your hybrid identity goals for synchronization of users, groups, and contacts to Microsoft Entra ID. It accomplishes this by using the Microsoft Entra cloud provisioning agent instead of the Microsoft Entra Connect application. Microsoft Entra Connect cloud sync is replacing Microsoft Entra Connect Sync, which will be retired after cloud sync has full functional parity with Microsoft Entra Connect Sync. The remainder of this article is about Microsoft Entra Connect Sync, but we encourage customers to review the features and advantages of cloud sync before deploying Entra Connect sync. 
 >
 > To find out if you are already eligible for cloud sync, please verify your requirements in [this wizard](https://admin.microsoft.com/adminportal/home?Q=setupguidance#/modernonboarding/identitywizard).
 >

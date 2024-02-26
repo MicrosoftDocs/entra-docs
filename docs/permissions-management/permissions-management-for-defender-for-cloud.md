@@ -1,14 +1,12 @@
 ---
 title: Microsoft Entra Permissions Management integrates with Microsoft Defender for Cloud
-description: Learn how Microsoft Entra Permissions Management helps strengthen security in cloud environments as an enhancement for Defender for Cloud  
-services: active-directory
+description: Learn how Microsoft Entra Permissions Management helps strengthen security in cloud environments as an enhancement for Defender for Cloud
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
-ms.subservice: ciem
-ms.workload: identity
+ms.service: entra-permissions-management
+
 ms.topic: conceptual
-ms.date: 11/15/2023
+ms.date: 01/03/2024
 ms.author: jfields
 ---
 
@@ -37,4 +35,4 @@ With the added capabilities of Permissions Management, you can track permissions
 
 ## Next steps
 
-- For instructions on how to enable Permissions Management in your Defender for Cloud environment, see Enable Permissions Management with Defender for Cloud.
+- For instructions on how to enable Permissions Management in your Defender for Cloud environment, see [Enable Permissions Management in Microsoft Defender for Cloud](https://go.microsoft.com/fwlink/?linkid=2252561).

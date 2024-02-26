@@ -1,18 +1,15 @@
 ---
 title: "Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript"
 description: In this quickstart, learn how a JavaScript single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow.
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: quickstart
-ms.workload: identity
-ms.date: 10/06/2023
 ms.author: henrymbugua
+ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js
+ms.date: 01/31/2024
 ms.reviewer: OwenRichards1
-ms.custom: aaddev, "scenarios:getting-started", "languages:JavaScript", devx-track-js
+ms.service: identity-platform
+
+ms.topic: quickstart
 #Customer intent: As an app developer, I want to learn how to get access tokens and refresh tokens by using the Microsoft identity platform so that my JavaScript app can sign in users of personal accounts, work accounts, and school accounts.
 ---
 
@@ -26,25 +23,13 @@ This quickstart uses a sample JavaScript (JS) single-page app (SPA) to show you 
 * [Node.js](https://nodejs.org/en/download/)
 * [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
 
-## Register the application in the Microsoft Entra admin center
+## Register the application and record identifiers
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**.
-1. Select **New registration**.
-1. When the **Register an application** page appears, enter a name for your application, such as *identity-client-app*.
-1. Under **Supported account types**, select **Accounts in any organizational directory and personal Microsoft accounts**.
-1. Select **Register**.
-1. The application's Overview pane displays upon successful registration. Record the **Application (client) ID** and **Directory (tenant) ID** to be used in your application source code.
+[!INCLUDE [Register a single-page application](./includes/register-app/spa-common/register-application-spa-common.md)]
 
-## Add a redirect URI
+## Add a platform redirect URI
 
-1. Under **Manage**, select **Authentication**.
-1. Under **Platform configurations**, select **Add a platform**. In the pane that opens, select **Single-page application**.
-1. Set the **Redirect URIs** value to `http://localhost:3000/`.
-1. Select **Configure** to apply the changes.
-1. Under **Platform Configurations** expand **Single-page application**.
-1. Confirm that for **Grant types** ![Already configured](media/quickstart-v2-javascript/green-check.png), your **Redirect URI** is eligible for the Authorization Code Flow with PKCE.
+[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-3000.md)]
 
 ## Clone or download the sample application
 
@@ -65,7 +50,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     :::code language="JavaScript" source="~/../ms-identity-docs-code-javascript/js-spa/App/authConfig.js":::
 
     * `clientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the **Application (client) ID** value that was recorded earlier.
-    * `authority` - The identifier of the tenant where the application is registered. Replace the text in quotes with the **Directory (tenant) ID** value that was recorded earlier.
+    * `authority` - The authority is a URL that indicates a directory that MSAL can request tokens from. Replace *Enter_the_Tenant_Info_Here* with the **Directory (tenant) ID** value that was recorded earlier.
     * `redirectUri` - The **Redirect URI** of the application. If necessary, replace the text in quotes with the redirect URI that was recorded earlier.
 
 ## Run the application and sign in

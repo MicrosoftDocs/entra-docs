@@ -1,24 +1,24 @@
 ---
 title: Usage and insights report
 description: Learn about the information you can explore using the Usage and insights report in Microsoft Entra ID.
-services: active-directory
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
-ms.workload: identity
-ms.subservice: report-monitor
-ms.date: 09/26/2023
+ms.subservice: monitoring-health
+ms.date: 12/15/2023
 ms.author: sarahlipsey
 ms.reviewer: madansr7
+
+# Customer intent: As an IT admin, I want to understand how my users are using Microsoft Entra ID so that I can make informed decisions about my organization's security posture.
 ---
 
-# Usage and insights in Microsoft Entra ID
+# What is the Usage and insights report in Microsoft Entra ID?
 
 With the Microsoft Entra **Usage and insights** reports, you can get an application-centric view of your sign-in data. Usage & insights includes a report on authentication methods, service principal sign-ins, and application credential activity. You can find answers to the following questions:
 
 * What are the top used applications in my organization?
-* What applications have the most failed sign-ins? 
+* What applications have the most failed sign-ins?
 * What are the top sign-in errors for each application?
 * What was the date of the last sign-in for an application?
 
@@ -30,18 +30,18 @@ To access the data from Usage and insights you must have:
 * A Microsoft Entra ID P1 or P2 license to view the sign-in data
 * A user in the Reports Reader, Security Reader, Security Administrator, or Global Administrator role.
 
-## Access Usage and insights 
+## Access Usage and insights
 
 You can access the Usage and insights reports from the Azure portal and using Microsoft Graph.
 
-### To access Usage & insights in the portal:
+### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Usage & insights**.
 
 The **Usage & insights** reports are also available from the **Enterprise applications** area of Microsoft Entra ID. All users can access their own sign-ins at the [My Sign-Ins portal](https://mysignins.microsoft.com/security-info).
 
-### To access Usage & insights using Microsoft Graph:
+### [Microsoft Graph](#tab/microsoft-graph)
 
 The reports can be viewed and managed using Microsoft Graph on the `/beta` endpoint in Graph Explorer.
 
@@ -51,25 +51,26 @@ The reports can be viewed and managed using Microsoft Graph on the `/beta` endpo
 
 Refer to the section on each report in this article for the specific objects and parameters to include. For more information, see the [Microsoft Graph documentation for Identity and access reports](/graph/api/resources/report-identity-access).
 
-<a name='azure-ad-application-activity-preview'></a>
+---
 
 ## Microsoft Entra application activity (preview)
+<a name='azure-ad-application-activity-preview'></a>
 
 The **Microsoft Entra application activity (preview)** report shows the list of applications with one or more sign-in attempts. Any application activity during the selected date range appears in the report. The report allows you to sort by the number of successful sign-ins, failed sign-ins, and the success rate.
 
-It's possible that activity for a deleted application may appear in the report if the activity took place during the selected date range and before the application was deleted. Other scenarios could include a user attempting to sign in to an application that doesn't have a service principal associated with the app. For these types of scenarios, you may need to review the audit logs or sign-in logs to investigate further.
+It's possible that activity for a deleted application might appear in the report if the activity took place during the selected date range *and* before the application was deleted. Other scenarios could include a user attempting to sign in to an application that doesn't have a service principal associated with the app. For these types of scenarios, you might need to review the audit logs or sign-in logs to investigate further.
 
 To view the details of the sign-in activity for an application, select the **View sign-in activity** link for the application.
 
 ![Screenshot shows Usage and insights for Application activity where you can select a range and view sign-in activity for different apps.](./media/concept-usage-insights-report/usage-insights-overview.png)
 
-The sign-in activity graph uses interactive user sign-ins. Select a day in the application usage graph to see a detailed list of the sign-in activities for the application. This detailed list is actually the sign-in log with the filter set to the selected application and date. The details of any sign-in failures appear below the table. 
+The sign-in activity graph uses interactive user sign-ins. Select a day in the application usage graph to see a detailed list of the sign-in activities for the application. This detailed list is actually the sign-in log with the filter set to the selected application and date. The details of any sign-in failures appear below the table.
 
 ![Screenshot of the sign-in activity details for a selected application.](./media/concept-usage-insights-report/application-activity-sign-in-detail.png)
 
 ### Application activity using Microsoft Graph
 
-You can view the `applicationSignInSummary` or `applicationSignInDetailedSummary` of Microsoft Entra application activity with Microsoft Graph. 
+You can view the `applicationSignInSummary` or `applicationSignInDetailedSummary` of Microsoft Entra application activity with Microsoft Graph.
 
 Add the following query to view the **sign-in summary**, then select the **Run query** button.
 
@@ -87,7 +88,7 @@ For more information, see [Application sign-in in Microsoft Graph](/graph/api/re
 
 ## AD FS application activity
 
-The **AD FS application activity** report in Usage & insights lists all Active Directory Federated Services (AD FS) applications in your organization that have had an active user sign-in to authenticate in the last 30 days. These applications haven't been migrated to Microsoft Entra ID for authentication.
+The **AD FS application activity** report in Usage & insights lists all Active Directory Federated Services (AD FS) applications in your organization that had an active user sign-in to authenticate in the last 30 days. These applications haven't been migrated to Microsoft Entra ID for authentication.
 
 Viewing the AD FS application activity using Microsoft Graph retrieves a list of the `relyingPartyDetailedSummary` objects, which identifies the relying party to a particular Federation Service.
 
@@ -101,9 +102,9 @@ For more information, see [AD FS application activity in Microsoft Graph](/graph
 
 ## Authentication methods activity
 
-The **Authentication methods activity** in Usage & insights displays visualizations of the different authentication methods used by your organization. The **Registration tab** displays statistics of users registered for each of your available authentication methods. Select the **Usage** tab at the top of the page to see actual usage for each authentication method. 
+The **Authentication methods activity** in Usage & insights displays visualizations of the different authentication methods used by your organization. The **Registration tab** displays statistics of users registered for each of your available authentication methods. Select the **Usage** tab at the top of the page to see actual usage for each authentication method.
 
-You can also access several other reports and tools related to authentication. 
+You can also access several other reports and tools related to authentication.
 
 Are you planning on running a registration campaign to nudge users to sign up for MFA? Use the **Registration campaign** option from the side menu to set up a registration campaign. For more information, see [Nudge users to set up Microsoft Authenticator](~/identity/authentication/how-to-mfa-registration-campaign.md).
 
@@ -115,17 +116,17 @@ Looking for the status of an authentication registration or reset event of a use
 
 The Service principal sign-in activity (preview) report provides the last activity date for every service principal. The report provides you with information on the usage of the service principal - whether it was used as a client or resource app and whether it was used in an app-only or delegated context. The report shows the last time the service principal was used.
 
-[ ![Screenshot of the service principal sign-in activity report.](./media/concept-usage-insights-report/service-principal-sign-ins.png) ](./media/concept-usage-insights-report/service-principal-sign-ins.png#lightbox)
+:::image type="content" source="media/concept-usage-insights-report/service-principal-sign-ins.png" alt-text="Screenshot of the service principal sign-in activity report." lightbox="media/concept-usage-insights-report/service-principal-sign-ins.png":::
 
-Select the **View more details** link to locate the client and object IDs for the application as well as specific service principal sign-in activity.
+Select the **View more details** link to locate the client and object IDs for the application and specific service principal sign-in activity.
 
-[ ![Screenshot of the service principal sign-in activity details.](./media/concept-usage-insights-report/service-principal-sign-in-activity-details.png) ](./media/concept-usage-insights-report/service-principal-sign-in-activity-details.png#lightbox)
+:::image type="content" source="media/concept-usage-insights-report/service-principal-sign-in-activity-details.png" alt-text="Screenshot of the service principal sign-in activity details." lightbox="media/concept-usage-insights-report/service-principal-sign-in-activity-details.png":::
 
 ### Service principal sign-in activity using Microsoft Graph
 
-The `servicePrincipalSignInActivity` reports can be viewed using Microsoft Graph in Graph Explorer.
+The `servicePrincipalSignInActivity` reports can be viewed using Microsoft Graph.
 
-Add the following query to retrieve the service principal sign-in activity, then select the **Run query** button.
+Add the following query in Graph Explorer to retrieve the service principal sign-in activity, then select the **Run query** button.
 
 ```http
 GET https://graph.microsoft.com/beta/reports/servicePrincipalSignInActivities/{id}
@@ -165,15 +166,15 @@ For more information, see [List service principal activity in Microsoft Graph](/
 
 ## Application credential activity (preview)
 
-The Application credential activity (preview) report provides the last credential activity date for every application credential. The report provides the credential type (certificate or client secret), the last used date, and the expiration date. With this report, you can view the expiration dates of all your applications in one place. 
+The Application credential activity (preview) report provides the last credential activity date for every application credential. The report provides the credential type (certificate or client secret), the last used date, and the expiration date. With this report, you can view the expiration dates of all your applications in one place.
 
-To view the details of the application credential activity, select the **View more details** link. These details include the application object, service principal, and resource IDs. You can also see if the credential origin is the application or the service principal. 
+To view the details of the application credential activity, select the **View more details** link. These details include the application object, service principal, and resource IDs. You can also see if the credential origin is the application or the service principal.
 
-[ ![Screenshot of the app credential activity report.](media/concept-usage-insights-report/app-credential-activity.png) ](media/concept-usage-insights-report/app-credential-activity.png#lightbox)
+:::image type="content" source="media/concept-usage-insights-report/app-credential-activity.png" alt-text="Screenshot of the app credential activity report." lightbox="media/concept-usage-insights-report/app-credential-activity.png":::
 
 When you select the **View more details** link, you can see the application object ID and resource ID, in addition to the details visible in the report.
 
-[ ![Screenshot of the app credential activity details.](media/concept-usage-insights-report/app-credential-activity-details.png) ](media/concept-usage-insights-report/app-credential-activity-details.png#lightbox)
+:::image type="content" source="media/concept-usage-insights-report/app-credential-activity-details.png" alt-text="Screenshot of the app credential activity details." lightbox="media/concept-usage-insights-report/app-credential-activity-details.png":::
 
 ### Application credential activity using Microsoft Graph
 
@@ -189,6 +190,7 @@ To get started, follow these instructions to work with `appCredentialSignInActiv
     ```http
     GET https://graph.microsoft.com/beta/reports/appCredentialSignInActivities/{id}
     ```
+
 Example response:
 
 ```json
@@ -212,8 +214,3 @@ Example response:
 ```
 
 For more information, see [Application credential activity in Microsoft Graph](/graph/api/resources/appcredentialsigninactivity?view=graph-rest-beta&preserve-view=true).
-
-## Next steps
-
-- [Learn about the sign-ins report](concept-sign-ins.md)
-- [Learn about Microsoft Entra authentication](~/identity/authentication/overview-authentication.md)

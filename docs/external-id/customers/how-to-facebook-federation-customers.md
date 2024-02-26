@@ -1,14 +1,14 @@
 ---
 title: Add Facebook for customer sign-in
 description: Learn how to add Facebook as an identity provider for your customer tenant.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: ciam
+ms.service: entra-external-id
+ 
+ms.subservice: customers
 ms.topic: how-to
-ms.date: 06/20/2023
+ms.date: 01/07/2024
 ms.author: mimart
 ms.custom: it-pro, has-azure-ad-ps-ref
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -17,6 +17,11 @@ ms.custom: it-pro, has-azure-ad-ps-ref
 # Add Facebook as an identity provider
 
 By setting up federation with Facebook, you can allow customers to sign in to your applications with their own Facebook accounts. After you've added Facebook as one of your application's sign-in options, on the sign-in page, customers can sign-in to Microsoft Entra ID for customers with a Facebook account. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=Social)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Sign-in with a social account” use case.
 
 ## Create a Facebook application
 

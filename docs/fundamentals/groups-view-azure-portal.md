@@ -1,14 +1,12 @@
 ---
-title: Quickstart - View groups & members
+title: Quickstart - Create a group with members and view all groups and members
 description: Instructions about how to search for and view your organization's groups and their assigned members.
-services: active-directory
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: quickstart
-ms.date: 09/12/2023
+ms.date: 11/29/2023
 ms.author: barclayn
 ms.reviewer: krbain
 ---
@@ -24,7 +22,7 @@ If you don’t have an Azure subscription, create a [free account](https://azure
 
 Before you begin, you’ll need to:
 
-- Create a Microsoft Entra tenant. For more information, see [Access the Azure portal and create a new tenant](./create-new-tenant.md).
+- Create a Microsoft Entra tenant. For more information, see [Access the portal and create a new tenant](./create-new-tenant.md).
 
 ## Create a new group 
 
@@ -34,12 +32,15 @@ Create a new group, named _MDM policy - West_. For more information about creati
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Groups** > **All groups**.
+
+   :::image type="content" source="media/groups-view-azure-portal/create-new-group.png" alt-text="Screenshot of the All Groups page." lightbox="media/groups-view-azure-portal/create-new-group.png":::
+
 1. Select **New group**.
-1. Complete the **Group** page:
-    
-    - **Group type:** Select **Security**
-    - **Group name:** Type _MDM policy - West_
-    - **Membership type:** Select **Assigned**.
+1. Complete the options in the **Group** page:
+   - **Group name**: Type *MDM policy - West*
+   - **Membership type**: Select *Assigned*.
+
+   :::image type="content" source="media/groups-view-azure-portal/new-group-page.png" alt-text="Screenshot of the New group page.":::
 
 1. Select **Create**.
 
@@ -49,6 +50,9 @@ A user must exist before being added as a group member, so you'll need to create
 
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select  **New user** > **Create new user**.
+
+   :::image type="content" source="media/groups-view-azure-portal/create-new-user-menu.png" alt-text="Screenshot of the New user page.":::
+
 1. Complete the **User** page:
 
    - **User principal name:** Type *alain\@contoso.com*.
@@ -74,7 +78,7 @@ You can see all the groups for your organization in the **Groups - All groups** 
 
     The **All groups** page appears, showing all your active groups.
 
-    ![Screenshot of the 'Groups-All groups' page, showing all existing groups.](media/groups-view-azure-portal/groups-search.png)
+    :::image type="content" source="media/groups-view-azure-portal/groups-search.png" alt-text="Screenshot of the 'Groups-All groups' page, showing all existing groups.":::
 
 ## Search for a group
 
@@ -85,12 +89,12 @@ Search the **All groups** page to find the **MDM policy – West** group.
 
     The search results appear under the **Search** box, including the _MDM policy - West_ group.
 
-    ![Screenshot of the 'Groups' search page showing matching search results.](media/groups-view-azure-portal/groups-search-group-name.png)
+   :::image type="content" source="media/groups-view-azure-portal/groups-search-group-name.png" alt-text="Screenshot of the 'Groups' search page showing matching search results.":::
 
 1. Select the group **MDM policy – West**.
 1. View the group info on the **MDM policy - West Overview** page, including the number of members of that group.
 
-    ![Screenshot of MDM policy – West Overview page with member info.](media/groups-view-azure-portal/groups-overview.png)
+   :::image type="content" source="media/groups-view-azure-portal/groups-overview.png" alt-text="Screenshot of MDM policy – West Overview page with member info.":::
 
 ## View group members
 
@@ -98,7 +102,7 @@ Now that you’ve found the group, you can view all the assigned members.
 
 Select **Members** from the **Manage** area, and then review the complete list of member names assigned to that specific group, including _Alain Charon_.
 
-![Screenshot of the list of members assigned to the MDM policy – West group.](media/groups-view-azure-portal/groups-all-members.png)
+:::image type="content" source="media/groups-view-azure-portal/groups-all-members.png" alt-text="Screenshot of the list of members assigned to the MDM policy – West group.":::
 
 ## Clean up resources
 
@@ -114,7 +118,7 @@ The group you just created is used in other articles in this documentation. If y
 
    The group and its associated members are deleted.
 
-   ![Screenshot of the MDM policy – West Overview page with Delete link highlighted.](media/groups-view-azure-portal/groups-delete.png)
+   :::image type="content" source="media/groups-view-azure-portal/groups-delete.png" alt-text="Screenshot of the MDM policy – West Overview page with Delete link highlighted.":::
 
    > [!IMPORTANT]
    > This doesn't delete the user Alain Charon, just his membership in the deleted group.
