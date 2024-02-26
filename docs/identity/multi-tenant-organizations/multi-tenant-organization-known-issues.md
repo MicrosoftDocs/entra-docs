@@ -25,7 +25,7 @@ The experiences and issues described in this article have the following scope.
 | In scope | - Microsoft Entra administrator experiences and issues related to multitenant organizations to support seamless collaboration experiences in new Teams, with reciprocally provisioned B2B members |
 | Related scope | - Microsoft 365 admin center experiences and issues related to multitenant organizations<br/>- Microsoft 365 multitenant organization people search experiences and issues<br/>- Cross-tenant synchronization issues related to Microsoft 365 |
 | Out of scope | - Cross-tenant synchronization unrelated to Microsoft 365<br/>- End user experiences in new Teams<br/>- End user experiences in Power BI<br/>- Tenant migration or consolidation |
-| Unsupported scenarios | - Seamless collaboration experience across multitenant organizations in classic Teams<br/>- Self-service for multitenant organizations larger than five tenants or 100,000 internal users per tenant<br/>- Using provisioning or synchronization engines other than Microsoft Entra cross-tenant synchronization<br/>- Multitenant organizations in Azure Government or Microsoft Azure operated by 21Vianet<br/>- Cross-cloud multitenant organizations |
+| Unsupported scenarios | - Seamless collaboration experience across multitenant organizations in classic Teams<br/>- Self-service for multitenant organizations larger than five tenants or 100,000 internal users per tenant<br/>- Multitenant organizations in Azure Government or Microsoft Azure operated by 21Vianet<br/>- Cross-cloud multitenant organizations |
 
 ## Multitenant organization related issues
 
@@ -41,7 +41,7 @@ The experiences and issues described in this article have the following scope.
 
 - If you followed the correct sequence of creating a multitenant organization, adding a tenant to the multitenant organization, and the added tenant's join request keeps failing, submit a support request to Microsoft Entra ID or Microsoft 365 admin center.
 
-- As part of a multitenant organization, newly invited B2B users receive an additional user property that includes the home tenant identifier of the B2B user. Already redeemed B2B users don't have this additional user property. Currently, Microsoft 365 admin center share users functionality or Microsoft Entra cross-tenant synchronization are currently the only accepted methods to get this additional user property populated.
+- As part of a multitenant organization, newly invited B2B users receive an additional user property that includes the home tenant identifier of the B2B user. Already redeemed B2B users don't have this additional user property.
 
 - As part of a multitenant organization, [reset redemption status for a B2B user](~/external-id/reset-redemption-status.md) is currently unavailable and disabled.
 
@@ -75,7 +75,7 @@ The experiences and issues described in this article have the following scope.
 
     - In the identity platform, both methods are represented as Microsoft Entra cross-tenant synchronization jobs.
     - Synchronization jobs created with Microsoft Entra ID will not appear in the Microsoft 365 admin center.
-    - If you created your synchronization job in the Microsoft 365 admin center, do not modify it using Microsoft Entra ID, otherwise it will no longer appear in the admin center.
+    - If you created your synchronization job in the Microsoft 365 admin center, do not modify the synchronization job name using Microsoft Entra ID, otherwise it will no longer appear in the admin center.
     - You might adjust the attribute mappings to match your organizations' needs.
     - By default, new B2B users are provisioned as B2B members, while existing B2B guests remain B2B guests.
     - You can opt to convert B2B guests into B2B members by setting [**Apply this mapping** to **Always**](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings).
