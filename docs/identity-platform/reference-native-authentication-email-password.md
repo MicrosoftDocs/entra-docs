@@ -30,7 +30,7 @@ Microsoft Entra's native authentication API with email and password allows you t
 
 1. [Associate your app registration with the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
-1. For self-service password reset flow, [enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) for customer users in the customers tenant.
+1. For self-service password reset flow, [enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) for customer users in the customers tenant. 
 
 1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use for test the sign in APIs. Alternatively, you get this test user after you run the sign-up flow.
 
@@ -178,7 +178,8 @@ Content-Type: application/json
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
-| `invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This response is possible if the app submits user attributes, and the `error` parameter's value is *attribute_validation_failed*.    |
+| `invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This response is possible if the app submits user attributes, and the `suberror` parameter's value is *attribute_validation_failed*.    |
+|`suberror` | An error code string that can be used to further classify types of errors.|
 
 Here are the possible errors you can encounter (possible values of the `error` parameter):
 
@@ -187,8 +188,13 @@ Here are the possible errors you can encounter (possible values of the `error` p
 | `invalid_request`  |Request parameter validation failed such as when the challenge_type parameter value contains an unsupported authentication method.|
 |`unauthorized_client`| The client ID used in the request doesn't exist. |
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.| 
-|`attribute_validation_failed`|  Validation of one or more attributes failed. This response is possible if the app submits user attributes.|
 |`user_already_exists` |  User already exists.  |
+|`invalid_grant`| The password that the app submits doesn't meet all the complexity requirements, such as the password is too short. Use the `suberror` parameter to learn the exact cause of the error.|
+
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter:
+
+|    Sub-error value     | Description        |
+|----------------------|------------------------|
 |`password_too_weak`|Password is too weak as it doesn't meet complexity requirements. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
 |`password_too_short`|New password is fewer than 8 characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
 |`password_too_long` |New password is longer than 256 characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
@@ -375,6 +381,7 @@ Once the OTP code has been submitted successfully, Microsoft Entra's response de
     |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
     |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
     |`continuation_token`| [continuation_token](#continuation-token) that Microsoft Entra returns. |
+    |`suberror` | An error code string that can be used to further classify types of errors.|
     
     Here are the possible errors you can encounter (possible values of the `error` parameter):
     
@@ -382,7 +389,7 @@ Once the OTP code has been submitted successfully, Microsoft Entra's response de
     |----------------------|------------------------|
     |`credential_required`|Authentication is required for account creation, so you have to make a call to the `/signup/v1.0/challenge` endpoint to determine the credential the user is required to provide.|
     |`invalid_request`  |  Request parameter validation failed such as if the continuation token validation failed.   |  
-    |`invalid_grant`|The grant type included in the request isn't valid or supported.|
+    |`invalid_grant`|The grant type included in the request isn't valid or supported, or OTP value is incorrect.|
     |`expired_token`|The continuation token included in the request is expired. |
 
     For the password credential to be collected from the user, the app needs to make a call to the `/signup/v1.0/challenge` endpoint to determine the credential the user is required to provide.
@@ -593,15 +600,22 @@ Content-Type: application/json
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
+|`suberror` | An error code string that can be used to further classify types of errors.|
 
 Here are the possible errors you can encounter (possible values of the `error` parameter):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type.   |  
-|`invalid_grant`|The grant type provided isn't valid or supported.|
+|`invalid_grant`| The password that the app submits doesn't meet all the complexity requirements, such as the password is too short. Use the `suberror` parameter to learn the exact cause of the error.|
 |`expired_token`|The continuation token is expired. |
 |`attributes_required`  |  One or more of user attributes is required.   |
+
+
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter:
+
+|    Sub-error value     | Description        |
+|----------------------|------------------------|
 |`password_too_weak`|Password is too weak as it doesn't meet complexity requirements. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
 |`password_too_short`|New password is fewer than 8 characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
 |`password_too_long` |New password is longer than 256 characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). |
@@ -704,7 +718,8 @@ Content-Type: application/json
 |`continuation_token`| [continuation_token](#continuation-token) that Microsoft Entra returns.  |
 | `unverified_attributes`  |  A list (array of objects) of attribute key names that must be verified. This parameter is included in the response when the `error` parameter's value is *verification_required*.|
 |`required_attributes`| A list (array of objects) of attributes that the app needs to submit. Microsoft Entra includes this parameter in its response when the `error` parameter's value is *attributes_required*.|
-| `invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This parameter is included in the response when the `error` parameter's value is *attribute_validation_failed*.    |
+| `invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This parameter is included in the response when the `suberror` parameter's value is *attribute_validation_failed*.    |
+|`suberror` | An error code string that can be used to further classify types of errors.|
 
 Here are the possible errors you can encounter (possible values of the `error` parameter):
 
@@ -714,7 +729,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |`invalid_grant`|The grant type provided isn't valid or supported.|
 |`expired_token`|The continuation token included in the request is expired.|
 |`attributes_required`  |  One or more of user attributes is required.   |
-|`attribute_validation_failed`|  Validation of one or more attributes failed. |
+
 
 ### Step 5: Request for security tokens
 
@@ -1490,6 +1505,7 @@ Content-Type: application/json
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
+|`suberror` | An error code string that can be used to further classify types of errors.|
 
 Here are the possible errors you can encounter (possible values of the `error` parameter):
 
@@ -1574,6 +1590,7 @@ Content-Type: application/json
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
+|`suberror` | An error code string that can be used to further classify types of errors.|
 
 Here are the possible errors you can encounter (possible values of the `error` parameter):
 
@@ -1581,6 +1598,12 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as a validation of *continuation token* failed.   |
 |`expired_token`|The *continuation token* is expired.    |
+|`invalid_grant`| The password that the app submits doesn't meet all the complexity requirements, such as the password is too short. Use the `suberror` parameter to learn the exact cause of the error.|
+
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter:
+
+|    Sub-error value     | Description        |
+|----------------------|------------------------|
 |`password_too_weak`|Password is too weak as it doesn't meet complexity requirements. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
 |`password_too_short`|New password is fewer than 8 characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
 |`password_too_long` |New password is longer than 256 characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). |
@@ -1619,13 +1642,15 @@ Content-Type: application/json
 
 ```json
 {
-    "status": "succeeded" 
+    "status": "succeeded",
+    "continuation_token":"czZCaGRSa3F0..."
 } 
 ```
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `status`  | The status of the reset password request. If Microsoft Entra returns a status of **, the app can resubmit the new password by making another request to the `/submit` endpoint.|
+| `status`  | The status of the reset password request. If Microsoft Entra returns a status of *failed*, the app can resubmit the new password by making another request to the `/submit` endpoint and include the new continuation token.|
+| `continuation_token`  |  [continuation_token](#continuation-token) that Microsoft Entra returns. If the status is *succeeded*, the app can use the continuation token that Microsoft Entra returns to request for security tokens via the `/token` endpoint as explained in [step 3 of sign-in flow](#step-3-request-for-security-tokens). This means that after a user successfully resets their password, you can directly sign them into your app without asking them to reenter their new credentials.|
 
 Here are the possible statuses that Microsoft Entra returns (possible values of the `status` parameter):
 

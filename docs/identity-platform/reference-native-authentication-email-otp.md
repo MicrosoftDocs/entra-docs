@@ -164,7 +164,8 @@ Content-Type: application/json
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
-| `invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This response is possible if the app submits user attributes, and the `error` parameter's value is *attribute_validation_failed*.    |
+| `invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This response is possible if the app submits user attributes, and the `suberror` parameter's value is *attribute_validation_failed*.    |
+|`suberror` | An error code string that can be used to further classify types of errors.|
 
 Here are the possible errors you can encounter (possible values of the `error` parameter):
 
@@ -173,7 +174,6 @@ Here are the possible errors you can encounter (possible values of the `error` p
 | `invalid_request`  |Request parameter validation failed such as when the challenge_type parameter value contains an unsupported authentication method.|
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.|
 |`unauthorized_client`|The client ID included in the request doesn't exist.  |  
-|`attribute_validation_failed`|  Validation of one or more attributes failed. This response is possible if the app submits user attributes.|
 |`user_already_exists` |  User already exists.  |  
 
 > [!NOTE]
@@ -309,7 +309,6 @@ continuation_token = uY29tL2F1dGhlbnRpY...
 &client_id=111101-14a6-abcd-97bc-abcd1110011 
 &grant_type=oob 
 &oob={otp_code}
-&signup-token=AQABAAEAAAYn...
 ```
 
 |    Parameter     | Required | Description        |
@@ -376,7 +375,7 @@ Content-Type: application/json
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
 |`continuation_token`| [continuation_token](#continuation-token) that Microsoft Entra returns. |
-|`required_attributes`|A list (array of objects) of attributes that the app needs to submit next call to continue. These attributes are the extra attributes that app needs to submit apart from the username. Microsoft Entra includes this parameter is the response if the value of `error` parameter is *attributes_required*.|
+|`required_attributes`|A list (array of objects) of attributes that the app needs to submit in the next call to continue. These attributes are the extra attributes that app needs to submit apart from the username. Microsoft Entra includes this parameter is the response if the value of `error` parameter is *attributes_required*.|
 
 Here are the possible errors you can encounter (possible values of the `error` parameter):
 
@@ -437,18 +436,17 @@ Content-Type: application/json
 |`timestamp` | The time when the error occurred.|
 |`trace_id` | A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id` | A  unique identifier for the request that can help in diagnostics across components. |
-|`suberror` | An error code string that can be used to further classify types of errors, and to react to errors.|
-|`invalid_attributes` |  A list (array of objects) of attributes that failed validation. This parameter is included in the response when the `error` parameter's value is *attribute_validation_failed*. |
+|`suberror` | An error code string that can be used to further classify types of errors.|
+|`invalid_attributes` |  A list (array of objects) of attributes that failed validation. This parameter is included in the response when the `suberror` parameter's value is *attribute_validation_failed*. |
 
 Here are the possible errors you can encounter (possible values of the `error` parameter):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |  Request parameter validation failed such as when the continuation token or OTP validation fails. OTP code validation can fail as a result of the code expiring or providing an incorrect OTP code.|  
-|`invalid_grant`|The grant type provided isn't valid or supported.|
+| `invalid_request`  |  Request parameter validation failed such as when the continuation token or OTP validation fails.|  
+|`invalid_grant`|The grant type provided isn't valid or supported, or OTP is incorrect. Use the `suberror` parameter to learn the exact cause of the error.|
 |`invalid_client`|The client ID included in the request doesn't exist. |
 |`expired_token`|The continuation token is expired. |
-|`attribute_validation_failed`  |  Validation of one or more attributes failed. |
 
 ### Step 4: Authenticate and get token to sign in
 
@@ -544,7 +542,8 @@ Content-Type: application/json
 |`continuation_token`| [continuation_token](#continuation-token) that Microsoft Entra returns. |
 | `unverified_attributes`  |  A list (array of objects) of attribute key names that must be verified. This parameter is included in the response when the `error` parameter's value is *verification_required*.|
 |`required_attributes`| A list (array of objects) of attributes that the app needs to be submit. Microsoft Entra includes this parameter in its response when the `error` parameter's value is equal to *attributes_required*.|
-| `invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This parameter is included in the response when the `error` parameter's value is *attribute_validation_failed*.    |
+| `invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This parameter is included in the response when the `suberror` parameter's value is *attribute_validation_failed*.    |
+|`suberror` | An error code string that can be used to further classify types of errors.|
 
 Here are the possible errors you can encounter (possible values of the `error` parameter):
 
@@ -556,7 +555,6 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |`expired_token`|The continuation token included in the request is expired.|
 |`user_already_exists` |  User already exists.  |
 |`attributes_required`  |  One or more of user attributes is required.   |
-|`attribute_validation_failed`|  Validation of one or more attributes failed. |
 
 ### Step 5: Request for security tokens
 
