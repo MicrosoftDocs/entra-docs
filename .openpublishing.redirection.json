@@ -16,6 +16,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/devices/how-to-hybrid-join-downlevel.md",
+      "redirect_url": "/entra/identity/devices/how-to-hybrid-join",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/id-protection/concept-identity-protection-security-overview.md",
       "redirect_url": "/entra/id-protection/id-protection-dashboard",
       "redirect_document_id": true
