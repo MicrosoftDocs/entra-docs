@@ -193,7 +193,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter:
 
-|    Sub-error value     | Description        |
+|    Suberror value     | Description        |
 |----------------------|------------------------|
 |`password_too_weak`|Password is too weak as it doesn't meet complexity requirements. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
 |`password_too_short`|New password is fewer than 8 characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
@@ -615,7 +615,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter:
 
-|    Sub-error value     | Description        |
+|    Suberror value     | Description        |
 |----------------------|------------------------|
 |`password_too_weak`|Password is too weak as it doesn't meet complexity requirements. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
 |`password_too_short`|New password is fewer than 8 characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
@@ -1603,7 +1603,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter:
 
-|    Sub-error value     | Description        |
+|    Suberror value     | Description        |
 |----------------------|------------------------|
 |`password_too_weak`|Password is too weak as it doesn't meet complexity requirements. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
 |`password_too_short`|New password is fewer than 8 characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
