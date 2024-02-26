@@ -94,24 +94,11 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use P
 
 # [PowerShell](#tab/ms-powershell)
 
-1. In the owner tenant, use the [Invoke-MgGraphRequest](/powershell/microsoftgraph/authentication-commands#using-invoke-mggraphrequest) command to create your multitenant organization. This operation can take a few minutes.
+
+1. In the owner tenant, use the [Update-MgBetaTenantRelationshipMultiTenantOrganization](/powershell/module/microsoft.graph.beta.identity.signins/update-mgbetatenantrelationshipmultitenantorganization) command to create your multitenant organization. This operation can take a few minutes.
 
     ```powershell
-    $params = @{
-        displayName = "Cairo"
-    }
-    Invoke-MgGraphRequest -Method PUT -Uri "https://graph.microsoft.com/beta/tenantRelationships/multiTenantOrganization" -Body $params
-    ```
-
-    ```Output
-    Name                           Value
-    ----                           -----
-    id                             <MtoIdC>
-    state                          active
-    description
-    @odata.context                 https://graph.microsoft.com/beta/$metadata#tenantRelationships/multiTenantOrganization/…
-    createdDateTime                1/8/2024 7:47:45 PM
-    displayName                    Cairo
+    Update-MgBetaTenantRelationshipMultiTenantOrganization -DisplayName "Cairo"
     ```
 
 1. Use the [Get-MgBetaTenantRelationshipMultiTenantOrganization](/powershell/module/microsoft.graph.beta.identity.signins/get-mgbetatenantrelationshipmultitenantorganization) command to check that the operation has completed before proceeding.
