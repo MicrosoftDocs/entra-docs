@@ -97,11 +97,13 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![image](common/default-attributes.png)
 
+    > [!Note]
+    > Here **username -> user.displayname** attribute gets auto-populate under **Required claim** section as per requirements of the Swit application.
+
 1. Below are the optional claims, which can be mapped to the user and passed back in the SAML response based on your requirements.
 	
 	| Name |  Source Attribute|
 	| -------------- | --------- |
-    | username | user.displayname |
     | per | user.preferredlanguage |
     | tel | user.telephonenumber |
 
