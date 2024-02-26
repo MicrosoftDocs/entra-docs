@@ -10,7 +10,7 @@ ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Using Azure Front Door to achieve geo-acceleration
+# Using Azure Front Door for geo-acceleration in Microsoft Entra application proxy
 
 This article describes configuring Microsoft Entra application proxy with Azure Front Door to achieve reduced latency and better performance.
  
