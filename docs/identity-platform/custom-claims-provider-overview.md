@@ -36,6 +36,11 @@ An event listener is a procedure that waits for an event to occur. The custom au
 
 For an example using a custom claims provider with the **token issuance start** event listener, check out the [get started with custom claims providers](custom-extension-get-started.md) article.
 
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=TokenAugmentation)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Add claims to security tokens from a REST API” use case.
+
 ## Next steps
 
 - Learn how to [create and register a custom claims provider](custom-extension-get-started.md) with a sample OpenID Connect application.
