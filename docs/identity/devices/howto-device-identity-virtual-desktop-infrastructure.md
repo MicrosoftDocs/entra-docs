@@ -2,7 +2,7 @@
 title: Device identity and desktop virtualization
 description: Learn how VDI and Microsoft Entra device identities can be used together
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
 ms.date: 12/01/2023

@@ -6,8 +6,7 @@ ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: reference
 ms.date: 10/05/2023
-ms.service: network-access
-ms.custom: 
+ms.service: global-secure-access
 ---
 
 # Global Secure Access remote network configurations

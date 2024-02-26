@@ -2,7 +2,7 @@
 title: How to configure Microsoft Entra certificate-based authentication
 description: Topic that shows how to configure Microsoft Entra certificate-based authentication in Microsoft Entra ID
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 11/04/2023
@@ -11,8 +11,6 @@ ms.author: justinha
 author: vimrang
 manager: amycolannino
 ms.reviewer: vraganathan
-
-ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref, has-azure-ad-ps-ref
 ---
 # How to configure Microsoft Entra certificate-based authentication
@@ -39,6 +37,8 @@ Make sure that the following prerequisites are in place:
 >[!IMPORTANT]
 >Please visit the [Microsoft recommendations](/security/sdl/cryptographic-recommendations#security-protocol-algorithm-and-key-length-recommendations) for best practices for Microsoft Cryptographic involving algorithm choice, key length and data protection. Please make sure to use one of the recommended algorithms, key length and NIST approved curves.
 
+>[!IMPORTANT]
+>As part of ongoing security improvements Azure/M365 endpoints are adding support for TLS1.3 and this process is expected to take a few months to cover the thousands of service endpoints across Azure/M365. This includes the Entra ID endpoint used by Microsoft Entra Certificate Based Authentication (CBA) *.certauth.login.microsoftonline.com & *.certauth.login.mcirosoftonline.us. TLS 1.3 is the latest version of the internet’s most deployed security protocol, which encrypts data to provide a secure communication channel between two endpoints. TLS 1.3 eliminates obsolete cryptographic algorithms, enhances security over older versions, and aims to encrypt as much of the handshake as possible. We highly recommend for developers to start testing TLS 1.3 in their applications and services.
 
 >[!NOTE]
 >When evaluating a PKI, it is important to review certificate issuance policies and enforcement. As mentioned, adding certificate authorities (CAs) to Microsoft Entra configuration allows certificates issued by those CAs to authenticate any user in Microsoft Entra ID. For this reason, it is important to consider how and when the CAs are allowed to issue certificates, and how they implement reusable identifiers. Where administrators need to ensure only a specific certificate is able to be used to authenticate a user, admins should exclusively use high-affinity bindings to achieve a higher level of assurance that only a specific certificate is able to authenticate the user. For more information, see [high-affinity bindings](concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-username-binding-policy).
@@ -78,7 +78,7 @@ To enable the certificate-based authentication and configure user bindings in th
 >[!NOTE]
 >Upload of a new CA fails if any existing CA expired. A Global Administrator should delete any expired CA, and retry to upload the new CA.
 
-### Configure certification authorities(CA) using PowerShell
+### Configure certificate authorities (CA) using PowerShell
 
 Only one CRL Distribution Point (CDP) for a trusted CA is supported. The CDP can only be HTTP URLs. Online Certificate Status Protocol (OCSP) or Lightweight Directory Access Protocol (LDAP) URLs aren't supported.
 
@@ -96,7 +96,7 @@ Only one CRL Distribution Point (CDP) for a trusted CA is supported. The CDP can
 >[!NOTE]
 >Upload of new CAs will fail when any of the existing CAs are expired. Tenant Admin should delete the expired CAs and then upload the new CA.
 
-[!INCLUDE [New-AzureAD](~/includes/entra-authentication-new-trusted.md)]
+Follow the preceding steps to add a CA in the Microsoft Entra admin center. 
 
 **AuthorityType**
 - Use 0 to indicate a Root certification authority
@@ -116,11 +116,11 @@ The following table and graphic show how to map information from the CA certific
 :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/certificate-crl-compare.png" alt-text="Compare CA Certificate with CRL Information.":::
 
 >[!TIP]
->The value for crlDistributionPoint in the preceding example is the http location for the CA’s Certificate Revocation List (CRL). This can be found in a few places.
+>The value for crlDistributionPoint in the preceding example is the http location for the CA’s Certificate Revocation List (CRL). This value can be found in a few places:
 >
 >- In the CRL Distribution Point (CDP) attribute of a certificate issued from the CA.
 >
->If Issuing CA is Windows Server:
+>If the issuing CA runs Windows Server:
 >
 >- On the [Properties](/windows-server/networking/core-network-guide/cncg/server-certs/configure-the-cdp-and-aia-extensions-on-ca1#to-configure-the-cdp-and-aia-extensions-on-ca1)
  of the CA in the certification authority Microsoft Management Console (MMC).
@@ -128,15 +128,8 @@ The following table and graphic show how to map information from the CA certific
 
 For more information, see [Understanding the certificate revocation process](./concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process).
 
-### Remove
 
-[!INCLUDE [Remove-Entra-ID](~/includes/entra-authentication-remove-trusted.md)]
-
-### Modify
-
-[!INCLUDE [Set-Entra-ID](~/includes/entra-authentication-set-trusted.md)]
-
-### Validate Certificate Authority Configuration
+### Validate Certificate Authority configuration
 
 It is important to ensure that the above configuration steps result is Entra ID ability to both validate the certificate authority trust chain and succsessfully aquire the certificate revocation list (CRL) from the configured certificate authority CRL distribution point (CDP) . To assist with this task, it is recommended to install the [MSIdentity Tools](https://aka.ms/msid) PowerShell module and run [Test-MsIdCBATrustStoreConfiguration](https://github.com/AzureAD/MSIdentityTools/wiki/Test-MsIdCBATrustStoreConfiguration). This PowerShell cmdlet will review the Entra tenant certificate authority configuration and surface errors/warnings for common mis-configuration issues. 
 

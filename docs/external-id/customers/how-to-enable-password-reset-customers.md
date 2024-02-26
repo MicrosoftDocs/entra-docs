@@ -4,9 +4,9 @@ description: Learn how to enable self-service password reset so your customers c
  
 author: csmulligan
 manager: CelesteDG
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 01/07/2024
 ms.author: cmulligan

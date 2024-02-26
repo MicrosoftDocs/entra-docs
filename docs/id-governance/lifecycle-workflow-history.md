@@ -4,12 +4,11 @@ description: Conceptual article about Lifecycle Workflows reporting and history 
 author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: compliance
-ms.workload: identity
-ms.topic: conceptual 
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
+ms.topic: conceptual
 ms.date: 11/15/2023
-ms.custom: template-concept 
+ms.custom: template-concept
 ---
 
 

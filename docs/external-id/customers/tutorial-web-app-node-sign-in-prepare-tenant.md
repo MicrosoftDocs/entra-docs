@@ -6,9 +6,9 @@ author: kengaderdus
 manager: mwongerapk
 
 ms.author: kengaderdus
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: tutorial
 ms.date: 07/27/2023
 ms.custom: developer, devx-track-js
@@ -17,7 +17,7 @@ ms.custom: developer, devx-track-js
 
 # Tutorial: Prepare your customer tenant to sign in users in a Node.js web app
 
-This tutorial demonstrates how to prepare your Microsoft Entra ID for customers tenant to sign in users in a Node.js web application.
+This tutorial series demonstrates how to build a Node.js web app and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for JavaScript](/javascript/api/overview/msal-overview) library to authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences. demonstrates how to prepare your Microsoft Entra ID for customers tenant to sign in users in a Node.js web application.
 
 
 In this tutorial, you'll;
@@ -33,7 +33,11 @@ If you've already registered a web application in the Microsoft Entra admin cent
 
 ## Prerequisites
 
-- Microsoft Entra ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
+* A Microsoft Entra ID for customers tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+    * Application Administrator
+    * Application Developer
+    * Cloud Application Administrator
 
 ## Register the web app
 
@@ -64,7 +68,7 @@ Make sure you record the following details for use is later steps:
 - The *Directory (tenant) subdomain* where you registered your web app. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
 - The *Client secret* value for the web app you created.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
-> [Start building your Node.js web app >](tutorial-web-app-node-sign-in-prepare-app.md)
+> [Part 2: Prepare a Node.js web application for authentication in a customer tenant](tutorial-web-app-node-sign-in-prepare-app.md)

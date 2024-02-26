@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: dmwendia
 ms.custom: 
 ms.date: 10/07/2022
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---
@@ -37,7 +37,7 @@ To sign in a domain user on a domain or Microsoft Entra joined machine, use inte
     - Or, you've provided a way for users to consent to the application. For more information, see [Requesting individual user consent](./permissions-consent-overview.md#user-consent).
     - Or, you've provided a way for the tenant admin to consent to the application. For more information, see [Admin consent](./permissions-consent-overview.md#administrator-consent).
 
-- This flow is enabled for .NET desktop, .NET Core, and UWP apps.
+- This flow is enabled for .NET desktop, .NET, and UWP apps.
 
 For more information on consent, see the [Microsoft identity platform permissions and consent](./permissions-consent-overview.md).
 
@@ -85,10 +85,10 @@ static async Task GetATokenForGraph()
    // MsalUiRequiredException: AADSTS65001: The user or administrator has not consented to use the application
    // with ID '{appId}' named '{appName}'.Send an interactive authorization request for this user and resource.
 
-   // you need to get user consent first. This can be done, if you are not using .NET Core (which does not have any Web UI)
+   // you need to get user consent first. This can be done, if you are not using .NET (which does not have any Web UI)
    // by doing (once only) an AcquireToken interactive.
 
-   // If you are using .NET core or don't want to do an AcquireTokenInteractive, you might want to suggest the user to navigate
+   // If you are using .NET or don't want to do an AcquireTokenInteractive, you might want to suggest the user to navigate
    // to a URL to consent: https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id={clientId}&response_type=code&scope=user.read
 
    // AADSTS50079: The user is required to use multi-factor authentication.

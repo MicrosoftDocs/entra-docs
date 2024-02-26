@@ -1,18 +1,15 @@
 ---
 title: The Global Secure Access Client for Android (preview)
 description: Install the Global Secure Access Android Client to connect to Microsoft's Security Edge Solutions, Microsoft Entra Internet Access and Private Access.
-ms.service: network-access
+ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 12/12/2023
+ms.date: 01/24/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
 ms.reviewer: dhruvinshah
 ---
 # Global Secure Access Client for Android (preview)
-
-> [!IMPORTANT]
-> The Android client for Global Secure Access will be available starting December 19th, 2023.
 
 The Global Secure Access Client can be deployed to compliant Android devices using Microsoft Intune and Microsoft Defender for Endpoint on Android. The Android client is built into the Defender for Endpoint Android app, which streamlines how your end users connect to Global Secure Access. The Global Secure Access Android Client makes it easier for your end users to connect to the resources they need without having to manually configure VPN settings on their devices.
 

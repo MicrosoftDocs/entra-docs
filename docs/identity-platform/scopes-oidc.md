@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: jomondi
 ms.date: 11/17/2023
 ms.reviewer: jawoods, ludwignick, phsignor
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 
 #Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand how to request scopes and permissions, so that I can access web-hosted resources on behalf of a user and ensure fine-grained control over data access and API functionality.

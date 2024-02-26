@@ -6,8 +6,8 @@ ms.author: billmath
 manager: amycolannino
 ms.date: 11/06/2023
 ms.topic: how-to
-ms.prod: windows-server-threshold
-ms.technology: identity-adfs
+ms.service: entra-id
+ms.subservice: hybrid-cloud-sync
 ---
 
 # Cloud sync troubleshooting

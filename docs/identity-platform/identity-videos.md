@@ -7,10 +7,10 @@ ms.author: owenrichards
 ms.custom: has-adal-ref
 ms.date: 01/06/2023
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer, I want to learn about the Microsoft identity platform and its key components and capabilities, so that I can implement secure authentication in my applications using the Microsoft Authentication Libraries (MSAL).
 ---
 
 # Microsoft identity platform videos

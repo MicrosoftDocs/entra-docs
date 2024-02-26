@@ -1,16 +1,15 @@
 ---
 title: 'Microsoft Entra Cloud Sync accidental deletes'
 description: This topic describes how to use the accidental delete feature to prevent deletions.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: conceptual
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Accidental delete prevention

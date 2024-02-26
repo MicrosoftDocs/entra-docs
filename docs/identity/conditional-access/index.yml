@@ -6,7 +6,7 @@ summary: Learn how to configure and test Microsoft Entra Conditional Access
 metadata:
   title: Microsoft Entra Conditional Access documentation
   description: Learn how to configure and test Microsoft Entra Conditional Access
-  ms.service: active-directory
+  ms.service: entra-id
   ms.subservice: conditional-access
   ms.topic: landing-page
   author: MicrosoftGuyJFlo

@@ -4,8 +4,8 @@ description: Learn to configure F5 BIG-IP Access Policy Manager (APM) and Micros
 
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 03/22/2023
@@ -239,7 +239,7 @@ Create an APM SSO object.
 
 8. On the **General Purpose** tab, select **HTTP Headers** > **Add Item**.
 
-   ![Screenshot of the the HTTP Headers option.](./media/f5-big-ip-header-advanced/add-item.png)
+   ![Screenshot of the HTTP Headers option.](./media/f5-big-ip-header-advanced/add-item.png)
 
 9. Select **Add new entry**.
 10. Create three HTTP and Header modify entries.

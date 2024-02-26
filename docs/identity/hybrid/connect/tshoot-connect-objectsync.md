@@ -1,17 +1,16 @@
 ---
 title: 'Microsoft Entra Connect: Troubleshoot object synchronization'
 description: Learn how to troubleshoot issues with object synchronization by using the troubleshooting task.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Troubleshoot object synchronization with Microsoft Entra Connect Sync
@@ -122,4 +121,3 @@ In addition to analyzing the object, the troubleshooting task generates an HTML 
 ## Next steps
 
 Learn more about [integrating your on-premises identities with Microsoft Entra ID](../whatis-hybrid-identity.md).
-

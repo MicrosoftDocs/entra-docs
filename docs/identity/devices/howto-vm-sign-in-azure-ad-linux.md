@@ -2,8 +2,8 @@
 title: Log in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH
 description: Learn how to log in to an Azure VM that's running Linux by using Microsoft Entra ID and OpenSSH certificate-based authentication.
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
 ms.date: 01/05/2024
@@ -13,7 +13,6 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-track-linux
-ms.collection: M365-identity-device-management
 ---
 # Log in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH
 
@@ -491,6 +490,18 @@ If you get exit code 23, the status of the AADSSHLoginForLinux VM extension show
 This failure happens when the older AADLoginForLinux VM extension is still installed.
 
 The solution is to uninstall the older AADLoginForLinux VM extension from the VM. The status of the new AADSSHLoginForLinux VM extension will then change to **Provisioning succeeded** in the portal.
+
+#### Installation failures when using an HTTP proxy
+
+The extension needs an HTTP connection to install packages and check for the existence of a system identity. It runs in the context of `walinuxagent.service` and requires a change to let the agent know about the proxy settings. Open ` /lib/systemd/system/walinuxagent.service` file on the target machine and add the following line after `[Service]`:
+```
+[Service]
+Environment="http_proxy=http://proxy.example.com:80/"
+Environment="https_proxy=http://proxy.example.com:80/"
+Environment="no_proxy=169.254.169.254"
+```
+
+Restart the agent (`sudo systemctl restart walinuxagent`). Now try again.
 
 #### The az ssh vm command fails with KeyError access_token
 

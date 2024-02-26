@@ -5,9 +5,9 @@ description: Learn about how to register an app in the customer tenant.
 author: csmulligan
 ms.author: cmulligan
 manager: CelesteDG
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 07/12/2023
 

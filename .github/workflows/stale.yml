@@ -5,6 +5,10 @@
 # https://github.com/actions/stale
 name: Mark stale issues and pull requests
 
+permissions:
+  issues: write
+  pull-requests: write
+  
 on:
   schedule:
   - cron: '0 */6 * * *'
@@ -13,10 +17,7 @@ jobs:
   stale:
 
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      pull-requests: write
-
+  
     steps:
     - uses: actions/stale@v5
       with:

@@ -1,14 +1,13 @@
 ---
 title: Create a trust relationship between a user-assigned managed identity and an external identity provider
 description: Set up a trust relationship between a user-assigned managed identity in Microsoft Entra ID and an external identity provider.  This allows a software workload outside of Azure to access Microsoft Entra protected resources without using secrets or certificates.
-services: active-directory
+
 author: rwike77
 manager: CelesteDG
 
-ms.service: active-directory
-ms.subservice: workload-identities
+ms.service: entra-workload-id
+
 ms.topic: how-to
-ms.workload: identity
 ms.date: 09/15/2023
 ms.author: ryanwi
 ms.custom: aaddev, devx-track-azurecli, devx-track-azurepowershell
@@ -183,7 +182,7 @@ To delete a specific federated identity credential, select the **Delete** icon f
 - [Create a user-assigned manged identity](~/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azcli#create-a-user-assigned-managed-identity-1)
 - Find the name of the user-assigned managed identity, which you need in the following steps.
 
-[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../articles/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../docs/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
 
 ## Configure a federated identity credential on a user-assigned managed identity
 

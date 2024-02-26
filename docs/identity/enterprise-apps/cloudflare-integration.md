@@ -4,8 +4,8 @@ description: In this tutorial, learn how to integrate Cloudflare with Microsoft 
 
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 05/02/2023

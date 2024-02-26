@@ -1,19 +1,16 @@
 ---
 title: Troubleshoot resource access denied in Privileged Identity Management
 description: Learn how to troubleshoot system errors with roles in Microsoft Entra Privileged Identity Management (PIM).
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: how-to
-ms.workload: identity
-ms.subservice: pim
+ms.subservice: privileged-identity-management
 ms.date: 10/07/2021
 ms.author: billmath
 ms.reviewer: shaunliu
-ms.collection: M365-identity-device-management
+
 ---
 
 # Troubleshoot access to Azure resources denied in Privileged Identity Management

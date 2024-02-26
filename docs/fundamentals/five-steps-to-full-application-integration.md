@@ -1,14 +1,14 @@
 ---
 title: Five steps to integrate your apps with Microsoft Entra ID
 description: Learn to integrate your applications with Microsoft Entra ID by adding apps, discovery, and integration methods.
-services: active-directory
 author: jricketts
 ms.author: jricketts
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 03/01/2023
+# Customer intent: As an IT admin responsible for application integration, I want to learn how to integrate my company's applications with Microsoft Entra ID, so that I can improve security, reduce costs, increase productivity, and enable compliance through centralized identity and access management.
+
 ---
 
 # Five steps to integrate your apps with Microsoft Entra ID
@@ -55,7 +55,7 @@ Use the following tutorials to learn to integrate common tools with Microsoft En
 
 ### Apps not in the gallery
 
-You can integrate applications that don't appear in the gallery, including applications in your organization, or third-party application from vendors. Submit a request to publish your app in the gallery. To learn about integrating apps you develop in-house, see **Integrate apps your developers build**.
+You can integrate applications that don't appear in the gallery, including applications in your organization, or third-party application from vendors. Submit a request to publish your app in the gallery. To learn about integrating apps you develop in-house, see [Integrate apps your developers build](~/fundamentals/five-steps-to-full-application-integration.md#integrate-apps-your-developers-build).
 
 Learn more:
 
@@ -134,7 +134,7 @@ You can migrate apps that use a different cloud-based IdP. Your organization mig
 
 Traditionally, application security enabled access during a connection to a corporate network. However, organization grant access to apps for customers, partners, and/or employees, regardless of location. Application Proxy Service in Microsoft Entra connects on-premises apps to Microsoft Entra ID and doesn't require edge servers or more infrastructure.
 
-See: [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/what-is-application-proxy.md)
+See: [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/overview-what-is-app-proxy.md)
 
 The following diagram illustrates Application Proxy Service processing a user request.
 
