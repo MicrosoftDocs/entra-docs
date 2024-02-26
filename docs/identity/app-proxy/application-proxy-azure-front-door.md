@@ -31,7 +31,7 @@ Securely expose a web application on the internet using Microsoft Entra applicat
 - A custom domain to use for the application.
 - Application proxy subscription licenses are available in Microsoft Entra ID P1 or P2. For more information about licensing options and features, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
-### Application proxy configuration
+## Application proxy configuration
 
 Configure application proxy for Front Door.
 
@@ -44,7 +44,6 @@ Configure application proxy for Front Door.
     - Configure a CNAME entry in the Domain Name System (DNS). Point the external URL to the Azure Front Door endpoint. For example, `contoso.org’`to `contoso.msappproxy.net`. 
 3. In the Azure Front Door service, utilize the URL generated for the application by application proxy as a backend for the backend pool. For example, `contoso.msappproxy.net`.
 
-#### Sample application proxy configuration
 The table shows a sample application proxy configuration. The sample scenario uses the sample application domain `www.contoso.org` as the external URL.
 
 |     | Configuration | Additional Information |
@@ -53,7 +52,7 @@ The table shows a sample application proxy configuration. The sample scenario us
 | **External URL** | `contoso.org` | Configure a custom domain for access from the internet. |
 | **Connector group** | `North America` | To optimize performance, select the connector group in the geo location closest to the application instance.|
 
-### Azure Front Door configuration
+## Azure Front Door configuration
 
 Azure Front Door is offered in different tiers including Standard, Premium, and Classic. Select a tier based on your preference. For more information on tier comparison, see [Azure Front Door tier comparison][front-door-tier].
 
@@ -64,7 +63,6 @@ The configuration steps refer to these definitions.
 - **Origin host name** - The setting represents the backend origin host name. For example, `contoso.msappproxy.net`. 
 - **Origin host header** - The setting represents the host header value being sent to the backend for each request. For example, `contoso.org`. For more information about origin and origin groups, see [Origins and origin groups – Azure Front Door][front-door-origin].
 
-### Azure Front Door service (Standard)
 1. Create a Front Door (Standard) configuration. 
     - Add an *Endpoint name* for generating the Front Door’s default domain on `azurefd.net`. For example, `contoso-nam` generates the endpoint hostname `contoso-nam.azurefd.net`.
     - Add an *Origin Type* for the type of backend resource. Use **Custom** for the application proxy resource.
