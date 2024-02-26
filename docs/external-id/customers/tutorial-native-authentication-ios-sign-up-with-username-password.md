@@ -15,38 +15,38 @@ ms.custom: developer, devx-track-dotnet
 #Customer intent: As a dev, devops, I want to learn about sign up using username and password.
 ---
 
-# Tutorial: Sign up using username and password
+# Tutorial: Sign up using username and password 
 
-This tutorial demonstrates how to sign up using username and password.
+This tutorial demonstrates how to sign up using username and password. 
 
-In this tutorial, you learn how to:
+In this tutorial, you learn how to: 
 
-- Sign up using username, and password.
-- Handle errors.
+- Sign up using username, and password. 
+- Handle errors. 
 
-## Prerequisites
+## Prerequisites 
 
-- [Register iOS application in Microsoft Entra External ID for customers tenant](how-to-run-sample-ios-app.md#register-an-application)
-- [Enable public client and native authentication flows](how-to-run-sample-ios-app.md#enable-public-client-and-native-authentication-flows)
-- [Grant API permissions](how-to-run-sample-ios-app.md#grant-api-permissions)
-- User-flow Email with password:
-  - [Create a user flow](how-to-run-sample-ios-app.md#create-a-user-flow)
-    - Under **User attributes**, select **Country/Region** and **City** in the user flow.
-  - [Associate the app with the user flow](how-to-run-sample-ios-app.md#associate-the-application-with-the-user-flow)
+- [Register iOS application in Microsoft Entra External ID for customers tenant](how-to-run-sample-ios-app.md#register-an-application) 
+- [Enable public client and native authentication flows](how-to-run-sample-ios-app.md#enable-public-client-and-native-authentication-flows) 
+- [Grant API permissions](how-to-run-sample-ios-app.md#grant-api-permissions) 
+- User-flow Email with password: 
+  - [Create a user flow](how-to-run-sample-ios-app.md#create-a-user-flow) 
+    - Under **User attributes**, select **Country/Region** and **City** in the user flow. 
+  - [Associate the app with the user flow](how-to-run-sample-ios-app.md#associate-the-application-with-the-user-flow) 
 
-## Sign up using username and password
+## Sign up using username and password 
 
-To sign up user using username (email address) and password, we need to verify the email through email one-time passcode (OTP).
+To sign up user using username (email address) and password, we need to verify the email through email one-time passcode (OTP). 
 
-We use the `signUp(username:password:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignUpStartDelegate` protocol.
+We use the `signUp(username:password:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignUpStartDelegate` protocol. 
 
-1. In the `signUp(username:password:delegate)` method, we pass in the email address that the user supplied us with, their password, and pass `self` for the delegate:
+1. In the `signUp(username:password:delegate)` method, we pass in the email address that the user supplied us with, their password, and pass `self` for the delegate: 
 
     ```swift
     nativeAuth.signUp(username: email, password: password, delegate: self)
     ```
 
-1. To implement `SignUpStartDelegate` protocol as an extension to our class, use:
+1. To implement `SignUpStartDelegate` protocol as an extension to our class, use: 
 
    ```swift
    extension ViewController: SignUpStartDelegate {
@@ -65,20 +65,20 @@ We use the `signUp(username:password:delegate)` method, which responds asynchron
    }
    ```
 
-   The call to `signUp(username:password:delegate)` results in a call to either `onSignUpCodeRequired()` or `onSignUpStartError()` delegate methods.
+   The call to `signUp(username:password:delegate)` results in a call to either `onSignUpCodeRequired()` or `onSignUpStartError()` delegate methods. 
 
-   The `onSignUpCodeRequired(newState:sentTo:channelTargetType:codeLength)` is called to indicate that a code has been sent to verify the user's email address. Along with some details of where the code has been sent, and how many digits it contains, this delegate method also has a `newState` parameter of type `SignUpCodeRequiredState`, which gives us access to two new methods:
+   The `onSignUpCodeRequired(newState:sentTo:channelTargetType:codeLength)` is called to indicate that a code has been sent to verify the user's email address. Along with some details of where the code has been sent, and how many digits it contains, this delegate method also has a `newState` parameter of type `SignUpCodeRequiredState`, which gives us access to two new methods: 
 
    - `submitCode(code:delegate)`
    - `resendCode(delegate)`
 
-   To submit the code that the user supplied us with, use:
+   To submit the code that the user supplied us with, use: 
 
    ```swift
    submitCode(code: userSuppliedCode, delegate: self)
    ```
 
-1. To implement `SignUpVerifyCodeDelegate` protocol as an extension to our class, use:
+1. To implement `SignUpVerifyCodeDelegate` protocol as an extension to our class, use: 
 
    ```swift
    extension ViewController: SignUpVerifyCodeDelegate {
@@ -92,13 +92,13 @@ We use the `signUp(username:password:delegate)` method, which responds asynchron
    }
    ```
 
-   The `submitCode(code:delegate)` accepts a delegate parameter and we must implement the required methods in the `SignUpVerifyCodeDelegate` protocol. In the most common scenario, we'll receive a call to `onSignUpCompleted(newState)` indicating that the user has been signed up and the flow is complete.
+   The `submitCode(code:delegate)` accepts a delegate parameter and we must implement the required methods in the `SignUpVerifyCodeDelegate` protocol. In the most common scenario, we'll receive a call to `onSignUpCompleted(newState)` indicating that the user has been signed up and the flow is complete. 
 
-## Handle errors
+## Handle errors 
 
-In our earlier implementation of `SignUpStartDelegate` protocol, we displayed the error when we handled the `onSignUpStartError(error)` delegate function.
+In our earlier implementation of `SignUpStartDelegate` protocol, we displayed the error when we handled the `onSignUpStartError(error)` delegate function. 
 
-We can enhance the user experience by handling the specific error type as follows:
+We can enhance the user experience by handling the specific error type as follows: 
 
 ```swift
 func onSignUpStartError(error: MSAL.SignUpStartError) {
@@ -116,6 +116,6 @@ func onSignUpStartError(error: MSAL.SignUpStartError) {
 
 ## Next steps
 
-- [Tutorial: Sign in using username and password](tutorial-native-authentication-ios-sign-in-with-username-password.md)
+- [Tutorial: Sign in using username and password](tutorial-native-authentication-ios-sign-in-with-username-password.md) 
 
 
