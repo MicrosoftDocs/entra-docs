@@ -113,7 +113,7 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-|`continuation_token`| [continuation_token](#continuation-token) that Microsoft Entra returns.|
+|`continuation_token`| [Continuation token](#continuation-token) that Microsoft Entra returns.|
 
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
@@ -171,10 +171,17 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |Request parameter validation failed such as when the challenge_type parameter value contains an unsupported authentication method.|
+| `invalid_request`  |Request parameter validation failed such as when the `challenge_type` parameter value contains an unsupported authentication method or the request didn't include `client_id` parameter the client ID value is empty or invalid. Use the `error_description` parameter to learn the exact cause of the error..|
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.|
-|`unauthorized_client`|The client ID included in the request doesn't exist.  |  
+|`invalid_client`| The client ID that the app includes in the request is for an app that lacks native authentication configuration, such as it isn't a public client or isn't enabled for native authentication. Use the `suberror` parameter to learn the exact cause of the error.|
+|`unauthorized_client`| The client ID used in the request has a valid client ID format, but doesn't exist in the customer tenant or is incorrect. |  
 |`user_already_exists` |  User already exists.  |  
+
+If the error parameter has a value of *invalid_client*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_client* error:
+
+|    Suberror value     | Description        |
+|----------------------|------------------------|
+|`nativeauthapi_disabled`| The client ID for an app that isn't enable for native authentication.|
 
 > [!NOTE]
 > If you submit all the required attributes, but not all the optional attributes via the `/signup/v1.0/start` endpoint, you won't be able to submit any additional optional attributes later via the  `/signup/v1.0/continue` endpoint. This is so because Microsoft Entra doesn't explicitly request for optional attributes. 
@@ -200,7 +207,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password sign-up flow, the value is expected to contain `oob redirect`.|
-|`continuation_token`| Yes | [continuation_token](#continuation-token) that Microsoft Entra returned in the previous request.|
+|`continuation_token`| Yes | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request.|
 
 #### Success response
 
@@ -228,7 +235,7 @@ Content-Type: application/json
 |    Parameter     | Description        |
 |----------------------|------------------------|
 |`interval`| The length of time in seconds the app needs to wait before it attempts to resend OTP. |
-| `continuation_token`  | [continuation_token](#continuation-token) that Microsoft Entrareturns. |
+| `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entrareturns. |
 |`challenge_type`| Challenge type selected for the user to authenticate with.|
 |`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer more ways for the user to enter the OTP code. Issued if `challenge_type` is *oob*  |
 |`challenge_channel`| The type of the channel through which the OTP code was sent. At the moment, only email channel is supported. |
@@ -314,7 +321,7 @@ continuation_token = uY29tL2F1dGhlbnRpY...
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
-| `continuation_token`  | Yes | [continuation_token](#continuation-token) that Microsoft Entra returned in the previous request. |
+| `continuation_token`  | Yes | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | A request to the `/signup/v1.0/continue` endpoint can be used for submitting OTP code or user attributes. In this case, the `grant_type` value is used to differentiate between these two use cases. For email OTP flow, the possible values for the `grant_type` are *oob* and *attributes*. In this request, since we're sending OTP code, the value is expected to be *oob*.|
 |`oob`| Yes | The OTP code that the customer user received in their email. Replace `{otp_code}` with the OTP code that the customer user received in their email. To **resend an OTP code**, the app needs to make a request to the `/signup/v1.0/challenge` endpoint again. |
@@ -374,7 +381,7 @@ Content-Type: application/json
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
-|`continuation_token`| [continuation_token](#continuation-token) that Microsoft Entra returns. |
+|`continuation_token`| [Continuation token](#continuation-token) that Microsoft Entra returns. |
 |`required_attributes`|A list (array of objects) of attributes that the app needs to submit in the next call to continue. These attributes are the extra attributes that app needs to submit apart from the username. Microsoft Entra includes this parameter is the response if the value of `error` parameter is *attributes_required*.|
 
 Here are the possible errors you can encounter (possible values of the `error` parameter):
@@ -468,7 +475,7 @@ Content-Type: application/x-www-form-urlencoded
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
 | `tenant_subdomain` | Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
-|`continuation_token` | Yes | [continuation_token](#continuation-token) that Microsoft Entra returned in the previous request. |
+|`continuation_token` | Yes | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | A request to the `/signup/v1.0/continue` endpoint can be used to submit OTP code or user attributes. In this case, we use the `grant_type` value to differentiate between these two use cases. The possible values for the `grant_type` are *oob*, and *attributes*. In this call, since we're sending user attributes, the value expected to be *attributes*.|
 |`attributes`| Yes | The user attribute values that the app collects from the customer user. The value is a string, but formatted as a JSON object whose keys are names of user attributes, built-in or custom. The key names of the object depend on the attributes that the administrator configured in the Microsoft Entra admin center. Replace `{user_name}`, `{user_age}` and `{comma_separated_hobbies}` with the name, age and hobbies values respectively that the app collects from the customer user. In the portal, you can configure user attributes values to be collected using different **User Input Type**, such as **TextBox**, **RadioSingleSelect, and **CheckboxMultiSelect**. In this case, we collect name and age using a TextBox, and hobbies using a CheckboxMultiSelect. **Microsoft Entra ignores any attributes that you submit, which don't exist**. Learn [how to configure user attribute collection during sign-up](../external-id/customers/how-to-define-custom-attributes.md).|
@@ -488,7 +495,7 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `continuation_token`  | [continuation_token](#continuation-token) that Microsoft Entra returns. |
+| `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |
 
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
@@ -539,7 +546,7 @@ Content-Type: application/json
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
-|`continuation_token`| [continuation_token](#continuation-token) that Microsoft Entra returns. |
+|`continuation_token`| [Continuation token](#continuation-token) that Microsoft Entra returns. |
 | `unverified_attributes`  |  A list (array of objects) of attribute key names that must be verified. This parameter is included in the response when the `error` parameter's value is *verification_required*.|
 |`required_attributes`| A list (array of objects) of attributes that the app needs to be submit. Microsoft Entra includes this parameter in its response when the `error` parameter's value is equal to *attributes_required*.|
 | `invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This parameter is included in the response when the `suberror` parameter's value is *attribute_validation_failed*.    |
@@ -579,7 +586,7 @@ continuation_token=ABAAEAAAAtyo...
 | `tenant_subdomain`  | Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | The parameter value must be *continuation token*. |
-|`continuation_token`|Yes    | [continuation_token](#continuation-token) that Microsoft Entra returned in the previous call. |
+|`continuation_token`|Yes    | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous call. |
 |`scope`| Yes | A space-separated list of scopes that the access token is valid for. Replace `{scopes}` with the valid scopes that the access token Microsoft Entra returns is valid for.|
 | `username`          |    Yes   | Email of the customer user that they want to sign up with, such as *contoso-consumer@contoso.com*.  |
 
@@ -737,7 +744,7 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `continuation_token`  | [continuation_token](#continuation-token) that Microsoft Entrareturns. |  
+| `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entrareturns. |  
 
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
@@ -793,10 +800,17 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type.   |  
-|`unauthorized_client` | The client ID used in the request doesn't exist.|
-|`invalid_grant`|The username doesn't exist.|
+| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type or the request didn't include `client_id` parameter the client ID value is empty or invalid. Use the `error_description` parameter to learn the exact cause of the error.   |  
+|`invalid_client`| The client ID that the app includes in the request is for an app that lacks native authentication configuration, such as it isn't a public client or isn't enabled for native authentication. Use the `suberror` parameter to learn the exact cause of the error.|
+|`unauthorized_client`| The client ID used in the request has a valid client ID format, but doesn't exist in the customer tenant or is incorrect. |
+|`user_not_found`|The username doesn't exist.|
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.|
+
+If the error parameter has a value of *invalid_client*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_client* error:
+
+|    Suberror value     | Description        |
+|----------------------|------------------------|
+|`nativeauthapi_disabled`| The client ID for an app that isn't enable for native authentication.|
 
 ### Step 2: Select an authentication method
 
@@ -818,7 +832,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 |-----------------------|-------------------------|------------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
-| `continuation_token` | Yes | [continuation_token](#continuation-token) that Microsoft Entra returned from the previous request. |
+| `continuation_token` | Yes | [Continuation token](#continuation-token) that Microsoft Entra returned from the previous request. |
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email OTP sign in flow, the value is expected to be `oob redirect`.|
 
 #### Success response
@@ -843,7 +857,7 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `continuation_token`  | [continuation_token](#continuation-token) that Microsoft Entra returns. |
+| `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |
 |`challenge_type`| Challenge type selected for the user to authenticate with.|
 |`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer more ways for the user to enter the OTP code. Issued if `challenge_type` is *oob*  |
 |`challenge_channel`| The type of the channel through which the OTP code was sent. At the moment, we support email. |
@@ -930,7 +944,7 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
-| `continuation_token`  | Yes | [continuation_token](#continuation-token) that Microsoft Entra returned from the previous request. |
+| `continuation_token`  | Yes | [Continuation token](#continuation-token) that Microsoft Entra returned from the previous request. |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | Value must be *oob* for email OTP flow.  |
 |`oob`| Yes |The OTP code that the customer user received in their email. Replace `{otp_code}` with the OTP code that the customer user received in their email. To **resend an OTP code**, the app needs to make a request to the `/challenge` endpoint again. |
@@ -1005,6 +1019,12 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |`expired_token`|The continuation token included in the request is expired. |
 |`invalid_scope`| One or more of the scoped included in the request are invalid.|
 |`invalid_client`| The client ID included in the request isn't for a public client. |
+
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_grant* error:
+
+|    Suberror value     | Description        |
+|----------------------|------------------------|
+|`invalid_oob_value`| The value of OTP code is invalid.|
 
 ## Next steps
 
