@@ -4,7 +4,7 @@ description: "New and updated documentation for the Microsoft Entra ID for custo
 ms.date: 02/01/2024
 ms.service: entra-external-id
 ms.subservice: customers
-ms.topic: reference
+ms.topic: whats-new
  
 ms.author: cmulligan
 author: csmulligan
