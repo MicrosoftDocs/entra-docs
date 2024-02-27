@@ -14,9 +14,9 @@ ms.custom: it-pro
 
 #Customer intent: As an it admin, I want to learn more about native authentication so that I can understand how to use it in my organization.
 ---
-# Native authentication for customer apps (preview)
+# Native authentication (preview)
 
-Native authentication allows you to create and host the user interface of your customer apps within the client application. This results in a seamless, integrated authentication experience using Microsoft Authentication Library (MSAL) for iOS and Android. You have full control over the user interface, so you can customize the design, logo placement, layout, and other elements to create a consistent, branded look. In contrast, browser-delegated methods, such as using a system browser for authentication, may not be suitable for everyone. While these methods can reduce attack vectors and support single sign-on (SSO), the look and feel is limited by the customization capabilities of the identity provider.
+Native authentication allows you to create and host the user interface of your customer apps within the client application. This results in a seamless, integrated authentication experience using Microsoft Authentication Library (MSAL) for iOS and Android. You have full control over the user interface, so you can customize the design, logo placement, layout, and other elements to create a consistent, branded look. In contrast, browser-delegated methods, such as using a system browser for authentication, may not be suitable for everyone. While browser-delegated methods can reduce attack vectors and support single sign-on (SSO), the look and feel is limited by the customization capabilities of the identity provider.
 
 Watch this [video](https://www.youtube.com/embed/20Tp0CM55rw) for an overview of native authentication capabilities.
 
@@ -29,7 +29,7 @@ You can create fully native experiences for local account sign-up, sign-in, and 
 - Passwordless authentication with email one-time passcode (OTP).
 - Password authentication with self-service password reset (SSPR). 
 
-:::image type="content" source="media/concept-native-auth/native-auth-experiences.png" alt-text="Native authentication experiences.":::
+:::image type="content" source="media/concept-native-authentication/native-authentication-experiences.png" alt-text="Native authentication experiences.":::
 
 ## When to use native authentication
 <!--This section will be updated once I have the most up-to-date content from the PM.-->
@@ -49,5 +49,5 @@ Native authentication isn't a supported solution for:
 ## Next steps
 <!--This section will be updated with the correct links.-->
 - [Samples and guides for customer identity and access management (CIAM)](/entra/external-id/customers/samples-ciam-all)
-- Tutorials
-- API documentation
+- Native authentication tutorials
+- Native authentication API documentation
