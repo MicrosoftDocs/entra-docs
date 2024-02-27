@@ -2,7 +2,7 @@
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.service: network-access
+ms.service: global-secure-access
 ms.topic: include
 ms.date: 08/22/2023
 ms.custom: include file

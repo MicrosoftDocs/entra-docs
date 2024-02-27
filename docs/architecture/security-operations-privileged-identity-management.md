@@ -1,18 +1,14 @@
 ---
 title: Microsoft Entra security operations for Privileged Identity Management
 description: Establish baselines and use Microsoft Entra Privileged Identity Management (PIM) to monitor and alert on issues with accounts governed by PIM.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 09/06/2022
 ms.author: jricketts
 ms.reviewer: ajburnle
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Microsoft Entra security operations for Privileged Identity Management
@@ -90,7 +86,7 @@ The following are recommended baseline settings:
 | What to monitor| Risk level| Recommendation| Roles| Notes |
 | - |- |- |- |- |
 | Microsoft Entra roles assignment| High| Require justification for activation. Require approval to activate. Set two-level approver process. On activation, require Microsoft Entra multifactor authentication. Set maximum elevation duration to 8 hrs.| Privileged Role Administration, Global Administrator| A privileged role administrator can customize PIM in their Microsoft Entra organization, including changing the experience for users activating an eligible role assignment. |
-| Azure Resource Role Configuration| High| Require justification for activation. Require approval to activate. Set two-level approver process. On activation, require Microsoft Entra multifactor authentication. Set maximum elevation duration to 8 hrs.| Owner, Resource Administrator, User Access, Administrator, Global Administrator, Security Administrator| Investigate immediately if not a planned change. This setting might enable attacker access to Azure subscriptions in your environment. |
+| Azure Resource Role Configuration| High| Require justification for activation. Require approval to activate. Set two-level approver process. On activation, require Microsoft Entra multifactor authentication. Set maximum elevation duration to 8 hrs.| Owner, Resource Administrator, User Access Administrator, Global Administrator, Security Administrator| Investigate immediately if not a planned change. This setting might enable attacker access to Azure subscriptions in your environment. |
 
 <a name='azure-ad-roles-assignment'></a>
 

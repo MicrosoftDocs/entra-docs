@@ -8,8 +8,8 @@ ms.author: owenrichards
 ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:ASP.NET", mode-api
 ms.date: 01/11/2022
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to set up OpenId Connect authentication in a web application that's built by using Node.js with Express.
 ---
@@ -192,6 +192,6 @@ ms.topic: conceptual
 > 
 > ## Next steps
 > 
-> Learn more about the protected web API scenario that the Microsoft identity platform supports.
+> Learn more by building a protected ASP.NET Core web api in the following tutorial series:
 > > [!div class="nextstepaction"]
-> > [Protected web API scenario](scenario-protected-web-api-overview.md)
+> > [Protected web API tutorial](tutorial-web-api-dotnet-register-app.md)

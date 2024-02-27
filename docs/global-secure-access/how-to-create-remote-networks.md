@@ -6,8 +6,7 @@ ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
 ms.date: 10/11/2023
-ms.service: network-access
-
+ms.service: global-secure-access
 ---
 # How to create a remote network
 

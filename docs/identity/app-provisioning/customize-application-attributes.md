@@ -1,14 +1,13 @@
 ---
 title: Tutorial - Customize Microsoft Entra attribute mappings in Application Provisioning
 description: Learn about attribute mappings for Software as a Service (SaaS) apps in Microsoft Entra Application Provisioning. Learn what attributes are and how you can modify them to address your business needs.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/15/2023
+ms.date: 01/23/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -24,6 +23,9 @@ Before you get started, make sure you're familiar with app management and **sing
 There's a preconfigured set of attributes and attribute-mappings between Microsoft Entra user objects and each SaaS app's user objects. Some apps manage other types of objects along with Users, such as Groups.
 
 You can customize the default attribute-mappings according to your business needs. So, you can change or delete existing attribute-mappings, or create new attribute-mappings.
+
+> [!NOTE]
+> In addition to configuring attribute mappings through the Microsoft Entra interface, you can review, download, and edit the JSON representation of your schema.
 
 ## Editing user attribute-mappings
 
@@ -63,7 +65,7 @@ There are four different mapping types supported:
 - **Expression** - the target attribute is populated based on the result of a script-like expression. For more information about expressions, see [Writing Expressions for Attribute-Mappings in Microsoft Entra ID](~/identity/app-provisioning/functions-for-customizing-application-data.md).
 - **None** - the target attribute is left unmodified. However, if the target attribute is ever empty, it's populated with the Default value that you specify.
 
-Along with these four basic types, custom attribute-mappings support the concept of an optional **default** value assignment. The default value assignment ensures that a target attribute is populated with a value if there's not a value in Microsoft Entra ID or on the target object. The most common configuration is to leave this blank.
+Along with these four basic types, custom attribute-mappings support the concept of an optional **default** value assignment. The default value assignment ensures that a target attribute is populated with a value if there's not a value in Microsoft Entra ID or on the target object. The most common configuration is to leave this blank. For more information about mapping attributes, see [How Application Provisioning works in Microsoft Entra ID](~/identity/app-provisioning/how-provisioning-works.md#mapping-attributes).
 
 ### Understanding attribute-mapping properties
 
@@ -201,9 +203,13 @@ Custom attributes can't be referential attributes, multi-value or complex-typed 
 ```
 
 ## Provisioning a role to a SCIM app
-Use the steps in the example to provision roles for a user to your application. The description is specific to custom SCIM applications. For gallery applications such as Salesforce and ServiceNow, use the predefined role mappings. The bullets describe how to transform the AppRoleAssignments attribute to the format your application expects.
+
+Use the steps in the example to provision application roles for a user to your application. The description is specific to custom SCIM applications. For gallery applications such as Salesforce and ServiceNow, use the predefined role mappings. The bullets describe how to transform the AppRoleAssignments attribute to the format your application expects.
 
 - Mapping an appRoleAssignment in Microsoft Entra ID to a role in your application requires that you transform the attribute using an [expression](~/identity/app-provisioning/functions-for-customizing-application-data.md). The appRoleAssignment attribute **shouldn't be mapped directly** to a role attribute without using an expression to parse the role details. 
+
+> [!NOTE]
+> When provisioning roles from enterprise applications, the SCIM standard defines enterprise user role attributes differently. For more information, see [Develop and plan provisioning for a SCIM endpoint in Microsoft Entra ID](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#design-your-user-and-group-schema).
 
 - **SingleAppRoleAssignment**
 
@@ -272,6 +278,11 @@ The request formats in the PATCH and POST differ. To ensure that POST and PATCH 
   - **Things to consider**
 
     - All roles are provisioned as primary = false.
+    - When integrating applications using SCIM roles, the `id` attribute is not always required, as for certain cases you can use the `value` attribute instead. For example, if the `value` attribute contains the name or identifier for the role, you can use it to provision the role. However, relying solely on the `value` attribute may not always be sufficient; for example, if there are multiple roles with the same name or identifier. In certain cases, it may be necessary to use the `id` attribute to properly provision the role.
+ 
+    
+    **Limitations** 
+
     - The POST contains the role type. The PATCH request doesn't contain type. We're working on sending the type in both POST and PATCH requests.
     - AppRoleAssignmentsComplex isn't compatible with setting scope to "Sync All users and groups."
     - The AppRoleAssignmentsComplex only supports the PATCH add function. For multi-role SCIM applications, roles deleted in Microsoft Entra ID will therefore not be deleted from the application. We're working to support additional PATCH functions and address the limitation. 

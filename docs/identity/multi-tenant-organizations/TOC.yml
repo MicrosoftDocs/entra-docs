@@ -40,17 +40,19 @@
       - name: PowerShell or Graph API
         href: cross-tenant-synchronization-configure-graph.md
     - name: Scoping users or groups to be provisioned
-      href: ~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
+      href: ../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
     - name: Enable accidental deletions prevention
-      href: ~/identity/app-provisioning/accidental-deletions.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
+      href: ../app-provisioning/accidental-deletions.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
     - name: Provision on-demand
-      href: ~/identity/app-provisioning/provision-on-demand.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
+      href: ../app-provisioning/provision-on-demand.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
     - name: Provisioning logs
-      href: ~/identity/monitoring-health/concept-provisioning-logs.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
+      href: ../monitoring-health/concept-provisioning-logs.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
+    - name: Map directory extensions
+      href: cross-tenant-synchronization-directory-extensions.md
     - name: Known issues
-      href: ~/identity/app-provisioning/known-issues.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
+      href: ../app-provisioning/known-issues.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
 - name: Reference
   expanded: true
   items:
   - name: Function reference for writing expressions for attribute mappings
-    href: ~/identity/app-provisioning/functions-for-customizing-application-data.md?toc/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json
+    href: ../app-provisioning/functions-for-customizing-application-data.md?toc/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json

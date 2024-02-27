@@ -96,11 +96,9 @@ items:
   - name: Support access requests
     expanded: false
     items:
-      - name: About support access requests
+      - name: What are support access requests (preview)?
         href: concept-support-access-requests.md
-      - name: Approve support access requests
-        href: how-to-approve-support-access-requests.md
-      - name: Manage support access requests
+      - name: Approve and manage support access requests (preview)
         href: how-to-manage-support-access-requests.md
       - name: View support access request activity logs
         href: how-to-view-support-access-request-logs.md
@@ -158,10 +156,7 @@ items:
       href: ~/identity/enterprise-apps/custom-security-attributes-apps.md?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
     - name: Troubleshoot attributes
       href: custom-security-attributes-troubleshoot.md
+  - name: Microsoft Graph extensions
+    href: /graph/extensibility-overview?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
   - name: Frontline worker management
     href: frontline-worker-management.md
-  - name: Legacy and deprecated features
-    expanded: false
-    items:
-    - name: Create or delete a user (legacy)
-      href: add-users.md

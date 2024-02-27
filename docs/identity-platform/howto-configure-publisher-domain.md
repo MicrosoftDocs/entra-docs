@@ -6,11 +6,11 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom:
 ms.date: 04/27/2023
-ms.reviewer: xurobert
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer:
+ms.service: identity-platform
+
 ms.topic: how-to
-#Customer intent:
+#Customer intent: As an app developer, I want to configure the publisher domain for my app, so that users can see where their information is being sent and trust the app.
 ---
 
 # Configure an app's publisher domain

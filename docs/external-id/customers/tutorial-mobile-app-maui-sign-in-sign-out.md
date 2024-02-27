@@ -1,22 +1,22 @@
 ---
-title: "Tutorial: Sign in users in .NET MAUI shell app"
+title: "Tutorial: Sign in users in .NET MAUI shell app using a customer tenant"
 description: This tutorial demonstrates how to add sign-in and sign-out code in .NET Multi-platform App UI (.NET MAUI) and how to run the app on the Android platform.
 author: henrymbuguakiarie
 manager: mwongerapk
 
 ms.author: henrymbugua
-ms.service: active-directory
+ms.service: entra-external-id
 ms.topic: tutorial
-ms.subservice: ciam
+ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.date: 06/05/2023
 ---
 
-# Tutorial: Sign in users in .NET MAUI shell app
+# Tutorial: Sign in users in .NET MAUI shell app using a customer tenant
 
-This tutorial demonstrates how to add sign-in and sign-out code in .NET Multi-platform App UI (.NET MAUI) and run the shell app on the Android platform.
+This tutorial is the final part of a series that demonstrates how to create a .NET Multi-platform App UI (.NET MAUI) shell app and prepare it for authentication using the Microsoft Entra admin center. In [part 2 of this series](./tutorial-mobile-app-maui-sign-in-prepare-app.md) you added a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource. This final step demonstrates how to add sign-in and sign-out code in the .NET Multi-platform App UI (.NET MAUI) and run the shell app on the Android platform.
 
-In this tutorial, you learn how to:
+In this tutorial, you'll:
 
 > [!div class="checklist"]
 >
@@ -28,7 +28,6 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- [Tutorial: Create a .NET MAUI shell app, add MSALClient, and include an image resource](tutorial-mobile-app-maui-sign-in-prepare-app.md)
 - [Tutorial: Register and configure .NET MAUI mobile app in a customer tenant](tutorial-mobile-app-maui-sign-in-prepare-tenant.md)
 
 ## Add sign-in and sign-out code
@@ -212,7 +211,7 @@ Run the app by pressing _F5_ or select the _play button_ at the top of Visual St
 
    :::image type="content" source="media/how-to-mobile-app-maui-sample-sign-in/maui-android-after-sign-in.png" alt-text="Screenshot of the main page in the Android application after signing in.":::
 
-## Next Steps
+## See also
 
 - [Customize the default branding](how-to-customize-branding-customers.md).
 - [Configure sign-in with Google](how-to-google-federation-customers.md).

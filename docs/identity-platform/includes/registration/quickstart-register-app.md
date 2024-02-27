@@ -7,8 +7,8 @@ manager: CelesteDG
 ms.author: cwerner
 ms.date: 06/29/2023
 ms.topic: include
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 
 
 # This include file is currently referenced in the following documentation:
@@ -27,7 +27,7 @@ The Microsoft identity platform performs identity and access management (IAM) on
 ## Prerequisites
 
 - An Azure account that has an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- The Azure account must be at least a [Cloud application administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+- The Azure account must be at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 - Completion of the [Set up a tenant](~/identity-platform/quickstart-create-new-tenant.md) quickstart.
 
 ## Register an application

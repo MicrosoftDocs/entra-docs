@@ -3,16 +3,16 @@ title: Federation with a SAML/WS-Fed identity provider (IdP) for B2B
 description: Directly federate with a SAML or WS-Fed identity provider so guests can sign in to your Microsoft Entra apps
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 11/07/2023
+ms.date: 01/31/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
+#customer intent: As an IT admin setting up federation with SAML/WS-Fed identity providers, I want to configure the required attributes and claims for the SAML 2.0 or WS-Fed protocol, so that guest users can sign in to my Microsoft Entra tenant using their own organizational account.
 ---
 
 # Federation with SAML/WS-Fed identity providers for guest users
@@ -54,7 +54,7 @@ With SAML/WS-Fed IdP federation, guest users sign into your Microsoft Entra tena
 
 ## Sign-in endpoints
 
-SAML/WS-Fed IdP federation guest users can now sign in to your multi-tenant or Microsoft first-party apps by using a [common endpoint](redemption-experience.md#redemption-process-and-sign-in-through-a-common-endpoint) (in other words, a general app URL that doesn't include your tenant context). During the sign-in process, the guest user chooses **Sign-in options**, and then selects **Sign in to an organization**. The user then types the name of your organization and continues signing in using their own credentials.
+SAML/WS-Fed IdP federation guest users can now sign in to your multitenant or Microsoft first-party apps by using a [common endpoint](redemption-experience.md#redemption-process-and-sign-in-through-a-common-endpoint) (in other words, a general app URL that doesn't include your tenant context). During the sign-in process, the guest user chooses **Sign-in options**, and then selects **Sign in to an organization**. The user then types the name of your organization and continues signing in using their own credentials.
 
 SAML/WS-Fed IdP federation guest users can also use application endpoints that include your tenant information, for example:
 
@@ -70,7 +70,7 @@ You can also give guest users a direct link to an application or resource by inc
 
 Yes, you can now set up SAML/WS-Fed IdP federation with other Microsoft Entra ID verified domains. This includes verified domains where the tenant has undergone an [admin takeover](~/identity/users/domains-admin-takeover.md). If the domain you're federating with is Microsoft Entra ID verified, you also need to [configure the **Redemption order** settings (preview)](cross-tenant-access-settings-b2b-collaboration.md) in your cross-tenant access settings for inbound B2B collaboration to make sure that when invited users sign in, they redeem their invitations using the federated IdP instead of Microsoft Entra ID.
 
-Currently, redemption order settings aren't supported across clouds. If the domain you're federating with is Microsoft Entra ID verified in a different Microsoft cloud, Microsoft Entra ID redemption always take precedence.
+Currently, redemption order settings aren't supported across clouds. If the domain you're federating with is Microsoft Entra ID verified in a different Microsoft cloud, Microsoft Entra ID redemption always takes precedence.
 
 **Can I set up SAML/WS-Fed IdP federation with a domain for which an unmanaged (email-verified) tenant exists?**
  
@@ -98,7 +98,7 @@ No, the [email one-time passcode](one-time-passcode.md) feature should be used i
 
 **Once SAML/WS-Fed IdP federation is configured with an organization, does each guest need to be sent and redeem an individual invitation?**
 
-Setting up SAML/WS-Fed IdP federation doesn’t change the authentication method for guest users who have already redeemed an invitation from you. You can update a guest user’s authentication method by [resetting their redemption status](reset-redemption-status.md).
+When inviting new guests, you still need to send invitations or provide direct links so the guests can complete the redemption steps. For existing guests, you don't necessarily need to send new invitations. Existing guests will continue using the authentication method they used before federation was set up. If you want these guests to start using federation for authentication, you can [reset their redemption status](reset-redemption-status.md). Then the next time they access your app or use the link in your invitation, they'll repeat the redemption process and start using federation as their authentication method.
 
 **Is there a way to send a signed request to the SAML identity provider?**
 

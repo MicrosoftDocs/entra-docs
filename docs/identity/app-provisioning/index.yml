@@ -6,15 +6,13 @@ summary: Microsoft Entra app provisioning lets you automatically create and mana
 metadata:
   title: Application provisioning documentation
   description: Microsoft Entra app provisioning lets you automatically create and manage user identities in your cloud (SaaS) apps. Microsoft Entra ID also offers provisioning with cloud-based human resources (HR) applications. Learn how to manage and deploy cloud app and HR provisioning with our quickstarts, tutorials, and guidance.
-  ms.service: active-directory
+  ms.service: entra-id
   ms.subservice: app-provisioning
-  ms.workload: identity
   ms.topic: landing-page
   ms.date: 10/20/2022
   author: kenwith
   ms.author: kenwith
   manager: amycolannino
-
 landingContent:
   - title: Provision users and groups to a cloud app
     linkLists:

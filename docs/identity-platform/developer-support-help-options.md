@@ -6,10 +6,10 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom: has-adal-ref
 ms.date: 05/31/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer seeking assistance with integrating applications with the Microsoft identity platform, I want to explore support options such as creating an Azure support request, posting a question on Microsoft Q&A, and opening a GitHub issue for MSAL libraries, so that I can get the help I need to solve problems and find answers to my questions.
 ---
 
 # Support and help options for developers
@@ -63,8 +63,6 @@ If you can't find an answer to your problem by searching Microsoft Q&A, submit a
 
 If you need help with one of the Microsoft Authentication Libraries (MSAL), open an issue in its repository on GitHub.
 
-<!-- docutune:disable -->
-
 | MSAL                   | GitHub issues URL                                                              |
 | ---------------------- | ------------------------------------------------------------------------------ |
 | MSAL for Android       | https://github.com/AzureAD/microsoft-authentication-library-for-android/issues |
@@ -77,7 +75,6 @@ If you need help with one of the Microsoft Authentication Libraries (MSAL), open
 | MSAL Python            | https://github.com/AzureAD/microsoft-authentication-library-for-python/issues  |
 | MSAL React             | https://github.com/AzureAD/microsoft-authentication-library-for-js/issues      |
 
-<!-- docutune:enable -->
 
 ## Stay informed of updates and new releases
 

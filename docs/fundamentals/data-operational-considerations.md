@@ -1,11 +1,9 @@
 ---
 title: Data operational considerations
-description: Learn how 
-services: active-directory
+description: Learn how
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 01/31/2023
@@ -13,6 +11,7 @@ ms.author: jricketts
 ms.reviewer: jricketts
 ms.custom: "it-pro"
 ms.collection:
+# Customer intent: As a Microsoft Entra user, I want to understand the data operational considerations, so that I can ensure the security and proper usage of my data.
 ---
 
 # Data operational considerations

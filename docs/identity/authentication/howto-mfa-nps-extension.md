@@ -2,18 +2,16 @@
 title: Use Microsoft Entra multifactor authentication with NPS
 description: Learn how to use Microsoft Entra multifactor authentication capabilities with your existing Network Policy Server (NPS) authentication infrastructure
 
-services: multi-factor-authentication
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/09/2024
+ms.date: 01/19/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jupetter
-
-ms.collection: M365-identity-device-management
 ms.custom: has-azure-ad-ps-ref
 ---
 # Integrate your existing Network Policy Server (NPS) infrastructure with Microsoft Entra multifactor authentication
@@ -114,6 +112,7 @@ The NPS server must be able to communicate with the following URLs over TCP port
 
 Additionally, connectivity to the following URLs is required to complete the [setup of the adapter using the provided PowerShell script](#run-the-powershell-script):
 
+* `https://onegetcdn.azureedge.net`
 * `https://login.microsoftonline.com`
 * `https://provisioningapi.microsoftonline.com`
 * `https://aadcdn.msauth.net`

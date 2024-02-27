@@ -4,8 +4,8 @@ description: View the enterprise applications that are registered to use your Mi
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: quickstart
 ms.date: 03/23/2023
@@ -66,7 +66,7 @@ Select options according to what you're looking for:
    - **Application Visibility**
    - **Created on**
    - **Assignment required**
-   - **Is App Proxy**
+   - **Is application proxy**
    - **Owner**
 1. To remove any of the filter options already added, select the **X** icon next to the filter option.
 

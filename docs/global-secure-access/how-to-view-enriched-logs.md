@@ -6,8 +6,7 @@ ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: how-to
 ms.date: 11/02/2023
-ms.service: network-access
-ms.custom: 
+ms.service: global-secure-access
 ---
 
 # How to use the Global Secure Access (preview) enriched Microsoft 365 logs

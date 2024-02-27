@@ -2,8 +2,7 @@
 title: Block unsupported platforms with Conditional Access
 description: Create a custom Conditional Access policy to block unsupported platforms
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 09/05/2023
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
-
-ms.collection: M365-identity-device-management
 ---
 # Common Conditional Access policy: Block access for unknown or unsupported device platform
 

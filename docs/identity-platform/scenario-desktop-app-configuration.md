@@ -7,8 +7,8 @@ ms.author: owenrichards
 ms.custom: 
 ms.date: 10/30/2019
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---
@@ -102,7 +102,7 @@ To learn more about how to configure an MSAL.NET desktop application:
 
 ### Complete example with configuration options
 
-Imagine a .NET Core console application that has the following `appsettings.json` configuration file:
+Imagine a .NET console application that has the following `appsettings.json` configuration file:
 
 ```json
 {

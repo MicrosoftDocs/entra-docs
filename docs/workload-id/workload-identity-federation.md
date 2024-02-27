@@ -1,19 +1,18 @@
 ---
-title: Workload identity federation 
+title: Workload identity federation
 description: Use workload identity federation to grant workloads running outside of Azure access to Microsoft Entra protected resources without using secrets or certificates. This eliminates the need for developers to store and maintain long-lived secrets or certificates outside of Azure.
-services: active-directory
+
 author: rwike77
 manager: CelesteDG
 
-ms.service: active-directory
-ms.subservice: workload-identities
-ms.workload: identity
+ms.service: entra-workload-id
+
 ms.topic: conceptual
 ms.date: 11/6/2023
 ms.author: ryanwi
 ms.reviewer: ludwicknick
-ms.custom: aaddev 
-#Customer intent: As a developer, I want to learn about workload identity federation so that I can securely access Microsoft Entra protected resources from external apps and services without needing to manage secrets. 
+ms.custom: aaddev
+#Customer intent: As a developer, I want to learn about workload identity federation so that I can securely access Microsoft Entra protected resources from external apps and services without needing to manage secrets.
 ---
 
 # Workload identity federation

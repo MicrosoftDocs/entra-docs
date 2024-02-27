@@ -4,12 +4,11 @@ description: Information about audit logs with Lifecycle Workflows
 author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: compliance
-ms.workload: identity
-ms.topic: conceptual 
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
+ms.topic: conceptual
 ms.date: 05/31/2023
-ms.custom: template-concept 
+ms.custom: template-concept
 ---
 
 # Auditing Lifecycle Workflows

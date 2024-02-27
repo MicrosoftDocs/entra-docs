@@ -14,6 +14,13 @@ Go to the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Micro
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
 
+## 1.1.1373.0
+
+Release date: January 19th, 2024
+
+### Fixed issues
+Fixed an issue with case-sensitive comparison of domain names and enhanced the error handling.
+
 ## 1.1.1370.0
 
 Release date: October 16th, 2023
@@ -22,6 +29,9 @@ Release date: October 16th, 2023
 
 - Added Public Preview feature:  [Group provisioning to Active Directory](../identity/hybrid/cloud-sync/govern-on-premises-groups.md)
 - Rebranded the agent for Microsoft Entra
+
+
+
 
 
 ## 1.1.1365.0

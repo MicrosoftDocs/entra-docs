@@ -5,8 +5,8 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
@@ -75,7 +75,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Edit Basic SAML Configuration](common/edit-urls.png)
+   ![Screenshot shows to edit Basic SAML Configuration.](common/edit-urls.png "Basic SAML Configuration")
 
 1. On the **Basic SAML Configuration** section, perform the following steps: 
 
@@ -105,11 +105,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 4. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
-	![The Certificate download link](common/certificatebase64.png)
+	![Screenshot shows the Certificate download link](common/certificatebase64.png "Certificate")
 
 1. On the **Set up Citrix ShareFile** section, copy the appropriate URL(s) as per your requirement.
 
-	![Copy configuration URLs](common/copy-configuration-urls.png)
+	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -143,34 +143,31 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Citrix ShareFile SSO
 
-
-
-
 1. In a different web browser window, sign in to your Citrix ShareFile company site as an administrator
 
 1. In the **Dashboard**, click on **Settings** and select **Admin Settings**.
 
-	![Administration](./media/sharefile-tutorial/settings.png)
+	![Screenshot shows the Administration page.](./media/sharefile-tutorial/settings.png "Administration")
 
 1. In the Admin Settings, go to the **Security** -> **Login & Security Policy**.
    
-    ![Account Administration](./media/sharefile-tutorial/settings-security.png "Account Administration")
+    ![Screenshot shows the Account Administration page.](./media/sharefile-tutorial/settings-security.png "Account Administration")
 
 1. On the **Single Sign-On/ SAML 2.0 Configuration** dialog page under **Basic Settings**, perform the following steps:
    
-    ![Single sign-on](./media/sharefile-tutorial/saml-configuration.png "Single sign-on")
+    ![Screenshot shows the Single sign-on page.](./media/sharefile-tutorial/saml-configuration.png "Single sign-on")
    
 	a. Select **YES** in the **Enable SAML**.
 
 	b. Copy the **ShareFile Issuer/ Entity ID** value and paste it into the **Identifier URL** box in the **Basic SAML Configuration** dialog box.
 	
-	c. In **Your IDP Issuer/ Entity ID** textbox, paste the value of **Microsoft Entra Identifier**..
+	c. In **Your IDP Issuer/ Entity ID** textbox, paste the value of **Microsoft Entra Identifier**.
 
-	d. Click **Change** next to the **X.509 Certificate** field and then upload the certificate you downloaded.
+	d. Open the downloaded **Certificate (Base64)** into Notepad and paste the content into the **X.509 Certificate** textbox by clicking **Change** button.
 	
-	e. In **Login URL** textbox, paste the value of **Login URL**..
+	e. In **Login URL** textbox, paste the value of **Login URL**.
 	
-	f. In **Logout URL** textbox, paste the value of **Logout URL**..
+	f. In **Logout URL** textbox, paste the value of **Logout URL**.
 
 	g. In the **Optional Settings**, choose **SP-Initiated Auth Context** as **User Name and Password** and **Exact**.
 
@@ -182,11 +179,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 2. Click **People** -> **Manage Users Home** -> **Create New Users** -> **Create Employee**.
    
-	![Create Employee](./media/sharefile-tutorial/create-user.png "Create Employee")
+	![Screenshot shows to Create Employee.](./media/sharefile-tutorial/create-user.png "Create Employee")
 
 3. On the **Basic Information** section, perform below steps:
    
-	![Basic Information](./media/sharefile-tutorial/user-form.png "Basic Information")
+	![Screenshot shows the Basic Information.](./media/sharefile-tutorial/user-form.png "Basic Information")
    
 	a. In the **First Name** textbox, type **first name** of user as **Britta**.
    
