@@ -632,7 +632,7 @@
         href: confirmit-horizons-tutorial.md
       - name: Confluence SAML SSO by Microsoft
         href: confluencemicrosoft-tutorial.md
-      - name: App Proxy configuration for Confluence SAML SSO
+      - name: Application proxy configuration for Confluence SAML SSO
         href: confluence-app-proxy-tutorial.md
       - name: Connect1
         href: connect1-tutorial.md
