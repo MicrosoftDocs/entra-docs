@@ -1,6 +1,6 @@
 ---
 title: Starter code for authentication events trigger for Azure Functions client library in C#
-description: include file
+description: Code snippet for a custom authentication extension using the Azure Functions client library in C#.
 author: cilwerner
 manager: CelesteDG
 ms.service: identity-platform
@@ -8,7 +8,7 @@ ms.topic: include
 ms.date: 02/27/2024
 ms.author: cwerner
 ms.reviewer: stsoneff
-ms.custom: include file
+ms.custom:
 ---
 
 ```csharp
@@ -29,7 +29,7 @@ namespace AuthEventTrigger
         [FunctionName("onTokenIssuanceStart")]
         public static async Task<AuthenticationEventResponse> Run(
             [AuthenticationEventsTrigger] TokenIssuanceStartRequest request, ILogger log)
-        // [AuthenticationEventsTrigger(TenantId = "Enter tenant ID here", AudienceAppId = "Enter application client ID here")] TokenIssuanceStartRequest request, ILogger log)
+        // [AuthenticationEventsTrigger(TenantId = "Enter tenant ID here", AudienceAppId = "Enter custom authentication extension app ID here")] TokenIssuanceStartRequest request, ILogger log)
         {
             try
             {

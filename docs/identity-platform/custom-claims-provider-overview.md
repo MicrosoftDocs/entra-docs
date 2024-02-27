@@ -21,9 +21,11 @@ When a user authenticates to an application, a custom claims provider can be use
 
 Key data about a user is often stored in systems external to Microsoft Entra ID. For example, secondary email, billing tier, or sensitive information. Some applications may rely on these attributes for the application to function as designed. For example, the application may block access to certain features based on a claim in the token.
 
-The following short video provides an excellent overview of the Microsoft Entra custom authentication extensions and custom claims providers:
+The following video provides an excellent overview of the Microsoft Entra custom authentication extensions and custom claims providers:
 
 > [!VIDEO https://www.youtube.com/embed/1tPA7B9ztz0]
+
+> [!VIDEO https://www.youtube.com/embed/fxQGVIwX8_4]
 
 Use a custom claims provider for the following scenarios:
 

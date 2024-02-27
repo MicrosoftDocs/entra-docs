@@ -20,19 +20,15 @@ titleSuffix: Microsoft identity platform
 >
 > This article is a work in progress and not yet complete.
 
-This article describes how to configure and set up a custom claims provider using a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener). Using a pre-written Azure Functions REST API you'll register a custom authentication extension. You'll add some attributes that you expect your custom authentication extension to parse from your REST API. To test the custom authentication extension, you'll register a sample OpenID Connect application to get a token and view the claims.
-
-The following video outlines the steps you'll replicate in this article to configure a Microsoft Entra custom claims provider with an Azure Function App:
-
-> [!VIDEO https://www.youtube.com/embed/fxQGVIwX8_4]
+This article describes how to configure and set up a custom claims provider using a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener). Using a existing Azure Functions REST API you'll register a custom authentication extension. You'll add some attributes that you expect your custom authentication extension to parse from your REST API. To test the custom authentication extension, you'll register a sample OpenID Connect application to get a token and view the claims.
 
 ## Prerequisites
 
+- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
 - An Azure Function app with an HTTP trigger function configured for a token issuance start event. If you don't have one, follow the steps in [create a token issuance start event HTTP trigger function](./DRAFT-custom-extension-tokenissuancestart-setup.md).
 - A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md).
-- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, you may sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
 - A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.
-    - For customer tenants, you'll need a [sign-up and sign-in user flow](~/external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md).
+    - For customer tenants, use a [sign-up and sign-in user flow](~/external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md).
 
 ## Step 1: Register a custom authentication extension
 
@@ -59,7 +55,7 @@ You'll now configure a custom authentication extension, which will be used by Mi
     - apiVersion
     - correlationId
 1. Select **Next**, then **Create**, which registers the custom authentication extension and the associated application registration.
-1. Note the **App ID** under **API Authentication**. You'll need it if you're [setting environment variables](./DRAFT-custom-extension-tokenissuancestart-setup.md#set-up-environment-variables-for-your-azure-function-optional) in your Azure Function app.
+1. Note the **App ID** under **API Authentication**, which is needed for [setting environment variables](./DRAFT-custom-extension-tokenissuancestart-setup.md#set-up-environment-variables-for-your-azure-function-optional) in your Azure Function app.
 
 # [Microsoft Graph](#tab/microsoft-graph)
 
@@ -79,7 +75,7 @@ Register an application to authenticate your custom authentication extension to 
     }
     ```
 
-3. From the response, record the value of **id** and **appId** of the newly created app registration. These values will be referenced in this article as `{authenticationeventsAPI_ObjectId}` and `{authenticationeventsAPI_AppId}` respectively.
+3. From the response, record the value of **id** and **appId** of the newly created app registration. These values are referenced in this article as `{authenticationeventsAPI_ObjectId}` and `{authenticationeventsAPI_AppId}` respectively.
 
 Create a service principal in the tenant for the authenticationeventsAPI app registration.
 
