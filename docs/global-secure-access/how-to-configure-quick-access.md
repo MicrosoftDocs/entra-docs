@@ -41,7 +41,7 @@ To configure Quick Access, you need to have a connector group with at least one 
 
 To summarize, the overall process is as follows:
 
-1. [Create a connector group with at least one active App proxy connector](#create-an-app-proxy-connector-group).
+1. [Create a connector group with at least one active App proxy connector](#create-an-application-proxy-connector-group).
     - If you already have a connector group, make sure you're on the latest version.
 
 1. [Configure Quick Access](#configure-quick-access).
