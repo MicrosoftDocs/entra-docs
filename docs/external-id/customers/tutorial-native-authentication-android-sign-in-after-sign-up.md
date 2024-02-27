@@ -58,12 +58,17 @@ CoroutineScope(Dispatchers.Main).launch {
             val signInContinuationState = actionResult.nextState 
             val signInActionResult = signInContinuationState.signIn() 
             if (signInActionResult is SignInResult.Complete) { 
-                // Handle sign in success 
-                val accountState = result.resultValue 
+                // Handle sign in success
+                val accountState = signInActionResult.resultValue
+                val accessTokenResult = accountState.getAccessToken()
+                if (accessTokenResult is GetAccessTokenResult.Complete) {
+                    val accessToken = accessTokenResult.resultValue.accessToken
+                    val idToken = accountState.getIdToken()
+                }
             } 
         } 
     } 
-} 
+}
 ``` 
  
 ## Handle errors 

@@ -43,22 +43,26 @@ To sign in user using **Email one-time-passcode** you need to:
 1. To sign in the user, we're going to use the library's `signIn(username)` method, the function will return a result that you can assign to the `actionResult` field. The `actionResult` represents the result of the previously performed action and can take multiple states (forms). Add a button to the application that calls the following code snippet when selected: 
 
    ```kotlin
-   CoroutineScope(Dispatchers.Main).launch {
-       val actionResult = authClient.signIn(
-           username = emailAddress
-       )
-       if (actionResult is SignInResult.CodeRequired) {
-           val nextState = actionResult.nextState
-           val submitCodeActionResult = nextState.submitCode(
-               code = code
-           )
-           if (submitCodeActionResult is SignInResult.Complete){
-               // Handle sign in success
-               val accountResult = result.resultValue
-               val accessToken = accountResult.getTokens().getAccessToken()
-           }
-       }
-   }
+    CoroutineScope(Dispatchers.Main).launch {
+        val actionResult = authClient.signIn(
+            username = emailAddress
+        )
+        if (actionResult is SignInResult.CodeRequired) {
+            val nextState = actionResult.nextState
+            val submitCodeActionResult = nextState.submitCode(
+                code = code
+            )
+            if (submitCodeActionResult is SignInResult.Complete){
+                // Handle sign in success
+                val accountState = submitCodeActionResult.resultValue
+                val accessTokenResult = accountState.getAccessToken()
+                if (accessTokenResult is GetAccessTokenResult.Complete) {
+                    val accessToken = accessTokenResult.resultValue.accessToken
+                    val idToken = accountState.getIdToken()
+                }
+            }
+        }
+    }
    ```
 
     > [!NOTE]

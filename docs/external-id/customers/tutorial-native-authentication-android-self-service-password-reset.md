@@ -43,34 +43,30 @@ The following wire frame shows a high-level view of the self-service password re
 
 :::image type="content" source="media/native-authentication/android/SSPR-flow-image.png" alt-text="Screenshot that illustrates Self-service password reset flow."::: 
  
-1. When a user forgets their password, they need a form to input their email. To handle the request when the user selects the **Forget Password** button, use the following code snippet:  
+1. When users forget their passwords, they need a form to input their usernames (email addresses). To handle the request when the user selects the **Forget Password** button, use the following code snippet:  
  
    ```kotlin 
     private fun forgetPassword() { 
-        CoroutineScope(Dispatchers.Main).launch { 
-            try { 
-                val email = binding.emailText.text.toString() 
- 
-                val resetPasswordResult = authClient.resetPassword( 
-                    username = email 
-                ) 
- 
-               when (resetPasswordResult) { 
-                   is ResetPasswordStartResult.CodeRequired -> { 
-                       // The implementaion of submiteCode() please see below. 
-                       submitCode( 
-                           resetPasswordResult.nextState 
-                       ) 
-                   } 
-                    is ResetPasswordError -> {
-                        // Handle errors
-                        handleResetPasswordError(resetPasswordResult)
-                    }
-               } 
-           } catch (exception: MsalException) { 
-                // Handle exception 
+     CoroutineScope(Dispatchers.Main).launch { 
+         try { 
+           val resetPasswordResult = authClient.resetPassword( 
+                 username = emailAddress 
+             ) 
+
+            when (resetPasswordResult) { 
+                is ResetPasswordStartResult.CodeRequired -> { 
+                    // The implementaion of submiteCode() please see below. 
+                    submitCode(resetPasswordResult.nextState) 
+                } 
+                 is ResetPasswordError -> {
+                     // Handle errors
+                     handleResetPasswordError(resetPasswordResult)
+                 }
             } 
-        } 
+        } catch (exception: MsalException) { 
+             // Handle exception 
+         } 
+     } 
     } 
    ``` 
     The code snippet generates a one-time passcode and sends it to the user's email for verification.  
@@ -113,7 +109,7 @@ The following wire frame shows a high-level view of the self-service password re
 
     If the submitted one-time passcode is valid, the code sets the `nextState` to process a new user password. If the user doesn't receive the one-time passcode in their email, they have the option to use "Resend Passcode" to request a new one-time passcode.  
     
-    To process this request, use the following code snippet:  
+    Use the following code snippet to resend a new passcode:  
   
    ```kotlin 
    private fun resendCode() { 
@@ -181,43 +177,37 @@ To reset a user's password and then sign them in, you can use the following code
 
 
    ```kotlin 
-   private suspend fun resetPassword(currentState: ResetPasswordPasswordRequiredState) { 
-       val password = binding.passwordText.text.toString() 
- 
-       val submitPasswordResult = currentState.submitPassword(password) 
- 
-       when (submitPasswordResult) { 
-           is ResetPasswordResult.Complete -> { 
-               signInAfterPasswordReset(
-                    nextState = actionResult.nextState
-                )
-           } 
-       } 
-   } 
-
-   private suspend fun signInAfterPasswordReset(nextState: SignInContinuationState) {
-        val currentState = nextState
-        val actionResult = currentState.signIn()
-        when (actionResult) {
-            is SignInResult.Complete -> {
-                fetchTokens(
-                    accountState = actionResult.resultValue
-                )
-            }
-            else {
-                // Unexpected error
-            }
-        }
+    private suspend fun resetPassword(currentState: ResetPasswordPasswordRequiredState) { 
+        val submitPasswordResult = currentState.submitPassword(password) 
+    
+        when (submitPasswordResult) { 
+            is ResetPasswordResult.Complete -> { 
+                signInAfterPasswordReset(nextState = actionResult.nextState)
+            } 
+        } 
+    } 
+    
+    private suspend fun signInAfterPasswordReset(nextState: SignInContinuationState) {
+         val currentState = nextState
+         val actionResult = currentState.signIn()
+         when (actionResult) {
+             is SignInResult.Complete -> {
+                 fetchTokens(accountState = actionResult.resultValue)
+             }
+             else {
+                 // Handle unexpected error
+             }
+         }
+     }
+    
+     private suspend fun fetchTokens(accountState: AccountState) {
+         val accessTokenResult = accountState.getAccessToken()
+         if (accessTokenResult is GetAccessTokenResult.Complete) {
+             val accessToken =  accessTokenResult.resultValue.accessToken
+             val idToken = accountState.getIdToken()
+         }
     }
-
-    private suspend fun fetchTokens(accountState: AccountState) {
-        val accessTokenState = accountState.getAccessToken()
-            if (accessTokenState is GetAccessTokenResult.Complete) {
-                val accessToken = accessTokenState.resultValue.accessToken
-                val idToken = accountState.getIdToken()
-            }
-        }
-```
+   ```
 
 ## Handle errors 
 A few common, expected errors might occur. For example, the user might attempt to reset the password with a nonexistent email or provide a password that doesn't meet the password requirements. Giving your users a hint to those errors is the simplest way to handle them. 

@@ -86,7 +86,7 @@ val actionResult = authClient.signUp(
     username = email 
 ) 
 if (actionResult is SignUpError && actionResult.isBrowserRequired()) { 
-    // Handle "BrowserRequired" error 
+    // Handle "browser required" error
 } 
 ``` 
  
@@ -125,6 +125,6 @@ Tokens obtained through native authentication flows can combined with browser-ba
 ## Related content 
 
 - [How to run the iOS sample app](how-to-run-sample-ios-app.md)
-- [Native authentication API reference with Email OTP](reference-native-auth-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
+- [Native authentication API reference with Email OTP](../../identity-platform/reference-native-auth-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 
 
