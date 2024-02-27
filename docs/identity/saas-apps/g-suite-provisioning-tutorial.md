@@ -263,7 +263,7 @@ This operation starts the initial synchronization cycle of all users and groups 
 > If the users already have an existing personal/consumer account using the email address of the Microsoft Entra user, then it may cause some issue which could be resolved by using the Google Transfer Tool prior to performing the directory sync.
 
 ## Step 6: Monitor your deployment
-Once you've configured provisioning, use the following resources to monitor your deployment:
+Once you configure provisioning, use the following resources to monitor your deployment:
 
 1. Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
 2. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it's to completion
@@ -296,7 +296,7 @@ Now any end user that was made eligible for the group in PIM can get JIT access 
   * When a user is added to a group in Microsoft Entra ID outside of activating their group membership using Microsoft Entra ID Privileged Identity Management (PIM):
     * The group membership is provisioned in the application during the next synchronization cycle. The synchronization cycle runs every 40 minutes. 
   * When a user activates their group membership in Microsoft Entra ID PIM: 
-    * The group membership is provisioned in 2 – 10 minutes. When there is a high rate of requests at one time, requests are throttled at a rate of five requests per 10 seconds.  
+    * The group membership is provisioned in 2 – 10 minutes. When there's a high rate of requests at one time, requests are throttled at a rate of five requests per 10 seconds.  
     * For the first five users within a 10-second period activating their group membership for a specific application, group membership is provisioned in the application within 2-10 minutes. 
     * For the sixth user and above within a 10-second period activating their group membership for a specific application, group membership is provisioned to the application in the next synchronization cycle. The synchronization cycle runs every 40 minutes. The throttling limits are per enterprise application. 
 * If the user is unable to access the necessary group in Google Cloud / Google Workspace, review the PIM logs, and provisioning logs to ensure that the group membership was updated successfully. Depending on how the target application is architected, it may take more time for the group membership to take effect in the application.
