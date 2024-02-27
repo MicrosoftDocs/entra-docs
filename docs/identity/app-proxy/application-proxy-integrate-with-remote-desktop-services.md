@@ -136,4 +136,4 @@ To use passthrough authentication, there are just two modifications to the steps
 ## Next steps
 - [Enable remote access to SharePoint with Microsoft Entra application proxy](application-proxy-integrate-with-sharepoint-server.md)
 - [Security considerations for accessing apps remotely by using Microsoft Entra application proxy](application-proxy-security.md)
-- [Best practices for load balancing multiple app servers](application-proxy-high-availability-load-balancing.md#best-practices-for-load-balancing-among-multiple-app-servers)
+- [Best practices for load balancing multiple app servers](application-proxy-high-availability-load-balancing.md)
