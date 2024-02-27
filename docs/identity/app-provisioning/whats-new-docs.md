@@ -4,7 +4,7 @@ description: "New and updated documentation for the Azure Active Directory appli
 ms.date: 09/15/2023
 ms.service: entra-id
 ms.subservice: app-provisioning
-ms.topic: reference
+ms.topic: whats-new
 ms.author: kenwith
 author: kenwith
 ---
