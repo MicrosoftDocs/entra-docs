@@ -16,12 +16,8 @@ ms.custom: it-pro
 ---
 # Native authentication (preview)
 
-<<<<<<< HEAD:docs/external-id/customers/concept-native-authentication.md
-Native authentication allows you to create and host the user interface of your customer apps within the client application. This results in a seamless, integrated authentication experience using Microsoft Authentication Library (MSAL) for iOS and Android. You have full control over the user interface, so you can customize the design, logo placement, layout, and other elements to create a consistent, branded look. In contrast, browser-delegated methods, such as using a system browser for authentication, may not be suitable for everyone. While browser-delegated methods can reduce attack vectors and support single sign-on (SSO), the look and feel is limited by the customization capabilities of the identity provider.
-=======
 Native authentication allows you to create and host the user interface of your customer apps within the client application. This results in a seamless, integrated authentication experience using Microsoft Authentication Library (MSAL) for iOS and Android. You have full control over the user interface, so you can customize the design, logo placement, layout, and other elements to create a consistent, branded look. 
-In contrast, browser-delegated methods, such as using a system browser for authentication, may not be suitable for everyone. While these methods can reduce attack vectors and support single sign-on (SSO), the look and feel is limited by the customization capabilities of the identity provider.
->>>>>>> 9482969209b59c5fadd2fb306c5fa9f9964fce31:docs/external-id/customers/concept-native-auth.md
+In contrast, browser-delegated methods, such as using a system browser for authentication, may not be suitable for everyone. While browser-delegated methods can reduce attack vectors and support single sign-on (SSO), the look and feel is limited by the customization capabilities of the identity provider.
 
 Watch this [video](https://www.youtube.com/embed/20Tp0CM55rw) for an overview of native authentication capabilities.
 
