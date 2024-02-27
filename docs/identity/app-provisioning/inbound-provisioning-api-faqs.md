@@ -1,13 +1,12 @@
 ---
 title: Frequently asked questions (FAQs) about API-driven inbound provisioning
 description: Learn more about the capabilities and integration scenarios supported by API-driven inbound provisioning.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
-ms.workload: identity
-ms.topic: reference
+ms.topic: faq
 ms.date: 01/10/2024
 ms.author: kenwith
 ms.reviewer: chmutali

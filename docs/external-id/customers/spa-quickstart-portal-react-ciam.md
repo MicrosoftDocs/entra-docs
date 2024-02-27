@@ -5,10 +5,10 @@ description: Learn how to run a sample React SPA to sign in users
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
-ms.service: active-directory
+ms.service: entra-external-id
  
 ROBOTS: NOINDEX
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: conceptual
 ms.date: 06/06/2023
 ---

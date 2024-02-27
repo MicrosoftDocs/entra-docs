@@ -1,10 +1,8 @@
 ---
 title: Increase the resilience of authentication and authorization in client applications you develop
-description: Learn to increasing resiliency of authentication and authorization in client application using the Microsoft identity platform 
-services: active-directory 
-ms.service: active-directory
-ms.subservice: fundamentals 
-ms.workload: identity
+description: Learn to increasing resiliency of authentication and authorization in client application using the Microsoft identity platform
+ms.service: entra
+ms.subservice: architecture
 ms.topic: how-to
 author: jricketts
 ms.author: jricketts

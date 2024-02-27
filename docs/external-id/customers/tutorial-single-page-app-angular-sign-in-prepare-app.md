@@ -3,8 +3,8 @@ title: "Tutorial: Prepare an Angular SPA for authentication in a customer tenant
 description: Learn how to prepare an Angular single-page app (SPA) for authentication with your Microsoft Entra External ID for customers tenant.
 author: garrodonnell
 manager: celestedg
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: tutorial
 ms.date: 10/27/2023
 ms.author: godonnell

@@ -3,12 +3,10 @@ title: Troubleshoot insufficient access rights error
 description: Learn how to troubleshoot InsufficientAccessRights error when provisioning to on-premises Active Directory.
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.workload: identity
-ms.date: 01/31/2024
-ms.author: jfields
+
 ms.reviewer: chmutali
 ---
 

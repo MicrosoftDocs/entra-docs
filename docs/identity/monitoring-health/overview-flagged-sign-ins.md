@@ -2,17 +2,15 @@
 
 title: What are flagged sign-ins in Microsoft Entra ID?
 description: Provides a general overview of flagged sign-ins in Microsoft Entra ID.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: overview
-ms.workload: identity
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 08/25/2023
 ms.author: sarahlipsey
-ms.reviewer: tspring  
-
+ms.reviewer: tspring
 # Customer intent: As a Microsoft Entra administrator, I want a tool that gives me the right level of insights into the sign-in activities in my system so that I can easily diagnose and solve problems when they occur.
 ---
 

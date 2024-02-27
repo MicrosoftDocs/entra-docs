@@ -1,12 +1,10 @@
 ---
 title: View and download the Permissions Analytics Report in Permissions Management
 description: How to view and download the Permissions Analytics Report in Permissions Management.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
-ms.subservice: ciem
-ms.workload: identity
+ms.service: entra-permissions-management
+
 ms.topic: how-to
 ms.date: 12/01/2023
 ms.author: jfields

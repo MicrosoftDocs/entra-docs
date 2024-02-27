@@ -4,8 +4,8 @@ description: Learn how to use the AD FS application migration to migrate AD FS r
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 10/26/2023

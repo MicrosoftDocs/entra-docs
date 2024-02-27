@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom: devx-track-js
 ms.date: 10/12/2021
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As a developer building a JavaScript single-page application (SPA), I want to sign in users and call the Microsoft Graph API using the authorization code flow with PKCE, so that I can authenticate users and retrieve data from the Microsoft Graph.
 ---
@@ -34,7 +34,7 @@ MSAL.js 2.0 improves on MSAL.js 1.0 by supporting the authorization code flow in
 
 :::image type="content" source="media/tutorial-v2-javascript-auth-code/diagram-01-auth-code-flow.png" alt-text="Diagram showing the authorization code flow in a single-page application":::
 
-The application you create in this tutorial enables a JavaScript SPA to query the Microsoft Graph API by acquiring security tokens from the the Microsoft identity platform. In this scenario, after a user signs in, an access token is requested and added to HTTP requests in the authorization header. Token acquisition and renewal are handled by the Microsoft Authentication Library for JavaScript (MSAL.js).
+The application you create in this tutorial enables a JavaScript SPA to query the Microsoft Graph API by acquiring security tokens from the Microsoft identity platform. In this scenario, after a user signs in, an access token is requested and added to HTTP requests in the authorization header. Token acquisition and renewal are handled by the Microsoft Authentication Library for JavaScript (MSAL.js).
 
 This tutorial uses [MSAL.js](/javascript/api/@azure/msal-browser/), the Microsoft Authentication Library for JavaScript v2.0 browser package.
 
@@ -213,7 +213,4 @@ If a back-end API doesn't require a scope, which isn't recommended, you can use 
 
 ## Next steps
 
-If you'd like to dive deeper into JavaScript single-page application development on the Microsoft identity platform, see our multi-part scenario series:
-
-> [!div class="nextstepaction"]
-> [Scenario: Single-page application](scenario-spa-overview.md)
+ - Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).

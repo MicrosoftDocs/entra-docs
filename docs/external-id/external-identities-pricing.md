@@ -3,8 +3,7 @@ title: MAU billing model for Microsoft Entra External ID
 description: Learn about Microsoft Entra External ID monthly active users (MAU) billing model for guest user collaboration (B2B) in Microsoft Entra External ID. Learn how to link your Microsoft Entra tenant to an Azure subscription.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: conceptual
 ms.date: 01/23/2024
 

@@ -1,19 +1,18 @@
 ---
 title: Assign Microsoft Entra roles to users
 description: Learn how to grant access to users in Microsoft Entra ID by assigning Microsoft Entra roles.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 02/06/2023
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
-ms.collection: M365-identity-device-management
+
 ---
 # Assign Microsoft Entra roles to users
 

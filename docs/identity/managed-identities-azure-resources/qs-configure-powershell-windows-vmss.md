@@ -1,17 +1,16 @@
 ---
 title: Configure managed identities on virtual machine scale sets using PowerShell
 description: Step-by-step instructions for configuring a system and user-assigned managed identities on a virtual machine scale set using PowerShell.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: quickstart
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 06/24/2022
 ms.author: barclayn
-ms.collection: M365-identity-device-management
+
 ms.custom: devx-track-azurepowershell, mode-api
 ---
 

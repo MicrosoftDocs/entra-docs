@@ -2,8 +2,7 @@
 title: Certificate-based authentication with federation
 description: Learn how to configure certificate-based authentication with federation in your environment
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
@@ -13,8 +12,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: vraganathan
-
-ms.collection: M365-identity-device-management
 ---
 # Get started with certificate-based authentication in Microsoft Entra ID with federation
 

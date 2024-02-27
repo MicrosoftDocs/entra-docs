@@ -4,13 +4,12 @@ description: In this article, learn how to create and configure a Microsoft Entr
 author: justinha
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/15/2023
-ms.author: justinha 
-ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref
+ms.author: justinha
+ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 #Customer intent: As an identity administrator, I want to create a Microsoft Entra Domain Services forest and one-way outbound trust from a Microsoft Entra Domain Services forest to an on-premises Active Directory Domain Services forest using Azure PowerShell to provide authentication and resource access between forests.
 ---
 
@@ -101,7 +100,7 @@ To create a managed domain, you use the `New-AzureAaddsForest` script. This scri
     Install-Script -Name New-AaddsResourceForestTrust
     ```
 
-1. Review the following parameters needed for the `New-AzureAaddsForest` script. Make sure you also have the prerequisite **Azure PowerShell** and **Azure AD PowerShell** modules. Make sure you have planned the virtual network requirements to provide application and on-premises connectivity.
+1. Review the following parameters needed for the `New-AzureAaddsForest` script. Make sure you also have the prerequisite **Azure PowerShell** and **Microsoft Graph PowerShell** modules. Make sure you have planned the virtual network requirements to provide application and on-premises connectivity.
 
     | Name                         | Script parameter          | Description |
     |:-----------------------------|---------------------------|:------------|
@@ -435,4 +434,3 @@ For more conceptual information about forest types in Domain Services, see [How 
 
 <!-- EXTERNAL LINKS -->
 [powershell-gallery]: https://www.powershellgallery.com/
-

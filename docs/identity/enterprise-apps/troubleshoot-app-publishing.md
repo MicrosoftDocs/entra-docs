@@ -4,8 +4,8 @@ description: Troubleshoot a blocked sign-in to the Microsoft Application Network
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: troubleshooting
 
 ms.date: 1/18/2022

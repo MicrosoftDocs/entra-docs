@@ -1,19 +1,15 @@
 ---
 title: Microsoft Entra authentication and synchronization protocol overview
 description: Architectural guidance on integrating Microsoft Entra ID with legacy authentication protocols and sync patterns
-services: active-directory
 author: janicericketts
 manager: martinco
 
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 2/8/2023
 ms.author: jricketts
 ms.reviewer: ajburnle
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Microsoft Entra integrations with authentication protocols

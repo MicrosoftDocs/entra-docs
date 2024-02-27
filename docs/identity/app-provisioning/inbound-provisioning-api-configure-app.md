@@ -1,12 +1,11 @@
 ---
 title: Configure API-driven inbound provisioning app
 description: Learn how to configure API-driven inbound provisioning app.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/15/2023
 ms.author: kenwith

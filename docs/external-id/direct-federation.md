@@ -3,10 +3,9 @@ title: Federation with a SAML/WS-Fed identity provider (IdP) for B2B
 description: Directly federate with a SAML or WS-Fed identity provider so guests can sign in to your Microsoft Entra apps
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/23/2024
+ms.date: 01/31/2024
 
 ms.author: mimart
 author: msmimart
@@ -99,7 +98,7 @@ No, the [email one-time passcode](one-time-passcode.md) feature should be used i
 
 **Once SAML/WS-Fed IdP federation is configured with an organization, does each guest need to be sent and redeem an individual invitation?**
 
-Setting up SAML/WS-Fed IdP federation doesn’t change the authentication method for guest users who have already redeemed an invitation from you. You can update a guest user’s authentication method by [resetting their redemption status](reset-redemption-status.md).
+When inviting new guests, you still need to send invitations or provide direct links so the guests can complete the redemption steps. For existing guests, you don't necessarily need to send new invitations. Existing guests will continue using the authentication method they used before federation was set up. If you want these guests to start using federation for authentication, you can [reset their redemption status](reset-redemption-status.md). Then the next time they access your app or use the link in your invitation, they'll repeat the redemption process and start using federation as their authentication method.
 
 **Is there a way to send a signed request to the SAML identity provider?**
 

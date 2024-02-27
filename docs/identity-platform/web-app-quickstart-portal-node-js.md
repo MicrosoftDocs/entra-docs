@@ -7,8 +7,8 @@ manager: celested
 ms.author: dmwendia
 ms.custom: scenarios:getting-started, "languages:js", devx-track-js, mode-api
 ms.date: 08/16/2022
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to set up authentication in a web application built using Node.js and MSAL Node.
 ---

@@ -4,8 +4,8 @@ description: Learn about the fundamental concepts of user and admin consent in M
 
 author: omondiatieno
 manager: celesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: overview
 ms.date: 04/04/2023

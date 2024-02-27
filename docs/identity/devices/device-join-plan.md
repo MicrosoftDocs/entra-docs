@@ -2,8 +2,8 @@
 title: Plan your Microsoft Entra join deployment
 description: Explains the steps that are required to implement Microsoft Entra joined devices in your environment.
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
 ms.date: 01/24/2023
@@ -13,7 +13,6 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
 
-ms.collection: M365-identity-device-management
 ---
 # How to: Plan your Microsoft Entra join implementation
 
@@ -157,7 +156,7 @@ Users get SSO from Microsoft Entra joined devices if the device has access to a 
 > [!NOTE]
 > Microsoft Entra joined devices can seamlessly provide access to both, on-premises and cloud applications. For more information, see [How SSO to on-premises resources works on Microsoft Entra joined devices](device-sso-to-on-premises-resources.md).
 
-**Recommendation:** Deploy [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md) to enable secure access for these applications.
+**Recommendation:** Deploy [Microsoft Entra application proxy](/entra/identity/app-proxy) to enable secure access for these applications.
 
 ### On-premises network shares
 

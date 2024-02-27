@@ -2,10 +2,10 @@
 title: Secure your resources with Microsoft-managed Conditional Access policies
 description: Microsoft-managed policies take action to require multifactor authentication to reduce the risk of compromise.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 10/26/2023
+ms.date: 02/08/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -34,6 +34,9 @@ At launch Microsoft is deploying the following three policies where our data tel
 Administrators with at least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Conditional Access** > **Policies**.
 
 Administrators have the ability to **Edit** the **State** (On, Off, or Report-only) and the **Excluded identities** (Users, Groups, and Roles) in the policy. Organizations should [exclude their break-glass or emergency access accounts](../role-based-access-control/security-emergency-access.md) from these policies the same as they would in other Conditional Access policies.
+
+> [!TIP]
+> Using the **Edit** pencil at the top to modify the Microsoft-managed per-user multifactor authentication policy might result in a **failed to update** error. To work around this issue, select **Edit** under the **Excluded identities** section of the policy.
 
 Microsoft will enable these policies after no less than 90 days after they're introduced in your tenant if they're left in the **Report-only** state. Administrators might choose to enable these policies sooner if they wish.
 

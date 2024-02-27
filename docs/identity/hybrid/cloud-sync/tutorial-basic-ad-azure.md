@@ -1,16 +1,15 @@
 ---
 title: Tutorial - Basic Active Directory on-premises and Microsoft Entra environment.
-services: active-directory
+
 description: Learn how to create a basic AD and Microsoft Entra environment.
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: tutorial
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Tutorial: Basic Active Directory environment

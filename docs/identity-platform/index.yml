@@ -16,9 +16,8 @@ metadata:
   author: Dickson-Mwendia
   manager: CelesteDG
   ms.author: dmwendia
-  ms.date: 04/28/2023
-  ms.service: active-directory
-  ms.subservice: develop
+  ms.date: 02/02/2024
+  ms.service: identity-platform  
   ms.topic: hub-page
 ## FRONT MATTER END
 

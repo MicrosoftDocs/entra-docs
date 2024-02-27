@@ -3,8 +3,8 @@ title: Secure hybrid access with F5
 description: F5 BIG-IP Access Policy Manager and Microsoft Entra integration for Secure Hybrid Access
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 12/13/2022

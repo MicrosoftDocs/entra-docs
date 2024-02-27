@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: 
 ms.date: 12/6/2022
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a web app that signs in users by using the Microsoft identity platform.
 ---

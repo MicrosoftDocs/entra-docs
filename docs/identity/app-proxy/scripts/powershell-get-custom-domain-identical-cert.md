@@ -1,12 +1,11 @@
 ---
 title: PowerShell sample - Microsoft Entra application proxy apps with identical certs
 description: PowerShell example that lists all Microsoft Entra application proxy applications that are published with the identical certificate.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: sample
 ms.date: 01/04/2024
@@ -124,4 +123,4 @@ Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGrap
 
 For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
 
-For other PowerShell examples for Application Proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).
+For other PowerShell examples for application proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).

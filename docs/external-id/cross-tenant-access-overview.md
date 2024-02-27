@@ -2,8 +2,7 @@
 title: Cross-tenant access overview
 description: Get an overview of cross-tenant access in Microsoft Entra External ID. Learn how to manage your B2B collaboration with other Microsoft Entra organizations through this overview of cross-tenant access settings.
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 01/24/2024
 
@@ -163,7 +162,7 @@ To collaborate with a partner tenant in a different Microsoft Azure cloud, both 
 > [!IMPORTANT]
 > Changing the default inbound or outbound settings to block access could block existing business-critical access to apps in your organization or partner organizations. Be sure to use the tools described in this article and consult with your business stakeholders to identify the required access.
 
-- To configure cross-tenant access settings in the Azure portal, you'll need an account with a Global administrator, Security administrator, or a [custom role](#custom-roles-for-managing-cross-tenant-access-settings) you've defined.
+- To configure cross-tenant access settings in the Azure portal, you'll need an account with a Global Administrator, Security Administrator, or a [custom role](#custom-roles-for-managing-cross-tenant-access-settings) you've defined.
 
 - To configure trust settings or apply access settings to specific users, groups, or applications, you'll need a Microsoft Entra ID P1 license. The license is required on the tenant that you configure. For B2B direct connect, where mutual trust relationship with another Microsoft Entra organization is required, you'll need a Microsoft Entra ID P1 license in both tenants. 
 

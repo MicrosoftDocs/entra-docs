@@ -1,14 +1,12 @@
 ---
 title: Add and verify custom domain names
 description: Management concepts and how-tos for managing a domain name in Microsoft Entra ID
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 ms.date: 03/31/2023
 ms.author: barclayn
@@ -16,7 +14,6 @@ ms.reviewer: sumitp
 
 ms.custom: it-pro
 
-ms.collection: M365-identity-device-management
 ---
 # Managing custom domain names in your Microsoft Entra ID
 

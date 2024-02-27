@@ -4,8 +4,8 @@ description: PowerShell example that exports all secrets and certificates for th
 
 author: mifarca
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.custom:
 ms.topic: sample
