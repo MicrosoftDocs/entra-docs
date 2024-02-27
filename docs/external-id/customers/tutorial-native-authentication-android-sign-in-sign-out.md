@@ -185,7 +185,7 @@ if (actionResult is SignOutResult.Complete) {
 
 Don't forget to add the import statements, Android Studio does that for you automatically (on Mac select Alt + Enter on each error detected by the code editor). 
 
-Well, you have done everything that is required to successfully sign out a user on your app. Build and run your application. If all good, you should be able to select sign out button to successfully sign out. 
+You have completed all the necessary steps to successfully sign out a user on your app. Build and run your application. If all good, you should be able to select sign out button to successfully sign out. 
 
 ## Next steps
 
