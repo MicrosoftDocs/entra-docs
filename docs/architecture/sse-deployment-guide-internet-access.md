@@ -114,7 +114,7 @@ Microsoft Internet Access has features to configure a security profile with a pr
 1. In the **Global Secure Access Client - Advanced Diagnostics** dialog box, select **Traffic**.
 1. On **Network traffic**, select **Start collecting**.
 
-   [ ![Screenshot of Global Secure Access Client, Advanced diagnostics, Traffic, Network traffic, Start collecting.](media/sse-deployment-guide-internet-access/gsa-client-adv-diagnos-network-traffic-start-collecting-inline.png)](media/sse-deployment-guide-internet-access/gsa-client-adv-diagnos-network-traffic-start-collecting-expanded.png#lightbox)
+   [ ![Screenshot of Global Secure Access Client, Advanced diagnostics, Traffic, Network traffic, Start collecting.](media/sse-deployment-guide-internet-access/network-traffic-start-collecting-inline.png)](media/sse-deployment-guide-internet-access/network-traffic-start-collecting-expanded.png#lightbox)
    
 1. To confirm blocked access, attempt to open the FQDN you blocked. It can take up to 20 minutes for the policy to apply to your client device.
 
@@ -123,7 +123,7 @@ Microsoft Internet Access has features to configure a security profile with a pr
 1. On **Network traffic**, select **Stop collecting**.
 1. Scroll to observe the traffic related to opening the FQDN, and associated data.
 
-   [ ![Screenshot of Network traffic for FQDN.](media/sse-deployment-guide-internet-access/gsa-client-adv-diagnos-network-traffic-fqdn-traffic-inline.png)](media/sse-deployment-guide-internet-access/gsa-client-adv-diagnos-network-traffic-fqdn-traffic-expanded.png#lightbox)
+   [ ![Screenshot of Network traffic for FQDN.](media/sse-deployment-guide-internet-access/network-traffic-fqdn-traffic-inline.png)](media/sse-deployment-guide-internet-access/network-traffic-fqdn-traffic-expanded.png#lightbox)
 
 1. On your test device \> System Tray \>, expand options \> right-click **Global Secure Access client**. Select **Pause**.
 
@@ -240,7 +240,7 @@ Use Microsoft Entra Internet Access to block or allow access to internet sites b
 1. In the **Global Secure Access Client - Advanced Diagnostics** dialog box, select **Traffic**.
 1. On **Network traffic**, select **Start collecting**.
 
-   [ ![Screenshot of Global Secure Access Client, Advanced diagnostics, Traffic, Network traffic, Start collecting.](media/sse-deployment-guide-internet-access/gsa-client-adv-diagnos-network-traffic-start-collecting-inline.png)](media/sse-deployment-guide-internet-access/gsa-client-adv-diagnos-network-traffic-start-collecting-expanded.png#lightbox)
+   [ ![Screenshot of Global Secure Access Client, Advanced diagnostics, Traffic, Network traffic, Start collecting.](media/sse-deployment-guide-internet-access/network-traffic-start-collecting-inline.png)](media/sse-deployment-guide-internet-access/network-traffic-start-collecting-expanded.png#lightbox)
     
 1. Attempt to open an alcohol or tobacco site to confirm blocked access. You should see **DeniedTraffic** for http websites and a **Can't reach this page** notification for https websites. It can take up to 20 minutes for the policy to apply to your client device.
 
@@ -249,7 +249,7 @@ Use Microsoft Entra Internet Access to block or allow access to internet sites b
 1. On **Network traffic**, select **Stop collecting**.
 1. Scroll to observe the traffic related to opening the FQDN and associated data. Note the **Internet Access** in the **Channel** columns. Conditional Access policies are written as claims to your token that have a one-hour lifetime. It can take up to one hour for new Conditional Access policies to apply to your client device. Because changes propagate across Microsoft Entra, it can take up to 20 minutes for web-filtering policy and security-profile changes to apply to your client device.
 
-   [ ![Screenshot of Global Secure Access - Advanced diagnostic, Network traffic.](media/sse-deployment-guide-internet-access/gsa-client-adv-diagnos-network-traffic-internet-access-traffic-inline.png)](media/sse-deployment-guide-internet-access/gsa-client-adv-diagnos-network-traffic-internet-access-traffic-expanded.png#lightbox)
+   [ ![Screenshot of Global Secure Access - Advanced diagnostic, Network traffic.](media/sse-deployment-guide-internet-access/network-traffic-internet-access-traffic-inline.png)](media/sse-deployment-guide-internet-access/network-traffic-internet-access-traffic-expanded.png#lightbox)
     
 1. On your test device \> System Tray \>, expand options \> right-click **Global Secure Access client**. Select **Pause**.
 
@@ -361,7 +361,7 @@ In some cases, it's necessary to block specific websites rather than using broad
 1. In the **Global Secure Access Client - Advanced Diagnostics** dialog box, select **Traffic**.
 1. On **Network traffic**, select **Start collecting**.
 
-   [ ![Screenshot of Global Secure Access Client, Advanced diagnostics, Traffic, Network traffic, Start collecting.](media/sse-deployment-guide-internet-access/gsa-client-adv-diagnos-network-traffic-start-collecting-inline.png)](media/sse-deployment-guide-internet-access/gsa-client-adv-diagnos-network-traffic-start-collecting-expanded.png#lightbox)
+   [ ![Screenshot of Global Secure Access Client, Advanced diagnostics, Traffic, Network traffic, Start collecting.](media/sse-deployment-guide-internet-access/network-traffic-start-collecting-inline.png)](media/sse-deployment-guide-internet-access/network-traffic-start-collecting-expanded.png#lightbox)
 
 1. Attempt to open the FQDN you configured to confirm blocked access. You should see **Access Denied** for http websites and **Can't reach this page** notification for https websites. It can take up to 20 minutes for the policy to apply to your client device.
 
@@ -370,7 +370,7 @@ In some cases, it's necessary to block specific websites rather than using broad
 1. On **Network traffic**, select **Stop collecting**.
 1. Scroll to observe the traffic related to opening the FQDN, and associated data.
 
-   [ ![Screenshot of Global Secure Access - Advanced diagnostic, Network traffic to block FQDN Internet Access.](media/sse-deployment-guide-internet-access/gsa-client-adv-diagnos-network-traffic-block-fqdn-traffic-inline.png)](media/sse-deployment-guide-internet-access/gsa-client-adv-diagnos-network-traffic-block-fqdn-traffic-expanded.png#lightbox)
+   [ ![Screenshot of Global Secure Access - Advanced diagnostic, Network traffic to block FQDN Internet Access.](media/sse-deployment-guide-internet-access/network-traffic-block-fqdn-traffic-inline.png)](media/sse-deployment-guide-internet-access/network-traffic-block-fqdn-traffic-expanded.png#lightbox)
 
 1. On your test device \> System Tray \>, expand options \> right-click **Global Secure Access client**. Select **Pause**.
 
@@ -478,7 +478,7 @@ In some cases, you might have users that require access to blocked sites for gro
 1. In the **Global Secure Access Client - Advanced Diagnostics** dialog box, select **Traffic**.
 1. On **Network traffic**, select **Start collecting**.
 
-   [ ![Screenshot of Global Secure Access Client, Advanced diagnostics, Traffic, Network traffic, Start collecting.](media/sse-deployment-guide-internet-access/gsa-client-adv-diagnos-network-traffic-start-collecting-inline.png)](media/sse-deployment-guide-internet-access/gsa-client-adv-diagnos-network-traffic-start-collecting-expanded.png#lightbox)
+   [ ![Screenshot of Global Secure Access Client, Advanced diagnostics, Traffic, Network traffic, Start collecting.](media/sse-deployment-guide-internet-access/network-traffic-start-collecting-inline.png)](media/sse-deployment-guide-internet-access/network-traffic-start-collecting-expanded.png#lightbox)
 
 1. To confirm access for this specific user, attempt to open the FQDN that you configured as an exception. It can take up to 20 minutes for the policy to apply to your client device.
 
@@ -492,7 +492,7 @@ In some cases, you might have users that require access to blocked sites for gro
 1. In the **Microsoft Entra admin center** \> **Global Secure Access (Preview)** \> **Monitor**, select **Traffic logs**. If needed, select **Add filter**. Filter when **User principal name** contains *testuser* and **Action** set to **Block**.
 1. Observe the entries for your target FQDN that show traffic as blocked and then allowed. There can be a delay of up to 20 minutes for entries to appear in the log.
 
-   [ ![Screenshot of Global Secure Access - Advanced diagnostic, Network traffic to allow blocked Internet Access.](media/sse-deployment-guide-internet-access/gsa-client-adv-diagnos-network-traffic-allow-blocked-traffic-inline.png)](media/sse-deployment-guide-internet-access/gsa-client-adv-diagnos-network-traffic-allow-blocked-traffic-expanded.png#lightbox)
+   [ ![Screenshot of Global Secure Access - Advanced diagnostic, Network traffic to allow blocked Internet Access.](media/sse-deployment-guide-internet-access/network-traffic-allow-blocked-traffic-inline.png)](media/sse-deployment-guide-internet-access/network-traffic-allow-blocked-traffic-expanded.png#lightbox)
 
 [!INCLUDE [Public preview important note](../global-secure-access/includes/public-preview-important-note.md)]
 
