@@ -25,7 +25,7 @@ Alternatively, you can set up environment variables in the Azure portal.
 1. Navigate to the function app you created, and under **Settings**, select **Configuration**.
 1. Under **Application settings**, select **New application setting**.
 1. For **Name**, enter `AuthenticationEvents__TenantId` and for **Value**, enter the tenant ID of your Microsoft Entra tenant, then select **OK**.
-1. Add a second variable with the name `AuthenticationEvents__AudienceAppId` and the app ID of the custom authentication extension you created in the [previous step](#register-a-custom-authentication-extension).
+1. Add a second variable with the name `AuthenticationEvents__AudienceAppId` and the app ID of the custom authentication extension you created in the previous step.
 1. Select **Save** to save the application settings.
 
 > [!IMPORTANT]

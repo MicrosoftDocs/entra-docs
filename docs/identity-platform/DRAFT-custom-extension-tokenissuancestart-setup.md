@@ -12,7 +12,7 @@ ms.topic: how-to
 titleSuffix: Microsoft identity platform
 zone_pivot_groups: custom-auth-extension
 
-#Customer intent: As a developer, I want to configure a custom claims provider token issuance event, so that I can add custom claims to a token before it is issued.
+#Customer intent: As a developer, I want to create an Azure Function app with a token issuance start event using the Azure Functions client library for .NET, and deploy it to the Azure portal, or create the app directly on the Azure portal.
 ---
 
 # Create a token issuance start event HTTP trigger function
