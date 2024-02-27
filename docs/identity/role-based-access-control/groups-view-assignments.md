@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.date: 08/08/2023
 ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref azure-ad-ref-level-one-done
 
 
 ---
@@ -22,7 +22,7 @@ This section describes how the roles assigned to a group can be viewed using the
 
 ## Prerequisites
 
-- Azure AD PowerShell module when using PowerShell
+- Microsoft Graph PowerShell module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
@@ -46,13 +46,13 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 ### Get object ID of the group
 
 ```powershell
-Get-AzureADMSGroup -SearchString "Contoso_Helpdesk_Administrators"
+Get-MgGroup -Filter "DisplayName eq 'Contoso_Helpdesk_Administrators'"
 ```
 
 ### View role assignment to a group
 
 ```powershell
-Get-AzureADMSRoleAssignment -Filter "principalId eq '<object id of group>'" 
+Get-MgRoleManagementDirectoryRoleAssignment -Filter "PrincipalId eq '<object id of group>'" 
 ```
 
 ## Microsoft Graph API

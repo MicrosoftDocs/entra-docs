@@ -50,7 +50,7 @@ When a new Enterprise Application is created, a matching App Registration is als
 
 1. From the *App Registrations* window, select the **All applications** tab option
 
-1. Navigate to the application with a matching name to your deployed App Proxy application. For example, if you deployed *Sample App 1* as an Enterprise Application, select the **Sample App 1** registration item
+1. Navigate to the application with a matching name to your deployed application proxy application. For example, if you deployed *Sample App 1* as an Enterprise Application, select the **Sample App 1** registration item
 
     > [!NOTE]
     > If an associated application can't be found, it may have not been automatically created or may have been deleted. A registration can be created using the **New Registration** button.

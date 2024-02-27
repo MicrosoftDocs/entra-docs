@@ -8,7 +8,7 @@ editor: daveba
 ms.custom: subject-rbac-steps, mode-other, devx-track-arm-template
 ms.service: entra-id
 ms.subservice: managed-identities
-ms.topic: quickstart
+ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.date: 10/30/2022
 ms.author: barclayn

@@ -5,7 +5,7 @@ author: CelesteDG
 manager: CelesteDG
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 01/05/2024
 ms.author: celested
 ms.reviewer: nicholepet

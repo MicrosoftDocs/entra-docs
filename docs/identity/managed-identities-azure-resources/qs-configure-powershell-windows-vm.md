@@ -11,7 +11,8 @@ ms.tgt_pltfrm: na
 ms.date: 05/10/2023
 ms.author: barclayn
 
-ms.custom: devx-track-azurepowershell, mode-api, has-azure-ad-ps-ref
+ms.custom: devx-track-azurepowershell, mode-api, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+
 ---
 
 # Configure managed identities for Azure resources on an Azure VM using PowerShell
@@ -68,20 +69,20 @@ After you have enabled system assigned identity on a VM, you can add it to a gro
 
 1. Retrieve and note the `ObjectID` (as specified in the `Id` field of the returned values) of the VM's service principal:
 
-   ```azurepowershell-interactive
+   ```azurepowershell
    Get-AzADServicePrincipal -displayname "myVM"
    ```
 
 1. Retrieve and note the `ObjectID` (as specified in the `Id` field of the returned values) of the group:
 
-   ```azurepowershell-interactive
+   ```azurepowershell
    Get-AzADGroup -searchstring "myGroup"
    ```
 
 1. Add the VM's service principal to the group:
 
-   ```azurepowershell-interactive
-   Add-AzureADGroupMember -ObjectId "<objectID of group>" -RefObjectId "<object id of VM service principal>"
+   ```azurepowershell
+   New-MgGroupMember -GroupId "<Id of group>" -DirectoryObjectId "<Id of VM service principal>" 
    ```
 
 ## Disable system-assigned managed identity from an Azure VM

@@ -64,7 +64,7 @@ As an admin, you can either remove the option in MyAccount and create your custo
 :::image type="content" source="media/verifiable-credentials-configure-tenant-quick/verifiable-credentials-setup-groups.png" alt-text="Screenshot that shows controlling issuance via myaccount.":::
 
 > [!NOTE]
-> When you have made a configuration change for issuing credentials through My Account, expect some minutes delay before the change takes effect.
+> When you have made a configuration change for issuing credentials through My Account, expect some minutes of delay before the change takes effect.
 
 ## How Quick Verified ID setup works
 

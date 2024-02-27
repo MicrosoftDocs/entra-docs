@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
-ms.date: 02/13/2024
+ms.date: 02/26/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -32,7 +32,7 @@ The flowchart contains the steps for debugging common issues. The table after th
 |3 | Open a browser and try to access the app | If an error appears immediately, check to see that application proxy is configured correctly. For details about specific error messages, see [Troubleshoot application proxy problems and error messages](application-proxy-troubleshoot.md).  |
 |4 | Check your custom domain setup or troubleshoot the error | If the page doesn't display at all, make sure your custom domain is configured correctly by reviewing [Working with custom domains](how-to-configure-custom-domain.md).<br></br>If the page doesn't load and an error message appears, troubleshoot the error by referring to  [Troubleshoot application proxy problems and error messages](application-proxy-troubleshoot.md). <br></br>If it takes longer than 20 seconds for an error message to appear, there could be connectivity issue. Go to the [Debug application proxy connectors](application-proxy-debug-connectors.md) troubleshooting article.  |
 |5 | If issues persist, go to connector debugging | There could be a connectivity issue between the proxy and the connector or between the connector and the back end. Go to the [Debug application proxy connectors](application-proxy-debug-connectors.md) troubleshooting article. |
-|6 | Publish all resources, check browser developer tools, and fix links | Make sure the publishing path includes all the necessary images, scripts, and style sheets for your application. For details, see [Add an on-premises app to Microsoft Entra ID](application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad). <br></br>Use the browser's developer tools (F12 tools in Internet Explorer or Microsoft Edge) and check for publishing issues as described in [Application page doesn't display correctly](application-proxy-page-appearance-broken-problem.md). <br></br>Review options for resolving broken links in [Links on the page don't work](application-proxy-page-links-broken-problem.md). |
+|6 | Publish all resources, check browser developer tools, and fix links | Make sure the publishing path includes all the necessary images, scripts, and style sheets for your application. For details, see [Add an on-premises app to Microsoft Entra ID](application-proxy-add-on-premises-application.md). <br></br>Use the browser's developer tools (F12 tools in Internet Explorer or Microsoft Edge) and check for publishing issues as described in [Application page doesn't display correctly](application-proxy-page-appearance-broken-problem.md). <br></br>Review options for resolving broken links in [Links on the page don't work](application-proxy-page-links-broken-problem.md). |
 |7 | Check for network latency | If the page loads slowly, learn about ways to minimize network latency in [Considerations for reducing latency](application-proxy-network-topology.md#considerations-for-reducing-latency). | 
 |8 | See more troubleshooting help | If issues persist, find more troubleshooting articles in the [Application proxy troubleshooting documentation](application-proxy-troubleshoot.md). |
 

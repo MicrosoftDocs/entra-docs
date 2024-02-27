@@ -1,14 +1,13 @@
 ---
 title: Custom home page for published apps - Microsoft Entra application proxy
 description: Covers the basics about Microsoft Entra application proxy connectors
-
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 02/07/2024
+ms.date: 02/26/2024
 ms.author: kenwith
 ms.reviewer: harshja
 ---
