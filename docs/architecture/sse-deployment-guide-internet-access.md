@@ -45,23 +45,24 @@ Microsoft Internet Access has features to configure a security profile with a pr
    [ ![Screenshot of Global Secure Access Secure Web content filtering policies.](media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png)](media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-expanded.png#lightbox) 
 
 1. On **Create a web content filtering policy** \> **Basics**, provide the following details.
-  * **Name**: Baseline Internet Access block rule.
-  * **Description:** Add a description.
-  * **Action**: Block.
+   * **Name**: Baseline Internet Access block rule.
+   * **Description**: Add a description.
+   * **Action**: Block.
 
    [ ![Screenshot of Global Secure Access, Web content filtering policies, Create a web content filtering policy, Basics for baseline policy.](media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-basics-baseline-inline.png)](media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-basics-baseline-expanded.png#lightbox)
       
 1. Select **Next**.
 1. On **Create a web content filtering policy** \> **Policy Rules**, select **Add Rule**.
 
-   [ ![Screenshot of Global Secure Access, Create a web content filtering policy, Policy Rules for baseline policy.](media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-rules-baseline.png)
+   ![Screenshot of Global Secure Access, Create a web content filtering policy, Policy Rules for baseline policy.](media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-rules-baseline.png)
    
 1. In the **Add Rule** dialog box, provide the following details.
-  * **Name**: Baseline blocked web categories.
-  * **Destination type:** webCategory.
-  * **Search**: Select a few risky categories, confirm they are in the Selected items list.
+   * **Name**: Baseline blocked web categories.
+   * **Destination type:** webCategory.
+   * **Search**: Select a few risky categories, confirm they are in the Selected items list.
 
-   [ ![Screenshot of Global Secure Access, Create a web content filtering policy, Add Rule for baseline policy.](media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-add-rule-baseline.png)
+   ![Screenshot of Global Secure Access, Create a web content filtering policy, Add Rule for baseline policy.](media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-add-rule-baseline.png)
+
 1. Select **Add**.
 1. On **Create a web content filtering policy** \> **Policy Rules**, confirm your selections.
 
@@ -82,18 +83,18 @@ Microsoft Internet Access has features to configure a security profile with a pr
    [ ![Screenshot of Global Secure Access, Security profiles.](media/sse-deployment-guide-internet-access/security-profiles-inline.png)](media/sse-deployment-guide-internet-access/security-profiles-expanded.png#lightbox)
    
 1. On **Create a profile** \> **Basics**, provide the following details.
-  * **Profile name**: Baseline Internet Access Block Profile.
-  * **Description:** Add a description.
-  * **State**: enabled.
-  * **Priority:** 65000.
+   * **Profile name**: Baseline Internet Access Block Profile.
+   * **Description:** Add a description.
+   * **State**: enabled.
+   * **Priority:** 65000.
 
    [ ![Screenshot of Global Secure Access, Security profiles, Basics for baseline policy.](media/sse-deployment-guide-internet-access/security-profiles-create-profile-basics-baseline-inline.png)](media/sse-deployment-guide-internet-access/security-profiles-create-profile-basics-baseline-expanded.png#lightbox)
       
 1. Select **Next**.
 1. On **Create a profile** \> **Link policies**, select **Link a policy**. Select **Existing policy**.
-  * In the **Link a policy** dialog box, select **Policy name** and select **Baseline Internet Access block rule**.
-  * **Priority**: 100.
-  * **State**: Enabled.
+   * In the **Link a policy** dialog box, select **Policy name** and select **Baseline Internet Access block rule**.
+   * **Priority**: 100.
+   * **State**: Enabled.
 1. Select **Add**.
 1. On **Create a profile** \> **Link policies**, confirm **Baseline Internet Access Block Rule** is in the list.
 1. Select **Next**.
