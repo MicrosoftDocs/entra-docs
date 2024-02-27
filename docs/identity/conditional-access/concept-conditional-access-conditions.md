@@ -16,7 +16,7 @@ ms.reviewer: lhuangnorth, sandeo
 
 Within a Conditional Access policy, an administrator can make use of one or more signals to enhance their policy decisions.
 
-[![Define a Conditional Access policy and specify conditions](./media/concept-conditional-access-conditions/conditional-access-conditions.png)](./media/concept-conditional-access-conditions/conditional-access-conditions.png#lightbox)
+:::image type="content" source="media/concept-conditional-access-conditions/conditional-access-conditions.png" alt-text="Screenshot of available conditions for a Conditional Access policy in the Microsoft Entra admin center." lightbox="media/concept-conditional-access-conditions/conditional-access-conditions.png":::
 
 Multiple conditions can be combined to create fine-grained and specific Conditional Access policies.
 
