@@ -49,10 +49,13 @@ CoroutineScope(Dispatchers.Main).launch {
         username = emailAddress,
         password = password
     )
-    if (submitCodeActionResult is SignInResult.Complete) -> {
+    if (actionResult is SignInResult.Complete) -> {
         // Handle sign in success
-        val accountResult = result.resultValue
-        val accessToken = accountResult.getTokens().getAccessToken()
+        val accountState = result.resultValue
+        val accessTokenResult = accountState.getAccessToken()
+        if (accessTokenResult is GetAccessTokenResult.Complete) {
+                val accessToken = accessTokenResult.resultValue.accessToken
+            }
     }
 }
 ```
@@ -83,7 +86,6 @@ val actionResult = authClient.signIn(
 if (actionResult is SignInResult.Complete) -> {
     // Handle sign in success
     val accountResult = result.resultValue
-    val accessToken = accountResult.getTokens().getAccessToken()
 } else if (actionResult is SignInError) {
     when {
             actionResult.isInvalidCredentials() ||  actionResult.isUserNotFound() -> {

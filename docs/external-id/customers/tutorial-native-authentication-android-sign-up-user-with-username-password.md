@@ -50,7 +50,7 @@ To implement the `signUp(username, password)`, use the following code snippet:
 ```kotlin 
 CoroutineScope(Dispatchers.Main).launch { 
     val actionResult = authClient.signUp( 
-        username = emailAddress, 
+        username = email, 
         password = password 
     ) 
     if (actionResult is SignUpResult.CodeRequired) { 
@@ -80,7 +80,7 @@ To implement the full flow, use:
 ```kotlin 
 CoroutineScope(Dispatchers.Main).launch { 
     val actionResult = authClient.signUp( 
-        username = emailAddress, 
+        username = email, 
         password = password 
     ) 
     if (actionResult is SignUpResult.CodeRequired) { 
@@ -108,6 +108,7 @@ In the case of `SignUpError`, the SDK provides utility methods  for further anal
 - `isInvalidAttributes()`
 - `isInvalidUsername()`
 - `isBrowserRequired()`
+- `isAuthNotSupported()`
 
 Errors such as these indicate that the previous operation was unsuccessful, and because of that they don't include a reference to a new state. 
 
@@ -115,7 +116,8 @@ To check the errors such as a user using a registered email, invalid password, o
  
 ```kotlin 
 val actionResult = authClient.signUp(
-    username = emailAddress
+    username = email
+    password = password
 )
 if (actionResult is SignUpResult.CodeRequired) {
     // Next step: submit code
@@ -152,8 +154,8 @@ When a user enters invalid one-time passcode, you can use the following code sni
 val submitCodeActionResult = nextState.submitCode( 
     code = code 
 ) 
-if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode) { 
-    // Inform the user that the submitted code was incorrect and ask for a new code to be supplied 
+if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode()) { 
+    // Inform the user that the submitted code was incorrect or invalid and ask for a new code to be supplied 
     val newCode = retrieveNewCode() 
     nextState.submitCode( 
         code = newCode 

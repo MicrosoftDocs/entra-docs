@@ -73,7 +73,7 @@ During sign-up, not all actions succeed. For instance, the user might attempt to
 
    ```kotlin
    val actionResult = authClient.signUp(
-       username = emailAddress
+       username = email
    )
    if (actionResult is SignUpResult.CodeRequired) {
        // Next step: submit code
@@ -89,7 +89,7 @@ During sign-up, not all actions succeed. For instance, the user might attempt to
    }
    ```
 
-   `signUp(username)` can return SignUpError. We have provided utility methods to determine the type of error, such as `isUserAlreadyExists()`. Errors of this kind indicate an unsuccessful action and won't include a reference to the new state. You should notify the user that the email is already in use. 
+   `signUp(username)` can return SignUpError. `SignUpError` indicates an unsuccessful action result returned by `signUp()` and won't include a reference to the new state, while the utility method `isUserAlreadyExists()` checks for the specific error type of `SignUpError`: the username provided has been used.. You should notify the user that the email is already in use. 
 
 1. To handle errors in `submitCode()`, use the following code snippet:
 
@@ -112,14 +112,14 @@ During sign-up, not all actions succeed. For instance, the user might attempt to
    }
    ```
 
-   `submitCode()` can return `SignUpError`. We have provided utility methods to determine the type of error, such as `isInvalidCode()`. Errors of this kind indicate an unsuccessful action and won't include a reference to the new state. In this case, the previous state reference must be used to reperform the action. To retrieve a new one-time passcode, use the following code snippet: 
+   `submitCode()` can return `SignUpError`. `SignUpError` indicates an unsuccessful action result returned by `signUp()` and won't include a reference to the new state, while the utility method `isInvalidCode()` checks for the specific error type of `SignUpError`: the submitted code is invalid. In this case, the previous state reference must be used to reperform the action. To retrieve a new one-time passcode, use the following code snippet: 
 
     ```kotlin
     val submitCodeActionResult = nextState.submitCode(
         code = code
     )
     if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode()) {
-        // Inform the user that the submitted code was incorrect and ask for a new code to be supplied
+        // Inform the user that the submitted code was incorrect or invalid and ask for a new code to be supplied
         val newCode = retrieveNewCode()
         nextState.submitCode(
             code = newCode
@@ -127,9 +127,9 @@ During sign-up, not all actions succeed. For instance, the user might attempt to
     }
     ```
 
-Don't forget to add the import statements, Android Studio does that for you automatically (on Mac select Alt + Enter on each error detected by the code editor). 
+Don't forget to add the import statements, Android Studio does that for you automatically (on Mac or Windows select Alt + Enter on each error detected by the code editor). 
 
-Well, you have done everything that is required to successfully sign up a user on your app. Build and run your application. If all good, you should be able to provide an email ID, receive a code on the email and use that to successfully sign up user. 
+You've completed all the necessary steps to successfully sign up a user on your app. Build and run your application. If all good, you should be able to provide an email ID, receive a code on the email and use that to successfully sign up user. 
 
 
 ## Next steps 

@@ -54,7 +54,7 @@ In this tutorial, you learn how to:
 1. Open your app's `build.gradle` and add the following dependencies:  
  
    ```gradle 
-   implementation 'com.microsoft.identity.client:msal:5.1.0'
+   implementation 'com.microsoft.identity.client:msal:5.+'
    ``` 
  
 1. Select **File** > **Sync Project with Gradle Files**.  
@@ -162,7 +162,7 @@ The cached account can be retrieved through `getCurrentAccount()`, which will re
             }
         } 
  
-        private fun displaySignedInState(accountResult: AccountResult) { 
+        private fun displaySignedInState(accountState: AccountState) { 
             val accountName = accountResult.getAccount().username 
             val textView: TextView = findViewById(R.id.accountText) 
             textView.text = "Cached account found: $accountName" 
@@ -175,7 +175,7 @@ The cached account can be retrieved through `getCurrentAccount()`, which will re
     } 
 ``` 
  
-Don't forget to add the import statements, Android Studio does that for you automatically (on Mac select on Alt + Enter on each error detected by the code editor).  
+Don't forget to add the import statements, Android Studio does that for you automatically (on Mac or Windows select on Alt + Enter on each error detected by the code editor).  
  
 ## Next steps  
  

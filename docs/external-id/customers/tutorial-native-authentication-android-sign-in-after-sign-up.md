@@ -91,9 +91,9 @@ when (signInActionResult) {
 
 private fun displayAccount(accountState: AccountState) {
     CoroutineScope(Dispatchers.Main).launch {
-        val accessTokenState = accountState.getAccessToken()
-        if (accessTokenState is GetAccessTokenResult.Complete) {
-            val accessToken = accessTokenState.resultValue.accessToken
+        val accessTokenResult = accountState.getAccessToken()
+        if (accessTokenResult is GetAccessTokenResult.Complete) {
+            val accessToken = accessTokenResult.resultValue.accessToken
             val idToken = accountState.getIdToken()
         }
     }

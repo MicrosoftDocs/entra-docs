@@ -92,6 +92,7 @@ In the case of `SignUpError`, the SDK provides utility methods  for further anal
 - `isInvalidAttributes()`
 - `isInvalidUsername()`
 - `isBrowserRequired()`
+- `isAuthNotSupported()`
 
 Errors such as these indicate that the previous operation was unsuccessful, and because of that they don't include a reference to a new state. 
  

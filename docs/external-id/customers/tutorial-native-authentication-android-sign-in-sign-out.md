@@ -53,7 +53,7 @@ To sign in user using **Email one-time-passcode** you need to:
            val submitCodeActionResult = nextState.submitCode(
                code = code
            )
-           if (submitCodeActionResult is SignInResult.Complete) -> {
+           if (submitCodeActionResult is SignInResult.Complete){
                // Handle sign in success
                val accountResult = result.resultValue
                val accessToken = accountResult.getTokens().getAccessToken()
@@ -106,18 +106,18 @@ During sign-in, not all actions succeed. For instance, the user might attempt to
    if (submitCodeActionResult is SignInResult.Complete) {
        // Sign in flow complete, handle success state.
    } else if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode()) {
-       // Handle "invalid code" situation
+       // Handle "invalid code" error
    }
    ```
 
-  The `SubmitCodeError` error indicates an unsuccessful action result returned by `submitCode()` and won't include a reference to the new state, while the utility method `isInvalidCode()` checks for the specific error type of `SubmitCodeError`. In this case, the previous state reference must be used to reperform the action. To retrieve a new one-time passcode, use the following code snippet: 
+    The `SubmitCodeError` error indicates an unsuccessful action result returned by `submitCode()` and won't include a reference to the new state, while the utility method `isInvalidCode()` checks for the specific error type of `SubmitCodeError`. In this case, the previous state reference must be used to reperform the action. To retrieve a new one-time passcode, use the following code snippet: 
 
    ```kotlin
    val submitCodeActionResult = nextState.submitCode(
        code = code
    )
    if (submitCodeActionResult is SignInError && submitCodeActionResult.isInvalidCode) {
-       // Inform the user that the submitted code was incorrect and ask for a new code to be supplied
+       // Inform the user that the submitted code was incorrect or invalid and ask for a new code to be supplied
        val newCode = retrieveNewCode()
        nextState.submitCode(
            code = newCode
@@ -125,7 +125,7 @@ During sign-in, not all actions succeed. For instance, the user might attempt to
    }
    ```
 
-Well, you have done everything that is required to successfully sign in a user on your app. Build and run your application. If all good, you should be able to provide an email ID, receive a code on the email and use that to successfully sign in user. 
+You've completed all the necessary steps to successfully sign in a user on your app. Build and run your application. If all good, you should be able to provide an email ID, receive a code on the email and use that to successfully sign in user. 
 
 ## Sign out a user 
 
@@ -162,7 +162,7 @@ To sign out user using **Email one-time-passcode** you need to:
 
    private fun performSignOut(accountState: AccountState) {
         CoroutineScope(Dispatchers.Main).launch {
-            val signOutResult = accountState.resultValue.signOut()
+            val signOutResult = accountState.signOut()
             if (signOutResult is SignOutResult.Complete) {
                 // Show sign out successful UI
             }

@@ -23,7 +23,7 @@ In this article, you learn how to:
  
 - Register application in the Microsoft Entra External ID for customers tenant.  
 - Enable public client and native authentication flows.  
-- Create a sign-in and sign out user flow in the Microsoft Entra External ID for customers tenant.  
+- Create user flow in the Microsoft Entra External ID for customers tenant.  
 - Associate your application with the user flow.  
 - Edit the Android configuration code sample file to use your own Microsoft Entra External ID for customer tenant details.  
 - Run and test the sample native Android Kotlin mobile application.  
