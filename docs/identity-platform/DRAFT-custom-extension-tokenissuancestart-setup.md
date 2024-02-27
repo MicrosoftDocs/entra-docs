@@ -173,6 +173,27 @@ So far we've set up the project to install the NuGet packages and added soem sta
 1. Wait a few moments for your function app to be deployed. Once the window closes, select **Finish**
 1. A new **Publish** pane opens. At the top, select **Publish**. You'll need to wait a few minutes for your function app to be deployed and show up in the Azure portal.
 
+## Set up environment variables for your Azure Function (optional)
+
+In the code snippet above, the `AuthenticationEventsTrigger` attribute is set up for built-in [Azure App service authentication and authorization](/azure/app-service/overview-authentication-authorization). This is optional as you can also hard-code the `AuthenticationEventsTrigger` attribute to include the `TenantId` and `AudienceAppId` properties, as shown in the below snippet.
+
+```csharp
+[AuthenticationEventsTrigger(TenantId = "Enter tenant ID here", AudienceAppId = "Enter application client ID here")]
+```
+
+Alternatively, you can set up environment variables in the Azure portal.
+
+1. Log in to the [Azure portal](https://portal.azure.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) or [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
+1. Navigate to the function app you created, and under **Settings**, select **Configuration**.
+1. Under **Application settings**, select **New application setting**.
+1. For **Name**, enter `AuthenticationEvents__TenantId` and for **Value**, enter the tenant ID of your Microsoft Entra tenant, then select **OK**.
+1. Repeat this to add another variable with the name `AuthenticationEvents__AudienceAppId` and the app ID of the custom authentication extension you created in the [previous step](#register-a-custom-authentication-extension).
+1. Select **Save** to save the application settings.
+
+> [!IMPORTANT]
+> 
+> Double check your application code to ensure that `TenantId` and `AudienceAppId` are not hardcoded in the `[AuthenticationEventsTrigger]` attribute. You can have either set the environment variables or hardcoded the values in the attribute, but not both.
+
 ::: zone-end
 
 ::: zone pivot="visual-studio-code"
@@ -195,56 +216,7 @@ In this step, you create an HTTP trigger function API using Visual Studio Code. 
 1. accept **Company.Function** as the namespace, with **AccessRights** set to *Function*. 
 1. In the main window, a file called *AuthEventsTrigger.cs* will open. Replace the entire contents of the file with the following code:
 
-    ```csharp
-    using System;
-    using System.Threading.Tasks;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Azure.WebJobs;
-    using Microsoft.Extensions.Logging;
-    using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.TokenIssuanceStart.Actions;
-    using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.TokenIssuanceStart;
-    using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.Framework;
-    using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents;
-    
-    namespace AuthEventTrigger
-    {
-        public static class Function1
-        {
-            [FunctionName("onTokenIssuanceStart")]
-            public static async Task<AuthenticationEventResponse> Run(
-                [AuthenticationEventsTrigger] TokenIssuanceStartRequest request, ILogger log)
-            // [AuthenticationEventsTrigger(TenantId = "Enter tenant ID here", AudienceAppId = "Enter application client ID here")] TokenIssuanceStartRequest request, ILogger log)
-            // This is required. The only way that [AuthenticationEventsTrigger] TokenIssuanceStartRequest request, ILogger log) will work is if the settings are set in local.settings.json are set to bypass token validation. i.e. "AuthenticationEvents__BypassTokenValidation": true. This is only recommended for local development and testing.
-            {
-                try
-                {
-                    // Checks if the request is successful and did the token validation pass
-                    if (request.RequestStatus == RequestStatusType.Successful)
-                    {
-                        // Fetches information about the user from external data store
-                        // request.Response = null;
-                        // request.Response.Actions = null;
-                        // Add new claims to the token's response
-                        request.Response.Actions.Add(new ProvideClaimsForToken(
-                                                      new TokenClaim("dateOfBirth", "01/01/2000"),
-                                                      new TokenClaim("customRoles", "Writer", "Editor")
-                                                 ));
-                    }
-                    else
-                    {
-                        // If the request fails, such as in token validation, output the failed request status
-                        log.LogInformation(request.StatusMessage);
-                    }
-                    return await request.Completed();
-                }
-                catch (Exception ex) 
-                { 
-                    return await request.Failed(ex);
-                }
-            }
-        }
-    }
-    ```
+[!INCLUDE [nuget-code](./includes/scenarios/custom-extension-tokenissuancestart-setup-nuget-code.md)]
 
 1. Next, open the *local.settings.json* file and add the `AzureWebJobsStorage` value as shown in the following snippet: <!--Added automatically in Visual Studio?-->
 
@@ -282,6 +254,8 @@ So far we've set up the project to install the NuGet packages and added soem sta
 1. Select the **.NET 6 (LTS) In-Process** runtime stack. 
 1. Select a location for the function app, such as *East US*.
 1. You'll need to wait 5-10 minutes for your function app to be deployed and show up in the Azure portal.
+
+[!INCLUDE [environment-variables](./includes/scenarios/custom-extension-tokenissuancestart-setup-env-portal.md)]
 
 ::: zone-end
 

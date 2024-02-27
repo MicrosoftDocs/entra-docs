@@ -59,24 +59,7 @@ You'll now configure a custom authentication extension, which will be used by Mi
     - apiVersion
     - correlationId
 1. Select **Next**, then **Create**, which registers the custom authentication extension and the associated application registration.
-1. Note the **App ID** under **API Authentication**. You'll need it if you're [setting environment variables](#set-application-environment-variables) in your Azure Function app.
-
-### Set application environment variables
-
-If you have set up your Azure Function app using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library, it's recommended to set environment variables for the tenant ID and audience app ID in the Azure portal instead of hardcoding them. 
-
-If you haven't used this library in your Azure Function, you can skip this step and continue to [grant admin consent](#12-grant-admin-consent).
-
-1. Navigate to the **Azure Function** app you created your custom authentication extension for.
-1. Under Settings, select **Configuration**.
-1. Under **Application settings**, select **New application setting**.
-1. For **Name**, enter `AuthenticationEvents__TenantId` and for **Value**, enter the tenant ID of your Microsoft Entra tenant, then select **OK**.
-1. Repeat this to add another variable with the name `AuthenticationEvents__AudienceAppId` and the app ID of the custom authentication extension you created in the [previous step](#register-a-custom-authentication-extension).
-1. Selct **Save** to save the application settings.
-
-> [!IMPORTANT]
-> 
-> Double check your application code to ensure that `TenantId` and `AudienceAppId` are not hardcoded in the `[AuthenticationEventsTrigger]` attribute. You can have either set the environment variables or hardcoded the values in the attribute, but not both.
+1. Note the **App ID** under **API Authentication**. You'll need it if you're [setting environment variables](./DRAFT-custom-extension-tokenissuancestart-setup.md#set-up-environment-variables-for-your-azure-function-optional) in your Azure Function app.
 
 # [Microsoft Graph](#tab/microsoft-graph)
 
