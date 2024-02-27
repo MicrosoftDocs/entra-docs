@@ -6,7 +6,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js, mode-other
-ms.date: 11/12/2021
+ms.date: 02/27/2024
 ms.reviewer: jamesmantu
 ms.service: identity-platform
 
@@ -51,7 +51,7 @@ ms.topic: conceptual
 > Run the project with a web server by using Node.js
 > 
 > >[!div class="nextstepaction"]
-> >[Download the code sample](https://github.com/Azure-Samples/ms-identity-javascript-angular-spa/archive/main.zip)
+> >[Download the code sample](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/archive/refs/heads/main.zip)
 > 
 > > [!div class="sxs-lookup"]
 > > > [!NOTE]
