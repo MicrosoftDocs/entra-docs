@@ -15,7 +15,7 @@ ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn about add sign in and sign out with email one-time passcode.
 ---
 
-# Tutorial: Add sign in and sign out with email one-time passcode in Android 
+# Tutorial: Add sign in and sign out with email one-time passcode in Android app
 
 This tutorial demonstrates how to sign in and sign out a user using email one-time passcode (OTP) in your native authentication Android app. 
 
@@ -37,11 +37,10 @@ To sign in user using **Email one-time-passcode** you need to:
 
 1. Create your user interface that includes: 
 
-   - A UI to submit an Email. 
-   - A UI to submit one-time passcode: 
-   - A page to display the account details: 
+   - A UI to submit an Email.
+   - A UI to submit one-time passcode.
 
-1. To sign in the user, we're going to use the library's `signIn(username)` method, which is going to return a result that can be interpreted as an `actionResult`. Add a button to the application that calls the following code snippet when selected: 
+1. To sign in the user, we're going to use the library's `signIn(username)` method, the function will return a result that you can assign to the `actionResult` field. The `actionResult` represents the result of the previously performed action and can take multiple states (forms). Add a button to the application that calls the following code snippet when selected: 
 
    ```kotlin
    CoroutineScope(Dispatchers.Main).launch {
@@ -129,7 +128,7 @@ You've completed all the necessary steps to successfully sign in a user on your 
 
 ## Sign out a user 
 
-To sign out a user using the **Email one-time passcode** flow, you need to have a `Sign out` button, which a user can select to remove the currently stored account from the cache. The user will only be signed out of the local app, not from any other app they're logged in to. 
+To sign out a user using the **Email one-time passcode** flow, you need to have a `Sign out` button, which a user can select to remove the currently stored account from the cache. The user will sign out only from the local app.
 
 To sign out user using **Email one-time-passcode** you need to: 
 
@@ -140,31 +139,14 @@ To sign out user using **Email one-time-passcode** you need to:
 1. To sign out a user, use the following code: 
 
    ```kotlin
-   private fun getAccountState() {
-       CoroutineScope(Dispatchers.Main).launch {
-            val accountResult = authClient.getCurrentAccount()
-            when (accountResult) {
-                is GetAccountResult.AccountFound -> {
-                    displaySignedInState(accountResult.resultValue)
-                }
-                is GetAccountResult.NoAccountFound -> {
-                    displaySignedOutState(accountResult)
-                }
-            }
-        }
-   }
-
-   private fun displaySignedInState(accountState: AccountState) {
-       signOutButton.setOnClickListener {
-           performSignOut(accountState)
-       }
-   }
-
    private fun performSignOut(accountState: AccountState) {
         CoroutineScope(Dispatchers.Main).launch {
-            val signOutResult = accountState.signOut()
-            if (signOutResult is SignOutResult.Complete) {
-                // Show sign out successful UI
+           val accountResult = authClient.getCurrentAccount()
+            if (accountResult is GetAccountResult.AccountFound) {
+                val signOutResult = accountResult.resultValue.signOut()
+                if (signOutResult is SignOutResult.Complete) {
+                    // Show sign out successful UI
+                }
             }
         }
     }

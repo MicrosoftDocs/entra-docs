@@ -89,7 +89,7 @@ During sign-up, not all actions succeed. For instance, the user might attempt to
    }
    ```
 
-   `signUp(username)` can return SignUpError. `SignUpError` indicates an unsuccessful action result returned by `signUp()` and won't include a reference to the new state, while the utility method `isUserAlreadyExists()` checks for the specific error type of `SignUpError`: the username provided has been used.. You should notify the user that the email is already in use. 
+   `signUp(username)` can return SignUpError. `SignUpError` indicates an unsuccessful action result returned by `signUp()` and won't include a reference to the new state, while the utility method `isUserAlreadyExists()` checks for the specific error type of `SignUpError`: the username provided has been used. You should notify the user that the email is already in use. 
 
 1. To handle errors in `submitCode()`, use the following code snippet:
 
@@ -112,7 +112,7 @@ During sign-up, not all actions succeed. For instance, the user might attempt to
    }
    ```
 
-   `submitCode()` can return `SignUpError`. `SignUpError` indicates an unsuccessful action result returned by `signUp()` and won't include a reference to the new state, while the utility method `isInvalidCode()` checks for the specific error type of `SignUpError`: the submitted code is invalid. In this case, the previous state reference must be used to reperform the action. To retrieve a new one-time passcode, use the following code snippet: 
+   `submitCode()` can return `SignUpError`. The utility method `isInvalidCode()` checks for the specific error type of `SignUpError`: the submitted code is invalid. In this case, the previous state reference must be used to reperform the action. To retrieve a new one-time passcode, use the following code snippet: 
 
     ```kotlin
     val submitCodeActionResult = nextState.submitCode(
@@ -134,4 +134,4 @@ You've completed all the necessary steps to successfully sign up a user on your 
 
 ## Next steps 
 
-[Tutorial: Add sign in and sign out with email one-time passcode in Android](tutorial-native-authentication-android-sign-in-sign-out.md). 
+[Tutorial: Add sign in and sign out with email one-time passcode in Android app](tutorial-native-authentication-android-sign-in-sign-out.md). 

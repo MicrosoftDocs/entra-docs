@@ -34,10 +34,10 @@ In this tutorial, you learn how to:
  
 To add self-service password reset flow to your Android application, you need a password reset user interface, which has:  
  
-- One text field for email  
-- One text field for one-time passcode (OTP)  
-- One text field for new password  
-- Submit button  
+- One text field for email.
+- One text field for one-time passcode (OTP).
+- One text field for new password.
+- Submit button.
 
 The following wire frame shows a high-level view of the self-service password reset flow: 
 
