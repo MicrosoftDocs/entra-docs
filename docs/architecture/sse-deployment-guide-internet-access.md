@@ -54,15 +54,14 @@ Microsoft Internet Access has features to configure a security profile with a pr
 1. Select **Next**.
 1. On **Create a web content filtering policy** \> **Policy Rules**, select **Add Rule**.
 
-   [ ![Screenshot of Global Secure Access, Create a web content filtering policy, Policy Rules for baseline policy.](media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-rules-baseline.png)](media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-rules-baseline-expanded.png#lightbox)
+   [ ![Screenshot of Global Secure Access, Create a web content filtering policy, Policy Rules for baseline policy.](media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-rules-baseline.png)
    
 1. In the **Add Rule** dialog box, provide the following details.
   * **Name**: Baseline blocked web categories.
   * **Destination type:** webCategory.
   * **Search**: Select a few risky categories, confirm they are in the Selected items list.
 
-   [ ![Screenshot of Global Secure Access, Create a web content filtering policy, Add Rule for baseline policy.](media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-add-rule-baseline.png)](media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-add-rule-baseline-expanded.png#lightbox)
-      
+   [ ![Screenshot of Global Secure Access, Create a web content filtering policy, Add Rule for baseline policy.](media/sse-deployment-guide-internet-access/create-web-content-filtering-policy-add-rule-baseline.png)
 1. Select **Add**.
 1. On **Create a web content filtering policy** \> **Policy Rules**, confirm your selections.
 
