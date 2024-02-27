@@ -11,7 +11,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 04/04/2023
+ms.date: 02/27/2023
 ms.author: thwimmer
 ---
 
@@ -50,13 +50,24 @@ The scenario outlined in this tutorial assumes that you already have the followi
  > [!TIP]
  > To enable SAML-based single sign-on for Asana, follow the instructions provided. Single sign-on can be configured independently of automatic provisioning, although these two features complement each other.
 
-### Generate Secret Token in Asana
+### Generate Service Account token in Asana
 
-* Sign in to [Asana](https://app.asana.com/-/login) by using your admin account.
-* Select the profile photo from the top bar, and select your current organization-name settings.
-* Go to the **Service Accounts** tab.
-* Select **Add Service Account**.
-* Update **Name** and **About** and the profile photo as needed. Copy the token in **Token**, and select it in Save Changes.
+1. Sign in to [Asana](https://app.asana.com/-/login) by using your admin account.
+1. Select the profile photo from the top bar, and select **Admin Console**.
+1. Select the Apps tab from with your admin console
+1. Select Service accounts.
+1. Select **Add Service Account** and perform the following steps.
+
+      ![Screenshot of Service Account Token.](media/asana-provisioning-tutorial/service.png)
+
+      1. Update **Name** and **Description** as needed. 
+      1. Under the **Permission scopes** section, select **Scoped permissions** and **User provisioning (SCIM)**. Ensure the following permission scopes are selected:
+            * Users: Read
+            * Users: Create and modify
+            * Teams: Read
+            * Teams: Create and modify
+      1. Select **Save Changes**.
+1. Copy the token
 
 <a name='step-3-add-asana-from-the-azure-ad-application-gallery'></a>
 
