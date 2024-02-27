@@ -1,6 +1,6 @@
 ---
-title: Troubleshoot write back issues with HR provisioning
-description: Learn how to troubleshoot write back issues with HR provisioning
+title: Troubleshoot writeback issues with HR provisioning
+description: Learn how to troubleshoot writeback issues with HR provisioning.
 author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-id
@@ -12,7 +12,7 @@ ms.author: jfields
 ms.reviewer: chmutali
 ---
 
-# Troubleshoot HR write back issues
+# Troubleshoot HR writeback issues
 
 ## Null and empty values not processed as expected
 **Applies to:**
@@ -20,7 +20,7 @@ ms.reviewer: chmutali
 * SAP SuccessFactors Writeback
 
 | Troubleshooting | Details |
-|-- | -- |
+| -- | -- |
 | **Issue** | You successfully configured the Writeback app. You're getting null or empty value from Microsoft Entra ID. You expect the provisioning service to clear the corresponding email or phone number value in the HR app. But the operation fails. |
 | **Cause** | The provisioning service doesn't have a default logic for null value processing. When the provisioning service gets an empty string from the source app, it tries to flow the value "as-is" to the target app. If Workday or SuccessFactors can't process empty values, then an error is returned. |
 | **Resolution** | Update the attribute mapping to use expression mappings as recommended. |
