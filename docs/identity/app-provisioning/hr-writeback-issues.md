@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.workload: identity
-ms.date: 01/31/2024
+ms.date: 002/27/2024
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -28,7 +28,7 @@ ms.reviewer: chmutali
 **Recommended resolutions**
 
   Let's say the attribute `telephoneNumber` mapped to SAP SuccessFactors attribute `businessPhoneNumber` may be null or empty in Microsoft Entra ID. 
-  * Option 1: Define an expression to check for empty or null values using functions like [IIF](functions-for-customizing-application-data.md#iif), [IsNullOrEmpty](functions-for-customizing-application-data.md#isnullorempty), [Coalesce](functions-for-customizing-application-data.md#coalesce) or [IsPresent](functions-for-customizing-application-data.md#ispresent) and pass a non-blank literal value (example: 000-000-0000 in this case). 
+  * Option 1: Define an expression to check for empty or null values using functions like [IIF,](functions-for-customizing-application-data.md#iif) [IsNullOrEmpty,](functions-for-customizing-application-data.md#isnullorempty) [Coalesce,](functions-for-customizing-application-data.md#coalesce) or [IsPresent](functions-for-customizing-application-data.md#ispresent) and pass a nonblank literal value (example: 000-000-0000 in this case). 
   
      `IIF(IsNullOrEmpty([telephoneNumber]),"000-000-0000",[telephoneNumber])`
 
