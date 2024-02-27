@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: has-adal-ref 
 ms.date: 02/27/2023
 ms.reviewer: saeeda
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn about acquiring and caching tokens so my app can support authentication and authorization.
 ---

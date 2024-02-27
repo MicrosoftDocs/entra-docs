@@ -2,18 +2,16 @@
 title: Troubleshoot Conditional Access authentication strength 
 description: Learn how to resolve errors when using Microsoft Entra Conditional Access authentication strength.
 
-services: multi-factor-authentication
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 01/12/2024
 
 ms.author: justinha
 author: inbarckms
 manager: amycolannino
 ms.reviewer: inbarc
-
-ms.collection: M365-identity-device-management
 ---
 # Troubleshoot Conditional Access authentication strength
 

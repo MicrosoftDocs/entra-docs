@@ -5,9 +5,9 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.date: 01/06/2023
-ms.reviewer: johngarland, mamarxen, ianbe
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: 
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer, I want to learn how to implement role-based access control in my applications so I can make sure that only those users with the right access privileges can access the functionality of them.
 ---

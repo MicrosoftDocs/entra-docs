@@ -3,11 +3,10 @@ title: 'Microsoft Entra ID licensing'
 description: This article documents licensing requirements for Microsoft Entra ID features.
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 01/17/2024
-ms.subservice: hybrid
+ms.subservice: fundamentals
 ms.author: barclayn
 ---
 
@@ -82,4 +81,3 @@ This article discusses Microsoft Entra services' licensing. It is intended for I
 
 - [Microsoft Entra pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing)
 - [Azure AD B2C pricing](https://azure.microsoft.com/pricing/details/active-directory-b2c/)
-

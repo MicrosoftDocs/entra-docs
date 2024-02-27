@@ -5,8 +5,8 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.date: 01/31/2024
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As a React developer, I want to know how to create a new React project in an IDE and add authentication.
 ---

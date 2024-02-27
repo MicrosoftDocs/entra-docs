@@ -7,8 +7,8 @@ ms.author: owenrichards
 ms.custom: devx-track-js
 ms.date: 01/16/2020
 ms.reviewer: saeeda
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer, I want to learn about passing custom state in authentication requests so I can create more robust applications.
 ---
@@ -36,4 +36,6 @@ myMSALObj.loginRedirect(loginRequest);
 
 The passed in state is appended to the unique GUID set by MSAL.js when sending the request. When the response is returned, MSAL.js checks for a state match and then returns the custom passed in state in the [Response](https://azuread.github.io/microsoft-authentication-library-for-js/ref/modules/_azure_msal_common.html#authenticationresult) object as `state`.
 
-To learn more, read about [building a single-page application (SPA)](scenario-spa-overview.md) using MSAL.js.
+## Next steps
+
+Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).

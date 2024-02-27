@@ -1,7 +1,7 @@
 ---
 title: Simulate remote network connectivity with Azure virtual networks
 description: Configure Azure resources to simulate remote network connectivity to Microsoft's Security Edge Solutions with Global Secure Access.
-ms.service: network-access
+ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 01/31/2024
 ms.author: joflore

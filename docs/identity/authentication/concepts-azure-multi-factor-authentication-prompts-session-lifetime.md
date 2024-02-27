@@ -2,8 +2,8 @@
 title: Microsoft Entra multifactor authentication prompts and session lifetime
 description: Learn about the recommended configuration for reauthentication prompts with Microsoft Entra multifactor authentication and how session lifetime is applied.
 
-services: multi-factor-authentication
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
@@ -13,7 +13,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: inbarc
-ms.collection: M365-identity-device-management
 ---
 # Optimize reauthentication prompts and understand session lifetime for Microsoft Entra multifactor authentication
 

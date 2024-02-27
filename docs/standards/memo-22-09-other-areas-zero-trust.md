@@ -1,10 +1,8 @@
 ---
 title: Memo 22-09 other areas of Zero Trust
 description: Understand other Zero Trust requirements in Office of Management and Budget memorandum 22-09.
-services: active-directory 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: standards
-ms.workload: identity
 ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
@@ -12,7 +10,6 @@ manager: martinco
 ms.reviewer: martinco
 ms.date: 05/23/2023
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Other areas of Zero Trust addressed in memorandum 22-09 

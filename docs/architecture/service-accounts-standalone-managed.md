@@ -1,18 +1,14 @@
 ---
 title: Secure standalone managed service accounts
 description: Learn when to use, how to assess, and to secure standalone managed service accounts (sMSAs)
-services: active-directory
 author: jricketts
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/08/2023
 ms.author: jricketts
 ms.reviewer: ajburnle
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Secure standalone managed service accounts

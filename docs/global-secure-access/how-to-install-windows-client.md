@@ -1,7 +1,7 @@
 ---
 title: The Global Secure Access Client for Windows (preview)
 description: Install the Global Secure Access Client for Windows to enable connectivity to Microsoft's Security Edge Solutions, Microsoft Entra Internet Access and Microsoft Entra Private Access.
-ms.service: network-access
+ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 10/27/2023
 ms.author: kenwith

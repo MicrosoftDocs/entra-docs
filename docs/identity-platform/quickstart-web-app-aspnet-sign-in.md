@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: devx-track-csharp,  scenarios:getting-started, languages:ASP.NET
 ms.date: 07/28/2023
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: quickstart
 #Customer intent: As an application developer, I want to see a sample ASP.NET web app that can sign in Microsoft Entra users.
 ---

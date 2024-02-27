@@ -4,9 +4,9 @@ description: Learn how to plan your CIAM deployment.
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: conceptual
 ms.date: 11/27/2023
 ms.author: mimart

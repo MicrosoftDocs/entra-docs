@@ -5,11 +5,11 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 01/09/2024
+ms.date: 02/02/2024
 ms.author: jeedes
 ---
 
@@ -86,21 +86,25 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, enter the values for the following fields:
 
-    a. In the **Sign on URL** text box, type a URL using the following pattern:
-    `https://<DOMAIN NAME>.slack.com/sso/saml/start`
-
-    b. In the **Identifier (Entity ID)** text box, type the URL:
+    a. In the **Identifier (Entity ID)** text box, type the URL:
     `https://slack.com`
 	
-    c. For **Reply URL**, enter one of the following URL patterns:
+    b. In the **Reply URL** text box, type a URL using one of the following patterns:
     
 	| Reply URL|
 	|----------|
 	| `https://<DOMAIN NAME>.slack.com/sso/saml` |
 	| `https://<DOMAIN NAME>.enterprise.slack.com/sso/saml` |
 
+    c. In the **Sign on URL** text box, type a URL using one of the following patterns:
+    
+	| Sign on URL|
+	|----------|
+	| `https://<DOMAIN>.slack.com` |
+	| `https://<DOMAIN>.enterprise.slack.com` |
+
 	> [!NOTE]
-	> These values aren't real. You need to update these values with the actual Sign-on URL and Reply URL. Contact [Slack Client support team](https://slack.com/help/contact) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. You need to update these values with the actual Sign-on URL and Reply URL. Contact [Slack support team](https://slack.com/help/contact) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 	> [!NOTE]
 	> The value for **Identifier (Entity ID)** can be a variable if you have more than one Slack instance that you need to integrate with the tenant. Use the pattern `https://<DOMAIN NAME>.slack.com`. In this scenario, you also must pair with another setting in Slack by using the same value.

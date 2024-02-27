@@ -2,8 +2,8 @@
 author: cilwerner
 ms.author: cwerner
 ms.date: 12/16/2020
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+manager: CelesteDG
 ms.topic: include
 # Purpose:
 # Ingested by Microsoft identity platform articles in /articles/active-directory/develop/* that document error logging for the different platforms.

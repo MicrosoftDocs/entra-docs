@@ -2,9 +2,8 @@
 title: Application requirements for the backup authentication system
 description: How to configure your application to allow for backup authentication system support.
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 06/02/2023
 
@@ -13,7 +12,6 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: joroja
 
-ms.collection: M365-identity-device-management
 ---
 # Application requirements for the backup authentication system
 

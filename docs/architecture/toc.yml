@@ -29,9 +29,9 @@ items:
         href: automate-provisioning-to-applications-introduction.md
       - name: Solutions to automate identity provisioning to applications
         href: automate-provisioning-to-applications-solutions.md
-    - name: Multi-tenant user management
+    - name: Multitenant user management
       items:
-      - name: Multi-tenant user management introduction
+      - name: Multitenant user management introduction
         href: multi-tenant-user-management-introduction.md
       - name: Common scenarios
         href: multi-tenant-user-management-scenarios.md
@@ -169,10 +169,14 @@ items:
       items:
       - name: Introduction
         href: sse-deployment-guide-intro.md
-      - name: Deploying Microsoft Entra Internet Access for M365
+      - name: Deploying Microsoft Entra Internet Access for Microsoft 365
         href: sse-deployment-guide-m365.md 
       - name: Deploying Microsoft Entra Private Access
         href: sse-deployment-guide-private-access.md 
+  - name: Migration best practices
+    items:
+    - name: Migration best practices
+      href: migration-best-practices.md
   - name: Microsoft Entra Operations reference
     items:
     - name: Introduction

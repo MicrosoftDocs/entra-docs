@@ -3,9 +3,9 @@ title: Service Level Agreement performance for Microsoft Entra ID
 description: Learn about the service level agreement performance and attainment for authentication services in Microsoft Entra ID
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 01/16/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
@@ -36,9 +36,9 @@ To help you plan for moving workloads to Microsoft Entra ID, we publish past SLA
 
 The numbers in the table are a global total of Microsoft Entra authentications across all customers and geographies. The number is truncated at three places after the decimal. Numbers aren't rounded up, so actual SLA attainment is higher than indicated.
 
-| Month     | 2021    | 2022    | 2023    |
-| ---       | ---     | ---     | ---     |
-| January   |         | 99.998% | 99.998% |
+| Month     | 2021    | 2022    | 2023    | 2024    |
+| ---       | ---     | ---     | ---     | ---     |
+| January   |         | 99.998% | 99.998% | 99.999% |
 | February  | 99.999% | 99.999% | 99.999% |
 | March     | 99.568% | 99.998% | 99.999% |
 | April     | 99.999% | 99.999% | 99.999% |

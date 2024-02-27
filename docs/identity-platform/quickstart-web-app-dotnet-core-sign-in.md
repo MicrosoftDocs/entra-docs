@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: "devx-track-csharp,  scenarios:getting-started, languages:aspnet-core"
 ms.date: 01/18/2024
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: quickstart
 #Customer intent: As an application developer, I want to know how to write an ASP.NET Core web app that can sign in personal Microsoft accounts and work/school accounts from any Microsoft Entra instance,  then access their data in Microsoft Graph on their behalf.
 ---
