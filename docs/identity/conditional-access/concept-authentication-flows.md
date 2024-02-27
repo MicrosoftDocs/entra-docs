@@ -4,7 +4,7 @@ description:
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 02/22/2024
+ms.date: 02/27/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
@@ -14,6 +14,8 @@ ms.reviewer: anjusingh, ludwignick
 # Conditional Access: Authentication flows
 
 Microsoft Entra ID supports a wide variety of authentication and authorization flows to provide a seamless experience across all application and device types. Some of these authentication flows, are higher risk than others. To provide more control over your security posture, we’re adding the ability to control certain authentication flows to Conditional Access. This control starts with the ability to explicitly target [device code flow](../../identity-platform/v2-oauth2-device-code.md).
+
+## Device code flow
 
 Device code flow is used when signing into devices that might lack local input devices like shared devices or digital signage. Device code flow is a high-risk authentication flow that might be used as part of a phishing attack or to access corporate resources on unmanaged devices. You can configure the device code flow control along with other controls in your Conditional Access policies. For example, if device code flow is used for android based conference room devices, you might choose to block device code flow everywhere except for android devices in a specific network location. 
 
@@ -44,9 +46,9 @@ To aid in troubleshooting protocol tracking related errors, we’ve added a new 
 
 ## Troubleshooting unexpected blocks 
 
-If you have a sign-in unexpectedly blocked by a Conditional Access policy, you should confirm whether the policy was an authentication flows policy. You can do this by going to **sign-in logs**, clicking on the blocked sign-in, and then navigating to the **Conditional Access** tab in the **Activity details: sign-ins** pane. If the policy enforced was an authentication flows policy, select the policy to determine which authentication flow was matched. For example, if device code flow was matched, this is what you should expect to see:  
+If you have a sign-in unexpectedly blocked by a Conditional Access policy, you should confirm whether the policy was an authentication flows policy. You can do this confirmation by going to **sign-in logs**, clicking on the blocked sign-in, and then navigating to the **Conditional Access** tab in the **Activity details: sign-ins** pane. If the policy enforced was an authentication flows policy, select the policy to determine which authentication flow was matched.
 
-If device code flow was matched but device code flow wasn't the flow performed for that sign-in that means the refresh token was protocol tracked. You can verify this case by clicking on the blocked sign-in and searching for the **Original transfer method** property in the **Basic info** portion of the **Activity details: sign-ins** pane.
+If device code flow was matched but device code flow wasn't the flow performed for that sign-in, that means the refresh token was protocol tracked. You can verify this case by clicking on the blocked sign-in and searching for the **Original transfer method** property in the **Basic info** portion of the **Activity details: sign-ins** pane.
 
 > [!NOTE]
 > Blocks due to protocol tracked sessions are expected behavior for this policy. There is no recommended remediation.  

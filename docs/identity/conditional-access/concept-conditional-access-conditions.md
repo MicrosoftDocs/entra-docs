@@ -5,7 +5,7 @@ description: What are conditions in a Microsoft Entra Conditional Access policy?
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 07/17/2023
+ms.date: 02/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -88,7 +88,7 @@ The **Configure** toggle when set to **Yes** applies to checked items, when set 
          - SMTP - Used by POP and IMAP client's to send email messages.
          - Autodiscover - Used by Outlook and EAS clients to find and connect to mailboxes in Exchange Online.
          - Exchange Online PowerShell - Used to connect to Exchange Online with remote PowerShell. If you block Basic authentication for Exchange Online PowerShell, you need to use the Exchange Online PowerShell Module to connect. For instructions, see [Connect to Exchange Online PowerShell using multifactor authentication](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell).
-         - Exchange Web Services (EWS) - A programming interface that's used by Outlook, Outlook for Mac, and third-party apps.
+         - Exchange Web Services (EWS) - A programming interface used by Outlook, Outlook for Mac, and third-party apps.
          - IMAP4 - Used by IMAP email clients.
          - MAPI over HTTP (MAPI/HTTP) - Used by Outlook 2010 and later.
          - Offline Address Book (OAB) - A copy of address list collections that are downloaded and used by Outlook.
@@ -105,7 +105,7 @@ These conditions are commonly used to:
 
 ### Supported browsers
 
-This setting works with all browsers. However, to satisfy a device policy, like a compliant device requirement, the following operating systems and browsers are supported. Operating Systems and browsers that have fallen out of mainstream support aren’t shown on this list:
+This setting works with all browsers. However, to satisfy a device policy, like a compliant device requirement, the following operating systems and browsers are supported. Operating Systems and browsers out of mainstream support aren’t shown on this list:
 
 | Operating Systems | Browsers |
 | :-- | :-- |
@@ -139,24 +139,24 @@ For Chrome support in **Windows 10 Creators Update (version 1703)** or later, in
 
 To automatically enable the CloudAPAuthEnabled policy in Chrome, create the following registry key:
 
- - Path HKLM:\Software\Policies\Google\Chrome
- - Name CloudAPAuthEnabled 
- - Value 0x00000001
- - PropertyType DWORD
+ - Path: `HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome`
+ - Name: `CloudAPAuthEnabled` 
+ - Value: `0x00000001`
+ - PropertyType: `DWORD`
 
 To automatically deploy the Windows Account extension to Chrome browsers, create the following registry key:
 
-- Path HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist
-- Name 1
-- Type REG_SZ (String)
-- Data ppnbnpeolgkicgegkbkbjmhlideopiji;https\://clients2.google.com/service/update2/crx
+- Path: `HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist`
+- Name: `1`
+- Type: `REG_SZ (String)`
+- Data: `ppnbnpeolgkicgegkbkbjmhlideopiji;https\://clients2.google.com/service/update2/crx`
 
 For Chrome support in **Windows 8.1 and 7**, create the following registry key:
 
-- Path HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls
-- Name 1
-- Type REG_SZ (String)
-- Data {"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}}
+- Path: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls`
+- Name: `1`
+- Type: `REG_SZ (String)`
+- Data: `{"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}}`
 
 ### Supported mobile applications and desktop clients
 
@@ -214,8 +214,7 @@ When administrators configure filter for devices as a condition, they can choose
 
 ## Authentication flows
 
-<!--- PLACEHOLDER TEXT --->
-[Conditional Access: Authentication flows](concept-authentication-flows.md)
+Authentication flows control how your organization uses certain authentication and authorization protocols and grants. These flows might provide a seamless experience to devices that might lack local input devices like shared devices or digital signage. Use this control to configure transfer methods like [device code flow or authentication transfer](concept-authentication-flows.md).
 
 ## Next steps
 
