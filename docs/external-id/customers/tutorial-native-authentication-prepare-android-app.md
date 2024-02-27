@@ -131,7 +131,7 @@ For more information on MSAL logging, see [Logging in MSAL for Android](/entra/i
  
 In the `onCreate` method, create MSAL library instance so that we can perform authentication logic and interact with our tenant through native authentication APIs. The `INativeAuthPublicClientApplication` create an instance called `authClient`. The JSON configuration file that we created earlier in the tutorial is passed as a parameter.  
  
-The cached account can be retrieved through `getCurrentAccount()`, which will return an `AccountResult` object if an account for this application was found in persistence or null if not. Your code should look like:  
+The cached account can be retrieved through `getCurrentAccount()`, which will return an `AccountResult` object if an account for this application was found in persistence or `GetAccountResult.NoAccountFound` if not. Your code should look like:  
  
 ```kotlin 
     class MainActivity : AppCompatActivity() { 

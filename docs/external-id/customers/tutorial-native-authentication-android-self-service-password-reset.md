@@ -44,7 +44,7 @@ The following wire frame shows a high-level view of the self-service password re
 :::image type="content" source="media/native-authentication/android/SSPR-flow-image.png" alt-text="Screenshot that illustrates Self-service password reset flow."::: 
 
  
-To initialize the native authentication, import the Microsoft Authentication Library (MSAL) configuration in the `onCreateView` lifecycle as demonstrated in the following code:  
+To initialize the native authentication, import the Microsoft Authentication Library (MSAL) configuration in the `onCreateView()` lifecycle as demonstrated in the following code:  
  
 ```kotlin 
 authClient = PublicClientApplication.createNativeAuthPublicClientApplication( 

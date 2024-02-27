@@ -79,7 +79,7 @@ items:
                 items:
                   - name: Android (.NET MAUI) - sign in users
                     href: how-to-mobile-app-maui-sample-sign-in.md
-              - name: Native auth
+              - name: Native authentication
                 items:
                   - name: Android (Kotlin) - sign in users
                     href: how-to-run-sample-android-app.md
@@ -206,7 +206,7 @@ items:
                   href: tutorial-mobile-app-maui-sign-in-sign-out.md
                 - name: Use role-based access control
                   href: tutorial-mobile-maui-role-based-access-control.md
-        - name: Native auth
+        - name: Native authentication
           items:
             - name: Android app
               items:
