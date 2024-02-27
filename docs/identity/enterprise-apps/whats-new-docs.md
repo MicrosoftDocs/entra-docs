@@ -4,7 +4,7 @@ description: "New and updated documentation for the Microsoft Entra application 
 ms.date: 02/01/2024
 ms.service: entra-id
 ms.subservice: enterprise-apps
-ms.topic: reference
+ms.topic: whats-new
 
 ms.author: jomondi
 author: omondiatieno

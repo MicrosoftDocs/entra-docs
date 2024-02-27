@@ -8,7 +8,7 @@ ms.custom: has-adal-ref
 ms.date: 02/01/2024
 ms.service: identity-platform
 
-ms.topic: reference
+ms.topic: whats-new
 #Customer intent: As a developer or IT admin, I want to stay updated on the latest changes and additions to the Microsoft identity platform documentation, so that I can ensure that my applications and systems are using the most current and relevant information.
 ---
 
