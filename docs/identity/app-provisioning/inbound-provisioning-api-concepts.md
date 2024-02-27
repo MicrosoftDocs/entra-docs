@@ -7,12 +7,12 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 02/22/2024
+ms.date: 02/28/2024
 ms.author: jfields
 ms.reviewer: chmutali
 ---
 
-# API-driven inbound provisioning concepts (Public preview)
+# API-driven inbound provisioning concepts
 
 This document provides a conceptual overview of the Microsoft Entra API-driven inbound user provisioning.
 
