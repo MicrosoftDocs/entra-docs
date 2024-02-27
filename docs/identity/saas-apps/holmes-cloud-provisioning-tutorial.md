@@ -1,6 +1,6 @@
 ---
 title: 'Tutorial: Configure ContractS CLM for automatic user provisioning with Microsoft Entra ID'
-description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to ContractS CLM.
+description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to ContractS CLM.
 
 author: twimmers
 writer: twimmers
@@ -16,7 +16,7 @@ ms.author: thwimmer
 
 # Tutorial: Configure ContractS CLM for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both ContractS CLM and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [ContractS CLM](https://www.holmescloud.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This tutorial describes the steps you need to perform in both ContractS CLM and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [ContractS CLM](https://www.holmescloud.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities Supported
@@ -35,7 +35,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 * A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
 * A [ContractS CLM](https://www.holmescloud.com/) tenant.
 * A user account in ContractS CLM with Admin permissions.
-* A ContractS CLM subscription where single sign-on and user provisioning service are enabled.
+* A ContractS CLM subscription where single sign-on and user provisioning services are enabled.
 
 
 ## Step 1: Plan your provisioning deployment
@@ -51,7 +51,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 > * You will receive your ContractS CLM tenant URL from **ContractS CLM Support** <cs@holmescloud.com> team after purchasing the subscription.
 > * You can find the required information(endpoint URL, token, etc.) to set up the provisioning service in the **Company Settings** page as long as you subscribe single sign-on and user provisioning service.
  
-1. Login to ContractS CLM account with your ContractS CLM credentials.
+1. Log in to ContractS CLM account with your ContractS CLM credentials.
 1. Select "会社設定 (Company Settings)" menu and then select the hat shaped icon.
 1. See the information including API token on the card menu titled "アカウントプロビジョニング (Account Provisioning)".
 1. For token regeneration, select the link "APIキーを発行する (Issue API key)".
@@ -97,7 +97,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot shows the Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, input your ContractS CLM **Tenant URL** and **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to ContractS CLM. If the connection fails , ensure your ContractS CLM account has Admin permissions and try again.
+1. In the **Admin Credentials** section, input your ContractS CLM **Tenant URL** and **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to ContractS CLM. If the connection fails, ensure your ContractS CLM account has Admin permissions and try again.
 
 	![Screenshot shows the Token.](common/provisioning-testconnection-tenanturltoken.png)
 
