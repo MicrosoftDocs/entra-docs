@@ -54,7 +54,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 1. Sign in to [Asana](https://app.asana.com/-/login) by using your admin account.
 1. Select the profile photo from the top bar, and select **Admin Console**.
-1. Select the Apps tab from with your admin console
+1. Select the Apps tab from with your admin console.
 1. Select Service accounts.
 1. Select **Add Service Account** and perform the following steps.
 
@@ -67,7 +67,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
             * Teams: Read
             * Teams: Create and modify
       1. Select **Save Changes**.
-1. Copy the token
+1. Copy the token.
 
 <a name='step-3-add-asana-from-the-azure-ad-application-gallery'></a>
 
