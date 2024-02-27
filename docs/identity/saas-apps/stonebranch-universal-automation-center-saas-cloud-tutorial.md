@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	![Screenshot shows the image of assertions.](common/default-attributes.png "Image")
 
-1. In addition to above, Stonebranch Universal Automation Center (SaaS Cloud) application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
+1. In addition to above, Stonebranch Universal Automation Center (SaaS Cloud) application expects few more attributes to be passed back in SAML response, which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	
 	| Name |  Source Attribute|
 	| -------- | --------- |
@@ -104,7 +104,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	![Screenshot shows the Certificate download link.](common/metadataxml.png "Certificate")
 
-1. On the **Set up Stonebranch Universal Automation Center (SaaS Cloud)** section, copy the appropriate URL(s) based on your requirement.
+1. On the **Set up Stonebranch Universal Automation Center (SaaS Cloud)** section, copy the appropriate URLs based on your requirement.
 
 	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
