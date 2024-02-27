@@ -6,13 +6,9 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-<<<<<<< HEAD
 ms.workload: identity
-ms.date: 002/27/2024
+ms.date: 02/27/2024
 ms.author: jfields
-=======
-
->>>>>>> 51ef9da2bdd454ec189158c9a21130a48e825b39
 ms.reviewer: chmutali
 ---
 
@@ -50,7 +46,7 @@ To check if Cause-1 is the source of the problem:
 1. Open the **Active Directory Users and Computers Management Console**.
 2. Select the OU associated with the user.
 3. Right click and navigate to **Properties -> Security -> Advanced**.
-    If the **Enable Inheritance** button is shown, then it's confirmed that Cause-1 is the source of the problem.  
+    If the **Enable Inheritance** button is shown, it confirms that Cause-1 is the source of the problem.  
 4. Click on **Enable Inheritance** so that domain level permissions are applicable to this OU.
      >[!NOTE]
      >Please remember to verify the whole hierarchy from domain level down to the OU holding the affected accounts. All Parent OUs/Containers must have inheritance enabled so the permissions applied at the domain level may cascade down to the final object.
@@ -103,7 +99,7 @@ Assign **Full Control** permissions to the ```provAgentGMSA``` account. We recom
 
 In this scenario, ask Cx to complete the following steps and retest the move operation.
 1.    Log in to AD domain controller as admin.
-2.    Open PowerShell command-line with run-as admin
+2.    Open PowerShell command-line with ```run``` as admin.
 3.    At the PowerShell prompt, run the following [DSACLS](https://go.microsoft.com/fwlink/?linkid=2240600) command that grants **Generic All/Full Control** to the provisioning agent GMSA account.
 ```dsacls "dc=contoso,dc=com" /I:T /G "CN=provAgentgMSA,CN=Managed Service Accounts,DC=contoso,DC=com:GA"```
 

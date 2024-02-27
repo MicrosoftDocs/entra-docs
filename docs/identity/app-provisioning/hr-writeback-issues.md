@@ -6,12 +6,9 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-<<<<<<< HEAD
 ms.workload: identity
-ms.date: 002/27/2024
+ms.date: 02/27/2024
 ms.author: jfields
-=======
->>>>>>> 51ef9da2bdd454ec189158c9a21130a48e825b39
 ms.reviewer: chmutali
 ---
 

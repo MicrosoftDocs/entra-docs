@@ -4,8 +4,10 @@ description: Learn how to troubleshoot manager update issues with HR provisionin
 author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-id
+ms.date: 02/27/2024
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
+ms.author: jfields
 ms.reviewer: chmutali
 ---
 
