@@ -70,6 +70,7 @@ Using Microsoft Graph explorer, you can run queries to help you with the followi
 - View tenant activities such as who made a change to a group and when.
 - Mark a Microsoft Entra sign-in event as safe or confirmed compromised.
 - Retrieve a list of application sign-ins for the last 30 days.
+
 > [!NOTE]
 > Microsoft Graph allows you to access data from multiple services that impose their own throttling limits. For more information on activity log throttling, see [Microsoft Graph service-specific throttling limits](/graph/throttling-limits#identity-and-access-service-limits).
 
