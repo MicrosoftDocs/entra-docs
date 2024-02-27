@@ -375,13 +375,13 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 1. Select **Add Identity provider**.  
 1. Select **Workforce** as the tenant type.
 <!--This next step is different, why -->
-1. Under App registration select **App registration type** <!-- Why not "Pick an existing app registration in this directory"?-->. Enter the app ID of the custom authentication extension you created earlier. 
+1. For **App registration type**, select **Pick an existing app registration in this directory**. Enter the app ID of the custom authentication extension you created earlier. 
 1. Enter the following issuer URL, `https://login.microsoftonline.com/{tenantId}/v2.0`, where `{tenantId}` is the tenant ID of your workforce tenant. <!--Why was this not entered? Is this a bug-->
 <!-- 
 EasyAuth setup, why then do the env variables not matter?
 -->
-1. Under **Additional checks** <!--What is this??-->, select **Allow requests from specific client applications**
-1. Under Unauthenticated requests, select **HTTP 401 Unauthorized**.
+1. Under **Additional checks**, select **Allow requests from specific client applications**. <!--Why is this different? Environment variable related?-->
+1. For **Unauthenticated requests**, select **HTTP 401 Unauthorized**.
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
 

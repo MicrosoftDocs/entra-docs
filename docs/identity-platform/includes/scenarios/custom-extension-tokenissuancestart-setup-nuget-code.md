@@ -43,7 +43,9 @@ ms.custom: include file
                         // Add new claims to the token's response
                         request.Response.Actions.Add(new ProvideClaimsForToken(
                                                       new TokenClaim("dateOfBirth", "01/01/2000"),
-                                                      new TokenClaim("customRoles", "Writer", "Editor")
+                                                      new TokenClaim("customRoles", "Writer", "Editor"),
+                                                      new TokenClaim("apiVersion", "1.0.0"),
+                                                      new TokenClaim("correlationId", request.Data.AuthenticationContext.CorrelationId.ToString())
                                                  ));
                     }
                     else
