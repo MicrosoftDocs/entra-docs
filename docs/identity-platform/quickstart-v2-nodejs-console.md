@@ -9,7 +9,7 @@ ms.custom: mode-api, devx-track-js
 ms.date: 01/10/2022
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: quickstart
 #Customer intent: As an application developer, I want to learn how my Node.js app can get an access token and call an API that is protected by a Microsoft identity platform endpoint using client credentials flow.
 ---
 
