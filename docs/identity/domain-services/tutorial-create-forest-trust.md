@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 11/05/2023
+ms.date: 02/27/2024
 ms.author: justinha
 
 #Customer intent: As an identity administrator, I want to create a one-way outbound forest from a Microsoft Entra Domain Services forest to an on-premises Active Directory Domain Services forest to provide authentication and resource access between forests.
@@ -28,7 +28,7 @@ You can choose from three possible directions when you create a trust in Domain 
 - **One-way outgoing**: Allows users in the on-premises domain to access resources in the managed domain, but not vice versa. 
 - **One-way incoming**: Allows users in the managed domain to access resources in the on-premises domain. 
 
-![Diagram of forest trust from Domain Services to on-premises AD DS](./media/tutorial-create-forest-trust/forest-trust-relationship.png)
+![Diagram of forest trust between Domain Services and an on-premises domain.](./media/tutorial-create-forest-trust/forest-trust-relationship.png)
 
 In this tutorial, you learn how to:
 
@@ -134,7 +134,7 @@ To create the two-way trust for the managed domain in the Microsoft Entra admin 
 1. Provide at least two DNS servers for the on-premises AD DS domain, such as *10.1.1.4* and *10.1.1.5*.
 1. When ready, **Save** the outbound forest trust.
 
-    ![Create outbound forest trust in the Microsoft Entra admin center](./media/tutorial-create-forest-trust/two-way-trust.png)
+    ![Screenshot of how to create outbound forest trust in the Microsoft Entra admin center.](./media/tutorial-create-forest-trust/two-way-trust.png)
 
 If the forest trust is no longer needed for an environment, complete the following steps to remove it from Domain Services:
 
