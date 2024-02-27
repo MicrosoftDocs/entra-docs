@@ -85,7 +85,7 @@ foreach ($groupName in $groupsToAdd)
 Write-Output "****************************************************************************`n"
 Write-Output "`n****************************************************************************"
 
-$currentAssignments = Get-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $sp.Id -All:$true
+$currentAssignments = Get-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $sp.Id -All:$true
 Write-Output "Total current group-assignments: $($currentAssignments.Count), SP-ObjectId: $($sp.Id)"
 
 $currAssignedObjectIds = New-Object 'System.Collections.Generic.HashSet[string]'
@@ -93,10 +93,10 @@ foreach ($assignment in $currentAssignments)
 {
     Write-Output "Assignment-ObjectId: $($assignment.PrincipalId)"
 
-    if ($newGroupIds.Contains($assignment.PrincipalId) -eq $false)
+    if ($newGroupIds.Contains($assignment.PrincipalId) -eq $true)
     {
         Write-Output "This assignment is not needed anymore. Removing it! Assignment-ObjectId: $($assignment.PrincipalId)"
-        Remove-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $sp.Id -AppRoleAssignmentId $currentassignment.Id
+        Remove-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $sp.Id -AppRoleAssignmentId $assignment.Id
     }
     else
     {
@@ -115,11 +115,11 @@ foreach ($id in $newGroupIds)
         {
             Write-Output "Adding new group-assignment. Role-Id: $($role.Id), Group-Object-Id: $id, ResourceId: $($sp.Id)"
             $appRoleAssignment = @{
-                "principalId"= "$group.Id"
-                "resourceId"= "$sp.Id"
-                "appRoleId"= "$role.Id"
+                "principalId"= $group.Id
+                "resourceId"= $sp.Id
+                "appRoleId"= $role.Id
             }
-            New-MgGroupAppRoleAssignment -GroupId $group.Id -BodyParameter $appRoleAssignment 
+            New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $sp.Id -BodyParameter $appRoleAssignment 
         }
         else
         {
