@@ -16,7 +16,8 @@ The following steps help create Conditional Access policies to restrict how devi
 
 ## Device code flow policies 
 
-[!NOTE] To bolster security posture, Microsoft recommends blocking or restricting device code flow wherever possible.  
+> [!NOTE]
+> To bolster security posture, Microsoft recommends blocking or restricting device code flow wherever possible.  
 
 You should always start by configuring a policy in [report-only mode](howto-conditional-access-insights-reporting.md) to determine the potential effect on your organization. 
 
