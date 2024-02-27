@@ -5,8 +5,9 @@ services: active-directory
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.workload: identity
 ms.topic: how-to
 ms.date: 02/15/2024
@@ -88,7 +89,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://<Customer_Name>.<Domain>.<Extension>/`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Reply URL and Sign on URL. Contact [Alation Data Catalog support team](mailto:support@alation.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values are not real. Update these values with the actual Reply URL and Sign on URL. Contact [Alation Data Catalog support team](mailto:support-all@alation.com ) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. Alation Data Catalog application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -143,7 +144,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure Alation Data Catalog SSO
 
-To configure single sign-on on **Alation Data Catalog** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from Microsoft Entra admin center to [Alation Data Catalog support team](mailto:support@alation.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Alation Data Catalog** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from Microsoft Entra admin center to [Alation Data Catalog support team](mailto:support-all@alation.com ). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Alation Data Catalog test user
 

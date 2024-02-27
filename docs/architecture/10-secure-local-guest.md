@@ -10,7 +10,7 @@ ms.service: entra
 ms.subservice: architecture
 ---
 
-# Convert local guest accounts to Microsoft Entra B2B guest accounts 
+# Convert local guest accounts to Microsoft Entra B2B guest accounts
 
 With Microsoft Entra ID (Microsoft Entra B2B), external users collaborate with their identities. Although organizations can issue local usernames and passwords to external users, this approach isn't recommended. Microsoft Entra B2B has improved security, lower cost, and less complexity, compared to creating local accounts. In addition, if your organization issues local credentials that external users manage, you can use Microsoft Entra B2B instead. Use the guidance in this document to make the transition.
 
@@ -18,15 +18,15 @@ Learn more: [Plan a Microsoft Entra B2B collaboration deployment](secure-externa
 
 ## Before you begin
 
-This article is number 10 in a series of 10 articles. We recommend you review the articles in order. Go to the **Next steps** section to see the entire series. 
+This article is number 10 in a series of 10 articles. We recommend you review the articles in order. Go to the **Next steps** section to see the entire series.
 
 ## Identify external-facing applications
 
-Before migrating local accounts to Microsoft Entra B2B, confirm the applications and workloads external users can access. For example, for applications hosted on-premises, validate the application is integrated with Microsoft Entra ID. On-premises applications are a good reason to create local accounts. 
+Before migrating local accounts to Microsoft Entra B2B, confirm the applications and workloads external users can access. For example, for applications hosted on-premises, validate the application is integrated with Microsoft Entra ID. On-premises applications are a good reason to create local accounts.
 
 Learn more: [Grant B2B users in Microsoft Entra ID access to your on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md)
 
-We recommend that external-facing applications have single-sign on (SSO) and provisioning integrated with Microsoft Entra ID for the best end user experience.
+We recommend that external-facing applications have single sign-on (SSO) and provisioning integrated with Microsoft Entra ID for the best end user experience.
 
 ## Identify local guest accounts
 
@@ -60,7 +60,7 @@ If external user local accounts were synced from on-premises, reduce their on-pr
 
 - Transition external user local accounts to Microsoft Entra B2B and stop creating local accounts
   - Invite external users in Microsoft Entra ID
-- Randomize external user's local-account passwords to prevent authentication to on-premises resources 
+- Randomize external user's local-account passwords to prevent authentication to on-premises resources
   - This action ensures authentication and user lifecycle is connected to the external user home identity
 
 ## Next steps
@@ -73,13 +73,13 @@ Use the following series of articles to learn about securing external access to 
 
 3. [Create a security plan for external access to resources](3-secure-access-plan.md)
 
-4. [Secure external access with groups in Microsoft Entra ID and Microsoft 365](4-secure-access-groups.md) 
+4. [Secure external access with groups in Microsoft Entra ID and Microsoft 365](4-secure-access-groups.md)
 
-5. [Transition to governed collaboration with Microsoft Entra B2B collaboration](5-secure-access-b2b.md) 
+5. [Transition to governed collaboration with Microsoft Entra B2B collaboration](5-secure-access-b2b.md)
 
-6. [Manage external access with Microsoft Entra entitlement management](6-secure-access-entitlement-managment.md) 
+6. [Manage external access with Microsoft Entra entitlement management](6-secure-access-entitlement-managment.md)
 
-7. [Manage external access to resources with Conditional Access policies](7-secure-access-conditional-access.md) 
+7. [Manage external access to resources with Conditional Access policies](7-secure-access-conditional-access.md)
 
 8. [Control external access to resources in Microsoft Entra ID with sensitivity labels](8-secure-access-sensitivity-labels.md)
 

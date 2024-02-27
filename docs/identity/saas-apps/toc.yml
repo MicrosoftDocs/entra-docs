@@ -96,8 +96,6 @@
         href: air-tutorial.md
       - name: Airbase
         href: airbase-tutorial.md
-      - name: Airstack
-        href: airstack-tutorial.md
       - name: Airtable
         href: airtable-tutorial.md  
       - name: AirWatch
@@ -146,8 +144,6 @@
         href: amazon-managed-grafana-tutorial.md  
       - name: AWS Single-Account Access
         href: amazon-web-service-tutorial.md
-      - name: Amazon Web Services (AWS) to connect multiple accounts
-        href: aws-multi-accounts-tutorial.md
       - name: AMMS
         href: amms-tutorial.md
       - name: Amplitude
@@ -1465,6 +1461,8 @@
         href: jdacloud-tutorial.md
       - name: Jedox
         href: jedox-tutorial.md
+      - name: JFrog Artifactory
+        href: jfrog-artifactory-tutorial.md
       - name: JLL TRIRIGA
         href: jll-tririga-tutorial.md
       - name: JIRA SAML SSO by Microsoft
@@ -3071,6 +3069,8 @@
         href: xmatters-ondemand-tutorial.md
       - name: X-point Cloud
         href: x-point-cloud-tutorial.md  
+      - name: XM Discover
+        href: xm-discover-tutorial.md
       - name: Yardi eLearning
         href: yardielearning-tutorial.md
       - name: YardiOne
@@ -3412,7 +3412,7 @@
         href: headspace-provisioning-tutorial.md
       - name: HelloID
         href: helloid-provisioning-tutorial.md
-      - name: Holmes Cloud
+      - name: ContractS CLM
         href: holmes-cloud-provisioning-tutorial.md
       - name: Hootsuite
         href: hootsuite-provisioning-tutorial.md
