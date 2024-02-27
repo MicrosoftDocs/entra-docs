@@ -216,7 +216,7 @@ In this step, you create an HTTP trigger function API using Visual Studio Code. 
 1. accept **Company.Function** as the namespace, with **AccessRights** set to *Function*. 
 1. In the main window, a file called *AuthEventsTrigger.cs* will open. Replace the entire contents of the file with the following code:
 
-[!INCLUDE [nuget-code](./includes/scenarios/custom-extension-tokenissuancestart-setup-nuget-code.md)]
+    [!INCLUDE [nuget-code](./includes/scenarios/custom-extension-tokenissuancestart-setup-nuget-code.md)]
 
 1. Next, open the *local.settings.json* file and add the `AzureWebJobsStorage` value as shown in the following snippet: <!--Added automatically in Visual Studio?-->
 
