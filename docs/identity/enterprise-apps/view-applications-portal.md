@@ -66,7 +66,7 @@ Select options according to what you're looking for:
    - **Application Visibility**
    - **Created on**
    - **Assignment required**
-   - **Is App Proxy**
+   - **Is application proxy**
    - **Owner**
 1. To remove any of the filter options already added, select the **X** icon next to the filter option.
 

@@ -22,7 +22,7 @@ To configure Quick Access, you must have:
 - The **Global Secure Access Administrator** and **Application Administrator** roles in Microsoft Entra ID
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
-To manage App Proxy connector groups, which is required for Quick Access, you must have:
+To manage Microsoft Entra application proxy connector groups, which is required for Quick Access, you must have:
 
 - An **Application Administrator** role in Microsoft Entra ID
 - Microsoft Entra ID P1 or P2 licenses
@@ -52,9 +52,9 @@ To summarize, the overall process is as follows:
 
 1. [Enable the Private access traffic forwarding profile](#enable-microsoft-entra-private-access).
 
-## Create an App Proxy connector group
+## Create an application proxy connector group
 
-To configure Quick Access, you must have a connector group with at least one active App Proxy connector.
+To configure Quick Access, you must have a connector group with at least one active application proxy connector.
 
 If you don't already have a connector group set up, see [Configure connectors for Quick Access](how-to-configure-connectors.md).
 

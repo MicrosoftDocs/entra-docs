@@ -63,7 +63,7 @@ Previously, your control plane for protecting internal resources from attackers 
 * Authenticating users to web servers in the perimeter network
 * Maintaining VPN access for remote users with the distribution and configuration of VPN client software. Also, maintaining domain-joined servers in the DMZ, which can be vulnerable to outside attacks.
 
-In today's cloud-first world, Microsoft Entra ID is best suited to control who and what gets into your network. Microsoft Entra application proxy integrates with modern authentication and cloud-based technologies, like SaaS applications and identity providers. This integration enables users to access apps from anywhere. Not only is App Proxy more suited for today's digital workplace, it's more secure than VPN and reverse proxy solutions and easier to implement. Remote users can access your on-premises applications the same way they access Microsoft and other SaaS apps integrated with Microsoft Entra ID. You don't need to change or update your applications to work with application proxy. Furthermore, App Proxy doesn't require you to open inbound connections through your firewall. With App Proxy, you simply set it and forget it.
+In today's cloud-first world, Microsoft Entra ID is best suited to control who and what gets into your network. Microsoft Entra application proxy integrates with modern authentication and cloud-based technologies, like SaaS applications and identity providers. This integration enables users to access apps from anywhere. Not only is application proxy more suited for today's digital workplace, it's more secure than VPN and reverse proxy solutions and easier to implement. Remote users can access your on-premises applications the same way they access Microsoft and other SaaS apps integrated with Microsoft Entra ID. You don't need to change or update your applications to work with application proxy. Furthermore, application proxy doesn't require you to open inbound connections through your firewall. With application proxy, you simply set it and forget it.
 
 ## The future of remote access
 
@@ -115,7 +115,7 @@ Application proxy is a Microsoft Entra service you configure in the Microsoft En
 
 Components of this feature include the application proxy service, which runs in the cloud, the application proxy connector, which is a lightweight agent that runs on an on-premises server, and Microsoft Entra ID, which is the identity provider. All three components work together to provide the user with a single sign-on experience to access on-premises web applications.
 
-After signing in, external users can access on-premises web applications by using a display URL or [My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510) from their desktop or iOS/MAC devices. For example, App Proxy can provide remote access and single sign-on to Remote Desktop, SharePoint sites, Tableau, Qlik, Outlook on the web, and line-of-business (LOB) applications.
+After signing in, external users can access on-premises web applications by using a display URL or [My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510) from their desktop or iOS/MAC devices. For example, application proxy can provide remote access and single sign-on to Remote Desktop, SharePoint sites, Tableau, Qlik, Outlook on the web, and line-of-business (LOB) applications.
 
 ![Microsoft Entra application proxy architecture](media/what-is-application-proxy/azure-ad-application-proxy-architecture.png)
 
@@ -128,11 +128,11 @@ There are several ways to configure an application for single sign-on, and the m
 * Applications hosted behind a Remote Desktop Gateway
 * Rich client apps that are integrated with the [Microsoft Authentication Library (MSAL)](~/identity-platform/v2-overview.md)
 
-App Proxy works with apps that use the following native authentication protocol:
+application proxy works with apps that use the following native authentication protocol:
 
 * [**Integrated Windows authentication (IWA)**](./how-to-configure-sso-with-kcd.md). For IWA, the Application proxy connectors use Kerberos Constrained Delegation (KCD) to authenticate users to the Kerberos application.
 
-App Proxy also supports the following authentication protocols with third-party integration or in specific configuration scenarios:
+Application proxy also supports the following authentication protocols with third-party integration or in specific configuration scenarios:
 
 * [**Header-based authentication**](./application-proxy-configure-single-sign-on-with-headers.md). This sign-on method uses a third-party authentication service called PingAccess and is used when the application uses headers for authentication. In this scenario, authentication is handled by PingAccess.
 * [**Forms- or password-based authentication**](./application-proxy-configure-single-sign-on-password-vaulting.md). With this authentication method, users sign on to the application with a username and password the first time they access it. After the first sign-on, Microsoft Entra ID supplies the username and password to the application. In this scenario, authentication is handled by Microsoft Entra ID.
@@ -144,7 +144,7 @@ For more information on supported methods, see [Choosing a single sign-on method
 
 The remote access solution offered by application proxy and Microsoft Entra ID support several security benefits customers may take advantage of, including:
 
-* **Authenticated access**. Application proxy is best suited to publish applications with [pre-authentication](./application-proxy-security.md#authenticated-access) to ensure that only authenticated connections hit your network. No traffic is allowed to pass through the App Proxy service to your on-premises environment without a valid token for applications published with pre-authentication. Pre-authentication, by its very nature, blocks a significant number of targeted attacks, as only authenticated identities can access the backend application.
+* **Authenticated access**. Application proxy is best suited to publish applications with [pre-authentication](./application-proxy-security.md#authenticated-access) to ensure that only authenticated connections hit your network. No traffic is allowed to pass through the application proxy service to your on-premises environment without a valid token for applications published with pre-authentication. Pre-authentication, by its very nature, blocks a significant number of targeted attacks, as only authenticated identities can access the backend application.
 * **Conditional Access**. Richer policy controls can be applied before connections to your network are established. With Conditional Access, you can define restrictions on the traffic that you allow to hit your backend application. You create policies that restrict sign-ins based on location, the strength of authentication, and user risk profile. As Conditional Access evolves, more controls are being added to provide additional security such as integration with Microsoft Defender for Cloud Apps. Defender for Cloud Apps integration enables you to configure an on-premises application for [real-time monitoring](./application-proxy-integrate-with-microsoft-cloud-application-security.md) by leveraging Conditional Access to monitor and control sessions in real-time based on Conditional Access policies.
 * **Traffic termination**. All traffic to the backend application is terminated at the application proxy service in the cloud while the session is re-established with the backend server. This connection strategy means that your backend servers are not exposed to direct HTTP traffic. They are better protected against targeted DoS (denial-of-service) attacks because your firewall isn't under attack.
 * **All access is outbound**. The application proxy connectors only use outbound connections to the application proxy service in the cloud over ports 80 and 443. With no inbound connections, there's no need to open firewall ports for incoming connections or components in the DMZ. All connections are outbound and over a secure channel.
@@ -156,7 +156,7 @@ The remote access solution offered by application proxy and Microsoft Entra ID s
 
 ### Roadmap to the cloud
 
-Another major benefit of implementing application proxy is extending Microsoft Entra ID to your on-premises environment. In fact, implementing App Proxy is a key step in moving your organization and apps to the cloud. By moving to the cloud and away from on-premises authentication, you reduce your on-premises footprint and use Microsoft Entra identity management capabilities as your control plane. With minimal or no updates to existing applications, you have access to cloud capabilities such as single sign-on, multi-factor authentication, and central management. Installing the necessary components to App Proxy is a simple process for establishing a remote access framework. And by moving to the cloud, you have access to the latest Microsoft Entra features, updates, and functionality, such as high availability and the disaster recovery.
+Another major benefit of implementing application proxy is extending Microsoft Entra ID to your on-premises environment. In fact, implementing application proxy is a key step in moving your organization and apps to the cloud. By moving to the cloud and away from on-premises authentication, you reduce your on-premises footprint and use Microsoft Entra identity management capabilities as your control plane. With minimal or no updates to existing applications, you have access to cloud capabilities such as single sign-on, multi-factor authentication, and central management. Installing the necessary components to application proxy is a simple process for establishing a remote access framework. And by moving to the cloud, you have access to the latest Microsoft Entra features, updates, and functionality, such as high availability and the disaster recovery.
 
 To learn more about migrating your apps to Microsoft Entra ID, see the [Migrating Your Applications to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md).
 
@@ -187,15 +187,15 @@ Microsoft Entra application proxy consists of the cloud-based application proxy 
 
 ### Application proxy connectors
 
-[Application proxy connectors](./application-proxy-connectors.md) are lightweight agents deployed on-premises that facilitate the outbound connection to the application proxy service in the cloud. The connectors must be installed on a Windows Server that has access to the backend application. Users connect to the App Proxy cloud service that routes their traffic to the apps via the connectors as illustrated below.
+[Application proxy connectors](./application-proxy-connectors.md) are lightweight agents deployed on-premises that facilitate the outbound connection to the application proxy service in the cloud. The connectors must be installed on a Windows Server that has access to the backend application. Users connect to the application proxy cloud service that routes their traffic to the apps via the connectors as illustrated below.
 
 ![Microsoft Entra application proxy network connections](media/what-is-application-proxy/azure-ad-application-proxy-network-connections.png)
 
-Setup and registration between a connector and the App Proxy service is accomplished as follows:
+Setup and registration between a connector and the application proxy service is accomplished as follows:
 
-1. The IT administrator opens ports 80 and 443 to outbound traffic and allows access to several URLs that are needed by the connector, the App Proxy service, and Microsoft Entra ID.
+1. The IT administrator opens ports 80 and 443 to outbound traffic and allows access to several URLs that are needed by the connector, the application proxy service, and Microsoft Entra ID.
 2. The admin signs into the Microsoft Entra admin center and runs an executable to install the connector on an on-premises Windows server.
-3. The connector starts to "listen" to the App Proxy service.
+3. The connector starts to "listen" to the application proxy service.
 4. The admin adds the on-premises application to Microsoft Entra ID and configures settings such as the URLs users need to connect to their apps.
 
 For more information, see [Plan a Microsoft Entra application proxy deployment](./conceptual-deployment-plan.md).
@@ -219,7 +219,7 @@ For more information about choosing where to install your connectors and optimiz
 
 ## Other use cases
 
-Up to this point, we've focused on using application proxy to publish on-premises apps externally while enabling single sign-on to all your cloud and on-premises apps. However, there are other use cases for App Proxy that are worth mentioning. They include:
+Up to this point, we've focused on using application proxy to publish on-premises apps externally while enabling single sign-on to all your cloud and on-premises apps. However, there are other use cases for application proxy that are worth mentioning. They include:
 
 * **Securely publish REST APIs**. When you have business logic or APIs running on-premises or hosted on virtual machines in the cloud, application proxy provides a public endpoint for API access. API endpoint access lets you control authentication and authorization without requiring incoming ports. It provides additional security through Microsoft Entra ID P1 or P2 features such as multi-factor authentication and device-based Conditional Access for desktops, iOS, MAC, and Android devices using Intune. To learn more, see [How to enable native client applications to interact with proxy applications](./application-proxy-configure-native-client-application.md) and [Protect an API by using OAuth 2.0 with Microsoft Entra ID and API Management](/azure/api-management/api-management-howto-protect-backend-with-aad).
 * **Remote Desktop Services** **(RDS)**. Standard RDS deployments require open inbound connections. However, the [RDS deployment with application proxy](./application-proxy-integrate-with-remote-desktop-services.md) has a permanent outbound connection from the server running the connector service. This way, you can offer more applications to users by publishing on-premises applications through Remote Desktop Services. You can also reduce the attack surface of the deployment with a limited set of two-step verification and Conditional Access controls to RDS.
@@ -232,7 +232,7 @@ The way we work and the tools we use are changing rapidly. With more employees b
 
 Whether you're currently using Microsoft Entra ID to manage users in a hybrid coexistence scenario or are interested in starting your journey to the cloud, implementing Microsoft Entra application proxy can help reduce the size of your on-premises footprint by providing remote access as a service.
 
-Organizations should begin taking advantage of App Proxy today to take advantage of the following benefits:
+Organizations should begin taking advantage of application proxy today to take advantage of the following benefits:
 
 * Publish on-premises apps externally without the overhead associated with maintaining traditional VPN or other on-premises web publishing solutions and DMZ approach
 * Single sign-on to all applications, be they Microsoft 365 or other SaaS apps and including on-premises applications
