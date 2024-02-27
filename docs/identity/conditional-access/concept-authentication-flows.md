@@ -13,7 +13,7 @@ ms.reviewer: anjusingh, ludwignick
 ---
 # Conditional Access: Authentication flows
 
-Microsoft Entra ID supports a wide variety of authentication and authorization protocols to provide a seamless experience across all application and device types. Some of these authentication flows, are higher risk than others. To provide more control over your security posture, we’re adding the ability to control certain authentication flows to Conditional Access. This control starts with the ability to explicitly target [device code flow](../../identity-platform/v2-oauth2-device-code.md).
+Microsoft Entra ID supports a wide variety of authentication and authorization flows to provide a seamless experience across all application and device types. Some of these authentication flows, are higher risk than others. To provide more control over your security posture, we’re adding the ability to control certain authentication flows to Conditional Access. This control starts with the ability to explicitly target [device code flow](../../identity-platform/v2-oauth2-device-code.md).
 
 Device code flow is used when signing into devices that might lack local input devices like shared devices or digital signage. Device code flow is a high-risk authentication flow that might be used as part of a phishing attack or to access corporate resources on unmanaged devices. You can configure the device code flow control along with other controls in your Conditional Access policies. For example, if device code flow is used for android based conference room devices, you might choose to block device code flow everywhere except for android devices in a specific network location. 
 
@@ -27,14 +27,14 @@ The ability to control authentication transfer is in preview use the **Authentic
 
 ## Protocol tracking 
 
-To ensure Conditional Access policies are accurately enforced on specified authentication flows, we use functionality called protocol tracking. This tracking is applied to refresh tokens generated using device code flow or authentication transfer. In these cases, the refresh tokens are considered protocol tracked. Any protocol tracked refresh tokens are subject to policy enforcement if a policy exists. Protocol tracking state is sustained through subsequent refreshes. Nondevice code flow or authentication transfer flows can be subject to enforcement of authentication flows policies if the refresh token is protocol tracked.  
+To ensure Conditional Access policies are accurately enforced on specified authentication flows, we use functionality called protocol tracking. This tracking is applied to the session using device code flow or authentication transfer. In these cases, the sessions are considered protocol tracked. Any protocol tracked sessions are subject to policy enforcement if a policy exists. Protocol tracking state is sustained through subsequent refreshes. Nondevice code flow or authentication transfer flows can be subject to enforcement of authentication flows policies if the session is protocol tracked.  
 
 For example: 
 
 1. You configure a policy to block device code flow everywhere except for SharePoint. 
-1. You use device code flow to get an access token and refresh token for SharePoint, as allowed by the configured policy. At this point, the refresh token is considered protocol tracked. 
+1. You use device code flow to sign-in to SharePoint, as allowed by the configured policy. At this point, the session is considered protocol tracked 
 1. You try to sign in to Exchange within the context of the same session using any authentication flow not just device code flow. 
-1. You're blocked by the configured policy due to the protocol tracked state of the refresh token.  
+1. You're blocked by the configured policy due to the protocol tracked state of the session  
 
 ## Sign-in logs  
 

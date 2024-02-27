@@ -1,15 +1,14 @@
 ---
 title: Block authentication flows with Conditional Access policy 
-description: 
+description: Use Conditional Access policy to restrict how device code flow and authentication transfer are used within your organization.
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 02/20/2024
+ms.date: 02/27/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: anjusingh, ludwignick
-
 ---
 # Block authentication flows with Conditional Access policy 
 
@@ -19,7 +18,11 @@ The following steps help create Conditional Access policies to restrict how devi
 
 [!NOTE] To bolster security posture, Microsoft recommends blocking or restricting device code flow wherever possible.  
 
-You should always start by configuring a policy in [report-only mode](howto-conditional-access-insights-reporting.md) to determine the potential effect on your organization. That being said, the recommendation is to get as close as possible to a unilateral block on device code flow. For organizations that have no established use of device code flow, blocking can be done with the following Conditional Access policy: 
+You should always start by configuring a policy in [report-only mode](howto-conditional-access-insights-reporting.md) to determine the potential effect on your organization. 
+
+We recommend organizations get as close as possible to a unilateral block on device code flow. Organizations should consider creating a policy to audit the existing use of device code flow and determine if it is still necessary.
+
+For organizations that have no established use of device code flow, blocking can be done with the following Conditional Access policy: 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
 1. Browse to **Protection** > **Conditional Access**. 
