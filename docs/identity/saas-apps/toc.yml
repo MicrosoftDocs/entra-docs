@@ -3531,7 +3531,7 @@
       - name: MX3 Diagnostics
         href: mx3-diagnostics-connector-provisioning-tutorial.md  
       - name: myday
-        href: myday-provisioning-tutorial.md
+        href: myday-provision-tutorial.md
       - name: myPolicies
         href: mypolicies-provisioning-tutorial.md
     - name: N - S
