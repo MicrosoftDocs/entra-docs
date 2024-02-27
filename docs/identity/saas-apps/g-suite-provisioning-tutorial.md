@@ -39,7 +39,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and G Suite](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-g-suite-to-support-provisioning-with-azure-ad'></a>
@@ -61,7 +61,7 @@ Before configuring G Suite for automatic user provisioning with Microsoft Entra 
     > [!IMPORTANT]
     > For every user that you intend to provision to G Suite, their user name in Microsoft Entra ID **must** be tied to a custom domain. For example, user names that look like bob@contoso.onmicrosoft.com are not accepted by G Suite. On the other hand, bob@contoso.com is accepted. You can change an existing user's domain by following the instructions [here](~/fundamentals/add-custom-domain.md).
 
-1. Once you have added and verified your desired custom domains with Microsoft Entra ID, you must verify them again with G Suite. To verify domains in G Suite, refer to the following steps:
+1. Once you add and verify your desired custom domains with Microsoft Entra ID, you must verify them again with G Suite. To verify domains in G Suite, refer to the following steps:
 
     1. In the [G Suite Admin Console](https://admin.google.com/), navigate to **Account -> Domains -> Manage Domains**.
 
@@ -272,7 +272,7 @@ Once you've configured provisioning, use the following resources to monitor your
 ## Troubleshooting Tips
 * Removing a user from the sync scope disables them in GSuite but won't result in deletion of the user in G Suite
 
-## Just-in-time (JIT) application access with PIM for groups (preview)
+## Just-in-time (JIT) application access with PIM for groups
 With PIM for Groups, you can provide just-in-time access to groups in Google Cloud / Google Workspace and reduce the number of users that have permanent access to privileged groups in Google Cloud / Google Workspace. 
 
 **Configure your enterprise application for SSO and provisioning**
@@ -292,15 +292,15 @@ With PIM for Groups, you can provide just-in-time access to groups in Google Clo
 
 Now any end user that was made eligible for the group in PIM can get JIT access to the group in Google Cloud / Google Workspace by [activating their group membership](/azure/active-directory/privileged-identity-management/groups-activate-roles#activate-a-role). 
 
-* How long does it take to have a user provisioned to the application?: 
-  * When a user is added to a group in Microsoft Entra ID outside of activating their group membership using Microsoft Entra ID Priviliged Identity Management (PIM):
+* How long does it take to have a user provisioned to the application? 
+  * When a user is added to a group in Microsoft Entra ID outside of activating their group membership using Microsoft Entra ID Privileged Identity Management (PIM):
     * The group membership is provisioned in the application during the next synchronization cycle. The synchronization cycle runs every 40 minutes. 
   * When a user activates their group membership in Microsoft Entra ID PIM: 
-    * The group membership is provisioned in 2 – 10 minutes. When there is a high rate of requests at one time, requests are throttled at a rate of 5 requests per 10 seconds.  
-    * For the first 5 users within a 10-second period activating their group membership for a specific application, group membership is provisioned in the application within 2-10 minutes. 
-    * For the 6th user and above within a 10-second period activating their group membership for a specific application, group membership is provisioned to the application in the next synchronization cycle. The synchronization cycle runs every 40 minutes. The throttling limits are per enterprise application. 
+    * The group membership is provisioned in 2 – 10 minutes. When there is a high rate of requests at one time, requests are throttled at a rate of five requests per 10 seconds.  
+    * For the first five users within a 10-second period activating their group membership for a specific application, group membership is provisioned in the application within 2-10 minutes. 
+    * For the sixth user and above within a 10-second period activating their group membership for a specific application, group membership is provisioned to the application in the next synchronization cycle. The synchronization cycle runs every 40 minutes. The throttling limits are per enterprise application. 
 * If the user is unable to access the necessary group in Google Cloud / Google Workspace, please review the troubleshooting tips below, PIM logs, and provisioning logs to ensure that the group membership was updated successfully. Depending on how the target application has been architected, it may take additional time for the group membership to take effect in the application.
-* Using [Azure Monitor](https://learn.microsoft.com/entra/identity/app-provisioning/application-provisioning-log-analytics), customers can create alerts for failures.
+* You can create alerts for failures using [Azure Monitor](https://learn.microsoft.com/entra/identity/app-provisioning/application-provisioning-log-analytics).
   
 ## Change log
 
