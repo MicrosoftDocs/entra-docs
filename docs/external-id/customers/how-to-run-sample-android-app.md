@@ -87,7 +87,7 @@ To specify that this app is a public client and can use native authentication, e
  
 Follow these steps to create a user flow.  
  
-1. Sign in to the <a href="https://entra.microsoft.com/" target="_blank">Microsoft Entra admin center</a>. 
+1. Sign in to the <a href="https://entra.microsoft.com/" target="_blank">Microsoft Entra admin center</a> as at least an [Application Developer](../../identity/role-based-access-control/permissions-reference.md#application-developer). 
 1. If you have access to multiple tenants, make sure you use the directory that contains your Microsoft Entra External ID for customers tenant: 
  
    1. Select the **Directories + subscriptions** icon in the toolbar. 
