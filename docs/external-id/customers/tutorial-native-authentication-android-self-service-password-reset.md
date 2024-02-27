@@ -34,30 +34,16 @@ In this tutorial, you learn how to:
  
 To add self-service password reset flow to your Android application, you need a password reset user interface, which has:  
  
-- One text field for email.
-- One text field for one-time passcode (OTP).
-- One text field for new password.
+- A UI to submit email.
+- A UI to submit one-time passcode.
+- A UI to submit new password.
 - Submit button.
 
 The following wire frame shows a high-level view of the self-service password reset flow: 
 
 :::image type="content" source="media/native-authentication/android/SSPR-flow-image.png" alt-text="Screenshot that illustrates Self-service password reset flow."::: 
-
  
-To initialize the native authentication, import the Microsoft Authentication Library (MSAL) configuration in the `onCreateView()` lifecycle as demonstrated in the following code:  
- 
-```kotlin 
-authClient = PublicClientApplication.createNativeAuthPublicClientApplication( 
-    requireContext(), 
-    R.raw.native_auth_email_password_config 
-) 
-``` 
- 
-1. When a user forgets their password, they need a form to input their email. Here's sample user interface:  
-    
-    :::image type="content" source="media/native-authentication/android/email-text-field.png" alt-text="Screenshot showing email input form."::: 
-
-    To handle the request when the user selects the **Forget Password** button, use the following code snippet:  
+1. When a user forgets their password, they need a form to input their email. To handle the request when the user selects the **Forget Password** button, use the following code snippet:  
  
    ```kotlin 
     private fun forgetPassword() { 
@@ -97,11 +83,7 @@ authClient = PublicClientApplication.createNativeAuthPublicClientApplication(
 
     Errors such as these indicate that the previous operations were unsuccessful, and because of that they don't include a reference to a new state. 
  
-2. The use receives a one-time passcode in their email. The following image shows how to capture the one-time passcode:  
- 
-    :::image type="content" source="media/native-authentication/android/code-text-field.png" alt-text="Screenshot showing OTP input form."::: 
- 
-   To process the code submitted by the user, use the following code snippet:  
+2. The user receives a one-time passcode in their email. To process the code submitted by the user, use the following code snippet:  
  
    ```kotlin 
    private suspend fun submitCode(currentState: ResetPasswordCodeRequiredState) { 
@@ -110,7 +92,7 @@ authClient = PublicClientApplication.createNativeAuthPublicClientApplication(
  
        when (submitCodeResult) { 
            is ResetPasswordSubmitCodeResult.PasswordRequired -> { 
-               // The implementaion of resetPassword() please see below. 
+               // Handle success
                resetPassword(submitCodeResult.nextState) 
            } 
             is SubmitCodeError -> {
@@ -129,7 +111,7 @@ authClient = PublicClientApplication.createNativeAuthPublicClientApplication(
     
     Errors such as these indicate that the previous operations were unsuccessful, and because of that they don't include a reference to a new state. 
 
-    If the submitted OTP is valid, the code sets the `nextState` to process a new user password. If the user doesn't receive the OTP in their email, they have the option to use "Resend Passcode" to request a new OTP.  
+    If the submitted one-time passcode is valid, the code sets the `nextState` to process a new user password. If the user doesn't receive the one-time passcode in their email, they have the option to use "Resend Passcode" to request a new one-time passcode.  
     
     To process this request, use the following code snippet:  
   
@@ -144,8 +126,7 @@ authClient = PublicClientApplication.createNativeAuthPublicClientApplication(
  
            when (resendCodeResult) { 
                is ResetPasswordResendCodeResult.Success -> { 
-                   currentState = resendCodeResult.nextState 
-                   Toast.makeText(requireContext(), "Code sent", Toast.LENGTH_LONG).show() 
+                   // Handle code resent success
                } 
                is ResendCodeError -> {
                     // Handle ResendCodeError errors
@@ -160,11 +141,7 @@ authClient = PublicClientApplication.createNativeAuthPublicClientApplication(
     If it's `ResendCodeError`, it's an unexpected error for SDK. The previous operation was unsuccessful, and because of that they don't include a reference to a new state. 
 
  
-3. After verifying the user's email, you need to have the user create a new password.  
- 
-    :::image type="content" source="media/native-authentication/android/password-text-field.png" alt-text="Screenshot showing password input form."::: 
- 
-   To create new user password, use the following code snippet:  
+3. After verifying the user's email, you need to have the user create a new password. To create new user password, use the following code snippet:  
  
    ```kotlin 
    private suspend fun resetPassword(currentState: ResetPasswordPasswordRequiredState) { 
@@ -223,7 +200,6 @@ To reset a user's password and then sign them in, you can use the following code
         val actionResult = currentState.signIn()
         when (actionResult) {
             is SignInResult.Complete -> {
-                // Sign in complete
                 fetchTokens(
                     accountState = actionResult.resultValue
                 )
@@ -244,7 +220,7 @@ To reset a user's password and then sign them in, you can use the following code
 ```
 
 ## Handle errors 
-A few common, expected error states exist. For example, the user might attempt to reset the password with a nonexistent email or provide a password that doesn't meet the password requirements. Giving your users a hint to those errors is the simplest way to handle them. 
+A few common, expected errors might occur. For example, the user might attempt to reset the password with a nonexistent email or provide a password that doesn't meet the password requirements. Giving your users a hint to those errors is the simplest way to handle them. 
 
 To handle the errors during password reset, use the following code snippet: 
 

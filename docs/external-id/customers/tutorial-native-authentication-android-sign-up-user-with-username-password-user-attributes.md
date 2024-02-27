@@ -27,19 +27,12 @@ In this tutorial, you learn how to:
 ## Prerequisites  
  
 - An Android project. 
-- User-flow with an **Email with password**:  
-  - [Register application in Microsoft Entra External ID for customers tenant](how-to-run-sample-android-app.md#register-an-application). 
-  - [Enable public client and native authentication flows](how-to-run-sample-android-app.md#enable-public-client-and-native-authentication-flows). 
-  - [Grant API permissions](how-to-run-sample-android-app.md#grant-api-permissions). 
-  - [Create a user flow](how-to-run-sample-android-app.md#create-a-user-flow). 
-    - In the **User attributes**, select **Country/Region** and **City** in the user flow. 
-  - [Associate the Android app with the user flow](how-to-run-sample-android-app.md#associate-the--app-with-the-user-flow). 
-- [Android Microsoft Authentication Library (MSAL) configuration file](how-to-run-sample-android-app.md#configure-the-sample-android-mobile-application). 
+- [How to run the Android sample app](how-to-run-sample-android-app.md). Ensure that when creating the user flow, you select **Email with password** in the **Identity providers** section, and choose **Country/Region** and **City** under **User attributes** section.
 - [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md). 
  
 ## Sign up user using username, password, and user attributes  
  
-To sign up user using username (email address), password, and user attributes, we need to verify the email through email one-time passcode (OTP).  
+To sign up user using username (email address), password, and user attributes, we need to verify the email through email one-time passcode.  
  
 The MSAL Android SDK provides a utility class `UserAttribute.Builder` to create user attributes.  
  
@@ -60,7 +53,7 @@ The MSAL Android SDK provides a utility class `UserAttribute.Builder` to create 
     } 
     ``` 
  
-1. To continue with the flow, the `signUp` returns `SignUpResult.CodeRequired`, which will provide access to `submitCode()` and `resendCode()`. To submit the code that the user supplied us with, use the following code snippet:  
+1. To continue with the flow, the `signUp()` method returns `SignUpResult.CodeRequired`, which will provide access to `submitCode()` and `resendCode()`. To submit the code that the user supplied us with, use the following code snippet:  
  
     ```kotlin 
     CoroutineScope(Dispatchers.Main).launch { 

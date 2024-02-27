@@ -26,24 +26,19 @@ In this tutorial, you learn how to:
   
 ## Prerequisites  
   
-- An Android project.  
-- User-flow with an **Email with password**:  
-  - [Register application in Microsoft Entra External ID for customers tenant](how-to-run-sample-android-app.md#register-an-application). 
-  - [Enable public client and native authentication flows](how-to-run-sample-android-app.md#enable-public-client-and-native-authentication-flows). 
-  - [Grant API permissions](how-to-run-sample-android-app.md#grant-api-permissions). 
-  - [Create a user flow](how-to-run-sample-android-app.md#create-a-user-flow). 
-  - [Associate the Android app with the user flow](how-to-run-sample-android-app.md#associate-the--app-with-the-user-flow). 
+- An Android project.
+- [How to run the Android sample app](how-to-run-sample-android-app.md). Ensure that when creating the user flow, you select **Email with password**.
 - [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md). 
  
 ## Sign up user with username and password  
  
-To sign up user using username (email address) and password, we need to verify the email through email one-time passcode (OTP).  
+To sign up user using username (email address) and password, we need to verify the email through email one-time passcode.  
 
 The following wire frame shows a high-level view of the sign-up user with username and password flow: 
 
 :::image type="content" source="media/native-authentication/android/sign-up-email-password.png" alt-text="Screenshot that illustrates registering a user with a username and password."::: 
  
-We'll use the `signUp(username, password)` method, which in most common scenario responds with `SignUpResult.CodeRequired`, which indicates that the API expects a code to be sent back to verify the email address.  
+We'll use the `signUp(username, password)` method, which in most common scenario returns `SignUpResult.CodeRequired`, which indicates that the API expects a code to be sent back to verify the email address.
  
 To implement the `signUp(username, password)`, use the following code snippet:  
  

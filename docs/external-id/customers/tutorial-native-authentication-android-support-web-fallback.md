@@ -29,8 +29,10 @@ In this tutorial, you learn how to:
 - [Sign in users in a sample native Android mobile application](how-to-run-sample-android-app.md)  
 - [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md)  
  
-## Check isBrowserRequired() 
- 
+## Browser required
+
+`BrowserRequired` is a fallback mechanism for various scenarios where native authentication isn't sufficient to complete the user flow. 
+
 To ensure stability of your application and avoid interruption of the authentication flow, it's highly recommended to use the SDK's `acquireToken()` method to continue the flow in the browser. 
  
 When we initialize the SDK, we need to specify which challenge types our mobile application can support. Here are the list of challenge types that the SDK accepts:  
@@ -118,9 +120,11 @@ if (actionResult is SignUpError && actionResult.isBrowserRequired()) {
 } 
 ```
 
-Tokens obtained through native authentication flows can combine with browser-based flows, and vice versa. In other words, the authentication mechanism (native or web-based) doesn't limit the functionality of the tokens acquired through it. 
+Tokens obtained through native authentication flows can combined with browser-based flows, and vice versa. In other words, the authentication mechanism (native or web-based) doesn't limit the functionality of the tokens acquired through it. 
 
 ## Related content 
 
-[How to run the iOS sample app](https://github.com/microsoft/entra-previews/blob/native-auth-public-preview/docs/Native-Auth/Developer-guides/1-iOS-Swift/0-Run-code-sample.md) 
+- [How to run the iOS sample app](how-to-run-sample-ios-app.md)
+- [Native authentication API reference with Email OTP](reference-native-auth-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
+
 

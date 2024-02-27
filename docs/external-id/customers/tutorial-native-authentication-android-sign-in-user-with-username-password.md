@@ -26,13 +26,8 @@ In this tutorial, you learn how to:
 
 ## Prerequisites 
 
-- An Android project. 
-- User-flow with an **Email with password**: 
-  - [Register application in Microsoft Entra External ID for customers tenant](how-to-run-sample-android-app.md#register-an-application). 
-  - [Enable public client and native authentication flows](how-to-run-sample-android-app.md#enable-public-client-and-native-authentication-flows). 
-  - [Grant API permissions](how-to-run-sample-android-app.md#grant-api-permissions). 
-  - [Create a user flow](how-to-run-sample-android-app.md#create-a-user-flow). 
-  - [Associate the Android app with the user flow](how-to-run-sample-android-app.md#associate-the--app-with-the-user-flow). 
+- An Android project.
+- [How to run the Android sample app](how-to-run-sample-android-app.md). Ensure that when creating the user flow, you select **Email with password**.
 - [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md). 
 
 ## Sign in user with username and password 
@@ -60,7 +55,7 @@ CoroutineScope(Dispatchers.Main).launch {
 }
 ```
 
-In most common scenario `signIn(username, password)` returns `SignInResult.Complete`, which indicates that the flow is complete and the user has been signed in. This object contains a reference to the `AccountState`, accessible through the resultValue field. `AccountState` can be used to retrieve account details and access tokens. 
+In most common scenario `signIn(username, password)` returns `SignInResult.Complete`, which indicates that the flow is complete and the user has been signed in. This object contains a reference to the `AccountState`, accessible through the `resultValue` field. `AccountState` can be used to retrieve account details and access tokens. 
 
 ## Handle errors 
 
@@ -100,4 +95,4 @@ if (actionResult is SignInResult.Complete) -> {
 
 ## Next steps 
 
-[Tutorial: Sign in user after sign up](tutorial-native-authentication-android-sign-in-after-sign-up.md) 
+[Tutorial: Self-service password reset](tutorial-native-authentication-android-self-service-password-reset.md) 

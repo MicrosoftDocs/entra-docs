@@ -17,7 +17,7 @@ ms.custom: developer, devx-track-dotnet
 
 # Tutorial: Add sign up with email one-time passcode in Android app 
 
-This tutorial demonstrates how to sign up, sign in and sign out a user using email one-time passcode (OTP) in your native authentication Android app. 
+This tutorial demonstrates how to sign up, sign in and sign out a user using email one-time passcode in your native authentication Android app. 
 
 In this tutorial, you learn how to: 
 

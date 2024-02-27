@@ -166,7 +166,7 @@ To build and run your app, follow these steps:
  
 1. Enter a valid email address and select **Sign up**. The app launches the submit code screen.  
  
-    :::image type="content" source="media/native-authentication/android/android-submit-code.png" alt-text="Screenshot of user prompt to enter one-time passcode (OTP) in Android application." lightbox="media/native-authentication/android/android-submit-code-expanded.png"::: 
+    :::image type="content" source="media/native-authentication/android/android-submit-code.png" alt-text="Screenshot of user prompt to enter one-time passcode in Android application." lightbox="media/native-authentication/android/android-submit-code-expanded.png"::: 
  
 1. You'll receive an email containing a one-time passcode. Enter the one-time passcode and select **Next**. If the sign-up was successful, you'll automatically be signed in. 
 
