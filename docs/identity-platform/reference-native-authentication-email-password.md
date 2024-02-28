@@ -623,7 +623,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |    Error value     | Description        |
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type.   |  
-|`invalid_grant`| The password that the app submits doesn't meet all the complexity requirements, such as the password is too short. Use the `suberror` parameter to learn the exact cause of the error.|
+|`invalid_grant`| The grant submitted is invalid, such as the password submitted is too short. Use the `suberror` parameter to learn the exact cause of the error.|
 |`expired_token`|The continuation token is expired. |
 |`attributes_required`  |  One or more of user attributes is required.   |
 
@@ -870,7 +870,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
  
-continuation_token=ABAAEAAAAtyo... 
+continuation_token=ABAAEAAAAtfyo... 
 &client_id=111101-14a6-abcd-97bc-abcd1110011 
 &grant_type=attributes 
 &attributes={"jobTitle": "Software Engineer", "extension_2588abcdwhtfeehjjeeqwertc_language": "Norwegian", "extension_2588abcdwhtfeehjjeeqwertc_hobbies": "Dancing,Swimming,Traveling"}
@@ -1645,7 +1645,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as a validation of *continuation token* failed.   |
 |`expired_token`|The *continuation token* is expired.    |
-|`invalid_grant`| The password that the app submits doesn't meet all the complexity requirements, such as the password is too short. Use the `suberror` parameter to learn the exact cause of the error.|
+|`invalid_grant`| The grant submitted is invalid, such as the password submitted is too short. Use the `suberror` parameter to learn the exact cause of the error.|
 
 If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter:
 

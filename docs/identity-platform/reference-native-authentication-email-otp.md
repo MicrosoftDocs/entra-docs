@@ -235,7 +235,7 @@ Content-Type: application/json
 |    Parameter     | Description        |
 |----------------------|------------------------|
 |`interval`| The length of time in seconds the app needs to wait before it attempts to resend OTP. |
-| `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entrareturns. |
+| `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |
 |`challenge_type`| Challenge type selected for the user to authenticate with.|
 |`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer more ways for the user to enter the OTP code. Issued if `challenge_type` is *oob*  |
 |`challenge_channel`| The type of the channel through which the OTP code was sent. At the moment, only email channel is supported. |
@@ -744,7 +744,7 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entrareturns. |  
+| `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |  
 
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
@@ -862,7 +862,7 @@ Content-Type: application/json
 |`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer more ways for the user to enter the OTP code. Issued if `challenge_type` is *oob*  |
 |`challenge_channel`| The type of the channel through which the OTP code was sent. At the moment, we support email. |
 |`challenge_target_label` |An obfuscated email where the OTP code was sent.|
-|`code_length`|The length of the OTP code that Microsoft Entragenerates. |
+|`code_length`|The length of the OTP code that Microsoft Entra generates. |
 
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
