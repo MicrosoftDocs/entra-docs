@@ -1,11 +1,11 @@
 ---
 title: Understanding the Microsoft Entra app manifest
-description: Detailed coverage of the Microsoft Entra app manifest, which represents an application's identity configuration in a Microsoft Entra tenant, and is used to facilitate OAuth authorization, consent experience, and more.
+description: Describes the Microsoft Entra app manifest, which represents an application's identity configuration in a Microsoft Entra tenant.
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
-ms.date: 04/13/2023
+ms.date: 02/27/2024
 ms.reviewer: sureshja
 ms.service: identity-platform
 
@@ -15,7 +15,7 @@ ms.topic: reference
 
 # Microsoft Entra app manifest (Azure AD Graph format)
 > [!WARNING]
->  On [date], the app manifest in Azure Active Directory (Azure AD) Graph format is deprecated. You must [migrate your app and app manifest](migrate-app-manifest.md) from Azure AD Graph format to Microsoft Graph format.  
+>  On [date], the app manifest in Azure Active Directory (Azure AD) Graph format was deprecated in the Micrsoft Entra admin center due to the [Azure AD Graph deprecation](/graph/migrate-azure-ad-graph-overview). For more information, see [app manifest in Microsoft Graph format](reference-microsoft-graph-app-manifest.md).  
 
 
 The application manifest contains a definition of all the attributes of an application object in the Microsoft identity platform. It also serves as a mechanism for updating the application object. For more info on the Application entity and its schema, see the [Graph API Application entity documentation](/graph/api/resources/application).

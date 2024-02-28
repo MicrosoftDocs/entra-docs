@@ -1,6 +1,6 @@
 ---
-title: Migrate to Microsoft Graph format app manifest
-description: 
+title: Azure AD Graph app manifest deprecation
+description: Describes the deprecation of the Azure AD Graph format for application manifests.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -8,15 +8,15 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
-ms.date: 01/10/2024
+ms.date: 02/27/2024
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: youazhou
 ---
 
-# Migrate your app manifest to Microsoft Graph format
+# Azure AD Graph app manifest deprecation
 
-Azure Active Directory (Azure AD) Graph is deprecated and you must migrate your app and app manifest from Azure AD Graph format to Microsoft Graph format.  Microsoft Graph is our latest offering and represents our best-in-breed API surface. To learn more about Azure AD Graph deprecation, please read [Migrate your apps to Microsoft Graph](/graph/migrate-azure-ad-graph-overview).
+Following the Azure AD Graph deprecation, the Azure AD Graph format of application manifests is deprecated and the Microsoft Entra admin center displays app manifests in Microsoft Graph format.  For most users, no action is required to convert app manifests from Azure AD Graph format to Microsoft Graph format. Microsoft Graph is our latest offering and represents our best-in-breed API surface. To learn more about Azure AD Graph deprecation, please read [Migrate your apps to Microsoft Graph](/graph/migrate-azure-ad-graph-overview).
 
 ## Migration date
 
@@ -26,7 +26,7 @@ On [date], the **App registrations** manifest page in the Microsoft Entra Admin 
 
 Starting [date], you won't be able to view, save, upload or download the Azure AD Graph app manifest in the **App registrations** manifest page in the Microsoft Entra Admin center.
 
-## How does manifest migration impact the user experience?
+## How does app manifest migration impact your user experience?
 
 If you do not view, edit or save app manifests, this migration doesn't impact your workflow.
 
@@ -56,7 +56,7 @@ Most Azure AD Graph app manifest attributes stay the same. However, the followin
 | `replyUrlsWithType` | Renamed as property `redirectUris` in multiple attributes: `web` attribute, `spa` attribute, `publicClient` attribute |
 | `signInUrl` | Relocated and renamed as property `homePageUrl` of the `web` attribute |
 
-## How do I tell if I have an Azure AD Graph app manifest or Microsoft Graph app manifest?
+## How do I tell the format of my app manifest?
 
 You can tell whether an app manifest is an Azure AD Graph format or Microsoft Graph format by the attributes it contains. For example,
 
@@ -89,6 +89,8 @@ Starting [date2], the Microsoft Entra admin center will no longer support app ma
 1. Browse to **Identity** > **Applications** > **App registrations**.
 
 1. Select **New registration** and create a new app registration.
+
+1. An app manifest is created in the new format with default values.
 
 1. Go through each attribute in Azure AD Graph formatted app manifest one by one and edit the corresponding attribute in the Microsoft Graph formatted app manifest to match its value.
 

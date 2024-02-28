@@ -1,6 +1,6 @@
 ---
 title: Understanding the Microsoft Graph app manifest
-description: Detailed coverage of the Microsoft Graph app manifest, which represents an application's identity configuration in a Microsoft Entra tenant, and is used to facilitate OAuth authorization, consent experience, and more.
+description: Describes the Microsoft Entra app manifest, which represents an application's identity configuration in a Microsoft Entra tenant.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
-ms.date: 02/09/2024
+ms.date: 02/27/2024
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: youazhou
@@ -16,23 +16,20 @@ ms.reviewer: youazhou
 
 # App manifest
 
-The application manifest contains all the attributes and their values of an app registration in the Microsoft identity platform. Each app registration is stored as a Microsoft Graph app object.
+The application manifest contains all the attributes and their values of an app registration in the Microsoft identity platform. 
 
-A Microsoft Graph app manifest is a JSON object that represents an app registration. It is also called the [Microsoft Graph Application resource type](/graph/api/resources/application) or Microsoft Graph app object (application object).
+A Microsoft Graph app manifest is a JSON object that represents an app registration. It is also called the [Microsoft Graph Application resource type](/graph/api/resources/application) or Microsoft Graph app object (application object). It contains all the attributes and their values of an app registration.
 
-It contains all the attributes and their values of an app registration. Each app registration is stored as a Microsoft Graph app object in Entra identity platform.
+The application object you receive using [Microsoft Graph Get Application method](/graph/api/application-get&tabs=http) is the same JSON object you see in **App Registration manifest** page in the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-The application object you receive using [Microsoft Graph Get Application method](/graph/api/application-get&tabs=http) is the same JSON object you see in App Registration manifest page in the Microsoft Entra admin center.
+> [!NOTE]
+> Application manifests for Microsoft account (MSA) apps continue to use the Azure AD Graph format.  If you need to edit an app manifest for a MSA app in the Microsoft Entra admin center, see [Microsoft Entra app manifest (Azure AD Graph format)](reference-app-manifest.md).
 
 ## Configure the Microsoft Graph app manifest
 
 If you would like to configure Microsoft Graph App Manifest programmatically, you can either use [Microsoft Graph API](/graph/api/resources/application) or [Microsoft Graph PowerShell SDK](/powershell/module/microsoft.graph.applications/?view=graph-powershell-1.0&preserve-view=true).
 
-You can also configure the Microsoft Graph app manifest through the Microsoft Entra admin center. Most attributes can be configured using a UI element in the app registration blade. However, some attributes need to be configured by editing the app manifest directly in Manifest blade. These scenarios include:
-
-- If you registered the app as Microsoft Entra multi-tenant and personal Microsoft accounts, you can't change the supported Microsoft accounts in the UI. Instead, you must use the application manifest editor to change the supported account type.
-
-- To define permissions and roles that your app supports, you must modify the application manifest.
+You can also configure the app manifest through the Microsoft Entra admin center. Most attributes can be configured using a UI element in **App registrations**. However, some attributes need to be configured by editing the app manifest directly in the **Manifest** page. 
 
 ### Configure the app manifest in the Microsoft Entra admin center
 
@@ -170,7 +167,11 @@ Apps that support both personal accounts and Microsoft Entra ID cannot use optio
 Example:
 
 ```json
-    "optionalClaims": null,
+    "optionalClaims":{
+"idToken": [{"@odata.type": "microsoft.graph.optionalClaim"}],
+"accessToken": [{"@odata.type": "microsoft.graph.optionalClaim"}],
+"saml2Token": [{"@odata.type": "microsoft.graph.optionalClaim"}]
+}
 ```
 
 ### identifierUris attribute
@@ -539,11 +540,11 @@ An application manifest has multiple attributes that are referred to as collecti
 
 ### Manifest migration from AAD Graph to Microsoft Graph app manifest
 
-When you upload a previously downloaded app manifest, you may get the following error:
+When you upload a previously downloaded app manifest in Azure AD Graph format, you may get the following error:
 
 "xxx"
 
-This might be due to the migration from AAD Graph to Microsoft Graph app manifest. Firstly, you should check if the app manifest you were trying to upload is an AAD Graph app manifest following the [link]. If it is, you should [convert the AAD Graph app manifest to Microsoft Graph app manifest].
+This might be due to the migration from Azure AD Graph to Microsoft Graph app manifest. Firstly, you should check if the app manifest is in [Azure AD Graph format](migrate-app-manifest.md#how-do-i-tell-the-format-of-my-app-manifest). If it is, you should [convert the app manifest to Microsoft Graph format](migrate-app-manifest.md#convert-an-app-manifest-in-azure-ad-graph-format-to-microsoft-graph-format).
 
 ## Next steps
 
