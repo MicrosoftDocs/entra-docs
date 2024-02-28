@@ -13,16 +13,16 @@ ms.date: 02/28/2024
 ms.author: owenrichards
 ms.reviewer: 
 ms.custom: 
-#Customer intent: As a customer, I intend to understand the Microsoft Authentication Library (MSAL) API and the Microsoft Account (MSA) Server Side API, their parameters, and how to use them in the development of applications that integrate with Microsoft accounts.
+#Customer intent: As a customer, I intend to understand the Microsoft Account (MSA) Server Side API, their parameters, and how to use them in the development of applications that integrate with Microsoft accounts.
 ---
 
 # Microsoft account (MSA) Server Side API Reference
 
-This page serves as a comprehensive reference for the Microsoft Authentication Library (MSAL) API and Microsoft Account (MSA) Server Side API. It provides a detailed overview of the available APIs, their respective parameters, and additional notes. Utilize this guide to gain a deeper understanding of these APIs and effectively leverage their functionalities in your application development process.
+Microsoft accounts (MSA) are a single sign-on web service developed by Microsoft that allows users to log in to websites, applications, and services using a single set of credentials. The Microsoft Account (MSA) Server Side API provides a range of parameters that can be used to customize the authentication process and enhance the user experience. These parameters can be utilized with MSAL on a Windows platform, facilitating the development of Windows applications that integrate seamlessly with users signing in through Microsoft accounts.
 
 ## MSA Server Side API
 
-These are passed to `login.microsoftonline.com` or `login.live.com` as URL parameters, in the format: `login.microsoftonline.com?parametername=value`.
+These are passed to `login.microsoftonline.com` or `login.live.com` as URL parameters, in the format `login.microsoftonline.com?parametername=value`.
 
 | Parameter | Value | Notes |
 | --------- | ----- | ----- |
