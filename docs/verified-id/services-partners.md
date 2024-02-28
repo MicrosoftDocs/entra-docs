@@ -16,7 +16,7 @@ Our Services and solutions partner network extends and accelerates Microsoft Ent
 
 ## Services and solution partner list
 
-You could select a partner from the list and build seamless end-user experiences for onboarding, secure access to critical services, self-service and custom business application scenarios. If you're a Services or solution Partner and would like to be considered into Microsoft Entra Verified ID partner documentation, submit your application [request](https://forms.microsoft.com/r/AGVsXmf4EZ)
+You could select a partner from the list and build seamless end-user experiences for onboarding, secure access to critical services, self-service and custom business application scenarios. If you're a Services or solution Partner and would like to be considered into Microsoft Entra Verified ID partner documentation, submit your application [request](https://forms.microsoft.com/r/AGVsXmf4EZ).
 
 | Services and solution partner | Website |
 |:-------------------------|:--------------|
