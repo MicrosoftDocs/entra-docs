@@ -2145,6 +2145,8 @@
         href: productboard-tutorial.md
       - name: Productive
         href: productive-tutorial.md  
+      - name: ProductPlan
+        href: productplan-tutorial.md
       - name: Profit.co
         href: profitco-saml-app-tutorial.md
       - name: ProjectPlace
