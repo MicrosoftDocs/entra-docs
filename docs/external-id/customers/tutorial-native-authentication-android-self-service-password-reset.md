@@ -38,10 +38,6 @@ To add self-service password reset flow to your Android application, you need a 
 - A UI to submit one-time passcode.
 - A UI to submit new password.
 - Submit button.
-
-The following wire frame shows a high-level view of the self-service password reset flow: 
-
-:::image type="content" source="media/native-authentication/android/SSPR-flow-image.png" alt-text="Screenshot that illustrates Self-service password reset flow."::: 
  
 1. When users forget their passwords, they need a form to input their usernames (email addresses). To handle the request when the user selects the **Forget Password** button, use the following code snippet:  
  

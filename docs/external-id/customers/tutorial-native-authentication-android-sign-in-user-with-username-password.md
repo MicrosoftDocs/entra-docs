@@ -32,10 +32,6 @@ In this tutorial, you learn how to:
 
 ## Sign in user with username and password 
 
-The following wire frame shows a high-level view of the sign in user with username and password flow: 
-
-:::image type="content" source="media/native-authentication/android/sign-in-email-password.png" alt-text="Screenshot that illustrates sign in a user with a username and password."::: 
-
 To sign in the sign user using username and password, use the following code snippet: 
 
 ```kotlin

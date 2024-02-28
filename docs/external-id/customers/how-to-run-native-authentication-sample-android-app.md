@@ -35,26 +35,7 @@ In this article, you learn how to:
  
 ## Register an application
  
-To enable your application to sign in users with Microsoft Entra, Microsoft Entra External ID for customers must be made aware of the application you create. The app registration establishes a trust relationship between the app and Microsoft Entra. When you register an application, Microsoft Entra External ID generates a unique identifier known as an **Application (client) ID**, a value used to identify your app when creating authentication requests.  
-
-The following steps show you how to register your app in the Microsoft Entra admin center:  
- 
-1. Sign in to the <a href="https://entra.microsoft.com/" target="_blank">Microsoft Entra admin center</a> as at least an [Application Developer](../../identity/role-based-access-control/permissions-reference.md#application-developer). 
-1. If you have access to multiple tenants, make sure you use the directory that contains your Microsoft Entra External ID for customers tenant:  
- 
-   1. Select the **Directories + subscriptions** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the toolbar.  
-   1. On the **Portal settings | Directories + subscriptions** page, find your Microsoft Entra External ID for customers directory in the **Directory name** list, and then select **Switch**.  
- 
-1. On the sidebar menu, select **Identity**. 
-1. Select **Applications** > **App Registrations**. 
-1. Select **+ New registration**. 
-1. In the **Register an application** page that appears: 
- 
-   1. Enter a meaningful application **Name** that is displayed to users of the app, for example _ciam-client-app_.  
-   1. Under **Supported account types**, select **Accounts in this organizational directory only**.  
- 
-1. Select **Register**.  
-1. The application's **Overview** pane displays upon successful registration. Record the **Application (client) ID** to be used in your application source code. 
+[!INCLUDE [register client app](../customers/includes/register-app/register-client-app-common.md)]
  
 ## Enable public client and native authentication flows 
   

@@ -32,11 +32,7 @@ In this tutorial, you learn how to:
  
 ## Sign in after sign-up  
  
-This is an advanced version of the sign in flows [earlier described](tutorial-native-authentication-android-sign-in-user-with-username-password.md), which has the added benefit of automatically signing in after successfully signing up.  
-
-The following wire frame shows a high-level view of the sign in after sign-up  flow: 
-
-:::image type="content" source="media/native-authentication/android/android-sign-in-after-sign-up-flow.png" alt-text="Screenshot that illustrates how to sign in user after sign-up."::: 
+This is an advanced version of the sign in flows [earlier described](tutorial-native-authentication-android-sign-in-user-with-username-password.md), which has the added benefit of automatically signing in after successfully signing up.
  
 The `SignUpResult.Complete` returns `SignInContinuationState` object. And `SignInContinuationState` provides access to `signIn()` method.  
  
