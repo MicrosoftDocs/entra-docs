@@ -20,13 +20,13 @@ ms.author: thwimmer
 This tutorial describes the steps you need to do in both Asana and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Asana](https://www.asana.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
-## Capabilities Supported
+## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Asana.
 > * Remove users in Asana when they do not require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Asana.
 > * Provision groups and group memberships in Asana.
-> * [Single sign-on](asana-tutorial.md) to Asana(recommended).
+> * [Single sign-on](asana-tutorial.md) to Asana (recommended).
 
 ## Prerequisites
 
