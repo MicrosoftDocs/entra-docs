@@ -54,7 +54,7 @@ For local testing of a URL, you'd get one similar to https://localhost:7071/api/
 AuthenticationEventResponse -> Whatever is coming in, parse it to the correct response
 -->
 
-The authentication events trigger for Azure Functions allows you to implement a custom extension to handle Microsoft Entra ID authentication events. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events and provides the developer with
+The authentication events trigger for Azure Functions allows you to implement a custom extension to handle Microsoft Entra ID authentication events. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events.
 
 - Token validation for securing the API call
 - Object model, typing and IDE intellisense
