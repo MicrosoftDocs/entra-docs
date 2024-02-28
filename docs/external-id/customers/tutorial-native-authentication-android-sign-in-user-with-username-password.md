@@ -95,4 +95,4 @@ if (actionResult is SignInResult.Complete) -> {
 
 ## Next steps 
 
-[Tutorial: Self-service password reset](tutorial-native-authentication-android-self-service-password-reset.md) 
+[Tutorial: Sign in user after sign-up in Android](tutorial-native-authentication-android-sign-in-after-sign-up.md) 

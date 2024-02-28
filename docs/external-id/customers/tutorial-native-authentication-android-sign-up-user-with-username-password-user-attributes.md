@@ -122,4 +122,4 @@ if (actionResult is SignUpError && actionResult.isInvalidAttributes()) {
   
 ## Next steps  
   
-[Tutorial: Sign in user after sign up](tutorial-native-authentication-android-sign-in-after-sign-up.md) 
+[Tutorial: Sign up user with username and password](tutorial-native-authentication-android-sign-up-user-with-username-password.md) 
