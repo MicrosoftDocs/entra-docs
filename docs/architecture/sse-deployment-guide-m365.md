@@ -140,4 +140,5 @@ To test source IP address restoration, Global Secure Access signaling for Condit
 [!INCLUDE [Public preview important note](~/global-secure-access/includes/public-preview-important-note.md)]
 
 ## Next Steps
-Deploy and verify [Microsoft Entra Private Access](sse-deployment-guide-private-access.md)
+[Deploy and verify Microsoft Entra Private Access](sse-deployment-guide-private-access.md)
+[Deploy and verify Microsoft Entra Internet Access](sse-deployment-guide-internet-access.md)
