@@ -86,6 +86,14 @@ The application uses the [Implicit Grant Flow](~/identity-platform/v2-oauth2-imp
     //   scopes: ["openid", "profile"],
     //   loginHint: "example@domain.net"
     // };
+
+    /**
+    * Define login request
+    * Documentation: https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/login-user.md
+    */
+    const loginRequest = {
+        scopes: ["user.read"]
+    };
     
     // exporting config object for jest
     if (typeof exports !== 'undefined') {
@@ -200,6 +208,17 @@ The application uses *authPopup.js* to handle the authentication flow when the u
     // Create the main myMSALObj instance
     // configuration parameters are located at authConfig.js
     const myMSALObj = new msal.PublicClientApplication(msalConfig);
+
+    /**
+    * Initialize MSAL
+    * Docuentation: https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/initialization.md
+    */
+    myMSALObj.initialize().then(() => {
+        // Redirect: once login is successful and redirects with tokens, call Graph API
+        myMSALObj.handleRedirectPromise().then(handleResponse).catch(err => {
+            console.error(err);
+        });
+    })
     
     let username = "";
     
