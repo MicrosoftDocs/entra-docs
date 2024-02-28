@@ -1,6 +1,6 @@
 ---
 title: Understanding the Microsoft Graph app manifest
-description: Describes the Microsoft Entra app manifest, which represents an application's identity configuration in a Microsoft Entra tenant.
+description: Describes the Microsoft Entra app manifest in Microsoft Graph format, which represents an application's identity configuration in a Microsoft Entra tenant.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -20,7 +20,7 @@ The application manifest contains all the attributes and their values of an app 
 
 A Microsoft Graph app manifest is a JSON object that represents an app registration. It is also called the [Microsoft Graph Application resource type](/graph/api/resources/application) or Microsoft Graph app object (application object). It contains all the attributes and their values of an app registration.
 
-The application object you receive using [Microsoft Graph Get Application method](/graph/api/application-get&tabs=http) is the same JSON object you see in **App Registration manifest** page in the [Microsoft Entra admin center](https://entra.microsoft.com).
+The application object you receive using [Microsoft Graph Get Application method](/graph/api/application-get) is the same JSON object you see in **App Registration manifest** page in the [Microsoft Entra admin center](https://entra.microsoft.com).
 
 > [!NOTE]
 > Application manifests for Microsoft account (MSA) apps continue to use the Azure AD Graph format.  If you need to edit an app manifest for a MSA app in the Microsoft Entra admin center, see [Microsoft Entra app manifest (Azure AD Graph format)](reference-app-manifest.md).
@@ -544,7 +544,7 @@ When you upload a previously downloaded app manifest in Azure AD Graph format, y
 
 "xxx"
 
-This might be due to the migration from Azure AD Graph to Microsoft Graph app manifest. Firstly, you should check if the app manifest is in [Azure AD Graph format](migrate-app-manifest.md#how-do-i-tell-the-format-of-my-app-manifest). If it is, you should [convert the app manifest to Microsoft Graph format](migrate-app-manifest.md#convert-an-app-manifest-in-azure-ad-graph-format-to-microsoft-graph-format).
+This might be due to the migration from Azure AD Graph to Microsoft Graph app manifest. Firstly, you should check if the app manifest is in [Azure AD Graph format](azure-ad-graph-app-manifest-deprecation.md#how-do-i-tell-the-format-of-my-app-manifest). If it is, you should [convert the app manifest to Microsoft Graph format](azure-ad-graph-app-manifest-deprecation.md#convert-an-app-manifest-in-azure-ad-graph-format-to-microsoft-graph-format).
 
 ## Next steps
 

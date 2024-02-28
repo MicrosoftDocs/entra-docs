@@ -6,7 +6,7 @@ author: rwike77
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.topic: reference
+ms.topic: conceptual
 ms.workload: identity
 ms.date: 02/27/2024
 ms.author: ryanwi
@@ -94,8 +94,10 @@ Starting [date2], the Microsoft Entra admin center will no longer support app ma
 
 1. Go through each attribute in Azure AD Graph formatted app manifest one by one and edit the corresponding attribute in the Microsoft Graph formatted app manifest to match its value.
 
-    1. If the attribute is listed in [Attribute differences between Azure AD Graph manifest and Microsoft Graph manifest](link), you need to understand the syntax and semantics of old and new attributes so that you can successfully edit the new attribute's value in Microsoft Graph app manifest.
+    1. If the attribute is listed in [Attribute differences between Azure AD Graph manifest and Microsoft Graph manifest](#attribute-differences-between-azure-ad-graph-and-microsoft-graph-formats), you need to understand the syntax and semantics of old and new attributes so that you can successfully edit the new attribute's value in Microsoft Graph app manifest.
 
-    1. If the attribute is not listed in [Attribute differences between Azure AD Graph manifest and Microsoft Graph manifest](link) but you cannot find a corresponding attribute in Microsoft Graph app manifest, this attribute is likely to have been deprecated and you can discard this attribute.
+    1. If the attribute is not listed in [Attribute differences between Azure AD Graph manifest and Microsoft Graph manifest](#attribute-differences-between-azure-ad-graph-and-microsoft-graph-formats) but you cannot find a corresponding attribute in Microsoft Graph app manifest, this attribute is likely to have been deprecated and you can discard this attribute.
 
     1. For all other attributes, you can copy the value of the attribute in Azure AD Graph app manifest and paste it into the value of the attribute in Microsoft Graph app manifest.
+
+## Next steps
