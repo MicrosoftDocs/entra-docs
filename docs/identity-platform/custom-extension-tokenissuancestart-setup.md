@@ -313,4 +313,4 @@ The code reads the incoming JSON object and Microsoft Entra ID sends the [JSON o
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Create a custom authentication extension](./DRAFT-custom-extension-tokenissuancestart-configuration.md)
+> [Create a custom authentication extension](./custom-extension-tokenissuancestart-configuration.md)

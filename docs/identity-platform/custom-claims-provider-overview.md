@@ -36,7 +36,7 @@ Use a custom claims provider for the following scenarios:
 
 An event listener is a procedure that waits for an event to occur. The custom authentication extension uses the **token issuance start** event listener. The  event is triggered when a token is about to be issued to your application. When the event is triggered the custom authentication extension REST API is called to fetch attributes from external systems.
 
-For an example using a custom claims provider with the **token issuance start** event listener, check out the [get started with custom claims providers](custom-extension-get-started.md) article.
+To set up a custom claims provider, you'll need to [create a REST API with a token issuance start event](./custom-extension-tokenissuancestart-setup.md), then [configure a custom claim provider for a token issuance event](./custom-extension-tokenissuancestart-configuration.md).
 
 > [!TIP]
 > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=TokenAugmentation)
@@ -62,6 +62,6 @@ The authentication events trigger for Azure Functions allows you to implement a 
 
 ## See also
 
-- Learn how to [create and register a custom claims provider](custom-extension-get-started.md) with a sample OpenID Connect application.
-- If you already have a custom claims provider registered, you can configure a [SAML application](custom-extension-configure-saml-app.md) to receive tokens with claims sourced from an external store.
-- Learn more about custom claims providers with the [custom claims provider reference](custom-claims-provider-reference.md) article.
+- [Create a REST API with a token issuance start event](custom-extension-tokenissuancestart-setup.md)
+- [Configure a SAML app to receive tokens with claims from an external store](custom-extension-configure-saml-app.md)
+- [Custom claims provider reference](custom-claims-provider-reference.md) article.

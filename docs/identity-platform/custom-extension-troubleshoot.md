@@ -17,7 +17,7 @@ titleSuffix: Microsoft identity platform
 
 # Troubleshoot your custom claims provider API (preview)
 
-Authentication events and [custom claims providers](custom-claims-provider-overview.md) allow you to customize the Microsoft Entra authentication experience by integrating with external systems.  For example, you can create a custom claims provider API and configure an [OpenID Connect app](./custom-extension-get-started.md) or [SAML app](custom-extension-configure-saml-app.md) to receive tokens with claims from an external store.
+Authentication events and [custom claims providers](custom-claims-provider-overview.md) allow you to customize the Microsoft Entra authentication experience by integrating with external systems.  For example, you can create a custom claims provider API and configure an [OpenID Connect app](./custom-extension-tokenissuancestart-configuration.md) or [SAML app](custom-extension-configure-saml-app.md) to receive tokens with claims from an external store.
 
 ## Error behavior
 
@@ -86,7 +86,7 @@ Use the following table to diagnose an error code.
 ## Call your REST API directly
 
 Your REST API is protected by a Microsoft Entra access token. You can test your API by;
-- Obtaining an access token with an [application registration](custom-extension-get-started.md#22-grant-admin-consent) associated with the custom authentiction extensions
+- Obtaining an access token with an [application registration](custom-extension-tokenissuancestart-configuration.md#12-grant-admin-consent) associated with the custom authentiction extensions
 - Test your API locally using Postman. 
 
 # [Obtain an access token](#tab/obtain-an-access-token)
@@ -95,8 +95,8 @@ After you acquire an access token, pass it the HTTP `Authorization` header. To o
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Application registrations**.
-1. Select the **Azure Functions authentication events API** app registration [you created previously](custom-extension-get-started.md#step-2-register-a-custom-authentication-extension).
-1. Copy the [application ID](custom-extension-get-started.md#22-grant-admin-consent).
+1. Select the *Azure Functions authentication events API* app registration, [you created previously](custom-extension-tokenissuancestart-configuration.md#step-1-register-a-custom-authentication-extension).
+1. Copy the [application ID](custom-extension-tokenissuancestart-configuration.md#12-grant-admin-consent).
 1. If you haven't created an app secret, follow these steps:
     1. Select **Certificates & secrets** > **Client secrets** > **New client secret**.
     1. Add a description for your client secret.
@@ -122,8 +122,8 @@ After you acquire an access token, pass it the HTTP `Authorization` header. To o
     |`scope`| The **Application ID URI** of your application, then add `.default`. For example, `api://contoso.azurewebsites.net/11111111-0000-0000-0000-000000000000/.default`|
 
 1. Run the HTTP query and copy the `access_token` into the <https://jwt.ms> web app.
-1. Compare the `iss` with the issuer name you [configured in your API](custom-extension-get-started.md#step-5-protect-your-azure-function).
-1. Compare the `aud` with the client ID you [configured in your API](custom-extension-get-started.md#step-5-protect-your-azure-function).
+1. Compare the `iss` with the issuer name you [configured in your API](custom-extension-tokenissuancestart-configuration.md#step-4-protect-your-azure-function).
+1. Compare the `aud` with the client ID you [configured in your API](tokenissuancestart-configuration.md#step-4-protect-your-azure-function).
 
 # [Postman](#tab/postman)
 
@@ -139,7 +139,7 @@ To test your API directly from Postman, follow these steps:
 >
 > Once you've finished testing, ensure that you turn token validation back on.
 
-1. In your REST API, disable the `appid` or `azp` [claim validation](custom-extension-overview.md#protect-your-rest-api). Check out how to [edit the function API](custom-extension-get-started.md#12-edit-the-function) you created earlier.
+1. In your REST API, disable the `appid` or `azp` [claim validation](custom-extension-overview.md#protect-your-rest-api). Check out how to [edit the function API](custom-extension-tokenissuancestart-setup.md) you created earlier.
 1. In Postman, create new HTTP request.
 1. Set the **HTTP method** to `POST`.
 1. In the **Body**, select **Raw** and then select **JSON**.
@@ -225,8 +225,8 @@ One of the most common issues is that your custom claims provider API doesn't re
 1. If you use a cloud provider to host your API, use a hosting plan that keeps the API always "warm". For Azure Functions, it can be either [the Premium plan or Dedicated plan](/azure/azure-functions/functions-scale).
 1. [Run automated integration tests](test-automate-integration-testing.md) for your authentications. You can also use Postman or other tools to test just your API performance.
 
-## Next steps
+## See also
 
-- Learn how to [create and register a custom claims provider](custom-extension-get-started.md) with a sample OpenID Connect application.
-- If you already have a custom claims provider registered, you can configure a [SAML application](custom-extension-configure-saml-app.md) to receive tokens with claims sourced from an external store.
-- Learn more about custom claims providers with the [custom claims provider reference](custom-claims-provider-reference.md) article.
+- [Create a REST API with a token issuance start event](custom-extension-tokenissuancestart-setup.md)
+- [Configure a SAML app to receive tokens with claims from an external store](custom-extension-configure-saml-app.md)
+- [Custom claims provider reference](custom-claims-provider-reference.md) article.

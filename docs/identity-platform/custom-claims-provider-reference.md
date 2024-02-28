@@ -14,7 +14,7 @@ titleSuffix: Microsoft identity platform
 #Customer intent: As a developer, I want to learn about custom authentication extensions so that I can augment tokens with claims from an external identity system or role management system.
 ---
 
-# Custom claims providers
+# Custom claims provider reference
 
 In this reference article, you can learn about the REST API schema and claims mapping policy structure for custom claim provider events.
 
