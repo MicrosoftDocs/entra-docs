@@ -53,7 +53,7 @@ An enterprise can setup Entra Verified ID integration by either:
 
 An enterprise could add a webhook to send the response of Verified ID verification with [Face Check](using-facecheck.md) to the ServiceDesk tool. You can refer this example of [adding webhook](/microsoftteams/platform/webhooks-and-connectors/what-are-webhooks-and-connectors) to a Teams channel. This GitHub sample deploys a verification webapp on Azure using Azure App Service. 
 
-An enterprise can add self-service automation services like generate a [Temporary Access Pass](/identity/authentication/howto-authentication-temporary-access-pass.md) post successful verification of Verified ID taking claims from Verified ID. GitHub [sample](https://github.com/Azure-Samples/active-directory-verifiable-credentials-dotnet/tree/main/5-onboard-with-tap) explains this self-service automation process.
+An enterprise can add self-service automation services like generate a [Temporary Access Pass](~/identity/authentication/howto-authentication-temporary-access-pass.md) post successful verification of Verified ID taking claims from Verified ID. GitHub [sample](https://github.com/Azure-Samples/active-directory-verifiable-credentials-dotnet/tree/main/5-onboard-with-tap) explains this self-service automation process.
 
 If you are a **Managed Services provider (MSP)** or **Cloud Solutions Provider (CSP)**, you could also add this pattern to your existing Service Desk process. Deploy the verification flow inline or as a custom web application. For the presentation flow, add acceptedissuers field in the payload and specify the decentralized identifier’s (did’s) for your customers to verify VerifiedEmployee with Face Check.
 
