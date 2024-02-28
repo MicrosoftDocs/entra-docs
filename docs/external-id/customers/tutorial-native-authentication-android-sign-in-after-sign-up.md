@@ -102,4 +102,4 @@ private fun displayAccount(accountState: AccountState) {
 ``` 
  
 ## Next steps  
-[Tutorial: Reset password of a user](tutorial-native-authentication-android-self-service-password-reset.md)  
+[Tutorial: Self-service password reset](tutorial-native-authentication-android-self-service-password-reset.md)  

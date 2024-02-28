@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Prepare your Android app for native authentication  
 
-This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) native auth SDK framework to your Android app.   
+This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) native authentication SDK framework to your Android app.   
  
 In this tutorial, you learn how to: 
  
