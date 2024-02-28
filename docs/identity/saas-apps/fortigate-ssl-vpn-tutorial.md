@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 02/12/2024
 ms.author: jeedes
 ---
 
@@ -97,7 +97,7 @@ Follow these steps to enable Microsoft Entra SSO in the Azure portal:
 
 1. The claims required by FortiGate SSL VPN are shown in the following table. The names of these claims must match the names used in the **Perform FortiGate command-line configuration** section of this tutorial. Names are case-sensitive.
 
-   | Name |  Source attribute|
+   | Name |  Source attribute |
    | ------------ | --------- |
    | username | user.userprincipalname |
    | group | user.groups |

@@ -118,12 +118,7 @@ Initiate the APM Guided Configuration to launch the Easy Button template.
 
 1. Navigate to **Access > Guided Configuration > Microsoft Integration** and select **Microsoft Entra Application**.
 
-
-    ![Screenshot of the Microsoft Entra Application option on Guided Configuration.](./media/f5-big-ip-easy-button-ldap/easy-button-template.png)
-
 2. Review the configuration steps and select **Next**
-
-    ![Screenshot of the Next option.](./media/f5-big-ip-easy-button-ldap/config-steps.png)
 
 3. Follow the steps to publish your application.
 
@@ -179,16 +174,10 @@ This section defines properties to manually configure a new BIG-IP SAML applicat
 
 For this scenario, select **F5 BIG-IP APM Azure AD Integration > Add.**
 
-
-   ![Screenshot of the Add option, under Configuration Properties, on Azure Configuration.](./media/f5-big-ip-kerberos-easy-button/azure-config-add-app.png)
-
 #### Azure Configuration
 
 1. Enter a **Display Name** for the app that BIG-IP creates in your Microsoft Entra tenant, and the icon in [MyApps portal](https://myapplications.microsoft.com/).
 2. Leave the **Sign On URL** (optional) blank to enable IdP initiated sign-on.
-
-    ![Screenshot of the Display Name entry, under Configuration Properties, on Azure Configuration.](./media/f5-big-ip-kerberos-easy-button/azure-config-display-name.png)
-
 3. Select the **refresh** icon next to the **Signing Key** and **Signing Certificate** to locate the certificate you imported.
 4. In **Signing Key Passphrase**, enter the certificate password.
 5. Enable **Signing Option** (optional) to ensure BIG-IP accepts tokens and claims signed by Microsoft Entra ID.
@@ -210,8 +199,6 @@ The AD infrastructure is based on a .com domain suffix used internally and exter
 #### Additional User Attributes
 
 The **Additional User Attributes** tab supports various distributed systems requiring attributes stored in other directories, for session augmentation. Attributes fetched from an LDAP source can be injected as SSO headers to help control access based on roles, Partner IDs, etc.
-
-   ![Screenshot of Additional User Attributes.](./media/f5-big-ip-kerberos-easy-button/additional-user-attributes.png)
 
 >[!NOTE] 
 >This feature has no correlation to Microsoft Entra ID but is another source of attributes.
@@ -433,7 +420,7 @@ If troubleshooting kerberos SSO issues, be aware of the following concepts.
 * Ensure the hostname for the domain controller and web application are resolvable in DNS
 * Ensure there are no duplicate SPNs in your AD environment: execute the following query at the command line on a domain PC: setspn -q HTTP/my_target_SPN
 
-You can refer to our [App Proxy guidance](~/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md) to validate an IIS application is configured for KCD. See also the AskF5 article, [Kerberos single sign on method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html).
+You can refer to our [application proxy guidance](~/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md) to validate an IIS application is configured for KCD. See also the AskF5 article, [Kerberos single sign on method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html).
 
 ### Log analysis: increase verbosity
 

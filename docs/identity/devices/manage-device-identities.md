@@ -77,7 +77,8 @@ There are two ways to delete a device:
 
 > [!IMPORTANT]
 > - You must be a Cloud Device Administrator, Intune Administrator, Windows 365 Administrator or Global Administrator in Microsoft Entra ID to delete a device.
-> - Printers and Windows Autopilot devices can't be deleted in Microsoft Entra ID.
+> - Printers can't be deleted in Microsoft Entra ID before they are deleted from Universal Print.
+> - Windows Autopilot devices can't be deleted in Microsoft Entra ID before they are deleted from Intune.
 > - Deleting a device:
 >    - Prevents it from accessing your Microsoft Entra resources.
 >    - Removes all details attached to the device. For example, BitLocker keys for Windows devices.  

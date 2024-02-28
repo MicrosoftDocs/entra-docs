@@ -8,6 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 08/21/2023
 ms.author: jricketts
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Common considerations for multi-tenant user management
 
@@ -100,7 +101,7 @@ Follow this recommended approach to achieve the goal:
 
 - Invite guest users.
 - Unhide them from the GAL.
-- Disable them by [blocking them from sign-in](/powershell/module/azuread/set-azureaduser).
+- Disable them by [blocking them from sign-in](/powershell/module/microsoft.graph.users/update-mguser).
 
 A mail contact object can't convert to a user object. Therefore, properties associated with a mail contact object can't transfer (such as group memberships and other resource access). Using a mail contact object to represent a user comes with the following challenges.
 
@@ -200,19 +201,8 @@ For example:
 
 ```Set-MailUser externaluser1_contoso.com#EXT#@fabricam.onmicrosoft.com\ -HiddenFromAddressListsEnabled:\$false```
 
-- External users may be unhidden using [Azure AD PowerShell](/powershell/module/azuread/). You can execute the [Set-AzureADUser](/powershell/module/azuread/set-azureaduser) PowerShell cmdlet to set the **ShowInAddressList** property to a value of **\$true.** 
-    
-For example:
+External users may be unhidden in the Microsoft 365 admin center.
 
-```Set-AzureADUser -ObjectId [ExternalUserUPN] -ShowInAddressList:\$true\```
-
-Where **ExternalUserUPN** is the calculated **UserPrincipalName.**
-
-For example:
-
-```Set-AzureADUser -ObjectId externaluser1_contoso.com#EXT#@fabricam.onmicrosoft.com\ -ShowInAddressList:\$true```
-
-- There's a timing delay when you update attributes and must perform additional automation afterwards, which is a result of the backend sync that occurs between Microsoft Entra ID and Exchange Online. Make sure the user is visible in the GAL by checking that the Microsoft Entra user property **ShowInAddressList** aligns with the Exchange Online PowerShell property **HiddenFromAddressListsEnabled** (that are reverse of each other) before continuing  operations.
 - You can only set updates to Exchange-specific properties (such as the **PrimarySmtpAddress**, **ExternalEmailAddress**, **EmailAddresses**, and **MailTip**) using [Exchange Online PowerShell](/powershell/exchange/exchange-online-powershell-v2). The Exchange Online Admin Center doesn't allow you to modify the attributes using the GUI.
 
 As shown above, you can use the [Set-MailUser](/powershell/module/exchange/set-mailuser) PowerShell cmdlet for mail-specific properties. There are user properties that you can modify with the [Set-User](/powershell/module/exchange/set-user) PowerShell cmdlet. You can modify most properties with the Azure AD Graph APIs.

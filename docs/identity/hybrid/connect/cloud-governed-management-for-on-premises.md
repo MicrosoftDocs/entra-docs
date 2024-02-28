@@ -58,7 +58,7 @@ For many organizations, the first step in managing access from the cloud for on-
 
 After a single sign-on to Microsoft Entra ID, users can access both cloud and on-premises applications through an external URL or an internal application portal. For example, Application Proxy  provides remote access and single sign-on to Remote Desktop, SharePoint, as well as apps such as Tableau and Qlik, and line of business (LOB) applications. Furthermore, Conditional Access policies can include displaying the [terms of use](~/identity/conditional-access/terms-of-use.md) and [ensuring the user has agreed to them](~/identity/conditional-access/require-tou.md) before being able to access an application.
 
-![App Proxy architecture](media/cloud-governed-management-for-on-premises/image2.png)
+![Application proxy architecture](media/cloud-governed-management-for-on-premises/image2.png)
 
 * **Automatic lifecycle management for Active Directory accounts**
 

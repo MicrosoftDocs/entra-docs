@@ -32,17 +32,18 @@ If you're using Microsoft Entra Connect Sync Group Writeback v2, you need to mov
 >[!NOTE]
 > If you were previously writing Microsoft 365 groups back to on-premises Active Directory as universal distribution groups, they appear in the Azure portal as not enabled for writeback on both the **Groups** page and the properties page for a group. These pages display a new property introduced for the preview, `writeback enabled`. This property isn't set by the current version of Group Writeback to ensure backward compatibility with the legacy version of Group Writeback and to avoid breaking existing customer setups.
 
-To understand the behavior of `No writeback` in the portal, check the properties of the group in Microsoft Graph.
+To understand the behavior of `No writeback` in the portal, you can view the writeback state via Microsoft Graph. For more information, see [Get group](/graph/api/group-get).
 
 | Portal | Microsoft Graph| Behavior|
 |--------|---------|---------|
-| No writeback | isEnabled=false | Group isn't written back to on-premises Active Directory.|
-| No writeback | IsEnabled = null & onPremisesGroupType = null | If it's a Microsoft 365 group, it's written back to on-premises Active Directory as a distribution group. </br> If it's a Microsoft Entra security group, it isn't written back to on-premises Active Directory. |
+| Writeback | isEnabled = null or true | The group will be written back. |
+| No writeback | isEnabled = false | The group won't be written back.| 
+| No writeback | IsEnabled = null & onPremisesGroupType = null | If it's a Microsoft 365 group, it's written back to on-premises Active Directory as a distribution group. </br> If it's a Microsoft Entra security group, it's written back to on-premises Active Directory. |
 
 By default, the **Group writeback state** of groups is set to **No writeback**. This means:
 
 - **Microsoft 365 groups**: If the group is ```IsEnabled = null``` and ```onPremisesGroupType = null```, to ensure backward compatibility with older versions of Group Writeback, the group is written back to on-premises Active Directory as a distribution group.
-- **Microsoft Entra security groups**: If the group is ```IsEnabled = null``` and ```onPremisesGroupType = null```, the group isn't written back to on-premises Active Directory.
+- **Microsoft Entra security groups**: If the group is ```IsEnabled = null``` and ```onPremisesGroupType = null```, the group is written back to on-premises Active Directory.
 
 ## Show writeback columns
 

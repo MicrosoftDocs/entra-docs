@@ -5,7 +5,7 @@ description: Microsoft Entra ID Protection Glossary
 
 ms.service: entra-id-protection
 
-ms.topic: reference
+ms.topic: glossary
 ms.date: 10/18/2019
 
 ms.author: joflore

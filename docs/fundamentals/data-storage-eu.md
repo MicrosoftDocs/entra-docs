@@ -8,9 +8,11 @@ ms.author: cmulligan
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 08/17/2023
+ms.date: 02/16/2024
 ms.custom: it-pro, references-regions
 ms.collection: M365-identity-device-management
+
+#Customer Intent: As an IT admin, I want to learn about where my European team’s data is stored and processed.
 ---
 
 # Customer data storage and processing for European customers in Microsoft Entra ID

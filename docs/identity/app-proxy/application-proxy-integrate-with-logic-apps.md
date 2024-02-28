@@ -25,7 +25,7 @@ The following diagram shows a traditional way to publish on-premises APIs for ac
 
 The following diagram shows how you can use Microsoft Entra application proxy to securely publish APIs for use with Logic Apps (or other Azure Cloud services) without opening any incoming ports:
 
-![Diagram that shows Logic App to API connection via Azure Application Proxy.](./media/application-proxy-integrate-with-logic-apps/azure-logic-app-to-api-connection-app-proxy.png)
+![Diagram that shows Logic App to API connection via Azure application proxy.](./media/application-proxy-integrate-with-logic-apps/azure-logic-app-to-api-connection-app-proxy.png)
 
 The Microsoft Entra application proxy and associated connector facilitate secure authorization and integration to your on-premises services without additional configuration to your network security infrastructure.  
 
@@ -35,7 +35,7 @@ To follow this tutorial, you need:
 
 - Admin access to an Azure directory, with an account that can create and register apps
 - The *Logic App Contributor* role (or higher) in an active tenant
-- Azure Application Proxy connector deployed and an application configured as detailed in [Add an on-premises app - Application Proxy in Microsoft Entra ID](./application-proxy-add-on-premises-application.md)
+- Azure application proxy connector deployed and an application configured as detailed in [Add an on-premises app - application proxy in Microsoft Entra ID](./application-proxy-add-on-premises-application.md)
 
 > [!NOTE]
 > While granting a user entitlement and testing the sign on is recommended, it's not required for this guide.
@@ -50,7 +50,7 @@ When a new Enterprise Application is created, a matching App Registration is als
 
 1. From the *App Registrations* window, select the **All applications** tab option
 
-1. Navigate to the application with a matching name to your deployed App Proxy application. For example, if you deployed *Sample App 1* as an Enterprise Application, select the **Sample App 1** registration item
+1. Navigate to the application with a matching name to your deployed application proxy application. For example, if you deployed *Sample App 1* as an Enterprise Application, select the **Sample App 1** registration item
 
     > [!NOTE]
     > If an associated application can't be found, it may have not been automatically created or may have been deleted. A registration can be created using the **New Registration** button.
@@ -160,6 +160,6 @@ When a new Enterprise Application is created, a matching App Registration is als
 
 ## See Also
 
-- [How to configure an Application Proxy application](application-proxy-add-on-premises-application.md)
+- [How to configure an application proxy application](application-proxy-add-on-premises-application.md)
 - [Access on-premises APIs with Microsoft Entra application proxy](./application-proxy-secure-api-access.md)
 - [Common scenarios, examples, tutorials, and walkthroughs for Azure Logic Apps](/azure/logic-apps/logic-apps-examples-and-scenarios)

@@ -96,11 +96,9 @@ items:
   - name: Support access requests
     expanded: false
     items:
-      - name: About support access requests
+      - name: What are support access requests (preview)?
         href: concept-support-access-requests.md
-      - name: Approve support access requests
-        href: how-to-approve-support-access-requests.md
-      - name: Manage support access requests
+      - name: Approve and manage support access requests (preview)
         href: how-to-manage-support-access-requests.md
       - name: View support access request activity logs
         href: how-to-view-support-access-request-logs.md

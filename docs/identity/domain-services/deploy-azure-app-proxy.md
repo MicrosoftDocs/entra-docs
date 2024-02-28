@@ -46,11 +46,11 @@ To create a VM for the Microsoft Entra application proxy connector, complete the
 
 ## Download the Microsoft Entra application proxy connector
 
-Perform the following steps to download the Microsoft Entra application proxy connector. The setup file you download is copied to your App Proxy VM in the next section.
+Perform the following steps to download the Microsoft Entra application proxy connector. The setup file you download is copied to your application proxy VM in the next section.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/azure/active-directory/roles/permissions-reference#global-administrator).
 1. Search for and select **Enterprise applications**.
-1. Select **Application proxy** from the menu on the left-hand side. To create your first connector and enable App Proxy, select the link to **download a connector**.
+1. Select **Application proxy** from the menu on the left-hand side. To create your first connector and enable application proxy, select the link to **download a connector**.
 1. On the download page, accept the license terms and privacy agreement, then select **Accept terms & Download**.
 
     ![Download the Microsoft Entra application proxy connector](./media/app-proxy/download-app-proxy-connector.png)
@@ -90,7 +90,7 @@ For more information, see [Configure Kerberos constrained delegation (KCD) in Mi
 > [!NOTE]
 > You must be signed in to a user account that's a member of the *Microsoft Entra DC administrators* group in your Microsoft Entra tenant to run the following PowerShell cmdlets.
 >
-> The computer accounts for your App Proxy connector VM and application VMs must be in a custom OU where you have permissions to configure resource-based KCD. You can't configure resource-based KCD for a computer account in the built-in *Microsoft Entra DC Computers* container.
+> The computer accounts for your application proxy connector VM and application VMs must be in a custom OU where you have permissions to configure resource-based KCD. You can't configure resource-based KCD for a computer account in the built-in *Microsoft Entra DC Computers* container.
 
 Use the [Get-ADComputer][Get-ADComputer] to retrieve the settings for the computer on which the Microsoft Entra application proxy connector is installed. From your domain-joined management VM and logged in as user account that's a member of the *Microsoft Entra DC administrators* group, run the following cmdlets.
 

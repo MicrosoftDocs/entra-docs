@@ -5,13 +5,13 @@ description: Learn about frontline worker management capabilities that are provi
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 12/18/2023
+ms.date: 02/16/2024
 ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
 ms.reviewer: stevebal
 
-#Customer intent: As a manager of frontline workers, I want an intuitive portal so that I can easily onboard new workers and provision shared devices.
+#Customer Intent: As a manager of frontline workers, I want an intuitive portal so that I can easily onboard new workers and provision shared devices.
 ---
 
 # Frontline worker management
