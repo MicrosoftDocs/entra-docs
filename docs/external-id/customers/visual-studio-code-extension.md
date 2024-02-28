@@ -5,10 +5,9 @@ description: Learn how to use the Microsoft Entra External ID extension for Visu
 author: msmimart
 manager: celestedg
 ms.service: entra-external-id
- 
 ms.subservice: customers
-ms.topic: conceptual
-ms.date: 10/27/2023
+ms.topic: quickstart
+ms.date: 02/28/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -43,7 +42,7 @@ You can also open the extension from Visual Studio Code **Welcome** page: Select
 
 ## Get started with your External ID setup
 
-The Microsoft Entra External ID extension creates a tenant in an external configuration, which contains your customer-facing app and directory of external users. You can add this new tenant to your existing Azure subscription. Or if you don’t have an Azure subscription, you can create a trial tenant that doesn't require one ([learn more](https://learn.microsoft.com/en-us/entra/external-id/customers/quickstart-trial-setup)).
+The Microsoft Entra External ID extension creates a tenant in an external configuration, which contains your customer-facing app and directory of external users. You can add this new tenant to your existing Azure subscription. Or if you don’t have an Azure subscription, you can create a trial tenant that doesn't require one ([learn more](quickstart-trial-setup.md)).
 
 1. On the Get Started with Microsoft Entra External ID welcome page, choose an option:
 
@@ -119,7 +118,7 @@ You can configure your app to allow users to sign in with their email and a pass
 
 ## Set up and run a sample app
 
-The extension contains several code samples that demonstrate how authentication is implemented in different application types and development languages. You can choose a single page application (JavaScript, React, Angular) or a	Node.js Browserless App sample from within the extension. The extension automatically configures the application with your sign-in experience.
+The extension contains several code samples that demonstrate how authentication is implemented in different application types and development languages. You can choose a single page application (JavaScript, React, Angular) sample from within the extension. The extension automatically configures the application with your sign-in experience.
 
 1. Select **Set up and run a sample app**.
 
