@@ -32,7 +32,7 @@ Microsoft Entra's native authentication API with email and password allows you t
 
 1. For self-service password reset flow, [enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) for customer users in the customers tenant. 
 
-1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use for test the sign in APIs. Alternatively, you get this test user after you run the sign-up flow.
+1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use for test the sign-in APIs. Alternatively, you get this test user after you run the sign-up flow.
 
 ## Continuation token
 
@@ -861,7 +861,7 @@ You can also specify the **User Input Type** for the attributes you configure. T
 |----------------------|----------------------|
 |   TextBox   |   A single value such as job title, *Software Engineer*.  |
 |   SingleRadioSelect   |  A single value such as Language, *Norwegian*.  |
-|   CheckboxMultiSelect   |  One or multiple values such as a hobby or hobbies, *Dancing* or *Dancing, Swimming,Traveling*. |
+|   CheckboxMultiSelect   |  One or multiple values such as a hobby or hobbies, *Dancing* or *Dancing, Swimming, Traveling*. |
 
 Here's an example request that shows how you submit the attributes values:
 

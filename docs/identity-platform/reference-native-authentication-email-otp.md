@@ -32,7 +32,7 @@ Microsoft Entra's Native authentication API for email OTP allows you to build ap
 
 1. If you haven't already done so, [enable email one-time passcode](../external-id/customers/how-to-enable-password-reset-customers.md#enable-email-one-time-passcode).
 
-1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use for test the sign in APIs. Alternatively, you get this test user after you run the sign-up flow.
+1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use for test the sign-in APIs. Alternatively, you get this test user after you run the sign-up flow.
 
 ## Continuation token
 
@@ -688,7 +688,7 @@ Content-Type: application/x-www-form-urlencoded
 
 To request your security tokens, your app interacts with three endpoints, `/initiate`, `/challenge` and `/token`.
 
-### Sign-in API Endpoints
+### Sign-in API endpoints
 
 Sign in with email OTP uses similar endpoints as email with password as described in [Sign-in API endpoints](reference-native-authentication-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json#sign-in-api-endpoints).
 

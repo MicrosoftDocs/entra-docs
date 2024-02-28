@@ -169,7 +169,7 @@ If your mobile app needs to call an API, you must grant your mobile app API perm
 
 ### Grant API permissions
 
-A daemon app signs-in as itself using the [OAuth 2.0 client credentials flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md). You grant application permissions (app roles), which is required by apps that authenticate as themselves. You must also [register the web API](how-to-register-ciam-app.md?tabs=webapi) that your daemon app needs to call. 
+A daemon app signs in as itself using the [OAuth 2.0 client credentials flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md). You grant application permissions (app roles), which is required by apps that authenticate as themselves. You must also [register the web API](how-to-register-ciam-app.md?tabs=webapi) that your daemon app needs to call. 
 
 [!INCLUDE [register daemon app](../customers/includes/register-app/grant-api-permissions-app-permissions.md)]
 
