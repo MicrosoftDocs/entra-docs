@@ -256,7 +256,7 @@ Use the steps in the example to provision application roles for a user to your a
         }
     ]
 }]
-    ```
+```
 
 The request formats in the PATCH and POST differ. To ensure that POST and PATCH are sent in the same format, you can use the feature flag described [here](./application-provisioning-config-problem-scim-compatibility.md#flags-to-alter-the-scim-behavior). 
 
