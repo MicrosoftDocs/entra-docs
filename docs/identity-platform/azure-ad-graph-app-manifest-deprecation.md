@@ -1,6 +1,6 @@
 ---
 title: Azure AD Graph app manifest deprecation
-description: Describes the deprecation of the Azure AD Graph format for application manifests.
+description: Describes the deprecation of the Azure AD Graph format for application manifests and attribute differences in the new format.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -12,6 +12,8 @@ ms.date: 02/27/2024
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: youazhou
+
+#Customer intent: As an application developer, I want to learn about the new app manifest format, so that I can update the application object and define permissions and roles for the app.
 ---
 
 # Azure AD Graph app manifest deprecation
@@ -20,19 +22,19 @@ Following the Azure AD Graph deprecation, the Azure AD Graph format of applicati
 
 ## Migration date
 
-On [date], the **App registrations** manifest page in the Microsoft Entra Admin center launched a new tabbed experience that allows you to view, edit, upload, download the app manifest in both Azure AD Graph format and Microsoft Graph format.
+On [date], the **App registrations** manifest page in the Microsoft Entra admin center launched a new tabbed experience that allows you to view, edit, upload, download the app manifest in both Azure AD Graph format and Microsoft Graph format.
 
 [Screenshot]
 
-Starting [date], you won't be able to view, save, upload or download the Azure AD Graph app manifest in the **App registrations** manifest page in the Microsoft Entra Admin center.
+Starting [date], you won't be able to view, save, upload, or download the Azure AD Graph app manifest in the **App registrations** manifest page in the Microsoft Entra admin center.
 
 ## How does app manifest migration impact your user experience?
 
-If you do not view, edit or save app manifests, this migration doesn't impact your workflow.
+If you don't view, edit, or save app manifests, this migration doesn't impact your workflow.
 
-If you view or edit app manifests, you will notice the [attribute differences between Azure AD Graph format and Microsoft Graph format](#attribute-differences-between-azure-ad-graph-and-microsoft-graph-formats). We recommend that you start viewing and editing app manifests following the [Microsoft Graph format reference](reference-microsoft-graph-app-manifest.md).
+If you view or edit app manifests, you'll notice the [attribute differences between Azure AD Graph format and Microsoft Graph format](#attribute-differences-between-azure-ad-graph-and-microsoft-graph-formats). We recommend that you start viewing and editing app manifests following the [Microsoft Graph format reference](reference-microsoft-graph-app-manifest.md).
 
-If your workflow requires you to save the manifests in your source repository for use later, you will need to [convert an app manifest in Azure AD Graph format to Microsoft Graph format](#convert-an-app-manifest-in-azure-ad-graph-format-to-microsoft-graph-format).
+If your workflow requires you to save the manifests in your source repository for use later, you'll need to [convert an app manifest in Azure AD Graph format to Microsoft Graph format](#convert-an-app-manifest-in-azure-ad-graph-format-to-microsoft-graph-format).
 
 ## Attribute differences between Azure AD Graph and Microsoft Graph formats
 
@@ -66,7 +68,7 @@ You can tell whether an app manifest is an Azure AD Graph format or Microsoft Gr
 
 ## Convert an app manifest in Azure AD Graph format to Microsoft Graph format
 
-If you have stored an app manifest in Azure AD Graph format and want to convert it to Microsoft Graph formt:
+If you have stored an app manifest in Azure AD Graph format and want to convert it to Microsoft Graph format:
 
 Between [date1] and [date2], you can follow the steps below and use the portal to convert an app manifest in Azure AD Graph format to Microsoft format:
 
@@ -96,7 +98,7 @@ Starting [date2], the Microsoft Entra admin center will no longer support app ma
 
     1. If the attribute is listed in [Attribute differences between Azure AD Graph manifest and Microsoft Graph manifest](#attribute-differences-between-azure-ad-graph-and-microsoft-graph-formats), you need to understand the syntax and semantics of old and new attributes so that you can successfully edit the new attribute's value in Microsoft Graph app manifest.
 
-    1. If the attribute is not listed in [Attribute differences between Azure AD Graph manifest and Microsoft Graph manifest](#attribute-differences-between-azure-ad-graph-and-microsoft-graph-formats) but you cannot find a corresponding attribute in Microsoft Graph app manifest, this attribute is likely to have been deprecated and you can discard this attribute.
+    1. If the attribute isn't listed in [Attribute differences between Azure AD Graph manifest and Microsoft Graph manifest](#attribute-differences-between-azure-ad-graph-and-microsoft-graph-formats) but you can't find a corresponding attribute in Microsoft Graph app manifest, this attribute is likely to have been deprecated and you can discard this attribute.
 
     1. For all other attributes, you can copy the value of the attribute in Azure AD Graph app manifest and paste it into the value of the attribute in Microsoft Graph app manifest.
 

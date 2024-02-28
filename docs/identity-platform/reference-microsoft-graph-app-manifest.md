@@ -12,13 +12,15 @@ ms.date: 02/27/2024
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: youazhou
+
+#Customer intent: As an application developer, I want to configure the attributes of an application in the Microsoft Entra admin center or programmatically, so that I can update the application object and define permissions and roles for the app.
 ---
 
 # App manifest
 
 The application manifest contains all the attributes and their values of an app registration in the Microsoft identity platform. 
 
-A Microsoft Graph app manifest is a JSON object that represents an app registration. It is also called the [Microsoft Graph Application resource type](/graph/api/resources/application) or Microsoft Graph app object (application object). It contains all the attributes and their values of an app registration.
+A Microsoft Graph app manifest is a JSON object that represents an app registration. It's also called the [Microsoft Graph Application resource type](/graph/api/resources/application) or Microsoft Graph app object (application object). It contains all the attributes and their values of an app registration.
 
 The application object you receive using [Microsoft Graph Get Application method](/graph/api/application-get) is the same JSON object you see in **App Registration manifest** page in the [Microsoft Entra admin center](https://entra.microsoft.com).
 
@@ -53,11 +55,11 @@ This section describes the attributes found in the Microsoft Graph app manifest.
 | :--- | :--- |
 |id  | String |
 
-This property is referred to as Object ID in the Microsoft Entra admin center. It is a unique identifier for the application object in the directory.
+This property is referred to as Object ID in the Microsoft Entra admin center. It's a unique identifier for the application object in the directory.
 
-This ID is not the identifier used to identify the app in any protocol transaction. It's used for the referencing the object in directory queries.
+This ID isn't the identifier used to identify the app in any protocol transaction. It's used for the referencing the object in directory queries.
 
-It is a not nullable and Read-only attribute.
+It's a not nullable and Read-only attribute.
 
 Example:
 
@@ -71,11 +73,11 @@ Example:
 | :--- | :--- |
 |appId  | String |
 
-This property is referred to as application (client) ID in the Microsoft Entra admin center. It is a unique identifier for the application object in the directory.
+This property is referred to as application (client) ID in the Microsoft Entra admin center. It's a unique identifier for the application object in the directory.
 
 This ID is the identifier used to identify the app in any protocol transaction.
 
-It is a not nullable and read-only attribute.
+It's a not nullable and read-only attribute.
 
 Example:
 
@@ -89,7 +91,7 @@ Example:
 | :--- | :--- |
 | addIns | Collection |
 
-Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the `addIns` property for its "FileHandler" functionality. This parameter  will let services like Microsoft 365 call the application in the context of a document the user is working on.
+Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the `addIns` property for its "FileHandler" functionality. This parameter  lets services like Microsoft 365 call the application in the context of a document the user is working on.
 
 Example:
 
@@ -146,7 +148,7 @@ Configures the `groups` claim issued in a user or OAuth 2.0 access token that th
 -  `SecurityGroup` (for security groups and Microsoft Entra roles)
 -  `ApplicationGroup` (this option includes only groups that are assigned to the application)
 -  `DirectoryRole` (gets the Microsoft Entra directory roles the user is a member of)
--  `All` (this will get all of the security groups, distribution groups, and Microsoft Entra directory roles that the signed-in user is a member of).
+-  `All` (this gets all of the security groups, distribution groups, and Microsoft Entra directory roles that the signed-in user is a member of).
 
 Example:
 
@@ -162,7 +164,7 @@ Example:
 
 The optional claims returned in the token by the security token service for this specific app.
 
-Apps that support both personal accounts and Microsoft Entra ID cannot use optional claims. However, apps registered for just Microsoft Entra ID using the v2.0 endpoint can get the optional claims they requested in the manifest. For more info, see [Optional claims](./optional-claims.md).
+Apps that support both personal accounts and Microsoft Entra ID can't use optional claims. However, apps registered for just Microsoft Entra ID using the v2.0 endpoint can get the optional claims they requested in the manifest. For more info, see [Optional claims](./optional-claims.md).
 
 Example:
 
@@ -180,7 +182,7 @@ Example:
 | :--- | :--- |
 | identifierUris | String Array |
 
-User-defined URI(s) that uniquely identify a web app within its Microsoft Entra tenant or verified customer owned domain.
+User-defined URIs that uniquely identify a web app within its Microsoft Entra tenant or verified customer owned domain.
 When an application is used as a resource app, the identifierUri value is used to uniquely identify and access the resource.
 
 [!INCLUDE [active-directory-identifierUri](~/includes/entra-identifier-uri-patterns.md)]
@@ -235,7 +237,7 @@ Example:
 | :--- | :--- |
 | oauth2RequiredPostResponse | Boolean |
 
-Specifies whether, as part of OAuth 2.0 token requests, Microsoft Entra ID will allow POST requests, as opposed to GET requests. The default is false, which specifies that only GET requests will be allowed.
+Specifies whether, as part of OAuth 2.0 token requests, Microsoft Entra ID allows POST requests, as opposed to GET requests. The default is false, which specifies that only GET requests will be allowed.
 
 Example:
 
@@ -348,7 +350,7 @@ Example:
 
 Specifies what Microsoft accounts are supported for the current application. Supported values are:
 - `AzureADMyOrg` - Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (for example, single tenant)
-- `AzureADMultipleOrgs` - Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (for example, multi-tenant)
+- `AzureADMultipleOrgs` - Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (for example, multitenant)
 - `AzureADandPersonalMicrosoftAccount` - Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant
 - `PersonalMicrosoftAccount` - Personal accounts that are used to sign in to services like Xbox and Skype.
 
@@ -380,7 +382,7 @@ Example:
 | :--- | :--- |
 | isFallbackPublicClient | Boolean |
  
-Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value of this attribute is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.
+Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value of this attribute is false, which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID can't determine the client application type. For example, the ROPC flow where it's configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.
 
 Example:
 
@@ -396,9 +398,9 @@ Example:
 
 Specifies basic profile information of the application including the app's marketing, support, terms of service, privacy statement and logo URLs.
 
-Please note that:
+Note that:
 
-- "logoUrl" is a read-only property. You can't edit it in app  manifest. Please navigate to "branding and property" page in your  desired app registration and use "Upload new logo" to upload a new logo.
+- "logoUrl" is a read-only property. You can't edit it in app  manifest. Navigate to "branding and property" page in your  desired app registration and use "Upload new logo" to upload a new logo.
 
 - The terms of service and privacy statement are surfaced to users  through the user consent experience. For more info, see How to: [Add  Terms of service and privacy statement for registered Microsoft  Entra  apps](/azure/active-directory/develop/howto-add-terms-of-service-privacy-statement).
 
@@ -420,11 +422,11 @@ Info: {
 | :--- | :--- |
 |api  |   [apiApplication resource type](/graph/api/resources/apiapplication)|
 
-Specifies settings for an application that implements a web API. It includes 5 properties:
+Specifies settings for an application that implements a web API. It includes five properties:
 
 | Property | Type | Description |
 | --- | --- | --- |
-| acceptMappedClaims | Boolean | When set to true, it allows an application to use claims mapping without specifying a custom signing key. Applications that receive tokens rely on the fact that the claim values are authoritatively issued by Microsoft Entra ID and cannot be tampered with. However, when you modify the token contents through claims-mapping policies, these assumptions may no longer be correct. Applications must explicitly acknowledge that tokens have been modified by the creator of the claims-mapping policy to protect themselves from claims-mapping policies created by malicious actors. Warning: Do not set acceptMappedClaims property to true for multi-tenant apps, which can allow malicious actors to create claims-mapping policies for your app. |
+| acceptMappedClaims | Boolean | When set to true, it allows an application to use claims mapping without specifying a custom signing key. Applications that receive tokens rely on the fact that the claim values are authoritatively issued by Microsoft Entra ID and can't be tampered with. However, when you modify the token contents through claims-mapping policies, these assumptions may no longer be correct. Applications must explicitly acknowledge that tokens have been modified by the creator of the claims-mapping policy to protect themselves from claims-mapping policies created by malicious actors. Warning: Don't set acceptMappedClaims property to true for multitenant apps, which can allow malicious actors to create claims-mapping policies for your app. |
 | ownClientApplications | collection | Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Microsoft Entra ID knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant.  |
 | ownClientApplications | collection | Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Microsoft Entra ID knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant. |
 | oauth2PermissionScopes | permissionScope collection | The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes. |
@@ -465,13 +467,13 @@ Api:{
 | :--- | :--- |
 |web  | [webApplication resource type](/graph/api/resources/webapplication) |
 
-Specifies settings for a web application. It includes 4 properties.
+Specifies settings for a web application. It includes four properties.
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | homePageUrl | String |Home page or landing page of the application.|
 | implicitGrantSettings  | [implicitGrantSettings](/graph/api/resources/implicitgrantsettings)  | Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow. |
-| logoutUrl | String |Specifies the URL that is used by Microsoft's authorization service to log out a  user using [front-channel](https://openid.net/specs/openid-connect-frontchannel-1_0.html), [back-channel](https://openid.net/specs/openid-connect-backchannel-1_0.html) or  SAML logout protocols. |
+| logoutUrl | String |Specifies the URL that is used by Microsoft's authorization service to sign out a  user using [front-channel](https://openid.net/specs/openid-connect-frontchannel-1_0.html), [back-channel](https://openid.net/specs/openid-connect-backchannel-1_0.html) or  SAML sign out protocols. |
 | redirectUris |String collection |Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent in the web platform.|
 
 Example:
@@ -533,7 +535,7 @@ publicClient: {
 
 ### Manifest limits
 
-An application manifest has multiple attributes that are referred to as collections; for example, appRoles, keyCredentials, knownClientApplications, identifierUris, redirectUris, requiredResourceAccess, and oauth2PermissionScopes. Within the complete application manifest for any application, the total number of entries in all the collections combined has been capped at 1200. If you previously specify 100 appRoles in the application manifest, then you're only left with 1100 remaining entries to use across all other collections combined that make up the manifest.
+An application manifest has multiple attributes that are referred to as collections; for example, appRoles, keyCredentials, knownClientApplications, identifierUris, redirectUris, requiredResourceAccess, and oauth2PermissionScopes. Within the complete application manifest for any application, the total number of entries in all the collections combined has been capped at 1200. If you previously specify 100 appRoles in the application manifest, then you're only left with 1,100 remaining entries to use across all other collections combined that make up the manifest.
 
 > [!NOTE]
 > In case you try to add more than 1200 entries in the application manifest, you may see an error **"Failed to update application xxxxxx. Error details: The size of the manifest has exceeded its limit. Please reduce the number of values and retry your request."**
@@ -548,7 +550,7 @@ This might be due to the migration from Azure AD Graph to Microsoft Graph app ma
 
 ## Next steps
 
-For more info on the relationship between an app's application and service principal object(s), see [Application and service principal objects in Microsoft Entra ID](/entra/identity-platform/app-objects-and-service-principals).
+For more info on the relationship between an app's application and service principal objects, see [Application and service principal objects in Microsoft Entra ID](/entra/identity-platform/app-objects-and-service-principals).
 
 See the [Microsoft identity platform developer glossary](/entra/identity-platform/developer-glossary) for definitions of some core Microsoft identity platform developer concepts.
 
