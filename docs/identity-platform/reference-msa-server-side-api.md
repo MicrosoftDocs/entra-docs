@@ -1,5 +1,5 @@
 ---
-title: MSAL API and MSA Server Side API Reference
+title: Microsoft account (MSA) Server Side API Reference
 description: Comprehensive guide for understanding and using the Microsoft Authentication Library (MSAL) and Microsoft Account (MSA) Server Side APIs.
 services: 
 author: OwenRichards1
@@ -66,4 +66,5 @@ These are passed to `login.microsoftonline.com` or `login.live.com` as URL param
 
 ## See also
 
+- [MSAL Overview](msal-overview.md)
 - [Microsoft Entra ID Windows Account Manager (WAM) API Reference](reference-entra-id-wam-api.md)

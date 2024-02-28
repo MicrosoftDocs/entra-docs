@@ -54,4 +54,5 @@ The Microsoft Entra ID WAM API documentation provides detailed information about
 
 ## See also
 
+- [MSAL Overview](msal-overview.md)
 - [Microsoft account (MSA) Server Side API Reference](reference-msa-server-side-api.md)
