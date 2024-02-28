@@ -13,16 +13,14 @@ ms.date: 02/28/2024
 ms.author: owenrichards
 ms.reviewer: 
 ms.custom: 
-#Customer intent: As a custome, I intend to understand the Microsoft Entra ID Windows Account Manager (WAM) API, its parameters, and how to use them in the development of Windows applications that integrate with Microsoft Entra ID or Microsoft accounts.
+#Customer intent: As a customer, I intend to understand the Microsoft Entra ID Windows Account Manager (WAM) API, its parameters, and how to use them in the development of Windows applications that integrate with Microsoft Entra ID or Microsoft accounts.
 ---
 
 # Microsoft Entra ID Windows Account Manager (WAM) API Reference
 
-The Microsoft Entra ID Windows Account Manager (WAM) is a set of APIs that enable developers to integrate their Windows applications with Microsoft Entra ID or Microsoft (MSA) accounts. The WAM API provides a range of parameters that can be used to customize the authentication process and enhance the user experience.
+The Microsoft Entra ID Windows Account Manager (WAM) is a set of APIs that enable developers to integrate Windows applications. The following parameters can be utilized with MSAL on a Windows platform, facilitating the development of applications that allow users sign-in through Microsoft Entra ID or Microsoft accounts.
 
 ## Microsoft Entra ID WAM API Reference
-
-The following parameters can be utilized with MSAL on a Windows platform, facilitating the development of Windows applications that integrate seamlessly with users signing in through Microsoft Entra ID or Microsoft (MSA) accounts.
 
 | Parameter | Value | Notes |
 | --------- | ----- | ----- |

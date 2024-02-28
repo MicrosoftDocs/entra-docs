@@ -18,7 +18,7 @@ ms.custom:
 
 # Microsoft account (MSA) Server Side API Reference
 
-Microsoft accounts (MSA) are a single sign-on web service developed by Microsoft that allows users to log in to websites, applications, and services using a single set of credentials. The Microsoft Account (MSA) Server Side API provides a range of parameters that can be used to customize the authentication process and enhance the user experience. These parameters can be utilized with MSAL on a Windows platform, facilitating the development of Windows applications that integrate seamlessly with users signing in through Microsoft accounts.
+Microsoft accounts (MSA) are a single sign-on web service developed that allows users to log in to websites, applications, and services using a single set of credentials. The Microsoft Account (MSA) Server Side API provides a range of parameters that can be used to customize the authentication process and enhance the user experience. These parameters can be utilized with MSAL on a Windows platform, facilitating the development of Windows applications that integrate seamlessly with users signing in through Microsoft accounts.
 
 ## MSA Server Side API
 
