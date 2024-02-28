@@ -214,7 +214,7 @@ When administrators configure filter for devices as a condition, they can choose
 
 ## Authentication flows
 
-Authentication flows control how your organization uses certain authentication and authorization protocols and grants. These flows might provide a seamless experience to devices that might lack local input devices like shared devices or digital signage. Use this control to configure transfer methods like [device code flow or authentication transfer](concept-authentication-flows.md).
+Authentication flows (preview) control how your organization uses certain authentication and authorization protocols and grants. These flows might provide a seamless experience to devices that might lack local input devices like shared devices or digital signage. Use this control to configure transfer methods like [device code flow or authentication transfer](concept-authentication-flows.md).
 
 ## Next steps
 
