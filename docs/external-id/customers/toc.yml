@@ -82,7 +82,7 @@ items:
               - name: Native authentication
                 items:
                   - name: Android (Kotlin) - sign in users
-                    href: how-to-run-sample-android-app.md
+                    href: how-to-run-native-authentication-sample-android-app.md
                   - name: Run iOS sample app
                     href: how-to-run-sample-ios-app.md
         - name: Command-line interface (CLI) app

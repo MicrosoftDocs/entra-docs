@@ -26,7 +26,7 @@ In this tutorial, you learn how to:
  
 ## Prerequisites 
 
-- [Sign in users in a sample native Android mobile application](how-to-run-sample-android-app.md)  
+- [Sign in users in a sample native Android mobile application](how-to-run-native-authentication-sample-android-app.md)  
 - [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md)  
  
 ## Browser required

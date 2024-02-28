@@ -26,7 +26,7 @@ In this tutorial, you learn how to:
  
 ## Prerequisites  
  
-- [Sign in users in a sample native Android mobile application](how-to-run-sample-android-app.md). 
+- [Sign in users in a sample native Android mobile application](how-to-run-native-authentication-sample-android-app.md). 
 - [Enable self-service password reset](how-to-enable-password-reset-customers.md). 
 - [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-android-sign-up.md). 
  

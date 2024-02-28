@@ -27,7 +27,7 @@ In this tutorial, you learn how to:
  
 ## Prerequisites  
  
-- [How to run the Android sample app](how-to-run-sample-android-app.md). 
+- [How to run the Android sample app](how-to-run-native-authentication-sample-android-app.md). 
 - Android project. 
  
 ## Add MSAL dependencies  
