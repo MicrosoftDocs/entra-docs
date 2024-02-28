@@ -16,7 +16,7 @@ ms.author: thwimmer
 
 # Tutorial: Configure Astro for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both Astro and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Astro](https://www.astronomer.io/product/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This tutorial describes the steps you need to perform in both Astro and Microsoft Entra ID to configure automatic users and group provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Astro](https://www.astronomer.io/product/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Supported capabilities
@@ -24,6 +24,7 @@ This tutorial describes the steps you need to perform in both Astro and Microsof
 > * Create users in Astro.
 > * Remove users in Astro when they do not require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Astro.
+> * Provision groups and group memberships in Astro.
 > * [Single sign-on](astro-tutorial.md) to Astro (recommended).
 
 ## Prerequisites
@@ -50,15 +51,15 @@ Add Astro from the Microsoft Entra application gallery to start managing provisi
 
 ## Step 4: Define who will be in scope for provisioning 
 
-The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users to the application. If you choose to scope who will be provisioned based solely on attributes of the user, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
+The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the users and groups. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users and groups to the application. If you choose to scope who will be provisioned based solely on attributes of the users and groups, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
-* Start small. Test with a small set of users before rolling out to everyone. When scope for provisioning is set to assigned users, you can control this by assigning one or two users to the app. When scope is set to all users, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+* Start small. Test with a small set of users before rolling out to everyone. When scope for provisioning is set to assigned users and groups, you can control this by assigning one or two users to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 * If you need more roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
 
 ## Step 5: Configure automatic user provisioning to Astro 
 
-This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users in Astro based on user assignments in Microsoft Entra ID.
+This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and groups in Astro based on user assignments in Microsoft Entra ID.
 
 <a name='to-configure-automatic-user-provisioning-for-Astro-in-azure-ad'></a>
 
@@ -116,7 +117,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Status Toggled On.](common/provisioning-toggle-on.png)
 
-1. Define the users that you would like to provision to Astro by choosing the desired values in **Scope** in the **Settings** section.
+1. Define the users and/or groups that you would like to provision to Astro by choosing the desired values in **Scope** in the **Settings** section.
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
@@ -124,7 +125,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
-This operation starts the initial synchronization cycle of all users defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 
 ## Step 6: Monitor your deployment
 Once you've configured provisioning, use the following resources to monitor your deployment:
