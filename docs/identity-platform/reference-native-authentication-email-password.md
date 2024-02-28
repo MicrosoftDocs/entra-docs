@@ -4,8 +4,8 @@ description: Find out how to use native authentication with email and password A
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
-ms.service: active-directory 
-ms.subservice: ciam
+ms.service: entra-external-id 
+ms.subservice: customers
 ms.topic: reference
 ms.date: 02/29/2024
 
@@ -14,7 +14,7 @@ ms.date: 02/29/2024
 
 # Native authentication with email and password API reference
 
-Microsoft Entra ID's native authentication API with email and password allows you to build apps that enable users to sign up and sign in with their email and password. This API also allows you to enable self-service password reset (SSPR) in your apps. The email and password API provides three flows, sign-in, sign-up, and SSPR flows.
+Microsoft Entra's native authentication API with email and password allows you to build apps that enable users to sign up and sign in with their email and password. This API also allows you to enable self-service password reset (SSPR) in your apps. The email and password API provides three flows, sign-in, sign-up, and SSPR flows.
 
 [!INCLUDE [native-auth-api-common-description](./includes/native-auth-api/native-auth-api-common-description.md)]
 
@@ -26,13 +26,13 @@ Microsoft Entra ID's native authentication API with email and password allows yo
 
 1. If you haven't already done so, [Register an application in the Microsoft Entra admin center](../external-id/customers/how-to-register-ciam-app.md?tabs=nativeauth#choose-your-app-type). Make sure you grant delegated permissions, and enable public client and native authentication flows.
 
-1. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md#to-add-a-new-user-flow). While you create the user flow, take note of the user attributes you select as these attributes are the ones that Microsoft Entra ID expects your app to submit. Under **Identity providers**, select **Email one-time-passcode** option.
+1. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md#to-add-a-new-user-flow). While you create the user flow, take note of the user attributes you select as these attributes are the ones that Microsoft Entra expects your app to submit. Under **Identity providers**, select **Email one-time-passcode** option.
 
 1. [Associate your app registration with the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
-1. For self-service password reset flow, [enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) for customer users in the customers tenant.
+1. For self-service password reset flow, [enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) for customer users in the customers tenant. 
 
-1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use for test the sign in APIs. Alternatively, you get this test user after you run the sign-up flow.
+1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use for test the sign-in APIs. Alternatively, you get this test user after you run the sign-up flow.
 
 ## Continuation token
 
@@ -46,20 +46,20 @@ To complete a user sign-up flow, your app interacts with four endpoints, `/signu
 
 |    Endpoint           | Description                                |
 |-----------------------|--------------------------------------------|
-| `/signup/v1.0/start`  | This endpoint starts the sign-up flow. You pass valid application ID, new username, and [challenge type](#sign-up-challenge-types), then you get back a new continuation token. The endpoint can return a response to indicate to the application to use a web authentication flow if the application’s chosen authentication methods aren't supported by Microsoft Entra ID.|
-|   `/signup/v1.0/challenge`   | Your app calls this endpoint with a list of [challenge types](#sign-up-challenge-types) supported by Microsoft Entra ID. Microsoft Entra ID then selects one of the supported authentication methods for the user to authenticate with. |
-|  `/signup/v1.0/continue`  | This endpoint helps to continue the flow to create the user account or interrupt the flow due to missing requirements such as password policy requirements or wrong attribute formats. This endpoint generates a continuation token, then returns it to the app. The endpoint can return a response to indicate to the application to use a web-based authentication flow if the application doesn't an authentication method chosen by  Microsoft Entra ID.|
+| `/signup/v1.0/start`  | This endpoint starts the sign-up flow. You pass valid application ID, new username, and [challenge type](#sign-up-challenge-types), then you get back a new continuation token. The endpoint can return a response to indicate to the application to use a web authentication flow if the application’s chosen authentication methods aren't supported by Microsoft Entra.|
+|   `/signup/v1.0/challenge`   | Your app calls this endpoint with a list of [challenge types](#sign-up-challenge-types) supported by Microsoft Entra. Microsoft Entra then selects one of the supported authentication methods for the user to authenticate with. |
+|  `/signup/v1.0/continue`  | This endpoint helps to continue the flow to create the user account or interrupt the flow due to missing requirements such as password policy requirements or wrong attribute formats. This endpoint generates a continuation token, then returns it to the app. The endpoint can return a response to indicate to the application to use a web-based authentication flow if the application doesn't an authentication method chosen by  Microsoft Entra.|
 |`/token`| The application calls this endpoint to finally request for security tokens. The app needs to include the continuation token it acquired from the last successful call to the `/signup/v1.0/continue` endpoint.|
 
 ### Sign-up challenge types
 
-The API allows the app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra ID. To do so, the app uses the `challenge_type` parameter in its requests. This parameter holds predefined values, which represent different authentication methods. The following table contains the authentication methods that the API supports. New values will be added in the future when the API supports new authentication methods.
+The API allows the app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra. To do so, the app uses the `challenge_type` parameter in its requests. This parameter holds predefined values, which represent different authentication methods. The following table contains the authentication methods that the API supports. New values will be added in the future when the API supports new authentication methods.
 
 |    Challenge type     | Description                                |
 |-----------------------|--------------------------------------------|
 | password              | This challenge type indicates that the app supports the collection of a password credential from the user.                   |
 | oob   | This challenge type indicates that the application supports the use of one-time password or passcode (OTP) codes sent to the user using a secondary channel. Currently, the API supports only email OTPs.|
-| redirect  | This challenge type indicates that the application supports fallback to the web-based authentication. All Native Auth compliant applications must support this authentication method. In every call that the app makes, it must include this challenge type. If Microsoft Entra ID returns this challenges type as a response, then it indicates that the app needs to fall back to the web-based authentication. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).|
+| redirect  | This challenge type indicates that the application supports fallback to the web-based authentication. All Native Auth compliant applications must support this authentication method. In every call that the app makes, it must include this challenge type. If Microsoft Entra returns this challenges type as a response, then it indicates that the app needs to fall back to the web-based authentication. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).|
 
 ### Sign-up flow protocol details
 
@@ -107,8 +107,8 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.                |
 | `username`          |    Yes   | Email of the customer user that they want to sign up with, such as *contoso-consumer@contoso.com*.  |
 | `challenge_type`    |   Yes  | A space-separated list of authorization challenge type strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password sign-up flow, the value is expected to contain `oob password redirect`.|
-|`password`| No | The password value that the app collects from the customer user. You can submit a user's password via the  `/signup/v1.0/start` or later in the `/signup/v1.0/continue` endpoint. Replace `{secure_password}` with the password value that the app collects from the customer user. It's your responsibility to confirm that the user is aware of the password they want to use by providing the password confirm field in the app's UI. You must also ensure that the user is aware of what constitutes a strong password per your organization's policy. [Learn more about Microsoft Entra ID's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
-|`attributes`| No | The user attributes values that the app collects from the customer user. The value is a string, but formatted as a JSON object whose key values are names of user attributes. These attributes can be built in or custom, and required or optional. The key names of the object depend on the attributes that the administrator configured in Microsoft Entra admin center. You can submit some or all user attributes via the `/signup/v1.0/start` endpoint or later in the `/signup/v1.0/continue` endpoint. If you submit all the required attributes via the `/signup/v1.0/start` endpoint, you don't need to submit any attributes in the `/signup/v1.0/continue` endpoint. However, if you submit some required attributes via `/signup/v1.0/start` endpoint, you can submit the remaining required attributes later in the `/signup/v1.0/continue` endpoint. Replace `{user_name}`, `{user_age}` and `{user_phone}` with the name, age and phone number values respectively that the app collects from the customer user. **Microsoft Entra ID ignores any attributes that you submit, which don't exist**.|
+|`password`| No | The password value that the app collects from the customer user. You can submit a user's password via the  `/signup/v1.0/start` or later in the `/signup/v1.0/continue` endpoint. Replace `{secure_password}` with the password value that the app collects from the customer user. It's your responsibility to confirm that the user is aware of the password they want to use by providing the password confirm field in the app's UI. You must also ensure that the user is aware of what constitutes a strong password per your organization's policy. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
+|`attributes`| No | The user attributes values that the app collects from the customer user. The value is a string, but formatted as a JSON object whose key values are names of user attributes. These attributes can be built in or custom, and required or optional. The key names of the object depend on the attributes that the administrator configured in Microsoft Entra admin center. You can submit some or all user attributes via the `/signup/v1.0/start` endpoint or later in the `/signup/v1.0/continue` endpoint. If you submit all the required attributes via the `/signup/v1.0/start` endpoint, you don't need to submit any attributes in the `/signup/v1.0/continue` endpoint. However, if you submit some required attributes via `/signup/v1.0/start` endpoint, you can submit the remaining required attributes later in the `/signup/v1.0/continue` endpoint. Replace `{user_name}`, `{user_age}` and `{user_phone}` with the name, age and phone number values respectively that the app collects from the customer user. **Microsoft Entra ignores any attributes that you submit, which don't exist**.|
 
 #### Success response
 
@@ -127,9 +127,9 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-|`continuation_token`| [continuation_token](#continuation-token) that Microsoft Entra ID returns.|
+|`continuation_token`| [Continuation token](#continuation-token) that Microsoft Entra returns.|
 
-If an app can't support a required authentication method by Microsoft Entra ID, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra ID informs the app by returning a *redirect* challenge type in its response:
+If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
@@ -144,7 +144,7 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `challenge_type`  | Microsoft Entra ID returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |
+| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
@@ -172,35 +172,50 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
+|`error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
-|`error_codes`| A list of Microsoft Entra ID-specific error codes that can help you to diagnose errors.  |
+|`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
-| `invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This response is possible if the app submits user attributes, and the `error` parameter's value is *attribute_validation_failed*.    |
+|`invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This response is possible if the app submits user attributes, and the `suberror` parameter's value is *attribute_validation_failed*.    |
+|`suberror` | An error code string that can be used to further classify types of errors.|
 
 Here are the possible errors you can encounter (possible values of the `error` parameter):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |Request parameter validation failed such as when the challenge_type parameter value contains an unsupported authentication method.|
-|`unauthorized_client`| The client ID used in the request doesn't exist. |
+|`invalid_request`  |Request parameter validation failed such as when the challenge_type parameter value contains an unsupported authentication method or the request didn't include `client_id` parameter the client ID value is empty or invalid. Use the `error_description` parameter to learn the exact cause of the error.|
+|`invalid_client`| The client ID that the app includes in the request is for an app that lacks native authentication configuration, such as it isn't a public client or isn't enabled for native authentication. Use the `suberror` parameter to learn the exact cause of the error.|
+|`unauthorized_client`| The client ID used in the request has a valid client ID format, but doesn't exist in the customer tenant or is incorrect. |
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.| 
-|`attribute_validation_failed`|  Validation of one or more attributes failed. This response is possible if the app submits user attributes.|
 |`user_already_exists` |  User already exists.  |
-|`password_too_weak`|Password is too weak as it doesn't meet complexity requirements. [Learn more about Microsoft Entra ID's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
-|`password_too_short`|New password is fewer than 8 characters. [Learn more about Microsoft Entra ID's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
-|`password_too_long` |New password is longer than 256 characters. [Learn more about Microsoft Entra ID's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
-|`password_recently_used`|The new password must not be the same as one recently used. [Learn more about Microsoft Entra ID's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
-|`password_banned`|New password contains a word, phrase, or pattern that is banned. [Learn more about Microsoft Entra ID's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
+|`invalid_grant`| The password that the app submits doesn't meet all the complexity requirements, such as the password is too short. Use the `suberror` parameter to learn the exact cause of the error.|
+
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_grant* error:
+
+|    Suberror value     | Description        |
+|----------------------|------------------------|
+|`password_too_weak`|Password is too weak as it doesn't meet complexity requirements. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
+|`password_too_short`|New password is fewer than 8 characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
+|`password_too_long` |New password is longer than 256 characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
+|`password_recently_used`|The new password must not be the same as one recently used. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
+|`password_banned`|New password contains a word, phrase, or pattern that is banned. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
+|`password_is_invalid`| Password is invalid, for example because it uses disallowed characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
+
+
+If the error parameter has a value of *invalid_client*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_client* error:
+
+|    Suberror value     | Description        |
+|----------------------|------------------------|
+|`nativeauthapi_disabled`| The client ID for an app that isn't enable for native authentication.|
 
 > [!NOTE]
-> If you submit all the required attributes via `/signup/v1.0/start` endpoint, but not all optional attributes, you won't be able to submit any additional optional attributes later via the  `/signup/v1.0/continue` endpoint. This is so because Microsoft Entra ID doesn't explicitly request for optional attributes.
+> If you submit all the required attributes via `/signup/v1.0/start` endpoint, but not all optional attributes, you won't be able to submit any additional optional attributes later via the  `/signup/v1.0/continue` endpoint. This is so because Microsoft Entra doesn't explicitly request for optional attributes.
 
 ### Step 2: Select an authentication method
 
-When the request for the continuation token is done, the app needs to request Microsoft Entra ID to select one of the supported challenge types for the user to authenticate with. To do so, it calls the `/signup/v1.0/challenge` endpoint and it includes the continuation token, which it acquired from the `/signup/v1.0/start` endpoint in the request.
+When the request for the continuation token is done, the app needs to request Microsoft Entra to select one of the supported challenge types for the user to authenticate with. To do so, it calls the `/signup/v1.0/challenge` endpoint and it includes the continuation token, which it acquired from the `/signup/v1.0/start` endpoint in the request.
 
 Here's an example of the request(we present the example request in multiple lines for readability).
 
@@ -219,11 +234,11 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-up-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password sign-up flow, the value is expected to contain `oob password redirect`.|
-|`continuation_token`| Yes |[continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request.|
+|`continuation_token`| Yes |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous request.|
 
 #### Success response
 
-Microsoft Entra ID sends an OTP code to the user's email, then responds with the challenge type with value of *oob* and additional information about the OTP code:
+Microsoft Entra sends an OTP code to the user's email, then responds with the challenge type with value of *oob* and additional information about the OTP code:
 
 ```http
 HTTP/1.1 200 OK
@@ -245,15 +260,15 @@ Content-Type: application/json
 |    Parameter     | Description        |
 |----------------------|------------------------|
 |`interval`| The length of time in seconds the app needs to wait before it attempts to resend OTP. |
-| `continuation_token`  | [continuation_token](#continuation-token) that Microsoft Entra ID returns. |
+| `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |
 |`challenge_type`| Challenge type selected for the user to authenticate with.|
 |`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer more ways to the user to enter the OTP code. Issued if `challenge_type` is *oob*  |
 |`challenge_channel`| The type of the channel through which the OTP code was sent. At the moment, only email channel is supported. |
 |`challenge_target_label` |An obfuscated email where the OTP code was sent.|
-|`code_length`|The length of the OTP code that Microsoft Entra ID generates. |
+|`code_length`|The length of the OTP code that Microsoft Entra generates. |
 
 
-If an app can't support a required authentication method by Microsoft Entra ID, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra ID informs the app by returning a *redirect* challenge type in its response:
+If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
@@ -268,7 +283,7 @@ Content-Type: application/json 
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `challenge_type`  | Microsoft Entra ID returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
+| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
@@ -298,7 +313,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
-|`error_codes`| A list of Microsoft Entra ID-specific error codes that can help you to diagnose errors.  |
+|`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
@@ -332,18 +347,18 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
-| `continuation_token`  | Yes |[continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request.|
+| `continuation_token`  | Yes |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous request.|
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | A request to the  `/signup/v1.0/continue` endpoint can be used to submit OTP code, password, or user attributes. In this case, the `grant_type` value is used to differentiate between these three use cases. The possible values for the grant_type are *oob*, *password*, *attributes*. In this call, since we're sending OTP code, the value is expected to be *oob*.|
 |`oob`| Yes | The OTP code that the customer user received in their email. Replace `{otp_code}` with the OTP code that the customer user received in their email. To **resend an OTP code**, the app needs to make a request to the `/signup/v1.0/challenge` endpoint again. The OTP code |
 
 #### Response
 
-Once the OTP code has been submitted successfully, Microsoft Entra ID's response depends on the following scenarios:
+Once the OTP code has been submitted successfully, Microsoft Entra's response depends on the following scenarios:
 
-1. If the app successfully submitted user's password via the `/signup/v1.0/start` endpoint, and no attributes were configured in Microsoft Entra admin center or all the required user attributes were submitted via the `/signup/v1.0/start` endpoint, Microsoft Entra ID issues a continuation token. The app can use the continuation token to request for security tokens as shown in [step 5](#step-5-request-for-security-tokens).
+1. If the app successfully submitted user's password via the `/signup/v1.0/start` endpoint, and no attributes were configured in Microsoft Entra admin center or all the required user attributes were submitted via the `/signup/v1.0/start` endpoint, Microsoft Entra issues a continuation token. The app can use the continuation token to request for security tokens as shown in [step 5](#step-5-request-for-security-tokens).
 
-1. If the app successfully submitted user's password via the `/signup/v1.0/start`, but not all the required user attributes, Microsoft Entra ID indicates the attributes that the app needs to submit as shown in [user attributes required](#user-attributes-required). In this case, the app needs to submit the required user attributes via the `/signup/v1.0/continue` endpoint as shown in [submit user attributes](#submit-user-attributes).
+1. If the app successfully submitted user's password via the `/signup/v1.0/start`, but not all the required user attributes, Microsoft Entra indicates the attributes that the app needs to submit as shown in [user attributes required](#user-attributes-required). In this case, the app needs to submit the required user attributes via the `/signup/v1.0/continue` endpoint as shown in [submit user attributes](#submit-user-attributes).
 
 1. If the app didn't submit the user's password via `/signup/v1.0/start` endpoint, then the response looks similar to the following:
 
@@ -370,20 +385,27 @@ Once the OTP code has been submitted successfully, Microsoft Entra ID's response
     |----------------------|------------------------|
     | `error`  |  An error code string that can be used to classify types of errors, and to react to errors.   |  
     |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
-    |`error_codes`| A list of Microsoft Entra ID-specific error codes that can help you to diagnose errors.  |
+    |`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
     |`timestamp`|The time when the error occurred.|
     |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
     |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
-    |`continuation_token`| [continuation_token](#continuation-token) that Microsoft Entra ID returns. |
+    |`continuation_token`| [Continuation token](#continuation-token) that Microsoft Entra returns. |
+    |`suberror` | An error code string that can be used to further classify types of errors.|
     
     Here are the possible errors you can encounter (possible values of the `error` parameter):
     
     |    Error value     | Description        |
     |----------------------|------------------------|
     |`credential_required`|Authentication is required for account creation, so you have to make a call to the `/signup/v1.0/challenge` endpoint to determine the credential the user is required to provide.|
-    |`invalid_request`  |  Request parameter validation failed such as if the continuation token validation failed.   |  
-    |`invalid_grant`|The grant type included in the request isn't valid or supported.|
+    |`invalid_request`  | Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid or the customer tenant administrator hasn't enabled email OTP for all tenant users.   |  
+    |`invalid_grant`|The grant type included in the request isn't valid or supported, or OTP value is incorrect.|
     |`expired_token`|The continuation token included in the request is expired. |
+
+    If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_grant* error:
+
+    |    Suberror value     | Description        |
+    |----------------------|------------------------|
+    |`invalid_oob_value`| The value of OTP code is invalid.|
 
     For the password credential to be collected from the user, the app needs to make a call to the `/signup/v1.0/challenge` endpoint to determine the credential the user is required to provide.
 
@@ -404,7 +426,7 @@ Once the OTP code has been submitted successfully, Microsoft Entra ID's response
     | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
     | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
     | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-up-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password sign-up flow, the value is expected to contain `password redirect`.|
-    |`continuation_token`| Yes |[continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request.|
+    |`continuation_token`| Yes |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous request.|
 
     #### Success response
     
@@ -425,9 +447,9 @@ Once the OTP code has been submitted successfully, Microsoft Entra ID's response
     |    Parameter     | Description        |
     |----------------------|------------------------|
     | `challenge_type`  |  *password* is returned in the response for the required credential.   |
-    |`continuation_token`| [continuation_token](#continuation-token) that Microsoft Entra ID returns.   |
+    |`continuation_token`| [Continuation token](#continuation-token) that Microsoft Entra returns.   |
     
-    If an app can't support a required authentication method by Microsoft Entra ID, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra ID informs the app by returning a *redirect* challenge type in its response:
+    If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
     
     ```http
     HTTP/1.1 200 OK
@@ -442,13 +464,13 @@ Once the OTP code has been submitted successfully, Microsoft Entra ID's response
     
     |    Parameter     | Description        |
     |----------------------|------------------------|
-    | `challenge_type`  | Microsoft Entra ID returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
+    | `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
     
     This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
 ### Step 4: Authenticate and get token to sign in
 
-The app needs to submit the user's credential, in this case password, that Microsoft Entra ID requested in the previous step. The app needs to submit a password credential if it didn't do so via the `/signup/v1.0/start` endpoint. The app makes a request to the `/signup/v1.0/continue` endpoint to submit the password. Since we're submitting a password, a `password` parameter is required, and the `grant_type` parameter must have a value *password*.
+The app needs to submit the user's credential, in this case password, that Microsoft Entra requested in the previous step. The app needs to submit a password credential if it didn't do so via the `/signup/v1.0/start` endpoint. The app makes a request to the `/signup/v1.0/continue` endpoint to submit the password. Since we're submitting a password, a `password` parameter is required, and the `grant_type` parameter must have a value *password*.
 
 Here's an example of the request(we present the example request in multiple lines for readability):
 
@@ -466,14 +488,14 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
-| `continuation_token`  | Yes |[continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous step.|
+| `continuation_token`  | Yes |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous step.|
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | A request to the `/signup/v1.0/continue` endpoint can be used to submit OTP code, password, or user attributes. In this case, the `grant_type` value is used to differentiate between these three use cases. The possible values for the grant_type are *oob*, *password*, *attributes*. In this call, since we're sending user's password, the value is expected to be *password*.|
-|`password`| Yes | The password value that the app collects from the customer user. Replace `{secure_password}` with the password value that the app collects from the customer user. It's your responsibility to confirm that the user is aware of the password they want to use by providing the password confirm field in the app's UI. You must also ensure that the user is aware of what constitutes a strong password per your organization's policy. [Learn more about Microsoft Entra ID's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
+|`password`| Yes | The password value that the app collects from the customer user. Replace `{secure_password}` with the password value that the app collects from the customer user. It's your responsibility to confirm that the user is aware of the password they want to use by providing the password confirm field in the app's UI. You must also ensure that the user is aware of what constitutes a strong password per your organization's policy. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
 
 #### Success response
 
-If the request is successful, but no attributes were configured in Microsoft Entra admin center or all the required attributes were submitted via the `/signup/v1.0/start` endpoint, the app gets a continuation token without submitting any attributes. The app can use the continuation token to request for security tokens as shown in [step 5](#step-5-request-for-security-tokens). Otherwise, Microsoft Entra ID's response indicates that the app needs to submit required attributes. These attributes, built in or custom, were configured in the Microsoft Entra admin center by the tenant administrator.
+If the request is successful, but no attributes were configured in Microsoft Entra admin center or all the required attributes were submitted via the `/signup/v1.0/start` endpoint, the app gets a continuation token without submitting any attributes. The app can use the continuation token to request for security tokens as shown in [step 5](#step-5-request-for-security-tokens). Otherwise, Microsoft Entra's response indicates that the app needs to submit required attributes. These attributes, built in or custom, were configured in the Microsoft Entra admin center by the tenant administrator.
 
 ##### User attributes required
 
@@ -526,25 +548,25 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `error`  | This attribute is set if Microsoft Entra ID can't create the user account because an attribute needs to be verified or submitted.  |  
+| `error`  | This attribute is set if Microsoft Entra can't create the user account because an attribute needs to be verified or submitted.  |  
 |`error_description` | A specific error message that can help you to identify the cause of the error. |
-|`error_codes`| A list of Microsoft Entra ID-specific error codes that can help you to diagnose errors.  |
+|`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
-|`continuation_token`| [continuation_token](#continuation-token) that Microsoft Entra ID returns.  |
-|`required_attributes`|A list (array of objects) of attributes that the app needs to submit next call to continue. These attributes are the extra attributes that app needs to submit apart from the username. Microsoft Entra ID includes this parameter is the response if the value of `error` parameter is *attributes_required*.|
+|`continuation_token`| [Continuation token](#continuation-token) that Microsoft Entra returns.  |
+|`required_attributes`|A list (array of objects) of attributes that the app needs to submit next call to continue. These attributes are the extra attributes that app needs to submit apart from the username. Microsoft Entra includes this parameter is the response if the value of `error` parameter is *attributes_required*.|
 
 Here are the possible errors you can encounter (possible values of the `error` parameter):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  | Request parameter validation failed, or when continuation token validation fails.|  
+| `invalid_request`  | Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid.|  
 |`invalid_grant`| The grant type included in the request isn't valid or supported. The possible values for the `grant_type` are *oob*, *password*, *attributes* |
 |`expired_token`| The continuation token included in the request is expired. |
 |`attributes_required`  |  One or more of user attributes is required.   |
 
-If an app can't support a required authentication method by Microsoft Entra ID, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra ID informs the app by returning a *redirect* challenge type in its response:
+If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
@@ -559,7 +581,7 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `challenge_type`  | Microsoft Entra ID returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
+| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
@@ -574,14 +596,15 @@ Content-Type: application/json
 
 ```json
 {  
-    "error": "password_too_weak",
-    "error_description": "Password too weak",  
+    "error": "invalid_grant",
+    "error_description": "New password is too weak",  
     "error_codes": [
         399246
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
     "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6" 
+    "correlation_id": "72f57f26-...-3fa6",
+    "suberror": "password_too_weak"
 }  
 ```
 
@@ -589,24 +612,32 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
-|`error_codes`| A list of Microsoft Entra ID-specific error codes that can help you to diagnose errors.  |
+|`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
+|`suberror` | An error code string that can be used to further classify types of errors.|
 
 Here are the possible errors you can encounter (possible values of the `error` parameter):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type.   |  
-|`invalid_grant`|The grant type provided isn't valid or supported.|
+|`invalid_grant`| The grant submitted is invalid, such as the password submitted is too short. Use the `suberror` parameter to learn the exact cause of the error.|
 |`expired_token`|The continuation token is expired. |
 |`attributes_required`  |  One or more of user attributes is required.   |
-|`password_too_weak`|Password is too weak as it doesn't meet complexity requirements. [Learn more about Microsoft Entra ID's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
-|`password_too_short`|New password is fewer than 8 characters. [Learn more about Microsoft Entra ID's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
-|`password_too_long` |New password is longer than 256 characters. [Learn more about Microsoft Entra ID's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). |
-|`password_recently_used`|The new password must not be the same as one recently used. [Learn more about Microsoft Entra ID's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
-|`password_banned`|New password contains a word, phrase, or pattern that is banned. [Learn more about Microsoft Entra ID's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
+
+
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter:
+
+|    Suberror value     | Description        |
+|----------------------|------------------------|
+|`password_too_weak`|Password is too weak as it doesn't meet complexity requirements. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
+|`password_too_short`|New password is fewer than 8 characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
+|`password_too_long` |New password is longer than 256 characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). |
+|`password_recently_used`|The new password must not be the same as one recently used. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
+|`password_banned`|New password contains a word, phrase, or pattern that is banned. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
+|`password_is_invalid`| Password is invalid, for example because it uses disallowed characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
 
 #### Submit user attributes
 
@@ -628,14 +659,14 @@ Content-Type: application/x-www-form-urlencoded
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
-| `continuation_token`  | Yes |[continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request.  |
+| `continuation_token`  | Yes |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous request.  |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | A request to the `/signup/v1.0/continue` endpoint can be used to submit OTP code, password, or user attributes. In this case, the `grant_type` value is used to differentiate between these three use cases. The possible values for the grant_type are *oob*, *password*, *attributes*. In this call, since we're sending user attributes, the value is expected to be *attributes*.|
-|`attributes`| Yes | The user attribute values that the app collects from the customer user. The value is a string, but formatted as a JSON object whose key values are names of user attributes, built in or custom. The key names of the object depend on the attributes that the administrator configured in Microsoft Entra admin center. Replace `{user_name}`, `{user_age}` and `{user_phone}` with the name, age and phone number values respectively that the app collects from the customer user. **Microsoft Entra ID ignores any attributes that you submit, which don't exist**.|
+|`attributes`| Yes | The user attribute values that the app collects from the customer user. The value is a string, but formatted as a JSON object whose key values are names of user attributes, built in or custom. The key names of the object depend on the attributes that the administrator configured in Microsoft Entra admin center. Replace `{user_name}`, `{user_age}` and `{user_phone}` with the name, age and phone number values respectively that the app collects from the customer user. **Microsoft Entra ignores any attributes that you submit, which don't exist**.|
 
 #### Success response
 
-If the request is successful, Microsoft Entra ID issues a continuation token, which the app can use to request for security tokens.
+If the request is successful, Microsoft Entra issues a continuation token, which the app can use to request for security tokens.
 
 ```http
 HTTP/1.1 200 OK
@@ -650,9 +681,9 @@ Content-Type: application/json
 
 |    Parameter   |   Description        |
 |----------------------|------------------------|
-| `continuation_token`  | [continuation_token](#continuation-token) that Microsoft Entra ID returns.|  
+| `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns.|  
 
-If an app can't support a required authentication method by Microsoft Entra ID, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra ID informs the app by returning a *redirect* challenge type in its response:
+If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
@@ -667,7 +698,7 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `challenge_type`  | Microsoft Entra ID returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
+| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
@@ -697,24 +728,32 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
-|`error_codes`| A list of Microsoft Entra ID-specific error codes that can help you to diagnose errors.  |
+|`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
-|`continuation_token`| [continuation_token](#continuation-token) that Microsoft Entra ID returns.  |
+|`continuation_token`| [Continuation token](#continuation-token) that Microsoft Entra returns.  |
 | `unverified_attributes`  |  A list (array of objects) of attribute key names that must be verified. This parameter is included in the response when the `error` parameter's value is *verification_required*.|
-|`required_attributes`| A list (array of objects) of attributes that the app needs to submit. Microsoft Entra ID includes this parameter in its response when the `error` parameter's value is *attributes_required*.|
-| `invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This parameter is included in the response when the `error` parameter's value is *attribute_validation_failed*.    |
+|`required_attributes`| A list (array of objects) of attributes that the app needs to submit. Microsoft Entra includes this parameter in its response when the `error` parameter's value is *attributes_required*.|
+| `invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This parameter is included in the response when the `suberror` parameter's value is *attribute_validation_failed*.    |
+|`suberror` | An error code string that can be used to further classify types of errors.|
 
 Here are the possible errors you can encounter (possible values of the `error` parameter):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |Request parameter validation failed such as when a continuation token fails validation or client ID is invalid.|
-|`invalid_grant`|The grant type provided isn't valid or supported.|
+| `invalid_request`  |Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid.|
+|`invalid_grant`|The grant type provided isn't valid or supported or failed validation, such as attributes validation failed. Use the `suberror` parameter to learn the exact cause of the error.| 
 |`expired_token`|The continuation token included in the request is expired.|
 |`attributes_required`  |  One or more of user attributes is required.   |
-|`attribute_validation_failed`|  Validation of one or more attributes failed. |
+
+
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_grant* error:
+
+|    Suberror value     | Description        |
+|----------------------|------------------------|
+|`attribute_validation_failed`| User attribute validation failed. `invalid_attributes` parameter contains the list (array of objects) of attributes that failed validation.|
+
 
 ### Step 5: Request for security tokens
 
@@ -739,8 +778,8 @@ continuation_token=ABAAEAAAAtyo...
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | The parameter value must be *continuation token*. |
-|`continuation_token`|Yes    |[continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous step. |
-|`scope`| Yes | A space-separated list of scopes that the access token is valid for. Replace `{scopes}` with the valid scopes that the access token Microsoft Entra ID returns is valid for.|
+|`continuation_token`|Yes    |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous step. |
+|`scope`| Yes | A space-separated list of scopes that the access token is valid for. Replace `{scopes}` with the valid scopes that the access token Microsoft Entra returns is valid for.|
 | `username`          |    Yes   | Email of the customer user that they want to sign up with, such as *contoso-consumer@contoso.com*.  |
 
 #### Successful response
@@ -766,7 +805,7 @@ Content-Type: application/json
 |    Parameter     | Description        |
 |----------------------|------------------------|
 | `access_token`  |    The access token that the app requested from the `/token` endpoint. The app can use this access token to request access to secured resources such as web APIs.|  
-|`token_type` |  Indicates the token type value. The only type that Microsoft Entra ID supports is *Bearer*.|
+|`token_type` |  Indicates the token type value. The only type that Microsoft Entra supports is *Bearer*.|
 |`expires_in`|   The length of time in seconds the access token remains valid.|
 |`scopes`|  A space-separated list of scopes that the access token is valid for.|
 |`refresh_token` |  An OAuth 2.0 refresh token. The app can use this token to acquire other access tokens after the current access token expires. Refresh tokens are long-lived. They can maintain access to resources for extended periods. For more detail on refreshing an access token, refer to [Refresh the access token](v2-oauth2-auth-code-flow.md#refresh-the-access-token) article. <br> **Note**: Only issued if *offline_access* scope was requested.   |
@@ -798,7 +837,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
-|`error_codes`| A list of Microsoft Entra ID-specific error codes that can help you to diagnose errors.  |
+|`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
@@ -816,13 +855,13 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 You specify the information you want to collect from the user by configuring the user flow settings in the Microsoft Entra admin center. Use the [Collect user attributes during sign-up](../external-id/customers/how-to-define-custom-attributes.md) article to learn how to collect values for both built-in and custom attributes.
 
-You can also specify the **User Input Type** for the attributes you configure. The following table summarizes supported user input types, and how to submit values collected by the UI controls to Microsoft Entra ID.
+You can also specify the **User Input Type** for the attributes you configure. The following table summarizes supported user input types, and how to submit values collected by the UI controls to Microsoft Entra.
 
 |    User Input Type     |     Format of submitted values    |
 |----------------------|----------------------|
 |   TextBox   |   A single value such as job title, *Software Engineer*.  |
 |   SingleRadioSelect   |  A single value such as Language, *Norwegian*.  |
-|   CheckboxMultiSelect   |  One or multiple values such as a hobby or hobbies, *Dancing* or *Dancing, Swimming,Traveling*. |
+|   CheckboxMultiSelect   |  One or multiple values such as a hobby or hobbies, *Dancing* or *Dancing, Swimming, Traveling*. |
 
 Here's an example request that shows how you submit the attributes values:
 
@@ -831,7 +870,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
  
-continuation_token=ABAAEAAAAtyo... 
+continuation_token=ABAAEAAAAtfyo... 
 &client_id=111101-14a6-abcd-97bc-abcd1110011 
 &grant_type=attributes 
 &attributes={"jobTitle": "Software Engineer", "extension_2588abcdwhtfeehjjeeqwertc_language": "Norwegian", "extension_2588abcdwhtfeehjjeeqwertc_hobbies": "Dancing,Swimming,Traveling"}
@@ -846,19 +885,19 @@ To request your security tokens, your app interacts with three endpoints, `/init
 
 |    Endpoint           | Description                                |
 |-----------------------|--------------------------------------------|
-| `/initiate`  | This endpoint initiates the sign-in flow. If your app calls it with a username of a user account that already exists, it returns a success response with a continuation token. If your app requests to use authentication methods that aren't supported by Microsoft Entra ID, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.|
+| `/initiate`  | This endpoint initiates the sign-in flow. If your app calls it with a username of a user account that already exists, it returns a success response with a continuation token. If your app requests to use authentication methods that aren't supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.|
 |   `/challenge`   | your app calls this endpoint with a list of [challenge types](#sign-in-challenge-types) supported by the identity service. Our identity service generates, then sends an OTP code to the chosen challenge channel such as email. If your app calls this endpoint repeatedly, a new OTP is sent each time a call is made.|
 |  `/token`  | This endpoint verifies the OTP code it receives from your app, then it issues security tokens to your app.|
 
 ### Sign-in challenge types
 
-The API allows the app to advertise the authentication methods it supports to Microsoft Entra ID. To do so, the app includes the `challenge_type` parameter in its requests. This parameter holds predefined values, which represent different authentication methods. The following table contains the authentication methods the API supports. New values will be added in the future when the API supports new authentication methods.
+The API allows the app to advertise the authentication methods it supports to Microsoft Entra. To do so, the app includes the `challenge_type` parameter in its requests. This parameter holds predefined values, which represent different authentication methods. The following table contains the authentication methods the API supports. New values will be added in the future when the API supports new authentication methods.
 
 |    Challenge type     | Description                                |
 |-----------------------|--------------------------------------------|
 | password              | This challenge type indicates that the app supports the collection of a password credential from the user.                   |
 | oob   | This challenge type indicates that the application supports the use of OTP codes sent to the user using a secondary channel. Currently, the API supports only email OTPs.|
-| redirect  | This challenge type indicates that the application supports fallback to web-based authentication. All Native Auth compliant applications must support this authentication method. In every call that the app makes, it must include this challenge type. If Microsoft Entra ID returns this challenges type as a response, then it indicates that the app needs to fall back to web-based authentication. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).|
+| redirect  | This challenge type indicates that the application supports fallback to web-based authentication. All Native Auth compliant applications must support this authentication method. In every call that the app makes, it must include this challenge type. If Microsoft Entra returns this challenges type as a response, then it indicates that the app needs to fall back to web-based authentication. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).|
 
 ### Sign-in flow protocol details
 
@@ -910,9 +949,9 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `continuation_token`  | [continuation_token](#continuation-token) that Microsoft Entra ID returns. |  
+| `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |  
 
-If an app can't support a required authentication method by Microsoft Entra ID, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra ID informs the app by returning a *redirect* challenge type in its response:
+If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
@@ -928,7 +967,7 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `challenge_type`  | Microsoft Entra ID returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
+| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
@@ -958,7 +997,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
-|`error_codes`| A list of Microsoft Entra ID-specific error codes that can help you to diagnose errors.  |
+|`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
@@ -967,14 +1006,21 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type.   |  
-|`unauthorized_client` | The client ID used in the request doesn't exist.|
-|`invalid_grant`|The username doesn't exist.|
+| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type. or the request didn't include `client_id` parameter the client ID value is empty or invalid. Use the `error_description` parameter to learn the exact cause of the error.|  
+|`unauthorized_client`| The client ID used in the request has a valid client ID format, but doesn't exist in the customer tenant or is incorrect. |
+|`invalid_client`| The client ID that the app includes in the request is for an app that lacks native authentication configuration, such as it isn't a public client or isn't enabled for native authentication. Use the `suberror` parameter to learn the exact cause of the error.|
+|`user_not_found`|The username doesn't exist.|
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.|
+
+If the error parameter has a value of *invalid_client*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_client* error:
+
+|    Suberror value     | Description        |
+|----------------------|------------------------|
+|`nativeauthapi_disabled`| The client ID for an app that isn't enable for native authentication.|
 
 ### Step 2: Select an authentication method
 
-To continue with the flow, the app uses the continuation token acquired from the previous step to request Microsoft Entra ID to select one of the supported challenge types for the user to authenticate with. The app makes a POST request to the `/challenge` endpoint.
+To continue with the flow, the app uses the continuation token acquired from the previous step to request Microsoft Entra to select one of the supported challenge types for the user to authenticate with. The app makes a POST request to the `/challenge` endpoint.
 
 Here's an example of the request (we present the example request in multiple lines for readability):
 
@@ -992,12 +1038,12 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 |-----------------------|-------------------------|------------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
-| `continuation_token` |    Yes   | [continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request. |
+| `continuation_token` |    Yes   | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password flow, the value is expected to be `password redirect`.|
 
 #### Success response
 
-If the tenant administrator configured email with password in the Microsoft Entra Admin Center as the user’s authentication method, Microsoft Entra ID returns a success response, which includes a challenge type of *password*.
+If the tenant administrator configured email with password in the Microsoft Entra Admin Center as the user’s authentication method, Microsoft Entra returns a success response, which includes a challenge type of *password*.
 
 Example:
 
@@ -1015,10 +1061,10 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `continuation_token`  |  [continuation_token](#continuation-token) that Microsoft Entra ID returns. |  
-|`challenge_type`|Microsoft Entra ID returns the supported challenge type configured for the user in the Microsoft Entra admin center. In this case the values is expected to be *password*.|
+| `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. |  
+|`challenge_type`|Microsoft Entra returns the supported challenge type configured for the user in the Microsoft Entra admin center. In this case the values is expected to be *password*.|
 
-If an app can't support a required authentication method by Microsoft Entra ID, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra ID informs the app by returning a *redirect* challenge type in its response:
+If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
@@ -1033,7 +1079,7 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `challenge_type`  | Microsoft Entra ID returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
+| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
@@ -1063,7 +1109,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
-|`error_codes`| A list of Microsoft Entra ID-specific error codes that can help you to diagnose errors.  |
+|`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
@@ -1099,9 +1145,9 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 |-----------------------|-------------------------|------------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
-| `continuation_token`          |    Yes   |  [continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request. |
+| `continuation_token`          |    Yes   |  [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
 |`grant_type`| Yes |The value must be *password*. |
-|`scope`| Yes | A space-separated list of scopes. All the scopes must be from a single resource, along with OpenID Connect (OIDC) scopes, such as *profile*, *openid, and *email*. The app needs to include *openid* scope for Microsoft Entra ID to issue an ID token. The app needs to include *offline_access* scope for Microsoft Entra ID to issue a refresh token. Learn more about [Permissions and consent in the Microsoft identity platform](permissions-consent-overview.md). |
+|`scope`| Yes | A space-separated list of scopes. All the scopes must be from a single resource, along with OpenID Connect (OIDC) scopes, such as *profile*, *openid, and *email*. The app needs to include *openid* scope for Microsoft Entra to issue an ID token. The app needs to include *offline_access* scope for Microsoft Entra to issue a refresh token. Learn more about [Permissions and consent in the Microsoft identity platform](permissions-consent-overview.md). |
 |   `password`    | Yes | The password value that the app collects from the customer user. Replace `{secure_password}` with the password value that the app collects from the customer user.|
 
 #### Successful response
@@ -1126,7 +1172,7 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-|`token_type` |  Indicates the token type value. The only type that Microsoft Entra ID supports is *Bearer*.|
+|`token_type` |  Indicates the token type value. The only type that Microsoft Entra supports is *Bearer*.|
 |`scopes`|  A space-separated list of scopes that the access token is valid for.|
 |`expires_in`|   The length of time in seconds the access token remains valid.|
 | `access_token`  |    The access token that the app requested from the `/token` endpoint. The app can use this access token to request access to secured resources such as web APIs.| 
@@ -1159,7 +1205,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
-|`error_codes`| A list of Microsoft Entra ID-specific error codes that can help you to diagnose errors.  |
+|`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
@@ -1175,7 +1221,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Self-service password reset (SSPR)
 
-If you use email and password as the authentication method in your app, use the self-service password reset (SSPR) API enable customer users to reset their password. You use this API for forgot password or change password scenarios.
+If you use email and password as the authentication method in your app, use the self-service password reset (SSPR) API enable customer users to reset their password. You can use this API for forgot password or change password scenarios.
 
 ### Self-service password reset API endpoints
 
@@ -1183,8 +1229,8 @@ To use this API, the app interacts with the endpoint shown in the following tabl
 
 |    Endpoint     | Description        |
 |----------------------|------------------------|
-| `/start`  | Your app calls this endpoint when the customer user selects **Forgot password** or **Change password** link or button in the app. This endpoint validates the user's username (email), then returns a *continuation token* for use in the password reset flow. If your app requests to use authentication methods that aren't supported by Microsoft Entra ID, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow. |
-|`/challenge`|  Accepts a list of challenge types supported by the client and the *continuation token*. A challenge is issued to one of the preferred recovery credentials. For example, oob challenge issues an out-of-band OTP code to the email associated with the customer user account. If your app requests to use authentication methods that aren't supported by Microsoft Entra ID, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.    |
+| `/start`  | Your app calls this endpoint when the customer user selects **Forgot password** or **Change password** link or button in the app. This endpoint validates the user's username (email), then returns a *continuation token* for use in the password reset flow. If your app requests to use authentication methods that aren't supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow. |
+|`/challenge`|  Accepts a list of challenge types supported by the client and the *continuation token*. A challenge is issued to one of the preferred recovery credentials. For example, oob challenge issues an out-of-band OTP code to the email associated with the customer user account. If your app requests to use authentication methods that aren't supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.    |
 |`/continue`| Validates the challenge issued by the `/challenge` endpoint, then either returns a *continuation token* for the `/submit` endpoint, or issues another challenge to the user.  |
 |`/submit`|  Accepts a new password input by the user along with the *continuation token* to complete the password reset flow. This endpoint issues another *continuation token*. |
 |`/poll_completion`|  Finally, the app can use the *continuation token* issued by the `/submit` endpoint to check the status of the password reset request.    |
@@ -1194,7 +1240,7 @@ To use this API, the app interacts with the endpoint shown in the following tabl
 |    Challenge type     | Description                                |
 |-----------------------|--------------------------------------------|
 | oob   | This challenge type indicates that the application supports the use of OTP codes sent to the user using a secondary channel. Currently, the API supports only email OTPs.|
-| redirect  | This challenge type indicates that the application supports fallback to web-based authentication. All Native Auth compliant applications must support this authentication method. In every call that the app makes, it must include this challenge type. If Microsoft Entra ID returns this challenge type as a response, then it indicates that the app needs to fall back to web-based authentication. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).|
+| redirect  | This challenge type indicates that the application supports fallback to web-based authentication. All Native Auth compliant applications must support this authentication method. In every call that the app makes, it must include this challenge type. If Microsoft Entra returns this challenge type as a response, then it indicates that the app needs to fall back to web-based authentication. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).|
 
 ### Self-service password reset flow protocol details
 
@@ -1244,9 +1290,9 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `continuation_token`  |  [continuation_token](#continuation-token) that Microsoft Entra ID returns. |
+| `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. |
 
-If an app can't support a required authentication method by Microsoft Entra ID, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra ID informs the app by returning a *redirect* challenge type in its response:
+If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
@@ -1261,7 +1307,7 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `challenge_type`  | Microsoft Entra ID returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
+| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
@@ -1291,7 +1337,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
-|`error_codes`| A list of Microsoft Entra ID-specific error codes that can help you to diagnose errors.  |
+|`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
@@ -1300,13 +1346,22 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type.   |  
+| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type or the request didn't include `client_id` parameter the client ID value is empty or invalid. Use the `error_description` parameter to learn the exact cause of the error.   |  
 |`user_not_found`|The username doesn't exist.|
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.|
+|`invalid_client`| The client ID that the app includes in the request is for an app that lacks native authentication configuration, such as it isn't a public client or isn't enabled for native authentication. Use the `suberror` parameter to learn the exact cause of the error.|
+|`unauthorized_client`| The client ID used in the request has a valid client ID format, but doesn't exist in the customer tenant or is incorrect. |
+
+If the error parameter has a value of *invalid_client*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_client* error:
+
+|    Suberror value     | Description        |
+|----------------------|------------------------|
+|`nativeauthapi_disabled`| The client ID for an app that isn't enable for native authentication.|
+
 
 ### Step 2: Select an authentication method
 
-To continue with the flow, the app uses the continuation token acquired from the previous step to request Microsoft Entra ID to select one of the supported challenge types for the user to authenticate with. The app makes a POST request to the `/challenge` endpoint. If this request is successful, Microsoft Entra ID sends an OTP code to the user's account email. At the moment, we only support email OTP.
+To continue with the flow, the app uses the continuation token acquired from the previous step to request Microsoft Entra to select one of the supported challenge types for the user to authenticate with. The app makes a POST request to the `/challenge` endpoint. If this request is successful, Microsoft Entra sends an OTP code to the user's account email. At the moment, we only support email OTP.
 
 Here's an example (we present the example request in multiple lines for readability):
 
@@ -1324,7 +1379,7 @@ client_id=client_id=111101-14a6-abcd-97bc-abcd1110011
 |-----------------------|-------------------------|------------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.                |
-| `continuation_token`          |    Yes   |   [continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request. |
+| `continuation_token`          |    Yes   |   [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#self-service-password-reset-challenge-types) strings that the app supports such as `oob redirect`. The list must always include the `redirect` challenge type. For this request, the value is expected to contain `oob redirect`.|
 
 #### Success response
@@ -1349,14 +1404,14 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `continuation_token`  | [continuation_token](#continuation-token) that Microsoft Entra ID returns. |
+| `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |
 |`challenge_type`| Challenge type selected for the user to authenticate with.|
 |`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer more ways to the user to enter the OTP code. Issued if `challenge_type` is *oob*  |
 |`challenge_channel`| The type of the channel through which the OTP code was sent. At the moment, we support email. |
 |`challenge_target_label` |An obfuscated email where the OTP code was sent.|
-|`code_length`|The length of the OTP code that Microsoft Entra ID generates. |
+|`code_length`|The length of the OTP code that Microsoft Entra generates. |
 
-If an app can't support a required authentication method by Microsoft Entra ID, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra ID informs the app by returning a *redirect* challenge type in its response:
+If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
@@ -1371,7 +1426,7 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `challenge_type`  | Microsoft Entra ID returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
+| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
@@ -1401,7 +1456,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
-|`error_codes`| A list of Microsoft Entra ID-specific error codes that can help you to diagnose errors.  |
+|`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
@@ -1434,9 +1489,9 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
-| `continuation_token`  | Yes | [continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request. |
+| `continuation_token`  | Yes | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
-|`grant_type` | Yes | The only valid value is oob.  |
+|`grant_type` | Yes | The only valid value is *oob*.  |
 |`oob`| Yes |The OTP code that the customer user received in their email. Replace `{otp_code}` with the OTP code that the customer user received in their email. To **resend an OTP code**, the app needs to make a request to the `/challenge` endpoint again. |
 
 #### Success response
@@ -1458,7 +1513,7 @@ Content-Type: application/json
 |    Parameter     | Description        |
 |----------------------|------------------------|
 |`expires_in`|Time in seconds before the *continuation_token* expires. The maximum value of `expires_in` is **600 seconds**. |
-| `continuation_token`  |  [continuation_token](#continuation-token) that Microsoft Entra ID returns.  |
+| `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns.  |
 
 #### Error response
 
@@ -1486,19 +1541,27 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
-|`error_codes`| A list of Microsoft Entra ID-specific error codes that can help you to diagnose errors.  |
+|`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
+|`suberror` | An error code string that can be used to further classify types of errors.|
 
 Here are the possible errors you can encounter (possible values of the `error` parameter):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |  Request parameter validation failed such as a validation of *continuation token* failed.   |
-|`invalid_grant` |The grant type is unknown or doesn't match the expected grant type value. |
-|`expired_token`|The OTP code provided by the user or  *continuation token* is expired.    |
+| `invalid_request`  |  Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid or the customer tenant administrator hasn't enabled SSPR and email OTP for all tenant users. Use the `error_description` parameter to learn the exact cause of the error. |
+|`invalid_grant` |The grant type is unknown or doesn't match the expected grant type value. Use the `suberror` parameter to learn the exact cause of the error.|
+|`expired_token`|The continuation token is expired.    |
+
+
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_grant* error:
+
+|    Suberror value     | Description        |
+|----------------------|------------------------|
 |`invalid_oob_value`|The OTP code provided by the user is invalid.|
+
 
 ### Step 4: Submit a new password
 
@@ -1519,9 +1582,9 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
-| `continuation_token`  |Yes |[continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request.  |
+| `continuation_token`  |Yes |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous request.  |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
-|`new_password` | Yes | User’s new password. Replace `{new_password}` with the user's new password. It's your responsibility to confirm that the user is aware of the password they want to use by providing the password confirm field in the app's UI. You must also ensure that the user is aware of what constitutes a strong password per your organization's policy. [Learn more about Microsoft Entra ID's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). |
+|`new_password` | Yes | User’s new password. Replace `{new_password}` with the user's new password. It's your responsibility to confirm that the user is aware of the password they want to use by providing the password confirm field in the app's UI. You must also ensure that the user is aware of what constitutes a strong password per your organization's policy. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). |
 
 #### Success response
 
@@ -1541,7 +1604,7 @@ Content-Type: application/json
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `continuation_token`  |  [continuation_token](#continuation-token) that Microsoft Entra ID returns.  |
+| `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns.  |
 |`poll_interval`|The minimum amount of time in seconds that the app should wait between polling requests to check the status of the password reset request via the `/poll_completion` endpoint, see [step 5](#step-5-poll-for-password-reset-status)  |
 
 #### Error response
@@ -1570,10 +1633,11 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
-|`error_codes`| A list of Microsoft Entra ID-specific error codes that can help you to diagnose errors.  |
+|`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
+|`suberror` | An error code string that can be used to further classify types of errors.|
 
 Here are the possible errors you can encounter (possible values of the `error` parameter):
 
@@ -1581,15 +1645,22 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as a validation of *continuation token* failed.   |
 |`expired_token`|The *continuation token* is expired.    |
-|`password_too_weak`|Password is too weak as it doesn't meet complexity requirements. [Learn more about Microsoft Entra ID's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
-|`password_too_short`|New password is fewer than 8 characters. [Learn more about Microsoft Entra ID's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
-|`password_too_long` |New password is longer than 256 characters. [Learn more about Microsoft Entra ID's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). |
-|`password_recently_used`|The new password must not be the same as one recently used. [Learn more about Microsoft Entra ID's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
-|`password_banned`|New password contains a word, phrase, or pattern that is banned. [Learn more about Microsoft Entra ID's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
+|`invalid_grant`| The grant submitted is invalid, such as the password submitted is too short. Use the `suberror` parameter to learn the exact cause of the error.|
+
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter:
+
+|    Suberror value     | Description        |
+|----------------------|------------------------|
+|`password_too_weak`|Password is too weak as it doesn't meet complexity requirements. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
+|`password_too_short`|New password is fewer than 8 characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
+|`password_too_long` |New password is longer than 256 characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). |
+|`password_recently_used`|The new password must not be the same as one recently used. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
+|`password_banned`|New password contains a word, phrase, or pattern that is banned. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md).|
+|`password_is_invalid`| Password is invalid, for example because it uses disallowed characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
 
 ### Step 5: Poll for password reset status
 
-Lastly, since updating of the user’s configuration with the new password incurs some delay, the app can use the `/poll_completion` endpoint to poll Microsoft Entra ID for password reset status. The minimum amount of time in seconds that the app should wait between polling requests is returned from the `/submit` endpoint in the `poll_interval` parameter.  
+Lastly, since updating of the user’s configuration with the new password incurs some delay, the app can use the `/poll_completion` endpoint to poll Microsoft Entra for password reset status. The minimum amount of time in seconds that the app should wait between polling requests is returned from the `/submit` endpoint in the `poll_interval` parameter.  
 
 Here's an example (we present the example request in multiple lines for readability):
 
@@ -1605,7 +1676,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
-| `continuation_token`  |Yes | [continuation_token](#continuation-token) that Microsoft Entra ID returned in the previous request. |
+| `continuation_token`  |Yes | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 
 #### Success response
@@ -1619,15 +1690,17 @@ Content-Type: application/json
 
 ```json
 {
-    "status": "succeeded" 
+    "status": "succeeded",
+    "continuation_token":"czZCaGRSa3F0..."
 } 
 ```
 
 |    Parameter     | Description        |
 |----------------------|------------------------|
-| `status`  | The status of the reset password request. If Microsoft Entra ID returns a status of **, the app can resubmit the new password by making another request to the `/submit` endpoint.|
+| `status`  | The status of the reset password request. If Microsoft Entra returns a status of *failed*, the app can resubmit the new password by making another request to the `/submit` endpoint and include the new continuation token.|
+| `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. If the status is *succeeded*, the app can use the continuation token that Microsoft Entra returns to request for security tokens via the `/token` endpoint as explained in [step 3 of sign-in flow](#step-3-request-for-security-tokens). This means that after a user successfully resets their password, you can directly sign them into your app without asking them to reenter their new credentials.|
 
-Here are the possible statuses that Microsoft Entra ID returns (possible values of the `status` parameter):
+Here are the possible statuses that Microsoft Entra returns (possible values of the `status` parameter):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
@@ -1662,7 +1735,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
-|`error_codes`| A list of Microsoft Entra ID-specific error codes that can help you to diagnose errors.  |
+|`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
@@ -1676,4 +1749,4 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Next steps
 
-- [Native authentication email OTP API reference](reference-native-auth-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
+- [Native authentication email OTP API reference](reference-native-authentication-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
