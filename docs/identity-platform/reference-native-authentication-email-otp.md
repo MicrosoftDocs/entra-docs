@@ -4,8 +4,8 @@ description: Find out how to use Native authentication with email OTP API refere
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
-ms.service: active-directory 
-ms.subservice: ciam
+ms.service: entra-external-id 
+ms.subservice: customers
 ms.topic: reference
 ms.date: 02/29/2024
 

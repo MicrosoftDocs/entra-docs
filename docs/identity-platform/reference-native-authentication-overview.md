@@ -4,8 +4,8 @@ description: Find out the use, and the available API options for Native authenti
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
-ms.service: active-directory 
-ms.subservice: ciam
+ms.service: entra-external-id 
+ms.subservice: customers
 ms.topic: reference
 ms.date: 02/29/2024
 
