@@ -5,7 +5,7 @@ description: Shows how to give cloud B2B users access to on premises apps with M
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 28/02/2024
+ms.date: 02/28/2024
 
 ms.author: cmulligan
 author: csmulligan
