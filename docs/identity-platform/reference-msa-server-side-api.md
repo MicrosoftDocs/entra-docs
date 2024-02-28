@@ -16,17 +16,13 @@ ms.custom:
 #Customer intent: 
 ---
 
-# MSAL API and MSA Server Side API Reference
+# MSA Server Side API Reference
 
 This page provides documentation for the MSAL API and MSA Server Side API. It includes a list of available APIs, their parameters, and notes. Use this reference guide to understand and utilize the functionality provided by these APIs.
 
-## MSAL API
-
-| API | Parameter | Notes |
-| ----| --------- | ----- |
-| `IsAutomaticAppSignInEnabled` | None | This is a thin wrapper of the internal Regional Policy API that returns a boolean |
-
 ## MSA Server Side API
+
+These are passed to `login.microsoftonline.com` or `login.live.com` as URL parameters, in the format: `login.microsoftonline.com?parametername=value`.
 
 | Parameter | Value | Notes |
 | --------- | ----- | ----- |
@@ -38,8 +34,8 @@ This page provides documentation for the MSAL API and MSA Server Side API. It in
 | `fl` | `phone2`,<br/> `email`,<br/> `wld`,<br/> `wld2`,<br/> `easi`,<br/> `easi2` | **Note: This feature is deprecated.** This parameter controls the username options provided during the sign-up process:<br/> `phone` – Restricts username to phone number,<br/>`phone2` – Defaults to phone number, but allows other options,<br/>`email` – Restricts username to email (Outlook or EASI),<br/>`wld` – Restricts username to Outlook,<br/>`wld2` – Defaults to Outlook, but allows other options, including phone,<br/>`easi` – Restricts username to EASI,<br/>`easi2` – Defaults to EASI, but allows other options, including phone. |
 | `nopa` | 0/1/2 | **Note: This feature is deprecated.** Enables passwordless signup. A value of 1 allows signup without a password, but enforces password creation after 30 days. A value of 2 allows signup without a password indefinitely. To use value 2, apps must be added to an allowlist through a manual process. |
 | `coa` | 0/1 | **Note: This feature is deprecated.** Enables passwordless sign-in by sending a code to the user’s phone number. To use value 1, apps must be added to an allowlist through a manual process. |
-| `signup` | 0/1 | Start the authentication flow in the “Create account” page rather than the “Sign-in” page. |
-| `fluent` | 0/1 | **Note: This feature is deprecated.** Enables the new “Fluent” look and feel for the sign-in flow. To use value 1, apps must be added to an allowlist through a manual process. |
+| `signup` | 0/1 | Start the authentication flow in the *Create account* page rather than the *Sign-in *page. |
+| `fluent` | 0/1 | **Note: This feature is deprecated.** Enables the new *Fluent* look and feel for the sign-in flow. To use value 1, apps must be added to an allowlist through a manual process. |
 | `api-version` | “”/”2.0” | When set to `2.0`, this parameter allows the clientid to specify an App ID different from the one registered by the Windows calling app, given that the specified App ID is configured to permit this. |
 | `Clientid/client_id` | `app ID` | App ID for the app invoking the authentication flow. |
 | `Client_uiflow` | `new_account` | Allows apps to add a new account without invoking the [AccountsSettingsPane](/uwp/api/windows.ui.applicationsettings.accountssettingspane). Requires that you also pass the ForceAuthentication prompt type. Requires that you also pass the [ForceAuthentication](/uwp/api/windows.security.authentication.web.core.webtokenrequestprompttype) prompt type. |
