@@ -45,7 +45,7 @@ In order to optimize the traffic flow and reduce latency to a connector group, a
 1. Under **Advanced Settings**, select the drop-down under Optimize for a specific region and select the region closest to the connectors.
 1. Select **Create** on the page.
 
-:::image type="content" source="./media/application-proxy-network-topology/geo-routing.png" alt-text="Configure a new connector group." lightbox="./media/application-proxy-network-topology/geo-routing.png":::
+    :::image type="content" source="./media/application-proxy-network-topology/geo-routing.png" alt-text="Configure a new connector group." lightbox="./media/application-proxy-network-topology/geo-routing.png":::
 
 1. Select the connectors to assign to the connector group.
 
