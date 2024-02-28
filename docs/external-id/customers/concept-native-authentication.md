@@ -50,10 +50,6 @@ Native authentication isn't a supported solution for:
 ## Next steps
 <!--This section will be updated with the correct links.-->
 - [Samples and guides for customer identity and access management (CIAM)](/entra/external-id/customers/samples-ciam-all)
-<<<<<<< HEAD:docs/external-id/customers/concept-native-authentication.md
 - Native authentication tutorials
 - Native authentication API documentation
-=======
-- Tutorials
-- API documentation
->>>>>>> 9482969209b59c5fadd2fb306c5fa9f9964fce31:docs/external-id/customers/concept-native-auth.md
+
