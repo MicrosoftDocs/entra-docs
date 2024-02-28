@@ -102,14 +102,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |phoneNumbers[type eq "work"].value|String||
       |externalId|String||&check;
 
-1. Under the **Mappings** section, select **Synchronize Azure Active Directory Groups to ClearView Trade**.
-
-1. Review the group attributes that are synchronized from Azure AD to ClearView Trade in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in ClearView Trade for update operations. Select the **Save** button to commit any changes.
-
-      |Attribute|Type|Supported for filtering|Required by ClearView Trade
-      |---|---|---|---|
-      |displayName|String|&check;|&check;
-
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for ClearView Trade, change the **Provisioning Status** to **On** in the **Settings** section.
