@@ -25,7 +25,7 @@ Manage your accounts in one central location: the Azure portal.
 
 To get started, you need the following items:
 
-* An Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * HashiCorp Boundary single sign-on (SSO) enabled subscription.
 
 ## Add HashiCorp Boundary from the gallery
@@ -142,4 +142,4 @@ Below are the configuration steps to complete the OAuth/OIDC federation setup:
 
     h. Click **SAVE**.
 
-    i. Copy the **callback URL** value, which populate after clicking save button and use it later in the Entra configuration.
+    i. Copy the **callback URL** value, which populates after clicking save button and use it later in the Entra configuration.
