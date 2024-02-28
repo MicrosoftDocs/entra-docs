@@ -42,8 +42,7 @@ In order to optimize the traffic flow and reduce latency to a connector group, a
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses application proxy. If you need to change directories, select **Switch directory** and choose a directory that uses application proxy.
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
 1. Select **New Connector Group** and provide a **Name** for the connector group.
-1. Under **Advanced Settings**, select the drop-down under Optimize for a specific region and select the region closest to the connectors.
-1. Select **Create** on the page.
+1. Under **Advanced Settings**, select the drop-down under Optimize for a specific region and select the region closest to the connectors and then select **Save**.
 
     :::image type="content" source="./media/application-proxy-network-topology/geo-routing.png" alt-text="Configure a new connector group." lightbox="./media/application-proxy-network-topology/geo-routing.png":::
 
