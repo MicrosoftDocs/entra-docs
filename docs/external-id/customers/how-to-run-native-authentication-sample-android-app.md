@@ -174,7 +174,7 @@ To build and run your app, follow these steps:
 
 1. Select **Sign out** to clear the signed in account from the cache. After signing out, the application will allow a new user to sign up or sign in.  
  
-### Other flows  
+## Other flows  
  
 The sample app supports the following flows:  
  
