@@ -1,5 +1,5 @@
 ---
-title: Create a token issuance start event HTTP trigger function
+title: Create a REST API with a token issuance start event
 description: Learn how to use the Authentication events trigger for Azure Functions library to create a trigger function that uses the token issuance start event.  
 author: cilwerner
 manager: CelesteDG
@@ -15,7 +15,7 @@ zone_pivot_groups: custom-auth-extension
 #Customer intent: As a developer, I want to create an Azure Function app with a token issuance start event using the Azure Functions client library for .NET, and deploy it to the Azure portal, or create the app directly on the Azure portal.
 ---
 
-# Create a token issuance start event HTTP trigger function
+# Create a REST API with a token issuance start event
 
 > [!NOTE]
 >
@@ -23,7 +23,7 @@ zone_pivot_groups: custom-auth-extension
 
 ::: zone pivot="visual-studio" 
 
-This article describes how to create an HTTP trigger function API and deploy it to the Azure portal using Visual Studio. You'll create the API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events.
+This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. Using Azure Functions, you'll create an HTTP trigger function in Visual Studio and deploy it to the Azure portal. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events.
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ This article describes how to create an HTTP trigger function API and deploy it 
 
 ::: zone pivot="visual-studio-code"
 
-This article describes how to create an HTTP trigger function API and deploy it to the Azure portal using Visual Studio Code. You'll create the API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events.
+This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. Using Azure Functions, you'll create an HTTP trigger function in Visual Studio Code and deploy it to the Azure portal. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events.
 
 ## Prerequisites
 
@@ -49,7 +49,7 @@ This article describes how to create an HTTP trigger function API and deploy it 
 
 ::: zone pivot="azure-portal"
 
-This article describes how to create an HTTP trigger function REST API in the Azure portal. You'll use Azure Functions in the Azure portal to create your REST API and add some custom claims that can be called in a custom extension. You'll add a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) to your HTTP trigger. 
+This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using Azure Functions in the Azure portal. You'll create an Azure Function app and an HTTP trigger function, and edit this function to return extra claims for your token. 
 
 ## Prerequisites
 
@@ -194,7 +194,7 @@ The function needs to be deployed to Azure using our IDE. Check that you are cor
 
 ## Create the Azure Function app
 
-This setup is done entirely in the Azure portal. You'll create an Azure Function app and create an HTTP trigger function.
+In the Azure portal, we'll create an Azure Function app and its associated resource, before continuining to create the HTTP trigger function.
 
 1. Sign in to the [Azure portal](https://portal.azure.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. From the Azure portal menu or the **Home** page, select **Create a resource**.
@@ -306,7 +306,7 @@ The code reads the incoming JSON object and Microsoft Entra ID sends the [JSON o
     }
     ```
 
-1. From the top menu, select **Get Function Url**, and copy the **URL** value. In the next step, the function URL will be used and referred to as `{Function_Url}`. 
+1. From the top menu, select **Get Function Url**, and copy the **URL** value. This function URL can be used when setting up a custom authentication extension.  
 
 ::: zone-end
 
