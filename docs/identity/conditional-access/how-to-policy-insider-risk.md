@@ -14,7 +14,7 @@ ms.reviewer: poulomib
 ---
 # Common Conditional Access policy: Insider risk based policy
 
-Most users have a normal behavior that can be tracked, when they fall outside of this norm it could be risky to allow them to just sign in. You may want to block that user or maybe just ask them to perform multifactor authentication to prove that they're really who they say they are. Microsoft Purview can provide a insider risk signal to Conditional Access. This signal allows administrators to refine access control decisions. Insider risk managment is part of [Microsoft Purview](/purview/insider-risk-management-adaptive-protection), you must enable it before you can use the signal in Conditional Access.
+Most users have a normal behavior that can be tracked, when they fall outside of this norm it could be risky to allow them to just sign in. You may want to block that user or maybe just ask them to perform multifactor authentication to prove that they're really who they say they are. Microsoft Purview can provide an insider risk signal to Conditional Access. This signal allows administrators to refine access control decisions. Insider risk management is part of [Microsoft Purview](/purview/insider-risk-management-adaptive-protection). You must enable it before you can use the signal in Conditional Access.
 
 :::image type="content" source="media/how-to-policy-insider-risk/insider-risk-based-conditional-access-policy.png" alt-text="Screenshot of an example Conditional Access policy using insider risk as a condition." lightbox="media/how-to-policy-insider-risk/insider-risk-based-conditional-access-policy.png":::
 
