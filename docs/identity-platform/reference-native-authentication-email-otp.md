@@ -54,7 +54,7 @@ The API allows the app to advertise the authentication methods it supports to Mi
 
 The sequence diagram demonstrates the basic flow of the sign-up process.
 
-:::image type="content" source="media/reference-native-auth-api/sign-up-email-with-otp.png" alt-text="Diagram of Native authentication sign-up with email with OTP."::: 
+:::image type="content" source="media/reference-native-auth-api/sign-up-email-with-otp.png" alt-text="Diagram of Native authentication sign up with email with OTP."::: 
 
 This diagram indicates that the app collects all the sign-up information, then submits them via the `/signup/v1.0/start`. However, if the app doesn't submit all the required user attributes via the `/signup/v1.0/start`, it can do so via the `/signup/v1.0/continue` endpoint. Although submitting the user attributes via the `/signup/v1.0/continue` endpoint is marked as an optional step, it's a mandatory step if the app doesn't submit all the required user attributes via the `/signup/v1.0/start` endpoint.
 
@@ -684,7 +684,7 @@ Content-Type: application/x-www-form-urlencoded
 &continuation-token=AQABAAEAAAAtn...
 ```
 
-## Sign in API reference
+## Sign-in API reference
 
 To request your security tokens, your app interacts with three endpoints, `/initiate`, `/challenge` and `/token`.
 
