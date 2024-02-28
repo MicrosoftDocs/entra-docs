@@ -5,7 +5,7 @@ author: billmath
 ms.author: billmath
 manager: amycolannino
 ms.date: 11/06/2023
-ms.topic: how-to
+ms.topic: troubleshooting
 ms.service: entra-id
 ms.subservice: hybrid-cloud-sync
 ---

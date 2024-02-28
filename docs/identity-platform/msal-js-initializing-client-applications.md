@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: devx-track-js, 
-ms.date: 01/16/2023
+ms.date: 02/27/2024
 ms.reviewer: saeeda
 ms.service: identity-platform
 
@@ -147,8 +147,6 @@ Multiple instances of `UserAgentApplication` or `PublicClientApplication` aren't
 ## Next steps
 
 The MSAL.js 2.x code sample on GitHub demonstrates instantiation of a [PublicClientApplication][msal-js-publicclientapplication] with a [Configuration][msal-js-configuration] object:
-
-[Azure-Samples/ms-identity-javascript-v2](https://github.com/Azure-Samples/ms-identity-javascript-v2)
 
 <!-- LINKS - External -->
 

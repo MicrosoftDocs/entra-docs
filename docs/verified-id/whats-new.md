@@ -5,7 +5,7 @@ author: barclayn
 manager: amycolannino
 ms.service: entra-verified-id
 
-ms.topic: reference
+ms.topic: whats-new
 ms.date: 10/31/2023
 ms.custom: references_regions
 ms.author: barclayn
