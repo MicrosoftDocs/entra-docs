@@ -25,14 +25,6 @@ Once the service is configured, most insights into the operation of the service 
 
 -   **Current status –** A summary of the last provisioning run for a given app can be seen in the **Identity** > **Applications** > **Enterprise applications** > `[Application Name]` > **Provisioning** section, at the bottom of the screen under the service settings. The Current Status section shows if a provisioning cycle starts provisioning user accounts. Watch the progress of the cycle, see how many users and groups are provisioned, and how many roles are created. If there are errors, details can be found in the [Provisioning logs] (~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context).
 
-## General problem areas with provisioning
-
-General problem areas to explore.
-
-- [Provisioning service doesn't appear to start](#provisioning-service-does-not-appear-to-start).
-- Can’t save configuration due to app credentials not working.
-- [Provisioning logs say users are skipped and not provisioned, even though they're assigned](#provisioning-logs-say-users-are-skipped-and-not-provisioned-even-though-they-are-assigned).
-
 ## Provisioning service doesn't appear to start
 
 You set the **Provisioning Status** to be **On** in the **Identity** > **Applications** > **Enterprise applications** > `[Application Name]` > **Provisioning** section of the Microsoft Entra admin center. However, no other status details are shown on the page after subsequent reloads. It's likely that the service is running but an initial cycle didn't complete. Check the **Provisioning logs** to determine what operations the service is performing, and if there are any errors.
