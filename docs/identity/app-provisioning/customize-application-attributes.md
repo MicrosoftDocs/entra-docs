@@ -285,53 +285,53 @@ Then use the AppRoleAssignmentsComplex expression to map to the custom role attr
     
 **Example Request (POST)**
   
-    ```json
-    {
-       "schemas": [
-           "urn:ietf:params:scim:schemas:core:2.0:User"
-      ],
-      "externalId": "alias",
-      "userName": "alias@contoso.OnMicrosoft.com",
-      "active": true,
-      "displayName": "First Name Last Name",
-      "meta": {
-           "resourceType": "User"
+```json
+{
+    "schemas": [
+        "urn:ietf:params:scim:schemas:core:2.0:User"
+  ],
+  "externalId": "alias",
+  "userName": "alias@contoso.OnMicrosoft.com",
+  "active": true,
+  "displayName": "First Name Last Name",
+  "meta": {
+        "resourceType": "User"
+  },
+  "roles": [
+      {
+            "primary": false,
+            "type": "WindowsAzureActiveDirectoryRole",
+            "displayName": "Admin",
+            "value": "Admin"
       },
-      "roles": [
-         {
-               "primary": false,
-               "type": "WindowsAzureActiveDirectoryRole",
-               "displayName": "Admin",
-               "value": "Admin"
-         },
-         {
-               "primary": false,
-               "type": "WindowsAzureActiveDirectoryRole",
-               "displayName": "User",
-             "value": "User"
-         }
-      ]
-    }
-    ```
+      {
+            "primary": false,
+            "type": "WindowsAzureActiveDirectoryRole",
+            "displayName": "User",
+          "value": "User"
+      }
+  ]
+}
+```
 
  **Example output (PATCH)** 
 
-    ```json
-    "Operations": [
+```json
+"Operations": [
+  {
+    "op": "Add",
+    "path": "roles",
+    "value": [
       {
-        "op": "Add",
-        "path": "roles",
-        "value": [
-          {
-            "value": "{"id":"06b07648-ecfe-589f-9d2f-6325724a46ee","value":"Admin","displayName":"Admin"}
-          },
-    {
-            "value": "{"id":"06b07648-ecfe-599f-9d2f-6325724a46ee","value":"User","displayName":"User"}
-          }
-        ]
+        "value": "{"id":"06b07648-ecfe-589f-9d2f-6325724a46ee","value":"Admin","displayName":"Admin"}
+      },
+{
+        "value": "{"id":"06b07648-ecfe-599f-9d2f-6325724a46ee","value":"User","displayName":"User"}
       }
     ]
-    ```
+  }
+]
+ ```
 
 ## Provisioning a multi-value attribute
 
