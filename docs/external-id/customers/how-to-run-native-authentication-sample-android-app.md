@@ -56,19 +56,8 @@ To specify that this app is a public client and can use native authentication, e
 [!INCLUDE [Create user flow](../customers/includes/configure-user-flow/create-native-authentication-sign-in-sign-out-user-flow.md)]
  
 ## Associate the  app with the user flow  
- 
-Although many applications can be associated with your user flow, a single application can only be associated with one user flow. 
 
-To associate your user flow with your app, follow these steps. 
-
-1. On the sidebar menu, select **Identity**.  
-1. Select **External Identities**, then **User flows**.  
-1. In the **User flows** page, select the **User flow name**  you created earlier, for example, _SignInSignUpSample_. 
-1. Under **Use**, select **Applications**.  
-1. Select **Add application**. 
-1. Select the application from the list such as _ciam-client-app_ or use the search box to find the application, and then select it.  
- 
-1. Choose **Select**.  
+[!INCLUDE [associate user flow](../customers/includes/configure-user-flow/add-app-user-flow.md)]  
  
 ## Clone sample Android mobile application  
  
