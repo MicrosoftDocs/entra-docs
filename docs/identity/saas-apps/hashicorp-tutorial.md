@@ -54,11 +54,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
         ![Screenshot of showing the identity configuration.](./media/hashicorp-tutorial/entra.png)
 
-    1. Copy **Application (client) ID** and paste in the **Client ID** field on the HashiCorp Boundary side.
+    1. Copy **Application (client) ID** and use it later in the HashiCorp Boundary side configuration.
 
         ![Screenshot of application client values.](./media/hashicorp-tutorial/value.png)
 
-    1. Under **Endpoints** tab, copy **OpenID Connect metadata document** link and paste in the **Issuer** field on the HashiCorp Boundary side.
+    1. Under **Endpoints** tab, copy **OpenID Connect metadata document** link and use it later in the HashiCorp Boundary side configuration.
 
         ![Screenshot of showing the endpoints on tab.](./media/hashicorp-tutorial/end.png)
 
@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
         
         ![Screenshot of showing Description for the client secret.](./media/hashicorp-tutorial/expire.png)
 
-    1. Once you add a client secret, **Value** will be generated. Copy the value and paste it in the **Client Secret** field on HashiCorp Boundary side.
+    1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the HashiCorp Boundary side configuration.
 
         ![Screenshot of showing how to add a client secret.](./media/hashicorp-tutorial/client.png)
 
@@ -130,7 +130,7 @@ Below are the configuration steps to complete the OAuth/OIDC federation setup:
 
     b. In the **Description** field, enter a valid description value.
 
-    c. Paste the **Open ID Connect metadata document** value in the **Issuer** field, which you have copied from Entra page excluding `.well-known/openid-configuration` from the copied value. 
+    c. Paste the **Open ID Connect metadata document** value in the **Issuer** field, which you have copied from Entra page and exclude `.well-known/openid-configuration` from the copied value. 
 
     d. In the **Client ID** field, paste the **Application ID** value, which you have copied from Entra page.
 
@@ -142,4 +142,4 @@ Below are the configuration steps to complete the OAuth/OIDC federation setup:
 
     h. Click **SAVE**.
 
-    i. Copy the **callback URL** value, which populates after clicking save button and use it later in the Entra configuration.
+    i. Copy the **callback URL** value, which is generated once you click the save button and use it later in the Entra side configuration.
