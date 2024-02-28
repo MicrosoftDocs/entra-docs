@@ -1,6 +1,6 @@
 ---
-title: Microsoft Entra ID WAM API Reference
-description: Documentation for Microsoft Entra ID WAM API
+title: Microsoft Entra ID Windows Account Manager (WAM) API Reference
+description: Comprehensive guide for the Microsoft Entra ID Windows Account Manager (WAM) API, detailing its usage, parameters, and integration in Windows applications.
 services: 
 author: OwenRichards1
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.date: 02/28/2024
 ms.author: owenrichards
 ms.reviewer: 
 ms.custom: 
-#Customer intent: 
+#Customer intent: As a custome, I intend to understand the Microsoft Entra ID Windows Account Manager (WAM) API, its parameters, and how to use them in the development of Windows applications that integrate with Microsoft Entra ID or Microsoft accounts.
 ---
 
 # Microsoft Entra ID Windows Account Manager (WAM) API Reference
@@ -51,3 +51,7 @@ The Microsoft Entra ID WAM API documentation provides detailed information about
 | `token_type` | `pop` indicates proof of possession tokens <br/> `shr` indicates signed HTTP request tokens | The `token_type` parameter specifies the type of tokens to be used. |
 | `req_cnf` |       | The `req_cnf` parameter is used when the `token_type` is `pop`. This field contains information about the key that the client would like to bind to the access token for proof-of-possession. |
 | `refresh_binding` |       | The `refresh_binding` parameter is part of an upcoming token binding feature yet to be released. |
+
+## See also
+
+- [Microsoft account (MSA) Server Side API Reference](reference-msa-server-side-api.md)

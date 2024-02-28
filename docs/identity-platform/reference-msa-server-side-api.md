@@ -1,6 +1,6 @@
 ---
 title: MSAL API and MSA Server Side API Reference
-description: Documentation for the MSAL & MSA Server Side API 
+description: Comprehensive guide for understanding and using the Microsoft Authentication Library (MSAL) and Microsoft Account (MSA) Server Side APIs.
 services: 
 author: OwenRichards1
 manager: CelesteDG
@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop 
 ms.topic: how-to
 ms.workload: identity
-ms.date: 02/06/2024
+ms.date: 02/28/2024
 ms.author: owenrichards
 ms.reviewer: 
 ms.custom: 
-#Customer intent: 
+#Customer intent: As a customer, I intend to understand the Microsoft Authentication Library (MSAL) API and the Microsoft Account (MSA) Server Side API, their parameters, and how to use them in the development of applications that integrate with Microsoft accounts.
 ---
 
-# MSA Server Side API Reference
+# Microsoft account (MSA) Server Side API Reference
 
-This page provides documentation for the MSAL API and MSA Server Side API. It includes a list of available APIs, their parameters, and notes. Use this reference guide to understand and utilize the functionality provided by these APIs.
+This page serves as a comprehensive reference for the Microsoft Authentication Library (MSAL) API and Microsoft Account (MSA) Server Side API. It provides a detailed overview of the available APIs, their respective parameters, and additional notes. Utilize this guide to gain a deeper understanding of these APIs and effectively leverage their functionalities in your application development process.
 
 ## MSA Server Side API
 
@@ -63,3 +63,7 @@ These are passed to `login.microsoftonline.com` or `login.live.com` as URL param
 | `redirect_uri` | String | Redirection URI to which the response is sent. This URI must exactly match one of the Redirection URI values for the Client preregistered at MSA. |
 | `state` | String | An opaque value used to maintain state between the request and the callback. |
 | `oauth2_response` | 1 | When equal to 1, it means the ws-trust response should follow the OAuth response format. |
+
+## See also
+
+- [Microsoft Entra ID Windows Account Manager (WAM) API Reference](reference-entra-id-wam-api.md)
