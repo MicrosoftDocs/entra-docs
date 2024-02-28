@@ -41,7 +41,7 @@ If you've worked with Microsoft Entra ID, you're already familiar with using a M
 
 - **Encryption keys**: Add and manage encryption keys for signing and validating tokens, client secrets, certificates, and passwords.
 
-Learn more about [password and one-time passcode](how-to-enable-password-reset-customers.md) login, and about [Google](how-to-google-federation-customers.md) and [Facebook](how-to-facebook-federation-customers.md) federation.
+Learn more about [password and one-time passcode](how-to-enable-password-reset-customers.md) sign-in, and about [Google](how-to-google-federation-customers.md) and [Facebook](how-to-facebook-federation-customers.md) federation.
 
 There are two types of user accounts you can manage in your customer tenant:
 
@@ -64,7 +64,7 @@ Microsoft Entra ID for customers is intended for businesses that want to make ap
 
 - **Integrate multiple app languages and platforms.** With Microsoft Entra, you can quickly set up and deliver secure, branded authentication flows for multiple app types, platforms, and languages.
 
-- **Use native authentication for your apps.** Create seamless authentication experiences for customer-facing mobile and desktop applications using the private preview Microsoft Authentication Library (MSAL) for iOS and Android. 
+- **Use native authentication for your apps.** Create seamless authentication experiences for customer-facing mobile and desktop applications using the preview Microsoft Authentication Library (MSAL) for iOS and Android. 
 
 - **Provide self-service account management.** Customers can register for your online services by themselves, manage their profile, delete their account, enroll in a multifactor authentication (MFA) method, or reset their password with no admin or help desk assistance.
 

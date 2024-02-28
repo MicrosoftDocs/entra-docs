@@ -30,7 +30,7 @@ You can create fully native experiences for local account sign-up, sign-in, and 
 - Passwordless authentication with email one-time passcode (OTP).
 - Password authentication with self-service password reset (SSPR). 
 
-:::image type="content" source="media/concept-native-authentication/native-authentication-experiences.png" alt-text="Native authentication experiences.":::
+:::image type="content" source="media/concept-native-authentication/native-authentication-experiences.png" alt-text="Diagram showing native authentication experiences.":::
 
 ## When to use native authentication
 <!--This section will be updated once I have the most up-to-date content from the PM.-->
