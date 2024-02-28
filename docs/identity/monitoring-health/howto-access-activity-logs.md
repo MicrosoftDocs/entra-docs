@@ -71,6 +71,9 @@ Using Microsoft Graph explorer, you can run queries to help you with the followi
 - Mark a Microsoft Entra sign-in event as safe or confirmed compromised.
 - Retrieve a list of application sign-ins for the last 30 days.
 
+> [!NOTE]
+> Microsoft Graph allows you to access data from multiple services that impose their own throttling limits. For more information on activity log throttling, see [Microsoft Graph service-specific throttling limits](/graph/throttling-limits#identity-and-access-service-limits).
+
 ### Quick steps
 
 1. [Configure the prerequisites](howto-configure-prerequisites-for-reporting-api.md).
