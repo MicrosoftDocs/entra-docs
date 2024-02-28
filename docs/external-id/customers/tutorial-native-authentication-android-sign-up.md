@@ -131,7 +131,6 @@ Don't forget to add the import statements, Android Studio does that for you auto
 
 You've completed all the necessary steps to successfully sign up a user on your app. Build and run your application. If all good, you should be able to provide an email ID, receive a code on the email and use that to successfully sign up user. 
 
-
 ## Next steps 
 
 [Tutorial: Add sign in and sign out with email one-time passcode in Android app](tutorial-native-authentication-android-sign-in-sign-out.md). 
