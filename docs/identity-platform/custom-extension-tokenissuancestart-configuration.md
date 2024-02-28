@@ -38,7 +38,8 @@ You'll now configure a custom authentication extension, which will be used by Mi
 
 ### Register a custom authentication extension
 
-1. From the **Home** page in the Azure portal, search for and select **Microsoft Entra ID** and select **Enterprise applications**.
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
+1. Search for and select **Microsoft Entra ID** and select **Enterprise applications**.
 1. Select **Custom authentication extensions**, and then select **Create a custom extension**.
 1. In **Basics**, select the **TokenIssuanceStart** event type and select **Next**.
 1. In **Endpoint Configuration**, fill in the following properties:
@@ -55,7 +56,7 @@ You'll now configure a custom authentication extension, which will be used by Mi
     - apiVersion
     - correlationId
 1. Select **Next**, then **Create**, which registers the custom authentication extension and the associated application registration.
-1. Note the **App ID** under **API Authentication**, which is needed for [setting environment variables](./DRAFT-custom-extension-tokenissuancestart-setup.md#set-up-environment-variables-for-your-azure-function-optional) in your Azure Function app.
+1. Note the **App ID** under **API Authentication**, which is needed for [setting environment variables](./custom-extension-tokenissuancestart-setup.md#set-up-environment-variables-for-your-azure-function-optional) in your Azure Function app.
 
 # [Microsoft Graph](#tab/microsoft-graph)
 
@@ -184,7 +185,7 @@ To get a token and test the custom authentication extension, you can use the <ht
 
 Follow these steps to register the **jwt.ms** web application:
 
-1. From the **Home** page in the Azure portal, select **Microsoft Entra ID** 
+1. From the **Home** page in the Azure portal, select **Microsoft Entra ID**.
 1. Select **App registrations** > **New registration**.
 1. Enter a **Name** for the application. For example, **My Test application**.
 1. Under **Supported account types**, select **Accounts in this organizational directory only**.
@@ -400,15 +401,15 @@ Use the following steps to add Microsoft Entra as an identity provider to your A
 
 If you configured the [Microsoft identity provider](#step-4-protect-your-azure-function), skip this step. Otherwise, if the Azure Function is hosted under a different tenant than the tenant in which your custom authentication extension is registered, follow these steps to protect your function:
 
-You'll need to create a client secret for the *Azure Functions authentication events API* app registration. 
+#### Create a client secret 
 
-1. From the **Home** page of the Azure portal, select **Microsoft Entra ID** > **App registrations**
+1. From the **Home** page of the Azure portal, select **Microsoft Entra ID** > **App registrations**.
 1. Select the *Azure Functions authentication events API* app registration [you created previously](#step-1-register-a-custom-authentication-extension).
 1. Select **Certificates & secrets** > **Client secrets** > **New client secret**.
 1. Select an expiration for the secret or specify a custom lifetime, add a description, and select **Add**.
 1. Record the **secret's value** for use in your client application code. This secret value is never displayed again after you leave this page.
 
-Next, we'll add the OpenID Connect identity provider to your Azure Function app.
+#### Add the OpenID Connect identity provider to your Azure Function app.
 
 1. Find and select the function app you previously published.
 1. Under **Settings**, select **Authentication**.

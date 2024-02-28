@@ -23,8 +23,8 @@ This article describes how to configure a SAML application to receive tokens wit
 
 Before configuring a SAML application to receive tokens with external claims, first follow these sections:
 
-- [Configure a custom claim provider token issuance start event](DRAFT-custom-extension-tokenissuancestart-setup.md)
-- [Register a custom claims extension](custom-extension-get-started.md#step-2-register-a-custom-authentication-extension)
+- [Configure a custom claim provider token issuance start event](custom-extension-tokenissuancestart-setup.md)
+- [Register a custom claims extension](custom-extension-tokenissuancestart-configuration.md#step-1-register-a-custom-authentication-extension)
 
 ## Configure a SAML application that receives enriched tokens
 
