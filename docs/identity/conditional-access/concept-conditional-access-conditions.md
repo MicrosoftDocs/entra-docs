@@ -16,7 +16,7 @@ ms.reviewer: lhuangnorth, sandeo
 
 Within a Conditional Access policy, an administrator can make use of one or more signals to enhance their policy decisions.
 
-[![Define a Conditional Access policy and specify conditions](./media/concept-conditional-access-conditions/conditional-access-conditions.png)](./media/concept-conditional-access-conditions/conditional-access-conditions.png#lightbox)
+:::image type="content" source="media/concept-conditional-access-conditions/conditional-access-conditions.png" alt-text="Screenshot of available conditions for a Conditional Access policy in the Microsoft Entra admin center." lightbox="media/concept-conditional-access-conditions/conditional-access-conditions.png":::
 
 Multiple conditions can be combined to create fine-grained and specific Conditional Access policies.
 
@@ -214,7 +214,7 @@ When administrators configure filter for devices as a condition, they can choose
 
 ## Authentication flows
 
-Authentication flows control how your organization uses certain authentication and authorization protocols and grants. These flows might provide a seamless experience to devices that might lack local input devices like shared devices or digital signage. Use this control to configure transfer methods like [device code flow or authentication transfer](concept-authentication-flows.md).
+Authentication flows (preview) control how your organization uses certain authentication and authorization protocols and grants. These flows might provide a seamless experience to devices that might lack local input devices like shared devices or digital signage. Use this control to configure transfer methods like [device code flow or authentication transfer](concept-authentication-flows.md).
 
 ## Next steps
 

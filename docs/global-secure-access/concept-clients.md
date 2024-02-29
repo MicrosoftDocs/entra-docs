@@ -15,7 +15,7 @@ ms.reviewer: frankgomulka
 
 The Global Secure Access Client allows organizations control over network traffic at the end-user computing device, giving organizations the ability to route specific traffic profiles through Microsoft Entra Internet Access and Microsoft Entra Private Access. Routing traffic in this method allows for more controls like continuous access evaluation (CAE), device compliance, or multifactor authentication to be required for resource access.
 
-The Global Secure Access Client acquires traffic using a lightweight filter (LWF) driver, while many other security service edge (SSE) solutions integrate as a virtual private network (VPN) connection. This distinction allows the Global Secure Access Client to coexist with these other solutions. The Global Secure Access Client acquires the traffic based on the traffic forwarding profiles you configure prior to other solutions.
+The Global Secure Access Client acquires traffic using a lightweight filter (LWF) driver, while many other Security Service Edge (SSE) solutions integrate as a virtual private network (VPN) connection. This distinction allows the Global Secure Access Client to coexist with these other solutions. The Global Secure Access Client acquires the traffic based on the traffic forwarding profiles you configure prior to other solutions.
 
 
 ## Available clients
