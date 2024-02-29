@@ -24,7 +24,7 @@ This extension provides a basic setup that automatically creates a tenant for ap
 
 External ID is a service that can be added to an Azure subscription. If you already have one, you can easily include External ID. Otherwise, set up a [free trial of Microsoft Entra External ID](quickstart-trial-setup.md) within Visual Studio Code and start by configuring a sample app.
 
-## Installing the extension
+## Install the extension
 
 The Microsoft Entra External ID extension is available in the Visual Studio Code Marketplace.
 
@@ -44,12 +44,12 @@ You can also open the extension from Visual Studio Code **Welcome** page: Select
 
 The Microsoft Entra External ID extension creates a tenant in an external configuration, which contains your customer-facing app and directory of external users. You can add this new tenant to your existing Azure subscription. Or if you don’t have an Azure subscription, create a trial tenant that doesn't require one ([learn more](quickstart-trial-setup.md)).
 
-1. On the Get Started with Microsoft Entra External ID welcome page, choose an option:
+- On the Get Started with Microsoft Entra External ID welcome page, choose an option:
 
    - If you don't already have an Azure Account, select **Set up a free trial**.
    - If you already have an Azure account, select **Use Azure subscription**.
  
-### To set up a free trial
+### Set up a free trial
 
 1. Select **Set up a free trial**.
 1. In the sign-in confirmation message, select **Allow**.
@@ -61,7 +61,7 @@ The Microsoft Entra External ID extension creates a tenant in an external config
 
 1. The extension creates your trial tenant. You can view the progress by opening the **View** > **Output** window. When the process is complete, **The tenant is created** appears.
 
-### To use your subscription
+### Use your subscription
 
 1. Select **Use my subscription**.
 1. If there are multiple tenants associated with your account, the **Choose a directory** menu appears. Select the directory (tenant) associated with the subscription you want to use.
