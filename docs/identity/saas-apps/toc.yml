@@ -3386,7 +3386,7 @@
         href: funnel-leasing-provisioning-tutorial.md
     - name: G - M
       items:        
-      - name: G Suite
+      - name: Google Cloud / G Suite Connector by Microsoft
         href: g-suite-provisioning-tutorial.md
       - name: Genesys Cloud for Azure
         href: purecloud-by-genesys-provisioning-tutorial.md
@@ -3546,6 +3546,8 @@
         href: mural-identity-provisioning-tutorial.md  
       - name: MX3 Diagnostics
         href: mx3-diagnostics-connector-provisioning-tutorial.md  
+      - name: myday
+        href: myday-provision-tutorial.md
       - name: myPolicies
         href: mypolicies-provisioning-tutorial.md
     - name: N - S
