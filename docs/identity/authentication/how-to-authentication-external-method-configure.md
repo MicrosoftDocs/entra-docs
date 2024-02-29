@@ -37,7 +37,7 @@ The application registration process will result in the creation of an applicati
 
 Property | Description
 ---------|------------
-Object Id | This can be used with Microsoft Graph to query the application info.<br>
+Object Id | This can be used with Microsoft Graph to query the application info.
 The provider could use this id to retrieve and edit the application information programmatically.
 Application ID | This will be used by the external identity provider as their app’s ClientId.
 Home page URL | The provider home page url. This is not used for anything but is required as part of application registration.
