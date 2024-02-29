@@ -332,24 +332,23 @@ The provider will POST a response back to the **redirect_uri**.
 
 The following parameters should be provided on a successful response:
 
-Parameter	Value	Description
-id_token		The token issued by the external identity provider.
-state		The same state that was passed in the request, if any. Otherwise, this should not be present.
+Parameter | Value | Description
+----------|-------|------------
+id_token  |       | The token issued by the external identity provider.
+state     |       | The same state that was passed in the request, if any. Otherwise, this should not be present.
 
 On success, the provider would then issue an id_token for the user. Entra ID would use the published OIDC metadata to verify that the token contains the expected claims as well as do all the other validation of the token that OIDC requires.
 
-Claim	Value	Description
-iss		Issuer – must match the issuer from the provider’s discovery metadata.
-aud		Audience – the Entra ID client id. See ClientId in 3.2.2 above.
-exp		Expiration time – set as usual.
-iat		Issuing time – set as usual.
-sub		Subject – must match the sub from the id_token_hint sent to initiate this request
-nonce		The same nonce that was passed in the request, if any. Otherwise, this should not be present.
-acr		The acr claims for the authentication request. This should match one of the values from the request sent to initiate this request. Only one acr claim should be returned. For the list of claims, see [Supported acr claims](#supported-acr-claims).
-
-
-
-amr		The amr claims for the authentication method used in authentication.  Only one method claim should be returned.	For the list of claims, see [Supported amr claims](#supported-amr-claims).
+Claim | Value | Description
+------|-------|------------
+iss   |       | Issuer – must match the issuer from the provider’s discovery metadata.
+aud   |       | Audience – the Entra ID client id. See ClientId in 3.2.2 above.
+exp   |       | Expiration time – set as usual.
+iat   |       | Issuing time – set as usual.
+sub   |       | Subject – must match the sub from the id_token_hint sent to initiate this request
+nonce   |       | The same nonce that was passed in the request, if any. Otherwise, this should not be present.
+acr   |       | The acr claims for the authentication request. This should match one of the values from the request sent to initiate this request. Only one acr claim should be returned. For the list of claims, see [Supported acr claims](#supported-acr-claims).
+amr   |       | The amr claims for the authentication method used in authentication.  Only one method claim should be returned.	For the list of claims, see [Supported amr claims](#supported-amr-claims).
 
 
 #### Supported acr claims
