@@ -64,11 +64,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Navigate to **Authentication** tab on the left menu and perform the following steps:
 
-    1. Select **+Add a platform** and click **Web** under Configure platforms.
-
-        ![Screenshot of Authentication on left menu app.](./media/hashicorp-tutorial/menu.png)
-
-    1. In the **Redirect URIs** textbox, paste the **callback URL** value, which you have copied from HashiCorp Boundary side and in the **Front-channel logout URL** give the value as `<Hashicorp-Cluster-URL>:3000`and click **Configure**.
+    1. In the **Redirect URIs** textbox, paste the **callback URL** value, which you have copied from HashiCorp Boundary side.
+    
+    1. In the **Front-channel logout URL** give the value as `<Hashicorp-Cluster-URL>:3000`and click **Configure**.
 
         ![Screenshot of showing the redirect values.](./media/hashicorp-tutorial/direct.png)
 
@@ -116,7 +114,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 Below are the configuration steps to complete the OAuth/OIDC federation setup:
 
-1. Sign into the HashiCorp Boundary Cluster site with your issued credentials.
+1. Sign into the HashiCorp Boundary Cluster.
 
 2. Go to **Auth methods** and click **New**, select **OIDC**.
 
