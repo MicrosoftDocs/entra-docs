@@ -498,7 +498,7 @@
           items:
             - name: Token issuance start event
               items:
-                - name: Create token issuance start event in a REST API
+                - name: Create a token issuance start event in a REST API
                   href: custom-extension-tokenissuancestart-setup.md
                 - name: Configure a custom claims provider token issuance event
                   href: custom-extension-tokenissuancestart-configuration.md

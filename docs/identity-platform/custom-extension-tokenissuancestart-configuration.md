@@ -14,13 +14,13 @@ titleSuffix: Microsoft identity platform
 #Customer intent: As a developer, I want to configure a custom claims provider token issuance event in the Azure portal, so that I can add custom claims to a token before it is issued.
 ---
 
-# Configure a custom claim provider for a token issuance event
+# Configure a custom claim provider for a token issuance event (preview)
 
 > [!NOTE]
 >
 > This article is a work in progress and not yet complete.
 
-This article describes how to configure a custom claims provider for a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener). Using a existing Azure Functions REST API you'll register a custom authentication extension. You'll add some attributes that you expect your custom authentication extension to parse from your REST API. To test the custom authentication extension, you'll register a sample OpenID Connect application to get a token and view the claims.
+This article describes how to configure a custom claims provider for a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener). Using a existing Azure Functions REST API, you'll register a custom authentication extension and add attributes that you expect it to parse from your REST API. To test the custom authentication extension, you'll register a sample OpenID Connect application to get a token and view the claims.
 
 ## Prerequisites
 

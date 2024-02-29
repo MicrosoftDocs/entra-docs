@@ -1,5 +1,5 @@
 ---
-title: Create a REST API with a token issuance start event
+title: Create a REST API with a token issuance start event for Azure Functions (preview)
 description: Learn how to use the Authentication events trigger for Azure Functions library to create a trigger function that uses the token issuance start event.  
 author: cilwerner
 manager: CelesteDG
@@ -15,35 +15,31 @@ zone_pivot_groups: custom-auth-extension
 #Customer intent: As a developer, I want to create an Azure Function app with a token issuance start event using the Azure Functions client library for .NET, and deploy it to the Azure portal, or create the app directly on the Azure portal.
 ---
 
-# Create a REST API with a token issuance start event
-
-> [!NOTE]
->
-> This article is a work in progress and not yet complete.
+# Create a REST API with a token issuance start event for Azure Functions (preview)
 
 ::: zone pivot="visual-studio" 
 
-This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. Using Azure Functions, you'll create an HTTP trigger function in Visual Studio and deploy it to the Azure portal. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events.
+This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. You'll create an HTTP trigger function in Visual Studio and deploy it to the Azure portal, where it can be accessed through Azure Functions. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events.
 
 ## Prerequisites
 
-- A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md)
-- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index)
-- A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide
-- Visual Studio with the Azure Development workload for Visual Studio installed 
+- A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md).
+- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
+- A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.
+- Visual Studio with the Azure Development workload for Visual Studio installed.
 
 ::: zone-end
 
 ::: zone pivot="visual-studio-code"
 
-This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. Using Azure Functions, you'll create an HTTP trigger function in Visual Studio Code and deploy it to the Azure portal. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events.
+This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. You'll create an HTTP trigger function in Visual Studio and deploy it to the Azure portal, where it can be accessed through Azure Functions. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events.
 
 ## Prerequisites
 
-- A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md)
-- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index)
-- A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide
-- Visual Studio Code, with Azure Functions extension enabled
+- A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md).
+- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
+- A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.
+- Visual Studio Code, with Azure Functions extension enabled.
 
 ::: zone-end
 
@@ -53,9 +49,9 @@ This article describes how to create a REST API with a [token issuance start eve
 
 ## Prerequisites
 
-- A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md)
-- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index)
-- A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide
+- A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md).
+- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
+- A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.
 
 ::: zone-end
 
@@ -135,13 +131,13 @@ In this step, you create an HTTP trigger function API using Visual Studio Code. 
 
 1. Open Visual Studio Code.
 1. Select the **New Folder** icon in the **Explorer** window, and create a new folder for your project, for example *AuthEventsTrigger*.
-1. Select the Azure extension icon on the left-hand side of the screen. Sign in to your Azure account if you haven't already. <!--Extra instructions maybe?-->
+1. Select the Azure extension icon on the left-hand side of the screen. Sign in to your Azure account if you haven't already. 
 1. Under the **Workspace** bar, select the **Azure Functions** icon > **Create New Project**.
 
     :::image type="content" border="true"  source="media/auth-events-trigger/visual-studio-code-add-azure-function.png" alt-text="Screenshot that shows how to add an Azure function in Visual Studio Code.":::
 
 1. In the top bar, select the location to create the project.
-1. Select **C#** as the language, and **.NET 6.0 LTS** as the .NET runtime. <!--again mhy 6?-->
+1. Select **C#** as the language, and **.NET 6.0 LTS** as the .NET runtime. 
 1. Select **HTTP trigger** as the template.
 1. Provide a name for the project, such as *AuthEventsTrigger*.
 1. accept **Company.Function** as the namespace, with **AccessRights** set to *Function*. 
@@ -149,7 +145,7 @@ In this step, you create an HTTP trigger function API using Visual Studio Code. 
 
     [!INCLUDE [nuget-code](./includes/scenarios/custom-extension-tokenissuancestart-setup-nuget-code.md)]
 
-1. Next, open the *local.settings.json* file and add the `AzureWebJobsStorage` value as shown in the following snippet: <!--Added automatically in Visual Studio?-->
+1. Next, open *local.settings.json* and add the `AzureWebJobsStorage` value as shown in the following snippet: 
 
     ```json
     {
@@ -313,4 +309,4 @@ The code reads the incoming JSON object and Microsoft Entra ID sends the [JSON o
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Create a custom authentication extension](./custom-extension-tokenissuancestart-configuration.md)
+> [Configure a custom claims provider token issuance event](./custom-extension-tokenissuancestart-configuration.md)
