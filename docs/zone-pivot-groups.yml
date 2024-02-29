@@ -56,7 +56,16 @@ groups:
     title: I don't have an API
   - id: api
     title: I have an API
-############ END MICROSOFT IDENTITY PLATFORM
+## WEB APP ##
+- id: python-web-app
+  title: python-web-app
+  prompt: Choose a Python Framework
+  pivots:
+  - id: flask
+    title: Flask
+  - id: django
+    title: Django
+########## END MICROSOFT IDENTITY PLATFORM
 ########### BEGIN APPLICATION MANAGEMENT
 # Owner(s):      jomondi, celested
 ## Home realm discovery ##
