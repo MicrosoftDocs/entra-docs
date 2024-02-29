@@ -47,7 +47,45 @@ The bulk updates involve changing the domain for the `UserPrincipalName` changed
 
 **Details**:
 
-`{ "id": "Directory_0000000-1111111", "category": "UserManagement", "correlationId": "aaaaaa-111111-0000-bbbbbbb", "result": "success", "resultReason": "", "activityDisplayName": "Update user", "activityDateTime": "2022-01-27T07:44:05.7673032Z", "loggedByService": "Core Directory", "operationType": "Update", "userAgent": null, "initiatedBy": { "user": null, "app": null }, "targetResources": [ { "id": "aaaaaaaaa-bbbb-0000-11111-bbbbbbbbbbbbb", "displayName": null, "type": "User", "userPrincipalName": "user@contoso.com", "groupType": null, "modifiedProperties": [ { "displayName": "UserPrincipalName", "oldValue": "[\"user@contoso.onmicrosoft.com\"]", "newValue": "[\"user@contoso.com\"]" }, { "displayName": "Included Updated Properties", "oldValue": null, "newValue": "\"UserPrincipalName\"" }, { "displayName": "Action Client Name", "oldValue": null, "newValue": "\"DirectorySync\"" }, { "displayName": "TargetId.UserType", "oldValue": null, "newValue": "\"Member\"" } ] } ], "additionalDetails": [ { "key": "UserType", "value": "Member" } ] }`
+```json
+{
+"id": "Directory_0000000-1111111",
+"category": "UserManagement",
+"correlationId": "aaaaaa-111111-0000-bbbbbbb",
+"result": "success",
+"resultReason": "",
+"activityDisplayName": "Update user",
+"activityDateTime": "2022-01-27T07:44:05.7673032Z",
+"loggedByService": "Core Directory",
+"operationType": "Update",
+"userAgent": null,
+"initiatedBy": { "user": null, "app": null },
+"targetResources": [ {
+  "id": "aaaaaaaaa-bbbb-0000-11111-bbbbbbbbbbbbb",
+  "displayName": null,
+"type": "User",
+"userPrincipalName": "user@contoso.com",
+"groupType": null,
+"modifiedProperties": [ {
+  "displayName": "UserPrincipalName",
+  "oldValue": "[\"user@contoso.onmicrosoft.com\"]",
+  "newValue": "[\"user@contoso.com\"]"
+  },
+  { "displayName": "Included Updated Properties",
+  "oldValue": null, "newValue": "\"UserPrincipalName\""
+  },
+  {
+   "displayName": "Action Client Name",
+   "oldValue": null,
+   "newValue": "\"DirectorySync\""
+  },
+  {
+   "displayName": "TargetId.UserType",
+   "oldValue": null,
+   "newValue": "\"Member\"" } ] } ],
+   "additionalDetails": [ { "key": "UserType", "value": "Member" } ]
+}
+```
 
 ## Causes
 
