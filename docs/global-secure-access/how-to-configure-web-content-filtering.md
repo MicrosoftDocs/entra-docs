@@ -46,7 +46,7 @@ To enable the Microsoft Entra Internet Access forwarding profile to forward user
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
-1. Enable the **Internet access profile**. Enabling the setting begins forwarding internet traffic from all client devices to Microsoft's Security Service Edge (SSE) proxy, where you can configure granular security policies.
+1. Enable the **Internet access profile**. Internet traffic starts forwarding from all client devices to Microsoft's Security Service Edge (SSE) proxy, where you configure granular security policies.
 
 ## Create a Web content filtering policy
 
