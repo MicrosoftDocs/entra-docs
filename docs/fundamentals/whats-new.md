@@ -33,6 +33,95 @@ Microsoft Entra ID (previously known as Azure Active Directory) receives improve
 
 This page updates monthly, so revisit it regularly. If you're looking for items older than six months, you can find them in [Archive for What's new in Microsoft Entra ID?](whats-new-archive.md).
 
+## February 2024
+
+### General Availability - Identity Protection and Risk Remediation on the Azure Mobile App
+
+**Type:** New feature    
+**Service category:** Identity Protection    
+**Product capability:** Identity Security & Protection    
+
+Previously supported only on the portal, Identity Protection is a powerful tool that empowers administrators to proactively manage identity risks. Now available on the Azure Mobile app, administrators can respond to potential threats with ease and efficiency. This feature includes comprehensive reporting, offering insights into risky behaviors such as compromised user accounts and suspicious sign-ins.
+
+With the Risky users report, administrators gain visibility into accounts flagged as compromised or vulnerable. Actions such as blocking/unblocking sign-ins, confirming the legitimacy of compromises, or resetting passwords are conveniently accessible, ensuring timely risk mitigation.
+
+Additionally, the Risky sign-ins report provides a detailed overview of suspicious sign-in activities, aiding administrators in identifying potential security breaches. While capabilities on mobile are limited to viewing sign-in details, administrators can take necessary actions through the portal, such as blocking sign-ins. Alternatively, admins can choose to manage the corresponding risky user's account until all risks are mitigated.
+
+Stay ahead of identity risks effortlessly with Identity Protection on the Azure Mobile app. These capabilities are intended to provide user with the tools to maintain a secure environment and peace of mind for their organization.
+
+The mobile app can be downloaded at the following links:
+
+- Android: https://aka.ms/AzureAndroidWhatsNew
+- IOS: https://aka.ms/ReferAzureIOSWhatsNew
+
+---
+
+### Plan for change - Microsoft Entra ID Identity protection: "Low" risk age out
+
+**Type:** Plan for change    
+**Service category:** Identity Protection    
+**Product capability:** Identity Security & Protection    
+
+Starting March 31st, 2024, all "*low*" risk detections and users in Microsoft Entra ID Identity Protection that are older than 6 months will be automatically aged out and dismissed. This will allow customers to focus on more relevant risk and provide a cleaner investigation environment. For more information, see: [What are risk detections?](../id-protection/concept-identity-protection-risks.md).
+
+---
+
+### Public Preview - Expansion of the Conditional Access reauthentication policy for additional scenarios  
+
+**Type:** Changed feature    
+**Service category:** Conditional Access    
+**Product capability:** Identity Security & Protection    
+
+Reauthentication policy lets you require users to interactively provide their credentials again, typically before accessing critical applications and taking sensitive actions. Combined with Conditional Access session control of Sign-in frequency, you can require reauthentication for users and sign-ins with risk, or for Intune enrollment. With this public preview, you can now require reauthentication on any resource protected by Conditional Access. For more information, see: [Require reauthentication every time](../identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time).
+
+---
+
+### General Availability - New premium user risk detection, Suspicious API Traffic, is available in Identity Protection
+
+**Type:** New feature    
+**Service category:** Identity Protection    
+**Product capability:** Identity Security & Protection    
+
+We've released a new premium user risk detection in Identity Protection called *Suspicious API Traffic*. This detection is reported when Identity Protection detects anomalous Graph traffic by a user. Suspicious API traffic might suggest that a user is compromised and conducting reconnaissance in their environment. For more information about Identity Protection detections including this one, please visit our public documentation at the following link: [What are risks detections?](../id-protection/concept-identity-protection-risks.md).
+
+---
+
+### General Availability - Granular filtering of Conditional Access policy list
+
+**Type:** New feature    
+**Service category:** Conditional Access    
+**Product capability:** Access Control    
+
+Conditional access policies can now be filtered on actor, target resources, conditions, grant control and session control. The granular filtering experience can help admins quickly discover policies containing specific configurations. For more information, see: [What is Conditional Access?](../identity/conditional-access/overview.md).
+
+---
+
+### End of support - Windows Azure Active Directory Connector for Forefront Identity Manager (FIM WAAD Connector)
+
+**Type:** Deprecated    
+**Service category:** Microsoft Identity Manager    
+**Product capability:** Inbound to Microsoft Entra ID    
+
+The Windows Azure Active Directory Connector for Forefront Identity Manager(FIM WAAD Connector) from 2014 was deprecated in 2021. The standard support for this connector will end in April 2024. Customers should remove this connector from their MIM sync deployment, and instead use an alternative provisioning mechanism. For more information, see: [Migrate a Microsoft Entra provisioning scenario from the FIM Connector for Microsoft Entra ID](/microsoft-identity-manager/migrate-from-the-fim-connector-for-azure-active-directory).
+
+---
+
+### General Availability - New provisioning connectors in the Microsoft Entra Application Gallery - February 2024
+
+**Type:** New feature
+**Service category:** App Provisioning
+**Product capability:** 3rd Party Integration
+
+We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
+
+- [Alohi](../identity/saas-apps/alohi-provisioning-tutorial.md)
+- [Insightly SAML](../identity/saas-apps/insightly-saml-provisioning-tutorial.md)
+- [Starmind](../identity/saas-apps/starmind-provisioning-tutorial.md)
+
+For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
+
+---
+
 ## January 2024
 
 ### Generally Availability - New Microsoft Entra Home page
@@ -97,7 +186,7 @@ The *Suspicious sending patterns* risk detection type is discovered using inform
 **Service category:** MFA        
 **Product capability:** User Authentication        
 
-We've released a new recommendation in the Microsoft Entra admin center for customers to move off MFA Server to Microsoft Entra multifactor authentication. MFA Server will be retired on September 30, 2024. Any customers with MFA Server activity in the last seven days see the recommendation that includes details about their current usage, and steps on how to move to Microsoft Entra multifactor authentication. For more information, see: [Migrate from MFA Server to Microsoft Entra multifactor authentication](../identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md).
+We've released a new recommendation in the Microsoft Entra admin center for customers to move off MFA Server to Microsoft Entra multifactor authentication. MFA Server will be retired on September 30, 2024. Any customers with MFA Server activity in the last seven days see the recommendation that includes details about their current usage, and steps on how to move to Microsoft Entra multifactor authentication. For more information, see:  [Migrate from MFA Server to Microsoft Entra multifactor authentication](../identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md).
 
 ---
 
