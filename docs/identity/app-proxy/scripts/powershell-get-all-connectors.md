@@ -1,27 +1,26 @@
 ---
 title: PowerShell sample - List all Microsoft Entra application proxy connector groups
 description: PowerShell example that lists all Microsoft Entra application proxy connector groups and connectors in your directory.
-
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
-ms.custom: has-azure-ad-ps-ref
+ms.custom: 
 ms.topic: sample
-ms.date: 01/04/2024
+ms.date: 02/27/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
 # Get all application proxy connector groups and connectors in the directory
 
-This PowerShell script example lists all Microsoft Entra application proxy connector groups and connectors in your directory.
+The PowerShell script example lists all Microsoft Entra application proxy connector groups and connectors in your directory.
 
 [!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
 
 [!INCLUDE [updated-for-az](~/../azure-docs-pr/includes/updated-for-az.md)]
 
-This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
+Thie sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
 ## Sample script
 
@@ -88,6 +87,5 @@ Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGrap
 
 ## Next steps
 
-For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
-
-For other PowerShell examples for application proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).
+- [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview)
+- [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md)

@@ -4,7 +4,7 @@ description: Learn how remote network connectivity in Global Secure Access (prev
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 07/27/2023
 ms.service: global-secure-access
 ---

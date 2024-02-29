@@ -5,7 +5,7 @@ author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-permissions-management
 
-ms.topic: conceptual
+ms.topic: glossary
 ms.date: 06/16/2023
 ms.author: jfields
 ---

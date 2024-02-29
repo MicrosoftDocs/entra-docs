@@ -11,7 +11,7 @@ items:
       href: architecture-icons.md
     - name: Road to the cloud
       items:
-      - name: Introduction
+      - name: Introduction 
         href: road-to-the-cloud-introduction.md
       - name: Cloud transformation posture
         href: road-to-the-cloud-posture.md
@@ -170,7 +170,9 @@ items:
       - name: Introduction
         href: sse-deployment-guide-intro.md
       - name: Deploying Microsoft Entra Internet Access for Microsoft 365
-        href: sse-deployment-guide-m365.md 
+        href: sse-deployment-guide-m365.md
+      - name: Deploying Microsoft Entra Internet Access
+        href: sse-deployment-guide-internet-access.md
       - name: Deploying Microsoft Entra Private Access
         href: sse-deployment-guide-private-access.md 
   - name: Migration best practices
