@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 11/03/2023
+ms.date: 03/29/2024
 ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
@@ -26,10 +26,10 @@ The web filtering feature is currently limited to user- and context-aware Fully 
   - [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) or [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) to create and interact with Conditional Access policies. 
 - Complete the [Get started with Global Secure Access](how-to-get-started-with-global-secure-access.md) guide. 
 - [Install the Global Secure Access client](how-to-install-windows-client.md) on end user devices.
-- You must disable DNS over HTTPS (Secure DNS) to tunnel network traffic based on the rules of the fully qualified domain names (FQDNs) in the traffic forwarding profile. For more information, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
-- Disable built-in DNS client on Chrome and Edge.
-- UDP traffic isn't supported in the current preview. If you plan to tunnel Exchange Online traffic, disable the QUIC protocol (443 UDP). For more information, see [Block QUIC when tunneling Exchange Online traffic](how-to-install-windows-client.md#block-quic-when-tunneling-exchange-online-traffic).
-- Review Web content filtering concepts, see [Web content filtering](concept-internet-access.md).
+- You must disable Domain Name System (DNS) over HTTPS (Secure DNS) to tunnel network traffic. Use the rules of the fully qualified domain names (FQDNs) in the traffic forwarding profile. For more information, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
+- Disable built-in DNS client on Chrome and Microsoft Edge.
+- User Datagram Protocol (UDP) traffic isn't supported in the current preview. If you plan to tunnel Exchange Online traffic, disable the QUIC protocol (443 UDP). For more information, see [Block QUIC when tunneling Exchange Online traffic](how-to-install-windows-client.md#block-quic-when-tunneling-exchange-online-traffic).
+- Review Web content filtering concepts. For more information, see [Web content filtering](concept-internet-access.md).
 
 ## High level steps
 
@@ -108,16 +108,16 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 
 ## Known limitations
 
-- Currently, end-user notification on blocks, either from the client or the browser, aren't provided.
-- Admins can't configure their own Internet traffic acquisition profiles for the client.
+- End-user notification on blocks, either from the client or the browser, aren't provided.
+- Internet traffic acquisition profiles for the client can't be configured.
 - The client traffic acquisition policy includes TCP ports 80/443.
-- Currently assuming standard ports for HTTP/S traffic (ports 80 and 443).
+- Standard ports for HTTP/S traffic (ports 80 and 443).
 - *microsoft.com is currently acquired by the Microsoft 365 access profile.
 - IPv6 isn't supported on this platform yet.
 - Hyper-V isn't supported on this platform yet.
 - Remote network connectivity for Internet Access is in development.
 - OSI Layer 3/4 (that is, network layer) filtering isn't supported yet.
-- No captive portal support yet. This means that connecting to public WiFi via captive portal access may fail because these endpoints are currently acquired by the client.
+- No captive portal support yet. Connecting to public WiFi via captive portal access fails because these endpoints are currently acquired by the client.
 - TLS Termination is in development.
 - No URL path based filtering or URL categorization for HTTP and HTTPS traffic.
 - Currently, an admin can create up to 100 web content filtering policies and up to 1,000 rules based on up to 8,000 total FQDNs. Admins can also create up to 256 security profiles.
