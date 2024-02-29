@@ -66,21 +66,6 @@ Starting March 31st, 2024, all "*low*" risk detections and users in Microsoft En
 
 ---
 
-### General Availability - Custom Claims Providers enable token claim augmentation from external data sources
-
-**Type:** New feature    
-**Service category:** Authentications (Logins)    
-**Product capability:** Extensibility    
-
-Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems. A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens, and can be assigned to one or many applications in your directory. For more information, see:
-
-- [Custom authentication extensions](../identity-platform/custom-extension-overview.md)
-- [Custom claims provider](../identity-platform/custom-claims-provider-overview.md)
-- [Configure a custom claim provider token issuance event](../identity-platform/custom-extension-get-started.md)
-- [Custom claims providers](../identity-platform/custom-claims-provider-reference.md)
-
----
-
 ### Public Preview - Expansion of the Conditional Access reauthentication policy for additional scenarios  
 
 **Type:** Changed feature    
