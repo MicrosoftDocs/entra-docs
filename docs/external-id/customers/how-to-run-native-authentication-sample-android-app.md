@@ -38,14 +38,9 @@ In this article, you learn how to:
 [!INCLUDE [register client app](../customers/includes/register-app/register-client-app-common.md)]
  
 ## Enable public client and native authentication flows 
-  
-To specify that this app is a public client and can use native authentication, enable public client and native authentication flows: 
 
-1. Select the created application from the App registrations page. 
-1. Under **Manage**, select **Authentication**. 
-1. Under **Advanced settings**, for **Enable the following mobile and desktop flows**, select **Yes**. 
-1. Under **Advanced settings**, for **Enable native authentication**, select **Yes**. 
-1. Select **Save** button. 
+[!INCLUDE [Enable public client and native authentication](../customers/includes/native-auth/enable-native-authentication.md)]
+
  
 ## Grant API permissions  
  

@@ -1,6 +1,6 @@
 ---
 title: Sign in user after sign-up in Android
-description: Learn how to implement sign in user after sign-up.
+description: Learn how to implement user sign-in after sign-up in native authentication Android app.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -10,7 +10,7 @@ ms.service: active-directory
 
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 02/23/2024
+ms.date: 02/29/2024
 ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to sign in user after sign up.
 ---
@@ -101,5 +101,6 @@ private fun displayAccount(accountState: AccountState) {
 }
 ``` 
  
-## Next steps  
+## Next steps
+
 [Tutorial: Self-service password reset](tutorial-native-authentication-android-self-service-password-reset.md)  
