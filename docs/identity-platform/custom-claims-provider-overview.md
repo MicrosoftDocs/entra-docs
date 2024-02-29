@@ -25,8 +25,6 @@ The following video provides an excellent overview of the Microsoft Entra custom
 
 > [!VIDEO https://www.youtube.com/embed/1tPA7B9ztz0]
 
-> [!VIDEO https://www.youtube.com/embed/fxQGVIwX8_4]
-
 Use a custom claims provider for the following scenarios:
 
 - **Migration of legacy systems** - You may have legacy identity systems such as Active Directory Federation Services (AD FS) or data stores (such as LDAP directory) that hold information about users. You'd like to migrate these applications, but can't fully migrate the identity data into Microsoft Entra ID. Your apps may depend on certain information on the token, and can't be rearchitected.
