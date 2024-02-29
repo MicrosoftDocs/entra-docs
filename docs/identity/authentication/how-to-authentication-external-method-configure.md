@@ -37,8 +37,7 @@ The application registration process will result in the creation of an applicati
 
 Property | Description
 ---------|------------
-Object Id | This can be used with Microsoft Graph to query the application info.
-The provider could use this id to retrieve and edit the application information programmatically.
+Object Id | This can be used with Microsoft Graph to query the application info. <br>The provider could use this id to retrieve and edit the application information programmatically.
 Application ID | This will be used by the external identity provider as their app’s ClientId.
 Home page URL | The provider home page url. This is not used for anything but is required as part of application registration.
 Reply URLs | Valid redirect URLs for the provider. One of these should match the provider host URL that was set for the provider’s Entra ID tenant. One of the reply URLs registered must match the prefix of the authorization_endpoint that Entra ID will retrieve through OIDC discovery for the host url.
