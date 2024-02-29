@@ -287,7 +287,7 @@ items:
            - name: About custom authentication extensions
              href: ~/identity-platform/custom-extension-overview.md?context=/azure/active-directory/external-identities/customers/context/customers-context
            - name: Configure a custom claims provider token issuance event
-             href: ~/identity-platform/custom-extension-get-started.md?context=/azure/active-directory/external-identities/customers/context/customers-context
+             href: ~/identity-platform/custom-extension-tokenissuancestart-configuration.md?context=/azure/active-directory/external-identities/customers/context/customers-context
            - name: Troubleshoot your custom claims provider API
              href: ~/identity-platform/custom-extension-troubleshoot.md?context=/azure/active-directory/external-identities/customers/context/customers-context
     - name: Secure

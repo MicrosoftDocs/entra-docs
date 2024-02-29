@@ -426,7 +426,7 @@ Users with this role **cannot** do the following:
 
 A custom authentication extension is an API endpoint created by a developer for authentication events and is registered in Microsoft Entra ID. Application administrators and application owners can use custom authentication extensions to customize their application's authentication experiences, such as sign in and sign up, or password reset.
 
-[Learn more](../../identity-platform/custom-extension-get-started.md)
+[Learn more](../../identity-platform/custom-extension-tokenissuancestart-configuration.md)
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |

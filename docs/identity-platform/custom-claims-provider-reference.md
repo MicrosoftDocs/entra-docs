@@ -194,9 +194,10 @@ Once you create your claims mapping policy, the next step is to upload it to you
 > [!IMPORTANT]
 > The **definition** element should be an array with a single string value. The string should be the stringified and escaped version of your claims mapping policy. You can use tools like [https://jsontostring.com/](https://jsontostring.com/) to stringify your claims mapping policy.
 
-## Next steps
+## See also
 
-- To learn how to [create and register a custom extension and API endpoint](custom-extension-get-started.md).
-- To learn how to customize the claims emitted in tokens for a specific application in their tenant using PowerShell, see [How to: Customize claims emitted in tokens for a specific app in a tenant](./saml-claims-customization.md)
-- To learn how to customize claims issued in the SAML token through the Azure portal, see [How to: Customize claims issued in the SAML token for enterprise applications](./saml-claims-customization.md)
-- To learn more about extension attributes, see [Using directory extension attributes in claims](./schema-extensions.md).
+- [Create a REST API with a token issuance start event](custom-extension-tokenissuancestart-setup.md)
+- [Configure a custom claims provider for a token issuance event](custom-extension-tokenissuancestart-configuration.md).
+- [How to: Customize claims emitted in tokens for a specific app in a tenant](./saml-claims-customization.md)
+- [How to: Customize claims issued in the SAML token for enterprise applications](./saml-claims-customization.md)
+- [Using directory extension attributes in claims](./schema-extensions.md).
