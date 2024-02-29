@@ -29,7 +29,7 @@ In this tutorial, you learn how to:
 ## Prerequisites
 
 - <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>
-- [How to run the Android sample app](how-to-run-sample-ios-app.md).
+- [How to run the Android sample app](how-to-run-native-authentication-sample-ios-app.md).
 - iOS project
 
 ## Add the MSAL framework to an iOS app
