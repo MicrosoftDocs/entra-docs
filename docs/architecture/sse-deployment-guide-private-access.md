@@ -3,7 +3,7 @@ title: Microsoft's Security Service Edge Solution Deployment Guide for Microsoft
 description: Plan for, deploy, and verify Microsoft Entra Private Access
 author: jricketts
 manager: martinco
-ms.service: network-access
+ms.service: global-secure-access
 ms.topic: conceptual
 ms.date: 12/6/2023
 ms.author: jricketts
