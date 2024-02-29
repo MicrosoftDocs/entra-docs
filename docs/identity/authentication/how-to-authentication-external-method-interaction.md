@@ -176,21 +176,22 @@ The combination of the acr and amr values are used by Entra ID to validate that 
 
 This section describes the required content of the token passed as id_token_hint in the request made to the provider. The token may contain other claims in addition to those listed in the following table.
 
-Claim	Value	Description
-iss		Identifies the security token service (STS) that constructs and returns the token, and the Entra ID tenant in which the user was authenticated. 
-
+| Claim |Value | Description |
+|-------|------|-------------|
+|iss    |       | Identifies the security token service (STS) that constructs and returns the token, and the Entra ID tenant in which the user was authenticated.
+<br>
 Your app should use the GUID portion of the claim to restrict the set of tenants that can sign in to the app, if applicable.
-
-Issuer should match the issuer URL from the signed-in user’s tenant’s OIDC discovery JSON metadata.
-aud		Audience – this should be set to the external identity provider’s client id for Entra ID.
-exp		Expiration time – this will be set to expire a short time after the issuing time (sufficient to avoid timeskew issues). This is done because this token is not meant for authentication, so there is no reason for its validity to outlast the request by much.
-iat		Issuing time – Set as usual.
-tid		Tenant Id – for advertising the tenant to the provider. Represents the Entra ID tenant that the user is from. 
-oid		The immutable identifier for an object in the Microsoft identity platform, in this case, a user account. It can also be used to perform authorization checks safely and as a key in database tables. This ID uniquely identifies the user across applications - two different applications signing in the same user will receive the same value in the oid claim. Thus, oid can be used when making queries to Microsoft online services, such as the Microsoft Graph
-preferred_username		Provides a human readable value that identifies the subject of the token. This value is not guaranteed to be unique within a tenant and is designed to be used only for display purposes.
-sub		Subject identifier for the end-User at the Issuer. The principal about which the token asserts information, such as the user of an app. This value is immutable and cannot be reassigned or reused. It can be used to perform authorization checks safely, such as when the token is used to access a resource, and can be used as a key in database tables. Because the subject is always present in the tokens that Entra ID issues, we recommend using this value in a general-purpose authorization system. 
-The subject is, however, a pairwise identifier - it is unique to a particular application ID. Therefore, if a single user signs into two different apps using two different client IDs, those apps will receive two different values for the subject claim. This may or may not be desired depending on your architecture and privacy requirements. 
-See also the oid claim (which does remain the same across apps within a tenant).
+<br>
+Issuer should match the issuer URL from the signed-in user’s tenant’s OIDC discovery JSON metadata.|
+| aud   |        |     Audience – this should be set to the external identity provider’s client id for Entra ID.|
+|exp    |        | Expiration time – this will be set to expire a short time after the issuing time (sufficient to avoid time skew issues). This is done because this token is not meant for authentication, so there is no reason for its validity to outlast the request by much. |
+|iat    |        | Issuing time – Set as usual.|
+|tid    |        | Tenant Id – for advertising the tenant to the provider. Represents the Entra ID tenant that the user is from. |
+|oid    |        | The immutable identifier for an object in the Microsoft identity platform, in this case, a user account. It can also be used to perform authorization checks safely and as a key in database tables. This ID uniquely identifies the user across applications - two different applications signing in the same user will receive the same value in the oid claim. Thus, oid can be used when making queries to Microsoft online services, such as Microsoft Graph. |
+| preferred_username |        | Provides a human readable value that identifies the subject of the token. This value is not guaranteed to be unique within a tenant and is designed to be used only for display purposes. |
+| sub  |            | Subject identifier for the end-User at the Issuer. The principal about which the token asserts information, such as the user of an app. This value is immutable and cannot be reassigned or reused. It can be used to perform authorization checks safely, such as when the token is used to access a resource, and can be used as a key in database tables. Because the subject is always present in the tokens that Entra ID issues, we recommend using this value in a general-purpose authorization system.<br>
+The subject is, however, a pairwise identifier - it is unique to a particular application ID. *Therefore, if a single user signs into two different apps using two different client IDs, those apps will receive two different values for the subject claim*. This may or may not be desired depending on your architecture and privacy requirements.<br>
+See also the **oid** claim (which does remain the same across apps within a tenant).| 
 
 To prevent the token for being used for anything else other than a hint, it will be issued as expired. The token will be signed, and can be verified using the published Entra ID discovery metadata.
 
@@ -198,7 +199,8 @@ To prevent the token for being used for anything else other than a hint, it will
 
 If a provider needs *upn* or *email* claims for discovery, then you can configure these optional claims for id_token. For more information, see [Optional claims](/azure/active-directory/develop/optional-claims). If requested, *email* will always be returned. If *upn* is requested, it will be returned for user accounts that are members of the directory, but not for guest accounts.
 
-NOTE: email claim is not guaranteed to be unique and using email in identification or authorization is an anti-pattern.  Unique claims should be used to link accounts.  More guidance is available here: Migrate away from using email claims for user identification or authorization - Microsoft Entra | Microsoft Learn.
+>[!NOTE]
+>The email claim isn't guaranteed to be unique and using email in identification or authorization is an anti-pattern. Unique claims should be used to link accounts. For more information, see [Migrate away from using email claims for user identification or authorization](https://learn.microsoft.com/azure/active-directory/develop/migrate-off-email-claim-authorization).
 
 ### Recommended use of claims
 Microsoft recommends associating accounts on the provider side with the account in Azure AD via the oid and tid claims.  These two claims are guaranteed to be unique for the account in the tenant. 
@@ -252,7 +254,7 @@ Here's an example of the id_token hint for a guest user in the tenant:
 
 ```
 
-Below are the examples of an id_token_hint if the when the claims for upn and email have been configured by the provider.
+Here are examples of an id_token_hint when the claims for upn and email have been configured by the provider.
 
 An example of an id_token_hint for a directory member:
 
@@ -279,7 +281,7 @@ An example of an id_token_hint for a directory member:
 
 ```
 
-An example of the id_token hint for a guest user in the tenant is provided below.  Note that upn claim is not returned.
+An example of the id_token hint for a guest user in the tenant is provided below. Note that upn claim is not returned.
 
 ```json
 {
@@ -306,14 +308,116 @@ An example of the id_token hint for a guest user in the tenant is provided below
 
 ### Suggested actions for external identity providers
 
-The following are the steps that we suggest the external identity provider to carry out at their end. The list is not exhaustive and the provider is encouraged to carry out additional validation activities as they see fit. 
-1.	From the request:
-a.	Ensure that the redirect_uri is one of the published ones provided in section 3.3.2.
-b.	Ensure that the client_id has a value that they assigned to Entra ID, e.g. ABCD.
-c.	The provider should first validate the id_token_hint that is presented to it by Entra ID.
-2.	From the claims in the id_token_hint:
-a.	They can (optionally) make a call to Microsoft Graph to fetch additional details about this user. The ‘oid’ and ‘tid’ claims in the id_token_hint will be useful in this regard. See section 0 for details about the claims provided in the id_token_hint.
-3.	Then carry out whatever additional authentication and authorization activity that the provider’s product is built to do.
-4.	Depending upon the result of user’s actions and other factors, the provider would then construct and send a response back to Entra ID as explained in section  3.3.2.6 below.
+The following are the steps that we suggest the external identity provider to carry out at their end. The list isn't exhaustive and the provider is encouraged to carry out additional validation activities as they see fit. 
+
+1. From the request:
+   - Ensure that the redirect_uri is one of the published ones provided in section 3.3.2.
+   - Ensure that the client_id has a value that they assigned to Entra ID, such as *ABCD*.
+   - The provider should first [validate](https://docs.microsoft.com/azure/active-directory/develop/id-tokens#validating-an-id_token) the id_token_hint that is presented to it by Entra ID.
+1. From the claims in the id_token_hint:
+   - They can (optionally) make a call to [Microsoft Graph](https://graph.microsoft.com/) to fetch additional details about this user. The **oid** and **tid** claims in the id_token_hint will be useful in this regard. See section 0 for details about the claims provided in the id_token_hint.
+1. Then carry out whatever additional authentication and authorization activity that the provider’s product is built to do.
+1. Depending upon the result of user’s actions and other factors, the provider would then construct and send a response back to Entra ID as explained in section  3.3.2.6 below.
 
 ###	Entra ID processing of the provider response
+
+The provider will POST a response back to the **redirect_uri**.
+
+The following parameters should be provided on a successful response:
+
+Parameter	Value	Description
+id_token		The token issued by the external identity provider.
+state		The same state that was passed in the request, if any. Otherwise, this should not be present.
+
+On success, the provider would then issue an id_token for the user. Entra ID would use the published OIDC metadata to verify that the token contains the expected claims as well as do all the other validation of the token that OIDC requires.
+
+Claim	Value	Description
+iss		Issuer – must match the issuer from the provider’s discovery metadata.
+aud		Audience – the Entra ID client id. See ClientId in 3.2.2 above.
+exp		Expiration time – set as usual.
+iat		Issuing time – set as usual.
+sub		Subject – must match the sub from the id_token_hint sent to initiate this request
+nonce		The same nonce that was passed in the request, if any. Otherwise, this should not be present.
+acr		The acr claims for the authentication request. This should match one of the values from the request sent to initiate this request. Only one acr claim should be returned. For the list of claims, see [Supported acr claims](#supported-acr-claims).
+
+
+
+amr		The amr claims for the authentication method used in authentication.  Only one method claim should be returned.	For the list of claims, see [Supported amr claims](#supported-amr-claims).
+
+
+#### Supported acr claims
+
+Claim	Notes
+possessionorinherence	Authentication must take place with a possession or inherence based factor.
+knowledgeorpossession	Authentication must take place with a knowledge or possession based factor.
+knowledgeorinherence	Authentication must take place with a knowledge or inherence based factor.
+knowledgeorpossessionorinherence	Authentication must take place with a knowledge or possession or inherence based factor.
+knowledge	Authentication must take place with knowledge based factor.
+possession	Authentication must take place with possession based factor.
+inherence	Authentication must take place with inherence based factor.
+
+#### Supported amr claims
+
+
+Claim	Notes
+face	Biometric via facial recognition
+fido	Fido was used
+fpt	Biometric via fingerprint
+hwk	Proof of possession of hardware-secured key
+iris	Biometric via iris scan
+otp	One time password
+pop	Proof of possession
+retina	biometric of retina scan
+sc	smart card
+sms	Confirmation by sms to registered number
+swk	Proof of presence of a software secured key
+tel	Confirmation by telephone 
+vbm	Biometric via voiceprint
+
+Because Entra ID requires MFA to be satisfied to issue a token with MFA claims, only methods with a different type (something you have (possession), something you know (knowledge), something you are (inherence)), can be used to satisfy the second factor.
+
+Entra ID will validate the type mapping based on the table below. 
+Claim	Method Type	Notes
+face	Inherence	Biometric via facial recognition
+fido	Possession	Fido was used.  Some implementations may also require biometric but as possession is the primary security attribute, that is the method type that is mapped.
+fpt	Inherence	Biometric via fingerprint
+hwk	Possession	Proof of possession of hardware-secured key
+iris	Inherence	Biometric via iris scan
+otp	Possession	One time password
+pop	Possession	Proof of possession
+retina	Inherence	biometric of retina scan
+sc	Possession	smart card
+sms	Possession	Confirmation by sms to registered number
+swk	Possession	Proof of presence of a software secured key
+tel	Possession	Confirmation by telephone 
+vbm	Inherence	Biometric via voiceprint
+
+
+If no issues are found with the token then Entra ID should consider MFA having been satisfied and issue a token to the end user. Otherwise, it should fail the end user’s request.
+Failure is indicated by issuing Error Response parameters:
+
+Parameter	Value	Description
+Error		An ASCII error code, such as access_denied or temporarily_unavailable.
+
+
+Entra ID will consider the request successful if the id_token parameter is present in the response and if the token is valid. Otherwise, the request will be considered unsuccessful and Entra ID will fail the original authentication attempt due to policy requirement as dictated by the conditional access policy.
+
+Entra ID will abandon the state of the authentication attempt on its end approximately 10 minutes after the redirection has occurred to the provider.
+
+### Transition period for acr and amr claims integration
+
+The initial preview support for external authentication methods replicated the values of the amr claim in the acr claim, and no values were provided by Entra ID in the amr claim.  The provider needed to provide the same value in the amr and acr claims in the id token returned to Entra ID.  
+This guide provides the updated approach that will be used in the Public Preview release where:
+1.	acr claim values align with the method type-based factor (inherence, possession, knowledge or the conjoined versions).
+2.	Values the methods accepted for satisfying the authentication are included in the amr claim in the request.
+A transition period supporting providers and customers initial preview testing will be enabled to give providers time to update their integration.  During this transition period the following approach will be used:
+1.	acr claim values will include the same values of the current integration and the method-type based values (e.g possessionorinherence) that will be used moving forward.
+
+2.	The acceptable values for the amr claim will be included in the request from Entra ID.
+During this transition time, providers can return an acr value in the id_token that is either the method type-based value (possessionorinherence) or a method value.  If the method value is returned, then the amr and acr values must match.
+
+
+Phase	acr values from Entra ID	amr values from Entra ID	acr values accepted by Entra ID	amr values accepted by Entra ID
+Current behavior	Values matching the acceptable methods for authentication	None	One value from the list emitted by Entra ID.  Value must match what is returned in amr claim, appropriate for the method the user performed for authentication.	One value from the list of values emitted by Entra ID in the acr.  Value must match what is returned in acr claim, matching the method the user performed for authentication.
+Transition	Method type-based values (possession, inherence, possessionorinherence), as well as the list of value matching acceptable methods	Values that will be accepted for satisfying authentication.  During this period, this list will match the method values included in the acr claim Entra ID populates.	One value from the acr values needs to be returned appropriate for the authentication the user performed.  If a method-value is returned, it must match the value that is returned in amr.	One value from the list of values set by Entra ID as part of the request in the amr or acr, matching the method the user performed for authentication.
+Final behavior	Method type-based values (possession, inherence, possessionorinherence) 	Values matching the acceptable methods for authentication	One of the acr values set by Entra ID, matching the “type” of method the user performed for authentication.	One value from the list of values set by Entra ID as part of the request in the amr, matching the method the user performed for authentication.
