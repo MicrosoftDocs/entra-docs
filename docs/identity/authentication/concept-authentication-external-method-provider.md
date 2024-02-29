@@ -52,3 +52,32 @@ The flow to satisfy authentication that includes an external method is as follow
 
 :::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram of how external method authentication works.":::
 
+## Entra ID error response handling
+
+Services in Microsoft Azure platform use a correlationId to correlate calls across various internal and external systems. It serves as a common identifier of the whole operation (or flow) potentially involving multiple HTTP calls. When an error occurs during any of the operations, the response will contain a filed named Correlation Id.
+
+When reaching out to Microsoft support or similar service, please provide the value of this CorrelationId as it helps to access the telemetry and logs faster.
+
+For example:
+
+ENTRA IDSTS70002: Error validating credentials. ENTRA IDSTS50012: External ID token from issuer 'https://sts.XXXXXXXXX.com/auth/realms/XXXXXXXXXmfa' failed signature verification. KeyID of token is 'Rk3vlP4vD3OMJzBvrig81pnvaMqA'
+Trace ID: 01c2cd09-8997-45bf-bfe4-18fdf9d1a101
+**Correlation ID**: 72826bb4-abb7-4221-b253-100f530b4b0a
+Timestamp: 2023-07-24 16:51:34Z
+
+## Custom controls and external authentication methods
+
+In Entra ID, external authentication methods and custom controls can operate in parallel while customers are prepared for and migrate to external authentication methods.
+
+Customers that are currently using an integration with an external provider via custom controls can continue to use the custom control and any configured Conditional Access policies to manage their authentication requirements for resources. Admins are recommended to create parallel set of Conditional Access policies during this migration period:
+
+- The policies should use the **Require multifactor authentication** grant control instead of the Custom Control grant.  
+
+   >[!NOTE]
+   >Grant controls based on authentication strengths, including the built-in MFA strength, will not be satisfied by the external authentication method. Policies should only be configured with **Require multifactor authentication**. Authentication strengths support for external authentication methods will be added later.
+
+- The new policy can be tested first with a subset of users. The test group would be excluded from the policy that requires the custom controls and included in the policy that requires multifactor authentication. Once the admin is comfortable with the policy requiring multifactor authentication via the external authentication method, the policy configured for custom controls can be moved to "off". 
+
+## References
+
+- [OAuth2.0 and OIDC specification](https://oauth.net/2/)
