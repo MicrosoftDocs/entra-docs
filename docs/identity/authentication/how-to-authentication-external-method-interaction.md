@@ -185,12 +185,8 @@ This section describes the required content of the token passed as id_token_hint
 
 | Claim |Value | Description |
 |-------|------|-------------|
-|iss    |       | Identifies the security token service (STS) that constructs and returns the token, and the Entra ID tenant in which the user was authenticated.
-<br>
-Your app should use the GUID portion of the claim to restrict the set of tenants that can sign in to the app, if applicable.
-<br>
-Issuer should match the issuer URL from the signed-in user’s tenant’s OIDC discovery JSON metadata.|
-| aud   |        |     Audience – this should be set to the external identity provider’s client id for Entra ID.|
+|iss    |      | Identifies the security token service (STS) that constructs and returns the token, and the Entra ID tenant in which the user was authenticated. Your app should use the GUID portion of the claim to restrict the set of tenants that can sign in to the app, if applicable. Issuer should match the issuer URL from the signed-in user’s tenant’s OIDC discovery JSON metadata.|
+| aud   |        | Audience – this should be set to the external identity provider’s client id for Entra ID.|
 |exp    |        | Expiration time – this will be set to expire a short time after the issuing time (sufficient to avoid time skew issues). This is done because this token is not meant for authentication, so there is no reason for its validity to outlast the request by much. |
 |iat    |        | Issuing time – Set as usual.|
 |tid    |        | Tenant Id – for advertising the tenant to the provider. Represents the Entra ID tenant that the user is from. |
