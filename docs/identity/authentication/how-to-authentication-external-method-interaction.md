@@ -113,7 +113,7 @@ Using the public key identifier from the token ([the “kid” from JWS](https:/
 
 ### Validating tokens issued by Entra ID
 
-For information about how to validate the tokens issued by Entra ID, see [Validating and ID token](https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens#validating-an-id_token). There are no special steps for the consumers of our discovery metadata. 
+For information about how to validate the tokens issued by Entra ID, see [Validating and ID token](https://docs.microsoft.com/azure/active-directory/develop/id-tokens#validating-an-id_token). There are no special steps for the consumers of our discovery metadata. 
 
 Microsoft’s [token validation library](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki) has all the details on the specifics of token validation that have either been documented or can be ascertained from browsing the source code. For a sample, see [Azure Samples](https://github.com/Azure-Samples/active-directory-dotnet-webapi-manual-jwt-validation).
 
@@ -131,9 +131,14 @@ The Authentication request parameters are listed in the following table.
 |--------------------------------|--------|-------------|
 |scope                           | openid |             |
 |response_type                   | Id_token |The value used for the implicit flow. |
-|response_mode | form_post | We’ll use form post to avoid issues with large URLs. We expect all the parameters to be sent in the body of the request.|
-|client_id       |                        | The client id given to Entra ID by the external identity provider, such as "ABCD". For more information, see [External authentication method description]().|
-|redirect_url           |                 | The redirection URI to which the response (id_token_hint) will be sent by the external identity provider.
+|response_mode                   | form_post | We’ll use form post to avoid issues with large URLs. We expect all the parameters to be sent in the body of the request.|
+|client_id                       |        | The client id given to Entra ID by the external identity provider, such as "ABCD". For more information, see [External authentication method description]().|
+
+
+
+| Authentication Query Parameter | Value  | Description |
+|--------------------------------|--------|-------------|
+|redirect_url                    |        | The redirection URI to which the response (id_token_hint) will be sent by the external identity provider.
 For example:<br> 
 ```json
 <input type="hidden" name="redirect_uri" 
