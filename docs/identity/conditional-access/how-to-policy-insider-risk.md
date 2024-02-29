@@ -5,7 +5,7 @@ description: Create Conditional Access policies using signals from Adaptive prot
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 02/28/2024
+ms.date: 02/29/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -19,6 +19,9 @@ Most users have a normal behavior that can be tracked, when they fall outside of
 :::image type="content" source="media/how-to-policy-insider-risk/insider-risk-based-conditional-access-policy.png" alt-text="Screenshot of an example Conditional Access policy using insider risk as a condition." lightbox="media/how-to-policy-insider-risk/insider-risk-based-conditional-access-policy.png":::
 
 ## Block access with Conditional Access policy
+
+> [!TIP]
+> Configure [adaptive protection](/purview/insider-risk-management-adaptive-protection) before you create the following policy.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access**.
