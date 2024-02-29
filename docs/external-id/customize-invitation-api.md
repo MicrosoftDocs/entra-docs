@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.subservice: B2B
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 01/09/2024
+ms.date: 02/29/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -107,7 +107,7 @@ You can use the following options:
 
 ### Invitation status
 
-After you send an external user an invitation, you can use the **Get-MgUser** cmdlet to see if they've accepted it. The following properties of Get-MgUser are populated when an external user is sent an invitation:
+After you send an external user an invitation, you can use the **Get-MgBetaUser** cmdlet to see if they've accepted it. The following properties of Get-MgBetaUser are populated when an external user is sent an invitation:
 
 * **externalUserState** indicates whether the invitation is **PendingAcceptance** or **Accepted**.
 * **externalUserStateChangeDateTime** shows the timestamp for the latest change to the **externalUserState** property.
@@ -116,7 +116,7 @@ You can use the **Filter** option to filter the results by **externalUserState**
  
 
 ```powershell
-Get-MgUser -Filter "externalUserState eq 'PendingAcceptance'" | Format-List -Property DisplayName,UserPrincipalName,externalUserState,externalUserStateChangeDateTime
+Get-MgBetaUser -Filter "externalUserState eq 'PendingAcceptance'" | Format-List -Property DisplayName,UserPrincipalName,externalUserState,externalUserStateChangeDateTime
 ```
 
 > [!NOTE]
