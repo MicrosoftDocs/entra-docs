@@ -4,9 +4,9 @@ description: Enable Microsoft Entra multifactor authentication and single sign-o
 
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.topic: how-to
+ms.service: entra-id
+ms.subservice: enterprise-apps
+ms.topic: tutorial
 
 ms.date: 11/01/2023
 ms.author: gasinh

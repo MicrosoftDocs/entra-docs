@@ -2,8 +2,7 @@
 title: Troubleshoot self-service password reset writeback
 description: Learn how to troubleshoot common problems and resolution steps for self-service password reset writeback in Microsoft Entra ID
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: troubleshooting
 ms.date: 02/10/2024
@@ -12,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: tilarso
-
-ms.collection: M365-identity-device-management
 ---
 # Troubleshoot self-service password reset writeback in Microsoft Entra ID
 

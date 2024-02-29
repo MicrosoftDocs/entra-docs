@@ -1,13 +1,12 @@
 ---
 title: Work with existing on-premises proxy servers and Microsoft Entra ID
 description: Covers how to work with existing on-premises proxy servers with Microsoft Entra ID.
-services: active-directory
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/09/2024
+ms.date: 02/23/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -30,7 +29,7 @@ Connectors have underlying OS components that make outbound requests. These comp
 
 The OS components attempt to locate a proxy server by carrying out a Domain Name System (DNS) lookup for `wpad.domainsuffix`. If the lookup resolves in DNS, an HTTP request is then made to the Internet Protocol (IP) address for `wpad.dat`. This request becomes the proxy configuration script in your environment. The connector uses this script to select an outbound proxy server. However, connector traffic might continue to fail because more configuration settings are needed on the proxy.
 
-You can configure the connector to bypass your on-premises proxy to ensure that it uses direct connectivity to the Azure service. The approach is recommended, as long as your network policy allows for it, because it means one less configuration to maintain.
+You can configure the connector to bypass your on-premises proxy to ensure that it uses direct connectivity to the Microsoft Entra application proxy service. Direct connections are recommended because they require less configuration. However, some network policies require traffic going through a local proxy server.
 
 To disable outbound proxy usage for the connector, edit the `C:\Program Files\Microsoft Azure AD App Proxy Connector\ApplicationProxyConnectorService.exe.config` file and add the `system.net` section shown in the code sample:
 
@@ -64,7 +63,7 @@ You can configure the connector traffic to go through the outbound proxy, as sho
 As a result of having only outbound traffic, there's no need to configure inbound access through your firewalls.
 
 > [!NOTE]
-> Application Proxy does not support authentication to other proxies. The connector/updater network service accounts should be able to connect to the proxy without being challenged for authentication.
+> Application proxy does not support authentication to other proxies. The connector/updater network service accounts should be able to connect to the proxy without being challenged for authentication.
 
 ### Step 1: Configure the connector and related services to go through the outbound proxy
 
@@ -109,7 +108,7 @@ Allow access to the following URLs:
 
 | URL | Port | Use |
 | --- | --- | --- |
-| &ast;.msappproxy.net<br>&ast;.servicebus.windows.net | 443/HTTPS | Communication between the connector and the Application Proxy cloud service |
+| &ast;.msappproxy.net<br>&ast;.servicebus.windows.net | 443/HTTPS | Communication between the connector and the application proxy cloud service |
 | crl3.digicert.com<br>crl4.digicert.com<br>ocsp.digicert.com<br>crl.microsoft.com<br>oneocsp.microsoft.com<br>ocsp.msocsp.com<br> | 80/HTTP | The connector uses these URLs to verify certificates. |
 | login.windows.net<br>secure.aadcdn.microsoftonline-p.com<br>&ast;.microsoftonline.com<br>&ast;.microsoftonline-p.com<br>&ast;.msauth.net<br>&ast;.msauthimages.net<br>&ast;.msecnd.net<br>&ast;.msftauth.net<br>&ast;.msftauthimages.net<br>&ast;.phonefactor.net<br>enterpriseregistration.windows.net<br>management.azure.com<br>policykeyservice.dc.ad.msft.net<br>ctldl.windowsupdate.com | 443/HTTPS | The connector uses these URLs during the registration process. |
 | ctldl.windowsupdate.com<br>www.microsoft.com/pkiops | 80/HTTP | The connector uses these URLs during the registration process. |
@@ -134,7 +133,7 @@ The connector makes outbound TLS-based connections by using the CONNECT method. 
 
 #### TLS inspection
 
-Don't use TLS inspection for the connector traffic, because it causes problems for the connector traffic. The connector uses a certificate to authenticate to the Application Proxy service, and that certificate can be lost during TLS inspection.
+Don't use TLS inspection for the connector traffic, because it causes problems for the connector traffic. The connector uses a certificate to authenticate to the application proxy service, and that certificate can be lost during TLS inspection.
 
 ## Configure using a proxy between the connector and backend application
 Using a forward proxy for the communication towards the backend application is a special requirement in some environments.
@@ -174,11 +173,11 @@ The following examples are specific to Message Analyzer, but the principles can 
 
 For initial troubleshooting, perform the following steps:
 
-1. From services.msc, stop the Microsoft Entra application proxy Connector service.
+1. From `services.msc`, stop the Microsoft Entra application proxy connector service.
 
-   ![Microsoft Entra application proxy Connector service in services.msc](./media/application-proxy-configure-connectors-with-proxy-servers/services-local.png)
+   ![Microsoft Entra application proxy connector service in services.msc](./media/application-proxy-configure-connectors-with-proxy-servers/services-local.png)
 
-1. Run Message Analyzer as an administrator.
+1. Run *Message Analyzer* as an administrator.
 1. Select **Start local trace**.
 1. Start the Microsoft Entra application proxy connector service.
 1. Stop the network capture.
@@ -186,20 +185,17 @@ For initial troubleshooting, perform the following steps:
    ![Screenshot shows the Stop network capture button](./media/application-proxy-configure-connectors-with-proxy-servers/stop-trace.png)
 
 ### Check if the connector traffic bypasses outbound proxies
+If you expect the connector to make direct connections to application proxy services, `SynRetransmit` responses on port 443 are an indication that you have a network or firewall problem.
 
-If you configured your Application Proxy connector to bypass the proxy servers and connect directly to the Application Proxy service, you want to look in the network capture for failed Transmission Control Protocol (TCP) connection attempts.
+Use the Message Analyzer filter to identify failed Transmission Control Protocol (TCP) connection attempts. Enter `property.TCPSynRetransmit` in the filter box and select **Apply**.
 
-Use the Message Analyzer filter to identify these attempts. Enter `property.TCPSynRetransmit` in the filter box and select **Apply**.
-
-A synchronization (SYN) packet is the first packet sent to establish a TCP connection. If this packet doesn’t return a response, the SYN is reattempted. You can use the preceding filter to see any retransmitted SYN packets. Then, you can check whether these SYN packets correspond to any connector-related traffic.
-
-If you expect the connector to make direct connections to the Azure services, SynRetransmit responses on port 443 are an indication that you have a network or firewall problem.
+A synchronization (SYN) packet is the first packet sent to establish a TCP connection. If this packet doesn’t return a response, the SYN is reattempted. You can use the filter to see any retransmitted SYN packets. Then, you can check whether these SYN packets correspond to any connector-related traffic.
 
 ### Check if the connector traffic uses outbound proxies
 
-If you configured your Application Proxy connector traffic to go through the proxy servers, you want to look for failed https connections to your proxy.
+If you configured your application proxy connector traffic to go through the proxy servers, look for failed `https` connections to your proxy.
 
-To filter the network capture for these connection attempts, enter `(https.Request or https.Response) and tcp.port==8080` in the Message Analyzer filter, replacing 8080 with your proxy service port. Select **Apply** to see the filter results.
+Use the Message Analyzer filter to identify failed HTTPS connection attempts to your proxy. Enter `(https.Request or https.Response) and tcp.port==8080` in the Message Analyzer filter, replacing `8080` with your proxy service port. Select **Apply** to see the filter results.
 
 The preceding filter shows just the HTTPs requests and responses to/from the proxy port. You're looking for the CONNECT requests that show communication with the proxy server. Upon success, you get an HTTP OK (200) response.
 

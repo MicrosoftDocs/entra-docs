@@ -4,8 +4,8 @@ description: Learn ways to identify app risk levels, stop breaches and leaks in 
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: conceptual
 
 ms.date: 07/29/2021

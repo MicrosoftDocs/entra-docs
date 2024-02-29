@@ -2,8 +2,8 @@
 title: Verify Microsoft Entra hybrid join state
 description: Verify configurations for Microsoft Entra hybrid joined devices
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
@@ -14,7 +14,6 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
 
-ms.collection: M365-identity-device-management
 ---
 # Verify Microsoft Entra hybrid join
 
@@ -97,6 +96,5 @@ Get-MgDevice -All | where {($_.TrustType -eq 'ServerAd') -and ($_.ProfileType -n
 
 ## Next steps
 
-- [Downlevel device enablement](how-to-hybrid-join-downlevel.md)
 - [Configure Microsoft Entra hybrid join](how-to-hybrid-join.md)
 - [Troubleshoot pending device state](/troubleshoot/azure/active-directory/pending-devices)

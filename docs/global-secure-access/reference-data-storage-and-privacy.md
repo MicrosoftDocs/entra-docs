@@ -6,8 +6,7 @@ ms.author: kenwith
 manager: amycolannino
 ms.topic: reference
 ms.date: 10/27/2023
-ms.service: network-access
-ms.custom: 
+ms.service: global-secure-access
 ---
 
 # Global Secure Access data storage and privacy

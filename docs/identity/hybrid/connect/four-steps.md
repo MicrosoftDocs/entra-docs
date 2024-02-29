@@ -1,16 +1,16 @@
 ---
 title: Four steps to a strong identity foundation
 description: This article describes four steps hybrid identity customers can take to build a strong identity foundation.
-services: active-directory
+
 author: martincoetzer
 manager: travisgr
-ms.service: active-directory
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/08/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: martinco
-ms.collection: M365-identity-device-management
+
 ---
 
 # Four steps to a strong identity foundation with Microsoft Entra ID

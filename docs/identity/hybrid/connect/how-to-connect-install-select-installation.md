@@ -1,17 +1,17 @@
 ---
 title: 'Microsoft Entra Connect: Select your installation type'
 description: This topic walks you through how to select the installation type to use for Microsoft Entra Connect
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Select which installation type to use for Microsoft Entra Connect
 Microsoft Entra Connect has two installation types for new installation: Express and customized. This topic helps you to decide which option to use during installation.

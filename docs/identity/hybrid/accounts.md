@@ -1,16 +1,16 @@
 ---
 title: 'Accounts for integrating with Active Directory'
 description: This article describes the required accounts for each of the synchronization tools.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Accounts for integrating with Active Directory

@@ -2,9 +2,8 @@
 title: "What's new in Microsoft Entra External ID"
 description: "New and updated documentation for the Microsoft Entra External ID."
 ms.date: 02/01/2024
-ms.service: active-directory
-ms.subservice: B2B
-ms.topic: reference
+ms.service: entra-external-id
+ms.topic: whats-new
  
 ms.author: cmulligan
 author: csmulligan

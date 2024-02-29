@@ -9,7 +9,7 @@ metadata:
   manager: amycolannino
   ms.author: owinfrey
   ms.date: 03/07/2023
-  ms.service: active-directory
+  ms.service: entra-id-governance
   ms.subservice: compliance
   ms.topic: landing-page
   services: active-directory

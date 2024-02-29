@@ -1,18 +1,18 @@
 ---
 title: Microsoft Entra federation compatibility list
 description: This page has non-Microsoft identity providers that can be used to implement single sign-on.
-services: active-directory
+
 author: billmath
 manager: amycolannino
 ms.assetid: 22c8693e-8915-446d-b383-27e9587988ec
-ms.service: active-directory
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Microsoft Entra federation compatibility list
 Microsoft Entra ID provides single-sign on and enhanced application access security for Microsoft 365 and other Microsoft Online services for hybrid and cloud-only implementations without requiring any third-party solution. Microsoft 365, like most of Microsoft’s Online services, is integrated with Microsoft Entra ID for directory services, authentication, and authorization. Microsoft Entra ID also provides single sign-on to thousands of SaaS applications and on-premises web applications. See the Microsoft Entra ID [application gallery](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps) for supported SaaS applications. 

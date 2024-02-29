@@ -1,16 +1,16 @@
 ---
 title: Assign a managed identity to an application role using Azure CLI
 description: Step-by-step instructions for assigning a managed identity access to another application's role, using Azure CLI.
-services: active-directory
+
 author: xstof
 
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 11/03/2021
 ms.author: christoc
-ms.collection: M365-identity-device-management
+
 ms.custom: devx-track-azurecli
 ms.devlang: azurecli
 ---

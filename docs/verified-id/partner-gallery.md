@@ -1,8 +1,8 @@
 ---
 title: Identity Proofing and Verification (IDV) Partner gallery for Microsoft Entra Verified ID
 description: Learn how to integrate with our IDV partners to tailor your end-user experience to your needs.
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 author: barclayn
 manager: amycolannino
 ms.topic: how-to
@@ -24,7 +24,6 @@ Our IDV partner network extends Microsoft Entra Verified ID's capabilities to he
 | ![Screenshot of an Onfido logo.](media/partner-gallery/onfido.jpeg) | Start issuing and accepting verifiable credentials in minutes. With verifiable credentials and Onfido you can verify a person’s identity while respecting privacy. Digitally validate information on a person’s ID or their biometrics.| * |
 | ![Screenshot of a Jumio logo.](media/partner-gallery/jumio.jpeg) | [Jumio](https://www.jumio.com/microsoft-verifiable-credentials/) is helping to support a new form of digital identity by Microsoft based on verifiable credentials and decentralized identifiers standards to let consumers verify once and use everywhere.| * |
 | ![Screenshot of an Idemia logo.](media/partner-gallery/idemia.png) | [Idemia](https://na.idemia.com/identity/verifiable-credentials/) Integration with Verified ID enables “Verify once, use everywhere” functionality.| [Configure Verified ID by IDEMIA as your identity verification partner](idemia.md) |
-| ![Screenshot of an Acuant logo.](media/partner-gallery/acuant.png) | [Acuant](https://www.acuant.com/microsoft-acuant-verifiable-credentials-my-digital-id/) - My Digital ID - Create Your Digital Identity Once, Use It Everywhere.| * |
 | ![Screenshot of a Clear logo.](media/partner-gallery/clear.jpeg) | [Clear](https://ir.clearme.com/news-events/press-releases/detail/25/clear-collaborates-with-microsoft-to-create-more-secure) Collaborates with Microsoft to Create More Secure Digital Experience Through Verification Credential.| * |
 
 \* -  no documentation available yet

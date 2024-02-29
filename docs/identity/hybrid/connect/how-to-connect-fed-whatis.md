@@ -1,18 +1,18 @@
 ---
 title: Microsoft Entra Connect and federation
 description: This page is the central location for all documentation regarding AD FS operations that use Microsoft Entra Connect.
-services: active-directory
+
 author: billmath
 manager: amycolannino
 ms.assetid: f9107cf5-0131-499a-9edf-616bf3afef4d
-ms.service: active-directory
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Microsoft Entra Connect and federation
 Microsoft Entra Connect lets you configure federation with on-premises Active Directory Federation Services (AD FS) and Microsoft Entra ID. With federation sign-in, you can enable users to sign in to Microsoft Entra ID-based services with their on-premises passwords--and, while on the corporate network, without having to enter their passwords again. By using the federation option with AD FS, you can deploy a new installation of AD FS, or you can specify an existing installation in a Windows Server 2012 R2 farm.

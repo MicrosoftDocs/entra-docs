@@ -2,9 +2,9 @@
 title: "What's new in Microsoft Entra application management"
 description: "New and updated documentation for the Microsoft Entra application management."
 ms.date: 02/01/2024
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.topic: reference
+ms.service: entra-id
+ms.subservice: enterprise-apps
+ms.topic: whats-new
 
 ms.author: jomondi
 author: omondiatieno

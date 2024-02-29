@@ -2,7 +2,7 @@
 title: Built-in policy definitions for Microsoft Entra Domain Services
 description: Lists Azure Policy built-in policy definitions for Microsoft Entra Domain Services. These built-in policy definitions provide common approaches to managing your Azure resources.
 ms.date: 09/19/2023
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
 author: justinha
 ms.author: justinha

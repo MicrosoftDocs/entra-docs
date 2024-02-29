@@ -2,10 +2,10 @@
 title: Microsoft Entra ID Protection Glossary
 description: Microsoft Entra ID Protection Glossary
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: identity-protection
-ms.topic: reference
+
+ms.service: entra-id-protection
+
+ms.topic: glossary
 ms.date: 10/18/2019
 
 ms.author: joflore
@@ -13,7 +13,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: chuqiaoshi
 
-ms.collection: M365-identity-device-management
+
 ---
 # Microsoft Entra ID Protection Glossary
 

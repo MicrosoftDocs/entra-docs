@@ -1,15 +1,12 @@
 ---
 title: 'What is identity lifecycle management with Microsoft Entra ID?'
 description: Describes overview of identity lifecycle management.
-services: active-directory
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: overview
 ms.date: 12/20/2023
-ms.subservice: compliance
 ms.author: billmath
-ms.collection: M365-identity-device-management
 ---
 
 # What is identity lifecycle management?

@@ -1,21 +1,21 @@
 ---
 title: 'Microsoft Entra Connect: Prerequisites and hardware'
 description: This article describes the prerequisites and the hardware requirements for Microsoft Entra Connect.
-services: active-directory
+
 author: billmath
 manager: amycolannino
 ms.assetid: 91b88fda-bca6-49a8-898f-8d906a661f07
-ms.service: active-directory
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.custom:
   - has-azure-ad-ps-ref
   - azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Prerequisites for Microsoft Entra Connect
 This article describes the prerequisites and the hardware requirements for Microsoft Entra Connect.

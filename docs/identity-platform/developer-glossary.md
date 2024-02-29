@@ -6,9 +6,9 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.date: 03/15/2023
 ms.reviewer:
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: reference
+ms.service: identity-platform
+
+ms.topic: glossary
 #Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand the terminology and concepts related to authentication and authorization, so that I can effectively implement secure access to protected resources in my application.
 ---
 

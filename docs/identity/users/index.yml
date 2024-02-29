@@ -7,9 +7,8 @@ summary: Microsoft Entra ID provides user management services so that you can as
 metadata:
   title: Microsoft Entra users, groups, licenses, and domains documentation
   description: Learn how to use groups, domain names, and licenses to manage user authentication in your Microsoft Entra organization.
-  services: active-directory
-  ms.service: active-directory
-  ms.subservice: enterprise-users
+  ms.service: entra-id
+  ms.subservice: users
   manager: amycolannino
   ms.topic: landing-page
   ms.date: 04/18/2021

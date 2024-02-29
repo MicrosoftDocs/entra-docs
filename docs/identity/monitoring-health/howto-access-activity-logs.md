@@ -3,9 +3,9 @@ title: Access activity logs in Microsoft Entra ID
 description: How to choose the right method for accessing and integrating the activity logs in Microsoft Entra ID.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: how-to
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 12/15/2023
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
@@ -70,6 +70,9 @@ Using Microsoft Graph explorer, you can run queries to help you with the followi
 - View tenant activities such as who made a change to a group and when.
 - Mark a Microsoft Entra sign-in event as safe or confirmed compromised.
 - Retrieve a list of application sign-ins for the last 30 days.
+
+> [!NOTE]
+> Microsoft Graph allows you to access data from multiple services that impose their own throttling limits. For more information on activity log throttling, see [Microsoft Graph service-specific throttling limits](/graph/throttling-limits#identity-and-access-service-limits).
 
 ### Quick steps
 

@@ -6,8 +6,7 @@ ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
 ms.date: 10/05/2023
-ms.service: network-access
-
+ms.service: global-secure-access
 ---
 
 # Add and delete remote networks device links

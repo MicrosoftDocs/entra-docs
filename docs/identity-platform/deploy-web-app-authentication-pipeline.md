@@ -6,9 +6,9 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
 ms.date: 07/17/2023
-ms.reviewer: mahender, jukullam
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer:
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As a developer, I want to deploy a web app in a pipeline and configure App Service authentication using Azure Pipelines, so that I can automate the deployment process and secure access to the web app.
 ---

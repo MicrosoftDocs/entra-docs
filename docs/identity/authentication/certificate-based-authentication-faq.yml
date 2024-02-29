@@ -2,9 +2,7 @@
 metadata:
   title: Microsoft Entra certificate-based authentication (CBA) FAQ
   description: Frequently asked questions and answers related to Microsoft Entra certificate-based authentication (CBA). 
-  
-  services: multi-factor-authentication
-  ms.service: active-directory
+  ms.service: entra-id
   ms.subservice: authentication
   ms.custom: has-azure-ad-ps-ref
   ms.topic: faq
@@ -13,7 +11,6 @@ metadata:
   author: justinha
   manager: amycolannino
   ms.reviewer: vimrang
-  ms.collection: M365-identity-device-management
 title: Frequently asked questions about Microsoft Entra certificate-based authentication (CBA)
 summary: |
   This article addresses frequently asked questions about how Microsoft Entra certificate-based authentication (CBA) works. 
@@ -64,6 +61,19 @@ sections:
         answer: |
           No, CDP supports only HTTP URLs.
 
+      - question: |
+          How do I find the CRL for a Certificate Authority or how do I troubleshoot the error AADSTS2205015: The Certificate Revocation List (CRL) failed signature validation?
+        answer: |
+          Please download the CRL and compare the CA certificate and the CRL information to validate the crlDistributionPoint value is valid for the CA you want to add. You can configure the CRL to the corresponding CA by matching CA's Issuer SKI to the AKI of the CRL (CA Issuer SKI == CRL AKI)
+          The following table and graphic show how to map information from the CA certificate to the attributes of the downloaded CRL.
+
+          | CA Certificate Info |= |Downloaded CRL Info|
+          |----|:-:|----|
+          |Subject |=|Issuer |
+          |Subject Key Identifier |=|Authority Key Identifier (KeyID) |
+
+          :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/certificate-crl-compare.png" alt-text="Screenshot comparing CA Certificate with CRL Information.":::
+      
       - question: |
           How do I validate the Certificate Authority configuration?
         answer: |

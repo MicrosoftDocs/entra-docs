@@ -5,11 +5,11 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 11/21/2023
+ms.date: 02/12/2024
 ms.author: jeedes
 
 ---
@@ -79,7 +79,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://<InstanceName>.cloud.tanium.com`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Tanium SSO support team](mailto:integrations@tanium.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Tanium Support](https://community.tanium.com/s/contactsupport) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
     > [!NOTE]
     > If deploying Tanium in an on-premises configuration, your values may look different than those shown above. The values to use can be retrieved from the **Administration > SAML Configuration** menu in the Tanium console. Details can be found in the [Tanium Console User Guide: Integrating with a SAML IdP](https://docs.tanium.com/platform_user/platform_user/console_using_saml.html?cloud=false "Integrating with a SAML IdP Guide").
@@ -90,7 +90,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 ## Configure Tanium SSO
 
-To configure single sign-on on **Tanium SSO** side, you need to send the **App Federation Metadata Url** to [Tanium SSO support team](mailto:integrations@tanium.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Tanium SSO** side, you need to send the **App Federation Metadata Url** to [Tanium Support](https://community.tanium.com/s/contactsupport). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Tanium SSO test user
 

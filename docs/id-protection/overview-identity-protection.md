@@ -2,8 +2,8 @@
 title: What is Microsoft Entra ID Protection?
 description: Automation to detect, remediate, investigate, and analyze risk data with Microsoft Entra ID Protection
 
-ms.service: active-directory
-ms.subservice: identity-protection
+ms.service: entra-id-protection
+
 ms.topic: overview
 ms.date: 02/06/2024
 

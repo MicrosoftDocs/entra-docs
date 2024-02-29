@@ -2,8 +2,7 @@
 title: Microsoft Authenticator authentication method
 description: Learn about using the Microsoft Authenticator in Microsoft Entra ID to help secure your sign-ins
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 02/07/2024
@@ -12,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: calui
-
-ms.collection: M365-identity-device-management
 
 # Customer intent: As an identity administrator, I want to understand how to use the Microsoft Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
 ---

@@ -1,15 +1,15 @@
 ---
 title: Microsoft Entra Connect Sync service shadow attributes
 description: Describes how shadow attributes work in Microsoft Entra Connect Sync service.
-services: active-directory
+
 author: billmath
-ms.service: active-directory
+ms.service: entra-id
 manager: amycolannino
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 # Microsoft Entra Connect Sync service shadow attributes
 Most attributes are represented the same way in Microsoft Entra ID as they are in your on-premises Active Directory. But some attributes have some special handling and the attribute value in Microsoft Entra ID might be different than what Microsoft Entra Connect synchronizes.

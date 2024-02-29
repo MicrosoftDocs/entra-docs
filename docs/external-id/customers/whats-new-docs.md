@@ -2,9 +2,9 @@
 title: "What's new in Microsoft Entra ID for customers"
 description: "New and updated documentation for the Microsoft Entra ID for customers documentation."
 ms.date: 02/01/2024
-ms.service: active-directory
-ms.subservice: ciam
-ms.topic: reference
+ms.service: entra-external-id
+ms.subservice: customers
+ms.topic: whats-new
  
 ms.author: cmulligan
 author: csmulligan

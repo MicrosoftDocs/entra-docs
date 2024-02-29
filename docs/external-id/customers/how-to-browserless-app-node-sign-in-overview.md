@@ -6,10 +6,10 @@ author: Dickson-Mwendia
 manager: mwongerapk
 
 ms.author: dmwendia
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
-ms.topic: how-to
+ms.subservice: customers
+ms.topic: overview
 ms.date: 05/09/2023
 ms.custom: developer, devx-track-js
 #Customer intent: As a dev, devops, I want to learn about how to build a Node.js browserless application to authenticate users with my Microsoft Entra ID for customers tenant

@@ -1,16 +1,14 @@
 ---
 title: Configure CMMC Level 1 controls
 description: Learn how to configure Microsoft Entra identities to meet CMMC Level 1 requirements.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: standards
 ms.topic: conceptual
 ms.date: 1/3/2023
 ms.author: jricketts
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
+ms.custom: it-pro
 ---
 
 # Configure CMMC Level 1 controls

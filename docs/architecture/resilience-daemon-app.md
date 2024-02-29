@@ -1,9 +1,8 @@
 ---
 title: Increase the resilience of authentication and authorization in daemon applications you develop
 description: Learn to increase authentication and authorization resiliency in daemon application using the Microsoft identity platform
-services: active-directory
-ms.service: active-directory
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: how-to
 author: jricketts
 ms.author: jricketts

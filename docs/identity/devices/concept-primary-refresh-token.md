@@ -2,8 +2,8 @@
 title: Primary Refresh Token (PRT) and Microsoft Entra ID
 description:  What is the role of and how do we manage the Primary Refresh Token (PRT) in Microsoft Entra ID?
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
 ms.date: 01/31/2024
@@ -12,7 +12,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: ravenn
-ms.collection: M365-identity-device-management
 ---
 # What is a Primary Refresh Token?
 
@@ -220,7 +219,7 @@ The following diagrams illustrate the underlying details in issuing, renewing, a
 | F | Microsoft Entra ID validates the Session key signature on the PRT cookie, validates the nonce, verifies that the device is valid in the tenant, and issues an ID token for the web page and an encrypted session cookie for the browser. |
 
 > [!NOTE]
-> The Browser SSO flow described in the previous steps doesn't apply for sessions in private modes such as InPrivate in Microsoft Edge, Incognito in Google Chrome (when using the Microsoft Accounts or Office Online extensions) or in private mode in Mozilla Firefox v91+
+> The Browser SSO flow described in the previous steps doesn't apply for sessions in private modes such as InPrivate in Microsoft Edge, Incognito in Google Chrome (when using the Microsoft Accounts extension) or in private mode in Mozilla Firefox v91+
 
 ## Next steps
 

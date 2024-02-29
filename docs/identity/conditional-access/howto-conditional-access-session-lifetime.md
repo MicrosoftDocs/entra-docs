@@ -2,7 +2,7 @@
 title: Configure adaptive session lifetime policies
 description: Customize Microsoft Entra authentication session configuration including user sign-in frequency and browser session persistence.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 01/08/2024
@@ -37,9 +37,11 @@ To make sure that your policy works as expected, the recommended best practice i
 1. Under **Access controls** > **Session**.
    1. Select **Sign-in frequency**.
       1. Choose **Periodic reauthentication** and enter a value of hours or days or select **Every time**.
-1. Save your policy.
 
    > ![Screenshot showing a Conditional Access policy configured for sign-in frequency.](media/howto-conditional-access-session-lifetime/conditional-access-policy-session-sign-in-frequency.png)
+
+1. Save your policy.
+
 
 ### Policy 2: Persistent browser session
 

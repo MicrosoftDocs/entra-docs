@@ -2,12 +2,12 @@
 
 title: Identity protection risk analysis workbook in Microsoft Entra ID
 description: Learn how to use the identity protection risk analysis workbook.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
-ms.topic: reference
-ms.subservice: report-monitor
+ms.service: entra-id
+ms.topic: how-to
+ms.subservice: monitoring-health
 ms.date: 10/03/2023
 ms.author: sarahlipsey
 ms.reviewer: chuqiaoshi

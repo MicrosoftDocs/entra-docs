@@ -2,11 +2,10 @@
 title: Microsoft Entra Permissions Management Quickstart Guide
 description: Quickstart guide - How to quickly onboard your Microsoft Entra Permissions Management product
 # CustomerIntent: As a security administrator, I want to successfully onboard Permissions Management so that I can enable identity security in my cloud environment as efficiently as possible.'
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: ciem
+ms.service: entra-permissions-management
+
 ms.topic: quickstart
 ms.date: 12/20/2023
 ms.author: jfields

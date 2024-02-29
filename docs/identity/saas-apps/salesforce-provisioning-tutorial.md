@@ -4,8 +4,8 @@ description: Learn the steps required to perform in Salesforce and Microsoft Ent
 
 author: jeevansd
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022

@@ -3,7 +3,7 @@ title: Troubleshoot manager update issues with HR provisioning
 description: Learn how to troubleshoot manager update issues with HR provisioning
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.date: 09/15/2023
