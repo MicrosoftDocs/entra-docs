@@ -120,3 +120,5 @@ The following example is sending the enriched logs to a Log Analytics workspace,
 
 - [Explore the Global Secure Access logs and monitoring options](concept-global-secure-access-logs-monitoring.md)
 - [Learn about Global Secure Access audit logs](how-to-access-audit-logs.md)
+- [Enriched Microsoft 365 audit logs](reference-event-enrichment-logs.md)
+
