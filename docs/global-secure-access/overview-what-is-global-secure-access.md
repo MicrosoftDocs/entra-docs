@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: overview
-ms.date: 01/22/2024
+ms.date: 02/28/2024
 ms.service: global-secure-access
 ms.custom: references_regions
 ---
@@ -18,7 +18,7 @@ Microsoft Entra Internet Access and Microsoft Entra Private Access comprise Micr
 
 ![Diagram of the Global Secure Access solution, illustrating how identities and remote networks can connect to Microsoft 365, private, and public resources through the service.](media/overview-what-is-global-secure-access/global-secure-access-diagram.png)
 
-## Global Secure Access is Microsoft's Security Service Edge (SSE) solution
+## Microsoft's Security Service Edge (SSE) solution
 
 Microsoft Entra Internet Access and Microsoft Entra Private Access - coupled with Microsoft Defender for Cloud Apps, our SaaS-security focused Cloud Access Security Broker (CASB) - are uniquely built as a solution that converges network, identity, and endpoint access controls so you can secure access to any app or resource, from anywhere. With the addition of these Global Secure Access products, Microsoft Entra ID simplifies access policy management and enables access orchestration for employees, business partners, and digital workloads. You can continuously monitor and adjust user access in real time if permissions or risk level changes.
 
