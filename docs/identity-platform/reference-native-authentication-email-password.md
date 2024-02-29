@@ -1698,7 +1698,7 @@ Content-Type: application/json
 |    Parameter     | Description        |
 |----------------------|------------------------|
 | `status`  | The status of the reset password request. If Microsoft Entra returns a status of *failed*, the app can resubmit the new password by making another request to the `/submit` endpoint and include the new continuation token.|
-| `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. If the status is *succeeded*, the app can use the continuation token that Microsoft Entra returns to request for security tokens via the `/token` endpoint as explained in [step 3 of sign-in flow](#step-3-request-for-security-tokens). This means that after a user successfully resets their password, you can directly sign them into your app without asking them to reenter their new credentials.|
+| `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. If the status is *succeeded*, the app can use the continuation token that Microsoft Entra returns to request for security tokens via the `/token` endpoint as explained in [step 5 of sign-up flow](#step-5-request-for-security-tokens). This means that after a user successfully resets their password, you can directly sign them into your app without initiating a fresh sign-in flow.|
 
 Here are the possible statuses that Microsoft Entra returns (possible values of the `status` parameter):
 
