@@ -1,5 +1,5 @@
 ---
-title: Microsoft Security Service Edge Solution Deployment Guide for Microsoft Entra Internet Access
+title: Microsoft's Security Service Edge Solution Deployment Guide for Microsoft Entra Internet Access
 description: Plan for, deploy, and verify Microsoft Entra Internet Access.
 customer intent: As a Microsoft Partner, I want to deploy Microsoft Entra Internet Access as a Proof of Concept in my production or test environment.
 services: active-directory
@@ -11,13 +11,13 @@ ms.date: 02/27/2024
 ms.author: jricketts
 ---
 
-# Microsoft Security Service Edge Solution Deployment Guide for Microsoft Entra Internet Access Proof of Concept
+# Microsoft's Security Service Edge Solution Deployment Guide for Microsoft Entra Internet Access Proof of Concept
 
 The [Microsoft identity-centric Security Service Edge solution](../global-secure-access/overview-what-is-global-secure-access.md) converges network and identity access controls so you can secure access to any app or resource from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. You can monitor and adjust user access continuously in real time if permissions or risk levels change for private apps, SaaS apps, and Microsoft 365 endpoints.
 
 Protecting enterprise users and managed devices from malicious internet traffic and malware infection concerns all companies. Use [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) Secure Web Gateway functionality to block traffic based on web categories, and a fully qualified domain name (FQDN), by integrating with Microsoft Entra ID Conditional Access.
 
-The guidance in this article helps you to deploy [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) (Preview) as a proof-of-concept in your production or test environment. It includes setup and configuring web content filtering. You can review prerequisites in the [Microsoft Security Service Edge Solution Deployment Guide Introduction](sse-deployment-guide-intro.md), which includes how to scope your configuration and testing for specific test users and groups.
+The guidance in this article helps you to deploy [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) (Preview) as a proof-of-concept in your production or test environment. It includes setup and configuring web content filtering. You can review prerequisites in the [Microsoft's Security Service Edge Solution Deployment Guide Introduction](sse-deployment-guide-intro.md), which includes how to scope your configuration and testing for specific test users and groups.
 
 ## Deploy and test Microsoft Entra Internet Access
 
@@ -498,6 +498,6 @@ In some cases, you might have users that require access to blocked sites for gro
 
 ## Next steps
 
-- [Introduction to Microsoft Security Service Edge Solution Deployment Guide for Proof of Concept](sse-deployment-guide-intro.md)
+- [Introduction to Microsoft's Security Service Edge Solution Deployment Guide for Proof of Concept](sse-deployment-guide-intro.md)
 - [Deploy and verify Microsoft Entra Private Access](sse-deployment-guide-private-access.md)
 - [Deploy and verify Microsoft Entra Internet Access for Microsoft 365](sse-deployment-guide-m365.md)
