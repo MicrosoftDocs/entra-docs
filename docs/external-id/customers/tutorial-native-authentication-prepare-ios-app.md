@@ -17,11 +17,11 @@ ms.custom: developer, devx-track-dotnet
 
 # Tutorial: Prepare your iOS app for native authentication
 
-This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) native auth SDK framework to your iOS Swift app.
+This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) native authentication SDK framework to your iOS Swift app.
 
 In this tutorial, you learn how to:
 
-- Get the MSAL Native Auth SDK Framework code.
+- Get the MSAL native authentication SDK Framework code.
 - Build the MSAL Framework.
 - Embed MSAL framework in iOS app.
 - Create SDK instance.
@@ -78,12 +78,12 @@ MSAL provides a logging API that you can use to enable and configure logging. To
 MSALGlobalConfig.loggerConfig.logLevel = .verbose
 MSALGlobalConfig.loggerConfig.setLogCallback { logLevel, message, containsPII in
    if !containsPII {
-         print("MSAL: \(message ?? "")") --> This print should have 4 spaces less than it currently has
+         print("MSAL: \(message ?? "")")
    }
 }
 ```
 
-This outputs all debug logs from MSAL, which can be helpful in diagnosing issues and learning how the Native Auth flows work. To learn more about configuring log levels and best practices see [Logging in MSAL for iOS/macOS](../../identity-platform/msal-logging-ios.md?tabs=swift).
+This outputs all debug logs from MSAL, which can be helpful in diagnosing issues and learning how the native authentication flows work. To learn more about configuring log levels and best practices see [Logging in MSAL for iOS/macOS](../../identity-platform/msal-logging-ios.md?tabs=swift).
 
 ## Next steps
 
