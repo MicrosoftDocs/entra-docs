@@ -143,12 +143,7 @@ For example:<br>
 ```json
 <input type="hidden" name="redirect_uri" 
 value="https://login.microsoftonline.com/common/federation/externalauthprovider" />
-```
-<br>
-This should have been registered with the provider off-band. The redirect URIs that can be sent are:<br>
-- Public Azure: https://login.microsoftonline.com/common/federation/externalauthprovider<br>
-- Azure for US Government: https://login.microsoftonline.us/common/federation/externalauthprovider<br>
-- Azure China 21Vianet: |
+```|
 
 
 | Authentication Query Parameter | Value  | Description |
