@@ -29,13 +29,7 @@ In this tutorial, you learn how to:
 ## Prerequisites
 
 - <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>
-- To use native authentication, you need to:
-
-  - [Register iOS application in Microsoft Entra External ID for customers tenant](how-to-run-sample-ios-app.md#register-an-application)
-  - [Enable public client flow](how-to-run-sample-ios-app.md#enable-public-client-and-native-authentication-flows)
-  - [Grant API permissions](how-to-run-sample-ios-app.md#grant-api-permissions)
-  - [Create a user flow](how-to-run-sample-ios-app.md#create-a-user-flow)
-  - [Associate the app with the user flow](how-to-run-sample-ios-app.md#associate-the-application-with-the-user-flow)
+- [How to run the Android sample app](how-to-run-sample-ios-app.md).
 - iOS project
 
 ## Add the MSAL framework to an iOS app

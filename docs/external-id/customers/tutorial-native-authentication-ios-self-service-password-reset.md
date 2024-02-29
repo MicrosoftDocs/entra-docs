@@ -15,7 +15,7 @@ ms.custom: developer, devx-track-dotnet
 #Customer intent: As a dev, devops, I want to learn how to Self-service password reset.
 ---
 
-# Tutorial: Self-service password reset 
+# Tutorial: Self-service password reset in iOS app
 
 This tutorial demonstrates how to give users the ability to change or reset their password, with no administrator or help desk involvement. 
 
