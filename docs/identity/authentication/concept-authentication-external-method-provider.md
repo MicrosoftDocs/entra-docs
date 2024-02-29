@@ -30,7 +30,7 @@ This document describes integration of authentication methods provided by extern
 
 External authentication methods are implemented on top of Open ID Connect. This implementation requires at least three publicly facing endpoints: 
 
-- An Open ID Connect Discovery endpoint, described in [Discovery of provider metadata via OIDC Discovery](how-to-authentication-external-method-interaction#discovery-of-provider-metadata)
+- An Open ID Connect Discovery endpoint, described in [Discovery of provider metadata via OIDC Discovery](how-to-authentication-external-method-interaction.md#discovery-of-provider-metadata)
 - A valid Open ID Connect authentication endpoint
 - A URL where the public certificates of the provider are published
 
