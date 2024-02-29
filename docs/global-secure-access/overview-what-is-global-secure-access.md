@@ -30,7 +30,7 @@ Microsoft Entra Internet Access secures access to Microsoft 365, SaaS, and publi
 
 ### Key features
 
-- Prevent stolen tokens from being replayed with the compliant network check in Conditional Access.
+- Prevent stolen tokens from being replayed with the compliant network check-in Conditional Access.
 - Apply universal tenant restrictions to prevent data exfiltration to other tenants or personal accounts including anonymous access.
 - Enriched logs with network and device signals currently supported for SharePoint Online traffic.
 - Improve the precision of risk assessments on users, locations, and devices.
