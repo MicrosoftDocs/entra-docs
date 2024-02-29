@@ -91,18 +91,6 @@ Reauthentication policy lets you require users to interactively provide their cr
 
 ---
 
-### Public Preview - Convert external users to internal
-
-**Type:** New feature    
-**Service category:** User Management    
-**Product capability:** User Management    
-
-External user conversion enables customers to convert external users to internal members without needing to delete, and create, new user objects. Maintaining the same underlying object ensures the user’s account and access to resources isn’t disrupted, and that their history of activities remains intact as their relationship with the host organization changes. 
-
-The external to internal user conversion feature includes the ability to convert on-premises synchronized users as well.
-
----
-
 ### General Availability - New premium user risk detection, Suspicious API Traffic, is available in Identity Protection
 
 **Type:** New feature    
