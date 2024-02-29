@@ -81,3 +81,9 @@ Customers that are currently using an integration with an external provider via 
 ## References
 
 - [OAuth2.0 and OIDC specification](https://oauth.net/2/)
+
+## Next steps
+
+- [Configure an external authentication method identity provider](how-to-authentication-external-method-configure.md)
+- [Add an external authentication method identity provider](how-to-authentication-external-method-add.md)
+- [Entra ID interaction with provider](how-to-authentication-external-method-interaction.md)
