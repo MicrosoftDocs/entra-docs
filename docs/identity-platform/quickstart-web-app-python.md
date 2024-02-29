@@ -1,6 +1,6 @@
 ---
-title: "Quickstart: Sign in users and call the Microsoft Graph API from a Python web app"
-description: In this quickstart, learn how a Python web app can sign in users, get an access token from the Microsoft identity platform, and call the Microsoft Graph API.
+title: "Quickstart: Sign in users and call a protected API from a Python web app"
+description: In this quickstart, you configure and run a Python web app that signs in users, gets an access token from the Microsoft identity platform, and calls the Microsoft Graph API.
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
@@ -12,7 +12,7 @@ zone_pivot_groups: python-web-app
 #Customer intent: As a Python web app developer, I want to sign in users and call the Microsoft Graph API, so that I can integrate user authentication and access Microsoft Graph data in my application.
 ---
 
-# Quickstart: Sign in users and call the Microsoft Graph API from a Python web app
+# Quickstart: Sign in users and call Microsoft Graph from a Python web app
 
 In this quickstart, you download and run a code sample that demonstrates how a Python web application can sign in users and call the Microsoft Graph API. Users with a personal Microsoft Account or an account in any Microsoft Entra organization can sign into the application.
 

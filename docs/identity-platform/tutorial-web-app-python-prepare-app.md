@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Create and configure an Python web app project for authentication"
+title: "Tutorial: Create and configure an Python web app for authentication"
 description: "Create and configure project, add configuration for authentication and install required packages"
 author: Dickson-Mwendia
 manager: CelesteDG

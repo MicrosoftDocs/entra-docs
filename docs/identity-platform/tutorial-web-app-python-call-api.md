@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Call an API and display the results"
-description: Call an API and display the results.
+title: "Tutorial: Call a protected API and display the results"
+description: Call a protected API and display the results.
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
