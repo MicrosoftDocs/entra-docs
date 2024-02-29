@@ -165,7 +165,7 @@ items:
       href: deployment-plans.md
     - name: Azure Active Directory B2C deployment plans
       href: b2c-deployment-plans.md
-    - name: Microsoft Security Service Edge Solution deployment plans
+    - name: Microsoft's Security Service Edge Solution deployment plans
       items:
       - name: Introduction
         href: sse-deployment-guide-intro.md
