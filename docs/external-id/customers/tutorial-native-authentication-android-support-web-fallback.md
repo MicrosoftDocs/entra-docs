@@ -120,7 +120,7 @@ if (actionResult is SignUpError && actionResult.isBrowserRequired()) {
 } 
 ```
 
-Tokens obtained through native authentication flows can combined with browser-based flows, and vice versa. In other words, the authentication mechanism (native or web-based) doesn't limit the functionality of the tokens acquired through it. 
+Tokens obtained through native authentication flows can combine with browser-based flows, and vice versa. In other words, the authentication mechanism (native or web-based) doesn't limit the functionality of the tokens acquired through it. 
 
 ## Related content 
 

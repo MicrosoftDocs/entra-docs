@@ -72,7 +72,7 @@ In this article, you learn how to:
    - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier. 
    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
    
-   The application is now configured and ready to run. 
+The application is now configured and ready to run. 
  
 ## Run and test sample Android mobile application  
  
