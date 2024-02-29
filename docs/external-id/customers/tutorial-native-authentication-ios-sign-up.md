@@ -73,7 +73,7 @@ To sign up user using **Email one-time-passcode**, you need to:
 1. To use `submitCode(code:delegate)` to submit the one-time passcode that user supplies in one-time passcode form, use the following code snippet: 
 
     ```swift
-    submitCode(code: userSuppliedCode, delegate: self)
+    newState.submitCode(code: userSuppliedCode, delegate: self)
     ```
 
     The `submitCode(code:delegate)` accepts delegate parameter and we must implement the required methods in the `SignUpVerifyCodeDelegate` protocol. 

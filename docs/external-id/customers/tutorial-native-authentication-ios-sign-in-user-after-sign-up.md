@@ -31,7 +31,7 @@ In this tutorial, you learn how to:
 
 ## Sign in after sign-up 
 
-The `Sign in after sign up` is an enhancement functionality of the sign in user flows, which has the effect of automatically signing in after successfully signing up. Through an internal short lived token, the SDK provides developers the ability to sign in a user after signing up, without having to supply the username, or to verify the email address through a one-time passcode. 
+The `Sign in after sign up` is an enhancement functionality of the sign in user flows, which has the effect of automatically signing in after successfully signing up. The SDK provides developers the ability to sign in a user after signing up, without having to supply the username, or to verify the email address through a one-time passcode. 
 
 To sign in a user after successful sign-up use the `signIn(delegate)` method from the new state `SignInAfterSignUpState` returned in the `onSignUpCompleted(newState)`: 
 
@@ -66,5 +66,5 @@ extension ViewController: SignInAfterSignUpDelegate {
 
 ## Next steps 
 
-- [Tutorial: Reset password of a user](tutorial-native-authentication-ios-self-service-password-reset.md) 
+- [Tutorial: Self-service password reset](tutorial-native-authentication-ios-self-service-password-reset.md) 
 

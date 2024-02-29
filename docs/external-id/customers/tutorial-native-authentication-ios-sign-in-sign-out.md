@@ -26,7 +26,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites 
 
-- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-ios-sign-up.md) 
+- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md) 
 
 ## Sign in user
 
@@ -75,7 +75,7 @@ To  sign in user using **Email one-time-passcode** you need to:
 1. To use `submitCode(code:delegate)` to submit the one-time passcode that user supplies in one-time passcode form, use the following code snippet: 
 
     ```swift
-    submitCode(code: userSuppliedCode, delegate: self)
+    newState.submitCode(code: userSuppliedCode, delegate: self)
     ```
 
     The `submitCode(code:delegate)` accepts the one-time passcode and delegate parameter. After submitting the code, you must verify the one-time passcode by implementing the `SignInVerifyCodeDelegate` protocol. 
@@ -94,7 +94,7 @@ To  sign in user using **Email one-time-passcode** you need to:
     }
     ```
 
-    In the most common scenario, we receive a call to `onSignInCompleted(newState)` indicating that the user has signed in and the flow is complete. 
+    In the most common scenario, we receive a call to `onSignInCompleted(result)` indicating that the user has signed in and the flow is complete. 
 
 ### Handle errors during sign in
 

@@ -23,7 +23,7 @@ In this article, you learn how to:
 
 - Register application in the Microsoft Entra External ID for customers. 
 - Enable public client and native authentication flows. 
-- Create a sign in and sign out user flow in the Microsoft Entra External ID for customers. 
+- Create user flow in the Microsoft Entra External ID for customers. 
 - Associate your application with the user flow. 
 - Update a sample native iOS mobile application to use your own Microsoft Entra External ID for customers tenant details. 
 - Run and test the sample native iOS mobile application. 
@@ -90,7 +90,7 @@ Follow these steps to create a user flow a customer can use to sign in or sign u
 1. Sign in to the <a href="https://entra.microsoft.com/" target="_blank">Microsoft Entra admin center</a>. 
 1. If you have access to multiple tenants, make sure you use the directory that contains your Microsoft Entra External ID for customers tenant: 
 
-   1. Select the **Directories + subscriptions** icon in the toolbar. 
+   1. Select the **Directories + subscriptions** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the toolbar. 
    1. On the **Portal settings | Directories + subscriptions** page, find your Microsoft Entra External ID for customers directory in the **Directory name** list, and then select **Switch**. 
 
 1. On the sidebar menu, select **Identity**. 
@@ -100,7 +100,7 @@ Follow these steps to create a user flow a customer can use to sign in or sign u
 
    1. Enter a **Name** for the user flow, such as _SignInSignUpSample_. 
    1. In the **Identity providers** list, select **Email Accounts**. This identity provider allows users to sign in or sign up using their email address. 
-   1. Under **Email accounts**, you can select one of the two options. For this tutorial, select **Email one-time passcode**. 
+   1. Under **Email accounts**, you can select one of the two options. For this guide, select **Email one-time passcode**. 
 
       - **Email with password**: Allows new users to sign up and sign in using an email address as the sign in name and a password as their first factor credential. 
       - **Email one-time-passcode**: Allows new users to sign up and sign in using an email address as the sign in name and email one-time passcode as their first factor credential. 
@@ -108,7 +108,8 @@ Follow these steps to create a user flow a customer can use to sign in or sign u
         > [!NOTE]
         > Email one-time passcode must be enabled at the tenant level (**All Identity Providers** > **Email one-time passcode**) for this option to be available at the user flow level. 
 
-   1. Under **User attributes**, you can choose the attributes you want to collect from the user upon sign-up. For this guide, select **Country/Region** and **City**.  
+   1. Under **User attributes**, you can choose the attributes you want to collect from the user upon sign-up. For this guide, select **Country/Region** and **City**.
+   1. Select **OK**. (Users can be prompted for attributes when they sign up for the first time).
 1. Select **Create**. The new user flow appears in the **User flows** list. If necessary, refresh the page. 
 
 ## Associate the application with the user flow 
@@ -162,7 +163,7 @@ This guide tests **Email one-time-passcode** usage. Enter a valid email address,
 
 :::image type="content" source="media/native-authentication/ios/enter-one-time-pass-code.png" alt-text="Screenshot of user prompt to enter one-time passcode (OTP) in iOS app." lightbox="media/native-authentication/ios/enter-one-time-pass-code-expanded.png"::: 
  
-After you enter your email address on the previous screen, the application will send a verification code to it. Once you submit the received code, the application takes you back to the previous screen and automatically sign you in.  
+After you enter your email address on the previous screen, the application will send a verification code to it. Once you submit the received code, the application takes you back to the previous screen and automatically signs you in.  
 
 ## Other flows 
 

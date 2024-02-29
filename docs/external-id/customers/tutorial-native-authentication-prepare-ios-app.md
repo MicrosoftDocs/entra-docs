@@ -65,7 +65,7 @@ For more information and other mechanisms to add MSAL to your project, see the [
            challengeTypes: [.OOB]
        )
     
-       print("Initialised Native Auth successfully.")
+       print("Initialized Native Auth successfully.")
     } catch {
        print("Unable to initialize MSAL \(error)")
     }
@@ -76,7 +76,7 @@ For more information and other mechanisms to add MSAL to your project, see the [
    1. Find the `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your Directory (tenant) subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 1. To build, select the **Product** > **Build** in your project’s toolbar.
 
-## Optional: Add Debug Logging
+### Optional: Logging configuration
 
 MSAL provides a logging API that you can use to enable and configure logging. To see all debug output from MSAL add the following code at the start of the `viewDidLoad()` function:
 
@@ -84,12 +84,12 @@ MSAL provides a logging API that you can use to enable and configure logging. To
 MSALGlobalConfig.loggerConfig.logLevel = .verbose
 MSALGlobalConfig.loggerConfig.setLogCallback { logLevel, message, containsPII in
    if !containsPII {
-         print("MSAL: \(message ?? "")")
+         print("MSAL: \(message ?? "")") --> This print should have 4 spaces less than it currently has
    }
 }
 ```
 
-This outputs all debug logs from MSAL, which can be helpful in diagnosing issues and learning how the Native Auth flows work. To learn more about configuring log levels and best practices see [Logging in MSAL for iOS/macOS](../../identity-platform/msal-logging-ios.md).
+This outputs all debug logs from MSAL, which can be helpful in diagnosing issues and learning how the Native Auth flows work. To learn more about configuring log levels and best practices see [Logging in MSAL for iOS/macOS](../../identity-platform/msal-logging-ios.md?tabs=swift).
 
 ## Next steps
 

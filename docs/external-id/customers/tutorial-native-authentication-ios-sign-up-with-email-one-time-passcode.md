@@ -26,18 +26,13 @@ In this tutorial, you learn how to:
 
 ## Prerequisites 
 
-- [Register iOS application in Microsoft Entra External ID for customers tenant](how-to-run-sample-ios-app.md#register-an-application) 
-- [Enable public client and native authentication flows](how-to-run-sample-ios-app.md#enable-public-client-and-native-authentication-flows) 
-- [Grant API permissions](how-to-run-sample-ios-app.md#grant-api-permissions) 
-- User-flow with email one-time passcode: 
-  - [Create a user flow](how-to-run-sample-ios-app.md#create-a-user-flow) 
-    - Under **User attributes**, select **Country/Region** and **City** in the user flow. 
-  - [Associate the app with the user flow](how-to-run-sample-ios-app.md#associate-the-application-with-the-user-flow) 
-- [Collect user attributes during sign-up](how-to-define-custom-attributes.md) 
+- [How to run the iOS sample app](how-to-run-sample-ios-app.md). Ensure that when creating the user flow, you select **Email one-time passcode** in the **Identity providers** section, and choose **Country/Region** and **City** under **User attributes**.
+- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md).
+- [Collect user attributes during sign-up](how-to-define-custom-attributes.md).
 
-## Sign up using username and custom attributes  
+## Sign up using username and user attributes  
  
-To sign up user using username (email address) and custom attributes, we need to verify the email by using the email one-time passcode (OTP).  
+To sign up user using username (email address) and user attributes, we need to verify the email by using the email one-time passcode (OTP).  
 
 We use the `signUp(username:attributes:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignUpStartDelegate` protocol. 
 
@@ -85,7 +80,7 @@ We use the `signUp(username:attributes:delegate)` method, which responds asynchr
     To submit the code that the user input, use: 
 
     ```swift
-    submitCode(code: userSuppliedCode, delegate: self)
+    newState.submitCode(code: userSuppliedCode, delegate: self)
     ```
 
     The `submitCode(code:delegate)` method accepts a delegate parameter and the delegate must implement the required methods in the `SignUpVerifyCodeDelegate` protocol. 

@@ -15,7 +15,7 @@ ms.custom: developer, devx-track-dotnet
 #Customer intent: As a dev, devops, I want to learn how to Self-service password reset.
 ---
 
-# Tutorial: Reset password of a user 
+# Tutorial: Self-service password reset 
 
 This tutorial demonstrates how to give users the ability to change or reset their password, with no administrator or help desk involvement. 
 
@@ -67,7 +67,7 @@ To reset the password of an existing user, we need to validate the email address
    To submit the code that the user supplied us with, use: 
 
    ```swift
-   submitCode(code: userSuppliedCode, delegate: self)
+   newState.submitCode(code: userSuppliedCode, delegate: self)
    ```
 
 1. To verify the submitted code, start by implementing the `ResetPasswordVerifyCodeDelegate` protocol as an extension to your class using the following code snippet: 
@@ -206,7 +206,6 @@ In the most common scenario, we receive a call to `onSignInCompleted(result)` in
 extension ViewController: SignInAfterSignUpDelegate {
     func onSignInAfterSignUpError(error: SignInAfterSignUpError) {
         resultTextView.text = "Error signing in after password reset"
-        resultTextView.text = "Error signing  after password reset: \(error.errorDescription ?? "no description")"
     }
 
     func onSignInCompleted(result: MSAL.MSALNativeAuthUserAccountResult) {

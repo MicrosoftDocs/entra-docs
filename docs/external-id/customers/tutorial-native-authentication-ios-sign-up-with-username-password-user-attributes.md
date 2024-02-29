@@ -27,14 +27,9 @@ In this tutorial, you learn how to:
 
 ## Prerequisites 
 
-- [Register iOS application in Microsoft Entra External ID for customers tenant](how-to-run-sample-ios-app.md#register-an-application) 
-- [Enable public client and native authentication flows](how-to-run-sample-ios-app.md#enable-public-client-and-native-authentication-flows) 
-- [Grant API permissions](how-to-run-sample-ios-app.md#grant-api-permissions) 
-- User-flow Email with password: 
-  - [Create a user flow](how-to-run-sample-ios-app.md#create-a-user-flow) 
-    - Under **User attributes**, select **Country/Region** and **City** in the user flow. 
-  - [Associate the app with the user flow](how-to-run-sample-ios-app.md#associate-the-application-with-the-user-flow) 
-- [Collect user attributes during sign-up](how-to-define-custom-attributes.md) 
+- [How to run the iOS sample app](how-to-run-sample-ios-app.md). Ensure that when creating the user flow, you select **Email with password** in the **Identity providers** section, and choose **Country/Region** and **City** under **User attributes**.
+- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md).
+- [Collect user attributes during sign-up](how-to-define-custom-attributes.md).
 
 ## Sign up user 
 
@@ -86,7 +81,7 @@ We use the `signUp(username:password:attributes:delegate)` method, which respond
    To submit the code that the user supplied us with, use: 
 
    ```swift
-   submitCode(code: userSuppliedCode, delegate: self)
+   newState.submitCode(code: userSuppliedCode, delegate: self)
    ```
 
    The `submitCode(code:delegate)` method accepts a delegate parameter and the delegate must implement the required methods in the `SignUpVerifyCodeDelegate` protocol. 
@@ -129,7 +124,7 @@ func onSignUpStartError(error: MSAL.SignUpStartError) {
 
 To spread the attributes across one or more pages, we must set the attributes we intend to collect across different pages as mandatory in the customer identity and access management (CIAM) tenant configuration. 
 
-We call `signUp(username:password:delegate)` without passing any attributes. The next step will be to call `submitCode(code: userSuppliedCode, delegate: self)` to verify user's email. 
+We call `signUp(username:password:delegate)` without passing any attributes. The next step will be to call `newState.submitCode(code: userSuppliedCode, delegate: self)` to verify user's email. 
 
 We implement the `SignUpVerifyCodeDelegate` protocol as an extension to our class as before, but this time we must implement the optional method `onSignUpAttributesRequired(attributes:newState)` in addition to the  required methods:
 
@@ -161,7 +156,7 @@ let attributes = [
     "city": "Redmond"
 ]
 
-submitAttributes(attributes: attributes, delegate: self)
+newState.submitAttributes(attributes: attributes, delegate: self)
 ```
 
 We'll also implement the `SignUpAttributesRequiredDelegate` protocol as an extension to our class: 

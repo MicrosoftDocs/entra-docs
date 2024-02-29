@@ -71,7 +71,7 @@ When we call the `signUp(username:delegate)` method from the SDK instance, we ge
 
 ## Handle BrowserRequired error 
 
-To handle this kind of error, we need to launch a browser and let the user perform the authentication flow there. This can be done by calling `acquireTokenWithParameters()` method. In order to use this method, a few additional configurations need to be done: 
+To handle this kind of error, we need to launch a browser and let the user perform the authentication flow there. This can be done by calling `acquireToken()` method. In order to use this method, a few additional configurations need to be done: 
 
 - [Configure URL schemes in our Xcode project](../../identity-platform/tutorial-v2-ios.md#for-ios-only-configure-url-schemes)
 - [Configure the redirect URI in Microsoft Entra admin center](../../identity-platform/quickstart-mobile-app-ios-sign-in.md#register-your-quickstart-app)
