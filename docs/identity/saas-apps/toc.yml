@@ -3642,6 +3642,8 @@
         href: sap-successfactors-inbound-provisioning-cloud-only-tutorial.md
       - name: SAP SuccessFactors Writeback
         href: sap-successfactors-writeback-tutorial.md
+      - name: SAS Viya SSO
+        href: sas-viya-sso-provisioning-tutorial.md
       - name: SchoolStream ASA
         href: schoolstream-asa-provisioning-tutorial.md
       - name: ScreenSteps
