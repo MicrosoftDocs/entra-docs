@@ -57,7 +57,7 @@ The Microsoft Entra External ID extension creates a tenant in an external config
 1. Return to Visual Studio Code. In the **Where should the tenant be located?** menu, select a location for your tenant data. This selection can't be changed later.
 1. Enter a name for the tenant.
 
-   :::image type="content" source="media/visual-studio-code-extension/name-tenant.png” alt-text="Screenshot of the tenant name field.":::
+   :::image type="content" source="media/visual-studio-code-extension/name-tenant.png" alt-text="Screenshot of the tenant name field.":::
 
 1. The extension creates your trial tenant. You can view the progress by opening the **View** > **Output** window. When the process is complete, **The tenant is created** appears.
 
@@ -153,7 +153,7 @@ To view project resources, expand the nodes in the left panel under **Manage Res
 
 In the Explorer view, you can select a resource and go directly to the Microsoft Entra admin center to manage or configure it. For example, right-click an application and select **Open in admin center**. You’re prompted to sign in, and then the Microsoft Entra admin center opens directly to the app registration page for that application.
 
-:::image type="content" source="media/visual-studio-code-extension/explorer-open-admin-center.png alt-text="Screenshot of the open in admin center option.":::
+:::image type="content" source="media/visual-studio-code-extension/explorer-open-admin-center.png" alt-text="Screenshot of the open in admin center option.":::
 
 ## Getting Started actions
 
