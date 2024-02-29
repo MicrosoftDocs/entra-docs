@@ -1,16 +1,15 @@
 ---
 title: Deployment considerations for Microsoft Entra multifactor authentication
 description: Learn about deployment considerations and strategy for successful implementation of Microsoft Entra multifactor authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 01/24/2024
 ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jpettere
-ms.collection: M365-identity-device-management
 ---
 # Plan a Microsoft Entra multifactor authentication deployment 
 
@@ -28,7 +27,7 @@ Before you begin your deployment, ensure you meet the following prerequisites fo
 |----------|--------------|
 |**Cloud-only** identity environment with modern authentication | **No prerequisite tasks** |
 |**Hybrid identity** scenarios | Deploy [Microsoft Entra Connect](~/identity/hybrid/whatis-hybrid-identity.md) and synchronize user identities between the on-premises Active Directory Domain Services (AD DS) and Microsoft Entra ID. |
-| **On-premises legacy applications** published for cloud access| Deploy [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-deployment-plan.md) |
+| **On-premises legacy applications** published for cloud access| Deploy [Microsoft Entra application proxy](~/identity/app-proxy/conceptual-deployment-plan.md) |
 
 ## Choose authentication methods for MFA
 
@@ -40,7 +39,7 @@ Methods include:
 
 - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
 - [Microsoft Authenticator app](concept-authentication-authenticator-app.md)
-- [FIDO2 security key (preview)](concept-authentication-passwordless.md#fido2-security-keys)
+- [FIDO2 security key](concept-authentication-passwordless.md#fido2-security-keys)
 - [OATH hardware tokens (preview)](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview)
 - [OATH software tokens](concept-authentication-oath-tokens.md#oath-software-tokens)
 - [SMS verification](concept-authentication-phone-options.md#mobile-phone-verification)
@@ -55,7 +54,7 @@ To learn more about the strength and security of these methods and how they work
 - [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
 - [Video: Choose the right authentication methods to keep your organization safe](https://youtu.be/LB2yj4HSptc)
 
-You can use this [PowerShell script](/samples/azure-samples/azure-mfa-authentication-method-analysis/azure-mfa-authentication-method-analysis/) to analyze users' MFA configurations and suggest the appropriate MFA authentication method. 
+You can use this [PowerShell script](https://github.com/Azure-Samples/azure-mfa-authentication-method-analysis) to analyze users' MFA configurations and suggest the appropriate MFA authentication method. 
 
 For the best flexibility and usability, use the Microsoft Authenticator app. This authentication method provides the best user experience and multiple modes, such as passwordless, MFA push notifications, and OATH codes. The Microsoft Authenticator app also meets the National Institute of Standards and Technology (NIST) [Authenticator Assurance Level 2 requirements](~/standards/nist-authenticator-assurance-level-2.md).
 
@@ -113,39 +112,7 @@ Risk policies include:
 
 ### Convert users from per-user MFA to Conditional Access based MFA
 
-If your users were enabled using per-user enabled and enforced MFA, the following PowerShell can assist you in making the conversion to Conditional Access based MFA.
-
-Run this PowerShell in an ISE window or save as a `.PS1` file to run locally. The operation can only be done by using the [MSOnline module](/powershell/module/msonline/#msonline). 
-
-```PowerShell
-# Sets the MFA requirement state
-function Set-MfaState {
-    [CmdletBinding()]
-    param(
-        [Parameter(ValueFromPipelineByPropertyName=$True)]
-        $ObjectId,
-        [Parameter(ValueFromPipelineByPropertyName=$True)]
-        $UserPrincipalName,
-        [ValidateSet("Disabled","Enabled","Enforced")]
-        $State
-    )
-    Process {
-        Write-Verbose ("Setting MFA state for user '{0}' to '{1}'." -f $ObjectId, $State)
-        $Requirements = @()
-        if ($State -ne "Disabled") {
-            $Requirement =
-                [Microsoft.Online.Administration.StrongAuthenticationRequirement]::new()
-            $Requirement.RelyingParty = "*"
-            $Requirement.State = $State
-            $Requirements += $Requirement
-        }
-        Set-MsolUser -ObjectId $ObjectId -UserPrincipalName $UserPrincipalName `
-                     -StrongAuthenticationRequirements $Requirements
-    }
-}
-# Disable MFA for all users
-Get-MsolUser -All | Set-MfaState -State Disabled
-```
+If your users were enabled using per-user MFA enabled and enforced Microsoft Entra multifactor authentication, we recommend that you enable Conditional Access for all users and then manually disable per-user multifactor authentication. For more information, see [Create a Conditional Access policy](../conditional-access/howto-conditional-access-policy-all-users-mfa.md#create-a-conditional-access-policy).
 
 ## Plan user session lifetime
 

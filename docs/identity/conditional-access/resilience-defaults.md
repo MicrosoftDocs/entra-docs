@@ -2,9 +2,9 @@
 title: Resilience defaults for Microsoft Entra Conditional Access
 description: Resilience defaults and the Microsoft Entra Backup Authentication Service
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: how-to
+ms.topic: conceptual
 ms.date: 01/03/2024
 
 ms.author: joflore

@@ -1,18 +1,16 @@
 ---
 title: Monitor and clean up stale guest accounts
-description: Monitor and clean up stale guest accounts using access reviews 
-services: active-directory 
+description: Monitor and clean up stale guest accounts using access reviews
+
 author: billmath
 ms.author: billmath
 manager: amycolannino
 ms.date: 06/29/2023
 ms.reviewer: gasinh
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Monitor and clean up stale guest accounts using access reviews 

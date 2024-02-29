@@ -4,10 +4,9 @@ title: Invitation redemption in B2B collaboration
 description: Describes the Microsoft Entra B2B collaboration invitation redemption experience for end users, including the agreement to privacy terms.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: conceptual
-ms.date: 05/05/2023
+ms.date: 02/28/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
@@ -30,7 +29,7 @@ When you add a guest user to your directory, the guest user account has a consen
 
 ## Redemption process and sign-in through a common endpoint
 
-Guest users can now sign in to your multi-tenant or Microsoft first-party apps through a common endpoint (URL), for example `https://myapps.microsoft.com`. Previously, a common URL would redirect a guest user to their home tenant instead of your resource tenant for authentication, so a tenant-specific link was required (for example `https://myapps.microsoft.com/?tenantid=<tenant id>`). Now the guest user can go to the application's common URL, choose **Sign-in options**, and then select **Sign in to an organization**. The user then types the domain name of your organization.
+Guest users can now sign in to your multitenant or Microsoft first-party apps through a common endpoint (URL), for example `https://myapps.microsoft.com`. Previously, a common URL would redirect a guest user to their home tenant instead of your resource tenant for authentication, so a tenant-specific link was required (for example `https://myapps.microsoft.com/?tenantid=<tenant id>`). Now the guest user can go to the application's common URL, choose **Sign-in options**, and then select **Sign in to an organization**. The user then types the domain name of your organization.
 
 ![Screenshots showing common endpoints used for signing in.](media/redemption-experience/common-endpoint-flow-small.png)
 
@@ -80,7 +79,7 @@ To unblock users who can't redeem an invitation due to a conflicting [Contact ob
 
 When a user selects the **Accept invitation** link in an [invitation email](invitation-email-elements.md), Microsoft Entra ID automatically redeems the invitation based on the redemption flow as shown below:
 
-:::image type="content" source="media/redemption-experience/invitation-redemption.png" alt-text="Screenshot showing the redemption flow diagram.":::
+:::image type="content" source="media/redemption-experience/invitation-redemption.png" alt-text="Screenshot showing the redemption flow diagram." lightbox="media/redemption-experience/invitation-redemption.png":::
 
 1. Microsoft Entra ID performs user-based discovery to determine if the user already exists in a managed Microsoft Entra tenant. (Unmanaged Microsoft Entra accounts can no longer be used for the redemption flow.) If the user’s User Principal Name ([UPN](~/identity/hybrid/connect/plan-connect-userprincipalname.md#what-is-userprincipalname)) matches both an existing Microsoft Entra account and a personal MSA, the user is prompted to choose which account they want to redeem with.
 

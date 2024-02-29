@@ -5,8 +5,8 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 08/23/2023
@@ -16,16 +16,16 @@ ms.author: jeedes
 
 # Microsoft Entra SSO integration with CITI Program
 
-In this article, you learn how to integrate CITI Program with Microsoft Entra ID. The CITI Program identifies education and training needs in the communities we serve and provides high quality, peer-reviewed, web-based educational materials to meet those needs. When you integrate CITI Program with Microsoft Entra ID, you can:
+This article teaches you how to integrate CITI Program with Microsoft Entra ID. CITI Program identifies education and training needs in the communities we serve and provides high-quality, peer-reviewed, web-based educational materials to meet those needs. When you integrate CITI Program with Microsoft Entra ID, you can:	
 
 * Control in Microsoft Entra ID who has access to CITI Program.
-* Enable your users to be automatically signed-in to CITI Program with their Microsoft Entra accounts.
+* Enable your users to be automatically signed in to CITI Program with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 You configure and test Microsoft Entra single sign-on for CITI Program in a test environment. CITI Program supports **SP-initiated** single sign-on and **Just-In-Time** user provisioning.
 
 > [!NOTE]
-> Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
+> The identifier of this application is a fixed string value so only one instance can be configured in one tenant.
 
 ## Prerequisites
 
@@ -38,13 +38,13 @@ To integrate Microsoft Entra ID with CITI Program, you need:
 
 ## Add application and assign a test user
 
-Before you begin the process of configuring single sign-on, you need to add the CITI Program application from the Microsoft Entra gallery. You need a test user account to assign to the application and test the single sign-on configuration.
+Before configuring single sign-on, you need to add the CITI Program application from the Microsoft Entra gallery and assign a test user account. Then, you can test the single sign-on configuration.
 
 <a name='add-citi-program-from-the-azure-ad-gallery'></a>
 
 ### Add CITI Program from the Microsoft Entra gallery
 
-Add CITI Program from the Microsoft Entra application gallery to configure single sign-on with CITI Program. For more information on how to add application from the gallery, see the [Quickstart: Add application from the gallery](~/identity/enterprise-apps/add-application-portal.md).
+Add CITI Program from the Microsoft Entra application gallery to configure single sign-on with CITI Program. For more information on how to add an application from the gallery, see the [Quickstart: Add application from the gallery](~/identity/enterprise-apps/add-application-portal.md).
 
 <a name='create-and-assign-azure-ad-test-user'></a>
 
@@ -69,23 +69,23 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-	a. In the **Identifier (Entity ID)** textbox, type the URL:
+	a. In the **Identifier (Entity ID)** textbox, use the URL:
 	`https://www.citiprogram.org/shibboleth`
 
-	b. In the **Reply URL (Assertion Consumer Service URL)** textbox, type the URL:
+	b. In the **Reply URL (Assertion Consumer Service URL)** textbox, use the URL:
 	`https://www.citiprogram.org/Shibboleth.sso/SAML2/POST`
 
-	c. In the **Sign on URL** textbox, type a URL using the following pattern:
-	`https://www.citiprogram.org/Shibboleth.sso/Login?target=https://www.citiprogram.org/Secure/Welcome.cfm?inst=<InstitutionID>&entityID=<EntityID>`
+	c. In the **Sign on URL** textbox, use the URL:
+	`https://www.citiprogram.org/portal`
 
 	> [!NOTE]
-	> This value is not real. Update this value with the actual Sign on URL. Contact [CITI Program support team](mailto:shibboleth@citiprogram.org) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> At the end of the configuration, you may update the **Sign on URL** with the SSO link provided by CITI Program Support.
 
 1. The CITI Program application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
 	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Default Attributes")
 
-1. CITI Program application expects urn: oid named attributes to be passed back in the SAML response, which are shown below. These attributes are also pre-populated but you can review them as per your requirements. These are all required.
+1. CITI Program application expects urn:oid named attributes to be passed back in the SAML response, shown below. These are all required. You may rename or remove the default attributes to configure them.
 
 	| Name |  Source Attribute|
 	| ---------------|  --------- |
@@ -102,7 +102,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	| urn:oid:2.16.840.1.113730.3.1.3 | user.employeeid |
 	| urn:oid:1.3.6.1.4.1.22704.1.1.1.8 | [other user attribute] |
 	> [!NOTE]
-	> The Source Attribute is what is generally recommended, but not necessarily a rule. For example, if user.mail is unique and scoped, it can also be passed as urn:oid:1.3.6.1.4.1.5923.1.1.1.6.
+	> The Source Attribute is what is generally recommended but not necessarily a rule. For example, if user.mail is unique and scoped, it can also be passed as urn:oid:1.3.6.1.4.1.5923.1.1.1.6.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find the **App Federation Metadata Url** and copy it, or the **Federation Metadata XML** and select **Download** to download the certificate.
 
@@ -118,17 +118,17 @@ To configure single sign-on on **CITI Program** side, you need to send the copie
 
 ## Test SSO 
 
-In this section, you test your Microsoft Entra single sign-on configuration with following options. 
+In this section, you test your Microsoft Entra single sign-on configuration with the following options. 
 
-* Click on **Test this application**, this will redirect to CITI Program Sign-on URL where you can initiate the login flow. 
+* Click on **Test this application**, this will redirect to CITI Program Sign-on URL, where you can initiate the login flow. 
 
 * Go to CITI Program Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the CITI Program tile in the My Apps, this will redirect to CITI Program Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. Clicking the CITI Program tile in the My Apps will redirect to CITI Program Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-CITI Program supports just-in-time user provisioning. First time SSO users will be prompted to either: 
+CITI Program supports just-in-time user provisioning. First-time SSO users will be prompted to either: 
 
-* Link their existing CITI Program account, in the case that they already have one
+* Link their existing CITI Program account in case they already have one
 ![SSOHaveAccount](https://user-images.githubusercontent.com/46728557/228357500-a74489c7-8c5f-4cbe-ad47-9757d3d9fbe6.PNG "Link existing CITI Program account")
 
 * Or Create a new CITI Program account, which is automatically provisioned
@@ -142,4 +142,4 @@ CITI Program supports just-in-time user provisioning. First time SSO users will 
 
 ## Next steps
 
-Once you configure CITI Program you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).
+Once you configure CITI Program you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real-time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

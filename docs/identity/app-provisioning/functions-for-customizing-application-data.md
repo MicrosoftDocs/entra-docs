@@ -3,11 +3,10 @@ title: Reference for writing expressions for attribute mappings in Microsoft Ent
 description: Learn how to use expression mappings to transform attribute values into an acceptable format during automated provisioning of SaaS app objects in Microsoft Entra ID. Includes a reference list of functions.
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: reference
-ms.date: 12/05/2023
+ms.date: 01/26/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -22,7 +21,7 @@ The syntax for Expressions for Attribute Mappings is reminiscent of Visual Basic
 
 * The entire expression must be defined in terms of functions, which consist of a name followed by arguments in parentheses: 
   *FunctionName(`<<argument 1>>`,`<<argument N>>`)*
-* You may nest functions within each other. For example:  *FunctionOne(FunctionTwo(`<<argument1>>`))*
+* You can nest functions within each other. For example:  *FunctionOne(FunctionTwo(`<<argument1>>`))*
 * You can pass three different types of arguments into functions:
   
   1. Attributes, which must be enclosed in square brackets. For example: [attributeName]
@@ -70,7 +69,7 @@ Example: If you're using a Salesforce Sandbox, you might need to append another 
 AppRoleAssignmentsComplex([appRoleAssignments])
 
 **Description:** 
-Used to provision multiple roles for a user. For detailed usage, see [Tutorial - Customize user provisioning attribute-mappings for SaaS applications in Microsoft Entra ID](customize-application-attributes.md#provisioning-a-role-to-a-scim-app).
+Used to configure multiple roles for a user. For detailed usage, see [Tutorial - Customize user provisioning attribute-mappings for SaaS applications in Microsoft Entra ID](customize-application-attributes.md#provisioning-a-role-to-a-scim-app).
 
 **Parameters:** 
 
@@ -143,21 +142,21 @@ The returned string is always in UTC and follows the format **M/d/yyyy h:mm:ss t
 **Sample input/output:** 
 
 * **INPUT** (StatusHireDate): "2020-03-16-07:00"
-* **OUTPUT**:  "3/16/2020 7:00:00 AM" <-- *Note that UTC equivalent of the above DateTime is returned*
+* **OUTPUT**:  "3/16/2020 7:00:00 AM" <-- *Note the UTC equivalent of the above DateTime is returned*
 
 **Example 2:** <br> 
 `CDate("2021-06-30+08:00")`  
 **Sample input/output:** 
 
 * **INPUT**: "2021-06-30+08:00"
-* **OUTPUT**:  "6/29/2021 4:00:00 PM" <-- *Note that UTC equivalent of the above DateTime is returned*
+* **OUTPUT**:  "6/29/2021 4:00:00 PM" <-- *Note the UTC equivalent of the above DateTime is returned*
 
 **Example 3:** <br> 
 `CDate("2009-06-15T01:45:30-07:00")`  
 **Sample input/output:** 
 
 * **INPUT**: "2009-06-15T01:45:30-07:00"
-* **OUTPUT**:  "6/15/2009 8:45:30 AM" <-- *Note that UTC equivalent of the above DateTime is returned*
+* **OUTPUT**:  "6/15/2009 8:45:30 AM" <-- *Note the UTC equivalent of the above DateTime is returned*
 
 ---
 ### Coalesce
@@ -165,7 +164,7 @@ The returned string is always in UTC and follows the format **M/d/yyyy h:mm:ss t
 Coalesce(source1, source2, ..., defaultValue)
 
 **Description:** 
-Returns the first source value that isn't NULL. If all arguments are NULL and defaultValue is present, the defaultValue will be returned. If all arguments are NULL and defaultValue isn't present, Coalesce returns NULL.
+Returns the first source value that isn't NULL. If all arguments are NULL and defaultValue is present, the defaultValue is returned. If all arguments are NULL and defaultValue isn't present, Coalesce returns NULL.
 
 **Parameters:** 
 
@@ -463,7 +462,10 @@ The following comparison operators can be used in the *condition*:
 **Example:** Set the target attribute value to source country attribute if country="USA", else set target attribute value to source department attribute.
 `IIF([country]="USA",[country],[department])`
 
-#### Known limitations and workarounds for IIF function
+#### Known limitations
+
+This section includes limitations and workarounds for the IIF function. For information about troubleshooting user creation issues, see [Creation fails due to null / empty values](hr-user-creation-issues.md).
+
 * The IIF function currently doesn't support AND and OR logical operators. 
 * To implement AND logic, use nested IIF statement chained along the *trueValue* path. 
   Example: If country="USA" and state="CA", return value "True", else return "False".
@@ -647,8 +649,8 @@ Returns a substring of the source value. A substring is a string that contains o
 | Name | Required/ Repeating | Type | Notes |
 | --- | --- | --- | --- |
 | **source** |Required |String |Usually name of the attribute. |
-| **start** |Required |Integer |Index in the **source** string where substring should start. First character in the string will have index of 1, second character will have index 2, and so on. |
-| **length** |Required |Integer |Length of the substring. If length ends outside the **source** string, function will return substring from **start** index until end of **source** string. |
+| **start** |Required |Integer |Index in the **source** string where substring should start. First character in the string has an index of 1, second character has an index 2, and so on. |
+| **length** |Required |Integer |Length of the substring. If length ends outside the **source** string, function returns substring from **start** index until end of **source** string. |
 
 ---
 ### NormalizeDiacritics
@@ -656,7 +658,7 @@ Returns a substring of the source value. A substring is a string that contains o
 NormalizeDiacritics(source)
 
 **Description:** 
-Requires one string argument. Returns the string, but with any diacritical characters replaced with equivalent non-diacritical characters. Typically used to convert first names and last names containing diacritical characters (accent marks) into legal values that can be used in various user identifiers such as user principal names, SAM account names, and email addresses.
+Requires one string argument. Returns the string, but with any diacritical characters replaced with equivalent nondiacritical characters. Typically used to convert first names and last names containing diacritical characters (accent marks) into legal values that can be used in various user identifiers such as user principal names, SAM account names, and email addresses.
 
 **Parameters:** 
 
@@ -741,11 +743,11 @@ The NumFromDate function converts a DateTime value to Active Directory format th
 
 **Example:**
 * Workday example 
-  Assuming you want to map the attribute *ContractEndDate* from Workday, which is in the format *2020-12-31-08:00* to *accountExpires* field in AD, here is how you can use this function and change the timezone offset to match your locale. 
+  Assuming you want to map the attribute *ContractEndDate* from Workday, which is in the format *2020-12-31-08:00* to *accountExpires* field in AD, here's how you can use this function and change the timezone offset to match your locale. 
   `NumFromDate(Join("", FormatDateTime([ContractEndDate], ,"yyyy-MM-ddzzz", "yyyy-MM-dd"), " 23:59:59-08:00"))`
 
 * SuccessFactors example 
-  Assuming you want to map the attribute *endDate* from SuccessFactors, which is in the format *M/d/yyyy hh:mm:ss tt* to *accountExpires* field in AD, here is how you can use this function and change the time zone offset to match your locale.
+  Assuming you want to map the attribute *endDate* from SuccessFactors, which is in the format *M/d/yyyy hh:mm:ss tt* to *accountExpires* field in AD, here's how you can use this function and change the time zone offset to match your locale.
   `NumFromDate(Join("",FormatDateTime([endDate], ,"M/d/yyyy hh:mm:ss tt","yyyy-MM-dd")," 23:59:59-08:00"))`
 
 
@@ -762,7 +764,7 @@ The PCase function converts the first character of each word in a string to uppe
 | Name | Required/Optional | Type | Notes |
 | --- | --- | --- | --- |
 | **source** |Required |String |**source** value to convert to proper case. |
-| **wordSeparators** |Optional |String |Specify a set of characters that will be used as word separators (example: " ,-'") |
+| **wordSeparators** |Optional |String |Specify a set of characters that is used as word separators (example: " ,-'") |
 
 **Remarks:**
 
@@ -860,11 +862,11 @@ The RemoveDuplicates function takes a multi-valued string and make sure each val
 
 | Name | Required/ Repeating | Type | Notes |
 | --- | --- | --- | --- |
-| **attribute** |Required |Multi-valued Attribute |Multi-valued attribute that will have duplicates removed|
+| **attribute** |Required |Multi-valued Attribute |Multi-valued attribute that has duplicates removed|
 
 **Example:**
 `RemoveDuplicates([proxyAddresses])`
-Returns a sanitized proxyAddress attribute where all duplicate values have been removed.
+Returns a sanitized proxyAddress attribute where all duplicate values are removed.
 
 ---
 ### Replace
@@ -900,10 +902,10 @@ Replaces values within a string in a case-sensitive manner. The function behaves
 | **source** |Required |String |Usually name of the attribute from the **source** object. |
 | **oldValue** |Optional |String |Value to be replaced in **source** or **template**. |
 | **regexPattern** |Optional |String |Regex pattern for the value to be replaced in **source**. When **replacementAttributeName** is used, the **regexPattern** is applied to extract a value from **replacementAttributeName**. |
-| **regexGroupName** |Optional |String |Name of the group inside **regexPattern**. When named **replacementAttributeName** is used, we will extract the value of the named regex group from the **replacementAttributeName** and return it as the replacement value. |
+| **regexGroupName** |Optional |String |Name of the group inside **regexPattern**. When named **replacementAttributeName** is used, we'll extract the value of the named regex group from the **replacementAttributeName** and return it as the replacement value. |
 | **replacementValue** |Optional |String |New value to replace old one with. |
 | **replacementAttributeName** |Optional |String |Name of the attribute to be used for replacement value |
-| **template** |Optional |String |When **template** value is provided, we will look for **oldValue** inside the template and replace it with **source** value. |
+| **template** |Optional |String |When **template** value is provided, we'll look for **oldValue** inside the template and replace it with **source** value. |
 
 #### Replace characters using a regular expression
 **Example 1:** Using **oldValue** and **replacementValue** to replace the entire source string with another string.
@@ -920,7 +922,7 @@ Then in this case, you can use the following expression in your attribute mappin
 
 **Example 2:** Using **oldValue** and **template** to insert the source string into another *templatized* string. 
 
-The parameter **oldValue** is a misnomer in this scenario. It is actually the value that will get replaced.  
+The parameter **oldValue** is a misnomer in this scenario. It's actually the value that gets replaced.  
 Let's say you want to always generate login ID in the format `<username>@contoso.com`. There is a source attribute called **UserID** and you want that value to be used for the `<username>` portion of the login ID. 
 Then in this case, you can use the following expression in your attribute mapping. 
 

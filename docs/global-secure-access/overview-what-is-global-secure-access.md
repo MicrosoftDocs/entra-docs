@@ -1,12 +1,12 @@
 ---
 title: What is Global Secure Access (preview)?
-description: Learn how Microsoft's Security Service Edge solution, Global Secure Access (preview), provides network access control and visibility to users and devices inside and outside a traditional office.
+description: Learn how Microsoft's Security Service Edge (SSE) solution, Global Secure Access (preview), provides network access control and visibility to users and devices inside and outside a traditional office.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: overview
-ms.date: 11/30/2023
-ms.service: network-access
+ms.date: 02/28/2024
+ms.service: global-secure-access
 ms.custom: references_regions
 ---
 
@@ -14,11 +14,11 @@ ms.custom: references_regions
 
 The way people work has changed. Instead of working in traditional offices, people now work from nearly anywhere. With applications and data moving to the cloud, an identity-aware, cloud-delivered network perimeter for the modern workforce is needed. This new network security category is called Security Service Edge (SSE).
 
-Microsoft Entra Internet Access and Microsoft Entra Private Access comprise Microsoft's Security Service Edge solution. Global Secure Access (preview) is the unifying term used for both Microsoft Entra Internet Access and Microsoft Entra Private Access. Global Secure Access is the unified location in the Microsoft Entra admin center and is built upon the core principles of Zero Trust to use least privilege, verify explicitly, and assume breach.
+Microsoft Entra Internet Access and Microsoft Entra Private Access comprise Microsoft's Security Service Edge (SSE) solution. Global Secure Access (preview) is the unifying term used for both Microsoft Entra Internet Access and Microsoft Entra Private Access. Global Secure Access is the unified location in the Microsoft Entra admin center and is built upon the core principles of Zero Trust to use least privilege, verify explicitly, and assume breach.
 
 ![Diagram of the Global Secure Access solution, illustrating how identities and remote networks can connect to Microsoft 365, private, and public resources through the service.](media/overview-what-is-global-secure-access/global-secure-access-diagram.png)
 
-## Global Secure Access is Microsoft's Security Service Edge solution
+## Microsoft's Security Service Edge (SSE) solution
 
 Microsoft Entra Internet Access and Microsoft Entra Private Access - coupled with Microsoft Defender for Cloud Apps, our SaaS-security focused Cloud Access Security Broker (CASB) - are uniquely built as a solution that converges network, identity, and endpoint access controls so you can secure access to any app or resource, from anywhere. With the addition of these Global Secure Access products, Microsoft Entra ID simplifies access policy management and enables access orchestration for employees, business partners, and digital workloads. You can continuously monitor and adjust user access in real time if permissions or risk level changes.
 
@@ -30,7 +30,7 @@ Microsoft Entra Internet Access secures access to Microsoft 365, SaaS, and publi
 
 ### Key features
 
-- Prevent stolen tokens from being replayed with the compliant network check in Conditional Access.
+- Prevent stolen tokens from being replayed with the compliant network check-in Conditional Access.
 - Apply universal tenant restrictions to prevent data exfiltration to other tenants or personal accounts including anonymous access.
 - Enriched logs with network and device signals currently supported for SharePoint Online traffic.
 - Improve the precision of risk assessments on users, locations, and devices.

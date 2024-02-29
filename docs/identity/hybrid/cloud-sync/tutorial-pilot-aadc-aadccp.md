@@ -1,16 +1,15 @@
 ---
 title: Tutorial - Migrate to Microsoft Entra Cloud Sync for an existing synced AD forest
 description: Learn how to pilot cloud sync for a test Active Directory forest that is already synced using Microsoft Entra Connect Sync.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: tutorial
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 

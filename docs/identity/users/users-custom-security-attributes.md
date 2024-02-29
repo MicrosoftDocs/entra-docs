@@ -1,18 +1,15 @@
 ---
 title: Assign, update, list, or remove custom security attributes for a user
-description: Assign, update, list, or remove custom security attributes for a user in Microsoft Entra ID. 
-services: active-directory 
+description: Assign, update, list, or remove custom security attributes for a user in Microsoft Entra ID.
+
 author: rolyon
 manager: amycolannino
 ms.author: rolyon
 ms.date: 11/15/2023
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.custom: it-pro, has-azure-ad-ps-ref
-ms.reviewer: 
-ms.collection: M365-identity-device-management
 ---
 
 # Assign, update, list, or remove custom security attributes for a user

@@ -7,9 +7,8 @@ brand: azure ## Used for color theming of icons and hero area
 metadata:
   title: Microsoft Entra ID documentation
   description: Microsoft Azure Active Directory (Azure AD) is being renamed to Microsoft Entra ID. Microsoft Entra ID is Microsoft's multi-tenant, cloud-based directory, and identity management service that combines core directory services, application access management, and identity protection into a single solution.
-  ms.service: active-directory
+  ms.service: entra-id
   ms.topic: hub-page
-  ms.collection: M365-identity-device-management
   author: rolyon
   ms.author: rolyon
   manager: amycolannino

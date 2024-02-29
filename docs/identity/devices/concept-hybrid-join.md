@@ -2,18 +2,15 @@
 title: What is a Microsoft Entra hybrid joined device?
 description: Learn how device identity management can help you to manage devices that are accessing resources in your environment.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 01/24/2023
+ms.date: 02/26/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
-
-ms.collection: M365-identity-device-management
 ---
 # Microsoft Entra hybrid joined devices
 
@@ -27,12 +24,11 @@ Microsoft Entra hybrid joined devices require network line of sight to your on-p
 | **Primary audience** | Suitable for hybrid organizations with existing on-premises AD infrastructure |
 |   | Applicable to all users in an organization |
 | **Device ownership** | Organization |
-| **Operating Systems** | Windows 11, Windows 10 or 8.1 except Home editions |
-|   | Windows Server 2008/R2, 2012/R2, 2016, 2019 and 2022 |
+| **Operating Systems** | Windows 11 or Windows 10 except Home editions |
+|   | Windows Server 2016, 2019, and 2022 |
 | **Provisioning** | Windows 11, Windows 10, Windows Server 2016/2019/2022 |
 |   | Domain join by IT and autojoin via Microsoft Entra Connect or ADFS config |
 |   | Domain join by Windows Autopilot and autojoin via Microsoft Entra Connect or ADFS config |
-|   | Windows 8.1, Windows Server 2012 R2, Windows Server 2012, and Windows Server 2008 R2 - Require MSI |
 | **Device sign in options** | Organizational accounts using: |
 |   | Password |
 |   | [Passwordless](~/identity/authentication/concept-authentication-passwordless.md) options like [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-planning-guide) and FIDO2.0 security keys. |
@@ -47,12 +43,11 @@ Microsoft Entra hybrid joined devices require network line of sight to your on-p
 
 Use Microsoft Entra hybrid joined devices if:
 
-- You support down-level devices running Windows 8.1, Windows Server 2008/R2, 2012/R2, 2016.
 - You want to continue to use [Group Policy](/mem/configmgr/comanage/faq#my-environment-has-too-many-group-policy-objects-and-legacy-authenticated-apps--do-i-have-to-use-hybrid-azure-ad-) to manage device configuration.
 - You want to continue to use existing imaging solutions to deploy and configure devices.
 - You have Win32 apps deployed to these devices that rely on Active Directory machine authentication.
 
-## Next steps
+## Related content
 
 - [Plan your Microsoft Entra hybrid join implementation](hybrid-join-plan.md)
 - [Co-management using Configuration Manager and Microsoft Intune](/mem/configmgr/comanage/overview)

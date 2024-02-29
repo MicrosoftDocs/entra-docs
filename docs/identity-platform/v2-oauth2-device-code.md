@@ -5,12 +5,12 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom:
-ms.date: 11/15/2022
+ms.date: 01/10/2024
 ms.reviewer: ludwignick
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer integrating OAuth 2.0 into my application, I want to understand how to implement the device authorization grant flow, so that users can sign in to input-constrained devices and obtain access tokens and refresh tokens for accessing secured web APIs.
 ---
 
 # Microsoft identity platform and the OAuth 2.0 device authorization grant flow
@@ -29,9 +29,9 @@ The entire device code flow is shown in the following diagram. Each step is expl
 
 ## Device authorization request
 
-The client must first check with the authentication server for a device and user code that's used to initiate authentication. The client collects this request from the `/devicecode` endpoint. In the request, the client should also include the permissions it needs to acquire from the user. 
+The client must first check with the authentication server for a device and user code used to initiate authentication. The client collects this request from the `/devicecode` endpoint. In the request, the client should also include the permissions it needs to acquire from the user. 
 
-From the moment the request is sent, the user has 15 minutes to sign in. This is the default value for `expires_in`. The request should only be made when the user has indicated they're ready to sign in.
+From the moment the request is sent, the user has 15 minutes to sign in. This is the default value for `expires_in`. The request should only be made when the user indicates they're ready to sign in.
 
 ```HTTP
 // Line breaks are for legibility only.
@@ -52,12 +52,12 @@ client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 
 ### Device authorization response
 
-A successful response will be a JSON object containing the required information to allow the user to sign in.
+A successful response is a JSON object containing the required information to allow the user to sign in.
 
 | Parameter | Format | Description |
 | ---              | --- | --- |
 |`device_code`     | String | A long string used to verify the session between the client and the authorization server. The client uses this parameter to request the access token from the authorization server. |
-|`user_code`       | String | A short string shown to the user that's used to identify the session on a secondary device.|
+|`user_code`       | String | A short string shown to the user used to identify the session on a secondary device.|
 |`verification_uri`| URI | The URI the user should go to with the `user_code` in order to sign in. |
 |`expires_in`      | int | The number of seconds before the `device_code` and `user_code` expire. |
 |`interval`        | int | The number of seconds the client should wait between polling requests. |
@@ -68,9 +68,9 @@ A successful response will be a JSON object containing the required information 
 
 ## Authenticating the user
 
-After receiving the `user_code` and `verification_uri`, the client displays these to the user, instructing them to use their mobile phone or PC browser to sign in.
+After the client receives `user_code` and `verification_uri`, the values are displayed and the user is directed to sign in via their mobile or PC browser.
 
-If the user authenticates with a personal account, using `/common` or `/consumers`, they'll be asked to sign in again in order to transfer authentication state to the device. This is because the device is unable to access the user's cookies. They'll also be asked to consent to the permissions requested by the client. This however doesn't apply to work or school accounts used to authenticate. 
+If the user authenticates with a personal account, using `/common` or `/consumers`, they're asked to sign in again in order to transfer authentication state to the device. This is because the device is unable to access the user's cookies. They're asked to consent to the permissions requested by the client. However, this doesn't apply to work or school accounts used to authenticate. 
 
 While the user is authenticating at the `verification_uri`, the client should be polling the `/token` endpoint for the requested token using the `device_code`.
 
@@ -101,7 +101,7 @@ The device code flow is a polling protocol so errors served to the client must b
 
 ### Successful authentication response
 
-A successful token response will look like:
+A successful token response looks like:
 
 ```json
 {

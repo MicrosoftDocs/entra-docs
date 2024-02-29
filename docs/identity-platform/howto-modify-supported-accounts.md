@@ -6,9 +6,9 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
 ms.date: 09/15/2023
-ms.reviewer: aragra, sureshja
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: sureshja
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer, I need to know how to modify which account types can sign in to or access my application or API.
 ---

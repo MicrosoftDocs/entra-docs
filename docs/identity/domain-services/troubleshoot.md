@@ -1,15 +1,13 @@
 ---
 title: Microsoft Entra Domain Services troubleshooting | Microsoft Docs'
 description: Learn how to troubleshoot common errors when you create or manage Microsoft Entra Domain Services
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 
 ms.assetid: 4bc8c604-f57c-4f28-9dac-8b9164a0cf0b
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: troubleshooting
 ms.date: 11/26/2023
 ms.author: justinha
@@ -76,30 +74,30 @@ Use the following PowerShell script to search for an existing application instan
 $InformationPreference = "Continue"
 $WarningPreference = "Continue"
 
-$aadDsSp = Get-AzureADServicePrincipal -Filter "AppId eq 'd87dcbc6-a371-462e-88e3-28ad15ec4e64'" -ErrorAction Ignore
+$aadDsSp = Get-MgServicePrincipal -Filter "AppId eq 'd87dcbc6-a371-462e-88e3-28ad15ec4e64'" -ErrorAction Ignore
 if ($aadDsSp -ne $null)
 {
     Write-Information "Found Azure AD Domain Services application. Deleting it ..."
-    Remove-AzureADServicePrincipal -ObjectId $aadDsSp.ObjectId
+    Remove-MgServicePrincipal -ServicePrincipalId $aadDsSp.Id
     Write-Information "Deleted the Azure AD Domain Services application."
 }
 
 $identifierUri = "https://sync.aaddc.activedirectory.windowsazure.com"
 $appFilter = "IdentifierUris eq '" + $identifierUri + "'"
-$app = Get-AzureADApplication -Filter $appFilter
+$app = Get-MgApplication -Filter $appFilter
 if ($app -ne $null)
 {
     Write-Information "Found Azure AD Domain Services Sync application. Deleting it ..."
-    Remove-AzureADApplication -ObjectId $app.ObjectId
+    Remove-MgApplication -ApplicationId  $app.Id
     Write-Information "Deleted the Azure AD Domain Services Sync application."
 }
 
 $spFilter = "ServicePrincipalNames eq '" + $identifierUri + "'"
-$sp = Get-AzureADServicePrincipal -Filter $spFilter
+$sp = Get-MgServicePrincipal -Filter $spFilter
 if ($sp -ne $null)
 {
     Write-Information "Found Azure AD Domain Services Sync service principal. Deleting it ..."
-    Remove-AzureADServicePrincipal -ObjectId $sp.ObjectId
+    Remove-MgServicePrincipal -ObjectId $sp.Id
     Write-Information "Deleted the Azure AD Domain Services Sync service principal."
 }
 ```
@@ -178,5 +176,4 @@ If you continue to have issues, [open an Azure support request][azure-support] f
 [password-policy]: password-policy.md
 [check-health]: check-health.md
 [troubleshoot-alerts]: troubleshoot-alerts.md
-[Remove-MsolUser]: /powershell/module/msonline/remove-msoluser
 [azure-support]: /azure/active-directory/fundamentals/how-to-get-support

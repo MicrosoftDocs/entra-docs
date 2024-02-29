@@ -5,8 +5,8 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 05/25/2023
@@ -31,7 +31,7 @@ To get started, you need the following items:
 * A ServiceNow single sign-on (SSO) enabled subscription.
 * For ServiceNow, an instance or tenant of ServiceNow supports Calgary, Kingston, London, Madrid, New York, Orlando, Paris and San Diego versions or later.
 * For ServiceNow Express, an instance of ServiceNow Express, Helsinki version or later.
-* The ServiceNow tenant must have the [Multiple Provider Single Sign On Plugin](https://old.wiki/index.php/Multiple_Provider_Single_Sign-On#gsc.tab=0) enabled.
+* The ServiceNow tenant must have the [Multiple Provider Single Sign On Plugin](https://docs.servicenow.com/bundle/washingtondc-platform-security/page/integrate/single-sign-on/concept/c_MultipleProviderSingleSignOn.html) enabled.
 * For automatic configuration, enable the multi-provider plugin for ServiceNow.
 * To install the ServiceNow Agent (Mobile) application, go to the appropriate store, and search for the ServiceNow Agent application. Then download it.
 
@@ -139,7 +139,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user, called B.Simon,.
+In this section, you'll create a test user, called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -420,7 +420,7 @@ The objective of this section is to create a user called B.Simon in ServiceNow. 
 
 	d. For **Type**, select **Trust Store Cert**.
 
-	e. Open your Base64 encoded certificate downloaded from Azure portal in Notepad. Copy the content of it into your clipboard, and then paste it to the **PEM Certificate** text box.
+	e. Open your `Base64` encoded certificate downloaded from Azure portal in Notepad. Copy the content of it into your clipboard, and then paste it to the **PEM Certificate** text box.
 
 	f. Select **Update**
 
@@ -502,4 +502,4 @@ When you select the ServiceNow tile in the Access Panel, you should be automatic
 
 ## Next Steps
 
-Once you configure the ServiceNow you can enforce session controls, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
+Once you configure ServiceNow you can enforce session controls, which protect exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

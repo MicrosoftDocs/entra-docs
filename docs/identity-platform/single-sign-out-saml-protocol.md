@@ -5,12 +5,12 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom:
-ms.date: 05/30/2023
-ms.reviewer: kenwith
-ms.service: active-directory
-ms.subservice: develop
+ms.date: 01/30/2024
+ms.reviewer: jeedes
+ms.service: identity-platform
+
 ms.topic: reference
-#Customer intent:
+#Customer intent: As an application developer integrating with Microsoft Entra ID, I want to understand the workflow and requirements for implementing the single sign-out SAML protocol, so that I can correctly register the LogoutURL and handle the LogoutRequest and LogoutResponse messages.
 ---
 
 # Single Sign-Out SAML Protocol
@@ -21,7 +21,7 @@ If the app is [added to the Azure App Gallery](~/identity/enterprise-apps/v2-how
 
 The following diagram shows the workflow of the Microsoft Entra single sign-out process.
 
-![Screenshot of the Microsoft Entra Single Sign Out Workflow.](./media/single-sign-out-saml-protocol/saml-single-sign-out-workflow.png)
+[![Screenshot of the Microsoft Entra Single Sign Out Workflow.](./media/single-sign-out-saml-protocol/saml-single-sign-out-workflow.png)](./media/single-sign-out-saml-protocol/saml-single-sign-out-workflow.png#lightbox)
 
 ## LogoutRequest
 

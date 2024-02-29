@@ -7,8 +7,8 @@ ms.author: owenrichards
 ms.custom: scenarios:getting-started, "languages:UWP", mode-api
 ms.date: 05/19/2022
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: quickstart
 #Customer intent: As an application developer, I want to learn how my Universal Windows Platform (UWP) application can get an access token and call an API that's protected by the Microsoft identity platform.
 ---

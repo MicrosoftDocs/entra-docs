@@ -4,12 +4,12 @@ description: Reference documentation for a custom authentication extension that 
 author: msmimart
 manager: CelesteDG
 ms.author: mimart
-ms.date: 10/27/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.date: 01/23/2024
+ms.service: identity-platform
+
 ms.topic: reference
 titleSuffix: Microsoft identity platform
-#Customer intent: As a developer, I want to learn about the REST API schema so that I can add workflows to the attribute collection start event in the sign-up flow.
+#customer intent: As a developer creating a custom authentication extension for user sign-up flows, I want to understand the REST API schema for the OnAttributeCollectionStart event, so that I can design and implement my own REST API to handle attribute collection requests and responses before the user enters attributes.
 ---
 
 # Custom Extension for OnAttributeCollectionStart event (preview)
@@ -24,6 +24,11 @@ To modify the sign-up experience for your customer self-service sign-up user flo
 
 This article describes the REST API schema for the OnAttributeCollectionStart event. (See also the related article [Custom Extension for OnAttributeCollectionSubmit event](custom-extension-OnAttributeCollectionSubmit-reference.md).)
 
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PreAttributeCollection)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “[Prepopulate sign-up attributes](https://woodgrovedemo.com/#usecase=PreAttributeCollection)” use case.
+    
 ## REST API schema
 
 To develop your own REST API for the attribute collection start event, use the following REST API data contract. The schema describes the contract to design the request and response handler.

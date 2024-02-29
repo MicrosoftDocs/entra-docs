@@ -4,9 +4,9 @@ description: Learn how to revoke an issued verifiable credential.
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: how-to
-ms.subservice: verifiable-credentials
+
 ms.date: 07/28/2022
 ms.author: barclayn
 

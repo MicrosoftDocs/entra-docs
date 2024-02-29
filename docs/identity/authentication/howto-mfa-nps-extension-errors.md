@@ -2,8 +2,8 @@
 title: Troubleshooting Microsoft Entra multifactor authentication NPS extension
 description: Get help resolving issues with the NPS extension for Microsoft Entra multifactor authentication
 
-services: multi-factor-authentication
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: troubleshooting
 ms.date: 01/02/2024
@@ -12,8 +12,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jupetter
-
-ms.collection: M365-identity-device-management
 ms.custom: 
 ---
 # Resolve error messages from the NPS extension for Microsoft Entra multifactor authentication

@@ -1,17 +1,14 @@
 ---
 title: Configure a multitenant organization using the Microsoft Graph API (Preview)
 description: Learn how to configure a multitenant organization in Microsoft Entra ID using the Microsoft Graph API.
-services: active-directory
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: multi-tenant-organizations
+ms.service: entra-id
+ms.subservice: multitenant-organizations
 ms.topic: how-to
 ms.date: 11/22/2023
 ms.author: rolyon
 ms.custom: it-pro
-
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 

@@ -1,18 +1,17 @@
 ---
 title: Create custom roles in Microsoft Entra role-based access control
 description: Create and assign custom Microsoft Entra roles with resource scope on Microsoft Entra resources.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: how-to
-ms.date: 12/09/2022
+ms.date: 01/27/2024
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.collection: M365-identity-device-management
+
 ---
 # Create and assign a custom role in Microsoft Entra ID
 
@@ -59,12 +58,12 @@ Your custom role will show up in the list of available roles to assign.
 
 ## Create a role using PowerShell
 
-### Connect to Azure
+### Sign in
 
-To connect to Microsoft Graph PowerShell, use the following command:
+Use the [Connect-MgGraph](/powershell/module/microsoft.graph.authentication/connect-mggraph) command to sign in to your tenant.
 
 ``` PowerShell
-Connect-MgGraph -Scopes "RoleManagement.Read.All"
+Connect-MgGraph -Scopes "RoleManagement.ReadWrite.Directory"
 ```
 
 ### Create the custom role

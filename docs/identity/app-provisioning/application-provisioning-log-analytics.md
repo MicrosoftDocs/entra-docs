@@ -1,14 +1,13 @@
 ---
 title: Understand how Provisioning integrates with Azure Monitor logs in Microsoft Entra ID.
 description: Understand how Provisioning integrates with Azure Monitor logs in Microsoft Entra ID.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 04/26/2023
+ms.date: 02/07/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -84,9 +83,46 @@ AADProvisioningLogs
 | extend ServicePrincipal = parse_json(ServicePrincipal)
 | where tostring(SourceIdentity.identityType) == "Group"
 | project tostring(ServicePrincipal.Id), tostring(ServicePrincipal.Name), ModifiedProperties, JobId, Id, CycleId, ChangeId, Action, SourceIdentity.identityType, SourceIdentity.details, TargetIdentity.identityType, TargetIdentity.details, ProvisioningSteps
-|take 100
+| take 100
 ```
 
+Retrieve groups with skipped members due to problems resolving references.
+```kusto
+AADProvisioningLogs
+| where TimeGenerated >= ago(10d)
+| where JobId == "Azure2Azure.73f0883f-d67d-4af1-ac8a-45367f8982e0.5ef3be57-f45f-451g-88c4-68a7fda680bb" // Customize by adding a specific app JobId
+| extend SourceIdentity = parse_json(SourceIdentity)
+| extend ProvisioningSteps = parse_json(ProvisioningSteps)
+| where tostring(SourceIdentity.identityType) == "Group"
+| where ProvisioningSteps matches regex "UnableToResolveReferenceAttributeValue"
+| parse tostring(ProvisioningSteps.[2].description) with "We were unable to assign " userObjectId " as the members of " groupDisplayName "." *
+| project groupDisplayName, userObjectId,  JobId
+| take 100
+```
+
+Summarize actions by application.
+```kusto
+AADProvisioningLogs
+| where TimeGenerated > ago(30d)
+| where JobId == "Azure2Azure.73f0883f-d67d-4af1-ac8a-45367f8982e0.5ef3be57-f45f-451g-88c4-68a7fda680bb" // Customize by adding a specific app JobId
+| extend ProvisioningSteps = parse_json(ProvisioningSteps)
+| extend eventName = tostring(ProvisioningSteps.[-1].name)
+| summarize count() by eventName, JobId
+| order by JobId asc
+| take 5
+```
+
+Identify spikes in specific operations. 
+
+```kusto
+AADProvisioningLogs
+| where TimeGenerated > ago(30d)
+| where JobId == "scim.73f0883f-d67d-4af1-ac8a-45367f8982e0.5ef3be57-f45f-451g-88c4-68a7fda680bb" // Customize by adding a specific app JobId
+| extend ProvisioningSteps = parse_json(ProvisioningSteps)
+| extend eventName = tostring(ProvisioningSteps.[-1].name)
+| summarize count() by eventName, bin(TimeGenerated, 1d)
+| render timechart
+```
 ## Custom alerts
 
 Azure Monitor lets you configure custom alerts so that you can get notified about key events related to Provisioning. For example, you might want to receive an alert on spikes in failures. Or perhaps spikes in disables or deletes. Another example of where you might want to be alerted is a lack of any provisioning, which indicates something is wrong.

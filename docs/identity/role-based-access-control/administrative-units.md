@@ -1,19 +1,17 @@
 ---
 title: Administrative units in Microsoft Entra ID
 description: Use administrative units for more granular delegation of permissions in Microsoft Entra ID.
-services: active-directory
-documentationcenter: ''
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: overview
-ms.subservice: roles
-ms.workload: identity
+ms.subservice: role-based-access-control
 ms.date: 03/07/2023
 ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
-ms.collection: M365-identity-device-management
+
 ---
 
 # Administrative units in Microsoft Entra ID
@@ -147,4 +145,3 @@ Managing devices in Intune is *not* supported at this time.
 - [Create or delete administrative units](admin-units-manage.md)
 - [Restricted management administrative units](admin-units-restricted-management.md)
 - [Administrative unit limits](~/identity/users/directory-service-limits-restrictions.md?context=/azure/active-directory/roles/context/ugr-context)
-

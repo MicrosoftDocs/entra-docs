@@ -5,10 +5,10 @@ author: SHERMANOUKO
 manager: CelesteDG
 ms.author: shermanouko
 ms.custom: has-adal-ref
-ms.date: 03/03/2022
-ms.reviewer: aiwang, dmwendia
-ms.service: active-directory
-ms.subservice: develop
+ms.date: 01/15/2024
+ms.reviewer: dmwendia
+ms.service: identity-platform
+
 ms.topic: how-to 
 #Customer intent: As an application developer / IT admin, I need to know / identify which of my apps are using ADAL.
 ---
@@ -20,8 +20,6 @@ Azure Active Directory Authentication Library (ADAL) has been deprecated. While 
 ## Sign-ins workbook
 
 Workbooks are a set of queries that collect and visualize information that is available in Microsoft Entra logs. [Learn more about the sign-in logs schema here](~/identity/monitoring-health/reference-azure-monitor-sign-ins-log-schema.md). The Sign-ins workbook in the Azure portal now has a table to assist you in determining which applications use ADAL and how often they are used. First, we’ll detail how to access the workbook before showing the visualization for the list of applications.
-
-<a name='step-1-send-azure-ad-sign-in-events-to-azure-monitor'></a>
 
 ## Step 1: Send Microsoft Entra sign-in events to Azure Monitor
 
@@ -63,6 +61,7 @@ After identifying your apps that use ADAL, migrate them to MSAL depending on you
 
 For more information about MSAL, including usage information and which libraries are available for different programming languages and application types, see:
 
+- [MSAL documentation home page](/entra/msal)
 - [Acquire and cache tokens using MSAL](msal-acquire-cache-tokens.md)
 - [Application configuration options](msal-client-application-configuration.md)
 - [List of MSAL authentication libraries](reference-v2-libraries.md)

@@ -7,8 +7,8 @@ ms.author: owenrichards
 ms.custom: devx-track-js
 ms.date: 12/01/2021
 ms.reviewer: saeeda
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn about issues with MSAL.js library so I can decide if this platform meets my application development needs and requirements.
 ---

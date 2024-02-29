@@ -2,8 +2,7 @@
 title: Microsoft Entra certificate-based authentication on Android devices
 description: Learn about Microsoft Entra certificate-based authentication on Android devices
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 11/28/2023
@@ -12,8 +11,6 @@ ms.author: justinha
 author: vimrang
 manager: amycolannino
 ms.reviewer: vimrang
-
-ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
 ---
 # Microsoft Entra certificate-based authentication on Android devices
@@ -100,6 +97,7 @@ Certain Exchange ActiveSync applications on Android 5.0 (Lollipop) or later are 
 |Word / Excel / PowerPoint	 |  &#x2705; |
 |Yammer	 |  &#x2705; |
 |Edge browser with profile login	 |  &#x2705; |
+|Managed Home Screen	 |  &#x2705; |
 
 ### Browsers
 

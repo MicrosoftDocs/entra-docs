@@ -3,12 +3,11 @@ title: Automated ServiceNow Ticket Creation with Microsoft Entra Entitlement Man
 description: This tutorial walks you through Ticketed provisioning via ServiceNow integration with entitlement management using custom extensions and Logic Apps.
 author: owinfreyATL
 ms.author: owinfrey
-ms.service: active-directory
-ms.subservice: compliance
-ms.workload: identity
-ms.topic: tutorial 
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
+ms.topic: tutorial
 ms.date: 05/31/2023
-ms.custom: template-tutorial 
+ms.custom: template-tutorial
 ---
 
 # Tutorial: Automated ServiceNow Ticket Creation with Microsoft Entra Entitlement Management Integration

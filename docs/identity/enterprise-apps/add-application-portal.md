@@ -4,8 +4,8 @@ description: Add an enterprise application in Microsoft Entra ID.
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: quickstart
 
 ms.date: 03/22/2023
@@ -49,6 +49,10 @@ If you choose to install an application that uses OpenID Connect based SSO, inst
 ## Clean up resources
 
 If you're planning to complete the next quickstart, keep the enterprise application that you created. Otherwise, you can consider deleting it to clean up your tenant. For more information, see [Delete an application](delete-application-portal.md).
+
+## Microsoft Graph API
+
+To add an application from the Microsoft Entra gallery programmatically, use the [applicationTemplate: instantiate](/graph/api/applicationtemplate-instantiate) API in Microsoft Graph.
 
 ## Next steps
 

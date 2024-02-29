@@ -1,13 +1,11 @@
 ---
 title: 'Automate employee onboarding tasks before their first day of work with the Microsoft Entra admin center'
 description: Tutorial for onboarding users to an organization using Lifecycle workflows with the Microsoft Entra admin center.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: tutorial
-ms.subservice: compliance
 ms.date: 06/22/2023
 ms.author: owinfrey
 ms.reviewer: krbain
@@ -60,26 +58,26 @@ The pre-hire scenario can be broken down into the following:
 Use the following steps to create a pre-hire workflow that generates a TAP and send it via email to the user's manager using the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
-2. Select **Identity Governance**.
-3. Select **Lifecycle workflows**.
-4. On the **Overview** page, select **New workflow**.
+1. Select **Identity Governance**.
+1. Select **Lifecycle workflows**.
+1. On the **Overview** page, select **New workflow**.
     :::image type="content" source="media/tutorial-lifecycle-workflows/new-workflow.png" alt-text="Screenshot of selecting a new workflow." lightbox="media/tutorial-lifecycle-workflows/new-workflow.png":::
 
-5. From the templates, select **select** under **Onboard pre-hire employee**.
+1. From the templates, select **select** under **Onboard pre-hire employee**.
     :::image type="content" source="media/tutorial-lifecycle-workflows/select-template.png" alt-text="Screenshot of selecting workflow template." lightbox="media/tutorial-lifecycle-workflows/select-template.png":::
 
-6. Next, you configure the basic information about the workflow.  This information includes when the workflow triggers, known as **Days from event**.  So in this case, the workflow triggers two days before the employee's hire date.  On the onboard pre-hire employee screen, add the following settings and then select **Next: Configure Scope**.
+1. Next, you configure the basic information about the workflow.  This information includes when the workflow triggers, known as **Days from event**.  So in this case, the workflow triggers two days before the employee's hire date.  On the onboard pre-hire employee screen, add the following settings and then select **Next: Configure Scope**.
 
     :::image type="content" source="media/tutorial-lifecycle-workflows/configure-scope.png" alt-text="Screenshot of selecting a configuration scope." lightbox="media/tutorial-lifecycle-workflows/configure-scope.png":::
 
-7. Next, you configure the scope. The scope determines which users this workflow runs against.  In this case, it is on all users in the Sales department.  On the configure scope screen, under **Rule** add the following settings and then select **Next: Review tasks**. For a full list of supported user properties, see [Supported user properties and query parameters](/graph/api/resources/identitygovernance-rulebasedsubjectset?view=graph-rest-beta&preserve-view=true#supported-user-properties-and-query-parameters).
+1. Next, you configure the scope. The scope determines which users this workflow runs against.  In this case, it is on all users in the Sales department.  On the configure scope screen, under **Rule** add the following settings and then select **Next: Review tasks**. For a full list of supported user properties, see [Supported user properties and query parameters](/graph/api/resources/identitygovernance-rulebasedsubjectset?view=graph-rest-beta&preserve-view=true#supported-user-properties-and-query-parameters).
 
     :::image type="content" source="media/tutorial-lifecycle-workflows/review-tasks.png" alt-text="Screenshot of selecting review tasks." lightbox="media/tutorial-lifecycle-workflows/review-tasks.png":::
 
-8. On the following page, you may inspect the task if desired but no additional configuration is needed. Select **Next: Review + Create** when you're finished.
+1. On the following page, you may inspect the task if desired but no additional configuration is needed. Select **Next: Review + Create** when you're finished.
     :::image type="content" source="media/tutorial-lifecycle-workflows/onboard-review-create.png" alt-text="Screenshot of reviewing an on-board workflow." lightbox="media/tutorial-lifecycle-workflows/onboard-review-create.png":::
 
-9. On the review blade, verify the information is correct and select **Create**.
+1. On the review blade, verify the information is correct and select **Create**.
     :::image type="content" source="media/tutorial-lifecycle-workflows/onboard-create.png" alt-text="Screenshot of creating an onboard workflow." lightbox="media/tutorial-lifecycle-workflows/onboard-create.png":::
 
 ## Run the workflow 
@@ -91,10 +89,10 @@ Now that the workflow is created, it will automatically run the workflow every 3
 To run a workflow on-demand, for users using the Microsoft Entra admin center, do the following steps:
 
  1. On the workflow screen, select the specific workflow you want to run.
- 2. Select **Run on demand**.
- 3. On the **select users** tab, select **add users**.
- 4. Add a user.
- 5. Select **Run workflow**.
+ 1. Select **Run on demand**.
+ 1. On the **select users** tab, select **add users**.
+ 1. Add a user.
+ 1. Select **Run workflow**.
 
 
 ## Check tasks and workflow status
