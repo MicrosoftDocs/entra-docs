@@ -16,7 +16,7 @@ ms.author: thwimmer
 
 # Tutorial: Configure GoSkills for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both GoSkills and Microsoft Entra ID to configure automatic user and group provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [GoSkills](https://gateway.clearviewtrade.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This tutorial describes the steps you need to perform in both GoSkills and Microsoft Entra ID to configure automatic user and group provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [GoSkills](https://www.goskills.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Supported capabilities
@@ -99,7 +99,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |displayName|String||&check;
       |externalId|String||&check;
 
-1. Under the **Mappings** section, select **Synchronize Azure Active Directory Groups to GoSkills**.
+1. Under the **Mappings** section, select **Synchronize Microsoft Entra ID Groups to GoSkills**.
 
 1. Review the group attributes that are synchronized from Azure AD to GoSkills in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in GoSkills for update operations. Select the **Save** button to commit any changes.
 
