@@ -139,11 +139,7 @@ The Authentication request parameters are listed in the following table.
 | Authentication Query Parameter | Value  | Description |
 |--------------------------------|--------|-------------|
 |redirect_url                    |        | The redirection URI to which the response (id_token_hint) will be sent by the external identity provider.
-For example:<br> 
-```json
-<input type="hidden" name="redirect_uri" 
-value="https://login.microsoftonline.com/common/federation/externalauthprovider" />
-```|
+For example:<br> |
 
 
 | Authentication Query Parameter | Value  | Description |
