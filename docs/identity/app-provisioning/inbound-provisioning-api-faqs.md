@@ -6,7 +6,7 @@ author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
-ms.topic: reference
+ms.topic: faq
 ms.date: 01/10/2024
 ms.author: kenwith
 ms.reviewer: chmutali

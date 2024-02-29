@@ -8,7 +8,7 @@ featureFlags:
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: whats-new
 ms.date: 02/01/2024
 ms.author: owinfrey
 ms.reviewer: dhanyahk
@@ -469,7 +469,7 @@ Beginning **January 2024**, Microsoft Entra ID supports [device-bound passkeys](
 
 We expand the existing FIDO2 authentication methods policy, and end user experiences, to support this preview release. For your organization to opt in to this preview, you need to enforce key restrictions to allow specified passkey providers in your FIDO2 policy. Learn more about FIDO2 key restrictions [here](~/identity/authentication/howto-authentication-passwordless-security-key.md).
 
-In addition, the existing end user sign-in option for Windows Hello and FIDO2 security keys are renamed to “*Face, fingerprint, PIN, or security key*”. The term “passkey” will be mentioned in the updated sign-in experience to be inclusive of passkey credentials presented from security keys, computers, and mobile devices.
+In addition, the existing end user sign-in option for Windows Hello and FIDO2 security keys are now indicated by “Face, fingerprint, PIN, or security key”. The term “passkey” will be mentioned in the updated sign-in experience to be inclusive of passkey credentials presented from security keys, mobile devices, and platform authenticators like Windows Hello.
 
 ---
 

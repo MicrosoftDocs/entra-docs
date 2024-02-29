@@ -10,7 +10,7 @@ ms.author: jricketts
 ---
 # Microsoft Security Service Edge solution deployment guide for Microsoft Entra Internet Access for Microsoft 365 proof of concept
 
-This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Security Service Edge (SSE) solution that features [Microsoft Entra Internet Access for Microsoft 365](../global-secure-access/how-to-manage-microsoft-365-profile.md) and Microsoft Entra Private Access.
+This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Security Service Edge (SSE) solution that features [Microsoft Entra Internet Access for Microsoft 365](../global-secure-access/how-to-manage-microsoft-365-profile.md).
 
 ## Overview
 
@@ -59,7 +59,7 @@ This section describes how to enforce compliant network access to Microsoft 365 
 1. **Access controls** > **Grant** > Select the controls that you want to enforce such as requiring multifactor authentication.
 1. Attempt to sign-in to SharePoint Online or Exchange Online and verify that you are prompted to authenticate to Global Secure Access. The Global Secure Access Client uses access tokens and refresh tokens to connect to Microsoft Security Service Edge Solution. If you have previously connected the Global Secure Access Client, then you may need to wait for the access token to expire (up to one hour) before the Conditional Access policy that you created is applied.
 
-:::image type="content" source="media/sse-deployment-guide-m365/global-secure-access-credentials-prompt.png" alt-text="Screenshot of the Global Secure Access credentials prompt window.":::
+   :::image type="content" source="media/sse-deployment-guide-m365/global-secure-access-credentials-prompt.png" alt-text="Screenshot of the Global Secure Access credentials prompt window.":::
 
 1. To verify that your Conditional Access policy was successfully applied, view the sign-in logs for your test user for the **ZTNA Network Access Client - M365** application.
 
@@ -140,4 +140,5 @@ To test source IP address restoration, Global Secure Access signaling for Condit
 [!INCLUDE [Public preview important note](~/global-secure-access/includes/public-preview-important-note.md)]
 
 ## Next Steps
-Deploy and verify [Microsoft Entra Private Access](sse-deployment-guide-private-access.md)
+[Deploy and verify Microsoft Entra Private Access](sse-deployment-guide-private-access.md)
+[Deploy and verify Microsoft Entra Internet Access](sse-deployment-guide-internet-access.md)
