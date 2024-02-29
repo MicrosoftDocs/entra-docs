@@ -1,6 +1,6 @@
 ---
 title: Native authentication
-description: Learn about native authentication for customer-facing mobile and desktop applications.
+description: Learn how you can use native authentication to take greater control over the user interface and experience for your customer-facing mobile and desktop apps.
  
 author: csmulligan
 manager: celestedg
@@ -9,14 +9,16 @@ ms.subservice: customers
 ms.topic: conceptual
 ms.date:  02/29/2024
 ms.author: cmulligan
-ms.custom: it-pro
 
-#Customer intent: As an it admin, I want to learn more about native authentication so that I can understand how to use it in my organization.
+#Customer intent: As a developer, devops, I want to learn more how to host the user interface (UI) within the client app by using native authentication so that I can take greater control over the UI and experience of my customer apps.
 ---
 # Native authentication (preview)
 
-Native authentication allows you to create and host the user interface of your customer apps within the client application. This results in a seamless, integrated authentication experience using Microsoft Authentication Library (MSAL) for iOS and Android. You have full control over the user interface, so you can customize the design, logo placement, layout, and other elements to create a consistent, branded look. 
-In contrast, browser-delegated methods, such as using a system browser for authentication, may not be suitable for everyone. While browser-delegated methods can reduce attack vectors and support single sign-on (SSO), the look and feel is limited by the customization capabilities of the identity provider.
+Microsoft Entra's native authentication allows you to create and host the user interface (UI) of your customer apps within the client application. By using native authentication, you have full control over the UI, so you can customize the design, logo placement, layout, and other elements to create a consistent, branded look. 
+
+Native authentication is an alternative to browser-delegated authentication, where your app uses the system browser for authentication, then redirect back to the app when the authentication process is complete. While browser-delegated methods can reduce attack vectors and support single sign-on (SSO), it suffers from UI customization is limited and users experience is poor.
+
+Native authentication is the solution for app developers looking for solutions that give them greater control over the user interface and experience.
 
 Watch this [video](https://www.youtube.com/embed/20Tp0CM55rw) for an overview of native authentication capabilities.
 
@@ -24,12 +26,12 @@ Watch this [video](https://www.youtube.com/embed/20Tp0CM55rw) for an overview of
 
 ## Available authentication methods
 
-You can create fully native experiences for local account sign-up, sign-in, and sign-out for your first party applications. We provide the following capabilities: 
+Currently, native authentication supports local account identity provider for two authentications methods: 
 
-- Passwordless authentication with email one-time passcode (OTP).
-- Password authentication with self-service password reset (SSPR). 
+- Email with one-time passcode sign-in(OTP).
+- Email and password sign-in with support for self-service password reset (SSPR). 
 
-:::image type="content" source="media/concept-native-authentication/native-authentication-experiences.png" alt-text="Diagram showing native authentication experiences.":::
+Native authentication doesn't yet support federated identity providers such as social or enterprise identities. 
 
 ## When to use native authentication
 <!--This section will be updated once I have the most up-to-date content from the PM.-->
@@ -38,17 +40,18 @@ Whether you choose native authentication over browser-delegated authentication d
 - A consistently branded experience across touchpoints and applications.
 - Your onboarding transactions are low risk, and acquisition far outweighs governance.
 - Your browser-delegated capabilities don’t meet all of your UI customization and layout needs.
-- The functionalities you require are currently available via native authentication. However, you might need additional research to ensure that the native authentication provides all the functionality you need.
+- The functionalities you require are currently available via native authentication. However, you might need more research to ensure that the native authentication provides all the functionality you need.
 
-Native authentication isn't a supported solution for:
+Whether you choose native authentication or browser-delegated authentication, Microsoft Entra supports both of them.
 
-- Third-party or multitenant applications.
-- Microsoft first-party client applications.
-- B2B or B2E apps. Native authentication is available only for Microsoft Entra ID for customers applications.
+## How to use native authentication
+
+You can build apps that use native authentication by using our native authentication APIs or Microsoft Authentication Library (MSAL) SDK for Android and iOS. Whenever possible, we recommend you use the MSAL SDK for to add native authentication to your apps. 
+
+The native authentication APIs detail required only when you manually make raw HTTP requests to authenticate with Microsoft Entra. However, we don't recommend this approach. So, whenever possible, we recommend you use the MSAL SDK to add native authentication to your apps. For more information, explore our [Android](how-to-run-native-authentication-sample-android-app.md) and [iOS](how-to-run-native-authentication-sample-ios-app.md) tutorials. 
 
 ## Next steps
-<!--This section will be updated with the correct links.-->
-- [Samples and guides for customer identity and access management (CIAM)](/entra/external-id/customers/samples-ciam-all)
-- Native authentication tutorials
-- Native authentication API documentation
-
+- [Explore app samples and guides](/entra/external-id/customers/samples-ciam-all).
+- [Android native authentication tutorials](how-to-run-native-authentication-sample-android-app.md).
+- [iOS native authentication tutorials](how-to-run-native-authentication-sample-ios-app.md).
+- [Native authentication API documentation](../../identity-platform/reference-native-authentication-overview.md).
