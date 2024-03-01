@@ -95,6 +95,6 @@ The tokens and account that are returned are identical to the ones that would be
 
 ## Related content
 
+- [How to run the Android sample app](how-to-run-native-authentication-sample-android-app.md).
 - [Overview of native authentication API reference](../../identity-platform/reference-native-authentication-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json) 
-- [How to run the Android sample app](how-to-run-sample-android-app.md).
 

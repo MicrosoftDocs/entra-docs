@@ -223,7 +223,7 @@ items:
                     - name: Register user with username and attributes
                       href: tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md
                     - name: Register user with username, password and attributes
-                      href: tutorial-native-authentication-android-sign-user-with-username-password-user-attributes.md
+                      href: tutorial-native-authentication-android-sign-up-user-with-username-password-user-attributes.md
                     - name: Register user with username and password
                       href: tutorial-native-authentication-android-sign-up-user-with-username-password.md
                     - name: Sign in user with username and password

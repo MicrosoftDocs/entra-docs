@@ -124,7 +124,7 @@ Tokens obtained through native authentication flows can combine with browser-bas
 
 ## Related content 
 
-- [How to run the iOS sample app](how-to-run-sample-ios-app.md)
+- [How to run the iOS sample app](how-to-run-native-authentication-sample-ios-app.md)
 - [Native authentication API reference with Email OTP](../../identity-platform/reference-native-authentication-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 
 
