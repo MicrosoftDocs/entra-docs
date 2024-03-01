@@ -15,7 +15,7 @@ To use Microsoft Entra privileged identity management, a tenant must have a vali
 
 ### Valid licenses for PIM
 
-You'll need either Microsoft Entra ID Governance licenses or Azure AD Premium P2 licenses to use PIM and all of its settings. Currently, you can scope an access review to service principals with access to Microsoft Entra ID, resource roles with a Microsoft Entra Premium P2 or users with Microsoft Entra ID Governance edition active in your tenant. The licensing model for service principals will be finalized for general availability of this feature and additional licenses might be required. 
+You'll need either Microsoft Entra ID Governance licenses or Entra ID Premium P2 licenses to use PIM and all of its settings. Currently, you can scope an access review to service principals with access to Microsoft Entra ID, resource roles with a Microsoft Entra Premium P2 or users with Microsoft Entra ID Governance edition active in your tenant. The licensing model for service principals will be finalized for general availability of this feature and additional licenses might be required. 
 
 ### Licenses you must have for PIM
 
@@ -40,10 +40,10 @@ Here are some example license scenarios to help you determine the number of lice
 
 ### When a license expires for PIM
 
-If a Microsoft Azure AD Premium P2, Microsoft Entra ID Governance, or trial license expires, Privileged Identity Management features will no longer be available in your directory:
+If a Microsoft Microsoft Entra ID Premium P2, Microsoft Entra ID Governance, or trial license expires, Privileged Identity Management features will no longer be available in your directory:
 
-- Permanent role assignments to Azure AD roles will be unaffected.
-- The Privileged Identity Management service in the Azure portal, and the Graph API cmdlets and PowerShell interfaces of Privileged Identity Management, will no longer be available for users to activate privileged roles, manage privileged access, or perform access reviews of privileged roles.
-- Eligible role assignments of Azure AD roles will be removed, as users will no longer be able to activate privileged roles.
-- Any ongoing access reviews of Azure AD roles will end, and Privileged Identity Management configuration settings are removed.
+- Permanent role assignments to Entra ID roles will be unaffected.
+- The Privileged Identity Management service in the Entra Admin portal, and the Graph API cmdlets and PowerShell interfaces of Privileged Identity Management, will no longer be available for users to activate privileged roles, manage privileged access, or perform access reviews of privileged roles.
+- Eligible role assignments of Entra ID roles will be removed, as users will no longer be able to activate privileged roles.
+- Any ongoing access reviews of Entra ID roles will end, and Privileged Identity Management configuration settings are removed.
 - Privileged Identity Management will no longer send emails on role assignment changes.
