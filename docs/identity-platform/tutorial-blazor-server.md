@@ -7,6 +7,7 @@ ms.custom: devx-track-dotnet
 ms.date: 01/26/2024
 ms.reviewer: janicericketts
 ms.service: identity-platform
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ms.topic: tutorial
 #Customer intent: As a developer, I want to add authentication to a Blazor app.
