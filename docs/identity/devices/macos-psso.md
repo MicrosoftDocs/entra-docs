@@ -43,8 +43,8 @@ To deploy Platform SSO for macOS, you need the meet following minimum requiremen
 
 You can find more information and instructions on how to deploy Platform SSO for macOS in these articles.
 
-* [Join a Mac device with Microsoft Entra ID during the out of box experience](device-join-macos-platform-single-sign-on.md)
-* [Register a Mac device with macOS Platform Single Sign-on using Company Portal](device-registration-macos-platform-single-sign-on.md)
+* [Join a Mac device with Microsoft Entra ID during the out of box experience](./device-join-macos-platform-single-sign-on.md)
+* [Join a Mac device with Microsoft Entra ID using Company Portal](./device-join-microsoft-entra-company-portal.md)
 
 ## Passwordless authentication
 

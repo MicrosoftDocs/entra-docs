@@ -148,7 +148,7 @@ Once you've completed the steps above, it's a good idea to check your device reg
 
 ## See also
 
-- [Register a Mac device with macOS Platform single sign-in using Company Portal](./device-registration-macos-platform-single-sign-on.md)
+- [Join a Mac device with Microsoft Entra ID using Company Portal](./device-join-microsoft-entra-company-portal.md)
 - [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passwordless.md)
 - [Plan a passwordless authentication deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md)
 - [Microsoft Enterprise SSO plug-in for Apple devices](../../identity-platform/apple-sso-plugin.md)
