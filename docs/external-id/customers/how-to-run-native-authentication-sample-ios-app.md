@@ -35,96 +35,23 @@ In this article, you learn how to:
 
 ## Register an application 
 
-To enable your application to sign in users with Microsoft Entra, Microsoft Entra External ID for customers must be made aware of the application you create. The app registration establishes a trust relationship between the app and Microsoft Entra. When you register an application, Microsoft Entra External ID generates a unique identifier known as an **Application (client) ID**, a value used to identify your app when creating authentication requests. 
-
-The following steps show you how to register your app in the Microsoft Entra admin center: 
-
-1. Sign in to the <a href="https://entra.microsoft.com/" target="_blank">Microsoft Entra admin center</a>. 
-1. If you have access to multiple tenants, make sure you use the directory that contains your Microsoft Entra External ID for customers tenant: 
-
-   1. Select the **Directories + subscriptions** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the toolbar. 
-   1. On the **Portal settings | Directories + subscriptions** page, find your Microsoft Entra External ID for customers directory in the **Directory name** list, and then select **Switch**. 
-
-1. On the sidebar menu, select **Identity**. 
-1. Select **Applications** > **App Registrations**. 
-1. Select **+ New registration**. 
-1. In the **Register an application** page that appears: 
-
-   1. Enter a meaningful application **Name**, for example _ciam-client-app_. 
-   1. Under **Supported account types**, select **Accounts in this organizational directory only**. 
-
-1. Select **Register**. 
-1. The application's **Overview** pane displays upon successful registration. Record the **Application (client) ID** to be used in your application source code. 
+[!INCLUDE [register client app](../customers/includes/register-app/register-client-app-common.md)]
 
 ## Enable public client and native authentication flows 
 
-To specify that this app is a public client and can use native authentication, enable public client and native authentication flows: 
-
-1. Select the created application from the App registrations page. 
-1. Under **Manage**, select **Authentication**. 
-1. Under **Advanced settings**, for **Enable the following mobile and desktop flows**, select **Yes**. 
-1. Under **Advanced settings**, for **Enable native authentication**, select **Yes**. 
-1. Select **Save** button. 
+[!INCLUDE [Enable public client and native authentication](../customers/includes/native-auth/enable-native-authentication.md)]
 
 ## Grant API permissions 
 
-1. From the **App registrations** page, select the application that you created (such as _ciam-client-app_) to open its **Overview** page. 
-1. Under **Manage**, select **API permissions**. 
-1. Under **Configured permissions**, select **Add a permission**. 
-1. Select **Microsoft APIs** tab. 
-1. Under **Commonly used Microsoft APIs** section, select **Microsoft Graph**. 
-1. Select **Delegated permissions** option. 
-1. Under **Select permissions** section, search for and select **offline_access**, **openid**, and **profile** permissions. 
-1. Select the **Add permissions** button. 
-1. At this point, you've assigned the permissions correctly. However, since the tenant is a customer's tenant, the consumer users themselves can't consent to these permissions. You as the admin must consent to these permissions on behalf of all the users in the tenant: 
-
-   1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**. 
-   1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for both scopes. 
-
-    :::image type="content" source="media/native-authentication/ios/api-permissions.jpg" alt-text="Screenshot showing configured permission in Microsoft Entra admin center." lightbox="media/native-authentication/ios/api-permissions.jpg"::: 
+[!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-native-authentication-api-permission.md)]
 
 ## Create a user flow 
 
-Follow these steps to create a user flow a customer can use to sign in or sign up for an application. 
-
-1. Sign in to the <a href="https://entra.microsoft.com/" target="_blank">Microsoft Entra admin center</a>. 
-1. If you have access to multiple tenants, make sure you use the directory that contains your Microsoft Entra External ID for customers tenant: 
-
-   1. Select the **Directories + subscriptions** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the toolbar. 
-   1. On the **Portal settings | Directories + subscriptions** page, find your Microsoft Entra External ID for customers directory in the **Directory name** list, and then select **Switch**. 
-
-1. On the sidebar menu, select **Identity**. 
-1. Select **External Identities** > **User flows**. 
-1. Select **+ New user flow**. 
-1. On the **Create** page: 
-
-   1. Enter a **Name** for the user flow, such as _SignInSignUpSample_. 
-   1. In the **Identity providers** list, select **Email Accounts**. This identity provider allows users to sign in or sign up using their email address. 
-   1. Under **Email accounts**, you can select one of the two options. For this guide, select **Email one-time passcode**. 
-
-      - **Email with password**: Allows new users to sign up and sign in using an email address as the sign in name and a password as their first factor credential. 
-      - **Email one-time-passcode**: Allows new users to sign up and sign in using an email address as the sign in name and email one-time passcode as their first factor credential. 
-
-        > [!NOTE]
-        > Email one-time passcode must be enabled at the tenant level (**All Identity Providers** > **Email one-time passcode**) for this option to be available at the user flow level. 
-
-   1. Under **User attributes**, you can choose the attributes you want to collect from the user upon sign-up. For this guide, select **Country/Region** and **City**.
-   1. Select **OK**. (Users can be prompted for attributes when they sign up for the first time).
-1. Select **Create**. The new user flow appears in the **User flows** list. If necessary, refresh the page. 
+[!INCLUDE [Create user flow](../customers/includes/configure-user-flow/create-native-authentication-sign-in-sign-out-user-flow.md)]
 
 ## Associate the application with the user flow 
  
-Although many applications can be associated with your user flow, a single application can only be associated with one user flow. A user flow allows configuration of the user experience for specific applications. For example, you can configure a user flow that requires users to sign in or sign up with an email address. 
-
-1. On the sidebar menu, select **Identity**. 
-1. Select **External Identities**, then **User flows**. 
-1. In the **User flows** page, select the **User flow name** you created earlier, for example, _SignInSignUpSample_. 
-1. Under **Use**, select **Applications**. 
-1. Select **Add application**. 
-   <!--[Screenshot the shows how to associate an application to a user flow.](media/20-create-user-flow-add-application.png)-->
-1. Select the application from the list such as _ciam-client-app_ or use the search box to find the application, and then select it. 
-
-1. Choose **Select**. 
+[!INCLUDE [associate user flow](../customers/includes/configure-user-flow/add-app-user-flow.md)] 
 
 ## Clone sample iOS mobile application 
 
