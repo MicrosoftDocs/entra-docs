@@ -33,7 +33,7 @@ items:
   expanded: false
   items:
   - name: Create or delete users
-    href: how-to-create-delete-users.md
+    href: how-to-create-delete-users.yml
   - name: Apply licenses to users
     href: license-users-groups.md
   - name: Users
