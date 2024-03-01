@@ -8,7 +8,7 @@ manager: CelesteDG
 ms.service: entra-workload-id
 
 ms.topic: conceptual
-ms.date: 10/04/2023
+ms.date: 02/28/2024
 ms.author: ryanwi
 ms.reviewer: shkhalid
 ms.custom: aaddev, references_regions
