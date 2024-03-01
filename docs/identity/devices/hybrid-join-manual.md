@@ -1,19 +1,17 @@
 ---
-title: Manual configuration for Microsoft Entra hybrid join devices
+title: Manual configuration for Microsoft Entra hybrid join
 description: Learn how to manually configure Microsoft Entra hybrid join devices.
-
 
 ms.service: entra-id
 ms.subservice: devices
 ms.custom: has-azure-ad-ps-ref
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 07/05/2022
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
-
 ---
 # Configure Microsoft Entra hybrid join manually
 
@@ -28,7 +26,7 @@ This article covers the manual configuration of requirements for Microsoft Entra
    - If the computer objects of the devices you want to be Microsoft Entra hybrid joined belong to specific organizational units (OUs), configure the correct OUs to sync in Microsoft Entra Connect. To learn more about how to sync computer objects by using Microsoft Entra Connect, see [Organizational unit–based filtering](~/identity/hybrid/connect/how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering).
 - Global Administrator credentials for your Microsoft Entra tenant.
 - Enterprise administrator credentials for each of the on-premises Active Directory Domain Services forests.
-- (**For federated domains**) Windows Server 2012 R2 with Active Directory Federation Services installed.
+- (**For federated domains**) Windows Server with Active Directory Federation Services installed.
 - Users can register their devices with Microsoft Entra ID. More information about this setting can be found under the heading **Configure device settings**, in the article, [Configure device settings](manage-device-identities.md#configure-device-settings).
 
 Microsoft Entra hybrid join requires devices to have access to the following Microsoft resources from inside your organization's network:  
@@ -91,7 +89,7 @@ You can verify the existence of the object and retrieve the discovery values by 
 
 The **$scp.Keywords** output shows the Microsoft Entra tenant information. Here's an example:
 
-   ```
+   ```powershell
    azureADName:microsoft.com
    azureADId:72f988bf-86f1-41af-91ab-2d7cd011db47
    ```
