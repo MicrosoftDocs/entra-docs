@@ -11,8 +11,8 @@
     href: device-join-out-of-box.md
   - name: Microsoft Entra join a new Mac device
     href: device-join-macos-platform-single-sign-on.md
-  - name: Microsoft Entra register a Mac device
-    href: device-registration-macos-platform-single-sign-on.md
+  - name: Join a Mac device using Company Portal
+    href: device-join-microsoft-entra-company-portal.md
 - name: Concepts
   expanded: true
   items:

@@ -1,5 +1,5 @@
 ---
-title: Register a Mac device with macOS Platform Single Sign-on using Company Portal (preview)
+title: Join a Mac device with Microsoft Entra ID using Company Portal (preview)
 description: How users can set up a new macOS with macOS Platform single sign-on extension, using Company Portal.
 
 ms.service: active-directory
@@ -14,7 +14,7 @@ ms.reviewer: brianmel
 # Customer intent: As a user, I want to register my Mac device with macOS Platform single sign-on using Company Portal. I need to know the differences between the three methods of registration, secure enclave, smart card, and password, and how to register my device with each method.
 ---
 
-#  Register a Mac device with macOS Platform Single Sign-on using Company Portal (preview)
+# Register a Mac device with macOS Platform Single Sign-on using Company Portal (preview)
 
 
 In this tutorial, you will learn how to register a Mac device with macOS Platform Single Sign-on (PSSO) using Company Portal and the Intune MDM enrollment with Microsoft Entra Join. There are three methods in which you can register a Mac device with PSSO, secure enclave, smart card, or password. We recommend using secure enclave or smart card for the best passwordless experience, however its important to note that this method will be preset by your company administrator using Microsoft Intune.
@@ -58,9 +58,7 @@ To register a Mac device with PSSO, you must first enroll your device in Microso
 
     :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-registration-required-notification.png" alt-text="Screenshot of the Registration Required notification.":::
 
-1. The Platform SSO window appears to enable your macOS account to be registered with your identity provider. There are two ways you can do this:
-    - **Touch ID**: Use your device's touch ID capability. The device selects your secure enclave key and wait for your device to confirm it is in compliance.
-    - **Use Password**: You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Sign in**. As MFA is required as part of this sign in flow, open your **Authenticator app** (recommended) or use another verification method to complete the sign in flow.
+1. The Platform SSO window appears to enable your macOS account to be registered with your identity provider. You can unlock the device with Touch ID or local account password depending on the device set up. We strongly recommend setting up TouchID.
 
     :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-register-window.png" alt-text="Screenshot of the Platform SSO notification requesting to use password or Touch ID.":::
 
@@ -129,6 +127,61 @@ To register a Mac device with PSSO, you must first enroll your device in Microso
     :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-entra-password-entry.png" alt-text="Screenshot of the Microsoft Entra sign in window.":::
 
 1. Your device will now show as being in compliance in Company Portal. You can now use PSSO to access Microsoft app resources.
+
+---
+
+## Finish the registration process
+
+Now that the device is in compliance in the Company Portal, you need to register your device with PSSO. Use the tabs to register your device with PSSO using secure enclave, smart card, or password.
+
+### [Secure Enclave](#tab/secure-enclave)
+
+1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. 
+
+    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-registration-required-popup-secure-enclave.png" alt-text="Screenshot of a desktop screen with a registration required popup in the top right of the screen.":::
+
+1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**. <!--If you are on macOS14 you will see a prompt to unlock local account before this step--> Wait for a moment for the system to log you in.
+
+    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-register-device-prompt.png" alt-text="Screenshot of the registration window prompting sign in with Microsoft.":::
+
+1. MFA is required as part of this sign in flow. Open your **Authenticator app** (recommended) or use your other MFA methods you have registered, and enter the number displayed on the screen to finish registration.
+
+    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-2fa-challenge.png" alt-text="Screenshot of a two-factor authentication window, prompting the user to open the Authenticator app.":::
+
+1. When the MFA flow completes and the loading screen disappears, your device should be registered with PSSO. You can now use PSSO to access Microsoft app resources.
+
+### [Smart Card](#tab/smart-card)
+
+1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**. <!--If you are on macOS14 you will see a prompt to unlock local account before this step-->
+    1. Your administrator may have configured MFA for the device registration flow. If so, open your **Authenticator** app on your mobile device and complete the MFA flow.
+
+    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-register-device-prompt.png" alt-text="Screenshot of the registration window prompting sign in with Microsoft.":::
+
+1. If the certificate is not already paired with the local account, the user will see a prompt to use the smart card. Select **Smart card**.
+1. You're prompted to enter the pin for your smart card. Enter your pin and select **Enter pin for the smart card**. When the correct pin is entered, PSSO registration with smart card authentication is complete.
+1. You can now use PSSO to access Microsoft app resources, and unlock the device with the smart card pin. You'll need to use the local password to log in after a reboot to unlock the keychain access.
+
+### [Password](#tab/password)
+
+1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**.
+
+    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-registration-required-popup.png" alt-text="Screenshot of a desktop screen with a registration required popup in the top right of the screen.":::
+
+1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**.
+    1. Your administrator may have configured MFA for the device registration flow. If so, open your **Authenticator** app on your mobile device and complete the MFA flow.
+
+    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-register-device-prompt.png" alt-text="Screenshot of the registration window prompting sign in with Microsoft.":::
+
+1. When a **Single Sign-On** window appears, enter your local account password and select **OK**. If you're on macOS 14, <!--you'll be prompted to unlock your local account before this.-->
+
+    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-enter-local-password.png" alt-text="Screenshot of a single sign-on window prompting the user to enter their local account password.":::
+
+1. If your local password differs to your Microsoft Entra ID password, an **Authentication Required** popup appears on the top right of the screen. Hover over the banner and select **Sign-in**.
+1. When a **Microsoft Entra** window appears, enter your Microsoft Entra ID password and select **Sign In**. 
+
+    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-entra-account-password-prompt.png" alt-text="Screenshot of a Microsoft Entra sign in window.":::
+
+1. After unlocking the Mac, you can now use PSSO to access Microsoft app resources. From this point on, your old password doesn't work because PSSO is enabled for your device.
 
 ---
 
