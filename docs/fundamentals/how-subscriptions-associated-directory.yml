@@ -48,7 +48,7 @@ prerequisites:
 
 procedureSection:
   - title: |
-      Associate a subscription to a directory<a name="to-associate-an-existing-subscription-to-your-azure-ad-directory"></a>
+      Associate a subscription to a directory
     summary: |
       To associate an existing subscription with your Microsoft Entra ID, follow these steps:
     steps:
