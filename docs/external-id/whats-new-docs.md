@@ -19,8 +19,8 @@ Welcome to what's new in Microsoft Entra External ID documentation. This article
 
 ### Updated article
 
-- [Add Facebook as an identity provider for External Identities](facebook-federation.md) - Microsoft Graph PowerShell cmdlet update 
-- [Microsoft Entra B2B collaboration code and PowerShell samples](code-samples.md) - Microsoft Graph PowerShell cmdlet update
+- [Add Facebook as an identity provider for External Identities](facebook-federation.md) - Microsoft Graph PowerShell updates 
+- [Microsoft Entra B2B collaboration code and PowerShell samples](code-samples.md) - Microsoft Graph PowerShell updates
 
 ## January 2024
 
