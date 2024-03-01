@@ -82,7 +82,7 @@ You can permanently delete a user from your organization without waiting the 30 
 After you've restored or deleted your users, you can:
 
 - [Add or delete users](./add-users.md)
-- [Assign roles to users](./how-subscriptions-associated-directory.md)
+- [Assign roles to users](./how-subscriptions-associated-directory.yml)
 - [Add or change profile information](./how-to-manage-user-profile-info.md)
 - [Add guest users from another organization](~/external-id/what-is-b2b.md)
 

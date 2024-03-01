@@ -104,7 +104,7 @@ If you can't verify a custom domain name, try the following suggestions:
 
 ## Next steps
 
-- Add another Global Administrator to your directory. For more information, see [How to assign roles and administrators](./how-subscriptions-associated-directory.md).
+- Add another Global Administrator to your directory. For more information, see [How to assign roles and administrators](./how-subscriptions-associated-directory.yml).
 
 - Add users to your domain. For more information, see [How to add or delete users](./add-users.md).
 

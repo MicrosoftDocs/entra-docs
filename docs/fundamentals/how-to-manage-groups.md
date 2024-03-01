@@ -213,4 +213,4 @@ You can delete a group for any number of reasons, but typically it will be becau
 - [Manage groups using PowerShell commands](~/identity/users/groups-settings-v2-cmdlets.md)
 - [Manage dynamic rules for users in a group](~/identity/users/groups-create-rule.md)
 - [Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID](~/identity/users/licensing-group-advanced.md#limitations-and-known-issues)
-- [Associate or add an Azure subscription to Microsoft Entra ID](./how-subscriptions-associated-directory.md)
+- [Associate or add an Azure subscription to Microsoft Entra ID](./how-subscriptions-associated-directory.yml)

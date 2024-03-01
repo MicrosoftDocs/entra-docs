@@ -23,4 +23,4 @@ This article contains the usage constraints and other service limits for the Mic
 ## Next steps
 
 * [Sign up for Azure as an organization](~/fundamentals/sign-up-organization.md)
-* [How Azure subscriptions are associated with Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.md)
+* [How Azure subscriptions are associated with Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.yml)
