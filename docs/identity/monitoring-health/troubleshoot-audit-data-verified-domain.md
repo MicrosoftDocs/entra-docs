@@ -1,5 +1,4 @@
 ---
-
 title: Troubleshoot bulk changes to the verified domains of users in the audit logs
 description: Troubleshoot bulk changes to UserPrincipalName in the audit logs when a verified domain changes in a Microsoft Entra ID tenant.
 
