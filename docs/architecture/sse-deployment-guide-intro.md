@@ -3,7 +3,7 @@ title: Microsoft's Security Service Edge Solution Deployment Guide Introduction
 description: Introduction to Microsoft Entra Private Access and Microsoft Entra Internet Access for Microsoft 365 deployments
 author: jricketts
 manager: martinco
-ms.service: network-access
+ms.service: global-secure-access
 ms.topic: conceptual
 ms.date: 2/28/2024
 ms.author: jricketts

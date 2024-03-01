@@ -3,7 +3,7 @@ title: Microsoft's Security Service Edge solution deployment guide for Microsoft
 description: Deploy and verify Microsoft Entra Internet Access for Microsoft 365
 author: jricketts
 manager: martinco
-ms.service: network-access
+ms.service: global-secure-access
 ms.topic: conceptual
 ms.date: 11/15/2023
 ms.author: jricketts

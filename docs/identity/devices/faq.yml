@@ -6,7 +6,7 @@ metadata:
   ms.subservice: devices
   ms.custom: has-azure-ad-ps-ref
   ms.topic: faq
-  ms.date: 02/27/2023
+  ms.date: 02/28/2024
   ms.author: joflore
   author: MicrosoftGuyJFlo
   manager: amycolannino
@@ -206,7 +206,9 @@ sections:
           A likely cause is that you signed in to the device by using the local built-in administrator account. 
           Create a different local account before you use Microsoft Entra join to finish the setup. 
           
-          
+      - question: What is the P2P Server application and why is it registered in my tenant?
+        answer: |
+          The P2P Server application is application registered by Microsoft Entra to enable Remote Desktop Protocol (RDP) connections to any Microsoft Entra joined or hybrid Microsoft Entra joined Windows devices in your tenant. This application creates a tenant wide certificate issued by Microsoft Entra's certificate authority and is used to issue RDP device and user certificates for RDP connectivity. To ensure this is the correct application, you can find the **Object ID** of the P2P Server application in the **Microsoft Entra admin center** > **Applications** > **Enterprise Applications**. Remove the default filter applied do you can see all applications. Compare this **Object ID** using the Microsoft Graph API to query for the details using [GET /servicePrincipals/{objectid}](/graph/api/serviceprincipal-get) and confirm that the servicePrincipalNames property is `urn:p2p_cert`.
           
       - question: What are the MS-Organization-P2P-Access certificates present on our Windows 10/11 devices?
         answer: |
