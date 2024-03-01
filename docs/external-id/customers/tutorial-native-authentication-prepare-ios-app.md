@@ -21,15 +21,13 @@ This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) na
 
 In this tutorial, you learn how to:
 
-- Get the MSAL native authentication SDK Framework code.
-- Build the MSAL Framework.
-- Embed MSAL framework in iOS app.
+- Add the MSAL framework to an iOS app.
 - Create SDK instance.
 
 ## Prerequisites
 
 - <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>
-- [How to run the Android sample app](how-to-run-native-authentication-sample-ios-app.md).
+- [How to run the iOS sample app](how-to-run-native-authentication-sample-ios-app.md).
 - iOS project
 
 ## Add the MSAL framework to an iOS app

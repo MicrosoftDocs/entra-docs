@@ -183,7 +183,7 @@ extension ViewController: SignUpAttributesRequiredDelegate {
 
 When the user doesn't provide all the required attributes, or the attributes are invalid, these delegate methods are called: 
 
-- onSignUpAttributesInvalid: indicates that one or more attributes that were sent failed input validation. This error contains an invalidAttributes parameter, which is a list of all attributes that were sent by the developer that failed input validation. 
+- onSignUpAttributesInvalid: indicates that one or more attributes that were sent failed input validation. This error contains an attributeNames parameter, which is a list of all attributes that were sent by the developer that failed input validation. 
 - onSignUpAttributesRequired: indicates that the server requires one or more attributes to be sent, before the user account can be created. This happens when one or more attributes is set as mandatory in the tenant configuration. This result contains attributes parameter, which is a list of `MSALNativeAuthRequiredAttribute` objects, which outline details about the user attributes that the API requires. 
  
 Both delegate methods contain a new state reference. We'll use the `newState` parameter to call `submitAttributes(attributes:delegate)` again with the new attributes. 
