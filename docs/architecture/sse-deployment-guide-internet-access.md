@@ -2,10 +2,9 @@
 title: Microsoft's Security Service Edge Solution Deployment Guide for Microsoft Entra Internet Access
 description: Plan for, deploy, and verify Microsoft Entra Internet Access.
 customer intent: As a Microsoft Partner, I want to deploy Microsoft Entra Internet Access as a Proof of Concept in my production or test environment.
-services: active-directory
 author: jricketts
 manager: martinco
-ms.service: network-access
+ms.service: global-secure-access
 ms.topic: conceptual
 ms.date: 02/27/2024
 ms.author: jricketts
