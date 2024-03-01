@@ -424,7 +424,7 @@ If you experience issues completing Microsoft Entra hybrid join for domain-joine
 - [Troubleshooting Microsoft Entra hybrid joined devices](troubleshoot-hybrid-join-windows-current.md)
 - [Troubleshooting Microsoft Entra hybrid joined down-level devices](troubleshoot-hybrid-join-windows-legacy.md)
 
-## Next steps
+## Related content
 
 - [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.md)
 - [Plan your Microsoft Entra hybrid join implementation](hybrid-join-plan.md)
