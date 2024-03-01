@@ -1,9 +1,7 @@
 ---
 title: "What's new in Microsoft Entra ID for customers"
 description: "New and updated documentation for the Microsoft Entra ID for customers documentation."
-ms.date: 03
-
-/01/2024
+ms.date: 03/01/2024
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: whats-new
