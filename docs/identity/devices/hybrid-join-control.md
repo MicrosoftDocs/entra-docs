@@ -19,8 +19,6 @@ You can validate your [planning and prerequisites](hybrid-join-plan.md) for hybr
 > [!CAUTION]
 > Use caution when modifying values in Active Directory. Making changes in an established environment might have unintended consequences.
 
-The SCP might be configured locally in the registry of the device in certain situations. If the device finds a value in the registry it uses that configuration, otherwise it queries the directory for the SCP and attempts to hybrid join.
-
 <a name='targeted-deployment-of-hybrid-azure-ad-join-on-windows-current-devices'></a>
 
 ## Targeted deployment of Microsoft Entra hybrid join on Windows current devices
@@ -33,6 +31,9 @@ To do a targeted deployment of Microsoft Entra hybrid join on Windows current de
 1. [Configure client-side registry setting for SCP on your domain-joined computers using a Group Policy Object (GPO).](#configure-client-side-registry-setting-for-scp)
 1. If you're using Active Directory Federation Services (AD FS), you must also [configure the client-side registry setting for SCP on your AD FS server using a GPO.](#configure-ad-fs-settings)
 1. You might need to [customize synchronization options](~/identity/hybrid/connect/how-to-connect-post-installation.md#additional-tasks-available-in-azure-ad-connect) in Microsoft Entra Connect to enable device synchronization.
+
+> [!TIP]
+> The SCP might be configured locally in the registry of the device in certain situations. If the device finds a value in the registry it uses that configuration, otherwise it queries the directory for the SCP and attempts to hybrid join.
 
 ### Clear the SCP from AD
 

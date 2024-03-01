@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: devices
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 07/05/2022
+ms.date: 03/01/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -15,7 +15,7 @@ ms.reviewer: sandeo
 ---
 # Configure Microsoft Entra hybrid join manually
 
-If using Microsoft Entra Connect is an option for you, see the guidance in [Configure Microsoft Entra hybrid join](how-to-hybrid-join.md). Using the automation in Microsoft Entra Connect, will significantly simplify the configuration of Microsoft Entra hybrid join.
+If using Microsoft Entra Connect is an option for you, see the guidance in [Configure Microsoft Entra hybrid join](how-to-hybrid-join.md). Using the automation in Microsoft Entra Connect, significantly simplifies the configuration of Microsoft Entra hybrid join.
 
 This article covers the manual configuration of requirements for Microsoft Entra hybrid join including steps for managed and federated domains.
 
@@ -34,7 +34,7 @@ Microsoft Entra hybrid join requires devices to have access to the following Mic
 - `https://enterpriseregistration.windows.net`
 - `https://login.microsoftonline.com`
 - `https://device.login.microsoftonline.com`
-- `https://autologon.microsoftazuread-sso.com` (If you use or plan to use seamless SSO)
+- `https://autologon.microsoftazuread-sso.com` (If you use or plan to use seamless single sign-on)
 - Your organization's Security Token Service (STS) (**For federated domains**)
 
 > [!WARNING]
@@ -76,8 +76,7 @@ In your forest, the SCP object for the autoregistration of domain-joined devices
 
 `CN=62a0ff2e-97b9-4513-943f-0d221bd30080,CN=Device Registration Configuration,CN=Services,[Your Configuration Naming Context]`
 
-Depending on how you have deployed Microsoft Entra Connect, the SCP object might have already been configured.
-You can verify the existence of the object and retrieve the discovery values by using the following PowerShell script:
+Depending on how you deploy Microsoft Entra Connect, the SCP object might already be configured. You can verify the existence of the object and retrieve the discovery values by using the following PowerShell script:
 
    ```powershell
    $scp = New-Object System.DirectoryServices.DirectoryEntry;
@@ -100,7 +99,7 @@ In a federated Microsoft Entra configuration, devices rely on AD FS or an  on-pr
 
 Windows current devices authenticate by using integrated Windows authentication to an active WS-Trust endpoint (either 1.3 or 2005 versions) hosted by the on-premises federation service.
 
-When you're using AD FS, you need to enable the following WS-Trust endpoints
+When you're using AD FS, you need to enable the following WS-Trust endpoints:
 
 - `/adfs/services/trust/2005/windowstransport`
 - `/adfs/services/trust/13/windowstransport`
@@ -115,7 +114,7 @@ When you're using AD FS, you need to enable the following WS-Trust endpoints
 > [!NOTE]
 > If you don’t have AD FS as your on-premises federation service, follow the instructions from your vendor to make sure they support WS-Trust 1.3 or 2005 endpoints and that these are published through the Metadata Exchange file (MEX).
 
-For device registration to finish, the following claims must exist in the token that Azure DRS receives. Azure DRS will create a device object in Microsoft Entra ID with some of this information. Microsoft Entra Connect then uses this information to associate the newly created device object with the computer account on-premises.
+For device registration to finish, the following claims must exist in the token that Azure DRS receives. Azure DRS creates a device object in Microsoft Entra ID with some of this information. Microsoft Entra Connect then uses this information to associate the newly created device object with the computer account on-premises.
 
 * `http://schemas.microsoft.com/ws/2012/01/accounttype`
 * `http://schemas.microsoft.com/identity/claims/onpremobjectguid`
@@ -408,14 +407,14 @@ The following script helps you with the creation of the issuance transform rules
 #### Remarks
 
 * This script appends the rules to the existing rules. Don't run the script twice, because the set of rules would be added twice. Make sure that no corresponding rules exist for these claims (under the corresponding conditions) before running the script again.
-* If you have multiple verified domain names, set the value of **$multipleVerifiedDomainNames** in the script to **$true**. Also make sure that you remove any existing **issuerid** claim that might have been created by Microsoft Entra Connect or via other means. Here's an example for this rule:
+* If you have multiple verified domain names, set the value of **$multipleVerifiedDomainNames** in the script to **$true**. Also make sure that you remove any existing **issuerid** claim created by Microsoft Entra Connect or other means. Here's an example for this rule:
 
    ```
    c:[Type == "http://schemas.xmlsoap.org/claims/UPN"]
    => issue(Type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid", Value = regexreplace(c.Value, ".+@(?<domain>.+)",  "http://${domain}/adfs/services/trust/")); 
    ```
 
-If you've already issued an **ImmutableID** claim  for user accounts, set the value of **$immutableIDAlreadyIssuedforUsers** in the script to **$true**.
+If you've issued an **ImmutableID** claim for user accounts, set the value of **$immutableIDAlreadyIssuedforUsers** in the script to **$true**.
 
 ## Troubleshoot your implementation
 
