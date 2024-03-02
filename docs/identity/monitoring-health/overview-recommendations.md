@@ -58,10 +58,10 @@ The recommendations listed in the following table are currently available in pub
 | [Migrate from MFA server to Microsoft Entra MFA](recommendation-migrate-to-microsoft-entra-mfa.md) | Tenant level | All licenses | Generally Available |
 | [Migrate to Microsoft Authenticator](recommendation-migrate-to-authenticator.md) | Users | All licenses | Preview |
 | [Minimize MFA prompts from known devices](recommendation-mfa-from-known-devices.md)  | Users | All licenses | Generally available |
-| [Remove unused applications](recommendation-remove-unused-apps.md) | Applications | [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-id) | Preview |
-| [Remove unused credentials from applications](recommendation-remove-unused-credential-from-apps.md) | Applications | [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-id) | Preview |
-| [Renew expiring application credentials](recommendation-renew-expiring-application-credential.md) | Applications | [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-id) | Preview |
-| [Renew expiring service principal credentials](recommendation-renew-expiring-service-principal-credential.md) | Applications | [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-id) | Preview |
+| [Remove unused applications](recommendation-remove-unused-apps.md) | Applications | [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-id) | Generally Available |
+| [Remove unused credentials from applications](recommendation-remove-unused-credential-from-apps.md) | Applications | [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-id) | Generally Available |
+| [Renew expiring application credentials](recommendation-renew-expiring-application-credential.md) | Applications | [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-id) | Generally Available |
+| [Renew expiring service principal credentials](recommendation-renew-expiring-service-principal-credential.md) | Applications | [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-id) | Generally Available |
 
 
 Microsoft Entra only displays the recommendations that apply to your tenant, so you might not see all supported recommendations listed.
