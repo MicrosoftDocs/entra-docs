@@ -32,7 +32,7 @@ Azure Active Directory B2C (Azure AD B2C) is an identity and access management s
   - [Seamless migration](/azure/active-directory-b2c/user-migration#seamless-migration)
   - Go to [`user-migration`](https://github.com/azure-ad-b2c/user-migration)
 - Select protocols
-  - If you use Kerberos, Microsoft Windows NT Lan Manager (NTLM), and Web Services Federation (WS-Fed), see the video, [Application and identity migration to Azure AD B2C](https://www.bing.com/videos/search?q=application+migration+in+azure+ad+b2c&docid=608034225244808069&mid=E21B87D02347A8260128E21B87D02347A8260128&view=detail&FORM=VIRE)
+  - If you use Kerberos, Microsoft Windows NT LAN Manager (NTLM), and Web Services Federation (WS-Fed), see the video, [Application and identity migration to Azure AD B2C](https://www.bing.com/videos/search?q=application+migration+in+azure+ad+b2c&docid=608034225244808069&mid=E21B87D02347A8260128E21B87D02347A8260128&view=detail&FORM=VIRE)
 
 After migration, your applications can support modern identity protocols such as Open Authorization (OAuth) 2.0 and OpenID Connect (OIDC).
 
@@ -105,7 +105,7 @@ Azure AD B2C projects start with one or more client applications.
 
 - Applications included in the CIAM deployment
 - Applications in use
-  - For example, web applications, APIs, single-page apps (securing privileged accesss (SPA)), or native mobile applications
+  - For example, web applications, APIs, single-page web apps (SPAs), or native mobile applications
 - Authentication in use:
   - For example, forms federated with Security Assertion Markup Language (SAML), or federated with OIDC
   - If OIDC, confirm the response type: code or id_token
