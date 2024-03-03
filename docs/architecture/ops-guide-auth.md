@@ -125,7 +125,7 @@ If you have domain-joined Windows devices that aren't registered in the cloud, o
 
 ![A screenshot of grant in Conditional Access policy requiring hybrid device](./media/ops-guide-auth/ops-img6.png)
 
-If you're managing devices with master data management (MDM) or Microsoft Intune, but not using device controls in your Conditional Access policies, then we recommend using [Require device to be marked as compliant](~/identity/conditional-access/concept-conditional-access-grant.md#require-device-to-be-marked-as-compliant) as a control in those policies.
+If you're managing devices with MDM or Microsoft Intune, but not using device controls in your Conditional Access policies, then we recommend using [Require device to be marked as compliant](~/identity/conditional-access/concept-conditional-access-grant.md#require-device-to-be-marked-as-compliant) as a control in those policies.
 
 ![A screenshot of grant in Conditional Access policy requiring device compliance](./media/ops-guide-auth/ops-img7.png)
 
@@ -221,7 +221,7 @@ If you already own Microsoft Entra ID P2 licenses that support using risk in acc
 
 ### Client application access policies
 
-Microsoft Intune Application Management (Mobile Application Management (MAM)) provides the ability to push data protection controls such as storage encryption, PIN, remote storage cleanup, and so on. to compatible client mobile applications such as Outlook Mobile. In addition, Conditional Access policies can be created to [restrict access](~/identity/conditional-access/howto-policy-approved-app-or-app-protection.md) to cloud services such as Exchange Online from approved or compatible apps.
+Microsoft Intune Application Management (MAM) provides the ability to push data protection controls such as storage encryption, PIN, remote storage cleanup, and so on. to compatible client mobile applications such as Outlook Mobile. In addition, Conditional Access policies can be created to [restrict access](~/identity/conditional-access/howto-policy-approved-app-or-app-protection.md) to cloud services such as Exchange Online from approved or compatible apps.
 
 If your employees install MAM-capable applications such as Office mobile apps to access corporate resources such as Exchange Online or SharePoint in Microsoft 365, and you also support BYOD (bring your own device), we recommend you deploy application MAM policies to manage the application configuration in personally owned devices without MDM enrollment and then update your Conditional Access policies to only allow access from MAM-capable clients.
 
