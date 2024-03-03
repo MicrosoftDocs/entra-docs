@@ -21,7 +21,7 @@ Here are reasons that you might choose not to migrate AD FS:
 
 - Your environment has flat usernames (such as employee ID).
 - You need more options for [custom multifactor authentication providers](#custom-mfa-solutions).
-- You use device authentication solutions from third-party Mobile Device Management (master data management (MDM)) systems like VMware.
+- You use device authentication solutions from third-party Mobile Device Management (MDM) systems like VMware.
 - Your AD FS is dual fed with multiple clouds.
 - You need to air gap networks.
 
