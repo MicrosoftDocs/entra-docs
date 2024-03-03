@@ -149,7 +149,7 @@ Providing a standardized single sign-on mechanism to the entire enterprise is cr
 ![AppProxy Password-based Sign-on](./media/ops-guide-auth/ops-img8.png)
 
 > [!NOTE]
-> If you don't have a mechanism to discover unmanaged applications in your organization, we recommend implementing a discovery process using a cloud access security broker solution (cloud application security broker (CASB)) such as [Microsoft Defender for Cloud Apps](https://www.microsoft.com/enterprise-mobility-security/cloud-app-security).
+> If you don't have a mechanism to discover unmanaged applications in your organization, we recommend implementing a discovery process using a cloud application security broker (CASB) such as [Microsoft Defender for Cloud Apps](https://www.microsoft.com/enterprise-mobility-security/cloud-app-security).
 
 Finally, if you have a Microsoft Entra app gallery and use applications that support SSO with Microsoft Entra ID, we recommend [listing the application in the app gallery](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md).
 
