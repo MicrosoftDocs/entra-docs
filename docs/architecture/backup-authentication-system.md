@@ -167,11 +167,11 @@ The backup authentication system is supported in all cloud environments except M
 | Microsoft.AppPlatform | Azure App Service | Protected |
 | Microsoft.Authorization | Microsoft Entra ID | Protected |
 | Microsoft.Automation | Automation Service | Protected |
-| microsoft.avs | Azure VMware Solution | Protected |
-| microsoft.batch | Azure Batch | Protected |
-| microsoft.cache | Azure Cache for Redis | Protected |
-| microsoft.cdn | Azure Content Delivery Network | Not protected |
-| microsoft.chaos | Azure Chaos Engineering | Protected |
+| Microsoft.AVX | Azure VMware Solution | Protected |
+| Microsoft.Batch | Azure Batch | Protected |
+| Microsoft.Cache | Azure Cache for Redis | Protected |
+| Microsoft.Cdn | Azure Content Delivery Network | Not protected |
+| Microsoft.Chaos | Azure Chaos Engineering | Protected |
 | Microsoft.CognitiveServices | Azure AI services APIs and Containers | Protected |
 | Microsoft.Communication | Azure Communication Services | Not protected |
 | Microsoft.Compute | Azure Virtual Machines | Protected |
@@ -205,16 +205,16 @@ The backup authentication system is supported in all cloud environments except M
 | Microsoft.Insights | Application Insights and Log Analytics | Not protected |
 | Microsoft.IoTCentral | IoT Central | Protected |
 | Microsoft.Kubernetes | Azure Kubernetes Service (AKS) | Protected |
-| microsoft.kusto | Azure Data Explorer (Kusto) | Protected |
+| Microsoft.Kusto | Azure Data Explorer (Kusto) | Protected |
 | Microsoft.LoadTestService | Visual Studio Load Testing Service | Protected |
-| microsoft.logic | Azure Logic Apps | Protected |
+| Microsoft.Logic | Azure Logic Apps | Protected |
 | Microsoft.MachineLearningServices | Machine Learning Services on Azure | Protected |
 | Microsoft.managed identity | Managed identities for Microsoft Resources | Protected |
-| microsoft.maps | Azure Maps | Protected |
-| microsoft.media | Azure Media Services | Protected |
+| Microsoft.Maps | Azure Maps | Protected |
+| Microsoft.Media | Azure Media Services | Protected |
 | Microsoft.Migrate | Azure Migrate | Protected |
 | Microsoft.MixedReality | Mixed Reality services including Remote Rendering, Spatial Anchors, and Object Anchors | Not protected |
-| microsoft.netapp | Azure NetApp Files | Protected |
+| Microsoft.NetApp | Azure NetApp Files | Protected |
 | Microsoft.Network | Azure Virtual Network | Protected |
 | Microsoft.OpenEnergyPlatform | Open Energy Platform (OEP) on Azure | Protected |
 | Microsoft.OperationalInsights | Azure Monitor Logs | Protected |
@@ -224,15 +224,15 @@ The backup authentication system is supported in all cloud environments except M
 | Microsoft.RecommendationsService | Azure AI services Recommendations API | Protected |
 | Microsoft.RecoveryServices | Azure Site Recovery | Protected |
 | Microsoft.ResourceConnector | Azure Resource Connector | Protected |
-| microsoft.scom | System Center Operations Manager (SCOM) | Protected |
-| microsoft.search | Azure Cognitive Search | Not protected |
+| Microsoft.Scom | System Center Operations Manager (SCOM) | Protected |
+| Microsoft.Search | Azure Cognitive Search | Not protected |
 | Microsoft.Security | Microsoft Defender for Cloud | Not protected |
 | Microsoft.SecurityDetonation | Microsoft Defender for Endpoint Detonation Service | Protected |
 | Microsoft.ServiceBus | Service Bus messaging service and Event Grid Domain Topics | Protected |
 | Microsoft.ServiceFabric | Azure Service Fabric | Protected |
 | Microsoft.SignalRService | Azure SignalR Service | Protected |
 | Microsoft.Solutions | Azure Solutions | Protected |
-| microsoft.sql | SQL Server on Virtual Machines and SQL Managed Instance on Azure | Protected |
+| Microsoft.Sql | SQL Server on Virtual Machines and SQL Managed Instance on Azure | Protected |
 | Microsoft.Storage | Azure Storage | Protected |
 | Microsoft.StorageCache | Azure Storage Cache | Protected |
 | Microsoft.StorageSync | Azure File Sync | Protected |
