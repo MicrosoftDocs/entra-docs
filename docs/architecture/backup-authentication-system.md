@@ -111,10 +111,10 @@ The backup authentication system is supported in all cloud environments except M
 | Box | No | SAML SP-initiated |
 | Brightspace by Desire2Leam | No | SAML SP-initiated |
 | Canvas | No | SAML SP-initiated |
-| Ceridian Dayforce human capital management (HCM) | No | SAML SP-initiated |
+| Ceridian Dayforce HCM | No | SAML SP-initiated |
 | Cisco AnyConnect | No | SAML SP-initiated |
 | Cisco Webex | No | SAML SP-initiated |
-| Citrix Azure Data Catalog SAML Connector for Azure AD | No | SAML SP-initiated |
+| Citrix ADC SAML Connector for Azure AD | No | SAML SP-initiated |
 | Clever | No | SAML SP-initiated |
 | Cloud Drive Mapper | Yes | Protected |
 | Cornerstone Single Sign-on | No | SAML SP-initiated |
@@ -129,7 +129,7 @@ The backup authentication system is supported in all cloud environments except M
 | Kronos | Yes \* | Protected |
 | Madrasati App | No | SAML SP-initiated |
 | OpenAthens | No | SAML SP-initiated |
-| Oracle Fusion enterprise resource planning (ERP) | No | SAML SP-initiated |
+| Oracle Fusion ERP | No | SAML SP-initiated |
 | Palo Alto Networks - GlobalProtect | No | SAML SP-initiated |
 | Polycom - Skype for Business Certified Phone | Yes | Protected |
 | Salesforce | No | SAML SP-initiated |
