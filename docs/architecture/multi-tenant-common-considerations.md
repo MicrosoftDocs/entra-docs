@@ -202,13 +202,13 @@ Exchange Online limits certain functionality for external users. You can lessen 
 
 For example:
 
-`set-mailuser[ExternalUserUPN] -HiddenFromAddressListsEnabled:\$false\`
+`Set-MailUser [ExternalUserUPN] -HiddenFromAddressListsEnabled:\$false\`
 
 Where **ExternalUserUPN** is the calculated **UserPrincipalName.**
 
 For example:
 
-`set-mailuserexternaluser1_contoso.com#EXT#@fabricam.onmicrosoft.com\ -HiddenFromAddressListsEnabled:\$false`
+`Set-MailUser externaluser1_contoso.com#EXT#@fabricam.onmicrosoft.com\ -HiddenFromAddressListsEnabled:\$false`
 
 External users might be unhidden in the Microsoft 365 admin center.
 
