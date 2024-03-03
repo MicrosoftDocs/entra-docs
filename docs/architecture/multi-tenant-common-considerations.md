@@ -48,7 +48,7 @@ Synchronization requirements are unique to your organization's specific needs. A
 
 ### Inviting an external user with UPN versus SMTP Address
 
-Microsoft Entra B2B expects that a user's **UserPrincipalName** (user principal name (UPN)) is the primary Simple Mail Transfer Protocol (SMTP) (Email) address for sending invitations. When the user's UPN is the same as their primary SMTP address, B2B works as expected. However, if the UPN is different than the external user's primary SMTP address, it might fail to resolve when a user accepts an invitation, which might be a challenge if you don't know the user's real UPN. You need to discover and use the UPN when sending invitations for B2B.
+Microsoft Entra B2B expects that a user's **UserPrincipalName** (UPN) is the primary Simple Mail Transfer Protocol (SMTP) (Email) address for sending invitations. When the user's UPN is the same as their primary SMTP address, B2B works as expected. However, if the UPN is different than the external user's primary SMTP address, it might fail to resolve when a user accepts an invitation, which might be a challenge if you don't know the user's real UPN. You need to discover and use the UPN when sending invitations for B2B.
 
 The [Microsoft Exchange Online](#microsoft-exchange-online) section of this article explains how to change the default primary SMTP on external users. This technique is useful if you want all email and notifications for an external to flow to the real primary SMTP address as opposed to the UPN. It might be a requirement if the UPN isn't route-able for mail flow.
 
