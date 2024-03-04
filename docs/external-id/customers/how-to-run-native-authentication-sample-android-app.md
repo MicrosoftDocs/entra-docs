@@ -105,7 +105,7 @@ The sample app supports the following flows:
  
 - _Email + one-time passcode_: Follow this flow to sign in or sign up with an email and a one-time passcode. 
 - _Email + password_: Follow this flow to sign in or sign up with an email, password, and one-time passcode. 
-- _Email + password sign up with user attributes_: Follow this flow to sign up with email, password, and user attributes. 
+- _Email + password sign-up with user attributes_: Follow this flow to sign up with email, password, and user attributes. 
 - _Password reset_: Follow this flow to reset the password. 
 - _Fallback to web browser_: Follow this flow to use the browser to sign in or sign up. 
 - _Access Protected API_: Follow this flow to call a protected API.
