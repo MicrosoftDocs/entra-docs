@@ -127,7 +127,7 @@ Below are the configuration steps to complete the OAuth/OIDC federation setup:
 
     c. Paste the **Open ID Connect metadata document** value in the **Issuer** field, which you have copied from Entra page and exclude `.well-known/openid-configuration` from the copied value. 
 
-4. Perform the following steps in the below page.
+4. Perform the following steps for the fields shown in the below screenshot.
 
     ![Screenshot of showing client id oidc setup.](./media/hashicorp-tutorial/client-id.png)
 
@@ -137,7 +137,7 @@ Below are the configuration steps to complete the OAuth/OIDC federation setup:
 
     c. In the **Signing Algorithms** field, click add to **rs256**.
 
-5. Perform the following steps in the below page.
+5. Perform the following steps for the fields shown in the below screenshot.
 
     ![Screenshot of showing URL prefix oidc setup.](./media/hashicorp-tutorial/save-button.png)
 
