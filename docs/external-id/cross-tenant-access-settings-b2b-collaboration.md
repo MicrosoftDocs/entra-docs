@@ -4,7 +4,7 @@ description: Use cross-tenant collaboration settings to manage how you collabora
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/24/2024
+ms.date: 03/01/2024
 
 ms.author: mimart
 author: msmimart
@@ -170,6 +170,17 @@ With inbound settings, you select which external users and groups are able to ac
     :::image type="content" source="media/cross-tenant-access-settings-b2b-collaboration/generic-inbound-applications-add.png" alt-text="Screenshot showing selecting applications.":::
 
 1. Select **Save**.
+
+### Add Microsoft Admin Portal apps to B2B collaboration
+
+You can't directly add Microsoft Admin Portal apps to the inbound access settings under the cross-tenant access settings in the Microsoft Entra admin center. However, you can add these apps individually by using [Microsoft Graph API](/graph/api/crosstenantaccesspolicy-post-partners).
+
+The following apps are part of the Microsoft Admin Portal app group: 
+- Azure Portal (c44b4083-3bb0-49c1-b47d-974e53cbdf3c)
+- Microsoft Entra Admin Center (c44b4083-3bb0-49c1-b47d-974e53cbdf3c)
+- Microsoft 365 Defender Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775)
+- Microsoft Intune Admin Center (80ccca67-54bd-44ab-8625-4b79c4dc7775)
+- Microsoft Purview Compliance Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775)
 
 ### Configure redemption order (Preview)
 
