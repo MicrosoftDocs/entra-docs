@@ -25,7 +25,8 @@ In this tutorial, you'll learn how to integrate HPE Aruba Networking EdgeConnect
 To integrate Microsoft Entra ID with HPE Aruba Networking EdgeConnect Orchestrator, you need:
 
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-* HPE Aruba Networking EdgeConnect Orchestrator single sign-on (SSO) enabled subscription.
+* HPE Aruba Networking EdgeConnect Orchestrator version 9.4.1 or newer.
+
 
 ## Scenario description
 
@@ -40,7 +41,8 @@ To configure the integration of HPE Aruba Networking EdgeConnect Orchestrator in
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. In the **Add from the gallery** section, type **HPE Aruba Networking EdgeConnect Orchestrator** in the search box.
-1. Select **HPE Aruba Networking EdgeConnect Orchestrator** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+1. Select **HPE Aruba Networking EdgeConnect Orchestrator** tile from results panel. Enter a **name**, and click **Create** to add the app. Wait a few seconds while the app is added to your tenant.
+   ![Screenshot shows how to select HPE Aruba Networking EdgeConnect Orchestrator](https://github.com/MicrosoftDocs/entra-docs/assets/8731469/b613e7a2-323b-4f00-b508-397f053c4c7a)
 
 Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
@@ -62,7 +64,8 @@ To configure and test Microsoft Entra SSO with HPE Aruba Networking EdgeConnect 
 Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **HPE Aruba Networking EdgeConnect Orchestrator** > **Single sign-on**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications**. In the search bar, type the name of the **HPE Aruba Networking EdgeConnect Orchestrator** app you created earlier. The **Overview** page opens.
+1. In the left pane, under **Manage**, click **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -70,27 +73,60 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier** text box, type a URL using the following pattern:
-    `https://<SUBDOMAIN>.silverpeak.cloud/gms/rest/authentication/saml2/consume`
+    a. You must enter the values of **Identifier (Entity ID)** text box, **Reply URL (Assertion Consumer Service URL)** text box, and Logout Url (Optional) values. To find these values, first, **log in to Orchestrator** and navigate to the **Authentication** dialog box **(Orchestrator > Users & Authentication > Authentication)**.
+   
+    ![Screenshot shows how to navigate to Authentication dialog](https://github.com/MicrosoftDocs/entra-docs/assets/8731469/bd037628-42a2-4349-83f6-54ddf3dbc1af)
 
-    b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://<SUBDOMAIN>.silverpeak.cloud/gms/rest/authentication/saml2/consume`
+    b. In the **Authentication** dialog, click **+Add New Server**.
 
-1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
+    c. Select **SAML** from the **Type** field.
 
-    In the **Sign-on URL** text box, type a URL using the following pattern:
-    `https://<SUBDOMAIN>.silverpeak.cloud`
+    d. In the **Name** field, enter a name for your your SAML configuration.
 
-	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [HPE Aruba Networking EdgeConnect Orchestrator support team](mailto:support@silver-peak.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+    e. Click the copy icon next to the **ACS URL** field.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
+    f. Go to the **Basic SAML Configuration** section on Microsoft **Set up single sign-on with SAML** page:
+	
+ 	- Under **Identifier (Entity ID)**, click **Add identifier** link. Paste the ACS URL value on the Identifier field.
+
+	- Under **Reply URL (Assertion Consumer Service URL)**, click **Add reply URL link**. Paste the same ACS URL value on the Reply URL field.
+
+	- Under **Logout URL (Optional)**, paste the **EdgeConnect SLO Endpoint** value from the Orchestrator’s Remote Authentication Server page as shown on the image below:
+
+	> [!NOTE] **IMPORTANT**:
+	> On self-hosted Orchestrators, if the Orchestrator is displaying the private IP address of it on the ACS URL field and the EdgeConnect SLO Endpoint field, please update it with the public IP address of the Orchestrator. As shown on the screenshot below, all five fields must contain the public IP address of the Orchestrator (not the private IP):
+
+	![Screenshot shows how to configure Basic SAML Configuration section](https://github.com/MicrosoftDocs/entra-docs/assets/8731469/f946920c-2583-49ce-bbc5-369724835fc3)
+
+    g. Click **Save** to close the **Basic SAML Configuration** section
+
+1. On the **Set up single sign-on with SAML** page, in the **Attributes & Claims** section, click the edit icon and copy the highlighted entry below, and paste the information into the **Username Attribute** field in Orchestrator as shown below:
+
+	![Screenshot shows how to configure username attribute.](https://github.com/MicrosoftDocs/entra-docs/assets/8731469/2115afb6-12c4-4174-8c21-323cda042741)
+
+
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate:
 
 	![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
 
-1. On the **Set up HPE Aruba Networking EdgeConnect Orchestrator** section, copy the appropriate URL(s) based on your requirement.
+1. Open the certificate using a text editor such as Notepad. Copy and paste the content of the certificate on the **IdP X.509 Cert** field in Orchestrator as shown below:
 
-	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
+	![Screenshot shows how to configure certificate.](https://github.com/MicrosoftDocs/entra-docs/assets/8731469/1a0c0ef3-4cca-4240-9178-cca926975b5d)
+
+1. On the **Set up single sign-on with SAML** page, in the **Set up HPE Aruba Networking EdgeConnect Orchestrator** section, copy the **Microsoft Entra Identifier** and paste it into the **Issuer URL** field in Orchestrator:
+
+	![Screenshot shows how to configure Issuer URL.](https://github.com/MicrosoftDocs/entra-docs/assets/8731469/2b542dc3-195e-428f-8ea9-35a07d03744a)
+
+1. Click the Properties tab and copy the **User access URL** and paste it into the **SSO Endpoint** field in Orchestrator as shown below: 
+
+	![Screenshot shows how to configure SSO Endpoint.](https://github.com/MicrosoftDocs/entra-docs/assets/8731469/b6a994a2-8208-43b4-a3b9-250fdbcc6c37)
+
+1. On the Orchestrator Remote Authentication Server dialog, set the **Default role** field. Example: SuperAdmin. (This is the last item on the dropdown list)
+   The Default role is needed if you did not define Role Based Access Control (RBAC) in the user attributes in the Attributes & Claims section.
+   
+1. Click **Save** on the Remote Authentication Server dialog.
+   
+1. You have successfully configured SAML SSO authentication on the Orchestrator. The next step is to create a test user and assign the Orchestrator application to that user to verify if SAML is configured successfully. 
 
 ### Create a Microsoft Entra ID test user
 
