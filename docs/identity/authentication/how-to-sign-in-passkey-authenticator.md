@@ -262,4 +262,4 @@ This article shows how to sign in with a passkey in Microsoft Authenticator on y
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-options.png" alt-text="Screenshot of the sign-in options in Microsoft Authenticator for Android devices.":::
 
-
+---
