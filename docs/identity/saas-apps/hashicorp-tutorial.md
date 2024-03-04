@@ -52,15 +52,15 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     1. Click **Go to application**.
 
-        ![Screenshot of showing the identity configuration.](./media/hashicorp-tutorial/entra.png)
+        ![Screenshot of showing the identity configuration.](./media/hashicorp-tutorial/go-to-application.png)
 
     1. Copy **Application (client) ID** and use it later in the HashiCorp Boundary side configuration.
 
-        ![Screenshot of application client values.](./media/hashicorp-tutorial/value.png)
+        ![Screenshot of application client values.](./media/hashicorp-tutorial/application-id.png)
 
     1. Under **Endpoints** tab, copy **OpenID Connect metadata document** link and use it later in the HashiCorp Boundary side configuration.
 
-        ![Screenshot of showing the endpoints on tab.](./media/hashicorp-tutorial/end.png)
+        ![Screenshot of showing the endpoints on tab.](./media/hashicorp-tutorial/endpoints.png)
 
 1. Navigate to **Authentication** tab on the left menu and perform the following steps:
 
@@ -68,17 +68,14 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     
     1. In the **Front-channel logout URL** give the value as `<Hashicorp-Cluster-URL>:3000`and click **Configure**.
 
-        ![Screenshot of showing the redirect values.](./media/hashicorp-tutorial/direct.png)
+        ![Screenshot of showing the redirect values.](./media/hashicorp-tutorial/authentication.png)
 
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
 
     1. Go to **Client secrets** tab and click **+New client secret**.
-        
-        ![Screenshot of showing the client secrets value.](./media/hashicorp-tutorial/secret.png)
-
     1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and click **Add**.
-        
-        ![Screenshot of showing Description for the client secret.](./media/hashicorp-tutorial/expire.png)
+
+        ![Screenshot of showing the client secrets value.](./media/hashicorp-tutorial/client-secret.png)
 
     1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the HashiCorp Boundary side configuration.
 
@@ -122,7 +119,7 @@ Below are the configuration steps to complete the OAuth/OIDC federation setup:
 
 3. Perform the following steps in the **New Auth Method** tab.
 
-    ![Screenshot of showing oidc setup.](./media/hashicorp-tutorial/auth-methods.png)
+    ![Screenshot of showing oidc setup.](./media/hashicorp-tutorial/new-auth.png)
 
     a. In the **Name** field, enter the name for identification.
 
@@ -130,14 +127,22 @@ Below are the configuration steps to complete the OAuth/OIDC federation setup:
 
     c. Paste the **Open ID Connect metadata document** value in the **Issuer** field, which you have copied from Entra page and exclude `.well-known/openid-configuration` from the copied value. 
 
-    d. In the **Client ID** field, paste the **Application ID** value, which you have copied from Entra page.
+4. Perform the following steps in the below page.
 
-    e. In the **Client Secret** field, paste the value, which you have copied from **Certificates & secrets** section at Entra side.
+    ![Screenshot of showing oidc setup.](./media/hashicorp-tutorial/client-id.png)
 
-    f. In the **Signing Algorithms** field, click add to **rs256**.
+    a. In the **Client ID** field, paste the **Application ID** value, which you have copied from Entra page.
 
-    g. In the **API URL Prefix**, enter the value of `<Hashicorp-Cluster-URL>`.
+    b. In the **Client Secret** field, paste the value, which you have copied from **Certificates & secrets** section at Entra side.
 
-    h. Click **SAVE**.
+    c. In the **Signing Algorithms** field, click add to **rs256**.
 
-    i. Copy the **callback URL** value, which is generated once you click the save button and use it later in the Entra side configuration.
+5. Perform the following steps in the below page.
+
+    ![Screenshot of showing oidc setup.](./media/hashicorp-tutorial/save-button.png)
+
+    a. In the **API URL Prefix**, enter the value of `<Hashicorp-Cluster-URL>`.
+
+    b. Click **SAVE**.
+
+    c. Copy the **callback URL** value, which is generated once you click the save button and use it later in the Entra side configuration.
