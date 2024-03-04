@@ -11,7 +11,6 @@ ms.date: 06/09/2023
 ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal, it-pro, has-azure-ad-ps-ref
-
 ---
 
 # Create or delete administrative units
@@ -32,7 +31,7 @@ This article describes how to create or delete administrative units to restrict 
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
 - Azure AD PowerShell module when using PowerShell
 - AzureADPreview module when using PowerShell and restricted management administrative units
-- Admin consent when using Graph explorer for Microsoft Graph API
+- Admin consent when using Graph Explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
@@ -119,7 +118,7 @@ $restrictedAU = New-AzureADMSAdministrativeUnit -DisplayName "Contoso Executive 
 
 ### Microsoft Graph API
 
-Use the [Create administrativeUnit](/graph/api/directory-post-administrativeunits?branch=main) API to create a new administrative unit.
+Use the [Create administrative unit](/graph/api/directory-post-administrativeunits?branch=main) API to create a new administrative unit.
 
 Request
 
@@ -136,7 +135,7 @@ Body
 }
 ```
 
-Use the [Create administrativeUnit (beta)](/graph/api/directory-post-administrativeunits?view=graph-rest-beta&preserve-view=true&branch=main) API to create a new restricted management administrative unit. Set the `isMemberManagementRestricted` property to `true`.
+Use the [Create administrative unit (beta)](/graph/api/directory-post-administrativeunits?view=graph-rest-beta&preserve-view=true&branch=main) API to create a new restricted management administrative unit. Set the `isMemberManagementRestricted` property to `true`.
 
 Request
 
@@ -206,7 +205,7 @@ Remove-AzureADMSAdministrativeUnit -Id $adminUnitObj.Id
 
 ### Microsoft Graph API
 
-Use the [Delete administrativeUnit](/graph/api/administrativeunit-delete) API to delete an administrative unit.
+Use the [Delete administrative unit](/graph/api/administrativeunit-delete) API to delete an administrative unit.
 
 ```http
 DELETE https://graph.microsoft.com/v1.0/directory/administrativeUnits/{admin-unit-id}
