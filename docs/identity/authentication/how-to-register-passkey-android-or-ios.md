@@ -1,6 +1,6 @@
 ---
-title:  Register a passkey on Android or iOS
-description: User registration and management of passkey on Android or iOS device
+title:  Register a passkey on Android or iOS device
+description: Registration and management of passkey on Android or iOS device
 
 services: active-directory
 ms.service: active-directory
@@ -15,7 +15,7 @@ ms.reviewer: calui
 
 ms.collection: M365-identity-device-management
 ---
-# Register a passkey on Android or iOS
+# Register a passkey on Android or iOS device
 
 This article shows how to use your Android or iOS device to register and sign-in with a passkey (FIDO2). 
 

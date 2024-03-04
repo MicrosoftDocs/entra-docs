@@ -1,6 +1,6 @@
 ---
-title: Register Microsoft Authenticator passkey on iOS in MySecurityInfo
-description: User registration and management of passkey with Authenticator on iOS 
+title: Register Microsoft Authenticator passkey on Android or iOS device in MySecurityInfo
+description: Registration and management of passkey with Authenticator on iOS in MySecurityInfo
 
 services: active-directory
 ms.service: active-directory
@@ -15,7 +15,7 @@ ms.reviewer: calui
 
 ms.collection: M365-identity-device-management
 ---
-# Register Microsoft Authenticator in MySecurityInfo
+# Register Microsoft Authenticator passkey on Android or iOS device in MySecurityInfo
 
 # [iOS](#tab/iOS)
 

@@ -1,6 +1,6 @@
 ---
-title: Create a passkey for mobile device in Microsoft Authenticator
-description: Learn how to create a passkey for your mobile device with Microsoft Authenticator
+title: Create a passkey for Android or iOS device in Microsoft Authenticator
+description: Learn how to create a passkey for Android or iOS device with Microsoft Authenticator
 
 services: active-directory
 ms.service: active-directory
@@ -15,7 +15,7 @@ ms.reviewer: calui
 
 ms.collection: M365-identity-device-management
 ---
-# Create a passkey for iOS device using interrupt method in Microsoft Authenticator
+# Create a passkey for Android or iOS device in Microsoft Authenticator
 
 # [iOS](#tab/iOS)
 
