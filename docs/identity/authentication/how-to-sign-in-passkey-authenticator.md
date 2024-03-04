@@ -1,6 +1,6 @@
 ---
-title: Create a passkey for iOS device using interrupt method in Microsoft Authenticator
-description: Learn how to create a passkey for your iOS device with Microsoft Authenticator
+title: Create a passkey for mobile device in Microsoft Authenticator
+description: Learn how to create a passkey for your mobile device with Microsoft Authenticator
 
 services: active-directory
 ms.service: active-directory
