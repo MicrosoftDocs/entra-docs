@@ -27,8 +27,8 @@ The following table shows what is required to use each workflow trigger in a hyb
 
 |Workflow Trigger  |Hybrid requirements  |
 |---------|---------|
-|Attribute changes (preview)     | No further configuration needed as long as attributes are synced.       |
-|Group membership based  (preview)   | No further configuration needed. Also works for on-premises groups as long as they're synced.        |
+|Attribute changes (preview)     | No further configuration needed as long as attributes are synced. For information on synced attributes, see: [Attribute mapping in Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/how-to-attribute-mapping.md) and [Microsoft Entra Connect Sync: Directory extensions](../identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md).       |
+|Group membership based  (preview)   | Group needs to have a presence in Microsoft Entra ID. If the group is synced in, there might be a delay, as processing starts once the change is synced into Microsoft Entra ID.       |
 |On-demand     |   No further configuration needed.      |
 |Time based    |  **employeeHireDate**, **employeeLeaveDateTime**: These attributes must be synced before being used. For more information on this process, see: [How to synchronize attributes for Lifecycle workflows](./how-to-lifecycle-workflow-sync-attributes.md).<br></br>**createdDateTime**: No further requirements needed. This date is the day the user account is synced to Microsoft Entra ID, not when they were created within Active Directory.       |
 
@@ -39,6 +39,8 @@ All Lifecycle workflow tasks work for both cloud, and hybrid, users out of the b
 
 ### Group tasks
 
+The group membership trigger works with on-prem Active Directory to Microsoft Entra ID synced groups.
+
 Tasks related to adding and removing users to a group work as long as the hybrid groups that you're adding users to, or removing users from, are also be synced to Microsoft Entra ID. You can enable access from on-premises Active Directory to Microsoft Entra ID by using [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
 
 ## User account tasks (preview)
@@ -47,9 +49,9 @@ Tasks related to enabling, disabling, and deleting user accounts work with hybri
 
 - You must have the [Microsoft Entra provisioning agent](../identity/hybrid/cloud-sync/what-is-provisioning-agent.md) installed in your environment. For prerequisites on installing the Microsoft Entra provisioning agent, see: [Cloud provisioning agent requirements](../identity/hybrid/cloud-sync/how-to-prerequisites.md#cloud-provisioning-agent-requirements). For a step by step guide on installing the Microsoft Entra Provisioning agent, see: [Install the Microsoft Entra Provisioning Agent](../identity/hybrid/cloud-sync/how-to-install.md). During installation, choose “**HR-driven provisioning / Microsoft Entra Connect Sync**” as “**extension configuration**”. You aren't required to add any other configuration for the provisioning agent, such as the cloud sync configuration, and you can install the provisioning agent even if you're also currently using Microsoft Entra Connect Sync for your user synchronization.
 
-- Ensure the gMSA used by the provisioning agent has the [appropriate permissions](../identity/hybrid/cloud-sync/how-to-prerequisites.md#custom-gmsa-account) to delete user accounts.
+- Ensure the gMSA used by the provisioning agent has the [appropriate permissions](../identity/hybrid/cloud-sync/how-to-prerequisites.md#custom-gmsa-account) to perform operations to user accounts.
 
-- Enable the Active Directory recycle bin. For a step-by-step guide on enabling the recycle bin, see: [Active Directory Recycle Bin step-by-step](/windows-server/identity/ad-ds/get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-#active-directory-recycle-bin-step-by-step).
+- To delete users accounts, you must enable the Active Directory recycle bin. For a step-by-step guide on enabling the recycle bin, see: [Active Directory Recycle Bin step-by-step](/windows-server/identity/ad-ds/get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-#active-directory-recycle-bin-step-by-step).
 
 For a step by step guide on setting the flag so that user account tasks run for hybrid users, see: [Manage user account tasks for hybrid users (preview)](./manage-workflow-onprem.md).
 
