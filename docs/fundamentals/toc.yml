@@ -48,7 +48,7 @@ items:
     - name: Reset a user's password
       href: users-reset-password-azure-portal.md
     - name: Restore a deleted user
-      href: users-restore.md
+      href: users-restore.yml
     - name: Set default user permissions
       href: users-default-permissions.md
   - name: Groups
