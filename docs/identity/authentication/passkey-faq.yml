@@ -20,9 +20,9 @@ sections:
   - name: General
     questions:
       - question: |
-          
+          Why don't I see an option to sign in to Microsoft Entra ID by using certificates after I enter my username?
         answer: |
-        
+          An administrator needs to enable CBA for the tenant to make the sign-in with certificate option available for users. For more information, see [Step 3: Configure authentication binding policy](how-to-certificate-based-authentication.md#step-3-configure-authentication-binding-policy).
       - question: |
            
         answer: |
