@@ -1,6 +1,6 @@
 ---
 title: Sign in user after sign-up in Android
-description: Learn how to implement sign in user after sign-up.
+description: Learn how to implement user sign-in after sign-up in native authentication Android app.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -10,37 +10,33 @@ ms.service: active-directory
 
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 02/13/2024
+ms.date: 02/29/2024
 ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to sign in user after sign up.
 ---
 
-# Tutorial: Sign in user after sign-up in Android
+# Tutorial: Sign in user after sign-up in Android 
  
-This tutorial demonstrates how to sign in user after sign-up. 
+This tutorial demonstrates how to sign in user after sign-up.  
  
-In this tutorial, you learn how to: 
+In this tutorial, you learn how to:  
  
-- Sign in after sign-up.
-- Handle errors.
+- Sign in after sign-up. 
+- Handle errors. 
  
-## Prerequisites 
+## Prerequisites  
  
-- Reference to SDK doc 
-- [Sign in users in a sample native Android mobile application](how-to-run-sample-android-app.md) 
-- [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-up-sign-in-sign-out.md) 
+- Reference to SDK doc  
+- [Sign in users in a sample native Android mobile application](how-to-run-native-authentication-sample-android-app.md)  
+- [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md)  
  
-## Sign in after sign-up 
+## Sign in after sign-up  
  
-This is an advanced version of the sign in flows [earlier described](tutorial-native-authentication-android-sign-in-user-with-username-password.md), which has the added benefit of automatically signing in after successfully signing up. 
-
-The following wire frame shows a high-level view of the sign in after sign-up  flow:
-
-:::image type="content" source="media/native-authentication/android/android-sign-in-after-sign-up-flow.png" alt-text="Screenshot that illustrates how to sign in user after sign-up.":::
+This is an advanced version of the sign in flows [earlier described](tutorial-native-authentication-android-sign-in-user-with-username-password.md), which has the added benefit of automatically signing in after successfully signing up.
  
-The `SignUpResult.Complete` returns `SignInContinuationState` object. And `SignInContinuationState` provides access to `signIn()` method. 
+The `SignUpResult.Complete` returns `SignInContinuationState` object. And `SignInContinuationState` provides access to `signIn()` method.  
  
-To sign up a user with email and password and then sign them in, you can use the following code snippet: 
+To sign up a user with email and password and then sign them in, you can use the following code snippet:  
  
 ```kotlin 
 CoroutineScope(Dispatchers.Main).launch { 
@@ -58,19 +54,24 @@ CoroutineScope(Dispatchers.Main).launch {
             val signInContinuationState = actionResult.nextState 
             val signInActionResult = signInContinuationState.signIn() 
             if (signInActionResult is SignInResult.Complete) { 
-                // Handle sign in success 
-                val accountState = result.resultValue 
+                // Handle sign in success
+                val accountState = signInActionResult.resultValue
+                val accessTokenResult = accountState.getAccessToken()
+                if (accessTokenResult is GetAccessTokenResult.Complete) {
+                    val accessToken = accessTokenResult.resultValue.accessToken
+                    val idToken = accountState.getIdToken()
+                }
             } 
         } 
     } 
-} 
+}
 ``` 
  
-## Handle errors
+## Handle errors 
 
-The `SignInContinuationState.signIn()` method can return `SignInResult.Complete` after successfully signing in, or if there is an error.
+The `SignInContinuationState.signIn()` method can return `SignInResult.Complete` after successfully signing in, or if there is an error. 
  
-To handle errors in `SignInContinuationState.signIn()`, use the following code snippet: 
+To handle errors in `SignInContinuationState.signIn()`, use the following code snippet:  
  
 ```kotlin 
 val signInContinuationState = actionResult.nextState 
@@ -91,15 +92,15 @@ when (signInActionResult) {
 
 private fun displayAccount(accountState: AccountState) {
     CoroutineScope(Dispatchers.Main).launch {
-        val accessTokenState = accountState.getAccessToken()
-        if (accessTokenState is GetAccessTokenResult.Complete) {
-            val accessToken = accessTokenState.resultValue.accessToken
+        val accessTokenResult = accountState.getAccessToken()
+        if (accessTokenResult is GetAccessTokenResult.Complete) {
+            val accessToken = accessTokenResult.resultValue.accessToken
             val idToken = accountState.getIdToken()
         }
     }
 }
 ``` 
  
-## Next steps 
- 
-[Tutorial: Reset password of a user](tutorial-native-authentication-android-self-service-password-reset.md) 
+## Next steps
+
+[Tutorial: Self-service password reset](tutorial-native-authentication-android-self-service-password-reset.md)  

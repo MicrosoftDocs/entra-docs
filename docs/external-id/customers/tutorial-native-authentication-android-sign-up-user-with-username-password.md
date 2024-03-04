@@ -10,47 +10,38 @@ ms.service: active-directory
 
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 02/13/2024
+ms.date: 02/23/2024
 ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to sign up user with username and password.
 ---
 
-# Tutorial: Sign up user with username and password 
+# Tutorial: Sign up user with username and password  
  
-This tutorial demonstrates how to sign up a user with a username, password, and uses one-time passcode for validation of the user's email address. 
+This tutorial demonstrates how to sign up a user with a username, password, and uses one-time passcode for validation of the user's email address.  
  
-In this tutorial, you learn how to: 
- 
-- Sign up user with username and password. 
+In this tutorial, you learn how to:  
+  
+- Sign up user with username and password.  
 - Handle errors. 
+  
+## Prerequisites  
+  
+- An Android project.
+- [How to run the Android sample app](how-to-run-native-authentication-sample-android-app.md). Ensure that when creating the user flow, you select **Email with password**.
+- [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md). 
  
-## Prerequisites 
+## Sign up user with username and password  
  
-- An Android project. 
-- User-flow with an **Email with password**: 
-  - [Register application in Microsoft Entra External ID for customers tenant](how-to-run-sample-android-app.md#register-an-application).
-  - [Enable public client and native authentication flows](how-to-run-sample-android-app.md#enable-public-client-and-native-authentication-flows).
-  - [Grant API permissions](how-to-run-sample-android-app.md#grant-api-permissions).
-  - [Create a user flow](how-to-run-sample-android-app.md#create-a-user-flow).
-  - [Associate the Android app with the user flow](how-to-run-sample-android-app.md#associate-the--app-with-the-user-flow).
-- [Tutorial: Add sign up, sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-up-sign-in-sign-out.md).
+To sign up user using username (email address) and password, we need to verify the email through email one-time passcode.
  
-## Sign up user with username and password 
+We'll use the `signUp(username, password)` method, which in most common scenario returns `SignUpResult.CodeRequired`, which indicates that the API expects a code to be sent back to verify the email address.
  
-To sign up user using username (email address) and password, we need to verify the email through email one-time passcode (OTP). 
-
-The following wire frame shows a high-level view of the sign-up user with username and password flow:
-
-:::image type="content" source="media/native-authentication/android/sign-up-email-password.png" alt-text="Screenshot that illustrates registering a user with a username and password.":::
- 
-We'll use the `signUp(username, password)` method, which in most common scenario responds with `SignUpResult.CodeRequired`, which indicates that the API expects a code to be sent back to verify the email address. 
- 
-To implement the `signUp(username, password)`, use the following code snippet: 
+To implement the `signUp(username, password)`, use the following code snippet:  
  
 ```kotlin 
 CoroutineScope(Dispatchers.Main).launch { 
     val actionResult = authClient.signUp( 
-        username = emailAddress, 
+        username = email, 
         password = password 
     ) 
     if (actionResult is SignUpResult.CodeRequired) { 
@@ -59,12 +50,12 @@ CoroutineScope(Dispatchers.Main).launch {
 } 
 ``` 
  
-The `SignUpCodeRequiredState` state gives us access to two methods: 
+The `SignUpCodeRequiredState` state gives us access to two methods:  
  
 - `submitCode()` 
 - `resendCode()` 
  
-To submit the code that the user supplied us with, use: 
+To submit the code that the user supplied us with, use:  
  
 ```kotlin 
 val nextState = actionResult.nextState 
@@ -73,14 +64,14 @@ nextState.submitCode(
 ) 
 ``` 
  
-The `submitCode()` returns `SignUpResult.Complete`, which indicates that the flow is complete and the user has been signed up. 
+The `submitCode()` returns `SignUpResult.Complete`, which indicates that the flow is complete and the user has been signed up.  
  
-To implement the full flow, use: 
+To implement the full flow, use:  
  
 ```kotlin 
 CoroutineScope(Dispatchers.Main).launch { 
     val actionResult = authClient.signUp( 
-        username = emailAddress, 
+        username = email, 
         password = password 
     ) 
     if (actionResult is SignUpResult.CodeRequired) { 
@@ -95,27 +86,29 @@ CoroutineScope(Dispatchers.Main).launch {
 } 
 ```
  
-## Handle errors 
+## Handle errors  
  
-The `signUp()` action return results denoted by a dedicated results class `SignUpResult`. These can be of type:
+The `signUp()` action return results denoted by a dedicated results class `SignUpResult`. These can be of type: 
 - `SignUpResult.Complete`
 - `SignUpResult.CodeRequired`
 - `SignUpResult.AttributesRequired`
 - `SignUpError`
 
-In the case of `SignUpError`, the SDK provides utility methods  for further analyzing the specific type of error returned:
+In the case of `SignUpError`, the SDK provides utility methods  for further analyzing the specific type of error returned: 
 - `isUserAlreadyExists()`
 - `isInvalidAttributes()`
 - `isInvalidUsername()`
 - `isBrowserRequired()`
+- `isAuthNotSupported()`
 
-Errors such as these indicate that the previous operation was unsuccessful, and because of that they don't include a reference to a new state.
+Errors such as these indicate that the previous operation was unsuccessful, and because of that they don't include a reference to a new state. 
 
-To check the errors such as a user using a registered email, invalid password, or invalid email address, use the following code snippet:
+To check the errors such as a user using a registered email, invalid password, or invalid email address, use the following code snippet: 
  
 ```kotlin 
 val actionResult = authClient.signUp(
-    username = emailAddress
+    username = email
+    password = password
 )
 if (actionResult is SignUpResult.CodeRequired) {
     // Next step: submit code
@@ -133,7 +126,7 @@ if (actionResult is SignUpResult.CodeRequired) {
 }
 ```
  
-Use the following code snippet to check for errors when a user is using invalid one-time passcode: 
+Use the following code snippet to check for errors when a user is using invalid one-time passcode:  
  
 ```kotlin 
 val submitCodeActionResult = nextState.submitCode( 
@@ -146,14 +139,14 @@ if (submitCodeActionResult is SignUpResult.Complete) {
 } 
 ``` 
  
-When a user enters invalid one-time passcode, you can use the following code snippet to ask the user to enter the correct one-time passcode: 
+When a user enters invalid one-time passcode, you can use the following code snippet to ask the user to enter the correct one-time passcode:  
  
 ```kotlin 
 val submitCodeActionResult = nextState.submitCode( 
     code = code 
 ) 
-if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode) { 
-    // Inform the user that the submitted code was incorrect and ask for a new code to be supplied 
+if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode()) { 
+    // Inform the user that the submitted code was incorrect or invalid and ask for a new code to be supplied 
     val newCode = retrieveNewCode() 
     nextState.submitCode( 
         code = newCode 
@@ -161,6 +154,6 @@ if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvali
 } 
 ``` 
  
-## Next steps 
+## Next steps  
  
-[Tutorial: Sign in user with username and password](tutorial-native-authentication-android-sign-in-user-with-username-password.md)
+[Tutorial: Sign in user with username and password](tutorial-native-authentication-android-sign-in-user-with-username-password.md) 

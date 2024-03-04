@@ -10,32 +10,24 @@ ms.service: active-directory
 
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 02/13/2024
+ms.date: 02/23/2024
 ms.custom: developer, devx-track-dotnet
 #Customer intent: As a dev, devops, I want to learn about how to configure prepare your iOS app for native authentication using Microsoft Entra External ID for customers.
 ---
 
 # Tutorial: Prepare your iOS app for native authentication
 
-This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) native auth SDK framework to your iOS Swift app.
+This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) native authentication SDK framework to your iOS Swift app.
 
 In this tutorial, you learn how to:
 
-- Get the MSAL Native Auth SDK Framework code.
-- Build the MSAL Framework.
-- Embed MSAL framework in iOS app.
+- Add the MSAL framework to an iOS app.
 - Create SDK instance.
 
 ## Prerequisites
 
 - <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>
-- To use native authentication, you need to:
-
-  - [Register iOS application in Microsoft Entra External ID for customers tenant](how-to-run-sample-ios-app.md#register-an-application)
-  - [Enable public client flow](how-to-run-sample-ios-app.md#enable-public-client-and-native-authentication-flows)
-  - [Grant API permissions](how-to-run-sample-ios-app.md#grant-api-permissions)
-  - [Create a user flow](how-to-run-sample-ios-app.md#create-a-user-flow)
-  - [Associate the app with the user flow](how-to-run-sample-ios-app.md#associate-the-application-with-the-user-flow)
+- [How to run the iOS sample app](how-to-run-native-authentication-sample-ios-app.md).
 - iOS project
 
 ## Add the MSAL framework to an iOS app
@@ -65,7 +57,7 @@ For more information and other mechanisms to add MSAL to your project, see the [
            challengeTypes: [.OOB]
        )
     
-       print("Initialised Native Auth successfully.")
+       print("Initialized Native Auth successfully.")
     } catch {
        print("Unable to initialize MSAL \(error)")
     }
@@ -76,7 +68,7 @@ For more information and other mechanisms to add MSAL to your project, see the [
    1. Find the `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your Directory (tenant) subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 1. To build, select the **Product** > **Build** in your project’s toolbar.
 
-## Optional: Add Debug Logging
+### Optional: Logging configuration
 
 MSAL provides a logging API that you can use to enable and configure logging. To see all debug output from MSAL add the following code at the start of the `viewDidLoad()` function:
 
@@ -89,9 +81,9 @@ MSALGlobalConfig.loggerConfig.setLogCallback { logLevel, message, containsPII in
 }
 ```
 
-This outputs all debug logs from MSAL, which can be helpful in diagnosing issues and learning how the Native Auth flows work. To learn more about configuring log levels and best practices see [Logging in MSAL for iOS/macOS](../../identity-platform/msal-logging-ios.md).
+This outputs all debug logs from MSAL, which can be helpful in diagnosing issues and learning how the native authentication flows work. To learn more about configuring log levels and best practices see [Logging in MSAL for iOS/macOS](../../identity-platform/msal-logging-ios.md?tabs=swift).
 
 ## Next steps
 
-- [Tutorial: Add sign in and sign up with email one-time passcode](tutorial-native-auth-ios-sign-up-sign-in-sign-out.md)
+- [Tutorial: Add sign up with email one-time passcode](tutorial-native-authentication-ios-sign-up.md)
 

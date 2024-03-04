@@ -1,7 +1,7 @@
 ---
 title: "What's new in Microsoft Entra ID for customers"
 description: "New and updated documentation for the Microsoft Entra ID for customers documentation."
-ms.date: 02/01/2024
+ms.date: 03/01/2024
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: whats-new
@@ -14,6 +14,18 @@ manager: CelesteDG
 # Microsoft Entra ID for customers: What's new
 
 Welcome to what's new in Microsoft Entra ID for customers documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. 
+
+## February 2024
+
+### New articles
+
+- [Test your sign-up and sign-in user flow](how-to-test-user-flows.md)
+
+### Updated articles
+
+- [Supported features in Microsoft Entra ID for customers (preview)](concept-supported-features-customers.md) - OpenID Connect and OAuth2 updates
+- [Create a customer identity and access management (CIAM) tenant (preview)](how-to-create-customer-tenant-portal.md) - Built-in role update
+
 
 ## January 2024
 

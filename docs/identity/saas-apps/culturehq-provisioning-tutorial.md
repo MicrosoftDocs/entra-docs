@@ -16,7 +16,7 @@ ms.author: thwimmer
 
 # Tutorial: Configure CultureHQ for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both CultureHQ and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [CultureHQ](https://gateway.clearviewtrade.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This tutorial describes the steps you need to perform in both CultureHQ and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [CultureHQ](https://platform.culturehq.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Supported capabilities
@@ -24,7 +24,7 @@ This tutorial describes the steps you need to perform in both CultureHQ and Micr
 > * Create users in CultureHQ.
 > * Remove users in CultureHQ when they do not require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and CultureHQ.
-> * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to CultureHQ (recommended).
+> * [Single sign-on](culturehq-tutorial.md) to CultureHQ (recommended).
 
 ## Prerequisites
 

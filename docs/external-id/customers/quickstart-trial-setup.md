@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: quickstart
-ms.date: 02/09/2024
+ms.date: 02/28/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -18,7 +18,7 @@ ms.custom: it-pro
 
 Get started with Microsoft Entra ID for customers (Preview) that lets you create secure, customized sign-in experiences for your customer-facing apps and services. With these built-in customer configuration features, Microsoft Entra ID for customers can serve as the identity provider and access management service for your customers. 
 
-In this quickstart, you'll learn how to set up a customer tenant free trial. If you already have an Azure subscription, you can create a tenant with customer configurations in the Microsoft Entra admin center. For more information about how to create a tenant, see [Set up a tenant](quickstart-tenant-setup.md). 
+In this quickstart, you'll learn how to set up a customer tenant free trial. If you're a developer using Visual Studio Code, you can also set up a free trial through the Microsoft Entra External ID extension ([learn more](visual-studio-code-extension.md)). If you already have an Azure subscription, you can create a tenant with customer configurations in the Microsoft Entra admin center. For more information about how to create a tenant, see [Set up a tenant](quickstart-tenant-setup.md).
 
 Your free trial of a tenant with customer configurations provides you with the opportunity to try new features and build applications and processes during the free trial period. Organization (tenant) admins can invite other users. Each user account can only have one active free trial tenant at a time. The free trial isn't designed for scale testing. Trial tenant will support up to 10K resources, learn more about Microsoft Entra service limits [here](~/identity/users/directory-service-limits-restrictions.md). During your free trial, you'll have the option to unlock the full set of features by upgrading to [Azure free account](https://azure.microsoft.com/free/).
 
