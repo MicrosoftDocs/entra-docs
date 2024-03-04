@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health
-ms.date: 01/16/2024
+ms.date: 03/04/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 ---
@@ -20,6 +20,8 @@ Latency is the amount of time it takes for Microsoft Entra ID reporting data to 
 When you upgrade from a free version of Microsoft Entra Premium P1 or P2, you should expect a delay of roughly 24 hours from when you upgrade your tenant before all premium reporting features show data. Many premium reporting features only begin retaining data after this 24-hour period following your upgrade.
 
 When setting up a new storage account or security information and event management (SIEM) tool, you should also expect a delay of 24 hours before reporting data appears in those tools.
+
+When routing activity logs to a Log Analytics workspace for analysis with Azure Monitor logs, you should expect a delay of up to three days before the logs appear in the workspace.
 
 ## Reporting latency factors
 

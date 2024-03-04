@@ -1,5 +1,5 @@
 ---
-title: Troubleshoot bulk changes to the verified domains of users in the audit logs
+title: Bulk changes to verified domains of users in the audit logs
 description: Troubleshoot bulk changes to UserPrincipalName in the audit logs when a verified domain changes in a Microsoft Entra ID tenant.
 
 author: shlipsey3
@@ -7,12 +7,12 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: troubleshooting
 ms.subservice: monitoring-health
-ms.date: 02/26/2024
+ms.date: 03/04/2024
 ms.author: sarahlipsey
 
 ---
 
-# Troubleshoot bulk changes to UserPrincipalName
+# Troubleshoot bulk changes of verified domains for UserPrincipalName
 
 This article describes a common scenario where the audit logs display many `UserPrincipalName` updates triggered by a verified domain change. This article explains the causes and considerations for these changes and provides a deep dive into the backend operation that triggers mass object changes in Microsoft Entra ID.
 
@@ -44,53 +44,21 @@ The bulk updates involve changing the domain for the `UserPrincipalName` changed
 
 **Target Type**: User
 
-**Details**:
+Within the full details of the audit log entry, look for the `modifiedProperties` section. This section shows the changes made to the user object. The `oldValue` and `newValue` fields show the domain change.
 
 ```json
-{
-"id": "Directory_0000000-1111111",
-"category": "UserManagement",
-"correlationId": "aaaaaa-111111-0000-bbbbbbb",
-"result": "success",
-"resultReason": "",
-"activityDisplayName": "Update user",
-"activityDateTime": "2022-01-27T07:44:05.7673032Z",
-"loggedByService": "Core Directory",
-"operationType": "Update",
-"userAgent": null,
-"initiatedBy": { "user": null, "app": null },
-"targetResources": [ {
-  "id": "aaaaaaaaa-bbbb-0000-11111-bbbbbbbbbbbbb",
-  "displayName": null,
-"type": "User",
-"userPrincipalName": "user@contoso.com",
-"groupType": null,
-"modifiedProperties": [ {
+"modifiedProperties":
   "displayName": "UserPrincipalName",
   "oldValue": "[\"user@contoso.onmicrosoft.com\"]",
   "newValue": "[\"user@contoso.com\"]"
-  },
-  { "displayName": "Included Updated Properties",
-  "oldValue": null, "newValue": "\"UserPrincipalName\""
-  },
-  {
-   "displayName": "Action Client Name",
-   "oldValue": null,
-   "newValue": "\"DirectorySync\""
-  },
-  {
-   "displayName": "TargetId.UserType",
-   "oldValue": null,
-   "newValue": "\"Member\"" } ] } ],
-   "additionalDetails": [ { "key": "UserType", "value": "Member" } ]
-}
+
 ```
 
 ## Causes
 
 One common reason behind mass object changes is due to a nonsynchronous backend operation. This operation determines the appropriate `UserPrincipalName` and `proxyAddresses` that are updated in Microsoft Entra users, groups, or contacts.
 
-The purpose of this backend operation ensures that `UserPrincipalName` and `proxyAddresses` are consistent in Microsoft Entra ID at any time. An explicit change, such as a verified domain change, triggers this operation.
+The purpose of this backend operation ensures that UserPrincipalName and proxyAddresses are consistent in Microsoft Entra ID at any time. An explicit change, such as a verified domain change, triggers this operation.
 
 For example, if you add a verified domain Fabrikam.com to your Contoso.onmicrosoft.com tenant, this action triggers the backend operation on *all* objects in the tenant. This event is captured in the Microsoft Entra audit logs as **Update User** events preceded by an **Add verified domain** event.
 
@@ -138,21 +106,21 @@ Want to learn more about what's happening behind the scenes? Here's a deep dive 
 
 ### UserPrincipalName
 
-For cloud-only users, the `UserPrincipalName` is set to a verified domain suffix. When an inconsistent `UserPrincipalName` is processed, the operation converts it to the default onmicrosoft.com suffix, for example: `username@Contoso.onmicrosoft.com`.
+For cloud-only users, the UserPrincipalName is set to a verified domain suffix. When an inconsistent UserPrincipalName is processed, the operation converts it to the default onmicrosoft.com suffix, for example: `username@Contoso.onmicrosoft.com`.
 
-For synchronized users, the `UserPrincipalName` is set to a verified domain suffix and matches the on-premises value, `ShadowUserPrincipalName`. When an inconsistent `UserPrincipalName` is processed, the operation reverts to the same value as the `ShadowUserPrincipalName` or, in the case that domain suffix was removed from the tenant, converts it to the default `*.onmicrosoft.com` domain suffix. 
+For synchronized users, the UserPrincipalName is set to a verified domain suffix and matches the on-premises value, `ShadowUserPrincipalName`. When an inconsistent UserPrincipalName is processed, the operation reverts to the same value as the ShadowUserPrincipalName or, in the case that domain suffix was removed from the tenant, converts it to the default `*.onmicrosoft.com` domain suffix. 
 
 ### ProxyAddresses  
 
-For cloud-only users, consistency means that the `proxyAddresses` match a verified domain suffix. When an inconsistent `proxyAddresses` is processed, the backend operation converts it to the default `*.onmicrosoft.com` domain suffix, for example: `SMTP:username@Contoso.onmicrosoft.com`.
+For cloud-only users, consistency means that the `proxyAddresses` match a verified domain suffix. When an inconsistent proxyAddresses is processed, the backend operation converts it to the default `*.onmicrosoft.com` domain suffix, for example: `SMTP:username@Contoso.onmicrosoft.com`.
 
-For synchronized users, consistency means that the `proxyAddresses` match the on-premises `proxyAddresses` value (i.e ShadowProxyAddresses). The `proxyAddresses` are expected to be in sync with `ShadowProxyAddresses`. If the synchronized user has an Exchange license assigned, then the cloud and on-premises values must match. These values must also match a verified domain suffix.
+For synchronized users, consistency means that the proxyAddresses match the on-premises proxyAddresses value (i.e ShadowProxyAddresses). The proxyAddresses are expected to be in sync with ShadowProxyAddresses. If the synchronized user has an Exchange license assigned, then the cloud and on-premises values must match. These values must also match a verified domain suffix.
 
-In this scenario, the backend operation sanitizes the inconsistent `proxyAddresses` with an unverified domain suffix and is removed from the object in Microsoft Entra ID. If that unverified domain is verified later, the backend operation recomputes and adds the `proxyAddresses` from `ShadowProxyAddresses` back to the object in Microsoft Entra ID.  
+In this scenario, the backend operation sanitizes the inconsistent proxyAddresses with an unverified domain suffix and is removed from the object in Microsoft Entra ID. If that unverified domain is verified later, the backend operation recomputes and adds the proxyAddresses from ShadowProxyAddresses back to the object in Microsoft Entra ID.  
 
 > [!NOTE]
-> For synchronized objects, to avoid the backend operation logic from calculating unexpected results, it's best to set `proxyAddresses` to a Microsoft Entra verified domain on the on-premises object.  
+> For synchronized objects, to avoid the backend operation logic from calculating unexpected results, it's best to set proxyAddresses to a Microsoft Entra verified domain on the on-premises object.  
 
 ## Next Steps
 
-[Microsoft Entra Connect Sync service shadow attributes](~/identity/hybrid/connect/how-to-connect-syncservice-shadow-attributes.md)
+[Microsoft Entra Connect Sync service shadow attributes](../hybrid/connect/how-to-connect-syncservice-shadow-attributes.md)

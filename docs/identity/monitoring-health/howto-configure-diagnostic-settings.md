@@ -88,6 +88,9 @@ The basic steps for configuring diagnostics settings are as follows:
 
     ![Screenshot of the create diagnostic settings page, with several logs selected to go to a Log Analytics workspace.](media/howto-configure-diagnostic-settings/diagnostic-settings-save.png)
 
+> [!NOTE]
+> It might take up to three days for the logs to start appearing in the destination. 
+
 ## Next steps
 
 - [Integrate logs with Azure monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.md)
