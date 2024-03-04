@@ -154,12 +154,6 @@
           href: how-to-mfa-additional-context.md
         - name: Use Authenticator Lite
           href: how-to-mfa-authenticator-lite.md
-        - name: Use passkeys
-          items: 
-          - name: Android inline registration
-            href: how-to-authentication-passwordless-passkey-android-direct.md
-          - name: iOS inline registration
-            href: how-to-authentication-passwordless-passkey-ios-direct.md
       - name: Hybrid
         items:
         - name: Register passkey with a security key
