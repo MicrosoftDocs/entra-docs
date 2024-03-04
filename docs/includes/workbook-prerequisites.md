@@ -34,6 +34,20 @@ Azure Monitor provides [two built-in roles](/azure/azure-monitor/roles-permissio
   - Monitoring Contributor
   - Log Analytics Contributor
 
-For more information on the Azure Monitor built-in roles, see [Roles, permissions, and security in Azure Monitor](/azure/azure-monitor/roles-permissions-security#monitoring-reader).
+### Microsoft Entra roles
+<a name='azure-ad-roles'></a>
+
+Read only access allows you to view Microsoft Entra ID log data inside a workbook, query data from Log Analytics, or read logs in the Microsoft Entra admin center. Update access adds the ability to create and edit diagnostic settings to send Microsoft Entra data to a Log Analytics workspace.
+
+- **Read**:
+  - Reports Reader
+  - Security Reader
+  - Global Reader
+
+- **Update**:
+  - Security Administrator
+
+For more information on Microsoft Entra built-in roles, see [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md).
+
 
 For more information on the Log Analytics RBAC roles, see [Azure built-in roles](/azure/role-based-access-control/built-in-roles#log-analytics-contributor).

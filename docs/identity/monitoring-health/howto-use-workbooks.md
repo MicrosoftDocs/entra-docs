@@ -27,22 +27,6 @@ When using workbooks, you can either start with an empty workbook, or use an exi
 
 [!INCLUDE [workbook prerequisites](../../includes/workbook-prerequisites.md)]
 
-### Microsoft Entra roles
-<a name='azure-ad-roles'></a>
-
-Read only access allows you to view Microsoft Entra ID log data inside a workbook, query data from Log Analytics, or read logs in the Microsoft Entra admin center. Update access adds the ability to create and edit diagnostic settings to send Microsoft Entra data to a Log Analytics workspace.
-
-- **Read**:
-  - Reports Reader
-  - Security Reader
-  - Global Reader
-
-- **Update**:
-  - Security Administrator
-
-For more information on Microsoft Entra built-in roles, see [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md).
-
-
 ## Access Microsoft Entra workbooks
 <a name='how-to-access-azure-workbooks-for-azure-ad'></a>
 
