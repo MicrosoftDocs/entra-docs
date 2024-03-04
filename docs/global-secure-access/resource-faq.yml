@@ -20,7 +20,7 @@ sections:
           I received an error when trying to access a tenant I have access to.
         answer: |
           If you enabled universal tenant restrictions and access the Microsoft Entra admin center for one of the allow listed tenants, you see an "Access denied" error.
-          Add the feature flag to the Microsoft Entra admin center: "?feature.msaljs=true&exp.msaljsexp=true". For example, you work for Contoso and you have allow listed Fabrikam as a partner tenant. You see the error message for the Fabrikam tenant's Microsoft Entra admin center. If you received the "access denied" error message for this URL: `https://entra.microsoft.com/` then add the feature flag as follows: `https://entra.microsoft.com/?feature.msaljs%253Dtrue%2526exp.msaljsexp%253Dtrue#home`
+          Add the feature flag to the Microsoft Entra admin center: "?feature.Msaljs=true&exp.Msaljsexp=true". For example, you work for Contoso and you have allow listed Fabrikam as a partner tenant. You see the error message for the Fabrikam tenant's Microsoft Entra admin center. If you received the "access denied" error message for this URL: `https://entra.microsoft.com/` then add the feature flag as follows: `https://entra.microsoft.com/?feature.msaljs%253Dtrue%2526exp.msaljsexp%253Dtrue#home`
       - question: | 
           Does Global Secure Access allow B2B logins?
         answer: |
