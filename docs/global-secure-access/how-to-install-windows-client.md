@@ -63,11 +63,9 @@ Organizations can install the client interactively, silently with the `/quiet` s
 
     ![Screenshot showing the sign-in box appears after client installation completes.](media/how-to-install-windows-client/client-install-first-sign-in.png)
 
-1. Users sign in and the connection icon turns green. Double-clicking on the connection icon opens a notification with client information showing a connected state
+1. Users sign in and the connection icon turns green. Double-clicking on the connection icon opens a notification with client information showing a connected state.
+
     :::image type="content" source="media/how-to-install-windows-client/client-install-connected.png" alt-text="Screenshot showing the client is connected.":::
-
-
-
 
 
 ## Troubleshooting
