@@ -271,12 +271,12 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Configure authentication methods | [Global Administrator](permissions-reference.md#global-administrator) |  |
-> | Configure customization | [Global Administrator](permissions-reference.md#global-administrator) |  |
-> | Configure notification | [Global Administrator](permissions-reference.md#global-administrator) |  |
-> | Configure on-premises integration | [Global Administrator](permissions-reference.md#global-administrator) |  |
-> | Configure password reset properties | [User Administrator](permissions-reference.md#user-administrator) | [Global Administrator](permissions-reference.md#global-administrator) |
-> | Configure registration | [Global Administrator](permissions-reference.md#global-administrator) |  |
+> | Configure authentication methods | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
+> | Configure customization | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
+> | Configure notification | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
+> | Configure on-premises integration | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
+> | Configure password reset properties | [User Administrator](permissions-reference.md#user-administrator) | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |
+> | Configure registration | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
 > | Read all configuration | [Security Administrator](permissions-reference.md#security-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 
 ## Privileged identity management
