@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 12/15/2023
+ms.date: 03/01/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -206,8 +206,8 @@ There are several reports available in **Usage & insights**. Some of these repor
 - Microsoft Entra application activity (preview)
 - AD FS application activity
 - Authentication methods activity
-- Service principal sign-in activity (preview)
-- Application credential activity (preview)
+- Service principal sign-in activity
+- Application credential activity
 
 ### Microsoft 365 activity logs
 

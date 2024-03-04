@@ -1,11 +1,11 @@
 ---
 title: Conditions in Conditional Access policy
-description: What are conditions in a Microsoft Entra Conditional Access policy
+description: What are conditions in a Microsoft Entra Conditional Access policy?
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 07/17/2023
+ms.date: 02/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,13 +14,13 @@ ms.reviewer: lhuangnorth, sandeo
 ---
 # Conditional Access: Conditions
 
-Within a Conditional Access policy, an administrator can make use of signals from conditions like risk, device platform, or location to enhance their policy decisions. 
+Within a Conditional Access policy, an administrator can make use of one or more signals to enhance their policy decisions.
 
-[![Define a Conditional Access policy and specify conditions](./media/concept-conditional-access-conditions/conditional-access-conditions.png)](./media/concept-conditional-access-conditions/conditional-access-conditions.png#lightbox)
+:::image type="content" source="media/concept-conditional-access-conditions/conditional-access-conditions.png" alt-text="Screenshot of available conditions for a Conditional Access policy in the Microsoft Entra admin center." lightbox="media/concept-conditional-access-conditions/conditional-access-conditions.png":::
 
 Multiple conditions can be combined to create fine-grained and specific Conditional Access policies.
 
-When users access a sensitive application, an administrator may factor multiple conditions into their access decisions like: 
+When users access a sensitive application, an administrator might factor multiple conditions into their access decisions like: 
 
 - Sign-in risk information from Identity Protection
 - Network location
@@ -28,11 +28,11 @@ When users access a sensitive application, an administrator may factor multiple 
 
 ## Sign-in risk
 
-Administrators with access to [Identity Protection](~/id-protection/overview-identity-protection.md), can evaluate sign-in risk as part of a Conditional Access policy. Sign-in risk represents the probability that a given authentication request wasn't made by the identity owner. More information about sign-in risk can be found in the articles, [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
+Administrators with access to [Identity Protection](~/id-protection/overview-identity-protection.md), can evaluate sign-in risk as part of a Conditional Access policy. Sign-in risk represents the probability that a given authentication request wasn't made by the identity owner. More information about sign-in risk can be found in the articles [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
 
 ## User risk 
 
-Administrators with access to [Identity Protection](~/id-protection/overview-identity-protection.md), can evaluate user risk as part of a Conditional Access policy. User risk represents the probability that a given identity or account is compromised. More information about user risk can be found in the articles, [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
+Administrators with access to [Identity Protection](~/id-protection/overview-identity-protection.md), can evaluate user risk as part of a Conditional Access policy. User risk represents the probability that a given identity or account is compromised. More information about user risk can be found in the articles [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
 
 ## Device platforms
 
@@ -55,11 +55,11 @@ We don't support selecting macOS or Linux device platforms when selecting **Requ
 
 ## Locations
 
-When administrators configure location as a condition, they can choose to include or exclude locations. These named locations may include the public IPv4 or IPv6 network information, country or region, unknown areas that don't map to specific countries or regions, and [Global Secure Access' compliant network](/entra/global-secure-access/how-to-compliant-network).
+When administrators configure location as a condition, they can choose to include or exclude locations. These named locations might include the public IPv4 or IPv6 network information, country/region, unknown areas that don't map to specific countries/regions, and [Global Secure Access' compliant network](/entra/global-secure-access/how-to-compliant-network).
 
 When including **any location**, this option includes any IP address on the internet not just configured named locations. When administrators select **any location**, they can choose to exclude **all trusted** or **selected locations**.
 
-Administrators can create policies that target specific locations along with other conditions. More information about locations can be found in the article, [What is the location condition in Microsoft Entra Conditional Access](location-condition.md).
+Administrators can create policies that target specific locations along with other conditions. More information about locations can be found in the article [What is the location condition in Microsoft Entra Conditional Access](location-condition.md).
 
 ## Client apps
 
@@ -88,7 +88,7 @@ The **Configure** toggle when set to **Yes** applies to checked items, when set 
          - SMTP - Used by POP and IMAP client's to send email messages.
          - Autodiscover - Used by Outlook and EAS clients to find and connect to mailboxes in Exchange Online.
          - Exchange Online PowerShell - Used to connect to Exchange Online with remote PowerShell. If you block Basic authentication for Exchange Online PowerShell, you need to use the Exchange Online PowerShell Module to connect. For instructions, see [Connect to Exchange Online PowerShell using multifactor authentication](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell).
-         - Exchange Web Services (EWS) - A programming interface that's used by Outlook, Outlook for Mac, and third-party apps.
+         - Exchange Web Services (EWS) - A programming interface used by Outlook, Outlook for Mac, and third-party apps.
          - IMAP4 - Used by IMAP email clients.
          - MAPI over HTTP (MAPI/HTTP) - Used by Outlook 2010 and later.
          - Offline Address Book (OAB) - A copy of address list collections that are downloaded and used by Outlook.
@@ -105,7 +105,7 @@ These conditions are commonly used to:
 
 ### Supported browsers
 
-This setting works with all browsers. However, to satisfy a device policy, like a compliant device requirement, the following operating systems and browsers are supported. Operating Systems and browsers that have fallen out of mainstream support aren’t shown on this list:
+This setting works with all browsers. However, to satisfy a device policy, like a compliant device requirement, the following operating systems and browsers are supported. Operating Systems and browsers out of mainstream support aren’t shown on this list:
 
 | Operating Systems | Browsers |
 | :-- | :-- |
@@ -139,24 +139,24 @@ For Chrome support in **Windows 10 Creators Update (version 1703)** or later, in
 
 To automatically enable the CloudAPAuthEnabled policy in Chrome, create the following registry key:
 
- - Path HKLM:\Software\Policies\Google\Chrome
- - Name CloudAPAuthEnabled 
- - Value 0x00000001
- - PropertyType DWORD
+ - Path: `HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome`
+ - Name: `CloudAPAuthEnabled` 
+ - Value: `0x00000001`
+ - PropertyType: `DWORD`
 
 To automatically deploy the Windows Account extension to Chrome browsers, create the following registry key:
 
-- Path HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist
-- Name 1
-- Type REG_SZ (String)
-- Data ppnbnpeolgkicgegkbkbjmhlideopiji;https\://clients2.google.com/service/update2/crx
+- Path: `HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist`
+- Name: `1`
+- Type: `REG_SZ (String)`
+- Data: `ppnbnpeolgkicgegkbkbjmhlideopiji;https\://clients2.google.com/service/update2/crx`
 
 For Chrome support in **Windows 8.1 and 7**, create the following registry key:
 
-- Path HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls
-- Name 1
-- Type REG_SZ (String)
-- Data {"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}}
+- Path: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls`
+- Name: `1`
+- Type: `REG_SZ (String)`
+- Data: `{"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}}`
 
 ### Supported mobile applications and desktop clients
 
@@ -211,6 +211,10 @@ By selecting **Other clients**, you can specify a condition that affects apps th
 ## Filter for devices
 
 When administrators configure filter for devices as a condition, they can choose to include or exclude devices based on a filter using a rule expression on device properties. The rule expression for filter for devices can be authored using rule builder or rule syntax. This experience is similar to the one used for dynamic membership rules for groups. For more information, see the article [Conditional Access: Filter for devices](concept-condition-filters-for-devices.md).
+
+## Authentication flows
+
+Authentication flows (preview) control how your organization uses certain authentication and authorization protocols and grants. These flows might provide a seamless experience to devices that might lack local input devices like shared devices or digital signage. Use this control to configure transfer methods like [device code flow or authentication transfer](concept-authentication-flows.md).
 
 ## Next steps
 

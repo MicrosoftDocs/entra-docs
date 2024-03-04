@@ -19,6 +19,8 @@ items:
       href: quickstart-tenant-setup.md
     - name: Get started guide walkthrough
       href: quickstart-get-started-guide.md
+    - name: Use the Visual Studio Code extension
+      href: visual-studio-code-extension.md
 - name: Samples
   expanded: true
   items: 

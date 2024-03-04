@@ -420,7 +420,7 @@ If troubleshooting kerberos SSO issues, be aware of the following concepts.
 * Ensure the hostname for the domain controller and web application are resolvable in DNS
 * Ensure there are no duplicate SPNs in your AD environment: execute the following query at the command line on a domain PC: setspn -q HTTP/my_target_SPN
 
-You can refer to our [App Proxy guidance](~/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md) to validate an IIS application is configured for KCD. See also the AskF5 article, [Kerberos single sign on method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html).
+You can refer to our [application proxy guidance](~/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md) to validate an IIS application is configured for KCD. See also the AskF5 article, [Kerberos single sign on method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html).
 
 ### Log analysis: increase verbosity
 

@@ -43,6 +43,8 @@
     href: concept-token-protection.md
   - name: Location conditions
     href: location-condition.md
+  - name: Authentication flows
+    href: concept-authentication-flows.md
   - name: Workload identities
     href: workload-identity.md
   - name: Continuous access evaluation
@@ -110,8 +112,8 @@
       href: howto-conditional-access-policy-authentication-strength-external.md
   - name: Microsoft-managed policies
     href: managed-policies.md
-  - name: Configure resilience defaults
-    href: resilience-defaults.md
+  - name: Configure authentication flows
+    href: how-to-policy-authentication-flows.md
   - name: Configure report only mode
     href: howto-conditional-access-insights-reporting.md
   - name: Block legacy authentication
