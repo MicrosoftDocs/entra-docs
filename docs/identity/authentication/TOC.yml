@@ -128,9 +128,9 @@
         href: howto-authentication-passwordless-deployment.md
       - name: Passkey (FIDO2) authentication
         items:
-        - name: (New) Enable 
+        - name: (Update) Enable 
           href: howto-authentication-passwordless-security-key.md
-        - name: (New)  
+        - name: (New) Register 
           href: how-to-register-passkey-android-or-ios.md
         - name: (New) Sign in 
           href: howto-authentication-passwordless-security-key-windows.md
@@ -138,8 +138,8 @@
           href: passkey-faq.yml
       - name: Microsoft Authenticator
         items:
-        - name: (New) Enable Authenticator passkey
-          href: 
+        - name: (New) Enable 
+          href: how-to-enable-authenticator-passkey.md
         - name: (New) Register 
           href: how-to-register-passkey-authenticator-ios.md
         - name: (New) Sign in 
