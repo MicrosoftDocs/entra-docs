@@ -19,7 +19,7 @@ zone_pivot_groups: custom-auth-extension
 
 ::: zone pivot="visual-studio" 
 
-This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. You'll create an HTTP trigger function in Visual Studio and deploy it to the Azure portal, where it can be accessed through Azure Functions. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events.
+This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. You'll create an HTTP trigger function in Visual Studio and deploy it to the Azure portal, where it can be accessed through Azure Functions. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events, such as serialization and deserialization of data models, token validation, request, and response validation.
 
 ## Prerequisites
 
@@ -57,9 +57,13 @@ This article describes how to create a REST API with a [token issuance start eve
 
 ::: zone pivot="visual-studio"
 
-## Create the Azure Function app
+## Create and build the Azure Function app
 
-In this step, you create an HTTP trigger function API using Visual Studio. The function API is the source of extra claims for your token.
+In this step, you create an HTTP trigger function API using Visual Studio, install the required NuGet packages and copy in the sample code. You'll build the project and run the function locally to extract the function URL.
+
+### Create the Azure Function app
+
+The function API is the source of extra claims for your token.
 
 1. Open Visual Studio, and select **Create a new project**.
 1. Search for and select **Azure Functions**, then select **Next**.
@@ -67,6 +71,17 @@ In this step, you create an HTTP trigger function API using Visual Studio. The f
 1. Select a location for the project. Select **Next**.
 1. Select **.NET 6.0 (Long Term Support)** as the target framework. 
 1. Select *Http trigger* as the **Function** type, and that **Authorization level** is set to *Function*. Select **Create**.
+
+### Install NuGet packages and build the project
+
+After creating the project, you'll need to install the required NuGet packages and build the project.
+
+1. In the top menu of Visual Studio, select **Project**, then **Manage NuGet packages**.
+1. Select the **Browse** tab, then search for and select *Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents*. In the right pane, Select **Install**.
+1. Apply and accept the changes in the popups that appear.
+
+### Add the sample code
+
 1. In your *Function1.cs* file, replace the entire contents of the file with the following code:
 
     [!INCLUDE [nuget-code](./includes/scenarios/custom-extension-tokenissuancestart-setup-nuget-code.md)]
@@ -83,20 +98,15 @@ In this step, you create an HTTP trigger function API using Visual Studio. The f
     }
     ```
 
-## Install NuGet packages and build the project
+### Build and run the project
 
-After creating the project, you'll need to install the required NuGet packages and build the project.
-
-1. In the top menu of Visual Studio, select **Project**, then **Manage NuGet packages**.
-1. Select the **Browse** tab, then search for and select *Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents*. In the right pane, Select **Install**.
-1. Apply and accept the changes in the popups that appear.
 1. Navigate to **Build** in the top menu, and select **Build Solution**.
 1. Press **F5** or select *AuthEventsTrigger* from the top menu to run the function. 
-1. Copy the **Function url** from the terminal that popups up when running the function. 
+1. Copy the **Function url** from the terminal that popups up when running the function. This can be used when setting up a custom authentication extension.
 
 ## Deploy the function and publish to Azure 
 
-The function needs to be deployed to Azure using our IDE. Check that you are correctly signed in to your Azure account so the function can be published.
+The function needs to be deployed to Azure using our IDE. Check that you're correctly signed in to your Azure account so the function can be published.
 
 1. In the Solution Explorer, right-click on the project and select **Publish**. 
 1. In **Target**, select **Azure**, then select **Next**.
@@ -116,7 +126,7 @@ The function needs to be deployed to Azure using our IDE. Check that you are cor
     | **Application Insights** | ***TODO*** | How the logs are put together |
     
 
-1. Wait a few moments for your function app to be deployed. Once the window closes, select **Finish**
+1. Wait a few moments for your function app to be deployed. Once the window closes, select **Finish**.
 1. A new **Publish** pane opens. At the top, select **Publish**. Wait a few minutes for your function app to be deployed and show up in the Azure portal.
 
 [!INCLUDE [environment-variables](./includes/scenarios/custom-extension-tokenissuancestart-setup-env-portal.md)]
@@ -127,7 +137,7 @@ The function needs to be deployed to Azure using our IDE. Check that you are cor
 
 ## Create the Azure Function app
 
-In this step, you create an HTTP trigger function API using Visual Studio Code. The function API is the source of extra claims for your token.
+In this step, you create an HTTP trigger function API using Visual Studio Code, install the required NuGet packages and copy in the sample code. You'll build the project and run the function locally to extract the function URL.
 
 1. Open Visual Studio Code.
 1. Select the **New Folder** icon in the **Explorer** window, and create a new folder for your project, for example *AuthEventsTrigger*.
@@ -140,8 +150,22 @@ In this step, you create an HTTP trigger function API using Visual Studio Code. 
 1. Select **C#** as the language, and **.NET 6.0 LTS** as the .NET runtime. 
 1. Select **HTTP trigger** as the template.
 1. Provide a name for the project, such as *AuthEventsTrigger*.
-1. accept **Company.Function** as the namespace, with **AccessRights** set to *Function*. 
-1. In the main window, a file called *AuthEventsTrigger.cs* opens. Replace the entire contents of the file with the following code:
+1. Accept **Company.Function** as the namespace, with **AccessRights** set to *Function*. 
+
+### Install NuGet packages and build the project
+
+After creating the project, you'll need to install the required NuGet packages and build the project.
+
+1. Open the **Terminal** in Visual Studio Code, and navigate to the project folder.
+1. Enter the following command into the console to install the *Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents* NuGet package.
+
+    ```console
+    dotnet add package Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents --prerelease
+    ```
+
+### Add the sample code
+
+1. Replace the entire contents of the *AuthEventsTrigger.cs* file with the following code:
 
     [!INCLUDE [nuget-code](./includes/scenarios/custom-extension-tokenissuancestart-setup-nuget-code.md)]
 
@@ -157,19 +181,10 @@ In this step, you create an HTTP trigger function API using Visual Studio Code. 
     }
     ```
 
-## Install NuGet packages and build the project
-
-After creating the project, you'll need to install the required NuGet packages and build the project.
-
-1. Open the **Terminal** in Visual Studio Code, and navigate to the project folder.
-1. Enter the following command into the console to install the *Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents* NuGet package.
-
-    ```console
-    dotnet add package Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents --prerelease
-    ```
+### Build and run the project
 
 1. In the top menu, select **Run** > **Start Debugging** or press **F5** to run the function.
-1. In the terminal, copy the **Function url** that appears.
+1. In the terminal, copy the **Function url** that appears. This can be used when setting up a custom authentication extension.
 
 ## Deploy the function and publish to Azure 
 
