@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 ---
 # Create a passkey for Android or iOS device in Microsoft Authenticator
 
-# [iOS](#tab/iOS)
+# [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
 
 ### Wizard method
 
@@ -133,7 +133,7 @@ If your organization requires you to register a passkey in Microsoft Authenticat
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-options.png" alt-text="Screenshot of the sign-in options in Microsoft Authenticator for iOS devices.":::
 
-# [Android](#tab/Android)
+# [:::image type="icon" source="media/icons/android-icon.png" border="false"::: **Android**](#tab/Android)
 
 ### Wizard method
 

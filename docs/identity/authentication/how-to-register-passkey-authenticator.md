@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 ---
 # Register Microsoft Authenticator passkey on Android or iOS device in MySecurityInfo
 
-# [iOS](#tab/iOS)
+# [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
 
 This topic shows how to register a passkey in Microsoft Authenticator on your iOS device in your security info in My Sign-Ins [Security info](https://mysignins.microsoft.com/security-info). Your device needs to run least iOS 17 or later.
 
@@ -96,8 +96,7 @@ This topic shows how to register a passkey in Microsoft Authenticator on your iO
 > You also need to delete the passkey from **Security Info**, using a web browser and logging in to [https://mysignins.microsoft.com/security-info](https://mysignins.microsoft.com/security-info).   
 
 
-# [Android](#tab/Android)
-
+# [:::image type="icon" source="media/icons/android-icon.png" border="false"::: **Android**](#tab/Android)
 
 This article shows how to register a passkey with Microsoft Authenticator on your Android device in your security info in My Sign-Ins [Security info](https://mysignins.microsoft.com/security-info). Your device needs to run Android version 14 or later. 
 
