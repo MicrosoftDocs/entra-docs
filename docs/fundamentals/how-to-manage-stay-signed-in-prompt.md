@@ -80,4 +80,4 @@ To ensure that the KMSI prompt is shown only when it can benefit the user, the K
 ## Next steps
 
 - [Learn how to customize branding for sign-in experiences](how-to-customize-branding.md)
-- [Manage user settings in Microsoft Entra ID](how-to-manage-user-profile-info.ym)
+- [Manage user settings in Microsoft Entra ID](how-to-manage-user-profile-info.yml)
