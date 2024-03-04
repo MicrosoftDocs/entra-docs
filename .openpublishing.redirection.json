@@ -305,6 +305,16 @@
       "source_path_from_root": "/docs/identity-platform/tutorial-blazor-webassembly.md",
       "redirect_url": "/entra/identity-platform/quickstart-single-page-app-blazor-wasm-sign-in",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/fido2-compatibility.md",
+      "redirect_url": "/entra/identity/authentication/concept-passkey-fido2-compatibility",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/howto-authentication-passwordless-security-key.md",
+      "redirect_url": "/entra/identity/authentication/how-to-enable-passkey-fido2",
+      "redirect_document_id": false
     }
 
   ]
