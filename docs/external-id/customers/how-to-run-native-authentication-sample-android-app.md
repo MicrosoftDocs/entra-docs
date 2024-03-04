@@ -93,7 +93,7 @@ To build and run your app, follow these steps:
  
     :::image type="content" source="media/native-authentication/android/android-submit-code.png" alt-text="Screenshot of user prompt to enter one-time passcode in Android application." lightbox="media/native-authentication/android/android-submit-code-expanded.png"::: 
  
-1. You'll receive an email containing a one-time passcode. Enter the one-time passcode and select **Next**. If the sign-up was successful, you'll automatically be signed in. 
+1. You receive an email containing a one-time passcode. Enter the one-time passcode and select **Next**. If the sign-up was successful, you'll automatically be signed in. 
 
     :::image type="content" source="media/native-authentication/android/android-sign-in-account-display.png" alt-text="Screenshot showing sign-in successfully completed in the Android application." lightbox="media/native-authentication/android/android-sign-in-account-display-expanded.png"::: 
 
@@ -108,6 +108,7 @@ The sample app supports the following flows:
 - _Email + password sign-up with user attributes_: Follow this flow to sign up with email, password, and user attributes. 
 - _Password reset_: Follow this flow to reset the password. 
 - _Fallback to web browser_: Follow this flow to use the browser to sign in or sign up. 
+- _Access Protected API_: Follow this flow to call a protected API.
  
     > [!NOTE] 
     > In the [Create a user flow](#create-a-user-flow) section, you created a user flow where you chose **Email one-time passcode** under **Identity providers > Email Accounts**. For flows 2 through 4, you require a user flow that uses **Email with password** under **Identity providers > Email Accounts**. 
