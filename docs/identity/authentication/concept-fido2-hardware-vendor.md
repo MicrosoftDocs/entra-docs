@@ -28,50 +28,6 @@ You can become a Microsoft-compatible FIDO2 security key vendor through the foll
 
 The following table lists partners who are Microsoft-compatible FIDO2 security key vendors.
 
-| Provider | Biometric | USB | NFC | BLE |
-|:-|:-:|:-:|:-:|:-:|
-| [AuthenTrend](https://authentrend.com/about-us/#pg-35-3) | ![y] | ![y]| ![y]| ![y]|
-| [ACS](https://www.acs.com.hk/) | ![n] | ![y]| ![y]| ![n]|
-| [ATOS](https://atos.net/en/solutions/cyber-security/iot-and-ot-security/smart-card-solution-cardos-for-iot) | ![n] | ![y]| ![y]| ![n]|
-| [Ciright](https://www.cyberonecard.com/) | ![n] | ![n]| ![y]| ![n]|
-| [Composecure](https://www.composecure.com/arculus) | ![n] | ![n]| ![y]| ![n]|
-| [Crayonic](https://www.crayonic.com/keyvault) | ![y] | ![n]| ![y]| ![y]|
-| [Cryptnox](https://cryptnox.com/) | ![n] | ![y]| ![y]| ![n]|
-| [Ensurity](https://www.ensurity.com/contact) | ![y] | ![y]| ![n]| ![n]|
-| [Excelsecu](https://www.excelsecu.com/productdetail/esecufido2secu.html) | ![y] | ![y]| ![y]| ![y]|
-| [Feitian](https://shop.ftsafe.us/pages/microsoft) | ![y] | ![y]| ![y]| ![y]|
-| [Fortinet](https://www.fortinet.com/) | ![n] | ![y]| ![n]| ![n]|
-| [Giesecke + Devrient (G+D)](https://www.gi-de.com/en/identities/enterprise-security/hardware-based-authentication) | ![y] | ![y]| ![y]| ![y]|
-| [Google](https://store.google.com/us/product/titan_security_key) | ![n] | ![y]| ![y]| ![n]|
-| [GoTrustID Inc.](https://www.gotrustid.com/idem-key) | ![n] | ![y]| ![y]| ![y]|
-| [HID](https://www.hidglobal.com/products/crescendo-key) | ![n] | ![y]| ![y]| ![n]|
-| [HIDEEZ](https://hideez.com/products/hideez-key-4) | ![n] | ![y]| ![y]| ![y]|
-| [Hypersecu](https://www.hypersecu.com/hyperfido) | ![n] | ![y]| ![n]| ![n]|
-| [Hypr](https://www.hypr.com/true-passwordless-mfa) | ![y] | ![y]| ![n]| ![y]|
-| [Identiv](https://www.identiv.com/products/logical-access-control/utrust-fido2-security-keys/nfc) | ![n] | ![y]| ![y]| ![n]|
-| [IDmelon Technologies Inc.](https://www.idmelon.com/#idmelon) | ![y] | ![y]| ![y]| ![y]|
-| [Kensington](https://www.kensington.com/solutions/product-category/why-biometrics/) | ![y] | ![y]| ![n]| ![n]|
-| [KONA I](https://www.konai.com/main) | ![y] | ![n]| ![y]| ![y]|
-| [NeoWave](https://neowave.fr/en/products/fido-range/) | ![n] | ![y]| ![y]| ![n]|
-| [Nymi](https://www.nymi.com/nymi-band) | ![y] | ![n]| ![y]| ![n]|
-| [Octatco](https://octatco.com/) | ![y] | ![y]| ![n]| ![n]|
-| [OneSpan Inc.](https://www.onespan.com/products/fido) | ![n] | ![y]| ![n]| ![y]|
-| [PONE Biometrics](https://ponebiometrics.com/) | ![y] | ![n]| ![n]| ![y]|
-| [Precision Biometric](https://www.innait.com/product/fido/) | ![n] | ![y]| ![n]| ![n]|
-| [RSA](https://www.rsa.com/products/securid/) | ![n] | ![y]| ![n]| ![n]|
-| [Sentry](https://sentryenterprises.com/) | ![n] | ![n]| ![y]| ![n]|
-| [SmartDisplayer](https://www.smartdisplayer.com/fido) | ![y] | ![y]| ![y]| ![y]|
-| [Swissbit](https://www.swissbit.com/en/products/ishield-key/) | ![n] | ![y]| ![y]| ![n]|
-| [Thales Group](https://cpl.thalesgroup.com/access-management/authenticators/fido-devices) | ![n] | ![y]| ![y]| ![n]|
-| [Thetis](https://thetis.io/collections/fido2) | ![y] | ![y]| ![y]| ![y]|
-| [Token2 Switzerland](https://www.token2.swiss/shop/product/token2-t2f2-alu-fido2-u2f-and-totp-security-key) | ![y] | ![y]| ![y]| ![n]|
-| [Token Ring](https://www.tokenring.com/) | ![y] | ![n]| ![y]| ![n]|
-| [TrustKey Solutions](https://www.trustkeysolutions.com/en/sub/product.form) | ![y] | ![y]| ![n]| ![n]|
-| [VinCSS](https://passwordless.vincss.net) | ![n] | ![y]| ![n]| ![n]|
-| [WiSECURE Technologies](https://wisecure-tech.com/en-us/zero-trust/fido/authtron) | ![n] | ![y]| ![n]| ![n]|
-| [Yubico](https://www.yubico.com/solutions/passwordless/) | ![y] | ![y]| ![y]| ![n]|
-
-
 |Aaguid|Description|Biometric|Usb|Nfc|Bluetooth|IsAutoApproved|
 |---|---|---|---|---|---|---|
 |50a45b0c-80e7-f944-bf29-f552bfa2e048|"ACS FIDO Authenticator"|![n]|![y]|![n]|![n]|![n]|
@@ -180,26 +136,6 @@ The following table lists partners who are Microsoft-compatible FIDO2 security k
 |fa2b99dc-9e39-4257-8f92-4a30d23c4118|"YubiKey 5 Series with NFC"|![n]|![y]|![y]|![n]|![n]|
 |d8522d9f-575b-4866-88a9-ba99fa02f35b|"YubiKey Bio Series"|![y]|![y]|![n]|![n]|![n]|
 |83c47309-aabb-4108-8470-8be838b573cb|"YubiKey Bio Series (Enterprise Profile)"|![y]|![y]|![n]|![n]|![y]|
-
-
-
-
-### ACS FIDO Authenticator
-
-AAGUID: 50a45b0c-80e7-f944-bf29-f552bfa2e048
-
-|Biometric|Usb|Nfc|Bluetooth|IsAutoApproved|
-|---|---|---|---|---|
-|![n]|![y]|![n]|![n]|![n]|
-
-### ACS FIDO Authenticator Card
-
-AAGUID: 973446ca-e21c-9a9b-99f5-9b985a67af0f
-
-|Biometric|Usb|Nfc|Bluetooth|IsAutoApproved|
-|---|---|---|---|---|
-|![n]|![n]|![y]|![n]|![n]|
-
 
 
 <!--Image references-->
