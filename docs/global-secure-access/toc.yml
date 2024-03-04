@@ -91,6 +91,11 @@ items:
         href: concept-internet-access.md
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
+  - name: Single sign-on
+    expanded: true
+    items:
+      - name: Kerberos single sign-on
+        href: how-to-configure-sso-with-kcd.md
   - name: Logs and monitoring
     expanded: false
     items:
