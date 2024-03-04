@@ -161,7 +161,7 @@ The following settings can be managed from **User settings**.
   - Guest user access is restricted to properties and memberships of their own directory objects (most restrictive)
 - Restrict access to the Microsoft Entra administration portal
 - [Allow users to connect their work or school account with LinkedIn](~/identity/users/linkedin-user-consent.md)
-- [Enable the "Stay signed in?" prompt](how-to-manage-stay-signed-in-prompt.md)
+- [Enable the "Stay signed in?" prompt](how-to-manage-stay-signed-in-prompt.yml)
 - Manage external collaboration settings
   - [Guest user access](~/identity/users/users-restrict-guest-permissions.md)
   - [Guest invite setting](~/external-id/external-collaboration-settings-configure.md)
