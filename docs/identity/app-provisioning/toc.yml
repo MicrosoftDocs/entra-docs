@@ -115,8 +115,8 @@ items:
       items:
       - name: Known issues
         href: known-issues.md  
-      - name: Troubleshoot configuration problems
-        href: application-provisioning-config-problem.md
+      - name: Troubleshoot problems
+        href: troubleshoot.md
       - name: Quarantine status
         href: application-provisioning-quarantine-status.md
       - name: Users aren't provisioned 
