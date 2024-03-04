@@ -126,7 +126,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Keystone SSO
 
-To configure single sign-on on **Speexx** side, you need to send the **App Federation Metadata Url** to [Speexx support team](mailto:soc@irdeto.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Keystone** side, you need to send the **App Federation Metadata Url** to [Keystone support team](mailto:soc@irdeto.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Keystone test user
 
