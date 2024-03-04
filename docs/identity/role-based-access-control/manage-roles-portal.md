@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
-ms.date: 02/06/2023
+ms.date: 03/04/2024
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -52,6 +52,8 @@ Follow these steps to assign Microsoft Entra roles using the Microsoft Entra adm
     If you see something different from the following picture, you might have PIM enabled. See the next section.
 
     ![Screenshot of Add assignments pane for selected role.](./media/manage-roles-portal/add-assignments.png)
+
+    [!INCLUDE [rbac-assign-roles-guest-user-note](../../includes/rbac-assign-roles-guest-user-note.md)]
 
 1. Select **Add** to assign the role.
 

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 09/13/2023
+ms.date: 03/04/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
 
@@ -46,6 +46,8 @@ Follow these steps to make a user eligible for a Microsoft Entra admin role.
     ![New assignment pane](./media/pim-how-to-add-role-to-user/select-role.png)
 
 1. Select a role you want to assign, select a member to whom you want to assign to the role, and then select **Next**.
+
+    [!INCLUDE [rbac-assign-roles-guest-user-note](../../includes/rbac-assign-roles-guest-user-note.md)]
 
 1. In the **Assignment type** list on the **Membership settings** pane, select **Eligible** or **Active**.
 
