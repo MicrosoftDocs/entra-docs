@@ -4,11 +4,10 @@ description: In this tutorial, you learn how to prepare an Android device to run
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.date: 10/24/2023
 ms.reviewer: negoe
 ms.service: identity-platform
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ms.topic: tutorial
 #Customer intent: As an Android developer, I want to learn how to enable shared-device mode for an Android app, so that I can configure Android devices to be shared by multiple employees and provide Microsoft Identity backed management of the device.
