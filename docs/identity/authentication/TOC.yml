@@ -129,7 +129,7 @@
       - name: Passkey (FIDO2) authentication
         items:
         - name: (Update) Enable 
-          href: howto-authentication-passwordless-security-key.md
+          href: how-to-enable-passkey-fido2.md
         - name: (New) Register 
           href: how-to-register-passkey-android-or-ios.md
         - name: (New) Sign in 
