@@ -33,8 +33,8 @@ Feb 21, 2024: Released for download. This version is only available for install 
 ### New features and improvements
 
 - ‘Microsoft AAD Application Proxy Connector’ is now rebranded as ‘Microsoft Entra Private Network Connector’.
-- Added support for Microsoft Entra Private Access for:
-    - UDP and Private-DNS features (In Early Access Preview, for onboarding submit [request](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR9iJt1_k-HZBpNjGBIMz6XZUNzNSRjc2UlozUDNHT1dDNzI0Q1gxWVc1Sy4u)).
+- Enhancements for Microsoft Entra Private Access:
+    - Support for UDP and Private-DNS features (In Early Access Preview, for onboarding submit [request](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR9iJt1_k-HZBpNjGBIMz6XZUNzNSRjc2UlozUDNHT1dDNzI0Q1gxWVc1Sy4u)).
     - Outbound proxy support.
     - Improved resiliency and performance.
     - Improved logging and metrics reporting.

@@ -9,7 +9,7 @@ ms.date: 03/06/2023
 ms.reviewer: JasSuri
 ms.service: identity-platform
 
-ms.topic: how-to
+ms.topic: troubleshooting
 titleSuffix: Microsoft identity platform
 
 #Customer intent: As a developer integrating external systems with Microsoft Entra ID, I want to troubleshoot issues with my custom claims provider API, so that I can identify and resolve any errors or performance problems affecting the authentication experience.

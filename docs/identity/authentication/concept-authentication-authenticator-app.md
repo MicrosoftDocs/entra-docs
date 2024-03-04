@@ -5,7 +5,7 @@ description: Learn about using the Microsoft Authenticator in Microsoft Entra ID
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/07/2024
+ms.date: 02/29/2024
 
 ms.author: justinha
 author: justinha
@@ -68,9 +68,10 @@ Consistent with the guidelines outlined in [NIST SP 800-63B](https://pages.nist.
 FIPS 140 is a US government standard that defines minimum security requirements for cryptographic modules in information technology products and systems. Testing against the FIPS 140 standard is maintained by the [Cryptographic Module Validation Program (CMVP)](https://csrc.nist.gov/Projects/cryptographic-module-validation-program?azure-portal=true).
 
 ### Microsoft Authenticator for iOS
-Beginning with version 6.6.8, Microsoft Authenticator for iOS is compliant with Federal Information Processing Standard (FIPS) 140 for all Microsoft Entra authentications using phishing-resistant device-bound passkeys, push multi-factor authentications (MFA), passwordless Phone Sign-In (PSI), and time-based one-time passcodes (TOTP). 
 
-Authenticator leverages the native Apple iOS **FIPS 140 validated** cryptographic module(s) to achieve FIPS 140 compliance on Apple iOS devices. For more information about the **FIPS 140 validated** cryptographic modules being used, see: [Apple iOS security certifications](https://support.apple.com/guide/certifications/ios-security-certifications-apc3fa917cb49/1/web/1.0). 
+Beginning with version 6.6.8, Microsoft Authenticator for iOS uses the native Apple CoreCrypto module for FIPS validated cryptography on Apple iOS FIPS 140 compliant devices. All Microsoft Entra authentications using phishing-resistant device-bound passkeys, push multifactor authentications (MFA), passwordless phone sign-in (PSI), and time-based one-time passcodes (TOTP) use the FIPS cryptography.
+
+For more information about the FIPS 140 validated cryptographic modules being used and compliant iOS devices, see [Apple iOS security certifications](https://support.apple.com/guide/certifications/ios-security-certifications-apc3fa917cb49/1/web/1.0).
 
 
 >[!NOTE]
