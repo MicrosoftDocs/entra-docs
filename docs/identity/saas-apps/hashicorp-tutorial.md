@@ -52,15 +52,15 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     1. Click **Go to application**.
 
-        ![Screenshot of showing the identity configuration.](./media/hashicorp-tutorial/go-to-application.png)
+        ![Screenshot of showing the identity configuration.](common/go-to-application.png)
 
     1. Copy **Application (client) ID** and use it later in the HashiCorp Boundary side configuration.
 
-        ![Screenshot of application client values.](./media/hashicorp-tutorial/application-id.png)
+        ![Screenshot of application client values.](common/application-id.png)
 
     1. Under **Endpoints** tab, copy **OpenID Connect metadata document** link and use it later in the HashiCorp Boundary side configuration.
 
-        ![Screenshot of showing the endpoints on tab.](./media/hashicorp-tutorial/endpoints.png)
+        ![Screenshot of showing the endpoints on tab.](common/endpoints.png)
 
 1. Navigate to **Authentication** tab on the left menu and perform the following steps:
 
@@ -68,18 +68,18 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     
     1. In the **Front-channel logout URL** give the value as `<Hashicorp-Cluster-URL>:3000`and click **Configure**.
 
-        ![Screenshot of showing the redirect values.](./media/hashicorp-tutorial/authentication.png)
+        ![Screenshot of showing the redirect values.](common/authentication.png)
 
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
 
     1. Go to **Client secrets** tab and click **+New client secret**.
     1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and click **Add**.
 
-        ![Screenshot of showing the client secrets value.](./media/hashicorp-tutorial/client-secret.png)
+        ![Screenshot of showing the client secrets value.](common/client-secret.png)
 
     1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the HashiCorp Boundary side configuration.
 
-        ![Screenshot of showing how to add a client secret.](./media/hashicorp-tutorial/client.png)
+        ![Screenshot of showing how to add a client secret.](common/client.png)
 
 ### Create a Microsoft Entra test user
 
@@ -119,7 +119,7 @@ Below are the configuration steps to complete the OAuth/OIDC federation setup:
 
 3. Perform the following steps in the **New Auth Method** tab.
 
-    ![Screenshot of showing oidc setup.](./media/hashicorp-tutorial/new-auth.png)
+    ![Screenshot of showing oidc setup at new auth method.](./media/hashicorp-tutorial/new-auth.png)
 
     a. In the **Name** field, enter the name for identification.
 
@@ -129,7 +129,7 @@ Below are the configuration steps to complete the OAuth/OIDC federation setup:
 
 4. Perform the following steps in the below page.
 
-    ![Screenshot of showing oidc setup.](./media/hashicorp-tutorial/client-id.png)
+    ![Screenshot of showing client id oidc setup.](./media/hashicorp-tutorial/client-id.png)
 
     a. In the **Client ID** field, paste the **Application ID** value, which you have copied from Entra page.
 
@@ -139,7 +139,7 @@ Below are the configuration steps to complete the OAuth/OIDC federation setup:
 
 5. Perform the following steps in the below page.
 
-    ![Screenshot of showing oidc setup.](./media/hashicorp-tutorial/save-button.png)
+    ![Screenshot of showing URL prefix oidc setup.](./media/hashicorp-tutorial/save-button.png)
 
     a. In the **API URL Prefix**, enter the value of `<Hashicorp-Cluster-URL>`.
 
