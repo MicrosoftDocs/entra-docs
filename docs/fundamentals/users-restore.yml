@@ -15,7 +15,7 @@ metadata:
 
 title: |
   Restore or remove a recently deleted user
-introduction: 
+introduction: |
   After you delete a user, the account remains in a suspended state for 30 days. During that 30-day window, the user account can be restored, along with all its properties. 
 
   After that 30-day window passes, the permanent deletion process is automatically started and can't be stopped. During this time, the management of soft-deleted users is blocked. This limitation also applies to restoring a soft-deleted user via a match during Tenant sync cycle for on-premises hybrid scenarios.
