@@ -68,30 +68,7 @@ Use a naming convention that clarifies policy purpose. External access examples 
 - ExternalAccess_actiontaken_AppGroup
 - ExternalAccess_Block_FinanceApps
 
-## Block external users from resources
-
-You can block external users from accessing resources with Conditional Access policies.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
-1. Select **Create new policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
-1. Under **Assignments**, select **Users or workload identities**.
-   1. Under **Include**, select **All guests and external users**.
-   1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
-1. Under **Target resources** > **Cloud apps**, select the following options:
-   1. Under **Include**, select **All cloud apps**
-   1. Under **Exclude**, select applications you want to exclude.
-1. Under **Access controls** > **Grant**, select **Block access**, then select **Select**.
-1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
-
-> [!NOTE]
-> After administrators confirm the settings using [report-only mode](~/identity/conditional-access/howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
-
-Learn more: [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md)
-
-### Allow external access to specific external users
+## Allow external access to specific external users
 
 There are scenarios when it's necessary to allow access for a small, specific group.
 
@@ -115,7 +92,7 @@ Before you begin, we recommend you create a security group, which contains exter
 
 Learn more: [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md)
 
-### Service provider access
+## Service provider access
 
 Conditional Access policies for external users might interfere with service provider access, for example granular delegated administrate privileges.
 

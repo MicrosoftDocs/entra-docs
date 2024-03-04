@@ -7,7 +7,11 @@
     }
   ],
   "MetadataDelimiter": "\"",
+  "Include": [
+    "docs/identity/role-based-access-control/"
+  ],
   "Exclude": [
+    "docs/architecture/"
   ],
   "PreloadTOCFiles": [
   ],
