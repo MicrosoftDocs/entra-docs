@@ -20,17 +20,18 @@ sections:
   - name: General
     questions:
       - question: |
-          Why don't I see an option to sign in to Microsoft Entra ID by using certificates after I enter my username?
+          What if I already have a passkey?
         answer: |
-          An administrator needs to enable CBA for the tenant to make the sign-in with certificate option available for users. For more information, see [Step 3: Configure authentication binding policy](how-to-certificate-based-authentication.md#step-3-configure-authentication-binding-policy).
+          placeholder answer.
       - question: |
-           
+          I chose the wrong passkey provider. How can I retry? 
         answer: |
-
+          placeholder answer. 
       - question: |
-
+          How can I delete a passkey?
         answer: |        
-
+          Go to [Security info](https://mysignins.microsoft.com/security-info), find the passkey in the list of available sign-in methods, and click **Delete**.
       - question: |
-
+          placeholder question?
         answer: |
+          placeholder answer.  

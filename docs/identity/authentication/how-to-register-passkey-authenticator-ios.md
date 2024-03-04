@@ -94,12 +94,3 @@ This topic shows how to register a passkey in Microsoft Authenticator on your iO
 > You also need to delete the passkey from **Security Info**, using a web browser and logging in to [https://mysignins.microsoft.com/security-info](https://mysignins.microsoft.com/security-info).   
 
 
-## FAQs
-
-### What if I already have a passkey?
-
-### I chose the wrong passkey provider. How can I retry?
-
-### How can I delete a passkey?
-
-Go to [Security info](https://mysignins.microsoft.com/security-info), find the passkey in the list of available sign-in methods, and click **Delete**.
