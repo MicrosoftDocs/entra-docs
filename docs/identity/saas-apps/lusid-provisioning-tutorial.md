@@ -53,6 +53,8 @@ curl --request PUT 'https://<your-lusid-domain>.lusid.com/identity/api/identityp
 
 The response will include the `baseUrl` (**Tenant URL** in Microsoft Entra ID) and `apiToken` (**Secret Token** in Microsoft Entra ID) to be entered into the LUSID Microsoft Entra app later.
 
+Append `?aadOptscim062020` onto the 'baseUrl' to ensure Microsoft Entra ID uses SCIM compliant requests. For example, `https://<your-lusid-domain>.lusid.com/identity/api/scim/v2/?aadOptscim062020`.
+
 <a name='step-3-add-lusid-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add LUSID from the Microsoft Entra application gallery
