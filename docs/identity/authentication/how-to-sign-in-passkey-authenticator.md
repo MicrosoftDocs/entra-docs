@@ -19,7 +19,11 @@ ms.collection: M365-identity-device-management
 
 # [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
 
-### Wizard method
+[Wizard method](#wizard-method-ios)
+[Direct method](#direct-method-ios)
+[Sign-in steps](#sign-in-steps-ios)
+
+### Wizard method (iOS)
 
 This article shows how to register a passkey with Microsoft Authenticator on your iOS device. Your device needs to run iOS version 17 or later. 
 
@@ -79,7 +83,7 @@ This article shows how to register a passkey with Microsoft Authenticator on you
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-interrupt-ios/create-passkey.png" alt-text="Screenshot of the done to create passkey prompt in Microsoft Authenticator for iOS devices."
 
-### Direct method
+### Direct method (iOS)
 
 If your organization requires you to register a passkey in Microsoft Authenticator you’ll be prompted after sign-in to add a passkey. 
 
@@ -103,7 +107,6 @@ If your organization requires you to register a passkey in Microsoft Authenticat
    1. Tap **Next**, and you’ll be directed to `login.microsoft.com`.  
    1. A security prompt open and ask where you would like to save your passkey.
 
-
    > [!NOTE] 
    > Your browser and device might show different options. If the device where you started the registration process supports passkeys, you can save the passkey to that device. Select **Use another device** or **More options** to see other ways to save the passkey. 
 
@@ -122,7 +125,7 @@ If your organization requires you to register a passkey in Microsoft Authenticat
    1. After you'e redirected to **Security info**, you can change the default name for the new sign-in method.    
    1. Tap **Done** to save the new method. 
 
-### Sign-in steps
+### Sign-in steps (iOS)
 
 1. Open your browser and go to `login.microsoftonline.com`.
 1. Select **Sign-in options**. 
@@ -135,7 +138,11 @@ If your organization requires you to register a passkey in Microsoft Authenticat
 
 # [:::image type="icon" source="media/icons/android-icon.png" border="false"::: **Android**](#tab/Android)
 
-### Wizard method
+[Wizard method](#wizard-method-android)
+[Direct method](#direct-method-android)
+[Sign-in steps](#sign-in-steps-android)
+
+### Wizard method (Android)
 
 This article shows how to sign in with a passkey in Microsoft Authenticator on your Android device. Your device needs to run least Android 14 or later.
 
@@ -207,8 +214,7 @@ This article shows how to sign in with a passkey in Microsoft Authenticator on y
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-interrupt-android/done-save-passkey.png" alt-text="Screenshot of the finished passkey prompt in Microsoft Authenticator for android devices.":::
 
-### Direct method
-
+### Direct method (Android)
 
 1. If your organization requires you to register a passkey in Microsoft Authenticator, you get prompted to add a passkey after you sign in. 
 
@@ -251,7 +257,7 @@ This article shows how to sign in with a passkey in Microsoft Authenticator on y
    1. Tap **Done** to save the new method. 
 
  
-### Sign-in steps
+### Sign-in steps (Android)
 
 1. Open your browser and go to `login.microsoftonline.com`.
 1. Select **Sign-in options**. 
