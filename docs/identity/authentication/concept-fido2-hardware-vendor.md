@@ -181,6 +181,27 @@ The following table lists partners who are Microsoft-compatible FIDO2 security k
 |d8522d9f-575b-4866-88a9-ba99fa02f35b|"YubiKey Bio Series"|![y]|![y]|![n]|![n]|![n]|
 |83c47309-aabb-4108-8470-8be838b573cb|"YubiKey Bio Series (Enterprise Profile)"|![y]|![y]|![n]|![n]|![y]|
 
+
+
+
+### ACS FIDO Authenticator
+
+AAGUID: 50a45b0c-80e7-f944-bf29-f552bfa2e048
+
+|Biometric|Usb|Nfc|Bluetooth|IsAutoApproved|
+|---|---|---|---|---|
+|![n]|![y]|![n]|![n]|![n]|
+
+### ACS FIDO Authenticator Card
+
+AAGUID: 973446ca-e21c-9a9b-99f5-9b985a67af0f
+
+|Biometric|Usb|Nfc|Bluetooth|IsAutoApproved|
+|---|---|---|---|---|
+|![n]|![n]|![y]|![n]|![n]|
+
+
+
 <!--Image references-->
 [y]: ./media/fido2-compatibility/yes.png
 [n]: ./media/fido2-compatibility/no.png
