@@ -1,17 +1,17 @@
 ---
-title: Problem configuring user provisioning to a Microsoft Entra Gallery app
-description: How to troubleshoot common issues faced when configuring user provisioning to an application already listed in the Microsoft Entra Application Gallery
+title: Troubleshoot provisioning to a Microsoft Entra gallery app.
+description: How to troubleshoot common issues faced when configuring user provisioning to an application already listed in the Microsoft Entra application gallery.
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 02/28/2024
+ms.date: 03/04/2024
 ms.author: kenwith
 ms.reviewer: asteen, arvinh
 ---
 
-# Problem configuring user provisioning to a Microsoft Entra Gallery application
+# Problem configuring user provisioning to a Microsoft Entra gallery application
 
 Troubleshoot configuration for application provisioning. For more information, see [automatic user provisioning](user-provisioning.md). 
 
