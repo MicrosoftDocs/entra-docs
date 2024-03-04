@@ -141,9 +141,9 @@
         - name: (New) Enable 
           href: how-to-enable-authenticator-passkey.md
         - name: (New) Register 
-          href: how-to-register-passkey-authenticator-ios.md
+          href: how-to-register-passkey-authenticator.md
         - name: (New) Sign in 
-          href: how-to-sign-in-passkey-authenticator-ios.md
+          href: how-to-sign-in-passkey-authenticator.md
         - name: (New) FAQs
           href: passkey-authenticator-faq.yml
         - name: Enable Authenticator 
@@ -160,10 +160,6 @@
             href: how-to-authentication-passwordless-passkey-android-direct.md
           - name: iOS inline registration
             href: how-to-authentication-passwordless-passkey-ios-direct.md
-          - name: Register an Android device
-            href: how-to-register-passkey-authenticator-android.md
-          - name: Sign in to Android
-            href: how-to-sign-in-passkey-authenticator-android.md
       - name: Hybrid
         items:
         - name: Register passkey with a security key

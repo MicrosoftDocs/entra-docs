@@ -17,6 +17,8 @@ ms.collection: M365-identity-device-management
 ---
 # Register Microsoft Authenticator on iOS in MySecurityInfo
 
+# [iOS](#tab/iOS)
+
 This topic shows how to register a passkey in Microsoft Authenticator on your iOS device in your security info in My Sign-Ins [Security info](https://mysignins.microsoft.com/security-info). Your device needs to run least iOS 17 or later.
 
 
