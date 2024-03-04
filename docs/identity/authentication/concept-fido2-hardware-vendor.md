@@ -32,7 +32,7 @@ The following table lists partners who are Microsoft-compatible FIDO2 security k
 |---|---|---|---|---|---|---|
 |50a45b0c-80e7-f944-bf29-f552bfa2e048|"ACS FIDO Authenticator"|![n]|![y]|![n]|![n]|![n]|
 |973446ca-e21c-9a9b-99f5-9b985a67af0f|"ACS FIDO Authenticator Card"|![n]|![n]|![y]|![n]|![n]|
-|5ca1ab1e-1337-fa57-f1d0-a117e71ca702|"Allthenticator App: roaming BLE FIDO2 Allthenticator for Windows| Mac| Linux| and Allthenticate door readers"|![y]|![y]|![n]|![n]|![n]|
+|5ca1ab1e-1337-fa57-f1d0-a117e71ca702|"Allthenticator App: roaming BLE FIDO2 Allthenticator for Windows, Mac, Linux, and Allthenticate door readers"|![y]|![y]|![n]|![n]|![n]|
 |3f59672f-20aa-4afe-b6f4-7e5e916b6d98|"Arculus FIDO 2.1 Key Card \[P71\]"|![n]|![y]|![n]|![n]|![n]|
 |9d3df6ba-282f-11ed-a261-0242ac120002|"Arculus FIDO2/U2F Key Card"|![n]|![y]|![n]|![n]|![n]|
 |d41f5a69-b817-4144-a13c-9ebd6d9254d6|"ATKey.Card CTAP2.0"|![y]|![n]|![n]|![n]|![n]|
