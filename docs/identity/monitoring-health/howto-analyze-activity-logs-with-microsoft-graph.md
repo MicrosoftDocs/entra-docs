@@ -13,7 +13,7 @@ ms.reviewer: egreenberg
 # Customer intent: As an IT admin, I want to be able to view and analyze sign-in and audit logs with the Microsoft Graph API so I can monitor and troubleshoot user activity in my organization programmatically.
 
 ---
-# How to analyze activity logs with Microsoft
+# How to analyze activity logs with Microsoft Graph
 
 The Microsoft Entra [reporting APIs](/graph/api/resources/azure-ad-auditlog-overview) provide you with programmatic access to the data through a set of REST APIs. You can call these APIs from many programming languages and tools. The Microsoft Graph API isn't designed for pulling large amounts of activity data. Pulling large amounts of activity data using the API might lead to issues with pagination and performance.
 
@@ -61,16 +61,16 @@ Try using the following queries:
   - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns?&$filter=conditionalAccessStatus eq 'failure'`
 
 - To find sign-ins to a specific application:
-  - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2021-01-14T17:43:26Z) and appId eq 'APP ID'`
+  - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and appId eq 'APP ID'`
 
 - For non-interactive sign-ins:
-  - GET `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2021-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'nonInteractiveUser')`
+  - GET `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'nonInteractiveUser')`
 
 - For service principal sign-ins: 
-  - GET `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2021-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'servicePrincipal')`
+  - GET `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'servicePrincipal')`
 
 - For managed identity sign-ins: 
-  - GET `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2021-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'managedIdentity')`
+  - GET `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'managedIdentity')`
 
 - To get the authentication method of a user: 
   - GET `https://graph.microsoft.com/beta/users/{userObjectId}/authentication/methods`
