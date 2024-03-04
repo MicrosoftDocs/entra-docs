@@ -18,23 +18,23 @@ Research universities need to collaborate with one another. To accomplish collab
 
 Universities face many challenges. For example, a university might use one identity management system and a set of protocols. Other universities might use a different set of technologies, depending on their requirements. In general, universities can:
 
-* Use different identity management systems.
+- Use different identity management systems.
 
-* Use different protocols.
+- Use different protocols.
 
-* Use customized solutions.
+- Use customized solutions.
 
-* Need support for a long history of legacy functionality.
+- Need support for a long history of legacy functionality.
 
-* Need support for solutions that are built in different IT generations.
+- Need support for solutions that are built in different IT generations.
 
 Many universities are also adopting the Microsoft 365 suite of productivity and collaboration tools. These tools rely on Microsoft Entra ID for identity management, which enables universities to configure:
 
-* Single sign-on across multiple applications.
+- Single sign-on across multiple applications.
 
-* Modern security controls, including passwordless authentication, multifactor authentication, adaptive Conditional Access, and identity protection.
+- Modern security controls, including passwordless authentication, multifactor authentication, adaptive Conditional Access, and identity protection.
 
-* Enhanced reporting and monitoring.
+- Enhanced reporting and monitoring.
 
 Because Microsoft Entra ID doesn't natively support multilateral federation, this content describes three solutions for federating authentication and access between universities with a typical research university architecture. These scenarios mention non-Microsoft products for illustrative purposes only and to represent the broader class of products. For example, this content uses Shibboleth as an example of a federation provider.
 
@@ -46,7 +46,7 @@ See these related articles about multilateral federation:
 
 [Multilateral federation Solution 1: Microsoft Entra ID with Cirrus Bridge](multilateral-federation-solution-one.md)
 
-[Multilateral federation Solution 2: Microsoft Entra ID with Shibboleth as a SAML proxy](multilateral-federation-solution-two.md)
+[Multilateral federation Solution 2: Microsoft Entra ID with Shibboleth as a Security Assertion Markup Language (SAML) proxy](multilateral-federation-solution-two.md)
 
 [Multilateral federation Solution 3: Microsoft Entra ID with AD FS and Shibboleth](multilateral-federation-solution-three.md)
 
