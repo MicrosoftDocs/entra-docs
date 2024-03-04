@@ -78,9 +78,7 @@ Provisioning on-demand with Exchange hybrid use the following steps
  3. Under **Configuration**, select your configuration.
  4. On the left, select **Provision on demand**.
  5. Enter the distinguished name of a user and select the **Provision** button.
- 6. A success screen appears with four green check marks. 
-    :::image type="content" source="media/exchange-hybrid/exchange-hybrid-3.png" alt-text="Screenshot of the initial Exchange writeback." lightbox="media/exchange-hybrid/exchange-hybrid-3.png":::
- 
+ 6. A success screen appears with four green check marks.  
  7. Click **Next**.  On the **Writeback exchange attributes to Active Directory** tab, the synchronization starts.  
  8. You should see the success details.
     :::image type="content" source="media/exchange-hybrid/exchange-hybrid-4.png" alt-text="Screenshot of Exchange attributes being written back." lightbox="media/exchange-hybrid/exchange-hybrid-4.png":::
