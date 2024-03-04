@@ -61,10 +61,14 @@ Organizations can install the client interactively, silently with the `/quiet` s
 1. Run the *GlobalSecureAccessClient.exe* setup file. Accept the software license terms.
 1. The client is installed and users are prompted to sign in with their Microsoft Entra credentials.
 
-   :::image type="content" source="media/how-to-install-windows-client/client-install-first-sign-in.png" alt-text="Screenshot showing the sign-in box appears after client installation completes." lightbox="media/how-to-install-windows-client/client-install-first-sign-in.png":::
+    ![Screenshot showing the sign-in box appears after client installation completes.](media/how-to-install-windows-client/client-install-first-sign-in.png)
 
 1. Users sign in and the connection icon turns green. Double-clicking on the connection icon opens a notification with client information showing a connected state
     :::image type="content" source="media/how-to-install-windows-client/client-install-connected.png" alt-text="Screenshot showing the client is connected.":::
+
+
+
+
 
 ## Troubleshooting
 
