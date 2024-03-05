@@ -15,7 +15,7 @@ metadata:
 productDirectory:
   title: Getting started
   items:
-    - title: Microsoft Entra ID (Azure AD)
+    - title: Microsoft Entra ID
       imageSrc: ./media/index/microsoft-entra-id-color.png
       summary: "Manage user identities and control access to your apps, data, and resources."
       url: /entra/identity/
@@ -57,7 +57,7 @@ additionalContent:
     - title: Announcements and resources
       items:
         - title: "Microsoft Entra"
-          summary: "Learn more about Microsoft Entra and how the Entra family of products can help your business."
+          summary: "Learn more about Microsoft Entra ID and how the Microsoft Entra family of products can help your business."
           url: https://aka.ms/MicrosoftEntra
         - title: "New name for Azure Active Directory"
           summary: "Learn more about the new name, what the change means, and how it affects you."
