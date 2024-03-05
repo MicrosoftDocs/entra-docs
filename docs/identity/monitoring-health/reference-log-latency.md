@@ -39,7 +39,7 @@ There are many more steps in this process that aren't reflected here. Even with 
 
 ## Last sign-in
 
-The last sign-in of a user is one of the most common questions related to log latency. This information is provided by the `signInActivity` property in Microsoft Graph. The `signInActivity` property provides the last interactive and non-interactive sign-in *attempt* for a user. This property may take up to 24 hours to update. For more information, see [signInActivity resource type](/graph/api/resources/signinactivity?view=graph-rest-beta&preserve-view=true).
+The last sign-in of a user is one of the most common questions related to log latency. This information is provided by the `signInActivity` property in Microsoft Graph. The signInActivity property provides the last interactive and non-interactive sign-in *attempt* for a user. This property might take up to 24 hours to update. For more information, see [signInActivity resource type](/graph/api/resources/signinactivity?view=graph-rest-beta&preserve-view=true).
 
 You must be using a [Microsoft Entra role](howto-access-activity-logs.md#prerequisites) that grants access to the sign-in logs to see this detail, which is found in several places:
 
@@ -57,4 +57,4 @@ You must be using a [Microsoft Entra role](howto-access-activity-logs.md#prerequ
 
 The last sign-in details that appear on the **Sign-ins** tile on the user profile and the **Last interactive sign-in** and **Last non-interactive sign-in** columns in the **Users** list are *not* real-time.
 
-If you need to see the most recent sign-in date and time for a user, go to the sign-in logs and filter for that user. The third bullet in the previous list shows an example of the sign-in logs filtered for a particular user.
+If you need to see the most recent sign-in date and time for a user, go to the sign-in logs and filter for that user.

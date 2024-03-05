@@ -22,7 +22,7 @@ This article describes how to analyze Microsoft Entra activity logs with Microso
 ## Prerequisites
 
 - For license and role requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
-- [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role to consent to required permissions.
+- To consent to the required permissions, you need the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
 To make requests to the Microsoft Graph API, you must first:
 
@@ -50,7 +50,7 @@ With all the prerequisites configured, you can run activity log queries in Micro
 
 ### Fine-tune your queries
 
-To search for specific activity log entries, use the $filter and createdDateTime query parameters with one of the available properties. Some of the queries below use the `beta` endpoint. The `beta` endpoint is subject to change and isn't recommended for production use.
+To search for specific activity log entries, use the $filter and createdDateTime query parameters with one of the available properties. Some of the following queries use the `beta` endpoint. The beta endpoint is subject to change and isn't recommended for production use.
 
 - [Sign-in log properties](/graph/api/resources/signin#properties)
 - [Audit log properties](/graph/api/resources/directoryaudit#properties)

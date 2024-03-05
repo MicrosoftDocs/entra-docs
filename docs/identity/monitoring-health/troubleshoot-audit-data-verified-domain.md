@@ -22,7 +22,7 @@ The Microsoft Entra audit logs show multiple user updates occurred in my Microso
 
 The bulk updates involve changing the domain for the `UserPrincipalName` changed from the organization's preferred domain to the default `*.onmicrosoft.com` domain suffix.
 
-### Sample audit log entry
+### Sample audit log details
 
 **Activity Date (UTC)**: 2022-01-27 07:44:05
 
@@ -82,21 +82,23 @@ This backend operation doesn't cause changes to certain objects that:
 
 - don't have an active Microsoft Exchange license
 - have `MSExchRemoteRecipientType` set to Null 
-- aren't considered a shared resource.
-    - Shared Resource is when `CloudMSExchRecipientDisplayType` contains one of the following values:
-        - `MailboxUser` (shared)
-        - `PublicFolder`
-        - `ConferenceRoomMailbox`
-        - `EquipmentMailbox`
-        - `ArbitrationMailbox`
-        - `RoomList`
-        - `TeamMailboxUser`
-        - `GroupMailbox`
-        - `SchedulingMailbox`
-        - `ACLableMailboxUser`
-        - `ACLableTeamMailboxUser`
+- aren't considered a shared resource
+
+A shared resource is when `CloudMSExchRecipientDisplayType` contains one of the following values:
+
+- `MailboxUser` (shared)
+- `PublicFolder`
+- `ConferenceRoomMailbox`
+- `EquipmentMailbox`
+- `ArbitrationMailbox`
+- `RoomList`
+- `TeamMailboxUser`
+- `GroupMailbox`
+- `SchedulingMailbox`
+- `ACLableMailboxUser`
+- `ACLableTeamMailboxUser`
   
-To build more correlation between these two disparate events, Microsoft is working on updating the **Actor** info in the audit logs to identify these changes as triggered by a verified domain change. This action helps check when the verified domain change event took place and started to mass update the objects in their tenant. 
+To build more correlation between these two disparate events, Microsoft is working on updating the **Actor** info in the audit logs to identify these changes as triggered by a verified domain change. This action helps check when the verified domain change event took place and started to mass update the objects in the tenant. 
 
 In most cases, there are no changes to users as their `UserPrincipalName` and `proxyAddresses` are consistent, so we're working to only display in the audit logs those updates that caused an actual change to the object. This action prevents noise in the audit logs and help admins correlate the remaining user changes to verified domain change events. 
 

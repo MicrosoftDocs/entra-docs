@@ -83,7 +83,7 @@ sections:
       - question: |
           I see multiple audit log entries with an activity I don't recognize. What does `DSR Delete: MFA.PostgreSQL.change_requests` or `DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-eu.activations` mean?
         answer: |
-          We now process some [GDPR](https://www.microsoft.com/trust-center/privacy/gdpr-overview) events, such as deleting users or exporting user data, in the audit logs. These events are captured in the logs, but the activity description might be a little cryptic. We're working to improve those activity labels. For a full list of of the activities related to GDPR, see [Audit activities](reference-audit-activities.md#authentication-methods). These activities are associated with the DirectoryManagement category.
+          These changes are related to how MFA and some [GDPR](https://www.microsoft.com/trust-center/privacy/gdpr-overview) events are processed. Events such as deleting users or exporting user data are captured in the audit logs, but the activity description might be a little cryptic. We're working to improve those activity labels. For a full list of of the activities related to GDPR, see [Audit activities](reference-audit-activities.md#authentication-methods). These activities are associated with the DirectoryManagement category.
 
 
   - name: Sign-in logs

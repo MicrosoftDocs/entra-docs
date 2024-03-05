@@ -35,7 +35,7 @@ This article provides the steps to access diagnostic settings for the Microsoft 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
 1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**. The **General** settings appear by default.
-1. Any existing diagnostic settings that have already been configured appear in the table. Select **edit settings** to change an existing setting, or select **Add diagnostic setting** to create a new setting.
+1. Any existing diagnostic settings appear in the table. Select **edit settings** to change an existing setting, or select **Add diagnostic setting** to create a new setting.
 
     ![Screenshot of the Microsoft Entra diagnostic settings page.](media/howto-configure-diagnostic-settings/diagnostic-settings-start.png)
 
@@ -56,7 +56,7 @@ When you create or edit a diagnostic setting, you can choose which logs to inclu
 
 ### Log categories
 
-You can select one, some, or all of the available logs. Some logs might be part of a preview feature, so even if you select a log category, you might not see any data until the feature is generally available. For a description of the available logs, see [Log options for streaming to endpoints](concept-diagnostic-settings-logs-options.md).
+You can select one, some, or all of the available logs. Some logs might be part of a preview feature. Even if you select a log category, you might not see any data until the feature is generally available. For a description of the available logs, see [Log options for streaming to endpoints](concept-diagnostic-settings-logs-options.md).
 
 ![Screenshot of the log categories in diagnostic settings.](media/howto-configure-diagnostic-settings/diagnostic-settings-log-categories.png)
 
@@ -64,7 +64,7 @@ You can select one, some, or all of the available logs. Some logs might be part 
 
 You can send logs to a Log Analytics workspace, stream logs to an event hub, or archive logs to a storage account. At this time, the only supported partner solution is Azure Native ISV services. For more information, see [Azure Native ISV services overview](/azure/partner-solutions/overview).
 
-To send your logs to one of the destinations, you must have already configured that destination. 
+To send your logs to one of the destinations, you must have configured that destination. 
 
 - [Configure a Log Analytics workspace](tutorial-configure-log-analytics-workspace.md)
 - [Create an event hub](/azure/event-hubs/event-hubs-create)
