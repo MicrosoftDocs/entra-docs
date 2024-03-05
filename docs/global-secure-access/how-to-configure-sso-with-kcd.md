@@ -33,7 +33,7 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 
 |Port      |Protocol   |Purpose     |
 |----------|-----------|------------|
-|88        |UDP / TCP  |Kerberos    |
+|88        |User Datagram Protocol (UDP) / Transmission Control Protocol (TCP)  |Kerberos    |
 |389       |UDP        |DC locator  |
 
 > [!NOTE]
@@ -78,7 +78,7 @@ To deploy Windows Hello for Business cloud Kerberos trust with on premises Activ
 
 
 ## Test the configuration
-Add a file share resource to test the configuraiton.
+Test the configuration using a file share resource.
 
 ### Test file share access
 Right select on the Global Secure Access icon in your system tray and select Advanced Diagnostics. Confirm that the client received the Private Access segments configured as part of the Global Secure Access policy. Verify that the rules displayed in the client match the network segments you configured.
