@@ -29,12 +29,12 @@ Domain Controllers must be published for clients to obtain Kerberos tickets. The
 
 At a minimum, publish all Domain Controllers that are configured in the Active Directory site where your Private Access connectors are installed. For example, if your Private Access connectors are in your Brisbane data center, you should publish all the Domain Controllers in the Brisbane data center.
 
-The Domain Controller ports are required to enable SSO to on-premises resources:
-```
-Port	Protocol	Purpose
-88	UDP / TCP	Kerberos
-389	UDP	DC Locator
-```
+The Domain Controller ports are required to enable SSO to on-premises resources.
+
+|Port      |Protocol   |Purpose     |
+|----------|-----------|------------|
+|88        |UDP / TCP  |Kerberos    |
+|389       |UDP        |DC locator  |
 
 > [!NOTE]
 > The guide focuses on enabling SSO to on-premises resources and excludes configuration required for Windows domain-joined clients to perform domain operations (password change, Group Policy, etc.).
