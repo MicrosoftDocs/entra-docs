@@ -19,9 +19,9 @@ ms.collection: M365-identity-device-management
 
 # [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
 
-[Wizard method](#wizard-method-ios)
-[Direct method](#direct-method-ios)
-[Sign-in steps](#sign-in-steps-ios)
+[Wizard method](#wizard-method-ios)<br>
+[Direct method](#direct-method-ios)<br>
+[Sign-in steps](#sign-in-steps-ios)<br>
 
 ### Wizard method (iOS)
 
