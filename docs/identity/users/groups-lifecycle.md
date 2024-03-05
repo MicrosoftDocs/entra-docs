@@ -210,7 +210,7 @@ You can use the following cmdlets to configure the policy in more detail. For mo
 For more information on Microsoft Entra groups, see:
 
 - [Existing groups](~/fundamentals/groups-view-azure-portal.md)
-- [Manage settings of a group](~/fundamentals/how-to-manage-groups.md)
-- [Manage members of a group](~/fundamentals/how-to-manage-groups.md)
-- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.md)
+- [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Manage members of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
 - [Manage dynamic rules for users in a group](groups-dynamic-membership.md)

@@ -82,7 +82,7 @@ If you're not going to continue to use this application, you can delete the tena
 
 - Add users, see [Add or delete a new user](./add-users.md)
 
-- Add groups and members, see [Create a basic group and add members](./how-to-manage-groups.md).
+- Add groups and members, see [Create a basic group and add members](./how-to-manage-groups.yml).
 
 - Learn about [Azure role-based access control (Azure RBAC)](/azure/role-based-access-control/overview) and [Conditional Access](~/identity/conditional-access/overview.md) to help manage your organization's application and resource access.
 
