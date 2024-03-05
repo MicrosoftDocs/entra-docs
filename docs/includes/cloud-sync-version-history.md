@@ -1,9 +1,9 @@
-This article lists the versions and features of Microsoft Entra Provisioning Agent that have been released. The Microsoft Entra ID team regularly updates the Provisioning Agent with new features and functionality. 
+This article lists the versions and features of Microsoft Entra provisioning Agent that have been released. The Microsoft Entra team regularly updates the Provisioning Agent with new features and functionality. 
 > [!NOTE]
 > All new Provisioning Agent releases are made available through auto upgrade for existing installations and can be downloaded for new installations.
 
 >[!NOTE]
-> Microsoft Entra Provisioning agent follows the [Modern Lifecycle Policy](/lifecycle/policies/modern). Changes for products and services  under the Modern Lifecycle Policy may be more frequent and require customers to be alert for forthcoming modifications to their product or service.
+> Microsoft Entra provisioning agent follows the [Modern Lifecycle Policy](/lifecycle/policies/modern). Changes for products and services  under the Modern Lifecycle Policy may be more frequent and require customers to be alert for forthcoming modifications to their product or service.
 >
 > Products governed by the Modern Policy follow a [continuous support and servicing model](/lifecycle/overview/product-end-of-support-overview). Customers must take the latest update to remain supported. 
 >
@@ -86,7 +86,7 @@ Release date: August 8, 2022
 
 ### New or changed functionality
 
- - We added a new cmdlet to enable and disable writeback of passwords. For more information about this cmdlet and its use, see [Enable password writeback in Azure AD Connect cloud sync](../identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md#enable-password-writeback-in-sspr).
+ - We added a new cmdlet to enable and disable writeback of passwords. For more information about this cmdlet and its use, see [Enable password writeback in Microsoft Entra Connect cloud sync](../identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md#enable-password-writeback-in-sspr).
  - We now return more info in the 'Get-AADCloudSyncDomains' cmdlet. 
  - We updated new cmdlets of CloudSync PowerShell module in the unattended agent install script. 
  - We have added support for the installation of the provisioning agent using the commandline. 
@@ -137,7 +137,7 @@ August 20, 2021 - released for download
 August 8, 2021 - released for download
 
 >[!NOTE] 
->This is a security update release of Azure AD Connect. 
+>This is a security update release of Microsoft Entra Connect. 
 >This release addresses a vulnerability as documented in [this CVE](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36949). For more information about this vulnerability, see the CVE.
 
 ## 1.1.359.0
@@ -204,7 +204,7 @@ December 4, 2019: Released for download
 
 ### New features and improvements
 
-* Includes support for [Azure AD Connect cloud sync](../identity/hybrid/cloud-sync/what-is-cloud-sync.md) to synchronize user, contact and group data from on-premises Active Directory to Azure AD
+* Includes support for [Microsoft Entra Connect cloud sync](../identity/hybrid/cloud-sync/what-is-cloud-sync.md) to synchronize user, contact and group data from on-premises Active Directory to Microsoft Entra ID
 
 
 ## 1.1.67.0
@@ -216,12 +216,12 @@ September 9, 2019: Released for auto update
 ### New features and improvements
 
 * Ability to configure more tracing and logging for debugging Provisioning Agent issues
-* Ability to fetch only those Azure AD attributes that are configured in the mapping to improve performance of sync
+* Ability to fetch only those Microsoft Entra attributes that are configured in the mapping to improve performance of sync
 
 ### Fixed issues
 
-* Fixed a bug wherein the agent went into an unresponsive state if there were issues with Azure AD connection failures
-* Fixed a bug that caused issues when binary data was read from Azure Active Directory
+* Fixed a bug wherein the agent went into an unresponsive state if there were issues with Microsoft Entra connection failures
+* Fixed a bug that caused issues when binary data was read from Microsoft Entra ID
 * Fixed a bug wherein the agent failed to renew trust with the cloud hybrid identity service
 
 ## 1.1.30.0
