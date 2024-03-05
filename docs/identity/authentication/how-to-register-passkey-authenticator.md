@@ -151,14 +151,3 @@ This article shows how to register a passkey with Microsoft Authenticator on you
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/success.png" alt-text="Screenshot where user can change friendly nme of the new sign-in method.":::
  
 ---
-
-## FAQs
-
-### What if I already have a passkey?
-
-### I chose the wrong passkey provider. How can I retry?
-
-### How can I delete a passkey?
-
-Go to [Security info](https://mysignins.microsoft.com/security-info), find the passkey in the list of available sign-in methods, and click **Delete**.
-
