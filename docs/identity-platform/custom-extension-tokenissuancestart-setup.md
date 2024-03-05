@@ -63,7 +63,6 @@ In this step, you create an HTTP trigger function API using Visual Studio, insta
 
 ### Create the Azure Function app
 
-The function API is the source of extra claims for your token.
 
 1. Open Visual Studio, and select **Create a new project**.
 1. Search for and select **Azure Functions**, then select **Next**.
@@ -81,6 +80,8 @@ After creating the project, you'll need to install the required NuGet packages a
 1. Apply and accept the changes in the popups that appear.
 
 ### Add the sample code
+
+The function API is the source of extra claims for your token. Using the *Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents* NuGet packag.
 
 1. In your *Function1.cs* file, replace the entire contents of the file with the following code:
 
