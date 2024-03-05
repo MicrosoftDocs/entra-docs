@@ -87,7 +87,7 @@ End-users won't be able to grant consent to apps that have been detected as risk
 
 ## Next steps
 
-[Apps, permissions, and consent in Azure Active Directory (v1.0 endpoint)](~/identity-platform/quickstart-register-app.md)<br>
+[Apps, permissions, and consent in Microsoft Entra ID (v1.0 endpoint)](~/identity-platform/quickstart-register-app.md)<br>
 
 [Scopes, permissions, and consent in the Microsoft identity platform (v2.0 endpoint)](~/identity-platform/permissions-consent-overview.md)
 

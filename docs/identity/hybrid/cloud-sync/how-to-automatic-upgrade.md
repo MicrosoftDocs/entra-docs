@@ -33,8 +33,8 @@ To verify your version, right-click the executable and select properties and the
 To remove the agent, go to **Uninstall or change a program** and uninstall the following:
 
 - **Microsoft Entra Connect Agent Updater**
-- **Microsoft Entra Provisioning Agent**
-- **Microsoft Entra Provisioning Agent Package**
+- **Microsoft Entra provisioning Agent**
+- **Microsoft Entra provisioning Agent Package**
 
 ![Agent removal](media/how-to-automatic-upgrade/agent-3.png)
 

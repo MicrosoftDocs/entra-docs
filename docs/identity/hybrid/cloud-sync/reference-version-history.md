@@ -1,6 +1,6 @@
 ---
-title: 'Microsoft Entra Provisioning Agent: Version release history'
-description: This article lists all releases of Microsoft Entra Provisioning Agent and describes new features and fixed issues
+title: 'Microsoft Entra provisioning Agent: Version release history'
+description: This article lists all releases of Microsoft Entra provisioning Agent and describes new features and fixed issues
 
 author: billmath
 manager: amycolannino
@@ -12,6 +12,6 @@ ms.author: billmath
 ms.reviewer: daveba
 ---
 
-# Microsoft Entra Provisioning Agent: Version release history
+# Microsoft Entra provisioning Agent: Version release history
 
 [!INCLUDE [cloud-sync-version-history.md](~/includes/cloud-sync-version-history.md)]

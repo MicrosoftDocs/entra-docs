@@ -102,7 +102,7 @@ There are scenarios where customers might want to require a fresh authenticati
 * Protecting risky users and risky sign-ins​ identified by Microsoft Entra ID Protection.
 * Securing sensitive user actions like Microsoft Intune enrollment.
 
-Sign-in frequency set to **every time** works best when the resource has the logic of when a client should get a new token. These resources redirect the user back to Microsoft Entra only once the session expires.
+Sign-in frequency set to **every time** works best when the resource has the logic of when a client should get a new token. These resources redirect the user back to Microsoft Entra-only once the session expires.
 
 Administrators should limit the number of applications they enforce a policy requiring users to reauthenticate every time with. Triggering reauthentication too frequently can increase security friction to a point that it causes users to experience MFA fatigue and open the door to phishing attempts. Web applications usually provide a less disruptive experience than their desktop counterparts when require reauthentication every time is enabled.
 
