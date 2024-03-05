@@ -19,6 +19,8 @@ ms.collection: M365-identity-device-management
 
 # [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
 
+**In this article**
+
 [Wizard method](#wizard-method-ios)<br>
 [Direct method](#direct-method-ios)<br>
 [Sign-in steps](#sign-in-steps-ios)<br>
@@ -137,6 +139,8 @@ If your organization requires you to register a passkey in Microsoft Authenticat
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-options.png" alt-text="Screenshot of the sign-in options in Microsoft Authenticator for iOS devices.":::
 
 # [:::image type="icon" source="media/icons/android-icon.png" border="false"::: **Android**](#tab/Android)
+
+**In this article**
 
 [Wizard method](#wizard-method-android)<br>
 [Direct method](#direct-method-android)<br>
