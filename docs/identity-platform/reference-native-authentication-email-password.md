@@ -363,111 +363,111 @@ Once the app OTP successfully submits the OTP code, the sign-up flow depends on 
 
 #### Response
 
-    ```http
-    HTTP/1.1 400 Bad Request
-    Content-Type: application/json
-    ```
+```http
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+```
 
-    ```json
-    {
-        "error": "credential_required",
-        "error_description": "AADSTS55103: Credential required. Trace ID: d6966055-...-80500 Correlation ID: 3944-...-60d6 Timestamp: yy-mm-dd 02:37:33Z",
-        "error_codes": [
-            55103
-        ],
-        "timestamp": "yy-mm-dd 02:37:33Z",
-        "trace_id": "d6966055-...-80500",
-        "correlation_id": "3944-...-60d6",
-        "continuation_token": "AQABEQEAAAA..."
-    } 
-    ```
+```json
+{
+    "error": "credential_required",
+    "error_description": "AADSTS55103: Credential required. Trace ID: d6966055-...-80500 Correlation ID: 3944-...-60d6 Timestamp: yy-mm-dd 02:37:33Z",
+    "error_codes": [
+        55103
+    ],
+    "timestamp": "yy-mm-dd 02:37:33Z",
+    "trace_id": "d6966055-...-80500",
+    "correlation_id": "3944-...-60d6",
+    "continuation_token": "AQABEQEAAAA..."
+} 
+```
     
-    |    Parameter     | Description        |
-    |----------------------|------------------------|
-    | `error`  |  An error code string that can be used to classify types of errors, and to react to errors.   |  
-    |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
-    |`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
-    |`timestamp`|The time when the error occurred.|
-    |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
-    |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
-    |`continuation_token`| [Continuation token](#continuation-token) that Microsoft Entra returns. |
-    |`suberror` | An error code string that can be used to further classify types of errors.|
-    
-    Here are the possible errors you can encounter (possible values of the `error` parameter):
-    
-    |    Error value     | Description        |
-    |----------------------|------------------------|
-    |`credential_required`|Authentication is required for account creation, so you have to make a call to the `/signup/v1.0/challenge` endpoint to determine the credential the user is required to provide.|
-    |`invalid_request`  | Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid or the customer tenant administrator hasn't enabled email OTP for all tenant users.   |  
-    |`invalid_grant`|The grant type included in the request isn't valid or supported, or OTP value is incorrect.|
-    |`expired_token`|The continuation token included in the request is expired. |
+|    Parameter     | Description        |
+|----------------------|------------------------|
+| `error`  |  An error code string that can be used to classify types of errors, and to react to errors.   |  
+|`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
+|`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
+|`timestamp`|The time when the error occurred.|
+|`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
+|`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
+|`continuation_token`| [Continuation token](#continuation-token) that Microsoft Entra returns. |
+|`suberror` | An error code string that can be used to further classify types of errors.|
 
-    If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_grant* error:
+Here are the possible errors you can encounter (possible values of the `error` parameter):
 
-    |    Suberror value     | Description        |
-    |----------------------|------------------------|
-    |`invalid_oob_value`| The value of OTP code is invalid.|
+|    Error value     | Description        |
+|----------------------|------------------------|
+|`credential_required`|Authentication is required for account creation, so you have to make a call to the `/signup/v1.0/challenge` endpoint to determine the credential the user is required to provide.|
+|`invalid_request`  | Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid or the customer tenant administrator hasn't enabled email OTP for all tenant users.   |  
+|`invalid_grant`|The grant type included in the request isn't valid or supported, or OTP value is incorrect.|
+|`expired_token`|The continuation token included in the request is expired. |
 
-    For the password credential to be collected from the user, the app needs to make a call to the `/signup/v1.0/challenge` endpoint to determine the credential the user is required to provide.
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_grant* error:
 
-    Here's an example of the request(we present the example request in multiple lines for readability):
+|    Suberror value     | Description        |
+|----------------------|------------------------|
+|`invalid_oob_value`| The value of OTP code is invalid.|
 
-    ```http
-    POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/challenge HTTP/1.1
-    Host: {tenant_subdomain}.ciamlogin.com
-    Content-Type: application/x-www-form-urlencoded
- 
-    client_id=111101-14a6-abcd-97bc-abcd1110011
-    &challenge_type=oob password redirect
-    &continuation_token=AQABAAEAAA…
-    ```
-    
-    |    Parameter     | Required                     |           Description        |
-    |-----------------------|-------------------------|------------------------|
-    | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
-    | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
-    | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-up-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password sign-up flow, the value is expected to contain `password redirect`.|
-    |`continuation_token`| Yes |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous request.|
+For the password credential to be collected from the user, the app needs to make a call to the `/signup/v1.0/challenge` endpoint to determine the credential the user is required to provide.
 
-    #### Success response
-    
-    If password is the authentication method configured for the user in the Microsoft Entra admin center, a success response with the continuation token is returned to the app.
-    
-    ```http
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    ```
+Here's an example of the request(we present the example request in multiple lines for readability):
 
-    ```json
-    {    
-        "challenge_type": "password", 
-        "continuation_token": " AQABAAEAAAAty..."  
-    }  
-    ```
-    
-    |    Parameter     | Description        |
-    |----------------------|------------------------|
-    | `challenge_type`  |  *password* is returned in the response for the required credential.   |
-    |`continuation_token`| [Continuation token](#continuation-token) that Microsoft Entra returns.   |
-    
-    If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
-    
-    ```http
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    ```
+```http
+POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/challenge HTTP/1.1
+Host: {tenant_subdomain}.ciamlogin.com
+Content-Type: application/x-www-form-urlencoded
 
-    ```json
-    {     
-       "challenge_type": "redirect" 
-    } 
-    ```
-    
-    |    Parameter     | Description        |
-    |----------------------|------------------------|
-    | `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
-    
-    This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
+client_id=111101-14a6-abcd-97bc-abcd1110011
+&challenge_type=oob password redirect
+&continuation_token=AQABAAEAAA…
+```
+
+|    Parameter     | Required                     |           Description        |
+|-----------------------|-------------------------|------------------------|
+| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
+| `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-up-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password sign-up flow, the value is expected to contain `password redirect`.|
+|`continuation_token`| Yes |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous request.|
+
+#### Success response
+
+If password is the authentication method configured for the user in the Microsoft Entra admin center, a success response with the continuation token is returned to the app.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+
+```json
+{    
+    "challenge_type": "password", 
+    "continuation_token": " AQABAAEAAAAty..."  
+}  
+```
+
+|    Parameter     | Description        |
+|----------------------|------------------------|
+| `challenge_type`  |  *password* is returned in the response for the required credential.   |
+|`continuation_token`| [Continuation token](#continuation-token) that Microsoft Entra returns.   |
+
+If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+
+```json
+{     
+    "challenge_type": "redirect" 
+} 
+```
+
+|    Parameter     | Description        |
+|----------------------|------------------------|
+| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
+
+This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
 ### Step 4: Authenticate and get token to sign in
 
