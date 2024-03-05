@@ -14,6 +14,8 @@ ms.reviewer: anjusingh, ludwignick
 
 Authentication Transfer is a new authentication flow that simplifies the cross-device sign-in from PC to mobile for Microsoft apps. Authentication transfer allows you to transfer an authentication from one device to another, like desktop to mobile. Authentication transfer increases user engagement by connecting them on more than one platform. Users can use a QR code in an authenticated app on their PC to sign-in to a mobile app.
 
+:::image type="content" source="media/concept-authentication-transfer/authentication-transfer-in-policy-example.png" alt-text="Screenshot of an example Conditional Access policy using authentication with a block control." lightbox="media/concept-authentication-transfer/authentication-transfer-in-policy-example.png":::
+
 ## Authentication transfer and Conditional Access
 
 During authentication transfer, all Microsoft Entra Conditional Access policies get evaluated. Authentication transfer only transfers authentication claims it doesn't transfer device related claims.
