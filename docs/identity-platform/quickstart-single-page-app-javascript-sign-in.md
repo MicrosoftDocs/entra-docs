@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.date: 01/31/2024
+ms.date: 03/05/2024
 ms.reviewer: OwenRichards1
 ms.service: identity-platform
 
