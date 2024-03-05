@@ -64,7 +64,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Manage groups and group membership
-            url: how-to-manage-groups.md
+            url: how-to-manage-groups.yml
 
 
    # Card
@@ -73,7 +73,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Create or delete users
-            url: how-to-create-delete-users.md
+            url: how-to-create-delete-users.yml
           - text: Assign roles to users
             url: ./how-subscriptions-associated-directory.md
           - text: Assign licenses to users

@@ -33,7 +33,7 @@ items:
   expanded: false
   items:
   - name: Create or delete users
-    href: how-to-create-delete-users.md
+    href: how-to-create-delete-users.yml
   - name: Apply licenses to users
     href: license-users-groups.md
   - name: Users
@@ -42,7 +42,7 @@ items:
     - name: Assign roles to users
       href: users-assign-role-azure-portal.md
     - name: Manage 'Stay signed in?' prompt
-      href: how-to-manage-stay-signed-in-prompt.md
+      href: how-to-manage-stay-signed-in-prompt.yml
     - name: Manage user profile info
       href: how-to-manage-user-profile-info.yml
     - name: Reset a user's password
@@ -59,7 +59,7 @@ items:
     - name: Create a group and add members
       href: ./groups-view-azure-portal.md
     - name: Manage groups
-      href: how-to-manage-groups.md
+      href: how-to-manage-groups.yml
   - name: Licenses
     expanded: false
     items: 
@@ -90,7 +90,7 @@ items:
   expanded: false
   items:
   - name: Find your tenant ID
-    href: how-to-find-tenant.md
+    href: how-to-find-tenant.yml
   - name: Get support for Microsoft Entra ID
     href: how-to-get-support.md
   - name: Support access requests
