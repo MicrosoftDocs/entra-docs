@@ -201,7 +201,7 @@ You can also customize the redemption order via the Microsoft Graph API.
    GET https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/default
    ```
 
-1. In this example, we'll move the SAML/WS-Fed IdP federation to the top of the redemption order above Azure AD identity provider. Patch the same URI with this request body:
+1. In this example, we'll move the SAML/WS-Fed IdP federation to the top of the redemption order above Microsoft Entra identity provider. Patch the same URI with this request body:
 
    ```http
    {
@@ -230,10 +230,12 @@ You can also customize the redemption order via the Microsoft Graph API.
       }
    ```
 
-### SAML/WS-Fed federation (Direct federation) for Azure AD verified domains (Preview)
+<a name='samlws-fed-federation-direct-federation-for-azure-ad-verified-domains-preview'></a>
 
-You can now add your enlisted Azure AD verified domain to set up the direct federation relationship. First you need to set up the Direct federation configuration in the [admin center](direct-federation.md) or via the [API](/graph/api/resources/samlorwsfedexternaldomainfederation). Make sure that the domain isn't verified in the same tenant. 
-Once the configuration is set up, you can customize the redemption order. The SAML/WS-Fed IdP is added to the redemption order as the last entry. You can move it up in the redemption order to set it above Azure Active Directory identity provider.
+### SAML/WS-Fed federation (Direct federation) for Microsoft Entra ID verified domains (Preview)
+
+You can now add your enlisted Microsoft Entra ID verified domain to set up the direct federation relationship. First you need to set up the Direct federation configuration in the [admin center](direct-federation.md) or via the [API](/graph/api/resources/samlorwsfedexternaldomainfederation). Make sure that the domain isn't verified in the same tenant. 
+Once the configuration is set up, you can customize the redemption order. The SAML/WS-Fed IdP is added to the redemption order as the last entry. You can move it up in the redemption order to set it above Microsoft Entra identity provider.
 
 ### Prevent your B2B users from redeeming an invite using Microsoft accounts (Preview)
 
