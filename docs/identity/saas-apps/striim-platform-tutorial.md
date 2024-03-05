@@ -102,6 +102,10 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	![Screenshot shows the Certificate download link.](common/certificate-base64-download.png "Certificate")
 
+1. On the **Set up Striim Platform** section, copy the appropriate URLs based on your requirement.
+
+	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
+
 ### Create a Microsoft Entra ID test user
 
 In this section, you'll create a test user in the Microsoft Entra admin center called B.Simon.
