@@ -352,15 +352,16 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 |`grant_type` | Yes | A request to the  `/signup/v1.0/continue` endpoint can be used to submit OTP code, password, or user attributes. In this case, the `grant_type` value is used to differentiate between these three use cases. The possible values for the grant_type are *oob*, *password*, *attributes*. In this call, since we're sending OTP code, the value is expected to be *oob*.|
 |`oob`| Yes | The OTP code that the customer user received in their email. Replace `{otp_code}` with the OTP code that the customer user received in their email. To **resend an OTP code**, the app needs to make a request to the `/signup/v1.0/challenge` endpoint again. The OTP code |
 
+
+Once the app OTP successfully submits the OTP code, the sign-up flow depends on the scenarios in the following table:
+
+|    Scenario          | How to proceed in the sign-up flow |
+|----------------------|------------------------|
+|The app successfully submitted user's password via the `/signup/v1.0/start` endpoint, and no attributes were configured in Microsoft Entra admin center or all the required user attributes were submitted via the `/signup/v1.0/start` endpoint. |Microsoft Entra issues a continuation token. The app can use the continuation token to request for security tokens as shown in [step 5](#step-5-request-for-security-tokens).|
+|The app successfully submitted user's password via the `/signup/v1.0/start`, but not all the required user attributes, Microsoft Entra indicates the attributes that the app needs to submit as shown in [user attributes required](#user-attributes-required). | The app needs to submit the required user attributes via the `/signup/v1.0/continue` endpoint as shown in [submit user attributes](#submit-user-attributes).|
+|The app didn't submit the user's password via `/signup/v1.0/start` endpoint.| Microsoft Entra's response indicates that credential is required. See [response](#response).|
+
 #### Response
-
-Once the OTP code has been submitted successfully, Microsoft Entra's response depends on the following scenarios:
-
-1. If the app successfully submitted user's password via the `/signup/v1.0/start` endpoint, and no attributes were configured in Microsoft Entra admin center or all the required user attributes were submitted via the `/signup/v1.0/start` endpoint, Microsoft Entra issues a continuation token. The app can use the continuation token to request for security tokens as shown in [step 5](#step-5-request-for-security-tokens).
-
-1. If the app successfully submitted user's password via the `/signup/v1.0/start`, but not all the required user attributes, Microsoft Entra indicates the attributes that the app needs to submit as shown in [user attributes required](#user-attributes-required). In this case, the app needs to submit the required user attributes via the `/signup/v1.0/continue` endpoint as shown in [submit user attributes](#submit-user-attributes).
-
-1. If the app didn't submit the user's password via `/signup/v1.0/start` endpoint, then the response looks similar to the following:
 
     ```http
     HTTP/1.1 400 Bad Request
