@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 06/16/2023
+ms.date: 003/05.2023
 ms.author: jfields
 ---
 
@@ -98,7 +98,7 @@ This article describes how you can use the **Remediation** dashboard in Microsof
     - To add a whole category, select a category.
     - To add individual items from a category, select the down arrow on the left of the category name, and then select individual items.
 1. Select **Next**.
-
+1. (Optional) An Admin can copy the Resource Groups scope string to use as the scope. In Azure, select **Resource group** > **Monitoring** > **Properties**, then copy the **Resource ID**. 
 1. On the **Preview** page, review:
     - The list of selected **Actions** and **Not Actions**.
     - The **JSON** or **Script** to confirm it's what you want.
