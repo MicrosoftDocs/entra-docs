@@ -4,7 +4,7 @@ description: Block legacy authentication using Microsoft Entra Conditional Acces
 
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: how-to
+ms.topic: conceptual
 ms.date: 07/18/2023
 
 ms.author: joflore

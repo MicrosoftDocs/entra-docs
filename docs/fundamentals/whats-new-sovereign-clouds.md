@@ -5,7 +5,7 @@ author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: whats-new
 ms.date: 05/31/2023
 ms.custom: template-concept 
 ---

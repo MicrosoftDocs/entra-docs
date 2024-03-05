@@ -5,7 +5,7 @@ author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 06/22/2023
 ms.author: owinfrey
 ---

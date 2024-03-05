@@ -1,12 +1,11 @@
 ---
 title: Using Application Gateway WAF to protect your application
 description: How to add Web Application Firewall (WAF) protection for apps published with Microsoft Entra application proxy.
-
 author: kenwith
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/07/2024
+ms.date: 02/26/2024
 ms.author: kenwith
 ms.reviewer: ashishj, besilvei
 ---
@@ -66,7 +65,7 @@ For a detailed guide on how to add your application to application proxy in Micr
 
 In this example, the same URL was configured as the internal and external URL. Remote clients access the application over the Internet on port 443, through the application proxy. A client connected to the corporate network accesses the application privately. Access is through the Application Gateway directly on port 443. For a detailed step on configuring custom domains in application proxy, see [Configure custom domains with Microsoft Entra application proxy][appproxy-custom-domain].
 
-An [Azure Private DNS zone][private-dns] is created with an A record. The A record points `www.fabrikam.one` to the private frontend IP address of the Application Gateway. The record ensures the connector VMs send requests to the Application Gateway.
+An [Azure Private Domain Name System (DNS) zone][private-dns] is created with an A record. The A record points `www.fabrikam.one` to the private frontend IP address of the Application Gateway. The record ensures the connector VMs send requests to the Application Gateway.
 
 ## Test the application
 
@@ -89,7 +88,7 @@ The Application Gateway [Firewall logs][waf-logs] provide more details about the
 
 ## Next steps
 
-- [Customize Web Application Firewall rules](/azure/web-application-firewall/ag/application-gateway-customize-waf-rules-portal)
+- [Web Application Firewall rules](/azure/web-application-firewall/ag/application-gateway-customize-waf-rules-portal)
 - [Web Application Firewall exclusion lists](/azure/web-application-firewall/ag/application-gateway-waf-configuration?tabs=portal)
 - [Web Application Firewall custom rules](/azure/web-application-firewall/ag/create-custom-waf-rules)
 
