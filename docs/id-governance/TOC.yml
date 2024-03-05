@@ -111,7 +111,7 @@
       href: lifecycle-workflow-audits.md
     - name: Workflow History
       href: lifecycle-workflow-history.md
-    - name: Hybrid users (Preview)
+    - name: Synced on-premises users (Preview)
       href: lifecycle-workflow-hybrid.md         
 - name: How-to guides
   expanded: true
