@@ -1933,6 +1933,8 @@
         href: onshape-tutorial.md
       - name: OnTrack
         href: ontrack-tutorial.md
+      - name: Onyxia
+        href: onyxia-tutorial.md
       - name: Opal
         href: opal-tutorial.md
       - name: OpenAthens
@@ -2629,6 +2631,8 @@
         href: stormboard-tutorial.md
       - name: Striim
         href: striim-tutorial.md
+      - name: Striim Platform
+        href: striim-platform-tutorial.md
       - name: Styleflow
         href: styleflow-tutorial.md
       - name: SuccessFactors
