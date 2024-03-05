@@ -6,7 +6,7 @@ description: Learn how to use the Conditional Access gap analyzer workbook.
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
-ms.topic: reference
+ms.topic: how-to
 ms.subservice: monitoring-health
 ms.date: 10/03/2023
 ms.author: sarahlipsey

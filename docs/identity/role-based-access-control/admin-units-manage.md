@@ -90,14 +90,13 @@ $adminUnitObj = New-MgDirectoryAdministrativeUnit -BodyParameter $params
 Use the [New-MgBetaDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.beta.identity.directorymanagement/new-mgbetadirectoryadministrativeunit) command to create a new restricted management administrative unit. Set the `IsMemberManagementRestricted` property to `$true`.
 
 ```powershell
-Select-MgProfile -Name beta
 $params = @{
     DisplayName = "Contoso Executive Division"
     Description = "Contoso Executive Division administration"
     Visibility = "HiddenMembership"
     IsMemberManagementRestricted = $true
 }
-$restrictedAU = New-MgDirectoryAdministrativeUnit -BodyParameter $params
+$restrictedAU = New-MgBetaDirectoryAdministrativeUnit -BodyParameter $params
 ```
 
 # [Azure AD PowerShell](#tab/aad-powershell)

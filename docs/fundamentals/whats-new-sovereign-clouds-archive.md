@@ -5,7 +5,7 @@ author: owinfreyATL
 manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: overview
+ms.topic: whats-new
 ms.date: 05/31/2023
 ms.author: owinfrey
 ms.collection: M365-identity-device-management

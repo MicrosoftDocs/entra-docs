@@ -11,7 +11,7 @@ items:
       href: architecture-icons.md
     - name: Road to the cloud
       items:
-      - name: Introduction
+      - name: Introduction 
         href: road-to-the-cloud-introduction.md
       - name: Cloud transformation posture
         href: road-to-the-cloud-posture.md
@@ -165,12 +165,14 @@ items:
       href: deployment-plans.md
     - name: Azure Active Directory B2C deployment plans
       href: b2c-deployment-plans.md
-    - name: Microsoft Security Service Edge Solution deployment plans
+    - name: Microsoft's Security Service Edge Solution deployment plans
       items:
       - name: Introduction
         href: sse-deployment-guide-intro.md
       - name: Deploying Microsoft Entra Internet Access for Microsoft 365
-        href: sse-deployment-guide-m365.md 
+        href: sse-deployment-guide-m365.md
+      - name: Deploying Microsoft Entra Internet Access
+        href: sse-deployment-guide-internet-access.md
       - name: Deploying Microsoft Entra Private Access
         href: sse-deployment-guide-private-access.md 
   - name: Migration best practices

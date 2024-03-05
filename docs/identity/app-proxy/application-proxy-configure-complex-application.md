@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/16/2024
+ms.date: 02/26/2024
 ms.author: kenwith
 ms.reviewer: dhruvinshah
 ---
@@ -49,7 +49,7 @@ This article shows you how to configure wildcard application publishing in your 
     > Regular applications always take precedence over a complex app (wildcard application).
 
 ## Prerequisites
-- Enable application proxy and install a connector that has line of sight to your applications. See the tutorial [Add an on-premises application for remote access through application proxy](application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad) to learn how to prepare your on-premises environment, install and register a connector, and test the connector.
+- Enable application proxy and install a connector that has line of sight to your applications. See the tutorial [Add an on-premises application for remote access through application proxy](application-proxy-add-on-premises-application.md) to learn how to prepare your on-premises environment, install and register a connector, and test the connector.
 
 
 ## Configure application segments for complex application. 

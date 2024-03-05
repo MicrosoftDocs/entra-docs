@@ -1,21 +1,21 @@
 ---
-title: How to use the BypassDirSyncOverrides feature of a Microsoft Entra tenant
-description: Describes how to use bypassdirsyncoverrides tenant feature to restore synchronization of Mobile and OtherMobile attributes from on-premises Active Directory.
+title: How to use the BypassDirSyncOverridesEnabled feature of a Microsoft Entra tenant
+description: Describes how to use BypassDirSyncOverridesEnabled tenant feature to restore synchronization of Mobile and OtherMobile attributes from on-premises Active Directory.
 
 author: billmath
 ms.date: 11/06/2023
 ms.author: billmath
 ms.topic: how-to
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.subservice: hybrid-connect
 ---
 
-# How to use the BypassDirSyncOverrides feature of a Microsoft Entra tenant.
+# How to use the BypassDirSyncOverridesEnabled feature of a Microsoft Entra tenant.
 
-This article describes the _BypassDirsyncOverrides_  feature and how to restore synchronization of Mobile and otherMobile attributes from Microsoft Entra ID to on-premises Active Directory.
+This article describes the _BypassDirSyncOverridesEnabled_  feature and how to restore synchronization of Mobile and otherMobile attributes from Microsoft Entra ID to on-premises Active Directory.
 
-Generally, synchronized users cannot be changed from Azure or Microsoft 365 admin portals, neither through PowerShell using Microsoft Entra ID or MSOnline modules. The exception to this is the Microsoft Entra user’s attributes called _MobilePhone_ and _AlternateMobilePhones_. These attributes are synchronized from on-premises Active Directory attributes mobile and otherMobile, respectively, but end users can update their own phone number in _MobilePhone_ attribute in Microsoft Entra ID through their profile page. Admins can also update synchronized user’s _MobilePhone_ and _AlternateMobilePhones_ values in Microsoft Entra ID using MSOnline PowerShell module.  
+Generally, synchronized users cannot be changed from Azure or Microsoft 365 admin portals, neither through PowerShell using Microsoft Entra ID or [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) modules. The exception to this is the Microsoft Entra user’s attributes called _MobilePhone_ and _AlternateMobilePhones_. These attributes are synchronized from on-premises Active Directory attributes mobile and otherMobile, respectively, but end users can update their own phone number in _MobilePhone_ attribute in Microsoft Entra ID through their profile page. Admins can also update synchronized user’s _MobilePhone_ and _AlternateMobilePhones_ values in Microsoft Entra ID using theMicrosoft Graph PowerShell module.  
 
 Giving users and admins the ability to update phone numbers directly in Microsoft Entra ID enables enterprises to reduce the administrative overhead of managing user’s phone numbers in local Active Directory as these can change more frequently.
 
@@ -23,7 +23,7 @@ The caveat however, is that once a synchronized user's _MobilePhone_ or _Alter
 
 ## Identifying users with different Mobile and otherMobile values
 
-You can export a list of users with different Mobile and otherMobile values between Active Directory and Microsoft Entra ID using _‘Compare-ADSyncToolsDirSyncOverrides’_ from _ADSyncTools_ PowerShell module. This will allow you to determine the users and respective values that are different between on-premises Active Directory and Microsoft Entra ID. This is important to know because enabling the _BypassDirSyncOverrides_ feature will overwrite all the different values in Microsoft Entra ID with the value coming from on-premises Active Directory.
+You can export a list of users with different Mobile and otherMobile values between Active Directory and Microsoft Entra ID using _‘Compare-ADSyncToolsDirSyncOverrides’_ from _ADSyncTools_ PowerShell module. This will allow you to determine the users and respective values that are different between on-premises Active Directory and Microsoft Entra ID. This is important to know because enabling the _BypassDirSyncOverridesEnabled_ feature will overwrite all the different values in Microsoft Entra ID with the value coming from on-premises Active Directory.
 
 ### Using Compare-ADSyncToolsDirSyncOverrides
 
@@ -44,7 +44,7 @@ Compare-ADSyncToolsDirSyncOverrides -Credential $(Get-Credential)
 
 This function will export a CSV file with a list of users where Mobile or OtherMobile values in on-premises Active Directory are different than the respective MobilePhone or AlternateMobilePhones in Microsoft Entra ID.
 
-At this stage you can use this data to reset the values of the on-premises Active Directory _Mobile_ and _otherMobile_ properties to the values that are present in Microsoft Entra ID. This way you can capture the most updated phone numbers from Microsoft Entra ID and persist this data in on-premises Active Directory, before enabling _BypassDirSyncOverrides_ feature. To do this, import the data from the resulting CSV file and then use the _'Set-ADSyncToolsDirSyncOverrides'_ from _ADSyncTools_ module to persist the value in on-premises Active Directory.
+At this stage you can use this data to reset the values of the on-premises Active Directory _Mobile_ and _otherMobile_ properties to the values that are present in Microsoft Entra ID. This way you can capture the most updated phone numbers from Microsoft Entra ID and persist this data in on-premises Active Directory, before enabling _BypassDirSyncOverridesEnabled_ feature. To do this, import the data from the resulting CSV file and then use the _'Set-ADSyncToolsDirSyncOverrides'_ from _ADSyncTools_ module to persist the value in on-premises Active Directory.
 
 For example, to import data from the CSV file and extract the values in Microsoft Entra ID for a given UserPrincipalName, use the following command:
 
@@ -56,20 +56,23 @@ select UserPrincipalName,*InAAD
 Set-ADSyncToolsDirSyncOverridesUser -Identity $upn -MobileInAD $user.MobileInAAD
 ```
 
-## Enabling BypassDirSyncOverrides feature
+## Enabling BypassDirSyncOverridesEnabled feature
 
-By default, _BypassDirSyncOverrides_ feature is turned off. Enabling _BypassDirSyncOverrides_ allows your tenant to bypass any changes made in _MobilePhone_ or _AlternateMobilePhones_ by users or admins directly in Microsoft Entra ID and always honor the values present in on-premises Active Directory _Mobile_ or _OtherMobile_.
+By default, _BypassDirSyncOverridesEnabled_ feature is turned off. Enabling _BypassDirSyncOverridesEnabled_ allows your tenant to bypass any changes made in _MobilePhone_ or _AlternateMobilePhones_ by users or admins directly in Microsoft Entra ID and always honor the values present in on-premises Active Directory _Mobile_ or _OtherMobile_.
 
-If you do not wish to have end users updating their own mobile phone number or there is no requirement to have admins updating mobile or alternative mobile phone numbers using PowerShell, you should leave the feature _BypassDirsyncOverrides_ enabled on the tenant.  
+If you do not wish to have end users updating their own mobile phone number or there is no requirement to have admins updating mobile or alternative mobile phone numbers using PowerShell, you should leave the feature _BypassDirSyncOverridesEnabled_ enabled on the tenant.  
 
 With this feature turned on, even if an end user or admin updates either _MobilePhone_ or _AlternateMobilePhones_ in Microsoft Entra ID, the values synchronized from on-premises Active Directory will persist upon the next sync cycle. This means that any updates to these values only persist when the update is performed in on-premises Active Directory and then synchronized to Microsoft Entra ID.
 
-### Enable the _BypassDirSyncOverrides_ feature:
+### Enable the BypassDirSyncOverridesEnabled feature:
 
-To enable BypassDirSyncOverrides  feature use the MSOnline PowerShell module.
+To enable BypassDirSyncOverridesEnabled feature, use the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module.
 
 ```powershell
-Set-MsolDirSyncFeature -Feature BypassdirSyncOverrides -Enable $true
+$directorySynchronization = Get-MgDirectoryOnPremiseSynchronization
+$features = @{BypassDirSyncOverridesEnabled=$true}
+
+Update-MgDirectoryOnPremiseSynchronization -OnPremisesDirectorySynchronizationId $directorySynchronization.Id -Features $features
 ```
 
 Once the feature is enabled, start a full synchronization cycle in Microsoft Entra Connect using the following command:
@@ -78,20 +81,24 @@ Once the feature is enabled, start a full synchronization cycle in Microsoft Ent
 Start-ADSyncSyncCycle -PolicyType Initial
 ```
 
-[!NOTE] Only objects with a different _MobilePhone_ or _AlternateMobilePhones_ value from on-premises Active Directory will be updated.
+>[!NOTE]
+>Only objects with a different _MobilePhone_ or _AlternateMobilePhones_ value from on-premises Active Directory will be updated.
 
-### Verify the status of the _BypassDirSyncOverrides_ feature:
+### Verify the status of the BypassDirSyncOverridesEnabled feature:
 
 ```powershell
-Get-MsolDirSyncFeatures -Feature BypassdirSyncOverrides 
+(Get-MgDirectoryOnPremiseSynchronization).Features.BypassDirSyncOverridesEnabled
 ```
 
-## Disabling _BypassDirSyncOverrides_ feature
+## Disabling BypassDirSyncOverridesEnabled feature
 
-If you desire to restore the ability to update mobile phone numbers from the portal or PowerShell, you can disable _BypassDirSyncOverrides_ feature using the following Microsoft Online PowerShell module command:
+If you desire to restore the ability to update mobile phone numbers from the portal or PowerShell, you can disable _BypassDirSyncOverridesEnabled_ feature using the following [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module command:
 
 ```powershell
-Set-MsolDirSyncFeature -Feature BypassdirSyncOverrides -Enable $false
+$directorySynchronization = Get-MgDirectoryOnPremiseSynchronization
+$features = @{BypassDirSyncOverridesEnabled=$false}
+
+Update-MgDirectoryOnPremiseSynchronization -OnPremisesDirectorySynchronizationId $directorySynchronization.Id -Features $features
 ```
 
 When this feature is turned off, anytime a user or admin updates the _MobilePhone_ or _AlternateMobilePhones_ directly in Microsoft Entra ID, a _DirSyncOverrides_ is created which prevents any future updates to these attributes coming from on-premises Active Directory. From this point on, a user or admin can only manage these attributes from Microsoft Entra ID as any new updates from on-premises _Mobile_ or _OtherMobile_ will be dismissed.

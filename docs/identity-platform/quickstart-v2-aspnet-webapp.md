@@ -10,7 +10,7 @@ ms.date: 11/22/2021
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: quickstart
 #Customer intent: As an application developer, I want to see a sample ASP.NET web app that can sign in Microsoft Entra users.
 ---
 

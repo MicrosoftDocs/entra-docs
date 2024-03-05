@@ -3,7 +3,7 @@ title: Cross-tenant access overview
 description: Get an overview of cross-tenant access in Microsoft Entra External ID. Learn how to manage your B2B collaboration with other Microsoft Entra organizations through this overview of cross-tenant access settings.
  
 ms.service: entra-external-id
-ms.topic: how-to
+ms.topic: overview
 ms.date: 01/24/2024
 
 ms.author: cmulligan

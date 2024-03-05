@@ -9,7 +9,7 @@ ms.author: dmwendia
 ms.service: entra-external-id
  
 ms.subservice: customers
-ms.topic: how-to
+ms.topic: overview
 ms.date: 05/09/2023
 ms.custom: developer, devx-track-js
 #Customer intent: As a dev, devops, I want to learn about how to build a Node.js browserless application to authenticate users with my Microsoft Entra ID for customers tenant

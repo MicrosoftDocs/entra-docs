@@ -5,7 +5,7 @@ author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-permissions-management
 
-ms.topic: reference
+ms.topic: whats-new
 ms.date: 02/16/2023
 ms.author: jfields
 ---
@@ -59,5 +59,5 @@ Permissions Management supports third party identity providers (IdP) integration
 
 For [Okta Identity Provider integration](how-to-configure-okta-as-an-identity-provider.md), an admin needs to configure the API application to give the access to read Okta users, groups, and apps via Okta APIs. Permissions Management reads Okta users, groups, and apps via Okta APIs. 
 
-For [AWS Identity and Access Management (IAM) Identity Center integration](how-to-configure-aws-iam.md), an admin can provide Permissions Management access to read user and role access configuration data from the management account by running the cloud formation template (CFT) in their AWS environment. After successful configuration, Permissions Management can read the data to calculate the analytics.
+For [AWS Identity and Access Management (IAM) Identity Center integration](how-to-configure-aws-iam.md), an admin can provide Permissions Management access to read user and role access configuration data from the management account by running the CloudFormation template (CFT) in their AWS environment. After successful configuration, Permissions Management can read the data to calculate the analytics.
 

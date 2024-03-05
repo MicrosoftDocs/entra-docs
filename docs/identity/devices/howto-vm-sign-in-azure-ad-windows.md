@@ -145,7 +145,7 @@ az vm create \
 ```
 
 > [!NOTE]
-> You must enable system-assigned managed identity on your virtual machine before you install the Microsoft Entra login VM extension.
+> You must enable system-assigned managed identity on your virtual machine before you install the Microsoft Entra login VM extension. Managed Identities are stored in a single Microsoft Entra tenant and currently do not support cross directory scenarios.
 
 It takes a few minutes to create the VM and supporting resources.
 
