@@ -390,20 +390,24 @@ items:
       href: ~/identity-platform/developer-support-help-options.md?context=/entra/external-id/customers/context/customers-context
     - name: Native authentication
       items:
-        - name: Native authentication APIs
-          displayName: Native authentication, Native authentication API   
-          href: /entra/identity-platform/reference-native-authentication-overview?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
-        - name: Native authentication with email OTP
-          displayName: Native authentication with email and one-time password or passcode          
-          href: /entra/identity-platform/reference-native-authentication-email-otp?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
-        - name: Native authentication with email & password
-          href: /entra/identity-platform/reference-native-authentication-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
+        - name: API reference
+          items: 
+           - name: Native authentication APIs
+             displayName: Native authentication, Native authentication API   
+             href: /entra/identity-platform/reference-native-authentication-overview?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
+           - name: Native authentication with email OTP
+             displayName: Native authentication with email and one-time password or passcode          
+             href: /entra/identity-platform/reference-native-authentication-email-otp?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
+           - name: Native authentication with email & password
+             href: /entra/identity-platform/reference-native-authentication-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
+        - name: SDK reference
+          items: 
+           - name: MSAL iOS and macOS
+             href: https://azuread.github.io/microsoft-authentication-library-for-objc/
+           - name: MSAL Android
+             href: https://javadoc.io/doc/com.microsoft.identity.client/msal
     - name: MSAL references 
       items:
-        - name: MSAL iOS and macOS
-          href: https://azuread.github.io/microsoft-authentication-library-for-objc/
-        - name: MSAL Android
-          href: https://javadoc.io/doc/com.microsoft.identity.client/msal
         - name: MSAL.NET
           href: /dotnet/api/microsoft.identity.client.advanced
         - name: Microsoft Identity Web
