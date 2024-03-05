@@ -22,7 +22,7 @@ Welcome to what's new in Microsoft Entra application management documentation. T
 ### Updated articles
 
 - [Manage certificates for federated single sign-on](tutorial-manage-certificates-for-federated-single-sign-on.md) - Update to enhance the article's technical accuracy
-- [Troubleshoot SAML-based single sign-on](troubleshoot-saml-single-sign-on.md) - Update to enhance the article's technical accuracy
+- [Troubleshoot SAML-based single sign-on](troubleshoot-saml-sso.md) - Update to enhance the article's technical accuracy
 
 ## January 2024
 
