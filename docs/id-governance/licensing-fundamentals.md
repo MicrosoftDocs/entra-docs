@@ -30,8 +30,8 @@ Microsoft Entra ID Governance products aren't yet available in the US government
 
 The Microsoft Entra ID Governance capabilities are currently available in two products in the commercial cloud. These two products provide the same identity governance capabilities. The difference between the two products is that they have different prerequisites.
 
-- A subscription to **Microsoft Entra ID Governance**, listed in the product terms as the **Entra ID Governance (User SL)** license, requires that the tenant also have an active subscription to another product, one that contains the `AAD_PREMIUM` or `AAD_PREMIUM_P2` service plan. Examples of products meeting this prerequisite include **Microsoft Entra ID P1**, **Microsoft 365 E3/E5/A3/A5/G3/G5**, **Enterprise Mobility + Security E3/E5** or **Microsoft 365 F1/F3**.
-- A subscription to **Microsoft Entra ID Governance Step Up for Microsoft Entra ID P2**, listed in the product terms as the **Entra ID Governance P2** license, requires that the tenant also have an active subscription to another product, one that contains the `AAD_PREMIUM_P2` service plan.  Examples of products meeting this prerequisite include **Microsoft Entra ID P2**, **Microsoft 365 E5/A5/G5**, **Enterprise Mobility + Security E5**, **Microsoft 365 E5/F5 Security** or **Microsoft 365 F5 Security + Compliance**.
+- A subscription to **Microsoft Entra ID Governance**, listed in the product terms as the **Microsoft Entra ID Governance (User SL)** license, requires that the tenant also have an active subscription to another product, one that contains the `AAD_PREMIUM` or `AAD_PREMIUM_P2` service plan. Examples of products meeting this prerequisite include **Microsoft Entra ID P1**, **Microsoft 365 E3/E5/A3/A5/G3/G5**, **Enterprise Mobility + Security E3/E5** or **Microsoft 365 F1/F3**.
+- A subscription to **Microsoft Entra ID Governance Step Up for Microsoft Entra ID P2**, listed in the product terms as the **Microsoft Entra ID Governance P2** license, requires that the tenant also have an active subscription to another product, one that contains the `AAD_PREMIUM_P2` service plan.  Examples of products meeting this prerequisite include **Microsoft Entra ID P2**, **Microsoft 365 E5/A5/G5**, **Enterprise Mobility + Security E5**, **Microsoft 365 E5/F5 Security** or **Microsoft 365 F5 Security + Compliance**.
 
 The [product names and service plan identifiers for licensing](~/identity/users/licensing-service-plan-reference.md) lists additional products that include the prerequisite service plans.
 
@@ -103,13 +103,15 @@ If a Microsoft Entra ID P2 or Microsoft Entra ID Governance license expires or t
 - Active permanent assignments are not affected.
 - Active time-bound assignments become active permanent which means they will no longer expire at a designated time.
 - Eligible role assignments will be removed, as users will no longer be able to activate privileged roles.
-- Privileged Identity Management blades on Microsoft Entra portal or Azure portal, API and PowerShell interfaces of Privileged Identity Management, will no longer be available for users to activate roles, manage assignments, or perform access reviews of privileged roles.
-- Any ongoing access reviews of Azure AD roles will end, and Privileged Identity Management configuration settings will be removed.
+- Privileged Identity Management blades on Microsoft Entra admin center or Azure portal, API and PowerShell interfaces of Privileged Identity Management, will no longer be available for users to activate roles, manage assignments, or perform access reviews of privileged roles.
+- Any ongoing access reviews of Microsoft Entra roles will end, and Privileged Identity Management configuration settings will be removed.
 - Privileged Identity Management will no longer send emails on role assignment changes and PIM Alerts.
 
-### Will any IGA features and capabilities be added under the Entra ID P2 License?
+<a name='will-any-iga-features-and-capabilities-be-added-under-the-entra-id-p2-license'></a>
 
-All currently Generally Available features in Entra ID P2 will remain, but no new IGA features or capabilities will be added to the Entra ID P2 SKU.
+### Will any IGA features and capabilities be added under the Microsoft Entra ID P2 License?
+
+All currently Generally Available features in Microsoft Entra ID P2 will remain, but no new IGA features or capabilities will be added to the Microsoft Entra ID P2 SKU.
 
 ## Next steps
 
