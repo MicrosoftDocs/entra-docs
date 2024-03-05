@@ -395,7 +395,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Revoke license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Update all properties except User Principal Name | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Update User Principal Name for limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |
-> | Update User Principal Name property on privileged admins | [Global Administrator](permissions-reference.md#global-administrator) |  |
+> | Update User Principal Name property on privileged admins | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |  |
 > | Update user settings | [Global Administrator](permissions-reference.md#global-administrator) |  |
 > | Update Authentication methods | [Authentication Administrator](permissions-reference.md#authentication-administrator) | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator)<br/>[Global Administrator](permissions-reference.md#global-administrator) |
 
