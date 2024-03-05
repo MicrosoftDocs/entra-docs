@@ -72,7 +72,9 @@ var scopes = new [] {  ResourceId+"/.default"};
 
 ---
 
-### Azure AD (v1.0) resources
+<a name='azure-ad-v10-resources'></a>
+
+### Microsoft Entra ID (v1.0) resources
 
 The scope used for client credentials should always be the resource ID followed by `/.default`.
 
