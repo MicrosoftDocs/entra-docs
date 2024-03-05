@@ -400,6 +400,10 @@ items:
           href: /entra/identity-platform/reference-native-authentication-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
     - name: MSAL references 
       items:
+        - name: MSAL iOS and macOS
+          href: https://azuread.github.io/microsoft-authentication-library-for-objc/
+        - name: MSAL Android
+          href: https://javadoc.io/doc/com.microsoft.identity.client/msal
         - name: MSAL.NET
           href: /dotnet/api/microsoft.identity.client.advanced
         - name: Microsoft Identity Web
