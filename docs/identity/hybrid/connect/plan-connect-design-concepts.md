@@ -172,7 +172,7 @@ Suppose you've deployed Microsoft Entra Connect with the ConsistencyGuid feature
 While integrating your on-premises directory with Microsoft Entra ID, it's important to understand how the synchronization settings can affect the way user authenticates. Microsoft Entra ID uses userPrincipalName (UPN) to authenticate the user. However, when you synchronize your users, you must choose the attribute to be used for value of userPrincipalName carefully.
 
 ### Choosing the attribute for userPrincipalName
-When you're selecting the attribute for providing the value of UPN to be used in Microsoft Entra ID one should ensure
+When you're selecting the attribute for providing the value of UPN to be used in Microsoft Entra one should ensure
 
 * The attribute values conform to the UPN syntax (RFC 822), it should be in the format of username\@domain
 * The suffix in the values matches to one of the verified custom domains in Microsoft Entra ID

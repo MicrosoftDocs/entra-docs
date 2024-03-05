@@ -22,7 +22,9 @@ Inter-directory provisioning allows us to create [hybrid identity](whatis-hybrid
 
 <a name='what-types-of-inter-directory-provisioning-does-azure-ad-support'></a>
 
-## What types of inter-directory provisioning does Microsoft Entra ID support
+<a name='what-types-of-inter-directory-provisioning-does-microsoft-entra-id-support'></a>
+
+## What types of inter-directory provisioning does Microsoft Entra support
 
 Microsoft Entra ID currently supports three methods for accomplishing inter-directory provisioning. These methods are:
 

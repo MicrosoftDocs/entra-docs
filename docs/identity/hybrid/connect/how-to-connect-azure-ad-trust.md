@@ -61,7 +61,7 @@ Microsoft Entra Connect does not update all settings for Microsoft Entra ID trus
 | Add federated domain | If the domain is being added for the first time, that is, the setup is changing from single domain federation to multi-domain federation – Microsoft Entra Connect will recreate the trust from scratch. If the trust with Microsoft Entra ID is already configured for multiple domains, only Issuance transform rules are modified |
 | Update TLS | None |
 
-During all operations, in which, any setting is modified, Microsoft Entra Connect makes a backup of the current trust settings at **%ProgramData%\AADConnect\ADFS**
+During all operations, in which, any setting is modified, Microsoft Entra Connect makes a backup of the current trust settings at **%ProgramData%\Azure AD Connect\ADFS**
 
 ![Microsoft Entra Connect page showing message about existing Microsoft Entra ID trust backup](./media/how-to-connect-azure-ad-trust/backup2.png)
 
@@ -100,7 +100,7 @@ Microsoft Entra Connect makes sure that the Microsoft Entra ID trust is always c
 
 ## Restore issuance transform rules
 
-Microsoft Entra Connect version 1.1.873.0 or later makes a backup of the Microsoft Entra ID trust settings whenever an update is made to the Microsoft Entra ID trust settings. The Microsoft Entra ID trust settings are backed up at **%ProgramData%\AADConnect\ADFS**. The file name is in the following format AadTrust-&lt;date&gt;-&lt;time&gt;.txt, for example - AadTrust-20180710-150216.txt
+Microsoft Entra Connect version 1.1.873.0 or later makes a backup of the Microsoft Entra ID trust settings whenever an update is made to the Microsoft Entra ID trust settings. The Microsoft Entra ID trust settings are backed up at **%ProgramData%\Azure AD Connect\ADFS**. The file name is in the following format AadTrust-&lt;date&gt;-&lt;time&gt;.txt, for example - AadTrust-20180710-150216.txt
 
 ![A screenshot of example back up of Microsoft Entra ID trust](./media/how-to-connect-azure-ad-trust/backup.png)
 

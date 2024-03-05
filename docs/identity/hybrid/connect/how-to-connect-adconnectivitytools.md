@@ -33,7 +33,7 @@ On the **Connect your directories** page, in the Microsoft Entra Connect Wizard,
 - Both UDP 389 and a TCP port (or ports) are closed
 - DNS couldn't be resolved for the provided Forest and\or its associated Domain Controllers
 
-Whenever any of these issues are found, a related error message is displayed in the AADConnect Wizard:
+Whenever any of these issues are found, a related error message is displayed in the Microsoft Entra Connect Wizard:
 
 
 ![Error](media/how-to-connect-adconnectivitytools/error1.png)
@@ -42,7 +42,7 @@ For example, when we're attempting to add a directory on the **Connect your dire
 
 What is actually happening behind the scenes, is that Microsoft Entra Connect is calling the `Start-NetworkConnectivityDiagnosisTools` function.  This function is called when the validation of credentials fails due to a network connectivity issue.
 
-Finally, a detailed log file is generated whenever the tool is called from the wizard. The log is located in **C:\ProgramData\AADConnect\ADConnectivityTool-\<date>-\<time>.log**
+Finally, a detailed log file is generated whenever the tool is called from the wizard. The log is located in **C:\ProgramData\Azure AD Connect\ADConnectivityTool-\<date>-\<time>.log**
 
 ## ADConnectivityTools post installation
 After Microsoft Entra Connect has been installed, any of the functions in the ADConnectivityTools PowerShell module can be used.  

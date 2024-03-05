@@ -108,7 +108,7 @@ At this point, the agent services should start to automatically allow the agent 
 
 To verify that the agent was installed, look for the following services on the server. If you completed the configuration, they should already be running. Otherwise, they're stopped until the configuration is complete.
 
-- Microsoft Azure AD Connect Agent Updater
+- Microsoft Entra Connect Agent Updater
 - Microsoft Entra Connect Health Agent
 
 :::image type="content" source="media/how-to-connect-health-agent-install/install5.png" alt-text="Screenshot that shows Microsoft Entra Connect Health AD FS services.":::

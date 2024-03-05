@@ -195,7 +195,7 @@ To renew an authentication agent's trust with Microsoft Entra ID:
 
 The Updater application automatically updates the authentication agent when a new version (with bug fixes or performance enhancements) is released. The Updater application doesn't handle any password validation requests for your tenant.
 
-Microsoft Entra ID hosts the new version of the software as a signed Windows Installer package (MSI). The MSI is signed by using [Microsoft Authenticode](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537359(v=vs.85)) with SHA-256 as the digest algorithm.
+Microsoft Entra hosts the new version of the software as a signed Windows Installer package (MSI). The MSI is signed by using [Microsoft Authenticode](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537359(v=vs.85)) with SHA-256 as the digest algorithm.
 
 :::image type="content" source="media/how-to-connect-pta-security-deep-dive/pta5.png" border="false" alt-text="Diagram that shows how an authentication agent is auto updated.":::
 
