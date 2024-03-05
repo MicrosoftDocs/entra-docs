@@ -36,5 +36,5 @@ In this tutorial, you'll;
 ## Register the Python web app and record identifiers
 
 
-# Run the sample
+# Run the sample app
 
