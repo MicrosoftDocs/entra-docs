@@ -1,8 +1,8 @@
 ---
 title: Global Secure Access (preview) logs and monitoring
 description: Learn about the available Global Secure Access (preview) logs and monitoring options.
-author: shlipsey3
-ms.author: sarahlipsey
+author: kenwith
+ms.author: kenwith
 manager: amycolannino
 ms.topic: conceptual
 ms.date: 11/30/2023
