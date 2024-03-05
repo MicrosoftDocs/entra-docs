@@ -43,7 +43,7 @@ To check the users who fall under the execution scope of a workflow, you'd follo
 
 ## Check execution user scope of a workflow using Microsoft Graph
 
-To check execution user scope of a workflow using API via Microsoft Graph, see: [List executionScope](/graph/api/workflow-list-executionscope). 
+To check execution user scope of a workflow using API via Microsoft Graph, see: [List executionScope](/graph/api/workflow-list-executionscope).
 
 ## Next steps
 

@@ -65,6 +65,9 @@ When setting the scope of the time based attribute trigger, the following detail
 |Scope type     |  Rule based.       |
 |Rule     |  Defines the rule for who meets the scope of the time based attribute trigger.       |
 
+>[!NOTE]
+> The rule evaluation is case-sensitive.
+
 ## Attribute change trigger
 
 The **Attribute change** trigger allows you to set a trigger based on when an attribute changes for users.
@@ -89,6 +92,9 @@ When setting the scope of the attribute changes trigger, the following details a
 |---------|---------|
 |Scope type     |  Rule based.       |
 |Rule     |  Defines the rule for who meets the scope of the attribute changes trigger.       |
+
+>[!NOTE]
+> The rule evaluation is case-sensitive.
 
 ## Group membership change trigger
 
@@ -153,15 +159,6 @@ Once scheduling is enabled, the workflow is evaluated either every three hours(b
 > Once the user meets the execution conditions and is queued to have the workflow run for them the Lifecycle Workflow engine will evaluate the user once again before the workflow starts to process them. If the user no longer meets the execution conditions of the workflow, then they will not be processed.
 
 For a detailed guide on setting the execution conditions for a workflow, see: [Create a lifecycle workflow](create-lifecycle-workflow.md).
-
-## Extra Scope stuff
-
-:::image type="content" source="media/lifecycle-workflow-execution-conditions/scope-details.png" alt-text="Screenshot of scope settings for lifecycle workflows.":::
-
-The scope-based details are made up of the following two parts:
-
-- Scope type: Narrows the rule.
-- Rule: Where you can set expressions on user properties that define for whom the scheduled workflow runs. You can add extra expressions using **And, And not, Or, Or not** to create complex conditionals, and apply the workflow more granularly across your organization. Lifecycle Workflows supports a [rich set of user properties](/graph/api/resources/identitygovernance-rulebasedsubjectset#supported-user-properties-and-query-parameters) for configuring the scope.
 
 ## Next steps
 
