@@ -138,9 +138,9 @@ If your organization requires you to register a passkey in Microsoft Authenticat
 
 # [:::image type="icon" source="media/icons/android-icon.png" border="false"::: **Android**](#tab/Android)
 
-[Wizard method](#wizard-method-android)
-[Direct method](#direct-method-android)
-[Sign-in steps](#sign-in-steps-android)
+[Wizard method](#wizard-method-android)<br>
+[Direct method](#direct-method-android)<br>
+[Sign-in steps](#sign-in-steps-android)<br>
 
 ### Wizard method (Android)
 
