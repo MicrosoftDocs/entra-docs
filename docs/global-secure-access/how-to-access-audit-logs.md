@@ -1,8 +1,8 @@
 ---
 title: How to access Global Secure Access (preview) audit logs
 description: Learn how to access Global Secure Access (preview) audit logs.
-author: shlipsey3
-ms.author: sarahlipsey
+author: kenwith
+ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
 ms.date: 06/01/2023
