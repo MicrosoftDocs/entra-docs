@@ -353,7 +353,7 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 |`oob`| Yes | The OTP code that the customer user received in their email. Replace `{otp_code}` with the OTP code that the customer user received in their email. To **resend an OTP code**, the app needs to make a request to the `/signup/v1.0/challenge` endpoint again. The OTP code |
 
 
-Once the app OTP successfully submits the OTP code, the sign-up flow depends on the scenarios in the following table:
+Once the app successfully submits the OTP code, the sign-up flow depends on the scenarios as shown the table:
 
 |    Scenario          | How to proceed in the sign-up flow |
 |----------------------|------------------------|
