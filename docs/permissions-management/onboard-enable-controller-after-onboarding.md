@@ -1,14 +1,12 @@
 ---
 title: Enable or disable the controller in Permissions Management after onboarding is complete
 description: How to enable or disable the controller in Permissions Management after onboarding is complete.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
-ms.subservice: ciem
-ms.workload: identity
+ms.service: entra-permissions-management
+
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 11/01/2023
 ms.author: jfields
 ---
 
@@ -86,7 +84,7 @@ You can enable or disable the controller in Azure at the Subscription level of y
 1. Execute the **gcloud auth login**.
 1. Follow the instructions displayed on the screen to authorize access to your Google account.
 1. Execute the ``sh mciem-workload-identity-pool.sh`` to create the workload identity pool, provider, and service account.
-1. Execute the ``sh mciem-member-projects.sh`` to give Permissions Management permissions to access each of the member projects.
+1. Execute the [``sh mciem-member-projects.sh``](https://github.com/cloudknox/mciem-onboard-gcp/blob/master/mciem-member-projects.sh) to give Permissions Management permissions to access each of the member projects.
 
     - If you want to manage permissions through Permissions Management, select **Y** to **Enable controller**.
     - If you want to onboard your projects in read-only mode, select **N** to **Disable controller**.

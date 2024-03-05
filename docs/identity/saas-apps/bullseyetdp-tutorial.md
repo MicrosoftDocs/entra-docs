@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with BullseyeTDP'
 description: Learn how to configure single sign-on between Microsoft Entra ID and BullseyeTDP.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -33,6 +33,7 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * BullseyeTDP supports **IDP** initiated SSO.
+* BullseyeTDP supports [Automated user provisioning](bullseyetdp-provisioning-tutorial.md).
 
 ## Add BullseyeTDP from the gallery
 

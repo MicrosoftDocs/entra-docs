@@ -2,19 +2,16 @@
 title: Certificate-based authentication with federation
 description: Learn how to configure certificate-based authentication with federation in your environment
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 05/04/2022
+ms.date: 11/02/2023
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: annaba
-
-ms.collection: M365-identity-device-management
+ms.reviewer: vraganathan
 ---
 # Get started with certificate-based authentication in Microsoft Entra ID with federation
 
@@ -31,7 +28,7 @@ Configuring this feature eliminates the need to enter a username and password co
 This topic:
 
 - Provides you with the steps to configure and utilize CBA for users of tenants in Office 365 Enterprise, Business, Education, and US Government plans. 
-- Assumes that you already have a [public key infrastructure (PKI)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)) and [AD FS](~/identity/hybrid/connect/how-to-connect-fed-whatis.md) configured.
+- Assumes that you already have a [public key infrastructure (PKI)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)) and [AD FS](/entra/identity/hybrid/connect/how-to-connect-fed-whatis) configured.
 
 ## Requirements
 
@@ -62,34 +59,38 @@ The related information exists for the following device platforms:
 
 ## Step 2: Configure the certificate authorities
 
-[!INCLUDE [Configure certificate authorities](~/includes/entra-authentication-configure-certificate-authorities.md)]
+[!INCLUDE [Configure certificate authorities](../../includes/entra-authentication-configure-certificate-authorities.md)]
 
 ### Connect
 
-[!INCLUDE [Connect-AzureAD](~/includes/entra-authentication-connect-azuread.md)]
+[!INCLUDE [Connect-AzureAD](../../includes/entra-authentication-connect.md)]
 
 
 ### Retrieve
 
-[!INCLUDE [Get-AzureAD](~/includes/entra-authentication-get-trusted-azuread.md)]
+[!INCLUDE [Get-AzureAD](../../includes/entra-authentication-get-trusted.md)]
 
 
-### Add
+To add, modify, or remove a CA, use the Microsoft Entra admin center:
 
-[!INCLUDE [New-AzureAD](~/includes/entra-authentication-new-trusted-azuread.md)]
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Certificate authorities**.
+1. To upload a CA, select **Upload**: 
+   1. Select the CA file.
+   1. Select **Yes** if the CA is a root certificate, otherwise select **No**.
+   1. For **Certificate Revocation List URL**, set the internet-facing URL for the CA base CRL that contains all revoked certificates. If the URL isn't set, authentication with revoked certificates won't fail.
+   1. For **Delta Certificate Revocation List URL**, set the internet-facing URL for the CRL that contains all revoked certificates since the last base CRL was published.
+   1. Select **Add**.
 
-### Remove
+      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/upload-certificate-authority.png" alt-text="Screenshot of how to upload certification authority file.":::
 
-[!INCLUDE [Remove-AzureAD](~/includes/entra-authentication-remove-trusted-azuread.md)]
+1. To delete a CA certificate, select the certificate and select **Delete**.
+1. Select **Columns** to add or delete columns.
 
-
-### Modify
-
-[!INCLUDE [Set-AzureAD](~/includes/entra-authentication-set-trusted-azuread.md)]
 
 ## Step 3: Configure revocation
 
-[!INCLUDE [Configure revocation](~/includes/entra-authentication-configure-revocation.md)]
+[!INCLUDE [Configure revocation](../../includes/entra-authentication-configure-revocation.md)]
 
 
 ## Step 4: Test your configuration

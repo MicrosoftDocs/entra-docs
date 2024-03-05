@@ -1,22 +1,20 @@
 ---
 title: Configurable token lifetimes
 description: Learn how to set lifetimes for access, SAML, and ID tokens issued by the Microsoft identity platform.
-services: active-directory
 author: rwike77
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.workload: identity
-ms.topic: conceptual
-ms.date: 06/27/2023
 ms.author: ryanwi
-ms.custom: aaddev, identityplatformtop40, contperf-fy21q1
-ms.reviewer: joroja
+ms.custom: 
+ms.date: 10/31/2023
+ms.reviewer:
+ms.service: identity-platform
+
+ms.topic: conceptual
+#Customer intent: As an IT admin, I want to configure the lifetime of access, ID, and SAML tokens for different types of applications, so that I can help mitigate the actions of a malicous actor who has obtained a token.
 ---
 # Configurable token lifetimes in the Microsoft identity platform (preview)
 
-You can specify the lifetime of an access, ID, or SAML token issued by the Microsoft identity platform. You can set token lifetimes for all apps in your organization or for a multi-tenant (multi-organization) application. We currently don't support configuring the token lifetimes for [managed identity service principals](~/identity/managed-identities-azure-resources/overview.md).
+You can specify the lifetime of an access, ID, or SAML token issued by the Microsoft identity platform. You can set token lifetimes for all apps in your organization, for multitenant (multi-organization) applications, or for service principals. We currently don't support configuring the token lifetimes for [managed identity service principals](~/identity/managed-identities-azure-resources/overview.md).
 
 In Microsoft Entra ID, a policy object represents a set of rules that are enforced on individual applications or on all applications in an organization. Each policy type has a unique structure, with a set of properties that are applied to objects to which they're assigned.
 

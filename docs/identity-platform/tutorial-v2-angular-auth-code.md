@@ -1,18 +1,16 @@
 ---
 title: "Tutorial: Create an Angular app that uses the Microsoft identity platform for authentication using auth code flow"
 description: In this tutorial, you build an Angular single-page app (SPA) using auth code flow that uses the Microsoft identity platform to sign in users and get an access token to call the Microsoft Graph API on their behalf.
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: tutorial
-ms.workload: identity
-ms.date: 10/24/2023
 ms.author: henrymbugua
+ms.custom: devx-track-js
+ms.date: 10/24/2023
 ms.reviewer: joarroyo
-ms.custom: aaddev, devx-track-js
+ms.service: identity-platform
+
+ms.topic: tutorial
+#Customer intent: As a developer building an Angular single-page application (SPA), I want to sign in users and call the Microsoft Graph API using the authorization code flow with PKCE, so that I can authenticate enterprise users and access Microsoft cloud services and Microsoft Graph.
 ---
 
 # Tutorial: Sign in users and call the Microsoft Graph API from an Angular single-page application (SPA) using auth code flow
@@ -1006,7 +1004,4 @@ As you add scopes, your users might be prompted to provide extra consent for the
 
 ## Next steps
 
-Delve deeper into single-page application (SPA) development on the Microsoft identity platform in our multi-part article series.
-
-> [!div class="nextstepaction"]
-> [Scenario: Single-page application](scenario-spa-overview.md)
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).

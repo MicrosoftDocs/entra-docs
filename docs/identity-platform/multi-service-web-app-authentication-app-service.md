@@ -1,30 +1,27 @@
 ---
-title: Tutorial - Add authentication to a web app on Azure App Service
-description: In this tutorial, you learn how to enable authentication and authorization for a web app running on Azure App Service. Limit access to the web app to users in your organization​.
-services: active-directory, app-service-web
+title: Tutorial - Add authentication to Azure App Service
+description: In this tutorial, you learn how to enable authentication for a web app running on Azure App Service. Limit access to the web app to users in your organization​.
 author: rwike77
 manager: CelesteDG
-
-ms.service: app-service
-ms.topic: tutorial
-ms.workload: identity
-ms.date: 04/25/2022
 ms.author: ryanwi
+ms.custom: azureday1, app-service-web
+ms.date: 02/17/2024
 ms.reviewer: stsoneff
-ms.custom: azureday1
-#Customer intent: As an application developer, enable authentication and authorization for a web app running on Azure App Service.
+ms.service: app-service
 ms.subservice: web-apps
+ms.topic: tutorial
+#Customer intent: As an application developer, enable authentication and authorization for a web app running on Azure App Service.
 ---
 
-# Tutorial: Add authentication to your web app running on Azure App Service
+# Add authentication to your web app running on Azure App Service
 
 Learn how to enable authentication for your web app running on Azure App Service and limit access to users in your organization.
 
 :::image type="content" source="./media/multi-service-web-app-authentication-app-service/web-app-sign-in.svg" alt-text="Diagram that shows user sign-in." border="false":::
 
-App Service provides built-in authentication and authorization support, so you can sign in users and access data by writing minimal or no code in your web app. Using the App Service authentication/authorization module isn't required, but helps simplify authentication and authorization for your app. This article shows how to secure your web app with the App Service authentication/authorization module by using Microsoft Entra ID as the identity provider.
+App Service provides built-in authentication support, so you can sign in users and access data by writing minimal or no code in your web app. Using the App Service authentication module isn't required, but helps simplify authentication and for your app. This article shows how to secure your web app with the App Service authentication module by using Microsoft Entra ID as the identity provider.
 
-The authentication/authorization module is enabled and configured through the Azure portal and app settings. No SDKs, specific languages, or changes to application code are required.​ A variety of identity providers are supported, which includes Microsoft Entra ID, Microsoft Account, Facebook, Google, and Twitter​​. When the authentication/authorization module is enabled, every incoming HTTP request passes through it before being handled by app code.​​ To learn more, see [Authentication and authorization in Azure App Service](/azure/app-service/overview-authentication-authorization).
+The authentication module is enabled and configured through the Azure portal and app settings. No SDKs, specific languages, or changes to application code are required.​ A variety of identity providers are supported, which includes Microsoft Entra ID, Microsoft Account, Facebook, Google, and Twitter​​. When the authentication module is enabled, every incoming HTTP request passes through it before being handled by app code.​​ To learn more, see [Authentication and authorization in Azure App Service](/azure/app-service/overview-authentication-authorization).
 
 In this tutorial, you learn how to:
 
@@ -48,9 +45,9 @@ Whether you use an existing web app or create a new one, take note of the follow
 
 You need these names throughout this tutorial.
 
-## Configure authentication and authorization
+## Configure authentication
 
-You now have a web app running on App Service. Next, you enable authentication and authorization for the web app. You use Microsoft Entra ID as the identity provider. For more information, see [Configure Microsoft Entra authentication for your App Service application](/azure/app-service/configure-authentication-provider-aad).
+You now have a web app running on App Service. Next, you enable authentication for the web app. You use Microsoft Entra ID as the identity provider. For more information, see [Configure Microsoft Entra authentication for your App Service application](/azure/app-service/configure-authentication-provider-aad).
 
 In the [Azure portal](https://portal.azure.com) menu, select **Resource groups**, or search for and select **Resource groups** from any page.
 
@@ -62,6 +59,8 @@ On your app's left menu, select **Authentication**, and then click **Add identit
 
 In the **Add an identity provider** page, select **Microsoft** as the **Identity provider** to sign in Microsoft and Microsoft Entra identities.
 
+For **Tenant type**, select **Workforce**.
+
 For **App registration** > **App registration type**, select **Create new app registration**.
 
 For **App registration** > **Supported account types**, select **Current tenant-single tenant**.
@@ -72,7 +71,7 @@ At the bottom of the **Add an identity provider** page, click **Add** to enable 
 
 :::image type="content" alt-text="Screenshot that shows configuring authentication." source="./media/multi-service-web-app-authentication-app-service/configure-authentication.png":::
 
-You now have an app that's secured by the App Service authentication and authorization.
+You now have an app that's secured by the App Service authentication.
 
 > [!NOTE]
 > To allow accounts from other tenants, change the 'Issuer URL' to 'https://login.microsoftonline.com/common/v2.0' by editing your 'Identity Provider' from the 'Authentication' blade.
@@ -80,7 +79,7 @@ You now have an app that's secured by the App Service authentication and authori
 
 ## Verify limited access to the web app
 
-When you enabled the App Service authentication/authorization module, an app registration was created in your Microsoft Entra tenant. The app registration has the same display name as your web app. To check the settings, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer) and browse to **Identity** > **Applications** > **App registrations**. Select the app registration that was created. In the overview, verify that **Supported account types** is set to **My organization only**.
+When you enabled the App Service authentication module, an app registration was created in your Microsoft Entra tenant. The app registration has the same display name as your web app. To check the settings, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer) and browse to **Identity** > **Applications** > **App registrations**. Select the app registration that was created. In the overview, verify that **Supported account types** is set to **My organization only**.
 
 :::image type="content" alt-text="Screenshot that shows verifying access." source="./media/multi-service-web-app-authentication-app-service/verify-access.png":::
 

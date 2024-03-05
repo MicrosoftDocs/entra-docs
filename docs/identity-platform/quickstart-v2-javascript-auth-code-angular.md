@@ -1,18 +1,16 @@
 ---
 title: "Quickstart: Sign in users in JavaScript Angular single-page apps (SPA) with auth code and call Microsoft Graph"
 description: In this quickstart, learn how a JavaScript Angular single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow and call Microsoft Graph.
-services: active-directory
+ROBOTS: NOINDEX
 author: henrymbuguakiarie
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.workload: identity
-ms.date: 11/12/2021
-ROBOTS: NOINDEX
 ms.author: henrymbugua
+ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js, mode-other
+ms.date: 02/27/2024
 ms.reviewer: jamesmantu
-ms.custom: aaddev, "scenarios:getting-started", "languages:JavaScript", devx-track-js, mode-other
+ms.service: identity-platform
+
+ms.topic: quickstart
 #Customer intent: As an app developer, I want to learn how to get access tokens and refresh tokens by using the Microsoft identity platform so that my JavaScript Angular app can sign in users of personal accounts, work accounts, and school accounts.
 ---
 
@@ -53,7 +51,7 @@ ms.custom: aaddev, "scenarios:getting-started", "languages:JavaScript", devx-tra
 > Run the project with a web server by using Node.js
 > 
 > >[!div class="nextstepaction"]
-> >[Download the code sample](https://github.com/Azure-Samples/ms-identity-javascript-angular-spa/archive/main.zip)
+> >[Download the code sample](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/archive/refs/heads/main.zip)
 > 
 > > [!div class="sxs-lookup"]
 > > > [!NOTE]

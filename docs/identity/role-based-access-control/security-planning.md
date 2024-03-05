@@ -1,20 +1,19 @@
 ---
 
 title: Secure access practices for administrators in Microsoft Entra ID
-description: Ensure that your organization's administrative access and administrator accounts are secure. For system architects and IT pros who configure Microsoft Entra ID, Azure, and Microsoft Online Services. 
-services: active-directory 
-keywords: 
+description: Ensure that your organization's administrative access and administrator accounts are secure. For system architects and IT pros who configure Microsoft Entra ID, Azure, and Microsoft Online Services.
+
+keywords:
 author: rolyon
 manager: amycolannino
 ms.author: rolyon
 ms.date: 04/19/2022
 ms.topic: conceptual
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.custom: it-pro, has-azure-ad-ps-ref
 ms.reviewer: "martincoetzer; MarkMorow"
-ms.collection: M365-identity-device-management
+
 ---
 
 # Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID
@@ -89,7 +88,7 @@ After starting to use Microsoft Entra Privileged Identity Management, view the u
 * Exchange Administrator
 * SharePoint Administrator
 
-If you don't have Microsoft Entra Privileged Identity Management in your organization, you can use the [PowerShell API](/powershell/module/azuread/get-azureaddirectoryrolemember). Start with the Global Administrator role because a Global Administrator has the same permissions across all cloud services for which your organization has subscribed. These permissions are granted no matter where they were assigned: in the Microsoft 365 admin center, the Microsoft Entra admin center, or by the Azure AD PowerShell module.
+If you don't have Microsoft Entra Privileged Identity Management in your organization, you can use [Microsoft Graph PowerShell](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryrolemember). Start with the Global Administrator role because a Global Administrator has the same permissions across all cloud services for which your organization has subscribed. These permissions are granted no matter where they were assigned: in the Microsoft 365 admin center, the Microsoft Entra admin center, or by using Microsoft Graph PowerShell.
 
 Remove any accounts that are no longer needed in those roles. Then, categorize the remaining accounts that are assigned to administrator roles:
 

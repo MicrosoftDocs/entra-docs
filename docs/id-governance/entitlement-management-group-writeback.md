@@ -1,20 +1,15 @@
 ---
 title: Set up group writeback within entitlement management - Microsoft Entra ID
 description: Learn how to set up group writeback in entitlement management.
-services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: HANKI
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 10/24/2023
 ms.author: owinfrey
 ms.reviewer: sponnada
-ms.collection: M365-identity-device-management
 ---
 
 # Setting up group writeback within entitlement management
@@ -34,7 +29,7 @@ Using group writeback, you can now sync security groups that are part of access 
 
 1. Create a Microsoft Entra security group.
 
-1. Set the group to be written back to on-premises Active Directory. For instructions, see [Group writeback in the Microsoft Entra admin center](~/identity/users/groups-write-back-portal.md). 
+1. Set the group to be written back to on-premises Active Directory. For instructions, see [Group writeback in the Microsoft Entra admin center](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md). 
 
 1. Add the group to an access package as a resource role. See [Create a new access package](entitlement-management-access-package-create.md#select-resource-roles) for guidance. 
 

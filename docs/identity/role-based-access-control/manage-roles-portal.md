@@ -1,19 +1,18 @@
 ---
 title: Assign Microsoft Entra roles to users
 description: Learn how to grant access to users in Microsoft Entra ID by assigning Microsoft Entra roles.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: how-to
-ms.date: 02/06/2023
+ms.date: 03/04/2024
 ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
-ms.collection: M365-identity-device-management
+
 ---
 # Assign Microsoft Entra roles to users
 
@@ -23,7 +22,7 @@ To grant access to users in Microsoft Entra ID, you assign Microsoft Entra roles
 
 - Privileged Role Administrator or Global Administrator. To know who your Privileged Role Administrator or Global Administrator is, see [List Microsoft Entra role assignments](view-assignments.md)
 - Microsoft Entra ID P2 license when using Privileged Identity Management (PIM)
-- AzureADPreview module when using PowerShell
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
@@ -53,6 +52,8 @@ Follow these steps to assign Microsoft Entra roles using the Microsoft Entra adm
     If you see something different from the following picture, you might have PIM enabled. See the next section.
 
     ![Screenshot of Add assignments pane for selected role.](./media/manage-roles-portal/add-assignments.png)
+
+    [!INCLUDE [rbac-assign-roles-guest-user-note](../../includes/rbac-assign-roles-guest-user-note.md)]
 
 1. Select **Add** to assign the role.
 
@@ -98,7 +99,7 @@ Follow these steps to assign Microsoft Entra roles using PowerShell.
 
 ### Setup
 
-1. Open a PowerShell window and use [Import-Module](/powershell/module/microsoft.powershell.core/import-module) to import the AzureADPreview module. For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
+1. Open a PowerShell window and use [Import-Module](/powershell/module/microsoft.powershell.core/import-module) to import the Microsoft Graph PowerShell module. For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
     ```powershell
     Import-Module -Name Microsoft.Graph.Identity.Governance -Force
@@ -141,7 +142,7 @@ If PIM is enabled, you have additional capabilities, such as making a user eligi
     $roledefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "DisplayName eq 'Billing Administrator'"
     ```
 
-1. Use the following command to create a hash table to store all the necessary attributes required to assign the role to the user. The Principal ID will be the user id to which you want to assign the role. In this example, the assignment will be valid only for **10 hours**.
+1. Use the following command to create a hash table to store all the necessary attributes required to assign the role to the user. The Principal ID will be the user ID to which you want to assign the role. In this example, the assignment will be valid only for **10 hours**.
 
     ```powershell
     $params = @{

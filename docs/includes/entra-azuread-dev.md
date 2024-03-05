@@ -1,12 +1,11 @@
 ---
 title: include file
 description: include file
-services: active-directory
+
 author: rwike77
 manager: CelesteDG
 
-ms.service: active-directory
-ms.subservice: azuread-dev
+ms.service: identity-platform
 ms.topic: include
 ms.date: 10/13/2020
 ms.author: ryanwi

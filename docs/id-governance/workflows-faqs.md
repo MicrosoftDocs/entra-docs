@@ -1,13 +1,11 @@
 ---
 title: 'Lifecycle workflows FAQs'
 description: Frequently asked questions about Lifecycle workflows.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.topic: how-to
-ms.subservice: compliance
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
+ms.topic: faq
 ms.date: 05/31/2023
 ms.author: owinfrey
 ms.reviewer: krbain
@@ -28,7 +26,7 @@ For a small portion of our customers, Lifecycle Workflows may still be listed un
 
 ### Do I need to map employeeHireDate in provisioning apps like WorkDay?
 
-Yes, key user properties like employeeHireDate and employeeType are supported for user provisioning from HR apps like WorkDay. To use these properties in Lifecycle workflows, you need to map them in the provisioning process to ensure the values are set. The following is an example of the mapping: 
+Yes, key user properties like employeeHireDate are supported for user provisioning from HR apps like WorkDay. To use these properties in Lifecycle workflows, you need to map them in the provisioning process to ensure the values are set. The following is an example of the mapping: 
 
 ![Screenshot showing an example of how mapping is done in a Lifecycle Workflow.](./media/workflows-faqs/workflows-mapping.png)
 

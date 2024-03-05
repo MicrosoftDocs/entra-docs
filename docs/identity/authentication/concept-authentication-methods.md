@@ -2,19 +2,14 @@
 title: Authentication methods and features
 description: Learn about the different authentication methods and features available in Microsoft Entra ID to help improve and secure sign-in events
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 06/07/2023
+ms.date: 02/28/2023
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
-
-ms.collection: M365-identity-device-management
-ms.custom: contperf-fy20q4
-
 # Customer intent: As an identity administrator, I want to understand what authentication options are available in Microsoft Entra ID and how or why I can use them to improve and secure user sign-in events.
 ---
 # What authentication and verification methods are available in Microsoft Entra ID?
@@ -67,10 +62,10 @@ The following table outlines when an authentication method can be used during a 
 |--------------------------------|:----------------------:|:-------------------------:|
 | Windows Hello for Business     | Yes                    | MFA\*                     |
 | Microsoft Authenticator (Push) | No                     | MFA and SSPR              |
-| Microsoft Authenticator (Passwordless) | Yes            | No                        |
+| Microsoft Authenticator (Passwordless) | Yes            | No\*                        |
 | Authenticator Lite             | No                     | MFA                       |
 | FIDO2 security key             | Yes                    | MFA                       |
-| Certificate-based authentication | Yes                  | No                        |
+| Certificate-based authentication | Yes                  | MFA                        |
 | OATH hardware tokens (preview) | No                     | MFA and SSPR              |
 | OATH software tokens           | No                     | MFA and SSPR              |
 | Temporary Access Pass (TAP)    | Yes                    | MFA                       |
@@ -79,6 +74,8 @@ The following table outlines when an authentication method can be used during a 
 | Password                       | Yes                    | No                        |
 
 > \* Windows Hello for Business, by itself, does not serve as a step-up MFA credential. For example, an MFA Challenge from Sign-in Frequency or SAML Request containing forceAuthn=true. Windows Hello for Business can serve as a step-up MFA credential by being used in FIDO2 authentication. This requires users to be enabled for FIDO2 authentication to work successfully.
+
+> \* Passwordless sign-in can be used for secondary authentication only if certificate-based authentication (CBA) is used for primary authentication. For more information, see [Microsoft Entra certificate-based authentication technical deep dive](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#mfa-with-single-factor-certificate-based-authentication-preview).
 
 All of these authentication methods can be configured in the Microsoft Entra admin center, and increasingly using the [Microsoft Graph REST API](/graph/api/resources/authenticationmethods-overview).
 
@@ -125,7 +122,7 @@ To learn more about MFA concepts, see [How Microsoft Entra multifactor authentic
 
 Learn more about configuring authentication methods using the [Microsoft Graph REST API](/graph/api/resources/authenticationmethods-overview).
 
-To review what authentication methods are in use, see [Microsoft Entra multifactor authentication authentication method analysis with PowerShell](/samples/azure-samples/azure-mfa-authentication-method-analysis/azure-mfa-authentication-method-analysis/).
+To review what authentication methods are in use, see [Microsoft Entra multifactor authentication authentication method analysis with PowerShell](https://github.com/Azure-Samples/azure-mfa-authentication-method-analysis).
 
 <!-- INTERNAL LINKS -->
 [tutorial-sspr]: tutorial-enable-sspr.md

@@ -1,17 +1,15 @@
 ---
 title: Identity data storage for Australian and New Zealand customers
 description: Learn about where Microsoft Entra ID stores identity-related data for its Australian and New Zealand customers.
-services: active-directory
 author: barclayn
 manager: amycolannino
 ms.author: barclayn
 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/17/2022
-ms.custom: "it-pro, seodec18"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ---
 
@@ -26,7 +24,7 @@ For customers who provided an address in Australia or New Zealand, Microsoft Ent
 - Microsoft Entra Directory Management 
 - Authentication
 
-All other Microsoft Entra services store customer data in global datacenters. To locate the datacenter for a service, see [Microsoft Entra ID – Where is your data located?](https://aka.ms/AADDataMap)
+All other Microsoft Entra services store customer data in global datacenters.
 
 <a name='microsoft-azure-ad-multi-factor-authentication-mfa'></a>
 

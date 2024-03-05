@@ -1,16 +1,14 @@
 ---
 title: Implement role-based access control in applications
 description: Learn how to implement role-based access control in your applications.
-services: active-directory
 author: rwike77
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: how-to
-ms.workload: identity 
-ms.date: 01/06/2023
 ms.author: ryanwi
-ms.reviewer: johngarland, mamarxen, ianbe
+ms.date: 01/06/2023
+ms.reviewer: 
+ms.service: identity-platform
+
+ms.topic: how-to
 #Customer intent: As an application developer, I want to learn how to implement role-based access control in my applications so I can make sure that only those users with the right access privileges can access the functionality of them.
 ---
 
@@ -80,7 +78,7 @@ Implementing RBAC in an ASP.NET Core web API mainly involves utilizing the *Auth
 
 1. Follow the instructions specified in [Quickstart: Add sign-in with Microsoft to an ASP.NET Core web app](./quickstart-v2-aspnet-core-webapp.md?view=aspnetcore-5.0&preserve-view=true) to add authentication to the application.
 1. Add role checks on the controller actions as outlined in [Adding role checks](/aspnet/core/security/authorization/roles?view=aspnetcore-5.0&preserve-view=true#adding-role-checks).
-1. Call the API from a client application. See [Angular single-page application calling .NET Core web API and using App Roles to implement Role-Based Access Control](https://github.com/Azure-Samples/ms-identity-javascript-angular-tutorial/tree/main/5-AccessControl/1-call-api-roles) for an end to end sample.
+1. Call the API from a client application. See [Angular single-page application calling ASP.NET Core web API and using App Roles to implement Role-Based Access Control](https://github.com/Azure-Samples/ms-identity-javascript-angular-tutorial/tree/main/5-AccessControl/1-call-api-roles) for an end to end sample.
 
 ## Implement RBAC in other platforms
 

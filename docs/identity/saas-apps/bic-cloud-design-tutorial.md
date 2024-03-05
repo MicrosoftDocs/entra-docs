@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with BIC Process Design'
 description: Learn how to configure single sign-on between Microsoft Entra ID and BIC Process Design.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -36,6 +36,7 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * BIC Process Design supports **SP** initiated SSO.
+* BIC Process Design supports [Automated user provisioning](bic-cloud-design-provisioning-tutorial.md).
 
 ## Add BIC Process Design from the gallery
 

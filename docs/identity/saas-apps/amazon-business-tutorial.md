@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra integration with Amazon Business'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Amazon Business.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 12/21/2022
 ms.author: jeedes
@@ -36,6 +36,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in an existing Amaz
 
 * Amazon Business supports **SP and IDP** initiated SSO.
 * Amazon Business supports **Just In Time** user provisioning.
+* Amazon Business supports [Automated user provisioning](amazon-business-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
@@ -186,7 +187,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
     >[!NOTE]
     > If you do not assign the users in the Microsoft Entra ID, you get the following error.
 
-    ![Screenshot shows a error message that you can’t be signed in.](media/amazon-business-tutorial/assign-user.png)
+    ![Screenshot shows an error message that you can’t be signed in.](media/amazon-business-tutorial/assign-user.png)
 
 <a name='assign-the-azure-ad-security-group-in-the-azure-portal'></a>
 

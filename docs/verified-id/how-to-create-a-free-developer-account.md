@@ -1,11 +1,11 @@
 ---
 title: Create a free Microsoft Entra developer tenant
 description: This article shows you how to create a developer account.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 ms.topic: how-to
 ms.date: 01/26/2023
 ms.author: barclayn
@@ -14,8 +14,7 @@ ms.author: barclayn
 
 # Microsoft Entra Verified ID developer information
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 > [!NOTE]
 > The requirement of a Microsoft Entra ID P2 license was removed in early May 2001. The Microsoft Entra ID Free tier is now supported. 
 

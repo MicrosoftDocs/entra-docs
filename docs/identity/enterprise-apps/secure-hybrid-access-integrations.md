@@ -1,18 +1,19 @@
 ---
 title: Secure hybrid access with Microsoft Entra integration
 description: Help customers discover and migrate SaaS applications into Microsoft Entra ID and connect apps that use legacy authentication methods with Microsoft Entra ID.
-services: active-directory
+
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 01/19/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
 
+#customer intent: As an IT admin, I want to integrate legacy applications with Microsoft Entra ID using SAML or OIDC, so that I can enable single sign-on and apply Conditional Access policies for those applications.
 ---
 
 # Secure hybrid access with Microsoft Entra integration

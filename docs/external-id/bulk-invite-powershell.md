@@ -3,19 +3,18 @@
 title: Tutorial for bulk inviting B2B collaboration users
 description: In this tutorial, you learn how to use PowerShell and a CSV file to send bulk invitations to external Microsoft Entra B2B collaboration guest users.
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: B2B
+ 
+ms.service: entra-external-id
 ms.topic: tutorial
-ms.date: 07/31/2023
+ms.date: 01/03/2024
 
 ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
-ms.custom: engagement-fy23, has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ms.collection: M365-identity-device-management
-# Customer intent: As a tenant administrator, I want to send B2B invitations to multiple external users at the same time so that I can avoid having to send individual invitations to each user.
+# Customer intent: As an IT admin managing external partners in Microsoft Entra B2B collaboration, I want to use PowerShell to send bulk invitations to guest users, so that I can efficiently add multiple users to my organization and streamline the onboarding process.
 ---
 
 # Tutorial: Use PowerShell to bulk invite Microsoft Entra B2B collaboration users
@@ -31,37 +30,33 @@ If you don't have an Azure subscription, create a [free account](https://azure.m
 
 ## Prerequisites
 
-### Install the latest AzureADPreview module
+### Install the latest Microsoft Graph PowerShell module
 
-Make sure that you install the latest version of the Azure AD PowerShell for Graph module (`AzureADPreview`).
+Make sure that you install the latest version of the Microsoft Graph PowerShell module.
 
 First, check which modules you've installed. Open PowerShell as an elevated user (Run as administrator), and run the following command:
 
 ```powershell
-Get-Module -ListAvailable AzureAD*
+Get-InstalledModule Microsoft.Graph
 ```
 
-Based on the output, do one of the following:
+To install the v1 module of the SDK in PowerShell Core or Windows PowerShell, run the following command:
 
-- If no results are returned, run the following command to install the `AzureADPreview` module:
-  
-   ```powershell
-   Install-Module AzureADPreview
-   ```
+```powershell
+Install-Module Microsoft.Graph -Scope CurrentUser
+```
 
-- If only the `AzureAD` module shows up in the results, run the following commands to install the `AzureADPreview` module:
+Optionally, you can change the scope of the installation using the `-Scope` parameter. This requires admin permissions.
 
-   ```powershell
-   Uninstall-Module AzureAD
-   Install-Module AzureADPreview
-   ```
+```powershell
+Install-Module Microsoft.Graph -Scope AllUsers
+```
 
-- If only the `AzureADPreview` module shows up in the results, but you receive a message that indicates there's a later version, run the following commands to update the module:
+To install the beta module, run the following command.
 
-   ```powershell
-   Uninstall-Module AzureADPreview
-   Install-Module AzureADPreview
-   ```
+```powershell
+Install-Module Microsoft.Graph.Beta
+```
 
 You may receive a prompt that you're installing the module from an untrusted repository. This occurs if you haven't previously set the PSGallery repository as a trusted repository. Press `Y` to install the module.
 
@@ -83,14 +78,14 @@ If you don't have Excel, you can create a CSV file in any text editor, such as N
 
 ## Sign in to your tenant
 
-Run the following command to connect to the tenant domain:
+Run the following command to connect to the tenant:
 
 ```powershell
-Connect-AzureAD -TenantDomain "<Tenant_Domain_Name>"
+Connect-MgGraph -TenantId "<YOUR_TENANT_ID>"
 ```
 
-For example, `Connect-AzureAD -TenantDomain "contoso.onmicrosoft.com"`.
-
+For example, `Connect-MgGraph -TenantId "11111111-aaaa-2222-bbbb-33333333"`. You can also use the tenant domain, but the parameter remains the `-TenantId`. For example, `Connect-MgGraph -TenantId "contoso.onmicrosoft.com"`.
+ 
 When prompted, enter your credentials.
 
 ## Send bulk invitations
@@ -105,7 +100,7 @@ $messageInfo = New-Object Microsoft.Open.MSGraph.Model.InvitedUserMessageInfo
 $messageInfo.customizedMessageBody = "Hello. You are invited to the Contoso organization."
 
 foreach ($email in $invitations)
-   {New-AzureADMSInvitation `
+   {New-MgInvitation `
       -InvitedUserEmailAddress $email.InvitedUserEmailAddress `
       -InvitedUserDisplayName $email.Name `
       -InviteRedirectUrl https://myapps.microsoft.com `
@@ -123,7 +118,7 @@ The script sends an invitation to the email addresses in the Invitations.csv fil
 To verify that the invited users were added to Microsoft Entra ID, run the following command:
 
 ```powershell
- Get-AzureADUser -Filter "UserType eq 'Guest'"
+ Get-MgUser -Filter "UserType eq 'Guest'"
 ```
 
 You should see the users that you invited listed, with a user principal name (UPN) in the format *emailaddress*#EXT#\@*domain*. For example, *msullivan_fabrikam.com#EXT#\@contoso.onmicrosoft.com*, where `contoso.onmicrosoft.com` is the organization from which you sent the invitations.
@@ -133,14 +128,14 @@ You should see the users that you invited listed, with a user principal name (UP
 When no longer needed, you can delete the test user accounts in the directory. Run the following command to delete a user account:
 
 ```powershell
- Remove-AzureADUser -ObjectId "<UPN>"
+ Remove-MgUser -UserId "<String>"
 ```
 
-For example: `Remove-AzureADUser -ObjectId "msullivan_fabrikam.com#EXT#@contoso.onmicrosoft.com"`
+For example: `Remove-MgUser -UserId "11111111-aaaa-2222-bbbb-33333333"`
 
 ## Next steps
 
 In this tutorial, you sent bulk invitations to guest users outside of your organization. Next, learn how to bulk invite guest users on the portal and how to enforce MFA for them.
 
 - [Bulk invite guest users via the portal](tutorial-bulk-invite.md)
-- [Enforce multi-factor authentication for B2B guest users](b2b-tutorial-require-mfa.md)
+

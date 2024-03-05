@@ -1,13 +1,13 @@
 ---
 title: Frequently asked questions
 description: Find answers to some of the most frequently asked questions about Microsoft Entra ID for customers. 
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: ciam
-ms.topic: reference
+ms.service: entra-external-id
+ 
+ms.subservice: customers
+ms.topic: faq
 ms.date: 05/23/2023
 ms.author: mimart
 ms.custom: it-pro

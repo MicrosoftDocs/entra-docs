@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Connecter for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Connecter.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 6e60505a-f8c8-46f6-8e6f-525e7c8416b7
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 03/24/2023
 ms.author: thwimmer

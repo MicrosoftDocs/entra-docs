@@ -1,16 +1,14 @@
 ---
 title: "Quickstart: Acquire a token and call Microsoft Graph from a Java daemon app"
 description: In this quickstart, you learn how a Java app can get an access token and call an API protected by Microsoft identity platform endpoint, using the app's own identity
-services: active-directory
 author: Dickson-Mwendia
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: quickstart
-ms.workload: identity
-ms.date: 01/10/2022
 ms.author: dmwendia
-ms.custom: aaddev, 'scenarios:getting-started', 'languages:Java', devx-track-java, mode-other, devx-track-extended-java
+ms.custom: scenarios:getting-started, languages:Java, devx-track-java, mode-other, devx-track-extended-java
+ms.date: 01/10/2022
+ms.service: identity-platform
+
+ms.topic: quickstart
 #Customer intent: As an application developer, I want to learn how my Java app can get an access token and call an API that's protected by Microsoft identity platform endpoint using client credentials flow.
 ---
 
@@ -72,7 +70,7 @@ To register your application and add the app's registration information to your 
 
 ### Step 4: Admin consent
 
-If you try to run the application at this point, you'll receive *HTTP 403 - Forbidden* error: `Insufficient privileges to complete the operation`. This error happens because any *app-only permission* requires Admin consent: a global administrator of your directory must give consent to your application. Select one of the options below depending on your role:
+If you try to run the application at this point, you'll receive *HTTP 403 - Forbidden* error: `Insufficient privileges to complete the operation`. This error happens because any *app-only permission* requires Admin consent: a Global Administrator of your directory must give consent to your application. Select one of the options below depending on your role:
 
 #### Global tenant administrator
 
@@ -81,7 +79,7 @@ If you are a global tenant administrator, go to **API Permissions** page in **Ap
 
 #### Standard user
 
-If you're a standard user of your tenant, then you need to ask a global administrator to grant admin consent for your application. To do this, give the following URL to your administrator:
+If you're a standard user of your tenant, then you need to ask a Global Administrator to grant admin consent for your application. To do this, give the following URL to your administrator:
 
 ```url
 https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_id=Enter_the_Application_Id_Here

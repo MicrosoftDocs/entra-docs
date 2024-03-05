@@ -1,18 +1,16 @@
 ---
 title: Sign up for premium editions
 description: Instructions about how to sign up for Microsoft Entra ID P1 or P2 editions.
-services: active-directory
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: how-to
-ms.date: 08/17/2022
+ms.date: 11/30/2023
 ms.author: barclayn
 ms.reviewer: piotrci
-ms.custom: "it-pro, seodec18"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ---
 # Sign up for Microsoft Entra ID P1 or P2 editions
@@ -63,18 +61,18 @@ If you signed up using a new Microsoft Entra ID license plan, you must activate 
 
 1. Open the confirmation email you received from Microsoft after you signed up, and then select either **Sign In** or **Sign Up**.
    
-   ![Confirmation email with sign in and sign up links](media/get-started-premium/MOLSEmail.png)
+   :::image type="content" source="media/get-started-premium/MOLSEmail.png" alt-text="Screenshot of confirmation email with sign in and sign up links.":::
 
 1. Select **Sign in** or **Sign up**. 
    - **Sign in.** Choose this link if you have an existing tenant, and then sign in using your existing administrator account. You must be a Global Administrator on the tenant where the licenses are being activated.
 
    - **Sign up.** Choose this link if you want to open the **Create Account Profile** page and create a new Microsoft Entra tenant for your licensing plan.
 
-    ![Create account profile page, with sample information](media/get-started-premium/MOLSAccountProfile.png)
+   :::image type="content" source="media/get-started-premium/MOLSAccountProfile.png" alt-text="Screenshot of Create account profile page, with sample information.":::
 
 When you're done, you'll see a confirmation box thanking you for activating the license plan for your tenant.
 
-![Confirmation box with thank you](media/get-started-premium/MOLSThankYou.png)
+:::image type="content" source="media/get-started-premium/MOLSThankYou.png" alt-text="Screenshot of Confirmation box with thank you.":::
 
 <a name='activate-your-azure-ad-access'></a>
 
@@ -93,11 +91,7 @@ After your purchased licenses are provisioned in your directory, you'll receive 
 
 1. Open the **Welcome email**, and then select **Sign In**.
    
-    ![Welcome email, with highlighted sign in link](media/get-started-premium/AADEmail.png)
-
 2. After successfully signing in, you'll go through two-step verification using a mobile device.
-   
-    ![Two-step verification page with mobile verification](media/get-started-premium/SignUppage.png)
 
 The activation process typically takes only a few minutes and then you can use your Microsoft Entra tenant. 
 

@@ -1,0 +1,12 @@
+items:
+- name: Microsoft Entra
+  tocHref: /entra/
+  topicHref: /entra/index
+  items:
+  - name: Microsoft Entra ID Governance
+    tocHref: /entra/id-governance/
+    topicHref: /entra/id-governance/index
+    items:
+    - name: Privileged Identity Management
+      tocHref: /entra/identity/role-based-access-control/
+      topicHref: /entra/id-governance/privileged-identity-management

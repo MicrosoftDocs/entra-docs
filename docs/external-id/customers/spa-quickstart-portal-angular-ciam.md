@@ -1,14 +1,14 @@
 ---
 title: "Quickstart: Add sign in to an Angular SPA"
 description: Learn how to run a sample Angular SPA to sign in users
-services: active-directory
+ 
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-external-id
+ 
 ROBOTS: NOINDEX
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: conceptual
 ms.date: 06/06/2023
 ---

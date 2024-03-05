@@ -1,17 +1,16 @@
 ---
 title: 'Microsoft Entra Connect: Troubleshoot object synchronization'
 description: Learn how to troubleshoot issues with object synchronization by using the troubleshooting task.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.date: 01/19/2023
-ms.subservice: hybrid
+ms.date: 11/06/2023
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Troubleshoot object synchronization with Microsoft Entra Connect Sync
@@ -67,7 +66,7 @@ Check for the UPN mismatch issues that are described in the next sections.
 
 ### UPN suffix is not verified with the Microsoft Entra tenant
 
-When the UPN or alternate login ID suffix isn't verified with the Microsoft Entra tenant, Microsoft Entra ID replaces the UPN suffixes with the default domain name `onmicrosoft.com`.
+When the UPN or alternate login ID suffix isn't verified with the Microsoft Entra tenant, Microsoft Entra ID replaces the UPN suffixes with the default domain name `onmicrosoft.com`. To resolve this issue, add the UPN suffix as a verified domain on your tenant. For more information visit [Managing custom domain names in your Microsoft Entra ID](../../users/domains-manage.md).
 
 :::image type="content" source="media/tshoot-connect-objectsync/objsynch2.png" alt-text="Screenshot that shows an example of an unverified UPN suffix error in PowerShell.":::
 
@@ -75,7 +74,7 @@ When the UPN or alternate login ID suffix isn't verified with the Microsoft Entr
 
 ### Microsoft Entra tenant DirSync feature SynchronizeUpnForManagedUsers is disabled
 
-When the Microsoft Entra tenant DirSync feature SynchronizeUpnForManagedUsers is disabled, Microsoft Entra ID doesn't allow sync updates to the UPN or alternate login ID for licensed user accounts that use managed authentication.
+When the Microsoft Entra tenant DirSync feature SynchronizeUpnForManagedUsers is disabled, Microsoft Entra ID doesn't allow sync updates to the UPN or alternate login ID for licensed user accounts that use managed authentication. To learn how to enable SynchronizeUpnForManagedUsers feature, visit [Microsoft Entra Connect Sync service features](./how-to-connect-syncservice-features.md).
 
 :::image type="content" source="media/tshoot-connect-objectsync/objsynch4.png" alt-text="Screenshot that shows an example of a UPN sync for managed users error in PowerShell.":::
 

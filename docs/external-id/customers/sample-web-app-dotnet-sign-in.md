@@ -1,14 +1,14 @@
 ---
 title: Sign in users to a sample ASP.NET web application
 description: Learn how to configure a sample ASP.NET web app to sign in and sign out users by using a Microsoft Entra ID for customers tenant.
-services: active-directory
+ 
 author: cilwerner
 manager: celestedg
 
 ms.author: cwerner
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: ciam
+ms.service: entra-external-id
+ 
+ms.subservice: customers
 ms.topic: sample
 ms.date: 06/23/2023
 ms.custom: developer, devx-track-dotnet

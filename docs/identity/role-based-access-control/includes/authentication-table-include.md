@@ -3,9 +3,8 @@ title: include file
 description: include file
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 10/12/2022
 ms.author: rolyon

@@ -1,18 +1,19 @@
 ---
 title: What is single sign-on?
 description: Learn about single sign-on for enterprise applications in Microsoft Entra ID.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: enterprise-apps
+
 ms.topic: overview
-ms.date: 12/07/2022
+ms.date: 10/30/2023
 ms.author: jomondi
 ms.reviewer: alamaral
-ms.custom: contperf-fy21q1, contperf-fy22q2, contperf-fy22q3, enterprise-apps-article
-# Customer intent: As an IT admin, I need to learn about single sign-on and my applications in Microsoft Entra ID.
+ms.custom: enterprise-apps-article
+
+# Customer intent: As an IT admin responsible for managing user access to applications, I want to understand the different single sign-on (SSO) options available in Microsoft Entra ID, so that I can plan and deploy SSO for our organization's applications efficiently.
 ---
 
 # What is single sign-on in Microsoft Entra ID?
@@ -29,9 +30,9 @@ Choosing an SSO method depends on how the application is configured for authenti
 
     With federated single sign-on, Microsoft Entra authenticates the user to the application by using their Microsoft Entra account. This method is supported for [SAML 2.0](~/identity-platform/single-sign-on-saml-protocol.md), WS-Federation, or [OpenID Connect](~/identity-platform/v2-protocols-oidc.md) applications. Federated SSO is the richest mode of SSO. Use federated SSO with Microsoft Entra ID when an application supports it, instead of password-based SSO and Active Directory Federation Services (AD FS).
 
-    There are some scenarios where the SSO option isn't present for an enterprise application. If the application was registered using **App registrations** in the portal, then the single sign-on capability is configured to use OpenID Connect and OAuth by default. In this case, the single sign-on option won't appear in the navigation under enterprise applications.
+    There are some scenarios where the SSO option isn't present for an enterprise application. If the application was registered using **App registrations** in the portal, then the single sign-on capability is configured to use OpenID Connect and OAuth by default. In this case, the single sign-on option doesn't appear in the navigation under enterprise applications.
 
-    Single sign-on isn't available when an application is hosted in another tenant. Single sign-on is also not available if your account doesn't have the required permissions (Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal). Permissions can also cause a scenario where you can open single sign-on but won't be able to save.
+    Single sign-on isn't available when an application is hosted in another tenant. Single sign-on is also not available if your account doesn't have the required permissions (Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal). Permissions can also cause a scenario where you can open single sign-on but might not be able to save.
 
     > [!VIDEO https://www.youtube.com/embed/CjarTgjKcX8]
 
@@ -45,13 +46,12 @@ Choosing an SSO method depends on how the application is configured for authenti
 
 - **Disabled** - When SSO is disabled, it isn't available for the application. When single sign-on is disabled, users might need to authenticate twice. First, users authenticate to Microsoft Entra ID, and then they sign in to the application.
 
-    Disable SSO when:
+  Disable SSO when:
+  - You're not ready to integrate this application with Microsoft Entra single sign-on
+  - You're testing other aspects of the application
+  - An on-premises application doesn't require users to authenticate, but you want them to. With SSO disabled, the user needs to authenticate.
 
-    - You're not ready to integrate this application with Microsoft Entra single sign-on
-    - You're testing other aspects of the application
-    - An on-premises application doesn't require users to authenticate, but you want them to. With SSO disabled, the user needs to authenticate.
-
-    If you configured the application for SP-initiated SAML-based SSO and you change the SSO mode to disabled, it won't stop users from signing in to the application outside the MyApps portal. To stop users from signing in from outside My apps portal, you need to disable the ability for users to sign in.
+    If you configured the application for SP-initiated SAML-based SSO and you change the SSO mode to disabled, it doesn't stop users from signing in to the application outside the MyApps portal. To stop users from signing in from outside My apps portal, you need to disable the ability for users to sign in.
 
 ## Plan SSO deployment
 
@@ -59,11 +59,11 @@ Web applications are hosted by various companies and made available as a service
 
 How you implement SSO depends on where the application is hosted. Hosting matters because of the way network traffic is routed to access the application. Users don't need to use the Internet to access on-premises applications (hosted on a local network). If the application is hosted in the cloud, users need the Internet to use it. Cloud hosted applications are also called Software as a Service (SaaS) applications.
 
-For cloud applications, federation protocols are used. You can also use single sign-on for on-premises applications. You can use Application Proxy to configure access for your on-premises application. For more information, see [Remote access to on-premises applications through Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md).
+For cloud applications, federation protocols are used. You can also use single sign-on for on-premises applications. You can use Application Proxy to configure access for your on-premises application. For more information, see [Remote access to on-premises applications through Microsoft Entra application proxy](/entra/identity/app-proxy).
 
 ## My Apps
 
-If you're a user of an application, you likely don't care much about SSO details. You just want to use the applications that make you productive without having to type your password so much. You can find and manage your applications at the My Apps portal.	For more information, see [Sign in and start apps from the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+If you're a user of an application, you likely don't care much about SSO details. You just want to use the applications that make you productive without having to type your password so much. You can find and manage your applications at the My Apps portal. For more information, see [Sign in and start apps from the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Next steps
 

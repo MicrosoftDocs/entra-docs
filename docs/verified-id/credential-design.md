@@ -1,11 +1,11 @@
 ---
 title: Customize your Microsoft Entra Verified ID
 description: This article shows you how to create your own custom verifiable credential.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 ms.topic: how-to
 ms.date: 06/22/2022
 ms.author: barclayn
@@ -14,8 +14,7 @@ ms.author: barclayn
 
 # Customize your verifiable credentials
 
-[!INCLUDE [verifiable credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 Verifiable credentials definitions are made up of two components, *display* definitions and *rules* definitions. A display definition controls the branding of the credential and styling of the claims. A rules definition determines what users need to provide before they receive a verifiable credential.  
 
 This article explains how to modify both types of definitions to meet the requirements of your organization. 

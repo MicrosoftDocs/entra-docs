@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure SAP Litmos for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to SAP Litmos.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 4e0d2a0b-2d22-4b21-8b29-64413549c5a5
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 08/03/2023
 ms.author: thwimmer

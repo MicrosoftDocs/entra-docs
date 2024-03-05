@@ -1,24 +1,16 @@
 ---
 title: Manage connected organizations in entitlement management
 description: Learn how to allow people outside your organization to request access packages so that you can collaborate on projects.
-services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
 ms.reviewer: mwahl
-ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an administrator, I want to allow users in certain partner organizations to request access packages so that our organizations can collaborate on projects.
-
 ---
 
 # Manage connected organizations in entitlement management
@@ -37,8 +29,8 @@ If you want to only allow individuals from designated organizations to request a
 There are four ways that entitlement management lets you specify the users that form a connected organization.  It could be
 
 * users in another Microsoft Entra directory (from any Microsoft cloud),
-* users in another non-Azure AD directory that has been configured for direct federation,
-* users in another non-Azure AD directory, whose email addresses all have the same domain name in common, or
+* users in another non-Microsoft directory that has been configured for [SAML/WS-Fed identity provider (IdP) federation](/entra/external-id/direct-federation),
+* users in another non-Microsoft directory, whose email addresses all have the same domain name in common and specific to that organization, or
 * users with a Microsoft Account, such as from the domain *live.com*, if you have a business need for collaboration with users that have no common organization.
 
 For example, suppose you work at Woodgrove Bank and you want to collaborate with two external organizations.  You want to give users from both external organizations access to the same resources, but these two organizations have different configurations:
@@ -62,7 +54,7 @@ How users from the Microsoft Entra directory or domain authenticate depends on t
 
 - Microsoft Entra ID, in the same cloud
 - Microsoft Entra ID, in another cloud
-- [Direct federation](~/external-id/direct-federation.md)
+- [SAML/WS-Fed identity provider (IdP) federation](~/external-id/direct-federation.md)
 - [One-time passcode](~/external-id/one-time-passcode.md) (domain)
 - Microsoft Account
 

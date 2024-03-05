@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Forcepoint Cloud Security Gateway - User Authentication for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Forcepoint Cloud Security Gateway - User Authentication.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 415b2ba3-a9a5-439a-963a-7c2c0254ced1
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 08/16/2023
 ms.author: thwimmer
@@ -33,7 +33,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
 * A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
-* An Forcepoint Cloud Security Gateway - User Authentication tenant.
+* A Forcepoint Cloud Security Gateway - User Authentication tenant.
 * A user account in Forcepoint Cloud Security Gateway - User Authentication with Admin permissions.
 
 ## Step 1: Plan your provisioning deployment

@@ -1,14 +1,12 @@
 ---
 title:  Onboard a Google Cloud Platform (GCP) project in Permissions Management
 description: How to onboard a Google Cloud Platform (GCP) project on Permissions Management.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
-ms.subservice: ciem
-ms.workload: identity
+ms.service: entra-permissions-management
+
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 12/20/2023
 ms.author: jfields
 ---
 
@@ -137,7 +135,8 @@ The required commands to run in Google Cloud Shell are listed in the Manage Auth
 
     The **Status** column in the table displays **Collecting Data.**
 
-    The data collection process may take some time, depending on the size of the account and how much data is available for collection.
+    The data collection process takes some time and occurs in approximately 4-5 hour intervals in most cases. The time frame depends on the size of the authorization system you have and how much data is available for collection.
+
 
 
 

@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Moqups'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Moqups.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -35,6 +35,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 * Moqups supports **SP and IDP** initiated SSO.
 * Moqups supports **Just In Time** user provisioning.
+* Moqups supports [Automated user provisioning](moqups-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.

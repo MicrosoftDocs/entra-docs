@@ -2,22 +2,19 @@
 title: Quickstart require Terms of Use at sign-in
 description: Quickstart require terms of use acceptance before access to selected cloud apps is granted with Microsoft Entra Conditional Access.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: quickstart
-ms.date: 09/22/2022
+ms.date: 02/26/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: calebb
-
-ms.collection: M365-identity-device-management
+ms.reviewer: 
 ---
 # Quickstart: Require terms of use to be accepted before accessing cloud apps
 
-In this quickstart, you'll configure a Conditional Access policy in Microsoft Entra ID to require users to accept terms of use. 
+In this quickstart, you configure a Conditional Access policy in Microsoft Entra ID to require users to accept terms of use (ToU). 
 
 ## Prerequisites
 
@@ -36,13 +33,12 @@ The goal of this step is to get an impression of the sign-in experience without 
 
 ## Create your terms of use
 
-This section provides you with the steps to create a sample ToU. When you create a ToU, you select a value for **Enforce with Conditional Access policy templates**. Selecting **Custom policy** opens the dialog to create a new Conditional Access policy as soon as your ToU has been created.
+This section provides you with the steps to create a sample ToU. When you create a ToU, you select a value for **Enforce with Conditional Access policy templates**. Selecting **Custom policy** opens the dialog to create a new Conditional Access policy as soon as your ToU is created.
 
 1. In Microsoft Word, create a new document.
 1. Type **My terms of use**, and then save the document on your computer as **mytou.pdf**.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
-
 
    :::image type="content" source="media/require-tou/terms-of-use-azure-ad-conditional-access.png" alt-text="Screenshot of terms of use highlighting the new terms button." lightbox="media/require-tou/terms-of-use-azure-ad-conditional-access.png":::
 
@@ -50,10 +46,10 @@ This section provides you with the steps to create a sample ToU. When you create
 
    :::image type="content" source="media/require-tou/new-terms-of-use-creation.png" alt-text="Screenshot that shows creating a new terms of use policy." lightbox="media/require-tou/new-terms-of-use-creation.png":::
 
-1. In the **Name** textbox, type **My TOU**.
+1. In the **Name** textbox, type **My ToU**.
 1. Upload your terms of use PDF file.
 1. Select your default language.
-1. In the **Display name** textbox, type **My TOU**.
+1. In the **Display name** textbox, type **My ToU**.
 1. As **Require users to expand the terms of use**, select **On**.
 1. As **Enforce with Conditional Access policy templates**, select **Custom policy**.
 1. Select **Create**.
@@ -76,10 +72,10 @@ The scenario in this quickstart uses:
 1. Under Assignments, select **Cloud apps or actions**.
 1. Select **Cloud apps or actions**.
    1. Under Include, choose **Select apps**.
-   1. Select **Microsoft Azure Management**, and then choose **Select**.
+   1. Select **Windows Azure Service Management API**, and then choose **Select**.
 1. Under **Access controls**, select **Grant**.
    1. Select **Grant access**.
-   1. Select the terms of use you created previously called **My TOU** and choose **Select**.
+   1. Select the terms of use you created previously called **My ToU** and choose **Select**.
 1. In the **Enable policy** section, select **On**.
 1. Select **Create**.
 
@@ -89,7 +85,7 @@ In the previous section, you created a Conditional Access policy requiring terms
 
 To test your policy, try to sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using your test account. You should see a dialog that requires you to accept your terms of use.
 
-:::image type="content" source="./media/require-tou/57.png" alt-text="Screenshot of a dialog box titled Identity Security Protection terms of use, with Decline and Accept buttons and a button labeled My TOU." border="false":::
+:::image type="content" source="./media/require-tou/57.png" alt-text="Screenshot of a dialog box titled Identity Security Protection terms of use, with Decline and Accept buttons and a button labeled My ToU." border="false":::
 
 ## Clean up resources
 

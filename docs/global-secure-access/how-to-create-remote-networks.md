@@ -5,9 +5,8 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 10/11/2023
-ms.service: network-access
-
+ms.date: 03/01/2024
+ms.service: global-secure-access
 ---
 # How to create a remote network
 
@@ -19,15 +18,14 @@ This article explains how to create a remote network for Global Secure Access (p
 
 ## Prerequisites
 
-To configure remote networks, you must have: 
+To configure remote networks, you must have:
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
-- Completed the [onboarding process](#onboard-your-tenant-for-remote-networks) for remote networks.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
-- Customer premises equipment (CPE) must support the following protocols:
+- Customer premises equipment (CPE) must support the protocols.
     - Internet Protocol Security (IPSec)
-    - GCMEAES128, GCMAES 192 or GCMAES256 algorithms for IKE phase 2 negotiation
+    - GCMEAES128, GCMAES 192, or GCMAES256 algorithms for Internet Key Exchange (IKE) phase 2 negotiation
     - Internet Key Exchange Version 2 (IKEv2)
     - Border Gateway Protocol (BGP)
 - [Review the valid configurations for setting up remote networks](reference-remote-network-configurations.md).
@@ -36,32 +34,9 @@ To configure remote networks, you must have:
 
 ### Known limitations
 
-- At this time, the number of remote networks per tenant is limited to 10, and the number of device links per remote network is limited to four.
-- Microsoft 365 traffic can be accessed through remote network connectivity without the Global Secure Access Client; however the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft 365 traffic are only enforced when a user has the Global Secure Access Client.
-- For Entra Private Access, you must use Global Secure Access Client. Remote network connectivity only supports Entra Internet Access.
-
-## Onboard your tenant for remote networks
-
-Before you can set up remote networks, you need to onboard your tenant information with Microsoft. This one-time process enables your tenant to use remote network connectivity.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (preview)** > **Devices** > **Remote network**.
-1. Select the link to the **Onboarding form** in the message at the top of the page.
-
-    ![Screenshot of the onboarding form link.](media/how-to-create-remote-networks/create-remote-network-onboarding-form-link.png)
-
-1. In the window that opens, review the Tenant ID and remote network region details.
-1. Select the **Next** button.
-    
-    ![Screenshot of the first tab of the onboarding form.](media/how-to-create-remote-networks/onboard-tenant-info.png)
-
-1. Select the email address link. It sends a pre-drafted email in your default mail client on your device. Send that email to the Global Secure Access team. Once your tenant is processed, we'll send IPsec tunnel and BGP connectivity details to the email you used.
-
-    ![Screenshot of the send email steps for the onboard tenant process.](media/how-to-create-remote-networks/onboard-tenant-send-email.png)
-
-1. Once the email step is complete, return to this form, select the acknowledgment checkbox, and select the **Submit** button.
-
-You MUST complete the email step before selecting the checkbox. 
+- The number of remote networks per tenant is limited to 10. The number of device links per remote network is limited to four.
+- Microsoft 365 traffic is accessed through remote network connectivity without the Global Secure Access client. However, the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft 365 traffic are only enforced when a user has the Global Secure Access client.
+- You must use the Global Secure Access client for Entra Private Access. Remote network connectivity only supports Entra Internet Access.
 
 ## High-level steps
 
@@ -77,7 +52,7 @@ At a high level, there are five steps for creating a remote network and configur
 
 1. [**View CPE connectivity configuration**](#view-cpe-connectivity-configuration): Retrieve the IPsec tunnel details of Microsoft's end of the tunnel. On the **Connectivity** step, you provided your router's details to Microsoft. In this step, you retrieve Microsoft's side of the connectivity configuration.
 
-1. [**Set up your CPE**](#set-up-your-cpe): Take Microsoft's connectivity configuration from the previous step and enter it in the management console of your router or CPE. This step is *not* in the Microsoft Entra admin center.
+1. [**Set up your CPE**](#set-up-your-cpe): Take Microsoft's connectivity configuration from the previous step and enter it in the management console of your router or CPE. This step *isn't* in the Microsoft Entra admin center.
 
 ## [Microsoft Entra admin center](#tab/microsoft-entra-admin-center) 
 
@@ -87,11 +62,10 @@ Remote networks are configured on three tabs. You must complete each tab in orde
 The first step is to provide the name and location of your remote network. Completing this tab is required.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (preview)** > **Devices** > **Remote network**.
-1. Select the **Create remote network** button and provide the following details:
+1. Browse to **Global Secure Access (preview)** > **Connect** > **Remote networks**.
+1. Select the **Create remote network** button and provide the details.
     - **Name**
     - **Region**
-1. Select the **Next: Connectivity** button. You can also select the **Connectivity** tab.
 
     ![Screenshot of the basics tab of the create device link process.](media/how-to-create-remote-networks/create-basics-tab.png)
 
@@ -123,16 +97,16 @@ This process is covered in detail in the [How to configure your customer premise
 
 ### Set up your CPE
 
-This step is performed in management console your CPE, not in Microsoft Entra admin center. Until you complete this step, your IPsec will *not* be set up. IPsec is a bidirectional communication. IKE negotiations happen between two parties before the tunnel is successfully set up. So, don't miss this step.
+This step is performed in management console your CPE, not in Microsoft Entra admin center. Until you complete this step, your IPsec *isn't* set up. IPsec is a bidirectional communication. IKE negotiations happen between two parties before the tunnel is successfully set up. So, don't miss this step.
 
 ## [Microsoft Graph API](#tab/microsoft-graph-api)
 
 Global Secure Access remote networks can be viewed and managed using Microsoft Graph on the `/beta` endpoint. Creating a remote network and assigning a traffic forwarding profile are separate API calls.
 
 1. Sign in to [Graph Explorer](https://aka.ms/ge).
-1. Select POST as the HTTP method.
-1. Select BETA as the API version.
-1. Run the following query:
+1. Select `POST` as the `HTTP` method.
+1. Select `BETA` as the `AP` version.
+1. Run the query.
 
     ```http
     POST https://graph.microsoft.com/beta/networkaccess/connectivity/branches 
@@ -167,16 +141,16 @@ Global Secure Access remote networks can be viewed and managed using Microsoft G
 Associating a traffic forwarding profile to your remote network using the Microsoft Graph API is two step process. First, locate the ID of the traffic profile. The ID is different for all tenants. Second, associate the traffic forwarding profile with your desired remote network.
 
 1. Sign in to [Graph Explorer](https://aka.ms/ge).
-1. Select **PATCH** as the HTTP method from the dropdown.
-1. Select the API version to **beta**.
-1. Enter the query:
+1. Select `PATCH` as the `HTTP` method from the dropdown.
+1. Select the `API` version to **beta**.
+1. Enter the query.
     ```
     GET https://graph.microsoft.com/beta/networkaccess/forwardingprofiles 
     ```
 1. Select **Run query**.
-1. Find the ID of the desired traffic forwarding profile.
-1. Select PATCH as the HTTP method from the dropdown.
-1. Enter the query:
+1. Find the `ID` of the desired traffic forwarding profile.
+1. Select `PATCH` as the `HTTP` method from the dropdown.
+1. Enter the query.
     ```
         PATCH https://graph.microsoft.com/beta/networkaccess/connectivity/branches/d2b05c5-1e2e-4f1d-ba5a-1a678382ef16/forwardingProfiles
         {
@@ -192,36 +166,36 @@ Associating a traffic forwarding profile to your remote network using the Micros
 
 ## Verify your remote network configurations
 
-There are a few things to consider and verify when creating remote networks. You may need to double-check some settings.
+There are a few things to consider and verify when creating remote networks. You might need to double-check some settings.
 
-- **Verify IKE crypto profile**: The crypto profile (IKE phase 1 and phase 2 algorithms) set for a device link should match what has been set on the CPE. If you chose the **default IKE policy**, ensure that your CPE is set up with the crypto profile specified in the [Remote network configurations](reference-remote-network-configurations.md) reference article.
+- **Verify IKE crypto profile**: The crypto profile (IKE phase 1 and phase 2 algorithms) set for a device link should match what is set on the CPE. If you chose the **default IKE policy**, ensure that your CPE is set up with the crypto profile specified in the [Remote network configurations](reference-remote-network-configurations.md) reference article.
 
-- **Verify pre-shared key**: Compare the pre-shared key (PSK) you specified when creating the device link in Microsoft Global Secure Access with the PSK you specified on your CPE. This detail is added on the **Security** tab during the **Add a link** process. For more information, see [How to manage remote network device links.](how-to-manage-remote-network-device-links.md#add-a-link---security-tab).
+- **Verify pre shared key**: Compare the pre shared key (PSK) you specified when creating the device link in Microsoft Global Secure Access with the PSK you specified on your CPE. This detail is added on the **Security** tab during the **Add a link** process. For more information, see [How to manage remote network device links.](how-to-manage-remote-network-device-links.md#add-a-link---security-tab).
 
-- **Verify local and peer BGP IP addresses**: The public IP addresses and BGP addresses specified while creating a device link in Microsoft Global Secure Access should match what you specified when configuring the CPE. 
+- **Verify local and peer BGP IP addresses**: The public IP and BGP address you use to configure the CPE must match what you use when you create a device link in Microsoft Global Secure Access.
     - The local and peer BGP addresses are reversed between the CPE and what is entered in Global Secure Access.
         - **CPE**: Local BGP IP address = IP1, Peer BGP IP address = IP2
         - **Global Secure Access**: Local BGP IP address = IP2, Peer BGP IP address = IP1
     - Choose an IP address for Global Secure Access that doesn't overlap with your on-premises network.
-    - The same rule applies to ASNs.
+    - The same rule applies to Autonomous System Number (ASN).
 
-- **Verify ASN**: Global Secure Access uses BGP to advertise routes between two autonomous systems: your network and Microsoft's. These autonomous systems should have different ASNs.
+- **Verify ASN**: Global Secure Access uses BGP to advertise routes between two autonomous systems: your network and Microsoft's. These autonomous systems should have different Autonomous System Numbers (ASNs).
     - When creating a remote network in the Microsoft Entra admin center, use your network's ASN.
     - When configuring your CPE, use Microsoft's ASN. Go to **Global Secure Access** > **Devices** > **Remote Networks**. Select **Links** and confirm the value in the **Link ASN** column.
 
-- **Verify your public IP address**: In a test environment or lab setup, the public IP address of your CPE may change unexpectedly. This change can cause the IKE negotiation to fail even though everything remains the same.
+- **Verify your public IP address**: In a test environment or lab setup, the public IP address of your CPE might change unexpectedly. This change can cause the IKE negotiation to fail even though everything remains the same.
     - If you encounter this scenario, complete the following steps:
         - Update the public IP address in the crypto profile of your CPE.
         - Go to the **Global Secure Access** > **Devices** > **Remote Networks**.
         - Select the appropriate remote network, delete the old tunnel, and recreate a new tunnel with the updated public IP address.
 
-- **Verify Microsoft's public IP address**: When you delete a device link and/or create a new one, you may get another public IP endpoint of that link in **View configuration** for that remote network. This change can cause the IKE negotiation to fail. If you encounter this scenario, update the public IP address in the crypto profile of your CPE.
+- **Verify Microsoft's public IP address**: When you delete a device link and/or create a new one, you might get another public IP endpoint of that link in **View configuration** for that remote network. This change can cause the IKE negotiation to fail. If you encounter this scenario, update the public IP address in the crypto profile of your CPE.
 
-- **Verify BGP connectivity setting on your CPE**: Suppose you create a device link for a remote network. Microsoft provides you the public IP address, say PIP1, and BGP address, say BGP1, of its gateway. This connectivity information is available under `localConfigurations` in the jSON blob you see when you click **View Configuration** for that remote network. On your CPE, make sure that you have a static route destined to BGP1 sent over the tunnel interface created with PIP1. This is necessary so that CPE can learn the BGP routes we publish over the IPsec tunnel you created with Microsoft.
+- **Verify BGP connectivity setting on your CPE**: Suppose you create a device link for a remote network. Microsoft provides you with the public IP address, say PIP1, and BGP address, say BGP1, of its gateway. This connectivity information is available under `localConfigurations` in the jSON blob you see when you select **View Configuration** for that remote network. On your CPE, make sure that you have a static route destined to BGP1 sent over the tunnel interface created with PIP1. The route is necessary so that CPE can learn the BGP routes we publish over the IPsec tunnel you created with Microsoft.
 
-- **Verify firewall rules**: Allow UDP port 500 and 4500 and TCP port 179 for IPsec tunnel and BGP connectivity in your firewall.
+- **Verify firewall rules**: Allow User Datagram Protocol (UDP) port 500 and 4500 and Transmission Control Protocol (TCP) port 179 for IPsec tunnel and BGP connectivity in your firewall.
   
-- **Port forwarding**: In some situations, the ISP router can also be a network address translation (NAT) device. A NAT converts the private IP addresses of home devices to a public internet-routable device.
+- **Port forwarding**: In some situations, the Internet Service Provider (ISP) router is also a network address translation (NAT) device. A NAT converts the private IP addresses of home devices to a public internet-routable device.
     - Generally, a NAT device changes both the IP address and the port. This port changing is the root of the problem.
     - For IPsec tunnels to work, Global Secure Access uses port 500. This port is where IKE negotiation happens.
     - If the ISP router changes this port to something else, Global Secure Access can't identify this traffic and negotiation fails.

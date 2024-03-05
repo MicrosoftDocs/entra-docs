@@ -1,12 +1,12 @@
 ---
 title: Code samples for customer tenants
 description: Find code samples for applications you can run in a customer tenant. Find samples by app type or language.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: ciam
+ms.service: entra-external-id
+ 
+ms.subservice: customers
 ms.topic: sample
 ms.date: 08/17/2023
 ms.author: mimart

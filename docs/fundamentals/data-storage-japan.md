@@ -1,17 +1,15 @@
 ---
 title: Customer data storage for Japan customers
 description: Learn about where Microsoft Entra ID stores customer-related data for its Japan customers.
-services: active-directory
 author: justinha
 manager: amycolannino
 ms.author: justinha
 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/08/2022
-ms.custom: "it-pro, seodec18, references_regions"
+ms.custom: it-pro, references_regions
 ms.collection: M365-identity-device-management
 ---
 
@@ -21,7 +19,7 @@ Microsoft Entra ID stores its Customer Data in a geographical location based on 
 
 For information about where Microsoft Entra ID and other Microsoft services' data is located, see the [Where your data is located](https://www.microsoft.com/trust-center/privacy/data-location) section of the Microsoft Trust Center.
 
-Additionally, certain Microsoft Entra features do not yet support storage of Customer Data in Japan. Please go to the [Microsoft Entra data map](https://aka.ms/aaddatamap), for specific feature information. For example, Microsoft Entra multifactor authentication stores Customer Data in the US and processes it globally. See [Data residency and customer data for Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-data-residency.md).
+Additionally, certain Microsoft Entra features do not yet support storage of Customer Data in Japan. For example, Microsoft Entra multifactor authentication stores Customer Data in the US and processes it globally. See [Data residency and customer data for Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-data-residency.md).
 
 > [!NOTE]
 > Microsoft products, services, and third-party applications that integrate with Microsoft Entra ID have access to Customer Data. Evaluate each product, service, and application you use to determine how Customer Data is processed by that specific product, service, and application, and whether they meet your company's data storage requirements. For more information about Microsoft services' data residency, see the [Where your data is located](https://www.microsoft.com/trust-center/privacy/data-location) section of the Microsoft Trust Center.

@@ -1,18 +1,16 @@
 ---
 title: Configure SSO on macOS and iOS
 description: Learn how to configure single sign on (SSO) on macOS and iOS.
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.workload: identity
-ms.date: 05/03/2023
 ms.author: henrymbugua
+ms.custom:
+ms.date: 05/03/2023
 ms.reviewer:
-ms.custom: aaddev, engagement-fy23
+ms.service: identity-platform
+
+ms.topic: conceptual
+#Customer intent:As a developer integrating Microsoft Authentication Library (MSAL) into macOS and iOS apps, I want to configure single sign-on (SSO) between apps and browsers, so that users can seamlessly authenticate without being prompted for credentials.
 ---
 
 # Configure SSO on macOS and iOS

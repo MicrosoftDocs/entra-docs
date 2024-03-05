@@ -1,20 +1,17 @@
 ---
 title: Plan a Privileged Identity Management deployment
 description: Learn how to deploy Privileged Identity Management (PIM) in your Microsoft Entra organization.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-editor: ''
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: pim
+ms.service: entra-id-governance
+ms.subservice: privileged-identity-management
 ms.topic: conceptual
 ms.date: 10/12/2023
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
-ms.collection: M365-identity-device-management
+
 ---
 
 # Plan a Privileged Identity Management deployment
@@ -174,8 +171,8 @@ The following table shows example settings:
 | --- | --- | --- |--- |--- |--- |--- |--- |
 | Global Administrator| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | Other Global Administrator| 1 Hour| Emergency access accounts |
 | Exchange Admin| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: |None| 2 Hour| None |
-| Helpdesk Admin| :x: | | :x: | :heavy_check_mark: | :x: | None| 8 Hour| None |
-
+| Helpdesk Admin| :x: | :x: | :x: | :heavy_check_mark: | :x: | None| 8 Hour| None |
+ 
 
 <a name='assign-and-activate-azure-ad-roles-'></a>
 
@@ -247,7 +244,7 @@ The following table shows example settings:
 | Role| Require MFA| Notification| Require Conditional Access| Require approval| Approver| Activation duration| Active admin| Active expiration| Eligible expiration|
 | --- | --- | --- |--- |--- |--- |--- |---|---|
 | Owner of critical subscriptions| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | Other owners of the subscription| 1 Hour| None| n/a| 3 months |
-| User Access Administrator of less critical subscriptions| :heavy_check_mark: | :heavy_check_mark: | | :x: | None| 1 Hour| None| n/a| 3 months |
+| User Access Administrator of less critical subscriptions| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | None| 1 Hour| None| n/a| 3 months |
 
 ### Assign and activate Azure Resource role
 
@@ -298,8 +295,8 @@ The following table shows example settings:
 
 | Role| Require MFA| Notification| Require Conditional Access| Require approval| Approver| Activation duration| Active admin| Active expiration| Eligible expiration |
 | --- | --- | --- |--- |--- |--- |--- |---|---|
-| Owner| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | Other owners of the resource| One Hour| None| n/a| Three months |
-| Member| :heavy_check_mark: | :heavy_check_mark: |  | :x: | None| Five Hours| None| n/a| 3 months |
+| Owner| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | Other owners of the resource| One Hour| None| n/a| 3 months |
+| Member| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | None| Five Hours| None| n/a| 3 months |
 
 ### Assign eligibility for PIM for Groups
 

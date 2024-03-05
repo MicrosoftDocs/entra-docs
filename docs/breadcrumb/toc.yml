@@ -51,7 +51,7 @@ items:
       - name: Hybrid
         tocHref: /entra/identity/hybrid/
         topicHref: /entra/identity/hybrid/
-      - name: Managed identities
+      - name: Managed identities for Azure resources
         tocHref: /entra/identity/managed-identities-azure-resources/
         topicHref: /entra/identity/managed-identities-azure-resources/
       - name: Monitoring and health
@@ -79,7 +79,7 @@ items:
     - name: Microsoft Entra ID Protection
       tocHref: /entra/id-protection/
       topicHref: /entra/id-protection/
-    - name: Microsoft Entra Permissions Protection
+    - name: Microsoft Entra Permissions Management
       tocHref: /entra/permissions-management/
       topicHref: /entra/permissions-management/
     - name: Microsoft Entra Verified ID

@@ -1,25 +1,23 @@
 ---
 title: Custom authentication extension 
-titleSuffix: Microsoft identity platform
 description: Use Microsoft Entra custom authentication extensions to customize your user's sign-in experience by using REST APIs or outbound webhooks.
-services: active-directory
-author: omondiatieno
+author: cilwerner
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.workload: identity
-ms.topic: conceptual
+ms.author: cwerner
+ms.custom: 
 ms.date: 10/27/2023
-ms.author: jomondi
 ms.reviewer: JasSuri
-ms.custom: aaddev 
-#Customer intent: As a developer, I want to learn about custom authentication extensions so that I can augment tokens with claims from an external identity system or role management system.
+ms.service: identity-platform
+
+ms.topic: conceptual
+titleSuffix: Microsoft identity platform
+
+#Customer intent: As a developer integrating external systems with Microsoft Entra ID, I want to create custom authentication extensions using a REST API, so that I can customize the authentication experience and add business logic based on event types and HTTP response payloads.
 ---
 
-# Custom authentication extensions (preview)
+# Custom authentication extensions overview (preview)
 
-This article provides an overview of custom authentication extensions for Microsoft Entra ID. Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems.
+This article provides a high-level, technical overview of [custom authentication extensions](~/external-id/customers/concept-custom-extensions.md) for Microsoft Entra ID. Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems.
 
 The following diagram depicts the sign-in flow integrated with a custom authentication extension.
 
@@ -37,7 +35,7 @@ The following diagram depicts the sign-in flow integrated with a custom authenti
 
 When an event fires, Microsoft Entra ID calls a REST API endpoint that you own. The request to the REST API contains information about the event, the user profile, authentication request data, and other context information.
 
-You can use any programming language, framework, and hosting environment to create and host your custom authentication extensions REST API. For a quick way to get started, use a C# Azure Function. Azure Functions lets you run your code in a serverless environment without having to first create a virtual machine (VM) or publish a web application. 
+You can use any programming language, framework, and hosting environment to create and host your custom authentication extensions REST API. For a quick way to get started, use a C# Azure Function. Azure Functions lets you run your code in a serverless environment without having to first create a virtual machine (VM) or publish a web application.
 
 Your REST API must handle:
 
@@ -49,17 +47,20 @@ Your REST API must handle:
 
 ### Protect your REST API
 
-To ensure the communications between the custom authentication  extension and your REST API are secured appropriately, multiple security controls must be applied.
+To ensure the communications between the custom authentication extension and your REST API are secured appropriately, multiple security controls must be applied.
 
 1. When the custom authentication extension calls your REST API, it sends an HTTP `Authorization` header with a bearer token issued by Microsoft Entra ID.
 1. The bearer token contains an `appid` or `azp` claim. Validate that the respective claim contains the  `99045fe1-7639-4a75-9d4a-577b6ca3810f` value. This value ensures that the Microsoft Entra ID is the one who calls the REST API.
     1. For **V1** Applications, validate the `appid` claim.
     1. For **V2** Applications, validate the `azp` claim.
 1. The bearer token `aud` audience claim contains the ID of the associated application registration. Your REST API endpoint needs to validate that the bearer token is issued for that specific audience.
+1. The bearer token `iss` issuer claim contains the Microsoft Entra ID issuer URL. Depending on your tenant configuration, the issuer URL will be one of the following;
+    - Workforce: `https://login.microsoftonline.com/{tenantId}/v2.0`.
+    - Customer: `https://{domainName}.ciamlogin.com/{tenantId}/v2.0`.
 
 ## Custom claims provider
 
-A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider can be assigned to one or many applications in your directory and maps claims from external systems into tokens.
+A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory.
 
 Learn more about [custom claims providers](custom-claims-provider-overview.md).
 

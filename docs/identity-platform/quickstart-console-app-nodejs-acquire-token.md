@@ -1,15 +1,14 @@
 ---
 title: "Quickstart: Acquire a token and call Microsoft Graph from a Node.js console app"
 description: In this quickstart, you download and run a code sample that shows how a Node.js console application can get an access token and call an API protected by a Microsoft identity platform endpoint, using the app's own identity
-services: active-directory
 author: cilwerner
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: quickstart
-ms.date: 09/09/2022
 ms.author: cwerner
 ms.custom: mode-other, devx-track-js
+ms.date: 09/09/2022
+ms.service: identity-platform
+
+ms.topic: quickstart
 #Customer intent: As an application developer, I want to learn how my Node.js app can get an access token and call an API that is protected by a Microsoft identity platform endpoint using client credentials flow.
 ---
 
@@ -82,7 +81,7 @@ If you're assigned the [Application Administrator](~/identity/role-based-access-
 
 ##### Standard users
 
-If you're a standard user of your tenant, then you need to ask a global administrator to grant **admin consent** for your application. To do this, give the following URL to your administrator:
+If you're a standard user of your tenant, then you need to ask a Global Administrator to grant **admin consent** for your application. To do this, give the following URL to your administrator:
 
 ```url
 https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_id=Enter_the_Application_Id_Here

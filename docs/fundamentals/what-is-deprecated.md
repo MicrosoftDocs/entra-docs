@@ -3,22 +3,22 @@ title: What's deprecated in Microsoft Entra ID?
 description: Learn about features being deprecated in Microsoft Entra ID
 author: janicericketts
 manager: martinco
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: conceptual
-ms.date: 01/27/2023
+ms.date: 12/02/2023
 ms.author: jricketts
 ms.reviewer: merill
 ms.custom: it-pro, has-azure-ad-ps-ref
+# Customer intent: As an IT admin currently using Microsoft Entra ID, I want to stay informed about upcoming changes, retirements, and feature changes, so that I can plan for any necessary actions or adjustments to my organization's deployment and configurations.
 ---
 
 # What's deprecated in Microsoft Entra ID?
 
 The lifecycle of functionality, features, and services are governed by policy, support timelines, data, also leadership and engineering team decisions. Lifecycle information allows customers to predictably plan long-term deployment aspects, transition from outdated to new technology, and help improve business outcomes. 
 
-> ![NOTE] 
-> If you're currently using Azure AD today or are have previously deployed Azure AD in your organizations, you can continue to use the service without interruption. All existing deployments, configurations, and integrations continue to function as they do today without any action from you.
+> [!NOTE]
+> If you're currently using Azure AD or have previously deployed Azure AD in your organizations, you can continue to use the service without interruption. All existing deployments, configurations, and integrations continue to function with Microsoft Entra ID as they do today without any action from you.
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22What's+deprecated+in+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
@@ -35,10 +35,11 @@ Use the following table to learn about changes including deprecations, retiremen
 |[Azure AD Graph API](https://aka.ms/aadgraphupdate)|Start of phased retirement|Jul 2023|
 |[Terms of Use experience](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-change-announcements-march-2023-train/ba-p/2967448)|Feature change|Jul 2023|
 |[Azure AD PowerShell and MSOnline PowerShell](https://aka.ms/aadgraphupdate)|Deprecation|Mar 30, 2024|
-|[Azure Multi-Factor Authentication Server](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-change-announcements-march-2023-train/ba-p/2967448)|Retirement|Sep 30, 2024|
+|[Azure Multifactor Authentication Server](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-change-announcements-march-2023-train/ba-p/2967448)|Retirement|Sep 30, 2024|
 |[Legacy MFA & SSPR policy](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-change-announcements-march-2023-train/ba-p/2967448)|Retirement|Sep 30, 2025|
 |['Require approved client app' Conditional Access Grant](https://aka.ms/RetireApprovedClientApp)|Retirement|Mar 31, 2026|
 
+[!INCLUDE [Azure AD PowerShell migration](../includes/aad-powershell-migration-include.md)]
 
 ## Past changes
 

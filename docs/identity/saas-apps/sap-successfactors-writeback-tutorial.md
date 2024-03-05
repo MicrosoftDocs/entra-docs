@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Configure SAP SuccessFactors writeback in Microsoft Entra ID'
 description: Learn how to configure attribute write-back to SAP SuccessFactors from Microsoft Entra ID
-services: active-directory
+
 author: cmmdesai
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.topic: tutorial
-ms.workload: identity
+
 ms.date: 11/21/2022
 ms.author: chmutali
 ---

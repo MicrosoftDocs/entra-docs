@@ -1,19 +1,17 @@
 ---
 
 title: Download a list of users in the Azure portal
-description: Download user records in bulk in the Azure admin center in Microsoft Entra ID. 
-services: active-directory 
+description: Download user records in bulk in the Azure admin center in Microsoft Entra ID.
+
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
 ms.date: 09/08/2023
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.custom: it-pro
 ms.reviewer: krbain
-ms.collection: M365-identity-device-management
 ---
 
 # Download a list of users in Azure portal
@@ -33,7 +31,7 @@ Both admin and non-admin users can download user lists.
 1. Select **Users** > **All users** > **Download users**. By default, all user profiles are exported.
 1. On the **Download users** page, select **Start** to receive a CSV file listing user profile properties. If there are errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error.
 
-   ![Select where you want the list the users you want to download](./media/users-bulk-download/bulk-download.png)
+   :::image type="content" source="./media/users-bulk-download/bulk-download.png" alt-text="Screenshot of selecting where you want the list the users you want to download.":::
 
 > [!NOTE]
 > The download file will contain the filtered list of users based on the scope of the filters applied.
@@ -70,7 +68,7 @@ The following user attributes are included:
 
 You can see the status of your pending bulk requests in the **Bulk operation results** page.
 
-[![Check status in the Bulk Operations Results page.](./media/users-bulk-download/bulk-center.png)](./media/users-bulk-download/bulk-center.png#lightbox)
+:::image type="content" source="./media/users-bulk-download/bulk-center.png" alt-text="Screenshot of checking the status in the Bulk Operations Results page." lightbox="./media/users-bulk-download/bulk-center.png":::
 
 ## Bulk download service limits
 

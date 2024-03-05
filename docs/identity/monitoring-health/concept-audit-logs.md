@@ -1,16 +1,16 @@
 ---
 title: Learn about the audit logs in Microsoft Entra ID
-description: Learn about the types of identity related events that are captured in Microsoft Entra audit logs.
-services: active-directory
+description: Learn about the types of activities and events that are captured in Microsoft Entra audit logs and how you can use the logs for troubleshooting.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
-ms.workload: identity
-ms.subservice: report-monitor
-ms.date: 10/24/2023
+ms.subservice: monitoring-health
+ms.date: 02/01/2024
 ms.author: sarahlipsey
-ms.reviewer: besiler
+ms.reviewer: egreenberg14
+
+# Customer intent: As an IT admin, I need to know what information is included in the Microsoft Entra audit logs so I know what to look for when I need to troubleshoot an issue.
 
 ---
 
@@ -23,7 +23,11 @@ Two other activity logs are also available to help monitor the health of your te
 - **[Sign-ins](concept-sign-ins.md)** – Information about sign-ins and how your resources are used by your users.
 - **[Provisioning](concept-provisioning-logs.md)** – Activities performed by the provisioning service, such as the creation of a group in ServiceNow or a user imported from Workday.
 
-This article gives you an overview of the audit logs.
+This article gives you an overview of the audit logs, including what's required to access them, what information they provide, and 
+
+## License and role requirements
+
+[!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
 
 ## What can you do with audit logs?
 
@@ -39,47 +43,39 @@ Audit logs in Microsoft Entra ID provide access to system activity records, ofte
 
 - What groups were recently added?
 - Have the owners of group been changed?
-- What licenses have been assigned to a group or a user?
+- What licenses are to a group or a user?
 
 **Applications:**
 
-- What applications have been added, updated, or removed?
+- What applications were, updated, or removed?
 - Has a service principal for an application changed?
 - Have the names of applications been changed?
- 
+
+**Custom security attributes:**
+
+- What changes were made to [custom security attribute](../../fundamentals/custom-security-attributes-overview.md) definitions or assignments?
+- What updates were made to attribute sets?
+- What custom attribute values were assigned to a user?
+
 > [!NOTE]
 > Entries in the audit logs are system generated and can't be changed or deleted.
 
 ## What do the logs show?
 
-Audit logs have a default list view that shows:
+Audit logs default to the **Directory** tab, which displays the following information:
 
 - Date and time of the occurrence
 - Service that logged the occurrence
 - Category and name of the activity (*what*) 
 - Status of the activity (success or failure)
-- Target
-- Initiator / actor of an activity (*who*)
 
-### Filtering audit logs
+A second tab for **Custom Security** displays audit logs for custom security attributes. To view data on this tab, you must have the [Attribute Log Administrator](../../identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) or [Attribute Log Reader](../../identity/role-based-access-control/permissions-reference.md#attribute-log-reader) role. This audit log shows all activities related to custom security attributes. For more information, see [What are custom security attributes](../../fundamentals/custom-security-attributes-overview.md).
 
-You can customize and filter the list view by clicking the **Columns** button in the toolbar. Editing the columns enables you to add or remove fields from your view.
-
-Filter the audit data using the options visible in your list such as date range, service, category, and activity. For information on the audit log filters, see [How to customize and filter identity logs](howto-customize-filter-logs.md).
-
-![Screenshot of the service filter.](./media/concept-audit-logs/audit-log-service-filter.png)
-
-### Archiving and analyzing the audit logs
-
-There are several options available if you need to store the logs for data retention or route them to an analysis tool. Review the [How to access activity logs](howto-access-activity-logs.md) article for details on each option. 
-
-You can download the audit logs from the Microsoft Entra admin center, up to 250,000 records, by selecting the **Download** button. The exact number of records varies, based on the number of fields included in your view when you select the **Download** button. You can download the logs in either CSV or JSON format. The number of records you can download is constrained by the [Microsoft Entra report retention policies](reference-reports-data-retention.md).
-
-![Screenshot of the download data option.](./media/concept-audit-logs/download.png "Download data")
+![Screenshot of the audit logs, with the Directory and Custom Security tabs highlighted.](media/concept-audit-logs/audit-log-tabs.png)
 
 ## Microsoft 365 activity logs
 
-You can view Microsoft 365 activity logs from the [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview). Even though Microsoft 365 activity and Microsoft Entra activity logs share many directory resources, only the Microsoft 365 admin center provides a full view of the Microsoft 365 activity logs. 
+You can view Microsoft 365 activity logs from the [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview). Even though Microsoft 365 activity and Microsoft Entra activity logs share many directory resources, only the Microsoft 365 admin center provides a full view of the Microsoft 365 activity logs.
 
 You can also access the Microsoft 365 activity logs programmatically by using the [Office 365 Management APIs](/office/office-365-management-api/office-365-management-apis-overview).
 

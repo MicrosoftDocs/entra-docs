@@ -1,19 +1,19 @@
 ---
 title: Configure permission classifications
 description: Learn how to manage delegated permission classifications.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: enterprise-apps
+
 ms.topic: how-to
 ms.date: 3/28/2023
 ms.author: jomondi
 ms.reviewer: phsignor, jawoods
-ms.custom: contperf-fy21q2, has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref
 zone_pivot_groups: enterprise-apps-all
-#customer intent: As an admin, I want configure permission classifications for applications in Microsoft Entra ID
+#customer intent: As an administrator managing permissions in Microsoft Entra ID, I want to configure permission classifications, so that I can identify the impact of different permissions according to my organization's policies and risk evaluations.
 ---
 
 # Configure permission classifications
@@ -33,13 +33,13 @@ To configure permission classifications, you need:
 
 ## Manage permission classifications
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
 :::zone pivot="portal"
+
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Follow these steps to classify permissions using the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Consent and permissions** > **Permission classifications**.
 1. Choose the tab for the permission classification you'd like to update.
 1. Choose **Add permissions** to classify another permission.
@@ -48,7 +48,6 @@ Follow these steps to classify permissions using the Microsoft Entra admin cente
 In this example, we've classified the minimum set of permission required for single sign-on:
 
 :::image type="content" source="media/configure-permission-classifications/permission-classifications.png" alt-text="Permission classifications":::
-
 
 :::zone-end
 
@@ -62,7 +61,7 @@ Run the following command to connect to Azure AD PowerShell. To consent to the r
 Connect-AzureAD
 ```
 
-### List the current permission classifications
+### List the current permission classifications using Azure AD PowerShell
 
 1. Retrieve the **ServicePrincipal** object for the API. Here we retrieve the ServicePrincipal object for the Microsoft Graph API:
 
@@ -78,7 +77,7 @@ Connect-AzureAD
        -ServicePrincipalId $api.ObjectId | Format-Table Id, PermissionName, Classification
    ```
 
-### Classify a permission as "Low impact"
+### Classify a permission as "Low impact" using Azure AD PowerShell
 
 1. Retrieve the **ServicePrincipal** object for the API. Here we retrieve the ServicePrincipal object for the Microsoft Graph API:
 
@@ -103,7 +102,7 @@ Connect-AzureAD
       -Classification "low"
    ```
 
-### Remove a delegated permission classification
+### Remove a delegated permission classification using Azure AD PowerShell
 
 1. Retrieve the **ServicePrincipal** object for the API. Here we retrieve the ServicePrincipal object for the Microsoft Graph API:
 
@@ -127,6 +126,7 @@ Connect-AzureAD
        -ServicePrincipalId $api.ObjectId `
        -Id $classificationToRemove.Id
    ```
+
 :::zone-end
 
 :::zone pivot="ms-powershell"
@@ -139,7 +139,7 @@ Run the following command to connect to Microsoft Graph PowerShell. To consent t
 Connect-MgGraph -Scopes "Policy.ReadWrite.PermissionGrant".
 ```
 
-### List current permission classifications for an API
+### List current permission classifications for an API using Microsoft Graph PowerShell
 
 1. Retrieve the servicePrincipal object for the API:
 
@@ -153,7 +153,7 @@ Connect-MgGraph -Scopes "Policy.ReadWrite.PermissionGrant".
    Get-MgServicePrincipalDelegatedPermissionClassification -ServicePrincipalId $api.Id 
    ```
 
-### Classify a permission as "Low impact" 
+### Classify a permission as "Low impact" using Microsoft Graph PowerShell
 
 1. Retrieve the servicePrincipal object for the API:
 
@@ -179,7 +179,7 @@ Connect-MgGraph -Scopes "Policy.ReadWrite.PermissionGrant".
    New-MgServicePrincipalDelegatedPermissionClassification -ServicePrincipalId $api.Id -BodyParameter $params 
    ```
 
-### Remove a delegated permission classification 
+### Remove a delegated permission classification using Microsoft Graph PowerShell
 
 1. Retrieve the servicePrincipal object for the API:
 
@@ -199,7 +199,8 @@ Connect-MgGraph -Scopes "Policy.ReadWrite.PermissionGrant".
 
 ```powershell
 Remove-MgServicePrincipalDelegatedPermissionClassification -DelegatedPermissionClassificationId $classificationToRemove.Id   -ServicePrincipalId $api.id 
-``` 
+```
+
 :::zone-end
 
 :::zone pivot="ms-graph"
@@ -210,13 +211,19 @@ You need to consent to the `Policy.ReadWrite.PermissionGrant` permission.
 
 Run the following queries on Microsoft Graph explorer to add a delegated permissions classification for an application.
 
-1. List current permission classifications for an API.
+### List current permission classifications for an API using Microsoft Graph API
+
+List current permission classifications for an API using the following Microsoft Graph API call.
 
    ```http
    GET https://graph.microsoft.com/v1.0/servicePrincipals(appId='00000003-0000-0000-c000-000000000000')/delegatedPermissionClassifications
    ```
 
-1. Add a delegated permission classification for an API. In the following example, we classify the permission as "low impact".
+### Classify a permission as "Low impact" using Microsoft Graph API
+
+In the following example, we classify the permission as "low impact".
+
+Add a delegated permission classification for an API using the following Microsoft Graph API call.
 
    ```http
    POST https://graph.microsoft.com/v1.0/servicePrincipals(appId='00000003-0000-0000-c000-000000000000')/delegatedPermissionClassifications
@@ -228,6 +235,8 @@ Run the following queries on Microsoft Graph explorer to add a delegated permiss
    }
    ```
 
+### Remove a delegated permission classification using Microsoft Graph API
+
 Run the following query on Microsoft Graph explorer to remove a delegated permissions classification for an API.
 
 ```http
@@ -235,7 +244,6 @@ DELETE https://graph.microsoft.com/v1.0/servicePrincipals(appId='00000003-0000-0
 ```
 
 :::zone-end
-
 
 ## Next steps
 

@@ -1,17 +1,19 @@
 ---
 title: Troubleshoot problems signing in to an application from My Apps portal
 description: Troubleshoot problems signing in to an application from Microsoft Entra My Apps
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: enterprise-apps
+
 ms.topic: troubleshooting
 ms.date: 09/05/2023
 ms.author: jomondi
 ms.reviewer: lenalepa
-ms.custom: contperf-fy21q2, enterprise-apps
+ms.custom: enterprise-apps
+
+#customer intent: As an IT admin troubleshooting application sign-in issues, I want to check a user's account status, reset their password, enable self-service password reset, and verify their authentication contact info, so that I can resolve any problems with their account settings and ensure they can access My Apps.
 ---
 
 # Troubleshoot application sign-in

@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with Tableau Cloud'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Tableau Cloud.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -79,11 +79,14 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-	a. In the **Sign on URL** text box, type the URL:
-    `https://sso.online.tableau.com/public/sp/login?alias=<entityid>`
-
-    b. In the **Identifier (Entity ID)** text box, type the URL:
+    a. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
     `https://sso.online.tableau.com/public/sp/metadata?alias=<entityid>`
+
+    b. In the **Reply URL** text box, type a URL using the following pattern:
+    `https://sso.online.tableau.com/public/sp/<CUSTOM_URL>`
+
+    c. In the **Sign on URL** text box, type the URL:
+    `https://sso.online.tableau.com`
 
     > [!NOTE]
     > You will get the `<entityid>` value from the **Set up Tableau Cloud** section in this tutorial. The entity ID value will be **Microsoft Entra identifier** value in **Set up Tableau Cloud** section.
