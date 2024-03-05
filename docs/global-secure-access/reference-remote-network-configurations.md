@@ -5,11 +5,11 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: reference
-ms.date: 10/05/2023
+ms.date: 03/05/2024
 ms.service: global-secure-access
 ---
 
-# Global Secure Access remote network configurations
+# Valid remote network configurations for custom and default configurations
 
 Device links are the physical routers that connect your remote networks, such as branch locations, to Global Secure Access (preview). There's a specific set of combinations you must use if you choose the **Custom** option when adding device links. If you choose the **Default** option, you must enter a specific combination of properties on the customer premises equipment (CPE).
 
@@ -64,7 +64,7 @@ You can use any 2 byte values (between 1 to 65534) *except* for the following re
 
 - Azure reserved ASNs: 12076, 65517, 65518, 65519, 65520, 8076, 8075
 - IANA reserved ASNs: 23456, >= 64496 && <= 64511, >= 65535 && <= 65551, 4294967295
-- 65476, 65515
+- 65476
 
 ### Valid enums
 
