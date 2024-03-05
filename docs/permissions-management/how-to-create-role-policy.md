@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 003/05.2023
+ms.date: 03/05.2023
 ms.author: jfields
 ---
 
