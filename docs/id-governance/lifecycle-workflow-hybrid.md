@@ -21,7 +21,7 @@ Lifecycle workflows allow you to create workflows that can be triggered for user
 
 ## Synced on-premises user capabilities compatibility with workflow triggers
 
-In Lifecycle workflows, a workflow runs based on if a user meets its execution conditions. Each execution condition must have a trigger, which defines when a user meets the execution condition of a workflow, and a scope, which defines which users the workflow runs for. The trigger you set for an execution condition depends on the user situation for which you want the workflow to run. For more information on these execution conditions, and when you would use each, see: **Execution Condition conceptual article**.
+In Lifecycle workflows, a workflow runs based on if a user meets its execution conditions. Each execution condition must have a trigger, which defines when a user meets the execution condition of a workflow, and a scope, which defines which users the workflow runs for. The trigger you set for an execution condition depends on the user situation for which you want the workflow to run.
 
 The following table shows what is required to use each workflow trigger with synced on-premises users:
 
@@ -43,7 +43,7 @@ The group membership trigger works with on-prem Active Directory to Microsoft En
 
 ## User account tasks (preview)
 
-Tasks related to enabling, disabling, and deleting user accounts work with synced on-premises users as long as you have satisfied the following prerequisites in setting up your environment:
+Tasks related to enabling, disabling, and deleting user accounts work with synced on-premises users as long as you have satisfied the following prerequisites in your environment:
 
 - You must have the [Microsoft Entra provisioning agent](../identity/hybrid/cloud-sync/what-is-provisioning-agent.md) installed in your environment. For prerequisites on installing the Microsoft Entra provisioning agent, see: [Cloud provisioning agent requirements](../identity/hybrid/cloud-sync/how-to-prerequisites.md#cloud-provisioning-agent-requirements). For a step by step guide on installing the Microsoft Entra Provisioning agent, see: [Install the Microsoft Entra Provisioning Agent](../identity/hybrid/cloud-sync/how-to-install.md). During installation, choose “**HR-driven provisioning / Microsoft Entra Connect Sync**” as “**extension configuration**”. You aren't required to add any other configuration for the provisioning agent, such as the cloud sync configuration, and you can install the provisioning agent even if you're also currently using Microsoft Entra Connect Sync for your user synchronization.
 
