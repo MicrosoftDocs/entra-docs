@@ -39,7 +39,7 @@ All Lifecycle workflow tasks work for both cloud, and synced on-premises, users 
 
 ### Group tasks
 
-The group membership trigger works with on-prem Active Directory to Microsoft Entra ID synced groups. To control access to on-premises Active directory group-based applications and resources, you need to enable group writeback. For more information, see: [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) and [using group writeback with entitlement management](../id-governance/entitlement-management-group-writeback.md).
+The group membership trigger works with on-premises Active Directory to Microsoft Entra ID synced groups. To control access to on-premises Active directory group-based applications and resources, you need to enable group writeback. For more information, see: [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) and [using group writeback with entitlement management](../id-governance/entitlement-management-group-writeback.md).
 
 ## User account tasks (preview)
 
