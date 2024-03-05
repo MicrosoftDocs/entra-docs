@@ -695,13 +695,13 @@ The Azure Active Directory Insights tab in Microsoft Entra Permissions Managemen
 
 ---
 
-### Public Preview - In portal guide to configure multi-factor authentication
+### Public Preview - In portal guide to configure multifactor authentication
 
 **Type:** New feature   
 **Service category:** MFA                           
 **Product capability:** Identity Security & Protection              
 
-The in portal guide to configure multi-factor authentication helps you get started with Azure Active Directory's MFA capabilities. You can find this guide under the Tutorials tab in the Azure AD Overview. 
+The in portal guide to configure multifactor authentication helps you get started with Azure Active Directory's MFA capabilities. You can find this guide under the Tutorials tab in the Azure AD Overview. 
 
 ---
 
@@ -711,7 +711,7 @@ The in portal guide to configure multi-factor authentication helps you get start
 **Service category:** Microsoft Authenticator App                           
 **Product capability:** User Authentication                
 
-Authenticator Lite (in Outlook) is an authentication solution for users that haven't yet downloaded the Microsoft Authenticator app. Users are prompted in Outlook on their mobile device to register for multi-factor authentication. After they enter their password at sign-in, they'll have the option to send a push notification to their Android or iOS device.
+Authenticator Lite (in Outlook) is an authentication solution for users that haven't yet downloaded the Microsoft Authenticator app. Users are prompted in Outlook on their mobile device to register for multifactor authentication. After they enter their password at sign-in, they'll have the option to send a push notification to their Android or iOS device.
 
 Due to the security enhancement this feature provides users, the Microsoft managed value of this feature will be changed from ‘*disabled*’ to ‘*enabled*’ on June 9. We’ve made some changes to the feature configuration, so if you made an update before GA, May 17, please validate that the feature is in the correct state for your tenant prior to June 9. If you don't wish for this feature to be enabled on June 9, move the state to ‘*disabled*’, or set users to include and exclude groups.  
 
@@ -883,7 +883,7 @@ Authenticator Lite is an additional surface for Azure Active Directory users to 
 **Service category:** MFA                       
 **Product capability:** Identity Security & Protection             
 
-As part of ongoing service improvements, we're making updates to the per-user MFA admin configuration experience to align with the look and feel of Azure. This change doesn't include any changes to the core functionality and will only include visual improvements.  For more information, see: [Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events](~/identity/authentication/howto-mfa-userstates.md).
+As part of ongoing service improvements, we're making updates to the per-user MFA admin configuration experience to align with the look and feel of Azure. This change doesn't include any changes to the core functionality and will only include visual improvements.  For more information, see: [Enable per-user Azure AD Multifactor Authentication to secure sign-in events](~/identity/authentication/howto-mfa-userstates.md).
 
 ---
 
