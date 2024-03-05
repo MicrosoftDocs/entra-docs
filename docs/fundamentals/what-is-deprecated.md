@@ -18,7 +18,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref
 The lifecycle of functionality, features, and services are governed by policy, support timelines, data, also leadership and engineering team decisions. Lifecycle information allows customers to predictably plan long-term deployment aspects, transition from outdated to new technology, and help improve business outcomes. 
 
 > [!NOTE]
-> If you're currently using Microsoft Entra ID or have previously deployed Microsoft Entra ID in your organizations, you can continue to use the service without interruption. All existing deployments, configurations, and integrations continue to function with Microsoft Entra ID as they do today without any action from you.
+> If you're currently using Azure AD or have previously deployed Azure AD in your organizations, you can continue to use the service without interruption. All existing deployments, configurations, and integrations continue to function with Microsoft Entra ID as they do today without any action from you.
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22What's+deprecated+in+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
