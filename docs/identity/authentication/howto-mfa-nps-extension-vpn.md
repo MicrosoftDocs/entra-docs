@@ -395,8 +395,6 @@ To use the script, provide the extension with your Microsoft Entra administrativ
 
 4. Enter your Microsoft Entra administrator credentials and password, and then select **Sign in**.
 
-    ![Authenticate to Graph PowerShell](./media/howto-mfa-nps-extension-vpn/image39.png)
-
 5. At the command prompt, paste the tenant ID that you copied earlier, and then select Enter.
 
     ![Input the Microsoft Entra tenant ID copied before](./media/howto-mfa-nps-extension-vpn/image40.png)
