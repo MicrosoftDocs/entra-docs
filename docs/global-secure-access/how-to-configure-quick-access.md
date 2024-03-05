@@ -186,4 +186,4 @@ The next step for getting started with Microsoft Entra Private Access is to [ena
 
 For more information about Private Access, see the following articles:
 - [Learn about traffic profiles](concept-traffic-forwarding.md)
-- [Configure per-access](how-to-configure-per-app-access.md)
+- [Configure per-app access](how-to-configure-per-app-access.md)
