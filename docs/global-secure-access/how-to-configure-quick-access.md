@@ -37,11 +37,11 @@ To manage Microsoft Entra application proxy connector groups, which is required 
 
 Configuring your Quick Access settings is a major component to utilizing Microsoft Entra Private Access. When you configure Quick Access for the first time, Private Access creates a new enterprise application. The properties of this new app are automatically configured to work with Private Access.
 
-To configure Quick Access, you need to have a connector group with at least one active [Microsoft Entra application proxy](/azure/active-directory/app-proxy/application-proxy) connector. The connector group handles the traffic to this new application. Once you have Quick Access and an App proxy connector group configured, you need to grant access to the app.
+To configure Quick Access, you need to have a connector group with at least one active [Microsoft Entra application proxy](/azure/active-directory/app-proxy/application-proxy) connector. The connector group handles the traffic to this new application. Once you have Quick Access and an application proxy connector group configured, you need to grant access to the app.
 
 To summarize, the overall process is as follows:
 
-1. [Create a connector group with at least one active App proxy connector](#create-an-application-proxy-connector-group).
+1. [Create a connector group with at least one active application proxy connector](#create-an-application-proxy-connector-group).
     - If you already have a connector group, make sure you're on the latest version.
 
 1. [Configure Quick Access](#configure-quick-access).
@@ -186,4 +186,4 @@ The next step for getting started with Microsoft Entra Private Access is to [ena
 
 For more information about Private Access, see the following articles:
 - [Learn about traffic profiles](concept-traffic-forwarding.md)
-- [Configure per-app access](how-to-configure-per-app-access.md)
+- [Configure per-access](how-to-configure-per-app-access.md)
