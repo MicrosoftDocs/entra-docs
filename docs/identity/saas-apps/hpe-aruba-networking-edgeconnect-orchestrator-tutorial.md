@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	- Under **Logout URL (Optional)**, paste the **EdgeConnect SLO Endpoint** value from the Orchestrator’s Remote Authentication Server page as shown on the image below:
 
-	> [!NOTE] **IMPORTANT**:
+	> [!IMPORTANT]
 	> On self-hosted Orchestrators, if the Orchestrator is displaying the private IP address on the ACS URL field and the EdgeConnect SLO Endpoint field, please update it with the public IP address of the Orchestrator. As shown on the screenshot below, all five fields must contain the public IP address of the Orchestrator (not the private IP).
 
 	![Screenshot shows how to configure Basic SAML Configuration section](https://github.com/MicrosoftDocs/entra-docs/assets/8731469/f946920c-2583-49ce-bbc5-369724835fc3)
