@@ -7,7 +7,6 @@ ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 09/13/2023
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ms.author: justinha
 author: calui
