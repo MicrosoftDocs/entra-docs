@@ -5,12 +5,15 @@ description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (F
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 12/06/2023
+ms.date: 03/05/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: calui
+ms.reviewer: calui, tilarso
+
+# Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and enforce passkeys sign in for end users.
+
 ---
 # Enable passkey (FIDO2) sign-in 
 
@@ -21,10 +24,12 @@ This document focuses on enabling passkey-based passwordless authentication. At 
 ## Requirements
 
 - [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md)
-- Enable [Combined security information registration](concept-registration-mfa-sspr-combined.md)
 - Compatible [FIDO2 security keys](concept-authentication-passwordless.md#fido2-security-keys)
 
 Passkeys are supported across major scenarios on Windows, macOS, Android, and iOS. For more information on supported scenarios, see [Browser support of FIDO2 passwordless authentication](fido2-compatibility.md).
+
+>[!NOTE]
+>Entra ID supports only device-bound passkeys. Support for synced passkeys is coming soon.
 
 ## Prepare devices
 
@@ -36,9 +41,9 @@ Hybrid-joined devices must run Windows 10 version 2004 or higher.
 
 ### Enable the combined registration experience
 
-Registration features for passwordless authentication methods rely on combined MFA/SSPR registration. [Learn more about combined registration](howto-registration-mfa-sspr-combined.md). 
+Registration features for passkey authentication methods rely on combined MFA/SSPR registration. [Learn more about combined registration](howto-registration-mfa-sspr-combined.md). 
 
-### Enable passkey method
+### Enable passkey (FIDO2) authentication method
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
@@ -92,37 +97,6 @@ To remove a passkey associated with a user account, delete the key from the user
 
     ![View Authentication Method details](media/howto-authentication-passwordless-deployment/security-key-view-details.png)
 
-## User registration and management of FIDO2 security keys
-
-1. Browse to [https://myprofile.microsoft.com](https://myprofile.microsoft.com).
-1. Sign in if not already.
-1. Click **Security info**.
-   1. If you already have at least one MFA method registered, you can immediately register a passkey.
-   1. If you don't have at least one MFA method registered, you must add one.
-   1. An Authentication Policy Administrator can also issue a [Temporary Access Pass](howto-authentication-temporary-access-pass.md) to allow a user to register a passwordless authentication method.
-1. To add a passkey, click **Add method**, and choose **Passkey (preview)**.
-1. Read the instructions and choose **Next**. If you're using Chrome or Edge, the browser might prioritize registration of a passkey that's stored on a mobile device over a passkey that's stored on a security key. 
-
-   - Beginning with Windows 11 version 23H2, the OS will show the following prompt during sign-in. To create a passkey stored on a FIDO2 security key, selow **More choices**, choose **Security key** and click **Next**.
-
-     :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/save-security-key.png" alt-text="Screenshot of option to save a security key on Windows 11 version 23 H2."::: 
-
-   - On earlier versions of Windows, the browser may show the QR pairing screen to register a passkey that's stored on another mobile device. To register a passkey that's stored on a security key instead, insert your security key and touch it to continue. 
-
-     :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/try-another-way.png" alt-text="Screenshot of option to choose security key on Windows 10."::: 
-
-1. Perform the required biometric gesture or enter the PIN for your device.
-1. You return to the combined registration experience, where you can provide a meaningful name for the passkey to identify it easily. Click **Next**.
-1. Click **Done** to complete the process.
-
-## Sign in with passkey
-
-In this screenshot, a user has already provisioned their passkey. The user can choose to sign in to Entra ID with their passkey inside of a supported browser or application.
-
-For more information about browsers, applications, and operating systems that support sign in to Microsoft Entra ID with passkeys, see [Browser support of FIDO2 passwordless authentication](fido2-compatibility.md).
-
-:::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/fido2-windows-10-1903-edge-sign-in.png" alt-text="Screenshot of option to choose security key on Windows 10 version 1903 or higher."::: 
-
 ## Troubleshooting and feedback
 
 If you'd like to share feedback or encounter issues with this feature, share via the Windows Feedback Hub app using the following steps:
@@ -146,7 +120,9 @@ If a user's UPN changes, you can no longer modify passkeys to account for the ch
 
 ## Next steps
 
-[FIDO2 security key Windows 10 sign in](howto-authentication-passwordless-security-key-windows.md)
+[Passkey Windows 10 sign in](howto-authentication-passwordless-security-key-windows.md)
+
+[Native app and browser support of passkey (FIDO2) passwordless authentication](fido2-compatibility.md)
 
 [Enable FIDO2 authentication to on-premises resources](howto-authentication-passwordless-security-key-on-premises.md)
 
