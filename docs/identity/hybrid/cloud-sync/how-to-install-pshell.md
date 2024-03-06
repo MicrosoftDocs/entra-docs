@@ -28,7 +28,7 @@ The Windows server must have TLS 1.2 enabled before you install the Microsoft En
 
 <a name='install-the-azure-ad-connect-provisioning-agent-by-using-powershell-cmdlets-'></a>
 
-## Install the Microsoft Entra provisioning Agent by using PowerShell cmdlets 
+## Install the Microsoft Entra provisioning agent by using PowerShell cmdlets 
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
