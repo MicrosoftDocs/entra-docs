@@ -63,7 +63,7 @@ On the **Configure** tab, there are more settings to help manage how passkeys ca
 **General**
 
 - **Allow self-service set up** should remain set to **Yes**. If set to no, your users won't be able to register a passkey through MySecurityInfo, even if enabled by Authentication Methods policy.  
-- **Enforce attestation** setting to **Yes** requires the passkey metadata to be published and verified with the FIDO Alliance Metadata Service, and also pass Microsoft's additional set of validation testing. For more information, see [What is a Microsoft-compatible security key?](concept-authentication-passwordless.md#fido2-security-key-providers).
+- **Enforce attestation** Should be set to **No** for preview. If set to **Yes**, the passkey metadata needs to be published and verified with the FIDO Alliance Metadata Service, and also pass Microsoft's additional set of validation testing. For more information, see [What is a Microsoft-compatible security key?](concept-authentication-passwordless.md#fido2-security-key-providers). Attestation support is planned for General Availability.
 
 **Key Restriction Policy**
 
