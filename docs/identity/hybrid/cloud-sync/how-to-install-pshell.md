@@ -21,7 +21,7 @@ This article shows you how to install the Microsoft Entra provisioning agent by 
 
 ## Prerequisite
 
-The Windows server must have TLS 1.2 enabled before you install the Microsoft Entra provisioning Agent by using PowerShell cmdlets. To enable TLS 1.2, follow the steps in [Prerequisites for Microsoft Entra Cloud Sync](how-to-prerequisites.md#tls-requirements).
+The Windows server must have TLS 1.2 enabled before you install the Microsoft Entra provisioning agent by using PowerShell cmdlets. To enable TLS 1.2, follow the steps in [Prerequisites for Microsoft Entra Cloud Sync](how-to-prerequisites.md#tls-requirements).
 
 >[!IMPORTANT]
 >The following installation instructions assume that all the [prerequisites](how-to-prerequisites.md) were met.
