@@ -14,7 +14,7 @@ ms.author: billmath
 
 # Install the Microsoft Entra provisioning Agent
 
-This article walks you through the installation process for the Microsoft Entra provisioning Agent and how to initially configure it in the Microsoft Entra admin center.
+This article walks you through the installation process for the Microsoft Entra provisioning agent and how to initially configure it in the Microsoft Entra admin center.
 
 > [!IMPORTANT]
 > The following installation instructions assume that you've met all the [prerequisites](how-to-prerequisites.md).
