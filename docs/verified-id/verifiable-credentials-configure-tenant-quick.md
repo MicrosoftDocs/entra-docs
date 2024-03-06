@@ -55,7 +55,7 @@ When the setup process is complete, you see a default workplace credential avail
 :::image type="content" source="media/verifiable-credentials-configure-tenant-quick/verifiable-credentials-setup-complete.png" alt-text="Screenshot that shows how to set up is completed.":::
 
 ## MyAccount available now to simplify issuance of Workplace Credentials
-Issuing Verified Workplace Credentials is now available via [myaccount.microsoft.com](https://myaccount.microsoft.com/). Users can sign in to myaccount using their Microsoft Entra ID credentials and issue themselves a Verified Workplace Credential via the `Get my Verified ID` option.  
+Issuing Verified Workplace Credentials is now available via [myaccount.microsoft.com](https://myaccount.microsoft.com/). Users can sign in to myaccount using their Microsoft Entra credentials and issue themselves a Verified Workplace Credential via the `Get my Verified ID` option.  
 
 :::image type="content" source="media/verifiable-credentials-configure-tenant-quick/verifiable-credentials-my-account-issue.png" alt-text="Screenshot that shows issuance via myaccount.":::
 

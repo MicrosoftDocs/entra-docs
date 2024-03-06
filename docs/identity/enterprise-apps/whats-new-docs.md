@@ -1,7 +1,7 @@
 ---
 title: "What's new in Microsoft Entra application management"
 description: "New and updated documentation for the Microsoft Entra application management."
-ms.date: 02/01/2024
+ms.date: 03/05/2024
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: whats-new
@@ -17,7 +17,14 @@ manager: CelesteDG
 
 Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Azure AD](~/fundamentals/whats-new.md).
 
-## January
+## February 2024
+
+### Updated articles
+
+- [Manage certificates for federated single sign-on](tutorial-manage-certificates-for-federated-single-sign-on.md) - Update to enhance the article's technical accuracy
+- [Troubleshoot SAML-based single sign-on](troubleshoot-saml-based-sso.md) - Update to enhance the article's technical accuracy
+
+## January 2024
 
 ### Updated articles
 
@@ -25,7 +32,7 @@ Welcome to what's new in Microsoft Entra application management documentation. T
 - [Enable self-service application assignment](manage-self-service-access.md) - Update to enhance the article's technical accuracy
 - [Home Realm Discovery for an application](home-realm-discovery-policy.md) - Add updated domain confirmation information
 
-## December
+## December 2023
 
 ### Updated articles
 
@@ -46,9 +53,3 @@ Welcome to what's new in Microsoft Entra application management documentation. T
 - [Overview of admin consent workflow](admin-consent-workflow-overview.md) - Update to enhance the article's technical accuracy
 - [Overview of the Microsoft Entra application gallery](overview-application-gallery.md) - Update to enhance the article's technical accuracy
 - [Protect against consent phishing](protect-against-consent-phishing.md) - Update to enhance the article's technical accuracy
-
-## November
-
-### New articles
-
-- [Tutorial: Configure Datawiza to enable Microsoft Entra multifactor authentication and single sign-on to Oracle Hyperion EPM](datawiza-mfa-sso-oracle-hyperion-epm.md) - New how-to guide for Datawiza integration with Microsoft Entra ID.

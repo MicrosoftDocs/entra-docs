@@ -135,7 +135,7 @@ Additionally, while you can use the following Conditional Access conditions, be 
 
 Review the [security checklist](/azure/security/fundamentals/steps-secure-identity) and [best practices](/azure/security/fundamentals/operational-best-practices) for guidance on securing your tenant. Ensure these best practices are followed and review them with any tenants that you collaborate closely with.
 
-### Conditional access
+### Conditional Access
 
 The following are considerations for configuring access control.
 
