@@ -75,7 +75,7 @@ However, during the name resolution, the CNAME records might contain DNS records
 To verify that the agent is running, follow these steps:
 
 1. On the server with the agent installed, open **Services**. Do this by going to **Start** > **Run** > **Services.msc**.
-1. Under **Services**, make sure **Microsoft Entra Connect Agent Updater** and **Microsoft Entra provisioning Agent** are there. Also confirm that their status is *Running*.
+1. Under **Services**, make sure **Microsoft Entra Connect Agent Updater** and **Microsoft Entra Provisioning Agent** are there. Also confirm that their status is *Running*.
 
    ![Screenshot of local services and their status.](media/how-to-troubleshoot/troubleshoot-1.png)
 
