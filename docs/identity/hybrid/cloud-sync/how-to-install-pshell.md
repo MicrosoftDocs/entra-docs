@@ -92,7 +92,7 @@ The Windows server must have TLS 1.2 enabled before you install the Microsoft En
 Now that you've installed the agent, you can apply more granular permissions to the gMSA. For information and step-by-step instructions on how to configure the permissions, see [Microsoft Entra Connect cloud provisioning agent gMSA PowerShell cmdlets](how-to-gmsa-cmdlets.md).
 
 ## Installing against US government cloud
-By default, the Microsoft Entra provisioning Agent installs against the default Azure cloud environment.  If you are installing the agent for use in the US government cloud do the following:
+By default, the Microsoft Entra provisioning agent installs against the default Azure cloud environment.  If you are installing the agent for use in the US government cloud do the following:
 
 - In step #8, add **ENVIRONMENTNAME=AzureUSGovernment** to the command line like the example.
     ```
