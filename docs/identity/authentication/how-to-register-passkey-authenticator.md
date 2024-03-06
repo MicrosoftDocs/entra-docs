@@ -1,6 +1,6 @@
 ---
-title: Register Microsoft Authenticator passkey on Android or iOS device in MySecurityInfo
-description: Registration and management of passkey with Authenticator on iOS in MySecurityInfo
+title: Register Microsoft Authenticator passkey on Android or iOS device in MySecurityInfo (preview)
+description: Registration and management of passkey with Authenticator on iOS in MySecurityInfo (preview)
 
 services: active-directory
 ms.service: active-directory
@@ -17,11 +17,11 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how users can register a passkey in Microsoft Authenticator 
 
 ---
-# Register Microsoft Authenticator passkey on Android or iOS device in MySecurityInfo
+# Register Microsoft Authenticator passkey on Android or iOS device in MySecurityInfo (preview)
 
 # [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
 
-This article shows how to register a passkey in Microsoft Authenticator with your iOS using My Security info [Security info](https://mysignins.microsoft.com/Security info). Passkeys in Microsoft Authenticator can be added directly from your device or through cross-device registration using another device, such as a laptop. Your device needs to run least iOS 17 or later.
+This article shows how to register a passkey in Microsoft Authenticator with your iOS using [My Security info](https://mysignins.microsoft.com/security). Passkeys in Microsoft Authenticator can be added directly from your device or through cross-device registration using another device, such as a laptop. Your device needs to run least iOS 17 or later.
 
 ## Same device registration
 
@@ -145,7 +145,7 @@ This article shows how to register a passkey in Microsoft Authenticator with you
 
 # [:::image type="icon" source="media/icons/android-icon.png" border="false"::: **Android**](#tab/Android)
 
-This article shows how to register a passkey with Microsoft Authenticator on your Android device using My Security info [Security info](https://mysignins.microsoft.com/Security info). Passkeys in Microsoft Authenticator can be added directly from your device or through cross-device registration using another device, such as a laptop. Your device needs to run Android version 14 or later. 
+This article shows how to register a passkey with Microsoft Authenticator on your Android device using [My Security info](https://mysignins.microsoft.com/security). Passkeys in Microsoft Authenticator can be added directly from your device or through cross-device registration using another device, such as a laptop. Your device needs to run Android version 14 or later. 
 
 ## Same device registration
 

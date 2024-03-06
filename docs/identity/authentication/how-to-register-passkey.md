@@ -1,6 +1,6 @@
 ---
-title:  Register a passkey
-description: Registration and management of passkey
+title:  Register a passkey (preview)
+description: Registration and management of passkey (preview)
 
 services: active-directory
 ms.service: active-directory
@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how users will register a passkey on their mobile device or with a security key. 
 
 ---
-# Register a passkey
+# Register a passkey (preview)
 
 This article shows how to use your Android or iOS device to register and sign-in with a passkey (FIDO2). 
 
@@ -59,10 +59,10 @@ This article shows how to use your Android or iOS device to register and sign-in
 
 1. If your organization allows saving a passkey to a security key:
    1. Choose **Security Key**.
-   2. Follow the guidance and insert or connect your security key when requested.
-   3. You'll be prompted to create or enter a PIN for your security key, then perform the required gesture for the key.
+   1. Follow the guidance and insert or connect your security key when requested.
+   1. You'll be prompted to create or enter a PIN for your security key, then perform the required gesture for the key.
    
-1. Upon completion, review any additional information from the security dialog, then tap **Ok** or **Continue**. . 
+1. Upon completion, review any additional information from the security dialog, then tap **Ok** or **Continue**.
 1. After you are redirected to security info, you can change the default name for the new sign-in method. 
 1. Tap **Done** to finish registering the new method.
 
