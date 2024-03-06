@@ -15,7 +15,7 @@ ms.reviewer: calui
 
 ms.collection: M365-identity-device-management
 ---
-# Passkey authentication for Microsoft Entra ID (Preview)
+# Passkey authentication for Microsoft Entra ID (preview)
 
 Passkeys are a cross-industry, standards-based replacement for passwords. When used with Microsoft Entra ID, passkeys provide multifactor authentication (MFA) and phishing-resistant authentication. Passkeys provide a simple and more secure way for users to sign in. They don't need to remember anything, and they can store a passkey on their computer, mobile device, or a hardware-based authenticator, similar to a FIDO security key.
 
