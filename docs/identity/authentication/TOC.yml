@@ -124,14 +124,18 @@
     items: 
       - name: Deploying passwordless authentication
         href: howto-authentication-passwordless-deployment.md
+      - name: Enable passwordless security key sign-in 
+        href: howto-authentication-passwordless-security-key-windows.md
       - name: Passkey (FIDO2) authentication
         items:
         - name: (Update) Enable 
           href: how-to-enable-passkey-fido2.md
-        - name: (New) Register 
-          href: how-to-register-passkey.md
+        - name: (New) Register in a browser 
+          href: how-to-register-passkey-browser.md
+        - name: (New) Register on a mobile device
+          href: how-to-register-passkey-mobile.md
         - name: (New) Sign in 
-          href: howto-authentication-passwordless-security-key-windows.md
+          href: concept-passkey-fido2-compatibility.md
         - name: (New) FAQs
           href: passkey-faq.yml
       - name: Microsoft Authenticator
