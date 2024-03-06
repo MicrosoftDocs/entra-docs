@@ -19,13 +19,15 @@ ms.collection: M365-identity-device-management
 ---
 # Register Microsoft Authenticator passkey on Android or iOS device in MySecurityInfo (preview)
 
-# [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
+This article shows how to register a passkey using Microsoft Authenticator on your iOS or Android device using [My Security info](https://mysignins.microsoft.com/security). 
 
-This article shows how to register a passkey in Microsoft Authenticator with your iOS using [My Security info](https://mysignins.microsoft.com/security). Passkeys in Microsoft Authenticator can be added directly from your device or through cross-device registration using another device, such as a laptop. Your device needs to run least iOS 17 or later.
+Passkeys in Microsoft Authenticator can be added directly from your device or through cross-device registration using another device, such as a laptop. Your mobile device needs to run iOS version 17 or later or Android version 14 or later. 
+
+# [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
 
 ## Same device registration
 
-1. Using your iOS device, open a web browser and sign-in to [My Security info](https://mysignins.microsoft.com/Security info).
+1. Using your iOS device, open a web browser and sign-in to [My Security info](https://mysignins.microsoft.com/security).
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkeyios_login.png" alt-text="Screenshot of how to sign in using Microsoft Authenticator for iOS devices.":::
    
@@ -145,11 +147,9 @@ This article shows how to register a passkey in Microsoft Authenticator with you
 
 # [:::image type="icon" source="media/icons/android-icon.png" border="false"::: **Android**](#tab/Android)
 
-This article shows how to register a passkey with Microsoft Authenticator on your Android device using [My Security info](https://mysignins.microsoft.com/security). Passkeys in Microsoft Authenticator can be added directly from your device or through cross-device registration using another device, such as a laptop. Your device needs to run Android version 14 or later. 
-
 ## Same device registration
 
-1. Using your Amdrpod device, open a web browser and sign-in to [My Security info](https://mysignins.microsoft.com/Security info).
+1. Using your Amdrpod device, open a web browser and sign-in to [My Security info](https://mysignins.microsoft.com/security).
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkeyios_login.png" alt-text="Screenshot of how to sign in using Microsoft Authenticator for iOS devices.":::
    
