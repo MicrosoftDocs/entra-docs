@@ -16,9 +16,7 @@ ms.author: billmath
 
 The following document will guide you through configuring Microsoft Entra Cloud Sync.  
 
-The following documentation demonstrates the new guided user experience for Microsoft Entra Cloud Sync.  If you are not seeing the images below, you need to select the **Preview features** at the top.  You can select this again to revert back to the old experience.
-
- :::image type="content" source="media/how-to-configure/new-ux-configure-19.png" alt-text="Screenshot of enable preview features." lightbox="media/how-to-configure/new-ux-configure-19.png":::
+The following documentation demonstrates the new guided user experience for Microsoft Entra Cloud Sync.
 
 For additional information and an example of how to configure cloud sync, see the video below.
 
@@ -41,8 +39,6 @@ To configure provisioning, follow these steps.
 
  5.  The **Get started** screen will open.  From here, you can continue configuring cloud sync.
 
-  :::image type="content" source="media/how-to-configure/new-ux-configure-3.png" alt-text="Screenshot of the getting started screen." lightbox="media/how-to-configure/new-ux-configure-3.png":::
-
  6. The configuration is split in to the following 5 sections.
 
 |Section|Description|
@@ -59,9 +55,6 @@ To configure provisioning, follow these steps.
 
 ## Scope provisioning to specific users and groups
 By default the provisioning agent will synchronize a subset of the users and groups from your Active Directory. You can further scope the agent to synchronize specific users and groups by using on-premises Active Directory groups or organizational units. 
-
-  :::image type="content" source="media/how-to-configure/new-ux-configure-4.png" alt-text="Screenshot of scoping filters icon." lightbox="media/how-to-configure/new-ux-configure-4.png":::
-
 
 You can configure groups and organizational units within a configuration. 
  >[!NOTE]
@@ -84,9 +77,6 @@ You can configure groups and organizational units within a configuration.
 ## Attribute mapping
 Microsoft Entra Cloud Sync allows you to easily map attributes between your on-premises user/group objects and the objects in Microsoft Entra ID.  
 
-:::image type="content" source="media/how-to-configure/new-ux-configure-6.png" alt-text="Screenshot of map attributes icon." lightbox="media/how-to-configure/new-ux-configure-6.png":::
-
-
 You can customize the default attribute-mappings according to your business needs. So, you can change or delete existing attribute-mappings, or create new attribute-mappings.  
 
 :::image type="content" source="media/how-to-configure/new-ux-configure-7.png" alt-text="Screenshot of default attribute mappings." lightbox="media/how-to-configure/new-ux-configure-7.png":::
@@ -103,8 +93,6 @@ Microsoft Entra Cloud Sync allows you to extend the directory with extensions an
 ## On-demand provisioning
 Microsoft Entra Cloud Sync allows you to test configuration changes, by applying these changes to a single user or group.  
 
-:::image type="content" source="media/how-to-configure/new-ux-configure-8.png" alt-text="Screenshot of test icon." lightbox="media/how-to-configure/new-ux-configure-8.png":::
-
 You can use this to validate and verify that the changes made to the configuration were applied properly and are being correctly synchronized to Microsoft Entra ID.  
 
 :::image type="content" source="media/how-to-configure/new-ux-configure-9.png" alt-text="Screenshot of on-demand provisioning." lightbox="media/how-to-configure/new-ux-configure-9.png":::
@@ -117,8 +105,6 @@ For more information, see [on-demand provisioning](how-to-on-demand-provision.md
 
 ## Accidental deletions and email notifications
 The default properties section provides information on accidental deletions and email notifications.
-
-:::image type="content" source="media/how-to-configure/new-ux-configure-10.png" alt-text="Screenshot of default properties icon." lightbox="media/how-to-configure/new-ux-configure-10.png":::
 
 The accidental delete feature is designed to protect you from accidental configuration changes and changes to your on-premises directory that would affect many users and groups.  
 
