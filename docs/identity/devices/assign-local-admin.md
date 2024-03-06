@@ -44,7 +44,7 @@ To view and update the membership of the [Global Administrator](~/identity/role-
 
 ## Manage the Microsoft Entra Joined Device Local Administrator role 
 
-You can manage the [Microsoft Entra joined Device Local Administrator](~/identity/role-based-access-control/permissions-reference.md#microsoft-entra-joined-device-local-administrator) role from **Device settings**. 
+You can manage the [Microsoft Entra Joined Device Local Administrator](~/identity/role-based-access-control/permissions-reference.md#microsoft-entra-joined-device-local-administrator) role from **Device settings**. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 1. Browse to **Identity** > **Devices** > **All devices** > **Device settings**.
