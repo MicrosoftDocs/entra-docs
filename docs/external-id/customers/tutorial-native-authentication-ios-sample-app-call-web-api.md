@@ -90,7 +90,7 @@ If you choose to download the .zip file, extract the sample app file to a folder
     let protectedAPIUrl = "Enter_the_Protected_API_Full_URL_Here" // Developers should set the respective URL of their web API here
     ```
     
-1. Find `Enter_the_Protected_API_Scopes_Here` and set the scopes recorded in [Add permissions to access your web API](#add-permissions-to-access-your-web-api).
+1. Find `Enter_the_Protected_API_Scopes_Here` and set the scopes recorded in [Grant API permissions to the iOS sample app](#grant-api-permissions-to-the-ios-sample-app).
 
     ```swift
     let protectedAPIScopes = ["Enter_the_Protected_API_Scopes_Here"] // Developers should set the respective scopes of their web API here.For example, let protectedAPIScopes = ["pi://{clientId}/{ToDoList.Read}","api://{clientId}/{ToDoList.ReadWrite}"]
