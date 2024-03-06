@@ -157,7 +157,7 @@ You'll also need an outbound sync rule with a link type of JoinNoFlow and the sc
     :::image type="content" source="media/migrate-group-writeback/migrate-11.png" alt-text="Screenshot of PowerShell execution." lightbox="media/migrate-group-writeback/migrate-11.png":::
 
 ## Step 6 - Remove the Microsoft Entra Connect Sync server from staging mode
-1. Start the Microsoft Entra Connect Sync wizard (Microsoft Entra Connect)
+1. Start the Microsoft Entra Connect Sync wizard
 2. Click **Configure**
 3. Select **Configure staging mode** and click **Next**
 4. Enter Microsoft Entra credentials
