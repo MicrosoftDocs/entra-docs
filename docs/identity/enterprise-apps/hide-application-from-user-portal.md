@@ -1,12 +1,12 @@
 ---
 title: Hide an Enterprise application
 description: How to hide an Enterprise application from user's experience in Microsoft Entra ID access portals or Microsoft 365 launchers.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: enterprise-apps
+
 ms.topic: how-to
 ms.date: 09/07/2023
 ms.author: jomondi
@@ -14,7 +14,7 @@ ms.reviewer: ergreenl, lenalepa
 ms.collection: M365-identity-device-management
 zone_pivot_groups: enterprise-apps-all
 ms.custom: enterprise-apps, has-azure-ad-ps-ref
-#customer intent: As an admin, I want to hide an enterprise application from user's experience so that it is not listed in the user's Active directory access portals or Microsoft 365 launchers
+#customer intent: As an administrator, I want to hide an application from the My Apps portal and Microsoft 365 launcher, so that users do not have visibility or access to the application.
 ---
 
 # Hide an Enterprise application

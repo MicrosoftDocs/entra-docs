@@ -11,7 +11,7 @@ items:
       href: architecture-icons.md
     - name: Road to the cloud
       items:
-      - name: Introduction
+      - name: Introduction 
         href: road-to-the-cloud-introduction.md
       - name: Cloud transformation posture
         href: road-to-the-cloud-posture.md
@@ -29,9 +29,9 @@ items:
         href: automate-provisioning-to-applications-introduction.md
       - name: Solutions to automate identity provisioning to applications
         href: automate-provisioning-to-applications-solutions.md
-    - name: Multi-tenant user management
+    - name: Multitenant user management
       items:
-      - name: Multi-tenant user management introduction
+      - name: Multitenant user management introduction
         href: multi-tenant-user-management-introduction.md
       - name: Common scenarios
         href: multi-tenant-user-management-scenarios.md
@@ -142,7 +142,7 @@ items:
         - name: Daemon applications
           href: resilience-daemon-app.md
         - name: OpenID Connect metadata refresh
-          href: ~/identity-platform/howto-build-services-resilient-to-metadata-refresh.md?toc=/azure/active-directory/architecture/toc.json
+          href: ~/identity-platform/howto-build-services-resilient-to-metadata-refresh.md?toc=/entra/architecture/toc.json&bc=/entra/architecture/breadcrumb.toc.json
       - name: Monitor application health for resilience
         href: monitor-sign-in-health-for-resilience.md
     - name: Secure with Microsoft Entra ID
@@ -165,6 +165,20 @@ items:
       href: deployment-plans.md
     - name: Azure Active Directory B2C deployment plans
       href: b2c-deployment-plans.md
+    - name: Microsoft's Security Service Edge Solution deployment plans
+      items:
+      - name: Introduction
+        href: sse-deployment-guide-intro.md
+      - name: Deploying Microsoft Entra Internet Access for Microsoft 365
+        href: sse-deployment-guide-m365.md
+      - name: Deploying Microsoft Entra Internet Access
+        href: sse-deployment-guide-internet-access.md
+      - name: Deploying Microsoft Entra Private Access
+        href: sse-deployment-guide-private-access.md 
+  - name: Migration best practices
+    items:
+    - name: Migration best practices
+      href: migration-best-practices.md
   - name: Microsoft Entra Operations reference
     items:
     - name: Introduction
@@ -177,10 +191,24 @@ items:
       href: ops-guide-govern.md
     - name: Operations
       href: ops-guide-ops.md
+  - name: Microsoft Entra Permissions Management Operations reference
+    items:
+    - name: Introduction
+      href: permissions-manage-ops-guide-intro.md
+    - name: Phase 1 - Implement the framework to manage at scale
+      href: permissions-manage-ops-guide-one.md
+    - name: Phase 2 - Right-size permissions and automate the principle of least privilege
+      href: permissions-manage-ops-guide-two.md
+    - name: Phase 3 - Configure Permissions Management monitoring and alerting
+      items:
+      - name: Implement reporting and alerting strategies
+        href: permissions-manage-ops-guide-three.md
+      - name: Configure alerts
+        href: permissions-manage-ops-guide-alerts.md      
   - name: Security
     items: 
     - name: Security baseline
-      href: /security/benchmark/azure/baselines/aad-security-baseline?toc=/azure/active-directory/architecture/toc.json
+      href: /security/benchmark/azure/baselines/aad-security-baseline?context=/entra/architecture/context/architecture-context.json
     - name: Security operations guide
       items: 
       - name: Security operations overview

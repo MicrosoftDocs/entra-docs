@@ -1,15 +1,15 @@
 ---
 title: Sign in users in your own Node.js browserless application using the Device Code flow - Overview
 description: Learn how to build a Node.js browserless application that signs in users using the Device Code flow - Overview.
-services: active-directory
+ 
 author: Dickson-Mwendia
 manager: mwongerapk
 
 ms.author: dmwendia
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: ciam
-ms.topic: how-to
+ms.service: entra-external-id
+ 
+ms.subservice: customers
+ms.topic: overview
 ms.date: 05/09/2023
 ms.custom: developer, devx-track-js
 #Customer intent: As a dev, devops, I want to learn about how to build a Node.js browserless application to authenticate users with my Microsoft Entra ID for customers tenant

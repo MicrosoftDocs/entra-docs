@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Appaegis Isolation Access Cloud for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Appaegis Isolation Access Cloud.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: c845e98a-6fcd-4285-94b7-a72a2175ca7e
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer

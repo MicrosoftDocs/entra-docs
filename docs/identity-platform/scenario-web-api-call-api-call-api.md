@@ -1,18 +1,15 @@
 ---
 title: Web API that calls web APIs
 description: Learn how to build a web API that calls web APIs.
-services: active-directory
 author: cilwerner
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.workload: identity
-ms.date: 09/26/2020
 ms.author: cwerner
+ms.custom: 
+ms.date: 09/26/2020
 ms.reviewer: jmprieur
-ms.custom: aaddev
+ms.service: identity-platform
+
+ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a web API that calls web APIs by using the Microsoft identity platform.
 ---
 
@@ -273,5 +270,6 @@ A sample demonstrating this flow with MSAL Python is available at [ms-identity-p
 
 ## Next steps
 
-Move on to the next article in this scenario,
-[Move to production](scenario-web-api-call-api-production.md).
+- Learn more by building an ASP.NET Core web app that signs in users in the following multi-part [tutorial series](tutorial-web-app-dotnet-register-app.md)
+
+- Explore Microsoft identity platform [web API samples](sample-v2-code.md#web-api) 

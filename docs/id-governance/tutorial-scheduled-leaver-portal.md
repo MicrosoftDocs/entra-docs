@@ -1,13 +1,11 @@
 ---
 title: Automate employee offboarding tasks after their last day of work with the Microsoft Entra admin center
 description: Tutorial for post off-boarding users from an organization using Lifecycle workflows with the Microsoft Entra admin center.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: tutorial
-ms.subservice: compliance
 ms.date: 08/18/2022
 ms.author: owinfrey
 ms.reviewer: krbain
@@ -41,7 +39,7 @@ The scheduled leaver scenario can be broken down into the following:
 
 ## Create a workflow using scheduled leaver template
 
-Use the following steps to create a scheduled leaver workflow that will configure off-boarding tasks for employees after their last day of work with Lifecycle workflows using the Microsoft Entra admin center.
+Use the following steps to create a scheduled leaver workflow that will automatically perform off-boarding tasks for employees after their last day of work with Lifecycle workflows using the Microsoft Entra admin center.
 
  1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
  2. Select **Identity Governance**.

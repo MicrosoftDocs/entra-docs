@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Templafy OpenID Connect for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Templafy OpenID Connect.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: CelesteDG
 ms.assetid: 8cbb387a-e3fb-4588-bb87-bf4f88144361
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer

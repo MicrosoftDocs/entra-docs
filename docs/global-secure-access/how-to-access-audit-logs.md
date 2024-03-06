@@ -6,8 +6,8 @@ ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: how-to
 ms.date: 06/01/2023
-ms.service: network-access
-ms.custom: 
+ms.service: global-secure-access
+
 ---
 
 # How to access the Global Secure Access (preview) audit logs

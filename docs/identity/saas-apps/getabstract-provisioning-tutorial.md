@@ -1,19 +1,19 @@
 ---
 title: 'Tutorial: Configure getAbstract for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to getAbstract.
-services: active-directory
+
 documentationcenter: ''
 author: twimmers
 writer: twimmers
 manager: jeedes
 
 ms.assetid: bd8898f9-7a01-4e85-9dd4-61ae4b01ab5b
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 12/04/2023
 ms.author: thwimmer
 ---
 
@@ -51,11 +51,11 @@ The scenario outlined in this tutorial assumes that you already have the followi
 ## Step 2: Configure getAbstract to support provisioning with Microsoft Entra ID
 
 1. Sign in to getAbstract.
-1. Select the settings icon located in the upper-right corner, and select the **My Central Admin** option.
+1. Select the person icon located in the upper-right corner, and select the **My Central Admin** option.
 
 	![Screenshot that shows the getAbstract My Central Admin.](media/getabstract-provisioning-tutorial/my-account.png)
 
-1. Locate and select the **SCIM Admin** option.
+1. At the left side menu, click on **User Management** and click on the **configure scim** button.
 
 	![Screenshot that shows the getAbstract SCIM Admin.](media/getabstract-provisioning-tutorial/scim-admin.png)
 
@@ -63,15 +63,15 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 	![Screenshot that shows the getAbstract SCIM Client Id.](media/getabstract-provisioning-tutorial/scim-client-go.png)
 
-1. Select **Generate new token**.
+1. Click on the **Generate new token** button.
 
 	![Screenshot that shows the getAbstract SCIM Token 1.](media/getabstract-provisioning-tutorial/scim-generate-token-step-2.png)
 
-1. If you're sure, select **Generate new token**. Otherwise, select **Cancel**.
+1. If you're sure, then select **Generate new token** button. Otherwise, select **Cancel**.
 
 	![Screenshot that shows the getAbstract SCIM Token 2.](media/getabstract-provisioning-tutorial/scim-generate-token-step-1.png)
 
-1. Either select the copy-to-clipboard icon or select the whole token and copy it. Also make a note that the Tenant/Base URL is `https://www.getabstract.com/api/scim/v2`. These values will be entered in the **Secret Token** and **Tenant URL** boxes on the **Provisioning** tab of your getAbstract application.
+1. Lastly, you can either click on the copy-to-clipboard icon or select the whole token and copy it. Also make a note that the Tenant/Base URL is `https://www.getabstract.com/api/scim/v2`. These values will be entered in the **Secret Token** and **Tenant URL** boxes on the **Provisioning** tab of your getAbstract application.
 
 	![Screenshot that shows the getAbstract SCIM Token 3.](media/getabstract-provisioning-tutorial/scim-generate-token-step-3.png)
 
@@ -79,7 +79,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 3: Add getAbstract from the Microsoft Entra application gallery
 
-Add getAbstract from the Microsoft Entra application gallery to start managing provisioning to getAbstract. If you've previously set up getAbstract for SSO, you can use the same application. We recommend that you create a separate app when you test out the integration initially. To learn more about how to add an application from the gallery, see [this quickstart](~/identity/enterprise-apps/add-application-portal.md).
+Add getAbstract from the Microsoft Entra application gallery to start managing provisioning to getAbstract. If you've previously set up getAbstract for SSO, you can use the same application. We recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery, see [this quickstart](~/identity/enterprise-apps/add-application-portal.md).
 
 ## Step 4: Define who will be in scope for provisioning
 
@@ -162,11 +162,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot that shows the Save button.](common/provisioning-configuration-save.png)
 
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur about every 40 minutes as long as the Microsoft Entra provisioning service is running.
+This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.
 
 ## Step 6: Monitor your deployment
 
-After you've configured provisioning, use the following resources to monitor your deployment:
+Once you've configured provisioning, use the following resources to monitor your deployment:
 
 * Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users were provisioned successfully or unsuccessfully.
 * Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion.

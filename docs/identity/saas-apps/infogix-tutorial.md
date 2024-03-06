@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with Infogix Data3Sixty Govern'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Infogix Data3Sixty Govern.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes

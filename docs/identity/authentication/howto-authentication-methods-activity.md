@@ -2,8 +2,7 @@
 title: Authentication Methods Activity
 description: Overview of the authentication methods that users register to sign in and reset passwords. 
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 09/13/2023
@@ -12,8 +11,6 @@ ms.author: justinha
 author: sopand
 manager: amycolannino
 ms.reviewer: dawoo
-
-ms.collection: M365-identity-device-management
 ---
 # Authentication Methods Activity 
 

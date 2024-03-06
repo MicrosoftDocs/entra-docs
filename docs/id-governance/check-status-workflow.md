@@ -4,12 +4,11 @@ description: This article guides a user on checking the status of a Lifecycle wo
 author: OWinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.topic: how-to 
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
+ms.topic: how-to
 ms.date: 06/22/2023
-ms.subservice: compliance
-ms.custom: template-how-to 
+ms.custom: template-how-to
 ---
 
 
@@ -26,11 +25,11 @@ You're able to retrieve run information of a workflow using Lifecycle Workflows.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **workflows**.
+1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
 
 1. Select the workflow you want to run history of. 
 
-1. On the workflow overview screen, select **Audit logs**.
+1. On the workflow overview screen, select **Workflow history**.
 
 1. On the history page, select the **Runs** button.  
 
@@ -95,8 +94,7 @@ To list task processing results for a user processing result via API using Micro
 > [!NOTE]
 > A workflow must have activity in the past 7 days to get **userProcessingResults ID**. If there has not been any activity in that time-frame, the **userProcessingResults** call will not return a value.
 
-
 ## Next steps
 
 - [Manage workflow versions](manage-workflow-tasks.md)
-- [Delete Lifecycle Workflows](delete-lifecycle-workflow.md)
+- [Download workflow history reports (Preview)](download-workflow-history.md)

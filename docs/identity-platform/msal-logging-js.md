@@ -1,18 +1,16 @@
 ---
 title: Logging errors and exceptions in MSAL.js
 description: Learn how to log errors and exceptions in MSAL.js
-services: active-directory
 author: Dickson-Mwendia
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.workload: identity
-ms.date: 12/21/2021
 ms.author: dmwendia
+ms.custom: devx-track-js
+ms.date: 12/19/2023
 ms.reviewer: saeeda, jmprieur
-ms.custom: aaddev, devx-track-js
+ms.service: identity-platform
+
+ms.topic: conceptual
+#Customer intent: As a developer using MSAL.js, I want to configure logging in my application, so that I can troubleshoot and track down issues effectively.
 ---
 # Logging in MSAL.js
 

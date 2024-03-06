@@ -8,15 +8,14 @@ summary: >
 metadata:
   author: Dickson-Mwendia
   ms.author: dmwendia
-  ms.date: 04/28/2023
-  ms.service: active-directory
-  ms.subservice: develop
+  ms.date: 02/02/2024
+  ms.service: identity-platform  
   ms.topic: landing-page
 
 landingContent:
 
 ## ROW 1 ################################################### ROW 1 ##
-  - title: "Get started fast"
+  - title: "Get started"
     linkLists:
       - linkListType: quickstart
         links:
@@ -28,11 +27,11 @@ landingContent:
     linkLists:
       - linkListType: tutorial
         links:
-          - text: ASP.NET - Register your API
+          - text: ASP.NET Core - Register your API
             url: web-api-tutorial-01-register-app.md
-          - text: ASP.NET - Configure your API
+          - text: ASP.NET Core - Configure your API
             url: web-api-tutorial-02-prepare-api.md
-          - text: ASP.NET - Call your web API
+          - text: ASP.NET Core - Call your web API
             url: web-api-tutorial-03-protect-endpoint.md
         
   - title: "Scenarios in depth"
@@ -43,10 +42,10 @@ landingContent:
             url: howto-call-a-web-api-with-postman.md
           - text: Call a Web API with cURL
             url: howto-call-a-web-api-with-curl.md
-          - text: Protected web API
-            url: scenario-protected-web-api-overview.md
-          - text: Web API that calls other web APIs
-            url: scenario-web-api-call-api-overview.md
+          # - text: Protected web API
+          #   url: scenario-protected-web-api-overview.md
+          # - text: Web API that calls other web APIs
+          #   url: scenario-web-api-call-api-overview.md
 ## ROW 2 ################################################### ROW 2 ##
   # - title: $CARD_TITLE
   #   linkLists:

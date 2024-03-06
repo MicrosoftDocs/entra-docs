@@ -2,8 +2,8 @@
 title: Manage devices in Microsoft Entra ID using the Microsoft Entra admin center
 description: This article describes how to use the Microsoft Entra admin center to manage device identities and monitor related event information.
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
 ms.date: 09/27/2023
@@ -13,7 +13,6 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: myra-ramdenbourg
 
-ms.collection: M365-identity-device-management
 ---
 # Manage device identities using the Microsoft Entra admin center
 
@@ -78,7 +77,8 @@ There are two ways to delete a device:
 
 > [!IMPORTANT]
 > - You must be a Cloud Device Administrator, Intune Administrator, Windows 365 Administrator or Global Administrator in Microsoft Entra ID to delete a device.
-> - Printers and Windows Autopilot devices can't be deleted in Microsoft Entra ID.
+> - Printers can't be deleted in Microsoft Entra ID before they are deleted from Universal Print.
+> - Windows Autopilot devices can't be deleted in Microsoft Entra ID before they are deleted from Intune.
 > - Deleting a device:
 >    - Prevents it from accessing your Microsoft Entra resources.
 >    - Removes all details attached to the device. For example, BitLocker keys for Windows devices.  

@@ -1,17 +1,19 @@
 ---
 title: Use the AD FS application migration (preview) to move AD FS apps to Microsoft Entra ID
 description: Learn how to use the AD FS application migration to migrate AD FS relying party applications from ADFS to Microsoft Entra ID. This guided experience provides one-click configuration for basic SAML URLs, claims mapping, and user assignments to integrate the application with Microsoft Entra ID.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 10/26/2023
 ms.author: jomondi
 ms.reviewer: smriti3
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT admin currently using AD FS to access applications, I want to migrate my AD FS applications to Microsoft Entra ID using the AD FS application migration wizard, so that I can have a unified experience to discover, evaluate, and configure new Microsoft Entra applications.
 ---
 
 # Use AD FS application migration (preview) to move AD FS apps to Microsoft Entra ID
@@ -40,8 +42,8 @@ To use the AD FS application migration:
   - Application Administrator
   - Global Reader (read-only access)
   - Report Reader (read-only access)
-- Microsoft Entra Connect health should be installed on the on-premises environments, alongside Microsoft Entra Connect health AD FS health agents.
-  - [Microsoft Entra Connect Heath](https://www.microsoft.com/download/details.aspx?id=47594)
+- Microsoft Entra Connect should be installed on the on-premises environments, alongside Microsoft Entra Connect health AD FS health agents.
+  - [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594)
   - [Microsoft Entra Connect Heath AD FS agents](https://go.microsoft.com/fwlink/?LinkID=518973)
 
 There are couple reasons why you won't see all the applications that you're expecting after you have installed Microsoft Entra Connect Health agents for AD FS:

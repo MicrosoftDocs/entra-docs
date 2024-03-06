@@ -1,13 +1,13 @@
 ---
 title: "Tutorial: Authenticate users to your WPF desktop application"
 description: Learn how to sign in and sign out user to your WPF desktop app. 
-services: active-directory
+ 
 author: SHERMANOUKO
 manager: mwongerapk
 
 ms.author: shermanouko
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.topic: tutorial
 ms.date: 07/26/2023
@@ -15,9 +15,9 @@ ms.date: 07/26/2023
 
 # Tutorial: Authenticate users to your WPF desktop application
 
-In this tutorial, you build your Windows Presentation Form (WPF) desktop app and sign in and sign out a user using Microsoft Entra ID for customers.
+This tutorial is the final part of a series that demonstrates building a Windows Presentation Form (WPF) desktop app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to build your .NET WPF desktop app and sign in and sign out a user using Microsoft Entra ID for customers.
 
-In this tutorial, you learn how to:
+In this tutorial, you'll:
 
 > [!div class="checklist"]
 >
@@ -26,11 +26,9 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- Registration details for the WPF desktop app you created in the [prepare tenant tutorial](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md). You need the following details:
-  - The Application (client) ID of the WPF desktop app that you registered.
-  - The Directory (tenant) subdomain where you registered your WPF desktop app.
-- [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later.
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor. 
+- [Tutorial: Prepare your customer tenant to sign in user in .NET WPF application](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md).
+- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later.
+- Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 
 ## Create a WPF desktop application
 

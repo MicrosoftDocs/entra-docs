@@ -1,15 +1,15 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with Navan'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Navan.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
-ms.date: 04/03/2023
+ms.date: 01/22/2024
 ms.author: jeedes
 ---
 
@@ -32,8 +32,11 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Navan supports **SP and IDP** initiated SSO.
+* Navan supports both **SP and IDP** initiated SSO.
 * Navan supports **Just In Time** user provisioning.
+
+> [!NOTE]
+> Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
 
 ## Add Navan from the gallery
 
@@ -74,9 +77,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
+1. On the **Basic SAML Configuration** section, the application is preconfigured and the necessary URLs are already prepopulated with Microsoft Entra. The user needs to save the configuration by clicking the **Save** button.
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. If you wish to configure the application in **SP** initiated mode, then perform the following step:
 
     In the **Sign-on URL** text box, type the URL:
     `https://app.tripactions.com`
@@ -85,11 +88,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
-	![The Certificate download link](common/metadataxml.png)
+	![Screenshot shows the Certificate download link.](common/metadataxml.png "Certificate")
 
 1. On the **Set up Navan** section, copy the appropriate URL(s) based on your requirement.
 
-	![Copy configuration URLs](common/copy-configuration-urls.png)
+	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -143,7 +146,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * Click on **Test this application**, and you should be automatically signed in to the Navan for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Navan tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Navan for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you click the Navan tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Navan for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Next steps
 

@@ -7,7 +7,7 @@
       "locale": "en-us",
       "monikers": [],
       "moniker_ranges": [],
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content"
       },
@@ -16,8 +16,13 @@
     }
   ],
   "notification_subscribers": [],
-  "sync_notification_subscribers": [],
+  "sync_notification_subscribers": [
+    "celested@microsoft.com",
+    "rolyon@microsoft.com"
+  ],
   "branches_to_filter": [],
+  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/entra-docs",
+  "git_repository_branch_open_to_public_contributors": "main",
   "need_preview_pull_request": true,
   "dependent_repositories": [
     {
@@ -37,7 +42,7 @@
       "url": "https://github.com/MicrosoftDocs/azure-docs-pr",
       "branch": "main",
       "branch_mapping": {}
-    },    
+    },
     {
       "path_to_root": "microsoft-graph",
       "url": "https://github.com/MicrosoftGraph/microsoft-graph-docs",
@@ -45,7 +50,7 @@
       "branch_mapping": {}
     },
     {
-      "path_to_root": "articles/reusable-content",
+      "path_to_root": "docs/reusable-content",
       "url": "https://github.com/MicrosoftDocs/reusable-content",
       "branch": "main",
       "branch_mapping": {}

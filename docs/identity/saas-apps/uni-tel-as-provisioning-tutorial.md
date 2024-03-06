@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Uni-tel A/S for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Uni-tel A/S.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 37c67e85-fc17-4285-b658-52af669f4046
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 06/02/2023
 ms.author: thwimmer

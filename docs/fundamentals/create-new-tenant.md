@@ -1,16 +1,14 @@
 ---
 title: Quickstart - Access & create new tenant
 description: Instructions about how to find Microsoft Entra ID and how to create a new tenant for your organization.
-services: active-directory
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: quickstart
-ms.date: 06/28/2023
+ms.date: 11/28/2023
 ms.author: barclayn
-ms.custom: it-pro, seodec18, fasttrack-edit, mode-other
+ms.custom: it-pro, fasttrack-edit, mode-other
 ms.collection: M365-identity-device-management
 ---
 # Quickstart: Create a new tenant in Microsoft Entra ID
@@ -36,11 +34,11 @@ After you sign in to the [Azure portal](https://portal.azure.com), you can creat
 
 1. From the Azure portal menu, select **Microsoft Entra ID**.
 
-1. On the overview page, select **Manage tenants**.
+1. Navigate to **Identity** > **Overview** > **Manage tenants**.
  
 1. Select **Create**.
 
-   ![Microsoft Entra ID - Overview page - Create a tenant](media/create-new-tenant/portal.png) 
+   :::image type="content" source="media/create-new-tenant/portal.png" alt-text="Screenshot of Microsoft Entra ID - Overview page - Create a tenant.":::
 
 1. On the Basics tab, select the type of tenant you want to create, either **Microsoft Entra ID** or **Microsoft Entra ID (B2C)**.
 
@@ -48,7 +46,7 @@ After you sign in to the [Azure portal](https://portal.azure.com), you can creat
 
 1. On the Configuration tab, enter the following information:
 
-   ![Microsoft Entra ID - Create a tenant page - configuration tab](media/create-new-tenant/create-new-tenant.png)
+   :::image type="content" source="media/create-new-tenant/create-new-tenant.png" alt-text="Screenshot of Microsoft Entra ID - Create a tenant page - configuration tab.":::
 
    - Type your desired Organization name (for example _Contoso Organization_) into the **Organization name** box.
    - Type your desired Initial domain name (for example _Contosoorg_) into the **Initial domain name** box.
@@ -76,7 +74,7 @@ If you're not going to continue to use this application, you can delete the tena
 
     The tenant and its associated information are deleted.
 
-    ![Overview page, with highlighted Delete directory button](media/create-new-tenant/delete-new-tenant.png)
+   :::image type="content" source="media/create-new-tenant/delete-new-tenant.png" alt-text="Screenshot of Overview page, with highlighted Delete directory button.":::
 
 ## Next steps
 

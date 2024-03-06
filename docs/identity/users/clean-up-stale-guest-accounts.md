@@ -1,18 +1,16 @@
 ---
 title: Monitor and clean up stale guest accounts
-description: Monitor and clean up stale guest accounts using access reviews 
-services: active-directory 
+description: Monitor and clean up stale guest accounts using access reviews
+
 author: billmath
 ms.author: billmath
 manager: amycolannino
 ms.date: 06/29/2023
 ms.reviewer: gasinh
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Monitor and clean up stale guest accounts using access reviews 
@@ -34,7 +32,7 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 ### License requirements
 [!INCLUDE [active-directory-entra-governance-license.md](~/includes/entra-entra-governance-license.md)]
 
-## Monitor guest accounts at scale with inactive guest insights (Preview)
+## Monitor guest accounts at scale with inactive guest insights
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
@@ -47,10 +45,12 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
    - Guest account overview (total guests and inactive guests with further categorization of guests who have never signed in or signed in at least once)
    - Guest inactivity distribution (Percentage distribution of guest users based on days since last sign in)
    - Guest inactivity overview (Guest inactivity guidance to configure inactivity threshold)
-   - Guest accounts summary (A tabular view with details of all guest accounts with insights into their activity state. The Activity state could be active or inactive based on the configured inactivity threshold)
+   - Guest accounts summary (An exportable tabular view with details of all guest accounts with insights into their activity state. The Activity state could be active or inactive based on the configured inactivity threshold)
 
 1. The inactive days are calculated based on last sign in date if the user has signed in atleast once. For users who have never signed in, the inactive days are calculated based on creation date.
 
+> [!NOTE]
+> The report with guest insights can be downloaded using "Download all data". Each action to download may take some time depending on the count of guest users and enables the download for upto 1 Million guest users.
 
 ## Create a multi-stage review for guests to self-attest continued access
 
@@ -82,7 +82,7 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
    |Property | Value |
    |:------------|:-------------|
    | **First stage review** |     |
-   | (Preview) Multi-stage review| Check the box|
+   | Multi-stage review| Check the box|
    |Select reviewers | **Users review their own access**|
    | Stage duration (in days) | Enter the number of days |
    |**Second stage review** |            |

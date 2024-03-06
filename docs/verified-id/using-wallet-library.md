@@ -1,8 +1,8 @@
 ---
 title: Tutorial - Using the Microsoft Entra Wallet Library demo application
 description: In this tutorial, you learn how to build and use the Microsoft Entra Wallet Library demo app on Android and iOS
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 author: barclayn
 manager: amycolannino
 ms.author: barclayn
@@ -14,8 +14,7 @@ ms.date: 06/28/2022
 
 # Using the Microsoft Entra Wallet Library with Verified ID
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 In this tutorial, you learn how a mobile app can use the Microsoft Entra Wallet Library with Verified ID to issue and present verifiable credentials.
 
 ## Prerequisites

@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Autodesk SSO'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Autodesk SSO.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -34,9 +34,8 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * Autodesk SSO supports **SP** initiated SSO.
-
 * Autodesk SSO supports **Just In Time** user provisioning.
-
+* Autodesk SSO supports [Automated user provisioning](autodesk-sso-provisioning-tutorial.md).
 
 ## Adding Autodesk SSO from the gallery
 

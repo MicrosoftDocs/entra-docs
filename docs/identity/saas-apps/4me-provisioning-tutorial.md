@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Configure 4me for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to 4me.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -26,7 +26,7 @@ The objective of this tutorial is to demonstrate the steps to be performed in 4m
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant
-* [A 4me tenant](https://www.4me.com/trial/)
+* [A 4me tenant](https://www.4me.com/)
 * A user account in 4me with Admin permissions.
 
 > [!NOTE]
@@ -148,7 +148,7 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 
 * 4me has different SCIM endpoint URLs for test and production environments. The former ends with **.qa** while the latter ends with **.com**
 * 4me generated Secret Tokens have an expiration date of a month from generation.
-* 4me doesn’t support **DELETE** operations
+* 4me doesn’t support **HARD DELETE** of Users. SCIM users are never really deleted in 4me, instead the **active** attribute of the SCIM user will be set to **false** and the related 4me person record will be disabled.
 
 ## Additional resources
 

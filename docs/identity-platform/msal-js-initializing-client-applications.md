@@ -1,19 +1,16 @@
 ---
 title: Initialize MSAL.js client apps
 description: Learn about initializing client applications using the Microsoft Authentication Library for JavaScript (MSAL.js).
-services: active-directory
 author: OwenRichards1
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.workload: identity
-ms.date: 01/16/2023
 ms.author: owenrichards
+ms.custom: devx-track-js, 
+ms.date: 02/27/2024
 ms.reviewer: saeeda
-ms.custom: aaddev, devx-track-js, engagement-fy23
-# Customer intent: As an application developer, I want to learn about initializing a client application in MSAL.js to enable support for authentication and authorization in a JavaScript single-page application (SPA).
+ms.service: identity-platform
+
+ms.topic: conceptual
+#Customer intent: As an application developer, I want to learn about initializing a client application in MSAL.js to enable support for authentication and authorization in a JavaScript single-page application (SPA).
 ---
 
 # Initialize client applications using MSAL.js
@@ -150,8 +147,6 @@ Multiple instances of `UserAgentApplication` or `PublicClientApplication` aren't
 ## Next steps
 
 The MSAL.js 2.x code sample on GitHub demonstrates instantiation of a [PublicClientApplication][msal-js-publicclientapplication] with a [Configuration][msal-js-configuration] object:
-
-[Azure-Samples/ms-identity-javascript-v2](https://github.com/Azure-Samples/ms-identity-javascript-v2)
 
 <!-- LINKS - External -->
 

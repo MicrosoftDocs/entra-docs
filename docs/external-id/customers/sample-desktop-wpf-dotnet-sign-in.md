@@ -1,14 +1,14 @@
 ---
 title: Sign in users in a sample WPF desktop application 
 description: Learn how to configure a sample WPF desktop to sign in and sign out users.
-services: active-directory
+ 
 author: SHERMANOUKO
 manager: mwongerapk
 
 ms.author: shermanouko
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: ciam
+ms.service: entra-external-id
+ 
+ms.subservice: customers
 ms.topic: sample
 ms.date: 07/26/2023
 ms.custom: developer, devx-track-dotnet

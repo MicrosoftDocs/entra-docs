@@ -1,17 +1,19 @@
 ---
 title: Configure the F5 BIG-IP Easy Button for Header-based and LDAP SSO 
 description: Learn to configure the F5 BIG-IP Access Policy Manager (APM) and Microsoft Entra ID for secure hybrid access to header-based applications that also require session augmentation through Lightweight Directory Access Protocol (LDAP) sourced attributes.
-services: active-directory
+
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 12/14/2022
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT admin, I want to configure F5 BIG-IP Easy Button for header-based and LDAP single sign-on, so that I can secure header and LDAP-based applications using Microsoft Entra ID and improve the overall security posture of the application.
 ---
 
 # Tutorial: Configure F5 BIG-IP Easy Button for header-based and LDAP single sign-on
@@ -115,12 +117,7 @@ Initiate the APM **Guided Configuration** to launch the **Easy Button** template
 
 1. Navigate to **Access > Guided Configuration > Microsoft Integration** and select **Microsoft Entra Application**.
 
-
-    ![Screenshot of the Microsoft Entra Application option on Guided Configuration.](./media/f5-big-ip-easy-button-ldap/easy-button-template.png)
-
 2. Review the list of steps and select **Next**
-
-    ![Screenshot of the Next option.](./media/f5-big-ip-easy-button-ldap/config-steps.png)
 
 3. Follow the steps to publish your application.
 
@@ -175,15 +172,10 @@ This section contains properties to manually configure a new BIG-IP SAML applica
 
 For this scenario, select **F5 BIG-IP APM Azure AD Integration > Add**.
 
-   ![Screenshot of the Add option under Configuration Properties on Azure Configuration.](./media/f5-big-ip-easy-button-ldap/azure-config-add-app.png)
-
 #### Azure Configuration
 
 1. Enter **Display Name** of the app that the BIG-IP creates in your Microsoft Entra tenant, and the icon that users see on [MyApps portal](https://myapplications.microsoft.com/).
 2. Make no entry for **Sign On URL (optional)**.
-
-    ![Screenshot of the Display Name entry under Configuration Properties on Azure Configuration.](./media/f5-big-ip-easy-button-ldap/azure-configuration-properties.png)
-
 3. To locate the certificate you imported, select the **Refresh** icon next to the **Signing Key** and **Signing Certificate**.
 4. Enter the certificate password in **Signing Key Passphrase**.
 5. Enable **Signing Option** (optional) to ensure BIG-IP accepts tokens and claims signed by Microsoft Entra ID.

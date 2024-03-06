@@ -4,9 +4,8 @@ description: This article guides a user on Workflow task definitions and task pa
 author: OWinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: compliance
-ms.workload: identity
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: conceptual
 ms.date: 01/26/2023
 ---
@@ -308,7 +307,7 @@ Example of usage within the workflow:
 
 ### Request user access package assignment
 
-Allows you to request an access package assignment for users. For more information on access packages, see [What are access packages and what resources can I manage with them?](entitlement-management-overview.md#what-are-access-packages-and-what-resources-can-i-manage-with-them).
+Allows you to request an access package assignment for users. If an approval process is configured for the access package and should take place, you must opt-into the `Enforce policy approval setting for admin direct assignments` Entitlement Management setting. For more information on access packages, see [What are access packages and what resources can I manage with them?](entitlement-management-overview.md#what-are-access-packages-and-what-resources-can-i-manage-with-them).
 
 You're able to customize the task name and task description for this task. You must also select the access package and policy that is being requested for the user.
 :::image type="content" source="media/lifecycle-workflow-task/request-user-access-package-assignment-task.png" alt-text="Screenshot of the request user access package assignment task.":::
@@ -349,7 +348,7 @@ Example of usage within the workflow:
 ### Add user to groups
 
 
-Allows users to be added to Microsoft 365 and cloud-only security groups. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Connect group writeback](~/identity/hybrid/connect/how-to-connect-group-writeback-v2.md). 
+Allows users to be added to Microsoft 365 and cloud-only security groups. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises AD group-based applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) and [using group writeback with entitlement management](entitlement-management-group-writeback.md). 
 
 
 You're able to customize the task name and description for this task.
@@ -528,7 +527,7 @@ For Microsoft Graph, the parameters for the **Disable user account** task are as
 
 ### Remove user from selected groups
 
-Allows users to be removed from Microsoft 365 and cloud-only security groups. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Connect group writeback](~/identity/hybrid/connect/how-to-connect-group-writeback-v2.md). 
+Allows users to be removed from Microsoft 365 and cloud-only security groups. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises AD group-based applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) and [using group writeback with entitlement management](entitlement-management-group-writeback.md). 
 
 
 You're able to customize the task name and description for this task in the Microsoft Entra admin center.
@@ -568,7 +567,7 @@ For Microsoft Graph, the parameters for the **Remove user from selected groups**
 
 ### Remove users from all groups
 
-Allows users to be removed from every Microsoft 365 and cloud-only security group they're a member of. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Connect group writeback](~/identity/hybrid/connect/how-to-connect-group-writeback-v2.md).
+Allows users to be removed from every Microsoft 365 and cloud-only security group they're a member of. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises AD-group-based applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
 
 
 

@@ -5,9 +5,9 @@ description: Learn how to start a presentation request in Verifiable Credentials
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: reference
-ms.subservice: verifiable-credentials
+
 ms.date: 07/28/2022
 ms.author: barclayn
 
@@ -16,8 +16,7 @@ ms.author: barclayn
 
 # Request Service REST API presentation specification
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 Microsoft Entra Verified ID includes the Request Service REST API. This API allows you to issue and verify a credential. This article specifies the Request Service REST API for a presentation request. The presentation request asks the user to present a verifiable credential, and then verify the credential.
 Another article describes [how to call the Request Service REST API](get-started-request-api.md).
 
@@ -52,7 +51,7 @@ Authorization: Bearer  <token>
 {
     "includeQRCode": true,
     "callback": {
-      "url": "https://www.contoso.com/api/verifier/presentationCallback",
+      "url": "https://contoso.com/api/verifier/presentationCallback",
       "state": "11111111-2222-2222-2222-333333333333",
       "headers": {
         "api-key": "an-api-key-can-go-here"
@@ -76,12 +75,12 @@ The presentation request payload contains information about your verifiable cred
 {
   "includeQRCode": true,
   "includeReceipt": true,
-  "authority": "did:ion:EiCLL8lzCqlGLYTGbjwgR6SN6OABCO6uUKyF5zM7fQZ8Jg:eyJ...<SNIP>...",
+  "authority": "did:web:verifiedid.contoso.com",
   "registration": {
     "clientName": "Veritable Credential Expert Verifier"
   },
   "callback": {
-    "url": "https://www.contoso.com/api/verifier/presentationCallback",
+    "url": "https://contoso.com/api/verifier/presentationCallback",
     "state": "92d076dd-450a-4247-aa5b-d2e75a1a5d58",
     "headers": {
       "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
@@ -92,7 +91,7 @@ The presentation request payload contains information about your verifiable cred
       "type": "VerifiedCredentialExpert",
       "purpose": "So we can see that you a veritable credentials expert",
       "acceptedIssuers": [
-        "did:ion:EiCLL8lzCqlGLYTGbjwgR6SN6OABCO6uUKyF5zM7fQZ8Jg:eyJ...<SNIP>..."
+        "did:web:verifiedid.contoso.com"
       ],
       "configuration": {
         "validation": {
@@ -152,6 +151,7 @@ The `RequestCredential` provides information about the requested credentials the
 | `purpose`| string | Optional. Provide information about the purpose of requesting this verifiable credential. This is not used by the Authenticator app. |
 | `acceptedIssuers`| string collection | Optional. A collection of issuers' DIDs that could issue the type of verifiable credential that subjects can present. To get your issuer DID, see [Gather credentials and environment details to set up your sample application](verifiable-credentials-configure-issuer.md), and copy the value of the **Decentralized identifier (DID)**. If the `acceptedIssuers` collection is empty or not present, then the presentation request will accept a credential type issued by any issuer. |
 | `configuration.validation` | [Configuration.Validation](#configurationvalidation-type) | Optional settings for presentation validation.|
+| `constraints` | [Constraints](#constraints-type) | Optional. Collection of claims constraints.|
 
 ### Configuration.Validation type
 
@@ -161,6 +161,27 @@ The `Configuration.Validation` provides information about how the presented cred
 |---------|---------|---------|
 | `allowRevoked` |  Boolean | Optional. Determines if a revoked credential should be accepted. Default is `false` (it shouldn't be accepted). |
 | `validateLinkedDomain` |  Boolean | Optional. Determines if the linked domain should be validated. Default is `false`. Setting this flag to `false` means you as a Relying Party application accept credentials from an unverified linked domain. Setting this flag to `true` means the linked domain will be validated and only verified domains will be accepted. |
+| `faceCheck` |  [faceCheck](#facecheck-type) | Optional. Allows requesting a liveness check during presentation. |
+
+### Constraints type
+
+The `constraints` type contains a collection of claims constraints that must be met when a wallet selects the candidate credentials. This enables requesting a credential with specific claim value. Constraints specified will use the AND logic, ie if you specify three constraints, all of them have to be met. For each constraint in the collection, you must select one operand of values, contains or startsWith. Values cannot be regular expressions. All comparisons are case-insensitive.
+
+|Property |Type |Description |
+|---------|---------|---------|
+| `claimName` |  string | Mandatory. Name of the claim for the constraint. This is the claim name in the verifiable credential. See [outputClaim](rules-and-display-definitions-model.md#claimmapping-type) in claimMapping type. |
+| `values` |  string collection | Set of values that should match the claim value. If you specify multiple values, like ["red", "green", "blue"] it is a match if the claim value in the credential has any of the values in the collection.|
+| `contains` | string |	The constraint evaluates to true if the claim value contains the specified value.|
+| `startsWith` | string |	The constraint evaluates to true if the claim value starts with the specified value.|
+
+### faceCheck type
+
+The faceCheck type contains information for performing liveness check during presentation of a credential. The credential requested must contain a photo of the holder in the claim named by the sourcePhotoClaimName. The presentation will succeed if the liveness check reaches a confidence level equal or greater to what is specified in the property matchConfidenceThreshold. If the threshold is not met, the entire presentation will fail.
+
+|Property |Type |Description |
+|---------|---------|---------|
+| `sourcePhotoClaimName` |  string | Mandatory. The name of the claim in the credential that contains the photo. See [outputClaim](rules-and-display-definitions-model.md#claimmapping-type) in claimMapping type. |
+| `matchConfidenceThreshold` |  integer | Optional. The confidential threshold for a successful check between the photo and the liveness data. Must be an integer between 50 and 100. The default is 70. |
 
 ## Successful response
 
@@ -197,7 +218,7 @@ The callback endpoint is called when a user scans the QR code, uses the deep lin
 |Property |Type |Description |
 |---------|---------|---------|
 | `requestId`| string | Mapped to the original request when the payload was posted to the Verifiable Credentials service.|
-| `requestStatus` |string |The status returned when the request was retrieved by the authenticator app. Possible values: <ul><li>`request_retrieved`: The user scanned the QR code or selected the link that starts the presentation flow.</li><li>`presentation_verified`: The verifiable credential validation completed successfully.</li></ul>    |
+| `requestStatus` |string |The status returned when the request was retrieved by the authenticator app. Possible values: <ul><li>`request_retrieved`: The user scanned the QR code or selected the link that starts the presentation flow.</li><li>`presentation_verified`: The verifiable credential validation completed successfully.</li>li>`presentation_error`: There was an error in the presentation.</li></ul>    |
 | `state` |string| Returns the state value that you passed in the original payload.   |
 | `subject`|string | The verifiable credential user DID.|
 | `verifiedCredentialsData`| array |Returns an array of verifiable credentials requested. For each verifiable credential, it provides: </li><li>The verifiable credential type(s).</li><li>The issuer's DID</li><li>The claims retrieved.</li><li>The verifiable credential issuer's domain. </li><li>The verifiable credential issuer's domain validation status. </li></ul> |
@@ -220,10 +241,10 @@ The following example demonstrates a callback payload after the verifiable crede
   "requestId": "e4ef27ca-eb8c-4b63-823b-3b95140eac11",
   "requestStatus": "presentation_verified",
   "state": "92d076dd-450a-4247-aa5b-d2e75a1a5d58",
-  "subject": "did:ion:EiAlrenrtD3Lsw0GlbzS1O2YFdy3Xtu8yo35W<SNIP>…",
+  "subject": "did:web:verifiedid.contoso.com",
   "verifiedCredentialsData": [
     {
-      "issuer": "did:ion:issuer",
+      "issuer": "did:web:issuer...",
       "type": [
         "VerifiableCredential",
         "VerifiedCredentialExpert"

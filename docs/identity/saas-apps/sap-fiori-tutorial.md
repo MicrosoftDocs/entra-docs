@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with SAP Fiori'
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAP Fiori.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
-ms.custom: has-azure-ad-ps-ref
+ms.service: entra-id
+ms.subservice: saas-apps
+
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -149,14 +149,19 @@ Follow these steps to enable Microsoft Entra SSO.
 
     1. When the metadata file is successfully uploaded, the **Identifier** and **Reply URL** values are automatically populated in the **Basic SAML Configuration** pane. In the **Sign on URL** box, enter a URL that has the following pattern: `https://<your company instance of SAP Fiori>`.
 
-        > [!NOTE]
-        > A few customers report errors related to incorrectly configured **Reply URL** values. If you see this error, you can use the following PowerShell script to set the correct Reply URL for your instance:
-        >
-        > ```powershell
-        > Set-AzureADServicePrincipal -ObjectId $ServicePrincipalObjectId -ReplyUrls "<Your Correct Reply URL(s)>"
-        > ```
-        >
-        > You can set the `ServicePrincipal` object ID yourself before running the script, or you can pass it here.
+       > [!NOTE]
+       > Some customers have encountered an error of an incorrect Reply URL configured for their instance. If you receive any such error, use these PowerShell commands. First update the Reply URLs in the application object with the Reply URL, then update the service principal. Use the [Get-MgServicePrincipal](/powershell/module/microsoft.graph.applications/get-mgserviceprincipal) to get the Service Principal ID value.
+       >
+       > ```powershell
+       > $params = @{
+       >    web = @{
+       >       redirectUris = "<Your Correct Reply URL>"
+       >    }
+       > }
+       > Update-MgApplication -ApplicationId "<Application ID>" -BodyParameter $params
+       > Update-MgServicePrincipal -ServicePrincipalId "<Service Principal ID>" -ReplyUrls "<Your Correct Reply URL>"
+       > ```
+       >
 
 1. The SAP Fiori application expects the SAML assertions to be in a specific format. Configure the following claims for this application. To manage these attribute values, in the **Set up Single Sign-On with SAML** pane, select **Edit**.
 

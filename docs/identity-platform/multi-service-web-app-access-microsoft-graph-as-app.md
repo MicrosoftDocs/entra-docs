@@ -1,23 +1,21 @@
 ---
 title: Tutorial - Web app accesses Microsoft Graph as the app
-description: In this tutorial, you learn how to access data in Microsoft Graph by using managed identities.
-services: microsoft-graph, app-service-web
+description: In this tutorial, you learn how to access data in Microsoft Graph from a web app running in Azure App Service using managed identities.
 author: rwike77
 manager: CelesteDG
-
-ms.service: app-service
-ms.topic: tutorial
-ms.workload: identity
-ms.date: 04/05/2023
 ms.author: ryanwi
-ms.reviewer: stsoneff
-ms.devlang: csharp, javascript
 ms.custom: azureday1
+ms.date: 02/17/2024
+ms.devlang: csharp
+ms.reviewer: stsoneff
+ms.service: app-service
 ms.subservice: web-apps
+ms.topic: tutorial
+services: microsoft-graph, app-service-web
 #Customer intent: As an application developer, I want to learn how to access data in Microsoft Graph by using managed identities.
 ---
 
-# Tutorial: Access Microsoft Graph from a secured app as the app
+# Access Microsoft Graph from a secured app as the app
 
 Learn how to access Microsoft Graph from a web app running on Azure App Service.
 
@@ -134,9 +132,9 @@ To see this code as part of a sample application, see the [sample on GitHub](htt
 
 ### Install the Microsoft.Identity.Web.GraphServiceClient client library package
 
-Install the [Microsoft.Identity.Web.GraphServiceClient NuGet package](https://www.nuget.org/packages/Microsoft.Identity.Web.GraphServiceClient) in your project by using the .NET Core command-line interface or the Package Manager Console in Visual Studio.
+Install the [Microsoft.Graph](https://www.nuget.org/packages/Microsoft.Graph/) and [Microsoft.Identity.Web.GraphServiceClient NuGet](https://www.nuget.org/packages/Microsoft.Identity.Web.GraphServiceClient) packages in your project by using the .NET command-line interface (CLI) or the Package Manager Console in Visual Studio.
 
-#### .NET Core command-line
+#### .NET CLI
 
 Open a command line, and switch to the directory that contains your project file.
 
@@ -189,6 +187,7 @@ public async Task OnGetAsync()
     List<MSGraphUser> msGraphUsers = new List<MSGraphUser>();
     try
     {
+        //var users = await graphServiceClient.Users.Request().GetAsync();
         var users = await graphServiceClient.Users.GetAsync();
         foreach (var u in users.Value)
         {

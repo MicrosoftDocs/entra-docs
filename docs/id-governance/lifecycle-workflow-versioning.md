@@ -4,10 +4,9 @@ description: An article discussing Lifecycle workflow versioning and history
 author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: compliance
-ms.workload: identity
-ms.topic: conceptual 
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
+ms.topic: conceptual
 ms.date: 05/31/2023
 ms.custom: template-concept
 ---
@@ -87,4 +86,3 @@ Detailed **Version information** are as follows:
 - [workflowVersion resource type](/graph/api/resources/identitygovernance-workflowversion?view=graph-rest-beta&preserve-view=true)
 - [Manage workflow Properties](manage-workflow-properties.md)
 - [Manage workflow versions](manage-workflow-tasks.md)
-

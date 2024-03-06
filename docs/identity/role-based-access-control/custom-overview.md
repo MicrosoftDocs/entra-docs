@@ -1,19 +1,18 @@
 ---
 title: Overview of Microsoft Entra role-based access control (RBAC)
 description: Learn how to understand the parts of a role assignment and restricted scope in Microsoft Entra ID.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: overview
 ms.date: 04/10/2023
 ms.author: rolyon
 ms.reviewer: abhijeetsinha
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
-ms.collection: M365-identity-device-management
+
 ---
 
 # Overview of role-based access control in Microsoft Entra ID
@@ -60,7 +59,7 @@ A role assignment is a Microsoft Entra resource that attaches a *role definition
 - Role definition - A collection of permissions. 
 - Scope - A way to constrain where those permissions are applicable.
 
-You can [create role assignments](manage-roles-portal.md) and [list the role assignments](view-assignments.md) using the Microsoft Entra admin center, Azure AD PowerShell, or Microsoft Graph API. Azure CLI is not supported for Microsoft Entra role assignments.
+You can [create role assignments](manage-roles-portal.md) and [list the role assignments](view-assignments.md) using the Microsoft Entra admin center, [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview), or Microsoft Graph API. Azure CLI is not supported for Microsoft Entra role assignments.
 
 The following diagram shows an example of a role assignment. In this example, Chris has been assigned the App Registration Administrator custom role at the scope of the Contoso Widget Builder app registration. The assignment grants Chris the permissions of the App Registration Administrator role for only this specific app registration.
 

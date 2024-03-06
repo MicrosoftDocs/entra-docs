@@ -1,18 +1,19 @@
 ---
 title: One-click, single sign-on (SSO) configuration of your Azure Marketplace application
 description: Steps for one-click configuration of  SSO for your application from the Azure Marketplace.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.topic: conceptual
-ms.date: 06/11/2019
+ms.date: 02/26/2024
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
+
+#customer intent: As an administrator, I want to configure single sign-on for SAML-supporting Microsoft Entra applications with minimal manual effort, so that I can quickly set up SSO and improve efficiency and accuracy in SSO configuration.
 ---
 
 # One-click app configuration of single sign-on
@@ -62,7 +63,7 @@ The one-click SSO feature is designed to configure single sign-on for Azure Mark
    > [!NOTE]
    > If SSO configuration for your application requires additional steps, following the prompts to perform the steps.
 
-8. After the configuration has finished, select **OK** to save the changes.
+8. After the configuration is completed, select **OK** to save the changes.
 
    ![Save the auto-populated data](./media/one-click-sso-tutorial/save-data.png)
 

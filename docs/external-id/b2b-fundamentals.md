@@ -2,9 +2,8 @@
 title: Microsoft Entra B2B best practices and recommendations
 description: Learn best practices and recommendations for business-to-business (B2B) guest user access in Microsoft Entra ID.
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: B2B
+ 
+ms.service: entra-external-id
 ms.topic: conceptual
 ms.date: 05/17/2023
 ms.author: cmulligan
@@ -12,6 +11,9 @@ author: csmulligan
 manager: celestedg
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
+
+# Customer intent: As an IT admin managing external collaboration in Microsoft Entra, I want to follow best practices and recommendations for securing collaboration with external partners, so that I can ensure a secure and efficient B2B collaboration experience.
+
 ---
 
 # Microsoft Entra B2B best practices

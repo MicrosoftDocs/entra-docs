@@ -3,13 +3,14 @@ title: Microsoft identity platform and OAuth 2.0 authorization code flow
 description: Protocol reference for the Microsoft identity platform's implementation of the OAuth 2.0 authorization code grant 
 author: OwenRichards1
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.date: 04/17/2023
 ms.author: owenrichards
+ms.custom:
+ms.date: 04/17/2023
 ms.reviewer: ludwignick
-ms.custom: aaddev, identityplatformtop40
+ms.service: identity-platform
+
+ms.topic: conceptual
+#Customer intent: As a developer building a web application, I want to implement the OAuth 2.0 authorization code flow with PKCE and OpenID Connect, so that I can obtain authorized access to protected resources like web APIs and authenticate users in my application.
 ---
 
 # Microsoft identity platform and OAuth 2.0 authorization code flow
@@ -22,7 +23,7 @@ This article describes low-level protocol details required only when manually cr
 
 Use the auth code flow paired with Proof Key for Code Exchange (PKCE) and OpenID Connect (OIDC) to get access tokens and ID tokens in these types of apps:
 
-- [Single-page web application (SPA)](v2-app-types.md#single-page-apps-javascript)
+- [Single-page web application (SPA)](v2-app-types.md#single-page-apps)
 - [Standard (server-based) web application](v2-app-types.md#web-apps)
 - [Desktop and mobile apps](v2-app-types.md#mobile-and-native-apps)
 
@@ -59,7 +60,7 @@ Applications can't use a `spa` redirect URI with non-SPA flows, for example, nat
 
 The authorization code flow begins with the client directing the user to the `/authorize` endpoint. In this request, the client requests the `openid`, `offline_access`, and `https://graph.microsoft.com/mail.read` permissions from the user.
 
-Some permissions are admin-restricted, for example, writing data to an organization's directory by using `Directory.ReadWrite.All`. If your application requests access to one of these permissions from an organizational user, the user receives an error message that says they're not authorized to consent to your app's permissions. To request access to admin-restricted scopes, you should request them directly from a Global Administrator. For more information, see [Admin-restricted permissions](./permissions-consent-overview.md#admin-restricted-permissions).
+Some permissions are admin-restricted, for example, writing data to an organization's directory by using `Directory.ReadWrite.All`. If your application requests access to one of these permissions from an organizational user, the user receives an error message that says they're not authorized to consent to your app's permissions. To request access to admin-restricted scopes, you should request them directly from a Global Administrator. For more information, see [Admin-restricted permissions](./scopes-oidc.md#admin-restricted-permissions).
 
 Unless specified otherwise, there are no default values for optional parameters. There is, however, default behavior for a request omitting optional parameters. The default behavior is to either sign in the sole current user, show the account picker if there are multiple users, or show the login page if there are no users signed in. 
 
@@ -67,7 +68,7 @@ Unless specified otherwise, there are no default values for optional parameters.
 // Line breaks for legibility only
 
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &response_type=code
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &response_mode=query
@@ -156,7 +157,7 @@ The hybrid flow is the same as the authorization code flow described earlier but
 // Line breaks for legibility only
 
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &response_type=code%20id_token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &response_mode=fragment
@@ -210,13 +211,13 @@ POST /{tenant}/oauth2/v2.0/token HTTP/1.1
 Host: https://login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+client_id=204196ef-b7fd-461f-89b7-f778e1568c41
 &scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
 &code=OAAABAAAAiL9Kn2Z27UubvWFPbm0gLWQJVzCTE9UkP3pSx1aXxUjq3n8b2JRLk4OxVXr...
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &grant_type=authorization_code
 &code_verifier=ThisIsntRandomButItNeedsToBe43CharactersLong 
-&client_secret=JqQX2PNo9bpM0uEihUPzyrh    // NOTE: Only required for web apps. This secret needs to be URL-Encoded.
+&client_secret=sampleCredentia1s    // NOTE: Only required for web apps. This secret needs to be URL-Encoded.
 ```
 
 | Parameter  | Required/optional | Description     |
@@ -237,7 +238,7 @@ POST /{tenant}/oauth2/v2.0/token HTTP/1.1               // Line breaks for clari
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
 &code=OAAABAAAAiL9Kn2Z27UubvWFPbm0gLWQJVzCTE9UkP3pSx1aXxUjq3n8b2JRLk4OxVXr...
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
@@ -318,7 +319,7 @@ This example is an Error response:
 | `invalid_request`  | Protocol error, such as a missing required parameter. | Fix the request or app registration and resubmit the request.   |
 | `invalid_grant`    | The authorization code or PKCE code verifier is invalid or has expired. | Try a new request to the `/authorize` endpoint and verify that the `code_verifier` parameter was correct.  |
 | `unauthorized_client` | The authenticated client isn't authorized to use this authorization grant type. | This error usually occurs when the client application isn't registered in Microsoft Entra ID or isn't added to the user's Microsoft Entra tenant. The application can prompt the user with instruction for installing the application and adding it to Microsoft Entra ID. |
-| `invalid_client` | Client authentication failed.  | The client credentials aren't valid. To fix, the application administrator updates the credentials.   |
+| `invalid_client` | Client authentication failed.  | The client credentials aren't valid. To fix, the Application Administrator updates the credentials.   |
 | `unsupported_grant_type` | The authorization server doesn't support the authorization grant type. | Change the grant type in the request. This type of error should occur only during development and be detected during initial testing. |
 | `invalid_resource` | The target resource is invalid because it doesn't exist, Microsoft Entra ID can't find it, or it's not correctly configured. | This code indicates the resource, if it exists, hasn't been configured in the tenant. The application can prompt the user with instruction for installing the application and adding it to Microsoft Entra ID.  |
 | `interaction_required` | Non-standard, as the OIDC specification calls for this code only on the `/authorize` endpoint. The request requires user interaction. For example, another authentication step is required. | Retry the `/authorize` request with the same scopes. |

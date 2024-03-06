@@ -1,15 +1,15 @@
 ---
 title: Customize the browser language for authentication
 description: Learn about how to customize the browser language of your app's authentication experience.
-services: active-directory
+ 
 author: csmulligan
 ms.author: cmulligan
 manager: celestedg
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: ciam
+ms.service: entra-external-id
+ 
+ms.subservice: customers
 ms.topic: how-to
-ms.date: 09/25/2023
+ms.date: 01/07/2024
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about how to add customized browser languages to my app's authentication experience.
@@ -24,6 +24,11 @@ You can create a personalized sign-in experience for users who sign in using a s
 - [Register an application](how-to-register-ciam-app.md).  
 - [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 - Review the file size requirements for each image you want to add. You may need to use a photo editor to create the right-sized images. The preferred image type for all images is PNG, but JPG is accepted.
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=Language)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Language customization” use case.
 
 ## Add browser language under Company branding
 

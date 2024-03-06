@@ -1,17 +1,19 @@
 ---
 title: Manage consent to applications and evaluate consent requests
 description: Learn how to manage consent requests when user consent is restricted, and how to evaluate a request for tenant-wide admin consent to an application in Microsoft Entra ID.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: enterprise-apps
+
 ms.topic: conceptual
 ms.date: 06/14/2023
 ms.author: jomondi
 ms.reviewer: phsignor
 ms.custom: enterprise-apps
+
+#customer intent: As an administrator, I want to manage consent to applications and evaluate consent requests, so that I can ensure that only apps from verified publishers and selected permissions are allowed. This helps to minimize security risks and prevent the use of unmanaged accounts in third-party applications.
 ---
 
 # Manage consent to applications and evaluate consent requests
@@ -68,7 +70,7 @@ When you're evaluating a request to grant admin consent, here are some recommend
 
 - Understand the [permissions and consent framework](~/identity-platform/permissions-consent-overview.md) in the Microsoft identity platform.
 
-- Understand the difference between [delegated permissions and application permissions](~/identity-platform/permissions-consent-overview.md#permission-types).
+- Understand the difference between [delegated permissions and application permissions](~/identity-platform/permissions-consent-overview.md#types-of-permissions).
 
    Application permissions allow the application to access the data for the entire organization, without any user interaction. Delegated permissions allow the application to act on behalf of a user who was signed into the application at some point.
 

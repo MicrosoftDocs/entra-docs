@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure introDus Pre and Onboarding Platform for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to introDus Pre and Onboarding Platform.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 829376bb-41d8-42da-89ee-853f5630121b
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer

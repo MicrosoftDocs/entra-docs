@@ -1,18 +1,16 @@
 ---
 title: Microsoft Entra Workload ID license plans FAQ
 
-description: Learn about Microsoft Entra Workload ID license plans, features and capabilities. 
+description: Learn about Microsoft Entra Workload ID license plans, features and capabilities.
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: workload-identities
-ms.workload: identity
-ms.topic: conceptual
+ms.service: entra-workload-id
+
+ms.topic: faq
 ms.date: 10/03/2023
 ms.author: gasinh
-ms.reviewer: 
-ms.custom: aaddev 
-#Customer intent: I want to know about Microsoft Entra Workload ID licensing plans 
+ms.custom: aaddev
+#Customer intent: I want to know about Microsoft Entra Workload ID licensing plans
 ---
 
 # Frequently asked questions about Microsoft Entra Workload ID license plans
@@ -100,7 +98,7 @@ applications for connecting resources that support Microsoft Entra authenticatio
 All workload identities - service principles, apps and managed identities, configured in your directory for a Microsoft Entra Workload ID Premium feature require a license. Customers don’t need to license all the workload identities. You can find the right number of Workload ID licenses with the following guidance:
 
 1. Customer needs to license enterprise applications or service principals ONLY if they set up Conditional Access policies or use Identity Protection for them.
-2. Customers don't need to license applications at all, even if they're using Conditional Access policies.
+2. Customers don't need to license Microsoft applications at all, even if they're using Conditional Access policies.
 3. Customers need to license managed identities, only when they set up access reviews for managed identities.
 You can find the number of each workload identity type (enterprise apps/service principals, apps, managed identities) on the product landing page at the [Microsoft Entra admin center](https://entra.microsoft.com).
 

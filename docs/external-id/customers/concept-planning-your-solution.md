@@ -1,14 +1,14 @@
 ---
 title: Plan CIAM deployment
 description: Learn how to plan your CIAM deployment.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: ciam
+ms.service: entra-external-id
+ 
+ms.subservice: customers
 ms.topic: conceptual
-ms.date: 05/31/2023
+ms.date: 11/27/2023
 ms.author: mimart
 ms.custom: it-pro
 
@@ -99,6 +99,8 @@ When planning your sign-up and sign-in experience, determine your requirements:
 - **Company branding and language customizations**. Although we describe configuring company branding and language customizations later in Step 4, you can configure them anytime, either before or after you integrate an app with a user flow. If you configure company branding before you create the user flow, the sign-in pages reflect that branding. Otherwise, the sign-in pages reflect the default, neutral branding.
 
 - **Attributes to collect**. In the user flow settings, you can select from a set of built-in user attributes you want to collect from customers. The customer enters the information on the sign-up page, and it's stored with their profile in your directory. If you want to collect more information, you can [define custom attributes](how-to-define-custom-attributes.md) and add them to your user flow.
+
+- **Terms and conditions consent**. You can use custom user attributes to prompt users to accept your terms and conditions. For example, you can add checkboxes to your sign-up form and include links to your terms of use and privacy policies.
 
 - **Requirements for token claims**. If your application requires specific user attributes, you can include them in the token sent to your application.
 

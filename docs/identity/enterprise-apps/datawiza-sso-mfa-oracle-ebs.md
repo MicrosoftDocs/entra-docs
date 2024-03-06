@@ -1,17 +1,17 @@
 ---
 title: Configure Datawiza for Microsoft Entra multifactor authentication and single sign-on to Oracle EBS
 description: Learn how to enable Microsoft Entra multifactor authentication and SSO for an Oracle E-Business Suite application via Datawiza.
-services: active-directory
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
-ms.workload: identity
-ms.date: 01/26/2023
+ms.date: 01/31/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
+
+#customer intent: I'm an IT administrator responsible for securing access to Oracle EBS. I want to configure Microsoft Entra multifactor authentication (MFA) and single sign-on (SSO) with Datawiza. My goal is to provide secure and seamless access for device users and to apps from any location.
 ---
 
 # Configure Datawiza for Microsoft Entra multifactor authentication and single sign-on to Oracle EBS
@@ -108,19 +108,19 @@ In the Oracle EBS Linux environment, generate a new DBC file for DAP. You need t
 1. For **EBS DBC Content**, use the content that you copied.
 1. Select **Next**.
 
-[![Screenshot of entries and selections for adding an application.](./media/datawiza-sso-mfa-oracle-ebs/add-application.png)](./media/datawiza-sso-mfa-oracle-ebs/add-application.png#lightbox)
+   [![Screenshot of entries and selections for adding an application.](./media/datawiza-sso-mfa-oracle-ebs/add-application.png)](./media/datawiza-sso-mfa-oracle-ebs/add-application.png#lightbox)
 
 ### IdP configuration
 
 Use the DCMC one-click integration to help you complete Microsoft Entra configuration. With this feature, you can reduce management costs and the likelihood of configuration errors.
 
-[![Screenshot of entries and selections for configuring IdP.](./media/datawiza-sso-mfa-oracle-ebs/configure-idp.png)](./media/datawiza-sso-mfa-oracle-ebs/configure-idp.png#lightbox)
+   [![Screenshot of entries and selections for configuring IdP.](./media/datawiza-sso-mfa-oracle-ebs/configure-idp.png)](./media/datawiza-sso-mfa-oracle-ebs/configure-idp.png#lightbox)
 
 ### Docker Compose file
 
 Configuration on the management console is complete. You're prompted to deploy DAP with your application. Make a note of the deployment Docker Compose file. The file includes the DAP image, `PROVISIONING_KEY`, and `PROVISIONING_SECRET`. DAP uses this information to pull the latest configuration and policies from DCMC.
 
-![Screenshot of Docker information.](./media/datawiza-sso-mfa-oracle-ebs/docker-information.png)
+   ![Screenshot of Docker information.](./media/datawiza-sso-mfa-oracle-ebs/docker-information.png)
 
 ### SSL configuration
 

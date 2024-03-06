@@ -1,17 +1,16 @@
 ---
 title: Microsoft identity platform videos
 description: A list of videos about modern authentication and the Microsoft identity platform
-services: active-directory
 author: OwenRichards1
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.workload: identity
-ms.date: 01/06/2023
 ms.author: owenrichards
-ms.custom: aaddev, has-adal-ref
+ms.custom: has-adal-ref
+ms.date: 01/06/2023
 ms.reviewer: celested
+ms.service: identity-platform
+
+ms.topic: conceptual
+#Customer intent: As a developer, I want to learn about the Microsoft identity platform and its key components and capabilities, so that I can implement secure authentication in my applications using the Microsoft Authentication Libraries (MSAL).
 ---
 
 # Microsoft identity platform videos

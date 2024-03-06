@@ -1,18 +1,16 @@
 ---
 title: Authorization basics
 description: Learn about the basics of authorization in the Microsoft identity platform.
-services: active-directory
 author: OwenRichards1
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-ms.workload: identity 
-ms.date: 01/06/2023
-ms.custom: template-concept
 ms.author: owenrichards
-ms.reviewer: johngarland, mamarxen, ianbe
-#Customer intent: As an application developer, I want to understand the basic concepts of authorization in the Microsoft identity platform.
+ms.custom: template-concept
+ms.date: 01/06/2023
+ms.reviewer:
+ms.service: identity-platform
+
+ms.topic: conceptual
+#Customer intent: As a developer or application architect, I want to understand the different approaches to authorization, so that I can choose the most appropriate method for implementing access control in my application.
 ---
 
 # Authorization basics

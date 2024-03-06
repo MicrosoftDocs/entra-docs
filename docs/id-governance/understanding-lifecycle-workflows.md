@@ -1,16 +1,13 @@
 ---
 title: 'Understanding lifecycle workflows'
 description: Describes an overview of Lifecycle workflows and the various parts.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.topic: overview
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
+ms.topic: conceptual
 ms.date: 06/22/2023
-ms.subservice: compliance
 ms.author: owinfrey
-ms.collection: M365-identity-device-management
 ---
 # Understanding lifecycle workflows 
 
@@ -35,19 +32,7 @@ For delegated scenarios, the admin needs one of the following [Microsoft Entra r
 
 ## Limits
 
-
-|Category  |Limit  |
-|---------|---------|
-|Number of Workflows     |   50 per tenant      |
-|Number of Tasks     |  25 per workflow       |
-|Number of Custom Task Extensions     |  100 per tenant       |
-|offsetInDays range of triggerAndScopeBasedConditions executionConditions     |  180 days       |
-|Workflow schedule interval in hours     |   1-24 hours      |
-|Number of users per on-demand selection	     |  10       |
-|durationBeforeTimeout range of custom task extensions     |   5 minutes-3 hours      |
-
-> [!NOTE]
-> If creating, or updating, a workflow via API the offsetInDays range will be between -180-180 days. The negative value will signal happening before the timeBasedAttribute, while the positive value will signal happening afterwards.
+For a full list of Lifecycle workflow service limits, see: [Lifecycle Workflows Service Limits](governance-service-limits.md#lifecycle-workflows).
 
 ## Parts of a workflow 
 
@@ -84,7 +69,7 @@ In this section you learn what each section tells you, and what actions you're a
 
 ### Basic Information
 
-When selecting a workflow, the overview provides you with a list of basic details in the **Basic Information** section. These basic details provide you with information such as the workflow category, its ID, when it was modified, and when it's scheduled to run again. This information is important in providing quick details surrounding its current usage for administrative purposes. Basic information is also live data, meaning any quick change action that you take place on the overview page, is shown immediately within this section.
+When you select a workflow, the overview provides you with a list of basic details in the **Basic Information** section. These basic details provide you with information such as the workflow category, its ID, when it was modified, and when it's scheduled to run again. This information is important in providing quick details surrounding its current usage for administrative purposes. Basic information is also live data, meaning any quick change action that you take place on the overview page, is shown immediately within this section.
 
 Within the **Basic Information** you can view the following information:
 
@@ -126,7 +111,7 @@ Actions taken from the overview of a workflow allow you to quickly complete task
 
 After selecting a template, on the basics screen:
  - Provide the information that is used in the description portion of the workflow.
- - The trigger, defines when of the execution condition.
+ - Select the trigger that defines when the execution condition will occur.
 
  [![Basics of a workflow.](media/understanding-lifecycle-workflows/workflow-4.png)](media/understanding-lifecycle-workflows/workflow-4.png#lightbox)
 

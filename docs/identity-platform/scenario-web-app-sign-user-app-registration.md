@@ -1,18 +1,15 @@
 ---
 title: Register a web app that signs in users
 description: Learn how to register a web app that signs in users
-services: active-directory
 author: cilwerner
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: how-to
-ms.workload: identity
-ms.date: 12/6/2022
 ms.author: cwerner
+ms.custom: 
+ms.date: 12/6/2022
 ms.reviewer: jmprieur
-ms.custom: aaddev
+ms.service: identity-platform
+
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a web app that signs in users by using the Microsoft identity platform.
 ---
 
@@ -28,10 +25,9 @@ To register your application, you can use:
 
 ## Register an app by using the quickstarts
 
-You can use these links to bootstrap the creation of your web application:
+You can use the following link to bootstrap the creation of your web application:
 
-- [ASP.NET Core](https://aka.ms/aspnetcore2-1-aad-quickstart-v2)
-- [ASP.NET](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/AspNetWebAppQuickstartPage/sourceType/docs)
+[Register an application](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/AspNetWebAppQuickstartPage/sourceType/docs)
 
 ## Register an app by using the Azure portal
 

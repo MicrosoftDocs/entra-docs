@@ -1,18 +1,16 @@
 ---
 title: Signing Key Rollover in Microsoft identity platform
 description: This article discusses the signing key rollover best practices for Microsoft Entra ID
-services: active-directory
 author: rwike77
 manager: CelesteDG
-
-ms.service: active-directory
-ms.subservice: develop
-ms.workload: identity
-ms.topic: conceptual
-ms.date: 03/16/2023
 ms.author: ryanwi
+ms.custom:
+ms.date: 03/16/2023
 ms.reviewer: paulgarn, ludwignick
-ms.custom: aaddev
+ms.service: identity-platform
+
+ms.topic: conceptual
+#Customer intent: As a developer using the Microsoft identity platform for authentication in my web application, I want to ensure that my application can handle public key rollover automatically, so that my application will continue to validate token signatures without manual intervention.
 ---
 
 # Signing key rollover in the Microsoft identity platform
@@ -33,8 +31,8 @@ How your application handles key rollover depends on variables such as the type 
 * [Native client applications accessing resources](#nativeclient)
 * [Web applications / APIs accessing resources](#webclient)
 * [Web applications / APIs protecting resources and built using Azure App Services](#appservices)
-* [Web applications / APIs protecting resources using .NET OWIN OpenID Connect, WS-Fed or WindowsAzureActiveDirectoryBearerAuthentication middleware](#owin)
-* [Web applications / APIs protecting resources using .NET Core OpenID Connect or  JwtBearerAuthentication middleware](#owincore)
+* [Web applications / APIs protecting resources using ASP.NET OWIN OpenID Connect, WS-Fed or WindowsAzureActiveDirectoryBearerAuthentication middleware](#owin)
+* [Web applications / APIs protecting resources using ASP.NET Core OpenID Connect or  JwtBearerAuthentication middleware](#owincore)
 * [Web applications / APIs protecting resources using Node.js `passport-azure-ad` module](#passport)
 * [Web applications / APIs protecting resources and created with Visual Studio 2015 or later](#vs2015)
 * [Web applications protecting resources and created with Visual Studio 2013](#vs2013)
@@ -60,8 +58,8 @@ Web applications and web APIs that are using the app-only flow (client credentia
 ### <a name="appservices"></a>Web applications / APIs protecting resources and built using Azure App Services
 Azure App Services' Authentication / Authorization (EasyAuth) functionality already has the necessary logic to handle key rollover automatically.
 
-### <a name="owin"></a>Web applications / APIs protecting resources using .NET OWIN OpenID Connect, WS-Fed or WindowsAzureActiveDirectoryBearerAuthentication middleware
-If your application is using the .NET OWIN OpenID Connect, WS-Fed or WindowsAzureActiveDirectoryBearerAuthentication middleware, it already has the necessary logic to handle key rollover automatically.
+### <a name="owin"></a>Web applications / APIs protecting resources using ASP.NET OWIN OpenID Connect, WS-Fed or WindowsAzureActiveDirectoryBearerAuthentication middleware
+If your application is using the ASP.NET OWIN OpenID Connect, WS-Fed or WindowsAzureActiveDirectoryBearerAuthentication middleware, it already has the necessary logic to handle key rollover automatically.
 
 You can confirm that your application is using any of these by looking for any of the following snippets in your application's Startup.cs or Startup.Auth.cs files.
 
@@ -90,7 +88,7 @@ app.UseWindowsAzureActiveDirectoryBearerAuthentication(
 ```
 
 ### <a name="owincore"></a>Web applications / APIs protecting resources using .NET Core OpenID Connect or  JwtBearerAuthentication middleware
-If your application is using the .NET Core OWIN OpenID Connect  or JwtBearerAuthentication middleware, it already has the necessary logic to handle key rollover automatically.
+If your application is using the ASP.NET OWIN OpenID Connect  or JwtBearerAuthentication middleware, it already has the necessary logic to handle key rollover automatically.
 
 You can confirm that your application is using any of these by looking for any of the following snippets in your application's Startup.cs or Startup.Auth.cs
 

@@ -1,33 +1,44 @@
 ---
-title: Create or delete users
-description: Instructions for how to create new users or delete existing users.
-services: active-directory
+title: How to create or delete users in Microsoft Entra ID
+description: Instructions for IT admins to create new users and delete or update existing users in Microsoft Entra ID.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 09/12/2023
+ms.date: 02/07/2024
 ms.author: sarahlipsey
 ms.reviewer: adelle.dimitui
+
+# Customer intent: As an IT admin, I need to know how to create, update, and delete users manually for quick, one-off updates.
+
 ---
 # How to create, invite, and delete users
 
-This article explains how to create a new user, invite an external guest, and delete a user in your tenant. 
+Microsoft Entra ID allows you to create several types of users in your tenant, which provides greater flexibility in how you manage your organization's users.
 
-Instructions for the legacy create user process can be found in the [Add or delete users](./add-users.md) article.
+This article explains how to create a new user, invite an external guest, and delete a user in your tenant.
 
 [!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-hybrid-note.md)]
 
-## Before you begin
+## Prerequisites
+
+The required role of least privilege varies based on the type of user you're adding and if you need to assign Microsoft Entra roles at the same time. **Global Administrator** can create users and assign roles, but whenever possible you should use the least privileged role.
+
+| Task | Role |
+| -- | -- |
+| Create a new user | User Administrator |
+| Invite an external guest | Guest Inviter |
+| Assign Microsoft Entra roles | Privileged Role Administrator |
+
+## Types of users
 
 Before you create or invite a new user, take some time to review the types of users, their authentication methods, and their access within the Microsoft Entra tenant. For example, do you need to create an internal guest, an internal user, or an external guest? Does your new user need guest or member privileges?
 
 - **Internal member**: These users are most likely full-time employees in your organization.
 - **Internal guest**: These users have an account in your tenant, but have guest-level privileges. It's possible they were created within your tenant prior to the availability of B2B collaboration.
-- **External member**: These users authenticate using an external account, but have member access to your tenant. These types of users are common in [multi-tenant organizations](~/identity/multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization).
-- **External guest**: These users are true guests of your tenant who authenticate using an external method and who have guest-level privileges. 
+- **External member**: These users authenticate using an external account, but have member access to your tenant. These types of users are common in [multitenant organizations](~/identity/multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization).
+- **External guest**: These users are true guests of your tenant who authenticate using an external method and who have guest-level privileges.
 
 For more information abut the differences between internal and external guests and members, see [B2B collaboration properties](~/external-id/user-properties.md).
 
@@ -35,30 +46,25 @@ Authentication methods vary based on the type of user you create. Internal guest
 
 Reviewing the default user permissions may also help you determine the type of user you need to create. For more information, see [Set default user permissions](users-default-permissions.md).
 
-## Required roles
-
-The required role of least privilege varies based on the type of user you're adding and if you need to assign Microsoft Entra roles at the same time. **Global Administrator** can create users and assign roles, but whenever possible you should use the least privileged role. 
-
-| Task | Role |
-| -- | -- |
-| Create a new user | User Administrator |
-| Invite an external guest | Guest Inviter | 
-| Assign Microsoft Entra roles | Privileged Role Administrator |
-
 ## Create a new user
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal update](../includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Browse to **Identity** > **Users** > **All users**.
+
+   :::image type="content" source="media/how-to-create-delete-users/all-users-page.png" alt-text="Screenshot of the All users page in Microsoft Entra ID.":::
+
 1. Select  **New user** > **Create new user**.
 
-    ![Screenshot of the create new user menu.](media/how-to-create-delete-users/create-new-user-menu.png)
+   :::image type="content" source="media/how-to-create-delete-users/create-new-user-menu.png" alt-text="Screenshot of the create new user menu in Microsoft Entra ID.":::
+
+1. Complete the remaining tabs in the **New user** page.
 
 ### Basics
 
-The **Basics** tab contains the core fields required to create a new user. 
+The **Basics** tab contains the core fields required to create a new user. Before you begin, [review the guidance on user name properties](how-to-manage-user-profile-info.md#guidance-on-user-name-properties).
 
 - **User principal name**: Enter a unique username and select a domain from the menu after the @ symbol. Select **Domain not listed** if you need to create a new domain. For more information, see [Add your custom domain name](add-custom-domain.md).
 - **Mail nickname**: If you need to enter an email nickname that is different from the user principal name you entered, uncheck the **Derive from user principal name** option, then enter the mail nickname.
@@ -68,7 +74,7 @@ The **Basics** tab contains the core fields required to create a new user.
 
 Either select the **Review + create** button to create the new user or **Next: Properties** to complete the next section.
 
-![Screenshot of the create new user Basics tab.](media/how-to-create-delete-users/create-new-user-basics-tab.png)
+:::image type="content" source="media/how-to-create-delete-users/create-new-user-basics-tab.png" alt-text="Screenshot of the create new user Basics tab.":::
 
 Either select the **Review + create** button to create the new user or **Next: Properties** to complete the next section.
 
@@ -76,7 +82,7 @@ Either select the **Review + create** button to create the new user or **Next: P
 
 There are six categories of user properties you can provide. These properties can be added or updated after the user is created. To manage these details, go to **Identity** > **Users** > **All users** and select a user to update.
 
-- **Identity:** Enter the user's first and last name. Set the User type as either Member or Guest. 
+- **Identity:** Enter the user's first and last name. Set the User type as either Member or Guest.
 - **Job information:** Add any job-related information, such as the user's job title, department, or manager.
 - **Contact information:** Add any relevant contact information for the user.
 - **Parental controls:** For organizations like K-12 school districts, the user's age group may need to be provided. *Minors* are 12 and under, *Not adult* are 13-18 years old, and *Adults* are 18 and over. The combination of age group and consent provided by parent options determine the Legal age group classification. The Legal age group classification may limit the user's access and authority.
@@ -86,7 +92,7 @@ Either select the **Review + create** button to create the new user or **Next: A
 
 ### Assignments
 
-You can assign the user to an administrative unit, group, or Microsoft Entra role when the account is created. You can assign the user to up to 20 groups or roles. You can only assign the user to one administrative unit. Assignments can be added after the user is created. 
+You can assign the user to an administrative unit, group, or Microsoft Entra role when the account is created. You can assign the user to up to 20 groups or roles. You can only assign the user to one administrative unit. Assignments can be added after the user is created.
 
 **To assign a group to the new user**:
 
@@ -94,7 +100,7 @@ You can assign the user to an administrative unit, group, or Microsoft Entra rol
 1. From the menu that appears, choose up to 20 groups from the list and select the **Select** button.
 1. Select the **Review + create** button.
 
-    ![Screenshot of the add group assignment process.](media/how-to-create-delete-users/add-group-assignment.png)
+   :::image type="content" source="media/how-to-create-delete-users/add-group-assignment.png" alt-text="Screenshot of the add group assignment process.":::
 
 **To assign a role to the new user**:
 
@@ -120,7 +126,9 @@ The overall process for inviting an external guest user is similar, except for a
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select  **New user** > **Invite external user**.
 
-    ![Screenshot of the invite external user menu option.](media/how-to-create-delete-users/invite-external-user-menu.png)
+   :::image type="content" source="media/how-to-create-delete-users/invite-external-user-menu.png" alt-text="Screenshot of the invite external user menu option.":::
+
+1. Complete the remaining tabs in the **New user** page (as shown below).
 
 ### Basics for external users
 
@@ -130,7 +138,7 @@ In this section, you're inviting the guest to your tenant using *their email add
 - **Display name**: Provide the display name.
 -  **Invitation message**: Select the **Send invite message** checkbox to customize a brief message to the guest. Provide a Cc recipient, if necessary.
 
-![Screenshot of the invite external user Basics tab.](media/how-to-create-delete-users/invite-external-user-basics-tab.png)
+:::image type="content" source="media/how-to-create-delete-users/invite-external-user-basics-tab.png" alt-text="Screenshot of the invite external user Basics tab.":::
 
 ### Guest user invitations
 
@@ -142,7 +150,7 @@ When you invite an external guest user by sending an email invitation, you can c
     - If the invitation state is **PendingAcceptance**, select the **Resend invitation** link to send another email.
     - You can also select the **Properties** for the user and view the **Invitation state**.
 
-![Screenshot of the user details with the invitation status options highlighted.](media/how-to-create-delete-users/external-user-invitation-state.png)
+:::image type="content" source="media/how-to-create-delete-users/external-user-invitation-state.png" alt-text="Screenshot of the user details with the invitation status options highlighted.":::
 
 ## Add other users
 
@@ -166,7 +174,7 @@ To delete a user, follow these steps:
 1. Search for and select the user you want to delete.
 1. Select **Delete user**.
 
-    ![Screenshot of the All users page with a user selected and the Delete button highlighted.](media/how-to-create-delete-users/delete-existing-user.png)
+   :::image type="content" source="media/how-to-create-delete-users/delete-existing-user.png" alt-text="Screenshot of the All users page with a user selected and the Delete button highlighted.":::
 
 The user is deleted and no longer appears on the **All users** page. The user can be seen on the **Deleted users** page for the next 30 days and can be restored during that time. For more information about restoring a user, see [Restore or remove a recently deleted user using Microsoft Entra ID](./users-restore.md).
 

@@ -1,10 +1,11 @@
 ---
 author: kengaderdus
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: include
 ms.date: 05/05/2023
 ms.author: kengaderdus
+ms.manager: mwongerapk
 ---
 Although many applications can be associated with your user flow, a single application can only be associated with one user flow. A user flow allows configuration of the user experience for specific applications. For example, you can configure a user flow that requires users to sign-in or sign-up with a phone number or email address.
 

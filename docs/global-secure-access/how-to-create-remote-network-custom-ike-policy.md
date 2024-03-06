@@ -6,9 +6,7 @@ ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: how-to
 ms.date: 10/05/2023
-ms.service: network-access
-
-
+ms.service: global-secure-access
 ---
 # Create a remote network with a custom IKE policy for Global Secure Access (preview)
 
@@ -19,7 +17,6 @@ IPSec tunnel is a bidirectional communication. This article provides the steps t
 To create a remote network with a custom IKE policy, you must have:
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
-- Sent an email to Global Secure Access onboarding team according to the [onboarding process](how-to-create-remote-networks.md#onboard-your-tenant-for-remote-networks).
 - Received the connectivity information from Global Secure Access onboarding.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 

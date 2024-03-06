@@ -1,17 +1,14 @@
 ---
 title: Delete a lifecycle workflow
 description: Learn how to delete a lifecycle workflow.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 05/31/2023
-ms.subservice: compliance
 ms.author: owinfrey
 ms.reviewer: krbain
-ms.collection: M365-identity-device-management
 ---
 
 # Delete a lifecycle workflow
@@ -31,7 +28,7 @@ When a workflow is deleted, it enters a soft-delete state. During this period, y
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **workflows**.
+1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
 
 1. On the **Workflows** page, select the workflow that you want to delete. Then select **Delete**.
 

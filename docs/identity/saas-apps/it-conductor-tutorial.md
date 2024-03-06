@@ -1,13 +1,13 @@
 ---
 title: Microsoft Entra SSO integration with IT-Conductor
 description: Learn how to configure single sign-on between Microsoft Entra ID and IT-Conductor.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
+
 ms.topic: how-to
 ms.date: 02/06/2023
 ms.author: jeedes

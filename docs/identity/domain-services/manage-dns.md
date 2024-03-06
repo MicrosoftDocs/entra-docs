@@ -5,13 +5,11 @@ author: justinha
 manager: amycolannino
 
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 11/26/2023
 ms.author: justinha
-
 ---
 # Administer DNS and create conditional forwarders in a Microsoft Entra Domain Services managed domain
 
@@ -21,10 +19,14 @@ As you run your own applications and services, you may need to create DNS record
 
 In a hybrid environment, DNS zones and records configured in other DNS namespaces, such as an on-premises AD DS environment, aren't synchronized to the managed domain. To resolve named resources in other DNS namespaces, create and use conditional forwarders that point to existing DNS servers in your environment.
 
-This article shows you how to install the DNS Server tools then use the DNS console to manage records and create conditional forwarders in Domain Services.
+Domain Services communicates with multiple Azure endpoints during normal operations. Redirecting zones such as file.core.windows.net or blob.core.windows.net puts Domain Services in an unsupportable state. 
+
+Refrain from redirecting DNS zones related to windowsazure.com or core.windows.net. If DNS redirection is required, limit the redirection to individual host names instead of zones. For example, use server1.file.core.windows.net instead of file.core.windows.net.
 
 >[!NOTE]
->Creating or changing root hints or server-level DNS forwarders is not supported and will cause issues for the Domain Services managed domain. 
+>Creating or changing root hints or server-level DNS forwarders isn't supported and causes issues for the Domain Services managed domain. 
+
+This article shows you how to install the DNS Server tools then use the DNS console to manage records and create conditional forwarders in Domain Services.
 
 ## Before you begin
 

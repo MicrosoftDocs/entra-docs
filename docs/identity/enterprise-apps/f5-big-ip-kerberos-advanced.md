@@ -1,17 +1,19 @@
 ---
 title: Configure F5 BIG-IP Access Policy Manager for Kerberos authentication
 description: Learn how to implement Secure Hybrid Access (SHA) with single sign-on (SSO) to Kerberos applications by using F5's BIG-IP advanced configuration.
-services: active-directory
+
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 12/13/2022
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
+
+#customer intent: As a IT administrator, I want to configure F5 BIG-IP Access Policy Manager for Kerberos authentication, so that I can implement secure hybrid access with single sign-on to Kerberos applications and improve governance and security for my organization.
 ---
 
 # Tutorial: Configure F5 BIG-IP Access Policy Manager for Kerberos authentication
@@ -31,7 +33,7 @@ For this scenario, you'll configure a line-of-business application for Kerberos 
 
 To integrate the application with Microsoft Entra ID requires support from a federation-based protocol, such as Security Assertion Markup Language (SAML). Because modernizing the application introduces the risk of potential downtime, there are other options. 
 
-While you're using Kerberos Constrained Delegation (KCD) for SSO, you can use [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md) to access the application remotely. You can achieve the protocol transition to bridge the legacy application to the modern, identity control plane. 
+While you're using Kerberos Constrained Delegation (KCD) for SSO, you can use [Microsoft Entra application proxy](/entra/identity/app-proxy) to access the application remotely. You can achieve the protocol transition to bridge the legacy application to the modern, identity control plane. 
 
 Another approach is to use an F5 BIG-IP Application Delivery Controller. This approach enables overlay of the application with Microsoft Entra pre-authentication and KCD SSO. It improves the overall Zero Trust posture of the application.
 
@@ -462,7 +464,7 @@ While troubleshooting, consider the following points:
 * Ensure there are no duplicate SPNs in your environment. Run the following query at the command line: `setspn -q HTTP/my_target_SPN`.
 
 > [!NOTE]
-> To validate an IIS application is configured for KCD, see [Troubleshoot Kerberos constrained delegation configurations for Application Proxy](~/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md). See also the AskF5 article, [Kerberos Single Sign-On Method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html).
+> To validate an IIS application is configured for KCD, see [Troubleshoot Kerberos constrained delegation configurations for Application Proxy](/entra/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to). See also the AskF5 article, [Kerberos Single Sign-On Method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html).
 
 **Increase log verbosity**
 

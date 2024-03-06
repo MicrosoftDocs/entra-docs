@@ -1,24 +1,16 @@
 ---
 title: Troubleshoot entitlement management
 description: Learn about some items you should check to help you troubleshoot Microsoft Entra entitlement management.
-services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: troubleshooting
-ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
-ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an administrator, I want checklists and tips to help troubleshoot entitlement management to unblock users from performing their job.
-
 ---
 # Troubleshoot entitlement management
 
@@ -141,7 +133,7 @@ You can only cancel a pending request that hasn't yet been delivered or whose de
 
 * Entitlement management follows least privilege best practices. When a user requests access to an access package that has multiple policies that apply, entitlement management includes logic to help ensure stricter or more specific policies are prioritized over generic policies. If a policy is generic, entitlement management might not display the policy to the requestor or might automatically select a stricter policy.
 
-* For example, consider an access package with two policies for internal employees in which both policies apply to the requestor. The first policy is for specific users that include the requestor. The second policy is for all users in a directory that the requestor is a member of. In this scenario, the first policy is automatically selected for the requestor because it's more strict. The requestor isn't given the option to select the second policy.
+* For example, consider an access package with two policies for users in the directory, in which both policies apply to the requestor. The first policy is for specific users that include the requestor. The second policy is for all users in the directory. In this scenario, the first policy is automatically selected for the requestor because it's more strict. The requestor isn't given the option to select the second policy.
 
 * When multiple policies apply, the policy that is automatically selected or the policies that are displayed to the requestor is based on the following priority logic:
 
