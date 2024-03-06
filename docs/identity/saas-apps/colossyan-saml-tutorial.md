@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 01/04/2024
+ms.date: 02/06/2024
 ms.author: jeedes
 ---
 
@@ -74,7 +74,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `urn:auth0:colossyan:AzureViaSAML`
 
     b. In the **Reply URL** text box, type the URL:
-    `https://colossyan.us.auth0.com/login/callback?connection=AzureViaSAML`
+    `https://auth.app.colossyan.com/login/callback`
 
     c. In the **Sign on URL** text box, type the URL:
     `https://app.colossyan.com/`
