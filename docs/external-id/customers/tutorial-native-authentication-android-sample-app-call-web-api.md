@@ -10,7 +10,7 @@ ms.service: active-directory
 
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 02/23/2024
+ms.date: 03/06/2024
 ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to call web API in Android sample app.
 ---
