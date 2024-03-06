@@ -106,7 +106,7 @@ To build and run your app, follow these steps:
    If you don't have any devices configured, you need to either create an Android Virtual Device to use the Android Emulator or connect a physical device.
  
 1. Select **Run** button. The app opens on the email and one-time passcode screen. 
-1. Select the API tab for testing the API call.
+1. Select the API tab to test the API call.
 
 ## Next steps
 

@@ -96,11 +96,12 @@ If you choose to download the .zip file, extract the sample app file to a folder
     let protectedAPIScopes = ["Enter_the_Protected_API_Scopes_Here"] // Developers should set the respective scopes of their web API here.For example, let protectedAPIScopes = ["pi://{clientId}/{ToDoList.Read}","api://{clientId}/{ToDoList.ReadWrite}"]
     ```
     
-## Run and test sample iOS mobile application  
+## Run iOS sample app and call web API 
  
 To build and run your app, follow these steps:
  
 1. To build and run your code, select **Run** from the **Product** menu in Xcode. After a successful build, Xcode will launch the sample app in the Simulator. 
+1. Select the API tab to test the API call.
 
 ## Next steps
 
