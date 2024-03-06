@@ -12,7 +12,7 @@ ms.author: billmath
 
 ---
 
-# Install the Microsoft Entra provisioning Agent
+# Install the Microsoft Entra provisioning agent
 
 This article walks you through the installation process for the Microsoft Entra provisioning agent and how to initially configure it in the Microsoft Entra admin center.
 
