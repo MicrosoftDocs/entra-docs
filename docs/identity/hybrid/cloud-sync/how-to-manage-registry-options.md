@@ -16,7 +16,7 @@ ms.author: billmath
 ---
 # Manage agent registry options
 
-This section describes registry options that you can set to control the runtime processing behavior of the Microsoft Entra provisioning Agent. 
+This section describes registry options that you can set to control the runtime processing behavior of the Microsoft Entra provisioning agent. 
 
 ## Configure LDAP connection timeout
 When performing LDAP operations on configured Active Directory domain controllers, by default, the provisioning agent uses the default connection timeout value of 30 seconds. If your domain controller takes more time to respond, then you may see the following error message in the agent log file: 
