@@ -57,7 +57,7 @@ A workflow can be broken down into the following three main parts:
 |-----|-----|
 |General information|This portion of a workflow covers basic information such as display name, and a description of what the workflow does.|
 |Tasks|Tasks are the actions that are taken when a workflow is executed.|
-|Execution conditions| Defines when(trigger), and for who(scope), a scheduled workflow runs. For more information on these two parameters, see  [Trigger details](understanding-lifecycle-workflows.md#trigger-details) and [Configure Scope](understanding-lifecycle-workflows.md#configure-scope).|
+|Execution conditions| Defines when(trigger), and for who(scope), a scheduled workflow runs. For more information on these two parameters, see  [Trigger details](understanding-lifecycle-workflows.md#trigger-details) and [Scope](understanding-lifecycle-workflows.md#scope).|
 
 ## Templates
 
