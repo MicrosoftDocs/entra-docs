@@ -18,7 +18,7 @@ ms.reviewer: calui
 
 For enterprises that use passwords today and have a shared PC environment, passkeys provide a seamless way for workers to authenticate without entering a username or password. Passkeys provide improved security for workers because they can't be phished, stolen, or re-used.
 
-This topic lists steps to enable and enforce Microsoft Authenticator passkey sign-in for Entra ID. At the end of this article. First, you'll update the Authentication methods policy to allow end users to sign in with Authenticaror passkey. Then you'll create a custom authentication strength to enforce passkey sign-in when users access a sensitive resource.
+This topic lists steps to enable and enforce Microsoft Authenticator passkey sign-in for Entra ID. First, you'll update the Authentication methods policy to allow end users to sign in with Authenticator passkey. Then you'll create a custom authentication strength to enforce passkey sign-in when users access a sensitive resource.
 
 ## Requirements
 
@@ -47,6 +47,8 @@ Registration features for passwordless authentication methods rely on combined M
 
 ### Enable Authenticator passkey
 
+To enable Authenticator passkey, you edit the **Passkey (FIDO2)** method policy, the same way you enable another passkey provider. The **Microsoft Authenticator** policy doesn't have an option to enable passkey. 
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
 1. Under the method **Passkey (FIDO2)**, click **All users**, or click **Add groups** to select specific groups. *Only security groups are supported*.
@@ -72,9 +74,9 @@ On the **Configure** tab, there are more settings to help manage how passkeys ca
 
 ![Screenshot of FIDO2 security key options](media/howto-authentication-passwordless-security-key/optional-settings.png) 
 
-### Enable FIDO2 security keys using Graph Explorer
+### Enable Authenticator passkey using Graph Explorer
 
-In addition to using the Microsoft Entra admin center, you can also enable FIDO2 security keys by using Graph Explorer. To enable FIDO2 security keys, you must use the Authentication Methods Policy using Graph APIs. **Global Administrators** and **Authentication Policy Administrators** can update the policy. 
+In addition to using the Microsoft Entra admin center, you can also enable Authenticator passkey by using Graph Explorer. **Global Administrators** and **Authentication Policy Administrators** can update the Authentication Methods Policy to allow the AAGUIDs for Authenticator. 
 
 To configure the policy by using Graph Explorer:
 
