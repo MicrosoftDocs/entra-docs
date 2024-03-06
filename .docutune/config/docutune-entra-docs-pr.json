@@ -7,18 +7,28 @@
     }
   ],
   "MetadataDelimiter": "\"",
-  "Include": [
-    "docs/identity/role-based-access-control/"
-  ],
+  "Include": [],
   "Exclude": [
     "docs/architecture/"
+  ],
+  "RemoveTermSets": [
+    "*right-click*",
+    "*for-more-information-see*",
+    "*had-had*",
+    "*single-backtick*",
+    "*incorrect-backtick-spacing*",
+    "product-azure-app-service",
+    "*-caution-*",
+    "*-crud-*",
+    "*au-administrative-unit*"
   ],
   "PreloadTOCFiles": [
   ],
   "TermFiles": [
     "Dictionary-Onboard.ps1",
     "Bundle-Standard.txt",
-    "Bundle-Cloud.txt"
+    "Bundle-Cloud.txt",
+    "Dictionary-Repo.ps1"
   ],
   "ApplyPolicies": []
 }

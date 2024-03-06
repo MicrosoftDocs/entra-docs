@@ -6,23 +6,36 @@
   },
   "pullRequest": {
     "title": "[BULK] [DocuTune-Remediation] - Scheduled execution to fix known issues in Microsoft Entra docs",
-    "batchSize": 0,
+    "batchSize": 50,
     "maxBatches": 100,
     "body": "",
     "newBranchNamePrefix": "",
     "headRemote": "origin",
-    "draft": false,
+    "draft": true,
     "requestReview": true,
     "signOff": false,
     "properties": {},
-    "sleepInterval": 15
+    "sleepInterval": 15,
+    "groupByFolder": "docs/*"
   },
   "types": [
     {
       "name": "Default",
       "command": "Fix",
       "configType": "full",
-      "stopAt": 25
+      "stopAt": 0,
+      "include": [
+        "docs/external-id/",
+        "docs/fundamentals/",
+        "docs/identity/authentication/",
+        "docs/identity/domain-services/",
+        "docs/identity/conditional-access/",
+        "docs/identity/hybrid/",
+        "docs/identity/monitoring-health/",
+        "docs/identity/role-based-access-control/",
+        "docs/identity-platform/",
+        "docs/id-governance/"
+      ]
     },
     {
       "name": "FlagBrokenLinks",
