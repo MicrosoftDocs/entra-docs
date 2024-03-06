@@ -53,7 +53,7 @@ Once you've registered both your client app and web API and you've exposed the A
    1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**. 
    1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for both scopes. 
  
-    :::image type="content" source="media/native-authentication/ios/api-permissions.jpg" alt-text="Screenshot showing configured permission in Microsoft Entra admin center." lightbox="media/native-authentication/ios/api-permissions.jpg"::: 
+    :::image type="content" source="media/common/web-api-permissions.png" alt-text="Screenshot showing configured permission in Microsoft Entra admin center." lightbox="media/common/web-api-permissions.png"::: 
 
 1. From the **Configured permissions** list, select the **ToDoList.Read** and **ToDoList.ReadWrite** permissions, one at a time, and then copy the permission's full URI for later use. The full permission URI looks something similar to `api://{clientId}/{ToDoList.Read}` or `api://{clientId}/{ToDoList.ReadWrite}`.
 
