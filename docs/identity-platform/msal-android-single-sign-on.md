@@ -178,7 +178,7 @@ Appplications can be integrated with MSAL to use the `BROWSER` to authorize. Unl
 If the application uses MSAL with a broker like Microsoft Authenticator or Intune Company Portal, then users can have SSO experience across applications if they have an active sign-in with one of the apps.
 
 > [!NOTE]
-> MSAL with broker utilizes WebViews. As a result, the Single Sign-On (SSO) state is not extended to other apps that use Browser.
+> MSAL with broker utilizes WebView and provides Single Sign-On (SSO) for all the applications consuming MSAL library and participating in brokered auth. The SSO state from broker is not extended to other apps which do not use MSAL.
 
 ### WebView
 
