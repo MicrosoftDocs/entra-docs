@@ -171,11 +171,11 @@ With inbound settings, you select which external users and groups are able to ac
 
 1. Select **Save**.
 
-### Add Microsoft Admin Portal apps to B2B collaboration
+### Add the Microsoft Admin Portals app to B2B collaboration
 
-You can't directly add Microsoft Admin Portal apps to the inbound cross-tenant access settings in the Microsoft Entra admin center. However, you can add these apps individually by using [Microsoft Graph API](/graph/api/crosstenantaccesspolicy-post-partners).
+You can't directly add the [Microsoft Admin Portals app](/entra/identity/conditional-access/concept-conditional-access-cloud-apps#microsoft-admin-portals) to the inbound and outbound cross-tenant access settings in the Microsoft Entra admin center. However, you can add the below apps individually by using [Microsoft Graph API](/graph/api/crosstenantaccesspolicy-post-partners).
 
-The following apps are part of the Microsoft Admin Portal app group: 
+The following apps are part of the Microsoft Admin Portals app group: 
 - Azure Portal (c44b4083-3bb0-49c1-b47d-974e53cbdf3c)
 - Microsoft Entra Admin Center (c44b4083-3bb0-49c1-b47d-974e53cbdf3c)
 - Microsoft 365 Defender Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775)
