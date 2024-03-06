@@ -42,6 +42,8 @@ To configure provisioning, follow these steps.
 
  6. The configuration is split in to the following 5 sections.
 
+:::image type="content" source="media/how-to-configure/new-ux-configure-3.png" alt-text="Screenshot of the getting started screen." lightbox="media/how-to-configure/new-ux-configure-3.png":::
+
 |Section|Description|
 |-----|-----|
 |1. Add [scoping filters](#scope-provisioning-to-specific-users-and-groups)|Use this section to define what objects appear in Microsoft Entra ID|
@@ -56,6 +58,8 @@ To configure provisioning, follow these steps.
 
 ## Scope provisioning to specific users and groups
 By default the provisioning agent will synchronize a subset of the users and groups from your Active Directory. You can further scope the agent to synchronize specific users and groups by using on-premises Active Directory groups or organizational units. 
+
+:::image type="content" source="media/how-to-configure/new-ux-configure-4.png" alt-text="Screenshot of scoping filters icon." lightbox="media/how-to-configure/new-ux-configure-4.png":::
 
 You can configure groups and organizational units within a configuration. 
  >[!NOTE]
@@ -107,6 +111,8 @@ For more information, see [on-demand provisioning](how-to-on-demand-provision.md
 ## Accidental deletions and email notifications
 The default properties section provides information on accidental deletions and email notifications.
 
+:::image type="content" source="media/how-to-configure/new-ux-configure-10.png" alt-text="Screenshot of default properties icon." lightbox="media/how-to-configure/new-ux-configure-10.png":::
+
 The accidental delete feature is designed to protect you from accidental configuration changes and changes to your on-premises directory that would affect many users and groups.  
 
 This feature allows you to:
@@ -123,6 +129,8 @@ Click the **pencil** next to **Basics** to change the defaults in a configuratio
 
 ## Enable your configuration
 Once you've finalized and tested your configuration, you can enable it.
+
+:::image type="content" source="media/how-to-configure/new-ux-configure-12.png" alt-text="Screenshot of review and enable icon." lightbox="media/how-to-configure/new-ux-configure-12.png":::
 
 Click **Enable configuration** to enable it.
 
