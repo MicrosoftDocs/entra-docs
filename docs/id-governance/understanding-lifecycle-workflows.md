@@ -50,7 +50,7 @@ Creating a workflow via the Microsoft Entra admin center requires the use of a t
 
   [![Understanding workflow template diagram.](media/understanding-lifecycle-workflows/workflow-3.png)](media/understanding-lifecycle-workflows/workflow-3.png#lightbox)
 
-The template, depending on its category, will define which tasks are available to be used, and then guide you through the creation of the workflow. The template provides input for basic description, execution conditions, and task information.  
+The template, depending on its category, defines which tasks are available to be used, and then guide you through the creation of the workflow. The template provides input for basic description, execution conditions, and task information.  
 
 >[!NOTE]
 >Depending on the template you select, the options that will be available may vary. The images in this document uses the [**Onboarding pre-hire employee**](lifecycle-workflow-templates.md#onboard-pre-hire-employee) template to illustrate the parts of a workflow.
@@ -114,6 +114,10 @@ After selecting a template, on the basics screen:
  - Select the trigger that defines when the execution condition will occur.
 
  [![Basics of a workflow.](media/understanding-lifecycle-workflows/workflow-4.png)](media/understanding-lifecycle-workflows/workflow-4.png#lightbox)
+
+## Execution conditions
+
+On the Workflow basics screen you also get to set the first detail, the trigger, for a workflow's execution conditions. The execution conditions of a workflow define when, and for who, a workflow runs. It's made up of two distinct parts known as the trigger, and the scope.
 
 ## Trigger details
 
