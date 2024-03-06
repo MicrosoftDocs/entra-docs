@@ -37,7 +37,7 @@ To verify that Azure detects the agent, and that the agent is healthy, follow th
 
 ### Verify the required open ports
 
-Verify that the Microsoft Entra provisioning Agent is able to communicate successfully with Azure datacenters. If there's a firewall in the path, make sure that the following ports to outbound traffic are open:
+Verify that the Microsoft Entra provisioning agent is able to communicate successfully with Azure datacenters. If there's a firewall in the path, make sure that the following ports to outbound traffic are open:
 
 | Port number | How it's used |
 | ----------- | ------------------------------------------------------------ |
