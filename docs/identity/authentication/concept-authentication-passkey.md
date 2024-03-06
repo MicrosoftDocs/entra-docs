@@ -27,7 +27,7 @@ Instead of sending your password over the internet, your device generates a pair
 
 Passkeys inherit and extend the existing specification of FIDO2 security keys. They make phishing-resistant authentication more available and easier to use by enabling computers and mobile devices as authenticators. Passkeys are supported on computers that run Windows and macOS, and devices that run Android and iOS.
 
-Passkeys can either be bound to one device or synchronized between multiple devices. As an example, passkeys contain one or more device-bound passkeys. Passkeys on Android and iOS devices saved to Google password manager or the iCloud keychain automatically synchronize between a user’s devices where the Google or Apple account is signed-in. Some third-party apps can also manage passkeys across users' devices and browsers providing cross-platform syncing. 
+Passkeys can either be bound to one device or synchronized between multiple devices. An example, FIDO2 security keys support device-bound passkeys, including the ability to store multiple deivce-bound passkeys per device. Passkeys on Android and iOS devices saved to Google password manager or the iCloud keychain automatically synchronize between a user’s devices where their Google or Apple account is signed-in. Some third-party apps can also manage passkeys across users' devices and browsers providing cross-platform syncing. 
 
 >[!Note]
 >Entra ID supports only device-bound passkeys. Support for synced passkeys is coming soon.
@@ -87,11 +87,13 @@ Users are also protected from phishing attacks during cross-device authenticatio
 
 To link two devices together for cross-device authentication, the user scans a QR code that's generated on the device where they want to sign in. During this process, a proximity check takes place using a localized bluetooth connection, to ensure that the passkey is only being used for authentication on a linked device that’s nearby. This way, bad actors can't use passkeys to remotely gain access to a device. 
 
-:::image type="content" border="true" source="./media/concept-authentication-passkey/cross-device.png" alt-text="Conceptual diagram of how passkeys work across devices.":::
+:::image type="content" border="true" source="./media/concept-authentication-passkey/cross-device.png" alt-text="Image displaying registered passkey in Microsoft Authenticator.":::
 
 ## Using passkeys with Microsoft Authenticator
 
-Organizations can choose to not allow synced passkeys for their users due to the lack of attestation and management controls on where the users passkeys sync to. Often organizations opt to use device-bound, phishing-resistant credentials instead. Microsoft Authenticator supports device-bound passkeys on Android 14+ and iOS 17+ devices. Authenticator uses passkeys to provide free, phishing-resistant credentials that are based on open standards and recent security improvements. 
+Organizations who want the added security and control, compared to synced passkeys, can utilize Microsoft Authenticator as a passkey provider. Microsoft Authenticator supports device-bound passkeys on Android 14+ and iOS 17+ devices. Authenticator uses passkeys to provide free, phishing-resistant credentials that are based on open standards and recent security improvements. For more information, see [Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](concept-authentication-authenticator-app.md).
+
+:::image type="content" border="true" source="./media/concept-authentication-passkey/passkey-authenticator.png" alt-text="Conceptual diagram of a public and private key pair.":::
 
 ### Authentication methods policy configuration
 
