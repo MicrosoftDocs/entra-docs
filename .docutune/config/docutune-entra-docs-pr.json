@@ -12,19 +12,19 @@
     "docs/architecture/"
   ],
   "RemoveTermSets": [
+    "*au-administrative-unit*",
+    "*guest-user*",
+    "casing-microsoft-brands-microsoft",
     "*right-click*",
     "*and-then-click*",
-    "*for-more-information-see*",
     "*had-had*",
     "*single-backtick*",
     "*incorrect-backtick-spacing*",
-    "product-azure-app-service",
     "*-caution-*",
     "*-crm-*",
     "*-crud-*",
-    "*au-administrative-unit*",
-    "*guest-user*",
-    "casing-microsoft-brands-microsoft"
+    "*-mvc-*",
+    "product-azure-app-service"
   ],
   "PreloadTOCFiles": [
   ],
