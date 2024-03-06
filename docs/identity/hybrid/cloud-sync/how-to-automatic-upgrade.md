@@ -34,7 +34,7 @@ To remove the agent, go to **Uninstall or change a program** and uninstall the f
 
 - **Microsoft Entra Connect Agent Updater**
 - **Microsoft Entra Provisioning Agent**
-- **Microsoft Entra provisioning Agent Package**
+- **Microsoft Entra Provisioning Agent Package**
 
 ![Agent removal](media/how-to-automatic-upgrade/agent-3.png)
 
