@@ -1,5 +1,5 @@
 ---
-title: How to enable Microsoft Authenticator passkey sign in for Entra ID
+title: How to enable Microsoft Authenticator passkey sign in for Entra ID (preview)
 description: Learn about how to enable Microsoft Authenticator passkey sign in for Entra ID
 
 ms.service: entra-id
@@ -14,7 +14,7 @@ ms.reviewer: calui
 
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and enforce Microsoft Authenticator passkey sign in for end users.
 ---
-# Enable Microsoft Authenticator passkey sign in 
+# Enable Microsoft Authenticator passkey sign in (Preview)
 
 For enterprises that use passwords today and have a shared PC environment, passkeys provide a seamless way for workers to authenticate without entering a username or password. Passkeys provide improved security for workers because they can't be phished, stolen, or re-used.
 
