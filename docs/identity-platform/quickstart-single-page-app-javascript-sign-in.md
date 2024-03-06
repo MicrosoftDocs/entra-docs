@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.date: 01/31/2024
+ms.date: 03/05/2024
 ms.reviewer: OwenRichards1
 ms.service: identity-platform
 
@@ -47,7 +47,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 1. In your IDE, open the project folder, *ms-identity-javascript-tutorial*, containing the sample.
 1. Open *1-Authentication/1-sign-in/App/authConfig.js* and update the following values with the information recorded earlier in the admin center.
 
-    :::code language="JavaScript" source="~/../ms-identity-docs-code-javascript/js-spa/App/authConfig.js":::
+    :::code language="JavaScript" source="~/../ms-identity-docs-code-javascript/vanillajs-spa/App/public/authConfig.js":::
 
     * `clientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the **Application (client) ID** value that was recorded earlier.
     * `authority` - The authority is a URL that indicates a directory that MSAL can request tokens from. Replace *Enter_the_Tenant_Info_Here* with the **Directory (tenant) ID** value that was recorded earlier.

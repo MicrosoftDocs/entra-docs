@@ -114,7 +114,7 @@ To customize email by using the Microsoft Graph API, see [workflow: createNewVer
 
 ## Set custom branding and domain workflow settings by using Microsoft Graph
 
-To turn on custom branding and domain feature settings in lifecycle workflows by using the Microsoft Graph API, see [lifecycleManagementSettings resource type](/graph/api/resources/identitygovernance-lifecyclemanagementsettings).
+To turn on custom branding and domain feature settings in lifecycle workflows by using the Microsoft Graph API, see [`lifecycleManagementSettings` resource type](/graph/api/resources/identitygovernance-lifecyclemanagementsettings).
 
 ## Next steps
 

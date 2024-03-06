@@ -137,7 +137,7 @@ To edit your group settings:
 
 ## Add or remove a group from another group
 
-For the security group type, you can add an existing group to another group (also known as nested groups). Depending on the group membership types, you can add a group as a member of another group, just like a user, which applies settings like access permissions and roles to nested groups. But for nested groups, Entra doesn't apply assigned membership to shared resources and applications. 
+For the security group type, you can add an existing group to another group (also known as nested groups). Depending on the group membership types, you can add a group as a member of another group, just like a user, which applies settings like access permissions and roles to nested groups. But for nested groups, Microsoft Entra ID doesn't apply assigned membership to shared resources and applications. 
 
 You'll need the **Groups Administrator** or **User Administrator** role to edit group membership. For more info about security groups, see [What to know before creating a group](concept-learn-about-groups.md#what-to-know-before-creating-a-group).
 

@@ -23,7 +23,7 @@ landingContent:
             url: what-is-application-management.md
       - linkListType: concept
         links:
-          - text: What type of apps does Microsoft Entra ID support?
+          - text: What type of apps does Microsoft Entra support?
             url: ~/identity-platform/v2-app-types.md
           - text: What is single sign-on?
             url: what-is-single-sign-on.md
