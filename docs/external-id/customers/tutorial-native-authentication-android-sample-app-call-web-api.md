@@ -38,8 +38,6 @@ In this tutorial, you learn how to:
 
 ### Configure API scopes
 
-This API needs to expose permissions, which a client needs to acquire for calling the API:
-
 [!INCLUDE [add-api-scopes](./includes/register-app/add-api-scopes.md)]
 
 ### Configure app roles
@@ -51,8 +49,6 @@ This API needs to expose permissions, which a client needs to acquire for callin
 [!INCLUDE [add-optional-claims-access](./includes/register-app/add-optional-claims-access.md)]
 
 ## Grant API permissions to the Android sample app
-
-You grant a client app access to your own web API, both of which you should have registered as part of the prerequisites. If you don't yet have both a client app and a web API registered, complete the steps in the two [Prerequisites](#prerequisites) articles.
 
 Once you've registered both your client app and web API and you've exposed the API by creating scopes, you can configure the client's permissions to the API by following these steps:
 

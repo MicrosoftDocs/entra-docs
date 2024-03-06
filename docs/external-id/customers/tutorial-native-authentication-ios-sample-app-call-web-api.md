@@ -21,41 +21,65 @@ This tutorial demonstrates how to configure iOS sample application to call an AS
 
 In this tutorial, you learn how to: 
 
-- Add permissions to access your web API
+- Register a web API application
+- Grant API permissions to the iOS sample app
+- Clone or download sample web API
+- Configure and run sample web API
 - Configure sample iOS mobile app to call web API
-- Run and test sample iOS mobile application 
+- Run iOS sample app and call web API
 
 ## Prerequisites
 
 - [How to run the iOS sample app](how-to-run-native-authentication-sample-ios-app.md).
-- [Tutorial: Secure an ASP.NET Core web API registered in a customer tenant](tutorial-protect-web-api-dotnet-core-build-app.md)
 
+### Register a web API application
 
-## Add permissions to access your web API
+[!INCLUDE [register-api-app](./includes/register-app/register-api-app.md)]
 
-You grant a client app access to your own web API, both of which you should have registered as part of the prerequisites. If you don't yet have both a client app and a web API registered, complete the steps in the two [Prerequisites](#prerequisites) articles.
+### Configure API scopes
+
+[!INCLUDE [add-api-scopes](./includes/register-app/add-api-scopes.md)]
+
+### Configure app roles
+
+[!INCLUDE [add-app-role](./includes/register-app/add-app-role.md)]
+
+### Configure optional claims
+
+[!INCLUDE [add-optional-claims-access](./includes/register-app/add-optional-claims-access.md)]
+
+## Grant API permissions to the iOS sample app
 
 Once you've registered both your client app and web API and you've exposed the API by creating scopes, you can configure the client's permissions to the API by following these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="~/external-id/customers/media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu. 
-1. Browse to **Identity** >**Applications** > **App registrations**, and then select your client application (not your web API).
-1. Select **API permissions** > **Add a permission** > **APIs my organization uses**.
-1. Select the web API you registered as part of the prerequisites (ciam-ToDoList-api).
-1. Select **Delegated permissions**.
-1. Under **Select permissions**, expand the resource whose scopes you defined for your web API, and select the permissions the client app should have on behalf of the signed-in user.
+[!INCLUDE [grant-api-permission-call-api-common](./includes/register-app/grant-api-permission-call-api-common.md)]
 
-    If you used the scope names specified in the prerequisites, you should see **ToDoList.Read** and **ToDoList.ReadWrite**. Select **ToDoList.Read** and **ToDoList.ReadWrite**
+## Clone or download sample web API
 
-1. Select **Add permissions** to complete the process.
-1. At this point, you've assigned the permissions correctly. However, since the tenant is a customer's tenant, the consumer users themselves can't consent to these permissions. You as the admin must consent to these permissions on behalf of all the users in the tenant: 
- 
-   1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**. 
-   1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for both scopes. 
- 
-    :::image type="content" source="media/common/web-api-permissions.png" alt-text="Screenshot showing configured permission in Microsoft Entra admin center." lightbox="media/common/web-api-permissions.png"::: 
+To get the web API sample code, [download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
 
-1. From the **Configured permissions** list, select the **ToDoList.Read** and **ToDoList.ReadWrite** permissions, one at a time, and then copy the permission's full URI for later use. The full permission URI looks something similar to `api://{clientId}/{ToDoList.Read}` or `api://{clientId}/{ToDoList.ReadWrite}`.
+```bash
+git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
+```
+
+If you choose to download the .zip file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
+
+## Configure and run sample web API
+
+1. In your code editor, open `2-Authorization/1-call-own-api-aspnet-core-mvc/ToDoListAPI/appsettings.json` file.
+1. Find the placeholder:
+
+    - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the web API you copied earlier. 
+    - `Enter_the_Tenant_Id_Here` and replace it with the **Directory (tenant) ID** you copied earlier.
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+
+1. Open a console window, then run the web API by using the following command:
+
+    ```bash
+    cd /2-Authorization/1-call-own-api-aspnet-core-mvc/ToDoListAPI
+
+    dotnet run
+    ```
 
 ## Configure sample iOS mobile app to call web API
 
