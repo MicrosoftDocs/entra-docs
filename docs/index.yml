@@ -57,7 +57,7 @@ additionalContent:
     - title: Announcements and resources
       items:
         - title: "Microsoft Entra"
-          summary: "Learn more about Microsoft Entra ID and how the Microsoft Entra family of products can help your business."
+          summary: "Learn more about Microsoft Entra and how the Microsoft Entra family of products can help your business."
           url: https://aka.ms/MicrosoftEntra
         - title: "New name for Azure Active Directory"
           summary: "Learn more about the new name, what the change means, and how it affects you."
