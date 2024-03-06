@@ -161,9 +161,11 @@ Now that you've determined your scenarios, you need to look at what users in you
 
 An Execution condition is the part of a workflow that defines the scope of **who** and the trigger of **when** a workflow will be performed.
 
-The [scope](understanding-lifecycle-workflows.md#configure-scope) determines who the workflow runs against.  This is defined by a rule that will filter users based on a condition.  For example, the rule, `"rule": "(department eq 'sales')"` runs the task only on users who are members of the sales department.
+The scope determines who the workflow runs against.  This is defined by a rule that will filter users based on a condition.  For example, the rule, `"rule": "(department eq 'sales')"` runs the task only on users who are members of the sales department.
 
-The [trigger](understanding-lifecycle-workflows.md#trigger-details) determines when the workflow runs.  This can either be, on-demand, which is immediate, or time based.  Most of the predefined templates in the portal are time based.  
+The trigger determines when the workflow runs.  This can either be, on-demand, which is immediate, or time based.  Most of the predefined templates in the portal are time based.  
+
+For more information on workflow execution conditions, see: [Lifecycle Workflow execution conditions and scheduling](lifecycle-workflow-execution-conditions.md).
 
 ### Attribute information
 The scope of a workflow uses attributes under the rule section.  You can add the following extra conditionals to further refine **who** the tasks are applied to.

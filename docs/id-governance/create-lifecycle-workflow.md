@@ -44,7 +44,7 @@ To create a workflow based on a template:
 
     :::image type="content" source="media/create-lifecycle-workflow/template-basics.png" alt-text="Screenshot of basic information about a workflow template.":::
 
-1. On the **Configure scope** tab, select the trigger type and execution conditions to be used for this workflow. For more information on what you can configure, see [Configure scope](understanding-lifecycle-workflows.md#configure-scope).
+1. On the **Configure scope** tab, select the trigger type and execution conditions to be used for this workflow. For more information on what you can configure, see [Lifecycle Workflow execution conditions and scheduling](lifecycle-workflow-execution-conditions.md).
 
 1. Under **Rule**, enter values for **Property**, **Operator**, and **Value**. The following screenshot gives an example of a rule being set up for a sales department. For a full list of user properties that lifecycle workflows support, see [Supported user properties and query parameters](/graph/api/resources/identitygovernance-rulebasedsubjectset?view=graph-rest-beta&preserve-view=true#supported-user-properties-and-query-parameters).
 
