@@ -1,6 +1,6 @@
 ---
 title: 'Install the Microsoft Entra provisioning Agent'
-description: Learn how to install the Microsoft Entra provisioning Agent and how to configure it in the Microsoft Entra admin center.
+description: Learn how to install the Microsoft Entra provisioning agent and how to configure it in the Microsoft Entra admin center.
 
 author: billmath
 manager: amycolannino
