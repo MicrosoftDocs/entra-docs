@@ -24,7 +24,6 @@
       "name": "Default",
       "command": "Fix",
       "configType": "full",
-      "stopAt": 0,
       "include": [
         "docs/external-id/",
         "docs/fundamentals/",
