@@ -16,7 +16,8 @@
     "signOff": false,
     "properties": {},
     "sleepInterval": 15,
-    "groupByFolder": "docs/*"
+    "groupByFolder": "docs/*",
+    "correlationId": "e8e4e6af-593b-4a01-83e4-d21853c0b42c"
   },
   "types": [
     {
