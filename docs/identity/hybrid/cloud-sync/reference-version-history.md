@@ -1,6 +1,6 @@
 ---
 title: 'Microsoft Entra provisioning agent: Version release history'
-description: This article lists all releases of Microsoft Entra provisioning Agent and describes new features and fixed issues
+description: This article lists all releases of Microsoft Entra provisioning agent and describes new features and fixed issues
 
 author: billmath
 manager: amycolannino
