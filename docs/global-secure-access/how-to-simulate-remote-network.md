@@ -4,8 +4,8 @@ description: Configure Azure resources to simulate remote network connectivity t
 ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 01/31/2024
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: kenwith
+author: kenwith
 manager: amycolannino
 ms.reviewer: absinh
 
