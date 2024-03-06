@@ -1,6 +1,6 @@
 ---
-title:  Register a passkey (preview)
-description: Registration and management of passkey (preview)
+title:  Register a passkey using a browser on a computer (preview)
+description: Registration and management of passkey using a browser on a computer (preview)
 
 services: active-directory
 ms.service: active-directory
@@ -14,12 +14,12 @@ manager: amycolannino
 ms.reviewer: calui, tilarso
 
 ms.collection: M365-identity-device-management
-# Customer intent: As an identity administrator, I want to understand how users will register a passkey on their mobile device or with a security key. 
+# Customer intent: As an identity administrator, I want to understand how users will register a passkey using a browser or with a security key. 
 
 ---
-# Register a passkey (preview)
+# Register a passkey using a browser on a computer (preview)
 
-This article shows how to use your Android or iOS device to register and sign-in with a passkey (FIDO2). 
+This article shows how to register a passkey using a browser and sign-in with a passkey (FIDO2) on an Android or iOS device. 
 
 > [!NOTE]
 > Microsoft Entra ID supports only device-bound passkeys. Support for synced passkeys is coming soon.
