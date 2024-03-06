@@ -1,6 +1,6 @@
 ---
 title: 'Microsoft Entra provisioning Agent gMSA PowerShell cmdlets'
-description: Learn how to use the Microsoft Entra provisioning Agent gMSA PowerShell cmdlets.
+description: Learn how to use the Microsoft Entra provisioning agent gMSA PowerShell cmdlets.
 
 author: billmath
 manager: amycolannino
