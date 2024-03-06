@@ -92,7 +92,7 @@ If you choose to download the .zip file, extract the sample app file to a folder
     private const val WEB_API_BASE_URL = "" // Developers should set the respective URL of their web API here
     ```
     
-1. Find property named `scopes` and set the scopes recorded in [Add permissions to access your web API](#add-permissions-to-access-your-web-api).
+1. Find property named `scopes` and set the scopes recorded in [Grant API permissions to the Android sample app](#grant-api-permissions-to-the-android-sample-app).
 
     ```kotlin
     private val scopes = listOf<String>() // Developers should set the respective scopes of their web API here. For example, private val scopes = listOf<String>("api://{clientId}/{ToDoList.Read}", "api://{clientId}/{ToDoList.ReadWrite}")
