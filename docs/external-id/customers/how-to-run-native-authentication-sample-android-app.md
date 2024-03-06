@@ -119,7 +119,7 @@ In this section, you test email with password flow, with its variants such as, e
 
 1. Run the sample app, then select the ellipsis menu (**...**) to open more options. 
 
-1. Select the scenario you want to test, such as **Email + password** or **Email + password sign-up with user attributes** or **Password reset**, then follow the prompts. To test **Password reset** you need to first sign up a user and [enable email one-time passcode](how-to-enable-password-reset-customers) for all users in your tenant.
+1. Select the scenario you want to test, such as **Email + password** or **Email + password sign-up with user attributes** or **Password reset**, then follow the prompts. To test **Password reset** you need to first sign up a user and [enable email one-time passcode](how-to-enable-password-reset-customers.md) for all users in your tenant.
 
 ## Test call a protected API flow
 
