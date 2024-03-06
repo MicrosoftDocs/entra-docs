@@ -21,9 +21,12 @@ This tutorial demonstrates how to configure Android sample application to call a
 
 In this tutorial, you learn how to: 
 
-- Add permissions to access your web API
+- Register a web API application
+- Grant API permissions to the Android sample app
+- Clone or download sample web API
+- Configure and run sample web API
 - Configure sample Android mobile app to call web API
-- Run and test sample Android mobile application 
+- Run Android sample app and call web API
 
 ## Prerequisites
 
@@ -81,7 +84,6 @@ If you choose to download the .zip file, extract the sample app file to a folder
 
     dotnet run
     ```
-    
 
 ## Configure sample Android mobile app to call web API
 
@@ -98,7 +100,7 @@ If you choose to download the .zip file, extract the sample app file to a folder
     private val scopes = listOf<String>() // Developers should set the respective scopes of their web API here. For example, private val scopes = listOf<String>("api://{clientId}/{ToDoList.Read}", "api://{clientId}/{ToDoList.ReadWrite}")
     ```
     
-## Run and test sample Android mobile application  
+## Run Android sample app and call web API
  
 To build and run your app, follow these steps:
  
