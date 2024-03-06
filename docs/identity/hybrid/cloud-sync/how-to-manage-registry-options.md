@@ -40,7 +40,7 @@ LDAP search operations can take longer if the search attribute is not indexed. A
 1. If you have deployed multiple provisioning agents, apply this registry change to all agents for consistency. 
 
 ## Configure referral chasing
-By default, the Microsoft Entra provisioning Agent does not chase [referrals](/windows/win32/ad/referrals). 
+By default, the Microsoft Entra provisioning agent does not chase [referrals](/windows/win32/ad/referrals). 
 You may want to enable referral chasing, to support certain HR inbound provisioning scenarios such as: 
 * Checking uniqueness of UPN across multiple domains
 * Resolving cross-domain manager references
