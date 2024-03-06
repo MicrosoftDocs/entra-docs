@@ -1213,6 +1213,8 @@
         href: harness-tutorial.md
       - name: HashiCorp Cloud Platform (HCP)
         href: hashicorp-cloud-platform-hcp-tutorial.md
+      - name: HashiCorp Boundary (OIDC)
+        href: hashicorp-tutorial.md
       - name: Hawkeye Platform
         href: hawkeyebsb-tutorial.md
       - name: HCL BigFix Platform
@@ -1933,6 +1935,8 @@
         href: onshape-tutorial.md
       - name: OnTrack
         href: ontrack-tutorial.md
+      - name: Onyxia
+        href: onyxia-tutorial.md
       - name: Opal
         href: opal-tutorial.md
       - name: OpenAthens
@@ -2629,6 +2633,8 @@
         href: stormboard-tutorial.md
       - name: Striim
         href: striim-tutorial.md
+      - name: Striim Platform
+        href: striim-platform-tutorial.md
       - name: Styleflow
         href: styleflow-tutorial.md
       - name: SuccessFactors
@@ -3464,8 +3470,8 @@
         href: invision-provisioning-tutorial.md
       - name: InviteDesk
         href: invitedesk-provisioning-tutorial.md
-      - name: Island
-        href: island-provisioning-tutorial.md
+      - name: Jellyfish
+        href: jellyfish-provisioning-tutorial.md
       - name: Jive
         href: jive-provisioning-tutorial.md
       - name: Jostle

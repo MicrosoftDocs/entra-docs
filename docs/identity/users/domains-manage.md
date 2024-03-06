@@ -85,7 +85,7 @@ The following actions are performed as part of the **ForceDelete** operation:
 * Renames the UPN, EmailAddress, and ProxyAddress of users with references to the custom domain name to the initial default domain name.
 * Renames the EmailAddress of groups with references to the custom domain name to the initial default domain name.
 * Renames the identifierUris of applications with references to the custom domain name to the initial default domain name.
-* Disables user accounts impacted by the ForceDelete option in the Azure/Entra Portal and optionally when using the Graph API.
+* Disables user accounts impacted by the ForceDelete option in the Azure/Microsoft Entra admin center and optionally when using the Graph API.
 
 An error is returned when:
 
@@ -128,7 +128,7 @@ If you find that any of the conditions haven’t been met, manually clean up the
 Most management tasks for domain names in Microsoft Entra ID can also be completed using Microsoft PowerShell, or programmatically using the Microsoft Graph API.
 
 * [Using PowerShell to manage domain names in Microsoft Entra ID](/powershell/module/azuread/?preserve-view=true#domains)
-* [Domain resource type](/graph/api/resources/domain)
+* [`Domain` resource type](/graph/api/resources/domain)
 
 ## Next steps
 

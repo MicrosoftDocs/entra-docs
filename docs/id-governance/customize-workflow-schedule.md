@@ -34,7 +34,7 @@ Workflows that you create within lifecycle workflows follow the same schedule th
 
 ## Customize the schedule of workflows by using Microsoft Graph
 
-To schedule workflow settings by using the Microsoft Graph API, see [lifecycleManagementSettings resource type](/graph/api/resources/identitygovernance-lifecyclemanagementsettings).
+To schedule workflow settings by using the Microsoft Graph API, see [`lifecycleManagementSettings` resource type](/graph/api/resources/identitygovernance-lifecyclemanagementsettings).
 
 ## Next steps
 

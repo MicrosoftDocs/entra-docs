@@ -281,7 +281,6 @@ Then use the AppRoleAssignmentsComplex expression to map to the custom role attr
 
 - The POST contains the role type. The PATCH request doesn't contain type. We're working on sending the type in both POST and PATCH requests.
 - AppRoleAssignmentsComplex isn't compatible with setting scope to "Sync All users and groups."
-- The AppRoleAssignmentsComplex only supports the PATCH add function. For multi-role SCIM applications, roles deleted in Microsoft Entra ID are therefore not deleted from the application.
     
 **Example Request (POST)**
   

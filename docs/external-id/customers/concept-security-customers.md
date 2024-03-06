@@ -30,7 +30,7 @@ Conditional Access policies are enforced after the user has completed first-fact
 > [!TIP]
 > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CA)
 > 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Conditional Access and Multifactor authentication” use case.
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Conditional Access and multifactor authentication” use case.
 
 ## Multifactor authentication
 
