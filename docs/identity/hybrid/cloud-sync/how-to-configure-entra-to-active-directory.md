@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.date: 11/06/2023
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ---
 
@@ -17,8 +18,6 @@ ms.author: billmath
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
 The following document will guide you through configuring cloud sync to synchronize groups to on-premises Active Directory. This configuration document is specific to on-premises Microsoft Entra Cloud Sync's Group Provision to AD. For information on a traditional on-premises to cloud configuration see [Configure and new installation - AD to Microsoft Entra ID](how-to-configure.md).
-
- :::image type="content" source="media/how-to-configure/new-ux-configure-19.png" alt-text="Screenshot of enable preview features." lightbox="media/how-to-configure/new-ux-configure-19.png":::
 
 For more information, see [Govern on-premises application access with groups from the cloud](govern-on-premises-groups.md).
 

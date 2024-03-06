@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.date: 11/06/2023
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ---
 
@@ -122,8 +123,6 @@ Click the **pencil** next to **Basics** to change the defaults in a configuratio
 
 ## Enable your configuration
 Once you've finalized and tested your configuration, you can enable it.
-
-:::image type="content" source="media/how-to-configure/new-ux-configure-12.png" alt-text="Screenshot of review and enable icon." lightbox="media/how-to-configure/new-ux-configure-12.png":::
 
 Click **Enable configuration** to enable it.
 
