@@ -297,7 +297,7 @@ items:
             - name: Add claims from external systems
               items:
                 - name: About custom authentication extensions
-                  href: ~/identity-platform/custom-extension-overview.md?context=/azure/active-directory/external-identities/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-overview.md?context=/entra/external-id/customers/context/customers-context
                 - name: Token issuance start event
                   href: ~/identity-platform/custom-extension-get-started.md?context=/entra/external-id/customers/context/customers-context
                 - name: Troubleshoot your custom claims provider API
