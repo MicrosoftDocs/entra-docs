@@ -49,7 +49,7 @@ The following prerequisites are required to implement this scenario.
  :::image type="content" source="media/migrate-group-writeback/migrate-2.png" alt-text="Screenshot of the msDS-ExternalDirectoryObjectID attribute." lightbox="media/migrate-group-writeback/migrate-2.png":::
 
 ## Step 2 - Place the Microsoft Entra Connect Sync server in staging mode and disable the sync scheduler
- 1. Start the Microsoft Entra Connect Sync (Microsoft Entra Connect) wizard 
+ 1. Start the Microsoft Entra Connect Sync wizard 
  2. Click **Configure**
  3. Select **Configure staging mode** and click **Next**
  4. Enter Microsoft Entra credentials
