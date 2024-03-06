@@ -5,7 +5,7 @@ description: Learn about how to enable Microsoft Authenticator passkey sign in f
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/04/2024
+ms.date: 03/06/2024
 
 ms.author: justinha
 author: justinha
@@ -71,6 +71,49 @@ On the **Configure** tab, there are more settings to help manage how passkeys ca
   >Key restrictions set the usability of specific passkeys for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. 
 
 ![Screenshot of FIDO2 security key options](media/howto-authentication-passwordless-security-key/optional-settings.png) 
+
+### Enable FIDO2 security keys using Graph Explorer
+
+In addition to using the Microsoft Entra admin center, you can also enable FIDO2 security keys by using Graph Explorer. To enable FIDO2 security keys, you must use the Authentication Methods Policy using Graph APIs. **Global Administrators** and **Authentication Policy Administrators** can update the policy. 
+
+To configure the policy by using Graph Explorer:
+
+1. Sign in to [Graph Explorer](https://aka.ms/ge) and consent to the **Policy.Read.All** and **Policy.ReadWrite.AuthenticationMethod** permissions.
+
+1. Retrieve the Authentication methods policy: 
+
+   ```json
+   GET https://graph.microsoft.com/beta/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
+   ```
+
+1. To disable attestation enforcement and enforce key restrictions to only allow AAGUIDs for Microsoft Authenticator, perform a PATCH operation using the following request body:
+
+   ```json
+   PATCH https://graph.microsoft.com/beta/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
+   
+   Request Body:
+   {
+       "@odata.type": "#microsoft.graph.fido2AuthenticationMethodConfiguration",
+       "isAttestationEnforced": false,
+       "keyRestrictions": {
+           "isEnforced": true,
+           "enforcementType": "allow",
+           "aaGuids": [
+               "90a3ccdf-635c-4729-a248-9b709135078f",
+               "de1e552d-db1d-4423-a619-566b625cdc84"
+   
+               <insert previous AAGUIDs here to keep them stored in policy>
+           ]
+       }
+   }
+   ```
+
+1. Make sure that the passkey (FIDO2) policy has been updated properly.
+
+   ```json
+   GET https://graph.microsoft.com/beta/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
+   ```
+
 
 ## Disable a passkey 
 
