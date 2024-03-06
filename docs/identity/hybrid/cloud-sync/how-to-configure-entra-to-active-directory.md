@@ -71,7 +71,7 @@ To configure provisioning, follow these steps.
  [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
  
  3. Select **New configuration**.
- 4. Select **Microsoft Entra ID to Active Directory sync**.
+ 4. Select **Microsoft Entra ID to AD sync**.
 
   :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png" alt-text="Screenshot of configuration selection." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png":::
 
