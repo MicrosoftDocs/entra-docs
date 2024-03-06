@@ -35,7 +35,7 @@ The Microsoft Enterprise SSO plug-in for Apple devices offers the following bene
 >[!NOTE]
 > On August 2023, [Microsoft announced that platform SSO for macOS devices is coming to Microsoft Entra ID.](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/coming-soon-platform-sso-for-macos/ba-p/3902280).
 >
-> As these features are still under development, the use of Platform SSO features is not yet supported on the Microsoft Entra platform. Limited customer support will be provided once these features enter public preview. 
+> Features are still under development, so the use of platform SSO features is not yet supported on Microsoft Entra. Limited customer support will be provided once these features enter public preview. 
 
 
 ## Requirements
