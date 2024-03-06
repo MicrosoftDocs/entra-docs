@@ -1,6 +1,6 @@
 ---
-title: Register a passkey (FIDO2) with a FIDO2 security key
-description: User registration of a passkey (FIDO2) with a FIDO2 security key
+title: Register a passkey (FIDO2) with a FIDO2 security key (preview)
+description: User registration of a passkey (FIDO2) with a FIDO2 security key (preview)
 
 services: active-directory
 ms.service: active-directory
@@ -15,7 +15,7 @@ ms.reviewer: calui
 
 ms.collection: M365-identity-device-management
 ---
-# Register a passkey (FIDO2) with a FIDO2 security key
+# Register a passkey (FIDO2) with a FIDO2 security key (preview)
 
 ## First-time registration
 

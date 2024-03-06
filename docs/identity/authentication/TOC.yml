@@ -38,8 +38,6 @@
       href: concept-authentication-passkey.md
     - name: Microsoft Authenticator
       href: concept-authentication-authenticator-app.md
-    - name: (New) Authenticator passkey
-      href: concept-authentication-authenticator-passkey.md
     - name: Certificates
       href: concept-certificate-based-authentication.md
     - name: Windows Hello for Business
@@ -131,7 +129,7 @@
         - name: (Update) Enable 
           href: how-to-enable-passkey-fido2.md
         - name: (New) Register 
-          href: how-to-register-passkey-android-or-ios.md
+          href: how-to-register-passkey.md
         - name: (New) Sign in 
           href: howto-authentication-passwordless-security-key-windows.md
         - name: (New) FAQs
