@@ -851,7 +851,7 @@
       href: custom-claims-provider-reference.md
     - name: MSA Server side API reference 
       href: reference-msa-server-side-api.md
-    - name: Microsoft Entra ID WAM API Reference
+    - name: Microsoft Entra ID WAM API reference
       href: reference-entra-id-wam-api.md
     - name: Attribute collection start custom extension reference
       href: custom-extension-OnAttributeCollectionStart-reference.md
