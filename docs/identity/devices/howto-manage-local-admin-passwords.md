@@ -15,9 +15,9 @@ ms.custom: references_regions
 ---
 # Windows Local Administrator Password Solution in Microsoft Entra ID
 
-Every Windows device comes with a built-in local administrator account that you must secure and protect to mitigate any Pass-the-Hash (PtH) and lateral traversal attacks. Many customers have been using our standalone, on-premises [Local Administrator Password Solution (LAPS)](https://www.microsoft.com/download/details.aspx?id=46899) product for local administrator password management of their domain joined Windows machines. With Microsoft Entra ID support for Windows LAPS, we're providing a consistent experience for both Microsoft Entra joined and Microsoft Entra hybrid joined devices.
+Every Windows device comes with a built-in local administrator account that you must secure and protect to mitigate any Pass-the-Hash (PtH) and lateral traversal attacks. Many customers have been using our standalone, on-premises [Local Administrator Password Solution (LAPS)](https://www.microsoft.com/download/details.aspx?id=46899) product for local administrator password management of their domain joined Windows machines. With Microsoft Entra support for Windows LAPS, we're providing a consistent experience for both Microsoft Entra joined and Microsoft Entra hybrid joined devices.
 
-Microsoft Entra ID support for LAPS includes the following capabilities:
+Microsoft Entra support for LAPS includes the following capabilities:
 
 - **Enabling Windows LAPS with Microsoft Entra ID** - Enable a tenant wide policy and a client-side policy to back up local administrator password to Microsoft Entra ID.
 - **Local administrator password management** - Configure client-side policies to set account name, password age, length, complexity, manual password reset and so on.

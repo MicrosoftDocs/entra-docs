@@ -1,6 +1,6 @@
 ---
-title: Microsoft Entra ID deployment plans
-description: Guidance on Microsoft Entra ID deployment, such as authentication, devices, hybrid scenarios, governance, and more.
+title: Microsoft Entra deployment plans
+description: Guidance on Microsoft Entra deployment, such as authentication, devices, hybrid scenarios, governance, and more.
 author: gargi-sinha
 manager: martinco
 ms.service: entra
@@ -10,7 +10,7 @@ ms.date: 02/07/2024
 ms.author: gasinh
 ---
 
-# Microsoft Entra ID deployment plans
+# Microsoft Entra deployment plans
 
 Azure Active Directory is now [Microsoft Entra ID](~/fundamentals/whatis.md), which can safeguard your organization with cloud identity and access management. The solution connects employees, customers, and partners to their apps, devices, and data.
 
@@ -87,7 +87,7 @@ The following list describes features and services in hybrid scenarios.
 
 - **User identities** - Learn about automation to create, maintain, and remove user identities in cloud apps, such as Dropbox, Salesforce, ServiceNow, and more.
   - See, [Plan an automatic user provisioning deployment in Microsoft Entra ID](~/identity/app-provisioning/plan-auto-user-provisioning.md)
-- **Microsoft Entra Identity Governance** - Create identity governance and enhance business processes that rely on identity data. With HR products, such as Workday or Successfactors, manage employee and contingent-staff identity lifecycle with rules. These rules map Joiner-Mover-Leaver (JLM) processes, such as New Hire, Terminate, Transfer, to IT actions such as Create, Enable, Disable. See the following section for more.
+- **Microsoft Entra ID Governance** - Create identity governance and enhance business processes that rely on identity data. With HR products, such as Workday or Successfactors, manage employee and contingent-staff identity lifecycle with rules. These rules map Joiner-Mover-Leaver (JLM) processes, such as New Hire, Terminate, Transfer, to IT actions such as Create, Enable, Disable. See the following section for more.
   - See, [Plan cloud HR application to Microsoft Entra user provisioning](~/identity/app-provisioning/plan-cloud-hr-provision.md)
 - **Microsoft Entra B2B collaboration** - Improve external-user collaboration with secure access to applications:
   - See, [B2B collaboration overview](~/external-id/what-is-b2b.md)

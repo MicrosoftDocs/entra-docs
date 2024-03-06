@@ -121,7 +121,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |displayName|String||
    |externalId|String||
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra ID Groups to Cisco Webex**.
+1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Cisco Webex**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Cisco Webex in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Cisco Webex for update operations. Select the **Save** button to commit any changes.
 
