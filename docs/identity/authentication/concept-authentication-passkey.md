@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/27/2024
+ms.date: 03/06/2024
 
 ms.author: justinha
 author: justinha
@@ -77,7 +77,7 @@ This combination forms a secure multifactor authentication. The sign-in is more 
 
 Bad actors relentlessly attempt to compromise users by tricking users into giving away their password or providing them a one-time code used for MFA. This happens through the use of phishing campaigns or trustworthy looking website that emulates a well known application or provider. With MFA methods that rely on push notifications or approvals, a common tactic bad actors use is to overwhelm users with numerous requests, hoping users get fatigued and inadvertently approves one of them. Passkeys protect users from these types of attacks. 
  
-Let’s say an attacker wants to steal the credentials of users who sign in to a legitimate website named contoso.com. The attacker creates a malicious website, con1oso.com, where the letter t is replaced with a digit 1. The attacker might trick a user into landing on this similar-looking website, but the user can never be tricked into presenting their passkey to this malicious website because their device won't allow it. When a passkey is created, it's only associated with the trusted domain of the website that it's registered with. So, a passkey that's created for contoso.com can only be used with contoso.com. 
+Let’s say an attacker wants to steal the credentials of users who sign in to a legitimate website named contoso.com. The attacker creates a malicious website, con1oso.com, where the letter t is replaced with a digit 1. The attacker might trick a user into landing on this similar-looking website, but the user can never be tricked into presenting their passkey to this malicious website because their device won't allow it. When a passkey is created, it's only associated with the trusted domain of the website that it's registered with. A passkey that's created for contoso.com can only be used with contoso.com. 
 
 :::image type="content" border="true" source="./media/concept-authentication-passkey/phishing-resistant.png" alt-text="Conceptual diagram of how passkeys are phishing-resistant.":::
 
@@ -97,7 +97,7 @@ Organizations who want the added security and control, compared to synced passke
 
 ### Authentication methods policy configuration
 
-Before users can sign in to Microsoft Entra ID using passkeys, an Authentication Policy Administrator must enable Microsoft Authenticator for phishing-resistant MFA in the Authentication methods policy. Customers can restrict the use of passkeys for certain users and groups within their organizations. They can also restrict passkey usage to specific provider types by restricting Authenticator Attestation GUIDs (AAGUIDs) allowed in an organization. For more information, see [Enable passwordless security key sign-in](howto-authentication-passwordless-security-key.md).
+Before users can sign in to Microsoft Entra ID using passkeys, an Authentication Policy Administrator must enable Microsoft Authenticator for phishing-resistant MFA in the Authentication methods policy. Customers can restrict the use of passkeys for certain users and groups within their organizations. They can also restrict passkey usage to specific provider types by restricting Authenticator Attestation GUIDs (AAGUIDs) allowed in an organization. For more information, see [How to enable Authenticator passkey](how-to-enable-authenticator-passkey.md).
 
 ## Next steps
 
