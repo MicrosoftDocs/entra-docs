@@ -95,7 +95,7 @@ To resolve this problem, follow these steps:
 
 1. Sign in to the server with an administrator account.
 1. Open **Services** by going to **Start** > **Run** > **Services.msc**.
-1. Under **Services**, double-click **Microsoft Entra provisioning Agent**.
+1. Under **Services**, double-click **Microsoft Entra Provisioning Agent**.
 1. On the **Log On** tab, change **This account** to a domain admin. Then restart the service. 
 
    ![Screenshot that shows options available from the log on tab.](media/how-to-troubleshoot/troubleshoot-3.png)
