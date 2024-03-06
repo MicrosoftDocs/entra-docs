@@ -64,7 +64,7 @@ The following sections discuss the scenarios that are supported with cloud sync 
 
 ## Configuring supported scenarios
 
-If you want to control whether a user is able to connect to an AD application that uses Windows authentication, you can use the application proxy and a Microsoft Entra security group.
+If you want to control whether a user is able to connect to an Active Directory application that uses Windows authentication, you can use the application proxy and a Microsoft Entra security group.
 If an application checks a user's AD group memberships, via Kerberos or LDAP, then you can use cloud sync group provisioning to ensure an AD user has those group memberships prior to the user accessing the applications. 
 
 
