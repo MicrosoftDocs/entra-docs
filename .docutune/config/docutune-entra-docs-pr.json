@@ -22,15 +22,16 @@
     "*-caution-*",
     "*-crm-*",
     "*-crud-*",
-    "*au-administrative-unit*"
+    "*au-administrative-unit*",
+    "*guest-user*",
+    "casing-microsoft-brands-microsoft"
   ],
   "PreloadTOCFiles": [
   ],
   "TermFiles": [
     "Dictionary-Onboard.ps1",
     "Bundle-Standard.txt",
-    "Bundle-Cloud.txt",
-    "Dictionary-Repo.ps1"
+    "Bundle-Cloud.txt"
   ],
   "ApplyPolicies": []
 }
