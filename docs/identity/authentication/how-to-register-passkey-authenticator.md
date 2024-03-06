@@ -272,11 +272,11 @@ This article shows how to register a passkey with Microsoft Authenticator on you
 
 ## Troubleshooting
 
-- If the a passkey for your account is already registered in Microsoft authenticator you will receive the following error: 
+1. If the a passkey for your account is already registered in Microsoft authenticator you will receive the following error: 
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkeyios_already_exists.png" alt-text="Screenshot of the passkey that already exists in Microsoft Authenticator for iOS devices.":::
 
- 1. To re-register a passkey for your account, first remove the passkey from Authenticator by clicking the *Trash* icon, then tap **Delete** to confirm.
+1. To re-register a passkey for your account, first remove the passkey from Authenticator by clicking the *Trash* icon, then tap **Delete** to confirm.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkeyios_delete.png" alt-text="Screenshot of the passkey to delete in Microsoft Authenticator for iOS devices.":::
 

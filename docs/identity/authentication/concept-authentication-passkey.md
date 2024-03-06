@@ -93,7 +93,7 @@ To link two devices together for cross-device authentication, the user scans a Q
 
 Organizations who want the added security and control, compared to synced passkeys, can utilize Microsoft Authenticator as a passkey provider. Microsoft Authenticator supports device-bound passkeys on Android 14+ and iOS 17+ devices. Authenticator uses passkeys to provide free, phishing-resistant credentials that are based on open standards and recent security improvements. For more information, see [Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](concept-authentication-authenticator-app.md).
 
-:::image type="content" border="true" source="./media/concept-authentication-passkey/passkey-authenticator.png" alt-text="Conceptual diagram of a public and private key pair.":::
+:::image type="content" border="true" source="./media/concept-authentication-passkey/passkey-authenticator.png" alt-text="Conceptual diagram of a public and private key pair in Microsoft Authenticator.":::
 
 ### Authentication methods policy configuration
 
