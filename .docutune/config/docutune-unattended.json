@@ -25,9 +25,10 @@
       "command": "Fix",
       "configType": "full",
       "include": [
-        "docs/external-id/"
+        // "docs/external-id/"
         // ,
-        // "docs/fundamentals/",
+        "docs/fundamentals/"
+        // ,
         // "docs/identity/authentication/",
         // "docs/identity/domain-services/",
         // "docs/identity/conditional-access/",
