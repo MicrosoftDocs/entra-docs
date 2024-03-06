@@ -6,9 +6,8 @@ author: henrymbuguakiarie
 manager: mwongerapk
 
 ms.author: henrymbugua
-ms.service: active-directory
-
-ms.subservice: ciam
+ms.service: entra-external-id 
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 02/29/2024
 ms.custom: developer
