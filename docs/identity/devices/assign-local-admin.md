@@ -51,7 +51,7 @@ You can manage the [Microsoft Entra joined Device Local Administrator](~/identit
 1. Select **Manage Additional local administrators on all Microsoft Entra joined devices**.
 1. Select **Add assignments** then choose the other administrators you want to add and select **Add**.
 
-To modify the Microsoft Entra joined Device Local Administrator role, configure **Additional local administrators on all Microsoft Entra joined devices**.  
+To modify the Microsoft Entra Joined Device Local Administrator role, configure **Additional local administrators on all Microsoft Entra joined devices**.  
 
 > [!NOTE]
 > This option requires Microsoft Entra ID P1 or P2 licenses. 
