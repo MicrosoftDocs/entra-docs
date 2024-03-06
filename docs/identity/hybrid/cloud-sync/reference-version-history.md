@@ -9,7 +9,6 @@ ms.topic: reference
 ms.date: 11/06/2023
 ms.subservice: app-provisioning
 ms.author: billmath
-ms.reviewer: daveba
 ---
 
 # Microsoft Entra provisioning Agent: Version release history
