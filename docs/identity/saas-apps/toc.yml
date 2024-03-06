@@ -1213,6 +1213,8 @@
         href: harness-tutorial.md
       - name: HashiCorp Cloud Platform (HCP)
         href: hashicorp-cloud-platform-hcp-tutorial.md
+      - name: HashiCorp Boundary (OIDC)
+        href: hashicorp-tutorial.md
       - name: Hawkeye Platform
         href: hawkeyebsb-tutorial.md
       - name: HCL BigFix Platform
