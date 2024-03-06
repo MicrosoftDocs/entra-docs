@@ -171,7 +171,7 @@ MSAL supports authorization using a `WEBVIEW`, or the system browser. The image 
 ### SSO implications
 
 
-If the application uses a `WEBVIEW` strategy without integrating Microsoft Authenticator or Company Portal support into their app, users won't have a single sign-on experience across the device or between native apps and web apps.
+If the application uses a `WEBVIEW` strategy without integrating with brokered auth into their app, users won't have a single sign-on experience across the device or between native apps and web apps.
 
 Appplications can be integrated with MSAL to use the `BROWSER` to authorize. Unlike WEBVIEW, `BROWSER` share a cookie jar with the default system browser enabling fewer sign-ins with web or other native apps that have integrated with Custom Tabs.
 
