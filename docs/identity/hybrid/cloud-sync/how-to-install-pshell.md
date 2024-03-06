@@ -17,7 +17,7 @@ ms.author: billmath
 This article shows you how to install the Microsoft Entra provisioning Agent by using PowerShell cmdlets.
  
 >[!NOTE]
->This article deals with installing the provisioning agent by using the command-line interface (CLI). For information on how to install the Microsoft Entra Provisioning Agent by using the wizard, see [Install the Microsoft Entra provisioning Agent](how-to-install.md).
+>This article deals with installing the provisioning agent by using the command-line interface (CLI). For information on how to install the Microsoft Entra provisioning agent by using the wizard, see [Install the Microsoft Entra provisioning agent](how-to-install.md).
 
 ## Prerequisite
 
