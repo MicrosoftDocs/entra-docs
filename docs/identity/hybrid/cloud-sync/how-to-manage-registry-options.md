@@ -47,7 +47,7 @@ You may want to enable referral chasing, to support certain HR inbound provision
 
 Use the following steps to turn on referral chasing:
 
-1. Log on as Administrator on the Windows server running the Microsoft Entra provisioning Agent.
+1. Log on as Administrator on the Windows server running the Microsoft Entra provisioning agent.
 1. Use the *Run* menu item to open the registry editor (regedit.exe) 
 1. Locate the key folder **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Azure AD Connect Agents\Azure AD Connect Provisioning Agent**
 1. Right-click and select "New -> String Value"
