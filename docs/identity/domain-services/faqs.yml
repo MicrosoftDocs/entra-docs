@@ -54,7 +54,7 @@ sections:
           In a federated directory, password hashes aren't stored in the Microsoft Entra directory. 
           Therefore, Microsoft Entra Domain Services doesn't work with such Microsoft Entra directories.
           
-          However, if you're using Microsoft Entra Connect for password hash synchronization, you can use Azure AD Domain Services because the password hash values are stored in Microsoft Entra ID.
+          However, if you're using Microsoft Entra Connect for password hash synchronization, you can use Microsoft Entra Domain Services because the password hash values are stored in Microsoft Entra ID.
           
       - question: |
           Can I make Microsoft Entra Domain Services available in multiple virtual networks within my subscription?
@@ -73,7 +73,7 @@ sections:
           Can I enable Microsoft Entra Domain Services using a Resource Manager Template?
         answer: |
           Yes, you can create a Microsoft Entra Domain Services managed domain using a Resource Manager template. 
-          A service principal and a Microsoft Entra ID group for administration must be created using the Microsoft Entra admin center or PowerShell before the template is deployed. 
+          A service principal and a Microsoft Entra group for administration must be created using the Microsoft Entra admin center or PowerShell before the template is deployed. 
           When you create a Microsoft Entra Domain Services managed domain in the Microsoft Entra admin center, there's also an option to export the template for use with other deployments.
           For more information, see [Create a Domain Services managed domain using an Azure Resource Manager template](template-create-instance.md). 
           
@@ -169,9 +169,9 @@ sections:
         answer: |
           The default password lifetime on a Microsoft Entra Domain Services managed domain is 90 days. This password lifetime isn't synchronized with the password lifetime configured in Microsoft Entra ID. Therefore, you may have a situation where users' passwords expire in your managed domain, but are still valid in Microsoft Entra ID. In such scenarios, users need to change their password in Microsoft Entra ID and the new password will synchronize to your managed domain. If you want to change the default password lifetime in a managed domain, you can [create and configure custom password policies](password-policy.md).
           
-          Additionally, the Azure AD password policy for *DisablePasswordExpiration* is synchronized to a managed domain. When *DisablePasswordExpiration* is applied to a user in Microsoft Entra ID, the *UserAccountControl* value for the synchronized user in the managed domain has *DONT_EXPIRE_PASSWORD* applied.
+          Additionally, the Microsoft Entra password policy for *DisablePasswordExpiration* is synchronized to a managed domain. When *DisablePasswordExpiration* is applied to a user in Microsoft Entra ID, the *UserAccountControl* value for the synchronized user in the managed domain has *DONT_EXPIRE_PASSWORD* applied.
           
-          When users reset their password in Azure AD, the *forceChangePasswordNextSignIn=True* attribute is applied. A managed domain synchronizes this attribute from Microsoft Entra ID. When the managed domain detects *forceChangePasswordNextSignIn* is set for a synchronized user from Microsoft Entra ID, the *pwdLastSet* attribute in the managed domain is set to *0*, which invalidates the currently set password.
+          When users reset their password in Microsoft Entra ID, the *forceChangePasswordNextSignIn=True* attribute is applied. A managed domain synchronizes this attribute from Microsoft Entra ID. When the managed domain detects *forceChangePasswordNextSignIn* is set for a synchronized user from Microsoft Entra ID, the *pwdLastSet* attribute in the managed domain is set to *0*, which invalidates the currently set password.
           
       - question: |
           Does Microsoft Entra Domain Services provide AD account lockout protection?
@@ -243,7 +243,7 @@ sections:
 additionalContent: |
 
   ## Next steps
-  To learn more about Azure AD Domain Services, see [What is Azure Active Directory Domain Services?](overview.md).
+  To learn more about Microsoft Entra Domain Services, see [What is Microsoft Entra Domain Services?](overview.md).
           
-  To get started, see [Create and configure an Azure Active Directory Domain Services managed domain](tutorial-create-instance.md).
+  To get started, see [Create and configure a Microsoft Entra Domain Services managed domain](tutorial-create-instance.md).
           
