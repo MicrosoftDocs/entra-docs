@@ -20,7 +20,7 @@ This article walks you through the installation process for the Microsoft Entra 
 > The following installation instructions assume that you've met all the [prerequisites](how-to-prerequisites.md).
 
 >[!NOTE]
->This article deals with installing the provisioning agent by using the wizard. For information about installing the Microsoft Entra provisioning Agent by using a CLI, see [Install the Microsoft Entra provisioning Agent by using a CLI and PowerShell](how-to-install-pshell.md).
+>This article deals with installing the provisioning agent by using the wizard. For information about installing the Microsoft Entra provisioning agent by using a CLI, see [Install the Microsoft Entra provisioning agent by using a CLI and PowerShell](how-to-install-pshell.md).
 
 For more information and an example, view the following video:
 
