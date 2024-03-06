@@ -1,6 +1,6 @@
 ---
-title: Call web API in Android sample app
-description: Learn how to call web API in Android sample app.
+title: Call web API in iOS sample app
+description: Learn how to call web API in iOS sample app.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,22 +12,22 @@ ms.subservice: ciam
 ms.topic: how-to
 ms.date: 02/23/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to learn how to call web API in Android sample app.
+#Customer intent: As a dev, devops, I want to learn how to call web API in iOS sample app.
 ---
 
-# Tutorial: Call a web API in Android sample app 
+# Tutorial: Call a web API in iOS sample app 
 
-This tutorial demonstrates how to configure Android sample application to call an ASP.NET Core web API.
+This tutorial demonstrates how to configure iOS sample application to call an ASP.NET Core web API.
 
 In this tutorial, you learn how to: 
 
 - Add permissions to access your web API
-- Configure sample Android mobile app to call web API
-- Run and test sample Android mobile application 
+- Configure sample iOS mobile app to call web API
+- Run and test sample iOS mobile application 
 
 ## Prerequisites
 
-- [How to run the Android sample app](how-to-run-native-authentication-sample-android-app.md).
+- [How to run the iOS sample app](how-to-run-native-authentication-sample-ios-app.md).
 - [Tutorial: Secure an ASP.NET Core web API registered in a customer tenant](tutorial-protect-web-api-dotnet-core-build-app.md)
 
 
@@ -53,37 +53,31 @@ Once you've registered both your client app and web API and you've exposed the A
    1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**. 
    1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for both scopes. 
  
-    :::image type="content" source="media/native-authentication/android/api-permissions.jpg" alt-text="Screenshot showing configured permission in Microsoft Entra admin center." lightbox="media/native-authentication/android/api-permissions.jpg"::: 
+    :::image type="content" source="media/native-authentication/ios/api-permissions.jpg" alt-text="Screenshot showing configured permission in Microsoft Entra admin center." lightbox="media/native-authentication/ios/api-permissions.jpg"::: 
 
 1. From the **Configured permissions** list, select the **ToDoList.Read** and **ToDoList.ReadWrite** permissions, one at a time, and then copy the permission's full URI for later use. The full permission URI looks something similar to `api://{clientId}/{ToDoList.Read}` or `api://{clientId}/{ToDoList.ReadWrite}`.
 
-## Configure sample Android mobile app to call web API
+## Configure sample iOS mobile app to call web API
 
-1. In your Android Studio, open `/app/src/main/java/com/azuresamples/msalnativeauthandroidkotlinsampleapp/AccessApiFragment.kt` file.
-1. Find property named `WEB_API_BASE_URL` and set the URL to your web API.
+1. In your Xcode, open `/NativeAuthSampleApp/ProtectedAPIViewController.swift` file.
+1. Find `Enter_the_Protected_API_Full_URL_Here` and replace this value with your web API URL.
 
-    ```kotlin
-    private const val WEB_API_BASE_URL = "" // Developers should set the respective URL of their web API here
+    ```swift
+    let protectedAPIUrl = "Enter_the_Protected_API_Full_URL_Here" // Developers should set the respective URL of their web API here
     ```
     
-1. Find property named `scopes` and set the scopes recorded in [Add permissions to access your web API](#add-permissions-to-access-your-web-api).
+1. Find `Enter_the_Protected_API_Scopes_Here` and set the scopes recorded in [Add permissions to access your web API](#add-permissions-to-access-your-web-api).
 
-    ```kotlin
-    private val scopes = listOf<String>() // Developers should set the respective scopes of their web API here. For example, private val scopes = listOf<String>("api://{clientId}/{ToDoList.Read}", "api://{clientId}/{ToDoList.ReadWrite}")
+    ```swift
+    let protectedAPIScopes = ["Enter_the_Protected_API_Scopes_Here"] // Developers should set the respective scopes of their web API here.For example, let protectedAPIScopes = ["pi://{clientId}/{ToDoList.Read}","api://{clientId}/{ToDoList.ReadWrite}"]
     ```
     
-## Run and test sample Android mobile application  
+## Run and test sample iOS mobile application  
  
 To build and run your app, follow these steps:
  
-1. In the toolbar, select your app from the run configurations menu.
-1. In the target device menu, select the device that you want to run your app on.
- 
-   If you don't have any devices configured, you need to either create an Android Virtual Device to use the Android Emulator or connect a physical device.
- 
-1. Select **Run** button. The app opens on the email and one-time passcode screen. 
-1. Select the API tab for testing the API call.
+1. To build and run your code, select **Run** from the **Product** menu in Xcode. After a successful build, Xcode will launch the sample app in the Simulator. 
 
 ## Next steps
 
-- [Tutorial: Self-service password reset](tutorial-native-authentication-android-self-service-password-reset.md)
+- [Tutorial: Self-service password reset](tutorial-native-authentication-ios-self-service-password-reset.md) 
