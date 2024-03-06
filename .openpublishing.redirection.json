@@ -320,8 +320,12 @@
       "source_path_from_root": "/docs/identity/authentication/howto-authentication-passwordless-security-key.md",
       "redirect_url": "/entra/identity/authentication/how-to-enable-passkey-fido2",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/hybrid/connect/how-to-connect-group-writeback-v2.md",
+      "redirect_url": "/entra/identity/hybrid/group-writeback-cloud-sync",
+      "redirect_document_id": false
     }
-
   ]
 }
 
