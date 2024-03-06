@@ -27,7 +27,7 @@ System.DirectoryServices.Protocols.LdapException: The operation was aborted beca
 
 LDAP search operations can take longer if the search attribute is not indexed. As a first step, if you get the above error, first check if the search/lookup attribute is [indexed](/windows/win32/ad/indexed-attributes). If the search attributes are indexed and the error persists, you can increase the LDAP connection timeout using the following steps: 
 
-1. Log on as Administrator on the Windows server running the Microsoft Entra provisioning Agent.
+1. Log on as Administrator on the Windows server running the Microsoft Entra provisioning agent.
 1. Use the *Run* menu item to open the registry editor (regedit.exe) 
 1. Locate the key folder **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Azure AD Connect Agents\Azure AD Connect Provisioning Agent**
 1. Right-click and select "New -> String Value"
