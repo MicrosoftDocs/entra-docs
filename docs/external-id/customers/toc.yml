@@ -333,7 +333,7 @@ items:
     - name: Group and application roles support
       href: reference-group-app-roles-support.md
     - name: Company branding CSS template reference guide
-      href: /entra/fundamentals/reference-company-branding-css-template
+      href: ~/fundamentals/reference-company-branding-css-template.md
     - name: Help and support options
       href: ~/identity-platform/developer-support-help-options.md?context=/entra/external-id/customers/context/customers-context
     - name: MSAL references 
