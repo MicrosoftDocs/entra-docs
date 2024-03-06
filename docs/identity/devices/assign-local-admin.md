@@ -27,7 +27,7 @@ This article explains how the local administrators membership update works and h
 At the time of Microsoft Entra join, we add the following security principals to the local administrators group on the device:
 
 - The Microsoft Entra Global Administrator role
-- The Microsoft Entra joined Device Local Administrator role 
+- The Microsoft Entra Joined Device Local Administrator role 
 - The user performing the Microsoft Entra join   
 
 > [!NOTE]
