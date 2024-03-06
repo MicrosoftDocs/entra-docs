@@ -87,7 +87,7 @@ The following sections describe some common agent installation problems, and typ
 
 You might receive an error message that states:
 
-*Service 'Microsoft Entra provisioning Agent' failed to start. Verify that you have sufficient privileges to start the system services.* 
+*Service 'Microsoft Entra Provisioning Agent' failed to start. Verify that you have sufficient privileges to start the system services.* 
 
 This problem is typically caused by a group policy. The policy prevented permissions from being applied to the local NT Service sign-in account created by the installer (`NT SERVICE\AADConnectProvisioningAgent`). These permissions are required to start the service.
 
