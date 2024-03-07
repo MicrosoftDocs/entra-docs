@@ -12,9 +12,9 @@ To specify that this app is a public client and can use native authentication, e
  
 1. From the app registrations page, select the app registration for which you want to enable public client and native authentication flows.  
 1. Under **Manage**, select **Authentication**.
-1. Under **Advanced settings**, allow public client flows, 
+1. Under **Advanced settings**, allow public client flows: 
     1. For **Enable the following mobile and desktop flows** select **Yes**.
-1. Under **Advanced settings**, for **Enable native authentication**, select **Yes**.
+    1. For **Enable native authentication**, select **Yes**.
 1. Select **Save** button.
 
 If you don't see the **Enable native authentication** option, add a *enableNativeAuthConfiguration=true* query parameter to your Microsoft Entra admin center URL, then load the page again with the new query parameter. For example, if the URL in your browser address bar is:
