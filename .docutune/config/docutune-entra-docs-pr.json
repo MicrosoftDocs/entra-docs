@@ -24,7 +24,8 @@
     "*-crm-*",
     "*-crud-*",
     "*-mvc-*",
-    "product-azure-app-service"
+    "product-azure-app-service",
+    "invalid-product-microsoft-visual-studio-vs"
   ],
   "PreloadTOCFiles": [
   ],
