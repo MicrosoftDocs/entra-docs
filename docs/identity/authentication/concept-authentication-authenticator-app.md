@@ -31,6 +31,12 @@ To use the Authenticator app at a sign-in prompt rather than a username and pass
 
 ## Passkey sign-in (preview)
 
+Entra ID supports passkey sign-in, either by using Authenticator on a device, such an iOS or Android device. Authenticator is a free passkey solution that lets users do phishing-resistant authentications from their own phones. Authenticator also provides these advantages over other passkey options:
+
+- Users stay up-to-date with the latest passkey innovation based upon open WebAuthn standards
+- Administrators can restrict passkey usage based upon Authenticator Attestation Globally Unique Identifier (AAGUID)
+- Enterprises can layer other capabilities on top of authentication flows, such as [FIPS 140 compiance](#fips-140-compliant-for-microsoft-entra-authentication)
+
 ### Device-bound passkey
 
 ### How passkey attestation works with Authenticator
@@ -91,6 +97,7 @@ Managining and adding additional Microsoft Authenticator registrations can be pe
 
 Authenticator registration type | Icon
 ------ | ------
+Microsoft Authenticator: Passkey |  <img width="43" alt="Microsoft Authenticator passkey sign-in capable" src="https://user-images.githubusercontent.com/50213291/306738686-c2f53852-6025-44d3-8f33-eb9b8300c6b9.png">
 Microsoft Authenticator: Passwordless phone sign-in   | <img width="43" alt="Microsoft Authenticator passwordless sign-in Capable" src="https://user-images.githubusercontent.com/50213291/211923744-d025cd70-4b88-4603-8baf-db0fc5d28486.png">  
 Microsoft Authenticator: (Notification/Code) | <img width="43" alt="Microsoft Authenticator MFA Capable" src="https://user-images.githubusercontent.com/50213291/211921054-d11983ad-4e0d-4612-9a14-0fef625a9a2a.png">
 
