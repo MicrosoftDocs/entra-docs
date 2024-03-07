@@ -14,6 +14,8 @@ manager: amycolannino
 ms.reviewer: calui
 
 ms.collection: M365-identity-device-management
+# Customer intent: As an identity administrator, I want to understand... 
+
 ---
 # Register a passkey (FIDO2)
 

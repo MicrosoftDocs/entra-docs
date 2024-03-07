@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/05/2024
+ms.date: 03/07/2024
 
 ms.author: justinha
 author: justinha
@@ -34,7 +34,7 @@ This article shows how to register a passkey using a browser and sign-in with a 
  
    :::image type="content" border="true" source="media/how-to-register-passkey-android-or-ios/add-passkey.png" alt-text="Screenshot of the add a passkey on your iOS or Android device.":::
 
-1. A security dialog will be opened on your device and ask where you would like to save your passkey. 
+1. A security dialog opens on your device and asks where to save your passkey. 
 
    > [!NOTE]
    > Options displayed vary depending on your browser and device operating system. If the device where you started the registration process supports passkeys, you'll be asked to save the passkey to that device. Select **Use another device** or **More options** to display additional ways for you to save the passkey.
