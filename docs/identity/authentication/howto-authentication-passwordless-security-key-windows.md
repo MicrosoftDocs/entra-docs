@@ -1,20 +1,20 @@
 ---
-title: Passwordless security key sign-in Windows
-description: Learn how to enable passwordless security key sign-in to Microsoft Entra ID using FIDO2 security keys 
+title: FIDO2 security key sign-in to Windows
+description: Learn how to enable passwordless security key sign-in to Windows with Microsoft Entra ID using FIDO2 security keys 
 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/29/2023
+ms.date: 03/06/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: librown, aakapo
 ---
-# Enable passwordless security key sign-in to Windows 10 devices with Microsoft Entra ID 
+# Enable FIDO2 security key sign-in to Windows 10 and 11 devices with Microsoft Entra ID 
 
-This document focuses on enabling FIDO2 security key based passwordless authentication with Windows 10 devices. At the end of this article, you will be able to sign in to both your Microsoft Entra ID and Microsoft Entra hybrid joined Windows 10 devices with your Microsoft Entra account using a FIDO2 security key.
+This document focuses on enabling FIDO2 security key based passwordless authentication with Windows 10 and 11 devices. At the end of this article, you will be able to sign in to both your Microsoft Entra ID and Microsoft Entra hybrid joined Windows devices with your Microsoft Entra account using a FIDO2 security key.
 
 ## Requirements
 
@@ -36,13 +36,14 @@ This document focuses on enabling FIDO2 security key based passwordless authenti
 
 The following scenarios aren't supported:
 
+- Signing in or unlocking a Windows device with a passkey in Microsoft Authenticator.
 - Windows Server Active Directory Domain Services (AD DS) domain-joined (on-premises only devices) deployment.
 - RDP, VDI, and Citrix scenarios using a security key other than [webauthn redirection](/azure/virtual-desktop/authentication).
 - S/MIME using a security key.
 - "Run as" using a security key.
 - Log in to a server using a security key.
 - If you haven't used your security key to sign in to your device while online, you can't use it to sign in or unlock offline.
-- Signing in or unlocking a Windows 10 device with a security key containing multiple Microsoft Entra accounts. This scenario utilizes the last account added to the security key. WebAuthN allows users to choose the account they wish to use.
+- Signing in or unlocking a Windows device with a security key containing multiple Microsoft Entra accounts. This scenario utilizes the last account added to the security key. WebAuthN allows users to choose the account they wish to use.
 - Unlock a device running Windows 10 version 1809. For the best experience, use Windows 10 version 1903 or higher.
 
 ## Prepare devices
