@@ -82,6 +82,8 @@ You can configure groups and organizational units within a configuration.
 ## Attribute mapping
 Microsoft Entra Cloud Sync allows you to easily map attributes between your on-premises user/group objects and the objects in Microsoft Entra ID.  
 
+:::image type="content" source="media/how-to-configure/new-ux-configure-6.png" alt-text="Screenshot of map attributes icon." lightbox="media/how-to-configure/new-ux-configure-6.png":::
+
 You can customize the default attribute-mappings according to your business needs. So, you can change or delete existing attribute-mappings, or create new attribute-mappings.  
 
 :::image type="content" source="media/how-to-configure/new-ux-configure-7.png" alt-text="Screenshot of default attribute mappings." lightbox="media/how-to-configure/new-ux-configure-7.png":::
@@ -97,6 +99,8 @@ Microsoft Entra Cloud Sync allows you to extend the directory with extensions an
 
 ## On-demand provisioning
 Microsoft Entra Cloud Sync allows you to test configuration changes, by applying these changes to a single user or group.  
+
+:::image type="content" source="media/how-to-configure/new-ux-configure-8.png" alt-text="Screenshot of test icon." lightbox="media/how-to-configure/new-ux-configure-8.png":::
 
 You can use this to validate and verify that the changes made to the configuration were applied properly and are being correctly synchronized to Microsoft Entra ID.  
 
