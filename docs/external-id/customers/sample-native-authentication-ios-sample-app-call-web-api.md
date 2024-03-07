@@ -1,36 +1,27 @@
 ---
-title: Call web API in iOS sample app
-description: Learn how to call web API in iOS sample app.
+title: Sign in users and call an API in sample iOS mobile app by using native authentication
+description: Learn how sign in users and call an API in sample iOS mobile app by using native authentication
 
 author: henrymbuguakiarie
 manager: mwongerapk
 
 ms.author: henrymbugua
-ms.service: active-directory
+ms.service: entra-external-id
 
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 03/06/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to learn how to call web API in iOS sample app.
+#Customer intent: As a developer, I aim to learn registering a web API, configuring API scopes, roles, optional claims, and calling a web API in an iOS sample app.
 ---
 
-# Tutorial: Call a web API in iOS sample app 
+# Sign in users and call an API in sample iOS mobile app by using native authentication
 
-This tutorial demonstrates how to configure iOS sample application to call an ASP.NET Core web API.
-
-In this tutorial, you learn how to: 
-
-- Register a web API application
-- Grant API permissions to the iOS sample app
-- Clone or download sample web API
-- Configure and run sample web API
-- Configure sample iOS mobile app to call web API
-- Run iOS sample app and call web API
+This sample demonstrates how to configure iOS sample application to call an ASP.NET Core web API.
 
 ## Prerequisites
 
-- [How to run the iOS sample app](how-to-run-native-authentication-sample-ios-app.md).
+- [Sign in users in sample iOS (Swift) mobile app by using native authentication](how-to-run-native-authentication-sample-ios-app.md).
 
 ### Register a web API application
 
@@ -101,7 +92,7 @@ If you choose to download the .zip file, extract the sample app file to a folder
 To build and run your app, follow these steps:
  
 1. To build and run your code, select **Run** from the **Product** menu in Xcode. After a successful build, Xcode will launch the sample app in the Simulator. 
-1. Select the API tab to test the API call.
+1. Select the API tab to test the API call. A successful call to the web API returns HTTP `200`, while HTTP `403` signifies unauthorized access.
 
 ## Next steps
 

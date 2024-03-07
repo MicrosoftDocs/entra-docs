@@ -6,31 +6,22 @@ author: henrymbuguakiarie
 manager: mwongerapk
 
 ms.author: henrymbugua
-ms.service: active-directory
+ms.service: entra-external-id
 
-ms.subservice: ciam
-ms.topic: how-to
+ms.subservice: customers
+ms.topic: sample
 ms.date: 03/06/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to learn how to call web API in Android sample app.
+#Customer intent: As a developer, I aim to learn registering a web API, configuring API scopes, roles, optional claims, and calling a web API in an Android sample app.
 ---
 
-# Tutorial: Call a web API in Android sample app 
+# Sign in users and call an API in sample Android mobile app by using native authentication
 
-This tutorial demonstrates how to configure Android sample application to call an ASP.NET Core web API.
-
-In this tutorial, you learn how to: 
-
-- Register a web API application
-- Grant API permissions to the Android sample app
-- Clone or download sample web API
-- Configure and run sample web API
-- Configure sample Android mobile app to call web API
-- Run Android sample app and call web API
+This sample demonstrates how to configure Android sample application to call an ASP.NET Core web API.
 
 ## Prerequisites
 
-- [How to run the Android sample app](how-to-run-native-authentication-sample-android-app.md).
+- [Sign in users in sample Android (Kotlin) mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md).
 
 ### Register a web API application
 
@@ -106,7 +97,7 @@ To build and run your app, follow these steps:
    If you don't have any devices configured, you need to either create an Android Virtual Device to use the Android Emulator or connect a physical device.
  
 1. Select **Run** button. The app opens on the email and one-time passcode screen. 
-1. Select the API tab to test the API call.
+1. Select the API tab to test the API call. A successful call to the web API returns HTTP `200`, while HTTP `403` signifies unauthorized access.
 
 ## Next steps
 
