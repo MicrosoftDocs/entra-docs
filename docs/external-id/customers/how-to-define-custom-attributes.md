@@ -12,7 +12,7 @@ ms.date: 01/23/2024
 ms.author: mimart
 ms.custom: it-pro
 
-#Customer intent: As a dev, devops, IT admin, I want to create custom attributes in my tenant and add them to my sign-up user flow so that I can collect then during sign-up.
+#Customer intent: As a developer, devops, IT admin, I want to create custom attributes in my tenant and add them to my sign-up user flow so that I can collect then during sign-up.
 ---
 
 # Collect custom user attributes during sign-up  
@@ -23,7 +23,7 @@ To define a custom user attribute, you first create the attribute at the tenant 
 
 Learn more about custom user attributes in [User profile attributes](concept-user-attributes.md) article.
 
-## Create a custom user attribute
+## Create a custom user attributes
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
@@ -35,7 +35,7 @@ Learn more about custom user attributes in [User profile attributes](concept-use
 
 1. Select **Add**. In the **Add an attribute** pane, enter a **Name** for the custom attribute (for example, "Terms of use").
 
-1. In **Data Type**, choose **String**, **Boolean**, or **Int** depending on the [type of data and user input control](#custom-user-attribute-data-and-input-types) you want to create. **String** attributes have a default user input type value of **TextBox**, but you'll be able to change this in a later step (for example if you want to configure radio buttons or multiselect checkboxes).
+1. In **Data Type**, choose **String**, **Boolean**, or **Int** depending on the [type of data and user input control](concept-user-attributes.md#custom-user-attributes-input-types) you want to create. **String** attributes have a default user input type value of **TextBox**, but you'll be able to change this in a later step (for example if you want to configure radio buttons or multiselect checkboxes).
 
 1. (Optional) In **Description**, enter a description of the custom attribute for internal use. This description isn't visible to the user.
 
@@ -77,9 +77,9 @@ On the **Page layout** page, you can indicate which attributes are required and 
 
 1. Configure checkboxes or radio buttons:
 
-   - **Single-select checkbox**: A Boolean attribute type renders as a single-select checkbox on the sign-up page. To configure the text that displays next to the checkbox, select and edit the value in the **Label** column. Use Markdown language to add hyperlinks. For details, see [To configure a single-select checkbox (CheckboxSingleSelect)](#to-configure-a-single-select-checkbox-checkboxsingleselect)
-   - **Multiselect checkboxes**: Find the **String** data type attribute you want to configure, and select the value in the **User Input Type** column to open the editor pane. Choose the **CheckboxMultiSelect** user input type and enter the values. For details, see [To configure multiselect checkboxes (CheckboxMultiSelect)](#to-configure-multiselect-checkboxes-checkboxmultiselect).
-   - **Radio buttons**: Find the **String** data type attribute you want to configure, and select the value in the **User Input Type** column to open the editor pane. Choose the **RadioSingleSelect** user input type and enter the values. For details, see [To configure radio buttons (RadioSingleSelect)](#to-configure-radio-buttons-radiosingleselect)
+   - **Single-select checkbox**: A Boolean attribute type renders as a single-select checkbox on the sign-up page. To configure the text that displays next to the checkbox, select and edit the value in the **Label** column. Use Markdown language to add hyperlinks. For details, see [To configure a single-select checkbox (CheckboxSingleSelect)](#configure-a-single-select-checkbox-checkboxsingleselect)
+   - **Multiselect checkboxes**: Find the **String** data type attribute you want to configure, and select the value in the **User Input Type** column to open the editor pane. Choose the **CheckboxMultiSelect** user input type and enter the values. For details, see [To configure multiselect checkboxes (CheckboxMultiSelect)](#configure-multiselect-checkboxes-checkboxmultiselect).
+   - **Radio buttons**: Find the **String** data type attribute you want to configure, and select the value in the **User Input Type** column to open the editor pane. Choose the **RadioSingleSelect** user input type and enter the values. For details, see [To configure radio buttons (RadioSingleSelect)](#configure-radio-buttons-radiosingleselect)
 
 1. Change the order of display by selecting an attribute and choosing **Move up**, **Move down**, **Move to top**, or **Move to bottom**.
 

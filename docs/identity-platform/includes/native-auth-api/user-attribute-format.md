@@ -7,7 +7,7 @@ ms.date: 03/08/2024
 ms.author: kengaderdus
 ---
 
-You specify the information you want to collect from the user by configuring the user flow settings in the Microsoft Entra admin center. Use the [Collect custom user attributes during sign-up](../external-id/customers/how-to-define-custom-attributes.md) article to learn how to collect values for both built-in and custom attributes.
+You specify the information you want to collect from the user by configuring the user flow settings in the Microsoft Entra admin center. Use the [Collect custom user attributes during sign-up](../../../external-id/customers/how-to-define-custom-attributes.md) article to learn how to collect values for both built-in and custom attributes.
 
 You can also specify the **User Input Type** for the attributes you configure. The following table summarizes supported user input types, and how to submit values collected by the UI controls to Microsoft Entra.
 
@@ -31,12 +31,12 @@ continuation_token=ABAAEAAAAtfyo...
 &continuation_token=AQABAAEAAAAtn...
 ```
 
-Learn more about user attributes input types in [Custom user attributes input types](../external-id/customers/concept-user-attributes.md#custom-user-attributes-input-types) article.
+Learn more about user attributes input types in [Custom user attributes input types](../../../external-id/customers/concept-user-attributes.md#custom-user-attributes-input-types) article.
 
 ### Reference user attributes 
 
-When you [create a sign-up user-flow](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md), you add to it the a user attribute that you want to collect from the user during sign-up. The name of the user attribute in the Microsoft Entra admin center isn't similar to how you reference it the native authentication API.
+When you [create a sign-up user-flow](../../../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md), you add to it the a user attribute that you want to collect from the user during sign-up. The name of the user attribute in the Microsoft Entra admin center isn't similar to how you reference it the native authentication API.
 
 For example, *Display Name* in the Microsoft Entra admin center is referenced as *displayName* in the API.
 
-Use the [User profile attributes](../external-id/customers/concept-user-attributes.md) article to learn how to reference both built-in and custom user attributes in the native authentication API.
+Use the [User profile attributes](../../../external-id/customers/concept-user-attributes.md) article to learn how to reference both built-in and custom user attributes in the native authentication API.

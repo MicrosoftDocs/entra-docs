@@ -1009,4 +1009,4 @@ If the error parameter has a value of *invalid_grant*, Microsoft Entra includes 
 
 - [Native authentication email with password API reference](reference-native-authentication-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 
-- Learn how to [create custom attributes](../external-id/customers/how-to-define-custom-attributes.md#create-custom-user-attributes).
+- Learn how to [create custom attributes](../external-id/customers/how-to-define-custom-attributes.md#create-a-custom-user-attributes).

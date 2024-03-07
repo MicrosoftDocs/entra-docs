@@ -23,7 +23,7 @@ Microsoft Entra External ID has built-in user attributes that you can collect du
 This table summarizes the built-in user attributes that you can collect during sign-up flow: 
 
 - *Label in Microsoft Entra admin center* is the names of the user attribute as it appears in the Microsoft Entra admin center. 
-- *Programmable name* is the name of the user attribute as used in the [user resource](/graph/api/resources/user/#properties) of then Microsoft Graph API. You use this name when you want to use this user attribute programmatically, such as in [native authentication](/entra/identity-platform/reference-native-authentication-overview?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json). 
+- *Programmable name* is the name of the user attribute as used in the [user resource](/graph/api/resources/user/#properties) of then Microsoft Graph API. You use this name when you want to use this user attribute programmatically, such as in [native authentication](../../identity-platform/reference-native-authentication-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json). [dd](../customers/ex)
 - *Data type* is the attributer data type.
 
 |  Label in Microsoft Entra admin center| Programmable name |     Data type   |  Remarks    |
@@ -31,7 +31,7 @@ This table summarizes the built-in user attributes that you can collect during s
 |City|city|String|Maximum length is 128 characters.|
 |Country/Region|country|String|Maximum length is 128 characters.|
 |Display Name|displayName|String|Max length is 256 characters.|
-|Email Address| mail| String | This property can't contain accent characters. In the [native authentication API](/entra/identity-platform/reference-native-authentication-overview?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), this attribute is referenced as *username*.|
+|Email Address| mail| String | This property can't contain accent characters. In the [native authentication API](../../identity-platform/reference-native-authentication-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), this attribute is referenced as *username*.|
 |Given Name|givenName|String|Maximum length is 64 characters.|
 |Job Title|jobTitle|String|Maximum length is 128 characters.|
 |Postal Code|postalCode	|String|Maximum length is 40 characters.|
@@ -45,7 +45,7 @@ If your customer-facing app collects more information from the user than the bui
 
 To define a custom user attribute, you first create the attribute at the tenant level so it can be used in any user flow in the tenant. Then you assign the attribute to your sign-up user flow and configure how you want it to appear on the sign-up page.
 
-Learn how to create custom user attributes [Create custom user attributes](how-to-define-custom-attributes.md#to-create-a-custom-user-attribute) article.
+Learn how to create custom user attributes [Create custom user attributes](how-to-define-custom-attributes.md#create-a-custom-user-attribute) article.
 
 ### Custom user attributes input types
 
