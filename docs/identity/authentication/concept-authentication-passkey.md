@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/06/2024
+ms.date: 03/07/2024
 
 ms.author: justinha
 author: justinha
@@ -32,15 +32,14 @@ Passkeys can either be bound to one device or synchronized between multiple devi
 >[!Note]
 >Entra ID supports only device-bound passkeys. Support for synced passkeys is coming soon.
 
-## Phishing-resistant sign in methods for Microsoft Entra ID
+## Passkey support in Entra ID
 
-Among other requirements, [Executive Order 14028](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/) mandates that US government agencies use phishing-resistant authentication by September 2024. Today in Microsoft Entra ID, we offer the following phishing-resistant authentication methods: 
+Among other requirements, [Executive Order 14028](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/) mandates that US government agencies use phishing-resistant authentication such as passkeys by September 2024. Entra ID supports the following passkeys: 
 
-- Certificate-based authentication (CBA): CBA is commonly used by US government agencies. It requires a Public Key Infrastructure (PKI). 
-- Windows Hello for Business: Platform level Single Sign-on and device-bound passkey by definition. Windows Hello for Business can be complex. Windows Hello for Business is limited to PCs, and requires that Mobile Device Management (MDM) fully manage these devices.  
 - Passkeys (device-bound): Includes FIDO2 security keys and other physical devices. Adoption of security keys are limited because these physical devices are costly to acquire and manage at scale.
-- Passkeys (WebAuthn credential): Can be applied from, passkeys (FIDO2), Microsoft Authenticator, Windows Hello, and Windows Hello For Business. 
+- Passkeys (WebAuthn credential): Can be applied from, passkeys (FIDO2), Microsoft Authenticator, and Windows Hello For Business. 
 - Passkey managed by Microsoft Authenticator: Device-bound passkeys (FIDO2) that users can save in Microsoft Authenticator on a mobile device that runs Android 14+ or iOS 17+.
+- Windows Hello for Business: Platform level Single Sign-on and device-bound passkey by definition. Windows Hello for Business can be complex. Windows Hello for Business is limited to PCs, and requires that Mobile Device Management (MDM) fully manage these devices.  
 
 ## Advantages of passkeys for users
 
