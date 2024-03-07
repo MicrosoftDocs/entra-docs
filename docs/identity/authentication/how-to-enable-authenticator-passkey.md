@@ -58,7 +58,10 @@ The following list describes other optional settings:
 
 **Key Restriction Policy**
 
-- **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain passkeys, which are identified by their Authenticator Attestation GUID (AAGUID). The following screenshot shows Authenticator passkey AAGUIDs for Android and iOS. 
+- **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain passkeys, which are identified by their Authenticator Attestation GUID (AAGUID). If you want to manually add the Authenticator app AAGUIDs, or specifically restrict only Android or iOS devices, you can manually enter their Authenticator AAGUID:
+
+  - Authenticator for Android: de1e552d-db1d-4423-a619-566b625cdc84
+  - Authenticator for iOS: 90a3ccdf-635c-4729-a248-9b709135078f
 
   >[!WARNING]
   >Key restrictions set the usability of specific passkeys for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. 
