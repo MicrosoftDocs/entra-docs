@@ -1,5 +1,5 @@
 ---
-title: Native app and browser support of FIDO2 passwordless authentication | Microsoft Entra ID
+title: App and browser support of passkey (FIDO2) authentication | Microsoft Entra ID
 description: Browsers and operating system combinations support FIDO2 passwordless authentication for apps using Microsoft Entra ID
 
 ms.service: entra-id
@@ -12,9 +12,9 @@ ms.author: justinha
 manager: amycolannino
 ms.reviewer: calui
 ---
-# Native app and browser support of FIDO2 passwordless authentication
+# App and browser support for passkey (FIDO2) authentication
 
-Microsoft Entra ID allows [FIDO2 security keys](./concept-authentication-passwordless.md#fido2-security-keys) to be used as a passwordless device. The availability of FIDO2 authentication for Microsoft accounts was [announced in 2018](https://techcommunity.microsoft.com/t5/identity-standards-blog/all-about-fido2-ctap2-and-webauthn/ba-p/288910), and it became [generally available](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/passwordless-authentication-is-now-generally-available/ba-p/1994700) in March 2021. This topic covers which browsers, native apps, and operating systems support passwordless authentication using FIDO2 security keys with Microsoft Entra ID. Microsoft Entra ID currently supports only hardware FIDO2 keys and doesn't support passkeys for any platform.
+Microsoft Entra ID allows device-bound [passkeys](./concept-authentication-passkey) to be used for passwordless authentication. This topic covers which native apps, web browsers, and operating systems support passwordless authentication using passkeys with Microsoft Entra ID. Microsoft Entra ID currently supports only device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator.
 
 ## Native app support (preview)
 
@@ -45,7 +45,7 @@ This table shows browser support for authenticating Microsoft Entra ID and Micro
 | **ChromeOS**  | &#x2705; | N/A | N/A | N/A |
 | **Linux**  | &#x2705; | &#10060; | &#10060; | N/A |
 | **iOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
-| **Android**  | &#10060; | &#10060; | &#10060; | N/A |
+| **Android**  | &#x2705; | &#x2705; | &#x2705; | N/A |
 
 ## Browser support for each platform
 
@@ -58,6 +58,18 @@ The following tables show which transports are supported for each platform. Supp
 | Edge    | &#x2705; | &#x2705; | &#x2705; |
 | Chrome   | &#x2705; | &#x2705; | &#x2705; |
 | Firefox   | &#x2705; | &#x2705; | &#x2705; |
+
+#### Minimum browser version
+
+The following are the minimum browser version requirements on Windows. 
+
+| Browser | Minimum version |
+| ---- | ---- |
+| Chrome | 76 |
+| Edge | Windows 10 version 1903<sup>1</sup> |
+| Firefox | 66 |
+
+<sup>1</sup>All versions of the new Chromium-based Microsoft Edge support FIDO2. Support on Microsoft Edge legacy was added in 1903.
 
 ### macOS
 
@@ -104,25 +116,13 @@ The following tables show which transports are supported for each platform. Supp
 
 ### Android
 
-| Browser<sup>1</sup> | USB  | NFC | BLE |
+| Browser | USB  | NFC | BLE<sup>1</sup> |
 |---------|------|-----|-----|
-| Edge    | &#10060;  | &#10060; | &#10060; |
-| Chrome  | &#10060;  | &#10060; | &#10060; |
-| Firefox | &#10060;  | &#10060; | &#10060; |
+| Edge    | &#x2705;  | &#x2705; | &#10060; |
+| Chrome  | &#x2705;  | &#x2705; | &#10060; |
+| Firefox | &#x2705;  | &#x2705; | &#10060; |
 
-<sup>1</sup>Security key biometrics or PIN for user verification are currently supported on Android by Google. Microsoft Entra ID requires user verification for all FIDO2 authentications.
-
-## Minimum browser version
-
-The following are the minimum browser version requirements. 
-
-| Browser | Minimum version |
-| ---- | ---- |
-| Chrome | 76 |
-| Edge | Windows 10 version 1903<sup>1</sup> |
-| Firefox | 66 |
-
-<sup>1</sup>All versions of the new Chromium-based Microsoft Edge support FIDO2. Support on Microsoft Edge legacy was added in 1903.
+<sup>1</sup>BLE security keys aren't supported on Android by Google.
 
 ## Known issues
 
