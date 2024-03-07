@@ -69,7 +69,7 @@ There are many recommendations that Microsoft Entra ID Free, Office 365, or Micr
 The following table is intended to highlight the key actions for the following license subscriptions:
 
 - Microsoft Entra ID P1
-- Enterprise Mobility + Security (Microsoft Enterprise Mobility + Security E3)
+- Microsoft Enterprise Mobility + Security E3
 - Microsoft 365 (E3, A3, F1, F3)
 
 | Recommended action | Detail |
