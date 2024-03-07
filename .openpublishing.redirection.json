@@ -22,7 +22,7 @@
     },
     {
       "source_path_from_root": "/docs/id-protection/reference-identity-protection-glossary.md",
-      "redirect_url": "/entra/id-protection/overview-identity-protection.md",
+      "redirect_url": "/entra/id-protection/overview-identity-protection",
       "redirect_document_id": true
     },
     {
