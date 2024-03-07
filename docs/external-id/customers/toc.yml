@@ -274,6 +274,8 @@ items:
       href: concept-planning-your-solution.md
     - name: Supported features in customer tenants
       href: concept-supported-features-customers.md
+    - name: User profile attributes
+      href: concept-user-attributes.md
     - name: Authentication methods and identity providers
       href: concept-authentication-methods-customers.md
     - name: Native authentication
@@ -342,8 +344,9 @@ items:
               href: how-to-customize-languages-customers.md
         - name: Customize attribute collection
           items:
-            - name: Collect user attributes during sign-up
-              href: how-to-define-custom-attributes.md
+            - name: Collect custom user attributes during sign-up
+              href: how-to-define-custom-attributes.md 
+              displayName: custom attributes
             - name: Add attributes to the token
               href: how-to-add-attributes-to-token.md
         - name: Advanced extensions
