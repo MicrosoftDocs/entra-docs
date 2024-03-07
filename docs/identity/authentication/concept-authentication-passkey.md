@@ -37,7 +37,7 @@ Passkeys can either be bound to one device or synchronized between multiple devi
 Among other requirements, [Executive Order 14028](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/) mandates that US government agencies use phishing-resistant authentication by September 2024. Today in Microsoft Entra ID, we offer the following phishing-resistant authentication methods: 
 
 - Certificate-based authentication (CBA): CBA is commonly used by US government agencies. It requires a Public Key Infrastructure (PKI). 
-- Windows Hello for Business: Platform level Single Sign-on and device-bound passkey by definition. Windows Hello for Business can be complex. Windows Hello for Business is limited to PCs, and requires that Mobile Device Management (MDM) fully manage these devices. The Executive Order also requires a solution for unmanaged devices. 
+- Windows Hello for Business: Platform level Single Sign-on and device-bound passkey by definition. Windows Hello for Business can be complex. Windows Hello for Business is limited to PCs, and requires that Mobile Device Management (MDM) fully manage these devices.  
 - Passkeys (device-bound): Includes FIDO2 security keys and other physical devices. Adoption of security keys are limited because these physical devices are costly to acquire and manage at scale.
 - Passkeys (WebAuthn credential): Can be applied from, passkeys (FIDO2), Microsoft Authenticator, Windows Hello, and Windows Hello For Business. 
 - Passkey managed by Microsoft Authenticator: Device-bound passkeys (FIDO2) that users can save in Microsoft Authenticator on a mobile device that runs Android 14+ or iOS 17+.
