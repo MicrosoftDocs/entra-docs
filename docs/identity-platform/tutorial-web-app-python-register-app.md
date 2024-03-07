@@ -44,7 +44,7 @@ The Microsoft identity platform performs identity and access management (IAM) on
 1. Ignore the **Redirect URI (optional)** for now. You'll configure it in the next section
 1. Select **Register** to complete the initial app registration.
 
-When registration finishes, the Microsoft Entra Admin Center displays the app registration's **Overview** pane. You see the automatically generated **Application (client) ID**.
+When registration finishes, the Microsoft Entra Admin Center displays the app registration's **Overview** pane. From the **Overview** pane, record the Directory (tenant) ID and the Application (client) ID to be used in a later step.
 
 ## Add a redirect URI
 
@@ -70,7 +70,7 @@ For this tutorial, you'll use a client secret, also known as an application pass
 1. Select **Add**.
 1. Record the client secret value (not its ID) for use in a later step. This secret value is only shown once when you create it and never displayed after leaving this page.
 
-Although you used a client secret is added as a plain-text to your project files, for security reasons, it is recommended that you use a certificate instead of a client secret before moving the application to a production environment. For more information on how to use a certificate, see [these instructions](./certificate-credentials.md).
+Although you used a client secretin this tutorial, we recommended that you use a certificate before moving the application to a production environment. For more information on how to use a certificate, see [these instructions](./certificate-credentials.md).
 
 ## Next steps
 
