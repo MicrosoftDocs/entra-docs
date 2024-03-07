@@ -95,7 +95,7 @@ items:
     expanded: true
     items:
       - name: Kerberos single sign-on
-        href: how-to-configure-sso-with-kcd.md
+        href: how-to-configure-kerberos-sso.md
   - name: Logs and monitoring
     expanded: false
     items:

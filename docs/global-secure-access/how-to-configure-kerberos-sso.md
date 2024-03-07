@@ -1,6 +1,6 @@
 ---
 title: Use Kerberos for single sign-on (SSO) with Microsoft Entra Private Access.
-description: Covers how to provide single sign-on using Microsoft Entra Private Access.
+description: Covers how to provide single sign-on using Kerberos with Microsoft Entra Private Access.
 author: kenwith
 manager: amycolannino
 ms.service: global-secure-access
@@ -11,9 +11,9 @@ ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Use Kerberos constrained delegation for single sign-on (SSO) to your apps with Microsoft Entra Private Access
+# Use Kerberos for single sign-on (SSO) to your apps with Microsoft Entra Private Access
 
-Provide single sign-on for on-premises resources published through Microsoft Entra Private Access. Microsoft Entra Private Access uses Kerberos Constrained Delegation (KCD) to support these resources. Optionally, use Windows Hello for Business cloud Kerberos trust to allow single sign-on for users.
+Provide single sign-on for on-premises resources published through Microsoft Entra Private Access. Microsoft Entra Private Access uses Kerberos to support these resources. Optionally, use Windows Hello for Business cloud Kerberos trust to allow single sign-on for users.
 
 ## Prerequisites
 Before you get started with single sign-on, make sure your environment is ready with the following settings and configurations.
