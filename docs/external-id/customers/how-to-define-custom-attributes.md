@@ -12,26 +12,18 @@ ms.date: 01/23/2024
 ms.author: mimart
 ms.custom: it-pro
 
+#Customer intent: As a dev, devops, IT admin, I want to create custom attributes in my tenant and add them to my sign-up user flow so that I can collect then during sign-up.
 ---
 
-# Collect user attributes during sign-up  
+# Collect custom user attributes during sign-up  
 
+If your customer-facing app collects more information from the user than the built-in user attributes can support, you can add your own attributes. We refer to these attributes as *custom user attributes*.
 
+To define a custom user attribute, you first create the attribute at the tenant level so it can be used in any user flow in the tenant. Then you assign the attribute to your sign-up user flow and configure how you want it to appear on the sign-up page.
 
-## Find the application ID for the extensions app
+Learn more about custom user attributes in [User profile attributes](concept-user-attributes.md) article.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **App registrations** > **All applications**.
-1. Select the application **b2c-extensions-app. Do not modify. Used by AADB2C for storing user data.**
-1. On the **Overview** page, use the **Application (client) ID** value, for example: `12345678-abcd-1234-1234-ab123456789`, but remove the hyphens.
-
-**Example**: If you created a custom attribute named **loyaltyNumber**, refer to it as follows:
-
-`extension_12345678abcd12341234ab123456789_loyaltyNumber`
-
-
-
-### To create a custom user attribute
+## Create a custom user attribute
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
@@ -69,7 +61,7 @@ Follow these steps to add custom user attributes to a user flow you've already c
 
 1. Select **Save**.
 
-## Configure the user input types and page layout
+### Configure the user input types and page layout
   
 On the **Page layout** page, you can indicate which attributes are required and arrange the display order. You can also edit attribute labels, create radio buttons or checkboxes, and add hyperlinks to more content (such as terms of use or a privacy policy).
 
@@ -95,7 +87,7 @@ On the **Page layout** page, you can indicate which attributes are required and 
 
 1. When all your changes are complete, select **Save**.
 
-### To configure a single-select checkbox (CheckboxSingleSelect)
+### Configure a single-select checkbox (CheckboxSingleSelect)
 
 An attribute with a Boolean data type has a user input type of CheckboxSingleSelect. You can modify the text that displays next to the checkbox and include hyperlinks.
 
@@ -125,7 +117,7 @@ To configure a single-select checkbox, follow these steps:
 1. On the **Page layouts** page, select **Save**.
 
 
-### To configure multiselect checkboxes (CheckboxMultiSelect)
+### Configure multiselect checkboxes (CheckboxMultiSelect)
 
 An attribute with a String data type can be configured as a CheckboxMultiSelect user input type, which is a series of one or more checkboxes that appear under the attribute label. The user can select one or more checkboxes. You can define the text for individual checkboxes and include hyperlinks to other content. Making this attribute "Required" means that the user must select at least one of the checkboxes.
 
@@ -149,7 +141,7 @@ An attribute with a String data type can be configured as a CheckboxMultiSelect 
 
 1. On the **Page layouts** page, select **Save**.
 
-### To configure radio buttons (RadioSingleSelect)
+### Configure radio buttons (RadioSingleSelect)
 
 An attribute with a String data type can be configured as a RadioSingleSelect user input type, which is a series of radio buttons that appear under the attribute label. The user can select only one radio button. You can define the text for individual radio buttons and include hyperlinks to other content.
 
@@ -173,8 +165,30 @@ An attribute with a String data type can be configured as a RadioSingleSelect us
 
 1. On the **Page layouts** page, select **Save**.
 
+### Find the application ID for the extensions app
+
+[Custom user attributes](concept-user-attributes.md#custom-user-attributes) are [stored in an app named *b2c-extensions-app*](concept-user-attributes.md#where-custom-user-attributes-are-stored). After a user enters a value for the custom attribute during sign-up, it's added to the user object and can be called via the Microsoft Graph API using the naming convention `extension_{appId-without-hyphens}_{custom-attribute-name}` where:
+
+where:
+
+ - `{appId-without-hyphens}` is the stripped version of the client ID for the *b2c-extensions-app*. 
+ - `{custom-attribute-name}` is the name you assigned to the custom attribute.
+ 
+Use these steps to find the application ID for the extensions app:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Browse to **Identity** > **App registrations** > **All applications**.
+1. Select the application **b2c-extensions-app. Do not modify. Used by AADB2C for storing user data.**
+1. On the **Overview** page, use the **Application (client) ID** value, for example: `12345678-abcd-1234-1234-ab123456789`, but remove the hyphens.
+
+For example, if you create a custom attribute named **loyaltyNumber**, refer to it as `extension_12345678abcd12341234ab123456789_loyaltyNumber`
+
+## Add custom user attributes to the ID token
+
+When users sign-in to your app, the app receives an ID token, which includes the user details. These details are called token claims. If needed, you can include a custom user attribute to be available as a claim in the ID token that's returned to your app. To do so, follow the steps in [Add attributes to the ID token returned to your application](how-to-add-attributes-to-token.md) article.
+
 ## Next steps
 
-[Add attributes to the ID token returned to your application](how-to-add-attributes-to-token.md)
+[Add attributes to the ID token returned to your application](how-to-add-attributes-to-token.md).
 
-[Learn more about creating a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md)
+[Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md).

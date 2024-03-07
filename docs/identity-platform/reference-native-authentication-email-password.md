@@ -854,29 +854,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Format of user attributes values
 
-You specify the information you want to collect from the user by configuring the user flow settings in the Microsoft Entra admin center. Use the [Collect user attributes during sign-up](../external-id/customers/how-to-define-custom-attributes.md) article to learn how to collect values for both built-in and custom attributes.
-
-You can also specify the **User Input Type** for the attributes you configure. The following table summarizes supported user input types, and how to submit values collected by the UI controls to Microsoft Entra.
-
-|    User Input Type     |     Format of submitted values    |
-|----------------------|----------------------|
-|   TextBox   |   A single value such as job title, *Software Engineer*.  |
-|   SingleRadioSelect   |  A single value such as Language, *Norwegian*.  |
-|   CheckboxMultiSelect   |  One or multiple values such as a hobby or hobbies, *Dancing* or *Dancing, Swimming, Traveling*. |
-
-Here's an example request that shows how you submit the attributes values:
-
-```http
-POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
-Content-Type: application/x-www-form-urlencoded
- 
-continuation_token=ABAAEAAAAtfyo... 
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
-&grant_type=attributes 
-&attributes={"jobTitle": "Software Engineer", "extension_2588abcdwhtfeehjjeeqwertc_language": "Norwegian", "extension_2588abcdwhtfeehjjeeqwertc_hobbies": "Dancing,Swimming,Traveling"}
-&continuation_token=AQABAAEAAAAtn...
-```
+[!INCLUDE [native-auth-api-cors-note](./includes/native-auth-api/user-attribute-format.md)]
 
 ## Sign-in API reference
 
