@@ -6,6 +6,7 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 86d5c926-bb8e-483a-b154-42490f1b9db9
+ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
