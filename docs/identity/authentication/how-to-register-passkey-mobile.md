@@ -59,7 +59,7 @@ This article shows how to register a passkey using a security key with your iOS 
 9. Connect your security key to your iOS device. 
     :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_connect.png" alt-text="Screenshot asking to connect your security key to your iOS device.":::
 
-10. Provide your PIN or Biometric
+10. Provide your PIN or biometric.
    > [!NOTE]
    > If a PIN has not yet been configured for this security key, you will be asked to first enroll a pin before continuing registration. 
 
@@ -119,12 +119,12 @@ This article shows how to register a passkey using a security key with your iOS 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_connectkey.png" alt-text="Screenshot of passkey connection to android.":::
 
-12. Provide your PIN or Biometric.
+12. Provide your PIN or biometric.
      
    > [!NOTE]
    > If a PIN has not yet been configured for this security key, you will be asked to first enroll a pin before continuing registration. 
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_confirm_pin.png" alt-text="Screenshot of passkey connection to android.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_confirm_pin.png" alt-text="Screenshot of prompt to provide PIN or biometric.":::
 
 13. You maybe asked to confirm your PIN or biometric again before proceeding. 
 

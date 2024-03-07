@@ -44,13 +44,7 @@ Among other requirements, [Executive Order 14028](https://www.whitehouse.gov/bri
 
 ## Advantages of passkeys for users
 
-These advantages make passkeys one of the most beneficial authentication options for end users:
-
-- Highly secure sign in
-- Easy to download and use 
-- Fast, seamless sign-in that leverages biometrics or PIN
-- Sign in from all major platforms, including iOS, Android, macOS, Windows and Linux
-- Sign in with dedicated security keys
+Passkeys provide users with highly secure, phishing-resistant sign-in. Users don't need to remenmber any paswords because the passkey is saved to their device, and it can be unlocked using biometrics or PIN. Users can sign in with a passkey without other sign-in challenges, making passkeys faster and more convenient than other ways to sign in.
 
 ## Security advantages for organizations
 
