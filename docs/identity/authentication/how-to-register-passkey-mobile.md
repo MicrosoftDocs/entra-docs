@@ -19,18 +19,120 @@ ms.collection: M365-identity-device-management
 ---
 # Register a passkey using a mobile device (preview)
 
-This article shows how to use your Android or iOS device to register and sign-in with a passkey (FIDO2). 
+This article shows how to register a passkey using a security key with your iOS or Android device. 
 
 > [!NOTE]
 > Microsoft Entra ID supports only device-bound passkeys. Support for synced passkeys is coming soon.
 
 # [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
 
-TBD
+## Register a security key with iOS 
+1. Using your iOS device, open a web browser and sign-in to [My Security info](https://mysignins.microsoft.com/security-info).
+   
+2. Tap **+ Add sign-in method**.
+
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_addmethod.png" alt-text="Screenshot of the Security Info screen showing add methods":::
+
+3. Select **Passkey (preview)**.
+
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_myseclist.png" alt-text="Screenshot of the drop-down list of options in security info.":::
+
+4. Tap **Add**. 
+   
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_dropdown.png" alt-text="Screenshot of the Security Info screen Add Sign-in Method option.":::
+
+5. Sign in with multifactor authentication (MFA) before adding a passkey.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkeyios_2fa-authorization.png" alt-text="Screenshot of the 2-factor authentication requirement to setup a passkey.":::
+
+6. Click **Next**. 
+
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_start.png" alt-text="Screenshot of starting passkey registration":::
+
+7. Your device will open a security window. Chose **Other Options**. 
+    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_saveanotherway.png" alt-text="Screenshot of where to save a passkey on iOS":::
+8. Select the option **Security key**. 
+    > [!NOTE]
+    > Depending on the screen size and orientation of your iOS device you may need to scroll down to see this option. 
+    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_select_securitykey.png" alt-text="Screenshot of selecting to use a security key with iOS":::
+
+9. Connect your security key to your iOS device. 
+    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_connect.png" alt-text="Screenshot asking to connect your security key to your iOS device.":::
+
+10. Provide your PIN or Biometric
+   > [!NOTE]
+   > If a PIN has not yet been configured for this security key, you will be asked to first enroll a pin before continuing registration. 
+
+    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_confirm_pin.png" alt-text="Screenshot asking to provide your pin for the security key connected to an iOS device.":::
+
+11. Re-insert or reconnect your security key to your iOS device.  
+
+    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_reconnect.png" alt-text="Screenshot asking to confirm your pin for the security key connected to an iOS device.":::
+    
+14. Upon completion, you'll be redirected back to [My Security info](https://mysignins.microsoft.com/security-info) and asked to rename your passkey. 
+    
+15. Name the passkey something memorable to you and click **Done**. 
+
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_finish.png" alt-text="Screenshot showing final passkey registration step on iOS.":::
 
 # [:::image type="icon" source="media/icons/android-icon.png" border="false"::: **Android**](#tab/Android)
 
-TBD
+## Register a security key with Android 
+1. Using your Android device, open a web browser and sign-in to [My Security info](https://mysignins.microsoft.com/security-info).
+   
+2. Tap **+ Add sign-in method**.
+
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_addmethod.png" alt-text="Screenshot of the Security Info screen showing add methods.":::
+
+3. Select **Passkey (preview)**.
+
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_myseclist.png" alt-text="Screenshot of the drop-down list of options in security info.":::
+
+4. Tap **Add**.
+
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_dropdown.png" alt-text="Screenshot of the Security Info screen Add Sign-in Method option.":::
+
+5. Sign in with multifactor authentication (MFA) before adding a passkey.
+
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_mfa.png" alt-text="Screenshot of the 2-factor authentication requirement to setup a passkey.":::
+6. Click **Next**.  
+
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_start.png" alt-text="Screenshot of starting passkey registration":::
+
+7. A security window will open on your device asking where you want to create your passkey. 
+8. Select **Save another way** 
+   > [!NOTE]
+   > Options displayed vary depending on the manufacturer and Android OS version of your device. For example this option maybe shown as **use a different device**. 
+
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_saveanotherway.png" alt-text="Screenshot of passkey selection on android device.":::
+
+9.  Multiple options may be displayed depending on the number of Google accounts, or passkey managers enabled on your device. Select **Another device** to continue. 
+
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_more_options.png" alt-text="Screenshot of passkey more options on Android device.":::
+
+
+10. Select **USB security key**. 
+
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_anotherdevice.png" alt-text="Screenshot of passkey more options on Android device.":::
+
+11. Connect your security key to your android device. 
+
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_connectkey.png" alt-text="Screenshot of passkey connection to android.":::
+
+12. Provide your PIN or Biometric.
+     
+   > [!NOTE]
+   > If a PIN has not yet been configured for this security key, you will be asked to first enroll a pin before continuing registration. 
+
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_confirm_pin.png" alt-text="Screenshot of passkey connection to android.":::
+
+13. You maybe asked to confirm your PIN or biometric again before proceeding. 
+
+14. Upon completion, you'll be redirected back to [My Security info](https://mysignins.microsoft.com/security-info) and asked to rename your passkey. 
+    
+15. Name the passkey something memorable to you and click **Done**. 
+
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_finish.png" alt-text="Screenshot showing final passkey registration step on Android.":::
 
 ---
 
