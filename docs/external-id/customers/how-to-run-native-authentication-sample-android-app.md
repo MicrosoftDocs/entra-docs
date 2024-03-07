@@ -102,7 +102,7 @@ To build and run your app, follow these steps:
 This sample app also supports the following authentication flows:  
  
 - **Email + password** covers sign-in or sign-up flows with an email with password. 
-- **Email + password sign-up with user attributes** covers sign up with email and password, and submitting user attributes. 
+- **Email + password sign-up with user attributes** covers sign-up with email and password, and submitting user attributes. 
 - **Password reset** covers self-service password reset (SSPR). 
 - **Access Protected API** covers call a protected API after the user successfully signs up or signs in and acquires an access token.
 - **Fallback to web browser** covers the use the browser-based authentication as a fallback mechanism when the user can't complete authentication through native authentication for whatever reason. 
@@ -118,7 +118,7 @@ In this section, you test email with password flow, with its variants such as, e
 
 1. Run the sample app, then select the ellipsis menu (**...**) to open more options. 
 
-1. Select the scenario you want to test, such as **Email + password** or **Email + password sign-up with user attributes** or **Password reset**, then follow the prompts. To test **Password reset** you need to first sign up a user and [enable email one-time passcode](how-to-enable-password-reset-customers.md) for all users in your tenant.
+1. Select the scenario you want to test, such as **Email + password** or **Email + password sign-up with user attributes** or **Password reset**, then follow the prompts. To test **Password reset**, you need to first sign up a user, and [enable email one-time passcode](how-to-enable-password-reset-customers.md) for all users in your tenant.
 
 <!--## Test call a protected API flow
 ## Henry to add this section when sample is available
