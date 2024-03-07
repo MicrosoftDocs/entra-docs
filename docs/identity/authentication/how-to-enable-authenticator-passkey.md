@@ -47,7 +47,7 @@ To enable Authenticator passkey, you edit the **Passkey (FIDO2)** method policy,
 
 1. On the **Configure** tab, set **Enforce key restrictions** to **Yes**, set **Restrict specific keys** to **Allow**, and sslect **Microsoft Authenticator (preview)**. 
    
-   :::image type="content" border="true" source="media/howto-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey.":::
+   :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey.":::
 
 The following list describes other optional settings:
 
