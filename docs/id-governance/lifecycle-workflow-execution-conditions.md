@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: compliance
 ms.workload: identity
 ms.topic: conceptual 
-ms.date: 2/13/2024
+ms.date: 3/07/2024
 ms.custom: template-concept 
 ---
 
@@ -33,7 +33,7 @@ The trigger you choose depends on what type of workflow you want to run for user
 - **On-demand only**: The workflow is only triggered manually.
 
 > [!NOTE]
-> The **on-demand only** trigger is the default trigger of workflow templates that are on-demand only. For the full list of workflow templates, and their compatible triggers, see: [Lifecycle Workflows templates and categories](lifecycle-workflow-templates.md)
+> The **On-demand only** trigger is the default trigger of workflow templates that are on-demand only. For the full list of workflow templates, and their compatible triggers, see: [Lifecycle Workflows templates and categories](lifecycle-workflow-templates.md)
 
 ## Time based attribute trigger
 
@@ -50,7 +50,7 @@ When setting a workflow where the trigger type is **Time based attribute**, the 
 |Event user attribute     | The attribute defining the change that triggers the workflow. The type of workflow being used determines the attributes available. A joiner workflow can have the attribute value of "*employeeHireDate*" or "*createdDateTime*", while a leaver workflow has an attribute value of "*employeeLeaveDate*" or "*LastSignInDateTime*". For a list of templates, and their event user attributes, see: [Lifecycle Workflows templates and categories](lifecycle-workflow-templates.md).       |
 
 > [!NOTE]
-> The event user attribute must be set within Azure AD for users. For more information on this process, see [How to synchronize attributes for Lifecycle workflows](how-to-lifecycle-workflow-sync-attributes.md).
+> The event user attribute must be set within Microsoft Entra ID for users. For more information on this process, see [How to synchronize attributes for Lifecycle workflows](how-to-lifecycle-workflow-sync-attributes.md).
 
 ### Time based attribute scope
 
@@ -98,7 +98,7 @@ When setting the scope of the attribute changes trigger, the following details a
 
 ## Group membership change trigger
 
-For workflows that are  triggered based on a group membership change, the workflow runs on a schedule when a user is added to, or removed from, a group.
+For workflows that are triggered based on a group membership change, the workflow runs on a schedule when a user is added to, or removed from, a group.
 
 :::image type="content" source="media/lifecycle-workflow-execution-conditions/group-membership-trigger.png" alt-text="Screenshot of the group membership change trigger.":::
 
@@ -123,11 +123,11 @@ When setting the scope of the group membership change trigger, the following det
 
 ## On-demand only trigger
 
-The **On-demand only** trigger is set to only run the workflow for users you manually select. As the workflow runs for users you select, it will not run on a schedule. The users are selected within the scope details section of the workflow.
+The **On-demand only** trigger is set to only run the workflow for users you manually select. Workflows with these triggers will not run on a schedule. The users are selected within the scope details section of the workflow.
 
 :::image type="content" source="media/lifecycle-workflow-execution-conditions/on-demand-select-users.png" alt-text="Screenshot of selecting users for manual workflow execution.":::
 
-When setting a workflow where the trigger type is **on-demand only**, the following details are defined:
+When setting a workflow where the trigger type is **On-demand only**, the following details are defined:
 
 |Trigger detail  |Description  |
 |---------|---------|
