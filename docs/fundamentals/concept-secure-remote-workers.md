@@ -103,7 +103,7 @@ The following table is intended to highlight the key actions for the following l
 The following table is intended to highlight the key actions for the following license subscriptions:
 
 - Microsoft Entra ID P2
-- Enterprise Mobility + Security (Microsoft Enterprise Mobility + Security E5)
+- Microsoft Enterprise Mobility + Security E5
 - Microsoft 365 (E5, A5)
 
 | Recommended action | Detail |
