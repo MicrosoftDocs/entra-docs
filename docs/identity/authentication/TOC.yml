@@ -381,7 +381,7 @@
   - name: Microsoft Q&A question page
     href: /answers/topics/azure-active-directory.html
   - name: Pricing
-    href: https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing
+    href: https://www.microsoft.com/security/business/microsoft-entra-pricing
   - name: Feature availability
     href: feature-availability.md
   - name: Service updates

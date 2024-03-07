@@ -5,7 +5,7 @@ description: Learn about how to enable Microsoft Authenticator passkey sign in f
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/06/2024
+ms.date: 03/07/2024
 
 ms.author: justinha
 author: justinha
@@ -16,8 +16,6 @@ ms.reviewer: calui
 ---
 # Enable Microsoft Authenticator passkey sign in (preview)
 
-For enterprises that use passwords today and have a shared PC environment, passkeys provide a seamless way for workers to authenticate without entering a username or password. Passkeys provide improved security for workers because they can't be phished, stolen, or re-used.
-
 This topic lists steps to enable and enforce Microsoft Authenticator passkey sign-in for Entra ID. First, you'll update the Authentication methods policy to allow end users to sign in with Authenticator passkey. Then you'll create a custom authentication strength to enforce passkey sign-in when users access a sensitive resource.
 
 ## Requirements
@@ -25,13 +23,10 @@ This topic lists steps to enable and enforce Microsoft Authenticator passkey sig
 - [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md)
 - Enable [Combined security information registration](concept-registration-mfa-sspr-combined.md)
 - Android 14 and later or iOS 17 and later
+- Latest version of Microsoft Authenticator
 
 To use security keys for logging in to web apps and services, you must have a browser that supports the WebAuthN protocol. 
 These include Microsoft Edge, Chrome, Firefox, and Safari. For more information, see [Browser support of FIDO2 passwordless authentication](fido2-compatibility.md).
-
->[!NOTE]
->Passkeys (FIDO2) stored on computers and mobile devices along with registering and signing in via WebAuthn QR code is not yet supported by Entra ID.
-
 
 ## Enable Authenticator passkey in the admin center
 
