@@ -60,10 +60,11 @@ This article shows how to register a passkey using a security key with your iOS 
     :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_connect.png" alt-text="Screenshot asking to connect your security key to your iOS device.":::
 
 10. Provide your PIN or biometric.
-   > [!NOTE]
-   > If a PIN has not yet been configured for this security key, you will be asked to first enroll a pin before continuing registration. 
 
-    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_confirm_pin.png" alt-text="Screenshot asking to provide your pin for the security key connected to an iOS device.":::
+   > [!NOTE]
+   > If a PIN has not yet been configured for this security key, you will be asked to first enroll a PIN before continuing registration. 
+
+     :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_confirm_pin.png" alt-text="Screenshot asking to provide your pin for the security key connected to an iOS device.":::
 
 11. Re-insert or reconnect your security key to your iOS device.  
 
@@ -113,7 +114,7 @@ This article shows how to register a passkey using a security key with your iOS 
 
 10. Select **USB security key**. 
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_anotherdevice.png" alt-text="Screenshot of passkey more options on Android device.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_anotherdevice.png" alt-text="Screenshot of option to select a USB security key.":::
 
 11. Connect your security key to your android device. 
 
