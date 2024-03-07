@@ -94,10 +94,11 @@ As the existing passwords stored inside the database can no longer be decrypted,
 4. Under **Actions**, select **Properties**.
 5. In the pop-up dialog, select **Connect to Active Directory Forest**:
 6. Enter the password of the AD DS account in the **Password** textbox. If you do not know its password, you must set it to a known value before performing this step.
-7. Click **OK** to save the new password and close the pop-up dialog.
+1. Click **OK** to save the new password and close the pop-up dialog.
 ![Screenshot that shows the "Connect to Active Directory Forest" page in the "Properties" window.](./media/how-to-connect-sync-change-serviceacct-pass/key6.png)
 
-#### Reinitialize the password of the ADSync service account
+#### Reinitialize the password of the Entra ID Connector account
+
 You cannot directly provide the password of the Microsoft Entra service account to the Synchronization Service. Instead, you need to use the cmdlet **Add-ADSyncAADServiceAccount** to reinitialize the Microsoft Entra service account. The cmdlet resets the account password and makes it available to the Synchronization Service:
 
 1. Sign in to the Microsoft Entra Connect Sync server and open PowerShell.
