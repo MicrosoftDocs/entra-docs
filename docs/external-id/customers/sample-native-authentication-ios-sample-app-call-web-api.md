@@ -96,4 +96,4 @@ To build and run your app, follow these steps:
 
 ## Next steps
 
-- [Tutorial: Self-service password reset](tutorial-native-authentication-ios-self-service-password-reset.md) 
+- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md).

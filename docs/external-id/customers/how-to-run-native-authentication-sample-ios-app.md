@@ -116,7 +116,7 @@ In this section, you test email with password flow, with its variants such as, e
 
 ## Test call a protected API flow
 
-Use the steps in [Call a protected web API in a sample Android mobile app by using native authentication](sample-native-authentication-ios-sample-app-call-web-api.md) to call a protected web API from a sample Android mobile app.
+Use the steps in [Call a protected web API in a sample iOS mobile app by using native authentication](sample-native-authentication-ios-sample-app-call-web-api.md) to call a protected web API from a sample Android mobile app.
 
 ## Next steps 
 
