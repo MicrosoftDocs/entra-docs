@@ -54,7 +54,7 @@ When setting a workflow where the trigger type is **Time based attribute**, the 
 
 ### Time based attribute scope
 
-The time based attribute scope allows you to define for who the workflow runs for when the time trigger is met.
+The time based attribute scope allows you to define for who the workflow runs when the time trigger is met.
 
 :::image type="content" source="media/lifecycle-workflow-execution-conditions/time-based-scope.png" alt-text="Screenshot of the scope screen for time based attribute trigger.":::
 
@@ -84,7 +84,7 @@ When setting a workflow where the trigger type is **Attribute change**, the foll
 
 ### Attribute changes trigger scope
 
-The attribute changes trigger scope allows you to define for who the workflow runs for when the attribute change trigger is met.
+The attribute changes trigger scope allows you to define for who the workflow runs when the attribute change trigger is met.
 
 When setting the scope of the attribute changes trigger, the following details are defined:
 
