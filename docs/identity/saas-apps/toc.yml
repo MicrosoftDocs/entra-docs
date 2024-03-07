@@ -3364,6 +3364,8 @@
         href: envoy-provisioning-tutorial.md
       - name: Eletive
         href: eletive-provisioning-tutorial.md
+      - name: elia
+        href: elia-provisioning-tutorial.md
       - name: Elium
         href: elium-provisioning-tutorial.md
       - name: Exium
