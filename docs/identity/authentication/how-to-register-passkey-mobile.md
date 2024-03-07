@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/05/2024
+ms.date: 03/07/2024
 
 ms.author: justinha
 author: justinha
@@ -27,7 +27,7 @@ This article shows how to register a passkey using a security key with your iOS 
 # [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
 
 ## Register a security key with iOS 
-1. Using your iOS device, open a web browser and sign-in to [My Security info](https://mysignins.microsoft.com/security-info).
+1. Using your iOS device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
    
 2. Tap **+ Add sign-in method**.
 
@@ -50,8 +50,11 @@ This article shows how to register a passkey using a security key with your iOS 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_start.png" alt-text="Screenshot of starting passkey registration":::
 
 7. Your device will open a security window. Chose **Other Options**. 
+
     :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_saveanotherway.png" alt-text="Screenshot of where to save a passkey on iOS":::
-8. Select the option **Security key**. 
+
+8. Select **Security key**. 
+
     > [!NOTE]
     > Depending on the screen size and orientation of your iOS device you may need to scroll down to see this option. 
     :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_select_securitykey.png" alt-text="Screenshot of selecting to use a security key with iOS":::
@@ -62,9 +65,9 @@ This article shows how to register a passkey using a security key with your iOS 
 10. Provide your PIN or biometric.
 
    > [!NOTE]
-   > If a PIN has not yet been configured for this security key, you will be asked to first enroll a PIN before continuing registration. 
+   > If a PIN isn't configured for this security key, you need to first enroll a PIN before you continue registration. 
 
-     :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_confirm_pin.png" alt-text="Screenshot asking to provide your pin for the security key connected to an iOS device.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_confirm_pin.png" alt-text="Screenshot asking to provide your pin for the security key connected to an iOS device.":::
 
 11. Re-insert or reconnect your security key to your iOS device.  
 
@@ -79,7 +82,7 @@ This article shows how to register a passkey using a security key with your iOS 
 # [:::image type="icon" source="media/icons/android-icon.png" border="false"::: **Android**](#tab/Android)
 
 ## Register a security key with Android 
-1. Using your Android device, open a web browser and sign-in to [My Security info](https://mysignins.microsoft.com/security-info).
+1. Using your Android device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
    
 2. Tap **+ Add sign-in method**.
 
@@ -103,11 +106,11 @@ This article shows how to register a passkey using a security key with your iOS 
 7. A security window will open on your device asking where you want to create your passkey. 
 8. Select **Save another way** 
    > [!NOTE]
-   > Options displayed vary depending on the manufacturer and Android OS version of your device. For example this option maybe shown as **use a different device**. 
+   > Options displayed vary depending on the manufacturer and Android OS version of your device. For example this option may appear as **Use a different device**. 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_saveanotherway.png" alt-text="Screenshot of passkey selection on android device.":::
 
-9.  Multiple options may be displayed depending on the number of Google accounts, or passkey managers enabled on your device. Select **Another device** to continue. 
+9. Multiple options may be displayed, depending on the number of Google accounts or passkey managers enabled on your device. Select **Another device** to continue. 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_more_options.png" alt-text="Screenshot of passkey more options on Android device.":::
 
@@ -116,26 +119,26 @@ This article shows how to register a passkey using a security key with your iOS 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_anotherdevice.png" alt-text="Screenshot of option to select a USB security key.":::
 
-11. Connect your security key to your android device. 
+11. Connect your security key to your Android device. 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_connectkey.png" alt-text="Screenshot of passkey connection to android.":::
 
 12. Provide your PIN or biometric.
      
    > [!NOTE]
-   > If a PIN has not yet been configured for this security key, you will be asked to first enroll a pin before continuing registration. 
+   > If a PIN isn't configured for this security key, you need to first enroll a PIN before you continue registration. 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_confirm_pin.png" alt-text="Screenshot of prompt to provide PIN or biometric.":::
 
 13. You maybe asked to confirm your PIN or biometric again before proceeding. 
 
-14. Upon completion, you'll be redirected back to [My Security info](https://mysignins.microsoft.com/security-info) and asked to rename your passkey. 
+14. Upon completion, you'll be redirected back to [My Security info](https://aka.ms/mysecurityinfo) and asked to rename your passkey. 
     
 15. Name the passkey something memorable to you and click **Done**. 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_finish.png" alt-text="Screenshot showing final passkey registration step on Android.":::
 
----
+
 
 ## Next steps
 
