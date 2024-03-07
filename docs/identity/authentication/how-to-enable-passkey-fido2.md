@@ -39,13 +39,11 @@ For devices that are joined to Microsoft Entra ID, the best experience is on Win
 
 Hybrid-joined devices must run Windows 10 version 2004 or higher.
 
-## Enable passkey (FIDO2) authentication method
-
-### Enable the combined registration experience
+## Enable the combined registration experience
 
 Registration features for passkey authentication methods rely on combined MFA/SSPR registration. [Learn more about combined registration](howto-registration-mfa-sspr-combined.md). 
 
-### Enable passkey (FIDO2) authentication method
+## Enable passkey (FIDO2) authentication method
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
@@ -88,11 +86,11 @@ There are two ways to get your AAGUID. You can either ask your security key or p
 
 ![View AAGUID for passkey](media/howto-authentication-passwordless-deployment/security-key-aaguid-details.png)
 
-### Enable FIDO2 security keys using Graph Explorer
+### Enable passkeys using Microsoft Graph API
 
-In addition to using the Microsoft Entra admin center, you can also enable FIDO2 security keys by using Graph Explorer. To enable FIDO2 security keys, you must use the Authentication Methods Policy using Graph APIs. **Global Administrators** and **Authentication Policy Administrators** can update the policy. 
+In addition to using the Microsoft Entra admin center, you can also enable passkeys by using the Microsoft Graph API. To enable passkeys, you'll need to update the Authentication Methods Policy as a **Global Administrator** or **Authentication Policy Administrator**. 
 
-To configure the policy by using Graph Explorer:
+To configure the policy using Graph Explorer:
 
 1. Sign in to [Graph Explorer](https://aka.ms/ge) and consent to the **Policy.Read.All** and **Policy.ReadWrite.AuthenticationMethod** permissions.
 
@@ -130,7 +128,7 @@ To configure the policy by using Graph Explorer:
    ```
 
 
-## Disable a key 
+## Disable a passkey 
 
 To remove a passkey associated with a user account, delete the key from the user’s authentication method.
 
@@ -141,7 +139,7 @@ To remove a passkey associated with a user account, delete the key from the user
 
 ## Enforce passkey sign-in 
 
-You can use either a built-in phishing-resistant authentication strength or create a custom authentication strength to make users sign in with a passkey when they access a sensitive resource. The following steps show an example of how to create a Conditional Access policy that allows passkey sign-in for only a specific FIDO2 device provider. For a list of supported providers, see [Become a passkey (FIDO2) provider](concept-fido2-hardware-vendor.md).
+You can use either a built-in phishing-resistant authentication strength or create a custom authentication strength to make users sign in with a passkey when they access a sensitive resource. The following steps show an example of how to create a Conditional Access policy that allows passkey sign-in for only a specific security key model or passkey provider.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Conditional Access Administrator.
 1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
@@ -173,9 +171,9 @@ If a user's UPN changes, you can no longer modify passkeys to account for the ch
 
 ## Next steps
 
-[Passkey Windows 10 sign in](howto-authentication-passwordless-security-key-windows.md)
-
 [Native app and browser support of passkey (FIDO2) passwordless authentication](fido2-compatibility.md)
+
+[FIDO2 security key Windows 10 sign in](howto-authentication-passwordless-security-key-windows.md)
 
 [Enable FIDO2 authentication to on-premises resources](howto-authentication-passwordless-security-key-on-premises.md)
 
