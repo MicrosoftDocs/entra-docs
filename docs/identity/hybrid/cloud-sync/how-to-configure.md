@@ -40,9 +40,9 @@ To configure provisioning, follow these steps.
 
  5.  The **Get started** screen will open.  From here, you can continue configuring cloud sync.
 
- 6. The configuration is split in to the following 5 sections.
-
 :::image type="content" source="media/how-to-configure/new-ux-configure-3.png" alt-text="Screenshot of the getting started screen." lightbox="media/how-to-configure/new-ux-configure-3.png":::
+
+ 6. The configuration is split in to the following 5 sections.
 
 |Section|Description|
 |-----|-----|
@@ -60,6 +60,7 @@ To configure provisioning, follow these steps.
 By default the provisioning agent will synchronize a subset of the users and groups from your Active Directory. You can further scope the agent to synchronize specific users and groups by using on-premises Active Directory groups or organizational units. 
 
 :::image type="content" source="media/how-to-configure/new-ux-configure-4.png" alt-text="Screenshot of scoping filters icon." lightbox="media/how-to-configure/new-ux-configure-4.png":::
+
 
 You can configure groups and organizational units within a configuration. 
  >[!NOTE]
