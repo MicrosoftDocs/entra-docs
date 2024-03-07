@@ -32,7 +32,7 @@ The guidance helps:
 
 ## Prerequisites
 
-This guide assumes that your cloud only or hybrid identities have been established in Microsoft Entra ID already. For help with choosing your identity type see the article, [Choose the right authentication method for your Microsoft Entra hybrid identity solution](~/identity/hybrid/connect/choose-ad-authn.md).
+This guide assumes that your cloud only or hybrid identities have been established in Microsoft Entra ID already. For help with choosing your identity type see the article, [Choose the right authentication (AuthN) method for your Microsoft Entra hybrid identity solution](~/identity/hybrid/connect/choose-ad-authn.md).
 
 ### Guided walkthrough
 

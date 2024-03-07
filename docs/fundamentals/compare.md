@@ -20,7 +20,7 @@ Microsoft Entra ID takes this approach to the next level by providing organizati
 
 Most IT administrators are familiar with Active Directory Domain Services concepts. The following table outlines the differences and similarities between Active Directory concepts and Microsoft Entra ID.
 
-|Concept|Active Directory (Microsoft Windows Server Active Directory)|Microsoft Entra ID |
+|Concept|Windows Server Active Directory|Microsoft Entra ID |
 |:-|:-|:-|
 |**Users**|||
 |Provisioning: users | Organizations create internal users manually or use an in-house or automated provisioning system, such as the Microsoft Identity Manager, to integrate with an HR system.|Existing Microsoft Windows Server Active Directory organizations use [Microsoft Entra Connect](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) to sync identities to the cloud.</br> Microsoft Entra ID adds support to automatically create users from [cloud HR systems](~/identity/app-provisioning/what-is-hr-driven-provisioning.md). </br>Microsoft Entra ID can provision identities in [System for Cross-Domain Identity Management (SCIM) enabled](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md) software as a service (SaaS) apps to automatically provide apps with the necessary details to allow access for users. |

@@ -112,7 +112,7 @@ Once you add a new custom security attribute definition, you can later edit some
 
 1. Click the attribute set that includes the custom security attribute you want to edit.
 
-1. In the list of custom security attributes, click the ellipsis for the custom security attribute you want to edit and then click **Edit attribute**.
+1. In the list of custom security attributes, click the ellipsis for the custom security attribute you want to edit, and then select **Edit attribute**.
 
 1. Edit the properties that are enabled.
 
