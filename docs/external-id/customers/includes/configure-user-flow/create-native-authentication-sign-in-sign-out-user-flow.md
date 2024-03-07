@@ -26,12 +26,9 @@ Follow these steps to create a user flow.
    1. Under **Email accounts**, you can select one of the two options. For this tutorial, select **Email one-time passcode**. 
  
       - **Email with password**: Allows new users to sign up and sign in using an email address as the sign-in name and a password as their first factor credential. 
-      - **Email one-time passcode**: Allows new users to sign up and sign in using an email address as the sign-in name and email one-time passcode as their first factor credential. 
- 
-        > [!NOTE] 
-        > Email one-time passcode must be enabled at the tenant level (**All Identity Providers** > **Email One-time passcode**) for this option to be available at the user flow level. 
+      - **Email one-time passcode**: Allows new users to sign up and sign in using an email address as the sign-in name and email one-time passcode as their first factor credential. For this option to be available at the user flow level, make sure you enable email one-time passcode (OTP) at the tenant level (Select **All Identity Providers** > **Email One-time passcode**, select **Yes** option, then select **Save**). 
  
    1. Under **User attributes**, you can choose the attributes you want to collect from the user upon sign-up. For this guide, select **Country/Region** and **City**. 
-   1. Select **OK**. (Users can be prompted for attributes when they sign up for the first time). 
+   1. Select **OK**.
  
 1. Select **Create**. The new user flow appears in the **User flows** list. If necessary, refresh the page. 
