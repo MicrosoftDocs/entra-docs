@@ -23,8 +23,8 @@ This article covers the sign-in experience when using passkeys in Microsoft Auth
 
 **In this article**
 
-[Same-device authentication](#same-device-ios)<br>
-[Cross-device authentication](#cross-device-ios)<br>
+[Same-device authentication](#same-device-authentication-ios)<br>
+[Cross-device authentication](#cross-device-authentication-ios)<br>
 
 To sign in with a passkey in Microsoft Authenticator, your iOS device needs to run iOS 17 or later.
 
@@ -71,8 +71,8 @@ This topic shows how to sign in to Microsoft Entra ID on another device with a p
 
 **In this article**
 
-[Same-device authentication](#same-device-android)<br>
-[Cross-device authentication](#cross-device-android)<br>
+[Same-device authentication](#same-device-authentication-android)<br>
+[Cross-device authentication](#cross-device-authentication-android)<br>
 
 To sign in with a passkey in Microsoft Authenticator, your Android device needs to run Android 14 or later.
 
