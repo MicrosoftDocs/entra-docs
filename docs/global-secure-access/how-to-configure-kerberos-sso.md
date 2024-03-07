@@ -6,12 +6,12 @@ manager: amycolannino
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 03/04/2024
+ms.date: 03/07/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Use Kerberos for single sign-on (SSO) to your apps with Microsoft Entra Private Access
+# Use Kerberos for single sign-on (SSO) to your resources with Microsoft Entra Private Access
 
 Provide single sign-on for on-premises resources published through Microsoft Entra Private Access. Microsoft Entra Private Access uses Kerberos to support these resources. Optionally, use Windows Hello for Business cloud Kerberos trust to allow single sign-on for users.
 
