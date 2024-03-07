@@ -64,7 +64,7 @@ landingContent:
       - linkListType: reference
         links:
           - text: Manage applications using Microsoft Graph API
-            url: https://learn.microsoft.com/en-us/graph/api/resources/applications-api-overview
+            url: https://learn.microsoft.com/graph/api/resources/applications-api-overview?view=graph-rest-1.0
   - title: Secure an app
     linkLists:
       - linkListType: how-to-guide
