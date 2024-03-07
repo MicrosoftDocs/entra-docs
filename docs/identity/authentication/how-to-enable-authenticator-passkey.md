@@ -24,8 +24,7 @@ This topic lists steps to enable and enforce Microsoft Authenticator passkey sig
 
 - [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md)
 - Enable [Combined security information registration](concept-registration-mfa-sspr-combined.md)
-- Compatible [FIDO2 security keys](concept-authentication-passwordless.md#fido2-security-keys)
-- WebAuthN requires Windows 10 version 1903 or higher
+- Android 14 and later or iOS 17 and later
 
 To use security keys for logging in to web apps and services, you must have a browser that supports the WebAuthN protocol. 
 These include Microsoft Edge, Chrome, Firefox, and Safari. For more information, see [Browser support of FIDO2 passwordless authentication](fido2-compatibility.md).
@@ -33,19 +32,8 @@ These include Microsoft Edge, Chrome, Firefox, and Safari. For more information,
 >[!NOTE]
 >Passkeys (FIDO2) stored on computers and mobile devices along with registering and signing in via WebAuthn QR code is not yet supported by Entra ID.
 
-## Prepare devices
 
-For devices that are joined to Microsoft Entra ID, the best experience is on Windows 10 version 1903 or higher.
-
-Hybrid-joined devices must run Windows 10 version 2004 or higher.
-
-## Enable passwordless authentication method
-
-### Enable the combined registration experience
-
-Registration features for passwordless authentication methods rely on combined MFA/SSPR registration. [Learn more about combined registration](howto-registration-mfa-sspr-combined.md). 
-
-### Enable Authenticator passkey
+## Enable Authenticator passkey in the admin center
 
 To enable Authenticator passkey, you edit the **Passkey (FIDO2)** method policy, the same way you enable another passkey provider. The **Microsoft Authenticator** policy doesn't have an option to enable passkey. 
 
@@ -61,7 +49,7 @@ To enable Authenticator passkey, you edit the **Passkey (FIDO2)** method policy,
    
    :::image type="content" border="true" source="media/howto-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey.":::
 
-The following list describes the other optional settings:
+The following list describes other optional settings:
 
 **General**
 
@@ -76,7 +64,7 @@ The following list describes the other optional settings:
   >Key restrictions set the usability of specific passkeys for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. 
 
 
-### Enable Authenticator passkey using Graph Explorer
+## Enable Authenticator passkey using Graph Explorer
 
 In addition to using the Microsoft Entra admin center, you can also enable Authenticator passkey by using Graph Explorer. **Global Administrators** and **Authentication Policy Administrators** can update the Authentication Methods Policy to allow the AAGUIDs for Authenticator. 
 
@@ -123,8 +111,8 @@ To configure the policy by using Graph Explorer:
 
 To remove a passkey associated with a user account, delete the key from the user’s authentication method.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and search for the user account from which the FIDO key is to be removed.
-1. Select **Authentication methods** > right-click **FIDO2 security key** and click **Delete**. 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and search for the user account that needs the passkey to be removed.
+1. Select **Authentication methods** > right-click **passkey (FIDO2)** and click **Delete**. 
 
     ![View Authentication Method details](media/howto-authentication-passwordless-deployment/security-key-view-details.png)
 
@@ -146,8 +134,8 @@ You can use either a built-in phishing-resistant authentication strength or crea
 1. Set Restrict specific keys to **Allow**.
 1. Add AAGUIDs for Authenticator passkey:
 
-   - Android: de1e552d-db1d-4423-a619-566b625cdc84
-   - iOS: 90a3ccdf-635c-4729-a248-9b709135078f
+   - de1e552d-db1d-4423-a619-566b625cdc84
+   - 90a3ccdf-635c-4729-a248-9b709135078f
 
    :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing the AAGUIDs for Authenticator.":::
 
