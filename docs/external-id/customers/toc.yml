@@ -83,10 +83,18 @@ items:
                     href: how-to-mobile-app-maui-sample-sign-in.md
               - name: Native authentication
                 items:
-                  - name: Android (Kotlin) - sign in users
-                    href: how-to-run-native-authentication-sample-android-app.md
-                  - name: iOS (Swift) - sign in users
-                    href: how-to-run-native-authentication-sample-ios-app.md
+                  - name: Android (Kotlin)
+                    items:
+                      - name: Sign in users
+                        href: how-to-run-native-authentication-sample-android-app.md
+                      - name: Sign in users and call an API
+                        href: sample-native-authentication-android-sample-app-call-web-api.md
+                  - name: iOS (Swift)
+                    items:
+                      - name: Sign in users
+                        href: how-to-run-native-authentication-sample-ios-app.md
+                      - name: Sign in users and call an API
+                        href: sample-native-authentication-ios-sample-app-call-web-api.md
         - name: Command-line interface (CLI) app
           items:
             - name: Node.js - sign in users

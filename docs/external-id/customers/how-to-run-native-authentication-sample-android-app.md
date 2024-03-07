@@ -114,7 +114,7 @@ In this section, you test email with password flow, with its variants such as, e
 
 1. Use the steps in [create a user flow](#create-a-user-flow) to create a new user flow, but this time select **Email with password** as your authentication method. You need to configure **Country/Region** and **City** as the user attributes. Alternatively, you can modify the existing user flow to use **Email with password** (Select **External Identities** > **User flows** > **SignInSignUpSample** > **Identity providers** > **Email with password** > **Save**).  
 
-1. Use the steps in [associate the application with the new user flow](#associate-the--app-with-the-user-flow) to add an app to your new user flow. 
+1. Use the steps in [associate the application with the new user flow](#associate-the-app-with-the-user-flow) to add an app to your new user flow. 
 
 1. Run the sample app, then select the ellipsis menu (**...**) to open more options. 
 
