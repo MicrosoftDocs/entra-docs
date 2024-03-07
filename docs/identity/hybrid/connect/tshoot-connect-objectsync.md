@@ -5,7 +5,6 @@ description: Learn how to troubleshoot issues with object synchronization by usi
 author: billmath
 manager: amycolannino
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/06/2023
