@@ -153,5 +153,5 @@ If a user's UPN changes, you can no longer modify a passkey to account for the c
 
 ## Next steps
 
-[Support for passkey in Windows 10](/windows/security/identity-protection/passkeys)
+[Support for passkey in Windows](/windows/security/identity-protection/passkeys)
 
