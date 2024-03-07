@@ -67,7 +67,7 @@ This combination forms a secure multifactor authentication. The sign-in is more 
 
 :::image type="content" border="true" source="./media/concept-authentication-passkey/multifactor.png" alt-text="Conceptual diagram of how passkeys provide multifactor authentication.":::
 
-## Phishing-resistant
+### Phishing-resistant
 
 Bad actors relentlessly attempt to compromise users by tricking users into giving away their password or providing them a one-time code used for MFA. This happens through the use of phishing campaigns or trustworthy looking website that emulates a well known application or provider. With MFA methods that rely on push notifications or approvals, a common tactic bad actors use is to overwhelm users with numerous requests, hoping users get fatigued and inadvertently approves one of them. Passkeys protect users from these types of attacks. 
  
@@ -75,7 +75,7 @@ Let’s say an attacker wants to steal the credentials of users who sign in to a
 
 :::image type="content" border="true" source="./media/concept-authentication-passkey/phishing-resistant.png" alt-text="Conceptual diagram of how passkeys are phishing-resistant.":::
 
-## Cross-device authentication 
+### Cross-device authentication 
 
 Users are also protected from phishing attacks during cross-device authentication, which is when a passkey on one device is used for sign-in on another device. This type of authentication is handy, for example, for when the user needs to sign in on a new device and has a passkey on their mobile device.  
 
@@ -85,7 +85,7 @@ To link two devices together for cross-device authentication, the user scans a Q
 
 ## Using passkeys with Microsoft Authenticator
 
-Organizations who want the added security and control, compared to synced passkeys, can utilize Microsoft Authenticator as a passkey provider. Microsoft Authenticator supports device-bound passkeys on Android 14+ and iOS 17+ devices. Authenticator uses passkeys to provide free, phishing-resistant credentials that are based on open standards and recent security improvements. For more information, see [Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](concept-authentication-authenticator-app.md).
+Organizations who want the added security and control, compared to synced passkeys, can utilize Microsoft Authenticator as a passkey provider. Microsoft Authenticator supports device-bound passkeys on Android 14+ and iOS 17+ devices. Authenticator uses passkeys to provide free, phishing-resistant credentials that are based on open standards and recent security improvements. 
 
 :::image type="content" border="true" source="./media/concept-authentication-passkey/passkey-authenticator.png" alt-text="Conceptual diagram of a public and private key pair in Microsoft Authenticator.":::
 
