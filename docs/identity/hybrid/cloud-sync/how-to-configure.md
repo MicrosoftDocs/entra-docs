@@ -40,7 +40,7 @@ To configure provisioning, follow these steps.
 
  5.  The **Get started** screen will open.  From here, you can continue configuring cloud sync.
 
-:::image type="content" source="media/how-to-configure/new-ux-configure-3.png" alt-text="Screenshot of the getting started screen." lightbox="media/how-to-configure/new-ux-configure-3.png":::
+  :::image type="content" source="media/how-to-configure/new-ux-configure-3.png" alt-text="Screenshot of the getting started screen." lightbox="media/how-to-configure/new-ux-configure-3.png":::
 
  6. The configuration is split in to the following 5 sections.
 
@@ -59,7 +59,7 @@ To configure provisioning, follow these steps.
 ## Scope provisioning to specific users and groups
 By default the provisioning agent will synchronize a subset of the users and groups from your Active Directory. You can further scope the agent to synchronize specific users and groups by using on-premises Active Directory groups or organizational units. 
 
-:::image type="content" source="media/how-to-configure/new-ux-configure-4.png" alt-text="Screenshot of scoping filters icon." lightbox="media/how-to-configure/new-ux-configure-4.png":::
+  :::image type="content" source="media/how-to-configure/new-ux-configure-4.png" alt-text="Screenshot of scoping filters icon." lightbox="media/how-to-configure/new-ux-configure-4.png":::
 
 
 You can configure groups and organizational units within a configuration. 
@@ -84,6 +84,7 @@ You can configure groups and organizational units within a configuration.
 Microsoft Entra Cloud Sync allows you to easily map attributes between your on-premises user/group objects and the objects in Microsoft Entra ID.  
 
 :::image type="content" source="media/how-to-configure/new-ux-configure-6.png" alt-text="Screenshot of map attributes icon." lightbox="media/how-to-configure/new-ux-configure-6.png":::
+
 
 You can customize the default attribute-mappings according to your business needs. So, you can change or delete existing attribute-mappings, or create new attribute-mappings.  
 
