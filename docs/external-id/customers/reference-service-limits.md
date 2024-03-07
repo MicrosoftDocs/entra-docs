@@ -25,8 +25,8 @@ The number of users able to authenticate through a customer tenant is gated thro
 
 |Category |Limit    |
 |---------|---------|
-|Maximum requests per IP per customer tenant       |6,000/5min          |
-|Maximum requests per customer tenant     |200/sec          |
+|Maximum requests per IP per customer tenant       |6,000 per 5 minutes           |
+|Maximum requests per customer tenant     |200 per second          |
 
 ## Endpoint request usage
 
@@ -55,7 +55,7 @@ The token issuance rate of a User Flow is dependent on the number of requests co
 |Sign in        |4   |
 |Password reset |4   |
 |Profile edit   |4   |
-|Phone Sign Up and Sign In   |6   |
+
 
 When you add more features to a User Flow, such as multifactor authentication, more requests are consumed. The below table shows how many additional requests are consumed when a user interacts with one of these features.
 
@@ -63,7 +63,6 @@ When you add more features to a User Flow, such as multifactor authentication, m
 |---------|---------|
 |Microsoft Entra multifactor authentication          |2   |
 |Email one-time password      |2   |
-|Age gating     |2   |
 |Federated identity provider  |2   |
 
 To obtain the token issuance rate per second for your User Flow:
@@ -100,11 +99,11 @@ Microsoft Entra ID for customers uses throttling to protect the cloud service fr
 
 |Throttling identifier |Limit per tenant |
 |---------|---------|
-|Application (gateway level)        | NA - 2,500,000 requests per 1 minute, EU - 1,500,000 requests per 1 minute, APAC - 2,000,000 requests per 1 minute, OC - 350000 requests per 1 minute |
-|Tenant + Application + Fault Domain (gateway level)        |1,200,000 requests per 1 minute       |
-|Tenant (gateway level)        |200 requests per 1 second       |
-|IP  (gateway level)        |20 requests per 1 second        |
-|IP + Tenant (gateway level)        |20 requests per 1 second        |
+|Application (gateway level)        | NA - 2,500,000 requests per minute, EU - 1,500,000 requests per minute, APAC - 2,000,000 requests per minute, OC - 350000 requests per minute |
+|Tenant + Application + Fault Domain (gateway level)        |1,200,000 requests per minute       |
+|Tenant (gateway level)        |200 requests per second       |
+|IP  (gateway level)        |20 requests per second        |
+|IP + Tenant (gateway level)        |20 requests per second        |
 
 
 ## Next steps
