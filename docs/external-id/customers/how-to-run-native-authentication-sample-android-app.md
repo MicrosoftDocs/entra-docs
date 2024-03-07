@@ -120,11 +120,11 @@ In this section, you test email with password flow, with its variants such as, e
 
 1. Select the scenario you want to test, such as **Email + password** or **Email + password sign-up with user attributes** or **Password reset**, then follow the prompts. To test **Password reset**, you need to first sign up a user, and [enable email one-time passcode](how-to-enable-password-reset-customers.md) for all users in your tenant.
 
-<!--## Test call a protected API flow
-## Henry to add this section when sample is available
-Use the steps in [Call a protected web API in a sample Android mobile app by using native authentication](tutorial-native-authentication-android-sample-app-call-web-api.md) to call a protected web API from a sample Android mobile app.
+## Test call a protected API flow
+
+Use the steps in [Call a protected web API in a sample Android mobile app by using native authentication](sample-native-authentication-android-sample-app-call-web-api.md) to call a protected web API from a sample Android mobile app.
  
 
 ## Next steps 
  
-- [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md).-->
+- [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md).
