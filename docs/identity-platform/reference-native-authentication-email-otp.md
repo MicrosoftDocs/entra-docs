@@ -211,7 +211,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 #### Success response
 
-If the tenant administrator configured email OTP in the Microsoft Entra Admin Center as the user’s authentication method, Microsoft Entra sends an OTP code to the user’s email, then responds with a challenge type of *oob* and provides more information about the OTP code:
+If the tenant administrator configured email OTP in the Microsoft Entra admin center as the user’s authentication method, Microsoft Entra sends an OTP code to the user’s email, then responds with a challenge type of *oob* and provides more information about the OTP code:
 
 
 
@@ -837,7 +837,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 #### Success response
 
-If the tenant administrator configured email OTP in the Microsoft Entra Admin Center as the user’s authentication method, Microsoft Entra sends an OTP code to the user’s email, then responds with a challenge type of *oob* and provides more information about the OTP code.
+If the tenant administrator configured email OTP in the Microsoft Entra admin center as the user’s authentication method, Microsoft Entra sends an OTP code to the user’s email, then responds with a challenge type of *oob* and provides more information about the OTP code.
 
 ```http
 HTTP/1.1 200 OK

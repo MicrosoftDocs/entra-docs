@@ -1044,7 +1044,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 #### Success response
 
-If the tenant administrator configured email with password in the Microsoft Entra Admin Center as the user’s authentication method, Microsoft Entra returns a success response, which includes a challenge type of *password*.
+If the tenant administrator configured email with password in the Microsoft Entra admin center as the user’s authentication method, Microsoft Entra returns a success response, which includes a challenge type of *password*.
 
 Example:
 

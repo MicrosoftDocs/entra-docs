@@ -16,61 +16,9 @@ ms.custom: it-pro
 
 # Collect user attributes during sign-up  
 
-User attributes collected during sign-up are stored with the user's profile in your directory. You can choose from built-in attributes or create custom ones in the user flow settings.
-
-- **Built-in user attributes.** Microsoft Entra External ID has built-in user attributes that can be collected during sign-up, including:
-
-  - City
-  - Country/Region
-  - Display Name
-  - Email Address
-  - Given Name
-  - Job Title
-  - Postal Code
-  - State/Province
-  - Street Address
-  - Surname
-
-- **Custom user attributes.** You can also create *custom user attributes* to collect additional information during sign-up using the following input types:
-
-  - String text box
-  - Radio buttons
-  - Multiselect checkboxes
-  - Numeric text box
-  - Single-select checkbox
-
-Checkboxes and radio buttons can include hyperlinks to other content, such as terms of use and privacy policies. The following example shows a sign-up page that combines built-in attributes and custom attributes:
-
-   :::image type="content" source="media/how-to-define-custom-attributes/attribute-collection-page-types-reduced.png" border="false" alt-text="Screenshot of a sign-up page with terms of use and privacy policy checkboxes." lightbox="media/how-to-define-custom-attributes/attribute-collection-page-types.png":::
-
-In this example:
-
-- The **Display Name** field is a built-in attribute.
-- The **Loyalty Number** is a custom attribute with a free-form entry field that accepts a numeric integer. You can configure this format using the **Int** data type and **NumericTextBox** user input type.
-- The **terms of use** and **privacy policy** custom attributes are separate, single-select checkboxes with labels containing hyperlinks. You can configure a single checkbox using the **Boolean** data type, which defaults to the **CheckboxSingleSelect** user input type. Use Markdown language to add hyperlinks to the checkbox label.
-
-Other input types are available, including multiselect checkboxes, radio buttons, and free-form text entry fields. Learn how to [create custom user attributes](#create-custom-user-attributes) in this article.
 
 
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomAttributes)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Collect user attributes during sign-up” use case.
-
-### Where custom user attributes are stored
-
-Custom user attributes are also known as directory extension attributes because they extend the user profile information stored in your directory. All extension attributes for your customer tenant are stored in an app named *b2c-extensions-app*. After a user enters a value for the custom attribute during sign-up, it's added to the user object and can be called via the Microsoft Graph API using the naming convention `extension_<b2c-extensions-app-id>_attributename`.
-
-If your application relies on certain built-in or custom user attributes, you can also [include these attributes in the token](how-to-add-attributes-to-token.md) that is sent to your application.
-
-### Referencing custom user attributes
-
-The custom user attributes you create are added to the *b2c-extensions-app* registered in your customer tenant. If you want to call a custom attribute from an application or manage it via Microsoft Graph, use the naming convention `extension_<b2c-extensions-app-id>_<custom-attribute-name>` where:
-
-- `<b2c-extensions-app-id>` is the *b2c-extensions-app* application ID with no hyphens.
-- `<custom-attribute-name>` is the name you assigned to the custom attribute.
-
-To find the application ID for the *b2c-extensions-app* registered in your customer tenant:
+## Find the application ID for the extensions app
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Identity** > **App registrations** > **All applications**.
@@ -81,21 +29,7 @@ To find the application ID for the *b2c-extensions-app* registered in your custo
 
 `extension_12345678abcd12341234ab123456789_loyaltyNumber`
 
-## Create custom user attributes
 
-Before you begin, determine the best way to gather user input for each custom attribute you want to collect. Refer to the following table to find the appropriate data types and user input types.
-
-### Custom user attribute data and input types
-
-|Data type  |User input type     |Description  |
-|-----------|--------------------|-------------|
-|String     |TextBox             |Free-form text entry field.         |
-|String     |RadioSingleSelect   |Series of radio buttons with only one selection allowed. The **Text** for individual radio buttons can include hyperlinks formatted in Markdown language.          |
-|String     |CheckboxMultiSelect |Series of one or more checkboxes with multiple selections allowed. The **Text** for individual checkboxes can include hyperlinks formatted in Markdown language.        |
-|Boolean    |CheckboxSingleSelect|Single boolean checkbox with a label. The **Label** for the checkbox can include hyperlinks formatted in Markdown language.      |
-|Int        |NumericTextBox      |Free-form integer entry.         |
-
-To define a custom user attribute, you first create the attribute at the tenant level so it can be used in any user flow in the tenant. Then you assign the attribute to your sign-up user flow and configure how you want it to appear on the sign-up page.
 
 ### To create a custom user attribute
 
