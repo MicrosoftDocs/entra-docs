@@ -4,17 +4,15 @@ description: In this quickstart, you configure and run a Python web app that sig
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom: devx-track-python, scenarios:getting-started, languages:Python
 ms.date: 02/28/2024
 ms.service: identity-platform
 ms.topic: quickstart
-zone_pivot_groups: python-web-app
 #Customer intent: As a Python web app developer, I want to sign in users and call the Microsoft Graph API, so that I can integrate user authentication and access Microsoft Graph data in my application.
 ---
 
 # Quickstart: Sign in users and call Microsoft Graph from a Python web app
 
-In this quickstart, you download and run a code sample that demonstrates how a Python web application can sign in users and call the Microsoft Graph API. Users with a personal Microsoft Account or an account in any Microsoft Entra organization can sign into the application.
+In this quickstart, you download and run a code sample that demonstrates how a Python web app can sign in users and call the Microsoft Graph API. Users with a personal Microsoft Account or an account in any Microsoft Entra organization can sign into the application.
 
 The following diagram displays how the sample app works:
 
@@ -22,7 +20,6 @@ The following diagram displays how the sample app works:
 
 1. The application uses the [`identity` package](https://pypi.org/project/identity/) to obtain an access token from the Microsoft identity platform.
 2. The access token is used as a bearer token to authenticate the user when calling the Microsoft Graph API.
-
 
 ## Prerequisites
 
@@ -52,6 +49,8 @@ Follow these steps to register your application in the Microsoft Entra admin cen
 1. Enter a description for the client secret, leave the default expiration, and select **Add**.
 1. Save the **Value** of the **Client Secret** in a safe location. You'll need it to configure the code, and you can't retrieve it later.
 
+   The sample application in this quickstart uses a client secret to identify itself as confidential client. Because the client secret is added as a plain-text to your project files, for security reasons, it is recommended that you use a certificate instead of a client secret before moving the application to a production environment. For more information on how to use a certificate, see [these instructions](./certificate-credentials.md). 
+
 ## Step 3: Add a scope
 
 1. Under **Manage**, select **API permissions** > **Add a permission**.
@@ -59,16 +58,13 @@ Follow these steps to register your application in the Microsoft Entra admin cen
 1. From the *Commonly used Microsoft APIs* section, select **Microsoft Graph**.
 1. From the **Delegated permissions** section, ensure that **User.ReadBasic.All** is selected. Use the search box if necessary.
 1. Select **Add permissions**.
-1
-
-::: zone pivot="flask" 
 
 ## Step 4: Download the sample app
 
-[Download the Python code sample](https://github.com/Azure-Samples/ms-identity-python-webapp/archive/main.zip) or clone the repository:
+[Download the Python code sample](https://github.com/Azure-Samples/ms-identity-docs-code-python/tree/main/webapp/sign-in-users/flask) or clone the repository:
 
 ```powershell
-git clone https://github.com/Azure-Samples/ms-identity-python-webapp.git
+git clone https://github.com/Azure-Samples/ms-identity-docs-code-python/
 ```
 
 You can also use an integrated development environment to open the folder.
@@ -79,7 +75,12 @@ You can also use an integrated development environment to open the folder.
 
 1. Create an *.env* file in the root folder of the project using *.env.sample* as a guide.
 
-    :::code language="python" source="~/../ms-identity-python-webapp-quickstart/.env.sample" range="4-16" highlight="1,2,13":::
+    ```python
+    # The following variables are required for the app to run.
+    CLIENT_ID=<>
+    CLIENT_SECRET=<>
+    AUTHORITY=<authority url>
+    ```
 
     * Set the value of `CLIENT_ID` to the **Application (client) ID** for the registered application, available on the overview page.
     * Set the value of `CLIENT_SECRET` to the client secret you created in **Certificates & Secrets** for the registered application.
@@ -97,35 +98,25 @@ You can also use an integrated development environment to open the folder.
 1. Install the requirements using `pip`:
 
     ```shell
-    python3 -m pip install -r requirements.txt
+    pip install -r requirements.txt
     ```
 
-2. Run the app from the command line, specifying the host and port to match the redirect URI:
+1. Run the app from the command line, specifying the host and port to match the redirect URI:
 
     ```shell
-    python3 -m flask run --debug --host=localhost --port=5000
+    flask run --debug --host=localhost --port=5000
     ```
+1. Copy the https URL that appears in the terminal, for example, https://localhost:5000, and paste it into a browser. We recommend using a private or incognito browser session.
 
-   > [!IMPORTANT]
-   > This quickstart application uses a client secret to identify itself as confidential client. Because the client secret is added as a plain-text to your project files, for security reasons, it is recommended that you use a certificate instead of a client secret before considering the application as production application. For more information on how to use a certificate, see [these instructions](./certificate-credentials.md).
+1. Follow the steps and enter the necessary details to sign in with your Microsoft account. You're requested to provide an email address so a one time passcode can be sent to you. Enter the code when prompted.
 
+1. The application requests permission to maintain access to data you have given it access to, and to sign you in and read your profile, as shown. Select Accept.
 
-[!INCLUDE [Help and support](includes/error-handling-and-tips/help-support-include.md)]
+![Diagram that shows the sample app requesting for consent to access the required permissions.](media/python-webapp/consent.png)
 
+1. The following screenshot appears, indicating that you've successfully signed in to the application. 
 
-::: zone-end
-
-::: zone pivot="django" 
-
-
-[Download the Django code sample](https://github.com/Azure-Samples/ms-identity-python-webapp/archive/main.zip) or clone the repository:
-
-```powershell
-git clone https://github.com/Azure-Samples/ms-identity-python-webapp.git
-```
-
-You can also use an integrated development environment to open the folder.
-::: zone-end
+![Diagram that shows how the sample app has successfully signed in a user.](media/python-webapp/signed-in-user.png)
 
 ## Next steps
 
