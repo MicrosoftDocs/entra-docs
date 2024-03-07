@@ -128,27 +128,27 @@
         href: howto-authentication-passwordless-security-key-windows.md
       - name: Passkey (FIDO2) authentication
         items:
-        - name: (Update) Enable 
+        - name: (Update) Enable passkey
           href: how-to-enable-passkey-fido2.md
-        - name: (New) Register in a browser 
+        - name: (New) Register passkey in a browser 
           href: how-to-register-passkey-browser.md
-        - name: (New) Register on a mobile device
+        - name: (New) Register passkey on a mobile device
           href: how-to-register-passkey-mobile.md
-        - name: (New) Sign in 
+        - name: (New) Sign in with a passkey
           href: concept-passkey-fido2-compatibility.md
-        - name: (New) FAQs
+        - name: (New) Passkey FAQs
           href: passkey-faq.yml
       - name: Microsoft Authenticator
         items:
-        - name: (New) Enable 
+        - name: (New) Enable Authenticator passkey
           href: how-to-enable-authenticator-passkey.md
-        - name: (New) Register 
+        - name: (New) Register Authenticator passkey
           href: how-to-register-passkey-authenticator.md
-        - name: (New) Sign in 
+        - name: (New) Sign in with Authenticator passkey
           href: how-to-sign-in-passkey-authenticator.md
-        - name: (New) FAQs
+        - name: (New) Authenticator passkey FAQs
           href: passkey-authenticator-faq.yml
-        - name: Enable Authenticator 
+        - name: Enable Authenticator authentication method
           href: howto-authentication-passwordless-phone.md
         - name: How number matching works
           href: how-to-mfa-number-match.md
