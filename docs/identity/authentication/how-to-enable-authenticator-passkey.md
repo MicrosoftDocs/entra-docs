@@ -57,8 +57,11 @@ To enable Authenticator passkey, you edit the **Passkey (FIDO2)** method policy,
    >[!NOTE]
    >If you see an error when you try to save, the cause might be due to the number of users or groups being added. As a workaround, replace the users and groups you are trying to add with a single group, in the same operation, and then click **Save** again.
 
+1. On the **Configure** tab, set **Enforce key restrictions** to **Yes**, set **Restrict specific keys** to **Allow**, and sslect **Microsoft Authenticator (preview)**. 
+   
+   :::image type="content" border="true" source="media/howto-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey.":::
 
-On the **Configure** tab, there are more settings to help manage how passkeys can be used for sign-in. Here you need to add key restrictions that allow Authenticator passkey sign-in for Android and iOS. 
+The following list describes the other optional settings:
 
 **General**
 
@@ -72,7 +75,6 @@ On the **Configure** tab, there are more settings to help manage how passkeys ca
   >[!WARNING]
   >Key restrictions set the usability of specific passkeys for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. 
 
-![Screenshot of FIDO2 security key options](media/howto-authentication-passwordless-security-key/optional-settings.png) 
 
 ### Enable Authenticator passkey using Graph Explorer
 
