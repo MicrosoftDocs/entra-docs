@@ -91,7 +91,7 @@ Organizations who want the added security and control, compared to synced passke
 
 ### Authentication methods policy configuration
 
-Before users can sign in to Microsoft Entra ID using passkeys, an Authentication Policy Administrator must enable Microsoft Authenticator for phishing-resistant MFA in the Authentication methods policy. Customers can restrict the use of passkeys for certain users and groups within their organizations. They can also restrict passkey usage to specific provider types by restricting Authenticator Attestation GUIDs (AAGUIDs) allowed in an organization. For more information, see [How to enable Authenticator passkey](how-to-enable-authenticator-passkey.md).
+Before users can sign in to Microsoft Entra ID using passkeys, an Authentication Policy Administrator must enable Microsoft Authenticator or FIDO2 security keys for phishing-resistant MFA in the Authentication methods policy. Customers can restrict the use of passkeys for certain users and groups within their organizations. They can also restrict passkey usage to specific provider types by restricting Authenticator Attestation GUIDs (AAGUIDs) allowed in an organization. For more information, see [How to enable Authenticator passkey](how-to-enable-authenticator-passkey.md).
 
 ## Next steps
 
