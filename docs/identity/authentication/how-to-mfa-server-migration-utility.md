@@ -5,6 +5,7 @@ description: Step-by-step guidance to migrate MFA server settings to Microsoft E
 
 ms.service: entra-id
 ms.subservice: authentication
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 09/13/2023
 
