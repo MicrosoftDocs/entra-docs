@@ -5,6 +5,7 @@ description: Learn how to set up a hybrid identity environment by using pass-thr
 author: billmath
 manager: amycolannino
 ms.service: entra-id
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: tutorial
 ms.date: 11/06/2023
 ms.subservice: hybrid-connect
