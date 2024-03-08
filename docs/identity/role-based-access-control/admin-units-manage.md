@@ -118,7 +118,7 @@ $restrictedAU = New-AzureADMSAdministrativeUnit -DisplayName "Contoso Executive 
 
 ### Microsoft Graph API
 
-Use the [Create administrative unit](/graph/api/directory-post-administrativeunits?branch=main) API to create a new administrative unit.
+Use the [Create administrativeUnit](/graph/api/directory-post-administrativeunits?branch=main) API to create a new administrative unit.
 
 Request
 
@@ -135,7 +135,7 @@ Body
 }
 ```
 
-Use the [Create administrative unit (beta)](/graph/api/directory-post-administrativeunits?view=graph-rest-beta&preserve-view=true&branch=main) API to create a new restricted management administrative unit. Set the `isMemberManagementRestricted` property to `true`.
+Use the [Create administrativeUnit (beta)](/graph/api/directory-post-administrativeunits?view=graph-rest-beta&preserve-view=true&branch=main) API to create a new restricted management administrative unit. Set the `isMemberManagementRestricted` property to `true`.
 
 Request
 
@@ -205,7 +205,7 @@ Remove-AzureADMSAdministrativeUnit -Id $adminUnitObj.Id
 
 ### Microsoft Graph API
 
-Use the [Delete administrative unit](/graph/api/administrativeunit-delete) API to delete an administrative unit.
+Use the [Delete administrativeUnit](/graph/api/administrativeunit-delete) API to delete an administrative unit.
 
 ```http
 DELETE https://graph.microsoft.com/v1.0/directory/administrativeUnits/{admin-unit-id}
