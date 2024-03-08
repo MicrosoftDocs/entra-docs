@@ -59,7 +59,7 @@ This article shows how to register a passkey using a security key with your iOS 
    > [!NOTE]
    > Depending on the screen size and orientation of your iOS device you may need to scroll down to see this option. 
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios-select-security-key.png" alt-text="Screenshot of selecting to use a security key with iOS":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-select-security-key.png" alt-text="Screenshot of selecting to use a security key with iOS":::
 
 1. Connect your security key to your iOS device. 
 
