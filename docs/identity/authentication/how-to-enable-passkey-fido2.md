@@ -58,7 +58,7 @@ Registration features for passkey authentication methods rely on combined MFA/SS
 
 There are some optional settings on the **Configure** tab to help manage how passkeys can be used for sign-in.  
 
-:::image type="content" border="true" source="media/howto-authentication-passwordless-security-key/optional-settings.png" alt-text="Screenshot of FIDO2 security key options.":::
+:::image type="content" border="true" source="media/howto-authentication-passwordless-security-key/optional-settings-with-aaguid.png" alt-text="Screenshot of FIDO2 security key options.":::
 
 - **Allow self-service set up** should remain set to **Yes**. If set to no, your users won't be able to register a passkey through MySecurityInfo, even if enabled by Authentication Methods policy.  
 - **Enforce attestation** should be set to **Yes** if your organization wants to be assured that a FIDO2 security key model or passkey provider is genuine and comes from the legitimate vendor.
