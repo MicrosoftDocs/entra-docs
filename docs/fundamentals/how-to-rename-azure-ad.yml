@@ -104,7 +104,10 @@ procedureSection:
   - title: |
       Communicate the change to your customers
     summary: |
-        To help your customers with the transition, it's helpful to add a note: "Azure Active Directory is now Microsoft Entra ID" or follow the new name with "formerly Azure Active Directory" for the first year.
+        To help your customers with the transition, we recommend adding a note to your updated content or documentation.
+    steps:
+      - |
+        Add the note: `"Azure Active Directory is now Microsoft Entra ID" or follow the new name with "formerly Azure Active Directory" for the first year.`
 
         ## Sample PowerShell script
 
