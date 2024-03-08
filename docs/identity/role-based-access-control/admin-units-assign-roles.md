@@ -66,7 +66,7 @@ The following security principals can be assigned to a role with an administrati
 
 ## Service principals and guest users
 
-Service principals and guest users will not be able to use a role assignment scoped to an administrative unit unless they are also assigned corresponding permissions to read the objects. This is because service principals and guest users do not receive directory read permissions by default, which are required to perform administrative actions. To enable a service principal or Guest User to use a role assignment scoped to an administrative unit, you must assign the [Directory Readers](permissions-reference.md#directory-readers) role (or another role that includes read permissions) at a tenant scope.
+Service principals and guest users will not be able to use a role assignment scoped to an administrative unit unless they are also assigned corresponding permissions to read the objects. This is because service principals and guest users do not receive directory read permissions by default, which are required to perform administrative actions. To enable a service principal or guest user to use a role assignment scoped to an administrative unit, you must assign the [Directory Readers](permissions-reference.md#directory-readers) role (or another role that includes read permissions) at a tenant scope.
 
 It is not currently possible to assign directory read permissions scoped to an administrative unit. For more information about default permissions for users, see [Default user permissions](~/fundamentals/users-default-permissions.md).
 
@@ -106,7 +106,7 @@ $user = Get-MgUser -Filter "userPrincipalName eq 'Example_UPN'"
 $roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "displayName eq 'Example_role_name'"
 $adminUnit = Get-MgDirectoryAdministrativeUnit -Filter "displayName eq 'Example_admin_unit_name'"
 $directoryScope = '/administrativeUnits/' + $adminUnit.Id
-$roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId $directoryScope '
+$roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId $directoryScope `
    -PrincipalId $user.Id -RoleDefinitionId $roleDefinition.Id
 ```
 
