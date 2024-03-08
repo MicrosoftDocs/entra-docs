@@ -1,21 +1,21 @@
 ---
-title: Run iOS sample app
+title: Sign in users in sample iOS (Swift) mobile app by using native authentication
 description: Learn how to configure iOS sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID for customers.
 
 author: henrymbuguakiarie
 manager: mwongerapk
 
 ms.author: henrymbugua
-ms.service: active-directory
+ms.service: entra-external-id
 
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 02/23/2024
 ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn about how to configure native authentication iOS sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID for customers.
 ---
 
-# How to run the iOS sample app 
+# Sign in users in sample iOS (Swift) mobile app by using native authentication
 
 This guide shows how to run an iOS sample application that demonstrates sign-up, sign in, sign out, and reset password scenarios using Microsoft Entra External ID for customers. 
 
@@ -92,27 +92,31 @@ This guide tests **Email one-time-passcode** usage. Enter a valid email address,
  
 After you enter your email address on the previous screen, the application will send a verification code to it. Once you submit the received code, the application takes you back to the previous screen and automatically signs you in.  
 
-## Other flows 
+## Other scenarios that this sample supports 
 
 The sample app supports the following flows: 
 
-- _Email + one-time passcode_: Follow this flow to sign in or sign up with an email and a one-time passcode. 
-- _Email + password_: Follow this flow to sign in or sign up with email and a password. 
-- _Email + password sign-up with custom attributes_: Follow this flow to sign up with email, password, and custom attributes. 
-- _Password reset_: Follow this flow to reset the password. 
-- _Fallback to web browser_: Follow this flow to use the browser to sign in or sign up. 
-- _Access Protected API_: Follow this flow to call a protected API.
+- **Email + password** covers sign-in or sign-up flows with an email with password. 
+- **Email + password sign-up with user attributes** covers sign-up with email and password, and submitting user attributes. 
+- **Password reset** covers self-service password reset (SSPR). 
+- **Access Protected API** covers call a protected API after the user successfully signs up or signs in and acquires an access token.
+- **Fallback to web browser** covers the use the browser-based authentication as a fallback mechanism when the user can't complete authentication through native authentication for whatever reason. 
 
-    > [!NOTE]
-    > In the [Create a user flow](#create-a-user-flow) section, you created a user flow where you chose **Email one-time passcode** under **Identity providers** > **Email Accounts**. For flows 2 through 4, you require a user flow that uses **Email with password** under **Identity providers** > **Email Accounts**. 
+## Test email with password flow
 
-Follow the steps in [Create a user flow](#create-a-user-flow) to create a user flow that uses **Email with password** under **Identity providers** > **Email Accounts**. Remember to [associate the application with the new user flow.](#associate-the-application-with-the-user-flow) 
+In this section, you test email with password flow, with its variants such as, email with password sign-up with user attributes and SSPR:
 
-Alternatively, modify the existing user flow to use **Email with password**. To modify the user flow you created earlier, follow these steps: 
+1. Use the steps in [create a user flow](#create-a-user-flow) to create a new user flow, but this time select **Email with password** as your authentication method. You need to configure **Country/Region** and **City** as the user attributes. Alternatively, you can modify the existing user flow to use **Email with password** (Select **External Identities** > **User flows** > **SignInSignUpSample** > **Identity providers** > **Email with password** > **Save**).  
 
-- Select **External Identities** > **User flows** > **SignInSignUpSample** > **Identity providers** > **Email with password** > **Save**. 
+1. Use the steps in [associate the application with the new user flow](#associate-the-application-with-the-user-flow) to add an app to your new user flow. 
 
-After linking your application with the new user flow or modifying the existing user flow, run the application and use the bottom navigation to select different flows for testing. 
+1. Run the sample app, then select the ellipsis menu (**...**) to open more options. 
+
+1. Select the scenario you want to test, such as **Email + password** or **Email + password sign-up with user attributes** or **Password reset**, then follow the prompts. To test **Password reset**, you need to first sign up a user, and [enable email one-time passcode](how-to-enable-password-reset-customers.md) for all users in your tenant.
+
+## Test call a protected API flow
+
+Use the steps in [Call a protected web API in a sample iOS mobile app by using native authentication](sample-native-authentication-ios-sample-app-call-web-api.md) to call a protected web API from a sample Android mobile app.
 
 ## Next steps 
 

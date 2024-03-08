@@ -48,7 +48,7 @@ In this article, you learn how to:
  
 [!INCLUDE [Create user flow](../customers/includes/configure-user-flow/create-native-authentication-sign-in-sign-out-user-flow.md)]
  
-## Associate the  app with the user flow  
+## Associate the app with the user flow  
 
 [!INCLUDE [associate user flow](../customers/includes/configure-user-flow/add-app-user-flow.md)]  
  
@@ -114,17 +114,17 @@ In this section, you test email with password flow, with its variants such as, e
 
 1. Use the steps in [create a user flow](#create-a-user-flow) to create a new user flow, but this time select **Email with password** as your authentication method. You need to configure **Country/Region** and **City** as the user attributes. Alternatively, you can modify the existing user flow to use **Email with password** (Select **External Identities** > **User flows** > **SignInSignUpSample** > **Identity providers** > **Email with password** > **Save**).  
 
-1. Use the steps in [associate the application with the new user flow](#associate-the--app-with-the-user-flow) to add an app to your new user flow. 
+1. Use the steps in [associate the application with the new user flow](#associate-the-app-with-the-user-flow) to add an app to your new user flow. 
 
 1. Run the sample app, then select the ellipsis menu (**...**) to open more options. 
 
 1. Select the scenario you want to test, such as **Email + password** or **Email + password sign-up with user attributes** or **Password reset**, then follow the prompts. To test **Password reset**, you need to first sign up a user, and [enable email one-time passcode](how-to-enable-password-reset-customers.md) for all users in your tenant.
 
-<!--## Test call a protected API flow
-## Henry to add this section when sample is available
-Use the steps in [Call a protected web API in a sample Android mobile app by using native authentication](tutorial-native-authentication-android-sample-app-call-web-api.md) to call a protected web API from a sample Android mobile app.
+## Test call a protected API flow
+
+Use the steps in [Call a protected web API in a sample Android mobile app by using native authentication](sample-native-authentication-android-sample-app-call-web-api.md) to call a protected web API from a sample Android mobile app.
  
 
 ## Next steps 
  
-- [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md).-->
+- [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md).

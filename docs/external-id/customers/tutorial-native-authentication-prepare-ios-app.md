@@ -6,10 +6,10 @@ author: henrymbuguakiarie
 manager: mwongerapk
 
 ms.author: henrymbugua
-ms.service: active-directory
+ms.service: entra-external-id
 
-ms.subservice: ciam
-ms.topic: how-to
+ms.subservice: customers
+ms.topic: tutorial
 ms.date: 02/23/2024
 ms.custom: developer, devx-track-dotnet
 #Customer intent: As a dev, devops, I want to learn about how to configure prepare your iOS app for native authentication using Microsoft Entra External ID for customers.
