@@ -60,7 +60,7 @@ As Conditional Access policies have become more sophisticated, a broad set of si
 
 Microsoft Entra ID supports authentication and authorization flows inside browsers to secure web-based assets (such as websites and APIs) and on client platforms like Windows, macOS, Linux, iOS, and Android. Technology providers across the ecosystem engage with Microsoft to ensure that customers, their organizations, and partners have seamless credential-handling experiences. Microsoft Edge works directly with Microsoft Entra ID to support device wide SSO to authenticate users on their Windows devices. [Google Chrome (version 111)](https://chromeenterprise.google/policies/#CloudAPAuthEnabled) and [Firefox (version 91)](https://support.mozilla.org/kb/windows-sso#firefox) have this functionality. Web applications that use Microsoft Entra ID identities automatically use these features in their browser-based apps to offer a seamless sign-in experience for customers.
 
-To enable native applications to provide this unified SSO experience, Microsoft Entra introduced [authentication brokers](../../msal/dotnet/acquiring-tokens/desktop-mobile/wam.md). An authentication broker is an application that runs on a user's device to manage authentication handshakes and maintain tokens for connected accounts. The following table lists authentication brokers for common operating systems.
+To enable native applications to provide this unified SSO experience, Microsoft Entra introduced authentication brokers, applications that runs on a user's device to manage authentication handshakes and maintain tokens for connected accounts. The following table lists authentication brokers for common operating systems.
 
 |Operating System|Authentication Broker|
 |---|---|
