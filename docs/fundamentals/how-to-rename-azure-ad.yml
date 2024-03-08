@@ -30,28 +30,30 @@ prerequisites:
       - Get a list of names that aren't changing
       - Get answers to the more frequently asked questions and more
 
-    ## Assess and scope renaming updates for your content
-
-    Audit your experiences to find references to Azure AD and its icons.
-
-    **Scan your content** to identify references to Azure AD and its synonyms. Compile a detailed list of all instances.
-
-    - Search for the following terms: `Azure Active Directory (Azure AD)`, `Azure Active Directory`, `Azure AD`, `AAD`
-    - Search for graphics with the Azure AD icon (![Azure AD product icon](./media/new-name/azure-ad-icon-1.png)  ![Alternative Azure AD product icon](./media/new-name/azure-ad-icon-2.png)) to replace with the Microsoft Entra ID icon (![Microsoft Entra ID product icon](./media/new-name/microsoft-entra-id-icon.png))
-
-    You can download the Microsoft Entra ID icon here: [Microsoft Entra architecture icons](~/architecture/architecture-icons.md)
-
-    **Identify exceptions in your list**:
-
-    - Don't make breaking changes.
-    - Review the [What names aren't changing?](new-name.md#what-names-arent-changing) section in the naming guidance and note which Azure AD terminology isn't changing.
-    - Don't change instances of `Active Directory`. Only `Azure Active Directory` is being renamed, not `Active Directory`, which is the shortened name of a different product, Windows Server Active Directory.
-
-    **Evaluate and prioritize based on future usage**. Consider which content needs to be updated based on whether it's user-facing or has broad visibility within your organization, audience, or customer base. You may decide that some code or content doesn't need to be updated if it has limited exposure to your end-users.
-
-    Decide whether existing dated content such as videos or blogs are worth updating for future viewers. It's okay to not rename old content. To help end-users, you may want to add a disclaimer such as "Azure AD is now Microsoft Entra ID."
-
 procedureSection:
+  - title: |
+      Assess and scope renaming updates for your content
+    summary: |
+      Audit your experiences to find references to Azure AD and its icons.
+    steps:
+      - |
+        **Scan your content** to identify references to Azure AD and its synonyms. Compile a detailed list of all instances.
+
+          - Search for the following terms: `Azure Active Directory (Azure AD)`, `Azure Active Directory`, `Azure AD`, `AAD`
+          - Search for graphics with the Azure AD icon (![Azure AD product icon](./media/new-name/azure-ad-icon-1.png)  ![Alternative Azure AD product icon](./media/new-name/azure-ad-icon-2.png)) to replace with the Microsoft Entra ID icon (![Microsoft Entra ID product icon](./media/new-name/microsoft-entra-id-icon.png))
+
+        You can download the Microsoft Entra ID icon here: [Microsoft Entra architecture icons](~/architecture/architecture-icons.md)
+      - |
+        **Identify exceptions in your list.**
+
+          - Don't make breaking changes.
+          - Review the [What names aren't changing?](new-name.md#what-names-arent-changing) section in the naming guidance and note which Azure AD terminology isn't changing.
+          - Don't change instances of `Active Directory`. Only `Azure Active Directory` is being renamed, not `Active Directory`, which is the shortened name of a different product, Windows Server Active Directory.
+      - |
+        **Evaluate and prioritize based on future usage**. Consider which content needs to be updated based on whether it's user-facing or has broad visibility within your organization, audience, or customer base. You may decide that some code or content doesn't need to be updated if it has limited exposure to your end-users.
+
+        Decide whether existing dated content such as videos or blogs are worth updating for future viewers. It's okay to not rename old content. To help end-users, you may want to add a disclaimer such as "Azure AD is now Microsoft Entra ID."
+
   - title: |
       Use "find and replace" for text-based content
     summary: |
