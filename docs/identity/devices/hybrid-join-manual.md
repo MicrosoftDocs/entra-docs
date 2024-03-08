@@ -58,7 +58,7 @@ You can configure Microsoft Entra hybrid joined devices for various types of Win
 - For managed and federated domains, you must [configure a service connection point or SCP](#configure-a-service-connection-point).
 - For federated domains, you must ensure that your [federation service is configured to issue the appropriate claims](#set-up-issuance-of-claims).
 
-After these configurations are complete, follow the guidance to [verify registration](how-to-hybrid-join-verify.md).
+After these configurations are complete, follow the guidance to [verify registration](how-to-hybrid-join-verify.yml).
 
 ### Configure a service connection point
 
@@ -426,6 +426,6 @@ If you experience issues completing Microsoft Entra hybrid join for domain-joine
 
 ## Related content
 
-- [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.md)
+- [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.yml)
 - [Plan your Microsoft Entra hybrid join implementation](hybrid-join-plan.md)
 - [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)
