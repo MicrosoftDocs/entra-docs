@@ -143,7 +143,7 @@ This section describes how to assign roles at an [administrative unit](administr
 1. Select **Add** to assign the role scoped over the administrative unit.
 
 >[!NOTE]
-> You will not see the entire list of Microsoft Entra built-in or custom roles here. This is expected. We show the roles which have permissions related to the objects that are supported within the administrative unit. To see the list of objects supported within an administrative unit. see [Administrative units in Microsoft Entra ID](administrative-units.md).
+> You will not see the entire list of Microsoft Entra built-in or custom roles here. This is expected. We show the roles which have permissions related to the objects that are supported within the administrative unit. To see the list of objects supported within an administrative unit, see [Administrative units in Microsoft Entra ID](administrative-units.md).
 
 ### PowerShell
 
