@@ -10,7 +10,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: anjusingh, ludwignick
 ---
-# Conditional Access: Authentication transfer
+# Conditional Access: Authentication transfer (Preview)
 
 Authentication Transfer is a new authentication flow that simplifies the cross-device sign-in from PC to mobile for Microsoft apps. Authentication transfer allows you to transfer an authentication from one device to another, like desktop to mobile. Authentication transfer increases user engagement by connecting them on more than one platform. Users can use a QR code in an authenticated app on their PC to sign-in to a mobile app.
 

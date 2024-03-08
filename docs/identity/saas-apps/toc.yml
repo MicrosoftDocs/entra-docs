@@ -80,6 +80,8 @@
         href: adp-emea-french-hr-portal-tutorial.md  
       - name: ADP Globalview (Deprecated)
         href: adglobalview-tutorial.md
+      - name: ADP (OIDC)
+        href: adp-oidc-tutorial.md
       - name: Adra by Trintech
         href: adra-by-trintech-tutorial.md
       - name: Adstream
@@ -2031,6 +2033,8 @@
         href: patentsquare-tutorial.md
       - name: Pavaso Digital Close
         href: pavaso-digital-close-tutorial.md
+      - name: PayCargo
+        href: paycargo-tutorial.md
       - name: Paylocity
         href: paylocity-tutorial.md
       - name: Peakon
