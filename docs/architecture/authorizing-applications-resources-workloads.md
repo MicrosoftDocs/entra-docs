@@ -92,7 +92,7 @@ If you can't build on MSAL, your app must use OAuth 2.0 to request access tokens
 
 If you build mobile device apps, review [Support SSO and app protection policies in mobile apps](~/identity-platform/mobile-sso-support-overview.md). Use the information learn how to support token acquisition, [Intune mobile application management](/mem/intune/apps/app-management) (MAM), and app protection policies.
 
-## Authorization in resources (APIs)
+## Authorization in resources
 
 The [Authorization in applications](#authorization-in-applications) section introduced three required authorizations when applications need to access resources on behalf of a user but only covered the first two. The user must have authorization to access a resource, but Microsoft Entra ID doesn't perform the final authorization. The resource (API) performs the authorization.
 
