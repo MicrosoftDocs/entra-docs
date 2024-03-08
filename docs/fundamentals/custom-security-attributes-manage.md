@@ -27,7 +27,7 @@ To manage access to custom security attributes, you must have:
 
 <a name='step-1-figure-out-how-to-organize-your-attributes'></a>
 
-## Step 1: determine how to organize your attributes
+## Step 1: Determine how to organize your attributes
 
 Every custom security attribute definition must be part of an attribute set. An attribute set is a way to group and manage related custom security attributes. You'll need to determine how you want to add attributes sets for your organization. For example, you might want to add attribute sets based on departments, teams, or projects. Your ability to grant access to custom security attributes depends on how you organize your attribute sets.
 
