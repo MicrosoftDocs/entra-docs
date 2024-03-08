@@ -68,7 +68,7 @@ Passkeys in Microsoft Authenticator can be added directly from your device or th
 
    1. Your device opens a security window. Save the passkey to Authenticator following the prompts on your device. 
 
-      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-create-passkey.png" alt-text="Screenshot of save passkey in Microsoft Authenticator for iOS devices.":::
+      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-create-passkey.png" alt-text="Screenshot of the save passkey option in Microsoft Authenticator for iOS devices.":::
 
    1. Once the passkey is successfully created on your device, you'll be directed back to **My Security info**, then tap **Done**. 
    1. Name the passkey something memorable to you and click **Done**. 
@@ -134,8 +134,7 @@ Passkeys in Microsoft Authenticator can be added directly from your device or th
 
 1. Your device opens a security window. Save the passkey to Authenticator following the prompts on your device. 
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey_create_passkey.png" alt-text="Screenshot of save passkey in Microsoft Authenticator for iOS devices.":::
-
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-create-passkey.png" alt-text="Screenshot of save passkey in Microsoft Authenticator for iOS devices.":::
 
 1. Once the passkey is successfully created on your device you'll be directed back to **My Security info**, tap **Done**. 
 1. Name the passkey something memorable to you and click **Done**.
@@ -196,7 +195,7 @@ Passkeys in Microsoft Authenticator can be added directly from your device or th
       
    1. Name the passkey something memorable to you and click **Done**. 
 
-      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-success.png" alt-text="Screenshot of the successful creation of a passkey in Microsoft Authenticator for Android devices.":::
+      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-success.png" alt-text="Screenshot of successfully creating of a passkey in Microsoft Authenticator for Android devices.":::
 
    1. You can now see the Microsoft Authenticator managed passkey along with your other registered security info options.
 
@@ -264,7 +263,7 @@ Passkeys in Microsoft Authenticator can be added directly from your device or th
    
 1. Name the passkey something memorable to you and click **Done**. 
 
-    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-androi/success.png" alt-text="Screenshot of the successful creation of a passkey in Microsoft Authenticator for Android devices.":::
+    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/success.png" alt-text="Screenshot of the successful creation of a passkey in Microsoft Authenticator for Android devices.":::
 
 ---
 
@@ -276,7 +275,7 @@ Passkeys in Microsoft Authenticator can be added directly from your device or th
 
 1. To re-register a passkey for your account, first remove the passkey from Authenticator by clicking the *Trash* icon, then tap **Delete** to confirm.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios_delete.png" alt-text="Screenshot of the passkey to delete in Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-delete.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for iOS devices.":::
 
 > [!NOTE]
 > You also need to delete the passkey from **Security Info**, using a web browser and logging in to [https://mysignins.microsoft.com/security-info](https://mysignins.microsoft.com/security-info ).  
