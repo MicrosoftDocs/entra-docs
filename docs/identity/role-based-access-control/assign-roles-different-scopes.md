@@ -83,8 +83,8 @@ Follow these steps to assign Microsoft Entra roles using PowerShell.
 1. Use [New-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/new-mgrolemanagementdirectoryroleassignment) to assign the role.
 
     ```powershell
-    $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment '
-       -DirectoryScopeId $directoryScope -PrincipalId $user.Id '
+    $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment `
+       -DirectoryScopeId $directoryScope -PrincipalId $user.Id `
        -RoleDefinitionId $roleDefinition.Id
     ```
 
@@ -143,7 +143,7 @@ This section describes how to assign roles at an [administrative unit](administr
 1. Select **Add** to assign the role scoped over the administrative unit.
 
 >[!NOTE]
-> You will not see the entire list of Microsoft Entra built-in or custom roles here. This is expected. We show the roles which have permissions related to the objects that are supported within the administrative unit. Refer to [This documentation](administrative-units.md) to see the list of objects supported within an administrative unit.
+> You will not see the entire list of Microsoft Entra built-in or custom roles here. This is expected. We show the roles which have permissions related to the objects that are supported within the administrative unit. To see the list of objects supported within an administrative unit. see [Administrative units in Microsoft Entra ID](administrative-units.md).
 
 ### PowerShell
 
@@ -170,7 +170,7 @@ Follow these steps to assign Microsoft Entra roles at administrative unit scope 
 1. Use [Get-MgRoleManagementDirectoryRoleDefinition](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroledefinition) to get the role you want to assign.
 
     ```powershell
-    $roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition '
+    $roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition `
        -Filter "displayName eq 'User Administrator'"
     ```
 
@@ -184,8 +184,8 @@ Follow these steps to assign Microsoft Entra roles at administrative unit scope 
 1. Use [New-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/new-mgrolemanagementdirectoryroleassignment) to assign the role.
 
     ```powershell
-    $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment '
-       -DirectoryScopeId $directoryScope -PrincipalId $user.Id '
+    $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment `
+       -DirectoryScopeId $directoryScope -PrincipalId $user.Id `
        -RoleDefinitionId $roleDefinition.Id
     ```
 
@@ -207,7 +207,7 @@ Follow these instructions to assign a role at administrative unit scope using th
     GET https://graph.microsoft.com/v1.0/rolemanagement/directory/roleDefinitions?$filter=displayName eq 'User Administrator'
     ```
 
-1. Use the [List administrative units](/graph/api/directory-list-administrativeunits) API to get the administrative unit you want the role assignment to be scoped to.
+1. Use the [List administrativeUnits](/graph/api/directory-list-administrativeunits) API to get the administrative unit you want the role assignment to be scoped to.
 
     ```http
     GET https://graph.microsoft.com/v1.0/directory/administrativeUnits?$filter=displayName eq 'Seattle Admin Unit'
@@ -286,7 +286,7 @@ Follow these steps to assign Microsoft Entra roles at application scope using Po
 1. Use [Get-MgRoleManagementDirectoryRoleDefinition](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroledefinition) to get the role you want to assign.
 
     ```powershell
-    $roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition '
+    $roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition `
        -Filter "displayName eq 'Application Administrator'"
     ```
 
@@ -300,8 +300,8 @@ Follow these steps to assign Microsoft Entra roles at application scope using Po
 1. Use [New-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/new-mgrolemanagementdirectoryroleassignment) to assign the role.
 
     ```powershell
-    $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment '
-       -DirectoryScopeId $directoryScope -PrincipalId $user.Id '
+    $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment `
+       -DirectoryScopeId $directoryScope -PrincipalId $user.Id `
        -RoleDefinitionId $roleDefinition.Id 
     ```
 
