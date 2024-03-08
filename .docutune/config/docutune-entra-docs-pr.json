@@ -14,7 +14,7 @@
   "RemoveTermSets": [
     "*au-administrative-unit*",
     "*guest-user*",
-    "casing-microsoft-brands-microsoft",
+    "*microsoft-brands-microsoft",
     "*right-click*",
     "*and-then-click*",
     "*had-had*",
