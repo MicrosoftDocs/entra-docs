@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Sign in users and call an API in a sample Android mobile app by using native authentication
 
-This sample demonstrates how to configure Android sample application to call an ASP.NET Core web API.
+This article demonstrates how to configure a sample Android mobile application to call an ASP.NET Core web API.
 
 ## Prerequisites
 
