@@ -6,10 +6,10 @@ author: henrymbuguakiarie
 manager: mwongerapk
 
 ms.author: henrymbugua
-ms.service: active-directory
+ms.service: entra-external-id
 
-ms.subservice: ciam
-ms.topic: how-to
+ms.subservice: customers
+ms.topic: tutorial
 ms.date: 02/29/2024
 ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to sign in user after sign up.
