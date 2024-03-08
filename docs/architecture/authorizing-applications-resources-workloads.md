@@ -20,7 +20,7 @@ Authorization is when an individual human interacts and directs an application a
 
 ## Authorization in applications
 
-In this section, we cover scenarios in which an individual human is interacting and directing an application. The [Authorization in resources (APIs)](#authorization-in-resources-apis) section describes how APIs perform authorization when the user needs authorization to access a resource, but Microsoft Entra ID doesn't perform the final authorization. The [Authorization in workloads](#authorization-in-workloads) section covers scenarios in which applications or services work independently.
+In this section, we cover scenarios in which an individual human is interacting and directing an application. The [Authorization in resources (APIs)](#authorization-in-resources) section describes how APIs perform authorization when the user needs authorization to access a resource, but Microsoft Entra ID doesn't perform the final authorization. The [Authorization in workloads](#authorization-in-workloads) section covers scenarios in which applications or services work independently.
 
 Applications require the following authorizations when they need to access resources on behalf of a user.
 
