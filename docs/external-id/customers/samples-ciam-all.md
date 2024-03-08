@@ -91,8 +91,8 @@ These samples and how-to guides demonstrate how to write a public client mobile 
 > [!div class="mx-tdCol2BreakAll"]
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
-> |Android Kotlin | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
-> |iOS | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
+> |Android (Kotlin) | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
+> |iOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
 
 ### Daemon
 
@@ -115,7 +115,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > | Browserless | &#8226; [Sign in users](./sample-browserless-app-dotnet-sign-in.md)  | &#8226; [Sign in users](./tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md)   |
 > | Daemon |  &#8226; [Call an API](sample-daemon-dotnet-call-api.md)  | &#8226; [Call an API](tutorial-daemon-dotnet-call-api-prepare-tenant.md)   |
 
-### Android Kotlin
+### Android (Kotlin)
 
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide |
@@ -138,7 +138,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > | Desktop | &#8226; [Sign in users](how-to-desktop-app-maui-sample-sign-in.md) | &#8226; [Sign in users](tutorial-desktop-app-maui-sign-in-prepare-tenant.md)   |
 > | Mobile |  &#8226; [Sign in users](how-to-mobile-app-maui-sample-sign-in.md) | &#8226; [Sign in users](tutorial-mobile-app-maui-sign-in-prepare-tenant.md)   |
 
-### iOS
+### iOS (Swift)
 
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide |
