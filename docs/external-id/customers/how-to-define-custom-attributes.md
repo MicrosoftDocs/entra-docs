@@ -23,7 +23,7 @@ To define a custom user attribute, you first create the attribute at the tenant 
 
 Learn more about custom user attributes in [User profile attributes](concept-user-attributes.md) article.
 
-## Create a custom user attributes
+## Create custom user attributes
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
@@ -168,8 +168,6 @@ An attribute with a String data type can be configured as a RadioSingleSelect us
 ### Find the application ID for the extensions app
 
 [Custom user attributes](concept-user-attributes.md#custom-user-attributes) are [stored in an app named *b2c-extensions-app*](concept-user-attributes.md#where-custom-user-attributes-are-stored). After a user enters a value for the custom attribute during sign-up, it's added to the user object and can be called via the Microsoft Graph API using the naming convention `extension_{appId-without-hyphens}_{custom-attribute-name}` where:
-
-where:
 
  - `{appId-without-hyphens}` is the stripped version of the client ID for the *b2c-extensions-app*. 
  - `{custom-attribute-name}` is the name you assigned to the custom attribute.

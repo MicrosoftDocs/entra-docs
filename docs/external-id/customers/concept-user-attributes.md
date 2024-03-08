@@ -1,6 +1,6 @@
 ---
 title: User profile attributes
-description: :User profile attributes that you can collect from the user during sign-up, and how to extend user profile attributes by using custom user attributes. 
+description: User profile attributes that you can collect from the user during sign-up, and how to extend user profile attributes by using custom user attributes. 
 author: msmimart
 manager: celestedg
 ms.service: entra-external-id
@@ -21,7 +21,7 @@ The user attributes you collect during sign-up are stored with the user's profil
 - [Built-in user attributes](#built-in-user-attributes), such as city, country/region, email address, and so on, are available in Microsoft Entra External ID. You can choose the built-in user attributes you want to collect during sign-up.
 - For any additional information you want to collect, you can create [custom user attributes](#custom-user-attributes). Several custom input controls can be added to the sign-up page to collect the attributes, including text boxes, radio buttons, and check boxes. The following example shows how custom input controls can be used to collect attributes for loyalty number, terms of use consent for terms of use, and privacy policy consent.
    
-   :::image type="content" source="media/how-to-define-custom-attributes/attribute-collection-page-types-reduced.png" border="false" alt-text="Screenshot of a sign-up page with terms of use and privacy policy checkboxes." lightbox="media/how-to-define-custom-attributes/attribute-collection-page-types.png":::
+   :::image type="content" source="media/concept-user-attributes/attribute-collection-page-types-reduced.png" border="false" alt-text="Screenshot of a sign-up page with terms of use and privacy policy checkboxes." lightbox="media/concept-user-attributes/attribute-collection-page-types.png":::
 
 ## Built-in user attributes
 
