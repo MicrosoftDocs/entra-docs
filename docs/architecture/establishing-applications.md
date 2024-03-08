@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.date: 03/08/2024
 ms.author: jricketts
 ---
-# Establishing applications in the Microsoft Entra ID ecosystem
+# Establishing applications in the Microsoft Entra ID ecosystem 
 
 When building applications on Microsoft Entra ID, you first establish an identity for an application. An app needs an identity in Microsoft Entra ID to request tokens. An Application Programming Interface (API) needs an identity in Microsoft Entra ID to have tokens issued for apps to access resources.
 
