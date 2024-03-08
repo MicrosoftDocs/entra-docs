@@ -59,9 +59,9 @@ This topic shows how to sign in to Microsoft Entra ID on another device with a p
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-options.png" alt-text="Screenshot of the sign-in options in Microsoft Authenticator for iOS devices.":::
 
-1. Follow the steps in the operating system or browser prompt to initiate cross-device authentication. On Windows 11 23H2 or later, select "iPhone, iPad, or Android device".
+1. Follow the steps in the operating system or browser prompt to initiate cross-device authentication. On Windows 11 23H2 or later, select **iPhone, iPad, or Android device**.
 
-1. A QR code should be shown on screen. Now, on your iOS device, open the Camera app and scan the QR code. Click "Sign-in with passkey" when the option appears.
+1. A QR code should be shown on screen. Now, on your iOS device, open the Camera app and scan the QR code. Click **Sign-in with passkey** when the option appears.
 
 1. Follow the steps in the iOS operating system dialog to select your passkey. Verify that it's you by using Face ID, Touch ID, or entering your device PIN.
 
@@ -107,9 +107,9 @@ This topic shows how to sign in to Microsoft Entra ID on another device with a p
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-options.png" alt-text="Screenshot of the sign-in options in Microsoft Authenticator for Android devices.":::
 
-1. Follow the steps in the operating system or browser prompt to initiate cross-device authentication. On Windows 11 23H2 or later, select "iPhone, iPad, or Android device".
+1. Follow the steps in the operating system or browser prompt to initiate cross-device authentication. On Windows 11 23H2 or later, select **iPhone, iPad, or Android device**.
 
-1. A QR code should be shown on screen. Now, on your Android device, open the Camera app and scan the QR code. Click "Sign-in with passkey" when the option appears.
+1. A QR code should be shown on screen. Now, on your Android device, open the Camera app and scan the QR code. Click **Sign-in with passkey** when the option appears.
 
 1. Follow the steps in the Android operating system dialog to select your passkey. Verify that it's you by scanning your face, fingerprint, or entering your device PIN or unlock gesture.
 
