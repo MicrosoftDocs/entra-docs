@@ -1,13 +1,15 @@
 ---
 title: User profile attributes
 description: :User profile attributes that you can collect from the user during sign-up, and how to extend user profile attributes by using custom user attributes. 
-author: kengaderdus
-manager: mwongerapk
-ms.author: kengaderdus
-ms.service: entra-external-id 
+author: msmimart
+manager: celestedg
+ms.service: entra-external-id
+ 
 ms.subservice: customers
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/08/2024
+ms.author: mimart
+ms.custom: it-pro
 
 #Customer intent: As a developer, devops, IT admin, I want to learn about the built-in user profile attributes that I can collect from the user during sign-up, and how Microsoft Entra External ID for customers extends user profile attributes by using custom user attributes. 
 ---
@@ -29,7 +31,7 @@ This table summarizes the built-in user attributes you can collect during the si
 
 - *Label in Microsoft Entra admin center* is the name of the user attribute as it appears in the Microsoft Entra admin center. 
 - *Programmable name* is the name of the user attribute as used in the [user resource](/graph/api/resources/user/#properties) of then Microsoft Graph API. You use this name when you want to use this user attribute programmatically, such as in [native authentication](../../identity-platform/reference-native-authentication-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
-- *Data type* is the attributer data type.
+- *Data type* is the user attribute's data type.
 
 |  Label in Microsoft Entra admin center| Programmable name |     Data type   |  Remarks    |
 |-----------------------|-------------------------|------------------------|------------------------|

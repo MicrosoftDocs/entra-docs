@@ -35,7 +35,7 @@ Learn more about user attributes input types in [Custom user attributes input ty
 
 ### Reference user attributes 
 
-When you [create a sign-up user-flow](../../../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md), you configure user attributes that you want to collect from the user during sign-up. The names of the user attributes in the Microsoft Entra admin center different from how you reference them in the native authentication API.
+When you [create a sign-up user-flow](../../../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md), you configure user attributes that you want to collect from the user during sign-up. The names of the user attributes in the Microsoft Entra admin center are different from how you reference them in the native authentication API.
 
 For example, *Display Name* in the Microsoft Entra admin center is referenced as *displayName* in the API.
 
