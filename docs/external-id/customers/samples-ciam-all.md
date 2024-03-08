@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: sample
-ms.date: 02/27/2024
+ms.date: 03/07/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -91,9 +91,8 @@ These samples and how-to guides demonstrate how to write a public client mobile 
 > [!div class="mx-tdCol2BreakAll"]
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
-> |Android Kotlin | &#8226; [Sign in users](how-to-run-sample-android-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
-> |iOS | &#8226; [Sign in users](how-to-run-sample-ios-app.md) | &#8226; [Sign in users](tutorial-native-auth-prepare-ios-app.md)|
-
+> |Android Kotlin | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
+> |iOS | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
 
 ### Daemon
 
@@ -121,7 +120,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
-> |Mobile native auth | &#8226; [Sign in users](how-to-run-sample-android-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
+> |Mobile native auth | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
 
 ### ASP.NET Core
 
@@ -144,7 +143,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
-> |Mobile native auth | &#8226; [Sign in users](how-to-run-sample-ios-app.md) | &#8226; [Sign in users](tutorial-native-auth-prepare-ios-app.md)|
+> |Mobile native auth | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
 
 ### JavaScript, Vanilla
 
