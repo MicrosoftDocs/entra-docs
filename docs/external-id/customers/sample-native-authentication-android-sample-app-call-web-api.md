@@ -1,5 +1,5 @@
 ---
-title: Call web API in Android sample app
+title: Call a web API in a sample Android mobile app
 description: Learn how to call web API in Android sample app.
 
 author: henrymbuguakiarie
