@@ -14,7 +14,7 @@
   "RemoveTermSets": [
     "*au-administrative-unit*",
     "*guest-user*",
-    "casing-microsoft-brands-microsoft",
+    "*microsoft-brands-microsoft*",
     "*right-click*",
     "*and-then-click*",
     "*had-had*",
@@ -24,7 +24,8 @@
     "*-crm-*",
     "*-crud-*",
     "*-mvc-*",
-    "product-azure-app-service"
+    "product-azure-app-service",
+    "invalid-product-microsoft-visual-studio-vs"
   ],
   "PreloadTOCFiles": [
   ],
