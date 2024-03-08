@@ -53,11 +53,9 @@ prerequisites:
 
 procedureSection:
   - title: |
-      Update the naming in your content
+      Use "find and replace" for text-based content
     summary: |
       Update your organization's content and experiences using the relevant tools.
-
-      ### Use "find and replace" for text-based content
     steps:
       - |
         Almost all editing tools offer "search and replace" or "find and replace" functionality, either natively or using plug-ins. Use your preferred app.
@@ -70,8 +68,8 @@ procedureSection:
 
          - Azure AD as the product name alone should be replaced with Microsoft Entra ID.
          - Azure AD features or functionality become Microsoft Entra features or functionality. For example, "Azure AD Conditional Access" becomes "Microsoft Entra Conditional Access."
-
-      ### Automate bulk editing using custom code
+  - title: |
+      Automate bulk editing using custom code
     summary: |
       Use the following criteria to determine what change(s) you need to make to instances of `Azure Active Directory (Azure AD)`, `Azure Active Directory`, `Azure AD`, `AAD`.
     steps:
@@ -93,7 +91,8 @@ procedureSection:
 
         See the section [Glossary of updated terminology](new-name.md#glossary-of-updated-terminology) to further refine your custom logic.
 
-      ### Update graphics and icons
+  - title: |
+      Update graphics and icons
     summary: |
       Follow these steps to update graphics and icons.
     steps:
@@ -102,12 +101,14 @@ procedureSection:
       - |  
         Replace titles or text containing `Azure Active Directory (Azure AD)`, `Azure Active Directory`, `Azure AD`, or `AAD` with `Microsoft Entra ID`.
 
-      ### Communicate the change to your customers
+  - title: |
+      Communicate the change to your customers
     summary: |
         To help your customers with the transition, we recommend adding a note to your updated content or documentation: "Azure Active Directory is now Microsoft Entra ID" or follow the new name with "formerly Azure Active Directory" for the first year.
 
-        ## Sample PowerShell script
-
+  - title: |
+      Sample PowerShell script
+    summary: |
         You can use following PowerShell script as a baseline to rename Azure AD references in your documentation or content. This code sample:
 
         - Scans `.resx` files within a specified folder and all nested folders.
