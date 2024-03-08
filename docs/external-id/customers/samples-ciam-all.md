@@ -120,7 +120,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
-> |Mobile native auth | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
+> |Mobile native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
 
 ### ASP.NET Core
 
@@ -143,7 +143,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
-> |Mobile native auth | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
+> |Mobile native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
 
 ### JavaScript, Vanilla
 
