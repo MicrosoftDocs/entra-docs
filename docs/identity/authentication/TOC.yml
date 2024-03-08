@@ -130,8 +130,8 @@
         items:
         - name: (Update) Enable passkey
           href: how-to-enable-passkey-fido2.md
-        - name: (New) Register passkey in a browser 
-          href: how-to-register-passkey-browser.md
+        - name: (New) Register passkey 
+          href: how-to-register-passkey.md
         - name: (New) Register passkey on a mobile device
           href: how-to-register-passkey-mobile.md
         - name: (New) Sign in with a passkey

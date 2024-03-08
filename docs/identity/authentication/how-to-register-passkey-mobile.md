@@ -27,117 +27,123 @@ This article shows how to register a passkey using a security key with your iOS 
 # [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
 
 ## Register a security key with iOS 
+
 1. Using your iOS device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
    
-2. Tap **+ Add sign-in method**.
+1. Tap **+ Add sign-in method**.
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_addmethod.png" alt-text="Screenshot of the Security Info screen showing add methods":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-add-method.png" alt-text="Screenshot of the Security Info screen showing add methods":::
 
-3. Select **Passkey (preview)**.
+1. Select **Passkey (preview)**.
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_myseclist.png" alt-text="Screenshot of the drop-down list of options in security info.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-my-seclist.png" alt-text="Screenshot of the drop-down list of options in security info.":::
 
-4. Tap **Add**. 
+1. Tap **Add**. 
    
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_dropdown.png" alt-text="Screenshot of the Security Info screen Add Sign-in Method option.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-dropdown.png" alt-text="Screenshot of the Security Info screen Add Sign-in Method option.":::
 
-5. Sign in with multifactor authentication (MFA) before adding a passkey.
+1. Sign in with multifactor authentication (MFA) before adding a passkey.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-2fa-authorization.png" alt-text="Screenshot of the 2-factor authentication requirement to setup a passkey.":::
 
-6. Click **Next**. 
+1. Click **Next**. 
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_start.png" alt-text="Screenshot of starting passkey registration":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-start.png" alt-text="Screenshot of starting passkey registration":::
 
-7. Your device will open a security window. Chose **Other Options**. 
+1. Your device will open a security window. Chose **Other Options**. 
 
-    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_saveanotherway.png" alt-text="Screenshot of where to save a passkey on iOS":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-save-another-way.png" alt-text="Screenshot of where to save a passkey on iOS":::
 
-8. Select **Security key**. 
+1. Select **Security key**. 
 
-    > [!NOTE]
-    > Depending on the screen size and orientation of your iOS device you may need to scroll down to see this option. 
-    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_select_securitykey.png" alt-text="Screenshot of selecting to use a security key with iOS":::
+   > [!NOTE]
+   > Depending on the screen size and orientation of your iOS device you may need to scroll down to see this option. 
 
-9. Connect your security key to your iOS device. 
-    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_connect.png" alt-text="Screenshot asking to connect your security key to your iOS device.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios-select-security-key.png" alt-text="Screenshot of selecting to use a security key with iOS":::
 
-10. Provide your PIN or biometric.
+1. Connect your security key to your iOS device. 
+
+    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-connect.png" alt-text="Screenshot asking to connect your security key to your iOS device.":::
+
+1. Provide your PIN or biometric.
 
    > [!NOTE]
    > If a PIN isn't configured for this security key, you need to first enroll a PIN before you continue registration. 
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_confirm_pin.png" alt-text="Screenshot asking to provide your pin for the security key connected to an iOS device.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-confirm-pin.png" alt-text="Screenshot asking to provide your pin for the security key connected to an iOS device.":::
 
-11. Re-insert or reconnect your security key to your iOS device.  
+1. Re-insert or reconnect your security key to your iOS device.  
 
-    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_reconnect.png" alt-text="Screenshot asking to confirm your pin for the security key connected to an iOS device.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-reconnect.png" alt-text="Screenshot asking to confirm your pin for the security key connected to an iOS device.":::
     
-14. Upon completion, you'll be redirected back to [My Security info](https://mysignins.microsoft.com/security-info) and asked to rename your passkey. 
+1. Upon completion, you'll be redirected back to [My Security info](https://mysignins.microsoft.com/security-info) and asked to rename your passkey. 
     
-15. Name the passkey something memorable to you and click **Done**. 
+1. Name the passkey something memorable to you and click **Done**. 
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyios_finish.png" alt-text="Screenshot showing final passkey registration step on iOS.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-finish.png" alt-text="Screenshot showing final passkey registration step on iOS.":::
 
 # [:::image type="icon" source="media/icons/android-icon.png" border="false"::: **Android**](#tab/Android)
 
 ## Register a security key with Android 
+
 1. Using your Android device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
    
-2. Tap **+ Add sign-in method**.
+1. Tap **+ Add sign-in method**.
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_addmethod.png" alt-text="Screenshot of the Security Info screen showing add methods.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-add-method.png" alt-text="Screenshot of the Security Info screen showing add methods.":::
 
-3. Select **Passkey (preview)**.
+1. Select **Passkey (preview)**.
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_myseclist.png" alt-text="Screenshot of the drop-down list of options in security info.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-my-seclist.png" alt-text="Screenshot of the drop-down list of options in security info.":::
 
-4. Tap **Add**.
+1. Tap **Add**.
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_dropdown.png" alt-text="Screenshot of the Security Info screen Add Sign-in Method option.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-dropdown.png" alt-text="Screenshot of the Security Info screen Add Sign-in Method option.":::
 
-5. Sign in with multifactor authentication (MFA) before adding a passkey.
+1. Sign in with multifactor authentication (MFA) before adding a passkey.
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_mfa.png" alt-text="Screenshot of the 2-factor authentication requirement to setup a passkey.":::
-6. Click **Next**.  
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-mfa.png" alt-text="Screenshot of the 2-factor authentication requirement to setup a passkey.":::
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_start.png" alt-text="Screenshot of starting passkey registration":::
+1. Click **Next**.  
 
-7. A security window will open on your device asking where you want to create your passkey. 
-8. Select **Save another way** 
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-start.png" alt-text="Screenshot of starting passkey registration":::
+
+1. A security window will open on your device asking where you want to create your passkey. 
+
+1. Select **Save another way**.
+
    > [!NOTE]
    > Options displayed vary depending on the manufacturer and Android OS version of your device. For example this option may appear as **Use a different device**. 
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_saveanotherway.png" alt-text="Screenshot of passkey selection on android device.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-save-another-way.png" alt-text="Screenshot of passkey selection on android device.":::
 
-9. Multiple options may be displayed, depending on the number of Google accounts or passkey managers enabled on your device. Select **Another device** to continue. 
+1. Multiple options may be displayed, depending on the number of Google accounts or passkey managers enabled on your device. Select **Another device** to continue. 
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_more_options.png" alt-text="Screenshot of passkey more options on Android device.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-more-options.png" alt-text="Screenshot of passkey more options on Android device.":::
 
 
-10. Select **USB security key**. 
+1. Select **USB security key**. 
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_anotherdevice.png" alt-text="Screenshot of option to select a USB security key.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-another-device.png" alt-text="Screenshot of option to select a USB security key.":::
 
-11. Connect your security key to your Android device. 
+1. Connect your security key to your Android device. 
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_connectkey.png" alt-text="Screenshot of passkey connection to android.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-connect-key.png" alt-text="Screenshot of passkey connection to android.":::
 
-12. Provide your PIN or biometric.
+1. Provide your PIN or biometric.
      
    > [!NOTE]
    > If a PIN isn't configured for this security key, you need to first enroll a PIN before you continue registration. 
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_confirm_pin.png" alt-text="Screenshot of prompt to provide PIN or biometric.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-confirm-pin.png" alt-text="Screenshot of prompt to provide PIN or biometric.":::
 
-13. You maybe asked to confirm your PIN or biometric again before proceeding. 
+1. You maybe asked to confirm your PIN or biometric again before proceeding. 
 
-14. Upon completion, you'll be redirected back to [My Security info](https://aka.ms/mysecurityinfo) and asked to rename your passkey. 
+1. Upon completion, you'll be redirected back to [My Security info](https://aka.ms/mysecurityinfo) and asked to rename your passkey. 
     
-15. Name the passkey something memorable to you and click **Done**. 
+1. Name the passkey something memorable to you and click **Done**. 
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkeyandroid_finish.png" alt-text="Screenshot showing final passkey registration step on Android.":::
-
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-finish.png" alt-text="Screenshot showing final passkey registration step on Android.":::
 
 
 ## Next steps

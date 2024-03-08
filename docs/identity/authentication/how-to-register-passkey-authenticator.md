@@ -102,8 +102,8 @@ Passkeys in Microsoft Authenticator can be added directly from your device or th
    - On your iOS device, open the **Settings app**.
    - Open **Passwords** select **Password Opotions**.
    - Ensure **Autofill Passwords and and Passkeys** is turned on. 
-   - Under **Use Passwords and Passkeys From** select **Authenticator** 
-   - Return to My Security info and click **Continue** 
+   - Under **Use Passwords and Passkeys From** select **Authenticator**. 
+   - Return to My Security info and click **Continue**.
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/turn-on-passkey-android.png" alt-text="Screenshot that notifies user to turn on Authenticator in Seetings app on their Android device.":::
 
