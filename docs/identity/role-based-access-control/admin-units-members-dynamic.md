@@ -109,7 +109,7 @@ For steps on how to edit your rule, see the following [Edit dynamic membership r
 
 1. Create a dynamic membership rule. For more information, see [Dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
 
-1. Use the [Create administrative unit](/graph/api/directory-post-administrativeunits?view=graph-rest-beta&preserve-view=true) API to create a new administrative unit with a dynamic membership rule.
+1. Use the [Create administrativeUnit](/graph/api/directory-post-administrativeunits?view=graph-rest-beta&preserve-view=true) API to create a new administrative unit with a dynamic membership rule.
 
     The following shows an example of a dynamic membership rule that applies to Windows devices.
 
@@ -167,7 +167,7 @@ Update-MgDirectoryAdministrativeUnit -AdministrativeUnitId $adminUnit.Id -BodyPa
 
 ### Microsoft Graph API
 
-Use the [Update administrative unit](/graph/api/administrativeunit-update?view=graph-rest-beta&preserve-view=true) API to edit the dynamic membership rule.
+Use the [Update administrativeUnit](/graph/api/administrativeunit-update?view=graph-rest-beta&preserve-view=true) API to edit the dynamic membership rule.
 
 Request
 
@@ -228,7 +228,7 @@ Update-MgDirectoryAdministrativeUnit -AdministrativeUnitId $adminUnit.Id -BodyPa
 
 ### Microsoft Graph API
 
-Use the [Update administrative unit](/graph/api/administrativeunit-update?view=graph-rest-beta&preserve-view=true) API to change the membership type setting.
+Use the [Update administrativeUnit](/graph/api/administrativeunit-update?view=graph-rest-beta&preserve-view=true) API to change the membership type setting.
 
 Request
 
