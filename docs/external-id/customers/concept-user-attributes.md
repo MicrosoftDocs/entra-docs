@@ -28,7 +28,7 @@ The user attributes you collect during sign-up are stored with the user's profil
 Microsoft Entra External ID has built-in user attributes you can collect during sign-up. You configure these attributes when you [create user flows in the Microsoft Entra admin center](how-to-user-flow-sign-up-sign-in-customers.md).
 
 This table summarizes the built-in user attributes you can collect during the sign-up flow: 
-
+<!---kengaderdus added this section to be used by devs who reference user profile attributes programmatically such those who use native authentication API-->
 - *Label in Microsoft Entra admin center* is the name of the user attribute as it appears in the Microsoft Entra admin center. 
 - *Programmable name* is the name of the user attribute as used in the [user resource](/graph/api/resources/user/#properties) of then Microsoft Graph API. You use this name when you want to use this user attribute programmatically, such as in [native authentication](../../identity-platform/reference-native-authentication-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 - *Data type* is the user attribute's data type.
