@@ -56,7 +56,7 @@ The core operations that applications perform with Microsoft Entra ID are reques
 * What can the app access?
   * From what device?
   * With what strength of credentials?
-  * From what network locations?" 
+  * From what network locations?
 
 Microsoft Entra ID customers can use features such as [Conditional Access](~/identity/conditional-access/overview.md) to determine which questions or conditions they want to evaluate to ensure secure resource access.
 
