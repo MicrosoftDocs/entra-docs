@@ -1,16 +1,13 @@
 ---
 title: Register an app in Microsoft Entra ID for customers
-description: Learn about how to register an app in the customer tenant.
- 
+description: Learn about how to register an app in the customer tenant. 
 author: csmulligan
 ms.author: cmulligan
 manager: CelesteDG
-ms.service: entra-external-id
- 
+ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 02/16/2024
-
+ms.date: 02/29/2024
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about how to register an app on the Microsoft Entra admin center.
@@ -172,7 +169,7 @@ If your mobile app needs to call an API, you must grant your mobile app API perm
 
 ### Grant API permissions
 
-A daemon app signs-in as itself using the [OAuth 2.0 client credentials flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md). You grant application permissions (app roles), which is required by apps that authenticate as themselves. You must also [register the web API](how-to-register-ciam-app.md?tabs=webapi) that your daemon app needs to call. 
+A daemon app signs in as itself using the [OAuth 2.0 client credentials flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md). You grant application permissions (app roles), which is required by apps that authenticate as themselves. You must also [register the web API](how-to-register-ciam-app.md?tabs=webapi) that your daemon app needs to call. 
 
 [!INCLUDE [register daemon app](../customers/includes/register-app/grant-api-permissions-app-permissions.md)]
 
@@ -186,8 +183,7 @@ A daemon app signs-in as itself using the [OAuth 2.0 client credentials flow](~/
 ### Create a client secret 
 [!INCLUDE [add app client secret](../customers/includes/register-app/add-app-client-secret.md)]
 
-# [Native auth](#tab/nativeauth)
-
+# [Native authentication](#tab/nativeauthentication)
 ## Register a native authentication application
 [!INCLUDE [register client app](../customers/includes/register-app/register-client-app-common.md)]
 
@@ -198,14 +194,7 @@ This app signs in users. You can add delegated permissions to it, by following t
 
 ## Enable public client and native authentication flows
 
-To specify that this app is a public client and can use native authentication, enable public client and native authentication flows:
- 
-1. From the app registrations page, select the app registration for which you want to enable public client and native authentication flows.  
-1. Under **Manage**, select **Authentication**.
-1. Under **Advanced settings**, for **Enable the following mobile and desktop flows**, select **Yes**.
-1. Under **Advanced settings**, for **Enable native authentication**, select **Yes**.
-1. Select **Save** button.
-
+[!INCLUDE [find the application ID](../customers/includes/native-auth/enable-native-authentication.md)] 
 ---
 
 [!INCLUDE [find the application ID](../customers/includes/register-app/find-application-id.md)] 
@@ -213,3 +202,5 @@ To specify that this app is a public client and can use native authentication, e
 ## Next steps
  
 - [Create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md)
+
+

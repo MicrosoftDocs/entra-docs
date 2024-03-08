@@ -30,7 +30,7 @@ For more information on the Pre-Authentication methods, see step 4 of the [app p
    ![Pre-authentication method in Microsoft Entra admin center](./media/application-proxy-config-sso-how-to/app-proxy.png)
 
 ## Configuring single sign-on modes for application proxy Applications
-Configure the specific type of single sign-on. The sign-on methods are classified based on what type of authentication the backend application uses. App Proxy applications support three types of sign-on:
+Configure the specific type of single sign-on. The sign-on methods are classified based on what type of authentication the backend application uses. Application proxy applications support three types of sign-on:
 
 -   **Password-based sign-on:** Password-based sign-on can be used for any application that uses username and password fields to sign on. Configuration steps are in [Configure password Single sign-on for a Microsoft Entra gallery application](~/identity/enterprise-apps/configure-password-single-sign-on-non-gallery-applications.md).
 
