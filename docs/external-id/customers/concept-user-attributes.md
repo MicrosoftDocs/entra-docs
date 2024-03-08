@@ -6,7 +6,7 @@ manager: celestedg
 ms.service: entra-external-id
  
 ms.subservice: customers
-ms.topic: how-to
+ms.topic: concept-article
 ms.date: 03/08/2024
 ms.author: mimart
 ms.custom: it-pro

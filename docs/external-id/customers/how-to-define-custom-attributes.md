@@ -35,7 +35,7 @@ Learn more about custom user attributes in [User profile attributes](concept-use
 
 1. Select **Add**. In the **Add an attribute** pane, enter a **Name** for the custom attribute (for example, "Terms of use").
 
-1. In **Data Type**, choose **String**, **Boolean**, or **Int** depending on the [type of data and user input control](concept-user-attributes.md#custom-user-attributes-input-types) you want to create. **String** attributes have a default user input type value of **TextBox**, but you'll be able to change this in a later step (for example if you want to configure radio buttons or multiselect checkboxes).
+1. In **Data Type**, choose **String**, **Boolean**, or **Int** depending on the [type of data and user input control](concept-user-attributes.md#custom-user-attributes-input-types) you want to create. **String** attributes have a default user input type value of **TextBox**, but you're able to change this in a later step (for example if you want to configure radio buttons or multiselect checkboxes).
 
 1. (Optional) In **Description**, enter a description of the custom attribute for internal use. This description isn't visible to the user.
 
