@@ -105,7 +105,7 @@
     - name: Require MFA for Intune enrollment
       href: /mem/intune/enrollment/multi-factor-authentication?context=/entra/identity/conditional-access/context/conditional-access-context.json
     - name: Block access by location
-      href: howto-conditional-access-policy-location.md
+      href: howto-conditional-access-policy-location.yml
     - name: Block access
       href: howto-conditional-access-policy-block-access.md
     - name: Require authentication strength for external users
