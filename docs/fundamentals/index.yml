@@ -77,4 +77,4 @@ landingContent:
           - text: Assign roles to users
             url: ./how-subscriptions-associated-directory.md
           - text: Assign licenses to users
-            url: license-users-groups.md
+            url: license-users-groups.yml
