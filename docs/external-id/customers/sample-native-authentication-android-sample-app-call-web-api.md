@@ -64,13 +64,8 @@ If you choose to download the .zip file, extract the sample app file to a folder
     - `Enter_the_Tenant_Id_Here` and replace it with the **Directory (tenant) ID** you copied earlier.
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 
-1. Open a console window, then run the web API by using the following command:
 
-    ```bash
-    cd /2-Authorization/1-call-own-api-aspnet-core-mvc/ToDoListAPI
-
-    dotnet run
-    ```
+You need to host your web API for the Android sample app to call it. Follow [Quickstart: Deploy an ASP.NET web app](/app-service/quickstart-dotnetcore) to deploy your your web API.
 
 ## Configure sample Android mobile app to call web API
 
