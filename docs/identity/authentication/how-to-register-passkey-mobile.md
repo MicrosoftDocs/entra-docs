@@ -43,7 +43,7 @@ This article shows how to register a passkey using a security key with your iOS 
 
 5. Sign in with multifactor authentication (MFA) before adding a passkey.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkeyios_2fa-authorization.png" alt-text="Screenshot of the 2-factor authentication requirement to setup a passkey.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-2fa-authorization.png" alt-text="Screenshot of the 2-factor authentication requirement to setup a passkey.":::
 
 6. Click **Next**. 
 
