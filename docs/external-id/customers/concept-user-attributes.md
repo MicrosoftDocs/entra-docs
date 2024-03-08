@@ -14,15 +14,20 @@ ms.date: 03/08/2024
 
 # User profile attributes
 
-The user attributes that you collect during sign-up are stored with the user's profile in your directory. You can choose from built-in attributes or create custom ones.
+The user attributes you collect during sign-up are stored with the user's profile in your directory. You can choose from built-in user attributes or create custom user attributes.
+
+- [Built-in user attributes](#built-in-user-attributes), such as city, country/region, email address, and so on, are available in Microsoft Entra External ID. You can choose the built-in user attributes you want to collect during sign-up.
+- For any additional information you want to collect, you can create [custom user attributes](#custom-user-attributes). Several custom input controls can be added to the sign-up page to collect the attributes, including text boxes, radio buttons, and check boxes. The following example shows how custom input controls can be used to collect attributes for loyalty number, terms of use consent for terms of use, and privacy policy consent.
+   
+   :::image type="content" source="media/how-to-define-custom-attributes/attribute-collection-page-types-reduced.png" border="false" alt-text="Screenshot of a sign-up page with terms of use and privacy policy checkboxes." lightbox="media/how-to-define-custom-attributes/attribute-collection-page-types.png":::
 
 ## Built-in user attributes
 
-Microsoft Entra External ID has built-in user attributes that you can collect during sign-up. You configure these attributes when you [create user flows in the Microsoft Entra admin center](how-to-user-flow-sign-up-sign-in-customers.md).
+Microsoft Entra External ID has built-in user attributes you can collect during sign-up. You configure these attributes when you [create user flows in the Microsoft Entra admin center](how-to-user-flow-sign-up-sign-in-customers.md).
 
-This table summarizes the built-in user attributes that you can collect during sign-up flow: 
+This table summarizes the built-in user attributes you can collect during the sign-up flow: 
 
-- *Label in Microsoft Entra admin center* is the names of the user attribute as it appears in the Microsoft Entra admin center. 
+- *Label in Microsoft Entra admin center* is the name of the user attribute as it appears in the Microsoft Entra admin center. 
 - *Programmable name* is the name of the user attribute as used in the [user resource](/graph/api/resources/user/#properties) of then Microsoft Graph API. You use this name when you want to use this user attribute programmatically, such as in [native authentication](../../identity-platform/reference-native-authentication-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 - *Data type* is the attributer data type.
 
@@ -30,7 +35,7 @@ This table summarizes the built-in user attributes that you can collect during s
 |-----------------------|-------------------------|------------------------|------------------------|
 |City|city|String|Maximum length is 128 characters.|
 |Country/Region|country|String|Maximum length is 128 characters.|
-|Display Name|displayName|String|Max length is 256 characters.|
+|Display Name|displayName|String|Maximum length is 256 characters.|
 |Email Address| mail| String | This property can't contain accent characters. In the [native authentication API](../../identity-platform/reference-native-authentication-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), this attribute is referenced as *username*.|
 |Given Name|givenName|String|Maximum length is 64 characters.|
 |Job Title|jobTitle|String|Maximum length is 128 characters.|
@@ -41,7 +46,7 @@ This table summarizes the built-in user attributes that you can collect during s
 
 ## Custom user attributes
 
-If your customer-facing app collects more information from the user than the built-in user attributes can support, you can add your own attributes. We refer to these attributes as *custom user attributes*.
+If your customer-facing app requires more information than the built-in user attributes provide, you can add your own attributes. We refer to these attributes as *custom user attributes*.
 
 To define a custom user attribute, you first create the attribute at the tenant level so it can be used in any user flow in the tenant. Then you assign the attribute to your sign-up user flow and configure how you want it to appear on the sign-up page.
 
@@ -57,7 +62,7 @@ Before you use custom user attributes, determine the best way to gather user inp
   - Numeric text box
   - Single-select checkbox
   
-Refer to the this table to find the appropriate data types and user input types:
+Refer to this table to find the appropriate data types and user input types:
 
 |Data type  |User input type     |Description  |
 |-----------|--------------------|-------------|
@@ -67,11 +72,7 @@ Refer to the this table to find the appropriate data types and user input types:
 |Boolean    |CheckboxSingleSelect|Single boolean checkbox with a label. The **Label** for the checkbox can include hyperlinks formatted in Markdown language.      |
 |Int        |NumericTextBox      |Free-form integer entry.         |
 
-Checkboxes and radio buttons can include hyperlinks to other content, such as terms of use and privacy policies. The following example shows a sign-up page that combines built-in attributes and custom attributes:
-
-   :::image type="content" source="media/how-to-define-custom-attributes/attribute-collection-page-types-reduced.png" border="false" alt-text="Screenshot of a sign-up page with terms of use and privacy policy checkboxes." lightbox="media/how-to-define-custom-attributes/attribute-collection-page-types.png":::
-
-In this example:
+Checkboxes and radio buttons can include hyperlinks to other content, such as terms of use and privacy policies. The example at the beginning of this article shows a sign-up page that combines built-in attributes and custom attributes. In the example:
 
 - The **Display Name** field is a built-in attribute.
 - The **Loyalty Number** is a custom attribute with a free-form entry field that accepts a numeric integer. You can configure this format using the **Int** data type and **NumericTextBox** user input type.

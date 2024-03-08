@@ -17,7 +17,7 @@ You can also specify the **User Input Type** for the attributes you configure. T
 |   SingleRadioSelect   |  A single value such as Language, *Norwegian*.  |
 |   CheckboxMultiSelect   |  One or multiple values such as a hobby or hobbies, *Dancing* or *Dancing, Swimming, Traveling*. |
 
-Here's an example request that shows how you submit the attributes values:
+Here's an example request that shows how you submit the attributes' values:
 
 ```http
 POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue HTTP/1.1
@@ -35,7 +35,7 @@ Learn more about user attributes input types in [Custom user attributes input ty
 
 ### Reference user attributes 
 
-When you [create a sign-up user-flow](../../../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md), you configure user attributes that you want to collect from the user during sign-up. The names of the user attributes in the Microsoft Entra admin center aren't similar to how you reference them in the native authentication API.
+When you [create a sign-up user-flow](../../../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md), you configure user attributes that you want to collect from the user during sign-up. The names of the user attributes in the Microsoft Entra admin center different from how you reference them in the native authentication API.
 
 For example, *Display Name* in the Microsoft Entra admin center is referenced as *displayName* in the API.
 
