@@ -54,7 +54,7 @@ If your customer-facing app requires more information than the built-in user att
 
 To define a custom user attribute, you first create the attribute at the tenant level so it can be used in any user flow in the tenant. Then you assign the attribute to your sign-up user flow and configure how you want it to appear on the sign-up page.
 
-Learn how to create custom user attributes [Create custom user attributes](how-to-define-custom-attributes.md#create-a-custom-user-attributes) article.
+Learn how to create custom user attributes [Create custom user attributes](how-to-define-custom-attributes.md#create-custom-user-attributes) article.
 
 ### Custom user attributes input types
 
