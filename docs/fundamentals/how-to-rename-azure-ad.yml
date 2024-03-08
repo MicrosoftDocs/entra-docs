@@ -34,7 +34,7 @@ prerequisites:
 
     Audit your experiences to find references to Azure AD and its icons.
 
-    **Scan your content** to identify references to Azure AD and its synonyms. Compile a detailed list of all instances.
+    **Scan your content** to identify references to Azure AD and its synonyms. Compile a detailed list of all instances.
 
     - Search for the following terms: `Azure Active Directory (Azure AD)`, `Azure Active Directory`, `Azure AD`, `AAD`
     - Search for graphics with the Azure AD icon (![Azure AD product icon](./media/new-name/azure-ad-icon-1.png)  ![Alternative Azure AD product icon](./media/new-name/azure-ad-icon-2.png)) to replace with the Microsoft Entra ID icon (![Microsoft Entra ID product icon](./media/new-name/microsoft-entra-id-icon.png))
@@ -45,7 +45,7 @@ prerequisites:
 
     - Don't make breaking changes.
     - Review the [What names aren't changing?](new-name.md#what-names-arent-changing) section in the naming guidance and note which Azure AD terminology isn't changing.
-    - Don’t change instances of `Active Directory`. Only `Azure Active Directory` is being renamed, not `Active Directory`, which is the shortened name of a different product, Windows Server Active Directory.
+    - Don't change instances of `Active Directory`. Only `Azure Active Directory` is being renamed, not `Active Directory`, which is the shortened name of a different product, Windows Server Active Directory.
 
     **Evaluate and prioritize based on future usage**. Consider which content needs to be updated based on whether it's user-facing or has broad visibility within your organization, audience, or customer base. You may decide that some code or content doesn't need to be updated if it has limited exposure to your end-users.
 
@@ -57,7 +57,7 @@ procedureSection:
     summary: |
       Update your organization's content and experiences using the relevant tools.
 
-      ### How to use "find and replace" for text-based content
+      ### Use "find and replace" for text-based content
     steps:
       - |
         Almost all editing tools offer "search and replace" or "find and replace" functionality, either natively or using plug-ins. Use your preferred app.
@@ -70,8 +70,8 @@ procedureSection:
 
          - Azure AD as the product name alone should be replaced with Microsoft Entra ID.
          - Azure AD features or functionality become Microsoft Entra features or functionality. For example, "Azure AD Conditional Access" becomes "Microsoft Entra Conditional Access."
-  - title: |
-      Automate bulk editing using custom code
+
+      ### Automate bulk editing using custom code
     summary: |
       Use the following criteria to determine what change(s) you need to make to instances of `Azure Active Directory (Azure AD)`, `Azure Active Directory`, `Azure AD`, `AAD`.
     steps:
@@ -92,22 +92,19 @@ procedureSection:
         Otherwise, replace `Azure Active Directory (Azure AD)`, `Azure Active Directory`, `Azure AD`, or `AAD` with `Microsoft Entra ID`.
 
         See the section [Glossary of updated terminology](new-name.md#glossary-of-updated-terminology) to further refine your custom logic.
-  - title: |
-      Update graphics and icons
+
+      ### Update graphics and icons
     summary: |
-      Follow these steps:
+      Follow these steps to update graphics and icons.
     steps:
       - |  
         Replace the Azure AD icon with the Microsoft Entra ID icon.
       - |  
         Replace titles or text containing `Azure Active Directory (Azure AD)`, `Azure Active Directory`, `Azure AD`, or `AAD` with `Microsoft Entra ID`.
-  - title: |
-      Communicate the change to your customers
+
+      ### Communicate the change to your customers
     summary: |
-        To help your customers with the transition, we recommend adding a note to your updated content or documentation.
-    steps:
-      - |
-        Add the note: `"Azure Active Directory is now Microsoft Entra ID" or follow the new name with "formerly Azure Active Directory" for the first year.`
+        To help your customers with the transition, we recommend adding a note to your updated content or documentation: "Azure Active Directory is now Microsoft Entra ID" or follow the new name with "formerly Azure Active Directory" for the first year.
 
         ## Sample PowerShell script
 
