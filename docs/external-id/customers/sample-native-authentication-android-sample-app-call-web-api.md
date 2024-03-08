@@ -12,7 +12,7 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 03/06/2024
 ms.custom: developer
-#Customer intent: As a developer, I aim to learn registering a web API, configuring API scopes, roles, optional claims, and calling a web API in an Android sample app.
+#Customer intent: As a developer, I want to call a web API from a sample Android mobile app so that I can experience how Microsoft Entra's native authentication works.
 ---
 
 # Sign in users and call an API in a sample Android mobile app by using native authentication
