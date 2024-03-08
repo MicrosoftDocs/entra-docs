@@ -90,7 +90,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
 
-1. On the **Set up Pleo** section, copy the appropriate URL(s) based on your requirement.
+1. On the **Set up Pleo** section, copy the appropriate URLs based on your requirement.
 
 	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
