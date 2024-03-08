@@ -25,7 +25,7 @@ Manage your accounts in one central location: the Azure portal.
 
 To get started, you need the following items:
 
-* An Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * ADP (OIDC) single sign-on (SSO) enabled subscription.
 
 ## Add ADP (OIDC) from the gallery
@@ -52,11 +52,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     1. Click **Go to application**.
 
-        ![Screenshot of showing the identity configuration.](common/go-to-application.png)
+        [![Screenshot of showing the identity configuration.](common/go-to-application.png)](common/go-to-application.png#lightbox)
 
     1. Copy **Application (client) ID** and use it later in the ADP (OIDC) side configuration.
 
-        ![Screenshot of application client values.](common/application-id.png)
+        [![Screenshot of application client values.](common/application-id.png)](common/application-id.png#lightbox)
 
     1. Under **Endpoints** tab, copy **OpenID Connect metadata document** link and use it later in the ADP (OIDC) side configuration.
 
@@ -66,18 +66,18 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     1. In the **Redirect URIs** textbox, paste the **Relying Party Redirect URI** value, which you have copied from ADP (OIDC) side.
 
-        ![Screenshot of showing the redirect values.](common/redirect.png)
+        [![Screenshot of showing the redirect values.](common/redirect.png)](common/redirect.png#lightbox)
 
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
 
     1. Go to **Client secrets** tab and click **+New client secret**.
     1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and click **Add**.
 
-        ![Screenshot of showing the client secrets value.](common/client-secret.png)
+        [![Screenshot of showing the client secrets value.](common/client-secret.png)](common/client-secret.png#lightbox)
 
     1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the ADP (OIDC) side configuration.
 
-        ![Screenshot of showing how to add a client secret.](common/client.png)
+        [![Screenshot of showing how to add a client secret.](common/client.png)](common/client.png#lightbox)
 
 ### Create a Microsoft Entra test user
 
@@ -119,7 +119,7 @@ Below are the configuration steps to complete the OAuth/OIDC federation setup:
 
 4. Perform the following steps in the **OIDC Setup** tab.
 
-    ![Screenshot of showing  setup.](./media/adp-oidc-tutorial/configuration.png)
+    [![Screenshot of showing  setup.](./media/adp-oidc-tutorial/configuration.png)](./media/adp-oidc-tutorial/configuration.png#lightbox)
 
     a. Copy the **Relying Party Redirect URI** value and use it later in the Entra configuration.
 
