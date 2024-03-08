@@ -15,7 +15,7 @@ ms.custom: developer
 #Customer intent: As a developer, I aim to learn registering a web API, configuring API scopes, roles, optional claims, and calling a web API in an Android sample app.
 ---
 
-# Sign in users and call an API in sample Android mobile app by using native authentication
+# Sign in users and call an API in a sample Android mobile app by using native authentication
 
 This sample demonstrates how to configure Android sample application to call an ASP.NET Core web API.
 
