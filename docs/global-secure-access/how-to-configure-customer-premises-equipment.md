@@ -1,8 +1,8 @@
 ---
 title: How to configure customer premises equipment for Global Secure Access (preview)
 description: Learn how to configure the connectivity between your customer premises equipment and the Global Secure Access (preview) network.
-author: shlipsey3
-ms.author: sarahlipsey
+author: kenwith
+ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
 ms.date: 09/22/2023
