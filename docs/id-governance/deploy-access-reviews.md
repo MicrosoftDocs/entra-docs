@@ -431,7 +431,7 @@ When you create new Microsoft Graph API queries for automation, use [Graph Explo
 
 ## Monitor access reviews
 
-Access reviews activities are recorded and available from the [Microsoft Entra audit logs](/identity/monitoring-health/concept-audit-logs.md). You can filter the audit data on the category, activity type, and date range. Here's a sample query.
+Access reviews activities are recorded and available from the [Microsoft Entra audit logs](../identity/monitoring-health/concept-audit-logs.md). You can filter the audit data on the category, activity type, and date range. Here's a sample query.
 
 | Category| Policy |
 | - | - |
