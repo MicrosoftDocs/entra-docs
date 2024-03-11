@@ -98,7 +98,7 @@ sections:
       - question: |
           Can a two-way forest trust be created between Domain Services and an on-premises forest?
         answer: |
-          No. A managed domain supports up to five one-way outbound forest trusts to on-premises forests. 
+          Yes, you can create a two-way trust. You can also create a one-way outgoing trust or one-way incoming trust to support diferent scenarios for users authentication and access. For more information, see [Create a forest trust](/domain-services/tutorial-create-forest-trust). 
 
       - question: |
           Can I move a managed domain?
@@ -150,9 +150,9 @@ sections:
           Users and groups that are synchronized from Microsoft Entra ID to Microsoft Entra Domain Services can't be modified because their source of origin is Microsoft Entra ID. This includes moving users or groups from the **AADDC Users** managed organizational unit to a custom organizational unit. Any user or group originating in the managed domain may be modified.  
 
       - question: |
-          Can I install a DHCP server in a managed domain?
+          Can I authorize a DHCP server in a managed domain?
         answer: |
-          No. Installing a DHCP server requires Domain Admins membership, which isn't available in a managed domain. 
+          No. Domain Admins membership is required to authorize a DHCP server, which isn't available in a managed domain. 
 
       - question: |
           How long does it take for changes I make to my Microsoft Entra directory to be visible in my managed domain?
