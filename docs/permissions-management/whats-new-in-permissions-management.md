@@ -23,7 +23,7 @@ This article provides the latest Public Preview and General Availability of feat
 
 As multiple customers embrace PIM for groups as a popular feature, Microsoft Entra Permissions Management adds the support to read the just-in-time membership impact on the eligible granted Azure RBAC permissions and Permissions Creep Index (PCI). The feature enables the complete visibility into RBAC permissions assigned to the identities in different ways.  
  
-We have discovered ~600K PIM-enabled groups for our paid as well as trial customers. In the Permissions Management console, admins can see the membership eligibility status as well as role eligibility status for Groups. For each identity, admins can get the visibility into the membership eligibility status as well as roles eligibility status. 
+In the Permissions Management console, admins can see the membership eligibility status as well as role eligibility status for Groups. For each identity, admins can get the visibility into the membership eligibility status as well as roles eligibility status. 
 
 
 ## December 2023
