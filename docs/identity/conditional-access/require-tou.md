@@ -5,7 +5,7 @@ description: How to require terms of use acceptance before access to selected cl
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 03/08/2024
+ms.date: 03/11/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -18,7 +18,7 @@ Organizations might want to require users to accept terms of use (ToU) before ac
 
 ## Create your terms of use
 
-This section provides you with the steps to create a sample terms of use. When you create a ToU, you select a value for **Enforce with Conditional Access policy templates**. Selecting **Custom policy** opens the dialog to create a new Conditional Access policy as soon as your ToU is created.
+This section provides you with the steps to create a sample terms of use document. When you create a terms of use document, you select a value for **Enforce with Conditional Access policy templates**. Selecting **Custom policy** opens a dialog to create a new Conditional Access policy as soon as your terms of use is created.
 
 1. Create a new terms of use document and save it as a PDF file.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
@@ -26,10 +26,10 @@ This section provides you with the steps to create a sample terms of use. When y
 1. In the menu on the top, select **New terms**.
 1. In the **Name** textbox, provide a name for your terms of use policy.
 1. Upload your terms of use PDF file.
-1. Select your default language.
-1. In the **Display name** textbox, type the name you want to be displayed.
-1. As **Require users to expand the terms of use**, select **On**.
-1. As **Enforce with Conditional Access policy templates**, select **Custom policy**.
+   1. Select your default language.
+   1. In the **Display name** textbox, type the name you want to be displayed.
+1. For **Require users to expand the terms of use**, select **On**.
+1. For **Enforce with Conditional Access policy templates**, select **Custom policy**.
 1. Select **Create**.
 
 ## Create a Conditional Access policy
@@ -47,7 +47,7 @@ This section shows how to create the required Conditional Access policy.
    1. Select **Microsoft Admin Portals**, and then choose **Select**.
 1. Under **Access controls**, select **Grant**.
    1. Select **Grant access**.
-   1. Select the terms of use you created previously called **My ToU** and choose **Select**.
+   1. Select the terms of use you created previously called and choose **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
@@ -59,7 +59,7 @@ In the previous section, you created a Conditional Access policy requiring terms
 
 To test your policy, try to sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using a test account. You should see a dialog that requires you to accept your terms of use.
 
-## Next steps
+## Related content
 
 [Conditional Access templates](concept-conditional-access-policy-common.md)
 
