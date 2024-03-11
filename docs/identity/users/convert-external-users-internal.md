@@ -76,4 +76,4 @@ You can convert external users to internal using the Microsoft Entra admin cente
 
 ## Related content
 
-- [User management enhancements](users-search-enhanced)
+- [User management enhancements](users-search-enhanced.md)
