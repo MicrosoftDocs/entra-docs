@@ -77,7 +77,7 @@ On the Quick Access page, you provide a name for the Quick Access app, select a 
 
     ![Screenshot of the Quick Access app name.](media/how-to-configure-quick-access/new-quick-access-name.png)
 
-1. Select the **Save** button at the bottom of the page to create your "Quick Access" app without FQDNs and IP addresses.
+1. Select the **Save** button at the bottom of the page to create your "Quick Access" app without FQDNs, IP addresses, and private DNS suffixes.
 
 ### Add Quick Access application segment
 
@@ -135,6 +135,14 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 > You can add up to 500 application segments to your Quick Access app.
 >
 > Do not overlap FQDNs, IP addresses, and IP ranges between your Quick Access app and any Private Access apps.
+
+### Add private DNS suffixes
+Add a DNS suffix to use for private DNS.
+
+1. Select **Private DNS** tab.
+1. Select the checkbox to **enable private DNS**.
+1. Select **Add DNS suffix**.
+1. Enter the DNS suffix and then select **Add**.
 
 ### Update Quick Access application segments
 
