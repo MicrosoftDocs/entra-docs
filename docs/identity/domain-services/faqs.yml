@@ -10,7 +10,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: domain-services
   ms.topic: faq
-  ms.date: 01/22/2024
+  ms.date: 03/11/2024
   ms.author: justinha
 title: Frequently asked questions (FAQs) about Microsoft Entra Domain Services
 summary: This page answers frequently asked questions about Microsoft Entra Domain Services.
@@ -98,7 +98,7 @@ sections:
       - question: |
           Can a two-way forest trust be created between Domain Services and an on-premises forest?
         answer: |
-          No. A managed domain supports up to five one-way outbound forest trusts to on-premises forests. 
+          Yes, you can create a two-way trust. You can also create a one-way outgoing trust or one-way incoming trust to support diferent scenarios for users authentication and access. For more information, see [Create a forest trust](/domain-services/tutorial-create-forest-trust). 
 
       - question: |
           Can I move a managed domain?
@@ -148,6 +148,11 @@ sections:
           Can I modify group memberships using LDAP or other AD administrative tools on managed domains?
         answer: |
           Users and groups that are synchronized from Microsoft Entra ID to Microsoft Entra Domain Services can't be modified because their source of origin is Microsoft Entra ID. This includes moving users or groups from the **AADDC Users** managed organizational unit to a custom organizational unit. Any user or group originating in the managed domain may be modified.  
+
+      - question: |
+          Can I authorize a DHCP server in a managed domain?
+        answer: |
+          No. Domain Admins membership is required to authorize a DHCP server, which isn't available in a managed domain. 
 
       - question: |
           How long does it take for changes I make to my Microsoft Entra directory to be visible in my managed domain?

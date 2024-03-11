@@ -102,7 +102,7 @@ Keep your domain names current with your Registrar, and verify TXT records for a
 * If you can't reactivate or regain control of your domain name immediately, you should delete it from your Microsoft Entra tenant. Don't read/re-verify until you are able to resolve ownership of the domain name and verify the full TXT record for correctness.
 
 >[!NOTE]
-> Microsoft will not allow a domain name to be verified with more than Microsoft Entra tenant. Once you delete a domain name from your tenant, you will not be able to re-add/re-verify it with your Microsoft Entra tenant if it is subsequently added and verified with another Microsoft Entra tenant.
+> Microsoft will not allow a domain name to be verified with more than one Microsoft Entra tenant. Once you delete a domain name from your tenant, you will not be able to re-add/re-verify it with your Microsoft Entra tenant if it is subsequently added and verified with another Microsoft Entra tenant.
 
 ## Frequently asked questions
 
