@@ -21,11 +21,12 @@ Features like multifactor authentication (MFA) are a great way to secure your or
 | --- | --- | --- |
 | Passwordless | Windows 10 Device, phone, or security key | Biometric or PIN |
 
-Each organization has different needs when it comes to authentication. Microsoft Azure and Azure Government offer the following four passwordless authentication options that integrate with Microsoft Entra ID:
+Each organization has different needs when it comes to authentication. Microsoft Azure and Azure Government offer the following five passwordless authentication options that integrate with Microsoft Entra ID:
 
 - Windows Hello for Business
+- Platform Credential for macOS
+- Platform Single Sign-On (PSSO) for macOS with smart card authentication
 - Microsoft Authenticator
-- MacOS Platform Single Sign-On (SSO)
 - FIDO2 security keys
 - Certificate-based authentication
 
@@ -51,27 +52,15 @@ The following steps show how the sign-in process works with Microsoft Entra ID:
 
 The Windows Hello for Business [planning guide](/windows/security/identity-protection/hello-for-business/hello-planning-guide) can be used to help you make decisions on the type of Windows Hello for Business deployment and the options you'll need to consider.
 
-## macOS Platform SSO
+## Platform Credential for macOS
 
-Platform SSO for macOS (PSSO) is a new capability on macOS that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe). The advantage of PSSO is that it allows users to authenticate with Microsoft Entra ID with smart card, hardware-bound key (secure enclave) or their Microsoft Entra ID password. 
+Platform Credential for macOS is a new capability on macOS that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe). It provisions a secure enclave backed hardware-bound cryptographic key that is used for SSO across apps that use Microsoft Entra ID for authentication. The user’s local account password is not affected and is required to log on to the Mac.
 
 ![Screenshot showing an example of a pop up window prompting user to register their macOS account with their identity provider using Platform single sign-on.](./media/concept-authentication-passwordless/macos-platform-sso.png)
 
-PSSO allows admins to configure the end-user authentication method in the redirect-type MDM configuration profile. There are three different authentication methods which determines the end-user experience. Secure Enclave key and smart card authentication methods allow users to go password-less.
-
-- **Secure Enclave key** : This provisions a secure enclave backed hardware-bound cryptographic key that is used for SSO across apps that use Microsoft Entra ID for authentication. The user’s local account password is not affected and is required to log on to the Mac. The Secure enclave key auth method;
-    -	Allows users to go password-less by configuring Touch ID to unlock the device.
-    -	Uses phish resistant credentials, based on Windows Hello for Business technology.
-    -	Saves customer organizations money by removing the need for security keys.
-    -	Advances Zero Trust objectives using integration with the Secure Enclave.
-
-- **Smart card**: The user signs in to the machine using an external smart card, or smart card-compatible hard token (eg. Yubikey). Once the device is unlocked, the smart card is used with Microsoft Entra ID to grant SSO across apps that use Microsoft Entra ID for authentication.
-
-To enable it, an administrator needs to configure PSSO through Microsoft Intune or other supported MDM. Depending on the setup, the end-user can setup their device with PSSO via secure enclave, smart card or password based authentication method.
+Platform Credential for macOS allows users to go password-less by configuring Touch ID to unlock the device, and uses phish resistant credentials, based on Windows Hello for Business technology. This saves customer organizations money by removing the need for security keys and advances Zero Trust objectives using integration with the Secure Enclave.
 
 ![Diagram that outlines the steps involved for user sign-in with macOS Platform SSO.](./media/concept-authentication-passwordless/macos-platform-single-sign-on-flow.png)
-
-### [Secure Enclave](#tab/secure-enclave)
 
 1. A user unlocks macOS using fingerprint or password gesture, which unlocks the key bag to provide access to UserSecureEnclaveKey.
 1. The macOS requests a nonce (a random arbitrary number that can be used just once) from Microsoft Entra ID.
@@ -80,7 +69,20 @@ To enable it, an administrator needs to configure PSSO through Microsoft Intune 
 1. Microsoft Entra ID validates the signed assertion using the user's securely registered public key of UserSecureEnclave key. Microsoft Entra ID validates the signature and nonce. Once the assertion is validated, Microsoft Entra ID creates a [primary refresh token (PRT)](../devices/concept-primary-refresh-token.md) encrypted with the public key of the UserDeviceEncryptionKey that is exchanged during registration and sends the response back to the OS.
 1. The OS decrypts and validates the response, retrieves the SSO tokens, stores and shares it with the SSO extension for providing SSO. The user is able to access macOS, cloud and on-premises applications without the need to authenticate again (SSO).
 
-### [Smart card](#tab/smart-card)
+Refer to [macOS Platform SSO](../devices/macos-psso.md) for more information on how to configure and deploy Platform Credential for macOS.
+
+## Platform Single Sign-On (PSSO) for macOS with SmartCard
+
+Platform Single Sign-On (PSSO) for macOS by allows users to go password-less
+
+
+- **Smart card**: The user signs in to the machine using an external smart card, or smart card-compatible hard token (eg. Yubikey). Once the device is unlocked, the smart card is used with Microsoft Entra ID to grant SSO across apps that use Microsoft Entra ID for authentication.
+
+To enable it, an administrator needs to configure PSSO through Microsoft Intune or other supported MDM. Depending on the setup, the end-user can setup their device with PSSO via secure enclave, smart card or password based authentication method.
+
+
+
+![Diagram that outlines the steps involved for user sign-in with macOS Platform SSO.](./media/concept-authentication-passwordless/macos-platform-single-sign-on-flow.png)
 
 1. A user unlocks macOS using smart card pin which unlocks the smart card and the key bag to provide access to device registration keys present in Secure Enclave.
 1. The macOS requests a nonce (a random arbitrary number that can be used just once) from Microsoft Entra ID.
@@ -88,10 +90,6 @@ To enable it, an administrator needs to configure PSSO through Microsoft Intune 
 1. The operating system (OS) sends a login request to Microsoft Entra ID with an embedded assertion signed with the user's Microsoft Entra certificate from the smart card.
 1. Microsoft Entra ID validates the signed assertion, signature and nonce. Once the assertion is validated, Microsoft Entra ID creates a [primary refresh token (PRT)](../devices/concept-primary-refresh-token.md) encrypted with the public key of the UserDeviceEncryptionKey that is exchanged during registration and sends the response back to the OS.
 1. The OS decrypts and validates the response, retrieves the SSO tokens, stores and shares it with the SSO extension for providing SSO. The user is able to access macOS, cloud and on-premises applications without the need to authenticate again (SSO).
-
----
-
-Refer to the macOS Platform SSO landing page for more information on how to configure and deploy PSSO.
 
 ## Microsoft Authenticator
 

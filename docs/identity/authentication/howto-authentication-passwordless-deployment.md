@@ -17,7 +17,7 @@ ms.reviewer: dawoo
 
 Passwords are a primary attack vector. Bad actors use social engineering, phishing, and spray attacks to compromise passwords. A passwordless authentication strategy mitigates the risk of these attacks.
 
-Microsoft offers the following [four passwordless authentication options](concept-authentication-passwordless.md) that integrate with Microsoft Entra ID:
+Microsoft offers the following [five passwordless authentication options](concept-authentication-passwordless.md) that integrate with Microsoft Entra ID:
 
 * [Microsoft Authenticator](./concept-authentication-passwordless.md#microsoft-authenticator) - turns any iOS or Android phone into a strong, passwordless credential by allowing users to sign into any platform or browser.
 
@@ -25,7 +25,9 @@ Microsoft offers the following [four passwordless authentication options](concep
 
 * [Windows Hello for Business](./concept-authentication-passwordless.md#windows-hello-for-business) - best for users on their dedicated Windows computers. 
 
-* [Platform Credential for macOS](./concept-authentication-passwordless.md#macos-platform-sso) - a new capability on macOS that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe).
+* [Platform Credential for macOS](./concept-authentication-passwordless.md#platform-credential-for-macos) - a new capability on macOS that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe).
+
+* [macOS Platform Single Sign-On with SmartCard](./concept-authentication-passwordless.md#macos-platform-sso-with-smartcard) - a new capability on macOS for smart card based authentication that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe).
 
 > [!NOTE]
 > To create an offline version of this plan with all links, use your browsers print to pdf functionality.
@@ -42,7 +44,7 @@ The following table lists the passwordless authentication methods by device type
 
 | Device types| Passwordless authentication method |
 | - | - |
-| Dedicated non-windows devices| <li> ***Microsoft Authenticator*** <li> Security keys <li> ***Platform Single Sign-On Extension for MacOS*** |
+| Dedicated non-windows devices| <li> ***Microsoft Authenticator*** <li> Security keys <li> ***macOS Platform Single Sign-On with smart card*** <li> ***Platform Credential for macOS*** |
 | Dedicated Windows 10 computers (version 1703 and later)| <li> ***Windows Hello for Business*** <li> Security keys |
 | Dedicated Windows 10 computers (before version 1703)| <li> ***Windows Hello for Business*** <li> Microsoft Authenticator app |
 | Shared devices: tablets, and mobile devices| <li> ***Microsoft Authenticator*** <li> One-time password sign-in |
@@ -92,13 +94,19 @@ Select Windows Hello for Business and [complete the wizard](https://aka.ms/passw
 
 The wizard will use your inputs to craft a step-by-step plan for you to follow.
 
-### MacOS Platform Single Sign-On
+### Platform Credential for macOS
 
-To enable macOS Platform Single Sign-On (PSSO), 
+To enable Platform Credential for macOS; 
 - Your Mac must have an operating system of at least macOS 13 Ventura (macOS 14 Sonoma is recommended), and that the configuration steps are done through the [Microsoft InTune admin center](https://intune.microsoft.com/#home).
 - The device must be MDM enrolled with SSO extension payload configured to support Platform Single Sign-On (PSSO) with the UserSecureEnclaveKey.
 
-You can also go passwordless with PSSO with smart card authentication. This is only supported for macOS 14 Sonoma and later versions. Support for other Mobile Device Management (MDM) providers will be added in future releases.
+Support for other Mobile Device Management (MDM) providers will be added in future releases.
+
+### macOS Platform Single Sign-On with SmartCard
+
+To enable macOS Platform Single Sign-On (PSSO) with SmartCard, your Mac must have an operating system of at least macOS 14 Sonoma, and that the configuration steps are done through the [Microsoft InTune admin center](https://intune.microsoft.com/#home).
+
+Support for other Mobile Device Management (MDM) providers will be added in future releases.
 
 ## Plan the project
 
