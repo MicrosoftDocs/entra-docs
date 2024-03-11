@@ -8,4 +8,4 @@ ms.topic: include
 ---
 
 
-Microsoft Entra Application Proxy requires Microsoft Entra ID P1 or P2 licenses. For more information about licensing, see [Microsoft Entra Pricing.](https://www.microsoft.com/security/business/microsoft-entra-pricing)
+Microsoft Entra application proxy requires Microsoft Entra ID P1 or P2 licenses. For more information about licensing, see [Microsoft Entra pricing.](https://www.microsoft.com/security/business/microsoft-entra-pricing)

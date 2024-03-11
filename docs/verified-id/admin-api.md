@@ -995,7 +995,7 @@ example:
 
 | Property | Type | Description |
 | -------- | -------- | -------- |
-|`uri`| string (uri) | uri of the logo |
+|`uri`| string (uri) | uri of the logo. If this is a URL, it must be reachable over the public internet anonymously. |
 |`description` | string | the description of the logo |
 
 #### displayConsent type
@@ -1280,23 +1280,8 @@ Content-type: application/json
     "value": [
         {
             "id": "urn:pic:aea42fb3724b4ef08bd2d2712e79bda2",
-            "contractId": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhdGVzdDM",
             "status": "valid",
-            "issuedAt": 1644029489000
-        }
-    ]
-}
-```
-
-Example message
-```
-{
-    "value": [
-        {
-            "id": "urn:pic:aea42fb3724b4ef08bd2d2712e79bda2",
-            "contractId": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhdGVzdDM",
-            "status": "issuerRevoked",
-            "issuedAt": 1644029489000
+            "issuedAtTimestamp": "Sat, 5 Feb 2022 03:51:29 GMT"
         }
     ]
 }
