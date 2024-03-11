@@ -1,5 +1,5 @@
 ---
-title: Prepare your Android app for native authentication 
+title: Prepare your Android mobile app for native authentication 
 description: Learn how to add Microsoft Authentication Library (MSAL) native auth SDK framework to your Android app.
 
 author: henrymbuguakiarie
@@ -12,28 +12,29 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 02/23/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to learn about how to add Microsoft Authentication Library (MSAL) native auth SDK framework to your Android app.
+#Customer intent: As a dev, devops, I want to add Microsoft Authentication Library (MSAL) native authentication SDK to my Android mobile app so that I can sign-in users.
 ---
 
-# Tutorial: Prepare your Android app for native authentication  
+# Tutorial: Prepare your Android mobile app for native authentication  
 
-This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) native authentication SDK framework to your Android app.   
+This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) native authentication SDK to an Android mobile app.   
  
 In this tutorial, you learn how to: 
- 
-- Add MSAL dependencies. 
-- Create configuration file.  
-- Create SDK instance.  
+
+> [!div class="checklist"]
+> 
+> - Add MSAL dependencies. 
+> - Create a configuration file.  
+> - Create MSAL SDK instance.  
  
 ## Prerequisites  
  
-- [How to run the Android sample app](how-to-run-native-authentication-sample-android-app.md). 
-- Android project. 
+- Complete the steps in [Sign in users in sample Android mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md) article. 
+- Create an Android project. 
  
 ## Add MSAL dependencies  
  
-1. Open your project in Android Studio or create a new project. 
-   
+1. Open your project in Android Studio.    
  
 1. Open your application's `build.gradle` and add the following dependencies:   
 
@@ -49,25 +50,25 @@ In this tutorial, you learn how to:
             google()
         }
     }
+    //...
+    
+    dependencies { 
+        implementation 'com.microsoft.identity.client:msal:5.+'
+        //...
+    }
     ```
-
-1. Open your app's `build.gradle` and add the following dependencies:  
  
-   ```gradle 
-   implementation 'com.microsoft.identity.client:msal:5.+'
-   ``` 
+1. In Android Studio, select **File** > **Sync Project with Gradle Files**.  
  
-1. Select **File** > **Sync Project with Gradle Files**.  
+## Create a configuration file 
  
-## Create configuration file  
- 
-You pass relevant tenant identifiers, such as the **Application (client) ID**, to the MSAL library through configuration settings. This is accomplished using a JSON file.  
+You pass relevant tenant identifiers, such as the **Application (client) ID**, to the MSAL SDK through configuration settings. You accomplished this by using a JSON file.  
  
 Follow these steps to create configuration file:  
  
-1. In Android Studio's project pane, navigate to **app\src\main\res**.  
-1. Right-click **res** and choose **New** > **Directory**. Enter `raw` as the new directory name and select **OK**.  
-1. In **app** > **src** > **main** > **res** > **raw**, create a new JSON file called `auth_config_native_auth.json`.  
+1. In Android Studio's project pane, navigate to *app\src\main\res*.  
+1. Right-click **res** and select **New** > **Directory**. Enter `raw` as the new directory name and select **OK**.  
+1. In *app\src\main\res\raw*, create a new JSON file called `auth_config_native_auth.json`.  
 1. In the `auth_config_native_auth.json` file, add the following MSAL configurations: 
  
    ```json 
@@ -88,13 +89,14 @@ Follow these steps to create configuration file:
    } 
    ``` 
  
-1. Replace the following values with the values from the Microsoft Entra admin center:  
+1. Replace the following placeholders with your tenant values that you obtained from the Microsoft Entra admin center:  
  
-   - Find the `Enter_the_Application_Id_Here` value and replace it with the **Application (client) ID** of the app you registered earlier.   
-   - Find the `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).  
+   - Replace the `Enter_the_Application_Id_Here` placeholder with the Application (client) ID of the app you registered earlier.   
+   - Replace the `Enter_the_Tenant_Subdomain_Here` with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).  
 
 ### Optional: Logging configuration 
-Turn logging on at app creation by creating a logging callback. Without a logging method, the library won't be able to output logs. 
+
+Turn onn logging at app creation by creating a logging callback. Without a logging method, the library won't output logs. 
 
 ```kotlin 
 import com.microsoft.identity.client.Logger
@@ -105,7 +107,7 @@ fun initialize(context: Context) {
         }
     }
 ```
-To configure the logger a logging section needs to be added in the configuration file: 
+To configure the logger, a logging section needs to be added in the configuration file: 
 
 ```json 
    { 
@@ -119,7 +121,7 @@ To configure the logger a logging section needs to be added in the configuration
 
 1. **logcat_enabled**: Enables the logging functionality of the library. 
 2. **pii_enabled**: Specifies whether messages containing personal data, or organizational data are logged. When set to false, logs won't contain personal data. When set to true, the logs might contain personal data. 
-3. **log_level**: Used to decide which level of logging to enable. The supported log levels are: 
+3. **log_level**: Use it to decide which level of logging to enable. Android supports the following log levels: 
    1. ERROR 
    2. WARNING
    3. INFO
@@ -127,11 +129,24 @@ To configure the logger a logging section needs to be added in the configuration
    
 For more information on MSAL logging, see [Logging in MSAL for Android](/entra/identity-platform/msal-logging-android).  
  
-## Create SDK instance 
+## Create native authentication MSAL SDK instance
  
-In the `onCreate` method, create MSAL library instance so that we can perform authentication logic and interact with our tenant through native authentication APIs. The `INativeAuthPublicClientApplication` create an instance called `authClient`. The JSON configuration file that we created earlier in the tutorial is passed as a parameter.  
+In the `onCreate` method, create native authentication MSAL SDK instance, `authClient`, so that you can perform authentication logic. Pass the JSON configuration file you created earlier as a parameter:
+
+```kotlin
+    //...
+    authClient = PublicClientApplication.createNativeAuthPublicClientApplication( 
+        this, 
+        R.raw.auth_config_native_auth 
+    )
+    //...
+```
  
-The cached account can be retrieved through `getCurrentAccount()`, which will return an `AccountResult` object if an account for this application was found in persistence or `GetAccountResult.NoAccountFound` if not. Your code should look like:  
+- Retrieve the cached account by using the `getCurrentAccount()`, which returns an object, `accountResult`. 
+- If an account is found in persistence, ue `GetAccountResult.AccountFound` to display a signed-in state.
+- Otherwise, use `GetAccountResult.NoAccountFound` to display a signed-out state. 
+ 
+Your code should look something similar to the following snippet:  
  
 ```kotlin 
     class MainActivity : AppCompatActivity() { 
@@ -175,8 +190,8 @@ The cached account can be retrieved through `getCurrentAccount()`, which will re
     } 
 ``` 
  
-Don't forget to add the import statements, Android Studio does that for you automatically (on Mac or Windows select on Alt + Enter on each error detected by the code editor).  
+Make sure you include the import statements. Android Studio should include the import statements for you automatically.
  
 ## Next steps  
  
-- [Tutorial: Add sign up with email one-time passcode in Android app](tutorial-native-authentication-android-sign-up.md) 
+- [Tutorial: Add sign-up with email one-time passcode in Android mobile app](tutorial-native-authentication-android-sign-up.md) 

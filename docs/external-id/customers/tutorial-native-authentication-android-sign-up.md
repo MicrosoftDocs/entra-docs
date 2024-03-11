@@ -1,6 +1,6 @@
 ---
-title: Add sign up with email one-time passcode in Android app
-description: Learn how to add sign up with email one-time passcode.
+title: Add sign-up with email one-time passcode in an Android app
+description: Learn how to add sign up with email one-time passcode (OTP) in an Android mobile app using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,33 +12,37 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 02/23/2024
 ms.custom: developer, devx-track-dotnet
-#Customer intent: As a dev, devops, I want to learn about Add sign up with email one-time passcode.
+
+#Customer intent: As a dev, devops, I want to add sign-up with email one-time passcode (OTP) in my Android mobile app using native authentication.
 ---
 
-# Tutorial: Add sign up with email one-time passcode in Android app 
+# Tutorial: Add sign up with email one-time passcode in Android mobile app
 
-This tutorial demonstrates how to sign up a user using email one-time passcode in your native authentication Android app. 
+This tutorial demonstrates how to sign up a user using email one-time passcode (OTP) in you Android mobile app using native authentication. 
 
 In this tutorial, you learn how to: 
 
-- Sign up a user. 
+
+> [!div class="checklist"]
+> 
+> - Sign up a user. 
 
 ## Prerequisites
  
-- [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md) 
+- Complete the step in [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md).
  
 ## Sign up a user
 
-To sign up a user using the **Email one-time passcode** flow, capture the email and send an email containing a one-time passcode for the user to verify their email. When the user enters a valid one-time passcode, the app signs them up and displays a toast message to notify the user about the operation. 
+To sign up a user using the email OTP authentication method, collect an email from the user, then send an email containing an OTP code to the user. Once the user enters a valid OTP code, the app completes the signs-up flow.
 
-To sign up user using **Email one-time-passcode**, you need to: 
+To sign up a user by using email OTP, you need to: 
 
-1. Create your user interface that includes: 
+1. Create your user interface (UI) that includes: 
 
-   - A UI to submit an Email.
-   - A UI to submit one-time passcode.
+   - A UI to collect an email from the user.
+   - A UI to collect an OTP code from the user.
 
-1. To sign up the user, we're going to use the library's `signUp(username)` method, which is going to return a result that can be interpreted as an `actionResult`. Add a button to the application that calls the following code snippet when selected: 
+1. To sign up a user, we're going to use the library's `signUp(username)` method, which is going to return a result that can be interpreted as an `actionResult`. Add a button to the application that calls the following code snippet when selected: 
 
    ```kotlin
    CoroutineScope(Dispatchers.Main).launch {

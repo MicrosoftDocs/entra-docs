@@ -77,7 +77,7 @@ items:
               href: sample-desktop-wpf-dotnet-sign-in.md
         - name: Mobile app
           items:
-              - name: Browser delegated
+              - name: Browser-delegated authentication
                 items:
                   - name: Android (.NET MAUI) - sign in users
                     href: how-to-mobile-app-maui-sample-sign-in.md
@@ -204,7 +204,7 @@ items:
               displayName: Windows Presentation Form
     - name: Mobile
       items:
-        - name: Browser delegated
+        - name: Browser-delegated authentication
           items:
             - name: .NET MAUI
               items:
