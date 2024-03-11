@@ -16,7 +16,7 @@ Our Services and solutions partner network extends and accelerates Microsoft Ent
 
 ## Services and solution partner list
 
-You could select a partner from the list and build seamless end-user experiences for onboarding, secure access to critical services, self-service and custom business application scenarios. If you're a Services or solution Partner and would like to be considered into Microsoft Entra Verified ID partner documentation, submit your application [request](https://forms.microsoft.com/r/AGVsXmf4EZ)
+You could select a partner from the list and build seamless end-user experiences for onboarding, secure access to critical services, self-service and custom business application scenarios. If you're a Services or solution Partner and would like to be considered into Microsoft Entra Verified ID partner documentation, submit your application [request](https://forms.microsoft.com/r/AGVsXmf4EZ).
 
 | Services and solution partner | Website |
 |:-------------------------|:--------------|
@@ -31,7 +31,7 @@ You could select a partner from the list and build seamless end-user experiences
 | ![Screenshot of Formula5 logo.](media/services-partners/formula5.png) | [Verified ID - Formula5](https://formula5.com/accelerator-for-microsoft-entra-verified-id/)<br/>[Azure Marketplace Verified ID offering](https://azuremarketplace.microsoft.com/marketplace/consulting-services/formulaconsultingllc1668008672143.verifiable_credentials_formula5-preview?tab=Overview&flightCodes=d12a14cf40204b39840e5c0f114c1366) |
 | ![Screenshot of IdRamp logo.](media/services-partners/idramp.png) | [Virtual Onboarding with Verified ID](https://idramp.com/virtual-onboarding-with-ms-entra-verified-id/)<br/>[Eradicate passwords with Verified ID](https://idramp.com/eradicate-passwords-with-verified-id-orchestration/)<br/>[Integrated identity orchestration with Verified ID](https://idramp.com/entra-verified-id-integrated-identity-orchestration/)<br/>[Zero Trust collaboration with Verified ID](https://idramp.com/protected-virtual-meetings/)<br/>[Azure Marketplace Verified ID offering](https://azuremarketplace.microsoft.com/marketplace/apps/idrampinc1682537450107.idramp-orchestration?tab=Overview) |
 | ![Screenshot of Kocho logo.](media/services-partners/kocho.png) | [Connect with Kocho. See Verified Identity in Action](https://kocho.co.uk/contact-us/)<br/>[See Verified Identity in Action](https://kocho.co.uk/verified-id-in-action/) |
-| ![Screenshot of Software One logo.](media/services-partners/softwareone.png) | [Verified ID - Software One](https://www.softwareone.com/) |
+| ![Screenshot of SoftwareOne logo.](media/services-partners/softwareone.png) | [Verified ID - SoftwareOne](https://www.softwareone.com/) |
 | ![Screenshot of Sphereon logo.](media/services-partners/sphereon.png) | [Sphereon supports customers on Microsoft's Microsoft Entra Verified ID](https://sphereon.com/sphereon-supports-microsofts-entra-verified-id/) |
 | ![Screenshot of Unify logo.](media/services-partners/unify.png) | [Microsoft Entra Verified ID - UNIFY Solutions](https://unifysolutions.net/entra/verified-id/) |
 | ![Screenshot of VO logo.](media/services-partners/verified-orchestration.png) | [Azure Marketplace offering - Verified Orchestration](https://azuremarketplace.microsoft.com/marketplace/apps/verifiedorchestrationptyltd1695169491637.verified_orchestration1?tab=Overview) |
