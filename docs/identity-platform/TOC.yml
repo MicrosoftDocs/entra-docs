@@ -182,6 +182,8 @@
           href: quickstart-web-app-java-sign-in.md
         - name: Python
           href: quickstart-web-app-python-sign-in.md
+        - name: Python Flask
+          href: quickstart-web-app-python.md
     - name: Tutorials
       items:
         - name: ASP.NET Core
@@ -194,6 +196,16 @@
             href: tutorial-web-app-dotnet-sign-in-users.md
           - name: Get user data from web API
             href: tutorial-web-app-dotnet-call-api.md
+        - name: Python Flask
+          items:
+          - name: Register your app
+            href: tutorial-web-app-python-register-app.md
+          - name: Prepare your app
+            href: tutorial-web-app-python-prepare-app.md
+          - name: Sign in users
+            href: tutorial-web-app-python-sign-in-users.md
+          - name: Get user data from web API
+            href: tutorial-web-app-python-call-api.md
         - name: Node.js
           href: tutorial-v2-nodejs-webapp-msal.md
         - name: Spring
