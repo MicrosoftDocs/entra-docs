@@ -270,6 +270,17 @@ You can configure a Conditional Access policy for the Microsoft Intune Enrollmen
 
 ## Frequently asked questions
 
+**Q: Why do I see two sign-ins for my users? One interrupt and one success.**<br />
+A: Administrators might see two sign-ins when users have not yet accepted a terms of use policy, this is by design. These entries share a correlation ID. 
+
+:::image type="content" source="media/terms-of-use/sign-in-failure-and-success.png" alt-text="Screenshot of an example of failure and success in the sign-in log when terms of use is applied." lightbox="media/terms-of-use/sign-in-failure-and-success.png":::
+
+One sign-in will be interrupted since the user can't provide proof of acceptance of the terms of use policy in their token. The additional details in the sign-in log include the following message:
+
+> The user is required to satisfy additional requirements before finishing authentication, and was redirected to another page (such as terms of use or a third party MFA provider). This code alone does not indicate a failure on your users part to sign in. The sign in logs may indicate that this challenge was succesfully passed or failed.
+
+If the user accepts the terms of use policy the other sign-in will be successful. 
+
 **Q: I cannot sign in using PowerShell when terms of use is enabled.**<br />
 A: Terms of use can only be accepted when authenticating interactively.
 
