@@ -42,7 +42,7 @@ To sign up a user by using email OTP, you need to:
    - A UI to collect an email from the user.
    - A UI to collect an OTP code from the user.
 
-1. To sign up a user, we're going to use the library's `signUp(username)` method, which is going to return a result that can be interpreted as an `actionResult`. Add a button to the application that calls the following code snippet when selected: 
+1. In your app, add a button, whose select event triggers the following code snippet: 
 
    ```kotlin
    CoroutineScope(Dispatchers.Main).launch {
@@ -61,19 +61,22 @@ To sign up a user by using email OTP, you need to:
    }
    ```
 
-    > [!NOTE]
-    > You should add user inputs to your app to collect user email and one time passcode. 
+    1. Use the MSAL SDK's instance  method, `signUp(username)` to start the sign-up flow.
+    1. The method's parameter, `username` is then email address you collect from the user. 
+    1. In most common scenario, the `signUp(username)` returns a result, `SignUpResult.CodeRequired`, which indicates that the SDK expects the app to submit the OTP codes sent to the user's emails address.
+    1. The `SignUpResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`. 
+    1. The new state gives us access to two new methods: 
+        - `submitCode()` submits the OTP code that the app collects from the user. 
+        - `resendCode()` re-sends the OTP code if the user doesn't receive the code. 
 
-   In the library's `signUp(username)` method, we pass in the email address that user supplied us in the email submit form. In most common scenario, the `actionResult` is of type `SignUpResult.CodeRequired`, which indicates that the API expects a code to be sent, in this case to verify the email address. The `SignUpResult.CodeRequired` contains a new state reference, which we can retrieve through `actionResult.nextState`. This new state is of type `SignUpCodeRequiredState`, which gives us access to two new methods: 
+## Handle errors during sign-up
 
-   - `submitCode()` is used to submit the code that user supplies in the form to submit one-time passcode. 
-   - `resendCode()` is used to resend the one-time passcode if the user doesn't receive the code. 
+During sign-up, not all actions succeed. For instance, the user might attempt to sign up with an already used email address or submit an invalid OTP code. 
 
-### Handle errors during sign-up
+### Handle sign-up error
 
-During sign-up, not all actions succeed. For instance, the user might attempt to sign up with an already used email address or submit an invalid code. 
 
-1. To handle errors in library's `signUp(username)` method, use the following code snippet: 
+To handle errors for the `signUp(username)` method, use the following code snippet: 
 
    ```kotlin
    val actionResult = authClient.signUp(
@@ -93,9 +96,14 @@ During sign-up, not all actions succeed. For instance, the user might attempt to
    }
    ```
 
-   `signUp(username)` can return SignUpError. `SignUpError` indicates an unsuccessful action result returned by `signUp()` and won't include a reference to the new state, while the utility method `isUserAlreadyExists()` checks for the specific error type of `SignUpError`: the username provided has been used. You should notify the user that the email is already in use. 
+   - `signUp(username)` can return `SignUpError`. 
+   - `SignUpError` indicates an unsuccessful action result returned by `signUp()` and won't include a reference to the new state, while the method `isUserAlreadyExists()` checks for the specific error. 
+   - You should notify the user that the email is already in use by using a friendly message in the app's UI. 
+   
 
-1. To handle errors in `submitCode()`, use the following code snippet:
+### Handle submit OTP code error
+
+To handle errors for the  `submitCode()` method, use the following code snippet:
 
    ```kotlin
    val submitCodeActionResult = nextState.submitCode(
@@ -116,24 +124,26 @@ During sign-up, not all actions succeed. For instance, the user might attempt to
    }
    ```
 
-   `submitCode()` can return `SignUpError`. The utility method `isInvalidCode()` checks for the specific error type of `SignUpError`: the submitted code is invalid. In this case, the previous state reference must be used to reperform the action. To retrieve a new one-time passcode, use the following code snippet: 
+   - `submitCode()` can return `SubmitCodeError`. 
+   - Use the `isInvalidCode()` method to check for the specific error, such as, the submitted code is invalid. In this case, the previous state reference must be used to reperform the action. 
+   - To retrieve a new OTP code, use the following code snippet: 
 
-    ```kotlin
-    val submitCodeActionResult = nextState.submitCode(
-        code = code
-    )
-    if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode()) {
-        // Inform the user that the submitted code was incorrect or invalid and ask for a new code to be supplied
-        val newCode = retrieveNewCode()
-        nextState.submitCode(
-            code = newCode
+        ```kotlin
+        val submitCodeActionResult = nextState.submitCode(
+            code = code
         )
-    }
-    ```
+        if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode()) {
+            // Inform the user that the submitted code was incorrect or invalid and ask for a new code to be supplied
+            val newCode = retrieveNewCode()
+            nextState.submitCode(
+                code = newCode
+            )
+        }
+        ```
 
-Don't forget to add the import statements, Android Studio does that for you automatically (on Mac or Windows select Alt + Enter on each error detected by the code editor). 
+Make sure you include the import statements. Android Studio should include the import statements for you automatically. 
 
-You've completed all the necessary steps to successfully sign up a user on your app. Build and run your application. If all good, you should be able to provide an email ID, receive a code on the email and use that to successfully sign up user. 
+You've completed all the necessary steps to successfully sign up a user into your app. Build and run your application. If all good, you should be able to collect an email from a user, and collect the OTP code that the user receives in their email address and use it to successfully sign up the user. 
 
 ## Next steps 
 
