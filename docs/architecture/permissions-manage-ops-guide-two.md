@@ -141,11 +141,7 @@ To delegate permissions, your IAM team creates Microsoft Entra security groups t
 
 We recommend you use [PIM for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md). This provides JIT access to Approver permissions to approve or deny Permissions On-Demand requests.
 
-<<<<<<< HEAD
 To create Microsoft Entra ID security groups, see [manage groups and group membership](~/fundamentals/how-to-manage-groups.yml).
-=======
-To create Microsoft Entra security groups, see [manage groups and group membership](~/fundamentals/how-to-manage-groups.md).
->>>>>>> 6fbe72396d9af2498332f2f09744719e7473f12a
 
 ### Assign permissions to Approvers
 
@@ -157,11 +153,7 @@ Designate at least two Requestor Administrators who create Permissions On-Demand
 
 We recommend you use [PIM for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md). This provides JIT access to the Requestor permissions needed to make Permissions On-Demand requests on behalf of other users.
 
-<<<<<<< HEAD
 To create Microsoft Entra ID security groups, see [manage groups and group membership](~/fundamentals/how-to-manage-groups.yml).
-=======
-To create Microsoft Entra security groups, see [manage groups and group membership](~/fundamentals/how-to-manage-groups.md).
->>>>>>> 6fbe72396d9af2498332f2f09744719e7473f12a
 
 ### Allow users to make Permissions On-Demand requests
 
