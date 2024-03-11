@@ -53,6 +53,25 @@ To sign in a user using username (email address) and password, will use the `sig
    }
    ```
 
+    In the most common scenario, we receive a call to `onSignInCompleted(result)` indicating that the user has signed in. The result can be used to retrieve the `access token`.
+
+    The `getAccessToken(delegate)` accepts a delegate parameter and we must implement the required methods in the `CredentialsDelegate` protocol.
+
+    In the most common scenario, we receive a call to `onAccessTokenRetrieveCompleted(result)` indicating that the user obtained an `access token`.
+
+    ```swift
+    extension ViewController: CredentialsDelegate {
+        func onAccessTokenRetrieveError(error: MSAL.RetrieveAccessTokenError) {
+            resultTextView.text = "Error retrieving access token"
+        }
+
+        func onAccessTokenRetrieveCompleted(result: MSALNativeAuthTokenResult) {
+            resultTextView.text = "Signed in. Access Token: \(result.accessToken)"
+        }
+    }
+
+    ```
+    
 ## Handle errors 
 
 In our earlier implementation of `SignInStartDelegate` protocol, we displayed the error when we handled the `onSignInError(error)` delegate function. 
