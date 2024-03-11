@@ -33,7 +33,7 @@ The Microsoft Entra ID Governance capabilities are currently available in two pr
 - A subscription to **Microsoft Entra ID Governance**, listed in the product terms as the **Microsoft Entra ID Governance (User SL)** license, requires that the tenant also have an active subscription to another product, one that contains the `AAD_PREMIUM` or `AAD_PREMIUM_P2` service plan. Examples of products meeting this prerequisite include **Microsoft Entra ID P1**, **Microsoft 365 E3/E5/A3/A5/G3/G5**, **Enterprise Mobility + Security E3/E5** or **Microsoft 365 F1/F3**.
 - A subscription to **Microsoft Entra ID Governance Step Up for Microsoft Entra ID P2**, listed in the product terms as the **Microsoft Entra ID Governance P2** license, requires that the tenant also have an active subscription to another product, one that contains the `AAD_PREMIUM_P2` service plan.  Examples of products meeting this prerequisite include **Microsoft Entra ID P2**, **Microsoft 365 E5/A5/G5**, **Enterprise Mobility + Security E5**, **Microsoft 365 E5/F5 Security** or **Microsoft 365 F5 Security + Compliance**.
 
-The [product names and service plan identifiers for licensing](~/identity/users/licensing-service-plan-reference.md) lists additional products that include the prerequisite service plans.
+The [product names and service plan identifiers for licensing](../identity/users/licensing-service-plan-reference.md) lists additional products that include the prerequisite service plans.
 
 >[!NOTE]
 >A subscription to a prerequisite for a Microsoft Entra ID Governance product must be active in the tenant. If a prerequisite is not present, or the subscription expires, then Microsoft Entra ID Governance scenarios might not function as expected.  
@@ -62,14 +62,14 @@ A global administrator in a tenant that has an appropriate prerequisite product,
 
 1. In the product details page, select **Start free trial**.
 
-[!INCLUDE [licensing](~/includes/licensing-governance.md)]
+[!INCLUDE [licensing](../includes/licensing-governance.md)]
 
 
 
 
 ## Privileged Identity Management
 
-[!INCLUDE [licensing](~/includes/licensing-pim.md)]
+[!INCLUDE [licensing](../includes/licensing-pim.md)]
 
 ## API-driven provisioning
 
