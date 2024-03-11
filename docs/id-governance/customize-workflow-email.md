@@ -42,7 +42,7 @@ When you're customizing an email sent via lifecycle workflows, you can choose to
 
 1. Browse to **Identity governance** > **Lifecycle workflows** > **workflows**.
 
-1. Select the workflow that contain the email tasks you want to customize.
+1. Select the workflow that contains the email tasks you want to customize.
 
 1. On the pane that lists tasks, select the task for which you want to customize the email.
 
