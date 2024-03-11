@@ -46,8 +46,8 @@ To complete this article, you need the following resources and privileges:
     * If needed, follow the instructions to [install the Azure PowerShell module and connect to your Azure subscription](/powershell/azure/install-azure-powershell).
     * Make sure that you sign in to your Azure subscription using the [Connect-AzAccount][Connect-AzAccount] cmdlet.
 * Install and configure MS Graph PowerShell.
-   - If needed, follow the instructions to [install the MS Graph PowerShell module and connect to Microsoft Entra ID](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0).
-   - Make sure that you sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0) cmdlet.
+   - If needed, follow the instructions to [install the MS Graph PowerShell module and connect to Microsoft Entra ID](/powershell/microsoftgraph/authentication-commands).
+   - Make sure that you sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands) cmdlet.
 * You need [Application Administrator](/azure/active-directory/roles/permissions-reference#application-administrator) and [Groups Administrator](/azure/active-directory/roles/permissions-reference#groups-administrator) Microsoft Entra roles in your tenant to enable Domain Services.
 * You need [Domain Services Contributor](/azure/role-based-access-control/built-in-roles#contributor) Azure role to create the required Domain Services resources.
 
@@ -420,7 +420,7 @@ For more conceptual information about forest types in Domain Services, see [How 
 
 [Connect-AzAccount]: /powershell/module/az.accounts/connect-azaccount
 
-[Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0): /powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0
+[Connect-MgGraph](/powershell/microsoftgraph/authentication-commands): /powershell/microsoftgraph/authentication-commands
 
 [New-AzResourceGroup]: /powershell/module/az.resources/new-azresourcegroup
 
