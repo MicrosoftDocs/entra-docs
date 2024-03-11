@@ -137,10 +137,7 @@ Now that the device is in compliance with Company Portal, you need to register y
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/macos14-microsoft-entra-registration-required.png" alt-text="Screenshot of a Microsoft Entra registration prompt that appears on macOS 14 after the registration required notification is selected.":::
 
-1. You'll see a prompt to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**. 
-
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-registration-required-popup-secure-enclave.png" alt-text="Screenshot of a desktop screen with a registration required popup in the top right of the screen.":::
-
+1. Once your account is unlocked with touch ID or password, select the account to sign in to, enter your sign-in credentials and select **Next**.
 1. MFA is required as part of this sign in flow. Open your **Authenticator app** (recommended) or use your other MFA methods you have registered, and enter the number displayed on the screen to finish registration.
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-2fa-challenge.png" alt-text="Screenshot of a two-factor authentication window, prompting the user to open the Authenticator app.":::
