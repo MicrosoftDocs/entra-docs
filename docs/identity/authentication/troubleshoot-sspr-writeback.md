@@ -74,7 +74,7 @@ Or run the following:
 Invoke-WebRequest -Uri https://<namespace>.servicebus.windows.net -Verbose
 ```
 
-Replace the <namespace> with the same you extracted from the event IDs above.
+Replace the \<namespace\> with the same you extracted from the event IDs above.
 	Example: in the above case, the command would be:
 
  ```powershell
