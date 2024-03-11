@@ -77,11 +77,7 @@ After creating a group, you need to decide how to assign access rights. Explore 
 
 - **Direct assignment.** The resource owner directly assigns the user to the resource.
 
-<<<<<<< HEAD
 - **Group assignment.** The resource owner assigns a Microsoft Entra group to the resource, which automatically gives all of the group members access to the resource. Group membership is managed by both the group owner and the resource owner, letting either owner add or remove members from the group. For more information about managing group membership, see the [Manage groups](how-to-manage-groups.yml) article. 
-=======
-- **Group assignment.** The resource owner assigns a Microsoft Entra group to the resource, which automatically gives all of the group members access to the resource. Group membership is managed by both the group owner and the resource owner, letting either owner add or remove members from the group. For more information about managing group membership, see the [Manage groups](how-to-manage-groups.md) article.
->>>>>>> 6fbe72396d9af2498332f2f09744719e7473f12a
 
 - **Rule-based assignment.** The resource owner creates a group and uses a rule to define which users are assigned to a specific resource. The rule is based on attributes that are assigned to individual users. The resource owner manages the rule, determining which attributes and values are required to allow access the resource. For more information, see [Create a dynamic group and check status](~/identity/users/groups-create-rule.md).
 
