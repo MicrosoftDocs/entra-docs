@@ -14,7 +14,7 @@ ms.reviewer:
 ---
 # Require terms of use to be accepted before accessing Microsoft Admin Portals
 
-Organizations might want to require users to accept terms of use (ToU) before accessing certain applications in their environment. This article helps you create a policy requiring terms of use to be accepted as part of the initial sign in process for administrators who access any of the [Microsoft Admin Portals](concept-conditional-access-cloud-apps.md#microsoft-admin-portals).
+Organizations might want to require users to accept [terms of use (ToU)](terms-of-use.md) before accessing certain applications in their environment. This article helps you create a policy requiring terms of use to be accepted as part of the initial sign in process for administrators who access any of the [Microsoft Admin Portals](concept-conditional-access-cloud-apps.md#microsoft-admin-portals).
 
 ## Create your terms of use
 
@@ -60,6 +60,8 @@ In the previous section, you created a Conditional Access policy requiring terms
 To test your policy, try to sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using a test account. You should see a dialog that requires you to accept your terms of use.
 
 ## Related content
+
+[Microsoft Entra terms of use](terms-of-use.md)
 
 [Conditional Access templates](concept-conditional-access-policy-common.md)
 
