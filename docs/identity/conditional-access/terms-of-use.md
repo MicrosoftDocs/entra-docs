@@ -325,4 +325,4 @@ A: Terms of use utilize the following endpoints for authentication: https://toke
 
 ## Related content
 
-* [Require terms of use to be accepted before accessing Microsoft Admin Portals](require-tou.md)
+* [Example policy to require terms of use to be accepted before accessing Microsoft Admin Portals](require-tou.md)

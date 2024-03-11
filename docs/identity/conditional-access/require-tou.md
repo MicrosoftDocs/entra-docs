@@ -14,7 +14,7 @@ ms.reviewer:
 ---
 # Require terms of use to be accepted before accessing Microsoft Admin Portals
 
-Organizations might want to require users to accept [terms of use (ToU)](terms-of-use.md) before accessing certain applications in their environment. This article helps you create a policy requiring terms of use to be accepted as part of the initial sign in process for administrators who access any of the [Microsoft Admin Portals](concept-conditional-access-cloud-apps.md#microsoft-admin-portals).
+Organizations might want to require users to accept [terms of use (ToU)](terms-of-use.md) before accessing certain applications in their environment. This example helps you create a policy requiring terms of use to be accepted as part of the initial sign in process for administrators who access any of the [Microsoft Admin Portals](concept-conditional-access-cloud-apps.md#microsoft-admin-portals).
 
 ## Create your terms of use
 
