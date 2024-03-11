@@ -93,13 +93,8 @@ After a user requests to join a group, the request is forwarded to the group own
 
 ## Next steps
 
-<<<<<<< HEAD
 - [Create and manage Microsoft Entra groups and group membership](how-to-manage-groups.yml)
 - [Learn about group-based licensing in Microsoft Entra ID](./concept-group-based-licensing.md)
-=======
-- [Create and manage Microsoft Entra groups and group membership](how-to-manage-groups.md)
-- Learn about [group-based licensing in Microsoft Entra ID](./concept-group-based-licensing.md)
->>>>>>> 6fbe72396d9af2498332f2f09744719e7473f12a
 - [Manage access to SaaS apps using groups](~/identity/users/groups-saasapps.md)
 - [Manage dynamic rules for users in a group](~/identity/users/groups-create-rule.md)
 - Learn about [Privileged Identity Management (PIM) for Microsoft Entra roles](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md)
