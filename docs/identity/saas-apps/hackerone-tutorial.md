@@ -43,9 +43,9 @@ In this tutorial, you configure and test Microsoft Entra single sign-on in a tes
 To configure the integration of HackerOne into Microsoft Entra ID, you need to add HackerOne from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the **Add from the gallery** section, type **HackerOne** in the search box.
-1. Select **HackerOne** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+2. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+3. In the **Add from the gallery** section, type **HackerOne** in the search box.
+4. Select **HackerOne** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
 Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
@@ -58,11 +58,9 @@ Configure and test Microsoft Entra SSO with HackerOne using a test user called *
 To configure and test Microsoft Entra SSO with HackerOne, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-   1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-   1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure HackerOne SSO](#configure-hackerone-sso)** - to configure the single sign-on settings on application side.
-   1. **[Create HackerOne test user](#create-hackerone-test-user)** - to have a counterpart of B.Simon in HackerOne that is linked to the Microsoft Entra representation of user.
-1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
+2. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+3. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+4. **[Configure HackerOne SSO](#configure-hackerone-sso)** - to configure the single sign-on settings on application side.
 
 <a name='configure-azure-ad-sso'></a>
 
@@ -71,13 +69,13 @@ To configure and test Microsoft Entra SSO with HackerOne, perform the following 
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **HackerOne** > **Single sign-on**.
-1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+2. Browse to **Identity** > **Applications** > **Enterprise applications** > **HackerOne** > **Single sign-on**.
+3. On the **Select a single sign-on method** page, select **SAML**.
+4. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section, perform the following steps:
+5. On the **Basic SAML Configuration** section, perform the following steps:
 
    a. In the **Identifier (Entity ID)** text box, type the value:
    `hackerone.com`
@@ -91,11 +89,11 @@ Follow these steps to enable Microsoft Entra SSO.
    > [!Note]
    > The Sign-on URL value is not real. Update this value with the actual Sign-on URL.You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
+6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
    ![The Certificate download link](common/certificatebase64.png)
 
-1. On the **Set up HackerOne** section, copy the appropriate URL(s) as per your requirement.
+7. On the **Set up HackerOne** section, copy the appropriate URL(s) as per your requirement.
 
    ![Copy configuration URLs](common/copy-configuration-urls.png)
 
@@ -106,14 +104,14 @@ Follow these steps to enable Microsoft Entra SSO.
 In this section, you'll create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
+2. Browse to **Identity** > **Users** > **All users**.
+3. Select **New user** > **Create new user**, at the top of the screen.
+4. In the **User** properties, follow these steps:
+   a. In the **Display name** field, enter `B.Simon`.
+   b. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
+   c. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
+   d. Select **Review + create**.
+5. Select **Create**.
 
 <a name='assign-the-azure-ad-test-user'></a>
 
@@ -122,13 +120,13 @@ In this section, you'll create a test user called B.Simon.
 In this section, you'll enable B.Simon to use single sign-on by granting access to HackerOne.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **HackerOne**.
-1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+2. Browse to **Identity** > **Applications** > **Enterprise applications** > **HackerOne**.
+3. In the app's overview page, select **Users and groups**.
+4. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
+   a. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
+   b. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   c. In the **Add Assignment** dialog, click the **Assign** button.
 
 ## Configure HackerOne SSO
 
-Follow the steps as described by the [HackerOne documentation](https://docs.hackerone.com/en/articles/8487039-single-sign-on-sso-via-saml)
+1. Follow the steps as described by the [HackerOne documentation](https://docs.hackerone.com/en/articles/8487039-single-sign-on-sso-via-saml)
