@@ -4,7 +4,6 @@ description: Learn how to write PowerShell scripts in Azure Automation to intera
 author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
-
 ms.topic: how-to
 ms.date: 9/20/2022
 ms.author: owinfrey
@@ -20,7 +19,7 @@ This article shows you how to get started using Azure Automation for Microsoft E
 
 ## Create an Azure Automation account
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Azure Automation provides a cloud-hosted environment for [runbook execution](/azure/automation/automation-runbook-execution).  Those runbooks can start automatically based on a schedule, or be triggered by webhooks or by Logic Apps.
 
@@ -43,7 +42,7 @@ If you already have a key pair for authenticating your service to Microsoft Entr
 
 To generate a self-signed certificate,
 
-1. Follow the instructions in [how to create a self-signed certificate](~/identity-platform/howto-create-self-signed-certificate.md), option 2, to create and export a certificate with its private key.
+1. Follow the instructions in [how to create a self-signed certificate](../identity-platform/howto-create-self-signed-certificate.md), option 2, to create and export a certificate with its private key.
 
 1. Display the thumbprint of the certificate.
 
@@ -85,7 +84,7 @@ Next, you'll create an app registration in Microsoft Entra ID, so that Microsoft
 
 **Prerequisite role**: Global Administrator or other administrator who can consent applications to application permissions
 
-1. Sign in to the [Microsoft Entra admin Center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). 
+1. Sign in to the [Microsoft Entra admin Center](https://entra.microsoft.com) as at least a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator). 
 
 1. Browse to > **Identity** > **Applications** > **App registrations**.
 
