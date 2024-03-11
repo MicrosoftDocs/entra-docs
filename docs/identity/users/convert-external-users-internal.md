@@ -5,7 +5,7 @@ services: active-directory
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 02/07/2024
+ms.date: 03/11/2024
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: enterprise-users
@@ -17,8 +17,8 @@ ms.reviewer: yuank
 
 # Convert external users to internal users (Preview)
 
-Enterprises go through reorganizations, mergers and acquisitions typically require a change in the way you work with some or all of your existing users. In some cases, you could need to change existing external users into internal ones. External user conversion enables administrators to turn external users to internal members without the need to delete the existing user object and create new one. Keeping the original object ensures the 
-user’s account and access isn’t disrupted and that their history of activities remains intact as their relationship with the host organization changes
+Enterprises go through reorganizations, mergers, and acquisitions typically require a change in the way you work with some or all of your existing users. In some cases, you could need to change existing external users into internal ones. External user conversion enables administrators to turn external users to internal members without the need to delete the existing user object and create new one. Keeping the original object ensures the 
+user’s account and access isn’t disrupted and that their history of activities remains intact as their relationship with the host organization changes.
 
 - **Internal users** are users who authenticate with the local tenant.
 - **External users** are users who authenticate via a method not managed by the host organization, such as another organization's Microsoft Entra ID, Google federation, or Microsoft account. Many external users have a ***userType*** of 'guest', but there's no formal relation between ***userType**** and how a user signs in. External users who have a ***userType*** of 'member', could also be eligible for conversion.
@@ -44,7 +44,7 @@ For on-premises synced users the administrator is unable to specify the UPN beca
 
 ## Testing external user conversion
 
-When testing external user conversion, it is recommended to use test accounts or accounts that wouldn't create a disruption if they are unavailable.
+When testing external user conversion, we recommend that you use test accounts or accounts that wouldn't create a disruption if they were to become unavailable.
 
 ### Requirements
 
@@ -61,12 +61,12 @@ You can convert external users to internal using the Microsoft Entra admin cente
 1. Browse to **Identity** > **Users** > **All users**.
 
 1. Select an external user.
-1. As shown in the image below, select **Convert to internal user**
+1. As shown in the image, select **Convert to internal user**
 
 :::image type="content" source="media/convert-external-users-internal/user-properties.png" alt-text="Screenshot showing the user properties with a red box around the Convert to Internal user option":::
 
 1. In the **Convert to internal user** section, you need to finalize a couple of steps:
-    1. A **user principal name**, This value will be the new UPN value for the user. For cloud-only users, the UPN domain must be one that is nonfederated. For on-premises synced users, you don't need to provide a UPN. The user continues to use the on-premises credentials. 
+    1. A **user principal name**, This value is the new UPN value for the user. For cloud-only users, the UPN domain must be one that is nonfederated. For on-premises synced users, you don't need to provide a UPN. The user continues to use the on-premises credentials. 
     1. Choose whether you would like an auto generated password
     1. Checkbox for **Change email address**, allows you to specify an optional new mail address for cloud users.
 1. After reviewing the options and making and choices, you can choose **Convert**
@@ -74,3 +74,6 @@ You can convert external users to internal using the Microsoft Entra admin cente
 :::image type="content" source="media/convert-external-users-internal/convert.png" alt-text="Screenshot showing the last set of options that must be chosen prior to converting an external user to an internal user":::
 
 
+# Related content
+
+- [User management enhancements](users-search-enhanced)
