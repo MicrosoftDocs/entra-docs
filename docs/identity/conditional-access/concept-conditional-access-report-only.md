@@ -1,24 +1,24 @@
 ---
 title: What is Conditional Access report-only mode?
-description: How can report-only mode help with Conditional Access policy deployment
+description: How can report-only mode help with Conditional Access policy deployment?
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 03/30/2023
+ms.date: 02/26/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: dawoo
+ms.reviewer: kvenkit
 ---
 # What is Conditional Access report-only mode?
 
-Conditional Access is widely used by our customers to stay secure by applying the right access controls in the right circumstances. However one of the challenges with deploying a Conditional Access policy in your organization is determining the impact to end users. It can be difficult to anticipate the number and names of users impacted by common deployment initiatives such as blocking legacy authentication, requiring multifactor authentication for a population of users, or implementing sign-in risk policies. 
+Conditional Access is widely used by our customers to stay secure by applying the right access controls in the right circumstances. However one of the challenges with deploying a Conditional Access policy in your organization is determining the impact to end users. It can be difficult to anticipate the number and names of users impacted by common security initiatives. These initiatives might include: blocking legacy authentication, requiring multifactor authentication for a population of users, or implementing sign-in risk policies. 
 
-Report-only mode is a new Conditional Access policy state that allows administrators to evaluate the impact of Conditional Access policies before enabling them in their environment.  With the release of report-only mode:
+Report-only mode is a new Conditional Access policy state that allows administrators to evaluate the impact of Conditional Access policies before enabling them in their environment.
 
-- Conditional Access policies can be enabled in report-only mode, this isn't applicable with the "User Actions" scope.
+- Conditional Access policies can be evaluated in report-only mode except for items included in the "User Actions" scope.
 - During sign-in, policies in report-only mode are evaluated but not enforced.
 - Results are logged in the **Conditional Access** and **Report-only** tabs of the Sign-in log details.
 - Customers with an Azure Monitor subscription can monitor the impact of their Conditional Access policies using the Conditional Access insights workbook.
@@ -45,6 +45,6 @@ When a policy in report-only mode is evaluated for a given sign-in, there are fo
 
 Administrators have the capability to create multiple policies in report-only mode, so it's necessary to understand both the individual impact of each policy and the combined impact of multiple policies evaluated together. The new Conditional Access Insights workbook enables administrators to visualize Conditional Access queries and monitor the impact of a policy for a given time range, set of applications, and users. 
  
-## Next steps
+## Related content
 
-[Configure report-only mode on a Conditional Access policy](howto-conditional-access-insights-reporting.md)
+- [Configure report-only mode on a Conditional Access policy](howto-conditional-access-insights-reporting.md)

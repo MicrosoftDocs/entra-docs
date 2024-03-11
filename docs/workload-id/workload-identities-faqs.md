@@ -6,7 +6,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-workload-id
 
-ms.topic: conceptual
+ms.topic: faq
 ms.date: 10/03/2023
 ms.author: gasinh
 ms.custom: aaddev

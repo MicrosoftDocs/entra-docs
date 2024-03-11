@@ -6,9 +6,9 @@ manager: amycolannino
 ms.author: sarahlipsey
 ms.reviewer: jeffsta
 ms.service: entra
-ms.topic: troubleshooting
+ms.topic: how-to
 ms.subservice: fundamentals
-ms.date: 09/12/2023
+ms.date: 02/20/2024
 ---
 # View activity logs for Microsoft Support access requests (preview)
 
@@ -21,13 +21,12 @@ To access the audit logs for a tenant, you must have one of the following roles:
 - Reports Reader
 - Security Reader
 - Security Administrator
-- Global Administrator
 
 ## How to access the logs
 
-You can access a filtered view of audit logs for your tenant from the Microsoft Support access requests area. Select **Audit logs** from the side menu to view the audit logs with the category pre-selected.
+You can access a filtered view of audit logs for your tenant from the Microsoft Support access requests area. Select **Audit logs** from the side menu to view the audit logs with the category automatically selected.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Service Support Administrator](~/identity/role-based-access-control/permissions-reference.md#service-support-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Service Support Administrator](../identity/role-based-access-control/permissions-reference.md#service-support-administrator).
 
 1. Browse to **Learn & support** > **Diagnose and solve problems**.
 
@@ -39,13 +38,13 @@ You can also access these logs from the Microsoft Entra audit logs. Select **Cor
 
 ## Types of requests
 
-There are some details associated with support access request audit logs that are helpful to understand. Knowing the difference between the types of request may help when exploring the logs.
+There are some details associated with support access request audit logs that are helpful to understand. Knowing the difference between the types of request might help when exploring the logs.
 
 Activity logs for Microsoft Support access requests fall into two categories: user-initiated activities, and automated activities.
 
 ### User-initiated activities
 
-There are three user-initiated activities that you can see in your audit logs. These are actions requested by administrators of your tenant.
+There are three user-initiated activities that you can see in your audit logs. These actions are requested by administrators of your tenant.
 
 - Approval of a Microsoft Support access request
 - Rejection of a Microsoft Support access request
@@ -56,7 +55,8 @@ There are three user-initiated activities that you can see in your audit logs. T
 There are three activities that can be associated with an automated or system-initiated Microsoft Support access request:
 
 - Creation of a Microsoft Support access *request* in the support request tenant
-- Creation of a Microsoft Support access *approval* in the resource tenant. This is done automatically after a Microsoft Support access request is approved by a user who is an administrator of both the support request tenant, and the resource tenant
+- Creation of a Microsoft Support access *approval* in the resource tenant.
+    - Occurs after a Microsoft Support access request is approved by a user who is an administrator of both the support request tenant and the resource tenant
 - Removal of Microsoft Support access upon closure of your support request
 
 ## Next steps
