@@ -466,7 +466,7 @@ Additionally, we'll update email content to remove all references of Azure AD wh
 
 Here are some resources to guide you rename your own product experiences or content where necessary:
 
-- [How to: Rename Azure AD](how-to-rename-azure-ad.md)
+- [How to: Rename Azure AD](how-to-rename-azure-ad.yml)
 - [New name for Azure Active Directory](new-name.md)
 
 ---
