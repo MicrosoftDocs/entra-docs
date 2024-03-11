@@ -10,7 +10,7 @@ ms.author: billmath
 ---
 
 # Microsoft Entra ID Governance licensing fundamentals
-This following document discusses Microsoft Entra ID Governance licensing. It is intended for IT decision makers, IT administrators, and IT professionals who are considering Microsoft Entra ID Governance services for their organizations. 
+This following document discusses Microsoft Entra ID Governance licensing. It's intended for IT decision makers, IT administrators, and IT professionals who are considering Microsoft Entra ID Governance services for their organizations. 
 
 ## Types of licenses
 
@@ -73,7 +73,7 @@ A global administrator in a tenant that has an appropriate prerequisite product,
 
 ## API-driven provisioning
 
-This feature is available with Microsoft Entra ID P1, P2 and Microsoft Entra ID Governance subscriptions. A subscription license is required for every identity that is sourced using the [/bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API and provisioned to either on-premises Active Directory or Microsoft Entra ID.
+This feature is available with Microsoft Entra ID P1, P2, and Microsoft Entra ID Governance subscriptions. A subscription license is required for every identity that is sourced using the [/bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API and provisioned to either on-premises Active Directory or Microsoft Entra ID.
 
 ### License scenarios
 
@@ -90,7 +90,7 @@ Users don't need to be assigned a Microsoft Entra ID Governance license, but the
 
 ### How can I license usage of Microsoft Entra ID Governance features for business guests?
 
-All users who are in scope of Microsoft Entra ID Governance features, including business guests such as contractors, partners, and external collaborators, need a license.  We're creating a new Microsoft Entra ID Governance license for business guests. This license will operate on a monthly active usage (MAU) model. Customers will be able to acquire licenses matching their anticipated business guest MAU.
+All users who are in scope of Microsoft Entra ID Governance features, including business guests such as contractors, partners, and external collaborators, need a license.  We're creating a new Microsoft Entra ID Governance license for business guests. This license operates on a monthly active usage (MAU) model. Customers are able to acquire licenses matching their anticipated business guest MAU.
 
 We anticipate making these licenses available in spring 2024. In the interim, organizations that govern the identities of their employees with Microsoft Entra ID Governance can govern the identities of their business guests for no additional cost. At this time, existing customers of Microsoft Entra ID P1 or P2 with Microsoft Entra External ID can continue using the subset of features that are included in P1 or P2 with their business guests through their Microsoft Entra External ID license.
 
@@ -100,11 +100,11 @@ For more information, see: [Microsoft Entra ID Governance licensing for business
 
 If a Microsoft Entra ID P2 or Microsoft Entra ID Governance license expires or trial ends, Privileged Identity Management features will no longer be available in your directory. The changes discussed below are applicable to PIM for Microsoft Entra roles, PIM for Azure resources, and PIM for Groups.
 
-- Active permanent assignments are not affected.
-- Active time-bound assignments become active permanent which means they will no longer expire at a designated time.
-- Eligible role assignments will be removed, as users will no longer be able to activate privileged roles.
-- Privileged Identity Management blades on Microsoft Entra admin center or Azure portal, API and PowerShell interfaces of Privileged Identity Management, will no longer be available for users to activate roles, manage assignments, or perform access reviews of privileged roles.
-- Any ongoing access reviews of Microsoft Entra roles will end, and Privileged Identity Management configuration settings will be removed.
+- Active permanent assignments aren't affected.
+- Active time-bound assignments become active permanent, which means they'll no longer expire at a designated time.
+- Eligible role assignments are removed, as users will no longer be able to activate privileged roles.
+- Privileged Identity Management blades on Microsoft Entra admin center or Azure portal, API, and PowerShell interfaces of Privileged Identity Management, will no longer be available for users to activate roles, manage assignments, or perform access reviews of privileged roles.
+- Any ongoing access reviews of Microsoft Entra roles end, and Privileged Identity Management configuration settings are removed.
 - Privileged Identity Management will no longer send emails on role assignment changes and PIM Alerts.
 
 <a name='will-any-iga-features-and-capabilities-be-added-under-the-entra-id-p2-license'></a>
