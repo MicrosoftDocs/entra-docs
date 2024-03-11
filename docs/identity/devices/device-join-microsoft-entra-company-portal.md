@@ -123,23 +123,23 @@ To register a Mac device with PSSO, you must first enroll your device in Microso
 
     :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-entra-password-entry.png" alt-text="Screenshot of the Microsoft Entra sign in window.":::
 
-1. Your device will now show as being in compliance in Company Portal. You can now use PSSO to access Microsoft app resources.
+1. Your device will now show as being in compliance in Company Portal. 
 
 ---
 
-## Finish the registration process
+## Platform SSO registration
 
 Now that the device is in compliance with Company Portal, you need to register your device with PSSO. Use the tabs to register your device with PSSO using secure enclave, smart card, or password.
 
 ### [Secure Enclave](#tab/secure-enclave)
 
-1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. 
+1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. For macOS 14 Somona users, you'll see a prompt to register your device with Microsoft Entra. This prompt doesn't appear for macOS 13 Ventura.
+
+    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/macos14-microsoft-entra-registration-required.png" alt-text="Screenshot of a Microsoft Entra registration prompt that appears on macOS 14 after the registration required notification is selected.":::
+
+1. You'll see a prompt to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**. 
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-registration-required-popup-secure-enclave.png" alt-text="Screenshot of a desktop screen with a registration required popup in the top right of the screen.":::
-
-1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**. <!--If you are on macOS14 you will see a prompt to unlock local account before this step--> Wait for a moment for the system to log you in.
-
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-register-device-prompt.png" alt-text="Screenshot of the registration window prompting sign in with Microsoft.":::
 
 1. MFA is required as part of this sign in flow. Open your **Authenticator app** (recommended) or use your other MFA methods you have registered, and enter the number displayed on the screen to finish registration.
 
@@ -149,8 +149,11 @@ Now that the device is in compliance with Company Portal, you need to register y
 
 ### [Smart Card](#tab/smart-card)
 
-1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**. <!--If you are on macOS14 you will see a prompt to unlock local account before this step-->
-    1. Your administrator may have configured MFA for the device registration flow. If so, open your **Authenticator** app on your mobile device and complete the MFA flow.
+1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. If your smart card is paired with your local account, you'll see a prompt to enter the smart card pin
+
+    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/smartcard-paired-registration-prompt.png" alt-text="Screenshot of the Platform SSO registration prompting the user to enter their smart card pin.":::
+
+1. Your administrator may have configured MFA for the device registration flow. If so, open your **Authenticator** app on your mobile device and complete the MFA flow.
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-register-device-prompt.png" alt-text="Screenshot of the registration window prompting sign in with Microsoft.":::
 
@@ -160,7 +163,8 @@ Now that the device is in compliance with Company Portal, you need to register y
 
 ### [Password](#tab/password)
 
-1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**.
+1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. 
+    - For macOS 13 Ventura users, you'll see a prompt to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**. 
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-registration-required-popup.png" alt-text="Screenshot of a desktop screen with a registration required popup in the top right of the screen.":::
 
