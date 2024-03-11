@@ -36,7 +36,7 @@ The display definition is a simple JSON document that describes how the wallet a
 >[!NOTE]
 > This display model is currently used only by Microsoft Authenticator.
 
-The display definition has the following structure:
+The display definition has the following structure. The logo uri, if specified as a URL, must be a url publicly available in the internet. 
 
 ```json
 {
