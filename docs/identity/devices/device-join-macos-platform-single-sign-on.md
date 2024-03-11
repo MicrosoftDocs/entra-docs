@@ -1,5 +1,5 @@
 ---
-title: Join a Mac device with Microsoft Entra ID during the out of box experience with macOS PSSO
+title: Join a Mac device with Microsoft Entra ID during the out of box experience with macOS PSSO (preview)
 description: How users can set up a Microsoft Entra with a new Mac device with macOS Platform Single Sign-on
 
 ms.service: active-directory
@@ -43,7 +43,7 @@ Mac users can join their new device to Microsoft Entra ID during the first-run o
 
 There are three authentication methods for PSSO registration:
 
-- **Secure Enclave**: User logs on to their device which has a secure enclave backed cryptographic key used for SSO across apps that use Microsoft Entra ID for authentication
+- **Secure Enclave**: User logs on to their device which has a secure enclave backed cryptographic key used for SSO across apps that use Microsoft Entra ID for authentication. It can also be referred to as Platform Credential for macOS.
 - **Smart card**: User logs into the machine using an external smart card or smart card compatible hard token
 - **Password**: User logs on to their local device with a local account, updated to use their Microsoft Entra ID password
 
@@ -65,7 +65,7 @@ It's recommended for your system administrator to have the Mac enrolled using se
 
 1. When the MFA flow completes and the loading screen disappears, your device should be registered with PSSO. You can now use PSSO to access Microsoft app resources.
 
-### Enable macOS Platform Credentials for use as a passkey
+### Enable Platform Credential for macOS for use as a passkey
 
 Setting up your device using secure enclave method enables you to use the resulting credential saved to the Mac as a passkey in the browser. To enable it;
 

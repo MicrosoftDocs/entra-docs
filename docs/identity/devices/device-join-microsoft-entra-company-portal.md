@@ -61,8 +61,6 @@ To register a Mac device with PSSO, you must first enroll your device in Microso
 
     :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-register-window.png" alt-text="Screenshot of the Platform SSO notification requesting to use password or Touch ID.":::
 
-1. You can now use PSSO to access Microsoft app resources.
-
 ### [Smart Card](#tab/smart-card)
 
 1. Open the **Company Portal** app and select **Sign in**.
@@ -97,7 +95,7 @@ To register a Mac device with PSSO, you must first enroll your device in Microso
 
     :::image type="content" source="media/device-registration-macos-platform-single-sign-on/platform-single-sign-on-enter-pin.png" alt-text="Screenshot of the Platform SSO pin entry window.":::
 
-1. You can now use PSSO to access Microsoft app resources, and unlock the device with the smart card pin. You'll need to use the local password to log in after a reboot to unlock the keychain access.
+1. You can now unlock the device with the smart card pin. You'll need to use the local password to log in after a reboot to unlock the keychain access.
 
 ### [Password](#tab/password)
 
@@ -131,7 +129,7 @@ To register a Mac device with PSSO, you must first enroll your device in Microso
 
 ## Finish the registration process
 
-Now that the device is in compliance in the Company Portal, you need to register your device with PSSO. Use the tabs to register your device with PSSO using secure enclave, smart card, or password.
+Now that the device is in compliance with Company Portal, you need to register your device with PSSO. Use the tabs to register your device with PSSO using secure enclave, smart card, or password.
 
 ### [Secure Enclave](#tab/secure-enclave)
 
