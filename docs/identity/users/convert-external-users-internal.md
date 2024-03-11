@@ -17,8 +17,7 @@ ms.reviewer: yuank
 
 # Convert external users to internal users (Preview)
 
-Enterprises go through reorganizations, mergers, and acquisitions typically require a change in the way you work with some or all of your existing users. In some cases, you could need to change existing external users into internal ones. External user conversion enables administrators to turn external users to internal members without the need to delete the existing user object and create new one. Keeping the original object ensures the 
-user’s account and access isn’t disrupted and that their history of activities remains intact as their relationship with the host organization changes.
+Enterprises going through reorganizations, mergers, and acquisitions may be forced to change the way they work with some or all of their existing users. In some cases, administrators need to change existing external users into internal ones. External user conversion handles the conversion of external users into internal members without the need to delete  existing user objects and create new ones. The preservation of the user objects allows users to keep their original account and their access isn’t disrupted. A converted user's account maintains its history of activities intact as their relationship with the host organization changes.
 
 - **Internal users** are users who authenticate with the local tenant.
 - **External users** are users who authenticate via a method not managed by the host organization, such as another organization's Microsoft Entra ID, Google federation, or Microsoft account. Many external users have a ***userType*** of 'guest', but there's no formal relation between ***userType**** and how a user signs in. External users who have a ***userType*** of 'member', could also be eligible for conversion.
