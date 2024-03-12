@@ -236,7 +236,7 @@ In the devices overview, you can view the number of total devices, stale devices
 
 Added support for “Linux” device platform in Azure AD Conditional Access.
 
-An admin can now require a user is on a compliant Linux device, managed by Intune, to sign-in to a selected service (for example ‘all cloud apps’ or ‘Office 365’). For more information, see: [Device platforms](~/identity/conditional-access/concept-conditional-access-conditions.md#device-platforms)
+An admin can now require a user is on a compliant Linux device, managed by Intune, to sign-in to a selected service (for example ‘all cloud apps’ or ‘Office 365’). For more information, see: [Device platforms](../identity/conditional-access/concept-conditional-access-conditions.md#device-platforms)
  
 ---
 
