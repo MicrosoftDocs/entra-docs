@@ -176,7 +176,7 @@ Azure AD certificate-based authentication (CBA) enables customers to allow or re
 **Product capability:** Device Lifecycle Management   
  
 
-BitLocker keys are sensitive security items. Audited BitLocker recovery ensures that when BitLocker keys are read, an audit log is generated so that you can trace who accesses this information for given devices. For more information, see: [View or copy BitLocker keys](~/identity/devices/manage-device-identities.md#view-or-copy-bitlocker-keys).
+BitLocker keys are sensitive security items. Audited BitLocker recovery ensures that when BitLocker keys are read, an audit log is generated so that you can trace who accesses this information for given devices. For more information, see: [View or copy BitLocker keys](../identity/devices/manage-device-identities.md#view-or-copy-bitlocker-keys).
  
 ---
 
