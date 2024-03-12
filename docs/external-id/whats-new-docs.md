@@ -1,10 +1,10 @@
 ---
-title: "What's new in Microsoft Entra External ID"
-description: "New and updated documentation for the Microsoft Entra External ID."
+title: What's new in Microsoft Entra External ID
+description: New and updated documentation for the Microsoft Entra External ID.
 ms.date: 03/01/2024
 ms.service: entra-external-id
 ms.topic: whats-new
- 
+
 ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
@@ -19,7 +19,7 @@ Welcome to what's new in Microsoft Entra External ID documentation. This article
 
 ### Updated article
 
-- [Add Facebook as an identity provider for External Identities](facebook-federation.md) - Microsoft Graph PowerShell updates 
+- [Add Facebook as an identity provider for External Identities](facebook-federation.md) - Microsoft Graph PowerShell updates
 - [Microsoft Entra B2B collaboration code and PowerShell samples](code-samples.md) - Microsoft Graph PowerShell updates
 
 ## January 2024
@@ -35,5 +35,3 @@ Welcome to what's new in Microsoft Entra External ID documentation. This article
 - [Add Google as an identity provider for B2B guest users](google-federation.md) - Microsoft Graph PowerShell updates
 - [B2B collaboration overview](what-is-b2b.md) - Screenshot updates
 - [B2B direct connect overview](b2b-direct-connect-overview.md) - Editorial updates
-
-

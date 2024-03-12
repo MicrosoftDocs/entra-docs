@@ -81,7 +81,7 @@ This limited-lifetime refresh token pattern was chosen as a balance between secu
 
 Not all users and applications are uniformly affected by third-party cookies. There are some scenarios where due to architecture or device management, silent calls to renew tokens can be done without third-party cookies. 
 
-For *managed enterprise device* scenarios, certain browser and platform combinations have support for [device conditional access](/azure/active-directory/conditional-access/concept-conditional-access-conditions#supported-browsers). Applying device identity minimizes the need for third-party cookies as the authentication state can come from the device instead of the browser.  
+For *managed enterprise device* scenarios, certain browser and platform combinations have support for [device Conditional Access](/azure/active-directory/conditional-access/concept-conditional-access-conditions#supported-browsers). Applying device identity minimizes the need for third-party cookies as the authentication state can come from the device instead of the browser.  
 
 For *Azure AD B2C application* scenarios, customers can set up a [custom login domain](/azure/active-directory-b2c/custom-domain?pivots=b2c-user-flow) to match the application's domain. Browsers wouldn't block third-party cookies in this scenario as the cookies remain in the same domain (e.g. login.contoso.com to app.contoso.com).
 
