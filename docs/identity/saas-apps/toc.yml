@@ -80,6 +80,8 @@
         href: adp-emea-french-hr-portal-tutorial.md  
       - name: ADP Globalview (Deprecated)
         href: adglobalview-tutorial.md
+      - name: ADP (OIDC)
+        href: adp-oidc-tutorial.md
       - name: Adra by Trintech
         href: adra-by-trintech-tutorial.md
       - name: Adstream
@@ -1213,6 +1215,8 @@
         href: harness-tutorial.md
       - name: HashiCorp Cloud Platform (HCP)
         href: hashicorp-cloud-platform-hcp-tutorial.md
+      - name: HashiCorp Boundary (OIDC)
+        href: hashicorp-tutorial.md
       - name: Hawkeye Platform
         href: hawkeyebsb-tutorial.md
       - name: HCL BigFix Platform
@@ -1933,6 +1937,8 @@
         href: onshape-tutorial.md
       - name: OnTrack
         href: ontrack-tutorial.md
+      - name: Onyxia
+        href: onyxia-tutorial.md
       - name: Opal
         href: opal-tutorial.md
       - name: OpenAthens
@@ -2027,6 +2033,8 @@
         href: patentsquare-tutorial.md
       - name: Pavaso Digital Close
         href: pavaso-digital-close-tutorial.md
+      - name: PayCargo
+        href: paycargo-tutorial.md
       - name: Paylocity
         href: paylocity-tutorial.md
       - name: Peakon
@@ -2629,6 +2637,8 @@
         href: stormboard-tutorial.md
       - name: Striim
         href: striim-tutorial.md
+      - name: Striim Platform
+        href: striim-platform-tutorial.md
       - name: Styleflow
         href: styleflow-tutorial.md
       - name: SuccessFactors
@@ -3358,6 +3368,8 @@
         href: envoy-provisioning-tutorial.md
       - name: Eletive
         href: eletive-provisioning-tutorial.md
+      - name: elia
+        href: elia-provisioning-tutorial.md
       - name: Elium
         href: elium-provisioning-tutorial.md
       - name: Exium
@@ -3464,8 +3476,8 @@
         href: invision-provisioning-tutorial.md
       - name: InviteDesk
         href: invitedesk-provisioning-tutorial.md
-      - name: Island
-        href: island-provisioning-tutorial.md
+      - name: Jellyfish
+        href: jellyfish-provisioning-tutorial.md
       - name: Jive
         href: jive-provisioning-tutorial.md
       - name: Jostle
