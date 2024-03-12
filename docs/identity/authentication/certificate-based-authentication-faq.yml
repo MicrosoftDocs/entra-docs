@@ -85,7 +85,6 @@ sections:
       - question: |
           How do I turn certificate revocation checking on or off for a particular CA?
         answer: |
-          
           We highly recommend against disabling certificate revocation list (CRL) checking as you won't be able to revoke certificates. 
           However, if you need to investigate issues with CRL checking, you can update a trusted CA and set the crlDistributionPoint attribute to """.
           
