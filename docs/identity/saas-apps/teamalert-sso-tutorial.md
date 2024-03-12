@@ -127,7 +127,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
    1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
    1. In the **Add Assignment** dialog, click the **Assign** button.
 
-## Configure TeamAlert SSO SSO
+## Configure TeamAlert SSO
 
 To configure single sign-on on **TeamAlert SSO** side, you need to send the **App Federation Metadata Url** to [TeamAlert SSO support team](mailto:info@teamalert.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
