@@ -36,7 +36,7 @@ Customers can now bring one of the most powerful forms of access control in the 
 **Service category:** Enterprise Apps        
 **Product capability:** Identity Lifecycle Management     
 
-Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn't applicable to security groups, which are deleted permanently. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted. For more information, see: [servicePrincipal resource type](/graph/api/resources/serviceprincipal).
+Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn't applicable to security groups, which are deleted permanently. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted. For more information, see: [`servicePrincipal` resource type](/graph/api/resources/serviceprincipal).
 
 ---
 

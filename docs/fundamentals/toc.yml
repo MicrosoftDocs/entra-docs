@@ -26,7 +26,7 @@ items:
   - name: Add company branding
     href: how-to-customize-branding.md
   - name: Rename Azure AD
-    href: how-to-rename-azure-ad.md
+    href: how-to-rename-azure-ad.yml
   - name: Get the most out of documentation
     href: how-to-navigate.md
 - name: Users, groups, and licenses

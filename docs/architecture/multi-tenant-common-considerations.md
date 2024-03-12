@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 08/21/2023
+ms.date: 03/11/2024
 ms.author: jricketts
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
@@ -40,7 +40,7 @@ Synchronization requirements are unique to your organization's specific needs. A
 | Support sync to/from sovereign clouds |  | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
 | Control sync from resource tenant |  | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
 | Sync Group objects |  | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
-| Sync Manager links |  | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
+| Sync Manager links | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
 | Attribute level Source of Authority |  | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
 | Microsoft Entra write-back to Microsoft Windows Server Active Directory |  | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
 
@@ -135,7 +135,7 @@ Additionally, while you can use the following Conditional Access conditions, be 
 
 Review the [security checklist](/azure/security/fundamentals/steps-secure-identity) and [best practices](/azure/security/fundamentals/operational-best-practices) for guidance on securing your tenant. Ensure these best practices are followed and review them with any tenants that you collaborate closely with.
 
-### Conditional access
+### Conditional Access
 
 The following are considerations for configuring access control.
 

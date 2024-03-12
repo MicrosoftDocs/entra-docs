@@ -394,7 +394,7 @@ You can find more Microsoft Graph PowerShell documentation at [Microsoft Entra C
   
 ## Manage group settings using Microsoft Graph
 
-To configure and manage group settings using Microsoft Graph, see the [groupSetting resource type](/graph/api/resources/groupsetting?view=graph-rest-1.0&preserve-view=true) and its associated methods.
+To configure and manage group settings using Microsoft Graph, see the [`groupSetting` resource type](/graph/api/resources/groupsetting?view=graph-rest-1.0&preserve-view=true) and its associated methods.
 
 ## Additional reading
 

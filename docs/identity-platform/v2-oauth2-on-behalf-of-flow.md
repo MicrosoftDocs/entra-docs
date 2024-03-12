@@ -21,8 +21,6 @@ For the middle-tier service to make authenticated requests to the downstream ser
 
 This article describes how to program directly against the protocol in your application. When possible, we recommend you use the supported Microsoft Authentication Libraries (MSAL) instead to [acquire tokens and call secured web APIs](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows). Also refer to the [sample apps that use MSAL](sample-v2-code.md) for examples.
 
-[!INCLUDE [try-in-postman-link](includes/try-in-postman-link.md)]
-
 ## Client limitations
 
 If a service principal requested an app-only token and sent it to an API, that API would then exchange a token that doesn't represent the original service principal. This is because the OBO flow only works for user principals. Instead, it must use the [client credentials flow](v2-oauth2-client-creds-grant-flow.md) to get an app-only token. In the case of Single-page apps (SPAs), they should pass an access token to a middle-tier confidential client to perform OBO flows instead.

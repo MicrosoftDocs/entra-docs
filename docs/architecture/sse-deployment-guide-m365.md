@@ -89,7 +89,7 @@ This section describes how to enforce compliant network access to Microsoft 365 
 
       :::image type="content" source="media/sse-deployment-guide-m365/logs-conditional-access-failure-inline.png" alt-text="Screenshot of sign-in logs window showing Conditional Access tab highlighting a line where Result column is Failure." lightbox="media/sse-deployment-guide-m365/logs-conditional-access-failure-expanded.png":::
 
-1. From your test device with the Global Secure Access Client enabled, attempt to sign in to a different Microsoft Entra ID tenant with an external identity. Confirm that tenant restrictions block access.
+1. From your test device with the Global Secure Access Client enabled, attempt to sign in to a different Microsoft Entra tenant with an external identity. Confirm that tenant restrictions block access.
 
    :::image type="content" source="media/sse-deployment-guide-m365/log-in-access-is-blocked.png" alt-text="Screenshot of log-in window after submitting credentials showing Access is blocked message.":::
 
