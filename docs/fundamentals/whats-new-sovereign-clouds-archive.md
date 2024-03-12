@@ -150,7 +150,7 @@ The feature is available for both MFA and Password-less Phone Sign-in notificati
 We highly encourage our customers to adopt these critical security features to reduce accidental approvals of Authenticator notifications by end users.
 
 
-For more information, see: [How to use additional context in Microsoft Authenticator notifications - Authentication methods policy](~/identity/authentication/how-to-mfa-additional-context.md).
+For more information, see: [How to use additional context in Microsoft Authenticator notifications - Authentication methods policy](../identity/authentication/how-to-mfa-additional-context.md).
 
 ---
 
