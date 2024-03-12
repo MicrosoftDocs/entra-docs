@@ -69,7 +69,7 @@ procedureSection:
       - |  
         On the **Features** page, select the **Group Policy Management** feature.
 
-            ![Install the 'Group Policy Management' from the Features page](./media/entra-domain-services-admin-guide/install-rsat-server-manager-add-roles-gp-management.png)
+          ![Install the 'Group Policy Management' from the Features page](./media/entra-domain-services-admin-guide/install-rsat-server-manager-add-roles-gp-management.png)
       - |
         On the **Confirmation** page, select **Install**. It may take a minute or two to install the Group Policy Management tools.
       - |  
