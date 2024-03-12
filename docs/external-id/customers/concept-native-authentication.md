@@ -14,13 +14,11 @@ ms.author: cmulligan
 ---
 # Native authentication (preview)
 
-Microsoft Entra's native authentication allows you to create and host the user interface (UI) of your customer apps within the client application. By using native authentication, you have full control over the UI, so you can customize the design, logo placement, layout, and other elements to create a consistent, branded look. 
+Microsoft Entra ID for customers' native authentication empowers you to take complete control over the design of the sign-in experience of your mobile applications. It allows you to craft stunning, pixel-perfect authentication screens that are seamlessly integrated into your apps, rather than having to rely on browser-based solutions.  
+ 
+In the standard, browser-delegated mobile app sign-in process, users often experience a disruptive jump during authentication. They're taken to a system browser for authentication only to be redirected back to the app when the sign-in is complete. This leads to a diluted experience and branding can be compromised. While browser-delegated methods can reduce attack vectors and support single sign-on (SSO), it suffers from UI customization and user experience is poor.
 
-Native authentication is an alternative to browser-delegated authentication, where your app uses the system browser for authentication, then redirect back to the app when the authentication process is complete. While browser-delegated methods can reduce attack vectors and support single sign-on (SSO), it suffers from UI customization is limited and users experience is poor.
-
-Native authentication is the solution for app developers looking for solutions that give them greater control over the user interface and experience.
-
-Watch this [video](https://www.youtube.com/embed/20Tp0CM55rw) for an overview of native authentication capabilities.
+Native authentication is the solution for app developers looking for solutions that give them full control over the user interface and experience.
 
 [!INCLUDE [preview-alert](../customers/includes/preview-alert/preview-alert-ciam.md)]
 
@@ -40,15 +38,15 @@ When it comes to implementing authentication for mobile apps on External ID for 
 - Microsoft-hosted browser-delegated authentication.
 - Fully custom SDK based native authentication. 
 
-The approach you choose depends on your app’s specific requirements. While each app has unique authentication needs, there are some common considerations to keep in mind. Whether you choose native authentication or browser-delegated authentication, Microsoft Entra ID supports both of them.
+The approach you choose depends on your app’s specific requirements. While each app has unique authentication needs, there are some common considerations to keep in mind. Whether you choose native authentication or browser-delegated authentication, Microsoft Entra ID for customers supports both of them.
 
 The following table compares the two authentication methods to help you decide then right option for your app.
 
 |   | Browser-delegated authentication | Native authentication | 
 | ---- | --- |  --- |
-| **User authentication experience** | Users are taken to a system browser for authentication, then redirect back to the app when the authentication process is complete. This is recommended if the redirection doesn't negatively impact the end user experience. | Users are guided through a [rich, native mobile-first sign-up and sign-in journey](https://devblogs.microsoft.com/identity/wp-content/uploads/sites/74/2023/11/Native-Authentication.mp4) without ever leaving the app. |
+| **User authentication experience** | Users are taken to a system browser or embedded browser for authentication only to be redirected back to the app when the sign-in is complete. This is recommended if the redirection doesn't negatively impact the end user experience. | Users have a rich, native mobile-first sign-up and sign-in journey without ever leaving the app. |
 | **Customization experience** |Managed [branding and customization options](how-to-customize-branding-customers.md) are available as an out-of-the-box feature.  | This API-centric approach offers a high level of customization, providing extensive flexibility in design and the ability to create tailored interactions and flows. |
-| **Applicability**  | Suitable for workforce, B2B, and B2C apps, it can be used for native apps, single-page applications, and web apps. | For customer first-party apps, when the authorization server and app are operated by the same entity and the user perceives them both as the same entity.|
+| **Applicability**  | Suitable for workforce, B2B, and B2C apps, it can be used for native apps, single-page applications, and web apps. | For customer first-party mobile apps, when the authorization server and app are operated by the same entity and the user perceives them both as the same entity.|
 | **Go live effort** |  Low. Use it straight out of the box.  |High. The developer builds, owns, and maintains the authentication experience. |
 | **Maintenance effort** | Low. |High. For each feature that Microsoft releases, you need to update the SDK to use it.  |
 | **Security** | Most secure option. |Security responsibility is shared with developers, and best practices need to be followed. It's prone to phishing attacks. |
@@ -57,7 +55,7 @@ The following table compares the two authentication methods to help you decide t
 
 ## Feature availability
 
-The following table shows the availability of features for native and browser-delegated authentication. 
+The following table shows the availability of features for browser-delegated and native authentication. 
 
 |   | Browser-delegated authentication | Native authentication | 
 | ---- | --- |  --- |
@@ -70,9 +68,9 @@ The following table shows the availability of features for native and browser-de
 
 ## How to use native authentication
 
-You can build your customer-facing apps that use native authentication by using our native authentication APIs or Microsoft Authentication Library (MSAL) SDK for Android and iOS. Whenever possible, we recommend you use the MSAL SDK to add native authentication to your apps. 
+You can build your customer-facing apps that use native authentication by using our native authentication APIs or Microsoft Authentication Library (MSAL) SDK for Android and iOS. Whenever possible, we recommend you use the MSAL to add native authentication to your apps. 
 
-The native authentication APIs detail required only when you manually make raw HTTP requests to authenticate with Microsoft Entra. However, we don't recommend this approach. So, whenever possible, we recommend you use the MSAL SDK to add native authentication to your apps. For more information, explore our [Android](how-to-run-native-authentication-sample-android-app.md) and [iOS](how-to-run-native-authentication-sample-ios-app.md) tutorials. 
+If you're planning to create a mobile app on a framework currently not supported by MSAL, you may use our authentication API.  For more information, explore our [Android](how-to-run-native-authentication-sample-android-app.md) and [iOS](how-to-run-native-authentication-sample-ios-app.md) tutorials. 
 
 ## Related content 
 
