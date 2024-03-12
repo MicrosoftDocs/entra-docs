@@ -44,7 +44,9 @@
   - name: Location conditions
     href: location-condition.md
   - name: Authentication flows
-    href: concept-authentication-flows.md
+    href: concept-authentication-flows.md    
+  - name: Authentication transfer
+    href: concept-authentication-transfer.md
   - name: Workload identities
     href: workload-identity.md
   - name: Continuous access evaluation
