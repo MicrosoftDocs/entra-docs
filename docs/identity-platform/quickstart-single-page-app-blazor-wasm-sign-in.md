@@ -15,7 +15,7 @@ ms.topic: quickstart
 
 # Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using Blazor WebAssembly
 
-This quickstart uses a sample Blazor WebAssembly (WASM) single-page app (SPA) app to show you how to sign in users by using the [authorization code flow](./v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) and call the Microsoft Graph API. The sample uses the [Microsoft.Authentication.WebAssembly.Msal](https://www.nuget.org/packages/Microsoft.Authentication.WebAssembly.Msal) to handle authentication.
+This quickstart uses a sample Blazor WebAssembly (WASM) single-page app (SPA) app to show you how to sign in users by using the [authorization code flow](./v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) and call the Microsoft Graph API. The sample uses the [Microsoft.Authentication.WebAssembly.MSAL](https://www.nuget.org/packages/Microsoft.Authentication.WebAssembly.Msal) to handle authentication.
 
 ## Prerequisites
 

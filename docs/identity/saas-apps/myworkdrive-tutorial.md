@@ -147,7 +147,7 @@ In this section, you'll enable Britta Simon to use Azure single sign-on by grant
 	d. Click **Save**.
 
 	> [!NOTE]
-	> For additional information review the [MyWorkDrive Microsoft Entra ID support article](https://www.myworkdrive.com/support/saml-single-sign-on-azure-ad/).
+	> For additional information review the [MyWorkDrive Microsoft Entra support article](https://www.myworkdrive.com/support/saml-single-sign-on-azure-ad/).
 
 ### Create MyWorkDrive test user
 

@@ -10,7 +10,7 @@ author: csmulligan
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-# Customer intent: As an administrator managing B2B collaboration, I want to easily invite guest users from the Entra admin center, so that I can securely share my company's applications and services with external partners and maintain control over my corporate data.
+# Customer intent: As an administrator managing B2B collaboration, I want to easily invite guest users from the Microsoft Entra admin center, so that I can securely share my company's applications and services with external partners and maintain control over my corporate data.
 ---
 
 # B2B collaboration overview
@@ -38,11 +38,11 @@ With Microsoft Entra B2B, the partner uses their own identity management solutio
 
 B2B collaboration is enabled by default, but comprehensive admin settings let you control your inbound and outbound B2B collaboration with external partners and organizations:
 
-- For B2B collaboration with other Microsoft Entra organizations, use [cross-tenant access settings](cross-tenant-access-overview.md). Manage inbound and outbound B2B collaboration, and scope access to specific users, groups, and applications. Set a default configuration that applies to all external organizations, and then create individual, organization-specific settings as needed. Using cross-tenant access settings, you can also trust multi-factor (MFA) and device claims (compliant claims and Microsoft Entra hybrid joined claims) from other Microsoft Entra organizations.
+- For B2B collaboration with other Microsoft Entra organizations, use [cross-tenant access settings](cross-tenant-access-overview.md). Manage inbound and outbound B2B collaboration, and scope access to specific users, groups, and applications. Set a default configuration that applies to all external organizations, and then create individual, organization-specific settings as needed. Using cross-tenant access settings, you can also trust multifactor (MFA) and device claims (compliant claims and Microsoft Entra hybrid joined claims) from other Microsoft Entra organizations.
 
 - Use [external collaboration settings](external-collaboration-settings-configure.md) to define who can invite external users, allow or block B2B specific domains, and set restrictions on guest user access to your directory.
 
-- Use [Microsoft cloud settings](cross-cloud-settings.md) to establish mutual B2B collaboration between the Microsoft Azure global cloud and [Microsoft Azure Government](/azure/azure-government/) or [Microsoft Azure operated by 21Vianet](/azure/china/).
+- Use [Microsoft Cloud settings](cross-cloud-settings.md) to establish mutual B2B collaboration between the Microsoft Azure global cloud and [Microsoft Azure Government](/azure/azure-government/) or [Microsoft Azure operated by 21Vianet](/azure/china/).
 
 ## Easily invite guest users from the Microsoft Entra admin center
 
