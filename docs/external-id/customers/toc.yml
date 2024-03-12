@@ -290,7 +290,7 @@ items:
       items:
         - name: Native authentication
           href: concept-native-authentication.md
-        - name: native authentication challenge types
+        - name: Native authentication challenge types
           href: concept-native-authentication-challenge-types.md
     - name: Customizing the sign-in look and feel
       href: concept-branding-customers.md
