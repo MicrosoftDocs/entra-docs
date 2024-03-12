@@ -84,7 +84,7 @@ Accidental deletion of users in your apps or in your on-premises directory could
 **Service category:** Azure AD Connect cloud sync
 **Product capability:** Identity Lifecycle Management
 
-Password writeback in Azure AD Connect cloud sync now provides customers the ability to synchronize Azure AD password changes made in the cloud to an on-premises directory in real time. This can be accomplished using the lightweight Azure AD cloud provisioning agent. For more information, see: [Tutorial: Enable cloud sync self-service password reset writeback to an on-premises environment](~/identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md).
+Password writeback in Azure AD Connect cloud sync now provides customers the ability to synchronize Azure AD password changes made in the cloud to an on-premises directory in real time. This can be accomplished using the lightweight Azure AD cloud provisioning agent. For more information, see: [Tutorial: Enable cloud sync self-service password reset writeback to an on-premises environment](../identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md).
 
 ---
 
