@@ -89,7 +89,7 @@ If you want the users who had a resource role membership to also be assigned to 
 
     ![Access package - Add resource roles](./media/entitlement-management-access-package-resources/resource-roles-add.png)
 
-1. Depending on whether you want to add a membership of a group or team, access to an application, SharePoint site, License(Preview), Power Platform(Preview), or Microsoft Entra role(Preview) perform the steps in one of the following resource role sections.
+1. Depending on whether you want to add a membership of a group or team, access to an application, SharePoint site, or Microsoft Entra role(Preview) perform the steps in one of the following resource role sections.
 
 ## Add a group or team resource role
 
