@@ -127,7 +127,7 @@ You might want to automatically redeem invitations so users don't have to accept
 
 :::image type="content" source="media/redemption-experience/email-consent-prompt-suppressed.png" alt-text="Screenshot that shows B2B notification email when the consent prompt is suppressed.":::
 
-For information about how to automatically redeem invitations, see [cross-tenant access overview](cross-tenant-access-overview.md#automatic-redemption-setting) and [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.md).
+For information about how to automatically redeem invitations, see [cross-tenant access overview](cross-tenant-access-overview.md#automatic-redemption-setting) and [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml).
 
 ## Next steps
 
