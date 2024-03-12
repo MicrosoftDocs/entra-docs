@@ -37,7 +37,7 @@ When you [invite a guest user](add-users-administrator.md) to B2B collaboration,
 
 ### Microsoft Entra account in self-service sign-up user flows
 
-Microsoft Entra account is an identity provider option for your self-service sign-up user flows. Users can sign up for your applications using their own Microsoft Entra accounts. First, you need to [enable self-service sign-up](self-service-sign-up-user-flow.md) for your tenant. Then you can set up a user flow for the application and select Microsoft Entra ID as one of the sign-in options.
+Microsoft Entra account is an identity provider option for your self-service sign-up user flows. Users can sign up for your applications using their own Microsoft Entra accounts. First, you need to [enable self-service sign-up](self-service-sign-up-user-flow.yml) for your tenant. Then you can set up a user flow for the application and select Microsoft Entra ID as one of the sign-in options.
 
 :::image type="content" source="media/default-account/default-account-user-flow.png" alt-text="Screenshot of Microsoft Entra account in a self-service sign-up user flow." lightbox="media/default-account/default-account-user-flow.png":::
 
@@ -53,4 +53,4 @@ As of November 2020, new application registrations show up as unverified in the 
 
 - [Microsoft account](microsoft-account.md)
 - [Add Microsoft Entra B2B collaboration users](add-users-administrator.md)
-- [Add self-service sign-up to an app](self-service-sign-up-user-flow.md)
+- [Add self-service sign-up to an app](self-service-sign-up-user-flow.yml)
