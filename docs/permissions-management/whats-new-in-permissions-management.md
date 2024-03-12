@@ -14,6 +14,18 @@ ms.author: jfields
 
 This article provides the latest Public Preview and General Availability of features in Microsoft Entra Permissions Management. 
 
+## March 2023
+
+### Public Preview - Support for PIM-enabled Groups 
+**Type:** Changed feature   
+**Service category:**                      
+**Product capability:** Permissions Management  
+
+As multiple customers embrace PIM for groups as a popular feature, Microsoft Entra Permissions Management adds the support to read the just-in-time membership impact on the eligible granted Azure RBAC permissions and Permissions Creep Index (PCI). The feature enables the complete visibility into RBAC permissions assigned to the identities in different ways.  
+ 
+In the Permissions Management console, admins can see the membership eligibility status as well as role eligibility status for Groups. For each identity, admins can get the visibility into the membership eligibility status as well as roles eligibility status. 
+
+
 ## December 2023
 
 ### General availability - Permissions Analytics Report PDF

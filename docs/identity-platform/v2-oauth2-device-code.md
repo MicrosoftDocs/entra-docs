@@ -19,8 +19,6 @@ The Microsoft identity platform supports the [device authorization grant](https:
 
 This article describes how to program directly against the protocol in your application.  When possible, we recommend you use the supported Microsoft Authentication Libraries (MSAL) instead to [acquire tokens and call secured web APIs](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows). You can refer to [sample apps that use MSAL](sample-v2-code.md) for examples.
 
-[!INCLUDE [try-in-postman-link](includes/try-in-postman-link.md)]
-
 ## Protocol diagram
 
 The entire device code flow is shown in the following diagram. Each step is explained throughout this article.
