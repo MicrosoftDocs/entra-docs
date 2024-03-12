@@ -5,18 +5,23 @@ description: Create Conditional Access policies using signals from Adaptive prot
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 02/29/2024
+ms.date: 03/12/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: poulomib
 ---
-# Common Conditional Access policy: Insider risk based policy
+# Common Conditional Access policy: Block access for users with insider risk (Preview)
 
-Most users have a normal behavior that can be tracked, when they fall outside of this norm it could be risky to allow them to just sign in. You may want to block that user or maybe just ask them to perform multifactor authentication to prove that they're really who they say they are. Microsoft Purview can provide an insider risk signal to Conditional Access. This signal allows administrators to refine access control decisions. Insider risk management is part of [Microsoft Purview](/purview/insider-risk-management-adaptive-protection). You must enable it before you can use the signal in Conditional Access.
+Most users have a normal behavior that can be tracked, when they fall outside of this norm it could be risky to allow them to just sign in. You may want to block that user or maybe just ask them to review a [terms of use policy](terms-of-use.md). Microsoft Purview can provide an [insider risk signal](concept-conditional-access-conditions.md#insider-risk-preview) to Conditional Access to refine access control decisions. Insider risk management is part of [Microsoft Purview](/purview/insider-risk-management-adaptive-protection). You must enable it before you can use the signal in Conditional Access.
 
 :::image type="content" source="media/how-to-policy-insider-risk/insider-risk-based-conditional-access-policy.png" alt-text="Screenshot of an example Conditional Access policy using insider risk as a condition." lightbox="media/how-to-policy-insider-risk/insider-risk-based-conditional-access-policy.png":::
+
+## User exclusions
+[!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
+
+[!INCLUDE [active-directory-policy-deploy-template](~/includes/entra-policy-deploy-template.md)]
 
 ## Block access with Conditional Access policy
 
@@ -29,14 +34,18 @@ Most users have a normal behavior that can be tracked, when they fall outside of
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
-   1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
+   1. Under **Exclude**:
+      1. Select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
+      1. Select **Guest or external users** and choose the following:
+         1. **B2B direct connect users**.
+         1. **Service provider users**.
+         1. **Other external users**.
 1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
 1. Under **Conditions** > **Insider risk**, set **Configure** to **Yes**. 
    1. Under **Select the risk levels that must be assigned to enforce the policy**. 
-   1. Select **Elevated**.
-   1. Select **Done**.
-1. Under **Access controls** > **Block**.
-   1. Select **Select**.
+      1. Select **Elevated**.
+      1. Select **Done**.
+1. Under **Access controls** > **Grant**, select **Block access**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
