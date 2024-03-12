@@ -100,7 +100,7 @@ Password writeback in Azure AD Connect cloud sync now provides customers the abi
 
 Accidental deletion of users in any system could be disastrous. We’re excited to announce the general availability of the accidental deletions prevention capability as part of the Azure AD provisioning service. When the number of deletions to be processed in a single provisioning cycle spikes above a customer defined threshold, the Azure AD provisioning service pauses, provide you with visibility into the potential deletions, and allow you to accept or reject the deletions. This functionality has historically been available for Azure AD Connect, and Azure AD Connect cloud sync. It's now available across the various provisioning flows, including both HR-driven provisioning and application provisioning.
 
-For more information, see: [Enable accidental deletions prevention in the Azure AD provisioning service](~/identity/app-provisioning/accidental-deletions.md)
+For more information, see: [Enable accidental deletions prevention in the Azure AD provisioning service](../identity/app-provisioning/accidental-deletions.md)
 
 ---
 
