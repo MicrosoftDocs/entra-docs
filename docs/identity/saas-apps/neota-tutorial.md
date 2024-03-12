@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
-    In the **Sign on URL text box, type a URL using the following pattern:
+    In the **Sign on URL** text box, type a URL using the following pattern:
     `https://<SUBDOMAIN>.neotalogic.com/wb`
 
 	> [!NOTE]
