@@ -1128,7 +1128,7 @@ No functionalities are removed. The new PDF viewer adds functionality and the li
 Privileged Identity Management (PIM) role activation has been expanded to the Billing and AD extensions in the Azure portal. Shortcuts have been added to Subscriptions (billing) and Access Control (AD) to allow users to activate PIM roles directly from these settings. From the Subscriptions settings, select **View eligible subscriptions** in the horizontal command menu to check your eligible, active, and expired assignments. From there, you can activate an eligible assignment in the same pane. In Access control (IAM) for a resource, you can now select **View my access** to see your currently active and eligible role assignments and activate directly. By integrating PIM capabilities into different Azure portal blades, this new feature allows users to gain temporary access to view or edit subscriptions and resources more easily.
 
 
-For more information Microsoft cloud settings, see: [Activate my Azure resource roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles.md).
+For more information Microsoft cloud settings, see: [Activate my Azure resource roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles.yml).
 
 ---
 
