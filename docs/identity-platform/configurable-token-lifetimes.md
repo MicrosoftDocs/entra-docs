@@ -114,7 +114,7 @@ All timespans used here are formatted according to the C# [TimeSpan](/dotnet/api
 
 ## REST API reference
 
-You can configure token lifetime policies and assign them to apps using Microsoft Graph. For more information, see the [tokenLifetimePolicy resource type](/graph/api/resources/tokenlifetimepolicy) and its associated methods.
+You can configure token lifetime policies and assign them to apps using Microsoft Graph. For more information, see the [`tokenLifetimePolicy` resource type](/graph/api/resources/tokenlifetimepolicy) and its associated methods.
 
 ## Cmdlet reference
 

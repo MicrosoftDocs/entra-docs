@@ -1,8 +1,8 @@
 ---
 title: Get started with Global Secure Access (preview)
 description: Configure the main components of Microsoft Entra Internet Access and Microsoft Entra Private Access, which make up Global Secure Access, Microsoft's Security Service Edge solution.
-author: shlipsey3
-ms.author: sarahlipsey
+author: kenwith
+ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
 ms.date: 11/02/2023
@@ -67,7 +67,7 @@ Set up Quick Access for broader access to your network using Microsoft Entra Pri
 
 ![Diagram of the Quick Access traffic flow for private resources.](media/how-to-get-started-with-global-secure-access/private-access-diagram-quick-access.png)
 
-1. [Configure an Microsoft Entra application proxy connector and connector group](how-to-configure-connectors.md).
+1. [Configure a Microsoft Entra application proxy connector and connector group](how-to-configure-connectors.md).
 1. [Configure Quick Access to your private resources](how-to-configure-quick-access.md).
 1. [Enable the Private Access traffic forwarding profile](how-to-manage-private-access-profile.md).
 1. [Install and configure the Global Secure Access Client on end-user devices](how-to-install-windows-client.md).

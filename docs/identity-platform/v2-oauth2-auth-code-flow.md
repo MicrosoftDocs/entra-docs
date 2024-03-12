@@ -31,8 +31,6 @@ Use the auth code flow paired with Proof Key for Code Exchange (PKCE) and OpenID
 
 The OAuth 2.0 authorization code flow is described in [section 4.1 of the OAuth 2.0 specification](https://tools.ietf.org/html/rfc6749). Apps using the OAuth 2.0 authorization code flow acquire an `access_token` to include in requests to resources protected by the Microsoft identity platform (typically APIs). Apps can also request new ID and access tokens for previously authenticated entities by using a refresh mechanism.
 
-[!INCLUDE [try-in-postman-link](includes/try-in-postman-link.md)]
-
 This diagram shows a high-level view of the authentication flow:
 
 ![Diagram shows OAuth authorization code flow. Native app and Web A P I interact by using tokens as described in this article.](./media/v2-oauth2-auth-code-flow/convergence-scenarios-native.svg)
