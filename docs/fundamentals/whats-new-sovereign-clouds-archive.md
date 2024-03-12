@@ -26,7 +26,7 @@ The primary [What's new in sovereign clouds release notes](whats-new-sovereign-c
 **Service category:** Conditional Access          
 **Product capability:** Identity Security & Protection     
 
-Customers can now bring one of the most powerful forms of access control in the industry to workload identities. Conditional Access supports risk-based policies for workload identities. Organizations can block sign-in attempts when Identity Protection detects compromised apps or services. For more information, see: [Create a risk-based Conditional Access policy](~/identity/conditional-access/workload-identity.md#create-a-risk-based-conditional-access-policy).
+Customers can now bring one of the most powerful forms of access control in the industry to workload identities. Conditional Access supports risk-based policies for workload identities. Organizations can block sign-in attempts when Identity Protection detects compromised apps or services. For more information, see: [Create a risk-based Conditional Access policy](../identity/conditional-access/workload-identity.md#create-a-risk-based-conditional-access-policy).
 
 ---
 
