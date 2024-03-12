@@ -28,7 +28,7 @@ Watch this [video](https://www.youtube.com/embed/20Tp0CM55rw) for an overview of
 
 Currently, native authentication supports local account identity provider for two authentications methods: 
 
-- Email with one-time passcode sign-in (OTP).
+- Email with one-time passcode (OTP) sign-in.
 - Email and password sign-in with support for self-service password reset (SSPR). 
 
 Native authentication doesn't yet support federated identity providers such as social or enterprise identities. 
@@ -78,4 +78,5 @@ The native authentication APIs detail required only when you manually make raw H
 
 - [Android native authentication tutorials](how-to-run-native-authentication-sample-android-app.md).
 - [iOS native authentication tutorials](how-to-run-native-authentication-sample-ios-app.md).
-- [Native authentication API documentation](../../identity-platform/reference-native-authentication-overview.md).
+- [Native authentication API reference](../../identity-platform/reference-native-authentication-overview.md).
+- [Native authentication challenge types](concept-native-authentication-challenge-types.md).

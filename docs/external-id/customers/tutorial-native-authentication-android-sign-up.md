@@ -145,6 +145,8 @@ Make sure you include the import statements. Android Studio should include the i
 
 You've completed all the necessary steps to successfully sign up a user into your app. Build and run your application. If all good, you should be able to collect an email from a user, and collect the OTP code that the user receives in their email address and use it to successfully sign up the user. 
 
+If 
+
 ## Next steps 
 
 [Tutorial: Add sign in and sign out with email one-time passcode in Android app](tutorial-native-authentication-android-sign-in-sign-out.md). 

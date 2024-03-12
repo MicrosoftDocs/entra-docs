@@ -48,7 +48,11 @@ A sign-up flow with email OTP uses similar endpoints as sign-up with email with 
 
 ### Challenge types
 
-The API allows the app to advertise the authentication methods it supports to Microsoft Entra. To do so, the app uses the `challenge_type` parameter in its request. A sign-up flow with email OTP uses *oob* and *redirect* challenge types as described in [Challenge types](reference-native-authentication-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json#self-service-password-reset-challenge-types).
+The API allows the app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra. To do so, the app uses the `challenge_type` parameter in its requests. This parameter holds predefined values, which represent different authentication methods.
+
+For then email OTP sign-up flow, the challenge type values are *oob* and *redirect*.  
+
+Learn more about challenge types in the [native authentication challenge types](../external-id/customers/concept-native-authentication-challenge-types.md).
 
 ### Sign-up flow protocol details
 
@@ -673,7 +677,11 @@ Sign in with email OTP uses similar endpoints as email with password as describe
 
 ### Challenge types
 
-The API allows the app to advertise the authentication methods it supports to Microsoft Entra. To do so, the app includes the `challenge_type` parameter in its requests. Sign in with mail OTP uses *oob* and *redirect* challenge types as described in [Challenge types](reference-native-authentication-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json#sign-in-challenge-types).
+The API allows the app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra. To do so, the app uses the `challenge_type` parameter in its requests. This parameter holds predefined values, which represent different authentication methods.
+
+For the email OTP sign-in flow, the challenge type values are *oob* and *redirect*.  
+
+Learn more about challenge types in the [native authentication challenge types](../external-id/customers/concept-native-authentication-challenge-types.md).
 
 ### Sign-in flow protocol details
 

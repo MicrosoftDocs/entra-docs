@@ -96,7 +96,7 @@ Follow these steps to create configuration file:
 
 ### Optional: Logging configuration 
 
-Turn onn logging at app creation by creating a logging callback. Without a logging method, the library won't output logs. 
+Turn on logging at app creation by creating a logging callback. Without a logging method, the library won't output logs. 
 
 ```kotlin 
 import com.microsoft.identity.client.Logger
@@ -107,7 +107,7 @@ fun initialize(context: Context) {
         }
     }
 ```
-To configure the logger, a logging section needs to be added in the configuration file: 
+To configure the logger, a logging you need to add a section in the configuration file, `auth_config_native_auth.json`: 
 
 ```json 
    { 

@@ -287,7 +287,11 @@ items:
     - name: Authentication methods and identity providers
       href: concept-authentication-methods-customers.md
     - name: Native authentication
-      href: concept-native-authentication.md
+      items:
+        - name: Native authentication
+          href: concept-native-authentication.md
+        - name: native authentication challenge types
+          href: concept-native-authentication-challenge-types.md
     - name: Customizing the sign-in look and feel
       href: concept-branding-customers.md
     - name: Add your own business logic
