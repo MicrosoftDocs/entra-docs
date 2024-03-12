@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 03/04/2024
+ms.date: 03/12/2024
 ms.author: jeedes
 
 ---
@@ -79,10 +79,10 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier** textbox, type a value using the following pattern:
-    `urn:amazon:cognito:sp:<UserPool_ID>`
+    `urn:amazon:cognito:sp:<UserPoolID>`
 
     b. In the **Reply URL** textbox, type a URL using the following pattern:
-    `https://<UserPool_Name>.auth.<Region>.amazoncognito.com/saml2/idpresponse`
+    `https://<UserPoolName>.auth.<Region>.amazoncognito.com/saml2/idpresponse`
 
     c. In the **Sign on URL** text box, type a URL using the following pattern:
     `https://irca.<Environment>.fm.ks.irdeto.com/`
