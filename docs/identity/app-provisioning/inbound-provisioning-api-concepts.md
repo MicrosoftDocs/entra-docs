@@ -72,6 +72,10 @@ In all of the above scenarios, integration is simplified as the Microsoft Entra 
 - Admins can check provisioning progress by viewing the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md). 
 - API clients can track progress by querying [provisioning logs API](/graph/api/resources/provisioningobjectsummary).
 
+### License requirements
+
+This feature is available with Microsoft Entra ID P1, P2, and Microsoft Entra ID Governance licenses. To find the right license for your requirements, see [Microsoft Entra ID Governance licensing fundamentals.](https://go.microsoft.com/fwlink/?linkid=2262973)
+
 ### API usage guidance
 
 The ```/bulkUpload``` API endpoint expands the number of ways that you can manage users in Entra ID. To help you determine if the ```/bulkUpload``` API endpoint is right for your integration scenario, refer to this table that compares it with other API-based integration options.

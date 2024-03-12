@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: faq
-ms.date: 05/31/2023
+ms.date: 03/11/2024
 ms.author: owinfrey
 ms.reviewer: krbain
 ms.custom: template-tutorial
@@ -22,7 +22,7 @@ In this article, you'll find questions to commonly asked questions about [Lifecy
 Yes, custom workflows can be configured for members or guests in your tenant. Workflows can run for all types of external guests, external members, internal guests and internal members.
 
 ### Why do I see "Lifecycle Management" instead of "Lifecycle Workflows"?
-For a small portion of our customers, Lifecycle Workflows may still be listed under the former name Lifecycle Management in the audit logs and enterprise applications.
+For a small portion of our customers, Lifecycle Workflows could still be listed under the former name Lifecycle Management in the audit logs and enterprise applications.
 
 ### Do I need to map employeeHireDate in provisioning apps like WorkDay?
 
@@ -38,7 +38,7 @@ Some tasks do update existing attributes; however, we don’t currently share th
 
 ### Is it possible for me to create new tasks and how? For example, triggering other graph APIs/web hooks?
 
-We currently don’t support the ability to create new tasks outside of the set of tasks supported in the task templates. As an alternative, you may accomplish this by setting up a logic app and then creating a logic apps task in Lifecycle Workflows with the URL. For more information, see [Trigger Logic Apps based on custom task extensions](trigger-custom-task.md)
+We currently don’t support the ability to create new tasks outside of the set of tasks supported in the task templates. As an alternative, you can accomplish this by setting up a logic app and then creating a logic apps task in Lifecycle Workflows with the URL. For more information, see [Trigger Logic Apps based on custom task extensions](trigger-custom-task.md).
 
 ## Next steps
 
