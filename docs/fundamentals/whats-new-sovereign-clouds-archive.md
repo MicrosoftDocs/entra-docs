@@ -208,7 +208,7 @@ For more information on how to use this feature, see: [Dynamic membership rule f
 **Product capability:** Identity Lifecycle Management  
  
 
-Pick a group of up to five members and provision them into your third-party applications in seconds. Get started testing, troubleshooting, and provisioning to non-Microsoft applications such as ServiceNow, ZScaler, and Adobe. For more information, see: [On-demand provisioning in Azure Active Directory](~/identity/app-provisioning/provision-on-demand.md).
+Pick a group of up to five members and provision them into your third-party applications in seconds. Get started testing, troubleshooting, and provisioning to non-Microsoft applications such as ServiceNow, ZScaler, and Adobe. For more information, see: [On-demand provisioning in Azure Active Directory](../identity/app-provisioning/provision-on-demand.md).
  
 ---
 
