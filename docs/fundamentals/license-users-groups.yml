@@ -90,16 +90,16 @@ procedureSection:
 
           :::image type="content" source="media/license-users-groups/license-option-blade-assignments.png" alt-text="Screenshot of the License option page, with all options available in the license plan.":::
 
-        The **Assign license** page updates to show that a user is selected and that the assignments are configured.
+          The **Assign license** page updates to show that a user is selected and that the assignments are configured.
 
-        > [!NOTE]
-        > Not all Microsoft services are available in all locations. Before a license can be assigned to a user, you must specify the **Usage location**. You can set this value in **Identity** > **Users** > **All users** > *select a user* > **Properties**. When assigning licenses to a group or bulk updates such as disabling the synchronization status for the organization, any user whose usage location isn't specified inherits the location of the tenant.
+          > [!NOTE]
+          > Not all Microsoft services are available in all locations. Before a license can be assigned to a user, you must specify the **Usage location**. You can set this value in **Identity** > **Users** > **All users** > *select a user* > **Properties**. When assigning licenses to a group or bulk updates such as disabling the synchronization status for the organization, any user whose usage location isn't specified inherits the location of the tenant.
 
       1. Select **Assign**.
 
-        The user is added to the list of licensed users and has access to the included Microsoft Entra services.
-        > [!NOTE]
-        > Licenses can also be assigned directly to a user from the user's **Licenses** page. If a user has a license assigned through a group membership and you want to assign the same license to the user directly, it can be done only from the **Products** page mentioned in step 1 only.
+          The user is added to the list of licensed users and has access to the included Microsoft Entra services.
+          > [!NOTE]
+          > Licenses can also be assigned directly to a user from the user's **Licenses** page. If a user has a license assigned through a group membership and you want to assign the same license to the user directly, it can be done only from the **Products** page mentioned in step 1 only.
 
       ### To assign a license to a group
     steps:
@@ -124,13 +124,11 @@ procedureSection:
 
           :::image type="content" source="media/license-users-groups/license-option-blade-group-assignments.png" alt-text="Screenshot of the License option page, with all options available in the license plan 2.":::
 
-            The **Assign license** page updates to show that a user is selected and that the assignments are configured.
+          The **Assign license** page updates to show that a user is selected and that the assignments are configured.
       - |
         Select **Assign**.
 
           The group is added to the list of licensed groups and all of the members have access to the included Microsoft Entra services.
-            Anyone who has a business need to use a licensed Microsoft Entra service must have the required licenses. You can add licensing rights to users or to an entire group.
-
             
   - title: |
       Remove a license
@@ -145,8 +143,8 @@ procedureSection:
 
         :::image type="content" source="media/license-users-groups/license-products-user-blade-with-remove-option-highlight.png" alt-text="Screenshot of the Licensed users page with Remove license option highlighted.":::
 
-      > [!IMPORTANT]
-      > Licenses that a user inherits from a group can't be removed directly. Instead, you have to remove the user from the group from which they're inheriting the license.
+        > [!IMPORTANT]
+        > Licenses that a user inherits from a group can't be removed directly. Instead, you have to remove the user from the group from which they're inheriting the license.
 
       ### To remove a license from a group
     steps: 
