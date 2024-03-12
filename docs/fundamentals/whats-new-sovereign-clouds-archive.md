@@ -128,7 +128,7 @@ To prevent accidental notification approvals, admins can now require users to en
 The number matching feature greatly up-levels the security posture of the Microsoft Authenticator app and protects organizations from MFA fatigue attacks. We highly encourage our customers to adopt this feature applying the rollout controls we have built. Number Matching will begin to be enabled for all users of the Microsoft Authenticator app starting 27th of February 2023.
 
 
-For more information, see: [How to use number matching in multifactor authentication (MFA) notifications - Authentication methods policy](~/identity/authentication/how-to-mfa-number-match.md).
+For more information, see: [How to use number matching in multifactor authentication (MFA) notifications - Authentication methods policy](../identity/authentication/how-to-mfa-number-match.md).
 
 ---
 
