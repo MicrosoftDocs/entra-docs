@@ -27,7 +27,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites 
 
-- [How to run the iOS sample app](how-to-run-native-authentication-sample-ios-app.md). Ensure that when creating the user flow, you select **Email with password** in the **Identity providers** section, and choose **Country/Region** and **City** under **User attributes**.
+- [Sign in users in sample iOS (Swift) mobile app by using native authentication](how-to-run-native-authentication-sample-ios-app.md). Ensure that when creating the user flow, you select **Email with password** in the **Identity providers** section, and choose **Country/Region** and **City** under **User attributes**.
 - [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md).
 - [Collect user attributes during sign-up](how-to-define-custom-attributes.md).
 
