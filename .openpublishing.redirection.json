@@ -21,6 +21,11 @@
       "redirect_document_id": true
     },
     {
+      "source_path_from_root": "/docs/id-protection/reference-identity-protection-glossary.md",
+      "redirect_url": "/entra/id-protection/overview-identity-protection",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/id-protection/concept-identity-protection-security-overview.md",
       "redirect_url": "/entra/id-protection/id-protection-dashboard",
       "redirect_document_id": true
@@ -309,6 +314,11 @@
     {
       "source_path_from_root": "/docs/identity-platform/tutorial-blazor-webassembly.md",
       "redirect_url": "/entra/identity-platform/quickstart-single-page-app-blazor-wasm-sign-in",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/hybrid/connect/how-to-connect-group-writeback-v2.md",
+      "redirect_url": "/entra/identity/hybrid/group-writeback-cloud-sync",
       "redirect_document_id": false
     }
 

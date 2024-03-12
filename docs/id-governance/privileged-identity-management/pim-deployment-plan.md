@@ -159,7 +159,7 @@ First, ensure that all Global and Security admin roles are managed using PIM bec
 
 <a name='configure-pim-settings-for-azure-ad-roles'></a>
 
-You can use the Privileged label to identify roles with high privileges that you can manage with PIM. Privileged label is present on [**Roles and Administrator**](~/identity/role-based-access-control/privileged-roles-permissions.md?tabs=admin-center) in Microsoft Entra ID admin center. See the article, [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md) to learn more.
+You can use the Privileged label to identify roles with high privileges that you can manage with PIM. Privileged label is present on [**Roles and Administrator**](~/identity/role-based-access-control/privileged-roles-permissions.md?tabs=admin-center) in Microsoft Entra admin center. See the article, [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md) to learn more.
 
 ### Configure PIM settings for Microsoft Entra roles
 

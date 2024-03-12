@@ -112,9 +112,6 @@ To enable SSPR writeback, first enable the writeback option in Microsoft Entra C
 1. On the **Connect to Microsoft Entra ID** page, enter a Global Administrator credential for your Azure tenant, and then select **Next**.
 1. On the **Connect directories** and **Domain/OU** filtering pages, select **Next**.
 1. On the **Optional features** page, select the box next to **Password writeback** and select **Next**.
-
-    ![Configure Microsoft Entra Connect for password writeback](media/tutorial-enable-sspr-writeback/enable-password-writeback.png)
-
 1. On the **Directory extensions** page, select **Next**.
 1. On the **Ready to configure** page, select **Configure** and wait for the process to finish.
 1. When you see the configuration finish, select **Exit**.
@@ -132,10 +129,6 @@ To enable password writeback in SSPR, complete the following steps:
 1. Check the option for **Write back passwords to your on-premises directory** .
 1. (optional) If Microsoft Entra Connect provisioning agents are detected, you can additionally check the option for **Write back passwords with Microsoft Entra Connect cloud sync**.   
 3. Check the option for **Allow users to unlock accounts without resetting their password** to *Yes*.
-
-   > [!div class="mx-imgBorder"]
-   > ![Screenshot of how to manage settings password writeback.](media/tutorial-enable-sspr-writeback/manage-settings.png)
-
 1. When ready, select **Save**.
 
 ## Clean up resources
