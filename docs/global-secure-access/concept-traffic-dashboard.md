@@ -1,8 +1,8 @@
 ---
 title: Global Secure Access (preview) network traffic dashboard
 description: Learn how to use the Global Secure Access (preview) network traffic dashboard.
-author: shlipsey3
-ms.author: sarahlipsey
+author: kenwith
+ms.author: kenwith
 manager: amycolannino
 ms.topic: conceptual
 ms.date: 01/25/2024

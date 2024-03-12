@@ -94,7 +94,7 @@ To configure this setting
 
 If after investigation and confirming that the user account isn't at risk of being compromised, then you can choose to dismiss the risky user.
 
-To Dismiss user risk in the [Microsoft Entra admin center](https://entra.microsoft.com), browse to **Protection** > **Identity Protection** > **Risky users**, select the affected user, and select **Dismiss user(s) risk**.
+To Dismiss user risk as at least a [Security Operator](~/identity/role-based-access-control/permissions-reference.md#security-operator) in the [Microsoft Entra admin center](https://entra.microsoft.com), browse to **Protection** > **Identity Protection** > **Risky users**, select the affected user, and select **Dismiss user(s) risk**.
 
 When you select **Dismiss user risk**, the user is no longer at risk, and all the risky sign-ins of this user and corresponding risk detections are dismissed as well.
 

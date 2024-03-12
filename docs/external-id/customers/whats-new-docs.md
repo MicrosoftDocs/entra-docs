@@ -19,7 +19,8 @@ Welcome to what's new in Microsoft Entra ID for customers documentation. This ar
 
 ### New articles
 
-- [Test your sign-up and sign-in user flow](how-to-test-user-flows.md)
+- [Test your sign-up and sign-in user flow](how-to-test-user-flows.md) - Describes the Run user flow feature
+- [Get started with the Microsoft Entra External ID extension for Visual Studio Code](visual-studio-code-extension.md)
 
 ### Updated articles
 

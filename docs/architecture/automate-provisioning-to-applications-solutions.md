@@ -51,7 +51,7 @@ Use the numbered sections in the next two section to cross reference the followi
 
 1. For users in Microsoft Windows Server Active Directory that need access to Office 365 or other applications that are connected to Microsoft Entra ID, Microsoft Entra Connect cloud sync is the first solution to explore. It provides a lightweight solution to create users in Microsoft Entra ID, manage password rests, and synchronize groups. Configuration and management are primarily done in the cloud, minimizing your on-premises footprint. It provides high availability and automatic failover, ensuring password resets and synchronization continue, even if there's an issue with on-premises servers.
 
-1. For complex, large-scale Microsoft Windows Server Active Directory to Azure AD Sync needs such as synchronizing groups over 50,000 and device sync, customers can use Microsoft Entra Connect Sync to meet their needs.
+1. For complex, large-scale Microsoft Windows Server Active Directory to Azure AD Sync requirements such as synchronizing large groups (over 50,000 members), and device sync, use Microsoft Entra Connect Sync.
 
 **Synchronize identities from Microsoft Entra ID into AD DS**
 

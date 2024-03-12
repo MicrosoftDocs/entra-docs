@@ -99,10 +99,6 @@ Content-Type: application/json
 }
 ```
 
-## Known issue
-
-A fix for [FIDO2 security keys](~/identity-platform/support-fido2-authentication.md#mobile) is being rolled out with the change of the Microsoft managed setting to **Enabled**.
-
 ## FAQ
 
 ### How does system-preferred MFA determine the most secure method?
