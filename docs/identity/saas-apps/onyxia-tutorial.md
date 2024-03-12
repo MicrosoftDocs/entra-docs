@@ -85,7 +85,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
 
-1. On the **Set up Onyxia** section, copy the appropriate URLs based on your requirement.
+1. On the **Set up Onyxia** section, copy the "Login URL" and paste it into the "SSO URL" field in the Onyxia Wizard.
 
 	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
