@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/04/2024
 ms.author: jeedes
 ---
 # Tutorial: Microsoft Entra SSO integration with Neota Studio
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
 
-* Neota Studio supports **SP** initiated SSO.
+* Neota Studio supports both **SP** and **IDP** initiated SSO.
 
 ## Add Neota Studio from the gallery
 
@@ -70,26 +70,40 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Edit Basic SAML Configuration](common/edit-urls.png)
+   ![Screenshot shows to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
-    `https://<sub domain>.neotalogic.com/wb`
+    `https://<SUBDOMAIN>.neotalogic.com/wb`
 
-	b. In the **Sign on URL** text box, type a URL using the following pattern:
-    `https://<sub domain>.neotalogic.com/a/<sub application>`
+	b. In the **Reply URL** text box, type a URL using the following pattern:
+    `https://<SUBDOMAIN>.neotalogic.com/sso/callback?client_name=<Integration_ID>`
+
+1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
+
+    In the **Sign on URL text box, type a URL using the following pattern:
+    `https://<SUBDOMAIN>.neotalogic.com/wb`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Sign on URL. Contact [Neota Studio Client support team](https://www.neotalogic.com/contact-us/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Neota Studio Client support team](https://neota.com/contact) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+1. Neota Studio application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
-	![The Certificate download link](common/metadataxml.png)
+	![Screenshot shows the image of assertions.](common/default-attributes.png "Image")
 
-6. On the **Set up Neota Studio** section, copy the appropriate URL(s) as per your requirement.
+1. In addition to above, Neota Studio application expects few more attributes to be passed back in SAML response, which are shown below. These attributes are also pre populated but you can review them as per your requirements.
+	
+	| Name |  Source Attribute|
+	| -------- | --------- |
+    | first_name | user.givenname |
+    | family_name | user.surname |
+    | email | user.mail |
+    | organization | user.companyname |
 
-	![Copy configuration URLs](common/copy-configuration-urls.png)
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer
+
+    ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")  
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -123,11 +137,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Neota Studio SSO
 
-To configure single sign-on on **Neota Studio** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Neota Studio support team](https://www.neotalogic.com/contact-us/). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Neota Studio** side, you need to send the **App Federation Metadata Url** to [Neota Studio support team](https://neota.com/contact). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Neota Studio test user
 
-In this section, you create a user called Britta Simon in Neota Studio. Work with [Neota Studio support team](https://www.neotalogic.com/contact-us/) to add the users in the Neota Studio platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Neota Studio. Work with [Neota Studio support team](https://neota.com/contact) to add the users in the Neota Studio platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
