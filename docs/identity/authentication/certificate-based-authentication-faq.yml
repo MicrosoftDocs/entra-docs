@@ -90,8 +90,6 @@ sections:
           
           Use the [Set-AzureADTrustedCertificateAuthority](/powershell/module/azuread/set-azureadtrustedcertificateauthority) cmdlet:
           
-          [!INCLUDE [Azure AD PowerShell migration](~/includes/aad-powershell-migration-include.md)]
-
           ```PowerShell
           $c=Get-AzureADTrustedCertificateAuthority
           $c[0]. crlDistributionPoint=""
