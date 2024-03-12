@@ -12,7 +12,7 @@ ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
 
-# Customer intent: As an Entra admin, I want to learn how to bulk invite external users to my organization using the Entra admin center, so that I can efficiently manage user invitations and onboarding.
+# Customer intent: As a Microsoft Entra admin, I want to learn how to bulk invite external users to my organization using the Microsoft Entra admin center, so that I can efficiently manage user invitations and onboarding.
 
 ms.collection: M365-identity-device-management
 ms.custom:  

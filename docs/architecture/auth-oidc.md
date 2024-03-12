@@ -26,7 +26,7 @@ In addition to authentication, the user can be asked for consent. Consent is the
 
 There is a need for user consent and for web sign in.
 
-![architectural diagram](./media/authentication-patterns/oidc-auth.png)
+![Architectural diagram](./media/authentication-patterns/oidc-auth.png)
 
 ## Components of system
 

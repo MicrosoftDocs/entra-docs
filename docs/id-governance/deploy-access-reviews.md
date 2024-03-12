@@ -300,7 +300,7 @@ To learn how to review guest users' access to group memberships, see [Manage gue
 
 Access reviews can't change the group membership of groups that you synchronize from on-premises AD with [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md). This restriction is because the source of authority for a group originating in AD is on-premises AD.  To control access to AD group-based apps, use [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
 
-Until you have migrated to Microsoft Entra ID groups with group writeback, you can still use access reviews to schedule and maintain regular reviews of existing on-premises groups. In this case, admins will then take action in the on-premises group after each review completes. This strategy keeps access reviews as the tool for all reviews.
+Until you have migrated to Microsoft Entra groups with group writeback, you can still use access reviews to schedule and maintain regular reviews of existing on-premises groups. In this case, admins will then take action in the on-premises group after each review completes. This strategy keeps access reviews as the tool for all reviews.
 
 You can use the results from an access review on on-premises groups and process them further, either by:
 
@@ -311,7 +311,7 @@ For example, to retrieve results for a Windows Server AD-managed group, use this
 
 ## Plan access reviews for applications
 
-When you review everyone assigned to application, you're reviewing the users, including employees and external identities, who can authenticate to that application using their Microsoft Entra ID identity. Choose to review an application when you need to know who has access to a specific application, instead of an access package or a group.
+When you review everyone assigned to application, you're reviewing the users, including employees and external identities, who can authenticate to that application using their Microsoft Entra identity. Choose to review an application when you need to know who has access to a specific application, instead of an access package or a group.
 
 Plan reviews for applications in the following scenarios when:
 
