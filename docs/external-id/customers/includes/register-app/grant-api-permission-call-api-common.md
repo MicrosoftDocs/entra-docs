@@ -13,7 +13,7 @@ ms.manager: mwongerapk
  
 1. Under **Configured permissions**, select **Add a permission**.
 
-1. Select the **My APIs** tab. 
+1. Select the **My APIs** tab.
  
 1. In the list of APIs, select the API such as *ciam-ToDoList-api*. If you don't see your API in the list, select the **APIs my organization uses** tab.
  
@@ -23,7 +23,7 @@ ms.manager: mwongerapk
  
 1. Select the **Add permissions** button.
 
-1. At this point, you've assigned the permissions correctly. However, since the tenant is a customer's tenant, the  consumer users themselves can't consent to these permissions. To address this problem, you as the admin must consent to these permissions on behalf of all the users in the tenant:
+1. At this point, you've assigned the permissions correctly. However, since the tenant is a customer's tenant, the  consumer users themselves can't consent to these permissions. To address this, you as the admin must consent to these permissions on behalf of all the users in the tenant:
  
     1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
     

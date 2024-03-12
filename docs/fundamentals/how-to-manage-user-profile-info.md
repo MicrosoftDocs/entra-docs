@@ -78,7 +78,7 @@ There are six categories of profile details you might be able to edit.
 
 - **Contact info:** Add any relevant contact information for the user.
 
-- **Parental controls:** For organizations like K-12 school districts, the user's age group might need to be provided. *Minors* are 12 and under, *Not adult* are 13-18 years old, and *Adults* are 18 and over. The combination of age group and consent provided by parent options determine the Legal age group classification. The Legal age group classification might limit the user's access and authority.
+- **Parental controls:** For organizations like K-12 school districts, the user's age group might need to be provided. *Minors* are 12 and under, *Not adult* are 13-17 years old, and *Adults* are 18 and over. The combination of age group and consent provided by parent options determine the Legal age group classification. The Legal age group classification might limit the user's access and authority.
 
 - **Settings:** Decide whether the user can sign in to the Microsoft Entra tenant. You can also specify the user's global location.
 
@@ -161,7 +161,7 @@ The following settings can be managed from **User settings**.
   - Guest user access is restricted to properties and memberships of their own directory objects (most restrictive)
 - Restrict access to the Microsoft Entra administration portal
 - [Allow users to connect their work or school account with LinkedIn](~/identity/users/linkedin-user-consent.md)
-- [Enable the "Stay signed in?" prompt](how-to-manage-stay-signed-in-prompt.md)
+- [Enable the "Stay signed in?" prompt](how-to-manage-stay-signed-in-prompt.yml)
 - Manage external collaboration settings
   - [Guest user access](~/identity/users/users-restrict-guest-permissions.md)
   - [Guest invite setting](~/external-id/external-collaboration-settings-configure.md)
@@ -174,6 +174,6 @@ The following settings can be managed from **User settings**.
 ## Next steps
 
 - [Add or delete users](add-users.md)
-- [Assign roles to users](how-subscriptions-associated-directory.yml)
-- [Create a basic group and add members](how-to-manage-groups.md)
+- [Assign roles to users](how-subscriptions-associated-directory.md)
+- [Create a basic group and add members](how-to-manage-groups.yml)
 - [View Microsoft Entra enterprise user management documentation](../identity/users/index.yml)

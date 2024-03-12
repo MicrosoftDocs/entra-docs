@@ -26,7 +26,7 @@ The following video outlines the steps you'll replicate in this article to confi
 
 - A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md).
 - An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, you may sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
-- A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.
+- A Microsoft Entra tenant. You can use either a customer or workforce tenant for this how-to guide.
     - For customer tenants, you'll need a [sign-up and sign-in user flow](~/external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md).
 
 ## Step 1: Create an Azure Function app
@@ -466,11 +466,11 @@ Microsoft Entra custom authentication extension uses server to server flow to ob
 To protect your Azure function, follow these steps to integrate Microsoft Entra authentication, for validating incoming tokens with your *Azure Functions authentication events API* application registration. Choose one of the following tabs based on your tenant type.
 
 > [!NOTE]
-> If the Azure function app is hosted in a different Azure tenant than the tenant in which your custom authentication extension is registered, choose the [Open ID Connect](#52-using-openid-connect-identity-provider) tab.
+> If the Azure function app is hosted in a different Azure tenant than the tenant in which your custom authentication extension is registered, choose the [OpenID Connect](#52-using-openid-connect-identity-provider) tab.
 
 ### 5.1 Using Microsoft Entra identity provider
 
-Use the following steps to add Microsoft Entra as an identity provider to your Azure Function app.
+Use the following steps to add Microsoft Entra ID as an identity provider to your Azure Function app.
 
 # [Workforce tenant](#tab/workforce-tenant)
 

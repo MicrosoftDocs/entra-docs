@@ -34,9 +34,9 @@ sections:
         answer: |
           Microsoft Entra ID provides you with common identity and access capabilities to all web services. Whether you're using Microsoft services, such as Microsoft 365, Power Platform, Dynamics 365, or other Microsoft products, you're already using Microsoft Entra ID to help turn on sign-on and access management for all cloud services.
           
-          All users who are set up to use Microsoft services are defined as user accounts in one or more Microsoft Entra ID instances, providing these accounts access to Microsoft Entra ID.
+          All users who are set up to use Microsoft services are defined as user accounts in one or more Microsoft Entra instances, providing these accounts access to Microsoft Entra ID.
           
-          For more information, see [Microsoft Entra Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing)
+          For more information, see [Microsoft Entra ID Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing)
 
           Microsoft Entra paid services, such as Enterprise Mobility + Security (EMS) complement other Microsoft services like Microsoft 365, with comprehensive enterprise-scale development, management and security solutions.
           
@@ -47,7 +47,7 @@ sections:
       - question: |
           What are the differences between Owner and Global Administrator?
         answer: |
-          By default, the person who signs up for a Microsoft Entra or Azure subscription is assigned the Owner role for Azure resources. An Owner can use either a Microsoft account or a work or school account from the directory that the Microsoft Entra or Azure subscription is associated with.  This role is also authorized to manage services in the Azure portal.
+          By default, the person who signs up for a Microsoft Entra or Azure subscription is assigned the Owner role for Azure resources. An Owner can use either a Microsoft account or a work or school account from the directory that the Microsoft Entra or Azure subscription is associated with. This role is also authorized to manage services in the Azure portal.
           
           If others need to sign in and access services by using the same subscription, you can assign them the appropriate [built-in role](/azure/role-based-access-control/built-in-roles). For more information, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
           
@@ -135,7 +135,7 @@ sections:
         answer: |
           (For example, is it possible to use Microsoft Entra self-service password reset (SSPR) with password write-back and not store passwords in the cloud?)
           
-          This example scenario doesn't require the on-premises password to be tracked in Microsoft Entra. This is because you don't need to synchronize your Active Directory passwords to Microsoft Entra to enable write-back. In a federated environment, Microsoft Entra ID single sign-on (SSO) relies on the on-premises directory to authenticate the user. 
+          This example scenario doesn't require the on-premises password to be tracked in Microsoft Entra. This is because you don't need to synchronize your Active Directory passwords to Microsoft Entra ID to enable write-back. In a federated environment, Microsoft Entra single sign-on (SSO) relies on the on-premises directory to authenticate the user. 
           
           
           
@@ -176,7 +176,7 @@ sections:
       - question: |
           Are accounts locked after a specific number of failed attempts or is there a more sophisticated strategy used?
         answer: |
-          Microsoft Entra uses a more sophisticated strategy to lock accounts.  This is based on the IP of the request and the passwords entered. The duration of the lockout also increases based on the likelihood that it's an attack.  
+          Microsoft Entra ID uses a more sophisticated strategy to lock accounts. This is based on the IP of the request and the passwords entered. The duration of the lockout also increases based on the likelihood that it's an attack.
 
       - question: |
           For certain (common) passwords that get rejected, does this apply to passwords used only in the current directory?

@@ -98,7 +98,7 @@ When a user creates a group, they're automatically added as an owner for that gr
 
 An owner can also add or remove other owners. Unlike Global Administrators and User Administrators, owners can manage only the groups that they own. 
 
-To assign a group owner, see [Managing owners for a group](./how-to-manage-groups.md).
+To assign a group owner, see [Managing owners for a group](./how-to-manage-groups.yml).
 
 ### Ownership permissions
 
