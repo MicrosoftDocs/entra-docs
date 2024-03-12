@@ -1,6 +1,6 @@
 ---
-title: Add sign in and sign out in native Android app
-description: Learn how to add sign in and sign out with email one-time passcode in Android app.
+title: Add sign-in with email one-time passcode in Android app by using native authentication
+description: Learn how to add sign-in and sign-out with email one-time passcode in Android app by using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,26 +12,27 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 02/23/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to learn about add sign in and sign out with email one-time passcode.
+#Customer intent: As a dev, devops, I want to add sign-in and sign-out in an Android mobile app with email one-time passcode by using native authentication
 ---
 
-# Tutorial: Add sign in and sign out with email one-time passcode in Android app
+# Tutorial: Add sign-in with email one-time passcode in Android app by using native authentication
 
-This tutorial demonstrates how to sign in and sign out a user using email one-time passcode in your native authentication Android app. 
+This tutorial demonstrates how to sign-in and sign-out a user using email one-time passcode (OTP) in your Android mobile app by using native authentication. 
 
 In this tutorial, you learn how to: 
 
-- Sign in a user. 
-- Sign out a user. 
+> [!div class="checklist"]
+> 
+> - Sign in a user. 
+> - Sign out a user.
 
 ## Prerequisites
 
-- [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-android-sign-up.md) 
-
+- Complete the steps in [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-android-sign-up.md) 
 
 ## Sign in a user
 
-To sign in a user using the **Email one-time passcode** flow, capture the email and send an email containing a one-time passcode for the user to verify their email. When the user enters a valid one-time passcode, the app signs them in. 
+To sign in a user using the email OTP authentication method, capture the email and send an email containing a one-time passcode for the user to verify their email. When the user enters a valid one-time passcode, the app signs them in. 
 
 To sign in user using **Email one-time-passcode** you need to: 
 

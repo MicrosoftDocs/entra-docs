@@ -29,7 +29,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
  
-- Complete the step in [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md).
+- Complete the steps in [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md).
  
 ## Sign up a user
 
@@ -145,7 +145,10 @@ Make sure you include the import statements. Android Studio should include the i
 
 You've completed all the necessary steps to successfully sign up a user into your app. Build and run your application. If all good, you should be able to collect an email from a user, and collect the OTP code that the user receives in their email address and use it to successfully sign up the user. 
 
-If 
+## Optional: Sign in after a sign-up flow
+
+After a successful sign-up flow, you can sign-in a user without initiating a sign-in flow. Learn more in the [Tutorial: Sign in user after sign-up in Android](tutorial-native-authentication-android-sign-in-after-sign-up.md) article.
+
 
 ## Next steps 
 

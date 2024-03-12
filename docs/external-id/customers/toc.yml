@@ -222,19 +222,19 @@ items:
               items:
                 - name: Prepare Android app
                   href: tutorial-native-authentication-prepare-android-app.md
-                - name: Sign up
+                - name: Sign up with email OTP
                   href: tutorial-native-authentication-android-sign-up.md
-                - name: Sign in and sign out
+                - name: Sign in with email OTP
                   href: tutorial-native-authentication-android-sign-in-sign-out.md
                 - name: Additional scenarios
                   items:
-                    - name: Register user with username and attributes
+                    - name: Sign up with user attributes (email OTP)
                       href: tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md
-                    - name: Register user with username, password and attributes
-                      href: tutorial-native-authentication-android-sign-up-user-with-username-password-user-attributes.md
-                    - name: Register user with username and password
+                    - name: Sign up with username and password
                       href: tutorial-native-authentication-android-sign-up-user-with-username-password.md
-                    - name: Sign in user with username and password
+                    - name: Sign up with password and user attributes
+                      href: tutorial-native-authentication-android-sign-up-user-with-username-password-user-attributes.md
+                    - name: Sign in with username and password
                       href: tutorial-native-authentication-android-sign-in-user-with-username-password.md
                     - name: Self-service password reset
                       href: tutorial-native-authentication-android-self-service-password-reset.md

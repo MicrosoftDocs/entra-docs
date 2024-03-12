@@ -62,9 +62,9 @@ In this tutorial, you learn how to:
  
 ## Create a configuration file 
  
-You pass relevant tenant identifiers, such as the **Application (client) ID**, to the MSAL SDK through configuration settings. You accomplished this by using a JSON file.  
+You pass the required tenant identifiers, such as the application (client) ID, to the MSAL SDK through a JSON configuration settings.
  
-Follow these steps to create configuration file:  
+Use these steps to create configuration file:  
  
 1. In Android Studio's project pane, navigate to *app\src\main\res*.  
 1. Right-click **res** and select **New** > **Directory**. Enter `raw` as the new directory name and select **OK**.  
@@ -87,16 +87,17 @@ Follow these steps to create configuration file:
        "logcat_enabled": true 
      } 
    } 
+    //...
    ``` 
  
 1. Replace the following placeholders with your tenant values that you obtained from the Microsoft Entra admin center:  
  
-   - Replace the `Enter_the_Application_Id_Here` placeholder with the Application (client) ID of the app you registered earlier.   
-   - Replace the `Enter_the_Tenant_Subdomain_Here` with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).  
+   - Replace the `Enter_the_Application_Id_Here` placeholder with the application (client) ID of the app you registered earlier.   
+   - Replace the `Enter_the_Tenant_Subdomain_Here` with the directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).  
 
 ### Optional: Logging configuration 
 
-Turn on logging at app creation by creating a logging callback. Without a logging method, the library won't output logs. 
+Turn on logging at app creation by creating a logging callback, so the SDK can output logs. 
 
 ```kotlin 
 import com.microsoft.identity.client.Logger
@@ -107,9 +108,10 @@ fun initialize(context: Context) {
         }
     }
 ```
-To configure the logger, a logging you need to add a section in the configuration file, `auth_config_native_auth.json`: 
+To configure the logger, you need to add a section in the configuration file, `auth_config_native_auth.json`: 
 
 ```json 
+    //...
    { 
      "logging": { 
        "pii_enabled": false, 
@@ -117,6 +119,7 @@ To configure the logger, a logging you need to add a section in the configuratio
        "logcat_enabled": true 
      } 
    } 
+    //...
    ``` 
 
 1. **logcat_enabled**: Enables the logging functionality of the library. 
