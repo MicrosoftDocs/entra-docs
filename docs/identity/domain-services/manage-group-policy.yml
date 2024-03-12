@@ -28,7 +28,7 @@ introduction: |
   feature of
   [Azure Policy](/azure/governance/policy/overview).
 prerequisites:
-  summary:
+  summary: |
     To complete this article, you need the following resources and privileges:
 
     * An active Azure subscription.
