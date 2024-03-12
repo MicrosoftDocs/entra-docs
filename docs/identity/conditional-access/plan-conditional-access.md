@@ -165,7 +165,7 @@ By default, each policy created from template is created in report-only mode. We
 
 [Enable policies in report-only mode](howto-conditional-access-insights-reporting.md). Once you save a policy in report-only mode, you can see the effect on real-time sign-ins in the sign-in logs. From the sign-in logs, select an event and navigate to the **Report-only** tab to see the result of each report-only policy.
 
-You can view the aggregate affects of your Conditional Access policies in the **Insights and Reporting workbook**. To access the workbook, you need an Azure Monitor subscription and you need to [stream your sign-in logs to a log analytics workspace](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
+You can view the aggregate affects of your Conditional Access policies in the **Insights and Reporting workbook**. To access the workbook, you need an Azure Monitor subscription and you need to [stream your sign-in logs to a log analytics workspace](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 
 ### Plan for disruption
 

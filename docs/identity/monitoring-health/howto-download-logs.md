@@ -71,5 +71,5 @@ If your tenant enabled the [sign-in logs preview](concept-sign-ins.md), more opt
 
 ## Next steps
 
-- [Integrate Microsoft Entra logs with Azure Monitor](howto-integrate-activity-logs-with-azure-monitor-logs.md)
+- [Integrate Microsoft Entra logs with Azure Monitor](howto-integrate-activity-logs-with-azure-monitor-logs.yml)
 - [Access Microsoft Entra logs using the Graph API](quickstart-access-log-with-graph-api.md)
