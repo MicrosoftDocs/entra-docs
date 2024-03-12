@@ -1,6 +1,6 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Neota Studio'
-description: Learn how to configure single sign-on between Microsoft Entra ID and Neota Studio.
+title: 'Tutorial: Microsoft Entra SSO integration with Neota'
+description: Learn how to configure single sign-on between Microsoft Entra ID and Neota.
 
 author: jeevansd
 manager: CelesteDG
@@ -9,15 +9,15 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 03/04/2024
+ms.date: 03/12/2024
 ms.author: jeedes
 ---
-# Tutorial: Microsoft Entra SSO integration with Neota Studio
+# Tutorial: Microsoft Entra SSO integration with Neota
 
-In this tutorial, you'll learn how to integrate Neota Studio with Microsoft Entra ID. When you integrate Neota Studio with Microsoft Entra ID, you can:
+In this tutorial, you'll learn how to integrate Neota with Microsoft Entra ID. When you integrate Neota with Microsoft Entra ID, you can:
 
-* Control in Microsoft Entra ID who has access to Neota Studio.
-* Enable your users to be automatically signed-in to Neota Studio with their Microsoft Entra accounts.
+* Control in Microsoft Entra ID who has access to Neota.
+* Enable your users to be automatically signed-in to Neota with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
@@ -25,38 +25,38 @@ In this tutorial, you'll learn how to integrate Neota Studio with Microsoft Entr
 To get started, you need the following items:
 
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-* Neota Studio single sign-on (SSO) enabled subscription.
+* Neota single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
 In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
 
-* Neota Studio supports both **SP** and **IDP** initiated SSO.
+* Neota supports both **SP** and **IDP** initiated SSO.
 
-## Add Neota Studio from the gallery
+## Add Neota from the gallery
 
-To configure the integration of Neota Studio into Microsoft Entra ID, you need to add Neota Studio from the gallery to your list of managed SaaS apps.
+To configure the integration of Neota into Microsoft Entra ID, you need to add Neota from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the **Add from the gallery** section, type **Neota Studio** in the search box.
-1. Select **Neota Studio** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+1. In the **Add from the gallery** section, type **Neota** in the search box.
+1. Select **Neota** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
  Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-neota-studio'></a>
 
-## Configure and test Microsoft Entra SSO for Neota Studio
+## Configure and test Microsoft Entra SSO for Neota
 
-Configure and test Microsoft Entra SSO with Neota Studio using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in Neota Studio.
+Configure and test Microsoft Entra SSO with Neota using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in Neota.
 
-To configure and test Microsoft Entra SSO with Neota Studio, perform the following steps:
+To configure and test Microsoft Entra SSO with Neota, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure Neota Studio SSO](#configure-neota-studio-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Neota Studio test user](#create-neota-studio-test-user)** - to have a counterpart of B.Simon in Neota Studio that is linked to the Microsoft Entra representation of user.
+1. **[Configure Neota SSO](#configure-neota-sso)** - to configure the single sign-on settings on application side.
+    1. **[Create Neota test user](#create-neota-test-user)** - to have a counterpart of B.Simon in Neota that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -66,7 +66,7 @@ To configure and test Microsoft Entra SSO with Neota Studio, perform the followi
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Neota Studio** > **Single sign-on**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Neota** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -86,13 +86,13 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SUBDOMAIN>.neotalogic.com/wb`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Neota Studio Client support team](https://neota.com/contact) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Neota Client support team](https://neota.com/contact) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Neota Studio application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
+1. Neota application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
 	![Screenshot shows the image of assertions.](common/default-attributes.png "Image")
 
-1. In addition to above, Neota Studio application expects few more attributes to be passed back in SAML response, which are shown below. These attributes are also pre populated but you can review them as per your requirements.
+1. In addition to above, Neota application expects few more attributes to be passed back in SAML response, which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	
 	| Name |  Source Attribute|
 	| -------- | --------- |
@@ -125,34 +125,34 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Neota Studio.
+In this section, you'll enable B.Simon to use single sign-on by granting access to Neota.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Neota Studio**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Neota**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
    1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
    1. In the **Add Assignment** dialog, click the **Assign** button.
 
-## Configure Neota Studio SSO
+## Configure Neota SSO
 
-To configure single sign-on on **Neota Studio** side, you need to send the **App Federation Metadata Url** to [Neota Studio support team](https://neota.com/contact). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Neota** side, you need to send the **App Federation Metadata Url** to [Neota support team](https://neota.com/contact). They set this setting to have the SAML SSO connection set properly on both sides.
 
-### Create Neota Studio test user
+### Create Neota test user
 
-In this section, you create a user called Britta Simon in Neota Studio. Work with [Neota Studio support team](https://neota.com/contact) to add the users in the Neota Studio platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Neota. Work with [Neota support team](https://neota.com/contact) to add the users in the Neota platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Neota Studio Sign-on URL where you can initiate the login flow. 
+* Click on **Test this application**, this will redirect to Neota Sign-on URL where you can initiate the login flow. 
 
-* Go to Neota Studio Sign-on URL directly and initiate the login flow from there.
+* Go to Neota Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Neota Studio tile in the My Apps, this will redirect to Neota Studio Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you click the Neota tile in the My Apps, this will redirect to Neota Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Next steps
 
-Once you configure Neota Studio you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).
+Once you configure Neota you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).
