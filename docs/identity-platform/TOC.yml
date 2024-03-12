@@ -131,6 +131,8 @@
           href: quickstart-single-page-app-angular-sign-in.md
         - name: JavaScript
           href: quickstart-single-page-app-javascript-sign-in.md
+        - name: Blazor WebAssembly
+          href: quickstart-single-page-app-blazor-wasm-sign-in.md
     - name: Tutorials
       items:
         - name: React
@@ -147,8 +149,6 @@
           href: tutorial-v2-angular-auth-code.md
         - name: JavaScript
           href: tutorial-v2-javascript-auth-code.md
-        - name: Blazor WebAssembly
-          href: tutorial-blazor-webassembly.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications
@@ -829,6 +829,10 @@
       href: /graph/api/resources/azure-ad-overview
     - name: Custom claims provider reference
       href: custom-claims-provider-reference.md
+    - name: MSA Server side API reference 
+      href: reference-msa-server-side-api.md
+    - name: Microsoft Entra ID WAM API reference
+      href: reference-entra-id-wam-api.md
     - name: Attribute collection start custom extension reference
       href: custom-extension-OnAttributeCollectionStart-reference.md
     - name: Attribute collection submit custom extension reference

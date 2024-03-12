@@ -145,7 +145,7 @@ az vm create \
 ```
 
 > [!NOTE]
-> You must enable system-assigned managed identity on your virtual machine before you install the Microsoft Entra login VM extension.
+> You must enable system-assigned managed identity on your virtual machine before you install the Microsoft Entra login VM extension. Managed Identities are stored in a single Microsoft Entra tenant and currently do not support cross directory scenarios.
 
 It takes a few minutes to create the VM and supporting resources.
 
@@ -335,7 +335,7 @@ The AADLoginForWindows extension must be installed successfully for the VM to co
    | `curl.exe -H Metadata:true "http://169.254.169.254/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01"` | Valid access token issued by Microsoft Entra ID for the managed identity that is assigned to this VM |
 
    > [!NOTE]
-   > You can decode the access token by using a tool like [calebb.net](http://calebb.net/). Verify that the `oid` value in the access token matches the managed identity that's assigned to the VM.
+   > You can decode the access token by using a tool like [https://jwt.ms/](https://jwt.ms/). Verify that the `oid` value in the access token matches the managed identity that's assigned to the VM.
 
 1. Ensure that the required endpoints are accessible from the VM via PowerShell:
    

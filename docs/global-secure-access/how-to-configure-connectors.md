@@ -1,8 +1,8 @@
 ---
 title: How to configure connectors for Microsoft Entra Private Access
-description: Learn how to configure App Proxy connectors for Microsoft Entra Private Access.
-author: shlipsey3
-ms.author: sarahlipsey
+description: Learn how to configure Microsoft Entra application proxy connectors for Microsoft Entra Private Access.
+author: kenwith
+ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
 ms.date: 12/06/2023
@@ -10,7 +10,7 @@ ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ---
-# How to configure App Proxy connectors for Microsoft Entra Private Access
+# How to configure application proxy connectors for Microsoft Entra Private Access
 
 Connectors are lightweight agents that sit on-premises and facilitate the outbound connection to the Global Secure Access service. Connectors must be installed on a Windows Server that has access to the backend application. You can organize connectors into connector groups, with each group handling traffic to specific applications. To learn more about connectors, see [Understand Microsoft Entra application proxy connectors](/azure/active-directory/app-proxy/application-proxy-connectors).
 
@@ -21,7 +21,7 @@ To add an on-premises application to Microsoft Entra ID you need:
 * The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 * An Application Administrator account.
 
-User identities must be synchronized from an on-premises directory or created directly within your Microsoft Entra tenants. Identity synchronization allows Microsoft Entra ID to pre-authenticate users before granting them access to App Proxy published applications and to have the necessary user identifier information to perform single sign-on (SSO).
+User identities must be synchronized from an on-premises directory or created directly within your Microsoft Entra tenants. Identity synchronization allows Microsoft Entra ID to pre-authenticate users before granting them access to application proxy published applications and to have the necessary user identifier information to perform single sign-on (SSO).
 
 ### Windows server
 
@@ -29,7 +29,7 @@ To use Application Proxy, you need a Windows server running Windows Server 2012 
 
 * For high availability in your environment, we recommend having more than one Windows server.
 * The minimum .NET version required for the connector is v4.7.1+.
-* For more information, see [App Proxy connectors](../identity/app-proxy/application-proxy-connectors.md#requirements-and-deployment)
+* For more information, see [application proxy connectors](../identity/app-proxy/application-proxy-connectors.md#requirements-and-deployment)
 * For more information, see [Determine which .NET framework versions are installed](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
 
 ### Prepare your on-premises environment

@@ -1,6 +1,6 @@
 ---
 title: Enable Azure DS Domain Services using PowerShell | Microsoft Docs
-description: Learn how to configure and enable Microsoft Entra Domain Services using Azure AD PowerShell and Azure PowerShell.
+description: Learn how to configure and enable Microsoft Entra Domain Services using Microsoft Graph PowerShell and Azure PowerShell.
 author: justinha
 manager: amycolannino
 
@@ -10,7 +10,7 @@ ms.subservice: domain-services
 ms.topic: sample
 ms.date: 09/21/2023
 ms.author: justinha
-ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref
+ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # Enable Microsoft Entra Domain Services using PowerShell
@@ -29,8 +29,8 @@ To complete this article, you need the following resources:
     * If needed, follow the instructions to [install the Azure PowerShell module and connect to your Azure subscription](/powershell/azure/install-azure-powershell).
     * Make sure that you sign in to your Azure subscription using the [Connect-AzAccount][Connect-AzAccount] cmdlet.
 * Install and configure MS Graph PowerShell.
-   - If needed, follow the instructions to [install the MS Graph PowerShell module and connect to Microsoft Entra ID](/powershell/microsoftgraph/installation?view=graph-powershell-1.0).
-    * Make sure that you sign in to your Microsoft Entra tenant using the [Connect-AzureAD][Connect-AzureAD] cmdlet.
+   - If needed, follow the instructions to [install the MS Graph PowerShell module and connect to Microsoft Entra ID](/powershell/microsoftgraph/installation).
+    * Make sure that you sign in to your Microsoft Entra tenant using the [Connect-MgGraph][Connect-MgGraph] cmdlet.
 * You need *global administrator* privileges in your Microsoft Entra tenant to enable Domain Services.
 * You need *Contributor* privileges in your Azure subscription to create the required Domain Services resources.
 
@@ -50,47 +50,45 @@ Domain Services requires a service principal to authenticate and communicate and
 
 First, create a Microsoft Entra service principal by using a specific application ID named *Domain Controller Services*. The ID value is *2565bd9d-da50-47d4-8b85-4c97f669dc36* for global Azure and *6ba9a5d4-8456-4118-b521-9c5ca10cdf84* for other Azure clouds. Don't change this application ID.
 
-Create a Microsoft Entra service principal using the [New-AzureADServicePrincipal][New-AzureADServicePrincipal] cmdlet:
+Create a Microsoft Entra service principal using the [New-MgServicePrincipal][New-MgServicePrincipal] cmdlet:
 
 ```powershell
-New-AzureADServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
+New-MgServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
 ```
 
-Now create a Microsoft Entra group named *AAD DC Administrators*. Users added to this group are then granted permissions to perform administration tasks on the managed domain.
+Now create a Microsoft Entra group named *ME-ID DC Administrators*. Users added to this group are then granted permissions to perform administration tasks on the managed domain.
 
-First, get the *AAD DC Administrators* group object ID using the [Get-AzureADGroup][Get-AzureADGroup] cmdlet. If the group doesn't exist, create it with the *AAD DC Administrators* group using the [New-AzureADGroup][New-AzureADGroup] cmdlet:
+First, get the *ME-ID DC Administrators* group object ID using the [Get-MgGroup][Get-MgGroup] cmdlet. If the group doesn't exist, create it with the *ME-ID DC Administrators* group using the [New-MgGroup][New-MgGroup] cmdlet:
 
 ```powershell
-# First, retrieve the object ID of the 'AAD DC Administrators' group.
-$GroupObjectId = Get-AzureADGroup `
-  -Filter "DisplayName eq 'AAD DC Administrators'" | `
-  Select-Object ObjectId
+# First, retrieve the object ID of the 'ME-ID DC Administrators' group.
+$GroupObject = Get-MgGroup `
+  -Filter "DisplayName eq 'ME-ID DC Administrators'"
 
 # If the group doesn't exist, create it
-if (!$GroupObjectId) {
-  $GroupObjectId = New-AzureADGroup -DisplayName "AAD DC Administrators" `
-    -Description "Delegated group to administer Azure AD Domain Services" `
-    -SecurityEnabled $true `
-    -MailEnabled $false `
-    -MailNickName "AADDCAdministrators"
-  }
-else {
+if (!$GroupObject) {
+  $GroupObject = New-MgGroup -DisplayName "ME-ID DC Administrators" `
+    -Description "Delegated group to administer Microsoft Entra Domain Services" `
+    -SecurityEnabled:$true `
+    -MailEnabled:$false `
+    -MailNickName "ME-IDDCAdministrators"
+  } else {
   Write-Output "Admin group already exists."
 }
 ```
 
-With the *AAD DC Administrators* group created, get the desired user's object ID using the [Get-AzureADUser][Get-AzureADUser] cmdlet, then add the user to the group using the [Add-AzureADGroupMember][Add-AzureADGroupMember] cmdlet.
+With the *ME-ID DC Administrators* group created, get the desired user's object ID using the [Get-MgUser][Get-MgUser] cmdlet, then add the user to the group using the [New-MgGroupMember][New-MgGroupMember] cmdlet.
 
-In the following example, the user object ID for the account with a UPN of `admin@contoso.onmicrosoft.com`. Replace this user account with the UPN of the user you wish to add to the *AAD DC Administrators* group:
+In the following example, the user object ID for the account with a UPN of `admin@contoso.onmicrosoft.com`. Replace this user account with the UPN of the user you wish to add to the *ME-ID DC Administrators* group:
 
 ```powershell
 # Retrieve the object ID of the user you'd like to add to the group.
-$UserObjectId = Get-AzureADUser `
+$UserObjectId = Get-MgUser `
   -Filter "UserPrincipalName eq 'admin@contoso.onmicrosoft.com'" | `
-  Select-Object ObjectId
+  Select-Object Id
 
-# Add the user to the 'AAD DC Administrators' group.
-Add-AzureADGroupMember -ObjectId $GroupObjectId.ObjectId -RefObjectId $UserObjectId.ObjectId
+# Add the user to the 'ME-ID DC Administrators' group.
+New-MgGroupMember -GroupId $GroupObject.Id -DirectoryObjectId $UserObjectId.Id
 ```
 
 ## Create network resources
@@ -120,7 +118,7 @@ Create the subnets using the [New-AzVirtualNetworkSubnetConfig][New-AzVirtualNet
 ```azurepowershell-interactive
 $VnetName = "myVnet"
 
-# Create the dedicated subnet for Azure AD Domain Services.
+# Create the dedicated subnet for Microsoft Entra Domain Services.
 $SubnetName = "DomainServices"
 $AaddsSubnet = New-AzVirtualNetworkSubnetConfig `
   -Name $SubnetName `
@@ -131,7 +129,7 @@ $WorkloadSubnet = New-AzVirtualNetworkSubnetConfig `
   -Name Workloads `
   -AddressPrefix 10.0.1.0/24
 
-# Create the virtual network in which you will enable Azure AD Domain Services.
+# Create the virtual network in which you will enable Microsoft Entra Domain Services.
 $Vnet= New-AzVirtualNetwork `
   -ResourceGroupName $ResourceGroupName `
   -Location westus `
@@ -147,7 +145,7 @@ Domain Services needs a network security group to secure the ports needed for th
 The following PowerShell cmdlets use [New-AzNetworkSecurityRuleConfig][New-AzNetworkSecurityRuleConfig] to create the rules, then [New-AzNetworkSecurityGroup][New-AzNetworkSecurityGroup] to create the network security group. The network security group and rules are then associated with the virtual network subnet using the [Set-AzVirtualNetworkSubnetConfig][Set-AzVirtualNetworkSubnetConfig] cmdlet.
 
 ```azurepowershell-interactive
-$NSGName = "aaddsNSG"
+$NSGName = "me-iddsNSG"
 
 # Create a rule to allow inbound TCP port 3389 traffic from Microsoft secure access workstations for troubleshooting
 $nsg201 = New-AzNetworkSecurityRuleConfig -Name AllowRD `
@@ -192,7 +190,7 @@ $vnet | Set-AzVirtualNetwork
 
 ## Create a managed domain
 
-Now let's create a managed domain. Set your Azure subscription ID, and then provide a name for the managed domain, such as *aaddscontoso.com*. You can get your subscription ID using the [Get-AzSubscription][Get-AzSubscription] cmdlet.
+Now let's create a managed domain. Set your Azure subscription ID, and then provide a name for the managed domain, such as *me-iddscontoso.com*. You can get your subscription ID using the [Get-AzSubscription][Get-AzSubscription] cmdlet.
 
 If you choose a region that supports Availability Zones, the Domain Services resources are distributed across zones for redundancy.
 
@@ -202,9 +200,9 @@ There's nothing for you to configure for Domain Services to be distributed acros
 
 ```azurepowershell-interactive
 $AzureSubscriptionId = "YOUR_AZURE_SUBSCRIPTION_ID"
-$ManagedDomainName = "aaddscontoso.com"
+$ManagedDomainName = "me-iddscontoso.com"
 
-# Enable Azure AD Domain Services for the directory.
+# Enable Microsoft Entra Domain Services for the directory.
 $replicaSetParams = @{
   Location = $AzureLocation
   SubnetId = "/subscriptions/$AzureSubscriptionId/resourceGroups/$ResourceGroupName/providers/Microsoft.Network/virtualNetworks/$VnetName/subnets/DomainServices"
@@ -242,43 +240,41 @@ $ResourceGroupName = "myResourceGroup"
 $VnetName = "myVnet"
 $AzureLocation = "westus"
 $AzureSubscriptionId = "YOUR_AZURE_SUBSCRIPTION_ID"
-$ManagedDomainName = "aaddscontoso.com"
+$ManagedDomainName = "me-iddscontoso.com"
 
-# Connect to your Azure AD directory.
-Connect-AzureAD
+# Connect to your Microsoft Entra directory.
+Connect-MgGraph -Scopes "Application.ReadWrite.All","Directory.ReadWrite.All"
 
 # Login to your Azure subscription.
 Connect-AzAccount
 
-# Create the service principal for Azure AD Domain Services.
-New-AzureADServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
+# Create the service principal for Microsoft Entra Domain Services.
+New-MgServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
 
-# First, retrieve the object ID of the 'AAD DC Administrators' group.
-$GroupObjectId = Get-AzureADGroup `
-  -Filter "DisplayName eq 'AAD DC Administrators'" | `
-  Select-Object ObjectId
+# First, retrieve the object of the 'ME-ID DC Administrators' group.
+$GroupObject = Get-MgGroup `
+  -Filter "DisplayName eq 'ME-ID DC Administrators'"
 
-# Create the delegated administration group for Azure AD Domain Services if it doesn't already exist.
-if (!$GroupObjectId) {
-  $GroupObjectId = New-AzureADGroup -DisplayName "AAD DC Administrators" `
-    -Description "Delegated group to administer Azure AD Domain Services" `
-    -SecurityEnabled $true `
-    -MailEnabled $false `
-    -MailNickName "AADDCAdministrators"
-  }
-else {
+# Create the delegated administration group for Microsoft Entra Domain Services if it doesn't already exist.
+if (!$GroupObject) {
+  $GroupObject = New-MgGroup -DisplayName "ME-ID DC Administrators" `
+    -Description "Delegated group to administer Microsoft Entra Domain Services" `
+    -SecurityEnabled:$true `
+    -MailEnabled:$false `
+    -MailNickName "ME-IDDCAdministrators"
+  } else {
   Write-Output "Admin group already exists."
 }
 
 # Now, retrieve the object ID of the user you'd like to add to the group.
-$UserObjectId = Get-AzureADUser `
+$UserObjectId = Get-MgUser `
   -Filter "UserPrincipalName eq '$AaddsAdminUserUpn'" | `
-  Select-Object ObjectId
+  Select-Object Id
 
-# Add the user to the 'AAD DC Administrators' group.
-Add-AzureADGroupMember -ObjectId $GroupObjectId.ObjectId -RefObjectId $UserObjectId.ObjectId
+# Add the user to the 'ME-ID DC Administrators' group.
+New-MgGroupMember -GroupId $GroupObject.Id -DirectoryObjectId $UserObjectId.Id
 
-# Register the resource provider for Azure AD Domain Services with Resource Manager.
+# Register the resource provider for Microsoft Entra Domain Services with Resource Manager.
 Register-AzResourceProvider -ProviderNamespace Microsoft.AAD
 
 # Create the resource group.
@@ -286,7 +282,7 @@ New-AzResourceGroup `
   -Name $ResourceGroupName `
   -Location $AzureLocation
 
-# Create the dedicated subnet for AAD Domain Services.
+# Create the dedicated subnet for Microsoft Entra Domain Services.
 $SubnetName = "DomainServices"
 $AaddsSubnet = New-AzVirtualNetworkSubnetConfig `
   -Name DomainServices `
@@ -296,7 +292,7 @@ $WorkloadSubnet = New-AzVirtualNetworkSubnetConfig `
   -Name Workloads `
   -AddressPrefix 10.0.1.0/24
 
-# Create the virtual network in which you will enable Azure AD Domain Services.
+# Create the virtual network in which you will enable Microsoft Entra Domain Services.
 $Vnet=New-AzVirtualNetwork `
   -ResourceGroupName $ResourceGroupName `
   -Location $AzureLocation `
@@ -304,7 +300,7 @@ $Vnet=New-AzVirtualNetwork `
   -AddressPrefix 10.0.0.0/16 `
   -Subnet $AaddsSubnet,$WorkloadSubnet
 
-$NSGName = "aaddsNSG"
+$NSGName = "me-iddsNSG"
 
 # Create a rule to allow inbound TCP port 3389 traffic from Microsoft secure access workstations for troubleshooting
 $nsg201 = New-AzNetworkSecurityRuleConfig -Name AllowRD `
@@ -346,7 +342,7 @@ Set-AzVirtualNetworkSubnetConfig -Name $SubnetName `
     -NetworkSecurityGroup $nsg
 $vnet | Set-AzVirtualNetwork
 
-# Enable Azure AD Domain Services for the directory.
+# Enable Microsoft Entra Domain Services for the directory.
 $replicaSetParams = @{
   Location = $AzureLocation
   SubnetId = "/subscriptions/$AzureSubscriptionId/resourceGroups/$ResourceGroupName/providers/Microsoft.Network/virtualNetworks/$VnetName/subnets/DomainServices"
@@ -388,17 +384,17 @@ To see the managed domain in action, you can [domain-join a Windows VM][windows-
 <!-- EXTERNAL LINKS -->
 [Connect-AzAccount]: /powershell/module/az.accounts/connect-azaccount
 
-[Connect-AzureAD]: /powershell/module/azuread/connect-azuread
+[Connect-MgGraph]: /powershell/microsoftgraph/authentication-commands#using-connect-mggraph
 
-[New-AzureADServicePrincipal]: /powershell/module/AzureAD/New-AzureADServicePrincipal
+[New-MgServicePrincipal]: /powershell/module/microsoft.graph.applications/new-mgserviceprincipal
 
-[New-AzureADGroup]: /powershell/module/azuread/new-azureadgroup
+[New-MgGroup]: /powershell/module/microsoft.graph.groups/new-mggroup
 
-[Add-AzureADGroupMember]: /powershell/module/azuread/add-azureadgroupmember
+[New-MgGroupMember]: /powershell/module/microsoft.graph.groups/new-mggroupmember
 
-[Get-AzureADGroup]: /powershell/module/azuread/get-azureadgroup
+[Get-MgGroup]: /powershell/module/microsoft.graph.groups/get-mggroup
 
-[Get-AzureADUser]: /powershell/module/azuread/get-azureaduser
+[Get-MgUser]: /powershell/module/microsoft.graph.users/get-mguser
 
 [Register-AzResourceProvider]: /powershell/module/az.resources/register-azresourceprovider
 

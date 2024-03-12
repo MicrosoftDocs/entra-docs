@@ -4,7 +4,7 @@ description: Resilience defaults and the Microsoft Entra Backup Authentication S
 
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: how-to
+ms.topic: conceptual
 ms.date: 01/03/2024
 
 ms.author: joflore
@@ -70,7 +70,7 @@ When resilience defaults are disabled, the Backup Authentication Service won't u
 
 ## Testing resilience defaults
 
-It isn't possible to conduct a dry run using the Backup Authentication Service or simulate the result of a policy with resilience defaults enabled or disabled at this time. Microsoft Entra ID conducts monthly exercises using the Backup Authentication Service. The sign-in logs display if the Backup Authentication Service was used to issue the access token. In **Identity** > **Monitoring & health** > **Sign-in Logs** blade, you can add the filter "Token issuer type == Microsoft Entra Backup Auth" to display the logs processed by Microsoft Entra Backup Authentication service.
+It isn't possible to conduct a dry run using the Backup Authentication Service or simulate the result of a policy with resilience defaults enabled or disabled at this time. Microsoft Entra conducts monthly exercises using the Backup Authentication Service. The sign-in logs display if the Backup Authentication Service was used to issue the access token. In **Identity** > **Monitoring & health** > **Sign-in Logs** blade, you can add the filter "Token issuer type == Microsoft Entra Backup Auth" to display the logs processed by Microsoft Entra Backup Authentication service.
 
 ## Configuring resilience defaults
 

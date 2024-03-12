@@ -15,7 +15,7 @@ titleSuffix: Microsoft identity platform
 #Customer intent: As a developer integrating external systems with Microsoft Entra ID, I want to create custom authentication extensions using a REST API, so that I can customize the authentication experience and add business logic based on event types and HTTP response payloads.
 ---
 
-# Custom authentication extensions (preview)
+# Custom authentication extensions overview (preview)
 
 This article provides a high-level, technical overview of [custom authentication extensions](~/external-id/customers/concept-custom-extensions.md) for Microsoft Entra ID. Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems.
 
@@ -47,13 +47,16 @@ Your REST API must handle:
 
 ### Protect your REST API
 
-To ensure the communications between the custom authentication  extension and your REST API are secured appropriately, multiple security controls must be applied.
+To ensure the communications between the custom authentication extension and your REST API are secured appropriately, multiple security controls must be applied.
 
 1. When the custom authentication extension calls your REST API, it sends an HTTP `Authorization` header with a bearer token issued by Microsoft Entra ID.
 1. The bearer token contains an `appid` or `azp` claim. Validate that the respective claim contains the  `99045fe1-7639-4a75-9d4a-577b6ca3810f` value. This value ensures that the Microsoft Entra ID is the one who calls the REST API.
     1. For **V1** Applications, validate the `appid` claim.
     1. For **V2** Applications, validate the `azp` claim.
 1. The bearer token `aud` audience claim contains the ID of the associated application registration. Your REST API endpoint needs to validate that the bearer token is issued for that specific audience.
+1. The bearer token `iss` issuer claim contains the Microsoft Entra issuer URL. Depending on your tenant configuration, the issuer URL will be one of the following;
+    - Workforce: `https://login.microsoftonline.com/{tenantId}/v2.0`.
+    - Customer: `https://{domainName}.ciamlogin.com/{tenantId}/v2.0`.
 
 ## Custom claims provider
 

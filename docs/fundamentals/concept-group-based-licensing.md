@@ -42,7 +42,7 @@ Here are the main features of group-based licensing:
 
 - All Microsoft cloud services that require user-level licensing are supported. This support includes all Microsoft 365 products, Enterprise Mobility + Security, and Dynamics 365.
 
-- Group-based licensing is currently available through the [Azure portal](https://portal.azure.com) and through the [Microsoft Admin center](https://admin.microsoft.com/). 
+- Group-based licensing is currently available through the [Azure portal](https://portal.azure.com) and through the [Microsoft Admin center](https://admin.microsoft.com/).
 
 - Microsoft Entra ID automatically manages license modifications that result from group membership changes. Typically, license modifications are effective within minutes of a membership change.
 
@@ -52,15 +52,15 @@ Here are the main features of group-based licensing:
 
 ## Your feedback is welcome!
 
-If you have feedback or feature requests, share them with us using [the Microsoft Entra admin forum](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).
+If you have feedback or feature requests, share them with us using the [Microsoft Entra admin forum](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).
 
 ## Next steps
 
 To learn more about other scenarios for license management through group-based licensing, see:
 
-* [Assigning licenses to a group in Microsoft Entra ID](~/identity/users/licensing-groups-assign.md)
-* [Identifying and resolving license problems for a group in Microsoft Entra ID](~/identity/users/licensing-groups-resolve-problems.md)
-* [How to migrate individual licensed users to group-based licensing in Microsoft Entra ID](~/identity/users/licensing-groups-migrate-users.md)
-* [How to migrate users between product licenses using group-based licensing in Microsoft Entra ID](~/identity/users/licensing-groups-change-licenses.md)
-* [Microsoft Entra group-based licensing additional scenarios](~/identity/users/licensing-group-advanced.md)
-* [PowerShell examples for group-based licensing in Microsoft Entra ID](~/identity/users/licensing-ps-examples.md)
+- [Assigning licenses to a group in Microsoft Entra ID](~/identity/users/licensing-groups-assign.md)
+- [Identifying and resolving license problems for a group in Microsoft Entra ID](~/identity/users/licensing-groups-resolve-problems.md)
+- [How to migrate individual licensed users to group-based licensing in Microsoft Entra ID](~/identity/users/licensing-groups-migrate-users.md)
+- [How to migrate users between product licenses using group-based licensing in Microsoft Entra ID](~/identity/users/licensing-groups-change-licenses.md)
+- [Microsoft Entra group-based licensing additional scenarios](~/identity/users/licensing-group-advanced.md)
+- [PowerShell examples for group-based licensing in Microsoft Entra ID](~/identity/users/licensing-ps-examples.md)

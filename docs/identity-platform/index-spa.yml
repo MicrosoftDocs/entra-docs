@@ -37,7 +37,7 @@ landingContent:
           - text: JavaScript
             url: tutorial-v2-javascript-auth-code.md
           - text: Blazor WebAssembly
-            url: tutorial-blazor-webassembly.md
+            url: quickstart-single-page-app-blazor-wasm-sign-in.md
   # - title: "Scenario in depth"
   #   linkLists:
   #     - linkListType: how-to-guide

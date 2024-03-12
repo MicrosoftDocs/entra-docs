@@ -1,6 +1,6 @@
 ---
 title: Create a sign-up and sign-in user flow
-description: Learn how to create a sign-up and sign-in user flow for your customer-facing app.
+description: Learn how to create a sign-up and sign-in user flow for your customer-facing app. The user flow determines sign-in experience for my customer users.
  
 author: msmimart
 manager: celestedg
@@ -13,7 +13,7 @@ ms.author: mimart
 ms.reviewer: kengaderdus
 ms.custom: it-pro
 
-#Customer intent: As a dev, devops, or it admin, I want to
+#Customer intent: As a dev, devops, or it admin, I want to create and customize a user flow, which determines the sign-up and sign-i experience for my customer users.
 ---
 
 # Create a sign-up and sign-in user flow for customers  
@@ -83,7 +83,7 @@ Follow these steps to create a user flow a customer can use to sign in or sign u
 
 ## Disable sign-up in a sign-up and sign-in user flow
 
-If you want your customer users to only sign in and not sign up, you can disable sign-up experience in your user flow by using [Microsoft Graph API](microsoft-graph-operations.md). You need to know the ID of the user flow that you want whose sign-up you want to disable. You can't read the user flow ID from the Microsoft Entra Admin center, but you can retrieve it via Microsoft Graph API if you know the app associated with it.
+If you want your customer users to only sign in and not sign up, you can disable sign-up experience in your user flow by using [Microsoft Graph API](microsoft-graph-operations.md). You need to know the ID of the user flow whose sign-up you want to disable. You can't read the user flow ID from the Microsoft Entra admin center, but you can retrieve it via Microsoft Graph API if you know the app associated with it.
 
 1. Read the application ID associated with the user flow:
     1. Browse to **Identity > External Identities > User flows**.
@@ -91,7 +91,7 @@ If you want your customer users to only sign in and not sign up, you can disable
     1. In the left menu, under **Use**, select **Applications**.
     1. From the list, under **Application (client) ID** column, copy the Application (client) ID.
     
-1. Identify the ID of the user flow whose sign-up you want to disable. To do so, [List the user flow associated with the specific application](/graph/api/identitycontainer-list-authenticationeventsflows#example-4-list-user-flow-associated-with-specific-application-id). This's a Microsoft Graph API, which requires you to know the application ID you obtained from the previous step. 
+1. Identify the ID of the user flow whose sign-up you want to disable. To do so, [List the user flow associated with the specific application](/graph/api/identitycontainer-list-authenticationeventsflows#example-4-list-user-flow-associated-with-specific-application-id). This is a Microsoft Graph API, which requires you to know the application ID you obtained from the previous step. 
 
 1. [Update your user flow](/graph/api/authenticationeventsflow-update) to disable sign-up. 
 
