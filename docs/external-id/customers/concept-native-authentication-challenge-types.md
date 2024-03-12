@@ -1,6 +1,6 @@
 ---
 title: Native authentication challenge types
-description: Find out how to use Native authentication with email OTP API reference for Microsoft Entra ID for customers. 
+description: Learn how apps that use native authentication notify Microsoft Entra about the the authentication methods that they support. 
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
@@ -9,7 +9,7 @@ ms.subservice: customers
 ms.topic: concept-article
 ms.date: 02/29/2024
 
-#Customer intent: As a dev, devops, I want to learn how to integrate customer apps with Native authentication's email OTP API that in Microsoft Entra ID for customers supports.
+#Customer intent: As a dev, devops, I want to learn about native authentication challenge types, so that I can use them to notify Microsoft Entra about the authentication methods that my app supports.
 ---
 
 # Native authentication challenge types
