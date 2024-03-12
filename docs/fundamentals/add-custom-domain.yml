@@ -63,8 +63,8 @@ procedureSection:
 
           :::image type="content" source="media/add-custom-domain/add-custom-domain-blade.png" alt-text="Screenshot of Custom domain names page, with Add custom domain page.":::
 
-            > [!IMPORTANT]
-            > You must include *.com*, *.net*, or any other top-level extension for this to work. When adding a custom domain, the Password Policy values will be inherited from the initial domain.
+          > [!IMPORTANT]
+          > You must include *.com*, *.net*, or any other top-level extension for this to work. When adding a custom domain, the Password Policy values will be inherited from the initial domain.
       - |
         The unverified domain is added. The **contoso.com** page appears showing the DNS information needed to validate your domain ownership. Save this information.
 
