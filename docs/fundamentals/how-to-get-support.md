@@ -56,7 +56,7 @@ If you're unable to find answers by using the previously mentioned resources, yo
 
 Support is available online and by phone for Microsoft paid and trial subscriptions on global technical, pre-sales, billing, and subscription issues. Phone support and online billing support are available in additional languages.
 
-Explore the range of [support options and choose the plan](https://azure.microsoft.com/support/plans) that best fits your scenario, whether you're an IT admin managing your organization's tenant, a developer just starting your cloud journey, or a large organization deploying business-critical, strategic applications. Microsoft customers can create and manage support requests in the Azure and Microsoft Entra ID portals.
+Explore the range of [support options and choose the plan](https://azure.microsoft.com/support/plans) that best fits your scenario, whether you're an IT admin managing your organization's tenant, a developer just starting your cloud journey, or a large organization deploying business-critical, strategic applications. Microsoft customers can create and manage support requests in the Azure portal and the Microsoft Entra admin center.
 
 ### To open a support request in Microsoft Entra ID:
 

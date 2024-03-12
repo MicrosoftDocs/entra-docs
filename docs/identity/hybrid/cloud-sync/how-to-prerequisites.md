@@ -149,7 +149,7 @@ If there's a firewall between your servers and Microsoft Entra ID, configure the
 
 ## NTLM requirement
 
-You should not enable NTLM on the Windows Server that is running the Microsoft Entra Provisioning Agent and if it is enabled you should make sure you disable it.
+You should not enable NTLM on the Windows Server that is running the Microsoft Entra provisioning agent and if it is enabled you should make sure you disable it.
 
 ## Known limitations
 
