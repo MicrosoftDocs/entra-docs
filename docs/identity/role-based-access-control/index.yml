@@ -83,7 +83,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Create a custom role
-            url: custom-create.YML
+            url: custom-create.yml
           - text: Create custom roles for enterprise apps
             url: custom-enterprise-apps.md
 
