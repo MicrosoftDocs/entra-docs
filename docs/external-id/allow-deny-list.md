@@ -162,5 +162,5 @@ Remove-AzureADPolicy -Id $currentpolicy.Id
 
 ## Next steps
 
-- [Cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md)
+- [Cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml)
 - [External collaboration settings](external-collaboration-settings-configure.md).
