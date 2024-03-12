@@ -260,7 +260,7 @@ Cross-tenant access settings enable you to control how users in your organizatio
 
  
 
-Admins can now enforce Conditional Access policies based off of GPS location from Authenticator. For more information, see: [Named locations](~/identity/conditional-access/location-condition.md#named-locations).
+Admins can now enforce Conditional Access policies based off of GPS location from Authenticator. For more information, see: [Named locations](../identity/conditional-access/location-condition.md#named-locations).
  
 ---
 
@@ -272,7 +272,7 @@ Admins can now enforce Conditional Access policies based off of GPS location fro
 
  
 
-We've improved the My Sign-ins experience to now support organization switching. Now users who are guests in other tenants can easily switch and sign-in to manage their security info and view activity. More improvements were made to make it easier to switch from My Sign-ins directly to other end user portals such as My Account, My Apps, My Groups, and My Access. For more information, see: [Sign-in logs in Azure Active Directory - preview](~/identity/monitoring-health/concept-sign-ins.md)
+We've improved the My Sign-ins experience to now support organization switching. Now users who are guests in other tenants can easily switch and sign-in to manage their security info and view activity. More improvements were made to make it easier to switch from My Sign-ins directly to other end user portals such as My Account, My Apps, My Groups, and My Access. For more information, see: [Sign-in logs in Azure Active Directory - preview](../identity/monitoring-health/concept-sign-ins.md)
  
 ---
 
@@ -284,7 +284,7 @@ We've improved the My Sign-ins experience to now support organization switching.
 
  
 
-Temporary Access Pass (TAP) is now generally available. TAP can be used to securely register password-less methods such as Phone Sign-in, phishing resistant methods such as FIDO2, and even help Windows onboarding (AADJ and WHFB). TAP also makes recovery easier when a user has lost or forgotten their strong authentication methods and needs to sign in to register new authentication methods. For more information, see: [Configure Temporary Access Pass in Azure AD to register Passwordless authentication methods](~/identity/authentication/howto-authentication-temporary-access-pass.md).
+Temporary Access Pass (TAP) is now generally available. TAP can be used to securely register password-less methods such as Phone Sign-in, phishing resistant methods such as FIDO2, and even help Windows onboarding (AADJ and WHFB). TAP also makes recovery easier when a user has lost or forgotten their strong authentication methods and needs to sign in to register new authentication methods. For more information, see: [Configure Temporary Access Pass in Azure AD to register Passwordless authentication methods](../identity/authentication/howto-authentication-temporary-access-pass.md).
  
 ---
 
@@ -298,7 +298,7 @@ Temporary Access Pass (TAP) is now generally available. TAP can be used to secur
 
 In some scenarios customers may want to require a fresh authentication, every time before a user performs specific actions. Sign-in frequency Every time support requiring a user to reauthenticate during Intune device enrollment, password change for risky users and risky sign-ins.
 
-More information: [Configure authentication session management](~/identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time).
+More information: [Configure authentication session management](../identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time).
  
 ---
 
@@ -310,7 +310,7 @@ More information: [Configure authentication session management](~/identity/condi
 
  
 
-Identity Protection now emits risk (such as unfamiliar sign-in properties) on non-interactive sign-ins. Admins can now find these non-interactive risky sign-ins using the "sign-in type" filter in the Risky sign-ins report. For more information, see: [How To: Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md).
+Identity Protection now emits risk (such as unfamiliar sign-in properties) on non-interactive sign-ins. Admins can now find these non-interactive risky sign-ins using the "sign-in type" filter in the Risky sign-ins report. For more information, see: [How To: Investigate risk](../id-protection/howto-identity-protection-investigate-risk.md).
 
 ---
 
@@ -325,7 +325,7 @@ Identity Protection now emits risk (such as unfamiliar sign-in properties) on no
 
 Entra Workload Identity Federation allows developers to exchange tokens issued by another identity provider with Azure AD tokens, without needing secrets. It eliminates the need to store, and manage, credentials inside the code or secret stores to access Azure AD protected resources such as Azure and Microsoft Graph. By removing the secrets required to access Azure AD protected resources, workload identity federation can improve the security posture of your organization. This feature also reduces the burden of secret management and minimizes the risk of service downtime due to expired credentials.
 
-For more information on this capability and supported scenarios, see: [Workload identity federation](~/workload-id/workload-identity-federation.md).
+For more information on this capability and supported scenarios, see: [Workload identity federation](../workload-id/workload-identity-federation.md).
  
 
 ---
@@ -338,7 +338,7 @@ For more information on this capability and supported scenarios, see: [Workload 
 
  
 
-With Continuous access evaluation (CAE), critical security events and policies are evaluated in real time. This includes account disable, password reset, and location change. For more information, see: [Continuous access evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md)
+With Continuous access evaluation (CAE), critical security events and policies are evaluated in real time. This includes account disable, password reset, and location change. For more information, see: [Continuous access evaluation](../identity/conditional-access/concept-continuous-access-evaluation.md)
  
 ---
 
