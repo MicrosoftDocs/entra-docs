@@ -1351,6 +1351,8 @@
         href: imageworks-tutorial.md
       - name: Imagineer WebVision
         href: imagineerwebvision-tutorial.md
+      - name: iManage Work (SAML)
+        href: imanage-work-(saml)-tutorial.md
       - name: IMPAC Risk Manager
         href: impacriskmanager-tutorial.md
       - name: Imperva Data Security
