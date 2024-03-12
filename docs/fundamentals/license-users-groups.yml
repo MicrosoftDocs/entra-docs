@@ -55,14 +55,14 @@ procedureSection:
       - |
         Select **All products** to view the All Products page and to see the **Total**, **Assigned**, **Available**, and **Expiring soon** numbers for your license plans.
 
-            :::image type="content" source="media/license-users-groups/license-products-blade-with-products.png" alt-text="Screenshot of services page - with service license plans - associated license info.":::
+          :::image type="content" source="media/license-users-groups/license-products-blade-with-products.png" alt-text="Screenshot of services page - with service license plans - associated license info.":::
 
-            > [!NOTE]
-            > The numbers are defined as: 
-            > - **Total**: Total number of licenses purchased
-            > - **Assigned**: Number of licenses assigned to users
-            > - **Available**: Number of licenses available for assignment including expiring soon
-            > - **Expiring soon**: Number of licenses expiring soon
+        > [!NOTE]
+        > The numbers are defined as: 
+        > - **Total**: Total number of licenses purchased
+        > - **Assigned**: Number of licenses assigned to users
+        > - **Available**: Number of licenses available for assignment including expiring soon
+        > - **Expiring soon**: Number of licenses expiring soon
       - |
         Select a plan name to see its licensed users and groups.
   - title: |
