@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/12/2024
 ms.author: jeedes
 ---
 # Tutorial: Microsoft Entra SSO integration with HackerOne
