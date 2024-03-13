@@ -28,7 +28,7 @@ In this article, you explore a Python Django web app that is secured by Microsof
 ## Register the web app
 
 [!INCLUDE [register-application-common-steps](./includes/register-app/register-client-app-common.md)]
-[!INCLUDE [django-app-redirect-uri-configuration](./includes/register-app/add-platform-redirect-url-django.md)]  
+[!INCLUDE [django-app-redirect-uri-configuration](./includes/register-app/add-platform-redirect-url-python-django.md)]  
 
 ## Add app client secret
 

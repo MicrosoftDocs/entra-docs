@@ -28,7 +28,7 @@ In this article, you explore a Python Flask web app that is secured by Microsoft
 ## Register the web app
 
 [!INCLUDE [register-application-common-steps](./includes/register-app/register-client-app-common.md)]
-[!INCLUDE [flask-app-redirect-uri-configuration](./includes/register-app/add-platform-redirect-url-flask.md)]  
+[!INCLUDE [flask-app-redirect-uri-configuration](./includes/register-app/add-platform-redirect-url-python-flask.md)]  
 
 ## Add app client secret
 
