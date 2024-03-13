@@ -108,21 +108,21 @@ To handle errors in the `signIn(username)` method, use the following code snippe
 
 To handle errors in `submitCode()` method, use the following code snippet: 
 
-    ```Kotlin
-    val submitCodeActionResult = nextState.submitCode(
-        code = code
-    )
-    if (submitCodeActionResult is SignInResult.Complete) {
-        // Sign in flow complete, handle success state.
-    } else if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode()) {
-        // Handle "invalid code" error
-    }
-    ```
+```Kotlin
+val submitCodeActionResult = nextState.submitCode(
+    code = code
+)
+if (submitCodeActionResult is SignInResult.Complete) {
+    // Sign in flow complete, handle success state.
+} else if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode()) {
+    // Handle "invalid code" error
+}
+```
 
-    - The `SubmitCodeError` error indicates an unsuccessful action result returned by `submitCode()` and so the action result won't include a reference to the new state.
-    - The `isInvalidCode()` checks for the specific error. In this case, the previous state reference must be used to reperform the action. 
+- The `SubmitCodeError` error indicates an unsuccessful action result returned by `submitCode()` and so the action result won't include a reference to the new state.
+- The `isInvalidCode()` checks for the specific error. In this case, the previous state reference must be used to reperform the action. 
 
-To collect a new OTP code, use the following code snippet: 
+To retrieve the new OTP code, use the following code snippet: 
 
    ```kotlin
    val submitCodeActionResult = nextState.submitCode(
