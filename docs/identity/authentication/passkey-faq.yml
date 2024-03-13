@@ -1,7 +1,7 @@
 ### YamlMime:FAQ
 metadata:
-  title: Passkey (FIDO2) support in Entra ID FAQ (preview)
-  description: Frequently asked questions and answers related to passkey (FIDO2) support in Entra ID. 
+  title: Passkey (FIDO2) support in Microsoft Entra ID FAQ (preview)
+  description: Frequently asked questions and answers related to passkey (FIDO2) support in Microsoft Entra ID. 
   ms.service: entra-id
   ms.subservice: authentication
   ms.topic: faq
@@ -10,9 +10,9 @@ metadata:
   author: justinha
   manager: amycolannino
   ms.reviewer: calui
-title: Frequently asked questions about passkey (FIDO2) support in Entra ID (preview)
+title: Frequently asked questions about passkey (FIDO2) support in Microsoft Entra ID (preview)
 summary: |
-  This article addresses frequently asked questions about passkey (FIDO2) support in Entra ID. 
+  This article addresses frequently asked questions about passkey (FIDO2) support in Microsoft Entra ID. 
   Keep checking back for updated content.
 
 
