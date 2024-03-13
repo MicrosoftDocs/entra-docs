@@ -32,16 +32,16 @@ In this tutorial, you learn how to:
 
 ## Sign in a user
 
-To sign in a user using the email OTP authentication method, capture the email and send an email containing a one-time passcode for the user to verify their email. When the user enters a valid one-time passcode, the app signs them in. 
+To sign in a user using the email and OTP code authentication method, collect the email and send an email containing a OTP code for the user to verify their email. When the user enters a valid OTP code, the app signs them in. 
 
-To sign in user using **Email one-time-passcode** you need to: 
+To sign in user using email and OTP code you need to: 
 
-1. Create your user interface that includes: 
+1. Create your user interface (UI) that includes: 
 
    - A UI to submit an Email.
    - A UI to submit one-time passcode.
 
-1. To sign in the user, we're going to use the library's `signIn(username)` method, the function will return a result that you can assign to the `actionResult` field. The `actionResult` represents the result of the previously performed action and can take multiple states (forms). Add a button to the application that calls the following code snippet when selected: 
+1. In your app, add a button, whose select event triggers the following code snippet: 
 
    ```kotlin
     CoroutineScope(Dispatchers.Main).launch {
@@ -66,19 +66,21 @@ To sign in user using **Email one-time-passcode** you need to:
     }
    ```
 
-    > [!NOTE]
-    > You should add user inputs to your app to collect user email and one time passcode. 
+    - Use the MSAL SDK's `signIn(username)` method to start the sign-in flow. 
+    - The method's parameter, `username` is then email address you collect from the user.
+    -  In most common scenario, the `signIn(username)` returns a result, `SignInResult.CodeRequired`, which indicates that the SDK expects the app to submit the OTP code sent to the user's emails address.
+    -  The `SignInResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`. 
+    - The new state gives us access to two new methods: 
+        - `submitCode()` submits the OTP code that the app collects from the user. 
+        - `resendCode()` re-sends the OTP code if the user doesn't receive the code. 
 
-   In the library's `signIn(username)` method, we pass in the email address that user supplied us in the email submit form. In most common scenario, the `actionResult` is of type `SignInResult.CodeRequired`, which indicates that the API expects a code to be sent, in this case to verify the email address. The `SignInResult.CodeRequired` contains a new state reference, which we can retrieve through `actionResult.nextState`. This new state is of type `SignInCodeRequiredState`, which gives us access to two new methods: 
-
-   - `submitCode()` is used to submit the code that user supplies in the form to submit one-time passcode. 
-   - `resendCode()` is used to resend the one-time passcode if the user doesn't receive the code. 
-
-### Handle errors during sign in 
+### Handle errors during sign-in flow 
 
 During sign-in, not all actions succeed. For instance, the user might attempt to sign in with an email address that doesn't exist or submit an invalid code. 
 
-1. To handle errors in library's `signIn(username)` method, use the following code snippet: 
+#### Handle sign-in errors
+
+To handle errors in the `signIn(username)` method, use the following code snippet: 
 
    ```Kotlin
    val actionResult = authClient.sign(
@@ -99,29 +101,35 @@ During sign-in, not all actions succeed. For instance, the user might attempt to
    }
    ```
 
-    `SignInError` indicates an unsuccessful action result returned by `signIn()` and won't include a reference to the new state, while the utility method `isUserNotFound()` checks for the specific error type of `SignInError`: the user used an email address that doesn't exist. 
+    - `SignInError` indicates an unsuccessful action result returned by `signIn()` and so the action result won't include a reference to the new state
+    - The method `isUserNotFound()` checks for the specific error, such as, the user used an email address that doesn't exist. 
 
-2. To handle errors in `submitCode()`, use the following code snippet: 
+#### Handle submit code errors
 
-    ```kotlin
-   val submitCodeActionResult = nextState.submitCode(
-       code = code
-   )
-   if (submitCodeActionResult is SignInResult.Complete) {
-       // Sign in flow complete, handle success state.
-   } else if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode()) {
-       // Handle "invalid code" error
-   }
-   ```
+To handle errors in `submitCode()` method, use the following code snippet: 
 
-    The `SubmitCodeError` error indicates an unsuccessful action result returned by `submitCode()` and won't include a reference to the new state, while the utility method `isInvalidCode()` checks for the specific error type of `SubmitCodeError`. In this case, the previous state reference must be used to reperform the action. To retrieve a new one-time passcode, use the following code snippet: 
+    ```Kotlin
+    val submitCodeActionResult = nextState.submitCode(
+        code = code
+    )
+    if (submitCodeActionResult is SignInResult.Complete) {
+        // Sign in flow complete, handle success state.
+    } else if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode()) {
+        // Handle "invalid code" error
+    }
+    ```
+
+    - The `SubmitCodeError` error indicates an unsuccessful action result returned by `submitCode()` and so the action result won't include a reference to the new state.
+    - The `isInvalidCode()` checks for the specific error. In this case, the previous state reference must be used to reperform the action. 
+
+To collect a new OTP code, use the following code snippet: 
 
    ```kotlin
    val submitCodeActionResult = nextState.submitCode(
        code = code
    )
    if (submitCodeActionResult is SignInError && submitCodeActionResult.isInvalidCode) {
-       // Inform the user that the submitted code was incorrect or invalid and ask for a new code to be supplied
+       // Inform the user that the submitted code was incorrect or invalid, then ask them to input a new OTP code
        val newCode = retrieveNewCode()
        nextState.submitCode(
            code = newCode
@@ -133,7 +141,7 @@ You've completed all the necessary steps to successfully sign in a user on your 
 
 ## Sign out a user 
 
-To sign out a user using the **Email one-time passcode** flow, you need to have a `Sign out` button, which a user can select to remove the currently stored account from the cache. The user will sign out only from the local app.
+To sign out a user using the email and OTP code, you need to have a `Sign out` button, which a user can select to remove the currently stored account from the cache. The user will sign out only from the local app.
 
 To sign out user using **Email one-time-passcode** you need to: 
 

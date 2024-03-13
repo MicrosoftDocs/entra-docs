@@ -17,7 +17,7 @@ ms.date: 02/29/2024
 Currently, native authentication supports two authentication methods:
 
 - Email with one-time passcode (OTP).
-- Email and password sign-in with support for self-service password reset (SSPR).
+- Email and password with support for self-service password reset (SSPR).
 
 A customer app that uses native authentication to sign in users can use either of the authentication methods. To make successful calls to Microsoft Entra, the app needs to indicate the authentication methods it supports. Microsoft Entra enables the customer app to advertise the authentication methods it supports by using a *challenge types*. 
 

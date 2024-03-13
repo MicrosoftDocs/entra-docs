@@ -61,11 +61,11 @@ To sign up a user by using email OTP, you need to:
    }
    ```
 
-    1. Use the MSAL SDK's instance  method, `signUp(username)` to start the sign-up flow.
-    1. The method's parameter, `username` is then email address you collect from the user. 
-    1. In most common scenario, the `signUp(username)` returns a result, `SignUpResult.CodeRequired`, which indicates that the SDK expects the app to submit the OTP codes sent to the user's emails address.
-    1. The `SignUpResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`. 
-    1. The new state gives us access to two new methods: 
+    - Use the MSAL SDK's instance  method, `signUp(username)` to start the sign-up flow.
+    - The method's parameter, `username` is then email address you collect from the user. 
+    - In most common scenario, the `signUp(username)` returns a result, `SignUpResult.CodeRequired`, which indicates that the SDK expects the app to submit the OTP codes sent to the user's emails address.
+    - The `SignUpResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`. 
+    - The new state gives us access to two new methods: 
         - `submitCode()` submits the OTP code that the app collects from the user. 
         - `resendCode()` re-sends the OTP code if the user doesn't receive the code. 
 
