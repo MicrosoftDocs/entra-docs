@@ -98,7 +98,7 @@ sections:
       - question: |
           Can a two-way forest trust be created between Domain Services and an on-premises forest?
         answer: |
-          Yes, you can create a two-way trust. You can also create a one-way outgoing trust or one-way incoming trust to support diferent scenarios for users authentication and access. For more information, see [Create a forest trust](tutorial-create-forest-trust.md). 
+          Yes, you can create a two-way trust. You can also create a one-way outgoing trust or one-way incoming trust to support different scenarios for users authentication and access. For more information, see [Create a forest trust](tutorial-create-forest-trust.md). 
 
       - question: |
           Can I move a managed domain?
