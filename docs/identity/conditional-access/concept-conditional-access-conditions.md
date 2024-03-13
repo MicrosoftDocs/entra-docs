@@ -80,7 +80,7 @@ Administrators can create policies that target specific locations along with oth
 By default, all newly created Conditional Access policies apply to all client app types even if the client apps condition isn’t configured. 
 
 > [!NOTE]
-> The behavior of the client apps condition was updated in August 2020. If you have existing Conditional Access policies, they will remain unchanged. However, if you click on an existing policy, the configure toggle has been removed and the client apps the policy applies to are selected.
+> The behavior of the client apps condition was updated in August 2020. If you have existing Conditional Access policies, they will remain unchanged. However, if you click on an existing policy, the **Configure** toggle has been removed and the client apps the policy applies to are selected.
 
 > [!IMPORTANT]
 > Sign-ins from legacy authentication clients don’t support multifactor authentication (MFA) and don’t pass device state information, so they are blocked by Conditional Access grant controls, like requiring MFA or compliant devices. If you have accounts which must use legacy authentication, you must either exclude those accounts from the policy, or configure the policy to only apply to modern authentication clients.
