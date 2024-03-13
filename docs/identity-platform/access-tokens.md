@@ -8,7 +8,7 @@ ms.custom: curation-claims
 ms.date: 8/1/2023
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer, I want to understand how to validate access tokens, so that I can ensure the security and integrity of the tokens being used in my application.
 ---
 
