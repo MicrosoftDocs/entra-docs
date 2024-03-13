@@ -104,7 +104,7 @@ If you choose to download the *.zip* file, extract the sample app file to a fold
 
     1. `CLIENT_SECRET` which is the app secret value you copied earlier.
 
-    1. `AUTHORITY` which is the URL that identifies a token authority. It should be of the format *https://<subdomain>.ciamlogin.com/<subdomain>.onmicrosoft.com*. Replace *subdomain* with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+    1. `AUTHORITY` which is the URL that identifies a token authority. It should be of the format *https://{subdomain}.ciamlogin.com/{subdomain}.onmicrosoft.com*. Replace *subdomain* with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 
     1. `REDIRECT_URI` which should be similar to the redirect URI you registered earlier should match your configuration.
 
