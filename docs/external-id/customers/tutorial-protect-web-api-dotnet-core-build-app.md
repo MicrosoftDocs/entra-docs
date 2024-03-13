@@ -22,7 +22,7 @@ This tutorial series demonstrates how to secure a registered web API in the Micr
 In this tutorial;
 
 > [!div class="checklist"]
-> * Configure your web API to use it's app registration details
+> * Configure your web API to use its app registration details
 > * Configure your web API to use delegated and application permissions registered in the app registration
 > * Protect your web API endpoints
 

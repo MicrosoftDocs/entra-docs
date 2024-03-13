@@ -37,7 +37,7 @@ This document focuses on enabling FIDO2 security key based passwordless authenti
 The following scenarios aren't supported:
 
 - Windows Server Active Directory Domain Services (AD DS) domain-joined (on-premises only devices) deployment.
-- RDP, VDI, and Citrix scenarios using a security key.
+- RDP, VDI, and Citrix scenarios using a security key other than [webauthn redirection](/azure/virtual-desktop/authentication).
 - S/MIME using a security key.
 - "Run as" using a security key.
 - Log in to a server using a security key.

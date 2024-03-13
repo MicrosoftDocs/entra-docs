@@ -80,7 +80,6 @@ Determining whether an individual user can consent to an application can be conf
 
 ## Next steps
 
-- [Apps, permissions, and consent in Azure Active Directory (v1.0 endpoint)](~/identity-platform/quickstart-register-app.md)
 
 - [Scopes, permissions, and consent in the Microsoft identity platform (v2.0 endpoint)](~/identity-platform/permissions-consent-overview.md)
 

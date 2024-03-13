@@ -5,7 +5,7 @@ author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 06/22/2023
 ms.author: owinfrey
 ---
@@ -18,13 +18,13 @@ The following document provides an overview of a workflow created using Lifecycl
 ## License requirements 
 
 
-[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 ## Permissions and Roles
 
 For a full list of supported delegated and application permissions required to use Lifecycle Workflows, see: [Lifecycle workflows permissions](/graph/permissions-reference#lifecycle-workflows-permissions).
 
-For delegated scenarios, the admin needs one of the following [Microsoft Entra roles](~/identity/role-based-access-control/permissions-reference.md):
+For delegated scenarios, the admin needs one of the following [Microsoft Entra roles](../identity/role-based-access-control/permissions-reference.md):
 
 - Global administrator
 - Global reader
@@ -32,19 +32,7 @@ For delegated scenarios, the admin needs one of the following [Microsoft Entra r
 
 ## Limits
 
-
-|Category  |Limit  |
-|---------|---------|
-|Number of Workflows     |   50 per tenant      |
-|Number of Tasks     |  25 per workflow       |
-|Number of Custom Task Extensions     |  100 per tenant       |
-|offsetInDays range of triggerAndScopeBasedConditions executionConditions     |  180 days       |
-|Workflow schedule interval in hours     |   1-24 hours      |
-|Number of users per on-demand selection	     |  10       |
-|durationBeforeTimeout range of custom task extensions     |   5 minutes-3 hours      |
-
-> [!NOTE]
-> If creating, or updating, a workflow via API the offsetInDays range will be between -180-180 days. The negative value will signal happening before the timeBasedAttribute, while the positive value will signal happening afterwards.
+For a full list of Lifecycle workflow service limits, see: [Lifecycle Workflows Service Limits](governance-service-limits.md#lifecycle-workflows).
 
 ## Parts of a workflow 
 

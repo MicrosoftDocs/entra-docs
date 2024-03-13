@@ -97,7 +97,7 @@ If an application or service attempts to perform a protection action, it must be
 
 - Microsoft Entra administrator experiences for the actions in the [Microsoft Entra admin center](https://entra.microsoft.com)
 - [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview?branch=main)
-- [Microsoft Graph Explorer](/graph/graph-explorer/graph-explorer-overview?branch=main)
+- [Graph Explorer](/graph/graph-explorer/graph-explorer-overview?branch=main)
 
 There are some known and expected limitations. The following applications will fail if they attempt to perform a protected action.
  

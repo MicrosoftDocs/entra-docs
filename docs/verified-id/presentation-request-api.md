@@ -169,7 +169,7 @@ The `constraints` type contains a collection of claims constraints that must be 
 
 |Property |Type |Description |
 |---------|---------|---------|
-| `claimName` |  string | Mandatory. Name of the claim for the constraint. |
+| `claimName` |  string | Mandatory. Name of the claim for the constraint. This is the claim name in the verifiable credential. See [outputClaim](rules-and-display-definitions-model.md#claimmapping-type) in claimMapping type. |
 | `values` |  string collection | Set of values that should match the claim value. If you specify multiple values, like ["red", "green", "blue"] it is a match if the claim value in the credential has any of the values in the collection.|
 | `contains` | string |	The constraint evaluates to true if the claim value contains the specified value.|
 | `startsWith` | string |	The constraint evaluates to true if the claim value starts with the specified value.|
@@ -180,7 +180,7 @@ The faceCheck type contains information for performing liveness check during pre
 
 |Property |Type |Description |
 |---------|---------|---------|
-| `sourcePhotoClaimName` |  string | Mandatory. The name of the claim in the credential that contains the photo. |
+| `sourcePhotoClaimName` |  string | Mandatory. The name of the claim in the credential that contains the photo. See [outputClaim](rules-and-display-definitions-model.md#claimmapping-type) in claimMapping type. |
 | `matchConfidenceThreshold` |  integer | Optional. The confidential threshold for a successful check between the photo and the liveness data. Must be an integer between 50 and 100. The default is 70. |
 
 ## Successful response

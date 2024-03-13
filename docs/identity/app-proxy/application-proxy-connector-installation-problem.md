@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
-ms.date: 02/12/2024
+ms.date: 02/26/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -28,7 +28,7 @@ When the installation of a connector fails, the root cause is usually one of the
 > [!NOTE]
 > The connector installation logs can be found in the %TEMP% folder and can help provide additional information on what is causing an installation failure.
 
-## Verify connectivity to the cloud application proxy service and Microsoft Login page
+## Verify connectivity to the cloud application proxy service and Microsoft sign in page
 
 **Objective:** Verify that the connector machine can connect to the application proxy registration endpoint and the Microsoft sign in page.
 
@@ -71,17 +71,17 @@ If the value is **true**, follow these steps to verify the certificate:
 1. Download [PsTools.zip](/sysinternals/downloads/pstools).
 2. Extract [PsExec](/sysinternals/downloads/psexec) from the package and run **psexec -i -u "nt authority\network service" cmd.exe** from an elevated command prompt.
 3. Run **certmgr.msc** in the newly appeared command prompt.
-4. In the management console, expand the Personal container and click on Certificates.
+4. In the management console, expand the Personal container and select on Certificates.
 5. Locate the certificate issued by **connectorregistrationca.msappproxy.net**.
 
 If the value is **false**, follow these steps to verify the certificate:
 1. Run **certlm.msc**.
-2. In the management console, expand the Personal container and click on Certificates.
+2. In the management console, expand the Personal container and select on Certificates.
 3. Locate the certificate issued by **connectorregistrationca.msappproxy.net**.    
 
 **To renew the client certificate:**
 
-If a connector isn't connected to the service for several months, its certificates may be outdated. The failure of the certificate renewal leads to an expired certificate. The expired certificate causes the connector service to stop working. The event 1000 is recorded in the admin log of the connector:
+If a connector isn't connected to the service for several months, its certificates could be outdated. The failure of the certificate renewal leads to an expired certificate. The expired certificate causes the connector service to stop working. The event 1000 is recorded in the admin log of the connector:
 
 `Connector re-registration failed: The Connector trust certificate expired. Run the PowerShell cmdlet Register-AppProxyConnector on the computer on which the Connector is running to re-register your Connector.`
 

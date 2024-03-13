@@ -161,7 +161,7 @@ To authenticate users on the managed domain, Domain Services needs password hash
 >
 > Synchronized credential information in Microsoft Entra ID can't be re-used if you later create a managed domain - you must reconfigure the password hash synchronization to store the password hashes again. Previously domain-joined VMs or users won't be able to immediately authenticate - Microsoft Entra ID needs to generate and store the password hashes in the new managed domain.
 >
-> [Microsoft Entra Connect Cloud Sync is not supported with Domain Services](/azure/active-directory/hybrid/cloud-sync/what-is-cloud-sync#comparison-between-azure-ad-connect-and-cloud-sync). On-premises users need to be synced using Microsoft Entra Connect in order to be able to access domain-joined VMs. For more information, see [Password hash sync process for Domain Services and Microsoft Entra Connect][password-hash-sync-process].
+> [Microsoft Entra Connect cloud sync is not supported with Domain Services](/azure/active-directory/hybrid/cloud-sync/what-is-cloud-sync#comparison-between-azure-ad-connect-and-cloud-sync). On-premises users need to be synced using Microsoft Entra Connect in order to be able to access domain-joined VMs. For more information, see [Password hash sync process for Domain Services and Microsoft Entra Connect][password-hash-sync-process].
 
 The steps to generate and store these password hashes are different for cloud-only user accounts created in Microsoft Entra ID versus user accounts that are synchronized from your on-premises directory using Microsoft Entra Connect.
 

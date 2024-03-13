@@ -64,8 +64,8 @@ When using custom domains, you need to create a DNS entry with a CNAME record fo
 
 To confirm that you have configured your CNAME correctly, you can use [nslookup](/windows-server/administration/windows-commands/nslookup) on one of the target endpoints, for example, `expenses.adventure-works.com`.  Your response should include the already mentioned alias (`<yourAADTenantId>.tenant.runtime.msappproxy.net`).
 
-### Using connector groups assigned to an App Proxy cloud service region other than the default region
-If you have connectors installed in regions different from your default tenant region, it is beneficial to change which region your connector group is optimized for to improve performance accessing these applications. To learn more see, [Optimize connector groups to use closest Application Proxy cloud service](application-proxy-network-topology.md#optimize-connector-groups-to-use-closest-application-proxy-cloud-service).
+### Using connector groups assigned to an application proxy cloud service region other than the default region
+If you have connectors installed in regions different from your default tenant region, it is beneficial to change which region your connector group is optimized for to improve performance accessing these applications. To learn more see, [Optimize connector groups to use closest application proxy cloud service](application-proxy-network-topology.md#optimize-connector-groups-to-use-closest-application-proxy-cloud-service).
  
 If the connector group assigned to the wildcard application uses a **different region than your default region**, you will need to update the CNAME record to point to a regional specific external URL. Use the following table to determine the relevant URL:
 
@@ -138,7 +138,7 @@ You can publish the wildcard application using the steps outlined in [Publish ap
 - A verified domain called `adventure-works.com` has been configured.
 - A **CNAME** entry that points `*.adventure-works.com` to `000aa000-11b1-2ccc-d333-4444eee4444e.tenant.runtime.msappproxy.net` has been created.
 
-Following the [documented steps](application-proxy-add-on-premises-application.md), you create a new Application Proxy application in your tenant. In this example, the wildcard is in the following fields:
+Following the [documented steps](application-proxy-add-on-premises-application.md), you create a new application proxy application in your tenant. In this example, the wildcard is in the following fields:
 
 - Internal URL:
 
@@ -167,7 +167,7 @@ The configuration implements the following structure:
 
 In this scenario, you have in addition to the three general applications another application, `finance.adventure-works.com`, which should only be accessible by Finance division. With the current application structure, your finance application would be accessible through the wildcard application and by all employees. To change this, you exclude your application from your wildcard by configuring Finance as a separate application with more restrictive permissions.
 
-Make sure that a CNAME record exists that points `finance.adventure-works.com` to the application specific endpoint, specified on the Application Proxy page for the application. For this scenario, `finance.adventure-works.com` points to `https://finance-awcycles.msappproxy.net/`.
+Make sure that a CNAME record exists that points `finance.adventure-works.com` to the application specific endpoint, specified on the application proxy page for the application. For this scenario, `finance.adventure-works.com` points to `https://finance-awcycles.msappproxy.net/`.
 
 Following the [documented steps](application-proxy-add-on-premises-application.md), this scenario requires the following settings:
 

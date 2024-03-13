@@ -11,7 +11,6 @@ ms.date: 03/07/2023
 ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
-
 ---
 
 # Administrative units in Microsoft Entra ID
@@ -60,7 +59,7 @@ In order for the [User Administrator](permissions-reference.md#user-administrato
 
 ## License requirements
 
-Using administrative units requires a Microsoft Entra ID P1 license for each administrative unit administrator who is assigned directory roles over the scope of the administrative unit, and a Microsoft Entra ID Free license for each administrative unit member. Creating administrative units is available with a Microsoft Entra ID Free license. If you are using dynamic membership rules for administrative units, each administrative unit member requires a Microsoft Entra ID P1 license. To find the right license for your requirements, see [Comparing generally available features of the Free and Premium editions](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+Using administrative units requires a Microsoft Entra ID P1 license for each administrative unit administrator who is assigned directory roles over the scope of the administrative unit, and a Microsoft Entra ID Free license for each administrative unit member. Creating administrative units is available with a Microsoft Entra ID Free license. If you are using dynamic membership rules for administrative units, each administrative unit member requires a Microsoft Entra ID P1 license. To find the right license for your requirements, see [Comparing generally available features of the Free and Premium editions](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
 ## Manage administrative units
 
@@ -81,9 +80,9 @@ The criteria on which administrative units are created are guided by the unique 
 
 You can expect the creation of administrative units in the organization to go through the following stages:
 
-1. **Initial adoption**: Your organization will start creating administrative units based on initial criteria, and the number of administrative units will increase as the criteria are refined.
-1. **Pruning**: After the criteria are defined, administrative units that are no longer required will be deleted.
-1. **Stabilization**: Your organizational structure is defined, and the number of administrative units isn't going to change significantly in the short term.
+1. **Initial adoption:** Your organization will start creating administrative units based on initial criteria, and the number of administrative units will increase as the criteria are refined.
+1. **Pruning:** After the criteria are defined, administrative units that are no longer required will be deleted.
+1. **Stabilization:** Your organizational structure is defined, and the number of administrative units isn't going to change significantly in the short term.
 
 ## Currently supported scenarios
 
@@ -98,8 +97,8 @@ Administrative unit-scoped admins can use the Microsoft 365 admin center for bas
 
 Administrative units apply scope only to management permissions. They don't prevent members or administrators from using their [default user permissions](~/fundamentals/users-default-permissions.md) to browse other users, groups, or resources outside the administrative unit. In the Microsoft 365 admin center, users outside a scoped admin's administrative units are filtered out. But you can browse other users in the Microsoft Entra admin center, PowerShell, and other Microsoft services.
 
->[!Note]
->Only the features described in this section are available in the Microsoft 365 admin center. No organization-level features are available for a Microsoft Entra role with administrative unit scope.
+>[!NOTE]
+> Only the features described in this section are available in the Microsoft 365 admin center. No organization-level features are available for a Microsoft Entra role with administrative unit scope.
 
 The following sections describe current support for administrative unit scenarios.
 
@@ -120,7 +119,7 @@ The following sections describe current support for administrative unit scenario
 | Administrative unit-scoped management of user properties, passwords | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Administrative unit-scoped management of user licenses | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Administrative unit-scoped blocking and unblocking of user sign-ins | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Administrative unit-scoped management of user multi-factor authentication credentials | :white_check_mark: | :white_check_mark: | :x: |
+| Administrative unit-scoped management of user multifactor authentication credentials | :white_check_mark: | :white_check_mark: | :x: |
 
 ### Group management
 
