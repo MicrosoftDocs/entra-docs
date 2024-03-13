@@ -70,7 +70,7 @@ The following table shows the availability of features for browser-delegated and
 
 You can build your customer-facing apps that use native authentication by using our native authentication APIs or Microsoft Authentication Library (MSAL) SDK for Android and iOS. Whenever possible, we recommend you use the MSAL to add native authentication to your apps. 
 
-If you're planning to create a mobile app on a framework currently not supported by MSAL, you may use our authentication API.   For more information, explore our [Android](how-to-run-native-authentication-sample-android-app.md) and [iOS](how-to-run-native-authentication-sample-ios-app.md) tutorials. 
+If you're planning to create a mobile app on a framework currently not supported by MSAL, you may use our authentication API.  For more information, explore our [Android](how-to-run-native-authentication-sample-android-app.md) and [iOS](how-to-run-native-authentication-sample-ios-app.md) tutorials. 
 
 ## Related content 
 
