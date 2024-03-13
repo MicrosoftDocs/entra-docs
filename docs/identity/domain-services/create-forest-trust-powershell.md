@@ -9,6 +9,7 @@ ms.subservice: domain-services
 ms.topic: conceptual
 ms.date: 03/11/2024
 ms.author: justinha
+ms.reviewer: wanjikumugo
 ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 #Customer intent: As an identity administrator, I want to create a Microsoft Entra Domain Services forest and one-way outbound trust from a Microsoft Entra Domain Services forest to an on-premises Active Directory Domain Services forest using Azure PowerShell to provide authentication and resource access between forests.
 ---
@@ -123,7 +124,7 @@ To create a managed domain, you use the `New-AaddsResourceForest` script. This s
 
 1. Now create a managed domain forest using the `New-AaddsResourceForest` script. The following example creates a forest named *addscontoso.com* and creates a workload subnet. Provide your own parameter names and IP address ranges or existing virtual networks.
 
-    ```azurepowershell
+    ```powershell
     New-AzureAaddsForest `
         -azureSubscriptionId <subscriptionId> `
         -aaddsResourceGroupName "myResourceGroup" `
