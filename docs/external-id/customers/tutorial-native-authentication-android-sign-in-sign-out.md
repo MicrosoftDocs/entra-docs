@@ -101,8 +101,8 @@ To handle errors in the `signIn(username)` method, use the following code snippe
    }
    ```
 
-    - `SignInError` indicates an unsuccessful action result returned by `signIn()` and so the action result won't include a reference to the new state
-    - The method `isUserNotFound()` checks for the specific error, such as, the user used an email address that doesn't exist. 
+- `SignInError` indicates an unsuccessful action result returned by `signIn()` and so the action result won't include a reference to the new state
+- The method `isUserNotFound()` checks for the specific error, such as, the user used an email address that doesn't exist. 
 
 #### Handle submit code errors
 
@@ -137,11 +137,11 @@ To retrieve the new OTP code, use the following code snippet:
    }
    ```
 
-You've completed all the necessary steps to successfully sign in a user on your app. Build and run your application. If all good, you should be able to provide an email ID, receive a code on the email and use that to successfully sign in user. 
+You've completed all the necessary steps to successfully sign in a user on your app. Build and run your application. If all good, you should be able to provide an email, receive a code on the email and use that to successfully sign in user. 
 
 ## Sign out a user 
 
-To sign out a user using the email and OTP code, you need to have a `Sign out` button, which a user can select to remove the currently stored account from the cache. The user will sign out only from the local app.
+To sign out a user, you need to remove the account currently stored from the cache. The user will sign out only from the local app.
 
 To sign out user using **Email one-time-passcode** you need to: 
 
