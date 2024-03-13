@@ -6,7 +6,7 @@ author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 02/26/2024
 ms.author: jomondi
 ms.reviewer: alamaral
