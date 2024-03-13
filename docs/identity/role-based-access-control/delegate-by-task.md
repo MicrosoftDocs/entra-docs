@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 03/08/2024
+ms.date: 03/13/2024
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
@@ -395,7 +395,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Revoke license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Update all properties except User Principal Name | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Update User Principal Name for limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |
-> | Update User Principal Name property on privileged admins | [Global Administrator](permissions-reference.md#global-administrator) |  |
+> | Update User Principal Name property on privileged admins | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |  |
 > | Update user settings - Default user role permissions | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |
 > | Update user settings - Guest user access | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |
 > | Update Authentication methods | [Authentication Administrator](permissions-reference.md#authentication-administrator) | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator)<br/>[Global Administrator](permissions-reference.md#global-administrator) |
