@@ -61,8 +61,8 @@ https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMetho
 
 | Relationship | Type | Description |
 |--------------|------|-------------|
-| includeTargets | [microsoftAuthenticatorAuthenticationMethodTarget](/graph/api/resources/passwordlessmicrosoftauthenticatorauthenticationmethodtarget) collection | A collection of users or groups who are enabled to use the authentication method. |
-| featureSettings | [microsoftAuthenticatorFeatureSettings](/graph/api/resources/passwordlessmicrosoftauthenticatorauthenticationmethodtarget) collection | A collection of Microsoft Authenticator features. |
+| includeTargets | [microsoftAuthenticatorAuthenticationMethodTarget](/graph/api/resources/microsoftauthenticatorauthenticationmethod) collection | A collection of users or groups who are enabled to use the authentication method. |
+| featureSettings | [microsoftAuthenticatorFeatureSettings](/graph/api/resources/microsoftauthenticatorauthenticationmethod) collection | A collection of Microsoft Authenticator features. |
  
 #### MicrosoftAuthenticator includeTarget properties
  
