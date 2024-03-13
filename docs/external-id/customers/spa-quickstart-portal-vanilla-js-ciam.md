@@ -10,7 +10,7 @@ ms.service: entra-external-id
 ms.custom: devx-track-js
 ROBOTS: NOINDEX
 ms.subservice: customers
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 06/06/2023
 ---
 

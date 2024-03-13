@@ -3,7 +3,7 @@ title: Understand user tokens in B2B collaboration
 description: User token reference for Microsoft Entra B2B collaboration.
 
 ms.service: entra-external-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 12/19/2023
 
 ms.author: cmulligan
