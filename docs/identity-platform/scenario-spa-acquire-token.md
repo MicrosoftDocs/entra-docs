@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 05/18/2023
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 s.reviewer: negoe
 #Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
 ---

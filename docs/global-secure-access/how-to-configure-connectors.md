@@ -1,8 +1,8 @@
 ---
 title: How to configure connectors for Microsoft Entra Private Access
 description: Learn how to configure Microsoft Entra application proxy connectors for Microsoft Entra Private Access.
-author: shlipsey3
-ms.author: sarahlipsey
+author: kenwith
+ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
 ms.date: 12/06/2023
