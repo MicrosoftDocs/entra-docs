@@ -1169,6 +1169,8 @@
         href: golinks-tutorial.md
       - name: GovWin IQ
         href: govwin-iq-tutorial.md
+      - name: GoSearch
+        href: gosearch-tutorial.md
       - name: GoToMeeting
         href: citrix-gotomeeting-tutorial.md
       - name: gr8 People
