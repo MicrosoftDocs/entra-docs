@@ -246,4 +246,4 @@ PIM is now available in the Microsoft Entra ID and Azure resource roles mobile a
 ## Next steps
 
 - [Extend or renew Azure resource roles in Privileged Identity Management](pim-resource-roles-renew-extend.md)
-- [Activate my Microsoft Entra roles in Privileged Identity Management](pim-how-to-activate-role.md)
+- [Activate my Microsoft Entra roles in Privileged Identity Management](pim-how-to-activate-role.yml)
