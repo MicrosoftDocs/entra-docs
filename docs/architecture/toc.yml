@@ -57,14 +57,14 @@ items:
       items:
       - name: Introduction
         href: guide-for-independent-software-developers.md
-      - name: Establishing applications
-        href: establishing-applications.md
-      - name: Authenticating applications and users
-        href: authenticating-applications-and-users.md
-      - name: Authorizing applications
-        href: authorizing-applications-resources-workloads.md
-      - name: Customizing tokens
-        href: customizing-tokens.md
+      - name: Establish applications
+        href: establish-applications.md
+      - name: Authenticate applications and users
+        href: authenticate-applications-and-users.md
+      - name: Authorize applications
+        href: authorize-applications-resources-workloads.md
+      - name: Customize tokens
+        href: customize-tokens.md
     - name: Authentication protocols
       items:
       - name: Overview
