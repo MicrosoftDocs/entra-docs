@@ -19,7 +19,7 @@ zone_pivot_groups: custom-auth-extension
 
 ::: zone pivot="visual-studio" 
 
-This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. You'll create an HTTP trigger function in Visual Studio and deploy it to the Azure portal, where it can be accessed through Azure Functions. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events, such as serialization and deserialization of data models, token validation, request, and response validation.
+This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. You'll create an HTTP trigger function in Visual Studio and deploy it to the Azure portal, where it can be accessed through Azure Functions.
 
 ## Prerequisites
 
@@ -123,8 +123,8 @@ The function needs to be deployed to Azure using our IDE. Check that you're corr
     | **[Resource Group](/azure/azure-resource-manager/management/overview)** |  *myResourceGroup* | Select an existing resource group, or name the new one in which you'll create your function app. |
     | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
     | **Location** | Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
-    | **Azure Storage** | General-purpose storage account | An Azure storage account is required by the Functions runtime. Select New to configure a general-purpose storage account. |
-    | **Application Insights** | ***TODO*** | How the logs are put together |
+    | **Azure Storage** | Your storage account | An Azure storage account is required by the Functions runtime. Select New to configure a general-purpose storage account. |
+    | **Application Insights** | *Default* | A feature of Azure Monitor. This is auto-selected, select the one you wish to use or configure a new one. |
     
 
 1. Wait a few moments for your function app to be deployed. Once the window closes, select **Finish**.

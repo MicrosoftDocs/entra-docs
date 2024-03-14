@@ -29,11 +29,12 @@ Alternatively, you can set up environment variables in the Azure portal.
 1. Sign in to the [Azure portal](https://portal.azure.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) or [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Navigate to the function app you created, and under **Settings**, select **Configuration**.
 1. Under **Application settings**, select **New application setting** and add the following three environment variables and associated values:
-   | Name | Value |
-   | ---- | ----- |
+   | Name | Value | Description |
+   | ---- | ----- | ----------- |
    | *AuthenticationEvents__AudienceAppId* | The app ID of the custom authentication extension |
-   | *AuthenticationEvents__AuthorityUrl* | `https://oidcconfig` |
-   | *AuthenticationEvents__AuthorizedPartyAppId* | The app ID of the authorized party app | 
+   | *AuthenticationEvents__AuthorityUrl* | &#8226; Customer tenant `https://login.microsoftonline.com/<tenantID>`
+                                            &#8226; Customer tenant `https://<mydomain>.ciamlogin.com` | The URL of the token issuer |
+   | *AuthenticationEvents__AuthorizedPartyAppId* | The app ID of the authorized party app. This can be used for development purposes | 
 
 1. Select **Save** to save the application settings.
 
