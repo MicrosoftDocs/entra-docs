@@ -8,6 +8,7 @@ ms.date: 11/06/2023
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: hybrid-cloud-sync
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # Transformations
@@ -90,9 +91,6 @@ To add a custom attribute mapping, follow these steps.
     ![Run Query](media/how-to-transformation/transform-2.png)
 
  1. Now, in the portal, go to the cloud sync configuration and select **Restart provisioning**.
-
-    ![Restart provisioning](media/how-to-transformation/transform-3.png)
-
  1. After a little while, verify the attributes are being populated by running the following query in Graph Explorer: `https://graph.microsoft.com/beta/users/{Azure AD user UPN}`.
  1. You should now see the value.
 
