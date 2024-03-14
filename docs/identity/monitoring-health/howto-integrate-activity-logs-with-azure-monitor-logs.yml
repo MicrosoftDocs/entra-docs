@@ -34,12 +34,17 @@ introduction: |
 prerequisites:
   summary: |
     To use this feature, you need:
-
-    - An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
-    - A Microsoft Entra ID P1 or P2 tenant.
-    - **Global Administrator** or **Security Administrator** access for the Microsoft Entra tenant.
-    - A **Log Analytics workspace** in your Azure subscription. Learn how to [create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
-    - Permission to access data in a Log Analytics workspace. See [Manage access to log data and workspaces in Azure Monitor](/azure/azure-monitor/logs/manage-access) for information on the different permission options and how to configure permissions.
+  dependencies:
+    - |
+      An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
+    - |
+      A Microsoft Entra ID P1 or P2 tenant.
+    - |
+      **Global Administrator** or **Security Administrator** access for the Microsoft Entra tenant.
+    - |
+      A **Log Analytics workspace** in your Azure subscription. Learn how to [create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
+    - |
+      Permission to access data in a Log Analytics workspace. See [Manage access to log data and workspaces in Azure Monitor](/azure/azure-monitor/logs/manage-access) for information on the different permission options and how to configure permissions.
 
 procedureSection:
   - title: |
@@ -53,10 +58,19 @@ procedureSection:
 
       Use the following steps to send logs from Microsoft Entra ID to Azure Monitor logs. Looking for how to set up Log Analytics workspace for Azure resources outside of Microsoft Entra ID? Check out the [Collect and view resource logs for Azure Monitor](/azure/azure-monitor/essentials/diagnostic-settings) article.
 
-      [!INCLUDE [portal update](../../includes/portal-update.md)]
-
-      [!INCLUDE [diagnostic-settings-include](../../includes/diagnostic-settings-include.md)]
+      > [!TIP]
+      > Steps in this article might vary slightly based on the portal you start from.
     steps:
+      - |
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+      - |
+        Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**. You can also select **Export Settings** from either the **Audit Logs** or **Sign-ins** page.
+      - |
+        Select **+ Add diagnostic setting** to create a new integration or select **Edit setting** for an existing integration.
+      - |
+        Enter a **Diagnostic setting name**. If you're editing an existing integration, you can't change the name.
+      - |
+        Select the log categories that you want to stream.
       - |
         Under **Destination Details** select the **Send to Log Analytics workspace** check box.
       - |
