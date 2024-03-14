@@ -1,6 +1,6 @@
 ---
 title: Establish applications in the Microsoft Entra ID ecosystem
-description: How to use Microsoft Entra ID to establish identity for applications to request tokens and for APIs to access resources.
+description: Use Microsoft Entra ID to help establish identity for applications to request tokens and for APIs to access resources.
 customer-intent: As an independent software developer, I want to learn how to use Microsoft Entra ID to establish identity so my apps request tokens and my APIs access resources.
 author: jricketts
 manager: martinco
@@ -26,7 +26,7 @@ Developers can register applications as multitenant apps and single-tenant apps.
 
 To provide solutions to any customer running Microsoft Entra ID and have a seamless experience for onboarding into the customer's Microsoft Entra ID tenant, go to **Microsoft Entra admin center**, **App registrations**, **Register an application**. On this new app registration, select **Supported account types**, **Accounts in any organizational directory (Any Microsoft Entra ID tenant--Multitenant)** or **Accounts in any organizational directory (Any Microsoft Entra ID tenant--Multitenant) and personal Microsoft accounts (for example, Skype, Xbox)**.
 
-   ![Register an application configuration options in Microsoft Entra admin center.](media/register-applications/register-an-application.png)
+   ![Screenshot of application configuration options in the Microsoft Entra admin center.](media/register-applications/register-an-application.png)
 
 Onboarding a multitenant app to a customer tenant can be as simple as running an app and having a user sign into the app. When the tenant allows user consent (users can sign in to apps without an admin previously approving an app), onboarding an app only requires that a user signs into the app. This [Identity workshop for Developers](https://youtu.be/aNyBO5W4uUQ?si=-q5C6LMULMmDT6qg&t=3916) (time code 1:05:20 to 1:08:00) shows an app being onboarded to a tenant as a user signs into an app.
 
@@ -52,7 +52,7 @@ While we recommend multitenant apps for app registration for ISVs, a single tena
 
 Because of the overhead to have customers register and configure your application, we don't recommend single tenant apps for ISVs. However, there are scenarios for which a multitenant app isn't possible for your app.
 
-If your app uses Security Assertion Markup Language 2.0 (SAML), instead of OpenID Connect (OIDC) or OAuth 2.0, it follows a single tenant app registration model. For SAML apps, the order of creation of service principals and app registration is the opposite of an OIDC or OAuth 2.0 app, at least for the admin who adds the SAML app to the tenant. Instead of registering an app and having Microsoft Entra ID automatically create the service principal, admins start by creating an Enterprise app. Microsoft Entra ID automatically creates the app registration. The Microsoft Entra ID app gallery, described in the [Publishing applications](#publishing-applications) section, eases the SAML app creation process for admins.
+If your app uses Security Assertion Markup Language 2.0 (SAML), instead of OpenID Connect (OIDC) or OAuth 2.0, it follows a single tenant app registration model. For SAML apps, the order of creation of service principals and app registration is the opposite of an OIDC or OAuth 2.0 app, at least for the admin who adds the SAML app to the tenant. Instead of registering an app and having Microsoft Entra ID automatically create the service principal, admins start by creating an Enterprise app. Microsoft Entra ID automatically creates the app registration. The Microsoft Entra ID app gallery, described in the [Publishing applications](#publish-applications) section, eases the SAML app creation process for admins.
 
 Limitations on [Redirect Uniform Resource Identifiers](~/identity-platform/reply-url.md) (URI) can prevent an ISV from creating a multitenant app. An app can have at most 256 Redirect URIs, without wildcards. If your application requires a unique Redirect URI for each customer, and there are more than 256 customers requiring a unique instance, you might not be able to create a multitenant app. You can't use wildcards (*) in Microsoft Entra ID Redirect URIs for security reasons. One option is to have a single Redirect URI for your central service (if a central service is possible). The central Redirect URI would validate the token and then redirect the user to their customer specific endpoint.
 
