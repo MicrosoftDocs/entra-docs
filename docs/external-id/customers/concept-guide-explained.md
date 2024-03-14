@@ -18,17 +18,15 @@ ms.custom: it-pro
 
 After completing the get started guide, you can recreate, edit, and customize the initial configuration to meet your company’s needs. This helps you become familiar with the features and functions of Microsoft Entra ID for customers, better understand how to use them, and appreciate the value they provide. During this process, you may even discover new features that you want to use. 
 
-The get started guide walked you through the following steps while setting up your tenant:
+The get started guide set up the below features for you automatically. This article explains these features and guide you on how to configure them manually.
 
 :::image type="content" source="media/concept-guide-explained/guide-flow.png" alt-text="Flowchart that shows the steps in the guide.":::
-
-This article explains the features you set up with the get started guide and how to configure them manually.
 
 ## Trial tenant creation
 
 :::image type="content" source="media/concept-guide-explained/trial-creation.png" alt-text="Flowchart that shows the trial tenant creation step in the guide.":::
 
-A customer tenant is the first resource you need to create to get started with Microsoft Entra ID for customers. If you have an Azure subscription, you can create your new tenant in the Microsoft Entra admin center by following [these steps](how-to-create-customer-tenant-portal). 
+A customer tenant is the first resource you need to create to get started with Microsoft Entra ID for customers. If you have an Azure subscription, you can create your new tenant in the Microsoft Entra admin center by following [these steps](how-to-create-customer-tenant-portal.md). 
 
 If you don’t have an Azure subscription, you can sign up for a [free trial](quickstart-trial-setup.md#sign-up-to-your-customer-tenant-free-trial). The trial gives you access to a tenant for 30 days. During the free trial period, you have access to all product features, with few exceptions. For more information, see the [Start a free trial without Azure subscription](quickstart-trial-setup.md). 
 
@@ -36,7 +34,7 @@ If you don’t have an Azure subscription, you can sign up for a [free trial](qu
 
 :::image type="content" source="media/concept-guide-explained/app-registration.png" alt-text="Flowchart that shows the app registration step in the guide.":::
 
-To enable your application to sign in with External ID for customers, you need to register your app with External ID for customers. The get started guide created this trusted relationship between the sample app and your tenant. It not only registers the app but also creates an endpoint, the redirect URI, and adds basic delegated permissions to the app for you to test the sign-in process.
+To enable your application to sign in with Microsoft Entra ID for customers, you need to register your app with Microsoft Entra ID for customers. The get started guide creates this trusted relationship between the sample app and your tenant. It not only registers the app but also creates an endpoint, the redirect URI, and adds basic delegated permissions to the app for you to test the sign-in process.
 
 If you register your app manually, you can also grant API permission if your app needs to call an API. Based on your app type, you have to choose the right registration process. You can find more information on how to register your app [here](how-to-register-ciam-app.md#choose-your-app-type).
 
@@ -54,30 +52,32 @@ If your customer-facing app requires more information than the built-in user att
 
 :::image type="content" source="media/concept-guide-explained/branding.png" alt-text="Flowchart that shows the branding step in the guide.":::
 
-The get started guide provided you with several basic options to customize the sign-in page, including adding your company logo, changing the background color, and adjusting the layout. After the initial setup, you can manually edit these settings and add more branding options. You can refine the layout, add headers and footers, configure text, images, and hyperlinks, and add languages to your sign-in and sign-up pages. 
+The get started guide provided you with several basic options to customize the sign-in page, including adding your company logo, changing the background color, and adjusting the layout. 
+
+After the initial setup, you can manually edit these settings and add more branding options. You can refine the layout, add headers and footers, configure text, images, and hyperlinks, and add languages to your sign-in and sign-up pages. 
 For more details about the various branding options available in your new customer tenant, visit the [Branding options](how-to-customize-branding-customers.md) page.
  
 ## Sign-in preview with your first user
 
 :::image type="content" source="media/concept-guide-explained/sign-in-preview.png" alt-text="Flowchart that shows the sign-in preview step in the guide.":::
 
-The get started guide allowed you to preview the sign-in experience with your first user. At this step in the guide, you had to create a new user only to test the sign-up steps. In this demo, your newly created user was redirected to JWT.ms instead of your app because you hadn’t set up an app at this step. 
+The get started guide allowed you to preview the sign-in experience with your first user. At this step in the guide, you had to create a new user only to test the sign-up steps. In the guide, your newly created user was redirected to JWT.ms instead of your app because you hadn’t set up an app at this step.
+ 
 To find the user you created during the guide setup, you can go to the [admin center](https://entra.microsoft.com/) and look for the user in the users list. You can find the user in the users list as a [customer user](how-to-manage-customer-accounts.md) and also manage your own account as a [tenant admin](how-to-manage-admin-accounts.md). If you’d like to see data on user activity and engagement for registered applications in your tenant, you can use the [Application user activity dashboards](how-to-user-insights.md).
 
-The guide set up the authentication method for your customer users. You had a choice between email and password, or one-time passcode sign-in. You can also manually configure other options for authenticating users of your applications, including enabling sign-in with social accounts like Facebook and Google.
+The guide set up the authentication method for your customer users; you choose between email and password, or one-time passcode sign-in. 
+You can also manually configure other options for authenticating users of your applications, including enabling sign-in with social accounts like Facebook and Google.
 For more information on how to configure these options, visit the [Authentication methods and identity providers](concept-authentication-methods-customers.md) page. You can also [enable self-service password reset](how-to-enable-password-reset-customers.md) for your customers. 
 
 ## App samples
 
 :::image type="content" source="media/concept-guide-explained/app-sample.png" alt-text="Flowchart that shows the app sample step in the guide.":::
 
-The get started guide provides a downloadable sample app to test the features of your new tenant. When you register your app manually, Microsoft Entra ID generates a unique identifier known as an Application (client) ID. This value is used to identify your app when creating authentication requests, enabling a trusted relationship between your app and your tenant.
+The get started guide provides a downloadable sample app to test the features of your new tenant. When you register your app manually, Microsoft Entra ID generates a unique identifier known as an **Application (client) ID**. This value is used to identify your app when creating authentication requests, enabling a trusted relationship between your app and your tenant.
 
 You can find the comprehensive list of app samples and guides [here](samples-ciam-all.md) that explains the process in detail. 
 
 The **Code sample guide** links will point to the relevant sample articles and will guide you through the process of registering your app, creating a user flow, associating your app with the user flow, and running your project to sign in. In some cases, it will also guide you on how to call an API.
 
 For more information on configuring your app for authentication, see the **Build and integrate guide** links. These tutorials will assist you in building and integrating your own apps with Microsoft Entra ID for customers. You can also add [custom authentication extensions](concept-custom-extensions.md) at specific points within the authentication flow. 
-
-To have an overview of all the supported features in your new tenant visit the [Supported features in Microsoft Entra ID for customers (preview)](concept-supported-features-customers.md) page. 
 
