@@ -122,7 +122,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure iManage Work (SAML) SSO
 
-To configure single sign-on on **iManage Work (SAML)** side, refer this [document.](https://docs.imanage.com/cloud/cc-help/en-US/SAML_Single_Sign-On_(SSO).html)
+To configure single sign-on on **iManage Work (SAML)** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from Microsoft Entra admin center to [iManage Work (SAML) support team](mailto:cloudsupport@imanage.com). They set this setting to have the SAML SSO connection set properly on both sides. For more information, please refer this [document.](https://docs.imanage.com/cloud/cc-help/en-US/SAML_Single_Sign-On_(SSO).html)
 
 ### Create iManage Work (SAML) test user
 
