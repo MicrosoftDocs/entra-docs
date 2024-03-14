@@ -1167,6 +1167,8 @@
         href: gofluent-tutorial.md
       - name: GoLinks
         href: golinks-tutorial.md
+      - name: GoProfiles
+        href: goprofiles-tutorial.md
       - name: GovWin IQ
         href: govwin-iq-tutorial.md
       - name: GoToMeeting
