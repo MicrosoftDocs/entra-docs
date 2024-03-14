@@ -15,10 +15,10 @@ ms.author: jricketts
 
 This article is the first in a series on how independent software developers (ISVs) can build and optimize applications for Microsoft Entra ID. In this series, you can learn more about these topics:
 
-- [Establishing applications in the Microsoft Entra ID ecosystem](establishing-applications.md) describes how to use the [Microsoft Entra admin center](https://entra.microsoft.com/) or the Microsoft Graph Application Programming Interface (API) to register apps in a Microsoft Entra ID tenant.
-- [Authenticating applications and users](authenticating-applications-and-users.md) describes how applications use Microsoft Entra ID to authenticate users and applications.
-- [Authorizing applications, resources, and workloads](authorizing-applications-resources-workloads.md) illustrates authorization when a human interacts with and directs an application. In this scenario, APIs act for a user, and when applications or services work independently.
-- [Customizing tokens](customizing-tokens.md) helps you to build security into applications with ID tokens and access tokens from Microsoft Entra ID. It describes the information that you can receive in Microsoft Entra ID tokens and how you can customize them.
+- [Establish applications in the Microsoft Entra ID ecosystem](establish-applications.md) describes how to use the [Microsoft Entra admin center](https://entra.microsoft.com/) or the Microsoft Graph Application Programming Interface (API) to register apps in a Microsoft Entra ID tenant.
+- [Authenticate applications and users](authenticate-applications-and-users.md) describes how applications use Microsoft Entra ID to authenticate users and applications.
+- [Authorize applications, resources, and workloads](authorize-applications-resources-workloads.md) illustrates authorization when a human interacts with and directs an application. In this scenario, APIs act for a user, and when applications or services work independently.
+- [Customize tokens](customize-tokens.md) helps you to build security into applications with ID tokens and access tokens from Microsoft Entra ID. It describes the information that you can receive in Microsoft Entra ID tokens and how you can customize them.
 
 ## Developing with the Microsoft identity platform
 
@@ -113,7 +113,7 @@ Applications often need more than authentication and authorization (such as acce
 
 ## Next steps
 
-- [Establishing applications in the Microsoft Entra ID ecosystem](establishing-applications.md) describes how to use the [Microsoft Entra admin center](https://entra.microsoft.com/) or the Microsoft Graph API to register apps in a Microsoft Entra ID tenant.
-- [Authenticating applications and users](authenticating-applications-and-users.md) describes how applications use Microsoft Entra ID to authenticate users and applications.
-- [Authorizing applications, resources, and workloads](authorizing-applications-resources-workloads.md) discusses authorization when an individual human interacts with and directs an application, when APIs act on behalf of a user, and when applications or services work independently.
-- [Customizing tokens](customizing-tokens.md) helps you to build security into applications with ID tokens and access tokens from Microsoft Entra ID. It describes the information that you can receive in Microsoft Entra ID tokens and how you can customize them.
+- [Establish applications in the Microsoft Entra ID ecosystem](establish-applications.md) describes how to use the [Microsoft Entra admin center](https://entra.microsoft.com/) or the Microsoft Graph API to register apps in a Microsoft Entra ID tenant.
+- [Authenticate applications and users](authenticate-applications-and-users.md) describes how applications use Microsoft Entra ID to authenticate users and applications.
+- [Authorize applications, resources, and workloads](authorize-applications-resources-workloads.md) discusses authorization when an individual human interacts with and directs an application, when APIs act on behalf of a user, and when applications or services work independently.
+- [Customize tokens](customize-tokens.md) helps you to build security into applications with ID tokens and access tokens from Microsoft Entra ID. It describes the information that you can receive in Microsoft Entra ID tokens and how you can customize them.
