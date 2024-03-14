@@ -1,6 +1,6 @@
 ---
 title: Authenticate applications and users with Microsoft Entra ID
-description: How applications can use Microsoft Entra ID to authenticate users and applications
+description: How applications can use Microsoft Entra ID to authenticate users and applications.
 customer-intent: I'm an independent software developer, and I want to learn how to use Microsoft Entra ID to authenticate users and applications.
 author: jricketts
 manager: martinco
@@ -11,18 +11,18 @@ ms.author: jricketts
 ---
 # Authenticate applications and users with Microsoft Entra ID
 
-A primary function Microsoft Entra ID has for apps is authentication, the process in which users declare their identity with a personal identifier, like a username or email address, and provide proof of that identity. The proof could be a password, multifactor authentication artifact, a biometric, or passwordless consent.
+A primary Microsoft Entra ID function for apps is authentication, the process in which users declare their identity with a personal identifier, like a username or email address. Proof of the identity is provided. The proof could be a password, multifactor authentication artifact, a biometric, or passwordless consent.
 
 This article describes how applications use Microsoft Entra ID to authenticate users and applications. It's the third in a series of articles on how Independent Software Developers (ISV) can build and optimize their applications for Microsoft Entra ID. In this series, you can learn more about these topics:
 
 - [Microsoft Entra ID for Independent Software Developers](guide-for-independent-software-developers.md) describes how to use this cloud-based identity and access management service to enable employees to access resources with your application.
 - [Establish applications in the Microsoft Entra ID ecosystem](establish-applications.md) describes how to use the [Microsoft Entra admin center](https://entra.microsoft.com/) or the Microsoft Graph Application Programming Interface (API) to register apps in a Microsoft Entra ID tenant.
-- [Authorize applications, resources, and workloads](authorize-applications-resources-workloads.md) discusses authorization when an individual human interacts with and directs an application, when APIs act on behalf of a user, and when applications or services work independently.
+- [Authorize applications, resources, and workloads](authorize-applications-resources-workloads.md) discusses authorization when an individual human interacts with and directs an application, when APIs act for a user. In addition, when applications or services work independently.
 - [Customize tokens](customize-tokens.md) helps you to build security into applications with ID tokens and access tokens from Microsoft Entra ID. It describes the information that you can receive in Microsoft Entra ID tokens and how you can customize them.
 
 ## Request tokens
 
-Applications request a token from Microsoft Entra ID. After receiving the token, apps can use the information in that token to identify the user. When you build on Microsoft Entra ID, users can authenticate many applications with a single registered Microsoft Entra ID account (SSO). The SSO authentication method allows users to sign in to multiple independent software systems using one set of credentials.
+Applications request a token from Microsoft Entra ID. After apps receive the token, they can use the information in that token to identify the user. When you build on Microsoft Entra ID, users can authenticate many applications with a single registered Microsoft Entra ID account (SSO). The SSO authentication method allows users to sign in to multiple independent software systems using one set of credentials.
 
 Protocols that developers can use to request a token from Microsoft Entra ID use a browser to connect the user to the Microsoft Entra ID website. This website enables the user to have a private conversation with Microsoft Entra ID. An application isn't a participant in that private conversation. Apps launch the Microsoft Entra ID website where the user initiates the authentication process. After the authentication process is complete, Microsoft Entra ID redirects the user back to the application, with or without a token.
 
@@ -40,7 +40,7 @@ The two protocols for user authentication are [Security Assertion Markup Languag
 
 These references detail Microsoft Entra ID SAML support.
 
-- [How the Microsoft identity platform uses the SAML protocol](~/identity-platform/saml-protocol-reference.md) is the starting point for Microsoft Entra ID SAML documentation for developers.
+- [Microsoft identity platform uses the SAML protocol](~/identity-platform/saml-protocol-reference.md) is the starting point for Microsoft Entra ID SAML documentation for developers.
 - [Single sign-on SAML protocol](~/identity-platform/single-sign-on-saml-protocol.md) is the reference for the SAML 2.0 authentication requests and responses that Microsoft Entra ID supports.
 - [Microsoft Entra federation metadata](~/identity-platform/federation-metadata.md) describes the Federation metadata and metadata endpoints for tenant-specific and tenant-independent metadata. It covers metadata for SAML and the older WS-Federation standards. While fully supported, we don't recommend WS-Federation for new applications.
 - [SAML 2.0 token claims reference](~/identity-platform/reference-saml-tokens.md) is the documentation for Microsoft Entra ID SAML tokens (assertions).
@@ -63,16 +63,16 @@ Microsoft Entra ID implements a [*UserInfo*](~/identity-platform/userinfo.md) en
 
 ## Authenticate users
 
-Applications interact with Microsoft Entra ID tenants to authenticate users. To authenticate a user, an application directs a browser to `https://login.microsoftonline.com/{tenant}/v2.0`, where `{tenant}` is the ID or domain of the tenant. However, we recommend that ISVs use Microsoft Entra ID to build multi-tenant applications that can support the widest range of customers. For a multi-tenant application, an app may not know what tenant a user is from until after the user has authenticated, so it isn't possible to use a specific tenant endpoint.
+Applications interact with Microsoft Entra ID tenants to authenticate users. To authenticate a user, an application directs a browser to `https://login.microsoftonline.com/{tenant}/v2.0`, where `{tenant}` is the ID or domain of the tenant. However, we recommend that ISVs use Microsoft Entra ID to build multitenant applications that can support the widest range of customers. For a multitenant application, an app may not know what tenant a user is from until after the user authenticates, so it isn't possible to use a specific tenant endpoint.
 
 To enable multitenant apps, Microsoft Entra ID provides two tenant-independent OIDC/OAuth 2.0 endpoints:
 
 - `https://login.microsoftonline.com/common/v2.0` allows users to authenticate an app when they're from any Microsoft Entra ID tenant or who have a consumer Microsoft Account from sites like outlook.com, skype.com, xbox.com, live.com, or Hotmail.com.
 - `https://login.microsoftonline.com/organizations/v2.0` allows users to authenticate an app when they're from any Microsoft Entra ID tenant.
 
-These endpoints allow any user from any Microsoft Entra ID tenant to authenticate your application. If you want to allow only users from specific tenants, implement the logic to allow only users from those tenants to access your app. The normal implementation is to filter users based on the `iss` (issuer) or `tid` (tenant ID) claim in the token to an allow list of tenants that you maintain.
+These endpoints allow any user from any Microsoft Entra ID tenant to authenticate your application. If you want to allow only users from specific tenants, implement the logic to allow only users from those tenants to access your app. The normal implementation is to filter users based on the `iss` (issuer) or `tid` (tenant ID) claim in the token to an allowlist of tenants that you maintain.
 
-Microsoft Entra ID tenants support users that can be regular members of the tenant or that can be guest users of the tenant. By default, guest users have limited capabilities in a tenant. For example, guest users can't see the full profile of other users in the tenant. Guest users, sometimes called Business to Business (B2B) users, enable different organizations to collaborate with tools and services that Microsoft Entra ID protects. An example scenario is inviting a user from outside your organization to access a SharePoint file in your tenant. Typically, a B2B user uses their email address as their `userid`. However, they may use that same address as the `userid` in their home tenant. By default, Microsoft Entra ID signs the user into their home tenant when they enter their `userid`.
+Microsoft Entra ID tenants support users that can be regular members of the tenant or that can be guest users of the tenant. By default, there's limited capabilities for guest users in a tenant. For example, guest users can't see the full profile of other users in the tenant. Guest users, sometimes called Business to Business (B2B) users, enable different organizations to collaborate with tools and services that Microsoft Entra ID protects. An example scenario is inviting a user from outside your organization to access a SharePoint file in your tenant. Typically, a B2B user uses their email address as their `userid`. However, they may use that same address as the `userid` in their home tenant. By default, Microsoft Entra ID signs the user into their home tenant when they enter their `userid`.
 
 To sign in a user as a B2B user, an application must use the specific tenant endpoint where the user is a guest. While it's possible for a user to specify a tenant that they want to access when an application uses the `https://login.microsoftonline.com/organizations/v2.0` endpoint, users may find that capability difficult to discover.
 
@@ -80,5 +80,5 @@ To sign in a user as a B2B user, an application must use the specific tenant end
 
 - [Microsoft Entra ID for Independent Software Developers](guide-for-independent-software-developers.md) describes how to use this cloud-based identity and access management service to enable employees to access resources with your application.
 - [Establish applications in the Microsoft Entra ID ecosystem](establish-applications.md) describes how to use the [Microsoft Entra admin center](https://entra.microsoft.com/) or the Microsoft Graph API to register apps in a Microsoft Entra ID tenant.
-- [Authorize applications, resources, and workloads](authorize-applications-resources-workloads.md) discusses authorization when an individual human interacts with and directs an application, when APIs act on behalf of a user, and when applications or services work independently.
+- [Authorize applications, resources, and workloads](authorize-applications-resources-workloads.md) discusses authorization when an individual human interacts with and directs an application, when APIs act for a user, and when applications or services work independently.
 - [Customize tokens](customize-tokens.md) helps you to build security into applications with ID tokens and access tokens from Microsoft Entra ID. It describes the information that you can receive in Microsoft Entra ID tokens and how you can customize them.
