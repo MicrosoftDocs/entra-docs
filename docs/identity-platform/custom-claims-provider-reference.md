@@ -26,7 +26,7 @@ The custom claims provider token issuance event allows you to enrich or customiz
 
 To set up and, integrate a custom extension with your application requires multiple components to be connected. The following diagram shows a high level view of the configuration points, and relationships that are created to implement a custom extension.
 
-:::image type="content" border="false" source="media/custom-extension-get-started/token-issuance-start-config.png" alt-text="Screenshot that shows the components to configure in Microsoft Entra ID to set up and integrate a custom claims provider." lightbox="media/custom-extension-get-started/token-issuance-start-config.png":::
+:::image type="content" border="false" source="media/custom-extension-tokenissuancestart-configuration/token-issuance-start-config.png" alt-text="Screenshot that shows the components to configure in Microsoft Entra ID to set up and integrate a custom claims provider." lightbox="media/custom-extension-tokenissuancestart-configuration/token-issuance-start-config.png":::
 
 - You should have a **REST API endpoint** publicly available. In this diagram, it represented by Azure Function. The REST API generates and returns custom claims to the custom extension. It's associated with a Microsoft Entra application registration.
 - You require to configure a **custom extension** in Microsoft Entra ID, which is configured to connect to your API.

@@ -1,24 +1,19 @@
 ---
-title: Configure a custom claims provider for a token issuance event
-description: Develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to source claims from an external data source outside of Microsoft Entra ID.
+title: "Custom claims provider: Configure a token issuance event"
+description: Learn how to configure a custom claims provider for a token issuance start event in Microsoft Entra ID. You can add custom claims to a token before it's issued.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 08/16/2023
-ms.reviewer: JasSuri, stsoneff
+ms.date: 03/15/2024
+ms.reviewer: stsoneff
 ms.service: identity-platform
 ms.topic: how-to
-titleSuffix: Microsoft identity platform
 
 #Customer intent: As a developer, I want to configure a custom claims provider token issuance event in the Azure portal, so that I can add custom claims to a token before it is issued.
 ---
 
 # Configure a custom claim provider for a token issuance event (preview)
-
-> [!NOTE]
->
-> This article is a work in progress and not yet complete.
 
 This article describes how to configure a custom claims provider for a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener). Using a existing Azure Functions REST API, you'll register a custom authentication extension and add attributes that you expect it to parse from your REST API. To test the custom authentication extension, you'll register a sample OpenID Connect application to get a token and view the claims.
 
@@ -32,7 +27,7 @@ This article describes how to configure a custom claims provider for a [token is
 
 ## Step 1: Register a custom authentication extension
 
-You'll now configure a custom authentication extension, which will be used by Microsoft Entra ID to call your Azure function. The custom authentication extension contains information about your REST API endpoint, the claims that it parses from your REST API, and how to authenticate to your REST API. Follow these steps to register a custom authentication extension:
+You'll now configure a custom authentication extension, which will be used by Microsoft Entra ID to call your Azure function. The custom authentication extension contains information about your REST API endpoint, the claims that it parses from your REST API, and how to authenticate to your REST API. Follow these steps to register a custom authentication extension to your Azure Function app. 
 
 # [Azure portal](#tab/azure-portal)
 
@@ -62,9 +57,7 @@ You'll now configure a custom authentication extension, which will be used by Mi
 
 ### Register an application
 
-Register an application to authenticate your custom authentication extension to your Azure Function.
-
-1. Sign in to [Graph Explorer](https://aka.ms/ge) using an account whose home tenant is the tenant you wish to manage your custom authentication extension in. The account must have the privileges to create and manage an application registration in the tenant.
+1. Sign in to [Graph Explorer](https://aka.ms/ge) using an account whose home tenant is the tenant in which you wish to manage your custom authentication extension in. This account must have privileges to create and manage an application registration in the tenant.
 2. Run the following request.
 
     ```http
@@ -78,7 +71,7 @@ Register an application to authenticate your custom authentication extension to 
 
 3. From the response, record the value of **id** and **appId** of the newly created app registration. These values are referenced in this article as `{authenticationeventsAPI_ObjectId}` and `{authenticationeventsAPI_AppId}` respectively.
 
-Create a service principal in the tenant for the authenticationeventsAPI app registration.
+### Create a service principal in the tenant for the authenticationeventsAPI app registration.
 
 While in Graph Explorer, run the following request. Replace `{authenticationeventsAPI_AppId}` with the value of **appId** that you recorded from the previous step.
 
@@ -131,7 +124,7 @@ Content-type: application/json
 
 ### Register a custom authentication extension
 
-Next, you register the custom authentication extension. You register the custom authentication extension by associating it with the app registration for the Azure Function, and your Azure Function endpoint `{Function_Url}`.
+To register the custom authentication extension, you associate it with the app registration for the Azure Function, and your Azure Function endpoint `{Function_Url}`.
 
 1. In Graph Explorer, run the following request. Replace `{Function_Url}` with the hostname of your Azure Function app. Replace `{functionApp_IdentifierUri}` with the identifierUri used in the previous step.
    - You need the *CustomAuthenticationExtension.ReadWrite.All* delegated permission. 
@@ -163,19 +156,19 @@ Next, you register the custom authentication extension. You register the custom 
     }
     ```
     
-1. Record the **id** value of the created custom claims provider object. You'll use the value later in this tutorial in place of `{customExtensionObjectId}`.
+1. Record the `id` value of the created custom claims provider object. You'll use the value later in this tutorial in place of `{customExtensionObjectId}`.
 
 ---
 
 ### 1.2 Grant admin consent
 
-After your custom authentication extension is created, you need to grant permissions to the API. The custom authentication extension uses `client_credentials` to authenticate to the Azure Function App using the `Receive custom authentication extension HTTP requests` permission.
+Once the custom authentication extension is created, you need to grant permissions to the API. The custom authentication extension uses `client_credentials` to authenticate to the Azure Function App using the `Receive custom authentication extension HTTP requests` permission.
 
 1. Open the **Overview** page of your new custom authentication extension. Take a note of the **App ID** under **API Authentication**, as it will be needed when adding an identity provider.
 1. Under **API Authentication**, select **Grant permission**. 
 1. A new window opens, and once signed in, it requests permissions to receive custom authentication extension HTTP requests. This allows the custom authentication extension to authenticate to your API. Select **Accept**. 
 
-    :::image type="content" border="false"source="./media/custom-extension-get-started/custom-extensions-overview.png" alt-text="Screenshot that shows how grant admin consent." lightbox="media/custom-extension-get-started/custom-extensions-overview.png":::
+    :::image type="content" border="false"source="./media/custom-extension-tokenissuancestart-setup/custom-extensions-overview.png" alt-text="Screenshot that shows how grant admin consent." lightbox="media/custom-extension-tokenissuancestart-setup/custom-extensions-overview.png":::
 
 ## Step 2: Configure an OpenID Connect app to receive enriched tokens
 
@@ -192,11 +185,11 @@ Follow these steps to register the **jwt.ms** web application:
 1. In the **Select a platform** dropdown in **Redirect URI**, select **Web** and then enter `https://jwt.ms` in the URL text box.
 1. Select **Register** to complete the app registration.
 
-    :::image type="content" border="false"source="media/custom-extension-get-started/register-test-web-application.png" alt-text="Screenshot that shows how to select the supported account type and redirect URI.":::
+    :::image type="content" border="false"source="media/custom-extension-tokenissuancestart-configuration/register-test-web-application.png" alt-text="Screenshot that shows how to select the supported account type and redirect URI.":::
 
 1. In the **Overview** page of your app registration, copy the **Application (client) ID**. The app ID is referred to as the `{App_to_enrich_ID}` in later steps. In Microsoft Graph, it's referenced by the **appId** property.
 
-    :::image type="content" border="false"source="media/custom-extension-get-started/get-the-test-application-id.png" alt-text="Screenshot that shows how to copy the application ID.":::
+    :::image type="content" border="false"source="media/custom-extension-tokenissuancestart-configuration/get-the-test-application-id.png" alt-text="Screenshot that shows how to copy the application ID.":::
 
 ### 2.2 Enable implicit flow
 
@@ -255,7 +248,7 @@ To assign the custom authentication extension as a custom claims provider source
 1. From the **Overview** page of *My Test application*, navigate to **Manage**, and select **Single sign-on**.
 1. Under **Attributes & Claims**, select **Edit**.
 
-    :::image type="content" border="false"  source="./media/custom-extension-get-started/open-id-connect-based-sign-on.png" alt-text="Screenshot that shows how to configure app claims." lightbox="./media/custom-extension-get-started/open-id-connect-based-sign-on.png":::
+    :::image type="content" border="false"  source="./media/custom-extension-tokenissuancestart-configuration/open-id-connect-based-sign-on.png" alt-text="Screenshot that shows how to configure app claims." lightbox="./media/custom-extension-tokenissuancestart-configuration/open-id-connect-based-sign-on.png":::
 
 1. Expand the **Advanced settings** menu.
 1. Next to **Custom claims provider**, select **Configure**.
@@ -267,7 +260,7 @@ Next, assign the attributes from the custom claims provider, which should be iss
 1. Select **Add new claim** to add a new claim. Provide a name to the claim you want to be issued, for example *dateOfBirth*.
 1. Under **Source**, select **Attribute**, and choose *customClaimsProvider.dateOfBirth* from the **Source attribute** drop-down box.
 
-    :::image type="content" border="false"  source="media/custom-extension-get-started/manage-claim.png" alt-text="Screenshot that shows how to add a claim mapping to your app." lightbox="media/custom-extension-get-started/manage-claim.png":::
+    :::image type="content" border="false"  source="media/custom-extension-tokenissuancestart-configuration/manage-claim.png" alt-text="Screenshot that shows how to add a claim mapping to your app." lightbox="media/custom-extension-tokenissuancestart-configuration/manage-claim.png":::
 
 1. Select **Save**.
 1. Repeat this process to add the *customClaimsProvider.customRoles*, *customClaimsProvider.apiVersion* and *customClaimsProvider.correlationId* attributes, and the corresponding name. It's a good idea to match the name of the claim to the name of the attribute.
@@ -376,7 +369,7 @@ Use the following steps to add Microsoft Entra as an identity provider to your A
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
 
-    :::image type="content" border="true"  source="media/custom-extension-get-started/add-identity-provider-auth-function-app-workforce.png" alt-text="Screenshot that shows how to add authentication to your function app while in a workforce tenant." lightbox="media/custom-extension-get-started/add-identity-provider-auth-function-app-workforce.png":::
+    :::image type="content" border="true"  source="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-workforce.png" alt-text="Screenshot that shows how to add authentication to your function app while in a workforce tenant." lightbox="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-workforce.png":::
 
 # [Customer tenant](#tab/customer-tenant)
 
@@ -393,7 +386,7 @@ Use the following steps to add Microsoft Entra as an identity provider to your A
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
 
-    :::image type="content" border="true"  source="media/custom-extension-get-started/add-identity-provider-auth-function-app-customer.png" alt-text="Screenshot that shows how to add authentication to your function app while in a customer tenant." lightbox="media/custom-extension-get-started/add-identity-provider-auth-function-app-customer.png":::
+    :::image type="content" border="true"  source="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-customer.png" alt-text="Screenshot that shows how to add authentication to your function app while in a customer tenant." lightbox="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-customer.png":::
 
 ---
 

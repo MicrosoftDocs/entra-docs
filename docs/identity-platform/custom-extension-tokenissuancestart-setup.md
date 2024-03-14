@@ -5,11 +5,10 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 02/26/2024
+ms.date: 03/15/2024
 ms.reviewer: stsoneff
 ms.service: identity-platform
 ms.topic: how-to
-titleSuffix: Microsoft identity platform
 zone_pivot_groups: custom-auth-extension
 
 #Customer intent: As a developer, I want to create an Azure Function app with a token issuance start event using the Azure Functions client library for .NET, and deploy it to the Azure portal, or create the app directly on the Azure portal.
@@ -26,7 +25,7 @@ This article describes how to create a REST API with a [token issuance start eve
 - A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md).
 - An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
 - A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.
-- Visual Studio with the Azure Development workload for Visual Studio installed.
+- Visual Studio with [Azure Development workload for Visual Studio](/dotnet/azure/configure-visual-studio) configured.
 
 ::: zone-end
 
@@ -39,7 +38,7 @@ This article describes how to create a REST API with a [token issuance start eve
 - A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md).
 - An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
 - A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.
-- Visual Studio Code, with Azure Functions extension enabled.
+- Visual Studio Code, with the [Azure Functions](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) extension enabled.
 
 ::: zone-end
 
@@ -59,10 +58,11 @@ This article describes how to create a REST API with a [token issuance start eve
 
 ## Create and build the Azure Function app
 
-In this step, you create an HTTP trigger function API using Visual Studio, install the required NuGet packages and copy in the sample code. You'll build the project and run the function locally to extract the function URL.
+In this step, you create an HTTP trigger function API using Visual Studio, install the required NuGet packages and copy in the sample code. You build the project and run the function locally to extract the function URL.
 
 ### Create the Azure Function app
 
+To create an Azure Function app, follow these steps:
 
 1. Open Visual Studio, and select **Create a new project**.
 1. Search for and select **Azure Functions**, then select **Next**.
@@ -101,6 +101,8 @@ The function API is the source of extra claims for your token. Using the *Micros
 
 ### Build and run the project
 
+The project has been created and the sample code has been added. Now we build and run the project to extract the function URL.
+
 1. Navigate to **Build** in the top menu, and select **Build Solution**.
 1. Press **F5** or select *AuthEventsTrigger* from the top menu to run the function. 
 1. Copy the **Function url** from the terminal that popups up when running the function. This can be used when setting up a custom authentication extension.
@@ -136,16 +138,20 @@ The function needs to be deployed to Azure using our IDE. Check that you're corr
 
 ::: zone pivot="visual-studio-code"
 
-## Create the Azure Function app
+## Create and build the Azure Function app
 
 In this step, you create an HTTP trigger function API using Visual Studio Code, install the required NuGet packages and copy in the sample code. You'll build the project and run the function locally to extract the function URL.
+
+## Create the Azure Function app
+
+To create an Azure Function app, follow these steps:
 
 1. Open Visual Studio Code.
 1. Select the **New Folder** icon in the **Explorer** window, and create a new folder for your project, for example *AuthEventsTrigger*.
 1. Select the Azure extension icon on the left-hand side of the screen. Sign in to your Azure account if you haven't already. 
 1. Under the **Workspace** bar, select the **Azure Functions** icon > **Create New Project**.
 
-    :::image type="content" border="true"  source="media/auth-events-trigger/visual-studio-code-add-azure-function.png" alt-text="Screenshot that shows how to add an Azure function in Visual Studio Code.":::
+    :::image type="content" border="true"  source="media/custom-extension-tokenissuancestart-setup/visual-studio-code-add-azure-function.png" alt-text="Screenshot that shows how to add an Azure function in Visual Studio Code.":::
 
 1. In the top bar, select the location to create the project.
 1. Select **C#** as the language, and **.NET 6.0 LTS** as the .NET runtime. 
@@ -230,7 +236,7 @@ In the Azure portal, we'll create an Azure Function app and its associated resou
 
 ## Create an HTTP trigger function
 
-After the Azure Function app is created, create an HTTP trigger function. The HTTP trigger lets you invoke a function with an HTTP request. This HTTP trigger is referenced by your Microsoft Entra custom authentication extension.
+After the Azure Function app is created, create an HTTP trigger function within the app. The HTTP trigger lets you invoke a function with an HTTP request and is referenced by your Microsoft Entra custom authentication extension.
 
 1. Within the **Overview** page of your function app, select the **Functions** pane and select **Create function** under **Create in Azure portal**.
 1. In the **Create Function** window, leave the **Development environment** property as **Develop in portal**. Under **Template**, select **HTTP trigger**.
@@ -238,7 +244,7 @@ After the Azure Function app is created, create an HTTP trigger function. The HT
 1. For the **Authorization level**, select **Function**.
 1. Select **Create**.
 
-    :::image type="content" border="false"source="media/custom-extension-get-started/create-http-trigger-function.png" alt-text="Screenshot that shows how to choose the development environment, and template." lightbox="media/custom-extension-get-started/create-http-trigger-function.png":::
+    :::image type="content" border="false"source="media/custom-extension-tokenissuancestart-configuration/create-http-trigger-function.png" alt-text="Screenshot that shows how to choose the development environment, and template." lightbox="media/custom-extension-tokenissuancestart-configuration/create-http-trigger-function.png":::
 
 ## Edit the function
 
