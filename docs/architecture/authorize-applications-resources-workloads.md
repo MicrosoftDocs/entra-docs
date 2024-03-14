@@ -24,9 +24,9 @@ In this section, we cover scenarios in which an individual human interacts with 
 
 Applications require the following authorizations when they need to access resources for a user.
 
-1. The application must have authorization to access specific operations within specific resources for the current user.
-1. The user must have authorization to access a resource under the current conditions.
-1. The user must have authorization to access a resource.
+* The application must have authorization to access specific operations within specific resources for the current user.
+* The user must have authorization to access a resource under the current conditions.
+* The user must have authorization to access a resource.
 
 The authorization process begins with an application that uses OAuth 2.0 to request an access token from Microsoft Entra ID to access specific operations within a specific resource for the user. Referred to as [delegated access](~/identity-platform/delegated-access-primer.md), an app acts as a delegate for the user.
 
@@ -119,9 +119,9 @@ In addition to delegated access, APIs may need to support applications and act i
 
 Workloads are applications that work independently and don't have a current user. Like delegated access discussed in the [Authorization in applications](#authorization-in-applications) section, [app-only access](~/identity-platform/app-only-access-primer.md) requires several authorizations:
 
-1. The application must have authorization to access specific operations within specific resources.
-1. The application must have authorization to access the resource under the current conditions.
-1. The application must have authorization to access the resource.
+* The application must have authorization to access specific operations within specific resources.
+* The application must have authorization to access the resource under the current conditions.
+* The application must have authorization to access the resource.
 
 The process starts with a workload requesting an access token with the `.default` scope (such as `https://graph.microsoft.com/.default`). Unlike delegated access (applications can dynamically and incrementally request scopes), workloads must always use static consent and the `.default` scope.
 
