@@ -11,7 +11,7 @@ ms.author: jricketts
 ---
 # Authorize applications, resources, and workloads with Microsoft Entra ID
 
-In this article, we discuss authorization when an individual human interacts with and directs an application, when Application Programming Interfaces (API) act for a user. We also cover when applications or services work independently. It's the fourth in a series of articles on how Independent Software Developers (ISV) can build and optimize their applications for Microsoft Entra ID. In this series, you can learn more about these topics:
+In this article, we discuss authorization when an individual human interacts with and directs an application, when Application Programming Interfaces (API) act for a user. We also cover when applications or services work independently. It's the fourth in a series of articles on how independent software developers (ISVs) can build and optimize their applications for Microsoft Entra ID. In this series, you can learn more about these topics:
 
 - [Microsoft Entra ID for Independent Software Developers](guide-for-independent-software-developers.md) describes how to use this cloud-based identity and access management service to enable employees to access resources with your application.
 - [Establish applications in the Microsoft Entra ID ecosystem](establish-applications.md) describes how to use the [Microsoft Entra admin center](https://entra.microsoft.com/) or the Microsoft Graph API to register apps in a Microsoft Entra ID tenant.
