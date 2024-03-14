@@ -27,7 +27,7 @@ Applications are core to Microsoft Entra ID. When a user accesses a resource, th
 For developers, the Microsoft identity platform includes the following features.
 
 - Authenticate a user, authorize an app, generate API tokens.
-- Simplify security feature integration directly with Microsoft Authentication Library (MSAL), or through a higher-level API such as [Microsoft.Identity.Web](../msal/dotnet/microsoft-identity-web.md), or Azure.Identity.
+- Simplify security feature integration directly with Microsoft Authentication Library (MSAL), or through a higher-level API such as [Microsoft.Identity.Web](../../msal/dotnet/microsoft-identity-web.md), or Azure.Identity.
 - Instead of implementing OAuth 2.0 from scratch, use MSALs to abstract away complexity with robust APIs that remove developer toil.
 - Ensure that applications follow best practices for security in compliance with industry standards and protocols such as OAuth 2.0.
 - Unify authentication stories across applications and experiences with single sign-on (SSO) support.
