@@ -141,13 +141,11 @@ You've completed all the necessary steps to successfully sign in a user on your 
 
 ## Sign out a user 
 
-To sign out a user, you need to remove the account currently stored from the cache. The user will sign out only from the local app.
+To sign out a user, you need to remove the account currently stored in the cache. 
 
-To sign out user using **Email one-time-passcode** you need to: 
+1. Create your custom user interface (UI) that includes: 
 
-1. Create your custom user interface that includes: 
-
-   - A `Sign out` button that user select to send logout request. 
+   - A sign-out button that user select to send a sign-out request. 
 
 1. To sign out a user, use the following code: 
 
@@ -178,7 +176,7 @@ if (actionResult is SignOutResult.Complete) {
 }
 ```
 
-Don't forget to add the import statements, Android Studio does that for you automatically (on Mac select Alt + Enter on each error detected by the code editor). 
+Make sure you include the import statements. Android Studio should include the import statements for you automatically. 
 
 You have completed all the necessary steps to successfully sign out a user on your app. Build and run your application. If all good, you should be able to select sign out button to successfully sign out. 
 
