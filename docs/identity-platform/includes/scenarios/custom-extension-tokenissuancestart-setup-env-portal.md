@@ -13,19 +13,28 @@ ms.custom:
 
 ## Set up environment variables for your Azure Function (optional)
 
-In the code snippet, the `AuthenticationEventsTrigger` attribute is set up for built-in [Azure App service authentication and authorization](/azure/app-service/overview-authentication-authorization). This is optional as you can also hard-code the `AuthenticationEventsTrigger` attribute to include the `TenantId` and `AudienceAppId` properties, as shown in the below snippet.
+In the code snippet, the `AuthenticationEventsTrigger` attribute is set up for built-in [Azure App service authentication and authorization](/azure/app-service/overview-authentication-authorization). This is optional as you can also hard-code the `AuthenticationEventsTrigger` attribute to include the `AuthorityUrl`, `AudienceAppId` and `AuthorityUrl` properties, as shown in the below snippet.
 
 ```csharp
-[AuthenticationEventsTrigger(TenantId = "Enter tenant ID here", AudienceAppId = "Enter application client ID here")]
+[FunctionName("onTokenIssuanceStart")]
+public async static Task<AuthenticationEventResponse> Run(
+    [AuthenticationEventsTrigger(
+    AudienceAppId = "Enter custom authentication extension app ID here",
+    AuthorityUrl = "https://oidcconfig",
+    AuthorizedPartyAppId = "Enter the Authorized Party App Id here")] TokenIssuanceStartRequest request, ILogger log) 
 ```
 
 Alternatively, you can set up environment variables in the Azure portal.
 
 1. Sign in to the [Azure portal](https://portal.azure.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) or [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Navigate to the function app you created, and under **Settings**, select **Configuration**.
-1. Under **Application settings**, select **New application setting**.
-1. For **Name**, enter `AuthenticationEvents__TenantId` and for **Value**, enter the tenant ID of your Microsoft Entra tenant, then select **OK**.
-1. Add a second variable with the name `AuthenticationEvents__AudienceAppId` and the app ID of the custom authentication extension you created in the previous step.
+1. Under **Application settings**, select **New application setting** and add the following three environment variables and associated values:
+   | Name | Value |
+   | ---- | ----- |
+   | *AuthenticationEvents__AudienceAppId* | The app ID of the custom authentication extension |
+   | *AuthenticationEvents__AuthorityUrl* | `https://oidcconfig` |
+   | *AuthenticationEvents__AuthorizedPartyAppId* | The app ID of the authorized party app | 
+
 1. Select **Save** to save the application settings.
 
 > [!IMPORTANT]

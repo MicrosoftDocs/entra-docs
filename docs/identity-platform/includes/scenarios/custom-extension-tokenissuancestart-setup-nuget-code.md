@@ -28,9 +28,11 @@ namespace AuthEventTrigger
     {
         [FunctionName("onTokenIssuanceStart")]
         public static async Task<AuthenticationEventResponse> Run(
-        // The AuthenticationEventsTrigger attribute can be used to specify the tenant ID and audience app ID
             [AuthenticationEventsTrigger] TokenIssuanceStartRequest request, ILogger log)
-        // [AuthenticationEventsTrigger(TenantId = "Enter tenant ID here", AudienceAppId = "Enter custom authentication extension app ID here")] TokenIssuanceStartRequest request, ILogger log)
+        // The AuthenticationEventsTrigger attribute can be used to specify and audience app ID, authority URL and authorized party app id 
+        // [AuthenticationEventsTrigger(AudienceAppId = "Enter custom authentication extension app ID here",
+        //                              AuthorityUrl = "https://oidcconfig",
+        //                              AuthorizedPartyAppId = "Enter the Authorized Party App Id here")] TokenIssuanceStartRequest request, ILogger log)
         {
             try
             {
