@@ -6,7 +6,7 @@ author: jricketts
 manager: martinco
 ms.service: entra
 ms.topic: conceptual
-ms.date: 03/08/2024
+ms.date: 03/14/2024
 ms.author: jricketts
 ---
 # Authenticating applications and users with Microsoft Entra ID
