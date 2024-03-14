@@ -33,8 +33,8 @@ Alternatively, you can set up environment variables in the Azure portal.
    | Name | Description |
    | ---- | ----------- |
    | *AuthenticationEvents__AudienceAppId* | The app ID of the custom authentication extension |
-   | *AuthenticationEvents__AuthorityUrl* | &#8226; Workforce tenant `https://login.microsoftonline.com/<tenantID>` <br> &#8226; Customer tenant `https://<mydomain>.ciamlogin.com` |
-   | *AuthenticationEvents__AuthorizedPartyAppId* | The app ID of the authorized party app. This is optional can be used for development purposes for the purposes of this guide | 
+   | *AuthenticationEvents__AuthorityUrl* | &#8226; Workforce tenant `https://login.microsoftonline.com/<tenantID>` <br> &#8226; Customer tenant `https://<mydomain>.ciamlogin.com/<tenantID>` |
+   | *AuthenticationEvents__AuthorizedPartyAppId* | (Optional) The app ID of the authorized party app. This can be used for development purposes for the purposes of this guide | 
 
 1. Select **Save** to save the application settings.
 
