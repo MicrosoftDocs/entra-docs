@@ -8,7 +8,7 @@ ms.service: active-directory
 
 ms.subservice: ciam
 ms.topic: concept-article
-ms.date:  02/23/2023
+ms.date:  03/14/2023
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -61,7 +61,7 @@ For more details about the various branding options available in your new custom
 
 :::image type="content" source="media/concept-guide-explained/sign-in-preview.png" alt-text="Flowchart that shows the sign-in preview step in the guide.":::
 
-The get started guide allowed you to preview the sign-in experience with your first user. At this step in the guide, you had to create a new user only to test the sign-up steps. In the guide, your newly created user was redirected to JWT.ms instead of your app because you hadn’t set up an app at this step.
+The get started guide allowed you to preview the sign-in experience with your first user. At this step in the guide, you had to create a new user only to test the sign-up steps. In the guide, your newly created user was redirected to JWT.ms instead of your app.
  
 To find the user you created during the guide setup, you can go to the [admin center](https://entra.microsoft.com/) and look for the user in the users list. You can find the user in the users list as a [customer user](how-to-manage-customer-accounts.md) and also manage your own account as a [tenant admin](how-to-manage-admin-accounts.md). If you’d like to see data on user activity and engagement for registered applications in your tenant, you can use the [Application user activity dashboards](how-to-user-insights.md).
 
@@ -73,7 +73,7 @@ For more information on how to configure these options, visit the [Authenticatio
 
 :::image type="content" source="media/concept-guide-explained/app-sample.png" alt-text="Flowchart that shows the app sample step in the guide.":::
 
-The get started guide provides a downloadable sample app to test the features of your new tenant. When you register your app manually, Microsoft Entra ID generates a unique identifier known as an **Application (client) ID**. This value is used to identify your app when creating authentication requests, enabling a trusted relationship between your app and your tenant.
+The get started guide provides a downloadable sample app to test the features of your new tenant. When you register your app manually, Microsoft Entra ID generates a unique identifier known as an **Application (client) ID**. This value is used to identify your app when creating authentication requests, enabling a trusted relationship between your app and your tenant. The samples are automatically configured with your **clientId** and the **authority** is set to `<trialtenant>.ciamlogin.com`.
 
 You can find the comprehensive list of app samples and guides [here](samples-ciam-all.md) that explains the process in detail. 
 
