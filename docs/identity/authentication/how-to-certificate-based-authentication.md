@@ -55,7 +55,7 @@ Optionally, you can also configure authentication bindings to map certificates t
 
 ## Step 1: Configure the certification authorities
 
-You can configure certificate authorities(CAs) by using the Microsoft Entra admin center or PowerShell. The PKI infrastructure or PKI admin should be able to provide the list of issuing CAs. To make sure you have configured all the CAs, open the user certificate and click on 'certification path' tab and make sure every CA until the root is uploaded to the Entra trust store. CBA authentication will fail if there are missing CAs.
+You can configure certificate authorities(CAs) by using the Microsoft Entra admin center or Microsoft Graph REST APIs and the supported SDKs, such as Microsoft Graph PowerShell. The PKI infrastructure or PKI admin should be able to provide the list of issuing CAs. To make sure you have configured all the CAs, open the user certificate and click on 'certification path' tab and make sure every CA until the root is uploaded to the Entra trust store. CBA authentication will fail if there are missing CAs.
 
 ### Configure certification authorities using the Microsoft Entra admin center
 
