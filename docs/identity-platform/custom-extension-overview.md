@@ -9,7 +9,7 @@ ms.date: 10/27/2023
 ms.reviewer: JasSuri
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 titleSuffix: Microsoft identity platform
 
 #Customer intent: As a developer integrating external systems with Microsoft Entra ID, I want to create custom authentication extensions using a REST API, so that I can customize the authentication experience and add business logic based on event types and HTTP response payloads.
@@ -56,7 +56,7 @@ To ensure the communications between the custom authentication extension and you
     1. For **V1** Applications, validate the `appid` claim.
     1. For **V2** Applications, validate the `azp` claim.
 1. The bearer token `aud` audience claim contains the ID of the associated application registration. Your REST API endpoint needs to validate that the bearer token is issued for that specific audience.
-1. The bearer token `iss` issuer claim contains the Microsoft Entra ID issuer URL. Depending on your tenant configuration, the issuer URL will be one of the following;
+1. The bearer token `iss` issuer claim contains the Microsoft Entra issuer URL. Depending on your tenant configuration, the issuer URL will be one of the following;
     - Workforce: `https://login.microsoftonline.com/{tenantId}/v2.0`.
     - Customer: `https://{domainName}.ciamlogin.com/{tenantId}/v2.0`.
 

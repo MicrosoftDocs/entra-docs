@@ -1,13 +1,12 @@
 ---
 title: Publish Remote Desktop with Microsoft Entra application proxy
-description: Covers how to configure App Proxy with Remote Desktop Services (RDS)
-
+description: Covers how to configure application proxy with Remote Desktop Services (RDS)
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/27/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -26,8 +25,8 @@ A standard RDS deployment includes various Remote Desktop role services running 
 
 ![Application proxy sits between the RDS VM and the public internet](./media/application-proxy-integrate-with-remote-desktop-services/rds-with-app-proxy.png)
 
-In an RDS deployment, the RD Web role and the RD Gateway role run on Internet-facing machines. These endpoints are exposed for the following reasons:
-- RD Web provides the user a public endpoint to sign in and view the various on-premises applications and desktops they can access. When you select a resource, an RDP connection is created using the native app on the OS.
+In an RDS deployment, the Remote Desktop (RD) Web role and the RD Gateway role run on Internet-facing machines. These endpoints are exposed for the following reasons:
+- RD Web provides the user a public endpoint to sign in and view the various on-premises applications and desktops they can access. When you select a resource, a Remote Desktop Protocol (RDP) connection is created using the native app on the OS.
 - RD Gateway comes into the picture once a user launches the RDP connection. The RD Gateway handles encrypted RDP traffic coming over the internet and translates it to the on-premises server that the user is connecting to. In this scenario, the traffic the RD Gateway is receiving comes from the Microsoft Entra application proxy.
 
 >[!TIP]
@@ -36,14 +35,14 @@ In an RDS deployment, the RD Web role and the RD Gateway role run on Internet-fa
 ## Requirements
 
 - Both the RD Web and RD Gateway endpoints must be located on the same machine, and with a common root. RD Web and RD Gateway are published as a single application with application proxy so that you can have a single sign-on experience between the two applications.
-- You should already have [deployed RDS](/windows-server/remote/remote-desktop-services/rds-in-azure), and [enabled application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md). Ensure you have satisfied the pre-requisites to enable application proxy, such as installing the connector, opening required ports and URLs, and enabling TLS 1.2 on the server. To learn which ports need to be opened, and other details, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md).
-- Your end users must use a compatible browser to connect to RD Web or the RD Web client. For more details see [Support for client configurations](#support-for-other-client-configurations).
-- When publishing RD Web, it is recommended to use the same internal and external FQDN. If the internal and external FQDNs are different then you should disable Request Header Translation to avoid the client receiving invalid links.
-- If you are using the RD Web client, you *must* use the same internal and external FQDN. If the internal and external FQDNs are different, you will encounter websocket errors when making a RemoteApp connection through the RD Web client.
-- If you are using RD Web on Internet Explorer, you will need to enable the RDS ActiveX add-on.
-- If you are using the RD Web client, you will need to use the application proxy [connector version 1.5.1975 or later](./application-proxy-release-version-history.md).
-- For the Microsoft Entra pre-authentication flow, users can only connect to resources published to them in the **RemoteApp and Desktops** pane. Users can't connect to a desktop using the **Connect to a remote PC** pane.
-- If you are using Windows Server 2019, you may need to disable HTTP2 protocol. For more information, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
+- [Deploy RDS](/windows-server/remote/remote-desktop-services/rds-in-azure), and [enabled application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md). Enable application proxy and open required ports and URLs, and enabling Transport Layer Security (TLS) 1.2 on the server. To learn which ports need to be opened, and other details, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md).
+- Your end users must use a compatible browser to connect to RD Web or the RD Web client. For more information, see [Support for client configurations](#support-for-other-client-configurations).
+- When publishing RD Web, use the same internal and external Fully Qualified Domain Name (FQDN) when possible. If the internal and external Fully Qualified Domain Names (FQDNs) are different, disable Request Header Translation to avoid the client receiving invalid links.
+- If you're using the RD Web client, you *must* use the same internal and external FQDN. If the internal and external FQDNs are different, you encounter websocket errors when making a RemoteApp connection through the RD Web client.
+- If you're using RD Web on Internet Explorer, you need to enable the RDS ActiveX add-on.
+- If you're using the RD Web client, you'll need to use the application proxy [connector version 1.5.1975 or later](./application-proxy-release-version-history.md).
+- For the Microsoft Entra pre authentication flow, users can only connect to resources published to them in the **RemoteApp and Desktops** pane. Users can't connect to a desktop using the **Connect to a remote PC** pane.
+- If you're using Windows Server 2019, you need to disable HTTP2 protocol. For more information, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
 
 ## Deploy the joint RDS and application proxy scenario
 
@@ -51,21 +50,21 @@ After setting up RDS and Microsoft Entra application proxy for your environment,
 
 ### Publish the RD host endpoint
 
-1. [Publish a new application proxy application](~/identity/app-proxy/application-proxy-add-on-premises-application.md) with the following values:
+1. [Publish a new application proxy application](~/identity/app-proxy/application-proxy-add-on-premises-application.md) with the values.
    - Internal URL: `https://<rdhost>.com/`, where `<rdhost>` is the common root that RD Web and RD Gateway share.
-   - External URL: This field is automatically populated based on the name of the application, but you can modify it. Your users will go to this URL when they access RDS.
-   - Preauthentication method: Microsoft Entra ID
-   - Translate URL headers: No
-   - Use HTTP-Only Cookie: No
-2. Assign users to the published RD application. Make sure they all have access to RDS, too.
-3. Leave the single sign-on method for the application as **Microsoft Entra single sign-on disabled**.
+   - External URL: This field is automatically populated based on the name of the application, but you can modify it. Your users go to this URL when they access RDS.
+   - Pre authentication method: Microsoft Entra ID.
+   - Translate URL headers: No.
+   - Use HTTP-Only Cookie: No.
+1. Assign users to the published RD application. Make sure they all have access to RDS, too.
+1. Leave the single sign-on method for the application as **Microsoft Entra single sign-on disabled**.
 
    >[!Note]
    >Your users are asked to authenticate once to Microsoft Entra ID and once to RD Web, but they have single sign-on to RD Gateway.
 
 1. Browse to **Identity** > **Applications** > **App registrations**. Choose your app from the list.
-5. Under **Manage**, select **Branding**.
-6. Update the **Home page URL** field to point to your RD Web endpoint (like `https://<rdhost>.com/RDWeb`).
+1. Under **Manage**, select **Branding**.
+1. Update the **Home page URL** field to point to your RD Web endpoint (like `https://<rdhost>.com/RDWeb`).
 
 ### Direct RDS traffic to application proxy
 
@@ -81,7 +80,7 @@ Connect to the RDS deployment as an administrator and change the RD Gateway serv
 
    ![Deployment Properties screen on RDS](./media/application-proxy-integrate-with-remote-desktop-services/rds-deployment-properties.png)
 
-8. Run this command for each collection. Replace *\<yourcollectionname\>* and *\<proxyfrontendurl\>* with your own information. This command enables single sign-on between RD Web and RD Gateway, and optimizes performance:
+8. Run this command for each collection. Replace *\<yourcollectionname\>* and *\<proxyfrontendurl\>* with your own information. This command enables single sign-on between RD Web and RD Gateway, and optimizes performance.
 
    ```
    Set-RDSessionCollectionConfiguration -CollectionName "<yourcollectionname>" -CustomRdpProperty "pre-authentication server address:s:<proxyfrontendurl>`nrequire pre-authentication:i:1"
@@ -94,25 +93,25 @@ Connect to the RDS deployment as an administrator and change the RD Gateway serv
    >[!NOTE]
    >The above command uses a backtick in "`nrequire".
 
-9. To verify the modification of the custom RDP properties as well as view the RDP file contents that will be downloaded from RDWeb for this collection, run the following command:
+9. To verify the modification of the custom RDP properties and view the RDP file contents that are downloaded from RDWeb for this collection, run the following command.
     ```
     (get-wmiobject -Namespace root\cimv2\terminalservices -Class Win32_RDCentralPublishedRemoteDesktop).RDPFileContents
     ```
 
-Now that you've configured Remote Desktop, Microsoft Entra application proxy has taken over as the internet-facing component of RDS. You can remove the other public internet-facing endpoints on your RD Web and RD Gateway machines.
+Now that Remote Desktop is configured, Microsoft Entra application proxy takes over as the internet-facing component of RDS. Remove the other public internet-facing endpoints on your RD Web and RD Gateway machines.
 
 ### Enable the RD Web Client
-If you also want users to be able to use the RD Web Client follow steps at [Set up the Remote Desktop web client for your users](/windows-server/remote/remote-desktop-services/clients/remote-desktop-web-client-admin) to enable this.
+If you want users to use the RD Web Client follow the steps at [Set up the Remote Desktop web client for your users](/windows-server/remote/remote-desktop-services/clients/remote-desktop-web-client-admin).
 
-The Remote Desktop web client lets users access your organization's Remote Desktop infrastructure through an HTML5-compatible web browser such as Microsoft Edge, Internet Explorer 11, Google Chrome, Safari, or Mozilla Firefox (v55.0 and later).
+The Remote Desktop web client provides access for your organization's Remote Desktop infrastructure. An HTML5-compatible web browser such as Microsoft Edge, Google Chrome, Safari, or Mozilla Firefox (v55.0 and later) is required.
 
 ## Test the scenario
 
 Test the scenario with Internet Explorer on a Windows 7 or 10 computer.
 
 1. Go to the external URL you set up, or find your application in the [MyApps panel](https://myapps.microsoft.com).
-2. You are asked to authenticate to Microsoft Entra ID. Use an account that you assigned to the application.
-3. You are asked to authenticate to RD Web.
+2. Authenticate to Microsoft Entra ID. Use an account that you assigned to the application.
+3. Authenticate to RD Web.
 4. Once your RDS authentication succeeds, you can select the desktop or application you want, and start working.
 
 ## Support for other client configurations
@@ -121,13 +120,14 @@ The configuration outlined in this article is for access to RDS via RD Web or th
 
 | Authentication method | Supported client configuration |
 | --------------------- | ------------------------------ |
-| Pre-authentication    | RD Web-  Windows 7/10/11 using Internet Explorer* or [Edge Chromium IE mode](/deployedge/edge-ie-mode) + RDS ActiveX add-on |
-| Pre-authentication    | RD Web Client- HTML5-compatible web browser such as Microsoft Edge, Internet Explorer 11, Google Chrome, Safari, or Mozilla Firefox (v55.0 and later) |
+| Pre authentication    | RD Web-  Windows 7/10/11 using [`Microsoft Edge Chromium IE mode`](/deployedge/edge-ie-mode) + RDS ActiveX add-on |
+| Pre authentication    | RD Web Client- HTML5-compatible web browser such as Microsoft Edge, Internet Explorer 11, Google Chrome, Safari, or Mozilla Firefox (v55.0 and later) |
 | Passthrough | Any other operating system that supports the Microsoft Remote Desktop application |
 
-*Edge Chromium IE mode is required when the My Apps portal is used for accessing the Remote Desktop app.  
+> [!NOTE]
+> `Microsoft Edge Chromium IE` mode is required when the My Apps portal is used for accessing the Remote Desktop app.  
 
-The pre-authentication flow offers more security benefits than the passthrough flow. With pre-authentication you can use Microsoft Entra authentication features like single sign-on, Conditional Access, and two-step verification for your on-premises resources. You also ensure that only authenticated traffic reaches your network.
+The pre authentication flow offers more security benefits than the passthrough flow. With pre authentication you can use Microsoft Entra authentication features like single sign-on, Conditional Access, and two-step verification for your on-premises resources. You also ensure that only authenticated traffic reaches your network.
 
 To use passthrough authentication, there are just two modifications to the steps listed in this article:
 1. In [Publish the RD host endpoint](#publish-the-rd-host-endpoint) step 1, set the Preauthentication method to **Passthrough**.
@@ -136,4 +136,4 @@ To use passthrough authentication, there are just two modifications to the steps
 ## Next steps
 - [Enable remote access to SharePoint with Microsoft Entra application proxy](application-proxy-integrate-with-sharepoint-server.md)
 - [Security considerations for accessing apps remotely by using Microsoft Entra application proxy](application-proxy-security.md)
-- [Best practices for load balancing multiple app servers](application-proxy-high-availability-load-balancing.md#best-practices-for-load-balancing-among-multiple-app-servers)
+- [Best practices for load balancing multiple app servers](application-proxy-high-availability-load-balancing.md)

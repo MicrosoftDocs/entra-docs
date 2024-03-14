@@ -9,7 +9,7 @@ ms.date: 01/30/2024
 ms.reviewer: saeeda, dmwendia, negoe
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: troubleshooting
 #Customer intent: As an application developer, I want to learn about special requirements for using Xamarin Android and MSAL.NET.
 ---
 

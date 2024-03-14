@@ -14,9 +14,9 @@ ms.reviewer: ajburnle
 
 # Password-based authentication with Microsoft Entra ID
 
-Password based Single Sign-On (SSO) uses the existing authentication process for the application. When you enable password-based SSO, Microsoft Entra ID collects, encrypts, and securely stores user credentials in the directory. Microsoft Entra ID supplies the username and password to the application when the user attempts to sign in.
+Password-based Single Sign-On (SSO) uses the existing authentication process for the application. When you enable password-based SSO, Microsoft Entra ID collects, encrypts, and securely stores user credentials in the directory. Microsoft Entra ID supplies the username and password to the application when the user attempts to sign in.
 
-Choose password-based SSO when an application authenticates with a username and password instead of access tokens and headers. Password-based SSO supports any cloud-based application that has an HTML-based sign in page. 
+Choose password-based SSO when an application authenticates with a username and password instead of access tokens and headers. Password-based SSO supports any cloud-based application that has an HTML-based sign in page.
 
 ## Use when
 
@@ -24,23 +24,22 @@ You need to protect with pre-authentication and provide SSO through password vau
 
 ![architectural diagram](./media/authentication-patterns/password-based-sso-auth.png)
 
-
 ## Components of system
 
-* **User**: Accesses formed based application from either My Apps or by directly visiting the site. 
+- **User:** Accesses formed-based application from either My Apps or by directly visiting the site.
 
-* **Web browser**: The component that the user interacts with to access the external URL of the application. The user accesses the form-based application via the MyApps extension. 
+- **Web browser:** The component that the user interacts with to access the external URL of the application. The user accesses the form-based application via the MyApps extension.
 
-* **MyApps extension**: Identifies the configured password-based SSO application and supplies the credentials to the sign in form. The MyApps extension is installed on the web browser. 
+- **MyApps extension:** Identifies the configured password-based SSO application and supplies the credentials to the sign in form. The MyApps extension is installed on the web browser.
 
-* **Microsoft Entra ID**: Authenticates the user.
+- **Microsoft Entra ID:** Authenticates the user.
 
 <a name='implement-password-based-sso-with-azure-ad'></a>
 
 ## Implement password-based SSO with Microsoft Entra ID
 
-* [What is password based SSO](~/identity/enterprise-apps/what-is-single-sign-on.md) 
+- [What is password-based SSO](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-* [Configure password based SSO for cloud applications](~/identity/enterprise-apps/configure-password-single-sign-on-non-gallery-applications.md)
+- [Configure password-based SSO for cloud applications](~/identity/enterprise-apps/configure-password-single-sign-on-non-gallery-applications.md)
 
-* [Configure password-based SSO for on-premises applications with Application Proxy](~/identity/app-proxy/application-proxy-configure-single-sign-on-password-vaulting.md)
+- [Configure password-based SSO for on-premises applications with Application Proxy](~/identity/app-proxy/application-proxy-configure-single-sign-on-password-vaulting.md)

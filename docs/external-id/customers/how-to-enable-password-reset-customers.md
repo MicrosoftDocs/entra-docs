@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 01/07/2024
+ms.date: 02/29/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -66,7 +66,7 @@ To enable self-service password reset, you need to enable the email one-time pas
 
 1. Select **Save**.
 
-### Enable the password reset link
+### Enable the password reset link (optional)
 
 You can hide, show or customize the self-service password reset link on the sign-in page. 
 

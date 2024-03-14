@@ -5,7 +5,7 @@ author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 06/22/2023
 ms.author: owinfrey
 ---
@@ -18,13 +18,13 @@ The following document provides an overview of a workflow created using Lifecycl
 ## License requirements 
 
 
-[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 ## Permissions and Roles
 
 For a full list of supported delegated and application permissions required to use Lifecycle Workflows, see: [Lifecycle workflows permissions](/graph/permissions-reference#lifecycle-workflows-permissions).
 
-For delegated scenarios, the admin needs one of the following [Microsoft Entra roles](~/identity/role-based-access-control/permissions-reference.md):
+For delegated scenarios, the admin needs one of the following [Microsoft Entra roles](../identity/role-based-access-control/permissions-reference.md):
 
 - Global administrator
 - Global reader

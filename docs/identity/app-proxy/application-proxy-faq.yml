@@ -19,7 +19,7 @@ sections:
     questions:
 
       - question: |
-         Can I modify an App Proxy app from the **App registrations** page in the Microsoft Entra admin center?
+         Can I modify an application proxy app from the **App registrations** page in the Microsoft Entra admin center?
         answer: |
             No, the following configuration items are being used by app proxy and should not be altered or deleted:
             -	Enable/Disable “Allow public clients flows”.
@@ -28,9 +28,9 @@ sections:
             Modifying any of the above configuration items on the App registration page breaks preauthentication for Microsoft Entra application proxy.
 
       - question: |
-         Can I delete an App Proxy app from the App registrations page in the Microsoft Entra admin center? 
+         Can I delete an application proxy app from the App registrations page in the Microsoft Entra admin center? 
         answer: |
-              No. You should delete an App Proxy app from the **Enterprise applications** area of the Microsoft Entra admin center. If you delete the App Proxy app from the **App registrations** area of the Microsoft Entra admin center, then you could experience issues.
+              No. You should delete an application proxy app from the **Enterprise applications** area of the Microsoft Entra admin center. If you delete the application proxy app from the **App registrations** area of the Microsoft Entra admin center, then you could experience issues.
       - question: |
          What license is required to use Microsoft Entra application proxy?
         answer: |
@@ -140,9 +140,9 @@ sections:
             You can use either the standard domain suffix `msappproxy.net` or a [custom domain](how-to-configure-custom-domain.md).
 
       - question: |
-         Does App Proxy support for sovereign and regional clouds?
+         Does application proxy support for sovereign and regional clouds?
         answer: |
-            Microsoft Entra ID has an App Proxy service that enables users to access on-premises applications by signing in with their Microsoft Entra account.
+            Microsoft Entra ID has an application proxy service that enables users to access on-premises applications by signing in with their Microsoft Entra account.
             If you have installed connectors in different regions, you can optimize traffic by selecting the closest application proxy cloud service region to use with each connector group, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-add-on-premises-application.md).
 
       - question: |

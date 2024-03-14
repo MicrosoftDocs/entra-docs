@@ -6,7 +6,7 @@ author: barclayn
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: managed-identities
-ms.topic: conceptual
+ms.topic: faq
 ms.date: 02/21/2024
 ms.author: barclayn
 ---

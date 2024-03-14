@@ -9,6 +9,7 @@ ms.topic: tutorial
 ms.date: 11/06/2023
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ---
 
@@ -168,8 +169,6 @@ Use the following steps to configure provisioning:
  :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
 
  5.  The **Get started** screen will open.  
-
-  :::image type="content" source="media/how-to-configure/new-ux-configure-3.png" alt-text="Screenshot of the getting started screen." lightbox="media/how-to-configure/new-ux-configure-3.png":::
 
  6.  On the **Get started** screen, click either **Add scoping filters** next to the **Add scoping filters** icon or on the click **Scoping filters** on the left under **Manage**.
 

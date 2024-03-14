@@ -30,7 +30,7 @@ Face Check is a privacy-respecting facial matching. It allows enterprises to per
 
 You can easily get started using Face Check by using [MyAccount](https://myaccount.microsoft.com), which can issue `VerifiedEmployee` credentials, and a public test app that Microsoft provides. To get started, you need to perform the following steps:
 
-1. Create a test user in your [Entra tenant](https://entra.microsoft.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/AllUsers/menuId/) and upload a photo of [yourself](https://support.microsoft.com/office/add-your-profile-photo-to-microsoft-365-2eaf93fd-b3f1-43b9-9cdc-bdcd548435b7#:~:text=1%20Find%20a%20photo%20you%20want%20to%20use,your%20initials%20or%20an%20icon%20...%20See%20More)
+1. Create a test user in your [Microsoft Entra tenant](https://entra.microsoft.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/AllUsers/menuId/) and upload a photo of [yourself](https://support.microsoft.com/office/add-your-profile-photo-to-microsoft-365-2eaf93fd-b3f1-43b9-9cdc-bdcd548435b7#:~:text=1%20Find%20a%20photo%20you%20want%20to%20use,your%20initials%20or%20an%20icon%20...%20See%20More)
 1. Go to [MyAccount](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials), sign in as the test user and issue a `VerifiedEmployee` credential for the user.
 1. Use the [public test app](https://aka.ms/vcempver) to present your `VerifiedEmployee` credential using Face Check.
 
@@ -162,7 +162,7 @@ Today we use a default confidence matching value when verifying the user on par 
 
 ### What is Azure AI Vision Face API?
 
-Azure AI is a suite of cloud services on the Azure Platform. The Azure AI Vision Face API offers services for face detection, face recognition, face match, and liveness check. Entra Verified ID uses face detection, face match, and face liveness check services when performing the FaceCheck. More information can be [here](/azure/ai-services/computer-vision/overview-identity).
+Azure AI is a suite of cloud services on the Azure Platform. The Azure AI Vision Face API offers services for face detection, face recognition, face match, and liveness check. Microsoft Entra Verified ID uses face detection, face match, and face liveness check services when performing the FaceCheck. More information can be [here](/azure/ai-services/computer-vision/overview-identity).
 
 ### What is Face Liveness Check?
 
@@ -203,4 +203,3 @@ More information on how facial points are detected in the image can be found [he
 - Learn how to [configure your tenant for Microsoft Entra Verified ID](verifiable-credentials-configure-tenant-quick.md) and use MyAccount.
 - Learn how to [issue Microsoft Entra Verified ID credentials from a web application](verifiable-credentials-configure-issuer.md).
 - Learn how to [verify Microsoft Entra Verified ID credentials](verifiable-credentials-configure-verifier.md).
-

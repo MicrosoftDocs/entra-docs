@@ -36,7 +36,7 @@ If you're an Amazon Web Services (AWS) customer who uses the AWS IAM Identity Ce
     - Your **AWS Management Account Role**
 
 5. Select **Launch Management Account Template**. The template opens in a new window. 
-6. If the Management Account stack is created with the Cloud Formation Template as part of the previous onboarding steps, update the stack by running ``EnableSSO`` as true. Running this command creates a new stack when running the Management Account Template. 
+6. If the Management Account stack is created with the CloudFormation Template as part of the previous onboarding steps, update the stack by running ``EnableSSO`` as true. Running this command creates a new stack when running the Management Account Template. 
 
 The template execution attaches the AWS managed policy  ``AWSSSOReadOnly`` and the newly created custom policy ``SSOPolicy`` to the AWS IAM role that allows Microsoft Entra Permissions Management to collect organizational information. The following details are requested in the template. All fields are prepopulated, and you can edit the data as you need: 
 - **Stack name** – The Stack name is the name of the AWS stack for creating the required AWS resources for Permissions Management to collect organizational information. The default value is ``mciem-org-<tenant-id>``. 

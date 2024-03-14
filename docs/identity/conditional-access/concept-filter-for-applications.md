@@ -41,7 +41,7 @@ Follow the instructions in the article, [Add or deactivate custom security attri
 - Create an **Attribute set** named *ConditionalAccessTest*.
 - Create **New attributes** named *policyRequirement* that **Allow multiple values to be assigned** and **Only allow predefined values to be assigned**. We add the following predefined values:
    - legacyAuthAllowed
-   - blockGuesUsers
+   - blockGuestUsers
    - requireMFA
    - requireCompliantDevice
    - requireHybridJoinedDevice
