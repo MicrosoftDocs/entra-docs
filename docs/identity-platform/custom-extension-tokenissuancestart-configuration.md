@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 03/15/2024
+ms.date: 03/14/2024
 ms.reviewer: stsoneff
 ms.service: identity-platform
 ms.topic: how-to
@@ -168,7 +168,7 @@ Once the custom authentication extension is created, you need to grant permissio
 1. Under **API Authentication**, select **Grant permission**. 
 1. A new window opens, and once signed in, it requests permissions to receive custom authentication extension HTTP requests. This allows the custom authentication extension to authenticate to your API. Select **Accept**. 
 
-    :::image type="content" border="false"source="./media/custom-extension-tokenissuancestart-setup/custom-extensions-overview.png" alt-text="Screenshot that shows how grant admin consent." lightbox="media/custom-extension-tokenissuancestart-setup/custom-extensions-overview.png":::
+    :::image type="content" border="false"source="./media/custom-extension-tokenissuancestart-configuration/custom-extensions-overview.png" alt-text="Screenshot that shows how grant admin consent." lightbox="media/custom-extension-tokenissuancestart-configuration/custom-extensions-overview.png":::
 
 ## Step 2: Configure an OpenID Connect app to receive enriched tokens
 
