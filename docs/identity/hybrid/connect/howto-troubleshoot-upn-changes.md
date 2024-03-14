@@ -5,6 +5,7 @@ description: Understand known issues and mitigations for User Principal Name (UP
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.topic: troubleshooting
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.date: 05/23/2023
 ms.author: gasinh
 author: gargi-sinha
@@ -66,11 +67,7 @@ When you use Microsoft Entra ID with on-premises Active Directory, user accounts
    >[!NOTE]
    > Define a process for when you update a User Principal Name (UPN) of a user, or for your organization. 
 
-When you synchronize user accounts from Active Directory to Microsoft Entra ID, ensure the UPNs in Active Directory map to verified domains in Microsoft Entra ID.
-
-   ![Screenshot of Active Director UPN suffixes and related domains.](./media/howto-troubleshoot-upn-changes/verified-domains.png)
-
-If the userPrincipalName attribute value doesn't correspond to a verified domain in Microsoft Entra ID, synchronization replaces the suffix with .onmicrosoft.com.
+When you synchronize user accounts from Active Directory to Microsoft Entra ID, ensure the UPNs in Active Directory map to verified domains in Microsoft Entra ID. If the userPrincipalName attribute value doesn't correspond to a verified domain in Microsoft Entra ID, synchronization replaces the suffix with .onmicrosoft.com.
 
 ### Bulk UPN change rollout
 
