@@ -76,8 +76,8 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier (Entity ID)** text box, type a value:
-    `urn:amazon:cognito:sp:us-east-1_JLYuL1CMg`
+    a. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
+    `urn:amazon:cognito:sp:us-east-1_<ID>`
 
     b. In the **Reply URL** text box, type the URL:
     `https://teamalert-prod.auth.us-east-1.amazoncognito.com/saml2/idpresponse`
