@@ -98,7 +98,7 @@ The [Authorization in applications](#authorization-in-applications) section intr
 
 APIs must enforce two authorizations when acting on behalf of a user. APIs must authorize:
 
-- An app to call the API to check that the access token's `scp` (scope) claim contains the required scope.
+- An app to call the API. Confirm the access token's `scp` (scope) claim contains the required scope.
 - The user to access the specific resource. The `oid` (object ID) and `sub` (subject) claims in the token represent the user identity.
 
 We recommend the `oid` and `sub` claims for authorization.
