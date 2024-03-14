@@ -139,7 +139,7 @@ Unlike applications with users, workloads authenticate themselves to Microsoft E
 
 For workloads that run in Microsoft Azure, the best method for a workload to authenticate itself is [managed identities for Azure resources](~/identity/managed-identities-azure-resources/overview.md). The managed identities feature removes the need to manage credentials for the workload. There are no accessible credentials. Microsoft Entra ID fully manages credentials. With no credentials to manage, no credentials are at risk of compromise.
 
-With increased security, there's managed identities increased resiliency. Managed identities use long-lived access tokens and information from Microsoft Entra ID to get new tokens before tokens expire. Managed identities use regional endpoints that help prevent out-of-region failures by consolidating service dependencies. Regional endpoints help keep traffic in a geographical area. For example, if your Azure resource is in WestUS2, all traffic stays in WestUS2.
+With increased security, managed identities also increace resiliency. Managed identities use long-lived access tokens and information from Microsoft Entra ID to get new tokens before tokens expire. Managed identities use regional endpoints that help prevent out-of-region failures by consolidating service dependencies. Regional endpoints help keep traffic in a geographical area. For example, if your Azure resource is in WestUS2, all traffic stays in WestUS2.
 
 If the workload isn't running in Microsoft Azure, the workload must authenticate itself with the [OAuth 2.0 client credentials flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md).
 
