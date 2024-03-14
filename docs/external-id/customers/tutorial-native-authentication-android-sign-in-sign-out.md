@@ -38,8 +38,8 @@ To sign in user using email and OTP code you need to:
 
 1. Create your user interface (UI) that includes: 
 
-   - A UI to submit an Email.
-   - A UI to submit one-time passcode.
+   - A UI to collect an email address. Add validation to your UI to make sure the user enters a valid emails address.
+   - A UI to collect OTP code.
 
 1. In your app, add a button, whose select event triggers the following code snippet: 
 
