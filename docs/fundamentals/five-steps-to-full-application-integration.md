@@ -5,6 +5,7 @@ author: jricketts
 ms.author: jricketts
 ms.service: entra
 ms.subservice: fundamentals
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
 ms.date: 03/01/2023
 # Customer intent: As an IT admin responsible for application integration, I want to learn how to integrate my company's applications with Microsoft Entra ID, so that I can improve security, reduce costs, increase productivity, and enable compliance through centralized identity and access management.
