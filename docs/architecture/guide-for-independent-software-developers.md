@@ -1,6 +1,6 @@
 ---
-title: Microsoft Entra ID Guide for Independent Software Developers
-description: How Independent Software Developers (ISV) can build and optimize applications for Microsoft Entra ID
+title: Microsoft Entra ID Guide for independent software developers
+description: How independent software developers (ISVs) can build and optimize applications for Microsoft Entra ID
 customer-intent: As an independent software developer, I want to learn how to build and optimize my applications to use Microsoft Entra ID.
 author: jricketts
 manager: martinco
