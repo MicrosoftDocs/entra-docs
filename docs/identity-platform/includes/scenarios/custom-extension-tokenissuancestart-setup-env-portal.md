@@ -38,6 +38,6 @@ Alternatively, you can set up environment variables in the Azure portal.
 
 1. Select **Save** to save the application settings.
 
-> [!IMPORTANT]
+> [!NOTE]
 > 
-> Double check your application code to ensure that `TenantId` and `AudienceAppId` are not hardcoded in the `[AuthenticationEventsTrigger]` attribute. You can have either set the environment variables or hardcoded the values in the attribute, but not both.
+> Double check your application code to ensure that `AuthorityUrl`, `AudienceAppId` and `AuthorizedPartyAppId` are not hardcoded in the `[AuthenticationEventsTrigger]` attribute. You can have either set the environment variables or hardcoded the values in the attribute, but not both.
