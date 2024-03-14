@@ -9,7 +9,7 @@ ms.date: 06/02/2023
 ms.reviewer: jmprieur, saeeda, ludwignick
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to understand the basic concepts of security tokens in the Microsoft identity platform.
 ---
 
