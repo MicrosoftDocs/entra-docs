@@ -18,7 +18,7 @@ zone_pivot_groups: custom-auth-extension
 
 ::: zone pivot="visual-studio" 
 
-This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. You'll create an HTTP trigger function in Visual Studio and deploy it to the Azure portal, where it can be accessed through Azure Functions.
+This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. You create an HTTP trigger function in Visual Studio and deploy it to the Azure portal, where it can be accessed through Azure Functions.
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ This article describes how to create a REST API with a [token issuance start eve
 
 ::: zone pivot="visual-studio-code"
 
-This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. You'll create an HTTP trigger function in Visual Studio and deploy it to the Azure portal, where it can be accessed through Azure Functions. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events.
+This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. You create an HTTP trigger function in Visual Studio and deploy it to the Azure portal, where it can be accessed through Azure Functions. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events.
 
 ## Prerequisites
 
@@ -44,7 +44,7 @@ This article describes how to create a REST API with a [token issuance start eve
 
 ::: zone pivot="azure-portal"
 
-This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using Azure Functions in the Azure portal. You'll create an Azure Function app and an HTTP trigger function, and edit this function to return extra claims for your token. 
+This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using Azure Functions in the Azure portal. You create an Azure Function app and an HTTP trigger function, and edit this function to return extra claims for your token. 
 
 ## Prerequisites
 
@@ -81,23 +81,25 @@ After creating the project, you'll need to install the required NuGet packages a
 
 ### Add the sample code
 
-The function API is the source of extra claims for your token. Using the *Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents* NuGet packag.
+The function API is the source of extra claims for your token. Using the *Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents* NuGet package.
 
-1. In your *Function1.cs* file, replace the entire contents of the file with the following code:
+In your *Function1.cs* file, replace the entire contents of the file with the following code:
 
-    [!INCLUDE [nuget-code](./includes/scenarios/custom-extension-tokenissuancestart-setup-nuget-code.md)]
+[!INCLUDE [nuget-code](./includes/scenarios/custom-extension-tokenissuancestart-setup-nuget-code.md)]
 
-1. Next, open the *local.settings.json* file and check that the *.json* file matches the following snippet:
-
-    ```json
-    {
-      "IsEncrypted": false,
-      "Values": {
-        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-        "FUNCTIONS_WORKER_RUNTIME": "dotnet"
-      }
-    }
-    ```
+> [!TIP]
+> 
+> For local development and testing purposes, open *local.settings.json* and add the `AzureWebJobsStorage` value as shown in the following snippet: 
+>
+>    ```json
+>    {
+>      "IsEncrypted": false,
+>      "Values": {
+>        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+>        "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+>      }
+>    }
+>    ```
 
 ### Build and run the project
 
@@ -126,7 +128,7 @@ The function needs to be deployed to Azure using our IDE. Check that you're corr
     | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
     | **Location** | Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
     | **Azure Storage** | Your storage account | An Azure storage account is required by the Functions runtime. Select New to configure a general-purpose storage account. |
-    | **Application Insights** | *Default* | A feature of Azure Monitor. This is auto-selected, select the one you wish to use or configure a new one. |
+    | **Application Insights** | *Default* | A feature of Azure Monitor. This is autoselected, select the one you wish to use or configure a new one. |
     
 
 1. Wait a few moments for your function app to be deployed. Once the window closes, select **Finish**.
@@ -172,21 +174,23 @@ After creating the project, you'll need to install the required NuGet packages a
 
 ### Add the sample code
 
-1. Replace the entire contents of the *AuthEventsTrigger.cs* file with the following code:
+Replace the entire contents of the *AuthEventsTrigger.cs* file with the following code:
 
-    [!INCLUDE [nuget-code](./includes/scenarios/custom-extension-tokenissuancestart-setup-nuget-code.md)]
+[!INCLUDE [nuget-code](./includes/scenarios/custom-extension-tokenissuancestart-setup-nuget-code.md)]
 
-1. Next, open *local.settings.json* and add the `AzureWebJobsStorage` value as shown in the following snippet: 
-
-    ```json
-    {
-      "IsEncrypted": false,
-      "Values": {
-        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-        "FUNCTIONS_WORKER_RUNTIME": "dotnet"
-      }
-    }
-    ```
+> [!TIP]
+> 
+> For local development and testing purposes, open *local.settings.json* and add the `AzureWebJobsStorage` value as shown in the following snippet: 
+>
+>    ```json
+>    {
+>      "IsEncrypted": false,
+>      "Values": {
+>        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+>        "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+>      }
+>    }
+>    ```
 
 ### Build and run the project
 
@@ -195,7 +199,7 @@ After creating the project, you'll need to install the required NuGet packages a
 
 ## Deploy the function and publish to Azure 
 
-The function needs to be deployed to Azure using our IDE. Check that you are correctly signed in to your Azure account so the function can be published.
+The function needs to be deployed to Azure using our IDE. Check that you're correctly signed in to your Azure account so the function can be published.
 
 1. Select the **Azure** extension icon. In **Resources**, select the **+** icon to **Create a resource**.
 1. Select **Create Function App in Azure**. Use the following settings for setting up your function app.
@@ -212,7 +216,7 @@ The function needs to be deployed to Azure using our IDE. Check that you are cor
 
 ## Create the Azure Function app
 
-In the Azure portal, we'll create an Azure Function app and its associated resource, before continuining to create the HTTP trigger function.
+In the Azure portal, create an Azure Function app and its associated resource, before continuing to create the HTTP trigger function.
 
 1. Sign in to the [Azure portal](https://portal.azure.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. From the Azure portal menu or the **Home** page, select **Create a resource**.
@@ -221,7 +225,7 @@ In the Azure portal, we'll create an Azure Function app and its associated resou
 
     | Setting      | Suggested value  | Description |
     | ------------ | ---------------- | ----------- |
-    | **Subscription** | Your subscription | The subscription under which the new function app will be created in. |
+    | **Subscription** | Your subscription | The subscription under which the new function app will be created. |
     | **[Resource Group](/azure/azure-resource-manager/management/overview)** |  *myResourceGroup* | Select and existing resource group, or name for the new one in which you'll create your function app. |
     | **Function App name** | Globally unique name | A name that identifies the new function app. Valid characters are `a-z` (case insensitive), `0-9`, and `-`.  |
     |**Deploy code or container image**| Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
