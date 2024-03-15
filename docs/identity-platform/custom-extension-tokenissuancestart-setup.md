@@ -81,7 +81,7 @@ After creating the project, you'll need to install the required NuGet packages a
 
 ### Add the sample code
 
-The function API is the source of extra claims for your token. Using the *Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents* NuGet package.
+The function API is the source of extra claims for your token. For the purposes of this article, we're hardcoding the values for the sample app. In production, fetch information about the user from external data store.
 
 In your *Function1.cs* file, replace the entire contents of the file with the following code:
 
@@ -89,13 +89,14 @@ In your *Function1.cs* file, replace the entire contents of the file with the fo
 
 > [!TIP]
 > 
-> For local development and testing purposes, open *local.settings.json* and add the `AzureWebJobsStorage` value as shown in the following snippet: 
+> For local development and testing purposes, open *local.settings.json* and add the `AzureWebJobsStorage` and `AzureWebJobsSecretStorageType` value as shown in the following snippet:: 
 >
 >    ```json
 >    {
 >      "IsEncrypted": false,
 >      "Values": {
->        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+>        "AzureWebJobsStorage": "",
+>        "AzureWebJobsSecretStorageType": "files",
 >        "FUNCTIONS_WORKER_RUNTIME": "dotnet"
 >      }
 >    }
@@ -174,19 +175,22 @@ After creating the project, you'll need to install the required NuGet packages a
 
 ### Add the sample code
 
+The function API is the source of extra claims for your token. For the purposes of this article, we're hardcoding the values for the sample app. In production, fetch information about the user from external data store.
+
 Replace the entire contents of the *AuthEventsTrigger.cs* file with the following code:
 
 [!INCLUDE [nuget-code](./includes/scenarios/custom-extension-tokenissuancestart-setup-nuget-code.md)]
 
 > [!TIP]
 > 
-> For local development and testing purposes, open *local.settings.json* and add the `AzureWebJobsStorage` value as shown in the following snippet: 
+> For local development and testing purposes, open *local.settings.json* and add the `AzureWebJobsStorage` and `AzureWebJobsSecretStorageType` value as shown in the following snippet:: 
 >
 >    ```json
 >    {
 >      "IsEncrypted": false,
 >      "Values": {
->        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+>        "AzureWebJobsStorage": "",
+>        "AzureWebJobsSecretStorageType": "files",
 >        "FUNCTIONS_WORKER_RUNTIME": "dotnet"
 >      }
 >    }

@@ -24,7 +24,7 @@ Modify the `AuthenticationEventsTrigger` include the `AuthorityUrl`, `AudienceAp
 public async static Task<AuthenticationEventResponse> Run(
     [AuthenticationEventsTrigger(
     AudienceAppId = "Enter custom authentication extension app ID here",
-    AuthorityUrl = "Enter authority URI here", // The .well-known/openid-configuration endpoint is appended to the AuthorityUrl
+    AuthorityUrl = "Enter authority URI here", // The .well-known/openid-configuration endpoint is appended to the AuthorityUrl in the SDK
     AuthorizedPartyAppId = "Enter the Authorized Party App Id here")] TokenIssuanceStartRequest request, ILogger log) 
 ```
 

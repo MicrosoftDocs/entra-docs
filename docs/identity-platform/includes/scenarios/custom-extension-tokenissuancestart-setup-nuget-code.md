@@ -28,11 +28,11 @@ namespace AuthEventTrigger
     {
         [FunctionName("onTokenIssuanceStart")]
         public static async Task<AuthenticationEventResponse> Run(
-            [AuthenticationEventsTrigger] TokenIssuanceStartRequest request, ILogger log)
-        // The AuthenticationEventsTrigger attribute can be used to specify and audience app ID, authority URL and authorized party app id 
-        // [AuthenticationEventsTrigger(AudienceAppId = "Enter custom authentication extension app ID here",
-        //                              AuthorityUrl = "https://oidcconfig",
-        //                              AuthorizedPartyAppId = "Enter the Authorized Party App Id here")] TokenIssuanceStartRequest request, ILogger log)
+        //    [AuthenticationEventsTrigger] TokenIssuanceStartRequest request, ILogger log)
+        // The AuthenticationEventsTrigger attribute can be used to specify and audience app ID, authority URL and authorized party app id. This is an alternative route to setting up Authorization values instead of Environment variables or EzAuth
+            [AuthenticationEventsTrigger(AudienceAppId = "Enter custom authentication extension app ID here",
+                                         AuthorityUrl = "Enter authority URI here", 
+                                         AuthorizedPartyAppId = "Enter the Authorized Party App Id here")]TokenIssuanceStartRequest request, ILogger log)
         {
             try
             {
@@ -40,8 +40,6 @@ namespace AuthEventTrigger
                 if (request.RequestStatus == RequestStatusType.Successful)
                 {
                     // Fetches information about the user from external data store
-                    // request.Response = null;
-                    // request.Response.Actions = null;
                     // Add new claims to the token's response
                     request.Response.Actions.Add(new ProvideClaimsForToken(
                                                   new TokenClaim("dateOfBirth", "01/01/2000"),
@@ -52,7 +50,7 @@ namespace AuthEventTrigger
                 }
                 else
                 {
-                    // If the request fails, such as in token validation, output the failed request status
+                    // If the request fails, such as in token validation, output the failed request status, such as in token validation or response validation.
                     log.LogInformation(request.StatusMessage);
                 }
                 return await request.Completed();
