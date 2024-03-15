@@ -1,7 +1,7 @@
 ---
 title: macOS Platform Single Sign-on (PSSO) overview (preview)
 description: Overview of macOS Platform Single Sign On (PSSO) for Microsoft Entra ID registered devices.
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: overview
 ms.date: 12/08/2023
