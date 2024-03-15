@@ -28,7 +28,7 @@ introduction: |
   > You can associate user flows with apps built by your organization. User flows can't be used for Microsoft apps, like SharePoint or Teams.
 prerequisites:
   summary: |
-    ## Before you begin
+    Before you begin you may need to add identity providers and define custom attributes.
 
     ### Add identity providers (optional)
 
