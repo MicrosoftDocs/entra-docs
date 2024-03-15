@@ -5,8 +5,7 @@ services:
 author: OwenRichards1
 manager: CelesteDG
 
-ms.service: active-directory
-ms.subservice: develop 
+ms.service: identity-platform
 ms.topic: how-to
 ms.workload: identity
 ms.date: 02/28/2024
