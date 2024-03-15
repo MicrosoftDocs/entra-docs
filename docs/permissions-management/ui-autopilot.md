@@ -1,6 +1,6 @@
 ---
 title: View information about rules in the Autopilot dashboard in Permissions Management
-description: How to view informaiton about rules in the Autopilot dashboard in Permissions Management.
+description: How to view information about rules in the Autopilot dashboard in Permissions Management.
 author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-permissions-management
