@@ -10,7 +10,7 @@ metadata:
   manager: amycolannino
   ms.service: entra-permissions-management
   ms.topic: landing-page
-  ms.date: 11/15/2023
+  ms.date: 03/14/2024
   ms.author: jfields
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
 
@@ -24,6 +24,8 @@ landingContent:
         links:
           - text: Overview
             url: overview.md
+          - text: What's new
+            url: whats-new-in-permissions-management.md
   # Card
   - title: Learn
     linkLists:
@@ -93,15 +95,12 @@ landingContent:
     linkLists:
       - linkListType: reference
         links:
-          - text: What's new
-            url: whats-new-in-permissions-management.md
           - text: FAQs
             url: faqs.md
           - text: Glossary  
             url: multi-cloud-glossary.md
           - text: Operations reference  
             url: ../architecture/permissions-manage-ops-guide-intro.md
-            
 # Card
   - title: Troubleshoot
     linkLists:
