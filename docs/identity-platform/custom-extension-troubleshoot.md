@@ -194,9 +194,9 @@ To test your API directly from Postman, follow these steps:
     }
     ```
 
-> [!TIP]
->
-> If you're using an access token obtained from Microsoft Entra ID, select **Authorization** and then select **Bearer token**, then paste the access token you received from Microsoft Entra ID,
+    > [!TIP]
+    >
+    > If you're using an access token obtained from Microsoft Entra ID, select **Authorization** and then select **Bearer token**, then paste the access token you received from Microsoft Entra ID.
 
 1. Select **Send**, and you should receive a JSON response similar to the following:
 
