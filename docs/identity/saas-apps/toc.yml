@@ -1167,8 +1167,12 @@
         href: gofluent-tutorial.md
       - name: GoLinks
         href: golinks-tutorial.md
+      - name: GoProfiles
+        href: goprofiles-tutorial.md
       - name: GovWin IQ
         href: govwin-iq-tutorial.md
+      - name: GoSearch
+        href: gosearch-tutorial.md
       - name: GoToMeeting
         href: citrix-gotomeeting-tutorial.md
       - name: gr8 People
@@ -1351,6 +1355,8 @@
         href: imageworks-tutorial.md
       - name: Imagineer WebVision
         href: imagineerwebvision-tutorial.md
+      - name: iManage Work (SAML)
+        href: imanage-work-saml-tutorial.md
       - name: IMPAC Risk Manager
         href: impacriskmanager-tutorial.md
       - name: Imperva Data Security
@@ -2421,6 +2427,8 @@
         href: seculio-tutorial.md
       - name: SECURE DELIVER
         href: securedeliver-tutorial.md
+      - name: SquaREcruit
+        href: squarecruit-tutorial.md
       - name: SecureTransport
         href: securetransport-tutorial.md
       - name: SecureW2 JoinNow Connector
