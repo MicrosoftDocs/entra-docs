@@ -122,5 +122,5 @@ procedureSection:
       GET https://graph.microsoft.com/v1.0/policies/tokenLifetimePolicies/4d2f137b-e8a9-46da-a5c3-cc85b2b840a4/appliesTo
       ```
 nextStep:
-  text: Learn about authentication session management capabilities in Microsoft Entra Conditional Access.
+  text: Learn about authentication session management
   url: ~/identity/conditional-access/howto-conditional-access-session-lifetime.md 
