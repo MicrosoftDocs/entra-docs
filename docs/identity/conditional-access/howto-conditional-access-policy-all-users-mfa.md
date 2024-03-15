@@ -57,6 +57,12 @@ The prompt for authentication usually occurs when a device has been offline for 
 
 [!INCLUDE [active-directory-policy-deploy-template](~/includes/entra-policy-deploy-template.md)]
 
+### Azure Virtual Desktop user feed
+
+Organizations that use the Azure Virtual Desktop user feed feature and use Conditional Access policies to control access need to exclude the following cloud app from their Conditional Access policies using **Select Excluded Cloud Apps**:
+
+- [Azure Virtual Desktop Azure Resource Manager Provider, AppID 50e95039-b200-4007-bc97-8d5790743a63](/azure/virtual-desktop/set-up-mfa?tabs=avd#create-a-conditional-access-policy).
+
 ## Create a Conditional Access policy
 
 The following steps help create a Conditional Access policy to require all users do multifactor authentication.
