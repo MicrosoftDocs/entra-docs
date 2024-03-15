@@ -42,6 +42,6 @@ public async static Task<AuthenticationEventResponse> Run(
 
 1. Select **Save** to save the application settings.
 
-> [!TIP]
->
-> The *AuthenticationEvents__AuthorizedPartyAppId* environment variable is optional and can be used for development purposes. It is not strictly required for this scenario.
+    > [!TIP]
+    >
+    > The *AuthenticationEvents__AuthorizedPartyAppId* environment variable is optional and can be used for development purposes. It is not strictly required for this scenario.
