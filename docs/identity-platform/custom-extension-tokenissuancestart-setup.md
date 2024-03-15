@@ -31,7 +31,7 @@ This article describes how to create a REST API with a [token issuance start eve
 
 ::: zone pivot="visual-studio-code"
 
-This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. You create an HTTP trigger function in Visual Studio and deploy it to the Azure portal, where it can be accessed through Azure Functions. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events.
+This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library. You create an HTTP trigger function in Visual Studio and deploy it to the Azure portal, where it can be accessed through Azure Functions. 
 
 ## Prerequisites
 
