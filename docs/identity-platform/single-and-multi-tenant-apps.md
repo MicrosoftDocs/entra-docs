@@ -9,7 +9,7 @@ ms.date: 10/17/2023
 ms.reviewer: justhu
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer, I want to understand the concept of tenancy in Microsoft Entra ID, so that I can configure my app to be either single-tenant or multi-tenant during app registration and determine who can sign in to my app.
 ---
 
