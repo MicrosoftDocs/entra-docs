@@ -36,6 +36,9 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 * GoProfiles supports both **SP and IDP** initiated SSO.
 * GoProfiles supports **Just In Time** user provisioning.
 
+> [!NOTE]
+> Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
+
 ## Add GoProfiles from the gallery
 
 To configure the integration of GoProfiles into Microsoft Entra ID, you need to add GoProfiles from the gallery to your list of managed SaaS apps.
