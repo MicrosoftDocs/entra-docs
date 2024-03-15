@@ -2,7 +2,7 @@
 title: Join a Mac device with Microsoft Entra ID using Company Portal (preview)
 description: How users can set up a new macOS with macOS Platform single sign-on extension, using Company Portal.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: tutorial
 ms.date: 09/26/2023

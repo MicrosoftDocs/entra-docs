@@ -2,7 +2,7 @@
 title: Join a Mac device with Microsoft Entra ID during the out of box experience with macOS PSSO (preview)
 description: How users can set up a Microsoft Entra with a new Mac device with macOS Platform Single Sign-on
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: tutorial
 ms.date: 09/26/2023

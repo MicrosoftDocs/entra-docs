@@ -71,7 +71,7 @@ Platform Credential for macOS allows users to go password-less by configuring To
 
 Refer to [macOS Platform SSO](../devices/macos-psso.md) for more information on how to configure and deploy Platform Credential for macOS.
 
-## Platform Single Sign-On (PSSO) for macOS with SmartCard
+## Platform Single Sign-On for macOS with SmartCard
 
 Platform Single Sign-On (PSSO) for macOS by allows users to go password-less using the SmartCard authentication method. The user signs in to the machine using an external smart card, or smart card-compatible hard token (eg. Yubikey). Once the device is unlocked, the smart card is used with Microsoft Entra ID to grant SSO across apps that use Microsoft Entra ID for authentication.
 
