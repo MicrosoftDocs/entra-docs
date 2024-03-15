@@ -132,13 +132,13 @@ In this section, you create a user called B.Simon in DojoWM. Work with [DojoWM 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-#### SP initiated:
+#### SP initiated
  
 * Click on **Test this application** in Microsoft Entra admin center. This will redirect to DojoWM Sign on URL where you can initiate the login flow.  
  
 * Go to DojoWM Sign-on URL directly and initiate the login flow from there.
  
-#### IDP initiated:
+#### IDP initiated
  
 * Click on **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the DojoWM for which you set up the SSO.
  
