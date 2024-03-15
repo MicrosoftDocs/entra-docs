@@ -23,7 +23,6 @@ introduction:
 
 prerequisites:
   summary: |
-    ## Get started
     To get started, download the latest [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
 procedureSection:
