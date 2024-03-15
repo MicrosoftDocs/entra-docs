@@ -7,8 +7,8 @@ ms.author: barclayn
 manager: amycolannino
 ms.date: 03/11/2024
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.workload: identity
 ms.custom: 
 ms.reviewer: yuank
