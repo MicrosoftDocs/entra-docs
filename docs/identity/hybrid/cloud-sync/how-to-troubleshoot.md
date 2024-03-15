@@ -8,6 +8,7 @@ ms.date: 11/06/2023
 ms.topic: troubleshooting
 ms.service: entra-id
 ms.subservice: hybrid-cloud-sync
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # Cloud sync troubleshooting
