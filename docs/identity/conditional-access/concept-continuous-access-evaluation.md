@@ -142,8 +142,7 @@ In step 8 above, when Microsoft Entra reevaluates the conditions, it denies acce
 
 If you're sending traffic to non-Microsoft 365 resources through Global Secure Access, resource providers aren't aware of the source IP address of the user as [source IP restoration](../../global-secure-access/how-to-source-ip-restoration.md) isn’t currently supported for these resources. In this case, if the user is in the trusted IP location (as seen by Microsoft Entra), Microsoft Entra issues a one-hour token that suspends IP address checks at the resource until token expiration. Microsoft Entra continues to enforce IP address checks correctly for these resources. 
 
-- **Standard location enforcement mode**: The granting of access under this exception (that is, an allowed location detected between Microsoft Entra with a disallowed location detected by the resource provider) protects user productivity by maintaining access to critical resources.
-- **Strict location enforcement mode**: Administrators who operate under stable network topologies and wish remove the standard mode exception can use [Strict Location Enforcement (Public Preview)](concept-continuous-access-evaluation-strict-enforcement.md).
+Standard vs. Strict mode. The granting of access under this exception (that is, an allowed location detected between Microsoft Entra ID with a disallowed location detected by the resource provider) protects user productivity by maintaining access to critical resources. This is standard location enforcement. On the other hand, Administrators who operate under stable network topologies and wish remove this exception can use [Strict Location Enforcement (Public Preview)](concept-continuous-access-evaluation-strict-enforcement.md).
 
 ## Enable or disable CAE
 
