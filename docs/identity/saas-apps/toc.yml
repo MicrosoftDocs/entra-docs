@@ -1933,6 +1933,8 @@
         href: onedesk-tutorial.md
       - name: Oneflow
         href: oneflow-tutorial.md
+      - name: OneStream
+        href: onestream-tutorial.md
       - name: Oneteam
         href: oneteam-tutorial.md
       - name: OneTrust Privacy Management Software
