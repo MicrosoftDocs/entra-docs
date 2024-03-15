@@ -27,7 +27,7 @@ Microsoft offers the following [five passwordless authentication options](concep
 
 * [Platform Credential for macOS](./concept-authentication-passwordless.md#platform-credential-for-macos) - a new capability on macOS that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe).
 
-* [macOS Platform Single Sign-On with SmartCard](./concept-authentication-passwordless.md#macos-platform-sso-with-smartcard) - a new capability on macOS for smart card based authentication that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe).
+* [macOS Platform Single Sign-On with SmartCard](./concept-authentication-passwordless.md#macos-platform-single-sign-on-with-smartcard) - a new capability on macOS for smart card based authentication that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe).
 
 > [!NOTE]
 > To create an offline version of this plan with all links, use your browsers print to pdf functionality.

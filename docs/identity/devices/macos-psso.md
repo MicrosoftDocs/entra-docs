@@ -52,7 +52,7 @@ Passwords are a primary attack vector for bad actors. They use social engineerin
 
 Learn how you can use Platform SSO for macOS to enable passwordless authentication for your organization.
 
-* [Passwordless authentication options for Microsoft Entra ID](../../identity/authentication/concept-authentication-passwordless.md#macos-platform-sso)
+* [Passwordless authentication options for Microsoft Entra ID](../../identity/authentication/concept-authentication-passwordless.md)
 * [Plan a passwordless authentication deployment in Microsoft Entra ID](../../identity/authentication/howto-authentication-passwordless-deployment.md)
 
 ## National Institute of Standards and Technology (NIST)
