@@ -144,6 +144,15 @@ Now that the device is in compliance with Company Portal, you need to register y
 
 1. When the MFA flow completes and the loading screen disappears, your device should be registered with PSSO. You can now use PSSO to access Microsoft app resources.
 
+### Enable Platform Credential for macOS for use as a passkey
+
+Setting up your device using secure enclave method enables you to use the resulting credential saved to the Mac as a passkey in the browser. To enable it;
+
+1. Open the **Settings** app, and navigate to **Passwords** > **Password options**.
+1. Under **Password Options**, find **Use passwords and passkeys from** and enable **Company Portal** through the toggle switch.
+
+    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/password-options-enable-passkeys.png" alt-text="Screenshot of the Password Options window indicating that the use of passwords and passkeys from Company Portal has been enabled by a switch.":::
+
 ### [Smart Card](#tab/smart-card)
 
 1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. If your smart card is paired with your local account, you'll see a prompt to enter the smart card pin
@@ -187,38 +196,17 @@ Now that the device is in compliance with Company Portal, you need to register y
 
 Once you've completed the steps above, it's a good idea to check your device registration status.
 
-### [macOS 14 Somona](#tab/macos-14-somona)
-
 1. To check that registration has completed successfully, navigate to **Settings** and select **Users & Groups**. 
 1. Select **Edit** next to **Network Account Server** and check that **Platform SSO** is listed as **Registered**.
 1. To verify the method used for authentication, navigate to your username in the **Users & Groups** window and select the **Information** icon. Check the method listed, which should be **Secure enclave**, **Smart Card**, or **Password**.
 
     > [!NOTE]
     >
-    > You can also use the **Terminal** app to check the registration status. Run the following command to check the status of your device registration. You should see in the bottom of the output that SSO tokens are retrieved.
+    > You can also use the **Terminal** app to check the registration status. Run the following command to check the status of your device registration. You should see in the bottom of the output that SSO tokens are retrieved. For macOS 13 Ventura users, this command is required to check the registration status.
     >
     > ```console
     > app-sso platform -s
     > ```
-
-
-### [macOS 13 Ventura](#tab/macos-13-ventura)
-
-1. To check that registration has completed successfully, open the **Terminal** app and run the following command:
-
-    ```console
-    app-sso platform -s
-    ```
-1. Check the bottom of the output, and confirm that information similar to the following snippet is shown, which signifies that SSO tokens are retrieved.
-
-    ```console
-    SSO Tokens:
-    Received:
-    YYYY-MM-DD T HH:MM:SS
-    Expiration:
-    YYYY-MM-DD T HH:MM:SS (Not Expired)
-    ```
----
 
 ## Update your Mac device to enable PSSO
 
