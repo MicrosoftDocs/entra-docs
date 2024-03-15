@@ -112,7 +112,7 @@ You can require users to enter a support ticket number when they activate the el
 
 ### Require approval to activate
 
-You can require approval for activation of an eligible assignment. The approver doesn't have to have any roles. When you use this option, you must select at least one approver. We recommend that you select at least two approvers. If not specific approvers are selected, privileged role administrator/global administrators will become the default approvers.
+You can require approval for activation of an eligible assignment. The approver doesn't have to have any roles. When you use this option, you must select at least one approver. We recommend that you select at least two approvers. If no specific approvers are selected, privileged role administrator/global administrators will become the default approvers.
 
 To learn more about approvals, see [Approve or deny requests for Microsoft Entra roles in Privileged Identity Management](./pim-approval-workflow.md).
 
