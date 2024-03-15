@@ -330,6 +330,11 @@
       "source_path_from_root": "/docs/identity/hybrid/connect/how-to-connect-group-writeback-v2.md",
       "redirect_url": "/entra/identity/hybrid/group-writeback-cloud-sync",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/permissions-management/how-to-notifications-rule.md",
+      "redirect_url": "/entra/permissions-management/ui-autopilot",
+      "redirect_document_id": false
     }
 
   ]
