@@ -66,6 +66,7 @@ POST https://your-api.com/endpoint
                 "market": "en-us"
             },
             "protocol": "OAUTH2.0",
+            "requesttype": "SignIn",
             "clientServicePrincipal": {
                 "id": "<Your Test Applications servicePrincipal objectId>",
                 "appId": "<Your Test Application App Id>",
@@ -84,6 +85,9 @@ POST https://your-api.com/endpoint
                 "givenName": "Bob Smith",
                 "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471",
                 "mail": "bob@contoso.com",
+                "onPremisesSamAccountName": "testadmin",
+                "onPremisesSecurityIdentifier": "DummySID",
+                "onPremisesUserPrincipalName": "Dummy Name",
                 "preferredLanguage": "en-us",
                 "surname": "Smith",
                 "userPrincipalName": "bob@contoso.com",

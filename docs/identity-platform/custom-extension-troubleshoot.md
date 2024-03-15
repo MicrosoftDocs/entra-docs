@@ -162,6 +162,7 @@ To test your API directly from Postman, follow these steps:
                     "market": "en-us"
                 },
                 "protocol": "OAUTH2.0",
+                "requesttype": "SignIn",
                 "clientServicePrincipal": {
                     "id": "<Your Test Applications servicePrincipal objectId>",
                     "appId": "<Your Test Application App Id>",
@@ -180,6 +181,9 @@ To test your API directly from Postman, follow these steps:
                     "givenName": "John",
                     "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471",
                     "mail": "john@contoso.com",
+                    "onPremisesSamAccountName": "johnsmith",
+                    "onPremisesSecurityIdentifier": "Enter Security Identifier",
+                    "onPremisesUserPrincipalName": "John Smith",
                     "preferredLanguage": "en-us",
                     "surname": "Smith",
                     "userPrincipalName": "john@contoso.com",
