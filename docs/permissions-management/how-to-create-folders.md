@@ -26,5 +26,4 @@ After onboarding your cloud environment to Permissions Management, you might hav
 
 ## Next steps
 
-- [View key statistics and data about your authorization systems](ui-dashboard.md)
 - [View data about the activity in your authorization system](product-dashboard.md)
