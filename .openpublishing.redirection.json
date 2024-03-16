@@ -222,7 +222,7 @@
     },
     {
       "source_path_from_root": "/docs/identity-platform/custom-extension-get-started.md",
-      "redirect_url": "/entra/identity/identity-platform/custom-extension-tokenissuancestart-configuration",
+      "redirect_url": "/entra/identity-platform/custom-extension-tokenissuancestart-configuration",
       "redirect_document_id": false
     },
     {
