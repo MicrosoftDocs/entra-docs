@@ -7,8 +7,8 @@ manager: celestedg
 ms.service: entra-external-id
  
 ms.subservice: customers
-ms.topic: conceptual
-ms.date: 03/14/2024
+ms.topic: concept-article
+ms.date: 02/20/2024
 ms.author: mimart
 ms.custom: it-pro
 
