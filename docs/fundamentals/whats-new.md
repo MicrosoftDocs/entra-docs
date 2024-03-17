@@ -59,7 +59,7 @@ Excitingly, Adaptive Protection now integrates with Conditional Access, enabling
 
 Conditional Access, a key component of this integrated solution, enhances security by enforcing access controls based on factors like user identity, location, device, user-risk, and sign-in risk. In scenarios where a trusted employee becomes a high-risk user, the integration allows for blocking access to critical applications like Salesforce, adding an extra layer of defense against data exfiltration.
 
-With Adaptive Protection integrated with Conditional Access, administrators can seamlessly configure policies to automatically respond to insider risk levels, preventing unauthorized access and data theft. This integration offers a robust solution to the complexities of data security, allowing organizations to efficiently manage risks and protect sensitive information. For more information, see: [Learn about insider risk management](https://learn.microsoft.com/purview/insider-risk-management).
+With Adaptive Protection integrated with Conditional Access, administrators can seamlessly configure policies to automatically respond to insider risk levels, preventing unauthorized access and data theft. This integration offers a robust solution to the complexities of data security, allowing organizations to efficiently manage risks and protect sensitive information. For more information, see: [Learn about insider risk management](/purview/insider-risk-management).
 
 ---
 
