@@ -86,6 +86,7 @@ To recover a deleted managed identity, the customer needs to contact Microsoft s
 **Product capability:** Inbound to Microsoft Entra ID    
 
 With API-driven inbound provisioning, Microsoft Entra ID provisioning service now supports integration with any system of record. Customers, and partners, can use any automation tool of their choice to retrieve workforce data from any system of record for provisioning into Microsoft Entra ID and connected on-premises Active Directory domains. The IT admin has full control on how the data is processed and transformed with attribute mappings. Once the workforce data is available in Microsoft Entra ID, the IT admin can configure appropriate joiner-mover-leaver business processes using Microsoft Entra ID Governance Lifecycle Workflows. For more information, see: [API-driven inbound provisioning concepts](../identity/app-provisioning/inbound-provisioning-api-concepts.md).
+
 ---
 
 ### Public Preview - Convert external users to internal
