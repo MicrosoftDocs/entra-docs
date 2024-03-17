@@ -33,6 +33,148 @@ Microsoft Entra ID (previously known as Azure Active Directory) receives improve
 
 This page updates monthly, so revisit it regularly. If you're looking for items older than six months, you can find them in [Archive for What's new in Microsoft Entra ID?](whats-new-archive.md).
 
+## March 2024
+
+### Generally Available - Changing Passwords in My Security Info
+
+**Type:** New feature    
+**Service category:** My Security Info    
+**Product capability:** End User Experiences    
+
+Now Generally Available, My Sign Ins ([My Sign-Ins (microsoft.com)](https://mysignins.microsoft.com)) now supports end users changing their passwords inline. When a user authenticates with a password and an MFA credential, they're able to are able to change their password without entering their existing password. Starting April 1, traffic from the [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) portal will redirect to the new My Sign Ins change experience. The [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) experience will no longer be available after June 15.
+
+---
+
+### Public preview - Insider risk based conditional access
+
+**Type:** New feature    
+**Service category:** Conditional Access    
+**Product capability:** Identity Security & Protection    
+
+Protect your data against external threats, and insider risks, with Adaptive Protection integrated with Conditional Access. In today's dynamic digital landscape, organizations grapple with the challenge of securing sensitive data, with 87% reporting data breaches in the past year, 63% of which are caused by inadvertent or malicious insiders. Traditional security approaches prove inadequate, leading to friction for users and an inability to adapt to evolving risks.
+
+Enter Adaptive Protection in Microsoft Purview, enhancing overall data security by dynamically adjusting insider risk levels and integrating with policy engines. This integration, announced in February 2023, allows automatic inclusion of users in data loss policies based on their risk levels, striking a balance between security and productivity.
+
+Excitingly, Adaptive Protection now integrates with Conditional Access, enabling the creation of policies that automatically respond to insider risk levels. This integration eliminates the challenges posed by fragmented solutions, providing organizations with a streamlined and effective approach to data security.
+
+Conditional Access, a key component of this integrated solution, enhances security by enforcing access controls based on factors like user identity, location, device, user-risk, and sign-in risk. In scenarios where a trusted employee becomes a high-risk user, the integration allows for blocking access to critical applications like Salesforce, adding an extra layer of defense against data exfiltration.
+
+With Adaptive Protection integrated with Conditional Access, administrators can seamlessly configure policies to automatically respond to insider risk levels, preventing unauthorized access and data theft. This integration offers a robust solution to the complexities of data security, allowing organizations to efficiently manage risks and protect sensitive information. For more information, see: [Learn about insider risk management](https://learn.microsoft.com/purview/insider-risk-management).
+
+---
+
+### General Availability - Soft Delete capability for Managed Service Identity
+
+**Type:** New feature    
+**Service category:** Managed identities for Azure resources    
+**Product capability:** AuthZ/Access Delegation    
+
+Managed identities are a way of securely accessing cloud resources without having to store or manage any credentials. 
+
+Sometimes, a customer might accidentally or intentionally delete a managed identity. In the past, there was no way to restore a deleted managed identity, and the customer had to create a new one and reconfigure all the permissions and dependencies. This could be time-consuming, and error-prone, especially if the identity was used by multiple resources or applications. 
+
+To address this issue, Microsoft is releasing the capability to recover a deleted managed identity. This feature allows customers to restore a managed identity within a certain retention period. The recovery process preserves the original identity ID, name, and attributes, and restores the access to the resources and applications that the identity had before deletion. The customer won't need to update any configuration or code that references the identity, as it is the same as before. This reduces the impact and downtime caused by identity deletion, and improve the customer experience and satisfaction. 
+
+To recover a deleted managed identity, the customer needs to contact Microsoft support or open a support ticket specifying which managed identities need to be recovered. The support team validates the request, and performs the recovery operation. The customer is notified when the recovery is completed, and are able to verify that the identity is functional and has the correct permissions and dependencies. For more information, see: [Deletion and recovery of applications FAQ](../identity/enterprise-apps/delete-recover-faq.yml).
+
+---
+
+### General Availability - API driven inbound provisioning
+
+**Type:** New feature    
+**Service category:** Provisioning    
+**Product capability:** Inbound to Microsoft Entra ID    
+
+With API-driven inbound provisioning, Microsoft Entra ID provisioning service now supports integration with any system of record. Customers, and partners, can use any automation tool of their choice to retrieve workforce data from any system of record for provisioning into Microsoft Entra ID and connected on-premises Active Directory domains. The IT admin has full control on how the data is processed and transformed with attribute mappings. Once the workforce data is available in Microsoft Entra ID, the IT admin can configure appropriate joiner-mover-leaver business processes using Microsoft Entra ID Governance Lifecycle Workflows. For more information, see: [API-driven inbound provisioning concepts](../identity/app-provisioning/inbound-provisioning-api-concepts.md).
+---
+
+### Public Preview - Convert external users to internal
+
+**Type:** New feature    
+**Service category:** User Management    
+**Product capability:** User Management    
+
+External user conversion enables customers to convert external users to internal members without needing to delete and create new user objects. Maintaining the same underlying object ensures the user’s account, and access to resources, isn’t disrupted and that their history of activities remains intact as their relationship with the host organization changes. 
+
+The external to internal user conversion feature includes the ability to convert on-premises synchronized users as well. For more information, see: [Convert external users to internal users (Preview)](../identity/users/convert-external-users-internal.md)
+
+---
+
+### Public Preview - Conditional Access What If API
+
+**Type:** New feature    
+**Service category:** Conditional Access    
+**Product capability:** Access Control    
+
+The Conditional access What If API can be used to programmatically test the impact of conditional access policies on user, and workload, identity signins.
+
+---
+
+### Public Preview - Alternate Email Notifications for Lockbox Requests
+
+**Type:** New feature    
+**Service category:** Other    
+**Product capability:** Access Control    
+
+Customer Lockbox for Microsoft Azure is launching a new feature that enables customers to use alternate email IDs for getting lockbox notifications. This enables Lockbox customers to receive notifications in scenarios where their Azure account isn't email enabled, or if they have a service principal defined as the tenant admin or subscription owner.
+
+---
+
+### General Availability - Just-in-time application access with PIM for Groups
+
+**Type:** New feature    
+**Service category:** Privileged Identity Management    
+**Product capability:** Privileged Identity Management    
+
+Provide just-in-time access to non-Microsoft applications such as AWS & GCP. This capability integrates PIM for groups, and application, provisioning to reduce the activation time from 40+ minutes to roughly 2 minutes when requesting just-in-time access to a role in a non-Microsoft app.
+
+For more information, see:
+
+[AWS](../identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups)
+[GCP](../identity/saas-apps/g-suite-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups)
+
+---
+
+### Public Preview - Azure Lockbox Approver Role for Subscription Scoped Requests
+
+**Type:** New feature    
+**Service category:** Other    
+**Product capability:** Identity Governance    
+
+Customer Lockbox for Microsoft Azure is launching a new built-in Azure RBAC role that enables customers to use a lesser privileged role for users responsible for approving/rejecting Customer Lockbox requests. This feature is targeted to the customer admin workflow where a lockbox approver acts on the request from Microsoft Support engineer to access Azure resources in a customer subscription.
+
+In this first phase, we are launching a new built-in Azure RBAC role that helps scope down the access possible for an individual with Azure Customer Lockbox approver rights on a subscription and its resources. A similar role for tenant-scoped requests are available in subsequent releases.
+
+---
+
+### General Availability - New provisioning connectors in the Microsoft Entra Application Gallery - March 2024
+
+**Type:** New feature    
+**Service category:** App Provisioning    
+**Product capability:** 3rd Party Integration    
+
+We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
+
+- [Astro](../identity/saas-apps/astro-provisioning-tutorial.md)
+- [Egnyte](../identity/saas-apps/egnyte-provisioning-tutorial.md)
+- [MobileIron](../identity/saas-apps/mobileiron-provisioning-tutorial.md)
+- [SAS Viya SSO](../identity/saas-apps/sas-viya-sso-provisioning-tutorial.md)
+
+
+For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
+
+---
+
+### General Availability - Privileged Auth Admin can be assigned at Administrative Unit scope
+
+**Type:** Changed feature    
+**Service category:** Roles    
+**Product capability:** AuthZ/Access Delegation    
+
+Administrative units now support scoped delegation of the Privileged Authentication Administrator role. This allows delegation of the ability to manage authentication of other administrators if those administrators' user accounts are part of the administrative unit. Privileged Authentication Administrator is a highly privileged role, and should only be assigned when necessary; for delegating management of authentication for non-administrator user accounts, the Authentication Administrator role is recommended instead. For more information, see: [Assign Microsoft Entra roles with administrative unit scope](../identity/role-based-access-control/admin-units-assign-roles.md).
+
+---
+
 ## February 2024
 
 ### General Availability - Identity Protection and Risk Remediation on the Azure Mobile App
