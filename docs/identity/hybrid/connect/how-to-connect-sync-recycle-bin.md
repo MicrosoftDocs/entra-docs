@@ -18,7 +18,7 @@ ms.author: billmath
 # Microsoft Entra Connect Sync: Enable Active Directory recycle bin
 We recommend that you enable the Active Directory Recycle Bin feature for your on-premises instances of Active Directory (AD) that are synchronized to Microsoft Entra ID. 
 
-If you accidentally deleted an on-premises AD user object and restore it using the feature, Microsoft Entra restores the corresponding Microsoft Entra user object. For information about restoring Active Directory objects, see [Scenario overview for restoring deleted Active Directory objects](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379542(v=ws.10)).
+If you accidentally deleted an on-premises AD user object and restore it using the feature, Microsoft Entra ID restores the corresponding Microsoft Entra user object. For information about restoring Active Directory objects, see [Scenario overview for restoring deleted Active Directory objects](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379542(v=ws.10)).
 
 To learn how to enable the Active Directory Recycle Bin feature, see [Active Directory Administrative Center enhancements](/windows-server/identity/ad-ds/get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-#ad_recycle_bin_mgmt).
 
