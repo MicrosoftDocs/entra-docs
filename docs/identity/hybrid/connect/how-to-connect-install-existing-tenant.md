@@ -37,7 +37,7 @@ If Microsoft Entra ID finds an object where the attribute values are the same as
 > [!IMPORTANT]
 > If you use password sync, which is always used by express settings, then the password in Microsoft Entra ID is overwritten with the password in on-premises AD. If your users are used to managing different passwords, then you need to inform them that they should use the on-premises password when you have installed Connect.
 
-The previous section and warning must be considered in your planning. If you made many changes in Microsoft Entra which were not reflected in on-premises AD DS, then to prevent data loss, you need to plan on how to populate AD DS with the updated values from Microsoft Entra ID, before you sync your objects with Microsoft Entra Connect.
+The previous section and warning must be considered in your planning. If you made many changes in Microsoft Entra ID which were not reflected in on-premises AD DS, then to prevent data loss, you need to plan on how to populate AD DS with the updated values from Microsoft Entra ID, before you sync your objects with Microsoft Entra Connect.
 
 If you matched your objects with a soft-match, then the **sourceAnchor** is added to the object in Microsoft Entra ID so a hard match can be used later.
 
@@ -48,7 +48,7 @@ If you matched your objects with a soft-match, then the **sourceAnchor** is adde
 By default, the SourceAnchor value of "abcdefghijklmnopqrstuv==" is calculated by Microsoft Entra Connect by using MsDs-ConsistencyGUID attribute (or ObjectGUID depending on the configuration) from on-premises Active Directory. This attribute value is the corresponding ImmutableId in Microsoft Entra ID.
 When Microsoft Entra Connect (sync engine) adds or updates objects, Microsoft Entra ID matches the incoming object by using the sourceAnchor value corresponding to the ImmutableId attribute of the existent object in Microsoft Entra ID. If there's a match, Microsoft Entra Connect take over that object and updates it with the properties of the incoming on-premises Active Directory object in what is known as *”hard-match.”*
 When Microsoft Entra ID can't find any object with an ImmutableId that matches the SouceAnchor value, it tries to use the incoming object's userPrincipalName or primary ProxyAddress to find a match in what it’s known as *”soft-match.” The soft match tries to match objects already present and managed in Microsoft Entra ID with the new incoming objects being added or updated that represent the same entity on-premises.
-If Microsoft Entra ID isn't able to find a *hard-match* or *soft-match* for the incoming object, it provisions a new object in Microsoft Entra directory.
+If Microsoft Entra ID isn't able to find a *hard-match* or *soft-match* for the incoming object, it provisions a new object in Microsoft Entra ID directory.
 We added a configuration option to disable the hard matching feature in Microsoft Entra ID. We advise customers to disable hard matching unless they need it to take over cloud only accounts.
 
 To disable hard matching, use the [Update-MgDirectoryOnPremiseSynchronization](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryonpremisesynchronization) Microsoft Graph PowerShell cmdlet:
