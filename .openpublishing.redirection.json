@@ -221,6 +221,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/custom-extension-get-started.md",
+      "redirect_url": "/entra/identity-platform/custom-extension-tokenissuancestart-configuration",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/web-app-tutorial-01-register-application.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-register-app",
       "redirect_document_id": false
