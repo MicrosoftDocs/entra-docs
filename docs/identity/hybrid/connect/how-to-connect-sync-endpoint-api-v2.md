@@ -30,7 +30,7 @@ Microsoft has deployed a new endpoint (API) for Microsoft Entra Connect that imp
 
 ## Prerequisites  
 In order to use the new V2 endpoint, you'll need to use Microsoft Entra Connect V2.0. When you deploy Microsoft Entra Connect V2.0, the V2 endpoint will be automatically enabled.
-There is a known issue where upgrading to the latest 1.6 build resets the group membership limit to 50k. When a server is upgraded to Microsoft Entra Connect 1.6, then the customer should reapply the rule changes that they applied when initially increasing the group membership limit to 250k before they enable sync for the server. 
+There is a known issue where upgrading to the latest 1.6 build resets the group membership limit to 50k. When a server is upgraded to Azure AD Connect 1.6, then the customer should reapply the rule changes that they applied when initially increasing the group membership limit to 250k before they enable sync for the server. 
 
 ## Frequently asked questions  
  
