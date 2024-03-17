@@ -36,7 +36,7 @@ We strongly recommend the second option as it is easier to implement and maintai
 
 ### Delete Microsoft Entra Connect trace log files
 
-Check the contents of **%ProgramData%\Azure AD Connect** folder and delete the trace log contents (**trace-\*.log** files) of this folder within 48 hours of installing or upgrading Microsoft Entra Connect or modifying Seamless SSO configuration, as this action may create data covered by GDPR.
+Check the contents of **%ProgramData%\AADConnect** folder and delete the trace log contents (**trace-\*.log** files) of this folder within 48 hours of installing or upgrading Microsoft Entra Connect or modifying Seamless SSO configuration, as this action may create data covered by GDPR.
 
 >[!IMPORTANT]
 >Don’t delete the **PersistedState.xml** file in this folder, as this file is used to maintain the state of the previous installation of Microsoft Entra Connect and is used when an upgrade installation is done. This file will never contain any data about a person and should never be deleted.
