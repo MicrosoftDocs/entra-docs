@@ -16,7 +16,7 @@ ms.author: billmath
 
 Microsoft Entra Connect deployments vary from a single forest Express mode installation to complex deployments that synchronize across multiple forests by using custom synchronization rules. Because of the large number of configuration options and mechanisms, it's essential to understand what settings are in effect and be able to quickly deploy a server with an identical configuration. This feature introduces the ability to catalog the configuration of a given synchronization server and import the settings into a new deployment. Different synchronization settings snapshots can be compared to easily visualize the differences between two servers, or the same server over time.
 
-Each time the configuration is changed from the Microsoft Entra Connect wizard, a new time-stamped JSON settings file is automatically exported to **%ProgramData%\Azure AD Connect**. The settings file name is of the form **Applied-SynchronizationPolicy-*.JSON**, where the last part of the file name is a time stamp.
+Each time the configuration is changed from the Microsoft Entra Connect wizard, a new time-stamped JSON settings file is automatically exported to **%ProgramData%\AADConnect**. The settings file name is of the form **Applied-SynchronizationPolicy-*.JSON**, where the last part of the file name is a time stamp.
 
 > [!IMPORTANT]
 > Only changes made by Microsoft Entra Connect are automatically exported. Any changes made by using PowerShell, the Synchronization Service Manager, or the Synchronization Rules Editor must be exported on demand as needed to maintain an up-to-date copy. Export on demand can also be used to place a copy of the settings in a secure location for disaster recovery purposes.
@@ -33,7 +33,7 @@ Each time the configuration is changed from the Microsoft Entra Connect wizard, 
 
 To view a summary of your configuration settings, open the Microsoft Entra Connect tool, and select the additional task named **View or Export Current Configuration**. A quick summary of your settings is shown along with the ability to export the full configuration of your server.
 
-By default, the settings are exported to **%ProgramData%\Azure AD Connect**. You also can choose to save the settings to a protected location to ensure availability if a disaster occurs. Settings are exported by using the JSON file format and should not be hand-created or edited to ensure logical consistency. Importing a hand-created or edited file isn't supported and might lead to unexpected results.
+By default, the settings are exported to **%ProgramData%\AADConnect**. You also can choose to save the settings to a protected location to ensure availability if a disaster occurs. Settings are exported by using the JSON file format and should not be hand-created or edited to ensure logical consistency. Importing a hand-created or edited file isn't supported and might lead to unexpected results.
 
 <a name='import-azure-ad-connect-settings'></a>
 
