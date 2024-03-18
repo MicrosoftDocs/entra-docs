@@ -8,7 +8,7 @@ ms.author: shermanouko
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: sample
-ms.date: 03/12/2024
+ms.date: 03/18/2024
 
 #Customer intent: As a dev, devops, I want to learn about how to configure a sample Python Django web app to sign in and sign out users with my Microsoft Entra ID for customers tenant
 ---
@@ -55,7 +55,7 @@ To get the web app sample code, you can do either of the following tasks:
 - [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
 
     ```console
-        git clone https://github.com/Azure-Samples/ms-identity-docs-code-python.git
+    git clone https://github.com/Azure-Samples/ms-identity-docs-code-python.git
     ```
 
 If you choose to download the *.zip* file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
@@ -117,7 +117,7 @@ Run the app to see the sign-in experience at play.
 1. In your terminal, run the following command:
 
     ```console
-     python manage.py runserver localhost:5000                                             
+    python manage.py runserver localhost:5000                                             
     ```
     
     You can use the port of your choice. This should be similar to the port of the redirect URI you registered earlier.
@@ -155,4 +155,3 @@ You may want to:
 - [Customize the default branding](how-to-customize-branding-customers.md)
 
 - [Configure sign-in with Google](how-to-google-federation-customers.md)
-
