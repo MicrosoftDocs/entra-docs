@@ -63,22 +63,6 @@ With Adaptive Protection integrated with Conditional Access, administrators can 
 
 ---
 
-### General Availability - Soft Delete capability for Managed Service Identity
-
-**Type:** New feature    
-**Service category:** Managed identities for Azure resources    
-**Product capability:** AuthZ/Access Delegation    
-
-Managed identities are a way of securely accessing cloud resources without having to store or manage any credentials. 
-
-Sometimes, a customer might accidentally or intentionally delete a managed identity. In the past, there was no way to restore a deleted managed identity, and the customer had to create a new one and reconfigure all the permissions and dependencies. This could be time-consuming, and error-prone, especially if the identity was used by multiple resources or applications. 
-
-To address this issue, Microsoft is releasing the capability to recover a deleted managed identity. This feature allows customers to restore a managed identity within a certain retention period. The recovery process preserves the original identity ID, name, and attributes, and restores the access to the resources and applications that the identity had before deletion. The customer won't need to update any configuration or code that references the identity, as it is the same as before. This reduces the impact and downtime caused by identity deletion, and improve the customer experience and satisfaction. 
-
-To recover a deleted managed identity, the customer needs to contact Microsoft support or open a support ticket specifying which managed identities need to be recovered. The support team validates the request, and performs the recovery operation. The customer is notified when the recovery is completed, and are able to verify that the identity is functional and has the correct permissions and dependencies. For more information, see: [Deletion and recovery of applications FAQ](../identity/enterprise-apps/delete-recover-faq.yml).
-
----
-
 ### General Availability - API driven inbound provisioning
 
 **Type:** New feature    
@@ -127,7 +111,7 @@ Customer Lockbox for Microsoft Azure is launching a new feature that enables cus
 **Service category:** Privileged Identity Management    
 **Product capability:** Privileged Identity Management    
 
-Provide just-in-time access to non-Microsoft applications such as AWS & GCP. This capability integrates PIM for groups, and application, provisioning to reduce the activation time from 40+ minutes to roughly 2 minutes when requesting just-in-time access to a role in a non-Microsoft app.
+Provide just-in-time access to non-Microsoft applications such as AWS & GCP. This capability integrates PIM for groups, and application provisioning to reduce the activation time from 40+ minutes to roughly 2 minutes when requesting just-in-time access to a role in a non-Microsoft app.
 
 For more information, see:
 
