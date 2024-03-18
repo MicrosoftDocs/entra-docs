@@ -1086,7 +1086,7 @@ Pass-through Authentication
 * Fixed an issue which causes Microsoft Entra Connect wizard to bypass validation checks on sign-in method selected when Desktop SSO feature is enabled.
 
 Password Reset
-* Fixed an issue which may cause the Azure Microsoft Entra Connect server to not attempt to re-connect if the connection was killed by a firewall or proxy.
+* Fixed an issue which may cause the Microsoft Entra Connect server to not attempt to re-connect if the connection was killed by a firewall or proxy.
 
 **New features/improvements:**
 
