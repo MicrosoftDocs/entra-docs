@@ -9,4 +9,4 @@ ms.manager: mwongerapk
 ---
 
 > [!NOTE]
-> This sample uses the [Python identity third-party library](https://identity-library.readthedocs.io/en/latest/). The4 library isn't officially maintained by Microsoft but is recommended for your use. This library makes it easier to add authentication to your web app as it abstracts a lot of the MSAL Python details.
+> This sample uses the [Python identity third-party library](https://identity-library.readthedocs.io/en/latest/). The library isn't officially maintained by Microsoft but is recommended for your use. This library makes it easier to add authentication to your web app as it abstracts a lot of the MSAL Python details.
