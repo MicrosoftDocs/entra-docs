@@ -36,7 +36,7 @@ In this article, you explore a Python Flask web app that is secured by Microsoft
 
 ## Grant API permissions
 
-Since this app signs-in users, add delegated permissions:
+Since this app signs in users, add delegated permissions:
 
 [!INCLUDE [grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)]
 
@@ -96,7 +96,7 @@ If you choose to download the *.zip* file, extract the sample app file to a fold
 
 1. Open your project files on Visual Studio Code or the editor you are using.
 
-1. Create a *.env* file in the root folder of the project using *.env.sample* file as a guide.
+1. Create an *.env* file in the root folder of the project using *.env.sample* file as a guide.
 
 1. In your *.env* file, provide the following environment variables:
 
