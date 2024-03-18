@@ -16,12 +16,6 @@ FIDO2 security keys enable phishing-resistant authentication. They can replace w
 You can become a Microsoft-compatible FIDO2 security key vendor through the following process.  Microsoft doesn't commit to do go-to-market activities with the partner and evaluates partner priority based on customer demand.
 
 
-
-1. First, your authenticator needs to have a FIDO2 certification. We aren't able to work with providers who don't have a FIDO2 certification. To learn more about the certification, visit the [FIDO Alliance Certification Overview website](https://fidoalliance.org/certification/).
-2. After you have a FIDO2 certification, [submit a request form](https://forms.office.com/r/NfmQpuS9hF) to become a Microsoft-compatible FIDO2 security key vendor. Our engineering team only confirms the features supported by your FIDO2 devices. We don't retest features already tested as part of the FIDO2 certification and don't evaluate the security of your solutions. The process usually takes a few weeks to complete.
-3. After the engineering team successfully confirmed the feature list, we'll confirm vendor's device is listed in the [FIDO Alliance Metadata Service](https://fidoalliance.org/metadata/).
-4. Microsoft adds your FIDO2 Security Key on Microsoft Entra backend and to our list of approved FIDO2 vendors.
-
 ## Prerequisites
 
 Microsoft relies on the FIDO metadata service to determine security key compatibility with Windows, Microsoft Edge browser, and online Microsoft accounts. Data in FIDO2 metadata service is self-reported by vendors.
@@ -33,13 +27,13 @@ You can become a Microsoft-compatible FIDO2 security key vendor by meeting the f
   - User verification. Entra ID requires user verification for all FIDO2 authentication attempts. 
   - Resident keys. 
   - HMAC secret extension. This is required for using a security key to unlock Windows in offline scenarios. 
-  - ClientPIN. 
-  - Is certified at 'any' level 
+  - ClientPIN.
+  - Is certified at 'any' level.
 
 
 ## Attestation requirements
 
-The following table compares requirements to allow Microsoft-compatible FIDO2 security key when attestation enforcement is on or off.
+The following table compares requirements to allow Microsoft-compatible FIDO2 security key when attestation enforcement is on or off. 
 
 | Attestation enforced | Attestation not enforced |
 |----------------------|--------------------------|
