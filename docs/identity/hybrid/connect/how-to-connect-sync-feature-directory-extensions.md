@@ -49,7 +49,7 @@ The list of attributes is read from the schema cache that's created during insta
 An object in Microsoft Entra ID can have up to 100 attributes for directory extensions. The maximum length is 250 characters. If an attribute value is longer, the sync engine truncates it.
 
 > [!NOTE]
-> It is not supported to sync constructed attributes, such as msDS-UserPasswordExpiryTimeComputed. If you upgrade from an old version of AADConnect you may still see these attributes show up in the installation wizard, you should not enable them though. Their value will not sync to Microsoft Entra ID if you do. 
+> It is not supported to sync constructed attributes, such as msDS-UserPasswordExpiryTimeComputed. If you upgrade from an old version of Microsoft Entra Connect you may still see these attributes show up in the installation wizard, you should not enable them though. Their value will not sync to Microsoft Entra ID if you do. 
 > You can read more about constructed attributes in [this article](/openspecs/windows_protocols/ms-adts/a3aff238-5f0e-4eec-8598-0a59c30ecd56).
 > You should also not attempt to sync [Non-replicated attributes](/windows/win32/ad/attributes), such as badPwdCount, Last-Logon, and Last-Logoff, as their values will not be synced to Microsoft Entra ID.
 
@@ -78,7 +78,7 @@ These attributes are now available through the Microsoft Graph API, by using [Mi
 > For more information, see [Microsoft Graph: Use query parameters](/graph/query-parameters#select-parameter).
 
 >[!NOTE]
-> It is not supported to sync attribute values from AADConnect to extension attributes that are not created by AADConnect. Doing so may produce performance issues and unexpected results. Only extension attributes that are created as shown in the above are supported for synchronization.
+> It is not supported to sync attribute values from Microsoft Entra Connect to extension attributes that are not created by Microsoft Entra Connect. Doing so may produce performance issues and unexpected results. Only extension attributes that are created as shown in the above are supported for synchronization.
 
 ## Use the attributes in dynamic groups
 
