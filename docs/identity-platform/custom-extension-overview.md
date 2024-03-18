@@ -1,5 +1,5 @@
 ---
-title: Custom authentication extension 
+title: Custom authentication extensions overview 
 description: Use Microsoft Entra custom authentication extensions to customize your user's sign-in experience by using REST APIs or outbound webhooks.
 author: cilwerner
 manager: CelesteDG
@@ -15,7 +15,7 @@ titleSuffix: Microsoft identity platform
 #Customer intent: As a developer integrating external systems with Microsoft Entra ID, I want to create custom authentication extensions using a REST API, so that I can customize the authentication experience and add business logic based on event types and HTTP response payloads.
 ---
 
-# Custom authentication extensions overview (preview)
+# Custom authentication extensions overview
 
 This article provides a high-level, technical overview of [custom authentication extensions](~/external-id/customers/concept-custom-extensions.md) for Microsoft Entra ID. Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems.
 
@@ -45,6 +45,8 @@ Your REST API must handle:
 - Auditing and logging.
 - Availability, performance and security controls.
 
+For developers running the REST API on Azure Functions, consider using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library, which helps with token validation implementation using Microsoft Azure's built-in authentication capabilities. It provides a data model for different event types, initiates incoming and outgoing request and response processing, so more focus can be put on the business logic.  
+
 ### Protect your REST API
 
 To ensure the communications between the custom authentication extension and your REST API are secured appropriately, multiple security controls must be applied.
@@ -71,6 +73,6 @@ Attribute collection start and submit events can be used with custom authenticat
 > [!NOTE]
 > Attribute collection start and submit events are currently available only for user flows in Microsoft Entra External ID for customers. For details, see [Add your own business logic](~/external-id/customers/concept-custom-extensions.md).
 
-## Next steps
+## See also
 
 - Learn how to [create custom authentication extensions for attribute collection start and submit events](custom-extension-attribute-collection.md) with a sample OpenID Connect application.
