@@ -13,13 +13,13 @@ ms.author: justinha
 ---
 # Troubleshoot secure LDAP connectivity issues to a Microsoft Entra Domain Services managed domain
 
-Applications and services that use lightweight directory access protocol (LDAP) to communicate with Microsoft Entra Domain Services (Microsoft Entra DS) can be [configured to use secure LDAP](tutorial-configure-ldaps.md). An appropriate certificate and required network ports must be open for secure LDAP to work correctly.
+Applications and services that use lightweight directory access protocol (LDAP) to communicate with Microsoft Entra Domain Services can be [configured to use secure LDAP](tutorial-configure-ldaps.md). An appropriate certificate and required network ports must be open for secure LDAP to work correctly.
 
-This article helps you troubleshoot issues with secure LDAP access in Microsoft Entra DS.
+This article helps you troubleshoot issues with secure LDAP access in Microsoft Entra Domain Services.
 
 ## Common connection issues
 
-If you have trouble connecting to a Microsoft Entra DS managed domain using secure LDAP, review the following troubleshooting steps. After each troubleshooting step, try to connect to the managed domain again:
+If you have trouble connecting to a Microsoft Entra Domain Services managed domain using secure LDAP, review the following troubleshooting steps. After each troubleshooting step, try to connect to the managed domain again:
 
 * The issuer chain of the secure LDAP certificate must be trusted on the client. You can add the Root certification authority (CA) to the trusted root certificate store on the client to establish the trust.
     * Make sure you [export and apply the certificate to client computers][client-cert].
