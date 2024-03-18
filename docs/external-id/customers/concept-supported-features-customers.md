@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 02/20/2024
+ms.date: 03/18/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -33,9 +33,9 @@ Although workforce tenants and customer tenants are built on the same underlying
 
 |Feature  |Workforce tenant  | Customer tenant |
 |---------|---------|---------|
-| **External identities scenario** | Allow business partners and other external users to collaborate with your workforce. Guests can securely access your business applications through invitations or self-service sign-up.  | Use External ID to secure your external-facing applications. Consumers and business customers can securely access your consumer apps through self-service sign-up. Guest invitations are also supported.  |
-| **Local accounts** | Local accounts are supported for *internal* members of your organization only.    | Local accounts are supported for external users (consumers, business customers). |
-| **Identity providers** | Self-service sign-up for guest accounts:<ul><li> Microsoft Entra accounts</li><li>Microsoft accounts</br></li><li>Email one-time passcode</li><li>Google federation</li><li>Facebook federation</li></ul></br>Guest invitations:<ul><li>Microsoft Entra accounts</li><li>Microsoft accounts</li><li> Email one-time passcode</li><li>Google federation</li><li>SAML/WS-Fed federation</li></ul> | Self-service sign-up for external users (consumers, business customers):<ul><li>Email and password</li><li>Email and one-time passcode</li><li>[Google federation](./how-to-google-federation-customers.md)</li><li>[Facebook federation](./how-to-facebook-federation-customers.md)</li></ul></br>Guest invitations:<ul><li>Same as workforce</li></ul> |
+| **External identities scenario** | Allow business partners and other external users to collaborate with your workforce. Guests can securely access your business applications through invitations or self-service sign-up.  | Use External ID to secure your external-facing applications. Consumers and business customers can securely access your consumer apps through self-service sign-up. Invitations are also supported.  |
+| **Local accounts** | Local accounts are supported for *internal* members of your organization only.    | Local accounts are supported for external users (consumers, business customers) who use self-service sign-up. |
+| **Identity providers** | Self-service sign-up for guest accounts:<ul><li> Microsoft Entra accounts</li><li>Microsoft accounts</br></li><li>Email one-time passcode</li><li>Google federation</li><li>Facebook federation</li></ul></br>Guest invitations:<ul><li>Microsoft Entra accounts</li><li>Microsoft accounts</li><li> Email one-time passcode</li><li>Google federation</li><li>SAML/WS-Fed federation</li></ul> | Self-service sign-up for external users (consumers, business customers):<ul><li>Email and password</li><li>Email and one-time passcode</li><li>[Google federation](./how-to-google-federation-customers.md)</li><li>[Facebook federation](./how-to-facebook-federation-customers.md)</li></ul></br>Invitations:<ul><li>Same as workforce</li></ul> |
 |   **Authentication methods**    | For member accounts:<ul><li>Username and password</li><li>Microsoft Authenticator</li><li>FIDO2</li><li>SMS</li><li>Temporary Access Pass</li><li>Third-party software OATH tokens</li><li>Voice call</li><li>Email one-time passcode</li><li>Certificate-based authentication</li></ul>    |  For customer accounts:<ul><li>[Email and password](concept-authentication-methods-customers.md#email-and-password-sign-in)</li><li>[Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)</li></ul>    |
 |   **Multifactor authentication**    | <ul><li>Microsoft Authenticator</li><li>Authenticator Lite</li><li>FIDO2</li><li>Certificate-based authentication</li><li>SMS</li><li>Temporary Access Pass (TAP)</li><li>Third-party software OATH tokens</li><li>Voice call</li></ul>[Learn more](../../identity/authentication/concept-authentication-methods.md) | <ul><li>[Email one-time passcode](./how-to-multifactor-authentication-customers.md)</li></ul>     |
 | **Groups** | [Groups](~/fundamentals/how-to-manage-groups.md) can be used to manage administrative and user accounts.| Groups can be used to manage administrative accounts. Support for Microsoft Entra groups and [application roles](how-to-use-app-roles-customers.md) is being phased into customer tenants. For the latest updates, see [Groups and application roles support](reference-group-app-roles-support.md). |
@@ -115,11 +115,11 @@ The following table compares the features available for Conditional Access in ea
 
 ## Account management
 
-The following table compares the features available for user management in each type of tenant.
+The following table compares the features available for user management in each type of tenant. As noted in the table, certain account types are created through invitation or self-service sign-up. A user admin in the tenant can also create accounts via the admin center.
 
 |Feature  |Workforce tenant  | Customer tenant |
 |---------|---------|---------|
-|**Type of accounts**| <ul><li>Internal user (employee, admin)</li><li>External guest (business guest invited via [B2B collaboration](../what-is-b2b.md)) | <ul><li>Internal user (admin)</li><li>External guest (admin invited via [B2B collaboration](../what-is-b2b.md))</li><li>[External customer](./how-to-manage-customer-accounts.md) (app user with limited privileges in the tenant)</li></ul>|
+|**Types of accounts** | <ul><li>Internal members, for example employees and admins (user type = Member).</li><li>External users who are [invited](../what-is-b2b.md) or use self-service sign-up (user type = Guest). | <ul><li>Internal members, for example admins (user type = Member).</li><li>External [consumers and business customers](./how-to-manage-customer-accounts.md) who use self-service sign-up (user type = Member).</li><li>External users who are [invited](../what-is-b2b.md) (user type = Guest).</li></ul>|
 | **Manage user profile info** | Programmatically and by [using the Microsoft Entra admin center](../../fundamentals/how-to-manage-user-profile-info.md). |Same as workforce.|
 | **Reset a user's password** | Administrators can [reset a user's password](../../fundamentals/users-reset-password-azure-portal.md) if the password is forgotten, if the user gets locked out of a device, or if the user never received a password. |Same as workforce.|
 |**Restore or remove a recently deleted user**|After you delete a user, the account remains in a suspended state for 30 days. During that 30-day window, the user account can be restored, along with all its properties.|Same as workforce.|
