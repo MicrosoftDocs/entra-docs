@@ -44,31 +44,31 @@ procedureSection:
       - |
         Browse to **Identity governance** > **Privileged Identity Management** > **My roles**.
 
-          ![My roles page showing roles you can activate](./media/pim-resource-roles-activate-your-roles/resources-my-roles.png)
+          [ ![Screenshot of my roles page showing roles you can activate.](./media/pim-resource-roles-activate-your-roles/resources-my-roles.png) ]()
       - |
         Select **Azure resource roles** to see a list of your eligible Azure resource roles.
 
-          ![My roles - Azure resource roles page](./media/pim-resource-roles-activate-your-roles/resources-my-roles-azure-resources.png)
+          ![Screenshot of my roles - Azure resource roles page.](./media/pim-resource-roles-activate-your-roles/resources-my-roles-azure-resources.png)
       - |
         In the **Azure resource roles** list, find the role you want to activate.
 
-          ![Azure resource roles - My eligible roles list](./media/pim-resource-roles-activate-your-roles/resources-my-roles-activate.png)
+          [ ![Screenshot of azure resource roles - My eligible roles list.](./media/pim-resource-roles-activate-your-roles/resources-my-roles-activate.png) ]()
       - |
         Select **Activate** to open the Activate page.
 
-          ![The opened Activate pane with scope, start time, duration, and reason](./media/pim-resource-roles-activate-your-roles/azure-role-eligible-activate.png)
+          ![Screenshot of the opened Activate pane with scope, start time, duration, and reason.](./media/pim-resource-roles-activate-your-roles/azure-role-eligible-activate.png)
       - |
         If your role requires multifactor authentication, select **Verify your identity before proceeding**. You only have to authenticate once per session.
       - |
         Select **Verify my identity** and follow the instructions to provide additional security verification.
 
-          ![Screen to provide security verification such as a PIN code](./media/pim-resource-roles-activate-your-roles/resources-mfa-enter-code.png)
+          ![Screenshot of screen to provide security verification such as a PIN code.](./media/pim-resource-roles-activate-your-roles/resources-mfa-enter-code.png)
       - |
         If you want to specify a reduced scope, select **Scope** to open the Resource filter pane.
 
           It's a best practice to only request access to the resources you need. On the Resource filter pane, you can specify the resource groups or resources that you need access to.
 
-          ![Activate - Resource filter pane to specify scope](./media/pim-resource-roles-activate-your-roles/resources-my-roles-resource-filter.png)
+          ![Screenshot of activate - Resource filter pane to specify scope.](./media/pim-resource-roles-activate-your-roles/resources-my-roles-resource-filter.png)
       - |
         If necessary, specify a custom activation start time. The member would be activated after the selected time.
       - |
@@ -189,7 +189,7 @@ procedureSection:
       - |
         Select **My requests** to see a list of your Microsoft Entra role and Azure resource role requests.
 
-         ![My requests - Azure resource page showing your pending requests](./media/pim-resource-roles-activate-your-roles/resources-my-requests.png)
+         [ ![Screenshot of my requests - Azure resource page showing your pending requests.](./media/pim-resource-roles-activate-your-roles/resources-my-requests.png) ]()
       - |
         Scroll to the right to view the **Request Status** column.
   - title: |
@@ -206,7 +206,7 @@ procedureSection:
 
             When you select Cancel, the request will be canceled. To activate the role again, you will have to submit a new request for activation.
 
-          ![My request list with Cancel action highlighted](./media/pim-resource-roles-activate-your-roles/resources-my-requests-cancel.png)
+          ![Screenshot of my request list with Cancel action highlighted.](./media/pim-resource-roles-activate-your-roles/resources-my-requests-cancel.png)
   - title: |
       Deactivate a role assignment
     summary: |
@@ -239,11 +239,11 @@ procedureSection:
       - |
         Open the Azure mobile app and sign in. Click on the ‘Privileged Identity Management’ card and select **My Azure Resource roles** to view your eligible and active role assignments.
 
-           :::image type="content" source="./media/pim-resource-roles-activate-your-roles/mobile-select-role.png" alt-text="Screenshot of the mobile app showing privileged identity managementand the user's roles" lightbox="./media/pim-resource-roles-activate-your-roles/mobile-select-role.png":::
+           :::image type="content" source="./media/pim-resource-roles-activate-your-roles/mobile-select-role.png" alt-text="Screenshot of the mobile app showing privileged identity managementand the user's roles." lightbox="./media/pim-resource-roles-activate-your-roles/mobile-select-role.png":::
       - |
         Select the role assignment and click on **Action > Activate** under the role assignment details. Complete the steps to active and fill in any required details before clicking **Activate** at the bottom.
 
-          :::image type="content" source="./media/pim-resource-roles-activate-your-roles/mobile-activate-role.png" alt-text="Screenshot of the mobile app showing the validation process has completed. The image shows an Activate button " lightbox="./media/pim-resource-roles-activate-your-roles/mobile-activate-role.png":::
+          :::image type="content" source="./media/pim-resource-roles-activate-your-roles/mobile-activate-role.png" alt-text="Screenshot of the mobile app showing the validation process has completed. The image shows an Activate button." lightbox="./media/pim-resource-roles-activate-your-roles/mobile-activate-role.png":::
       - |
         View the status of your activation requests and your role assignments under ‘My Azure Resource roles’.
 
