@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: quickstart
 
-ms.date: 03/22/2023
+ms.date: 03/18/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: mode-other, enterprise-apps
