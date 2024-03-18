@@ -5,7 +5,7 @@ description: Describes the Microsoft Entra B2B collaboration invitation redempti
 
  
 ms.service: entra-external-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 02/28/2024
 ms.author: cmulligan
 author: csmulligan

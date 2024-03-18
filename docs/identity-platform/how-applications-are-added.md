@@ -9,7 +9,7 @@ ms.date: 10/26/2022
 ms.reviewer: sureshja
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an IT admin, I want to understand how and why applications are added to Microsoft Entra ID and the differences between application objects and service principals, so that I can effectively manage and configure applications in the directory.
 ---
 

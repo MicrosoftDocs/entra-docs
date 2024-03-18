@@ -5,7 +5,7 @@ description: Learn how to enforce multifactor authentication policies for Micros
  
 ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 02/05/2024
 
 ms.author: mimart
