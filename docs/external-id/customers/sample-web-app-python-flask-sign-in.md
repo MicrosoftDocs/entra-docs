@@ -8,7 +8,7 @@ ms.author: shermanouko
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: sample
-ms.date: 03/12/2024
+ms.date: 03/18/2024
 
 #Customer intent: As a dev, devops, I want to learn about how to configure a sample Python Flask web app to sign in and sign out users with my Microsoft Entra ID for customers tenant
 ---
