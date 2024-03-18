@@ -804,6 +804,8 @@
         href: docusign-tutorial.md
       - name: DojoNavi
         href: dojonavi-tutorial.md
+      - name: DojoWM
+        href: dojowm-tutorial.md
       - name: Domo
         href: domo-tutorial.md
       - name: dominKnow|ONE
@@ -1167,8 +1169,12 @@
         href: gofluent-tutorial.md
       - name: GoLinks
         href: golinks-tutorial.md
+      - name: GoProfiles
+        href: goprofiles-tutorial.md
       - name: GovWin IQ
         href: govwin-iq-tutorial.md
+      - name: GoSearch
+        href: gosearch-tutorial.md
       - name: GoToMeeting
         href: citrix-gotomeeting-tutorial.md
       - name: gr8 People
@@ -1351,6 +1357,8 @@
         href: imageworks-tutorial.md
       - name: Imagineer WebVision
         href: imagineerwebvision-tutorial.md
+      - name: iManage Work (SAML)
+        href: imanage-work-saml-tutorial.md
       - name: IMPAC Risk Manager
         href: impacriskmanager-tutorial.md
       - name: Imperva Data Security
@@ -1927,6 +1935,8 @@
         href: onedesk-tutorial.md
       - name: Oneflow
         href: oneflow-tutorial.md
+      - name: OneStream
+        href: onestream-tutorial.md
       - name: Oneteam
         href: oneteam-tutorial.md
       - name: OneTrust Privacy Management Software
@@ -2095,6 +2105,8 @@
         href: planview-admin-tutorial.md
       - name: Planview LeanKit
         href: planview-leankit-tutorial.md
+      - name: Pleo
+        href: pleo-tutorial.md
       - name: Pluralsight
         href: pluralsight-tutorial.md
       - name: Pluto
@@ -2421,6 +2433,8 @@
         href: seculio-tutorial.md
       - name: SECURE DELIVER
         href: securedeliver-tutorial.md
+      - name: SquaREcruit
+        href: squarecruit-tutorial.md
       - name: SecureTransport
         href: securetransport-tutorial.md
       - name: SecureW2 JoinNow Connector
@@ -2719,6 +2733,8 @@
         href: taskize-connect-tutorial.md
       - name: Teachme Biz
         href: teachme-biz-tutorial.md  
+      - name: TeamAlert SSO
+        href: teamalert-sso-tutorial.md
       - name: Teamgo
         href: teamgo-tutorial.md
       - name: Teamphoria
