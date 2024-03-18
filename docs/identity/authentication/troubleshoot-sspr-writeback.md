@@ -53,17 +53,33 @@ For Azure for US Government, see the [list of Microsoft Azure IP Ranges and Serv
 
 These files are updated weekly.
 
-To determine if access to a URL and port are restricted in an environment such as public Azure cloud, run the following cmdlet:
+To determine if access to a URL and port are restricted in an environment such as public Azure cloud, follow the below steps:
 
+1. On the Entra connect server, open the event viewer logs (Windows logs, application) and locate one of these event IDs: 31034 or 31019
+2. From these Event IDs, identify the name of the service bus listener:
+
+![image](https://github.com/MicrosoftDocs/entra-docs/assets/128684367/c0d1dede-1f87-4763-a9f7-f4c96a1b13fd)
+
+3. Run the following cmdlet:
+
+   
 ```powershell
-Test-NetConnection -ComputerName ssprdedicatedsbprodscu.servicebus.windows.net -Port 443
+Test-NetConnection -ComputerName <namespace>.servicebus.windows.net -Port 443
 ```
 
 Or run the following:
 
 ```powershell
-Invoke-WebRequest -Uri https://ssprdedicatedsbprodscu.servicebus.windows.net -Verbose
+Invoke-WebRequest -Uri https://<namespace>.servicebus.windows.net -Verbose
 ```
+
+Replace the <namespace> with the same you extracted from the event IDs above.
+	Example: in the above case, the command would be:
+
+ ```powershell
+Test-NetConnection -ComputerName ssprdedicatedsbprodfra-1.servicebus.windows.net -Port 443
+ ```
+
 
 For more information, see the [connectivity prerequisites for Microsoft Entra Connect](~/identity/hybrid/connect/how-to-connect-install-prerequisites.md).
 
