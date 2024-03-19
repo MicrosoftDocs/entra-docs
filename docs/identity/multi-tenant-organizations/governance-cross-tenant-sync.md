@@ -1,8 +1,7 @@
 ---
 title: Governance and cross-tenant synchronization
 description: Learn to govern and manage identity and access lifecycles across multitenant organizations.
-ms.service: entra-id
-ms.subservice: multi-tenant-organizations
+ms.service: entra
 ms.topic: conceptual
 ms.date: 03/19/2024
 ms.author: gasinh
@@ -93,6 +92,6 @@ For organizations that synchronize B2B collaboration users, typically Microsoft 
 
 ## Next steps
 
-* [Multitenant organizations and Microsoft 365](/multi-tenant-organization-microsoft-365.md)
-* [Multitenant organization templates](/multi-tenant-organization-templates.md)
-* [Topologies for cross-tenant synchronization](/cross-tenant-synchronization-topology.md)
+* [Multitenant organizations and Microsoft 365](multi-tenant-organization-microsoft-365.md)
+* [Multitenant organization templates](multi-tenant-organization-templates.md)
+* [Topologies for cross-tenant synchronization](cross-tenant-synchronization-topology.md)
