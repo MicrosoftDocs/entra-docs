@@ -316,7 +316,7 @@ For Microsoft Graph, the parameters for the **Request user access package assign
 
 |Parameter |Definition  |
 |---------|---------|
-|category    |  joiner      |
+|category    |  joiner, mover      |
 |displayName     |  Request user access package assignment (Customizable by user)        |
 |description     |  Request user assignment to selected access package (Customizable by user)       |
 |taskDefinitionId     |   c1ec1e76-f374-4375-aaa6-0bb6bd4c60be      |
@@ -344,6 +344,42 @@ Example of usage within the workflow:
     ]
 }
 ```
+
+### Assign licenses to users
+
+Allows Licenses to be assigned to users.
+
+:::image type="content" source="media/lifecycle-workflow-task/assign-license-user-task.png" alt-text="Screenshot of the assign licenses to user task.":::
+
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  joiner, mover      |
+|displayName     |  Assign licenses to user (Customizable by user)        |
+|description     |  Assign selected licenses to the user (Customizable by user)       |
+|taskDefinitionId     |   683c87a4-2ad4-420b-97d4-220d90afcd24      |
+|arguments     |  Argument contains one parameter that has the name "*licenses*"  thats accepts a string value.  |
+
+Example of usage within the workflow:
+
+```json
+{
+    "category": "joiner,mover",
+    "continueOnError": false,
+    "description": "Assign selected licenses to the user",
+    "displayName": "Assign licenses to user",
+    "isEnabled": true,
+    "taskDefinitionId": "683c87a4-2ad4-420b-97d4-220d90afcd24",
+    "parameters": [
+                {
+                    "name": "licenses",
+                    "values": [],
+                    "valueType": "string"
+                }
+            ]
+}
+```
+
 
 ### Add user to groups
 
@@ -674,7 +710,7 @@ For Microsoft Graph, the parameters for the **Remove access package assignment f
 
 |Parameter |Definition  |
 |---------|---------|
-|category    |  leaver      |
+|category    |  leaver, mover      |
 |displayName     |  Remove access package assignment for user (Customizable by user)        |
 |description     |  Remove user assignment of selected access package (Customizable by user)        |
 |taskDefinitionId     |   4a0b64f2-c7ec-46ba-b117-18f262946c50      |
@@ -757,6 +793,43 @@ Example of usage within the workflow:
     "isEnabled": true,
     "taskDefinitionId": "498770d9-bab7-4e4c-b73d-5ded82a1d0b3",
     "arguments": []
+}
+```
+
+### Remove selected license assignments from user
+
+Remove selected license assignments from a user.
+
+You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+:::image type="content" source="media/lifecycle-workflow-task/remove-select-license-assignments-user-task.png" alt-text="Screenshot of the Remove selected license assignment from user task.":::
+
+For Microsoft Graph, the parameters for the **Remove selected license assignments from user** task are as follows:
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  leaver, mover      |
+|displayName     |  Remove licenses from user (Customizable by user)        |
+|description     |  Remove selected licenses assigned to the user (Customizable by user)        |
+|taskDefinitionId     |   5fc402a8-daaf-4b7b-9203-da868b05fc5f      |
+|arguments     |  Argument contains one parameter that has the name "*licenses*"  thats accepts a string value.  |
+
+Example of usage within the workflow:
+
+```json
+{
+    "category": "leaver,mover",
+    "continueOnError": false,
+    "description": "Remove selected licenses assigned to the user",
+    "displayName": "Remove licenses from user",
+    "isEnabled": true,
+    "taskDefinitionId": "5fc402a8-daaf-4b7b-9203-da868b05fc5f",
+    "parameters": [
+                {
+                    "name": "licenses",
+                    "values": [],
+                    "valueType": "string"
+                }
+            ]
 }
 ```
 
