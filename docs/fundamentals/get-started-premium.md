@@ -37,7 +37,7 @@ Enterprise Mobility + Security is a suite, comprised of Microsoft Entra ID P1 or
 
 For more information about EMS, see [Enterprise Mobility + Security web site](https://www.microsoft.com/cloud-platform/enterprise-mobility-security).
 
-- Join the [Microsoft 365 Developer]((https://developer.microsoft.com/microsoft-365/dev-program)) program and if qualified get a free renewable Microsoft 365 E5 instant sandbox.
+- Join the [Microsoft 365 Developer](https://developer.microsoft.com/microsoft-365/dev-program) program and if qualified get a free renewable Microsoft 365 E5 instant sandbox.
 
 - Purchase [Enterprise Mobility + Security E5 licenses](https://signup.microsoft.com/Signup?OfferId=e6de2192-536a-4dc3-afdc-9e2602b6c790&ali=1)
 
