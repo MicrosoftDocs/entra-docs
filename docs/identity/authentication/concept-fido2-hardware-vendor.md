@@ -42,7 +42,7 @@ During FIDO2 registration, Microsoft Entra ID requires security keys to provide 
 
 The following table lists FIDO2 security key models that have been approved for Microsoft Entra ID attestation.
 
-|Provider|AAGUID|Biometric|USB|NFC|BLE|
+|Model|AAGUID|Biometric|USB|NFC|BLE|
 |---|---|---|---|---|---|---|
 |ACS FIDO Authenticator|50a45b0c-80e7-f944-bf29-f552bfa2e048|![n]|![y]|![n]|![n]|
 |ACS FIDO Authenticator Card|973446ca-e21c-9a9b-99f5-9b985a67af0f|![n]|![n]|![y]|![n]|
@@ -136,9 +136,6 @@ The following table lists FIDO2 security key models that have been approved for 
 |VALMIDO PRO FIDO|5626bed4-e756-430b-a7ff-ca78c8b12738|![y]|![n]|![n]|![y]|
 |VeriMark Guard Fingerprint Key|d94a29d9-52dd-4247-9c2d-8b818b610389|![y]|![n]|![n]|![n]|
 |VinCSS FIDO2 Authenticator|5fdb81b8-53f0-4967-a881-f5ec26fe4d18|![n]|![n]|![n]|![n]|
-|Windows Hello Hardware Authenticator|08987058-cadc-4b81-b6e1-30de50dcbe96|![y]|![n]|![n]|![n]|
-|Windows Hello Software Authenticator|6028b017-b1d4-4c02-b4b3-afcdafc96bb2|![y]|![n]|![n]|![n]|
-|Windows Hello VBS Hardware Authenticator|9ddd1817-af5a-4672-a2b9-3e3dd95000a9|![y]|![n]|![n]|![n]|
 |WiSECURE AuthTron USB FIDO2 Authenticator|504d7149-4e4c-3841-4555-55445a677357|![y]|![y]|![n]|![n]|
 |YubiKey 5 FIPS Series|73bb0cd4-e502-49b8-9c6f-b59445bf720b|![n]|![y]|![n]|![n]|
 |YubiKey 5 FIPS Series with Lightning|85203421-48f9-4355-9bc8-8a53846e5083|![n]|![y]|![n]|![n]|
