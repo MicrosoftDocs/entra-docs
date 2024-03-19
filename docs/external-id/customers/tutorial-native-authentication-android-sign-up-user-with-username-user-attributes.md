@@ -1,5 +1,5 @@
 ---
-title: Sign up user with username and user attributes
+title: Sign up user with username and user attributes 
 description: Learn how to sign up user with username and collect user attributes from the user by using native authentication
 
 author: henrymbuguakiarie
