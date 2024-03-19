@@ -9,7 +9,7 @@ ms.date: 10/27/2023
 ms.reviewer: JasSuri
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 titleSuffix: Microsoft identity platform
 
 #Customer intent: As a developer integrating external systems with Microsoft Entra ID, I want to create custom authentication extensions using a REST API, so that I can customize the authentication experience and add business logic based on event types and HTTP response payloads.

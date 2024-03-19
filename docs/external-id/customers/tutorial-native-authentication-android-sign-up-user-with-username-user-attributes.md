@@ -27,12 +27,11 @@ In this tutorial, you learn how to:
 > - Handle errors.  
  
 ## Prerequisites  
- 
 - Create an Android project.
 - Complete the steps in [Sign in users in sample Android (Kotlin) mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md). When you create the user flow, make sure:
     - You select **Email one-time passcode** as your email account authentication option.
     - You choose **Country/Region** and **City** under **User attributes** section to specify the information you want to collect from the user during sign-up.
-- Complete the steps in [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md). 
+- Complete the steps in [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md).
  
 ## Sign up user using username and user attributes  
  

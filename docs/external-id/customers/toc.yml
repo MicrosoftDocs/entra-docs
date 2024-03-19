@@ -250,7 +250,7 @@ items:
                   href: tutorial-native-authentication-prepare-ios-app.md
                 - name: Sign up
                   href: tutorial-native-authentication-ios-sign-up.md
-                - name: sign in and sign out
+                - name: Sign in and sign out
                   href: tutorial-native-authentication-ios-sign-in-sign-out.md
                 - name: Additional scenarios
                   items:
