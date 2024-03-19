@@ -1,17 +1,17 @@
 ---
-title: Global Secure Access (preview) network traffic dashboard
-description: Learn how to use the Global Secure Access (preview) network traffic dashboard.
+title: Learn how to use the Global Secure Access (preview) dashboard
+description: Monitor the health and activity of your network with the Global Secure Access (preview) dashboard.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: conceptual
-ms.date: 01/25/2024
+ms.date: 03/19/2024
 ms.service: global-secure-access
 ---
 
-# Global Secure Access (preview) network traffic dashboard
+# Global Secure Access (preview) dashboard
 
-The Global Secure Access (preview) network traffic dashboard provides you with visualizations of the network traffic acquired by the Microsoft Entra Private and Microsoft Entra Internet Access services. The dashboard compiles the data from your network configurations, including devices, users, and tenants into several widgets that provide you with answers to the following questions:
+The Global Secure Access (preview) dashboard provides you with visualizations of the network traffic acquired by the Microsoft Entra Private and Microsoft Entra Internet Access services. The dashboard compiles the data from your network configurations, including devices, users, and tenants into several widgets that provide you with answers to the following questions:
 
 - How many active devices are deployed on my network?
 - Was there a recent change to the number of active devices?
@@ -78,7 +78,7 @@ The top-visited destinations defaults to all types of traffic and sorts by the n
 
 ## Web content filtering
 
-The **Web content filtering** widget displays the top categories of web content that were blocked by the service. These categories can be used to determine what sites or categories of sites you may want to block. 
+The **Web content filtering** widget displays the top categories of web content that were blocked by the service. These categories can be used to determine what sites or categories of sites you might want to block. 
 
 - **Transactions**: Shows the total number of transactions in the last 24 hours. 
 - **Users**: The number of distinct users (UPN) accessing the destination in the last 24 hours.
