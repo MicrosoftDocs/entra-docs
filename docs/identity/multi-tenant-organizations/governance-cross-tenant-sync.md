@@ -70,11 +70,11 @@ To drive automatic assignment policies in the target tenant, synchronize default
 
 ### Enable source-tenant employees to request access to targe-tenant shared resources
 
-With identity governance [access package](~/id-governance/entitlement-management-access-package-create.md) policies, multitenant organizations can allow B2B collaboration users, created by cross-tenant synchronization, to request access to shared resources in a target tenant. This is a helpful process if employees need just-in-time (JIT) access to a resource that another tenant owns. 
+With identity governance [access package](~/id-governance/entitlement-management-access-package-create.md) policies, multitenant organizations can allow B2B collaboration users, created by cross-tenant synchronization, to request access to shared resources in a target tenant. This process is useful if employees need just-in-time (JIT) access to a resource that another tenant owns. 
 
 ## Review synchronized-user access
 
-[Access reviews in Microsoft Entra ID](~/id-governance/access-reviews-overview.md) enable organizations to manage group memberships, access to enterprise applications, and role assignments. Regularly review user access to ensure the right people have continued access. 
+[Access reviews in Microsoft Entra ID](~/id-governance/access-reviews-overview.md) enable organizations to manage group memberships, access to enterprise applications, and role assignments. Regularly review user access to ensure the right people have access. 
 
 When resource access configuration doesn’t automatically assign access, such as with dynamic groups or access packages, configure access reviews to apply the results to resources upon completion. The following sections describe how multitenant organizations can configure access reviews for users across tenants in source and target tenants. 
 
@@ -86,7 +86,7 @@ Use access reviews of users in source tenants to avoid potential conflicts betwe
 
 ### Review targe-tenant user access
 
-Organizations can include B2B collaboration users in access reviews, including those provisioned by cross-tenant synchronization in target tenants. This option enables access recertification of resources in target tenants. Although organizations can target all users with access reviews, they can target guest users. 
+Organizations can include B2B collaboration users in access reviews, including users provisioned by cross-tenant synchronization in target tenants. This option enables access recertification of resources in target tenants. Although organizations can target all users with access reviews, they can target guest users. 
 
 For organizations that synchronize B2B collaboration users, typically Microsoft doesn’t recommend removing denied guest users automatically from access reviews. Cross-tenant synchronization reprovisions the users if they're in the synchronization scope. 
 
