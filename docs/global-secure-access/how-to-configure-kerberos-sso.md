@@ -34,7 +34,7 @@ To test single sign-on, create a new enterprise application that publishes a fil
 ## Microsoft Entra ID joined devices - Password-based SSO
 No more configuration is needed if users use passwords to sign in to Windows. 
 
-Microsoft Entra ID joined devices rely on AD domain and user information synchronized by Microsoft Entra ID Connect. The Windows domain controller locator finds the domain controllers because of the synchronization. The user’s User Principal Name (UPN) and password are used to request a Kerberos Ticket Granting Ticket (TGT). For more information about this flow, see [How SSO to on-premises resources works on Microsoft Entra joined devices](../identity/devices/device-sso-to-on-premises-resources.md).
+Microsoft Entra ID joined devices rely on the Active Directory domain and user information synchronized by Microsoft Entra ID Connect. The Windows domain controller locator finds the domain controllers because of the synchronization. The user’s User Principal Name (UPN) and password are used to request a Kerberos Ticket Granting Ticket (TGT). For more information about this flow, see [How SSO to on-premises resources works on Microsoft Entra joined devices](../identity/devices/device-sso-to-on-premises-resources.md).
 
 ## Microsoft Entra ID joined and Microsoft Entra ID hybrid joined devices – Windows Hello for Business single sign-on
 Extra configuration for Windows Hello for Business is required.
