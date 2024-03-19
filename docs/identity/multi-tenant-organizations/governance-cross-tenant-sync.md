@@ -1,12 +1,12 @@
 ---
 title: Governance and cross-tenant synchronization
 description: Learn to govern and manage identity and access lifecycles across multitenant organizations.
-ms.service: entra
+ms.service: entra-id
 ms.subservice: multi-tenant-organizations
 ms.topic: conceptual
 ms.date: 03/19/2024
 ms.author: gasinh
-author: gasinh
+author: gargi-sinha
 manager: martinco
 ms.custom: it-pro
 #customer intent: I'm an IT admin and I need to manage user identity lifecycles across multiple tenants. My goal is to provision, synchronize, and deprovision users with automation. 
@@ -38,7 +38,7 @@ This supported [topology for cross-tenant synchronization](~/identity/multi-tena
 
 [Cross-tenant synchronization in Microsoft Entra ID](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md) automates creating, updating, and deleting B2B collaboration users. 
 
-When organizations create, or provision, a B2B collaboration user in a tenant, user access depends partly on how the organization provisioned them: Guest or Member user type. When you select user type, consider the various [properties of a Microsoft Entra B2B collaboration user](~/external-id/user-properties.md). The Member user type is suitable if users are part of the larger multitenant organization and need member-level access to resources in the organizational tenants. Microsoft Teams requires the Member user type in [multitenant organizations](/microsoft-365/enterprise/plan-multi-tenant-org-overview?view=o365-worldwide). 
+When organizations create, or provision, a B2B collaboration user in a tenant, user access depends partly on how the organization provisioned them: Guest or Member user type. When you select user type, consider the various [properties of a Microsoft Entra B2B collaboration user](~/external-id/user-properties.md). The Member user type is suitable if users are part of the larger multitenant organization and need member-level access to resources in the organizational tenants. Microsoft Teams requires the Member user type in [multitenant organizations](/microsoft-365/enterprise/plan-multi-tenant-org-overview?view=o365-worldwide&preserve-view=true). 
 
 By default, cross-tenant synchronization includes commonly used attributes on the user object in Microsoft Entra ID. The following diagram illustrates this scenario. 
 
@@ -71,7 +71,7 @@ To drive automatic assignment policies in the target tenant, synchronize default
 
 ### Enable source-tenant employees to request access to targe-tenant shared resources
 
-With identity governance [access package](~/id-governance/entitlement-management-access-package-create) policies, multitenant organizations can allow B2B collaboration users, created by cross-tenant synchronization, to request access to shared resources in a target tenant. This is a helpful process if employees need just-in-time (JIT) access to a resource that another tenant owns. 
+With identity governance [access package](~/id-governance/entitlement-management-access-package-create.md) policies, multitenant organizations can allow B2B collaboration users, created by cross-tenant synchronization, to request access to shared resources in a target tenant. This is a helpful process if employees need just-in-time (JIT) access to a resource that another tenant owns. 
 
 ## Review synchronized-user access
 
