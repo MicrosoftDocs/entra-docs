@@ -34,7 +34,7 @@ procedureSection:
         Browse to **Protection** > **Conditional Access** > **Named locations**.
       - |  
         Choose the type of location to create.
-          1. **Countries location** or **IP ranges location**.
+          - **Countries location** or **IP ranges location**.
       - |    
         Give your location a name.
       - |  
