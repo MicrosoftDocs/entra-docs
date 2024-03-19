@@ -11,7 +11,7 @@ ms.custom: it-pro
 #customer intent: I'm an IT admin and I need to manage user identity lifecycles across multiple tenants. My goal is to provision, synchronize, and deprovision users with automation. 
 ---
 
-# Governance and cross-tenant synchronization
+# Governance and cross-tenant synchronization 
 
 Cross-tenant synchronization is a flexible and ready-to-use solution to provision accounts and facilitate seamless collaboration across tenants in an organization. Cross-tenant synchronization automatically manages user identity lifecycle across tenants. It provisions, synchronizes, and deprovisions users in the scope of synchronization from source tenants. 
 
