@@ -114,7 +114,7 @@ After you resolve any proxy address problems for the affected users, make sure t
 
 Updating license assignment on a user causes the proxy address calculation to be triggered, which can change user attributes. To understand the exact reason of the change and solve the problem, see this article on [how the proxyAddresses attribute is populated in Microsoft Entra ID](https://support.microsoft.com/help/3190357/how-the-proxyaddresses-attribute-is-populated-in-azure-ad).
 
-## LicenseAssignmentAttributeConcurrencyException in audit logs
+## License Assignment Attribute Concurrency Exception in audit logs
 
 **Problem:** User has LicenseAssignmentAttributeConcurrencyException for license assignment in audit logs.
 When group-based licensing tries to process concurrent license assignment of the same license to a user, this exception is recorded on the user. This usually happens when a user is a member of more than one group with same assigned license. Microsoft Entra ID retries processing the user license until the issue is resolved. There's no action required from the customer to fix this issue.
@@ -163,12 +163,6 @@ From now on, any users added to this group consume one license of the E3 product
 Depending on what steps you've taken to resolve the errors, it might be necessary to manually trigger the processing of a group to update the user state.
 
 For example, if you free up some licenses by removing direct license assignments from users, you need to trigger the processing of groups that previously failed to fully license all user members. To reprocess a group, go to the group pane, open **Licenses**, and then select the **Reprocess** button on the toolbar.
-
-## Force user license processing to resolve errors
-
-Depending on what steps you've taken to resolve the errors, it might be necessary to manually trigger the processing of a user to update the users state.
-
-For example, after you resolve duplicate proxy address problem for an affected user, you need to trigger the processing of the user. To reprocess a user, go to the user pane, open **Licenses**, and then select the **Reprocess** button on the toolbar.
 
 ## Next steps
 
