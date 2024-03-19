@@ -50,7 +50,7 @@ To build user attributes in the Android MSAL SDK:
         }  
     ```
 
-- To build [custom attributes](concept-user-attributes.md#custom-user-attributes), use `UserAttribute.Builder` class's `customAttribute()` method. The method accepts the custom attributes programmable name, and the value of the attribute:
+- To build [custom attributes](concept-user-attributes.md#custom-user-attributes), use `UserAttribute.Builder` class's `customAttribute()` method. The method accepts the custom attributes' programmable name, and the value of the attribute:
 
      ```kotlin
         val userAttributes = UserAttributes.Builder
@@ -71,7 +71,7 @@ To build user attributes in the Android MSAL SDK:
 To build user attributes in the iOS MSAL SDK:
 
  - Identify the user attributes that you want to build, then create a dictionary variable, where:
-    - the `key` is the programmable name of the user attribute a string. The programmable name can be for built-in or custom attribute. 
+    - the `key` is the programmable name of the user attribute, as a string. The programmable name can be for built-in or custom attribute. 
     - the `value` in the value of the user attribute that you collect from the user.
  - Identify the user attributes that you want to build, then use the following code snippet to build them:
  
