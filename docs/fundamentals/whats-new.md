@@ -81,7 +81,7 @@ With API-driven inbound provisioning, Microsoft Entra ID provisioning service no
 
 External user conversion enables customers to convert external users to internal members without needing to delete and create new user objects. Maintaining the same underlying object ensures the user’s account, and access to resources, isn’t disrupted and that their history of activities remains intact as their relationship with the host organization changes. 
 
-The external to internal user conversion feature includes the ability to convert on-premises synchronized users as well. For more information, see: [Convert external users to internal users (Preview)](../identity/users/convert-external-users-internal.md)
+The external to internal user conversion feature includes the ability to convert on-premises synchronized users as well. For more information, see: [Convert external users to internal users (Preview)](../identity/users/convert-external-users-internal.md).
 
 ---
 
@@ -128,7 +128,7 @@ For more information, see:
 
 Customer Lockbox for Microsoft Azure is launching a new built-in Azure RBAC role that enables customers to use a lesser privileged role for users responsible for approving/rejecting Customer Lockbox requests. This feature is targeted to the customer admin workflow where a lockbox approver acts on the request from Microsoft Support engineer to access Azure resources in a customer subscription.
 
-In this first phase, we are launching a new built-in Azure RBAC role that helps scope down the access possible for an individual with Azure Customer Lockbox approver rights on a subscription and its resources. A similar role for tenant-scoped requests are available in subsequent releases.
+In this first phase, we're launching a new built-in Azure RBAC role that helps scope down the access possible for an individual with Azure Customer Lockbox approver rights on a subscription and its resources. A similar role for tenant-scoped requests are available in subsequent releases.
 
 ---
 
@@ -157,6 +157,16 @@ For more information about how to better secure your organization by using autom
 **Product capability:** AuthZ/Access Delegation    
 
 Administrative units now support scoped delegation of the Privileged Authentication Administrator role. This allows delegation of the ability to manage authentication of other administrators if those administrators' user accounts are part of the administrative unit. Privileged Authentication Administrator is a highly privileged role, and should only be assigned when necessary; for delegating management of authentication for non-administrator user accounts, the Authentication Administrator role is recommended instead. For more information, see: [Assign Microsoft Entra roles with administrative unit scope](../identity/role-based-access-control/admin-units-assign-roles.md).
+
+---
+
+### General Availability - TLS 1.3 support for Microsoft Entra
+
+**Type:** New feature    
+**Service category:** Other    
+**Product capability:** Platform        
+
+We're excited to announce that Microsoft Entra, is rolling out support for Transport Layer Security (TLS) 1.3 for its endpoints to align with security best practices ([NIST - SP 800-52 Rev. 2](https://csrc.nist.gov/pubs/sp/800/52/r2/final)). With this change, the Microsoft Entra ID related endpoints will support both TLS 1.2 and TLS 1.3 protocols. For more information, see: [TLS 1.3 support for Microsoft Entra services](/troubleshoot/azure/active-directory/enable-support-tls-environment?tabs=azure-monitor#tls-13-support-for-microsoft-entra-services).
 
 ---
 
