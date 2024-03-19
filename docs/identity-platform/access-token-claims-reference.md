@@ -22,7 +22,7 @@ Access tokens are [JSON web tokens (JWT)](https://wikipedia.org/wiki/JSON_Web_To
 
 Each piece is separated by a period (`.`) and separately Base 64 encoded.
 
-Claims are present only if a value exists to fill it. An application shouldn't take a dependency on a claim being present. Examples include `pwd_exp` (not every tenant requires passwords to expire) and `family_name` ([client credential](v2-oauth2-client-creds-grant-flow.md) flows are on behalf of applications that don't have names). Claims used for access token validation are always present.
+Claims are present only if a value exists to fill it. An application shouldn't take a dependency on a claim being present. Examples include `pwd_exp` (not every tenant requires passwords to expire) and `family_name` ([client credential](v2-oauth2-client-creds-grant-flow.md) flows are on behalf of applications that don't have names). The access token will always contain sufficient claims for access evaluation.
 
 The Microsoft identity platform uses some claims to help secure tokens for reuse. The description of `Opaque` marks these claims as not being for public consumption. These claims may or may not appear in a token, and new ones may be added without notice.
 
@@ -91,7 +91,7 @@ Microsoft Entra ID limits the number of object IDs that it includes in the group
 
 Use the `BulkCreateGroups.ps1` provided in the [App Creation Scripts](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/5-WebApp-AuthZ/5-2-Groups/AppCreationScripts) folder to help test overage scenarios.
 > [!Note]
-> The URL returned will be an AAD Graph URL (i.e., graph.windows.net). Instead of relying on this URL, services should instead use the `idtyp` optional claim (which identifies whether the token is an app or app+user token) to construct a Microsoft Graph URL for querying the full list of groups. 
+> The URL returned will be an Azure AD Graph URL (i.e., graph.windows.net). Instead of relying on this URL, services should instead use the `idtyp` optional claim (which identifies whether the token is an app or app+user token) to construct a Microsoft Graph URL for querying the full list of groups. 
 
 ### v1.0 basic claims
 

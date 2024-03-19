@@ -11,7 +11,6 @@ ms.date: 06/09/2023
 ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal, it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
 ---
 
 # List users, groups, or devices in an administrative unit
@@ -23,7 +22,7 @@ In Microsoft Entra ID, you can list the users, groups, or devices in administrat
 - Microsoft Entra ID P1 or P2 license for each administrative unit administrator
 - Microsoft Entra ID Free licenses for administrative unit members
 - Microsoft Graph PowerShell SDK installed when using PowerShell
-- Admin consent when using Graph explorer for Microsoft Graph API
+- Admin consent when using Graph Explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
@@ -47,7 +46,7 @@ You can list the users, groups, or devices in administrative units using the Mic
 
 1. Select the user, group, or device you want to list their administrative units.
 
-1. Select **Administrative units** to list all the administrative units where the user, group, or device is a member. 
+1. Select **Administrative units** to list all the administrative units where the user, group, or device is a member.
 
     ![Screenshot of the Administrative units page, displaying a list administrative units that a group is assigned to.](./media/admin-units-members-list/list-group-au.png)
 

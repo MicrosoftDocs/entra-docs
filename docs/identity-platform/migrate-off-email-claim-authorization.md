@@ -8,7 +8,7 @@ ms.date: 05/11/2023
 ms.reviewer: medbhargava
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer,I want to migrate my application from using email claims to a more secure pattern using globally unique identifiers, so that I can prevent unauthorized access and account takeover by another user.
 ---
 

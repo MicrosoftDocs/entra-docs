@@ -218,6 +218,6 @@ The default specific parameters for the **Employee job profile change** template
 
 ## Next steps
 
-- [workflowTemplate resource type](/graph/api/resources/identitygovernance-workflowtemplate?view=graph-rest-beta&preserve-view=true)
+- [`workflowTemplate` resource type](/graph/api/resources/identitygovernance-workflowtemplate?view=graph-rest-beta&preserve-view=true)
 - [Lifecycle Workflow tasks and definitions](lifecycle-workflow-tasks.md)
 - [Create a Lifecycle workflow](create-lifecycle-workflow.md)

@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: sample
-ms.date: 08/17/2023
+ms.date: 03/07/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -44,6 +44,8 @@ These samples and how-to guides demonstrate how to write a web application that 
 > | ------- | -------- | ------------- | 
 > | JavaScript, Node.js (Express) | &#8226; [Sign in users](./sample-web-app-node-sign-in.md)<br/> &#8226; [Sign in users and call an API](./sample-web-app-node-sign-in-call-api.md)  |  &#8226; [Sign in users](tutorial-web-app-node-sign-in-prepare-tenant.md)<br/> &#8226; [Sign in users and call an API](how-to-web-app-node-sign-in-call-api-overview.md)  |
 > | ASP.NET Core | &#8226; [Sign in users](./sample-web-app-dotnet-sign-in.md)   | &#8226; [Sign in users](tutorial-web-app-dotnet-sign-in-prepare-tenant.md)   |
+> | Python Django | &#8226; [Sign in users](./sample-web-app-python-django-sign-in.md)   | --- |
+> | Python Flask | &#8226; [Sign in users](./sample-web-app-python-flask-sign-in.md)   | --- |
 
 ### Web API
 
@@ -75,14 +77,24 @@ These samples and how-to guides demonstrate how to write a desktop application t
 > | JavaScript, Electron | &#8226; [Sign in users](how-to-desktop-app-electron-sample-sign-in.md) | ---   |
 > | ASP.NET (MAUI) | &#8226; [Sign in users](how-to-desktop-app-maui-sample-sign-in.md) |&#8226; [Sign in users](tutorial-desktop-app-maui-sign-in-prepare-tenant.md)|
 
-### Mobile
+### Mobile: Browser delegated
 
-These samples and how-to guides demonstrate how to write a public client mobile application that integrates with Microsoft Entra ID for customers.
+These samples and how-to guides demonstrate how to write a public client mobile application with browser delegated authentication that integrates with Microsoft Entra ID for customers.
 
 > [!div class="mx-tdCol2BreakAll"]
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
 > | ASP.NET Core MAUI | &#8226; [Sign in users](how-to-mobile-app-maui-sample-sign-in.md) | &#8226; [Sign in users](tutorial-mobile-app-maui-sign-in-prepare-tenant.md)|
+
+### Mobile: Native authentication
+
+These samples and how-to guides demonstrate how to write a public client mobile application with native authentication that integrates with Microsoft Entra ID for customers.
+
+> [!div class="mx-tdCol2BreakAll"]
+> | Language/<br/>Platform | Code sample guide | Build and integrate guide |
+> | ----------- | ----------- |----------- |
+> |Android (Kotlin) | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
+> |iOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
 
 ### Daemon
 
@@ -105,6 +117,12 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > | Browserless | &#8226; [Sign in users](./sample-browserless-app-dotnet-sign-in.md)  | &#8226; [Sign in users](./tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md)   |
 > | Daemon |  &#8226; [Call an API](sample-daemon-dotnet-call-api.md)  | &#8226; [Call an API](tutorial-daemon-dotnet-call-api-prepare-tenant.md)   |
 
+### Android (Kotlin)
+
+> [!div class="mx-tdCol2BreakAll"]
+> | App type | Code sample guide | Build and integrate guide |
+> | ----------- | ----------- |----------- |
+> |Mobile native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
 
 ### ASP.NET Core
 
@@ -122,6 +140,26 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > | Desktop | &#8226; [Sign in users](how-to-desktop-app-maui-sample-sign-in.md) | &#8226; [Sign in users](tutorial-desktop-app-maui-sign-in-prepare-tenant.md)   |
 > | Mobile |  &#8226; [Sign in users](how-to-mobile-app-maui-sample-sign-in.md) | &#8226; [Sign in users](tutorial-mobile-app-maui-sign-in-prepare-tenant.md)   |
 
+### Python, Django
+
+> [!div class="mx-tdCol2BreakAll"]
+> | App type | Code sample guide | Build and integrate guide  |
+> | ------- | -------- | ------------- |
+> | Web app | &#8226; [Sign in users](./sample-web-app-python-django-sign-in.md) | ---   |
+
+### Python, Flask
+
+> [!div class="mx-tdCol2BreakAll"]
+> | App type | Code sample guide | Build and integrate guide  |
+> | ------- | -------- | ------------- |
+> | Web app | &#8226; [Sign in users](./sample-web-app-python-flask-sign-in.md) | ---   |
+
+### iOS (Swift)
+
+> [!div class="mx-tdCol2BreakAll"]
+> | App type | Code sample guide | Build and integrate guide |
+> | ----------- | ----------- |----------- |
+> |Mobile native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
 
 ### JavaScript, Vanilla
 
