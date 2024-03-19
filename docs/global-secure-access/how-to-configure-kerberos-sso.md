@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 03/18/2024
+ms.date: 03/19/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -15,7 +15,7 @@ ms.reviewer: ashishj
 Provide single sign-on for on-premises resources published through Microsoft Entra Private Access. Microsoft Entra Private Access uses Kerberos to support these resources. Optionally, use Windows Hello for Business cloud Kerberos trust to allow single sign-on for users.
 
 ## Prerequisites
-Before you get started with single sign-on, make sure your environment is ready with the following settings and configurations.
+Before you get started with single sign-on, make sure your environment is ready.
 
 - An Active Directory forest. The guide uses a forest domain name that can be publicly resolved. However, a publicly resolved domain isn't a requirement.
 - Your Microsoft Entra ID tenant is set up with the private Domain Name System (DNS) feature of Microsoft Entra Private Access.
@@ -23,21 +23,21 @@ Before you get started with single sign-on, make sure your environment is ready 
 - The latest version of the Microsoft Entra private access connector is installed on a Windows server that has access to your domain controllers.
 - The latest version of the Global Secure Access client. For more information on the client, see [Global Secure Access clients](concept-clients.md).
 
-### Publish resource that is used for single sign-on
-To test single sign-on, create a new enterprise application that publishes a file share. Using an enterprise application to publish your file share allows you to assign a Conditional Access policy to this resource and enforce extra security controls, such as multifactor authentication.
+### Publish resources to use with single sign-on
+To test single sign-on, create a new enterprise application that publishes a file share. Using an enterprise application to publish your file share lets you assign a Conditional Access policy to the resource and enforce extra security controls, such as multifactor authentication.
 
 1. In the Microsoft Entra admin center, select **Global Secure Access (Preview)** > **Applications** > **Enterprise Applications**.
 1. Select **New Application**. 
-1. Add a new app segment with the IP of your file server using port `445/TCP` and then select **Save**. The port is the port used by Server Message Block (SMB) protocol.
+1. Add a new app segment with the IP of your file server using port `445/TCP` and then select **Save**. The Server Message Block (SMB) protocol uses the port.
 1. Open the enterprise application you created and select **Users and Groups** to assign access to the resource.
 
 ## Microsoft Entra ID joined devices - Password-based SSO
-No more configuration is needed if users use passwords to sign in to Windows. 
+Extra configuration beyond this guide is not needed if users use passwords to sign in to Windows. 
 
 Microsoft Entra ID joined devices rely on the Active Directory domain and user information synchronized by Microsoft Entra ID Connect. The Windows domain controller locator finds the domain controllers because of the synchronization. The user’s User Principal Name (UPN) and password are used to request a Kerberos Ticket Granting Ticket (TGT). For more information about this flow, see [How SSO to on-premises resources works on Microsoft Entra joined devices](../identity/devices/device-sso-to-on-premises-resources.md).
 
 ## Microsoft Entra ID joined and Microsoft Entra ID hybrid joined devices – Windows Hello for Business single sign-on
-Extra configuration for Windows Hello for Business is required.
+Extra configuration beyond this guide is required for Windows Hello for Business.
 
 Deployment of Hybrid Cloud Kerberos Trust with Microsoft Entra ID is recommended. Devices using cloud Kerberos trust get a TGT ticket that is used for single sign-on. To learn more about cloud Kerberos trust, see [Enable passwordless security key sign-in to on-premises resources by using Microsoft Entra ID](../identity/authentication/howto-authentication-passwordless-security-key-on-premises.md#use-sso-to-sign-in-to-on-premises-resources-by-using-fido2-keys). 
 
@@ -70,7 +70,7 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 Once the enterprise application is created, browse back to the app and select **Users and Groups**. Add all users synchronized from Active Directory.
 
 ## Publish DNS suffixes
-Configure Private DNS so the Global Secure Access clients can resolve private DNS names. Private DNS names are required for single sign-on. The clients use them to access published on premises resources.
+Configure private DNS so the Global Secure Access clients can resolve private DNS names. Private DNS names are required for single sign-on. The clients use them to access published on premises resources.
 
 1. Browse to **Global Secure Access** > **Applications** > **Quick Access**.
 1. Select **Enable Name Private DNS** and select **Add DNS suffix**. At a minimum, add the top level suffixes of your Active Directory forests hosting users synchronized to Microsoft Entra ID.
