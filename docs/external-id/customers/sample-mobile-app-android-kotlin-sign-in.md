@@ -56,6 +56,10 @@ In this article, you learn how to:
  
 [!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-native-authentication-api-permission.md)]
 
+## Grant web API permissions to the Android sample app
+
+Once you've registered both your client app and web API and you've exposed the API by creating scopes, you can configure the client's permissions to the API by following these steps:
+
 [!INCLUDE [grant-api-permission-call-api-common](../customers/includes/register-app/grant-api-permission-call-api-common.md)]
 
 ## Create a user flow
@@ -89,6 +93,14 @@ In this article, you learn how to:
 1. Find the placeholder:
 
     - `ENTER_YOUR_SIGNATURE_HASH_HERE` and replace it with the **Signature Hash** that you generated earlier when you added the platform redirect URL.
+
+1. Open */app/src/main/java/com/azuresamples/msaldelegatedandroidkotlinsampleapp/MainActivity.kt* file.
+1. Find property named `WEB_API_BASE_URL` and set the URL to your web API.
+1. Find property named `scopes` and set the scopes recorded in [Grant web API permissions to the Android sample app](#grant-web-api-permissions-to-the-android-sample-app).
+
+    ```kotlin
+    private const val scopes = "" // Developers should set the respective scopes of their web API here. For example, private const val scopes = listOf<String>("api://{clientId}/{ToDoList.Read}", "api://{clientId}/{ToDoList.ReadWrite}")
+    ```
    
 You've now configured the app and it's ready to run. 
 
