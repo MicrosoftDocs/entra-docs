@@ -48,7 +48,8 @@ In this tutorial, you learn how to:
             .build() 
             //... 
     ``` 
- <add a quick concept article to show how to construct >
+     
+    Learn more about [MSAL Android SDK attribute builder](concept-native-authentication-user-attribute-builder.md).
 
 - Use `signUp(username, attributes)` method to start sign-up with username and attributes flow: 
  
