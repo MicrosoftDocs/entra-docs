@@ -11,9 +11,9 @@ ms.topic: tutorial
 #Customer intent: As an application developer, I want to create a Python web app project, then configure it in such a way that I can add authentication with Microsoft Entra ID.
 ---
 
-# Prepare a Python web app for Authentication
+# Prepare a Python web app for authentication
 
-This tutorial is part 2 of a series that demonstrates building a Python Flask web app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](tutorial-web-app-python-register-app.md), you registered and configured the application in your Microsoft Entra ID tenant. The client application you build uses the [OAuth 2.0 Authorization Code Flow](~/identity-platform/v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) for secure user authentication.
+This tutorial is part 2 of a series that demonstrates building a Python Flask web app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](tutorial-web-app-python-register-app.md), you registered and configured the application in your Microsoft Entra ID tenant.
 
 In this tutorial: 
 
@@ -21,7 +21,9 @@ In this tutorial:
 >
 > - Create a new Python Flask web app project
 > - Install app dependencies
-> - Create the MSAL configuration object
+> - Add the application's UI components
+> - Create the configuration file
+> - Create a .env file to store configuration settings.
 
 ## Prerequisites
 
@@ -218,7 +220,7 @@ necessary environment variables</a> for your deployment?
 </html>
 ```
 
-## Create the configuration object
+## Create the configuration file
 
 In your code editor, open *app_config.py*, which holds the configuration parameters, and add the following code:
 

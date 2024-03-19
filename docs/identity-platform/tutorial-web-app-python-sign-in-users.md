@@ -130,4 +130,4 @@ def index():
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Call a protected API and display the results in a Python Flask web app](tutorial-web-app-python-prepare-app.md)
+> [Tutorial: Call a protected API and display the results in a Python Flask web app](tutorial-web-app-python-call-api.md)

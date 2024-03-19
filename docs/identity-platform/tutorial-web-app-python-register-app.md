@@ -13,14 +13,14 @@ ms.topic: tutorial
 
 # Tutorial: Register a Python web app with the Microsoft identity platform
 
-This tutorial series demonstrates how to build a Python web app and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for Python](/entra/msal/python/) library to authenticate your app with your Microsoft Entra ID tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
+This tutorial series demonstrates how to build a Python web app and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for Python](/entra/msal/python/) library to authenticate your app with your Microsoft Entra ID tenant. Finally, you'll run the application and test the sign-in, call a protected API, and sign-out experiences.
 
 In this tutorial, you'll;
 
 > [!div class="checklist"]
 > * Register a web application in the Microsoft Entra admin center, and record its identifiers
-> * Create a client secret for the web application
 > * Define the platform and URLs
+> * Create a client secret for the web app
 > * Grant permissions to the web app to access the Microsoft Graph API
 
 ## Prerequisites

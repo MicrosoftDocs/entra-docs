@@ -24,6 +24,7 @@ In this tutorial:
 
 ## Call the API and display the results
 
+To call a protected API, add the following code to *app.py*
 
 ```python
 @app.route("/call_downstream_api")
@@ -38,7 +39,7 @@ def call_downstream_api():
         timeout=30,
     ).json()
     return render_template('display.html', result=api_result)
-```
+``` 
 
 ## Test the application
 
