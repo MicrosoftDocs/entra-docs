@@ -84,7 +84,7 @@ Multitenant organizations can include internal users in access reviews. This act
 
 Use access reviews of users in source tenants to avoid potential conflicts between cross-tenant synchronization and access reviews that remove denied users upon completion. 
 
-### Review targe-tenant user access
+### Review target-tenant user access
 
 Organizations can include B2B collaboration users in access reviews, including users provisioned by cross-tenant synchronization in target tenants. This option enables access recertification of resources in target tenants. Although organizations can target all users with access reviews, they can target guest users. 
 
