@@ -71,7 +71,7 @@ Resetting requires that you opt out and opt back into the Microsoft Entra Verifi
 
 ### Does Microsoft Entra Verified ID support ION as its DID method?
 
-Verified ID supported DID:ION in preview up until December 2023 after which it was discontinued.
+Verified ID supported the DID:ION method in preview until December 2023, after which it was discontinued.
 
 ### How do I move to did:web from did:ion?
 
