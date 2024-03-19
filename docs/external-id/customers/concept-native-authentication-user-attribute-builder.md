@@ -26,7 +26,7 @@ To build user attributes in the Android MSAL SDK:
 - Use the utility class `UserAttribute.Builder` that the SDK provides. The `UserAttributes.Builder` class contains methods whose parameter is the value that you collect from the user.
 - Identify the user attributes that you want to build, then use the following code snippet to build them:
 
-    ```Kotlin
+    ```kotlin
         //built the user attributes, both built-in and custom attributes
         val userAttributes = UserAttributes.Builder
             .country(country)
@@ -76,7 +76,15 @@ To build user attributes in the iOS MSAL SDK:
      ```kotlin
         let attributes = [
             "country": "United States",
-            "city": "Redmond"
+            "city": "Redmond",
+            "displayName": displayName,
+            "givenName": givenName,
+            "jobTitle": jobTitle,
+            "postalCode": postalCode,
+            "state": state,
+            "streetAddress": streetAddress,
+            "surname": surname,
+            "loyaltyNumber", loyaltyNumber
         ]
         
         authAuthClientInstance.signUp(username: email, attributes: attributes, delegate: self)
@@ -85,7 +93,7 @@ To build user attributes in the iOS MSAL SDK:
 
 ---
 
-To learn more about the programmable names of user profile attributes, see the [User profile attributes](concept-user-attributes.md) article. When you use custom attributes names in the mobile SDKs, the names are without the `extension_{appId-without-hyphens}_` prefix. 
+To learn more about the programmable names of user profile attributes, see the [User profile attributes](concept-user-attributes.md) article. When you use custom attributes names in the MSAL mobile SDKs, the names are without the `extension_{appId-without-hyphens}_` prefix. 
 
 
 ## Related content
