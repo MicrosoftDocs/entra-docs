@@ -18,6 +18,7 @@
     href: multi-tenant-organization-templates.md
   - name: Topologies for cross-tenant synchronization
     href: cross-tenant-synchronization-topology.md
+  - name: Governance and cross-tenant synchronization
 - name: How-to guides
   expanded: true
   items:
