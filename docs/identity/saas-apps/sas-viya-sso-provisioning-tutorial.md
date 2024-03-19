@@ -5,7 +5,7 @@ description: Learn how to automatically provision and deprovision user accounts 
 author: twimmers
 writer: twimmers
 manager: jeedes
-ms.assetid: 80293942-831d-454e-8154-85bf75ef3506
+ms.assetid: 86d5c926-bb8e-483a-b154-42490f1b9db9
 ms.service: entra-id
 ms.subservice: saas-apps
 
@@ -112,7 +112,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |phoneNumbers[type eq "fax"].value|String||
    |externalId|String|&check;|&check;
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra ID Groups to SAS Viya SSO**.
+1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to SAS Viya SSO**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to SAS Viya SSO in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in SAS Viya SSO for update operations. Select the **Save** button to commit any changes.
 

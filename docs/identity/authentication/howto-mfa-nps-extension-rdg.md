@@ -183,8 +183,6 @@ To use the script, provide the extension with your Microsoft Entra Admin credent
   
 1. After the script verifies the installation of the PowerShell module, it displays the PowerShell module dialog box. In the dialog box, enter your Microsoft Entra admin credentials and password, and click **Sign In**.
 
-   ![Authenticating to Microsoft Entra ID in PowerShell](./media/howto-mfa-nps-extension-rdg/image5.png)
-
 1. When prompted, paste the *Tenant ID* you copied to the clipboard earlier, and press **ENTER**.
 
    ![Inputting the Tenant ID in PowerShell](./media/howto-mfa-nps-extension-rdg/image6.png)

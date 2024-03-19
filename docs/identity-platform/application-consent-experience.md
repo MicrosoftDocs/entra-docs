@@ -9,7 +9,7 @@ ms.date: 12/15/2023
 ms.reviewer: jesakowi, jawoods
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 
 #Customer intent: As an application developer, I want to understand the consent experience in Microsoft Entra ID, so that I can intelligently manage applications for my organization and develop applications with a more seamless consent experience.
 ---

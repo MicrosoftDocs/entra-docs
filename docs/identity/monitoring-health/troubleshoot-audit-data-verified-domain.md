@@ -1,6 +1,6 @@
 ---
-title: Bulk changes to verified domains of users in the audit logs
-description: Troubleshoot bulk changes to UserPrincipalName in the audit logs when a verified domain changes in a Microsoft Entra ID tenant.
+title: Bulk changes to usernames during verified domain changes
+description: Learn how Microsoft Entra audit logs display UserManagement updates from Core Directory during verified domain changes.
 
 author: shlipsey3
 manager: amycolannino
@@ -12,9 +12,9 @@ ms.author: sarahlipsey
 
 ---
 
-# Troubleshoot bulk changes of verified domains for UserPrincipalName
+# Understanding bulk user updates during verified domain changes
 
-This article describes a common scenario where the audit logs display many `UserPrincipalName` updates triggered by a verified domain change. This article explains the causes and considerations for these changes and provides a deep dive into the backend operation that triggers mass object changes in Microsoft Entra ID.
+This article describes a common scenario where the audit logs display many `UserPrincipalName` updates triggered by a verified domain change. This article explains the causes and considerations for UserManagement updates in the audit logs that occur during verified domain changes. The article provides a deep dive into the backend operation that triggers mass object changes in Microsoft Entra ID.
 
 ## Symptoms
 
