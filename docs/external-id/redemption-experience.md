@@ -5,8 +5,8 @@ description: Describes the Microsoft Entra B2B collaboration invitation redempti
 
  
 ms.service: entra-external-id
-ms.topic: conceptual
-ms.date: 05/05/2023
+ms.topic: concept-article
+ms.date: 02/28/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
@@ -29,7 +29,7 @@ When you add a guest user to your directory, the guest user account has a consen
 
 ## Redemption process and sign-in through a common endpoint
 
-Guest users can now sign in to your multi-tenant or Microsoft first-party apps through a common endpoint (URL), for example `https://myapps.microsoft.com`. Previously, a common URL would redirect a guest user to their home tenant instead of your resource tenant for authentication, so a tenant-specific link was required (for example `https://myapps.microsoft.com/?tenantid=<tenant id>`). Now the guest user can go to the application's common URL, choose **Sign-in options**, and then select **Sign in to an organization**. The user then types the domain name of your organization.
+Guest users can now sign in to your multitenant or Microsoft first-party apps through a common endpoint (URL), for example `https://myapps.microsoft.com`. Previously, a common URL would redirect a guest user to their home tenant instead of your resource tenant for authentication, so a tenant-specific link was required (for example `https://myapps.microsoft.com/?tenantid=<tenant id>`). Now the guest user can go to the application's common URL, choose **Sign-in options**, and then select **Sign in to an organization**. The user then types the domain name of your organization.
 
 ![Screenshots showing common endpoints used for signing in.](media/redemption-experience/common-endpoint-flow-small.png)
 
@@ -37,13 +37,13 @@ The user is then redirected to your tenant-specific endpoint, where they can eit
 
 ## Redemption process through a direct link
 
-As an alternative to the invitation email or an application's common URL, you can give a guest a direct link to your app or portal. You first need to add the guest user to your directory via the [Azure portal](./b2b-quickstart-add-guest-users-portal.md) or [PowerShell](./b2b-quickstart-invite-powershell.md). Then you can use any of the [customizable ways to deploy applications to users](~/identity/enterprise-apps/end-user-experiences.md), including direct sign-on links. When a guest uses a direct link instead of the invitation email, they’ll still be guided through the first-time consent experience.
+As an alternative to the invitation email or an application's common URL, you can give a guest a direct link to your app or portal. You first need to add the guest user to your directory via the [Microsoft Entra admin center](./b2b-quickstart-add-guest-users-portal.md) or [PowerShell](./b2b-quickstart-invite-powershell.md). Then you can use any of the [customizable ways to deploy applications to users](~/identity/enterprise-apps/end-user-experiences.md), including direct sign-on links. When a guest uses a direct link instead of the invitation email, they’ll still be guided through the first-time consent experience.
 
 > [!NOTE]
 > A direct link is tenant-specific. In other words, it includes a tenant ID or verified domain so the guest can be authenticated in your tenant, where the shared app is located. Here are some examples of direct links with tenant context:
  > - Apps access panel: `https://myapps.microsoft.com/?tenantid=<tenant id>`
  > - Apps access panel for a verified domain: `https://myapps.microsoft.com/<;verified domain>`
- > - Azure portal: `https://portal.azure.com/<tenant id>`
+ > - Microsoft Entra admin center: `https://entra.microsoft.com/<tenant id>`
  > - Individual app: see how to use a [direct sign-on link](~/identity/enterprise-apps/end-user-experiences.md#direct-sign-on-links)
 
 There are some cases where the invitation email is recommended over a direct link. If these special cases are important to your organization, we recommend that you invite users by using methods that still send the invitation email:
@@ -53,7 +53,7 @@ There are some cases where the invitation email is recommended over a direct lin
 
 ## Redemption process through the invitation email
 
-When you add a guest user to your directory by [using the Azure portal](./b2b-quickstart-add-guest-users-portal.md), an invitation email is sent to the guest in the process. You can also choose to send invitation emails when you’re [using PowerShell](./b2b-quickstart-invite-powershell.md) to add guest users to your directory. Here’s a description of the guest’s experience when they redeem the link in the email.
+When you add a guest user to your directory by [using the Microsoft Entra admin center](./b2b-quickstart-add-guest-users-portal.md), an invitation email is sent to the guest in the process. You can also choose to send invitation emails when you’re [using PowerShell](./b2b-quickstart-invite-powershell.md) to add guest users to your directory. Here’s a description of the guest’s experience when they redeem the link in the email.
 
 1. The guest receives an [invitation email](./invitation-email-elements.md) that's sent from **Microsoft Invitations**.
 2. The guest selects **Accept invitation** in the email.
@@ -69,7 +69,7 @@ However, the following scenarios should continue to work:
 
 To unblock users who can't redeem an invitation due to a conflicting [Contact object](/graph/api/resources/contact), follow these steps:
 1. Delete the conflicting Contact object.
-2. Delete the guest user in the Azure portal (the user's "Invitation accepted" property should be in a pending state).
+2. Delete the guest user in the Microsoft Entra admin center (the user's "Invitation accepted" property should be in a pending state).
 3. Reinvite the guest user.
 4. Wait for the user to redeem invitation.
 5. Add the user's Contact email back into Exchange and any DLs they should be a part of.
@@ -79,7 +79,7 @@ To unblock users who can't redeem an invitation due to a conflicting [Contact ob
 
 When a user selects the **Accept invitation** link in an [invitation email](invitation-email-elements.md), Microsoft Entra ID automatically redeems the invitation based on the redemption flow as shown below:
 
-:::image type="content" source="media/redemption-experience/invitation-redemption.png" alt-text="Screenshot showing the redemption flow diagram.":::
+:::image type="content" source="media/redemption-experience/invitation-redemption.png" alt-text="Screenshot showing the redemption flow diagram." lightbox="media/redemption-experience/invitation-redemption.png":::
 
 1. Microsoft Entra ID performs user-based discovery to determine if the user already exists in a managed Microsoft Entra tenant. (Unmanaged Microsoft Entra accounts can no longer be used for the redemption flow.) If the user’s User Principal Name ([UPN](~/identity/hybrid/connect/plan-connect-userprincipalname.md#what-is-userprincipalname)) matches both an existing Microsoft Entra account and a personal MSA, the user is prompted to choose which account they want to redeem with.
 

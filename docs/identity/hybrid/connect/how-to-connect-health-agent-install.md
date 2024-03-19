@@ -86,7 +86,7 @@ The Microsoft Entra Connect Health agent for sync is installed automatically in 
 
 To verify that the agent has been installed, look for the following services on the server. If you completed the configuration, the services should already be running. Otherwise, the services are stopped until the configuration is complete.
 
-- Microsoft Azure AD Connect Agent Updater
+- Microsoft Entra Connect Agent Updater
 - Microsoft Entra Connect Health Agent
 
 :::image type="content" source="media/how-to-connect-health-agent-install/install5.png" alt-text="Screenshot that shows the running Microsoft Entra Connect Health for sync services on the server.":::

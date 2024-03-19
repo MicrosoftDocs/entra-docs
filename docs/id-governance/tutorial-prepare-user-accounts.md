@@ -23,19 +23,19 @@ The off-boarding tutorials only require one account that has group and Teams mem
 
 ## Prerequisites
 
-[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 - A Microsoft Entra tenant
 - A global administrator account for the Microsoft Entra tenant.  This account is used to create our users and workflows.
 
 ## Before you begin
 
-In most cases, users are going to be provisioned to Microsoft Entra ID either from an on-premises solution (such as Microsoft Entra Connect or Cloud sync) or with an HR solution. These users have the attributes and values populated at the time of creation. Setting up the infrastructure to provision users is outside the scope of this tutorial. For information, see [Tutorial: Basic Active Directory environment](~/identity/hybrid/cloud-sync/tutorial-basic-ad-azure.md) and [Tutorial: Integrate a single forest with a single Microsoft Entra tenant](~/identity/hybrid/cloud-sync/tutorial-single-forest.md).
+In most cases, users are going to be provisioned to Microsoft Entra ID either from an on-premises solution (such as Microsoft Entra Connect or Cloud sync) or with an HR solution. These users have the attributes and values populated at the time of creation. Setting up the infrastructure to provision users is outside the scope of this tutorial. For information, see [Tutorial: Basic Active Directory environment](../identity/hybrid/cloud-sync/tutorial-basic-ad-azure.md) and [Tutorial: Integrate a single forest with a single Microsoft Entra tenant](../identity/hybrid/cloud-sync/tutorial-single-forest.md).
 
 <a name='create-users-in-azure-ad'></a>
 
 ## Create users in Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 We use the Graph Explorer to quickly create two users needed to execute the Lifecycle Workflows in the tutorials.  One user represents our new employee and the second represents the new employee's manager.
 
@@ -171,7 +171,7 @@ Some of the attributes required for the prehire onboarding tutorial are exposed 
 
 For the tutorial, the **mail** attribute only needs to be set on the manager account and the **manager** attribute set on the employee account.  Use the following steps:
 
- 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+ 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
  1. Browse to > **Identity** > **Users** > **All Users**.
  1. Select **Melva Prince**.
  1. At the top, select **Edit**.
@@ -191,7 +191,7 @@ The employeeHireDate attribute is new to Microsoft Entra ID.  It isn't exposed t
 
 In order to do this, we must get the object ID for our user Melva Prince.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to > **Identity** > **Users** > **All Users**.
 1. Select **Melva Prince**.
 1. Select the copy sign next to the **Object ID**.
@@ -231,7 +231,7 @@ The manager attribute is used for email notification tasks.  It emails the manag
 
     :::image type="content" source="media/tutorial-lifecycle-workflows/graph-get-manager.png" alt-text="Screenshot of getting a manager in Graph explorer." lightbox="media/tutorial-lifecycle-workflows/graph-get-manager.png":::
 
-For more information about updating manager information for a user in Graph API, see [assign manager](/graph/api/user-post-manager?view=graph-rest-1.0&tabs=http&preserve-view=true) documentation. You can also set this attribute in the Azure Admin center. For more information, see [add or change profile information](~/fundamentals/how-to-manage-user-profile-info.md?context=azure/active-directory/users-groups-roles/context/ugr-context).
+For more information about updating manager information for a user in Graph API, see [assign manager](/graph/api/user-post-manager?view=graph-rest-1.0&tabs=http&preserve-view=true) documentation. You can also set this attribute in the Azure Admin center. For more information, see [add or change profile information](../fundamentals/how-to-manage-user-profile-info.md?context=azure/active-directory/users-groups-roles/context/ugr-context).
 
 ### Enabling the Temporary Access Pass (TAP)
 
@@ -241,7 +241,7 @@ In this scenario, we use this feature of Microsoft Entra ID to generate a tempor
 
 To use this feature, it must be enabled on our Microsoft Entra tenant.  To enable this feature, use the following steps.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator). 
 1. Browse to **Protection** > **Authentication methods** > **Temporary Access Pass**
 1. Select **Yes** to enable the policy and add Britta Simon and select which users have the policy applied, and any **General** settings.
 
