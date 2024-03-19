@@ -36,7 +36,7 @@ To configure remote networks, you must have:
 
 - The number of remote networks per tenant is limited to 10. The number of device links per remote network is limited to four.
 - Microsoft 365 traffic is accessed through remote network connectivity without the Global Secure Access client. However, the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft 365 traffic are only enforced when a user has the Global Secure Access client.
-- You must use the Global Secure Access client for Entra Private Access. Remote network connectivity only supports Entra Internet Access.
+- You must use the Global Secure Access client for Microsoft Entra Private Access. Remote network connectivity only supports Microsoft Entra Internet Access.
 
 ## High-level steps
 

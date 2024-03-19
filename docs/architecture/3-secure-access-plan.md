@@ -110,7 +110,7 @@ To use device state as policy input, register, or join the device to your tenant
 
 You can use identity-protection risk policies. However, mitigate issues in the user home tenant. See, [Common Conditional Access policy: Sign-in risk-based multifactor authentication](~/identity/conditional-access/howto-conditional-access-policy-risk.md).
 
-For network locations, you can restrict access to IP addresses ranges that you own. Use this method if external partners access applications while at your location. See, [Conditional Access: Block access by location](~/identity/conditional-access/howto-conditional-access-policy-location.md)
+For network locations, you can restrict access to IP addresses ranges that you own. Use this method if external partners access applications while at your location. See, [Conditional Access: Block access by location](~/identity/conditional-access/howto-conditional-access-policy-location.yml)
 
 ## Document access review policies
 
@@ -125,7 +125,7 @@ Generally, organizations customize policy, however consider the following parame
 - **Entitlement management access reviews**:
   - [Change lifecycle settings for an access package in entitlement management](~/id-governance/entitlement-management-access-package-lifecycle-policy.md)
   - [Create an access review of an access package in entitlement management](~/id-governance/entitlement-management-access-reviews-create.md)
-  - [Add a connected organization in entitlement management](~/id-governance/entitlement-management-organization.md): group users from a partner and schedule reviews
+  - [Add a connected organization in entitlement management](~/id-governance/entitlement-management-organization.md): Group users from a partner and schedule reviews
 - **Microsoft 365 groups**
   - [Microsoft 365 group expiration policy](/microsoft-365/solutions/microsoft-365-groups-expiration-policy?view=o365-worldwide&preserve-view=true)
 - **Options**:

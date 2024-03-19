@@ -80,6 +80,8 @@
         href: adp-emea-french-hr-portal-tutorial.md  
       - name: ADP Globalview (Deprecated)
         href: adglobalview-tutorial.md
+      - name: ADP (OIDC)
+        href: adp-oidc-tutorial.md
       - name: Adra by Trintech
         href: adra-by-trintech-tutorial.md
       - name: Adstream
@@ -802,6 +804,8 @@
         href: docusign-tutorial.md
       - name: DojoNavi
         href: dojonavi-tutorial.md
+      - name: DojoWM
+        href: dojowm-tutorial.md
       - name: Domo
         href: domo-tutorial.md
       - name: dominKnow|ONE
@@ -1165,8 +1169,12 @@
         href: gofluent-tutorial.md
       - name: GoLinks
         href: golinks-tutorial.md
+      - name: GoProfiles
+        href: goprofiles-tutorial.md
       - name: GovWin IQ
         href: govwin-iq-tutorial.md
+      - name: GoSearch
+        href: gosearch-tutorial.md
       - name: GoToMeeting
         href: citrix-gotomeeting-tutorial.md
       - name: gr8 People
@@ -1213,6 +1221,8 @@
         href: harness-tutorial.md
       - name: HashiCorp Cloud Platform (HCP)
         href: hashicorp-cloud-platform-hcp-tutorial.md
+      - name: HashiCorp Boundary (OIDC)
+        href: hashicorp-tutorial.md
       - name: Hawkeye Platform
         href: hawkeyebsb-tutorial.md
       - name: HCL BigFix Platform
@@ -1347,6 +1357,8 @@
         href: imageworks-tutorial.md
       - name: Imagineer WebVision
         href: imagineerwebvision-tutorial.md
+      - name: iManage Work (SAML)
+        href: imanage-work-saml-tutorial.md
       - name: IMPAC Risk Manager
         href: impacriskmanager-tutorial.md
       - name: Imperva Data Security
@@ -1849,8 +1861,8 @@
         href: negometrixportal-tutorial.md
       - name: NEOGOV
         href: neogov-tutorial.md
-      - name: Neota Studio
-        href: neotalogicstudio-tutorial.md
+      - name: Neota
+        href: neota-tutorial.md
       - name: NetDocuments
         href: netdocuments-tutorial.md
       - name: NetMotion Mobility
@@ -1923,6 +1935,8 @@
         href: onedesk-tutorial.md
       - name: Oneflow
         href: oneflow-tutorial.md
+      - name: OneStream
+        href: onestream-tutorial.md
       - name: Oneteam
         href: oneteam-tutorial.md
       - name: OneTrust Privacy Management Software
@@ -1933,6 +1947,8 @@
         href: onshape-tutorial.md
       - name: OnTrack
         href: ontrack-tutorial.md
+      - name: Onyxia
+        href: onyxia-tutorial.md
       - name: Opal
         href: opal-tutorial.md
       - name: OpenAthens
@@ -2027,6 +2043,8 @@
         href: patentsquare-tutorial.md
       - name: Pavaso Digital Close
         href: pavaso-digital-close-tutorial.md
+      - name: PayCargo
+        href: paycargo-tutorial.md
       - name: Paylocity
         href: paylocity-tutorial.md
       - name: Peakon
@@ -2087,6 +2105,8 @@
         href: planview-admin-tutorial.md
       - name: Planview LeanKit
         href: planview-leankit-tutorial.md
+      - name: Pleo
+        href: pleo-tutorial.md
       - name: Pluralsight
         href: pluralsight-tutorial.md
       - name: Pluto
@@ -2413,6 +2433,8 @@
         href: seculio-tutorial.md
       - name: SECURE DELIVER
         href: securedeliver-tutorial.md
+      - name: SquaREcruit
+        href: squarecruit-tutorial.md
       - name: SecureTransport
         href: securetransport-tutorial.md
       - name: SecureW2 JoinNow Connector
@@ -2629,6 +2651,8 @@
         href: stormboard-tutorial.md
       - name: Striim
         href: striim-tutorial.md
+      - name: Striim Platform
+        href: striim-platform-tutorial.md
       - name: Styleflow
         href: styleflow-tutorial.md
       - name: SuccessFactors
@@ -2709,6 +2733,8 @@
         href: taskize-connect-tutorial.md
       - name: Teachme Biz
         href: teachme-biz-tutorial.md  
+      - name: TeamAlert SSO
+        href: teamalert-sso-tutorial.md
       - name: Teamgo
         href: teamgo-tutorial.md
       - name: Teamphoria
@@ -3358,6 +3384,8 @@
         href: envoy-provisioning-tutorial.md
       - name: Eletive
         href: eletive-provisioning-tutorial.md
+      - name: elia
+        href: elia-provisioning-tutorial.md
       - name: Elium
         href: elium-provisioning-tutorial.md
       - name: Exium
@@ -3464,8 +3492,8 @@
         href: invision-provisioning-tutorial.md
       - name: InviteDesk
         href: invitedesk-provisioning-tutorial.md
-      - name: Island
-        href: island-provisioning-tutorial.md
+      - name: Jellyfish
+        href: jellyfish-provisioning-tutorial.md
       - name: Jive
         href: jive-provisioning-tutorial.md
       - name: Jostle
@@ -3666,8 +3694,6 @@
         href: schoolstream-asa-provisioning-tutorial.md
       - name: ScreenSteps
         href: screensteps-provisioning-tutorial.md
-      - name: SECURE DELIVER
-        href: secure-deliver-provisioning-tutorial.md
       - name: SecureLogin
         href: secure-login-provisioning-tutorial.md
       - name: Sentry
