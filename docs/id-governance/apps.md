@@ -408,6 +408,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [International SOS Assistance Products](~/identity/saas-apps/international-sos-assistance-products-tutorial.md) |  | ● |
 | [introDus Pre and Onboarding Platform](~/identity/saas-apps/introdus-pre-and-onboarding-platform-provisioning-tutorial.md) | ● |  |
 | [IntSights](~/identity/saas-apps/intsights-tutorial.md) |  | ● |
+| [IntSightly SAML](~/identity/saas-apps/insightly-saml-provisioning-tutorial.md) | ● | ● |
 | [Invision](~/identity/saas-apps/invision-provisioning-tutorial.md) | ● | ● |
 | [InviteDesk](~/identity/saas-apps/invitedesk-provisioning-tutorial.md) | ● |  |
 | [IP Platform](~/identity/saas-apps/ip-platform-tutorial.md) |  | ● |
@@ -580,6 +581,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Parsable](~/identity/saas-apps/parsable-provisioning-tutorial.md) | ● |  |
 | [Peakon](~/identity/saas-apps/peakon-provisioning-tutorial.md) | ● | ● |
 | [Perimeter 81](~/identity/saas-apps/perimeter-81-tutorial.md) |  | ● |
+| [Personify Inc](~/identity/saas-apps/personify-inc-provisioning-tutorial.md) | ● | ● |
 | [Peripass](~/identity/saas-apps/peripass-provisioning-tutorial.md) | ● |  |
 | [Pingboard](~/identity/saas-apps/pingboard-provisioning-tutorial.md) | ● | ● |
 | [PKSHA Chatbot](~/identity/saas-apps/pksha-chatbot-tutorial.md) |  | ● |
@@ -837,6 +839,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Weekdone](~/identity/saas-apps/weekdone-tutorial.md) |  | ● |
 | [Whimsical](~/identity/saas-apps/whimsical-provisioning-tutorial.md) | ● | ● |
 | [Whitesource](~/identity/saas-apps/whitesource-tutorial.md) |  | ● |
+| [WiggleDesk](~/identity/saas-apps/wiggledesk-provisioning-tutorial.md) | ● | ● |
 | [WireWheel](~/identity/saas-apps/wirewheel-tutorial.md) |  | ● |
 | [Wistia](~/identity/saas-apps/wistia-tutorial.md) |  | ● |
 | [Wiz SSO](~/identity/saas-apps/wiz-sso-tutorial.md) |  | ● |

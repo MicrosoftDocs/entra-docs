@@ -13,7 +13,7 @@ ms.collection: M365-identity-device-management
 
 # What are custom security attributes in Microsoft Entra ID?
 
-Custom security attributes in Microsoft Entra ID are business-specific attributes (key-value pairs) that you can define and assign to Microsoft Entra objects. These attributes can be used to store information, categorize objects, or enforce fine-grained access control over specific Azure resources. Custom security attributes can be used with [Azure attribute-based access control (Azure ABAC)](/azure/role-based-access-control/conditions-overview).
+Custom security attributes in Microsoft Entra ID are business-specific attributes (key-value pairs) that you can define and assign to Microsoft Entra objects. These attributes can be used to store information, categorize objects, or enforce fine-grained access control over specific Azure resources. Custom security attributes can be used with [Azure attribute-based access control (ABAC)](/azure/role-based-access-control/conditions-overview).
 
 ## Why use custom security attributes?
 
@@ -36,17 +36,17 @@ Custom security attributes include these capabilities:
 Custom security attributes **aren't** supported in the following areas:
 
 - [Microsoft Entra Domain Services](/entra/identity/domain-services/overview)
-- [SAML token claims](~/identity-platform/saml-claims-customization.md)
+- [Security Assertion Markup Language (SAML) token claims](~/identity-platform/saml-claims-customization.md)
 
 ## Features of custom security attributes
 
 Custom security attributes include these features:
 
-- Available tenant-wide​
+- Available tenant-wide
 - Include a description
-- Support different data types: Boolean, integer, string​
+- Support different data types: Boolean, integer, string
 - Support single value or multiple values
-- Support user-defined free-form values​ or predefined values
+- Support user-defined free-form values or predefined values
 - Assign custom security attributes to directory synced users from an on-premises Active Directory
 
 The following example shows several custom security attributes assigned to a user. The custom security attributes are different data types and have values that are single, multiple, free-form, or predefined.
@@ -68,7 +68,7 @@ While both extensions and custom security attributes can be used to extend objec
 |--|--|--|
 | Extend Microsoft Entra ID and Microsoft 365 objects | Yes | Yes |
 | Supported objects | Depends on the extension type | Users and service principals |
-| Restricted access | No. Anyone with permissions to read the object can read the extension data. | Yes. Read and write access is restricted through a separate set of permissions and RBAC. |
+| Restricted access | No. Anyone with permissions to read the object can read the extension data. | Yes. Read and write access is restricted through a separate set of permissions and role-based access control (RBAC). |
 | When to use | Store data to be used by an application <br/> Store non-sensitive data | Store sensitive data <br/> Use for authorization scenarios |
 | License requirements | Available in all editions of Microsoft Entra ID | Available in all editions of Microsoft Entra ID |
 
@@ -159,7 +159,7 @@ Here are some of the limits and constraints for custom security attributes.
 > | Predefined values |  | Unicode characters and case sensitive |
 > | Predefined values per attribute definition | 100 |  |
 > | Attribute value length | 64 | Unicode characters |
-> | Attribute values assigned per object | 50 | Values can be distributed across single and multi-valued attributes.<br/>Example: 5 attributes with 10 values each or 50 attributes with 1 value each |
+> | Attribute values assigned per object | 50 | Values can be distributed across single and multivalued attributes.<br/>Example: 5 attributes with 10 values each or 50 attributes with 1 value each |
 > | Special characters **not** allowed for:<br/>Attribute set name<br/>Attribute name | ``<space> ` ~ ! @ # $ % ^ & * ( ) _ - + = { [ } ] \| \ : ; " ' < , > . ? /`` | Attribute set name and attribute name cannot start with a number |
 > | Special characters allowed for attribute values | All special characters |  |
 > | Special characters allowed for attribute values when used with blob index tags | `<space> + - . : = _ /` | If you plan to use [attribute values with blob index tags](/azure/role-based-access-control/conditions-custom-security-attributes), these are the only special characters allowed for blob index tags. For more information, see [Setting blob index tags](/azure/storage/blobs/storage-manage-find-blobs#setting-blob-index-tags). |
@@ -181,11 +181,13 @@ Microsoft Entra ID provides built-in roles to work with custom security attribut
 > [!IMPORTANT]
 > By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.
 
-## Microsoft Graph APIs
+<a name='microsoft-graph-apis'></a>
 
-You can manage custom security attributes programmatically using Microsoft Graph APIs. For more information, see [Overview of custom security attributes using the Microsoft Graph API](/graph/api/resources/custom-security-attributes-overview).
+## Microsoft Graph API
 
-You can use an API client such as [Graph Explorer](/graph/graph-explorer/graph-explorer-overview) or Postman to more easily try the Microsoft Graph APIs for custom security attributes. 
+You can manage custom security attributes programmatically using Microsoft Graph API. For more information, see [Overview of custom security attributes using the Microsoft Graph API](/graph/api/resources/custom-security-attributes-overview).
+
+You can use an API client such as [Graph Explorer](/graph/graph-explorer/graph-explorer-overview) or Postman to more easily try the Microsoft Graph API for custom security attributes.
 
 ![Screenshot that shows a Microsoft Graph API call for custom security attributes.](./media/custom-security-attributes-overview/graph-explorer-success.png)
 

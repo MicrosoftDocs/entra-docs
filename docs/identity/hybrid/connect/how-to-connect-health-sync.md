@@ -20,8 +20,8 @@ The following documentation is specific to monitoring Microsoft Entra Connect (S
 ![Screenshot of the Microsoft Entra Connect Health for Sync page.](./media/how-to-connect-health-sync/syncsnapshot.png)
 
 > [!IMPORTANT]
-> Microsoft Entra Connect Health for Sync requires Microsoft Entra Connect Sync V2. If you are still using AADConnect V1 you must upgrade to the latest version. 
-> AADConnect V1 is retired on August 31, 2022. Microsoft Entra Connect Health for Sync will no longer work with AADConnect V1 in December 2022.
+> Microsoft Entra Connect Health for Sync requires Microsoft Entra Connect Sync V2. If you are still using Azure AD Connect V1 you must upgrade to the latest version. 
+> Azure AD Connect V1 is retired on August 31, 2022. Microsoft Entra Connect Health for Sync will no longer work with Azure AD Connect V1 in December 2022.
 > 
 <a name='alerts-for-azure-ad-connect-health-for-sync'></a>
 

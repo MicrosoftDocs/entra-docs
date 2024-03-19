@@ -9,7 +9,7 @@ ms.custom: scenarios:getting-started, "languages:Java", devx-track-java, mode-ap
 ms.date: 12/19/2023
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: quickstart
 #Customer intent: As a Java web app developer, I want to add sign-in with Microsoft functionality to my application, so that users can authenticate with their Microsoft accounts and access the Microsoft Graph API.
 ---
 # Quickstart: Add sign-in with Microsoft to a Java web app
