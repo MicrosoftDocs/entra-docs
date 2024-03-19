@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: quickstart
 
-ms.date: 03/23/2023
+ms.date: 03/19/2024
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: mode-other, enterprise-apps
@@ -19,7 +19,7 @@ ms.custom: mode-other, enterprise-apps
 
 In this quickstart, you use the Microsoft Entra admin center to create a user account in your Microsoft Entra tenant. After you create the account, you can assign it to the enterprise application that you added to your tenant.
 
-It's recommended that you use a nonproduction environment to test the steps in this quickstart.
+We recommend that you use a nonproduction environment to test the steps in this quickstart.
 
 ## Prerequisites
 
