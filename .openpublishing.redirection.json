@@ -36,6 +36,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/fundamentals/whats-new-sovereign-clouds-archive.md",
+      "redirect_url": "/entra/fundamentals/whats-new-sovereign-clouds",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/fundamentals/add-users.md",
       "redirect_url": "/entra/fundamentals/how-to-create-delete-users",
       "redirect_document_id": false
@@ -221,6 +226,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/custom-extension-get-started.md",
+      "redirect_url": "/entra/identity-platform/custom-extension-tokenissuancestart-configuration",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/web-app-tutorial-01-register-application.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-register-app",
       "redirect_document_id": false
@@ -329,6 +339,11 @@
     {
       "source_path_from_root": "/docs/identity/hybrid/connect/how-to-connect-group-writeback-v2.md",
       "redirect_url": "/entra/identity/hybrid/group-writeback-cloud-sync",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/permissions-management/how-to-notifications-rule.md",
+      "redirect_url": "/entra/permissions-management/ui-autopilot",
       "redirect_document_id": false
     }
 
