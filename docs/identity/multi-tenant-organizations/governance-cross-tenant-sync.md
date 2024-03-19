@@ -41,7 +41,7 @@ When organizations create, or provision, a B2B collaboration user in a tenant, u
 
 By default, cross-tenant synchronization includes commonly used attributes on the user object in Microsoft Entra ID. The following diagram illustrates this scenario. 
 
-   ![Diagram of synchronization with commonly used attributes.](../media/governance-cross-tenant-sync/common-attributes.png)
+   ![Diagram of synchronization with commonly used attributes.](./media/governance-cross-tenant-sync/common-attributes.png)
 
 Organizations use the attributes to help create dynamic membership of groups and access packages in the source and target tenant. Some Microsoft Entra ID features have user attributes to target, s=such as lifecycle workflow user scoping.  
 
