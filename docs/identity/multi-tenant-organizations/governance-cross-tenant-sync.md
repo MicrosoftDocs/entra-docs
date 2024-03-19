@@ -68,7 +68,7 @@ Organizations manage cross-tenant synchronization configuration in the source te
 
 To drive automatic assignment policies in the target tenant, synchronize default attribute mappings, such as department or map directory extensions, in the source tenant. 
 
-### Enable source-tenant employees to request access to targe-tenant shared resources
+### Enable source-tenant employees to request access to target-tenant shared resources
 
 With identity governance [access package](~/id-governance/entitlement-management-access-package-create.md) policies, multitenant organizations can allow B2B collaboration users, created by cross-tenant synchronization, to request access to shared resources in a target tenant. This process is useful if employees need just-in-time (JIT) access to a resource that another tenant owns. 
 
