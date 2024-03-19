@@ -88,9 +88,7 @@ To build user attributes in the iOS MSAL SDK:
         ]
         
         authAuthClientInstance.signUp(username: email, attributes: attributes, delegate: self)
-     ```      
-
-
+     ```   
 ---
 
 To learn more about the programmable names of user profile attributes, see the [User profile attributes](concept-user-attributes.md) article. When you use custom attributes names in the MSAL mobile SDKs, the names are without the `extension_{appId-without-hyphens}_` prefix. 
