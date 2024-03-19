@@ -51,7 +51,7 @@ Application readiness is evaluated based on following predefined AD FS applicati
 
 ## AD FS application migration insights status updates
 
-Once there is an update to the application, internal agents syncs the updates within few minutes. However, AD FS migration insights jobs responsible for evaluating the updates and computes new migration status. Those jobs are scheduled to run every 24 hours, which means data will be computed only once in a day at around 00:00 UTC timezone.
+When the application is updated, internal agents sync the updates within few minutes. However, AD FS migration insights jobs are responsible for evaluating the updates and compute a new migration status. Those jobs are scheduled to run every 24 hours, which means that the data will be computed only once in a day, at around 00:00 Coordinated Universal Time (UTC).
 
 |Result  |Pass/Warning/Fail  |Description  |
 |---------|---------|---------|
