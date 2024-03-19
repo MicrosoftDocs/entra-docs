@@ -5,6 +5,7 @@ author: barclayn
 manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: quickstart
 ms.date: 11/29/2023
 ms.author: barclayn
