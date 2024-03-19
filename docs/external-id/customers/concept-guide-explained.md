@@ -6,7 +6,7 @@ author: csmulligan
 manager: celestedg
 ms.service: active-directory
 
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: concept-article
 ms.date:  03/14/2023
 ms.author: cmulligan
