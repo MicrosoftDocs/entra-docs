@@ -15,7 +15,7 @@ manager: amycolannino
 ---
 # Migrate from federation to cloud authentication  
 
-In this article, you learn how to deploy cloud user authentication with either Microsoft Entra ID [Password hash synchronization (PHS)](whatis-phs.md) or [Pass-through authentication (PTA)](how-to-connect-pta.md). While we present the use case for moving from [Active Directory Federation Services (AD FS)](whatis-fed.md) to cloud authentication methods, the guidance substantially applies to other on premises systems as well.
+In this article, you learn how to deploy cloud user authentication with either Microsoft Entra [Password hash synchronization (PHS)](whatis-phs.md) or [Pass-through authentication (PTA)](how-to-connect-pta.md). While we present the use case for moving from [Active Directory Federation Services (AD FS)](whatis-fed.md) to cloud authentication methods, the guidance substantially applies to other on premises systems as well.
 
 Before you continue, we suggest that you review our guide on [choosing the right authentication method](choose-ad-authn.md) and compare methods most suitable for your organization.
 
