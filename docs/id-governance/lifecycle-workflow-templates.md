@@ -51,7 +51,7 @@ The default specific parameters and properties for the **Onboard pre-hire employ
 |Days from event     | -7        | ✔️        |
 |Event timing     | Before        |  ❌       |
 |Event User attribute     | EmployeeHireDate        |   ❌      |
-|Scope type     | Depends on trigger. <br> Role based: Time based attribute, Attribute changes.<br> Group based: Group membership change.         | ❌        |
+|Scope type     | Depends on trigger. <br> **Role based**: Time based attribute, Attribute changes.<br> **Group based**: Group membership change.         | ❌        |
 |Rule     | Role based scope: (department eq 'Marketing')      |  ✔️       |
 |Tasks     | **Generate TAP And Send Email**     |  ✔️       |
 
@@ -70,7 +70,7 @@ The default specific parameters for the **Onboard new hire employee** template a
 |Days from event     | 0        | ❌        |
 |Event timing     | On        |  ❌       |
 |Event User attribute     | EmployeeHireDate, createdDateTime        |   ✔️      |
-|Scope type     | Depends on trigger. <br> Role based: Time based attribute, Attribute changes.<br> Group based: Group membership change.        | ❌        |
+|Scope type     | Depends on trigger. <br> **Role based**: Time based attribute, Attribute changes.<br> **Group based**: Group membership change.        | ❌        |
 |Rule     | Role based scope: (department eq 'Marketing')        |  ✔️       |
 |Tasks     | **Add User To Group**, **Enable User Account**, **Send Welcome Email**      |  ✔️       |
 
@@ -89,7 +89,7 @@ The default specific parameters for the **Post-Onboarding of an employee** templ
 |Days from event     | 7       | ✔️        |
 |Event timing     | After        |  ❌       |
 |Event User attribute     | EmployeeHireDate, createdDateTime        |   ✔️      |
-|Scope type     | Depends on trigger. <br> Role based: Time based attribute, Attribute changes.<br> Group based: Group membership change.         | ❌        |
+|Scope type     | Depends on trigger. <br> **Role based**: Time based attribute, Attribute changes.<br> **Group based**: Group membership change.         | ❌        |
 |Rule     | Role based scope: (department eq 'Marketing')       |  ✔️       |
 |Tasks     | **Add User To Group**, **Add user to selected teams**    |  ✔️       |
 
@@ -142,7 +142,7 @@ The default specific parameters for the **Pre-Offboarding of an employee** templ
 |Days from event     | 7        | ✔️        |
 |Event timing     | Before        |  ❌       |
 |Event User attribute     | employeeLeaveDateTime        |   ❌      |
-|Scope type     | Depends on trigger. <br> Role based: Time based attribute, Attribute changes.<br> Group based: Group membership change.        | ❌        |
+|Scope type     | Depends on trigger. <br> **Role based**: Time based attribute, Attribute changes.<br> **Group based**: Group membership change.        | ❌        |
 |Rule     | Role based scope: (department eq 'Marketing')       |  ✔️       |
 |Tasks     | **Remove user from selected groups**, **Remove user from selected Teams**     |  ✔️       |
 
@@ -161,7 +161,7 @@ The default specific parameters for the **Offboard an employee** template are as
 |Days from event     | 0        | ✔️        |
 |Event timing     | On        |  ❌       |
 |Event User attribute     | employeeLeaveDateTime      |   ❌      |
-|Scope type     | Depends on trigger. <br> Role based: Time based attribute, Attribute changes.<br> Group based: Group membership change.         | ❌        |
+|Scope type     | Depends on trigger. <br> **Role based**: Time based attribute, Attribute changes.<br> **Group based**: Group membership change.         | ❌        |
 |Rule     | Role based scope: (department eq 'Marketing')     |  ✔️       |
 |Tasks     | **Disable User Account**, **Remove user from all groups**, **Remove user from all Teams**     |  ✔️       |
 
@@ -178,7 +178,7 @@ The default specific parameters for the **Post-Offboarding of an employee** temp
 |Category     |  Leaver       |  ❌       |
 |Trigger Type     | Time based attribute, Attribute changes, Group Membership change        |  ✔️       |
 |Event User attribute     | employeeLeaveDateTime      |   ❌      |
-|Scope type     | Depends on trigger. <br> Role based: Time based attribute, Attribute changes.<br> Group based: Group membership change.         | ❌        |
+|Scope type     | Depends on trigger. <br> **Role based**: Time based attribute, Attribute changes.<br> **Group based**: Group membership change.         | ❌        |
 |Rule     | Role based scope: (department eq 'Marketing')    |  ✔️       |
 |Tasks     | **Remove all licenses for user**, **Remove user from all Teams**, **Delete User Account**     |  ✔️       |
 
@@ -194,8 +194,8 @@ The default specific parameters for the **Employee group membership changes** te
 |---------|---------|---------|
 |Category     |  mover       |  ❌       |
 |Trigger Type     | Attribute changes, Group Membership change        |  ✔️       |
-|Event User attribute     | Depends on the trigger. <br>Attribute changes:department. <br>Group membership change: Added to group.      |   ✔️      |
-|Scope type     | Depends on trigger. <br> Role based: Attribute changes.<br> Group based: Group membership change.        | ❌        |
+|Event User attribute     | Depends on the trigger. <br>Attribute changes: department. <br>Group membership change: Added to group.      |   ✔️      |
+|Scope type     | Depends on trigger. <br> **Role based**: Attribute changes.<br> **Group based**: Group membership change.        | ❌        |
 |Rule     |      |  ✔️       |
 |Tasks     | **Remove access package assignment for user**, **Remove user from selected Teams**, **Send email to notify manager of user move**     |  ✔️       |
 
@@ -211,8 +211,8 @@ The default specific parameters for the **Employee job profile change** template
 |---------|---------|---------|
 |Category     |  mover       |  ❌       |
 |Trigger Type     | Attribute changes, Group Membership change        |  ✔️       |
-|Event User attribute     | Depends on the trigger. <br>Attribute changes:department. <br>Group membership change: Added to group.      |   ✔️      |
-|Scope type     | Depends on trigger. <br> Role based: Attribute changes.<br> Group based: Group membership change.         | ❌        |
+|Event User attribute     | Depends on the trigger. <br>Attribute changes: department. <br>Group membership change: Added to group.      |   ✔️      |
+|Scope type     | Depends on trigger. <br> **Role based**: Attribute changes.<br> **Group based**: Group membership change.         | ❌        |
 |Rule     | Role based scope: (department eq 'Marketing')        |  ✔️       |
 |Tasks     | **Send email to notify manager of user move**, **Remove user from selected groups**, **Remove user from selected Teams**, **Request user access package assignment**    |  ✔️       |
 
