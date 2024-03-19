@@ -15,7 +15,7 @@ ms.custom: developer
 #Customer intent: As a developer, I want to authenticate users from a sample Android mobile app so that I can experience how Microsoft Entra ID for customers work.
 ---
 
-# Sign in users in sample Android (Kotlin) mobile app
+# Sign in users aand call web API in sample Android (Kotlin) mobile app
 
 This guide shows how to run an Android sample application that demonstrates sign-up, sign in, sign out, and password reset scenarios using Microsoft Entra ID for customers. 
   
@@ -32,13 +32,23 @@ In this article, you learn how to:
 
 - <a href="https://developer.android.com/studio/archive" target="_blank">Android Studio Dolphin | 2021.3.1 Patch 1</a>.
 - Microsoft Entra External ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
-
+- An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, [register an API in the Microsoft Entra admin center](sample-native-authentication-android-sample-app-call-web-api.md) by following the registration steps. Ensure you've completed the following steps:
+    - Register a web API application
+    - Configure API scopes
+    - Configure app roles
+    - Configure optional claims
+    - Clone or download sample web API
+    - Configure and run sample web API
 
 ## Register an application
  
 [!INCLUDE [register client app](../customers/includes/register-app/register-client-app-common.md)]
 
-## Enable public client
+## Add a platform redirect URL
+
+[!INCLUDE [Enable public client](../customers/includes/register-app/add-platform-redirect-url-android.md)]
+
+## Enable public client flow
 
 [!INCLUDE [Enable public client](../customers/includes/register-app/enable-public-client-flow.md)]
 
@@ -46,11 +56,13 @@ In this article, you learn how to:
  
 [!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-native-authentication-api-permission.md)]
 
+[!INCLUDE [grant-api-permission-call-api-common](../customers/includes/register-app/grant-api-permission-call-api-common.md)]
+
 ## Create a user flow
  
 [!INCLUDE [Create user flow](../customers/includes/configure-user-flow/create-native-authentication-sign-in-sign-out-user-flow.md)]
  
-## Associate the app with the user flow
+## Associate the app with the user flows
 
 [!INCLUDE [associate user flow](../customers/includes/configure-user-flow/add-app-user-flow.md)]
 
@@ -67,11 +79,16 @@ In this article, you learn how to:
  
 1. In Android Studio, open the project that you cloned. 
  
-2. Open */app/src/main/res/raw/auth_config_ciam.json* file. 
-3. Find the placeholder: 
+1. Open */app/src/main/res/raw/auth_config_ciam.json* file. 
+1. Find the placeholder: 
  
-   - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier. 
-   - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
+   - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
+   - `Enter_the_Redirect_Uri_Here` and replace it with the value of *redirect_uri* in the MSAL configuration file you downloaded earlier when you added the platform redirect URL.
+   - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+1. Open */app/src/main/AndroidManifest.xml* file.
+1. Find the placeholder:
+
+    - `ENTER_YOUR_SIGNATURE_HASH_HERE` and replace it with the **Signature Hash** that you generated earlier when you added the platform redirect URL.
    
 You've now configured the app and it's ready to run. 
 
