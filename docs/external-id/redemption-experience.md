@@ -6,7 +6,7 @@ description: Describes the Microsoft Entra B2B collaboration invitation redempti
  
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 02/28/2024
+ms.date: 03/19/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
@@ -59,6 +59,10 @@ When you add a guest user to your directory by [using the Microsoft Entra admin 
 2. The guest selects **Accept invitation** in the email.
 3. The guest will use their own credentials to sign in to your directory. If the guest doesn't have an account that can be federated to your directory and the [email one-time passcode (OTP)](./one-time-passcode.md) feature isn't enabled; the guest is prompted to create a personal [MSA](https://support.microsoft.com/help/4026324/microsoft-account-how-to-create). Refer to the [invitation redemption flow](#invitation-redemption-flow) for details.
 4. The guest is guided through the [consent experience](#consent-experience-for-the-guest) described below.
+
+### Configurable redemption (Preview)
+
+With [configurable redemption](cross-tenant-access-overview.md#configurable-redemption-preview), you can customize the order of identity providers that your guest users can sign in with when they accept your invitation. When a guest user selects the **Accept invitation** link in an invitation email, Microsoft Entra ID automatically redeems the invitation based on the [default redemption order](#invitation-redemption-flow). When you change the identity provider order, the new order overrides the default redemption order. You can enable the feature and specify the redemption order in your [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md#configure-redemption-order-preview).
 
 ## Redemption process limitation with conflicting Contact object
 Sometimes the invited external guest user's email may conflict with an existing [Contact object](/graph/api/resources/contact), resulting in the guest user being created without a proxyAddress. This is a known limitation that prevents guest users from redeeming an invitation through a direct link using [SAML/WS-Fed IdP](./direct-federation.md), [MSAs](./microsoft-account.md), [Google Federation](./google-federation.md), or [Email One-Time Passcode](./one-time-passcode.md) accounts.
