@@ -64,4 +64,11 @@ To build [custom attributes](concept-user-attributes.md#custom-user-attributes),
  ```
 
 To learn more about the programmable names of user profile attributes, see the [User profile attributes](concept-user-attributes.md) article.
+
+
+## Related content
+
+- [Native authentication challenge types](concept-native-authentication-challenge-types.md).
+- [iOS native authentication tutorials](tutorial-native-authentication-prepare-ios-app.md).
+- [Android native authentication tutorials](tutorial-native-authentication-prepare-android-app.md).
  
