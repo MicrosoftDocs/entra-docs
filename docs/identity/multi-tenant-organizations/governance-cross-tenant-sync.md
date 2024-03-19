@@ -29,7 +29,7 @@ In this example, Contoso is a multitenant organization with three production Mic
 
 From a cross-tenant synchronization perspective, Contoso Europe, Middle East, and Africa (Contoso EMEA) and Contoso United States (Contoso US) are source tenants and Contoso is a target tenant. The following diagram illustrates the topology.
 
-   ![Diagram of a cross-tenant synchronization topology.](/media/governance-cross-tenant-sync/cross-tenant-topology.png)
+   ![Diagram of a cross-tenant synchronization topology.](./media/governance-cross-tenant-sync/cross-tenant-topology.png)
 
 This supported [topology for cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-topology.md) is one of many in Microsoft Entra ID. Tenants can be a source tenant, a target tenant, or both. In the following sections, learn how cross-tenant synchronization and Microsoft Entra Identity Governance features address several scenarios. 
 
@@ -41,7 +41,7 @@ When organizations create, or provision, a B2B collaboration user in a tenant, u
 
 By default, cross-tenant synchronization includes commonly used attributes on the user object in Microsoft Entra ID. The following diagram illustrates this scenario. 
 
-   ![Diagram of synchronization with commonly used attributes.](/multi-tenant-organizations/media/governance-cross-tenant-sync/common-attributes.png)
+   ![Diagram of synchronization with commonly used attributes.](../media/governance-cross-tenant-sync/common-attributes.png)
 
 Organizations use the attributes to help create dynamic membership of groups and access packages in the source and target tenant. Some Microsoft Entra ID features have user attributes to target, s=such as lifecycle workflow user scoping.  
 
