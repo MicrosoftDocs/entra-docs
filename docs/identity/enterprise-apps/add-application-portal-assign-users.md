@@ -59,7 +59,9 @@ To assign a user account to an enterprise application:
 1. On the **Add Assignment** pane, select **None Selected** under **Users and groups**.
 1. Search for and select the user that you want to assign to the application. For example, `contosouser1@contoso.com`.
 1. Select **Select**.
-1. On the **Add Assignment** pane, select **Assign** at the bottom of the pane.
+1. Select **None Selected** under **Select a role** and then select the role that you want to assign to the user. For example, **Standard User**.
+1. Select **Select**.
+1. Select **Assign** at the bottom of the pane to assign the user to the application.
 
 ## Clean up resources
 
