@@ -127,11 +127,19 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. In a different web browser window, sign in to your ScreenPal company site as an administrator
 
-1. Click Authentication on life sidebar.
+1. Click **Authentication** on left navigation and perform the following steps:
+
+    [ ![Screenshot that shows the "Access Page" section.](./media/screencast-tutoriaL/settings.png) ](media/screencast-tutorial/settings.png#lightbox)
+
+    1. Turn on the **SAML Authentication** toggle.
+
+    1. In **Upload IDP Metadata File**, Click Choose File and upload the metadata which you have downloaded previously.
+
+    1. Download the **Metadata XML file** from the **ScreenPal SAML Info**.
+
+    1. Click **Save**.
 
 1. Under **SAML User Access** move the toggle to the **On** position, which forces your users to login via SAML. Once enabled, you will see additional settings for setting up communication between ScreenPal and the ADFS identity provider.
-
-    ![Screenshot that shows the "Access Page" section.](./media/screencast-tutorial/toggle.png)
 
 1. Download the metadata XML file under **ScreenPal SAML Info** and Under Upload IDP Metadata XML File, Click Choose File to upload the metadata which you have downloaded previously.
 
