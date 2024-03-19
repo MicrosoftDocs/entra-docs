@@ -68,9 +68,16 @@ The following table shows the availability of features for browser-delegated and
 
 ## How to use native authentication
 
-You can build your customer-facing apps that use native authentication by using our native authentication APIs or Microsoft Authentication Library (MSAL) SDK for Android and iOS. Whenever possible, we recommend you use the MSAL to add native authentication to your apps. 
+You can build your customer-facing apps that use native authentication by using our native authentication APIs or the Microsoft Authentication Library (MSAL) SDK for Android and iOS. Whenever possible, we recommend using MSAL to add native authentication to your apps. 
 
-If you're planning to create a mobile app on a framework currently not supported by MSAL, you may use our authentication API.  For more information, explore our [Android](how-to-run-native-authentication-sample-android-app.md) and [iOS](how-to-run-native-authentication-sample-ios-app.md) tutorials. 
+For more information on native authentication samples and tutorials, see the following table.
+
+| Language/<br/>Platform | Code sample guide | Build and integrate guide |
+| ----------- | ----------- |----------- |
+|Android (Kotlin) | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
+|iOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
+
+If you're planning to create a mobile app on a framework currently not supported by MSAL, you may use our authentication API. For more information, follow [this API reference article](/entra/identity-platform/reference-native-authentication-overview).
 
 ## Related content 
 
