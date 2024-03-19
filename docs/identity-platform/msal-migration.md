@@ -9,7 +9,7 @@ ms.date: 07/17/2023
 ms.reviewer: saeeda, jmprieur, localden
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn about MSAL so I can migrate my ADAL applications to MSAL.
 ---
 

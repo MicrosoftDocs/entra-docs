@@ -9,7 +9,7 @@ ms.date: 08/11/2023
 ms.reviewer: saeeda
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn about the types of client applications so I can decide if this platform meets my app development needs.
 ---
 

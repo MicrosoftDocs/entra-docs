@@ -37,7 +37,9 @@
     - name: Create a user 
       href: ~/fundamentals/add-users.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Create users in bulk
-      href: users-bulk-add.md    
+      href: users-bulk-add.md
+    - name: Convert external users to internal
+      href: convert-external-users-internal.md        
     - name: Manage user profiles
       href: ~/fundamentals/how-to-manage-user-profile-info.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Add custom data using extensions - Microsoft Graph
