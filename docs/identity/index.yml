@@ -31,7 +31,7 @@ productDirectory:
       url: ./enterprise-apps/what-is-application-management.md
     - title: Role-based access control
       imageSrc: ./media/index/role-based-access-control.svg
-      summary: "Manage admin permissions and apply the principle of least privilege using Microsoft Entra role-based access control"
+      summary: "Manage admin permissions and apply the principle of least privilege using Microsoft Entra role-based access control."
       url: ./role-based-access-control/custom-overview.md
     - title: User management
       imageSrc: ./media/index/users.svg
