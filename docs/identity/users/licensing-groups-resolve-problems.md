@@ -91,6 +91,7 @@ To solve this problem, remove users from unsupported locations from the licensed
 
 > [!NOTE]
 > When Microsoft Entra ID assigns group licenses, any users without a specified usage location inherit the location of the directory. We recommend that administrators set the correct usage location values on users before using group-based licensing to comply with local laws and regulations.
+![Uploading image.png…]()
 
 ## Duplicate proxy addresses
 
@@ -114,7 +115,7 @@ After you resolve any proxy address problems for the affected users, make sure t
 
 Updating license assignment on a user causes the proxy address calculation to be triggered, which can change user attributes. To understand the exact reason of the change and solve the problem, see this article on [how the proxyAddresses attribute is populated in Microsoft Entra ID](https://support.microsoft.com/help/3190357/how-the-proxyaddresses-attribute-is-populated-in-azure-ad).
 
-## LicenseAssignmentAttributeConcurrencyException in audit logs
+## License Assignment Attribute Concurrency Exception in audit logs
 
 **Problem:** User has LicenseAssignmentAttributeConcurrencyException for license assignment in audit logs.
 When group-based licensing tries to process concurrent license assignment of the same license to a user, this exception is recorded on the user. This usually happens when a user is a member of more than one group with same assigned license. Microsoft Entra ID retries processing the user license until the issue is resolved. There's no action required from the customer to fix this issue.
