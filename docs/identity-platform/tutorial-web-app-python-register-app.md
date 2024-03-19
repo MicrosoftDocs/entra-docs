@@ -4,7 +4,7 @@ description: In this tutorial, you learn how to register a Python web app with t
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.date: 02/27/2024
+ms.date:  03/18/2024
 ms.service: identity-platform
 
 ms.topic: tutorial
@@ -33,15 +33,14 @@ In this tutorial, you'll;
 
 ## Register the Python web app and record identifiers
 
-The Microsoft identity platform performs identity and access management (IAM) only for registered applications. Follow these steps to register your application in the Microsoft Entra Admin Center: 
+To integrate identity and access management capabilities into your application, you start by registering your app with the  Microsoft identity platform. Follow these steps to register your application in the Microsoft Entra Admin Center: 
 
-1. Sign in to the [Microsoft Entra Admin Center](https://portal.azure.com).
-1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="../media/2-portal-directory-subscription-filter.png" border="false"::: at the right of the top menu to switch to the tenant where you want to register the application.
-1. Search for and select **Azure Active Directory**.
-1. On the left side bar, under **Manage**, select **App registrations**, then **New registration**. 
+1. Sign in to the [Microsoft Entra Admin Center](https://entra.microsoft.com/signin/index/).
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
+1. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
+1. Enter a **Name** for your application, for example *python-webapp*. 
 1. Enter a **Name** for your application, for example *python-flask-webapp*. Users of your application might see the display name when they use the app, for example during sign-in. You can change the display name at any time.
-1. Under **Supported account types**, select **Accounts in any organizational directory(Any Azure AD directory Multitenant)**
-1. Ignore the **Redirect URI (optional)** for now. You'll configure it in the next section
+1. Under **Supported account types**, select **Accounts in any organizational directory and personal Microsoft accounts.**
 1. Select **Register** to complete the initial app registration.
 
 When registration finishes, the Microsoft Entra Admin Center displays the app registration's **Overview** pane. From the **Overview** pane, record the Directory (tenant) ID and the Application (client) ID to be used in a later step.
@@ -51,11 +50,10 @@ When registration finishes, the Microsoft Entra Admin Center displays the app re
 To add a redirect URI for your Python Flask web app, follow these steps:
 
 1. In the Microsoft Entra Admin Center, in **App registrations**, select your application.
-2. Under **Manage**, select **Authentication**.
-3. Under **Platform configurations**, select **Add a platform**.
-4. Under **Configure platforms**, select **Web**.
-5. Upon selecting web as your app's platform, you'll be prompted to enter a redirect URI. Add `http://localhost:5000/getAToken` as the redirect URI for your web app.  
-6. Select **Configure**.
+1. Under **Manage**, select **Authentication**.
+1. Under **Platform configurations**, select **Add a platform**, then select **Web**.
+1. Upon selecting web as your app's platform, you'll be prompted to enter a redirect URI. Add `http://localhost:5000/getAToken` as the redirect URI for your web app.  
+1. Select **Configure**.
 
 ## Configure credentials
 
@@ -70,7 +68,7 @@ For this tutorial, you'll use a client secret, also known as an application pass
 1. Select **Add**.
 1. Record the client secret value (not its ID) for use in a later step. This secret value is only shown once when you create it and never displayed after leaving this page.
 
-Although you used a client secretin this tutorial, we recommended that you use a certificate before moving the application to a production environment. For more information on how to use a certificate, see [these instructions](./certificate-credentials.md).
+Although you used a client secret in this tutorial, we recommend using a certificate before moving the application to a production environment. For more information on how to use a certificate, see [these instructions](./certificate-credentials.md).
 
 ## Next steps
 
