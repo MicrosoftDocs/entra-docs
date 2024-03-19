@@ -13,19 +13,16 @@ ms.topic: tutorial
 
 # Tutorial: Add sign in to a Python Flask web app
 
-This tutorial is the final part of a tutorial series that demonstrates building a Node.js command line interface (CLI) app and preparing it for authentication using the Microsoft Entra admin center. In [part 2 of this series](./tutorial-cli-app-node-sign-in-prepare-app.md), you built a Node.js CLI application and prepared it for authentication. This tutorial shows you how to authenticate users in the Node.js CLI application you built.
+This tutorial is the third part of a tutorial series that demonstrates building a Python Flask web app from scratch and integrating authentication using the Microsoft identity platform. In this tutorial, you add code to authenticate users in the app you built.
 
 > [!div class="checklist"]
 >
 > - Import the required modules and configuration
 > - Create an instance of a Flask web app
 > - Configure ProxyFix middleware for local development
-
-> - Create a token request object
-> - Define function to acquire tokens
-> - Initiate the authentication flow
-> - 
-
+> - Add code to sign in users
+> - Handle authentication responses
+> - Sign out users
 
 ## Import required packages and configurations
 
@@ -132,5 +129,5 @@ def index():
 
 ## Next steps
 
-- [Enable password reset](how-to-enable-password-reset-customers.md)
-- [Customize branding for your sign-in experience](./how-to-customize-branding-customers.md)
+> [!div class="nextstepaction"]
+> [Tutorial: Call a protected API and display the results in a Python Flask web app](tutorial-web-app-python-prepare-app.md)

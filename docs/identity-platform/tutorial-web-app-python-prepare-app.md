@@ -109,9 +109,6 @@ In the templates folder, create a HTML file named *login.html* and add the follo
 </html>
 ```
 
-Your app will render the login template when 
-
-
 This template represents the login page where users can log in to your application. You’ll need to add a login form to this template. Here’s the basic structure:
 
 #### Index template
@@ -147,6 +144,7 @@ In the templates folder, create a HTML file named *index.html* and add the follo
 </html>
 ```
 The index template serves as a general design template that other templates inherit. Your app will render this template when serving the page that all users, authenticated or not, can access.
+
 #### Display page
 
 This template is likely used to display the result of an API call. It could show data retrieved from a downstream API. Here’s a simple example:
@@ -225,24 +223,16 @@ necessary environment variables</a> for your deployment?
 In your code editor, open *app_config.py*, which holds the configuration parameters, and add the following code:
 
 ```python
-
 import os
 AUTHORITY= "https://login.microsoftonline.com/common"
 
 # Application (client) ID of app registration
-CLIENT_ID = "80977fed-1946-4cac-a25a-c8dd1d5636ce" #"
+CLIENT_ID = "80977fed-1946-4cac-a25a-c8dd1d5636ce" 
 # Application's generated client secret: never check this into source control!
-CLIENT_SECRET = "ADO8Q~wEwKnSkg4xfH4Hgq~yp4OYlJR80k9i_anw" #""
+CLIENT_SECRET = "ADO8Q~wEwKnSkg4xfH4Hgq~yp4OYlJR80k9i_anw" 
 REDIRECT_PATH = "/getAToken"  # Used for forming an absolute URL to your redirect URI.
-# The absolute URL must match the redirect URI you set
-# in the app's registration in the Azure portal.
 
-# You can find more Microsoft Graph API endpoints from Graph Explorer
-# https://developer.microsoft.com/en-us/graph/graph-explorer
-ENDPOINT = 'https://graph.microsoft.com/v1.0/me'  # This resource requires no admin consent
-
-# You can find the proper permission names from this document
-# https://docs.microsoft.com/en-us/graph/permissions-reference
+ENDPOINT = 'https://graph.microsoft.com/v1.0/me'  
 SCOPE = ["User.Read"]
 
 # Tells the Flask-session extension to store sessions in the filesystem
@@ -265,8 +255,8 @@ AUTHORITY=<your authority url>
 In your *.env.sample* file, find the placeholders:
 
 - `client id` and replace it with the Application (client) ID of the app you registered earlier.
-- 
-- 
+
+
 ## Next step
 
 Learn how to add sign-in support to a Python Flask web app in the next part of this tutorial series:

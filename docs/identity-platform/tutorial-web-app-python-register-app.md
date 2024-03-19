@@ -25,7 +25,7 @@ In this tutorial, you'll;
 
 ## Prerequisites
 
-* An Azure account with an active subscription. If you don't have one, [create an account for free](https://azure.microsoft.com/en-us/free/).
+* An Azure account with an active subscription. If you don't have one, [create an account for free](https://azure.microsoft.com/free/).
 * The Azure account you use must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
     * Application Administrator
     * Application Developer
