@@ -43,7 +43,7 @@ By default, cross-tenant synchronization includes commonly used attributes on th
 
    ![Diagram of synchronization with commonly used attributes.](./media/governance-cross-tenant-sync/common-attributes.png)
 
-Organizations use the attributes to help create dynamic membership of groups and access packages in the source and target tenant. Some Microsoft Entra ID features have user attributes to target, s=such as lifecycle workflow user scoping.  
+Organizations use the attributes to help create dynamic membership of groups and access packages in the source and target tenant. Some Microsoft Entra ID features have user attributes to target, such as lifecycle workflow user scoping.  
 
 To remove, or deprovision, a B2B collaboration user from a tenant automatically stops access to resources in that tenant. This configuration is relevant when employees leave an organization. 
 
@@ -86,7 +86,7 @@ Use access reviews of users in source tenants to avoid potential conflicts betwe
 
 ### Review target-tenant user access
 
-Organizations can include B2B collaboration users in access reviews, including users provisioned by cross-tenant synchronization in target tenants. This option enables access recertification of resources in target tenants. Although organizations can target all users with access reviews, they can target guest users. 
+Organizations can include B2B collaboration users in access reviews, including users provisioned by cross-tenant synchronization in target tenants. This option enables access recertification of resources in target tenants. Although organizations can target all users in access reviews, guest users can be explicitly targeted if required. 
 
 For organizations that synchronize B2B collaboration users, typically Microsoft doesn’t recommend removing denied guest users automatically from access reviews. Cross-tenant synchronization reprovisions the users if they're in the synchronization scope. 
 
