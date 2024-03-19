@@ -49,7 +49,7 @@ In this tutorial, you learn how to:
             //... 
     ``` 
      
-    Learn more about [MSAL Android SDK attribute builder](concept-native-authentication-user-attribute-builder.md).
+    Learn more about [MSAL Android SDK attribute builder](concept-native-authentication-user-attribute-builder.md#tabs=android-kotlin).
 
 - Use `signUp(username, attributes)` method to start sign-up with username and attributes flow: 
  
