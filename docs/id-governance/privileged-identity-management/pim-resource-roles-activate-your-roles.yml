@@ -44,7 +44,7 @@ procedureSection:
       - |
         Browse to **Identity governance** > **Privileged Identity Management** > **My roles**.
 
-          [ ![Screenshot of my roles page showing roles you can activate.](./media/pim-resource-roles-activate-your-roles/resources-my-roles.png) ]()
+          [ ![Screenshot of my roles page showing roles you can activate.](./media/pim-resource-roles-activate-your-roles/resources-my-roles.png) ](./media/pim-resource-roles-activate-your-roles/resources-my-roles.png#lightbox)
       - |
         Select **Azure resource roles** to see a list of your eligible Azure resource roles.
 
@@ -52,7 +52,7 @@ procedureSection:
       - |
         In the **Azure resource roles** list, find the role you want to activate.
 
-          [ ![Screenshot of azure resource roles - My eligible roles list.](./media/pim-resource-roles-activate-your-roles/resources-my-roles-activate.png) ]()
+          [ ![Screenshot of azure resource roles - My eligible roles list.](./media/pim-resource-roles-activate-your-roles/resources-my-roles-activate.png) ](./media/pim-resource-roles-activate-your-roles/resources-my-roles-activate.png#lightbox)
       - |
         Select **Activate** to open the Activate page.
 
@@ -189,7 +189,7 @@ procedureSection:
       - |
         Select **My requests** to see a list of your Microsoft Entra role and Azure resource role requests.
 
-         [ ![Screenshot of my requests - Azure resource page showing your pending requests.](./media/pim-resource-roles-activate-your-roles/resources-my-requests.png) ]()
+         [ ![Screenshot of my requests - Azure resource page showing your pending requests.](./media/pim-resource-roles-activate-your-roles/resources-my-requests.png) ](./media/pim-resource-roles-activate-your-roles/resources-my-requests.png#lightbox)
       - |
         Scroll to the right to view the **Request Status** column.
   - title: |
