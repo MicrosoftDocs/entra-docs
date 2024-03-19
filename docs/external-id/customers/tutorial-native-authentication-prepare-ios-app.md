@@ -27,7 +27,7 @@ In this tutorial, you learn how to:
 ## Prerequisites
 
 - <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>
-- [How to run the iOS sample app](how-to-run-native-authentication-sample-ios-app.md).
+- [Sign in users in sample iOS (Swift) mobile app by using native authentication](how-to-run-native-authentication-sample-ios-app.md).
 - iOS project
 
 ## Add the MSAL framework to an iOS app
@@ -76,7 +76,7 @@ MSAL provides a logging API that you can use to enable and configure logging. To
 MSALGlobalConfig.loggerConfig.logLevel = .verbose
 MSALGlobalConfig.loggerConfig.setLogCallback { logLevel, message, containsPII in
    if !containsPII {
-         print("MSAL: \(message ?? "")")
+      print("MSAL: \(message ?? "")")
    }
 }
 ```

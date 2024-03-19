@@ -22,7 +22,7 @@ This prehire scenario generates a temporary access pass for our new employee and
 
 ## Prerequisites
 
-[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 
 ##  Before you begin
@@ -33,7 +33,7 @@ Two accounts are required for this tutorial, one account for the new hire and an
 -	Department must be set to sales
 -	Manager attribute must be set, and the manager account should have a mailbox to receive an email
 
-For more comprehensive instructions on how to complete these prerequisite steps, you may refer to the [Preparing user accounts for Lifecycle workflows tutorial](tutorial-prepare-user-accounts.md). The [TAP policy](~/identity/authentication/howto-authentication-temporary-access-pass.md#enable-the-temporary-access-pass-policy) must also be enabled to run this tutorial.
+For more comprehensive instructions on how to complete these prerequisite steps, you may refer to the [Preparing user accounts for Lifecycle workflows tutorial](tutorial-prepare-user-accounts.md). The [TAP policy](../identity/authentication/howto-authentication-temporary-access-pass.md#enable-the-temporary-access-pass-policy) must also be enabled to run this tutorial.
 
 Detailed breakdown of the relevant attributes:
 
@@ -57,7 +57,7 @@ The pre-hire scenario can be broken down into the following:
 
 Use the following steps to create a pre-hire workflow that generates a TAP and send it via email to the user's manager using the Microsoft Entra admin center.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 1. Select **Identity Governance**.
 1. Select **Lifecycle workflows**.
 1. On the **Overview** page, select **New workflow**.

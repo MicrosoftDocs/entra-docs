@@ -177,7 +177,7 @@ Helga@contoso.com,1234567,1234567abcdef1234567abcdef,60,Contoso,HardwareKey
 > [!NOTE]
 > Be sure to include the header row in your CSV file.
 
-An Authentication Policy Administrator can sign in to the [Microsoft Entra admin center](https://entra.microsoft.com), go to **Protection** > **Multifactor authentication** > **OATH tokens**, and upload the CSV file.
+Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Global Administrator, go to **Protection** > **Multifactor authentication** > **OATH tokens**, and upload the CSV file.
 
 Depending on the size of the CSV file, it might take a few minutes to process. Select **Refresh** to get the status. If there are any errors in the file, you can download a CSV file that lists them. The field names in the downloaded CSV file are different from those in the uploaded version.
 
