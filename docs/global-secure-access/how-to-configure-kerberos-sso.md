@@ -23,7 +23,7 @@ Before you get started with single sign-on, make sure your environment is ready 
 - The latest version of the Microsoft Entra private access connector is installed on a Windows server that has access to your domain controllers.
 - The latest version of the Global Secure Access client. For more information on the client, see [Global Secure Access clients](concept-clients.md).
 
-### Publish resource that will be used for single sign-on
+### Publish resource that is used for single sign-on
 To test single sign-on, create a new enterprise application that publishes a file share. Using an enterprise application to publish your file share allows you to assign a Conditional Access policy to this resource and enforce extra security controls, such as multifactor authentication.
 
 1. In the Microsoft Entra admin center, select **Global Secure Access (Preview)** > **Applications** > **Enterprise Applications**.
@@ -49,7 +49,7 @@ To deploy Windows Hello for Business cloud Kerberos trust with on premises Activ
 ## Publish domain controllers
 Domain Controllers must be published for clients to obtain Kerberos tickets. The tickets are required for single sign-on to on premises resources.
 
-At a minimum, publish all Domain Controllers that are configured in the Active Directory site where your Private Access connectors are installed. For example, if your Private Access connectors are in your Brisbane data center, you should publish all the Domain Controllers in the Brisbane data center.
+At a minimum, publish all Domain Controllers that are configured in the Active Directory site where your Private Access connectors are installed. For example, if your Private Access connectors are in your Brisbane data center, publish all the Domain Controllers in the Brisbane data center.
 
 The Domain Controller ports are required to enable SSO to on-premises resources.
 
@@ -62,7 +62,7 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 > The guide focuses on enabling SSO to on-premises resources and excludes configuration required for Windows domain-joined clients to perform domain operations (password change, Group Policy, etc.).
 
 1. Select **Global Secure Access (Preview)** > **Applications** > **Enterprise Applications** and then select **New Application** to create a new application to publish your Domain Controllers.
-1. Select **Add application segment** and then add all of your Domain Controllers’ IPs or FQDNs (not both) and ports as per the table. Only the Domain Controllers in the Active Directory site where the private access connectors are located should be published.
+1. Select **Add application segment** and then add all of your Domain Controllers’ IPs or Fully Qualified Domain Names (FQDNs) and ports as per the table. Don't add both IPs and FQDNs. Only the Domain Controllers in the Active Directory site where the private access connectors are located should be published.
 
 > [!NOTE]
 > Make sure you don’t use wildcard FQDNs to publish your domain controllers, instead add their specific IPs or FQDNs.
