@@ -47,10 +47,6 @@ There are multiple ways of offering a recovery mechanism to users, each with the
 
 We implement [the Decentralized Identity Foundation's Well Known DID Configuration spec](https://identity.foundation/.well-known/resources/did-configuration/) in order to connect a DID to a highly known existing system, domain names. Each DID created using the Microsoft Entra Verified ID has the option of including a root domain name that is encoded in the DID Document. Follow the article titled [Link your Domain to your Distributed Identifier](how-to-dnsbind.md) to learn more.  
 
-### Why does the Microsoft Entra Verified ID support ION as its DID method, and therefore Bitcoin to provide decentralized public key infrastructure?
-
-Microsoft now offers two different trust systems, Web and ION. You can choose to use either one of them during tenant onboarding. ION is a decentralized, permissionless, scalable decentralized identifier Layer 2 network that runs atop Bitcoin. It achieves scalability without including a special crypto asset token, trusted validators, or centralized consensus mechanisms. We use Bitcoin for the base Layer 1 substrate because of the strength of the decentralized network to provide a high degree of immutability for a chronological event record system.
-
 ### What are the licensing requirements?
 
 There are no special licensing requirements to issue Verifiable credentials.
@@ -73,37 +69,9 @@ Resetting requires that you opt out and opt back into the Microsoft Entra Verifi
     :::image type="content" source="media/verifiable-credentials-faq/region.png" alt-text="settings delete and opt out":::
 1. See the value for Country or Region. If the value is a country or a region in Europe, your Microsoft Entra Verified ID service is set up in Europe.
 
-### How can I check if my tenant has the new Hub endpoint?
+### Does Microsoft Entra Verified ID support ION as its DID method?
 
-1. Navigate to the Verified ID in the Azure portal.  
-1. Navigate to the Organization Settings. 
-1. Copy your organization’s Decentralized Identifier (DID). 
-1. Go to the [ION Explorer](https://identity.foundation/ion/explorer) and paste the DID in the search box 
-1. Inspect your DID document and search for the ` “#hub” ` node.
-
-```json
- "service": [
-      {
-        "id": "#linkeddomains",
-        "type": "LinkedDomains",
-        "serviceEndpoint": {
-          "origins": [
-            "https://contoso.com/"
-          ]
-        }
-      },
-      {
-        "id": "#hub",
-        "type": "IdentityHub",
-        "serviceEndpoint": {
-          "instances": [
-            "https://verifiedid.hub.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000"
-          ],
-          "origins": []
-        }
-      }
-    ],
-```
+Verified ID supported DID:ION in preview up until December 2023 after which it was discontinued.
 
 ### How do I move to did:web from did:ion?
 
