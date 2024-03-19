@@ -20,9 +20,10 @@ Fortunately, the MSAL mobile SDK enables you to build the user attributes and as
 
 ## Build user attributes
 
- ### [Android](#tab/Android(Kotlin))
+### [Android(Kotlin)](#tab/android-kotlin)
 
 To build user attributes in the Android MSAL SDK:
+
 - Use the utility class `UserAttribute.Builder` that the SDK provides. The `UserAttributes.Builder` class contains methods whose parameter is the value that you collect from the user.
 - Identify the user attributes that you want to build, then use the following code snippet to build them:
 
@@ -65,9 +66,10 @@ To build user attributes in the Android MSAL SDK:
         }  
      ```
 
- ### [iOS](#tab/iOS(Swift))
+### [iOS(Swift)](#tab/ios-swift)
 
 To build user attributes in the iOS MSAL SDK:
+
  - Identify the user attributes that you want to build, then create a dictionary variable, where:
     - the `key` is the programmable name of the user attribute a string. The programmable name can be for built-in or custom attribute. 
     - the `value` in the value of the user attribute that you collect from the user.
