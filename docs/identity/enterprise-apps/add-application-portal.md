@@ -17,9 +17,9 @@ ms.custom: mode-other, enterprise-apps
 
 # Quickstart: Add an enterprise application
 
-In this quickstart, you use the Microsoft Entra admin center to add an enterprise application to your Microsoft Entra tenant. Microsoft Entra ID has a gallery that contains thousands of enterprise applications that have been preintegrated. Many of the applications your organization uses are probably already in the gallery. This quickstart uses the application named **Microsoft Entra SAML Toolkit** as an example, but the concepts apply for most [enterprise applications in the gallery](~/identity/saas-apps/tutorial-list.md).
+In this quickstart, you use the Microsoft Entra admin center to add an enterprise application to your Microsoft Entra tenant. Microsoft Entra ID has a gallery that contains thousands of enterprise applications that are already preintegrated. Many of the applications your organization uses are probably already in the gallery. This quickstart uses the application named **Microsoft Entra SAML Toolkit** as an example, but the concepts apply for most [enterprise applications in the gallery](~/identity/saas-apps/tutorial-list.md).
 
-It's recommended that you use a nonproduction environment to test the steps in this quickstart.
+We recommend that you use a nonproduction environment to test the steps in this quickstart.
 
 ## Prerequisites
 
