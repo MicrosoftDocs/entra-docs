@@ -50,50 +50,46 @@ procedureSection:
       :::image type="content" source="media/howto-mfa-userdevicesettings/add-authentication-method-detail.png" alt-text="Add authentication methods from the Microsoft Entra admin center":::
 
       To add authentication methods for a user in the Microsoft Entra admin center:  
-    steps:
-      - |
-        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
-      - |
-        Browse to **Identity** > **Users** > **All users**. 
-      - |  
-        Choose the user for whom you wish to add an authentication method and select **Authentication methods**. 
-      - |   
-        At the top of the window, select **+ Add authentication method**.
-          - Select a method (phone number or email). Email may be used for self-password reset but not authentication. When adding a phone number, select a phone type and enter phone number with valid format (e.g. +1 4255551234).
-          - Select **Add**.
+      1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
+      1. Browse to **Identity** > **Users** > **All users**. 
+      1. Choose the user for whom you wish to add an authentication method and select **Authentication methods**.  
+      1. At the top of the window, select **+ Add authentication method**.
+        1. Select a method (phone number or email). Email may be used for self-password reset but not authentication. When adding a phone number, select a phone type and enter phone number with valid format (e.g. +1 4255551234).
+        1. Select **Add**.
 
-        > [!NOTE]
-        > The preview experience allows administrators to add any available authentication methods for users, while the original experience only allows updating of phone and alternate phone methods.
+      > [!NOTE]
+      > The preview experience allows administrators to add any available authentication methods for users, while the original experience only allows updating of phone and alternate phone methods.
 
-        ### Manage methods using PowerShell
+      ### Manage methods using PowerShell
 
-        Install the Microsoft.Graph.Identity.Signins PowerShell module using the following commands. 
+      Install the Microsoft.Graph.Identity.Signins PowerShell module using the following commands. 
+    code: |
+          ```powershell
+          Install-module Microsoft.Graph.Identity.Signins
+          Connect-MgGraph -Scopes "User.Read.all","UserAuthenticationMethod.Read.All","UserAuthenticationMethod.ReadWrite.All"
+          Select-MgProfile -Name beta
+          ```
 
-        ```powershell
-        Install-module Microsoft.Graph.Identity.Signins
-        Connect-MgGraph -Scopes "User.Read.all","UserAuthenticationMethod.Read.All","UserAuthenticationMethod.ReadWrite.All"
-        Select-MgProfile -Name beta
-        ```
+          List phone based authentication methods for a specific user.
 
-        List phone based authentication methods for a specific user.
+          ```powershell
+          Get-MgUserAuthenticationPhoneMethod -UserId balas@contoso.com
+          ```
 
-        ```powershell
-        Get-MgUserAuthenticationPhoneMethod -UserId balas@contoso.com
-        ```
+          Create a mobile phone authentication method for a specific user.
 
-        Create a mobile phone authentication method for a specific user.
+          ```powershell
+          New-MgUserAuthenticationPhoneMethod -UserId balas@contoso.com -phoneType "mobile" -phoneNumber "+1 7748933135"
+          ```
 
-        ```powershell
-        New-MgUserAuthenticationPhoneMethod -UserId balas@contoso.com -phoneType "mobile" -phoneNumber "+1 7748933135"
-        ```
+          Remove a specific phone method for a user
 
-        Remove a specific phone method for a user
+          ```powershell
+          Remove-MgUserAuthenticationPhoneMethod -UserId balas@contoso.com -PhoneAuthenticationMethodId 3179e48a-750b-4051-897c-87b9720928f7
+          ```
 
-        ```powershell
-        Remove-MgUserAuthenticationPhoneMethod -UserId balas@contoso.com -PhoneAuthenticationMethodId 3179e48a-750b-4051-897c-87b9720928f7
-        ```
-
-        Authentication methods can also be managed using Microsoft Graph APIs. For more information, see [Authentication and authorization basics](/graph/auth/auth-concepts).
+          Authentication methods can also be managed using Microsoft Graph APIs. For more information, see [Authentication and authorization basics](/graph/auth/auth-concepts).
+  
   - title: |
       Manage user authentication options
     summary: |
