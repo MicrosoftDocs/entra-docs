@@ -294,6 +294,8 @@ items:
           href: concept-native-authentication.md
         - name: Native authentication challenge types
           href: concept-native-authentication-challenge-types.md
+        - name: Native authentication user attribute builder
+          href: concept-native-authentication-user-attribute.builder.md
     - name: Customizing the sign-in look and feel
       href: concept-branding-customers.md
     - name: Add your own business logic
