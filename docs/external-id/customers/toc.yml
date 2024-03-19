@@ -81,6 +81,8 @@ items:
                 items:
                   - name: Android (.NET MAUI) - sign in users
                     href: how-to-mobile-app-maui-sample-sign-in.md
+                  - name: Android (Kotlin) - sign in users
+                    href: sample-mobile-app-android-kotlin-sign-in.md
                   - name: iOS (Swift) - Sign in users and call an API
                     href: sample-mobile-app-ios-swift-sign-in.md
               - name: Native authentication
