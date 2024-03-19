@@ -3,7 +3,7 @@ title: Self-service sign-up portal for B2B collaboration
 description: Learn how to customize the onboarding workflow for Microsoft Entra B2B users to fit your organization’s needs.
  
 ms.service: entra-external-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 01/23/2024
 
 ms.author: mimart

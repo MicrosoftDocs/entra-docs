@@ -9,7 +9,7 @@ ms.date: 09/26/2019
 ms.reviewer: shoatman
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer creating a public client app, I want to understand the differences between single and multiple accounts scenarios, so I can implement the correct type for my app.
 ---
 

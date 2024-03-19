@@ -9,7 +9,7 @@ ms.date: 02/08/2023
 ms.reviewer: brianmel
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer building applications for frontline workers, I want to understand how to enable shared device mode in my apps using Microsoft Entra ID, so that I can provide a secure and optimized experience for users on shared Android and iOS devices.
 ---
 
