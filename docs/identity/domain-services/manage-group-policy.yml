@@ -129,9 +129,9 @@ procedureSection:
 
           When done, choose **File > Save** to save the policy. Computers refresh Group Policy by default every 90 minutes and apply the changes you made.
 
-nextStep:
-  text: For more information on the available Group Policy settings that you can configure using the Group Policy Management Console, see Work with Group Policy preference items.
-  url: /previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn789194(v=ws.11)
+relatedContent:
+  - text: Work with Group Policy preference items
+    url: /previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn789194(v=ws.11)
 
 
 
