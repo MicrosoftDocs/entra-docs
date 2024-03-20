@@ -50,16 +50,22 @@ procedureSection:
       1. Select **Create new policy**.
       1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
       1. Under **Assignments**, select **Users or workload identities**.
-          a. Under **Include**, select **All users**.
-          b. Under **Exclude**, select **Users and groups** and exclude at least one account to prevent yourself from being locked out. If you don't exclude any accounts, you can't create the policy.
+
+        a. Under **Include**, select **All users**.
+        b. Under **Exclude**, select **Users and groups** and exclude at least one account to prevent yourself from being locked out. If you don't exclude any accounts, you can't create the policy.
+      
       1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
       1. Under **Conditions** > **Device platforms**, set **Configure** to **Yes**.
-          a. Under **Include**, **Select device platforms**.
-          b. Choose **Android** and **iOS**.
-          c. Select **Done**.
+          
+        a. Under **Include**, **Select device platforms**.
+        b. Choose **Android** and **iOS**.
+        c. Select **Done**.
+
       1. Under **Access controls** > **Grant**, select **Grant access**.
-          a. Select **Require approved client app** and **Require app protection policy**
-          b. **For multiple controls** select **Require one of the selected controls**
+        
+        a. Select **Require approved client app** and **Require app protection policy**
+        b. **For multiple controls** select **Require one of the selected controls**
+      
       1. Confirm your settings and set **Enable policy** to **Report-only**.
       1. Select **Create** to create to enable your policy.
 
@@ -82,20 +88,28 @@ procedureSection:
         Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
       - |  
         Under **Assignments**, select **Users or workload identities**.
-            a. Under **Include**, select **All users**.
-            b. Under **Exclude**, select **Users and groups** and exclude at least one account to prevent yourself from being locked out. If you don't exclude any accounts, you can't create the policy.
-            c. Select **Done**.
+            
+          a. Under **Include**, select **All users**.
+          b. Under **Exclude**, select **Users and groups** and exclude at least one account to prevent yourself from being locked out. If you don't exclude any accounts, you can't create the policy.
+          c. Select **Done**.
+
       - |  
         Under **Target resources** > **Cloud apps** > **Include**, select **Select apps**.
-            a. Select **Office 365 Exchange Online**.
-            b. Select **Select**.
+
+          a. Select **Office 365 Exchange Online**.
+          b. Select **Select**.
+
       - |  
         Under **Conditions** > **Client apps**, set **Configure** to **Yes**.
-            a. Uncheck all options except **Exchange ActiveSync clients**.
-            b. Select **Done**.
+
+          a. Uncheck all options except **Exchange ActiveSync clients**.
+          b. Select **Done**.
+
       - |  
         Under **Access controls** > **Grant**, select **Grant access**.
-            a. Select **Require app protection policy**
+
+          a. Select **Require app protection policy**
+          
       - |  
         Confirm your settings and set **Enable policy** to **Report-only**.
       - |  
