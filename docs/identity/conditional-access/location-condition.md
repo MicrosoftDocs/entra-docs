@@ -243,4 +243,4 @@ A preview version of the Graph API for named locations is available, for more in
 
 ## Next steps
 
-- Configure an example Conditional Access policy using location, see the article [Conditional Access: Block access by location](howto-conditional-access-policy-location.md).
+- Configure an example Conditional Access policy using location, see the article [Conditional Access: Block access by location](howto-conditional-access-policy-location.yml).
