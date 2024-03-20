@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: glossary
-ms.date: 06/16/2023
+ms.date: 03/20/2024
 ms.author: jfields
 ---
 
@@ -21,7 +21,7 @@ This glossary provides a list of some of the commonly used cloud terms in Micros
 | ACL                  | Access control list. A list of files or resources that contain information about which users or groups have permission to access those resources or modify those files.    |
 | ARN                  | Azure Resource Notification    |
 | Authorization System                   | CIEM supports AWS accounts, Azure Subscriptions, GCP projects as the Authorization systems     |
-| Authorization System Type                  | Any system which provides the authorizations by assigning the permissions to the identities, resources. CIEM supports AWS, Azure, GCP as the Authorization System Types     |
+| Authorization System Type                  | Any system that provides the authorizations by assigning the permissions to the identities, resources. CIEM supports AWS, Azure, GCP as the Authorization System Types     |
 | Cloud security        | A form of cybersecurity that protects data stored online on cloud computing platforms from theft, leakage, and deletion. Includes firewalls, penetration testing, obfuscation, tokenization, virtual private networks (VPN), and avoiding public internet connections.     |
 | Cloud storage         | A service model in which data is maintained, managed, and backed up remotely. Available to users over a network.                |
 | CIAM                 | Cloud Infrastructure Access Management     |
