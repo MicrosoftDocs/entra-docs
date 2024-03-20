@@ -45,7 +45,7 @@ def call_downstream_api():
 
 Follow these steps to test the sign in, call API, and sign out experiences in your web app:
 
-1. I f you haven't already, replace the placeholder values in the *.env.sample* file with your Microsoft Entra app registration details (client ID, client secret, and authority URL)
+1. If you haven't already, replace the placeholder values in the *.env.sample* file with your Microsoft Entra app registration details (client ID, client secret, and authority URL)
 
 1. Create a virtual environment for the app:
 

@@ -38,7 +38,6 @@ To integrate identity and access management capabilities into your application, 
 1. Sign in to the [Microsoft Entra Admin Center](https://entra.microsoft.com/signin/index/).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
-1. Enter a **Name** for your application, for example *python-webapp*. 
 1. Enter a **Name** for your application, for example *python-flask-webapp*. Users of your application might see the display name when they use the app, for example during sign-in. You can change the display name at any time.
 1. Under **Supported account types**, select **Accounts in any organizational directory and personal Microsoft accounts.**
 1. Select **Register** to complete the initial app registration.
