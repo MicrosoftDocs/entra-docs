@@ -86,10 +86,10 @@ procedureSection:
 
         :::image type="content" source="media/license-users-groups/license-option-blade-assignments.png" alt-text="Screenshot of the License option page, with all options available in the license plan.":::
 
-          The **Assign license** page updates to show that a user is selected and that the assignments are configured.
+        The **Assign license** page updates to show that a user is selected and that the assignments are configured.
 
-          > [!NOTE]
-          > Not all Microsoft services are available in all locations. Before a license can be assigned to a user, you must specify the **Usage location**. You can set this value in **Identity** > **Users** > **All users** > *select a user* > **Properties**. When assigning licenses to a group or bulk updates such as disabling the synchronization status for the organization, any user whose usage location isn't specified inherits the location of the tenant.
+        > [!NOTE]
+        > Not all Microsoft services are available in all locations. Before a license can be assigned to a user, you must specify the **Usage location**. You can set this value in **Identity** > **Users** > **All users** > *select a user* > **Properties**. When assigning licenses to a group or bulk updates such as disabling the synchronization status for the organization, any user whose usage location isn't specified inherits the location of the tenant.
 
       1. Select **Assign**.
 
