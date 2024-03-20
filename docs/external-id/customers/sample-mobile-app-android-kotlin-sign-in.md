@@ -12,18 +12,19 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 03/20/2024
 ms.custom: developer
-#Customer intent: As a developer, I want to authenticate users from a sample Android mobile app so that I can experience how Microsoft Entra ID for customers work.
+#Customer intent: As a developer, I want to authenticate users and call a protected web API from a sample Android mobile app so that I can experience how Microsoft Entra ID for customers work.
 ---
 
-# Sign in users aand call web API in sample Android (Kotlin) mobile app
+# Sign in users and call web API in sample Android (Kotlin) mobile app
 
-This guide shows how to run an Android sample application that demonstrates sign-up, sign in, sign out, and password reset scenarios using Microsoft Entra ID for customers. 
+This guide shows how to run an Android sample application that demonstrates sign in users and call a protected web API using Microsoft Entra ID for customers. 
   
-In this article, you learn how to: 
+In this article, you do the following tasks: 
  
-- Register application in the Microsoft Entra External ID for customers tenant.  
-- Enable public client and native authentication flows.  
-- Create user flow in the Microsoft Entra External ID for customers tenant.  
+- Register a web application in the Microsoft Entra admin center.
+- Add a platform redirect URL.
+- Enable public client flows.  
+- Create user flow.  
 - Associate your application with the user flow.  
 - Update the Android configuration code sample file to use your own Microsoft Entra External ID for customer tenant details.  
 - Run and test the sample native Android mobile application.  
@@ -32,7 +33,8 @@ In this article, you learn how to:
 
 - <a href="https://developer.android.com/studio/archive" target="_blank">Android Studio Dolphin | 2021.3.1 Patch 1</a>.
 - Microsoft Entra External ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
-- An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, [register an API in the Microsoft Entra admin center](sample-native-authentication-android-sample-app-call-web-api.md) by following the registration steps. Ensure you've completed the following steps:
+- An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the instructions for [call an API in a sample Android mobile app](sample-native-authentication-android-sample-app-call-web-api.md) to have a functional protected web API. Make sure you complete the following steps:
+
     - Register a web API application
     - Configure API scopes
     - Configure app roles
