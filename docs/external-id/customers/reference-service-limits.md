@@ -1,32 +1,32 @@
 ---
 title: Service limits and restrictions
-description: Learn about the service limits and restrictions in a customer tenant.
+description: Learn about the service limits and restrictions in an external tenant.
  
 author: csmulligan
 manager: celestedg
 ms.service: active-directory
  
-ms.subservice: ciam
+ms.subservice: entra-external-id
 ms.topic: reference
-ms.date: 02/29/2024
+ms.date: 03/20/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
-#Customer intent: As an IT admin, I want to know about the service limits and restrictions in my customer tenant.
+#Customer intent: As an IT admin, I want to know about the service limits and restrictions in my external tenant.
 ---
 <!-- Based on https://learn.microsoft.com/en-us/entra/identity/users/directory-service-limits-restrictions and https://learn.microsoft.com/en-us/azure/active-directory-b2c/service-limits?pivots=b2c-custom-policy and https://microsoft.sharepoint.com/:w:/t/aad/CPIM/EVlzWDYaozFBg-K8W2epuhoBN7rBryTH99MQTNmws_Oqyg?e=2F8Zf0 -->
 # Microsoft Entra ID for customers service limits and restrictions
 
-This article contains the usage constraints and other service limits for the Microsoft Entra ID for customers (preview), Microsoft’s new customer identity and access management (CIAM) solution. If you’re looking for the full set of Microsoft Entra ID service limits, see [Microsoft Entra service limits and restrictions](/entra/identity/users/directory-service-limits-restrictions).
+This article contains the usage constraints and other service limits for the Microsoft Entra ID for external configuration tenants, Microsoft’s new customer identity and access management (CIAM) solution. If you’re looking for the full set of Microsoft Entra ID service limits, see [Microsoft Entra service limits and restrictions](/entra/identity/users/directory-service-limits-restrictions).
 
 ## User/consumption related limits
 
-The number of users able to authenticate through a customer tenant is gated through request limits. The following table illustrates the request limits for your tenant.
+The number of users able to authenticate through an external tenant is gated through request limits. The following table illustrates the request limits for your tenant.
 
 |Category |Limit    |
 |---------|---------|
-|Maximum requests per IP per customer tenant       |6,000 per 5 minutes           |
-|Maximum requests per customer tenant     |200 per second          |
+|Maximum requests per IP per external tenant       |6,000 per 5 minutes           |
+|Maximum requests per external tenant     |200 per second          |
 
 ## Endpoint request usage
 
@@ -75,7 +75,7 @@ To obtain the token issuance rate per second for your User Flow:
 Tokens/sec = 200/requests-consumed
 ```
 
-## Configuration limits for Microsoft Entra ID for customers
+## Configuration limits for Microsoft Entra ID for external configuration tenants
 
 The following table lists the administrative configuration limits in the Microsoft Entra ID for customers service.
 
@@ -86,14 +86,14 @@ The following table lists the administrative configuration limits in the Microso
 |Number of redirect URLs per application       |100         |
 |Number of sign-out URLs per application        |1          |
 |String Limit per Attribute      |250 Chars          |
-|Number of customer tenants per subscription      |20         |
+|Number of external tenants per subscription      |20         |
 |Total number of objects (user accounts and applications) per trial tenant (can't be extended)| 10000 |
 |Total number of objects (user accounts and applications) per tenant |50000 (can be extended up to 300000) |
-|Number of policies per customer tenant |200          |
+|Number of policies per external tenant |200          |
 |Maximum policy file size      |1,024 KB          |
 |Number of API connectors per tenant     |20         |
 
-## Throttle limits for Microsoft Entra ID for customers
+## Throttle limits for Microsoft Entra ID for external configuration tenants
 
 Microsoft Entra ID for customers uses throttling to protect the cloud service from denial-of-service (DoS) attacks. The following table lists the throttle limits for the Microsoft Entra ID for customers service.
 
@@ -108,4 +108,5 @@ Microsoft Entra ID for customers uses throttling to protect the cloud service fr
 
 ## Next steps
 
-* [Start a free trial](quickstart-trial-setup.md)
+- [Start a free trial without an Azure subscription](quickstart-trial-setup.md)
+- [Create a tenant with an Azure subscription](quickstart-tenant-setup.md)
