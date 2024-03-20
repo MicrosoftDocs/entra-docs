@@ -80,7 +80,7 @@ When resource access configuration doesn’t automatically assign access, such a
 
 ### Review source-tenant user access
 
-Multitenant organizations can include internal users in access reviews. This action enables access recertification in source tenants that synchronizes users. This approach enables regular security group review, when assigned to cross-tenant synchronization. Therefore, ongoing B2B collaboration access to other tenants has approval in the user home tenant. 
+Multitenant organizations can include internal users in access reviews. This action enables access recertification in source tenants that synchronizes users. Use this approach for regular review of security groups assigned to cross-tenant synchronization. Therefore, ongoing B2B collaboration access to other tenants has approval in the user home tenant. 
 
 Use access reviews of users in source tenants to avoid potential conflicts between cross-tenant synchronization and access reviews that remove denied users upon completion. 
 
