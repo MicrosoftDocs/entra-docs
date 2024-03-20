@@ -20,7 +20,7 @@ Use Microsoft Entra Privileged Identity Management (PIM), to allow eligible role
 This article is for members who need to activate their Azure resource role in Privileged Identity Management.
 
 >[!NOTE]
->As of March 2023, you may now activate your assignments and view your access directly from blades outside of PIM in the Azure portal. Read more [here](pim-resource-roles-activate-your-roles.md#activate-with-azure-portal).
+>As of March 2023, you may now activate your assignments and view your access directly from blades outside of PIM in the Azure portal. Read more [here](pim-resource-roles-activate-your-roles.yml#activate-with-azure-portal).
 
 >[!IMPORTANT]
 >When a role is activated, Microsoft Entra PIM temporarily adds active assignment for the role. Microsoft Entra PIM creates active assignment (assigns user to a role) within seconds. When deactivation (manual or through activation time expiration) happens, Microsoft Entra PIM removes the active assignment within seconds as well.

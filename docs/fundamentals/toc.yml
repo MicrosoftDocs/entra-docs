@@ -116,8 +116,6 @@ items:
       href: whats-new-sovereign-clouds.md  
     - name: Archive for What's new? in Microsoft Entra ID
       href: whats-new-archive.md
-    - name: Archive for What's new in sovereign clouds? in Microsoft Entra ID
-      href: whats-new-sovereign-clouds-archive.md  
   - name: Frequently asked questions
     href: faq.yml
   - name: Company branding CSS template reference guide

@@ -180,8 +180,8 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
  - We added support for two new attributes: employeeOrgDataCostCenter and employeeOrgDataDivision.
  - We added CertificateUserIds attribute to Microsoft Entra Connector static schema.
  - The Microsoft Entra Connect wizard will now abort if write event logs permission is missing.
- - We updated the AADConnect health endpoints to support the US government clouds.
- - We added new cmdlets “Get-ADSyncToolsDuplicateUsersSourceAnchor and Set-ADSyncToolsDuplicateUsersSourceAnchor“ to fix bulk "source anchor has changed" errors. When a new forest is added to AADConnect with duplicate user objects, the objects are running into bulk "source anchor has changed" errors. This is happening due to the mismatch between msDsConsistencyGuid & ImmutableId. More information about this module and the new cmdlets can be found in [this article](./reference-connect-adsynctools.md).
+ - We updated the Microsoft Entra Connect Health endpoints to support the US government clouds.
+ - We added new cmdlets “Get-ADSyncToolsDuplicateUsersSourceAnchor and Set-ADSyncToolsDuplicateUsersSourceAnchor“ to fix bulk "source anchor has changed" errors. When a new forest is added to Microsoft Entra Connect with duplicate user objects, the objects are running into bulk "source anchor has changed" errors. This is happening due to the mismatch between msDsConsistencyGuid & ImmutableId. More information about this module and the new cmdlets can be found in [this article](./reference-connect-adsynctools.md).
 
 ### Bug fixes
  - We fixed a bug that prevented localDB upgrades in some Locales.

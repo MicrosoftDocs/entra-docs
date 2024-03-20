@@ -9,7 +9,7 @@ ms.date: 08/11/2023
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer building an application that requires user authentication, I want to understand how to use the OAuth 2.0 Resource Owner Password Credentials (ROPC) grant in the Microsoft identity platform, so that I can directly handle user passwords and acquire tokens for calling secured web APIs.
 ---
 
