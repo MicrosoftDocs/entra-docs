@@ -23,9 +23,7 @@ In this article, you do the following tasks:
  
 - Register a web application in the Microsoft Entra admin center.
 - Add a platform redirect URL.
-- Enable public client flows.  
-- Create user flow.  
-- Associate your application with the user flow.  
+- Enable public client flows.   
 - Update the Android configuration code sample file to use your own Microsoft Entra External ID for customer tenant details.  
 - Run and test the sample native Android mobile application.  
  
@@ -81,7 +79,7 @@ Once you've registered both your client app and web API and you've exposed the A
 1. Find the placeholder: 
  
    - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
-   - `Enter_the_Redirect_Uri_Here` and replace it with the value of *redirect_uri* in the MSAL configuration file you downloaded earlier when you added the platform redirect URL.
+   - `Enter_the_Redirect_Uri_Here` and replace it with the value of *redirect_uri* in the Microsoft Authentication Library (MSAL) configuration file you downloaded earlier when you added the platform redirect URL.
    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 1. Open */app/src/main/AndroidManifest.xml* file.
 1. Find the placeholder:
@@ -96,7 +94,7 @@ Once you've registered both your client app and web API and you've exposed the A
     private const val scopes = "" // Developers should set the respective scopes of their web API here. For example, private const val scopes = "api://{clientId}/{ToDoList.Read}"
     ```
    
-You've now configured the app and it's ready to run. 
+You've configured the app and it's ready to run. 
 
 ## Run and test the sample Android mobile application 
  
@@ -112,4 +110,4 @@ To build and run your app, follow these steps:
 
 ## Related content
 
-- [How to run the Android sample app](how-to-run-native-authentication-sample-android-app.md).
+- [Sign in users in sample Android (Kotlin) mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md).
