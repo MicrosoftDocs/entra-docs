@@ -25,7 +25,7 @@ In this article, you do the following tasks:
 - Add a platform redirect URL.
 - Enable public client flows.   
 - Update the Android configuration code sample file to use your own Microsoft Entra External ID for customer tenant details.  
-- Run and test the sample native Android mobile application.  
+- Run and test the sample Android mobile application.  
  
 ## Prerequisites  
 
