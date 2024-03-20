@@ -38,7 +38,7 @@ In this tutorial, you learn how to:
  
 ## Sign up user using username, password, and user attributes
  
-To sign up user using username (email address), password, and user attributes, we verify the user's email address through email OTP.  
+To sign up user using username (email address), password, and user attributes, we verify the user's email address through email OTP. Also, the password that the app collects from the user need to meet [Microsoft Entra's password policies](/entra/identity/authentication/concept-password-ban-bad-combined-policy). 
  
 The MSAL Android SDK provides a utility class `UserAttribute.Builder` to create user attributes.  
 

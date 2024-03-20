@@ -39,7 +39,7 @@ In this tutorial, you learn how to:
  
 ## Add sign-up with username and password  
  
-- To sign up using username (email address) and password, we need to verify the user's email through email OTP.
+- To sign up using username (email address) and password, we need to verify the user's email through email OTP. Also, the password that the app collects from the user need to meet [Microsoft Entra's password policies](/entra/identity/authentication/concept-password-ban-bad-combined-policy).
  
 - We use the `signUp(username, password)` method, which in the most common scenario returns `SignUpResult.CodeRequired`. This response indicates that Microsoft Entra expects that the app submits the OTP code sent to the user's email address for verification.
  

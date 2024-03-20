@@ -140,7 +140,7 @@ Your app collects the OTP code from the user. To submit the OTP code, use the fo
 
 ### Submit a new password
  
-After you verify the user's email, you need to collect a new password from the user and submit it. The password that the app collects from the user must meet Use the following code snippet:
+After you verify the user's email, you need to collect a new password from the user and submit it. The password that the app collects from the user need to meet [Microsoft Entra's password policies](/entra/identity/authentication/concept-password-ban-bad-combined-policy). Use the following code snippet:
  
 ```kotlin 
 private suspend fun resetPassword(currentState: ResetPasswordPasswordRequiredState) { 
