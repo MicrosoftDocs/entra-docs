@@ -173,7 +173,7 @@ private suspend fun resetPassword(currentState: ResetPasswordPasswordRequiredSta
 
 ## Auto-sign in after password reset 
 
-After a successful password reset flow, you can sign in your users without initiating a fresh sign-in flow. 
+After a successful password reset flow, you can automatically sign in your users without initiating a fresh sign-in flow. 
 
 The `ResetPasswordResult.Complete` returns `SignInContinuationState` object. The `SignInContinuationState` provides access to `signIn()` method.  
  
