@@ -9,7 +9,7 @@ ms.date: 03/14/2022
 ms.reviewer: ludwignick; emilylauber
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a web application developer, I want to understand how to handle third-party cookie blocking in browsers, so that I can implement the appropriate authentication patterns and ensure that users can sign in successfully even when third-party cookies are blocked.
 ---
 

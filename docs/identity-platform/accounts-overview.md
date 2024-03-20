@@ -10,7 +10,7 @@ ms.devlang: java
 ms.reviewer: shoatman
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an Android developer, I want to understand the concept of accounts in the Microsoft identity platform when using MSAL for Android so that I can properly manage and authenticate users across multiple organizations and systems of record.
 ---
 

@@ -27,7 +27,7 @@ In this tutorial, you learn how to:
 ## Prerequisites  
  
 - An Android project. 
-- [How to run the Android sample app](how-to-run-native-authentication-sample-android-app.md). Ensure that when creating the user flow, you select **Email with password** in the **Identity providers** section, and choose **Country/Region** and **City** under **User attributes** section.
+- [Sign in users in sample Android (Kotlin) mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md). Ensure that when creating the user flow, you select **Email with password** in the **Identity providers** section, and choose **Country/Region** and **City** under **User attributes** section.
 - [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md). 
  
 ## Sign up user using username, password, and user attributes  
