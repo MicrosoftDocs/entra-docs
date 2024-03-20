@@ -21,8 +21,9 @@ This tutorial is the third part of a tutorial series that demonstrates building 
 > - Create an instance of a Flask web app
 > - Configure ProxyFix middleware for local development
 > - Add code to sign in users
-> - Handle authentication responses
 > - Sign out users
+> - Define an entry point for the web app
+
 
 ## Import required packages and configurations
 
@@ -123,7 +124,7 @@ def logout():
 
 When a user navigates to the `/logout` URL route in the app, Flask invokes the logout function which signs them out of the current app. You also specify the page that users should be redirected to upon logging out. In the code snippet, we redirect users to the app's homepage using `url_for("index", _external=True).`
 
-## Define an entry point for the app
+## Define an entry point for the web app
 
 After implementing the sign in and sign out logic, add an entry point to your app's homepage by creating the `index()` function as follows:
 

@@ -13,7 +13,7 @@ ms.topic: tutorial
 
 # Tutorial: Call a protected API and display the results
 
-In the [previous tutorial](tutorial-web-app-dotnet-sign-in-users.md), you added the sign-in and sign-out experiences to the application. The application can now be configured to call a web API. For the purposes of this tutorial, the Microsoft Graph API is called to display the profile information of the logged-in user.
+In the [previous tutorial](tutorial-web-app-dotnet-sign-in-users.md), you added the sign-in and sign-out experiences to the application. You can now build on these functionalities to allow signed in users call a protected web API. For the purposes of this tutorial, you call the Microsoft Graph API and display profile information of the logged-in user.
 
 In this tutorial:
 
@@ -24,7 +24,7 @@ In this tutorial:
 
 ## Call the API and display the results
 
-To call a protected API, add the following code to *app.py*
+To call a protected API, you should first acquire an access token for the current user by calling `auth.get_token_for_user` as follows:
 
 ```python
 @app.route("/call_downstream_api")
@@ -40,6 +40,12 @@ def call_downstream_api():
     ).json()
     return render_template('display.html', result=api_result)
 ``` 
+
+When a user navigates to the `/call_downstream_api` URL route, Flask invokes the `call_downstream_api()` function that first attempts to obtain an access token using `auth.get_token_for_user(app_config.SCOPE)`.  If there's an authentication issue or any error in the token, you redirect the user to the log in page for re-authentication.
+
+If the app successfully obtains an access token, it makes a HTTP request to the downstream API using the `requests.get(...)` method. In the request, our downstream API URL is specified in `app_config.ENDPOINT`. You also pass the access token in the `Authorization` field of the request header. 
+
+A successful request to the downstream API (Microsoft Graph API) returns a JSON response that's stored in an `api_result` variable and passed to the `'display.html'` template for rendering. 
 
 ## Test the application
 
@@ -81,7 +87,7 @@ Follow these steps to test the sign in, call API, and sign out experiences in yo
 
     :::image type="content" source="./media/python-webapp/signed-in-user.png" alt-text="Screenshot showing a signed in user.":::
 
-1. To call a protected API and show the results, select **Call a Downstream API**. A successful call to the Microsoft Graph API returns information about the signed in user, as shown:
+1. To call a protected API and show the results, select **Call a downstream API**. A successful call to the Microsoft Graph API returns information about the signed in user, as shown:
 
     :::image type="content" source="./media/python-webapp/call-api-results.png" alt-text="Screenshot showing the results of a successful API call.":::
 

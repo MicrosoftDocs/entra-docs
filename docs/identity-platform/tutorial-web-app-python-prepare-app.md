@@ -111,7 +111,7 @@ In the templates folder, create a HTML file named *login.html* and add the follo
 </html>
 ```
 
-This template represents the login page where users can log in to your application. You’ll need to add a login form to this template. Here’s the basic structure:
+This template represents the login page where users can log in to your application.
 
 #### Index template
 
@@ -145,11 +145,11 @@ In the templates folder, create a HTML file named *index.html* and add the follo
 </body>
 </html>
 ```
-The index template serves as a general design template that other templates inherit. Your app will render this template when serving the page that all users, authenticated or not, can access.
+The index template serves as a homepage for the web app, usually rendered when users visit the root URL of the app.
 
 #### Display page
 
-This template is likely used to display the result of an API call. It could show data retrieved from a downstream API. Here’s a simple example:
+This template is used to display the result of a downstream API call. Add the following snippet to `display.html`
 
 ```html
 <!DOCTYPE html>
