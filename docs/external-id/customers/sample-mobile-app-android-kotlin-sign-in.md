@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Sign in users and call web API in sample Android (Kotlin) mobile app
 
-This guide shows how to run an Android sample application that demonstrates sign in users and call a protected web API using Microsoft Entra ID for customers. 
+This guide demonstrates how to configure a sample Android mobile application to sign in users, and call an ASP.NET Core web API.
   
 In this article, you do the following tasks: 
  
@@ -31,7 +31,7 @@ In this article, you do the following tasks:
 
 - <a href="https://developer.android.com/studio" target="_blank">Android Studio</a>.
 - Microsoft Entra External ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
-- An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the instructions for [call an API in a sample Android mobile app](sample-native-authentication-android-sample-app-call-web-api.md) to have a functional protected web API. Make sure you complete the following steps:
+- An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the instructions for [call an API in a sample Android mobile app](sample-native-authentication-android-sample-app-call-web-api.md) to have a functional protected ASP.NET Core web API. Make sure you complete the following steps:
 
     - Register a web API application
     - Configure API scopes
