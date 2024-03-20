@@ -36,89 +36,90 @@ procedureSection:
       [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
       To add B2B collaboration users to the directory, follow these steps:
-    steps:
-      - |
-        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-      - |
-        Browse to **Identity** > **Users** > **All users**.
+
+      1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+
+      2. Browse to **Identity** > **Users** > **All users**.
 
         :::image type="content" source="media/add-users-administrator/all-users-page.png" alt-text="Screenshot of the All users page.":::
-      - |
-        Select **New user** > **Invite external user** from the menu. 
+
+      3. Select **New user** > **Invite external user** from the menu. 
 
         :::image type="content" source="media/add-users-administrator/invite-external-user-menu.png" alt-text="Screenshot of the invite external user menu option.":::
 
-        ### Basics
+      ### Basics
 
-        In this section, you're inviting the guest to your tenant using *their email address*. If you need to create a guest user with a domain account, use the [create new user process](~/fundamentals/how-to-create-delete-users.yml#create-a-new-user) but change the **User type** to **Guest**. 
+      In this section, you're inviting the guest to your tenant using *their email address*. If you need to create a guest user with a domain account, use the [create new user process](~/fundamentals/how-to-create-delete-users.yml#create-a-new-user) but change the **User type** to **Guest**. 
 
-        - **Email**: Enter the email address for the guest user you're inviting.
+      - **Email**: Enter the email address for the guest user you're inviting.
 
-        - **Display name**: Provide the display name.
+      - **Display name**: Provide the display name.
 
-        -  **Invitation message**: Select the **Send invite message** checkbox to customize a brief message to the guest. Provide a Cc recipient, if necessary.
+      -  **Invitation message**: Select the **Send invite message** checkbox to customize a brief message to the guest. Provide a Cc recipient, if necessary.
 
-        :::image type="content" source="media/add-users-administrator/invite-external-user-basics-tab.png" alt-text="Screenshot of the invite external user Basics tab.":::
+      :::image type="content" source="media/add-users-administrator/invite-external-user-basics-tab.png" alt-text="Screenshot of the invite external user Basics tab.":::
 
-        Either select the **Review + invite** button to create the new user or **Next: Properties** to complete the next section.
+      Either select the **Review + invite** button to create the new user or **Next: Properties** to complete the next section.
 
-        ### Properties
+      ### Properties
 
-        There are six categories of user properties you can provide. These properties can be added or updated after the user is created. To manage these details, go to **Identity** > **Users** > **All users** and select a user to update.
+      There are six categories of user properties you can provide. These properties can be added or updated after the user is created. To manage these details, go to **Identity** > **Users** > **All users** and select a user to update.
 
-        - **Identity:** Enter the user's first and last name. Set the User type as either Member or Guest. For more information about the difference between external guests and members, see [B2B collaboration user properties](user-properties.md)
+      - **Identity:** Enter the user's first and last name. Set the User type as either Member or Guest. For more information about the difference between external guests and members, see [B2B collaboration user properties](user-properties.md)
 
-        - **Job information:** Add any job-related information, such as the user's job title, department, or manager.
+      - **Job information:** Add any job-related information, such as the user's job title, department, or manager.
 
-        - **Contact information:** Add any relevant contact information for the user.
+      - **Contact information:** Add any relevant contact information for the user.
 
-        - **Parental controls:** For organizations like K-12 school districts, the user's age group may need to be provided. *Minors* are 12 and under, *Not adult* are 13-18 years old, and *Adults* are 18 and over. The combination of age group and consent provided by parent options determine the Legal age group classification. The Legal age group classification may limit the user's access and authority.
+      - **Parental controls:** For organizations like K-12 school districts, the user's age group may need to be provided. *Minors* are 12 and under, *Not adult* are 13-18 years old, and *Adults* are 18 and over. The combination of age group and consent provided by parent options determine the Legal age group classification. The Legal age group classification may limit the user's access and authority.
 
-        - **Settings:** Specify the user's global location.
+      - **Settings:** Specify the user's global location.
 
-        Either select the **Review + invite** button to create the new user or **Next: Assignments** to complete the next section.
+      Either select the **Review + invite** button to create the new user or **Next: Assignments** to complete the next section.
 
-        ### Assignments
+      ### Assignments
 
-        You can assign external users to a group, or Microsoft Entra role when the account is created. You can assign the user to up to 20 groups or roles. Group and role assignments can be added after the user is created. The **Privileged Role Administrator** role is required to assign Microsoft Entra roles.
+      You can assign external users to a group, or Microsoft Entra role when the account is created. You can assign the user to up to 20 groups or roles. Group and role assignments can be added after the user is created. The **Privileged Role Administrator** role is required to assign Microsoft Entra roles.
 
-        **To assign a group to the new user**:
+      **To assign a group to the new user**:
 
-        1. Select **+ Add group**.
-        1. From the menu that appears, choose up to 20 groups from the list and select the **Select** button.
-        1. Select the **Review + create** button.
+      1. Select **+ Add group**.
+      1. From the menu that appears, choose up to 20 groups from the list and select the **Select** button.
+      1. Select the **Review + create** button.
 
-          :::image type="content" source="media/add-users-administrator/invite-external-user-assignments-tab.png" alt-text="Screenshot of the add group assignment process.":::
+        :::image type="content" source="media/add-users-administrator/invite-external-user-assignments-tab.png" alt-text="Screenshot of the add group assignment process.":::
 
-        **To assign a role to the new user**:
+      **To assign a role to the new user**:
 
-        1. Select **+ Add role**.
-        1. From the menu that appears, choose up to 20 roles from the list and select the **Select** button.
-        1. Select the **Review + invite** button.
+      1. Select **+ Add role**.
+      1. From the menu that appears, choose up to 20 roles from the list and select the **Select** button.
+      1. Select the **Review + invite** button.
 
-        ### Review and create
+      ### Review and create
 
-        The final tab captures several key details from the user creation process. Review the details and select the **Invite** button if everything looks good. An email invitation is automatically sent to the user. After you send the invitation, the user account is automatically added to the directory as a guest.
+      The final tab captures several key details from the user creation process. Review the details and select the **Invite** button if everything looks good. An email invitation is automatically sent to the user. After you send the invitation, the user account is automatically added to the directory as a guest.
 
-        :::image type="content" source="media/add-users-administrator/guest-user-type.png" alt-text="Screenshot showing the user list including the new Guest user.":::
+      :::image type="content" source="media/add-users-administrator/guest-user-type.png" alt-text="Screenshot showing the user list including the new Guest user.":::
 
-        ### External user invitations
-        <a name="resend-invitations-to-guest-users"></a>
+      ### External user invitations
+      <a name="resend-invitations-to-guest-users"></a>
 
-        When you invite an external guest user by sending an email invitation, you can check the status of the invitation from the user's details. If they haven't redeemed their invitation, you can resend the invitation email.
-
-        1. Go to **Identity** > **Users** > **All users** and select the invited guest user.
-        1. In the **My Feed** section, locate the **B2B collaboration** tile. 
-            - If the invitation state is **PendingAcceptance**, select the **Resend invitation** link to send another email and follow the prompts.
-            - You can also select the **Properties** for the user and view the **Invitation state**.
+      When you invite an external guest user by sending an email invitation, you can check the status of the invitation from the user's details. If they haven't redeemed their invitation, you can resend the invitation email.
+    steps:
+      - |
+        Go to **Identity** > **Users** > **All users** and select the invited guest user.
+      - |
+        In the **My Feed** section, locate the **B2B collaboration** tile. 
+         - If the invitation state is **PendingAcceptance**, select the **Resend invitation** link to send another email and follow the prompts.
+         - You can also select the **Properties** for the user and view the **Invitation state**.
 
         :::image type="content" source="media/add-users-administrator/external-user-invitation-state.png" alt-text="Screenshot of the My Feed section of the user overview page.":::
 
-          > [!NOTE]
-          > Group email addresses aren’t supported; enter the email address for an individual. Also, some email providers allow users to add a plus symbol (+) and additional text to their email addresses to help with things like inbox filtering. However, Microsoft Entra doesn’t currently support plus symbols in email addresses. To avoid delivery issues, omit the plus symbol and any characters following it up to the @ symbol.
+        > [!NOTE]
+        > Group email addresses aren’t supported; enter the email address for an individual. Also, some email providers allow users to add a plus symbol (+) and additional text to their email addresses to help with things like inbox filtering. However, Microsoft Entra doesn’t currently support plus symbols in email addresses. To avoid delivery issues, omit the plus symbol and any characters following it up to the @ symbol.
 
         The user is added to your directory with a user principal name (UPN) in the format *emailaddress*#EXT#\@*domain*. For example: *john_contoso.com#EXT#\@fabrikam.onmicrosoft.com*, where fabrikam.onmicrosoft.com is the organization from which you sent the invitations. ([Learn more about B2B collaboration user properties](user-properties.md).)
-
+  
   - title: |
       Add guest users to a group
     summary: |
