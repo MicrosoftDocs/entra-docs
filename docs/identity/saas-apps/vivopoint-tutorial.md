@@ -5,8 +5,8 @@ services: active-directory
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
 ms.date: 03/20/2024
@@ -72,21 +72,21 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier (Entity ID)** text box, type a URL using one of the following pattern:
+    a. In the **Identifier (Entity ID)** text box, type one of the following URL/Pattern:
 
     |**Identifier (Entity ID)**|
     |--------------------------|
     | `https://vivopoint.com/` |
     | `https://<SUBDOMAIN>.vivopoint.com/` |
 
-    b. In the **Reply URL** text box, type a URL using one of the following pattern:
+    b. In the **Reply URL** text box, type one of the following URL/Pattern:
 
     |**Reply URL**|
     |-------------|
     | `https://vivopoint.com/saml/acs` |
     | `https://<SUBDOMAIN>.vivopoint.com/saml/acs` |
 
-    c. In the **Sign on URL** text box, type a URL using one of the following pattern:
+    c. In the **Sign on URL** text box, type one of the following URL/Pattern:
 
     |**Sign on URL**|
     |---------------|
