@@ -15,11 +15,11 @@ ms.custom: it-pro
 
 Cross-tenant synchronization is a flexible and ready-to-use solution to provision accounts and facilitate seamless collaboration across tenants in an organization. Cross-tenant synchronization automatically manages user identity lifecycle across tenants. It provisions, synchronizes, and deprovisions users in the scope of synchronization from source tenants. 
 
-This article describes how [Microsoft Entra Identity Governance](~/id-governance/identity-governance-overview.md) customers can use cross-tenant synchronization to manage identity and access lifecycles across multitenant organizations. 
+This article describes how [Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) customers can use cross-tenant synchronization to manage identity and access lifecycles across multitenant organizations. 
 
 ## Deployment example
 
-In this example, Contoso is a multitenant organization with three production Microsoft Entra tenants. Contoso is deploying cross-tenant synchronization and Microsoft Entra Identity Governance features to address the following scenarios: 
+In this example, Contoso is a multitenant organization with three production Microsoft Entra tenants. Contoso is deploying cross-tenant synchronization and Microsoft Entra ID Governance features to address the following scenarios: 
 
 * Manage employee identity lifecycles across multiple tenants
 * Use workflows to automate lifecycle processes for employees that originate in other tenants
@@ -31,7 +31,7 @@ From a cross-tenant synchronization perspective, Contoso Europe, Middle East, an
 
    ![Diagram of a cross-tenant synchronization topology.](./media/governance-cross-tenant-sync/cross-tenant-topology.png)
 
-This supported [topology for cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-topology.md) is one of many in Microsoft Entra ID. Tenants can be a source tenant, a target tenant, or both. In the following sections, learn how cross-tenant synchronization and Microsoft Entra Identity Governance features address several scenarios. 
+This supported [topology for cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-topology.md) is one of many in Microsoft Entra ID. Tenants can be a source tenant, a target tenant, or both. In the following sections, learn how cross-tenant synchronization and Microsoft Entra ID Governance features address several scenarios. 
 
 ## Manage employee lifecycles across tenants
 
