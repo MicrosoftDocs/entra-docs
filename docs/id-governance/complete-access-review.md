@@ -16,7 +16,7 @@ ms.reviewer: mwahl
  
 As an administrator, you [create an access review of groups or applications](create-access-review.md) and reviewers [perform the access review](perform-access-review.md). This article describes how to see the results of the access review and apply them.
  
-[!INCLUDE [GDPR-related guidance](../../entra-docs-pr/docs/includes/azure-docs-pr/gdpr-intro-sentence.md)]
+[!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]
  
 ## Prerequisites
  
