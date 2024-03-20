@@ -3,7 +3,7 @@ title: Governance and cross-tenant synchronization
 description: Learn to govern and manage identity and access lifecycles across multitenant organizations.
 ms.service: entra
 ms.topic: conceptual
-ms.date: 03/19/2024
+ms.date: 03/20/2024
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
@@ -29,7 +29,7 @@ In this example, Contoso is a multitenant organization with three production Mic
 
 From a cross-tenant synchronization perspective, Contoso Europe, Middle East, and Africa (Contoso EMEA) and Contoso United States (Contoso US) are source tenants and Contoso is a target tenant. The following diagram illustrates the topology.
 
-   ![Diagram of a cross-tenant synchronization topology.](./media/governance-cross-tenant-sync/cross-tenant-topology.png)
+   ![Diagram of a cross-tenant synchronization topology.](./media/cross-tenant-synchronization-governance/cross-tenant-topology.png)
 
 This supported [topology for cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-topology.md) is one of many in Microsoft Entra ID. Tenants can be a source tenant, a target tenant, or both. In the following sections, learn how cross-tenant synchronization and Microsoft Entra ID Governance features address several scenarios. 
 
@@ -41,7 +41,7 @@ When organizations create, or provision, a B2B collaboration user in a tenant, u
 
 By default, cross-tenant synchronization includes commonly used attributes on the user object in Microsoft Entra ID. The following diagram illustrates this scenario. 
 
-   ![Diagram of synchronization with commonly used attributes.](./media/governance-cross-tenant-sync/common-attributes.png)
+   ![Diagram of synchronization with commonly used attributes.](./media/cross-tenant-synchronization-governance/common-attributes.png)
 
 Organizations use the attributes to help create dynamic membership of groups and access packages in the source and target tenant. Some Microsoft Entra ID features have user attributes to target, such as lifecycle workflow user scoping.  
 
