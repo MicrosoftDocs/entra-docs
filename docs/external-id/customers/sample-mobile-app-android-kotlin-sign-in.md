@@ -64,14 +64,6 @@ Once you've registered both your client app and web API and you've exposed the A
 
 [!INCLUDE [grant-api-permission-call-api-common](../customers/includes/register-app/grant-api-permission-call-api-common.md)]
 
-## Create a user flow
- 
-[!INCLUDE [Create user flow](../customers/includes/configure-user-flow/create-native-authentication-sign-in-sign-out-user-flow.md)]
- 
-## Associate the app with the user flows
-
-[!INCLUDE [associate user flow](../customers/includes/configure-user-flow/add-app-user-flow.md)]
-
 ## Clone sample Android mobile application  
 
 1. Open Terminal and navigate to a directory where you want to keep the code.  
