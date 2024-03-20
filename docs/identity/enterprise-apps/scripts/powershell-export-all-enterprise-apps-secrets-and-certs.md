@@ -17,7 +17,7 @@ ms.reviewer: mifarca
 # Export secrets and certificates for enterprise apps
 This PowerShell script example exports all secrets, certificates and owners for the specified enterprise apps from your directory into a CSV file.
 
-[!INCLUDE [quickstarts-free-trial-note](~/../entra-docs-pr/docs/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/includes/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
 This sample requires the [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) SDK module.
 

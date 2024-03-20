@@ -30,7 +30,7 @@ In this tutorial, you learn how to:
 > * Grant delegated permissions to a web app.
 > * Call Microsoft Graph from a web app for a signed-in user.
 
-[!INCLUDE [quickstarts-free-trial-note](~/../entra-docs-pr/docs/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/includes/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
 ## Prerequisites
 

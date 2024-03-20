@@ -25,7 +25,7 @@ In this article, using PowerShell, you learn how to perform the managed identiti
 - Enable and disable the system-assigned managed identity on a virtual machine scale set
 - Add and remove a user-assigned managed identity on a virtual machine scale set
 
-[!INCLUDE [az-powershell-update](~/../entra-docs-pr/docs/includes/azure-docs-pr/updated-for-az.md)]
+[!INCLUDE [az-powershell-update](~/includes/includes/azure-docs-pr/updated-for-az.md)]
 
 ## Prerequisites
 

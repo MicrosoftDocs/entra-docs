@@ -18,7 +18,7 @@ ms.author: billmath
 # User Privacy and Microsoft Entra pass-through authentication
 
 
-[!INCLUDE [Privacy](~/../entra-docs-pr/docs/includes/azure-docs-pr/gdpr-intro-sentence.md)]
+[!INCLUDE [Privacy](~/includes/includes/azure-docs-pr/gdpr-intro-sentence.md)]
 
 ## Overview
 

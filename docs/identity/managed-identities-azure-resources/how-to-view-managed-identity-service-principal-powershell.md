@@ -21,7 +21,7 @@ Managed identities for Azure resources provides Azure services with an automatic
 
 In this article, you learn how to view the service principal of a managed identity using PowerShell.
 
-[!INCLUDE [az-powershell-update](~/../entra-docs-pr/docs/includes/azure-docs-pr/updated-for-az.md)]
+[!INCLUDE [az-powershell-update](~/includes/includes/azure-docs-pr/updated-for-az.md)]
 
 ## Prerequisites
 
