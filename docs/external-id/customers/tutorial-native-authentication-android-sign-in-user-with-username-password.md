@@ -80,7 +80,7 @@ CoroutineScope(Dispatchers.Main).launch {
 
 - These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available.
 
-- To check the errors such as a user using invalid credentials or unregistered username, use the following code snippet: 
+- To handle the errors such as for invalid credentials or unregistered username, use the following code snippet: 
 
     ```kotlin
     val actionResult = authClient.signIn(
@@ -101,6 +101,12 @@ CoroutineScope(Dispatchers.Main).launch {
             }
     }
     ```
+
+## Sign out a user
+
+Sign out for users who signs in using username (email address) and password is similar to when users sign in using email one-time passcode. 
+
+Use the steps in [Sign out a user](tutorial-native-authentication-android-sign-in-sign-out.md#sign-out-a-user) article to initiate a sign-out flow.
 
 ## Next steps 
 

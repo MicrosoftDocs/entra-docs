@@ -1,6 +1,6 @@
 ---
-title: Android self-service password reset
-description: Learn how to implement self-service password reset in Android.
+title: Self-service password reset in Android app using native authentication
+description: Learn how to implement self-service password reset (SSPR) to my Android app using native authentication
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,34 +12,40 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 02/23/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to learn how to self-service password reset.
+#Customer intent: As a dev, devops, I want add self-service password reset (SSPR) to my Android app using native authentication so that users can reset their own password with no administrator or help desk involvement.
 ---
 
-# Tutorial: Self-service password reset  
+# Tutorial: Add self-service password reset  
  
-This tutorial demonstrates how to give users the ability to change or reset their password, with no administrator or help desk involvement.  
+This tutorial demonstrates how to enable users to change or reset their password, with no administrator or help desk involvement.
   
 In this tutorial, you learn how to: 
  
-- Add self-service password reset flow. 
-- Handle errors. 
+> [!div class="checklist"]
+>
+> - Add self-service password reset (SSPR) flow.
+> - Add the required user interface (UI) for SSPR to your app. 
+> - Handle errors. 
  
 ## Prerequisites  
  
-- [Sign in users in a sample native Android mobile application](how-to-run-native-authentication-sample-android-app.md). 
-- [Enable self-service password reset](how-to-enable-password-reset-customers.md). 
+- Complete the steps in [Sign in users in a sample native Android mobile application](how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings.  
+- [Enable self-service password reset](how-to-enable-password-reset-customers.md). This article enables you to enable the email one-time passcode (OTP) authentication method for all users in your tenant, which is a requirement for SSPR. 
 - [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-android-sign-up.md). 
  
-## Add self-service password reset flow  
+## Add self-service password reset flow
  
-To add self-service password reset flow to your Android application, you need a password reset user interface, which has:  
+To add SSPR flow to your Android application, you need a password reset user interface:  
  
-- A UI to submit email.
-- A UI to submit one-time passcode.
+- A UI to submit user's email address (username).
+- A UI to submit one-time passcode (OTP).
 - A UI to submit new password.
-- Submit button.
  
-1. When users forget their passwords, they need a form to input their usernames (email addresses). To handle the request when the user selects the **Forget Password** button, use the following code snippet:  
+When users forget their passwords, they need a form to input their usernames (email addresses) to start password reset flow. The user selects the **Forget Password** button or link.
+
+### Start password reset flow
+
+To handle the request when the user selects the **Forget Password** button or link, use the Android SDK's `resetPassword(username)` method as shown in the following code snippet:  
  
    ```kotlin 
     private fun forgetPassword() { 
@@ -51,7 +57,7 @@ To add self-service password reset flow to your Android application, you need a 
 
             when (resetPasswordResult) { 
                 is ResetPasswordStartResult.CodeRequired -> { 
-                    // The implementaion of submiteCode() please see below. 
+                    // The implementation of submiteCode() please see below. 
                     submitCode(resetPasswordResult.nextState) 
                 } 
                  is ResetPasswordError -> {
@@ -65,17 +71,19 @@ To add self-service password reset flow to your Android application, you need a 
      } 
     } 
    ``` 
-    The code snippet generates a one-time passcode and sends it to the user's email for verification.  
 
-    The return result of the `resetPassword()` action is either `ResetPasswordStartResult.CodeRequired` or `ResetPasswordError`. 
-
-    In the case of `ResetPasswordError`, the SDK provides utility methods  for further analyzing the specific type of error returned: 
+- `resetPassword(username)` method initiates password reset flow and an OTP code is sent to the user's emails address for verification.  
+- The return result of `resetPassword(username)` is either `ResetPasswordStartResult.CodeRequired` or `ResetPasswordError`.
+- In the case of `ResetPasswordStartResult.CodeRequired`, the app needs to collect the OTP code from the user and submit it as shown in [Submit OTP code](#submit-otp-code). 
+- In the case of `ResetPasswordError`, MSAL Android SDK provides utility methods to enable you analyze the specific errors further: 
       - `isUserNotFound()` 
       - `isBrowserRequired()` 
 
-    Errors such as these indicate that the previous operations were unsuccessful, and because of that they don't include a reference to a new state. 
+- These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available. We show you how to handle these error in [Handle errors](#handle-errors) section.
  
-2. The user receives a one-time passcode in their email. To process the code submitted by the user, use the following code snippet:  
+### Submit OTP code
+
+Your app collects the OTP code from the user. To submit the OTP code, use the following code snippet:  
  
    ```kotlin 
    private suspend fun submitCode(currentState: ResetPasswordCodeRequiredState) { 
@@ -95,17 +103,9 @@ To add self-service password reset flow to your Android application, you need a 
    } 
    ```
 
-    The return result of the `submitCode()` action is either `ResetPasswordSubmitCodeResult.PasswordRequired` or `SubmitCodeError`. 
-
-    In the case of `SubmitCodeError`, the SDK provides utility methods  for further analyzing the specific type of error returned: 
-      - `isInvalidCode()` 
-      - `isBrowserRequired()` 
-    
-    Errors such as these indicate that the previous operations were unsuccessful, and because of that they don't include a reference to a new state. 
-
-    If the submitted one-time passcode is valid, the code sets the `nextState` to process a new user password. If the user doesn't receive the one-time passcode in their email, they have the option to use "Resend Passcode" to request a new one-time passcode.  
-    
-    Use the following code snippet to resend a new passcode:  
+- The return result of the `submitCode()` action is either `ResetPasswordSubmitCodeResult.PasswordRequired` or `SubmitCodeError`. 
+- In the case of `ResetPasswordSubmitCodeResult.PasswordRequired` the app needs to collect a new password from the user and submit it as shown in [Submit a new password](#submit-a-new-password). 
+- If the user doesn't receive the OTP code in their email, the app can resend the OTP code. Use the following code snippet to resend a new OTP code:  
   
    ```kotlin 
    private fun resendCode() { 
@@ -128,49 +128,56 @@ To add self-service password reset flow to your Android application, you need a 
    } 
    ``` 
 
-    The return result of the `resendCode()` action is either `ResetPasswordResendCodeResult.Success` or `ResendCodeError`. 
+    - The return result of the `resendCode()` action is either `ResetPasswordResendCodeResult.Success` or `ResendCodeError`. 
 
-    If it's `ResendCodeError`, it's an unexpected error for SDK. The previous operation was unsuccessful, and because of that they don't include a reference to a new state. 
+    - If it's `ResendCodeError`, it's an unexpected error for SDK. The previous operation was unsuccessful, and because of that they don't include a reference to a new state. 
 
- 
-3. After verifying the user's email, you need to have the user create a new password. To create new user password, use the following code snippet:  
- 
-   ```kotlin 
-   private suspend fun resetPassword(currentState: ResetPasswordPasswordRequiredState) { 
-       val password = binding.passwordText.text.toString() 
- 
-       val submitPasswordResult = currentState.submitPassword(password) 
- 
-       when (submitPasswordResult) { 
-           is ResetPasswordResult.Complete -> { 
-               // Handle reset password complete. 
-           } 
-            is ResetPasswordSubmitPasswordError -> {
-                // Handle errors
-                handleSubmitPasswordError(actionResult)
-            }
-       } 
-   } 
-   ``` 
+- In the case of `SubmitCodeError`, MSAL Android SDK provides utility methods to enable you to analyze the specific errors further: 
+    - `isInvalidCode()` 
+    - `isBrowserRequired()` 
+    
+    These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available.  
 
-    The return result of the `submitPassword()` action is either `ResetPasswordResult.Complete` or `ResetPasswordSubmitPasswordError`. 
+### Submit a new password
+ 
+After you verify the user's email, you need to collect a new password from the user and submit it. The password that the app collects from the user must meet Use the following code snippet:
+ 
+```kotlin 
+private suspend fun resetPassword(currentState: ResetPasswordPasswordRequiredState) { 
+    val password = binding.passwordText.text.toString() 
 
-    In the case of `ResetPasswordSubmitPasswordError`, the SDK provides utility methods  for further analyzing the specific type of error returned: 
+    val submitPasswordResult = currentState.submitPassword(password) 
+
+    when (submitPasswordResult) { 
+        is ResetPasswordResult.Complete -> { 
+            // Handle reset password complete. 
+        } 
+        is ResetPasswordSubmitPasswordError -> {
+            // Handle errors
+            handleSubmitPasswordError(actionResult)
+        }
+    } 
+} 
+``` 
+
+- The return result of the `submitPassword()` action is either `ResetPasswordResult.Complete` or `ResetPasswordSubmitPasswordError`. 
+
+- `ResetPasswordResult.Complete` indicates a successful password reset flow.
+ 
+- In the case of `ResetPasswordSubmitPasswordError`, the SDK provides utility methods  for further analyzing the specific type of error returned: 
       - `isInvalidPassword()`
       - `isPasswordResetFailed()`
 
-    Errors such as these indicate that the previous operations were unsuccessful, and because of that they don't include a reference to a new state. 
+    These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available. Handle the errors as shown in [Handle error](#handle-errors) section.
 
-Assuming no errors occur during the process, you have built a self-service password reset flow.  
 
-## Sign in after password reset 
+## Auto-sign in after password reset 
 
-This is an advanced version of the sign in flows [earlier described](tutorial-native-authentication-android-sign-in-user-with-username-password.md), which has the added benefit of automatically signing in after successfully reset password.  
+After a successful password reset flow, you can sign in your users without initiating a fresh sign-in flow. 
 
-The `ResetPasswordResult.Complete` returns `SignInContinuationState` object. And `SignInContinuationState` provides access to `signIn()` method.  
+The `ResetPasswordResult.Complete` returns `SignInContinuationState` object. The `SignInContinuationState` provides access to `signIn()` method.  
  
-To reset a user's password and then sign them in, you can use the following code snippet:  
-
+To automatically sign in users after a password reset, use the following code snippet:  
 
    ```kotlin 
     private suspend fun resetPassword(currentState: ResetPasswordPasswordRequiredState) { 
@@ -206,9 +213,17 @@ To reset a user's password and then sign them in, you can use the following code
    ```
 
 ## Handle errors 
-A few common, expected errors might occur. For example, the user might attempt to reset the password with a nonexistent email or provide a password that doesn't meet the password requirements. Giving your users a hint to those errors is the simplest way to handle them. 
 
-To handle the errors during password reset, use the following code snippet: 
+A few expected errors might occur. For example, the user might attempt to reset the password with a nonexistent email or provide a password that doesn't meet the password requirements. 
+
+When errors occur, give your users a hint to the errors.
+
+These errors can happen at the start of password reset flow or at submit OTP code or at  submit password.  
+
+
+### Handle start password reset error
+
+To handle start password reset error, use the following code snippet:
 
 ```kotlin
 private fun handleResetPasswordError(error: ResetPasswordError) {
@@ -221,7 +236,13 @@ private fun handleResetPasswordError(error: ResetPasswordError) {
         }
     }
 }
+```
 
+### Handle submit OTP code error
+
+To handle submit OTP code error, use the following code snippet:
+
+```kotlin
 private fun handleSubmitCodeError(error: SubmitCodeError) {
     when {
         error.isInvalidCode() -> {
@@ -232,7 +253,13 @@ private fun handleSubmitCodeError(error: SubmitCodeError) {
         }
     }
 }
+```
 
+### Handle submit password error
+
+To handle submit password error, use the following code snippet:
+
+```kotlin
 private fun handleSubmitPasswordError(error: ResetPasswordSubmitPasswordError) {
     when {
         error.isInvalidPassword() || error.isPasswordResetFailed()
@@ -246,7 +273,7 @@ private fun handleSubmitPasswordError(error: ResetPasswordSubmitPasswordError) {
 }
 ```
  
-## Next steps  
+## Next steps
  
 [Tutorial: Support web fallback in Android app](tutorial-native-authentication-android-support-web-fallback.md) 
 

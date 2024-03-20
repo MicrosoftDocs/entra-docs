@@ -7,7 +7,7 @@ ms.date: 03/20/2024
 ms.author: kengaderdus
 ms.manager: mwongerapk
 ---
-Once you retrieve the ID token, you can retrieve the claims associated with the current account. To do so, use the following code snippet.
+Once your app acquires an ID token, you can retrieve the claims associated with the current account. To do so, use the following code snippet.
 
 ```kotlin
 val preferredUsername = accountState.getClaims()?.get("preferred_username")
