@@ -22,8 +22,6 @@ title: |
 introduction: |
   This article describes three ways to locate and verify the Microsoft Entra hybrid joined device state.
 
-  Here are three ways to locate and verify the hybrid joined device state.
-
 procedureSection:
   - title: |
       Locally on the device
