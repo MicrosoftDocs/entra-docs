@@ -18,7 +18,7 @@ ms.reviewer: gregkmsft, msgustavosa
 ---
 # Microsoft Entra multifactor authentication external method provider reference (Preview)
 
-This topic describes how external authentication providers connect to Entra ID, and how tenant admins can manage authentication requirements for their tenant to use external provider authentication. 
+This topic describes how external authentication providers connect to Entra ID, and how tenant admins can manage authentication requirements for their tenant to be satisfied by external provider authentication for a second factor. 
 
 Entra ID external authentication methods are the way to allow customers to integrate external authentication providers as a method to satisfy the authentication requirements for the resource/application being requested.  
 
