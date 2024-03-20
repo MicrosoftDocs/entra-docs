@@ -20,6 +20,9 @@ title: |
   Verify Microsoft Entra hybrid join
 
 introduction: |
+  This article describes how to locate and verify Microsoft Entra hybrid joined device state.
+prerequisites:
+  summary: |
     Here are three ways to locate and verify the hybrid joined device state:
 
     ## Locally on the device
