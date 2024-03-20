@@ -15,7 +15,9 @@ ms.reviewer: gregkmsft, msgustavosa
 ---
 # Configure a new external identity provider with Microsoft Entra ID
 
-To configure a new external authentication provider, the provider admin must first:
+An application representing the integration is required for external authentication methods to issue the id_token_hint.  This application can either be created in each tenant that will use the external provider, it can be created as single multi-tenant application that admins enabling the integration will consent for their tenant.  
+
+Using a multi-tenant application reduces the liklihood of misconfiguration in each tenant and enables providers to make changes to metadata (for example, reply URLs) in one place, rather than requiring each tenant to make changes. To configure as a multi-tenant application, the provider admin must first:
 
 1. Create an Entra ID tenant if they don't have one yet.
 1. Using that tenant, register an application in Entra ID. 
@@ -45,7 +47,7 @@ Reply URLs | Valid redirect URLs for the provider. One of these should match the
 
 ## Configure optional claims
 
-If a provider needs upn or email claims for discovery, then you can configure these [optional claims for id_token](/entra/identity-platform/optional-claims). If requested, email will always be returned for guest accounts but not for members. If upn is requested, it will be returned for user accounts that are members of the directory, but not for guest accounts.
+If a provider needs upn or email claims for discovery, then you can configure these [optional claims for id_token](/entra/identity-platform/optional-claims).
 
 >[!NOTE]
->The preceding steps need to be done for each cloud environment. For the public Azure and Azure US Government clouds, a different application which includes AppId is required for each environment.
+>The preceding steps need to be done for each cloud environment, whether the approach is a multi-tenant app or apps created per-tenant. For the public Azure and Azure US Government clouds, if a multi-tenant app is being used rather than an app per tenant, then a different application which includes AppId is required for each environment.
