@@ -498,7 +498,7 @@ Status: Released to select customers
 
 * Adding Privacy Settings for the General Data Protection Regulation (GDPR).  For more information, see the article [here](reference-connect-user-privacy.md).
 
-[!INCLUDE [Privacy](~/includes/includes/azure-docs-pr/gdpr-intro-sentence.md)]  
+[!INCLUDE [Privacy](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]  
 
 * application telemetry - admin can switch this class of data on/off at will
 

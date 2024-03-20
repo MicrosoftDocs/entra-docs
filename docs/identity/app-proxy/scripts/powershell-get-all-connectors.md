@@ -16,9 +16,9 @@ ms.reviewer: ashishj
 
 The PowerShell script example lists all Microsoft Entra application proxy connector groups and connectors in your directory.
 
-[!INCLUDE [quickstarts-free-trial-note](~/includes/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [updated-for-az](~/includes/includes/azure-docs-pr/updated-for-az.md)]
+[!INCLUDE [updated-for-az](~/includes/azure-docs-pr/updated-for-az.md)]
 
 Thie sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
