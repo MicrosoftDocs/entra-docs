@@ -113,71 +113,68 @@ In this tutorial, you learn how to:
  
 ## Handle sign-up errors  
  
-The `signUp()` action return results denoted by a dedicated results class `SignUpResult`. These can be of type: 
-- `SignUpResult.Complete`
-- `SignUpResult.CodeRequired`
-- `SignUpResult.AttributesRequired`
-- `SignUpError`
+In the case of `SignUpError`, the SDK provides utility method for further analyzing the specific type of error returned: 
 
-In the case of `SignUpError`, the SDK provides utility methods  for further analyzing the specific type of error returned: 
-- `isUserAlreadyExists()`
-- `isInvalidAttributes()`
-- `isInvalidUsername()`
-- `isBrowserRequired()`
-- `isAuthNotSupported()`
+- In the case of `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you analyze the specific errors further: 
+    - `isUserAlreadyExists()`
+    - `isInvalidPassword()`
+    - `isInvalidAttributes()`
+    - `isInvalidUsername()`
+    - `isBrowserRequired()`
+    - `isAuthNotSupported()`
 
-Errors such as these indicate that the previous operation was unsuccessful, and because of that they don't include a reference to a new state. 
+    These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available.
 
-To check the errors such as a user using a registered email, invalid password, or invalid email address, use the following code snippet: 
+- To handle these errors, use the following code snippet: 
  
-```kotlin 
-val actionResult = authClient.signUp(
-    username = email
-    password = password
-)
-if (actionResult is SignUpResult.CodeRequired) {
-    // Next step: submit code
-} else if (actionResult is SignUpError) {
-    when {
-            actionResult.isInvalidUsername() || actionResult.isInvalidPassword() || 
-            actionResult.isUserAlreadyExists() || actionResult.isAuthNotSupported() || 
-            actionResult.isInvalidAttributes() -> {
-                // Handle specific errors
+    ```kotlin 
+    val actionResult = authClient.signUp(
+        username = email
+        password = password
+    )
+    if (actionResult is SignUpResult.CodeRequired) {
+        // Next step: submit code
+    } else if (actionResult is SignUpError) {
+        when {
+                actionResult.isInvalidUsername() || actionResult.isInvalidPassword() || 
+                actionResult.isUserAlreadyExists() || actionResult.isAuthNotSupported() || 
+                actionResult.isInvalidAttributes() -> {
+                    // Handle specific errors
+                }
+                else -> {
+                    // Handle unexpected error
+                }
             }
-            else -> {
-                // Handle unexpected error
-            }
-        }
-}
-```
+    }
+    ```
  
-Use the following code snippet to check for errors when a user is using invalid one-time passcode:  
+- Use the following code snippet to check for errors when a user inputs an invalid OTP code:  
  
-```kotlin 
-val submitCodeActionResult = nextState.submitCode( 
-    code = code 
-) 
-if (submitCodeActionResult is SignUpResult.Complete) { 
-    // Sign up flow complete, handle success state. 
-} else if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode()) { 
-    // Handle "invalid code" error 
-} 
-``` 
- 
-When a user enters invalid one-time passcode, you can use the following code snippet to ask the user to enter the correct one-time passcode:  
- 
-```kotlin 
-val submitCodeActionResult = nextState.submitCode( 
-    code = code 
-) 
-if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode()) { 
-    // Inform the user that the submitted code was incorrect or invalid and ask for a new code to be supplied 
-    val newCode = retrieveNewCode() 
-    nextState.submitCode( 
-        code = newCode 
+    ```kotlin 
+    val submitCodeActionResult = nextState.submitCode( 
+        code = code 
     ) 
-} 
-``` 
+    if (submitCodeActionResult is SignUpResult.Complete) { 
+        // Sign up flow complete, handle success state. 
+    } else if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode()) { 
+        // Handle "invalid code" error 
+    } 
+    ``` 
+ 
+- If a user enters an invalid OTP code, use the following code snippet to ask the user to reenter the correct OTP code:  
+ 
+    ```kotlin 
+    val submitCodeActionResult = nextState.submitCode( 
+        code = code 
+    ) 
+    if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode()) { 
+        // Inform the user that the submitted OTP code is incorrect or invalid and ask them to reenter a correct OTP code 
+        val newCode = retrieveNewCode() 
+        nextState.submitCode( 
+            code = newCode 
+        ) 
+    } 
+    ``` 
  
 ## Next steps  
  
