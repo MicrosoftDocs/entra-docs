@@ -5,11 +5,11 @@ services: active-directory
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/12/2024
+ms.date: 03/19/2024
 ms.author: jeedes
 
 ---

@@ -8,7 +8,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 03/19/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -91,32 +91,14 @@ A request and response message pair is shown for the sign-on message exchange.
 The following is a sample request message that is sent from Microsoft Entra ID to a sample SAML 2.0 identity provider. The sample SAML 2.0 identity provider is Active Directory Federation Services (AD FS) configured to use SAML-P protocol. Interoperability testing has also been completed with other SAML 2.0 identity providers.
 
 ```xml
-  <?xml version="1.0"?>
-<samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" ID="_f6f7cf98-e2c8-470e-ace9-4c0dabdd36cb" Version="2.0" IssueInstant="2023-10-09T15:48:00.361Z">
-  <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">urn:federation:MicrosoftOnline</Issuer>
-  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-    <SignedInfo>
-      <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-      <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-      <Reference URI="#_f6f7cf98-e2c8-470e-ace9-4c0dabdd36cb">
-        <Transforms>
-          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-          <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-        </Transforms>
-        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-        <DigestValue>f5c2T/UEzCMjKYp6yuscKKFojDI=</DigestValue>
-      </Reference>
-    </SignedInfo>
-    <SignatureValue>BdlWtxZE+ZvkfbD1B8wskZwiGVDDFRcnlIDrAOvvOd625vpEHpjW4j8Y3Buks+W1PLV1nC2cCRIAmPZMsxt7GLjT9AjYpgo+E5FlGQq7AezcLsKRrmxI4eVwRpy4zWthq/Gae9HGF5gajU+dE4jMd2275lk7poCHdlPXJR+EH6oikILBjWZeeWs4HAxYn7TtZ4/H2tcaz8yOQkWWlbR8ZVsUF5ZTbdtr24N9Mk4ZWooJN0jYN5nBv0LuGTlmpwjcdY9fuaBLwqlq6nUKzpDNiPXTn7BW8+EPidS/GonXzbJl18WwyaDKPre1qWtJzSuLInoYIWIcSdA+uwhETrcaew==</SignatureValue>
-    <KeyInfo>
-      <ds:X509Data xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
-        <ds:X509SKI>bwzmkdKETWhixlS99FL36FH37EI=</ds:X509SKI>
-      </ds:X509Data>
-      <KeyName>MicrosoftOnline</KeyName>
-    </KeyInfo>
-  </Signature>
-  <samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/>
-</samlp:AuthnRequest>
+<samlp:AuthnRequest ID="_1e089e5c-a976-4881-af74-3b92c89e7e2c" Version="2.0" IssueInstant="2024-03-12T14:00:18.450Z" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">urn:federation:MicrosoftOnline</Issuer><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/></samlp:AuthnRequest>
+
+```
+
+If isSignedAuthenticationRequestRequired is enabled as explained in [internaldomainfederation-update](/graph/api/internaldomainfederation-update), then the request would look like this example:
+
+```xml
+  <samlp:AuthnRequest ID="_1868c6f2-1fdd-40b9-818f-b4b44efb92c5" Version="2.0" IssueInstant="2024-03-11T16:51:17.120Z" Destination="https://fs.contoso.com/adfs/ls/" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">urn:federation:MicrosoftOnline</Issuer><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#_1868c6f2-1fdd-40b9-818f-b4b44efb92c5"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>FPM404CTAfI458trTryNB7mVS4Q=</DigestValue></Reference></SignedInfo><SignatureValue>CuCSgua+bCtV8mlJJUxtbz1tsZjj7RDfH73YyJgDbOvk9lIpdZkrCcz3r9Qqb4OP+3we8cauXAOEDGNke2QywkHyGHV55zJomb5pKNiX8r/2xAD+LaGEeOw3O4H0lGZCyvN32pbDi/aTr8ocZu6tTcW7CbD51TNCasc+YJALYAa73F9rhDqgy/eieC3HvM6e18QE/9URKrT7IT82hsmUcOGjvhSF6gvWtRtdwsJ+4LLR1FnTKCJvPcDU0AeKtvh9DDTrIEBY9OurB0VLYMQ75F9P2ijZXnBaITqx1nkdT70NjVmq+tUWl//24v1AnSu1Z7lTkYNlydV536epaYYb4Q==</SignatureValue><KeyInfo><ds:X509Data xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:X509SKI>bwzmkdKETWhixlS99FL36FH37EI=</ds:X509SKI></ds:X509Data><ds:KeyName xmlns:ds="http://www.w3.org/2000/09/xmldsig#">MicrosoftOnline</ds:KeyName></KeyInfo></Signature><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/></samlp:AuthnRequest>
 ```
 
 The following is a sample response message that is sent from the sample SAML 2.0 compliant identity provider to Microsoft Entra ID / Microsoft 365.

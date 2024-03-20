@@ -1,18 +1,16 @@
 ---
 title: Convert external users to internal users (Preview)
 description: You can convert users from external to internal without the need to recreate them.
-services: active-directory 
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 03/11/2024
+ms.date: 03/19/2024
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.workload: identity
 ms.custom: 
 ms.reviewer: yuank
-
 ---
 
 # Convert external users to internal users (Preview)
@@ -22,7 +20,7 @@ Enterprises going through reorganizations, mergers, and acquisitions may be forc
 - **Internal users** are users who authenticate with the local tenant.
 - **External users** are users who authenticate via a method not managed by the host organization, such as another organization's Microsoft Entra ID, Google federation, or Microsoft account. Many external users have a ***userType*** of 'guest', but there's no formal relation between ***userType**** and how a user signs in. External users who have a ***userType*** of 'member', could also be eligible for conversion.
 
-External user conversion can be performed using MS Graph API or the Microsoft Entra ID Portal.
+External user conversion can be performed using Microsoft Graph API or the Microsoft Entra ID Portal.
 
 ## Converting external users
 
@@ -76,3 +74,4 @@ You can convert external users to internal using the Microsoft Entra admin cente
 ## Related content
 
 - [User management enhancements](users-search-enhanced.md)
+- [user: convertExternalToInternalMemberUser Microsoft Graph API](/graph/api/user-convertexternaltointernalmemberuser)
