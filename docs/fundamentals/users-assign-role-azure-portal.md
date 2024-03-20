@@ -6,6 +6,7 @@ manager: amycolannino
 
 ms.service: entra
 ms.subservice: fundamentals
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 12/01/2023
 ms.author: sarahlipsey
@@ -59,9 +60,7 @@ You can assign roles as either _eligible_ or _active_. Eligible roles are assign
 
 1. Select the **Assign** button.
 
-    Assigned roles appear in the associated section for the user, so eligible and active roles are listed separately. 
-
-   :::image type="content" source="media/entra-users-assign-role-azure-portal/role-assignment-settings.png" alt-text="Screenshot of the role assignment settings.":::
+    Assigned roles appear in the associated section for the user, so eligible and active roles are listed separately.
 
 ## Update roles
 
