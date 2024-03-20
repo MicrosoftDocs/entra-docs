@@ -105,7 +105,7 @@ Organizations can select individual policy templates and:
 
 ## Other common policies
 
-- [Block access by location](howto-conditional-access-policy-location.md)
+- [Block access by location](howto-conditional-access-policy-location.yml)
 - [Block access except specific apps](howto-conditional-access-policy-block-access.md)
 
 ## User exclusions
