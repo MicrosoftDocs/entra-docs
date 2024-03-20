@@ -75,7 +75,7 @@ This list of terms and definitions are here to assist you in understanding the d
 | Identity | An identity is a human identity (user) or workload identity. There are different names and types of workload identities for each cloud. AWS: Lambda function (serverless function), role, resource. Azure: Azure function (serverless function), service principal. GCP: Cloud function (serverless function), service account. |
 | Inactive group | Inactive groups have members who haven't used their granted permissions in the current environment (I.e. AWS Account)  in the last 90 days.    |
 | Inactive identity | Inactive identities haven't used their granted permissions in the current environment (i.e. AWS Account) the last 90 days. |
-| Over-provisioned activity identity | Over-provisioned active identities aren't using all the permissions they've been granted in the current environment. |  
+| Over-provisioned active identity | Over-provisioned active identities aren't using all the permissions they've been granted in the current environment. |  
 | Permission | A permission is an action an identity can perform on a resource. |
 | Privilege escalation | Identities with privilege escalation can increase the number of permissions they've been granted. They can do this to potentially acquire full administrative control of the AWS account or GCP project. |
 | Super identity | Super identities are granted permissions to all actions and resources in the current environment (i.e. AWS account). |
