@@ -93,7 +93,7 @@ To build user attributes in the iOS MSAL SDK:
      ```   
 ---
 
-To learn more about the programmable names of user profile attributes, see the [User profile attributes](concept-user-attributes.md) article. When you use custom attributes names in the MSAL mobile SDKs, the names are without the `extension_{appId-without-hyphens}_` prefix. 
+To learn more about the programmable names of user profile attributes, see the [User profile attributes](concept-user-attributes.md) article. When you use custom attribute names in the MSAL mobile SDKs, the names are without the `extension_{appId-without-hyphens}_` prefix. 
 
 
 ## Related content

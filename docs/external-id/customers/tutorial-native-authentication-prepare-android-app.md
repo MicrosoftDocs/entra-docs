@@ -30,7 +30,7 @@ In this tutorial, you learn how to:
 ## Prerequisites  
  
 - Complete the steps in [Sign in users in sample Android mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md) article. 
-- Create an Android project. 
+- An Android project. If you don't have an Android project, create it. 
  
 ## Add MSAL dependencies  
  

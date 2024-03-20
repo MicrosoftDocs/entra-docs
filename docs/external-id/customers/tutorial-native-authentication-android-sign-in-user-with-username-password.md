@@ -1,6 +1,6 @@
 ---
 title: Sign in user with username and password in Android
-description: Learn how to sign in user with username and password.
+description: Learn how to sign in user with username and password in an Android app by using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,27 +12,34 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 02/23/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to learn how to Sign in user with username and password.
+#Customer intent: As a dev, devops, I want to sign in user with username and password in an Android app by using native authentication.
 ---
 
-# Tutorial: Sign in user with username and password 
+# Tutorial: Sign in user with username and password
 
-This tutorial demonstrates how to sign in a user with a username and password, and uses one-time passcode for validation of the user's email address. 
+This tutorial demonstrates how to sign in a user with a username and password in an Android app by using native authentication.
 
 In this tutorial, you learn how to: 
 
-- Sign in user with username and password. 
-- Handle errors. 
+> [!div class="checklist"]
+>
+> - Sign in user with username and password. 
+> - Handle errors. 
 
 ## Prerequisites 
 
-- An Android project.
-- [Sign in users in sample Android (Kotlin) mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md). Ensure that when creating the user flow, you select **Email with password**.
-- [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md). 
+- An Android project. If you don't have an Android project, create it.
+- [Sign in users in sample Android (Kotlin) mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings. When you create your user flow, make sure you select **Email with password** option in the **Identity providers** section.
+- Complete the steps in [Tutorial: Prepare your Android mobile app for native authentication](tutorial-native-authentication-prepare-android-app.md). This article shows you how to prepare your Android project or app for native authentication. 
+
+## Update configuration file
+
+[!INCLUDE [update-auth-config-native-auth-file-add-password-challenge-type](./includes/native-auth/update-auth-config-native-auth-file.md)]
+
 
 ## Sign in user with username and password 
 
-To sign in the sign user using username and password, use the following code snippet: 
+To sign in the sign user using username and password, use the `signIn(username, password)` method as shown in the following code snippet: 
 
 ```kotlin
 CoroutineScope(Dispatchers.Main).launch {
@@ -42,53 +49,60 @@ CoroutineScope(Dispatchers.Main).launch {
     )
     if (actionResult is SignInResult.Complete) -> {
         // Handle sign in success
-        val accountState = result.resultValue
+        val accountState = actionResult.resultValue
         val accessTokenResult = accountState.getAccessToken()
         if (accessTokenResult is GetAccessTokenResult.Complete) {
                 val accessToken = accessTokenResult.resultValue.accessToken
+                val idToken = accountState.getIdToken()
             }
     }
 }
 ```
 
-In most common scenario `signIn(username, password)` returns `SignInResult.Complete`, which indicates that the flow is complete and the user has been signed in. This object contains a reference to the `AccountState`, accessible through the `resultValue` field. `AccountState` can be used to retrieve account details and access tokens. 
+- In most common scenario `signIn(username, password)` returns `SignInResult.Complete`, which indicates that the flow is complete and the user has been signed in. 
+- This object contains a reference to the `AccountState`, accessible through the `resultValue` field. You can use `AccountState` to retrieve security tokens. 
+
+## Read ID token claims
+
+[!INCLUDE [read-od-token-claims](./includes/native-auth/read-id-token-claims.md)]
 
 ## Handle errors 
 
-The `signIn()` action return results denoted by a dedicated results class `SignInResult`. These can be of type: 
-- `SigInResult.Complete`
-- `SignInResult.CodeRequired`
-- `SignInError`
+- The `signIn()` action return results denoted by a dedicated results class `SignInResult`. These can be of type: 
+    - `SigInResult.Complete`
+    - `SignInResult.CodeRequired`
+    - `SignInError`
 
-In the case of `SignInError`, the SDK provides utility methods  for further analyzing the specific type of error returned: 
-- `isInvalidCredentials()`
-- `isUserNotFound()`
-- `isBrowserRequired()`
+- In the case of `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you analyze the specific errors further: 
+    - `isInvalidCredentials()`
+    - `isUserNotFound()`
+    - `isBrowserRequired()`
 
-Errors such as these indicate that the previous operation was unsuccessful, and because of that they don't include a reference to a new state. 
+- These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available.
 
-To check the errors such as a user using invalid credentials or unregistered username, use the following code snippet: 
+- To check the errors such as a user using invalid credentials or unregistered username, use the following code snippet: 
 
-```kotlin
-val actionResult = authClient.signIn(
-    username = emailAddress,
-    password = password
-)
-if (actionResult is SignInResult.Complete) -> {
-    // Handle sign in success
-    val accountResult = result.resultValue
-} else if (actionResult is SignInError) {
-    when {
-            actionResult.isInvalidCredentials() ||  actionResult.isUserNotFound() -> {
-                // Handle specific errors
+    ```kotlin
+    val actionResult = authClient.signIn(
+        username = emailAddress,
+        password = password
+    )
+    if (actionResult is SignInResult.Complete) -> {
+        // Handle sign in success
+        val accountResult = result.resultValue
+    } else if (actionResult is SignInError) {
+        when {
+                actionResult.isInvalidCredentials() ||  actionResult.isUserNotFound() -> {
+                    // Handle specific errors
+                }
+                else -> {
+                    // Handle unexpected error
+                }
             }
-            else -> {
-                // Handle unexpected error
-            }
-        }
-}
-```
+    }
+    ```
 
 ## Next steps 
 
-[Tutorial: Sign in user after sign-up in Android](tutorial-native-authentication-android-sign-in-after-sign-up.md) 
+- [Tutorial: Sign in user after sign-up in Android](tutorial-native-authentication-android-sign-in-after-sign-up.md).
+- [Add user attributes to token claims](how-to-add-attributes-to-token.md).

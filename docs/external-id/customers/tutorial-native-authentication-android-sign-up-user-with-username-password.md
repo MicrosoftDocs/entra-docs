@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Sign up user with username and password in Android app by using native authentication  
  
-This tutorial demonstrates how to sign up a user with a username (email) and password in an Android app by using native authentication. One-time passcode (OTP) is used to validate the user's email address. 
+This tutorial demonstrates how to sign up a user with a username (email) and password in an Android app by using native authentication. It uses one-time passcode (OTP) to validate the user's email address.
  
 In this tutorial, you learn how to:  
  
@@ -28,32 +28,13 @@ In this tutorial, you learn how to:
   
 ## Prerequisites  
   
-- Create an Android project.
-- Complete the steps in [Sign in users in sample Android (Kotlin) mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings. When you create your user flow, make sure you select **Email with password** option.
-- [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md). This tutorial shows you how to add sign-in to an Android app. 
+- An Android project. If you don't have an Android project, create it.
+- Complete the steps in [Sign in users in sample Android (Kotlin) mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings. When you create your user flow, make sure you select **Email with password** option in the **Identity providers** section.
+- Complete the steps in [Tutorial: Prepare your Android mobile app for native authentication](tutorial-native-authentication-prepare-android-app.md). This article shows you how to prepare your Android project or app for native authentication. 
 
 ## Update configuration file
 
-1. Locate, then open `auth_config_native_auth.json`.
-1. In the JSON object, locate the `challenge_types` setting, then add *password* challenge type. Your JSON object should look similar to the following:
-
-    ```json
-        { 
-          "client_id": "Enter_the_Application_Id_Here", 
-          "authorities": [ 
-            { 
-              "type": "CIAM", 
-              "authority_url": "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/Enter_the_Tenant_Subdomain_Here.onmicrosoft.com/" 
-            } 
-          ], 
-          "challenge_types": ["oob","password"], 
-          "logging": { 
-            ...
-          } 
-        }
-    ```
-
-    The challenge types is a list of values, which the app uses to notify Microsoft Entra about the authentication method that it supports. Learn more [challenge types](concept-native-authentication-challenge-types.md).
+[!INCLUDE [update-auth-config-native-auth-file-add-password-challenge-type](./includes/native-auth/update-auth-config-native-auth-file.md)]
  
  
 ## Add sign-up with username and password  

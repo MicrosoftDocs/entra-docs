@@ -74,6 +74,10 @@ To sign in user using email and OTP code you need to:
         - `submitCode()` submits the OTP code that the app collects from the user. 
         - `resendCode()` re-sends the OTP code if the user doesn't receive the code. 
 
+## Read ID token claims
+
+[!INCLUDE [read-od-token-claims](./includes/native-auth/read-id-token-claims.md)]
+
 ### Handle errors during sign-in flow 
 
 During sign-in, not all actions succeed. For instance, the user might attempt to sign in with an email address that doesn't exist or submit an invalid code. 
@@ -182,4 +186,5 @@ You have completed all the necessary steps to successfully sign out a user on yo
 
 ## Next steps
 
-[Tutorial: Sign up user with username and user attributes](tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md). 
+- [Tutorial: Sign up user with username and user attributes](tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md). 
+- [Add user attributes to token claims](how-to-add-attributes-to-token.md)

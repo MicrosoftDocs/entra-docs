@@ -240,7 +240,7 @@ items:
                   items:
                     - name: Sign up
                       href: tutorial-native-authentication-android-sign-up-user-with-username-password.md
-                    - name: Sign up & submit user attributes
+                    - name: Sign up and submit user attributes
                       href: tutorial-native-authentication-android-sign-up-user-with-username-password-user-attributes.md
                     - name: Sign in and sign out
                       href: tutorial-native-authentication-android-sign-in-user-with-username-password.md
@@ -433,7 +433,7 @@ items:
            - name: Native authentication with email OTP
              displayName: Native authentication with email and one-time password or passcode          
              href: /entra/identity-platform/reference-native-authentication-email-otp?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
-           - name: Native authentication with email & password
+           - name: Native authentication with email and password
              href: /entra/identity-platform/reference-native-authentication-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
         - name: SDK reference
           items: 
