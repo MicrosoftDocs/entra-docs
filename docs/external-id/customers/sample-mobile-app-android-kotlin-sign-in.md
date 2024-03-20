@@ -10,7 +10,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: sample
-ms.date: 03/19/2024
+ms.date: 03/20/2024
 ms.custom: developer
 #Customer intent: As a developer, I want to authenticate users from a sample Android mobile app so that I can experience how Microsoft Entra ID for customers work.
 ---
@@ -99,7 +99,7 @@ Once you've registered both your client app and web API and you've exposed the A
 1. Find property named `scopes` and set the scopes recorded in [Grant web API permissions to the Android sample app](#grant-web-api-permissions-to-the-android-sample-app).
 
     ```kotlin
-    private const val scopes = "" // Developers should set the respective scopes of their web API here. For example, private const val scopes = listOf<String>("api://{clientId}/{ToDoList.Read}", "api://{clientId}/{ToDoList.ReadWrite}")
+    private const val scopes = "" // Developers should set the respective scopes of their web API here. For example, private const val scopes = "api://{clientId}/{ToDoList.Read}"
     ```
    
 You've now configured the app and it's ready to run. 
