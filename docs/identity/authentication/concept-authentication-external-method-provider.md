@@ -18,7 +18,7 @@ ms.reviewer: gregkmsft, msgustavosa
 ---
 # Microsoft Entra multifactor authentication external method provider reference (Preview)
 
-This topic describes how external authentication providers connect to Entra ID, and how tenant admins can use controls enabled by an external authentication provider. 
+This topic describes how external authentication providers connect to Entra ID, and how tenant admins can manage authentication requirements for their tenant to use external provider authentication. 
 
 Entra ID external authentication methods are the way to allow customers to integrate external authentication providers as a method to satisfy the authentication requirements for the resource/application being requested.  
 
@@ -46,7 +46,7 @@ The flow to satisfy authentication that includes an external method is as follow
 1. The external authentication provider might optionally make a call to Microsoft Graph to fetch additional information about the user.
 1. The external authentication provider performs any actions it deems necessary, such as authenticating the user with some credential.
 1. The external authentication provider redirects the user back to Entra ID with a valid token, including all required claims.
-1.  ID validates that the token's signature came from the configured external authentication provider and then checks the contents of the token.
+1. Entra ID validates that the token's signature came from the configured external authentication provider and then checks the contents of the token.
 1. Entra ID compares the claims in the token to the claims required.
 1. If the claims meet the required claims list, the user has satisfied the requirement. If the user satisfies any additional policy requirements, authentication succeeds and the access token is issued satisfying MFA.
 
@@ -54,7 +54,7 @@ The flow to satisfy authentication that includes an external method is as follow
 
 ## Custom controls and external authentication methods
 
-In Entra ID, external authentication methods and custom controls can operate in parallel while customers are prepared for and migrate to external authentication methods.
+In Entra ID, external authentication methods and Conditional Access custom controls can operate in parallel while customers prepare for and migrate to external authentication methods.
 
 Customers that are currently using an integration with an external provider via custom controls can continue to use the custom control and any configured Conditional Access policies to manage their authentication requirements for resources. Admins are recommended to create parallel set of Conditional Access policies during this migration period:
 
@@ -63,11 +63,11 @@ Customers that are currently using an integration with an external provider via 
    >[!NOTE]
    >Grant controls based on authentication strengths, including the built-in MFA strength, will not be satisfied by the external authentication method. Policies should only be configured with **Require multifactor authentication**. Authentication strengths support for external authentication methods will be added later.
 
-- The new policy can be tested first with a subset of users. The test group would be excluded from the policy that requires the custom controls and included in the policy that requires multifactor authentication. Once the admin is comfortable with the policy requiring multifactor authentication via the external authentication method, the policy configured for custom controls can be moved to "off". 
+- The new policy can be tested first with a subset of users. The test group would be excluded from the policy that requires the custom controls and included in the policy that requires multifactor authentication. Once the admin is comfortable with the policy requiring multifactor authentication and being satisified via the external authentication method, all required users can be included in the policy with the multifactor authentication grant, and the policy configured for custom controls can be moved to "off". 
 
 ## Entra ID error response handling
 
-Services in Microsoft Azure platform use a correlationId to correlate calls across various internal and external systems. It serves as a common identifier of the whole operation (or flow) potentially involving multiple HTTP calls. When an error occurs during any of the operations, the response will contain a filed named Correlation Id.
+Services in Microsoft Azure platform use a correlationId to correlate calls across various internal and external systems. It serves as a common identifier of the whole operation (or flow) potentially involving multiple HTTP calls. When an error occurs during any of the operations, the response will contain a field named Correlation Id.
 
 When reaching out to Microsoft support or similar service, please provide the value of this CorrelationId as it helps to access the telemetry and logs faster.
 
