@@ -13,7 +13,7 @@ ms.date: 03/19/2024
 #Customer intent: As a dev, devops, I want to learn about how to enable authentication in my Python Flask web app with Microsoft Entra ID for customers tenant
 ---
 
-# Tutorial: Prepare a Node.js web application for authentication
+# Tutorial: Prepare a Python Flask web application for authentication
 
 This is the second tutorial in a tutorial series that guides you on securing a Python Flask Web app using Microsoft Entra ID for customers. In [part 1 of this series](tutorial-web-app-node-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant.
 
