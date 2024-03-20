@@ -70,19 +70,19 @@ procedureSection:
 
       1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [License Administrator](~/identity/role-based-access-control/permissions-reference.md#license-administrator).
 
-      1. Browse to **Identity** > **Billing** > **Licenses**.
+      2. Browse to **Identity** > **Billing** > **Licenses**.
 
-      1. Select the name of the license plan you want to assign to the user.
+      3. Select the name of the license plan you want to assign to the user.
 
-      1. After you select the license plan, select **Assign**.
+      4. After you select the license plan, select **Assign**.
 
         :::image type="content" source="media/license-users-groups/license-products-blade-with-assign-option-highlight.png" alt-text="Screenshot of services page, with highlighted license plan selection and Assign options.":::
 
-      1. On the **Assign** page, select **Users and groups**, and then search for and select the user you're assigning the license.
+      5. On the **Assign** page, select **Users and groups**, and then search for and select the user you're assigning the license.
 
         :::image type="content" source="media/license-users-groups/assign-license-blade-with-highlight.png" alt-text="Screenshot of the Assign license page, with highlighted search and Select options.":::
 
-      1. Select **Assignment options**, make sure you have the appropriate license options turned on, and then select **OK**.
+      6. Select **Assignment options**, make sure you have the appropriate license options turned on, and then select **OK**.
 
         :::image type="content" source="media/license-users-groups/license-option-blade-assignments.png" alt-text="Screenshot of the License option page, with all options available in the license plan.":::
 
@@ -91,11 +91,11 @@ procedureSection:
         > [!NOTE]
         > Not all Microsoft services are available in all locations. Before a license can be assigned to a user, you must specify the **Usage location**. You can set this value in **Identity** > **Users** > **All users** > *select a user* > **Properties**. When assigning licenses to a group or bulk updates such as disabling the synchronization status for the organization, any user whose usage location isn't specified inherits the location of the tenant.
 
-      1. Select **Assign**.
+      7. Select **Assign**.
 
-          The user is added to the list of licensed users and has access to the included Microsoft Entra services.
-          > [!NOTE]
-          > Licenses can also be assigned directly to a user from the user's **Licenses** page. If a user has a license assigned through a group membership and you want to assign the same license to the user directly, it can be done only from the **Products** page mentioned in step 1 only.
+        The user is added to the list of licensed users and has access to the included Microsoft Entra services.
+        > [!NOTE]
+        > Licenses can also be assigned directly to a user from the user's **Licenses** page. If a user has a license assigned through a group membership and you want to assign the same license to the user directly, it can be done only from the **Products** page mentioned in step 1 only.
 
       ### To assign a license to a group
     steps:
