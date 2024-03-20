@@ -241,8 +241,6 @@ SCOPE = ["User.Read"]
 SESSION_TYPE = "filesystem"
 ```
 
-The `msalConfig` object contains a set of configuration options that can be used to customize the behavior of your authentication flows. This configuration object is passed into the instance of our public client application upon creation. 
-
 ## Create a .env file to store configuration settings.
 
 In this sample, you use an .env file to store and manage the application's configuration settings, environment variables, and credentials that shouldn't be embedded in our code. Open the .env file you created at the root of your project directory and add the following values.
