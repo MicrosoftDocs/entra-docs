@@ -156,6 +156,8 @@ Use the following basic steps to access the reports in the Microsoft Entra admin
     - [Explore the Microsoft Entra audit log categories and activities](reference-audit-activities.md)
     - [Learn about basic info in the Microsoft Entra sign-in logs](concept-sign-in-log-activity-details.md)
 
+Audit logs can be accessed directly from the area of the Microsoft Entra admin center where you're working. For example, if you're in the **Groups** or **Licenses** section of Microsoft Entra ID, you can access the audit logs for those specific activities directly from that area. When you access the audit logs in this way, the filter categories are automatically set. If you're in **Groups**, the audit log filter category is set to **GroupManagement**.
+
 #### Microsoft Entra ID Protection reports
 <a name='azure-ad-identity-protection-reports'></a>
 
