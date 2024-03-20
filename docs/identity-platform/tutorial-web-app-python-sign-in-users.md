@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Add sign in to a Python web app"
-description: Add sign in logic to an Python web app
+description: "Add sign in logic to a Python web app"
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
@@ -38,7 +38,7 @@ from flask_session import Session
 import app_config
 ```
 
-In this code snippet, you import the `redirect`, `render_template`, `request`, `session`, and `url_for`: functions and objects for handling web requests and sessions in Flask. You also import `app_config` which contains the configuration settings for your app.
+In this code snippet, you import the `redirect`, `render_template`, `request`, `session`, and `url_for`: functions and objects for handling web requests and sessions in Flask. You also import `app_config`, which contains the configuration settings for your app.
 
 ## Create an instance of the Flask web app
 
@@ -53,11 +53,11 @@ Session(app)
 
 In the above code snippet, you initialize a new Flask application and load the configuration settings using `app.config.from_object(app_config)`. By using `from_object`, the app inherits the configurations from the specified in `(app_config)`. 
 
-You also perform an assertion check to ensure the redirect path of your app is not set to the root path (“/”). `Session(app)` initializes session management for your app, which enables you to handle sessions and store data such as user authentication states across multiple requests. 
+You also perform an assertion check to ensure the redirect path of your app isn't set to the root path (“/”). `Session(app)` initializes session management for your app, which enables you to handle sessions and store data such as user authentication states across multiple requests. 
 
 ## Configure ProxyFix middleware for local development
 
-Since the sample web app will run on local host, we use the `ProxyFix` middleware to fix the URL scheme and host information in the request headers. Add the following code to `app.py` to apply ProxyFix:
+Since the sample web app runs on local host, we use the `ProxyFix` middleware to fix the URL scheme and host information in the request headers. Add the following code to `app.py` to apply ProxyFix:
 
 ```python
 from werkzeug.middleware.proxy_fix import ProxyFix
@@ -96,7 +96,7 @@ def login():
 
 When a user navigates to the `/login` URL in your app, Flask invokes the view function that handles the request to render the `login.html` template. Inside `login()`, you call the `auth.log_in` function with a list of scopes that the user should consent to during the sign in process. You also provide `redirect_uri` in the parameters, which should match the app's redirect URI i the Microsoft Azure admin center.
 
-You can optionally add parameters such as `prompt`, which controls the behavior of the log in prompt by requesting for re-authentication, user consent, or account selection among accounts with active sessions. 
+You can optionally add parameters such as `prompt`, which controls the behavior of the log in prompt by requesting for reauthentication, user consent, or account selection among accounts with active sessions. 
 
 In the second leg of the authorization flow, you handle the authentication response by calling the `auth.complete_log_in` function inside the redirect_uri controller, as shown: 
 
@@ -122,7 +122,7 @@ def logout():
     return redirect(auth.log_out(url_for("index", _external=True)))
 ```
 
-When a user navigates to the `/logout` URL route in the app, Flask invokes the logout function which signs them out of the current app. You also specify the page that users should be redirected to upon logging out. In the code snippet, we redirect users to the app's homepage using `url_for("index", _external=True).`
+When a user navigates to the `/logout` URL route in the app, Flask invokes the logout function that signs them out of the current app. You also specify the page that users should be redirected to upon logging out. In the code snippet, we redirect users to the app's homepage using `url_for("index", _external=True).`
 
 ## Define an entry point for the web app
 
@@ -140,7 +140,7 @@ def index():
     return render_template('index.html', user=auth.get_user(), version=__version__)
 ```
 
-The `index()` function is invoked when a user navigates to the app's root URL("/"). It handles configuration checks and validates user authentication before rendering the app's homepage. It checks if the client id and client secret are missing in the configuration, and if either or both values are missing, Flask renders the `"config_error.html"` template. 
+The `index()` function is invoked when a user navigates to the app's root URL("/"). It handles configuration checks and validates user authentication before rendering the app's homepage. It checks if the client ID and client secret are missing in the configuration, and if either or both values are missing, Flask renders the `"config_error.html"` template. 
 
 The function also calls `auth.get_user()` to verify whether the user is authenticated or not. If the user isn't authenticated, it redirects them to the `"login"` route. If authenticated, Flask renders the "index.html" template and passes the user object (retrieved from `auth.get_user()`) for rendering.
 

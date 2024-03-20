@@ -41,9 +41,9 @@ def call_downstream_api():
     return render_template('display.html', result=api_result)
 ``` 
 
-When a user navigates to the `/call_downstream_api` URL route, Flask invokes the `call_downstream_api()` function that first attempts to obtain an access token using `auth.get_token_for_user(app_config.SCOPE)`.  If there's an authentication issue or any error in the token, you redirect the user to the log in page for re-authentication.
+When a user navigates to the `/call_downstream_api` URL route, Flask invokes the `call_downstream_api()` function that first attempts to obtain an access token using `auth.get_token_for_user(app_config.SCOPE)`.  If there's an authentication issue or any error in the token, you redirect the user to the log in page for reauthentication.
 
-If the app successfully obtains an access token, it makes a HTTP request to the downstream API using the `requests.get(...)` method. In the request, our downstream API URL is specified in `app_config.ENDPOINT`. You also pass the access token in the `Authorization` field of the request header. 
+If the app successfully obtains an access token, it makes an HTTP request to the downstream API using the `requests.get(...)` method. In the request, our downstream API URL is specified in `app_config.ENDPOINT`. You also pass the access token in the `Authorization` field of the request header. 
 
 A successful request to the downstream API (Microsoft Graph API) returns a JSON response that's stored in an `api_result` variable and passed to the `'display.html'` template for rendering. 
 
@@ -73,17 +73,17 @@ Follow these steps to test the sign in, call API, and sign out experiences in yo
 1. After the sign-in window appears, provide the account to sign in with and select **Next**:
 
     :::image type="content" source="./media/python-webapp/sign-in-page.png" alt-text="Screenshot showing the sign-in screen.":::
-1. Your browser will redirect you to provide a password for your account. Enter the password and select  select **Sign in**.
+1. Your browser will redirect you to provide a password for your account. Enter the password and select **Sign in**.
 
-    At this point, the sign-in flow may vary depending on the additional security information your organization requires, for example, multi-factor authentication using an authenticator app.
+    At this point, the sign-in flow may vary depending on the additional security information your organization requires, for example, multifactor authentication using an authenticator app.
 
 1. For **Stay signed in**, you can select either **No** or **Yes**.
 
-1. The application requests permission to maintain access to data you have given it access to, sign you in, and read your profile. Select **Accept**.
+1. The application requests permission to maintain access to data you've given it access to, sign you in, and read your profile. Select **Accept**.
 
     :::image type="content" source="./media/python-webapp/consent.png" alt-text="Screenshot showing the consent request window.":::
 
-1. The following screenshot appears, indicating that you have signed in to the application:
+1. The following screenshot appears, indicating that you're signed in to the application:
 
     :::image type="content" source="./media/python-webapp/signed-in-user.png" alt-text="Screenshot showing a signed in user.":::
 

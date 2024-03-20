@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Create and configure an Python web app for authentication"
-description: "Create and configure project, add configuration for authentication and install required packages"
+title: "Tutorial: Create and configure a Python web app for authentication"
+description: "Create new Python web app project, add UI templates, and add required configurations."
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
@@ -27,20 +27,20 @@ In this tutorial:
 
 ## Prerequisites
 
-- Complete the steps in [Tutorial: Register a Python web app with the Microsoft identity platform](tutorial-web-app-python-register-app.md)
+- Complete the steps in [Tutorial: Register a Python web app with the Microsoft identity platform](tutorial-web-app-python-register-app.md).
 - [Visual Studio Code](https://visualstudio.microsoft.com/downloads/) or any other IDE.
 - <a href="https://www.python.org/downloads/" target="_blank">Python 3.9 or higher</a> installed locally.
 
 ## Create a new Python web app project
 
-To complete the rest of the tutorial, you'll need to create a Python Flask web app project. If you prefer using a completed code sample for learning, download the [Python Flask web app sample](https://github.com/Azure-Samples/ms-identity-docs-code-python/flask-web-app) from GitHub. 
+To complete the rest of the tutorial, you need to create a Python Flask web app project. If you prefer using a completed code sample for learning, download the [Python Flask web app sample](https://github.com/Azure-Samples/ms-identity-docs-code-python/flask-web-app) from GitHub. 
 
 To build the Python Flask web app from scratch, follow these steps:
 
 1. Create a folder to host your application and name it *flask-web-app*.
-1. Navigate to your project directory and create three files named *app.py*, *app.config.py*, and *requirements.txt*
+1. Navigate to your project directory and create three files named *app.py*, *app.config.py*, and *requirements.txt*.
 1. Create an .env file in the root folder of the project.
-1. In your project root directory, create a folder named *templates*. Flask will look for rendering templates in this subdirectory. 
+1. Create a folder named *templates* in your project root directory. Flask will look for rendering templates in this subdirectory. 
 
 After you create the files, your project's file and directory structure should be similar to the following:
 
@@ -60,7 +60,7 @@ python-webapp/
 
 ## Install app dependencies
 
-The application you build uses the the [`identity` package](https://pypi.org/project/identity/), a wrapper around the Microsoft Authentication Library (MSAL) for Python. You'll also install Flask, Flask Session, requests, and all other dependencies that the app requires. Update *requirements.txt* with these dependencies.
+The application you build uses the [`identity` package](https://pypi.org/project/identity/), a wrapper around the Microsoft Authentication Library (MSAL) for Python. You also install Flask, Flask Session, requests, and all other dependencies that the app requires. Update *requirements.txt* with these dependencies.
 
 ```python
 Flask>=2.2
@@ -73,11 +73,11 @@ python-dotenv<0.22
 
 ## Add application UI components
 
-Flask uses the helper function `render_template()` for rendering HTML templates containing both static and dynamic content. In this section, you create HTML templates for each of the routes you'll define in the app, including login, logout, API calls, and error templates. Follow these steps to create templates for each of these pages:
+Flask uses the helper function `render_template()` for rendering HTML templates containing both static and dynamic content. In this section, you create HTML templates for each of the routes you define in the app, including login, logout, API calls, and error templates. Follow these steps to create templates for each of these pages:
 
 #### Login templates
 
-In the templates folder, create a HTML file named *login.html* and add the following content: 
+In the templates folder, create an HTML file named *login.html* and add the following content: 
 
 ```html
 <!DOCTYPE html>
@@ -145,7 +145,7 @@ In the templates folder, create a HTML file named *index.html* and add the follo
 </body>
 </html>
 ```
-The index template serves as a homepage for the web app, usually rendered when users visit the root URL of the app.
+The index template serves as a homepage for the web app, rendered when users visit the root URL of the app.
 
 #### Display page
 
@@ -245,7 +245,7 @@ The `msalConfig` object contains a set of configuration options that can be used
 
 ## Create a .env file to store configuration settings.
 
-In this sample, you'll use a .env file to store and manage the application's configuration settings, environment variables, and credentials that shouldn't be embedded in our code. Open the .env file you created at the root of your project directory and add the following.
+In this sample, you use an .env file to store and manage the application's configuration settings, environment variables, and credentials that shouldn't be embedded in our code. Open the .env file you created at the root of your project directory and add the following values.
 
 ```python
 # The following variables are required for the app to run.

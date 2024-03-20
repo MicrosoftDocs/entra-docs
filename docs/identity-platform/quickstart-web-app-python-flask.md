@@ -48,9 +48,9 @@ Follow these steps to register your application in the Microsoft Entra admin cen
 1. On the app **Overview** page, note the **Application (client) ID** value for later use.
 1. Under **Manage**, select the **Certificates & secrets** and from the **Client secrets** section, select **New client secret**.
 1. Enter a description for the client secret, leave the default expiration, and select **Add**.
-1. Save the **Value** of the **Client Secret** in a safe location. You'll need it to configure the code, and you can't retrieve it later.
+1. Save the **Value** of the **Client Secret** in a safe location. You need this value configure the code, and you can't retrieve it later.
 
-   The sample application in this quickstart uses a client secret to identify itself as confidential client. Because the client secret is added as a plain-text to your project files, for security reasons, it is recommended that you use a certificate instead of a client secret before moving the application to a production environment. For more information on how to use a certificate, see [these instructions](./certificate-credentials.md). 
+   The sample application in this quickstart uses a client secret to identify itself as confidential client. Because the client secret is added as a plain-text to your project files, for security reasons, it's recommended that you use a certificate instead of a client secret before moving the application to a production environment. For more information on how to use a certificate, see [these instructions](./certificate-credentials.md). 
 
 ## Step 3: Add a scope
 
@@ -83,7 +83,7 @@ git clone https://github.com/Azure-Samples/ms-identity-docs-code-python/
 
     * Set the value of `CLIENT_ID` to the **Application (client) ID** for the registered application, available on the overview page.
     * Set the value of `CLIENT_SECRET` to the client secret you created in **Certificates & Secrets** for the registered application.
-    * Set the value of `AUTHORITY` to a `https://login.microsoftonline.com/common` . If you're building a single-tenant application, the authority should include the **Directory (tenant) ID** of your app, usually available on the overview page.
+    * Set the value of `AUTHORITY` to a `https://login.microsoftonline.com/common` . If you're building a single-tenant application, the authority should include the **Directory (tenant) ID** of your app, available on the overview page.
     
     The environment variables are referenced in *app_config.py*, and are kept in a separate *.env* file to keep them out of source control. The provided *.gitignore* file prevents the *.env* file from being checked in.
 
