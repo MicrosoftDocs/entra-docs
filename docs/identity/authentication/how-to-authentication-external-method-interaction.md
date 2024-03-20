@@ -106,7 +106,7 @@ Entra ID’s metadata discovery endpoints:
 
 - Public Azure: `https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration`
 - Azure for US Government: `https://login.microsoftonline.us/common/v2.0/.well-known/openid-configuration`
-- Azure China 21Vianet: 
+- Azure China 21Vianet: `https://login.partner.microsoftonline.cn/common/v2.0/.well-known/openid-configuration`
 
 
 Using the public key identifier from the token ([the “kid” from JWS](https://tools.ietf.org/html/rfc7515#section-4.1.4)), one can determine which of the keys retrieved from the jwks_uri property should be used for validating the Entra ID token signature.
@@ -153,7 +153,7 @@ This should have been registered with the provider off-band. The redirect URIs t
 
 - Public Azure: `https://login.microsoftonline.com/common/federation/externalauthprovider`
 - Azure for US Government: `https://login.microsoftonline.us/common/federation/externalauthprovider`
-- Azure China 21Vianet: 
+- Azure China 21Vianet: `https://login.partner.microsoftonline.cn/common/federation/externalauthprovider`
 
 
 #### Example of an external authentication method that satisfies MFA
@@ -255,57 +255,6 @@ Here's an example of the id_token hint for a guest user in the tenant:
 
 ```
 
-Here are examples of an id_token_hint when the claims for upn and email have been configured by the provider.
-
-An example of an id_token_hint for a directory member:
-
-```json
-{
-  "typ": "JWT",
-  "alg": "RS256",
-  "kid": "7_Zuf1tvkwLxYaHS3q6lUjUYIGw"
-}.{
-  "ver": "2.0",
-  "iss": "https://login.microsoftonline.com/9122040d-6c67-4c5b-b112-36a304b66dad/v2.0",
-  "sub": "mBfcvuhSHkDWVgV72x2ruIYdSsPSvcj2R0qfc6mGEAA",
-  "aud": "600b719b-3766-4dc5-95a6-3c4a8dc31885",
-  "exp": 1536093790,
-  "iat": 1536093791,
-  "nbf": 1536093791,
-  "name": "Test User 2",
-  "preferred_username": "testuser2@contoso.com"
-  "upn": "testuser2@contoso.com"
-  "oid": "951ddb04-b16d-45f3-bbf7-b0fa18fa7aee",
-  "tid": "14c2f153-90a7-4689-9db7-9543bf084dad"
-  }.
-
-
-```
-
-An example of the id_token hint for a guest user in the tenant is provided below. Note that upn claim is not returned.
-
-```json
-{
-  "typ": "JWT",
-  "alg": "RS256",
-  "kid": "7_Zuf1tvkwLxYaHS3q6lUjUYIGw"
-}.{
-  "ver": "2.0",
-  "iss": "https://login.microsoftonline.com/9122040d-6c67-4c5b-b112-36a304b66dad/v2.0",
-  "sub": "mBfcvuhSHkDWVgV72x2ruIYdSsPSvcj2R0qfc6mGEAA",
-  "aud": "600b719b-3766-4dc5-95a6-3c4a8dc31885",
-  "exp": 1536093790,
-  "iat": 1536093791,
-  "nbf": 1536093791,
-  "name": "External Test User (Hotmail)",
-  "preferred_username": "externaltestuser@hotmail.com",
-  "email": "externaltestuser@hotmail.com",
-  "oid": "951ddb04-b16d-45f3-bbf7-b0fa18fa7aee",
-  "tid": "14c2f153-90a7-4689-9db7-9543bf084dad"
-  }.
-
-
-```
 
 ### Suggested actions for external identity providers
 
@@ -317,8 +266,8 @@ The following are the steps that we suggest the external identity provider to ca
    - The provider should first [validate](/entra/identity-platform/id-tokens#validating-an-id_token) the id_token_hint that is presented to it by Entra ID.
 1. From the claims in the id_token_hint:
    - They can (optionally) make a call to [Microsoft Graph](https://graph.microsoft.com/) to fetch additional details about this user. The **oid** and **tid** claims in the id_token_hint will be useful in this regard. See section 0 for details about the claims provided in the id_token_hint.
-1. Then carry out whatever additional authentication and authorization activity that the provider’s product is built to do.
-1. Depending upon the result of user’s actions and other factors, the provider would then construct and send a response back to Entra ID as explained in section  3.3.2.6 below.
+1. Then carry out whatever additional authentication activity that the provider’s product is built to do.
+1. Depending upon the result of user’s actions and other factors, the provider would then construct and send a response back to Entra ID as explained below.
 
 ###	Entra ID processing of the provider response
 
