@@ -4,11 +4,11 @@ description: Learn about the features you set up with the get started guide.
 
 author: csmulligan
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: concept-article
-ms.date:  03/14/2023
+ms.date:  03/20/2023
 ms.author: cmulligan
 ms.custom: it-pro
 
