@@ -23,10 +23,9 @@ As a vendor, your FIDO2 security key can become approved for Microsoft Entra ID 
 - Your authenticator needs to have a FIDO2 certification. This can be at 'any' level. To learn more about the certification, visit the [FIDO Alliance Certification Overview website](https://fidoalliance.org/certification/). 
 - Your product metadata has been uploaded to the FIDO Alliances backend metadata services (MDS) and you have verified your metadata is in the MDS. The metadata must indicate that your authenticator supports: 
   - FIDO 2.0 or FIDO 2.1. Entra ID does not support single factor UAF/U2F. 
-  - User verification. Entra ID requires user verification for all FIDO2 authentication attempts. 
+  - User verification or client PIN. Entra ID requires user verification with biometrics or PIN for all FIDO2 authentication attempts.
+    Resident keys. The private key is stored on the security key.
   - HMAC secret extension. This is required for using a security key to unlock Windows in offline scenarios.
-  - Resident keys. 
-  - ClientPIN.
 
 Microsoft ingests the latest version of FIDO MDS every month, so expect a maximum 4-week delay from the time that your FIDO2 security key appears in FIDO MDS to when Microsoft recognizes the key model. If your key is approved by Microsoft, it will be listed in the section below titled **FIDO2 security keys approved for attestation in Microsoft Entra ID**.
 
@@ -40,7 +39,7 @@ During FIDO2 registration, Microsoft Entra ID requires security keys to provide 
 
 ## Attestation-approved FIDO2 security keys for Microsoft Entra ID
 
-The following table lists FIDO2 security key models that have been approved for Microsoft Entra ID attestation. The last column indicates whether the model meets [attestation requirements](#attestation-requirements).
+The following table lists FIDO2 security key models that have been approved for Microsoft Entra ID attestation. The last column indicates whether the model meets the latest [attestation requirements](#attestation-requirements) documented above. Models that are listed below but don't meet Microsoft's latest attestation requirements are still approved for attestation.
 
 |Model|AAGUID|Biometric|USB|NFC|BLE|Meets requirements|
 |---|---|---|---|---|---|---|
