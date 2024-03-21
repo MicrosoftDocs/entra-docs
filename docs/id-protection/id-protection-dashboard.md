@@ -67,11 +67,11 @@ To help you better understand your risk exposure, we're introducing an innovativ
 
 An attack is an event where we detect a bad actor attempting to sign-in to your environment. This event triggers a real-time sign-in [risk detection](concept-identity-protection-risks.md#what-are-risk-detections) mapped to a corresponding MITRE ATT&CK technique. Refer to the following table for the mapping between Microsoft Entra ID Protection’s real-time sign-in risk detections and attacks as categorized by MITRE ATT&CK techniques. 
 
-Since the attack graph is only illustrating real-time sign-in risk activity, user risk detections aren't included."
+Since the attack graph is only illustrating real-time sign-in risk activity, [risky user activity](concept-identity-protection-risks.md#user-risk-detections) isn't included. To visualize risky user activity in your environment, you can go to the [risky users report](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/IdentityProtectionMenuBlade/~/RiskyUsers/fromNav/).
 
 #### How to interpret the attack graphic?
 
-The graphic presents attack types impacted your tenant over the past 30 days, and whether they were blocked during sign-in. On the left side, you see the volume of each attack type. On the right, the numbers of blocked and yet-to-be-remediated attacks are displayed. The graph updates every 24 hours and is counting risk sign-in detections that occur in real-time; therefore, the total number of attacks don't match total number of detections.
+The graphic presents attack types that impacted your tenant over the past 30 days, and whether they were blocked during sign-in. On the left side, you see the volume of each attack type. On the right, the numbers of blocked and yet-to-be-remediated attacks are displayed. The graph updates every 24 hours and is counting risk sign-in detections that occur in real-time; therefore, the total number of attacks don't match total number of detections.
 
 - Blocked: An attack is classified as blocked if the associated risky sign-in is interrupted by an access policy, like requiring multifactor authentication. This action prevents the attacker's sign-in and blocks the attack. 
 - Not remediated: Successful risky sign-ins that weren't interrupted and need remediation. Therefore, risk detections associated with these risky sign-ins also require remediation. You can view these sign-ins and associated risk detections in the Risky sign-ins report by filtering with the "At risk" risk state.
