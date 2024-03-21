@@ -112,7 +112,7 @@ Next, configure the gallery application **API-driven provisioning to on-premises
 
 Before sending your initial sync payload, you need to make sure your data is prepared to properly sync with Microsoft Entra. The following steps help ensure a smooth integration.
 
-1. [Matching identifier](~/identity/app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target-systems)
+1. [Matching identifier](~/identity/app-provisioning/customize-application-attributes.md)
     presence and uniqueness: The provisioning service uses a matching
     attribute to uniquely identify and link worker records in your
     Oracle system with corresponding user accounts in AD / Microsoft Entra ID. The
@@ -122,7 +122,7 @@ Before sending your initial sync payload, you need to make sure your data is pre
     cloud-only users) and on-premises AD (for hybrid users) before
     initiating full sync, as it uniquely identifies users.
 
-1. Use [scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md#pivots=cross-tenant-synchronization)
+1. Use [scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md#)
     to skip HR records that are no longer relevant: HR systems have
     several years of employment data probably going all the way back to
     1970s. On the other hand, your IT team may only be interested in the
@@ -310,7 +310,7 @@ attributes in the SCIM payload based on the Oracle HCM to SCIM worksheet:
 
 ```
 
-Once you format the [SCIM bulk request](~/identity/app-provisioning/inbound-provisioning-api-graph-explorer.md#bulk-request-with-scim-enterprise-user-schema), you can then send the data to the [bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload?view=graph-rest-1.0&tabs=http) API endpoint via API-driven provisioning.
+Once you format the [SCIM bulk request](~/identity/app-provisioning/inbound-provisioning-api-graph-explorer.md#bulk-request-with-scim-enterprise-user-schema), you can then send the data to the [bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API endpoint via API-driven provisioning.
 
 Before enabling the integration, run manual tests and verifications to validate the SCIM
 bulk request payload structure. You may use tools, such as [Postman](~/identity/app-provisioning/inbound-provisioning-api-postman.md) or [Graph Explorer](~/identity/app-provisioning/inbound-provisioning-api-graph-explorer.md) to confirm that the bulk request payloads are processed as expected.
