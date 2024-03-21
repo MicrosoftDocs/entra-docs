@@ -180,6 +180,14 @@ When using OU scoping filter
 
 - Using password hash sync with InetOrgPerson is not supported.
 
+### Role activation through PIM for Groups
+
+The installation wizard does not support signing in as a user that has the Global Administrator role assigned through a group, using PIM for Groups. The following error will be reported, even though the role works on other scenarios:
+
+![image](https://github.com/MicrosoftDocs/entra-docs/assets/426202/35757381-d536-4f93-a139-df3cc7be8edb)
+
+As a workaround, add the administrator user as PIM eligible assignment directly on the Global Administrator role.
+
 ## Next steps
 
 - [What is provisioning?](../what-is-provisioning.md)
