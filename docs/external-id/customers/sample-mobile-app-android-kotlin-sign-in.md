@@ -21,7 +21,7 @@ This guide demonstrates how to configure a sample Android mobile application to 
   
 In this article, you do the following tasks: 
  
-- Register a web application in the Microsoft Entra admin center.
+- Register an application in the Microsoft Entra admin center.
 - Add a platform redirect URL.
 - Enable public client flows.   
 - Update the Android configuration code sample file to use your own Microsoft Entra External ID for customer tenant details.  
