@@ -19,7 +19,7 @@ Microsoft Entra ID allows you to create several types of users in your tenant, w
 
 This article explains how to create a new user, invite an external guest, and delete a user in your tenant.
 
-[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-hybrid-note.md)]
+[!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-hybrid-note.md)]
 
 ## Prerequisites
 
@@ -64,9 +64,9 @@ Reviewing the default user permissions may also help you determine the type of u
 
 ### Basics
 
-The **Basics** tab contains the core fields required to create a new user. Before you begin, [review the guidance on user name properties](how-to-manage-user-profile-info.md#guidance-on-user-name-properties).
+The **Basics** tab contains the core fields required to create a new user. Before you begin, [review the guidance on user name properties](how-to-manage-user-profile-info.yml#guidance-on-user-name-properties).
 
-- **User principal name**: Enter a unique username and select a domain from the menu after the @ symbol. Select **Domain not listed** if you need to create a new domain. For more information, see [Add your custom domain name](add-custom-domain.md).
+- **User principal name**: Enter a unique username and select a domain from the menu after the @ symbol. Select **Domain not listed** if you need to create a new domain. For more information, see [Add your custom domain name](add-custom-domain.yml).
 - **Mail nickname**: If you need to enter an email nickname that is different from the user principal name you entered, uncheck the **Derive from user principal name** option, then enter the mail nickname.
 - **Display name**: Enter the user's name, such as Chris Green or Chris A. Green
 - **Password**: Provide a password for the user to use during their initial sign-in. Uncheck the **Auto-generate password** option to enter a different password.
@@ -187,4 +187,4 @@ When a user is deleted, any licenses consumed by the user are made available for
 
 * [Learn about B2B collaboration users](~/external-id/add-users-administrator.md)
 * [Review the default user permissions](users-default-permissions.md)
-* [Add a custom domain](add-custom-domain.md)
+* [Add a custom domain](add-custom-domain.yml)
