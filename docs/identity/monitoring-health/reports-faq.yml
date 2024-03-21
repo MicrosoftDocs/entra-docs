@@ -25,7 +25,7 @@ sections:
           See [Microsoft Entra ID licensing](../../fundamentals/licensing.md) to upgrade your Microsoft Entra edition.
           
       - question: |
-          How soon should I see activiy log data after getting a premium license?
+          How soon should I see activity log data after getting a premium license?
         answer: |
           If you already have activity log data as a free license, then you can see it immediately. If you don't have any data, then it takes up to three days for the data to show up in the reports.
 
@@ -50,17 +50,14 @@ sections:
       - question: |
           Can I get Microsoft 365 activity log information through the Microsoft Entra admin center or the Azure portal?
         answer: |
-          Microsoft 365 and Microsoft Entra activity logs share many directory resources. If you want a full view of the Microsoft 365 activity logs, you should go to the [Microsoft 365 admin center](https://admin.microsoft.com) to get Office 365 Activity log information.
-          
-      - question: |
-          Which APIs do I use to get information about Microsoft 365 Activity logs?
-        answer: |
-          The APIs for Microsoft 365 are described in the [Microsoft 365 Management APIs](/office/office-365-management-api/office-365-management-apis-overview) article.
+          Microsoft 365 and Microsoft Entra activity logs share many directory resources. If you want a full view of the Microsoft 365 activity logs, you should go to the [Microsoft 365 admin center](https://admin.microsoft.com) to get Office 365 Activity log information. The APIs for Microsoft 365 are described in the [Microsoft 365 Management APIs](/office/office-365-management-api/office-365-management-apis-overview) article.
           
       - question: |
           How many records I can download from the Microsoft Entra admin center?
         answer: |
-          How many logs you can download from the Microsoft Entra admin center is determined by a few factors, including browser memory size, network speeds, and current load on Microsoft Entra reporting APIs. In general, you can expect to download up to 250,000 records from the Microsoft Entra admin center. Depending on the number of fields you included, this number could vary. To download data sets larger than 250,000 records, use the [reporting API](/graph/api/resources/azure-ad-auditlog-overview?view=graph-rest-1.0) to download the data. The specific set of logs you can download is determined by the filters active in the Microsoft Entra admin center when you begin the download (for example, filtering to a specific user in the Microsoft Entra admin center will mean your download pulls logs for that specific user). 
+          How many logs you can download from the Microsoft Entra admin center is determined by a few factors, including browser memory size, network speeds, and current load on Microsoft Entra reporting APIs. Generally, data sets smaller than 250,000 for audit logs and 100,000 for sign-in and provisioning logs work well with the browser download feature. Depending on the number of fields you included, this number could vary. If you face issues completing large downloads in the browser, use the [**reporting API**](/graph/api/resources/azure-ad-auditlog-overview) to download the data or [**send the logs to an endpoint through diagnostic settings**](howto-configure-diagnostic-settings.md).
+          
+          The specific set of logs you can download is determined by the filters active in the Microsoft Entra admin center when you begin the download. For example, filtering to a specific user in the Microsoft Entra admin center mean your download pulls logs for that specific user. The columns in the downloaded logs do not change. The output contains all details of the audit or sign-in log, *regardless of the columns you customized in the Microsoft Entra admin center*.
 
       - question: |
           How long does Microsoft Entra ID store activity logs? What is the data retention?
@@ -68,7 +65,7 @@ sections:
           Depending on your license, Microsoft Entra ID stores activity logs for between 7 and 30 days. For more information, see [Microsoft Entra report retention policies](reference-reports-data-retention.md).  
 
       - question: |
-          What happens if an Administrator changes the retention period of a diagnostic setting?
+          What happens if an administrator changes the retention period of a diagnostic setting?
         answer: |
           The Diagnostic settings storage retention feature is being deprecated. For details on this change, see [**Migrate from diagnostic settings storage retention to Azure Storage lifecycle management**](/azure/azure-monitor/essentials/migrate-to-azure-storage-lifecycle-policy).
 
@@ -81,7 +78,7 @@ sections:
           At this time, there isn't a specific activity in the audit logs for license purchases or enablement. However, you may be able to correlate the "Onboard resource to PIM" activity from the "Resource Management" category to the purchase or enablement of a license. This activity may not always be available or provide the exact details.
 
       - question: |
-          I see multiple audit log entries with an activity I don't recognize. What does `DSR Delete: MFA.PostgreSQL.change_requests` or `DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-eu.activations` mean?
+          What does `DSR Delete: MFA.PostgreSQL.change_requests` or `DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-eu.activations` in the audit logs mean?
         answer: |
           These changes are related to how MFA and some [GDPR](https://www.microsoft.com/trust-center/privacy/gdpr-overview) events are processed. Events such as deleting users or exporting user data are captured in the audit logs, but the activity description might be a little cryptic. We're working to improve those activity labels. For a full list of of the activities related to GDPR, see [Audit activities](reference-audit-activities.md#authentication-methods). These activities are associated with the DirectoryManagement category.
 
@@ -96,12 +93,16 @@ sections:
       - question: |
           What data is included in the CSV file I can download from the Microsoft Entra sign-in logs?
         answer: |
-          The CSV includes sign-in logs for your users and service principals. However, data that is represented as a nested array in the MS Graph API for sign-in logs isn't included. For example, Conditional Access policies and report-only information aren't included. If you need to export all the information contained in your sign-in logs, use the **Export Data Settings** feature. 
+          The CSV includes sign-in logs for the type of sign-ins you selected. Data that is represented as a nested array in the Microsoft Graph API for sign-in logs is *not* included. For example, Conditional Access policies and report-only information aren't included. If you need to export all the information contained in your sign-in logs, use the **Export Data Settings** feature.
+
+          It's also important to note the columns included in the downloaded logs don't change, even if you customized the columns in the Microsoft Entra admin center. 
 
       - question: |
           I see .XXX in part of the IP address from a user in my sign-in logs. Why is that happening?
         answer: |
-          Microsoft Entra ID may redact part of an IP address in the sign-in logs to protect user privacy when a user may not belong to the tenant viewing the logs. This action happens in two cases: first, during cross tenant sign ins, such as when a CSP technician signs into a tenant that CSP manages. Second, when our service wasn't able to determine the user's identity with sufficient confidence to be sure the user belongs to the tenant viewing the logs.
+          Microsoft Entra ID may redact part of an IP address in the sign-in logs to protect user privacy when a user may not belong to the tenant viewing the logs. This action happens in two cases:
+          - During cross tenant sign ins, such as when a CSP technician signs into a tenant that CSP manages.
+          - When our service wasn't able to determine the user's identity with sufficient confidence to be sure the user belongs to the tenant viewing the logs.
 
       - question: |
           I see "PII Removed" in the Device Details of a user in my sign-in logs. Why is that happening?
@@ -139,7 +140,7 @@ sections:
           No, in general 90025 errors are resolved by an automatic retry without the user noticing the error. This error can occur when an internal Microsoft Entra subservice hits its retry allowance and doesn't indicate your tenant is being throttled. These errors are usually resolved by Microsoft Entra ID internally. If the user is unable to sign in due to this error, manually trying again should resolve the issue. 
 
       - question: |
-          In the Service Principal sign-in logs, what does it mean if I see “00000000-0000-0000-0000-000000000000” or “” for Service Principal ID or Resource Service Principal ID in my sign-in logs?
+          In the Service Principal sign-in logs, what does it mean if I see “00000000-0000-0000-0000-000000000000” or “ ” for Service Principal ID or Resource Service Principal ID in my sign-in logs?
         answer: |
           If the Service Principal ID has the value “0000000-0000-0000-0000-000000000000" there's no Service Principal for the client application in that instance of authentication. Microsoft Entra no longer issues access tokens without a client Service Principal, except for a few Microsoft and third party applications.
 
@@ -197,8 +198,7 @@ sections:
           - Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
           - Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
           - Select the sign-in that you want to troubleshoot.
-          - Select the **Conditional Access** tab.
-          Here, you can view all the policies that impacted the sign-in and the result for each policy. 
+          - Select the **Conditional Access** tab to view all the policies that impacted the sign-in and the result for each policy. 
               
       - question: |
           What are all possible values for the Conditional Access status?
