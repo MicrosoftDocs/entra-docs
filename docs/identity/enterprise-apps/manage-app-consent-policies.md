@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 08/25/2023
+ms.date: 03/21/2024
 ms.author: jomondi
 ms.reviewer: phsignor, yuhko
 ms.custom: enterprise-apps
@@ -37,7 +37,7 @@ App consent policies where the ID begins with "microsoft-" are built-in policies
   - Global Administrator directory role
   - Privileged Role Administrator directory role
   - A custom directory role with the necessary [permissions to manage app consent policies](~/identity/role-based-access-control/custom-consent-permissions.md#managing-app-consent-policies)
-  - The Microsoft Graph app role (application permission) Policy.ReadWrite.PermissionGrant (when connecting as an app or a service)
+  - The Microsoft Graph app role (application permission) `Policy.ReadWrite.PermissionGrant` when connecting as an app or a service
 
 :::zone pivot="ms-powershell"
 
@@ -110,7 +110,7 @@ Follow these steps to create a custom app consent policy:
 
    Repeat this step to add more "exclude" condition sets.
 
-Once the app consent policy has been created, you can [allow user consent](configure-user-consent.md?tabs=azure-powershell#allow-user-consent-subject-to-an-app-consent-policy-using-powershell) subject to this policy.
+After creating the app consent policy, you need to assign it to a custom role in Microsoft Entra ID. You then need to assign users to that custom role, which is attached to the app consent policy you created. For more information on how to assign the app consent policy to a custom role, see [App consent permissions for custom roles](~/identity/role-based-access-control/custom-consent-permissions.md).
 
 ## Delete a custom app consent policy using PowerShell
 
@@ -199,7 +199,7 @@ Follow these steps to create a custom app consent policy:
 
    Repeat this step to add more "exclude" condition sets.
 
-Once the app consent policy has been created, you can [allow user consent](configure-user-consent.md?tabs=azure-powershell#allow-user-consent-subject-to-an-app-consent-policy-using-powershell) subject to this policy.
+After creating the app consent policy, you need to assign it to a custom role in Microsoft Entra ID. You then need to assign users to that custom role, which is attached to the app consent policy you created. For more information on how to assign the app consent policy to a custom role, see [App consent permissions for custom roles](~/identity/role-based-access-control/custom-consent-permissions.md).
 
 ## Delete a custom app consent policy Microsoft Graph
 
@@ -220,16 +220,16 @@ The following table provides the list of supported conditions for app consent po
 
 | Condition | Description|
 |:---------------|:----------|
-| PermissionClassification | The [permission classification](configure-permission-classifications.md) for the permission being granted, or "all" to match with any permission classification (including permissions that aren't classified). Default is "all". |
-| PermissionType | The permission type of the permission being granted. Use "application" for application permissions (for example, app roles) or "delegated" for delegated permissions. <br><br> **Note**: The value "delegatedUserConsentable" indicates delegated permissions that haven't been configured by the API publisher to require admin consent. This value can be used in built-in permission grant policies, but can't be used in custom permission grant policies. Required. |
-| ResourceApplication | The **AppId** of the resource application (for example, the API) for which a permission is being granted, or "any" to match with any resource application or API. Default is "any". |
-| Permissions | The list of permission IDs for the specific permissions to match with, or a list with the single value "all" to match with any permission. Default is the single value "all". <br> - Delegated permission IDs can be found in the **OAuth2Permissions** property of the API's ServicePrincipal object. <br> - Application permission IDs can be found in the **AppRoles** property of the API's ServicePrincipal object. |
-| ClientApplicationIds | A list of **AppId** values for the client applications to match with, or a list with the single value "all" to match any client application. Default is the single value "all". |
-| ClientApplicationTenantIds | A list of Microsoft Entra tenant IDs in which the client application is registered, or a list with the single value "all" to match with client apps registered in any tenant. Default is the single value "all". |
-| ClientApplicationPublisherIds | A list of Microsoft Partner Network (MPN) IDs for [verified publishers](~/identity-platform/publisher-verification-overview.md) of the client application, or a list with the single value "all" to match with client apps from any publisher. Default is the single value "all". |
+| PermissionClassification | The [permission classification](configure-permission-classifications.md) for the permission being granted, or "all" to match with any permission classification (including permissions that aren't classified). Default is "all." |
+| PermissionType | The permission type of the permission being granted. Use "application" for application permissions (for example, app roles) or "delegated" for delegated permissions. <br><br> **Note**: The value "delegatedUserConsentable" indicates delegated permissions that aren't configured by the API publisher to require admin consent. This value can be used in built-in permission grant policies, but can't be used in custom permission grant policies. Required. |
+| ResourceApplication | The **AppId** of the resource application (for example, the API) for which a permission is being granted, or "any" to match with any resource application or API. Default is "any." |
+| Permissions | The list of permission IDs for the specific permissions to match with, or a list with the single value "all" to match with any permission. Default is the single value "all." <br> - Delegated permission IDs can be found in the **OAuth2Permissions** property of the API's ServicePrincipal object. <br> - Application permission IDs can be found in the **AppRoles** property of the API's ServicePrincipal object. |
+| ClientApplicationIds | A list of **AppId** values for the client applications to match with, or a list with the single value "all" to match any client application. Default is the single value "all." |
+| ClientApplicationTenantIds | A list of Microsoft Entra tenant IDs in which the client application is registered, or a list with the single value "all" to match with client apps registered in any tenant. Default is the single value "all." |
+| ClientApplicationPublisherIds | A list of Microsoft Partner Network (MPN) IDs for [verified publishers](~/identity-platform/publisher-verification-overview.md) of the client application, or a list with the single value "all" to match with client apps from any publisher. Default is the single value "all." |
 | ClientApplicationsFromVerifiedPublisherOnly | Set this switch to only match on client applications with a [verified publishers](~/identity-platform/publisher-verification-overview.md). Disable this switch (`-ClientApplicationsFromVerifiedPublisherOnly:$false`) to match on any client app, even if it doesn't have a verified publisher. Default is `$false`. |
 |scopeType| The resource scope type the preapproval applies to. Possible values: `group` for [groups](/graph/api/resources/group) and [teams](/graph/api/resources/team), `chat` for [chats](/graph/api/resources/chat?view=graph-rest-1.0&preserve-view=true),  or `tenant` for tenant-wide access. Required.|
-| sensitivityLabels| The sensitivity labels that are applicable to the scope type and have been preapproved. It allows you to protect sensitive organizational data. Learn about [sensitivity labels](/purview/sensitivity-labels). **Note:** Chat resource **does not** support sensitivityLabels yet.
+| sensitivityLabels| The sensitivity labels that are applicable to the scope type and aren't preapproved. It allows you to protect sensitive organizational data. Learn about [sensitivity labels](/purview/sensitivity-labels). **Note:** Chat resource **does not** support sensitivityLabels yet.|
 
 ## Next steps
 
