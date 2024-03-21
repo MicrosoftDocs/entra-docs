@@ -136,7 +136,7 @@ For more information on MSAL logging, see [Logging in MSAL for Android](/entra/i
  
 ## Create native authentication MSAL SDK instance
  
-In the `onCreate()` method, create an MSAL instance so that we can perform authentication logic and interact with our tenant through native authentication APIs. The `createNativeAuthPublicClientApplication()` method returns an instance called `authClient`. The JSON configuration file that we created earlier in the tutorial is passed as a parameter.
+In the `onCreate()` method, create an MSAL instance so the app can perform authentication with your tenant through native authentication. The `createNativeAuthPublicClientApplication()` method returns an instance called `authClient`. Pass the JSON configuration file that you created earlier as a parameter.
 
 ```kotlin
     //...
@@ -146,10 +146,7 @@ In the `onCreate()` method, create an MSAL instance so that we can perform authe
     )
     //...
 ```
- 
-- Retrieve the cached account by using the `getCurrentAccount()`, which returns an object, `accountResult`. 
-- If an account is found in persistence, use `GetAccountResult.AccountFound` to display a signed-in state.
-- Otherwise, use `GetAccountResult.NoAccountFound` to display a signed-out state. 
+  
  
 Your code should look something similar to the following snippet:  
  
@@ -194,6 +191,10 @@ Your code should look something similar to the following snippet:
         } 
     } 
 ``` 
+
+- Retrieve the cached account by using the `getCurrentAccount()`, which returns an object, `accountResult`. 
+- If an account is found in persistence, use `GetAccountResult.AccountFound` to display a signed-in state.
+- Otherwise, use `GetAccountResult.NoAccountFound` to display a signed-out state.
  
 Make sure you include the import statements. Android Studio should include the import statements for you automatically.
  
