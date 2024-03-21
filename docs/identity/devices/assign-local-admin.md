@@ -39,7 +39,7 @@ By adding Microsoft Entra roles to the local administrators group, you can updat
 
 To view and update the membership of the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role, see:
 
-- [View all members of an administrator role in Microsoft Entra ID](~/identity/role-based-access-control/manage-roles-portal.md)
+- [View all members of an administrator role in Microsoft Entra ID](~/identity/role-based-access-control/manage-roles-portal.yml)
 - [Assign a user to administrator roles in Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.md)
 
 ## Manage the Microsoft Entra Joined Device Local Administrator role 
