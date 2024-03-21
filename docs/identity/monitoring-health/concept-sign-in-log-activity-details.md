@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 12/15/2023
+ms.date: 03/21/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -75,7 +75,7 @@ Sign-in logs also contain several unique identifiers that provide further insigh
 
 Each sign-in attempt contains details associated with those three main components. The details are organized into several tabs, based on the type of sign-in.
 
-### [Basic info](#tab/basic-info)
+### Basic info
 
 The Basic info tab contains the bulk of the details associated with a sign-in attempt. Take note of the unique identifiers, as they might be needed to troubleshoot sign-in issues. You can follow the *who*, *how*, *what* pattern using the details in the Basic info tab.
 
@@ -87,11 +87,11 @@ If a sign-in failed, you can get more information about the reason in the Basic 
 
 ![Screenshot of the sign-in error code on the basics tab.](media/concept-sign-in-log-activity-details/sign-in-error-code.png)
 
-### [Location and Device](#tab/location-and-device)
+### Location and Device
 
 The **Location** and **Device info** tabs display general information about the location and IP address of the user. The Device info tab provides details on the browser and operating system used to sign in. This tab also provides details on if the device is compliant, managed, or Microsoft Entra hybrid joined.
 
-### [Authentication details](#tab/authentication-details)
+### Authentication details
 
 The **Authentication Details** tab in the details of a sign-in log provides the following information for each authentication attempt:
 
@@ -108,7 +108,7 @@ This information allows you to troubleshoot each step in a user’s sign-in. Use
 
 ![Screenshot of the Authentication Details tab.](media/concept-sign-in-log-activity-details/sign-in-activity-details-authentication.png)
 
-### [Conditional Access](#tab/conditional-access)
+### Conditional Access
 
 If Conditional Access (CA) policies are in use in your tenant, you can see if those policies were applied to the sign-in attempt. All policies that could be applied to the sign-in are listed. The end result of the policy appears so you can quickly see if the policy impacted the sign-in attempt.
 
@@ -117,13 +117,11 @@ If Conditional Access (CA) policies are in use in your tenant, you can see if th
 - **Not Applied:** The sign-in didn't match the criteria for the policy to be applied.
 - **Disabled:** The policy was disabled at the time of the sign-in attempt.
 
-### [Report-only](#tab/report-only)
+### Report-only
 
 Because Conditional Access (CA) policies can change the sign-in experience for your users and potentially disrupt their processes, it's a good idea to be sure your policy is configured correctly. With **Report-only** mode, you can configure a policy and evaluate its potential effect before enabling the policy.
 
 This tab of the sign-in logs displays the results of sign-in attempts that were in scope for the policy. For more information, see the [What is Conditional Access report-only mode?](~/identity/conditional-access/concept-conditional-access-report-only.md) article.
-
----
 
 ## Sign-in details and considerations
 
