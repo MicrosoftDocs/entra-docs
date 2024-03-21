@@ -6,7 +6,7 @@ description: Describes the Microsoft Entra B2B collaboration invitation redempti
  
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 03/19/2024
+ms.date: 03/21/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
@@ -60,10 +60,6 @@ When you add a guest user to your directory by [using the Microsoft Entra admin 
 3. The guest will use their own credentials to sign in to your directory. If the guest doesn't have an account that can be federated to your directory and the [email one-time passcode (OTP)](./one-time-passcode.md) feature isn't enabled; the guest is prompted to create a personal [MSA](https://support.microsoft.com/help/4026324/microsoft-account-how-to-create). Refer to the [invitation redemption flow](#invitation-redemption-flow) for details.
 4. The guest is guided through the [consent experience](#consent-experience-for-the-guest) described below.
 
-### Configurable redemption (Preview)
-
-With [configurable redemption](cross-tenant-access-overview.md#configurable-redemption-preview), you can customize the order of identity providers that your guest users can sign in with when they accept your invitation. When a guest user selects the **Accept invitation** link in an invitation email, Microsoft Entra ID automatically redeems the invitation based on the [default redemption order](#invitation-redemption-flow). When you change the identity provider order, the new order overrides the default redemption order. You can enable the feature and specify the redemption order in your [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md#configure-redemption-order-preview).
-
 ## Redemption process limitation with conflicting Contact object
 Sometimes the invited external guest user's email may conflict with an existing [Contact object](/graph/api/resources/contact), resulting in the guest user being created without a proxyAddress. This is a known limitation that prevents guest users from redeeming an invitation through a direct link using [SAML/WS-Fed IdP](./direct-federation.md), [MSAs](./microsoft-account.md), [Google Federation](./google-federation.md), or [Email One-Time Passcode](./one-time-passcode.md) accounts.
 
@@ -81,7 +77,7 @@ To unblock users who can't redeem an invitation due to a conflicting [Contact ob
 
 ## Invitation redemption flow
 
-When a user selects the **Accept invitation** link in an [invitation email](invitation-email-elements.md), Microsoft Entra ID automatically redeems the invitation based on the redemption flow as shown below:
+When a user selects the **Accept invitation** link in an [invitation email](invitation-email-elements.md), Microsoft Entra ID automatically redeems the invitation based on the default redemption order shown below:
 
 :::image type="content" source="media/redemption-experience/invitation-redemption.png" alt-text="Screenshot showing the redemption flow diagram." lightbox="media/redemption-experience/invitation-redemption.png":::
 
@@ -100,6 +96,10 @@ When a user selects the **Accept invitation** link in an [invitation email](invi
 7. If no home directory is found and email one-time passcode for guests is *disabled*, the user is prompted to create a consumer MSA with the invited email. We support creating an MSA with work emails in domains that aren't verified in Microsoft Entra ID.
 
 8. After authenticating to the right identity provider, the user is redirected to Microsoft Entra ID to complete the [consent experience](#consent-experience-for-the-guest).  
+
+## Configurable redemption (Preview)
+
+[Configurable redemption](cross-tenant-access-overview.md#configurable-redemption-preview) lets you customize the order of identity providers presented to guests when they redeem your invitations. When a guest selects the **Accept invitation** link, Microsoft Entra ID automatically redeems the invitation based on the [default order](#invitation-redemption-flow). You can override this by changing the identity provider redemption order in your [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md#configure-redemption-order-preview).
 
 ## Consent experience for the guest
 
