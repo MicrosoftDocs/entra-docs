@@ -4,7 +4,7 @@ description: Learn about Microsoft Entra External ID monthly active users (MAU) 
 
  
 ms.service: entra-external-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 01/23/2024
 
 ms.author: mimart
