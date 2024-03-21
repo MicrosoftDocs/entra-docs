@@ -105,8 +105,11 @@ To handle errors in the `signIn(username)` method, use the following code snippe
    }
    ```
 
-- `SignInError` indicates an unsuccessful action result returned by `signIn()` and so the action result won't include a reference to the new state
-- The method `isUserNotFound()` checks for the specific error, such as, the user used an email address that doesn't exist. 
+- `SignInError` indicates an unsuccessful action result returned by `signIn()` and so the action result won't include a reference to the new state.
+- In the case of `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you analyze the specific errors further:
+    - The method `isUserNotFound()` checks that the user inputs an email address that doesn't exist.
+    - The method `isBrowserRequired()` checks the need for a browser (web fallback), to complete authentication flow. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For examples, an admin configures email and password as the authentication method, but the app fails to send *password* as a challenge type or simply doesn't support it. Use the steps in [Support web fallback in Android app](tutorial-native-authentication-android-support-web-fallback.md) to handle scenario when it happens.
+    - The method `isAuthNotSupported()` checks whether the app sends an challenge type that Microsoft Entra doesn't support, that's a challenge type value other than *oob* and *password*. Learn more about [challenge types](concept-native-authentication-challenge-types.md).
 
 #### Handle submit code errors
 

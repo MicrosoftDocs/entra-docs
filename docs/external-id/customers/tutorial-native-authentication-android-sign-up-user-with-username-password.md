@@ -128,6 +128,9 @@ In the case of `SignUpError`, the SDK provides utility method for further analyz
             }
     }
     ```
+
+    - `isBrowserRequired()` checks the need for a browser (web fallback), to complete authentication flow. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For examples, an admin configures email and password as the authentication method, but the app fails to send *password* as a challenge type or simply doesn't support it. Use the steps in [Support web fallback in Android app](tutorial-native-authentication-android-support-web-fallback.md) to handle scenario when it happens.
+    - `isAuthNotSupported()` checks whether the app sends an challenge type that Microsoft Entra doesn't support, that's a challenge type value other than *oob* or *password*. Learn more about [challenge types](concept-native-authentication-challenge-types.md).
  
 - Use the following code snippet to check for errors when a user inputs an invalid OTP code:  
  
