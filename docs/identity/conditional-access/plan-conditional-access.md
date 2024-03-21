@@ -73,6 +73,16 @@ Will this policy apply to any application, user action, or authentication contex
 - What user actions are subject to this policy?
 - What authentication contexts will this policy be applied to?
 
+##### Filter for applications
+
+[Using filter for applications to include or exclude applications instead of individually specifying them](concept-filter-for-applications.md) helps organizations:
+
+- Easily scale and target any number of apps.
+- Easily manage applications with similar policy requirements.
+- Reduce the number of individual policies.
+- Reduce errors while editing policies: No need to add/remove applications manually from the policy. Just manage the attributes.
+- Overcome policy size constraints.
+
 #### Conditions
 
 - Which device platforms are included in or excluded from the policy?
