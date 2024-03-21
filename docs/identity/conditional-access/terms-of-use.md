@@ -16,7 +16,7 @@ ms.reviewer: siz
 
 Microsoft Entra terms of use policies provide a simple method to present information to end users. Organizations can use terms of use along with Conditional Access policies to require employees or guests to accept your terms of use policy before getting access. These terms of use statements can be generalized or specific to groups or users and provided in multiple languages. Administrators can determine who has or hasn't accepted terms of use with the provided logs or APIs.
 
-[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]
+[!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]
 
 ## Prerequisites
 
