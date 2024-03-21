@@ -253,4 +253,4 @@ relatedContent:
   - text: Extend or renew Azure resource roles in Privileged Identity Management
     url: pim-resource-roles-renew-extend.md
   - text: Activate my Microsoft Entra roles in Privileged Identity Management
-    url: pim-how-to-activate-role.md
+    url: pim-how-to-activate-role.yml
