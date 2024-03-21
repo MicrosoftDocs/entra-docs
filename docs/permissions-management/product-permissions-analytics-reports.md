@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 12/01/2023
+ms.date: 03/20/2024
 ms.author: jfields
 ---
 
@@ -43,7 +43,7 @@ You can view the Permissions Analytics Report information directly in the Permis
 5. Click on **Schedule** and, if you want to download this report regularly, select the frequency for which you want it downloaded. You can also leave this at the default setting of **None**.
 6. Click on **Authorization Systems** and select which system you want to download the report for (AWS, Azure, or GCP).
    >[!NOTE]
-   > To download a report for all Authorization Systems, check the **Collate** box. This will combine all selected Authorization Systems into one report.
+   > To download a report for all Authorization Systems, check the **Collate** box. This combines all selected Authorization Systems into one report.
 7. Click **Save**
 
     The following message displays: **Report has been created**.
@@ -64,6 +64,22 @@ You can view the Permissions Analytics Report information directly in the Permis
     
     Once the PDF is generated, the report(s) is automatically sent to your email.
 
+## Terminology and definitions
+
+This list of terms and definitions are here to assist you in understanding the different types of identities and their privileges while viewing analytics reports. 
+
+| Term | Definition | 
+| ------ | ------ | 
+| Granted permissions | The number of permissions granted due to directly attached policies, policies inherited from a group, and policies attached to a role that are assumed by an identity. |
+| High-risk permission | Permissions that have the potential to cause data leakage, service disruption and degradation, or changes in security posture. |
+| Identity | An identity is a human identity (user) or workload identity. There are different names and types of workload identities for each cloud. AWS: Lambda function (serverless function), role, resource. Azure: Azure function (serverless function), service principal. GCP: Cloud function (serverless function), service account. |
+| Inactive group | Inactive groups have members who haven't used their granted permissions in the current environment (I.e. AWS Account)  in the last 90 days.    |
+| Inactive identity | Inactive identities haven't used their granted permissions in the current environment (i.e. AWS Account) the last 90 days. |
+| Over-provisioned active identity | Over-provisioned active identities aren't using all the permissions they've been granted in the current environment. |  
+| Permission | A permission is an action an identity can perform on a resource. |
+| Privilege escalation | Identities with privilege escalation can increase the number of permissions they've been granted. They can do this to potentially acquire full administrative control of the AWS account or GCP project. |
+| Super identity | Super identities are granted permissions to all actions and resources in the current environment (i.e. AWS account). |
+| Used permissions | The number of permissions used by an identity in the last 90 days. |
 
 <!---## Add and remove tags in the Permissions analytics report
 
@@ -80,6 +96,7 @@ You can view the Permissions Analytics Report information directly in the Permis
 
 1. In the **Value (optional)** box, enter a value, if necessary.
 1. Select **Save**.--->
+
 
 ## Next steps
 
