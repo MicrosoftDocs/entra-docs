@@ -1,5 +1,5 @@
 ---
-title: Configure a new external identity provider with Microsoft Entra ID
+title: Configure a new external authentication provider with Microsoft Entra ID
 description: Learn how to configure a new external identity provider with Microsoft Entra ID
 
 
@@ -13,7 +13,7 @@ author: justinha
 manager: amycolannino
 ms.reviewer: gregkmsft, msgustavosa
 ---
-# Configure a new external identity provider with Microsoft Entra ID
+# Configure a new external authentication provider with Microsoft Entra ID
 
 An application representing the integration is required for external authentication methods to issue the id_token_hint.  This application can either be created in each tenant that will use the external provider, it can be created as single multi-tenant application that admins enabling the integration will consent for their tenant.  
 
