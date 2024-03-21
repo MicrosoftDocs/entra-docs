@@ -48,8 +48,6 @@ The following image contains a message that appears in the Microsoft Entra admin
 
 ![Screenshot of the filter message from the admin center.](media/howto-download-logs/filter-message.png)
 
-
-
 ## How to download activity logs
 
 You can access the activity logs from the **Monitoring and health** section of Microsoft Entra ID or from the area of Microsoft Entra ID where you're working.
@@ -83,9 +81,9 @@ The options covered in this section align with the preview experience for sign-i
 1. Select the **Download** button for one or more of the logs. The download processes and sends the file to your default download location.
 
     - Interactive sign-ins
-    - Interactive sign-ins with only the authentication details
+    - Interactive sign-ins with only the [authentication details](concept-sign-in-log-activity-details.md#authentication-details) included
     - Non-interactive sign-ins
-    - Non-interactive sign-ins with only authentication details
+    - Non-interactive sign-ins with only the [authentication details](concept-sign-in-log-activity-details.md#authentication-details) included
     - Application sign-ins
     - Managed identity
 
