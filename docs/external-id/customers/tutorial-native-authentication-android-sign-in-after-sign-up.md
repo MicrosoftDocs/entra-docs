@@ -35,11 +35,10 @@ In this tutorial, you learn how to:
 ## Sign in after sign-up
  
 After a successful sign-up flow, you can automatically sign in your users without initiating a fresh sign-in flow. 
-This is an advanced version of the sign in flows [earlier described](tutorial-native-authentication-android-sign-in-user-with-username-password.md), which has the added benefit of automatically signing in after successfully signing up.
  
-The `SignUpResult.Complete` returns `SignInContinuationState` object. And `SignInContinuationState` provides access to `signIn()` method.  
+The `SignUpResult.Complete` returns `SignInContinuationState` object. The `SignInContinuationState` object provides access to `signIn()` method.  
  
-To sign up a user with email and password and then sign them in, you can use the following code snippet:  
+To sign up a user with email and password, then automatically sign them in, use the following code snippet:  
  
 ```kotlin 
 CoroutineScope(Dispatchers.Main).launch { 
@@ -69,10 +68,12 @@ CoroutineScope(Dispatchers.Main).launch {
     } 
 }
 ``` 
+
+To retrieve ID token claims after sign-in, use the steps in [Read ID token claims](tutorial-native-authentication-android-sign-in-user-with-username-password.md#read-id-token-claims)
  
 ## Handle errors 
 
-The `SignInContinuationState.signIn()` method can return `SignInResult.Complete` after successfully signing in, or if there is an error. 
+The `SignInContinuationState.signIn()` method returns `SignInResult.Complete` after a successful sign-in. It can also return an error. 
  
 To handle errors in `SignInContinuationState.signIn()`, use the following code snippet:  
  
@@ -106,4 +107,4 @@ private fun displayAccount(accountState: AccountState) {
  
 ## Next steps
 
-[Tutorial: Self-service password reset](tutorial-native-authentication-android-self-service-password-reset.md)  
+- [Tutorial: Self-service password reset](tutorial-native-authentication-android-self-service-password-reset.md)
