@@ -79,7 +79,7 @@ If you're not going to continue to use this application, you can delete the tena
 
 ## Next steps
 
-- Change or add other domain names, see [How to add a custom domain name to Microsoft Entra ID](add-custom-domain.md).
+- Change or add other domain names, see [How to add a custom domain name to Microsoft Entra ID](add-custom-domain.yml).
 
 - Add users, see [Add or delete a new user](./add-users.md)
 

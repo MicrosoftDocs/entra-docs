@@ -112,7 +112,7 @@ On the **Microsoft Entra sign-in configuration** page, review the user principal
 
 ![Screenshot showing unverified domains on the "Microsoft Entra sign-in configuration" page.](./media/how-to-connect-install-custom/aadsigninconfig2.png)  
 
-Review every domain that's marked as **Not Added** or **Not Verified**. Make sure that the domains you use have been verified in Microsoft Entra ID. After you verify your domains, select the circular refresh icon. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.md).
+Review every domain that's marked as **Not Added** or **Not Verified**. Make sure that the domains you use have been verified in Microsoft Entra ID. After you verify your domains, select the circular refresh icon. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.yml).
 
 Users use the *userPrincipalName* attribute when they sign in to Microsoft Entra ID and Microsoft 365. Microsoft Entra ID should verify the domains, also known as the UPN-suffix, before users are synchronized. Microsoft recommends that you keep the default attribute userPrincipalName. 
 
@@ -347,7 +347,7 @@ On this page, you can configure only a single domain in the initial installation
 <a name='verify-the-azure-ad-domain-selected-for-federation'></a>
 
 ### Verify the Microsoft Entra domain selected for federation
-When you select the domain that you want to federate, Microsoft Entra Connect provides information that you can use to verify an unverified domain. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.md).
+When you select the domain that you want to federate, Microsoft Entra Connect provides information that you can use to verify an unverified domain. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.yml).
 
 ![Screenshot showing the "Microsoft Entra Domain" page, including information you can use to verify the domain.](./media/how-to-connect-install-custom/verifyfeddomain.png)
 

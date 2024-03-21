@@ -16,7 +16,7 @@ This article explains how an administrator can add privacy-related info to an or
 
 We strongly recommend you add both your global privacy contact and your organization's privacy statement, so your internal employees and external guests can review your policies. Because privacy statements are uniquely created and tailored for each business, we strongly recommend you contact a lawyer for assistance.
 
-[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-dsr-and-stp-note.md)]
+[!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-dsr-and-stp-note.md)]
 
 ## Add your privacy info
 
@@ -49,4 +49,4 @@ Your privacy and technical information is located in the **Properties** area of 
 
 ## Next steps
 - [Microsoft Entra B2B collaboration invitation redemption](~/external-id/redemption-experience.md)
-- [Add or change profile information for a user in Microsoft Entra ID](./how-to-manage-user-profile-info.md)
+- [Add or change profile information for a user in Microsoft Entra ID](./how-to-manage-user-profile-info.yml)
