@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Sign up user with username and password, and collect user attributes  
  
-This tutorial demonstrates how to sign up a user with a username (email address) and password, and collect user attributes. It uses one-time passcode (OTP) to validate the user's email address.
+This tutorial demonstrates how to sign up a user with a username (email address), password, and user attributes. It uses one-time passcode (OTP) to validate the user's email address.
  
 In this tutorial, you learn how to:
 
@@ -40,7 +40,7 @@ In this tutorial, you learn how to:
  
 To sign up user using username (email address), password, and user attributes, we verify the user's email address through email OTP. Also, the password that the app collects from the user need to meet [Microsoft Entra's password policies](/entra/identity/authentication/concept-password-ban-bad-combined-policy). 
  
-The MSAL Android SDK provides a utility class `UserAttribute.Builder` to create user attributes.  
+The Android SDK provides a utility class `UserAttribute.Builder` to create user attributes.  
 
 Use these steps to initiate the sign-up flow:
  
@@ -53,10 +53,10 @@ Use these steps to initiate the sign-up flow:
         .build() 
     ``` 
      
-    Learn more about [MSAL Android SDK attribute builder](concept-native-authentication-user-attribute-builder.md?tabs=android-kotlin).
+    Learn more about [Android SDK attribute builder](concept-native-authentication-user-attribute-builder.md?tabs=android-kotlin).
         
 
-1. To start the sign-up flow use the following code snippet: 
+1. To start the sign-up flow, use the following code snippet: 
  
     ```kotlin 
     CoroutineScope(Dispatchers.Main).launch { 
@@ -85,9 +85,9 @@ Use these steps to initiate the sign-up flow:
     
     - The new state gives us access to two new methods:
         - `submitCode(code)` submits the OTP code that the app collects from the user.
-        - `resendCode()` re-sends the OTP code if the user doesn't receive the code. 
+        - `resendCode()` resends the OTP code if the user doesn't receive the code. 
     
-    - The `signUp()` method can also return `SignUpResult.AttributesRequired` to indicate that the app needs to submit one or more required attributes before Microsoft Entra creates an account. These are the attributes that the administrator configured as mandatory in the Microsoft Entra admin center. Microsoft Entra does not explicitly request for optional user attributes. 
+    - The `signUp()` method can also return `SignUpResult.AttributesRequired` to indicate that the app needs to submit one or more required attributes before Microsoft Entra creates an account. These are the attributes that the administrator configured as mandatory in the Microsoft Entra admin center. Microsoft Entra doesn't explicitly request for optional user attributes. 
     
     - The `SignUpResult.AttributesRequired` result contains a `requiredAttributes` parameter. `requiredAttributes` is a list of `RequiredUserAttribute` objects that contains details about the user attributes that the app needs to submit. To handle `actionResult is SignUpResult.AttributesRequired`, use the following code snippet: 
 
@@ -108,7 +108,7 @@ Use these steps to initiate the sign-up flow:
 
 ## Handle errors  
  
-- In the case of `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you analyze the specific errors further: 
+- If `actionResult is SignUpError`, the Android SDK provides utility methods to enable you analyze the specific errors further: 
     - `isUserAlreadyExists()`
     - `isInvalidAttributes()`
     - `isInvalidPassword()`
@@ -118,7 +118,7 @@ Use these steps to initiate the sign-up flow:
 
 - These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available.
 
-- The utility method `isInvalidAttributes()` indicates that one or more attributes that the app submitted failed validation. It contains an `invalidAttributes` parameter, which is a list of all attributes that teh apps submitted, but failed validation. To handle the error of invalid attributes, use the following code snippet:  
+- The utility method `isInvalidAttributes()` indicates that one or more attributes that the app submitted failed validation. It contains an `invalidAttributes` parameter, which is a list of all attributes that the apps submitted, but failed validation. To handle the error of invalid attributes, use the following code snippet:  
  
     ```kotlin 
         val actionResult = authClient.signUp(

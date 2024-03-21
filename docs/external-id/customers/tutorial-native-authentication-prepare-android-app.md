@@ -62,7 +62,7 @@ In this tutorial, you learn how to:
  
 ## Create a configuration file 
  
-You pass the required tenant identifiers, such as the application (client) ID, to the MSAL SDK through a JSON configuration settings.
+You pass the required tenant identifiers, such as the application (client) ID, to the MSAL SDK through a JSON configuration setting.
  
 Use these steps to create configuration file:  
  
@@ -95,7 +95,7 @@ Use these steps to create configuration file:
    - Replace the `Enter_the_Application_Id_Here` placeholder with the application (client) ID of the app you registered earlier.   
    - Replace the `Enter_the_Tenant_Subdomain_Here` with the directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 
-    The challenge types is a list of values, which the app uses to notify Microsoft Entra about the authentication method that it supports. Learn more [challenge types](concept-native-authentication-challenge-types.md).  
+    The challenge types are a list of values, which the app uses to notify Microsoft Entra about the authentication method that it supports. Learn more [challenge types](concept-native-authentication-challenge-types.md).  
 
 ### Optional: Logging configuration 
 
@@ -148,7 +148,7 @@ In the `onCreate` method, create native authentication MSAL SDK instance, `authC
 ```
  
 - Retrieve the cached account by using the `getCurrentAccount()`, which returns an object, `accountResult`. 
-- If an account is found in persistence, ue `GetAccountResult.AccountFound` to display a signed-in state.
+- If an account is found in persistence, use `GetAccountResult.AccountFound` to display a signed-in state.
 - Otherwise, use `GetAccountResult.NoAccountFound` to display a signed-out state. 
  
 Your code should look something similar to the following snippet:  

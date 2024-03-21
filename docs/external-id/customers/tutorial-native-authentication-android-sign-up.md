@@ -1,6 +1,6 @@
 ---
 title: Add sign-up with email one-time passcode in an Android app
-description: Learn how to add sign up with email one-time passcode (OTP) in an Android mobile app using native authentication.
+description: Learn how to add sign-up with email one-time passcode (OTP) in an Android mobile app using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -33,7 +33,7 @@ In this tutorial, you learn how to:
  
 ## Sign up a user
 
-To sign up a user using the email OTP authentication method, collect an email from the user, then send an email containing an OTP code to the user. Once the user enters a valid OTP code, the app completes the signs-up flow.
+To sign up a user using the email OTP authentication method, collect an email from the user, then send an email containing an OTP code to the user. Once the user enters a valid OTP code, the app completes the sign-up flow.
 
 To sign up a user by using email OTP, you need to: 
 
@@ -61,13 +61,13 @@ To sign up a user by using email OTP, you need to:
    }
    ```
 
-    - Use the MSAL SDK's instance  method, `signUp(username)` to start the sign-up flow.
+    - Use the SDK's instance  method, `signUp(username)` to start the sign-up flow.
     - The method's parameter, `username` is then email address you collect from the user. 
     - In most common scenario, the `signUp(username)` returns a result, `SignUpResult.CodeRequired`, which indicates that the SDK expects the app to submit the OTP codes sent to the user's emails address.
     - The `SignUpResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`. 
     - The new state gives us access to two new methods: 
         - `submitCode()` submits the OTP code that the app collects from the user. 
-        - `resendCode()` re-sends the OTP code if the user doesn't receive the code. 
+        - `resendCode()` resends the OTP code if the user doesn't receive the code. 
 
 ## Handle errors during sign-up
 
@@ -98,10 +98,10 @@ To handle errors for the `signUp(username)` method, use the following code snipp
 
    - `signUp(username)` can return `SignUpError`. 
    - `SignUpError` indicates an unsuccessful action result returned by `signUp()` and won't include a reference to the new state.
-   - In the case of `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you analyze the specific errors further:
+   - In the case of `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you to analyze the specific errors further:
         - The  method `isUserAlreadyExists()` checks whether the username has already been used to create an account.  
         - `isBrowserRequired()` checks the need for a browser (web fallback), to complete authentication flow. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For examples, an admin configures email and password as the authentication method, but the app fails to send *password* as a challenge type or simply doesn't support it. Use the steps in [Support web fallback in Android app](tutorial-native-authentication-android-support-web-fallback.md) to handle scenario when it happens.
-        - `isAuthNotSupported()` checks whether the app sends an challenge type that Microsoft Entra doesn't support, that's a challenge type value other than *oob* or *password*. Learn more about [challenge types](concept-native-authentication-challenge-types.md).
+        - `isAuthNotSupported()` checks whether the app sends a challenge type that Microsoft Entra doesn't support, that's a challenge type value other than *oob* or *password*. Learn more about [challenge types](concept-native-authentication-challenge-types.md).
    
 You should notify the user that the email is already in use by using a friendly message in the app's UI. 
    

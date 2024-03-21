@@ -73,7 +73,7 @@ CoroutineScope(Dispatchers.Main).launch {
     - `SignInResult.CodeRequired`
     - `SignInError`
 
-- In the case of `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you analyze the specific errors further: 
+- If `actionResult is SignUpError`, Android SDK provides utility methods to enable you to analyze the specific errors further: 
     - `isInvalidCredentials()`
     - `isUserNotFound()`
     - `isBrowserRequired()`
@@ -104,11 +104,11 @@ CoroutineScope(Dispatchers.Main).launch {
 
 ## Sign out a user
 
-Sign out for users who signs in using username (email address) and password is similar to when users sign in using email one-time passcode. 
+Sign out for users who sign in using username (email address) and password is similar to when users sign in using email one-time passcode. 
 
-Use the steps in [Sign out a user](tutorial-native-authentication-android-sign-in-sign-out.md#sign-out-a-user) article to initiate a sign-out flow.
+Use the steps in [Sign out a user](tutorial-native-authentication-android-sign-in-sign-out.md#sign-out-a-user) article to sign out a user.
 
 ## Next steps 
 
-- [Tutorial: Sign in user after sign-up in Android](tutorial-native-authentication-android-sign-in-after-sign-up.md).
+- [Sign in user after sign-up in Android](tutorial-native-authentication-android-sign-in-after-sign-up.md).
 - [Add user attributes to token claims](how-to-add-attributes-to-token.md).

@@ -32,7 +32,7 @@ In this tutorial, you learn how to:
 
 ## Sign in a user
 
-To sign in a user using the email and OTP code authentication method, collect the email and send an email containing a OTP code for the user to verify their email. When the user enters a valid OTP code, the app signs them in. 
+To sign in a user using the email and OTP code authentication method, collect the email and send an email containing an OTP code for the user to verify their email. When the user enters a valid OTP code, the app signs them in. 
 
 To sign in user using email and OTP code you need to: 
 
@@ -66,13 +66,13 @@ To sign in user using email and OTP code you need to:
     }
    ```
 
-    - Use the MSAL SDK's `signIn(username)` method to start the sign-in flow. 
+    - Use the SDK's `signIn(username)` method to start the sign-in flow. 
     - The method's parameter, `username` is then email address you collect from the user.
-    -  In most common scenario, the `signIn(username)` returns a result, `SignInResult.CodeRequired`, which indicates that the SDK expects the app to submit the OTP code sent to the user's emails address.
-    -  The `SignInResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`. 
+    - In most common scenario, the `signIn(username)` returns a result, `SignInResult.CodeRequired`, which indicates that the SDK expects the app to submit the OTP code sent to the user's emails address.
+    - The `SignInResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`. 
     - The new state gives us access to two new methods: 
         - `submitCode()` submits the OTP code that the app collects from the user. 
-        - `resendCode()` re-sends the OTP code if the user doesn't receive the code. 
+        - `resendCode()` resends the OTP code if the user doesn't receive the code. 
 
 ## Read ID token claims
 
@@ -105,11 +105,11 @@ To handle errors in the `signIn(username)` method, use the following code snippe
    }
    ```
 
-- `SignInError` indicates an unsuccessful action result returned by `signIn()` and so the action result won't include a reference to the new state.
-- In the case of `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you analyze the specific errors further:
+- `SignInError` indicates an unsuccessful action result returned by `signIn()` and so the action result doesn't include a reference to the new state.
+- If `actionResult is SignUpError`, Android SDK provides utility methods to enable you to analyze the specific errors further:
     - The method `isUserNotFound()` checks that the user inputs an email address that doesn't exist.
     - The method `isBrowserRequired()` checks the need for a browser (web fallback), to complete authentication flow. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For examples, an admin configures email and password as the authentication method, but the app fails to send *password* as a challenge type or simply doesn't support it. Use the steps in [Support web fallback in Android app](tutorial-native-authentication-android-support-web-fallback.md) to handle scenario when it happens.
-    - The method `isAuthNotSupported()` checks whether the app sends an challenge type that Microsoft Entra doesn't support, that's a challenge type value other than *oob* and *password*. Learn more about [challenge types](concept-native-authentication-challenge-types.md).
+    - The method `isAuthNotSupported()` checks whether the app sends a challenge type that Microsoft Entra doesn't support, that's a challenge type value other than *oob* and *password*. Learn more about [challenge types](concept-native-authentication-challenge-types.md).
 
 #### Handle submit code errors
 
@@ -126,7 +126,7 @@ if (submitCodeActionResult is SignInResult.Complete) {
 }
 ```
 
-- The `SubmitCodeError` error indicates an unsuccessful action result returned by `submitCode()` and so the action result won't include a reference to the new state.
+- The `SubmitCodeError` error indicates an unsuccessful action result returned by `submitCode()` and so the action result doesn't include a reference to the new state.
 - The `isInvalidCode()` checks for the specific error. In this case, the previous state reference must be used to reperform the action. 
 
 To retrieve the new OTP code, use the following code snippet: 
@@ -190,4 +190,4 @@ You have completed all the necessary steps to successfully sign out a user on yo
 ## Next steps
 
 - [Tutorial: Sign up user with username and user attributes](tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md). 
-- [Add user attributes to token claims](how-to-add-attributes-to-token.md)
+- [Add user attributes to token claims](how-to-add-attributes-to-token.md).

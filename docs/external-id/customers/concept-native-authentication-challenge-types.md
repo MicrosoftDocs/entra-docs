@@ -1,6 +1,6 @@
 ---
 title: Native authentication challenge types
-description: Learn how apps that use native authentication notify Microsoft Entra about the the authentication methods that they support. 
+description: Learn how apps that use native authentication notify Microsoft Entra about the authentication methods that they support. 
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
@@ -49,7 +49,7 @@ If a client app doesn't support a challenge type that the administrator configur
 
 ### What happens if a client app uses a challenge type that Microsoft Entra doesn't support?
 
-If a client app uses a challenge type that Microsoft Entra doesn't support, Microsoft Entra notifies the client as so. The solution to this is for the client app to use a supported challenge type.
+If a client app uses a challenge type that Microsoft Entra doesn't support, Microsoft Entra notifies the client as so. The solution to this problem is for the client app to use a supported challenge type.
 
 ## Related content 
 

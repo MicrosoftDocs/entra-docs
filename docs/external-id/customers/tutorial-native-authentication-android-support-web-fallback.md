@@ -37,7 +37,7 @@ Use web fallback mechanism for scenarios where native authentication isn't suffi
  
 When you initialize the Android SDK, you specify the challenge types your mobile application supports, such as *oob* and *password*. 
 
-If your client app can't support a challenge type that Microsoft Entra requires, Microsoft Entra indicates that it requires capabilities that the client can't provide.For example, you initialize the SDK with just *oob* challenge type, but in the Microsoft Entra admin center you configure the app with an email with password user flow. 
+If your client app can't support a challenge type that Microsoft Entra requires, Microsoft Entra indicates that it requires capabilities that the client can't provide. For example, you initialize the SDK with just *oob* challenge type, but in the Microsoft Entra admin center you configure the app with an email with password user flow. 
 
 In this case, the utility method `isBrowserRequired()` returns true.
  
@@ -103,7 +103,7 @@ To do so, use the following steps:
 
 1. Use the steps in [Configure the redirect URI in SDK's configuration](../../identity-platform/tutorial-v2-android.md#configure-your-application) to update your client app's configuration file. 
   
-1. Use the following code snippet to acquire a token bys using the `acquireToken()` method:
+1. Use the following code snippet to acquire a token by using the `acquireToken()` method:
 
     ```kotlin 
     val actionResult = authClient.signUp(
@@ -122,10 +122,10 @@ To do so, use the following steps:
     } 
     ```
 
-Tokens obtained through native authentication flow are similar to those that are obtained through browser-delegated flows.
+Tokens you obtain through native authentication flow are similar to those that you obtain through browser-delegated flows.
 
 ## Related content 
 
 - [How to run the iOS sample app](how-to-run-native-authentication-sample-ios-app.md)
-- [Native authentication API reference with Email OTP](../../identity-platform/reference-native-authentication-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
+- [Native authentication API reference with email one-time passcode](../../identity-platform/reference-native-authentication-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 - Learn about [challenge types](concept-native-authentication-challenge-types.md).

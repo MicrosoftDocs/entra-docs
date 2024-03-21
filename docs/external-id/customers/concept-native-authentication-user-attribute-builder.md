@@ -1,6 +1,6 @@
 ---
-title: Native authentication MSAL mobile SDK attribute builder
-description: Learn how to use native authentication MSAL mobile SDK attribute builder for built-in and custom attributes 
+title: Native authentication mobile SDK attribute builder
+description: Learn how to use native authentication mobile SDK attribute builder for built-in and custom attributes. 
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
@@ -9,20 +9,20 @@ ms.subservice: customers
 ms.topic: concept-article
 ms.date: 02/29/2024
 
-#Customer intent: As a dev, devops, I want to learn how to use native authentication MSAL Android and iOS SDK attribute builder to build attribute variables for both built-in and custom attributes, so that I can use them in my app.
+#Customer intent: As a dev, devops, I want to learn how to use native authentication Android and iOS SDK attribute builder to build attribute variables for both built-in and custom attributes, so that I can use them in my app.
 ---
 
-# Native authentication MSAL mobile SDK attribute builder
+# Native authentication mobile SDK attribute builder
 
 In native authentication, the information you collect from the user during sign-up is configured in the user flow in the Microsoft Entra admin center. The name of the user attribute as it appears in the Microsoft Entra admin center is different from the variable name that you use when you reference it in your app. 
 
-Fortunately, the MSAL mobile SDK enables you to build the user attributes and assign values to them before you use them in the SDKs `signUp()` method.
+Fortunately, the mobile SDK enables you to build the user attributes and assign values to them before you use them in the SDKs `signUp()` method.
 
 ## Build user attributes
 
 ### [Android(Kotlin)](#tab/android-kotlin)
 
-To build user attributes in the Android MSAL SDK:
+To build user attributes in the Android SDK:
 
 - Use the utility class `UserAttribute.Builder` that the SDK provides. The `UserAttributes.Builder` class contains methods whose parameter is the value that you collect from the user.
 - Identify the user attributes that you want to build, then use the following code snippet to build them:
