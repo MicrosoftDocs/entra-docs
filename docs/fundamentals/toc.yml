@@ -18,7 +18,7 @@ items:
   - name: Create a Directory
     href: create-new-tenant.md
   - name: Add a custom domain name
-    href: add-custom-domain.md
+    href: add-custom-domain.yml
   - name: Associate an Azure subscription
     href: how-subscriptions-associated-directory.md
   - name: Add your privacy info
@@ -44,7 +44,7 @@ items:
     - name: Manage 'Stay signed in?' prompt
       href: how-to-manage-stay-signed-in-prompt.yml
     - name: Manage user profile info
-      href: how-to-manage-user-profile-info.md
+      href: how-to-manage-user-profile-info.yml
     - name: Reset a user's password
       href: users-reset-password-azure-portal.md
     - name: Restore a deleted user
