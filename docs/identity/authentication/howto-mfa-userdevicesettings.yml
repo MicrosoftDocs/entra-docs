@@ -31,6 +31,10 @@ introduction: |
   - Revoke existing MFA sessions.
   - Delete a user's existing app passwords  
 
+prerequisites:
+  summary: |
+    Microsoft Entra multifactor authentication, which is enabled by default.
+    
 procedureSection:
   - title: |
       Add authentication methods for a user 
