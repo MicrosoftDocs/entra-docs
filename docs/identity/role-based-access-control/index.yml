@@ -63,7 +63,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Assign roles to users
-            url: manage-roles-portal.md
+            url: manage-roles-portal.yml
           - text: Assign roles at different scopes
             url: assign-roles-different-scopes.md
 

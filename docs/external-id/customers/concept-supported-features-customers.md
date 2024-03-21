@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 02/20/2024
+ms.date: 03/20/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -39,7 +39,7 @@ Although workforce tenants and customer tenants are built on the same underlying
 |   **Multifactor authentication**    | - Microsoft Authenticator</br>- Authenticator Lite</br>- FIDO2 </br>- Certificate-based authentication</br>- Temporary Access Pass (TAP)</br>- SMS</br>- Voice call	</br> Third-party software OATH tokens </br> [Learn more](../../identity/authentication/concept-authentication-methods.md)   |   - [Email one-time passcode](./how-to-multifactor-authentication-customers.md)     | 
 | **Groups** | [Groups](~/fundamentals/how-to-manage-groups.yml) can be used to manage administrative and user accounts.| Groups can be used to manage administrative accounts. Support for Microsoft Entra groups and [application roles](how-to-use-app-roles-customers.md) is being phased into customer tenants. For the latest updates, see [Groups and application roles support](reference-group-app-roles-support.md). |
 | **Roles and administrators**| [Roles and administrators](~/fundamentals/how-subscriptions-associated-directory.md) are fully supported for administrative and user accounts. | Roles aren't supported with customer accounts. Customer accounts don't have access to tenant resources.|
-| **Custom domain names** |  You can use [custom domains](~/fundamentals/add-custom-domain.md) for administrative accounts only. | Not currently supported. However, the URLs visible to customers in sign-up and sign-in pages are neutral, unbranded URLs. [Learn more](concept-branding-customers.md)|
+| **Custom domain names** |  You can use [custom domains](~/fundamentals/add-custom-domain.yml) for administrative accounts only. | Not currently supported. However, the URLs visible to customers in sign-up and sign-in pages are neutral, unbranded URLs. [Learn more](concept-branding-customers.md)|
 |   **Identity protection**    |   Provides ongoing risk detection for your Microsoft Entra tenant. It allows organizations to discover, investigate, and remediate identity-based risks.    |   A subset of the Microsoft Entra ID Protection risk detections is available. [Learn more](how-to-identity-protection-customers.md).    |
 |   **Custom authentication extension**    |   Add claims from external systems.    |   [Add claims from external systems](./concept-custom-extensions.md).    |  
 |   **Token customization**    |   Add user attributes, custom authentication extension (preview), claims transformation and security groups membership to token claims.     |   Add user attributes, custom authentication extension and security groups membership to token claims. [Learn more](how-to-add-attributes-to-token.md).    |
@@ -80,7 +80,7 @@ The following table compares the features available for OAuth 2.0 and OpenID Con
 |[Authorization code](../../identity-platform/v2-oauth2-auth-code-flow.md)| Yes| Yes|
 |[Authorization code with Code Exchange (PKCE)](../../identity-platform/v2-oauth2-auth-code-flow.md)|Yes| Yes|
 |[Client credentials](../../identity-platform/v2-oauth2-client-creds-grant-flow.md)|Yes| [v2.0 applications](../../identity-platform/reference-app-manifest.md)|
-|[Device authorization](../../identity-platform/v2-oauth2-device-code.md)| Yes| [Yes](./sample-browserless-app-dotnet-sign-in.md)|
+|[Device authorization](../../identity-platform/v2-oauth2-device-code.md)| Yes| No |
 |[On-Behalf-Of flow](../../identity-platform/v2-oauth2-on-behalf-of-flow.md)| Yes| Yes|
 |[Implicit grant](../../identity-platform/v2-oauth2-implicit-grant-flow.md)| Yes| Yes|
 |[Resource Owner Password Credentials](../../identity-platform/v2-oauth-ropc.md)| Yes| No|
@@ -119,7 +119,7 @@ The following table compares the features available for user management in each 
 |Feature  |Workforce tenant  | Customer tenant |
 |---------|---------|---------|
 |**Type of accounts**| <ul><li>Internal user (employee, admin)</li><li>External guest (business guest invited via [B2B collaboration](../what-is-b2b.md)) | <ul><li>Internal user (admin)</li><li>External guest (admin invited via [B2B collaboration](../what-is-b2b.md))</li><li>[External customer](./how-to-manage-customer-accounts.md) (app user with limited privileges in the tenant)</li></ul>|
-| **Manage user profile info** | Programmatically and by [using the Microsoft Entra admin center](../../fundamentals/how-to-manage-user-profile-info.md). |Same as workforce.|
+| **Manage user profile info** | Programmatically and by [using the Microsoft Entra admin center](../../fundamentals/how-to-manage-user-profile-info.yml). |Same as workforce.|
 | **Reset a user's password** | Administrators can [reset a user's password](../../fundamentals/users-reset-password-azure-portal.md) if the password is forgotten, if the user gets locked out of a device, or if the user never received a password. |Same as workforce.|
 |**Restore or remove a recently deleted user**|After you delete a user, the account remains in a suspended state for 30 days. During that 30-day window, the user account can be restored, along with all its properties.|Same as workforce.|
 |**Disable accounts**| Prevent the new user from being able to sign in. |Same as workforce.|
