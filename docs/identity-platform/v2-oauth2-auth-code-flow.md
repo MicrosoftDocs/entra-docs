@@ -9,7 +9,7 @@ ms.date: 04/17/2023
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer building a web application, I want to implement the OAuth 2.0 authorization code flow with PKCE and OpenID Connect, so that I can obtain authorized access to protected resources like web APIs and authenticate users in my application.
 ---
 
@@ -30,8 +30,6 @@ Use the auth code flow paired with Proof Key for Code Exchange (PKCE) and OpenID
 ## Protocol details
 
 The OAuth 2.0 authorization code flow is described in [section 4.1 of the OAuth 2.0 specification](https://tools.ietf.org/html/rfc6749). Apps using the OAuth 2.0 authorization code flow acquire an `access_token` to include in requests to resources protected by the Microsoft identity platform (typically APIs). Apps can also request new ID and access tokens for previously authenticated entities by using a refresh mechanism.
-
-[!INCLUDE [try-in-postman-link](includes/try-in-postman-link.md)]
 
 This diagram shows a high-level view of the authentication flow:
 

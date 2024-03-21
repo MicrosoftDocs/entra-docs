@@ -2,17 +2,17 @@
 title: Frequently asked questions (FAQs) about API-driven inbound provisioning
 description: Learn more about the capabilities and integration scenarios supported by API-driven inbound provisioning.
 
-author: kenwith
+author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: faq
-ms.date: 01/10/2024
-ms.author: kenwith
+ms.date: 02/28/2024
+ms.author: jfields
 ms.reviewer: chmutali
 ---
 
-# Frequently asked questions about API-driven inbound provisioning (Pubic preview)
+# Frequently asked questions about API-driven inbound provisioning
 
 This article answers frequently asked questions (FAQs) about API-driven inbound provisioning.
 

@@ -3,7 +3,7 @@ title: Microsoft's Security Service Edge Solution Deployment Guide Introduction
 description: Introduction to Microsoft Entra Private Access and Microsoft Entra Internet Access for Microsoft 365 deployments
 author: jricketts
 manager: martinco
-ms.service: network-access
+ms.service: global-secure-access
 ms.topic: conceptual
 ms.date: 2/28/2024
 ms.author: jricketts
@@ -67,7 +67,7 @@ When beginning your deployment plans, include your key stakeholders. Identify an
 |Security owner|Confirms that the change plan meets security requirements.|
 |Compliance manager|Ensures compliance with corporate, industry, and governmental requirements.|
 |Technical program manager|Oversees the project, manages requirements, coordinates work streams, and ensures adherence to schedule and budget. Facilitates communication plan and reporting.|
-|Tenant administrator|IT owners and technical resources responsible for Microsoft Entra ID tenant changes during all phases.|
+|Tenant administrator|IT owners and technical resources responsible for Microsoft Entra tenant changes during all phases.|
 
 ### Create a RACI chart
 
@@ -107,14 +107,14 @@ Universal tenant restrictions require the Conditional Access Administrator or Se
 
 To successfully deploy and test Microsoft's Security Service Edge, configure the following prerequisites:
 
-1. Microsoft Entra ID tenant with Microsoft Entra ID Premium P1 license. You can [purchase licenses or obtain trial licenses](https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing).
+1. Microsoft Entra tenant with Microsoft Entra ID P1 license. You can [purchase licenses or obtain trial licenses](https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing).
    1. One user with at least the Global Secure Access Administrator and Application Administrator roles to configure Microsoft's Security Service Edge features.
    1. At least one user or group that functions as the client test user in your tenant.
    1. One Microsoft 365 group named Allowed and another named Blocked, both containing your test user.
    1. One test user in a foreign tenant to test tenant restrictions.
 1. One Windows client device with the following configuration:
    1. Windows 10/11 64-bit version.
-   1. Microsoft Entra ID joined or hybrid joined.
+   1. Microsoft Entra joined or hybrid joined.
    1. Internet connected and no corpnet access or VPN.
 1. Download and install the Global Secure Access Client on the client device. [The Global Secure Access Client for Windows](../global-secure-access/how-to-install-windows-client.md) article helps in understanding prerequisites and installation.
 1. To test Microsoft Entra Private Access, one Windows server that functions as the application server with the following configuration:
@@ -122,14 +122,14 @@ To successfully deploy and test Microsoft's Security Service Edge, configure the
    1. One test application that the application server hosts. This guide uses remote desktop protocol (RDP) and access to a file share as examples.
 1. To test Microsoft Entra Private Access, one Windows server that functions as the connector server with the following configuration:
    1. Windows Server 2012 R2 or later.
-   1. Network connectivity to Microsoft Entra ID Service.
+   1. Network connectivity to Microsoft Entra service.
    1. Ports 80 and 443 [open to outbound traffic](../global-secure-access/how-to-configure-connectors.md#open-ports).
    1. Allow access to [required URLs](../global-secure-access/how-to-configure-connectors.md#allow-access-to-urls).
 1. Establish connectivity between the connector server and the application server. Confirm that you can access your test application on the application server (for example, successful RDP connection and file share access).
 
 The following diagram illustrates the minimum architecture requirements to deploy and test Microsoft Entra Private Access.
 
-:::image type="content" source="media/sse-deployment-guide-intro/diagram-private-access-architecture-inline.png" alt-text="Diagram that shows minimum required architecture components for Microsoft Entra ID tenant." lightbox="media/sse-deployment-guide-intro/diagram-private-access-architecture-expanded.png"::: 
+:::image type="content" source="media/sse-deployment-guide-intro/diagram-private-access-architecture-inline.png" alt-text="Diagram that shows minimum required architecture components for Microsoft Entra tenant." lightbox="media/sse-deployment-guide-intro/diagram-private-access-architecture-expanded.png"::: 
 
 ## Configure initial product
 
@@ -150,7 +150,7 @@ Traffic forwarding enables you to configure the type of network traffic to tunne
 
 1. To enable source IP restoration, go to **Global Secure Access (preview)** > **Connect** > **Global settings** > **Session management** > **Adaptive Access** and turn on **Enable Global Secure Access signaling in Conditional Access**. Source IP restoration is required to for Conditional Access policies that you will configure as part of this proof of concept.
 
-   :::image type="content" source="media/sse-deployment-guide-intro/session-management-adaptive-access-inline.png" alt-text="Diagram that shows how to enable conditional access policies for Microsoft's Security Service Edge Solution." lightbox="media/sse-deployment-guide-intro/session-management-adaptive-access-expanded.png":::
+   :::image type="content" source="media/sse-deployment-guide-intro/session-management-adaptive-access-inline.png" alt-text="Diagram that shows how to enable Conditional Access policies for Microsoft's Security Service Edge Solution." lightbox="media/sse-deployment-guide-intro/session-management-adaptive-access-expanded.png":::
 
 ### Install Global Secure Access Client on your Windows 10/11 client device
 

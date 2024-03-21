@@ -3,7 +3,7 @@ title: Microsoft's Security Service Edge solution deployment guide for Microsoft
 description: Deploy and verify Microsoft Entra Internet Access for Microsoft 365
 author: jricketts
 manager: martinco
-ms.service: network-access
+ms.service: global-secure-access
 ms.topic: conceptual
 ms.date: 11/15/2023
 ms.author: jricketts
@@ -83,13 +83,11 @@ This section describes how to enforce compliant network access to Microsoft 365 
    1. Confirm that access is blocked.
    1. In the sign-in logs, confirm the Conditional Access policy that blocks access outside compliant networks was applied.
    
-      :::image type="content" source="media/sse-deployment-guide-m365/log-in-access-is-blocked.png" alt-text="Screenshot of log-in window after submitting credentials showing You cannot access this right now message.":::
-
       :::image type="content" source="media/sse-deployment-guide-m365/sign-in-logs-failure-inline.png" alt-text="Screenshot of a line in the sign-in logs window showing failure indicator." lightbox="media/sse-deployment-guide-m365/sign-in-logs-failure-expanded.png":::
 
       :::image type="content" source="media/sse-deployment-guide-m365/logs-conditional-access-failure-inline.png" alt-text="Screenshot of sign-in logs window showing Conditional Access tab highlighting a line where Result column is Failure." lightbox="media/sse-deployment-guide-m365/logs-conditional-access-failure-expanded.png":::
 
-1. From your test device with the Global Secure Access Client enabled, attempt to sign in to a different Microsoft Entra ID tenant with an external identity. Confirm that tenant restrictions block access.
+1. From your test device with the Global Secure Access Client enabled, attempt to sign in to a different Microsoft Entra tenant with an external identity. Confirm that tenant restrictions block access.
 
    :::image type="content" source="media/sse-deployment-guide-m365/log-in-access-is-blocked.png" alt-text="Screenshot of log-in window after submitting credentials showing Access is blocked message.":::
 

@@ -7,8 +7,8 @@ manager: CelesteDG
 
 ms.service: entra-workload-id
 
-ms.topic: conceptual
-ms.date: 10/04/2023
+ms.topic: concept-article
+ms.date: 02/28/2024
 ms.author: ryanwi
 ms.reviewer: shkhalid
 ms.custom: aaddev, references_regions
@@ -34,20 +34,16 @@ Federated identity credentials don't consume the Microsoft Entra tenant service 
 
 *Applies to: user-assigned managed identities*
 
-The creation of federated identity credentials is available on user-assigned managed identities created in most Azure regions during public. However, creation of federated identity credentials is **not supported** on user-assigned managed identities in the following regions:
+Creation of federated identity credentials is currently **not supported** on user-assigned managed identities created in the following regions:
 
-- Germany North
-- Sweden South
-- Sweden Central
 - East Asia
 - Qatar Central
-- Brazil Southeast
 - Malaysia South
-- Poland Central
+- Italy North
+- Israel Central
 
-Support for creating federated identity credentials in these regions will be rolled out gradually except East Asia where support won't be provided.
-
-Resources in these regions can still use federated identity credentials created in other, supported regions.
+Support for creating federated identity credentials on user assigned identities in these regions will be gradually rolled out. 
+Resources in this region which need to use federated identity credentials, can do so by leveraging a user assigned managed identity created in a supported region. 
 
 ## Supported signing algorithms and issuers
 
