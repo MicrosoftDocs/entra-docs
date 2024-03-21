@@ -7,8 +7,8 @@ manager: celestedg
 ms.service: entra-external-id
  
 ms.subservice: customers
-ms.topic: conceptual
-ms.date: 02/20/2024
+ms.topic: concept-article
+ms.date: 03/20/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -61,7 +61,7 @@ Although workforce tenants and customer tenants are built on the same underlying
 | **Authentication** > **Front-channel logout URL**| This URL is where Microsoft Entra ID sends a request to have the application clear the user's session data. The Front-channel logout URL is required for single sign-out to work correctly.| Same as workforce.|
 | **Authentication** > **Implicit grant and hybrid flows**| Request a token directly from the authorization endpoint. | Same as workforce.|
 | **Certificates & secrets** | <ul><li>[Certificate](../../identity-platform/quickstart-register-app.md#add-a-certificate)</li><li>[Client secrets](../../identity-platform/quickstart-register-app.md#add-a-client-secret)</li><li>[Federated credentials](../../identity-platform/quickstart-register-app.md#add-a-federated-credential)</li></ul>| Same as workforce.|
-|**Token configuration**| <ul><li>[Optional claims](../../identity-platform/optional-claims.md)</li><li>[Groups optional claims](../../identity-platform/optional-claims.md#configure-groups-optional-claims)</li></ul>| <ul><li>Optional claims must be configured through [Attributes & Claims](./how-to-add-attributes-to-token.md) or a [custom claims provider](../../identity-platform/custom-extension-get-started.md)</li><li>[Groups optional claims](../../identity-platform/optional-claims.md#configure-groups-optional-claims) are limited to the group object ID.</li></li></ul>|
+|**Token configuration**| <ul><li>[Optional claims](../../identity-platform/optional-claims.md)</li><li>[Groups optional claims](../../identity-platform/optional-claims.md#configure-groups-optional-claims)</li></ul>| <ul><li>Optional claims must be configured through [Attributes & Claims](./how-to-add-attributes-to-token.md) or a [custom claims provider](../../identity-platform/custom-claims-provider-overview.md)</li><li>[Groups optional claims](../../identity-platform/optional-claims.md#configure-groups-optional-claims) are limited to the group object ID.</li></li></ul>|
 | **API permissions** | Add, remove, and replace permissions to an application. After permissions are added to your application, users or admins need to grant consent to the new permissions. Learn more about [updating an app's requested permissions in Microsoft Entra ID](../../identity-platform/howto-update-permissions.md).  | For customer-facing applications, the following are the allowed permissions: Microsoft Graph `offline_access`, `openid`, and `User.Read` and your **My APIs** delegated permissions. Only an admin can consent on behalf of the organization.  |
 | **Expose an API** | [Define custom scopes](../../identity-platform/quickstart-configure-app-expose-web-apis.md) to restrict access to data and functionality protected by the API. An application that requires access to parts of this API can request that a user or admin consent to one or more of these scopes. | Define custom scopes to restrict access to data and functionality protected by the API. An application that requires access to parts of this API can request that admin consent to one or more of these scopes. |
 | **App roles**| App roles are [custom roles](../../identity-platform/howto-add-app-roles-in-apps.md) to assign permissions to users or apps. The application defines and publishes the app roles and interprets them as permissions during authorization.| Same as workforce. Learn more about [using role-based access control for applications](how-to-use-app-roles-customers.md) in a customer tenant. |
@@ -80,7 +80,7 @@ The following table compares the features available for OAuth 2.0 and OpenID Con
 |[Authorization code](../../identity-platform/v2-oauth2-auth-code-flow.md)| Yes| Yes|
 |[Authorization code with Code Exchange (PKCE)](../../identity-platform/v2-oauth2-auth-code-flow.md)|Yes| Yes|
 |[Client credentials](../../identity-platform/v2-oauth2-client-creds-grant-flow.md)|Yes| [v2.0 applications](../../identity-platform/reference-app-manifest.md)|
-|[Device authorization](../../identity-platform/v2-oauth2-device-code.md)| Yes| [Yes](./sample-browserless-app-dotnet-sign-in.md)|
+|[Device authorization](../../identity-platform/v2-oauth2-device-code.md)| Yes| No |
 |[On-Behalf-Of flow](../../identity-platform/v2-oauth2-on-behalf-of-flow.md)| Yes| Yes|
 |[Implicit grant](../../identity-platform/v2-oauth2-implicit-grant-flow.md)| Yes| Yes|
 |[Resource Owner Password Credentials](../../identity-platform/v2-oauth-ropc.md)| Yes| No|

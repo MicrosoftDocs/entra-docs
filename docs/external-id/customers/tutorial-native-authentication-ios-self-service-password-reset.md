@@ -200,7 +200,7 @@ extension ViewController: ResetPasswordRequiredDelegate {
 
 The `signIn(delegate)` accepts a delegate parameter and we must implement the required methods in the `SignInAfterResetPasswordDelegate` protocol. 
 
-In the most common scenario, we receive a call to `onSignInCompleted(result)` indicating that the user has been signed in and the flow is complete. 
+In the most common scenario, we receive a call to `onSignInCompleted(result)` indicating that the user has signed in. The result can be used to retrieve the `access token`.
 
 ```swift
 extension ViewController: SignInAfterSignUpDelegate {
@@ -210,8 +210,26 @@ extension ViewController: SignInAfterSignUpDelegate {
 
     func onSignInCompleted(result: MSAL.MSALNativeAuthUserAccountResult) {
         // User successfully signed in
+        result.getAccessToken(delegate: self)
     }
 }
+```
+
+The `getAccessToken(delegate)` accepts a delegate parameter and we must implement the required methods in the `CredentialsDelegate` protocol.
+
+In the most common scenario, we receive a call to `onAccessTokenRetrieveCompleted(result)` indicating that the user obtained an `access token`.
+
+```swift
+extension ViewController: CredentialsDelegate {
+    func onAccessTokenRetrieveError(error: MSAL.RetrieveAccessTokenError) {
+        resultTextView.text = "Error retrieving access token"
+    }
+
+    func onAccessTokenRetrieveCompleted(result: MSALNativeAuthTokenResult) {
+        resultTextView.text = "Signed in. Access Token: \(result.accessToken)"
+    }
+}
+
 ```
 
 ## Next steps 

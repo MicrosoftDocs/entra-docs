@@ -15,6 +15,7 @@ ms.custom: developer, devx-track-dotnet
 #Customer intent: As a dev, devops, I want to learn about add sign in and sign out with email one-time passcode.
 ---
 
+
 # Tutorial: Add sign in and sign out with email one-time passcode 
 
 This tutorial demonstrates how to sign in and sign out a user using email one-time passcode (OTP) in your native auth iOS Swift app. 
@@ -90,11 +91,31 @@ To  sign in user using **Email one-time-passcode** you need to:
     
         func onSignInCompleted(result: MSALNativeAuthUserAccountResult) {
             resultTextView.text = "Signed in successfully."
+            result.getAccessToken(delegate: self)
         }
     }
     ```
 
-    In the most common scenario, we receive a call to `onSignInCompleted(result)` indicating that the user has signed in and the flow is complete. 
+    In the most common scenario, we receive a call to `onSignInCompleted(result)` indicating that the user has signed in. The result can be used to retrieve the `access token`.
+
+    The `getAccessToken(delegate)` accepts a delegate parameter and we must implement the required methods in the `CredentialsDelegate` protocol.
+
+    In the most common scenario, we receive a call to `onAccessTokenRetrieveCompleted(result)` indicating that the user obtained an `access token`.
+
+    ```swift
+    extension ViewController: CredentialsDelegate {
+        func onAccessTokenRetrieveError(error: MSAL.RetrieveAccessTokenError) {
+            resultTextView.text = "Error retrieving access token"
+        }
+
+        func onAccessTokenRetrieveCompleted(result: MSALNativeAuthTokenResult) {
+            resultTextView.text = "Signed in. Access Token: \(result.accessToken)"
+        }
+    }
+
+    ```
+
+
 
 ### Handle errors during sign in
 
