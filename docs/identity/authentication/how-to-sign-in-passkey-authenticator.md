@@ -1,9 +1,9 @@
 ---
-title: Create a passkey for Android or iOS device in Microsoft Authenticator (preview)
-description: Learn how to create a passkey for Android or iOS device with Microsoft Authenticator (preview)
+title: Sign in with passkeys in Authenticator for Android and iOS devices (preview)
+description: Learn how to sign in with passkeys for Android and iOS devices with Microsoft Authenticator (preview)
 
 services: active-directory
-ms.service: active-directory
+ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/06/2024
@@ -15,7 +15,7 @@ ms.reviewer: mayurs, calui
 
 ms.collection: M365-identity-device-management
 ---
-# Sign in to Microsoft Entra ID with a passkey in Microsoft Authenticator (preview)
+# Sign in with passkeys in Authenticator for Android and iOS devices (preview)
 
 This article covers the sign-in experience when using passkeys in Microsoft Authenticator with Microsoft Entra ID. For more information on the availability of Microsoft Entra ID passkey (FIDO2) authentication across native apps, web browsers, and operating systems, see [App and browser support of passkey (FIDO2) authentication](concept-passkey-fido2-compatibility.md).
 

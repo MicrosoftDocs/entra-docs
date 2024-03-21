@@ -34,7 +34,7 @@
       href: howto-authentication-temporary-access-pass.md
     - name: Passwordless
       href: concept-authentication-passwordless.md
-    - name: (New) Passkeys (FIDO2)
+    - name: Passkeys (FIDO2) (preview) 
       href: concept-authentication-passkey.md
     - name: Microsoft Authenticator
       href: concept-authentication-authenticator-app.md
@@ -128,25 +128,25 @@
         href: howto-authentication-passwordless-security-key-windows.md
       - name: Passkey (FIDO2) authentication
         items:
-        - name: (Update) Enable passkey
+        - name: Enable passkeys in Authenticator (preview)
           href: how-to-enable-passkey-fido2.md
-        - name: (New) Register passkey 
+        - name: Register passkey (preview)
           href: how-to-register-passkey.md
-        - name: (New) Register passkey on a mobile device
+        - name: Register passkey on a mobile device (preview)  
           href: how-to-register-passkey-mobile.md
-        - name: (New) Sign in with a passkey
+        - name: Sign in with a passkey (preview)
           href: concept-passkey-fido2-compatibility.md
-        - name: (New) Passkey FAQs
+        - name: Passkey FAQs (preview)
           href: passkey-faq.yml
       - name: Microsoft Authenticator
         items:
-        - name: (New) Enable Authenticator passkey
+        - name: Enable passkeys in Authenticator (preview)
           href: how-to-enable-authenticator-passkey.md
-        - name: (New) Register Authenticator passkey
+        - name: Register passkeys in Authenticator (preview)
           href: how-to-register-passkey-authenticator.md
-        - name: (New) Sign in with Authenticator passkey
+        - name: Sign in with passkeys in Authenticator (preview)
           href: how-to-sign-in-passkey-authenticator.md
-        - name: (New) Authenticator passkey FAQs
+        - name: Passkeys in Authenticator FAQs (preview)
           href: passkey-authenticator-faq.yml
         - name: Enable Authenticator authentication method
           href: howto-authentication-passwordless-phone.md

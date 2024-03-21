@@ -1,9 +1,8 @@
 ---
-title: Register Microsoft Authenticator passkey on Android or iOS device in MySecurityInfo (preview)
+title: Register Microsoft Authenticator passkey on Android and iOS devices in MySecurityInfo (preview)
 description: Registration and management of passkey with Authenticator on iOS in MySecurityInfo (preview)
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/05/2024
@@ -17,7 +16,7 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how users can register a passkey in Microsoft Authenticator 
 
 ---
-# Register Microsoft Authenticator passkey on Android or iOS device in MySecurityInfo (preview)
+# Register passkeys in Authenticator on Android or iOS devices (preview)
 
 This article shows how to register a passkey using Microsoft Authenticator on your iOS or Android device using [My Security info](https://mysignins.microsoft.com/security-info). 
 

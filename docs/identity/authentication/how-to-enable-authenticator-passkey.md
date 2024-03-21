@@ -105,7 +105,7 @@ To configure the policy by using Graph Explorer:
    ```
 
 
-## Disable a passkey 
+## Delete a passkey 
 
 To remove a passkey associated with a user account, delete the key from the user’s authentication method.
 
@@ -114,6 +114,8 @@ To remove a passkey associated with a user account, delete the key from the user
 
     ![View Authentication Method details](media/howto-authentication-passwordless-deployment/security-key-view-details.png)
 
+> [!NOTE]
+> Users will also need to remove the passkey in Authenticator on their device.
 
 ## Enforce Authenticator passkey sign-in 
 

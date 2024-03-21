@@ -3,7 +3,7 @@ title:  Register a passkey using a mobile device (preview)
 description: Registration and management of passkey using a mobile device (preview)
 
 services: active-directory
-ms.service: active-directory
+ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/07/2024

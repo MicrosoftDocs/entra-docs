@@ -3,7 +3,7 @@ title: Passkey authentication for Microsoft Entra ID (preview)
 description: Learn about passkey support in Microsoft Entra ID.
 
 services: active-directory
-ms.service: active-directory
+ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 03/07/2024
@@ -92,7 +92,7 @@ Organizations who want the added security and control, compared to synced passke
 
 ### Authentication methods policy configuration
 
-Before users can sign in to Microsoft Entra ID using passkeys, an Authentication Policy Administrator must enable Microsoft Authenticator or FIDO2 security keys for phishing-resistant MFA in the Authentication methods policy. Customers can restrict the use of passkeys for certain users and groups within their organizations. They can also restrict passkey usage to specific provider types by restricting Authenticator Attestation GUIDs (AAGUIDs) allowed in an organization. For more information, see [How to enable Authenticator passkey](how-to-enable-authenticator-passkey.md).
+Before users can sign in to Microsoft Entra ID using passkeys, an Authentication Policy Administrator must enable Microsoft Authenticator or FIDO2 security keys for phishing-resistant MFA in the Authentication methods policy. Customers can restrict the use of passkeys for certain users and groups within their organizations. They can also restrict passkey usage to specific provider types by restricting Authenticator Attestation GUIDs (AAGUIDs) allowed in an organization. For more information, see [How to enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md).
 
 ## Next steps
 
