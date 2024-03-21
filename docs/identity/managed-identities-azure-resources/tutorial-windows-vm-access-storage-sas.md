@@ -37,7 +37,7 @@ A Service SAS provides the ability to grant limited access to objects in a stora
 - You also need a Windows Virtual machine that has system assigned managed identities enabled.
   - If you need to create  a virtual machine for this tutorial, you can follow the article titled [Create a virtual machine with system-assigned identity enabled](./qs-configure-portal-windows-vm.md#system-assigned-managed-identity)
 
-[!INCLUDE [updated-for-az.md](~/../azure-docs-pr/includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az.md](~/includes/azure-docs-pr/updated-for-az.md)]
 
 ## Create a storage account 
 
