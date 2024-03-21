@@ -77,7 +77,7 @@ Will this policy apply to any application, user action, or authentication contex
 
 [Using filter for applications to include or exclude applications instead of individually specifying them](concept-filter-for-applications.md) helps organizations:
 
-- Easily scale and target any number of apps.
+- Easily scale and target any number of applications.
 - Easily manage applications with similar policy requirements.
 - Reduce the number of individual policies.
 - Reduce errors while editing policies: No need to add/remove applications manually from the policy. Just manage the attributes.
