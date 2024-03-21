@@ -34,8 +34,8 @@ In this tutorial, you learn how to:
  
 ## Add MSAL dependencies  
  
-1. Open your project in Android Studio.    
- 
+1. Open your project in Android Studio or create a new project. 
+   
 1. Open your application's `build.gradle` and add the following dependencies:   
 
     ```gradle 
@@ -136,7 +136,7 @@ For more information on MSAL logging, see [Logging in MSAL for Android](/entra/i
  
 ## Create native authentication MSAL SDK instance
  
-In the `onCreate` method, create native authentication MSAL SDK instance, `authClient`, so that you can perform authentication logic. Pass the JSON configuration file you created earlier as a parameter:
+In the `onCreate()` method, create an MSAL instance so that we can perform authentication logic and interact with our tenant through native authentication APIs. The `createNativeAuthPublicClientApplication()` method returns an instance called `authClient`. The JSON configuration file that we created earlier in the tutorial is passed as a parameter.
 
 ```kotlin
     //...
