@@ -47,7 +47,7 @@ provisioning. You'll learn how to:
 
 Before you start integrating Oracle HCM with Microsoft Entra ID using the Inbound Provisioning API, you need to ensure that you have the following prerequisites:
 
-- An [Oracle HCM](https://docs.oracle.com/en/cloud/saas/human-resources/23c/oawpm/human_capital_management_integration_specialist_job_roles.html) account with privileges to:
+- An [Oracle HCM](https://docs.oracle.com/en/cloud/saas/human-resources/24a/index.html) account with privileges to:
 
   - View and export HCM data.
   - Access the Oracle HCM REST APIs. For this tutorial, we
@@ -58,7 +58,7 @@ Before you start integrating Oracle HCM with Microsoft Entra ID using the Inboun
 
   - To install the provisioning agent (hybrid users only), you'll need access to the Microsoft Windows server connected to your AD Domain.
 
-  - To create a gallery app and provisioning job, you'll need Microsoft Entra with [Application Admin](~/identity/role-based-access-control/permissions-reference#application-administrator.md) and [Hybrid Identity Admin](~/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator.md) roles.
+  - To create a gallery app and provisioning job, you'll need Microsoft Entra with [Application Admin](~/identity/role-based-access-control/permissions-reference.md#application-administrator) and [Hybrid Identity Admin](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) roles.
 
 ## Integration overview
 
@@ -78,11 +78,11 @@ source system. This process includes new employees, updated employee data, or de
 | **#** | **Step** | **What to do** | **Who to engage** |
 | ----------- | ----------- | ----------- | ----------- |
 | 1. | Determine which set of attributes you want to provision from HCM | &#x2022; [Reference this list of HCM attributes and determine which attributes you wish to export to Microsoft Entra ID](#worksheet-1-oracle-hcm-attributes) <br> &#x2022; [Map Oracle HCM attributes to SCIM attributes](#worksheet-2-oracle-hcm-to-scim-attribute-mapping) <br> &#x2022; [Define unique ID generation and transformation rules](#worksheet-3-define-unique-id-generation-and-transformation-rules)  | Oracle HCM Admin & IT Admin |
-| 2.  | Determine your provisioning target: Are you provisioning cloud-only identities to Microsoft Entra ID or hybrid identities to on-premises AD?  | &#x2022; If your target is Microsoft Entra ID (cloud-only identity provisioning): <br> &#x2022; [Configure gallery app](#configure-gallery-application) <br> &#x2022; [Map SCIM to Microsoft Entra attributes](#worksheet-6-scim-attribute-to-microsoft-entra-attributes-mapping) <br> &#x2022; If your target is on-premises AD (hybrid identity provisioning): <br> &#x2022; [Download and configure provisioning agent](#for-hybrid-users) <br> &#x2022; [Configure gallery app](#configure-gallery-application) <br> &#x2022; [Map SCIM attributes to on-premises Active Directory](#worksheet-4-scim-attributes-on-premises-ad-attributes-mapping) <br> &#x2022; [Update your Entra Connect Sync / cloud sync mappings to flow new HR attributes to Entra ID](#worksheet-5-on-premises-ad-to-microsoft-entra-id-mapping) | For provisioning agent installation, involve Windows admin <br> <br> For gallery app configuration, engage admin with Application Admin privileges |
-| 3.  | Perform initial sync to send full scope of data to provisioning endpoint  | &#x2022;[Prepare for initial sync](#prepare-for-initial-sync) <br> &#x2022; [Perform CSV export and send data to API](#csv-export-for-initial-sync) <br> &#x2022; Validate that the right workers have been matched and are present in Microsoft Entra / AD | IT Admin |
+| 2.  | Determine your provisioning target: Are you provisioning cloud-only identities to Microsoft Entra ID or hybrid identities to on-premises AD?  | If your target is Microsoft Entra ID (cloud-only identity provisioning): <br> &#x2022; [Configure gallery app](#configure-gallery-application) <br> &#x2022; [Map SCIM to Microsoft Entra attributes](#worksheet-6-scim-attribute-to-microsoft-entra-attributes-mapping) <br> If your target is on-premises AD (hybrid identity provisioning): <br> &#x2022; [Download and configure provisioning agent](#for-hybrid-users) <br> &#x2022; [Configure gallery app](#configure-gallery-application) <br> &#x2022; [Map SCIM attributes to on-premises Active Directory](#worksheet-4-scim-attributes-on-premises-ad-attributes-mapping) <br> &#x2022; [Update your Microsoft Entra Connect Sync and cloud sync mappings to flow new HR attributes to Entra ID](#worksheet-5-on-premises-ad-to-microsoft-entra-id-mapping) | For provisioning agent installation, involve Windows admin <br> <br> For gallery app configuration, engage admin with Application Admin privileges |
+| 3.  | Perform initial sync to send full scope of data to provisioning endpoint  | &#x2022; [Prepare for initial sync](#prepare-for-initial-sync) <br> &#x2022; [Perform CSV export and send data to API](#csv-export-for-initial-sync) <br> &#x2022; Validate that the right workers have been matched and are present in Microsoft Entra / AD | IT Admin |
 | 4.  | Perform delta syncs to keep data in Microsoft Entra ID up to date | Use one of these methods: <br> &#x2022; [Use CSV extracts](#option-2-use-csv-extracts) <br> &#x2022; [Use Atom Feed APIs](#option-1-use-the-oracle-atom-feed-apis) | IT Admin |
 | 5.  | Writeback data to Oracle HCM | &#x2022; [Configure and run writeback provisioning job](#writeback-from-microsoft-entra-id-to-oracle-hcm) | IT Admin |
-| 6.  | *Recommended*: Configure Microsoft Entra lifecycle workflows | &#x2022; [Automate your Joiner, Mover, Leaver processes using Microsoft Entra](~/id-governance/what-are-lifecycle-workflows.md) <br> &#x2022; [Governance License required](~/id-governance/identity-governance-overview.md)  |  IT Admin |
+| 6.  | *Recommended*: Configure Microsoft Entra lifecycle workflows | &#x2022; [Automate your Joiner, Mover, Leaver processes using Microsoft Entra](~/id-governance/what-are-lifecycle-workflows.md) <br> &#x2022; [Governance license required](~/id-governance/identity-governance-overview.md)  |  IT Admin |
 
 ## Configure gallery application
 
@@ -90,22 +90,29 @@ Before you can configure the provisioning job in Microsoft Entra, you need to de
 
 ### For cloud-only users
 
-Configure the gallery application: **API-driven provisioning to Microsoft Entra ID**. Follow these steps to [create the gallery application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#create-your-api-driven-provisioning-app).
+Configure the gallery application **API-driven provisioning to Microsoft Entra ID** by following the steps to: 
 
-Next, follow these steps to [configure the application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#configure-api-driven-inbound-provisioning-to-microsoft-entra-id).
+- [Create the gallery application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#create-your-api-driven-provisioning-app)
+
+- [Configure the application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#configure-api-driven-inbound-provisioning-to-microsoft-entra-id)
 
 ### For hybrid users
 
-You'll need to work with your Windows admin to install the provisioning agent on a domain-joined Windows server. Reference this link for steps on [configuring the application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#create-your-api-driven-provisioning-app)
-and [installing the provisioning agent](~/identity/hybrid/cloud-sync/how-to-install.md).
+Work with your Windows admin to install the provisioning agent on a domain-joined Windows server, then follow the steps to:
 
-Configure the gallery application: **API-driven provisioning to on-premises Active Directory**. Follow these steps to [create the gallery application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#create-your-api-driven-provisioning-app).
+- [Configure the application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#create-your-api-driven-provisioning-app)
+
+- [Install the provisioning agent](~/identity/hybrid/cloud-sync/how-to-install.md)
+
+Next, configure the gallery application **API-driven provisioning to on-premises Active Directory**, then follow the steps to:
+
+- [Create the gallery application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#create-your-api-driven-provisioning-app)
 
 ## Prepare for initial sync
 
 Before sending your initial sync payload, you need to make sure your data is prepared to properly sync with Microsoft Entra. The following steps help ensure a smooth integration.
 
-1. [Matching identifier](~/identity/app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target--systems)
+1. [Matching identifier](~/identity/app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target-systems)
     presence and uniqueness: The provisioning service uses a matching
     attribute to uniquely identify and link worker records in your
     Oracle system with corresponding user accounts in AD / Microsoft Entra ID. The
@@ -142,13 +149,13 @@ HCM in CSV format, Oracle provides multiple options.
     specifying the records and attributes to be extracted. With this
     tool, you can:
 
-  - Identify records for extraction using complex selection criteria.
-  - Define data elements in an HCM extract using fast formula database items and rules.
+  - Identify records for extraction using complex selection criteria
+  - Define data elements in an HCM extract using fast formula database items and rules
 
 > [!NOTE]
 > To get started with creating HCM Extracts, refer to [Define Extracts (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/23c/fahex/define-extracts.html).
 
-- **Oracle BI Publisher**: Oracle BI Publisher supports both scheduled and
+- **Oracle BI Publisher**: Supports both scheduled and
     unplanned reporting, based on either predefined Oracle Transactional
     Business Intelligence analysis structures or your own data models.
     You can generate reports in various formats. To use Oracle BI
@@ -303,7 +310,7 @@ attributes in the SCIM payload based on the Oracle HCM to SCIM worksheet:
 
 ```
 
-Once you format the [SCIM bulk request](~/identity/app-provisioning/inbound-provisioning-api-graph-explorer.md#bulk-request-with-scim-enterprise-user-schema), you can then send the data to the [bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload.md#view=graph-rest-1.0&source=recommendations) API endpoint via API-driven provisioning.
+Once you format the [SCIM bulk request](~/identity/app-provisioning/inbound-provisioning-api-graph-explorer.md#bulk-request-with-scim-enterprise-user-schema), you can then send the data to the [bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload?view=graph-rest-1.0&tabs=http) API endpoint via API-driven provisioning.
 
 Before enabling the integration, run manual tests and verifications to validate the SCIM
 bulk request payload structure. You may use tools, such as [Postman](~/identity/app-provisioning/inbound-provisioning-api-postman.md) or [Graph Explorer](~/identity/app-provisioning/inbound-provisioning-api-graph-explorer.md) to confirm that the bulk request payloads are processed as expected.
@@ -362,18 +369,14 @@ process of sending user changes that occur in Microsoft Entra ID back to Oracle
 HCM, such as username, email, and phone numbers. This process ensures that your
 data is consistent and accurate across both systems.
 
-To configure writeback, you'll need to use the Oracle HCM SCIM APIs. The
-[Oracle HCM SCIM APIs](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/Quick_Start.html) are RESTful web services that allow you to create, update, and delete
-users in Oracle HCM from an external source, such as Microsoft Entra. You can use
-the Microsoft Entra Provisioning Service to connect Microsoft Entra to the Oracle
-HCM SCIM APIs and map the user attributes that you want to write back.
+To configure writeback, you'll need to use the [Oracle HCM SCIM APIs](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/Quick_Start.html). These APIs are RESTful web services that allow you to create, update, and delete users in Oracle HCM from an external source, such as Microsoft Entra. You can use the Microsoft Entra Provisioning Service to connect Microsoft Entra to the Oracle HCM SCIM APIs and map the user attributes that you want to writeback.
 
 To set up writeback, you'll need to configure an outbound provisioning
 job to your Oracle HCM tenant. To configure writeback, you'll need the
 following info:
 
 - **REST server URL**, which is normally the URL of your Oracle Cloud
-    Service. It should look like this:
+    Service. It should look something like this:
     [https://servername.fa.us2.oraclecloud.com](https://servername.fa.us2.oraclecloud.com/hcmRestApi/scim).
 
 - **Secret token** from HCM environment that provides your HCM
@@ -495,7 +498,7 @@ additional rules to set their value. Reference the links to populate these attri
 | Attribute | How to set attribute value |
 | ----------- | ----------- |
 | userPrincipalName (mandatory) | [Plan cloud HR application to Microsoft Entra user provisioning](~/identity/app-provisioning/plan-cloud-hr-provision.md#generate-a-unique-attribute-value) |
-| SamAccountName (on-premisesises AD only)  | [Plan cloud HR application to Microsoft Entra user provisioning](~/identity/app-provisioning/plan-cloud-hr-provision.md#generate-a-unique-attribute-value) |
+| SamAccountName (on-premises AD only)  | [Plan cloud HR application to Microsoft Entra user provisioning](~/identity/app-provisioning/plan-cloud-hr-provision.md#generate-a-unique-attribute-value) |
 | parentDistinguishedName (on-premises AD only) | [Plan cloud HR application to Microsoft Entra user provisioning](~/identity/app-provisioning/plan-cloud-hr-provision.md#configure-active-directory-ou-container-assignment) |
 
 ### Worksheet 4: SCIM attributes on-premises AD attributes mapping
@@ -504,7 +507,7 @@ The table in this section represents the set of on-premises attributes that Acti
 Directory supports. Map your SCIM attributes to the attributes in this
 table if your provisioning target is Active Directory.
 
-| SCIM attribute | on-premises AD attribute |
+| SCIM attribute | On-premises AD attribute |
 | ----------- | ----------- | 
 | ExternalId                                        | employeeID       |
 | Active                                            | accountDisabled  |
@@ -530,9 +533,9 @@ table if your provisioning target is Active Directory.
 | urn:ietf:params:scim:schemas:extension:COMPANYAME:1.0:User:TermDate      | extensionAttribute3              |
 
 > [!NOTE]
-> If you're defining SCIM schema extension attributes that don't have a corresponding on-premises AD attribute, you can map them to *extensionAttributes* 1-15 or [extend the AD schema](/windows/win32/ad/how-to-extend-the-schema.md) to add a new auxiliary object class with required attributes.
+> If you're defining SCIM schema extension attributes that don't have a corresponding on-premises AD attribute, you can map them to *extensionAttributes* 1-15 or [extend the AD schema](/windows/win32/ad/how-to-extend-the-schema) to add a new auxiliary object class with required attributes.
 
-### Worksheet 5: on-premises AD to Microsoft Entra ID mapping
+### Worksheet 5: On-premises AD to Microsoft Entra ID mapping
 
 Once you have your identities synced to on-premises AD, you can send them to
 Microsoft Entra ID via cloud sync or Microsoft Entra ID connect. Reference the linked
@@ -570,7 +573,7 @@ The table in this section is an example attribute mapping from the AD attributes
 
 The table in this section represents the set of attributes that Microsoft Entra ID supports. Map your SCIM attributes to the attributes in this table if your
 provisioning target is Microsoft Entra ID. To add custom SCIM attributes to your
-gallery application, refer to [Extend API-driven provisioning to sync custom attributes - Microsoft Entra ID \ Microsoft Learn](~/identity/app-provisioning/inbound-provisioning-api-custom-attributes.md).
+gallery application, refer to [Extend API-driven provisioning to sync custom attributes](~/identity/app-provisioning/inbound-provisioning-api-custom-attributes.md).
 
 | SCIM attribute | Microsoft Entra attribute |
 | ----------- | ----------- | 
