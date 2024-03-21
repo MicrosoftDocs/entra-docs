@@ -109,7 +109,7 @@ Using built-in roles in Microsoft Entra ID is free. Using custom roles require a
 ## Next steps
 
 - [Understand Microsoft Entra roles](concept-understand-roles.md)
-- [Assign Microsoft Entra roles to users](manage-roles-portal.md)
+- [Assign Microsoft Entra roles to users](manage-roles-portal.yml)
 - [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
 - [Assign Microsoft Entra roles to users](manage-roles-portal.yml)
-- [Create and assign a custom role in Microsoft Entra ID](custom-create.md)
+- [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
