@@ -80,7 +80,7 @@ Once you've registered both your client app and web API and you've exposed the A
     - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
     - `Enter_the_Redirect_URI_Here` and replace it with the value of *kRedirectUri* in the Microsoft Authentication Library (MSAL) configuration file you downloaded earlier when you added the platform redirect URL.
     - `Enter_the_Protected_API_Full_URL_Here` and replace it with the URL to your web API. The *Enter_the_Protected_API_Full_URL_Here* should include the base URL (the deployed web API URL) and the endpoint (/api/todolist) for our ASP.NET web API.
-    - `Enter_the_Protected_API_Scopes_Here` and replace it with the scopes recorded in [Grant web API permissions to the Android sample app](#grant-web-api-permissions-to-the-ios-sample-app).
+    - `Enter_the_Protected_API_Scopes_Here` and replace it with the scopes recorded in [Grant web API permissions to the iOS sample app](#grant-web-api-permissions-to-the-ios-sample-app).
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 
 You've configured the app and it's ready to run.
