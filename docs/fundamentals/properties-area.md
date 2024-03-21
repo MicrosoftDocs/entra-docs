@@ -49,4 +49,4 @@ Your privacy and technical information is located in the **Properties** area of 
 
 ## Next steps
 - [Microsoft Entra B2B collaboration invitation redemption](~/external-id/redemption-experience.md)
-- [Add or change profile information for a user in Microsoft Entra ID](./how-to-manage-user-profile-info.md)
+- [Add or change profile information for a user in Microsoft Entra ID](./how-to-manage-user-profile-info.yml)
