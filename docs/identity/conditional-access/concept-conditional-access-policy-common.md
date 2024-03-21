@@ -20,7 +20,7 @@ Conditional Access templates provide a convenient method to deploy new policies 
 
 ## Template categories
 
-The 16 Conditional Access policy templates are organized into the following categories:
+Conditional Access policy templates are organized into the following categories:
 
 # [Secure foundation](#tab/secure-foundation)
 
