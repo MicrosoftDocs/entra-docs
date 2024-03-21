@@ -120,7 +120,7 @@ We recommend using the real-time security detection capabilities of Microsoft Se
 
 ### Quick steps
 
-1. Learn about the [prerequisites](/azure/sentinel/prerequisites), [roles and permissions](/azure/sentinel/roles).
+1. Learn about the [prerequisites](/azure/sentinel/prerequisites), [roles, and permissions](/azure/sentinel/roles).
 1. [Estimate potential costs](/azure/sentinel/billing).
 1. [Onboard to Microsoft Sentinel](/azure/sentinel/quickstart-onboard).
 1. [Collect Microsoft Entra data](/azure/sentinel/connect-azure-active-directory).
@@ -140,7 +140,7 @@ The reports available in the Azure portal provide a wide range of capabilities t
 - Research a user's sign-in activity or track an application's usage.
 - Review details around group name changes, device registration, and password resets with audit logs.
 - Use the Identity Protection reports for monitoring at risk users, risky workload identities, and risky sign-ins.
-- To ensure that your users can access the applications in use in your tenant, you can review the sign-in success rate in the Microsoft Entra application activity (preview) report from Usage and insights.
+- You can review the sign-in success rate in the Microsoft Entra application activity (preview) report from Usage and insights to ensure that your users can access the applications in use in your tenant.
 - Compare the different authentication methods your users prefer with the Authentication methods report from Usage and insights.
 
 ### Quick steps

@@ -18,7 +18,7 @@ ms.reviewer: egreenberg14
 
 Microsoft Entra logs all sign-ins into an Azure tenant for compliance purposes. As an IT administrator, you need to know what the values in the sign-in logs mean, so that you can interpret the log values correctly.
 
-- [Learn about the sign-in logs](concept-sign-ins.md).
+- [Learn about the sign-in logs](concept-sign-ins.md)
 - [Customize and filter the sign-in logs](howto-customize-filter-logs.md)
 
 This article explains the values found in the sign-in logs. These values provide valuable information for troubleshooting sign-in errors.
@@ -127,7 +127,7 @@ This tab of the sign-in logs displays the results of sign-in attempts that were 
 
 The following scenarios are important to consider when you're reviewing sign-in logs.
 
-- **IP address and location:** There's no definitive connection between an IP address and where the computer with that address is physically located. Mobile providers and VPNs issue IP addresses from central pools that are often far from where the client device is used. Currently, converting IP address to a physical location is a best effort based on traces, registry data, reverse lookups and other information.
+- **IP address and location:** There's no definitive connection between an IP address and where the computer with that address is physically located. Mobile providers and VPNs issue IP addresses from central pools that are often far from where the client device is used. Currently, converting IP address to a physical location is a best effort based on traces, registry data, reverse lookups, and other information.
 
 - **Conditional Access:**
   - `Not applied`: No policy applied to the user and application during sign-in.
@@ -144,7 +144,7 @@ The following scenarios are important to consider when you're reviewing sign-in 
   - `b2bCollaboration`- A cross tenant sign-in performed by a guest user using B2B Collaboration.
   - `b2bDirectConnect` - A cross tenant sign-in performed by a B2B.
   - `microsoftSupport`- A cross tenant sign-in performed by a Microsoft support agent in a Microsoft customer tenant.
-  - `serviceProvider` - A cross-tenant sign-in performed by a Cloud Service Provider (CSP) or similar admin on behalf of that CSP's customer in a tenant
+  - `serviceProvider` - A cross-tenant sign-in performed by a Cloud Service Provider (CSP) or similar admin on behalf of that CSP's customer in a tenant.
   - `unknownFutureValue` - A sentinel value used by MS Graph to help clients handle changes in enum lists. For more information, see [Best practices for working with Microsoft Graph](/graph/best-practices-concept).
 
 - **Tenant:** The sign-in log tracks two tenant identifiers that are relevant in cross-tenant scenarios:

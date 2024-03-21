@@ -75,12 +75,12 @@ sections:
       - question: |
           How can I find out if a user purchased a license or enabled a trial license for my tenant? I don't see this activity in the audit logs.
         answer: |
-          At this time, there isn't a specific activity in the audit logs for license purchases or enablement. However, you may be able to correlate the "Onboard resource to PIM" activity from the "Resource Management" category to the purchase or enablement of a license. This activity may not always be available or provide the exact details.
+          At this time, there isn't a specific activity in the audit logs for license purchases or enablement. However, you might be able to correlate the "Onboard resource to PIM" activity from the "Resource Management" category to the purchase or enablement of a license. This activity might not always be available or provide the exact details.
 
       - question: |
           What does `DSR Delete: MFA.PostgreSQL.change_requests` or `DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-eu.activations` in the audit logs mean?
         answer: |
-          These changes are related to how MFA and some [GDPR](https://www.microsoft.com/trust-center/privacy/gdpr-overview) events are processed. Events such as deleting users or exporting user data are captured in the audit logs, but the activity description might be a little cryptic. We're working to improve those activity labels. For a full list of of the activities related to GDPR, see [Audit activities](reference-audit-activities.md#authentication-methods). These activities are associated with the DirectoryManagement category.
+          These changes are related to how MFA and some [GDPR](https://www.microsoft.com/trust-center/privacy/gdpr-overview) events are processed. Events such as deleting users or exporting user data are captured in the audit logs, but the activity description might be a little cryptic. We're working to improve those activity labels. For a full list of the activities related to GDPR, see [Audit activities](reference-audit-activities.md#authentication-methods). These activities are associated with the DirectoryManagement category.
 
 
   - name: Sign-in logs
@@ -100,7 +100,7 @@ sections:
       - question: |
           I see .XXX in part of the IP address from a user in my sign-in logs. Why is that happening?
         answer: |
-          Microsoft Entra ID may redact part of an IP address in the sign-in logs to protect user privacy when a user may not belong to the tenant viewing the logs. This action happens in two cases:
+          Microsoft Entra ID might redact part of an IP address in the sign-in logs to protect user privacy when a user might not belong to the tenant viewing the logs. This action happens in two cases:
           - During cross tenant sign ins, such as when a CSP technician signs into a tenant that CSP manages.
           - When our service wasn't able to determine the user's identity with sufficient confidence to be sure the user belongs to the tenant viewing the logs.
 
@@ -112,11 +112,11 @@ sections:
       - question: |
           I see duplicate sign-in entries / multiple sign-in events per requestID. Why is that happening?
         answer: |
-          There are several reasons sign-in entries may be duplicated in your logs.
+          There are several reasons sign-in entries might be duplicated in your logs.
           - If a risk is identified on a sign-in, another nearly identical event is published immediately after with risk included.
           - If MFA events related to a sign-in are received, all related events are aggregated to the original sign-in.
-          - If partner publishing for a sign-in event fails, such as publishing to Kusto, an entire batch of events is retried and published again, which may result in duplicates.
-          - Sign-in events that involve multiple Conditional Access policies may be split into multiple events, which can result in at least two events per sign-in event.
+          - If partner publishing for a sign-in event fails, such as publishing to Kusto, an entire batch of events is retried and published again, which might result in duplicates.
+          - Sign-in events that involve multiple Conditional Access policies might be split into multiple events, which can result in at least two events per sign-in event.
 
       - question: |
           Why do my non-interactive sign-ins appear to have the same time stamp?
@@ -128,11 +128,11 @@ sections:
       - question: |
           I'm seeing User IDs / Object IDs / GUIDs in the username field of my sign-in log. Why is this happening?
         answer: |
-          There are several reasons why sign-in entries may display User IDs, Object IDs, or GUIDs in the username field.
+          There are several reasons why sign-in entries might display User IDs, Object IDs, or GUIDs in the username field.
           - With passwordless authentication, User IDs appear as the username. To confirm this scenario, look at the details of the sign-in event in question. The *authenticationDetail* field says *passwordless*.
           - The user authenticated but has not yet signed in. To confirm, there is an *error code 50058* that correlates with an interrupt.
           - If the username field shows *000000-00000-0000-0000* or something similar, there could be tenant restrictions in place, preventing the user from signing in to the selected tenant.
-          - Multifactor authentication sign-in attempts are aggregated with multiple data entries, which may take longer to display properly. Data may take up to two hours to fully aggregate, but is usually quicker. 
+          - Multifactor authentication sign-in attempts are aggregated with multiple data entries, which might take longer to display properly. Data might take up to two hours to fully aggregate, but is usually quicker. 
 
       - question: |
           I see a 90025 error in the sign in logs. Does this mean my user failed to sign in? Has my tenant hit a throttling limit?
@@ -142,9 +142,9 @@ sections:
       - question: |
           In the Service Principal sign-in logs, what does it mean if I see “00000000-0000-0000-0000-000000000000” or “ ” for Service Principal ID or Resource Service Principal ID in my sign-in logs?
         answer: |
-          If the Service Principal ID has the value “0000000-0000-0000-0000-000000000000" there's no Service Principal for the client application in that instance of authentication. Microsoft Entra no longer issues access tokens without a client Service Principal, except for a few Microsoft and third party applications.
+          If the Service Principal ID has the value “0000000-0000-0000-0000-000000000000" there's no Service Principal for the client application in that instance of authentication. Microsoft Entra no longer issues access tokens without a client Service Principal, except for a few Microsoft and non-Microsoft applications.
 
-          If the Resource Service Principal ID has the value “0000000-0000-0000-0000-000000000000" there's no Service Principal for the resource application in that instance of authentication.
+          If the Resource Service Principal ID has the value “0000000-0000-0000-0000-000000000000", there's no Service Principal for the resource application in that instance of authentication.
 
           This behavior is currently allowed only for a limited number of resource apps.
  
@@ -216,8 +216,8 @@ sections:
           
           - **Success**: The policy was successfully satisfied.
           - **Failure**: The policy wasn't satisfied.
-          - **Not applied**: The policy conditions may not have been met.
-          - **Not enabled**: The policy may be in a disabled state. 
+          - **Not applied**: The policy conditions might not have been met.
+          - **Not enabled**: The policy might be in a disabled state. 
               
       - question: |
           The policy name in the sign-in log doesn't match the policy name in Conditional Access. Why?
@@ -227,7 +227,7 @@ sections:
       - question: |
           My sign-in was blocked due to a Conditional Access policy, but the sign-in log shows that the sign-in succeeded. Why?
         answer: |
-          Currently the sign-in log may not show accurate results for Exchange ActiveSync scenarios when Conditional Access is applied. There can be cases when the sign-in result in the report shows a successful sign-in, but the sign-in actually failed due to a  policy.
+          Currently the sign-in log might not show accurate results for Exchange ActiveSync scenarios when Conditional Access is applied. There can be cases when the sign-in result in the report shows a successful sign-in, but the sign-in actually failed due to a  policy.
 
   - name: Microsoft Graph APIs
     questions:
@@ -244,8 +244,8 @@ sections:
       - question: |
           I keep getting permissions errors when running queries. I thought I had the appropriate role.
         answer: |
-          You may need to sign in to Microsoft Graph separately from the Microsoft Entra admin center. Select your profile icon on the upper-right corner and sign in to the right directory.
-          You may be trying to run a query that you don't have permissions for. Select **Modify Permissions** and select the **Consent** button. Follow the sign-in prompts.
+          You might need to sign in to Microsoft Graph separately from the Microsoft Entra admin center. Select your profile icon on the upper-right corner and sign in to the right directory.
+          You might be trying to run a query that you don't have permissions for. Select **Modify Permissions** and select the **Consent** button. Follow the sign-in prompts.
 
       - question: |
           Why are there `MicrosoftGraphActivityLogs` events that don't correlate to a Service Principal sign-in?
