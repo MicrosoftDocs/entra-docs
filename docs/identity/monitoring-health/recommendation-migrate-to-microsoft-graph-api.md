@@ -1,6 +1,6 @@
 ---
 title: Recommendation to migrate to Microsoft Graph API
-description: Learn about the Microsoft Entra recommendation to migrate from Azure Active Directory APIs to Microsoft Graph APIs
+description: Learn about the Microsoft Entra recommendation to migrate from Azure Active Directory Graph APIs to Microsoft Graph APIs
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
@@ -8,40 +8,39 @@ ms.topic: how-to
 ms.subservice: monitoring-health
 ms.date: 03/21/2024
 ms.author: sarahlipsey
-ms.reviewer:  jupetter
+ms.reviewer: krbash
+
+# Customer intent: As an IT admin, I need to make sure that all apps and service principals are no longer using the Azure AD Graph APIs because they are being deprecated.
+
 ---
-# Microsoft Entra recommendation: Migrate from MFA server to Microsoft Entra multifactor authentication (MFA)
+# Microsoft Entra recommendation: Migrate from Azure AD Graph APIs to Microsoft Graph
 
 [Microsoft Entra recommendations](overview-recommendations.md) provide you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 
-This article covers the recommendation to migrate from MFA server to Microsoft Entra MFA. This recommendation is called `MfaServerDeprecation` in the recommendations API in Microsoft Graph.
+This article covers the recommendation to migrate applications and service principals from Azure AD Graph APIs to Microsoft Graph. This recommendation is called `XXXX` in the recommendations API in Microsoft Graph.
 
 ## Description
 
-Azure Multi-Factor Authentication Server (MFA Server) is scheduled for retirement on September 30th, 2024. In an effort to help organizations migrate to Microsoft Entra MFA, this Microsoft Entra recommendation identifies tenants with MFA server activity. This recommendation identifies tenants with active users and MFA attempts for MFA Server in the last 7 days. MFA Server client integrations, including a list of affected clients are also surfaced as a part of this recommendation.
+The deprecation of Azure Active Directory (Azure AD) Graph APIs was announced in 2020 and are now in the retirement cycle. All applications and service principals need to migrate to the new Microsoft Graph APIs.
+
+In general, applications and service principals that are still using Azure AD Graph APIs were developed by your organization or a vendor. These applications likely need to be updated by your developers or upgraded to a new version.
+
+There are two recommendations associated with the deprecation of Azure AD Graph. One provides a list of applications and one provides a list of service principals. Both recommendations need to be addressed separately.
 
 ## Value 
 
-MFA Server is a component for deploying and managing MFA on-premises. In 2019, Microsoft stopped allowing new deployments of MFA Server and investing in feature enhancements. In September 2022, [Microsoft formally announced the deprecation of MFA Server](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-change-announcements-september-2022-train/ba-p/2967454).
+Microsoft Graph offers a single unified endpoint to access Microsoft Entra and Microsoft 365 services. Microsoft Graph APIs have all the capabilities of Azure AD Graph APIs, plus many newer API features. The Microsoft Graph client libraries offer built-in support for features, such as retry handling, secure redirects, transparent authentication, and payload compression. These capabilities were not available with Azure AD Graph.
 
-Cloud-based, Microsoft Entra multifactor authentication offers better resiliency, availability, and data compliancy. Migrating to Microsoft Entra MFA helps you improve your security posture by giving you access to the latest phishing-resistant authentication methods and more fine-grained access controls. It also helps reduce cost and deployment complexity by no longer having to maintain an on-premises component. 
+Any applications or service principals still calling Azure AD Graph will be affected by future retirement activity. To prevent loss of functionality, we recommend migrating to Microsoft Graph.
 
 ## Action plan
 
-1. [Learn how to migrate MFA Server to Microsoft Entra MFA](../authentication/how-to-migrate-mfa-server-to-mfa-user-authentication.md).
+1. Review the list of **applications** calling Azure AD Graph under **Impacted Resources** in the recommendations details.
+1. Review the list of **service principals** calling Azure AD Graph under **Impacted Resources** in the recommendations details.
+1. Work with the owner or publisher of the corresponding application to identify the steps required to update the application.
 
-1. Migrate MFA user information from on-premises to Microsoft Entra.
-    - You can either do this manually or by leveraging the MFA Server Migration Utility (recommended).
-    - [How to use the MFA Server Migration Utility](../authentication/how-to-mfa-server-migration-utility.md).
+There are several resources available to help with the migration:
 
-1. Use [Staged Rollout](../authentication/how-to-mfa-server-migration-utility.md#enable-staged-rollout) to reroute users to authenticate against Microsoft Entra instead of MFA Server.  
-
-1. Identify and migrate any MFA Server dependencies, such as applications using [RADIUS or LDAP authentication](../authentication/how-to-mfa-server-migration-utility.md#authentication-services). 
-
-1. Update domain federation settings and decommission MFA Server. 
-
-## Next steps
-
-- [Review the Microsoft Entra recommendations overview](overview-recommendations.md)
-- [Learn how to use Microsoft Entra recommendations](howto-use-recommendations.md)
-- [Explore the Microsoft Graph API properties for recommendations](/graph/api/resources/recommendation)
+- [Migrate your apps](/graph/migrate-azure-ad-graph-overview)
+- [Migration planning checklist](/graph/migrate-azure-ad-graph-planning-checklist)
+- [Migration FAQs](/graph/migrate-azure-ad-graph-faq)
