@@ -67,4 +67,4 @@ Make sure you record the following details for use is later steps:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Part 2: Prepare a Python Flask web application to authenticate users in a customer tenant](tutorial-web-app-python-flask-sign-in-prepare-app.md)
+> [Part 2: Prepare a Python Flask web application to authenticate users in a customer tenant](./tutorial-web-app-python-flask-sign-in-sign-out.md)

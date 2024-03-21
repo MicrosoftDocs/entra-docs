@@ -29,7 +29,7 @@ In this tutorial you'll;
 
 ## Prerequisites
 
-- [Tutorial: Prepare your customer tenant to sign in users in a Python Flask web app](tutorial-web-app-node-sign-in-prepae-tenant.md)
+- [Tutorial: Prepare your customer tenant to sign in users in a Python Flask web app](./tutorial-web-app-python-flask-prepare-tenant.md)
 - [Python 3+](https://www.python.org/).
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
