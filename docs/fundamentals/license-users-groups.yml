@@ -45,6 +45,7 @@ introduction: |
   When assigning licenses to a group or bulk updates, such as disabling
   the synchronization status for the organization, any user whose usage
   location isn't specified inherits the location of the tenant.
+
 procedureSection:
   - title: |
       Find your service plan and plan details
@@ -54,11 +55,10 @@ procedureSection:
       assignments.
 
       [!INCLUDE [portal updates](~/includes/portal-update.md)]
+    steps: 
       - |
         Sign in to the
-        [Microsoft Entra admin center](https://entra.microsoft.com) as at least
-        a
-        [Directory Reader](~/identity/role-based-access-control/permissions-reference.md#directory-readers).
+        [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Directory Reader](~/identity/role-based-access-control/permissions-reference.md#directory-readers).
       - |
         Browse to **Identity** > **Billing** > **Licenses**.
 
