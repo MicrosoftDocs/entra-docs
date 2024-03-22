@@ -1,12 +1,12 @@
 ### YamlMime:Hub
 
 title: Microsoft Entra ID documentation
-summary: Microsoft Entra ID is the new name for Azure Active Directory (Azure AD). Use Microsoft Entra ID to manage user identities and control access to your apps, data, and resources.
+summary: Use Microsoft Entra ID to manage user identities and control access to your apps, data, and resources.
 brand: azure ## Used for color theming of icons and hero area
 
 metadata:
   title: Microsoft Entra ID documentation
-  description: Microsoft Entra ID is the new name for Azure Active Directory (Azure AD). Microsoft Entra ID is Microsoft's multitenant, cloud-based directory, and identity management service that combines core directory services, application access management, and identity protection into a single solution.
+  description: Microsoft Entra ID is Microsoft's multitenant, cloud-based directory, and identity management service that combines core directory services, application access management, and identity protection into a single solution.
   ms.service: entra-id
   ms.topic: hub-page
   author: rolyon
@@ -86,15 +86,15 @@ additionalContent:
   sections:
     - title: Resources
       items:
-        - title: "Microsoft Entra ID Training"
+        - title: "Microsoft Entra ID training"
           summary: "Learn more about Microsoft Entra ID with step-by-step guidance."
           url: /training/browse/?resource_type=module&expanded=entra&products=entra-id
         - title: "What's new in Microsoft Entra ID"
           summary: "Learn about recent developments in Microsoft Entra ID."
           url: ../fundamentals/whats-new.md
+        - title: "New name for Azure AD"
+          summary: "Learn more about the new name, what the change means, and how it affects you."
+          url: ../fundamentals/new-name.md
         - title: "Secure your organization's identities"
           summary: "Security recommendation to protect your identities."
           url: ../fundamentals/concept-secure-remote-workers.md
-        - title: "Microsoft security documentation"
-          summary: "Technical guidance to help security professionals build and implement cybersecurity strategy, architecture, and prioritized roadmaps."
-          url: /security/
