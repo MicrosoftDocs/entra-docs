@@ -187,7 +187,7 @@ After you create a remote network and add a device link, the configuration detai
 
 1. Browse to **Global Secure Access (Preview)** > **Connect** > **Remote networks**.
 1. In the last column on the right in the table, select **View configuration** for the remote network you created. The configuration is shown as a JSON blob.
-1. Locate and save Microsoft's public IP address `endpoint`, `asn` and `bgpAddress` from the pane that opens.
+1. Locate and save Microsoft's public IP address `endpoint`, `asn`, and `bgpAddress` from the pane that opens.
   
     - These details are used to set up your connectivity in next step.
     - For more information about viewing these details, see [Configure customer premises equipment](how-to-configure-customer-premises-equipment.md).
@@ -218,6 +218,7 @@ The second highlighted section under `peerConfiguration` contains the details of
 - Public IP address/endpoint: 20.x.x.1
 - ASN: 65533
 - BGP IP address/bgpAddress: 10.2.2.2
+
 Another callout points to the virtual network you created in your resource group. The address space for the virtual network is 10.2.0.0/16. The Local BGP address and Peer BGP address can't be in the same address space.
 
 ## Create local network gateway
@@ -235,7 +236,7 @@ If you selected **Zone redundancy**, then you need to create two local network g
 1. Provide your local network gateway with a **Name**.
 1. For **Endpoint**, select **IP address**, then provide the `endpoint` IP address provided in the Microsoft Entra admin center.
 1. Select **Next: Advanced**.
-1. Set **Configure BGP** to **Yes**
+1. Set **Configure BGP** to **Yes**.
 1. Enter the **Autonomous system number (ASN)** from the `localConfigurations` section of the **View configuration** details.
     - Refer to the **Local network gateway** section of the graphic in the [View connectivity configuration](#view-connectivity-configuration) section. 
 1. Enter the **BGP peer IP address** from the `localConfigurations` section of the **View configuration** details.
