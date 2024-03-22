@@ -85,7 +85,7 @@ Now sign in as the guest user to see the invitation.
 
 1. Select **Accept**.
 
-1. The **My Apps** page opens. Because we haven't assigned any apps to this guest user, you'll see the message "There are no apps to show." In a real-life scenario, you would [add the guest user to an app](add-users-administrator.md#add-guest-users-to-an-application) so the app would appear here.
+1. The **My Apps** page opens. Because we haven't assigned any apps to this guest user, you'll see the message "There are no apps to show." In a real-life scenario, you would [add the guest user to an app](add-users-administrator.yml#add-guest-users-to-an-application) so the app would appear here.
 
 ## Clean up resources
 
@@ -98,6 +98,6 @@ When no longer needed, delete the test guest user.
 ## Next steps
 
 In this quickstart, you created a guest user in the Microsoft Entra admin center and sent an invitation to share apps. Then you viewed the redemption process from the guest user's perspective, and verified that the guest user was able to access their My Apps page. 
-To learn more about adding guest users for collaboration, see [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](add-users-administrator.md).
+To learn more about adding guest users for collaboration, see [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](add-users-administrator.yml).
 To learn more about adding guest users with PowerShell, see [Add and invite guests with PowerShell](b2b-quickstart-invite-powershell.md).
 You can also bulk invite guest users [via the admin center](tutorial-bulk-invite.md) or [via PowerShell](bulk-invite-powershell.md). 

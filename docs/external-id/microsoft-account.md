@@ -28,7 +28,7 @@ Microsoft account is available by default in the list of **External Identities**
 
 ### Microsoft account in the invitation flow
 
-When you [invite a guest user](add-users-administrator.md) to B2B collaboration, you can specify their Microsoft account as the email address they'll use to sign in.
+When you [invite a guest user](add-users-administrator.yml) to B2B collaboration, you can specify their Microsoft account as the email address they'll use to sign in.
 
 :::image type="content" source="media/microsoft-account/microsoft-account-invite.png" alt-text="Screenshot of invite using a Microsoft account.":::
 

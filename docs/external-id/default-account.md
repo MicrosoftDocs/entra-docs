@@ -29,7 +29,7 @@ If you want to enable guest users to sign in with their Microsoft Entra account,
 
 ### Microsoft Entra account in the invitation flow
 
-When you [invite a guest user](add-users-administrator.md) to B2B collaboration, you can specify their Microsoft Entra account as the **Email address** they use to sign in.
+When you [invite a guest user](add-users-administrator.yml) to B2B collaboration, you can specify their Microsoft Entra account as the **Email address** they use to sign in.
 
 :::image type="content" source="media/default-account/default-account-invite.png" alt-text="Screenshot of inviting a guest user using the Microsoft Entra account." lightbox="media/default-account/default-account-invite.png":::
 
@@ -52,5 +52,6 @@ As of November 2020, new application registrations show up as unverified in the 
 ## Next steps
 
 - [Microsoft account](microsoft-account.md)
-- [Add Microsoft Entra B2B collaboration users](add-users-administrator.md)
+- [Add Microsoft Entra B2B collaboration users](add-users-administrator.yml)
 - [Add self-service sign-up to an app](self-service-sign-up-user-flow.yml)
+
