@@ -185,8 +185,8 @@ To collaborate with a partner tenant in a different Microsoft Azure cloud, both 
 
 ## Custom roles for managing cross-tenant access settings
 
-Cross-tenant access settings can be managed with custom roles defined by your organization. This enables you to [define your own finely-scoped roles](~/identity/role-based-access-control/custom-create.md) to manage cross-tenant access settings instead of using one of the built-in roles for management.
-Your organization can define custom roles to manage cross-tenant access settings. This allows you to create [your own finely-scoped roles](~/identity/role-based-access-control/custom-create.md) to manage cross-tenant access settings instead of using built-in roles for management.
+Cross-tenant access settings can be managed with custom roles defined by your organization. This enables you to [define your own finely-scoped roles](~/identity/role-based-access-control/custom-create.yml) to manage cross-tenant access settings instead of using one of the built-in roles for management.
+Your organization can define custom roles to manage cross-tenant access settings. This allows you to create [your own finely-scoped roles](~/identity/role-based-access-control/custom-create.yml) to manage cross-tenant access settings instead of using built-in roles for management.
 ### Recommended custom roles
 
 #### Cross-tenant access administrator
