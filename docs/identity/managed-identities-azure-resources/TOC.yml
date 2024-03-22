@@ -120,7 +120,7 @@
   - name: View managed identity service principals
     items:
     - name: Portal
-      href: how-to-view-managed-identity-service-principal-portal.md
+      href: how-to-view-managed-identity-service-principal-portal.yml
     - name: CLI
       href: how-to-view-managed-identity-service-principal-cli.md
     - name: PowerShell
