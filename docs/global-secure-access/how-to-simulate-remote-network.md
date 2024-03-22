@@ -103,9 +103,8 @@ Create a virtual network gateway inside your new resource group.
    - Set the **Enable active-active mode** to **Disabled** if you don't need a second public IP address.
 1. Select an **Availability zone**.
 1. Set **Configure BGP** to **Enabled**.
-1. Set the **Autonomous system number (ASN)** to an appropriate value. You can use any 2-byte values (between 1 to 65534) *except* for the following reserved ASNs:
-    - Refer to the [valid ASN values](reference-remote-network-configurations.md#valid-asn) list for reserved values that can't be used.
-    - Refer to the [valid BGP addresses](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.
+1. Set the **Autonomous system number (ASN)** to an appropriate value. Refer to the [valid ASN values](reference-remote-network-configurations.md#valid-asn) list for reserved values that can't be used.
+
       :::image type="content" source="media/how-to-simulate-remote-network/create-azure-virtual-network-gateway-IP-addresses.png" alt-text="Screenshot of the IP address fields for creating a virtual network gateway.":::
 
 1. Leave all other settings to their defaults or blank.
@@ -167,8 +166,9 @@ For this article, we choose the zone redundancy path.
     - **IP address**: Public IP address of your virtual network gateway.
     - **Local BGP address**: Private IP address that is *outside* the address space of the virtual network associated with your virtual network gateway.
       - *For example, if the address space of your virtual network is 10.1.0.0/16, then you can use 10.2.0.0 as your Local BGP address.*
+      - Refer to the [valid BGP addresses](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.
     - **Peer BGP address**: BGP IP address of your virtual network gateway.
-    - **Link ASN**: ASN of your virtual network gateway.
+    - **Link ASN**: ASN of your virtual network gateway. Refer to the [valid ASN values](reference-remote-network-configurations.md#valid-asn) list for reserved values that can't be used.
     - **Redundancy**: Set to **Zone redundancy**.
     - **Zone redundancy local BGP address**: Private IP address that is *outside* the address space of the virtual network associated with your virtual network gateway. This address must be different from **Local BGP address**.
     - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. Available options are 250, 500, 750, and 1000 Mbps.
