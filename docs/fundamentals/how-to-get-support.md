@@ -22,7 +22,7 @@ This article provides the options to find support from the Microsoft community a
 Start with our Microsoft community members who might have an answer to your question. These communities provide support, feedback, and general discussions on Microsoft products and services. Before creating a support request, check out the following resources for answers and information.
 
 - For how-to information, quickstarts, or code samples for IT professionals and developers, see the [technical documentation at learn.microsoft.com](../index.yml).
-- Post a question to [Microsoft Q&A](/answers/products/) to get answers to your identity and access questions directly from Microsoft engineers, Most Valuable Professionals (minimum viable products (MVPs)), and other members of our expert community.
+- Post a question to [Microsoft Q&A](/answers/products/) to get answers to your identity and access questions directly from Microsoft engineers, Most Valuable Professionals (MVPs), and other members of our expert community.
 - The [Microsoft Technical Community](https://techcommunity.microsoft.com/) is the place for our IT pro partners and customers to collaborate, share, and learn. Join the community to post questions and submit your ideas.
 - The [Microsoft Technical Community Info Center](https://techcommunity.microsoft.com/t5/Community-Info-Center/ct-p/Community-Info-Center) is used for announcements, blog posts, ask-me-anything (AMA) interactions with experts, and more.
 - The [Microsoft Developer Program](https://developer.microsoft.com/microsoft-365/dev-program) enables you to be your own administrator and prototype apps and solutions on your fully pre-provisioned sandbox subscription.
