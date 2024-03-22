@@ -65,4 +65,4 @@ relatedContent:
   - text: Microsoft Entra B2B collaboration invitation redemption
     url: ~/external-id/redemption-experience.md
   - text: Add or change profile information for a user in Microsoft Entra ID
-    url: ./how-to-manage-user-profile-info.md
+    url: ./how-to-manage-user-profile-info.yml
