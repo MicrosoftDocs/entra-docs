@@ -420,7 +420,7 @@ To enable Secure Enclave based storage of device identity keys, add the followin
 > [!NOTE]
 > For this flag to take effect, it must be applied to a new registration. It will not impact devices that have already been registered unless they re-register.
 
-:::image type="content" source="media/apple-psso-plugin/secure-enclave.png" alt-text="Screenshot of the Entra admin centre showing the configuration page for Platform PSSO with the settings for enabling secure enclave.":::
+:::image type="content" source="./media/apple-sso-plugin/secure-enclave.png" alt-text="Screenshot of the Entra admin centre showing the configuration page for Platform PSSO with the settings for enabling secure enclave.":::
 
 ### Scenarios impacted
 The list below contains some common scenarios whose functionality and reliability will be impacted by these changes. As a rule of thumb, any application which has a dependency on accessing device identity artifacts via Apple's Keychain will be affected.
