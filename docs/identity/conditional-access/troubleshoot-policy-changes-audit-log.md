@@ -5,6 +5,7 @@ description: Diagnose changes to Conditional Access policy with the Microsoft En
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: troubleshooting
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.date: 01/03/2024
 
 ms.author: joflore

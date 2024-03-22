@@ -4,6 +4,7 @@ description: This article describes what to do when your Conditional Access poli
 
 ms.service: entra-id
 ms.subservice: conditional-access
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: troubleshooting
 ms.date: 02/26/2024
 

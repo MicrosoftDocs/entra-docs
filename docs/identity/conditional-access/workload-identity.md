@@ -4,6 +4,7 @@ description: Protecting workload identities with Conditional Access policies
 
 ms.service: entra-workload-id
 ms.topic: how-to
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.date: 11/09/2023
 
 ms.author: joflore
