@@ -428,7 +428,7 @@ The list below contains some common scenarios whose functionality and reliabilit
 This is not an exhaustive list and we do advise both consumers and vendors of applications to test their software for compatibility with this new datastore.
 
 ### Registered/Enrolled Device Conditional Access Policy Support in Chrome
-To support registered or enrolled device Conditional Access policies in Google Chrome with Secure Enclave based storage enabled, installation and enablement of the Windows Accounts extension is required.
+To support device Conditional Access policies in Google Chrome with Secure Enclave based storage enabled, you will need to have the [Windows Accounts](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension installed and enabled.
 
 
 ## Next steps
