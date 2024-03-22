@@ -34,12 +34,12 @@ In this tutorial, you'll;
 
 ## Create a Flask project
 
-1. In a location of choice in your computer, create a folder to host your Flask application, such as *ciam-sign-flask-web-app*.
+1. In a location of choice in your computer, create a folder to host your Flask application, such as *flask-web-app*.
 
 1. Open a console window, and change to the directory to your Flask web app folder using the command 
 
     ```bash
-    cd ciam-sign-flask-web-app
+    cd flask-web-app
     ```
 
 1. Set up virtual environment
