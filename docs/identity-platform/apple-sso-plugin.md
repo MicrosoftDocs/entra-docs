@@ -1,11 +1,11 @@
 ---
 title: Microsoft Enterprise SSO plug-in for Apple devices
-description: Learn about the Microsoft Entra SSO plug-in for iOS, iPadOS, and macOS devices.
+description: Learn about the Microsoft Entra SSO plug-in for Apple devices using iOS, iPadOS, and macOS devices.
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom:
-ms.date: 09/05/2023
+ms.date: 03/22/2024
 ms.reviewer: brianmel
 ms.service: identity-platform
 
@@ -403,6 +403,33 @@ To support SSO for non-MSAL apps, the SSO plug-in implements a protocol similar 
 Compared to MSAL-based apps, the SSO plug-in acts more transparently for non-MSAL apps. It integrates with the existing browser sign-in experience that apps provide. 
 
 The end user sees the familiar experience and doesn't have to sign in again in each application. For example, instead of displaying the native account picker, the SSO plug-in adds SSO sessions to the web-based account picker experience. 
+
+## Upcoming changes to device identity
+Announced in March 2024, Entra ID will be moving away from Apple’s Keychain for storing device identity keys. Starting in Q3 2026, all new device registrations will use Apple’s Secure Enclave by default. 
+
+Applications and MDM integrations that have a dependency on accessing Workplace Join keys via Keychain will need to start using MSAL and the Enterprise SSO plug-in to ensure compatibility with the Microsoft identity platform. 
+
+### Enable Secure Enclave based storage of device identity keys
+
+To enable Secure Enclave based storage of device identity keys, add the following Extension Data attribute to your Apple devices’ Intune Configuration Profile. 
+
+|Key|    Type     | Value |
+|--------------------------|----------|-------|
+| use_most_secure_storage  | Boolean  | True  |
+
+> [!NOTE]
+> For this flag to take effect, it must be applied to a new registration. It will not impact devices that have already been registered unless they re-register.
+
+:::image type="content" source="media/apple-psso-plugin/secure-enclave.png" alt-text="Screenshot of the Entra admin centre showing the configuration page for Platform PSSO with the settings for enabling secure enclave.":::
+
+### Scenarios impacted
+The list below contains some common scenarios whose functionality and reliability will be impacted by these changes. As a rule of thumb, any application which has a dependency on accessing device identity artifacts via Apple's Keychain will be affected.
+
+This is not an exhaustive list and we do advise both consumers and vendors of applications to test their software for compatibility with this new datastore.
+
+### Registered/Enrolled Device Conditional Access Policy Support in Chrome
+To support registered or enrolled device Conditional Access policies in Google Chrome with Secure Enclave based storage enabled, installation and enablement of the Windows Accounts extension is required.
+
 
 ## Next steps
 
