@@ -17,6 +17,23 @@ Device links are the physical routers that connect your remote networks, such as
 
 The available regions, device types, autonomous system number (ASN), and border gateway protocol (BGP) addresses are used in both the default and custom configurations.
 
+### Available device options
+
+- barracudaNetworks
+- checkPoint
+- ciscoMeraki
+- citrix
+- fortinet
+- hpeAruba
+- netFoundry
+- nuage
+- openSystems
+- paloAltoNetworks
+- riverbedTechnology
+- silverPeak
+- vmWareSdWan
+- versa
+
 ### Valid regions where remote networks can be created
 
 | Europe Middle East Africa (EMEA) | Asia Pacific (APAC) | Latin America (LATAM) | North America (NA) |
