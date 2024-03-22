@@ -19,7 +19,7 @@ metadata:
   #customer intent: As a <role>, I want <what> so that <why>.
 
 title: |
-  Add your organization's privacy info to Microsoft Entra
+  Add your organization's privacy information to Microsoft Entra
 
 introduction: |
   This article explains how an administrator can add privacy-related info to an organization's directory, through the Microsoft Entra admin center.
