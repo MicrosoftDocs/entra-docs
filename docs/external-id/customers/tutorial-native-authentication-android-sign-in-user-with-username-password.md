@@ -34,7 +34,7 @@ In this tutorial, you learn how to:
 
 ## Update configuration file
 
-[!INCLUDE [update-auth-config-native-auth-file-add-password-challenge-type](./includes/native-auth/update-auth-config-native-auth-file-android-kotlin.md.md)]
+[!INCLUDE [update-auth-config-native-auth-file-add-password-challenge-type](./includes/native-auth/update-auth-config-native-auth-file-android-kotlin.md)]
 
 
 ## Sign in user with username and password 
@@ -64,7 +64,7 @@ CoroutineScope(Dispatchers.Main).launch {
 
 ## Read ID token claims
 
-[!INCLUDE [read-od-token-claims](./includes/native-auth/read-id-token-claims-android-kotlin.md.md)]
+[!INCLUDE [read-od-token-claims](./includes/native-auth/read-id-token-claims-android-kotlin.md)]
 
 ## Handle errors 
 
