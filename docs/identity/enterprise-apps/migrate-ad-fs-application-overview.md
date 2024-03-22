@@ -6,7 +6,7 @@ author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
-ms.topic: conceptual
+ms.topic: concept-article
 
 ms.date: 10/25/2023
 ms.author: jomondi
@@ -48,6 +48,10 @@ Applications are categorized into following migration statuses:
 ## AD FS application migration validation tests
 
 Application readiness is evaluated based on following predefined AD FS application configuration tests. The tests are run automatically and the results are displayed in the AD FS application migration dashboard as a **Migration status**. If the AD FS configuration isn't compatible with a Microsoft Entra configuration, you get specific guidance on how to address the configuration in Microsoft Entra ID.
+
+## AD FS application migration insights status updates
+
+When the application is updated, internal agents sync the updates within a few minutes. However, AD FS migration insights jobs are responsible for evaluating the updates and compute a new migration status. Those jobs are scheduled to run every 24 hours, which means that the data will be computed only once in a day, at around 00:00 Coordinated Universal Time (UTC).
 
 |Result  |Pass/Warning/Fail  |Description  |
 |---------|---------|---------|

@@ -86,7 +86,7 @@ Now that you've created the Azure Function app, you create HTTP trigger function
 
 # [**Continue**](#tab/start-continue)
 
-Use this HTTP trigger to block the user from continuing the sign-up process. For example, you could use an identity verification service or external identity data source to verify the user's email address. You could also block sign ups based on various user conditions.
+Use this HTTP trigger to allow the user to continue with the sign-up flow if no further action is needed.
 
 ```csharp
 #r "Newtonsoft.Json"

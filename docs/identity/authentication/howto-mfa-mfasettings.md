@@ -177,7 +177,7 @@ Helga@contoso.com,1234567,1234567abcdef1234567abcdef,60,Contoso,HardwareKey
 > [!NOTE]
 > Be sure to include the header row in your CSV file.
 
-An Authentication Policy Administrator can sign in to the [Microsoft Entra admin center](https://entra.microsoft.com), go to **Protection** > **Multifactor authentication** > **OATH tokens**, and upload the CSV file.
+Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Global Administrator, go to **Protection** > **Multifactor authentication** > **OATH tokens**, and upload the CSV file.
 
 Depending on the size of the CSV file, it might take a few minutes to process. Select **Refresh** to get the status. If there are any errors in the file, you can download a CSV file that lists them. The field names in the downloaded CSV file are different from those in the uploaded version.
 
@@ -426,7 +426,7 @@ To enable or disable verification methods, complete the following steps:
  The **remember multifactor authentication** feature lets users bypass subsequent verifications for a specified number of days, after they've successfully signed in to a device by using MFA. To enhance usability and minimize the number of times a user has to perform MFA on a given device, select a duration of 90 days or more.
 
 > [!IMPORTANT]
-> If an account or device is compromised, remembering MFA for trusted devices can affect security. If a corporate account becomes compromised or a trusted device is lost or stolen, you should [Revoke MFA Sessions](howto-mfa-userdevicesettings.md).
+> If an account or device is compromised, remembering MFA for trusted devices can affect security. If a corporate account becomes compromised or a trusted device is lost or stolen, you should [Revoke MFA Sessions](howto-mfa-userdevicesettings.yml).
 >
 > The revoke action revokes the trusted status from all devices, and the user is required to perform multifactor authentication again. You can also instruct your users to restore the original MFA status on their own devices as noted in [Manage your settings for multifactor authentication](https://support.microsoft.com/account-billing/change-your-two-step-verification-method-and-settings-c801d5ad-e0fc-4711-94d5-33ad5d4630f7#turn-on-two-factor-verification-prompts-on-a-trusted-device).
 
