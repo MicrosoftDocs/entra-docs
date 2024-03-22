@@ -18,7 +18,7 @@ ms.manager: mwongerapk
 
 1. Open your browser, then go to `http://localhost:3000`. You should see the page similar to the following screenshot:
 
-    :::image type="content" source="../media/includes/run-app/flask-sign-in-page.png" alt-text="Screenshot of flask web app sample sign-in page.":::
+    :::image type="content" source="../../media/includes/run-app/flask-sign-in-page.png" alt-text="Screenshot of flask web app sample sign-in page.":::
 
 1. After the page completes loading, select **Sign In** link. You're prompted to sign in.
 
@@ -28,6 +28,6 @@ ms.manager: mwongerapk
 
 1. After you sign in or sign up, you're redirected back to the web app. You'll see a page that looks similar to the following screenshot:
 
-    :::image type="content" source="../media/includes/run-app/flask-authenticated-page.png" alt-text="Screenshot of flask web app sample after successful authentication.":::
+    :::image type="content" source="../../media/includes/run-app/flask-authenticated-page.png" alt-text="Screenshot of flask web app sample after successful authentication.":::
 
 1. Select **Logout** to sign the user out of the web app or select **Call a downstream API** to make a call to a Microsoft Graph endpoint.
