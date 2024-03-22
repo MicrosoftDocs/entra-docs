@@ -15,17 +15,16 @@ ms.date: 03/19/2024
 
 # Tutorial: Prepare a Python Flask web application for authentication
 
-This is the second tutorial in a tutorial series that guides you on securing a Python Flask Web app using Microsoft Entra ID for customers. In [part 1 of this series](tutorial-web-app-node-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant.
+This is the second tutorial in a tutorial series that guides you on securing a Python Flask Web app using Microsoft Entra ID for customers. In [part 1 of this series](./tutorial-web-app-python-flask-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant.
 
-In this tutorial, you create a Node.js(Express)
-
-In this tutorial you'll;
+In this tutorial, you'll;
 
 > [!div class="checklist"]
 >
 > - Create a Python Flask project
-> - Install dependencies
-> - 
+> - Install the required dependencies
+> - Configure your Flask web app to use Microsoft Entra ID for customers for authentication
+> - Test the sign-in and sign-out experience in your Flask web app
 
 ## Prerequisites
 
@@ -65,7 +64,7 @@ In this tutorial you'll;
 
 ## Install app dependencies
 
-Run the following commands to install app dependencies:
+To install app dependencies, run the following commands:
 
 [!INCLUDE [python-identity-library-warning](./includes/python-identity-library-alert.md)]
 
@@ -86,7 +85,7 @@ pip freeze > requirements.txt
 
 ## Add your configurations
 
-1. Create a *.env* file in your root folder to safely store your app's configuration. Your *.env* file should contain the following environment variables:
+1. Create an .env* file in your root folder to safely store your app's configuration. Your *.env* file should contain the following environment variables:
 
     ```env
     CLIENT_ID=<Enter_your_client_id>
@@ -101,7 +100,7 @@ pip freeze > requirements.txt
     | Config | Description |
     |---------|------------|
     | `REDIRECT_PATH` | The redirect URI path that you registered earlier. This example sets the redirect URI path to `/getAToken`. |
-    | `ENDPOINT` | The Microsoft Graph API endpoint we'll call later on to get the logged in user details. The user deyails are available in the user variable in the session. You don't need to call this endpoint to get the user details. This is just for demonstration purposes. |
+    | `ENDPOINT` | The Microsoft Graph API endpoint we call later on to get the logged in user details. The user details are available in the user variable in the session. You don't need to call this endpoint to get the user details. This is just for demonstration purposes. |
     | `SCOPE` | An example scope we use to instantiate our client application as an example. |
     | `SESSION_TYPE` | The type of session storage we use. We use the filesystem storage type. In production, you can use the most appropriate method based on your system architecture. Examples would be a centralized database-backed session store or sticky sessions. |
 
@@ -118,7 +117,7 @@ pip freeze > requirements.txt
     SESSION_TYPE = "filesystem"
     ```
 
-## Configure app end points
+## Configure app endpoints
 
 At this stage, you create your web app endpoints and add the business logic to your application.
 
@@ -156,7 +155,7 @@ At this stage, you create your web app endpoints and add the business logic to y
 
 1. Add the required endpoints to your Flask app. The web app uses the authorization code flow to sign in the user. Add these endpoints to your *app.py* file:
 
-    - `/login`: This endpoint initiates the sign-in process. It initiates the user sign-in process by redirecting the user to the Microsoft Entra ID for customers sign-in page. The user will be prompted to sign in and consent to the scopes you specify.
+    - `/login`: This endpoint initiates the sign-in process. It initiates the user sign-in process by redirecting the user to the Microsoft Entra ID for customers sign-in page. The user is prompted to sign in and consent to the scopes you specify.
     
         ```python
         @app.route("/login")
@@ -178,7 +177,7 @@ At this stage, you create your web app endpoints and add the business logic to y
             return redirect(url_for("index"))
         ```
         
-    - `/logout`: This endpoint signs the user out of the web app. The user will be redirected to a Microsoft Entra ID for customers endpoint to sign out. If multiple accounts are present, the user will be prompted to choose the account to sign out of. The user will then be redirected back to the web app homepage.
+    - `/logout`: This endpoint signs the user out of the web app. The user is redirected to a Microsoft Entra ID for customers endpoint to sign out. If multiple accounts are present, the user is prompted to choose the account to sign out of. The user will then be redirected back to the web app homepage.
 
         ```python
         @app.route("/logout")
@@ -186,7 +185,7 @@ At this stage, you create your web app endpoints and add the business logic to y
             return redirect(auth.log_out(url_for("index", _external=True)))
         ```
         
-    - `/`: This is the home page of the web app. It calls the *get_user* method to get a current logged-in user from the session. If there is no logged in user, it redirects to the login page. 
+    - `/`: This is the home page of the web app. It calls the *get_user* method to get a current logged-in user from the session. If no user is logged in, it redirects to the sign-in page. 
 
         ```python
         @app.route("/")
@@ -316,11 +315,9 @@ At this stage, you create your web app endpoints and add the business logic to y
 
 ## Reference material
 
-Whereas the [identity library](https://identity-library.readthedocs.io/en/latest/) abstracts the details of the MSAL library, you can refer to the [MSAL Python documentation](/entra/msal/python/) for more information on the MSAL library. This reference material will help you understand how you initialize an app and acquire tokens using MSAL Python.
+Whereas the [identity library](https://identity-library.readthedocs.io/en/latest/) abstracts the details of the MSAL library, you can refer to the [MSAL Python documentation](/entra/msal/python/) for more information on the MSAL library. This reference material helps you understand how you initialize an app and acquire tokens using MSAL Python.
 
 ## See also
-
-You may want to:
 
 - [Enable password reset](how-to-enable-password-reset-customers.md)
 
