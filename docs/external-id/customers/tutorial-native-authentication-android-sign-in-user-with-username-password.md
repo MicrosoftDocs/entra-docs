@@ -34,7 +34,7 @@ In this tutorial, you learn how to:
 
 ## Update configuration file
 
-[!INCLUDE [update-auth-config-native-auth-file-add-password-challenge-type](./includes/native-auth/update-auth-config-native-auth-file.md)]
+[!INCLUDE [update-auth-config-native-auth-file-add-password-challenge-type](./includes/native-auth/update-auth-config-native-auth-file-android-kotlin.md.md)]
 
 
 ## Sign in user with username and password 

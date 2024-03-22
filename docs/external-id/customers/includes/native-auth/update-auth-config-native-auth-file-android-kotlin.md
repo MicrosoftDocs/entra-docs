@@ -23,7 +23,7 @@ ms.manager: mwongerapk
           ], 
           "challenge_types": ["oob","password"], 
           "logging": { 
-            ...
+            //...
           } 
         }
     ```
