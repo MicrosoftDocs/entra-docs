@@ -1,11 +1,11 @@
 ---
-title: How to configure customer premises equipment for Global Secure Access (preview)
+title: How to configure routers for remote networks
 description: Learn how to configure the connectivity between your customer premises equipment and the Global Secure Access (preview) network.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 09/22/2023
+ms.date: 03/22/2024
 ms.service: global-secure-access
 
 # Customer Intent: As a Global Secure Access administrator, I need to know how to configure the connection between my customer premises equipment and Microsoft's network so that I can create a tunnel from my remote network to the Global Secure Access network.
@@ -77,7 +77,6 @@ Follow these instructions to download the connectivity information for your remo
 The details in the response are similar to the device configuration details found in the Microsoft Entra admin center. 
 
 ---
-
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 

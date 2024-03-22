@@ -1,5 +1,5 @@
 ---
-title: Simulate remote network connectivity with Azure virtual networks
+title: Simulate remote networks with Azure virtual networks
 description: Configure Azure resources to simulate remote network connectivity to Microsoft's Security Edge Solutions with Global Secure Access.
 ms.service: global-secure-access
 ms.topic: how-to
@@ -15,9 +15,19 @@ ms.reviewer: absinh
 
 Organizations might want to extend the capabilities of Microsoft Entra Internet Access to entire networks not just individual devices they can [install the Global Secure Access Client](how-to-install-windows-client.md) on. This article shows how to extend these capabilities to an Azure virtual network hosted in the cloud. Similar principles might be applied to a customer's on-premises network equipment.
 
-:::image type="content" source="media/how-to-simulate-remote-network/simulate-remote-network.png" alt-text="Diagram showing a virtual network in Azure connected to Microsoft Entra Internet Access simulating a customer's network." lightbox="media/how-to-simulate-remote-network/simulate-remote-network.png":::
+## Prerequisites
+
+To complete the steps in this process, you must have the following prerequisites in place:
+
+- An Azure subscription and permission to create resources in the [Azure portal](https://portal.azure.com).
+- A basic understanding of [site-to-site VPN connections](/azure/vpn-gateway/tutorial-site-to-site-portal).
+- A Microsoft Entra tenant with the [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator) role assigned.
+
+## Components of the virtual network
 
 Building this functionality out in Azure provides organizations the ability to understand how Microsoft Entra Internet Access works in a more broad implementation. The resources we create in Azure correspond to on-premises concepts in the following ways:
+
+:::image type="content" source="media/how-to-simulate-remote-network/simulate-remote-network.png" alt-text="Diagram showing a virtual network in Azure connected to Microsoft Entra Internet Access simulating a customer's network." lightbox="media/how-to-simulate-remote-network/simulate-remote-network.png":::
 
 | Azure resource | Traditional on-premises component |
 | --- | --- |
@@ -32,14 +42,6 @@ In this document, we use the following default values. Feel free to configure th
 - **Subscription:** Visual Studio Enterprise
 - **Resource group name:** Network_Simulation
 - **Region:** East US
-
-## Prerequisites
-
-To complete the steps in this process, you must have the following prerequisites in place:
-
-- An Azure subscription and permission to create resources in the [Azure portal](https://portal.azure.com).
-- A basic understanding of [site-to-site VPN connections](/azure/vpn-gateway/tutorial-site-to-site-portal).
-- A Microsoft Entra tenant with the [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator) role assigned.
 
 ## High-level steps
 
@@ -102,10 +104,8 @@ Create a virtual network gateway inside your new resource group.
 1. Select an **Availability zone**.
 1. Set **Configure BGP** to **Enabled**.
 1. Set the **Autonomous system number (ASN)** to an appropriate value. You can use any 2-byte values (between 1 to 65534) *except* for the following reserved ASNs:
-   - Azure reserved ASNs: 12076, 65517, 65518, 65519, 65520, 8076, 8075
-   - IANA reserved ASNs: 23456, >= 64496 && <= 64511, >= 65535 && <= 65551, 4294967295
-   - 65476, 65515
-
+    - Refer to the [valid ASN values](reference-remote-network-configurations.md#valid-asn) list for reserved values that can't be used.
+    - Refer to the [valid BGP addresses](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.
       :::image type="content" source="media/how-to-simulate-remote-network/create-azure-virtual-network-gateway-IP-addresses.png" alt-text="Screenshot of the IP address fields for creating a virtual network gateway.":::
 
 1. Leave all other settings to their defaults or blank.
@@ -147,6 +147,11 @@ Before you create your remote network for Global Secure Access, take a moment to
 
 For this article, we choose the zone redundancy path.
 
+> [!TIP]
+> Local BGP address must be a private IP address that is outside the address space of the virtual network associated with your virtual network gateway. For example, if the address space of your virtual network is 10.1.0.0/16, then you can use 10.2.0.0 as your Local BGP address.
+>
+>Refer to the [**valid BGP addresses**](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access (preview)** > **Connect** > **Remote networks**.
 1. Select the **Create remote network** button and provide the following details on the **Basics** tab:
@@ -168,10 +173,7 @@ For this article, we choose the zone redundancy path.
     - **Zone redundancy local BGP address**: Private IP address that is *outside* the address space of the virtual network associated with your virtual network gateway. This address must be different from **Local BGP address**.
     - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. Available options are 250, 500, 750, and 1000 Mbps.
 
-      > [!TIP]
-      > Local BGP address must be a private IP address that is outside the address space of the virtual network associated with your virtual network gateway. For example, if the address space of your virtual network is 10.1.0.0/16, then you can use 10.2.0.0 as your Local BGP address.
-      
-      ![Screenshot of the device link general details.](media/how-to-simulate-remote-network/virtual-network-device-link-details.png)
+    ![Screenshot of the device link general details.](media/how-to-simulate-remote-network/virtual-network-device-link-details.png)
 
 1. On the **Add a link - Details** tab leave the default values selected, unless you made a different selection previously, and select the **Next** button.
 1. On the **Add a link - Security** tab, enter the Pre-shared key (PSK) and select the **Save** button. You return to the main **Create a remote network** set of tabs.
@@ -234,8 +236,9 @@ If you selected **Zone redundancy**, then you need to create two local network g
 1. For **Endpoint**, select **IP address**, then provide the `endpoint` IP address provided in the Microsoft Entra admin center.
 1. Select **Next: Advanced**.
 1. Set **Configure BGP** to **Yes**
-1. Enter a different **Autonomous system number (ASN)** than what you provided in the Microsoft Entra admin center.
-1. Enter the **BGP peer IP address** from the **view configuration** json for the local network gateway.
+1. Enter the **Autonomous system number (ASN)** from the `localConfigurations` section of the **View configuration** details.
+    - Refer to the **Local network gateway** section of the graphic in the [View connectivity configuration](#view-connectivity-configuration) section. 
+1. Enter the **BGP peer IP address** from the `localConfigurations` section of the **View configuration** details.
 
       :::image type="content" source="media/how-to-simulate-remote-network/create-azure-local-network-gateway-bgp.png" alt-text="Screenshot of the ASN and BGP fields in the local network gateway process.":::
 

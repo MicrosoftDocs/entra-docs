@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: reference
-ms.date: 03/05/2024
+ms.date: 03/22/2024
 ms.service: global-secure-access
 ---
 
@@ -44,7 +44,7 @@ You can use any 2 byte values (between 1 to 65534) *except* for the following re
 - IANA reserved ASNs: 23456, >= 64496 && <= 64511, >= 65535 && <= 65551, 4294967295
 - 65476
 
-### Valid BGP values
+### Valid BGP addresses
 
 You can use any BGP address *except* for the following addresses:
 
