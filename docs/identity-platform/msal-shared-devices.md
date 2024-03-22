@@ -53,7 +53,7 @@ To support all data loss prevention scenarios, we also recommend you integrate w
 
 Lastly, we recommend you always perform a thorough security review process after adding shared device mode capability to your app.
 
-For details on how to modify your applications to support shared device mode, see the [Next steps](#next-steps) section at the end of this article.
+For details on how to modify your applications to support shared device mode, see the [Related content](#related-content) section at the end of this article.
 
 ### Deploy devices to frontline workers and turn on shared device mode
 
