@@ -16,7 +16,7 @@ ms.reviewer: stevebal
 
 # Frontline worker management
 
-Frontline workers account for over 80 percent of the global workforce. Yet because of high scale, rapid turnover, and fragmented processes, frontline workers often lack the tools to make their demanding jobs a little easier. Frontline worker management brings digital transformation to the entire frontline workforce. The workforce may include managers, frontline workers, operations, and IT.
+Frontline workers account for over 80 percent of the global workforce. Yet because of high scale, rapid turnover, and fragmented processes, frontline workers often lack the tools to make their demanding jobs a little easier. Frontline worker management brings digital transformation to the entire frontline workforce. The workforce might include managers, frontline workers, operations, and IT.
 
 Frontline worker management empowers the frontline workforce by making the following activities easier to accomplish:
 
@@ -36,11 +36,11 @@ My Staff also enables frontline managers to register their team members' phone n
 
 ![SMS sign-in](media/concept-fundamentals-frontline-worker/sms-signin.png)
 
-Frontline managers can also use Managed Home Screen (MHS) application to allow workers to have access to a specific set of applications on their Intune-enrolled Android dedicated devices. The dedicated devices are enrolled with [Microsoft Entra shared device mode](~/identity-platform/msal-shared-devices.md). When configured in multi-app kiosk mode in the Microsoft Intune admin center, MHS is automatically launched as the default home screen on the device and appears to the end user as the *only* home screen. To learn more, see how to [configure the Microsoft Managed Home Screen app for Android Enterprise](/mem/intune/apps/app-configuration-managed-home-screen-app).
+Frontline managers can also use Managed Home Screen (MHS) application to allow workers to have access to a specific set of applications on their Intune-enrolled Android dedicated devices. The dedicated devices are enrolled with [Microsoft Entra shared device mode](~/identity-platform/msal-shared-devices.md). When configured in multiapp kiosk mode in the Microsoft Intune admin center, MHS is automatically launched as the default home screen on the device and appears to the end user as the *only* home screen. To learn more, see how to [configure the Microsoft Managed Home Screen app for Android Enterprise](/mem/intune/apps/app-configuration-managed-home-screen-app).
 
 ## Secure sign-out of frontline workers from shared devices
 
-Frontline workers in many companies use shared devices to do inventory management and sales transactions. Sharing devices reduces the IT burden of provisioning and tracking them individually. With shared device sign-out, it's easy for a frontline worker to securely sign out of all apps on any shared device before handing it back to a hub or passing it off to a teammate on the next shift. Frontline workers can use Microsoft Teams to view their assigned tasks. Once a worker signs out of a shared device, Intune and Microsoft Entra ID clear all of the company data so the device can safely be handed off to the next associate. You can choose to integrate this capability into all your line-of-business [iOS](~/identity-platform/msal-ios-shared-devices.md) and [Android](~/identity-platform/msal-android-shared-devices.md) apps using the [Microsoft Authentication Library](~/identity-platform/msal-overview.md).
+Frontline workers in many companies use shared devices to do inventory management and sales transactions. Sharing devices reduces the IT burden of provisioning and tracking them individually. With shared device sign-out, it's easy for a frontline worker to securely sign out of all apps on any shared device before handing it back to a hub or passing it off to a teammate on the next shift. Frontline workers can use Microsoft Teams to view their assigned tasks. Once a worker signs out of a shared device, Intune and Microsoft Entra ID clear all of the company data so the device can safely be handed off to the next associate. You can choose to integrate this capability into all your line of business [iOS](~/identity-platform/msal-ios-shared-devices.md) and [Android](~/identity-platform/msal-android-shared-devices.md) apps using the [Microsoft Authentication Library](~/identity-platform/msal-overview.md).
 
 ![Shared device sign-out](media/concept-fundamentals-frontline-worker/shared-device-signout.png)
 

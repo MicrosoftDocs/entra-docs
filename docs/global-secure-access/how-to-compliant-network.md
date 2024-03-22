@@ -35,7 +35,6 @@ The compliant network is different than [IPv4, IPv6, or geographic locations](..
 
 ### Known limitations
 
-- Organizations can protect other Microsoft Entra integrated apps with Conditional Access policies requiring a compliant network check. During the preview, administrators must choose the individual applications from the app picker instead of choosing *All cloud apps*. **Do not choose *All cloud apps*.**
 - Compliant network check with [continuous access evaluation](../identity/conditional-access/concept-continuous-access-evaluation.md) is now supported for SharePoint Online.
 - Compliant network check is currently not supported for private access apps.
 - The compliant network location condition isn't supported for devices that aren't enrolled in mobile device management (MDM). If you configure a Conditional Access policy using the compliant network location condition, users with devices that aren't yet MDM-enrolled might be affected. Users on these devices might fail the Conditional Access policy check, and be blocked. 
