@@ -21,7 +21,7 @@ Complete the [Configure initial product](sse-deployment-guide-intro.md#configure
 
 ### Set up connector server
 
-The connector server communicates with Microsoft's Security Service Edge Solution as the gateway to your corporate network. It uses outbound connections through 80 and 443 and doesn't require inbound ports. Learn [How to configure connectors for Microsoft Entra Private Access](../global-secure-access/how-to-configure-connectors.md#open-ports). Note that each Private Network Connector needs to use a unique public IP address.
+The connector server communicates with Microsoft's Security Service Edge Solution as the gateway to your corporate network. It uses outbound connections through 80 and 443 and doesn't require inbound ports. Learn [How to configure connectors for Microsoft Entra Private Access](../global-secure-access/how-to-configure-connectors.md#open-ports). 
 
 1. On the connector server, open the [Microsoft Entra admin center](https://entra.microsoft.com). Go to **Global Secure Access (Preview)** > **Connect** > **Connectors**  and then click **Enable Private Network connectors**. Click **Download connector service**.
    
