@@ -8,7 +8,7 @@ manager: amycolannino
 ms.assetid: 5595fb2f-2131-4304-8a31-c52559128ea4
 ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.subservice: hybrid-connect
@@ -32,6 +32,8 @@ When a domain is federated with Microsoft Entra ID, several properties are set o
 You can view the IssuerUri by using the PowerShell command `Get-MsolDomainFederationSettings -DomainName <your domain>`.
 
 ![Screenshot that shows results after entering the "Get-MsolDomainFederationSettings" command in PowerShell.](./media/how-to-connect-install-multiple-domains/MsolDomainFederationSettings.png)
+
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 A problem arises when you add more than one top-level domain.  For example, let's say you have set up federation between Microsoft Entra ID and your on-premises environment.  For this document, the domain, bmcontoso.com is being used.  Now a second, top-level domain, bmfabrikam.com has been added.
 
