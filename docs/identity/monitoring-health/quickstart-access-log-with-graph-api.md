@@ -62,4 +62,4 @@ When no longer needed, delete the test user. If you don't know how to delete a M
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Integrate Microsoft Entra activity logs with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.md)
+> [Integrate Microsoft Entra activity logs with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.yml)

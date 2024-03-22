@@ -100,7 +100,7 @@ Organizations should monitor sign-in and audit log activity from the emergency a
 
 ### Prerequisites
 
-1. [Send Microsoft Entra sign-in logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md) to Azure Monitor.
+1. [Send Microsoft Entra sign-in logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) to Azure Monitor.
 
 ### Obtain Object IDs of the break glass accounts
 
