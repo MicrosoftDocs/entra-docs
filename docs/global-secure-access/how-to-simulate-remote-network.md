@@ -235,7 +235,7 @@ If you selected **Zone redundancy**, then you need to create two local network g
 1. Select **Next: Advanced**.
 1. Set **Configure BGP** to **Yes**
 1. Enter a different **Autonomous system number (ASN)** than what you provided in the Microsoft Entra admin center.
-1. Enter the **BGP peer IP address** provided in the Microsoft Entra admin center.
+1. Enter the **BGP peer IP address** from the **view configuration** json for the local network gateway.
 
       :::image type="content" source="media/how-to-simulate-remote-network/create-azure-local-network-gateway-bgp.png" alt-text="Screenshot of the ASN and BGP fields in the local network gateway process.":::
 
