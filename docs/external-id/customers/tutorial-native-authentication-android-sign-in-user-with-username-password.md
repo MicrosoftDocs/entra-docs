@@ -64,7 +64,7 @@ CoroutineScope(Dispatchers.Main).launch {
 
 ## Read ID token claims
 
-[!INCLUDE [read-od-token-claims](./includes/native-auth/read-id-token-claims.md)]
+[!INCLUDE [read-od-token-claims](./includes/native-auth/read-id-token-claims-android-kotlin.md.md)]
 
 ## Handle errors 
 
