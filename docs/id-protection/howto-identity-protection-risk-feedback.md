@@ -10,7 +10,7 @@ ms.date: 03/22/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: chuqiaoshi
+ms.reviewer: cokoopma
 ---
 # How To: Give risk feedback in Microsoft Entra ID Protection
 
