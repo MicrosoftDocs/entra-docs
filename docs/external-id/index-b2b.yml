@@ -47,7 +47,7 @@ landingContent:
           - text: Set up One-time passcodes
             url: one-time-passcode.md
           - text: Add and invite guest users
-            url: add-users-administrator.md
+            url: add-users-administrator.yml
   - title: Scale apps to consumers and customers (Azure AD B2C)
     linkLists:
       - linkListType: overview
