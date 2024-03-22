@@ -14,7 +14,7 @@ ms.reviewer: cokoopma
 ---
 # How To: Give risk feedback in Microsoft Entra ID Protection
 
-Microsoft Entra ID Protection allows you to give feedback on its risk assessment. The following document lists the scenarios where you would like to give feedback on Microsoft Entra ID Protection**s risk assessment and how we incorporate it.
+Microsoft Entra ID Protection allows you to give feedback on its risk assessment. The following document lists the scenarios where you would like to give feedback on Microsoft Entra ID Protection's risk assessment and how we incorporate it.
 
 Your feedback helps us optimize detections in the future, improve their accuracy, and reduce false positives.
 
@@ -31,7 +31,7 @@ There are several reasons why you should give risk feedback:
 
 - **You found Microsoft Entra ID Protection user or sign-in risk assessment incorrect**. For example, a sign-in shown in **Risky sign-ins** report was benign and all the detections on that sign-in were false positives.
 - **You validated that Microsoft Entra ID Protection user or sign-in risk assessment was correct**. For example, a sign-in shown in **Risky sign-ins** report was indeed malicious and you want Microsoft Entra ID to know that all the detections on that sign-in were true positives.
-- **You remediated the risk on that user outside of Microsoft Entra ID Protection** and you want the user**s risk level to be updated.
+- **You remediated the risk on that user outside of Microsoft Entra ID Protection** and you want the user's risk level to be updated.
 
 ## How does Microsoft use my risk feedback?
 
@@ -49,8 +49,8 @@ Here are the scenarios and mechanisms to give risk feedback to Microsoft Entra I
 
 | Scenario | How to give feedback? | What happens under the hood? | Notes |
 | --- | --- | --- | --- |
-| **Sign-in not compromised (False positive)** <br> **Risky sign-ins** report shows an at-risk sign-in [Risk state = At risk] but that sign-in wasn't compromised. | Select the sign-in, then **Confirm sign-in safe**. | We move the sign-in**s aggregate risk to none [Risk state = Confirmed safe; Risk level (Aggregate) = -] and reverse its effect on the user risk. | Currently, the **Confirm sign-in safe** option is only available in **Risky sign-ins** report. |
-| **Sign-in compromised (True positive)** <br> **Risky sign-ins** report shows an at-risk sign-in [Risk state = At risk] with low risk [Risk level (Aggregate) = Low] and that sign-in was indeed compromised. | Select the sign-in, then **Confirm sign-in compromised**. | We move the sign-in**s aggregate risk and the user risk to High [Risk state = Confirmed compromised; Risk level = High]. | Currently, the **Confirm sign-in compromised** option is only available in **Risky sign-ins** report. |
+| **Sign-in not compromised (False positive)** <br> **Risky sign-ins** report shows an at-risk sign-in [Risk state = At risk] but that sign-in wasn't compromised. | Select the sign-in, then **Confirm sign-in safe**. | We move the sign-in's aggregate risk to none [Risk state = Confirmed safe; Risk level (Aggregate) = -] and reverse its effect on the user risk. | Currently, the **Confirm sign-in safe** option is only available in **Risky sign-ins** report. |
+| **Sign-in compromised (True positive)** <br> **Risky sign-ins** report shows an at-risk sign-in [Risk state = At risk] with low risk [Risk level (Aggregate) = Low] and that sign-in was indeed compromised. | Select the sign-in, then **Confirm sign-in compromised**. | We move the sign-in's aggregate risk and the user risk to High [Risk state = Confirmed compromised; Risk level = High]. | Currently, the **Confirm sign-in compromised** option is only available in **Risky sign-ins** report. |
 | **User compromised (True positive)** <br> **Risky users** report shows an at-risk user [Risk state = At risk] with low risk [Risk level = Low] and that user was indeed compromised. | Select the user, then **Confirm user compromised**. | We move the user risk to High [Risk state = Confirmed compromised; Risk level = High] and add a new detection **Admin confirmed user compromised**. | Currently, the **Confirm user compromised** option is only available in **Risky users** report. <br> The detection **Admin confirmed user compromised** is shown in the tab **Risk detections not linked to a sign-in** in the **Risky users** report. |
 | **User remediated outside of Microsoft Entra ID Protection (True positive + Remediated)** <br> **Risky users** report shows an at-risk user and I've then remediated the user outside of Microsoft Entra ID Protection. | 1. Select the user, then **Confirm user compromised**. (This process confirms to Microsoft Entra ID that the user was indeed compromised.) <br> 2. Wait for the user's **Risk level** to go to High. (This time gives Microsoft Entra ID the needed time to take the above feedback to the risk engine.) <br> 3. Select the user, then **Dismiss user risk**. (This process confirms to Microsoft Entra ID that the user is no longer compromised.) |  Microsoft Entra ID moves the user risk to none [Risk state = Dismissed; Risk level = -] and closes the risk on all existing sign-ins having active risk. | Clicking **Dismiss user risk** closes all risk on the user and past sign-ins. This action can't be undone. |
 | **User not compromised (False positive)** <br> **Risky users** report shows at at-risk user but the user isn't compromised. | Select the user, then **Dismiss user risk**. (This process confirms to Microsoft Entra ID that the user isn't compromised.) | Microsoft Entra ID moves the user risk to none [Risk state = Dismissed; Risk level = -]. | Clicking **Dismiss user risk** closes all risk on the user and past sign-ins. This action can't be undone. |
