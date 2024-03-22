@@ -110,7 +110,7 @@ You can download:
 
 Evaluate use of AD FS for authentication with SaaS apps, line of business (LOB) apps, also Microsoft 365 and Microsoft Entra apps.
 
-   ![Diagram AD FS authenticating with SaaS apps, line of business apps, also Microsoft 365 and Microsoft Entra apps](./media/five-steps-to-full-application-integration/integration-1.png)
+   ![Diagram AD FS authenticating with SaaS apps, line of business apps, also Microsoft 365 and Microsoft Entra apps.](./media/five-steps-to-full-application-integration/integration-1.png)
 
 Improve the configuration illustrated in the previous diagram by moving application authentication to Microsoft Entra ID. Enable sign-on for apps and ease application discovery with the My Apps portal.
 
