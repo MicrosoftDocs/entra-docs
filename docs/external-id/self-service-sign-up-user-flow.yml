@@ -81,7 +81,7 @@ procedureSection:
       - |  
         On the **Create** page, enter a **Name** for the user flow. The name is automatically prefixed with **B2X_1_**.
       - |  
-        In the **Identity providers** list, select one or more identity providers that your external users can use to log into your application. (See [Before you begin](#before-you-begin) earlier in this article to learn how to add identity providers.)
+        In the **Identity providers** list, select one or more identity providers that your external users can use to log into your application. (See *Before you begin* earlier in this article to learn how to add identity providers.)
       - |  
         Under **User attributes**, choose the attributes you want to collect from the user. For more attributes, select **Show more**. For example, select **Show more**, and then choose attributes and claims for **Country/Region**, **Display Name**, and **Postal Code**. Select **OK**.
 
