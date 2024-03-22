@@ -169,7 +169,7 @@ We currently don't support:
 
 1. Locate the group you want your group to be a member of and choose **Select**.
 
-    For this exercise, we're adding "master data management (MDM) policy - West" to the "MDM policy - All org" group. The "MDM - policy - West" group will have the same access as the "MDM policy - All org" group.
+    For this exercise, we're adding "MDM policy - West" to the "MDM policy - All org" group. The "MDM - policy - West" group will have the same access as the "MDM policy - All org" group.
 
    :::image type="content" source="media/how-to-manage-groups/nested-groups-selected.png" alt-text="Screenshot of making a group the member of another group with Group membership from the side menu and 'Add membership' option highlighted.":::
 
