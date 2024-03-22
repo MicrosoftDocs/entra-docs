@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://<CustomerDomain>.onestreamcloud.com/OneStreamIS/federation/<Scheme>/signin-saml`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [OneStream support team](mailto:support@onestreamsoftware.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Create a new SAML provider in the **OneStream Identity and Access Managment Poral** to obtain these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. OneStream application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -128,11 +128,13 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure OneStream SSO
 
-To configure single sign-on on **OneStream** side, you need to send the **App Federation Metadata Url** to [OneStream support team](mailto:support@onestreamsoftware.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **OneStream** side you will need to setup a new SAML provider using the **Identity and Access Management Portal** using the **Metadata URL Configuration Mode**. 
+Complete steps can by found by visiting [The OneStream Documentation Site](https://docs.onestream.com/) under **System Guides** and then **Identity and Access Management**.
 
 ### Create OneStream test user
 
-In this section, you create a user called B.Simon in OneStream. Work with [OneStream support team](mailto:support@onestreamsoftware.com) to add the users in the OneStream platform. Users must be created and activated before you use single sign-on.
+Create a new user in **OneStream Security** selecting the **External Authentication Provider** you created above and enter the Entra ID **User principal name** in the **External Provider User Name** field.
+Complete steps can by found by visiting [The OneStream Documentation Site](https://docs.onestream.com/) and navigating to **Design and Reference**, **About Managing Users and Groups**, and then **Creating and Managing Users**.
 
 ## Test SSO 
 
@@ -141,8 +143,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * Click on **Test this application** in Microsoft Entra admin center. This will redirect to OneStream Sign-on URL where you can initiate the login flow.
  
 * Go to OneStream Sign-on URL directly and initiate the login flow from there.
- 
-* You can use Microsoft My Apps. When you click the OneStream tile in the My Apps, this will redirect to OneStream Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Next steps
 
