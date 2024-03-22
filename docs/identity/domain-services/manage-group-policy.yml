@@ -34,7 +34,7 @@ prerequisites:
     * An active Azure subscription.
         * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
     * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
-        * If needed, [create a Microsoft Entra tenant](/azure/active-directory/fundamentals/sign-up-organization) or [associate an Azure subscription with your account](!/azure/active-directory/fundamentals/how-subscriptions-associated-directory).
+        * If needed, [create a Microsoft Entra tenant](/azure/active-directory/fundamentals/sign-up-organization) or [associate an Azure subscription with your account](/azure/active-directory/fundamentals/how-subscriptions-associated-directory).
     * A Microsoft Entra Domain Services managed domain enabled and configured in your Microsoft Entra tenant.
         * If needed, complete the tutorial to [create and configure a Microsoft Entra Domain Services managed domain](tutorial-create-instance.md).
     * A Windows Server management VM that is joined to the Domain Services managed domain.
