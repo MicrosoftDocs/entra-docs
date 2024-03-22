@@ -94,7 +94,7 @@ Granting the update permission is done in two steps:
 
 ## PowerShell
 
-For more detail, see [Create and assign a custom role in Microsoft Entra ID](custom-create.md) and [Assign custom roles with resource scope using PowerShell](custom-assign-powershell.md).
+For more detail, see [Create and assign a custom role in Microsoft Entra ID](custom-create.yml) and [Assign custom roles with resource scope using PowerShell](custom-assign-powershell.md).
 
 ### Create a custom role
 
@@ -136,7 +136,7 @@ $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId 
 
 ## Microsoft Graph API
 
-Use the [Create unifiedRoleDefinition](/graph/api/rbacapplication-post-roledefinitions) API to create a custom role. For more information, see [Create and assign a custom role in Microsoft Entra ID](custom-create.md) and [Assign custom admin roles using the Microsoft Graph API](custom-assign-graph.md).
+Use the [Create unifiedRoleDefinition](/graph/api/rbacapplication-post-roledefinitions) API to create a custom role. For more information, see [Create and assign a custom role in Microsoft Entra ID](custom-create.yml) and [Assign custom admin roles using the Microsoft Graph API](custom-assign-graph.md).
 
 ```http
 POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleDefinitions
