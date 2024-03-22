@@ -140,12 +140,12 @@ sections:
       - question: |
           What should I do if one of my users can't get in to their account?
         answer: |
-          You can reset the user's account by making them to go through the registration process again. Learn more about [managing user and device settings with Microsoft Entra multifactor authentication in the cloud](howto-mfa-userdevicesettings.md).
+          You can reset the user's account by making them to go through the registration process again. Learn more about [managing user and device settings with Microsoft Entra multifactor authentication in the cloud](howto-mfa-userdevicesettings.yml).
           
       - question: |
           What should I do if one of my users loses a phone that is using app passwords?
         answer: |
-          To prevent unauthorized access, delete all the user's app passwords. After the user has a replacement device, they can recreate the passwords. Learn more about [managing user and device settings with Microsoft Entra multifactor authentication in the cloud](howto-mfa-userdevicesettings.md).
+          To prevent unauthorized access, delete all the user's app passwords. After the user has a replacement device, they can recreate the passwords. Learn more about [managing user and device settings with Microsoft Entra multifactor authentication in the cloud](howto-mfa-userdevicesettings.yml).
           
       - question: |
           What if a user can't sign in to non-browser apps?
