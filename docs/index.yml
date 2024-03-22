@@ -99,7 +99,7 @@ conceptualContent:
           url: /entra/standards/configure-for-cmmc-compliance
           itemType: how-to-guide
         - text: Configure CMMC Level 2 Access Control controls
-          url: /entra/standardsconfigure-cmmc-level-2-access-control
+          url: /entra/standards/configure-cmmc-level-2-access-control
           itemType: how-to-guide
     ## CARD 4 ######################
     - title: Microsoft identity platform
