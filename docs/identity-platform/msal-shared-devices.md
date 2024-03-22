@@ -1,11 +1,11 @@
 ---
 title: Shared device mode overview
-description: Learn about shared device mode to enable device sharing for your frontline workers.
+description: Learn how Microsoft Entra ID's shared device mode feature enables device sharing for your frontline workers.
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom:
-ms.date: 02/08/2023
+ms.date: 03/22/2024
 ms.reviewer: brianmel
 ms.service: identity-platform
 
@@ -17,11 +17,11 @@ ms.topic: concept-article
 
 Shared device mode is a feature of Microsoft Entra ID that allows you to build and deploy applications that support frontline workers and educational scenarios that require shared Android and iOS devices.
 
-### Supporting multiple users on devices designed for one user
+## Supporting multiple users on devices designed for one user
 
-Because mobile devices running iOS or Android were designed for single users, most applications optimize their experience for use by a single user. Part of this optimized experience means enabling single sign-on (SSO) across applications and keeping users signed in on their device. When a user removes their account from an application, the app typically doesn't consider it a security-related event. Many apps even keep a user's credentials around for quick sign-in. You may even have experienced this yourself when you've deleted an application from your mobile device and then reinstalled it, only to discover you're still signed in.
+Because mobile devices running iOS or Android were designed for single users, most applications optimize their experience for use by a single user. Part of this optimized experience means enabling single sign-on (SSO) across applications and keeping users signed in on their device. When a user removes their account from an application, the app typically doesn't consider it a security-related event. Many apps even keep a user's credentials around for quick sign-in. You might have experienced this yourself when you've deleted an application from your mobile device and then reinstalled it, only to discover you're still signed in.
 
-### Automatic single sign-in and single sign-out
+## Automatic single sign-in and single sign-out
 
 To allow an organization's employees to use its apps across a pool of devices shared by those employees, developers need to enable the opposite experience. Employees should be able to pick a device from the pool and perform a single gesture to "make it theirs" during their shift. At the end of their shift, they should be able to perform another gesture to sign out globally on the device, with all their personal and company information removed so they can return it to the device pool. Furthermore, if an employee forgets to sign out, the device should be automatically signed out at the end of their shift and/or after a period of inactivity.
 
@@ -67,7 +67,7 @@ For data protection capabilities along with shared device mode, Microsoft’s su
 
 When setting up App protection policies for shared devices, we recommend using [level 2 enterprise enhanced data protection](/mem/intune/apps/app-protection-framework#level-2-enterprise-enhanced-data-protection). With level 2 data protection, you can restrict data transfer scenarios that may cause data to move to parts of the device that aren't cleared with shared device mode.
 
-## Next steps
+## Related content
 
 We support iOS and Android platforms for shared device mode. For more information, see:
 
