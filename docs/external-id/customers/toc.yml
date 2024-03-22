@@ -146,7 +146,7 @@ items:
           items:
               - name: Prepare tenant
                 href: tutorial-web-app-python-flask-prepare-tenant.md
-              - name: Sign in users 
+              - name: Sign in and sign out 
                 href: tutorial-web-app-python-flask-sign-in-sign-out.md
     - name: Web API
       items: 
