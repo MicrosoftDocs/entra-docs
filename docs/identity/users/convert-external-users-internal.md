@@ -1,18 +1,16 @@
 ---
 title: Convert external users to internal users (Preview)
 description: You can convert users from external to internal without the need to recreate them.
-services: active-directory 
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 03/11/2024
+ms.date: 03/19/2024
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.workload: identity
 ms.custom: 
 ms.reviewer: yuank
-
 ---
 
 # Convert external users to internal users (Preview)
