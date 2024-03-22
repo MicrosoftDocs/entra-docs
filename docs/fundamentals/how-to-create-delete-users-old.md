@@ -185,6 +185,6 @@ When a user is deleted, any licenses consumed by the user are made available for
 
 ## Next steps
 
-* [Learn about B2B collaboration users](~/external-id/add-users-administrator.md)
+* [Learn about B2B collaboration users](~/external-id/add-users-administrator.yml)
 * [Review the default user permissions](users-default-permissions.md)
 * [Add a custom domain](add-custom-domain.yml)

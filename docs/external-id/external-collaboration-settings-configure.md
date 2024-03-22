@@ -119,5 +119,5 @@ When a B2B user signs into a resource tenant to collaborate, a sign-in log is ge
 See the following articles on Microsoft Entra B2B collaboration:
 
 - [What is Microsoft Entra B2B collaboration?](what-is-b2b.md)
-- [Adding a B2B collaboration user to a role](./add-users-administrator.md)
+- [Adding a B2B collaboration user to a role](./add-users-administrator.yml)
 

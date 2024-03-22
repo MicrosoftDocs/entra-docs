@@ -55,7 +55,7 @@ You can have one or more users as reviewers in an access review.
 
 ## Manage guest access with Microsoft Entra access reviews
  
-With Microsoft Entra ID, you can easily enable collaboration across organizational boundaries by using the [Microsoft Entra B2B feature](../external-id/what-is-b2b.md). Guest users from other tenants can be [invited by administrators](../external-id/add-users-administrator.md) or by [other users](../external-id/what-is-b2b.md). This capability also applies to social identities such as Microsoft accounts.
+With Microsoft Entra ID, you can easily enable collaboration across organizational boundaries by using the [Microsoft Entra B2B feature](../external-id/what-is-b2b.md). Guest users from other tenants can be [invited by administrators](../external-id/add-users-administrator.yml) or by [other users](../external-id/what-is-b2b.md). This capability also applies to social identities such as Microsoft accounts.
  
  
  
