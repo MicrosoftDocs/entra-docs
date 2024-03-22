@@ -22,7 +22,7 @@ After you add a guest user to the directory, you can either send the guest user 
 > [!IMPORTANT]
 > You should follow the steps in [How-to: Add your organization's privacy info in Microsoft Entra ID](~/fundamentals/properties-area.yml) to add the URL of your organization's privacy statement. As part of the first time invitation redemption process, an invited user must consent to your privacy terms to continue. 
 
-Instructions in this topic provide the basic steps to invite an external user. To learn about all of the properties and settings that you can include when you invite an external user, see [How to create and delete a user](~/fundamentals/how-to-create-delete-users.md).
+Instructions in this topic provide the basic steps to invite an external user. To learn about all of the properties and settings that you can include when you invite an external user, see [How to create and delete a user](~/fundamentals/how-to-create-delete-users.yml).
 
 ## Before you begin
 
@@ -46,7 +46,7 @@ To add B2B collaboration users to the directory, follow these steps:
 
 ### Basics
 
-In this section, you're inviting the guest to your tenant using *their email address*. If you need to create a guest user with a domain account, use the [create new user process](~/fundamentals/how-to-create-delete-users.md#create-a-new-user) but change the **User type** to **Guest**. 
+In this section, you're inviting the guest to your tenant using *their email address*. If you need to create a guest user with a domain account, use the [create new user process](~/fundamentals/how-to-create-delete-users.yml#create-a-new-user) but change the **User type** to **Guest**. 
 
 - **Email**: Enter the email address for the guest user you're inviting.
 

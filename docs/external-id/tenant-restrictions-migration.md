@@ -3,9 +3,9 @@ title: Plan a tenant restrictions v1 migration to tenant restrictions v2
 description: Learn about tenant-level restrictions and controls for users, groups, and applications, also policy management in a cloud-based portal. 
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.topic: conceptual
+ms.service: entra-id
+ms.subservice: enterprise-apps
+ms.topic: concept-article
 ms.date: 02/12/2024
 ms.author: gasinh
 ms.reviewer: jebley

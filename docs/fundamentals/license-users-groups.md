@@ -26,7 +26,7 @@ There are several Microsoft Entra ID license plans:
 
 For specific information about each license plan and the associated licensing details, see [What license do I need?](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing). To sign up for Microsoft Entra ID P1 or P2 license plans see [here](./get-started-premium.md).
 
-Not all Microsoft services are available in all locations. Before a license can be assigned to a group, you must specify the **Usage location** for all members. You can set this value in Microsoft Entra by going to **Identity** > **Users** > **All users** > *select a user* > **Properties**. 
+Not all Microsoft services are available in all locations. Before a license can be assigned to a group, you must specify the **Usage location** for all members. You can set this value in Microsoft Entra ID by going to **Identity** > **Users** > **All users** > *select a user* > **Properties**. 
 
 When assigning licenses to a group or bulk updates, such as disabling the synchronization status for the organization, any user whose usage location isn't specified inherits the location of the tenant.
 
@@ -153,4 +153,4 @@ After you've assigned your licenses, you can perform the following processes:
 - [Identify and resolve license assignment problems](~/identity/users/licensing-groups-resolve-problems.md)
 - [Add licensed users to a group for licensing](~/identity/users/licensing-groups-migrate-users.md)
 - [Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID](~/identity/users/licensing-group-advanced.md)
-- [Add or change profile information](./how-to-manage-user-profile-info.md)
+- [Add or change profile information](./how-to-manage-user-profile-info.yml)

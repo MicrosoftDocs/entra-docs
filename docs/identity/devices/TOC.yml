@@ -46,7 +46,7 @@
     - name: Configure Microsoft Entra hybrid join
       href: how-to-hybrid-join.md
     - name: Verifying Microsoft Entra hybrid join
-      href: how-to-hybrid-join-verify.md
+      href: how-to-hybrid-join-verify.yml
     - name: Troubleshoot Microsoft Entra hybrid join
       expanded: false
       items:
@@ -99,8 +99,6 @@
     items:
     - name: Configure Microsoft Entra hybrid join manually
       href: hybrid-join-manual.md
-    - name: Enable older operating systems
-      href: how-to-hybrid-join-downlevel.md
   - name: Enforce TLS 1.2
     href: reference-device-registration-tls-1-2.md
   - name: Microsoft Graph APIs

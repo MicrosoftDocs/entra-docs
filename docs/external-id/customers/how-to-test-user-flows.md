@@ -4,9 +4,10 @@ description: Learn how to use the Run user flow feature to test your sign-up and
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
+
 ms.topic: how-to
 ms.date: 02/15/2024
 ms.author: mimart

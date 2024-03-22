@@ -15,9 +15,9 @@ ms.custom: references_regions
 ---
 # Windows Local Administrator Password Solution in Microsoft Entra ID
 
-Every Windows device comes with a built-in local administrator account that you must secure and protect to mitigate any Pass-the-Hash (PtH) and lateral traversal attacks. Many customers have been using our standalone, on-premises [Local Administrator Password Solution (LAPS)](https://www.microsoft.com/download/details.aspx?id=46899) product for local administrator password management of their domain joined Windows machines. With Microsoft Entra ID support for Windows LAPS, we're providing a consistent experience for both Microsoft Entra joined and Microsoft Entra hybrid joined devices.
+Every Windows device comes with a built-in local administrator account that you must secure and protect to mitigate any Pass-the-Hash (PtH) and lateral traversal attacks. Many customers have been using our standalone, on-premises [Local Administrator Password Solution (LAPS)](https://www.microsoft.com/download/details.aspx?id=46899) product for local administrator password management of their domain joined Windows machines. With Microsoft Entra support for Windows LAPS, we're providing a consistent experience for both Microsoft Entra joined and Microsoft Entra hybrid joined devices.
 
-Microsoft Entra ID support for LAPS includes the following capabilities:
+Microsoft Entra support for LAPS includes the following capabilities:
 
 - **Enabling Windows LAPS with Microsoft Entra ID** - Enable a tenant wide policy and a client-side policy to back up local administrator password to Microsoft Entra ID.
 - **Local administrator password management** - Configure client-side policies to set account name, password age, length, complexity, manual password reset and so on.
@@ -69,9 +69,9 @@ LAPS is available to all customers with Microsoft Entra ID Free or higher licens
 
 ### Required roles or permission
 
-Other than the built-in Microsoft Entra roles of Cloud Device Administrator, Intune Administrator, and Global Administrator that are granted *device.LocalCredentials.Read.All*, you can use [Microsoft Entra custom roles](../role-based-access-control/custom-create.md) or administrative units to authorize local administrator password recovery. For example,
+Other than the built-in Microsoft Entra roles of Cloud Device Administrator, Intune Administrator, and Global Administrator that are granted *device.LocalCredentials.Read.All*, you can use [Microsoft Entra custom roles](../role-based-access-control/custom-create.yml) or administrative units to authorize local administrator password recovery. For example,
 
-- Custom roles must be assigned the *microsoft.directory/deviceLocalCredentials/password/read* permission to authorize local administrator password recovery. You can create a custom role and grant permissions using the [Microsoft Entra admin center](https://entra.microsoft.com), [Microsoft Graph API](../role-based-access-control/custom-create.md#create-a-role-with-the-microsoft-graph-api) or [PowerShell](../role-based-access-control/custom-create.md#create-a-role-using-powershell). Once you create a custom role, you can assign it to users.
+- Custom roles must be assigned the *microsoft.directory/deviceLocalCredentials/password/read* permission to authorize local administrator password recovery. You can create a custom role and grant permissions using the [Microsoft Entra admin center](https://entra.microsoft.com), [Microsoft Graph API](../role-based-access-control/custom-create.yml#create-a-role-with-the-microsoft-graph-api) or [PowerShell](../role-based-access-control/custom-create.yml#create-a-role-using-powershell). Once you create a custom role, you can assign it to users.
 
 - You can also create a Microsoft Entra ID [administrative unit](../role-based-access-control/administrative-units.md), add devices, and assign the Cloud Device Administrator role scoped to the administrative unit to authorize local administrator password recovery.
 

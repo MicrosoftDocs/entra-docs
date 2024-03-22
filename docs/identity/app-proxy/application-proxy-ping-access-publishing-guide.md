@@ -1,17 +1,17 @@
 ---
-title: Header-based authentication with PingAccess for Microsoft Entra application proxy
-description: Publish applications with PingAccess and App Proxy to support header-based authentication.
+title: Header based authentication with PingAccess for Microsoft Entra application proxy
+description: Support header-based authentication with PingAccess and Microsoft Entra application proxy.
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/15/2024
+ms.date: 02/27/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Header-based authentication for single sign-on with application proxy and PingAccess
+# Header based authentication for single sign-on with application proxy and PingAccess
 
 Microsoft partnered with PingAccess to provide more access applications. PingAccess provides another option beyond integrated [header-based single sign-on](application-proxy-configure-single-sign-on-with-headers.md).
 

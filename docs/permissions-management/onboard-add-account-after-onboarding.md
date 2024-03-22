@@ -1,12 +1,12 @@
 ---
-title: Add an account /subscription/ project to Permissions Management after onboarding is complete
-description: How to add an account/ subscription/ project to Permissions Management after onboarding is complete.
+title: Add an account/subscription/project to Permissions Management after onboarding is complete
+description: How to add an account/subscription/project to Permissions Management after onboarding is complete.
 author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 03/15/2024
 ms.author: jfields
 ---
 

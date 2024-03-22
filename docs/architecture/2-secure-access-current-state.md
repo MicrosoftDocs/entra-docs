@@ -19,9 +19,9 @@ Learn more: [Determine your security posture for external access with Microsoft 
 
 Users in your organization likely collaborate with users from other organizations. Collaboration occurs with productivity applications like Microsoft 365, by email, or sharing resources with external users. These scenarios include users:
 
-* Initiating external collaboration
-* Collaborating with external users and organizations
-* Granting access to external users
+- Initiating external collaboration
+- Collaborating with external users and organizations
+- Granting access to external users
 
 ## Before you begin
 
@@ -33,8 +33,8 @@ Generally, users seeking external collaboration know the applications to use, an
 
 To find collaborating users:
 
-* Microsoft 365 [Audit log activities](/purview/audit-log-activities?view=o365-worldwide&preserve-view=true) - search for events and discover activities audited in Microsoft 365
-* [Auditing and reporting a B2B collaboration user](~/external-id/auditing-and-reporting.md) - verify guest user access, and see records of system and user activities
+- Microsoft 365 [Audit log activities](/purview/audit-log-activities?view=o365-worldwide&preserve-view=true) - search for events and discover activities audited in Microsoft 365
+- [Auditing and reporting a B2B collaboration user](~/external-id/auditing-and-reporting.md) - verify Guest User access, and see records of system and user activities
 
 ## Enumerate guest users and organizations
 
@@ -42,14 +42,14 @@ External users might be Microsoft Entra B2B users with partner-managed credentia
 
 You can enumerate guest users with:
 
-* [Microsoft Graph API](/graph/api/user-list?tabs=http)
-* [PowerShell](/graph/api/user-list?tabs=http)
-* [Azure portal](~/identity/users/users-bulk-download.md)
+- [Microsoft Graph API](/graph/api/user-list?tabs=http)
+- [PowerShell](/graph/api/user-list?tabs=http)
+- [Azure portal](~/identity/users/users-bulk-download.md)
 
 Use the following tools to identify Microsoft Entra B2B collaboration, external Microsoft Entra tenants, and users accessing applications:
 
-* PowerShell module, [Get MsIdCrossTenantAccessActivity](https://github.com/AzureAD/MSIdentityTools/wiki/Get-MSIDCrossTenantAccessActivity)
-* [Cross-tenant access activity workbook](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md)
+- PowerShell module, [Get MsIdCrossTenantAccessActivity](https://github.com/AzureAD/MSIdentityTools/wiki/Get-MSIDCrossTenantAccessActivity)
+- [Cross-tenant access activity workbook](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md)
 
 ### Discover email domains and companyName property
 
@@ -57,7 +57,7 @@ You can determine external organizations with the domain names of external user 
 
 ### Use allowlist, blocklist, and entitlement management
 
-Use the allowlist or blocklist to enable your organization to collaborate with, or block, organizations at the tenant level. Control B2B invitations and redemptions regardless of source (such as Microsoft Teams, SharePoint, or the Azure portal). 
+Use the allowlist or blocklist to enable your organization to collaborate with, or block, organizations at the tenant level. Control B2B invitations and redemptions regardless of source (such as Microsoft Teams, SharePoint, or the Azure portal).
 
 See, [Allow or block invitations to B2B users from specific organizations](~/external-id/allow-deny-list.md)
 
@@ -69,8 +69,8 @@ If you use entitlement management, you can confine access packages to a subset o
 
 With an inventory of external users and organizations, determine the access to grant to the users. You can use the Microsoft Graph API to determine Microsoft Entra group membership or application assignment.
 
-* [Working with groups in Microsoft Graph](/graph/api/resources/groups-overview?context=graph/context&view=graph-rest-1.0&preserve-view=true)
-* [Applications API overview](/graph/applications-concept-overview?view=graph-rest-1.0&preserve-view=true)
+- [Working with groups in Microsoft Graph](/graph/api/resources/groups-overview?context=graph/context&view=graph-rest-1.0&preserve-view=true)
+- [Applications API overview](/graph/applications-concept-overview?view=graph-rest-1.0&preserve-view=true)
 
 ### Enumerate application permissions
 
@@ -78,12 +78,12 @@ Investigate access to your sensitive apps for awareness about external access. S
 
 ### Detect informal sharing
 
-If your email and network plans are enabled, you can investigate content sharing through email or unauthorized software as a service (SaaS) apps. 
+If your email and network plans are enabled, you can investigate content sharing through email or unauthorized software as a service (SaaS) apps.
 
-* Identify, prevent, and monitor accidental sharing
-  * [Learn about data loss prevention](/purview/dlp-learn-about-dlp?view=o365-worldwide&preserve-view=true)
-* Identify unauthorized apps
-  * [Microsoft Defender for Cloud Apps overview](/defender-cloud-apps/what-is-defender-for-cloud-apps)
+- Identify, prevent, and monitor accidental sharing
+  - Learn about [data loss prevention (DLP)](/purview/dlp-learn-about-dlp?view=o365-worldwide&preserve-view=true)
+- Identify unauthorized apps
+  - [Microsoft Defender for Cloud Apps overview](/defender-cloud-apps/what-is-defender-for-cloud-apps)
 
 ## Next steps
 
@@ -103,8 +103,8 @@ Use the following series of articles to learn about securing external access to 
 
 7. [Manage external access to resources with Conditional Access policies](7-secure-access-conditional-access.md)
 
-8. [Control external access to resources in Microsoft Entra ID with sensitivity labels](8-secure-access-sensitivity-labels.md) 
+8. [Control external access to resources in Microsoft Entra ID with sensitivity labels](8-secure-access-sensitivity-labels.md)
 
-9. [Secure external access to Microsoft Teams, SharePoint, and OneDrive for Business with Microsoft Entra ID](9-secure-access-teams-sharepoint.md) 
+9. [Secure external access to Microsoft Teams, SharePoint, and OneDrive for Business with Microsoft Entra ID](9-secure-access-teams-sharepoint.md)
 
 10. [Convert local guest accounts to Microsoft Entra B2B guest accounts](10-secure-local-guest.md)

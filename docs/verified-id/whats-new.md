@@ -5,7 +5,7 @@ author: barclayn
 manager: amycolannino
 ms.service: entra-verified-id
 
-ms.topic: reference
+ms.topic: whats-new
 ms.date: 10/31/2023
 ms.custom: references_regions
 ms.author: barclayn
@@ -16,8 +16,12 @@ ms.author: barclayn
 
 # What's new in Microsoft Entra Verified ID
 
-  
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
+
+## February 2024
+
+- New concept article on [Verified helpdesk](helpdesk-with-verified-id.md) on how to identity of callers seeking help using Entra Verified ID.
+- Override of [expirationDate](issuance-request-api.md#issuance-request-payload) on issuance for idTokenHint attestation flow requires that the contract needs to have the flag [allowOverrideValidityOnIssuance](admin-api.md#contract-type) set to true.
 
 ## January 2024
 

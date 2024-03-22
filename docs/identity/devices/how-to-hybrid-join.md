@@ -5,7 +5,7 @@ description: Learn how to configure Microsoft Entra hybrid join.
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 10/26/2022
+ms.date: 02/26/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -64,7 +64,7 @@ Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a man
 1. In **Connect to Microsoft Entra ID**, enter the credentials of a Global Administrator for your Microsoft Entra tenant.
 1. In **Device options**, select **Configure Microsoft Entra hybrid join**, and then select **Next**.
 1. In **Device operating systems**, select the operating systems that devices in your Active Directory environment use, and then select **Next**.
-1. In **SCP configuration**, for each forest where you want Microsoft Entra Connect to configure the SCP, complete the following steps, and then select **Next**.
+1. In **SCP configuration**, for each forest where you want Microsoft Entra Connect to configure a service connection point (SCP), complete the following steps, and then select **Next**.
    1. Select the **Forest**.
    1. Select an **Authentication Service**.
    1. Select **Add** to enter the enterprise administrator credentials.
@@ -111,7 +111,7 @@ Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a fed
 
 ### Federation caveats
 
-With Windows 10 1803 or newer, if instantaneous Microsoft Entra hybrid join for a federated environment using AD FS fails, we rely on Microsoft Entra Connect to sync the computer object in Microsoft Entra to complete the device registration for Microsoft Entra hybrid join.
+With Windows 10 1803 or newer, if instantaneous Microsoft Entra hybrid join for a federated environment using AD FS fails, we rely on Microsoft Entra Connect to sync the computer object in Microsoft Entra ID to complete the device registration for Microsoft Entra hybrid join.
 
 ## Other scenarios
 
@@ -139,9 +139,8 @@ If you experience issues with completing Microsoft Entra hybrid join for domain-
 - [Troubleshoot Microsoft Entra hybrid join for Windows downlevel devices](troubleshoot-hybrid-join-windows-legacy.md)
 - [Troubleshoot pending device state](/troubleshoot/azure/active-directory/pending-devices)
 
-## Next steps
+## Related content
 
-- [Downlevel device enablement](how-to-hybrid-join-downlevel.md)
-- [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.md)
+- [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.yml)
 - [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](../conditional-access/howto-conditional-access-policy-compliant-device.md)
 - [Planning a Windows Hello for Business Deployment](/windows/security/identity-protection/hello-for-business/hello-planning-guide)

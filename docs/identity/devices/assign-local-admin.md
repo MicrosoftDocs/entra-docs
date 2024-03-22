@@ -39,7 +39,7 @@ By adding Microsoft Entra roles to the local administrators group, you can updat
 
 To view and update the membership of the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role, see:
 
-- [View all members of an administrator role in Microsoft Entra ID](~/identity/role-based-access-control/manage-roles-portal.md)
+- [View all members of an administrator role in Microsoft Entra ID](~/identity/role-based-access-control/manage-roles-portal.yml)
 - [Assign a user to administrator roles in Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.md)
 
 ## Manage the Microsoft Entra Joined Device Local Administrator role 
@@ -56,7 +56,7 @@ To modify the Microsoft Entra Joined Device Local Administrator role, configure 
 > [!NOTE]
 > This option requires Microsoft Entra ID P1 or P2 licenses. 
 
-Microsoft Entra joined Device Local Administrators are assigned to all Microsoft Entra joined devices. You can’t scope this role to a specific set of devices. Updating the Microsoft Entra Joined Device Local Administrator role doesn't necessarily have an immediate impact on the affected users. On devices where a user is already signed into, the privilege elevation takes place when *both* the below actions happen:
+Microsoft Entra Joined Device Local Administrators are assigned to all Microsoft Entra joined devices. You can’t scope this role to a specific set of devices. Updating the Microsoft Entra Joined Device Local Administrator role doesn't necessarily have an immediate impact on the affected users. On devices where a user is already signed into, the privilege elevation takes place when *both* the below actions happen:
 
 - Upto 4 hours have passed for Microsoft Entra ID to issue a new Primary Refresh Token with the appropriate privileges. 
 - User signs out and signs back in, not lock/unlock, to refresh their profile.

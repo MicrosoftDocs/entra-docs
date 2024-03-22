@@ -1,19 +1,19 @@
 ---
 title: How to analyze activity logs with Microsoft Graph
-description: Learn how to analyze sign-in and audit logs with Microsoft Graph.
+description: Learn how to access and analyze Microsoft Entra sign-in and audit logs with the Microsoft Graph reporting APIs.
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 02/07/2024
+ms.date: 03/04/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
 # Customer intent: As an IT admin, I want to be able to view and analyze sign-in and audit logs with the Microsoft Graph API so I can monitor and troubleshoot user activity in my organization programmatically.
 
 ---
-# How to analyze activity logs with Microsoft
+# How to analyze activity logs with Microsoft Graph
 
 The Microsoft Entra [reporting APIs](/graph/api/resources/azure-ad-auditlog-overview) provide you with programmatic access to the data through a set of REST APIs. You can call these APIs from many programming languages and tools. The Microsoft Graph API isn't designed for pulling large amounts of activity data. Pulling large amounts of activity data using the API might lead to issues with pagination and performance.
 
@@ -22,8 +22,7 @@ This article describes how to analyze Microsoft Entra activity logs with Microso
 ## Prerequisites
 
 - For license and role requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
-- [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role to consent to required permissions.
-- 
+- To consent to the required permissions, you need the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
 To make requests to the Microsoft Graph API, you must first:
 
@@ -47,11 +46,11 @@ With all the prerequisites configured, you can run activity log queries in Micro
     - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns`
     - GET `https://graph.microsoft.com/v1.0/auditLogs/provisioning`
 
-    ![Screenshot of an activity log GET query in Microsoft Graph.](media/howto-configure-prerequisites-for-reporting-api/graph-sample-get-query.png)
+    ![Screenshot of an activity log GET query in Microsoft Graph.](media/howto-analyze-activity-logs-with-microsoft-graph/graph-sample-get-query.png)
 
 ### Fine-tune your queries
 
-To search for specific activity log entries, use the $filter query parameter with one of the available properties. 
+To search for specific activity log entries, use the $filter and createdDateTime query parameters with one of the available properties. Some of the following queries use the `beta` endpoint. The beta endpoint is subject to change and isn't recommended for production use.
 
 - [Sign-in log properties](/graph/api/resources/signin#properties)
 - [Audit log properties](/graph/api/resources/directoryaudit#properties)
@@ -59,10 +58,31 @@ To search for specific activity log entries, use the $filter query parameter wit
 Try using the following queries:
 
 - For sign-in attempts where Conditional Access failed:
-  - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns$filter=conditionalAccessStatus eq 'failure'`
+  - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns?&$filter=conditionalAccessStatus eq 'failure'`
 
 - To find sign-ins to a specific application:
-  - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns?filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2021-01-14T17:43:26Z) and appId eq 'APP ID'`
+  - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and appId eq 'APP ID'`
+
+- For non-interactive sign-ins:
+  - GET `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'nonInteractiveUser')`
+
+- For service principal sign-ins: 
+  - GET `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'servicePrincipal')`
+
+- For managed identity sign-ins: 
+  - GET `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'managedIdentity')`
+
+- To get the authentication method of a user: 
+  - GET `https://graph.microsoft.com/beta/users/{userObjectId}/authentication/methods`
+  - Requires `UserAuthenticationMethod.Read.All` permission
+
+- To see the user registration details report:
+  - GET `https://graph.microsoft.com/beta/reports/authenticationMethods/userRegistrationDetails`
+  - Requires `UserAuthenticationMethod.Read.All` permission
+
+- For the registration details of specific user:
+  - GET `https://graph.microsoft.com/beta/reports/authenticationMethods/userRegistrationDetails/{userId}`
+  - Requires `UserAuthenticationMethod.Read.All` permission
 
 ### Related APIs
 

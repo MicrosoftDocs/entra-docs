@@ -1,23 +1,21 @@
 ---
-title: Manual configuration for Microsoft Entra hybrid join devices
+title: Manual configuration for Microsoft Entra hybrid join
 description: Learn how to manually configure Microsoft Entra hybrid join devices.
-
 
 ms.service: entra-id
 ms.subservice: devices
 ms.custom: has-azure-ad-ps-ref
-ms.topic: tutorial
-ms.date: 07/05/2022
+ms.topic: how-to
+ms.date: 03/01/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
-
 ---
 # Configure Microsoft Entra hybrid join manually
 
-If using Microsoft Entra Connect is an option for you, see the guidance in [Configure Microsoft Entra hybrid join](how-to-hybrid-join.md). Using the automation in Microsoft Entra Connect, will significantly simplify the configuration of Microsoft Entra hybrid join.
+If using Microsoft Entra Connect is an option for you, see the guidance in [Configure Microsoft Entra hybrid join](how-to-hybrid-join.md). Using the automation in Microsoft Entra Connect, significantly simplifies the configuration of Microsoft Entra hybrid join.
 
 This article covers the manual configuration of requirements for Microsoft Entra hybrid join including steps for managed and federated domains.
 
@@ -28,7 +26,7 @@ This article covers the manual configuration of requirements for Microsoft Entra
    - If the computer objects of the devices you want to be Microsoft Entra hybrid joined belong to specific organizational units (OUs), configure the correct OUs to sync in Microsoft Entra Connect. To learn more about how to sync computer objects by using Microsoft Entra Connect, see [Organizational unit–based filtering](~/identity/hybrid/connect/how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering).
 - Global Administrator credentials for your Microsoft Entra tenant.
 - Enterprise administrator credentials for each of the on-premises Active Directory Domain Services forests.
-- (**For federated domains**) Windows Server 2012 R2 with Active Directory Federation Services installed.
+- (**For federated domains**) Windows Server with Active Directory Federation Services installed.
 - Users can register their devices with Microsoft Entra ID. More information about this setting can be found under the heading **Configure device settings**, in the article, [Configure device settings](manage-device-identities.md#configure-device-settings).
 
 Microsoft Entra hybrid join requires devices to have access to the following Microsoft resources from inside your organization's network:  
@@ -36,7 +34,7 @@ Microsoft Entra hybrid join requires devices to have access to the following Mic
 - `https://enterpriseregistration.windows.net`
 - `https://login.microsoftonline.com`
 - `https://device.login.microsoftonline.com`
-- `https://autologon.microsoftazuread-sso.com` (If you use or plan to use seamless SSO)
+- `https://autologon.microsoftazuread-sso.com` (If you use or plan to use seamless single sign-on)
 - Your organization's Security Token Service (STS) (**For federated domains**)
 
 > [!WARNING]
@@ -60,7 +58,7 @@ You can configure Microsoft Entra hybrid joined devices for various types of Win
 - For managed and federated domains, you must [configure a service connection point or SCP](#configure-a-service-connection-point).
 - For federated domains, you must ensure that your [federation service is configured to issue the appropriate claims](#set-up-issuance-of-claims).
 
-After these configurations are complete, follow the guidance to [verify registration](how-to-hybrid-join-verify.md) and [enable downlevel operating systems](how-to-hybrid-join-downlevel.md) where necessary.
+After these configurations are complete, follow the guidance to [verify registration](how-to-hybrid-join-verify.yml).
 
 ### Configure a service connection point
 
@@ -78,8 +76,7 @@ In your forest, the SCP object for the autoregistration of domain-joined devices
 
 `CN=62a0ff2e-97b9-4513-943f-0d221bd30080,CN=Device Registration Configuration,CN=Services,[Your Configuration Naming Context]`
 
-Depending on how you have deployed Microsoft Entra Connect, the SCP object might have already been configured.
-You can verify the existence of the object and retrieve the discovery values by using the following PowerShell script:
+Depending on how you deploy Microsoft Entra Connect, the SCP object might already be configured. You can verify the existence of the object and retrieve the discovery values by using the following PowerShell script:
 
    ```powershell
    $scp = New-Object System.DirectoryServices.DirectoryEntry;
@@ -91,7 +88,7 @@ You can verify the existence of the object and retrieve the discovery values by 
 
 The **$scp.Keywords** output shows the Microsoft Entra tenant information. Here's an example:
 
-   ```
+   ```powershell
    azureADName:microsoft.com
    azureADId:72f988bf-86f1-41af-91ab-2d7cd011db47
    ```
@@ -102,7 +99,7 @@ In a federated Microsoft Entra configuration, devices rely on AD FS or an  on-pr
 
 Windows current devices authenticate by using integrated Windows authentication to an active WS-Trust endpoint (either 1.3 or 2005 versions) hosted by the on-premises federation service.
 
-When you're using AD FS, you need to enable the following WS-Trust endpoints
+When you're using AD FS, you need to enable the following WS-Trust endpoints:
 
 - `/adfs/services/trust/2005/windowstransport`
 - `/adfs/services/trust/13/windowstransport`
@@ -117,7 +114,7 @@ When you're using AD FS, you need to enable the following WS-Trust endpoints
 > [!NOTE]
 > If you don’t have AD FS as your on-premises federation service, follow the instructions from your vendor to make sure they support WS-Trust 1.3 or 2005 endpoints and that these are published through the Metadata Exchange file (MEX).
 
-For device registration to finish, the following claims must exist in the token that Azure DRS receives. Azure DRS will create a device object in Microsoft Entra ID with some of this information. Microsoft Entra Connect then uses this information to associate the newly created device object with the computer account on-premises.
+For device registration to finish, the following claims must exist in the token that Azure DRS receives. Azure DRS creates a device object in Microsoft Entra ID with some of this information. Microsoft Entra Connect then uses this information to associate the newly created device object with the computer account on-premises.
 
 * `http://schemas.microsoft.com/ws/2012/01/accounttype`
 * `http://schemas.microsoft.com/identity/claims/onpremobjectguid`
@@ -252,7 +249,7 @@ The `http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid` claim mus
 
 In the preceding claim, `<verified-domain-name>` is a placeholder. Replace it with one of your verified domain names in Microsoft Entra ID. For example, use `Value = "http://contoso.com/adfs/services/trust/"`.
 
-For more information about verified domain names, see [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.md).  
+For more information about verified domain names, see [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.yml).  
 
 To get a list of your verified company domains, you can use the [Get-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomain) cmdlet.
 
@@ -410,47 +407,14 @@ The following script helps you with the creation of the issuance transform rules
 #### Remarks
 
 * This script appends the rules to the existing rules. Don't run the script twice, because the set of rules would be added twice. Make sure that no corresponding rules exist for these claims (under the corresponding conditions) before running the script again.
-* If you have multiple verified domain names, set the value of **$multipleVerifiedDomainNames** in the script to **$true**. Also make sure that you remove any existing **issuerid** claim that might have been created by Microsoft Entra Connect or via other means. Here's an example for this rule:
+* If you have multiple verified domain names, set the value of **$multipleVerifiedDomainNames** in the script to **$true**. Also make sure that you remove any existing **issuerid** claim created by Microsoft Entra Connect or other means. Here's an example for this rule:
 
    ```
    c:[Type == "http://schemas.xmlsoap.org/claims/UPN"]
    => issue(Type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid", Value = regexreplace(c.Value, ".+@(?<domain>.+)",  "http://${domain}/adfs/services/trust/")); 
    ```
 
-If you've already issued an **ImmutableID** claim  for user accounts, set the value of **$immutableIDAlreadyIssuedforUsers** in the script to **$true**.
-
-#### Configure federation service for downlevel devices
-
-Downlevel devices require your on-premises federation service to issue claims to support integrated Windows authentication (IWA) for device registration.
-
-Your on-premises federation service must support issuing the **authenticationmethod** and **wiaormultiauthn** claims when it receives an authentication request to the Microsoft Entra ID relying party holding a resource_params parameter with the following encoded value:
-
-   ```
-   eyJQcm9wZXJ0aWVzIjpbeyJLZXkiOiJhY3IiLCJWYWx1ZSI6IndpYW9ybXVsdGlhdXRobiJ9XX0
-
-   which decoded is {"Properties":[{"Key":"acr","Value":"wiaormultiauthn"}]}
-   ```
-
-When such a request comes, the on-premises federation service must authenticate the user by using integrated Windows authentication. When authentication is successful, the federation service must issue the following two claims:
-
-   `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows`
-   `http://schemas.microsoft.com/claims/wiaormultiauthn`
-
-In AD FS, you must add an issuance transform rule that passes through the authentication method. To add this rule:
-
-1. In the AD FS management console, go to **AD FS** > **Trust Relationships** > **Relying Party Trusts**.
-1. Right-click the Microsoft Office 365 Identity Platform relying party trust object, and then select **Edit Claim Rules**.
-1. On the **Issuance Transform Rules** tab, select **Add Rule**.
-1. In the **Claim rule** template list, select **Send Claims Using a Custom Rule**.
-1. Select **Next**.
-1. In the **Claim rule name** box, enter **Auth Method Claim Rule**.
-1. In the **Claim rule** box, enter the following rule:
-
-   `c:[Type == "http://schemas.microsoft.com/claims/authnmethodsreferences"] => issue(claim = c);`
-
-1. On your federation server, enter the following PowerShell command. Replace **\<RPObjectName\>** with the relying party object name for your Microsoft Entra ID relying party trust object. This object usually is named **Microsoft Office 365 Identity Platform**.
-
-   `Set-AdfsRelyingPartyTrust -TargetName <RPObjectName> -AllowedAuthenticationClassReferences wiaormultiauthn`
+If you've issued an **ImmutableID** claim for user accounts, set the value of **$immutableIDAlreadyIssuedforUsers** in the script to **$true**.
 
 ## Troubleshoot your implementation
 
@@ -460,9 +424,8 @@ If you experience issues completing Microsoft Entra hybrid join for domain-joine
 - [Troubleshooting Microsoft Entra hybrid joined devices](troubleshoot-hybrid-join-windows-current.md)
 - [Troubleshooting Microsoft Entra hybrid joined down-level devices](troubleshoot-hybrid-join-windows-legacy.md)
 
-## Next steps
+## Related content
 
-- [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.md)
-- [Downlevel device enablement](how-to-hybrid-join-downlevel.md)
+- [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.yml)
 - [Plan your Microsoft Entra hybrid join implementation](hybrid-join-plan.md)
 - [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)

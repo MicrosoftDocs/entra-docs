@@ -97,7 +97,7 @@ For right-sized custom roles, we recommend you remediate overprovisioned identit
 >[!NOTE]
 > We recommend you start by right-sizing non-human identities, like Service Principals and machine accounts. The activity of non-human identities is less likely to vary on a day-to-day basis, making the risk low for potential service disruptions caused by right-sizing.
 
-For more on the remediation tools available within Entra Permissions Management:
+For more on the remediation tools available within Microsoft Entra Permissions Management:
 
 * [Create a role/policy](~/permissions-management/how-to-create-role-policy.md)
 * [Clone a role/policy](~/permissions-management/how-to-clone-role-policy.md)
@@ -133,25 +133,27 @@ To operationalize Permissions On-Demand, create and maintain a well-defined proc
 
 **Approvers** review Permissions On-Demand requests and have authority to approve or deny requests. Select **Approvers** for the authorization systems you want to use with Permissions On-Demand. We recommend at least two **Approvers** for each authorization system.
 
-## Create Microsoft Entra ID security groups for Approvers
+<a name='create-microsoft-entra-id-security-groups-for-approvers'></a>
 
-To delegate permissions, your IAM team creates Microsoft Entra ID security groups that map to your **Approvers**. Ensure **Approvers** with shared ownership and responsibilities are in the same security group.
+## Create Microsoft Entra security groups for Approvers
+
+To delegate permissions, your IAM team creates Microsoft Entra security groups that map to your **Approvers**. Ensure **Approvers** with shared ownership and responsibilities are in the same security group.
 
 We recommend you use [PIM for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md). This provides JIT access to Approver permissions to approve or deny Permissions On-Demand requests.
 
-To create Microsoft Entra ID security groups, see [manage groups and group membership](~/fundamentals/how-to-manage-groups.md).
+To create Microsoft Entra ID security groups, see [manage groups and group membership](~/fundamentals/how-to-manage-groups.yml).
 
 ### Assign permissions to Approvers
 
-After Microsoft Entra ID security groups are created, a Permissions Management Administrator grants security groups their Approver permissions in Permissions Management. Ensure security groups are granted Approver permissions for the authorization systems they are responsible for. [Learn more about Microsoft Entra Permissions Management roles and permission levels](~/permissions-management/product-roles-permissions.md).
+After Microsoft Entra security groups are created, a Permissions Management Administrator grants security groups their Approver permissions in Permissions Management. Ensure security groups are granted Approver permissions for the authorization systems they are responsible for. [Learn more about Microsoft Entra Permissions Management roles and permission levels](~/permissions-management/product-roles-permissions.md).
 
 ### Determine and create a Requestor Administrator security group
 
-Designate at least two Requestor Administrators who create Permissions On-Demand requests on behalf of identities in your environment. For example, for machine identities. Create a Microsoft Entra ID security group for these Requestor Administrators.
+Designate at least two Requestor Administrators who create Permissions On-Demand requests on behalf of identities in your environment. For example, for machine identities. Create a Microsoft Entra security group for these Requestor Administrators.
 
 We recommend you use [PIM for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md). This provides JIT access to the Requestor permissions needed to make Permissions On-Demand requests on behalf of other users.
 
-To create Microsoft Entra ID security groups, see [manage groups and group membership](~/fundamentals/how-to-manage-groups.md).
+To create Microsoft Entra ID security groups, see [manage groups and group membership](~/fundamentals/how-to-manage-groups.yml).
 
 ### Allow users to make Permissions On-Demand requests
 

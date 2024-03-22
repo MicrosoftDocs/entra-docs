@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: how-to
-ms.date: 01/30/2024
+ms.date: 03/11/2024
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -275,12 +275,6 @@ Attribute mappings allow you to define how data should flow between the source t
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-member.png" alt-text="Screenshot of the Edit Attribute page that shows the Member attribute." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-member.png":::
 
-1. On the **Attribute Mapping** page, select the **showInAddressList** attribute.
-
-    If you want the synchronized users to appear in the global address list of the target tenant for people search scenarios, make sure **Mapping type** is set to **Constant** and **Constant Value** is set to **true**.
-
-    :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-showinaddresslist-peoplesearch.png" alt-text="Screenshot of the Edit Attribute page that shows the showInAddressList attribute with setting for people search." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-showinaddresslist-peoplesearch.png":::
-
 1. If you want to define any transformations, on the **Attribute Mapping** page, select the attribute you want to transform, such as **displayName**.
 
 1. Set the **Mapping type** to **Expression**.
@@ -467,7 +461,7 @@ Restoring a previously soft-deleted user in the target tenant isn't supported.
 
 **Solution**
 
-Manually restore the soft-deleted user in the target tenant. For more information, see [Restore or remove a recently deleted user using Microsoft Entra ID](../../fundamentals/users-restore.md).
+Manually restore the soft-deleted user in the target tenant. For more information, see [Restore or remove a recently deleted user using Microsoft Entra ID](../../fundamentals/users-restore.yml).
 
 #### Symptom - Users are skipped because SMS sign-in is enabled on the user
 Users are skipped from synchronization. The scoping step includes the following filter with status false: "Filter external users.alternativeSecurityIds EQUALS 'None'"
