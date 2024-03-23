@@ -6,7 +6,7 @@ items:
   items:
   - name: What is Microsoft Entra ID?
     href: whatis.md
-  - name: New name for Microsoft Entra ID
+  - name: New name for Azure AD
     href: new-name.md
   - name: Identity fundamentals
     href: identity-fundamental-concepts.md
@@ -25,14 +25,14 @@ items:
     href: properties-area.md
   - name: Add company branding
     href: how-to-customize-branding.md
-  - name: Rename Microsoft Entra ID
-    href: how-to-rename-azure-ad.md
+  - name: Rename Azure AD
+    href: how-to-rename-azure-ad.yml
   - name: Get the most out of documentation
     href: how-to-navigate.md
 - name: Users, groups, and licenses
   expanded: false
   items:
-  - name: Create or delete users (preview)
+  - name: Create or delete users
     href: how-to-create-delete-users.md
   - name: Apply licenses to users
     href: license-users-groups.md
@@ -96,11 +96,9 @@ items:
   - name: Support access requests
     expanded: false
     items:
-      - name: About support access requests
+      - name: What are support access requests (preview)?
         href: concept-support-access-requests.md
-      - name: Approve support access requests
-        href: how-to-approve-support-access-requests.md
-      - name: Manage support access requests
+      - name: Approve and manage support access requests (preview)
         href: how-to-manage-support-access-requests.md
       - name: View support access request activity logs
         href: how-to-view-support-access-request-logs.md
@@ -118,8 +116,6 @@ items:
       href: whats-new-sovereign-clouds.md  
     - name: Archive for What's new? in Microsoft Entra ID
       href: whats-new-archive.md
-    - name: Archive for What's new in sovereign clouds? in Microsoft Entra ID
-      href: whats-new-sovereign-clouds-archive.md  
   - name: Frequently asked questions
     href: faq.yml
   - name: Company branding CSS template reference guide
@@ -158,10 +154,7 @@ items:
       href: ~/identity/enterprise-apps/custom-security-attributes-apps.md?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
     - name: Troubleshoot attributes
       href: custom-security-attributes-troubleshoot.md
+  - name: Microsoft Graph extensions
+    href: /graph/extensibility-overview?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
   - name: Frontline worker management
     href: frontline-worker-management.md
-  - name: Legacy and deprecated features
-    expanded: false
-    items:
-    - name: Create or delete a user (legacy)
-      href: add-users.md

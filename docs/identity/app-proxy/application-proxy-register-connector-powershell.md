@@ -1,56 +1,52 @@
 ---
 title: Silent install Microsoft Entra application proxy connector
-description: Covers how to perform an unattended installation of Microsoft Entra application proxy Connector to provide secure remote access to your on-premises apps.
-services: active-directory
+description: Covers how to perform an unattended installation of Microsoft Entra application proxy connector to provide secure remote access to your on-premises apps.
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-proxy
-ms.workload: identity
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/15/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
 # Create an unattended installation script for the Microsoft Entra application proxy connector
 
-This topic helps you create a Windows PowerShell script that enables unattended installation and registration for your Microsoft Entra application proxy connector.
+This article helps you create a Windows PowerShell script that enables unattended installation and registration for your Microsoft Entra application proxy connector.
 
-This capability is useful when you want to:
+Unattended installation is useful when you want to:
 
 * Install the connector on Windows servers that don't have user interface enabled, or that you can't access with Remote Desktop.
 * Install and register many connectors at once.
 * Integrate the connector installation and registration as part of another procedure.
-* Create a standard server image that contains the connector bits but is not registered.
+* Create a standard server image that contains the connector bits but isn't registered.
 
-For the [Application Proxy connector](application-proxy-connectors.md) to work, it has to be registered with your Microsoft Entra directory using an application administrator and password. Ordinarily this information is entered during Connector installation in a pop-up dialog box, but you can use PowerShell to automate this process instead.
+For the [application proxy connector](application-proxy-connectors.md) to work, you must register it with Microsoft Entra ID. Registration is done in the user interface when you install the connector, but you can use PowerShell to automate the process.
 
 There are two steps for an unattended installation. First, install the connector. Second, register the connector with Microsoft Entra ID.
 
 > [!IMPORTANT]
-> If you are installing the connector for Azure Government cloud review the [pre-requisites](~/identity/hybrid/connect/reference-connect-government-cloud.md#allow-access-to-urls) and [installation steps](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud). This requires enabling access to a different set of URLs and an additional parameter to run the installation.
+> If you are installing the connector for the Microsoft Azure Government cloud, review the [prerequisites](~/identity/hybrid/connect/reference-connect-government-cloud.md#allow-access-to-urls) and [installation steps](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud). The Microsoft Azure Government cloud requires enabling access to a different set of URLs and an additional parameter to run the installation.
 
 ## Install the connector
 Use the following steps to install the connector without registering it:
 
 1. Open a command prompt.
-2. Run the following command, in which the /q means quiet installation. A quiet installation doesn't prompt you to accept the End-User License Agreement.
+2. Run the following command, the `/q` flag means quiet installation. A quiet installation doesn't prompt you to accept the End-User License Agreement.
 
    ```
    AADApplicationProxyConnectorInstaller.exe REGISTERCONNECTOR="false" /q
    ```
 
-<a name='register-the-connector-with-azure-ad'></a>
-
 ## Register the connector with Microsoft Entra ID
 There are two methods you can use to register the connector:
 
-* Register the connector using a Windows PowerShell credential object
-* Register the connector using a token created offline
+- Register the connector using a Windows PowerShell credential object.
+- Register the connector using a token created offline.
 
 ### Register the connector using a Windows PowerShell credential object
-1. Create a Windows PowerShell Credentials object `$cred` that contains an administrative username and password for your directory. Run the following command, replacing *\<username\>* , *\<password\>* and *\<tenantid\>*:
+1. Create a Windows PowerShell Credentials object `$cred` that contains an administrative username and password for your directory. Run the following command, replacing `<username>`, `<password>`, and `<tenantid>`:
 
    ```powershell
    $User = "<username>"
@@ -59,14 +55,14 @@ There are two methods you can use to register the connector:
    $SecurePassword = $PlainPassword | ConvertTo-SecureString -AsPlainText -Force
    $cred = New-Object –TypeName System.Management.Automation.PSCredential –ArgumentList $User, $SecurePassword
    ```
-2. Go to **C:\Program Files\Microsoft Azure AD App Proxy Connector** and run the following script using the `$cred` object that you created:
+2. Go to `C:\Program Files\Microsoft Azure AD App Proxy Connector` and run the following script using the `$cred` object that you created:
 
    ```powershell
    .\RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft AAD App Proxy Connector\Modules\" -moduleName "AppProxyPSModule" -Authenticationmode Credentials -Usercredentials $cred -Feature ApplicationProxy -TenantId $TenantId
    ```
 
 ### Register the connector using a token created offline
-1. Create an offline token using the AuthenticationContext class using the values in this code snippet or PowerShell cmdlets below:
+1. Create an offline token using the `AuthenticationContext` class using the values in this code snippet or PowerShell cmdlets:
 
    **Using C#:**
 
@@ -185,19 +181,19 @@ There are two methods you can use to register the connector:
    } 
    ```
 
-2. Once you have the token, create a SecureString using the token:
+2. Once you have the token, create a `SecureString` using the token:
 
    ```powershell
    $SecureToken = $Token | ConvertTo-SecureString -AsPlainText -Force
    ```
 
-3. Run the following Windows PowerShell command, replacing \<tenant GUID\> with your directory ID:
+3. Run the following Windows PowerShell command, replacing `<tenant GUID>` with your directory ID:
 
    ```powershell
    .\RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft AAD App Proxy Connector\Modules\" -moduleName "AppProxyPSModule" -Authenticationmode Token -Token $SecureToken -TenantId <tenant GUID> -Feature ApplicationProxy
    ```
 
 ## Next steps
-* [Publish applications using your own domain name](application-proxy-configure-custom-domain.md)
-* [Enable single-sign on](application-proxy-configure-single-sign-on-with-kcd.md)
-* [Troubleshoot issues you're having with Application Proxy](application-proxy-troubleshoot.md)
+- [Publish applications using your own domain name](how-to-configure-custom-domain.md)
+- [Enable single-sign on](how-to-configure-sso-with-kcd.md)
+- [Troubleshoot issues you're having with application proxy](application-proxy-troubleshoot.md)

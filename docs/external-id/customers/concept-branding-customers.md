@@ -4,11 +4,11 @@ description: Learn how to customize the sign-in and sign-up experiences for your
  
 author: csmulligan
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
-ms.topic: conceptual
-ms.date:  04/21/2023
+ms.subservice: customers
+ms.topic: concept-article
+ms.date:  02/28/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -21,7 +21,7 @@ After creating a new customer tenant, you can customize the appearance of your w
 
 Your Microsoft Entra ID for customers tenant supports Microsoft look and feel as a default state for authentication experience. You can [customize the default Microsoft sign-in experience](~/fundamentals/how-to-customize-branding.md) with a custom background image or color, favicon, layout, header, and footer. You can also upload a custom CSS. If the custom company branding fails to load for any reason, the sign-in page will revert to the default Microsoft branding.
 
-The customer tenant is unique in that it doesn't have any default branding, but instead has a neutral one. It is neutral, because it doesn't contain any existing Microsoft branding. This neutral default branding can be customized to meet the specific needs of your company. If the custom company branding fails to load for any reason, the sign-in page will revert to this neutral branding. It's also possible to add each custom branding property to the custom sign-in page individually. 
+The customer tenant is unique in that it doesn't have any default branding, but instead has a neutral one. It's neutral, because it doesn't contain any existing Microsoft branding. This neutral default branding can be customized to meet the specific needs of your company. If the custom company branding fails to load for any reason, the sign-in page will revert to this neutral branding. It's also possible to add each custom branding property to the custom sign-in page individually. 
 
 The following list and image outline the elements of the default Microsoft sign-in experience in a Microsoft Entra tenant: 
 
@@ -48,7 +48,7 @@ You might have different requirements for the information you want to collect du
 ## Language customization
 
 You can create a personalized sign-in experience for users who sign in using a specific browser language by customizing the branding elements. If you don't make any changes to the elements, the default elements will be displayed.
-In the customer tenant you can add a custom language to the sign-in experience under **Company Branding** or to a specific user flow under **User flows**. The language customization is available for a list of languages in the customer tenant. For more information, see [Customize the language of the authentication experience](how-to-customize-languages-customers.md).
+In the tenant you can add a custom language to the sign-in experience under **Company Branding** or to a specific user flow under **User flows**. The language customization is available for a list of languages. For more information, see [Customize the language of the authentication experience](how-to-customize-languages-customers.md).
 
 ## Next steps
 - [Customize the user experience for your customers](how-to-customize-branding-customers.md)

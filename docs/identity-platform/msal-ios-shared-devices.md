@@ -5,12 +5,12 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom:
-ms.date: 11/28/2023
-ms.reviewer: brandwe, akgoel23
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-#Customer intent:
+ms.date: 03/05/2024
+ms.reviewer: brianmel
+ms.service: identity-platform
+
+ms.topic: concept-article
+#Customer intent: As an app developer, I want to modify my iOS application to support shared device mode, so that I can ensure the security and privacy of user data on shared devices.
 ---
 
 # Shared device mode for iOS devices
@@ -245,9 +245,9 @@ These Microsoft applications support Microsoft Entra shared device mode:
 - [Microsoft Teams](/microsoftteams/platform/)
 - [Microsoft Viva Engage](/viva/engage/overview) (previously [Yammer](/viva/engage/overview))
 - [Outlook](/mem/intune/apps/app-configuration-policies-outlook) (in Public Preview)
-- [Microsoft Power Apps](/power-apps/) (in Public Preview)
+- [Microsoft Power Apps](/power-apps/)
 - [Microsoft 365](https://apps.apple.com/us/app-bundle/microsoft-365/id1450038993?mt=12) (in Public Preview)
-- [Microsoft Power BI Mobile](/power-bi/consumer/mobile/mobile-app-shared-device-mode) (in Public Preview)
+- [Microsoft Power BI Mobile](/power-bi/consumer/mobile/mobile-app-shared-device-mode)
 
 > [!IMPORTANT]
 > Public preview is provided without a service-level agreement and isn't recommended for production workloads. Some features might be unsupported or have constrained capabilities. For more information, see [Universal License Terms for Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).

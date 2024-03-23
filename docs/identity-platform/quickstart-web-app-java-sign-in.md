@@ -6,10 +6,10 @@ manager: CelesteDG
 ms.author: cwerner 
 ms.custom: scenarios:getting-started, languages:Java, devx-track-java, devx-track-extended-java
 ms.date: 01/18/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: quickstart
-#Customer intent:
+#Customer intent: As a Java web app developer, I want to sign in users and call the Microsoft Graph API, so that I can integrate Microsoft Entra authentication and access user information in my application.
 ---
 
 # Quickstart: Sign in users and call the Microsoft Graph API from a Java web app
@@ -208,4 +208,4 @@ import com.microsoft.aad.msal4j.*;
 For a more in-depth discussion of building web apps that sign in users on the Microsoft identity platform, see the multipart scenario series:
 
 > [!div class="nextstepaction"]
-> [Scenario: Web app that signs in users](scenario-web-app-sign-user-overview.md?tabs=java)
+> [Scenario: Web app that signs in users](scenario-web-app-sign-user-app-registration.md?tabs=java)

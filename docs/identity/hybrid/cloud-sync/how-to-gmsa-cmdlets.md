@@ -1,19 +1,18 @@
 ---
-title: 'Microsoft Entra Provisioning Agent gMSA PowerShell cmdlets'
-description: Learn how to use the Microsoft Entra Provisioning Agent gMSA PowerShell cmdlets.
-services: active-directory
+title: 'Microsoft Entra provisioning Agent gMSA PowerShell cmdlets'
+description: Learn how to use the Microsoft Entra provisioning agent gMSA PowerShell cmdlets.
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
-# Microsoft Entra Provisioning Agent gMSA PowerShell cmdlets
+# Microsoft Entra provisioning agent gMSA PowerShell cmdlets
 
 The purpose of this document is to describe the Microsoft Entra Connect cloud provisioning agent gMSA PowerShell cmdlets. These cmdlets allow you to have more granularity on the permissions that are applied on the service account (gMSA). By default, Microsoft Entra Cloud Sync applies all permissions similar to Microsoft Entra Connect on the default gMSA or a custom gMSA, during cloud provisioning agent install.
 

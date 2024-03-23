@@ -5,16 +5,15 @@ summary: Learn how to use managed identities in Microsoft Entra ID.
 
 metadata:
   title: Microsoft Entra managed identities for Azure resources documentation
-  description: Learn how to use managed identities for Azure resources in Microsoft Entra ID.
-  services: active-directory
-  ms.service: active-directory
-  ms.subservice: msi
+  description: Learn how to use managed identities for Azure resources in Microsoft Entra ID.  
+  ms.service: entra-id
+  ms.subservice: managed-identities
   ms.topic: landing-page
   author: barclayn
   ms.author: barclayn
   manager: amycolannino
   ms.date: 11/09/2023
-  ms.collection: M365-identity-device-management
+  
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
 

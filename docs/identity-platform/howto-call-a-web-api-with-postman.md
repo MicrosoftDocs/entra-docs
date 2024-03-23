@@ -1,15 +1,15 @@
 ---
 title: Call an ASP.NET Core web API with Postman
-description: Learn how to call a protected ASP.NET Core Web API using the Microsoft identity platform and Postman
+description: Learn how to call a protected ASP.NET Core web API using the Microsoft identity platform and Postman
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.date: 05/25/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 zone_pivot_groups: web-api-howto-prereq
-#Customer intent: As a software developer, I want to call a protected ASP.NET Core Web API using the Microsoft identity platform with Postman
+#Customer intent: As a software developer, I want to call a protected ASP.NET Core web API using the Microsoft identity platform with Postman
 ---
 
 # Call an ASP.NET Core web API with Postman
@@ -32,11 +32,11 @@ This article shows you how to call a protected ASP.NET Core web API using [Postm
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/).
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-  - Application administrator
-  - Application developer
-  - Cloud application administrator
+  - Application Administrator
+  - Application Developer
+  - Cloud Application Administrator
 - [Download and install Postman](https://www.postman.com/downloads/).
-- A minimum requirement of [.NET Core 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
+- A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
 ::: zone-end
 
@@ -44,9 +44,9 @@ This article shows you how to call a protected ASP.NET Core web API using [Postm
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/).
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-  - Application administrator
-  - Application developer
-  - Cloud application administrator
+  - Application Administrator
+  - Application Developer
+  - Cloud Application Administrator
 - Completion of the tutorial series:
   - [Tutorial: Register web API with the Microsoft identity platform](web-api-tutorial-01-register-app.md).
   - [Tutorial: Create and configure an ASP.NET Core project for authentication](web-api-tutorial-02-prepare-api.md).
@@ -98,7 +98,7 @@ Once the API is registered, you can configure its permission by defining the sco
    1. Ensure that the **State** is set to **Enabled**.
 1. Select **Add scope**. If the scope has been entered correctly, it's listed in the **Expose an API** pane.
 
-   :::image type="content" source="./media/web-api-tutorial-01-register-app/add-a-scope-inline.png" alt-text="Screenshot that shows the field values when adding the scope to an API." lightbox="./media/web-api-tutorial-01-register-app/add-a-scope-expanded.png":::
+   :::image type="content" source="./media/web-api-tutorial-01-register-app/add-a-scope.png" alt-text="Screenshot that shows the field values when adding the scope to an API." lightbox="./media/web-api-tutorial-01-register-app/add-a-scope.png":::
 
 ::: zone-end
 

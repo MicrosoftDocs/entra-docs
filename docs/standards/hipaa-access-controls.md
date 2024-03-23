@@ -1,10 +1,8 @@
 ---
 title: Configure Microsoft Entra HIPAA access control safeguards
 description: Guidance on how to configure Microsoft Entra HIPAA access control safeguards
-services: active-directory 
-ms.service: active-directory
-ms.subservice: fundamentals
-ms.workload: identity
+ms.service: entra
+ms.subservice: standards
 ms.topic: how-to
 author: janicericketts
 ms.author: jricketts
@@ -12,7 +10,6 @@ manager: martinco
 ms.reviewer: martinco
 ms.date: 04/13/2023
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Access control safeguard guidance
@@ -132,3 +129,5 @@ The following table has HIPAA guidance on the automatic logoff safeguard. Find M
 * [Audit Controls Safeguard guidance](hipaa-audit-controls.md)
 
 * [Other Safeguard guidance](hipaa-other-controls.md)
+
+* [Configure HITRUST controls](hipaa-hitrust-controls.md)

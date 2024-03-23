@@ -2,17 +2,18 @@
 title: Configure Datawiza Access Proxy for Microsoft Entra SSO and MFA for Outlook Web Access 
 description: Learn how to configure Datawiza Access Proxy for Microsoft Entra SSO and MFA for Outlook Web Access
 author: gargi-sinha
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
-
-ms.date: 07/14/2023
+ms.date: 01/31/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
+
+#customer intent: I'm an IT admin, and I want to configure Datawiza Access Proxy (DAP) to enable single sign-on (SSO) and Microsoft Entra multifactor authentication (MFA) for Outlook Web Access (OWA). My goal is to enhance application security and solve issues with legacy-app and modern-SSO integration.
 ---
 
-#  Configure Datawiza Access Proxy for Microsoft Entra single sign-on and multifactor authentication for Outlook Web Access
+# Configure Datawiza Access Proxy for Microsoft Entra single sign-on and multifactor authentication for Outlook Web Access
 
 In this tutorial, learn how to configure Datawiza Access Proxy (DAP) to enable Microsoft Entra single sign-on (SSO) and Microsoft Entra multifactor authentication for Outlook Web Access (OWA). Help solve issues when modern identity providers (IdPs) integrate with legacy OWA, which supports Kerberos token authentication to identify users.
 
@@ -76,25 +77,25 @@ DAP integration architecture includes the following components:
 The following diagram illustrates a user flow with DAP in a customer 
 network.
 
-![Screenshot shows the user flow with DAP in a customer network.](media/datawiza-access-proxy/datawiza-architecture.png)
+   ![Screenshot shows the user flow with DAP in a customer network.](media/datawiza-access-proxy/datawiza-architecture.png)
 
 The following diagram illustrates the user flow from user browser to OWA.
 
-![Screenshot shows the user flow from user browser to owa.](media/datawiza-access-proxy/datawiza-flow-diagram.png)
+   ![Screenshot shows the user flow from user browser to owa.](media/datawiza-access-proxy/datawiza-flow-diagram.png)
 
 | Step | Description |
 |:----|:------|
-| 1. | User browser requests access to DAP-protected OWA.|
-| 2. | The user browser is directed to Microsoft Entra ID.|
-| 3. | The Microsoft Entra sign-in page appears.|
-| 4.|  The user enters credentials.|
-| 5.|  Upon authentication, the user browser is directed to DAP.|
-| 6. | DAP and Microsoft Entra ID exchange tokens.|
-| 7. | Microsoft Entra ID issues the username and relevant information to DAP.|
-| 8.| DAP accesses the KDC with credentials. DAP requests a Kerberos ticket.|
-| 9.| KDC returns a Kerberos ticket.|
+|1.| User browser requests access to DAP-protected OWA.|
+|2.| The user browser is directed to Microsoft Entra ID.|
+|3.| The Microsoft Entra sign-in page appears.|
+|4.|  The user enters credentials.|
+|5.|  Upon authentication, the user browser is directed to DAP.|
+|6.| DAP and Microsoft Entra ID exchange tokens.|
+|7.| Microsoft Entra ID issues the username and relevant information to DAP.|
+|8.| DAP accesses the KDC with credentials. DAP requests a Kerberos ticket.|
+|9.| KDC returns a Kerberos ticket.|
 |10.| DAP redirects the user browser to OWA.|
-| 11.| The OWA resource appears.|
+|11.| The OWA resource appears.|
 
 >[!NOTE]
 >Subsequent user browser requests contain the Kerberos token, which enables access to OWA via DAP.
@@ -219,8 +220,8 @@ Before you create the service principal name (SPN), you can list SPNs and confir
 
     `setspn -A host/dap.datawizatest.com dap`
 
->[!NOTE]
->`host/dap.datawizatest.com` is the unique SPN, and dap is the service account you created.
+   >[!NOTE]
+   >`host/dap.datawizatest.com` is the unique SPN, and dap is the service account you created.
 
 ## Configure Windows Server IIS for Constrained Delegation
 

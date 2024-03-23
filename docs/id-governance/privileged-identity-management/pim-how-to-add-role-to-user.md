@@ -1,19 +1,16 @@
 ---
 title: Assign Microsoft Entra roles in PIM
 description: Learn how to assign Microsoft Entra roles in Privileged Identity Management (PIM).
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-editor: ''
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: how-to
-ms.workload: identity
-ms.subservice: pim
-ms.date: 09/13/2023
+ms.subservice: privileged-identity-management
+ms.date: 03/04/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
-ms.collection: M365-identity-device-management
+
 ms.custom: subject-rbac-steps
 ---
 
@@ -50,9 +47,11 @@ Follow these steps to make a user eligible for a Microsoft Entra admin role.
 
 1. Select a role you want to assign, select a member to whom you want to assign to the role, and then select **Next**.
 
+    [!INCLUDE [rbac-assign-roles-guest-user-note](../../includes/rbac-assign-roles-guest-user-note.md)]
+
 1. In the **Assignment type** list on the **Membership settings** pane, select **Eligible** or **Active**.
 
-    - **Eligible** assignments require the member of the role to perform an action to use the role. Actions might include performing a multi-factor authentication (MFA) check, providing a business justification, or requesting approval from designated approvers.
+    - **Eligible** assignments require the member of the role to perform an action to use the role. Actions might include performing a multifactor authentication (MFA) check, providing a business justification, or requesting approval from designated approvers.
 
     - **Active** assignments don't require the member to perform any action to use the role. Members assigned as active have the privileges assigned to the role at all times.
 

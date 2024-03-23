@@ -4,9 +4,9 @@ description: In this article, you learn how to use a quickstart to create a cust
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: how-to
-ms.subservice: verifiable-credentials
+
 ms.date: 07/06/2022
 ms.author: barclayn
 
@@ -15,8 +15,7 @@ ms.author: barclayn
 
 # Create verifiable credentials for ID token hint
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses the [idTokenHint attestation](rules-and-display-definitions-model.md#idtokenhintattestation-type) produces an issuance flow where the relying party application passes claim values in the [issuance request payload](issuance-request-api.md#issuance-request-payload). It is the relying party application's responsibility to ensure that required claim values are passed in the request. How the claim values are gathered is up to the application. 
 
 ## Create a custom credential

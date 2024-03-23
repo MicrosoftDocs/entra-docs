@@ -1,20 +1,18 @@
 ---
 title: Tutorial`:` Use managed identity to access Azure Storage using SAS credential
 description: A tutorial that shows you how to use a Windows VM system-assigned managed identity to access Azure Storage, using a SAS credential instead of a storage account access key.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
 editor: daveba
 
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: tutorial
 ms.tgt_pltfrm: na
-ms.workload: identity
-ms.date: 01/11/2022
+ms.date: 01/05/2024
 ms.author: barclayn
-ms.collection: M365-identity-device-management 
+
 ms.custom: devx-track-azurepowershell, subject-rbac-steps, devx-track-arm-template
 ---
 
@@ -39,7 +37,7 @@ A Service SAS provides the ability to grant limited access to objects in a stora
 - You also need a Windows Virtual machine that has system assigned managed identities enabled.
   - If you need to create  a virtual machine for this tutorial, you can follow the article titled [Create a virtual machine with system-assigned identity enabled](./qs-configure-portal-windows-vm.md#system-assigned-managed-identity)
 
-[!INCLUDE [updated-for-az.md](~/../azure-docs-pr/includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az.md](~/includes/azure-docs-pr/updated-for-az.md)]
 
 ## Create a storage account 
 
@@ -81,7 +79,7 @@ Azure Storage does not natively support Microsoft Entra authentication.  However
     | System-assigned | Virtual Machine |
     | Select | &lt;your Windows virtual machine&gt; |
 
-    ![Add role assignment page in Azure portal.](~/../azure-docs-pr/includes/role-based-access-control/media/add-role-assignment-page.png)
+    ![Screenshot that shows the page for adding a role assignment.](../../media/common/add-role-assignment-page.png)
 
 ## Get an access token using the VM's identity and use it to call Azure Resource Manager 
 

@@ -4,8 +4,8 @@ description: Tutorial to deploy F5 BIG-IP Virtual Edition (VE) VM in Azure IaaS 
 
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 12/13/2022
@@ -13,6 +13,8 @@ ms.author: gasinh
 ms.collection: M365-identity-device-management 
 ms.reviewer: miccohen
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT admin deploying F5 BIG-IP Virtual Edition (VE) in Azure, I want to follow a step-by-step tutorial to ensure a successful deployment, so that I can model a secure hybrid access (SHA) proof-of-concept and test new system updates and hotfixes.
 ---
 
 # Deploy F5 BIG-IP Virtual Edition VM in Azure

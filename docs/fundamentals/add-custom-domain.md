@@ -1,18 +1,17 @@
 ---
 title: Add your custom domain
 description: Instructions about how to add your custom domain name to your tenant.
-services: active-directory
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 09/12/2023
+ms.date: 11/28/2023
 ms.author: barclayn
 ms.reviewer: elkuzmen
 ---
+
 # Add your custom domain name to your tenant
 
 Microsoft Entra tenants come with an initial domain name like, `domainname.onmicrosoft.com`. You can't change or delete the initial domain name, but you can add your organization's name to the initial domain. By adding your custom domain name, you can then add user names that are familiar to your users, such as `alain@contoso.com`.
@@ -44,24 +43,24 @@ For more information about subscription roles, see [Azure roles](/azure/role-bas
 After you create your directory, you can add your custom domain name.
 
 > [!IMPORTANT]
-> When updating domain information, you may be unable to complete the process and encounter a HTTP 500 Internal Server Error message. Under some conditions, this error may be expected. This message may appear if you try to use a protected DNS suffix. Protected DNS suffixes may only be used by Microsoft. If you believe that this operation should have been completed successfully, please contact your Microsoft representative for assistance. 
+> When updating domain information, you might be unable to complete the process and encounter an HTTP 500 Internal Server Error message. Under some conditions, this error might be expected. This message might appear if you try to use a protected DNS suffix. Protected DNS suffixes may only be used by Microsoft. If you believe that this operation should have been completed successfully, contact your Microsoft representative for assistance.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator).
 
 1. Browse to **Identity** > **Settings** > **Domain names** > **Add custom domain**.
 
-    ![Custom domain names page, with Add custom domain shown](media/add-custom-domain/add-custom-domain.png)
+   :::image type="content" source="media/add-custom-domain/add-custom-domain.png" alt-text="Screenshot of Custom domain names page, with Add custom domain shown.":::
 
 1. In **Custom domain name**, enter your organization's domain, in this example, *contoso.com*. Select **Add domain**.
 
-    ![Custom domain names page, with Add custom domain page](media/add-custom-domain/add-custom-domain-blade.png)
+   :::image type="content" source="media/add-custom-domain/add-custom-domain-blade.png" alt-text="Screenshot of Custom domain names page, with Add custom domain page.":::
 
     > [!IMPORTANT]
     > You must include *.com*, *.net*, or any other top-level extension for this to work. When adding a custom domain, the Password Policy values will be inherited from the initial domain.
 
 1. The unverified domain is added. The **contoso.com** page appears showing the DNS information needed to validate your domain ownership. Save this information.
 
-    ![Contoso page with DNS entry information](media/add-custom-domain/contoso-blade-with-dns-info.png)
+   :::image type="content" source="media/add-custom-domain/contoso-blade-with-dns-info.png" alt-text="Screenshot of Contoso page with DNS entry information.":::
 
 ## Add your DNS information to the domain registrar
 
@@ -84,18 +83,18 @@ To verify your custom domain name, follow these steps:
 
 1. In **Custom domain names**, select the custom domain name. In this example, select **contoso.com**.
 
-    ![Fabrikam - Custom domain names page, with contoso highlighted](media/add-custom-domain/custom-blade-with-contoso-highlighted.png)
+   :::image type="content" source="media/add-custom-domain/custom-blade-with-contoso-highlighted.png" alt-text="Screenshot of Fabrikam - Custom domain names page, with Contoso highlighted.":::
 
 1. On the **contoso.com** page, select **Verify** to make sure your custom domain is properly registered and is valid.
 
-    ![Contoso page with DNS entry information and the Verify button](media/add-custom-domain/contoso-blade-with-dns-info-verify.png)
+   :::image type="content" source="media/add-custom-domain/contoso-blade-with-dns-info-verify.png" alt-text="Screenshot of Contoso page with DNS entry information and the Verify button.":::
 
 ## Common verification issues
 
 If you can't verify a custom domain name, try the following suggestions:
 
 - **Wait at least an hour and try again.** DNS records must propagate before you can verify the domain. This process can take an hour or more.
- 
+
 - **Make sure the DNS record is correct.** Go back to the domain name registrar site. Make sure the entry is there, and that it matches the DNS entry information provided in the Microsoft Entra admin center.
 
    - If you can't update the record on the registrar site, share the entry with someone who has permissions to add the entry and verify it's correct.

@@ -7,10 +7,10 @@ ms.author: owenrichards
 ms.custom: 
 ms.date: 09/13/2023
 ms.reviewer: ludwignick
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
-#Customer intent:
+#Customer intent: As a developer integrating authentication into my application, I want to understand how to enable ID tokens for my application registered with the Microsoft identity platform, so that I can verify the identity of the user and obtain other information about them.
 ---
 
 # OpenID Connect on the Microsoft identity platform
@@ -24,8 +24,6 @@ The full specification for OIDC is available on the OpenID Foundation's website 
 The following diagram shows the basic OpenID Connect sign-in flow. The steps in the flow are described in more detail in later sections of the article.
 
 ![Swim-lane diagram showing the OpenID Connect protocol's sign-in flow.](./media/v2-protocols-oidc/convergence-scenarios-webapp.svg)
-
-[!INCLUDE [try-in-postman-link](includes/try-in-postman-link.md)]
 
 ## Enable ID tokens
 

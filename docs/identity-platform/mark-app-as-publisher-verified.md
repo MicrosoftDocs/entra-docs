@@ -6,11 +6,11 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
 ms.date: 08/17/2023
-ms.reviewer: xurobert
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: 
+ms.service: identity-platform
+
 ms.topic: how-to
-#Customer intent:
+#Customer intent: As a developer integrating my app with the Microsoft identity platform, I want to complete the publisher verification process for my app registration, so that users can see that my app is publisher verified and trust its authenticity.
 ---
 
 # Mark your app as publisher verified
@@ -18,22 +18,22 @@ ms.topic: how-to
 When an app registration has a verified publisher, it means that the publisher of the app has [verified](/partner-center/verification-responses) their identity using their Cloud Partner Program (CPP) account and has associated this CPP account with their app registration. This article describes how to complete the [publisher verification](publisher-verification-overview.md) process.
 
 ## Quickstart
-If you are already enrolled in the [Cloud Partner Program (CPP)](/partner-center/intro-to-cloud-partner-program-membership) and have met the [pre-requisites](publisher-verification-overview.md#requirements), you can get started right away: 
+If you're already enrolled in the [Cloud Partner Program (CPP)](/partner-center/intro-to-cloud-partner-program-membership) and have met the [prerequisites](publisher-verification-overview.md#requirements), you can get started right away: 
 
-1. Sign into the [App Registration portal](https://aka.ms/PublisherVerificationPreview) using [multi-factor authentication](~/identity/authentication/concept-mfa-licensing.md)
+1. Sign into the [App Registration portal](https://aka.ms/PublisherVerificationPreview) using [multifactor authentication](~/identity/authentication/concept-mfa-licensing.md)
 
-1. Choose an app and click **Branding & properties**. 
+1. Choose an app and select **Branding & properties**. 
 
-1. Click **Add Partner One ID to verify publisher** and review the listed requirements.
+1. Select **Add Partner One ID to verify publisher** and review the listed requirements.
 
-1. Enter your Partner One ID and click **Verify and save**.
+1. Enter your Partner One ID and select **Verify and save**.
 
 For more details on specific benefits, requirements, and frequently asked questions see the [overview](publisher-verification-overview.md).
 
 ## Mark your app as publisher verified
-Make sure you meet the [pre-requisites](publisher-verification-overview.md#requirements), then follow these steps to mark your app(s) as Publisher Verified.  
+Make sure you meet the [prerequisites](publisher-verification-overview.md#requirements), then follow these steps to mark your app(s) as Publisher Verified.  
 
-1. Sign in using [multi-factor authentication](~/identity/authentication/concept-mfa-licensing.md) to an organizational (Microsoft Entra) account authorized to make changes to the app you want to mark as Publisher Verified and on the CPP Account in Partner Center.
+1. Sign in using [multifactor authentication](~/identity/authentication/concept-mfa-licensing.md) to an organizational (Microsoft Entra) account authorized to make changes to the app you want to mark as Publisher Verified and on the CPP Account in Partner Center.
 
     - The Microsoft Entra user must have one of the following [roles](~/identity/role-based-access-control/permissions-reference.md): Application Admin, Cloud Application Admin, or Global Administrator. 
 
@@ -41,13 +41,13 @@ Make sure you meet the [pre-requisites](publisher-verification-overview.md#requi
 
 1. Navigate to the **App registrations** blade:  
 
-1. Click on an app you would like to mark as Publisher Verified and open the **Branding & properties** blade. 
+1. Select on an app you would like to mark as Publisher Verified and open the **Branding & properties** blade. 
 
 1. Ensure the app’s [publisher domain](howto-configure-publisher-domain.md) is set. 
 
 1. Ensure that either the publisher domain or a DNS-verified [custom domain](~/fundamentals/add-custom-domain.md) on the tenant matches the domain of the email address used during the verification process for your CPP account.
 
-1. Click **Add Partner One ID to verify publisher** near the bottom of the page. 
+1. Select **Add Partner One ID to verify publisher** near the bottom of the page. 
 
 1. Enter the **Partner One ID** for: 
 
@@ -55,7 +55,7 @@ Make sure you meet the [pre-requisites](publisher-verification-overview.md#requi
 
     - The Partner global account (PGA) for your organization. 
 
-1. Click **Verify and save**. 
+1. Select **Verify and save**. 
 
 1. Wait for the request to process, this may take a few minutes. 
 

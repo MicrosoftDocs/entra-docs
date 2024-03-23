@@ -1,18 +1,14 @@
 ---
-title: Best practices to secure with Microsoft Entra ID 
+title: Best practices to secure with Microsoft Entra ID
 description: Best practices we recommend you follow to secure your isolated environments in Microsoft Entra ID.
-services: active-directory
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 7/5/2022
 ms.author: gasinh
 ms.reviewer: ajburnle
-ms.custom: "it-pro"
-ms.collection: M365-identity-device-management
 ---
 
 # Best practices for all isolation architectures
@@ -134,7 +130,7 @@ Check this example to [create service principals with self-signed certificate](~
 
 In the following sections are recommendations for Azure solutions. For general guidance on Conditional Access policies for individual environments, check the [Conditional Access Best practices](~/identity/conditional-access/overview.md), [Microsoft Entra Operations Guide](./ops-guide-auth.md), and [Conditional Access for Zero Trust](/azure/architecture/guide/security/conditional-access-zero-trust):
 
-* Define [Conditional Access policies](~/identity/conditional-access/workload-identity.md) for the [Microsoft Azure Management](~/identity/authentication/howto-password-smart-lockout.md) cloud app to enforce identity security posture when accessing Azure Resource Manager. This should include controls on MFA and device-based controls to enable access only through secure workstations (more on this in the Privileged Roles section under Identity Governance). Additionally, use [Conditional Access to filter for devices](~/identity/conditional-access/concept-condition-filters-for-devices.md).
+* Define [Conditional Access policies](~/identity/conditional-access/workload-identity.md) for the [Windows Azure Service Management API](~/identity/authentication/howto-password-smart-lockout.md) cloud app to enforce identity security posture when accessing Azure Resource Manager. This should include controls on MFA and device-based controls to enable access only through secure workstations (more on this in the Privileged Roles section under Identity Governance). Additionally, use [Conditional Access to filter for devices](~/identity/conditional-access/concept-condition-filters-for-devices.md).
 
 * All applications onboarded to isolated environments must have explicit Conditional Access policies applied as part of the onboarding process.
 

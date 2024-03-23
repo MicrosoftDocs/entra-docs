@@ -1,14 +1,12 @@
 ---
 title:  Onboard an Amazon Web Services (AWS) account to Permissions Management
 description: How to onboard an Amazon Web Services (AWS) account to Permissions Management.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
-ms.subservice: ciem
-ms.workload: identity
+ms.service: entra-permissions-management
+
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 03/15/2024
 ms.author: jfields
 ---
 
@@ -201,12 +199,10 @@ This option detects all AWS accounts that are accessible through OIDC role acces
 
     The **Status** column in the table displays **Collecting Data.**
 
-    The data collection process may take some time, depending on the size of the account and how much data is available for collection.
+    The data collection process takes some time and occurs in approximately 4-5 hour intervals in most cases. The time frame depends on the size of the authorization system you have and how much data is available for collection.
 
 
 ## Next steps
 
-- For information on how to onboard a Microsoft Azure subscription, see [Onboard a Microsoft Azure subscription](onboard-azure.md).
-- For information on how to onboard a Google Cloud Platform (GCP) project, see [Onboard a Google Cloud Platform (GCP) project](onboard-gcp.md).
 - For information on how to enable or disable the controller after onboarding is complete, see [Enable or disable the controller](onboard-enable-controller-after-onboarding.md).
 - For information on how to add an account/subscription/project after onboarding is complete, see [Add an account/subscription/project after onboarding is complete](onboard-add-account-after-onboarding.md).

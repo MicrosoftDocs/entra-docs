@@ -1,14 +1,13 @@
 ---
 title: Microsoft Entra ID and SAP SuccessFactors integration reference
 description: Technical deep dive into SAP SuccessFactors-HR driven provisioning for Microsoft Entra ID.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.workload: identity
-ms.date: 09/15/2023
+ms.date: 03/22/2024
 ms.author: kenwith
 ms.reviewer: chmutali
 ---
@@ -239,7 +238,7 @@ Extending this scenario:
 ### Mapping employment status to account status
 
 By default, the Microsoft Entra SuccessFactors connector uses the `activeEmploymentsCount` field of the `PersonEmpTerminationInfo` object to set account status. You may encounter one of the following issues with this attribute. 
-1. There's a known issue where the connector may disable the account of a terminated worker one day prior to the termination on the last day of work. The issue is documented in [knowledge base article 3047486](https://launchpad.support.sap.com/#/notes/3047486). 
+1. There's a known issue where the connector may disable the account of a terminated worker one day prior to the termination on the last day of work. 
 1. If the `PersonEmpTerminationInfo` object gets set to null, during termination, then AD account disabling doesn't work because the provisioning engine filters out records where the `personEmpTerminationInfoNav` object is set to null.
 
 If you're running into any of these issues or prefer mapping employment status to account status, you can update the mapping to expand the `emplStatus` field and use the employment status code present in the field `emplStatus.externalCode`. Based on [SAP support note 2505526](https://launchpad.support.sap.com/#/notes/2505526), here's a list of employment status codes that you can retrieve in the provisioning app. 
@@ -323,8 +322,8 @@ This section describes how you can update the JSONPath settings to definitely re
 
     | **String to find** | **String to use for replace** | **Purpose**  |
     | ------------------ | ----------------------------- | ------------ |
-    | `$.employmentNav.results[0].<br>jobInfoNav.results[0].emplStatus` | `$.employmentNav..jobInfoNav..results[?(@.emplStatusNav.externalCode == 'A' || @.emplStatusNav.externalCode == 'U' || @.emplStatusNav.externalCode == 'P' )].emplStatusNav.externalCode` | With this find-replace, we're adding the ability to expand emplStatusNav OData object.    |
-    | `$.employmentNav.results[0].<br>jobInfoNav.results[0]`            | `$.employmentNav..jobInfoNav..results[?(@.emplStatusNav.externalCode == 'A' || @.emplStatusNav.externalCode == 'U' || @.emplStatusNav.externalCode == 'P')]`                             | With this find-replace, we instruct the connector to always retrieve attributes associated with the active SuccessFactors EmpJobInfo record. Attributes associated with terminated/inactive records in SuccessFactors are ignored. |
+    | `$.employmentNav.results[0].jobInfoNav.results[0].emplStatus` | `$.employmentNav..jobInfoNav..results[?(@.emplStatusNav.externalCode == 'A' || @.emplStatusNav.externalCode == 'U' || @.emplStatusNav.externalCode == 'P' )].emplStatusNav.externalCode` | With this find-replace, we're adding the ability to expand emplStatusNav OData object.    |
+    | `$.employmentNav.results[0].jobInfoNav.results[0]`            | `$.employmentNav..jobInfoNav..results[?(@.emplStatusNav.externalCode == 'A' || @.emplStatusNav.externalCode == 'U' || @.emplStatusNav.externalCode == 'P')]`                             | With this find-replace, we instruct the connector to always retrieve attributes associated with the active SuccessFactors EmpJobInfo record. Attributes associated with terminated/inactive records in SuccessFactors are ignored. |
     | `$.employmentNav.results[0]`                                    | `$.employmentNav..results[?(@.jobInfoNav..results[?(@.emplStatusNav.externalCode == 'A' || @.emplStatusNav.externalCode == 'U' || @.emplStatusNav.externalCode == 'P')])]`             | With this find-replace, we instruct the connector to always retrieve attributes associated with the active SuccessFactors Employment record. Attributes associated with terminated/inactive records in SuccessFactors are ignored. |
 
 1. Save the schema.

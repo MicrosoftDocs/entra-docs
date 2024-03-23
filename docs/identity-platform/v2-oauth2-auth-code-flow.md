@@ -7,10 +7,10 @@ ms.author: owenrichards
 ms.custom:
 ms.date: 04/17/2023
 ms.reviewer: ludwignick
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-#Customer intent:
+ms.service: identity-platform
+
+ms.topic: concept-article
+#Customer intent: As a developer building a web application, I want to implement the OAuth 2.0 authorization code flow with PKCE and OpenID Connect, so that I can obtain authorized access to protected resources like web APIs and authenticate users in my application.
 ---
 
 # Microsoft identity platform and OAuth 2.0 authorization code flow
@@ -30,8 +30,6 @@ Use the auth code flow paired with Proof Key for Code Exchange (PKCE) and OpenID
 ## Protocol details
 
 The OAuth 2.0 authorization code flow is described in [section 4.1 of the OAuth 2.0 specification](https://tools.ietf.org/html/rfc6749). Apps using the OAuth 2.0 authorization code flow acquire an `access_token` to include in requests to resources protected by the Microsoft identity platform (typically APIs). Apps can also request new ID and access tokens for previously authenticated entities by using a refresh mechanism.
-
-[!INCLUDE [try-in-postman-link](includes/try-in-postman-link.md)]
 
 This diagram shows a high-level view of the authentication flow:
 
@@ -319,7 +317,7 @@ This example is an Error response:
 | `invalid_request`  | Protocol error, such as a missing required parameter. | Fix the request or app registration and resubmit the request.   |
 | `invalid_grant`    | The authorization code or PKCE code verifier is invalid or has expired. | Try a new request to the `/authorize` endpoint and verify that the `code_verifier` parameter was correct.  |
 | `unauthorized_client` | The authenticated client isn't authorized to use this authorization grant type. | This error usually occurs when the client application isn't registered in Microsoft Entra ID or isn't added to the user's Microsoft Entra tenant. The application can prompt the user with instruction for installing the application and adding it to Microsoft Entra ID. |
-| `invalid_client` | Client authentication failed.  | The client credentials aren't valid. To fix, the application administrator updates the credentials.   |
+| `invalid_client` | Client authentication failed.  | The client credentials aren't valid. To fix, the Application Administrator updates the credentials.   |
 | `unsupported_grant_type` | The authorization server doesn't support the authorization grant type. | Change the grant type in the request. This type of error should occur only during development and be detected during initial testing. |
 | `invalid_resource` | The target resource is invalid because it doesn't exist, Microsoft Entra ID can't find it, or it's not correctly configured. | This code indicates the resource, if it exists, hasn't been configured in the tenant. The application can prompt the user with instruction for installing the application and adding it to Microsoft Entra ID.  |
 | `interaction_required` | Non-standard, as the OIDC specification calls for this code only on the `/authorize` endpoint. The request requires user interaction. For example, another authentication step is required. | Retry the `/authorize` request with the same scopes. |

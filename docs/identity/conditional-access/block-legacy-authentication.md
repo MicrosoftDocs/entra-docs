@@ -2,18 +2,15 @@
 title: Block legacy authentication
 description: Block legacy authentication using Microsoft Entra Conditional Access.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: how-to
+ms.topic: conceptual
 ms.date: 07/18/2023
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: calebb, jebeckha, grtaylor
-
-ms.collection: M365-identity-device-management
 ---
 # Block legacy authentication with Microsoft Entra Conditional Access   
 

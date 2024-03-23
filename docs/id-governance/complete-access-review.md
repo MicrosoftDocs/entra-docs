@@ -1,32 +1,27 @@
 ---
 title: Complete an access review of groups & applications
 description: Learn how to complete an access review of group members or application access in Microsoft Entra access reviews.
-services: active-directory
-documentationcenter: ''
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: access-reviews
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 06/28/2023
 ms.author: owinfrey
 ms.reviewer: mwahl
-ms.collection: M365-identity-device-management
 ---
  
 # Complete an access review of groups and applications in access reviews
  
 As an administrator, you [create an access review of groups or applications](create-access-review.md) and reviewers [perform the access review](perform-access-review.md). This article describes how to see the results of the access review and apply them.
  
-[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]
+[!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]
  
 ## Prerequisites
  
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance
-- Global administrator, User administrator, or Identity Governance administrator to manage access of reviews on groups and applications. Global administrators and Privileged Role administrators can manage reviews of role-assignable groups See [Use Microsoft Entra groups to manage role assignments](~/identity/role-based-access-control/groups-concept.md)
+- Global administrator, User administrator, or Identity Governance administrator to manage access of reviews on groups and applications. Users who have the Global Administrator role or the Privileged Role Administrator role can manage reviews of role-assignable groups, see [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md)
 - Security readers have read access.
  
 For more information, see [License requirements](access-reviews-overview.md#license-requirements).
@@ -34,11 +29,11 @@ For more information, see [License requirements](access-reviews-overview.md#lice
  
 ## View the status of an access review
  
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 You can track the progress of access reviews as they're completed.
  
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Access Reviews**.
  
@@ -92,6 +87,16 @@ To view the results of a completed instance of an access review that is recurrin
  
 To retrieve the results of an access review, both in-progress or completed, select the **Download** button. The resulting CSV file can be viewed in Excel or in other programs that open UTF-8 encoded CSV files.
 
+### Retrieve the results programmatically
+
+You can also retrieve the results of an access review using Microsoft Graph or PowerShell.
+
+You will first need to locate the [instance](/graph/api/resources/accessreviewinstance) of the access review.  If the [accessReviewScheduleDefinition](/graph/api/resources/accessReviewScheduleDefinition) is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique group being reviewed in the schedule definition. If a schedule definition reviews multiple groups, each group will have a unique instance for each recurrence.  Every instance contains a list of decisions that reviewers can take action on, with one decision per identity being reviewed.
+
+ Once you have identified the instance, to retrieve the decisions using Graph, call the Graph API to [list decisions from an instance](/graph/api/accessreviewinstance-list-decisions).  If this is a multi-stage review, call the Graph API to [list decisions from a multi-stage access review](/graph/api/accessreviewstage-list-decisions). The caller must either be a user in an appropriate role with an application that has the delegated `AccessReview.Read.All` or `AccessReview.ReadWrite.All` permission, or an application with the `AccessReview.Read.All` or `AccessReview.ReadWrite.All` application permission.  For more information, see the tutorial for how to [review a security group](/graph/tutorial-accessreviews-securitygroup).
+
+You can also retrieve the decisions In PowerShell with the `Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module.  Note that the default page size of this API is 100 decision items.
+
 ## Apply the changes
  
 If **Auto apply results to resource** was enabled based on your selections in **Upon completion settings**, autoapply will be executed once a review instance completes, or earlier if you manually stop the review.
@@ -110,15 +115,17 @@ Manually or automatically applying results doesn't have an effect on a group tha
 
 > [!NOTE]
 > Some denied users are unable to have results applied to them. Scenarios where this could happen include:
-> - Reviewing members of a synced on-premises Windows AD group: If the group is synced from on-premises  Windows AD, the group cannot be managed in Microsoft Entra ID and therefore membership cannot be changed.
+> - Reviewing members of a synced on-premises Windows Server AD group: If the group is synced from on-premises Windows Server AD, the group cannot be managed in Microsoft Entra ID and therefore membership cannot be changed.
 > - Reviewing a resource (role, group, application) with nested groups assigned: For users who have membership through a nested group, we will not remove their membership to the nested group and therefore they will retain access to the resource being reviewed.
 > - User not found / other errors can also result in an apply result not being supported.
+> - Reviewing the members of mail enabled group: The group cannot be managed in Microsoft Entra ID, so membership cannot be changed.
+> - Reviewing an Application that uses group assignment will not remove the members of those groups, so they will retain the existing access from the group relationship for the application assignment
  
 ## Actions taken on denied guest users in an access review
  
 On review creation, the creator can choose between two options for denied guest users in an access review. 
  - Denied guest users can have their access to the resource removed. This is the default.
- - The denied guest user can be blocked from signing in for 30 days, then deleted from the tenant. During the 30-day period the guest user is able to be restored access to the tenant by an administrator. After the 30-day period is completed, if the guest user hasn't had access to the resource granted to them again, they'll be removed from the tenant permanently. In addition, using the Microsoft Entra admin center, a Global Administrator can explicitly [permanently delete a recently deleted user](~/fundamentals/users-restore.md) before that time period is reached. Once a user has been permanently deleted, the data about that guest user will be removed from active access reviews. Audit information about deleted users remains in the audit log.
+ - The denied guest user can be blocked from signing in for 30 days, then deleted from the tenant. During the 30-day period the guest user is able to be restored access to the tenant by an administrator. After the 30-day period is completed, if the guest user hasn't had access to the resource granted to them again, they'll be removed from the tenant permanently. In addition, using the Microsoft Entra admin center, a Global Administrator can explicitly [permanently delete a recently deleted user](../fundamentals/users-restore.md) before that time period is reached. Once a user has been permanently deleted, the data about that guest user will be removed from active access reviews. Audit information about deleted users remains in the audit log.
  
 ### Actions taken on denied B2B direct connect users
 
@@ -128,4 +135,4 @@ Denied B2B direct connect users and teams lose access to all shared channels in 
  
 - [Manage access reviews](manage-access-review.md) 
 - [Create an access review of groups or applications](create-access-review.md)
-- [Create an access review of users in a Microsoft Entra administrative role](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md)
+- [Create an access review of users in a Microsoft Entra administrative role](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md)

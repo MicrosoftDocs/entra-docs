@@ -4,11 +4,11 @@ description: Use our quickstart guide to customize your tenant in just a few ste
  
 author: csmulligan
 manager: CelesteDG
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: quickstart
-ms.date: 09/26/2023
+ms.date: 02/23/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -28,7 +28,7 @@ When you set up a customer tenant free trial, the guide will start automatically
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
-1. Browse to **Home** > **Go to Microsoft Entra ID** 
+1. Browse to **Home** > **Tenant overview**.
 1. On the **Get started** tab, select **Start the guide**.
 
     :::image type="content" source="media/how-to-create-customer-tenant-portal/guide-link.png" alt-text="Screenshot that shows how to start the guide.":::
@@ -56,6 +56,8 @@ The get started guide will automatically configure sample apps for the below app
 
 - Single Page Application (SPA): JavaScript, React, Angular
 - Web app: Node.js (Express), ASP.NET Core
+- Desktop app: .NET (MAUI)
+- Mobile app: .NET (MAUI)
 
 Follow the steps below, to download and run the sample app.
 

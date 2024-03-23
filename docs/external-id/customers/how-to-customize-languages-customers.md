@@ -5,11 +5,11 @@ description: Learn about how to customize the browser language of your app's aut
 author: csmulligan
 ms.author: cmulligan
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
-ms.date: 09/25/2023
+ms.date: 03/22/2024
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about how to add customized browser languages to my app's authentication experience.
@@ -25,9 +25,14 @@ You can create a personalized sign-in experience for users who sign in using a s
 - [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 - Review the file size requirements for each image you want to add. You may need to use a photo editor to create the right-sized images. The preferred image type for all images is PNG, but JPG is accepted.
 
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=Language)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Language customization” use case.
+
 ## Add browser language under Company branding
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Organizational Branding Administrator](~/identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant you created earlier from the **Directories + subscriptions** menu.
 1. Browse to **Company branding** > **Browser language customizations** > **Add browser language**. 
 
@@ -86,7 +91,7 @@ The following languages are supported in the customer tenant:
 
 Language customization in the customer tenant allows your user flow to accommodate different languages to suit your customer's needs.  You can use languages to modify the strings displayed to your customers as part of the attribute collection process during sign-up.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).  
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Organizational Branding Administrator](~/identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).  
 2. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant you created earlier from the **Directories + subscriptions** menu.
 3. Browse to **Identity** > **External Identities** > **User flows**.
 4. Select the user flow that you want to enable for translations.

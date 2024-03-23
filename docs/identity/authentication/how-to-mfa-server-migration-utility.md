@@ -2,9 +2,10 @@
 title: How to use the MFA Server Migration Utility to migrate to Microsoft Entra multifactor authentication
 description: Step-by-step guidance to migrate MFA server settings to Microsoft Entra ID using the MFA Server Migration Utility.
 
-services: multi-factor-authentication
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: authentication
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 09/13/2023
 
@@ -12,8 +13,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jpettere
-
-ms.collection: M365-identity-device-management
 ---
 # MFA Server migration 
 
@@ -34,6 +33,10 @@ Take a look at our video for an overview of the MFA Server Migration Utility and
 ## Limitations and requirements
 
 - The MFA Server Migration Utility requires a new build of the MFA Server solution to be installed on your Primary MFA Server. The build makes updates to the MFA Server data file, and includes the new MFA Server Migration Utility. You don't have to update the WebSDK or User portal. Installing the update _doesn't_ start the migration automatically.
+
+   > [!NOTE]
+   > The MFA Server Migration Utility can be executed on a secondary MFA Server. For more information, please check [Run a secondary MFA Server (optional)](#run-a-secondary-mfa-server-optional).
+
 - The MFA Server Migration Utility copies the data from the database file onto the user objects in Microsoft Entra ID. During migration, users can be targeted for Microsoft Entra multifactor authentication for testing purposes using [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md). Staged migration lets you test without making any changes to your domain federation settings. Once migrations are complete, you must finalize your migration by making changes to your domain federation settings.
 - AD FS running Windows Server 2016 or higher is required to provide MFA authentication on any AD FS relying parties, not including Microsoft Entra ID and Office 365. 
 - Review your AD FS access control policies and make sure none requires MFA to be performed on-premises as part of the authentication process.

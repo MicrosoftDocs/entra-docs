@@ -4,14 +4,16 @@ description: Understand how users get assigned to an app that is using Microsoft
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: reference
 ms.date: 01/07/2021
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin, I want to understand how users are assigned to apps in Microsoft Entra ID, so that I can effectively manage user access and permissions within the system.
 ---
 
 # Understand how users are assigned to apps

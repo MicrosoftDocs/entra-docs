@@ -4,11 +4,11 @@ description: Learn how to define application roles for your customer-facing appl
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
-ms.date: 06/13/2023
+ms.date: 01/07/2024
 ms.author: mimart
 ms.custom: it-pro
 ---
@@ -25,9 +25,21 @@ Microsoft Entra ID for customers allows you to define application roles for your
 
 When Microsoft Entra ID for customers issues a security token for an authenticated user, it includes the names of the roles you've assigned the user or group in the security token's roles claim. An application that receives that security token in a request can then make authorization decisions based on the values in the roles claim.
 
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=RBAC)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Role-based access control” use case.
+
 ## Groups
 
 Developers can also use security groups to implement RBAC in their applications, where the memberships of the user in specific groups are interpreted as their role memberships. When an organization uses security groups, a groups claim is included in the token. The groups claim specifies the identifiers of all of the groups to which the user is assigned within the current customer tenant.
+
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=GBAC)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Group-based access control” use case.
 
 ## App roles vs. groups
 
@@ -84,7 +96,7 @@ The following table shows which features are currently available.
 | Create/update/delete a customer (local user) via the Microsoft Entra admin center | Yes |
 | Reset a password for a customer (local user) via the Microsoft Entra admin center | Yes |
 | Create/update/delete a customer (local user) via Microsoft Graph | Yes |
-| Reset a password for a customer (local user) via Microsoft Graph | Yes, only if the service principal is added to the Global administrator role |
+| Reset a password for a customer (local user) via Microsoft Graph | Yes, only if the service principal is added to the Global Administrator role |
 | Create/update/delete a security group via the Microsoft Entra admin center | Yes |
 | Create/update/delete a security group via the Microsoft Graph API | Yes |
 | Change security group members using the Microsoft Entra admin center | Yes |

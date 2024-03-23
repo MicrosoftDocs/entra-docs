@@ -2,18 +2,15 @@
 title: Session controls in Conditional Access policy
 description: What are session controls in a Microsoft Entra Conditional Access policy
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 03/28/2023
+ms.date: 01/09/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: calebb, vmahtani, ripull
-
-ms.collection: M365-identity-device-management
 ---
 # Conditional Access: Session
 
@@ -23,16 +20,13 @@ Within a Conditional Access policy, an administrator can make use of session con
 
 ## Application enforced restrictions
 
-Organizations can use this control to require Microsoft Entra ID to pass device information to the selected cloud apps. The device information allows cloud apps to know if a connection is from a compliant or domain-joined device and update the session experience. This control only supports Office 365, SharePoint Online, and Exchange Online as selected cloud apps. When selected, the cloud app uses the device information to provide users with a limited or full experience. Limited when the device isn't managed or compliant and full when the device is managed and compliant.
+Organizations can use this control to require Microsoft Entra ID to pass device information to the selected cloud apps. The device information allows cloud apps to know if a connection is from a compliant or domain-joined device and update the session experience.  When selected, the cloud app uses the device information to provide users with a limited or full experience. Limited when the device isn't managed or compliant and full when the device is managed and compliant.
 
-For more information on the use and configuration of app-enforced restrictions, see the following articles:
-
-- [Enabling limited access with SharePoint Online](/sharepoint/control-access-from-unmanaged-devices)
-- [Enabling limited access with Exchange Online](/microsoft-365/security/office-365-security/secure-email-recommended-policies?view=o365-worldwide&preserve-view=true#limit-access-to-exchange-online-from-outlook-on-the-web)
+For a list of supported applications and how to configure policies, see the article [Idle session timeout for Microsoft 365](/microsoft-365/admin/manage/idle-session-timeout-web-apps#details-about-idle-session-timeout).
 
 ## Conditional Access application control
 
-Conditional Access App Control uses a reverse proxy architecture and is uniquely integrated with Microsoft Entra Conditional Access. Microsoft Entra Conditional Access allows you to enforce access controls on your organization’s apps based on certain conditions. The conditions define what user or group of users, cloud apps, and locations and networks a Conditional Access policy applies to. After you’ve determined the conditions, you can route users to [Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps) where you can protect data with Conditional Access App Control by applying access and session controls.
+Conditional Access App Control uses a reverse proxy architecture and is uniquely integrated with Microsoft Entra Conditional Access. Microsoft Entra Conditional Access allows you to enforce access controls on your organization’s apps based on certain conditions. The conditions define what user or group of users, cloud apps, and locations and networks a Conditional Access policy applies to. After you determine the conditions, you can route users to [Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps) where you can protect data with Conditional Access App Control by applying access and session controls.
 
 Conditional Access App Control enables user app access and sessions to be monitored and controlled in real time based on access and session policies. Access and session policies are used within the Defender for Cloud Apps portal to refine filters and set actions to take. With the access and session policies, you can:
 
@@ -49,7 +43,7 @@ For more information, see the article [Deploy Conditional Access App Control for
 
 Sign-in frequency defines the time period before a user is asked to sign in again when attempting to access a resource. Administrators can select a period of time (hours or days) or choose to require reauthentication every time.
 
-Sign-in frequency setting works with apps that have implemented OAUTH2 or OIDC protocols according to the standards. Most Microsoft native apps for Windows, Mac, and Mobile including the following web applications follow the setting.
+Sign-in frequency setting works with apps that implement OAUTH2 or OIDC protocols according to the standards. Most Microsoft native apps for Windows, Mac, and Mobile including the following web applications follow the setting.
 
 - Word, Excel, PowerPoint Online
 - OneNote Online
@@ -61,13 +55,13 @@ Sign-in frequency setting works with apps that have implemented OAUTH2 or OIDC p
 - Dynamics CRM Online
 - Azure portal
 
-For more information, see the article [Configure authentication session management with Conditional Access](howto-conditional-access-session-lifetime.md#user-sign-in-frequency).
+For more information, see the article [Configure authentication session management with Conditional Access](concept-session-lifetime.md#user-sign-in-frequency).
 
 ## Persistent browser session
 
 A persistent browser session allows users to remain signed in after closing and reopening their browser window.
 
-For more information, see the article [Configure authentication session management with Conditional Access](howto-conditional-access-session-lifetime.md#persistence-of-browsing-sessions).
+For more information, see the article [Configure authentication session management with Conditional Access](concept-session-lifetime.md#persistence-of-browsing-sessions).
 
 ## Customize continuous access evaluation
 
@@ -88,6 +82,10 @@ If resilience defaults are disabled, access is denied once existing sessions exp
 Token protection (sometimes referred to as token binding in the industry) attempts to reduce attacks using token theft by ensuring a token is usable only from the intended device. When an attacker is able to steal a token, by hijacking or replay, they can impersonate their victim until the token expires or is revoked. Token theft is thought to be a relatively rare event, but the damage from it can be significant.
 
 The preview works for specific scenarios only. For more information, see the article [Conditional Access: Token protection (preview)](concept-token-protection.md).
+
+## Use Global Secure Access security profile (preview)
+
+Using a security profile with Conditional Access unifies identity controls with network security in Microsoft's Security Service Edge (SSE) product, [Microsoft Entra Internet Access](../../global-secure-access/concept-internet-access.md#security-profiles). Selecting this Session control allows you to bring identity and context awareness to security profiles, which are groupings of various policies created and managed in Global Secure Access. 
 
 ## Next steps
 

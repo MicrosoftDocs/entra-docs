@@ -1,10 +1,10 @@
 ---
 title: "What's new in Microsoft Entra ID for customers"
 description: "New and updated documentation for the Microsoft Entra ID for customers documentation."
-ms.date: 11/01/2023
-ms.service: active-directory
-ms.subservice: ciam
-ms.topic: reference
+ms.date: 03/01/2024
+ms.service: entra-external-id
+ms.subservice: customers
+ms.topic: whats-new
  
 ms.author: cmulligan
 author: csmulligan
@@ -15,43 +15,62 @@ manager: CelesteDG
 
 Welcome to what's new in Microsoft Entra ID for customers documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. 
 
-## October 2023
-
-### Updated articles
-
-- [Customize the neutral branding in your customer tenant (preview)](how-to-customize-branding-customers.md) - Editorial updates
-- [Customize the language of the authentication experience](how-to-customize-languages-customers.md) - Editorial updates
-
-## September 2023
-
-This month, we renamed Azure Active Directory (Azure AD) to Microsoft Entra ID. For more information about the rebranding, see the [New name for Azure Active Directory](~/fundamentals/new-name.md) article.
-
-### Updated articles
-
-- [Quickstart: Get started with our guide to run a sample app and sign in your users (preview)](quickstart-get-started-guide.md) Start the guide updates
-- [Manage Microsoft Entra ID for customers resources with Microsoft Graph](microsoft-graph-operations.md) - Editorial updates
-- [Planning for customer identity and access management (preview)](concept-planning-your-solution.md) - Editorial updates
-- [Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md) - Disable sign-up in a user flow
-
-## August 2023
+## February 2024
 
 ### New articles
 
-- [Quickstart: Get started with guide walkthrough](quickstart-get-started-guide.md)
-- [Tutorial: Add sign-in and sign-out to a Vanilla JavaScript single-page app for a customer tenant](tutorial-single-page-app-vanillajs-sign-in-sign-out.md)
-- [Sign in users in a sample Node.js CLI application.](sample-cli-app-node-sign-in-users.md)
-- [Tutorial: Prepare a Node.js CLI application for authentication](tutorial-cli-app-node-sign-in-prepare-app.md)
-- [Prepare your customer tenant to sign in users in a Node.js CLI application](tutorial-cli-app-node-sign-in-prepare-tenant.md)
-- [Authenticate users in a Node.js CLI application - Build app](tutorial-cli-app-node-sign-in-sign-out.md)
-- [Tutorial: Use role-based access control in your .NET MAUI](tutorial-desktop-maui-role-based-access-control.md)
-- [Tutorial: Use role-based access control in your .NET MAUI app](tutorial-mobile-maui-role-based-access-control.md)
+- [Test your sign-up and sign-in user flow](how-to-test-user-flows.md) - Describes the Run user flow feature
+- [Get started with the Microsoft Entra External ID extension for Visual Studio Code](visual-studio-code-extension.md)
 
 ### Updated articles
 
-- [Collect user attributes during sign-up](how-to-define-custom-attributes.md) - Custom attribute update
-- [Quickstart: Create a tenant (preview)](quickstart-tenant-setup.md) - Get started guide update
-- [Add and manage admin accounts](how-to-manage-admin-accounts.md) - Editorial review
-- [Tutorial: Prepare a Vanilla JavaScript single-page app for authentication in a customer tenant](tutorial-single-page-app-vanillajs-prepare-app.md) - Editorial review
-- [Microsoft Entra ID for customers documentation](index.yml) - Editorial review
-- [Tutorial: Sign in users in .NET MAUI app](tutorial-desktop-app-maui-sign-in-sign-out.md) - Add app roles to .NET MAUI app and receive them in the ID token
-- [Tutorial: Sign in users in .NET MAUI shell app](tutorial-mobile-app-maui-sign-in-sign-out.md) - Add app roles to .NET MAUI app and receive them in the ID token 
+- [Supported features in Microsoft Entra ID for customers (preview)](concept-supported-features-customers.md) - OpenID Connect and OAuth2 updates
+- [Create a customer identity and access management (CIAM) tenant (preview)](how-to-create-customer-tenant-portal.md) - Built-in role update
+
+
+## January 2024
+
+### Updated articles
+
+- [Tutorial: Prepare your customer tenant to authenticate users in a .NET browserless app](tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md) - Minor updates
+- [Tutorial: Prepare your customer tenant to sign in user in .NET WPF application](tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md) - Minor updates
+- [Tutorial: Prepare an ASP.NET Core web app for authentication in a customer tenant](tutorial-web-app-dotnet-sign-in-prepare-app.md) - Minor updates
+- [Tutorial: Add sign-in and sign-out to an ASP.NET Core web application for a customer tenant](tutorial-web-app-dotnet-sign-in-sign-out.md) - Minor updates
+- [Security and governance in Microsoft Entra ID for customers](concept-security-customers.md) - Added intro to Conditional Access
+- [Using role-based access control for applications](how-to-use-app-roles-customers.md) - Added link to the Woodgrove live demo
+- [Overview of the Woodgrove Groceries demo](overview-solutions-customers.md) - Added link to the Woodgrove live demo
+- [Call a web API in a Node.js web application](how-to-web-app-node-sign-in-call-api-call-api.md) - Rewrote the call an API section
+- [Create a Node.js web app to call an API](how-to-web-app-node-sign-in-call-api-prepare-app.md) - Rewrote the call an API section
+- [Prepare customer tenant for calling an API in a Node.js web application](how-to-web-app-node-sign-in-call-api-prepare-tenant.md) - Rewrote the call an API section
+- [Acquire an access token in your Node.js web app](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md) - Rewrote the call an API section
+- [Tutorial: Prepare a Node.js CLI application for authentication](tutorial-cli-app-node-sign-in-prepare-app.md) - Minor tutorial clarifications
+- [Tutorial: Prepare your customer tenant to sign in users in a Node.js CLI app](tutorial-cli-app-node-sign-in-prepare-tenant.md) - Minor tutorial clarifications
+- [Tutorial: Call a protected web API from your .NET daemon app](tutorial-daemon-dotnet-call-api-build-app.md) - Minor tutorial clarifications
+- [Tutorial: Prepare your customer tenant to authorize a .NET daemon application](tutorial-daemon-dotnet-call-api-prepare-tenant.md) - Minor tutorial clarifications
+- [Tutorial: Call a web API from your Node.js daemon application](tutorial-daemon-node-call-api-build-app.md) - Minor tutorial clarifications
+- [Tutorial: Prepare your customer tenant to authenticate users in a React SPA](tutorial-single-page-app-react-sign-in-prepare-tenant.md) - Minor tutorial clarifications
+- [Tutorial: Add sign-in and sign-out to a React SPA for a customer tenant](tutorial-single-page-app-react-sign-in-sign-out.md) - Minor tutorial clarifications
+
+## December 2023
+
+### Updated articles
+
+- [Collect user attributes during sign-up](how-to-define-custom-attributes.md) - Updated the examples
+- [Quickstart: Get started with Microsoft Entra ID for customers (preview)](quickstart-trial-setup.md) - Added subscription options
+
+## November 2023
+
+### New articles
+
+- [Gain insights into your app users’ activity](how-to-user-insights.md)
+- [Tutorial: Handle authentication flows in an Angular single-page app](tutorial-single-page-app-angular-sign-in-configure-authentication.md)
+- [Tutorial: Prepare an Angular single-page app for authentication in a customer tenant](tutorial-single-page-app-angular-sign-in-prepare-app.md)
+- [Tutorial: Prepare your customer tenant to authenticate users in an Angular single-page app](tutorial-single-page-app-angular-sign-in-prepare-tenant.md)
+- [Tutorial: Add sign-in and sign-out to an Angular single-page app (SPA) for a customer tenant](tutorial-single-page-app-angular-sign-in-sign-out.md)
+
+### Updated articles
+
+- [Collect user attributes during sign-up](how-to-define-custom-attributes.md) - Editorial updates
+- [Tutorial: Handle authentication flows in a React single-page app](tutorial-single-page-app-react-sign-in-configure-authentication.md) - Fixed the React SPA tutorial
+- [Sign in users in a sample Node.js web application](sample-web-app-node-sign-in.md) - Updated Platform Redirect URI
+- [Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md) - Improved MS Graph API call formatting

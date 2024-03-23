@@ -1,10 +1,11 @@
 ---
 author: kengaderdus
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: include
-ms.date: 05/09/2023
+ms.date: 11/24/2023
 ms.author: kengaderdus
+ms.manager: mwongerapk
 ---
 1. From the **App registrations** page, select the application that you created (such as *ciam-client-app*) to open its **Overview** page.
  
@@ -14,7 +15,7 @@ ms.author: kengaderdus
 
 1. Select the **My APIs** tab.
  
-1. In the list of APIs, select the API such as *ciam-ToDoList-api*.
+1. In the list of APIs, select the API such as *ciam-ToDoList-api*. If you don't see your API in the list, select the **APIs my organization uses** tab.
  
 1. Select **Delegated permissions** option.
  
@@ -22,7 +23,7 @@ ms.author: kengaderdus
  
 1. Select the **Add permissions** button.
 
-1. At this point, you've assigned the permissions correctly. However, since the tenant is a customer's tenant, the  consumer users themselves can't consent to these permissions. To address this problem, you as the admin must consent to these permissions on behalf of all the users in the tenant:
+1. At this point, you've assigned the permissions correctly. However, since the tenant is a customer's tenant, the  consumer users themselves can't consent to these permissions. To address this, you as the admin must consent to these permissions on behalf of all the users in the tenant:
  
     1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
     

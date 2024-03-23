@@ -1,18 +1,18 @@
 ---
 title: Configure managed identities on an Azure VM using PowerShell
 description: Step-by-step instructions for configuring managed identities for Azure resources on an Azure VM using PowerShell.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: quickstart
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 05/10/2023
 ms.author: barclayn
-ms.collection: M365-identity-device-management
-ms.custom: devx-track-azurepowershell, mode-api, has-azure-ad-ps-ref
+
+ms.custom: devx-track-azurepowershell, mode-api, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+
 ---
 
 # Configure managed identities for Azure resources on an Azure VM using PowerShell
@@ -23,7 +23,7 @@ Managed identities for Azure resources provide Azure services with an automatica
 
 In this article, using PowerShell, you learn how to perform the following managed identities for Azure resources operations on an Azure VM.
 
-[!INCLUDE [az-powershell-update](~/../azure-docs-pr/includes/updated-for-az.md)]
+[!INCLUDE [az-powershell-update](~/includes/azure-docs-pr/updated-for-az.md)]
 
 ## Prerequisites
 
@@ -69,20 +69,20 @@ After you have enabled system assigned identity on a VM, you can add it to a gro
 
 1. Retrieve and note the `ObjectID` (as specified in the `Id` field of the returned values) of the VM's service principal:
 
-   ```azurepowershell-interactive
+   ```azurepowershell
    Get-AzADServicePrincipal -displayname "myVM"
    ```
 
 1. Retrieve and note the `ObjectID` (as specified in the `Id` field of the returned values) of the group:
 
-   ```azurepowershell-interactive
+   ```azurepowershell
    Get-AzADGroup -searchstring "myGroup"
    ```
 
 1. Add the VM's service principal to the group:
 
-   ```azurepowershell-interactive
-   Add-AzureADGroupMember -ObjectId "<objectID of group>" -RefObjectId "<object id of VM service principal>"
+   ```azurepowershell
+   New-MgGroupMember -GroupId "<Id of group>" -DirectoryObjectId "<Id of VM service principal>" 
    ```
 
 ## Disable system-assigned managed identity from an Azure VM

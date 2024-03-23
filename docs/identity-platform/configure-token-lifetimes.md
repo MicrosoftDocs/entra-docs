@@ -6,11 +6,11 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
 ms.date: 11/02/2023
-ms.reviewer: joroja
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer:
+ms.service: identity-platform
+
 ms.topic: how-to
-#Customer intent:
+#Customer intent: As an IT admin, I want to create and assign token lifetime policies to apps and service principals, so that I can control the lifetime of access, SAML, or ID tokens for improved security and authentication management.
 ---
 # Configure token lifetime policies (preview)
 

@@ -7,10 +7,10 @@ ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 05/01/2023
 ms.reviewer: rahulnagraj, alamaral, jeedes
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
-#Customer intent:
+#Customer intent: As an Application Administrator, I want to customize the SAML token claims, so that I can control the information that is sent to applications during SSO authentication using the Microsoft identity platform.
 ---
 
 # Customize SAML token claims

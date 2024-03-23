@@ -5,8 +5,8 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
@@ -154,7 +154,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure PolicyStat SSO
 
-1. In a different web browser window, log into your PolicyStat company site as an administrator.
+1. In a different web browser window, log in to your PolicyStat company site as an administrator.
 
 1. Click the **Admin** tab, and then click **Single Sign-On Configuration** in left navigation pane.
    
@@ -170,7 +170,8 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Click **Configure Attributes**, and then, in the **Configure Attributes** section, perform the following steps using the **CLAIM NAMES** found in your Azure configuration:
    
-    1. In the **Username Attribute** textbox, type the username claim value you are passing over as the key username attribute. The default value in Azure is UPN, but if you already have accounts in PolicyStat, you will need to match those username values to avoid duplicate accounts or update the existing accounts in PolicyStat to the UPN value. Default value to enter to pass the UPN **`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`** .
+    1. In the **Username Attribute** textbox, type the username claim value you are passing over as the key username attribute. The default value in Azure is UPN, but if you already have accounts in PolicyStat, you will need to match those username values to avoid duplicate accounts or update the existing accounts in PolicyStat to the UPN value. To update existing usernames in bulk, please contact RLDatix PolicyStat Support https://websupport.rldatix.com/support-form/.
+    Default value to enter to pass the UPN **`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`** .
 
     1. In the **First Name Attribute** textbox, type the First Name Attribute claim name from Azure **`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`**.
 

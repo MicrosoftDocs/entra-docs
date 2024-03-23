@@ -51,7 +51,7 @@ items:
       - name: Hybrid
         tocHref: /entra/identity/hybrid/
         topicHref: /entra/identity/hybrid/
-      - name: Managed identities
+      - name: Managed identities for Azure resources
         tocHref: /entra/identity/managed-identities-azure-resources/
         topicHref: /entra/identity/managed-identities-azure-resources/
       - name: Monitoring and health

@@ -6,8 +6,8 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 9bf5ef32-c9ba-4fef-acab-3c16f976af5c
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 08/03/2023
@@ -24,7 +24,7 @@ This tutorial describes the steps you need to perform in both Tailscale and Micr
 > * Create users in Tailscale.
 > * Remove users in Tailscale when they do not require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Tailscale.
-> * Provision groups and group memberships in Better Stack.
+> * Provision groups and group memberships in Tailscale.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Tailscale (recommended).
 
 ## Prerequisites

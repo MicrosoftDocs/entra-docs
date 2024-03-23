@@ -6,11 +6,11 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
 ms.date: 09/12/2019
-ms.reviewer: shoatman
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: shoatman, negoe
+ms.service: identity-platform
+
 ms.topic: reference
-#Customer intent:
+#Customer intent: As a developer using the MSAL for Android, I want to understand the configuration JSON file, so that I can customize the behavior of my public client app and specify the default authority and other settings.
 ---
 
 # Android Microsoft Authentication Library configuration file
@@ -29,7 +29,7 @@ This article will help you understand the various settings in the configuration 
 | `redirect_uri`   | String | Yes | Your app's Redirect URI from the [Application registration page](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) |
 | `broker_redirect_uri_registered` | Boolean | No | Possible values: `true`, `false` |
 | `authorities` | List\<Authority> | No | The list of authorities your app needs |
-| `authorization_user_agent` | AuthorizationAgent (enum) | No | Possible values: `DEFAULT`, `BROWSER`, `WEBVIEW` |
+| `authorization_user_agent` | AuthorizationAgent (enum) | No | Possible values: `WEBVIEW`, `BROWSER` |
 | `http` | HttpConfiguration | No | Configure `HttpUrlConnection` `connect_timeout` and `read_timeout` |
 | `logging` | LoggingConfiguration | No | Specifies the level of logging detail. Optional configurations include: `pii_enabled`, which takes a boolean value, and `log_level`, which takes `ERROR`, `WARNING`, `INFO`, or `VERBOSE`. |
 
@@ -121,7 +121,6 @@ The list of authorities that are known and trusted by you. In addition to the au
 Indicates whether to use an embedded webview, or the default browser on the device, when signing in an account or authorizing access to a resource.
 
 Possible values:
-- `DEFAULT`: Prefers the system browser. Uses the embedded web view if a browser isn't available on the device.
 - `WEBVIEW`: Use the embedded web view.
 - `BROWSER`: Uses the default browser on the device.
 

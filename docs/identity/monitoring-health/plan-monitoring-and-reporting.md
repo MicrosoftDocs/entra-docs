@@ -2,17 +2,16 @@
 
 title: Plan reports & monitoring deployment
 description: Describes how to plan and execute implementation of reporting and monitoring.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
-ms.workload: identity
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 10/04/2023
 ms.author: sarahlipsey
-ms.reviewer: plenzke 
-# Customer intent: For a Microsoft Entra administrator to monitor logs and report on access 
+ms.reviewer: plenzke
+# Customer intent: For a Microsoft Entra administrator to monitor logs and report on access
 ---
 
 # Microsoft Entra monitoring and health deployment dependencies

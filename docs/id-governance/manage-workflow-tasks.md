@@ -4,12 +4,11 @@ description: This article guides a user on managing workflow versions with Lifec
 author: OWinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.topic: how-to 
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
+ms.topic: how-to
 ms.date: 05/31/2023
-ms.subservice: compliance
-ms.custom: template-how-to 
+ms.custom: template-how-to
 ---
 
 # Manage workflow versions
@@ -23,7 +22,7 @@ Changing a workflow's tasks or execution conditions requires the creation of a n
 
 Tasks within workflows can be added, edited, reordered, and removed at will. To edit the tasks of a workflow using the Microsoft Entra admin center, you complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
 1. Browse to **Identity governance** > **Lifecycle workflows** > **workflows**.
     

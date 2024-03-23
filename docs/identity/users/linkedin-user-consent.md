@@ -1,18 +1,16 @@
 ---
 title: LinkedIn data sharing and consent
 description: Explains how LinkedIn integration shares data via Microsoft apps in Microsoft Entra ID
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
-ms.date: 06/24/2022
+ms.date: 11/21/2023
 ms.author: barclayn
 ms.reviewer: beengen
-ms.custom: "it-pro;seo-update-azuread-jan"
-ms.collection: M365-identity-device-management
+ms.custom: it-pro
 ---
 
 # LinkedIn account connections data sharing and consent
@@ -21,13 +19,15 @@ You can enable users in your organization in Microsoft Entra ID, part of Microso
 
 To see LinkedIn information in Microsoft apps and services, users must consent to connect their own Microsoft and LinkedIn accounts. Users are prompted to connect their accounts the first time they click to see someone's LinkedIn information on a profile card in Outlook, OneDrive or SharePoint Online. LinkedIn account connections are not fully enabled for your users until they consent to the experience and to connect their accounts.
 
-[!INCLUDE [active-directory-gdpr-note](~/../azure-docs-pr/includes/gdpr-hybrid-note.md)]
+[!INCLUDE [active-directory-gdpr-note](~/includes/azure-docs-pr/gdpr-hybrid-note.md)]
 
 ## Benefits of sharing LinkedIn information
 
-Access to LinkedIn information within Microsoft apps and services makes it easier for your users to connect, engage, and build professional relationships with colleagues, customers, and partners inside and outside your organization. New users can get up to speed faster by connecting with colleagues, learning more about them, and easily accessing more information. Here is an example of how LinkedIn information appears on the profile card in Microsoft apps:
+Access to LinkedIn information within Microsoft apps and services makes it easier for your users to connect, engage, and build professional relationships with colleagues, customers, and partners inside and outside your organization. New users can get up to speed faster by connecting with colleagues, learning more about them, and easily accessing more information. 
 
-![Enabling LinkedIn integration in your organization](./media/linkedin-user-consent/display-example.png)
+Below is an example of how LinkedIn information appears on the profile card in Microsoft apps:
+
+:::image type="content" source="./media/linkedin-user-consent/display-example.png" alt-text="Screenshot of enabling LinkedIn integration in your organization.":::
 
 ## Enable and announce LinkedIn integration
 

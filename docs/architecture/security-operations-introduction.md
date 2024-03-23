@@ -1,20 +1,16 @@
 ---
 title: Microsoft Entra security operations guide
 description: Learn to monitor, identify, and alert on security issues with accounts, applications, devices, and infrastructure in Microsoft Entra ID.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: overview
 ms.date: 09/06/2022
 ms.author: jricketts
 ms.custom:
   - it-pro
-  - seodec18
   - kr2b-contr-experiment
-ms.collection: M365-identity-device-management
 ---
 
 # Microsoft Entra security operations guide
@@ -159,7 +155,7 @@ As part of an Azure hybrid environment, the following items should be baselined 
 
 * **Password writeback Agent** - Password writeback is a feature enabled with [Microsoft Entra Connect](~/identity/hybrid/whatis-hybrid-identity.md) that allows password changes in the cloud to be written back to an existing on-premises directory in real time. For more information on this feature, see [How does self-service password reset writeback work in Microsoft Entra ID](~/identity/authentication/concept-sspr-writeback.md).
 
-* **Microsoft Entra application proxy Connector** - Lightweight agents that sit on-premises and facilitate the outbound connection to the Application Proxy service. For more information, see [Understand Microsoft Entra Application Proxy connectors](~/identity/app-proxy/application-proxy-connectors.md).
+* **Microsoft Entra application proxy Connector** - Lightweight agents that sit on-premises and facilitate the outbound connection to the Application Proxy service. For more information, see [Understand Microsoft Entra application proxy connectors](~/identity/app-proxy/application-proxy-connectors.md).
 
 ## Components of cloud-based authentication
 

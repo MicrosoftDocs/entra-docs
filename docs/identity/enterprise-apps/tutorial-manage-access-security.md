@@ -5,13 +5,13 @@ author: omondiatieno
 manager: CelesteDG
 ms.author: jomondi
 ms.reviewer: ergreenl
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: tutorial
 ms.date: 07/18/2022
 ms.custom: enterprise-apps
 
-# Customer intent: As an administrator of a Microsoft Entra tenant, I want to manage access to my applications and make sure they are secure.
+# Customer intent: As an IT administrator managing application access and security, I want to learn how to grant consent for an application on behalf of all users, enable multifactor authentication, communicate terms of use, and create a collection in the My Apps portal, so that I can ensure secure and efficient access to the application for all users in the organization.
 ---
 
 # Tutorial: Manage application access and security

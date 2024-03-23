@@ -1,16 +1,17 @@
 ---
 title: Configure the role claim
 description: Learn how to configure the role claim issued in the SAML token for enterprise applications in Microsoft Entra ID.
-author: omondiatieno
+author: cilwerner
 manager: CelesteDG
-ms.author: jomondi
+ms.author: cwerner
 ms.custom: 
 ms.date: 06/09/2023
 ms.reviewer: jeedes
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
-#Customer intent:
+
+#Customer intent: As a cloud Application Administrator, I want to customize the role claim in the access token for an enterprise application, so that I can define custom roles and assign them to user accounts.
 ---
 
 # Configure the role claim
@@ -33,7 +34,7 @@ You can customize the role claim in the access token that is received after an a
 
 Use the following steps to locate the enterprise application:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. After the application is selected, copy the object ID from the overview pane.
@@ -104,7 +105,7 @@ Use the Microsoft Graph Explorer to add roles to an enterprise application.
     }
     ```
 
-    You can only add new roles after msiam_access for the patch operation. Also, you can add as many roles as your organization needs. The value of these roles is sent as the claim value in the SAML response. To generate the GUID values for the ID of new roles use the web tools, such as the [Online GUID / UUID Generator](https://www.guidgenerator.com/). The appRoles property should represent what was in the request body of the query.
+    You must include the `msiam_access` role object in addition to any new roles in the request body. Failure to include any existing roles in the request body removes them from the **appRoles** object. Also, you can add as many roles as your organization needs. The value of these roles is sent as the claim value in the SAML response. To generate the GUID values for the ID of new roles use the web tools, such as the [Online GUID / UUID Generator](https://www.guidgenerator.com/). The appRoles property in the response includes what was in the request body of the query.
 
 ## Edit attributes
 

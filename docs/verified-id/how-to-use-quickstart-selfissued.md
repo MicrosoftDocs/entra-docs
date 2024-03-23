@@ -4,9 +4,9 @@ description: Learn how to use a quickstart to create custom credentials for self
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: how-to
-ms.subservice: verifiable-credentials
+
 ms.date: 07/06/2022
 ms.author: barclayn
 
@@ -15,8 +15,7 @@ ms.author: barclayn
 
 # Create verifiable credentials for self-asserted claims
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 
 A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses the [selfIssued attestation](rules-and-display-definitions-model.md#selfissuedattestation-type) type produces an issuance flow where you're required to manually enter values for the claims in Microsoft Authenticator.  
 

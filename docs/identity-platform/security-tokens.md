@@ -7,9 +7,9 @@ ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 06/02/2023
 ms.reviewer: jmprieur, saeeda, ludwignick
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to understand the basic concepts of security tokens in the Microsoft identity platform.
 ---
 
@@ -17,7 +17,7 @@ ms.topic: conceptual
 
 A centralized identity provider is especially useful for apps that have worldwide users who don't necessarily sign in from the enterprise's network. The Microsoft identity platform authenticates users and provides security tokens, such as access tokens, refresh tokens, and ID tokens. Security tokens allow a client application to access protected resources on a resource server. 
 
- - **Access token** - An access token is a security token issued by an authorization server as part of an OAuth 2.0 flow. It contains information about the user and the resource for which the token is intended. The information can be used to access web APIs and other protected resources. Resources validate access tokens to grant access to a client application. For more information, see [Access tokens in the Microsoft identity platform](access-tokens.md).
+- **Access token** - An access token is a security token issued by an authorization server as part of an OAuth 2.0 flow. It contains information about the user and the resource for which the token is intended. The information can be used to access web APIs and other protected resources. Resources validate access tokens to grant access to a client application. For more information, see [Access tokens in the Microsoft identity platform](access-tokens.md).
 - **Refresh token** - Because access tokens are valid for only a short period of time, authorization servers sometimes issue a refresh token at the same time the access token is issued. The client application can then exchange this refresh token for a new access token when needed. For more information, see [Refresh tokens in the Microsoft identity platform](refresh-tokens.md).
 - **ID token** - ID tokens are sent to the client application as part of an OpenID Connect flow. They can be sent alongside or instead of an access token. ID tokens are used by the client to authenticate the user. To learn more about how the Microsoft identity platform issues ID tokens, see [ID tokens in the Microsoft identity platform](id-tokens.md).
 
@@ -25,7 +25,9 @@ Many enterprise applications use SAML to authenticate users. For information on 
 
 ## Validate tokens
 
-It's up to the application for which the token was generated, the web app that signed in the user, or the web API being called to validate the token. The authorization server signs the token with a private key. The authorization server publishes the corresponding public key. To validate a token, the app verifies the signature by using the authorization server public key to validate that the signature was created using the private key.
+It's up to the application for which the token was generated, the web app that signed in the user, or the web API being called to validate the token. The authorization server signs the token with a private key. The authorization server publishes the corresponding public key. To validate a token, the app verifies the signature by using the authorization server public key to validate that the signature was created using the private key. For more information, check out the [Secure applications and APIs by validating claims](/entra/identity-platform/claims-validation) article.
+
+We recommend you use the supported [Microsoft Authentication Libraries (MSAL)](/entra/identity-platform/msal-overview) whenever possible. This implements the acquisition, refresh, and validation of tokens for you. It also implements standards-compliant discovery of tenant settings and keys using the tenant’s OpenID well-known discovery document. MSAL supports many different application architectures and platforms including .NET, JavaScript, Java, Python, Android, and iOS.
 
 Tokens are valid for only a limited amount of time, so the authorization server frequently provides a pair of tokens. An access token is provided, which accesses the application or protected resource. A refresh token is provided, which is used to refresh the access token when the access token is close to expiring.
 
@@ -53,6 +55,14 @@ A claim consists of key-value pairs that provide the following types of informat
 * Subject (like the user, but not daemons)
 * Audience, which is the app for which the token was generated
 * App (the client) that asked for the token
+
+## Token endpoints and issuers
+
+Microsoft Entra ID supports two tenant configurations: A workforce configuration that’s intended for internal use and manages employees and business guests, and a [customer configuration](/entra/external-id/customers/concept-supported-features-customers) which is optimized for isolating consumers and partners in a restricted external-facing directory. While the underlying identity service is identical for both tenant configurations, the login domains and token issuing authority for customer tenants is different. This allows applications to keep workforce and external ID workflows separated if needed.
+
+Microsoft Entra workforce tenants authenticate at login.microsoftonline.com with tokens issued by *sts.windows.net*. Workforce tenant tokens are generally interchangeable across tenants and multi-tenant applications so long as underlying trust relationships permit this interoperability. Microsoft Entra customer tenants use tenanted endpoints of the form *{tenantname}.ciamlogin.com*. Applications registered to customer tenants must be aware of this separation to receive and validate tokens correctly.
+
+Every Microsoft Entra tenant publishes a standards-compliant well-known metadata. This document contains information about the issuer name, the authentication and authorization endpoints, supported scopes and claims. For customer tenants, the document is publicly available at: *https://{tenantname}.ciamlogin.com/{tenantid}/v2.0/.well-known/openid-configuration*. This endpoint returns an issuer value *https://{tenantid}.ciamlogin.com/{tenantid}/v2.0*.
 
 ## Authorization flows and authentication codes
 

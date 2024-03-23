@@ -4,15 +4,16 @@ description: Learn about single sign-on for enterprise applications in Microsoft
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: overview
 ms.date: 10/30/2023
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps-article
-# Customer intent: As an IT admin, I need to learn about single sign-on and my applications in Microsoft Entra ID.
+
+# Customer intent: As an IT admin responsible for managing user access to applications, I want to understand the different single sign-on (SSO) options available in Microsoft Entra ID, so that I can plan and deploy SSO for our organization's applications efficiently.
 ---
 
 # What is single sign-on in Microsoft Entra ID?
@@ -58,7 +59,7 @@ Web applications are hosted by various companies and made available as a service
 
 How you implement SSO depends on where the application is hosted. Hosting matters because of the way network traffic is routed to access the application. Users don't need to use the Internet to access on-premises applications (hosted on a local network). If the application is hosted in the cloud, users need the Internet to use it. Cloud hosted applications are also called Software as a Service (SaaS) applications.
 
-For cloud applications, federation protocols are used. You can also use single sign-on for on-premises applications. You can use Application Proxy to configure access for your on-premises application. For more information, see [Remote access to on-premises applications through Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md).
+For cloud applications, federation protocols are used. You can also use single sign-on for on-premises applications. You can use Application Proxy to configure access for your on-premises application. For more information, see [Remote access to on-premises applications through Microsoft Entra application proxy](/entra/identity/app-proxy).
 
 ## My Apps
 

@@ -5,9 +5,9 @@ description: Learn how to configure a sample Angular Single Page Application (SP
 author: garrodonnell
 manager: celestedg
 ms.author: godonnell
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: sample
 ms.date: 06/23/2023
 ms.custom: developer

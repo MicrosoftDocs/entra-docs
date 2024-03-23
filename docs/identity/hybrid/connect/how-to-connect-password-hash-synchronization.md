@@ -1,22 +1,20 @@
 ---
 title: Implement password hash synchronization with Microsoft Entra Connect Sync
 description: Provides information about how password hash synchronization works and how to set up.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
 ms.assetid: 05f16c3e-9d23-45dc-afca-3d0fa9dbf501
-ms.service: active-directory
-ms.workload: identity
-ms.custom: has-azure-ad-ps-ref
+ms.service: entra-id
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 search.appverid:
 - MET150
 
-ms.collection: M365-identity-device-management
+
 ---
 # Implement password hash synchronization with Microsoft Entra Connect Sync
 This article provides information that you need to synchronize your user passwords from an on-premises Active Directory instance to a cloud-based Microsoft Entra instance.
@@ -98,7 +96,7 @@ You can continue to sign in to your cloud services by using a synchronized passw
 
 If there are synchronized users that only interact with Microsoft Entra integrated services and must also comply with a password expiration policy, you can force them to comply with your Microsoft Entra password expiration policy by enabling the *CloudPasswordPolicyForPasswordSyncedUsersEnabled* feature (in the deprecated MSOnline PowerShell module it was called *EnforceCloudPasswordPolicyForPasswordSyncedUsers*).
 
-When *CloudPasswordPolicyForPasswordSyncedUsersEnabled* is disabled (which is the default setting), Microsoft Entra Connect sets the PasswordPolicies attribute of synchronized users to "DisablePasswordExpiration". This is done every time a user's password is synchronized and instructs Microsoft Entra ID to ignore the cloud password expiration policy for that user. You can check the value of the attribute using the Azure AD PowerShell module with the following command:
+When *CloudPasswordPolicyForPasswordSyncedUsersEnabled* is disabled (which is the default setting), Microsoft Entra Connect sets the PasswordPolicies attribute of synchronized users to "DisablePasswordExpiration". This is done every time a user's password is synchronized and instructs Microsoft Entra ID to ignore the cloud password expiration policy for that user. You can check the value of the attribute using the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module with the following command:
 
 `(Get-MgUser -UserId <User Object ID> -Property PasswordPolicies).PasswordPolicies`
 
@@ -120,7 +118,7 @@ After the *CloudPasswordPolicyForPasswordSyncedUsersEnabled* feature is enabled,
 >[!TIP]
 >It is recommended to enable *CloudPasswordPolicyForPasswordSyncedUsersEnabled* prior to enabling password hash sync, so that the initial sync of password hashes does not add the `DisablePasswordExpiration` value to the PasswordPolicies attribute for the users.
 
-The default Microsoft Entra password policy requires users to change their passwords every 90 days. If your policy in AD is also 90 days, the two policies should match. However, if the AD policy is not 90 days, you can update the Microsoft Entra password policy to match by using the Update-MgDomain PowerShell command (previously: Set-MsolPasswordPolicy).
+The default Microsoft Entra password policy requires users to change their passwords every 90 days. If your policy in AD is also 90 days, the two policies should match. However, if the AD policy is not 90 days, you can update the Microsoft Entra password policy to match by using the Update-MgDomain PowerShell command.
 
 Microsoft Entra ID supports a separate password expiration policy per registered domain.
 
@@ -132,10 +130,10 @@ Caveat: If there are synchronized accounts that need to have non-expiring passwo
 > For hybrid users that have a PasswordPolicies value set to `DisablePasswordExpiration`, this value switches to `None` after a password change is executed on-premises.
 
 > [!NOTE]
-> Neither the Update-MgDomain, nor the deprecated Set-MsolPasswordPolicy PowerShell commands will work on federated domains. 
+> The [Update-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomain) PowerShell command doesn't work on federated domains.
 
 > [!NOTE]
-> Neither the Set-MgUser, nor the deprecated Set-AzureADUser PowerShell commands will work on federated domains. 
+> The [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser) PowerShell command doesn't work on federated domains.
 
 #### Synchronizing temporary passwords and "Force Password Change on Next Logon"
 
@@ -229,7 +227,7 @@ If your server has been locked down according to Federal Information Processing 
 1. Go to %programfiles%\Microsoft Azure AD Sync\Bin.
 2. Open miiserver.exe.config.
 3. Go to the configuration/runtime node at the end of the file.
-4. Add the following node: `<enforceFIPSPolicy enabled="false"/>`
+4. Add the following node: `<enforceFIPSPolicy enabled="false" />`
 5. Save your changes.
 6. Reboot for the changes to take effect.
 
@@ -238,7 +236,7 @@ For reference, this snippet is what it should look like:
 ```
     <configuration>
         <runtime>
-            <enforceFIPSPolicy enabled="false"/>
+            <enforceFIPSPolicy enabled="false" />
         </runtime>
     </configuration>
 ```

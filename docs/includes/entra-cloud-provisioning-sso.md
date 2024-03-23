@@ -1,8 +1,8 @@
 ---
 author: billmath
-ms.service: active-directory
-ms.subservice: cloud-provisioning
-ms.custom: has-azure-ad-ps-ref
+ms.service: entra-id
+ms.subservice: hybrid-connect
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: include
 ms.date: 10/16/2019
 ms.author: billmath
@@ -21,6 +21,8 @@ Cloud provisioning works with Single Sign-on.  Currently there is not an option 
 4. Change filepath and extractfolder to match your file path and the name of your extraction folder.  The contents should now be in the extraction folder.
 
 ### Step 2: Import the Seamless SSO PowerShell module
+
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 1. Download, and install [Azure AD PowerShell](/powershell/azure/active-directory/overview).
 2. Browse to the `Microsoft Azure Active Directory Connect` folder which should be in the extraction folder from Step 1.

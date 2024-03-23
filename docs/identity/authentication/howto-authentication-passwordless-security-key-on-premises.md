@@ -2,22 +2,19 @@
 title: Passwordless security key sign-in to on-premises resources
 description: Learn how to enable passwordless security key sign-in to on-premises resources by using Microsoft Entra ID
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/29/2023
+ms.date: 01/19/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: librown, aakapo
-
-ms.collection: M365-identity-device-management
+ms.reviewer: calui
 ---
 # Enable passwordless security key sign-in to on-premises resources by using Microsoft Entra ID 
 
-This document discusses how to enable passwordless authentication to on-premises resources for environments with both *Microsoft Entra joined* and *Microsoft Entra hybrid joined* Windows 10 devices. This passwordless authentication functionality provides seamless single sign-on (SSO) to on-premises resources when you use Microsoft-compatible security keys, or with [Windows Hello for Business Cloud trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-kerberos-trust)
+This topic shows how to enable passwordless authentication to on-premises resources for environments with devices that run Windows 10 version 2004 or later. Devices can be *Microsoft Entra joined* or *Microsoft Entra hybrid joined*. This passwordless authentication functionality provides seamless single sign-on (SSO) to on-premises resources when you use Microsoft-compatible security keys, or with [Windows Hello for Business Cloud trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-kerberos-trust).
 
 ## Use SSO to sign in to on-premises resources by using FIDO2 keys
 
@@ -45,15 +42,22 @@ You must also meet the following system requirements:
 - Devices must be running Windows 10 version 2004 or later.
 
 - Your Windows Server domain controllers must run Windows Server 2016 or later and have patches installed for the following servers:
-    - [Windows Server 2016](https://support.microsoft.com/help/4534307/windows-10-update-kb4534307)
-    - [Windows Server 2019](https://support.microsoft.com/help/4534321/windows-10-update-kb4534321)
+   - [Windows Server 2016](https://support.microsoft.com/help/4534307/windows-10-update-kb4534307)
+   - [Windows Server 2019](https://support.microsoft.com/help/4534321/windows-10-update-kb4534321)
 
 - AES256_HMAC_SHA1 must be enabled when **Network security: Configure encryption types allowed for Kerberos** policy is [configured](/windows/security/threat-protection/security-policy-settings/network-security-configure-encryption-types-allowed-for-kerberos) on domain controllers.
 
 - Have the credentials required to complete the steps in the scenario:
-    - An Active Directory user who is a member of the Domain Admins group for a domain and a member of the Enterprise Admins group for a forest. Referred to as **$domainCred**.
-    - A Microsoft Entra user who is a member of the Global Administrators role. Referred to as **$cloudCred**.
- 
+   - An Active Directory user who is a member of the Domain Admins group for a domain and a member of the Enterprise Admins group for a forest. Referred to as **$domainCred**.
+   - A Microsoft Entra user who is a member of the Global Administrators role. Referred to as **$cloudCred**.
+
+- Users must have the following Entra ID attributes populated through Microsoft Entra Connect:
+   - onPremisesSamAccountName (accountName in Entra Connect)
+   - onPremisesDomainName (domainFQDN in Entra Connect)
+   - onPremisesSecurityIdentifier (objectSID in Entra Connect)
+
+  Entra Connect synchronizes these attributes by default. If you change which attributes to synchronize, make you select accountName, domainFQDN, and objectSID for synchronization.
+
 ### Supported scenarios
 
 The scenario in this article supports SSO in both of the following instances:
@@ -101,6 +105,27 @@ Run the following steps in each domain and forest in your organization that cont
 
 1. Open a PowerShell prompt using the Run as administrator option.
 1. Run the following PowerShell commands to create a new Microsoft Entra Kerberos server object both in your on-premises Active Directory domain and in your Microsoft Entra tenant.
+
+### Select Azure Cloud (Default is Azure Commercial)
+
+By default the `Set-AzureADKerberosSever` cmdlet will utlize the Commercial cloud endpoints. If you are configuring Kerberos in another cloud environment you will need to set the cmdlet to use the specified cloud.  
+
+To get a **list** of the available clouds and the numeric value needed to change, run the following:  
+`Get-AzureADKerberosServerEndpoint`  
+
+Example Output:
+```Console
+Current Endpoint = 0(Public)
+Supported Endpoints:
+   0 :Public
+   1 :China
+   2 :Us Government
+```
+Note the **numeric value** next to your desired cloud environment.
+
+To then **set** the desired cloud environment, run the following:  
+_(Example: For US Government Cloud)_  
+`Set-AzureADKerberosServerEndpoint -TargetEndpoint 2`
 
 ### Example 1 prompt for all credentials
 
@@ -246,6 +271,7 @@ Follow the instructions in [Create a Kerberos Server object](#create-a-kerberos-
 ## Known behavior
 
 If your password has expired, signing in with FIDO is blocked. The expectation is that users reset their passwords before they can log in by using FIDO.
+This is applicable for hybrid on-prem synced user sign-in with WHFB Cloud kerberos trust as well.
 
 ## Troubleshooting and feedback
 

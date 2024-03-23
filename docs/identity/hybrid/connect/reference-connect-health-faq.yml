@@ -1,21 +1,18 @@
 ### YamlMime:FAQ
 metadata:
   title: Microsoft Entra Connect Health FAQ - Azure
-  description: This FAQ answers questions about Microsoft Entra Connect Health. This FAQ covers questions about using the service, including the billing model, capabilities, limitations, and support.
-  services: active-directory
-  documentationcenter: ''
+  description: This FAQ answers questions about Microsoft Entra Connect Health. This FAQ covers questions about using the service, including the billing model, capabilities, limitations, and support.  
   author: billmath
   manager: amycolannino
   ms.assetid: f1b851aa-54d7-4cb4-8f5c-60680e2ce866
-  ms.service: active-directory
-  ms.subservice: hybrid
-  ms.workload: identity
+  ms.service: entra-id
+  ms.subservice: hybrid-connect
   ms.tgt_pltfrm: na
   ms.custom: has-azure-ad-ps-ref
   ms.topic: faq
   ms.date: 02/08/2023
   ms.author: billmath
-  ms.collection: M365-identity-device-management
+  
 title: Microsoft Entra Connect Health frequently asked questions
 summary: This article includes answers to frequently asked questions (FAQs) about Microsoft Entra Connect Health. These FAQs cover questions about how to use the service, which includes the billing model, capabilities, limitations, and support.
 

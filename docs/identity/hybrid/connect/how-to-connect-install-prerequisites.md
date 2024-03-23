@@ -1,24 +1,21 @@
 ---
 title: 'Microsoft Entra Connect: Prerequisites and hardware'
 description: This article describes the prerequisites and the hardware requirements for Microsoft Entra Connect.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
 ms.assetid: 91b88fda-bca6-49a8-898f-8d906a661f07
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.custom:
   - has-azure-ad-ps-ref
   - azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Prerequisites for Microsoft Entra Connect
 This article describes the prerequisites and the hardware requirements for Microsoft Entra Connect.
@@ -88,7 +85,7 @@ We recommend that you harden your Microsoft Entra Connect server to decrease the
 - Restrict administrative access to the Microsoft Entra Connect server to only domain administrators or other tightly controlled security groups.
 - Create a [dedicated account for all personnel with privileged access](/windows-server/identity/securing-privileged-access/securing-privileged-access). Administrators shouldn't be browsing the web, checking their email, and doing day-to-day productivity tasks with highly privileged accounts.
 - Follow the guidance provided in [Securing privileged access](/security/privileged-access-workstations/overview). 
-- Deny use of NTLM authentication with the AADConnect server. Here are some ways to do this: [Restricting NTLM on the AADConnect Server](/windows/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-outgoing-ntlm-traffic-to-remote-servers) and [Restricting NTLM on a domain](/windows/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-ntlm-authentication-in-this-domain)
+- Deny use of NTLM authentication with the Microsoft Entra Connect server. Here are some ways to do this: [Restricting NTLM on the Microsoft Entra Connect Server](/windows/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-outgoing-ntlm-traffic-to-remote-servers) and [Restricting NTLM on a domain](/windows/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-ntlm-authentication-in-this-domain)
 - Ensure every machine has a unique local administrator password. For more information, see [Local Administrator Password Solution (Windows LAPS)](/windows-server/identity/laps/laps-overview) can configure unique random passwords on each workstation and server store them in Active Directory protected by an ACL. Only eligible authorized users can read or request the reset of these local administrator account passwords. Additional guidance for operating an environment with Windows LAPS and privileged access workstations (PAWs) can be found in [Operational standards based on clean source principle](/security/privileged-access-workstations/privileged-access-access-model#operational-standards-based-on-clean-source-principle). 
 - Implement dedicated [privileged access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/) for all personnel with privileged access to your organization's information systems. 
 - Follow these [additional guidelines](/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface) to reduce the attack surface of your Active Directory environment.
@@ -104,7 +101,7 @@ We recommend that you harden your Microsoft Entra Connect server to decrease the
 * If you use a different installation of SQL Server, these requirements apply:
   * Microsoft Entra Connect support all mainstream supported SQL Server versions up to SQL Server 2022 running on Windows. Please refer to the [SQL Server lifecycle article](/lifecycle/products/?products=sql-server) to verify the support status of your SQL Server version. SQL Server 2012 is no longer supported. Azure SQL Database *isn't supported* as a database.  This includes both Azure SQL Database and Azure SQL Managed Instance.
   * You must use a case-insensitive SQL collation. These collations are identified with a \_CI_ in their name. Using a case-sensitive collation identified by \_CS_ in their name *isn't supported*.
-  * You can have only one sync engine per SQL instance. Sharing a SQL instance with FIM/MIM Sync, DirSync, or Azure AD Sync *isn't supported*.
+  * You can have only one sync engine per SQL instance. Sharing a SQL instance with MIM Sync, DirSync, or Azure AD Sync *isn't supported*.
 
 ### Accounts
 * You must have a Microsoft Entra Global Administrator account or Hybrid Identity Administrator account for the Microsoft Entra tenant you want to integrate with. This account must be a *school or organization account* and can't be a *Microsoft account*.

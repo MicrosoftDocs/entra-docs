@@ -2,18 +2,15 @@
 title: Plan a passwordless authentication deployment in Microsoft Entra ID
 description: Directions for deploying passwordless authentication
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 01/29/2023
-
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
 ms.reviewer: dawoo
-
-ms.collection: M365-identity-device-management
 ---
 
 # Plan a passwordless authentication deployment in Microsoft Entra ID
@@ -330,7 +327,7 @@ Though passwordless authentication is a lightweight feature with minimal impact 
 
 Rolling back requires the administrator to sign in to the [Microsoft Entra admin center](https://entra.microsoft.com), select the desired strong authentication methods, and change the enable option to No. This process turns off the passwordless functionality for all users.
 
-![Passwordless rollback](media/howto-authentication-passwordless-deployment/passwordless-rollback.png)
+:::image type="content" source="media/howto-authentication-passwordless-deployment/passwordless-rollback.png" alt-text="Screenshot of the Polices page in the Microsoft Entra admin center." lightbox="media/howto-authentication-passwordless-deployment/passwordless-rollback.png":::
 
 Users who have already registered FIDO2 security devices are prompted to use the security device at their next sign-in, and then see the following error:
 
@@ -372,7 +369,7 @@ The **Registration** tab shows the number of users capable of passwordless authe
 
 The **Usage** tab shows the sign-ins by authentication method.
 
-![Usage tab to view auth methods](media/howto-authentication-passwordless-deployment/monitoring-usage-tab.png)
+:::image type="content" source="media/howto-authentication-passwordless-deployment/monitoring-usage-tab.png" alt-text="Screenshot of the Activity page to view auth methods." lightbox="media/howto-authentication-passwordless-deployment/monitoring-usage-tab.png":::
 
 For more information, see [track registered authentication methods and usage across the Microsoft Entra organization](howto-authentication-methods-activity.md).
 

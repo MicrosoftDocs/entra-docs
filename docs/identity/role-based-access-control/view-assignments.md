@@ -1,18 +1,17 @@
 ---
 title: List Microsoft Entra role assignments
 description: You can now see and manage members of a Microsoft Entra administrator role in the Microsoft Entra admin center.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 04/15/2022
 ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref
-ms.collection: M365-identity-device-management
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+
 ---
 # List Microsoft Entra role assignments
 
@@ -23,7 +22,7 @@ This article describes how to list roles you have assigned in Microsoft Entra ID
 
 ## Prerequisites
 
-- Azure AD PowerShell module when using PowerShell
+- Microsoft Graph PowerShell module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).

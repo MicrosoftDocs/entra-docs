@@ -3,9 +3,9 @@ title: Download workflow history reports (Preview)
 description: This article guides a user on downloading the history of a Lifecycle workflow.
 author: owinfreyATL
 ms.author: owinfrey
-ms.service: active-directory
-ms.workload: identity
-ms.topic: how-to 
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
+ms.topic: how-to
 ms.date: 11/17/2023
 
 #CustomerIntent: As an admin, I want to download history reports as a CSV.
@@ -19,7 +19,7 @@ Lifecycle Workflow's history feature allows you to view details about the action
 
 To download the history report of a workflow using the Microsoft Entra admin center, you'd follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
 1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
 

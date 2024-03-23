@@ -3,14 +3,16 @@ title: Secure hybrid access with F5
 description: F5 BIG-IP Access Policy Manager and Microsoft Entra integration for Secure Hybrid Access
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 12/13/2022
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT administrator responsible for secure remote access to on-premises applications, I want to integrate F5 BIG-IP with Microsoft Entra ID for secure hybrid access, so that I can improve remote access and strengthen the security posture of legacy services.
 ---
 
 # Integrate F5 BIG-IP with Microsoft Entra ID
