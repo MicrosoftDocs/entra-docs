@@ -10,7 +10,7 @@ metadata:
   ms.topic: hub-page
   author: CelesteDG
   ms.author: celested
-  ms.date: 03/23/24
+  ms.date: 03/23/2024
 
 productDirectory:
   title: Get started
@@ -130,6 +130,6 @@ additionalContent:
         - title: "Introducing Security Service Edge (SSE)"
           summary: "Read the blog on expanded capabilities for securing access with Microsoft Entra."
           url: https://aka.ms/EntraMomentSecurityblog
-        - title: "Microsoft security documentation"
+        - title: "Microsoft Security documentation"
           summary: "Technical guidance to help security professionals build and implement cybersecurity strategy, architecture, and prioritized roadmaps."
           url: /security/
