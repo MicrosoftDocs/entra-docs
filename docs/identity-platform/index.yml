@@ -79,7 +79,7 @@ productDirectory:
           url: index-desktop.yml
           #url: desktop-app-quickstart.md
           imageSrc: ./media/hub/app-type-desktop.svg
-          summary: apps with a user interface (UI) whose code runs on a user's desktop, laptop, or notebook computer.
+          summary: Apps with a user interface (UI) whose code runs on a user's desktop, laptop, or notebook computer.
         - title: Mobile app
           url: index-mobile.yml
           #url: mobile-app-quickstart.md
