@@ -62,7 +62,7 @@ conceptualContent:
         - text: What is Microsoft Entra ID?
           url: /entra/fundamentals/whatis
           itemType: overview
-        - text: Access the portal and create a tenant
+        - text: Access the admin center and create a tenant
           url: /entra/fundamentals/create-new-tenant
           itemType: quickstart
         - text: Create a group and add members 
