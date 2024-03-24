@@ -90,4 +90,4 @@ After you associate a subscription with a different directory, you might need to
 
 - To learn more about how Microsoft Azure controls resource access, see [Azure roles, Microsoft Entra roles, and classic subscription administrator roles](/azure/role-based-access-control/rbac-and-directory-admin-roles).
 
-- To learn more about how to assign roles in Microsoft Entra ID, see [Assign administrator and non-administrator roles to users with Microsoft Entra ID](./how-subscriptions-associated-directory.md).
+- To learn more about how to assign roles in Microsoft Entra ID, see [Assign administrator and non-administrator roles to users with Microsoft Entra ID](./how-subscriptions-associated-directory.yml).

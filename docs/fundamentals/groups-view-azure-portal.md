@@ -130,4 +130,4 @@ The group you just created is used in other articles in this documentation. If y
 Advance to the next article to learn how to associate a subscription to your directory.
 
 > [!div class="nextstepaction"]
-> [Associate an Azure subscription](./how-subscriptions-associated-directory.md)
+> [Associate an Azure subscription](./how-subscriptions-associated-directory.yml)
