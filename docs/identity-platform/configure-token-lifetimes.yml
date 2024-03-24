@@ -23,7 +23,6 @@ introduction:
 
 prerequisites:
   summary: |
-    ## Get started
     To get started, download the latest [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
 procedureSection:
@@ -110,17 +109,26 @@ procedureSection:
   - title: |
       View existing policies in a tenant
     summary: |
-      To see all policies that have been created in your organization, run the [Get-MgPolicyTokenLifetimePolicy](/powershell/module/microsoft.graph.identity.signins/get-mgpolicytokenlifetimepolicy) cmdlet.  Any results with defined property values that differ from the defaults listed above are in scope of the retirement.
+      To see all policies that have been created in your organization, run the
+      [Get-MgPolicyTokenLifetimePolicy](/powershell/module/microsoft.graph.identity.signins/get-mgpolicytokenlifetimepolicy)
+      cmdlet. Any results with defined property values that differ from the
+      defaults listed above are in scope of the retirement.
+    steps:
+      - |
+        Run the `Get-MgPolicyTokenLifetimePolicy` to see all policies that have
+        been created in your organization.
 
-      ```powershell
-      Get-MgPolicyTokenLifetimePolicy
-      ```
+        ```powershell
+        Get-MgPolicyTokenLifetimePolicy
+        ```
 
-      To see which apps are linked to a specific policy that you identified, run [List appliesTo](/graph/api/tokenlifetimepolicy-list-appliesto) with any of your policy IDs. 
-    code: |
-      ```powershell
-      GET https://graph.microsoft.com/v1.0/policies/tokenLifetimePolicies/4d2f137b-e8a9-46da-a5c3-cc85b2b840a4/appliesTo
-      ```
+      - |
+          Run [List appliesTo](/graph/api/tokenlifetimepolicy-list-appliesto)
+          with any of your policy IDs to see which apps are linked to a specific policy that you identified.
+
+        ```powershell
+        GET https://graph.microsoft.com/v1.0/policies/tokenLifetimePolicies/4d2f137b-e8a9-46da-a5c3-cc85b2b840a4/appliesTo
+        ```
 nextStep:
   text: Learn about authentication session management
   url: ~/identity/conditional-access/howto-conditional-access-session-lifetime.md 
