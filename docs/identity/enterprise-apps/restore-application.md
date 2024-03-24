@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 02/21/2024
+ms.date: 03/19/2024
 ms.author: jomondi
 ms.reviewer: sureshja
 ms.custom: enterprise-apps, has-azure-ad-ps-ref
@@ -21,8 +21,9 @@ zone_pivot_groups: enterprise-apps-minus-portal
 
 In this article, you learn how to restore a soft deleted enterprise application in your Microsoft Entra tenant. Soft deleted enterprise applications can be restored from the recycle bin within the first 30 days after their deletion. After the 30-day window, the enterprise application is permanently deleted and can't be restored.
 
->[!IMPORTANT]
->If you deleted an [application registration](~/identity-platform/howto-remove-app.md) in its home tenant through app registrations in the Microsoft Entra admin center, the enterprise application, which is its corresponding service principal also got deleted. If you restore the deleted application registration through the Microsoft Entra admin center, its corresponding service principal, is also restored. You'll therefore be able to recover the service principal's previous configurations, except its previous policies such as Conditional Access policies, which aren't restored.
+If you deleted an [application registration](~/identity-platform/howto-remove-app.md) in its home tenant through app registrations in the Microsoft Entra admin center, the enterprise application, which is its corresponding service principal also got deleted. 
+
+If you restore the deleted application registration through the Microsoft Entra admin center, its corresponding service principal, is also restored. You'll therefore be able to recover the service principal's previous configurations, except its previous policies such as Conditional Access policies, which aren't restored.
 
 ## Prerequisites
 
@@ -38,8 +39,7 @@ Take the following steps to recover a recently deleted enterprise application. F
 
 ## View restorable enterprise applications using Azure AD PowerShell
 
-> [!IMPORTANT]
-> Make sure you're using the Azure AD PowerShell module. This is important if you've installed both the [Azure AD PowerShell](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0) module and the AzureADPreview module. 
+Make sure you're using the Azure AD PowerShell module. This is important if you've installed both the [Azure AD PowerShell](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0) module and the AzureADPreview module. 
 
 You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
@@ -123,7 +123,7 @@ Replace ID with the object ID of the service principal that you want to restore.
 1. To restore the enterprise application, run the following command:
 
    ```powershell
-   Restore-MgDirectoryObject -DirectoryObjectId <id>
+   Restore-MgDirectoryDeletedItem -DirectoryObjectId <id>
    ```
 
 Replace ID with the object ID of the service principal that you want to restore.
@@ -144,8 +144,7 @@ Replace ID with the object ID of the service principal that you want to restore.
 
 :::zone-end
 
->[!NOTE]
-> Soft-deleted managed identity service principals can be viewed but can't be recovered or permanently deleted by customers.
+Soft-deleted managed identity service principals can be viewed but can't be recovered or permanently deleted by customers.
 
 >[!WARNING]
 > Permanently deleting an enterprise application is an irreversible action. Any present configurations on the app will be completely lost. Carefully review the details of the enterprise application to be sure you still want to hard delete it.

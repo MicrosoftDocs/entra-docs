@@ -16,7 +16,7 @@ ms.reviewer: dawoo
 
 The new authentication methods activity dashboard enables admins to monitor authentication method registration and usage across their organization. This reporting capability provides your organization with the means to understand what methods are being registered and how they're being used.
 
-[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-dsr-and-stp-note.md)]
+[!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-dsr-and-stp-note.md)]
 
 ## Permissions and licenses
 

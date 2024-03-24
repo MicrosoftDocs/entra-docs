@@ -1,6 +1,6 @@
 ---
 title: Manage guest access with access reviews
-description: Manage guest users as members of a group or assigned to an application with Microsoft Entra access reviews
+description: Manage guest users as members of a group or assigned to an application with Microsoft Entra access reviews.
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
@@ -15,12 +15,12 @@ ms.reviewer: mwahl
 # Manage guest access with access reviews
 
 
-With access reviews, you can easily enable collaboration across organizational boundaries by using the [Microsoft Entra B2B feature](~/external-id/what-is-b2b.md). Guest users from other tenants can be [invited by administrators](~/external-id/add-users-administrator.md) or by [other users](~/external-id/what-is-b2b.md). This capability also applies to social identities such as Microsoft accounts.
+With access reviews, you can easily enable collaboration across organizational boundaries by using the [Microsoft Entra B2B feature](../external-id/what-is-b2b.md). Guest users from other tenants can be [invited by administrators](../external-id/add-users-administrator.yml) or by [other users](../external-id/what-is-b2b.md). This capability also applies to social identities such as Microsoft accounts.
 
 You also can easily ensure that guest users have appropriate access. You can ask the guests themselves or a decision maker to participate in an access review and re-certify (or attest) to the guests' access. The reviewers can give their input on each user's need for continued access, based on suggestions from Microsoft Entra ID. When an access review is finished, you can then make changes and remove access for guests who no longer need it.
 
 > [!NOTE]
-> This document focuses on reviewing guest users' access. If you want to review all users' access, not just guests, see [Manage user access with access reviews](manage-user-access-with-access-reviews.md). If you want to review users' membership in administrative roles, such as global administrator, see [Start an access review in Microsoft Entra Privileged Identity Management](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md).
+> This document focuses on reviewing guest users' access. If you want to review all users' access, not just guests, see [Manage user access with access reviews](manage-user-access-with-access-reviews.md). If you want to review users' membership in administrative roles, such as global administrator, see [Start an access review in Microsoft Entra Privileged Identity Management](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md).
 
 ## Prerequisites
 

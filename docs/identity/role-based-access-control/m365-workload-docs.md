@@ -42,5 +42,5 @@ All products in Microsoft 365 can be managed with administrative roles in Micros
 
 ## Next steps
 
-* [How to assign or remove Microsoft Entra administrator roles](manage-roles-portal.md)
+* [How to assign or remove Microsoft Entra administrator roles](manage-roles-portal.yml)
 * [Microsoft Entra built-in roles](permissions-reference.md)

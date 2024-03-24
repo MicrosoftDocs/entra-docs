@@ -5,8 +5,8 @@ description: Describes the Microsoft Entra B2B collaboration invitation redempti
 
  
 ms.service: entra-external-id
-ms.topic: conceptual
-ms.date: 02/28/2024
+ms.topic: concept-article
+ms.date: 03/21/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
@@ -77,7 +77,7 @@ To unblock users who can't redeem an invitation due to a conflicting [Contact ob
 
 ## Invitation redemption flow
 
-When a user selects the **Accept invitation** link in an [invitation email](invitation-email-elements.md), Microsoft Entra ID automatically redeems the invitation based on the redemption flow as shown below:
+When a user selects the **Accept invitation** link in an [invitation email](invitation-email-elements.md), Microsoft Entra ID automatically redeems the invitation based on the default redemption order shown below:
 
 :::image type="content" source="media/redemption-experience/invitation-redemption.png" alt-text="Screenshot showing the redemption flow diagram." lightbox="media/redemption-experience/invitation-redemption.png":::
 
@@ -97,6 +97,10 @@ When a user selects the **Accept invitation** link in an [invitation email](invi
 
 8. After authenticating to the right identity provider, the user is redirected to Microsoft Entra ID to complete the [consent experience](#consent-experience-for-the-guest).  
 
+## Configurable redemption (Preview)
+
+[Configurable redemption](cross-tenant-access-overview.md#configurable-redemption-preview) lets you customize the order of identity providers presented to guests when they redeem your invitations. When a guest selects the **Accept invitation** link, Microsoft Entra ID automatically redeems the invitation based on the [default order](#invitation-redemption-flow). You can override this by changing the identity provider redemption order in your [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md#configure-redemption-order-preview).
+
 ## Consent experience for the guest
 
 When a guest signs in to a resource in a partner organization for the first time, they're presented with the following consent experience. These consent pages are shown to the guest only after sign-in, and they aren't displayed at all if the user has already accepted them.
@@ -106,7 +110,7 @@ When a guest signs in to a resource in a partner organization for the first time
    :::image type="content" source="media/redemption-experience/new-review-permissions.png" alt-text="Screenshot showing the Review permissions page.":::
 
    > [!NOTE]
-   > For information about how you as a tenant administrator can link to your organization's privacy statement, see [How-to: Add your organization's privacy info in Microsoft Entra ID](~/fundamentals/properties-area.md).
+   > For information about how you as a tenant administrator can link to your organization's privacy statement, see [How-to: Add your organization's privacy info in Microsoft Entra ID](~/fundamentals/properties-area.yml).
 
 2. If terms of use are configured, the guest opens and reviews the terms of use, and then selects **Accept**. 
 

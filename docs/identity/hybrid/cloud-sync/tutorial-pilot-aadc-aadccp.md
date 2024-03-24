@@ -145,7 +145,7 @@ Same steps need to be followed for all object types (user, group and contact).
 
 <a name='install-the-azure-ad-connect-provisioning-agent'></a>
 
-## Install the Microsoft Entra Provisioning Agent
+## Install the Microsoft Entra provisioning agent
 
 If you're using the  [Basic AD and Azure environment](tutorial-basic-ad-azure.md) tutorial, it would be CP1. To install the agent, follow these steps: 
 

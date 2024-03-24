@@ -8,8 +8,9 @@ ms.assetid: d4bc5583-6537-4cd9-bc4b-7712fdd9272a
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: sample
-ms.date: 09/21/2023
+ms.date: 03/13/2024
 ms.author: justinha
+ms.reviewer: wanjikumugo
 ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
@@ -19,7 +20,7 @@ Microsoft Entra Domain Services provides managed domain services such as domain 
 
 This article shows you how to enable Domain Services using PowerShell.
 
-[!INCLUDE [updated-for-az.md](~/../azure-docs-pr/includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az.md](~/includes/azure-docs-pr/updated-for-az.md)]
 
 ## Prerequisites
 
@@ -56,30 +57,30 @@ Create a Microsoft Entra service principal using the [New-MgServicePrincipal][Ne
 New-MgServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
 ```
 
-Now create a Microsoft Entra group named *ME-ID DC Administrators*. Users added to this group are then granted permissions to perform administration tasks on the managed domain.
+Now create a Microsoft Entra group named *AAD DC Administrators*. Users added to this group are then granted permissions to perform administration tasks on the managed domain.
 
-First, get the *ME-ID DC Administrators* group object ID using the [Get-MgGroup][Get-MgGroup] cmdlet. If the group doesn't exist, create it with the *ME-ID DC Administrators* group using the [New-MgGroup][New-MgGroup] cmdlet:
+First, get the *AAD DC Administrators* group object ID using the [Get-MgGroup][Get-MgGroup] cmdlet. If the group doesn't exist, create it with the *AAD DC Administrators* group using the [New-MgGroup][New-MgGroup] cmdlet:
 
 ```powershell
-# First, retrieve the object ID of the 'ME-ID DC Administrators' group.
+# First, retrieve the object ID of the 'AAD DC Administrators' group.
 $GroupObject = Get-MgGroup `
-  -Filter "DisplayName eq 'ME-ID DC Administrators'"
+  -Filter "DisplayName eq 'AAD DC Administrators'"
 
 # If the group doesn't exist, create it
 if (!$GroupObject) {
-  $GroupObject = New-MgGroup -DisplayName "ME-ID DC Administrators" `
+  $GroupObject = New-MgGroup -DisplayName "AAD DC Administrators" `
     -Description "Delegated group to administer Microsoft Entra Domain Services" `
     -SecurityEnabled:$true `
     -MailEnabled:$false `
-    -MailNickName "ME-IDDCAdministrators"
+    -MailNickName "AADDCAdministrators"
   } else {
   Write-Output "Admin group already exists."
 }
 ```
 
-With the *ME-ID DC Administrators* group created, get the desired user's object ID using the [Get-MgUser][Get-MgUser] cmdlet, then add the user to the group using the [New-MgGroupMember][New-MgGroupMember] cmdlet.
+With the *AAD DC Administrators* group created, get the desired user's object ID using the [Get-MgUser][Get-MgUser] cmdlet, then add the user to the group using the [New-MgGroupMember][New-MgGroupMember] cmdlet.
 
-In the following example, the user object ID for the account with a UPN of `admin@contoso.onmicrosoft.com`. Replace this user account with the UPN of the user you wish to add to the *ME-ID DC Administrators* group:
+In the following example, the user object ID for the account with a UPN of `admin@contoso.onmicrosoft.com`. Replace this user account with the UPN of the user you wish to add to the *AAD DC Administrators* group:
 
 ```powershell
 # Retrieve the object ID of the user you'd like to add to the group.
@@ -87,7 +88,7 @@ $UserObjectId = Get-MgUser `
   -Filter "UserPrincipalName eq 'admin@contoso.onmicrosoft.com'" | `
   Select-Object Id
 
-# Add the user to the 'ME-ID DC Administrators' group.
+# Add the user to the 'AAD DC Administrators' group.
 New-MgGroupMember -GroupId $GroupObject.Id -DirectoryObjectId $UserObjectId.Id
 ```
 
@@ -145,7 +146,7 @@ Domain Services needs a network security group to secure the ports needed for th
 The following PowerShell cmdlets use [New-AzNetworkSecurityRuleConfig][New-AzNetworkSecurityRuleConfig] to create the rules, then [New-AzNetworkSecurityGroup][New-AzNetworkSecurityGroup] to create the network security group. The network security group and rules are then associated with the virtual network subnet using the [Set-AzVirtualNetworkSubnetConfig][Set-AzVirtualNetworkSubnetConfig] cmdlet.
 
 ```azurepowershell-interactive
-$NSGName = "me-iddsNSG"
+$NSGName = "dsNSG"
 
 # Create a rule to allow inbound TCP port 3389 traffic from Microsoft secure access workstations for troubleshooting
 $nsg201 = New-AzNetworkSecurityRuleConfig -Name AllowRD `
@@ -190,7 +191,7 @@ $vnet | Set-AzVirtualNetwork
 
 ## Create a managed domain
 
-Now let's create a managed domain. Set your Azure subscription ID, and then provide a name for the managed domain, such as *me-iddscontoso.com*. You can get your subscription ID using the [Get-AzSubscription][Get-AzSubscription] cmdlet.
+Now let's create a managed domain. Set your Azure subscription ID, and then provide a name for the managed domain, such as *dscontoso.com*. You can get your subscription ID using the [Get-AzSubscription][Get-AzSubscription] cmdlet.
 
 If you choose a region that supports Availability Zones, the Domain Services resources are distributed across zones for redundancy.
 
@@ -200,7 +201,7 @@ There's nothing for you to configure for Domain Services to be distributed acros
 
 ```azurepowershell-interactive
 $AzureSubscriptionId = "YOUR_AZURE_SUBSCRIPTION_ID"
-$ManagedDomainName = "me-iddscontoso.com"
+$ManagedDomainName = "dscontoso.com"
 
 # Enable Microsoft Entra Domain Services for the directory.
 $replicaSetParams = @{
@@ -240,7 +241,7 @@ $ResourceGroupName = "myResourceGroup"
 $VnetName = "myVnet"
 $AzureLocation = "westus"
 $AzureSubscriptionId = "YOUR_AZURE_SUBSCRIPTION_ID"
-$ManagedDomainName = "me-iddscontoso.com"
+$ManagedDomainName = "dscontoso.com"
 
 # Connect to your Microsoft Entra directory.
 Connect-MgGraph -Scopes "Application.ReadWrite.All","Directory.ReadWrite.All"
@@ -251,17 +252,17 @@ Connect-AzAccount
 # Create the service principal for Microsoft Entra Domain Services.
 New-MgServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
 
-# First, retrieve the object of the 'ME-ID DC Administrators' group.
+# First, retrieve the object of the 'AAD DC Administrators' group.
 $GroupObject = Get-MgGroup `
-  -Filter "DisplayName eq 'ME-ID DC Administrators'"
+  -Filter "DisplayName eq 'AAD DC Administrators'"
 
 # Create the delegated administration group for Microsoft Entra Domain Services if it doesn't already exist.
 if (!$GroupObject) {
-  $GroupObject = New-MgGroup -DisplayName "ME-ID DC Administrators" `
+  $GroupObject = New-MgGroup -DisplayName "AAD DC Administrators" `
     -Description "Delegated group to administer Microsoft Entra Domain Services" `
     -SecurityEnabled:$true `
     -MailEnabled:$false `
-    -MailNickName "ME-IDDCAdministrators"
+    -MailNickName "AADDCAdministrators"
   } else {
   Write-Output "Admin group already exists."
 }
@@ -271,7 +272,7 @@ $UserObjectId = Get-MgUser `
   -Filter "UserPrincipalName eq '$AaddsAdminUserUpn'" | `
   Select-Object Id
 
-# Add the user to the 'ME-ID DC Administrators' group.
+# Add the user to the 'AAD DC Administrators' group.
 New-MgGroupMember -GroupId $GroupObject.Id -DirectoryObjectId $UserObjectId.Id
 
 # Register the resource provider for Microsoft Entra Domain Services with Resource Manager.
@@ -300,7 +301,7 @@ $Vnet=New-AzVirtualNetwork `
   -AddressPrefix 10.0.0.0/16 `
   -Subnet $AaddsSubnet,$WorkloadSubnet
 
-$NSGName = "me-iddsNSG"
+$NSGName = "dsNSG"
 
 # Create a rule to allow inbound TCP port 3389 traffic from Microsoft secure access workstations for troubleshooting
 $nsg201 = New-AzNetworkSecurityRuleConfig -Name AllowRD `

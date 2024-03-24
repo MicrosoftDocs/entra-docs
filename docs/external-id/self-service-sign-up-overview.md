@@ -4,7 +4,7 @@ description: Learn how to allow external users to sign up for your applications 
 
  
 ms.service: entra-external-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 01/23/2024
 
 ms.author: mimart

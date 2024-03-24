@@ -38,7 +38,7 @@ For more information see [Migrate Microsoft Entra Connect Sync group writeback V
 
 ### Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance (Preview)
 
-**Scenario:**  Manage on-premises applications with Active Directory groups that are provisioned from and managed in the cloud. Microsoft Entra cloud sync allows you to fully govern application assignments in AD while taking advantage of Microsoft Entra ID Governance features to control and remediate any access related requests. 
+**Scenario:**  Manage on-premises applications with Active Directory groups that are provisioned from and managed in the cloud. Microsoft Entra Cloud Sync allows you to fully govern application assignments in AD while taking advantage of Microsoft Entra ID Governance features to control and remediate any access related requests. 
 
 For more information see [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance (Preview)](cloud-sync/govern-on-premises-groups.md)
 
