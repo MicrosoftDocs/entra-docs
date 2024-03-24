@@ -9,7 +9,7 @@ ms.date: 11/17/2023
 ms.reviewer: saeeda
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn about the Microsoft Authentication Library so I can decide if this platform meets my application development needs and requirements.
 ---
 

@@ -23,7 +23,7 @@ This post off-boarding scenario runs a scheduled workflow and accomplishes the f
 
 ## Prerequisites
 
-[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 
 ##  Before you begin
@@ -41,7 +41,7 @@ The scheduled leaver scenario can be broken down into the following:
 
 Use the following steps to create a scheduled leaver workflow that will automatically perform off-boarding tasks for employees after their last day of work with Lifecycle workflows using the Microsoft Entra admin center.
 
- 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+ 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
  2. Select **Identity Governance**.
  3. Select **Lifecycle workflows**.
  4. On the **Overview** page, select **New workflow**. 

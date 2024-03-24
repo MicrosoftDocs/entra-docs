@@ -4,8 +4,8 @@ description: Microsoft Entra B2B direct connect lets users from other Microsoft 
 
  
 ms.service: entra-external-id
-ms.topic: conceptual
-ms.date: 12/19/2023
+ms.topic: concept-article
+ms.date: 03/18/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -182,7 +182,7 @@ When B2B direct connect is enabled with an external organization, users in the e
 
 ### Inbound access
 
-We strongly recommend you add both your global privacy contact and your organization's privacy statement so your internal employees and external guests can review your policies. Follow the steps to [add your organization's privacy info](~/fundamentals/properties-area.md).  
+We strongly recommend you add both your global privacy contact and your organization's privacy statement so your internal employees and external guests can review your policies. Follow the steps to [add your organization's privacy info](~/fundamentals/properties-area.yml).  
 
 ### Restricting access to users and groups
 

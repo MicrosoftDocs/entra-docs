@@ -20,16 +20,16 @@ An object in Microsoft Entra ID is either managed in the cloud or on-premises. F
 
 You can manage some users on-premises and others in the cloud. A common scenario for this configuration is an organization with a mix of accounting workers and sales workers. The accounting workers have an on-premises AD account, but the sales workers don't, but both have an account in Microsoft Entra ID. You would manage some users on-premises and some in Microsoft Entra ID.
 
-There are some extra concerns you need to consider when you started to manage users in Microsoft Entra ID, that are also present on-premises, and later want to use Entra Connect.
+There are some extra concerns you need to consider when you started to manage users in Microsoft Entra ID, that are also present on-premises, and later want to use Microsoft Entra Connect.
 
 <a name='sync-with-existing-users-in-azure-ad'></a>
 
 ## Sync with existing users in Microsoft Entra ID
-When you start synchronizing with Microsoft Entra Connect, the Microsoft Entra ID service API checks every new incoming object and tries to find an existing object to match. There are three attributes used for this process: **userPrincipalName**, **proxyAddresses**, and **sourceAnchor**/**immutableID**. A match on **userPrincipalName** or **proxyAddresses** is known as a "**soft-match**." A match on **sourceAnchor** is known as "**hard=match**." For the **proxyAddresses** attribute only the value with **SMTP:**, that is the primary email address, is used for the evaluation.
+When you start synchronizing with Microsoft Entra Connect, the Microsoft Entra service API checks every new incoming object and tries to find an existing object to match. There are three attributes used for this process: **userPrincipalName**, **proxyAddresses**, and **sourceAnchor**/**immutableID**. A match on **userPrincipalName** or **proxyAddresses** is known as a "**soft-match**." A match on **sourceAnchor** is known as "**hard=match**." For the **proxyAddresses** attribute only the value with **SMTP:**, that is the primary email address, is used for the evaluation.
 
 The match is only evaluated for new objects coming from Connect. If you change an existing object so it matches any of these attributes, then you see an error instead.
 
-If Microsoft Entra ID finds an object where the attribute values are the same as the new incoming object from Entra Connect, then it takes over the object in Microsoft Entra ID and the previously cloud-managed object is converted to on-premises managed. All attributes in Microsoft Entra ID with a value in on-premises AD are overwritten with the respective on-premises value.
+If Microsoft Entra ID finds an object where the attribute values are the same as the new incoming object from Microsoft Entra Connect, then it takes over the object in Microsoft Entra ID and the previously cloud-managed object is converted to on-premises managed. All attributes in Microsoft Entra ID with a value in on-premises AD are overwritten with the respective on-premises value.
 
 > [!WARNING]
 > Since all attributes in Microsoft Entra ID are going to be overwritten by the on-premises value, make sure you have good data on-premises. For example, if you only have managed email address in Microsoft 365 and not kept it updated in on-premises AD DS, then you lose any values in Microsoft Entra ID / Microsoft 365 not present in AD DS.
