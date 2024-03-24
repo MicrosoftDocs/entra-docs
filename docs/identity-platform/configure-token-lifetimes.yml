@@ -123,8 +123,8 @@ procedureSection:
         ```
 
       - |
-          Run [List appliesTo](/graph/api/tokenlifetimepolicy-list-appliesto)
-          with any of your policy IDs to see which apps are linked to a specific policy that you identified.
+        Run [List appliesTo](/graph/api/tokenlifetimepolicy-list-appliesto)
+        with any of your policy IDs to see which apps are linked to a specific policy that you identified.
 
         ```powershell
         GET https://graph.microsoft.com/v1.0/policies/tokenLifetimePolicies/4d2f137b-e8a9-46da-a5c3-cc85b2b840a4/appliesTo
