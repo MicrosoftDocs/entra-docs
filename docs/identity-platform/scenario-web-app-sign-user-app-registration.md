@@ -183,9 +183,7 @@ if ($owner -eq $null)
 Write-Host "Done creating the webApp application (WebApp)"
 ```
 
-
-
-## Next steps
+## Next step
 
 # [ASP.NET Core](#tab/aspnetcore)
 
