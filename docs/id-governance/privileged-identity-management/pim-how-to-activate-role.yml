@@ -240,14 +240,13 @@ procedureSection:
           When you select Cancel, the request is canceled. To activate the role again, you have to submit a new request for activation.
 
         ![My request list with Cancel action highlighted](./media/pim-resource-roles-activate-your-roles/resources-my-requests-cancel.png)
-
-        ## Deactivate a role assignment
-
-        When a role assignment is activated, you see a **Deactivate** option in the PIM portal for the role assignment. Also, you can't deactivate a role assignment within five minutes after activation.
-
   - title: |
-      Activate PIM roles using the Azure mobile app
+      Deactivate a role assignment
     summary: |
+      When a role assignment is activated, you see a **Deactivate** option in the PIM portal for the role assignment. Also, you can't deactivate a role assignment within five minutes after activation.
+      
+      ## Activate PIM roles using the Azure mobile app
+
       PIM is now available in the Microsoft Entra ID and Azure resource roles mobile apps in both iOS and Android.
     steps:
       - |
