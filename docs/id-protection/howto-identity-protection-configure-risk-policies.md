@@ -91,7 +91,7 @@ If you have risk policies enabled in Microsoft Entra ID, you should plan to migr
    1. Set **Enforce policy** to **Disabled**
 1. Create other risk policies if needed in [Conditional Access](~/identity/conditional-access/concept-conditional-access-policy-common.md).
 
-## Next steps
+## Related content
 
 - [Enable Microsoft Entra multifactor authentication registration policy](howto-identity-protection-configure-mfa-policy.md)
 - [What is risk](concept-identity-protection-risks.md)

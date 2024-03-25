@@ -22,7 +22,7 @@ Microsoft works with researchers, law enforcement, various security teams at Mic
 
 [!INCLUDE [conditional-access-policy-user-risk](../../includes/conditional-access-policy-user-risk.md)]
 
-## Next steps
+## Related content
 
 - [Require reauthentication every time](~/identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time)
 - [Remediate risks and unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md)
