@@ -68,7 +68,7 @@ To opt out of PSSO that was enabled by mistake, admins should remove the SSO ext
 1. Initiate device sync to get the new profile installed on the device
 
 > [!IMPORTANT]
-> Note: Updating the existing SSO profile on the device WON'T help to disable PSSO after PSSO registration is completed. Only a complete removal of the SSO profile from the device will remove the PSSO state from the device.
+> **Note: Updating the existing SSO profile on the device WON'T help to disable PSSO after PSSO registration is completed.** Only a complete removal of the SSO profile from the device will remove the PSSO state from the device.
 
 Context :
 
