@@ -23,7 +23,7 @@ Microsoft’s Security Service Edge solution provides a robust set of capabiliti
 
 These capabilities are unique to Microsoft Entra Internet Access for Microsoft 365. You can use these features for Microsoft 365 and use Palo Alto Networks Security Service Edge (SSE) solution at the same time. As a result, you harness a robust set of capabilities from both platforms to elevate your SSE journey. The synergy between these platforms empowers you with enhanced security and seamless connectivity. 
 
-This document contains steps to deploy the two solutions side by side. Specifically, Microsoft Entra Internet Access for Microsoft 365 applications such as Exchange Online and SharePoint Online, and Palo Alto Networks' SSE for all other web traffic.
+This document contains steps to deploy the two solutions side by side. Specifically, Microsoft Entra Internet Access for Microsoft 365 applications such as Exchange Online and SharePoint Online, and Palo Alto Networks SSE for all other web traffic.
  
 ## Configuration overview
 
