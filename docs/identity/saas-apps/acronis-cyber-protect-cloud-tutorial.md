@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/20/2024
+ms.date: 03/25/2024
 ms.author: jeedes
 
 ---
@@ -78,11 +78,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<YOUR_DOMAIN>/api/2/saml/callback`
 
-    c. In the **Sign On URL** text box, type a URL using the following pattern:
-    `https://<YOUR_DOMAIN>/login`
+    c. In the **Logout URL** text box, type a URL using the following pattern:
+    `https://<YOUR_DOMAIN>/api/2/saml/logout`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign On URL. Contact [Acronis Cyber Protect Cloud support team](mailto:mspsupport@acronis.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Logout URL. Contact [Acronis Cyber Protect Cloud support team](mailto:mspsupport@acronis.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
