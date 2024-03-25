@@ -103,7 +103,7 @@ sections:
       - question: |
           Does Domain Services support external trust creation with an on-premises child domains?
         answer: |
-          Entra Domain Services currently only supports forest trust, and doesn't support external domain trusts.
+          Domain Services currently only supports forest trust, and doesn't support external domain trusts.
       - question: |
           Can I move a managed domain?
         answer: |
