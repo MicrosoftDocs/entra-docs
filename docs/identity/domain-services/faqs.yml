@@ -10,7 +10,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: domain-services
   ms.topic: faq
-  ms.date: 03/11/2024
+  ms.date: 03/25/2024
   ms.author: justinha
 title: Frequently asked questions (FAQs) about Microsoft Entra Domain Services
 summary: This page answers frequently asked questions about Microsoft Entra Domain Services.
@@ -100,6 +100,10 @@ sections:
         answer: |
           Yes, you can create a two-way trust. You can also create a one-way outgoing trust or one-way incoming trust to support different scenarios for users authentication and access. For more information, see [Create a forest trust](tutorial-create-forest-trust.md). 
 
+      - question: |
+          Does Entra Domain Services support external trust creation with an on-premises child domains?
+        answer: |
+          Entra Domain Services currently only supports forest trust, and doesn't support external domain trusts.
       - question: |
           Can I move a managed domain?
         answer: |
