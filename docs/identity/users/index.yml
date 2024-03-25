@@ -45,7 +45,7 @@ landingContent:
           - text: Set expiration policy for groups
             url: groups-quickstart-expiration.md
           - text: Assign licenses to users
-            url: ~/fundamentals/license-users-groups.md?context=/azure/active-directory/enterprise-users/context/ugr-context
+            url: ~/fundamentals/license-users-groups.yml?context=/azure/active-directory/enterprise-users/context/ugr-context
 
   # Card
   - title: Manage Microsoft Entra domain names

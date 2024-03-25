@@ -122,7 +122,7 @@ The following table compares the features available for user management in each 
 |---------|---------|---------|
 |**Type of accounts**| <ul><li>Internal user (employee, admin)</li><li>External guest (business guest invited via [B2B collaboration](../what-is-b2b.md)) | <ul><li>Internal user (admin)</li><li>External guest (admin invited via [B2B collaboration](../what-is-b2b.md))</li><li>[External customer](./how-to-manage-customer-accounts.md) (app user with limited privileges in the tenant)</li></ul>|
 | **Manage user profile info** | Programmatically and by [using the Microsoft Entra admin center](../../fundamentals/how-to-manage-user-profile-info.yml). |Same as workforce.|
-| **Reset a user's password** | Administrators can [reset a user's password](../../fundamentals/users-reset-password-azure-portal.md) if the password is forgotten, if the user gets locked out of a device, or if the user never received a password. |Same as workforce.|
+| **Reset a user's password** | Administrators can [reset a user's password](../../fundamentals/users-reset-password-azure-portal.yml) if the password is forgotten, if the user gets locked out of a device, or if the user never received a password. |Same as workforce.|
 |**Restore or remove a recently deleted user**|After you delete a user, the account remains in a suspended state for 30 days. During that 30-day window, the user account can be restored, along with all its properties.|Same as workforce.|
 |**Disable accounts**| Prevent the new user from being able to sign in. |Same as workforce.|
 
