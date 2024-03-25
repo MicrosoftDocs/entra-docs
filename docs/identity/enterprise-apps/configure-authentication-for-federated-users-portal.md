@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.date: 03/16/2023
 ms.author: jomondi
 ms.reviewer: ludwignick
-ms.custom: enterprise-apps, has-azure-ad-ps-ref
+ms.custom: enterprise-apps, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 zone_pivot_groups: home-realm-discovery
 #customer intent: As an IT admin configuring sign-in behavior for federated users in Microsoft Entra ID, I want to understand how to use Home Realm Discovery (HRD) policy to enable auto-acceleration sign-in and direct username/password authentication, so that I can streamline the sign-in process for specific applications and improve user experience.
@@ -65,6 +65,8 @@ We'll use Microsoft Graph to walk through a few scenarios, including:
 ::: zone pivot="powershell-hrd"
 
 In the following examples, you create, update, link, and delete HRD policies on application service principals in Microsoft Entra ID.
+
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 1. Before you begin, run the Connect command to sign in to Microsoft Entra ID with your admin account:
 

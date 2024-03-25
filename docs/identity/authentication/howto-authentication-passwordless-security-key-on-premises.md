@@ -106,6 +106,27 @@ Run the following steps in each domain and forest in your organization that cont
 1. Open a PowerShell prompt using the Run as administrator option.
 1. Run the following PowerShell commands to create a new Microsoft Entra Kerberos server object both in your on-premises Active Directory domain and in your Microsoft Entra tenant.
 
+### Select Azure Cloud (Default is Azure Commercial)
+
+By default the `Set-AzureADKerberosSever` cmdlet will utlize the Commercial cloud endpoints. If you are configuring Kerberos in another cloud environment you will need to set the cmdlet to use the specified cloud.  
+
+To get a **list** of the available clouds and the numeric value needed to change, run the following:  
+`Get-AzureADKerberosServerEndpoint`  
+
+Example Output:
+```Console
+Current Endpoint = 0(Public)
+Supported Endpoints:
+   0 :Public
+   1 :China
+   2 :Us Government
+```
+Note the **numeric value** next to your desired cloud environment.
+
+To then **set** the desired cloud environment, run the following:  
+_(Example: For US Government Cloud)_  
+`Set-AzureADKerberosServerEndpoint -TargetEndpoint 2`
+
 ### Example 1 prompt for all credentials
 
    ```powershell
