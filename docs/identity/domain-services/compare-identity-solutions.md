@@ -127,7 +127,7 @@ You can also learn more about
 [manage-dns]: manage-dns.md
 [deploy-kcd]: deploy-kcd.md
 [custom-ou]: create-ou.md
-[manage-gpos]: manage-group-policy.md
+[manage-gpos]: manage-group-policy.yml
 [tutorial-ldaps]: tutorial-configure-ldaps.md
 [tutorial-create]: tutorial-create-instance.md
 [whatis-azuread]: /azure/active-directory/fundamentals/whatis

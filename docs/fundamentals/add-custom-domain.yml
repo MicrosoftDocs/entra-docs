@@ -121,7 +121,7 @@ procedureSection:
 
 relatedContent:
   - text: How to assign roles and administrators
-    url: ./how-subscriptions-associated-directory.md
+    url: ./how-subscriptions-associated-directory.yml
   - text: How to add or delete users
     url: ./add-users.md
   - text: Managing custom domain names

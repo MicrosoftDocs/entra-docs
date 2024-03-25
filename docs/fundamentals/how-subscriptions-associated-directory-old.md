@@ -41,7 +41,7 @@ Before you can associate or add your subscription, do the following steps:
 
 - Sign in using an account that:
     - Has an [Owner](/azure/role-based-access-control/built-in-roles#owner) role assignment for the subscription. For information about how to assign the Owner role, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
-    - Exists in both the current directory and in the new directory. The current directory is associated with the subscription. You'll associate the new directory with the subscription. For more information about getting access to another directory, see [Add Microsoft Entra B2B collaboration users in the Azure portal](~/external-id/add-users-administrator.md).
+    - Exists in both the current directory and in the new directory. The current directory is associated with the subscription. You'll associate the new directory with the subscription. For more information about getting access to another directory, see [Add Microsoft Entra B2B collaboration users in the Azure portal](~/external-id/add-users-administrator.yml).
     - Make sure that you're not using an Azure Cloud Service Providers (CSP) subscription (MS-AZR-0145P, MS-AZR-0146P, MS-AZR-159P), a Microsoft Internal subscription (MS-AZR-0015P), or a Microsoft Azure for Students Starter subscription (MS-AZR-0144P).
 
 ## Associate a subscription to a directory<a name="to-associate-an-existing-subscription-to-your-azure-ad-directory"></a>
@@ -90,4 +90,4 @@ After you associate a subscription with a different directory, you might need to
 
 - To learn more about how Microsoft Azure controls resource access, see [Azure roles, Microsoft Entra roles, and classic subscription administrator roles](/azure/role-based-access-control/rbac-and-directory-admin-roles).
 
-- To learn more about how to assign roles in Microsoft Entra ID, see [Assign administrator and non-administrator roles to users with Microsoft Entra ID](./how-subscriptions-associated-directory.md).
+- To learn more about how to assign roles in Microsoft Entra ID, see [Assign administrator and non-administrator roles to users with Microsoft Entra ID](./how-subscriptions-associated-directory.yml).

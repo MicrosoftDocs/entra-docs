@@ -73,6 +73,16 @@ Will this policy apply to any application, user action, or authentication contex
 - What user actions are subject to this policy?
 - What authentication contexts will this policy be applied to?
 
+##### Filter for applications
+
+[Using filter for applications to include or exclude applications instead of individually specifying them](concept-filter-for-applications.md) helps organizations:
+
+- Easily scale and target any number of applications.
+- Easily manage applications with similar policy requirements.
+- Reduce the number of individual policies.
+- Reduce errors while editing policies: No need to add/remove applications manually from the policy. Just manage the attributes.
+- Overcome policy size constraints.
+
 #### Conditions
 
 - Which device platforms are included in or excluded from the policy?
@@ -165,7 +175,7 @@ By default, each policy created from template is created in report-only mode. We
 
 [Enable policies in report-only mode](howto-conditional-access-insights-reporting.md). Once you save a policy in report-only mode, you can see the effect on real-time sign-ins in the sign-in logs. From the sign-in logs, select an event and navigate to the **Report-only** tab to see the result of each report-only policy.
 
-You can view the aggregate affects of your Conditional Access policies in the **Insights and Reporting workbook**. To access the workbook, you need an Azure Monitor subscription and you need to [stream your sign-in logs to a log analytics workspace](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
+You can view the aggregate affects of your Conditional Access policies in the **Insights and Reporting workbook**. To access the workbook, you need an Azure Monitor subscription and you need to [stream your sign-in logs to a log analytics workspace](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 
 ### Plan for disruption
 
