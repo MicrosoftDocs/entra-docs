@@ -102,10 +102,10 @@ Follow these steps to enable Microsoft Entra SSO.
    In the **Sign-on URL** text box, type a URL using the following pattern:
     
    For a Default Domain: 
-   `https://<COMPANY_NAME>.bynder.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/acs`
+   `https://<COMPANY_NAME>.bynder.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/initialize`
     
    For a Custom Domain: 
-   `https://<SUBDOMAIN>.<DOMAIN>.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/acs`
+   `https://<SUBDOMAIN>.<DOMAIN>.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/initialize`
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section,  find **Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
