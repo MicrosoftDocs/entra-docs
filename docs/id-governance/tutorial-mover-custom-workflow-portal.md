@@ -74,5 +74,21 @@ Use the following steps to create a mover workflow for a user making a job chang
 1. On the review screen, verify the information is correct and choose if you want to enable the schedule of the workflow or not. After reviewing,  select **Create**.
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-template-review.png" alt-text="Screenshot of reviewing job change template.":::
 
+ ## Run the workflow 
+Now that the workflow is created, if you turned on the workflow schedule it will automatically run the workflow every 3 hours. Lifecycle workflows check every 3 hours for users in the associated execution condition, and executes the configured tasks for those users.  However, for the tutorial, we would like to run it immediately. To run a workflow immediately, we can use the on-demand feature.
+
+>[!NOTE]
+>Be aware that you currently cannot run a workflow on-demand if it is set to disabled.  You need to set the workflow to enabled to use the on-demand feature.
+
+To run a workflow on-demand, for users using the Microsoft Entra admin center, do the following steps:
+
+ 1. On the workflow screen, select the specific workflow you want to run.
  
+ 1. Select **Run on demand**.
+ 
+ 1. On the **select users** tab, select **add users**.
+
+ 1. Add a user.
+ 
+ 1. Select **Run workflow**.
 
