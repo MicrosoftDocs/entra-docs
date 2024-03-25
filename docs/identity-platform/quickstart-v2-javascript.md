@@ -297,4 +297,4 @@ myMSALObj.acquireTokenPopup(requestObj)
 For a more detailed step-by-step guide on building the application for this quickstart, see:
 
 > [!div class="nextstepaction"]
-> [Tutorial: Sign in users and call the Microsoft Graph API from a JavaScript single-page application (SPA)](tutorial-v2-javascript-spa.md)
+> [Tutorial: Sign in users and call Microsoft Graph](./tutorial-v2-javascript-auth-code.md)
