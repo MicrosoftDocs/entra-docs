@@ -99,7 +99,7 @@ Refresh and session token configuration are affected by the following properties
 
 Non-persistent session tokens have a Max Inactive Time of 24 hours whereas persistent session tokens have a Max Inactive Time of 90 days. Anytime the SSO session token is used within its validity period, the validity period is extended another 24 hours or 90 days. If the SSO session token isn't used within its Max Inactive Time period, it's considered expired and will no longer be accepted. Any changes to this default period should be changed using [Conditional Access](~/identity/conditional-access/howto-conditional-access-session-lifetime.md).
 
-You can use PowerShell to find the policies that will be affected by the retirement.  Use the [PowerShell cmdlets](configure-token-lifetimes.yml#get-started) to see the all policies created in your organization, or to find which apps are linked to a specific policy.
+You can use PowerShell to find the policies that will be affected by the retirement.  Use the [PowerShell cmdlets](configure-token-lifetimes.yml) to see the all policies created in your organization, or to find which apps are linked to a specific policy.
 
 ## Policy evaluation and prioritization
 You can create and then assign a token lifetime policy to a specific application and to your organization. Multiple policies might apply to a specific application. The token lifetime policy that takes effect follows these rules:
