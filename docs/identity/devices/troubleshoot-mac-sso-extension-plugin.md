@@ -67,6 +67,9 @@ To opt out of PSSO that was enabled by mistake, admins should remove the SSO ext
 1. Target the device with a new SSO profile with PSSO disabled
 1. Initiate device sync to get the new profile installed on the device
 
+> [!IMPORTANT]
+> Note: Updating the existing SSO profile on the device WON'T help to disable PSSO after PSSO registration is completed. Only a complete removal of the SSO profile from the device will remove the PSSO state from the device.
+
 Context :
 
 Users will start seeing PSSO registration notification on macOS 13+ devices  in two scenarios :
