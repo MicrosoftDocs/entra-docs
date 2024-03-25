@@ -5,7 +5,7 @@ description: Identifying risk-based Conditional Access policies
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 02/05/2024
+ms.date: 03/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -20,7 +20,7 @@ Microsoft Entra Conditional Access offers two risk conditions: **Sign-in risk** 
 
 ![Diagram that shows a conceptual risk-based Conditional Access policy.](./media/concept-identity-protection-policies/risk-based-conditional-access-diagram.png)
 
-For example, if organizations have a sign-in risk policy that requires multifactor authentication when the sign-in risk level is medium or high, their users must complete multifactor authentication when their sign-in risk is medium or high.
+You might require multifactor authentication when the sign-in risk level is medium or high, users are only prompted at that level.
 
 ![Diagram that shows a conceptual risk-based Conditional Access policy with self-remediation.](./media/concept-identity-protection-policies/risk-based-conditional-access-policy-example.png)
 
@@ -47,27 +47,27 @@ If risks are detected on a sign-in, users can perform the required access contro
 
 ID Protection analyzes signals about user accounts and calculates a risk score based on the probability that the user is compromised. If a user has risky sign-in behavior, or their credentials leak, ID Protection uses these signals to calculate the user risk level. Administrators can configure user risk-based Conditional Access policies to enforce access controls based on user risk, including requirements such as: 
 
-- Block access
+- Block access.
 - Allow access but require a secure password change.
 
 A secure password change remediates the user risk and close the risky user event to prevent unnecessary noise for administrators.
 
 ## Migrate ID Protection risk policies to Conditional Access
 
-If you have the legacy **user risk policy** or **sign-in risk policy** enabled in ID Protection (formerly Identity Protection), we invite you to [migrate them to Conditional Access](howto-identity-protection-configure-risk-policies.md#migrate-risk-policies-to-conditional-access). 
+If you have the legacy **user risk policy** or **sign-in risk policy** enabled in ID Protection (formerly Identity Protection), you should [migrate them to Conditional Access](howto-identity-protection-configure-risk-policies.md#migrate-risk-policies-to-conditional-access). 
 
 > [!WARNING]
 > The legacy risk policies configured in Microsoft Entra ID Protection will be retired on **October 1, 2026**.
 
-Configuring risk policies in Conditional Access provides benefits like:
+Configuring risk policies in Conditional Access provides benefits like the ability to:
 
 - Manage access policies in one location.
-- Report-only mode and Graph API support.
-- Enforce a sign-in frequency of every time to require reauthentication every time.
-- Granular access control by combining risk conditions with other conditions like location. 
-- Enhanced security with multiple risk-based policies targeting different user groups or risk levels. 
-- Improved diagnostics experience detailing which risk-based policy applied in sign-in Logs.
-- Supported by the backup authentication system.
+- Use report-only mode and Graph APIs.
+- Enforce sign-in frequency to require reauthentication every time.
+- Provide granular access control combining risk with other conditions like location. 
+- Enhance security with multiple risk-based policies targeting different user groups or risk levels. 
+- Improve diagnostics experience detailing which risk-based policy applied in sign-in Logs.
+- Support the backup authentication system.
 
 ## Microsoft Entra multifactor authentication registration policy
 
@@ -75,7 +75,7 @@ ID Protection can help organizations roll out Microsoft Entra multifactor authen
 
 More information about Microsoft Entra multifactor authentication can be found in the article, [How it works: Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md).
 
-## Next steps
+## Related content
 
 - [Enable Microsoft Entra multifactor authentication registration policy](howto-identity-protection-configure-mfa-policy.md)
 - [Enable sign-in and user risk policies](howto-identity-protection-configure-risk-policies.md)

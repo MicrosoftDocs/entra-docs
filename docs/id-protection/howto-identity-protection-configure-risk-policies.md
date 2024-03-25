@@ -57,61 +57,17 @@ Policies allow for excluding users such as your [emergency access or break-glass
 
 ## Enable policies
 
-Organizations can choose to deploy risk-based policies in Conditional Access using the following steps or using [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md#conditional-access-templates).
+Organizations can choose to deploy risk-based policies in Conditional Access using the following steps or use [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md#conditional-access-templates).
 
-Before organizations enable remediation policies, they should [investigate](howto-identity-protection-investigate-risk.md) and [remediate](howto-identity-protection-remediate-unblock.md) any active risks.
+Before organizations enable these policies, they should take action to [investigate](howto-identity-protection-investigate-risk.md) and [remediate](howto-identity-protection-remediate-unblock.md) any active risks.
 
 ### User risk policy in Conditional Access
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
-1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
-1. Under **Assignments**, select **Users or workload identities**.
-   1. Under **Include**, select **All users**.
-   1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
-   1. Select **Done**.
-1. Under **Cloud apps or actions** > **Include**, select **All cloud apps**.
-1. Under **Conditions** > **User risk**, set **Configure** to **Yes**. 
-   1. Under **Configure user risk levels needed for policy to be enforced**, select **High**. ([This guidance is based on Microsoft recommendations and might be different for each organization](#choosing-acceptable-risk-levels))
-   1. Select **Done**.
-1. Under **Access controls** > **Grant**.
-   1. Select **Grant access**, **Require multifactor authentication** and **Require password change**.
-   1. Select **Select**.
-1. Under **Session**.
-   1. Select **Sign-in frequency**.
-   1. Ensure **Every time** is selected.
-   1. Select **Select**.
-1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
-
-After administrators confirm the settings using [report-only mode](~/identity/conditional-access/howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-policy-user-risk](../includes/conditional-access-policy-user-risk.md)]
 
 ### Sign-in risk policy in Conditional Access
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
-1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
-1. Under **Assignments**, select **Users or workload identities**.
-   1. Under **Include**, select **All users**.
-   1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
-   1. Select **Done**.
-1. Under **Cloud apps or actions** > **Include**, select **All cloud apps**.
-1. Under **Conditions** > **Sign-in risk**, set **Configure** to **Yes**. Under **Select the sign-in risk level this policy will apply to**. ([This guidance is based on Microsoft recommendations and might be different for each organization](#choosing-acceptable-risk-levels))
-   1. Select **High** and **Medium**.
-   1. Select **Done**.
-1. Under **Access controls** > **Grant**.
-   1. Select **Grant access**, **Require multifactor authentication**.
-   1. Select **Select**.
-1. Under **Session**.
-   1. Select **Sign-in frequency**.
-   1. Ensure **Every time** is selected.
-   1. Select **Select**.
-1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
-
-After administrators confirm the settings using [report-only mode](~/identity/conditional-access/howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-policy-sign-in-risk](../includes/conditional-access-policy-sign-in-risk.md)]
 
 ## Migrate risk policies to Conditional Access
 
