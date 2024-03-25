@@ -174,6 +174,6 @@ The following settings can be managed from **User settings**.
 ## Next steps
 
 - [Add or delete users](add-users.md)
-- [Assign roles to users](how-subscriptions-associated-directory.md)
+- [Assign roles to users](how-subscriptions-associated-directory.yml)
 - [Create a basic group and add members](how-to-manage-groups.yml)
 - [View Microsoft Entra enterprise user management documentation](../identity/users/index.yml)
