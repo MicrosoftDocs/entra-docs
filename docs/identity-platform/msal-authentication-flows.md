@@ -33,14 +33,14 @@ Your application can use one or more authentication flows. Each flow uses certai
 
 | Authentication flow or action                                                      | Requires           | ID token | Access token        | Refresh token | Authorization code |
 |------------------------------------------------------------------------------------|:------------------:|:--------:|:-------------------:|:-------------:|:------------------:|
-| [Authorization code flow](v2-oauth2-auth-code-flow.md)                             |                    | [Auth flow works for ID token][y] | [Auth flow works for access token][y]            | [Auth flow works for refresh token][y]      | [Authorization code works][y]           |
-| [Client credentials](v2-oauth2-client-creds-grant-flow.md)                         |                    |          | [Auth flow works for access token][y] (app-only) |               |                    |
-| [Device code flow](v2-oauth2-device-code.md)                                       |                    | [Auth flow works for ID token][y] | [Auth flow works for access token][y]            | [Auth flow works for refresh token][y]      |                    |
-| [Implicit flow](v2-oauth2-implicit-grant-flow.md)                                  |                    | [Auth flow works for ID token][y] | [Auth flow works for access token][y]            |               |                    |
-| [On-behalf-of flow](v2-oauth2-on-behalf-of-flow.md)                                | access token       | [Auth flow works for ID token][y] | [Auth flow works for access token][y]            | [Auth flow works for refresh token][y]      |                    |
-| [Username/password](v2-oauth-ropc.md) (ROPC)                                       | username, password | [Auth flow works for ID token][y] | [Auth flow works for access token][y]            | [Auth flow works for refresh token][y]      |                    |
-| [Hybrid OIDC flow](v2-protocols-oidc.md#protocol-diagram-access-token-acquisition) |                    | [Auth flow works for ID token][y] |                     |               | [Authorization code works][y]           |
-| [Refresh token redemption](v2-oauth2-auth-code-flow.md#refresh-the-access-token)   | refresh token      | [Auth flow works for ID token][y] | [Auth flow works for access token][y]            | [Auth flow works for refresh token][y]      |                    |
+| [Authorization code flow](v2-oauth2-auth-code-flow.md)                             |                    | ![Auth flow works for ID token][y] | ![Auth flow works for access token][y]            | ![Auth flow works for refresh token][y]      | [Authorization code works][y]           |
+| [Client credentials](v2-oauth2-client-creds-grant-flow.md)                         |                    |          | ![Auth flow works for access token][y] (app-only) |               |                    |
+| [Device code flow](v2-oauth2-device-code.md)                                       |                    | ![Auth flow works for ID token][y] | ![Auth flow works for access token][y]            | ![Auth flow works for refresh token][y]      |                    |
+| [Implicit flow](v2-oauth2-implicit-grant-flow.md)                                  |                    | ![Auth flow works for ID token][y] | ![Auth flow works for access token][y]            |               |                    |
+| [On-behalf-of flow](v2-oauth2-on-behalf-of-flow.md)                                | access token       | ![Auth flow works for ID token][y] | ![Auth flow works for access token][y]            | ![Auth flow works for refresh token][y]      |                    |
+| [Username/password](v2-oauth-ropc.md) (ROPC)                                       | username, password | ![Auth flow works for ID token][y] | ![Auth flow works for access token][y]            | ![Auth flow works for refresh token][y]      |                    |
+| [Hybrid OIDC flow](v2-protocols-oidc.md#protocol-diagram-access-token-acquisition) |                    | ![Auth flow works for ID token][y] |                     |               | ![Authorization code works][y]           |
+| [Refresh token redemption](v2-oauth2-auth-code-flow.md#refresh-the-access-token)   | refresh token      | ![Auth flow works for ID token][y] | ![Auth flow works for access token][y]            | ![Auth flow works for refresh token][y]      |                    |
 
 ### Interactive and non-interactive authentication
 
