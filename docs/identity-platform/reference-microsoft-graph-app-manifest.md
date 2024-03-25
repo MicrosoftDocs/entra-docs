@@ -4,8 +4,7 @@ description: Describes the Microsoft Entra app manifest (Microsoft Graph format)
 services: active-directory
 author: rwike77
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
 ms.topic: reference
 ms.workload: identity
 ms.date: 03/25/2024
