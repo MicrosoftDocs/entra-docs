@@ -13,13 +13,13 @@ manager: celested
 #Customer intent: As a customer, I want to understand how to configure macOS Platform Single Sign-on (PSSO) for Microsoft Entra ID registered devices.
 ---
 
-# macOS Platform Single Sign-on (PSSO) overview (preview)
+# macOS Platform Single Sign-on overview (preview)
 
 macOS Platform Single Sign-on (PSSO) is a new feature powered by Microsoft’s Enterprise SSO plug-in, Platform Credentials for macOS that enables users to sign in to Mac devices using their Microsoft Entra ID credentials. This feature provides benefits for admins by simplifying the sign-in process for users and reducing the number of passwords they need to remember. It also allows users to authenticate with Microsoft Entra ID with a smart card or hardware-bound key. This feature improves the end-user experience by not having to remember two separate passwords and diminishes the need for admins to manage the local account password. 
 
 There are three different authentication methods that determine the end-user experience;
 
-* **Secure Enclave key as authentication method**: Provisions a secure enclave backed hardware-bound cryptographic key that is used for SSO across apps that use Microsoft Entra ID for authentication. The user’s local account password is not affected and is required to log on to the Mac.
+* **Platform Credential for macOS**: Provisions a secure enclave backed hardware-bound cryptographic key that is used for SSO across apps that use Microsoft Entra ID for authentication. The user’s local account password is not affected and is required to log on to the Mac.
 * **Smart card**: The user signs in to the machine using an external smart card, or smart card-compatible hard token (for example, Yubikey). Once the device is unlocked, the smart card is used with Microsoft Entra ID to grant SSO across apps that use Microsoft Entra ID for authentication.
 * **Password as authentication method**: Syncs the user’s Microsoft Entra ID password with the local account and enables SSO across apps that use Microsoft Entra ID for authentication.
 
@@ -36,8 +36,9 @@ To enable it, an administrator needs to configure PSSO through Microsoft Intune 
 
 To deploy Platform SSO for macOS, you need the meet following minimum requirements.
 
-* macOS 13 Ventura or newer (macOS 14 Sonoma for smart card authentication).
+* macOS 13 Ventura or newer (smart card authentication only valid for macOS 14 Sonoma or later).
 * [Microsoft Authenticator](https://support.microsoft.com/en-us/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc)
+* Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos) version 5.2401.2 or later installed. This version is required before users are targeted for PSSO.
 
 ## Deployment
 
