@@ -53,12 +53,12 @@ Bypass Microsoft Entra service Fully Qualified Domain Name (FQDN) and Internet P
 Create a Steering Configuration to steer all web app traffic to Netskope except Microsoft 365.
 1. Navigate to **Settings** > **Security Cloud Platform** > **Traffic Steering** > **Steering Configuration** > **New Configuration**. 
 1. Add a name, for example `MSFTSSEWebTraffic`, and assign a user group or Organizational Unit (OU).
-1. Welect **Web Traffic** for the kind of traffic to steer. Leave the configuration disabled and select **Save**. 
+1. Select **Web Traffic** for the kind of traffic to steer. Leave the configuration disabled and select **Save**. 
 1. Navigate to **Exceptions** > **New Exception** > **Destination Locations** and select the newly created configuration.  
 1. In this **Exception**, add **MSFT SSE Service** and **MSFT SSE M365** in **Destination Locations**. 
 1. Select **Bypass** and **Treat it like local IP address** options. 
 1. Next add exceptions for domains for **MSFT SSE service** and **MSFT M365**. Select **Exceptions** > **New Exception** > **Domains** and add these exceptions: `*.globalsecureaccess.microsoft.com`, `*.auth.microsoft.com`, `*.msftidentity.com`, `*.msidentity.com`, `*.onmicrosoft.com`, `*.outlook.com`, `*.protection.outlook.com`, `*.search.production.apac.trafficmanager.net`, `*.search.production.emea.trafficmanager.net`, `*.search.production.us.trafficmanager.net`, `*.sharepoint.com`, `*.sharepointonline.com`, `*.svc.ms`, `*.wns.windows.com, account.activedirectory.windowsazure.com`, `account.live.com`, `accounts.accesscontrol.windows.net`, `admin.onedrive.com`, `adminwebservice.microsoftonline.com`, `api.passwordreset.microsoftonline.com`, `autologon.microsoftazuread-sso.com`, `becws.microsoftonline.com`, `ccs.login.microsoftonline.com`, `clientconfig.microsoftonline-p.net`, `companymanager.microsoftonline.com`, `device.login.microsoftonline.com`, `g.live.com`, `graph.microsoft.com`, `graph.windows.net`, `login-us.microsoftonline.com`, `login.live.com`, `login.microsoft.com`, `login.microsoftonline-p.com`, `login.microsoftonline.com`, `login.windows.net`, `logincert.microsoftonline.com`, `loginex.microsoftonline.com`, `nexus.microsoftonline-p.com`, `officeclient.microsoft.com`, `oneclient.sfx.ms`, `outlook.office.com`, `outlook.office365.com`, `passwordreset.microsoftonline.com`, `provisioningapi.microsoftonline.com`, `spoprod-a.akamaihd.net`, `ssw.live.com`, `storage.live.com`. 
-1. Ensure that the **MSFT SSE** configuration is at the top of the list of steering configurations in your tenant.  Then enable the configuration.
+1. Ensure that the **MSFT SSE** configuration is at the top of the list of steering configurations in your tenant. Then enable the configuration.
 
 ### Install Netskope client 
 
@@ -71,13 +71,6 @@ For the most basic setup, add your email address to the Netskope Security Cloud 
 1. Right-click on **Global Secure Access Client** > **Advanced Diagnostics** > **Forwarding Profile**. Verify that only Microsoft 365 rules are applied to this client. 
 1. Navigate to **Advanced Diagnostics** > **Health Check** and ensure no checks are failing. IPV4 preferred check can be ignored. You can resolve the error by creating a registry key. For more information about the registry key and installing the client, see [Global Secure Access client for Windows (preview)](how-to-install-windows-client.md).
 1. Right-click on **Netskope Client** > **Client Configuration**. Verify steering config and traffic steering type match configurations in the earlier steps. Validate that configuration is up to date or update it.  
-
-
-
-
-
-
-
 
 ## Test traffic flow
 Microsoft’s SSE configuration: Enable Microsoft 365 traffic forwarding profile, disable Internet Access and Private Access traffic forwarding profiles.
@@ -95,9 +88,9 @@ Netskope SSE configuration: Internet Access traffic is captured. The Microsoft 3
 1. Validate traffic related to Outlook Online and SharePoint Online is missing from Netskope logs in **Skope IT** > **Events** > **Page Events**. 
 
 ## Known issues
-If the Netskope client starts up (or enabled by the user) first and Global Secure Access client second, login popup doesn’t appear for Global Secure Access client and “tunneling succeeded” health check in advanced diagnostic fails. As a workaround, disable the Netskope client, login to Global Secure Access client, and then re-enable Netskope client.
+If the Netskope client starts up (or enabled by the user) first and Global Secure Access client second, sign in popup doesn’t appear for Global Secure Access client and `tunneling succeeded` health check-in advanced diagnostic fails. As a workaround, disable the Netskope client, sign in to Global Secure Access client, and then re-enable Netskope client.
 
-After an hour or more, Global Secure Access client may disconnect and “tunneling succeeded” health check in advanced diagnostic isn’t successful. As a workaround, disable the Netskope client, login to Global Secure Access client, and then re-enable Netskope client.
+After an hour or more, Global Secure Access client might disconnect and `tunneling succeeded` health check-in advanced diagnostic isn’t successful. As a workaround, disable the Netskope client, sign in to Global Secure Access client, and then re-enable Netskope client.
 
 ## Next steps
 

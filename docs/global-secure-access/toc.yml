@@ -19,6 +19,8 @@ items:
     href: concept-palo-alto-coexistence.md
   - name: Coexistence with Zscaler
     href: concept-zscaler-coexistence.md
+  - name: Coexistence with Netskope
+    href: concept-netskope-coexistence.md
 - name: How-to guides
   expanded: true
   items:
