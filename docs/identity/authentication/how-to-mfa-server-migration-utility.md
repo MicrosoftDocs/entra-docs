@@ -275,7 +275,7 @@ Once complete, a confirmation will inform you of the tasks completed:
 As mentioned in the confirmation message, it can take several minutes for the migrated data to appear on user objects within Microsoft Entra ID. Users can view their migrated methods by navigating to [aka.ms/mfasetup](https://aka.ms/mfasetup).
 
 >[!TIP]
->You can reduce the time required to display groups if you don't need to view MFA methods. Click **View** > **Azure AD MFA Methods** to toggle the display of columns for **AAD Default**, **AAD Phone**, **AAD Alternate**, **AAD Office**, **AAD Devices**, and **AAD OATH Token**. When columns are hidden, Microsoft Graph API calls are skipped, which greatly improves user load time. 
+>You can reduce the time required to display groups if you don't need to view Azure AD MFA methods. Click **View** > **Azure AD MFA Methods** to toggle the display of columns for **AAD Default**, **AAD Phone**, **AAD Alternate**, **AAD Office**, **AAD Devices**, and **AAD OATH Token**. When columns are hidden, some Microsoft Graph API calls are skipped, which greatly improves user load time. 
 
 
 #### View migration details 
