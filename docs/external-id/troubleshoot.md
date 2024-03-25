@@ -8,7 +8,7 @@ ms.date: 05/23/2023
 tags: active-directory
 ms.author: cmulligan
 author: csmulligan
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 # Customer intent: As an IT admin troubleshooting Microsoft Entra B2B collaboration, I want to find remedies for common problems, so that I can resolve issues and ensure smooth collaboration between organizations.
 ---
@@ -182,6 +182,8 @@ Rarely, you might see this message: “This action can't be completed because th
 When you're using self-service sign-up features, like custom user attributes or user flows, an app called `aad-extensions-app. Do not modify. Used by AAD for storing user data.` is automatically created. It's used by Microsoft Entra External ID to store information about users who sign up and custom attributes collected.
 
 If you accidentally deleted the `aad-extensions-app`, you have 30 days to recover it. You can restore the app using the Azure AD PowerShell module.
+
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 1. Launch the Azure AD PowerShell module and run `Connect-AzureAD`.
 1. Sign in as a Global Administrator for the Microsoft Entra tenant that you want to recover the deleted app for.

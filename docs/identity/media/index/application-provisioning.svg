@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+  <defs>
+    <linearGradient id="aee6b4aa-5f0d-4a2b-93e0-6f0f5f7b8805" x1="9" y1="2.28" x2="9" y2="5.358" gradientUnits="userSpaceOnUse">
+      <stop offset="0.016" stop-color="#86d633" />
+      <stop offset="1" stop-color="#76bc2d" />
+    </linearGradient>
+    <linearGradient id="a8eab9df-d76c-487a-844c-0c49ced4b7a8" x1="9" y1="12.774" x2="9" y2="15.486" gradientUnits="userSpaceOnUse">
+      <stop offset="0.016" stop-color="#86d633" />
+      <stop offset="1" stop-color="#76bc2d" />
+    </linearGradient>
+    <linearGradient id="a73b5a9e-a273-4437-921e-2972643c6956" x1="9.49" y1="3.03" x2="15.945" y2="13.839" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a67af4" />
+      <stop offset="0.999" stop-color="#773adc" />
+    </linearGradient>
+    <linearGradient id="a9754cae-b04a-443e-8375-63f4ab1369ed" x1="8.012" y1="14.78" x2="3.733" y2="5.058" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5ea0ef" />
+      <stop offset="1" stop-color="#0078d4" />
+    </linearGradient>
+  </defs>
+  <g id="bd717250-ba3b-4b5f-8cd3-bc4f2f0cf0a4">
+    <g>
+      <circle cx="9" cy="3.831" r="1.531" fill="url(#aee6b4aa-5f0d-4a2b-93e0-6f0f5f7b8805)" />
+      <circle cx="9" cy="14.17" r="1.531" fill="url(#a8eab9df-d76c-487a-844c-0c49ced4b7a8)" />
+      <path d="M12.943,3.126h-.178A3.83,3.83,0,0,0,6.291,1.12a.7.7,0,0,0,1,1,2.421,2.421,0,0,1,4.134,1.711v.005A2.419,2.419,0,0,1,9,6.252H9a2.4,2.4,0,0,1-1.712-.708.7.7,0,0,0-1,1A3.805,3.805,0,0,0,9,7.662H9a3.827,3.827,0,0,0,3.765-3.126h.178a1.987,1.987,0,0,1,1.985,1.985V11.48a1.987,1.987,0,0,1-1.985,1.985h-.817a.7.7,0,1,0,0,1.409h.817a3.4,3.4,0,0,0,3.4-3.394V6.521A3.4,3.4,0,0,0,12.943,3.126Z" fill="url(#a73b5a9e-a273-4437-921e-2972643c6956)" />
+      <path d="M10.714,15.882A2.423,2.423,0,1,1,9,11.748H9a2.408,2.408,0,0,1,1.714.709.7.7,0,0,0,1-1A3.806,3.806,0,0,0,9,10.339H9a3.824,3.824,0,0,0-3.765,3.126H5.057A1.987,1.987,0,0,1,3.072,11.48V6.521A1.987,1.987,0,0,1,5.057,4.536h.817a.705.705,0,0,0,0-1.41H5.057a3.4,3.4,0,0,0-3.4,3.4V11.48a3.4,3.4,0,0,0,3.4,3.394h.178a3.832,3.832,0,0,0,6.475,2.005.7.7,0,0,0-1-1Z" fill="url(#a9754cae-b04a-443e-8375-63f4ab1369ed)" />
+    </g>
+  </g>
+</svg>
