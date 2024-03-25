@@ -1,13 +1,11 @@
 ---
 title: Enable source IP restoration with the Global Secure Access preview
 description: Learn how to enable source IP restoration to ensure the source IP matches in downstream resources.
-
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 07/27/2023
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.date: 03/14/2024
+ms.author: kenwith
+author: kenwith
 manager: amycolannino
 ms.reviewer: mamkumar
 ---
@@ -17,20 +15,28 @@ With a cloud based network proxy between users and their resources, the IP addre
 
 Source IP restoration in Global Secure Access (preview) allows backward compatibility for Microsoft Entra customers to continue using original user Source IP. Administrators can benefit from the following capabilities:
 
-- Continue to enforce Source IP-based location policies across both [Conditional Access](/azure/active-directory/conditional-access/overview) and [continuous access evaluation](/azure/active-directory/conditional-access/concept-continuous-access-evaluation)
+- Continue to enforce Source IP-based location policies across both [Conditional Access](/azure/active-directory/conditional-access/overview) and [continuous access evaluation](/azure/active-directory/conditional-access/concept-continuous-access-evaluation).
 - [Identity Protection risk detections](/azure/active-directory/identity-protection/concept-identity-protection-risks) get a consistent view of original user Source IP address for assessing various risk scores.
 - Original user Source IP is also made available in [Microsoft Entra sign-in logs](/azure/active-directory/reports-monitoring/concept-all-sign-ins).
 
 ## Prerequisites
 
 * Administrators who interact with **Global Secure Access preview** features must have both of the following role assignments depending on the tasks they're performing.
-   * A **Global Secure Access Administrator** role to manage the Global Secure Access preview features
+   * The **Global Secure Access Administrator** role to manage the Global Secure Access preview features.
    * [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) or [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) to create and interact with Conditional Access policies and named locations.
 * The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
- 
+
 ### Known limitations
 
-- When source IP restoration is enabled, you can only see the source IP. The IP address of the Global Secure Access service isn't visible. If you want to see the Global Secure Access service IP address, disable source IP restoration.
+When source IP restoration is enabled, you can only see the source IP. The IP address of the Global Secure Access service isn't visible. If you want to see the Global Secure Access service IP address, disable source IP restoration.
+
+Source IP restoration is currently supported for only [Microsoft 365 traffic](/microsoft-365/enterprise/urls-and-ip-address-ranges), like SharePoint Online, Exchange Online, Teams, and Microsoft Graph. If you have any IP location-based Conditional Access policies for non-Microsoft 365 resources protected by continuous access evaluation (CAE), these policies aren’t evaluated at the resource as the source IP address isn’t known to the resource. 
+
+If you're using CAE’s [strict location enforcement](../identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement.md), users are blocked despite being in a trusted IP range. To resolve this condition, do one of the following recommendations:
+
+- If you have IP location-based Conditional Access policies targeting non-Microsoft 365 resources, don't enable strict location enforcement.  
+- Ensure that the traffic is supported by Source IP Restoration, or don't send the relevant traffic through Global Secure Access.
+
 ## Enable Global Secure Access signaling for Conditional Access
 
 To enable the required setting to allow source IP restoration, an administrator must take the following steps.
@@ -55,13 +61,14 @@ To see source IP restoration in action, administrators can take the following st
 1. With source IP restoration enabled, you see IP addresses that include their actual IP address. 
    - If source IP restoration is disabled, you can't see their actual IP address.
 
-Sign-in log data may take some time to appear, this delay is normal as there's some processing that must take place.
+Sign-in log data might take some time to appear this delay is normal as there's some processing that must take place.
 
 :::image type="content" source="media/how-to-source-ip-restoration/sign-in-logs-enabled-disabled.png" alt-text="Screenshot of the sign-in logs showing events with source IP restoration on, then off, then on again." lightbox="media/how-to-source-ip-restoration/sign-in-logs-enabled-disabled.png":::
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 
-## Next steps
+## Related content
 
 - [Set up tenant restrictions V2 (Preview)](/azure/active-directory/external-identities/tenant-restrictions-v2)
 - [Enable compliant network check with Conditional Access](how-to-compliant-network.md)
+- [Strictly enforce location policies using continuous access evaluation](../identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement.md)

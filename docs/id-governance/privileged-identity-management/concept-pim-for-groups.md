@@ -22,7 +22,7 @@ Microsoft Entra ID allows you to grant users just-in-time membership and ownersh
 
 PIM for Groups is part of Microsoft Entra Privileged Identity Management – alongside with PIM for Microsoft Entra roles and PIM for Azure Resources, PIM for Groups enables users to activate the ownership or membership of a Microsoft Entra security group or Microsoft 365 group. Groups can be used to govern access to various scenarios that include Microsoft Entra roles, Azure roles, Azure SQL, Azure Key Vault, Intune, other application roles, and third party applications.
 
-With PIM for Groups you can use policies similar to ones you use in PIM for Microsoft Entra roles and PIM for Azure Resources: you can require approval for membership or ownership activation, enforce multi-factor authentication (MFA), require justification, limit maximum activation time, and more. Each group in PIM for Groups has two policies: one for activation of membership and another for activation of ownership in the group. Up until January 2023, PIM for Groups feature was called “Privileged Access Groups”.
+With PIM for Groups you can use policies similar to ones you use in PIM for Microsoft Entra roles and PIM for Azure Resources: you can require approval for membership or ownership activation, enforce multifactor authentication (MFA), require justification, limit maximum activation time, and more. Each group in PIM for Groups has two policies: one for activation of membership and another for activation of ownership in the group. Up until January 2023, PIM for Groups feature was called “Privileged Access Groups”.
 
 [!INCLUDE [PIM for Groups note](~/includes/pim-for-groups-include.md)]
 
@@ -86,15 +86,15 @@ Provisioning configuration depends on the application. Generally, we recommend h
 |Privileged group|Provide just-in-time access to privileged role in the application.|Users that need to have just-in-time access to privileged role in the application.|Eligible|Privileged role|
 
 **Key considerations**
-* How long does it take to have a user provisioned to the application?: 
-  * When a user is added to a group in Microsoft Entra ID outside of activating their group membership using Microsoft Entra ID Privileged Identity Management (PIM):
+* How long does it take to have a user provisioned to the application?
+  * When a user is added to a group in Microsoft Entra ID outside of activating their group membership using Microsoft Entra Privileged Identity Management (PIM):
     * The group membership is provisioned in the application during the next synchronization cycle. The synchronization cycle runs every 40 minutes. 
-  * When a user activates their group membership in Microsoft Entra ID PIM: 
+  * When a user activates their group membership in Microsoft Entra PIM: 
     * The group membership is provisioned in 2 – 10 minutes. When there is a high rate of requests at one time, requests are throttled at a rate of five requests per 10 seconds.  
     * For the first five users within a 10-second period activating their group membership for a specific application, group membership is provisioned in the application within 2-10 minutes. 
     * For the sixth user and above within a 10-second period activating their group membership for a specific application, group membership is provisioned to the application in the next synchronization cycle. The synchronization cycle runs every 40 minutes. The throttling limits are per enterprise application. 
 * If the user is unable to access the necessary group in the target application, please review the PIM logs and provisioning logs to ensure that the group membership was updated successfully. Depending on how the target application has been architected, it may take additional time for the group membership to take effect in the application.
-* Using [Azure Monitor](https://learn.microsoft.com/entra/identity/app-provisioning/application-provisioning-log-analytics), customers can create alerts for failures.
+* Using [Azure Monitor](/entra/identity/app-provisioning/application-provisioning-log-analytics), customers can create alerts for failures.
 
 ## Next steps
 

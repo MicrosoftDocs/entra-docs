@@ -9,7 +9,7 @@ ms.date: 09/05/2023
 ms.reviewer: brianmel
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an IT admin managing Apple devices in my organization, I want to enable single sign-on (SSO) for Microsoft Enterprise accounts on macOS, iOS, and iPadOS, so that users can have a seamless authentication experience across all applications that support Apple's enterprise SSO feature.
 ---
 
@@ -32,10 +32,10 @@ The Microsoft Enterprise SSO plug-in for Apple devices offers the following bene
 - It extends SSO to applications that use OAuth 2, OpenID Connect, and SAML.
 - It is natively integrated with the MSAL, which provides a smooth native experience to the end user when the Microsoft Enterprise SSO plug-in is enabled. 
 
->[!IMPORTANT]
-> In August of 2023, [Microsoft announced that Platform SSO for macOS devices is coming soon to Entra ID.](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/coming-soon-platform-sso-for-macos/ba-p/3902280).
+>[!NOTE]
+> On August 2023, [Microsoft announced that platform SSO for macOS devices is coming to Microsoft Entra ID.](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/coming-soon-platform-sso-for-macos/ba-p/3902280).
 >
-> As these features are still under development, the use of Platform SSO features is not yet supported on the Entra ID platform. Limited customer support will be provided once these features enter public preview. 
+> Features are still under development, so the use of platform SSO features is not yet supported on Microsoft Entra. Limited customer support will be provided once these features enter public preview. 
 
 
 ## Requirements
@@ -48,6 +48,32 @@ To use the Microsoft Enterprise SSO plug-in for Apple devices:
   - macOS 10.15 and later: [Intune Company Portal app](/mem/intune/user-help/enroll-your-device-in-intune-macos-cp)
 - The device must be *enrolled in MDM*, for example, through Microsoft Intune.
 - Configuration must be *pushed to the device* to enable the Enterprise SSO plug-in. Apple requires this security constraint.
+- Apple devices must be allowed to reach to both identity provider URLs and its own URLs without additional interception. This means that those URLs need to be excluded from network proxies, interception and other enterprise systems. 
+
+  Here is the minimum set of URLs that need to be allowed for the SSO plug-in to function:
+
+  - `app-site-association.cdn-apple.com`
+  - `app-site-association.networking.apple`
+  - `login.microsoftonline.com`(*)
+  - `login.microsoft.com`(*)
+  - `sts.windows.net`(*)
+  - `login.partner.microsoftonline.cn`(*)(**)
+  - `login.chinacloudapi.cn`(*)(**)
+  - `login.microsoftonline.us`(*)(**)
+  - `login-us.microsoftonline.com`(*)(**)
+
+  (*) Allowing Microsoft domains is only required on operating system versions released before 2022. On the latest operating system versions, Apple relies fully on its CDN. 
+
+  (**) You only need to allow sovereign cloud domains if you rely on those in your environment. 
+
+  The Microsoft Enterprise SSO plug-in relies on Apple's [enterprise SSO](https://developer.apple.com/documentation/authenticationservices) framework. Apple's enterprise SSO framework ensures that only an approved SSO plug-in can work for each identity provider by utilizing a technology called [associated domains](https://developer.apple.com/documentation/xcode/supporting-associated-domains). To verify the identity of the SSO plug-in, each Apple device will send a network request to an endpoint owned by the identity provider and read information about approved SSO plug-ins. In addition to reaching out directly to the identity provider, Apple has also implemented another caching for this information.
+
+  > [!WARNING]
+  > If your organization uses proxy servers that intercept SSL traffic for scenarios like data loss prevention or tenant restrictions, ensure that traffic to these URLs are excluded from TLS break-and-inspect. Failure to exclude these URLs will cause interference with client certificate authentication, cause issues with device registration, and device-based Conditional Access. SSO plugin will not work reliably without fully excluding Apple CDN domains from interception, and you will experience intermittent issues until you do so.
+
+  If your organization blocks these URLs users may see errors like `1012 NSURLErrorDomain error`, `1000 com.apple.AuthenticationServices.AuthorizationError` or `1001 Unexpected`.
+
+  Other Apple URLs that may need to be allowed are documented in their support article, [Use Apple products on enterprise networks](https://support.apple.com/HT210060).
 
 ### iOS requirements
 - iOS 13.0 or higher must be installed on the device.
@@ -331,39 +357,11 @@ When a user resets their password, all tokens that were issued before that will 
 ##### User sign-in frequency
 [Sign-in frequency](~/identity/conditional-access/concept-session-lifetime.md#user-sign-in-frequency) defines the time period before a user is asked to sign in again when attempting to access a resource. If a user is trying to access a resource after the time period has passed in various apps, a user would normally need to sign in again in each of those apps. When the Microsoft Enterprise SSO plug-in is enabled, a user will be asked to sign in to the first application that participates in SSO. Microsoft Enterprise SSO plug-in will show its own user interface on top of the application that is currently active.
 
-### Required network configuration
-The Microsoft Enterprise SSO plug-in relies on Apple's [enterprise SSO](https://developer.apple.com/documentation/authenticationservices) framework. Apple's enterprise SSO framework ensures that only an approved SSO plug-in can work for each identity provider by utilizing a technology called [associated domains](https://developer.apple.com/documentation/xcode/supporting-associated-domains). To verify the identity of the SSO plug-in, each Apple device will send a network request to an endpoint owned by the identity provider and read information about approved SSO plug-ins. In addition to reaching out directly to the identity provider, Apple has also implemented another caching for this information. 
-
-For the SSO plug-in to function properly, Apple devices should be allowed to reach to both identity provider URLs and its own URLs without additional interception. This means that those URLs need to be excluded from network proxies, interception and other enterprise systems. 
-
-Here is the minimum set of URLs that need to be allowed for the SSO plug-in to function:
-
-  - `app-site-association.cdn-apple.com`
-  - `app-site-association.networking.apple`
-  - `login.microsoftonline.com`(*)
-  - `login.microsoft.com`(*)
-  - `sts.windows.net`(*)
-  - `login.partner.microsoftonline.cn`(*)(**)
-  - `login.chinacloudapi.cn`(*)(**)
-  - `login.microsoftonline.us`(*)(**)
-  - `login-us.microsoftonline.com`(*)(**)
-
-(*) Allowing Microsoft domains is only required on operating system versions released before 2022. On the latest operating system versions, Apple relies fully on its CDN. 
-
-(**) You only need to allow sovereign cloud domains if you rely on those in your environment. 
-
-> [!WARNING]
-> If your organization uses proxy servers that intercept SSL traffic for scenarios like data loss prevention or tenant restrictions, ensure that traffic to these URLs are excluded from TLS break-and-inspect. Failure to exclude these URLs will cause interference with client certificate authentication, cause issues with device registration, and device-based Conditional Access. SSO plugin will not work reliably without fully excluding Apple CDN domains from interception, and you will experience intermittent issues until you do so.
-
-If your organization blocks these URLs users may see errors like `1012 NSURLErrorDomain error`, `1000 com.apple.AuthenticationServices.AuthorizationError` or `1001 Unexpected`.
-
-Other Apple URLs that may need to be allowed are documented in their support article, [Use Apple products on enterprise networks](https://support.apple.com/HT210060).
-
 #### Use Intune for simplified configuration
 
 You can use Intune as your MDM service to ease configuration of the Microsoft Enterprise SSO plug-in. For example, you can use Intune to enable the plug-in and add old apps to an allowlist so they get SSO. 
 
-For more information, see the [Intune configuration documentation](/mem/intune/configuration/ios-device-features-settings).
+For more information, see the [Deploy the Microsoft Enterprise SSO plug-in for Apple devices using Intune](/mem/intune/configuration/use-enterprise-sso-plug-in-ios-ipados-macos).
 
 ## Use the SSO plug-in in your application
 

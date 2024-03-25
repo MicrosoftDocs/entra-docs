@@ -26,7 +26,8 @@ When you grant tenant-wide admin consent to an application, you give the applica
 
 By default, granting tenant-wide admin consent to an application allows all users to access the application unless otherwise restricted. To restrict which users can sign-in to an application, configure the app to [require user assignment](application-properties.md#assignment-required) and then [assign users or groups to the application](assign-user-or-group-access-portal.md).
 
-Granting tenant-wide admin consent doesn't revoke any permissions that have already been granted tenant-wide for that application. Permissions that users have already granted on their own behalf aren't affected.
+> [!IMPORTANT]
+> Granting tenant-wide admin consent may revoke permissions that have already been granted tenant-wide for that application. Permissions that users have already granted on their own behalf aren't affected.
 
 ## Prerequisites
 

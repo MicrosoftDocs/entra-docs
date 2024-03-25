@@ -25,8 +25,6 @@ The following diagram shows the basic OpenID Connect sign-in flow. The steps in 
 
 ![Swim-lane diagram showing the OpenID Connect protocol's sign-in flow.](./media/v2-protocols-oidc/convergence-scenarios-webapp.svg)
 
-[!INCLUDE [try-in-postman-link](includes/try-in-postman-link.md)]
-
 ## Enable ID tokens
 
 The *ID token* introduced by OpenID Connect is issued by the authorization server, the Microsoft identity platform, when the client application requests one during user authentication. The ID token enables a client application to verify the identity of the user and to get other information (claims) about them.

@@ -4,8 +4,8 @@ description: Configure Azure resources to simulate remote network connectivity t
 ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 01/31/2024
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: kenwith
+author: kenwith
 manager: amycolannino
 ms.reviewer: absinh
 
@@ -287,7 +287,7 @@ This step creates a VM and initiates traffic to Microsoft 365 services. Leave al
 1. Move to the **Networking** tab.
 1. Select the **Virtual network** created previously.
 1. Move to the **Management** tab
-1. Check the box **Login with Azure AD** (Microsoft Entra ID).
+1. Check the box **Login with Microsoft Entra ID**.
 1. Select **Review + create**, confirm your settings.
 1. Select **Create**.
 

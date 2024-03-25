@@ -11,7 +11,6 @@ ms.date: 06/09/2023
 ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal, it-pro, has-azure-ad-ps-ref
-
 ---
 
 # Create or delete administrative units
@@ -32,7 +31,7 @@ This article describes how to create or delete administrative units to restrict 
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
 - Azure AD PowerShell module when using PowerShell
 - AzureADPreview module when using PowerShell and restricted management administrative units
-- Admin consent when using Graph explorer for Microsoft Graph API
+- Admin consent when using Graph Explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
