@@ -92,3 +92,7 @@ To run a workflow on-demand, for users using the Microsoft Entra admin center, d
  
  1. Select **Run workflow**.
 
+
+## Check tasks and workflow status
+
+At any time, you can monitor the status of the workflow, and the tasks. As a reminder, there are three different data pivots: users runs, and tasks that are currently available. You can learn more in the how-to guide [Check the status of a workflow](check-status-workflow.md). In the course of this tutorial, we look at the status using the user focused reports.
