@@ -72,6 +72,6 @@ m365 tenant id get
 
 - To create a new Microsoft Entra tenant, see [Quickstart: Create a new tenant in Microsoft Entra ID](./create-new-tenant.md).
 
-- To learn how to associate or add a subscription to a tenant, see [Associate or add an Azure subscription to your Microsoft Entra tenant](./how-subscriptions-associated-directory.md).
+- To learn how to associate or add a subscription to a tenant, see [Associate or add an Azure subscription to your Microsoft Entra tenant](./how-subscriptions-associated-directory.yml).
 
 - To learn how to find the object ID, see [Find the user object ID](/partner-center/find-ids-and-domain-names#find-the-user-object-id).

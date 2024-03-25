@@ -183,7 +183,7 @@ relatedContent:
   - text: Add or delete users
     url: add-users.md
   - text: Assign roles to users
-    url: how-subscriptions-associated-directory.md 
+    url: how-subscriptions-associated-directory.yml 
   - text: Create a basic group and add members
     url: how-to-manage-groups.yml
 

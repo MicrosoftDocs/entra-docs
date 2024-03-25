@@ -113,6 +113,6 @@ ContentType: application/json
 The response to the API is the same response you get when you invite a new guest user to the directory.
 ## Next steps
 
-- [Add and invite guest users](add-users-administrator.md)
+- [Add and invite guest users](add-users-administrator.yml)
 - [Customize invitations using API](customize-invitation-api.md)
 - [B2B collaboration invitation redemption](redemption-experience.md)

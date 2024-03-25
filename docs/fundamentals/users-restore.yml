@@ -89,7 +89,7 @@ relatedContent:
   - text: Add or delete users
     url: ./add-users.md
   - text: Assign roles to users
-    url: ./how-subscriptions-associated-directory.md
+    url: ./how-subscriptions-associated-directory.yml
   - text: Add or change profile information
     url: ./how-to-manage-user-profile-info.yml
 

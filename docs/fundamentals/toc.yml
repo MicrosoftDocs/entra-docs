@@ -20,9 +20,9 @@ items:
   - name: Add a custom domain name
     href: add-custom-domain.yml
   - name: Associate an Azure subscription
-    href: how-subscriptions-associated-directory.md
+    href: how-subscriptions-associated-directory.yml
   - name: Add your privacy info
-    href: properties-area.md
+    href: properties-area.yml
   - name: Add company branding
     href: how-to-customize-branding.md
   - name: Rename Azure AD
