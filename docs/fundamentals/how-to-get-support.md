@@ -127,11 +127,7 @@ If you already have an Azure Support plan, [open a support request here](https:/
 If you're not an Azure customer, you can open a support request with [Microsoft Support for business](https://support.serviceshub.microsoft.com/supportforbusiness).
 
 > [!NOTE]
-<<<<<<< HEAD
 > If you're using Azure AD B2C, open a support ticket by first switching to a Microsoft Entra tenant that has an Azure subscription associated with it. Typically, this is your employee tenant or the default tenant created for you when you signed up for an Azure subscription. To learn more, see [how an Azure subscription is related to Microsoft Entra ID](./how-subscriptions-associated-directory.yml).
-=======
-> If you're using Azure AD B2C, open a support ticket by first switching to a Microsoft Entra tenant that has an Azure subscription associated with it. Typically, this is your employee tenant or the default tenant created for you when you signed up for an Azure subscription. To learn more, see [How an Azure subscription is related to Microsoft Entra ID](./how-subscriptions-associated-directory.md).
->>>>>>> 974c3cbd6433c00e0b9e77523b2ccc68b7985567
 
 ## Get Microsoft 365 admin center support
 
