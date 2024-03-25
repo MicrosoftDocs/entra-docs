@@ -25,13 +25,12 @@
       "command": "Fix",
       "configType": "full",
       "include": [
-        // "docs/external-id/"
-        // ,
-        "docs/fundamentals/"
-        // ,
+        // "docs/external-id/",
+        // "docs/fundamentals/",
         // "docs/identity/authentication/",
         // "docs/identity/domain-services/",
         // "docs/identity/conditional-access/",
+        "docs/identity/devices/"
         // "docs/identity/hybrid/",
         // "docs/identity/monitoring-health/",
         // "docs/identity/role-based-access-control/",
