@@ -260,7 +260,7 @@ procedureSection:
       - |
         Select the role assignment and click on **Action > Activate** under the role assignment details. Complete the steps to active and fill in any required details before clicking ‘Activate’ at the bottom.
 
-        :::image type="content" source="./media/pim-how-to-activate-role/mobile-app-select-part-2.png" alt-text="Screenshot of the mobile app showing how a user fill out the required information" lightbox="./media/pim-how-to-activate-role/mobile-app-select-part-2.png":::
+        :::image type="content" source="./media/pim-how-to-activate-role/mobile-app-select-part-2.png" alt-text="Screenshot of the mobile app showing a user how to fill out the required information" lightbox="./media/pim-how-to-activate-role/mobile-app-select-part-2.png":::
       - |
         View the status of your activation requests and your role assignments under **My Microsoft Entra roles**.
 
