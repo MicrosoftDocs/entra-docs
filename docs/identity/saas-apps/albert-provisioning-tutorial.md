@@ -14,6 +14,8 @@ ms.date: 07/05/2023
 ms.author: thwimmer
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Albert so that I can streamline the user management process and ensure that users have the appropriate access to Albert.
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Albert so that I can streamline the user management process and ensure that users have the appropriate access to Albert.
 ---
 
 # Tutorial: Configure Albert for automatic user provisioning

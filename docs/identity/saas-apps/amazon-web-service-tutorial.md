@@ -11,6 +11,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 11/01/2023
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Amazon Web Services (AWS) - Role Provisioning so that I can streamline the user management process and ensure that users have the appropriate access to Amazon Web Services (AWS) - Role Provisioning.
 ---
 
 # Tutorial: Microsoft Entra SSO integration with AWS Single-Account Access

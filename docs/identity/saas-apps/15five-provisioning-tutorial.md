@@ -13,6 +13,8 @@ ms.date: 11/21/2022
 ms.author: thwimmer
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to 15Five so that I can streamline the user management process and ensure that users have the appropriate access to 15Five.
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to 15Five so that I can streamline the user management process and ensure that users have the appropriate access to 15Five.
 ---
 
 # Tutorial: Configure 15Five for automatic user provisioning
