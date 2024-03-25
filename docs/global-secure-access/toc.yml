@@ -15,6 +15,8 @@ items:
   items: 
   - name: Global Secure Access clients
     href: concept-clients.md
+  - name: Coexistence with Palo Alto Networks
+    href: concept-palo-alto-coexistence.md
 - name: How-to guides
   expanded: true
   items:
