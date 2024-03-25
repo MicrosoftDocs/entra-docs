@@ -88,12 +88,14 @@ Next, define *DomainSecuritySettings* to configure the following security option
 1. Disable NTLM v1 support.
 2. Disable the synchronization of NTLM password hashes from your on-premises AD.
 3. Disable TLS v1.
+4. Disable Kerberos RC4 Encryption.
+5. Enable Kerberos Armoring.
 
 > [!IMPORTANT]
 > Users and service accounts can't perform LDAP simple binds if you disable NTLM password hash synchronization in the Domain Services managed domain. If you need to perform LDAP simple binds, don't set the *"SyncNtlmPasswords"="Disabled";* security configuration option in the following command.
 
 ```powershell
-$securitySettings = @{"DomainSecuritySettings"=@{"NtlmV1"="Disabled";"SyncNtlmPasswords"="Disabled";"TlsV1"="Disabled";"KerberosRc4Encryption"="Disabled";"KerberosArmoring"="Disabled"}}
+$securitySettings = @{"DomainSecuritySettings"=@{"NtlmV1"="Disabled";"SyncNtlmPasswords"="Disabled";"TlsV1"="Disabled";"KerberosRc4Encryption"="Disabled";"KerberosArmoring"="Enabled"}}
 ```
 
 Finally, apply the defined security settings to the managed domain using the [Set-AzResource][Set-AzResource] cmdlet. Specify the Domain Services resource from the first step, and the security settings from the previous step.
