@@ -8,17 +8,20 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 02/27/2024
+ms.date: 03/25/2024
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: youazhou
 
-#Customer intent: As an application developer, I want to learn about the new app manifest format, so that I can update the application object and define permissions and roles for the app.
+# Customer intent: As an application developer, I want to learn about the new app manifest format, so that I can update the application object and define permissions and roles for the app.
 ---
 
 # Azure AD Graph app manifest deprecation
 
-Following the Azure AD Graph deprecation, the Azure AD Graph format of application manifests is deprecated and the Microsoft Entra admin center displays app manifests in Microsoft Graph format.  For most users, no action is required to convert app manifests from Azure AD Graph format to Microsoft Graph format. Microsoft Graph is our latest offering and represents our best-in-breed API surface. To learn more about Azure AD Graph deprecation, please read [Migrate your apps to Microsoft Graph](/graph/migrate-azure-ad-graph-overview).
+Following the Azure AD Graph deprecation, the Azure AD Graph format of application manifests is deprecated and the Microsoft Entra admin center displays app manifests in Microsoft Graph format.  Read this article to learn more about how the app manifest migrtaion impacts your user experience.
+
+> [!IMPORTANT] 
+> Apps registered with your personal Microsoft account (MSA account) are not in scope for this deprecation. Apps registered with your personal MSA account will continue to manage app manifests in the Azure AD Graph format in the Microsoft Entra admin center until further notice.
 
 ## Migration date
 

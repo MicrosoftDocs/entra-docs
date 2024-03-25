@@ -1,6 +1,6 @@
 ---
-title: Understanding the Microsoft Graph app manifest
-description: Describes the Microsoft Entra app manifest in Microsoft Graph format, which represents an application's identity configuration in a Microsoft Entra tenant.
+title: Understand app manifest in Microsoft Graph format
+description: Describes the Microsoft Entra app manifest (Microsoft Graph format), which represents an application's identity configuration in a Microsoft Entra tenant.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -8,12 +8,12 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
-ms.date: 02/27/2024
+ms.date: 03/25/2024
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: youazhou
 
-#Customer intent: As an application developer, I want to configure the attributes of an application in the Microsoft Entra admin center or programmatically, so that I can update the application object and define permissions and roles for the app.
+# Customer intent: As an application developer, I want to learn how to configure an application manifest (Microsoft Graph Format) in the Microsoft Entra admin center or programmatically, so that I can update the application object and define permissions and roles for the app.
 ---
 
 # App manifest
@@ -25,7 +25,7 @@ A Microsoft Graph app manifest is a JSON object that represents an app registrat
 The application object you receive using [Microsoft Graph Get Application method](/graph/api/application-get) is the same JSON object you see in **App Registration manifest** page in the [Microsoft Entra admin center](https://entra.microsoft.com).
 
 > [!NOTE]
-> Application manifests for Microsoft account (MSA) apps continue to use the Azure AD Graph format.  If you need to edit an app manifest for a MSA app in the Microsoft Entra admin center, see [Microsoft Entra app manifest (Azure AD Graph format)](reference-app-manifest.md).
+> For apps registered with your personal Microsoft account (MSA account), you will continue to see app manifests in Azure AD Graph format in the Microsoft Entra admin center until further notice. For more information, see [Microsoft Entra app manifest (Azure AD Graph format)](reference-app-manifest.md).
 
 ## Configure the Microsoft Graph app manifest
 
@@ -544,7 +544,7 @@ An application manifest has multiple attributes that are referred to as collecti
 
 When you upload a previously downloaded app manifest in Azure AD Graph format, you may get the following error:
 
-"xxx"
+**Failed to update {app name} application.  Error detail: invalid property '{property name}'.**
 
 This might be due to the migration from Azure AD Graph to Microsoft Graph app manifest. Firstly, you should check if the app manifest is in [Azure AD Graph format](azure-ad-graph-app-manifest-deprecation.md#how-do-i-tell-the-format-of-my-app-manifest). If it is, you should [convert the app manifest to Microsoft Graph format](azure-ad-graph-app-manifest-deprecation.md#convert-an-app-manifest-in-azure-ad-graph-format-to-microsoft-graph-format).
 
