@@ -4,9 +4,9 @@ description: Describes the deprecation of the Azure AD Graph format for applicat
 services: active-directory
 author: rwike77
 manager: CelesteDG
-ms.service: active-directory
+ms.service: identity-platform
 ms.subservice: develop
-ms.topic: conceptual
+ms.topic: concept-article
 ms.workload: identity
 ms.date: 03/25/2024
 ms.author: ryanwi
