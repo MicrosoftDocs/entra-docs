@@ -46,7 +46,7 @@ Bypass Microsoft Entra service Fully Qualified Domain Name (FQDN) and Internet P
 1. Add the routes and save them as **MSFT SSE Service**: `*.globalsecureaccess.microsoft.com`, `150.171.19.0/24`, `150.171.20.0/24`, `13.107.232.0/24`, `13.107.233.0/24`, `150.171.15.0/24`, `150.171.18.0/24`, `151.206.0.0/16`, `6.6.0.0/16`.
 1. Repeat steps 1 and 2 to add Microsoft 365 IPs and save them as **MSFT SSE M365**: `132.245.0.0/16`, `204.79.197.215/32`, `150.171.32.0/22`, `131.253.33.215/32`, `23.103.160.0/20`, `40.96.0.0/13`, `52.96.0.0/14`, `40.104.0.0/15`, `13.107.128.0/22`, `13.107.18.10/31`, `13.107.6.152/31`, `52.238.78.88/32`, `104.47.0.0/17`, `52.100.0.0/14`, `40.107.0.0/16`, `40.92.0.0/15`, `150.171.40.0/22`, `52.104.0.0/14`, `104.146.128.0/17`, `40.108.128.0/17`, `13.107.136.0/22`, `40.126.0.0/18`, `20.231.128.0/19`, `20.190.128.0/18`, `20.20.32.0/19`.
     > [!NOTE]
-    > Additional Microsoft 365 traffic will be added. Refer to [M365 URLs and IP address ranges](https://learn.microsoft.com/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide) for a complete list.
+    > Additional Microsoft 365 traffic will be added. Refer to [M365 URLs and IP address ranges](/microsoft-365/enterprise/urls-and-ip-address-ranges) for a complete list.
 1. Navigate to **Policies** > **Profile** and select **Apply Changes** on the top right side of your screen.
 
 
