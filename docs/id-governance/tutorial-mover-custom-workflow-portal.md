@@ -36,7 +36,6 @@ Two accounts are required for this tutorial, one account for the new hire and an
 - Group must be set to sales
 - Manager attribute must be set, and the manager account should have a mailbox to receive an email
 
-For more comprehensive instructions on how to complete these prerequisite steps, you may refer to the [Preparing user accounts for Lifecycle workflows tutorial](tutorial-prepare-user-accounts.md). The [TAP policy](../identity/authentication/howto-authentication-temporary-access-pass.md#enable-the-temporary-access-pass-policy) must also be enabled to run this tutorial.
 
 Detailed breakdown of the relevant attributes:
 
@@ -46,7 +45,7 @@ Detailed breakdown of the relevant attributes:
  |manager|This attribute that is used by the lifecycle workflow|Employee|
  |Group|Used to provide the scope for the workflow|Employee|
 
-The pre-hire scenario can be broken down into the following:
+The mover scenario can be broken down into the following steps:
   - **Prerequisite:** Create two user accounts, one to represent an employee and one to represent a manager
   - **Prerequisite:** Editing the attributes required for this scenario in the admin center
   - **Prerequisite:** Edit the attributes for this scenario using Microsoft Graph Explorer
@@ -65,11 +64,11 @@ Use the following steps to create a mover workflow for a user making a job chang
 
 1. From the templates, select **select** under **Employee job profile change**.
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-template.png" alt-text="Screenshot of selecting the employee job profile change template.":::
-1. Next, you configure the basic information about the workflow.  This information includes a name and description. You are also able to choose the **Trigger type** of the workflow, which in this case will be the **Group membership change (Preview)** trigger. For **Action** you are given what interaction with the group change triggers the workflow, which in this case will be **Removed from group**. After making these selections, select **Configure scope**.
+1. Next, you configure the basic information about the workflow.  This information includes a name and description. You're also able to choose the **Trigger type** of the workflow, which in this case will be the **Group membership change (Preview)** trigger. For **Action** you're given what interaction with the group change triggers the workflow, which in this case will be **Removed from group**. After your trigger is set, select **Configure scope**.
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-template-basics.png" alt-text="Screenshot of setting group membership trigger in template.":::
-1. On the **Configure scope** screen, in the scope details section select **+Add group**. From the groups screen search for **Sales** and select the group. After these selection, select **Review tasks**.
+1. On the **Configure scope** screen, in the scope details section select **+Add group**. From the groups screen, search for **Sales**, and select the group. When the group is added, select **Review tasks**.
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/group-scope.png" alt-text="Screenshot of setting group scope.":::
-1. On the **Review tasks** screen, you're able to add, edit, or remove tasks. From the default tasks, **Remove user from selected groups**, **Remove user from Selected Teams**, and **Request user access package assignment** require that you select which groups or teams you want the user to be removed from, or which user access package assignment you want to request for the user. When you are finished making these selections, select **Review + create**. 
+1. On the **Review tasks** screen, you're able to add, edit, or remove tasks. From the default tasks, **Remove user from selected groups**, **Remove user from Selected Teams**, and **Request user access package assignment** require that you select which groups or teams you want the user to be removed from, or which user access package assignment you want to request for the user. When you're finished editing the tasks, select **Review + create**. 
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-template-tasks.png" alt-text="Screenshot of job change template tasks.":::
 
 1. On the review screen, verify the information is correct and choose if you want to enable the schedule of the workflow or not. After reviewing,  select **Create**.
