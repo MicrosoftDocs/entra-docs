@@ -61,7 +61,7 @@ Verify Clients’ Connectivity and Configuration:
 1. Go to the system tray to check that *Global Secure Access* and *Global Protect* clients are enabled.  
 1. Verify the configuration for *Global Secure Access* client.
     1. Right-click on **Global Secure Access Client** > **Advanced Diagnostics** > **Forwarding Profile**. Verify that only Microsoft 365 rules are applied to this client. 
-    1. In **Advanced Diagnostics** > **Health Check**. Ensure no checks are failing (IPV4 preferred check can be ignored. You can resolve the error by creating the reg key).
+    1. In **Advanced Diagnostics** > **Health Check**. Ensure no checks are failing. IPV4 preferred check can be ignored. You can resolve this by creating a registry key. For more information about the registery key and installing the client, see [Global Secure Access client for Windows (preview)](how-to-install-windows-client.md).
 
 ## Test traffic flow
 Microsoft’s SSE configuration: Enable Microsoft 365 traffic forwarding profile, disable Internet Access and Private Access traffic forwarding profiles.
