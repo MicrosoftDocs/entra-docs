@@ -75,6 +75,6 @@ landingContent:
           - text: Create or delete users
             url: how-to-create-delete-users.yml
           - text: Assign roles to users
-            url: ./how-subscriptions-associated-directory.md
+            url: ./how-subscriptions-associated-directory.yml
           - text: Assign licenses to users
             url: license-users-groups.yml
