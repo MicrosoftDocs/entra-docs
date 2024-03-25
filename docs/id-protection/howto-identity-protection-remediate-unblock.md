@@ -5,7 +5,7 @@ description: Learn about the options you have close active risk detections.
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 03/22/2024
+ms.date: 03/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -24,7 +24,7 @@ Microsoft Entra ID Protection marks some risk detections and the corresponding r
 
 Administrators have the following options to remediate:
 
-- Set up [risk-based policies](howto-identity-protection-configure-risk-policies.md) to allow users to self-remediate their risks.
+- Set up risk-based policies to allow users to self-remediate their risks.
 - Manually reset their password.
 - Dismiss their user risk.
 - [Remediate in Microsoft Defender for Identity](/defender-for-identity/remediation-actions).
@@ -55,18 +55,24 @@ If requiring a password reset using a user risk policy isn't an option, or time 
 
 Administrators have options they can choose from:
 
-- **Generate a temporary password** - By generating a temporary password, you can immediately bring an identity back into a safe state. This method requires contacting the affected users because they need to know what the temporary password is. Because the password is temporary, the user is prompted to change the password to something new during the next sign-in.
-   - They can generate passwords for cloud and hybrid users in the Microsoft Entra admin center.
-   - They can generate passwords for hybrid users from an on-premises directory when password hash synchronization and the [Allow on-premises password change to reset user risk](#allow-on-premises-password-reset-to-remediate-user-risks-preview) setting is enabled.
+#### Generate a temporary password
 
-      > [!WARNING]
-      > Don't select the option **User must change password at next logon**. This is unsupported.
+By generating a temporary password, you can immediately bring an identity back into a safe state. This method requires contacting the affected users because they need to know what the temporary password is. Because the password is temporary, the user is prompted to change the password to something new during the next sign-in.
 
-- **Require the user to reset password** - Requiring the users to reset passwords enables self-recovery without contacting help desk or an administrator. 
-   - Cloud and hybrid users can complete a secure password change. This method only applies to users that can perform MFA already. For users that aren't registered, this option isn't available.
-   - Hybrid users can complete a password change from an on-premises or hybrid joined Windows device, when password hash synchronization and the [Allow on-premises password change to reset user risk](#allow-on-premises-password-reset-to-remediate-user-risks-preview) setting is enabled.
+- They can generate passwords for cloud and hybrid users in the Microsoft Entra admin center.
+- They can generate passwords for hybrid users from an on-premises directory when password hash synchronization and the [Allow on-premises password change to reset user risk](#allow-on-premises-password-reset-to-remediate-user-risks-preview) setting is enabled.
 
-#### Allow on-premises password reset to remediate user risks (Preview)
+   > [!WARNING]
+   > Don't select the option **User must change password at next logon**. This is unsupported.
+
+#### Require the user to reset password
+
+Requiring the users to reset passwords enables self-recovery without contacting help desk or an administrator. 
+
+- Cloud and hybrid users can complete a secure password change. This method only applies to users that can perform MFA already. For users that aren't registered, this option isn't available.
+- Hybrid users can complete a password change from an on-premises or hybrid joined Windows device, when password hash synchronization and the [Allow on-premises password change to reset user risk](#allow-on-premises-password-reset-to-remediate-user-risks-preview) setting is enabled.
+
+### Allow on-premises password reset to remediate user risks
 
 Organizations who enable [password hash synchronization](~/identity/hybrid/connect/whatis-phs.md) can allow password changes on-premises to remediate user risk.
 
