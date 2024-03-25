@@ -31,15 +31,6 @@ Configured trusted [network locations](~/identity/conditional-access/location-co
 
 The policy configurations that follow include the [sign-in frequency session control](../identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time) requiring a reauthentication for risky users and sign-ins.
 
-### Risk remediation
-
-Organizations can choose to block access when risk is detected. Blocking sometimes stops legitimate users from doing what they need to. A better solution is to [allow self-remediation using Microsoft Entra multifactor authentication and secure password change](howto-identity-protection-remediate-unblock.md#self-remediation-with-risk-based-policy).
-
-> [!WARNING]
-> Users must register for Microsoft Entra multifactor authentication before they face a situation requiring remediation. For hybrid users that are synced from on-premises to cloud, password writeback must have been enabled on them. Users not registered are blocked and require administrator intervention.
-> 
-> Password change (I know my password and want to change it to something new) outside of the risky user policy remediation flow does not meet the requirement for secure password change.
-
 ### Microsoft's recommendation
 
 Microsoft recommends the following risk policy configurations to protect your organization:
@@ -50,6 +41,15 @@ Microsoft recommends the following risk policy configurations to protect your or
    - Require Microsoft Entra multifactor authentication when sign-in risk level is **Medium** or **High**, allowing users to prove it's them by using one of their registered authentication methods, remediating the sign-in risk. 
 
 Requiring access control when risk level is low introduces more friction and user interrupts than medium or high. Choosing to block access rather than allowing self-remediation options, like secure password change and multifactor authentication, affect your users and administrators even more. Weigh these choices when configuring your policies.
+
+### Risk remediation
+
+Organizations can choose to block access when risk is detected. Blocking sometimes stops legitimate users from doing what they need to. A better solution is to [allow self-remediation using Microsoft Entra multifactor authentication and secure password change](howto-identity-protection-remediate-unblock.md#self-remediation-with-risk-based-policy).
+
+> [!WARNING]
+> Users must register for Microsoft Entra multifactor authentication before they face a situation requiring remediation. For hybrid users that are synced from on-premises to cloud, password writeback must have been enabled on them. Users not registered are blocked and require administrator intervention.
+> 
+> Password change (I know my password and want to change it to something new) outside of the risky user policy remediation flow does not meet the requirement for secure password change.
 
 ## Migrate risk policies to Conditional Access
 
