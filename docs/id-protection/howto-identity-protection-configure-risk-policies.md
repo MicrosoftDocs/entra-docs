@@ -67,15 +67,15 @@ If you have legacy risk policies enabled in Microsoft Entra ID Protection, you s
    1. Set **Enforce policy** to **Disabled**.
 1. Create other risk policies if needed in [Conditional Access](~/identity/conditional-access/concept-conditional-access-policy-common.md).
 
-## Exclusions
-
-[!INCLUDE [active-directory-policy-exclusions](../includes/entra-policy-exclude-user.md)]
-
 ## Enable policies
 
 Organizations can choose to deploy risk-based policies in Conditional Access using the following steps or use [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md#conditional-access-templates).
 
 Before organizations enable these policies, they should take action to [investigate](howto-identity-protection-investigate-risk.md) and [remediate](howto-identity-protection-remediate-unblock.md) any active risks.
+
+## Policy exclusions
+
+[!INCLUDE [active-directory-policy-exclusions](../includes/entra-policy-exclude-user.md)]
 
 ### User risk policy in Conditional Access
 
