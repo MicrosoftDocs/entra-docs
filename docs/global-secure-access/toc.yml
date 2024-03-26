@@ -106,15 +106,6 @@ items:
         href: how-to-view-traffic-logs.md
       - name: Event enrichment in Microsoft 365 enriched logs
         href: reference-event-enrichment-logs.md
-  - name: Secure access with Microsoft Entra and partners
-    expanded: true
-    items:
-    - name: Coexistence with Palo Alto Networks
-      href: concept-palo-alto-coexistence.md
-    - name: Coexistence with Zscaler
-      href: concept-zscaler-coexistence.md
-    - name: Coexistence with Netskope
-      href: concept-netskope-coexistence.md
   - name: Deployment guides
     expanded: false
     items:
@@ -126,6 +117,15 @@ items:
         href: ~/architecture/sse-deployment-guide-m365.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
       - name: Deploying Microsoft Entra Private Access
         href: ~/architecture/sse-deployment-guide-private-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
+  - name: Secure access with Microsoft Entra and partners
+    expanded: true
+    items:
+    - name: Coexistence with Palo Alto Networks
+      href: concept-palo-alto-coexistence.md
+    - name: Coexistence with Zscaler
+      href: concept-zscaler-coexistence.md
+    - name: Coexistence with Netskope
+      href: concept-netskope-coexistence.md
 - name: Reference
   expanded: false
   items:
