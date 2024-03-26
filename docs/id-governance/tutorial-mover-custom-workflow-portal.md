@@ -99,7 +99,7 @@ At any time, you can monitor the status of the workflow, and the tasks. As a rem
 
 1. To begin, select the **Workflow history** tab to view the user summary and associated workflow tasks and statuses. 
 
-1. 
+1. Once the **Workflow history** tab has been selected, you land on the workflow history page as shown.
 
 1. 
 
