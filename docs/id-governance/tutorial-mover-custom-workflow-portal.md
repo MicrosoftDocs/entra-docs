@@ -31,7 +31,7 @@ This Mover scenario runs a scheduled workflow and accomplishes the following tas
 
 ##  Before you begin
 
-Two accounts are required for this tutorial, one account for the new hire and another account that acts as the manager of the new hire. The new hire account must have the following attributes set:
+Two accounts are required for this tutorial, one account for the user with a job profile change and another account that acts as it's the manager. The user account must have the following attributes set:
 
 - Group must be set to sales
 - Manager attribute must be set, and the manager account should have a mailbox to receive an email
