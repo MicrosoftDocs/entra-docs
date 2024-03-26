@@ -57,7 +57,7 @@ To enable system-assigned managed identity on a VM that was originally provision
 
 3. Under **System assigned**, **Status**, select **On** and then click **Save**:
 
-   :::image type="content" source="./media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade.png" alt-text="Screenshot that shows the Identity (preview) page with the System assigned status set to On":::  
+   ![Screenshot that shows the "Identity (preview)" page with the "System assigned" status set to "On".](./media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade.png) 
 
 ### Remove system-assigned managed identity from a VM
 
