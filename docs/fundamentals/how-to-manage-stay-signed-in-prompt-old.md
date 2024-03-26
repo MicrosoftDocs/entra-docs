@@ -12,6 +12,7 @@ ms.reviewer: almars
 
 # Customer intent: As an IT admin, I want to know how to configure the 'Stay signed in' prompt for Microsoft Entra users, so their sign-in experience is not interrupted unnecessarily.
 ---
+
 # Manage the 'Stay signed in?' prompt
 
 The **Stay signed in?** prompt appears after a user successfully signs in. This process is known as **Keep me signed in** (KMSI) and was previously part of the [customize branding](how-to-customize-branding.md) process.
@@ -30,11 +31,11 @@ You must have the **Global Administrator** role to enable the 'Stay signed in?' 
 
 ## How does it work?
 
-If a user answers **Yes** to the **'Stay signed in?'** prompt, a persistent authentication cookie is issued. The cookie must be stored in session for KMSI to work. KMSI doesn't work with locally stored cookies. If KMSI isn't enabled, a non-persistent cookie is issued and lasts for 24 hours or until the browser is closed. 
+If a user answers **Yes** to the **'Stay signed in?'** prompt, a persistent authentication cookie is issued. The cookie must be stored in session for KMSI to work. KMSI doesn't work with locally stored cookies. If KMSI isn't enabled, a non-persistent cookie is issued and lasts for 24 hours or until the browser is closed.
 
 The following diagram shows the user sign-in flow for a managed tenant and federated tenant using the KMSI in prompt. This flow contains smart logic so that the **Stay signed in?** option isn't displayed if the machine learning system detects a high-risk sign-in or a sign-in from a shared device. For federated tenants, the prompt will show after the user successfully authenticates with the federated identity service.
 
-Some features of SharePoint Online and Office 2010 depend on users being able to choose to remain signed in. If you uncheck the **Show option to remain signed in** option, your users might see other unexpected prompts during the sign-in process.
+Some features of SharePoint in Microsoft 365 and Office 2010 depend on users being able to choose to remain signed in. If you uncheck the **Show option to remain signed in** option, your users might see other unexpected prompts during the sign-in process.
 
 :::image type="content" source="media/how-to-manage-stay-signed-in-prompt/kmsi-workflow.png" alt-text="Diagram showing the user sign-in flow for a managed vs. federated tenant.":::
 
@@ -55,14 +56,14 @@ The KMSI setting is managed in **User settings**.
 
 ## Troubleshoot 'Stay signed in?' issues
 
-If a user doesn't act on the **Stay signed in?** prompt but abandons the sign-in attempt, a sign-in log entry appears in the Microsoft Entra sign-in logs. The prompt the user sees is called an "interrupt."
+If a user doesn't act on the **Stay signed in?** prompt but abandons the sign-in attempt, a sign-in log entry appears in the Microsoft Entra sign-in logs. The prompt the user sees is called an "Interrupt."
 
 :::image type="content" source="media/how-to-manage-stay-signed-in-prompt/kmsi-stay-signed-in-prompt.png" alt-text="Screenshot of the Sample Stay signed in? prompt.":::
 
-Details about the sign-in error are found in the **Sign-in logs**. Select the impacted user from the list and locate the following details in the **Basic info** section.
+Details about the sign-in error are found in the **Sign-in logs**. Select the affected user from the list and locate the following details in the **Basic info** section.
 
-* **Sign in error code**: 50140
-* **Failure reason**: This error occurred due to "Keep me signed in" interrupt when the user was signing in.
+- **Sign in error code:** 50140
+- **Failure reason:** This error occurred due to "Keep me signed in" interrupt when the user was signing in.
 
 You can stop users from seeing the interrupt by setting the **Show option to remain signed in** setting to **No** in the user settings. This setting disables the KMSI prompt for all users in your directory.
 
@@ -70,12 +71,12 @@ You also can use the [persistent browser session controls in Conditional Access]
 
 To ensure that the KMSI prompt is shown only when it can benefit the user, the KMSI prompt is intentionally not shown in the following scenarios:
 
-* User is signed in via seamless SSO and integrated Windows authentication (IWA)
-* User is signed in via Active Directory Federation Services and IWA
-* User is a guest in the tenant
-* User's risk score is high
-* Sign-in occurs during user or admin consent flow
-* Persistent browser session control is configured in a Conditional Access policy
+- User is signed in via seamless single sign-on (SSO) and integrated Windows authentication (IWA)
+- User is signed in via Active Directory Federation Services and IWA
+- User is a guest in the tenant
+- User's risk score is high
+- Sign-in occurs during user or admin consent flow
+- Persistent browser session control is configured in a Conditional Access policy
 
 ## Next steps
 

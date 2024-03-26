@@ -142,6 +142,12 @@ items:
                 href: tutorial-web-app-dotnet-sign-in-prepare-app.md
               - name: Sign in and sign out
                 href: tutorial-web-app-dotnet-sign-in-sign-out.md
+        - name: Python Flask
+          items:
+              - name: Prepare tenant
+                href: tutorial-web-app-python-flask-prepare-tenant.md
+              - name: Sign in and sign out 
+                href: tutorial-web-app-python-flask-sign-in-sign-out.md
     - name: Web API
       items: 
         - name: Protect ASP.NET API

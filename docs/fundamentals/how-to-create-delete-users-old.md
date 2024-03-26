@@ -11,8 +11,8 @@ ms.author: sarahlipsey
 ms.reviewer: adelle.dimitui
 
 # Customer intent: As an IT admin, I need to know how to create, update, and delete users manually for quick, one-off updates.
-
 ---
+
 # How to create, invite, and delete users
 
 Microsoft Entra ID allows you to create several types of users in your tenant, which provides greater flexibility in how you manage your organization's users.
@@ -35,16 +35,16 @@ The required role of least privilege varies based on the type of user you're add
 
 Before you create or invite a new user, take some time to review the types of users, their authentication methods, and their access within the Microsoft Entra tenant. For example, do you need to create an internal guest, an internal user, or an external guest? Does your new user need guest or member privileges?
 
-- **Internal member**: These users are most likely full-time employees in your organization.
-- **Internal guest**: These users have an account in your tenant, but have guest-level privileges. It's possible they were created within your tenant prior to the availability of B2B collaboration.
-- **External member**: These users authenticate using an external account, but have member access to your tenant. These types of users are common in [multitenant organizations](~/identity/multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization).
-- **External guest**: These users are true guests of your tenant who authenticate using an external method and who have guest-level privileges.
+- **Internal member:** These users are most likely full-time employees in your organization.
+- **Internal guest:** These users have an account in your tenant, but have guest-level privileges. It's possible they were created within your tenant prior to the availability of B2B collaboration.
+- **External member:** These users authenticate using an external account, but have member access to your tenant. These types of users are common in [Multitenant organizations](~/identity/multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization).
+- **External guest:** These users are true guests of your tenant who authenticate using an external method and who have guest-level privileges.
 
 For more information abut the differences between internal and external guests and members, see [B2B collaboration properties](~/external-id/user-properties.md).
 
 Authentication methods vary based on the type of user you create. Internal guests and members have credentials in your Microsoft Entra tenant that can be managed by administrators. These users can also reset their own password. External members authenticate to their home Microsoft Entra tenant and your Microsoft Entra tenant authenticates the user through a federated sign-in with the external member's Microsoft Entra tenant. If external members forget their password, the administrator in their Microsoft Entra tenant can reset their password. External guests set up their own password using the link they receive in email when their account is created.
 
-Reviewing the default user permissions may also help you determine the type of user you need to create. For more information, see [Set default user permissions](users-default-permissions.md).
+Reviewing the default user permissions might also help you determine the type of user you need to create. For more information, see [Set default user permissions](users-default-permissions.md).
 
 ## Create a new user
 
@@ -56,7 +56,7 @@ Reviewing the default user permissions may also help you determine the type of u
 
    :::image type="content" source="media/how-to-create-delete-users/all-users-page.png" alt-text="Screenshot of the All users page in Microsoft Entra ID.":::
 
-1. Select  **New user** > **Create new user**.
+1. Select **New user** > **Create new user**.
 
    :::image type="content" source="media/how-to-create-delete-users/create-new-user-menu.png" alt-text="Screenshot of the create new user menu in Microsoft Entra ID.":::
 
@@ -85,7 +85,7 @@ There are six categories of user properties you can provide. These properties ca
 - **Identity:** Enter the user's first and last name. Set the User type as either Member or Guest.
 - **Job information:** Add any job-related information, such as the user's job title, department, or manager.
 - **Contact information:** Add any relevant contact information for the user.
-- **Parental controls:** For organizations like K-12 school districts, the user's age group may need to be provided. *Minors* are 12 and under, *Not adult* are 13-18 years old, and *Adults* are 18 and over. The combination of age group and consent provided by parent options determine the Legal age group classification. The Legal age group classification may limit the user's access and authority.
+- **Parental controls:** For organizations like K-12 school districts, the user's age group might need to be provided. *Minors* are 12 and under, *Not adult* are 13-18 years old, and *Adults* are 18 and over. The combination of age group and consent provided by parent options determine the Legal age group classification. The Legal age group classification might limit the user's access and authority.
 - **Settings:** Specify the user's global location.
 
 Either select the **Review + create** button to create the new user or **Next: Assignments** to complete the next section.
@@ -120,11 +120,11 @@ The final tab captures several key details from the user creation process. Revie
 
 ## Invite an external user
 
-The overall process for inviting an external guest user is similar, except for a few details on the **Basics** tab and the email invitation process. You can't assign external users to administrative units. 
+The overall process for inviting an external guest user is similar, except for a few details on the **Basics** tab and the email invitation process. You can't assign external users to administrative units.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
-1. Select  **New user** > **Invite external user**.
+1. Select **New user** > **Invite external user**.
 
    :::image type="content" source="media/how-to-create-delete-users/invite-external-user-menu.png" alt-text="Screenshot of the invite external user menu option.":::
 
@@ -132,11 +132,11 @@ The overall process for inviting an external guest user is similar, except for a
 
 ### Basics for external users
 
-In this section, you're inviting the guest to your tenant using *their email address*. If you need to create a guest user with a domain account, use the [create new user process](#create-a-new-user) but change the **User type** to **Guest**. 
+In this section, you're inviting the guest to your tenant using *their email address*. If you need to create a guest user with a domain account, use the [create new user process](#create-a-new-user) but change the **User type** to **Guest**.
 
-- **Email**: Enter the email address for the guest user you're inviting.
-- **Display name**: Provide the display name.
--  **Invitation message**: Select the **Send invite message** checkbox to customize a brief message to the guest. Provide a Cc recipient, if necessary.
+- **Email:** Enter the email address for the guest user you're inviting.
+- **Display name:** Provide the display name.
+- **Invitation message:** Select the **Send invite message** checkbox to customize a brief message to the guest. Provide a Cc recipient, if necessary.
 
 :::image type="content" source="media/how-to-create-delete-users/invite-external-user-basics-tab.png" alt-text="Screenshot of the invite external user Basics tab.":::
 
@@ -146,7 +146,7 @@ When you invite an external guest user by sending an email invitation, you can c
 
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select the invited guest user.
-1. In the **My Feed** section, locate the **B2B collaboration** tile. 
+1. In the **My Feed** section, locate the **B2B collaboration** tile.
     - If the invitation state is **PendingAcceptance**, select the **Resend invitation** link to send another email.
     - You can also select the **Properties** for the user and view the **Invitation state**.
 
