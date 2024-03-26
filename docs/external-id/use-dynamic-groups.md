@@ -5,7 +5,7 @@ description: Shows how to use Microsoft Entra dynamic groups with Microsoft Entr
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 03/26/2026
+ms.date: 03/26/2024
 
 ms.author: cmulligan
 author: csmulligan
