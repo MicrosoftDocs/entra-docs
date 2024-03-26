@@ -125,7 +125,7 @@ To configure Conditional Access policies for sign-in frequency and persistent br
 1. Browse to **Protection** > **Conditional Access**.
 1. Configure a policy using the recommended session management options detailed in this article.
 
-To review token lifetimes, [use Azure AD PowerShell to query any Microsoft Entra policies](~/identity-platform/configure-token-lifetimes.md#get-started). Disable any policies that you have in place.
+To review token lifetimes, [use Azure AD PowerShell to query any Microsoft Entra policies](~/identity-platform/configure-token-lifetimes.yml). Disable any policies that you have in place.
 
 If more than one setting is enabled in your tenant, we recommend updating your settings based on the licensing available for you. For example, if you have Microsoft Entra ID P1 or P2 licenses you should only use the Conditional Access policy of *Sign-in Frequency* and *Persistent browser session*. If you have Microsoft 365 apps or Microsoft Entra ID Free licenses, you should use the *Remain signed-in?* configuration.
 
