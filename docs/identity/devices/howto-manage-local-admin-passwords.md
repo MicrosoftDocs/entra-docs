@@ -140,7 +140,7 @@ Yes, for [Microsoft Entra hybrid joined](concept-hybrid-join.md) devices only. S
 
 ### Is Windows LAPS with Microsoft Entra management configuration supported using MDM?
 
-Yes, for [Microsoft Entra join](concept-directory-join.md)/[Microsoft Entra hybrid join](concept-hybrid-join.md) ([co-managed](/mem/configmgr/comanage/overview)) devices. Customers can use [Microsoft Intune](/mem/intune/protect/windows-laps-overview) or any other third-party master data management (MDM) of their choice.
+Yes, for [Microsoft Entra join](concept-directory-join.md)/[Microsoft Entra hybrid join](concept-hybrid-join.md) ([co-managed](/mem/configmgr/comanage/overview)) devices. Customers can use [Microsoft Intune](/mem/intune/protect/windows-laps-overview) or any other third-party mobile device management (MDM) of their choice.
 
 <a name='what-happens-when-a-device-is-deleted-in-azure-ad'></a>
 
