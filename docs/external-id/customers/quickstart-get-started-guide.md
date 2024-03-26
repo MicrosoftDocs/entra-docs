@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: quickstart
-ms.date: 02/23/2024
+ms.date: 03/26/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -69,17 +69,19 @@ Follow the steps below, to download and run the sample app.
 
 1. You've completed the process of creating a trial tenant, configuring the sign-in experience, creating your first user, and setting up a sample app. Select **Continue** to go to the summary page, where you can either go to the admin center or you can restart the guide to choose different options.
 
+> [!NOTE]
+> The next time you return to your tenant, you might be prompted to set up additional authentication factors for added security of your tenant admin account.
+
 <a name='explore-azure-ad-for-customers'></a>
 
 ## Explore Microsoft Entra ID for customers
 
-Follow the articles below to learn more about the configuration the guide created for you or to configure your own apps. You can always come back to the [admin center](https://entra.microsoft.com/) to customize your tenant and explore the full range of configuration options for your tenant.
+Explore the features set up by the get started guide in the detailed article on [Get started guide features](/entra/external-id/customers/concept-guide-explained). You can always come back to the [admin center](https://entra.microsoft.com/) to customize your tenant and explore the full range of configuration options for your tenant.
 
-> [!NOTE]
-> The next time you return to your tenant, you might be prompted to set up additional authentication factors for added security of your tenant admin account.
+For the latest developer content and resources, see the [External ID for customers Developer Center](https://aka.ms/ciam/dev).
 
-## Next steps
+## Related content
  - [Register an app in CIAM](how-to-register-ciam-app.md) 
  - [Customize user experience for your customers](how-to-customize-branding-customers.md)
  - [Create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md)
- - See the [External ID for customers Developer Center](https://aka.ms/ciam/dev) for the latest developer content and resources
+
