@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 06/24/2022
+ms.date: 03/26/2024
 ms.author: barclayn
 
 ---
@@ -94,14 +94,12 @@ System-assigned identity:
 
 3. Select the **Managed identity sign-ins** tab.
 
-:::image type="content" source="./media/how-to-view-managed-identity-activity/msi-sign-ins.png" alt-text="Screenshot showing managed identity sign-ins":::
-
-4. The sign-in events will now be filtered by managed identities.
-
-:::image type="content" source="./media/how-to-view-managed-identity-activity/msi-sign-in-events.png" alt-text="Screenshot showing managed identity sign-in events"::: 
+:::image type="content" source="./media/how-to-view-managed-identity-activity/sign-in-logs.png" alt-text="Screenshot showing managed identity sign-in events"::: 
 
 5. To view the identity's Enterprise application in Microsoft Entra ID, select the "Managed Identity ID" column.
 6. To view the Azure resource or user-assigned managed identity, search by name in the search bar of the Azure portal.
+
+:::image type="content" source="./media/how-to-view-managed-identity-activity/msi-sign-in-events.png" alt-text="Screenshot showing managed identity sign-in events"::: 
 
  > [!NOTE] 
  > Since managed identity authentication requests originate within the Azure infrastructure, the IP Address value is excluded here.
