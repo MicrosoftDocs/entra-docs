@@ -120,12 +120,12 @@ items:
   - name: Secure access with Microsoft Entra and partners
     expanded: true
     items:
+    - name: Coexistence with Netskope
+      href: concept-netskope-coexistence.md
     - name: Coexistence with Palo Alto Networks
       href: concept-palo-alto-coexistence.md
     - name: Coexistence with Zscaler
       href: concept-zscaler-coexistence.md
-    - name: Coexistence with Netskope
-      href: concept-netskope-coexistence.md
 - name: Reference
   expanded: false
   items:
