@@ -40,7 +40,7 @@ landingContent:
             url: concept-directory-join.md
           - text: Microsoft Entra hybrid joined devices
             url: concept-hybrid-join.md
-          - text: single sign-on (SSO) to on-premises resources
+          - text: Single sign-on (SSO) to on-premises resources
             url: device-sso-to-on-premises-resources.md
           - text: Primary Refresh Tokens
             url: concept-primary-refresh-token.md
