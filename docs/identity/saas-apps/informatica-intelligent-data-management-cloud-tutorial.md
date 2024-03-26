@@ -12,6 +12,8 @@ ms.topic: how-to
 ms.date: 07/10/2023
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Informatica Intelligent Data Management Cloud so that I can control who has access to Informatica Intelligent Data Management Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with Informatica Intelligent Data Management Cloud
