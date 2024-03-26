@@ -225,7 +225,7 @@ az role assignment create \
 ```
 
 > [!NOTE]
-> If your Microsoft Entra domain and login username domain don't match, you must specify the object ID of your user account by using `--assignee-object-id`, not just the username for `--assignee`. You can obtain the object ID for your user account by using [az Microsoft Windows Server Active Directory user list](/cli/azure/ad/user#az-ad-user-list).
+> If your Microsoft Entra domain and login username domain don't match, you must specify the object ID of your user account by using `--assignee-object-id`, not just the username for `--assignee`. You can obtain the object ID for your user account by using [az ad user list](/cli/azure/ad/user#az-ad-user-list).
 
 For more information about how to use Azure RBAC to manage access to your Azure subscription resources, see the following articles:
 
