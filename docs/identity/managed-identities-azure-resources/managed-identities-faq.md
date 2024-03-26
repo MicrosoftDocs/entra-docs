@@ -94,7 +94,7 @@ Managed identities don't have an application object in the directory, which is w
 
 Managed identities use certificate-based authentication. Each managed identity’s credential has an expiration of 90 days and it's rolled after 45 days.
 
-### What identity will IMDS default to if don't specify the identity in the request?
+### What identity will IMDS default to if I don't specify the identity in the request?
 
 - If system assigned managed identity is enabled and no identity is specified in the request, Azure Instance Metadata Service (IMDS) defaults to the system assigned managed identity.
 - If system assigned managed identity isn't enabled, and only one user assigned managed identity exists, IMDS defaults to that single user assigned managed identity.
