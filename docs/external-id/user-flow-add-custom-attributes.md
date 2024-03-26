@@ -9,7 +9,7 @@ ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 01/23/2024
 ms.author: mimart
-ms.custom: it-pro
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 
 #customer intent: As a B2B collaboration user flow administrator, I want to define custom attributes for user flows in Microsoft Entra, so that I can collect specific information during sign-up and extend the set of attributes stored on a guest account.
@@ -38,7 +38,7 @@ The `<extensions-app-id>` is specific to your tenant. To find this identifier, n
 1. Browse to **Identity** > **External Identities** > **Overview**.
 1. Select **Custom user attributes**. The available user attributes are listed.
 
-   :::image type="content" source="media/user-flow-add-custom-attributes/user-attributes.png" alt-text="Screenshot of selecting custom user attributes for sign-up." lightbox="media/user-flow-add-custom-attributes/user-attributes-large-image.png":::
+   :::image type="content" source="media/user-flow-add-custom-attributes/user-attributes.png" alt-text="Screenshot of selecting custom user attributes for sign-up." lightbox="media/user-flow-add-custom-attributes/user-attributes.png":::
 
 
 1. To add an attribute, select **Add**.
