@@ -4,11 +4,11 @@ description: Use our quickstart to set up the customer tenant free trial.
  
 author: csmulligan
 manager: CelesteDG
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: quickstart
-ms.date: 12/14/2023
+ms.date: 02/28/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -18,19 +18,19 @@ ms.custom: it-pro
 
 Get started with Microsoft Entra ID for customers (Preview) that lets you create secure, customized sign-in experiences for your customer-facing apps and services. With these built-in customer configuration features, Microsoft Entra ID for customers can serve as the identity provider and access management service for your customers. 
 
-In this quickstart, you'll learn how to set up a customer tenant free trial. If you already have an Azure subscription, you can create a tenant with customer configurations in the Microsoft Entra admin center. For more information about how to create a tenant, see [Set up a tenant](quickstart-tenant-setup.md). 
+In this quickstart, you'll learn how to set up a customer tenant free trial. If you're a developer using Visual Studio Code, you can also set up a free trial through the Microsoft Entra External ID extension ([learn more](visual-studio-code-extension.md)). If you already have an Azure subscription, you can create a tenant with customer configurations in the Microsoft Entra admin center. For more information about how to create a tenant, see [Set up a tenant](quickstart-tenant-setup.md).
 
 Your free trial of a tenant with customer configurations provides you with the opportunity to try new features and build applications and processes during the free trial period. Organization (tenant) admins can invite other users. Each user account can only have one active free trial tenant at a time. The free trial isn't designed for scale testing. Trial tenant will support up to 10K resources, learn more about Microsoft Entra service limits [here](~/identity/users/directory-service-limits-restrictions.md). During your free trial, you'll have the option to unlock the full set of features by upgrading to [Azure free account](https://azure.microsoft.com/free/).
 
    > [!NOTE]
-   > At the end of the free trial period, your free trial tenant will be disabled and deleted.
+   > At the end of the free trial period, your free trial tenant will be disabled and deleted. You can always come back and register for another trial using this link: https://aka.ms/ciam-free-trial. 
     
 During the free trial period, you'll have access to all product features with few exceptions. See the following table for comparison: 
 
 |  Features | Microsoft Entra ID for customers Trial (without credit card) | Microsoft Entra account includes Partners (needs credit card)  | 
 |----------|:-----------:|:------------:|
 | **Self-service account experiences** (Sign-up, sign-in, and password recovery.)   | :heavy_check_mark: |  :heavy_check_mark:  | 
-| **MFA** (With email OTP.)  | :heavy_check_mark: |  :heavy_check_mark:  |  
+| **MFA** (With email OTP.)  | :x: |  :heavy_check_mark:  |  
 | **Custom token augmentation** (From external sources.) |  :heavy_check_mark: |  :heavy_check_mark:  |
 | **Social identity providers**   |  :heavy_check_mark: |  :heavy_check_mark:  |
 | **Identity Protection** (Conditional Access for adaptive risk-based policies.)  | :x: |  :heavy_check_mark:  |

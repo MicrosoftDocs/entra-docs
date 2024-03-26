@@ -1,15 +1,14 @@
 ---
 title: Create a lifecycle workflow - Microsoft Entra ID
-description: This article guides you in creating a lifecycle workflow. 
+description: This article guides you in creating a lifecycle workflow.
 author: OWinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.topic: how-to 
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
+ms.topic: how-to
 ms.date: 06/22/2023
-ms.subservice: compliance
-ms.custom: template-how-to 
+ms.custom: template-how-to
 ---
 
 # Create a lifecycle workflow
@@ -23,18 +22,18 @@ You can create and customize workflows for common scenarios by using templates, 
 
 ## Prerequisites
 
-[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 
 ## Create a lifecycle workflow by using a template in the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 If you're using the Microsoft Entra admin center to create a workflow, you can customize existing templates to meet your organization's needs. These templates include one for pre-hire common scenarios.
 
 To create a workflow based on a template:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
 1. Browse to **Identity governance** > **Lifecycle workflows** > **Create a workflow**.
 

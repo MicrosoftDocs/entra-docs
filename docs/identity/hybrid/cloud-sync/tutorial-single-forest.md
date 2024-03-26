@@ -1,16 +1,15 @@
 ---
 title: Tutorial - Integrate a single forest with a single Microsoft Entra tenant
 description: This topic describes the pre-requisites and the hardware requirements cloud sync.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: tutorial
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Tutorial: Integrate a single forest with a single Microsoft Entra tenant
@@ -50,7 +49,7 @@ You can use the environment you create in this tutorial for testing or for getti
 
 <a name='install-the-azure-ad-connect-provisioning-agent'></a>
 
-## Install the Microsoft Entra Provisioning Agent
+## Install the Microsoft Entra provisioning agent
 
 If you're using the  [Basic AD and Azure environment](tutorial-basic-ad-azure.md) tutorial, it would be DC1. To install the agent, follow these steps: 
 

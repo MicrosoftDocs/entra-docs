@@ -1,15 +1,15 @@
 ---
 title: Azure Services with managed identities support
 description: List of services supporting managed identities
-services: active-directory
+
 author: barclayn
 ms.author: barclayn
-ms.date: 05/25/2023
+ms.date: 03/14/2024
 ms.topic: conceptual
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 manager: amycolannino
-ms.collection: M365-identity-device-management
+
 ---
 
 # Azure services that can use managed identities to access other services
@@ -81,7 +81,6 @@ The following Azure services support managed identities for Azure resources:
 | Azure Virtual Machine Scale Sets      | [Configure managed identities on virtual machine scale set - Azure CLI](qs-configure-cli-windows-vmss.md)                                                                  |
 | Azure Virtual Machines                | [Secure and use policies on virtual machines in Azure](/azure/virtual-machines/windows/security-policy#managed-identities-for-azure-resources)                                                                  |
 | Azure Web PubSub Service           | [Managed identities for Azure Web PubSub Service](/azure/azure-web-pubsub/howto-use-managed-identity)     |
-| Test Base for Microsoft 365| [Grant Test Base managed identities to your Key Vault account](/microsoft-365/test-base/managed-identity)|
 
 ## Next steps
 

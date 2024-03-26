@@ -5,8 +5,8 @@ description: Learn how to Configure SSO between Microsoft Entra ID and F5’s BI
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
@@ -33,7 +33,7 @@ Being legacy, the application lacks modern protocols to support a direct integra
 Having a BIG-IP in front of the application enables us to overlay the service with Microsoft Entra pre-authentication and headers-based SSO, significantly improving the overall security posture of the application.
 
 > [!NOTE] 
-> Organizations can also gain remote access to this type of application with [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md).
+> Organizations can also gain remote access to this type of application with [Microsoft Entra application proxy](/entra/identity/app-proxy).
 
 ## Scenario architecture
 
@@ -86,7 +86,7 @@ Prior BIG-IP experience isn’t necessary, but you’ll need:
 
 ## BIG-IP configuration methods
 
-There are many methods to configure BIG-IP for this scenario, including two template-based options and an advanced configuration. This tutorial covers the latest Guided Configuration 16.1 offering an Easy button template. With the Easy Button, admins no longer go back and forth between Microsoft Entra ID and a BIG-IP to enable services for SHA. The deployment and policy management is handled directly between the APM’s Guided Configuration wizard and Microsoft Graph. This rich integration between BIG-IP APM and Microsoft Entra ensures that applications can quickly, easily support identity federation, SSO, and Microsoft Entra Conditional Access, reducing administrative overhead.
+There are many methods to configure BIG-IP for this scenario, including two template-based options and an advanced configuration. This tutorial covers the latest Guided Configuration 16.1 offering an Easy button template. With the Easy Button, admins no longer go back and forth between Microsoft Entra ID and a BIG-IP to enable services for SHA. The deployment and policy management is handled directly between the APM’s Guided Configuration wizard and Microsoft Graph. This rich integration between BIG-IP APM and Microsoft Entra ID ensures that applications can quickly, easily support identity federation, SSO, and Microsoft Entra Conditional Access, reducing administrative overhead.
 
 > [!NOTE] 
 > All example strings or values referenced throughout this guide should be replaced with those for your actual environment.

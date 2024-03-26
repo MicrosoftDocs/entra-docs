@@ -2,8 +2,7 @@
 title: Passwordless security key sign-in Windows
 description: Learn how to enable passwordless security key sign-in to Microsoft Entra ID using FIDO2 security keys 
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 01/29/2023
@@ -12,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: librown, aakapo
-
-ms.collection: M365-identity-device-management
 ---
 # Enable passwordless security key sign-in to Windows 10 devices with Microsoft Entra ID 
 
@@ -40,7 +37,7 @@ This document focuses on enabling FIDO2 security key based passwordless authenti
 The following scenarios aren't supported:
 
 - Windows Server Active Directory Domain Services (AD DS) domain-joined (on-premises only devices) deployment.
-- RDP, VDI, and Citrix scenarios using a security key.
+- RDP, VDI, and Citrix scenarios using a security key other than [webauthn redirection](/azure/virtual-desktop/authentication).
 - S/MIME using a security key.
 - "Run as" using a security key.
 - Log in to a server using a security key.

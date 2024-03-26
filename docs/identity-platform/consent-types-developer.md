@@ -6,9 +6,9 @@ manager: celesteDG
 ms.author: jomondi
 ms.date: 11/01/2022
 ms.reviewer: jawoods, ludwignick, phsignor
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: concept-article
 
 #Customer intent: As a developer building an application that requires user consent for accessing resources or APIs, I want to understand the different types of consent available (static, incremental, dynamic) and how to request permissions through consent, so that I can implement the appropriate consent approach in my application and provide a better user experience.
 ---
@@ -84,7 +84,7 @@ You can also configure permissions on your own resources to require admin consen
 Some organizations may change the default user consent policy for the tenant. When your application requests access to permissions they're evaluated against these policies. The user may need to request admin consent even when not required by default. To learn how administrators manage consent policies for applications, see [Manage app consent policies](~/identity/enterprise-apps/manage-app-consent-policies.md).
 
 >[!NOTE]
->In requests to the authorization, token or consent endpoints for the Microsoft Identity platform, if the resource identifier is omitted in the scope parameter, the resource is assumed to be Microsoft Graph. For example, scope=User.Read is equivalent to `https://graph.microsoft.com/User.Read`.
+>In requests to the authorization, token or consent endpoints for the Microsoft identity platform, if the resource identifier is omitted in the scope parameter, the resource is assumed to be Microsoft Graph. For example, scope=User.Read is equivalent to `https://graph.microsoft.com/User.Read`.
 
 ### Admin Consent for Application permissions
 

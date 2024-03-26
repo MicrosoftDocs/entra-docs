@@ -8,12 +8,12 @@ writer: twimmers
 manager: jeedes
 
 ms.assetid: 656de6d6-399e-4346-a07e-0e5fefb0b4ee
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 01/11/2024
 ms.author: thwimmer
 ---
 
@@ -36,7 +36,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
 * A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
-* Boxcryptor Single sign-on enabled [subscription](https://www.boxcryptor.com/for-teams/).
+* Boxcryptor Single sign-on enabled [subscription](https://www.boxcryptor.com).
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).

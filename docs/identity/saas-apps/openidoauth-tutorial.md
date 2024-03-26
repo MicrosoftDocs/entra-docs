@@ -5,8 +5,8 @@ description: Steps to Configure an OpenID Connect OAuth application from Microso
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
@@ -72,7 +72,7 @@ By default, Microsoft Entra ID promotes multitenant applications. They're easily
 
 ## Consent framework
 
-You can use the Microsoft Entra ID consent framework to develop multitenant web and native client applications. These applications allow sign-in by user accounts from a Microsoft Entra tenant, different from the one where the application is registered. They might also need to access web APIs such as:
+You can use the Microsoft Entra consent framework to develop multitenant web and native client applications. These applications allow sign-in by user accounts from a Microsoft Entra tenant, different from the one where the application is registered. They might also need to access web APIs such as:
 - The Microsoft Graph API, to access Microsoft Entra ID, Intune, and services in Microsoft 365.
 - Other Microsoft services' APIs.
 - Your own web APIs.

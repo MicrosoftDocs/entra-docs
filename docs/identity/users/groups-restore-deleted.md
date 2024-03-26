@@ -1,25 +1,20 @@
 ---
 title: Restore a deleted Microsoft 365 group
 description: Learn how to restore a deleted group, view restorable groups, and permanently delete a group in Microsoft Entra ID.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.topic: quickstart
 ms.date: 11/15/2023
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro, seo-update-azuread-jan, mode-other, has-azure-ad-ps-ref
-ms.collection: M365-identity-device-management
+ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Restore a deleted Microsoft 365 group in Microsoft Entra ID
 
 When you delete a Microsoft 365 group in Microsoft Entra ID, the deleted group is retained but not visible for 30 days from the deletion date. This behavior is so that the group and its contents can be restored if needed. This functionality is restricted exclusively to Microsoft 365 groups in Microsoft Entra ID. It isn't available for security groups and distribution groups. The 30-day group restoration period isn't customizable.
-
-> [!NOTE]
-> Don't use `Remove-MsolGroup` because it purges the group permanently. Always use `Remove-MgBetaGroup` to delete a Microsoft 365 group.
 
 Permissions that are required to restore a group are listed in the following table.
 

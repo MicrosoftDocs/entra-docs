@@ -1,32 +1,29 @@
 ---
 title: 'Install your synchronization tool'
 description: This article describes the steps required to install either cloud sync or Microsoft Entra Connect.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 # Install your synchronization tool
 The following document provides the steps to install either cloud sync or Microsoft Entra Connect.  
 
 <a name='install-the-azure-ad-connect-provisioning-agent-for-cloud-sync'></a>
 
-## Install the Microsoft Entra Provisioning Agent for cloud sync
-Cloud sync uses the Microsoft Entra Provisioning Agent.  Use the steps below to install it.
+## Install the Microsoft Entra provisioning agent for cloud sync
+Cloud sync uses the Microsoft Entra provisioning agent.  Use the steps below to install it.
 
 [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  4. On the left, select **Agent**.
  5. Select **Download on-premises agent**, and select **Accept terms & download**.
- 6. Once the **Microsoft Entra Provisioning Agent Package** has completed downloading, run the *AADConnectProvisioningAgentSetup.exe* installation file from your downloads folder.
+ 6. Once the **Microsoft Entra provisioning agent package** has completed downloading, run the *AADConnectProvisioningAgentSetup.exe* installation file from your downloads folder.
    >[!NOTE]
    >When installing for the US Government Cloud use:  
    >*AADConnectProvisioningAgentSetup.exe ENVIRONMENTNAME=AzureUSGovernment*  

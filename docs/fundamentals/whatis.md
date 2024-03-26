@@ -1,19 +1,17 @@
 ---
 title: What is Microsoft Entra ID?
 description: Learn about Microsoft Entra ID, including terminology, available licenses, and a list of associated features.
-services: active-directory
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
 ms.date: 01/23/2023
 ms.author: barclayn
-ms.custom: "it-pro, seodec18, seo-update-azuread-jan, contperf-fy20q4"
-
-# Customer intent: As a new administrator, I want to understand what Microsoft Entra ID is, which license is right for me, and what features are available.
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
+# Customer intent: As a new administrator, I want to understand what Microsoft Entra ID is, which license is right for me, and what features are available.
 ---
 
 # What is Microsoft Entra ID?
@@ -67,7 +65,7 @@ After you choose your Microsoft Entra ID license, you'll get access to some or a
 
 |Category|Description|
 |-------|-----------|
-|Application management|Manage your cloud and on-premises apps using Application Proxy, single sign-on, the My Apps portal, and Software as a Service (SaaS) apps. For more information, see [How to provide secure remote access to on-premises applications](~/identity/app-proxy/application-proxy.md) and [Application Management documentation](~/identity/enterprise-apps/index.yml).|
+|Application management|Manage your cloud and on-premises apps using Application Proxy, single sign-on, the My Apps portal, and Software as a Service (SaaS) apps. For more information, see [How to provide secure remote access to on-premises applications](/entra/identity/app-proxy) and [Application Management documentation](~/identity/enterprise-apps/index.yml).|
 |Authentication|Manage Microsoft Entra self-service password reset, Multi-Factor Authentication, custom banned password list, and smart lockout. For more information, see [Microsoft Entra authentication documentation](~/identity/authentication/index.yml).|
 |Microsoft Entra ID for developers|Build apps that sign in all Microsoft identities, get tokens to call Microsoft Graph, other Microsoft APIs, or custom APIs. For more information, see [Microsoft identity platform (Microsoft Entra ID for developers)](~/identity-platform/index.yml).|
 |Business-to-Business (B2B)|Manage your guest users and external partners, while maintaining control over your own corporate data. For more information, see [Microsoft Entra B2B documentation](~/external-id/index.yml).|
@@ -79,7 +77,7 @@ After you choose your Microsoft Entra ID license, you'll get access to some or a
 |Hybrid identity|Use Microsoft Entra Connect and Connect Health to provide a single user identity for authentication and authorization to all resources, regardless of location (cloud or on-premises). For more information, see [Hybrid identity documentation](~/identity/hybrid/index.yml).|
 |Identity governance|Manage your organization's identity through employee, business partner, vendor, service, and app access controls. You can also perform access reviews. For more information, see [Microsoft Entra ID Governance documentation](~/id-governance/identity-governance-overview.md) and [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md).|
 |Identity protection|Detect potential vulnerabilities affecting your organization's identities, configure policies to respond to suspicious actions, and then take appropriate action to resolve them. For more information, see [Microsoft Entra ID Protection](~/id-protection/index.yml).|
-|Managed identities for Azure resources|Provide your Azure services with an automatically managed identity in Microsoft Entra ID that can authenticate any Microsoft Entra ID-supported authentication service, including Key Vault. For more information, see [What is managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md).|
+|Managed identities for Azure resources|Provide your Azure services with an automatically managed identity in Microsoft Entra ID that can authenticate any Microsoft Entra-supported authentication service, including Key Vault. For more information, see [What is managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md).|
 |Privileged identity management (PIM)|Manage, control, and monitor access within your organization. This feature includes access to resources in Microsoft Entra ID and Azure, and other Microsoft Online Services, like Microsoft 365 or Intune. For more information, see [Microsoft Entra Privileged Identity Management](~/id-governance/privileged-identity-management/index.yml).|
 |Monitoring and health|Gain insights into the security and usage patterns in your environment. For more information, see [Microsoft Entra monitoring and health](~/identity/monitoring-health/index.yml).|
 | Workload identities| Give an identity to your software workload (such as an application, service, script, or container) to authenticate and access other services and resources. For more information, see [workload identities faqs](~/workload-id/workload-identities-faqs.md).

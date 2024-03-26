@@ -4,9 +4,9 @@ description: Learn to plan your migration workstream of IAM from Active Director
 documentationCenter: ''
 author: janicericketts
 manager: martinco
-ms.service: active-directory
+ms.service: entra
 ms.topic: how-to
-ms.subservice: fundamentals
+ms.subservice: architecture
 ms.date: 07/27/2023
 ms.author: jricketts
 ms.custom: references_regions
@@ -310,13 +310,13 @@ Here are key points about usage of Microsoft Entra ID for VPN authentication:
 
   * [Tutorial: Microsoft Entra SSO integration with Palo Alto Networks GlobalProtect](~/identity/saas-apps/palo-alto-networks-globalprotect-tutorial.md) 
 
-* For Windows 10 devices, consider integrating [Microsoft Entra ID support into the built-in VPN client](/windows-server/remote/remote-access/how-to-aovpn-conditional-access).
+* For Windows 10 devices, consider integrating [Microsoft Entra support into the built-in VPN client](/windows-server/remote/remote-access/how-to-aovpn-conditional-access).
 
 * After you evaluate this scenario, you can implement a solution to remove your dependency with on-premises to authenticate to VPN.
 
 ### Move remote access to internal applications
 
-To simplify your environment, you can use [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md) or [secure hybrid access](~/identity/enterprise-apps/secure-hybrid-access.md) partners to provide remote access. This allows you to remove the dependency on on-premises reverse proxy solutions.
+To simplify your environment, you can use [Microsoft Entra application proxy](/entra/identity/app-proxy) or [secure hybrid access](~/identity/enterprise-apps/secure-hybrid-access.md) partners to provide remote access. This allows you to remove the dependency on on-premises reverse proxy solutions.
 
 It's important to mention that enabling remote access to an application by using the preceding technologies is an interim step. You need to do more work to completely decouple the application from Active Directory. 
 

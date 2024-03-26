@@ -1,12 +1,10 @@
 ---
 title: Add your organization's privacy info
 description: Add your organization's privacy info, privacy contact, and technical contact to your directory.
-services: active-directory
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
-ms.workload: identity
 ms.topic: how-to
 ms.date: 12/04/2023
 ms.author: barclayn
@@ -18,7 +16,7 @@ This article explains how an administrator can add privacy-related info to an or
 
 We strongly recommend you add both your global privacy contact and your organization's privacy statement, so your internal employees and external guests can review your policies. Because privacy statements are uniquely created and tailored for each business, we strongly recommend you contact a lawyer for assistance.
 
-[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-dsr-and-stp-note.md)]
+[!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-dsr-and-stp-note.md)]
 
 ## Add your privacy info
 

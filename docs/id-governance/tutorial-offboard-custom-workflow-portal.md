@@ -1,13 +1,11 @@
 ---
 title: Execute employee termination tasks by using lifecycle workflows
 description: Learn how to remove users from an organization in real time on their last day of work by using lifecycle workflows in the Microsoft Entra admin center.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: tutorial
-ms.subservice: compliance
 ms.date: 06/22/2023
 ms.author: owinfrey
 ms.reviewer: krbain
@@ -28,7 +26,7 @@ For more information, see [Run a workflow on demand](on-demand-workflow.md).
 
 ## Prerequisites
 
-[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 
 ## Before you begin
@@ -47,7 +45,7 @@ The leaver scenario includes the following steps:
 
 Use the following steps to create a leaver on-demand workflow that will execute a real-time employee termination by using lifecycle workflows in the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 2. Select **Identity Governance**.
 3. Select **Lifecycle workflows**.
 4. On the **Overview** tab, select **New workflow**.

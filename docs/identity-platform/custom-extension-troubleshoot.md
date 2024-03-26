@@ -1,15 +1,15 @@
 ---
 title: Troubleshoot a custom claims provider
 description: Troubleshoot and monitor your custom claims provider API.  Learn how to use logging and Microsoft Entra sign-in logs to find errors and issues in your custom claims provider API.
-author: omondiatieno
+author: cilwerner
 manager: CelesteDG
-ms.author: jomondi
+ms.author: cwerner
 ms.custom: 
 ms.date: 03/06/2023
 ms.reviewer: JasSuri
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: how-to
+ms.service: identity-platform
+
+ms.topic: troubleshooting
 titleSuffix: Microsoft identity platform
 
 #Customer intent: As a developer integrating external systems with Microsoft Entra ID, I want to troubleshoot issues with my custom claims provider API, so that I can identify and resolve any errors or performance problems affecting the authentication experience.
@@ -17,7 +17,7 @@ titleSuffix: Microsoft identity platform
 
 # Troubleshoot your custom claims provider API (preview)
 
-Authentication events and [custom claims providers](custom-claims-provider-overview.md) allow you to customize the Microsoft Entra authentication experience by integrating with external systems.  For example, you can create a custom claims provider API and configure an [OpenID Connect app](./custom-extension-get-started.md) or [SAML app](custom-extension-configure-saml-app.md) to receive tokens with claims from an external store.
+Authentication events and [custom claims providers](custom-claims-provider-overview.md) allow you to customize the Microsoft Entra authentication experience by integrating with external systems.  For example, you can create a custom claims provider API and configure an [OpenID Connect app](./custom-extension-tokenissuancestart-configuration.md) or [SAML app](custom-extension-configure-saml-app.md) to receive tokens with claims from an external store.
 
 ## Error behavior
 
@@ -85,12 +85,18 @@ Use the following table to diagnose an error code.
 
 ## Call your REST API directly
 
-Your REST API is protected by a Microsoft Entra access token. You can test your API by obtaining an access token with the [application registration](custom-extension-get-started.md#22-grant-admin-consent) associated with the custom authentiction extensions. After you acquire an access token, pass it the HTTP `Authorization` header. To obtain an access token, follow these steps:
+Your REST API is protected by a Microsoft Entra access token. You can test your API by;
+- Obtaining an access token with an [application registration](custom-extension-tokenissuancestart-configuration.md#12-grant-admin-consent) associated with the custom authentiction extensions
+- Test your API locally using Postman. 
+
+# [Obtain an access token](#tab/obtain-an-access-token)
+
+After you acquire an access token, pass it the HTTP `Authorization` header. To obtain an access token, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Application registrations**.
-1. Select the **Azure Functions authentication events API** app registration [you created previously](custom-extension-get-started.md#step-2-register-a-custom-authentication-extension).
-1. Copy the [application ID](custom-extension-get-started.md#22-grant-admin-consent).
+1. Select the *Azure Functions authentication events API* app registration, previously configured in [configure a custom claim provider for a token issuance event](custom-extension-tokenissuancestart-configuration.md#step-1-register-a-custom-authentication-extension).
+1. Copy the [application ID](custom-extension-tokenissuancestart-configuration.md#12-grant-admin-consent).
 1. If you haven't created an app secret, follow these steps:
     1. Select **Certificates & secrets** > **Client secrets** > **New client secret**.
     1. Add a description for your client secret.
@@ -116,14 +122,26 @@ Your REST API is protected by a Microsoft Entra access token. You can test your 
     |`scope`| The **Application ID URI** of your application, then add `.default`. For example, `api://contoso.azurewebsites.net/11111111-0000-0000-0000-000000000000/.default`|
 
 1. Run the HTTP query and copy the `access_token` into the <https://jwt.ms> web app.
-1. Compare the `iss` with the issuer name you [configured in your API](custom-extension-get-started.md#step-5-protect-your-azure-function).
-1. Compare the `aud` with the client ID you [configured in your API](custom-extension-get-started.md#step-5-protect-your-azure-function).
+1. Compare the `iss` with the issuer name you [configured in your API](custom-extension-tokenissuancestart-configuration.md#step-4-protect-your-azure-function).
+1. Compare the `aud` with the client ID you [configured in your API](custom-extension-tokenissuancestart-configuration.md#step-4-protect-your-azure-function).
 
-To test your API directly from the Postman, follow these steps:
+# [Postman](#tab/postman)
 
-1. In your REST API, disable the `appid` or `azp` [claim validation](custom-extension-overview.md#protect-your-rest-api). Check out how to [edit the function API](custom-extension-get-started.md#12-edit-the-function) you created earlier.
-1. In Postman, create new HTTP request
-1. Set the **HTTP method** to `POST`
+To test your API directly from Postman, follow these steps:
+
+> [!NOTE]
+>
+> If you used the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet package, turn off token validation for testing purposes. Open *local.settings.json* and add the following parameter
+>
+> ```json
+> "AuthenticationEvents__BypassTokenValidation": true
+> ```
+>
+> Once you've finished testing, ensure that you remove the parameter.
+
+1. In your REST API, disable the `appid` or `azp` [claim validation](custom-extension-overview.md#protect-your-rest-api). Check out how to [edit the function API](custom-extension-tokenissuancestart-setup.md) you created earlier.
+1. In Postman, create new HTTP request.
+1. Set the **HTTP method** to `POST`.
 1. In the **Body**, select **Raw** and then select **JSON**.
 1. Pase the following JSON that imitates the request Microsoft Entra ID sends to your REST API.
 
@@ -137,13 +155,14 @@ To test your API directly from the Postman, follow these steps:
             "authenticationEventListenerId": "<GUID>",
             "customAuthenticationExtensionId": "<Your custom authentication extension ID>",
             "authenticationContext": {
-                "correlationId": "fcef74ef-29ea-42ca-b150-8f45c8f31ee6",
+                "correlationId": "<Enter correlation ID here>",
                 "client": {
                     "ip": "127.0.0.1",
                     "locale": "en-us",
                     "market": "en-us"
                 },
                 "protocol": "OAUTH2.0",
+                "requesttype": "SignIn",
                 "clientServicePrincipal": {
                     "id": "<Your Test Applications servicePrincipal objectId>",
                     "appId": "<Your Test Application App Id>",
@@ -157,11 +176,14 @@ To test your API directly from the Postman, follow these steps:
                     "displayName": "My Test application"
                 },
                 "user": {
-                    "createdDateTime": "2016-03-01T15:23:40Z",
+                    "createdDateTime": "2023-08-16T00:00:00Z",
                     "displayName": "John Smith",
                     "givenName": "John",
                     "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471",
                     "mail": "john@contoso.com",
+                    "onPremisesSamAccountName": "johnsmith",
+                    "onPremisesSecurityIdentifier": "Enter Security Identifier",
+                    "onPremisesUserPrincipalName": "John Smith",
                     "preferredLanguage": "en-us",
                     "surname": "Smith",
                     "userPrincipalName": "john@contoso.com",
@@ -172,8 +194,34 @@ To test your API directly from the Postman, follow these steps:
     }
     ```
 
-1. Select **Authorization** and then select **Bearer token**.
-1. Paste the access token you received from Microsoft Entra ID, and run the query.
+    > [!TIP]
+    >
+    > If you're using an access token obtained from Microsoft Entra ID, select **Authorization** and then select **Bearer token**, then paste the access token you received from Microsoft Entra ID.
+
+1. Select **Send**, and you should receive a JSON response similar to the following:
+
+    ```json
+    {
+        "data": {
+            "@odata.type": "microsoft.graph.onTokenIssuanceStartResponseData",
+            "actions": [
+                {
+                    "@odata.type": "microsoft.graph.tokenIssuanceStart.provideClaimsForToken",
+                    "claims": {
+                        "customClaim1": "customClaimValue1",
+                        "customClaim2": [
+                            "customClaimString1",
+                            "customClaimString2" 
+                        ]
+                    }
+                }
+    
+            ]
+        }
+    }
+    ```
+
+---
 
 ## Common performance improvements
 
@@ -184,8 +232,8 @@ One of the most common issues is that your custom claims provider API doesn't re
 1. If you use a cloud provider to host your API, use a hosting plan that keeps the API always "warm". For Azure Functions, it can be either [the Premium plan or Dedicated plan](/azure/azure-functions/functions-scale).
 1. [Run automated integration tests](test-automate-integration-testing.md) for your authentications. You can also use Postman or other tools to test just your API performance.
 
-## Next steps
+## See also
 
-- Learn how to [create and register a custom claims provider](custom-extension-get-started.md) with a sample OpenID Connect application.
-- If you already have a custom claims provider registered, you can configure a [SAML application](custom-extension-configure-saml-app.md) to receive tokens with claims sourced from an external store.
-- Learn more about custom claims providers with the [custom claims provider reference](custom-claims-provider-reference.md) article.
+- [Create a REST API with a token issuance start event](custom-extension-tokenissuancestart-setup.md)
+- [Configure a SAML app to receive tokens with claims from an external store](custom-extension-configure-saml-app.md)
+- [Custom claims provider reference](custom-claims-provider-reference.md) article.

@@ -4,9 +4,9 @@ description: This article describes phase 2 of planning migration of application
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.topic: conceptual
+ms.service: entra-id
+ms.subservice: enterprise-apps
+ms.topic: concept-article
 
 ms.date: 05/30/2023
 ms.author: jomondi
@@ -49,7 +49,7 @@ Once you determined values for business criticality and usage, you can then dete
 
 You can choose to begin the app migration with either the lowest priority apps or the highest priority apps based on your organization’s needs.
 
-In a scenario where you might not have experience using Microsoft Entra ID and Identity services, consider moving your **lowest priority apps** to Microsoft Entra ID first. This option minimizes your business impact, and you can build momentum. Once you successfully move these apps and gain the stakeholder’s confidence, you can continue to migrate the other apps.
+In a scenario where you might not have experience using Microsoft Entra ID and Identity services, consider moving your **lowest priority apps** to Microsoft Entra first. This option minimizes your business impact, and you can build momentum. Once you successfully move these apps and gain the stakeholder’s confidence, you can continue to migrate the other apps.
 
 If there's  no clear priority, you should consider moving the apps that are in the [Microsoft Entra Gallery](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps) first and support multiple identity providers because they're easier to integrate. It's likely that these apps are the **highest-priority apps** in your organization. To help integrate your SaaS applications with Microsoft Entra ID, There's a collection of [tutorials](~/identity/saas-apps/tutorial-list.md) that walk you through configuration.
 

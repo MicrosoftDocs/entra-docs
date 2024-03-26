@@ -1,20 +1,17 @@
 ---
 title: Assign a managed identity access to a resource using PowerShell
 description: Step-by-step instructions for assigning a managed identity on one resource, access to another resource, using PowerShell.
-services: active-directory
-documentationcenter: 
+
 author: barclayn
 manager: amycolannino
-editor: 
 
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 01/11/2022
 ms.author: barclayn
-ms.collection: M365-identity-device-management 
+
 ms.custom: devx-track-azurepowershell
 ---
 
@@ -24,7 +21,7 @@ ms.custom: devx-track-azurepowershell
 
 Once you've configured an Azure resource with a managed identity, you can give the managed identity access to another resource, just like any security principal. This example shows you how to give an Azure virtual machine's managed identity access to an Azure storage account using PowerShell.
 
-[!INCLUDE [az-powershell-update](~/../azure-docs-pr/includes/updated-for-az.md)]
+[!INCLUDE [az-powershell-update](~/includes/azure-docs-pr/updated-for-az.md)]
 
 ## Prerequisites
 

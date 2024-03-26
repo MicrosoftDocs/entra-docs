@@ -10,13 +10,14 @@ metadata:
   title: Microsoft Entra External ID documentation
   description: Learn how to use Microsoft Entra External ID for customers to manage how partners and customers sign in to your applications.
    
-  ms.service: active-directory
-  ms.subservice: ciam
+  ms.service: entra-external-id
+  ms.subservice:
+
   ms.topic: hub-page
   ms.collection: collection
   author: csmulligan
   ms.author: cmulligan
-  ms.date: 05/02/2023
+  ms.date: 02/28/2024
 
 ## FRONT MATTER END
 
@@ -109,9 +110,6 @@ additionalContent:
           summary: Web API that is called from a web app or from a web client.
           url: ./customers/tutorial-protect-web-api-dotnet-core-build-app.md          
           # Card
-        - title: Browserless app
-          summary: A web app without a user interface.
-          url: ./customers/sample-browserless-app-node-sign-in.md 
         - title: Daemon app
           summary: Daemon or server app that runs without a user interface.
           url: ./customers/sample-daemon-node-call-api.md

@@ -7,8 +7,8 @@ ms.author: ryanwi
 ms.custom: 
 ms.date: 04/13/2023
 ms.reviewer: sureshja
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
 #Customer intent: As an application developer, I want to configure the attributes of an application in the Microsoft Entra admin center or programmatically, so that I can update the application object and define permissions and roles for the app.
 ---
@@ -55,7 +55,7 @@ Example:
 | :--- | :--- |
 | acceptMappedClaims | Nullable Boolean |
 
-As documented on the [apiApplication resource type](/graph/api/resources/apiapplication#properties), this allows an application to use [claims mapping](./saml-claims-customization.md) without specifying a custom signing key.  Applications that receive tokens rely on the fact that the claim values are authoritatively issued by Microsoft Entra ID and cannot be tampered with. However, when you modify the token contents through claims-mapping policies, these assumptions may no longer be correct. Applications must explicitly acknowledge that tokens have been modified by the creator of the claims-mapping policy to protect themselves from claims-mapping policies created by malicious actors.
+As documented on the [`apiApplication` resource type](/graph/api/resources/apiapplication#properties), this allows an application to use [claims mapping](./saml-claims-customization.md) without specifying a custom signing key.  Applications that receive tokens rely on the fact that the claim values are authoritatively issued by Microsoft Entra ID and cannot be tampered with. However, when you modify the token contents through claims-mapping policies, these assumptions may no longer be correct. Applications must explicitly acknowledge that tokens have been modified by the creator of the claims-mapping policy to protect themselves from claims-mapping policies created by malicious actors.
 
 > [!WARNING]
 > Do not set `acceptMappedClaims` property to `true` for multi-tenant apps, which can allow malicious actors to create claims-mapping policies for your app.

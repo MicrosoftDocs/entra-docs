@@ -6,9 +6,9 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom:
 ms.date: 09/25/2023
-ms.reviewer: kkrishna, jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: jmprieur
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As a developer, I want to add app roles to my application using RBAC, so I can assign users and groups to those roles.
 ---
@@ -149,7 +149,7 @@ Confirm that the users and groups you added appear in the **Users and groups** l
 Learn more about app roles with the following resources.
 
 - Code samples on GitHub
-  - [Add authorization using app roles & roles claims to an ASP\.NET Core web app](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/5-WebApp-AuthZ/5-1-Roles/README.md)
+  - [Add authorization using app roles & roles claims to an ASP.NET Core web app](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/5-WebApp-AuthZ/5-1-Roles/README.md)
 - Reference documentation
   - [Microsoft Entra app manifest](./reference-app-manifest.md)
 - Video: [Implement authorization in your applications with Microsoft identity platform](https://www.youtube.com/watch?v=LRoc-na27l0) (1:01:15)

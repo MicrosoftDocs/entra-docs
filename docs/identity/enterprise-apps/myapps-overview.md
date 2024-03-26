@@ -4,9 +4,9 @@ description: Learn about how to manage applications in the My Apps portal.
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.topic: conceptual
+ms.service: entra-id
+ms.subservice: enterprise-apps
+ms.topic: concept-article
 
 ms.date: 10/18/2023
 ms.author: jomondi
@@ -147,6 +147,9 @@ Users can also customize their experience by:
 Applications can be hidden from the My Apps portal by a user or administrator. A hidden application can still be accessed from other locations, such as the Microsoft 365 portal. Only 950 applications to which a user has access can be accessed through the My Apps portal.
 
 For more information, see [Create collections on the My Apps portal](access-panel-collections.md).
+
+> [!IMPORTANT]
+>In case there is domain federation and for the user to be redirected to an external federation endpoint for authentication, the request to My Apps must contain a domain hint URL parameter such as "domain_hint=example.com".
 
 ## Next steps
 

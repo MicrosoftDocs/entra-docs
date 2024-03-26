@@ -1,15 +1,11 @@
 ---
 title: Create and manage downloadable access review history report
 description: Using Microsoft Entra access reviews, you can download a review history for access reviews in your organization.
-services: active-directory
-documentationcenter: ''
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: access-reviews
 ms.topic: conceptual
-ms.subservice: compliance
 ms.date: 06/28/2023
 ms.author: owinfrey
 ---
@@ -26,7 +22,7 @@ Review history and request review history are available for any user if they're 
 
 **Prerequisite role:** All users authorized to view access reviews
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Access Reviews** > **Review History**.
  

@@ -3,10 +3,10 @@ title: Sign-in logs in Microsoft Entra ID
 description: Learn about the different types of sign-in logs that are available in Microsoft Entra monitoring and health.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
-ms.subservice: report-monitor
-ms.date: 12/15/2023
+ms.subservice: monitoring-health
+ms.date: 03/01/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -24,6 +24,10 @@ Two other activity logs are also available to help monitor the health of your te
 
 - **[Audit](concept-audit-logs.md)** – Information about changes applied to your tenant, such as users and group management or updates applied to your tenant’s resources.
 - **[Provisioning](concept-provisioning-logs.md)** – Activities performed by a provisioning service, such as the creation of a group in ServiceNow or a user imported from Workday.
+
+## License and role requirements
+
+[!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
 
 ## What can you do with sign-in logs?
 
@@ -202,8 +206,8 @@ There are several reports available in **Usage & insights**. Some of these repor
 - Microsoft Entra application activity (preview)
 - AD FS application activity
 - Authentication methods activity
-- Service principal sign-in activity (preview)
-- Application credential activity (preview)
+- Service principal sign-in activity
+- Application credential activity
 
 ### Microsoft 365 activity logs
 

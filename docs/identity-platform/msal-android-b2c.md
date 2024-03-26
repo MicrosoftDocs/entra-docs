@@ -7,9 +7,9 @@ ms.author: henrymbugua
 ms.custom: 
 ms.date: 9/18/2019
 ms.reviewer: rapong, iambmelt
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn about specific considerations when using Azure AD B2C and MSAL.Android so I can decide if this platform meets my application development needs and requirements.
 ---
 

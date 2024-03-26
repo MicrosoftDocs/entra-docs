@@ -5,9 +5,9 @@ description: Learn how to manage your Microsoft Entra ID for customers tenant by
 author: garrodonnell
 manager: celested
 ms.author: godonnell
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 05/23/2023
 ms.custom: developer
@@ -22,10 +22,12 @@ You can manage your Microsoft Entra ID for customers tenant using the Azure REST
 
 You can perform tenant management operations with your Microsoft Entra ID for customers tenant with the following operations:
 
-- [Create or Update](/rest/api/azurestack/directory-tenants/create-or-update)
-- [Delete](/rest/api/azurestack/directory-tenants/delete)
-- [Get](/rest/api/azurestack/directory-tenants/get)
-- [List](/rest/api/azurestack/directory-tenants/list)
+- [Create or Update](/rest/api/activedirectory/ciam-tenants/create)
+- [Delete](/rest/api/activedirectory/ciam-tenants/delete)
+- [Get](/rest/api/activedirectory/ciam-tenants/get)
+- [List by Resource Group](/rest/api/activedirectory/ciam-tenants/list-by-resource-group)
+- [List by Subscription](/rest/api/activedirectory/ciam-tenants/list-by-subscription)
+- [Update](/rest/api/activedirectory/ciam-tenants/update)
 
 ## Next steps
 

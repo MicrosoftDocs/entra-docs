@@ -2,9 +2,9 @@
 title: Export and use Microsoft Entra ID Protection data
 description: Learn how to investigate using long-term data in Microsoft Entra ID Protection
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: identity-protection
+
+ms.service: entra-id-protection
+
 ms.topic: how-to
 ms.date: 01/24/2023
 
@@ -13,7 +13,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: chuqiaoshi, etbasser
 
-ms.collection: M365-identity-device-management
+
 ---
 # How To: Export risk data
 

@@ -7,9 +7,9 @@ ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 06/01/2023
 ms.reviewer: ludwignick
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: concept-article
 #Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand how to use ID tokens correctly, so that I can verify user identity and use the claims provided by the tokens for various purposes within my application.
 ---
 

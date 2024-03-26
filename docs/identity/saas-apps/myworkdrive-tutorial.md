@@ -5,8 +5,8 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
@@ -147,7 +147,7 @@ In this section, you'll enable Britta Simon to use Azure single sign-on by grant
 	d. Click **Save**.
 
 	> [!NOTE]
-	> For additional information review the [MyWorkDrive Microsoft Entra ID support article](https://www.myworkdrive.com/support/saml-single-sign-on-azure-ad/).
+	> For additional information review the [MyWorkDrive Microsoft Entra support article](https://www.myworkdrive.com/support/saml-single-sign-on-azure-ad/).
 
 ### Create MyWorkDrive test user
 

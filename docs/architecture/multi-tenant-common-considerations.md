@@ -1,25 +1,23 @@
 ---
-title: Common considerations for multi-tenant user management in Microsoft Entra ID
-description: Learn about the common design considerations for user access across Microsoft Entra tenants with guest accounts 
-services: active-directory
+title: Common considerations for multitenant user management in Microsoft Entra ID
+description: Learn about the common design considerations for user access across Microsoft Entra tenants with guest accounts
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 08/21/2023
+ms.date: 03/11/2024
 ms.author: jricketts
-ms.custom: it-pro, seodec18, has-azure-ad-ps-ref
-ms.collection: M365-identity-device-management
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
-# Common considerations for multi-tenant user management
 
-This article is the third in a series of articles that provide guidance for configuring and providing user lifecycle management in Microsoft Entra multi-tenant environments. The following articles in the series provide more information as described.
+# Common considerations for multitenant user management
 
-- [Multi-tenant user management introduction](multi-tenant-user-management-introduction.md) is the first in the series of articles that provide guidance for configuring and providing user lifecycle management in Microsoft Entra multi-tenant environments.
-- [Multi-tenant user management scenarios](multi-tenant-user-management-scenarios.md) describes three scenarios for which you can use multi-tenant user management features: end user-initiated, scripted, and automated.
-- [Common solutions for multi-tenant user management](multi-tenant-common-solutions.md) when single tenancy doesn't work for your scenario, this article provides guidance for these challenges:  automatic user lifecycle management and resource allocation across tenants, sharing on-premises apps across tenants.
+This article is the third in a series of articles that provide guidance for configuring and providing user lifecycle management in Microsoft Entra multitenant environments. The following articles in the series provide more information as described.
+
+- [Multitenant user management introduction](multi-tenant-user-management-introduction.md) is the first in the series of articles that provide guidance for configuring and providing user lifecycle management in Microsoft Entra multitenant environments.
+- [Multitenant user management scenarios](multi-tenant-user-management-scenarios.md) describes three scenarios for which you can use multitenant user management features: end user-initiated, scripted, and automated.
+- [Common solutions for multitenant user management](multi-tenant-common-solutions.md) when single tenancy doesn't work for your scenario, this article provides guidance for these challenges:  automatic user lifecycle management and resource allocation across tenants, sharing on-premises apps across tenants.
 
 The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) (B2B) and [cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md).
 
@@ -33,54 +31,54 @@ Synchronization requirements are unique to your organization's specific needs. A
 
 ## Cross-tenant synchronization
 
-[Cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md) can address collaboration and access challenges of multi-tenant organizations. The following table shows common synchronization use cases. You can use both cross-tenant synchronization and customer development to satisfy use cases when considerations are relevant to more than one collaboration pattern.
+[Cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md) can address collaboration and access challenges of multitenant organizations. The following table shows common synchronization use cases. You can use both cross-tenant synchronization and customer development to satisfy use cases when considerations are relevant to more than one collaboration pattern.
 
 | Use case | Cross-tenant sync | Custom development |
 | - | - | - |
-| User lifecycle management | ![Checkmark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) | ![Checkmark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
-| File sharing and app access | ![Checkmark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) | ![Checkmark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
-| Support sync to/from sovereign clouds |  | ![Checkmark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
-| Control sync from resource tenant |  | ![Checkmark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
-| Sync Group objects |  | ![Checkmark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
-| Sync Manager links |  | ![Checkmark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
-| Attribute level Source of Authority |  | ![Checkmark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
-| Microsoft Entra write-back to AD |  | ![Checkmark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
+| User lifecycle management | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
+| File sharing and app access | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
+| Support sync to/from sovereign clouds |  | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
+| Control sync from resource tenant |  | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
+| Sync Group objects |  | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
+| Sync Manager links | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
+| Attribute level Source of Authority |  | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
+| Microsoft Entra write-back to Microsoft Windows Server Active Directory |  | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
 
 ## Directory object considerations
 
 ### Inviting an external user with UPN versus SMTP Address
 
-Microsoft Entra B2B expects that a user's **UserPrincipalName** (UPN) is the primary SMTP (Email) address for sending invitations. When the user's UPN is the same as their primary SMTP address, B2B works as expected. However, if the UPN is different than the external user's primary SMTP address, it may fail to resolve when a user accepts an invitation, which may be a challenge if you don't know the user's real UPN. You need to discover and use the UPN when sending invitations for B2B.
+Microsoft Entra B2B expects that a user's **UserPrincipalName** (UPN) is the primary Simple Mail Transfer Protocol (SMTP) (Email) address for sending invitations. When the user's UPN is the same as their primary SMTP address, B2B works as expected. However, if the UPN is different than the external user's primary SMTP address, it might fail to resolve when a user accepts an invitation, which might be a challenge if you don't know the user's real UPN. You need to discover and use the UPN when sending invitations for B2B.
 
-The [Microsoft Exchange Online](#microsoft-exchange-online) section of this article explains how to change the default primary SMTP on external users. This technique is useful if you want all email and notifications for an external to flow to the real primary SMTP address as opposed to the UPN. It may be a requirement if the UPN isn't route-able for mail flow.
+The [Microsoft Exchange Online](#microsoft-exchange-online) section of this article explains how to change the default primary SMTP on external users. This technique is useful if you want all email and notifications for an external to flow to the real primary SMTP address as opposed to the UPN. It might be a requirement if the UPN isn't route-able for mail flow.
 
 ### Converting an external user's UserType
 
-When you use the console to manually create an invitation for an external user account, it creates the user object with a guest user type. Using other techniques to create invitations enable you to set the user type to something other than an external guest account. For example, when using the API, you can configure whether the account is an external member account or an external guest account.
+When you use the console to manually create an invitation for an external user account, it creates the user object with a Guest User type. Using other techniques to create invitations enable you to set the user type to something other than an external guest account. For example, when using the API, you can configure whether the account is an external member account or an external guest account.
 
 - Some of the [limits on guest functionality can be removed](~/external-id/user-properties.md#guest-user-permissions).
-- You can [convert guest accounts to member user type.](~/external-id/user-properties.md#can-azure-ad-b2b-users-be-added-as-members-instead-of-guests)
+- You can [convert guest accounts to member user type](~/external-id/user-properties.md#can-azure-ad-b2b-users-be-added-as-members-instead-of-guests).
 
-If you convert from an external guest user to an external member user account, there might be issues with how Exchange Online handles B2B accounts. You can't mail-enable accounts that you invited as external member users. To mail-enable an external member account, use the following best approach.
+If you convert from an external Guest User to an external member user account, there might be issues with how Exchange Online handles B2B accounts. You can't mail-enable accounts that you invited as external member users. To mail-enable an external member account, use the following best approach.
 
-- Invite the cross-org users as external guest user accounts.
+- Invite the cross-org users as external Guest User accounts.
 - Show the accounts in the GAL.
 - Set the UserType to Member.
 
 When you use this approach, the accounts show up as MailUser objects in Exchange Online and across Office 365. Also, note there's a timing challenge. Make sure the user is visible in the GAL by checking both Microsoft Entra user ShowInAddressList property aligns with the Exchange Online PowerShell HiddenFromAddressListsEnabled property (that are reverse of each other). The [Microsoft Exchange Online](#microsoft-exchange-online) section of this article provides more information on changing visibility.
 
-It's possible to convert a member user to a guest user, which is useful for internal users that you want to restrict to guest-level permissions. Internal guest users are users that aren't employees of your organization but for whom you manage their users and credentials. It may allow you to avoid licensing the internal guest user.
+It's possible to convert a member user to a Guest User, which is useful for internal users that you want to restrict to guest-level permissions. Internal guest users are users that aren't employees of your organization but for whom you manage their users and credentials. It might allow you to avoid licensing the internal Guest User.
 
 ### Issues with using mail contact objects instead of external users or members
 
 You can represent users from another tenant using a traditional GAL synchronization. If you perform a GAL synchronization rather than using Microsoft Entra B2B collaboration, it creates a mail contact object.
 
-- A mail contact object and a mail-enabled external member or guest user can't coexist in the same tenant with the same email address at the same time.
+- A mail contact object and a mail-enabled external member or Guest User can't coexist in the same tenant with the same email address at the same time.
 - If a mail contact object exists for the same mail address as the invited external user, it creates the external user but isn't mail-enabled.
 - If the mail-enabled external user exists with the same mail, an attempt to create a mail contact object throws an exception at creation time.
 
 > [!NOTE]
-> Using mail contacts requires Active Directory Directory Services (AD DS) or Exchange Online PowerShell. Microsoft Graph doesn't provide an API call for managing contacts.
+> Using mail contacts requires Active Directory Services (AD DS) or Exchange Online PowerShell. Microsoft Graph doesn't provide an API call for managing contacts.
 
 The following table displays the results of mail contact objects and external user states.
 
@@ -90,7 +88,7 @@ The following table displays the results of mail contact objects and external us
 | None | Invite B2B Guest | Mail-enable external user. |
 | Mail contact object exists | Invite B2B Member | Error. Conflict of Proxy Addresses. |
 | Mail contact object exists | Invite B2B Guest | Mail-contact and Non-Mail enabled external user. See important note above. |
-| Mail-enabled external guest user | Create mail contact object | Error |
+| Mail-enabled external Guest User | Create mail contact object | Error |
 | Mail-enabled external member user exists | Create mail-contact | Error |
 
 Microsoft recommends using Microsoft Entra B2B collaboration (instead of traditional GAL synchronization) to create:
@@ -104,12 +102,12 @@ Follow this recommended approach to achieve the goal:
 
 - Invite guest users.
 - Unhide them from the GAL.
-- Disable them by [blocking them from sign-in](/powershell/module/azuread/set-azureaduser).
+- Disable them by [blocking them from sign-in](/powershell/module/microsoft.graph.users/update-mguser).
 
 A mail contact object can't convert to a user object. Therefore, properties associated with a mail contact object can't transfer (such as group memberships and other resource access). Using a mail contact object to represent a user comes with the following challenges.
 
-- **Office 365 Groups.** Office 365 Groups support policies governing the types of users allowed to be members of groups and interact with content associated with groups. For example, a group may not allow guest users to join. These policies can't govern mail contact objects.
-- **Microsoft Entra Self-service group management (SSGM).** Mail contact objects aren't eligible to be members in groups using the SSGM feature. You may need more tools to manage groups with recipients represented as contacts instead of user objects.
+- **Office 365 Groups.** Office 365 Groups support policies governing the types of users allowed to be members of groups and interact with content associated with groups. For example, a group might not allow guest users to join. These policies can't govern mail contact objects.
+- **Microsoft Entra Self-service group management (SSGM).** Mail contact objects aren't eligible to be members in groups using the SSGM feature. You might need more tools to manage groups with recipients represented as contacts instead of user objects.
 - **Microsoft Entra ID Governance, Access Reviews.** You can use the access reviews feature to review and attest to membership of Office 365 group. Access reviews are based on user objects. Members represented by mail contact objects are out of scope for access reviews.
 - **Microsoft Entra ID Governance, Entitlement Management (EM).** When you use EM to enable self-service access requests for external users in the company's EM portal, it creates a user object the time of request. It doesn't support mail contact objects.
 
@@ -119,22 +117,26 @@ A mail contact object can't convert to a user object. Therefore, properties asso
 
 The state of the user, device, or network in the user's home tenant doesn't convey to the resource tenant. Therefore, an external user might not satisfy Conditional Access policies that use the following controls.
 
-Where allowed, you can override this behavior with [Cross-Tenant Access Settings (CTAS)](~/external-id/cross-tenant-access-overview.md) that honor MFA and device compliance from the home tenant.
+Where allowed, you can override this behavior with [Cross-Tenant Access Settings (CTAS)](~/external-id/cross-tenant-access-overview.md) that honor multifactor authentication and device compliance from the home tenant.
 
-- **Require multifactor authentication.** Without CTAS configured, an external user must register/respond to MFA in the resource tenant (even if MFA was satisfied in the home tenant), which results in multiple MFA challenges. If they need to reset their MFA proofs, they might not be aware of the multiple MFA proof registrations across tenants. The lack of awareness might require the user to contact an administrator in the home tenant, resource tenant, or both.
+- **Require multifactor authentication.** Without CTAS configured, an external user must register/respond to multifactor authentication in the resource tenant (even if multifactor authentication was satisfied in the home tenant), which results in multiple multifactor authentication challenges. If they need to reset their multifactor authentication proofs, they might not be aware of the multiple multifactor authentication proof registrations across tenants. The lack of awareness might require the user to contact an administrator in the home tenant, resource tenant, or both.
 - **Require device to be marked as compliant.** Without CTAS configured, device identity isn't registered in the resource tenant, so the external user can't access resources that require this control.
 - **Require Microsoft Entra hybrid joined device.** Without CTAS configured, device identity isn't registered in the resource tenant (or on-premises Active Directory connected to resource tenant), so the external user can't access resources that require this control.
-- **Require approved client app or Require app protection policy.** Without CTAS configured, external users can't apply the resource tenant Intune Mobile App Management (MAM) policy because it also requires device registration. Resource tenant Conditional Access policy, using this control, doesn't allow home tenant MAM protection to satisfy the policy. Exclude external users from every MAM-based Conditional Access policy.
+- **Require approved client app or Require app protection policy.** Without CTAS configured, external users can't apply the resource tenant Intune Mobile Application Management (MAM) policy because it also requires device registration. Resource tenant Conditional Access policy, using this control, doesn't allow home tenant MAM protection to satisfy the policy. Exclude external users from every MAM-based Conditional Access policy.
 
 Additionally, while you can use the following Conditional Access conditions, be aware of the possible ramifications.
 
 - **Sign-in risk and user risk.** User behavior in their home tenant determines, in part, the sign-in risk and user risk. The home tenant stores the data and risk score. If resource tenant policies block an external user, a resource tenant admin might not be able to enable access. [Identity Protection and B2B users](~/id-protection/concept-identity-protection-b2b.md) explains how Identity Protection detects compromised credentials for Microsoft Entra users.
 - **Locations.** The named location definitions in the resource tenant determine the scope of the policy. The scope of the policy doesn't evaluate trusted locations managed in the home tenant. If your organization wants to share trusted locations across tenants, define the locations in each tenant where you define the resources and Conditional Access policies.
 
-## Securing your multi-tenant environment
+<a name='securing-your-multi-tenant-environment'></a>
+
+## Securing your multitenant environment
+
 Review the [security checklist](/azure/security/fundamentals/steps-secure-identity) and [best practices](/azure/security/fundamentals/operational-best-practices) for guidance on securing your tenant. Ensure these best practices are followed and review them with any tenants that you collaborate closely with.
 
-### Conditional access
+### Conditional Access
+
 The following are considerations for configuring access control.
 
 - Define [access control policies](~/external-id/authentication-conditional-access.md) to control access to resources.
@@ -142,16 +144,18 @@ The following are considerations for configuring access control.
 - Create policies specifically for external users.
 - Create dedicated Conditional Access policies for external accounts.
 
-### Monitoring your multi-tenant environment
-- Monitor for changes to cross-tenant access policies using the [audit logs UI](~/identity/monitoring-health/concept-audit-logs.md), [API](/graph/api/resources/azure-ad-auditlog-overview), or [Azure Monitor integration](~/identity/monitoring-health/tutorial-configure-log-analytics-workspace.md) (for proactive alerts). The audit events use the categories "CrossTenantAccessSettings" and "CrossTenantIdentitySyncSettings." By monitoring for audit events under these categories, you can identify any cross-tenant access policy changes in your tenant and take action. When creating alerts in Azure Monitor, you can create a query such as the one below to identify any cross-tenant access policy changes.   
+<a name='monitoring-your-multi-tenant-environment'></a>
+
+### Monitoring your multitenant environment
+
+- Monitor for changes to cross-tenant access policies using the [audit logs UI](~/identity/monitoring-health/concept-audit-logs.md), [API](/graph/api/resources/azure-ad-auditlog-overview), or [Azure Monitor integration](~/identity/monitoring-health/tutorial-configure-log-analytics-workspace.md) (for proactive alerts). The audit events use the categories "CrossTenantAccessSettings" and "CrossTenantIdentitySyncSettings." By monitoring for audit events under these categories, you can identify any cross-tenant access policy changes in your tenant and take action. When creating alerts in Azure Monitor, you can create a query such as the following one to identify any cross-tenant access policy changes.
 
 ```
 AuditLogs
 | where Category contains "CrossTenant"
 ```
 
-- Monitor application access in your tenant using the [cross-tenant access activity](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md) dashboard. This allows you to see who is accessing resources in your tenant and where those users are coming from. 
-
+- Monitor application access in your tenant using the [cross-tenant access activity](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md) dashboard. This allows you to see who is accessing resources in your tenant and where those users are coming from.
 
 ### Dynamic groups
 
@@ -162,10 +166,12 @@ If your organization is using the [**all users** dynamic group](~/external-id/us
 If an application has the **User assignment required?** property set to **No**, external users can access the application. Application admins must understand access control impacts, especially if the application contains sensitive information. [Restrict your Microsoft Entra app to a set of users in a Microsoft Entra tenant](~/identity-platform/howto-restrict-your-app-to-a-set-of-users.md) explains how registered applications in a Microsoft Entra tenant are, by default, available to all users of the tenant who successfully authenticate.
 
 ### Privileged Identity Management
-Minimize persistent administrator access by enabling [privileged identity management](/azure/security/fundamentals/steps-secure-identity#implement-privilege-access-management). 
+
+Minimize persistent administrator access by enabling [Privileged Identity Management](/azure/security/fundamentals/steps-secure-identity#implement-privilege-access-management).
 
 ### Restricted Management Units
-When you're using security groups to control who is in scope for cross-tenant synchronization, you will want to limit who can make changes to the security group. Minimize the number of owners of the security groups assigned to the cross-tenant synchronization job and include the groups in a [restricted management unit](~/identity/role-based-access-control/admin-units-restricted-management.md). This will limit the number of people that can add or remove group members and provision accounts across tenants. 
+
+When you're using security groups to control who is in scope for cross-tenant synchronization, you will want to limit who can make changes to the security group. Minimize the number of owners of the security groups assigned to the cross-tenant synchronization job and include the groups in a [restricted management unit](~/identity/role-based-access-control/admin-units-restricted-management.md). This will limit the number of people that can add or remove group members and provision accounts across tenants.
 
 ## Other access control considerations
 
@@ -181,58 +187,49 @@ Microsoft Entra External ID pricing is based on monthly active users (MAU). The 
 
 ## Office 365 considerations
 
-The following information addresses Office 365 in the context of this paper's scenarios. Detailed information is available at [Microsoft 365 inter-tenant collaboration 365 inter-tenant collaboration](/microsoft-365/enterprise/microsoft-365-inter-tenant-collaboration) describes options that include using a central location for files and conversations, sharing calendars, using IM, audio/video calls for communication, and securing access to resources and applications.
+The following information addresses Office 365 in the context of this paper's scenarios. Detailed information is available at [Microsoft 365 intertenant collaboration 365 intertenant collaboration](/microsoft-365/enterprise/microsoft-365-inter-tenant-collaboration) describes options that include using a central location for files and conversations, sharing calendars, using IM, audio/video calls for communication, and securing access to resources and applications.
 
 ### Microsoft Exchange Online
 
-Exchange online limits certain functionality for external users. You can lessen the limits by creating external member users instead of external guest users. Support for external users has the following limitations.
+Exchange Online limits certain functionality for external users. You can lessen the limits by creating external member users instead of external guest users. Support for external users has the following limitations.
 
 - You can assign an Exchange Online license to an external user. However, you can't issue to them a token for Exchange Online. The results are that they can't access the resource.
     - External users can't use shared or delegated Exchange Online mailboxes in the resource tenant.
     - You can assign an external user to a shared mailbox but they can't access it.
 - You need to unhide external users to include them in the GAL. By default, they're hidden.
-    - Hidden external users are created at invite time. The creation is independent of whether the user has redeemed their invitation. So, if all external users are unhidden, the list includes user objects of external users who haven't redeemed an invitation. Based on your scenario, you may or may not want the objects listed.
-    - External users may be unhidden using [Exchange Online PowerShell](/powershell/exchange/exchange-online-powershell-v2). You can execute the [Set-MailUser](/powershell/module/exchange/set-mailuser) PowerShell cmdlet to set the **HiddenFromAddressListsEnabled** property to a value of **\$false**.
- 
+    - Hidden external users are created at invite time. The creation is independent of whether the user has redeemed their invitation. So, if all external users are unhidden, the list includes user objects of external users who haven't redeemed an invitation. Based on your scenario, you may or might not want the objects listed.
+    - External users might be unhidden using [Exchange Online PowerShell](/powershell/exchange/exchange-online-powershell-v2). You can execute the [Set-MailUser](/powershell/module/exchange/set-mailuser) PowerShell cmdlet to set the **HiddenFromAddressListsEnabled** property to a value of **\$false**.
+
 For example:
 
-```Set-MailUser [ExternalUserUPN] -HiddenFromAddressListsEnabled:\$false\```
+`Set-MailUser [ExternalUserUPN] -HiddenFromAddressListsEnabled:\$false\`
 
 Where **ExternalUserUPN** is the calculated **UserPrincipalName.**
 
 For example:
 
-```Set-MailUser externaluser1_contoso.com#EXT#@fabricam.onmicrosoft.com\ -HiddenFromAddressListsEnabled:\$false```
+`Set-MailUser externaluser1_contoso.com#EXT#@fabricam.onmicrosoft.com\ -HiddenFromAddressListsEnabled:\$false`
 
-- External users may be unhidden using [Azure AD PowerShell](/powershell/module/azuread/). You can execute the [Set-AzureADUser](/powershell/module/azuread/set-azureaduser) PowerShell cmdlet to set the **ShowInAddressList** property to a value of **\$true.** 
-    
-For example:
+External users might be unhidden in the Microsoft 365 admin center.
 
-```Set-AzureADUser -ObjectId [ExternalUserUPN] -ShowInAddressList:\$true\```
-
-Where **ExternalUserUPN** is the calculated **UserPrincipalName.**
-
-For example:
-
-```Set-AzureADUser -ObjectId externaluser1_contoso.com#EXT#@fabricam.onmicrosoft.com\ -ShowInAddressList:\$true```
-
-- There's a timing delay when you update attributes and must perform additional automation afterwards, which is a result of the backend sync that occurs between Microsoft Entra ID and Exchange Online. Make sure the user is visible in the GAL by checking that the Microsoft Entra user property **ShowInAddressList** aligns with the Exchange Online PowerShell property **HiddenFromAddressListsEnabled** (that are reverse of each other) before continuing  operations.
-- You can only set updates to Exchange-specific properties (such as the **PrimarySmtpAddress**, **ExternalEmailAddress**, **EmailAddresses**, and **MailTip**) using [Exchange Online PowerShell](/powershell/exchange/exchange-online-powershell-v2). The Exchange Online Admin Center doesn't allow you to modify the attributes using the GUI.
+- You can only set updates to Exchange-specific properties (such as the **PrimarySmtpAddress**, **ExternalEmailAddress**, **EmailAddresses**, and **MailTip**) using [Exchange Online PowerShell](/powershell/exchange/exchange-online-powershell-v2). The Exchange Online Admin Center doesn't allow you to modify the attributes using the graphical user interface (GUI).
 
 As shown above, you can use the [Set-MailUser](/powershell/module/exchange/set-mailuser) PowerShell cmdlet for mail-specific properties. There are user properties that you can modify with the [Set-User](/powershell/module/exchange/set-user) PowerShell cmdlet. You can modify most properties with the Azure AD Graph APIs.
 
-One of the most useful features of **Set-MailUser** is the ability to manipulate the **EmailAddresses** property. This multi-valued attribute may contain multiple proxy addresses for the external user (such as SMTP, X500, SIP). By default, an external user has the primary SMTP address stamped correlating to the **UserPrincipalName** (UPN). If you want to change the primary SMTP and/or add SMTP addresses, you can set this property. You can't use the Exchange Admin Center; you must use Exchange Online PowerShell. [Add or remove email addresses for a mailbox in Exchange Online](/exchange/recipients-in-exchange-online/manage-user-mailboxes/add-or-remove-email-addresses) shows different ways to modify a multivalued property such as **EmailAddresses.**
+One of the most useful features of **Set-MailUser** is the ability to manipulate the **EmailAddresses** property. This multivalued attribute might contain multiple proxy addresses for the external user (such as SMTP, X500, Session Initiation Protocol (SIP)). By default, an external user has the primary SMTP address stamped correlating to the **UserPrincipalName** (UPN). If you want to change the primary SMTP or add SMTP addresses, you can set this property. You can't use the Exchange Admin Center; you must use Exchange Online PowerShell. [Add or remove email addresses for a mailbox in Exchange Online](/exchange/recipients-in-exchange-online/manage-user-mailboxes/add-or-remove-email-addresses) shows different ways to modify a multivalued property such as **EmailAddresses.**
 
-### Microsoft SharePoint Online
+<a name='microsoft-sharepoint-online'></a>
 
-SharePoint Online has its own service-specific permissions depending on whether the user (internal or external) is of type member or guest in the Microsoft Entra tenant. [Office 365 external sharing and Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) describes how you can enable integration with SharePoint and OneDrive to share files, folders, list items, document libraries, and sites with people outside your organization, while using Azure B2B for authentication and management.
+### Microsoft SharePoint in Microsoft 365
 
-After you enable external sharing in SharePoint Online, the ability to search for guest users in the SharePoint Online people picker is **OFF** by default. This setting prohibits guest users from being discoverable when they're hidden from the Exchange Online GAL. You can enable guest users to become visible in two ways (not mutually exclusive):
+SharePoint in Microsoft 365 has its own service-specific permissions depending on whether the user (internal or external) is of type member or guest in the Microsoft Entra tenant. [Office 365 external sharing and Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) describes how you can enable integration with SharePoint and OneDrive to share files, folders, list items, document libraries, and sites with people outside your organization, while using Azure B2B for authentication and management.
+
+After you enable external sharing in SharePoint in Microsoft 365, the ability to search for guest users in the SharePoint in Microsoft 365 people picker is **OFF** by default. This setting prohibits guest users from being discoverable when they're hidden from the Exchange Online GAL. You can enable guest users to become visible in two ways (not mutually exclusive):
 
 - You can enable the ability to search for guest users in these ways:
     - Modify the **ShowPeoplePickerSuggestionsForGuestUsers** setting at the tenant and site collection level.
-    - Set the feature using the [Set-SPOTenant](/powershell/module/sharepoint-online/set-spotenant) and [Set-SPOSite](/powershell/module/sharepoint-online/set-sposite) [SharePoint Online PowerShell](/powershell/sharepoint/sharepoint-online/connect-sharepoint-online) cmdlets.
-- Guest users that are visible in the Exchange Online GAL are also visible in the SharePoint Online people picker. The accounts are visible regardless of the setting for **ShowPeoplePickerSuggestionsForGuestUsers**.
+    - Set the feature using the [Set-SPOTenant](/powershell/module/sharepoint-online/set-spotenant) and [Set-SPOSite](/powershell/module/sharepoint-online/set-sposite) [SharePoint in Microsoft 365 PowerShell](/powershell/sharepoint/sharepoint-online/connect-sharepoint-online) cmdlets.
+- Guest users that are visible in the Exchange Online GAL are also visible in the SharePoint in Microsoft 365 people picker. The accounts are visible regardless of the setting for **ShowPeoplePickerSuggestionsForGuestUsers**.
 
 ### Microsoft Teams
 
@@ -248,15 +245,15 @@ When you use Azure B2B with Office 365 workloads, key considerations include ins
 
 - **Microsoft Groups.** [Adding guests to Office 365 Groups](https://support.office.com/article/adding-guests-to-office-365-groups-bfc7a840-868f-4fd6-a390-f347bf51aff6) describes how guest access in Microsoft 365 Groups lets you and your team collaborate with people from outside your organization by granting them access to group conversations, files, calendar invitations, and the group notebook.
 - **Microsoft Teams.** [Team owner, member, and guest capabilities in Teams](https://support.office.com/article/team-owner-member-and-guest-capabilities-in-teams-d03fdf5b-1a6e-48e4-8e07-b13e1350ec7b) describes the guest account experience in Microsoft Teams. You can enable a full fidelity experience in Teams by using external member users.
-    - For multiple tenants in our Commercial cloud, users licensed in their home tenant may access resources in another tenant within the same legal entity. You can grant access using the external members setting with no extra licensing fees. This setting applies for SharePoint, OneDrive for Business, Teams, and Groups.
-    - For multiple tenants in other Microsoft clouds and for multiple tenants in different clouds, B2B Member license checks are not yet available.  Usage of B2B Member with Teams requires an additional license for each B2B Member.  This may also impact other workloads such as Power BI.
+    - For multiple tenants in our Commercial cloud, users licensed in their home tenant might access resources in another tenant within the same legal entity. You can grant access using the external members setting with no extra licensing fees. This setting applies for SharePoint, OneDrive for Business, Teams, and Groups.
+    - For multiple tenants in other Microsoft clouds and for multiple tenants in different clouds, B2B Member license checks are not yet available. Usage of B2B Member with Teams requires an additional license for each B2B Member. This might also affect other workloads such as Power BI.
     - B2B Member usage for tenants not part of the same legal entity are subject to additional license requirements.
-- **Identity Governance features.** Entitlement Management and access reviews may require other licenses for external users.
-- **Other products.** Products such as Dynamics CRM may require licensing in every tenant in which a user is represented.
+- **Identity Governance features.** Entitlement Management and access reviews might require other licenses for external users.
+- **Other products.** Products such as Dynamics customer relationship management (CRM) might require licensing in every tenant in which a user is represented.
 
 ## Next steps
 
-- [Multi-tenant user management introduction](multi-tenant-user-management-introduction.md) is the first in the series of articles that provide guidance for configuring and providing user lifecycle management in Microsoft Entra multi-tenant environments.
-- [Multi-tenant user management scenarios](multi-tenant-user-management-scenarios.md) describes three scenarios for which you can use multi-tenant user management features: end user-initiated, scripted, and automated.
-- [Common solutions for multi-tenant user management](multi-tenant-common-solutions.md) when single tenancy doesn't work for your scenario, this article provides guidance for these challenges:  automatic user lifecycle management and resource allocation across tenants, sharing on-premises apps across tenants.
-- [Microsoft Collaboration Framework for the US Defense Industrial Base](https://techcommunity.microsoft.com/t5/public-sector-blog/microsoft-collaboration-framework-for-the-us-defense-industrial/ba-p/3975346) describes candidate reference architectures for identity to accommodate Multi-Tenant Organizations (MTO), and specifically those that have a deployment in the US Sovereign Cloud with Microsoft 365 US Government (GCC High) and Azure Government.  It also addresses external collaboration in highly regulated environments, inclusive of organizations that are homed in either Commercial or in the US Sovereign Cloud.
+- [Multitenant user management introduction](multi-tenant-user-management-introduction.md) is the first in the series of articles that provide guidance for configuring and providing user lifecycle management in Microsoft Entra multitenant environments.
+- [Multitenant user management scenarios](multi-tenant-user-management-scenarios.md) describes three scenarios for which you can use multitenant user management features: end user-initiated, scripted, and automated.
+- [Common solutions for multitenant user management](multi-tenant-common-solutions.md) when single tenancy doesn't work for your scenario, this article provides guidance for these challenges:  automatic user lifecycle management and resource allocation across tenants, sharing on-premises apps across tenants.
+- [Microsoft Collaboration Framework for the US Defense Industrial Base](https://techcommunity.microsoft.com/t5/public-sector-blog/microsoft-collaboration-framework-for-the-us-defense-industrial/ba-p/3975346) describes candidate reference architectures for identity to accommodate Multitenant Organizations (MTO), and specifically those that have a deployment in the US Sovereign Cloud with Microsoft 365 US Government (GCC High) and Azure Government. It also addresses external collaboration in highly regulated environments, inclusive of organizations that are homed in either Commercial or in the US Sovereign Cloud.

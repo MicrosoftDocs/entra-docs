@@ -4,8 +4,8 @@ description: Get a step-by-step guide for customizing emails that you send by us
 author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: compliance
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 06/22/2023
 ms.custom: template-how-to
@@ -30,19 +30,19 @@ For more information on these customizable parameters, see [Common email task pa
 
 ## Prerequisites
 
-[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 ## Customize email by using the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 When you're customizing an email sent via lifecycle workflows, you can choose to customize either a new task or an existing task. You do these customizations the same way whether the task is new or existing, but the following steps walk you through updating an existing task. To customize emails sent from tasks within workflows by using the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
 1. Browse to **Identity governance** > **Lifecycle workflows** > **workflows**.
 
-1. Select the workflow that contain the email tasks you want to customize.
+1. Select the workflow that contains the email tasks you want to customize.
 
 1. On the pane that lists tasks, select the task for which you want to customize the email.
 
@@ -91,8 +91,8 @@ You can customize emails that you send via lifecycle workflows to have your own 
 
 To enable these features, you need the following prerequisites:
 
-- A verified domain. To add a custom domain, see [Managing custom domain names in Microsoft Entra ID](~/identity/users/domains-manage.md).
-- Custom branding set within Microsoft Entra ID if you want to use your custom branding in emails. To set organizational branding within your Azure tenant, see [Configure your company branding](~/fundamentals/how-to-customize-branding.md).
+- A verified domain. To add a custom domain, see [Managing custom domain names in Microsoft Entra ID](../identity/users/domains-manage.md).
+- Custom branding set within Microsoft Entra ID if you want to use your custom branding in emails. To set organizational branding within your Azure tenant, see [Configure your company branding](../fundamentals/how-to-customize-branding.md).
 
 > [!NOTE]
 > For compliance with the [RFC for sending and receiving email](https://www.ietf.org/rfc/rfc2142.txt), we recommend using a domain that has the appropriate DNS records to facilitate email validation, like SPF, DKIM, DMARC, and MX. [Learn more about Exchange Online email routing](/exchange/mail-flow-best-practices/mail-flow-best-practices).
@@ -114,7 +114,7 @@ To customize email by using the Microsoft Graph API, see [workflow: createNewVer
 
 ## Set custom branding and domain workflow settings by using Microsoft Graph
 
-To turn on custom branding and domain feature settings in lifecycle workflows by using the Microsoft Graph API, see [lifecycleManagementSettings resource type](/graph/api/resources/identitygovernance-lifecyclemanagementsettings).
+To turn on custom branding and domain feature settings in lifecycle workflows by using the Microsoft Graph API, see [`lifecycleManagementSettings` resource type](/graph/api/resources/identitygovernance-lifecyclemanagementsettings).
 
 ## Next steps
 

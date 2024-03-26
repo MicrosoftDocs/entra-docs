@@ -2,9 +2,10 @@
 title: Manage authentication methods for Microsoft Entra multifactor authentication
 description: Learn how you can configure Microsoft Entra user settings for Microsoft Entra multifactor authentication
 
-services: multi-factor-authentication
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: authentication
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 08/29/2023
 
@@ -12,8 +13,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: michmcla, dawoo
-
-ms.collection: M365-identity-device-management
 ---
 
 # Manage user authentication methods for Microsoft Entra multifactor authentication

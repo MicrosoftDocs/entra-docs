@@ -7,23 +7,21 @@ ms.author: owenrichards
 ms.custom:
 ms.date: 03/14/2022
 ms.reviewer: ludwignick; emilylauber
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-#Customer intent:
+ms.service: identity-platform
+
+ms.topic: concept-article
+#Customer intent: As a web application developer, I want to understand how to handle third-party cookie blocking in browsers, so that I can implement the appropriate authentication patterns and ensure that users can sign in successfully even when third-party cookies are blocked.
 ---
 
 # How to handle third-party cookie blocking in browsers
 
 Many browsers block _third-party cookies_, cookies on requests to domains other than the domain shown in the browser's address bar. These cookies are also known as _cross-domain cookies_. This block breaks the implicit flow and requires new authentication patterns to successfully sign in users. In the Microsoft identity platform, we use the authorization flow with Proof Key for Code Exchange (PKCE) and refresh tokens to keep users signed in when third-party cookies are blocked.
 
-## What is Intelligent Tracking Protection (ITP)?
+## What is Intelligent Tracking Protection (ITP) and Privacy Sandbox?
 
-Apple Safari has an on-by-default privacy protection feature called [Intelligent Tracking Protection](https://webkit.org/tracking-prevention-policy/), or _ITP_. ITP blocks "third-party" cookies, cookies on requests that cross domains.
+Apple Safari has an on-by-default privacy protection feature called [Intelligent Tracking Protection](https://webkit.org/tracking-prevention-policy/), or _ITP_. Chrome has a browser privacy initiative named the [Privacy Sandbox](https://developers.google.com/privacy-sandbox/overview). These initiatives encompass many different browser privacy efforts by the browsers and have different timelines. Both efforts block "third-party" cookies on requests that cross domains, with Safari and Brave block third-party cookies by default. Chrome recently announced that they'll start [blocking third-party cookies by default](https://privacysandbox.com/open-web/#the-privacy-sandbox-timeline). Privacy Sandbox includes changes to [partitioned storage](https://developers.google.com/privacy-sandbox/3pcd/storage-partitioning) as well as third-party cookie blocking. 
 
 A common form of user tracking is done by loading an iframe to third-party site in the background and using cookies to correlate the user across the Internet. Unfortunately, this pattern is also the standard way of implementing the [implicit flow](v2-oauth2-implicit-grant-flow.md) in single-page apps (SPAs). A browser that blocks third-party cookies to protect user privacy can also block the functionality of a SPA.
-
-Safari isn't alone in blocking third-party cookies to enhance user privacy. Brave blocks third-party cookies by default, and Chrome announced that they'll start blocking third-party cookies by default [in the future](https://privacysandbox.com/open-web/#the-privacy-sandbox-timeline).
 
 The solution outlined in this article works in all of these browsers, or anywhere third-party cookies are blocked.
 
@@ -83,12 +81,12 @@ This limited-lifetime refresh token pattern was chosen as a balance between secu
 
 Not all users and applications are uniformly affected by third-party cookies. There are some scenarios where due to architecture or device management, silent calls to renew tokens can be done without third-party cookies. 
 
-For *managed enterprise device* scenarios, certain browser and platform combinations have support for [device conditional access](/azure/active-directory/conditional-access/concept-conditional-access-conditions#supported-browsers). Applying device identity minimizes the need for third-party cookies as the authentication state can come from the device instead of the browser.  
+For *managed enterprise device* scenarios, certain browser and platform combinations have support for [device Conditional Access](/azure/active-directory/conditional-access/concept-conditional-access-conditions#supported-browsers). Applying device identity minimizes the need for third-party cookies as the authentication state can come from the device instead of the browser.  
 
 For *Azure AD B2C application* scenarios, customers can set up a [custom login domain](/azure/active-directory-b2c/custom-domain?pivots=b2c-user-flow) to match the application's domain. Browsers wouldn't block third-party cookies in this scenario as the cookies remain in the same domain (e.g. login.contoso.com to app.contoso.com).
 
 ## Limitations on Front-Channel Logout without third-party cookies
-When signing a user out from a SPA, MSAL.js recommends using the [popup or redirect logout method](scenario-spa-sign-in.md?tabs=javascript2#sign-out-with-a-pop-up-window). While this clears the authentication session on the server and in browser storage, there's a risk that without access to third-party cookies, not all federated applications will see a sign-out at the same time. Existing access tokens for other applications for the same user will continue to be valid before their expiration time. This means a user could log out of application A in tab A, but application B in tab B will still appear as logged in for the access token's remaining valid time. When application B's token expires and a call is made to the server to get a new token, the application receives a response from the server that the session is expired and prompt for the user to authenticate.
+When signing a user out from a SPA, MSAL.js recommends using the [popup or redirect logout method](scenario-spa-sign-in.md?tabs=javascript2#sign-out-with-a-pop-up-window). While this clears the authentication session on the server and in browser storage, there's a risk that without access to third-party cookies, not all federated applications will see a sign-out at the same time. This is a known limitation of the [OpenID Front-Channel Logout 1.0 specification](https://openid.net/specs/openid-connect-frontchannel-1_0.html#ThirdPartyContent). What this means for users is that existing access tokens for other applications for the same user will continue to be valid till their expiration time. A user could log out of application A in tab A, but application B in tab B will still appear as logged in for the access token's remaining valid time. When application B's token expires and a call is made to the server to get a new token, application B receives a response from the server that the session is expired and prompt for the user to authenticate.
 
 Microsoft's sign-out page and [internet privacy best practices](https://support.microsoft.com/en-us/windows/protect-your-privacy-on-the-internet-ffe36513-e208-7532-6f95-a3b1c8760dfa) recommend that users close all browser windows after logging out of an application.
 

@@ -7,10 +7,10 @@ ms.author: owenrichards
 ms.custom:
 ms.date: 02/13/2023
 ms.reviewer: ludwignick
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-#Customer intent:
+ms.service: identity-platform
+
+ms.topic: concept-article
+#Customer intent: As a developer building a web service, I want to understand how to implement the OAuth 2.0 client credentials flow, so that I can authenticate my web service when calling another web service without impersonating a user.
 ---
 
 # Microsoft identity platform and the OAuth 2.0 client credentials flow
@@ -25,8 +25,6 @@ In the client credentials flow, permissions are granted directly to the applicat
 This article describes how to program directly against the protocol in your application. When possible, we recommend you use the supported Microsoft Authentication Libraries (MSAL) instead to [acquire tokens and call secured web APIs](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows). You can also refer to the [sample apps that use MSAL](sample-v2-code.md). As a side note, refresh tokens will never be granted with this flow as `client_id` and `client_secret` (which would be required to obtain a refresh token) can be used to obtain an access token instead.
 
 For a higher level of assurance, the Microsoft identity platform also allows the calling service to authenticate using a [certificate](#second-case-access-token-request-with-a-certificate) or federated credential instead of a shared secret.  Because the application's own credentials are being used, these credentials must be kept safe. _Never_ publish that credential in your source code, embed it in web pages, or use it in a widely distributed native application. 
-
-[!INCLUDE [try-in-postman-link](includes/try-in-postman-link.md)]
 
 ## Protocol diagram
 
@@ -281,6 +279,6 @@ Read the [client credentials overview documentation](https://aka.ms/msal-net-cli
 
 | Sample | Platform |Description |
 |--------|----------|------------|
-|[active-directory-dotnetcore-daemon-v2](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) | .NET Core 6.0+ | A .NET Core application that displays the users of a tenant querying the Microsoft Graph using the identity of the application, instead of on behalf of a user. The sample also illustrates the variation using certificates for authentication. |
+|[active-directory-dotnetcore-daemon-v2](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) | .NET 6.0+ | An ASP.NET Core application that displays the users of a tenant querying the Microsoft Graph using the identity of the application, instead of on behalf of a user. The sample also illustrates the variation using certificates for authentication. |
 |[active-directory-dotnet-daemon-v2](https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2)| ASP.NET MVC | A web application that syncs data from the Microsoft Graph using the identity of the application, instead of on behalf of a user. |
 |[ms-identity-javascript-nodejs-console](https://github.com/Azure-Samples/ms-identity-javascript-nodejs-console)| Node.js Console | A Node.js application that displays the users of a tenant by querying the Microsoft Graph using the identity of the application |

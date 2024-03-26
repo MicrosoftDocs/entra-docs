@@ -5,9 +5,9 @@ description: Learn how to automatically provision and deprovision user accounts 
 author: twimmers
 writer: twimmers
 manager: jeedes
-ms.assetid: 1898e52a-94da-4512-ab88-25ce81cd226b
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.assetid: 0fc24c14-b9b8-4721-9ec3-f8ee5f2aebb7
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 12/18/2023
@@ -32,7 +32,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
 * A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
-* A user account in Starmind with Admin permissions.
+* A user account in Starmind with at least User Admin permissions.
 
 ## Plan your provisioning deployment
 
@@ -42,7 +42,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Configure Starmind to support provisioning with Microsoft Entra ID
 
-Contact Starmind support to configure Starmind to support provisioning with Microsoft Entra ID.
+Contact [Starmind support](https://starmind.atlassian.net/servicedesk/customer/portal/2) to open a service request to enable Starmind to support provisioning with Microsoft Entra ID. Ensure to provide the Starmind network domain (e.g. acme.starmind.com) you want to enable user provisioning for. You will then get provided with the Tenant URL and Secret Token for authorization.
 
 ## Starmind from the Microsoft Entra application gallery
 
@@ -100,7 +100,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |userName|String|&check;|&check;
    |active|Boolean||
    |title|String||
-   |emails[type eq "work"].value|String||&check;
+   |emails[type eq "work"].value|String|&check;|&check;
    |name.givenName|String||
    |name.familyName|String||
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||

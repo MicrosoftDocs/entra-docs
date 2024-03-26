@@ -1,20 +1,19 @@
 ---
-title: Microsoft Security Service Edge Solution Deployment Guide for Microsoft Entra Private Access
+title: Microsoft's Security Service Edge Solution Deployment Guide for Microsoft Entra Private Access
 description: Plan for, deploy, and verify Microsoft Entra Private Access
-services: active-directory
 author: jricketts
 manager: martinco
-ms.service: network-access
+ms.service: global-secure-access
 ms.topic: conceptual
 ms.date: 12/6/2023
 ms.author: jricketts
 ---
 
-# Microsoft Security Service Edge Solution Deployment Guide for Microsoft Entra Private Access Proof of Concept
+# Microsoft's Security Service Edge Solution Deployment Guide for Microsoft Entra Private Access Proof of Concept
 
 [Microsoft's identity-centric Security Service Edge solution](../global-secure-access/overview-what-is-global-secure-access.md) converges network, identity, and endpoint access controls so that you can secure access to any app or resource, from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. You can continuously monitor and adjust user access in real time if permissions or risk level changes to your private apps, SaaS apps, and Microsoft 365 endpoints.
 
-This guidance helps you deploy [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md) as a Proof of Concept in your production or test environment, including Conditional Access policies and application assignments. You can scope your configuration to specific test users and groups. See [Microsoft Security Service Edge Solution Deployment Guide Introduction](sse-deployment-guide-intro.md) for prerequisites.
+This guidance helps you deploy [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md) as a Proof of Concept in your production or test environment, including Conditional Access policies and application assignments. You can scope your configuration to specific test users and groups. See [Microsoft's Security Service Edge Solution Deployment Guide Introduction](sse-deployment-guide-intro.md) for prerequisites.
 
 ## Deploy and test Microsoft Entra Private Access
 
@@ -22,16 +21,16 @@ Complete the [Configure initial product](sse-deployment-guide-intro.md#configure
 
 ### Set up connector server
 
-The connector server communicates with Microsoft Security Service Edge Solution as the gateway to your corporate network. It uses outbound connections through 80 and 443 and doesn't require inbound ports. Learn [How to configure connectors for Microsoft Entra Private Access](../global-secure-access/how-to-configure-connectors.md#open-ports).
+The connector server communicates with Microsoft's Security Service Edge Solution as the gateway to your corporate network. It uses outbound connections through 80 and 443 and doesn't require inbound ports. Learn [How to configure connectors for Microsoft Entra Private Access](../global-secure-access/how-to-configure-connectors.md#open-ports). 
 
-1. On the connector server, open the [Microsoft Entra admin center](https://entra.microsoft.com). Go to **Global Secure Access (Preview)** > **Connectors**  and then click **Download connector service**.
+1. On the connector server, open the [Microsoft Entra admin center](https://entra.microsoft.com). Go to **Global Secure Access (Preview)** > **Connect** > **Connectors**  and then click **Enable Private Network connectors**. Click **Download connector service**.
    
-     :::image type="content" source="media/sse-deployment-guide-private-access/app-proxy-connector-download-inline.png" alt-text="Screenshot of Global Secure Access, Connectors, Application proxy, Application Proxy Connector Download window." lightbox="media/sse-deployment-guide-private-access/app-proxy-connector-download-extended.png"::: 
-1. Follow the installation wizard to install the connector service on your connector server. When prompted, enter your tenant credentials to complete installation.
-1. Confirm that the connector server is installed by ensuring that it appears in the Connectors list.                            
- :::image type="content" source="media/sse-deployment-guide-private-access/app-proxy-inline.png" alt-text="Screenshot of Global Secure Access, Connectors, Application proxy window." lightbox="media/sse-deployment-guide-private-access/app-proxy-extended.png"::: 
+     :::image type="content" source="media/sse-deployment-guide-private-access/enable-private-network-connectors.png" alt-text="Screenshot of Global Secure Access, Connect, Connectors, Private Network Connector, Private Network Connector Download window." lightbox="media/sse-deployment-guide-private-access/enable-private-network-connectors-extended.png"::: 
+1. Create a new connector group for your Private Network Connector.
+2. Follow the installation wizard to install the connector service on your connector server. When prompted, enter your tenant credentials to complete installation.
+1. Confirm that the connector server is installed in your new connector group by ensuring that it appears in the Connectors list.                            
 
-In this guide, we use the default connector group with one connector server. In a production environment, you should create connector groups with multiple connector servers. [See detailed guidance for publishing apps on separate networks by using connector groups](../identity/app-proxy/application-proxy-connector-groups.md).
+In this guide, we use a new connector group with one connector server. In a production environment, you should create connector groups with multiple connector servers. [See detailed guidance for publishing apps on separate networks by using connector groups](../identity/app-proxy/application-proxy-connector-groups.md).
 
 ### Publish application
 
@@ -40,7 +39,7 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) and then go to **Global Secure Access (preview)** > **Applications** > **Enterprise applications** > **+ New Application**.
                                            
      :::image type="content" source="media/sse-deployment-guide-private-access/enterprise-applications-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications window." lightbox="media/sse-deployment-guide-private-access/enterprise-applications-extended.png":::
-1. Enter a **Name** (such as Server1) and select the default connector group. Click **+Add application segment**. Enter the **IP address** of the application server and port 3389.
+1. Enter a **Name** (such as Server1) and select the new connector group. Click **+Add application segment**. Enter the **IP address** of the application server and port 3389.
 
      :::image type="content" source="media/sse-deployment-guide-private-access/create-application-segment-inline.png" alt-text="Screenshot of Create Global Secure Access Application, Create application segment window." lightbox="media/sse-deployment-guide-private-access/create-application-segment-extended.png":::
 1. Click **Apply** > **Save**. Verify that the application is added to the Enterprise applications list.
@@ -122,10 +121,11 @@ You can monitor applications accessed via Microsoft Entra Private Access via the
 1. Select **Add Filter** to find the information of interest (for example, User Principal Name contains UserA).
 
  > [!NOTE]
- > The IP Address listed in the **sourceIp** section is the public IP address of the client and not the IP Address of the Microsoft Security Service Edge Solution Network.
+ > The IP Address listed in the **sourceIp** section is the public IP address of the client and not the IP Address of the Microsoft's Security Service Edge Solution Network.
 
 [!INCLUDE [Public preview important note](~/global-secure-access/includes/public-preview-important-note.md)]
 
 ## Next steps
 
 [Deploy and verify Microsoft Entra Internet Access for Microsoft 365](sse-deployment-guide-m365.md)
+[Deploy and verify Microsoft Entra Internet Access](sse-deployment-guide-internet-access.md)

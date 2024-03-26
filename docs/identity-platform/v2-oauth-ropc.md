@@ -7,10 +7,10 @@ ms.author: owenrichards
 ms.custom:
 ms.date: 08/11/2023
 ms.reviewer: ludwignick
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-#Customer intent:
+ms.service: identity-platform
+
+ms.topic: concept-article
+#Customer intent: As a developer building an application that requires user authentication, I want to understand how to use the OAuth 2.0 Resource Owner Password Credentials (ROPC) grant in the Microsoft identity platform, so that I can directly handle user passwords and acquire tokens for calling secured web APIs.
 ---
 
 # Microsoft identity platform and OAuth 2.0 Resource Owner Password Credentials
@@ -29,8 +29,6 @@ The Microsoft identity platform supports the [OAuth 2.0 Resource Owner Password 
 > * ROPC is not supported in [hybrid identity federation](~/identity/hybrid/connect/whatis-fed.md) scenarios (for example, Microsoft Entra ID and AD FS used to authenticate on-premises accounts). If users are full-page redirected to an on-premises identity provider, Microsoft Entra ID is not able to test the username and password against that identity provider. [Pass-through authentication](~/identity/hybrid/connect/how-to-connect-pta.md) is supported with ROPC, however.
 > * An exception to a hybrid identity federation scenario would be the following: Home Realm Discovery policy with **AllowCloudPasswordValidation** set to TRUE will enable ROPC flow to work for federated users when an on-premises password is synced to the cloud. For more information, see [Enable direct ROPC authentication of federated users for legacy applications](~/identity/enterprise-apps/home-realm-discovery-policy.md#enable-direct-ropc-authentication-of-federated-users-for-legacy-applications).
 > * Passwords with leading or trailing whitespaces are not supported by the ROPC flow.
-
-[!INCLUDE [try-in-postman-link](includes/try-in-postman-link.md)]
 
 ## Protocol diagram
 
@@ -66,9 +64,6 @@ client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 | `scope` | Recommended | A space-separated list of [scopes](./permissions-consent-overview.md), or permissions, that the app requires. In an interactive flow, the admin or the user must consent to these scopes ahead of time. |
 | `client_secret`| Sometimes required | If your app is a public client, then the `client_secret` or `client_assertion` can't be included.  If the app is a confidential client, then it must be included.|
 | `client_assertion` | Sometimes required | A different form of `client_secret`, generated using a certificate. For more information, see [certificate credentials](./certificate-credentials.md). |
-
-> [!WARNING]
-> As part of not recommending this flow for use, the official SDKs do not support this flow for confidential clients, those that use a secret or assertion. You may find that the SDK you wish to use does not allow you to add a secret while using ROPC. 
 
 ### Successful authentication response
 
@@ -109,4 +104,4 @@ If the user hasn't provided the correct username or password, or the client hasn
 
 ## Learn more
 
-For an example implementation of the ROPC flow, see the [.NET Core console application](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2) code sample on GitHub.
+For an example implementation of the ROPC flow, see the [.NET console application](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2) code sample on GitHub.

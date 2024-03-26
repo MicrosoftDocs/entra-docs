@@ -5,11 +5,11 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 10/27/2023
+ms.date: 01/04/2024
 ms.author: jeedes
 
 ---
@@ -53,8 +53,8 @@ Configure and test Microsoft Entra SSO with elia using a test user called **B.Si
 To configure and test Microsoft Entra SSO with elia, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure elia SSO](#configure-elia-sso)** - to configure the single sign-on settings on application side.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
@@ -71,17 +71,25 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier (Entity ID)** text box, type a value using the following pattern:
+   a. In the **Identifier (Entity ID)** text box, type a value using the following pattern:
     `urn:auth0:dev-p0tbk3x9:<CONNECTION-NAME>`
 
-    b. In the **Reply URL** text box, type a URL using the following pattern:
+   b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://dev-p0tbk3x9.us.auth0.com/login/callback?connection=<CONNECTION-NAME>&organization=<ORGANIZATION-ID>`
 
-    c. In the **Sign on URL** text box, type a URL using the following pattern:
+   c. In the **Sign on URL** text box, type a URL using the following pattern:
     `https://elia.one/?organization=<ORGANIZATION-ID>`
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [elia support team](mailto:support@gphy.ca) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+
+1. elia application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
+
+	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
+
+   > [!NOTE]
+   > Please select and update the **name** claim with **user.displayname** instead of user.userprincipalname as a Source attribute from the drop down manually to work SSO connection properly on both sides as per application side requirement and click **Save** as shown below.
+   ![Screenshot shows the image of name claims configuration.](media/elia-tutorial/claims.png "Attribute")
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (PEM)** and select **PEM certificate download** to download the certificate and save it on your computer.
 
@@ -91,7 +99,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	![Screenshot shows to copy configuration URLs.](media/elia-tutorial/copy-configuration-urls.png "Metadata")
 
-### Create a Microsoft Entra ID test user
+<a name='create-a-microsoft-entra-id-test-user'></a>
+
+### Create a Microsoft Entra test user
 
 In this section, you'll create a test user in the Microsoft Entra admin center called B.Simon.
 
@@ -105,7 +115,9 @@ In this section, you'll create a test user in the Microsoft Entra admin center c
    1. Select **Review + create**.
 1. Select **Create**.
 
-### Assign the Microsoft Entra ID test user
+<a name='assign-the-microsoft-entra-id-test-user'></a>
+
+### Assign the Microsoft Entra test user
 
 In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by granting access to elia.
 

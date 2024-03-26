@@ -4,8 +4,8 @@ description: Learn how to review and take action on admin consent requests that 
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: how-to
 ms.date: 06/14/2023
@@ -51,7 +51,7 @@ To review the admin consent requests and take action:
 
 ## Review admin consent requests using Microsoft Graph
 
-To review the admin consent requests programmatically, use the [appConsentRequest resource type](/graph/api/resources/appconsentrequest) and [userConsentRequest resource type](/graph/api/resources/userconsentrequest) and their associated methods in Microsoft Graph. You can't approve or deny consent requests using Microsoft Graph.
+To review the admin consent requests programmatically, use the [`appConsentRequest` resource type](/graph/api/resources/appconsentrequest) and [`userConsentRequest` resource type](/graph/api/resources/userconsentrequest) and their associated methods in Microsoft Graph. You can't approve or deny consent requests using Microsoft Graph.
 
 ## Next steps
 - [Review permissions granted to apps](manage-application-permissions.md)

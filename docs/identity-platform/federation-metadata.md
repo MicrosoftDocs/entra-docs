@@ -7,9 +7,8 @@ ms.author: ryanwi
 ms.custom:
 ms.date: 09/07/2023
 ms.reviewer: ludwignick
-ms.service: active-directory
-ms.subservice: azuread-dev
-ms.topic: conceptual
+ms.service: identity-platform
+ms.topic: concept-article
 #Customer intent: As a developer integrating with Microsoft Entra ID, I want to understand the federation metadata document format and endpoints, so that I can configure my application to validate the issuer and token signing certificates of security tokens issued by Microsoft Entra ID.
 ---
 

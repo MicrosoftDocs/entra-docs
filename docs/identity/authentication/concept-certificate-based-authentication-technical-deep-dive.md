@@ -2,19 +2,16 @@
 title: Microsoft Entra certificate-based authentication technical deep dive
 description: Learn how Microsoft Entra certificate-based authentication works
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 12/14/2023
 
 
 ms.author: justinha
 author: vimrang
 manager: amycolannino
 ms.reviewer: vraganathan
-
-ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
 ms.localizationpriority: high
 ---
@@ -79,7 +76,7 @@ Now we'll walk through each step:
 
 ## Certificate-based authentication is MFA capable
 
-Microsoft Entra CBA is capable of multifactor authentication (MFA) method. Microsoft Entra CBA can be either single-factor (SF) or multifactor (MF) depending on the tenant configuration. Enabling CBA makes a user potentially capable to complete MFA. A user might need more configuration to complete MFA, and proof up to register other authentication methods when the user is in scope for CBA.
+Microsoft Entra CBA is capable of multifactor authentication (MFA). Microsoft Entra CBA can be either single-factor (SF) or multifactor (MF) depending on the tenant configuration. Enabling CBA makes a user potentially capable to complete MFA. A user might need more configuration to complete MFA, and proof up to register other authentication methods when the user is in scope for CBA.
 
 If the CBA-enabled user only has a Single Factor (SF) certificate and needs to complete MFA:
    1. Use a password and SF certificate.
@@ -300,7 +297,7 @@ User account CertificateUserIds values:\
 Now, when either user presents the same certificate at sign-in the user will successfully sign-in because their account matches a unique value on that certificate. One account will be authenticated into using Issuer+SerialNumber and the other using SKI binding.
 
 >[!Note]
-> The number of accounts that can be used in this manner is limited by the number of username bindings configured on the tenant. If the organization is using only High Affinity bindings the number of accounts supported will be limited to 3. If the organization is also utilizing low affinity bindings then this number increases to 7 accounts (1 PrincipalName, 1 RFC822Name, 1 SubjectKeyIdentifier, 1 SHA1PublicKey, 1 Issuer+Subject, 1 Issuer+SerialNumber, 1 Subject). If the organization implements multiple unique RFC822Names on the certificate then each of these could be utilized for a separate account thus increasing the number beyond 7.
+> The number of accounts that can be used in this manner is limited by the number of username bindings configured on the tenant. If the organization is using only High Affinity bindings the number of accounts supported will be limited to 3. If the organization is also utilizing low affinity bindings then this number increases to 7 accounts (1 PrincipalName, 1 RFC822Name, 1 SubjectKeyIdentifier, 1 SHA1PublicKey, 1 Issuer+Subject, 1 Issuer+SerialNumber, 1 Subject).
 
 **Hybrid Synchronized accounts**
 For synchronized accounts the approach will be different. While the tenant admin can map unique values to each user account that will be utilizing the certificate, the common practice of populating all values to each account in Entra ID would make this difficult. Instead, Azure AD Connect should filter the desired values per account to unique values populated into the account in Entra ID. The uniqueness rule applies within the boundary of a single directory/tenant (i.e. Tenant admin can map the certificate for use in another directory/tenant as well, as long as the values remain unique per account too). Further, the organization may have multiple AD forests contributing users into a single Entra ID tenant. In this case Azure AD Connect will apply the filter to each of these AD forests with the same goal to populate only a desired unique value to the cloud account. 
@@ -409,6 +406,19 @@ As of now, there's no way to manually force or retrigger the download of the CRL
 
 [!INCLUDE [Configure revocation](../../includes/entra-authentication-configure-revocation.md)]
 
+
+## How CBA works with a Conditional Access authentication strength policy
+
+Customers can create a Conditional Access authentication strength policy to specify that CBA be used to access a resource.  
+
+You can use the built-in **Phishing-resistant MFA** authentication strength. That policy only allows authentication methods that are phishing-resistant like CBA, FIDO2 security keys, and Windows Hello for Business. 
+
+You can also create a custom authentication strength to allow only CBA to access sensitive resources. You can allow CBA as a single-factor, multifactor, or both. For more information, see [Conditional Access authentication strength](concept-authentication-strengths.md).
+
+### CBA authentication strength with advanced options
+
+In the CBA Authentication methods policy, an admin can determine the strength of the certificate by using [authentication binding policy](#understanding-the-authentication-binding-policy) on the CBA method. Now you can configure **Advanced options** when you create a custom authentication strength to require a specific certificate to be used, based on issuer and policy OIDs, when users perform CBA to access certain sensitive resources. This feature provides a more precise configuration to determine the certificates and users that can access resources. For more information, see [Advanced options for Conditional Access authentication strength](concept-authentication-strength-advanced-options.md).
+
 ## Understanding Sign-in logs
 
 Sign-in logs provide information about sign-ins and how your resources are used by your users. For more information about sign-in logs, see [Sign-in logs in Microsoft Entra ID](../monitoring-health/concept-sign-ins.md).
@@ -421,6 +431,12 @@ Configure the user binding policy by mapping SAN Principal Name to UserPrincipal
 The user certificate should be configured like this screenshot:
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/user-certificate.png" alt-text="Screenshot of the user certificate." :::  
+
+### Troubleshooting sign-in issues with dynamic variables in sign-in logs
+Although sign-in logs provide all the information to debug a user's sign-in issues, there are times when specific values are required and since sign-in logs does not support dynamic variables, the sign-in logs would have missing information.
+For ex: The failure reason in sign-in log would show something like "The Certificate Revocation List (CRL) failed signature validation. Expected Subject Key Identifier {expectedSKI} does not match CRL Authority Key {crlAK}. Please request your tenant administrator to check the CRL configuration." where {expectedSKI} and {crlAKI} are not populated with correct values.
+
+When users sign-in with CBA fails, please copy the log details from 'More Details' link in the error page. For more detailed info, look at [understanding CBA error page](./concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-based-authentication-error-page)
 
 ### Test single-factor authentication 
 

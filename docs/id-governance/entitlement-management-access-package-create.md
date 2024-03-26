@@ -1,24 +1,14 @@
 ---
 title: Create an access package in entitlement management
 description: Learn how to create an access package of resources that you want to share in Microsoft Entra entitlement management.
-services: active-directory
-documentationCenter: ''
 author: owinfreyATL
 manager: amycolannino
-editor: 
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
-ms.reviewer: 
-ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an administrator, I want detailed information about the options available when I'm creating a new access package so that the access package can be managed with minimal effort.
-
 ---
 # Create an access package in entitlement management
 
@@ -52,11 +42,11 @@ Then once the access package is created, you can [change the hidden setting](ent
 
 ## Start the creation process
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 To complete the following steps, you need a role of global Administrator, Identity Governance Administrator, catalog owner, or access package manager.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
@@ -118,9 +108,9 @@ On the **Requests** tab, you create the first policy to specify who can request 
 
 Depending on which users you want to be able to request this access package, perform the steps in one of the following sections.
 
-[!INCLUDE [Entitlement management request policy](~/includes/entra-entitlement-management-request-policy.md)]
+[!INCLUDE [Entitlement management request policy](../includes/entra-entitlement-management-request-policy.md)]
 
-[!INCLUDE [Entitlement management lifecycle policy](~/includes/entra-entitlement-management-lifecycle-policy.md)]
+[!INCLUDE [Entitlement management lifecycle policy](../includes/entra-entitlement-management-lifecycle-policy.md)]
 
 ## Review and create the access package
 
@@ -144,11 +134,12 @@ There are two ways to create an access package programmatically: through Microso
 
 You can create an access package by using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission can call the API to:
 
-1. [List the accessPackageResources objects in the catalog](/graph/api/entitlementmanagement-list-accesspackagecatalogs?tabs=http&view=graph-rest-beta&preserve-view=true) and [create an accessPackageResourceRequest object](/graph/api/entitlementmanagement-post-accesspackageresourcerequests?tabs=http&view=graph-rest-beta&preserve-view=true) for any resources that aren't yet in the catalog.
-1. [List the accessPackageResourceRoles object](/graph/api/accesspackage-list-accesspackageresourcerolescopes?tabs=http&view=graph-rest-beta&preserve-view=true) of each `accessPackageResource` object in an `accessPackageCatalog` object. The user will use this list of roles to select a role later on, when creating an `accessPackageResourceRoleScope` object.
-1. [Create an accessPackage object](/graph/tutorial-access-package-api).
-1. [Create an accessPackageResourceRoleScope object](/graph/api/accesspackage-post-accesspackageresourcerolescopes?tabs=http&view=graph-rest-beta&preserve-view=true) for each resource role needed in the access package.
-1. [Create an accessPackageAssignmentPolicy object](/graph/api/entitlementmanagement-post-accesspackageassignmentpolicies?tabs=http&view=graph-rest-beta&preserve-view=true) for each policy needed in the access package.
+1. [List the resources in the catalog](/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0&tabs=http&preserve-view=true) and [create an accessPackageResourceRequest](/graph/api/entitlementmanagement-post-resourcerequests?view=graph-rest-1.0&tabs=http&preserve-view=true) for any resources that aren't yet in the catalog.
+1. [Retrieve the roles and scopes of each resource in the catalog](/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0&tabs=http#example-2-retrieve-the-roles-and-scopes-of-a-single-resource-in-a-catalog). This list of roles will then be used to select a role, when subsequently creating a resourceRoleScope.
+1. [Create an accessPackage](/graph/api/entitlementmanagement-post-accesspackages?view=graph-rest-1.0&preserve-view=true).
+1. [Create a resourceRoleScope](/graph/api/accesspackage-post-resourcerolescopes?view=graph-rest-1.0&preserve-view=true) for each resource role needed in the access package.
+1. [Create an assignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?view=graph-rest-1.0&preserve-view=true) for each policy needed in the access package.
+
 
 ### Create an access package by using Microsoft PowerShell
 
@@ -209,7 +200,7 @@ $rparams = @{
 New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $ap.Id -BodyParameter $rparams
 ```
 
-Finally, create the policies.  In this policy, only the administrator can assign access, and there are no access reviews. For more examples, see [Create an assignment policy through PowerShell](entitlement-management-access-package-request-policy.md#create-an-access-package-assignment-policy-through-powershell) and [Create an assignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?tabs=http&view=graph-rest-1.0&preserve-view=true).
+Finally, create the policies.  In this policy, only the administrators or access package assignment managers can assign access, and there are no access reviews. For more examples, see [Create an assignment policy through PowerShell](entitlement-management-access-package-request-policy.md#create-an-access-package-assignment-policy-through-powershell) and [Create an assignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?tabs=http&view=graph-rest-1.0&preserve-view=true).
 
 ```powershell
 

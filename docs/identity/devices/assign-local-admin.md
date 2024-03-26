@@ -2,8 +2,8 @@
 title: How to manage local administrators on Microsoft Entra joined devices
 description: Learn how to assign Azure roles to the local administrators group of a Windows device.
 
-services: active-directory
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
 ms.date: 11/28/2023
@@ -15,7 +15,6 @@ ms.reviewer: ravenn
 
 #Customer intent: As an IT admin, I want to manage the local administrators group assignment during a Microsoft Entra join, so that I can control who can manage Microsoft Entra joined devices
 
-ms.collection: M365-identity-device-management
 ---
 # How to manage the local administrators group on Microsoft Entra joined devices
 
@@ -57,7 +56,7 @@ To modify the Microsoft Entra Joined Device Local Administrator role, configure 
 > [!NOTE]
 > This option requires Microsoft Entra ID P1 or P2 licenses. 
 
-Microsoft Entra joined Device Local Administrators are assigned to all Microsoft Entra joined devices. You can’t scope this role to a specific set of devices. Updating the Microsoft Entra Joined Device Local Administrator role doesn't necessarily have an immediate impact on the affected users. On devices where a user is already signed into, the privilege elevation takes place when *both* the below actions happen:
+Microsoft Entra Joined Device Local Administrators are assigned to all Microsoft Entra joined devices. You can’t scope this role to a specific set of devices. Updating the Microsoft Entra Joined Device Local Administrator role doesn't necessarily have an immediate impact on the affected users. On devices where a user is already signed into, the privilege elevation takes place when *both* the below actions happen:
 
 - Upto 4 hours have passed for Microsoft Entra ID to issue a new Primary Refresh Token with the appropriate privileges. 
 - User signs out and signs back in, not lock/unlock, to refresh their profile.

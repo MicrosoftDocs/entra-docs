@@ -1,10 +1,9 @@
 ---
 title: Revoke user access in an emergency in Microsoft Entra ID
 description: How to revoke all access for a user in Microsoft Entra ID
-services: active-directory 
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 author: barclayn
 ms.author: barclayn
@@ -12,7 +11,6 @@ manager: amycolannino
 ms.reviewer: krbain
 ms.date: 11/21/2023
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.collection: M365-identity-device-management
 ---
 
 # Revoke user access in Microsoft Entra ID
@@ -131,7 +129,7 @@ Once admins have taken the above steps, the user can't gain new tokens for any a
 
 - Use [Microsoft Defender for Cloud Apps to block data download](/defender-cloud-apps/use-case-proxy-block-session-aad) when appropriate. If the data can only be accessed online, organizations can monitor sessions and achieve real-time policy enforcement.
 
-- Enable [Continuous Access Evaluation (CAE) in Microsoft Entra ID](~/identity/conditional-access/concept-continuous-access-evaluation.md). CAE allows admins to revoke the session tokens and access tokens for applications that are CAE capable.  
+- Use [Continuous Access Evaluation (CAE) in Microsoft Entra ID](~/identity/conditional-access/concept-continuous-access-evaluation.md). CAE allows admins to revoke the session tokens and access tokens for applications that are CAE capable.  
 
 ## Next steps
 

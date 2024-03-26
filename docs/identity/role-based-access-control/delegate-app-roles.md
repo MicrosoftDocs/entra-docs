@@ -1,21 +1,18 @@
 ---
 title: Delegate application management administrator permissions
 description: Grant permissions for application access management in Microsoft Entra ID
-services: active-directory
-documentationcenter: ''
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 03/30/2023
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
-#Customer intent: As a Microsoft Entra administrator, I want to reduce overusing the Global Administrator role by delegating app access management to lower-privilege roles.
 
+#Customer intent: As a Microsoft Entra administrator, I want to reduce overusing the Global Administrator role by delegating app access management to lower-privilege roles.
 ---
 
 # Delegate app registration permissions in Microsoft Entra ID
@@ -81,7 +78,7 @@ Creating custom roles and assigning custom roles are separate steps:
 - [Create a custom *role definition*](custom-create.md) and [add permissions to it from a preset list](custom-available-permissions.md). These are the same permissions used in the built-in roles.
 - [Create a *role assignment*](custom-assign-powershell.md) to assign the custom role.
 
-This separation allows you to create a single role definition and then assign it many times at different *scopes*. A custom role can be assigned at organization-wide scope, or it can be assigned at the scope if a single Microsoft Entra object. An example of an object scope is a single app registration. Using different scopes, the same role definition can be assigned to Sally over all app registrations in the organization and then to Naveen over only the Contoso Expense Reports app registration.
+This separation allows you to create a single role definition and then assign it many times at different *scopes*. A custom role can be assigned at organization-wide scope, or it can be assigned at the scope of a single Microsoft Entra object. An example of an object scope is a single app registration. Using different scopes, the same role definition can be assigned to Sally over all app registrations in the organization and then to Naveen over only the Contoso Expense Reports app registration.
 
 Tips when creating and using custom roles for delegating application management:
 - Custom roles only grant access in the most current app registration blades of the Microsoft Entra admin center. They do not grant access in the legacy app registrations blades.

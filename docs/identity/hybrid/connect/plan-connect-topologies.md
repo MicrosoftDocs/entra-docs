@@ -1,20 +1,17 @@
 ---
 title: 'Microsoft Entra Connect: Supported topologies'
 description: This topic details supported and unsupported topologies for Microsoft Entra Connect
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
 ms.assetid: 1034c000-59f2-4fc8-8137-2416fa5e4bfe
-ms.service: active-directory
+ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 # Topologies for Microsoft Entra Connect
 This article describes various on-premises and Microsoft Entra topologies that use Microsoft Entra Connect Sync as the key integration solution. This article includes both supported and unsupported configurations.
@@ -154,9 +151,9 @@ We recommend having a single tenant in Microsoft Entra ID for an organization. B
 
 This topology implements the following use cases:
 
-* AADConnect can synchronize the users, groups, and contacts from a single Active Directory to multiple Microsoft Entra tenants. These tenants can be in different Azure environments, such as the Microsoft Azure operated by 21Vianet environment or the Azure Government environment, but they could also be in the same Azure environment, such as two tenants that are both in Azure Commercial. For more information on options, see [Planning identity for Azure Government applications](/azure/azure-government/documentation-government-plan-identity).
+* Microsoft Entra Connect can synchronize the users, groups, and contacts from a single Active Directory to multiple Microsoft Entra tenants. These tenants can be in different Azure environments, such as the Microsoft Azure operated by 21Vianet environment or the Azure Government environment, but they could also be in the same Azure environment, such as two tenants that are both in Azure Commercial. For more information on options, see [Planning identity for Azure Government applications](/azure/azure-government/documentation-government-plan-identity).
 *	The same Source Anchor can be used for a single object in separate tenants (but not for multiple objects in the same tenant). (The verified domain can't be the same in two tenants. More details are needed to enable the same object to have two UPNs.)
-*	You will need to deploy an AADConnect server for every Microsoft Entra tenant you want to synchronize to - one AADConnect server cannot synchronize to more than one Microsoft Entra tenant.
+*	You will need to deploy a Microsoft Entra Connect server for every Microsoft Entra tenant you want to synchronize to - one Microsoft Entra Connect server cannot synchronize to more than one Microsoft Entra tenant.
 *	It is supported to have different sync scopes and different sync rules for different tenants.
 *	Only one Microsoft Entra tenant sync can be configured to write back to Active Directory for the same object. This includes device and group writeback as well as Hybrid Exchange configurations – these features can only be configured in one tenant. The only exception here is Password Writeback – see below.
 *	It is supported to configure Password Hash Sync from Active Directory to multiple Microsoft Entra tenants for the same user object. If Password Hash Sync is enabled for a tenant, then Password Writeback may be enabled as well, and this can be done on multiple tenants: if the password is changed on one tenant, then password writeback will update it in Active Directory, and Password Hash Sync will update the password in the other tenants.

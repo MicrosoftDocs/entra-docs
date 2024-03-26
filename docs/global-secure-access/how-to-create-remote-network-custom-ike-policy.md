@@ -1,14 +1,12 @@
 ---
 title: How to create a remote network with a custom IKE policy for Global Secure Access (preview)
 description: Learn how to create a remote network with a custom IKE policy for Global Secure Access (preview).
-author: shlipsey3
-ms.author: sarahlipsey
+author: kenwith
+ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
 ms.date: 10/05/2023
-ms.service: network-access
-
-
+ms.service: global-secure-access
 ---
 # Create a remote network with a custom IKE policy for Global Secure Access (preview)
 

@@ -1,19 +1,16 @@
 ---
 title: Manage users or devices for an administrative unit with dynamic membership rules (Preview)
 description: Manage users or devices for an administrative unit with dynamic membership rules (Preview) in Microsoft Entra ID
-services: active-directory
-documentationcenter: ''
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: how-to
-ms.subservice: roles
-ms.workload: identity
+ms.subservice: role-based-access-control
 ms.date: 05/13/2022
 ms.author: rolyon
 ms.reviewer: anandy
-ms.custom: oldportal, it-pro, has-azure-ad-ps-ref
-ms.collection: M365-identity-device-management
+ms.custom: oldportal, it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # Manage users or devices for an administrative unit with dynamic membership rules (Preview)
@@ -34,8 +31,8 @@ Although administrative units with members assigned manually support multiple ob
 - Microsoft Entra ID P1 or P2 license for each administrative unit administrator
 - Microsoft Entra ID P1 or P2 license for each administrative unit member
 - Privileged Role Administrator or Global Administrator
-- AzureADPreview module when using PowerShell
-- Admin consent when using Graph explorer for Microsoft Graph API
+- Microsoft Graph PowerShell SDK installed when using PowerShell
+- Admin consent when using Graph Explorer for Microsoft Graph API
 - Global Azure cloud (not available in specialized clouds, such as Azure Government or Microsoft Azure operated by 21Vianet)
 
 > [!NOTE]
@@ -60,7 +57,7 @@ Follow these steps to create administrative units with dynamic membership rules 
 1. In the **Membership type** list, select **Dynamic User** or **Dynamic Device**, depending on the type of rule you want to add.
 
     ![Screenshot of an administrative unit Properties page with Membership type list displayed.](./media/admin-units-members-dynamic/admin-unit-properties.png)
-    
+
 1. Select **Add dynamic query**.
 
 1. Use the rule builder to specify the dynamic membership rule. For more information, see [Rule builder in the Azure portal](~/identity/users/groups-dynamic-membership.md#rule-builder-in-the-azure-portal).
@@ -73,7 +70,7 @@ Follow these steps to create administrative units with dynamic membership rules 
 
     The following message is displayed:
 
-    After changing the administrative unit type, the existing membership may change based on the dynamic membership rule you provide.
+    After changing the administrative unit type, the existing membership might change based on the dynamic membership rule you provide.
 
 1. Select **Yes** to continue.
 
@@ -83,22 +80,29 @@ For steps on how to edit your rule, see the following [Edit dynamic membership r
 
 1. Create a dynamic membership rule. For more information, see [Dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
 
-1. Use the [Connect-AzureAD](/powershell/module/azuread/connect-azuread) command to connect with Microsoft Entra ID with a user that has been assigned the Privileged Role Administrator or Global Administrator role.
+1. Use the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) command to connect with Microsoft Entra ID with a user that has been assigned the Privileged Role Administrator or Global Administrator role.
 
     ```powershell
-    # Connect to Azure AD
-    Connect-AzureAD
+    Connect-MgGraph -Scopes "AdministrativeUnit.ReadWrite.All"
     ```
-  
-1. Use the [New-AzureADMSAdministrativeUnit](/powershell/module/azuread/new-azureadmsadministrativeunit) command to create a new administrative unit with a dynamic membership rule using the following parameters:
+
+1. Use the [New-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryadministrativeunit) command to create a new administrative unit with a dynamic membership rule using the following parameters:
 
     - `MembershipType`: `Dynamic` or `Assigned`
     - `MembershipRule`: Dynamic membership rule you created in a previous step
     - `MembershipRuleProcessingState`: `On` or `Paused`
-    
+
     ```powershell
     # Create an administrative unit for users in the United States
-    $adminUnit = New-AzureADMSAdministrativeUnit -DisplayName "Example Admin Unit" -Description "Example Dynamic Membership Admin Unit" -MembershipType "Dynamic" -MembershipRuleProcessingState "On" -MembershipRule '(user.country -eq "United States")' 
+    $params = @{
+       displayName = "Example Admin Unit"
+       description = "Example Dynamic Membership Admin Unit"
+       membershipType = "Dynamic"
+       membershipRule = "(user.country -eq 'United States')"
+       membershipRuleProcessingState = "On"
+    }
+
+    New-MgDirectoryAdministrativeUnit -BodyParameter $params
     ```
 
 ### Microsoft Graph API
@@ -106,17 +110,17 @@ For steps on how to edit your rule, see the following [Edit dynamic membership r
 1. Create a dynamic membership rule. For more information, see [Dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
 
 1. Use the [Create administrativeUnit](/graph/api/directory-post-administrativeunits?view=graph-rest-beta&preserve-view=true) API to create a new administrative unit with a dynamic membership rule.
-    
+
     The following shows an example of a dynamic membership rule that applies to Windows devices.
 
     Request
-    
+
     ```http
     POST https://graph.microsoft.com/beta/administrativeUnits
     ```
-    
+
     Body
-    
+
     ```http
     {
       "displayName": "Windows Devices",
@@ -126,7 +130,7 @@ For steps on how to edit your rule, see the following [Edit dynamic membership r
       "membershipRuleProcessingState": "On"
     }
     ```
-    
+
 ## Edit dynamic membership rules
 
 When an administrative unit has been configured for dynamic membership, the usual commands to add or remove members for the administrative unit are disabled as the dynamic membership engine retains the sole ownership of adding or removing members. To make changes to the membership, you can edit the dynamic membership rules.
@@ -149,11 +153,16 @@ When an administrative unit has been configured for dynamic membership, the usua
 
 ### PowerShell
 
-Use the [Set-AzureADMSAdministrativeUnit](/powershell/module/azuread/set-azureadmsadministrativeunit) command to edit the dynamic membership rule.
- 
+Use the [Update-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryadministrativeunit) command to edit the dynamic membership rule.
+
 ```powershell
 # Set a new dynamic membership rule for an administrative unit
-Set-AzureADMSAdministrativeUnit -Id $adminUnit.Id -MembershipRule '(user.country -eq "Germany")'
+$adminUnit = Get-MgDirectoryAdministrativeUnit -Filter "displayName eq 'Example Admin Unit'"
+$params = @{
+   membershipRule = "(user.country -eq 'Germany')"
+}
+
+Update-MgDirectoryAdministrativeUnit -AdministrativeUnitId $adminUnit.Id -BodyParameter $params
 ```
 
 ### Microsoft Graph API
@@ -200,15 +209,21 @@ Follow these steps to change an administrative unit with dynamic membership rule
 
 1. Select **Yes** to continue.
 
-    When the membership type setting is changed from dynamic to assigned, the current members remain intact in the administrative unit. Additionally, the ability to add groups to the administrative unit is enabled. 
+    When the membership type setting is changed from dynamic to assigned, the current members remain intact in the administrative unit. Additionally, the ability to add groups to the administrative unit is enabled.
 
 ### PowerShell
 
-Use the [Set-AzureADMSAdministrativeUnit](/powershell/module/azuread/set-azureadmsadministrativeunit) command to change the membership type setting.
- 
+Use the [Update-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryadministrativeunit) command to edit the dynamic membership rule.
+
 ```powershell
 # Change an administrative unit to assigned
-Set-AzureADMSAdministrativeUnit -Id $adminUnit.Id -MembershipType "Assigned" -MembershipRuleProcessingState "Paused"
+$adminUnit = Get-MgDirectoryAdministrativeUnit -Filter "displayName eq 'Example Admin Unit'"
+$params = @{
+   membershipRuleProcessingState = "Paused"
+   membershipType = "Assigned"
+}
+
+Update-MgDirectoryAdministrativeUnit -AdministrativeUnitId $adminUnit.Id -BodyParameter $params
 ```
 
 ### Microsoft Graph API

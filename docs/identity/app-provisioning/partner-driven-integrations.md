@@ -1,13 +1,12 @@
 ---
 title: 'Use partner driven integrations to provision accounts into all your applications'
 description: Use partner driven integrations to provision accounts into all your applications.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: overview
-ms.date: 08/25/2023
+ms.date: 02/13/2024
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
@@ -36,6 +35,28 @@ In cases where an application doesn't support SCIM, partners have built [custom 
 ## Available partner-driven integrations
 The descriptions and lists of applications below are provided by the partners themselves. You can use the lists of applications supported to identify a partner that you may want to contact and learn more about.  
 
+
+### Aquera
+
+#### Description
+Aquera is a leading provider of SCIM Gateway Services for Microsoft Entra. The SCIM Gateway for Microsoft Entra from Aquera is a cloud-based service providing out-of-the-box connectivity between Microsoft Entra ID and the provisioning target applications, directories, databases, devices, or third party IDPs that an organization or their partners operate, which are not covered by the Microsoft Entra application gallery. 
+The Aquera SCIM Gateway powers Microsoft Entra ID to create, update, deactivate, and delete user accounts via Aquera connectors in any cloud or on-premises application, database, directory, device, or third party IDP via the Microsoft Entra ID SCIM protocol. Aquera has a catalog of over 800 connectors covering these targets, builds additional connectors on-demand, and offers a self-service connector builder for customers to build their own connectors for the Aquera SCIM Gateway. The Aquera connectors support the various integration methods required by each target including REST, SQL, LDAP, SOAP, non-Entra ID compatible SCIM, or web service APIs, admin console automation, SDKs, code libraries, and files via FTP and local file shares. 
+Aquera also supports over 40 inbound provisioning HRIS sources of record for Microsoft Entra ID, and further provides deep integration with all the major ITSMs supporting automatic generation of joiner, mover, and leaver work tickets in the ITSMs, and fulfilling ITSM self-service access requests via Entra ID. 
+
+#### Contact Information
+* Company website: https://www.aquera.com 
+* Azure Marketplace Listings: https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=aquera&page=1 
+
+#### Popular applications supported
+* Over 40 HRIS Applications: Oracle Cloud HCM, Dayforce, UKG Pro/Ready/Pro Workforce, ADP (all US and international versions), Workday, SAP HR, Greenhouse, iCIMS, SuccessFactors, HiBob, BambooHR, Paylocity, Paycor, PeopleSoft, Cornerstone, Lever
+* ERPs: Netsuite, Oracle Cloud ERP, Oracle EBS, SAP ECC, SAP S/4HANA, Sage Intacct, PeopleSoft ERP
+* EHRs: Epic, Cerner, PointClickCare, MyAvatar, Homecare Homebase
+* Student Information Systems: Ellucian Banner, PeopleSoft Campus Solutions
+* Databases: Oracle, MySQL, SQLServer, MongoDB, PostgreSQL, AS/400 DB2, DB2, Snowflake, Redshift
+* Directories/IDPs: AS/400, RACF, ACF2, TopSecret, OpenLDAP, IDP Directories
+
+
+
 ### IDMWORKS
 #### Description
 We Are Experts In Identity & Access Management and Data Center Management.
@@ -58,10 +79,26 @@ Leading provider of Mainframe, Healthcare and ERP integrations.  More can be fou
 * EPIC
 * SAP ECC
 
+### KloudIdentity
+#### Description
+
+KloudIdentity streamlines enterprise operations by simplifying the onboarding process of on-premises Line of Business (LOB) applications and facilitating outbound provisioning of users and groups through Microsoft Entra ID. It serves as a SCIM gateway, enabling non-SCIM compliant LOB applications to seamlessly integrate with Microsoft Entra ID. This application is founded upon a unique design paradigm known as the universal connector space, which offers a standardized platform for creating connectors for various LOB applications through a template-driven approach. This methodology significantly reduces lead time and costs associated with onboarding non-SCIM compliant LOB applications to Microsoft Entra ID for outbound provisioning.
+
+Integration with LOB applications is primarily achieved through REST APIs, with support also extended to SOAP APIs and PowerShell scripts. Administrators can easily configure attribute mapping templates using a user-friendly web portal. Beyond graphical UI-driven attribute mapping, KloudIdentity offers a customizable policies-based approach, allowing for the configuration of highly tailored sequences of attribute mapping and payload generation.
+
+Furthermore, KloudIdentity provides a Software Development Kit (SDK) to customize the standard connector platform, addressing complex and advanced integration scenarios. This empowers users to make code modifications within the KloudIdentity framework safely and efficiently, enabling seamless integration of LOB applications for users and groups provisioning. The SCIM gateway can be deployed either as a cloud-based solution or within on-premises data centers, supporting a range of deployment options from conventional IIS setups to Kubernetes orchestrated environments
+
+#### Contact information
+* Company website: https://www.kloudynet.com/
+* Azure Marketplace Listing: https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/kloudynettechnologiessdnbhd1588004273044.identity_implementation
+
+#### Popular applications supported
+KloudIdentity provides a universal connector platform; Hence any LOB application can be integrated with REST or SOAP APIs, PowerShell scripts, and SDK approach.
+
 ### UNIFY Solutions
 #### Description
 
-UNIFY Solutions is the leading provider of Identity, Access, Security and Governance solutions.
+UNIFY Solutions is a leading provider of Identity, Access, Security and Governance solutions.
 
 #### Contact information
 * Company website: https://unifysolutions.net/identity/unifyconnect

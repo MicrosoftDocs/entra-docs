@@ -6,9 +6,9 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom:
 ms.date: 11/17/2023
-ms.reviewer: jmprieur, lenalepa, sureshja, kkrishna
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: jmprieur, sureshja
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an Azure user, I want to convert a single tenant app to a Microsoft Entra multitenant app so any Microsoft Entra user can sign in,
 ---
@@ -30,7 +30,7 @@ If you want to try using one of our samples, refer to [Build a multitenant SaaS 
 
 ## Prerequisites
 
-- A Microsoft Entra ID tenant. If you don't have one, you can create one in our [Quickstart: Create a new tenant in Microsoft Entra ID](/entra/fundamentals/create-new-tenant)
+- A Microsoft Entra tenant. If you don't have one, you can create one in our [Quickstart: Create a new tenant in Microsoft Entra ID](/entra/fundamentals/create-new-tenant)
 - An application registered in the Microsoft identity platform. If you don't have one, you can create one in our [Quickstart: Register an application with the Microsoft identity platform](quickstart-register-app.md).
 - Familiarity with [Tenancy in Microsoft Entra ID](./single-and-multi-tenant-apps.md).
 - An integrated development environment (IDE) that enables you to edit your application code.

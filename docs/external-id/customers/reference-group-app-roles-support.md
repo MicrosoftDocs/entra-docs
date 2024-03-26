@@ -4,9 +4,9 @@ description: Find out which core Microsoft Entra features related to the user an
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: reference
 ms.date: 05/01/2023
 ms.author: mimart

@@ -4,8 +4,8 @@ description: Tutorial to configure F5's BIG-IP based  Secure socket layer Virtua
 
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 12/13/2022

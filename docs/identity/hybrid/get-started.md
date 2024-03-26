@@ -1,19 +1,16 @@
 ---
 title: 'Get started integrating with Microsoft Entra ID'
 description: This article describes the steps required to integrate with Active Directory.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Steps to start integrating with Microsoft Entra ID
@@ -31,7 +28,7 @@ Use these tasks if you're deploying cloud sync to integrate with Active Director
 |-----|-----|
 |[Determine which sync tool is correct for you](https://setup.microsoft.com/azure/add-or-sync-users-to-azure-ad) |Use the wizard to determine whether cloud sync or Microsoft Entra Connect is the right tool for you.|
 |[Review the cloud sync prerequisites](cloud-sync/how-to-prerequisites.md)|Review the necessary prerequisites before getting started.|
-|[Download and install the provisioning agent](cloud-sync/how-to-install.md)|Download and install the Microsoft Entra Provisioning Agent. |
+|[Download and install the provisioning agent](cloud-sync/how-to-install.md)|Download and install the Microsoft Entra provisioning agent. |
 |[Configure cloud sync](cloud-sync/how-to-configure.md)|Configure and tailor synchronization for your organization.|
 |[Verify users are synchronizing](cloud-sync/tutorial-single-forest.md#verify-users-are-created-and-synchronization-is-occurring)|Make sure it's working.|
 
