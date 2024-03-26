@@ -35,7 +35,7 @@ Microsoft Entra hybrid join requires devices to have access to the following Mic
 - `https://enterpriseregistration.windows.net`
 - `https://login.microsoftonline.com`
 - `https://device.login.microsoftonline.com`
-- `https://autologon.microsoftazuread-sso.com` (If you use or plan to use seamless single sign-on (SSO))
+- `https://autologon.microsoftazuread-sso.com` (If you use or plan to use seamless single sign-on)
 - Your organization's Security Token Service (STS) (**For federated domains**)
 
 > [!WARNING]
