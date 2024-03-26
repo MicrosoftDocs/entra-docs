@@ -94,7 +94,7 @@ System-assigned identity:
 
 3. Select the **Managed identity sign-ins** tab.
 
-:::image type="content" source="./media/how-to-view-managed-identity-activity/sign-in-logs.png" alt-text="Screenshot showing managed identity sign-in events"::: 
+:::image type="content" source="./media/how-to-view-managed-identity-activity/sign-in-logs.png" alt-text="Screenshot of the managed identities activity section showing all columns "::: 
 
 5. To view the identity's Enterprise application in Microsoft Entra ID, select the "Managed Identity ID" column.
 6. To view the Azure resource or user-assigned managed identity, search by name in the search bar of the Azure portal.
