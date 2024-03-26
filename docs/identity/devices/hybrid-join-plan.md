@@ -18,7 +18,7 @@ ms.reviewer: sandeo
 If you have an on-premises Active Directory Domain Services (AD DS) environment and you want to join your AD DS domain-joined computers to Microsoft Entra ID, you can accomplish this task by doing Microsoft Entra hybrid join.
 
 > [!TIP]
-> single sign-on (SSO) access to on-premises resources is also available to devices that are Microsoft Entra joined. For more information, see [How SSO to on-premises resources works on Microsoft Entra joined devices](device-sso-to-on-premises-resources.md).
+> Single sign-on (SSO) access to on-premises resources is also available to devices that are Microsoft Entra joined. For more information, see [How SSO to on-premises resources works on Microsoft Entra joined devices](device-sso-to-on-premises-resources.md).
 
 ## Prerequisites
 
