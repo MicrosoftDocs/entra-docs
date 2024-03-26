@@ -507,7 +507,7 @@ Environment="no_proxy=169.254.169.254"
 
 Restart the agent (`sudo systemctl restart walinuxagent`). Now try again.
 
-#### The az SSH VM command fails with KeyError access_token
+#### The az ssh vm command fails with KeyError access_token
 
 If the `az ssh vm` command fails, you're using an outdated version of the Azure CLI client.
 
