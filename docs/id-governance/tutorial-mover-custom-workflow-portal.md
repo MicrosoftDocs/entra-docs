@@ -64,7 +64,7 @@ Use the following steps to create a mover workflow for a user making a job chang
 
 1. From the templates, select **select** under **Employee job profile change**.
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-template.png" alt-text="Screenshot of selecting the employee job profile change template.":::
-1. Next, you configure the basic information about the workflow.  This information includes a name and description. You're also able to choose the **Trigger type** of the workflow, which in this case will be the **Group membership change (Preview)** trigger. For **Action** you're given what interaction with the group change triggers the workflow, which in this case will be **Removed from group**. After your trigger is set, select **Configure scope**.
+1. Next, you configure the basic information about the workflow.  This information includes a name and description. You're also able to choose the **Trigger type** of the workflow, which in this case is the **Group membership change (Preview)** trigger. For **Action** you're given what interaction with the group change triggers the workflow, which in this case is **Removed from group**. After your trigger is set, select **Configure scope**.
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-template-basics.png" alt-text="Screenshot of setting group membership trigger in template.":::
 1. On the **Configure scope** screen, in the scope details section select **+Add group**. From the groups screen, search for **Sales**, and select the group. When the group is added, select **Review tasks**.
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/group-scope.png" alt-text="Screenshot of setting group scope.":::
@@ -99,9 +99,9 @@ At any time, you can monitor the status of the workflow, and the tasks. As a rem
 
 1. To begin, select the **Workflow history** tab to view the user summary and associated workflow tasks and statuses. 
 
-1. Once the **Workflow history** tab has been selected, you land on the workflow history page as shown.
-
-1. On this page you are able to see a general summary, based on users, of total processed, successfully processed, failed to process, successful tasks, and failed tasks.
+1. Once the **Workflow history** tab has been selected, you're presented with the workflow history page.
+    :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-history-page.png" alt-text="Screenshot of the workflow history page.":::
+1. On this page, you're able to see a general summary, based on users, of total processed, successfully processed, failed to process, successful tasks, and failed tasks.
 
 1. From the list of users processed you can also select a user, see which tasks ran for them, and if they ran successfully. If the task failed, you can see the reason.
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-task-status.png" alt-text="Screenshot of task status for a user.":::
