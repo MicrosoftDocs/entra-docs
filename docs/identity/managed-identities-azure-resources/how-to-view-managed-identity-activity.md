@@ -15,7 +15,7 @@ ms.author: barclayn
 
 # View update and sign-in activities for Managed identities
 
-This article will explain how to view updates carried out to managed identities, and sign-in attempts made by managed identities.
+This article explains how to view updates carried out to managed identities, and sign-in attempts made by managed identities.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ This article will explain how to view updates carried out to managed identities,
 
 ## View updates made to user-assigned managed identities
 
-This procedure demonstrates how to view updates carried out to user-assigned managed identities
+This procedure demonstrates how to view updates carried out to user-assigned managed identities.
 
 1. In the Azure portal, browse to **Activity Log**.
 
@@ -70,7 +70,7 @@ System-assigned identity:
 
 :::image type="content" source="./media/how-to-view-managed-identity-activity/start-adding-search-filter.png" alt-text="Screenshot showing how to start building the search filter":::
 
-5. In the **Operation** dropdown list, enter these operation names: "Create role assignment" and "Delete role assignment".
+5. In the **Operation** dropdown list, enter these operation names: **Create role assignment** and **Delete role assignment**.
 
 :::image type="content" source="./media/how-to-view-managed-identity-activity/add-role-assignment-operations-to-search-filter.png" alt-text="Screenshot showing how to add role assignment operations to the search filter":::
 
@@ -100,7 +100,7 @@ System-assigned identity:
 
 :::image type="content" source="./media/how-to-view-managed-identity-activity/msi-sign-in-events.png" alt-text="Screenshot showing managed identity sign-in events"::: 
 
-5. To view the identity's Enterprise application in Microsoft Entra ID, select the “Managed Identity ID” column.
+5. To view the identity's Enterprise application in Microsoft Entra ID, select the "Managed Identity ID" column.
 6. To view the Azure resource or user-assigned managed identity, search by name in the search bar of the Azure portal.
 
  > [!NOTE] 
