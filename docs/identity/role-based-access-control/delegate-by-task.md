@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 02/16/2024
+ms.date: 03/13/2024
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
@@ -63,7 +63,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Configure company branding | [Global Administrator](permissions-reference.md#global-administrator) |  |
+> | Configure company branding | [Organizational Branding Administrator](permissions-reference.md#organizational-branding-administrator) |  |
 > | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](~/fundamentals/users-default-permissions.md) |
 
 ## Company properties
@@ -271,12 +271,12 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Configure authentication methods | [Global Administrator](permissions-reference.md#global-administrator) |  |
-> | Configure customization | [Global Administrator](permissions-reference.md#global-administrator) |  |
-> | Configure notification | [Global Administrator](permissions-reference.md#global-administrator) |  |
-> | Configure on-premises integration | [Global Administrator](permissions-reference.md#global-administrator) |  |
-> | Configure password reset properties | [User Administrator](permissions-reference.md#user-administrator) | [Global Administrator](permissions-reference.md#global-administrator) |
-> | Configure registration | [Global Administrator](permissions-reference.md#global-administrator) |  |
+> | Configure authentication methods | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
+> | Configure customization | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
+> | Configure notification | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
+> | Configure on-premises integration | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
+> | Configure password reset properties | [User Administrator](permissions-reference.md#user-administrator) | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |
+> | Configure registration | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
 > | Read all configuration | [Security Administrator](permissions-reference.md#security-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 
 ## Privileged identity management
@@ -395,8 +395,9 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Revoke license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Update all properties except User Principal Name | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Update User Principal Name for limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |
-> | Update User Principal Name property on privileged admins | [Global Administrator](permissions-reference.md#global-administrator) |  |
-> | Update user settings | [Global Administrator](permissions-reference.md#global-administrator) |  |
+> | Update User Principal Name property on privileged admins | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |  |
+> | Update user settings - Default user role permissions | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |
+> | Update user settings - Guest user access | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |
 > | Update Authentication methods | [Authentication Administrator](permissions-reference.md#authentication-administrator) | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator)<br/>[Global Administrator](permissions-reference.md#global-administrator) |
 
 ## Support

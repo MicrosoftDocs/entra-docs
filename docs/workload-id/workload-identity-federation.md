@@ -7,7 +7,7 @@ manager: CelesteDG
 
 ms.service: entra-workload-id
 
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 11/6/2023
 ms.author: ryanwi
 ms.reviewer: ludwicknick

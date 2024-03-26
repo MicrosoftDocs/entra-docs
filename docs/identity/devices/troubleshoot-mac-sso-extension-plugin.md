@@ -58,6 +58,30 @@ The following flowchart outlines a logical flow for approaching troubleshooting 
 
 ---
 
+## Steps to Opt out of Platform SSO on macOS
+
+To opt out of PSSO that was enabled by mistake, admins should remove the SSO extension profile with PSSO enabled from the devices and deploy a new SSO extension profile with PSSO flags disabled/removed.
+
+1. Remove the targeting for the SSO profile with PSSO enabled
+1. Initiate device sync to get the SSO profile with PSSO enabled removed from the device
+1. Target the device with a new SSO profile with PSSO disabled
+1. Initiate device sync to get the new profile installed on the device
+
+> [!IMPORTANT]
+> **Note: Updating the existing SSO profile on the device WON'T help to disable PSSO after PSSO registration is completed.** Only a complete removal of the SSO profile from the device will remove the PSSO state from the device.
+
+Context :
+
+Users will start seeing PSSO registration notification on macOS 13+ devices  in two scenarios :
+1. If device already has Intune Company Portal version supporting PSSO and admin deploys new SSO extension policy with PSSO enabled
+1. If user is already targeted with SSO extension policy having PSSO enabled and later an Intune Company Portal version supporting PSSO is installed on the device.
+
+> [!CAUTION]
+> **Admins should NOT target users with SSO extension policy having PSSO enabled unless they are tested and ready to be deployed, as this can potentially break existing users and their compliance conditions**.
+
+> [!IMPORTANT]
+> **Note : For users who complete PSSO registration, the legacy WPJ registration will be removed from the keychain.** If PSSO registration was done by mistake , once admin removes the SSO profile with PSSO and installs new profile without PSSO, the legacy WPJ registration should be done again for device compliance to work.
+
 ## Deployment troubleshooting
 
 Most issues that customers encounter stem from either improper Mobile Device Management (MDM) configuration(s) of the SSO extension profile, or an inability for the Apple device to receive the configuration profile from the MDM. This section covers the steps you can take to ensure that the MDM profile has been deployed to a Mac and that it has the correct configuration.

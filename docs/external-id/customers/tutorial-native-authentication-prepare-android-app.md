@@ -34,7 +34,6 @@ In this tutorial, you learn how to:
  
 1. Open your project in Android Studio or create a new project. 
    
- 
 1. Open your application's `build.gradle` and add the following dependencies:   
 
     ```gradle 
@@ -129,7 +128,7 @@ For more information on MSAL logging, see [Logging in MSAL for Android](/entra/i
  
 ## Create SDK instance 
  
-In the `onCreate` method, create MSAL library instance so that we can perform authentication logic and interact with our tenant through native authentication APIs. The `INativeAuthPublicClientApplication` create an instance called `authClient`. The JSON configuration file that we created earlier in the tutorial is passed as a parameter.  
+In the `onCreate()` method, create an MSAL instance so that we can perform authentication logic and interact with our tenant through native authentication APIs. The `createNativeAuthPublicClientApplication()` method returns an instance called `authClient`. The JSON configuration file that we created earlier in the tutorial is passed as a parameter.  
  
 The cached account can be retrieved through `getCurrentAccount()`, which will return an `AccountResult` object if an account for this application was found in persistence or `GetAccountResult.NoAccountFound` if not. Your code should look like:  
  
