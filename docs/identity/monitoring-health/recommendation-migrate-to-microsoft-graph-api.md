@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/21/2024
+ms.date: 03/26/2024
 ms.author: sarahlipsey
 ms.reviewer: krbash
 
@@ -27,7 +27,13 @@ In general, applications and service principals that are still using Azure AD Gr
 
 There are two recommendations associated with the deprecation of Azure AD Graph. One provides a list of applications and one provides a list of service principals. Both recommendations need to be addressed separately.
 
-## Value 
+### Applications and Service Principals
+
+The Applications version of this recommendation details applications that are registered in your tenant and calling Azure AD Graph APIs. Think, app registrations in the Microsoft Entra admin center.
+
+The Service Principals version of this recommendation details applications that are registered in another tenant, but consented for use in your tenant. Think, enterprise applications in the Microsoft Entra admin center. These applications could be supplied by a developer in your multitenant company or a software vendor. For Service Principals, you likely need to contact the vendor to identify get an update to a newer version of the application. 
+
+## Value
 
 Microsoft Graph offers a single unified endpoint to access Microsoft Entra and Microsoft 365 services. Microsoft Graph APIs have all the capabilities of Azure AD Graph APIs, plus many newer API features. The Microsoft Graph client libraries offer built-in support for features, such as retry handling, secure redirects, transparent authentication, and payload compression. These capabilities were not available with Azure AD Graph.
 
@@ -39,7 +45,7 @@ Any applications or service principals still calling Azure AD Graph will be affe
 1. Review the list of **service principals** calling Azure AD Graph under **Impacted Resources** in the recommendations details.
 1. Work with the owner or publisher of the corresponding application to identify the steps required to update the application.
 
-There are several resources available to help with the migration:
+## Related content
 
 - [Migrate your apps](/graph/migrate-azure-ad-graph-overview)
 - [Migration planning checklist](/graph/migrate-azure-ad-graph-planning-checklist)
