@@ -7,10 +7,10 @@
     }
   ],
   "MetadataDelimiter": "\"",
-  "Include": [],
-  "Exclude": [
-    "docs/architecture/"
+  "Include": [
+    "docs/identity/devices"
   ],
+  "Exclude": [],
   "RemoveTermSets": [
     "*au-administrative-unit*",
     "*guest-user*",

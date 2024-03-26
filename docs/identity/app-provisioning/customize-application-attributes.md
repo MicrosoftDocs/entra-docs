@@ -330,6 +330,7 @@ Then use the AppRoleAssignmentsComplex expression to map to the custom role attr
   }
 ]
  ```
+
 **AssertiveAppRoleAssignmentsComplex**   (Recommended for complex roles)
 
 **When to use:** Use the AssertiveAppRoleAssignmentsComplex to enable PATCH Replace functionality. For SCIM applications that support multiple roles, this ensures that roles removed in Microsoft Entra ID are also removed in the target application. The replace functionality will also remove any additional roles the user has that are not reflected in Entra ID 
@@ -340,7 +341,7 @@ The difference between the AppRoleAssignmentsComplex and AssertiveAppRoleAssignm
   
 ![Add roles](./media/customize-application-attributes/add-roles.png)<br>
 
-Then use the AppRoleAssignmentsComplex expression to map to the custom role attribute as shown in the image:
+Then use the AssertiveAppRoleAssignmentsComplex expression to map to the custom role attribute as shown in the image:
 
 ![Add AssertiveAppRoleAssignmentsComplex](./media/customize-application-attributes/edit-attribute-assertiveapproleassignmentscomplex.png)<br>  
 
