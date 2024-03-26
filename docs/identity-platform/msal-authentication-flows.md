@@ -46,7 +46,7 @@ Your application can use one or more authentication flows. Each flow uses certai
 
 Several of these flows support both interactive and non-interactive token acquisition.
 
-- **Interactive** - The user may be prompted for input by the authorization server. For example, to sign in, perform multi-factor authentication (MFA), or to grant consent to more resource access permissions.
+- **Interactive** - The user may be prompted for input by the authorization server. For example, to sign in, perform multifactor authentication (MFA), or to grant consent to more resource access permissions.
 - **Non-interactive (silent)** - The user may _not_ be prompted for input. Also called "silent" token acquisition, the application tries to get a token by using a method in which the authorization server _may not_ prompt the user for input.
 
 Your MSAL-based application should first try to acquire a token silently and fall back to the interactive method only if the non-interactive attempt fails. For more information about this pattern, see [Acquire and cache tokens using the Microsoft Authentication Library (MSAL)](msal-acquire-cache-tokens.md).
@@ -117,7 +117,7 @@ By using the device code flow, the application obtains tokens through a two-step
 
 In the following diagram:
 
-1. Whenever user authentication is required, the app provides a code and asks the user to use another device like an internet-connected smartphone to visit a URL (for example, `https://microsoft.com/devicelogin`). The user is then prompted to enter the code, and proceeding through a normal authentication experience including consent prompts and [multi-factor authentication](~/identity/authentication/concept-mfa-howitworks.md), if necessary.
+1. Whenever user authentication is required, the app provides a code and asks the user to use another device like an internet-connected smartphone to visit a URL (for example, `https://microsoft.com/devicelogin`). The user is then prompted to enter the code, and proceeding through a normal authentication experience including consent prompts and [multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md), if necessary.
 1. Upon successful authentication, the command-line app receives the required tokens through a back channel, and uses them to perform the web API calls it needs.
 
 ![Diagram of device code flow.](media/msal-authentication-flows/device-code.png)
@@ -181,7 +181,7 @@ To acquire a token silently on Windows domain-joined machines, we recommend [int
 The following constraints apply to the applications using the ROPC flow:
 
 - Single sign-on is **unsupported**.
-- Multi-factor authentication (MFA) is **unsupported**.
+- Multifactor authentication (MFA) is **unsupported**.
   - Check with your tenant admin before using this flow - MFA is a commonly used feature.
 - Conditional Access is **unsupported**.
 - ROPC works _only_ for work and school accounts.
@@ -210,7 +210,7 @@ Integrated Windows authentication (IWA) is enabled for .NET desktop, .NET, and W
 
 IWA supports AD FS-federated users _only_ - users created in Active Directory and backed by Microsoft Entra ID. Users created directly in Microsoft Entra ID without Active Directory backing (managed users) can't use this authentication flow.
 
-**Multi-factor authentication (MFA)**
+**Multifactor authentication (MFA)**
 
 IWA's non-interactive (silent) authentication can fail if MFA is enabled in the Microsoft Entra tenant and an MFA challenge is issued by Microsoft Entra ID. If IWA fails, you should fall back to an [interactive method of authentication](#interactive-and-non-interactive-authentication) as described earlier.
 
@@ -239,8 +239,8 @@ To satisfy either requirement, one of these operations must have been completed:
 
 - You as the application developer have selected **Grant** in the Azure portal for yourself.
 - A tenant admin has selected **Grant/revoke admin consent for {tenant domain}** in the **API permissions** tab of the app registration in the Azure portal; see [Add permissions to access your web API](quickstart-configure-app-access-web-apis.md#add-permissions-to-access-your-web-api).
-- You've provided a way for users to consent to the application; see [User consent](~/identity/enterprise-apps/user-admin-consent-overview.md#user-consent).
-- You've provided a way for the tenant admin to consent for the application; see [Administrator consent](~/identity/enterprise-apps/user-admin-consent-overview.md#admin-consent).
+- You provided a way for users to consent to the application; see [User consent](~/identity/enterprise-apps/user-admin-consent-overview.md#user-consent).
+- You provided a way for the tenant admin to consent for the application; see [Administrator consent](~/identity/enterprise-apps/user-admin-consent-overview.md#admin-consent).
 
 For more information on consent, see [Permissions and consent](./permissions-consent-overview.md#consent).
 
