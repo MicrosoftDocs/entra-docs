@@ -37,7 +37,7 @@ To enable system-assigned managed identity on a VM during its creation, your acc
 
 - Under the **Management** tab in the **Identity** section, switch **Managed service identity** to **On**.  
 
-:::image type="content" source="./media/msi-qs-configure-portal-windows-vm/enable-system-assigned-identity-vm-creation.png" alt-text="Screenshot showing how to enable system-assigned identity during VM creation":::
+:::image type="content" source="./media/msi-qs-configure-portal-windows-vm/enable-system-assigned-identity-vm-creation.png" alt-text="Screenshot showing how to enable system-assigned identity during VM creation.":::
 
 Refer to the following Quickstarts to create a VM: 
 
@@ -71,7 +71,7 @@ If you have a Virtual Machine that no longer needs system-assigned managed ident
 
 3. Under **System assigned**, **Status**, select **Off** and then click **Save**:
 
-   :::image type="content" source="./media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade-disable.png" alt-text="Screenshot of the configuration page":::
+   :::image type="content" source="./media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade-disable.png" alt-text="Screenshot of the configuration page.":::
 
 ## User-assigned managed identity
 
@@ -97,7 +97,7 @@ To assign a user-assigned identity to a VM, your account needs the [Virtual Mach
 
 3. Click the user-assigned identity you want to add to the VM and then click **Add**.
 
-    :::image type="content" source="./media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vm-screenshot2.png" alt-text="Screenshot showing adding a  user-assigned managed identity to VM":::
+    :::image type="content" source="./media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vm-screenshot2.png" alt-text="Screenshot showing adding a  user-assigned managed identity to VM.":::
 
 ### Remove a user-assigned managed identity from a VM
 

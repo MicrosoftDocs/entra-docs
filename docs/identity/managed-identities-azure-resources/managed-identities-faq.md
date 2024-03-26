@@ -74,7 +74,7 @@ After creating the policy, assign it to the resource group that you would like t
 
 At this point, any attempt to create a user-assigned managed identity in the resource group fails.
 
-  :::image type="content" source="./media/known-issues/policy-violation.png" alt-text="Screenshot showing a policy violation":::
+  :::image type="content" source="./media/known-issues/policy-violation.png" alt-text="Screenshot showing a policy violation.":::
 
 ## Concepts
 

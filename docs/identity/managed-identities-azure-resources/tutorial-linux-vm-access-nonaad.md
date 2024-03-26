@@ -53,7 +53,7 @@ First, we need to create a Key Vault and grant our VM's system-assigned managed 
 1. Select **Create**
 1. Provide a **Name** for the new Key Vault.
 
-    :::image type="content" source="./media/tutorial-linux-vm-access-nonaad/create-key-vault.png" alt-text="Screenshot showing the Azure Key vault creation screen":::
+    :::image type="content" source="./media/tutorial-linux-vm-access-nonaad/create-key-vault.png" alt-text="Screenshot showing the Azure Key vault creation screen.":::
 
 1. Fill out all required information making sure that you choose the subscription and resource group where you created the virtual machine that you are using for this tutorial.
 1. Select **Review+ create**
@@ -71,7 +71,7 @@ Next, add a secret to the Key Vault, so you can retrieve it later using code run
 1. Leave the activation date and expiration date clear, and leave **Enabled** as **Yes**. 
 1. Select **Create** to create the secret.
 
-   :::image type="content" source="./media/tutorial-linux-vm-access-nonaad/create-secret.png" alt-text="Create a secret":::
+   :::image type="content" source="./media/tutorial-linux-vm-access-nonaad/create-secret.png" alt-text="Screenshot showing secret creation.":::
 
 ## Grant access
 
@@ -81,7 +81,7 @@ The managed identity used by the virtual machine needs access to read the secret
 1. Select **Access Policy** from the menu on the left side.
 1. Select **Add Access Policy**
 
-   :::image type="content" source="./media/tutorial-linux-vm-access-nonaad/key-vault-access-policy.png" alt-text="Screenshot of the key vault create access policy screen":::
+   :::image type="content" source="./media/tutorial-linux-vm-access-nonaad/key-vault-access-policy.png" alt-text="Screenshot of the key vault create access policy screen.":::
 
 1. In the **Add access policy** section under **Configure from template (optional)** choose **Secret Management** from the pull-down menu.
 1. Choose **Select Principal**, and in the search field enter the name of the VM you created earlier.  Select the VM in the result list and choose **Select**.
