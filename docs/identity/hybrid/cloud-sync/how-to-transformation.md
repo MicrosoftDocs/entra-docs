@@ -29,7 +29,7 @@ To add a custom attribute mapping, follow these steps.
 1. Copy the schema into a text or code editor such as [Visual Studio Code](https://code.visualstudio.com/).
 1. Locate the object that you want to update in the schema.
 
-   ![Object in the schema](media/how-to-transformation/transform-1.png)</br>
+   ![Screenshot of object in the schema.](media/how-to-transformation/transform-1.png)</br>
 1. Locate the code for `ExtensionAttribute3` under the user object.
 
     ```
