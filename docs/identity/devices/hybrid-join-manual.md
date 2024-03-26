@@ -56,7 +56,7 @@ Verify devices can access the required Microsoft resources under the system acco
 
 You can configure Microsoft Entra hybrid joined devices for various types of Windows device platforms.
 
-- For managed and federated domains, you must [configure a service connection point or Secure Copy (SCP)](#configure-a-service-connection-point).
+- For managed and federated domains, you must [configure a service connection point (SCP)](#configure-a-service-connection-point).
 - For federated domains, you must ensure that your [federation service is configured to issue the appropriate claims](#set-up-issuance-of-claims).
 
 After these configurations are complete, follow the guidance to [verify registration](how-to-hybrid-join-verify.md).
