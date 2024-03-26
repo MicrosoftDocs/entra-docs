@@ -57,7 +57,7 @@ To enable system-assigned managed identity on a VM that was originally provision
 
 3. Under **System assigned**, **Status**, select **On** and then click **Save**:
 
-   :::image type="content" source="./media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade.png" alt-text="Screenshot that shows the "Identity (preview)" page with the "System assigned" status set to "On".":::  
+   :::image type="content" source="./media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade.png" alt-text="Screenshot that shows the Identity (preview) page with the System assigned status set to On":::  
 
 ### Remove system-assigned managed identity from a VM
 
@@ -93,7 +93,7 @@ To assign a user-assigned identity to a VM, your account needs the [Virtual Mach
 1. Sign in to the [Azure portal](https://portal.azure.com) using an account associated with the Azure subscription that contains the VM.
 2. Navigate to the desired VM and click **Identity**, **User assigned** and then **\+Add**.
 
-   :::image type="content" source="./media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vm-screenshot1.png" alt-text="Screenshot that shows the "Identity" page with "User assigned" selected and the "Add" button highlighted.":::
+   :::image type="content" source="./media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vm-screenshot1.png" alt-text="Screenshot that shows the Identity page with User assigned selected and the Add button highlighted.":::
 
 3. Click the user-assigned identity you want to add to the VM and then click **Add**.
 
