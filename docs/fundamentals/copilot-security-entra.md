@@ -111,10 +111,10 @@ Whenever possible, and when the result is **Needs improvement**, write a few wor
 
 Microsoft Entra is one of the Microsoft plugins that enable the Security Copilot platform to generate accurate and relevant information. Through the Microsoft Entra plugin, the Security Copilot portal can provide more context to incidents and generate more accurate results. The key features mentioned in this article are capabilities that are also available in the Security Copilot portal.
 
+You can learn more about plugins implemented in the Security Copilot portal in [Manage plugins in Security Copilot](/security-copilot/manage-plugins). Additionally, you can learn more about the embedded experiences in other Microsoft security products in [Microsoft Security Copilot experiences](/security-copilot/experiences-security-copilot).
+
 ## Next steps
 
-- Learn more about plugins implemented in the Security Copilot portal in [Manage plugins in Security Copilot](/security-copilot/manage-plugins).
-- Learn more about the embedded experiences in other Microsoft security products in [Microsoft Security Copilot experiences](/security-copilot/experiences-security-copilot).
 
 ## See also
 
