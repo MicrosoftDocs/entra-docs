@@ -72,7 +72,7 @@ Files require blob storage so you need to create a blob container in which to st
 5. Using an editor of your choice, create a file titled *hello world.txt* on your local machine. Open the file and add the text (without the quotes) "Hello world! :)" and then save it.
 6. Upload the file to the newly created container by clicking on the container name, then **Upload**
 7. In the **Upload blob** pane, under **Files**, select the folder icon and browse to the file **hello_world.txt** on your local machine, select the file, then select **Upload**.
-    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/upload-text-file.png" alt-text="Screenshot showing the text file upload screen":::
+    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/upload-text-file.png" alt-text="Screenshot showing the text file upload screen.":::
 
 ### Grant access
 
