@@ -31,7 +31,7 @@ This Mover scenario runs a scheduled workflow and accomplishes the following tas
 
 ##  Before you begin
 
-Two accounts are required for this tutorial, one account for the user with a job profile change and another account that acts as it's the manager. The user account must have the following attributes set:
+Two accounts are required for this tutorial, one account for the user with a job profile change and another account that acts as it's manager. The user account must have the following attributes set:
 
 - Group must be set to sales
 - Manager attribute must be set, and the manager account should have a mailbox to receive an email
@@ -47,7 +47,7 @@ Detailed breakdown of the relevant attributes:
 
 The mover scenario can be broken down into the following steps:
   - **Prerequisite:** Create two user accounts, one to represent an employee and one to represent a manager
-  - **Prerequisite:** Editing the attributes required for this scenario in the admin center
+  - **Prerequisite:** Edit the attributes required for this scenario in the admin center
   - **Prerequisite:** Edit the attributes for this scenario using Microsoft Graph Explorer
   - Create the  workflow
   - Trigger the workflow
