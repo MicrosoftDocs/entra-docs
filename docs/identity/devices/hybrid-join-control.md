@@ -28,7 +28,7 @@ For devices running Windows 10, the minimum supported version is Windows 10 (ver
 
 To do a targeted deployment of Microsoft Entra hybrid join on Windows current devices, you need to:
 
-1. [Clear the Service Connection Point (Secure Copy (SCP)) entry from Windows Server Active Directory if it exists](#clear-the-scp-from-ad).
+1. [Clear the Service Connection Point (SCP) entry from Windows Server Active Directory if it exists](#clear-the-scp-from-ad).
 1. [Configure client-side registry setting for SCP on your domain-joined computers using a Group Policy Object (GPO)](#configure-client-side-registry-setting-for-scp).
 1. If you're using Active Directory Federation Services (AD FS), you must also [configure the client-side registry setting for SCP on your AD FS server using a GPO](#configure-ad-fs-settings).
 1. You might need to [customize synchronization options](~/identity/hybrid/connect/how-to-connect-post-installation.md#additional-tasks-available-in-azure-ad-connect) in Microsoft Entra Connect to enable device synchronization.
