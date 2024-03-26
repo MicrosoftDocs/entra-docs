@@ -101,10 +101,9 @@ At any time, you can monitor the status of the workflow, and the tasks. As a rem
 
 1. Once the **Workflow history** tab has been selected, you land on the workflow history page as shown.
 
-1. 
+1. On this page you are able to see a general summary, based on users, of total processed, successfully processed, failed to process, successful tasks, and failed tasks.
 
-1. 
+1. From the list of users processed you can also select a user, see which tasks ran for them, and if they ran successfully.
 
-1. 
-
-1. 
+## Next steps
+- [Tutorial: Preparing user accounts for Lifecycle workflows](tutorial-prepare-user-accounts.md)
