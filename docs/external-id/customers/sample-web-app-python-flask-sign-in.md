@@ -50,13 +50,11 @@ Since this app signs in users, add delegated permissions:
 
 ## Clone or download sample web application
 
-To get the web app sample code, you can do either of the following tasks:
+To get the web app sample code, [download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
 
-- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
-
-    ```console
-    git clone https://github.com/Azure-Samples/ms-identity-docs-code-python.git
-    ```
+```console
+git clone https://github.com/Azure-Samples/ms-identity-docs-code-python.git
+```
 
 If you choose to download the *.zip* file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
 
@@ -114,29 +112,7 @@ Run the app to see the sign-in experience at play.
 
 [!INCLUDE [python-identity-library-warning](./includes/python-identity-library-alert.md)]
 
-1. In your terminal, run the following command:
-
-    ```console
-    python3 -m flask run --debug --host=localhost --port=3000
-    ```
-    
-    You can use the port of your choice. This should be similar to the port of the redirect URI you registered earlier.
-
-1. Open your browser, then go to `http://localhost:3000`. You should see the page similar to the following screenshot:
-
-    :::image type="content" source="media/sample-web-app-flask-sign-in/flask-sign-in-page.png" alt-text="Screenshot of flask web app sample sign-in page.":::
-
-1. After the page completes loading, select **Sign In** link. You're prompted to sign in.
-
-1. On the sign-in page, type your **Email address**, select **Next**, type your **Password**, then select **Sign in**. If you don't have an account, select **No account? Create one** link, which starts the sign-up flow.
-
-1. If you choose the sign-up option, you'll go through the sign-uo flow. Fill in your email, one-time passcode, new password and more account details to complete the whole sign-up flow.
-
-1. After you sign in or sign up, you're redirected back to the web app. You'll see a page that looks similar to the following screenshot:
-
-    :::image type="content" source="media/sample-web-app-flask-sign-in/flask-authenticated-page.png" alt-text="Screenshot of flask web app sample after successful authentication.":::
-
-1. Select **Logout** to sign the user out of the web app or select **Call a downstream API** to make a call to a Microsoft Graph endpoint.
+[!INCLUDE [python-flask-web-app-run-app](./includes/run-app/flask-web-app.md)]
 
 ### How it works
 
