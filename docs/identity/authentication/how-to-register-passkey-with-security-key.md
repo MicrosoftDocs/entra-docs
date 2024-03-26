@@ -78,5 +78,5 @@ ms.collection: M365-identity-device-management
 ## Next steps
 
 - [Choosing authentication methods for your organization](concept-authentication-methods.md)
-- [Passkey authentication for Microsoft Entra ID](concept-authentication-passkey.md)
+
 

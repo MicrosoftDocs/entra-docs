@@ -149,4 +149,4 @@ This article shows how to register a passkey using a security key with your iOS 
 ## Next steps
 
 - [Choosing authentication methods for your organization](concept-authentication-methods.md)
-- [Passkey authentication for Microsoft Entra ID](concept-authentication-passkey.md)
+
