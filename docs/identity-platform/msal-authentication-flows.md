@@ -33,7 +33,7 @@ Your application can use one or more authentication flows. Each flow uses certai
 
 | Authentication flow or action                                                      | Requires           | ID token | Access token        | Refresh token | Authorization code |
 |------------------------------------------------------------------------------------|:------------------:|:--------:|:-------------------:|:-------------:|:------------------:|
-| [Authorization code flow](v2-oauth2-auth-code-flow.md)                             |                    | ![Auth flow works for ID token][y] | ![Auth flow works for access token][y]            | ![Auth flow works for refresh token][y]      | [!Authorization code works][y]           |
+| [Authorization code flow](v2-oauth2-auth-code-flow.md)                             |                    | ![Auth flow works for ID token][y] | ![Auth flow works for access token][y]            | ![Auth flow works for refresh token][y]      | ![Authorization code works][y]           |
 | [Client credentials](v2-oauth2-client-creds-grant-flow.md)                         |                    |          | ![Auth flow works for access token][y] (app-only) |               |                    |
 | [Device code flow](v2-oauth2-device-code.md)                                       |                    | ![Auth flow works for ID token][y] | ![Auth flow works for access token][y]            | ![Auth flow works for refresh token][y]      |                    |
 | [Implicit flow](v2-oauth2-implicit-grant-flow.md)                                  |                    | ![Auth flow works for ID token][y] | ![Auth flow works for access token][y]            |               |                    |
