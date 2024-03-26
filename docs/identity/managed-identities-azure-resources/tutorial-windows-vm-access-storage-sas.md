@@ -50,7 +50,7 @@ If you don't already have one, you will now create a storage account. You can al
 5. Ensure the **Subscription** and **Resource Group** match the ones you specified when you created your VM in the previous step.
 6. Click **Create**.
 
-    ![Create new storage account](./media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png)
+    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png" alt-text="Screenshot showing how to create new storage account":::
 
 ## Create a blob container in the storage account
 
@@ -61,7 +61,7 @@ Later we will upload and download a file to the new storage account. Because fil
 3. Click **+ Container** on the top of the page, and a "New container" panel slides out.
 4. Give the container a name, select an access level, then click **OK**. The name you specified will be used later in the tutorial. 
 
-    ![Create storage container](./media/msi-tutorial-linux-vm-access-storage/create-blob-container.png)
+    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/create-blob-container.png" alt-text="Screenshot showing how to create a storage container":::
 
 ## Grant your VM's system-assigned managed identity access to use a storage SAS 
 
@@ -79,7 +79,7 @@ Azure Storage does not natively support Microsoft Entra authentication.  However
     | System-assigned | Virtual Machine |
     | Select | &lt;your Windows virtual machine&gt; |
 
-    ![Screenshot that shows the page for adding a role assignment.](../../media/common/add-role-assignment-page.png)
+    :::image type="content" source="../../media/common/add-role-assignment-page.png" alt-text="Screenshot that shows the page for adding a role assignment.":::
 
 ## Get an access token using the VM's identity and use it to call Azure Resource Manager 
 
