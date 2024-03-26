@@ -5,7 +5,7 @@ description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (F
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/06/2024
+ms.date: 03/25/2024
 
 ms.author: justinha
 author: justinha
@@ -156,6 +156,10 @@ You can use either a built-in phishing-resistant authentication strength or crea
 
 
 ## Known issues
+
+### B2B collaboration users 
+
+Registration of FIDO2 credentials isn't supported for B2B collaboration users in the resource tenant.
 
 ### Security key provisioning
 
