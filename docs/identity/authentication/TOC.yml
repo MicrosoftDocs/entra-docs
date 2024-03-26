@@ -34,8 +34,6 @@
       href: howto-authentication-temporary-access-pass.md
     - name: Passwordless
       href: concept-authentication-passwordless.md
-    - name: Passkeys (FIDO2) (preview) 
-      href: concept-authentication-passkey.md
     - name: Microsoft Authenticator
       href: concept-authentication-authenticator-app.md
     - name: Certificates
