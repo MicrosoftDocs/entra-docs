@@ -50,7 +50,7 @@ When you use managed identities for Azure resources, your code can get access to
 1. For the **Manage identity** dropdown, select **Virtual Machine**.
 1. Finally, in **Select** choose your Windows Virtual Machine in the dropdown and select **Save**.
 
-    ![Alt image text](media/msi-tutorial-linux-vm-access-arm/msi-permission-linux.png)
+    :::image type="content" source="media/msi-tutorial-linux-vm-access-arm/msi-permission-linux.png" alt-text="Screenshot showing adding the reader role to the managed identity.":::
 
 ## Get an access token using the VM's system-assigned managed identity and use it to call Resource Manager
 
