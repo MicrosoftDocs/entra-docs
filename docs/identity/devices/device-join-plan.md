@@ -98,7 +98,7 @@ Microsoft Entra join:
 
 ### Management platform
 
-Device management for Microsoft Entra joined devices is based on a mobile device management (master data management (MDM)) platform such as Intune, and MDM CSPs. Starting in Windows 10 there's a built-in MDM agent that works with all compatible MDM solutions.
+Device management for Microsoft Entra joined devices is based on a mobile device management (MDM) platform such as Intune, and MDM CSPs. Starting in Windows 10 there's a built-in MDM agent that works with all compatible MDM solutions.
 
 > [!NOTE]
 > Group policies are not supported in Microsoft Entra joined devices as they are not connected to on-premises Active Directory. Management of Microsoft Entra joined devices is only possible through MDM
