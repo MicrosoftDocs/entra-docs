@@ -31,7 +31,7 @@ There are many security benefits of using Microsoft Entra ID-based authenticatio
    - When employees leave your organization and their user accounts are disabled or removed from Microsoft Entra ID, they no longer have access to your resources.
 - Configure Conditional Access policies to "phishing resistant MFA" using require authentication strength (preview) grant control or require multifactor authentication and other signals, such as user sign-in risk, before you can RDP into Windows VMs.
 - Use Azure Policy to deploy and audit policies to require Microsoft Entra login for Windows VMs and to flag the use of unapproved local accounts on the VMs.
-- Use Intune to automate and scale Microsoft Entra join with mobile device management (master data management (MDM)) autoenrollment of Azure Windows VMs that are part of your virtual desktop infrastructure (VDI) deployments.
+- Use Intune to automate and scale Microsoft Entra join with mobile device management (MDM) autoenrollment of Azure Windows VMs that are part of your virtual desktop infrastructure (VDI) deployments.
 
   MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs don't support MDM enrollment.
 
