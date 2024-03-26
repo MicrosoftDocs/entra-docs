@@ -243,7 +243,7 @@ You can also customize the redemption order via the Microsoft Graph API.
 
 <a name='samlws-fed-federation-direct-federation-for-azure-ad-verified-domains-preview'></a>
 
-### SAML/WS-Fed federation (Direct federation) for Microsoft Entra ID verified domains (Preview)
+### SAML/WS-Fed federation (Direct federation) for Microsoft Entra ID verified domains
 
 You can now add your enlisted Microsoft Entra ID verified domain to set up the direct federation relationship. First you need to set up the Direct federation configuration in the [admin center](direct-federation.md) or via the [API](/graph/api/resources/samlorwsfedexternaldomainfederation). Make sure that the domain isn't verified in the same tenant. 
 Once the configuration is set up, you can customize the redemption order. The SAML/WS-Fed IdP is added to the redemption order as the last entry. You can move it up in the redemption order to set it above Microsoft Entra identity provider.

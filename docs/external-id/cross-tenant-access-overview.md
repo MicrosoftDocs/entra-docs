@@ -89,13 +89,13 @@ Primary identity providers are the ones that have federations with other sources
 
 Fallback identity providers can be either Microsoft account (MSA), email one-time passcode, or both. You can't disable both fallback identity providers, but you can disable all primary identity providers and only use fallback identity providers for redemption options. 
 
-### Direct federation for Microsoft Entra ID verified domains (Preview)
+### Direct federation for Microsoft Entra ID verified domains
 
-SAML/WS-Fed identity provider federation (Direct federation) is now supported for Microsoft Entra ID verified domains. This feature allows you to set up a Direct federation with an external identity provider for a domain that is verified in Microsoft Entra. This feature is currently in public preview.
+SAML/WS-Fed identity provider federation (Direct federation) is now supported for Microsoft Entra ID verified domains. This feature allows you to set up a Direct federation with an external identity provider for a domain that is verified in Microsoft Entra.
 
 > [!NOTE]
 > Ensure that the domain is not verified in the same tenant in which you are trying to set up the Direct federation configuration.
-Once you have set up a Direct federation, you can configure the tenant’s redemption preference and move SAML/WS-Fed identity provider over Microsoft Entra ID through the new configurable redemption cross-tenant access settings. 
+Once you have set up a Direct federation, you can configure the tenant’s redemption preference and move SAML/WS-Fed identity provider over Microsoft Entra ID through the new configurable redemption cross-tenant access settings.
 
 When the guest user redeems the invite, they'll see a traditional consent screen and will then be redirected to the My Apps page. If you go into the user profile of this Direct federation user in the resource tenant, you'll notice that the user is now redeemed with external federation being the issuer.
 
