@@ -76,8 +76,7 @@ Follow the steps below, to download and run the sample app.
 
 ## Explore Microsoft Entra ID for customers
 
-Explore the features set up by the get started guide in the detailed article on [Get started guide features](/entra/external-id/customers/concept-guide-explained). You can always come back to the [admin center](https://entra.microsoft.com/) to customize your tenant and explore the full range of configuration options for your tenant.
-
+Explore the features set up by the get started guide in the detailed article on the [get started guide features](/entra/external-id/customers/concept-guide-explained). You can always come back to the [admin center](https://entra.microsoft.com/) to customize your tenant and explore the full range of configuration options for your tenant.
 For the latest developer content and resources, see the [External ID for customers Developer Center](https://aka.ms/ciam/dev).
 
 ## Related content
