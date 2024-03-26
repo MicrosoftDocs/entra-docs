@@ -15,7 +15,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 # Assign sensitivity labels to Microsoft 365 groups in Microsoft Entra ID
 
-Microsoft Entra ID supports applying sensitivity labels to Microsoft 365 groups when those labels are published in the [Microsoft Purview portal](purview-portal.md) or the [Microsoft Purview compliance portal](purview-compliance-portal.md) and they are configured for groups and sites. Sensitivity labels can be applied to groups across services such as Outlook, Microsoft Teams, and SharePoint. For more information about which apps and services support these labels, see [Support for sensitivity labels](/purview/sensitivity-labels-teams-groups-sites#support-for-the-sensitivity-labels) from the Purview documentation.
+Microsoft Entra ID supports applying sensitivity labels to Microsoft 365 groups when those labels are published in the [Microsoft Purview portal](/purview/purview-portal) or the [Microsoft Purview compliance portal](/purview/purview-compliance-portal) and they are configured for groups and sites. Sensitivity labels can be applied to groups across services such as Outlook, Microsoft Teams, and SharePoint. For more information about which apps and services support these labels, see [Support for sensitivity labels](/purview/sensitivity-labels-teams-groups-sites#support-for-the-sensitivity-labels) from the Purview documentation.
 
 > [!IMPORTANT]
 > To configure this feature, there must be at least one active Microsoft Entra ID P1 license in your Microsoft Entra organization.
