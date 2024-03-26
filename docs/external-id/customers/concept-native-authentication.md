@@ -14,11 +14,11 @@ ms.author: cmulligan
 ---
 # Native authentication (preview)
 
-Microsoft Entra ID for customers' native authentication empowers you to take complete control over the design of the sign-in experience of your mobile applications. It allows you to craft stunning, pixel-perfect authentication screens that are seamlessly integrated into your apps, rather than relying on browser-based solutions.  
- 
-In the standard, browser-delegated mobile app sign-in process, users often experience a disruptive jump during authentication. They're taken to a browser for authentication and then redirected back to the app when the sign-in is complete. This leads to a diluted experience and branding can be compromised. While browser-delegated methods can reduce attack vectors and support single sign-on (SSO), they suffer from limited UI customization and poor user experience.
+Microsoft Entra’s native authentication allows you to have full control over the design of your mobile application sign-in experiences. Unlike browser-based solutions, native authentication enables you to create visually appealing, pixel-perfect authentication screens that seamlessly blend into your app’s interface. With this approach, you can fully customize the user interface, including design elements, logo placement, and layout, ensuring a consistent and branded look.
 
-Native authentication is the solution for app developers looking for solutions that give them full control over the user interface and experience.
+In contrast, the standard mobile app sign-in process, which relies on browser delegation, often results in a disruptive transition during authentication. Users are temporarily redirected to a system browser for authentication, only to be brought back to the app once the sign-in is complete.
+
+While browser-delegated authentication offers benefits such as reduced attack vectors and support for single sign-on (SSO), they have limited UI customization options and a poor user experience.
 
 [!INCLUDE [preview-alert](../customers/includes/preview-alert/preview-alert-ciam.md)]
 
