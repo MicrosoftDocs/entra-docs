@@ -3492,6 +3492,8 @@
         href: invision-provisioning-tutorial.md
       - name: InviteDesk
         href: invitedesk-provisioning-tutorial.md
+      - name: Island
+        href: island-provisioning-tutorial.md
       - name: Jellyfish
         href: jellyfish-provisioning-tutorial.md
       - name: Jive

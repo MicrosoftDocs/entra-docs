@@ -11,6 +11,8 @@ ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 3/10/2023
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Fuse so that I can control who has access to Fuse, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Microsoft Entra integration with Fuse
 

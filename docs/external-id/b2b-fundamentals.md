@@ -5,7 +5,7 @@ description: Learn best practices and recommendations for business-to-business (
  
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 05/17/2023
+ms.date: 03/26/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
