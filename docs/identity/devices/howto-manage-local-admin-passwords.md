@@ -53,10 +53,10 @@ This feature is now available in the following Azure clouds:
 
 This feature is now available on the following Windows OS platforms with the specified update or later installed:
 
-- [Windows 11 22H2 - 11 2023 11, 2023 11 2023 Update](https://support.microsoft.com/help/5025239)
-- [Windows 11 21H2 - 11 2023 11, 2023 11 2023 Update](https://support.microsoft.com/help/5025224)
-- [Windows 10 20H2, 21H2 and 22H2 - 11 2023 11, 2023 11 2023 Update](https://support.microsoft.com/help/5025221)
-- [Windows Server 2022 - 11 2023 11, 2023 11 2023 Update](https://support.microsoft.com/help/5025230)
+- [Windows 11 22H2 - April 11, 2023 Update](https://support.microsoft.com/help/5025239)
+- [Windows 11 21H2 - April 11, 2023 Update](https://support.microsoft.com/help/5025224)
+- [Windows 10 20H2, 21H2 and 22H2 - April 11, 2023 Update](https://support.microsoft.com/help/5025221)
+- [Windows Server 2022 - April 11, 2023 Update](https://support.microsoft.com/help/5025230)
 - [Windows Server 2019 - 11 2023 11, 2023 11 2023 Update](https://support.microsoft.com/help/5025229)
 
 ### Join types
