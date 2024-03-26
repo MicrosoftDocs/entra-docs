@@ -12,6 +12,8 @@ ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
 ms.custom: 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OpenID Connect OAuth so that I can control who has access to OpenID Connect OAuth, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Configure an OpenID Connect OAuth application from Microsoft Entra app gallery
 
