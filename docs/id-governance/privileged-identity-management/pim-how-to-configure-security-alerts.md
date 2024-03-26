@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 02/13/2024
+ms.date: 03/25/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
@@ -36,9 +36,7 @@ This section lists all the security alerts for Microsoft Entra roles, along with
 - **Low**: Doesn't require immediate action but suggests a preferable policy change.
 
 >[!NOTE]
-> PIM sends email notifications for the **Role assigned outside of PIM** alert when the alert is enabled from [alert settings](#customize-security-alert-settings) For Microsoft Entra roles in PIM, emails are sent to **Privileged Role Administrators**, **Security Administrators**, and **Global Administrators** that have enabled Privileged Identity Management. For Azure resources in PIM, emails are sent to **Owners** and **User Access Administrators**.
-
-
+> Only the following roles are able to read PIM security alerts for Microsoft Entra roles: **Global Administrator**, **Privileged Role Administrator**, **Global Reader**, **Security Administrator**, and **Security Reader**.
 
 ### Administrators aren't using their privileged roles
 
@@ -98,6 +96,9 @@ Severity: **High**
 | **How to fix?** | Review the users in the list and remove them from privileged roles assigned outside of Privileged Identity Management. You can also enable or disable both the alert and its accompanying email notification in the alert settings. |
 | **Prevention** | Investigate where users are being assigned privileged roles outside of Privileged Identity Management and prohibit future assignments from there. |
 | **In-portal mitigation action** | Removes the user from their privileged role. |
+
+>[!NOTE]
+> PIM sends email notifications for the **Role assigned outside of PIM** alert when the alert is enabled from [alert settings](#customize-security-alert-settings) For Microsoft Entra roles in PIM, emails are sent to **Privileged Role Administrators**, **Security Administrators**, and **Global Administrators** that have enabled Privileged Identity Management. For Azure resources in PIM, emails are sent to **Owners** and **User Access Administrators**.
 
 ### There are too many global administrators
 
