@@ -4,7 +4,7 @@ description: Get an overview of cross-tenant access in Microsoft Entra External 
  
 ms.service: entra-external-id
 ms.topic: overview
-ms.date: 01/24/2024
+ms.date: 03/26/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -75,7 +75,7 @@ To configure this setting using Microsoft Graph, see the [Update crossTenantAcce
 
 For more information, see [Configure cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md), [Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.md), and [Configure cross-tenant access settings for B2B direct connect](cross-tenant-access-settings-b2b-direct-connect.md).
 
-### Configurable redemption (Preview)
+### Configurable redemption
 
 With configurable redemption, you can customize the order of identity providers that your guest users can sign in with when they accept your invitation. You can enable the feature and specify the redemption order under the **Redemption order** tab.
 
@@ -101,7 +101,7 @@ When the guest user redeems the invite, they'll see a traditional consent screen
 
 :::image type="content" source="media/cross-tenant-access-overview/external-federation-provider.png" alt-text="Screenshot of the direct federation provider under user identities." lightbox="media/cross-tenant-access-overview/external-federation-provider.png":::
 
-### Prevent your B2B users from redeeming an invite using Microsoft accounts (Preview)
+### Prevent your B2B users from redeeming an invite using Microsoft accounts
 
 You can now prevent your B2B guest users from redeeming their invite using Microsoft accounts. This means that any new B2B guest user will use email one-time passcode as their fallback identity provider, and won't be able to redeem an invitation using their existing Microsoft accounts or be asked to create a new Microsoft account. 
 You can do this by disabling Microsoft accounts in the fallback identity providers of your redemption order setting. 
