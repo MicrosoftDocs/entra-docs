@@ -71,7 +71,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
    - **No**: Users can't leave your organization themselves. They see a message guiding them to contact your admin or privacy contact to request removal from your organization.
 
    > [!IMPORTANT]
-   > You can configure **External user leave settings** only if you have [added your privacy information](~/fundamentals/properties-area.md) to your Microsoft Entra tenant. Otherwise, this setting will be unavailable.
+   > You can configure **External user leave settings** only if you have [added your privacy information](~/fundamentals/properties-area.yml) to your Microsoft Entra tenant. Otherwise, this setting will be unavailable.
 
    ![Screenshot showing External user leave settings in the portal.](media/external-collaboration-settings-configure/external-user-leave-settings.png)
 
@@ -119,5 +119,5 @@ When a B2B user signs into a resource tenant to collaborate, a sign-in log is ge
 See the following articles on Microsoft Entra B2B collaboration:
 
 - [What is Microsoft Entra B2B collaboration?](what-is-b2b.md)
-- [Adding a B2B collaboration user to a role](./add-users-administrator.md)
+- [Adding a B2B collaboration user to a role](./add-users-administrator.yml)
 

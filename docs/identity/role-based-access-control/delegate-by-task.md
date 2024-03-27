@@ -19,7 +19,7 @@ ms.custom: it-pro
 
 In this article, you can find the information needed to restrict a user's administrator permissions by assigning least privileged roles in Microsoft Entra ID. You will find tasks organized by feature area and the least privileged role required to perform each task, along with additional non-Global Administrator roles that can perform the task.
 
-You can further restrict permissions by assigning roles at smaller scopes or by creating your own custom roles. For more information, see [Assign Microsoft Entra roles at different scopes](assign-roles-different-scopes.md) or [Create and assign a custom role in Microsoft Entra ID](custom-create.md).
+You can further restrict permissions by assigning roles at smaller scopes or by creating your own custom roles. For more information, see [Assign Microsoft Entra roles at different scopes](assign-roles-different-scopes.md) or [Create and assign a custom role in Microsoft Entra ID](custom-create.yml).
 
 ## Application proxy
 
@@ -63,7 +63,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Configure company branding | [Global Administrator](permissions-reference.md#global-administrator) |  |
+> | Configure company branding | [Organizational Branding Administrator](permissions-reference.md#organizational-branding-administrator) |  |
 > | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](~/fundamentals/users-default-permissions.md) |
 
 ## Company properties
@@ -409,7 +409,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 
 ## Next steps
 
-- [Assign Microsoft Entra roles to users](manage-roles-portal.md)
+- [Assign Microsoft Entra roles to users](manage-roles-portal.yml)
 - [Assign Microsoft Entra roles at different scopes](assign-roles-different-scopes.md)
-- [Create and assign a custom role in Microsoft Entra ID](custom-create.md)
+- [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
 - [Microsoft Entra built-in roles](permissions-reference.md)

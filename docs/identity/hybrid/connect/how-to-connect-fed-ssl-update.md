@@ -12,6 +12,7 @@ ms.date: 11/06/2023
 ms.subservice: hybrid-connect
 author: billmath
 ms.author: billmath
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ---
 

@@ -63,8 +63,7 @@ Set-MgGroupLicense -GroupId $groupId -BodyParameter $params
 
 
 ```powershell
-Get-MgGroup -GroupId 99c4216a-56de-42c4-a4ac-1111cd8c7c41 -Property "AssignedLicenses" |
-    Select-Object -ExpandProperty AssignedLicenses.SkuId 
+Get-MgGroup -GroupId 99c4216a-56de-42c4-a4ac-1111cd8c7c41 -Property "AssignedLicenses" | Select-Object -ExpandProperty AssignedLicenses
 
 ```
 

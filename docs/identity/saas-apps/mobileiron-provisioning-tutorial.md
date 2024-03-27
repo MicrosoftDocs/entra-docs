@@ -12,6 +12,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 02/26/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to MobileIron so that I can streamline the user management process and ensure that users have the appropriate access to MobileIron.
 ---
 
 # Tutorial: Configure MobileIron for automatic user provisioning

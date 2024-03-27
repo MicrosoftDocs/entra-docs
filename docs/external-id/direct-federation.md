@@ -256,7 +256,7 @@ If the domain is Microsoft Entra ID verified, [configure the **Redemption order*
 
 ## Step 5: Test SAML/WS-Fed IdP federation in Microsoft Entra ID
 
-Now test your federation setup by inviting a new B2B guest user. For details, see [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](add-users-administrator.md).
+Now test your federation setup by inviting a new B2B guest user. For details, see [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](add-users-administrator.yml).
  
 ## How do I update the certificate or configuration details?
 

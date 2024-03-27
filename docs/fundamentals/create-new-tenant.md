@@ -24,7 +24,7 @@ If you don't have an Azure subscription, create a [free account](https://azure.m
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-After you sign in to the [Azure portal](https://portal.azure.com), you can create a new tenant for your organization. Your new tenant represents your organization and helps you to manage a specific instance of Microsoft cloud services for your internal and external users.
+After you sign in to the [Azure portal](https://portal.azure.com), you can create a new tenant for your organization. Your new tenant represents your organization and helps you to manage a specific instance of Microsoft Cloud services for your internal and external users.
 
 >[!NOTE]
 > If you're unable to create Microsoft Entra ID or Azure AD B2C tenant, review your user settings page to ensure that tenant creation isn't switched off. If tenant creation is switched off, ask your *Global Administrator* to assign you a *Tenant Creator* role.
@@ -79,7 +79,7 @@ If you're not going to continue to use this application, you can delete the tena
 
 ## Next steps
 
-- Change or add other domain names, see [How to add a custom domain name to Microsoft Entra ID](add-custom-domain.md).
+- Change or add other domain names, see [How to add a custom domain name to Microsoft Entra ID](add-custom-domain.yml).
 
 - Add users, see [Add or delete a new user](./add-users.md)
 

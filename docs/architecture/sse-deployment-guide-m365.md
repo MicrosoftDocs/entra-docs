@@ -83,8 +83,6 @@ This section describes how to enforce compliant network access to Microsoft 365 
    1. Confirm that access is blocked.
    1. In the sign-in logs, confirm the Conditional Access policy that blocks access outside compliant networks was applied.
    
-      :::image type="content" source="media/sse-deployment-guide-m365/log-in-access-is-blocked.png" alt-text="Screenshot of log-in window after submitting credentials showing You cannot access this right now message.":::
-
       :::image type="content" source="media/sse-deployment-guide-m365/sign-in-logs-failure-inline.png" alt-text="Screenshot of a line in the sign-in logs window showing failure indicator." lightbox="media/sse-deployment-guide-m365/sign-in-logs-failure-expanded.png":::
 
       :::image type="content" source="media/sse-deployment-guide-m365/logs-conditional-access-failure-inline.png" alt-text="Screenshot of sign-in logs window showing Conditional Access tab highlighting a line where Result column is Failure." lightbox="media/sse-deployment-guide-m365/logs-conditional-access-failure-expanded.png":::

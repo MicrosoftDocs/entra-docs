@@ -5,15 +5,13 @@ description: Shows how to use Microsoft Entra dynamic groups with Microsoft Entr
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 05/22/2023
+ms.date: 03/26/2024
 
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.reviewer: mal
-
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.custom:  
 
 # Customer intent: As an administrator managing user access in Microsoft Entra B2B collaboration, I want to create dynamic groups based on user attributes, so that I can automatically add or remove members from security groups and provide access to applications or cloud resources.
 ---

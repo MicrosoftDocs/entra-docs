@@ -3492,6 +3492,8 @@
         href: invision-provisioning-tutorial.md
       - name: InviteDesk
         href: invitedesk-provisioning-tutorial.md
+      - name: Island
+        href: island-provisioning-tutorial.md
       - name: Jellyfish
         href: jellyfish-provisioning-tutorial.md
       - name: Jive
@@ -3816,6 +3818,8 @@
         href: vmware-identity-service-provisioning-tutorial.md
       - name: Vonage
         href: vonage-provisioning-tutorial.md
+      - name: Web Cargo Air
+        href: web-cargo-air-provisioning-tutorial.md
       - name: Webroot Security Awareness Training
         href: webroot-security-awareness-training-provisioning-tutorial.md
       - name: WATS
