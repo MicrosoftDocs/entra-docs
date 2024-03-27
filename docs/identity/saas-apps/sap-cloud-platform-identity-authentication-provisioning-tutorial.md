@@ -120,43 +120,43 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	|Attribute|Type|Supported for filtering|Required by SAP Cloud Identity Services|
 	|---|---|---|---|
-	|userName|String|&check;|&check;
-	|emails[type eq "work"].value|String||&check;
-	|active|Boolean||
-	|displayName|String||
-	|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference||
-	|addresses[type eq "work"].country|String||
-	|addresses[type eq "work"].locality|String||
-	|addresses[type eq "work"].postalCode|String||
-	|addresses[type eq "work"].region|String||
-	|addresses[type eq "work"].streetAddress|String||
-	|name.givenName|String||
-	|name.familyName|String||
-	|name.honorificPrefix|String||
-	|phoneNumbers[type eq "fax"].value|String||
-	|phoneNumbers[type eq "mobile"].value|String||
-	|phoneNumbers[type eq "work"].value|String||
-	|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|String||
-	|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
-	|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String||
-	|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String||
-	|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||
-	|locale|String||
-	|timezone|String||
-	|userType|String||
-	|company|String||
-	|urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute1|String||
-	|urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute2|String||
-	|urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute3|String||
-	|urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute4|String||
-	|urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute5|String||
-	|urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute6|String||
-	|urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute7|String||
-	|urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute8|String||
-	|urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute9|String||
-	|urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute10|String||
-	|sendMail|String||
-	|mailVerified|String||
+	|`userName`|String|&check;|&check;
+	|`emails[type eq "work"].value`|String||&check;
+	|`active`|Boolean||
+	|`displayName`|String||
+	|`urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager`|Reference||
+	|`addresses[type eq "work"].country`|String||
+	|`addresses[type eq "work"].locality`|String||
+	|`addresses[type eq "work"].postalCode`|String||
+	|`addresses[type eq "work"].region`|String||
+	|`addresses[type eq "work"].streetAddress`|String||
+	|`name.givenName`|String||
+	|`name.familyName`|String||
+	|`name.honorificPrefix`|String||
+	|`phoneNumbers[type eq "fax"].value`|String||
+	|`phoneNumbers[type eq "mobile"].value`|String||
+	|`phoneNumbers[type eq "work"].value`|String||
+	|`urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter`|String||
+	|`urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department`|String||
+	|`urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division`|String||
+	|`urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber`|String||
+	|`urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization`|String||
+	|`locale`|String||
+	|`timezone`|String||
+	|`userType`|String||
+	|`company`|String||
+	|`urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute1`|String||
+	|`urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute2`|String||
+	|`urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute3`|String||
+	|`urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute4`|String||
+	|`urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute5`|String||
+	|`urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute6`|String||
+	|`urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute7`|String||
+	|`urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute8`|String||
+	|`urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute9`|String||
+	|`urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute10`|String||
+	|`sendMail`|String||
+	|`mailVerified`|String||
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
