@@ -130,17 +130,10 @@ You can use either a built-in phishing-resistant authentication strength or crea
 1. Provide a descriptive **Name** for your new authentication strength.
 1. Optionally provide a **Description**.
 1. Select **Passkeys (FIDO2)** and then click **Advanced options**.
-
-   :::image type="content" border="true" source="media/concept-authentication-strengths/authentication-strength-custom.png" alt-text="Screenshot showing the creation of a custom authentication strength.":::
-
-1. Set Enforce key restrictions to **Yes**.
-1. Set Restrict specific keys to **Allow**.
 1. Add AAGUIDs for Authenticator passkey:
 
    - de1e552d-db1d-4423-a619-566b625cdc84
    - 90a3ccdf-635c-4729-a248-9b709135078f
-
-   :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing the AAGUIDs for Authenticator.":::
 
 1. Choose **Next** and review the policy configuration.
 

@@ -5,7 +5,7 @@ description: Learn about using the Microsoft Authenticator in Microsoft Entra ID
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/29/2024
+ms.date: 03/27/2024
 
 ms.author: justinha
 author: justinha
@@ -18,7 +18,7 @@ ms.reviewer: calui
 
 The Microsoft Authenticator app provides an additional level of security to your Microsoft Entra work or school account or your Microsoft account and is available for [Android](https://go.microsoft.com/fwlink/?linkid=866594) and [iOS](https://go.microsoft.com/fwlink/?linkid=866594). With the Microsoft Authenticator app, users can authenticate in a passwordless way during sign-in, or as an additional verification option during self-service password reset (SSPR) or multifactor authentication events.
 
-Users may receive a notification through the mobile app for them to approve or deny, or use the Authenticator app to generate an OATH verification code that can be entered in a sign-in interface. If you enable both a notification and verification code, users who register the Authenticator app can use either method to verify their identity.
+Users may leverage passkeys for authentication, or receive a notification through the mobile app for them to approve or deny, or use the Authenticator app to generate an OATH verification code that can be entered in a sign-in interface. If you enable both a notification and verification code, users who register the Authenticator app can use either method to verify their identity.
 
 > [!NOTE]
 > In preparation of passkey support in Microsoft Authenticator, users may see Authenticator as a passkey provider on iOS and Android devices. For more information, see [Passkey sign-in (preview)](#passkey-sign-in-preview).
@@ -31,17 +31,28 @@ To use the Authenticator app at a sign-in prompt rather than a username and pass
 
 ## Passkey sign-in (preview)
 
-Entra ID supports passkey sign-in, either by using Authenticator on a device, such an iOS or Android device. Authenticator is a free passkey solution that lets users do phishing-resistant authentications from their own phones. Authenticator also provides these advantages over other passkey options:
+Authenticator is a free passkey solution that lets users do passwordless phishing-resistant authentications from their own phones. Some key benefits to using passkeys in the Authenticator app:
 
-- Users stay up-to-date with the latest passkey innovation based upon open WebAuthn standards
-- Administrators can restrict passkey usage based upon Authenticator Attestation Globally Unique Identifier (AAGUID)
-- Enterprises can layer other capabilities on top of authentication flows, such as [FIPS 140 compiance](#fips-140-compliant-for-microsoft-entra-authentication)
+- Passkeys can be easily deployed at scale, and they're just an app away on a user’s phone, in both mobile device management (MDM) and bring your own device (BYOD) scenarios.
+- Passkeys in Authenticator come at no additional cost and travel with the user wherever they go.
+- Passkeys in Authenticator are device-bound which ensures the passkey doesn’t leave the device on which it was created.
+- Users stay up-to-date with latest passkey innovation based upon open WebAuthn standards.
+- Enterprises can layer other capabilities on top of authentication flows such as [FIPS 140 compiance](#fips-140-compliant-for-microsoft-entra-authentication).
+
+
+<!---Add authapp passkey screenshot--->
 
 ### Device-bound passkey
 
+Passkeys in the Authenticator app are device-bound to ensure that they never leave the device they were created on. On an iOS device, Authenticator uses the Secure Enclave to create the passkey. On Android, we create the passkey in the Secure Element on devices that support it, or fall back to the Trusted Execution Environment (TEE).
+
 ### How passkey attestation works with Authenticator
 
+For now, Authenticator passkeys are unattested. Attestation support for passkeys in Authenticator is planned for a future release.
+
 ### Backup and restore passkeys in Authenticator
+
+Passkeys in Authenticator aren't backed up and can't be restored on a new device. To create passkeys on a new device, use the passkey on an older device, or use another authentication method to re-create the passkey.
 
 ## Passwordless sign-in
 
@@ -112,6 +123,9 @@ Azure for US Government (includes GCC High and DoD) | https://aka.ms/MySecurityI
 
 ## Next steps
 
-- To get started with passwordless sign-in, see [Enable passwordless sign-in with the Microsoft Authenticator](howto-authentication-passwordless-phone.md).
+
+- To get started with passkeys, see [Enable Microsoft Authenticator passkey sign in (preview)](how-to-enable-authenticator-passkey.md)
+
+- For more information about passwordless sign-in, see [Enable passwordless sign-in with the Microsoft Authenticator](howto-authentication-passwordless-phone.md).
 
 - Learn more about configuring authentication methods using the [Microsoft Graph REST API](/graph/api/resources/authenticationmethods-overview).
