@@ -222,26 +222,7 @@ Follow these steps to include a Microsoft Entra role as a resource in an access 
 > [!NOTE]
 > If you select **Eligible**, users will become eligible for that role and can activate their assignment using Privileged Identity Management in the Microsoft Entra admin center. If you select **Active**, users will have an active role assignment until they no longer have access to the access package. For Entra roles that are tagged as *“privileged”*, you'll only be able to select **Eligible**. You can find a list of privileged roles here: [Microsoft Entra built-in roles](../identity/role-based-access-control/permissions-reference.md).
 
-## Add a Microsoft Entra role as a resource in an access package programmatically
-
-```{
-    "role": {
-        "originId": "Eligible",
-        "displayName": "Eligible Member",
-        "originSystem": "DirectoryRole",
-        "resource": {
-            "id": "ea036095-57a6-4c90-a640-013edf151eb1"
-        }
-    },
-    "scope": {
-        "description": "Root Scope",
-        "displayName": "Root",
-        "isRootScope": true,
-        "originSystem": "DirectoryRole",
-        "originId": "c4e39bd9-1100-46d3-8c65-fb160da0071f"
-    }
-}
-```
+To add a Microsoft Entra role programmatically, see: [Add a Microsoft Entra role as a resource in an access package programmatically](entitlement-management-roles.md#add-a-microsoft-entra-role-as-a-resource-in-an-access-package-programmatically).
 
 ## Add resource roles programmatically
 

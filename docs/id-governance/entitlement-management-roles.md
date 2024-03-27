@@ -64,6 +64,8 @@ Follow these steps to change the list of incompatible groups or other access pac
  
 ## Add a Microsoft Entra role as a resource in an access package programmatically
 
+To add a Microsoft Entra role programmatically, you'd use the following code:
+
 ```{
     "role": {
         "originId": "Eligible",
