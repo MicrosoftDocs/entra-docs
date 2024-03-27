@@ -24,6 +24,18 @@ Passkeys in Microsoft Authenticator can be added directly from your device or th
 
 # [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
 
+## Authenticator registration
+
+1. Open Authenticator.
+1. Tap on the "+" button.
+1. Select **Add work or school account**.
+1. Sign in.
+1. You'll need to complete multifactor authentication (MFA).
+1. Authenticator checks your organization policies and accordingly sets up passkey, passwordless, or MFA for sign in. 
+
+<!---Phase 2 - add Authenticator screenshots of the flow (by April 8)--->
+
+
 ## Same device registration
 
 1. Using your iOS device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
@@ -142,6 +154,15 @@ Passkeys in Microsoft Authenticator can be added directly from your device or th
 
 
 # [:::image type="icon" source="media/icons/android-icon.png" border="false"::: **Android**](#tab/Android)
+
+## Authenticator registration
+
+1. Open Authenticator.
+1. Tap on the "+" button.
+1. Select **Add work or school account**.
+1. Sign in.
+1. You'll need to complete multifactor authentication (MFA).
+1. Authenticator checks your organization policies and accordingly sets up passkey, passwordless, or MFA for sign in. 
 
 ## Same device registration
 
