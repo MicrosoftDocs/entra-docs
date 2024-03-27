@@ -194,6 +194,34 @@ Microsoft Entra ID can automatically assign users access to a SharePoint Online 
 
     Any users with existing assignments to the access package will automatically be given access to this SharePoint Online site when it's added.  For more information, see [when changes are applied](#when-changes-are-applied).
 
+## Add a Microsoft Entra role assignment
+When users need additional permissions to access your organization's resources, you can manage those permissions by assigning them Microsoft Entra roles through access packages. By assigning Microsoft Entra roles to employees, and guests, using Entitlement Management, you can look at a user's entitlements to quickly determine which roles are assigned to that user. When you include a Microsoft Entra role as a resource in an access package, you can also specify whether that role assignment is “eligible” or “active”.
+
+Assigning Microsoft Entra roles through access packages helps to efficiently manage role assignments at scale and improves the role assignment lifecycle.
+
+> [!NOTE]
+> We recommend that you use Privileged Identity Management to provide just-in-time access to a user to perform a task that requires elevated permissions. These permissions are provided through the Microsoft Entra Roles, that are tagged as “privileged”, in our documentation here: Microsoft Entra built-in roles. Entitlement Management is better suited for assigning users a bundle of resources, which can include a Microsoft Entra role, necessary to do one’s job. Users assigned to access packages tend to have more longstanding access to resources. While we recommend that you manage high-privileged roles through Privileged Identity Management, you can set up eligibility for those roles through access packages in Entitlement Management.
+
+Follow these steps to include a Microsoft Entra role as a resource in an access package: 
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+
+1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
+
+1. On the Access packages page, open the access package you want to add resource roles to and select **Resource roles**. 
+
+1. On the **Add resource roles to access package page**, select **Microsoft Entra roles (Preview)** to open the Select Microsoft Entra roles pane. 
+
+1. Select the Microsoft Entra roles you want to include in the access package.
+    :::image type="content" source="media/entitlement-management-roles/select-role-access-package.png" alt-text="Screenshot of selecting role for access package.":::  
+
+1. In the **Role** list, select **Eligible** or **Member**. 
+    :::image type="content" source="media/entitlement-management-roles/access-package-role.png" alt-text="Screenshot of choosing role for resource role in access package.":::
+1. Select **Add**.
+
+> [!NOTE]
+> If you select **Eligible**, users will become eligible for that role and can activate their assignment using Privileged Identity Management in the Microsoft Entra admin center. If you select **Active**, users will have an active role assignment until they no longer have access to the access package. 
+
 ## Add resource roles programmatically
 
 There are two ways to add a resource role to an access package programmatically, through Microsoft Graph and through the PowerShell cmdlets for Microsoft Graph.
