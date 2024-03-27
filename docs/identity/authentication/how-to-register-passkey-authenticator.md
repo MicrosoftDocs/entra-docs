@@ -20,15 +20,15 @@ ms.collection: M365-identity-device-management
 
 This article shows how to register a passkey using Microsoft Authenticator on your iOS or Android device using [My Security info](https://aka.ms/mysecurityinfo). 
 
-Passkeys in Microsoft Authenticator can be added directly from your device or through cross-device registration using another device, such as a laptop. Your mobile device needs to run iOS version 17 or later or Android version 14 or later. 
+The easist way to add a passkey is to add it directly in the Authenticator app. Alternatively, you can add a passkey from your mobile device browser, or through cross-device registration using another device, such as a laptop. Your mobile device needs to run iOS version 17, or Android version 14, or later. 
 
 # [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
 
-## Authenticator registration
+## Authenticator passkey registration
 
 1. Open Authenticator.
 1. Tap the **+** button.
-1. Select **Add work or school account**.
+1. Select **Work or school account**.
 1. Sign in.
 1. You'll need to complete multifactor authentication (MFA).
 1. Authenticator sets up passkey, passwordless, or MFA for sign-in according to your work or school account policies. 
@@ -36,7 +36,7 @@ Passkeys in Microsoft Authenticator can be added directly from your device or th
 <!---Phase 2 - add Authenticator screenshots of the flow (by April 8)--->
 
 
-## Same device registration
+## Same-device passkey registration
 
 1. Using your iOS device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
 
@@ -159,7 +159,7 @@ Passkeys in Microsoft Authenticator can be added directly from your device or th
 
 1. Open Authenticator.
 1. Tap the **+** button.
-1. Select **Add work or school account**.
+1. Select **Work or school account**.
 1. Sign in.
 1. You'll need to complete multifactor authentication (MFA).
 1. Authenticator sets up passkey, passwordless, or MFA for sign-in according to your work or school account policies. 
