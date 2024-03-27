@@ -39,7 +39,7 @@ In Security Copilot, there are built in system features. These features can get 
 
 To view the list of built-in system capabilities for Microsoft Entra, use the following steps:
 
-1. In the prompt, enter **/**.
+1. Select the **prompts** icon :::image type="content" source="./media/copilot-security-entra/prompt-icon.png" alt-text="An image of the prompts icon to the right of the prompt bar."::: to the right of the prompt bar.
 2. Select **See all system capabilities**. The **Entra** section lists all the available capabilities for Microsoft Entra that you can use.
 
 There are many prompts you can use to get information about your Microsoft Entra data. This section lists some ideas and examples.
