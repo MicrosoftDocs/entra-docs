@@ -62,6 +62,27 @@ Follow these steps to change the list of incompatible groups or other access pac
 > [!NOTE]
 > If you select **Eligible**, users will become eligible for that role and can activate their assignment using Privileged Identity Management in the Microsoft Entra admin center. If you select **Active**, users will have an active role assignment until they no longer have access to the access package. 
  
+## Add a Microsoft Entra role as a resource in an access package programmatically
+
+```{
+    "role": {
+        "originId": "Eligible",
+        "displayName": "Eligible Member",
+        "originSystem": "DirectoryRole",
+        "resource": {
+            "id": "ea036095-57a6-4c90-a640-013edf151eb1"
+        }
+    },
+    "scope": {
+        "description": "Root Scope",
+        "displayName": "Root",
+        "isRootScope": true,
+        "originSystem": "DirectoryRole",
+        "originId": "c4e39bd9-1100-46d3-8c65-fb160da0071f"
+    }
+}
+```
+
 ## Add a Microsoft Entra role as a resource in an access package using Graph
 
 You can add Microsoft Entra roles as resources in an access package using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All permission`, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the API to create an access package containing Microsoft Entra roles and assign users to that access package. 
