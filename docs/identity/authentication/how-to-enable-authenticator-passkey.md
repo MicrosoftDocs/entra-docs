@@ -144,15 +144,6 @@ You can use either a built-in phishing-resistant authentication strength or crea
 
 1. Choose **Next** and review the policy configuration.
 
-## Known issues
-
-### Administrator passkey provisioning
-
-Administrator provisioning and de-provisioning of passkey isn't available.
-
-### UPN changes
-
-If a user's UPN changes, you can no longer modify a passkey to account for the change. If the user has a passkey, they need to sign in to MySecurityInfo, delete the old key, and add a new one.
 
 ## Next steps
 
