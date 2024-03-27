@@ -132,10 +132,6 @@
           href: how-to-register-passkey.md
         - name: Register passkey on a mobile device (preview)  
           href: how-to-register-passkey-mobile.md
-        - name: Sign in with a passkey (preview)
-          href: concept-passkey-fido2-compatibility.md
-        - name: Passkey FAQs (preview)
-          href: passkey-faq.yml
       - name: Microsoft Authenticator
         items:
         - name: Enable passkeys in Authenticator (preview)

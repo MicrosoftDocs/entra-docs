@@ -27,11 +27,11 @@ Passkeys in Microsoft Authenticator can be added directly from your device or th
 ## Authenticator registration
 
 1. Open Authenticator.
-1. Tap on the "+" button.
+1. Tap the **+** button.
 1. Select **Add work or school account**.
 1. Sign in.
 1. You'll need to complete multifactor authentication (MFA).
-1. Authenticator checks your organization policies and accordingly sets up passkey, passwordless, or MFA for sign in. 
+1. Authenticator sets up passkey, passwordless, or MFA for sign-in according to your work or school account policies. 
 
 <!---Phase 2 - add Authenticator screenshots of the flow (by April 8)--->
 
@@ -158,11 +158,11 @@ Passkeys in Microsoft Authenticator can be added directly from your device or th
 ## Authenticator registration
 
 1. Open Authenticator.
-1. Tap on the "+" button.
+1. Tap the **+** button.
 1. Select **Add work or school account**.
 1. Sign in.
 1. You'll need to complete multifactor authentication (MFA).
-1. Authenticator checks your organization policies and accordingly sets up passkey, passwordless, or MFA for sign in. 
+1. Authenticator sets up passkey, passwordless, or MFA for sign-in according to your work or school account policies. 
 
 ## Same device registration
 
