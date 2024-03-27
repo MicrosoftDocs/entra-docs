@@ -16,7 +16,7 @@ ms.author: cmulligan
 
 Microsoft Entra’s native authentication allows you to have full control over the design of your mobile application sign-in experiences. Unlike browser-based solutions, native authentication enables you to create visually appealing, pixel-perfect authentication screens that seamlessly blend into your app’s interface. With this approach, you can fully customize the user interface, including design elements, logo placement, and layout, ensuring a consistent and branded look.
 
-In contrast, the standard mobile app sign-in process, which relies on browser delegation, often results in a disruptive transition during authentication. Users are temporarily redirected to a system browser for authentication, only to be brought back to the app once the sign-in is complete.
+The standard mobile app sign-in process, which relies on browser-delegated authentication, often results in a disruptive transition during authentication. Users are temporarily redirected to a system browser for authentication, only to be brought back to the app once the sign-in is complete.
 
 While browser-delegated authentication offers benefits such as reduced attack vectors and support for single sign-on (SSO), they have limited UI customization options and a poor user experience.
 
