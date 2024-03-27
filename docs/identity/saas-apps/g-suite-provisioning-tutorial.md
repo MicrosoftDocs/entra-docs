@@ -11,6 +11,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 02/23/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Google Cloud / G Suite Connector by Microsoft so that I can streamline the user management process and ensure that users have the appropriate access to Google Cloud / G Suite Connector by Microsoft.
 ---
 
 # Tutorial: Configure G Suite for automatic user provisioning
@@ -300,7 +302,7 @@ Now any end user that was made eligible for the group in PIM can get JIT access 
     * For the first five users within a 10-second period activating their group membership for a specific application, group membership is provisioned in the application within 2-10 minutes. 
     * For the sixth user and above within a 10-second period activating their group membership for a specific application, group membership is provisioned to the application in the next synchronization cycle. The synchronization cycle runs every 40 minutes. The throttling limits are per enterprise application. 
 * If the user is unable to access the necessary group in Google Cloud / Google Workspace, review the PIM logs, and provisioning logs to ensure that the group membership was updated successfully. Depending on how the target application is architected, it may take more time for the group membership to take effect in the application.
-* You can create alerts for failures using [Azure Monitor](https://learn.microsoft.com/entra/identity/app-provisioning/application-provisioning-log-analytics).
+* You can create alerts for failures using [Azure Monitor](/entra/identity/app-provisioning/application-provisioning-log-analytics).
   
 ## Change log
 

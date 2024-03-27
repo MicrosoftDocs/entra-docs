@@ -44,6 +44,8 @@ These samples and how-to guides demonstrate how to write a web application that 
 > | ------- | -------- | ------------- | 
 > | JavaScript, Node.js (Express) | &#8226; [Sign in users](./sample-web-app-node-sign-in.md)<br/> &#8226; [Sign in users and call an API](./sample-web-app-node-sign-in-call-api.md)  |  &#8226; [Sign in users](tutorial-web-app-node-sign-in-prepare-tenant.md)<br/> &#8226; [Sign in users and call an API](how-to-web-app-node-sign-in-call-api-overview.md)  |
 > | ASP.NET Core | &#8226; [Sign in users](./sample-web-app-dotnet-sign-in.md)   | &#8226; [Sign in users](tutorial-web-app-dotnet-sign-in-prepare-tenant.md)   |
+> | Python Django | &#8226; [Sign in users](./sample-web-app-python-django-sign-in.md)   | --- |
+> | Python Flask | &#8226; [Sign in users](./sample-web-app-python-flask-sign-in.md)   | --- |
 
 ### Web API
 
@@ -53,17 +55,6 @@ These samples and how-to guides demonstrate how to protect a web API with the Mi
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide  |
 > | ------- | -------- | ------------- |
 > | ASP.NET Core | ---  | &#8226; [Secure an ASP.NET web API](tutorial-protect-web-api-dotnet-core-build-app.md)   |
-
-###  Browserless
-
-These samples and how-to guides demonstrate how to write a browserless application that integrates with Microsoft Entra ID for customers.
-
-> [!div class="mx-tdCol2BreakAll"]
-> | Language/<br/>Platform | Code sample guide | Build and integrate guide  |
-> | ------- | -------- | ------------- | 
-> | JavaScript, Node | &#8226; [Sign in users](./sample-browserless-app-node-sign-in.md)   | &#8226; [Sign in users](how-to-browserless-app-node-sign-in-overview.md)   |
-> | .NET | &#8226; [Sign in users](./sample-browserless-app-dotnet-sign-in.md)  | &#8226; [Sign in users](./tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md)   |
-
 
 ### Desktop
 
@@ -112,7 +103,6 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide  |
 > | ------- | -------- | ------------- |
-> | Browserless | &#8226; [Sign in users](./sample-browserless-app-dotnet-sign-in.md)  | &#8226; [Sign in users](./tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md)   |
 > | Daemon |  &#8226; [Call an API](sample-daemon-dotnet-call-api.md)  | &#8226; [Call an API](tutorial-daemon-dotnet-call-api-prepare-tenant.md)   |
 
 ### Android (Kotlin)
@@ -137,6 +127,20 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > | ------- | -------- | ------------- |
 > | Desktop | &#8226; [Sign in users](how-to-desktop-app-maui-sample-sign-in.md) | &#8226; [Sign in users](tutorial-desktop-app-maui-sign-in-prepare-tenant.md)   |
 > | Mobile |  &#8226; [Sign in users](how-to-mobile-app-maui-sample-sign-in.md) | &#8226; [Sign in users](tutorial-mobile-app-maui-sign-in-prepare-tenant.md)   |
+
+### Python, Django
+
+> [!div class="mx-tdCol2BreakAll"]
+> | App type | Code sample guide | Build and integrate guide  |
+> | ------- | -------- | ------------- |
+> | Web app | &#8226; [Sign in users](./sample-web-app-python-django-sign-in.md) | ---   |
+
+### Python, Flask
+
+> [!div class="mx-tdCol2BreakAll"]
+> | App type | Code sample guide | Build and integrate guide  |
+> | ------- | -------- | ------------- |
+> | Web app | &#8226; [Sign in users](./sample-web-app-python-flask-sign-in.md) | ---   |
 
 ### iOS (Swift)
 
@@ -171,7 +175,6 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide  |
 > | ------- | -------- | ------------- |
-> | Browserless | &#8226; [Sign in users](./sample-browserless-app-node-sign-in.md)   | &#8226; [Sign in users](how-to-browserless-app-node-sign-in-overview.md)   |
 > | Daemon | &#8226; [Call an API](./sample-daemon-node-call-api.md) |  &#8226; [Call an API](./tutorial-daemon-node-call-api-prepare-tenant.md)  |
 
 

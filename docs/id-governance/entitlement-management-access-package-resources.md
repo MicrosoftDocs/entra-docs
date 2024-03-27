@@ -20,17 +20,17 @@ This video provides an overview of how to change an access package.
 
 ## Check catalog for resources
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 If you need to add resources to an access package, you should check whether the resources you need are available in the access package's catalog. If you're an access package manager, you can't add resources to a catalog, even if you own them. You're restricted to using the resources available in the catalog.
 
 **Prerequisite role:** Global administrator, Identity Governance administrator, Catalog owner, or Access package manager
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
-1. On the Access packages page, open the access package you want to check to ensure that its catalog has the necessary resources.
+1. On the **Access packages** page, open the access package you want to check to ensure that its catalog has the necessary resources.
 
 1. In the left menu, select **Catalog** and then open the catalog.
 
@@ -40,7 +40,7 @@ If you need to add resources to an access package, you should check whether the 
 
 1. If the resources aren't already in the catalog, and you're an administrator or a catalog owner, you can [add resources to a catalog](entitlement-management-catalog-create.md#add-resources-to-a-catalog). The types of resources you can add are groups, applications you've integrated with your directory, and SharePoint Online sites. For example:
 
-   * Groups can be cloud-created Microsoft 365 Groups or cloud-created Microsoft Entra security groups. Groups that originate in an on-premises Active Directory can't be assigned as resources because their owner or member attributes can't be changed in Microsoft Entra ID. To give users access to an application that uses AD security group memberships, create a new group in Microsoft Entra ID, configure [group writeback to AD](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md), and [enable that group to be written to AD](entitlement-management-group-writeback.md). Groups that originate in Exchange Online as Distribution groups can't be modified in Microsoft Entra ID either.
+   * Groups can be cloud-created Microsoft 365 Groups or cloud-created Microsoft Entra security groups. Groups that originate in an on-premises Active Directory can't be assigned as resources because their owner, or member, attributes can't be changed in Microsoft Entra ID. To give users access to an application that uses AD security group memberships, create a new group in Microsoft Entra ID, configure [group writeback to AD](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md), and [enable that group to be written to AD](entitlement-management-group-writeback.md). Groups that originate in Exchange Online as Distribution groups can't be modified in Microsoft Entra ID either.
    * Applications can be Microsoft Entra enterprise applications, which include software as a service (SaaS) applications, on-premises applications that use a different directory or database, and your own applications integrated with Microsoft Entra ID. If your application hasn't yet been integrated with your Microsoft Entra directory, see [govern access for applications in your environment](identity-governance-applications-prepare.md) and [integrate an application with Microsoft Entra ID](identity-governance-applications-integrate.md).
    * Sites can be SharePoint Online sites or SharePoint Online site collections.
 
@@ -71,17 +71,17 @@ In addition, applications can also rely upon security groups for expressing perm
 
 When a resource role is added to an access package by an admin, users who are already in that resource role, but don't have assignments to the access package, will remain in the resource role, but won't be assigned to the access package. For example, if a user is a member of a group and then an access package is created and that group's member role is added to an access package, the user won't automatically receive an assignment to the access package.
 
-If you want the users who had a resource role membership to also be assigned to the access package, you can [directly assign users](entitlement-management-access-package-assignments.md#directly-assign-a-user) to an access package using the Microsoft Entra admin center, or in bulk via Graph or PowerShell. The users you assign to the access package will then also receive access to the other resource roles in the access package.  However, as those users who were in the resource role already have access before being added to the access package, when their access package assignment is removed, they're removed from that resource role.
+If you want the users who had a resource role membership to also be assigned to the access package, you can [directly assign users](entitlement-management-access-package-assignments.md#directly-assign-a-user) to an access package using the Microsoft Entra admin center, or in bulk via Graph or PowerShell. The users you assign to the access package will then also receive access to the other resource roles in the access package.  However, as those users who were in the resource role already have access prior to being added to the access package, when their access package assignment is removed, they'll be removed from that resource role.
 
 ## Add resource roles
 
 **Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, or Access package manager
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
-1. On the Access packages page, open the access package you want to add resource roles to.
+1. On the **Access packages** page, open the access package you want to add resource roles to.
 
 1. In the left menu, select **Resource roles**.
 
@@ -98,7 +98,7 @@ You can have entitlement management automatically add users to a group or a team
 - When a membership of a group or team is a resource role that's part of an access package and a user is assigned to that access package, the user is added as a member to that group or team, if not already present.
 - When a user's access package assignment expires, they're removed from the group or team, unless they currently have an assignment to another access package that includes that same group or team.
 
-You can select any [Microsoft Entra security group or Microsoft 365 Group](~/fundamentals/how-to-manage-groups.md). Users in an administrator role that can manage groups can add any group to a catalog; catalog owners can add any group to the catalog if they're owner of the group. Keep the following Microsoft Entra constraints in mind when selecting a group:
+You can select any [Microsoft Entra security group or Microsoft 365 Group](../fundamentals/how-to-manage-groups.md). Users in an administrator role that can manage groups can add any group to a catalog; catalog owners can add any group to the catalog if they're owner of the group. Keep the following Microsoft Entra constraints in mind when selecting a group:
 
 - When a user, including a guest, is added as a member to a group or team, they can see all the other members of that group or team.
 - Microsoft Entra ID can't change the membership of a group that was synchronized from Windows Server Active Directory using Microsoft Entra Connect, or that was created in Exchange Online as a distribution group.  If you plan to manage access to applications that use AD security groups, see [how to set up group writeback with entitlement management](entitlement-management-group-writeback.md).
@@ -306,11 +306,11 @@ New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $apid
 
 **Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, or Access package manager
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
-1. On the **Access packages** page open the access package you want to remove resource roles for.
+1. On the **Access packages** page, open the access package you want to remove resource roles for.
 
 1. In the left menu, select **Resource roles**.
 
@@ -328,6 +328,6 @@ When you remove a member of a team, they're removed from the Microsoft 365 Group
 
 ## Next steps
 
-- [Create a basic group and add members using Microsoft Entra ID](~/fundamentals/how-to-manage-groups.md)
-- [How to: Configure the role claim issued in the SAML token for enterprise applications](~/identity-platform/enterprise-app-role-management.md)
+- [Create a basic group and add members using Microsoft Entra ID](../fundamentals/how-to-manage-groups.md)
+- [How to: Configure the role claim issued in the SAML token for enterprise applications](../identity-platform/enterprise-app-role-management.md)
 - [Introduction to SharePoint Online](/sharepoint/introduction)

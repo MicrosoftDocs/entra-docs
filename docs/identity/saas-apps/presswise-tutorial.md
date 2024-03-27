@@ -1,62 +1,64 @@
 ---
-title: Microsoft Entra SSO integration with Presswise
-description: Learn how to configure single sign-on between Microsoft Entra ID and Presswise.
+title: Microsoft Entra SSO integration with PressWise
+description: Learn how to configure single sign-on between Microsoft Entra ID and PressWise.
 services: active-directory
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
 ms.date: 02/29/2024
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Presswise so that I can control who has access to Presswise, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Presswise
+# Microsoft Entra SSO integration with PressWise
 
-In this tutorial, you'll learn how to integrate Presswise with Microsoft Entra ID. When you integrate Presswise with Microsoft Entra ID, you can:
+In this tutorial, you'll learn how to integrate PressWise with Microsoft Entra ID. When you integrate PressWise with Microsoft Entra ID, you can:
 
-* Control in Microsoft Entra ID who has access to Presswise.
-* Enable your users to be automatically signed-in to Presswise with their Microsoft Entra accounts.
+* Control in Microsoft Entra ID who has access to PressWise.
+* Enable your users to be automatically signed-in to PressWise with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
 
-To integrate Microsoft Entra ID with Presswise, you need:
+To integrate Microsoft Entra ID with PressWise, you need:
 
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-* Presswise single sign-on (SSO) enabled subscription.
+* PressWise single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Presswise supports **IDP** initiated SSO.
+* PressWise supports **IDP** initiated SSO.
 
-## Add Presswise from the gallery
+## Add PressWise from the gallery
 
-To configure the integration of Presswise into Microsoft Entra ID, you need to add Presswise from the gallery to your list of managed SaaS apps.
+To configure the integration of PressWise into Microsoft Entra ID, you need to add PressWise from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the **Add from the gallery** section, type **Presswise** in the search box.
-1. Select **Presswise** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+1. In the **Add from the gallery** section, type **PressWise** in the search box.
+1. Select **PressWise** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
 Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
-## Configure and test Microsoft Entra SSO for Presswise
+## Configure and test Microsoft Entra SSO for PressWise
 
-Configure and test Microsoft Entra SSO with Presswise using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in Presswise.
+Configure and test Microsoft Entra SSO with PressWise using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in PressWise.
 
-To configure and test Microsoft Entra SSO with Presswise, perform the following steps:
+To configure and test Microsoft Entra SSO with PressWise, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure Presswise SSO](#configure-presswise-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Presswise test user](#create-presswise-test-user)** - to have a counterpart of B.Simon in Presswise that is linked to the Microsoft Entra representation of user.
+1. **[Configure PressWise SSO](#configure-presswise-sso)** - to configure the single sign-on settings on application side.
+    1. **[Create PressWise test user](#create-presswise-test-user)** - to have a counterpart of B.Simon in PressWise that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -64,7 +66,7 @@ To configure and test Microsoft Entra SSO with Presswise, perform the following 
 Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Presswise** > **Single sign-on**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **PressWise** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -96,32 +98,32 @@ In this section, you'll create a test user in the Microsoft Entra admin center c
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by granting access to Presswise.
+In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by granting access to PressWise.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Presswise**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **PressWise**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
    1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
    1. In the **Add Assignment** dialog, click the **Assign** button.
 
-## Configure Presswise SSO
+## Configure PressWise SSO
 
-To configure single sign-on on **Presswise** side, you need to send the **App Federation Metadata Url** to [Presswise support team](mailto:support@presswise.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **PressWise** side, you need to send the **App Federation Metadata Url** to [PressWise support team](mailto:support@PressWise.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
-### Create Presswise test user
+### Create PressWise test user
 
-In this section, you create a user called B.Simon in Presswise. Work with [Presswise support team](mailto:support@presswise.com) to add the users in the Presswise platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called B.Simon in PressWise. Work with [PressWise support team](mailto:support@PressWise.com) to add the users in the PressWise platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Click on Test this application in Microsoft Entra admin center and you should be automatically signed in to the Presswise for which you set up the SSO.
+* Click on Test this application in Microsoft Entra admin center and you should be automatically signed in to the PressWise for which you set up the SSO.
  
-* You can use Microsoft My Apps. When you click the Presswise tile in the My Apps, you should be automatically signed in to the Presswise for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you click the PressWise tile in the My Apps, you should be automatically signed in to the PressWise for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Next steps
 
-Once you configure Presswise you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
+Once you configure PressWise you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

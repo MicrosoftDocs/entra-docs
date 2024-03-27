@@ -9,7 +9,7 @@ ms.date: 03/05/2024
 ms.reviewer: brianmel
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an app developer, I want to modify my iOS application to support shared device mode, so that I can ensure the security and privacy of user data on shared devices.
 ---
 
