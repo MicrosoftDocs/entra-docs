@@ -22,11 +22,11 @@ sections:
       - question: |
           Can I use Authenticator as a passkey provider on devices earlier than Android 13 or iOS 16?
         answer: |
-          Authenticator uses operating system APIs as a passkey provider. These APIs are available only on Android 14+ and iOS 17+ devices, which means passkeys in Authenticator are only available on devices that run Android 14 and later or iOS 17 and later.
+          Authenticator uses operating system APIs as a passkey provider. These APIs are available only on devices that run Android 14 and iOS 17 or later. As a result, passkeys in Authenticator are only available on devices that run Android 14 or iOS 17 and later.
       - question: |
-          Do I need to have bluetooth enabled to perform cross-device authentication?
+          Do I need to enable bluetooth to perform cross-device authentication?
         answer: |
-          To complete cross-device authentication using passkeys in Authenticator, you must have bluetooth enabled on both the laptop and the mobile device, and both devices must also be connected to the internet. 
+          To complete cross-device authentication using passkeys in Authenticator, you must enable bluetooth on both the laptop and the mobile device, and both devices must also be connected to the internet. 
       - question: |
           Can I have multiple passkeys in Authenticator?
         answer: |        
