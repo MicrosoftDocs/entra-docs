@@ -61,7 +61,7 @@ Passkeys in Microsoft Authenticator can be added directly from your device or th
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-turn-on-support.png" alt-text="Screenshot of the turn on passkey support option in Microsoft Authenticator for iOS devices.":::
 
-   1. When ready, read the reminder that you must save the passkey in Microsoft authenticator and tap **I understand** to continue.  
+   1. When ready, read the reminder that you must save the passkey in Authenticator, and tap **I understand** to continue.  
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-understand.png" alt-text="Screenshot of the I understand option in Microsoft Authenticator for iOS devices.":::
 
@@ -70,7 +70,7 @@ Passkeys in Microsoft Authenticator can be added directly from your device or th
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-create-passkey.png" alt-text="Screenshot of the save passkey option in Microsoft Authenticator for iOS devices.":::
 
    1. Once the passkey is successfully created on your device, you'll be directed back to **My Security info**, then tap **Done**. 
-   1. Name the passkey something memorable to you and click **Done**. 
+   1. Name the passkey something memorable to you, and click **Done**. 
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-success.png" alt-text="Screenshot of the successful creation of a passkey in Microsoft Authenticator for iOS devices.":::
 
