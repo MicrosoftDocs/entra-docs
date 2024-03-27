@@ -205,7 +205,7 @@ A screenshot of the connectivity details has two sections highlighted. The first
 **Local Network Gateway 1**
 - Public IP address/endpoint: 20.x.x.76
 - ASN: 65476
-- BGP IP address/bgpAddress: 10.2.2.2
+- BGP IP address/bgpAddress: 10.1.1.1
 
 **Local Network Gateway 2**
 - Public IP address/endpoint: 4.x.x.193
@@ -219,7 +219,7 @@ The second highlighted section under `peerConfiguration` contains the details of
 - ASN: 65533
 - BGP IP address/bgpAddress: 10.2.2.2
 
-Another callout points to the virtual network you created in your resource group. The address space for the virtual network is 10.2.0.0/16. The Local BGP address and Peer BGP address can't be in the same address space.
+Another callout points to the virtual network you created in your resource group. The address space for the virtual network is 10.2.0.0/16. The Local BGP address and zone redundant Local BGP address can't be in the same address space.
 
 ## Create local network gateway
 
