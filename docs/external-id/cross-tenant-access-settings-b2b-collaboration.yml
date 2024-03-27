@@ -214,17 +214,17 @@ procedureSection:
 
         You can also customize the redemption order via the Microsoft Graph API.
 
-      7. Open the [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
+      1. Open the [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 
-      8. Sign in with a Global Administrator or Security Administrator account to your resource tenant.
+      2. Sign in with a Global Administrator or Security Administrator account to your resource tenant.
 
-      9. Run the following query to get the current redemption order:
+      3. Run the following query to get the current redemption order:
 
         ```http
         GET https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/default
         ```
 
-      10. In this example, we'll move the SAML/WS-Fed IdP federation to the top of the redemption order above Microsoft Entra identity provider. Patch the same URI with this request body:
+      4. In this example, we'll move the SAML/WS-Fed IdP federation to the top of the redemption order above Microsoft Entra identity provider. Patch the same URI with this request body:
 
         ```http
         {
@@ -236,9 +236,9 @@ procedureSection:
         }
         ```
 
-      11. To verify the changes run the GET query again.
+      5. To verify the changes run the GET query again.
 
-      12. To reset the redemption order to the default settings, run the following query:
+      6. To reset the redemption order to the default settings, run the following query:
 
         ```http
             {
