@@ -1,5 +1,5 @@
 ---
-title: Enable passkeys in Authenticator (preview)
+title: Enable passkeys for your organization (preview)
 description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (FIDO2)
 
 ms.service: entra-id
@@ -15,7 +15,7 @@ ms.reviewer: calui, tilarso
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and enforce passkeys sign in for end users.
 
 ---
-# Enable passkeys in Authenticator (preview)
+# Enable passkeys for your organization (preview)
 
 For enterprises that use passwords today, passkeys (FIDO2) provide a seamless way for workers to authenticate without entering a username or password. Passkeys provide improved productivity for workers, and have better security.
 
