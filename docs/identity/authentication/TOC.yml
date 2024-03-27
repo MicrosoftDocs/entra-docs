@@ -126,7 +126,7 @@
         href: howto-authentication-passwordless-security-key-windows.md
       - name: Passkey (FIDO2) authentication
         items:
-        - name: Enable passkeys in Authenticator (preview)
+        - name: Enable passkeys for an organization (preview)
           href: how-to-enable-passkey-fido2.md
         - name: Register passkey (preview)
           href: how-to-register-passkey.md
