@@ -10,6 +10,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: arvinh
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to LinkedIn Elevate so that I can streamline the user management process and ensure that users have the appropriate access to LinkedIn Elevate.
 ---
 
 # Tutorial: Configure LinkedIn Elevate for automatic user provisioning
