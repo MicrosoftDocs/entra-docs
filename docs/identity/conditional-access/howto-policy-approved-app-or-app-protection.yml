@@ -49,7 +49,6 @@ introduction: |
   the article
   [App protection policies overview](/mem/intune/apps/app-protection-policy).
 
-  **Create a Conditional Access policy**
 
   The following policies are put in to
   [Report-only mode](howto-conditional-access-insights-reporting.md) to start so
