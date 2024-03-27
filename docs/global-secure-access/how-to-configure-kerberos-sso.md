@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 03/19/2024
+ms.date: 03/27/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -23,7 +23,7 @@ Before you get started with single sign-on, make sure your environment is ready.
 - The latest version of the Microsoft Entra private access connector is installed on a Windows server that has access to your domain controllers.
 - The latest version of the Global Secure Access client. For more information on the client, see [Global Secure Access clients](concept-clients.md).
 
-### Publish resources to use with single sign-on
+### Publish resources for use with single sign-on
 To test single sign-on, create a new enterprise application that publishes a file share. Using an enterprise application to publish your file share lets you assign a Conditional Access policy to the resource and enforce extra security controls, such as multifactor authentication.
 
 1. In the Microsoft Entra admin center, select **Global Secure Access (Preview)** > **Applications** > **Enterprise Applications**.
@@ -32,7 +32,7 @@ To test single sign-on, create a new enterprise application that publishes a fil
 1. Open the enterprise application you created and select **Users and Groups** to assign access to the resource.
 
 ## Microsoft Entra ID joined devices - Password-based SSO
-Extra configuration beyond this guide is not needed if users use passwords to sign in to Windows. 
+Extra configuration beyond this guide isn't needed if users use passwords to sign in to Windows. 
 
 Microsoft Entra ID joined devices rely on the Active Directory domain and user information synchronized by Microsoft Entra ID Connect. The Windows domain controller locator finds the domain controllers because of the synchronization. The user’s User Principal Name (UPN) and password are used to request a Kerberos Ticket Granting Ticket (TGT). For more information about this flow, see [How SSO to on-premises resources works on Microsoft Entra joined devices](../identity/devices/device-sso-to-on-premises-resources.md).
 
