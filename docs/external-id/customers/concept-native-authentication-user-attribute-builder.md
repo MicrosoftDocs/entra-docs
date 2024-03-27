@@ -91,15 +91,15 @@ To build user attributes in the iOS MSAL SDK:
         authAuthClientInstance.signUp(username: email, attributes: attributes, delegate: self)
      ```   
 - To build [custom attributes](concept-user-attributes.md#custom-user-attributes), use `UserAttribute.Builder` class `customAttribute()` method. The method accepts the custom attribute's programmable name, and the value of the attribute:
-
-```swift
-        let attributes = [
-            "country": "United States",
-            "extension_2588abcdwhtfeehjjeeqwertc_loyaltyNumber", loyaltyNumber
-        ]
-        
-        authAuthClientInstance.signUp(username: email, attributes: attributes, delegate: self)
-```
+    
+    ```swift
+            let attributes = [
+                "country": "United States",
+                "extension_2588abcdwhtfeehjjeeqwertc_loyaltyNumber", loyaltyNumber
+            ]
+            
+            authAuthClientInstance.signUp(username: email, attributes: attributes, delegate: self)
+    ```
 ---
 
 To learn more about the programmable names of user profile attributes, see the [User profile attributes](concept-user-attributes.md) article.

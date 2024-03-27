@@ -46,13 +46,13 @@ The following table summarizes the challenge type values an app should use for t
 
 The following table summarizes what happens if either Microsoft Entra or the client app doesn't support a given challenge type:
 
-|   | What happens | 
+|  Scenario | What happens | 
 | ---- | --- |
-|A client app includes unsupported challenge type| Microsoft Entra returns an error as it treats this request as invalid. |
-|A client app fails to include a supported| It indicates that the client app doesn't support a challenge type that the administrator configures in the Microsoft Entra admin center. In this case, Microsoft Entra notifies the client app to use web fallback.|
+|*A client app includes unsupported challenge type*| Microsoft Entra returns an error as it treats this request as invalid. |
+|*A client app fails to include a supported challenge type*| It indicates that the client app doesn't support a challenge type that the administrator configures in the Microsoft Entra admin center. In this case, Microsoft Entra notifies the client app to use [web fallback](concept-native-authentication-web-fallback.md).|
 
 ## Related content 
 
+- [Native authentication web fallback](concept-native-authentication-web-fallback.md)
 - [Native authentication Android SDK tutorials](how-to-run-native-authentication-sample-android-app.md)
-- [Native authentication iOS SDK tutorials](how-to-run-native-authentication-sample-ios-app.md)
 - [Native authentication API reference](../../identity-platform/reference-native-authentication-overview.md)
