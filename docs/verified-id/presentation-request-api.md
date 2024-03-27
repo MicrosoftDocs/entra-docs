@@ -129,7 +129,7 @@ The `RequestRegistration` type provides information registration for the issuer.
 
 The following screenshot shows the `clientName` property and the display name of the `authority` (the verifier) in the presentation request.
 
-![Screenshot that shows how to approve the presentation request.](media/presentation-request-api/approve-presentation-request.jpg)
+:::image type="content" source="media/presentation-request-api/approve-presentation-request.jpg" alt-text="Screenshot that shows how to approve the presentation request.":::
 
 ### Callback type
 

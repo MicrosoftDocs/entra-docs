@@ -34,7 +34,7 @@ Enterprises onboarding users face significant challenges onboarding remote users
   3. System receives the claims from identity verification partner, looks up the user account for the new hire and performs the validation.
   4. System executes the onboarding logic to locate the Microsoft Entra account of the user, and [generate a temporary access pass using MS Graph](/graph/api/resources/temporaryaccesspassauthenticationmethod?view=graph-rest-1.0&preserve-view=true).
 
-![Diagram showing a high-level flow.](media/remote-onboarding-new-employees-id-verification/high-level-flow-diagram.png)
+:::image type="content" source="media/remote-onboarding-new-employees-id-verification/high-level-flow-diagram.png" alt-text="Diagram showing a high-level flow.":::
 
 ## Issues and considerations
 

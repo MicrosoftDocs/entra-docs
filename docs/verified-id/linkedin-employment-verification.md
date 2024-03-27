@@ -71,7 +71,7 @@ Once the administrator configures the company page on LinkedIn, employees can ge
 
 The diagram below shows the dataflow of the entire solution.
 
-   ![Diagram showing a high-level flow.](media/linkedin-employment-verification/linkedin-employee-verification.png)
+   :::image type="content" source="media/linkedin-employment-verification/linkedin-employee-verification.png" alt-text="Diagram showing a high-level flow.":::
 
 ## Frequently asked questions
 
