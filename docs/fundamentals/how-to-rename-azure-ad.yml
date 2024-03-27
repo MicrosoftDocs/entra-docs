@@ -53,6 +53,7 @@ procedureSection:
         **Evaluate and prioritize based on future usage**. Consider which content needs to be updated based on whether it's user-facing or has broad visibility within your organization, audience, or customer base. You may decide that some code or content doesn't need to be updated if it has limited exposure to your end-users.
 
         Decide whether existing dated content such as videos or blogs are worth updating for future viewers. It's okay to not rename old content. To help end-users, you may want to add a disclaimer such as "Azure AD is now Microsoft Entra ID."
+ 
   - title: |
       Use "find and replace" for text-based content
     summary: |
