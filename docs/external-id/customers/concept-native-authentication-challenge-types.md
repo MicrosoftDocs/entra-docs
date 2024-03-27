@@ -29,7 +29,7 @@ The following table contains the supported challenge type values:
 
 [!INCLUDE [native-auth-challenge-type](../../identity-platform/includes/native-auth-api/native-auth-challenge-type.md)]
 
-New values will be added in the future when native authentication support new authentication methods.
+We add new values in the future when native authentication support new authentication methods.
 
 ## Challenge types usage
 

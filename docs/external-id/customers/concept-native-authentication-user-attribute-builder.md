@@ -98,6 +98,6 @@ To learn more about the programmable names of user profile attributes, see the [
 
 ## Related content
 
-- [Native authentication challenge types](concept-native-authentication-challenge-types.md).
-- [iOS native authentication tutorials](tutorial-native-authentication-prepare-ios-app.md).
-- [Android native authentication tutorials](tutorial-native-authentication-prepare-android-app.md). 
+- [Native authentication challenge types](concept-native-authentication-challenge-types.md)
+- [iOS native authentication tutorials](tutorial-native-authentication-prepare-ios-app.md)
+- [Android native authentication tutorials](tutorial-native-authentication-prepare-android-app.md) 
