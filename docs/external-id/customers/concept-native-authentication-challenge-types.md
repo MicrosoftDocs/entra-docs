@@ -48,8 +48,8 @@ The following table summarizes what happens if either Microsoft Entra or the cli
 
 |  Scenario | What happens | 
 | ---- | --- |
-|*A client app includes unsupported challenge type*| Microsoft Entra returns an error as it treats this request as invalid. |
-|*A client app fails to include a supported challenge type*| It indicates that the client app doesn't support a challenge type that the administrator configures in the Microsoft Entra admin center. In this case, Microsoft Entra notifies the client app to use [web fallback](concept-native-authentication-web-fallback.md).|
+|**A client app includes unsupported challenge type**| Microsoft Entra returns an error as it treats this request as invalid. |
+|**A client app fails to include a supported challenge type**| It indicates that the client app doesn't support a challenge type that the administrator configures in the Microsoft Entra admin center. In this case, Microsoft Entra notifies the client app to use [web fallback](concept-native-authentication-web-fallback.md).|
 
 ## Related content 
 
