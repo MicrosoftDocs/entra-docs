@@ -364,8 +364,8 @@
     href: /graph/api/resources/authenticationmethodspolicies-overview
   - name: Service limits and restrictions
     href: ~/identity/users/directory-service-limits-restrictions.md
-  - name: Passkey (FIDO2) compatibility
-    href: concept-passkey-fido2-compatibility.md
+  - name: FIDO2 compatibility
+    href: concept-fido2-compatibility.md
   - name: Become a passkey (FIDO2) provider
     href: concept-fido2-hardware-vendor.md  
 - name: Resources

@@ -378,7 +378,7 @@
     },
     {
       "source_path_from_root": "/docs/identity/authentication/fido2-compatibility.md",
-      "redirect_url": "/entra/identity/authentication/concept-passkey-fido2-compatibility",
+      "redirect_url": "/entra/identity/authentication/concept-fido2-compatibility",
       "redirect_document_id": false
     },
     {
