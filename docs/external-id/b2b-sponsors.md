@@ -26,12 +26,14 @@ This article provides an overview of the sponsor feature and explains how to use
 The **Sponsors** field on the user object refers to the person or a group who invited the guest user to the organization. You can use this field to track who invited the guest user and to help with accountability.
 Being a sponsor doesn't grant administrative powers for the sponsor user or the group, but it can be used for approval processes in Entitlement Management. You can also use it for custom solutions, but it doesn't provide any other built-in directory powers.
 
-:::image type="content" source="media/b2b-sponsors/single-sponsor.png" alt-text="Screenshot of the sponsors 'name.":::
+:::image type="content" source="media/b2b-sponsors/single-sponsor.png" alt-text="Screenshot of the sponsors' name.":::
 
 ## Who can be a sponsor?
 
 If you send an invitation to a guest user, you'll automatically become the sponsor of that guest user, unless you specify another user in the invite process as a sponsor. Your name will be added to the **Sponsors** field on the user object automatically. If you want to add a different sponsor, you can also specify the sponsor user or group when sending an invitation to a guest user.  
+
 You can also assign multiple people or groups when inviting the guest user. You can assign a maximum of five sponsors to a single guest user.
+
 When a sponsor leaves the organization, as part of the offboarding process the tenant administrator can change the **Sponsors** field on the user object to a different person or group. With this transition, they can ensure that the guest user's account remains properly tracked and accounted for.
 
 ## Other scenarios using the B2B sponsors feature
