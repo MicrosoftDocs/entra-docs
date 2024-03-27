@@ -44,7 +44,7 @@ To view the list of built-in system capabilities for Microsoft Entra, use the fo
 
 There are many prompts you can use to get information about your Microsoft Entra data. This section lists some ideas and examples.
 
-### Get Microsoft Entra user details 
+### Get Microsoft Entra User Details 
 
 Get specific information about **Microsoft Entra users in the tenant**, details for the authentication methods enabled for a given user, the user’s group membership information, and more.
 
@@ -58,7 +58,7 @@ Get specific information about **Microsoft Entra users in the tenant**, details 
 - Show me the authentication method details for Microsoft Entra user Given_name Surname
 - What auth methods does this user have?
 
-### Get Microsoft Entra group details 
+### Get Microsoft Entra Group Details 
 
 Get details on **Microsoft Entra groups** in Microsoft Entra, like who the group owner is or if a certain user is a member of the group.
 
@@ -72,7 +72,7 @@ Get details on **Microsoft Entra groups** in Microsoft Entra, like who the group
 - List all groups with names starting with 'XYZ'
 - Who created this group?
 
-### Get Entra sign-in Logs 
+### Get Entra Sign In Logs 
 
 Get information on **sign-in logs** for Microsoft Entra user, like the last X sign-ins or the last X failed sign-ins.
 
@@ -82,7 +82,7 @@ Get information on **sign-in logs** for Microsoft Entra user, like the last X si
 - Show me the sign-ins from this location
 - Show me failed sign-ins for user@contoso.com
 
-### Get Entra risky users
+### Get Entra Risky Users
 
 Get the details for Microsoft Entra users carrying an elevated risk of compromise. 
 
