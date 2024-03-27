@@ -15,18 +15,17 @@ ms.author: barclayn
 
 # Create verifiable credentials for ID token hint
 
-  
 A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses the [idTokenHint attestation](rules-and-display-definitions-model.md#idtokenhintattestation-type) produces an issuance flow where the relying party application passes claim values in the [issuance request payload](issuance-request-api.md#issuance-request-payload). It is the relying party application's responsibility to ensure that required claim values are passed in the request. How the claim values are gathered is up to the application. 
 
 ## Create a custom credential
 
 In the Azure portal, when you select **Add credential**, you get the option to launch two quickstarts. Select **custom credential**, and then select **Next**. 
 
-:::image type="content" source="media/how-to-use-quickstart/quickstart-startscreen.png" alt-text="Screenshot of the "Issue credentials" quickstart for creating a custom credential.":::
+:::image type="content" source="media/how-to-use-quickstart/quickstart-startscreen.png" alt-text="Screenshot of the Issue credentials quickstart for creating a custom credential.":::
 
 On the **Create a new credential** page, enter the JSON code for the rules and display definitions. In the **Credential name** box, give the credential a type name. To create the credential, select **Create**.
 
-:::image type="content" source="media/how-to-use-quickstart/quickstart-create-new.png" alt-text="Screenshot of the "Create a new credential" page, displaying JSON samples for the rules and display files.":::
+:::image type="content" source="media/how-to-use-quickstart/quickstart-create-new.png" alt-text="Screenshot of the Create a new credential page, displaying JSON samples for the rules and display files.":::
 
 ## Sample JSON display definitions
 
