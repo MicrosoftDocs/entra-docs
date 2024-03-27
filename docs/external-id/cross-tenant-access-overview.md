@@ -87,9 +87,7 @@ You find both primary identity providers and fallback identity providers under t
 
 Primary identity providers are the ones that have federations with other sources of authentication. Fallback identity providers are the ones that are used, when a user doesn't match a primary identity provider. 
 
-Fallback identity providers can be either Microsoft account (MSA), email one-time passcode, or both. You can't disable both fallback identity providers, but you can disable all primary identity providers and only use fallback identity providers for redemption options. 
-
-If you are using email one-time passcode as your only redemption option, new users will need to select the ‘Use another account’ option and enter their email to initiate the one-time passcode process. 
+Fallback identity providers can be either Microsoft account (MSA), email one-time passcode, or both. You can't disable both fallback identity providers, but you can disable all primary identity providers and only use fallback identity providers for redemption options. If email one-time passcode is the only redemption option, new users will need to select the ‘Use another account’ option and enter their email to initiate the one-time passcode process. 
 
 ### Direct federation for Microsoft Entra ID verified domains (Preview)
 
