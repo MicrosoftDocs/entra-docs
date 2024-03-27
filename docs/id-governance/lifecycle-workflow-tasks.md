@@ -347,7 +347,7 @@ Example of usage within the workflow:
 
 ### Assign licenses to user (Preview)
 
-Allows Licenses to be assigned to users.
+Allows Licenses to be assigned to users. For a license to be assigned to the user, they must have a "*usageLocation*" attribute set.
 
 :::image type="content" source="media/lifecycle-workflow-task/assign-license-user-task.png" alt-text="Screenshot of the assign licenses to user task.":::
 
@@ -358,26 +358,25 @@ Allows Licenses to be assigned to users.
 |displayName     |  Assign licenses to user (Customizable by user)        |
 |description     |  Assign selected licenses to the user (Customizable by user)       |
 |taskDefinitionId     |   683c87a4-2ad4-420b-97d4-220d90afcd24      |
-|arguments     |  Argument contains one parameter that has the name "*licenses*"  thats accepts a string value.  |
+|arguments     |  Argument contains one parameter that has the name "*licenses*"  thats accepts a "Sku id" value. For a full list of Sku IDs, see: [Product names and service plan identifiers for licensing](../identity/users/licensing-service-plan-reference.md).  |
 
 Example of usage within the workflow:
 
-```json
+```Example for usage within the workflow
 {
-    "category": "joiner,mover",
-    "continueOnError": false,
-    "description": "Assign selected licenses to the user",
-    "displayName": "Assign licenses to user",
-    "isEnabled": true,
-    "taskDefinitionId": "683c87a4-2ad4-420b-97d4-220d90afcd24",
-    "parameters": [
+            "category": "joiner,mover",
+            "continueOnError": false,
+            "description": "Assign selected licenses to the user",
+            "displayName": "Assign licenses to user (Preview)",
+            "isEnabled": true,
+            "taskDefinitionId": "683c87a4-2ad4-420b-97d4-220d90afcd24",
+            "arguments": [
                 {
                     "name": "licenses",
-                    "values": [],
-                    "valueType": "string"
+                    "value": "a403ebcc-fae0-4ca2-8c8c-7a907fd6c235"
                 }
             ]
-}
+        }
 ```
 
 
@@ -811,23 +810,24 @@ For Microsoft Graph, the parameters for the **Remove selected license assignment
 |displayName     |  Remove licenses from user (Customizable by user)        |
 |description     |  Remove selected licenses assigned to the user (Customizable by user)        |
 |taskDefinitionId     |   5fc402a8-daaf-4b7b-9203-da868b05fc5f      |
-|arguments     |  Argument contains one parameter that has the name "*licenses*"  thats accepts a string value.  |
+|arguments     |  Argument contains one parameter that has the name "*licenses*"  thats accepts a "Sku id" value. For a full list of Sku IDs, see: [Product names and service plan identifiers for licensing](../identity/users/licensing-service-plan-reference.md).  |
 
 Example of usage within the workflow:
 
-```json
+```Example for usage within the workflow 
 {
-    "category": "leaver,mover",
-    "continueOnError": false,
-    "description": "Remove selected licenses assigned to the user",
-    "displayName": "Remove licenses from user",
-    "isEnabled": true,
-    "taskDefinitionId": "5fc402a8-daaf-4b7b-9203-da868b05fc5f",
-    "parameters": [
+            "category": "leaver,mover",
+            "continueOnError": false,
+            "description": "Remove selected licenses assigned to the user",
+            "displayName": "Remove selected license assignments from user (Preview)",
+            "executionSequence": 3,
+            "id": "02d75af7-91b6-434f-bce3-c68a6c70b7aa",
+            "isEnabled": true,
+            "taskDefinitionId": "5fc402a8-daaf-4b7b-9203-da868b05fc5f",
+            "arguments": [
                 {
                     "name": "licenses",
-                    "values": [],
-                    "valueType": "string"
+                    "value": "a403ebcc-fae0-4ca2-8c8c-7a907fd6c235"
                 }
             ]
 }
