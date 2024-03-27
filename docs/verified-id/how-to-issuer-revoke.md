@@ -33,7 +33,8 @@ By using the indexed claim in verifiable credentials, you can search for issued 
 1. Select the verifiable credential type.
 1. On the leftmost menu, select **Revoke a credential**.
 
-   :::image type="content" source="media/how-to-issuer-revoke/settings-revoke.png" alt-text="Screenshot that shows revoking a credential.":::
+   :::image type="content" source="media/how-to-issuer-revoke/settings-revoke.png" alt-text="Screenshot that shows credential revocation.":::
+
 1. Search for the index claim of the user you want to revoke. Indexing a claim is a requirement for being able to search for a credential.
 
    :::image type="content" source="media/how-to-issuer-revoke/revoke-search.png" alt-text="Screenshot that shows the credential to revoke.":::

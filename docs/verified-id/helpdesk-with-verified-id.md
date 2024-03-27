@@ -40,7 +40,7 @@ To set up the Microsoft Entra Verified ID service, follow the instructions for Q
 1. Create a test user in your [Microsoft Entra tenant](https://entra.microsoft.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/%7E/AllUsers/menuId/) and upload a photo of [yourself](https://support.microsoft.com/office/add-your-profile-photo-to-microsoft-365-2eaf93fd-b3f1-43b9-9cdc-bdcd548435b7).
 1. Go to [MyAccount](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials), sign in as the test user and issue a VerifiedEmployee credential for the user.
 
-[:::image type="content" source="media/helpdesk-with-verified-id/get-started-with-verifiedemployee.png" alt-text="Screenshot of getting started with VerifiedEmployee.":::](media/helpdesk-with-verified-id/get-started-with-verifiedemployee.png#lightbox)
+:::image type="content" source="media/helpdesk-with-verified-id/get-started-with-verifiedemployee.png" alt-text="Screenshot of getting started with VerifiedEmployee.":::
 
 You first select who can request issuance of a Verified ID by selecting all users or a specific group of users. Then sign in to [https://myaccount.microsoft.com](https://myaccount.microsoft.com) and get your [Face Check](using-facecheck.md) ready credential using [Microsoft Authenticator](https://www.microsoft.com/security/mobile-authenticator-app). 
 
@@ -77,7 +77,7 @@ If you are a **Managed Services provider (MSP)** or **Cloud Solutions Provider (
   ...
 ```
 
-[:::image type="content" source="media/helpdesk-with-verified-id/sequence-diagram-of-facecheck.png" alt-text="Sequence diagram of Face Check.":::](media/helpdesk-with-verified-id/sequence-diagram-of-facecheck.png#lightbox)
+:::image type="content" source="media/helpdesk-with-verified-id/sequence-diagram-of-facecheck.png" alt-text="Sequence diagram of Face Check.":::
 
 ## Additional resources
 

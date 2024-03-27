@@ -27,7 +27,7 @@ In the Azure portal, when you select **Add credential**, you get the option to l
 
 On the **Create a new credential** page, enter the JSON code for the display and the rules definitions. In the **Credential name** box, give the credential a type name. To create the credential, select **Create**.
 
-:::image type="content" source="media/how-to-use-quickstart/quickstart-create-new.png" alt-text="Screenshot of the "Create a new credential" page, displaying JSON samples for the display and rules files.":::
+:::image type="content" source="media/how-to-use-quickstart/quickstart-create-new.png" alt-text="Screenshot of the "Screenshot of the create a new credential page, displaying JSON samples for the display and rules files.":::
 
 ## Sample JSON display definitions
 

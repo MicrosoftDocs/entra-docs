@@ -23,7 +23,7 @@ A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) tha
 
 In the Azure portal, when you select **Add credential**, you get the option to launch two quickstarts. Select **custom credential**, and then select **Next**. 
 
-:::image type="content" source="media/how-to-use-quickstart/quickstart-startscreen.png" alt-text="Screenshot of the "Issue credentials" quickstart for creating a custom credential.":::
+:::image type="content" source="media/how-to-use-quickstart/quickstart-startscreen.png" alt-text="Screenshot of the issue credentials quickstart for creating a custom credential.":::
 
 On the **Create a new credential** page, enter the JSON code for the display and the rules definitions. In the **Credential name** box, give the credential a type name. To create the credential, select **Create**.
 

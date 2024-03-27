@@ -30,7 +30,7 @@ As part of your plan for an issuance solution, you must design a solution that e
 
 ### Microsoft VC issuance solution architecture
 
-:::image type="content" source="media/plan-issuance-solution/plan-for-issuance-solution-architecture.png" alt-text="Components of an issuance solution":::
+:::image type="content" source="media/plan-issuance-solution/plan-for-issuance-solution-architecture.png" alt-text="Diagram showing the various components of an issuance solution.":::
 
 
 <a name='azure-active-directory-tenant'></a>
@@ -43,7 +43,7 @@ Each tenant uses the multitenant Microsoft Entra Verified ID service, and has a 
 
 ### Microsoft Azure services
 
-:::image type="content" source="media/plan-issuance-solution/plan-for-issuance-solution-azure-services.png" alt-text="Components of an issuance solution, focusing on Azure services":::
+:::image type="content" source="media/plan-issuance-solution/plan-for-issuance-solution-azure-services.png" alt-text="Diagram showing components of an issuance solution, focusing on Azure services.":::
 
 The **Azure Key Vault** service stores your issuer keys, which are generated when you initiate the Microsoft Entra Verified ID issuance service. The keys and metadata are used to execute credential management operations and provide message security.
 
@@ -60,7 +60,7 @@ Each issuer has a single key set used for signing, updating, and recovery. This 
 
 ### Microsoft Entra Verified ID service
 
-:::image type="content" source="media/plan-issuance-solution/plan-for-issuance-solution-verifiable-credentials-vc-services.png" alt-text="Diagram of Microsoft Entra Verified ID service":::
+:::image type="content" source="media/plan-issuance-solution/plan-for-issuance-solution-verifiable-credentials-vc-services.png" alt-text="Diagram of Microsoft Entra Verified ID service.":::
 
 The Microsoft Entra Verified ID service enables you to issue and revoke VCs based on your configuration. The service:
 
@@ -86,7 +86,7 @@ Microsoft Authenticator is the mobile application. The Authenticator orchestrate
 
 ### Issuance business logic 
 
-:::image type="content" source="media/plan-issuance-solution/plan-for-issuance-solution-business-logic.png" alt-text="Issuance business logic":::
+:::image type="content" source="media/plan-issuance-solution/plan-for-issuance-solution-business-logic.png" alt-text="Diagram showing the Verified ID issuance business logic.":::
 
 Your issuance solution includes a web front end where users request a VC, an identity store and or other attribute store to obtain values for claims about the subject, and other backend services. 
 
@@ -126,11 +126,11 @@ With Microsoft Entra Verified ID, the most common credential use cases are:
 
 This kind of credential is a good fit for identity onboarding scenarios of new employees, partners, service providers, students, and other instances where identity verification is essential.
 
-:::image type="content" source="media/plan-issuance-solution/plan-for-issuance-solution-identity-verification-use-case.png" alt-text="Identity verification use case":::
+:::image type="content" source="media/plan-issuance-solution/plan-for-issuance-solution-identity-verification-use-case.png" alt-text="Diagram showing the identity verification use case.":::
 
 **Proof of employment/membership**: a credential is issued to prove a relationship between the user and an institution. This kind of credential is a good fit to access loosely coupled business-to-business applications, such as retailers offering discounts to employees or students. One main value of VCs is their portability: Once issued, the user can use the VC in many scenarios. 
 
-:::image type="content" source="media/plan-issuance-solution/plan-for-issuance-solution-employment-proof-use-case.png" alt-text="Proof of employment use case":::
+:::image type="content" source="media/plan-issuance-solution/plan-for-issuance-solution-employment-proof-use-case.png" alt-text="Diagram showing the proof of employment use case.":::
 
 For more use cases, see [Verifiable Credentials Use Cases (w3.org)](https://www.w3.org/TR/vc-use-cases/).
 

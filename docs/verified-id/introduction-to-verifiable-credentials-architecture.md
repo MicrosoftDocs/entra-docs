@@ -33,7 +33,7 @@ Centralized approaches still work well in many cases, such as when applications,
 
 In centralized identity systems, the identity provider (IDP) controls the lifecycle and usage of credentials.
 
-:::image type="content" source="./media/introduction-to-verifiable-credentials-architecture/centralized-identity-architecture.png" alt-text="Example of a centralized identity system":::
+:::image type="content" source="./media/introduction-to-verifiable-credentials-architecture/centralized-identity-architecture.png" alt-text="Diagram of an example centralized identity system.":::
 
 
 However, there are scenarios where using a decentralized architecture with verifiable credentials can provide value by augmenting key scenarios such as
@@ -50,7 +50,7 @@ In decentralized identity systems, control of the lifecycle and usage of the cre
 
 Consider the scenario in the diagram where Proseware, an e-commerce website, wants to offer Woodgrove employees corporate discounts.
 
- :::image type="content" source="media/introduction-to-verifiable-credentials-architecture/decentralized-architecture.png" alt-text="Example of a decentralized identity system":::
+ :::image type="content" source="media/introduction-to-verifiable-credentials-architecture/decentralized-architecture.png" alt-text="Diagram of an example decentralized identity system.":::
 
 Terminology for verifiable credentials (VCs) might be confusing if you're not familiar with VCs. The following definitions are from the [Verifiable Credentials Data Model 1.0](https://www.w3.org/TR/vc-data-model/) terminology section. After each, we relate them to entities in the preceding diagram.
 
@@ -114,7 +114,7 @@ These use cases demonstrate how centralized identities and decentralized identit
 
 ## User journey: Onboarding to Woodgrove
 
-:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/onboarding-journey.png" alt-text="User's onboarding journey to Woodgrove":::
+:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/onboarding-journey.png" alt-text="Diagram of a user's onboarding journey to Woodgrove.":::
 
  **Awareness**: Alice is interested in working for Woodgrove, Inc. and visits Woodgrove’s career website.
 
@@ -144,7 +144,7 @@ By combining centralized and decentralized identity architectures for onboarding
 
 ## User journey: Accessing resources inside the trust boundary
 
-:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/inside-trust-boundary.png" alt-text="Accessing resources inside of the trust boundary":::
+:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/inside-trust-boundary.png" alt-text="Diagram showing how accessing resources inside of the trust boundary works.":::
 
 As an employee, Alice is operating inside of the trust boundary of Woodgrove. Woodgrove acts as the identity provider (IDP) and maintains complete control of the identity and the configuration of the apps Alice uses to interact within the Woodgrove trust boundary. To use resources in the Microsoft Entra ID trust boundary, Alice provides potentially multiple forms of proof of identification to sign in Woodgrove’s trust boundary and access the resources inside of Woodgrove’s technology environment. Multiple proofs is a typical scenario that is well served using a centralized identity architecture.
 
@@ -235,7 +235,7 @@ For detailed information on how to build an issuance solution and architectural 
 
 ### Flow 2: Verifiable credential presentation
 
-:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/presentation.png" alt-text="Verifiable credential presentation":::
+:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/presentation.png" alt-text="Diagram of the verifiable credential presentation flow.":::
 
 In this flow, a holder interacts with a relying party (RP) to present a VC as part of its authorization requirements.
 
