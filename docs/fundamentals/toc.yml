@@ -78,7 +78,7 @@ items:
   - name: Respond to identity threats using risky user summarization
     href: copilot-entra-risky-user-summarization.md  
   - name: Investigate incidents using Microsoft Copilot for Security
-    href: copilot-security-entra-investigate-incident.md
+    href: copilot-security-entra-investigate-incident.md 
 - name: Quick security wins
   expanded: false
   items:
