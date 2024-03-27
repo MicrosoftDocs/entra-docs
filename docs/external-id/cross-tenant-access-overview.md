@@ -89,6 +89,8 @@ Primary identity providers are the ones that have federations with other sources
 
 Fallback identity providers can be either Microsoft account (MSA), email one-time passcode, or both. You can't disable both fallback identity providers, but you can disable all primary identity providers and only use fallback identity providers for redemption options. 
 
+If you are using email one-time passcode as your only redemption option, new users will need to select the ‘Use another account’ option and enter their email to initiate the one-time passcode process. 
+
 ### Direct federation for Microsoft Entra ID verified domains (Preview)
 
 SAML/WS-Fed identity provider federation (Direct federation) is now supported for Microsoft Entra ID verified domains. This feature allows you to set up a Direct federation with an external identity provider for a domain that is verified in Microsoft Entra. This feature is currently in public preview.
