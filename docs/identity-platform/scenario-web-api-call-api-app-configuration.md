@@ -9,7 +9,7 @@ ms.date: 05/08/2023
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to know how to write a web API that calls web APIs by using the Microsoft identity platform.
 ---
 
@@ -97,6 +97,20 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddInMemoryTokenCaches();
 // ...
 ```
+
+where;
+- `MyApi` denotes the name of the downstream web API that your web API intends to call
+- `MyApiScope` is the scope necessary for your web API to request in order to interact with the downstream web API
+
+These values will be represented in your JSON that will be similar to the following snippet.
+
+```json
+"DownstreamAPI": {
+      "BaseUrl": "https://downstreamapi.contoso.com/",
+      "Scopes": "user.read"
+    },
+```
+
 If the web app needs to call another API resource, repeat the `.AddDownstreamApi()` method with the relevant scope as shown in the following snippet:
 
 ```csharp

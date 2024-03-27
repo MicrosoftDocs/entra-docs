@@ -85,6 +85,7 @@ You can specify which built-in or custom attributes you want to include as claim
 1. Find the **allowPublicClient** key and set its value to **true**.
 1. Select **Save**.
 
-## Next steps
+## See also
 
-Learn more about [adding claims from custom claims providers](~/identity-platform/custom-extension-get-started.md).
+- [Create a REST API with a token issuance start event](~/identity-platform/custom-extension-tokenissuancestart-setup.md)
+- [Configure a custom claims provider for a token issuance event](~/identity-platform/custom-extension-tokenissuancestart-configuration.md)

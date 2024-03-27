@@ -1,17 +1,17 @@
 ---
-title: Header-based authentication with PingAccess for Microsoft Entra application proxy
-description: Publish applications with PingAccess and App Proxy to support header-based authentication.
+title: Header based authentication with PingAccess for Microsoft Entra application proxy
+description: Support header-based authentication with PingAccess and Microsoft Entra application proxy.
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/15/2024
+ms.date: 02/27/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Header-based authentication for single sign-on with application proxy and PingAccess
+# Header based authentication for single sign-on with application proxy and PingAccess
 
 Microsoft partnered with PingAccess to provide more access applications. PingAccess provides another option beyond integrated [header-based single sign-on](application-proxy-configure-single-sign-on-with-headers.md).
 
@@ -67,7 +67,7 @@ To publish your own on-premises application:
 1. Fill in the required fields with information about your new application. Use the guidance for the settings.
 
    > [!NOTE]
-   > For a more detailed walkthrough of this step, see [Add an on-premises app to Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).
+   > For a more detailed walkthrough of this step, see [Add an on-premises app to Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
 
    1. **Internal URL**: Normally you provide the URL that takes you to the app's sign-in page when you're on the corporate network. For this scenario, the connector needs to treat the PingAccess proxy as the front page of the application. Use this format: `https://<host name of your PingAccess server>:<port>`. The port is 3000 by default, but you can configure it in PingAccess.
 

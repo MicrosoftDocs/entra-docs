@@ -131,13 +131,8 @@ Create a tenant app registration to authorize the Easy Button access to Graph. W
 3. Navigate to **Access > Guided Configuration**.
 4. Select **Microsoft Integration**
 5. Select **Microsoft Entra Application**.
-
-   ![Screenshot of the Microsoft Entra Application option on Guided Configuration.](./media/f5-big-ip-easy-button-ldap/easy-button-template.png)
-
 6. Review the configuration steps.
 7. Select **Next**.
-
-   ![Screenshot of configuration steps.](./media/f5-big-ip-easy-button-ldap/config-steps.png)
 
 8. Use the illustrated steps sequence to publish your application.
 
@@ -198,15 +193,10 @@ Use the following instructions to configure a new BIG-IP SAML application in you
 1. In **Azure Configuration**, under **Configuration Properties**, select **F5 BIG-IP APM Azure AD Integration**.
 2. Select **Add**.
 
-   ![Screenshot of the F5 BIG-IP APM Azure AD Integration option under Configuration Properties.](./media/f5-big-ip-easy-button-ldap/azure-config-add-app.png)
-
 #### Azure Configuration
 
 1. Enter an app **Display Name** BIG-IP creates in the Microsoft Entra tenant. Users see the name, with an icon, on Microsoft [My Apps](https://myapplications.microsoft.com/).
 2. Skip **Sign On URL (optional)**.
-   
-   ![Screenshot of Display Name input under Configuration Properties.](./media/f5-big-ip-easy-button-ldap/azure-configuration-properties.png)
-
 3. Next to **Signing Key** and **Signing Certificate**, select **refresh** to locate the certificate you imported.
 4. In **Signing Key Passphrase**, enter the certificate password.
 
@@ -235,8 +225,6 @@ Include one more attribute:
 #### Additional User Attributes
 
 In the **Additional User Attributes** tab, enable session augmentation. Use this feature for distributed systems such as Oracle, SAP, and other JAVA implementations that require attributes to be stored in other directories. Attributes fetched from an LDAP source are injected as more SSO headers. This action helps control access based on roles, Partner IDs, etc. 
-
-   ![Screenshot of options under Additional User Attributes.](./media/f5-big-ip-easy-button-header/additional-user-attributes.png)
 
    >[!NOTE] 
    >This feature has no correlation to Microsoft Entra ID. It's an attribute source. 

@@ -8,7 +8,7 @@ metadata:
   ms.subservice: enterprise-apps
   ms.topic: faq
   
-  ms.date: 06/21/2023
+  ms.date: 02/21/2024
   ms.author: jomondi
   author: omondiatieno
   manager: celesteDG
@@ -57,6 +57,11 @@ sections:
           Can I configure the interval in which applications and service principals are permanently deleted by Microsoft Entra ID?
         answer: |
             > No. You can't configure the periodicity of hard deletion.
+            >
+      - question: |
+          Are managed identities soft-deleted?
+        answer: |
+            > Yes, Managed identities are soft-deleted. You can view the soft-deleted managed identity service principal from the recycle bin within 30 days after deletion, but you can't restore or permanently delete it. The managed identity service principal is permanently deleted after 30 days. For more information on how to view soft-deleted managed identities service principals, see [View deleted service principals](restore-application.md).
             >
       - question: |
           I can't see the provisioning data from a recovered service principal. How can I recover it? 

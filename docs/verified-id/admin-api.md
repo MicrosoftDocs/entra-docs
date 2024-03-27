@@ -47,6 +47,8 @@ The `Verifiable Credentials Service Admin` service supports the following applic
 
 The app registration needs to have the API Permission for `Verifiable Credentials Service Admin` and permissions required from the above table. When acquiring the access token, via the [client credentials flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md), the app should use scope `6a8b4b39-c021-437c-b060-5a14a3fd65f3/.default`.
 
+If the app intends to create a new authority, it needs two things. First, the app registration needs the `VerifiableCredential.Authority.ReadWrite` permission. Second, the app needs have `Create Key` permission in Key Vaults Access Policies. If the app only read/writes existing authorities, it does not need the Key Vault permission.
+
 ## Onboarding
 
 This API is to help create a new environment so new authorities can be set up. This can be triggered manually by navigating to the Verifiable Credential page in the Azure portal as well. You only need to call this API once and only if you want to set up a brand new environment just with the API.
@@ -826,8 +828,9 @@ Content-type: application/json
     "availableInVcDirectory": false,
     "manifestUrl": "...",
     "issueNotificationAllowedToGroupOids" : null,
-    "rules": rulesModel,
-    "displays": displayModel[]
+    "rules": <rulesModel>,
+    "displays": <displayModel[]>,
+    "allowOverrideValidityIntervalOnIssuance": false
 }
 ```
 
@@ -846,6 +849,7 @@ The response contains the following properties
 | `availableInVcDirectory` | boolean | Is this contract published in the Verifiable Credential Network |
 | [rules](#rulesmodel-type) | rulesModel | rules definition |
 | [displays](#displaymodel-type) | displayModel array| display definitions |
+| `allowOverrideValidityIntervalOnIssuance` | boolean | If the createIssuanceRequest API call is allowed to override expiry of the credential. This is only valid for [idTokenHint](admin-api.md#idtokenhintattestation-type) flows. |
 
 #### rulesModel type
 
@@ -991,7 +995,7 @@ example:
 
 | Property | Type | Description |
 | -------- | -------- | -------- |
-|`uri`| string (uri) | uri of the logo |
+|`uri`| string (uri) | uri of the logo. If this is a URL, it must be reachable over the public internet anonymously. |
 |`description` | string | the description of the logo |
 
 #### displayConsent type
@@ -1163,6 +1167,8 @@ Example request:
 {
     "rules": "<rules JSON>",
     "displays": [{<display JSON}],}
+    "availableInVcDirectory": true
+    "allowOverrideValidityIntervalOnIssuance": true
 }
 ```
 
@@ -1179,11 +1185,12 @@ Content-type: application/json
     "name": "contractname",
     "status": "Enabled",
     "issueNotificationEnabled": false,
-    "availableInVcDirectory": false,
+    "availableInVcDirectory": true,
     "manifestUrl": "https://...",
     "issueNotificationAllowedToGroupOids" : null,
     "rules": rulesModel,
-    "displays": displayModel[]
+    "displays": displayModel[],
+    "allowOverrideValidityIntervalOnIssuance": true
 }
 ```
 
@@ -1273,23 +1280,8 @@ Content-type: application/json
     "value": [
         {
             "id": "urn:pic:aea42fb3724b4ef08bd2d2712e79bda2",
-            "contractId": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhdGVzdDM",
             "status": "valid",
-            "issuedAt": 1644029489000
-        }
-    ]
-}
-```
-
-Example message
-```
-{
-    "value": [
-        {
-            "id": "urn:pic:aea42fb3724b4ef08bd2d2712e79bda2",
-            "contractId": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhdGVzdDM",
-            "status": "issuerRevoked",
-            "issuedAt": 1644029489000
+            "issuedAtTimestamp": "Sat, 5 Feb 2022 03:51:29 GMT"
         }
     ]
 }

@@ -1,12 +1,15 @@
 ---
-title: How to use Global Secure Access (preview) traffic logs
-description: Learn how to use traffic logs for Global Secure Access (preview).
-author: shlipsey3
-ms.author: sarahlipsey
+title: Global Secure Access (preview) network traffic logs
+description: Learn how to use Global Secure Access (preview) traffic logs to monitor connections to the service, the type of traffic, and who's connecting.
+author: kenwith
+ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 06/27/2023
+ms.date: 03/06/2024
 ms.service: global-secure-access
+
+#Customer intent: As an IT admin, I want to understand what information the Global Secure Access traffic logs capture so I can better monitor traffic and connections to our services.
+
 ---
 
 # How to use the Global Secure Access (preview) traffic logs
@@ -15,9 +18,12 @@ Monitoring the traffic for Global Secure Access (preview) is an important activi
 
 This article describes how to use the traffic logs for Global Secure Access.
 
-## How the traffic logs work
+## Prerequisites 
 
-Viewing traffic logs requires a Reports Reader role in Microsoft Entra ID. 
+- A **Global Secure Access Administrator** role in Microsoft Entra ID.
+- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+
+## How the traffic logs work
 
 The Global Secure Access logs provide details of your network traffic. To better understand those details and how you can analyze those details to monitor your environment, it's helpful to look at the three levels of the logs and their relationship to each other.
 
@@ -67,9 +73,9 @@ For example if you want to look at all the logs from a specific connection:
 
 The following details may be helpful for troubleshooting and analysis:
 
-- If you're interesting in the size of the traffic being sent and received, enable the **Sent Bytes** and **Received Bytes** columns. Select the column header to sort the logs by the size of the logs.
+- If you're interested in the size of the traffic being sent and received, enable the **Sent Bytes** and **Received Bytes** columns. Select the column header to sort the logs by the size of the logs.
 - If you are reviewing the network activity for a risky user, you can filter the results by user principal name and then review the sites they're accessing.
-- To look at traffic associated with specific 
+- To look for traffic to the types of websites that you want to block or allow, enable the **Web category** column.
 
 The log details provide valuable information about your network traffic. Not all details are defined in the list below, but the following details are useful for troubleshooting and analysis:
 

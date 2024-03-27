@@ -11,6 +11,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Catchpoint so that I can control who has access to Catchpoint, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Microsoft Entra single sign-on integration with Catchpoint
@@ -58,7 +60,7 @@ Complete the following sections:
    - [Create a Microsoft Entra test user](#create-an-azure-ad-test-user), to test Microsoft Entra single sign-on with B.Simon.
    - [Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user), to enable B.Simon to use Microsoft Entra single sign-on.
 1. [Configure Catchpoint SSO](#configure-catchpoint-sso), to configure the single sign-on settings on the application side.
-   - [Create Catchpoint test user](#create-a-catchpoint-test-user), to allow linking of the B.Simon Microsoft Entra ID test account to a similar user account in Catchpoint.
+   - [Create Catchpoint test user](#create-a-catchpoint-test-user), to allow linking of the B.Simon Microsoft Entra test account to a similar user account in Catchpoint.
 1. [Test SSO](#test-sso), to verify that the configuration works.
 
 <a name='configure-azure-ad-sso'></a>

@@ -9,7 +9,7 @@ ms.date: 08/28/2019
 ms.reviewer: oldalton
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn about the differences between the Objective-C ADAL and MSAL for iOS and macOS libraries so I can migrate my applications to MSAL for iOS and macOS.
 ---
 

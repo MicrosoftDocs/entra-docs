@@ -26,7 +26,7 @@ It's possible for application proxy to write personal data to the following log 
 
 For information on how to configure data retention for the Windows event logs, see [Settings for event logs](https://technet.microsoft.com/library/cc952132.aspx). To learn about Windows event logs, see [Using Windows Event Log](/windows/win32/wes/using-windows-event-log).
 
-[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-hybrid-note.md)]
+[!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-hybrid-note.md)]
 
 ## Remove personal data from connector event logs
 
@@ -37,11 +37,11 @@ To ensure the application proxy logs don't have personal data, you can either:
 
 Use the following sections to remove personal data from connector event logs. You must complete the removal process for all devices on which the connector is installed.
 
-[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]
+[!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]
 
 ### View or export specific data
 
-To view or export specific data, search for related entries in each of the connector event logs. The logs are located at `C:\ProgramData\Microsoft\Microsoft AAD Application Proxy connector\Trace`.
+To view or export specific data, search for related entries in each of the connector event logs. The logs are located at `C:\ProgramData\Microsoft\Microsoft AAD application proxy connector\Trace`.
 
 Since the logs are text files, you can use [findstr](/windows-server/administration/windows-commands/findstr) to search for text entries related to a user.  
 

@@ -5,13 +5,14 @@ description: Microsoft Entra joined devices can help you to manage devices acces
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 01/30/2024
+ms.date: 02/26/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
 ---
+
 # Microsoft Entra joined devices
 
 Any organization can deploy Microsoft Entra joined devices no matter the size or industry. Microsoft Entra join works even in hybrid environments, enabling access to both cloud and on-premises apps and resources.
@@ -32,13 +33,13 @@ Any organization can deploy Microsoft Entra joined devices no matter the size or
 |   | [Passwordless](../authentication/concept-authentication-passwordless.md) options like [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-planning-guide) and FIDO2.0 security keys. |
 | **Device management** | Mobile Device Management (example: Microsoft Intune) |
 |   | [Configuration Manager standalone or co-management with Microsoft Intune](/mem/configmgr/comanage/overview) |
-| **Key capabilities** | SSO to both cloud and on-premises resources |
-|   | Conditional Access through MDM enrollment and MDM compliance evaluation |
+| **Key capabilities** | single sign-on (SSO) to both cloud and on-premises resources |
+|   | Conditional Access through mobile device management (MDM) enrollment and compliance evaluation |
 |   | [Self-service Password Reset and Windows Hello PIN reset on lock screen](../authentication/howto-sspr-windows.md) |
 
-Microsoft Entra joined devices are signed in to using an organizational Microsoft Entra account. Access to resources can be controlled based on Microsoft Entra account and [Conditional Access policies](../conditional-access/howto-conditional-access-policy-compliant-device.md) applied to the device.
+You sign in to Microsoft Entra joined devices using a Microsoft Entra account. Access to resources can be controlled based on your account and [Conditional Access policies](../conditional-access/howto-conditional-access-policy-compliant-device.md) applied to the device.
 
-Administrators can secure and further control Microsoft Entra joined devices using Mobile Device Management (MDM) tools like Microsoft Intune or in co-management scenarios using Microsoft Configuration Manager. These tools provide a means to enforce organization-required configurations like: 
+Administrators can secure and further control Microsoft Entra joined devices using Mobile Device Management (MDM) tools like Microsoft Intune or in co-management scenarios using Microsoft Configuration Manager. These tools provide a means to enforce organization-required configurations like:
 
 - Requiring storage to be encrypted
 - Password complexity
@@ -56,8 +57,8 @@ Microsoft Entra joined devices can still maintain single sign-on access to on-pr
 Microsoft Entra join can be used in various scenarios like:
 
 - You want to transition to cloud-based infrastructure using Microsoft Entra ID and MDM like Intune.
-- You can’t use an on-premises domain join, for example, if you need to get mobile devices such as tablets and phones under control.
-- Your users primarily need to access Microsoft 365 or other SaaS apps integrated with Microsoft Entra ID.
+- You can't use an on-premises domain join, for example, if you need to get mobile devices such as tablets and phones under control.
+- Your users primarily need to access Microsoft 365 or other software as a service (SaaS) apps integrated with Microsoft Entra ID.
 - You want to manage a group of users in Microsoft Entra ID instead of in Active Directory. This scenario can apply, for example, to seasonal workers, contractors, or students.
 - You want to provide joining capabilities to workers who work from home or are in remote branch offices with limited on-premises infrastructure.
 
@@ -78,7 +79,7 @@ Microsoft Entra join can be deployed by using any of the following methods:
 - [Bulk deployment](/mem/intune/enrollment/windows-bulk-enroll)
 - [Self-service experience](device-join-out-of-box.md)
 
-## Next steps
+## Related content
 
 - [Plan your Microsoft Entra join implementation](device-join-plan.md)
 - [Co-management using Configuration Manager and Microsoft Intune](/mem/configmgr/comanage/overview)
