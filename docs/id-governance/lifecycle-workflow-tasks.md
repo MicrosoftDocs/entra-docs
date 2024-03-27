@@ -345,7 +345,7 @@ Example of usage within the workflow:
 }
 ```
 
-### Assign licenses to users
+### Assign licenses to user (Preview)
 
 Allows Licenses to be assigned to users.
 
@@ -796,7 +796,7 @@ Example of usage within the workflow:
 }
 ```
 
-### Remove selected license assignments from user
+### Remove selected license assignments from user (Preview)
 
 Remove selected license assignments from a user.
 
