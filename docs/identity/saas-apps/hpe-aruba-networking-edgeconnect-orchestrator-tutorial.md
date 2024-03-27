@@ -42,7 +42,7 @@ To configure the integration of HPE Aruba Networking EdgeConnect Orchestrator in
 1. In the **Add from the gallery** section, type **HPE Aruba Networking EdgeConnect Orchestrator** in the search box.
 1. Select **HPE Aruba Networking EdgeConnect Orchestrator** tile from results panel. Enter a **name**, and click **Create** to add the app. Wait a few seconds while the app is added to your tenant.
 
-   ![Screenshot shows how to select HPE Aruba Networking EdgeConnect Orchestrator](media/hpe-aruba-networking-edgeconnect-orchestrator-tutorial/how-to-select-HPE-Aruba-Networking-EdgeConnect-Orchestrator.png)
+   ![Screenshot shows how to select HPE Aruba Networking EdgeConnect Orchestrator.](media/hpe-aruba-networking-edgeconnect-orchestrator-tutorial/how-to-select-HPE-Aruba-Networking-EdgeConnect-Orchestrator.png)
 
 Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
@@ -73,7 +73,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
    a. You must enter the values of **Identifier (Entity ID)** text box, **Reply URL (Assertion Consumer Service URL)** text box, and Logout Url (Optional) values. To find these values, first, **log in to Orchestrator** and navigate to the **Authentication** dialog box **(Orchestrator > Users & Authentication > Authentication)**.
 
-   ![Screenshot shows how to navigate to Authentication dialog](media/hpe-aruba-networking-edgeconnect-orchestrator-tutorial/how-to-navigate-to-Authentication-dialog.png)
+   ![Screenshot shows how to navigate to Authentication dialog.](media/hpe-aruba-networking-edgeconnect-orchestrator-tutorial/how-to-navigate-to-Authentication-dialog.png)
 
    b. In the **Authentication** dialog, click **+Add New Server**.
 
@@ -94,7 +94,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	> [!NOTE]
 	> On self-hosted Orchestrators, if the Orchestrator is displaying the private IP address on the ACS URL field and the EdgeConnect SLO Endpoint field, please update it with the public IP address of the Orchestrator. As shown on the screenshot below, all five fields must contain the public IP address of the Orchestrator (not the private IP).
 
-	![Screenshot shows how to configure Basic SAML Configuration section](media/hpe-aruba-networking-edgeconnect-orchestrator-tutorial/how-to-configure-basic-saml-configuration-section.png#lightbox)
+	![Screenshot shows how to configure Basic SAML Configuration section.](media/hpe-aruba-networking-edgeconnect-orchestrator-tutorial/how-to-configure-basic-saml-configuration-section.png#lightbox)
 
     g. Click **Save** to close the **Basic SAML Configuration** section
 
