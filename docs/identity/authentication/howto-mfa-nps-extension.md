@@ -84,11 +84,12 @@ The NPS Extension for Microsoft Entra multifactor authentication is available to
 
    ```powershell
    PS C:\> $PSVersionTable.PSVersion
+   Major  Minor  Build  Revision
+   -----  -----  -----  --------
+   5      1      16232  1000
    ```
 
 ### Libraries
-
-You need to manually install the following library:
 
 - Visual Studio 2017 C++ Redistributable (x64) will be installed by the NPS Extension installer.
 
