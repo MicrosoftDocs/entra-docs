@@ -10,6 +10,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 02/26/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GitHub so that I can streamline the user management process and ensure that users have the appropriate access to GitHub.
 ---
 # Tutorial: Configure GitHub for automatic user provisioning
 
