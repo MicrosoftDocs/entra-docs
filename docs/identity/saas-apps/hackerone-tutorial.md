@@ -128,4 +128,4 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure HackerOne SSO
 
-1. Follow the steps as described by the [HackerOne documentation](https://docs.hackerone.com/en/articles/8487039-single-sign-on-sso-via-saml)
+Follow the steps as described by the [HackerOne documentation](https://docs.hackerone.com/en/articles/8487039-single-sign-on-sso-via-saml)
