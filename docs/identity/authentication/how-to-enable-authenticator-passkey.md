@@ -24,6 +24,8 @@ This topic lists steps to enable and enforce Microsoft Authenticator passkey sig
 - Android 14 and later or iOS 17 and later
 - Latest version of Microsoft Authenticator
 
+[!INCLUDE [Passkey roll out](~/includes/entra-authentication-passkey.md)]
+
 To use passkeys (FIDO2) for logging in to web apps and services, you must have a browser that supports the WebAuthN protocol. 
 These include Microsoft Edge, Chrome, Firefox, and Safari. For more information, see [Browser support of FIDO2 passwordless authentication](fido2-compatibility.md).
 

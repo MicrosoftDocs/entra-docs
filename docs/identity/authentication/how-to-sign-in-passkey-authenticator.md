@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/06/2024
+ms.date: 03/27/2024
 
 ms.author: justinha
 author: justinha
@@ -18,6 +18,8 @@ ms.collection: M365-identity-device-management
 # Sign in with passkeys in Authenticator for Android and iOS devices (preview)
 
 This article covers the sign-in experience when using passkeys in Microsoft Authenticator with Microsoft Entra ID. For more information on the availability of Microsoft Entra ID passkey (FIDO2) authentication across native apps, web browsers, and operating systems, see [App and browser support of passkey (FIDO2) authentication](concept-passkey-fido2-compatibility.md).
+
+[!INCLUDE [Passkey roll out](~/includes/entra-authentication-passkey.md)]
 
 # [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
 

@@ -22,6 +22,8 @@ This article shows how to register a passkey using Microsoft Authenticator on yo
 
 The easist way to add a passkey is to add it directly in the Authenticator app. Alternatively, you can add a passkey from your mobile device browser, or through cross-device registration using another device, such as a laptop. Your mobile device needs to run iOS version 17, or Android version 14, or later. 
 
+[!INCLUDE [Passkey roll out](~/includes/entra-authentication-passkey.md)]
+
 # [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
 
 ## Authenticator passkey registration
