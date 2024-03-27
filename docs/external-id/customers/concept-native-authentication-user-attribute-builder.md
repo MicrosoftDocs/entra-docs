@@ -1,6 +1,6 @@
 ---
-title: Native authentication mobile SDK attribute builder
-description: Learn how to use native authentication mobile SDK attribute builder for built-in and custom attributes. 
+title: Native authentication SDK attribute builder
+description: Learn how to use native authentication SDK attribute builder for built-in and custom attributes. 
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
@@ -9,14 +9,14 @@ ms.subservice: customers
 ms.topic: concept-article
 ms.date: 02/29/2024
 
-#Customer intent: As a dev, devops, I want to learn how to use native authentication Android and iOS SDK attribute builder to build attribute variables for both built-in and custom attributes, so that I can use them in my app.
+#Customer intent: As a dev, devops, I want to learn how to use native authentication SDK attribute builder to build attribute variables for both built-in and custom attributes, so that I can use them in my app.
 ---
 
-# Native authentication mobile SDK attribute builder
+# Native authentication SDK attribute builder
 
 In native authentication, the information you collect from the user during sign-up is configured in the user flow in the Microsoft Entra admin center. The name of the user attribute as it appears in the Microsoft Entra admin center is different from the variable name that you use when you reference it in your app. 
 
-Fortunately, the mobile SDK enables you to build the user attributes and assign values to them before you use them in the SDKs `signUp()` method.
+Fortunately, the native authentication SDK enables you to build the user attributes and assign values to them before you use them in the SDKs `signUp()` method.
 
 ## Build user attributes
 
@@ -28,7 +28,7 @@ To build user attributes in the Android SDK:
 - Identify the user attributes that you want to build, then use the following code snippet to build them:
 
     ```kotlin
-        //built the user attributes, both built-in and custom attributes
+        //build the user attributes, both built-in and custom attributes
         val userAttributes = UserAttributes.Builder
             .country(country)
             .city(city)
@@ -50,11 +50,11 @@ To build user attributes in the Android SDK:
         }  
     ```
 
-- To build [custom attributes](concept-user-attributes.md#custom-user-attributes), use `UserAttribute.Builder` class's `customAttribute()` method. The method accepts the custom attributes' programmable name, and the value of the attribute:
+- To build [custom attributes](concept-user-attributes.md#custom-user-attributes), use `UserAttribute.Builder` class `customAttribute()` method. The method accepts the custom attribute's programmable name, and the value of the attribute:
 
      ```kotlin
         val userAttributes = UserAttributes.Builder
-            .customAttribute("loyaltyNumber", loyaltyNumber)
+            .customAttribute("extension_2588abcdwhtfeehjjeeqwertc_loyaltyNumber", loyaltyNumber)
             .build() 
     
         CoroutineScope(Dispatchers.Main).launch {
@@ -75,7 +75,7 @@ To build user attributes in the iOS MSAL SDK:
     - the `value` in the value of the user attribute that you collect from the user.
  - Identify the user attributes that you want to build, then use the following code snippet to build them:
  
-     ```kotlin
+     ```swift
         let attributes = [
             "country": "United States",
             "city": "Redmond",
@@ -85,16 +85,24 @@ To build user attributes in the iOS MSAL SDK:
             "postalCode": postalCode,
             "state": state,
             "streetAddress": streetAddress,
-            "surname": surname,
-            "loyaltyNumber", loyaltyNumber
+            "surname": surname
         ]
         
         authAuthClientInstance.signUp(username: email, attributes: attributes, delegate: self)
      ```   
+- To build [custom attributes](concept-user-attributes.md#custom-user-attributes), use `UserAttribute.Builder` class `customAttribute()` method. The method accepts the custom attribute's programmable name, and the value of the attribute:
+
+```swift
+        let attributes = [
+            "country": "United States",
+            "extension_2588abcdwhtfeehjjeeqwertc_loyaltyNumber", loyaltyNumber
+        ]
+        
+        authAuthClientInstance.signUp(username: email, attributes: attributes, delegate: self)
+```
 ---
 
-To learn more about the programmable names of user profile attributes, see the [User profile attributes](concept-user-attributes.md) article. When you use custom attribute names in the MSAL mobile SDKs, the names are without the `extension_{appId-without-hyphens}_` prefix. 
-
+To learn more about the programmable names of user profile attributes, see the [User profile attributes](concept-user-attributes.md) article.
 
 ## Related content
 

@@ -43,16 +43,16 @@ The following table summarizes the challenge type values an app should use for t
 - Apps that use [native authentication API](../../identity-platform/reference-native-authentication-overview.md) must include the *redirect* challenge type in the list when they indicate the challenge type that they support.
 - Apps that use Android and iOS SDKs don't need to include the *redirect* challenge type as the SDK automatically includes it.  
 
-### What happens if a client app doesn't support a challenge type?
 
-If a client app doesn't support a challenge type that the administrator configures in the Microsoft Entra admin center, Microsoft Entra notifies the client app to use web fallback.
+The following table summarizes what happens if either Microsoft Entra or the client app doesn't support a given challenge type:
 
-### What happens if a client app uses a challenge type that Microsoft Entra doesn't support?
-
-If a client app uses a challenge type that Microsoft Entra doesn't support, Microsoft Entra notifies the client as so. The solution to this problem is for the client app to use a supported challenge type.
+|   | What happens | 
+| ---- | --- |
+|A client app includes unsupported challenge type| Microsoft Entra returns an error as it treats this request as invalid. |
+|A client app fails to include a supported| It indicates that the client app doesn't support a challenge type that the administrator configures in the Microsoft Entra admin center. In this case, Microsoft Entra notifies the client app to use web fallback.|
 
 ## Related content 
 
-- [Native authentication Android SDK tutorials](how-to-run-native-authentication-sample-android-app.md).
-- [Native authentication iOS SDK tutorials](how-to-run-native-authentication-sample-ios-app.md).
-- [Native authentication API reference](../../identity-platform/reference-native-authentication-overview.md).
+- [Native authentication Android SDK tutorials](how-to-run-native-authentication-sample-android-app.md)
+- [Native authentication iOS SDK tutorials](how-to-run-native-authentication-sample-ios-app.md)
+- [Native authentication API reference](../../identity-platform/reference-native-authentication-overview.md)
