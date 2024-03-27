@@ -8,7 +8,6 @@ ms.subservice: lifecycle-workflows
 ms.topic: tutorial
 ms.date: 03/22/2024
 ms.author: owinfrey
-ms.reviewer: krbain
 ms.custom: template-tutorial
 
 #CustomerIntent: As an administrator, I want to automate group and team memberships when an employee changes jobs so that their access to resources are always valid for them .
