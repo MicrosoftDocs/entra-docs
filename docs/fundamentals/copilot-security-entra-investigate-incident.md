@@ -2,13 +2,13 @@
 # required metadata
 
 title: Investigate identity risk in Microsoft Copilot for Security
-description: Use Microsoft Copilot for Security to quickly investigate identity-based security incident.
+description: Use Microsoft Copilot for Security and Microsoft Entra skills to quickly investigate identity-based security incident.
 keywords:
 author: rwike77
 ms.author: ryanwi
 manager: celestedg
 ms.date: 03/26/2024
-ms.topic: how-to
+ms.topic: conceptual
 ms.service: entra
 ms.custom: microsoft-copilot
 
@@ -17,7 +17,7 @@ ms.custom: microsoft-copilot
 
 # Investigate security incidents using Microsoft Copilot for Security
 
-[Microsoft Copilot for Security](/security-copilot/microsoft-security-copilot) gets insights from your Microsoft Entra data through a number of different skills, such as Get Entra Risky Users and Get Audit Logs. IT admins and security operations center (SOC) analysts can use these skills and others to gain the right context to help investigate and remediate identity-based incidents using natural language prompts. 
+[Microsoft Copilot for Security](/security-copilot/microsoft-security-copilot) gets insights from your Microsoft Entra data through many different skills, such as Get Entra Risky Users and Get Audit Logs. IT admins and security operations center (SOC) analysts can use these skills and others to gain the right context to help investigate and remediate identity-based incidents using natural language prompts. 
 
 This article describes how a SOC analyst or IT admin could use the Microsoft Entra skills to investigate a potential security incident. 
 
@@ -27,7 +27,7 @@ Natasha, a security operations center (SOC) analyst at Woodgrove Bank, receives 
 
 ## Investigate
 
-Natasha starts her investigation and signs in to [Microsoft Copilot for Security](https://securitycopilot.microsoft.com/).  In order to view user, group, risky user, sign-in logs, audit-logs, and diagnostic logs detials, she signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader).
+Natasha starts her investigation and signs in to [Microsoft Copilot for Security](https://securitycopilot.microsoft.com/).  In order to view user, group, risky user, sign-in logs, audit-logs, and diagnostic logs details, she signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader).
 
 ### Get user details
 
@@ -43,7 +43,7 @@ She uses the following prompts to get the information she needs:
 
 ### Get risky user details 
 
-To understand why karita@woodgrovebank.com was flagged as a risky user, Natash starts looking at the risky user details.  She reviews the risk level of the user (low, medium, high, or hidden), the risk detail (for example, sign-in from unfamiliar location), and the risk history (changes in risk level over time). She also checks the risk detections and the recent risky sign-ins, looking for suspicious sign-in activity or impossible travel activity.  
+To understand why karita@woodgrovebank.com was flagged as a risky user, Natasha starts looking at the risky user details.  She reviews the risk level of the user (low, medium, high, or hidden), the risk detail (for example, sign-in from unfamiliar location), and the risk history (changes in risk level over time). She also checks the risk detections and the recent risky sign-ins, looking for suspicious sign-in activity or impossible travel activity.  
 
 She uses the following prompts to get the information she needs:
 
@@ -54,7 +54,7 @@ She uses the following prompts to get the information she needs:
 
 ### Get sign-in logs details
 
-Natasha then reviews the Sign-In Logs for the user and the sign-in status (success or failure), location (city, state, country), IP address, device information (device ID, operating system, browser), and sign-in risk level. He also checks the correlation ID for each sign-in event, which can be used for further investigation.
+Natasha then reviews the sign-in logs for the user and the sign-in status (success or failure), location (city, state, country), IP address, device information (device ID, operating system, browser), and sign-in risk level. She also checks the correlation ID for each sign-in event, which can be used for further investigation.
 
 She uses the following prompts to get the information she needs:
 
@@ -63,7 +63,7 @@ She uses the following prompts to get the information she needs:
 
 ### Get audit logs details
 
-Natasha checks the audit logs, looking for any unusual or unauthorized actions performed by the user. She checks the date and time of each action, the status (success or failure), the target object (e.g., file, user, group), and the client IP address. She also checks the correlation ID for each action, which can be used for further investigation.
+Natasha checks the audit logs, looking for any unusual or unauthorized actions performed by the user. She checks the date and time of each action, the status (success or failure), the target object (for example, file, user, group), and the client IP address. She also checks the correlation ID for each action, which can be used for further investigation.
 
 She uses the following prompts to get the information she needs:
 
@@ -87,12 +87,12 @@ Finally, Natasha reviews the diagnostic logs to get more detailed information ab
 
 She uses the following prompts to get the information she needs:
 
-- *What is the diagnostics log configuration for the tenant that is karita@woodgrovebank.com registered in?*
+- *What are the diagnostics log configuration for the tenant that is karita@woodgrovebank.com registered in?*
 - *Which logs are being collected in this tenant?*
 
 ## Remediate
 
-By using Copilot for Seurity, Natasha is able to gather comprehensive information about the user, sign-in activities, audit logs, risky user detections, group memberships, and system diagnostics. After completing her investigation, Natasha needs to take action to remediate the risky user or unblock them.
+By using Copilot for Security, Natasha is able to gather comprehensive information about the user, sign-in activities, audit logs, risky user detections, group memberships, and system diagnostics. After completing her investigation, Natasha needs to take action to remediate the risky user or unblock them.
 
 She reads about [risk remediation](/entra/id-protection/howto-identity-protection-remediate-unblock#risk-remediation), [unblocking users](/entra/id-protection/howto-identity-protection-remediate-unblock#unblocking-users), and [response playbooks](/security/operations/incident-response-playbooks) to determine possible actions to take next.
 
