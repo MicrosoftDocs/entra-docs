@@ -12,6 +12,8 @@ ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ADP EMEA French HR Portal mon.adp.com so that I can control who has access to ADP EMEA French HR Portal mon.adp.com, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Microsoft Entra SSO integration with ADP EMEA French HR Portal mon.adp.com

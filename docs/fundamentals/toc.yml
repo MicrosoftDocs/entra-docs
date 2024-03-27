@@ -20,7 +20,7 @@ items:
   - name: Add a custom domain name
     href: add-custom-domain.yml
   - name: Associate an Azure subscription
-    href: how-subscriptions-associated-directory.md
+    href: how-subscriptions-associated-directory.yml
   - name: Add your privacy info
     href: properties-area.yml
   - name: Add company branding
@@ -35,7 +35,7 @@ items:
   - name: Create or delete users
     href: how-to-create-delete-users.yml
   - name: Apply licenses to users
-    href: license-users-groups.md
+    href: license-users-groups.yml
   - name: Users
     expanded: false
     items: 
@@ -46,7 +46,7 @@ items:
     - name: Manage user profile info
       href: how-to-manage-user-profile-info.yml
     - name: Reset a user's password
-      href: users-reset-password-azure-portal.md
+      href: users-reset-password-azure-portal.yml
     - name: Restore a deleted user
       href: users-restore.yml
     - name: Set default user permissions

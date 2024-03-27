@@ -87,6 +87,6 @@ relatedContent:
   - text: Create a new tenant in Microsoft Entra ID
     url: ./create-new-tenant.md
   - text: Associate or add an Azure subscription to your Microsoft Entra tenant
-    url: ./how-subscriptions-associated-directory.md
+    url: ./how-subscriptions-associated-directory.yml
   - text: Find the user object ID
     url: /partner-center/find-ids-and-domain-names#find-the-user-object-id
