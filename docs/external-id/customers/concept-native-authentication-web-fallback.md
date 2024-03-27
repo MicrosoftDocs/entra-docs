@@ -1,6 +1,6 @@
 ---
 title: Native authentication web fallback
-description: Learn how you can use web fallback to improve the resilience of your customer apps that use native authentication 
+description: Learn how you can use web fallback to improve the resilience of your customer apps that use native authentication. 
 author: kengaderdus
 manager: celestedg
 ms.service: entra-external-id 
@@ -22,19 +22,19 @@ All client apps that use native authentications needs to support web fallback.
 
 This flow shows how web fallback can happen: 
  
-- The client app collects collects initial information from the user and starts the authentication flow by making a request to the authorization server, in this case Microsoft Entra. 
+- The client app collects initial information from the user and starts the authentication flow by making a request to the authorization server, in this case Microsoft Entra. 
 - The authorization server, returns a success or error response. A success response indicates that the client app can continue making requests to the authorization server. An error message may indicate client can continue to prompt the user for more information, continue to make requests to the authorization server, or indicate client needs to use browser-delegated authentication.
 -  If the error indicates client needs to use browser-delegated authentication, the client continues the authentication flow in the browser.
 
 ### Example scenario
 
-In the Microsoft Entra Admin center, an administrator configures an app to use email with password authentication method. This configuration means that the authorization server requires the client app to have the ability to collect an email (username) and password from user, and to validate the email by submitting a one-time passcode that the server sends to the email. If the client app indicates that it's unable to fulfil this requirement, the server returns and error that indicates client needs to use browser-delegated authentication. 
+In the Microsoft Entra admin center, an administrator configures an app to use email with password authentication method. This configuration means that the authorization server requires the client app to have the ability to collect an email (username) and password from user, and to validate the email by submitting a one-time passcode that the server sends to the email. If the client app indicates that it's unable to fulfill this requirement, the server returns and error that indicates client needs to use browser-delegated authentication. 
 
-The client app uses challenge types to indicate it's capabilities. Learn more about challenge types in [Native authentication challenge types](concept-native-authentication-challenge-types.md) article.  
+The client app uses challenge types to indicate its capabilities. Learn more about challenge types in [Native authentication challenge types](concept-native-authentication-challenge-types.md) article.  
 
 ## Support web fallback 
 
-If Microsoft Entra's response indicates that the client app needs to fall back to the browser-delegated authentication, we recommend that you use a [Microsoft-built and supported authentication library](../../reference-v2-libraries.md).
+If Microsoft Entra's response indicates that the client app needs to fall back to the browser-delegated authentication, we recommend that you use a [Microsoft-built and supported authentication library](../../reference-v2-libraries.md). Learn how to support web fallback in [Android tutorial](tutorial-native-authentication-android-support-web-fallback.md) and [iOS tutorials](tutorial-native-authentication-ios-support-web-fallback.md).
 
 ## Related content
 
