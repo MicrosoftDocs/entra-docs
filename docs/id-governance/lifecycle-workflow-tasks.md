@@ -833,7 +833,6 @@ Example of usage within the workflow:
 }
 ```
 
-
 ### Remove all license assignments from User
 
 Allows all direct license assignments to be removed from a user. For group-based license assignments, you would run a task to remove the user from the group the license assignment is part of.
