@@ -12,6 +12,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
 ---
+
 # Microsoft Entra hybrid joined devices
 
 Organizations with existing Active Directory implementations can benefit from some of the functionality provided by Microsoft Entra ID by implementing Microsoft Entra hybrid joined devices. These devices are joined to your on-premises Active Directory and registered with Microsoft Entra ID.
@@ -20,25 +21,26 @@ Microsoft Entra hybrid joined devices require network line of sight to your on-p
 
 | Microsoft Entra hybrid join | Description |
 | --- | --- |
-| **Definition** | Joined to on-premises AD and Microsoft Entra ID requiring organizational account to sign in to the device |
-| **Primary audience** | Suitable for hybrid organizations with existing on-premises AD infrastructure |
+| **Definition** | Joined to on-premises Microsoft Windows Server Active Directory and Microsoft Entra ID requiring organizational account to sign in to the device |
+| **Primary audience** | Suitable for hybrid organizations with existing on-premises Microsoft Windows Server Active Directory infrastructure |
 |   | Applicable to all users in an organization |
 | **Device ownership** | Organization |
 | **Operating Systems** | Windows 11 or Windows 10 except Home editions |
 |   | Windows Server 2016, 2019, and 2022 |
 | **Provisioning** | Windows 11, Windows 10, Windows Server 2016/2019/2022 |
-|   | Domain join by IT and autojoin via Microsoft Entra Connect or ADFS config |
-|   | Domain join by Windows Autopilot and autojoin via Microsoft Entra Connect or ADFS config |
+|   | Domain join by IT and autojoin via Microsoft Entra Connect or AD FS config |
+|   | Domain join by Windows Autopilot and autojoin via Microsoft Entra Connect or AD FS config |
 | **Device sign in options** | Organizational accounts using: |
 |   | Password |
 |   | [Passwordless](~/identity/authentication/concept-authentication-passwordless.md) options like [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-planning-guide) and FIDO2.0 security keys. |
 | **Device management** | [Group Policy](/mem/configmgr/comanage/faq#my-environment-has-too-many-group-policy-objects-and-legacy-authenticated-apps--do-i-have-to-use-hybrid-azure-ad-) |
 |   | [Configuration Manager standalone or co-management with Microsoft Intune](/mem/configmgr/comanage/overview) |
-| **Key capabilities** | SSO to both cloud and on-premises resources |
+| **Key capabilities** | single sign-on (SSO) to both cloud and on-premises resources |
 |   | Conditional Access through Domain join or through Intune if co-managed |
 |   | [Self-service Password Reset and Windows Hello PIN reset on lock screen](~/identity/authentication/howto-sspr-windows.md) |
 
 :::image type="content" source="media/concept-hybrid-join/azure-ad-hybrid-joined-device.png" alt-text="Diagram showing how a hybrid joined device works.":::
+
 ## Scenarios
 
 Use Microsoft Entra hybrid joined devices if:

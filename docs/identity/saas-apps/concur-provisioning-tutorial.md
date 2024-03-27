@@ -10,6 +10,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Concur so that I can streamline the user management process and ensure that users have the appropriate access to Concur.
 ---
 # Tutorial: Configure Concur for automatic user provisioning
 
