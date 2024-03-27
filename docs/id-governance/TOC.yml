@@ -74,6 +74,8 @@
         href: tutorial-scheduled-leaver-portal.md  
       - name: Automate employee offboarding tasks - Microsoft Graph
         href: /graph/tutorial-lifecycle-workflows-scheduled-leaver?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
+      - name: Automate employee mover tasks - Microsoft Entra admin center
+        href: tutorial-mover-custom-workflow-portal.md   
 - name: Concepts
   expanded: true
   items:
