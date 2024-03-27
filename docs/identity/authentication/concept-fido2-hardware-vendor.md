@@ -1,6 +1,6 @@
 ---
-title: Prepare your FIDO2 security key for Microsoft Entra ID attestation (for vendors)
-description: Explains process to prepare FIDO2 hardware for Microsoft Entra ID attestation
+title: Microsoft Entra ID attestation for FIDO2 security key vendors
+description: Explains requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID
 ms.date: 03/20/2023
 ms.service: entra-id
 ms.subservice: authentication
@@ -9,11 +9,11 @@ ms.author: martinco
 ms.topic: conceptual
 ---
 
-# Prepare your FIDO2 security key for Microsoft Entra ID attestation (for vendors)
+# Microsoft Entra ID attestation for FIDO2 security key vendors
 
 FIDO2 security keys enable phishing-resistant authentication. They can replace weak credentials with strong hardware-backed public/private-key credentials that can't be reused, replayed, or shared across services. Security keys support shared device scenarios, allowing you to carry your credential with you and safely authenticate on any supported device.
 
-In Microsoft Entra ID authentication methods policy, admins have the option to enforce attestation for FIDO2 security keys. When **Enforce attestation** is set to **Yes**, Microsoft requires additional metadata from FIDO2 security keys that are being registered with the tenant. As a vendor, your FIDO2 security key can become approved for Microsoft Entra ID attestation through the following process.
+In Microsoft Entra ID authentication methods policy, admins have the option to enforce attestation for FIDO2 security keys. When **Enforce attestation** is set to **Yes**, Microsoft requires additional metadata from FIDO2 security keys that are being registered with the tenant. As a vendor, your FIDO2 security key will be usable when attestation is enforced, if the following requirements are met.
 
 >[!NOTE]
 >Entra ID does not support third-party passkey providers on computers and mobile devices yet.
@@ -22,27 +22,25 @@ In Microsoft Entra ID authentication methods policy, admins have the option to e
 
 Microsoft relies on the FIDO metadata service (MDS) to determine security key compatibility with Windows, Microsoft Edge browser, and online Microsoft accounts. Data in the FIDO MDS is self-reported by vendors.
 
-As a vendor, your FIDO2 security key can become approved for Microsoft Entra ID attestation by meeting the following requirements:
-- Your authenticator needs to have a FIDO2 certification. This can be at 'any' level. To learn more about the certification, visit the [FIDO Alliance Certification Overview website](https://fidoalliance.org/certification/). 
-- Your product metadata has been uploaded to the FIDO Alliances backend metadata services (MDS) and you have verified your metadata is in the MDS. The metadata must indicate that your authenticator supports: 
-  - FIDO 2.0 or FIDO 2.1. Entra ID does not support single factor UAF/U2F. 
-  - User verification or client PIN. Entra ID requires user verification with biometrics or PIN for all FIDO2 authentication attempts.
-    Resident keys. The private key is stored on the security key.
-  - HMAC secret extension. This is required for using a security key to unlock Windows in offline scenarios.
-
-Microsoft ingests the latest version of FIDO MDS every month, so expect a maximum 4-week delay from the time that your FIDO2 security key appears in FIDO MDS to when Microsoft recognizes the key model. If your key is approved by Microsoft, it will be listed in the section below titled **FIDO2 security keys approved for attestation in Microsoft Entra ID**.
-
-## Attestation format
-
-During FIDO2 registration, Microsoft Entra ID requires security keys to provide the following:
+During FIDO2 registration, Microsoft Entra ID requires security keys to provide a 'packed' attestation statement. The specific requirements vary based on admin configuration in the FIDO2 authentication methods policy:
 
 | Enforce attestation set to Yes | Enforce attestation set to No |
 |--------------------------------|-------------------------------|
-|It must provide a valid 'packed' attestation statement and a complete certificate that chains back to the attestation roots extracted from the FIDO MDS, so that Microsoft can validate the key's metadata. |It must provide a valid 'packed' attestation statement (but Microsoft will ignore attestation verification results) and a complete certificate (which doesn’t need to be associated with a particular certificate chain). |
+|It must provide a valid 'packed' attestation statement and a complete certificate that chains back to the attestation roots extracted from the FIDO MDS, so that Microsoft can validate the key's metadata.|It must provide a valid 'packed' attestation statement (but Microsoft will ignore attestation verification results) and a complete certificate (which doesn’t need to be associated with a particular certificate chain). |
 
-## Attestation-approved FIDO2 security keys for Microsoft Entra ID
+Additionally, if attestation is enforced, the following requirements apply:
+- Your authenticator needs to have a FIDO2 certification. This can be at 'any' level. To learn more about the certification, visit the [FIDO Alliance Certification Overview website](https://fidoalliance.org/certification/). 
+- Your product metadata has been uploaded to the FIDO Alliances backend metadata services (MDS) and you have verified your metadata is in the MDS. The metadata must indicate that your authenticator supports: 
+  - FIDO 2.0 or FIDO 2.1. Entra ID does not support single factor UAF/U2F. 
+  - User verification or client PIN - Entra ID requires user verification with biometrics or PIN for all FIDO2 authentication attempts.
+  - Resident keys - The private key is stored on the security key.
+  - HMAC secret extension - This is required for using a security key to unlock Windows in offline scenarios.
 
-The following table lists FIDO2 security key models that have been approved for Microsoft Entra ID attestation. The last column indicates whether the model meets the latest [attestation requirements](#attestation-requirements) documented above. Models that are listed below but don't meet Microsoft's latest attestation requirements are still approved for attestation.
+Microsoft ingests the latest version of FIDO MDS every month, so there may be a maximum 4-week delay from the time that your FIDO2 security key appears in FIDO MDS to when Microsoft recognizes the key model. If your key meets Micrsoft's attestation requirements, it will be listed in the section below.
+
+## FIDO2 security keys eligible for attestation with Microsoft Entra ID
+
+The following table lists FIDO2 security key models that are currently eligible for attestation with Microsoft Entra ID. The **Meets requirements** column indicates whether the model meets the latest [attestation requirements](#attestation-requirements) published above. Models that are listed in the table but don't meet Microsoft's latest requirements are still usable when attestation is enforced by the admin.
 
 *Last updated: March 20, 2024*
 
