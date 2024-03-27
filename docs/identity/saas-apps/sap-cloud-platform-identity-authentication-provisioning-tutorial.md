@@ -49,7 +49,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Set up SAP Cloud Identity Services for provisioning
 
-1. Sign in to your SAP Cloud Identity Services Admin Console, **https://*accounts.ondemand.com/admin**. Navigate to **Users & Authorizations > Administrators**.
+1. Sign in to your SAP Cloud Identity Services Admin Console, `https://<tenantID>.accounts.ondemand.com/admin` or `https://<tenantID>.trial-accounts.ondemand.com/admin` if a trial. Navigate to **Users & Authorizations > Administrators**.
 
 	![Screenshot of the SAP Cloud Identity Services Admin Console.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/adminconsole.png)
 
@@ -58,7 +58,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 	> [!NOTE]
 	> The administrator identity in SAP Cloud Identity Services must be of type **System**. An administrator user will not be able to authenticate to the SAP SCIM API when provisioning.  SAP Cloud Identity Services does not allow the name of a system to be changed after it is created.
 
-1. Under Configure Authorizations, switch on the toggle button against **Manage Users**.  Then click **Save** to create the system.
+1. Under Configure Authorizations, switch on the toggle button against **Manage Users**. Then click **Save** to create the system.
 
 	![Screenshot of the SAP Cloud Identity Services Add SCIM.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/configurationauth.png)
 
@@ -104,7 +104,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input `https://<tenantID>.accounts.ondemand.com/service/scim` with the tenant ID of your SAP Cloud Identity Services in **Tenant URL**. Input the **Client ID** and **Client Secret** values retrieved earlier in **Admin Username** and **Admin Password** respectively. Click **Test Connection** to ensure Microsoft Entra ID can connect to SAP Cloud Identity Services. If the connection fails, ensure your SAP Cloud Identity Services system account has Admin permissions, the secret is still valid, and try again.
+1. Under the **Admin Credentials** section, input `https://<tenantID>.accounts.ondemand.com/service/scim`, or `https://<tenantid>.trial-accounts.ondemand.com/service/scim` if a trial, with the tenant ID of your SAP Cloud Identity Services in **Tenant URL**. Input the **Client ID** and **Client Secret** values retrieved earlier in **Admin Username** and **Admin Password** respectively. Click **Test Connection** to ensure Microsoft Entra ID can connect to SAP Cloud Identity Services. If the connection fails, ensure your SAP Cloud Identity Services system account has Admin permissions, the secret is still valid, and try again.
 
 	![Screenshot of the Tenant URL and Token.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/testconnection.png)
 
@@ -118,7 +118,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the SAP Cloud Identity Services User Mappings.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/mapping.png)
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to SAP Cloud Identity Services in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in SAP Cloud Identity Services for update operations. Ensure that any users already in SAP Cloud Identity Services already have the matching attributes, otherwise duplicate users may be created.  Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to SAP Cloud Identity Services in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in SAP Cloud Identity Services for update operations. Ensure that any users already in SAP Cloud Identity Services already have the matching attributes, otherwise duplicate users may be created. Select the **Save** button to commit any changes.
 
 	|Attribute|Type|Supported for filtering|Required by SAP Cloud Identity Services|
 	|---|---|---|---|
