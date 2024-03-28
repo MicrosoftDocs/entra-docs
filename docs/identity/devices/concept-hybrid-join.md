@@ -5,6 +5,7 @@ description: Learn how device identity management can help you to manage devices
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.date: 02/26/2024
 
 ms.author: joflore
