@@ -80,7 +80,7 @@ If you want to move to `did:web` from `did:ion`, you can follow these steps via 
 #### Export existing did:ion credential definitions
 
 1. For the `did:ion` authority, use the [portal](https://entra.microsoft.com/#view/Microsoft_AAD_DecentralizedIdentity/CardsListBlade) to copy out all display and rules definition of the existing credentials. 
-1. If you have more than one authority, you have to use the Admin APIs if the `did:ion` authority isn't the default authority. On the Verified ID tenant, connect using Admin API,  [list the authorities](admin-api.md#list-authorities) to get the authority id for the `did:ion` authority. Then use the [list contracts](admin-api.md#list-contracts) API to export them and save the result to a file so you can recreate them.
+1. If you have more than one authority, you have to use the Admin APIs if the `did:ion` authority isn't the default authority. On the Verified ID tenant, connect using Admin API,  [list the authorities](admin-api.md#list-authorities) to get the authority ID for the `did:ion` authority. Then use the [list contracts](admin-api.md#list-contracts) API to export them and save the result to a file so you can recreate them.
 
 #### Creating new did:web authority
 
