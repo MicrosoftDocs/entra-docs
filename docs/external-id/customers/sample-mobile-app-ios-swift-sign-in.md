@@ -52,7 +52,9 @@ In this article, you do the following tasks:
 
 [!INCLUDE [Enable public client](../customers/includes/register-app/enable-public-client-flow.md)]
 
-## Grant API permissions
+## Delegated permission to Microsoft Graph
+
+Configure delegated permission to Microsoft Graph to enable your client application to perform operations on behalf of the logged-in user, for example reading their email or modifying their profile. By default, users of your client app are asked when they sign in to consent to the delegated permissions you've configured for it.
 
 [!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-native-authentication-api-permission.md)]
 
@@ -64,6 +66,8 @@ Once you've registered both your client app and web API and you've exposed the A
 
 ## Clone sample iOS mobile application
 
+To obtain the sample application, clone the sample by following these steps:
+
 1. Open Terminal and navigate to a directory where you want to keep the code.  
 1. Clone the application from GitHub by running the following command:  
 
@@ -72,6 +76,8 @@ Once you've registered both your client app and web API and you've exposed the A
    ```
 
 ## Configure the sample iOS mobile application
+
+To enable authentication and access to web API resources, configure the sample by following these steps:
 
 1. In Xcode, open the project that you cloned.
 1. Open */MSALiOS/Configuration.swift* file.
