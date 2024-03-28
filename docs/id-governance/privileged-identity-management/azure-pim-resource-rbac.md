@@ -56,7 +56,7 @@ You may have a compliance requirement where you must provide a complete list of 
 
 1. Select **Export** to open the Export membership pane.
 
-    :::image type="content" source="media/azure-pim-resource-rbac/export-membership.png " " alt-text="Screenshot showing the export membership pane to export all members.":::
+    :::image type="content" source="media/azure-pim-resource-rbac/export-membership.png " alt-text="Screenshot showing the export membership pane to export all members.":::
 
 1. Select **Export all members** to export all role assignments in a CSV file.
 
@@ -79,8 +79,7 @@ Resource audit gives you a view of all role activity for a resource.
     :::image type="content" source="media/azure-pim-resource-rbac/rbac-resource-audit.png " alt-text="Resource audit list with filters.":::
 1. For **Audit type**, select **Activate (Assigned + Activated)**.
 
-    [:::image type="content" source="media/azure-pim-resource-rbac/rbac-audit-activity.png "Resource audit list filtered by Activate"" alt-text="Resource audit list filtered by Activate audit type":::](media/azure-pim-resource-rbac/rbac-audit-activity.png)
-    :::image type="content" source="media/azure-pim-resource-rbac/rbac-audit-activity.png" alt-text="Resource audit list that is filtered by Activate audit type":::
+    :::image type="content" source="media/azure-pim-resource-rbac/rbac-audit-activity.png" alt-text="Resource audit list filtered by Activate audit type":::
 
 1. Under **Action**, select **(activity)** for a user to see that user's activity detail in Azure resources.
 
@@ -100,7 +99,7 @@ My audit enables you to view your personal role activity.
 
 1. Filter the history using a predefined date or custom range.
 
-    [:::image type="content" source="media/azure-pim-resource-rbac/my-audit-time.png "Audit list for the current user"" alt-text="Audit list for the current user":::](media/azure-pim-resource-rbac/my-audit-time.png)
+    :::image type="content" source="media/azure-pim-resource-rbac/my-audit-time.png" alt-text="Audit list for the current user":::
 
 > [!NOTE]
 > Access to audit history requires either a Global Administrator or Privileged Role Administrator role.
