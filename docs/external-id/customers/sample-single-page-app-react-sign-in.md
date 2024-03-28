@@ -59,13 +59,13 @@ If you choose to download the `.zip` file, extract the sample app file to a fold
 
 1. Open a terminal window in the root directory of the sample project, and enter the following snippet to navigate to the project folder:
 
-    ```powershell
+    ```console
     cd 1-Authentication\1-sign-in-react\SPA
     ```
 
 1. Install the project dependencies:
 
-    ```powershell
+    ```console
     npm install
     ```
 
