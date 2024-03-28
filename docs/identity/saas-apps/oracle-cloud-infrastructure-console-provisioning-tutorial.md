@@ -11,6 +11,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 02/02/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Oracle Cloud Infrastructure Console so that I can streamline the user management process and ensure that users have the appropriate access to Oracle Cloud Infrastructure Console.
 ---
 
 # Tutorial: Configure Oracle Cloud Infrastructure Console for automatic user provisioning
