@@ -132,7 +132,6 @@ procedureSection:
       - |  
         Choose **Select**.
         
-        **Direct your B2B guests to the user flow**
       
         Now that the application is associated with the user flow, your B2B
         guests will be directed to this user flow for authentication whenever
