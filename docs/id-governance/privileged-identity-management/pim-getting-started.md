@@ -60,7 +60,7 @@ Here are the tasks we recommend for you to prepare Privileged Identity Managemen
 
 Once Privileged Identity Management is set up, you can learn your way around.
 
-![Navigation window in Privileged Identity Management showing Tasks and Manage options](./media/pim-getting-started/pim-quickstart-tasks.png)
+:::image type="content" source="./media/pim-getting-started/pim-quickstart-tasks.png" alt-text="Screenshot showing the navigation window in Privileged Identity Management showing Tasks and Manage options.":::
 
 | Task + Manage | Description |
 | --- | --- |

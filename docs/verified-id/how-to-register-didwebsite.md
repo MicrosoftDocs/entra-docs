@@ -32,10 +32,10 @@ For the web trust system, you need to register your DID to be able to issue and 
 1. On the leftmost menu, select **Setup**.
 1. On the middle menu, under **Register decentralized ID**, select **Update**.
 
-   ![Screenshot that shows the website registration page.](media/how-to-register-didwebsite/how-to-register-didwebsite-domain.png)
+   :::image type="content" source="media/how-to-register-didwebsite/how-to-register-didwebsite-domain.png" alt-text="Screenshot that shows the website registration page.":::
 1. Copy or download the DID document that appears in the box.
 
-   ![Screenshot that shows did.json.](media/how-to-register-didwebsite/how-to-register-didwebsite-diddoc.png)
+   :::image type="content" source="media/how-to-register-didwebsite/how-to-register-didwebsite-diddoc.png" alt-text="Screenshot that shows did.json.":::
 1. Upload the file to your web server. The DID document JSON file must be uploaded to `/.well-known/did.json` on your web server.
 1. After the file is available on your web server, you need to select **Refresh registration status** to verify that the system can request the file.
 

@@ -4,7 +4,7 @@ description: Definitions of terms commonly found in Microsoft identity platform 
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.date: 03/15/2023
+ms.date: 03/20/2024
 ms.reviewer:
 ms.service: identity-platform
 
