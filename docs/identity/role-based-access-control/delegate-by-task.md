@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 03/13/2024
+ms.date: 03/28/2024
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
@@ -79,7 +79,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Passthrough authentication | [Global Administrator](permissions-reference.md#global-administrator) |  |
-> | Read all configuration | [Global Reader](permissions-reference.md#global-reader) | [Global Administrator](permissions-reference.md#global-administrator) |
+> | Read all configuration | [Global Reader](permissions-reference.md#global-reader) |  |
 > | Seamless single sign-on | [Global Administrator](permissions-reference.md#global-administrator) |  |
 
 ## Cloud Provisioning
@@ -355,12 +355,11 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Read all configuration | [Security Reader](permissions-reference.md#security-reader) |  |
 > | Read users flagged for risk | [Security Reader](permissions-reference.md#security-reader) |  |
 
-## Temporary Access Pass 
+## Temporary Access Pass
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Create, delete, or view a Temporary Access Pass for any user (except themselves) and can configure and manage authentication method policy | [Global Administrator](permissions-reference.md#global-administrator) |  |
 > | Create, delete, or view a Temporary Access Pass for admins or members (except themselves) | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |  |
 > | Create, delete, or view a Temporary Access Pass for members (except themselves) | [Authentication Administrator](permissions-reference.md#authentication-administrator) |  |
 > | View a Temporary Access Pass details for a user (without reading the code itself) | [Global Reader](permissions-reference.md#global-reader) |  |
@@ -371,7 +370,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Create Microsoft Entra ID or Azure AD B2C Tenant | [Tenant Creator](permissions-reference.md#tenant-creator) |  [Global Administrator](permissions-reference.md#global-administrator) |
+> | Create Microsoft Entra ID or Azure AD B2C Tenant | [Tenant Creator](permissions-reference.md#tenant-creator) |  |
 
 ## Users
 
@@ -382,7 +381,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Add user to group | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Assign license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Create guest user | [Guest Inviter](permissions-reference.md#guest-inviter) | [User Administrator](permissions-reference.md#user-administrator) |
-> | Reset guest user invite | [User Administrator](permissions-reference.md#user-administrator) | [Global Administrator](permissions-reference.md#global-administrator) |
+> | Reset guest user invite | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Create user | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Delete users | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Invalidate refresh tokens of limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |
@@ -398,7 +397,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Update User Principal Name property on privileged admins | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |  |
 > | Update user settings - Default user role permissions | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |
 > | Update user settings - Guest user access | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |
-> | Update Authentication methods | [Authentication Administrator](permissions-reference.md#authentication-administrator) | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator)<br/>[Global Administrator](permissions-reference.md#global-administrator) |
+> | Update Authentication methods | [Authentication Administrator](permissions-reference.md#authentication-administrator) | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |
 
 ## Support
 
