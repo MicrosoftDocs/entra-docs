@@ -271,6 +271,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/howto-call-a-web-api-with-postman.md",
+      "redirect_url": "/entra/identity-platform/howto-call-a-web-api-with-curl",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/web-app-tutorial-01-register-application.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-register-app",
       "redirect_document_id": false
@@ -384,6 +389,11 @@
     {
       "source_path_from_root": "/docs/permissions-management/how-to-notifications-rule.md",
       "redirect_url": "/entra/permissions-management/ui-autopilot",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/hybrid/connect/reference-connect-dirsync-deprecated.md",
+      "redirect_url": "/entra/identity/hybrid/connect/whatis-azure-ad-connect-v2",
       "redirect_document_id": false
     },
     {

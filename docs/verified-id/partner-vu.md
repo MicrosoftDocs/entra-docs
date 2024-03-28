@@ -76,7 +76,7 @@ As a developer you can share these steps with your tenant administrator to obtai
 4. Look for **VUSecurity** in the Search/select issuers
    drop-down.
 
-   [ ![Screenshot of the portal section used to choose issuers.](./media/partner-vu/select-issuers.png)](./media/partner-vu/select-issuers.png#lightbox)
+   :::image type="content" source="./media/partner-vu/select-issuers.png" alt-text="Screenshot of the portal section used to choose issuers.":::
 
 5. Check the **VUIdentityCard** credential with the attributes
    such as firstname, lastname, number, country/region, gender, birth-date, and nationality or any other credential type.
