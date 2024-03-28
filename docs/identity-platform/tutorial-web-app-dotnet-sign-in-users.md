@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.date: 01/18/2024
-ms.service: identity-platforms
+ms.service: identity-platform
 
 ms.topic: tutorial
 #Customer intent: As an application developer, I want to install the NuGet packages necessary for authentication in my IDE, and implement authentication in my web app.
