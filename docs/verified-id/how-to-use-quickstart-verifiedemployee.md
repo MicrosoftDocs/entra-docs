@@ -68,7 +68,7 @@ If [https://aka.ms/mfasetup](https://aka.ms/mfasetup) launches without prompting
 
 When you select + Add credential in the portal, you get the option to launch two Quickstarts. Select **Verified employee** and select Next. 
 
-:::image type="content" source="media/how-to-use-quickstart-verifiedemployee/verifiable-credentials-configure-verifiedemployee-quickstart.png" alt-text="Screenshot of the quickstart start screen":::
+:::image type="content" source="media/how-to-use-quickstart-verifiedemployee/verifiable-credentials-configure-verifiedemployee-quickstart.png" alt-text="Screenshot of the quickstart start screen.":::
 
 In the next screen, you enter some of the Display definitions, like logo url, text and background color. Since the credential is a managed credential with directory based claims, rules definitions are predefined and can't be changed. You don't need to enter rule definition details. The credential type will be **VerifiedEmployee** and the claims from the user’s profile are pre-set. Select Create to create the credential.
 

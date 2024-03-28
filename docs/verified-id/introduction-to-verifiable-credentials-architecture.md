@@ -170,7 +170,7 @@ Woodgrove negotiates a product purchase discount with Proseware. All Woodgrove e
 
 With decentralized identifiers, Woodgrove can provide Alice with a verifiable credential (VC) that Alice can use to access Proseware’s website and other external resources.
 
-:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/external-resources.png" alt-text="Accessing resources outside of the trust boundary":::
+:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/external-resources.png" alt-text="Diagram showing how accessing resources outside of the trust boundary works.":::
 
 By providing Alice the VC, Woodgrove is attesting that Alice is an employee. Woodgrove is a trusted VC issuer in Proseware’s validation solution. This trust in Woodgrove’s issuance process allows Proseware to electronically accept the VC as proof that Alice is a Woodgrove employee and provide Alice the discount. As part of validation of the VC Alice presents, Proseware checks the validity of the VC by using the trust system. In this solution:
 
@@ -197,13 +197,13 @@ In decentralized identity architectures, the issuer, user, and relying party (RP
 For example: When VC holders need to access a resource, they must present the VC to that relying party. They do so by using a wallet application to read the RP’s request to present a VC. As a part of reading the request, the wallet application uses the RP’s DID to find the RP’s public keys using the trust system, validating that the request to present the VC hasn't been tampered with. To prove domain ownership, the wallet also checks that the DID is being referenced in a metadata document hosted in the DNS domain of the RP.
 
 
-:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/how-decentralized-works.png" alt-text="How a decentralized identity system works":::
+:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/how-decentralized-works.png" alt-text="Diagram showing how a decentralized identity system works.":::
 
 ### Flow 1: Verifiable credential issuance
 
 In this flow, the credential holder interacts with the issuer to request a verifiable credential as illustrated in the following diagram
 
-:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/issuance.png" alt-text="Verifiable credential issuance":::
+:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/issuance.png" alt-text="Diagram showing the verifiable credential issuance flow.":::
 
 1. The holder starts the flow by using a browser or native application to access the issuer’s web frontend. There, the issuer website drives the user to collect data and executes issuer-specific logic to determine whether the credential can be issued, and its content.
 

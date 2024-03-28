@@ -1,6 +1,6 @@
 ---
 title: Plan your Microsoft Entra Verified ID verification solution 
-description: Learn foundational information to plan and design your verification solution
+description: Learn foundational information to plan and design your verification solution.
 documentationCenter: ''
 author: barclayn
 manager: martinco
@@ -43,7 +43,7 @@ In the context of a verifier solution, the Microsoft Entra Verified ID service i
 
 ### Microsoft Entra tenant 
 
-The service requires a Microsoft Entra tenant that provides an Identity and Access Management (IAM) control plane for the Azure resources that are part of the solution. Each Microsoft Entra tenant uses the multitenant Microsoft Entra Verified ID service, and it issues a single DID document representing the verifier. If you have multiple relying parties using your verification service, they all use the same verifier DID. The verifier DID provides pointers to the public key that allows subjects and issuers to validate messages that come from the relying party.
+The service requires a Microsoft Entra tenant that provides an Identity and Access Management (IAM) control plane for the Azure resources that are part of the solution. Each Microsoft Entra tenant uses the multi-tenant Microsoft Entra Verified ID service, and it issues a single DID document representing the verifier. If you have multiple relying parties using your verification service, they all use the same verifier DID. The verifier DID provides pointers to the public key that allows subjects and issuers to validate messages that come from the relying party.
 
 
 ### Azure Key Vault
@@ -101,7 +101,7 @@ Verifiable credentials can be used to enable faster onboarding by replacing some
 
 **Target identity systems**: Organization-specific identity repositories that the onboarding portal needs to interact with while onboarding subjects. The systems to integrate are determined based on the kinds of identities you want to onboard with VC validation. Common scenarios of identity verification for onboarding include:
 
-* External Identities that Microsoft Entra ID onboard using APIs to issue business-to-business (B2B) invitations, or entitlement management assignment to packages. 
+* External Identities that Microsoft Entra ID onboards using APIs to issue business-to-business (B2B) invitations, or entitlement management assignment to packages. 
 
 * Employee identities, which in centralized identity systems are already onboarded through human resources (HR) systems. In this case, the identity verification might be integrated as part of existing stages of HR workflows. 
 
@@ -190,7 +190,8 @@ The decentralized nature of verifiable credentials enables this scenario without
 
 Verifiable credentials can be used as an approach to account recovery. For example, when a user needs to recover their account, they might access a website that requires them to present a VC and initiate a Microsoft Entra credential reset by calling MS Graph APIs as shown in the following diagram.
 
-Note: While the scenario we describe in this section is specific to recover Microsoft Entra accounts, this approach can also be used to recover accounts in other systems.
+> [!NOTE]
+> While the scenario we describe in this section is specific to recover Microsoft Entra accounts, this approach can also be used to recover accounts in other systems.
 
 :::image type="content" source="media/plan-verification-solution/plan-verification-solution-account-recovery.png" alt-text="Diagram of the components of a verification solution showing the account recovery scenario.":::
 

@@ -53,7 +53,7 @@ Each issuer has a single key set used for signing, updating, and recovery. This 
 
 * Display definitions determine how claims are displayed in the holder’s wallet and also includes branding and other elements. The Display definition can be localized into multiple languages. See [How to customize your verifiable credentials](~/verified-id/credential-design.md).
 
-* Rules are an issuer-defined model that describes the required inputs of a verifiable credential. Rules also defined trusted input sources, and the mapping of input claims to output claims stored in the VC. Depending on the type of attestation defined in the rules definition, the input claims can come from different providers. Input claims may come from an OIDC Identity Provider, from an id_token_hint or from self asserted claims during issuance via user input in the wallet.
+* Rules are an issuer-defined model that describes the required inputs of a verifiable credential. Rules also defined trusted input sources, and the mapping of input claims to output claims stored in the VC. Depending on the type of attestation defined in the rules definition, the input claims can come from different providers. Input claims may come from an OIDC Identity Provider, from an id_token_hint, or from self asserted claims during issuance via user input in the wallet.
 
    * **Input** – Are a subset of the model in the rules file for client consumption. The subset must describe the set of inputs, where to obtain the inputs and the endpoint to call to obtain a verifiable credential.
 
@@ -80,7 +80,7 @@ Microsoft Entra Verified ID currently supports Web as trust system [DID Web](htt
 
 ### Microsoft Authenticator application
 
-:::image type="content" source="media/plan-issuance-solution/plan-for-issuance-solution-authenticator.png" alt-text="Microsoft Authenticator application":::
+:::image type="content" source="media/plan-issuance-solution/plan-for-issuance-solution-authenticator.png" alt-text="Diagram showing Microsoft Authenticator as the wallet of the verifiable credential solution.":::
 
 Microsoft Authenticator is the mobile application. The Authenticator orchestrates the interactions between the user, the Microsoft Entra Verified ID service and the contract used to issue VCs. It acts as a digital wallet in which the holder of the VC stores the VC, including the private key of the subject of the VC. Authenticator is also the mechanism used to present VCs for verification.
 

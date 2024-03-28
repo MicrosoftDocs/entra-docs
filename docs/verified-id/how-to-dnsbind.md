@@ -33,13 +33,13 @@ The domain you verify ownership of to your DID is defined in the [overview secti
 
 1. Copy or download the `did-configuration.json` file.
 
-   :::image type="content" source="media/how-to-dnsbind/verify-download.png" alt-text="Screenshot that shows downloading the well-known config.":::
+   :::image type="content" source="media/how-to-dnsbind/verify-download.png" alt-text="Screenshot that shows downloading the well-known configuration.":::
 
 1. Host the `did-configuration.json` file at the location specified. For example, if you specified domain `https://www.example.com`, the file needs to be hosted at `https://www.example.com/.well-known/did-configuration.json`. There can be no other path in the URL except the `.well-known path` name.
 
 1. When `did-configuration.json` is publicly available at the `.well-known/did-configuration.json` URL, verify it by selecting **Refresh verification status**.
 
-   :::image type="content" source="media/how-to-dnsbind/verify-download-verified.png" alt-text="Screenshot that shows the verified well-known config.":::
+   :::image type="content" source="media/how-to-dnsbind/verify-download-verified.png" alt-text="Screenshot that shows the verified well-known configuration.":::
 
 1. Test out issuing or presenting with Microsoft Authenticator to validate. Make sure the **Warn about unsafe apps** setting in Authenticator is toggled on. The setting is on by default.
 
