@@ -71,7 +71,7 @@ The JSON payload to the [Request Service API](get-started-request-api.md?tabs=ht
 The claim containing the photo must be named and you may optionally specify your confidence threshold as an integer between 50-100. The default is 70.
 
 ```json
-POST https://verifiedid.did.msidentity.com/v1.0/verifiableCredentials/createPresentationRequest
+// POST https://verifiedid.did.msidentity.com/v1.0/verifiableCredentials/createPresentationRequest
 ...
   "requestedCredentials": [
     {
