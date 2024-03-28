@@ -381,7 +381,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Add user to group | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Assign license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Create guest user | [Guest Inviter](permissions-reference.md#guest-inviter) | [User Administrator](permissions-reference.md#user-administrator) |
-> | Reset guest user invite | [User Administrator](permissions-reference.md#user-administrator) |  |
+> | Reset guest user invite | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Create user | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Delete users | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Invalidate refresh tokens of limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |
