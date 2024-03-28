@@ -127,7 +127,7 @@ On your developer machine with Android Studio, do the following:
 You don’t need the walletlibrary folder and you can delete it if you like.
 1. Start Android Studio and open the parent folder of walletlibrarydemo
 
-    ![Screenshot of Android Studio.](media/using-wallet-library/androidstudio-screenshot.png)
+    :::image type="content" source="media/using-wallet-library/androidstudio-screenshot.png" alt-text="Screenshot of Android Studio.":::
 
 1. Select **Build** menu and then **Make Project**. This step takes some time. 
 1. Connect your Android test device via USB cable to your laptop
@@ -136,7 +136,7 @@ You don’t need the walletlibrary folder and you can delete it if you like.
 ## Issuing credentials using the Android sample
 1. Start the WalletLibraryDemo app
 
-    ![Screenshot of Create Request on Android.](media/using-wallet-library/android-create-request.png)
+    :::image type="content" source="media/using-wallet-library/android-create-request.png" alt-text="Screenshot of Create Request on Android.":::
 
 1. On your laptop, launch the public demo website [https://aka.ms/vcdemo](https://aka.ms/vcdemo) and do the following
     1. Enter your First Name and Last Name and press **Next**
@@ -149,24 +149,24 @@ You don’t need the walletlibrary folder and you can delete it if you like.
 1. Press **CREATE REQUEST** button
 1. When the app has downloaded the request, it shows a screen like below. Click on the white rectangle, which is a textbox, and enter the pin code that is displayed in the browser page. Then click the **COMPLETE** button.
 
-    ![Screenshot of Enter Pin Code on Android.](media/using-wallet-library/android-enter-pincode.png)
+    :::image type="content" source="media/using-wallet-library/android-enter-pincode.png" alt-text="Screenshot of Enter Pin Code on Android.":::
 
 1. Once issuance completes, the demo app displays the claims in the credential
 
-    ![Screenshot of Issuance Complete on Android.](media/using-wallet-library/android-issuance-complete.png)   
+    :::image type="content" source="media/using-wallet-library/android-issuance-complete.png" alt-text="Screenshot of Issuance Complete on Android.":::   
 
 ## Presenting credentials using the Android sample
 The sample app holds the issued credential in memory, so after issuance, you can use it for presentation.
 1. The WalletLibraryDemo app should display some credential details on the home screen if you have successfully issued a credential.
 
-    ![Screenshot of app with credential on Android.](media/using-wallet-library/android-have-credential.png)
+    :::image type="content" source="media/using-wallet-library/android-have-credential.png" alt-text="Screenshot of app with credential on Android.":::
 
 1. In the Woodgrove demo in the browser, click **Return to Woodgrove** if you haven’t done so already and continue with step 3 **Access personalized portal**.
 1. Scan the QR code with the QR Code Reader app on your test device, then copy the full URL to the clipboard.
 1. Switch back to the WalletLibraryDemo app and paste in the URL and click **CREATE REQUEST** button
 1. The app retrieves the presentation request and display the matching credentials you have in memory. In this case you only have one. **Click on it** so that the little check mark appears, then click the **COMPLETE** button to submit the presentation response
 
-    ![Screenshot of presenting credential on Android.](media/using-wallet-library/android-present-credential.png)   
+    :::image type="content" source="media/using-wallet-library/android-present-credential.png" alt-text="Screenshot of presenting credential on Android.":::   
  
 ## Building the iOS sample
 On your Mac developer machine with Xcode, do the following:
@@ -174,7 +174,7 @@ On your Mac developer machine with Xcode, do the following:
 1. Start Xcode and open the top level folder for the WalletLibrary
 1. Set focus on WalletLibraryDemo project
 
-    ![Screenshot of Xcode.](media/using-wallet-library/xcode-screenshot.png)  
+    :::image type="content" source="media/using-wallet-library/xcode-screenshot.png" alt-text="Screenshot of Xcode.":::  
 
 1. Change the Team ID to your [Apple Developer Team ID](https://developer.apple.com/help/account/manage-your-team/locate-your-team-id).
 1. Select Product menu and then **Build**. This step takes some time. 
@@ -185,7 +185,7 @@ On your Mac developer machine with Xcode, do the following:
 ## Issuing credentials using the iOS sample
 1. Start the WalletLibraryDemo app 
 
-    ![Screenshot of Create Request on iOS.](media/using-wallet-library/ios-create-request.png) 
+    :::image type="content" source="media/using-wallet-library/ios-create-request.png" alt-text="Screenshot of Create Request on iOS."::: 
  
 1. On your laptop, launch the public demo website [https://aka.ms/vcdemo](https://aka.ms/vcdemo) and do the following
     1. Enter your First Name and Last Name and press **Next**
@@ -198,24 +198,24 @@ On your Mac developer machine with Xcode, do the following:
 1. Press **Create Request** button
 1. When the app has downloaded the request, it shows a screen like below. Click on the **Add Pin** text to go to a screen where you can input the pin code, then click **Add** button to get back and finally click the **Complete** button.
 
-    ![Screenshot of Enter Pin Code on iOS.](media/using-wallet-library/ios-enter-pincode.png)
+    :::image type="content" source="media/using-wallet-library/ios-enter-pincode.png" alt-text="Screenshot of Enter Pin Code on iOS.":::
    
 1. Once issuance completes, the demo app displays the claims in the credential.
 
-    ![Screenshot of Issuance Complete on iOS.](media/using-wallet-library/ios-issuance-complete.png)   
+    :::image type="content" source="media/using-wallet-library/ios-issuance-complete.png" alt-text="Screenshot of Issuance Complete on iOS.":::   
 
 ## Presenting credentials using the iOS sample
 The sample app holds the issued credential in memory, so after issuance, you can use it for presentation.
 1. The WalletLibraryDemo app should display credential type name on the home screen if you have successfully issued a credential.
 
-    ![Screenshot of app with credential on iOS.](media/using-wallet-library/ios-have-credential.png)
+    :::image type="content" source="media/using-wallet-library/ios-have-credential.png" alt-text="Screenshot of app with credential on iOS.":::
  
 1. In the Woodgrove demo in the browser, click **Return to Woodgrove** if you haven’t done so already and continue with step 3 **Access personalized portal**.
 1. Scan the QR code with the QR Code Reader app on your test device, then copy the full URL to the clipboard.
 1. Switch back to the WalletLibraryDemo app, ***clear the previous request*** from the textbox, paste in the URL and click **Create Request** button
 1. The app retrieves the presentation request and display the matching credentials you have in memory. In this case you only have one. **Click on it** so that the little check mark switches from blue to green, then click the **Complete** button to submit the presentation response
 
-    ![Screenshot of presenting credential on iOS.](media/using-wallet-library/ios-present-credential.png)   
+    :::image type="content" source="media/using-wallet-library/ios-present-credential.png" alt-text="Screenshot of presenting credential on iOS.":::   
  
 ## Next steps
 

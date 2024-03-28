@@ -304,7 +304,7 @@ In the request body, supply a JSON representation of the following
 | -------- | -------- | -------- |
 | `name` | string | The display name of this instance of the service |
 | `linkedDomainUrl` | string | The domain linked to this DID |
-| `didMethod` | string | option `web` or `ion` |
+| `didMethod` | string | Must be `web` |
 | `keyVaultMetadata` | keyVaultMetadata | meta data for specific key vault |
 
 Example message:
@@ -467,21 +467,6 @@ Content-type: application/json
 "error": {
         "code": "deleteIssuerSuccessfulButKeyDeletionFailed",
         "message": "The organization has been opted out of the Verifiable Credentials, but the following keys could not be deleted. To keep your organization secure, delete keys that are not in use. https://kxxxxxx.vault.azure.net/keys/vcSigningKey-9daeexxxxx-0575-23dc-81be-5f6axxxxx/0dcc532adb9a4fcf9902f90xxxxx"
-    }
-}
-
-```
-
-Response message if trying to delete a did:web authority
-
-```
-HTTP/1.1 400 Bad Request
-Content-type: application/json
-
-{
-"error": {
-        "code": "didMethodNotSupported",
-        "message": "The specified DID method is not supported: web"
     }
 }
 
