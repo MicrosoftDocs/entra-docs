@@ -704,7 +704,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.                |
 | `username`          |    Yes   |   Email of the customer user such as *contoso-consumer@contoso.com*.  |
-| `challenge_type`    |   Yes  | A space-separated list of authorization [challenge type](#challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email one-time passcode sign in flow, the value is expected to contain `oob redirect`.|
+| `challenge_type`    |   Yes  | A space-separated list of authorization [challenge type](#challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email one-time passcode sign-in flow, the value is expected to contain `oob redirect`.|
 
 #### Success response
 
@@ -812,7 +812,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `continuation_token` | Yes | [Continuation token](#continuation-token) that Microsoft Entra returned from the previous request. |
-| `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email one-time passcode sign in flow, the value is expected to be `oob redirect`.|
+| `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email one-time passcode sign-in flow, the value is expected to be `oob redirect`.|
 
 #### Success response
 
