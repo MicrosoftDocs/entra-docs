@@ -1,11 +1,11 @@
 ---
 title: "Tutorial: Add sign in to an application"
-description: Add sign in to an ASP.NET Core application using Visual Studio.
+description: Learn how to install identity packages and sign-in components to an ASP.NET Core application and enable user authentication.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.date: 01/18/2024
-ms.service: identity-platform
+ms.service: identity-platforms
 
 ms.topic: tutorial
 #Customer intent: As an application developer, I want to install the NuGet packages necessary for authentication in my IDE, and implement authentication in my web app.
