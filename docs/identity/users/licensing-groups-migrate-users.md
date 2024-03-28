@@ -68,7 +68,7 @@ Here is what the migration process could look like:
 
 1. After confirming that both direct and group licenses are equivalent, you can start removing direct licenses from users. You can test this by removing them for individual users in the portal and then run automation scripts to have them removed in bulk. Here is an example of the same user with the direct licenses removed through the portal. Notice that the license state remains unchanged, but we no longer see direct assignments.
 
-   :::image type="content" source="./media/licensing-groups-migrate-users/direct-licenses-removed.png" alt-text="confirm that direct licenses are removed":::
+   :::image type="content" source="./media/licensing-groups-migrate-users/direct-licenses-removed.png" alt-text="Screenshot showing how to confirm that direct licenses are removed":::
 
 ## Next steps
 
