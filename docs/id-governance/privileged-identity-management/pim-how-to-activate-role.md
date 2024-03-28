@@ -37,23 +37,23 @@ When you need to assume a Microsoft Entra role, you can request activation by op
 
 1. Select **Microsoft Entra roles** to see a list of your eligible Microsoft Entra roles.
 
-    ![My roles page showing roles you can activate](./media/pim-how-to-activate-role/my-roles.png)
+    :::image type="content" source="./media/pim-how-to-activate-role/my-roles.png" alt-text="My roles page showing roles you can activate":::
 
 1. In the **Microsoft Entra roles** list, find the role you want to activate.
 
-    ![Microsoft Entra roles - My eligible roles list](./media/pim-how-to-activate-role/activate-link.png)
+    :::image type="content" source="./media/pim-how-to-activate-role/activate-link.png" alt-text="Microsoft Entra roles - My eligible roles list":::
 
 1. Select **Activate** to open the Activate pane.
 
-    ![Microsoft Entra roles - activation page contains duration and scope](./media/pim-how-to-activate-role/activate-page.png)
+    :::image type="content" source="./media/pim-how-to-activate-role/activate-page.png" alt-text="Microsoft Entra roles - activation page contains duration and scope":::
 
 1. Select **Additional verification required** and follow the instructions to provide security verification. You are required to authenticate only once per session.
 
-    ![Screen to provide security verification such as a PIN code](./media/pim-resource-roles-activate-your-roles/resources-mfa-enter-code.png)
+    :::image type="content" source="./media/pim-resource-roles-activate-your-roles/resources-mfa-enter-code.png" alt-text="Screen to provide security verification such as a PIN code":::
 
 1. After multifactor authentication, select **Activate before proceeding**.
 
-    ![Verify my identity with MFA before role activates](./media/pim-how-to-activate-role/activate-role-mfa-banner.png)
+    :::image type="content" source="./media/pim-how-to-activate-role/activate-role-mfa-banner.png" alt-text="Verify my identity with MFA before role activates":::
 
 1. If you want to specify a reduced scope, select **Scope** to open the filter pane. On the filter pane, you can specify the Microsoft Entra resources that you need access to. It's a best practice to request access to the fewest resources that you need.
 
@@ -65,7 +65,7 @@ When you need to assume a Microsoft Entra role, you can request activation by op
 
     If the [role requires approval](pim-resource-roles-approval-workflow.md) to activate, a notification appears in the upper right corner of your browser informing you the request is pending approval.
 
-    ![Activation request is pending approval notification](./media/pim-resource-roles-activate-your-roles/resources-my-roles-activate-notification.png)
+    :::image type="content" source="./media/pim-resource-roles-activate-your-roles/resources-my-roles-activate-notification.png" alt-text="Activation request is pending approval notification":::
 
 ## Activate a role using Microsoft Graph API
 
@@ -230,7 +230,7 @@ If you don't require activation of a role that requires approval, you can cancel
 
     When you select Cancel, the request is canceled. To activate the role again, you have to submit a new request for activation.
 
-   ![My request list with Cancel action highlighted](./media/pim-resource-roles-activate-your-roles/resources-my-requests-cancel.png)
+   :::image type="content" source="./media/pim-resource-roles-activate-your-roles/resources-my-requests-cancel.png" alt-text="My request list with Cancel action highlighted":::
 
 ## Deactivate a role assignment
 
