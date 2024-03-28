@@ -201,21 +201,21 @@ The center of the diagram depicts a resource group that contains a virtual machi
 A screenshot of the connectivity details has two sections highlighted. The first highlighted section under `localConfigurations` contains the details of the Global Secure Access gateway, which is your local network gateway.
 
 **Local Network Gateway 1**
-- Public IP address/endpoint: 20.x.x.76
+- Public IP address/endpoint: 120.x.x.76
 - ASN: 65476
-- BGP IP address/bgpAddress: 10.1.1.1
+- BGP IP address/bgpAddress: 192.168.1.1
 
 **Local Network Gateway 2**
 - Public IP address/endpoint: 4.x.x.193
 - ASN: 65476
-- BGP IP address/bgpAddress: 10.1.1.2
+- BGP IP address/bgpAddress: 192.168.1.2
 
 The second highlighted section under `peerConfiguration` contains the details of the virtual network gateway, which is your local router equipment.
 
 **Virtual Network Gateway**
 - Public IP address/endpoint: 20.x.x.1
 - ASN: 65533
-- BGP IP address/bgpAddress: 10.2.2.2
+- BGP IP address/bgpAddress: 10.1.1.1
 
 Another callout points to the virtual network you created in your resource group. The address space for the virtual network is 10.2.0.0/16. The Local BGP address and Peer BGP address can't be in the same address space.
 
