@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Sign up user with username and password, and collect user attributes  
  
-This tutorial demonstrates how to sign up a user with a username (email address), password, and user attributes. It uses one-time passcode (OTP) to validate the user's email address.
+This tutorial demonstrates how to sign up a user with a username (email address), password, and user attributes. It uses one-time passcode to validate the user's email address.
  
 In this tutorial, you learn how to:
 
@@ -79,13 +79,13 @@ Use these steps to initiate the sign-up flow:
      
     - The `signUp()` method takes the user attributes, username (email address) and password as parameters.
     
-    - In most common scenario, the `signUp(username,password,attributes)` returns a result, `SignUpResult.CodeRequired`, which indicates that app should submit the OTP codes sent to the user's emails address.
+    - In most common scenario, the `signUp(username,password,attributes)` returns a result, `SignUpResult.CodeRequired`, which indicates that app should submit the email one-time passcode sent to the user's emails address.
     
     - The `SignUpResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`.
     
     - The new state gives us access to two new methods:
-        - `submitCode(code)` submits the OTP code that the app collects from the user.
-        - `resendCode()` resends the OTP code if the user doesn't receive the code. 
+        - `submitCode(code)` submits the email one-time passcode that the app collects from the user.
+        - `resendCode()` resends the email one-time passcode if the user doesn't receive the code. 
     
     - The `signUp()` method can also return `SignUpResult.AttributesRequired` to indicate that the app needs to submit one or more required attributes before Microsoft Entra creates an account. These are the attributes that the administrator configured as mandatory in the Microsoft Entra admin center. The `signUp()` method can't return `SignUpResult.AttributesRequired` if the administrator doesn't specify a mandatory user attribute. Microsoft Entra doesn't explicitly request for optional user attributes. 
     

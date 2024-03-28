@@ -68,11 +68,11 @@ To sign in user using one-time passcode code you need to:
 
     - Use the SDK's `signIn(username)` method to start the sign-in flow. 
     - The method's parameter, `username` is then email address you collect from the user.
-    - In most common scenario, the `signIn(username)` returns a result, `SignInResult.CodeRequired`, which indicates that the SDK expects the app to submit the OTP code sent to the user's emails address.
+    - In most common scenario, the `signIn(username)` returns a result, `SignInResult.CodeRequired`, which indicates that the SDK expects the app to submit the email one-time passcode sent to the user's emails address.
     - The `SignInResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`. 
     - The new state gives us access to two new methods: 
-        - `submitCode()` submits the OTP code that the app collects from the user. 
-        - `resendCode()` resends the OTP code if the user doesn't receive the code. 
+        - `submitCode()` submits the email one-time passcode that the app collects from the user. 
+        - `resendCode()` resends the email one-time passcode if the user doesn't receive the code. 
 
 ### Handle sign-in errors
 
@@ -128,14 +128,14 @@ if (submitCodeActionResult is SignInResult.Complete) {
 - The `SubmitCodeError` error indicates an unsuccessful action result returned by `submitCode()` and so the action result doesn't include a reference to the new state.
 - The `isInvalidCode()` checks for the specific error. In this case, the previous state reference must be used to reperform the action. 
 
-To retrieve the new OTP code, use the following code snippet: 
+To retrieve the new email one-time passcode, use the following code snippet: 
 
    ```kotlin
    val submitCodeActionResult = nextState.submitCode(
        code = code
    )
    if (submitCodeActionResult is SignInError && submitCodeActionResult.isInvalidCode) {
-       // Inform the user that the submitted code was incorrect or invalid, then ask them to input a new OTP code
+       // Inform the user that the submitted code was incorrect or invalid, then ask them to input a new email one-time passcode
        val newCode = retrieveNewCode()
        nextState.submitCode(
            code = newCode

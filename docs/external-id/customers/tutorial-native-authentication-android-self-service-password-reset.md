@@ -30,16 +30,16 @@ In this tutorial, you learn how to:
 ## Prerequisites  
  
 - Complete the steps in [Sign in users in a sample native Android mobile application](how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings.  
-- [Enable self-service password reset](how-to-enable-password-reset-customers.md). This article enables you to enable the email one-time passcode (OTP) authentication method for all users in your tenant, which is a requirement for SSPR. 
+- [Enable self-service password reset](how-to-enable-password-reset-customers.md). This article enables you to enable the email one-time passcode authentication method for all users in your tenant, which is a requirement for SSPR. 
 - [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-android-sign-up.md). 
  
 ## Add self-service password reset flow
  
 To add SSPR flow to your Android application, you need a password reset user interface:  
  
-- A UI to submit user's email address (username).
-- A UI to submit one-time passcode (OTP).
-- A UI to submit new password.
+- An input text field to collect user's email address (username).
+- AAn input text field to collect one-time passcode.
+- An input text field to collect new password.
  
 When users forget their passwords, they need a form to input their usernames (email addresses) to start password reset flow. The user selects the **Forget Password** button or link.
 
@@ -72,18 +72,18 @@ To handle the request when the user selects the **Forget Password** button or li
     } 
    ``` 
 
-- `resetPassword(username)` method initiates password reset flow and an OTP code is sent to the user's emails address for verification.  
+- `resetPassword(username)` method initiates password reset flow and an email one-time passcode is sent to the user's emails address for verification.  
 - The return result of `resetPassword(username)` is either `ResetPasswordStartResult.CodeRequired` or `ResetPasswordError`.
-- If `resetPasswordResult is ResetPasswordStartResult.CodeRequired`, the app needs to collect the OTP code from the user and submits it as shown in [Submit OTP code](#submit-otp-code). 
+- If `resetPasswordResult is ResetPasswordStartResult.CodeRequired`, the app needs to collect the email one-time passcode from the user and submits it as shown in [Submit email one-time passcode](#submit-otp-code). 
 - If `resetPasswordResult is ResetPasswordError`, Android SDK provides utility methods to enable you to analyze the specific errors further: 
       - `isUserNotFound()` 
       - `isBrowserRequired()` 
 
 - These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available. Handle these errors as shown in [Handle errors](#handle-password-reset-errors) section.
  
-### Submit OTP code
+### Submit email one-time passcode
 
-Your app collects the OTP code from the user. To submit the OTP code, use the following code snippet:  
+Your app collects the email one-time passcode from the user. To submit the email one-time passcode, use the following code snippet:  
  
    ```kotlin 
    private suspend fun submitCode(currentState: ResetPasswordCodeRequiredState) { 
@@ -105,7 +105,7 @@ Your app collects the OTP code from the user. To submit the OTP code, use the fo
 
 - The return result of the `submitCode()` action is either `ResetPasswordSubmitCodeResult.PasswordRequired` or `SubmitCodeError`. 
 - If `submitCodeResult is ResetPasswordSubmitCodeResult.PasswordRequired` the app needs to collect a new password from the user and submit it as shown in [Submit a new password](#submit-a-new-password). 
-- If the user doesn't receive the OTP code in their email, the app can resend the OTP code. Use the following code snippet to resend a new OTP code:  
+- If the user doesn't receive the email one-time passcode in their email, the app can resend the email one-time passcode. Use the following code snippet to resend a new email one-time passcode:  
   
    ```kotlin 
    private fun resendCode() { 
@@ -220,7 +220,7 @@ A few expected errors might occur. For example, the user might attempt to reset 
 
 When errors occur, give your users a hint to the errors.
 
-These errors can happen at the start of password reset flow or at submit OTP code or at  submit password.  
+These errors can happen at the start of password reset flow or at submit email one-time passcode or at submit password.  
 
 
 ### Handle start password reset error
@@ -240,9 +240,9 @@ private fun handleResetPasswordError(error: ResetPasswordError) {
 }
 ```
 
-### Handle submit OTP code error
+### Handle submit email one-time passcode error
 
-To handle error caused by submitting OTP code, use the following code snippet:
+To handle error caused by submitting email one-time passcode, use the following code snippet:
 
 ```kotlin
 private fun handleSubmitCodeError(error: SubmitCodeError) {

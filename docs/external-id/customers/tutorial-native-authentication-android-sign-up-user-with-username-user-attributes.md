@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Sign up user with username and user attributes
 
-This tutorial demonstrates how to sign up a user by using email one-time passcode (OTP) and collect user attributes in your Android mobile app using native authentication. 
+This tutorial demonstrates how to sign up a user by using email one-time passcode and collect user attributes in your Android mobile app using native authentication. 
 
 In this tutorial, you learn how to:  
  
@@ -73,11 +73,11 @@ Use these steps to initiate the sign-up flow:
     ``` 
 
 - In the most common scenario, `signUp(username, attributes)` method returns `SignUpResult.CodeRequired`, which gives you access to `submitCode()` and `resendCode()` methods. 
-    - To complete the sign-up flow, use `submitCode(code)` method to submit the OTP code. 
-    - If needed, use the `resendCode()` method to resend the OTP code to the user's email address. 
+    - To complete the sign-up flow, use `submitCode(code)` method to submit the email one-time passcode. 
+    - If needed, use the `resendCode()` method to resend the email one-time passcode to the user's email address. 
 - `signUp(username, attributes)` method can also return:
     - `SignUpResult.Complete` to denote that  sign-up flow is successful.
-    - `SignUpResult.CodeRequired` to denote that the app needs to submit an OTP code.
+    - `SignUpResult.CodeRequired` to denote that the app needs to submit an email one-time passcode.
     - `SignUpResult.AttributesRequired` to indicate that the app needs to submit one or more required attributes before Microsoft Entra creates an account. These are the attributes that the administrator configured as mandatory in the Microsoft Entra admin center. Microsoft Entra does not explicitly request for optional user attributes.
     - `SignUpError` to denote that an error has occurred. 
 

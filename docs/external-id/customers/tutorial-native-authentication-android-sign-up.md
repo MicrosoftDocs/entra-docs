@@ -1,6 +1,6 @@
 ---
 title: Add sign-up with email one-time passcode in an Android app
-description: Learn how to add sign-up with email one-time passcode (OTP) in an Android mobile app using native authentication.
+description: Learn how to add sign-up with email one-time passcode in an Android mobile app using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 02/23/2024
 ms.custom: developer, devx-track-dotnet
 
-#Customer intent: As a dev, devops, I want to add sign-up with email one-time passcode (OTP) in my Android mobile app using native authentication.
+#Customer intent: As a dev, devops, I want to add sign-up with email one-time passcode in my Android mobile app using native authentication.
 ---
 
 # Tutorial: Add sign up with email one-time passcode in Android mobile app
 
-This tutorial demonstrates how to sign up a user using email one-time passcode (OTP) in your Android mobile app using native authentication. 
+This tutorial demonstrates how to sign up a user using email one-time passcode in your Android mobile app using native authentication. 
 
 In this tutorial, you learn how to: 
 
@@ -33,14 +33,14 @@ In this tutorial, you learn how to:
  
 ## Sign up a user
 
-To sign up a user using the email OTP authentication method, collect an email from the user, then send an email containing an OTP code to the user. Once the user enters a valid OTP code, the app completes the sign-up flow.
+To sign up a user using the email OTP authentication method, collect an email from the user, then send an email containing an email one-time passcode to the user. Once the user enters a valid email one-time passcode, the app completes the sign-up flow.
 
 To sign up a user by using email OTP, you need to: 
 
 1. Create your user interface (UI) that includes: 
 
    - A UI to collect an email from the user. Add validation to your UI to make sure the user enters a valid emails address.
-   - A UI to collect an OTP code from the user.
+   - A UI to collect an email one-time passcode from the user.
 
 1. In your app, add a button, whose select event triggers the following code snippet: 
 
@@ -63,15 +63,15 @@ To sign up a user by using email OTP, you need to:
 
     - Use the SDK's instance  method, `signUp(username)` to start the sign-up flow.
     - The method's parameter, `username` is then email address you collect from the user. 
-    - In most common scenario, the `signUp(username)` returns a result, `SignUpResult.CodeRequired`, which indicates that the SDK expects the app to submit the OTP codes sent to the user's emails address.
+    - In most common scenario, the `signUp(username)` returns a result, `SignUpResult.CodeRequired`, which indicates that the SDK expects the app to submit the email one-time passcode sent to the user's emails address.
     - The `SignUpResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`. 
     - The new state gives us access to two new methods: 
-        - `submitCode()` submits the OTP code that the app collects from the user. 
-        - `resendCode()` resends the OTP code if the user doesn't receive the code. 
+        - `submitCode()` submits the email one-time passcode that the app collects from the user. 
+        - `resendCode()` resends the email one-time passcode if the user doesn't receive the code. 
 
 ## Handle sign-up errors
 
-During sign-up, not all actions succeed. For instance, the user might attempt to sign up with an already used email address or submit an invalid OTP code. 
+During sign-up, not all actions succeed. For instance, the user might attempt to sign up with an already used email address or submit an invalid email one-time passcode. 
 
 ### Handle start sign-up error
 
@@ -105,7 +105,7 @@ To handle errors for the `signUp(username)` method, use the following code snipp
    
 You should notify the user that the email is already in use by using a friendly message in the app's UI.    
 
-### Handle submit OTP code error
+### Handle submit email one-time passcode error
 
 To handle errors for the  `submitCode()` method, use the following code snippet:
 
@@ -130,7 +130,7 @@ To handle errors for the  `submitCode()` method, use the following code snippet:
 
    - `submitCode()` can return `SubmitCodeError`. 
    - Use the `isInvalidCode()` method to check for the specific error, such as, the submitted code is invalid. In this case, the previous state reference must be used to reperform the action. 
-   - To retrieve a new OTP code, use the following code snippet: 
+   - To retrieve a new email one-time passcode, use the following code snippet: 
 
         ```kotlin
         val submitCodeActionResult = nextState.submitCode(
@@ -147,7 +147,7 @@ To handle errors for the  `submitCode()` method, use the following code snippet:
 
 Make sure you include the import statements. Android Studio should include the import statements for you automatically. 
 
-You've completed all the necessary steps to successfully sign up a user into your app. Build and run your application. If all good, you should be able to collect an email from a user, and collect the OTP code that the user receives in their email address and use it to successfully sign up the user. 
+You've completed all the necessary steps to successfully sign up a user into your app. Build and run your application. If all good, you should be able to collect an email from a user, and collect the email one-time passcode that the user receives in their email address and use it to successfully sign up the user. 
 
 ## Optional: Sign in after a sign-up flow
 

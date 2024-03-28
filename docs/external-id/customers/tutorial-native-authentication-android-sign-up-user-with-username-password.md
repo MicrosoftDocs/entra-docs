@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Sign up user with username and password in Android app by using native authentication  
  
-This tutorial demonstrates how to sign up a user with a username (email) and password in an Android app by using native authentication. It uses one-time passcode (OTP) to validate the user's email address.
+This tutorial demonstrates how to sign up a user with a username (email) and password in an Android app by using native authentication. It uses one-time passcode to validate the user's email address.
  
 In this tutorial, you learn how to:  
  
@@ -41,7 +41,7 @@ In this tutorial, you learn how to:
  
 - To sign up using username (email address) and password, we need to verify the user's email through email OTP. Also, the password that the app collects from the user need to meet [Microsoft Entra's password policies](/entra/identity/authentication/concept-password-ban-bad-combined-policy).
  
-- We use the `signUp(username, password)` method, which in the most common scenario returns `SignUpResult.CodeRequired`. This response indicates that Microsoft Entra expects that the app submits the OTP code sent to the user's email address for verification.
+- We use the `signUp(username, password)` method, which in the most common scenario returns `SignUpResult.CodeRequired`. This response indicates that Microsoft Entra expects that the app submits the email one-time passcode sent to the user's email address for verification.
  
 - To implement the `signUp(username, password)`, use the following code snippet:  
  
@@ -61,7 +61,7 @@ In this tutorial, you learn how to:
     - `submitCode()` 
     - `resendCode()` 
  
-- To submit the OTP code that the app collected from the user, use the following code snippet:  
+- To submit the email one-time passcode that the app collected from the user, use the following code snippet:  
  
     ```kotlin 
     val nextState = actionResult.nextState 
@@ -132,7 +132,7 @@ If `actionResult is SignUpError`, the SDK provides utility method for further an
     - `isBrowserRequired()` checks the need for a browser (web fallback), to complete authentication flow. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For examples, an admin configures email and password as the authentication method, but the app fails to send *password* as a challenge type or simply doesn't support it. Use the steps in [Support web fallback in Android app](tutorial-native-authentication-android-support-web-fallback.md) to handle scenario when it happens.
     - `isAuthNotSupported()` checks whether the app sends a challenge type that Microsoft Entra doesn't support, that's a challenge type value other than *oob* or *password*. Learn more about [challenge types](concept-native-authentication-challenge-types.md).
  
-- Use the following code snippet to check for errors when a user inputs an invalid OTP code:  
+- Use the following code snippet to check for errors when a user inputs an invalid email one-time passcode:  
  
     ```kotlin 
     val submitCodeActionResult = nextState.submitCode( 
@@ -145,14 +145,14 @@ If `actionResult is SignUpError`, the SDK provides utility method for further an
     } 
     ``` 
  
-- If a user enters an invalid OTP code, use the following code snippet to ask the user to reenter the correct OTP code:  
+- If a user enters an invalid email one-time passcode, use the following code snippet to ask the user to reenter the correct email one-time passcode:  
  
     ```kotlin 
     val submitCodeActionResult = nextState.submitCode( 
         code = code 
     ) 
     if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode()) { 
-        // Inform the user that the submitted OTP code is incorrect or invalid and ask them to reenter a correct OTP code 
+        // Inform the user that the submitted email one-time passcode is incorrect or invalid and ask them to reenter a correct email one-time passcode 
         val newCode = retrieveNewCode() 
         nextState.submitCode( 
             code = newCode 
