@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 03/13/2024
+ms.date: 03/28/2024
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
@@ -355,12 +355,11 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Read all configuration | [Security Reader](permissions-reference.md#security-reader) |  |
 > | Read users flagged for risk | [Security Reader](permissions-reference.md#security-reader) |  |
 
-## Temporary Access Pass 
+## Temporary Access Pass
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Create, delete, or view a Temporary Access Pass for any user (except themselves) and can configure and manage authentication method policy | [Global Administrator](permissions-reference.md#global-administrator) |  |
 > | Create, delete, or view a Temporary Access Pass for admins or members (except themselves) | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |  |
 > | Create, delete, or view a Temporary Access Pass for members (except themselves) | [Authentication Administrator](permissions-reference.md#authentication-administrator) |  |
 > | View a Temporary Access Pass details for a user (without reading the code itself) | [Global Reader](permissions-reference.md#global-reader) |  |
