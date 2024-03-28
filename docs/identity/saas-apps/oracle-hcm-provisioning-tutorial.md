@@ -47,7 +47,7 @@ provisioning. You'll learn how to:
 
 Before you start integrating Oracle HCM with Microsoft Entra ID using the Inbound Provisioning API, you need to ensure that you have the following prerequisites:
 
-- An [Oracle HCM (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/index.html) account with privileges to:
+- An [Oracle HCM (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/23c/oawpm/Human_Capital_Management_Integration_Specialist_job_roles.html#Human_Capital_Management_Integration_Specialist_job_roles) account with privileges to:
 
   - View and export HCM data.
   - Access the Oracle HCM REST APIs. For this tutorial, we
@@ -82,7 +82,7 @@ source system. This process includes new employees, updated employee data, or de
 | 3.  | Perform initial sync to send full scope of data to provisioning endpoint  | &#x2022; [Prepare for initial sync](#prepare-for-initial-sync) <br> &#x2022; [Perform CSV export and send data to API](#csv-export-for-initial-sync) <br> &#x2022; Validate that the right workers have been matched and are present in Microsoft Entra / AD | IT Admin |
 | 4.  | Perform delta syncs to keep data in Microsoft Entra ID up to date | Use one of these methods: <br> &#x2022; [Use CSV extracts](#option-2-use-csv-extracts) <br> &#x2022; [Use Atom Feed APIs](#option-1-use-the-oracle-atom-feed-apis) | IT Admin |
 | 5.  | Writeback data to Oracle HCM | &#x2022; [Configure and run writeback provisioning job](#writeback-from-microsoft-entra-id-to-oracle-hcm) | IT Admin |
-| 6.  | *Recommended*: Configure Microsoft Entra lifecycle workflows | &#x2022; [Automate your Joiner, Mover, Leaver processes using Microsoft Entra](~/id-governance/what-are-lifecycle-workflows.md) <br> &#x2022; [Governance license required](~/id-governance/identity-governance-overview.md)  |  IT Admin |
+| 6.  | *Recommended*: Configure Microsoft Entra lifecycle workflows | &#x2022; [Automate your Joiner, Mover, Leaver processes using Microsoft Entra](~/id-governance/what-are-lifecycle-workflows.md) <br>     &#x2022; [Governance license required](~/id-governance/identity-governance-overview.md)  |  IT Admin |
 
 ## Configure gallery application
 
@@ -92,13 +92,12 @@ Before you can configure the provisioning job in Microsoft Entra, you need to de
 
 Create and configure the gallery application **API-driven provisioning to Microsoft Entra ID** by following these steps: 
 
-1. [Create the gallery application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#create-your-api-driven-provisioning-app).
+1. [Create the gallery application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#create-your-api-driven-provisioning-app), then name the application **Oracle HCM Cloud to Entra ID provisioning**.
+
+   :::image type="content" border="true" source="./media/oracle-hcm-provisioning/api-driven-provisioning.png" alt-text="Diagram of API-driven provisioning to Microsoft Entra ID.":::
 
 1. [Configure the application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#configure-api-driven-inbound-provisioning-to-microsoft-entra-id).
 
-1. Name the application **Oracle HCM Cloud to Entra ID provisioning**.
-
-   :::image type="content" border="true" source="./media/oracle-hcm-provisioning/api-driven-provisioning.png" alt-text="Diagram of API-driven provisioning to Microsoft Entra ID.":::
 
 ### For hybrid users
 
@@ -106,9 +105,7 @@ Work with your Windows admin to install the provisioning agent on a domain-joine
 
 1. [Install the provisioning agent](~/identity/hybrid/cloud-sync/how-to-install.md).
 
-1. [Create the gallery application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#create-your-api-driven-provisioning-app).
-
-1. Name the application **Oracle HCM Cloud to on-premises Active Directory**.
+1. [Create the gallery application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#create-your-api-driven-provisioning-app), then name the application **Oracle HCM Cloud to on-premises Active Directory**.
 
    :::image type="content" border="true" source="./media/oracle-hcm-provisioning/api-driven-on-premises.png" alt-text="Diagram of API-driven provisioning to on-premises Active Directory.":::
 
@@ -119,7 +116,7 @@ Work with your Windows admin to install the provisioning agent on a domain-joine
 
 Before sending your initial sync payload, you need to make sure your data is prepared to properly sync with Microsoft Entra. The following steps help ensure a smooth integration.
 
-1. [Matching identifier](~/identity/app-provisioning/customize-application-attributes.md)
+1. [Matching identifier](~/identity/app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target--systems)
     presence and uniqueness: The provisioning service uses a matching
     attribute to uniquely identify and link worker records in your
     Oracle system with corresponding user accounts in AD / Microsoft Entra ID. The
@@ -168,7 +165,7 @@ HCM in CSV format, Oracle provides multiple options.
     You can generate reports in various formats. To use Oracle BI
     Publisher for outbound integrations, you generate reports in a
     format suitable for automatic downstream processing, such as XML or
-    CSV. To get started with creating your BI Publisher report, refer to [Define the BI Publisher Template in HCM Extracts (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/23c/fahex/define-the-bi-publisher-template-in-hcm-extracts.html#s20043805).
+    CSV. To get started with creating your BI Publisher report, refer to [Define the BI Publisher Template in HCM Extracts (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/fahex/define-the-bi-publisher-template-in-hcm-extracts.html#s20043805).
 
 - **Oracle Integration Cloud (OIC) Service**: If you have a subscription to
     OIC, you can configure the integration with the [Oracle HCM Adapter (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/hcm-adapter/understand-oracle-hcm-cloud-adapter.html#GUID-40A15882-F8D1-452E-9E9C-1B184616E1A8)
@@ -226,7 +223,7 @@ ATOM feeds immediately after your initial sync. A delay in this step can
 lead to loss of changes.
 
 To get started with Oracle's ATOM feeds, reference the
-[Oracle documentation (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/23d/farws/Working_with_Atom.html) and [tutorial (oracle.com)](https://docs.oracle.com/en/applications/fusion-apps/fusion-human-capital-management/hcmintegration/index.html#background). We recommend subscribing to the [Employee workspace (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Employee_Atom_Feeds.html) and applying these Atom Feed collections: newhire, empassignment,
+[Oracle documentation (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Working_with_Atom.html) and [tutorial (oracle.com)](https://docs.oracle.com/en/applications/fusion-apps/fusion-human-capital-management/hcmintegration/index.html#background). We recommend subscribing to the [Employee workspace (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Employee_Atom_Feeds.html) and applying these Atom Feed collections: newhire, empassignment,
 empupdate, termination, cancelworkrelship, and workrelshipupdate. 
 
 Once you've configured ATOM feeds in your HCM tenant, you'll need to
@@ -256,9 +253,7 @@ If required after getting the ATOM feed for joiner scenarios, query the [Workers
 
 To trigger Microsoft Entra Lifecycle Workflows for new hires, be sure to include the custom SCIM attribute for the employee’s hire date: `urn:ietf:params:scim:schemas:extension:COMPANYNAME:1.0:User:HireDate`.
 
-Use the Oracle HCM field *EffectiveStartDate* to set the value for the hire date.
-
-Refer to the [SCIM payload example](#scim-payload-example).
+Use the Oracle HCM field *EffectiveStartDate* to set the value for the hire date. Refer to the [SCIM payload example](#scim-payload-example).
 
 **Implement Mover Scenario**
 
@@ -274,9 +269,7 @@ Leaver scenarios occur when a worker’s employment with the organization is ter
 
 To trigger Lifecycle Workflows for leavers, be sure to include the custom SCIM attribute for the employee’s leave date: `urn:ietf:params:scim:schemas:extension:COMPANYAME:1.0:User:TermDate`
 
-Use the Oracle HCM field EffectiveDate to set the value for the termination date.
-
-Refer to the [SCIM payload example](#scim-payload-example).
+Use the Oracle HCM field *EffectiveDate* to set the value for the termination date. Refer to the [SCIM payload example](#scim-payload-example).
 
 ### SCIM payload example
 
@@ -379,7 +372,7 @@ extract:
   - Define data elements in an HCM extract using fast formula database items and rules.
 
     > [!NOTE]
-    > To get started with creating your HCM Extracts, refer to [Define Extracts (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/23c/fahex/define-extracts.html#s20034537).
+    > To get started with creating your HCM Extracts, refer to [Define Extracts (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/fahex/define-extracts.html#s20034537).
 
 - **Oracle BI Publisher**: Oracle BI Publisher supports both scheduled and
     unplanned reporting, based on either predefined Oracle Transactional
@@ -387,7 +380,7 @@ extract:
     You can generate reports in various formats. To use Oracle BI
     Publisher for outbound integrations, you generate reports in a
     format suitable for automatic downstream processing, such as XML or
-    CSV. To get started with creating your BI Publisher report, refer to [Define the BI Publisher Template in HCM Extracts (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/23c/fahex/define-the-bi-publisher-template-in-hcm-extracts.html#s20043805).
+    CSV. To get started with creating your BI Publisher report, refer to [Define the BI Publisher Template in HCM Extracts (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/fahex/define-the-bi-publisher-template-in-hcm-extracts.html#s20043805).
 
 - **Oracle Integration Cloud (OIC) service**: If you have a subscription to
     OIC, you can configure the integration with the [Oracle HCM Adapter (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/hcm-adapter/understand-oracle-hcm-cloud-adapter.html#GUID-40A15882-F8D1-452E-9E9C-1B184616E1A8)
