@@ -79,7 +79,7 @@ To handle the request when the user selects the **Forget Password** button or li
       - `isUserNotFound()` 
       - `isBrowserRequired()` 
 
-- These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available. Handle these errors as shown in [Handle errors](#handle-errors) section.
+- These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available. Handle these errors as shown in [Handle errors](#handle-password-reset-errors) section.
  
 ### Submit OTP code
 
@@ -136,7 +136,7 @@ Your app collects the OTP code from the user. To submit the OTP code, use the fo
     - `isInvalidCode()` 
     - `isBrowserRequired()` 
     
-    These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available. Handle these errors as shown in [Handle errors](#handle-errors) section.  
+    These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available. Handle these errors as shown in [Handle errors](#handle-password-reset-errors) section.  
 
 ### Submit a new password
  
@@ -168,7 +168,7 @@ private suspend fun resetPassword(currentState: ResetPasswordPasswordRequiredSta
       - `isInvalidPassword()`
       - `isPasswordResetFailed()`
 
-    These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available. Handle these errors as shown in [Handle errors](#handle-errors) section.
+    These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available. Handle these errors as shown in [Handle errors](#handle-password-reset-errors) section.
 
 
 ## Auto sign in after password reset 

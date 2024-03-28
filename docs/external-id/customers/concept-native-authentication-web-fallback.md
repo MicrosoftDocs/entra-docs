@@ -34,7 +34,7 @@ The client app uses challenge types to indicate its capabilities. Learn more abo
 
 ## Support web fallback 
 
-If Microsoft Entra's response indicates that the client app needs to fall back to the browser-delegated authentication, we recommend you use a [Microsoft-built and supported authentication library](../../reference-v2-libraries.md). Learn how to support web fallback in [Android tutorial](tutorial-native-authentication-android-support-web-fallback.md) and [iOS tutorials](tutorial-native-authentication-ios-support-web-fallback.md).
+If Microsoft Entra's response indicates that the client app needs to fall back to the browser-delegated authentication, we recommend you use a [Microsoft-built and supported authentication library](../../identity-platform/reference-v2-libraries.md). Learn how to support web fallback in [Android tutorial](tutorial-native-authentication-android-support-web-fallback.md) and [iOS tutorials](tutorial-native-authentication-ios-support-web-fallback.md).
 
 ## Related content
 
