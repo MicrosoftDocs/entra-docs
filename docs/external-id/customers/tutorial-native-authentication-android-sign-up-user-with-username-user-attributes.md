@@ -50,7 +50,7 @@ Use these steps to initiate the sign-up flow:
             //... 
     ``` 
      
-    Learn more about [MSAL Android SDK attribute builder](concept-native-authentication-user-attribute-builder.md?tabs=android-kotlin).
+    The method names in the `UserAttribute.Builder` class are same as the the programmable names of the user attributes that they build. Learn more about [Android SDK attribute builder](concept-native-authentication-user-attribute-builder.md?tabs=android-kotlin).
 
 - Use `signUp(username, attributes)` method to start sign-up with username and attributes flow: 
  
@@ -98,6 +98,10 @@ Use these steps to initiate the sign-up flow:
     }
     ```
     
+### User attributes submission scenarios 
+
+<TODO>
+
 ## Handle sign-up errors  
 
 - In the case of `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you analyze the specific errors further: 
