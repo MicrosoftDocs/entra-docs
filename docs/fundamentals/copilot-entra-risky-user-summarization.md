@@ -26,7 +26,7 @@ Respond to identity threats quickly:
 - Risk summary: summarize in natural language why the user risk level was elevated.
 - Recommendations: get guidance on how to mitigate and respond to these types of attacks, with quick links to help and documentation.
 
-This article describes how to access the risky user summary capability of Identity Protection and Copilot for Microsoft Entra.
+This article describes how to access the risky user summary capability of Identity Protection and Copilot for Microsoft Entra.  Using this feature requires [Microsoft Entra ID P2 licenses](/entra/id-protection/overview-identity-protection#license-requirements).
 
 ## Investigate risky users
 
