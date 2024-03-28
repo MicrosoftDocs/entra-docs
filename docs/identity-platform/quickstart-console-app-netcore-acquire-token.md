@@ -29,7 +29,11 @@ The application can be built using either an automatic or manual configuration.
 
 ## Register the application and record identifiers
 
+[!INCLUDE [Register a daemon in the Microsoft identity platform](includes/register-app/daemon-common/register-application-daemon-common.md)]
+
 ## Create a client secret
+
+[!INCLUDE [Create a client secret](includes/register-app/create-client-secret.md)]
 
 ## Clone or download the sample application
 
