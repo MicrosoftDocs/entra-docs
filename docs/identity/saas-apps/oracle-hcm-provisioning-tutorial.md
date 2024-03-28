@@ -33,7 +33,7 @@ provisioning. You'll learn how to:
 
 ## Terminology
 
-- [Oracle HCM Fusion Cloud](https://go.oracle.com/LP=139597?src1=:ad:pas:bi:dg:a_nas:l5:RC_MSFT220512P00060C01584:MainAd&gclid=9c09cb5c768b188a186aaea4b3735c3e&gclsrc=3p.ds&msclkid=9c09cb5c768b188a186aaea4b3735c3e): This guide focuses specifically on how to integrate from Oracle HCM Fusion Cloud to Microsoft Entra ID. Other Oracle offerings, such as PeopleSoft and Taleo, aren't in scope for this tutorial.
+- [Oracle HCM Fusion Cloud (oracle.com)](https://go.oracle.com/LP=139597?src1=:ad:pas:bi:dg:a_nas:l5:RC_MSFT220512P00060C01584:MainAd&gclid=9c09cb5c768b188a186aaea4b3735c3e&gclsrc=3p.ds&msclkid=9c09cb5c768b188a186aaea4b3735c3e): This guide focuses specifically on how to integrate from Oracle HCM Fusion Cloud to Microsoft Entra ID. Other Oracle offerings, such as PeopleSoft and Taleo, aren't in scope for this tutorial.
 
 - Licensing:
 
@@ -47,12 +47,12 @@ provisioning. You'll learn how to:
 
 Before you start integrating Oracle HCM with Microsoft Entra ID using the Inbound Provisioning API, you need to ensure that you have the following prerequisites:
 
-- An [Oracle HCM](https://docs.oracle.com/en/cloud/saas/human-resources/24a/index.html) account with privileges to:
+- An [Oracle HCM (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/index.html) account with privileges to:
 
   - View and export HCM data.
   - Access the Oracle HCM REST APIs. For this tutorial, we
-        referenced [Human Resources 24A](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/rest-endpoints.html).
-        and [Applications Common 24A](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/rest-endpoints.html).
+        referenced [Human Resources 24A (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/rest-endpoints.html).
+        and [Applications Common 24A (oracle.com)](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/rest-endpoints.html).
 
 - A Microsoft Entra ID tenant with a minimum P1 license (or EMS E3 / Microsoft 365 E3):
 
@@ -171,8 +171,8 @@ HCM in CSV format, Oracle provides multiple options.
     CSV. To get started with creating your BI Publisher report, refer to [Define the BI Publisher Template in HCM Extracts (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/23c/fahex/define-the-bi-publisher-template-in-hcm-extracts.html#s20043805).
 
 - **Oracle Integration Cloud (OIC) Service**: If you have a subscription to
-    OIC, you can configure the integration with the [Oracle HCM Adapter](https://docs.oracle.com/en/cloud/paas/integration-cloud/hcm-adapter/understand-oracle-hcm-cloud-adapter.html#GUID-40A15882-F8D1-452E-9E9C-1B184616E1A8)
-    to extract the required data from Oracle HCM. Oracle provides a [guide](https://docs.oracle.com/en/cloud/paas/integration-cloud/int-get-started/export-employee-data-oracle-hcm-cloud-identity-management-system.html#GUID-DE0A58BC-25F1-4013-A87C-E4A0123A94EE)
+    OIC, you can configure the integration with the [Oracle HCM Adapter (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/hcm-adapter/understand-oracle-hcm-cloud-adapter.html#GUID-40A15882-F8D1-452E-9E9C-1B184616E1A8)
+    to extract the required data from Oracle HCM. Oracle provides a [guide (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/int-get-started/export-employee-data-oracle-hcm-cloud-identity-management-system.html#GUID-DE0A58BC-25F1-4013-A87C-E4A0123A94EE)
     that you can use to get started.
 
 > [!NOTE]
@@ -209,7 +209,7 @@ Inbound Provisioning API.
 [**Option 2**](#option-2-use-csv-extracts): Use CSV Extracts to generate periodic reports of worker changes in Oracle HCM and send the extracts to the Inbound Provisioning
 API using your own automation tool or Logic Apps.
 
-**Option 3**: Use the [Oracle Integration Cloud Service](https://docs.oracle.com/en/cloud/paas/application-integration/). If you have a subscription to OIC, you can configure the integration with the [Oracle HCM Adapter](https://docs.oracle.com/en/cloud/paas/integration-cloud/hcm-adapter/understand-oracle-hcm-cloud-adapter.html#GUID-40A15882-F8D1-452E-9E9C-1B184616E1A8) to extract the required data from Oracle HCM. Oracle provides a [guide](https://docs.oracle.com/en/cloud/paas/integration-cloud/int-get-started/export-employee-data-oracle-hcm-cloud-identity-management-system.html#GUID-DE0A58BC-25F1-4013-A87C-E4A0123A94EE)
+**Option 3**: Use the [Oracle Integration Cloud Service (oracle.com)](https://docs.oracle.com/en/cloud/paas/application-integration/). If you have a subscription to OIC, you can configure the integration with the [Oracle HCM Adapter (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/hcm-adapter/understand-oracle-hcm-cloud-adapter.html#GUID-40A15882-F8D1-452E-9E9C-1B184616E1A8) to extract the required data from Oracle HCM. Oracle provides a [guide (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/int-get-started/export-employee-data-oracle-hcm-cloud-identity-management-system.html#GUID-DE0A58BC-25F1-4013-A87C-E4A0123A94EE)
 that you can use to get started.
 
 ### Option 1: Use the Oracle ATOM feed APIs
@@ -226,7 +226,7 @@ ATOM feeds immediately after your initial sync. A delay in this step can
 lead to loss of changes.
 
 To get started with Oracle's ATOM feeds, reference the
-[Oracle documentation](https://docs.oracle.com/en/cloud/saas/human-resources/23d/farws/Working_with_Atom.html) and [tutorial](https://docs.oracle.com/en/applications/fusion-apps/fusion-human-capital-management/hcmintegration/index.html#background). We recommend subscribing to the [Employee workspace](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Employee_Atom_Feeds.html) and applying these Atom Feed collections: newhire, empassignment,
+[Oracle documentation (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/23d/farws/Working_with_Atom.html) and [tutorial (oracle.com)](https://docs.oracle.com/en/applications/fusion-apps/fusion-human-capital-management/hcmintegration/index.html#background). We recommend subscribing to the [Employee workspace (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Employee_Atom_Feeds.html) and applying these Atom Feed collections: newhire, empassignment,
 empupdate, termination, cancelworkrelship, and workrelshipupdate. 
 
 Once you've configured ATOM feeds in your HCM tenant, you'll need to
@@ -386,7 +386,7 @@ extract:
 - **Oracle Integration Cloud (OIC) service**: If you have a subscription to
     OIC, you can configure the integration with the [Oracle HCM Adapter (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/hcm-adapter/understand-oracle-hcm-cloud-adapter.html#GUID-40A15882-F8D1-452E-9E9C-1B184616E1A8)
     to extract the required data from Oracle HCM. Oracle provides a
-    [guide](https://docs.oracle.com/en/cloud/paas/integration-cloud/int-get-started/export-employee-data-oracle-hcm-cloud-identity-management-system.html#GUID-DE0A58BC-25F1-4013-A87C-E4A0123A94EE) that you can use to get started.
+    [guide (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/int-get-started/export-employee-data-oracle-hcm-cloud-identity-management-system.html#GUID-DE0A58BC-25F1-4013-A87C-E4A0123A94EE) that you can use to get started.
 
     Once you have your worker data in CSV format, use either of the following two methods to convert that into a SCIM payload and send the data to our provisioning service.
 
@@ -403,7 +403,7 @@ process of sending user changes that occur in Microsoft Entra ID back to Oracle
 HCM, such as username, email, and phone numbers. This process ensures that your
 data is consistent and accurate across both systems.
 
-To configure writeback, you'll need to use the [Oracle HCM SCIM APIs](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/Quick_Start.html). These APIs are RESTful web services that allow you to create, update, and delete users in Oracle HCM from an external source, such as Microsoft Entra. You can use the Microsoft Entra Provisioning Service to connect Microsoft Entra to the Oracle HCM SCIM APIs and map the user attributes that you want to writeback.
+To configure writeback, you'll need to use the [Oracle HCM SCIM APIs (oracle.com)](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/Quick_Start.html). These APIs are RESTful web services that allow you to create, update, and delete users in Oracle HCM from an external source, such as Microsoft Entra. You can use the Microsoft Entra Provisioning Service to connect Microsoft Entra to the Oracle HCM SCIM APIs and map the user attributes that you want to writeback.
 
 To set up writeback, you'll need to configure an outbound provisioning
 job to your Oracle HCM tenant. To configure writeback, you'll need the
@@ -418,7 +418,7 @@ following info:
 
     - Create an OAUTH token in HCM and save it for use in the steps
         here. You can create an OAUTH token by going to step four in the
-        following [Oracle guide](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/Quick_Start.html).
+        following [guide (oracle.com)](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/Quick_Start.html).
 
 Once you have your REST server URL and your secret token, follow the
 steps here to configure the writeback job in Microsoft Entra:
