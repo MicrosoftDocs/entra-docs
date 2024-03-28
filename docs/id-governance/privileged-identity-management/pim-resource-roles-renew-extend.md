@@ -72,7 +72,7 @@ When a user or group submits a request to extend a role assignment, resource adm
 
 In addition to using following the link from email, administrators can approve or deny requests by going to the Privileged Identity Management administration portal and selecting **Approve requests** in the left pane.
 
-:::image type="content" source="media/pim-resource-roles-renew-extend/aadpim-rbac-extend-admin-approve-grid.png" alt-text="Screenshot of Azure resources - Approve requests page listing requests and links to approve or deny":::
+:::image type="content" source="media/pim-resource-roles-renew-extend/aadpim-rbac-extend-admin-approve-grid.png" alt-text="Screenshot of Azure resources - Approve requests page listing requests and links to approve or deny.":::
 
 When an Administrator selects **Approve** or **Deny**, the details of the request are shown, along with a field to provide a business justification for the audit logs.
 
@@ -96,13 +96,13 @@ While conceptually similar to the process for requesting an extension, the proce
 
 Users who can no longer access resources can access up to 30 days of expired assignment history. To do this, they browse to **My Roles** in the left pane, and then select the **Expired roles** tab in the Azure resource roles section.
 
-:::image type="content" source="media/pim-resource-roles-renew-extend/aadpim-rbac-renew-from-myroles.png" alt-text="My roles page - Expired roles tab":::
+:::image type="content" source="media/pim-resource-roles-renew-extend/aadpim-rbac-renew-from-myroles.png" alt-text="Screenshot of My roles page - Expired roles tab.":::
 
 The list of roles shown defaults to **Eligible roles**. Use the drop-down menu to toggle between Eligible and Active assigned roles.
 
 To request renewal for any of the role assignments in the list, select the **Renew** action. Then provide a reason for the request. It's helpful to provide a duration in addition to any additional context or a business justification that can help the resource administrator decide to approve or deny.
 
-:::image type="content" source="media/pim-resource-roles-renew-extend/aadpim-rbac-renew-request-form.png" alt-text="Screenshot of Renew role assignment pane showing Reason box":::
+:::image type="content" source="media/pim-resource-roles-renew-extend/aadpim-rbac-renew-request-form.png" alt-text="Screenshot of Renew role assignment pane showing Reason box.":::
 
 After the request has been submitted, resource administrators are notified of a pending request to renew a role assignment.
 
@@ -110,11 +110,11 @@ After the request has been submitted, resource administrators are notified of a 
 
 Resource administrators can access the renewal request from the link in the email notification or by accessing Privileged Identity Management from the Azure portal and selecting **Approve requests** from the left pane.
 
-:::image type="content" source="media/pim-resource-roles-renew-extend/aadpim-rbac-extend-admin-approve-grid.png" alt-text="Screenshot of Azure resources - Approve requests page listing requests and links to approve or deny":::
+:::image type="content" source="media/pim-resource-roles-renew-extend/aadpim-rbac-extend-admin-approve-grid.png" alt-text="Screenshot of Azure resources - Approve requests page listing requests and links to approve or deny.":::
 
 When an administrator selects **Approve** or **Deny**, the details of the request are shown along with a field to provide a business justification for the audit logs.
 
-:::image type="content" source="media/pim-resource-roles-renew-extend/aadpim-rbac-extend-admin-approve-blade.png" alt-text="Screenshot of Approve role assignment request with requestor reason, assignment type, start time, end time, and reason":::
+:::image type="content" source="media/pim-resource-roles-renew-extend/aadpim-rbac-extend-admin-approve-blade.png" alt-text="Screenshot of Approve role assignment request with requestor reason, assignment type, start time, end time, and reason.":::
 
 When approving a request to renew role assignment, resource administrators must enter a new start date, end date, and assignment type.
 
@@ -124,7 +124,7 @@ Resource administrators can renew expired role assignments from the **Members** 
 
 To view a list of all expired role assignments, on the **Members** screen, select **Expired roles**.
 
-:::image type="content" source="media/pim-resource-roles-renew-extend/aadpim-rbac-renew-from-member-blade.png" alt-text="Screenshot of Azure resources - Members page listing expired roles with links to renew":::
+:::image type="content" source="media/pim-resource-roles-renew-extend/aadpim-rbac-renew-from-member-blade.png" alt-text="Screenshot of Azure resources - Members page listing expired roles with links to renew.":::
 
 ## Next steps
 
