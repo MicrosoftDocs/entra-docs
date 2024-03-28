@@ -26,15 +26,6 @@ Refresh tokens have a longer lifetime than access tokens. The default lifetime f
 > [!NOTE]
 > Refresh tokens sent to a redirect URI registered as `spa` expire after 24 hours. Additional refresh tokens acquired using the initial refresh token carry over that expiration time, so apps must be prepared to rerun the authorization code flow using an interactive authentication to get a new refresh token every 24 hours. Users don't have to enter their credentials and usually don't even see any related user experience, just a reload of your application. The browser must visit the sign-in page in a top-level frame to show the login session. This is due to [privacy features in browsers that block third party cookies](reference-third-party-cookies-spas.md).
 
-## Token security
-
-With this in mind i think it is also important to hightlight more device based Conditional Access and protections:
-
-Conditional access can check for MDM (Compliance) and/or MAM policies
-MAM/MDM can make sure the configuration of the devices highten its protection to MiTM or compromission: Antivirus, root/jailbreak detection, etc.
-
-
-
 ## Token expiration
 
 Refresh tokens can be revoked at any time, because of timeouts and revocations. Your app must handle revocations by the sign-in service gracefully by sending the user to an interactive sign-in prompt to sign in again.
