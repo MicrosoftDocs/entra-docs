@@ -63,7 +63,7 @@ When you complete the preceding steps, you're now the global administrator of th
 3. Ensure that the new user account has Global Administrator privileges for the Microsoft Entra organization.
 4. Open **Domains** tab in the Microsoft 365 admin center, select the domain name and select **Remove**. 
   
-   ![Remove the domain name from Microsoft 365](./media/domains-admin-takeover/remove-domain-from-o365.png)
+   :::image type="content" source="./media/domains-admin-takeover/remove-domain-from-o365.png" alt-text="Remove the domain name from Microsoft 365":::
   
 5. If you have any users or groups in Microsoft 365 that reference the removed domain name, they must be renamed to the .onmicrosoft.com domain. If you force delete the domain name, all users are automatically renamed, in this example to *user\@fourthcoffeexyz.onmicrosoft.com*.
   
@@ -72,7 +72,7 @@ When you complete the preceding steps, you're now the global administrator of th
 
 8. Select **+ Add custom domain names**, then add the domain name. You'll have to enter the DNS TXT records to verify ownership of the domain name. 
   
-   ![domain verified as added to Microsoft Entra ID](./media/domains-admin-takeover/add-domain.png)
+   :::image type="content" source="./media/domains-admin-takeover/add-domain.png" alt-text="domain verified as added to Microsoft Entra ID":::
   
 > [!NOTE]
 > Any users of Power BI or Azure Rights Management service who have licenses assigned in the Microsoft 365 organization must save their dashboards if the domain name is removed. They must sign in with a user name like *user\@fourthcoffeexyz.onmicrosoft.com* rather than *user\@fourthcoffee.xyz*.
