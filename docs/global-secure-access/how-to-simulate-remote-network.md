@@ -3,7 +3,7 @@ title: Simulate remote networks with Azure virtual networks
 description: Configure Azure resources to simulate remote network connectivity to Microsoft's Security Edge Solutions with Global Secure Access.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 01/31/2024
+ms.date: 03/27/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
@@ -70,9 +70,6 @@ Create a resource group to contain all of the necessary resources.
 
 ![Screenshot of the create a resource group fields.](media/how-to-simulate-remote-network/create-azure-resource-group.png)
 
-> [!TIP]
-> If you're using this article for testing Microsoft Entra Internet Access, clean up all related Azure resources by deleting the new resource group after you're done.
-
 ## Create a virtual network
 
 Create a virtual network inside your new resource group.
@@ -99,8 +96,9 @@ Create a virtual network gateway inside your new resource group.
       :::image type="content" source="media/how-to-simulate-remote-network/create-azure-virtual-network-gateway.png" alt-text="Screenshot of the Azure portal showing configuration settings for a virtual network gateway." lightbox="media/how-to-simulate-remote-network/create-azure-virtual-network-gateway-expanded.png":::
 
 1. Create a **Public IP address** and provide it with descriptive name.
-   - **OPTIONAL**: If you want a secondary IPsec tunnel, under the **SECOND PUBLIC IP ADDRESS** section, create another public IP address and give it a name. In this scenario, you need to create two device links in the [Create a remote network](#create-a-remote-network) step.
+   - **OPTIONAL**: If you want a secondary IPsec tunnel, under the **SECOND PUBLIC IP ADDRESS** section, create another public IP address and give it a name. If you create a second IPsec tunnel, you need to create two device links in the [Create a remote network](#create-a-remote-network) step.
    - Set the **Enable active-active mode** to **Disabled** if you don't need a second public IP address.
+   - The sample in this article uses a single IPsec tunnel.
 1. Select an **Availability zone**.
 1. Set **Configure BGP** to **Enabled**.
 1. Set the **Autonomous system number (ASN)** to an appropriate value. Refer to the [valid ASN values](reference-remote-network-configurations.md#valid-asn) list for reserved values that can't be used.
@@ -117,7 +115,7 @@ Create a virtual network gateway inside your new resource group.
 
 These IP addresses can be found by browsing to the **Configuration** page of your virtual network gateway once it's created.
 
-:::image type="content" source="media/how-to-simulate-remote-network/virtual-network-gateway-public-ip-addresses.png" alt-text="Screenshot showing how to find the public IP addresses of a virtual network gateway." lightbox="media/how-to-simulate-remote-network/virtual-network-gateway-public-ip-addresses-expanded.png":::
+![Screenshot showing how to find the public IP addresses of a virtual network gateway.](media/how-to-simulate-remote-network/virtual-network-gateway-public-ip-addresses.png)
 
 ## Create a remote network
 
@@ -219,7 +217,7 @@ The second highlighted section under `peerConfiguration` contains the details of
 - ASN: 65533
 - BGP IP address/bgpAddress: 10.2.2.2
 
-Another callout points to the virtual network you created in your resource group. The address space for the virtual network is 10.2.0.0/16. The Local BGP address and zone redundant Local BGP address can't be in the same address space.
+Another callout points to the virtual network you created in your resource group. The address space for the virtual network is 10.2.0.0/16. The Local BGP address and Peer BGP address can't be in the same address space.
 
 ## Create local network gateway
 
@@ -308,6 +306,9 @@ After you create the remote networks and connections in the previous steps, it m
 :::image type="content" source="media/how-to-simulate-remote-network/verify-connectivity.png" alt-text="Screenshot showing how to find the connection status for your virtual network gateway." lightbox="media/how-to-simulate-remote-network/verify-connectivity.png" :::
 
 You can use the virtual machine you created to validate that traffic is flowing to Microsoft 365 locations like SharePoint Online. Browsing to resources in SharePoint or Exchange Online should result in traffic on your virtual network gateway. This traffic can be seen by browsing to [Metrics on the virtual network gateway](/azure/vpn-gateway/monitor-vpn-gateway#analyzing-metrics) or by [Configuring packet capture for VPN gateways](/azure/vpn-gateway/packet-capture).
+
+> [!TIP]
+> If you're using this article for testing Microsoft Entra Internet Access, clean up all related Azure resources by deleting the new resource group after you're done.
 
 ## Next steps
 
