@@ -390,7 +390,12 @@
       "source_path_from_root": "/docs/identity-platform/tutorial-v2-javascript-spa.md",
       "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
       "redirect_document_id": false
-    }
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-console-app-netcore-acquire-token.md",
+      "redirect_url": "/entra/identity-platform/quickstart-daemon-dotnet-acquire-token",
+      "redirect_document_id": false
+    },
 
   ]
 }
