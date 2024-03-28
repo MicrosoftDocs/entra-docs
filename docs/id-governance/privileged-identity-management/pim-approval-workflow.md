@@ -15,7 +15,7 @@ ms.custom: pim
 
 # Approve or deny requests for Microsoft Entra roles in Privileged Identity Management
 
-With Privileged Identity Management (PIM) in Microsoft Entra ID you can configure roles to require approval for activation, and choose one or multiple users or groups as delegated approvers. Delegated approvers have 24 hours to approve requests. If a request is not approved within 24 hours, then the eligible user must re-submit a new request. The 24 hour approval time window is not configurable.
+With Privileged Identity Management (PIM) in Microsoft Entra ID you can configure roles to require approval for activation, and choose one or multiple users or groups as delegated approvers. Delegated approvers have 24 hours to approve requests. If a request isn't approved within 24 hours, then the eligible user must re-submit a new request. The 24 hour approval time window isn't configurable.
 
 
 
@@ -105,7 +105,7 @@ GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSche
 
 ### Get IDs for the steps that require approval
 
-For a specific activation request, this command gets all the approval steps that need approval. Multi-step approvals are not currently supported.
+For a specific activation request, this command gets all the approval steps that need approval. Multi-step approvals aren't currently supported.
 
 #### HTTP request
 
