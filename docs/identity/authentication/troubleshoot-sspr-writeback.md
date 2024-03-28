@@ -234,6 +234,13 @@ A best practice when you troubleshoot problems with password writeback is to ins
 
 <a name='azure-ad-forums'></a>
 
+## Check TLS 1.0 and 1.1 is enabled.
+if you have disabled these cyphers, you can have issues with connecting to the SSPR Service Bus. Enable these in the registry.
+With Powershell
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Client" -Name "Enabled" -Value 1 -Type DWord
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Client" -Name "Enabled" -Value 1 -Type DWord
+This will enable TLS 1.0 and 1.1 for client applications.
+Re run the configuration and enable password write back.
 ## Microsoft Entra forums
 
 If you have general questions about Microsoft Entra ID and self-service password reset, you can ask the community for assistance on the [Microsoft Q&A question page for Microsoft Entra ID](/answers/tags/455/entra-id). Members of the community include engineers, product managers, MVPs, and fellow IT professionals.
