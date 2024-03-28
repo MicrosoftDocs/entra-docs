@@ -665,7 +665,7 @@ In the Microsoft Entra admin center, you can configure user attributes as requir
  
 The following table summarizes when it's possible to submit user attributes to Microsoft Entra endpoints. 
 
-  | Required attributes | Optional attributes | Both required and optional attributes |
+|| Required attributes | Optional attributes | Both required and optional attributes |
 | ---- | --- |  --- | --- | 
 | `/signup/v1.0/start` endpoint | Yes  | Yes  | Yes |
 | `/signup/v1.0/continue` endpoint before username verification | Yes  | Yes  | Yes  |
