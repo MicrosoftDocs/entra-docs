@@ -35,29 +35,29 @@ Also, keep role assignments permanent if a user has a Microsoft account (in othe
 
 1. Opening the page begins the discovery process to find relevant role assignments.
 
-    :::image type="content" source="./media/pim-security-wizard/new-preview-link.png" alt-text="Microsoft Entra roles - Discovery and insights page showing the 3 options":::
+    :::image type="content" source="./media/pim-security-wizard/new-preview-link.png" alt-text="Screenshot showing Microsoft Entra roles Discovery and insights page.":::
 
 1. Select **Reduce global administrators**.
 
-    :::image type="content" source="./media/pim-security-wizard/new-preview-page.png" alt-text="Screenshot that shows the "Discovery and insights (Preview)" with the "Reduce global administrators" action selected.":::
+    :::image type="content" source="./media/pim-security-wizard/new-preview-page.png" alt-text="Screenshot that shows the Discovery and insights (Preview) with the Reduce global administrators action selected.":::
 
 1. Review the list of Global Administrator role assignments.
 
-    :::image type="content" source="./media/pim-security-wizard/new-global-administrator-list.png" alt-text="Reduce global administrators - Roles pane showing all Global Administrators":::
+    :::image type="content" source="./media/pim-security-wizard/new-global-administrator-list.png" alt-text="Screenshot showing the Roles pane showing all Global Administrators.":::
 
 1. Select **Next** to select the users or groups you want to make eligible, and then select **Make eligible** or **Remove assignment**.
 
-    :::image type="content" source="./media/pim-security-wizard/new-global-administrator-buttons.png" alt-text="Convert members to eligible page with options to select members you want to make eligible for roles":::
+    :::image type="content" source="./media/pim-security-wizard/new-global-administrator-buttons.png" alt-text="Screenshot showing how to convert members to eligible page with options to select members you want to make eligible for roles.":::
 
 1. You can also require all global administrators to review their own access.
 
-    :::image type="content" source="./media/pim-security-wizard/new-global-administrator-access-review.png" alt-text="Global administrators page showing access reviews section":::
+    :::image type="content" source="./media/pim-security-wizard/new-global-administrator-access-review.png" alt-text="Screenshot showing the Global administrators page showing the access reviews section.":::
 
 1. After you select any of these changes, you'll see an Azure notification.
 
 1. You can then select **Eliminate standing access** or **Review service principals** to repeat the above steps on other privileged roles and on service principal role assignments. For service principal role assignments, you can only remove role assignments.
 
-    :::image type="content" source="./media/pim-security-wizard/new-preview-page-service-principals.png" alt-text="Additional Insights options to eliminate standing access and review service principals":::
+    :::image type="content" source="./media/pim-security-wizard/new-preview-page-service-principals.png" alt-text="Screenshot showing additional insights options to eliminate standing access and review service principals.":::
 
 ## Next steps
 
