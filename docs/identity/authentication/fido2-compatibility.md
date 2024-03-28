@@ -5,7 +5,7 @@ description: Browsers and operating system combinations support FIDO2 passwordle
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/11/2024
+ms.date: 03/25/2024
 
 author: justinha
 ms.author: justinha
@@ -33,6 +33,9 @@ Microsoft applications provide native support for FIDO2 authentication in previe
 If a user installed an authentication broker, they can choose to sign in with a security key when they access an application such as Outlook. They're redirected to sign in with FIDO2, and redirected back to Outlook as a signed in user after successful authentication.
 
 If the user hasn't installed an authentication broker, they can still sign in with a security key when they access MSAL-enabled applications that meet the requirements as listed in [Support for FIDO2 authentication](/entra/identity-platform/support-fido2-authentication).
+
+>[!NOTE]
+>FIDO2 authentication for Microsoft applications without an authentication broker isn’t available yet.
 
 ## Browser support
 

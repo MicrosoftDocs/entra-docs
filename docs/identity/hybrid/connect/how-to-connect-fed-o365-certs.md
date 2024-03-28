@@ -7,7 +7,7 @@ manager: amycolannino
 ms.assetid: 543b7dc1-ccc9-407f-85a1-a9944c0ba1be
 ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.subservice: hybrid-connect
@@ -83,6 +83,8 @@ On your AD FS server, open the MSOnline PowerShell prompt, and connect to Micros
 ```azurepowershell-interactive
 Install-Module MSOnline
 ```
+
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 Connect to Microsoft Entra ID using the MSOnline PowerShell-Module.
 

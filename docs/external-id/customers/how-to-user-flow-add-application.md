@@ -39,7 +39,7 @@ If you already registered your application in your customer tenant, you can add 
 
 1. Select **Add application**.
 
-   :::image type="content" source="media/how-to-user-flow-sign-up-sign-in-customers/assign-user-flow.png" alt-text="Screenshot showing selecting an application for the user flow.":::
+   :::image type="content" source="media/how-to-user-flow-add-application/assign-user-flow.png" alt-text="Screenshot showing selecting an application for the user flow.":::
 
 1. Select the application from the list. Or use the search box to find the application, and then select it.
 

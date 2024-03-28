@@ -9,7 +9,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.date: 12/02/2020
 ms.author: barclayn
 ms.reviewer: sumitp
@@ -67,6 +67,8 @@ location: https://graph.microsoft.com/v2/d056d009-17b3-4106-8173-cd3978ada898/di
 ## View product licenses assigned to a group
 
 The [Get-MsolGroup](/powershell/module/msonline/get-msolgroup) cmdlet can be used to retrieve the group object and check the *Licenses* property: it lists all product licenses currently assigned to the group.
+
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 ```powershell
 (Get-MsolGroup -ObjectId 99c4216a-56de-42c4-a4ac-e411cd8c7c41).Licenses

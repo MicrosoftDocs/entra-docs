@@ -216,6 +216,46 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/sample-browserless-app-node-sign-in.md",
+      "redirect_url": "/entra/external-id/customers/samples-ciam-all",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-browserless-app-dotnet-sign-in.md",
+      "redirect_url": "/entra/external-id/customers/samples-ciam-all",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-browserless-app-node-sign-in-overview.md",
+      "redirect_url": "/entra/external-id/customers/samples-ciam-all",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-browserless-app-node-sign-in-prepare-tenant.md",
+      "redirect_url": "/entra/external-id/customers/samples-ciam-all",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-browserless-app-node-sign-in-prepare-app.md",
+      "redirect_url": "/entra/external-id/customers/samples-ciam-all",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-browserless-app-node-sign-in-sign-out.md",
+      "redirect_url": "/entra/external-id/customers/samples-ciam-all",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md",
+      "redirect_url": "/entra/external-id/customers/samples-ciam-all",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-browserless-app-dotnet-sign-in-build-app.md",
+      "redirect_url": "/entra/external-id/customers/samples-ciam-all",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/authentication/multi-factor-authentication-wizard.md",
       "redirect_url": "/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
       "redirect_document_id": false
@@ -344,6 +384,11 @@
     {
       "source_path_from_root": "/docs/permissions-management/how-to-notifications-rule.md",
       "redirect_url": "/entra/permissions-management/ui-autopilot",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-v2-javascript-spa.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
       "redirect_document_id": false
     }
 

@@ -38,6 +38,7 @@ The following Azure services support managed identities for Azure resources:
 | Azure Blueprints                | [Stages of a blueprint deployment](/azure/governance/blueprints/concepts/deployment-stages)                              |
 | Azure Cache for Redis           | [Managed identity for storage accounts with Azure Cache for Redis](/azure/azure-cache-for-redis/cache-managed-identity) |
 | Azure Communications Gateway    | [Deploy Azure Communications Gateway](/azure/communications-gateway/deploy) |
+| Azure Communication Services    | [How to use Managed Identity with Azure Communication Services](/azure/communication-services/how-tos/managed-identity)
 | Azure Container Apps            | [Managed identities in Azure Container Apps](/azure/container-apps/managed-identity) |
 | Azure Container Instance        | [How to use managed identities with Azure Container Instances](/azure/container-instances/container-instances-managed-identity)                                                                                          |
 | Azure Container Registry        | [Use an Azure-managed identity in ACR Tasks](/azure/container-registry/container-registry-tasks-authentication-managed-identity)                                                                       |
