@@ -56,7 +56,7 @@ You may have a compliance requirement where you must provide a complete list of 
 
 1. Select **Export** to open the Export membership pane.
 
-    :::image type="content" source="media/azure-pim-resource-rbac/export-membership.png " alt-text="Screenshot showing the export membership pane to export all members.":::
+    :::image type="content" source="media/azure-pim-resource-rbac/export-membership.png" alt-text="Screenshot showing the export membership pane to export all members.":::
 
 1. Select **Export all members** to export all role assignments in a CSV file.
 
@@ -76,14 +76,15 @@ Resource audit gives you a view of all role activity for a resource.
 
 1. Filter the history using a predefined date or custom range.
 
-    :::image type="content" source="media/azure-pim-resource-rbac/rbac-resource-audit.png " alt-text="Resource audit list with filters.":::
+    :::image type="content" source="media/azure-pim-resource-rbac/rbac-resource-audit.png" alt-text="Screenshot showing resource audit list with filters.":::
+
 1. For **Audit type**, select **Activate (Assigned + Activated)**.
 
-    :::image type="content" source="media/azure-pim-resource-rbac/rbac-audit-activity.png" alt-text="Resource audit list filtered by Activate audit type":::
+    :::image type="content" source="media/azure-pim-resource-rbac/rbac-audit-activity.png" alt-text="Screenshot showing the resource audit list filtered by Activate audit type.":::
 
 1. Under **Action**, select **(activity)** for a user to see that user's activity detail in Azure resources.
 
-    :::image type="content" source="media/azure-pim-resource-rbac/rbac-audit-activity-details.png" alt-text="User activity details for a particular action":::
+    :::image type="content" source="media/azure-pim-resource-rbac/rbac-audit-activity-details.png" alt-text="Screenshot showing user activity details for a particular action.":::
 
 ## View my audit
 
