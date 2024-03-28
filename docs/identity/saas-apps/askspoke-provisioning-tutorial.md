@@ -15,6 +15,8 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 04/04/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to askSpoke so that I can streamline the user management process and ensure that users have the appropriate access to askSpoke.
 ---
 
 # Tutorial: Configure askSpoke for automatic user provisioning

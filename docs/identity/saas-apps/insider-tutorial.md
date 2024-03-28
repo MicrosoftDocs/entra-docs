@@ -12,6 +12,8 @@ ms.topic: how-to
 ms.date: 10/10/2023
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Insider so that I can control who has access to Insider, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with Insider
