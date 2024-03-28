@@ -303,7 +303,8 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Configure authentication methods | [Global Administrator](permissions-reference.md#global-administrator) |  |
+> | Enable or disable authentication methods | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
+> | View, provision on behalf of, and manage individual user authentication methods | [Authentication Administrator](permissions-reference.md#authentication-administrator) | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |
 > | Configure password protection | [Security Administrator](permissions-reference.md#security-administrator) |  |
 > | Configure smart lockout | [Security Administrator](permissions-reference.md#security-administrator) |
 > | Read all configuration | [Global Reader](permissions-reference.md#global-reader) |  |
