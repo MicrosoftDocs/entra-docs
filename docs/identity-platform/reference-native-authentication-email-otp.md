@@ -56,7 +56,7 @@ The sequence diagram demonstrates the basic flow of the sign-up process.
 
 :::image type="content" source="media/reference-native-auth-api/sign-up-email-with-otp.png" alt-text="Diagram of Native authentication sign up with email with OTP."::: 
 
-This diagram indicates that the app collects all the sign-up information, then submits them via the `/signup/v1.0/start`. However, if the app doesn't submit all the required user attributes via the `/signup/v1.0/start`, it can do so via the `/signup/v1.0/continue` endpoint. Although submitting the user attributes via the `/signup/v1.0/continue` endpoint is marked as an optional step, it's a mandatory step if the app doesn't submit all the required user attributes via the `/signup/v1.0/start` endpoint.
+This diagram indicates that the app collects all the sign-up information, then submits them via the `/signup/v1.0/start`. However, if the app doesn't submit all the required user attributes via the `/signup/v1.0/start`, it can do so via the `/signup/v1.0/continue` endpoint. Although submitting the user attributes via the `/signup/v1.0/continue` endpoint is marked as an optional step, it's a mandatory step if the app doesn't submit all the required user attributes via the `/signup/v1.0/start` endpoint. See the table in the [Submitting user attributes to endpoints](#submitting-user-attributes-to-endpoints) section to learn which user attributes you can submit to the `/signup/v1.0/start` and `/signup/v1.0/continue` endpoints. 
 
 ### Step 1: Request to start the sign-up flow
 
@@ -661,16 +661,15 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Submitting user attributes to endpoints
 
-In the Microsoft Entra admin center, you can configure user attributes as required or optional. This configuration determines how Microsoft Entra responds when you make a call to its endpoints. For example, if all the user attributes are optional, Microsoft Entra doesn't explicitly request for the user attributes. So, you can successfully complete a sign-up flow without submitting any user attributes.
-
-The following table summarizes the options you've when it comes to submitting user attributes to Microsoft Entra endpoints. 
+In the Microsoft Entra admin center, you can configure user attributes as required or optional. This configuration determines how Microsoft Entra responds when you make a call to its endpoints. For example, if all the user attributes are optional, and you don't submit them via the `/signup/v1.0/start` endpoint, then you can't submit them via the `/signup/v1.0/continue` endpoint after username verification.
+ 
 The following table summarizes when it's possible to submit user attributes to Microsoft Entra endpoints. 
 
 |   | Required attributes | Optional attributes | Both required and optional attributes |
 | ---- | --- |  --- | --- | 
 | `/signup/v1.0/start` endpoint | Yes  | Yes  | Yes |
-| `/signup/v1.0/continue` before username verification | Yes  | Yes  | Yes  |
-| `/signup/v1.0/continue` after username verification |  Yes | No  | Yes |
+| `/signup/v1.0/continue` endpoint before username verification | Yes  | Yes  | Yes  |
+| `/signup/v1.0/continue` endpoint after username verification |  Yes | No  | Yes |
 
 ## Format of user attributes values
 
