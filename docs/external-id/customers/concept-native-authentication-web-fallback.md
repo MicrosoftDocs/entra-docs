@@ -7,7 +7,7 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: concept-article
 ms.date:  03/27/2024
-ms.author: cmulligan
+ms.author: kengaderdus
 
 #Customer intent: As a developer, devops, I want to learn more native authentication web fallback, so that I can enable it in my client apps.
 ---
