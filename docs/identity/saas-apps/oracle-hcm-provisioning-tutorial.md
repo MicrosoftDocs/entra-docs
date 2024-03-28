@@ -1,15 +1,15 @@
 ---
 title: 'Tutorial: Microsoft Entra ID integration with Oracle Human Capital Management (HCM)'
 description: Integrating Oracle Human Capital Management (HCM) with Microsoft Entra ID and on-premises Active Directory using the Inbound Provisioning API.
-author: jfields
-manager: CelesteDG
-ms.reviewer: celested
+author: jenniferf-skc
+manager: amycolannino
+ms.reviewer: rahuln3223
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 03/20/2024
-ms.author: jeedes
+ms.author: jfields
 ---
 
 # Tutorial: Microsoft Entra ID integration with Oracle HCM
@@ -90,23 +90,30 @@ Before you can configure the provisioning job in Microsoft Entra, you need to de
 
 ### For cloud-only users
 
-Configure the gallery application **API-driven provisioning to Microsoft Entra ID** by following the steps to: 
+Create and configure the gallery application **API-driven provisioning to Microsoft Entra ID** by following these steps: 
 
-- [Create the gallery application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#create-your-api-driven-provisioning-app)
+1. [Create the gallery application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#create-your-api-driven-provisioning-app).
 
-- [Configure the application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#configure-api-driven-inbound-provisioning-to-microsoft-entra-id)
+1. [Configure the application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#configure-api-driven-inbound-provisioning-to-microsoft-entra-id).
+
+1. Name the application **Oracle HCM Cloud to Entra ID provisioning**.
+
+   :::image type="content" border="true" source="./media/oracle-hcm-provisioning/api-driven-provisioning.png" alt-text="Diagram of API-driven provisioning to Microsoft Entra ID.":::
 
 ### For hybrid users
 
-Work with your Windows admin to install the provisioning agent on a domain-joined Windows server, then follow the steps to:
+Work with your Windows admin to install the provisioning agent on a domain-joined Windows server, then follow these steps:
 
-- [Configure the application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#create-your-api-driven-provisioning-app)
+1. [Install the provisioning agent](~/identity/hybrid/cloud-sync/how-to-install.md).
 
-- [Install the provisioning agent](~/identity/hybrid/cloud-sync/how-to-install.md)
+1. [Create the gallery application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#create-your-api-driven-provisioning-app).
 
-Next, configure the gallery application **API-driven provisioning to on-premises Active Directory**, then follow the steps to:
+1. Name the application **Oracle HCM Cloud to on-premises Active Directory**.
 
-- [Create the gallery application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#create-your-api-driven-provisioning-app)
+   :::image type="content" border="true" source="./media/oracle-hcm-provisioning/api-driven-on-premises.png" alt-text="Diagram of API-driven provisioning to on-premises Active Directory.":::
+
+1. [Configure the application](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md#configure-api-driven-inbound-provisioning-to-on-premises-ad).
+
 
 ## Prepare for initial sync
 
@@ -219,13 +226,12 @@ ATOM feeds immediately after your initial sync. A delay in this step can
 lead to loss of changes.
 
 To get started with Oracle's ATOM feeds, reference the
-[Oracle documentation](https://docs.oracle.com/en/cloud/saas/human-resources/23d/farws/Working_with_Atom.html) and guidance. We recommend subscribing to the [Employee workspace](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Employee_Atom_Feeds.html) and applying these Atom Feed collections: newhire, empassignment,
-empupdate, termination, cancelworkrelship, and workrelshipupdate. You can
-also review the [Workstructures](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Workstructures_Atom_Feeds.html) workspace and can include it if you want to handle scenarios such as organization name changes and job name changes.
+[Oracle documentation](https://docs.oracle.com/en/cloud/saas/human-resources/23d/farws/Working_with_Atom.html) and [tutorial](https://docs.oracle.com/en/applications/fusion-apps/fusion-human-capital-management/hcmintegration/index.html#background). We recommend subscribing to the [Employee workspace](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Employee_Atom_Feeds.html) and applying these Atom Feed collections: newhire, empassignment,
+empupdate, termination, cancelworkrelship, and workrelshipupdate. 
 
 Once you've configured ATOM feeds in your HCM tenant, you'll need to
-create a custom module that reads the output of the ATOM feed API and
-sends the data to Microsoft Entra ID using the Inbound Provisioning API.
+create a custom module that reads the output of the ATOM feed API and sends the data to Microsoft Entra ID in a SCIM payload format using the Inbound Provisioning API.
+
 The logic in the custom module is responsible for handling the following
 scenarios:
 
@@ -238,76 +244,104 @@ scenarios:
 We recommend using an Oracle HCM partner or a Microsoft System
 Integrator to build this custom module. You can host this custom module
 either in an Oracle middleware like Oracle Integration Cloud, or in
-Azure cloud as an Azure function or Azure Logic Apps.
+Azure cloud as an Azure function, Azure Logic Apps, or Azure Data Factory pipeline.
 
-Implement logic in the custom module to query ATOM feed endpoints of
-interest. The response returned is the JSON representation of the
-changes. Process the JSON payload to extract attributes of interest. If
-necessary, query the [Workers](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/op-workers-workersuniqid-get.html) or [Employees](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/api-employees.html) endpoints directly to retrieve more worker attributes. Combine the data to create a SCIM payload to send to the Microsoft API-driven provisioning endpoint.
+**Implement Joiner Scenario**
 
-Here is a generic example of how the Oracle HCM attributes could map to
-attributes in the SCIM payload based on the Oracle HCM to SCIM worksheet:
+Joiner scenarios specifically address the onboarding process for new hires. Oracle HCM ATOM feeds returns data for joiners as documented here: [Fusion Cloud HCM Integration with External Entitlement Management Systems (oracle.com)](https://docs.oracle.com/en/applications/fusion-apps/fusion-human-capital-management/hcmintegration/index.html#joiner). Read data from the new hire ATOM feed and implement logic in your custom module to ensure the following data elements are present in the SCIM payload: personal data, contact data, employment information, job information.
+
+If required after getting the ATOM feed for joiner scenarios, query the [Workers](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/op-workers-workersuniqid-get.html) or [Employees](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/api-employees.html) endpoints to retrieve additional worker attributes.
+
+To trigger Entra Lifecycle Workflows for new hires, ensure to include the custom SCIM attribute for the employee’s hire date: urn:ietf:params:scim:schemas:extension:COMPANYNAME:1.0:User:HireDate.
+
+Use the Oracle HCM field EffectiveStartDate to set the value for the hire date.
+
+Refer to this example of a SCIM payload.
+
+**Implement Mover Scenario**
+
+Mover scenarios are triggered in Oracle HCM when a worker is converted from full-time to contractor or vice-versa, when an assignment change occurs, when a work relationship change occurs, when there is a transfer, or when there is a promotion. Oracle HCM ATOM feeds returns data for movers as documented here: [Fusion Cloud HCM Integration with External Entitlement Management Systems (oracle.com)](https://docs.oracle.com/en/applications/fusion-apps/fusion-human-capital-management/hcmintegration/index.html#mover). Make sure to fetch the new values of attributes that changed in Oracle HCM. These values can often be fetched from the “Changed Attributes” section of the ATOM feed response. If required, query the [Workers](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/op-workers-workersuniqid-get.html) or [Employees](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/api-employees.html) endpoints directly to retrieve additional worker attributes.
+
+Use the data retrieved to construct a SCIM payload. Refer to this example.
+
+**Implement Leaver Scenario**
+
+Leaver scenarios occur when a worker’s employment with the organization is terminated, either voluntarily or involuntarily. Oracle HCM ATOM feeds returns data for leavers as documented here: [Fusion Cloud HCM Integration with External Entitlement Management Systems (oracle.com)](https://docs.oracle.com/en/applications/fusion-apps/fusion-human-capital-management/hcmintegration/index.html#leaver). Read data from the ATOM feed and construct the SCIM payload.
+
+To trigger Lifecycle Workflows for leavers, ensure to include the custom SCIM attribute for the employee’s leave date: urn:ietf:params:scim:schemas:extension:COMPANYAME:1.0:User:TermDate
+
+Use the Oracle HCM field EffectiveDate to set the value for the termination date.
+
+Refer to this example of a SCIM payload.
+
+SCIM Payload
+Transform the JSON payloads associated with the Joiner, Mover, and Leaver scenarios to create a SCIM payload to send to the Microsoft API-driven provisioning endpoint.
+
+Here is a generic example of how the Oracle HCM attributes could map to attributes in the SCIM payload based on the Oracle HCM to SCIM worksheet: {
 
 ```
-{ 
-    "schemas": ["urn:ietf:params:scim:api:messages:2.0:BulkRequest"], 
-    "Operations": [ 
-    { 
-        "method": "POST", 
-        "bulkId": "897401c2-2de4-4b87-a97f-c02de3bcfc61", 
-        "path": "/Users", 
-        "data": { 
-            "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User", 
-            "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"], 
-            "externalId": "<Oracle HCM workers.PersonNumber>", 
-            "userName": “<Oracle HCM employee.UserName”, 
-            "name": { 
-                "familyName": "< Oracle HCM workers.names.LastName>", 
-                "givenName": " <Oracle HCM workers.names.FirstName> ", 
-                "middleName": " <Oracle HCM workers.names.MiddleName>", 
-                   }, 
-            "displayName": " < Oracle HCM workers.DisplayName>", 
-            "emails": [ 
-            { 
-              "value": "<Oracle HCM workers.emails.EmailAddress> ", 
-              "type": "work", 
-              "primary": true 
-            } 
-            ], 
-            "addresses": [ 
-            { 
-              "type": "work", 
-              "streetAddress": " <Oracle HCM workers.addresses.AddressLine1>", 
-              "locality": " <Oracle HCM workers.addresses.TownorCity>", 
-              "region": " <Oracle HCM workers.addresses.Region1>", 
-              "postalCode": " <Oracle HCM workers addresses.PostalCode> ", 
-              "country": " <Oracle HCM workers addresses.Country> ", 
-              "primary": true 
-            } 
-            ], 
-            "phoneNumbers": [ 
-            { 
-              "value": " <Oracle HCM workers. phones.PhoneNumber ", 
-              "type": "work" 
-            } 
-            ], 
-            "userType": " <Oracle HCM workers.workRelationships.WorkerType ", 
-            "title": " <Oracle HCM worker.workRelationships.assignments.JobName", 
-             "active":true, 
-            "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": { 
-                 "employeeNumber": " <Oracle HCM workers.PersonNumber> ", 
-                 "division": 
-                                " <Oracle HCM worker.workRelationships.assignments.BusinessUnitId> ", 
-                 "department": 
- "<Oracle HCM worker.workRelationships.assignments.DepartmentId >", 
-                 "manager": { 
-                   value": "  <Oracle HCM worker.workRelationships.assignments.allReports.ManagerPersonNumber> ", 
-                     "displayName": " <Oracle HCM worker.workRelationships.assignments.allReports.ManagerDisplayName" 
-                 } 
-            } 
-        } 
-    }, 
+"schemas": ["urn:ietf:params:scim:api:messages:2.0:BulkRequest"],  
+"Operations": [  
 
+{  
+
+    "method": "POST",  
+    "bulkId": "897401c2-2de4-4b87-a97f-c02de3bcfc61",  
+    "path": "/Users",  
+    "data": {  
+        "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",  
+        "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"],  
+        "externalId": "<Oracle HCM workers.PersonNumber>",  
+        "userName": "<Oracle HCM employee.UserName>",  
+        "name": {  
+            "familyName": "<Oracle HCM workers.names.LastName>",  
+            "givenName": "<Oracle HCM workers.names.FirstName> ",  
+            "middleName": "<Oracle HCM workers.names.MiddleName>",  
+               },  
+        "displayName": "<Oracle HCM workers.DisplayName>",  
+        "emails": [  
+        {  
+          "value": "<Oracle HCM workers.emails.EmailAddress> ",  
+          "type": "work",  
+          "primary": true  
+        }  
+        ],  
+        "addresses": [  
+        {  
+          "type": "work",  
+          "streetAddress": "<Oracle HCM workers.addresses.AddressLine1>",  
+          "locality": "<Oracle HCM workers.addresses.TownorCity>",  
+          "region": "<Oracle HCM workers.addresses.Region1>",  
+          "postalCode": "<Oracle HCM workers addresses.PostalCode> ",  
+          "country": "<Oracle HCM workers addresses.Country> ",  
+          "primary": true  
+        }  
+        ],  
+        "phoneNumbers": [  
+        {  
+          "value": "<Oracle HCM workers. phones.PhoneNumber ",  
+          "type": "work"  
+        }  
+        ],  
+        "userType": "<Oracle HCM workers.workRelationships.WorkerType ",  
+        "title": " <Oracle HCM worker.workRelationships.assignments.JobName",  
+         "active":true,  
+        "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {  
+             "employeeNumber": "<Oracle HCM workers.PersonNumber> ",  
+             "division": "<Oracle HCM worker.workRelationships.assignments.BusinessUnitId> ",  
+             "department": "<Oracle HCM worker.workRelationships.assignments.DepartmentId >",  
+             "manager": {  
+               "value": "<Oracle HCM worker.workRelationships.assignments.allReports.ManagerPersonNumber> ",  
+                 "displayName": "<Oracle HCM worker.workRelationships.assignments.allReports.ManagerDisplayName"  
+             }  
+        }  
+    }  
+} 
+
+
+],
+"failOnErrors": null
+}
 ```
 
 Once you format the [SCIM bulk request](~/identity/app-provisioning/inbound-provisioning-api-graph-explorer.md#bulk-request-with-scim-enterprise-user-schema), you can then send the data to the [bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API endpoint via API-driven provisioning.
@@ -350,7 +384,7 @@ extract:
     CSV. To get started with creating your BI Publisher report, refer to [Define the BI Publisher Template in HCM Extracts (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/23c/fahex/define-the-bi-publisher-template-in-hcm-extracts.html#s20043805).
 
 - **Oracle Integration Cloud (OIC) service**: If you have a subscription to
-    OIC, you can configure the integration with the [Oracle HCM Adapter](https://docs.oracle.com/en/cloud/paas/integration-cloud/hcm-adapter/understand-oracle-hcm-cloud-adapter.html#GUID-40A15882-F8D1-452E-9E9C-1B184616E1A8)
+    OIC, you can configure the integration with the [Oracle HCM Adapter (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/hcm-adapter/understand-oracle-hcm-cloud-adapter.html#GUID-40A15882-F8D1-452E-9E9C-1B184616E1A8)
     to extract the required data from Oracle HCM. Oracle provides a
     [guide](https://docs.oracle.com/en/cloud/paas/integration-cloud/int-get-started/export-employee-data-oracle-hcm-cloud-identity-management-system.html#GUID-DE0A58BC-25F1-4013-A87C-E4A0123A94EE) that you can use to get started.
 
@@ -411,8 +445,7 @@ steps here to configure the writeback job in Microsoft Entra:
 
 1.  Save the settings, then enable the provisioning status.
 
-1.  Use Microsoft Entra's **Provision on Demand** capability to test and validate the
-    writeback integration.
+1.  Use Microsoft Entra's [Provision on Demand](~/identity/app-provisioning/provision-on-demand.md) capability to test and validate the writeback integration.
 
 1. Once you've validated the workflow, start the job and keep it
     running for Microsoft Entra to continuously sync data back to Oracle HCM.
@@ -452,9 +485,9 @@ which attributes you wish to export for your integration.
 | Phone Number | |
 | Hire Date | Required by Lifecycle Workflows |
 | Termination Date  | Required by Lifecycle Workflows |
-| | |
-| | |
-| | |
+| <br> <br>| |
+| <br> <br>| |
+| <br> <br>| |
 
 > [!NOTE]
 > We've included blank rows in the above worksheet, so you can add
@@ -524,7 +557,7 @@ table if your provisioning target is Active Directory.
 | name.familyName                                   | sn               |
 | urn:ietf:params:scim:schemas:extension:COMPANYNAME:1.0:User:JobCode  | extensionAttribute1    |
 | title                                             | title            |
-| emails\[type eq \"work\"\].value                  | \<Generated by AD\> manager |
+| emails\[type eq \"work\"\].value                  | \<Generated by AD\> |
 | urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager      | manager          |
 | phoneNumbers\[type eq \"mobile\"\].value          | mobile           |
 | phoneNumbers\[type eq \"work\"\].value            | telephoneNumber  |
@@ -593,13 +626,24 @@ gallery application, refer to [Extend API-driven provisioning to sync custom att
 | urn:ietf:params:scim:schemas:extension:COMPANYNAME:1.0:User:JobCode                                | extensionAttribute1              |
 | title                                             | jobTitle         |
 | emails\[type eq \"work\"\].value                  | mail             |
-| urn:ietf:params:scim:schemas:extension:           | manager          |
-| enterprise:2.0:User:manager                       |                  |
+| urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager           | manager          |
 | phoneNumbers\[type eq \"mobile\"\].value          | mobile           |
 | phoneNumbers\[type eq \"work\"\].value            | telephoneNumber  |
 | addresses\[type eq \"work\"\].formatted           | physicalDeliveryOfficeName   |
 | urn:ietf:params:scim:schemas:extension:COMPANYNAME:1.0:User:HireDate                               | employeeHireDate |
 | urn:ietf:params:scim:schemas:extension:COMPANYAME:1.0:User:TermDate                                | employeeLeaveDateTime            |
+
+## Acknowledgements
+
+We thank the following partners for their help reviewing and contributing to this tutorial:
+
+- Michael Starkweather, Director at PwC
+- Rob Allen, Director of Architecture and Technology at ActiveIdM
+- Ray Nalette, Technical Delivery Manager at ActiveIdM
+- Randy Robb, Principal Consultant at Oxford Computer Group
+- Frank Urena, Principal Architect at Oxford Computer Group
+- Nick Herbert, Vice President of Sales at Oxford Computer Group
+- Steve Brugger, CEO at Oxford Computer Group
 
 ## Next steps
 
