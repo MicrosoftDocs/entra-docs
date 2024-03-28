@@ -25,7 +25,7 @@ Microsoft Entra Verified ID offer a limited set of options that can be used to r
 
 Microsoft Authenticator, being a decentralized identities wallet, displays verifiable credentials that are issued to users as cards. As a VC administrator, you can choose card colors, icons, and text strings to match your organization's brand.
 
-![Screenshot of a verified credential card in Authenticator, calling out key elements.](media/credential-design/detailed-view.png) 
+:::image type="content" source="media/credential-design/detailed-view.png" alt-text="Screenshot of a verified credential card in Authenticator, calling out key elements."::: 
 
 Cards also contain customizable fields. You can use these fields to let users know the purpose of the card, the attributes it contains, and more.
 

@@ -25,7 +25,7 @@ In order to bulk create users in the administration portal, you must be signed i
 
 Download and fill in the bulk upload CSV template to help you successfully create Microsoft Entra users in bulk. The CSV template you download might look like this example:
 
-![Spreadsheet for upload and call-outs explaining the purpose and values for each row and column](./media/users-bulk-add/create-template-example.png)
+:::image type="content" source="./media/users-bulk-add/create-template-example.png" alt-text="Screenshot of spreadsheet for upload and call-outs explaining the purpose and values for each row and column.":::
 
 > [!WARNING]
 > If you are adding only one entry using the CSV template, you must preserve row 3 and add your new entry to row 4.
@@ -57,11 +57,11 @@ The rows in a downloaded CSV template are as follows:
 1. Select **All users** >  **Users** > **Bulk create**.
 1. On the **Bulk create user** page, select **Download** to receive a valid comma-separated values (CSV) file of user properties, and then add users you want to create.
 
-   ![Select a local CSV file in which you list the users you want to add](./media/users-bulk-add/upload-button.png)
+   :::image type="content" source="./media/users-bulk-add/upload-button.png" alt-text="Screenshot showing how to select a local CSV file in which you list the users you want to add.":::
 
 1. Open the CSV file and add a line for each user you want to create. The only required values are **Name**, **User principal name**, **Initial password** and **Block sign in (Yes/No)**. Then save the file.
 
-   [![The CSV file contains names and IDs of the users to create](./media/users-bulk-add/add-csv-file.png)](./media/users-bulk-add/add-csv-file.png#lightbox)
+   :::image type="content" source="./media/users-bulk-add/add-csv-file.png" alt-text="Screenshot showing an example of the CSV file containing the names and IDs of the users to create.":::
 
 1. On the **Bulk create user** page, under Upload your CSV file, browse to the file. When you select the file and click **Submit**, validation of the CSV file starts.
 1. After the file contents are validated, you’ll see **File uploaded successfully**. If there are errors, you must fix them before you can submit the job.
@@ -76,7 +76,7 @@ If there are errors, you can download and view the results file on the **Bulk op
 
 You can see the status of all of your pending bulk requests in the **Bulk operation results** page.
 
-   [![Check create status in the Bulk Operations Results page](./media/users-bulk-add/bulk-center.png)](./media/users-bulk-add/bulk-center.png#lightbox)
+   :::image type="content" source="./media/users-bulk-add/bulk-center.png" alt-text="Screenshot showing how to check the status of the operation in the bulk operations results page.":::
 
 Next, you can check to see that the users you created exist in the Microsoft Entra organization either in the Azure portal or by using PowerShell.
 
