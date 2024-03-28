@@ -136,11 +136,11 @@ Follow these steps to configure security alerts for Microsoft Entra roles in Pri
 
 1. Browse to **Identity governance** > **Privileged Identity Management** > **Microsoft Entra roles** > **Alerts** > **Setting**. For information about how to add the Privileged Identity Management tile to your dashboard, see [Start using Privileged Identity Management](pim-getting-started.md).
 
-    :::image type="content" source="media/pim-how-to-configure-security-alerts/alert-settings.png" alt-text="Screenshots of alerts page with the settings highlighted.":::
+    :::image type="content" source="media/pim-how-to-configure-security-alerts/alert-settings.png" alt-text="Screenshot of the alerts page with the settings highlighted.":::
 
 1. Customize settings on the different alerts to work with your environment and security goals.
 
-    :::image type="content" source="media/pim-how-to-configure-security-alerts/security-alert-settings.png" alt-text="Screenshots of the alert setting page.":::
+    :::image type="content" source="media/pim-how-to-configure-security-alerts/security-alert-settings.png" alt-text="Screenshot of the alert setting page.":::
 
 ## Next steps
 

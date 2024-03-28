@@ -30,7 +30,7 @@ As a delegated approver, you receive an email notification when an Azure resourc
 
 1. Browse to **Identity governance** > **Privileged Identity Management** > **Approve requests**.
 
-    :::image type="content" source="./media/pim-resource-roles-approval-workflow/resources-approve-requests.png" alt-text="Approve requests - Azure resources page showing request to review":::
+    :::image type="content" source="./media/pim-resource-roles-approval-workflow/resources-approve-requests.png" alt-text="Screenshot of the Approve requests - Azure resources page showing request to review.":::
 
     In the **Requests for role activations** section, you see a list of requests pending your approval.
 

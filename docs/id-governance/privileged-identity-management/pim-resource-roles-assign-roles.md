@@ -68,7 +68,7 @@ Follow these steps to make a user eligible for an Azure resource role.
 
 1. Select a member or group you want to assign to the role and then choose **Select**.
 
-    :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-select-member-or-group.png" alt-text="Screenshots that demonstrates how to select a member or group pane":::
+    :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-select-member-or-group.png" alt-text="Screenshot that demonstrates how to select a member or group pane.":::
 
 1. On the **Settings** tab, in the **Assignment type** list, select **Eligible** or **Active**.
 

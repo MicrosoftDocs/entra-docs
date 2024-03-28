@@ -39,15 +39,15 @@ You can view and manage the management groups or subscriptions to which you have
 
     If this is your first time using Privileged Identity Management for Azure resources, you'll see a **Discover resources** page.
 
-    :::image type="content" source="./media/pim-resource-roles-discover-resources/discover-resources-first-run.png" alt-text="Discover resources pane with no resources listed for first time experience":::
+    :::image type="content" source="./media/pim-resource-roles-discover-resources/discover-resources-first-run.png" alt-text="Screenshot of the Discover resources pane with no resources listed for first time experience.":::
 
     If another administrator in your organization is already managing Azure resources in Privileged Identity Management, you'll see a list of the resources that are currently being managed.
 
-    :::image type="content" source="./media/pim-resource-roles-discover-resources/discover-resources.png" alt-text="Discover resources pane listing resources that are currently being managed":::
+    :::image type="content" source="./media/pim-resource-roles-discover-resources/discover-resources.png" alt-text="Screenshot of the Discover resources pane listing resources that are currently being managed.":::
 
 1. Select **Discover resources** to launch the discovery experience.
 
-    :::image type="content" source="./media/pim-resource-roles-discover-resources/discovery-pane.png" alt-text="Discovery pane lists resources that can be managed, such as subscriptions and management groups":::
+    :::image type="content" source="./media/pim-resource-roles-discover-resources/discovery-pane.png" alt-text="Screenshot showing the discovery pane lists resources that can be managed, such as subscriptions and management groups":::
 
 1. On the **Discovery** page, use **Resource state filter** and **Select resource type** to filter the management groups or subscriptions you have write permission to. It's probably easiest to start with **All** initially.
 
@@ -68,7 +68,7 @@ assigned as User Access Administrator on the resource.
 
 1. If you see a message to confirm the onboarding of the selected resource for management, select **Yes**. PIM will then be configured to manage all the new and existing child objects under the resource(s).
 
-    :::image type="content" source="./media/pim-resource-roles-discover-resources/discovery-manage-resource-message.png" alt-text="Message confirming to onboard the selected resources for management":::
+    :::image type="content" source="./media/pim-resource-roles-discover-resources/discovery-manage-resource-message.png" alt-text="Screenshot showing a Message confirming to onboard the selected resources for management.":::
 
 ## Next steps
 
