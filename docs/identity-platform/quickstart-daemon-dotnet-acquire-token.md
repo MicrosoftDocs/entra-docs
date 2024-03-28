@@ -15,17 +15,13 @@ ms.topic: quickstart
 
 # Quickstart: .NET console app that accesses a protected web API
 
-This quickstart uses a sample .NET console application to accesses a protected web API as its own identity by using the [Microsoft Authentication Library (MSAL) for .NET]/entra/msal/dotnet). The application is a daemon application, which is a confidential client application and uses the [client credentials OAuth flow](v2-oauth2-client-creds-grant-flow.md) to get an access token to call the Microsoft Graph API.
+This quickstart uses a sample .NET console application to accesses a protected web API as its own identity by using the [Microsoft Authentication Library (MSAL) for .NET](/entra/msal/dotnet). The application is a daemon application, which is a confidential client application and uses the [client credentials OAuth flow](v2-oauth2-client-creds-grant-flow.md) to get an access token to call the Microsoft Graph API.
 
 ## Prerequisites
 
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet)
 * [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
-
-## Register and download the app
-
-The application can be built using either an automatic or manual configuration.
 
 ## Register the application and record identifiers
 
