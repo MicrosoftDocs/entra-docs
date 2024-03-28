@@ -1,5 +1,5 @@
 ---
-title: Assign Microsoft Entra Roles - Entitlement management
+title: Assign Microsoft Entra Roles - Entitlement management (Preview)
 description: Learn how to assign Microsoft Entra roles with access packages.
 author: owinfreyatl
 manager: amycolannino
@@ -7,7 +7,7 @@ editor: mamtakumar
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 03/11/2024
+ms.date: 03/28/2024
 ms.author: owinfrey
 ms.reviewer: mamkumar
 
@@ -16,7 +16,7 @@ ms.reviewer: mamkumar
 
 # Assign Microsoft Entra Roles (Preview)
 
-Entitlement Management supports access lifecycle for various resource types such as Applications, SharePoint sites, Groups, and Teams. Sometimes users need additional permissions to utilize these resources in specific ways. For instance, a user might need to have access to your organization’s Power BI dashboards, but would need the Power BI Administrator role to see org-wide metrics.  Although other Microsoft Entra ID functionalities, such as role-assignable groups, might support these Microsoft Entra role assignments, the access granted through those methods is less explicit. For example, you would be managing a group’s membership rather than managing users' role assignments directly.  
+Entitlement Management supports access lifecycle for various resource types such as Applications, SharePoint sites, Groups, and Teams. Sometimes users need extra permissions to utilize these resources in specific ways. For instance, a user might need to have access to your organization’s Power BI dashboards, but would need the Power BI Administrator role to see org-wide metrics.  Although other Microsoft Entra ID functionalities, such as role-assignable groups, might support these Microsoft Entra role assignments, the access granted through those methods is less explicit. For example, you would be managing a group’s membership rather than managing users' role assignments directly.  
 
 By assigning Microsoft Entra roles to employees, and guests, using Entitlement Management, you can look at a user's entitlements to quickly determine which roles are assigned to that user. When you include a Microsoft Entra role as a resource in an access package, you can also specify whether that role assignment is “*eligible*” or “*active*”.
 
