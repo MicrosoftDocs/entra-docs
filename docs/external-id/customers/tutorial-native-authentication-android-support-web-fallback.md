@@ -43,7 +43,7 @@ In this case, the utility method `isBrowserRequired()` returns true.
  
 ## Sample flow 
   
-Let's model an example flow that returns `isBrowserRequired()`, and how you can handle it: 
+Let's look at an example flow that returns `isBrowserRequired()`, and how you can handle it: 
 
 1. In the JSON configuration file, which you pass to the SDK during initialization, add only the *oob* challenge type as shown the following code snippet: 
  
@@ -58,7 +58,7 @@ Let's model an example flow that returns `isBrowserRequired()`, and how you can 
      
     ```json 
     {
-      "client_id" : "{CLIENT_ID}",
+      "client_id" : "{Enter_the_Application_Id_Here}",
        "authorities" : [
         {
           "type": "CIAM",
@@ -76,7 +76,7 @@ Let's model an example flow that returns `isBrowserRequired()`, and how you can 
  
 1. In the Microsoft Entra admin center, [configure your user flow](how-to-user-flow-sign-up-sign-in-customers.md) to use **Email with password** as the authentication method.    
  
-1. Start a sign-up flow by using the SDK's `signUp(username)` method. You get a `SignUpError` that passes the `isBrowserRequired()` check as Microsoft Entra requires different challenge type, *password* in this case, but not the one you configure in the client, *oob* in this case.  
+1. Start a sign-up flow by using the SDK's `signUp(username)` method. You get a `SignUpError` that passes the `isBrowserRequired()` check as Microsoft Entra expects *password* and *oob* challenge type, but you just configured your SDK with just *oob*.  
 
 1. To check and handle the `isBrowserRequired()`, use the following code snippet: 
  
@@ -99,7 +99,7 @@ To do so, use the following steps:
 
 <!--We'll update these instructions once we author the Android tutorials for the browser-delegated authentication flow --> 
 
-1. Use the steps in [Register a redirect URI in Microsoft Entra admin center](../../identity-platform/tutorial-v2-android.md#register-your-application-with-microsoft-entra-id) to add a redirect URIto the app that you registered earlier. 
+1. Use the steps in [Register a redirect URI in Microsoft Entra admin center](../../identity-platform/tutorial-v2-android.md#register-your-application-with-microsoft-entra-id) to add a redirect URI to the app that you registered earlier. 
 
 1. Use the steps in [Configure the redirect URI in SDK's configuration](../../identity-platform/tutorial-v2-android.md#configure-your-application) to update your client app's configuration file. 
   
@@ -122,7 +122,7 @@ To do so, use the following steps:
     } 
     ```
 
-Tokens you obtain through native authentication flow are similar to those that you obtain through browser-delegated flows.
+Security tokens, that's ID token, access token and refresh token, you get through native authentication flow are same as those that you get the through browser-delegated flow.
 
 ## Related content 
 
