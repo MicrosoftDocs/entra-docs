@@ -49,7 +49,7 @@ To get the sample SPA, you can choose one of the following options:
 
 * Clone the repository using Git:
 
-    ```powershell
+    ```console
     git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
     ```
 
@@ -61,19 +61,19 @@ If you choose to download the `.zip` file, extract the sample app file to a fold
 
 1. Open a terminal window in the root directory of the sample project, and enter the following snippet to navigate to the project folder:
 
-    ```powershell
+    ```console
     cd 1-Authentication\2-sign-in-angular\SPA
     ```
 
 1. Install the project dependencies:
 
-    ```powershell
+    ```console
     npm install
     ```
 
 ## Configure the sample SPA
 
-1. Open `SPA\src\authConfig.js` and replace the following with the values obtained from the Microsoft Entra admin center
+1. Open `SPA/src/app/auth-config.ts` and replace the following with the values obtained from the Microsoft Entra admin center
     * `clientId` - The identifier of the application, also referred to as the client. Replace `Enter_the_Application_Id_Here` with the **Application (client) ID** value that was recorded earlier from the overview page of the registered application.
     * `authority` - The identity provider instance and sign-in audience for the app. Replace `Enter_the_Tenant_Name_Here` with the name of your CIAM tenant.
     * The *Tenant ID* is the identifier of the tenant where the application is registered. Replace the `_Enter_the_Tenant_Info_Here` with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
@@ -86,7 +86,7 @@ All the required code snippets have been added, so the application can now be ca
 1. Open a new terminal by selecting **Terminal** > **New Terminal**.
 1. Run the following command to start your web server.
 
-    ```powershell
+    ```console
     cd 1-Authentication\2-sign-in-angular\SPA
     npm start
     ```

@@ -46,7 +46,7 @@ To get the sample SPA, you can choose one of the following options:
 
 * Clone the repository using Git:
 
-    ```powershell
+    ```console
         git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
     ```
 
@@ -58,13 +58,13 @@ If you choose to download the `.zip` file, extract the sample app file to a fold
 
 1. Open a terminal window in the root directory of the sample project, and enter the following snippet to navigate to the project folder:
 
-    ```powershell
+    ```console
         cd 1-Authentication\0-sign-in-vanillajs\App
     ```
 
 1. Install the project dependencies:
 
-    ```powershell
+    ```console
         npm install
     ```
 
@@ -79,7 +79,7 @@ If you choose to download the `.zip` file, extract the sample app file to a fold
 
 1. Open a new terminal and run the following command to start your express web server.
 
-    ```powershell
+    ```console
     npm start
     ```
 
