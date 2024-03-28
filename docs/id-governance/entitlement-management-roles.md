@@ -93,7 +93,48 @@ You can add Microsoft Entra roles as resources in an access package using Micros
 
 You can also add Microsoft Entra roles as resources in access packages in PowerShell with the cmdlets from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/2.15.0) module version 1.16.0 or later. 
 
-The following script illustrates using the `v1.0` profile of Graph to add a Microsoft Entra role as a resource in an access package: 
+The following script illustrates using the `Beta` profile of Graph to add a Microsoft Entra role as a resource in an access package:
+
+First, retrieve the ID of the catalog, and of the resource in that catalog and its scopes and roles, that you want to include in the access package. Use a script similar to the following example. This assumes there's a single application resource in the catalog.
+
+```powershell
+Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All"
+
+$catalog = Get-MgEntitlementManagementCatalog -Filter "displayName eq 'Entra Admins'" -All
+if ($catalog -eq $null) { throw "catalog not found" }
+$rsc = Get-MgEntitlementManagementCatalogResource -AccessPackageCatalogId $catalog.id -Filter "originSystem eq 'DirectoryRole'" -ExpandProperty scopes
+if ($rsc -eq $null) { throw "resource not found" }
+$filt = "(id eq '" + $rsc.Id + "')"
+$rrs = Get-MgEntitlementManagementCatalogResource -AccessPackageCatalogId $catalog.id -Filter $filt -ExpandProperty roles,scopes
+```
+
+Then, assign the Microsoft Entra role from that resource to the access package.  For example, if you wished to include the first resource role of the resource returned earlier as a resource role of an access package, you would use a script similar to the following.
+
+```powershell
+$apid = "cdd5f06b-752a-4c9f-97a6-82f4eda6c76d"
+
+$rparams = @{
+    role = @{
+        id =  $rrs.Roles[0].Id
+        displayName =  $rrs.Roles[0].DisplayName
+        description =  $rrs.Roles[0].Description
+        originSystem =  $rrs.Roles[0].OriginSystem
+        originId =  $rrs.Roles[0].OriginId
+        resource = @{
+            id = $rrs.Id
+            originId = $rrs.OriginId
+            originSystem = $rrs.OriginSystem
+        }
+    }
+    scope = @{
+        id = $rsc.Scopes[0].Id
+        originId = $rsc.Scopes[0].OriginId
+        originSystem = $rsc.Scopes[0].OriginSystem
+    }
+}
+
+New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $apid -BodyParameter $rparams
+```
 
 ## Next step
 
