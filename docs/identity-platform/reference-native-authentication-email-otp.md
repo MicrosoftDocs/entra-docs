@@ -661,7 +661,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Submitting user attributes to endpoints
 
-In the Microsoft Entra admin center, you can configure user attributes as required or optional. This configuration determines how Microsoft Entra responds when you make a call to its endpoints. For example, if all the user attributes are optional, and you don't submit them via the `/signup/v1.0/start` endpoint, then you can't submit them via the `/signup/v1.0/continue` endpoint after username verification.
+In the Microsoft Entra admin center, you can configure user attributes as required or optional. This configuration determines how Microsoft Entra responds when you make a call to its endpoints. Optional attributes are not mandatory for the signUp process to complete. Therefore, when all attributes are optional, they must be provided before the username is verified or the signUp process is finished.
  
 The following table summarizes when it's possible to submit user attributes to Microsoft Entra endpoints. 
 
