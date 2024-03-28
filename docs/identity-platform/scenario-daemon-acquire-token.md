@@ -4,7 +4,7 @@ description: Learn how to build a daemon app that calls web APIs (acquiring toke
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.date: 02/01/2024
+ms.date: 03/28/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -266,7 +266,7 @@ If you get an error message telling you that you used an invalid scope, you prob
 
 ### Did you forget to provide admin consent? Daemon apps need it!
 
-If you get an **Insufficient privileges to complete the operation** error when you call the API, the tenant administrator needs to grant permissions to the application. For guidance on how to grant admin consent for your application, see step 4 in [Quickstart: Acquire a token and call Microsoft Graph in a .NET console app](quickstart-console-app-netcore-acquire-token.md#step-4-admin-consent). 
+If you get an **Insufficient privileges to complete the operation** error when you call the API, the tenant administrator needs to grant permissions to the application.
 
 If you don't grant admin consent to your application, you'll run into the following error:
 
@@ -283,6 +283,27 @@ Content: {
   }
 }
 ```
+
+Select one of the following options, depending on the role.
+
+##### Global tenant administrator
+
+For a global tenant administrator, go to **Enterprise applications** in the Microsoft Entra admin center. Select the app registration, and select **Permissions** from the **Security** section of the left pane. Then select the large button labeled **Grant admin consent for {Tenant Name}** (where **{Tenant Name}** is the name of the directory).
+
+##### Standard user
+
+For a standard user of your tenant, ask a Global Administrator to grant admin consent to the application. To do this, provide the following URL to the administrator:
+
+```url
+https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_id=Enter_the_Application_Id_Here
+```
+
+In the URL:
+
+- Replace `Enter_the_Tenant_Id_Here` with the tenant ID or tenant name (for example, `contoso.microsoft.com`).
+- `Enter_the_Application_Id_Here` is the application (client) ID for the registered application.
+
+The error `AADSTS50011: No reply address is registered for the application` may be displayed after you grant consent to the app by using the preceding URL. This error occurs because the application and the URL don't have a redirect URI. This can be ignored.
 
 ### Are you calling your own API?
 
