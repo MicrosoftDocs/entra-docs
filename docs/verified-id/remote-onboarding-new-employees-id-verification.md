@@ -14,7 +14,7 @@ ms.author: barclayn
 
 # Onboard new remote employees using ID verification
 
-Enterprises onboarding users face significant challenges onboarding remote users who are not yet inside the trust boundary. Microsoft Entra Verified ID can help customers facing these scenarios because it can use government issued ID based attestations as a way to establish trust. 
+Enterprises onboarding users face significant challenges onboarding remote users who aren't yet inside the trust boundary. Microsoft Entra Verified ID can help customers facing these scenarios because it can use government issued ID based attestations as a way to establish trust. 
 
 ## When to use this pattern
 
@@ -34,7 +34,7 @@ Enterprises onboarding users face significant challenges onboarding remote users
   3. System receives the claims from identity verification partner, looks up the user account for the new hire and performs the validation.
   4. System executes the onboarding logic to locate the Microsoft Entra account of the user, and [generate a temporary access pass using MS Graph](/graph/api/resources/temporaryaccesspassauthenticationmethod?view=graph-rest-1.0&preserve-view=true).
 
-![Diagram showing a high-level flow.](media/remote-onboarding-new-employees-id-verification/high-level-flow-diagram.png)
+:::image type="content" source="media/remote-onboarding-new-employees-id-verification/high-level-flow-diagram.png" alt-text="Diagram showing a high-level flow.":::
 
 ## Issues and considerations
 
@@ -48,7 +48,7 @@ Enterprises onboarding users face significant challenges onboarding remote users
    1. At the beginning of the HR process, candidates must use their name exactly as it appears in government issued documents. Taking this approach simplifies validation logic.
    1. Design validation logic to include attributes that are more likely to have an exact match against the HR system. Common attributes include street address, date of birth, nationality, national/regional identification number (if applicable), in addition to first and last name.
    1. As a fallback, plan for human review to work through ambiguous/non-conclusive results. This process might include temporarily storing the attributes presented in the VC, phone call with the user, etc.
-- Multinational organizations, may need to work with different identity proofing partners based on the region of the user.
+- Multinational organizations may need to work with different identity proofing partners based on the region of the user.
 - Assume that the initial interaction between the user and the onboarding partner is untrusted. The onboarding portal should generate detailed logs for all requests processed that could be used for auditing purposes.
 
 ## Additional resources
