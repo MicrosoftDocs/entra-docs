@@ -98,7 +98,7 @@ Use these steps to initiate the sign-up flow:
     }
     ```
     
-## Handle errors  
+## Handle sign-up errors  
 
 - In the case of `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you analyze the specific errors further: 
 
@@ -131,4 +131,3 @@ Use these steps to initiate the sign-up flow:
 ## Next steps  
  
 [Tutorial: Sign up user with username, password, and user attributes](tutorial-native-authentication-android-sign-up-user-with-username-password-user-attributes.md). 
-

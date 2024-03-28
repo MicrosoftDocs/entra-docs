@@ -28,8 +28,7 @@ In this tutorial, you learn how to:
  
 ## Prerequisites  
  
-- An Android project. If you don't have an Android project, create it.
-- Complete the steps [Sign in users in a sample native Android mobile application](how-to-run-native-authentication-sample-android-app.md) This article shows you how to run a sample Android that you configure by using your tenant settings.  
+- Complete the steps [Sign in users in a sample native Android mobile application](how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings.  
 - [Tutorial: Add sign up with email one-time passcode in Android mobile app](tutorial-native-authentication-android-sign-up.md) or [Tutorial: Sign up user with username and password in Android app by using native authentication](tutorial-native-authentication-android-sign-up-user-with-username-password.md). The steps in this tutorial should work whether you sign up with email and password or email one-time passcode.
  
 ## Sign in after sign-up
@@ -71,7 +70,7 @@ CoroutineScope(Dispatchers.Main).launch {
 
 To retrieve ID token claims after sign-in, use the steps in [Read ID token claims](tutorial-native-authentication-android-sign-in-user-with-username-password.md#read-id-token-claims).
  
-## Handle errors 
+## Handle sign-in errors 
 
 The `SignInContinuationState.signIn()` method returns `SignInResult.Complete` after a successful sign-in. It can also return an error. 
  

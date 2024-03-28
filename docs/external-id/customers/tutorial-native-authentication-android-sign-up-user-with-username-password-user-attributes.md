@@ -40,7 +40,7 @@ In this tutorial, you learn how to:
  
 To sign up user using username (email address), password, and user attributes, we verify the user's email address through email OTP. Also, the password that the app collects from the user need to meet [Microsoft Entra's password policies](/entra/identity/authentication/concept-password-ban-bad-combined-policy). 
  
-The Android SDK provides a utility class `UserAttribute.Builder` to create user attributes.  
+The Android SDK provides a utility class `UserAttribute.Builder` to prepare the user attributes.  
 
 Use these steps to initiate the sign-up flow:
  
@@ -87,7 +87,7 @@ Use these steps to initiate the sign-up flow:
         - `submitCode(code)` submits the OTP code that the app collects from the user.
         - `resendCode()` resends the OTP code if the user doesn't receive the code. 
     
-    - The `signUp()` method can also return `SignUpResult.AttributesRequired` to indicate that the app needs to submit one or more required attributes before Microsoft Entra creates an account. These are the attributes that the administrator configured as mandatory in the Microsoft Entra admin center. Microsoft Entra doesn't explicitly request for optional user attributes. 
+    - The `signUp()` method can also return `SignUpResult.AttributesRequired` to indicate that the app needs to submit one or more required attributes before Microsoft Entra creates an account. These are the attributes that the administrator configured as mandatory in the Microsoft Entra admin center. The `signUp()` method can't return `SignUpResult.AttributesRequired` if the administrator doesn't specify a mandatory user attribute. Microsoft Entra doesn't explicitly request for optional user attributes. 
     
     - The `SignUpResult.AttributesRequired` result contains a `requiredAttributes` parameter. `requiredAttributes` is a list of `RequiredUserAttribute` objects that contains details about the user attributes that the app needs to submit. To handle `actionResult is SignUpResult.AttributesRequired`, use the following code snippet: 
 
@@ -106,7 +106,7 @@ Use these steps to initiate the sign-up flow:
         }
         ```
 
-## Handle errors  
+## Handle sign-up errors  
  
 - If `actionResult is SignUpError`, the Android SDK provides utility methods to enable you analyze the specific errors further: 
     - `isUserAlreadyExists()`

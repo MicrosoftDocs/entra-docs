@@ -37,13 +37,13 @@ Use web fallback mechanism for scenarios where native authentication isn't suffi
  
 When you initialize the Android SDK, you specify the challenge types your mobile application supports, such as *oob* and *password*. 
 
-If your client app can't support a challenge type that Microsoft Entra requires, Microsoft Entra indicates that it requires capabilities that the client can't provide. For example, you initialize the SDK with just *oob* challenge type, but in the Microsoft Entra admin center you configure the app with an email with password user flow. 
+If your client app can't support a challenge type that Microsoft Entra requires, Microsoft Entra's response indicates that the client app needs to continue with the authentication flow in the browser. For example, you initialize the SDK with just *oob* challenge type, but in the Microsoft Entra admin center you configure the app with an email with password authentication method. 
 
 In this case, the utility method `isBrowserRequired()` returns true.
  
-## Sample flow  
+## Sample flow 
   
-Let's model an example flow that returns `isBrowserRequired()`, and how you can handle it. 
+Let's model an example flow that returns `isBrowserRequired()`, and how you can handle it: 
 
 1. In the JSON configuration file, which you pass to the SDK during initialization, add only the *oob* challenge type as shown the following code snippet: 
  
@@ -91,7 +91,7 @@ Let's model an example flow that returns `isBrowserRequired()`, and how you can 
  
     The code indicates that the authentication flow can't be completed through native authentication, and that a browser has to be used.  
  
-## Handle isBrowserRequired()
+## Handle isBrowserRequired() error
  
 To handle this error, the client app need to launch a browser and restart the authentication flow. You can accomplish by using Microsoft Authentication Library (MSAL) `acquireToken()` method.  
  

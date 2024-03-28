@@ -79,7 +79,7 @@ To handle the request when the user selects the **Forget Password** button or li
       - `isUserNotFound()` 
       - `isBrowserRequired()` 
 
-- These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available. We show you how to handle these errors in [Handle errors](#handle-errors) section.
+- These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available. Handle these errors as shown in [Handle errors](#handle-errors) section.
  
 ### Submit OTP code
 
@@ -136,7 +136,7 @@ Your app collects the OTP code from the user. To submit the OTP code, use the fo
     - `isInvalidCode()` 
     - `isBrowserRequired()` 
     
-    These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available.  
+    These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available. Handle these errors as shown in [Handle errors](#handle-errors) section.  
 
 ### Submit a new password
  
@@ -168,10 +168,10 @@ private suspend fun resetPassword(currentState: ResetPasswordPasswordRequiredSta
       - `isInvalidPassword()`
       - `isPasswordResetFailed()`
 
-    These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available. Handle the errors as shown in [Handle error](#handle-errors) section.
+    These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available. Handle these errors as shown in [Handle errors](#handle-errors) section.
 
 
-## Autosign in after password reset 
+## Auto sign in after password reset 
 
 After a successful password reset flow, you can automatically sign in your users without initiating a fresh sign-in flow. 
 
@@ -214,7 +214,7 @@ To automatically sign in users after a password reset, use the following code sn
 
 To retrieve ID token claims after sign-in, use the steps in [Read ID token claims](tutorial-native-authentication-android-sign-in-user-with-username-password.md#read-id-token-claims).
 
-## Handle errors 
+## Handle password reset errors 
 
 A few expected errors might occur. For example, the user might attempt to reset the password with a nonexistent email or provide a password that doesn't meet the password requirements. 
 

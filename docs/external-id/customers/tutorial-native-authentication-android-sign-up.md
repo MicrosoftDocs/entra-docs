@@ -69,11 +69,11 @@ To sign up a user by using email OTP, you need to:
         - `submitCode()` submits the OTP code that the app collects from the user. 
         - `resendCode()` resends the OTP code if the user doesn't receive the code. 
 
-## Handle errors during sign-up
+## Handle sign-up errors
 
 During sign-up, not all actions succeed. For instance, the user might attempt to sign up with an already used email address or submit an invalid OTP code. 
 
-### Handle sign-up error
+### Handle start sign-up error
 
 
 To handle errors for the `signUp(username)` method, use the following code snippet: 
@@ -103,8 +103,7 @@ To handle errors for the `signUp(username)` method, use the following code snipp
         - `isBrowserRequired()` checks the need for a browser (web fallback), to complete authentication flow. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For examples, an admin configures email and password as the authentication method, but the app fails to send *password* as a challenge type or simply doesn't support it. Use the steps in [Support web fallback in Android app](tutorial-native-authentication-android-support-web-fallback.md) to handle scenario when it happens.
         - `isAuthNotSupported()` checks whether the app sends a challenge type that Microsoft Entra doesn't support, that's a challenge type value other than *oob* or *password*. Learn more about [challenge types](concept-native-authentication-challenge-types.md).
    
-You should notify the user that the email is already in use by using a friendly message in the app's UI. 
-   
+You should notify the user that the email is already in use by using a friendly message in the app's UI.    
 
 ### Handle submit OTP code error
 

@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Add sign-in with email one-time passcode in Android app by using native authentication
 
-This tutorial demonstrates how to sign-in and sign-out a user using email one-time passcode (OTP) in your Android mobile app by using native authentication. 
+This tutorial demonstrates how to sign-in and sign-out a user using email one-time passcode in your Android mobile app by using native authentication. 
 
 In this tutorial, you learn how to: 
 
@@ -32,16 +32,16 @@ In this tutorial, you learn how to:
 
 ## Sign in a user
 
-To sign in a user using the email and OTP code authentication method, collect the email and send an email containing an OTP code for the user to verify their email. When the user enters a valid OTP code, the app signs them in. 
+To sign in a user using the one-time passcode authentication method, collect the email and send an email containing a one-time passcode for the user to verify their email. When the user enters a valid one-time passcode, the app signs them in. 
 
-To sign in user using email and OTP code you need to: 
+To sign in user using one-time passcode code you need to: 
 
-1. Create your user interface (UI) that includes: 
+1. Create a user interface (UI) that includes: 
 
-   - A UI to collect an email address. Add validation to your UI to make sure the user enters a valid emails address.
-   - A UI to collect OTP code.
+   - An input text field to collect an email address. Add validation to your UI to make sure the user enters a valid emails address.
+   - An input text field to collect one-time passcode.
 
-1. In your app, add a button, whose select event triggers the following code snippet: 
+1. In your UI, add a button, whose select event starts a sign-in as shown in the following code snippet: 
 
    ```kotlin
     CoroutineScope(Dispatchers.Main).launch {
@@ -74,15 +74,11 @@ To sign in user using email and OTP code you need to:
         - `submitCode()` submits the OTP code that the app collects from the user. 
         - `resendCode()` resends the OTP code if the user doesn't receive the code. 
 
-## Read ID token claims
-
-[!INCLUDE [read-od-token-claims](./includes/native-auth/read-id-token-claims-android-kotlin.md)]
-
-### Handle errors during sign-in flow 
+### Handle sign-in errors
 
 During sign-in, not all actions succeed. For instance, the user might attempt to sign in with an email address that doesn't exist or submit an invalid code. 
 
-#### Handle sign-in errors
+#### Handle sign-in start errors
 
 To handle errors in the `signIn(username)` method, use the following code snippet: 
 
@@ -98,6 +94,9 @@ To handle errors in the `signIn(username)` method, use the following code snippe
             actionResult.isUserNotFound() -> {
                 // Handle "user not found" error
             }
+            actionResult.isAuthNotSupported() -> {
+            // Handle "authentication type not support" error
+            }
             else -> {
                 // Handle other errors
             }
@@ -106,8 +105,8 @@ To handle errors in the `signIn(username)` method, use the following code snippe
    ```
 
 - `SignInError` indicates an unsuccessful action result returned by `signIn()` and so the action result doesn't include a reference to the new state.
-- If `actionResult is SignUpError`, Android SDK provides utility methods to enable you to analyze the specific errors further:
-    - The method `isUserNotFound()` checks that the user inputs an email address that doesn't exist.
+- If `actionResult is SignUpError`, the Android SDK provides utility methods to enable you to analyze the specific errors further:
+    - The method `isUserNotFound()` checks whether the user signs in with a username (email address) that doesn't exist.
     - The method `isBrowserRequired()` checks the need for a browser (web fallback), to complete authentication flow. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For examples, an admin configures email and password as the authentication method, but the app fails to send *password* as a challenge type or simply doesn't support it. Use the steps in [Support web fallback in Android app](tutorial-native-authentication-android-support-web-fallback.md) to handle scenario when it happens.
     - The method `isAuthNotSupported()` checks whether the app sends a challenge type that Microsoft Entra doesn't support, that's a challenge type value other than *oob* and *password*. Learn more about [challenge types](concept-native-authentication-challenge-types.md).
 
@@ -146,6 +145,10 @@ To retrieve the new OTP code, use the following code snippet:
 
 You've completed all the necessary steps to successfully sign in a user on your app. Build and run your application. If all good, you should be able to provide an email, receive a code on the email and use that to successfully sign in user. 
 
+## Read ID token claims
+
+[!INCLUDE [read-od-token-claims](./includes/native-auth/read-id-token-claims-android-kotlin.md)]
+
 ## Sign out a user 
 
 To sign out a user, you need to remove the account currently stored in the cache. 
@@ -170,7 +173,7 @@ To sign out a user, you need to remove the account currently stored in the cache
     }
    ```
 
-### Handle errors during sign out 
+### Handle sign-out errors 
 
 Sign out should be error-free. If any errors occur, inspect the error result using the following code snippet: 
 

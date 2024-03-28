@@ -66,7 +66,7 @@ CoroutineScope(Dispatchers.Main).launch {
 
 [!INCLUDE [read-od-token-claims](./includes/native-auth/read-id-token-claims-android-kotlin.md)]
 
-## Handle errors 
+## Handle sign-in errors 
 
 - The `signIn()` action return results denoted by a dedicated results class `SignInResult`. These can be of type: 
     - `SigInResult.Complete`
