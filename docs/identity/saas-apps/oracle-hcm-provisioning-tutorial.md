@@ -254,7 +254,7 @@ Read data from the new hire ATOM feed and implement logic in your custom module 
 
 If required after getting the ATOM feed for joiner scenarios, query the [Workers](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/op-workers-workersuniqid-get.html) or [Employees](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/api-employees.html) endpoints to retrieve additional worker attributes.
 
-To trigger Microsoft Entra Lifecycle Workflows for new hires, ensure to include the custom SCIM attribute for the employee’s hire date: `urn:ietf:params:scim:schemas:extension:COMPANYNAME:1.0:User:HireDate`.
+To trigger Microsoft Entra Lifecycle Workflows for new hires, be sure to include the custom SCIM attribute for the employee’s hire date: `urn:ietf:params:scim:schemas:extension:COMPANYNAME:1.0:User:HireDate`.
 
 Use the Oracle HCM field *EffectiveStartDate* to set the value for the hire date.
 
@@ -262,7 +262,9 @@ Refer to the [SCIM payload example](#scim-payload-example).
 
 **Implement Mover Scenario**
 
-Mover scenarios are triggered in Oracle HCM when a worker is converted from full-time to contractor or vice-versa, when an assignment change occurs, when a work relationship change occurs, when there is a transfer, or when there is a promotion. Oracle HCM ATOM feeds returns data for movers as documented here: [Fusion Cloud HCM Integration with External Entitlement Management Systems (oracle.com)](https://docs.oracle.com/en/applications/fusion-apps/fusion-human-capital-management/hcmintegration/index.html#mover). Make sure to fetch the new values of attributes that changed in Oracle HCM. These values can often be fetched from the **Changed Attributes** section of the ATOM feed response. If required, query the [Workers](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/op-workers-workersuniqid-get.html) or [Employees](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/api-employees.html) endpoints directly to retrieve additional worker attributes.
+Mover scenarios are triggered in Oracle HCM when a worker is converted from full-time to contractor or vice-versa, when an assignment change occurs, when a work relationship change occurs, when there is a transfer, or when there is a promotion. Oracle HCM ATOM feeds returns data for movers as documented here: [Fusion Cloud HCM Integration with External Entitlement Management Systems (oracle.com)](https://docs.oracle.com/en/applications/fusion-apps/fusion-human-capital-management/hcmintegration/index.html#mover). 
+
+Make sure to fetch the new values of attributes that changed in Oracle HCM. These values can often be fetched from the **Changed Attributes** section of the ATOM feed response. If required, query the [Workers](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/op-workers-workersuniqid-get.html) or [Employees](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/api-employees.html) endpoints directly to retrieve additional worker attributes.
 
 Use the data retrieved to construct a SCIM payload. Refer to the [SCIM payload example](#scim-payload-example).
 
@@ -270,7 +272,7 @@ Use the data retrieved to construct a SCIM payload. Refer to the [SCIM payload e
 
 Leaver scenarios occur when a worker’s employment with the organization is terminated, either voluntarily or involuntarily. Oracle HCM ATOM feeds returns data for leavers as documented here: [Fusion Cloud HCM Integration with External Entitlement Management Systems (oracle.com)](https://docs.oracle.com/en/applications/fusion-apps/fusion-human-capital-management/hcmintegration/index.html#leaver). Read data from the ATOM feed and construct the SCIM payload.
 
-To trigger Lifecycle Workflows for leavers, ensure to include the custom SCIM attribute for the employee’s leave date: `urn:ietf:params:scim:schemas:extension:COMPANYAME:1.0:User:TermDate`
+To trigger Lifecycle Workflows for leavers, be sure to include the custom SCIM attribute for the employee’s leave date: `urn:ietf:params:scim:schemas:extension:COMPANYAME:1.0:User:TermDate`
 
 Use the Oracle HCM field EffectiveDate to set the value for the termination date.
 
