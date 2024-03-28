@@ -15,7 +15,7 @@ ms.topic: quickstart
 
 # Quickstart: .NET console app that accesses a protected web API
 
-This quickstart uses a sample .NET console application to accesses a protected web API as its own identity by using the [Microsoft Authentication Library (MSAL) for .NET](/entra/msal/dotnet). The application is a daemon application, which is a confidential client application and uses the [client credentials OAuth flow](v2-oauth2-client-creds-grant-flow.md) to get an access token to call the Microsoft Graph API.
+This quickstart uses a sample .NET console application to accesses a protected web API as its own identity by using the [Microsoft Authentication Library (MSAL) for .NET](/entra/msal/dotnet). The application is a daemon application, which is a confidential client application, and uses the [client credentials OAuth flow](v2-oauth2-client-creds-grant-flow.md) to get an access token to call the Microsoft Graph API.
 
 ## Prerequisites
 
@@ -46,8 +46,6 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ## Configure the project
 
-1. Extract the *.zip* file to a local folder that's close to the root of the disk to avoid errors caused by path length limitations on Windows. For example, extract to *C:\Azure-Samples*.
-
 1. In your IDE, open the project folder, *ms-identity-docs-code-dotnet/console-daemon*, containing the sample.
 1. Open *Program.cs* and replace the file contents with the following snippet;
 
@@ -62,7 +60,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     ClientObjectId = "Enter the client Object ID obtained from the Microsoft Entra admin center"
    ```
 
-    * `Authority` - The identifier of the tenant where the application is registered. Replace the text in quotes with the `Directory (tenant) ID` that was recorded earlier from the overview page of the registered application.
+    * `Authority` - The authority is a URL that indicates a directory that MSAL can request tokens from. Replace *Enter_the_tenant_ID* with the **Directory (tenant) ID** value that was recorded earlier.
     * `ClientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the `Application (client) ID` value that was recorded earlier from the overview page of the registered application.
     * `ClientSecret` - The client secret created for the application in the Microsoft Entra admin center. Enter the **value** of the client secret.
     * `ClientObjectId` - The object ID of the client application. Replace the text in quotes with the `Object ID` value that was recorded earlier from the overview page of the registered application.
@@ -75,7 +73,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     ```console
     dotnet run
     ```
-1. The application runs and displays a respone similar to the following:
+1. The application runs and displays a respone similar to the following (shortened for brevity):
 
     ```console
     {

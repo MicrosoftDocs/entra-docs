@@ -17,4 +17,4 @@ ms.topic: include
 1. Enter a description for the secret in the **Description** field.
 1. Select an expiration period for the secret. 
 1. Select **Add**.
-1. Record the **Value** of the client secret. This value is used in the application source code. **The value is displayed only once**, so make sure to record it.
+1. Record the **Value** of the client secret. **The value is displayed only once**, so make sure to record it.
