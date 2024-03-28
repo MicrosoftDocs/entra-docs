@@ -691,7 +691,7 @@ The API allows the app to advertise the authentication methods it supports to Mi
 
 The sequence diagram demonstrates the basic flow of email one-time passcode sign in process.
 
-:::image type="content" source="media/reference-native-auth-api/sign-in-email-otp.png" alt-text="Diagram of Native authentication sign in with email with OTP."::: 
+:::image type="content" source="media/reference-native-auth-api/sign-in-email-otp.png" alt-text="Diagram of native authentication sign-in with email one-time passcode."::: 
 
 After the app verifies the user's email with OTP, it receives security tokens. If the delivery of the one-time passcode delays or is never delivered to the user's email, the user can request to be sent another one-time passcode. Microsoft Entra resends another one-time passcode if the previous one hasn't been verified. When Microsoft Entra resends an one-time passcode, it invalidates the previously sent code.
 
