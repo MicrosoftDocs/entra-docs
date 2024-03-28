@@ -7,4 +7,4 @@ ms.author: justinha
 ---
 
 >[!NOTE]
->Users who update to the most recent version of Authenticator might start to see passkey as a sign-in method as builds initially roll out in advance of preview.
+>As deployments progress in readiness of preview, administrators and users might see passkey as a sign-in method across different Microsoft Entra surfaces, including the Admin center, Authenticator app, Authentication Insights, and so on. 
