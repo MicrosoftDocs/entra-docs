@@ -25,7 +25,8 @@ In this article, you do the following tasks:
 - Add a platform redirect URL.
 - Enable public client flows.   
 - Update the Android configuration code sample file to use your own Microsoft Entra External ID for customer tenant details.  
-- Run and test the sample Android mobile application.  
+- Run and test the sample Android mobile application.
+- Call a protected web API.
  
 ## Prerequisites  
 
@@ -52,7 +53,7 @@ In this article, you do the following tasks:
 
 [!INCLUDE [Enable public client](../customers/includes/register-app/enable-public-client-flow.md)]
 
-## Grant API permissions
+## Delegated permission to Microsoft Graph
  
 [!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-native-authentication-api-permission.md)]
 
@@ -107,6 +108,7 @@ To build and run your app, follow these steps:
    If you don't have any devices configured, you need to either create an Android Virtual Device to use the Android Emulator or connect a physical Android device.  
  
 1. Select the **Run** button.
+1. Select the API tab to test the API call. A successful call to the web API returns HTTP 200, while HTTP 403 signifies unauthorized access.
 
 ## Related content
 
