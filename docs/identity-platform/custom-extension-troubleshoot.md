@@ -137,12 +137,12 @@ To test your API directly using your preferred API testing tool, follow these st
 > "AuthenticationEvents__BypassTokenValidation": true
 > ```
 >
-> Once you've finished testing, ensure that you remove the parameter.
+> Once you've finished testing, ensure that you remove it.
 
 1. In your REST API, disable the `appid` or `azp` [claim validation](custom-extension-overview.md#protect-your-rest-api). Check out how to [edit the function API](custom-extension-tokenissuancestart-setup.md) you created earlier.
 1. Create new HTTP request and set the **HTTP method** to `POST`.
 1. In the **Body**, select **Raw** and then select **JSON**.
-1. Pase the following JSON that imitates the request Microsoft Entra ID sends to your REST API.
+1. Paste the following JSON that imitates the request Microsoft Entra ID sends to your REST API.
 
     ```json
     {
