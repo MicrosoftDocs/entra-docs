@@ -12,7 +12,7 @@ ms.topic: tutorial
 #Customer intent: As a React developer, I want to know how to register my application with the Microsoft identity platform so that the security token service can issue access tokens to client applications that request them.
 ---
 
-# Tutorial: Register a Single-page application with the Microsoft identity platform
+# Tutorial: Register a Single-page application in a Microsoft Entra ID tenant
 
 To interact with the Microsoft identity platform, Microsoft Entra ID must be made aware of the application you create. This tutorial shows you how to register a single-page application (SPA) in a tenant on the Microsoft Entra admin center.
 
