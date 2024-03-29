@@ -300,8 +300,6 @@ For most customers, two or three authentication agents are sufficient to provide
 
 4. Run the authentication agent installation. During installation, you must enter the credentials of a Global Administrator account.
 
-    ![Microsoft Entra Connect Authentication Agent](media/deploy-cloud-user-authentication/install-azure-ad-connect-installation-agent.png)
-
 5. When the authentication agent is installed, you can return to the PTA health page to check the status of the more agents.
 
 #### Option B
