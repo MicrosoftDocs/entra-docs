@@ -78,9 +78,9 @@ For more information, see:
 **Service category:** Other    
 **Product capability:** Identity Governance    
 
-Customer Lockbox for Microsoft Azure is launching a new built-in Azure RBAC role that enables customers to use a lesser privileged role for users responsible for approving/rejecting Customer Lockbox requests. This feature is targeted to the customer admin workflow where a lockbox approver acts on the request from Microsoft Support engineer to access Azure resources in a customer subscription.
+Customer Lockbox for Microsoft Azure is launching a new built-in Azure Role-based access control role that enables customers to use a lesser privileged role for users responsible for approving/rejecting Customer Lockbox requests. This feature is targeted to the customer admin workflow where a lockbox approver acts on the request from Microsoft Support engineer to access Azure resources in a customer subscription.
 
-In this first phase, we're launching a new built-in Azure RBAC role that helps scope down the access possible for an individual with Azure Customer Lockbox approver rights on a subscription and its resources. A similar role for tenant-scoped requests are available in subsequent releases.
+In this first phase, we're launching a new built-in Azure RBAC role that helps scope down the access possible for an individual with Azure Customer Lockbox approver rights on a subscription and its resources. A similar role for tenant-scoped requests is available in subsequent releases.
 
 ---
 
@@ -90,7 +90,7 @@ In this first phase, we're launching a new built-in Azure RBAC role that helps s
 **Service category:** App Provisioning    
 **Product capability:** 3rd Party Integration    
 
-We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
+We added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
 
 - [Astro](../identity/saas-apps/astro-provisioning-tutorial.md)
 - [Egnyte](../identity/saas-apps/egnyte-provisioning-tutorial.md)
