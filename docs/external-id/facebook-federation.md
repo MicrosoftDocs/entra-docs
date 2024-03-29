@@ -21,7 +21,7 @@ ms.collection: M365-identity-device-management
 > [!TIP]
 > This article describes adding Facebook as an identity provider for B2B collaboration. If your tenant is configured for customer identity and access management, see [Add Facebook as an identity provider](customers/how-to-facebook-federation-customers.md) for customers.
 
-You can add Facebook to your self-service sign-up user flows so that users can sign in to your applications using their own Facebook accounts. To allow users to sign in using Facebook, you first need to [enable self-service sign-up](self-service-sign-up-user-flow.md) for your tenant. After you add Facebook as an identity provider, set up a user flow for the application and select Facebook as one of the sign-in options.
+You can add Facebook to your self-service sign-up user flows so that users can sign in to your applications using their own Facebook accounts. To allow users to sign in using Facebook, you first need to [enable self-service sign-up](self-service-sign-up-user-flow.yml) for your tenant. After you add Facebook as an identity provider, set up a user flow for the application and select Facebook as one of the sign-in options.
 
 After you add Facebook as one of your application's sign-in options, on the **Sign in** page, a user can enter the email they use to sign in to Facebook, or they can select **Sign-in options** and choose **Sign in with Facebook**. In either case, they're redirected to the Facebook sign in page for authentication.
 
@@ -146,6 +146,6 @@ You can delete your Facebook federation setup. If you do so, any users who have 
 
 ## Next steps
 
-- [Add self-service sign-up to an app](self-service-sign-up-user-flow.md)
+- [Add self-service sign-up to an app](self-service-sign-up-user-flow.yml)
 - [SAML/WS-Fed IdP federation](direct-federation.md)
 - [Google federation](google-federation.md)

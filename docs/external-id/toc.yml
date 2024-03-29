@@ -127,7 +127,7 @@ items:
   - name: Add self-service sign-up for guest users
     items:
     - name: Add a self-service signup user flow
-      href: self-service-sign-up-user-flow.md
+      href: self-service-sign-up-user-flow.yml
     - name: Define custom attributes
       href: user-flow-add-custom-attributes.md
     - name: Customize the user flow language

@@ -81,7 +81,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Add a self-service sign-up user flow
-            url: self-service-sign-up-user-flow.md
+            url: self-service-sign-up-user-flow.yml
           - text: Define custom attributes for user flows
             url: user-flow-add-custom-attributes.md
   - title: Multitenant organizations 

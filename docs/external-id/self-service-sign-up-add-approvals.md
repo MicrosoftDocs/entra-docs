@@ -385,7 +385,7 @@ Content-type: application/json
 
 ## Next steps
 
-- [Add a self-service sign-up user flow](self-service-sign-up-user-flow.md)
+- [Add a self-service sign-up user flow](self-service-sign-up-user-flow.yml)
 - [Add an API connector](self-service-sign-up-add-api-connector.md)
 - [Secure your API connector](self-service-sign-up-secure-api-connector.md)
 - [self-service sign-up for guest users with manual approval sample](code-samples-self-service-sign-up.md#custom-approval-workflows).
