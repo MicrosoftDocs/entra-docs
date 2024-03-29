@@ -117,7 +117,7 @@ ms.topic: quickstart
 > > |Where  | Description |
 > > |---------|---------|
 > > | `ClientId`     | The application ID from the application registered in the Azure portal. |
-> > | `Authority`    | The security token service (STS) endpoint for the user to authenticate. It's usually `https://login.microsoftonline.com/{tenant}/v2.0` for the public cloud. In that URL, *{tenant}* is the name of your tenant, your tenant ID, or `common` for a reference to the common endpoint. (The common endpoint is used for multitenant applications.) |
+> > | `Authority`    | The security token service (STS) endpoint for the user to authenticate. It's usually `https://login.microsoftonline.com/{tenant}/v2.0` for the public cloud. In that URL, *{tenant}* is the name of your tenant, your 6, or `common` for a reference to the common endpoint. (The common endpoint is used for multitenant applications.) |
 > > | `RedirectUri`  | The URL where users are sent after authentication against the Microsoft identity platform. |
 > > | `PostLogoutRedirectUri`     | The URL where users are sent after signing off. |
 > > | `Scope`     | The list of scopes being requested, separated by spaces. |
