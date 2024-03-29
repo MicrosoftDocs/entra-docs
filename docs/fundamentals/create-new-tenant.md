@@ -27,7 +27,9 @@ If you don't have an Azure subscription, create a [free account](https://azure.m
 After you sign in to the [Azure portal](https://portal.azure.com), you can create a new tenant for your organization. Your new tenant represents your organization and helps you to manage a specific instance of Microsoft Cloud services for your internal and external users.
 
 >[!NOTE]
-> If you're unable to create a Microsoft Entra ID or Azure AD B2C tenant, review your user settings page to ensure that tenant creation isn't switched off. If tenant creation is switched off, ask your *Global Administrator* to assign you a *Tenant Creator* role. This article doesn't cover creating an *external* tenant configuration, which is used for Microsoft Entra External ID scenarios ([learn more](~/external-id/customers/overview-customers-ciam.md))
+>
+> - If you're unable to create a Microsoft Entra ID or Azure AD B2C tenant, review your user settings page to ensure that tenant creation isn't switched off. If tenant creation is switched off, ask your *Global Administrator* to assign you a *Tenant Creator* role.
+> - This article doesn't cover creating an *external* tenant configuration for Microsoft Entra External ID scenarios; ([learn more](~/external-id/customers/overview-customers-ciam.md)) about using External ID for your consumer-facing apps.
 
 ### To create a new tenant
 
