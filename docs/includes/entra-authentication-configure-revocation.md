@@ -1,7 +1,7 @@
 ---
 author: justinha
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref
 ms.topic: include
 ms.date: 01/23/2024
 ms.author: justinha

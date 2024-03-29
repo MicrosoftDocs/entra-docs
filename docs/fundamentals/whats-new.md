@@ -57,6 +57,21 @@ Customer Lockbox for Microsoft Azure is launching a new feature that enables cus
 
 ---
 
+### Plan for change - Conditional Access location condition is moving up
+
+**Type:** Plan for change    
+**Service category:** Conditional Access    
+**Product capability:** Identity Security & Protection    
+
+Starting mid-April 2024, the Conditional Access *‘Locations’* condition is moving up. Locations will become the '*Network*' assignment, with the new Global Secure Access assignment - '*All compliant network locations*'.
+
+This change will occur automatically, and admins won’t need to take any action. Here's more details:
+
+- The familiar ‘*Locations*’ condition is unchanged, updating the policy in the ‘*Locations*’ condition will be reflected in the ‘*Network*’ assignment, and vice versa.
+- No functionality changes, existing policies will continue to work without changes.
+
+---
+
 ### General Availability - Just-in-time application access with PIM for Groups
 
 **Type:** New feature    
