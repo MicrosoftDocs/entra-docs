@@ -6,7 +6,7 @@ author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref
 ms.topic: troubleshooting
 ms.date: 09/15/2023
 ms.author: kenwith
