@@ -23,7 +23,7 @@ ms.custom: microsoft-copilot
 
 [Microsoft Copilot for Security](/security-copilot/microsoft-security-copilot) is a platform that brings together the power of AI and human expertise to help administrators and security teams respond to attacks faster and more effectively. Copilot for Security is embedded in Microsoft Entra so you can investigate and resolve identity risks, assess identities and access with AI-driven intelligence, and complete complex tasks quickly.  Microsoft Copilot in Micrsoft Entra gets insights from your Microsoft Entra users, groups, sign-in logs, audit logs, and more. 
 
-You can explore sign-ins and risky users and get contextualized insights on how to resolve and what to do to protect the accounts in natural language.  Built on top of real-time machine learning, Copilot in Microsoft Entra can help you find gaps in access policies, generate identity workflows, and troubleshoot faster. You can also unlock new skills that allow admins at all levels to complete complex tasks such as incident investigation, sign-in log analysis, and more, to gain savings in time and resources.
+You can explore sign-ins and risky users and get contextualized insights on how to resolve incidents and what to do to protect the accounts in natural language.  Built on top of real-time machine learning, Copilot in Microsoft Entra can help you find gaps in access policies, generate identity workflows, and troubleshoot faster. You can also unlock new skills that allow admins at all levels to complete complex tasks such as incident investigation, sign-in log analysis, and more, to gain savings in time and resources.
 
 This article introduces you to Copilot in Microsoft Entra.
 
