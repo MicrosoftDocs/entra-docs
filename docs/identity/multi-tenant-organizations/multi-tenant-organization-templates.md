@@ -24,9 +24,9 @@ To help apply homogenous cross-tenant access settings to partner tenants in the 
 
 ## Autogeneration of cross-tenant access settings
 
-Within a multitenant organization, each pair of tenants must have bi-directional [cross-tenant access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.md), for both, partner configuration and identity synchronization. These settings provide the underlying policy framework for enabling trust and for sharing users and applications.
+Within a multitenant organization, each pair of tenants must have bi-directional [cross-tenant access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml), for both, partner configuration and identity synchronization. These settings provide the underlying policy framework for enabling trust and for sharing users and applications.
 
-When your tenant joins a new multitenant organization, or when a partner tenant joins your existing multitenant organization, cross-tenant access settings to other partner tenants in the enlarged multitenant organization, if they don't already exist, are automatically generated in an unconfigured state. In an unconfigured state, these cross-tenant access settings pass through the [default settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.md#configure-default-settings).
+When your tenant joins a new multitenant organization, or when a partner tenant joins your existing multitenant organization, cross-tenant access settings to other partner tenants in the enlarged multitenant organization, if they don't already exist, are automatically generated in an unconfigured state. In an unconfigured state, these cross-tenant access settings pass through the [default settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml#configure-default-settings).
 
 Default cross-tenant access settings apply to all external tenants for which you haven't created organization-specific customized settings. Typically, these settings are configured to be nontrusting. For example, cross-tenant trusts for multi-factor authentication and compliant device claims might be disabled and user and group sharing in B2B direct connect or B2B collaboration might be disallowed.
 
@@ -42,7 +42,7 @@ While autogeneration of cross-tenant access settings, per previous section, guar
 
 To reduce the workload for administrators at the time of multitenant organization formation, you can optionally use policy templates for preemptive configuration of cross-tenant access settings. These template settings are applied at the time of your tenant joins a multitenant organization to all external multitenant organization partner tenants as well as at the time of any partner tenant joins your existing multitenant organization to such new partner tenant.
 
-[Enablement or configuration of the optional policy templates](multi-tenant-organization-configure-templates.md), at the time of a partner tenant joins a multitenant organization, preemptively amend the corresponding [cross-tenant access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.md), for both partner configuration and identity synchronization.
+[Enablement or configuration of the optional policy templates](multi-tenant-organization-configure-templates.md), at the time of a partner tenant joins a multitenant organization, preemptively amend the corresponding [cross-tenant access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml), for both partner configuration and identity synchronization.
 
 As an example, consider the actions of the administrators for an anticipated multitenant organization with three tenants, A, B, and C.
 

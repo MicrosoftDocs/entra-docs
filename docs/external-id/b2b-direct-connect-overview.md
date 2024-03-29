@@ -29,7 +29,7 @@ For licensing and pricing information related to B2B direct connect users, refer
 
 ## Managing cross-tenant access for B2B direct connect
 
-Microsoft Entra organizations can manage their trust relationships with other Microsoft Entra organizations by defining inbound and outbound [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md). Cross-tenant access settings give you granular control over how other organizations collaborate with you (inbound access) and how your users collaborate with other organizations (outbound access).
+Microsoft Entra organizations can manage their trust relationships with other Microsoft Entra organizations by defining inbound and outbound [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml). Cross-tenant access settings give you granular control over how other organizations collaborate with you (inbound access) and how your users collaborate with other organizations (outbound access).
 
 - **Inbound access settings** control whether users from external organizations can access resources in your organization. You can apply these settings to everyone, or you can specify individual users, groups, and applications.
 
@@ -190,5 +190,5 @@ You might want to consider using cross-tenant access settings to restrict B2B di
 
 ## Next steps
 
-- [Configure cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md)
+- [Configure cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml)
 - See the Microsoft Teams documentation for details about [data loss prevention](/purview/), [retention policies](/microsoftteams/retention-policies), and [eDiscovery](/purview/ediscovery-teams-investigation).

@@ -56,7 +56,7 @@ Invited users can also try to directly access the resource, referred to as just-
 
 During JIT redemption, the following considerations might apply.
 
-- If administrators haven't [suppressed consent prompts](~/external-id/cross-tenant-access-settings-b2b-collaboration.md), the user must consent before accessing the resource.
+- If administrators haven't [suppressed consent prompts](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml), the user must consent before accessing the resource.
 - You can allow or block invitations to external users from specific organizations by using an [allowlist or a blocklist](~/external-id/allow-deny-list.md).
 
 For more information, see [Microsoft Entra B2B collaboration invitation redemption](~/external-id/redemption-experience.md).

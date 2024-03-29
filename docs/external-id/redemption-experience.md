@@ -99,7 +99,7 @@ When a user selects the **Accept invitation** link in an [invitation email](invi
 
 ## Configurable redemption (Preview)
 
-[Configurable redemption](cross-tenant-access-overview.md#configurable-redemption-preview) lets you customize the order of identity providers presented to guests when they redeem your invitations. When a guest selects the **Accept invitation** link, Microsoft Entra ID automatically redeems the invitation based on the [default order](#invitation-redemption-flow). You can override this by changing the identity provider redemption order in your [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md#configure-redemption-order-preview).
+[Configurable redemption](cross-tenant-access-overview.md#configurable-redemption-preview) lets you customize the order of identity providers presented to guests when they redeem your invitations. When a guest selects the **Accept invitation** link, Microsoft Entra ID automatically redeems the invitation based on the [default order](#invitation-redemption-flow). You can override this by changing the identity provider redemption order in your [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml#configure-redemption-order-preview).
 
 ## Consent experience for the guest
 
@@ -131,7 +131,7 @@ You might want to automatically redeem invitations so users don't have to accept
 
 :::image type="content" source="media/redemption-experience/email-consent-prompt-suppressed.png" alt-text="Screenshot that shows B2B notification email when the consent prompt is suppressed.":::
 
-For information about how to automatically redeem invitations, see [cross-tenant access overview](cross-tenant-access-overview.md#automatic-redemption-setting) and [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.md).
+For information about how to automatically redeem invitations, see [cross-tenant access overview](cross-tenant-access-overview.md#automatic-redemption-setting) and [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml).
 
 ## Next steps
 
