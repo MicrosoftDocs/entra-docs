@@ -122,7 +122,7 @@ sections:
       - question: |
           Why do I see two servers with the same name in the Microsoft Entra Connect Health portal?
         answer: |
-          When you remove an agent from a server, the server isn't automatically removed from the Microsoft Entra Connect Health portal. If you manually remove an agent from a server or remove the server itself, you need to manually delete the server entry from the Microsoft Entra Connect Health portal.
+          When you remove an agent from a server, the server isn't automatically removed from the Microsoft Entra Connect Health portal. If you manually remove an agent from a server or remove the server itself, you need to manually delete the server entry from the Microsoft Entra Connect Health portal. To delete monitored servers from Microsoft Entra Connect Health, you must have either Microsoft Entra Global Administrator account permissions or the Contributor role in Azure role-based access control.
           
           You might reimage a server or create a new server with the same details (such as machine name). If you did not remove the already registered server from the Microsoft Entra Connect Health portal, and you installed the agent on the new server, you might see two entries with the same name.
           
