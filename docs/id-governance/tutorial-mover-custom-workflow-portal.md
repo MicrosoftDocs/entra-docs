@@ -15,7 +15,7 @@ ms.custom: template-tutorial
 
 # Automate employee mover tasks when they change jobs using the Microsoft Entra admin center
 
-This tutorial provides a step-by-step guide on how to configure mover tasks for when contractor moves to a full-time employee with Lifecycle workflows using the Microsoft Entra admin center.
+This tutorial provides a step-by-step guide on how to automate mover tasks with Lifecycle workflows using the Microsoft Entra admin center. An example of this scenario would be an admin automating tasks for a contractor that moves to a full-time employee and is removed from a specific department.
 
 This Mover scenario runs a scheduled workflow and accomplishes the following tasks:
  
@@ -32,7 +32,7 @@ This Mover scenario runs a scheduled workflow and accomplishes the following tas
 
 To complete this tutorial, you must satisfy the prerequisites listed in this section before starting the tutorial as they won't be included in the actual tutorial. Two accounts are required, one account for the user becoming a full-time employee(job profile change), and another account that acts as it's manager. The user account must have the following attributes set:
 
-- Department must be set to sales
+- An employee with a department set as "Sales". 
 - Manager attribute must be set, and the manager account should have a mailbox to receive an email
 Detailed breakdown of the relevant attributes:
 
