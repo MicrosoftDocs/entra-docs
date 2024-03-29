@@ -400,6 +400,16 @@
       "source_path_from_root": "/docs/identity-platform/tutorial-v2-javascript-spa.md",
       "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-cosmos-db.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-vm-managed-identities-cosmos",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-cosmos-db.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-vm-managed-identities-cosmos",
+      "redirect_document_id": false
     }
 
   ]
