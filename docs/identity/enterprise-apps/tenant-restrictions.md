@@ -11,7 +11,8 @@ ms.date: 12/19/2023
 ms.author: jomondi
 ms.reviewer: vranganathan
 ms.collection: M365-identity-device-management
-ms.custom: enterprise-apps-article
+ms.custom: enterprise-apps-article, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+
 
 #customer intent: As an IT admin responsible for managing access to cloud services, I want to restrict access to approved resources for users in my organization, so that I can ensure security and compliance.
 ---
