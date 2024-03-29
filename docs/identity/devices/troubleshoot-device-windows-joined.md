@@ -6,6 +6,7 @@ description: This article helps you troubleshoot Microsoft Entra hybrid joined W
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.date: 08/29/2022
 
 ms.author: joflore

@@ -4,6 +4,7 @@ description: Device identities and their use cases
 
 ms.service: entra-id
 ms.subservice: devices
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: overview
 ms.date: 02/26/2024
 

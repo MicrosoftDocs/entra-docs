@@ -11,7 +11,7 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
-ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azure-ad-ps-ref
+ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # Sign in to a Windows virtual machine in Azure by using Microsoft Entra ID including passwordless
