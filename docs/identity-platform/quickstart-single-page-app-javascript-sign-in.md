@@ -1,5 +1,5 @@
 ---
-title: "Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript"
+title: "Quickstart: Sign in to a SPA & call an API - JavaScript"
 description: In this quickstart, learn how a JavaScript single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow.
 author: henrymbuguakiarie
 manager: CelesteDG

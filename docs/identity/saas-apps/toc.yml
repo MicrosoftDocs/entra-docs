@@ -3618,6 +3618,8 @@
         href: oracle-cloud-infrastructure-console-provisioning-tutorial.md
       - name: Oracle Fusion ERP
         href: oracle-fusion-erp-provisioning-tutorial.md
+      - name: Oracle HCM
+        href: oracle-hcm-provisioning-tutorial.md
       - name: O'Reilly learning platform
         href: oreilly-learning-platform-provisioning-tutorial.md
       - name: Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service
