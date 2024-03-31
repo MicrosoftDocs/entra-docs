@@ -1,22 +1,22 @@
 ---
-title: App and browser support of FIDO2 authentication | Microsoft Entra ID
-description: Browsers and operating system combinations support FIDO2 passwordless authentication for apps using Microsoft Entra ID
+title: Support for FIDO2 authentication with Microsoft Entra ID
+description: Web browser and native app support for FIDO2 passwordless authentication using Microsoft Entra ID
 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/06/2024
+ms.date: 03/31/2024
 
 author: justinha
 ms.author: justinha
 manager: amycolannino
 ms.reviewer: calui
 ---
-# App and browser support for FIDO2 authentication
+# Support for FIDO2 authentication with Microsoft Entra ID
 
 Microsoft Entra ID allows device-bound passkeys to be used for passwordless authentication. This topic covers which native apps, web browsers, and operating systems support passwordless authentication using passkeys with Microsoft Entra ID. Microsoft Entra ID currently supports only device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator.
 
-## Native app support (preview)
+## Microsoft app support (preview)
 
 Microsoft applications provide native support for FIDO2 authentication in preview for all users who have an authentication broker installed for their operating system. The following tables lists which authentication brokers are supported for different operating systems.
 
@@ -34,7 +34,7 @@ If a user installed an authentication broker, they can choose to sign in with a 
 
 If the user hasn't installed an authentication broker, they can still sign in with a security key when they access MSAL-enabled applications that meet the requirements as listed in [Support for FIDO2 authentication](~/identity-platform/support-fido2-authentication.md).
 
-## Browser support
+## Web browser support
 
 This table shows browser support for authenticating Microsoft Entra ID and Microsoft accounts by using FIDO2. Microsoft accounts are created by consumers for services such as Xbox, Skype, or Outlook.com. 
 
@@ -47,7 +47,7 @@ This table shows browser support for authenticating Microsoft Entra ID and Micro
 | **iOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
 | **Android**  | &#x2705; | &#x2705; | &#x2705; | N/A |
 
-## Browser support for each platform
+## Web browser support for each platform
 
 The following tables show which transports are supported for each platform. Supported device types include **USB**, near-field communication (**NFC**), and bluetooth low energy (**BLE**).
 
@@ -116,13 +116,15 @@ The following are the minimum browser version requirements on Windows.
 
 ### Android
 
-| Browser | USB  | NFC | BLE<sup>1</sup> |
-|---------|------|-----|-----|
-| Edge    | &#x2705;  | &#x2705; | &#10060; |
-| Chrome  | &#x2705;  | &#x2705; | &#10060; |
-| Firefox | &#x2705;  | &#x2705; | &#10060; |
+| Browser<sup>1</sup> | USB  | NFC | BLE<sup>2</sup> |
+|---------------------|------|-----|-----------------|
+| Edge    | &#x2705;  | &#10060; | &#10060; |
+| Chrome  | &#x2705;  | &#10060; | &#10060; |
+| Firefox | &#x2705;  | &#10060; | &#10060; |
 
-<sup>1</sup>BLE security keys aren't supported on Android by Google.
+<sup>1</sup>Security key registration with Microsoft Entra ID is not yet supported on Android.
+
+<sup>2</sup>BLE security keys aren't supported on Android by Google.
 
 ## Known issues
 
