@@ -122,8 +122,6 @@
     items: 
       - name: Deploying passwordless authentication
         href: howto-authentication-passwordless-deployment.md
-      - name: Enable security key sign-in to Windows
-        href: howto-authentication-passwordless-security-key-windows.md
       - name: Passkey (FIDO2) authentication
         items:
         - name: Enable passkeys for an organization (preview)
@@ -160,7 +158,7 @@
         items:
         - name: Register passkey with a security key
           href: how-to-register-passkey-with-security-key.md
-        - name: Sign in to Windows devices
+        - name: Enable security key sign-in to Windows
           href: howto-authentication-passwordless-security-key-windows.md
         - name: SSO to on-premises resources
           href: howto-authentication-passwordless-security-key-on-premises.md
@@ -168,8 +166,6 @@
           href: howto-authentication-passwordless-faqs.md
         - name: Troubleshoot hybrid
           href: howto-authentication-passwordless-troubleshoot.md
-      - name: Windows Hello for Business
-        href: /windows/security/identity-protection/hello-for-business/hello-identity-verification
       - name: Certificate-based authentication
         items:
         - name: Microsoft Entra CBA
