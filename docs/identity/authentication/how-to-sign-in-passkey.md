@@ -1,6 +1,6 @@
 ---
 title:  Sign in with a passkey (FIDO2)
-description: Learn how users sign in with a passkey (FIDO2)
+description: Learn how users sign in with a passkey (FIDO2).
 
 services: active-directory
 ms.service: entra-id 

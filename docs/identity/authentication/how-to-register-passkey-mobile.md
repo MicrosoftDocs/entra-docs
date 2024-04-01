@@ -1,6 +1,6 @@
 ---
 title:  Register a passkey using a mobile device (preview)
-description: Registration and management of passkey using a mobile device (preview)
+description: Registration and management of passkey using a mobile device (preview).
 
 services: active-directory
 ms.service: entra-id 
@@ -44,13 +44,13 @@ This article shows how to register a passkey using a security key with your iOS 
 
 1. Sign in with multifactor authentication (MFA) before adding a passkey.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-2fa-authorization.png" alt-text="Screenshot of the 2-factor authentication requirement to setup a passkey.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-2fa-authorization.png" alt-text="Screenshot of the two-factor authentication requirement to set up a passkey.":::
 
-1. Click **Next**. 
+1. Select **Next**. 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-start.png" alt-text="Screenshot of starting passkey registration":::
 
-1. Your device will open a security window. Chose **Other Options**. 
+1. Your device opens a security window. Choose **Other Options**. 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-save-another-way.png" alt-text="Screenshot of where to save a passkey on iOS":::
 
@@ -72,13 +72,13 @@ This article shows how to register a passkey using a security key with your iOS 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-confirm-pin.png" alt-text="Screenshot asking to provide your pin for the security key connected to an iOS device.":::
 
-1. Re-insert or reconnect your security key to your iOS device.  
+1. Reinsert or reconnect your security key to your iOS device.  
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-reconnect.png" alt-text="Screenshot asking to confirm your pin for the security key connected to an iOS device.":::
     
-1. Upon completion, you'll be redirected back to [My Security info](https://mysignins.microsoft.com/security-info) and asked to rename your passkey. 
+1. Upon completion, you're redirected back to [My Security info](https://mysignins.microsoft.com/security-info) and asked to rename your passkey. 
     
-1. Name the passkey something memorable to you and click **Done**. 
+1. Name the passkey something memorable to you and select **Done**. 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-finish.png" alt-text="Screenshot showing final passkey registration step on iOS.":::
 
@@ -102,13 +102,13 @@ This article shows how to register a passkey using a security key with your iOS 
 
 1. Sign in with multifactor authentication (MFA) before adding a passkey.
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-mfa.png" alt-text="Screenshot of the 2-factor authentication requirement to setup a passkey.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-mfa.png" alt-text="Screenshot of the two-factor authentication requirement to set up a passkey.":::
 
-1. Click **Next**.  
+1. Select **Next**.  
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-start.png" alt-text="Screenshot of starting passkey registration":::
 
-1. A security window will open on your device asking where you want to create your passkey. 
+1. A security window opens on your device asking where you want to create your passkey. 
 
 1. Select **Save another way**.
 
@@ -139,9 +139,9 @@ This article shows how to register a passkey using a security key with your iOS 
 
 1. You maybe asked to confirm your PIN or biometric again before proceeding. 
 
-1. Upon completion, you'll be redirected back to [My Security info](https://aka.ms/mysecurityinfo) and asked to rename your passkey. 
+1. Upon completion, you're redirected back to [My Security info](https://aka.ms/mysecurityinfo) and asked to rename your passkey. 
     
-1. Name the passkey something memorable to you and click **Done**. 
+1. Name the passkey something memorable to you and select **Done**. 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-finish.png" alt-text="Screenshot showing final passkey registration step on Android.":::
 
