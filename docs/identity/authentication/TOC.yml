@@ -122,7 +122,7 @@
     items: 
       - name: Deploying passwordless authentication
         href: howto-authentication-passwordless-deployment.md
-      - name: Enable passwordless security key sign-in 
+      - name: Enable security key sign-in to Windows
         href: howto-authentication-passwordless-security-key-windows.md
       - name: Passkey (FIDO2) authentication
         items:
@@ -132,6 +132,12 @@
           href: how-to-register-passkey.md
         - name: Register passkey on a mobile device (preview)  
           href: how-to-register-passkey-mobile.md
+        - name: Sign in with passkey (preview)
+          href: how-to-sign-in-passkey.md  
+        - name: FIDO2 compatibility
+          href: concept-fido2-compatibility.md
+        - name: Become a passkey (FIDO2) provider
+          href: concept-fido2-hardware-vendor.md  
       - name: Microsoft Authenticator
         items:
         - name: Enable passkeys in Authenticator (preview)
@@ -364,10 +370,6 @@
     href: /graph/api/resources/authenticationmethodspolicies-overview
   - name: Service limits and restrictions
     href: ~/identity/users/directory-service-limits-restrictions.md
-  - name: FIDO2 compatibility
-    href: concept-fido2-compatibility.md
-  - name: Become a passkey (FIDO2) provider
-    href: concept-fido2-hardware-vendor.md  
 - name: Resources
   items:
   - name: Azure feedback forum
