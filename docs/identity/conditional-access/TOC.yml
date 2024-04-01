@@ -21,6 +21,8 @@
        href: concept-conditional-access-users-groups.md
      - name: Target resources
        href: concept-conditional-access-cloud-apps.md
+     - name: Network
+       href: concept-assignment-network.md
      - name: Conditions
        href: concept-conditional-access-conditions.md
   - name: Access controls
