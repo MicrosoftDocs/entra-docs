@@ -1,6 +1,6 @@
 ---
-title: How to enable Microsoft Authenticator passkey sign in for Entra ID (preview)
-description: Learn about how to enable Microsoft Authenticator passkey sign in for Entra ID
+title: How to enable Microsoft Authenticator passkey sign in for Microsoft Entra ID (preview)
+description: Learn about how to enable Microsoft Authenticator passkey sign in for Microsoft Entra ID.
 
 ms.service: entra-id
 ms.subservice: authentication
@@ -16,7 +16,7 @@ ms.reviewer: calui
 ---
 # Enable Microsoft Authenticator passkey sign in (preview)
 
-This topic lists steps to enable and enforce Microsoft Authenticator passkey sign-in for Entra ID. First, you'll update the Authentication methods policy to allow end users to sign in with Authenticator passkey. Then you'll create a custom authentication strength to enforce passkey sign-in when users access a sensitive resource.
+This article lists steps to enable and enforce Microsoft Authenticator passkey sign-in for Microsoft Entra ID. First, you update the Authentication methods policy to allow end users to sign in with Authenticator passkey. Then create a custom authentication strength to enforce passkey sign-in when users access a sensitive resource.
 
 ## Requirements
 
@@ -31,11 +31,11 @@ These include Microsoft Edge, Chrome, Firefox, and Safari. For more information,
 
 ## Enable Authenticator passkey in the admin center
 
-To enable Authenticator passkey, you edit the **Passkey (FIDO2)** method policy, the same way you enable another passkey provider. The **Microsoft Authenticator** policy doesn't have an option to enable passkey. 
+To enable Authenticator passkey, you edit the **Passkey (FIDO2)** method policy, the same way you enable another passkey provider. The **Microsoft Authenticator** policy doesn't give you the option to enable a passkey. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
-1. Under the method **Passkey (FIDO2)**, click **All users**, or click **Add groups** to select specific groups. *Only security groups are supported*.
+1. Under the method **Passkey (FIDO2)**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
 
 
    >[!NOTE]
@@ -52,7 +52,7 @@ The following list describes other optional settings:
 
 **General**
 
-- **Allow self-service set up** should remain set to **Yes**. If set to no, your users won't be able to register a passkey through MySecurityInfo, even if enabled by Authentication Methods policy.  
+- **Allow self-service set up** should remain set to **Yes**. If set to no, your users aren't able to register a passkey through MySecurityInfo, even if enabled by Authentication Methods policy.  
 - **Enforce attestation** Should be set to **No** for preview. Attestation support is planned for General Availability.
 
 **Key Restriction Policy**
@@ -65,7 +65,7 @@ The following list describes other optional settings:
   >[!WARNING]
   >Key restrictions set the usability of specific passkeys for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. 
 
-After you finish the configuration, click **Save**.
+After you finish the configuration, select **Save**.
 
 ## Enable Authenticator passkey using Graph Explorer
 
@@ -103,7 +103,7 @@ To configure the policy by using Graph Explorer:
    }
    ```
 
-1. Make sure that the passkey (FIDO2) policy has been updated properly.
+1. Make sure that the passkey (FIDO2) policy is updated properly.
 
    ```json
    GET https://graph.microsoft.com/beta/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
@@ -115,7 +115,7 @@ To configure the policy by using Graph Explorer:
 To remove a passkey associated with a user account, delete the key from the user’s authentication method.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and search for the user account that needs the passkey to be removed.
-1. Select **Authentication methods** > right-click **passkey (FIDO2)** and click **Delete**. 
+1. Select **Authentication methods** > right-click **passkey (FIDO2)** and select **Delete**. 
 
     ![View Authentication Method details](media/howto-authentication-passwordless-deployment/security-key-view-details.png)
 
@@ -124,14 +124,16 @@ To remove a passkey associated with a user account, delete the key from the user
 
 ## Enforce Authenticator passkey sign-in 
 
-You can use either a built-in phishing-resistant authentication strength or create a custom authentication strength to make users sign in with a passkey when they access a sensitive resource. The following steps explain how to create a Conditional Access policy that 
+To make users sign in with a passkey when they access a sensitive resource, you must do one of the following: 1) use a built-in phishing-resistant authentication strength, or 2) create a custom authentication strength. 
+
+The following steps explain how to create a Conditional Access policy.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Conditional Access Administrator.
 1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
 1. Select **New authentication strength**.
 1. Provide a descriptive **Name** for your new authentication strength.
 1. Optionally provide a **Description**.
-1. Select **Passkeys (FIDO2)** and then click **Advanced options**.
+1. Select **Passkeys (FIDO2)** and then select **Advanced options**.
 1. Add AAGUIDs for Authenticator passkey:
 
    - de1e552d-db1d-4423-a619-566b625cdc84

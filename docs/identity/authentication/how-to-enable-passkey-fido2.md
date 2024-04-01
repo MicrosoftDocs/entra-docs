@@ -1,6 +1,6 @@
 ---
 title: Enable passkeys for your organization (preview)
-description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (FIDO2)
+description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (FIDO2).
 
 ms.service: entra-id
 ms.subservice: authentication
@@ -19,7 +19,7 @@ ms.reviewer: calui, tilarso
 
 For enterprises that use passwords today, passkeys (FIDO2) provide a seamless way for workers to authenticate without entering a username or password. Passkeys provide improved productivity for workers, and have better security.
 
-This topic lists requirements and steps to enable passkey. At the end of this article, you'll be able to sign in to your Microsoft Entra account using a device-bound passkey, such as a FIDO2 security key.
+This article lists requirements and steps to enable passkey. After completing these steps, you can then sign in to your Microsoft Entra account using a device-bound passkey, such as a FIDO2 security key.
 
 Users can also sign in with a passkey by using Microsoft Authenticator. For more information, see [How to enable Authenticator passkey](how-to-enable-authenticator-passkey.md).
 
@@ -38,7 +38,7 @@ Passkeys are supported across major scenarios on Windows, macOS, Android, and iO
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
-1. Under the method **Passkey (FIDO2)**, click **All users**, or click **Add groups** to select specific groups. *Only security groups are supported*.
+1. Under the method **Passkey (FIDO2)**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
 1. **Save** the configuration.
 
    >[!NOTE]
@@ -51,10 +51,10 @@ There are some optional settings on the **Configure** tab to help manage how pas
 
 :::image type="content" border="true" source="media/howto-authentication-passwordless-security-key/optional-settings-with-aaguid.png" alt-text="Screenshot of FIDO2 security key options.":::
 
-- **Allow self-service set up** should remain set to **Yes**. If set to no, your users won't be able to register a passkey through MySecurityInfo, even if enabled by Authentication Methods policy.  
+- **Allow self-service set up** should remain set to **Yes**. If set to no, your users can't register a passkey through MySecurityInfo, even if enabled by Authentication Methods policy.  
 - **Enforce attestation** should be set to **Yes** if your organization wants to be assured that a FIDO2 security key model or passkey provider is genuine and comes from the legitimate vendor.
-    - For FIDO2 security keys, we require security key metadata to be published and verified with the FIDO Alliance Metadata Service, and also pass Microsoft's additional set of validation testing. For more information, see [What is a Microsoft-compatible security key?](concept-authentication-passwordless.md#fido2-security-key-providers)
-    - For passkeys in Microsoft Authenticator, we do not currently support attestation.
+    - For FIDO2 security keys, we require security key metadata to be published and verified with the FIDO Alliance Metadata Service, and also pass Microsoft's another set of validation testing. For more information, see [What is a Microsoft-compatible security key?](concept-authentication-passwordless.md#fido2-security-key-providers)
+    - For passkeys in Microsoft Authenticator, we don't currently support attestation.
 
   >[!WARNING]
   >Attestation enforcement governs whether a passkey is allowed during registration only. Users who are able to register a passkey without attestation will not be blocked during sign-in if **Enforce attestation** is set to **Yes** at a later time.
@@ -79,7 +79,7 @@ There are two ways to get your AAGUID. You can either ask your security key or p
 
 ### Enable passkeys using Microsoft Graph API
 
-In addition to using the Microsoft Entra admin center, you can also enable passkeys by using the Microsoft Graph API. To enable passkeys, you'll need to update the Authentication Methods Policy as a **Global Administrator** or **Authentication Policy Administrator**. 
+In addition to using the Microsoft Entra admin center, you can also enable passkeys by using the Microsoft Graph API. To enable passkeys, you need to update the Authentication Methods Policy as a **Global Administrator** or **Authentication Policy Administrator**. 
 
 To configure the policy using Graph Explorer:
 
@@ -112,7 +112,7 @@ To configure the policy using Graph Explorer:
    }
    ```
 
-1. Make sure that the passkey (FIDO2) policy has been updated properly.
+1. Make sure that the passkey (FIDO2) policy is updated properly.
 
    ```json
    GET https://graph.microsoft.com/beta/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
@@ -124,13 +124,15 @@ To configure the policy using Graph Explorer:
 To remove a passkey associated with a user account, delete the key from the user’s authentication method.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and search for the user account from which the passkey is to be removed.
-1. Select **Authentication methods** > right-click **Passkey (device-bound)** and click **Delete**. 
+1. Select **Authentication methods** > right-click **Passkey (device-bound)** and select **Delete**. 
 
     ![View Authentication Method details](media/howto-authentication-passwordless-deployment/security-key-view-details.png)
 
 ## Enforce passkey sign-in 
 
-You can use either a built-in phishing-resistant authentication strength or create a custom authentication strength to require sign-in with a passkey when users access a sensitive resource. The following steps show an example of how to create a Conditional Access policy that allows passkey sign-in for only a specific security key model or passkey provider.
+To make users sign in with a passkey when they access a sensitive resource, you must do one of the following: 1) use a built-in phishing-resistant authentication strength, or 2) create a custom authentication strength. 
+
+The following steps show an example of how to create a Conditional Access policy that allows passkey sign-in for only a specific security key model or passkey provider.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Conditional Access Administrator.
 1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
@@ -138,7 +140,7 @@ You can use either a built-in phishing-resistant authentication strength or crea
 1. Provide a **Name** for your new authentication strength.
 1. Optionally provide a **Description**.
 1. Select **Passkeys (FIDO2)**.
-1. Optionally, if you want to restrict by specific AAGUID(s), click **Advanced options** then **Add AAGUID**. Enter the AAGUID(s) that you allow. Click **Save**.
+1. Optionally, if you want to restrict by specific AAGUID(s), select **Advanced options** then **Add AAGUID**. Enter the AAGUID(s) that you allow. Select **Save**.
 1. Choose **Next** and review the policy configuration.
 
 
@@ -150,7 +152,7 @@ Registration of FIDO2 credentials isn't supported for B2B collaboration users in
 
 ### Security key provisioning
 
-Administrator provisioning and de-provisioning of security keys isn't available.
+Administrator provisioning and deprovisioning of security keys isn't available.
 
 ### UPN changes
 
