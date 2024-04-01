@@ -1,6 +1,6 @@
 ---
 title:  Register a passkey (preview)
-description: Registration and management of passkey (preview)
+description: Registration and management of passkey (preview).
 
 services: active-directory
 ms.service: entra-id 
@@ -32,7 +32,7 @@ This article shows how to register a passkey using a browser and sign-in with a 
    1. If you don't have at least one MFA method registered, you must add one.
    1. An Authentication Policy Administrator can also issue a [Temporary Access Pass](howto-authentication-temporary-access-pass.md) to allow a user to strongly authenticate and register a passkey.
  
-   :::image type="content" border="true" source="media/how-to-register-passkey-android-or-ios/add-passkey.png" alt-text="Screenshot of the add a passkey on your iOS or Android device.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-android-or-ios/add-passkey.png" alt-text="Screenshot of the Add a passkey on your iOS or Android device option.":::
 
 1. A security dialog opens on your device and asks where to save your passkey. 
 
@@ -46,7 +46,7 @@ This article shows how to register a passkey using a browser and sign-in with a 
 
 1. If your organization allows saving a passkey to your mobile device: 
    1. Choose **iPhone**, **iPad**, or **Android** device.
-   1. Open the camera on your device and scan the QR code shown below.
+   1. Open the camera on your device and scan the QR code shown in the screenshot.
 
       :::image type="content" border="true" source="media/how-to-register-passkey-android-or-ios/camera.png" alt-text="Screenshot of the dialog where to store your passkey on your iOS or Android device.":::
 
@@ -60,27 +60,27 @@ This article shows how to register a passkey using a browser and sign-in with a 
 1. If your organization allows saving a passkey to a security key:
    1. Choose **Security Key**.
    1. Follow the guidance and insert or connect your security key when requested.
-   1. You'll be prompted to create or enter a PIN for your security key, then perform the required gesture for the key.
+   1. You're prompted to create or enter a PIN for your security key, then perform the required gesture for the key.
    
 1. Upon completion, review any additional information from the security dialog, then tap **Ok** or **Continue**.
-1. After you are redirected to security info, you can change the default name for the new sign-in method. 
+1. After you're redirected to security info, you can change the default name for the new sign-in method. 
 1. Tap **Done** to finish registering the new method.
 
 ## Guided registration
 
 1. If your organization requires you to register a passkey, you’ll be prompted after sign-in to add a passkey.
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-android-or-ios/inline-registration.png" alt-text="Screenshot of the add a passkey for a more secure sign-in on your iOS or Android device.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-android-or-ios/inline-registration.png" alt-text="Screenshot of the Add a passkey for a more secure sign-in on your iOS or Android device option.":::
  
    > [!NOTE]
    > If your organization rquires specific a specific passkey provider or security key an Authenticator Attestation GUID (AAGUID) or provider name will be provided. 
 
-1. Tap **Next**, then you’ll be directed to `login.microsoft.com`.
-1. If you haven't signed in with multifactor authentication (MFA) you will be asked to sign-in 
-   1. If you don't have at least one MFA method registered, you will not be able to register a passkey. 
+1. Tap **Next**, then you’re directed to `login.microsoft.com`.
+1. If you haven't signed in with multifactor authentication (MFA),, you're asked to sign-in.
+   1. If you don't have at least one MFA method registered, you won't be able to register a passkey. 
    1. An Authentication Policy Administrator can also issue a [Temporary Access Pass](howto-authentication-temporary-access-pass.md) to allow a user to strongly authenticate and register a passkey.
 
-1. A security dialog will be opened on your device and ask where you would like to save your passkey. 
+1. A security dialog opens on your device and ask where you would like to save your passkey. 
 
    > [!NOTE]
    > Options displayed vary depending on your browser and device operating system. If the device where you started the registration process supports passkeys, you'll be asked to save the passkey to that device. Select **Use another device** or **More options** to display additional ways for you to save the passkey.
@@ -92,7 +92,7 @@ This article shows how to register a passkey using a browser and sign-in with a 
 
 1. If your organization allows saving a passkey to your mobile device: 
    1. Choose **iPhone**, **iPad**, or **Android** device.
-   1. Open the camera on your device and scan the QR code shown below.
+   1. Open the camera on your device and scan the QR code shown in this screenshot.
 
       :::image type="content" border="true" source="media/how-to-register-passkey-android-or-ios/camera.png" alt-text="Screenshot of the dialog where to store your passkey on your iOS or Android device.":::
 
@@ -106,10 +106,10 @@ This article shows how to register a passkey using a browser and sign-in with a 
 1. If your organization allows saving a passkey to a security key:
    1. Choose **Security Key**.
    2. Follow the guidance and insert or connect your security key when requested.
-   3. You'll be prompted to create or enter a PIN for your security key, then perform the required gesture for the key.
+   3. You're prompted to create or enter a PIN for your security key, then perform the required gesture for the key.
    
 1. Upon completion, review any additional information from the security dialog, then tap **Ok** or **Continue**. 
-1. After you are redirected to security info, you can change the default name for the new sign-in method. 
+1. After you're redirected to security info, you can change the default name for the new sign-in method. 
 1. Tap **Done** to finish registering the new method.
 
 ## Next steps

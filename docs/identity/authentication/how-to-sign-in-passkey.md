@@ -23,7 +23,7 @@ To sign into your work or school account with a passkey, follow these steps when
 
 1. Choose **Sign-in Options**.
 1. Choose **Face, Fingerprint, PIN, or security key**.
-1. Your device will open a security window where you can use your face, fingerprint, PIN, or security key.
+1. Your device opens a security window where you can use your face, fingerprint, PIN, or security key.
 
 ## Next steps
 
