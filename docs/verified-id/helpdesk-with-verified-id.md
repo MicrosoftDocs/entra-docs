@@ -62,18 +62,18 @@ If you are a **Managed Services provider (MSP)** or **Cloud Solutions Provider (
 ```json
 ...
 "requestedCredentials": [ 
-  { 
-    "type": "VerifiedEmployee", 
-    "acceptedIssuers": [ "<authirity1>", "<authority2>", "..." ], 
-    "configuration": { 
-      "validation": { 
-        "allowRevoked": false, 
-        "validateLinkedDomain": true, 
-        "faceCheck": { 
-          "sourcePhotoClaimName": "photo", 
-          "matchConfidenceThreshold": 70 
-        } 
-      }
+  { 
+    "type": "VerifiedEmployee", 
+    "acceptedIssuers": [ "<authirity1>", "<authority2>", "..." ], 
+    "configuration": { 
+      "validation": { 
+        "allowRevoked": false, 
+        "validateLinkedDomain": true, 
+        "faceCheck": { 
+          "sourcePhotoClaimName": "photo", 
+          "matchConfidenceThreshold": 70 
+        } 
+      }
   ...
 ```
 

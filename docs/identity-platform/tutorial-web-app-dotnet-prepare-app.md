@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Prepare a web application for authentication"
-description: Prepare an ASP.NET Core application for authentication using Visual Studio.
+description: Learn how to create and prepare an ASP.NET Core application for authentication with the Microsoft identity platform, and secure it with a self-signed certificate.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
