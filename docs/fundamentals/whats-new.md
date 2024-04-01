@@ -33,6 +33,100 @@ Microsoft Entra ID (previously known as Azure Active Directory) receives improve
 
 This page updates monthly, so revisit it regularly. If you're looking for items older than six months, you can find them in [Archive for What's new in Microsoft Entra ID?](whats-new-archive.md).
 
+## March 2024
+
+### Public Preview - Convert external users to internal
+
+**Type:** New feature    
+**Service category:** User Management    
+**Product capability:** User Management    
+
+External user conversion enables customers to convert external users to internal members without needing to delete and create new user objects. Maintaining the same underlying object ensures the user’s account, and access to resources, isn’t disrupted and that their history of activities remains intact as their relationship with the host organization changes. 
+
+The external to internal user conversion feature includes the ability to convert on-premises synchronized users as well. For more information, see: [Convert external users to internal users (Preview)](../identity/users/convert-external-users-internal.md).
+
+---
+
+### Public Preview - Alternate Email Notifications for Lockbox Requests
+
+**Type:** New feature    
+**Service category:** Other    
+**Product capability:** Access Control    
+
+Customer Lockbox for Microsoft Azure is launching a new feature that enables customers to use alternate email IDs for getting lockbox notifications. This enables Lockbox customers to receive notifications in scenarios where their Azure account isn't email enabled, or if they have a service principal defined as the tenant admin or subscription owner.
+
+---
+
+### Plan for change - Conditional Access location condition is moving up
+
+**Type:** Plan for change    
+**Service category:** Conditional Access    
+**Product capability:** Identity Security & Protection    
+
+Starting mid-April 2024, the Conditional Access *‘Locations’* condition is moving up. Locations will become the '*Network*' assignment, with the new Global Secure Access assignment - '*All compliant network locations*'.
+
+This change will occur automatically, and admins won’t need to take any action. Here's more details:
+
+- The familiar ‘*Locations*’ condition is unchanged, updating the policy in the ‘*Locations*’ condition will be reflected in the ‘*Network*’ assignment, and vice versa.
+- No functionality changes, existing policies will continue to work without changes.
+
+---
+
+### General Availability - Just-in-time application access with PIM for Groups
+
+**Type:** New feature    
+**Service category:** Privileged Identity Management    
+**Product capability:** Privileged Identity Management    
+
+Provide just-in-time access to non-Microsoft applications such as AWS & GCP. This capability integrates PIM for groups, and application provisioning to reduce the activation time from 40+ minutes to roughly 2 minutes when requesting just-in-time access to a role in a non-Microsoft app.
+
+For more information, see:
+
+- [AWS](../identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups)
+- [GCP](../identity/saas-apps/g-suite-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups)
+
+---
+
+### Public Preview - Azure Lockbox Approver Role for Subscription Scoped Requests
+
+**Type:** New feature    
+**Service category:** Other    
+**Product capability:** Identity Governance    
+
+Customer Lockbox for Microsoft Azure is launching a new built-in Azure Role-based access control role that enables customers to use a lesser privileged role for users responsible for approving/rejecting Customer Lockbox requests. This feature is targeted to the customer admin workflow where a lockbox approver acts on the request from Microsoft Support engineer to access Azure resources in a customer subscription.
+
+In this first phase, we're launching a new built-in Azure RBAC role that helps scope down the access possible for an individual with Azure Customer Lockbox approver rights on a subscription and its resources. A similar role for tenant-scoped requests is available in subsequent releases.
+
+---
+
+### General Availability - New provisioning connectors in the Microsoft Entra Application Gallery - March 2024
+
+**Type:** New feature    
+**Service category:** App Provisioning    
+**Product capability:** 3rd Party Integration    
+
+We added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
+
+- [Astro](../identity/saas-apps/astro-provisioning-tutorial.md)
+- [Egnyte](../identity/saas-apps/egnyte-provisioning-tutorial.md)
+- [MobileIron](../identity/saas-apps/mobileiron-provisioning-tutorial.md)
+- [SAS Viya SSO](../identity/saas-apps/sas-viya-sso-provisioning-tutorial.md)
+
+
+For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
+
+---
+
+### General Availability - TLS 1.3 support for Microsoft Entra
+
+**Type:** New feature    
+**Service category:** Other    
+**Product capability:** Platform        
+
+We're excited to announce that Microsoft Entra, is rolling out support for Transport Layer Security (TLS) 1.3 for its endpoints to align with security best practices ([NIST - SP 800-52 Rev. 2](https://csrc.nist.gov/pubs/sp/800/52/r2/final)). With this change, the Microsoft Entra ID related endpoints will support both TLS 1.2 and TLS 1.3 protocols. For more information, see: [TLS 1.3 support for Microsoft Entra services](/troubleshoot/azure/active-directory/enable-support-tls-environment?tabs=azure-monitor#tls-13-support-for-microsoft-entra-services).
+
+---
+
 ## February 2024
 
 ### General Availability - Identity Protection and Risk Remediation on the Azure Mobile App

@@ -271,6 +271,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/howto-call-a-web-api-with-postman.md",
+      "redirect_url": "/entra/identity-platform/howto-call-a-web-api-with-curl",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/web-app-tutorial-01-register-application.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-register-app",
       "redirect_document_id": false
@@ -387,8 +392,23 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/hybrid/connect/reference-connect-dirsync-deprecated.md",
+      "redirect_url": "/entra/identity/hybrid/connect/whatis-azure-ad-connect-v2",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/tutorial-v2-javascript-spa.md",
       "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-cosmos-db.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-vm-managed-identities-cosmos",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-cosmos-db.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-vm-managed-identities-cosmos",
       "redirect_document_id": false
     }
 

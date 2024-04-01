@@ -26,29 +26,29 @@ This article shows you how to use the Microsoft 365 license center to assign lic
 
 1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/) with a license administrator account. To manage licenses, the account must be a License Administrator, User Administrator, or Global Administrator.
    
-      ![Screenshot of the Microsoft admin Center landing page](./media/licensing-admin-center/admin-center.png)
+      :::image type="content" source="./media/licensing-admin-center/admin-center.png" alt-text="Screenshot of the Microsoft admin Center landing page.":::
 
 1. Browse to **Billing** > **Licenses** to open a page where you can see all licenses available in your organization.
 
-      ![screenshot of portal section allowing user to select products to assign licenses](./media/licensing-admin-center/choose-licenses.png)
+      :::image type="content" source="./media/licensing-admin-center/choose-licenses.png" alt-text="Screenshot of portal section allowing user to select products to assign licenses.":::
 
 1. Under **Licenses**, select the license that you would like to assign. 
 1. In the License details section, choose **Groups** at the top of the page.
 1. Choose **+ Assign licenses**
 1. From the **+ Assign licenses** page search for the group that you would like to use for license assignment.
 
-   ![Screenshot of portal allowing users to choose the group to use for license assignment](./media/licensing-admin-center/assign-license-group.png)
+   :::image type="content" source="./media/licensing-admin-center/assign-license-group.png" alt-text="Screenshot of portal allowing users to choose the group to use for license assignment.":::
   
    >[!NOTE]
    >When assigning licenses to a group with service plans that have dependencies on other service plans, they must both be assigned together in the same group, otherwise the service plan with the dependency will be disabled.
   
 1. To complete the assignment, on the **Assign license** page, click **Assign** at the bottom of the page.
 
-   ![Screenshot of the portal section that allows you to choose assign after selecting the group](./media/licensing-admin-center/choose-assign.png)
+   :::image type="content" source="./media/licensing-admin-center/choose-assign.png" alt-text="Screenshot of the portal section that allows you to choose assign after selecting the group":::
 
 When assign licenses to a group, Microsoft Entra ID processes all existing members of that group. This process might take some time depending on the size of the group.
 
-   ![Screenshot of message telling the administrator that they have assigned a license to a group](./media/licensing-admin-center/licenses-assignment-message.png)
+   :::image type="content" source="./media/licensing-admin-center/licenses-assignment-message.png" alt-text="Screenshot of message telling the administrator that they have assigned a license to a group.":::
 
 ## Verify that the initial assignment has finished
 
@@ -56,7 +56,7 @@ When assign licenses to a group, Microsoft Entra ID processes all existing membe
 
 1. On the **License details** page, you can view the status of the license assignment operation. For example, in the image show below, you can see that **Contoso marketing** shows a status of **All licenses assigned** while **Contoso human resources** shows a status of **In progress**.
 
-   ![Screenshot showing you the license assignment progress](./media/licensing-admin-center/progress.png)
+   :::image type="content" source="./media/licensing-admin-center/progress.png" alt-text="Screenshot showing you the license assignment progress.":::
 
    [Read this section](licensing-group-advanced.md#use-audit-logs-to-monitor-group-based-licensing-activity) to learn more about how audit logs can be used to analyze changes made by group-based licensing.
 
