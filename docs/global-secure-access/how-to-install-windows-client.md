@@ -158,17 +158,17 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name "BuiltInDns
 
 ### Proxy configuration example
 
-Example proxy PAC file containing exclusions:  
+Example proxy PAC file containing exclusions:
 
 ```
-function FindProxyForURL(url, host) {  // basic function; do not change
-   if (isPlainHostName(host) ||    
-      dnsDomainIs(host, ".contoso.com") || //tunneled  
-      dnsDomainIs(host, ".fabrikam.com")) // tunneled  
-      return "DIRECT";                    // If true, sets "DIRECT" connection  
-      else                                   // for all other destinations  
-      return "PROXY 10.1.0.10:8080";  // transfer the traffic to the proxy. 
-}  
+function FindProxyForURL(url, host) {  // basic function; do not change
+   if (isPlainHostName(host) ||
+      dnsDomainIs(host, ".contoso.com") || //tunneled
+      dnsDomainIs(host, ".fabrikam.com"))  // tunneled
+      return "DIRECT";                     // If true, sets "DIRECT" connection
+      else                                 // for all other destinations  
+      return "PROXY 10.1.0.10:8080";  // transfer the traffic to the proxy. 
+}
 ```
 
 Organizations must then create a system variable named `grpc_proxy` with a value like `http://10.1.0.10:8080` that matches your proxy server's configuration on end-user machines to allow the Global Secure Access client services to use the proxy.

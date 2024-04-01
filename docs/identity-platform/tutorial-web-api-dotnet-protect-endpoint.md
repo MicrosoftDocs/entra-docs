@@ -13,12 +13,10 @@ ms.topic: tutorial
 
 # Tutorial: Implement a protected endpoint to your API
 
-Protecting an API endpoint ensures that only authorized users are permitted access. The Microsoft identity platform provides a way to protect API endpoints by using the [Microsoft.Identity.Web](https://www.nuget.org/packages/Microsoft.Identity.Web/) NuGet package.
-
-In this tutorial:
+In this tutorial, you learn how to protect an API endpoint by adding authentication elements to the source code. Protecting an API endpoint ensures that only authorized users are permitted access. You can test the API with an unauthenticated request to ensure that your API restricts access to unauthorized users. The Microsoft identity platform provides a way to protect API endpoints by using the [Microsoft.Identity.Web](https://www.nuget.org/packages/Microsoft.Identity.Web/) NuGet package. In this article, you;
 
 > [!div class="checklist"]
-> * Implement authentication
+> * Implement authentication elements to the source code
 > * Add weather information for the API to display
 > * Test the API with an unauthenticated GET request
 
@@ -143,7 +141,5 @@ The web page `http://localhost:{host}` displays an output similar to the followi
 ## Next steps
 
 > [!div class="nextstepaction"]
-> 
-> [How-to: Call an API using Postman](howto-call-a-web-api-with-postman.md)
 >
 > [How-to: Call an API using cURL](howto-call-a-web-api-with-curl.md)
