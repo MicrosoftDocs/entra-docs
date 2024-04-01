@@ -1,17 +1,17 @@
 ### YamlMime:HowTo
 
 metadata:
-  title: Create and manage group policy in Microsoft Entra Domain Services | Microsoft Docs
+  title: Create and manage group policy in Microsoft Entra Domain Services
   description: Learn how to edit the built-in group policy objects (GPOs) and create your own custom policies in a Microsoft Entra Domain Services managed domain.
   author: justinha
+  ms.author: justinha
   manager: amycolannino
-
-  ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
+  ms.date: 09/15/2023
   ms.service: entra-id
   ms.subservice: domain-services
   ms.topic: how-to
-  ms.date: 09/15/2023
-  ms.author: justinha
+  ms.custom:
+    - ge-structured-content-pilot
 title: |
   Administer Group Policy in a Microsoft Entra Domain Services managed domain
 introduction: |

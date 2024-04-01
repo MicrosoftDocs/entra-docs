@@ -3,17 +3,19 @@
 metadata:
   title: Assign Microsoft Entra roles to users
   description: Learn how to grant access to users in Microsoft Entra ID by assigning Microsoft Entra roles.
-
   author: rolyon
+  ms.author: rolyon
   manager: amycolannino
+  ms.reviewer: vincesm
+  ms.date: 03/04/2024
   ms.service: entra-id
   ms.subservice: role-based-access-control
   ms.topic: how-to
-  ms.date: 03/04/2024
-  ms.author: rolyon
-  ms.reviewer: vincesm
-  ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
+  ms.custom:
+    - it-pro
+    - has-azure-ad-ps-ref
+    - azure-ad-ref-level-one-done
+    - ge-structured-content-pilot
 
 title: |
   Assign Microsoft Entra roles to users

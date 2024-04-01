@@ -4,14 +4,15 @@ metadata:
   title: How to manage user profile information in the Microsoft Entra admin center
   description: Instructions for IT admins to learn how to manage a user's profile and settings in Microsoft Entra ID.
   author: shlipsey3
+  ms.author: sarahlipsey
   manager: amycolannino
-
+  ms.reviewer: jeffsta
+  ms.date: 02/09/2024
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
-  ms.date: 02/09/2024
-  ms.author: sarahlipsey
-  ms.reviewer: jeffsta
+  ms.custom:
+    - ge-structured-content-pilot
 
 # Customer intent: As an IT admin, I need to understand the information contained in the user profile and settings so that I can properly create and manage users in my organization.
 
