@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how users will sign in with a security key. 
 
 ---
-## Sign in with a passkey (FIDO2)
+# Sign in with a passkey (FIDO2)
 
 To sign into your work or school account with a passkey, follow these steps whenever you get a sign-in prompt.
 
