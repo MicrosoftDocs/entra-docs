@@ -45,7 +45,7 @@ Real-time detections might not show up in reporting for 5 to 10 minutes. Offline
 
 | Risk detection | Detection type | Type |
 | --- | --- | --- |
-| [Atypical travel](#atypical-travel) | Offline | Premium |
+| [Atypical travel](#atypical-travel) | Offline | Nonpremium |
 | [Anomalous Token](#anomalous-token) | Real-time or Offline | Premium |
 | [Suspicious browser](#suspicious-browser) | Offline | Premium |
 | [Unfamiliar sign-in properties](#unfamiliar-sign-in-properties) | Real-time | Premium |
