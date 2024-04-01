@@ -1,6 +1,6 @@
 ---
 title: Support for FIDO2 authentication with Microsoft Entra ID
-description: Web browser and native app support for FIDO2 passwordless authentication using Microsoft Entra ID
+description: Web browser and native app support for FIDO2 passwordless authentication using Microsoft Entra ID.
 
 ms.service: entra-id
 ms.subservice: authentication
@@ -14,7 +14,7 @@ ms.reviewer: calui
 ---
 # Support for FIDO2 authentication with Microsoft Entra ID
 
-Microsoft Entra ID allows device-bound passkeys to be used for passwordless authentication. This topic covers which native apps, web browsers, and operating systems support passwordless authentication using passkeys with Microsoft Entra ID. Microsoft Entra ID currently supports only device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator.
+Microsoft Entra ID allows device-bound passkeys to be used for passwordless authentication. This article covers which native apps, web browsers, and operating systems support passwordless authentication using passkeys with Microsoft Entra ID. Microsoft Entra ID currently supports only device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator.
 
 ## Microsoft app support (preview)
 
@@ -26,17 +26,17 @@ Microsoft applications provide native support for FIDO2 authentication in previe
 | macOS            | Microsoft Intune Company Portal <sup>1</sup> | &#x2705;       |
 | Android<sup>2</sup> | Authenticator or Company Portal | &#10060;    |
 
-<sup>1</sup>On macOS, the [Microsoft Enterprise SSO plug-in](~/identity-platform/apple-sso-plugin.md) is required to enable Company Portal as an authentication broker. Devices that run macOS must meet SSO plug-in requirements, including enrollment in mobile device management. For FIDO2 authentication, make sure that you run the latest version of native applications. 
+<sup>1</sup>On macOS, the [Microsoft Enterprise Single Sign On (SSO) plug-in](~/identity-platform/apple-sso-plugin.md) is required to enable Company Portal as an authentication broker. Devices that run macOS must meet SSO plug-in requirements, including enrollment in mobile device management. For FIDO2 authentication, make sure that you run the latest version of native applications. 
 
 <sup>2</sup>Native app support for FIDO2 on Android is in development.
 
 If a user installed an authentication broker, they can choose to sign in with a security key when they access an application such as Outlook. They're redirected to sign in with FIDO2, and redirected back to Outlook as a signed in user after successful authentication.
 
-If the user hasn't installed an authentication broker, they can still sign in with a security key when they access MSAL-enabled applications that meet the requirements as listed in [Support for FIDO2 authentication](~/identity-platform/support-fido2-authentication.md).
+If the user has yet to install an authentication broker, they can still sign in with a security key when they access MSAL-enabled applications that meet the requirements as listed in [Support for FIDO2 authentication](~/identity-platform/support-fido2-authentication.md).
 
 ## Web browser support
 
-This table shows browser support for authenticating Microsoft Entra ID and Microsoft accounts by using FIDO2. Microsoft accounts are created by consumers for services such as Xbox, Skype, or Outlook.com. 
+This table shows browser support for authenticating Microsoft Entra ID and Microsoft accounts by using FIDO2. Consumers create Microsoft accounts for services such as Xbox, Skype, or Outlook.com. 
 
 | OS  | Chrome | Edge | Firefox | Safari |
 |:---:|:------:|:----:|:-------:|:------:|
@@ -122,7 +122,7 @@ The following are the minimum browser version requirements on Windows.
 | Chrome  | &#x2705;  | &#10060; | &#10060; |
 | Firefox | &#x2705;  | &#10060; | &#10060; |
 
-<sup>1</sup>Security key registration with Microsoft Entra ID is not yet supported on Android.
+<sup>1</sup>Security key registration with Microsoft Entra ID isn't yet supported on Android.
 
 <sup>2</sup>BLE security keys aren't supported on Android by Google.
 
@@ -130,19 +130,19 @@ The following are the minimum browser version requirements on Windows.
 
 ### Mobile device might be prioritized over security key
 
-If you're using Chrome or Edge, the browser might prioritize usage of a passkey that's stored on a mobile device over a passkey that's stored on a security key. 
+If you're using Chrome or Edge, the browser may prioritize using a passkey stored on a mobile device over a passkey stored on a security key. 
 
-- Beginning with Windows 11 version 23H2, the operating system shows the following prompt during sign-in. Below **More choices**, choose **Security key** and click **Next**.
+- Beginning with Windows 11 version 23H2, the operating system shows the following prompt during sign-in. Below **More choices**, choose **Security key** and select **Next**.
 
   :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/security-key.png" alt-text="Screenshot of option to choose security key on Windows 11."::: 
 
-- On earlier versions of Windows, the browser may show the QR pairing screen to continue with using a passkey that's stored on a mobile device. To use a passkey that's stored on a security key instead, insert your security key and touch it to continue. 
+- On earlier versions of Windows, the browser may show the QR pairing screen to continue with using a passkey stored on a mobile device. To use a passkey stored on a security key instead, insert your security key and touch it to continue. 
 
   :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/insert-device-bound-passkey.png" alt-text="Screenshot of option to insert a device-bound passkey on Windows 10."::: 
 
 ### PowerShell support
 
-[Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) supports FIDO2. Some PowerShell modules that use Internet Explorer instead of Edge aren't capable of perfrming FIDO2 authentication. For example, PowerShell modules for SharePoint Online or Teams, or any PowerShell scripts that require admin credentials, don't prompt for FIDO2. 
+[Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) supports FIDO2. Some PowerShell modules that use Internet Explorer instead of Edge aren't capable of performing FIDO2 authentication. For example, PowerShell modules for SharePoint Online or Teams, or any PowerShell scripts that require admin credentials, don't prompt for FIDO2. 
 
 As a workaround, most vendors can put certificates on the FIDO2 security keys. Certificate-based authentication (CBA) works in all browsers. If you can enable CBA for those admin accounts, you can require CBA instead of FIDO2 in the interim. 
 
