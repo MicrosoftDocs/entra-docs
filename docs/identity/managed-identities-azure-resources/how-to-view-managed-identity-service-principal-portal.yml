@@ -3,16 +3,15 @@
 metadata:
   title: View service principal of a managed identity in the Azure portal
   description: Step-by-step instructions for viewing the service principal of a managed identity in the Azure portal.
-
   author: barclayn
+  ms.author: barclayn
   manager: amycolannino
-
+  ms.date: 08/31/2023
   ms.service: entra-id
   ms.subservice: managed-identities
   ms.topic: how-to
-  ms.tgt_pltfrm: na
-  ms.date: 08/31/2023
-  ms.author: barclayn
+  ms.custom:
+    - ge-structured-content-pilot
 
 title: |
   View the service principal of a managed identity in the Azure portal

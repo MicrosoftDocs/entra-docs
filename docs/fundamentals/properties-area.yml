@@ -2,19 +2,16 @@
 
 ---
 metadata:
-  title: "Add your organization's privacy information"
-  description: "Add your organization's privacy information, privacy contact, and technical contact to your directory."
+  title: Add your organization's privacy information
+  description: Add your organization's privacy information, privacy contact, and technical contact to your directory.
   author: barclayn
   ms.author: barclayn
-  ms.service: entra
-  ms.topic: how-to #Don't change
   ms.date: 12/04/2023
-  ms.custom: template-how-to
-  # appliesTo: <optional> leave commented out.
-  # - item
-  # - item
-  # - item
-  # - item
+  ms.service: entra
+  ms.topic: how-to
+  ms.custom:
+    - template-how-to
+    - ge-structured-content-pilot
 
   #customer intent: As a <role>, I want <what> so that <why>.
 

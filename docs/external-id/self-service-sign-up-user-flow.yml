@@ -3,16 +3,16 @@
 metadata:
   title: Add a self-service sign-up user flow
   description: Create user flows for apps that your organization builds. Then, users who visit that app can gain a guest account using the options configured in the user flow.
-  
+  author: msmimart
+  ms.author: mimart
+  manager: CelesteDG
+  ms.date: 02/05/2024
   ms.service: entra-external-id
   ms.topic: how-to
-  ms.date: 02/05/2024
-
-  ms.author: mimart
-  author: msmimart
-  manager: CelesteDG
-  ms.custom: "it-pro"
   ms.collection: M365-identity-device-management
+  ms.custom:
+    - it-pro
+    - ge-structured-content-pilot
 
 #customer intent: As a developer building an application with B2B collaboration user flows, I want to add a self-service sign-up user flow to my app, so that users can sign up for the app and create a new guest account.
 

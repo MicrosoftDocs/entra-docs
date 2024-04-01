@@ -7,17 +7,12 @@ metadata:
   author: shlipsey3
   ms.author: sarahlipsey
   manager: amycolannino
+  ms.date: 01/05/2024
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
-  ms.date: 01/05/2024
-  # Customer Intent: As an IT admin, I want to learn how to create groups, add members, and adjust setting so that I can grant the right access to the right services for the right people.
-  # appliesTo: <optional> leave commented out.
-  # - item
-  # - item
-  # - item
-  # - item
-  #customer intent: As a <role>, I want <what> so that <why>.
+  ms.custom:
+    - ge-structured-content-pilot
 
 title: |
   Manage Microsoft Entra groups and group membership

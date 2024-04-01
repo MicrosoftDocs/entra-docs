@@ -4,14 +4,15 @@ metadata:
   title: How to create or delete users in Microsoft Entra ID
   description: Instructions for IT admins to create new users and delete or update existing users in Microsoft Entra ID.
   author: shlipsey3
+  ms.author: sarahlipsey
   manager: amycolannino
+  ms.reviewer: adelle.dimitui
+  ms.date: 02/07/2024
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
-  ms.date: 02/07/2024
-  ms.author: sarahlipsey
-  ms.reviewer: adelle.dimitui
-
+  ms.custom:
+    - ge-structured-content-pilot
 
 # Customer intent: As an IT admin, I need to know how to create, update, and delete users manually for quick, one-off updates.
 

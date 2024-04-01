@@ -3,16 +3,19 @@
 metadata:
   title: Create custom roles in Microsoft Entra role-based access control
   description: Create and assign custom Microsoft Entra roles with resource scope on Microsoft Entra resources.
-
   author: rolyon
+  ms.author: rolyon
   manager: amycolannino
+  ms.reviewer: vincesm
+  ms.date: 01/27/2024
   ms.service: entra-id
   ms.subservice: role-based-access-control
   ms.topic: how-to
-  ms.date: 01/27/2024
-  ms.author: rolyon
-  ms.reviewer: vincesm
-  ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+  ms.custom:
+    - it-pro
+    - has-azure-ad-ps-ref
+    - azure-ad-ref-level-one-done
+    - ge-structured-content-pilot
 
 title: |
   Create and assign a custom role in Microsoft Entra ID

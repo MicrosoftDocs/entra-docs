@@ -4,13 +4,15 @@ metadata:
   title: Integrate Microsoft Entra logs with Azure Monitor logs
   description: Learn how to integrate Microsoft Entra activity logs with Azure Monitor logs for querying and analysis.
   author: shlipsey3
-  manager: amycolannino
-  ms.service: entra-id
-  ms.topic: how-to
-  ms.subservice: monitoring-health
-  ms.date: 01/26/2024
   ms.author: sarahlipsey
+  manager: amycolannino
   ms.reviewer: egreenberg
+  ms.date: 01/26/2024
+  ms.service: entra-id
+  ms.subservice: monitoring-health
+  ms.topic: how-to
+  ms.custom:
+    - ge-structured-content-pilot
 
   # Customer intent: As an IT admin, I want to learn how to integrate Microsoft Entra activity logs with Azure Monitor logs so that I can query and analyze the data.
 
