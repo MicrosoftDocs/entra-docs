@@ -1,6 +1,6 @@
 ---
 title: Register a passkey (FIDO2) with a FIDO2 security key
-description: User registration of a passkey (FIDO2) with a FIDO2 security key
+description: User registration of a passkey (FIDO2) with a FIDO2 security key.
 
 services: active-directory
 ms.service: entra-id 
@@ -25,7 +25,7 @@ ms.collection: M365-identity-device-management
 1. Tap **Add sign-in method** > **Choose a method** > **Passkey (preview)** > **Add**.
 1. Sign in with multifactor authentication (MFA) before adding a passkey (FIDO2), then tap **Next**.
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-with-security-key/add-passkey.png" alt-text="Screenshot of the add a passkey (FIDO2) in My Security Info.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-with-security-key/add-passkey.png" alt-text="Screenshot of the Add a passkey (FIDO2) option in My Security Info.":::
 
 1. Select where you want to save your passkey (FIDO2). 
 
@@ -34,20 +34,20 @@ ms.collection: M365-identity-device-management
 
    :::image type="content" border="true" source="media/how-to-register-passkey-with-security-key/choose-where-store-passkey.png" alt-text="Screenshot of the dialog where to save your passkey (FIDO2) in My Security Info.":::
 
-1. (Optional) If you've previously set up a passkey (FIDO2) on a mobile device and selected the option to remember that device for quicker sign-in, the device name may appear as a selectable option. In this case, do the following: 
+1. (Optional) If you previously set up a passkey (FIDO2) on a mobile device and selected the option to remember that device for quicker sign-in, the device name may appear as a selectable option. In this case, do the following steps: 
 
    1. Choose **Security key**.
    1. Follow the prompts to connect your security key and provide a PIN or biometric method. 
-   1. Upon completion, you'll be redirected to the **My security info** screen, where you can change the default name for the new sign-in method. 
-   1. Click **Done** to finish registering the new method.
+   1. Upon completion, you're redirected to the **My security info** screen, where you can change the default name for the new sign-in method. 
+   1. Select **Done** to finish registering the new method.
 
 ## Prompted registration
 
 1. If your organization requires you to register a passkey (FIDO2), you’ll be prompted after sign-in to add a passkey (FIDO2).
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-with-security-key/inline-registration.png" alt-text="Screenshot of the add a passkey (FIDO2) for a more secure sign-in in My Security Info.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-with-security-key/inline-registration.png" alt-text="Screenshot of the Add a passkey (FIDO2) option for a more secure sign-in in My Security Info.":::
 
-1. Tap **Next**, then you’ll be directed to `login.microsoft.com`. 
+1. Tap **Next**, then you're directed to `login.microsoft.com`. 
 1. Select where you would like to save your passkey (FIDO2).
 
    > [!NOTE]
@@ -55,11 +55,11 @@ ms.collection: M365-identity-device-management
 
    :::image type="content" border="true" source="media/how-to-register-passkey-with-security-key/choose-where-store-passkey.png" alt-text="Screenshot of the prompt where to store your passkey (FIDO2) in My Security Info.":::
 
-1. (Optional) If you've previously set up a passkey (FIDO2) on a mobile device and selected the option to remember that device for quicker sign-in, the device name may appear as a selectable option. In this case, do the following: 
+1. (Optional) If you previously set up a passkey (FIDO2) on a mobile device and selected the option to remember that device for quicker sign-in, the device name may appear as a selectable option. In this case, do the following steps: 
 
    1. Choose **Security key**.
    1. Follow the prompts to connect your security key and provide a PIN or biometric method. 
-   1. Upon completion, you'll be redirected to the **My security info** screen, where you can change the default name for the new sign-in method. 
+   1. Upon completion, you're redirected to the **My security info** screen, where you can change the default name for the new sign-in method. 
    1. Select **Done** to finish registering the new method.
 
 ## Sign-in with your new passkey (FIDO2)
