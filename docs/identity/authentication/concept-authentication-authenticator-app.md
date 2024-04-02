@@ -16,7 +16,7 @@ ms.reviewer: calui
 ---
 # Authentication methods in Microsoft Entra ID - Microsoft Authenticator app
 
-The Microsoft Authenticator app provides an another level of security to your Microsoft Entra work or school account or your Microsoft account and is available for [Android](https://go.microsoft.com/fwlink/?linkid=866594) and [iOS](https://go.microsoft.com/fwlink/?linkid=866594). With the Microsoft Authenticator app, users can authenticate in a passwordless way during sign-in, or as an another verification option during self-service password reset (SSPR) or multifactor authentication events.
+The Microsoft Authenticator app provides another level of security to your Microsoft Entra work or school account or your Microsoft account and is available for [Android](https://go.microsoft.com/fwlink/?linkid=866594) and [iOS](https://go.microsoft.com/fwlink/?linkid=866594). With the Microsoft Authenticator app, users can authenticate in a passwordless way during sign-in, or another verification option during self-service password reset (SSPR) or multifactor authentication events.
 
 You can now apply passkeys for user authentication. Users can then receive a notification through their mobile app for approving or denying the Authenticator app to generate an OATH verification code. This code can then be entered in a sign-in interface. If you enable both a notification and verification code, users who register the Authenticator app can use either method to verify their identity using passkeys.
 
@@ -122,7 +122,6 @@ Azure for US Government (includes GCC High and DoD) | https://aka.ms/MySecurityI
 
 
 ## Next steps
-
 
 - To get started with passkeys, see [Enable Microsoft Authenticator passkey sign in (preview)](how-to-enable-authenticator-passkey.md).
 
