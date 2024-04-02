@@ -34,7 +34,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 > [!NOTE]
 > This integration is also available to use from the Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from the public cloud environment.
 
-Before configuring and enabling automatic user provisioning, you should decide which users in Microsoft Entra ID need access to SAP Cloud Identity Services. You should ensure those users have the necessary attributes required by SAP Cloud Identity Services.
+If you are configuring provisioning into SAP Cloud Identity Services in a production environment, where you will be governing access to SAP workloads using Microsoft Entra ID Governance, then review the [prerequisites before configuring Microsoft Entra ID for identity governance](~/id-governance/identity-governance-applications-prepare.md#prerequisites-before-configuring-microsoft-entra-id-for-identity-governance) before proceeding.
 
 ## Set up SAP Cloud Identity Services for provisioning
 
@@ -45,7 +45,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 1. Press the **+Add** button on the left hand panel in order to add a new administrator to the list. Choose **Add System** and enter the name of the system.   
 
 	> [!NOTE]
-	> The administrator identity in SAP Cloud Identity Services must be of type **System**. An administrator user will not be able to authenticate to the SAP SCIM API when provisioning.  SAP Cloud Identity Services does not allow the name of a system to be changed after it is created.
+	> The administrator identity in SAP Cloud Identity Services must be of type **System**. An administrator user will not be able to authenticate to the SAP SCIM API when provisioning. SAP Cloud Identity Services does not allow the name of a system to be changed after it is created.
 
 1. Under Configure Authorizations, switch on the toggle button against **Manage Users**. Then click **Save** to create the system.
 
@@ -58,7 +58,7 @@ This is done in the Provisioning tab of your SAP Cloud Identity Services applica
 
 ## Add SAP Cloud Identity Services from the gallery
 
-Before configuring SAP Cloud Identity Services for automatic user provisioning with Microsoft Entra ID, you need to add SAP Cloud Identity Services from the Microsoft Entra application gallery to your list of managed SaaS applications.
+Before configuring Microsoft Entra ID to have automatic user provisioning into SAP Cloud Identity Services, you need to add SAP Cloud Identity Services from the Microsoft Entra application gallery to your tenant's list of enterprise applications.
 
 If SAP Cloud Identity Services is already configured for single-sign on from Microsoft Entra, and an application is already present in your Microsoft Entra list of enterprise applications, then continue at the next section.
 
@@ -69,7 +69,7 @@ If SAP Cloud Identity Services is already configured for single-sign on from Mic
 1. To add the app from the gallery, type **SAP Cloud Identity Services** in the search box.
 1. Select **SAP Cloud Identity Services** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
-## Configuring automatic user provisioning to SAP Cloud Identity Services 
+## Configure automatic user provisioning to SAP Cloud Identity Services
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users in SAP Cloud Identity Services based on users assignments in Microsoft Entra ID.
 
@@ -83,6 +83,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. In the applications list, select the application, **SAP Cloud Identity Services**.
 
 	![Screenshot of the SAP Cloud Identity Services link in the Applications list.](common/all-applications.png)
+
+1. Select the **Properties** tab.
+
+1. Verify that the **Assignment required?** option is set to **Yes**. If it's set to **No**, all users in your directory, including external identities, can access the application, and you can't review access to the application.
 
 1. Select the **Provisioning** tab.
 
@@ -106,7 +110,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the SAP Cloud Identity Services User Mappings.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/mapping.png)
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to SAP Cloud Identity Services in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in SAP Cloud Identity Services for update operations. Ensure that any users already in SAP Cloud Identity Services already have the matching attributes, otherwise duplicate users may be created. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to SAP Cloud Identity Services in the **Attribute Mapping** section. Add any additional mappings that your SAP Cloud Identity Services requires. If you do not see the attribute available as a target, then select **Show advanced options** and select **Edit attribute list for SAP Cloud Platform Identity Authentication Service** to [edit the list of supported attributes](~/identity/app-provisioning/customize-application-attributes.md#editing-the-list-of-supported-attributes) add the attributes of your SAP Cloud Identity Services tenant.  
+1. Review and record the source and target attributes selected as **Matching** properties, mappings that have a **Matching precedence**, as these attributes are used to match the user accounts in SAP Cloud Identity Services for Microsoft Entra to determine whether to create a new user or update an existing user. For more information on matching, see [matching users in the source and target systems](~/identity/app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target--systems). In a subsequent step, you'll ensure that any users already in SAP Cloud Identity Services have the attributes selected as **Matching** properties populated, to prevent duplicate users from being created.
+1. Confirm that there's an attribute mapping for `IsSoftDeleted`, or a function containing `IsSoftDeleted`, mapped to an attribute of the application. When a user is unassigned from the application, soft-deleted in Microsoft Entra ID, or blocked from sign-in, Microsoft Entra provisioning will update the attribute mapped to `isSoftDeleted`. If no attribute is mapped, users who later are unassigned from the application role will continue to exist in the application's data store.
+1. Select the **Save** button to commit any changes.
 
 	|Attribute|Type|Supported for filtering|Required by SAP Cloud Identity Services|
 	|---|---|---|---|
@@ -162,35 +169,129 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
-This operation starts the initial synchronization of all users defined in **Scope** in the **Settings** section.  If you have the scope set to **Sync only assigned users and groups** and no users or groups have been assigned to the application, then no synchronization will occur, until users are assigned to the application.  
+This operation starts the initial synchronization of all users defined in **Scope** in the **Settings** section. If you have the scope set to **Sync only assigned users and groups** and no users or groups have been assigned to the application, then no synchronization will occur, until users are assigned to the application.  
 
-## Assigning users to SAP Cloud Identity Services
+## Provision a new test user to SAP Cloud Identity Services
 
-Microsoft Entra ID uses a concept called *assignments* to determine which users should receive access to selected apps. In the context of automatic user provisioning, if the Settings value of **Scope** is **Sync only assigned users and groups**, then only the users and groups that have been assigned to an application role of that application in Microsoft Entra ID are synchronized with SAP Cloud Identity Services.  When assigning a user to SAP Cloud Identity Services, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.  Currently the only other role for SAP Cloud Identity Services is **User**.
+It's recommended that a single new Microsoft Entra test user is assigned to SAP Cloud Identity Services to test the automatic user provisioning configuration.
 
-It's recommended that a single Microsoft Entra user is assigned to SAP Cloud Identity Services to test the automatic user provisioning configuration. Note that the initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) and a User Administrator.
+1. Browse to **Identity** > **Users** > **All users**.
+1. Select **New user** > **Create new user**.
+1. Type in the **User principal name** and **Display Name** of the new test user. The user principal name must be unique and not the same of any current or previous Microsoft Entra or SAP Cloud Identity Services user. Select **Review + create** and **Create**.
+1. Once the test user is created, browse to **Identity** > **Applications** > **Enterprise Applications**.
+1. Select the SAP Cloud Identity Services application.
+1. Select **Users and groups** and then select **Add user/group**.
+1. In the **Users and groups** , select **None Selected**, and in text box, type the user principal name of the test user.
+1. Select **Select**, and then **Assign**.
+1. Select **Provisioning** and then select **Provision on demand**.
+1. In the **Select a user or group** text box, type the user principal name of the test user.
+1. Click **Provision**.
+1. Wait for the provisioning to complete. If successful, you will see the message `Modified attributes (successful)`.
+
+You can also optionally verify what Microsoft Entra will provision when a user goes out of scope of the application.
+
+1. Select **Users and groups**.
+1. Select the test user, then select **Remove**.
+1. After the test user is removed, select **Provisioning** and then select **Provision on demand**.
+1. In the **Select a user or group** text box, type the user principal name of the test user just de-assigned.
+1. Click **Provision**.
+1. Wait for the provisioning to complete.
+
+Finally, you can remove the test user from Microsoft Entra ID.
+
+1. Browse to **Identity** > **Users** > **All users**.
+1. Select the test user, select **Delete**, and select **OK**. This action soft-deletes the test user from Microsoft Entra ID.
+
+You can also then remove the test user from SAP Cloud Identity Services.
+
+## Ensure existing SAP Cloud Identity Services users have the necessary matching attributes
+
+Before assigning non-test users to the SAP Cloud Identity Services application in Microsoft Entra ID, you should ensure that any users already in SAP Cloud Identity Services that represent the same people as the users in Microsoft Entra ID, have the mapping attributes populated in SAP Cloud Identity services.
+
+In the provisioning mapping, the attributes selected as **Matching** properties are used to match the user accounts in Microsoft Entra ID with the user accounts in SAP Cloud Identity Services. If there is a user in Microsoft Entra with no match in SAP Cloud Identity Services, then Microsoft Entra will attempt to create a new user. If there is a user in Microsoft Entra and a match in SAP Cloud Identity Services, then Microsoft Entra will update that SAP Cloud Identity Services user. For this reason, you should ensure that any users already in SAP Cloud Identity Services have the attributes selected as **Matching** properties populated, otherwise duplicate users may be created. If you need to change the matching attribute in your Microsoft Entra attribute mapping, see [matching users in the source and target systems](~/identity/app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target--systems).
+
+1. Sign in to your SAP Cloud Identity Services Admin Console, `https://<tenantID>.accounts.ondemand.com/admin` or `https://<tenantID>.trial-accounts.ondemand.com/admin` if a trial.
+1. Navigate to **Users & Authorizations > Export Users**.
+1. Select all attributes required for matching Microsoft Entra users with those in SAP. This includes the `SCIM ID`, `userName`, `emails`, and other attributes you may be using in your SAP Systems.
+1. Select **Export** and wait for the browser to download the CSV file.
+1. Open a PowerShell window.
+1. Type the following script into an editor. In line one, if you selected a different matching attribute other than `userName`, change the value of the `sapScimUserNameField` variable to the name of the SAP ICloud Identity Services attribute. In line two, change the argument to the filename of the exported CSV file.
+
+```powershell
+$sapScimUserNameField = "userName"
+$existingSapUsers = import-csv ".\Users-exported-from-sap.csv"
+$count = 0
+$warn = 0
+foreach ($u in $existingSapUsers) {
+    $id = $u.id
+    if (($null -eq $id) -or ($id.length -eq 0)) {
+        write-error "Exported CSV file does not contain the id attribute of SAP Cloud Identity Services users."
+        throw "id attribute not available, re-export"
+        return
+    }
+    $count++
+    $userName = $u.$sapScimUserNameField
+    if (($null -eq $userName) -or ($userName.length -eq 0)) {
+        write-warning "SAP Cloud Identity Services user $id does not have a $sapScimUserNameField attribute populated"
+        $warn++
+    }
+}
+write-output "$warn of $count users in SAP Cloud Identity Services did not have the $sapScimUserNameFIeld attribute populated."
+```
+
+7. Run the script. When the script completes, if there were one or more users that were lacking the required matching attribute, then look up those users in the exported CSV file or in the SAP Cloud Identity Services Admin Console. If those users are also present in Microsoft Entra, then you will need to first update the SAP Cloud Identity Services representation of those users so that they have the matching attribute populated.
+1. Once you have updated the attributes of those users in SAP Cloud Identity Services, then re-run the steps in this section, to confirm no users in SAP Cloud Identity Services are lacking the matching attributes that would prevent provisioning.
+
+## Ensure existing Microsoft Entra users have the necessary attributes
+
+Before enabling automatic user provisioning, you must decide which users in Microsoft Entra ID need access to SAP Cloud Identity Services, and then you need to check to make sure that those users have the necessary attributes in Microsoft Entra ID, and those attributes are mapped to the expected schema of SAP Cloud Identity Services.
+
+* By default, the value of the Microsoft Entra user `userPrincipalName` attribute is mapped to both the `userName` and `emails[type eq "work"].value` attributes of SAP Cloud Identity Services. If user's email addresses are different from their user principal names, then you may need to change this mapping.
+* SAP Cloud Identity Services may ignore values of the `postalCode` attribute if the format of Company ZIP/postal code does not match company country.
+* By default, the Microsoft Entra attribute `department` is mapped to the SAP Cloud Identity Services `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department` attribute. If Microsoft Entra users have values of the `department` attribute, those values must match those departments already configured in SAP Cloud Identity Services, otherwise creation or update of the user will fail. If the `department` value in Microsoft Entra is not consistent with those in your SAP environment, then remove the mapping prior to assigning users.
+* SAP Cloud Identity Services's SCIM endpoint requires certain attributes to be of specific format. You can know more about these attributes and their specific format [here](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/b10fc6a9a37c488a82ce7489b1fab64c.html#).
+
+## Assign users to the SAP Cloud Identity Services application in Microsoft Entra ID
+
+Microsoft Entra ID uses a concept called *assignments* to determine which users should receive access to selected apps. In the context of automatic user provisioning, if the Settings value of **Scope** is **Sync only assigned users and groups**, then only the users and groups that have been assigned to an application role of that application in Microsoft Entra ID are synchronized with SAP Cloud Identity Services. When assigning a user to SAP Cloud Identity Services, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning. Currently the only available role for SAP Cloud Identity Services is **User**.
+
+If provisioning has already been enabled for the application, check that the application provisioning is not in [quarantine](~/identity/app-provisioning/application-provisioning-quarantine-status.md) before assigning more users to the application. Resolve any issues that are causing the quarantine, before you proceed.
 
 Once the testing is complete and a user is successfully provisioned to SAP Cloud Identity Services, you can assign the additional authorized users to the SAP Cloud Identity Services application by following the instructions here:
 * [Assign a user to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
 
-## Configuring single-sign on
+Note that the initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.  
+
+If you don't see users being provisioned, review the steps in the [troubleshooting guide for no users being provisioned](~/identity/app-provisioning/application-provisioning-config-problem-no-users-provisioned.md). Then, check the provisioning log through the [Microsoft Entra admin center](~/identity/monitoring-health/concept-provisioning-logs.md) or [Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md#monitor-provisioning-events-using-the-provisioning-logs). Filter the log to the status **Failure**. If there are failures with an ErrorCode of **DuplicateTargetEntries**,  this indicates an ambiguity in your provisioning matching rules, and you'll need to update the Microsoft Entra users or the mappings that are used for matching to ensure each Microsoft Entra user matches one application user. Then filter the log to the action **Create** and status **Skipped**. If users were skipped with the SkipReason code of **NotEffectivelyEntitled**, this may indicate that the user accounts in Microsoft Entra ID were not matched because the user account status was **Disabled**.
+
+## Configure single-sign on
 
 You may also choose to enable SAML-based single sign-on for SAP Cloud Identity Services, following the instructions provided in the [SAP Cloud Identity Services Single sign-on tutorial](./sap-hana-cloud-platform-identity-authentication-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
-## Monitoring provisioning
+## Monitor provisioning
 
-You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on SAP Cloud Identity Services.
+You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on SAP Cloud Identity Services.   You can also monitor the provisioning project via the Microsoft [Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md#monitor-the-provisioning-job-status).
 
 For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
-## Connector limitations
+## Maintain application role assignments
 
-* SAP Cloud Identity Services's SCIM endpoint requires certain attributes to be of specific format. You can know more about these attributes and their specific format [here](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/b10fc6a9a37c488a82ce7489b1fab64c.html#).
+As users that are in assigned to the application are updated in Microsoft Entra ID, those changes will be automatically provisioned to SAP Cloud Identity Services.
+
+If you have Microsoft Entra ID Governance, you can automate changes to the application role assignments for SAP Cloud Identity Services in Microsoft Entra ID, to add or remove assignments as people join the organization, or leave or change roles.
+
+* You can [perform a one-time or recurring access review of the application role assignments](~/id-governance/access-reviews-application-preparation.md).
+* You can [deploy entitlement management policies for automating access assignment](~/id-governance/identity-governance-applications-deploy.md#deploy-entitlement-management-policies-for-automating-access-assignment).  You can have policies for users to be assigned access, either when they request, [by an administrator](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-a-user), [automatically based on rules](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md), or through [lifecycle workflows](~/id-governance/entitlement-management-scenarios.md#administrator-assign-employees-access-from-lifecycle-workflows).
+
 
 ## More resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
+* [Manage access to your SAP applications](~/id-governance/sap.md)
+* [Govern access for applications in your environment](~/id-governance/identity-governance-applications-prepare.md)
+
 
 ## Next steps
 
