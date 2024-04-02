@@ -29,7 +29,7 @@ In this article, you learn how to:
  
 ## Prerequisites  
 
-- <a href="https://developer.android.com/studio/archive" target="_blank">Android Studio Dolphin | 2021.3.1 Patch 1</a>.
+- <a href="https://developer.android.com/studio" target="_blank">Android Studio</a>.
 - Microsoft Entra External ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
  
 ## Register an application
@@ -40,19 +40,19 @@ In this article, you learn how to:
 
 [!INCLUDE [Enable public client and native authentication](../customers/includes/native-auth/enable-native-authentication.md)]
  
-## Grant API permissions  
+## Grant API permissions
  
 [!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-native-authentication-api-permission.md)]
 
-## Create a user flow 
+## Create a user flow
  
 [!INCLUDE [Create user flow](../customers/includes/configure-user-flow/create-native-authentication-sign-in-sign-out-user-flow.md)]
  
-## Associate the app with the user flow  
+## Associate the app with the user flow
 
 [!INCLUDE [associate user flow](../customers/includes/configure-user-flow/add-app-user-flow.md)]  
  
-## Clone sample Android mobile application  
+## Clone sample Android mobile application
  
 1. Open Terminal and navigate to a directory where you want to keep the code.  
 1. Clone the application from GitHub by running the following command:  
@@ -125,6 +125,6 @@ In this section, you test email with password flow, with its variants such as, e
 Use the steps in [Call a protected web API in a sample Android mobile app by using native authentication](sample-native-authentication-android-sample-app-call-web-api.md) to call a protected web API from a sample Android mobile app.
  
 
-## Next steps 
+## Next steps
  
 - [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md).
