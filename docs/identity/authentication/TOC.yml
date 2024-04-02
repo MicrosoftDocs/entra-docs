@@ -210,7 +210,7 @@
     href: concept-authentication-default-enablement.md
   - name: Security info registration
     items:
-    - name: Enable combined registration
+    - name: Combined MFA and SSPR registration
       href: howto-registration-mfa-sspr-combined.md
     - name: Troubleshoot combined registration
       href: howto-registration-mfa-sspr-combined-troubleshoot.md
