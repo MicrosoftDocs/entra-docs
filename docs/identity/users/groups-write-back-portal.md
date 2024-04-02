@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
 
-ms.custom: "it-pro"
+ms.custom: "it-pro", has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 #Customer intent: As a new Microsoft Entra identity administrator, user management is at the core of my work, so I need to understand the user management tools such as groups, administrator roles, and licenses to manage users.
 ---
