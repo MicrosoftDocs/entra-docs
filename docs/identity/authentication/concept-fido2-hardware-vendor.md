@@ -158,4 +158,4 @@ The following table lists FIDO2 security key models that are currently eligible 
 
 ## Next steps
 
-[Enabling browsers, native apps, and operating systems to support passwordless authentication with FIDO2 security keys and Microsoft Entra ID](fido2-compatibility.md)
+For more information about enabling browsers, native apps, and operating systems to support passwordless authentication with FIDO2 security keys and Microsoft Entra ID, see [FIDO2 compatibility](fido2-compatibility.md).
