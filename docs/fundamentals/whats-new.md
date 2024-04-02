@@ -137,6 +137,19 @@ With API-driven inbound provisioning, Microsoft Entra ID provisioning service no
 
 ---
 
+### General Availability - Changing Passwords in My Security Info
+
+**Type:** New feature    
+**Service category:** My Security Info    
+**Product capability:** End User Experiences        
+
+Now Generally Available, My Sign Ins [(My Sign-Ins (microsoft.com))](https://mysignins.microsoft.com/) supports end users changing their passwords inline. When a user authenticates with a password and an MFA credential, they're able to are able to change their password without entering their existing password. Starting April 1st, through a phased rollout, traffic from the [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) portal will redirect to the new My Sign Ins change experience. The [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) will no longer be available after June 2024, but will continue to redirect to the new experience.
+
+
+For more information, see: [API-driven inbound provisioning concepts](../identity/app-provisioning/inbound-provisioning-api-concepts.md).
+
+---
+
 ## February 2024
 
 ### General Availability - Identity Protection and Risk Remediation on the Azure Mobile App
