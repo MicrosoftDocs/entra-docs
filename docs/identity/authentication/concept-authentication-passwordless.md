@@ -24,7 +24,7 @@ Each organization has different needs when it comes to authentication. Microsoft
 
 - Windows Hello for Business
 - Microsoft Authenticator 
-- FIDO2 security keys
+- Passkeys (FIDO2)
 - Certificate-based authentication
 
 ![Authentication: Security versus convenience](./media/concept-authentication-passwordless/passwordless-convenience-security.png)
@@ -75,7 +75,7 @@ To get started with passwordless sign-in, complete the following how-to:
 > [!div class="nextstepaction"]
 > [Enable passwordless sign using the Authenticator app](howto-authentication-passwordless-phone.md)
 
-## FIDO2 security keys
+## Passkeys (FIDO2) 
 
 The FIDO (Fast IDentity Online) Alliance helps to promote open authentication standards and reduce the use of passwords as a form of authentication. FIDO2 is the latest standard that incorporates the web authentication (WebAuthn) standard.
 
