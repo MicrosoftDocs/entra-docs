@@ -28,24 +28,25 @@ Here's a list of related resources:
 
 ### Release status
 
-April 2, 2024: Released for download. This version is only available for install via the download page.
+April 2, 2024: Released for download. This version is only available for install via the download page in the Microsoft Entra admin center.
 
 ### Rebranding
 
-“Microsoft AAD AppProxy connector” has been rebranded to “Microsoft Entra private network connector”. This rebranding emphasizes the connector as a common infrastructure for accessing any private network resource, whether using Private Access or application proxy. The new name will start reflecting in user-facing components.
+The new name is now the Microsoft Entra private network connector. This rebranding emphasizes the connector as a common infrastructure for accessing any private network resource. The connector is used for both Microsoft Entra Private Access and Microsoft Entra application proxy. The new name appears in the user interface components.
 
 ### New features and improvements
 
-- Support for UDP and Private DNS features. Requires onboarding to Early Access Preview * of UDP and Private DNS. 
-- Support for outbound proxy in connector for Private Access flow. Requires onboarding to Early Access Preview *. 
+- Support for UDP and Private DNS features. Requires the Early Access Preview. 
+- Support for outbound proxy in connector for Private Access flow. Requires the Early Access Preview. 
 - Improved resiliency and performance.
 - Improved logging and metrics reporting.
 
-Note: A restart may be required when you install or upgrade your existing connector to this version.
+> [!NOTE]
+> A reboot is required when you install or upgrade the connector.
 
-** You can submit request for onboarding to Early Access Preview [here](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR9iJt1_k-HZBpNjGBIMz6XZUNzNSRjc2UlozUDNHT1dDNzI0Q1gxWVc1Sy4u).
+** Submit request for onboarding to the Early Access Preview at [https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR9iJt1_k-HZBpNjGBIMz6XZUNzNSRjc2UlozUDNHT1dDNzI0Q1gxWVc1Sy4u](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR9iJt1_k-HZBpNjGBIMz6XZUNzNSRjc2UlozUDNHT1dDNzI0Q1gxWVc1Sy4u).
 
-Please refer to the table below to update any dependency related to rebranding of connector:
+Refer to the table for updated paths.
 
 |Category  |Old name   |New name|
 |----------|-----------|------------|
@@ -72,7 +73,7 @@ Please refer to the table below to update any dependency related to rebranding o
 > [!IMPORTANT]
 > **.NET Framework**
 >
-> You must have .NET version 4.7.2 or higher to install, or upgrade, application proxy version 1.5.3437.0 or later. Windows Server 2012 R2 and Windows Server 2016 may not have this by default. For more information, see [How to: Determine which .NET Framework versions are installed](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
+> You must have .NET version 4.7.2 or higher to install, or upgrade, application proxy version 1.5.3437.0 or later. Windows Server 2012 R2 and Windows Server 2016 do not have this by default. For more information, see [How to: Determine which .NET Framework versions are installed](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
 
 
 ## Version 1.5.3437.0
