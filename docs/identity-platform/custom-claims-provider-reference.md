@@ -45,7 +45,7 @@ The REST API returns an HTTP response to Microsoft Entra ID containing the attri
 
 To develop your own REST API for the token issuance start event, use the following REST API data contract. The schema describes the contract to design the request and response handler.
 
-Your custom extension in Microsoft Entra ID makes an HTTP call to your REST API with a JSON payload. The JSON payload contains user profile data, authentication context attributes, and information about the application the user wants to sign-in. The JSON attributes can be used to perform extra logic by your API. The request to your API is in the following format:
+Your custom extension in Microsoft Entra ID makes an HTTP call to your REST API with a JSON payload. The JSON payload contains user profile data, authentication context attributes, and information about the application the user wants to sign-in. The `id` value in the following JSON is a Microsoft application that represents the Microsoft Entra authentication events service. The JSON attributes can be used to perform extra logic by your API. The request to your API is in the following format:
 
 ```http
 POST https://your-api.com/endpoint
@@ -66,7 +66,7 @@ POST https://your-api.com/endpoint
                 "market": "en-us"
             },
             "protocol": "OAUTH2.0",
-            "requesttype": "SignIn",
+            "requestType": "SignIn",
             "clientServicePrincipal": {
                 "id": "<Your Test Applications servicePrincipal objectId>",
                 "appId": "<Your Test Application App Id>",
@@ -80,17 +80,18 @@ POST https://your-api.com/endpoint
                 "displayName": "My Test application"
             },
             "user": {
+                "companyName": "Casey Jensen"
                 "createdDateTime": "2016-03-01T15:23:40Z",
-                "displayName": "Bob",
-                "givenName": "Bob Smith",
-                "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471",
-                "mail": "bob@contoso.com",
-                "onPremisesSamAccountName": "testadmin",
-                "onPremisesSecurityIdentifier": "DummySID",
-                "onPremisesUserPrincipalName": "Dummy Name",
+                "displayName": "Casey Jensen",
+                "givenName": "Casey",
+                "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471", // Client ID representing the Microsoft Entra authentication events service
+                "mail": "casey@contoso.com",
+                "onPremisesSamAccountName": "caseyjensen",
+                "onPremisesSecurityIdentifier": "<Enter Security Identifier>",
+                "onPremisesUserPrincipalName": "Casey Jensen",
                 "preferredLanguage": "en-us",
-                "surname": "Smith",
-                "userPrincipalName": "bob@contoso.com",
+                "surname": "Jensen",
+                "userPrincipalName": "casey@contoso.com",
                 "userType": "Member"
             }
         }

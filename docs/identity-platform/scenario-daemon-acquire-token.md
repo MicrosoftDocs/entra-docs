@@ -1,5 +1,5 @@
 ---
-title: Acquire tokens to call a web API (daemon app) - The Microsoft identity platform
+title: Acquire tokens to call a web API using a daemon application
 description: Learn how to build a daemon app that calls web APIs (acquiring tokens)
 author: Dickson-Mwendia
 manager: CelesteDG
@@ -12,7 +12,7 @@ ms.topic: concept-article
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform.
 ---
 
-# Daemon app that calls web APIs - acquire a token
+# Acquire tokens to call a web API using a daemon application
 
 After you've constructed a confidential client application, you can acquire a token for the app by calling `AcquireTokenForClient`, passing the scope, and optionally forcing a refresh of the token.
 
