@@ -243,6 +243,10 @@ write-output "$warn of $count users in SAP Cloud Identity Services did not have 
 7. Run the script. When the script completes, if there were one or more users that were lacking the required matching attribute, then look up those users in the exported CSV file or in the SAP Cloud Identity Services Admin Console. If those users are also present in Microsoft Entra, then you will need to first update the SAP Cloud Identity Services representation of those users so that they have the matching attribute populated.
 1. Once you have updated the attributes of those users in SAP Cloud Identity Services, then re-run the steps in this section, to confirm no users in SAP Cloud Identity Services are lacking the matching attributes that would prevent provisioning.
 
+Now that you have a list of all the users obtained from SAP Cloud Identity Services, you'll match those users from the application's data store, with users already in Microsoft Entra ID, to determine which users should be in scope for provisioning.
+
+[!INCLUDE [active-directory-identity-governance-applications-retrieve-users.md](~/includes/entra-identity-governance-applications-retrieve-users.md)]
+
 ## Ensure existing Microsoft Entra users have the necessary attributes
 
 Before enabling automatic user provisioning, you must decide which users in Microsoft Entra ID need access to SAP Cloud Identity Services, and then you need to check to make sure that those users have the necessary attributes in Microsoft Entra ID, and those attributes are mapped to the expected schema of SAP Cloud Identity Services.
