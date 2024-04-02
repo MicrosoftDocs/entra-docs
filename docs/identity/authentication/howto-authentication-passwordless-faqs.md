@@ -38,11 +38,11 @@ To get started with FIDO2 security keys and hybrid access to on-premises resourc
 
 ### My organization requires multifactor authentication to access resources. What can I do to support this requirement?
 
-FIDO2 Security keys come in a variety of form factors. Contact the device manufacturer of interest to discuss how their devices can be enabled with a PIN or biometric as a second factor. For a list of supported providers, see [FIDO2 security keys providers](concept-authentication-passwordless.md#fido2-security-key-providers).
+FIDO2 Security keys come in a variety of form factors. Contact the device manufacturer of interest to discuss how their devices can be enabled with a PIN or biometric as a second factor. For a list of supported providers, see [FIDO2 security keys providers](concept-authentication-passwordless.md#fido2-security-key-providers-providers).
 
 ### Where can I find compliant FIDO2 security keys?
 
-For a list of supported providers, see [FIDO2 security keys providers](concept-authentication-passwordless.md#fido2-security-key-providers).
+For a list of supported providers, see [FIDO2 security keys providers](concept-authentication-passwordless.md#fido2-security-key-providers-providers).
 
 ### What if I lose my security key?
 
@@ -71,7 +71,7 @@ You'll receive "NotAllowedError" from fido2 key registration page. This typicall
 * [How do I identify the domain join type (Microsoft Entra joined or Microsoft Entra hybrid joined) for my Windows 10 device?](#how-do-i-identify-the-domain-join-type-azure-ad-joined-or-hybrid-azure-ad-joined-for-my-windows-10-device)
 * [What's the recommendation on the number of DCs that should be patched?](#whats-the-recommendation-on-the-number-of-dcs-that-should-be-patched)
 * [Can I deploy the FIDO2 credential provider on an on-premises only device?](#can-i-deploy-the-fido2-credential-provider-on-an-on-premises-only-device)
-* [FIDO2 security key sign-in isn't working for my Domain Admin or other high privilege accounts. Why?](#fido2-security-key-sign-in-isnt-working-for-my-domain-admin-or-other-high-privilege-accounts-why)
+* [FIDO2 security key sign-in isn't working for my Domain Admin or other high privilege accounts. Why?](#fido2-security-key-providers-sign-in-isnt-working-for-my-domain-admin-or-other-high-privilege-accounts-why)
 
 ### Does this feature work if there's no internet connectivity?
 

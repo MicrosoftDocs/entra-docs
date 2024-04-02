@@ -26,7 +26,7 @@ Users can also sign in with a passkey by using Microsoft Authenticator. For more
 ## Requirements
 
 - [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md)
-- Compatible [FIDO2 security keys](concept-authentication-passwordless.md#fido2-security-keys) or Microsoft Authenticator
+- Compatible [FIDO2 security keys](concept-authentication-passwordless.md#fido2-security-key-providerss) or Microsoft Authenticator
 - Devices that support FIDO2 authentication. For Windows devices that are joined to Microsoft Entra ID, the best experience is on Windows 10 version 1903 or higher. Hybrid-joined devices must run Windows 10 version 2004 or higher.
 
 Passkeys are supported across major scenarios on Windows, macOS, Android, and iOS. For more information on supported scenarios, see [Support for FIDO2 authentication in Microsoft Entra ID](fido2-compatibility.md).
@@ -53,7 +53,7 @@ There are some optional settings on the **Configure** tab to help manage how pas
 
 - **Allow self-service set up** should remain set to **Yes**. If set to no, your users can't register a passkey through MySecurityInfo, even if enabled by Authentication Methods policy.  
 - **Enforce attestation** should be set to **Yes** if your organization wants to be assured that a FIDO2 security key model or passkey provider is genuine and comes from the legitimate vendor.
-    - For FIDO2 security keys, we require security key metadata to be published and verified with the FIDO Alliance Metadata Service, and also pass Microsoft's another set of validation testing. For more information, see [What is a Microsoft-compatible security key?](concept-authentication-passwordless.md#fido2-security-key-providers)
+    - For FIDO2 security keys, we require security key metadata to be published and verified with the FIDO Alliance Metadata Service, and also pass Microsoft's another set of validation testing. For more information, see [What is a Microsoft-compatible security key?](concept-authentication-passwordless.md#fido2-security-key-providers-providers)
     - For passkeys in Microsoft Authenticator, we don't currently support attestation.
 
   >[!WARNING]

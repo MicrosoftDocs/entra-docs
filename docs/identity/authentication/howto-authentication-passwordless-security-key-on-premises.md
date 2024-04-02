@@ -303,7 +303,7 @@ We are working on this capability for the general availability (GA) release of t
 
 ### Where can I go to find compliant security keys?
 
-For information about compliant security keys, see [FIDO2 security keys](concept-authentication-passwordless.md#fido2-security-keys).
+For information about compliant security keys, see [FIDO2 security keys](concept-authentication-passwordless.md#fido2-security-key-providerss).
 
 ### What can I do if I lose my security key?
 

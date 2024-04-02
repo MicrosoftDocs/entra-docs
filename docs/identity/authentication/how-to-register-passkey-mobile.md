@@ -36,7 +36,7 @@ This article shows how to register a passkey using a security key with your iOS 
 
 1. Select **Passkey (preview)**.
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-my-seclist.png" alt-text="Screenshot of the drop-down list of options in security info.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-my-sec-list.png" alt-text="Screenshot of the drop-down list of options in security info.":::
 
 1. Tap **Add**. 
    
@@ -94,7 +94,7 @@ This article shows how to register a passkey using a security key with your iOS 
 
 1. Select **Passkey (preview)**.
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-my-seclist.png" alt-text="Screenshot of the drop-down list of options in security info.":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-my-sec-list.png" alt-text="Screenshot of the drop-down list of options in security info.":::
 
 1. Tap **Add**.
 
