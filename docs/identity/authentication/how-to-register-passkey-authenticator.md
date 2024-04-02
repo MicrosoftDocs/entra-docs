@@ -38,7 +38,7 @@ The easiest way to add a passkey is to add it directly in the Authenticator app.
 <!---Phase 2 - add Authenticator screenshots of the flow (by April 8)--->
 
 
-## Same-device registration
+## Same device registration
 
 1. Using your iOS device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
 
