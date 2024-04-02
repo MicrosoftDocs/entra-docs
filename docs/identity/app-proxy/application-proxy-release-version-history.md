@@ -36,15 +36,15 @@ The new name is now the Microsoft Entra private network connector. This rebrandi
 
 ### New features and improvements
 
-- Support for UDP and Private DNS features. Requires the Early Access Preview. 
-- Support for outbound proxy in connector for Private Access flow. Requires the Early Access Preview. 
+- Support for UDP and Private DNS features. *Requires the Early Access Preview. 
+- Support for outbound proxy in connector for Private Access flow. *Requires the Early Access Preview. 
 - Improved resiliency and performance.
 - Improved logging and metrics reporting.
 
 > [!NOTE]
 > A reboot is required when you install or upgrade the connector.
 
-** Submit request for onboarding to the Early Access Preview at [https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR9iJt1_k-HZBpNjGBIMz6XZUNzNSRjc2UlozUDNHT1dDNzI0Q1gxWVc1Sy4u](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR9iJt1_k-HZBpNjGBIMz6XZUNzNSRjc2UlozUDNHT1dDNzI0Q1gxWVc1Sy4u).
+* Submit request for onboarding to the Early Access Preview at [https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR9iJt1_k-HZBpNjGBIMz6XZUNzNSRjc2UlozUDNHT1dDNzI0Q1gxWVc1Sy4u](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR9iJt1_k-HZBpNjGBIMz6XZUNzNSRjc2UlozUDNHT1dDNzI0Q1gxWVc1Sy4u).
 
 Refer to the table for updated paths.
 
