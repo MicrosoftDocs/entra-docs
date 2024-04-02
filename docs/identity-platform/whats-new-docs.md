@@ -20,15 +20,15 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 
 ### New articles
 
-- [Create a REST API with a token issuance start event for Azure Functions (preview)](custom-extension-tokenissuancestart-setup.md) - Custom Authentication Extensions NuGet libraries
+- [Create a REST API with a token issuance start event for Azure Functions (preview)](custom-extension-tokenissuancestart-setup.md) - Custom authentication extensions NuGet libraries
 - [Microsoft account (MSA) Server Side API Reference](reference-msa-server-side-api.md) - API reference for EU Regulation
 - [Microsoft Entra ID Windows Account Manager (WAM) API Reference](reference-entra-id-wam-api.md) - API reference for EU Regulation
 
 ### Updated articles
 
-- [Configure a custom claim provider for a token issuance event (preview)](custom-extension-tokenissuancestart-configuration.md) - Custom Authentication Extensions NuGet libraries
-- [Custom claims provider (preview)](custom-claims-provider-overview.md) - Custom Authentication Extensions NuGet libraries
-- [Troubleshoot your custom claims provider API (preview)](custom-extension-troubleshoot.md) - Custom Authentication Extensions NuGet libraries
+- [Configure a custom claim provider for a token issuance event (preview)](custom-extension-tokenissuancestart-configuration.md) - Custom authentication extensions NuGet libraries
+- [Custom claims provider (preview)](custom-claims-provider-overview.md) - Custom authentication extensions NuGet libraries
+- [Troubleshoot your custom claims provider API (preview)](custom-extension-troubleshoot.md) - Custom authentication extensions NuGet libraries
 
 ## February 2024
 
