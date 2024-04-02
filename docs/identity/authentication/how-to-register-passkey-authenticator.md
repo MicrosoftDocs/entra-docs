@@ -205,7 +205,7 @@ The easiest way to add a passkey is to add it directly in the Authenticator app.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-add-support.png" alt-text="Screenshot of the turn-on passkey support option in Microsoft Authenticator for Android devices.":::
 
-1. Tap **Continue**.
+1. Tap **Next** to set up your passkey.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/auth-app-selected.png" alt-text="Screenshot of the Security Info screen setting up your passkey option for Android devices.":::
 
@@ -234,7 +234,7 @@ The easiest way to add a passkey is to add it directly in the Authenticator app.
 
    1. Your device opens a security window. Save the passkey to Authenticator following the prompts on your device. 
       
-    ****  :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/choose-auth-app.png" alt-text="Screenshot of selecting Authenticator App in Microsoft Authenticator for Android devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/choose-auth-app.png" alt-text="Screenshot of selecting Authenticator App in Microsoft Authenticator for Android devices.":::
 
    1. Name the passkey something memorable to you and select **Done**. 
 
