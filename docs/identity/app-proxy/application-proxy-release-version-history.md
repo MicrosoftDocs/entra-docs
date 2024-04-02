@@ -5,7 +5,7 @@ author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.topic: reference
-ms.date: 02/14/2024
+ms.date: 04/02/2024
 ms.subservice: app-proxy
 ms.author: kenwith
 ms.reviewer: ashishj
@@ -23,6 +23,39 @@ Here's a list of related resources:
 | How to enable application proxy                  | Prerequisites for enabling application proxy and installing and registering a connector are described in this [tutorial](application-proxy-add-on-premises-application.md). |
 | Understand Microsoft Entra application proxy connectors | Find out more about [connector management](application-proxy-connectors.md) and how connectors [autoupgrade](application-proxy-connectors.md#automatic-updates). |
 | Microsoft Entra application proxy connector Download    | [Download the latest connector](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download). |
+
+## Version 1.5.3828.0
+
+### Release status
+
+April 2, 2024: Released for download. This version is only available for install via the download page.
+
+### Rebranding
+
+“Microsoft AAD AppProxy connector” has been rebranded to “Microsoft Entra private network connector”. This rebranding emphasizes the connector as a common infrastructure for accessing any private network resource, whether using Private Access or application proxy. The new name will start reflecting in user-facing components.
+
+### New features and improvements
+
+- Support for UDP and Private DNS features. Requires onboarding to Early Access Preview * of UDP and Private DNS. 
+- Support for outbound proxy in connector for Private Access flow. Requires onboarding to Early Access Preview *. 
+- Improved resiliency and performance.
+- Improved logging and metrics reporting.
+
+Note: A restart may be required when you install or upgrade your existing connector to this version.
+
+** You can submit request for onboarding to Early Access Preview [here](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR9iJt1_k-HZBpNjGBIMz6XZUNzNSRjc2UlozUDNHT1dDNzI0Q1gxWVc1Sy4u).
+
+Please refer to the table below to update any dependency related to rebranding of connector:
+| Category                                      | Old name                                      | New name                                  |
+| --------------------------------------------- | --------------------------------------------- | ----------------------------------------- |
+| Installer file | AADApplicationProxyConnectorInstaller.exe | MicrosoftEntraPrivateNetworkConnectorInstaller.exe |
+
+
+> [!IMPORTANT]
+> **.NET Framework**
+>
+> You must have .NET version 4.7.2 or higher to install, or upgrade, application proxy version 1.5.3437.0 or later. Windows Server 2012 R2 and Windows Server 2016 may not have this by default. For more information, see [How to: Determine which .NET Framework versions are installed](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
+
 
 ## Version 1.5.3437.0
 
