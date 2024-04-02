@@ -35,7 +35,7 @@ ms.topic: quickstart
 > - [Flask](https://flask.palletsprojects.com/en/3.0.x/), [Flask-Session](https://pypi.org/project/Flask-Session/), [requests](https://github.com/psf/requests/graphs/contributors)
 > - [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python)
 > 
-> #### Step 1: Configure your application in Azure portal
+> #### Step 1: Configure your application in Microsoft Entra admin center
 > 
 > For the code sample in this quickstart to work:
 > 

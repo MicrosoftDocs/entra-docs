@@ -20,7 +20,7 @@ ms.topic: quickstart
 > [!div renderon="docs"]
 > Welcome! This probably isn't the page you were expecting. While we work on a fix, this link should take you to the right article:
 >
-> > [Quickstart: Acquire a token and call Microsoft Graph in a .NET console app](quickstart-console-app-netcore-acquire-token.md)
+> > [Quickstart: Acquire a token and call Microsoft Graph in a .NET console app](quickstart-daemon-dotnet-acquire-token.md)
 >
 > We apologize for the inconvenience and appreciate your patience while we work to get this resolved.
 
