@@ -50,7 +50,8 @@ Please refer to the table below to update any dependency related to rebranding o
 |Category  |Old name   |New name|
 |----------|-----------|------------|
 |Installer file   |`AADApplicationProxyConnectorInstaller.exe`     | `MicrosoftEntraPrivateNetworkConnectorInstaller.exe`      |
-
+| Install location | `C:\Program Files\ Microsoft AAD App Proxy Connector` | `C:\Program Files\Microsoft Entra private network connector` |
+| | `C:\Program Files\Microsoft AAD App Proxy Connector\Modules\AppProxyPSModule`	| `C:\Program Files\Microsoft Entra private network connector\Modules\MicrosoftEntraPrivateNetworkConnectorPSModule` |
 
 > [!IMPORTANT]
 > **.NET Framework**
