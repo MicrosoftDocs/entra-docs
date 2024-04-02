@@ -51,7 +51,7 @@ Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft 
 
 Follow these steps to sign in to Microsoft Entra ID on another device with a passkey in Microsoft Authenticator on your iOS device.
 
-1. On the other device where you're looking to sign in to Microsoft Entra ID, open your browser and go to `myaccount.microsoft.com`.
+1. On the other device where you're looking to sign in to Microsoft Entra ID, open your browser and go to `login.microsoftonline.com`.
 
 1. Select **Sign-in options**. 
 
@@ -99,7 +99,7 @@ Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft 
 
 Follow these steps to sign in to Microsoft Entra ID on another device with a passkey in Microsoft Authenticator on your Android device.
 
-1. On the other device where you're looking to sign in to Microsoft Entra ID, open your browser and go to `myaccount.microsoft.com`.
+1. On the other device where you're looking to sign in to Microsoft Entra ID, open your browser and go to `login.microsoftonline.com`.
 
 1. Select **Sign-in options**. 
 
