@@ -73,6 +73,7 @@ This article shows how to register a passkey using a browser and sign-in with a 
    :::image type="content" border="true" source="media/how-to-register-passkey-android-or-ios/inline-registration.png" alt-text="Screenshot of the Add a passkey for a more secure sign-in on your iOS or Android device option.":::
  
    > [!NOTE]
+   > Guided registration is currently limited to passkeys in Microsoft Authenticator at this time. Support for additional passkeys coming soon.
    > If your organization rquires specific a specific passkey provider or security key an Authenticator Attestation GUID (AAGUID) or provider name will be provided. 
 
 1. Tap **Next**, then you’re directed to `login.microsoft.com`.
