@@ -36,7 +36,7 @@ After Microsoft Entra ID is aware of a user's assignment, it can send updates to
 
 In the second scenario, an application doesn't solely rely on Microsoft Entra ID as its identity provider. 
 
-In some cases, an application might rely upon AD groups.  This scenario is described in Pattern B in [Preparing for an access review of users' access to an application](access-reviews-application-preparation.md).  You do not need to configure provisioning for that application as described in that article, instead follow the instructions for Pattern B in that article on how to review the membership of AD groups.
+In some cases, an application might rely upon AD groups. This scenario is described in Pattern B in [Preparing for an access review of users' access to an application](access-reviews-application-preparation.md). You do not need to configure provisioning for that application as described in that article, instead follow the instructions for Pattern B in that article on how to review the membership of AD groups.
 
 In other cases, an application might support multiple identity providers or have its own built-in credential storage. This scenario is described as Pattern C in [Preparing for an access review of users' access to an application](access-reviews-application-preparation.md). 
 
@@ -62,7 +62,7 @@ This article illustrates the process for managing application role assignments b
 
 ![Diagram that illustrates Microsoft Graph terminology.](./media/identity-governance-applications-existing-users/data-model-terminology.png)
 
-In Microsoft Entra ID, a service principal (`ServicePrincipal`) represents an application in a particular organization's directory. `ServicePrincipal` has a property called `AppRoles` that lists the roles that an application supports, such as `Marketing specialist`. `AppRoleAssignment` links a user to a service principal and specifies which role that user has in that application.  An application may have more than one service principal, if single sign-on to the application and provisioning to the application are handled separately.
+In Microsoft Entra ID, a service principal (`ServicePrincipal`) represents an application in a particular organization's directory. `ServicePrincipal` has a property called `AppRoles` that lists the roles that an application supports, such as `Marketing specialist`. `AppRoleAssignment` links a user to a service principal and specifies which role that user has in that application. An application may have more than one service principal, if single sign-on to the application and provisioning to the application are handled separately.
 
 You might also be using [Microsoft Entra entitlement management](entitlement-management-overview.md) access packages to give users time-limited access to the application. In entitlement management, `AccessPackage` contains one or more resource roles, potentially from multiple service principals. `AccessPackage` also has assignments (`Assignment`) for users to the access package.
 
@@ -189,7 +189,7 @@ This section applies to SAP applications that use SAP Cloud Identity Services as
 
 1. Sign in to your SAP Cloud Identity Services Admin Console, `https://<tenantID>.accounts.ondemand.com/admin` or `https://<tenantID>.trial-accounts.ondemand.com/admin` if a trial.
 1. Navigate to **Users & Authorizations > Export Users**.
-1. Select all attributes required for matching Microsoft Entra users with those in SAP.  This includes the `SCIM ID`, `userName`, `emails` and other attributes you may be using in your SAP Systems.
+1. Select all attributes required for matching Microsoft Entra users with those in SAP. This includes the `SCIM ID`, `userName`, `emails` and other attributes you may be using in your SAP Systems.
 1. Select **Export** and wait for the browser to download the CSV file.
 1. If this system doesn't have the Microsoft Graph PowerShell cmdlets installed or doesn't have connectivity to Microsoft Entra ID, transfer the CSV file that contains the list of users to a system that has the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) installed.
 
@@ -217,7 +217,7 @@ If the application is already registered in Microsoft Entra ID, then continue to
 
 The previous steps have confirmed that all the users in the application's data store exist as users in Microsoft Entra ID. However, they might not all currently be assigned to the application's roles in Microsoft Entra ID. So the next steps are to see which users don't have assignments to application roles.
 
-1. Look up the service principal ID for the application's service principal.  If you recently created a service principal for an application that uses an LDAP directory or a SQL database, then use the name of that service principal.
+1. Look up the service principal ID for the application's service principal. If you recently created a service principal for an application that uses an LDAP directory or a SQL database, then use the name of that service principal.
 
    For example, if the enterprise application is named `CORPDB1`, enter the following commands:
 
@@ -274,7 +274,7 @@ The previous steps have confirmed that all the users in the application's data s
 
 ## Configure application provisioning
 
-If your application uses an LDAP directory, a SQL database, SAP Cloud Identity Services, or supports SCIM, then before you create new assignments, configure [provisioning of Microsoft Entra users](~/identity/app-provisioning/user-provisioning.md) to the application. Configuring provisioning before creating assignments will enable Microsoft Entra ID to match up the users in Microsoft Entra ID with the application role assignments to the users already in the application's data store.  If your application has an on-premises directory or database to be provisioned, and also supports federated SSO, then you may need two service principals to represent the application in your directory: one for provisioning and one for SSO.   If your application does not support provisioning, then continue reading in the next section.
+If your application uses an LDAP directory, a SQL database, SAP Cloud Identity Services, or supports SCIM, then before you create new assignments, configure [provisioning of Microsoft Entra users](~/identity/app-provisioning/user-provisioning.md) to the application. Configuring provisioning before creating assignments will enable Microsoft Entra ID to match up the users in Microsoft Entra ID with the application role assignments to the users already in the application's data store. If your application has an on-premises directory or database to be provisioned, and also supports federated SSO, then you may need two service principals to represent the application in your directory: one for provisioning and one for SSO.   If your application does not support provisioning, then continue reading in the next section.
 
 1. Ensure that the application is configured to require users to have application role assignments, so that only selected users will be provisioned to the application.
 1. If provisioning hasn't been configured for the application, configure it now (but don't start provisioning):
@@ -298,14 +298,14 @@ If your application uses an LDAP directory, a SQL database, SAP Cloud Identity S
 
 ## Create app role assignments in Microsoft Entra ID
 
-For Microsoft Entra ID to match the users in the application with the users in Microsoft Entra ID, you need to create application role assignments in Microsoft Entra ID.  Each application role assignment associates one user to one application role of one service principal.
+For Microsoft Entra ID to match the users in the application with the users in Microsoft Entra ID, you need to create application role assignments in Microsoft Entra ID. Each application role assignment associates one user to one application role of one service principal.
 
 When an application role assignment is created in Microsoft Entra ID for a user to an application, and the application supports provisioning, then:
 
 - Microsoft Entra ID will query the application via SCIM, or its directory or database, to determine if the user already exists.
-- Subsequent updates to the user's attributes in Microsoft Entra ID will be sent to the application.
+- When subsequent updates are made to the user's attributes in Microsoft Entra ID, Microsoft Entra ID will sent those updates to the application.
 - The user will remain in the application indefinitely unless they're updated outside Microsoft Entra ID, or until the assignment in Microsoft Entra ID is removed.
-- On the next review of that application's role assignments, the user will be included in the review.
+- On the next access review of that application's role assignments, the user will be included in the access review.
 - If the user is denied in an access review, their application role assignment will be removed. Microsoft Entra ID will notify the application that the user is blocked from sign-in.
 
 If the application does not support provisioning, then
@@ -355,13 +355,13 @@ If the application does not support provisioning, then
 
    If any users aren't assigned to application roles, check the Microsoft Entra audit log for an error from a previous step.
 
-1. If the application service principal is configured for provisioning, and the **Provisioning Status** for the service principal is **Off**, turn it to **On**.  You can also start provisioning [using Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md#step-4-start-the-provisioning-job).
+1. If the application service principal is configured for provisioning, and the **Provisioning Status** for the service principal is **Off**, turn it to **On**. You can also start provisioning [using Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md#step-4-start-the-provisioning-job).
 1. Based on the guidance for [how long will it take to provision users](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users), wait for Microsoft Entra provisioning to match the existing users of the application to those users just assigned.
 1. Monitor the [provisioning status](~/identity/app-provisioning/check-status-user-account-provisioning.md) through the Portal or [Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md#monitor-the-provisioning-job-status) to ensure that all users were matched successfully.
 
    If you don't see users being provisioned, check the [troubleshooting guide for no users being provisioned](~/identity/app-provisioning/application-provisioning-config-problem-no-users-provisioned.md). If you see an error in the provisioning status and are provisioning to an on-premises application, check the [troubleshooting guide for on-premises application provisioning](~/identity/app-provisioning/on-premises-ecma-troubleshoot.md).
 
-1. Check the provisioning log through the [Microsoft Entra admin center](~/identity/monitoring-health/concept-provisioning-logs.md) or [Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md#monitor-provisioning-events-using-the-provisioning-logs).  Filter the log to the status **Failure**.  If there are failures with an ErrorCode of **DuplicateTargetEntries**,  this indicates an ambiguity in your provisioning matching rules, and you'll need to update the Microsoft Entra users or the mappings that are used for matching to ensure each Microsoft Entra user matches one application user.  Then filter the log to the action **Create** and status **Skipped**.  If users were skipped with the SkipReason code of **NotEffectivelyEntitled**, this may indicate that the user accounts in Microsoft Entra ID were not matched because the user account status was **Disabled**.
+1. Check the provisioning log through the [Microsoft Entra admin center](~/identity/monitoring-health/concept-provisioning-logs.md) or [Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md#monitor-provisioning-events-using-the-provisioning-logs). Filter the log to the status **Failure**. If there are failures with an ErrorCode of **DuplicateTargetEntries**,  this indicates an ambiguity in your provisioning matching rules, and you'll need to update the Microsoft Entra users or the mappings that are used for matching to ensure each Microsoft Entra user matches one application user. Then filter the log to the action **Create** and status **Skipped**. If users were skipped with the SkipReason code of **NotEffectivelyEntitled**, this may indicate that the user accounts in Microsoft Entra ID were not matched because the user account status was **Disabled**.
 
 After the Microsoft Entra provisioning service has matched the users based on the application role assignments you've created, subsequent changes to those users will be sent to the application.
 
@@ -383,7 +383,7 @@ If the application has multiple application roles, is represented by multiple se
 Now that the existing users have assignments to an application role, you can configure Microsoft Entra ID to [start a review](access-reviews-application-preparation.md#create-the-reviews) of those assignments.
 
 1. For this step, you'll need to be in the `Global administrator` or `Identity Governance administrator` role.
-1. Follow the instructions in the [guide for creating an access review of groups or applications](create-access-review.md), to create the review of the application's role assignments.  Configure the review to apply results when it completes.  You can create the access review in PowerShell with the `New-MgIdentityGovernanceAccessReviewDefinition` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module.  For more information, see the [examples](/graph/api/accessreviewset-post-definitions?view=graph-rest-1.0&tabs=powershell#examples&preserve-view=true).
+1. Follow the instructions in the [guide for creating an access review of groups or applications](create-access-review.md), to create the review of the application's role assignments. Configure the review to apply results when it completes. You can create the access review in PowerShell with the `New-MgIdentityGovernanceAccessReviewDefinition` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module. For more information, see the [examples](/graph/api/accessreviewset-post-definitions?view=graph-rest-1.0&tabs=powershell#examples&preserve-view=true).
 
    > [!NOTE]
    > If you enable review decision helpers when creating the access review, then the decision helper recommendations are based on the 30-day interval period depending on when the user last signed in to the application using Microsoft Entra ID.
