@@ -128,7 +128,7 @@
           href: how-to-enable-passkey-fido2.md
         - name: Register passkey (preview)
           href: how-to-register-passkey.md
-        - name: Register passkey on a mobile device (preview)  
+        - name: Register passkey with a mobile device (preview)  
           href: how-to-register-passkey-mobile.md
         - name: Sign in with passkey (preview)
           href: how-to-sign-in-passkey.md  
