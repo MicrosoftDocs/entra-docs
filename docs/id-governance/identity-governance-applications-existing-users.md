@@ -80,7 +80,7 @@ When you create an assignment for a user to an access package, Microsoft Entra e
 
   - If the application uses an LDAP directory, follow the [guide for configuring Microsoft Entra ID to provision users into LDAP directories](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) through the section to download, install, and configure the Microsoft Entra Connect Provisioning Agent package.
   - If the application uses a SQL database, follow the [guide for configuring Microsoft Entra ID to provision users into SQL-based applications](~/identity/app-provisioning/on-premises-sql-connector-configure.md) through the section to download, install, and configure the Microsoft Entra Connect Provisioning Agent package.
-  - If the application is a cloud application that supports the SCIM protocol, then you can add the application from the [application gallery](~/identity/enterprise-apps/overview-application-gallery.md).
+  - If the application uses SAP Cloud Identity Services or is a cloud application that supports the SCIM protocol, and the application is not already configured in your tenant, then later in this guide you will register the application from the [application gallery](~/identity/enterprise-apps/overview-application-gallery.md).
   - If the application is on-premises and supports the SCIM protocol, then follow the [guide for configuring Microsoft Entra ID to provision users into on-premises SCIM-based applications](~/identity/app-provisioning/on-premises-scim-provisioning.md).
 
 
@@ -92,11 +92,12 @@ Some applications might have a built-in command to export a list of current user
 
 In some environments, the application might be located on a network segment or system that isn't appropriate for managing access to Microsoft Entra ID. So you might need to extract the list of users from that directory or database, and then transfer it as a file to another system that can be used for Microsoft Entra interactions.  
 
-This section explains three approaches for how to get a list of users in a comma-separated values (CSV) file:
+This section explains four approaches for how to get a list of users in a comma-separated values (CSV) file:
 
 * From an LDAP directory
 * From a SQL Server database
 * From another SQL-based database
+* From SAP Cloud Identity Services
 
 ### Collect existing users from an application that uses an LDAP directory
 
@@ -182,6 +183,16 @@ This section applies to applications that use another SQL database as the underl
 
 1. If this system doesn't have the Microsoft Graph PowerShell cmdlets installed or doesn't have connectivity to Microsoft Entra ID, transfer the CSV file that contains the list of users to a system that has the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) installed.
 
+### Collect existing users from a SAP Cloud Identity Services
+
+This section applies to SAP applications that use SAP Cloud Identity Services as the underlying service for user provisioning.
+
+1. Sign in to your SAP Cloud Identity Services Admin Console, `https://<tenantID>.accounts.ondemand.com/admin` or `https://<tenantID>.trial-accounts.ondemand.com/admin` if a trial.
+1. Navigate to **Users & Authorizations > Export Users**.
+1. Select all attributes required for matching Microsoft Entra users with those in SAP.  This includes the `SCIM ID`, `userName`, `emails` and other attributes you may be using in your SAP Systems.
+1. Select **Export** and wait for the browser to download the CSV file.
+1. If this system doesn't have the Microsoft Graph PowerShell cmdlets installed or doesn't have connectivity to Microsoft Entra ID, transfer the CSV file that contains the list of users to a system that has the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) installed.
+
 <a name='confirm-azure-ad-has-users-that-match-users-from-the-application'></a>
 
 ## Confirm Microsoft Entra ID has users that match users from the application
@@ -198,6 +209,7 @@ If the application is already registered in Microsoft Entra ID, then continue to
 
 - If the application uses an LDAP directory, follow the [guide for configuring Microsoft Entra ID to provision users into LDAP directories](~/identity/app-provisioning/on-premises-ldap-connector-configure.md#configure-the-on-premises-ecma-app) section to create a new registration for an on-premises ECMA app in Microsoft Entra ID.  
 - If the application uses a SQL database, follow the [guide for configuring Microsoft Entra ID to provision users into SQL-based applications](~/identity/app-provisioning/on-premises-sql-connector-configure.md#4-configure-the-on-premises-ecma-app) section to create a new registration for an on-premises ECMA app in Microsoft Entra ID.
+- If you are using SAP Cloud Identity Services, then follow the [guide for configuring Microsoft Entra ID to provision users into SAP Cloud Identity Services](~/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md).
 - If it is a cloud application that supports the SCIM protocol, then you can add the application from the [application gallery](~/identity/enterprise-apps/overview-application-gallery.md).
 - If the application is on-premises and supports the SCIM protocol, then follow the [guide for configuring Microsoft Entra ID to provision users into on-premises SCIM-based applications](~/identity/app-provisioning/on-premises-scim-provisioning.md).
 
@@ -262,13 +274,14 @@ The previous steps have confirmed that all the users in the application's data s
 
 ## Configure application provisioning
 
-If your application uses an LDAP directory, a SQL database, or supports SCIM, then before you create new assignments, configure [provisioning of Microsoft Entra users](~/identity/app-provisioning/user-provisioning.md) to the application. Configuring provisioning before creating assignments will enable Microsoft Entra ID to match up the users in Microsoft Entra ID with the application role assignments to the users already in the application's data store.  If your application has an on-premises directory or database to be provisioned, and also supports federated SSO, then you may need two service principals to represent the application in your directory: one for provisioning and one for SSO.   If your application does not support provisioning, then continue reading in the next section.
+If your application uses an LDAP directory, a SQL database, SAP Cloud Identity Services, or supports SCIM, then before you create new assignments, configure [provisioning of Microsoft Entra users](~/identity/app-provisioning/user-provisioning.md) to the application. Configuring provisioning before creating assignments will enable Microsoft Entra ID to match up the users in Microsoft Entra ID with the application role assignments to the users already in the application's data store.  If your application has an on-premises directory or database to be provisioned, and also supports federated SSO, then you may need two service principals to represent the application in your directory: one for provisioning and one for SSO.   If your application does not support provisioning, then continue reading in the next section.
 
 1. Ensure that the application is configured to require users to have application role assignments, so that only selected users will be provisioned to the application.
 1. If provisioning hasn't been configured for the application, configure it now (but don't start provisioning):
 
    * If the application uses an LDAP directory, follow the [guide for configuring Microsoft Entra ID to provision users into LDAP directories](~/identity/app-provisioning/on-premises-ldap-connector-configure.md).
    * If the application uses a SQL database, follow the [guide for configuring Microsoft Entra ID to provision users into SQL-based applications](~/identity/app-provisioning/on-premises-sql-connector-configure.md).
+   * If the application use SAP Cloud Identity Services, follow the [guide for configuring Microsoft Entra ID to provision users into SAP Cloud Identity Services](~/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md).
    * For other applications, follow steps 1-3 to [configure provisioning via Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md).
 
 1. Check the **Properties** tab for the application.  Verify that the **User assignment required?** option is set to **Yes**. If it's set to **No**, all users in your directory, including external identities, can access the application, and you can't review access to the application.
@@ -342,7 +355,7 @@ If the application does not support provisioning, then
 
    If any users aren't assigned to application roles, check the Microsoft Entra audit log for an error from a previous step.
 
-1. If the application service principal is for provisioning, and the **Provisioning Status** for the service principal is **Off**, turn it to **On**.  You can also start provisioning [using Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md#step-4-start-the-provisioning-job).
+1. If the application service principal is configured for provisioning, and the **Provisioning Status** for the service principal is **Off**, turn it to **On**.  You can also start provisioning [using Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md#step-4-start-the-provisioning-job).
 1. Based on the guidance for [how long will it take to provision users](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users), wait for Microsoft Entra provisioning to match the existing users of the application to those users just assigned.
 1. Monitor the [provisioning status](~/identity/app-provisioning/check-status-user-account-provisioning.md) through the Portal or [Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md#monitor-the-provisioning-job-status) to ensure that all users were matched successfully.
 
