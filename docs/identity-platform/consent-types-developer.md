@@ -20,7 +20,7 @@ In this article, you'll learn about the different types of consent and how to re
 
 ## Static user consent
 
-In the static user consent scenario, you must specify all the permissions it needs in the app's configuration in the Azure portal. If the user (or administrator, as appropriate) hasn't granted consent for this app, then Microsoft identity platform will prompt the user to provide consent at this time.
+In the static user consent scenario, you must specify all the permissions it needs in the app's configuration in the Microsoft Entra admin center. If the user (or administrator, as appropriate) hasn't granted consent for this app, then Microsoft identity platform will prompt the user to provide consent at this time.
 
 Static permissions also enable administrators to consent on behalf of all users in the organization.
 
@@ -28,7 +28,7 @@ While relying on static consent and a single permissions list keeps the code nic
 
 ## Incremental and dynamic user consent
 
-With the Microsoft identity platform endpoint, you can ignore the static permissions defined in the application registration information in the Azure portal. Instead, you can request permissions incrementally.  You can ask for a bare minimum set of permissions upfront and request more over time as the customer uses additional application features. To do so, you can specify the scopes your application needs at any time by including the new scopes in the `scope` parameter when [requesting an access token](#requesting-individual-user-consent) - without the need to pre-define them in the application registration information. If the user hasn't yet consented to new scopes added to the request, they'll be prompted to consent only to the new permissions. Incremental, or dynamic consent, only applies to delegated permissions and not to application permissions.
+With the Microsoft identity platform endpoint, you can ignore the static permissions defined in the application registration information in the Microsoft Entra admin center. Instead, you can request permissions incrementally.  You can ask for a bare minimum set of permissions upfront and request more over time as the customer uses additional application features. To do so, you can specify the scopes your application needs at any time by including the new scopes in the `scope` parameter when [requesting an access token](#requesting-individual-user-consent) - without the need to pre-define them in the application registration information. If the user hasn't yet consented to new scopes added to the request, they'll be prompted to consent only to the new permissions. Incremental, or dynamic consent, only applies to delegated permissions and not to application permissions.
 
 Allowing an application to request permissions dynamically through the `scope` parameter gives developers full control over your user's experience. You can also front load your consent experience and ask for all permissions in one initial authorization request. If your application requires a large number of permissions, you can gather those permissions from the user incrementally as they try to use certain features of the application over time.
 
@@ -88,7 +88,7 @@ Some organizations may change the default user consent policy for the tenant. Wh
 
 ### Admin Consent for Application permissions
 
-Application permissions always require admin consent. Application permissions don't have a user context and the consent grant isn't done on behalf of any specific user. Instead, the client application is granted permissions directly, these types of permissions are used only by daemon services and other non-interactive applications that run in the background. Administrators need to configure the permissions upfront and [grant admin consent](~/identity/enterprise-apps/grant-admin-consent.md) through the Azure portal.
+Application permissions always require admin consent. Application permissions don't have a user context and the consent grant isn't done on behalf of any specific user. Instead, the client application is granted permissions directly, these types of permissions are used only by daemon services and other non-interactive applications that run in the background. Administrators need to configure the permissions upfront and [grant admin consent](~/identity/enterprise-apps/grant-admin-consent.md) through the Microsoft Entra admin center.
 
 ### Admin consent for Multi-tenant applications
 
@@ -112,7 +112,7 @@ To sign the user in, follow the [Microsoft identity platform protocol tutorials]
 
 ### Request the permissions in the app registration portal
 
-In the app registration portal, applications can list the permissions they require, including both delegated permissions and application permissions. This setup allows the use of the `.default` scope and the Azure portal's **Grant admin consent** option.  
+In the app registration portal, applications can list the permissions they require, including both delegated permissions and application permissions. This setup allows the use of the `.default` scope and the Microsoft Entra admin center's **Grant admin consent** option.  
 
 In general, the permissions should be statically defined for a given application. They should be a superset of the permissions that the application will request dynamically or incrementally.
 
