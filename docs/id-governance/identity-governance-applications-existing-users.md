@@ -183,7 +183,7 @@ This section applies to applications that use another SQL database as the underl
 
 1. If this system doesn't have the Microsoft Graph PowerShell cmdlets installed or doesn't have connectivity to Microsoft Entra ID, transfer the CSV file that contains the list of users to a system that has the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) installed.
 
-### Collect existing users from a SAP Cloud Identity Services
+### Collect existing users from SAP Cloud Identity Services
 
 This section applies to SAP applications that use SAP Cloud Identity Services as the underlying service for user provisioning.
 
