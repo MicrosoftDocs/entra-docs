@@ -2653,8 +2653,8 @@
         href: stonebranch-universal-automation-center-saas-cloud-tutorial.md
       - name: Stormboard
         href: stormboard-tutorial.md
-      - name: Striim
-        href: striim-tutorial.md
+      - name: Striim Cloud
+        href: striim-cloud-tutorial.md
       - name: Striim Platform
         href: striim-platform-tutorial.md
       - name: Styleflow

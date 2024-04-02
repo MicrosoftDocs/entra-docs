@@ -16,7 +16,7 @@ ms.reviewer: markwahl-msft
 
 Once you've [established the policies](identity-governance-applications-define.md) for who should have access to an application, then you can [connect your application to Microsoft Entra ID](~/identity/enterprise-apps/what-is-application-management.md) and then [deploy the policies](identity-governance-applications-deploy.md) for governing access to them.
 
-Microsoft Entra ID Governance can be integrated with many applications, including well-known applications such as SAP and those using [standards](~/architecture/auth-sync-overview.md) such as OpenID Connect, SAML, SCIM, SQL, LDAP, SOAP and REST.  Through these standards, you can use Microsoft Entra ID with many popular SaaS applications and on-premises applications, including applications that your organization has developed.  This deployment plan covers how to connect your application to Microsoft Entra ID and enable identity governance features to be used for that application.
+Microsoft Entra ID Governance can be integrated with many applications, including well-known applications such as SAP R/3, SAP S/4HANA, and those using [standards](~/architecture/auth-sync-overview.md) such as OpenID Connect, SAML, SCIM, SQL, LDAP, SOAP and REST.  Through these standards, you can use Microsoft Entra ID with many popular SaaS applications and on-premises applications, including applications that your organization has developed.  This deployment plan covers how to connect your application to Microsoft Entra ID and enable identity governance features to be used for that application.
 
 In order for Microsoft Entra ID Governance to be used for an application, the application must first be integrated with Microsoft Entra ID and represented in your directory. An application being integrated with Microsoft Entra ID means one of two requirements must be met:
 
@@ -60,6 +60,12 @@ Next, if the application implements a provisioning protocol, then you should con
 1. If your application has multiple roles, each user has only one role in the application, and the application relies upon Microsoft Entra ID to send a user's single application-specific role as a claim of a user signing into the application, then configure those app roles in Microsoft Entra ID on your application, and then assign each user to the application role. You can use  the [app roles UI](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui) to add those roles to the application manifest.  If you're using the Microsoft Authentication Libraries, there is a [code sample](~/identity-platform/sample-v2-code.md) for how to use app roles inside your application for access control.  If a user could have multiple roles simultaneously, then you may wish to implement the application to check security groups, either in the token claims or available via Microsoft Graph, instead of using app roles from the app manifest for access control.
 
 1. If the application supports provisioning, then [configure provisioning](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md) of assigned users and groups from Microsoft Entra ID to that application.  If this is a private or custom application, you can also select the integration that's most appropriate, based on the location and capabilities of the application.
+
+   * If this application relies upon SAP Cloud Identity Services, then configure provisioning of users via SCIM into SAP Cloud Identity Services.
+
+     |Application supports| Next steps|
+     |----|-----|
+     | SAP Cloud Identity Services | [Configure Microsoft Entra ID to provision users into SAP Cloud Identity Services](~/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md) |
 
    * If this application is in the public cloud and supports SCIM, then configure provisioning of users via SCIM.
 
