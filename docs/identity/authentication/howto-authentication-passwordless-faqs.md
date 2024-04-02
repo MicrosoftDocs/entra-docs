@@ -71,7 +71,7 @@ You'll receive "NotAllowedError" from fido2 key registration page. This typicall
 * [How do I identify the domain join type (Microsoft Entra joined or Microsoft Entra hybrid joined) for my Windows 10 device?](#how-do-i-identify-the-domain-join-type-azure-ad-joined-or-hybrid-azure-ad-joined-for-my-windows-10-device)
 * [What's the recommendation on the number of DCs that should be patched?](#whats-the-recommendation-on-the-number-of-dcs-that-should-be-patched)
 * [Can I deploy the FIDO2 credential provider on an on-premises only device?](#can-i-deploy-the-fido2-credential-provider-on-an-on-premises-only-device)
-* [FIDO2 security key sign-in isn't working for my Domain Admin or other high privilege accounts. Why?](#fido2-security-key-providers-sign-in-isnt-working-for-my-domain-admin-or-other-high-privilege-accounts-why)
+* [FIDO2 security key sign-in isn't working for my Domain Admin or other high privilege accounts. Why?](#fido2-security-key-sign-in-isnt-working-for-my-domain-admin-or-other-high-privilege-accounts-why)
 
 ### Does this feature work if there's no internet connectivity?
 
