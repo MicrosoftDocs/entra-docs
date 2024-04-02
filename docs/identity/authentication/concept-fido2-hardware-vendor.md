@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Explains requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID
-ms.date: 03/20/2024
+ms.date: 04/02/2024
 ms.service: entra-id
 ms.subservice: authentication
 author: martincoetzer
@@ -22,7 +22,9 @@ In Microsoft Entra ID authentication methods policy, admins have the option to e
 
 Microsoft relies on the FIDO metadata service (MDS) to determine security key compatibility with Windows, Microsoft Edge browser, and online Microsoft accounts. Data in the FIDO MDS is self-reported by vendors.
 
-During FIDO2 registration, Microsoft Entra ID requires security keys to provide a 'packed' attestation statement. The specific requirements vary based on admin configuration in the FIDO2 authentication methods policy:
+During FIDO2 registration, Microsoft Entra ID requires security keys to provide an attestation statement. For vendors, the expected attestation format is 'packed', as defined by [the FIDO standard](https://www.w3.org/TR/webauthn-2/#sctn-packed-attestation).
+
+The specific requirements vary based on how an administartor configures the FIDO2 authentication methods policy.
 
 | Enforce attestation set to Yes | Enforce attestation set to No |
 |--------------------------------|-------------------------------|
