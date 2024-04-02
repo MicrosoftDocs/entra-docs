@@ -262,8 +262,71 @@ Microsoft Entra ID uses a concept called *assignments* to determine which users 
 
 If provisioning has already been enabled for the application, check that the application provisioning is not in [quarantine](~/identity/app-provisioning/application-provisioning-quarantine-status.md) before assigning more users to the application. Resolve any issues that are causing the quarantine, before you proceed.
 
-Once the testing is complete and a user is successfully provisioned to SAP Cloud Identity Services, you can assign the additional authorized users to the SAP Cloud Identity Services application by following the instructions here:
-* [Assign a user to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
+### Check for users who are present in SAP Cloud Identity Services and are not already assigned to the application in Microsoft Entra
+
+The previous steps have evaluated whether the users in SAP Cloud Identity Services also exist as users in Microsoft Entra ID. However, they might not all currently be assigned to the application's roles in Microsoft Entra ID. So the next steps are to see which users don't have assignments to application roles.
+
+1. Using PowerShell, look up the service principal ID for the application's service principal.
+
+   For example, if the enterprise application is named `SAP Cloud Identity Services`, enter the following commands:
+
+   ```powershell
+   $azuread_app_name = "SAP Cloud Identity Services"
+   $azuread_sp_filter = "displayName eq '" + ($azuread_app_name -replace "'","''") + "'"
+   $azuread_sp = Get-MgServicePrincipal -Filter $azuread_sp_filter -All
+   ```
+
+1. Retrieve the users who currently have assignments to the application in Microsoft Entra ID.
+
+   This builds upon the `$azuread_sp` variable set in the previous command.
+
+   ```powershell
+   $azuread_existing_assignments = @(Get-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $azuread_sp.Id -All)
+   ```
+
+1. Compare the list of user IDs from the previous sections to those users currently assigned to the application:
+
+   ```powershell
+   $azuread_not_in_role_list = @()
+   foreach ($id in $azuread_match_id_list) {
+      $found = $false
+      foreach ($existing in $azuread_existing_assignments) {
+         if ($existing.principalId -eq $id) {
+            $found = $true; break;
+         }
+      }
+      if ($found -eq $false) { $azuread_not_in_role_list += $id }
+   }
+   $azuread_not_in_role_count = $azuread_not_in_role_list.Count
+   Write-Output "$azuread_not_in_role_count users in the application's data store are not assigned to the application roles."
+   ```
+
+   If zero users are *not* assigned to application roles, indicating that all users *are* assigned to application roles, then this indicates that there were no users in common across Microsoft Entra and SAP Cloud Identity Services, so no changes are needed.  However, if one or more users already in SAP Cloud Identity Services aren't currently assigned to the application roles, you'll need to continue the procedure and add them to one of the application's roles.
+
+1. Select the `User` role of the application.
+
+   ```powershell
+   $azuread_app_role_name = "User"
+   $azuread_app_role_id = ($azuread_sp.AppRoles | where-object {$_.AllowedMemberTypes -contains "User" -and $_.DisplayName -eq "User"}).Id
+   if ($null -eq $azuread_app_role_id) { write-error "role $azuread_app_role_name not located in application manifest"}
+   ```
+
+1. Create application role assignments for users who are already present in SAP Cloud Identity Services and don't currently have role assignments:
+
+   ```powershell
+   foreach ($u in $azuread_not_in_role_list) {
+      $res = New-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $azuread_sp.Id -AppRoleId $azuread_app_role_id -PrincipalId $u -ResourceId $azuread_sp.Id
+   }
+   ```
+
+1. Wait one minute for changes to propagate within Microsoft Entra ID.
+
+### Assign remaining users and monitor initial sync
+
+Once the testing is complete, a user is successfully provisioned to SAP Cloud Identity Services, and any existing SAP Cloud Identity Services users are assigned to the application role, you can assign any additional authorized users to the SAP Cloud Identity Services application by following one of the instructions here:
+
+* You can [assign each individual user to the application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) in the Microsoft Entra admin center, or
+* if your organization has a license for Microsoft Entra ID Governance, you can also [deploy entitlement management policies for automating access assignment](~/id-governance/identity-governance-applications-deploy.md#deploy-entitlement-management-policies-for-automating-access-assignment).
 
 Note that the initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.  
 
