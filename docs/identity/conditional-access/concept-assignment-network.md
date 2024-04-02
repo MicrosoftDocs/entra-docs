@@ -33,14 +33,47 @@ A user's location is found using their public IP address or the GPS coordinates 
 
 :::image type="content" source="media/concept-assignment-network/network-assignment.png" alt-text="Screenshot showing the network assignment condition in Conditional Access policy." lightbox="media/concept-assignment-network/network-assignment.png":::
 
+## When configured in policy
 
-## How are locations defined
+When you configure the location condition, you can distinguish between:
+
+- Any network or location
+- All trusted networks and locations
+- All Compliant Network locations
+- Selected networks and locations
+
+### Any network or location
+
+By default, selecting **Any location** causes a policy to apply to all IP addresses, which means any address on the Internet. This setting isn't limited to IP addresses you configure as named locations. When you select **Any location**, you can still exclude specific locations from a policy. For example, you can apply a policy to all locations except trusted locations to set the scope to all locations, except the corporate network.
+
+### All trusted networks and locations
+
+This option applies to:
+
+- All locations marked as trusted locations.
+- **MFA Trusted IPs**, if configured.
+
+#### Multifactor authentication trusted IPs
+
+Using the trusted IPs section of multifactor authentication's service settings is no longer recommended. This control only accepts IPv4 addresses and should only be used for specific scenarios covered in the article [Configure Microsoft Entra multifactor authentication settings](~/identity/authentication/howto-mfa-mfasettings.md#trusted-ips).
+
+If you have these trusted IPs configured, they show up as **MFA Trusted IPs** in the list of locations for the location condition.
+
+### All Compliant Network locations
+
+Organizations with access to Global Secure Access preview features have another location listed that is made up of users and devices that comply with your organization's security policies. For more information, see the section [Enable Global Secure Access signaling for Conditional Access](/entra/global-secure-access/how-to-compliant-network#enable-global-secure-access-signaling-for-conditional-access). It can be used with Conditional Access policies to perform a compliant network check for access to resources.
+
+### Selected networks and locations
+
+With this option, you can select one or more named locations. For a policy with this setting to apply, a user needs to connect from any of the selected locations. When you choose **Select**, you're presented with a list of defined locations opens. This list shows the name, type, and if the network location is marked as trusted.
+
+## How are these locations defined?
 
 Locations are defined and exist in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Conditional Access** > **Named locations**. Administrators with at least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role can create and update named locations. 
 
 :::image type="content" source="media/concept-assignment-network/named-locations.png" alt-text="Screenshot of named locations in the Microsoft Entra admin center." lightbox="media/concept-assignment-network/named-locations.png":::
 
-Named locations might include locations like an organization's headquarters network ranges, VPN network ranges, or ranges that you wish to block. Named locations are defined by IPv4 address ranges, IPv6 address ranges, or by countries/regions. 
+Named locations might include locations like an organization's headquarters network ranges, VPN network ranges, or ranges that you wish to block. Named locations contain IPv4 address ranges, IPv6 address ranges, or countries.
 
 ### IPv4 and IPv6 address ranges
 
@@ -60,20 +93,18 @@ For devices on a private network, the IP address isn't the client IP of the user
 
 #### Trusted locations
 
-Administrators can mark locations like your organization's public network ranges as trusted. This marking is used by features in several ways.
+Administrators might optionally mark IP-based locations like your organization's public network ranges as trusted. This marking is used by features in several ways.
 
 - Conditional Access policies can include or exclude these locations.
 - Sign-ins from trusted named locations improve the accuracy of Microsoft Entra ID Protection's risk calculation.
-- Locations marked as trusted can't be deleted without removing the trusted designation.
 
-> [!CAUTION]
-> Even if you know the network and mark it as trusted does not mean you should exclude it from Conditional Access policies.
+Locations marked as trusted can't be deleted without first removing the trusted designation.
 
-### Countries/regions
+### Countries
 
-Organizations can determine country/region location by IP address or GPS coordinates.
+Organizations can determine a geographic country location by IP address or GPS coordinates.
 
-To define a named location by country/region, you need to provide: 
+To define a named location by country, you must provide: 
 
 - A **Name** for the location.
 - Choose to determine location by IP address or GPS coordinates.
@@ -88,7 +119,7 @@ When selecting **Determine location by GPS coordinates**, users must have the Mi
 
 - The first time the user must share their location from the Microsoft Authenticator app, they receive a notification in the app. The user must open the app and grant location permissions. For the next 24 hours, if the user is still accessing the resource and granted the app permission to run in the background, the device's location is shared silently once per hour.
 
-- After 24 hours, the user must open the app and approve the notification. Users who have number matching or additional context enabled in the Microsoft Authenticator app won't receive notifications silently and must open the app to approve notifications.
+- After 24 hours, the user must open the app and approve the notification. Users who have number matching or additional context enabled in the Microsoft Authenticator app don't receive notifications silently. Users must open the app to approve notifications.
 
 - Every time the user shares their GPS location, the app does jailbreak detection (Using the same logic as the Microsoft Intune MAM SDK). If the device is jailbroken, the location isn't considered valid, and the user isn't granted access. 
    - The Microsoft Authenticator app on Android uses the Google Play Integrity API to facilitate jailbreak detection. If the Google Play Integrity API is unavailable, the request is denied and the user isn't able to access the requested resource unless the Conditional Access policy is disabled. For more information about the Microsoft Authenticator app, see the article [Common questions about the Microsoft Authenticator app](https://support.microsoft.com/account-billing/common-questions-about-the-microsoft-authenticator-app-12d283d1-bcef-4875-9ae5-ac360e2945dd).
@@ -103,23 +134,21 @@ Multiple Conditional Access policies might prompt users for their GPS location b
 > [!IMPORTANT]
 > Users may receive prompts every hour letting them know that Microsoft Entra ID is checking their location in the Authenticator app. This feature should only be used to protect very sensitive apps where this behavior is acceptable or where access must be restricted for a specific country/region.
 
-#### Deny requests with modified location
-
-Users can modify the location reported by iOS and Android devices. As a result, Microsoft Authenticator denies authentications where the user might be using a different location than the actual GPS location of the mobile device where the Microsoft Authenticator app is installed. Users who modify the location of their device get a denial message when they try location-based authentication. 
-
 #### Include unknown countries/regions
 
 Some IP addresses don't map to a specific country or region. To capture these IP locations, check the box **Include unknown countries/regions** when defining a geographic location. This option allows you to choose if these IP addresses should be included in the named location. Use this setting when the policy using the named location should apply to unknown locations.
 
-### Multifactor authentication trusted IPs
+#### Requests with modified GPS location
 
-Using the trusted IPs section of multifactor authentication's service settings is no longer recommended. This control only accepts IPv4 addresses and should only be used for specific scenarios covered in the article [Configure Microsoft Entra multifactor authentication settings](~/identity/authentication/howto-mfa-mfasettings.md#trusted-ips)
-
-If you have these trusted IPs configured, they show up as **MFA Trusted IPs** in the list of locations for the location condition.
+Users might modify the GPS location as reported by iOS and Android devices. As a result, the Microsoft Authenticator app denies authentications where the user might be using a different location than the actual GPS location of the mobile device where the app is installed. Users who modify the location of their device get a denial message for GPS location-based based policies. 
 
 ## Common questions
 
-### Cloud proxies and VPNs
+### Is there Graph API support?
+
+Graph API support for named locations is available, for more information, see the [namedLocation API](/graph/api/resources/namedlocation).
+
+### What if I use a cloud proxy or VPN?
 
 When you use a cloud hosted proxy or VPN solution, the IP address Microsoft Entra ID uses while evaluating a policy is the IP address of the proxy. The X-Forwarded-For (XFF) header that contains the user’s public IP address isn't used because there's no validation that it comes from a trusted source, so would present a method for faking an IP address.
 
@@ -145,63 +174,32 @@ A policy that uses the location condition to block access is considered restrict
 - Blocking countries/regions where your organization never does business.
 - Blocking specific IP ranges like:
    - Known malicious IPs before a firewall policy can be changed.
-   - For highly sensitive or privileged actions and cloud applications.
+   - Highly sensitive or privileged actions and cloud applications.
    - Based on user specific IP range like access to accounting or payroll applications.
 
+### What about multifactor authentication trusted IPs?
 
+Using the trusted IPs section of multifactor authentication's service settings is no longer recommended. This control only accepts IPv4 addresses and should only be used for specific scenarios covered in the article [Configure Microsoft Entra multifactor authentication settings](~/identity/authentication/howto-mfa-mfasettings.md#trusted-ips).
+
+If you have these trusted IPs configured, they show up as **MFA Trusted IPs** in the list of locations for the location condition.
+
+## Related content
+
+- [Configure an example Conditional Access policy using location](howto-conditional-access-policy-location.md).
+
+<!--- 
 ## Define locations
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Named locations**.
-1. Choose **New location**.
+1. Choose **IP ranges location** or **Countries location**.
 1. Give your location a name.
-1. Choose **IP ranges** if you know the specific externally accessible IPv4 address ranges that make up that location or **Countries/Regions**.
-   1. Provide the **IP ranges** or select the **Countries/Regions** for the location you're specifying.
-      * If you choose Countries/Regions, you can optionally choose to include unknown areas.
-1. Choose **Save**
+1. Provide the IP ranges in CIDR format or select the **Country lookup method** and country names.
+   - If you chose **IP ranges location** optionally select **Mark as trusted location**.
+   - If you chose Countries location, you can optionally choose to include unknown areas.
+1. Choose **Create** or **Save** if updating an existing location.
 
 ### Bulk uploading and downloading of named locations
 
 When you create or update named locations, you can upload or download a CSV file with the IP ranges for a specific location. An upload replaces the IP ranges in the list for a specific location with the ranges defined in the file. Each row of the file contains one IP Address range in CIDR format.
-
-### Graph API support
-
-There is Graph API support for named locations is available, for more information, see the [namedLocation API](/graph/api/resources/namedlocation).
-
-## Location condition in policy
-
-When you configure the location condition, you can distinguish between:
-
-- Any location
-- All trusted locations
-- All Compliant Network locations
-- Selected locations
-
-### Any location
-
-By default, selecting **Any location** causes a policy to apply to all IP addresses, which means any address on the Internet. This setting isn't limited to IP addresses you've configured as named location. When you select **Any location**, you can still exclude specific locations from a policy. For example, you can apply a policy to all locations except trusted locations to set the scope to all locations, except the corporate network.
-
-### All trusted locations
-
-This option applies to:
-
-- All locations marked as trusted locations.
-- **MFA Trusted IPs**, if configured.
-
-#### Multifactor authentication trusted IPs
-
-Using the trusted IPs section of multifactor authentication's service settings is no longer recommended. This control only accepts IPv4 addresses and should only be used for specific scenarios covered in the article [Configure Microsoft Entra multifactor authentication settings](~/identity/authentication/howto-mfa-mfasettings.md#trusted-ips)
-
-If you have these trusted IPs configured, they show up as **MFA Trusted IPs** in the list of locations for the location condition.
-
-### All Compliant Network locations
-
-Organizations with access to Global Secure Access preview features have another location listed that is made up of users and devices that comply with your organization's security policies. For more information, see the section [Enable Global Secure Access signaling for Conditional Access](/entra/global-secure-access/how-to-compliant-network#enable-global-secure-access-signaling-for-conditional-access). It can be used with Conditional Access policies to perform a compliant network check for access to resources.
-
-### Selected locations
-
-With this option, you can select one or more named locations. For a policy with this setting to apply, a user needs to connect from any of the selected locations. When you **Select** the named network selection control that shows the list of named networks opens. The list also shows if the network location is marked as trusted.
-
-## Related content
-
-- Configure an example Conditional Access policy using location, see the article [Conditional Access: Block access by location](howto-conditional-access-policy-location.md).
+--->
