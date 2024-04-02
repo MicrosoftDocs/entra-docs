@@ -10,7 +10,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 02/23/2024
+ms.date: 04/02/2024
 ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn about how to add Microsoft Authentication Library (MSAL) native auth SDK framework to your Android app.
 ---
@@ -27,7 +27,12 @@ In this tutorial, you learn how to:
  
 ## Prerequisites  
  
-- [How to run the Android sample app](how-to-run-native-authentication-sample-android-app.md). 
+- If you haven't already, follow the instructions in [Sign in users in sample Android (Kotlin) mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md) and register an app in your customer tenant. Make sure you complete the following steps:
+    - Register an application.
+    - Enable public client and native authentication flows.
+    - Grant API permissions.
+    - Create a user flow.
+    - Associate the app with the user flow.
 - Android project. 
  
 ## Add MSAL dependencies  

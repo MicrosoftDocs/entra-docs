@@ -16,7 +16,7 @@ ms.custom: it-pro
 ---
 # Get started guide features
 
-After completing the get started guide, you can recreate, edit, and customize the initial configuration to meet your company’s needs. This helps you become familiar with the features and functions of Microsoft Entra ID for customers, better understand how to use them, and appreciate the value they provide. During this process, you may even discover new features that you want to use. 
+After completing the [get started guide](/entra/external-id/customers/quickstart-get-started-guide), you can recreate, edit, and customize the initial configuration to meet your company’s needs. This helps you become familiar with the features and functions of Microsoft Entra ID for customers, better understand how to use them, and appreciate the value they provide. During this process, you may even discover new features that you want to use. 
 
 The get started guide set up the below features for you automatically. This article explains these features and guide you on how to configure them manually.
 
