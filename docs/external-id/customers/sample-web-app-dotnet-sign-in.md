@@ -37,7 +37,7 @@ In this article, you'll register a web application in the Microsoft Entra admin 
 
 ## Enable implicit and hybrid flows
 
-[!INCLUDE [ciam-enable-implicit-flow](./includes/enable-implicit-hybrid-flows.md)]
+[!INCLUDE [ciam-enable-implicit-flow](./includes/register-app/enable-implicit-hybrid-flows.md)]
 
 ## Add app client secret
 
