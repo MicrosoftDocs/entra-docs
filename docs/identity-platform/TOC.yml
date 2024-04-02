@@ -405,7 +405,7 @@
     - name: Quickstart
       items:
         - name: .NET
-          href: quickstart-console-app-netcore-acquire-token.md
+          href: quickstart-daemon-dotnet-acquire-token.md
         - name: Java
           href: quickstart-daemon-app-java-acquire-token.md
         - name: Node.js
