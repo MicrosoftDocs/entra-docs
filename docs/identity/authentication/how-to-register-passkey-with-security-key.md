@@ -19,6 +19,8 @@ ms.collection: M365-identity-device-management
 ---
 # Register a passkey (FIDO2)
 
+This article shows how to register a passkey as an authentication method. 
+
 ## First-time registration
 
 1. First-time users need to register a passkey (FIDO2) as an authentication method by navigating and completing the process from a browser at [My Security-Info](https://mysignins.microsoft.com/security-info).

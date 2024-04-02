@@ -19,11 +19,19 @@ ms.collection: M365-identity-device-management
 ---
 # Sign in with a passkey (FIDO2)
 
-To sign into your work or school account with a passkey, follow these steps whenever you get a sign-in prompt.
+Passkeys are a replacement for your password. With passkeys, you can sign into your Microsoft personal, work or school account using your face, fingerprint, or PIN. Signing in with a passkey is simple, fast, and helps protect you against phishing attacks. 
+
+## Sign in to your work or school account
+
+To sign into your work or school account with a passkey, follow these steps when you get a sign-in prompt.
 
 1. Choose **Sign-in Options**.
 1. Choose **Face, Fingerprint, PIN, or security key**.
 1. Your device opens a security window where you can use your face, fingerprint, PIN, or security key.
+
+
+>[!NOTE]
+> Biometric data stays on your device and is never shared with Microsoft.
 
 ## Next steps
 
