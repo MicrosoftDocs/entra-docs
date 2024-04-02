@@ -120,7 +120,7 @@ The following are the minimum browser version requirements on Windows.
 |---------------------|------|-----|-----------------|
 | Edge    | &#x2705;  | &#10060; | &#10060; |
 | Chrome  | &#x2705;  | &#10060; | &#10060; |
-| Firefox | &#x2705;  | &#10060; | &#10060; |
+| Firefox | &#10060;  | &#10060; | &#10060; |
 
 <sup>1</sup>Security key registration with Microsoft Entra ID isn't yet supported on Android.
 
