@@ -187,7 +187,7 @@ It's recommended that a single new Microsoft Entra test user is assigned to SAP 
 1. Select **Provisioning** and then select **Provision on demand**.
 1. In the **Select a user or group** text box, type the user principal name of the test user.
 1. Click **Provision**.
-1. Wait for the provisioning to complete. If successful, you will see the message ``Modified attributes (successful)`.
+1. Wait for the provisioning to complete. If successful, you will see the message `Modified attributes (successful)`.
 
 You can also optionally verify what Microsoft Entra will provision when a user goes out of scope of the application.
 
@@ -240,11 +240,16 @@ foreach ($u in $existingSapUsers) {
 write-output "$warn of $count users in SAP Cloud Identity Services did not have the $sapScimUserNameFIeld attribute populated."
 ```
 
-1. Run the script. When the script completes, if there were one or more users that were lacking the required matching attribute, then look up those users in the exported CSV file or in the SAP Cloud Identity Services Admin Console. If those users are also present in Microsoft Entra, then you will need to first update the SAP Cloud Identity Services representation of those users so that they have the matching attribute populated.
+7. Run the script. When the script completes, if there were one or more users that were lacking the required matching attribute, then look up those users in the exported CSV file or in the SAP Cloud Identity Services Admin Console. If those users are also present in Microsoft Entra, then you will need to first update the SAP Cloud Identity Services representation of those users so that they have the matching attribute populated.
 1. Once you have updated the attributes of those users in SAP Cloud Identity Services, then re-run the steps in this section, to confirm no users in SAP Cloud Identity Services are lacking the matching attributes that would prevent provisioning.
 
 ## Ensure existing Microsoft Entra users have the necessary attributes
 
+Prior to provisioning non-test users from Microsoft Entra ID to SAP Cloud Identity Services, check to make sure that those users have the necessary attributes and those attributes are mapped to the expected schema of SAP Cloud Identity Services.
+
+* By default, the value of the Microsoft Entra user `userPrincipalName` attribute is mapped to both the `userName` and `emails[type eq "work"].value` attributes of SAP Cloud Identity Services.  If user's email addresses are different from their user principal names, then you may need to change this mapping.
+* SAP Cloud Identity Services may ignore values of the `postalCode` attribute if the format of Company ZIP/postal code does not match company country.
+* By default, the Microsoft Entra attribute `department` is mapped to the SAP Cloud Identity Services `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department` attribute. If Microsoft Entra users have values of the `department` attribute, those values must match those departments already configured in SAP Cloud Identity Services, otherwise creation or update of the user will fail.  If the `department` value in Microsoft Entra is not consistent with those in your SAP environment, then remove the mapping prior to assigning users.
 * SAP Cloud Identity Services's SCIM endpoint requires certain attributes to be of specific format. You can know more about these attributes and their specific format [here](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/b10fc6a9a37c488a82ce7489b1fab64c.html#).
 
 ## Assign users to the SAP Cloud Identity Services application in Microsoft Entra ID
