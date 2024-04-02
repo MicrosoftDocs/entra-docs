@@ -46,9 +46,10 @@ Note: A restart may be required when you install or upgrade your existing connec
 ** You can submit request for onboarding to Early Access Preview [here](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR9iJt1_k-HZBpNjGBIMz6XZUNzNSRjc2UlozUDNHT1dDNzI0Q1gxWVc1Sy4u).
 
 Please refer to the table below to update any dependency related to rebranding of connector:
-| Category                                      | Old name                                      | New name                                  |
-| --------------------------------------------- | --------------------------------------------- | ----------------------------------------- |
-| Installer file | AADApplicationProxyConnectorInstaller.exe | MicrosoftEntraPrivateNetworkConnectorInstaller.exe |
+
+|Category  |Old name   |New name|
+|----------|-----------|------------|
+|Installer file   |`AADApplicationProxyConnectorInstaller.exe`     | `MicrosoftEntraPrivateNetworkConnectorInstaller.exe`      |
 
 
 > [!IMPORTANT]
