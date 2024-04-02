@@ -26,7 +26,7 @@ The easiest way to add a passkey is to add it directly in the Authenticator app.
 
 # [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
 
-## Authenticator registration
+## Authenticator registration (iOS)
 
 1. Open Authenticator.
 1. Tap the **+** button.
@@ -38,7 +38,7 @@ The easiest way to add a passkey is to add it directly in the Authenticator app.
 <!---Phase 2 - add Authenticator screenshots of the flow (by April 8)--->
 
 
-## Same device registration
+## Same-device registration (iOS)
 
 1. Using your iOS device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
 
@@ -170,7 +170,7 @@ The easiest way to add a passkey is to add it directly in the Authenticator app.
 
 # [:::image type="icon" source="media/icons/android-icon.png" border="false"::: **Android**](#tab/Android)
 
-## Authenticator registration
+## Authenticator registration (Android)
 
 1. Open Authenticator.
 1. Tap the **+** button.
@@ -179,7 +179,7 @@ The easiest way to add a passkey is to add it directly in the Authenticator app.
 1. You need to complete multifactor authentication (MFA).
 1. Authenticator sets up passkey, passwordless, or MFA for sign-in according to your work or school account policies. 
 
-## Same device registration
+## Same-device registration (Android)
 
 1. Using your Android device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
 
