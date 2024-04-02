@@ -10,7 +10,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 02/23/2024
+ms.date: 04/02/2024
 ms.custom: developer, devx-track-dotnet
 #Customer intent: As a dev, devops, I want to learn about how to configure prepare your iOS app for native authentication using Microsoft Entra External ID for customers.
 ---
@@ -27,7 +27,12 @@ In this tutorial, you learn how to:
 ## Prerequisites
 
 - <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>
-- [Sign in users in sample iOS (Swift) mobile app by using native authentication](how-to-run-native-authentication-sample-ios-app.md).
+- If you haven't already, follow the instructions in [Sign in users in sample iOS (Swift) mobile app by using native authentication](how-to-run-native-authentication-sample-ios-app.md) and register an app in your customer tenant. Make sure you complete the following steps:
+    - Register an application.
+    - Enable public client and native authentication flows.
+    - Grant API permissions.
+    - Create a user flow.
+    - Associate the app with the user flow.
 - iOS project
 
 ## Add the MSAL framework to an iOS app

@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.date: 09/12/2023
 ms.author: barclayn
 ms.reviewer: jeffsta
-ms.custom: it-pro
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # How to find your Microsoft Entra tenant ID
