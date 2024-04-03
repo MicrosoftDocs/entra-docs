@@ -186,7 +186,7 @@ The first time your organization uses these cmdlets for this scenario, you need 
    }
    ```
 
-1. After you add any missing users to Microsoft Entra ID, run the script from step 6 again. Then run the script from step 7. Check that no errors are reported.
+1. After you add any missing users to Microsoft Entra ID, run the script from step 7 again. Then run the script from step 8. Check that no errors are reported.
 
    ```powershell
    $dbu_not_queried_list = @()
