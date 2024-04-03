@@ -12,6 +12,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 06/05/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to V-Client so that I can streamline the user management process and ensure that users have the appropriate access to V-Client.
 ---
 
 # Tutorial: Configure V-Client for automatic user provisioning

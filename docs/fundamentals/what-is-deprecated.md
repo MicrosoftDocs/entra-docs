@@ -71,7 +71,7 @@ Use the definitions in this section help clarify the state, availability, and su
 |---|---|---|
 |Retirement|Signals retirement of a feature, capability, or product in a specified period. Customers can't adopt the service or feature, and engineering investments are reduced. Later, the feature reaches end-of-life and is unavailable to any customer.|Two times per year: March and September|
 |Breaking change|A change that might break the customer or partner experience if action isn't taken, or a change made, for continued operation.|Four times per year: March, June, September, and December|
-|Feature change|Change to an existing Identity feature that requires no customer action, but is noticeable to them. Typically, these changes are in the user interface/user experperience (UI/UX).|Four times per year: March, June, September, and December|
+|Feature change|Change to an existing Identity feature that requires no customer action, but is noticeable to them. Typically, these changes are in the user interface/user experience (UI/UX).|Four times per year: March, June, September, and December|
 
 ### Terminology
 
@@ -81,5 +81,5 @@ Use the definitions in this section help clarify the state, availability, and su
 [What's new in Microsoft Entra ID?](~/fundamentals/whats-new.md)
 
 ## Resources
-* [Microsoft Entra change announcement blog](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-change-announcements-november-2022-train/ba-p/2967452)
+* [Microsoft Entra ID change announcement blog](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-change-announcements-november-2022-train/ba-p/2967452)
 * Devices: [End-of-life management and recycling](https://www.microsoft.com/legal/compliance/recycling)

@@ -5,13 +5,15 @@ description: Learn how to automatically provision and deprovision user accounts 
 author: twimmers
 writer: twimmers
 manager: jeedes
-ms.assetid: f666af23-f97f-4df8-8580-6124f47ea840
+ms.assetid: 6ec61b50-e786-4630-8b9d-05d2d714d2e9
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 02/26/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to ClearView Trade so that I can streamline the user management process and ensure that users have the appropriate access to ClearView Trade.
 ---
 
 # Tutorial: Configure ClearView Trade for automatic user provisioning

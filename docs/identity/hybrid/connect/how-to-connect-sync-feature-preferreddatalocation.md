@@ -231,7 +231,7 @@ Re-enable the built-in sync scheduler:
 ## Step 9: Verify the result
 It is now time to verify the configuration and enable it for your users.
 
-1. Add the geo to the selected attribute on a user. The list of available geos can be found in this table.  
+1. Add the geo to the selected attribute on a user. The list of available geos can be [found in this table](/microsoft-365/enterprise/microsoft-365-multi-geo).  
 ![Screenshot of AD attribute added to a user](./media/how-to-connect-sync-feature-preferreddatalocation/preferreddatalocation-adattribute.png)
 2. Wait for the attribute to be synchronized to Microsoft Entra ID.
 3. Using Exchange Online PowerShell, verify that the mailbox region has been set correctly.  

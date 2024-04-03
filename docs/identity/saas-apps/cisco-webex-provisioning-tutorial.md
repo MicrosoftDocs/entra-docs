@@ -11,6 +11,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cisco Webex so that I can streamline the user management process and ensure that users have the appropriate access to Cisco Webex.
 ---
 
 # Tutorial: Configure Cisco Webex for automatic user provisioning
@@ -121,7 +123,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |displayName|String||
    |externalId|String||
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra ID Groups to Cisco Webex**.
+1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Cisco Webex**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Cisco Webex in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Cisco Webex for update operations. Select the **Save** button to commit any changes.
 

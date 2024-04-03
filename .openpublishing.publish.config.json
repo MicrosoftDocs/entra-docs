@@ -62,6 +62,12 @@
       "branch_mapping": {}
     },
     {
+      "path_to_root": "ms-identity-docs-code-python",
+      "url": "https://github.com/Azure-Samples/ms-identity-docs-code-python",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
       "path_to_root": "ms-identity-javascript-react-docs",
       "url": "https://github.com/Azure-Samples/ms-identity-javascript-react-docs",
       "branch": "main",

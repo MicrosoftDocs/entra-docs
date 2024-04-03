@@ -70,7 +70,7 @@ sections:
           
            - If the device is deleted in Microsoft Entra ID, you need to re-register the device. To re-register, you must take a manual action on the device. See the following steps for instructions to re-register based on the device state. 
           
-                To re-register hybrid Microsoft Entra joined Windows 10/11 and Windows Server 2016/2019 devices, take the following steps:
+                To re-register Microsoft Entra hybrid joined Windows 10/11 and Windows Server 2016/2019 devices, take the following steps:
           
                 1. Open the command prompt as an administrator.
                 1. Enter `dsregcmd.exe /debug /leave`.
@@ -102,7 +102,7 @@ sections:
           - For down-level Windows OS versions that are on-premises Azure Directory domain joined, automatic registration creates a new device record with the same device name for each domain user who signs in to the device. 
           - A Microsoft Entra joined machine that's wiped, reinstalled, and rejoined with the same name shows up as another record with the same device name.
           
-      - question: Does Windows 10/11 device registration in Microsoft Entra ID support TPMs in FIPS mode?
+      - question: Does Windows 10/11 device registration in Microsoft Entra support TPMs in FIPS mode?
         answer: Windows 10/11 device registration is only supported for FIPS-compliant TPM 2.0 and not supported for TPM 1.2. If your devices have FIPS-compliant TPM 1.2, you must disable them before proceeding with Microsoft Entra join or Microsoft Entra hybrid join. Microsoft doesn't provide any tools for disabling FIPS mode for TPMs as it is dependent on the TPM manufacturer. Contact your hardware OEM for support. 
 
       - question: Why can a user still access resources from a device I disabled?
@@ -183,7 +183,7 @@ sections:
           
       - question: What is the P2P Server application and why is it registered in my tenant?
         answer: |
-          The P2P Server application is application registered by Microsoft Entra to enable Remote Desktop Protocol (RDP) connections to any Microsoft Entra joined or hybrid Microsoft Entra joined Windows devices in your tenant. This application creates a tenant wide certificate issued by Microsoft Entra's certificate authority and is used to issue RDP device and user certificates for RDP connectivity. To ensure this is the correct application, you can find the **Object ID** of the P2P Server application in the **Microsoft Entra admin center** > **Applications** > **Enterprise Applications**. Remove the default filter applied do you can see all applications. Compare this **Object ID** using the Microsoft Graph API to query for the details using [GET /servicePrincipals/{objectid}](/graph/api/serviceprincipal-get) and confirm that the servicePrincipalNames property is `urn:p2p_cert`.
+          The P2P Server application is application registered by Microsoft Entra ID to enable Remote Desktop Protocol (RDP) connections to any Microsoft Entra joined or Microsoft Entra hybrid joined Windows devices in your tenant. This application creates a tenant wide certificate issued by Microsoft Entra's certificate authority and is used to issue RDP device and user certificates for RDP connectivity. To ensure this is the correct application, you can find the **Object ID** of the P2P Server application in the **Microsoft Entra admin center** > **Applications** > **Enterprise Applications**. Remove the default filter applied do you can see all applications. Compare this **Object ID** using the Microsoft Graph API to query for the details using [GET /servicePrincipals/{objectid}](/graph/api/serviceprincipal-get) and confirm that the servicePrincipalNames property is `urn:p2p_cert`.
           
       - question: What are the MS-Organization-P2P-Access certificates present on our Windows 10/11 devices?
         answer: |

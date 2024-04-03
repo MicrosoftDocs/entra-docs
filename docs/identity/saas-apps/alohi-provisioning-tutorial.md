@@ -5,13 +5,17 @@ description: Learn how to automatically provision and deprovision user accounts 
 author: twimmers
 writer: twimmers
 manager: jeedes
-ms.assetid: 80293942-831d-454e-8154-85bf75ef3506
+ms.assetid: 20821342-b693-4e4e-891f-000f2c3af8db
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 01/11/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Alohi so that I can streamline the user management process and ensure that users have the appropriate access to Alohi.
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Alohi so that I can streamline the user management process and ensure that users have the appropriate access to Alohi.
 ---
 
 # Tutorial: Configure Alohi for automatic user provisioning

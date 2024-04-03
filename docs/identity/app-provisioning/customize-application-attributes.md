@@ -274,14 +274,12 @@ Then use the AppRoleAssignmentsComplex expression to map to the custom role attr
 **Things to consider**
 
 - All roles are provisioned as primary = false.
-- The `id` attribute isn't required in SCIM roles. Use the `value` attribute instead. For example, if the `value` attribute contains the name or identifier for the role, use it to provision the role. However, relying solely on the `value` attribute isn't always sufficient; for example, if there are multiple roles with the same name or identifier. In certain cases, it's necessary to use the `id` attribute to properly provision the role.
+- The `id` attribute isn't required in SCIM roles. Use the `value` attribute instead. For example, if the `value` attribute contains the name or identifier for the role, use it to provision the role. You can use the feature flag [here](./application-provisioning-config-problem-scim-compatibility.md#flags-to-alter-the-scim-behavior) to fix the id attribute issue. However, relying solely on the value attribute isn't always sufficient; for example, if there are multiple roles with the same name or identifier. In certain cases, it's necessary to use the id attribute to properly provision the role
  
     
 **Limitations** 
 
-- The POST contains the role type. The PATCH request doesn't contain type. We're working on sending the type in both POST and PATCH requests.
 - AppRoleAssignmentsComplex isn't compatible with setting scope to "Sync All users and groups."
-- The AppRoleAssignmentsComplex only supports the PATCH add function. For multi-role SCIM applications, roles deleted in Microsoft Entra ID are therefore not deleted from the application.
     
 **Example Request (POST)**
   
@@ -332,6 +330,98 @@ Then use the AppRoleAssignmentsComplex expression to map to the custom role attr
   }
 ]
  ```
+
+**AssertiveAppRoleAssignmentsComplex**   (Recommended for complex roles)
+
+**When to use:** Use the AssertiveAppRoleAssignmentsComplex to enable PATCH Replace functionality. For SCIM applications that support multiple roles, this ensures that roles removed in Microsoft Entra ID are also removed in the target application. The replace functionality will also remove any additional roles the user has that are not reflected in Entra ID 
+
+The difference between the AppRoleAssignmentsComplex and AssertiveAppRoleAssignmentsComplex is the mode of the patch call and the effect on the target systen. The former does PATCH add only and therefore does not remove any existing roles on the target. The latter does PATCH replace which removes roles in the target system if they have not been assigned to the user on Entra ID. 
+
+**How to configure:** Edit the list of supported attributes as described to include a new attribute for roles: 
+  
+![Add roles](./media/customize-application-attributes/add-roles.png)<br>
+
+Then use the AssertiveAppRoleAssignmentsComplex expression to map to the custom role attribute as shown in the image:
+
+![Add AssertiveAppRoleAssignmentsComplex](./media/customize-application-attributes/edit-attribute-assertiveapproleassignmentscomplex.png)<br>  
+
+**Things to consider**
+- All roles are provisioned as primary = false.
+- The `id` attribute isn't required in SCIM roles. Use the `value` attribute instead. For example, if the `value` attribute contains the name or identifier for the role, use it to provision the role. You can use the feature flag [here](./application-provisioning-config-problem-scim-compatibility.md#flags-to-alter-the-scim-behavior) to fix the id attribute issue. However, relying solely on the value attribute isn't always sufficient; for example, if there are multiple roles with the same name or identifier. In certain cases, it's necessary to use the id attribute to properly provision the role
+  
+**Limitations** 
+
+- AssertiveAppRoleAssignmentsComplex isn't compatible with setting scope to "Sync All users and groups."
+    
+**Example Request (POST)**
+  
+```json
+{"schemas":["urn:ietf:params:scim:schemas:core:2.0:User"], 
+
+"externalId":"contoso", 
+
+"userName":"contoso@alias.onmicrosoft.com", 
+
+"active":true, 
+
+"roles":[{ 
+
+  "primary":false, 
+
+  "type":"WindowsAzureActiveDirectoryRole", 
+
+  "display":"User", 
+
+  "value":"User"}, 
+
+  {"primary":false, 
+
+  "type":"WindowsAzureActiveDirectoryRole", 
+
+  "display":"Test", 
+
+  "value":"Test"}], 
+
+}
+```
+
+**Example output (PATCH)** 
+
+```json
+{"schemas":["urn:ietf:params:scim:api:messages:2.0:PatchOp"], 
+
+"Operations":[{ 
+
+    "op":"replace", 
+
+    "path":"roles", 
+
+    "value":[{ 
+
+        "primary":false, 
+
+        "type":"WindowsAzureActiveDirectoryRole", 
+
+        "display":"User", 
+
+        "value":"User"}, 
+
+        {"primary":false, 
+
+        "type":"WindowsAzureActiveDirectoryRole", 
+
+        "display":"Test", 
+
+        "value":"Test"} 
+
+        ] 
+
+        } 
+
+        ] 
+
+    } 
+```
 
 ## Provisioning a multi-value attribute
 

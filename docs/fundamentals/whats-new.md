@@ -33,6 +33,126 @@ Microsoft Entra ID (previously known as Azure Active Directory) receives improve
 
 This page updates monthly, so revisit it regularly. If you're looking for items older than six months, you can find them in [Archive for What's new in Microsoft Entra ID?](whats-new-archive.md).
 
+## March 2024
+
+### Public Preview - Convert external users to internal
+
+**Type:** New feature    
+**Service category:** User Management    
+**Product capability:** User Management    
+
+External user conversion enables customers to convert external users to internal members without needing to delete and create new user objects. Maintaining the same underlying object ensures the user’s account, and access to resources, isn’t disrupted and that their history of activities remains intact as their relationship with the host organization changes. 
+
+The external to internal user conversion feature includes the ability to convert on-premises synchronized users as well. For more information, see: [Convert external users to internal users (Preview)](../identity/users/convert-external-users-internal.md).
+
+---
+
+### Public Preview - Alternate Email Notifications for Lockbox Requests
+
+**Type:** New feature    
+**Service category:** Other    
+**Product capability:** Access Control    
+
+Customer Lockbox for Microsoft Azure is launching a new feature that enables customers to use alternate email IDs for getting lockbox notifications. This enables Lockbox customers to receive notifications in scenarios where their Azure account isn't email enabled, or if they have a service principal defined as the tenant admin or subscription owner.
+
+---
+
+### Plan for change - Conditional Access location condition is moving up
+
+**Type:** Plan for change    
+**Service category:** Conditional Access    
+**Product capability:** Identity Security & Protection    
+
+Starting mid-April 2024, the Conditional Access *‘Locations’* condition is moving up. Locations will become the '*Network*' assignment, with the new Global Secure Access assignment - '*All compliant network locations*'.
+
+This change will occur automatically, and admins won’t need to take any action. Here's more details:
+
+- The familiar ‘*Locations*’ condition is unchanged, updating the policy in the ‘*Locations*’ condition will be reflected in the ‘*Network*’ assignment, and vice versa.
+- No functionality changes, existing policies will continue to work without changes.
+
+---
+
+### General Availability - Just-in-time application access with PIM for Groups
+
+**Type:** New feature    
+**Service category:** Privileged Identity Management    
+**Product capability:** Privileged Identity Management    
+
+Provide just-in-time access to non-Microsoft applications such as AWS & GCP. This capability integrates PIM for groups, and application provisioning to reduce the activation time from 40+ minutes to roughly 2 minutes when requesting just-in-time access to a role in a non-Microsoft app.
+
+For more information, see:
+
+- [AWS](../identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups)
+- [GCP](../identity/saas-apps/g-suite-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups)
+
+---
+
+### Public Preview - Azure Lockbox Approver Role for Subscription Scoped Requests
+
+**Type:** New feature    
+**Service category:** Other    
+**Product capability:** Identity Governance    
+
+Customer Lockbox for Microsoft Azure is launching a new built-in Azure Role-based access control role that enables customers to use a lesser privileged role for users responsible for approving/rejecting Customer Lockbox requests. This feature is targeted to the customer admin workflow where a lockbox approver acts on the request from Microsoft Support engineer to access Azure resources in a customer subscription.
+
+In this first phase, we're launching a new built-in Azure RBAC role that helps scope down the access possible for an individual with Azure Customer Lockbox approver rights on a subscription and its resources. A similar role for tenant-scoped requests is available in subsequent releases.
+
+---
+
+### General Availability - New provisioning connectors in the Microsoft Entra Application Gallery - March 2024
+
+**Type:** New feature    
+**Service category:** App Provisioning    
+**Product capability:** 3rd Party Integration    
+
+We added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
+
+- [Astro](../identity/saas-apps/astro-provisioning-tutorial.md)
+- [Egnyte](../identity/saas-apps/egnyte-provisioning-tutorial.md)
+- [MobileIron](../identity/saas-apps/mobileiron-provisioning-tutorial.md)
+- [SAS Viya SSO](../identity/saas-apps/sas-viya-sso-provisioning-tutorial.md)
+
+
+For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
+
+---
+
+### General Availability - TLS 1.3 support for Microsoft Entra
+
+**Type:** New feature    
+**Service category:** Other    
+**Product capability:** Platform        
+
+We're excited to announce that Microsoft Entra, is rolling out support for Transport Layer Security (TLS) 1.3 for its endpoints to align with security best practices ([NIST - SP 800-52 Rev. 2](https://csrc.nist.gov/pubs/sp/800/52/r2/final)). With this change, the Microsoft Entra ID related endpoints will support both TLS 1.2 and TLS 1.3 protocols. For more information, see: [TLS 1.3 support for Microsoft Entra services](/troubleshoot/azure/active-directory/enable-support-tls-environment?tabs=azure-monitor#tls-13-support-for-microsoft-entra-services).
+
+---
+
+### General Availability - API driven inbound provisioning
+
+**Type:** New feature    
+**Service category:** Provisioning    
+**Product capability:** Inbound to Microsoft Entra ID        
+
+With API-driven inbound provisioning, Microsoft Entra ID provisioning service now supports integration with any system of record. Customers, and partners, can use any automation tool of their choice to retrieve workforce data from any system of record for provisioning into Microsoft Entra ID and connected on-premises Active Directory domains. The IT admin has full control on how the data is processed and transformed with attribute mappings. Once the workforce data is available in Microsoft Entra ID, the IT admin can configure appropriate joiner-mover-leaver business processes using Microsoft Entra ID Governance Lifecycle Workflows. For more information, see: [API-driven inbound provisioning concepts](../identity/app-provisioning/inbound-provisioning-api-concepts.md).
+
+---
+
+### General Availability - Changing Passwords in My Security Info
+
+**Type:** New feature    
+**Service category:** My Security Info    
+**Product capability:** End User Experiences        
+
+Now Generally Available, My Sign Ins [(My Sign-Ins (microsoft.com))](https://mysignins.microsoft.com/) supports end users changing their passwords inline. When a user authenticates with a password and an MFA credential, they're able to are able to change their password without entering their existing password. Starting April 1st, through a phased rollout, traffic from the [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) portal will redirect to the new My Sign Ins change experience. The [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) will no longer be available after June 2024, but will continue to redirect to the new experience.
+
+
+For more information, see: 
+
+- [Combined security information registration for Microsoft Entra overview](../identity/authentication/concept-registration-mfa-sspr-combined.md).
+- [Change work or school account settings in the My Account portal](https://support.microsoft.com/account-billing/change-work-or-school-account-settings-in-the-my-account-portal-e50bfccb-58e9-4d42-939c-a60cb6d56ced)
+
+---
+
 ## February 2024
 
 ### General Availability - Identity Protection and Risk Remediation on the Azure Mobile App
@@ -466,7 +586,7 @@ Additionally, we'll update email content to remove all references of Azure AD wh
 
 Here are some resources to guide you rename your own product experiences or content where necessary:
 
-- [How to: Rename Azure AD](how-to-rename-azure-ad.md)
+- [How to: Rename Azure AD](how-to-rename-azure-ad.yml)
 - [New name for Azure Active Directory](new-name.md)
 
 ---
@@ -559,90 +679,5 @@ The MicrosoftGraphActivityLogs provides administrators full visibility into all 
 **Product capability:** Identity Governance            
 
 Quick Microsoft Entra Verified ID setup, available in preview, removes several configuration steps an admin needs to complete with a single select on a Get started button. The quick setup takes care of signing keys, registering your decentralized ID, and verifying your domain ownership. It also creates a Verified Workplace Credential for you. For more information, see: [Quick Microsoft Entra Verified ID setup](~/verified-id/verifiable-credentials-configure-tenant-quick.md).
-
----
-
-## September 2023
-
-### Public Preview - Changes to FIDO2 authentication methods and Windows Hello for Business
-
-**Type:**  Changed feature            
-**Service category:**  Authentications (Logins)                                
-**Product capability:**  User Authentication                        
-
-Beginning **January 2024**, Microsoft Entra ID supports [device-bound passkeys](https://passkeys.dev/docs/reference/terms/#device-bound-passkey) stored on computers and mobile devices as an authentication method in public preview, in addition to the existing support for FIDO2 security keys. This enables your users to perform phishing-resistant authentication using the devices that they already have.  
-
-We expand the existing FIDO2 authentication methods policy, and end user experiences, to support this preview release. For your organization to opt in to this preview, you need to enforce key restrictions to allow specified passkey providers in your FIDO2 policy. Learn more about FIDO2 key restrictions [here](~/identity/authentication/howto-authentication-passwordless-security-key.md).
-
-In addition, the existing end user sign-in option for Windows Hello and FIDO2 security keys are now indicated by “Face, fingerprint, PIN, or security key”. The term “passkey” will be mentioned in the updated sign-in experience to be inclusive of passkey credentials presented from security keys, mobile devices, and platform authenticators like Windows Hello.
-
----
-
-### General Availability - Recovery of deleted application and service principals is now available
-
-**Type:**  New feature            
-**Service category:**  Enterprise Apps                                
-**Product capability:**  Identity Lifecycle Management                        
-
-With this release, you can now recover applications along with their original service principals, eliminating the need for extensive reconfiguration and code changes ([Learn more](~/identity/enterprise-apps/delete-recover-faq.yml)). It significantly improves the application recovery story and addresses a long-standing customer need. This change is beneficial to you on:
-
-- **Faster Recovery**: You can now recover their systems in a fraction of the time it used to take, reducing downtime and minimizing disruptions.
-- **Cost Savings**: With quicker recovery, you can save on operational costs associated with extended outages and labor-intensive recovery efforts.
-- **Preserved Data**: Previously lost data, such as SMAL configurations, is now retained, ensuring a smoother transition back to normal operations.
-- **Improved User Experience**: Faster recovery times translate to improved user experience and customer satisfaction, as applications are back up and running swiftly.
-
----
-
-### Public Preview - New provisioning connectors in the Microsoft Entra Application Gallery - September 2023
-
-**Type:** New feature   
-**Service category:** App Provisioning               
-**Product capability:** 3rd Party Integration    
-      
-
-We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
-
-- [Datadog](~/identity/saas-apps/datadog-provisioning-tutorial.md)
-- [Litmos](~/identity/saas-apps/litmos-provisioning-tutorial.md)
-- [Postman](~/identity/saas-apps/postman-provisioning-tutorial.md)
-- [Recnice](~/identity/saas-apps/recnice-provisioning-tutorial.md)
-
-For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
-
----
-
-### General Availability - Web Sign-In for Windows
-
-**Type:** Changed feature              
-**Service category:** Authentications (Logins)                                 
-**Product capability:** User Authentication    
-
-We're thrilled to announce that as part of the Windows 11 September moment, we're releasing a new Web Sign-In experience that will expand the number of supported scenarios and greatly improve security, reliability, performance, and overall end-to-end experience for our users.
-
-Web Sign-In (WSI) is a credential provider on the Windows lock/sign-in screen for AADJ joined devices that provide a web experience used for authentication and returns an auth token back to the operating system to allow the user to unlock/sign-in to the machine.
-
-Web Sign-In was initially intended to be used for a wide range of auth credential scenarios; however, it was only previously released for limited scenarios such as: [Simplified EDU Web Sign-In](/education/windows/federated-sign-in?tabs=intune) and recovery flows via [Temporary Access Password (TAP)](~/identity/authentication/howto-authentication-temporary-access-pass.md).
-
-The underlying provider for Web Sign-In is re-written from the ground up with security and improved performance in mind. This release moves the Web Sign-in infrastructure from the Cloud Host Experience (CHX) WebApp to a newly written Login Web Host (LWH) for the September moment. This release provides better security and reliability to support previous EDU & TAP experiences and new workflows enabling using various Auth Methods to unlock/login to the desktop.                    
-
----
-
-### General Availability - Support for Microsoft admin portals in Conditional Access
-
-**Type:** New feature             
-**Service category:** Conditional Access                                   
-**Product capability:** Identity Security & Protection    
-
-When a Conditional Access policy targets the Microsoft Admin Portals cloud app, the policy is enforced for tokens issued to application IDs of the following Microsoft administrative portals:
-
-- Azure portal
-- Exchange admin center
-- Microsoft 365 admin center
-- Microsoft 365 Defender portal
-- Microsoft Entra admin center
-- Microsoft Intune admin center
-- Microsoft Purview compliance portal                   
-
-For more information, see: [Microsoft Admin Portals](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#microsoft-admin-portals).
 
 ---

@@ -88,18 +88,18 @@ You can also use an integrated development environment to open the folder.
 
 1. Create a virtual environment for the app:
 
-    [!INCLUDE [Virtual environment setup](~/../azure-docs-pr/articles/app-service/includes/quickstart-python/virtual-environment-setup.md)]
+    [!INCLUDE [Virtual environment setup](~/includes/azure-docs-pr/virtual-environment-setup.md)]
 
 1. Install the requirements using `pip`:
 
     ```shell
-    python3 -m pip install -r requirements.txt
+    python -m pip install -r requirements.txt
     ```
 
 2. Run the app from the command line, specifying the host and port to match the redirect URI:
 
     ```shell
-    python3 -m flask run --debug --host=localhost --port=5000
+    python -m flask run --debug --host=localhost --port=5000
     ```
 
    > [!IMPORTANT]

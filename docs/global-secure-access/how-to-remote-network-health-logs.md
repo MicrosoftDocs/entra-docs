@@ -1,8 +1,8 @@
 ---
 title: How to use the remote network health logs
 description: Learn how to check the health of your remote networks with the Global Secure Access remote network health logs.
-author: shlipsey3
-ms.author: sarahlipsey
+author: kenwith
+ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
 ms.date: 02/13/2024

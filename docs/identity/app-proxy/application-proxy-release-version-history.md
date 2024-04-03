@@ -5,7 +5,7 @@ author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.topic: reference
-ms.date: 02/14/2024
+ms.date: 04/02/2024
 ms.subservice: app-proxy
 ms.author: kenwith
 ms.reviewer: ashishj
@@ -24,26 +24,58 @@ Here's a list of related resources:
 | Understand Microsoft Entra application proxy connectors | Find out more about [connector management](application-proxy-connectors.md) and how connectors [autoupgrade](application-proxy-connectors.md#automatic-updates). |
 | Microsoft Entra application proxy connector Download    | [Download the latest connector](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download). |
 
-## Version 1.5.3763.0
+## Version 1.5.3828.0
 
 ### Release status
 
-Feb 21, 2024: Released for download. This version is only available for install via the download page.
+April 2, 2024: Released for download. This version is only available for install via the download page in the Microsoft Entra admin center.
+
+### Rebranding
+
+The new name is now the Microsoft Entra private network connector. This rebranding emphasizes the connector as a common infrastructure for accessing any private network resource. The connector is used for both Microsoft Entra Private Access and Microsoft Entra application proxy. The new name appears in the user interface components.
 
 ### New features and improvements
 
-- ‘Microsoft AAD Application Proxy Connector’ is now rebranded as ‘Microsoft Entra Private Network Connector’.
-- Enhancements for Microsoft Entra Private Access:
-    - Support for UDP and Private-DNS features (In Early Access Preview, for onboarding submit [request](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR9iJt1_k-HZBpNjGBIMz6XZUNzNSRjc2UlozUDNHT1dDNzI0Q1gxWVc1Sy4u)).
-    - Outbound proxy support.
-    - Improved resiliency and performance.
-    - Improved logging and metrics reporting.
+- Support for UDP and Private DNS features. *Requires the Early Access Preview. 
+- Support for outbound proxy in connector for Private Access flow. *Requires the Early Access Preview. 
+- Improved resiliency and performance.
+- Improved logging and metrics reporting.
+
+> [!NOTE]
+> A reboot is required when you install or upgrade the connector.
+
+* Submit request for onboarding to the Early Access Preview [here](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR9iJt1_k-HZBpNjGBIMz6XZUNzNSRjc2UlozUDNHT1dDNzI0Q1gxWVc1Sy4u).
+
+Refer to the table for updated paths.
+
+|Category  |Old name   |New name|
+|----------|-----------|------------|
+|Installer file   |`AADApplicationProxyConnectorInstaller.exe`     | `MicrosoftEntraPrivateNetworkConnectorInstaller.exe`      |
+| Install location | `C:\Program Files\ Microsoft AAD App Proxy Connector` | `C:\Program Files\Microsoft Entra private network connector` |
+| | `C:\Program Files\Microsoft AAD App Proxy Connector\Modules\AppProxyPSModule`	| `C:\Program Files\Microsoft Entra private network connector\Modules\MicrosoftEntraPrivateNetworkConnectorPSModule` |
+| |	`C:\Program Files\ Microsoft AAD App Proxy Connector Updater` | `C:\Program Files\Microsoft Entra private network connector Updater` |
+| |	`C:\ProgramData\Microsoft\Microsoft AAD Application Proxy Connector` | `C:\ProgramData\Microsoft\Microsoft Entra private network connector` |
+| Application | `ApplicationProxyConnectorService.exe` | `MicrosoftEntraPrivateNetworkConnectorService.exe` |
+| |	`ApplicationProxyConnectorUpdaterService.exe` | `MicrosoftEntraPrivateNetworkConnectorUpdaterService.exe` |
+| CONFIG file | `ApplicationProxyConnectorService.exe.config` | `MicrosoftEntraPrivateNetworkConnectorService.exe.config` |
+| |	`ApplicationProxyConnectorUpdaterService.exe.config` | `MicrosoftEntraPrivateNetworkConnectorUpdaterService.exe.config` |
+| PowerShell module | `AppProxyPSModule.psd1`	| `MicrosoftEntraPrivateNetworkConnectorPSModule.psd1` |
+| PowerShell command | `Register-AppProxyConnector` | `Register-MicrosoftEntraPrivateNetworkConnector` |
+| Log file | `AadAppProxyConnector_{GUID}.log` | `MicrosoftEntraPrivateNetworkConnector_{GUID}.log` |
+| |	`AadAppProxyConnectorUpdater_{GUID}.log` | `MicrosoftEntraPrivateNetworkConnectorUpdater_{GUID}.log` | 
+| Services | `Microsoft AAD Application Proxy Connector` | Microsoft Entra private network connector |
+| |	Microsoft AAD Application Proxy Connector Updater | Microsoft Entra private network connector updater |
+| Registries | `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft AAD App Proxy Connector` | `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Entra private network connector` |
+| |	`Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft AAD App Proxy Connector Updater` | `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Entra private network connector Updater` |
+| Event logs | `Microsoft-AadApplicationProxy-Connector/Admin` | `Microsoft-Microsoft Entra private network-Connector/Admin` |
+| |	`Microsoft-AadApplicationProxy-Updater/Admin` | `Microsoft-Microsoft Entra private network-Updater/Admin` |
 
 > [!IMPORTANT]
 > **.NET Framework**
 >
-> You must have .NET version 4.7.2 or higher to install, or upgrade, application proxy version 1.5.3437.0 or later. Windows Server 2012 R2 and Windows Server 2016 may not have this by default. For more information, see [How to: Determine which .NET Framework versions are installed](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
-> 
+> You must have .NET version 4.7.2 or higher to install, or upgrade, application proxy version 1.5.3437.0 or later. Windows Server 2012 R2 and Windows Server 2016 do not have this by default. For more information, see [How to: Determine which .NET Framework versions are installed](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
+
+
 ## Version 1.5.3437.0
 
 ### Release status
@@ -59,6 +91,12 @@ June 20, 2023: Released for download. This version is only available for install
 - Silent registration of connector with credentials. For more information, see [Create an unattended installation script for the Microsoft Entra application proxy connector](application-proxy-register-connector-powershell.md).
 - Fixed dropping of `Secure` and `HttpOnly` attributes on the cookies passed by backend servers when there are trailing spaces in these attributes.
 - Fixed services crash when back-end server of an application sets "Set-Cookie" header with empty value.
+
+> [!IMPORTANT]
+> **.NET Framework**
+>
+> You must have .NET version 4.7.2 or higher to install, or upgrade, application proxy version 1.5.3437.0 or later. Windows Server 2012 R2 and Windows Server 2016 may not have this by default. For more information, see [How to: Determine which .NET Framework versions are installed](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
+>
 
 ## Version 1.5.2846.0
 

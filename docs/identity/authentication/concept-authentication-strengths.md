@@ -6,7 +6,7 @@ description: Learn how admins can use Microsoft Entra Conditional Access to dist
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/12/2024
+ms.date: 03/25/2024
 
 ms.author: justinha
 author: inbarckms
@@ -85,7 +85,7 @@ The combinations of authentication methods for each built-in authentication stre
 The following API call can be used to list definitions of all the built-in authentication strengths:
 
 ```http
-GET https://graph.microsoft.com/beta/identity/conditionalAccess/authenticationStrengths/policies?$filter=policyType eq 'builtIn'
+GET https://graph.microsoft.com/beta/identity/conditionalAccess/authenticationStrength/policies?$filter=policyType eq 'builtIn'
 ```
 
 Conditional Access Administrators can also create custom authentication strengths to exactly suit their access requirements. For more information, see [Custom Conditional Access authentication strengths](concept-authentication-strength-advanced-options.md).

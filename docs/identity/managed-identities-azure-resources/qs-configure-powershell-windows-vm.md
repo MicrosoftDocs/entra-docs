@@ -23,7 +23,7 @@ Managed identities for Azure resources provide Azure services with an automatica
 
 In this article, using PowerShell, you learn how to perform the following managed identities for Azure resources operations on an Azure VM.
 
-[!INCLUDE [az-powershell-update](~/../azure-docs-pr/includes/updated-for-az.md)]
+[!INCLUDE [az-powershell-update](~/includes/azure-docs-pr/updated-for-az.md)]
 
 ## Prerequisites
 

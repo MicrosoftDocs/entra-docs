@@ -15,6 +15,8 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 02/23/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to AWS IAM Identity Center so that I can streamline the user management process and ensure that users have the appropriate access to AWS IAM Identity Center.
 ---
 
 # Tutorial: Configure AWS IAM Identity Center for automatic user provisioning
@@ -202,7 +204,7 @@ Now any end user that was made eligible for the group in PIM can get JIT access 
     * For the first five users within a 10-second period activating their group membership for a specific application, group membership is provisioned in the application within 2-10 minutes. 
     * For the sixth user and above within a 10-second period activating their group membership for a specific application, group membership is provisioned to the application in the next synchronization cycle. The synchronization cycle runs every 40 minutes. The throttling limits are per enterprise application. 
 * If the user is unable to access the necessary group in AWS, please review the troubleshooting tips below, PIM logs, and provisioning logs to ensure that the group membership was updated successfully. Depending on how the target application has been architected, it may take additional time for the group membership to take effect in the application.
-* You can create alerts for failures using [Azure Monitor](https://learn.microsoft.com/entra/identity/app-provisioning/application-provisioning-log-analytics). 
+* You can create alerts for failures using [Azure Monitor](/entra/identity/app-provisioning/application-provisioning-log-analytics). 
 * Deactivation is done during the regular incremental cycle. It isn't processed immediately through on-demand provisioning.
   
 >[!VIDEO https://www.youtube.com/embed/aXp2CUFe7vk]
