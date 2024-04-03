@@ -24,7 +24,7 @@ Welcome to what's new in Microsoft Entra ID for customers documentation. This ar
 
 ### Updated articles
 
-- [Add Facebook as an identity provider for External Identities](facebook-federation.md) - App creation steps updated
+- [Add Facebook as an identity provider for External Identities](how-to-facebook-federation-customers) - App creation steps updated
 
 ## February 2024
 
