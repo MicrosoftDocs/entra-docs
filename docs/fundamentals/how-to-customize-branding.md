@@ -6,7 +6,6 @@ manager: amycolannino
 
 ms.service: entra
 ms.subservice: fundamentals
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 02/06/2024
 ms.author: sarahlipsey
