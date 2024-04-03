@@ -9,7 +9,7 @@ ms.date: 09/08/2023
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro
 ms.reviewer: jeffsta
 ---
 
