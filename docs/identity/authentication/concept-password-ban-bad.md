@@ -14,16 +14,16 @@ ms.reviewer: miminans
 ---
 # Eliminate bad passwords using Microsoft Entra Password Protection
 
-A lot of security guidance recommends that you don't use the same password in multiple places, to make it complex, and to avoid simple passwords like *Password123*. You can provide your users with [guidance on how to choose passwords](https://www.microsoft.com/research/publication/password-guidance), but weak or insecure passwords are often still used. Microsoft Entra Password Protection detects and blocks known weak passwords and their variants, and can also block additional weak terms that are specific to your organization.
+A lot of security guidance recommends that you don't use the same password in multiple places, to make it complex, and to avoid simple passwords like *Password123*. You can provide your users with [guidance on how to choose passwords](https://www.microsoft.com/research/publication/password-guidance), but weak or insecure passwords are often still used. Microsoft Entra Password Protection detects and blocks known weak passwords and their variants, and can also block other weak terms that are specific to your organization.
 
 With Microsoft Entra Password Protection, default global banned password lists are automatically applied to all users in a Microsoft Entra tenant. To support your own business and security needs, you can define entries in a custom banned password list. When users change or reset their passwords, these banned password lists are checked to enforce the use of strong passwords.
 
-You should use additional features like [Microsoft Entra multifactor authentication](concept-mfa-howitworks.md), not just rely on strong passwords enforced by Microsoft Entra Password Protection. For more information on using multiple layers of security for your sign-in events, see [Your Pa$$word doesn't matter](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Your-Pa-word-doesn-t-matter/ba-p/731984).
+You should use other features like [Microsoft Entra multifactor authentication](concept-mfa-howitworks.md), not just rely on strong passwords enforced by Microsoft Entra Password Protection. For more information on using multiple layers of security for your sign-in events, see [Your Pa$$word doesn't matter](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Your-Pa-word-doesn-t-matter/ba-p/731984).
 
 > [!IMPORTANT]
 > This conceptual article explains to an administrator how Microsoft Entra Password Protection works. If you're an end user already registered for self-service password reset and need to get back into your account, go to [https://aka.ms/sspr](https://aka.ms/sspr).
 >
-> If your IT team hasn't enabled the ability to reset your own password, reach out to your helpdesk for additional assistance.
+> If your IT team hasn't enabled the ability to reset your own password, reach out to your helpdesk.
 
 ## Global banned password list
 
@@ -80,7 +80,7 @@ To get started with using a custom banned password list, complete the following 
 
 Microsoft Entra Password Protection helps you defend against password spray attacks. Most password spray attacks don't attempt to attack any given individual account more than a few times. This behavior would increase the likelihood of detection, either via account lockout or other means.
 
-Instead, the majority of password spray attacks submit only a small number of the known weakest passwords against each of the accounts in an enterprise. This technique allows the attacker to quickly search for an easily compromised account and avoid potential detection thresholds.
+Instead, most password spray attacks submit only a few of the known weakest passwords against each of the accounts in an enterprise. This technique allows the attacker to quickly search for an easily compromised account and avoid potential detection thresholds.
 
 Microsoft Entra Password Protection efficiently blocks all known weak passwords likely to be used in password spray attacks. This protection is based on real-world security telemetry data from Microsoft Entra ID to build the global banned password list.
 
@@ -186,7 +186,7 @@ In the following example scenario, a user changes their password to "C0ntos0Blan
 
 * As this password is under five (5) points, it's rejected.
 
-Let's look a slightly different example to show how additional complexity in a password can build the required number of points to be accepted. In the following example scenario, a user changes their password to "ContoS0Bl@nkf9!":
+Let's look a slightly different example to show how more complexity in a password can build the required number of points to be accepted. In the following example scenario, a user changes their password to "ContoS0Bl@nkf9!":
 
 * After normalization, this password becomes "contosoblankf9!".
 * The matching process finds that this password contains two banned passwords: "contoso" and "blank".
@@ -221,7 +221,7 @@ When a user attempts to reset or change a password to something that would be ba
 > [!NOTE]
 > On-premises AD DS users that aren't synchronized to Microsoft Entra ID also benefit from Microsoft Entra Password Protection based on existing licensing for synchronized users.
 
-Additional licensing information, including costs, can be found on the [Microsoft Entra pricing site](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+For more information about licensing, see [Microsoft Entra pricing site](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
 ## Next steps
 
