@@ -58,7 +58,7 @@ This is done in the Provisioning tab of your SAP Cloud Identity Services applica
 
 ## Add SAP Cloud Identity Services from the gallery
 
-Before configuring Microsoft Entra ID to have automatic user provisioning into SAP Cloud Identity Services, you need to add SAP Cloud Identity Services from the Microsoft Entra application gallery to your tenant's list of enterprise applications.  You can do this step in the Microsoft Entra admin center, or [via the Graph API](~/identity/app-provisioning/application-provisioning-configuration-api.md).
+Before configuring Microsoft Entra ID to have automatic user provisioning into SAP Cloud Identity Services, you need to add SAP Cloud Identity Services from the Microsoft Entra application gallery to your tenant's list of enterprise applications. You can do this step in the Microsoft Entra admin center, or [via the Graph API](~/identity/app-provisioning/application-provisioning-configuration-api.md).
 
 If SAP Cloud Identity Services is already configured for single-sign on from Microsoft Entra, and an application is already present in your Microsoft Entra list of enterprise applications, then continue at the next section.
 
@@ -213,7 +213,7 @@ In the provisioning mapping, the attributes selected as **Matching** properties 
 
 1. Sign in to your SAP Cloud Identity Services Admin Console, `https://<tenantID>.accounts.ondemand.com/admin` or `https://<tenantID>.trial-accounts.ondemand.com/admin` if a trial.
 1. Navigate to **Users & Authorizations > Export Users**.
-1. Select all attributes required for matching Microsoft Entra users with those in SAP. This includes the `SCIM ID`, `userName`, `emails`, and other attributes you may be using in your SAP Systems.
+1. Select all attributes required for matching Microsoft Entra users with those in SAP. These attributes include the `SCIM ID`, `userName`, `emails`, and other attributes you may be using in your SAP systems as identifiers.
 1. Select **Export** and wait for the browser to download the CSV file.
 1. Open a PowerShell window.
 1. Type the following script into an editor. In line one, if you selected a different matching attribute other than `userName`, change the value of the `sapScimUserNameField` variable to the name of the SAP ICloud Identity Services attribute. In line two, change the argument to the filename of the exported CSV file.
@@ -253,7 +253,7 @@ Before enabling automatic user provisioning, you must decide which users in Micr
 
 * By default, the value of the Microsoft Entra user `userPrincipalName` attribute is mapped to both the `userName` and `emails[type eq "work"].value` attributes of SAP Cloud Identity Services. If user's email addresses are different from their user principal names, then you may need to change this mapping.
 * SAP Cloud Identity Services may ignore values of the `postalCode` attribute if the format of Company ZIP/postal code does not match company country.
-* By default, the Microsoft Entra attribute `department` is mapped to the SAP Cloud Identity Services `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department` attribute. If Microsoft Entra users have values of the `department` attribute, those values must match those departments already configured in SAP Cloud Identity Services, otherwise creation or update of the user will fail. If the `department` value in Microsoft Entra is not consistent with those in your SAP environment, then remove the mapping prior to assigning users.
+* By default, the Microsoft Entra attribute `department` is mapped to the SAP Cloud Identity Services `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department` attribute. If Microsoft Entra users have values of the `department` attribute, those values must match those departments already configured in SAP Cloud Identity Services, otherwise creation, or update, of the user will fail. If the `department` value in Microsoft Entra is not consistent with those in your SAP environment, then remove the mapping prior to assigning users.
 * SAP Cloud Identity Services's SCIM endpoint requires certain attributes to be of specific format. You can know more about these attributes and their specific format [here](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/b10fc6a9a37c488a82ce7489b1fab64c.html#).
 
 ## Assign users to the SAP Cloud Identity Services application in Microsoft Entra ID
@@ -301,7 +301,7 @@ The previous steps have evaluated whether the users in SAP Cloud Identity Servic
    Write-Output "$azuread_not_in_role_count users in the application's data store are not assigned to the application roles."
    ```
 
-   If zero users are *not* assigned to application roles, indicating that all users *are* assigned to application roles, then this indicates that there were no users in common across Microsoft Entra and SAP Cloud Identity Services, so no changes are needed.  However, if one or more users already in SAP Cloud Identity Services aren't currently assigned to the application roles, you'll need to continue the procedure and add them to one of the application's roles.
+   If zero users are *not* assigned to application roles, indicating that all users *are* assigned to application roles, then this indicates that there were no users in common across Microsoft Entra and SAP Cloud Identity Services, so no changes are needed. However, if one or more users already in SAP Cloud Identity Services aren't currently assigned to the application roles, you'll need to continue the procedure and add them to one of the application's roles.
 
 1. Select the `User` role of the application.
 
@@ -338,7 +338,7 @@ You may also choose to enable SAML-based single sign-on for SAP Cloud Identity S
 
 ## Monitor provisioning
 
-You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on SAP Cloud Identity Services.   You can also monitor the provisioning project via the Microsoft [Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md#monitor-the-provisioning-job-status).
+You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on SAP Cloud Identity Services. You can also monitor the provisioning project via the Microsoft [Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md#monitor-the-provisioning-job-status).
 
 For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
@@ -349,7 +349,7 @@ As users that are in assigned to the application are updated in Microsoft Entra 
 If you have Microsoft Entra ID Governance, you can automate changes to the application role assignments for SAP Cloud Identity Services in Microsoft Entra ID, to add or remove assignments as people join the organization, or leave or change roles.
 
 * You can [perform a one-time or recurring access review of the application role assignments](~/id-governance/access-reviews-application-preparation.md).
-* You can [deploy entitlement management policies for automating access assignment](~/id-governance/identity-governance-applications-deploy.md#deploy-entitlement-management-policies-for-automating-access-assignment).  You can have policies for users to be assigned access, either when they request, [by an administrator](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-a-user), [automatically based on rules](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md), or through [lifecycle workflows](~/id-governance/entitlement-management-scenarios.md#administrator-assign-employees-access-from-lifecycle-workflows).
+* You can [deploy entitlement management policies for automating access assignment](~/id-governance/identity-governance-applications-deploy.md#deploy-entitlement-management-policies-for-automating-access-assignment). You can have policies for users to be assigned access, either when they request, [by an administrator](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-a-user), [automatically based on rules](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md), or through [lifecycle workflows](~/id-governance/entitlement-management-scenarios.md#administrator-assign-employees-access-from-lifecycle-workflows).
 
 
 ## More resources
