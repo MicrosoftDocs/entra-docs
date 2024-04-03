@@ -55,7 +55,7 @@ When terms are added to the custom banned password list, they're combined with t
 
 ![Modify the custom banned password list under Authentication Methods](./media/tutorial-configure-custom-password-protection/enable-configure-custom-banned-passwords-cropped.png)
 
-Let's consider a customer named *Contoso*. The company is based in London and makes a product named *Widget*. For this example customer, it would be wasteful and less secure to try to block specific variations of these terms such as the following:
+Let's consider a customer named *Contoso*. The company is based in London and makes a product named *Widget*. For this example customer, it would be wasteful and less secure to try to block specific variations of these terms:
 
 - "Contoso!1"
 - "Contoso@London"
@@ -171,7 +171,7 @@ Consider the following example:
 The next step is to identify all instances of banned passwords in the user's normalized new password. Points are assigned based on the following criteria:
 
 1. Each banned password that's found in a user's password is given one point.
-1. Each remaining character that is not part of a banned password is given one point.
+1. Each remaining character that isn't part of a banned password is given one point.
 1. A password must be at least five (5) points to be accepted.
 
 For the next two example scenarios, Contoso is using Microsoft Entra Password Protection and has "contoso" on their custom banned password list. Let's also assume that "blank" is on the global list.
