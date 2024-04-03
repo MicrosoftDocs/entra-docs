@@ -12,7 +12,7 @@ ms.topic: how-to
 ms.date: 11/16/2023
 ms.author: barclayn
 ms.reviewer: sumitp
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro
 ---
 
 # Assign licenses to users by group membership in Microsoft Entra ID

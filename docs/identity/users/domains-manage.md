@@ -12,7 +12,7 @@ ms.date: 03/31/2023
 ms.author: barclayn
 ms.reviewer: sumitp
 
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro
 
 ---
 # Managing custom domain names in your Microsoft Entra ID
