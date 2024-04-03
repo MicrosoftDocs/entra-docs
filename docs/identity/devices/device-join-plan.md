@@ -4,7 +4,6 @@ description: Explains the steps that are required to implement Microsoft Entra j
 
 ms.service: entra-id
 ms.subservice: devices
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 01/24/2023
 

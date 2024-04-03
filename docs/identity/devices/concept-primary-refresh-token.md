@@ -4,7 +4,6 @@ description:  What is the role of and how do we manage the Primary Refresh Token
 
 ms.service: entra-id
 ms.subservice: devices
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
 ms.date: 01/31/2024
 
