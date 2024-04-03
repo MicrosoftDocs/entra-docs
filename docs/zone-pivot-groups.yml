@@ -56,15 +56,6 @@ groups:
     title: I don't have an API
   - id: api
     title: I have an API
-## WEB APP ##
-- id: python-web-app
-  title: python-web-app
-  prompt: Choose a Python Framework
-  pivots:
-  - id: flask
-    title: Flask
-  - id: django
-    title: Django
 ## Custom authentication extensions ##
 - id: custom-auth-extension
   title: custom-auth-extension
