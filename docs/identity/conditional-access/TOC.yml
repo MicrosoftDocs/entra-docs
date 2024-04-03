@@ -17,7 +17,7 @@
     href: concept-conditional-access-policies.md
   - name: Assignments
     items: 
-     - name: Users and groups
+     - name: Users, groups, and roles
        href: concept-conditional-access-users-groups.md
      - name: Target resources
        href: concept-conditional-access-cloud-apps.md
