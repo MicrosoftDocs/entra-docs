@@ -4,7 +4,7 @@ description: "Create new Python web app project, add UI templates, and add requi
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.date: 03/18/2024
+ms.date: 04/03/2024
 ms.service: identity-platform
 
 ms.topic: tutorial
@@ -13,9 +13,9 @@ ms.topic: tutorial
 
 # Prepare a Python web app for authentication
 
-This tutorial is part 2 of a series that demonstrates building a Python Flask web app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](tutorial-web-app-python-register-app.md), you registered and configured the application in your Microsoft Entra ID tenant.
+This tutorial is part 2 of a series that demonstrates building a Python Flask web app and adding sign in support using the Microsoft identity platform. In [part 1 of this series](tutorial-web-app-python-register-app.md), you registered and configured the application in your Microsoft Entra ID tenant.
 
-In this tutorial: 
+In this tutorial, you: 
 
 > [!div class="checklist"]
 >
@@ -33,22 +33,22 @@ In this tutorial:
 
 ## Create a new Python web app project
 
-To complete the rest of the tutorial, you need to create a Python Flask web app project. If you prefer using a completed code sample for learning, download the [Python Flask web app sample](https://github.com/Azure-Samples/ms-identity-docs-code-python/flask-web-app) from GitHub. 
+To complete the rest of the tutorial, you need to create a Python Flask web app project. If you prefer using a completed code sample for learning, download the [Python Flask web app sample](https://github.com/Azure-Samples/ms-identity-docs-code-python/tree/main/flask-web-appp) from GitHub. 
 
 To build the Python Flask web app from scratch, follow these steps:
 
 1. Create a folder to host your application and name it *flask-web-app*.
 1. Navigate to your project directory and create three files named *app.py*, *app.config.py*, and *requirements.txt*.
 1. Create an .env file in the root folder of the project.
-1. Create a folder named *templates* in your project root directory. Flask will look for rendering templates in this subdirectory. 
+1. Create a folder named *templates* in your project root directory. Flask looks for rendering templates in this subdirectory. 
 
-After you create the files, your project's file and directory structure should be similar to the following:
+After you create the files, your project's file and directory should be similar to the following structure:
 
 ```
 python-webapp/
 ├── templates/
-│     ├── auth.error.html
-│     ├── config.error.html
+│     ├── auth_error.html
+│     ├── config_error.html
 │     ├── display.html
 │     ├── index.html
 │     ├── login.html
@@ -73,7 +73,7 @@ python-dotenv<0.22
 
 ## Add application UI components
 
-Flask uses the helper function `render_template()` for rendering HTML templates containing both static and dynamic content. In this section, you create HTML templates for each of the routes you define in the app, including login, logout, API calls, and error templates. Follow these steps to create templates for each of these pages:
+Flask uses the helper function `render_template()` for rendering HTML templates containing both static and dynamic content. In this section, you create HTML templates for each of the routes you define in the app, including sign-in, sign-out, API calls, and error templates. Follow these steps to create templates for each of these pages:
 
 #### Login templates
 
@@ -111,11 +111,11 @@ In the templates folder, create an HTML file named *login.html* and add the foll
 </html>
 ```
 
-This template represents the login page where users can log in to your application.
+This template represents the login page where users can sign in to your application.
 
 #### Index template
 
-In the templates folder, create a HTML file named *index.html* and add the following content: 
+In the templates folder, create an HTML file named *index.html* and add the following content: 
 
 ```html
 <!DOCTYPE html>
@@ -149,7 +149,7 @@ The index template serves as a homepage for the web app, rendered when users vis
 
 #### Display page
 
-This template is used to display the result of a downstream API call. Add the following snippet to `display.html`
+This template is used to display the result of a downstream API call. Add the following snippet to *display.html*.
 
 ```html
 <!DOCTYPE html>
@@ -170,8 +170,10 @@ This template is used to display the result of a downstream API call. Add the fo
 
 **Auth error template**
 
+In the templates folder, create an HTML file called *auth_error.html* that displays any error messages that may come up. Add the following code to *auth_error.html.*
+
 ```html
-<!DOCTYPE html>
+<!DOCTYPE html>*
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -198,6 +200,8 @@ This template is used to display the result of a downstream API call. Add the fo
 ```
 
 **Config error template**
+
+In the templates folder, create an HTML file called *config_error.html* that displays a message when a required configuration is missing. Add the following code to *config_error.html*.
 
 ```html
 <!DOCTYPE html>

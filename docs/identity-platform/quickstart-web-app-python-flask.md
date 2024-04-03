@@ -4,7 +4,7 @@ description: In this quickstart, you configure and run a Python Flask web app th
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.date: 03/18/2024
+ms.date: 04/03/2024
 ms.service: identity-platform
 ms.topic: quickstart
 #Customer intent: As a Python web app developer, I want to sign in users and call the Microsoft Graph API using my application.
@@ -108,7 +108,7 @@ cd flask-web-app
 
 1. Follow the steps and enter the necessary details to sign in with your Microsoft account. You're requested to provide an email address and password to sign in.
 
-1. The application requests permission to maintain access to data you have given it access to, and to sign you in and read your profile, as shown. Select Accept.
+1. The application requests permission to maintain access to data you've given it access to, and to sign you in and read your profile, as shown. Select Accept.
 
   ![Diagram that shows the sample app requesting for consent to access the required permissions.](media/python-webapp/consent.png)
 
@@ -124,11 +124,11 @@ The following diagram demonstrates how the sample app works:
 
 1. The application uses the [`identity` package](https://pypi.org/project/identity/) to obtain an access token from the Microsoft identity platform. This package is built on top of the Microsoft Authentication Library (MSAL) for Python to simplify authentication and authorization in web apps.
 
-1. The access token you obtain in the step above is used as a bearer token to authenticate the user when calling the Microsoft Graph API.
+1. The access token you obtain in the previous step is used as a bearer token to authenticate the user when calling the Microsoft Graph API.
 
 ## Next steps
 
-Learn more by building an Python web app that signs in users and calls a protected web API in the following multi-part tutorial series:
+Learn more by building a Python web app that signs in users and calls a protected web API in the following multi-part tutorial series:
 
 > [!div class="nextstepaction"]
 > [Tutorial: Web app that signs in users](tutorial-web-app-python-register-app.md)

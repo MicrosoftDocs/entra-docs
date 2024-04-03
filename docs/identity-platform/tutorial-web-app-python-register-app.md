@@ -4,7 +4,7 @@ description: In this tutorial, you learn how to register a Python web app with t
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.date:  03/18/2024
+ms.date:  04/03/2024
 ms.service: identity-platform
 
 ms.topic: tutorial
@@ -13,12 +13,12 @@ ms.topic: tutorial
 
 # Tutorial: Register a Python web app with the Microsoft identity platform
 
-This tutorial series demonstrates how to build a Python web app and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for Python](/entra/msal/python/) library to authenticate your app with your Microsoft Entra ID tenant. Finally, you'll run the application and test the sign-in, call a protected API, and sign-out experiences.
+This tutorial series demonstrates how to build a Python web app that signs in users and calls a protected web API. You use the [Microsoft Authentication Library for Python](/entra/msal/python/) library to authenticate users in your Microsoft Entra ID tenant. Finally, you'll run the app to sign-in, call a protected API, and sign out users.
 
-In this tutorial, you'll;
+In this tutorial, you:
 
 > [!div class="checklist"]
-> * Register a web application in the Microsoft Entra admin center, and record its identifiers
+> * Register a web app in the Microsoft Entra admin center and record its identifiers
 > * Define the platform and URLs
 > * Create a client secret for the web app
 > * Grant permissions to the web app to access the Microsoft Graph API
@@ -51,7 +51,7 @@ To add a redirect URI for your Python Flask web app, follow these steps:
 1. In the Microsoft Entra Admin Center, in **App registrations**, select your application.
 1. Under **Manage**, select **Authentication**.
 1. Under **Platform configurations**, select **Add a platform**, then select **Web**.
-1. Upon selecting web as your app's platform, you'll be prompted to enter a redirect URI. Add `http://localhost:5000/getAToken` as the redirect URI for your web app.  
+1. Upon selecting web as your app's platform, you're prompted to enter a redirect URI. Add `http://localhost:5000/getAToken` as the redirect URI for your web app.  
 1. Select **Configure**.
 
 ## Configure credentials
@@ -68,6 +68,17 @@ For this tutorial, you'll use a client secret, also known as an application pass
 1. Record the client secret value (not its ID) for use in a later step. This secret value is only shown once when you create it and never displayed after leaving this page.
 
 Although you used a client secret in this tutorial, we recommend using a certificate before moving the application to a production environment. For more information on how to use a certificate, see [these instructions](./certificate-credentials.md).
+
+## Add a scope
+
+Since this app signs in users, you need to add delegated permissions:
+
+1. Under **Manage**, select **API permissions** > **Add a permission**.
+1. Ensure that the **Microsoft APIs** tab is selected.
+1. From the **Commonly used Microsoft APIs** section, select **Microsoft Graph**.
+1. From the **Delegated permissions** section, ensure that **User.Read** is selected. Use the search box if necessary.
+1. Select **Add permissions**.
+
 
 ## Next steps
 
