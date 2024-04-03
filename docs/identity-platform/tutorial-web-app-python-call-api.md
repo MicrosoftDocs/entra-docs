@@ -41,13 +41,22 @@ def call_downstream_api():
     return render_template('display.html', result=api_result)
 ``` 
 
-When a user navigates to the `/call_downstream_api` URL route, Flask invokes the `call_downstream_api()` function that first attempts to obtain an access token using `auth.get_token_for_user(app_config.SCOPE)`.  If there's an authentication issue or any error in the token, you redirect the user to the log in page for reauthentication.
+When a user navigates to the `/call_downstream_api` URL route, Flask invokes the `call_downstream_api()` function that first attempts to obtain an access token using `auth.get_token_for_user(app_config.SCOPE)`. If there's an authentication issue or any error in the token, redirect the user to the sign-in page for reauthentication.
 
 If the app successfully obtains an access token, it makes an HTTP request to the downstream API using the `requests.get(...)` method. In the request, our downstream API URL is specified in `app_config.ENDPOINT`. You also pass the access token in the `Authorization` field of the request header. 
 
-A successful request to the downstream API (Microsoft Graph API) returns a JSON response that's stored in an `api_result` variable and passed to the `'display.html'` template for rendering. 
+A successful request to the downstream API (Microsoft Graph API) returns a JSON response stored in an `api_result` variable and passed to the `display.html` template for rendering. 
 
-## Test the application
+## Add code to run the app
+
+To run your app, add the following code snippet at the end of your *app.py* file.
+
+```python
+if __name__ == "__main__":
+    app.run()
+```
+
+## Test the app
 
 Follow these steps to test the sign in, call API, and sign out experiences in your web app:
 
@@ -75,7 +84,7 @@ Follow these steps to test the sign in, call API, and sign out experiences in yo
     :::image type="content" source="./media/python-webapp/sign-in-page.png" alt-text="Screenshot showing the sign-in screen.":::
 1. Your browser will redirect you to provide a password for your account. Enter the password and select **Sign in**.
 
-    At this point, the sign-in flow may vary depending on the additional security information your organization requires, for example, multifactor authentication using an authenticator app.
+    At this point, the sign-in flow might vary depending on the security information your organization requires, for example, multifactor authentication using an authenticator app.
 
 1. For **Stay signed in**, you can select either **No** or **Yes**.
 
@@ -91,12 +100,12 @@ Follow these steps to test the sign in, call API, and sign out experiences in yo
 
     :::image type="content" source="./media/python-webapp/call-api-results.png" alt-text="Screenshot showing the results of a successful API call.":::
 
-## Sign out from the application
+## Sign out of the app
 
 1. Find the **Logout** link in the top right corner of the page, and select it.
 1. You're prompted to pick an account to sign out from. Select the account you used to sign in.
 1. A message appears indicating that you signed out. You can now close the browser window.
 
-## Next steps
+## See also
 
-TBD
+The app you built uses the [identity library](https://identity-library.readthedocs.io/en/latest/), which abstracts most details of the Microsoft Authentication Library (MSAL) for Python. For more information on how to use MSAL Python for different scenarios, see the [MSAL Python documentation](/entra/msal/python/).

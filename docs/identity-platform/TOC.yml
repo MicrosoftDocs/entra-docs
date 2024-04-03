@@ -181,9 +181,9 @@
         - name: Java
           href: quickstart-web-app-java-sign-in.md
         - name: Python
-          href: quickstart-web-app-python-sign-in.md
-        - name: Python Flask
-          href: quickstart-web-app-python-flask.md
+          items:
+            - name: Flask
+              href: quickstart-web-app-python-flask.md
     - name: Tutorials
       items:
         - name: ASP.NET Core
