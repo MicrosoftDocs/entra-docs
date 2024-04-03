@@ -93,13 +93,13 @@ You can also use an integrated development environment to open the folder.
 1. Install the requirements using `pip`:
 
     ```shell
-    python3 -m pip install -r requirements.txt
+    python -m pip install -r requirements.txt
     ```
 
 2. Run the app from the command line, specifying the host and port to match the redirect URI:
 
     ```shell
-    python3 -m flask run --debug --host=localhost --port=5000
+    python -m flask run --debug --host=localhost --port=5000
     ```
 
    > [!IMPORTANT]

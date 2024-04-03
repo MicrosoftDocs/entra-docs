@@ -87,11 +87,11 @@ Users are blocked from granting consent to the application, and they're told to 
 
 :::image type="content" source="./media/application-consent-experience/consent_prompt_2b.png" alt-text="Screenshot of the consent prompt telling the user to ask an admin for access to the app.":::
 
-### Admin consent through the Azure portal
+### Admin consent through the Microsoft Entra admin center
 
-In this scenario, an administrator consents to all of the permissions that an application requests, which can include delegated permissions on behalf of all users in the tenant. The Administrator grants consent through the **API permissions** page of the application registration in the [Azure portal](https://portal.azure.com).
+In this scenario, an administrator consents to all of the permissions that an application requests, which can include delegated permissions on behalf of all users in the tenant. The administrator grants consent through the **API permissions** page of the application registration in the [Microsoft Entra admin center](https://entra.microsoft.com).
 
- :::image type="content" source="./media/consent-framework/grant-consent.png" alt-text="Screenshot of explicit admin consent through the Azure portal." lightbox="./media/consent-framework/grant-consent.png":::
+ :::image type="content" source="./media/consent-framework/grant-consent.png" alt-text="Screenshot of explicit admin consent through the Microsoft Entra admin center." lightbox="./media/consent-framework/grant-consent.png":::
 
 All users in that tenant won't see the consent dialog unless the application requires new permissions. To learn which administrator roles can consent to delegated permissions, see [Administrator role permissions in Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md).
 
