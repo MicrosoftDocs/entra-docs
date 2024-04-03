@@ -4,7 +4,6 @@ description: Microsoft-managed policies take action to require multifactor authe
 
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
 ms.date: 02/08/2024
 
