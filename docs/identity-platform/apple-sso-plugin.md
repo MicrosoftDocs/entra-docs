@@ -54,6 +54,7 @@ To use the Microsoft Enterprise SSO plug-in for Apple devices:
 
   - `app-site-association.cdn-apple.com`
   - `app-site-association.networking.apple`
+  - `config.edge.skype.com`
   - `login.microsoftonline.com`(*)
   - `login.microsoft.com`(*)
   - `sts.windows.net`(*)
