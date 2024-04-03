@@ -145,6 +145,8 @@ This article shows how to register a passkey using a security key with your iOS 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-finish.png" alt-text="Screenshot showing final passkey registration step on Android.":::
 
+---
+
 ## Next steps
 
-[Choosing authentication methods for your organization](concept-authentication-methods.md)
+- [Choosing authentication methods for your organization](concept-authentication-methods.md)

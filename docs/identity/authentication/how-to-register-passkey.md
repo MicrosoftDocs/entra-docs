@@ -77,8 +77,8 @@ This article shows how to register a passkey using a browser and sign-in with a 
    > If your organization rquires specific a specific passkey provider or security key an Authenticator Attestation GUID (AAGUID) or provider name will be provided. 
 
 1. Tap **Next**, then you’re directed to `login.microsoft.com`.
-1. If you have yet to sign in with multifactor authentication (MFA),, you're asked to sign-in.
-   1. If you don't have at least one MFA method registered, you won't be able to register a passkey. 
+1. If you have yet to sign in with multifactor authentication (MFA), you're asked to sign-in.
+   1. If you don't have at least one MFA method registered, you're not able to register a passkey. 
    1. An Authentication Policy Administrator can also issue a [Temporary Access Pass](howto-authentication-temporary-access-pass.md) to allow a user to strongly authenticate and register a passkey.
 
 1. A security dialog opens on your device and asks where you would like to save your passkey. 
