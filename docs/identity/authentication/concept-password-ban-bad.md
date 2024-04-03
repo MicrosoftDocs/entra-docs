@@ -10,7 +10,7 @@ ms.date: 04/03/2024
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: rogoya
+ms.reviewer: miminans
 ---
 # Eliminate bad passwords using Microsoft Entra Password Protection
 
