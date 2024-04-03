@@ -51,7 +51,7 @@ By default, selecting **Any location** causes a policy to apply to all IP addres
 This option applies to:
 
 - All locations marked as trusted locations.
-- **MFA Trusted IPs**, if configured.
+- Multifactor authentication trusted IPs, if configured.
 
 #### Multifactor authentication trusted IPs
 
@@ -118,9 +118,10 @@ When selecting **Determine location by IP address**, Microsoft Entra ID resolves
 When selecting **Determine location by GPS coordinates**, users must have the Microsoft Authenticator app installed on their mobile device. Every hour, the system contacts the user’s Microsoft Authenticator app to collect the GPS location of their mobile device.
 
 - The first time the user must share their location from the Microsoft Authenticator app, they receive a notification in the app. The user must open the app and grant location permissions. For the next 24 hours, if the user is still accessing the resource and granted the app permission to run in the background, the device's location is shared silently once per hour.
-- After 24 hours, the user must open the app and approve the notification. Users who have number matching or additional context enabled in the Microsoft Authenticator app don't receive notifications silently. Users must open the app to approve notifications.
-- Every time the user shares their GPS location, the app does jailbreak detection (Using the same logic as the Microsoft Intune MAM SDK). If the device is jailbroken, the location isn't considered valid, and the user isn't granted access. 
+- After 24 hours, the user must open the app and approve the notification.
+- Every time the user shares their GPS location, the app does jailbreak detection using the same logic as the Microsoft Intune MAM SDK. If the device is jailbroken, the location isn't considered valid, and the user isn't granted access. 
    - The Microsoft Authenticator app on Android uses the Google Play Integrity API to facilitate jailbreak detection. If the Google Play Integrity API is unavailable, the request is denied and the user isn't able to access the requested resource unless the Conditional Access policy is disabled. For more information about the Microsoft Authenticator app, see the article [Common questions about the Microsoft Authenticator app](https://support.microsoft.com/account-billing/common-questions-about-the-microsoft-authenticator-app-12d283d1-bcef-4875-9ae5-ac360e2945dd).
+- Users might modify the GPS location as reported by iOS and Android devices. As a result, the Microsoft Authenticator app denies authentications where the user might be using a different location than the actual GPS location of the mobile device where the app is installed. Users who modify the location of their device get a denial message for GPS location-based based policies.
 
 > [!NOTE]
 > A Conditional Access policy with GPS-based named locations in report-only mode prompts users to share their GPS location, even though they aren't blocked from signing in.
@@ -135,10 +136,6 @@ Multiple Conditional Access policies might prompt users for their GPS location b
 #### Include unknown countries/regions
 
 Some IP addresses don't map to a specific country or region. To capture these IP locations, check the box **Include unknown countries/regions** when defining a geographic location. This option allows you to choose if these IP addresses should be included in the named location. Use this setting when the policy using the named location should apply to unknown locations.
-
-#### Requests with modified GPS location
-
-Users might modify the GPS location as reported by iOS and Android devices. As a result, the Microsoft Authenticator app denies authentications where the user might be using a different location than the actual GPS location of the mobile device where the app is installed. Users who modify the location of their device get a denial message for GPS location-based based policies. 
 
 ## Common questions
 
