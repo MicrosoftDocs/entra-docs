@@ -109,7 +109,7 @@ To define a named location by country, you must provide:
 - A **Name** for the location.
 - Choose to determine location by IP address or GPS coordinates.
 - Add one or more countries/regions.
-- Optionally choose to **Include unknown countries/regions**.
+- Optionally choose to **[Include unknown countries/regions](#include-unknown-countriesregions)**.
 
 :::image type="content" source="media/concept-assignment-network/new-location-countries.png" alt-text="Screenshot of creating a new location using countries." lightbox="media/concept-assignment-network/new-location-countries.png":::
 
