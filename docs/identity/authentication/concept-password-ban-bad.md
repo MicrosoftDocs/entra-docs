@@ -5,7 +5,7 @@ description: Learn how to dynamically ban weak passwords from your environment w
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/29/2023
+ms.date: 04/03/2024
 
 ms.author: justinha
 author: justinha
@@ -101,7 +101,10 @@ For more information, see [Enforce Microsoft Entra Password Protection for AD DS
 
 When a user changes or resets their password, the new password is checked for strength and complexity by validating it against the combined list of terms from the global and custom banned password lists.
 
-Even if a user's password contains a banned password, the password may be accepted if the overall password is otherwise strong enough. A newly configured password goes through the following steps to assess its overall strength to determine if it should be accepted or rejected:
+Even if a user's password contains a banned password, the password may be accepted if the overall password is otherwise strong enough. A newly configured password goes through the following steps to assess its overall strength to determine if it should be accepted or rejected.
+
+>[!IMPORTANT] 
+>Password protection in Microsoft Entra ID doesn't correlate with password protection for on-premises users. The validations in password protection aren't consistent for users across the two services. Make sure the users in your tenant meet the required password parameters for their respective service when initally setting their password or completing SSPR.
 
 ### Step 1: Normalization
 
