@@ -416,9 +416,9 @@ If you would like to enable Secure Enclave based storage of device identity keys
 > [!NOTE]
 > For this flag to take effect, it must be applied to a new registration. It will not impact devices that have already been registered unless they re-register.
 
-|Key|    Type     | Value |
-|--------------------------|----------|-------|
-| use_most_secure_storage  | Boolean  | True  |
+- **Key**: `use_most_secure_storage`
+- **Type**: `Boolean`
+- **Value**: True
 
 The screenshot below shows the configuration page and settings for enabling Secure Enclave in Microsoft Intune. 
 
