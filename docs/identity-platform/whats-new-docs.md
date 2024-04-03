@@ -21,8 +21,8 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 ### New articles
 
 - [Create a REST API with a token issuance start event for Azure Functions (preview)](custom-extension-tokenissuancestart-setup.md) - Custom authentication extensions NuGet libraries
-- [Microsoft account (MSA) Server Side API Reference](reference-msa-server-side-api.md) - API reference for EU Regulation
-- [Microsoft Entra ID Windows Account Manager (WAM) API Reference](reference-entra-id-wam-api.md) - API reference for EU Regulation
+- [Microsoft account (MSA) Server Side API Reference](reference-msa-server-side-api.md) - API reference for EU regulation
+- [Microsoft Entra ID Windows Account Manager (WAM) API Reference](reference-entra-id-wam-api.md) - API reference for EU regulation
 
 ### Updated articles
 
