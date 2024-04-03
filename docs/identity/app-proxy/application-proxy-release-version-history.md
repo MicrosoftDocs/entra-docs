@@ -44,7 +44,7 @@ The new name is now the Microsoft Entra private network connector. This rebrandi
 > [!NOTE]
 > A reboot is required when you install or upgrade the connector.
 
-* Submit request for onboarding to the Early Access Preview at [https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR9iJt1_k-HZBpNjGBIMz6XZUNzNSRjc2UlozUDNHT1dDNzI0Q1gxWVc1Sy4u](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR9iJt1_k-HZBpNjGBIMz6XZUNzNSRjc2UlozUDNHT1dDNzI0Q1gxWVc1Sy4u).
+* Submit request for onboarding to the Early Access Preview [here](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR9iJt1_k-HZBpNjGBIMz6XZUNzNSRjc2UlozUDNHT1dDNzI0Q1gxWVc1Sy4u).
 
 Refer to the table for updated paths.
 
