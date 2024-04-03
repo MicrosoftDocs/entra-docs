@@ -11,7 +11,7 @@ ms.date: 01/23/2024
 ms.author: mimart
 
 ms.collection: M365-identity-device-management
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: 
 #customer intent: As a B2B collaboration user, I want to customize the language of the authentication experience in Microsoft Entra External ID, so that I can accommodate different languages for my users and provide a personalized user flow.
 ---
 

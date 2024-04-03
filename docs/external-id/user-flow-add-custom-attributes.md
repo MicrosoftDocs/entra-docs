@@ -9,7 +9,7 @@ ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 01/23/2024
 ms.author: mimart
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
 
 #customer intent: As a B2B collaboration user flow administrator, I want to define custom attributes for user flows in Microsoft Entra, so that I can collect specific information during sign-up and extend the set of attributes stored on a guest account.
