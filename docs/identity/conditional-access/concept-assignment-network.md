@@ -104,9 +104,9 @@ Locations marked as trusted can't be deleted without first removing the trusted 
 
 Organizations can determine a geographic country location by IP address or GPS coordinates.
 
-To define a named location by country, you must provide: 
+To define a named location by country, you must: 
 
-- A **Name** for the location.
+- Provide a **Name** for the location.
 - Choose to determine location by IP address or GPS coordinates.
 - Add one or more countries/regions.
 - Optionally choose to **[Include unknown countries/regions](#include-unknown-countriesregions)**.
@@ -118,9 +118,7 @@ When selecting **Determine location by IP address**, Microsoft Entra ID resolves
 When selecting **Determine location by GPS coordinates**, users must have the Microsoft Authenticator app installed on their mobile device. Every hour, the system contacts the user’s Microsoft Authenticator app to collect the GPS location of their mobile device.
 
 - The first time the user must share their location from the Microsoft Authenticator app, they receive a notification in the app. The user must open the app and grant location permissions. For the next 24 hours, if the user is still accessing the resource and granted the app permission to run in the background, the device's location is shared silently once per hour.
-
 - After 24 hours, the user must open the app and approve the notification. Users who have number matching or additional context enabled in the Microsoft Authenticator app don't receive notifications silently. Users must open the app to approve notifications.
-
 - Every time the user shares their GPS location, the app does jailbreak detection (Using the same logic as the Microsoft Intune MAM SDK). If the device is jailbroken, the location isn't considered valid, and the user isn't granted access. 
    - The Microsoft Authenticator app on Android uses the Google Play Integrity API to facilitate jailbreak detection. If the Google Play Integrity API is unavailable, the request is denied and the user isn't able to access the requested resource unless the Conditional Access policy is disabled. For more information about the Microsoft Authenticator app, see the article [Common questions about the Microsoft Authenticator app](https://support.microsoft.com/account-billing/common-questions-about-the-microsoft-authenticator-app-12d283d1-bcef-4875-9ae5-ac360e2945dd).
 
