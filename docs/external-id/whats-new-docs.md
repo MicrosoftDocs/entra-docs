@@ -15,7 +15,7 @@ manager: CelesteDG
 
 Welcome to what's new in Microsoft Entra External ID documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
-## March 202
+## March 2024
 
 ### Updated articles
 
