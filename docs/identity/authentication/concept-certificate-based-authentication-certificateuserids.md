@@ -11,7 +11,7 @@ ms.author: justinha
 author: vimrang
 manager: amycolannino
 ms.reviewer: vranganathan
-ms.custom: has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-adal-ref
 ---
 
 # Mapping to the certificateUserIds attribute in Microsoft Entra ID
