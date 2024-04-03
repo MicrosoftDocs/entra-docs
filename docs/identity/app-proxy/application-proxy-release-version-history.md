@@ -24,7 +24,7 @@ Here's a list of related resources:
 | Understand Microsoft Entra application proxy connectors | Find out more about [connector management](application-proxy-connectors.md) and how connectors [autoupgrade](application-proxy-connectors.md#automatic-updates). |
 | Microsoft Entra application proxy connector Download    | [Download the latest connector](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download). |
 
-## Version 1.5.3828.0
+## Version 1.5.3829.0
 
 ### Release status
 
@@ -44,7 +44,7 @@ The new name is now the Microsoft Entra private network connector. This rebrandi
 > [!NOTE]
 > A reboot is required when you install or upgrade the connector.
 
-* Submit request for onboarding to the Early Access Preview [here](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR9iJt1_k-HZBpNjGBIMz6XZUNzNSRjc2UlozUDNHT1dDNzI0Q1gxWVc1Sy4u).
+*Submit request for onboarding to the Early Access Preview [here](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR9iJt1_k-HZBpNjGBIMz6XZUNzNSRjc2UlozUDNHT1dDNzI0Q1gxWVc1Sy4u).
 
 Refer to the table for updated paths.
 
