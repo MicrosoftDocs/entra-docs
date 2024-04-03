@@ -13,7 +13,6 @@ ms.reviewer: vranganathan
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps-article
 
-
 #customer intent: As an IT admin responsible for managing access to cloud services, I want to restrict access to approved resources for users in my organization, so that I can ensure security and compliance.
 ---
 
