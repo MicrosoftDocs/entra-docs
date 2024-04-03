@@ -5,7 +5,6 @@ description: This article describes how to use the Microsoft Entra admin center 
 
 ms.service: entra-id
 ms.subservice: devices
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 09/27/2023
 
