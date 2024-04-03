@@ -91,6 +91,8 @@ GET https://graph.microsoft.com/v1.0/users/{id}?$select=displayName,extension_in
 ### Create an extension attribute on a cloud only user using PowerShell
 Create a custom extension using PowerShell and assign a value to a user.
 
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
+
 ```PowerShell
 #Connect to your Azure AD tenant
 Connect-AzureAD

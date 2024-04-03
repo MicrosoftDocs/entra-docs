@@ -1,5 +1,5 @@
 ---
-title: "Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript"
+title: "Quickstart: Sign in to a SPA & call an API - JavaScript"
 description: In this quickstart, learn how a JavaScript single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow.
 author: henrymbuguakiarie
 manager: CelesteDG
@@ -82,4 +82,4 @@ A message appears indicating that you have signed out. You can now close the bro
 
 - [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](./quickstart-web-api-aspnet-core-protect-api.md).
 
-- Learn more by building this JavaScript SPA from scratch with the following series - [Tutorial: Sign in users and call Microsoft Graph](./tutorial-v2-javascript-spa.md)
+- Learn more by building this JavaScript SPA from scratch with the following series - [Tutorial: Sign in users and call Microsoft Graph](./tutorial-v2-javascript-auth-code.md)

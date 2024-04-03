@@ -109,7 +109,7 @@ The following example describes the end-to-end user provisioning solution archit
 
 #### Description of workflow
 
-The following key steps are indicated in the diagram:  
+The following key steps are indicated in the diagram:
 
 1. **HR team** performs the transactions in the cloud HR app tenant.
 2. **Microsoft Entra provisioning service** runs the scheduled cycles from the cloud HR app tenant and identifies changes to process for sync with Active Directory.

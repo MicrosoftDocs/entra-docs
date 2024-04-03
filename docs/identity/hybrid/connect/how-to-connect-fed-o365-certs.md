@@ -84,6 +84,8 @@ On your AD FS server, open the MSOnline PowerShell prompt, and connect to Micros
 Install-Module MSOnline
 ```
 
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
+
 Connect to Microsoft Entra ID using the MSOnline PowerShell-Module.
 
 ```azurepowershell-interactive

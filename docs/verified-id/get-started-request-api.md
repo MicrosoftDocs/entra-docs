@@ -519,7 +519,7 @@ The request payload contains the [issuance](issuance-request-api.md#callback-eve
 
 The following diagram describes the call your app makes to the Request Service REST API and the callbacks to your application.
 
-![Diagram that shows the call to the API and the callback events.](media/get-started-request-api/callback-events.png)
+:::image type="content" source="media/get-started-request-api/callback-events.png" alt-text="Diagram that shows the call to the API and the callback events.":::
 
 Configure your endpoint to listen to incoming HTTP POST requests. The following code snippet demonstrates how to handle the issuance callback HTTP request and how to update the UI accordingly:
 

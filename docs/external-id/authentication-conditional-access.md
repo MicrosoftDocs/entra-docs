@@ -155,6 +155,8 @@ Fabrikam must have sufficient premium Microsoft Entra ID licenses that support M
 
 The following PowerShell cmdlets are available to *proof up* or request MFA registration from B2B collaboration users.
 
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
+
 1. Connect to Microsoft Entra ID:
 
    ```powershell

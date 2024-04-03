@@ -13,6 +13,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 02/27/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Asana so that I can streamline the user management process and ensure that users have the appropriate access to Asana.
 ---
 
 # Tutorial: Configure Asana for automatic user provisioning

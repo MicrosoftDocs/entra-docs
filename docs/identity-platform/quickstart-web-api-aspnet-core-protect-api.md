@@ -126,5 +126,4 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 ## Related content
 
 - [How-to: Call an ASP.NET Core web API with cURL](howto-call-a-web-api-with-curl.md)
-- [How-to: Call an ASP.NET Core web API with Postman](howto-call-a-web-api-with-postman.md)
 - Learn more by building this Web API from scratch with the following series - [Tutorial: Register a web API with the Microsoft identity platform](./web-app-tutorial-01-register-application.md)

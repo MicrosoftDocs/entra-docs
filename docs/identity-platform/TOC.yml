@@ -276,8 +276,6 @@
       href: sample-v2-code.md#web-api
     - name: How-to
       items:
-        - name: Call a Web API with Postman
-          href: howto-call-a-web-api-with-postman.md
         - name: Call a Web API with cURL
           href: howto-call-a-web-api-with-curl.md
         - name: Protected web API
@@ -419,7 +417,7 @@
     - name: Quickstart
       items:
         - name: .NET
-          href: quickstart-console-app-netcore-acquire-token.md
+          href: quickstart-daemon-dotnet-acquire-token.md
         - name: Java
           href: quickstart-daemon-app-java-acquire-token.md
         - name: Node.js
