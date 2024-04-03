@@ -14,9 +14,9 @@ ms.reviewer: arvinh
 
 # Configure provisioning using Microsoft Graph APIs
 
-The Microsoft Entra admin center is a convenient way to configure provisioning for individual apps one at a time. But if you're creating several—or even hundreds—of instances of an application, or migrating application configuration from one environment to another, it can be easier to automate app creation and configuration with the Microsoft Graph APIs. This article outlines how to automate provisioning configuration through APIs.  This method is commonly used for applications like [Amazon Web Services](~/identity/saas-apps/amazon-web-service-tutorial.md#configure-azure-ad-sso).
+The Microsoft Entra admin center is a convenient way to configure provisioning for individual apps one at a time. But if you're creating several—or even hundreds—of instances of an application, or migrating application configuration from one environment to another, it can be easier to automate app creation and configuration with the Microsoft Graph APIs. This article outlines how to automate provisioning configuration through APIs. This method is commonly used for applications like [Amazon Web Services](~/identity/saas-apps/amazon-web-service-tutorial.md#configure-azure-ad-sso).
 
-This article illustrates the process with APIs in the [Microsoft Graph beta endpoint](/graph/api/overview?view=graph-rest-beta&preserve-view=true) and Microsoft Graph Explorer; similar APIs are also available in the [Microsoft Graph v1.0 endpoint](/graph/api/overview?view=graph-rest-1.0&preserve-view=true).  For an example of configuring provisioning with Graph v1.0 and PowerShell, see steps 6-13 of [Configure cross-tenant synchronization using PowerShell or Microsoft Graph API](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure-graph.md?tabs=ms-powershell).
+This article illustrates the process with APIs in the [Microsoft Graph beta endpoint](/graph/api/overview?view=graph-rest-beta&preserve-view=true) and Microsoft Graph Explorer; similar APIs are also available in the [Microsoft Graph v1.0 endpoint](/graph/api/overview?view=graph-rest-1.0&preserve-view=true). For an example of configuring provisioning with Graph v1.0 and PowerShell, see steps 6-13 of [Configure cross-tenant synchronization using PowerShell or Microsoft Graph API](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure-graph.md?tabs=ms-powershell).
 
 
 **Overview of steps for using Microsoft Graph APIs to automate provisioning configuration**
@@ -30,7 +30,7 @@ This article illustrates the process with APIs in the [Microsoft Graph beta endp
 |[Step 4. Start provisioning job](#step-4-start-the-provisioning-job)     |Start the job         |
 |[Step 5. Monitor provisioning](#step-5-monitor-provisioning)     |Check the status of the provisioning job <br> Retrieve the provisioning logs         |
 
-If you are provisioning to an on-premises application, then there is an additional step to assign the provisioning agent to the application.
+If you are provisioning to an on-premises application, then you will also need to install and configure the provisioning agent, and assign the provisioning agent to the application.
 
 ## Step 1: Create the gallery application
 
