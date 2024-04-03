@@ -175,12 +175,6 @@ A policy that uses the location condition to block access is considered restrict
    - Highly sensitive or privileged actions and cloud applications.
    - Based on user specific IP range like access to accounting or payroll applications.
 
-### What about multifactor authentication trusted IPs?
-
-Using the trusted IPs section of multifactor authentication's service settings is no longer recommended. This control only accepts IPv4 addresses and should only be used for specific scenarios covered in the article [Configure Microsoft Entra multifactor authentication settings](~/identity/authentication/howto-mfa-mfasettings.md#trusted-ips).
-
-If you have these trusted IPs configured, they show up as **MFA Trusted IPs** in the list of locations for the location condition.
-
 ## Related content
 
 - [Configure an example Conditional Access policy using location](howto-conditional-access-policy-location.md).
