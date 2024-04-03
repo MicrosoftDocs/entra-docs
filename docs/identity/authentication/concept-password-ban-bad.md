@@ -103,7 +103,8 @@ When a user changes or resets their password, the new password is checked for st
 
 Even if a user's password contains a banned password, the password may be accepted if the overall password is otherwise strong enough. A newly configured password goes through the following steps to assess its overall strength to determine if it should be accepted or rejected:
 
-[!NOTE] Password protection in Microsoft Entra Cloud does not correlate with password protection for On premise users. The validations in Password protection are not consistent for users across the two services. Ensure the users in your tenant are meeting the required password parameters for their respective service when initally setting their password or completing SSPR.
+> [!NOTE] 
+> Password protection in Microsoft Entra cloud doesn't correlate with password protection for on-premises users. The validations in password protection aren't consistent for users across the two services. Ensure the users in your tenant meet the required password parameters for their respective service when initially setting their password or completing SSPR.
 
 ### Step 1: Normalization
 
