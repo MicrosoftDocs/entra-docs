@@ -10,7 +10,6 @@ ms.date: 03/21/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 
 # Customer intent: As a Microsoft Entra B2B administrator, I want to understand the redemption process for guest users, so that I can ensure they can access our resources and complete the consent process smoothly.
