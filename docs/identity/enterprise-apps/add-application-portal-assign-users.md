@@ -11,7 +11,7 @@ ms.topic: quickstart
 ms.date: 03/19/2024
 ms.author: jomondi
 ms.reviewer: alamaral
-ms.custom: mode-other, enterprise-apps, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: mode-other, enterprise-apps
 #customer intent: As an IT admin managing user accounts in Microsoft Entra, I want to create a new user account and assign it to an enterprise application, so that I can provide access to the application for the user.
 ---
 
