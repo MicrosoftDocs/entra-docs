@@ -10,7 +10,7 @@ ms.topic: conceptual
 ms.date: 09/14/2023
 ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro
 
 ---
 
