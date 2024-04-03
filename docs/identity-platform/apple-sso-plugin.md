@@ -404,26 +404,28 @@ Compared to MSAL-based apps, the SSO plug-in acts more transparently for non-MSA
 
 The end user sees the familiar experience and doesn't have to sign in again in each application. For example, instead of displaying the native account picker, the SSO plug-in adds SSO sessions to the web-based account picker experience. 
 
-## Upcoming changes to device identity
-Announced in March 2024, Entra ID will be moving away from Apple’s Keychain for storing device identity keys. Starting in Q3 2026, all new device registrations will use Apple’s Secure Enclave by default. 
+## Upcoming changes to device identity key storage
+Announced in March 2024, Microsoft Entra ID will be moving away from Apple’s Keychain for storing device identity keys. Starting in Q3 2026, all new device registrations will use Apple’s Secure Enclave by default. 
 
 Applications and MDM integrations that have a dependency on accessing Workplace Join keys via Keychain will need to start using MSAL and the Enterprise SSO plug-in to ensure compatibility with the Microsoft identity platform. 
 
 ### Enable Secure Enclave based storage of device identity keys
 
-To enable Secure Enclave based storage of device identity keys, add the following Extension Data attribute to your Apple devices’ Intune Configuration Profile. 
+If you would like to enable Secure Enclave based storage of device identity keys before it becomes the default, you can add the following Extension Data attribute to your Apple devices’ MDM configuration profile. 
+
+> [!NOTE]
+> For this flag to take effect, it must be applied to a new registration. It will not impact devices that have already been registered unless they re-register.
 
 |Key|    Type     | Value |
 |--------------------------|----------|-------|
 | use_most_secure_storage  | Boolean  | True  |
 
-> [!NOTE]
-> For this flag to take effect, it must be applied to a new registration. It will not impact devices that have already been registered unless they re-register.
+The screenshot below shows the configuration page and settings for enabling Secure Enclave in Microsoft Intune. 
 
-:::image type="content" source="./media/apple-sso-plugin/secure-enclave.png" alt-text="Screenshot of the Entra admin centre showing the configuration page for Platform PSSO with the settings for enabling secure enclave.":::
+:::image type="content" source="./media/apple-sso-plugin/secure-enclave.png" alt-text="Screenshot of the Entra admin centre showing the configuration profile page in Intune with the settings for enabling Secure Enclave highlighted." lightbox="./media/apple-sso-plugin/secure-enclave.png":::
 
 ### Scenarios impacted
-The list below contains some common scenarios whose functionality and reliability will be impacted by these changes. As a rule of thumb, any application which has a dependency on accessing device identity artifacts via Apple's Keychain will be affected.
+The list below contains some common scenarios that will be impacted by these changes. As a rule of thumb, any application that has a dependency on accessing device identity artifacts via Apple's Keychain will be affected.
 
 This is not an exhaustive list and we do advise both consumers and vendors of applications to test their software for compatibility with this new datastore.
 
