@@ -27,7 +27,7 @@ Welcome to what's new in Microsoft Entra ID for customers documentation. This ar
 - [Add Facebook as an identity provider for External Identities](how-to-facebook-federation-customers.md) - App creation steps updated
 - [Supported features in Microsoft Entra ID for customers](concept-supported-features-customers.md) - Updated user types and identity providers for clarity, removed device code flow samples
 - [Add user attributes to token claims](how-to-add-attributes-to-token.md) - Updated screenshots
-- [Collect custom user attributes during sign-up](how-to-define-custom-attribute.md)s - Updated screenshots
+- [Collect custom user attributes during sign-up](how-to-define-custom-attributes.md) - Updated screenshots
 - [Add multifactor authentication (MFA.md) to a customer-facing app](how-to-multifactor-authentication-customers.md) - Updated screenshots
 - [Add your application to the user flow](how-to-user-flow-add-application.md) - Updated screenshots
 - [Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md) - Updated screenshots
