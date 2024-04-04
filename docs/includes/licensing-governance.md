@@ -81,7 +81,7 @@ Here are some example license scenarios to help you determine the number of lice
 
 With Microsoft Entra ID Governance licenses for Lifecycle Workflows, you can:
 
-- Create, manage, and delete workflows up to the total limit of 50 workflows.
+- Create, manage, and delete workflows up to the total limit of 100 workflows.
 - Trigger on-demand and scheduled workflow execution.
 - Manage and configure existing tasks to create workflows that are specific to your needs.
 - Create up to 100 custom task extensions to be used in your workflows.
