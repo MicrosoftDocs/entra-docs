@@ -54,7 +54,6 @@ To use the Microsoft Enterprise SSO plug-in for Apple devices:
 
   - `app-site-association.cdn-apple.com`
   - `app-site-association.networking.apple`
-  - `config.edge.skype.com`
   - `login.microsoftonline.com`(*)
   - `login.microsoft.com`(*)
   - `sts.windows.net`(*)
@@ -62,10 +61,13 @@ To use the Microsoft Enterprise SSO plug-in for Apple devices:
   - `login.chinacloudapi.cn`(*)(**)
   - `login.microsoftonline.us`(*)(**)
   - `login-us.microsoftonline.com`(*)(**)
+  - `config.edge.skype.com`(***)
 
   (*) Allowing Microsoft domains is only required on operating system versions released before 2022. On the latest operating system versions, Apple relies fully on its CDN. 
 
-  (**) You only need to allow sovereign cloud domains if you rely on those in your environment. 
+  (**) You only need to allow sovereign cloud domains if you rely on those in your environment.
+
+  (***) Maintaining communications with the ECS Experimentation Configuration Service ensures that Microsoft can respond to a severe bug in a timely manner.
 
   The Microsoft Enterprise SSO plug-in relies on Apple's [enterprise SSO](https://developer.apple.com/documentation/authenticationservices) framework. Apple's enterprise SSO framework ensures that only an approved SSO plug-in can work for each identity provider by utilizing a technology called [associated domains](https://developer.apple.com/documentation/xcode/supporting-associated-domains). To verify the identity of the SSO plug-in, each Apple device will send a network request to an endpoint owned by the identity provider and read information about approved SSO plug-ins. In addition to reaching out directly to the identity provider, Apple has also implemented another caching for this information.
 
