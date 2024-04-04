@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Sign in users in sample Android (Kotlin) app
 
-This guide demonstrates how to configure a sample Android mobile application to sign in users, and call an ASP.NET Core web API.
+This guide demonstrates how to configure a sample Android mobile application to sign in users.
   
 In this article, you do the following tasks: 
  
@@ -63,7 +63,7 @@ To obtain the sample application, clone the sample by following these steps:
  
 ## Configure the sample Android mobile application
 
-To enable authentication and access to web API resources, configure the sample by following these steps:
+To enable authentication and access to Microsoft Graph resources, configure the sample by following these steps:
  
 1. In Android Studio, open the project that you cloned. 
  
@@ -82,7 +82,7 @@ To enable authentication and access to web API resources, configure the sample b
 1. Find property named `scopes` and set the scopes recorded in [Delegated permission to Microsoft Graph](#delegated-permission-to-microsoft-graph).
 
     ```kotlin
-    private const val scopes = "" // Developers should set the respective scopes of their web API here. For example, private const val scopes = "api://{clientId}/{ToDoList.Read} api://{clientId}/{ToDoList.ReadWrite}"
+    private const val scopes = "" // Developers should set the respective scopes of their wMicrosoft Graph resources here. For example, private const val scopes = "api://{clientId}/{ToDoList.Read} api://{clientId}/{ToDoList.ReadWrite}"
     ```
    
 You've configured the app and it's ready to run. 
