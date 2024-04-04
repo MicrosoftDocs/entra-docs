@@ -27,7 +27,7 @@ These inconsistencies between Microsoft Entra ID and an existing application's d
 
 Before enabling provisioning or SSO to an application with existing users, you should check to ensure that users are matching, and investigate and resolve those that did not match.
 
-## Determining if there are users that did not match
+## Determine if there are users in the application that did not match
 
 If you have already determined the list of users in the application which do not match those in Microsoft Entra ID, then continue in the next section.
 
@@ -61,47 +61,80 @@ A user may exist in an application and in Microsoft Entra ID, but the user in th
 
 For example, when a SAP administrator creates a user in SAP Cloud Identity Services using its admin console, the user may not have a `userName` property. However, that property may be the one used for matching with users in Microsoft Entra ID. If the `userName` property is the one intended for matching, then you would need the SAP administrator to update those existing SAP Cloud Identity Services users to have a value of the `userName` property.
 
-For another example, the application administrator may have set the user's email address as a property `mail` of the user in the application, when the user was first added to the application. However, subsequently the person's email address and `userPrincipalName` might have been changed in Microsoft Entra ID. However, if the application did not require the email address, or the email system had a redirect that allowed the old email address to keep forwarding, then the application administrator may have been unaware that there was a need for `mail` property being updated in the application's data source. Resolving this can be done by either the application owner changing the `mail` property on the application's users to have a current value, or changing the matching rule as described in the following sections.
+For another example, the application administrator may have set the user's email address as a property `mail` of the user in the application, when the user was first added to the application. However, subsequently the person's email address and `userPrincipalName` might have been changed in Microsoft Entra ID. However, if the application did not require the email address, or the email system had a redirect that allowed the old email address to keep forwarding, then the application administrator may have been unaware that there was a need for `mail` property being updated in the application's data source. Resolving this can be done by either the application owner changing the `mail` property on the application's users to have a current value, or changing the matching rule, as described in the following sections.
 
 ### Update users in the application with a new property
 
-Add a new property to the application and change the matching rule.
+Users may have been created in the application as local accounts which did not need to be correlated with any other system through properties in the application itself. For example, an existing identity management product may have created accounts in an application based on an authoritative HR source. That identity management system maintained the correlation between the accounts it created in the application with the HR source, and did not provide any of the HR source identifiers to the application. Later, when attempting to connect the application to a Microsoft Entra ID tenant populated from that same HR source, Microsoft Entra ID might have users for all the same people as are in the application, but the matching fails for all the users because there is no property in common.
+
+In order to resolve this, perform the following steps.
+
+ 1. Select an existing unused property of users in the application, or add a new property to the user schema in the application.
+ 1. Populate that property on all the users in the application with data from an authoritative source, such as an employee ID number or email address, that is already present on users in Microsoft Entra ID.
+ 1. Update the Microsoft Entra application provisioning configuration to have this property be included in the matching rule.
+
+### Change matching rules or properties when email address does not match user principal name
+
+By default, some of the Microsoft Entra provisioning service mappings for applications send the userPrincipalName attribute to match with an application email address property. Some organizations may have primary email addresses for their users that are distinct from their userPrincipalName. If the application is storing the email address as a property of the user, and not the userPrincipalName, then you will need to either:
+
+ * change the application to add a property on the user to hold the userPrincipalName, populate that property on each user in the application with the user's userPrincipalName from Microsoft Entra ID, and update the Microsoft Entra application provisioning configuration to have this property be included in the matching rule, or
+ * update the Microsoft Entra application provisioning configuration to match an email address attribute of the Microsoft Entra user in the matching rule.
 
 ### Update the matching attribute of users in Microsoft Entra ID
 
-Update properties already used for matching.
+In some situations, the attribute used for matching may have a value on Microsoft Entra ID user that is out of date. For example, a person may have changed their name, but the name change was not made in Microsoft Entra ID user.
 
-May need to change in AD, or in the upstream source.
+If the user was created and maintained solely in Microsoft Entra ID, then you should update the user to have the correct attributes. If the user attribute originates in an upstream system, such as Windows Server AD or a HR source, then you will need to change the value in the upstream source.
+
+### Update the Microsoft Entra Connect sync or Cloud Sync provisioning rules
+
+In some situations, an existing identity management system may have populated Windows Server AD users with an appropriate attribute that can function as a matching attribute with another application. For example, if the existing identity management system was connected to a HR source, then the AD user might have an `employeeId` attribute populated with the user's employee ID. For another example, the existing identity management system might have written the application unique user ID as an extension attribute in the Windows Server AD schema. However, if those attributes were not selected for synchronization into Microsoft Entra ID, or the users were out of scope of synchronization into Microsoft Entra ID, then the Microsoft Entra ID representation of the user community may be incomplete. 
+
+To resolve this issue, you will need to change your Microsoft Entra Connect sync or Microsoft Entra cloud sync configuration to ensure all appropriate users in Windows Server AD that are also in the application are in scope for being provisioned to Microsoft Entra ID, and that the synchronized attributes of those users include the attributes which will be used for matching purposes. 
 
 ### Update users in Microsoft Entra ID with a new attribute
 
-Add a new property to the Microsoft Entra ID schema, populate users from the application, and change the matching rule.
+In some situations, the application may hold a unique identifier for the user which is not currently stored in the Microsoft Entra ID schema for the user. For example, if you are using SAP Cloud Identity Services, you may wish to have the SAP user ID be the matching attribute, or if you are using a Linux system, you may wish to have the Linux userID be the matching attribute. However, those are not part of the Microsoft Entra ID user schema, and so are likely not present on any of the users in Microsoft Entra ID.
 
-### Change matching rules
+To use a new attribute for matching, perform the following steps.
 
-May have another property already in use.
+ 1. Select an existing unused extension attribute in Microsoft Entra ID, or extend the Microsoft Entra user schema with a new attribute.
+ 1. Populate that attribute on all the users in Microsoft Entra ID with data from an authoritative source, such as the application or an HR system. If the users are synchronized from Windows Server AD or provisioned from an HR system, you may need to make that change in that upstream source.
+ 1. Update the Microsoft Entra application provisioning configuration to have this attribute be included in the matching rule.
 
-### Configure inbound provisioning from an HR source to Microsoft Entra
+### Change matching rules to a different attribute already populated in Microsoft Entra ID
 
-If the matching rule is an attribute from an authoritative source, but Microsoft Entra ID has not previously been connected to that authoritative source.
-Configure inbound from SuccessFactors, Workday or other source. Wait for the users in Microsoft Entra ID to be updated with new attributes.
+The default matching rules for applications in the application gallery rely upon attributes which are commonly present on all Microsoft Entra ID users in all Microsoft customers, such as `userPrincipalName`. This is suitable for general-purpose testing or for provisioning into a new application that currently has no users. However many organizations may have already populated Microsoft Entra ID users with other attributes relevant to their organization, such as an employee Id. If there is another attribute suitable for matching, then update the Microsoft Entra application provisioning configuration to have this attribute be included in the matching rule.
 
-### Create users in Windows Server AD
+### Configure inbound provisioning from an HR source to Microsoft Entra ID
 
-If there are users from the application that do not correspond to a person in a authoritative HR source, but will require access to both Windows Server AD-based applications and Microsoft Entra ID-integrated applications in the future, and your organization is using Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync to provision users from Windows Server AD to Microsoft Entra ID, then you can create a user in Windows Server AD. 
+Ideally organizations that have been provisioning users into multiple applications independently, should rely upon common identifiers for users derived from an authoritative source such as a HR system. Many HR systems have properties which function well as identifiers, such as `employeeId` that can be treated as unique so that no two people have the same employee ID.  If you have an HR source, such as Workday or SuccessFactors, then bringing in attributes such as an employeeId from that source can often make a suitable matching rule. 
+
+To use an attribute with values obtained from an authoritative source for matching, perform the following steps.
+
+1. Select an appropriate Microsoft Entra ID user schema attribute, or extend the Microsoft Entra user schema with a new attribute, whose values will correspond to a property of a user in the application.
+1. Ensure that property is also present in a HR source for all people who have accounts in Microsoft Entra ID and the application.
+1. Configure inbound provisioning from that HR source to Microsoft Entra ID.
+1. Wait for the users in Microsoft Entra ID to be updated with new attributes.
+1. Update the Microsoft Entra application provisioning configuration to have this attribute be included in the matching rule.
+
+
+### Create users in Windows Server AD for users in the application who will need continued application access
+
+If there are users from the application that do not correspond to a person in an authoritative HR source, but will require access to both Windows Server AD-based applications and Microsoft Entra ID-integrated applications in the future, and your organization is using Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync to provision users from Windows Server AD to Microsoft Entra ID, then you can create a user in Windows Server AD. 
 
 If the users will not require access to Windows Server AD-based applications, then create the users in Microsoft Entra ID, as described in the next section.
 
-### Create users in Microsoft Entra ID
+### Create users in Microsoft Entra ID for users in the application who will need continued application access
 
-If there are users from the application that do not correspond to a person in a authoritative HR source, but will need continued access and be governed from Microsoft Entra, you will create Microsoft Entra users for them. You can create users in bulk by using either:
+If there are users from the application that do not correspond to a person in an authoritative HR source, but will need continued access and be governed from Microsoft Entra, you will create Microsoft Entra users for them. You can create users in bulk by using either:
 
    - A CSV file, as described in [Bulk create users in the Microsoft Entra admin center](~/identity/users/users-bulk-add.md)
    - The [New-MgUser](/powershell/module/microsoft.graph.users/new-mguser?view=graph-powershell-1.0#examples&preserve-view=true) cmdlet  
 
-   Ensure that these new users are populated with the attributes required for Microsoft Entra ID to later match them to the existing users in the application, and the attributes required by Microsoft Entra ID, including `userPrincipalName`, `mailNickname` and `displayName`. The `userPrincipalName` must be unique among all the users in the directory.
+Ensure that these new users are populated with the attributes required for Microsoft Entra ID to later match them to the existing users in the application, and the attributes required by Microsoft Entra ID, including `userPrincipalName`, `mailNickname` and `displayName`. The `userPrincipalName` must be unique among all the users in the directory.
 
-   For example, you might have users in a database where the value in the column named `EMail` is the value you want to use as the Microsoft Entra user principal Name, the value in the column `Alias` contains the Microsoft Entra ID mail nickname, and the value in the column `Full name` contains the user's display name:
+For example, you might have users in a database where the value in the column named `EMail` is the value you want to use as the Microsoft Entra user principal Name, the value in the column `Alias` contains the Microsoft Entra ID mail nickname, and the value in the column `Full name` contains the user's display name:
 
    ```powershell
    $db_display_name_column_name = "Full name"
@@ -109,7 +142,7 @@ If there are users from the application that do not correspond to a person in a 
    $db_mail_nickname_column_name = "Alias"
    ```
 
-   Then you can use this script to create Microsoft Entra users for those in SAP Cloud Identity Services, the database, or directory that didn't match with users in Microsoft Entra ID. Note that you may need to modify this script to add additional Microsoft Entra attributes needed in your organization, or if the `$azuread_match_attr_name` is neither `mailNickname` nor `userPrincipalName`, in order to supply that Microsoft Entra attribute.
+Then you can use this script to create Microsoft Entra users for those in SAP Cloud Identity Services, the database, or directory that didn't match with users in Microsoft Entra ID. Note that you may need to modify this script to add additional Microsoft Entra attributes needed in your organization, or if the `$azuread_match_attr_name` is neither `mailNickname` nor `userPrincipalName`, in order to supply that Microsoft Entra attribute.
 
    ```powershell
    $dbu_missing_columns_list = @()
@@ -142,7 +175,7 @@ There might be a super-admin account in the application's data source that does 
 
 ## Assign users to application roles and enable provisioning
 
-After making updates to Microsoft Entra users, users in the application, or the Microsoft Entra application matching rules, you should re-export and perform the matching procedure for your application again, to ensure all user accounts are correlated.  Once you have completed this process and confirm all users match, then you should assign the users in Microsoft Entra ID who need access to the application to the Microsoft Entra application app role, and then enable provisioning to the 
+After making updates to Microsoft Entra users, users in the application, or the Microsoft Entra application matching rules, you should re-export and perform the matching procedure for your application again, to ensure all user accounts are correlated. Once you have completed this process and confirm all users match, then you should assign the users in Microsoft Entra ID who need access to the application to the Microsoft Entra application app role, and then enable provisioning to the application.
 
 ## Next steps
 
