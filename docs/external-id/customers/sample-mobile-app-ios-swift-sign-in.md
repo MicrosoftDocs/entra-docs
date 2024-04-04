@@ -63,7 +63,7 @@ To obtain the sample application, clone the sample by following these steps:
 
 ## Configure the sample iOS mobile application
 
-To enable authentication and access to web API resources, configure the sample by following these steps:
+To enable authentication and access to Microsoft Graph resources, configure the sample by following these steps:
 
 1. In Xcode, open the project that you cloned.
 1. Open */MSALiOS/Configuration.swift* file.
@@ -75,7 +75,7 @@ To enable authentication and access to web API resources, configure the sample b
 
 You've configured the app and it's ready to run.
 
-## Run iOS sample app and call web API 
+## Run and test the iOS sample app
  
 To build and run your app, follow these steps:
  
