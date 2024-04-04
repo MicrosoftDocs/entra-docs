@@ -87,10 +87,15 @@ You find both primary identity providers and fallback identity providers under t
 
 Primary identity providers are the ones that have federations with other sources of authentication. Fallback identity providers are the ones that are used, when a user doesn't match a primary identity provider. 
 
-Fallback identity providers can be either Microsoft account (MSA), email one-time passcode, or both. You can't disable both fallback identity providers, but you can disable all primary identity providers and only use fallback identity providers for redemption options. Please keep in mind the current limitations of the feature:
+Fallback identity providers can be either Microsoft account (MSA), email one-time passcode, or both. You can't disable both fallback identity providers, but you can disable all primary identity providers and only use fallback identity providers for redemption options. 
 
-- If you have disabled Microsoft Account as a fallback identity provider, you might have users who were invited with both an Entra ID and a Microsoft account associated with the same email address. Instead of the user signing in with an email one-time passcode, they can redeem the invite using their Microsoft accounts.
-- If email one-time passcode is the only redemption option, new users will need to select the ‘Use another account’ option and enter their email to initiate the one-time passcode process. This should happen only for users who are signed in with SSO using their Entra ID account. Other users would not go through this experience
+Below are known limitations in the feature: 
+
+1. If a Microsoft Entra ID user who has an existing single sign-on (SSO) session is authenticating as email one-time passcode (OTP), they'll need to choose **Use another account** and reenter their username to trigger the OTP flow. Otherwise the user will get an error indicating their account doesn’t exist in the resource tenant.
+
+1. If your guest users can only use email one time passcode to redeem an invite, they'll currently be blocked from using SharePoint. 
+
+1. In scenarios where a user has the same email in both their Microsoft Entra ID and Microsoft accounts, even after the admin has disabled the Microsoft account as a redemption method, the user is prompted to choose between using their Microsoft Entra ID or their Microsoft account. If they choose Microsoft account it will be allowed as a redemption option even if disabled.
 
 ### Direct federation for Microsoft Entra ID verified domains (Preview)
 
