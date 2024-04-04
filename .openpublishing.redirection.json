@@ -435,6 +435,11 @@
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-cosmos-db.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-vm-managed-identities-cosmos",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authenticaion/concept-authentication-windows-hello-for-business.md",
+      "redirect_url": "/windows/security/identity-protection/hello-for-business.md",
+      "redirect_document_id": false
     }
   ]
 }
