@@ -89,8 +89,10 @@ items:
                           href: sample-mobile-app-android-kotlin-sign-in-call-api.md
                     - name: iOS (Swift)
                       items:
-                        - name: Sign in users and call an API
+                        - name: Sign in users
                           href: sample-mobile-app-ios-swift-sign-in.md
+                        - name: Sign in users and call an API
+                          href: sample-mobile-app-ios-swift-sign-in-call-api.md
               - name: Native authentication
                 items:
                   - name: Android (Kotlin)

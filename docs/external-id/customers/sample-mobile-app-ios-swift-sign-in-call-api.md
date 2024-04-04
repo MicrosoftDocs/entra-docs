@@ -1,6 +1,6 @@
 ---
-title: Sign in users in sample iOS (Swift) mobile app 
-description: Learn how to authenticate users in a Microsoft Entra ID for customers tenant using a sample iOS (Swift) application.
+title: Sign in users and call a web API in sample iOS (Swift) app 
+description: Learn how to authenticate users in a Microsoft Entra ID for customers tenant using a sample iOS (Swift) app.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,12 +12,12 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 04/04/2024
 ms.custom: developer
-#Customer intent: As a developer, I want to authenticate users from a sample iOS mobile app so that I can experience how Microsoft Entra ID for customers work.
+#Customer intent: As a developer, I want to authenticate users and call a protected web API from a sample iOS mobile app so that I can experience how Microsoft Entra ID for customers work.
 ---
 
-# Sign in users in sample iOS (Swift) mobile app
+# Sign in users and call a protected web API in sample iOS (Swift) app
 
-This guide demonstrates how to configure a sample iOS mobile application to sign in users.
+This guide demonstrates how to configure a sample iOS mobile application to sign in users, and call a protected ASP.NET Core web API.
 
 In this article, you do the following tasks: 
 
@@ -31,6 +31,14 @@ In this article, you do the following tasks:
 
 - <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>.
 - Microsoft Entra External ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+- An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the instructions for [call an API in a sample iOS mobile app](sample-native-authentication-ios-sample-app-call-web-api.md) to have a functional protected ASP.NET Core web API. Make sure you complete the following steps:
+
+    - Register a web API application.
+    - Configure API scopes.
+    - Configure app roles.
+    - Configure optional claims.
+    - Clone or download sample web API.
+    - Configure and run sample web API.
 
 ## Register an application
 
@@ -49,6 +57,12 @@ In this article, you do the following tasks:
 Configure delegated permission to Microsoft Graph to enable your client application to perform operations on behalf of the logged-in user, for example reading their email or modifying their profile. By default, users of your client app are asked when they sign in to consent to the delegated permissions.
 
 [!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-native-authentication-api-permission.md)]
+
+## Grant web API permissions to the iOS sample app
+
+Once you've registered both your client app, web API, and you've exposed the API by creating scopes, you can configure the client's permissions to the API by following these steps:
+
+[!INCLUDE [grant-api-permission-call-api-common](../customers/includes/register-app/grant-api-permission-call-api-common.md)]
 
 ## Clone sample iOS mobile application
 
@@ -71,6 +85,8 @@ To enable authentication and access to web API resources, configure the sample b
 
     - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
     - `Enter_the_Redirect_URI_Here` and replace it with the value of *kRedirectUri* in the Microsoft Authentication Library (MSAL) configuration file you downloaded earlier when you added the platform redirect URL.
+    - `Enter_the_Protected_API_Full_URL_Here` and replace it with the URL to your web API. The *Enter_the_Protected_API_Full_URL_Here* should include the base URL (the deployed web API URL) and the endpoint (/api/todolist) for our ASP.NET web API.
+    - `Enter_the_Protected_API_Scopes_Here` and replace it with the scopes recorded in [Grant web API permissions to the iOS sample app](#grant-web-api-permissions-to-the-ios-sample-app).
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 
 You've configured the app and it's ready to run.
