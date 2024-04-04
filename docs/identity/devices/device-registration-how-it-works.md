@@ -11,7 +11,6 @@ ms.date: 01/24/2023
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.reviewer: ravenn
 
 ---
