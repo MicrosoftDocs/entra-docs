@@ -1,6 +1,6 @@
 ---
-title: Manage the relationship to user accounts in applications which did not match to users in Microsoft Entra ID | Microsoft Docs
-description: When provisioning to an application, Microsoft Entra provisioning service will match users in Microsoft Entra ID with those in already in the application. In some cases an application may have user accounts which do not match with any in Microsoft Entra ID.
+title: Manage the relationship to user accounts in applications that did not match to users in Microsoft Entra ID | Microsoft Docs
+description: When provisioning to an application, Microsoft Entra provisioning service will match users in Microsoft Entra ID with those in already in the application. In some cases, an application may have user accounts which do not match with any in Microsoft Entra ID.
 author: markwahl-msft
 manager: amycolannino
 editor: markwahl-msft
@@ -11,23 +11,23 @@ ms.author: mwahl
 ms.reviewer: mwahl
 ---
 
-# Manage the relationship to user accounts in applications which did not match to users in Microsoft Entra ID
+# Manage the relationship to user accounts in applications that did not match to users in Microsoft Entra ID
 
-When integrating an existing application with Microsoft Entra ID, for provisioning or single-sign on (SSO), there may be users in the application's data store which do not correspond to users in Microsoft Entra ID.
+When integrating an existing application with Microsoft Entra ID, for provisioning or single-sign on (SSO), there may be users in the application's data store that do not correspond to users in Microsoft Entra ID, or that did not match.
 
 The Microsoft Entra provisioning service relies upon configurable matching rules to determine whether a user in Microsoft Entra ID corresponds to a user in the application, searching the application for a user with the matching property from a Microsoft Entra ID user. For example, suppose the matching rule is to compare a Microsoft Entra ID user's `userPrincipalName` attribute with an application's `userName` property. When a user in Microsoft Entra ID with a `userPrincipalName` value of `alice.smith@contoso.com` is assigned to an application's role,  Microsoft Entra provisioning service will first perform a search of the application using a query such as `userName eq "alice.smith@contoso.com"`. If the application search indicates no users match, then Microsoft Entra provisioning service will create a new user.
 
-If the application does not already have any users, then this process will populate the application's data store with users as they are assigned in Microsoft Entra ID. However, if the application already has users, then two situations may arise. First, there may be people with accounts in the application but the matching fails to locate them - perhaps the user is represented in the application as `asmith@contoso.com` rather than `alice.smith@contoso.com` and so the search Microsoft Entra provisioning service performs does not find them. In that situation, the person may end up with duplicate accounts in the application. Second, there may be people with accounts in the application which have no accounts in Microsoft Entra ID. In this situation, Microsoft Entra provisioning service will not interact with them, however, if the application is configured to rely upon Microsoft Entra ID as its sole identity provider, those users will be unable to sign in: the application will redirect the person to sign in with Microsoft Entra ID but the person does not have a user account there.
+If the application does not already have any users, then this process will populate the application's data store with users as they are assigned in Microsoft Entra ID. However, if the application already has users, then two situations may arise. First, there may be people with accounts in the application but the matching fails to locate them - perhaps the user is represented in the application as `asmith@contoso.com` rather than `alice.smith@contoso.com` and so the search Microsoft Entra provisioning service performs does not find them. In that situation, the person may end up with duplicate accounts in the application. Second, there may be people with accounts in the application that have no accounts in Microsoft Entra ID. In this situation, Microsoft Entra provisioning service will not interact with them, however, if the application is configured to rely upon Microsoft Entra ID as its sole identity provider, those users will be unable to sign in: the application will redirect the person to sign in with Microsoft Entra ID but the person does not have a user account there.
 
-These inconsistencies between Microsoft Entra ID and an existing applications can happen for a number of reasons, including
+These inconsistencies between Microsoft Entra ID and an existing application's data store can happen for a number of reasons, including:
 
 * the application owner creates accounts in the application directly, such as for contractors or vendors, who are not represented in a system of record HR source but did require application access
 * identity and attribute changes, such as a person changing their name, were not being sent to either Microsoft Entra ID or the application, and so the representations are out of date in one or the other system, or
 * the organization was using an identity management product which independently provisioned Windows Server AD and the application with different communities. For example, store employees needed application access but did not require Exchange mailboxes, so store employees were not represented in Windows Server AD or Microsoft Entra ID.
 
-Before enabling provisioning or SSO to an application with existing users, you should check to ensure that users are matching, and investigate and resolve those which did not match.
+Before enabling provisioning or SSO to an application with existing users, you should check to ensure that users are matching, and investigate and resolve those that did not match.
 
-## Determining if there are users which did not match
+## Determining if there are users that did not match
 
 If you have already determined the list of users in the application which do not match those in Microsoft Entra ID, then continue in the next section.
 
@@ -49,9 +49,9 @@ This section provides several options to address the non-matching users in the a
 
 ### Delete test account users from the application
 
-There may be test accounts in the application left over from its initial deployment, that are no longer required.
+There may be test accounts in the application left over from its initial deployment. If there are user accounts that are no longer required, then they could be deleted from the application.
 
-### Delete users form the applications for people who have already left the organizations
+### Delete users from the applications for people who have already left the organization
 
 The user might have already left the organization but is still in the application's data source. If the user is no longer needed, then it could be deleted from the application.
 
@@ -71,9 +71,11 @@ Add a new property to the application and change the matching rule.
 
 Update properties already used for matching.
 
+May need to change in AD, or in the upstream source.
+
 ### Update users in Microsoft Entra ID with a new attribute
 
-Add a new property to the Entra ID, populate from the application, and change the matching rule.
+Add a new property to the Microsoft Entra ID schema, populate users from the application, and change the matching rule.
 
 ### Change matching rules
 
@@ -81,11 +83,18 @@ May have another property already in use.
 
 ### Configure inbound provisioning from an HR source to Microsoft Entra
 
+If the matching rule is an attribute from an authoritative source, but Microsoft Entra ID has not previously been connected to that authoritative source.
+Configure inbound from SuccessFactors, Workday or other source. Wait for the users in Microsoft Entra ID to be updated with new attributes.
+
 ### Create users in Windows Server AD
+
+If there are users from the application that do not correspond to a person in a authoritative HR source, but will require access to both Windows Server AD-based applications and Microsoft Entra ID-integrated applications in the future, and your organization is using Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync to provision users from Windows Server AD to Microsoft Entra ID, then you can create a user in Windows Server AD. 
+
+If the users will not require access to Windows Server AD-based applications, then create the users in Microsoft Entra ID, as described in the next section.
 
 ### Create users in Microsoft Entra ID
 
-If there were users who couldn't be located in Microsoft Entra ID, or weren't active and able to sign in, but you want to have their access reviewed or their attributes updated in th application, you need to update or create Microsoft Entra users for them. You can create users in bulk by using either:
+If there are users from the application that do not correspond to a person in a authoritative HR source, but will need continued access and be governed from Microsoft Entra, you will create Microsoft Entra users for them. You can create users in bulk by using either:
 
    - A CSV file, as described in [Bulk create users in the Microsoft Entra admin center](~/identity/users/users-bulk-add.md)
    - The [New-MgUser](/powershell/module/microsoft.graph.users/new-mguser?view=graph-powershell-1.0#examples&preserve-view=true) cmdlet  
@@ -129,12 +138,14 @@ If there were users who couldn't be located in Microsoft Entra ID, or weren't ac
 
 ### Maintain separate user accounts
 
-There might be a super-admin account in the application's data source that does not correspond to any specific person in Microsoft Entra ID.
+There might be a super-admin account in the application's data source that does not correspond to any specific person in Microsoft Entra ID. If you do not create Microsoft Entra users for them, then they will not be able to be managed from Microsoft Entra ID or Microsoft Entra ID Governance. As those users will not be able to sign in with Microsoft Entra ID, so if you are configuring the application to use Microsoft Entra ID as an identity provider, ensure that those users are out of scope of using Microsoft Entra ID for authentication.
 
-## Re-evaluate matching
+## Assign users to application roles and enable provisioning
+
+After making updates to Microsoft Entra users, users in the application, or the Microsoft Entra application matching rules, you should re-export and perform the matching procedure for your application again, to ensure all user accounts are correlated.  Once you have completed this process and confirm all users match, then you should assign the users in Microsoft Entra ID who need access to the application to the Microsoft Entra application app role, and then enable provisioning to the 
 
 ## Next steps
 
 - [Integrating applications with Microsoft Entra ID and establishing a baseline of reviewed access](~/id-governance/identity-governance-applications-integrate.md)
 - [Govern an application's existing users in Microsoft Entra ID with Microsoft PowerShell](~/id-governance/identity-governance-applications-existing-users.md)
-- [Prepare for an access review of users' access to an application](~/id-governance/access-reviews-aplication-preparation.md)
+- [Prepare for an access review of users' access to an application](~/id-governance/access-reviews-application-preparation.md)
