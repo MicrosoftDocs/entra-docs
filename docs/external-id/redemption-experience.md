@@ -99,11 +99,7 @@ When a user selects the **Accept invitation** link in an [invitation email](invi
 
 ## Configurable redemption
 
-<<<<<<< HEAD
 [Configurable redemption](cross-tenant-access-overview.md#configurable-redemption-preview) lets you customize the order of identity providers presented to guests when they redeem your invitations. When a guest selects the **Accept invitation** link, Microsoft Entra ID automatically redeems the invitation based on the [default order](#invitation-redemption-flow). You can override this by changing the identity provider redemption order in your [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml#configure-redemption-order-preview).
-=======
-[Configurable redemption](cross-tenant-access-overview.md#configurable-redemption) lets you customize the order of identity providers presented to guests when they redeem your invitations. When a guest selects the **Accept invitation** link, Microsoft Entra ID automatically redeems the invitation based on the [default order](#invitation-redemption-flow). You can override this by changing the identity provider redemption order in your [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md#configure-redemption-order).
->>>>>>> 869246d851edf105be9af490920c1f417a9a37c9
 
 ## Consent experience for the guest
 

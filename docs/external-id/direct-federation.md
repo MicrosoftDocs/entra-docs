@@ -36,11 +36,7 @@ This article describes how to set up federation with any organization whose iden
 After you set up federation with an organization's SAML/WS-Fed IdP:
 
 - If the domain you're federating with isn't a Microsoft Entra ID verified domain, any new guest users you invite will be authenticated using that SAML/WS-Fed IdP.
-<<<<<<< HEAD
 - If the domain is Microsoft Entra ID verified, you also need to [configure the **Redemption order** settings (preview)](cross-tenant-access-settings-b2b-collaboration.yml) in your cross-tenant access settings for inbound B2B collaboration to prioritize redemption with the federated IdP. Then any new guest users you invited will be authenticated using that SAML/WS-Fed IdP.
-=======
-- If the domain is Microsoft Entra ID verified, you also need to [configure the **Redemption order** settings](cross-tenant-access-settings-b2b-collaboration.md) in your cross-tenant access settings for inbound B2B collaboration to prioritize redemption with the federated IdP. Then any new guest users you invited will be authenticated using that SAML/WS-Fed IdP.
->>>>>>> 869246d851edf105be9af490920c1f417a9a37c9
 
 It’s important to note that setting up federation doesn’t change the authentication method for guest users who have already redeemed an invitation from you. Here are some examples:
 
