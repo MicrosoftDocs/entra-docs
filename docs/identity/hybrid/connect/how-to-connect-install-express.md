@@ -10,6 +10,8 @@ ms.topic: how-to
 ms.date: 11/06/2023
 ms.subservice: hybrid-connect
 ms.author: billmath
+
+
 ---
 # Get started with Microsoft Entra Connect by using express settings
 
