@@ -60,7 +60,7 @@ Configure delegated permission to Microsoft Graph to enable your client applicat
 
 ## Grant web API permissions to the iOS sample app
 
-Once you've registered both your client app and web API and you've exposed the API by creating scopes, you can configure the client's permissions to the API by following these steps:
+Once you've registered both your client app, web API, and you've exposed the API by creating scopes, you can configure the client's permissions to the API by following these steps:
 
 [!INCLUDE [grant-api-permission-call-api-common](../customers/includes/register-app/grant-api-permission-call-api-common.md)]
 
