@@ -24,15 +24,15 @@ Welcome to what's new in Microsoft Entra ID for customers documentation. This ar
 
 ### Updated articles
 
-- [Add Facebook as an identity provider for External Identities](how-to-facebook-federation-customers.md) - App creation steps updated
+- [Add Facebook as an identity provider](how-to-facebook-federation-customers.md) - App creation steps updated
 - [Supported features in Microsoft Entra ID for customers](concept-supported-features-customers.md) - Updated user types and identity providers for clarity, removed device code flow samples
 - [Add user attributes to token claims](how-to-add-attributes-to-token.md) - Updated screenshots
 - [Collect custom user attributes during sign-up](how-to-define-custom-attributes.md) - Updated screenshots
-- [Add multifactor authentication (MFA.md) to a customer-facing app](how-to-multifactor-authentication-customers.md) - Updated screenshots
+- [Add multifactor authentication (MFA) to a customer-facing app](how-to-multifactor-authentication-customers.md) - Updated screenshots
 - [Add your application to the user flow](how-to-user-flow-add-application.md) - Updated screenshots
 - [Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md) - Updated screenshots
 - [Quickstart: Get started with Microsoft Entra ID for customers](quickstart-trial-setup.md) - Updated screenshots
-- [Samples for customer identity and access management (CIAM.md) in Microsoft Entra External ID](samples-ciam-all.md) - Added links to native authentication public preview articles
+- [Samples for customer identity and access management (CIAM)](samples-ciam-all.md) - Added links to native authentication public preview articles
 
 ## February 2024
 
