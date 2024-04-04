@@ -15,9 +15,9 @@ ms.custom: developer
 #Customer intent: As a developer, I want to authenticate users and call a protected web API from a sample iOS mobile app so that I can experience how Microsoft Entra ID for customers work.
 ---
 
-# Sign in users and call a protected web API in sample iOS (Swift) mobile app
+# Sign in users and call a protected web API in sample iOS (Swift) app
 
-This guide demonstrates how to configure a sample iOS mobile application to sign in users, and call an ASP.NET Core web API.
+This guide demonstrates how to configure a sample iOS mobile application to sign in users, and call a protected ASP.NET Core web API.
 
 In this article, you do the following tasks: 
 
