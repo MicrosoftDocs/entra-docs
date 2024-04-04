@@ -156,6 +156,7 @@ The following client apps support this setting. This list isn't exhaustive and i
 - Microsoft Power Automate
 - Microsoft Launcher
 - Microsoft Lists
+- Microsoft Loop
 - Microsoft Office
 - Microsoft OneDrive
 - Microsoft OneNote

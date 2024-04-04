@@ -37,13 +37,13 @@ Follow these steps to make a user eligible for a Microsoft Entra admin role.
 
 1. Select **Roles** to see the list of roles for Microsoft Entra permissions.
 
-    ![Screenshot of the "Roles" page with the "Add assignments" action selected.](./media/pim-how-to-add-role-to-user/roles-list.png)
+    :::image type="content" source="./media/pim-how-to-add-role-to-user/roles-list.png" alt-text="Screenshot of the Roles page with the Add assignments action selected.":::
 
 1. Select **Add assignments** to open the **Add assignments** page.
 
 1. Select **Select a role** to open the **Select a role** page.
 
-    ![New assignment pane](./media/pim-how-to-add-role-to-user/select-role.png)
+    :::image type="content" source="./media/pim-how-to-add-role-to-user/select-role.png" alt-text="Screenshot showing the new assignment pane.":::
 
 1. Select a role you want to assign, select a member to whom you want to assign to the role, and then select **Next**.
 
@@ -61,11 +61,11 @@ Follow these steps to make a user eligible for a Microsoft Entra admin role.
 
     - **Time-bound** assignments will expire at the end of a specified period. Use this option with temporary or contract workers, for example, whose project end date and time are known.
 
-    ![Memberships settings - date and time](./media/pim-how-to-add-role-to-user/start-and-end-dates.png)
+    :::image type="content" source="./media/pim-how-to-add-role-to-user/start-and-end-dates.png" alt-text="Screenshot showing Memberships settings - date and time.":::
 
 1. After the role is assigned, an assignment status notification is displayed.
 
-    ![New assignment - Notification](./media/pim-how-to-add-role-to-user/assignment-notification.png)
+    :::image type="content" source="./media/pim-how-to-add-role-to-user/assignment-notification.png" alt-text="Screenshot showing a new assignment notification.":::
 
 ## Assign a role with restricted scope
 
@@ -77,11 +77,11 @@ For certain roles, the scope of the granted permissions can be restricted to a s
 
 1. Select the **User Administrator**.
 
-    ![The Add assignment command is available when you open a role in the portal](./media/pim-how-to-add-role-to-user/add-assignment.png)
+    :::image type="content" source="./media/pim-how-to-add-role-to-user/add-assignment.png" alt-text="Screenshot showing the Add assignment command is available when you open a role in the portal.":::
 
 1. ​Select **Add assignments**.
 
-    ![When a role supports scope, you can select a scope](./media/pim-how-to-add-role-to-user/add-scope.png)
+    :::image type="content" source="./media/pim-how-to-add-role-to-user/add-scope.png" alt-text="Screenshot showing when a role supports scope, you can select a scope.":::
 
 1. On the **Add assignments** page, you can:
 
@@ -254,7 +254,7 @@ Follow these steps to update or remove an existing role assignment. **Microsoft 
 
 1. Find the role assignment on the **Eligible roles** or **Active roles** tabs.
 
-    ![Update or remove role assignment](./media/pim-how-to-add-role-to-user/remove-update-assignments.png)
+    :::image type="content" source="./media/pim-how-to-add-role-to-user/remove-update-assignments.png" alt-text="Screenshot showing how to update or remove role assignment.":::
 
 1. Select **Update** or **Remove** to update or remove the role assignment.
 

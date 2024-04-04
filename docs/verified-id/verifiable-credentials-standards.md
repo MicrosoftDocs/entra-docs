@@ -14,10 +14,9 @@ ms.author: barclayn
 
 # Microsoft Entra Verified ID-supported standards
 
-  
-Microsoft is actively collaborating with members of the Decentralized Identity Foundation (DIF), the W3C Credentials Community Group, and the wider identity community. We’re working with these groups to identify and develop critical standards, and we've implemented the open standards in our services. 
+Microsoft is actively collaborating with members of the Decentralized Identity Foundation (DIF), the W3C Credentials Community Group, and the wider identity community. We’re working with these groups to identify and develop critical standards, and we implement the open standards in our services.
 
-In this article, you'll find the currently supported open standards for Microsoft Entra Verified ID.
+In this article, you find the currently supported open standards for Microsoft Entra Verified ID.
 
 ## Standards bodies
 
@@ -49,6 +48,13 @@ Microsoft Entra Verified ID supports the following key types for the JSON Web Si
 |--------|-------------|
 |secp256k1|ES256K|
 |Ed25519|EdDSA|
+|EC|P-256|
+
+Starting February 2024, Verified ID support NIST compliant P-256 curve.
+
+For the quick setup customers, the newly issued credentials use P-256 curve as default and any previously issued credentials continue to work until they expire. Existing authorities automatically migrate to using P-256 for any future issuances.
+
+For the advanced setup customers, Verified ID credentials issued be signed with P-256 curve by default for any new authorities. For existing authorities, there is no change to already issued or newly issued credentials.
 
 ## Interoperability
 

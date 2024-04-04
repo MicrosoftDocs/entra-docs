@@ -15,6 +15,8 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 12/04/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to getAbstract so that I can streamline the user management process and ensure that users have the appropriate access to getAbstract.
 ---
 
 # Tutorial: Configure getAbstract for automatic user provisioning
