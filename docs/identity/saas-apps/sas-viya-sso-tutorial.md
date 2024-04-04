@@ -123,7 +123,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure SAS Viya SSO
 
-To configure single sign-on on **SAS Viya SSO** side, you need to send the **App Federation Metadata Url** to [SAS Viya SSO support team](mailto:support@sas.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure SAS Viya SSO to support single sign-on with Microsoft Entra ID, please refer [this](https://go.documentation.sas.com/doc/en/sasadmincdc/default/calauthmdl/n1iyx40th7exrqn1ej8t12gfhm88.htm#n1mj93glryngkgn1e2mam2uy2dt8) link in SAS Viya Platform Administration.
 
 ### Create SAS Viya SSO test user
 
