@@ -5,9 +5,8 @@ description: Step-by-step guidance to migrate MFA server settings to Microsoft E
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 03/25/2024
 
 ms.author: justinha
 author: justinha
@@ -119,7 +118,7 @@ Open MFA Server, click **Company Settings**:
 
 <sup>*</sup>When a PIN is used to provide proof-of-presence functionality, the functional equivalent is provided above. PINs that aren't cryptographically tied to a device don't sufficiently protect against scenarios where a device has been compromised. To protect against these scenarios, including [SIM swap attacks](https://wikipedia.org/wiki/SIM_swap_scam), move users to more secure methods according to Microsoft authentication methods [best practices](concept-authentication-methods.md).
 
-<sup>**</sup>The default SMS MFA experience in Microsoft Entra multifactor authentication sends users a code, which they're required to enter in the login window as part of authentication. The requirement to roundtrip the SMS code provides proof-of-presence functionality.
+<sup>**</sup>The default Text MFA experience in Microsoft Entra multifactor authentication sends users a code, which they're required to enter in the login window as part of authentication. The requirement to roundtrip the code provides proof-of-presence functionality.
 
 #### User portal 
 
@@ -273,6 +272,10 @@ Once complete, a confirmation will inform you of the tasks completed:
 :::image type="content" border="true" source="./media/how-to-mfa-server-migration-utility/confirmation.png" alt-text="Screenshot of confirmation.":::
 
 As mentioned in the confirmation message, it can take several minutes for the migrated data to appear on user objects within Microsoft Entra ID. Users can view their migrated methods by navigating to [aka.ms/mfasetup](https://aka.ms/mfasetup).
+
+>[!TIP]
+>You can reduce the time required to display groups if you don't need to view Microsoft Entra MFA methods. Click **View** > **Azure AD MFA Methods** to toggle the display of columns for **AAD Default**, **AAD Phone**, **AAD Alternate**, **AAD Office**, **AAD Devices**, and **AAD OATH Token**. When columns are hidden, some Microsoft Graph API calls are skipped, which greatly improves user load time. 
+
 
 #### View migration details 
 

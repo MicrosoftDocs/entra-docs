@@ -126,6 +126,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/striim-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/striim-cloud-tutorial",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/workplace-by-facebook-provisioning-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/workplace-from-meta-provisioning-tutorial",
       "redirect_document_id": false
@@ -216,6 +221,46 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/sample-browserless-app-node-sign-in.md",
+      "redirect_url": "/entra/external-id/customers/samples-ciam-all",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-browserless-app-dotnet-sign-in.md",
+      "redirect_url": "/entra/external-id/customers/samples-ciam-all",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-browserless-app-node-sign-in-overview.md",
+      "redirect_url": "/entra/external-id/customers/samples-ciam-all",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-browserless-app-node-sign-in-prepare-tenant.md",
+      "redirect_url": "/entra/external-id/customers/samples-ciam-all",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-browserless-app-node-sign-in-prepare-app.md",
+      "redirect_url": "/entra/external-id/customers/samples-ciam-all",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-browserless-app-node-sign-in-sign-out.md",
+      "redirect_url": "/entra/external-id/customers/samples-ciam-all",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md",
+      "redirect_url": "/entra/external-id/customers/samples-ciam-all",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-browserless-app-dotnet-sign-in-build-app.md",
+      "redirect_url": "/entra/external-id/customers/samples-ciam-all",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/authentication/multi-factor-authentication-wizard.md",
       "redirect_url": "/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
       "redirect_document_id": false
@@ -228,6 +273,16 @@
     {
       "source_path_from_root": "/docs/identity-platform/custom-extension-get-started.md",
       "redirect_url": "/entra/identity-platform/custom-extension-tokenissuancestart-configuration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/howto-call-a-web-api-with-postman.md",
+      "redirect_url": "/entra/identity-platform/howto-call-a-web-api-with-curl",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-python-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-python-flask",
       "redirect_document_id": false
     },
     {
@@ -344,6 +399,31 @@
     {
       "source_path_from_root": "/docs/permissions-management/how-to-notifications-rule.md",
       "redirect_url": "/entra/permissions-management/ui-autopilot",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/hybrid/connect/reference-connect-dirsync-deprecated.md",
+      "redirect_url": "/entra/identity/hybrid/connect/whatis-azure-ad-connect-v2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-v2-javascript-spa.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-console-app-netcore-acquire-token.md",
+      "redirect_url": "/entra/identity-platform/quickstart-daemon-dotnet-acquire-token",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-cosmos-db.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-vm-managed-identities-cosmos",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-cosmos-db.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-vm-managed-identities-cosmos",
       "redirect_document_id": false
     }
 

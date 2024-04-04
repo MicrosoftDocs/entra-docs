@@ -12,6 +12,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 01/18/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to elia so that I can streamline the user management process and ensure that users have the appropriate access to elia.
 ---
 
 # Tutorial: Configure elia for automatic user provisioning
@@ -83,7 +85,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Admin Credentials** section, input your elia Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to elia. If the connection fails, ensure your elia account has Admin permissions and try again.
 
- 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
+ 	![Screenshot of Token.](media/elia-provisioning-tutorial/connection.png)
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
