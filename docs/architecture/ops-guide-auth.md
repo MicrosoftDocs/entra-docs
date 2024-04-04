@@ -189,10 +189,10 @@ On the other hand, if you find applications that have assignment to individual u
 
 ### Named locations
 
-With [named locations](~/identity/conditional-access/location-condition.md) in Microsoft Entra ID, you can label trusted IP address ranges in your organization. Microsoft Entra ID uses named locations to:
+With [named locations](../identity/conditional-access/concept-assignment-network.md) in Microsoft Entra ID, you can label trusted IP address ranges in your organization. Microsoft Entra ID uses named locations to:
 
 - Prevent false positives in risk events. Signing in from a trusted network location lowers a user's sign-in risk.
-- Configure [location-based Conditional Access](~/identity/conditional-access/location-condition.md).
+- Configure [location-based Conditional Access](../identity/conditional-access/concept-assignment-network.md).
 
 ![Named location](./media/ops-guide-auth/ops-img10.png)
 
@@ -345,7 +345,7 @@ Below are the user and group settings that can be locked down if there isn't an 
 
 ### Traffic from unexpected locations
 
-Attackers originate from various parts of the world. Manage this risk by using Conditional Access policies with location as the condition. The [location condition](~/identity/conditional-access/location-condition.md) of a Conditional Access policy enables you to block access for locations from where there's no business reason to sign in from.
+Attackers originate from various parts of the world. Manage this risk by using Conditional Access policies with location as the condition. The [location condition](../identity/conditional-access/concept-assignment-network.md) of a Conditional Access policy enables you to block access for locations from where there's no business reason to sign in from.
 
 ![Create a new named location](./media/ops-guide-auth/ops-img14.png)
 

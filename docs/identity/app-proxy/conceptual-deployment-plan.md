@@ -256,7 +256,7 @@ Application security requires an advanced set of security capabilities that can 
 
 The following capabilities can be used to support Microsoft Entra application proxy:
 
-* User and location-based Conditional Access: Keep sensitive data protected by limiting user access based on geo-location or an IP address with [location-based Conditional Access policies](~/identity/conditional-access/location-condition.md).
+* User and location-based Conditional Access: Keep sensitive data protected by limiting user access based on geo-location or an IP address with [location-based Conditional Access policies](../identity/conditional-access/concept-assignment-network.md).
 
 * Device-based Conditional Access: Ensure only enrolled, approved, and compliant devices can access corporate data with [device-based Conditional Access](~/identity/conditional-access/concept-conditional-access-grant.md).
 
