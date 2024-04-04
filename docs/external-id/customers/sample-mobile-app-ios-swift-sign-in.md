@@ -10,12 +10,12 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: sample
-ms.date: 03/20/2024
+ms.date: 04/04/2024
 ms.custom: developer
 #Customer intent: As a developer, I want to authenticate users and call a protected web API from a sample iOS mobile app so that I can experience how Microsoft Entra ID for customers work.
 ---
 
-# Sign in users and call web API in sample iOS (Swift) mobile app
+# Sign in users and call a protected web API in sample iOS (Swift) mobile app
 
 This guide demonstrates how to configure a sample iOS mobile application to sign in users, and call an ASP.NET Core web API.
 
@@ -95,8 +95,9 @@ You've configured the app and it's ready to run.
  
 To build and run your app, follow these steps:
  
-1. To build and run your code, select **Run** from the **Product** menu in Xcode. After a successful build, Xcode will launch the sample app in the Simulator. 
-1. Select the API tab to test the API call. A successful call to the web API returns HTTP `200`, while HTTP `403` signifies unauthorized access.
+1. To build and run your code, select **Run** from the **Product** menu in Xcode. After a successful build, Xcode will launch the sample app in the Simulator.
+1. Select **Acquire Token Interactively** to request an access token.
+1. Select **API - Perform GET** to call a protected ASP.NET Core web API . A successful call to the web API returns HTTP `200`, while HTTP `403` signifies unauthorized access.
 
 ## Related content
 
