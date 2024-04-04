@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 ---
 # Sign in with a passkey (FIDO2)
 
-Passkeys are a replacement for your password. With passkeys, you can sign into your Microsoft personal, work or school account using your face, fingerprint, or PIN. Signing in with a passkey is simple, fast, and helps protect you against phishing attacks. 
+Passkeys are a replacement for your password. With passkeys, you can sign into your Microsoft personal, work or school account using your face, fingerprint, or PIN. Signing in with a passkey is simple, fast, and helps protect you against phishing attacks. For information about FIDO2 support, see [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md).
 
 ## Sign in to your work or school account
 

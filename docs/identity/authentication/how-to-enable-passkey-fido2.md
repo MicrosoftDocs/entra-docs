@@ -23,6 +23,8 @@ This article lists requirements and steps to enable passkey. After completing th
 
 Users can also sign in with a passkey by using Microsoft Authenticator. For more information, see [How to enable Authenticator passkey](how-to-enable-authenticator-passkey.md).
 
+For information about FIDO2 support, see [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md).
+
 ## Requirements
 
 - [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md)

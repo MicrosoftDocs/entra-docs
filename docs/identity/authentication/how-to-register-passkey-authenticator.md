@@ -20,13 +20,15 @@ ms.collection: M365-identity-device-management
 
 This article shows how to register a passkey using Microsoft Authenticator on your iOS or Android device using [My Security info](https://aka.ms/mysecurityinfo). 
 
-The easiest way to add a passkey is to add it directly in the Authenticator app. Alternatively, you can add a passkey from your mobile device browser, or through cross-device registration using another device, such as a laptop. Your mobile device needs to run iOS version 17, or Android version 14, or later. 
+Note that the *easiest and fastest way* to add a passkey is to add it directly in the Authenticator app.
+
+Alternatively, you can add a passkey from your mobile device browser, or through cross-device registration using another device, such as a laptop. Your mobile device needs to run iOS version 17, or Android version 14, or later. 
 
 [!INCLUDE [Passkey roll out](~/includes/entra-authentication-passkey.md)]
 
 # [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
 
-## Authenticator registration (iOS)
+## Register passkey by signing into Authenticator (iOS)
 
 1. Open Authenticator.
 1. Tap the **+** button.
@@ -35,9 +37,11 @@ The easiest way to add a passkey is to add it directly in the Authenticator app.
 1. You need to complete multifactor authentication (MFA).
 1. Authenticator sets up passkey, passwordless, or MFA for sign-in according to your work or school account policies. 
 
-<!---Phase 2 - add Authenticator screenshots of the flow (by April 8)--->
+[!INCLUDE [Need APIs to support browsers](./includes/passkeys-with-chrome-browser.md)]
 
+<!---Phase 2 - add Authenticator screenshots of the flow above (by April 8)--->
 
+<!---Support for browser scenarios aren't yet supported 
 ## Same-device registration (iOS)
 
 1. Using your iOS device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
@@ -91,7 +95,7 @@ The easiest way to add a passkey is to add it directly in the Authenticator app.
    1. You can now see the Microsoft Authenticator managed passkey along with your other registered security info options.
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-listed-security-info.png" alt-text="Screenshot of the Security Info user display of the successful passkey.":::
-      
+
 ## Cross-device registration 
 
 1. Using another device, such as a laptop, open a web browser and sign in to [My Security info](https://mysignins.microsoft.com/security-info).
@@ -154,6 +158,7 @@ The easiest way to add a passkey is to add it directly in the Authenticator app.
 1. Name the passkey something memorable to you and select **Done**.
    
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/success.png" alt-text="Screenshot where user can change friendly name of the new sign-in method.":::   
+--->
 
 ## Troubleshooting
 
@@ -165,12 +170,15 @@ The easiest way to add a passkey is to add it directly in the Authenticator app.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-delete.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for iOS devices.":::
 
+<!---Support for browser scenarios aren't yet supported 
+
 > [!NOTE]
 > You also need to delete the passkey from **Security Info**, using a web browser and logging in to [https://mysignins.microsoft.com/security-info](https://mysignins.microsoft.com/security-info ).  
 
+--->
 # [:::image type="icon" source="media/icons/android-icon.png" border="false"::: **Android**](#tab/Android)
 
-## Authenticator registration (Android)
+## Register passkey by signing into Authenticator (Android)
 
 1. Open Authenticator.
 1. Tap the **+** button.
@@ -179,6 +187,9 @@ The easiest way to add a passkey is to add it directly in the Authenticator app.
 1. You need to complete multifactor authentication (MFA).
 1. Authenticator sets up passkey, passwordless, or MFA for sign-in according to your work or school account policies. 
 
+[!INCLUDE [Need APIs to support browsers](./includes/passkeys-with-chrome-browser.md)]
+
+<!---Support for browser scenarios aren't yet supported 
 ## Same-device registration (Android)
 
 1. Using your Android device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
@@ -309,6 +320,7 @@ The easiest way to add a passkey is to add it directly in the Authenticator app.
 1. Name the passkey something memorable to you and select **Done**. 
 
     :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/success.png" alt-text="Screenshot of the successful creation of a passkey in Microsoft Authenticator for Android devices.":::
+--->
 
 ## Troubleshooting
 
@@ -320,7 +332,10 @@ The easiest way to add a passkey is to add it directly in the Authenticator app.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-delete.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for Android devices.":::
 
+<!---Support for browser scenarios aren't yet supported 
+
 > [!NOTE]
 > You also need to delete the passkey from **Security Info**, using a web browser and logging in to [https://mysignins.microsoft.com/security-info](https://mysignins.microsoft.com/security-info ).  
+--->
 
 ---

@@ -38,8 +38,6 @@
       href: concept-authentication-authenticator-app.md
     - name: Certificates
       href: concept-certificate-based-authentication.md
-    - name: Windows Hello for Business
-      href: concept-authentication-windows-hello-for-business.md
     - name: OATH tokens
       href: concept-authentication-oath-tokens.md
     - name: Phone options

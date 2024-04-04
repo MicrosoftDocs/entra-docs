@@ -24,6 +24,9 @@ This article lists steps to enable and enforce Microsoft Authenticator passkey s
 - Android 14 and later or iOS 17 and later
 - Latest version of Microsoft Authenticator
 
+> [!NOTE]
+> Users need to be sure they've installed the latest version of Authenticator for Android or iOS to be able to use passkey functionality. 
+
 [!INCLUDE [Passkey roll out](~/includes/entra-authentication-passkey.md)]
 
 To use passkeys (FIDO2) for logging in to web apps and services, you must have a browser that supports the WebAuthN protocol. 
@@ -47,6 +50,9 @@ To enable Authenticator passkey, you edit the **Passkey (FIDO2)** method policy,
    - Authenticator for iOS: 90a3ccdf-635c-4729-a248-9b709135078f
 
    :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey.":::
+
+> [!NOTE]
+> Users need to be sure they've installed the latest version of Authenticator for Android or iOS to be able to use passkey functionality. 
 
 The following list describes other optional settings:
 
@@ -136,8 +142,8 @@ The following steps explain how to create a Conditional Access policy.
 1. Select **Passkeys (FIDO2)** and then select **Advanced options**.
 1. Add AAGUIDs for Authenticator passkey:
 
-   - de1e552d-db1d-4423-a619-566b625cdc84
-   - 90a3ccdf-635c-4729-a248-9b709135078f
+  - Authenticator for Android: de1e552d-db1d-4423-a619-566b625cdc84
+  - Authenticator for iOS: 90a3ccdf-635c-4729-a248-9b709135078f
 
 1. Choose **Next** and review the policy configuration.
 
