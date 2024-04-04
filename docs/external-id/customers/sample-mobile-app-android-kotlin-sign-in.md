@@ -1,6 +1,6 @@
 ---
 title: Sign in users in sample Android (Kotlin) mobile app 
-description: Learn how to Authenticate users in a Microsoft Entra ID for customers tenant using a sample Android (Kotlin) application.
+description: Learn how to authenticate users in a Microsoft Entra ID for customers tenant using a sample Android (Kotlin) application.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,7 +12,7 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 04/04/2024
 ms.custom: developer
-#Customer intent: As a developer, I want to authenticate users and call a protected web API from a sample Android mobile app so that I can experience how Microsoft Entra ID for customers work.
+#Customer intent: As a developer, I want to authenticate users from a sample Android mobile app so that I can experience how Microsoft Entra ID for customers work.
 ---
 
 # Sign in users in sample Android (Kotlin) app
