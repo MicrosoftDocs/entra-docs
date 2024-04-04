@@ -49,6 +49,13 @@ Microsoft Entra Verified ID supports the following key types for the JSON Web Si
 |--------|-------------|
 |secp256k1|ES256K|
 |Ed25519|EdDSA|
+|EC|P-256|
+
+Starting February 2024, Verified ID support NIST compliant P-256 curve.
+
+For the quick setup customers, the newly issued credentials will use P-256 curve as default and any previously issued credentials will continue to work until they expire. Existing authorities will automatically migrate to using P-256 for any future issuances.
+
+For the advanced setup customers, Verified ID credentials issued will be signed with P-256 curve by default for any new authorities. For existing authorities, there is no change to already issued or newly issued credentials.
 
 ## Interoperability
 
