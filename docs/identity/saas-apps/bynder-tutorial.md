@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 09/28/2023
+ms.date: 04/05/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Bynder so that I can control who has access to Bynder, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -81,9 +81,9 @@ Follow these steps to enable Microsoft Entra SSO.
    > [!NOTE]
 	> For BYNDER_CONFIG_ID use an identifier value you got from **Сreate New Bynder Configuration** section.
 
-1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, enter the values for the following fields:
+1. On the **Basic SAML Configuration** section, perform the following steps:
 
-   a. In the **Identifier** text box, type a URL using the following pattern:
+   a. In the **Identifier** text box, type a URL using one of the following patterns:
     
    For a Default Domain: 
    `https://<COMPANY_NAME>.bynder.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/metadata`
@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
    For a Custom Domain: 
    `https://<SUBDOMAIN>.<DOMAIN>.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/metadata`
 
-   b. In the **Reply URL** text box, type a URL using the following pattern:
+   b. In the **Reply URL** text box, type a URL using one of the following patterns:
     
    For a Default Domain: 
    `https://<COMPANY_NAME>.bynder.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/acs`
@@ -99,21 +99,21 @@ Follow these steps to enable Microsoft Entra SSO.
    For a Custom Domain: 
    `https://<SUBDOMAIN>.<DOMAIN>.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/acs`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
-   In the **Sign-on URL** text box, type a URL using the following pattern:
+   In the **Sign-on URL** text box, type a URL using one of the following patterns:
     
    For a Default Domain: 
-   `https://<COMPANY_NAME>.bynder.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/acs`
+   `https://<COMPANY_NAME>.bynder.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/initialize`
     
    For a Custom Domain: 
-   `https://<SUBDOMAIN>.<DOMAIN>.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/acs`
+   `https://<SUBDOMAIN>.<DOMAIN>.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/initialize`
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section,  find **Metadata XML** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/metadataxml.png "Certificate")
 
-1. On the **Set up Bynder** section, copy the appropriate URL(s) based on your requirement.
+1. On the **Set up Bynder** section, copy the appropriate URLs based on your requirement.
 
 	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
