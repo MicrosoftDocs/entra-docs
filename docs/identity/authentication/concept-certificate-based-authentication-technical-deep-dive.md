@@ -223,7 +223,7 @@ Mapping types based on user names and email addresses are considered low-affinit
 
 ### Define Affinity binding at the tenant level and override with custom rules (Preview)
 
-With this feature an Authentication Policy Administrator can configure whether a user can be authenticated by using low-affinity or high-affinity username binding mapping. You can set **Required affinity binding** for the tenant, which applies to all users. You can also override the tenant-wide default value by creating custom rules based or Issuer and Policy OID, or Policy OID, or Issuer.
+With this feature an Authentication Policy Administrator can configure whether a user can be authenticated by using low-affinity or high-affinity username binding mapping. You can set **Required affinity binding** for the tenant, which applies to all users. You can also override the tenant-wide default value by creating custom rules based on Issuer and Policy OID, or Policy OID, or Issuer.
 
 <a name='how-microsoft-entra-id-resolves-multiple-username-policy-binding-rules'></a>
 
