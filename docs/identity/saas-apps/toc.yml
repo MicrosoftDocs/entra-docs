@@ -1361,8 +1361,8 @@
         href: imageworks-tutorial.md
       - name: Imagineer WebVision
         href: imagineerwebvision-tutorial.md
-      - name: iManage Work (SAML)
-        href: imanage-work-saml-tutorial.md
+      - name: Cloud iManage
+        href: cloud-imanage-tutorial.md
       - name: IMPAC Risk Manager
         href: impacriskmanager-tutorial.md
       - name: Imperva Data Security
@@ -2653,8 +2653,8 @@
         href: stonebranch-universal-automation-center-saas-cloud-tutorial.md
       - name: Stormboard
         href: stormboard-tutorial.md
-      - name: Striim
-        href: striim-tutorial.md
+      - name: Striim Cloud
+        href: striim-cloud-tutorial.md
       - name: Striim Platform
         href: striim-platform-tutorial.md
       - name: Styleflow

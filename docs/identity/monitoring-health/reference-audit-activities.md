@@ -1309,7 +1309,6 @@ Users in your tenant can manage many aspects of their group memberships on their
 |GroupManagement|Approvals_ActOnApproval|
 |GroupManagement|Approvals_Post|
 |GroupManagement|Approve a pending request to join a group|
-|GroupManagement|Autorenew group|
 |GroupManagement|Cancel a pending request to join a group|
 |GroupManagement|Create lifecycle management policy|
 |GroupManagement|Delete a pending request to join a group|

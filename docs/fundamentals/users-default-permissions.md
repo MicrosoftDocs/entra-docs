@@ -10,7 +10,7 @@ ms.topic: conceptual
 ms.date: 02/17/2023
 ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: it-pro
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 ---
 # What are the default user permissions in Microsoft Entra ID?
