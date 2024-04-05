@@ -89,14 +89,14 @@ You can use the [Connectors for Microsoft Identity Manager 2016](https://www.mic
 
  3. Select **Save**.
 
-## 5. Configure the generic web services connector
+## 6. Configure the generic web services connector
 
 In this section, you will create the connector configuration for SAP ECC.
 
 
 Configuration of the connection to SAP ECC is done using a wizard. Depending on the options you select, some of the wizard screens might not be available and the information might be slightly different. Use the following information to guide you in your configuration.
 
-### 5.1 Connect the provisioning agent to SAP ECC
+### 6.1 Connect the provisioning agent to SAP ECC
 
 To connect the Microsoft Entra provisioning agent with SAP ECC, follow these steps:
 
@@ -197,7 +197,7 @@ To connect the Microsoft Entra provisioning agent with SAP ECC, follow these ste
  On the **Deprovisioning** page, under Disable flow, select None. You will control user account status with **expirationTime** property. Under Delete flow, select None if you do not want to delete SAP users or Delete if you do. Select **Finish**.
      
 
-## 6. Ensure the ECMA2Host service is running
+## 7. Ensure the ECMA2Host service is running
 
  1. On the server running the Microsoft Entra ECMA Connector Host, select **Start**.
  2. Enter **run** and enter **services.msc** in the box.
@@ -209,7 +209,7 @@ To connect the Microsoft Entra provisioning agent with SAP ECC, follow these ste
 
  1. If you have recently started the service, and have many user objects in the SAP ECC, then wait several minutes for the connector to establish a connection with SAP ECC.
 
-## 7. Configure the application connection in the Microsoft Entra admin center
+## 8. Configure the application connection in the Microsoft Entra admin center
 
 1. Return to the web browser window where you were configuring the application provisioning.
 
@@ -236,7 +236,7 @@ To connect the Microsoft Entra provisioning agent with SAP ECC, follow these ste
 
      ![Screenshot that shows testing an agent.](.\\media\app-provisioning-sql\configure-9.png)
 
-## 8. Configure attribute mappings
+## 9. Configure attribute mappings
 
 Now you will map attributes between the representation of the user in Microsoft Entra ID and the representation of the user in SAP ECC.
 
@@ -285,7 +285,7 @@ You'll use the Microsoft Entra admin center to configure the mapping between the
  
  9. Once all of the mappings have been added, select **Save**.
 
-## 9. Assign users to the application
+## 10. Assign users to the application
 
 Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft Entra ID, and the attribute mapping configured, you can move on to configuring who's in scope for provisioning.
 
@@ -317,7 +317,7 @@ Otherwise, if there are no current users of the application, then select a test 
 
      [![Screenshot that shows Assign users.](.\\media\app-provisioning-sql\app-5.png)](.\\media\app-provisioning-sql\app-5.png#lightbox)
      
-## 10. Test provisioning
+## 11. Test provisioning
 
 Now that your attributes are mapped and users are assigned, you can test on-demand provisioning with one of your users.
  
@@ -331,7 +331,7 @@ Now that your attributes are mapped and users are assigned, you can test on-dema
 
  6. After several seconds, then the message **Successfully created user in target system** will appear, with a list of the user attributes.
 
-## 11. Start provisioning users
+## 12. Start provisioning users
 
 1. After on-demand provisioning is successful, return to the provisioning configuration page. Ensure that the scope is set to only assigned users and groups, turn provisioning **On**, and select **Save**.
  
