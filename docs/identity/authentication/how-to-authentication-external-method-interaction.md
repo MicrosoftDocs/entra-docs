@@ -6,7 +6,7 @@ description: Learn about Entra ID interaction with provider
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/27/2024
+ms.date: 04/05/2024
 
 ms.author: justinha
 author: justinha
@@ -261,7 +261,7 @@ Here's an example of the id_token hint for a guest user in the tenant:
 The following are the steps that we suggest the external identity provider to carry out at their end. The list isn't exhaustive and the provider is encouraged to carry out additional validation activities as they see fit. 
 
 1. From the request:
-   - Ensure that the redirect_uri is one of the published ones provided in section 3.3.2.
+   - Ensure that the redirect_uri is one of the published ones provided in [Entra ID call to the external identity provider](#entra-id-call-to-the-external-identity-provider).
    - Ensure that the client_id has a value that they assigned to Entra ID, such as *ABCD*.
    - The provider should first [validate](/entra/identity-platform/id-tokens#validating-an-id_token) the id_token_hint that is presented to it by Entra ID.
 1. From the claims in the id_token_hint:
@@ -285,13 +285,13 @@ On success, the provider would then issue an id_token for the user. Entra ID wou
 Claim | Value | Description
 ------|-------|------------
 iss   |       | Issuer – must match the issuer from the provider’s discovery metadata.
-aud   |       | Audience – the Entra ID client id. See ClientId in 3.2.2 above.
+aud   |       | Audience – the Entra ID client id. See ClientId in [Entra ID call to the external identity provider](#entra-id-call-to-the-external-identity-provider).
 exp   |       | Expiration time – set as usual.
 iat   |       | Issuing time – set as usual.
 sub   |       | Subject – must match the sub from the id_token_hint sent to initiate this request
-nonce   |       | The same nonce that was passed in the request, if any. Otherwise, this should not be present.
+nonce |       | The same nonce that was passed in the request, if any. Otherwise, this should not be present.
 acr   |       | The acr claims for the authentication request. This should match one of the values from the request sent to initiate this request. Only one acr claim should be returned. For the list of claims, see [Supported acr claims](#supported-acr-claims).
-amr   |       | The amr claims for the authentication method used in authentication.  Only one method claim should be returned.	For the list of claims, see [Supported amr claims](#supported-amr-claims).
+amr   |       | The amr claims for the authentication method used in authentication. Only one method claim should be returned.	For the list of claims, see [Supported amr claims](#supported-amr-claims).
 
 
 #### Supported acr claims
