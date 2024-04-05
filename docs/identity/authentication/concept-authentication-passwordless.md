@@ -25,7 +25,7 @@ Each organization has different needs when it comes to authentication. Microsoft
 
 - Windows Hello for Business
 - Platform Credential for macOS
-- Platform Single Sign-On (PSSO) for macOS with smart card authentication
+- Platform single sign-on (PSSO) for macOS with smart card authentication
 - Microsoft Authenticator
 - FIDO2 security keys
 - Certificate-based authentication
@@ -252,7 +252,7 @@ We recommend no more than 20 sets of keys for each passwordless method for any u
 
 When you use PowerShell to create a CSV file with all of the existing keys, carefully identify the keys that you need to keep, and remove those rows from the CSV. Then use the modified CSV with PowerShell to delete the remaining keys to bring the account key count under the limit.
  
-It is safe to delete any key reported as "Orphaned"="True" in the CSV. An orphaned key is one for a device that is not longer registered in Entra ID. If removing all Orphans still doesn't bring the User account below the limit it is necessary to look at the "DeviceId" and "CreationTime" columns to identify which keys to target for deletion. Be careful to remove any row in the CSV for keys you want to keep. Keys for any DeviceID corresponding to devices the user actively uses should be removed from the CSV before the deletion step.
+It is safe to delete any key reported as "Orphaned"="True" in the CSV. An orphaned key is one for a device that is not longer registered in Microsoft Entra ID. If removing all Orphans still doesn't bring the User account below the limit it is necessary to look at the "DeviceId" and "CreationTime" columns to identify which keys to target for deletion. Be careful to remove any row in the CSV for keys you want to keep. Keys for any DeviceID corresponding to devices the user actively uses should be removed from the CSV before the deletion step.
 
 ## Choose a passwordless method
 

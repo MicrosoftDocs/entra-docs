@@ -63,7 +63,7 @@ Confirm that a previously registered device (with a Workplace Join key in Keycha
 
 ### Can I use macOS PSSO in a hybrid-join deployment?
 
-No, macOS PSSO is only supported in Microsoft Entra join deployments. There are no plans to support hybrid-join deployments, as we recommend that Mac users to go fully cloud based.
+No, macOS PSSO is only supported in Microsoft Entra join deployments. There are no plans to support hybrid-join deployments, as we recommend that Mac users go fully cloud based.
 
 ## Known issues
 

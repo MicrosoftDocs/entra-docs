@@ -16,7 +16,7 @@ ms.reviewer: brianmel
 
 # Join a Mac device with Microsoft Entra ID using Company Portal (preview)
 
-In this tutorial, you will learn how to register a Mac device with macOS Platform Single Sign-on (PSSO) using Company Portal and the Intune MDM enrollment with Microsoft Entra Join. There are three methods in which you can register a Mac device with PSSO, secure enclave, smart card, or password. We recommend using secure enclave or smart card for the best passwordless experience, however its important to note that this method will be preset by your company administrator using Microsoft Intune.
+In this tutorial, you will learn how to register a Mac device with macOS Platform Single Sign-on (PSSO) using Company Portal and the Intune MDM enrollment with Microsoft Entra Join. There are three methods in which you can register a Mac device with PSSO, secure enclave, smart card, or password. We recommend using secure enclave or smart card for the best passwordless experience, however it's important to note that this method will be preset by your company administrator using Microsoft Intune.
 
 ## Prerequisites
 
@@ -57,7 +57,7 @@ To register a Mac device with PSSO, you must first enroll your device in Microso
 
     :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-registration-required-notification.png" alt-text="Screenshot of the Registration Required notification.":::
 
-1. The Platform SSO window appears to enable your macOS account to be registered with your identity provider. You can unlock the device with Touch ID or local account password depending on the device set up. We strongly recommend setting up Touch ID.
+1. The Platform SSO window appears to enable your macOS account to be registered with your identity provider. You can unlock the device with Touch ID or local account password depending on the device setup. We strongly recommend setting up Touch ID.
 
     :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-register-window.png" alt-text="Screenshot of the Platform SSO notification requesting to use password or Touch ID.":::
 
@@ -135,7 +135,7 @@ Now that the device is in compliance with Company Portal, you need to register y
 
 1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. For macOS 14 Somona users, you'll see a prompt to register your device with Microsoft Entra. This prompt doesn't appear for macOS 13 Ventura.
 
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/macos14-microsoft-entra-registration-required.png" alt-text="Screenshot of a Microsoft Entra registration prompt that appears on macOS 14 after the registration required notification is selected.":::
+    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/macos-14-microsoft-entra-registration-required.png" alt-text="Screenshot of a Microsoft Entra registration prompt that appears on macOS 14 after the registration required notification is selected.":::
 
 1. Once your account is unlocked with Touch ID or password, select the account to sign in to, enter your sign-in credentials and select **Next**.
 1. MFA is required as part of this sign in flow. Open your **Authenticator app** (recommended) or use your other MFA methods you have registered, and enter the number displayed on the screen to finish registration.

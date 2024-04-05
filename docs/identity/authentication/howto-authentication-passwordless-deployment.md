@@ -27,7 +27,7 @@ Microsoft offers the following [five passwordless authentication options](concep
 
 * [Platform Credential for macOS](./concept-authentication-passwordless.md#platform-credential-for-macos) - a new capability on macOS that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe).
 
-* [macOS Platform Single Sign-On with SmartCard](./concept-authentication-passwordless.md#platform-single-sign-on-for-macos-with-smartcard) - a new capability on macOS for smart card based authentication that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe).
+* [macOS Platform single sign-on with SmartCard](./concept-authentication-passwordless.md#platform-single-sign-on-for-macos-with-smartcard) - a new capability on macOS for smart card based authentication that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe).
 
 > [!NOTE]
 > To create an offline version of this plan with all links, use your browsers print to pdf functionality.
@@ -97,16 +97,12 @@ The wizard will use your inputs to craft a step-by-step plan for you to follow.
 ### Platform Credential for macOS
 
 To enable Platform Credential for macOS; 
-- Your Mac must have an operating system of at least macOS 13 Ventura (macOS 14 Sonoma is recommended), and that the configuration steps are done through the [Microsoft InTune admin center](https://intune.microsoft.com/#home).
+- Your Mac must have an operating system of at least macOS 13 Ventura (macOS 14 Sonoma is recommended), and that the configuration steps are done through the [Microsoft Intune admin center](https://intune.microsoft.com/#home).
 - The device must be MDM enrolled with SSO extension payload configured to support Platform Single Sign-On (PSSO) with the UserSecureEnclaveKey.
 
-Support for other Mobile Device Management (MDM) providers will be added in future releases.
+### macOS Platform single sign-on with SmartCard
 
-### macOS Platform Single Sign-On with SmartCard
-
-To enable macOS Platform Single Sign-On (PSSO) with SmartCard, your Mac must have an operating system of at least macOS 14 Sonoma, and that the configuration steps are done through the [Microsoft InTune admin center](https://intune.microsoft.com/#home).
-
-Support for other Mobile Device Management (MDM) providers will be added in future releases.
+To enable macOS Platform single sign-on (PSSO) with SmartCard, your Mac must have an operating system of at least macOS 14 Sonoma, and that the configuration steps are done through the [Microsoft Intune admin center](https://intune.microsoft.com/#home).
 
 ## Plan the project
 
