@@ -23,12 +23,14 @@ SAP likely runs critical functions, such as HR and ERP, for your business. At th
 
 ### SuccessFactors
 
-Customers who use SAP SuccessFactors can easily bring identities into [Microsoft Entra ID](../identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) or [on-premises Active Directory](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) by using native connectors. The connectors support the following scenarios:
+Customers who use SAP SuccessFactors can easily bring identities [from SuccessFactors into Microsoft Entra ID](../identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) or [from SuccessFactors into on-premises Active Directory](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) by using native connectors. The connectors support the following scenarios:
 
 * **Hiring new employees**: When a new employee is added to SuccessFactors, a user account is automatically created in Microsoft Entra ID and optionally Microsoft 365 and [other software as a service (SaaS) applications that Microsoft Entra ID supports](../identity/app-provisioning/user-provisioning.md). This process includes write-back of the email address to SuccessFactors.
 * **Employee attribute and profile updates**: When an employee record is updated in SuccessFactors (such as name, title, or manager), the employee's user account is automatically updated in Microsoft Entra ID and optionally Microsoft 365 and other SaaS applications that Microsoft Entra ID supports.
 * **Employee terminations**: When an employee is terminated in SuccessFactors, the employee's user account is automatically disabled in Microsoft Entra ID and optionally Microsoft 365 and other SaaS applications that Microsoft Entra ID supports.
 * **Employee rehires**: When an employee is rehired in SuccessFactors, the employee's old account can be automatically reactivated or reprovisioned (depending on your preference) to Microsoft Entra ID and optionally Microsoft 365 and other SaaS applications that Microsoft Entra ID supports.
+
+You can also [write back from Microsoft Entra ID to SAP SuccessFactors](../identity/saas-apps/sap-successfactors-writeback-tutorial.md).
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/66v2FR2-QrY]
 
@@ -44,7 +46,23 @@ In addition to the native provisioning integrations that allow you to manage acc
 
 ### Enable SSO
 
-Along with setting up provisioning for your SAP applications, you can enable SSO for them. Microsoft Entra ID can serve as the identity provider and serve as the authentication authority for your SAP applications. Microsoft Entra ID can integrate with [SAP NetWeaver using SAML or OAuth](../identity/saas-apps/sap-netweaver-tutorial.md).  For SAP SaaS and modern apps, [learn how to configure Microsoft Entra ID as the corporate identity provider for your SAP applications via SAP Cloud Identity Services](https://help.sap.com/docs/IDENTITY_AUTHENTICATION/6d6d63354d1242d185ab4830fc04feb1/058c7b14209f4f2d8de039da4330a1c1.html) and see the guides for [SAP Cloud Identity Services](../identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md), [SAP HANA](../identity/saas-apps/saphana-tutorial.md) and [SAP Fieldglass](../identity/saas-apps/fieldglass-tutorial.md).
+Along with setting up provisioning for your SAP applications, you can enable SSO for them. Microsoft Entra ID can serve as the identity provider and serve as the authentication authority for your SAP applications. Microsoft Entra ID can integrate with [SAP NetWeaver using SAML or OAuth](../identity/saas-apps/sap-netweaver-tutorial.md).  For SAP SaaS and modern apps, [learn how to configure Microsoft Entra ID as the corporate identity provider for your SAP applications via SAP Cloud Identity Services](https://help.sap.com/docs/IDENTITY_AUTHENTICATION/6d6d63354d1242d185ab4830fc04feb1/058c7b14209f4f2d8de039da4330a1c1.html).
+
+For more information on how to configure single sign-on from Microsoft Entra ID, see the following documentation and tutorials:
+
+- [SAP Cloud Identity Services](../identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md)
+- [SAP SuccessFactors](../identity/saas-apps/successfactors-tutorial.md)
+- [SAP Analytics Cloud](../identity/saas-apps/sapboc-tutorial.md)
+- [SAP Fiori](../identity/saas-apps/sap-fiori-tutorial.md)
+- [SAP Qualtrics](../identity/saas-apps/qualtrics-tutorial.md)
+- [SAP Ariba](../identity/saas-apps/ariba-tutorial.md)
+- [SAP Concur Travel and Expense](../identity/saas-apps/concur-travel-and-expense-tutorial.md)
+- [SAP Business Technology Platform](../identity/saas-apps/sap-hana-cloud-platform-tutorial.md)
+- [SAP Business ByDesign](../identity/saas-apps/sapbusinessbydesign-tutorial.md)
+- [SAP HANA](../identity/saas-apps/saphana-tutorial.md)
+- [SAP Cloud for Customer](../identity/saas-apps/sap-customer-cloud-tutorial.md)
+- [SAP Fieldglass](../identity/saas-apps/fieldglass-tutorial.md)
+
 
 ### Provision identities into modern SAP applications
 
@@ -78,23 +96,6 @@ For more information about integration with Microsoft Entra ID, see the followin
 
 - [Secure access with SAP Cloud Identity Services and Microsoft Entra ID](../fundamentals/scenario-azure-first-sap-identity-integration.md)
 - [SAP workload security - Microsoft Azure Well-Architected Framework](/azure/architecture/framework/sap/security)
-- [Provision users from SAP SuccessFactors to Active Directory](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)
-- [Provision users from SAP SuccessFactors to Microsoft Entra ID](../identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)
-- [Write-back users from Microsoft Entra ID to SAP SuccessFactors](../identity/saas-apps/sap-successfactors-writeback-tutorial.md)
-- [Provision users to SAP Cloud Identity Services - Identity Authentication](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md)
-
-For how to configure single sign-on, see the following documentation and tutorials:
-- [SAP Cloud Identity Services - Identity Authentication](../identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md)
-- [SAP SuccessFactors](../identity/saas-apps/successfactors-tutorial.md)
-- [SAP Analytics Cloud](../identity/saas-apps/sapboc-tutorial.md)
-- [SAP Fiori](../identity/saas-apps/sap-fiori-tutorial.md)
-- [SAP Qualtrics](../identity/saas-apps/qualtrics-tutorial.md)
-- [SAP Ariba](../identity/saas-apps/ariba-tutorial.md)
-- [SAP Concur Travel and Expense](../identity/saas-apps/concur-travel-and-expense-tutorial.md)
-- [SAP Business Technology Platform](../identity/saas-apps/sap-hana-cloud-platform-tutorial.md)
-- [SAP Business ByDesign](../identity/saas-apps/sapbusinessbydesign-tutorial.md)
-- [SAP HANA](../identity/saas-apps/saphana-tutorial.md)
-- [SAP Cloud for Customer](../identity/saas-apps/sap-customer-cloud-tutorial.md)
 
 Also see the following SAP resources:
 - [Azure Application Gateway Setup for Public and Internal SAP URLs](https://blogs.sap.com/2020/12/10/sap-on-azure-single-sign-on-configuration-using-saml-and-azure-active-directory-for-public-and-internal-urls/)
