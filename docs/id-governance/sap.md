@@ -86,7 +86,7 @@ You can also use Microsoft Entra ID to provision workers into Active Directory, 
 
 ## Trigger custom workflows
 
-When a new employee is hired in your organization, you might need to trigger a workflow within your SAP on-premises systems for additional tasks beyond user provisioning. By using the [Microsoft Entra lifecycle workflows Logic Apps extensibility](lifecycle-workflow-extensibility.md), or the [Microsoft Entra entitlement management Logic Apps extensibility](entitlement-management-logic-apps-integration) with the [SAP connector in Azure Logic Apps](/azure/logic-apps/logic-apps-using-sap-connector), you can trigger custom actions in SAP upon hiring a new employee.
+When a new employee is hired in your organization, you might need to trigger a workflow within your SAP on-premises systems for additional tasks beyond user provisioning. By using the [Microsoft Entra lifecycle workflows Logic Apps extensibility](lifecycle-workflow-extensibility.md), or the [Microsoft Entra entitlement management Logic Apps extensibility](entitlement-management-logic-apps-integration.md) with the [SAP connector in Azure Logic Apps](/azure/logic-apps/logic-apps-using-sap-connector), you can trigger custom actions in SAP upon hiring a new employee.
 
 ## Check for separation of duties
 
