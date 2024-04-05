@@ -76,7 +76,7 @@ With separation-of-duties checks in Microsoft Entra ID [entitlement management](
 
 For more information about integration with Microsoft Entra ID, see the following documentation:
 
-- [Secure access with SAP Cloud Identity Services and Microsoft Entra ID](../identity/fundamentals/scenario-azure-first-sap-identity-integration.md)
+- [Secure access with SAP Cloud Identity Services and Microsoft Entra ID](../fundamentals/scenario-azure-first-sap-identity-integration.md)
 - [SAP workload security - Microsoft Azure Well-Architected Framework](/azure/architecture/framework/sap/security)
 - [Provision users from SAP SuccessFactors to Active Directory](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)
 - [Provision users from SAP SuccessFactors to Microsoft Entra ID](../identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)
