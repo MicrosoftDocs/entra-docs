@@ -817,20 +817,18 @@ Example of usage within the workflow:
 ```Example for usage within the workflow 
 {
             "category": "leaver,mover",
-            "continueOnError": false,
             "description": "Remove selected licenses assigned to the user",
-            "displayName": "Remove selected license assignments from user (Preview)",
-            "executionSequence": 3,
-            "id": "02d75af7-91b6-434f-bce3-c68a6c70b7aa",
-            "isEnabled": true,
-            "taskDefinitionId": "5fc402a8-daaf-4b7b-9203-da868b05fc5f",
-            "arguments": [
+            "displayName": "Remove licenses from user",
+            "id": "5fc402a8-daaf-4b7b-9203-da868b05fc5f",
+            "version": 1,
+            "parameters": [
                 {
                     "name": "licenses",
-                    "value": "a403ebcc-fae0-4ca2-8c8c-7a907fd6c235"
+                    "values": [],
+                    "valueType": "string"
                 }
             ]
-}
+        }
 ```
 
 ### Remove all license assignments from User
