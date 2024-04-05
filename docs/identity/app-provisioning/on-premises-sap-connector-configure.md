@@ -21,4 +21,4 @@ The following documentation provides configuration and tutorial information demo
 ## Next steps
 
 - [App provisioning](user-provisioning.md)
-- [manage access to your SAP applications](~/id-governance/sap.md)
+- [Manage access to your SAP applications](~/id-governance/sap.md)
