@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Set up In Case of Crisis - Online Portal** section, copy the appropriate URL(s) based on your requirement.
 
-	![Copy configuration URLs](common/copy-configuration-urls.png)
+	**UPDATE**:  On the Properties page, please send us the User Access URL.  This will be used in the In Case of Crisis portal.
 
 <a name='create-an-azure-ad-test-user'></a>
 
