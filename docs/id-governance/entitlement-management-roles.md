@@ -24,9 +24,9 @@ Assigning Microsoft Entra roles through access packages helps to efficiently man
 
 ## Scenarios for Microsoft Entra role assignment using access packages
 
-Let’s imagine that your organization recently hired 50 new employees for the Support team, and that you're tasked with giving these new employees access to the resources they need. These employees need access to the Support Group, a SharePoint site, and to certain support-related applications. They also need three Microsoft Entra roles, including the *Helpdesk Administrator* role, to do their jobs. Instead of individually assigning each of the 50 employees to all the resources and roles, you can set up an access package containing the SharePoint site, Group, and the specific Microsoft Entra roles. Then, you can configure the access package to have managers as approvers, and share the link with the Support team.
+Let’s imagine that your organization recently hired 50 new employees for the Support team, and that you're tasked with giving these new employees access to the resources they need. These employees need access to the Support Group, a SharePoint site, and to certain support-related applications. They also need three Microsoft Entra roles, including the *Billing Administrator* role, to do their jobs. Instead of individually assigning each of the 50 employees to all the resources and roles, you can set up an access package containing the SharePoint site, Group, and the specific Microsoft Entra roles. Then, you can configure the access package to have managers as approvers, and share the link with the Support team.
 
-:::image type="content" source="media/entitlement-management-roles/helpdesk-role-package.png" alt-text="Screenshot of adding a resource role to new access package.":::
+:::image type="content" source="media/entitlement-management-roles/billing-role-package.png" alt-text="Screenshot of adding a resource role to new access package.":::
 
 Now, new members joining the Support team can request access to this access package in *My Access* and get access to everything they need as soon as their manager approves the request. This saves you time and energy because the Support team is planning on expanding globally, hiring ~1,000 new employees, but you no longer have to manually assign each person to an access package. 
 
@@ -55,7 +55,7 @@ Follow these steps to change the list of incompatible groups or other access pac
 1. Select the Microsoft Entra roles you want to include in the access package.
     :::image type="content" source="media/entitlement-management-roles/select-role-access-package.png" alt-text="Screenshot of selecting role for access package.":::  
 
-1. In the **Role** list, select **Eligible** or **Member**. 
+1. In the **Role** list, select **Eligible member** or **Active member**. 
     :::image type="content" source="media/entitlement-management-roles/access-package-role.png" alt-text="Screenshot of choosing role for resource role in access package.":::
 1. Select **Add**.
 
