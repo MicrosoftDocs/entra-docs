@@ -1,5 +1,5 @@
 ---
-title: Assign Microsoft Entra Roles - Entitlement management (Preview)
+title: Assign Microsoft Entra roles - Entitlement management (Preview)
 description: Learn how to assign Microsoft Entra roles with access packages.
 author: owinfreyatl
 manager: amycolannino
@@ -14,7 +14,7 @@ ms.reviewer: sponnada
 #Customer intent: As an admin, I want steps for how to add a Microsoft Entra role as a resource in an access packages so that I can assign Microsoft Entra roles using access packages.
 ---
 
-# Assign Microsoft Entra Roles (Preview)
+# Assign Microsoft Entra roles (Preview)
 
 Entitlement Management supports access lifecycle for various resource types such as Applications, SharePoint sites, Groups, and Teams. Sometimes users need extra permissions to utilize these resources in specific ways. For instance, a user might need to have access to your organization’s Power BI dashboards, but would need the Power BI Administrator role to see org-wide metrics.  Although other Microsoft Entra ID functionalities, such as role-assignable groups, might support these Microsoft Entra role assignments, the access granted through those methods is less explicit. For example, you would be managing a group’s membership rather than managing users' role assignments directly.  
 
