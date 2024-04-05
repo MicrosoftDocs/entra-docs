@@ -11,8 +11,8 @@ The following video provides an overview of on-premises provisioning.
 > - Discover the schema for SAP ECC.
 
 ## Out of scope
-* Other object types including local activity groups, roles, and profiles are not supported. Please use the Microsoft Identity Manager if these objects are required. 
-* Password operations are not supported. Please use the Microsoft Identity Manager if password management is required.
+* Other object types including local activity groups, roles, and profiles are not supported. Use the Microsoft Identity Manager if these objects are required. 
+* Password operations are not supported. Use the Microsoft Identity Manager if password management is required.
 
 ## Prerequisites for provisioning to SAP ECC with NetWeaver AS ABAP 7.51
 
@@ -20,7 +20,7 @@ The following video provides an overview of on-premises provisioning.
 
 The computer that runs the provisioning agent should have:
 
-- Connectivity to SAP ECC NetWeaver AS ABAP 7.51 with outbound connectivity to login.microsoftonline.com, [other Microsoft Online Services](/microsoft-365/enterprise/urls-and-ip-address-ranges) and [Azure](/azure/azure-portal/azure-portal-safelist-urls) domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy. 
+- Connectivity to SAP ECC NetWeaver AS ABAP 7.51 with outbound connectivity to login.microsoftonline.com, [other Microsoft Online Services](/microsoft-365/enterprise/urls-and-ip-address-ranges), and [Azure](/azure/azure-portal/azure-portal-safelist-urls) domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy. 
 - At least 3 GB of RAM, to host a provisioning agent. 
 - .NET Framework 4.7.2 
 - A Windows Server 2016 or a later version. 
@@ -29,7 +29,6 @@ Prior to configuring provisioning, ensure that you:
 - Expose the necessary APIs in SAP ECC NetWeaver 7.51 to create, update, and delete users. The [guide](https://www.microsoft.com/download/details.aspx?id=51495) `Deploying SAP NetWeaver AS ABAP 7.pdf` walks through how you can expose the necessary APIs.
 - Create a web services connector template for the ECMA host. You can use the [guide](https://www.microsoft.com/download/details.aspx?id=51495) `Authoring SAP ECC 7 Template for ECMA2Host.pdf` as a reference to build your template. The download center provides a template `sapecc.wsconfig` as a reference. Before deploying in production, you will need to customize the template to meet the needs of your specific environment. Make sure that the ServiceName, EndpointName, and the OperationName are correct. 
 
-Configuration of the connection to SAP ECC is done using a wizard. Depending on the options you select, some of the wizard screens might not be available and the information might be slightly different. Use the following information to guide you in your configuration.
 
 ### Cloud requirements
 
@@ -59,7 +58,7 @@ If you have already downloaded the provisioning agent and configured it for anot
  8. Leave the portal and run the provisioning agent installer, agree to the terms of service, and select **Install**.
  9. Wait for the Microsoft Entra provisioning agent configuration wizard and then select **Next**.
  10. In the **Select Extension** step, select **On-premises application provisioning** and then select **Next**.
- 11. The provisioning agent will use the operating system's web browser to display a popup window for you to authenticate to Microsoft Entra ID, and potentially also your organization's identity provider.  If you are using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
+ 11. The provisioning agent will use the operating system's web browser to display a popup window for you to authenticate to Microsoft Entra ID, and potentially also your organization's identity provider. If you are using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
  12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have the Hybrid Identity Administrator or Global Administrator role.
  13. Select **Confirm** to confirm the setting. Once installation is successful, you can select **Exit**, and also close the Provisioning Agent Package installer.
  
@@ -76,7 +75,7 @@ If you have already downloaded the provisioning agent and configured it for anot
 
 ## 5. Configure the Microsoft Entra ECMA Connector Host certificate
 
- 1. On the Windows Server where the provisioning agent is installed, right click the **Microsoft ECMA2Host Configuration Wizard** from the start menu, and run as administrator.  Running as a Windows administrator is necessary for the wizard to create the necessary Windows event logs.
+ 1. On the Windows Server where the provisioning agent is installed, right click the **Microsoft ECMA2Host Configuration Wizard** from the start menu, and run as administrator. Running as a Windows administrator is necessary for the wizard to create the necessary Windows event logs.
  
  1. After the ECMA Connector Host Configuration starts, if it's the first time you have run the wizard, it will ask you to create a certificate. Leave the default port **8585** and select **Generate certificate** to generate a certificate. The autogenerated certificate will be self-signed as part of the trusted root. The certificate SAN matches the host name.
 
@@ -90,11 +89,13 @@ In this section, you will create the connector configuration for SAP ECC.
 
 ### 5.1 Connect the provisioning agent to SAP ECC
 
+Configuration of the connection to SAP ECC is done using a wizard. Depending on the options you select, some of the wizard screens might not be available and the information might be slightly different. Use the following information to guide you in your configuration.
+
 To connect the Microsoft Entra provisioning agent with SAP ECC, follow these steps:
 
 1. Copy your web service connector [template](https://www.microsoft.com/download/details.aspx?id=51495) sapecc.wsconfig into `C:\Program Files\Microsoft ECMA2Host\Service\ECMA` folder. 
 1. Generate a secret token that will be used for authenticating Microsoft Entra ID to the connector. It should be 12 characters minimum and unique for each application.
-1. If you haven't already done so, launch the **Microsoft ECMA2Host Configuration Wizard** from the Windows Start menu.
+1. If you haven't already done so, launch the **Microsoft ECMA2Host Configuration Wizard** from the Windows Start menu.  
 
 1. Select **New Connector**.
 
@@ -154,7 +155,7 @@ To connect the Microsoft Entra provisioning agent with SAP ECC, follow these ste
 
 1. On the **Partitions** page, select **Next**.
 
-1. On the **Run Profiles** page, keep the **Export** checkbox selected. Select the **Full import** checkbox and select **Next**. The **Export** run profile will be used when the ECMA Connector host needs to send changes from Microsoft Entra ID to SAP ECC, to insert, update and delete records.  The **Full Import** run profile will be used when the ECMA Connector host service starts, to read in the current content of SAP ECC.  
+1. On the **Run Profiles** page, keep the **Export** checkbox selected. Select the **Full import** checkbox and select **Next**. The **Export** run profile will be used when the ECMA Connector host needs to send changes from Microsoft Entra ID to SAP ECC, to insert, update, and delete records. The **Full Import** run profile will be used when the ECMA Connector host service starts, to read in the current content of SAP ECC.  
 
     
     | Property | Value |
@@ -242,8 +243,8 @@ You'll use the Microsoft Entra admin center to configure the mapping between the
 
      ![Screenshot that shows provisioning a user.](.\\media\app-provisioning-sql\configure-10.png)
 
- 5. To confirm that the schema of SAP ECC is available in Microsoft Entra ID, select the **Show advanced options** checkbox and select **Edit attribute list for ScimOnPremises**. Ensure that all the attributes selected in the configuration wizard are listed.  If not, then wait several minutes for the schema to refresh, and then reload the page.  Once you see the attributes listed, then cancel from this page to return to the mappings list.
- 6. Now, click on the **userPrincipalName** PLACEHOLDER mapping.  This mapping is added by default when you first configure on-premises provisioning.  
+ 5. To confirm that the schema of SAP ECC is available in Microsoft Entra ID, select the **Show advanced options** checkbox and select **Edit attribute list for ScimOnPremises**. Ensure that all the attributes selected in the configuration wizard are listed. If not, then wait several minutes for the schema to refresh, and then reload the page. Once you see the attributes listed, then cancel from this page to return to the mappings list.
+ 6. Now, click on the **userPrincipalName** PLACEHOLDER mapping. This mapping is added by default when you first configure on-premises provisioning.  
  
 :::image type="content" source="./media/app-provisioning-sql/configure-11.png" alt-text="Screenshot of placeholder." lightbox="./media/app-provisioning-sql/configure-11.png":::
 
@@ -282,7 +283,7 @@ You'll use the Microsoft Entra admin center to configure the mapping between the
 Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft Entra ID, and the attribute mapping configured, you can move on to configuring who's in scope for provisioning.
 
 >[!IMPORTANT]
->If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the Application Administrator, Cloud Application Administrator or Global Administrator role, for this section.  The Hybrid Identity Administrator role does not have permissions to assign users to applications.
+>If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the Application Administrator, Cloud Application Administrator or Global Administrator role, for this section. The Hybrid Identity Administrator role does not have permissions to assign users to applications.
 
 
 If there are existing users in the SAP ECC, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).
@@ -333,6 +334,6 @@ Now that your attributes are mapped and users are assigned, you can test on-dema
 
 ## Troubleshooting provisioning errors
 
-If an error is shown, then select **View provisioning logs**.  Look in the log for a row in which the Status is **Failure**, and select on that row.
+If an error is shown, then select **View provisioning logs**. Look in the log for a row in which the Status is **Failure**, and select on that row.
 
 For more information, change to the **Troubleshooting & Recommendations** tab.  
