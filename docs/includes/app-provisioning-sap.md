@@ -8,7 +8,6 @@ The following video provides an overview of on-premises provisioning.
 > - Create users in SAP ECC. 
 > - Remove users in SAP ECC when they don't need access anymore.
 > - Keep user attributes synchronized between Microsoft Entra ID and SAP ECC.
-> - Discover the schema for SAP ECC.
 
 ## Out of scope
 * Other object types including local activity groups, roles, and profiles are not supported. Use the Microsoft Identity Manager if these objects are required. 
@@ -20,14 +19,11 @@ The following video provides an overview of on-premises provisioning.
 
 The computer that runs the provisioning agent should have:
 
-- Connectivity to SAP ECC NetWeaver AS ABAP 7.51 with outbound connectivity to login.microsoftonline.com, [other Microsoft Online Services](/microsoft-365/enterprise/urls-and-ip-address-ranges), and [Azure](/azure/azure-portal/azure-portal-safelist-urls) domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy. 
-- At least 3 GB of RAM, to host a provisioning agent. 
+- At least 3 GB of RAM.
+- Windows Server 2016 or a later version of Windows Server. 
+- Connectivity to a system with SAP ECC NetWeaver AS ABAP 7.51 
+- Outbound connectivity to login.microsoftonline.com, [other Microsoft Online Services](/microsoft-365/enterprise/urls-and-ip-address-ranges), and [Azure](/azure/azure-portal/azure-portal-safelist-urls) domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy.
 - .NET Framework 4.7.2 
-- A Windows Server 2016 or a later version. 
-
-Prior to configuring provisioning, ensure that you:
-- Expose the necessary APIs in SAP ECC NetWeaver 7.51 to create, update, and delete users. The [guide](https://www.microsoft.com/download/details.aspx?id=51495) `Deploying SAP NetWeaver AS ABAP 7.pdf` walks through how you can expose the necessary APIs.
-- Create a web services connector template for the ECMA host. You can use the [guide](https://www.microsoft.com/download/details.aspx?id=51495) `Authoring SAP ECC 7 Template for ECMA2Host.pdf` as a reference to build your template. The download center provides a template `sapecc.wsconfig` as a reference. Before deploying in production, you will need to customize the template to meet the needs of your specific environment. Make sure that the ServiceName, EndpointName, and the OperationName are correct. 
 
 
 ### Cloud requirements
@@ -62,6 +58,16 @@ If you have already downloaded the provisioning agent and configured it for anot
  12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have the Hybrid Identity Administrator or Global Administrator role.
  13. Select **Confirm** to confirm the setting. Once installation is successful, you can select **Exit**, and also close the Provisioning Agent Package installer.
  
+## 2. Expose the necessary SAP APIs
+
+Expose the necessary APIs in SAP ECC NetWeaver 7.51 to create, update, and delete users. The [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) file named `Deploying SAP NetWeaver AS ABAP 7.pdf` walks through how you can expose the necessary APIs.
+
+## 3. Create a web services connector template
+
+If you are not migrating from an existing Web Services Connector in MIM, then you will need to create a web services connector template for the ECMA host. If you already have a web services connector template from MIM, then continue at the next section.
+
+You can use the [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) guide `Authoring SAP ECC 7 Template for ECMA2Host.pdf` as a reference to build your template. The [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) also provides a template `sapecc.wsconfig` as a reference. Before deploying in production, you will need to customize the template to meet the needs of your specific environment. Make sure that the **ServiceName**, **EndpointName**, and the **OperationName** are correct.
+
 ## 4. Configure the On-premises ECMA app
 
  1. In the portal, on the **On-Premises Connectivity** section, select the agent that you deployed and select **Assign Agent(s)**.
@@ -87,13 +93,14 @@ If you have already downloaded the provisioning agent and configured it for anot
 
 In this section, you will create the connector configuration for SAP ECC.
 
-### 5.1 Connect the provisioning agent to SAP ECC
 
 Configuration of the connection to SAP ECC is done using a wizard. Depending on the options you select, some of the wizard screens might not be available and the information might be slightly different. Use the following information to guide you in your configuration.
 
+### 5.1 Connect the provisioning agent to SAP ECC
+
 To connect the Microsoft Entra provisioning agent with SAP ECC, follow these steps:
 
-1. Copy your web service connector [template](https://www.microsoft.com/download/details.aspx?id=51495) sapecc.wsconfig into `C:\Program Files\Microsoft ECMA2Host\Service\ECMA` folder. 
+1. Copy your web service connector template file `sapecc.wsconfig` into the `C:\Program Files\Microsoft ECMA2Host\Service\ECMA` folder. 
 1. Generate a secret token that will be used for authenticating Microsoft Entra ID to the connector. It should be 12 characters minimum and unique for each application.
 1. If you haven't already done so, launch the **Microsoft ECMA2Host Configuration Wizard** from the Windows Start menu.  
 
@@ -108,7 +115,7 @@ To connect the Microsoft Entra provisioning agent with SAP ECC, follow these ste
 
      |Property|Value|
      |-----|-----|
-     |Name|The name you chose for the connector, which should be unique across all connectors in your environment. For example, if you only have one SAP instance, SAPECC7. |
+     |Name|The name you chose for the connector, which should be unique across all connectors in your environment. For example, if you only have one SAP instance, `SAPECC7`. |
      |Autosync timer (minutes)|120|
      |Secret Token|Enter the secret token you generated for this connector. The key should be 12 characters minimum.|
      |Extension DLL|For the web services connector, select **Microsoft.IdentityManagement.MA.WebServices.dll**.|
@@ -119,9 +126,9 @@ To connect the Microsoft Entra provisioning agent with SAP ECC, follow these ste
      
      |Property|Description|
      |-----|-----|
-     |Web Service Project |Your SAP ECC template name, sapecc.|
-     |Host|SAP ECC SOAP endpoint host name, e.g. vhcalnplci.dummy.nodomain|
-     |Port|SAP ECC SOAP endpoint port, e.g. 8000|
+     |Web Service Project |Your SAP ECC template name, `sapecc`.|
+     |Host|SAP ECC SOAP endpoint host name, e.g. `vhcalnplci.dummy.nodomain`|
+     |Port|SAP ECC SOAP endpoint port, e.g. `8000`|
 
 
 1. On the **Capabilities** page, fill in the boxes with the values specified in the table below and select **Next**.
@@ -142,14 +149,14 @@ To connect the Microsoft Entra provisioning agent with SAP ECC, follow these ste
     | Delete-Add as Replace | Unchecked |
 
 >[!NOTE]
->If your web services connector template sapecc.wsconfig is opened for editing in the Web Service Configuration Tool, you will get an error.
+>If your web services connector template `sapecc.wsconfig` is opened for editing in the Web Service Configuration Tool, you will get an error.
 
 8. On the **Global** page, fill in the boxes with the values specified in the table that follows the image and select **Next**.
 
     | Property | Value |
     | --- | --- |
     | ClientCredentialType | Basic |
-    | User name | The username of an account with rights to make call BAPIs used in SAP ECC template. |
+    | User name | The username of an account with rights to make calls to the BAPIs used in SAP ECC template. |
     | Password | The password of the username provided. |
     | Test Connection | Unchecked, if you have no Test Connection workflow implemented in your template |
 
@@ -167,7 +174,7 @@ To connect the Microsoft Entra provisioning agent with SAP ECC, follow these ste
 1. On the **Object Types** page, fill in the boxes and select **Next**. Use the table that follows the image for guidance on the individual boxes.   
 
     - **Anchor** : The values of this attribute should be unique for each object in the target system. The Microsoft Entra provisioning service will query the ECMA connector host by using this attribute after the initial cycle. This value is defined in the web services connector template.
-    - **DN** : The Autogenerated option should be selected in most cases. If it isn't selected, ensure that the DN attribute is mapped to an attribute in Microsoft Entra ID that stores the DN in this format: CN = anchorValue, Object = objectType. For more information on anchors and the DN, see [About anchor attributes and distinguished names](/azure/active-directory/app-provisioning/on-premises-application-provisioning-architecture#about-anchor-attributes-and-distinguished-names).
+    - **DN** : The Autogenerated option should be selected in most cases. If it isn't selected, ensure that the DN attribute is mapped to an attribute in Microsoft Entra ID that stores the DN in this format: `CN = anchorValue, Object = objectType`. For more information on anchors and the DN, see [About anchor attributes and distinguished names](~/identity/app-provisioning/on-premises-application-provisioning-architecture#about-anchor-attributes-and-distinguished-names).
 
      
         | Property | Value |
