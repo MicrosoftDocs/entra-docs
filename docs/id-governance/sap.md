@@ -72,7 +72,36 @@ With separation-of-duties checks in Microsoft Entra ID [entitlement management](
 * Enterprises with critical regulatory requirements for SAP apps have a single consistent view of access controls. They can then enforce separation-of-duties checks across their financial and other business-critical applications, along with Microsoft Entra integrated applications.
 * With integration with [Pathlock](https://pathlock.com/) and other partner products, customers can take advantage of fine-grained separation-of-duties checks with access packages in Microsoft Entra ID. Over time, this ability will help customers address Sarbanes-Oxley and other compliance requirements.
 
+## Additional Guidance
+
+For more information about integration with Microsoft Entra ID, see the following documentation:
+
+- [Secure access with SAP Cloud Identity Services and Microsoft Entra ID](../identity/fundamentals/scenario-azure-first-sap-identity-integration.md)
+- [SAP workload security - Microsoft Azure Well-Architected Framework](/azure/architecture/framework/sap/security)
+- [Provision users from SAP SuccessFactors to Active Directory](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)
+- [Provision users from SAP SuccessFactors to Microsoft Entra ID](../identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)
+- [Write-back users from Microsoft Entra ID to SAP SuccessFactors](../identity/saas-apps/sap-successfactors-writeback-tutorial.md)
+- [Provision users to SAP Cloud Identity Services - Identity Authentication](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md)
+
+For how to configure single sign-on, see the following documentation and tutorials:
+- [SAP Cloud Identity Services - Identity Authentication](../identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md)
+- [SAP SuccessFactors](../identity/saas-apps/successfactors-tutorial.md)
+- [SAP Analytics Cloud](../identity/saas-apps/sapboc-tutorial.md)
+- [SAP Fiori](../identity/saas-apps/sap-fiori-tutorial.md)
+- [SAP Qualtrics](../identity/saas-apps/qualtrics-tutorial.md)
+- [SAP Ariba](../identity/saas-apps/ariba-tutorial.md)
+- [SAP Concur Travel and Expense](../identity/saas-apps/concur-travel-and-expense-tutorial.md)
+- [SAP Business Technology Platform](../identity/saas-apps/sap-hana-cloud-platform-tutorial.md)
+- [SAP Business ByDesign](../identity/saas-apps/sapbusinessbydesign-tutorial.md)
+- [SAP HANA](../identity/saas-apps/saphana-tutorial.md)
+- [SAP Cloud for Customer](../identity/saas-apps/sap-customer-cloud-tutorial.md)
+
+Also see the following SAP resources:
+- [Azure Application Gateway Setup for Public and Internal SAP URLs](https://blogs.sap.com/2020/12/10/sap-on-azure-single-sign-on-configuration-using-saml-and-azure-active-directory-for-public-and-internal-urls/)
+- [SAPGUI using Kerberos and Microsoft Entra Domain Services](https://blogs.sap.com/2018/08/03/your-sap-on-azure-part-8-single-sign-on-using-azure-ad-domain-services/)
+
 ## Next steps
 
 * [Bring identities from SAP SuccessFactors into Microsoft Entra ID](../identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)
 * [Provision accounts in SAP IAS](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md)
+* [Get started with SAP and Microsoft integration scenarios](/azure/sap/workloads/integration-get-started)
