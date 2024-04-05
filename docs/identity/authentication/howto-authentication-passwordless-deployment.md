@@ -16,13 +16,17 @@ ms.reviewer: dawoo
 
 Passwords are a primary attack vector. Bad actors use social engineering, phishing, and spray attacks to compromise passwords. A passwordless authentication strategy mitigates the risk of these attacks.
 
-Microsoft offers the following [four passwordless authentication options](concept-authentication-passwordless.md) that integrate with Microsoft Entra ID:
+Microsoft offers the following [five passwordless authentication options](concept-authentication-passwordless.md) that integrate with Microsoft Entra ID:
 
 * [Microsoft Authenticator](./concept-authentication-passwordless.md#microsoft-authenticator) - turns any iOS or Android phone into a strong, passwordless credential by allowing users to sign into any platform or browser.
 
 * [FIDO2-compliant security keys](./concept-authentication-passwordless.md#fido2-security-keys) - useful for users who sign in to shared machines like kiosks, in situations where use of phones is restricted, and for highly privileged identities. 
 
 * [Windows Hello for Business](./concept-authentication-passwordless.md#windows-hello-for-business) - best for users on their dedicated Windows computers. 
+
+* [Platform Credential for macOS](./concept-authentication-passwordless.md#platform-credential-for-macos) - a new capability on macOS that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe).
+
+* [macOS Platform single sign-on with SmartCard](./concept-authentication-passwordless.md#platform-single-sign-on-for-macos-with-smartcard) - a new capability on macOS for smart card based authentication that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe).
 
 > [!NOTE]
 > To create an offline version of this plan with all links, use your browsers print to pdf functionality.
@@ -39,7 +43,7 @@ The following table lists the passwordless authentication methods by device type
 
 | Device types| Passwordless authentication method |
 | - | - |
-| Dedicated non-windows devices| <li> ***Microsoft Authenticator*** <li> Security keys <li> ***Platform Single Sign-On Extension for MacOS*** |
+| Dedicated non-windows devices| <li> ***Microsoft Authenticator*** <li> Security keys <li> ***macOS Platform Single Sign-On with smart card*** <li> ***Platform Credential for macOS*** |
 | Dedicated Windows 10 computers (version 1703 and later)| <li> ***Windows Hello for Business*** <li> Security keys |
 | Dedicated Windows 10 computers (before version 1703)| <li> ***Windows Hello for Business*** <li> Microsoft Authenticator app |
 | Shared devices: tablets, and mobile devices| <li> ***Microsoft Authenticator*** <li> One-time password sign-in |
@@ -89,13 +93,15 @@ Select Windows Hello for Business and [complete the wizard](https://aka.ms/passw
 
 The wizard will use your inputs to craft a step-by-step plan for you to follow.
 
-### MacOS Platform Single Sign-On
+### Platform Credential for macOS
 
-To enable macOS Platform Single Sign-On (PSSO), your Mac must have an operating system of at least macOS 13 Ventura, and that the configuration steps are done through the [Microsoft InTune admin center](https://intune.microsoft.com/#home). Note that the smart card authentication method is only supported for macOS 14 Sonoma. Support for other Mobile Device Management (MDM) providers will be added in future releases.
+To enable Platform Credential for macOS; 
+- Your Mac must have an operating system of at least macOS 13 Ventura (macOS 14 Sonoma is recommended), and that the configuration steps are done through the [Microsoft Intune admin center](https://intune.microsoft.com/#home).
+- The device must be MDM enrolled with SSO extension payload configured to support Platform Single Sign-On (PSSO) with the UserSecureEnclaveKey.
 
-Before PSSO can be enabled, the extension payload must be configured via MDM, with the Mac device enrolled into MDM and the [Mac Company Portal](/mem/intune/user-help/enroll-your-device-in-intune-macos-cp) app installed.
+### macOS Platform single sign-on with SmartCard
 
-Once the Mac has been configured, a user can setup their Mac device using the new secure enclave key feature, smart card (macOS 14 Sonoma only) or a password authentication method. This enables a user to use their Microsoft Entra ID to log into their Mac device and grant SSO across apps that use Microsoft Entra ID for authentication.
+To enable macOS Platform single sign-on (PSSO) with SmartCard, your Mac must have an operating system of at least macOS 14 Sonoma, and that the configuration steps are done through the [Microsoft Intune admin center](https://intune.microsoft.com/#home).
 
 ## Plan the project
 

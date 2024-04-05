@@ -2,7 +2,7 @@
 title: macOS Platform single sign-on known issues and troubleshooting
 description: Identify and resolve known issues with macOS Platform single sign-on (PSSO).
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
 ms.date: 11/03/2023
@@ -51,7 +51,7 @@ On macOS 13 Ventura, if there are problems with your device PSSO registration, o
 1. To unregister the device, select **Unregister**.
 1. Alternatively, to sign out your work account on the device, select **Sign out**. This is done silently and there's no confirmation that your device is deregistered.
 
-If you deregistered your device as a result of an error, and need to re-register it, refer to [Join a Mac device with Microsoft Entra ID during the out of box experience](./device-join-macos-platform-single-sign-on.md) or [Register a Mac device with macOS Platform Single Sign-On using Company Portal](./device-registration-macos-platform-single-sign-on.md).
+If you deregistered your device as a result of an error, and need to re-register it, refer to [Join a Mac device with Microsoft Entra ID during the out of box experience](./device-join-macos-platform-single-sign-on.md) or [Join a Mac device with Microsoft Entra ID using Company Portal](./device-join-microsoft-entra-company-portal.md).
 
 ---
 
@@ -63,7 +63,7 @@ Confirm that a previously registered device (with a Workplace Join key in Keycha
 
 ### Can I use macOS PSSO in a hybrid-join deployment?
 
-No, macOS PSSO is only supported in Microsoft Entra join deployments. There are no plans to support hybrid-join deployments, as we recommend that Mac users to go fully cloud based.
+No, macOS PSSO is only supported in Microsoft Entra join deployments. There are no plans to support hybrid-join deployments, as we recommend that Mac users go fully cloud based.
 
 ## Known issues
 
@@ -135,6 +135,6 @@ If a user has insufficient permissions to complete Microsoft Entra ID join and r
 ## See also
 
 - [Join a Mac device with Microsoft Entra ID during the out of box experience](./device-join-macos-platform-single-sign-on.md)
-- [Register a Mac device with macOS Platform Single Sign-On using Company Portal](./device-registration-macos-platform-single-sign-on.md)
+- [Join a Mac device with Microsoft Entra ID using Company Portal](./device-join-microsoft-entra-company-portal.md)
 - [Microsoft Enterprise SSO plug-in for Apple devices](~/identity-platform/apple-sso-plugin.md)
 - [Troubleshooting the Microsoft Enterprise SSO Extension plugin on Apple devices](./troubleshoot-mac-sso-extension-plugin.md)
