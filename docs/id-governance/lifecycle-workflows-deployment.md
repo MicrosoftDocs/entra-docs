@@ -92,7 +92,7 @@ This section introduces Lifecycle Workflow concepts you should know before you p
 
 ## Prerequisites to deploying Lifecycle Workflows
 
-The following information is important information about your organization and the technologies that need to be in place prior to deploying Lifecycle Workflows.  Ensure that you can answer yes to each of the items before attempting to deploy Lifecycle Workflows.
+The following information is important information about your organization and the technologies that need to be in place before deploying Lifecycle Workflows.  Ensure that you can answer yes to each of the items before attempting to deploy Lifecycle Workflows.
 
 |Item|Description|Documentation|
 |-----|-----|-----|
@@ -105,7 +105,7 @@ Before you begin planning a Lifecycle Workflow deployment, you should become fam
 
 The [Understanding Lifecycle Workflows](understanding-lifecycle-workflows.md) document uses the portal to explain the parts of a workflow. The [Developer API reference Lifecycle Workflows](/graph/api/resources/identitygovernance-workflow) document uses a Graph example to explain the parts of a workflow. 
 
-You can use this document to become familiar with the parts of workflow prior to deploying them.
+You can use this document to become familiar with the parts of workflow before deploying them.
 
 ## Limitations and constraints
 
@@ -167,9 +167,7 @@ An Execution condition is the part of a workflow that defines the scope of **who
 
 The scope determines who the workflow runs against.  This is defined by a rule that will filter users based on a condition.  For example, the rule, `"rule": "(department eq 'sales')"` runs the task only on users who are members of the sales department.
 
-The trigger determines when the workflow runs.  This can either be, on-demand, which is immediate, or time based.  Most of the predefined templates in the portal are time based.  
-
-For more information on workflow execution conditions, see: [Lifecycle Workflow execution conditions and scheduling](lifecycle-workflow-execution-conditions.md).
+The trigger determines when the workflow runs.  This can either be, on-demand, which is immediate, or run on a schedule.  Most of the predefined templates in the portal are based to run on a schedule when their trigger is met.  
 
 ### Attribute information
 The scope of a workflow uses attributes under the rule section.  You can add the following extra conditionals to further refine **who** the tasks are applied to.
@@ -190,7 +188,7 @@ Not all of these attributes are populated by default so you should verify with y
 The following is some important information regarding time zones that you should be aware of when designing workflows.
 - Workday and SAP SF will always send the time in Coordinated Universal Time or UTC.
 -  if you're in a single time zone it's recommended that you hardcode the time portion to something that works for you.  An example would be 5am for new hire scenarios and 10pm for last day of work scenarios.
-- It's recommended, that if you're using temporary access pass (TAP), that you set the maximum lifetime to 24 hours.  Doing this will help ensure that the TAP hasn't expired after being sent to an employee who may be in a different timezone.  For more information, see [Configure Temporary Access Pass in Microsoft Entra ID to register Passwordless authentication methods.](~/identity/authentication/howto-authentication-temporary-access-pass.md#enable-the-temporary-access-pass-policy)
+- It's recommended, that if you're using temporary access pass (TAP), that you set the maximum lifetime to 24 hours.  Doing this will help ensure that the TAP hasn't expired after being sent to an employee who could be in a different timezone.  For more information, see [Configure Temporary Access Pass in Microsoft Entra ID to register Passwordless authentication methods.](~/identity/authentication/howto-authentication-temporary-access-pass.md#enable-the-temporary-access-pass-policy)
 
 For more information, see [How to synchronize attributes for Lifecycle Workflows](~/id-governance/how-to-lifecycle-workflow-sync-attributes.md).
 
@@ -236,7 +234,7 @@ By selecting the task, you're presented with a navigation bar to add or remove g
  [![Screenshot of add groups.](media/lifecycle-workflows-deployment/group-2.png)](media/lifecycle-workflows-deployment/group-2.png#lightbox)
 
 ### Custom task extensions
-Lifecycle Workflows allow you to create workflows that can be triggered based on joiner, mover, or leaver scenarios. While Lifecycle Workflows provide several built-in tasks to automate common scenarios throughout the lifecycle of users, eventually you may reach the limits of these built-in tasks. With the extensibility feature, you're able to utilize the concept of custom task extensions to call-out to external systems as part of a Lifecycle Workflow. 
+Lifecycle Workflows allow you to create workflows that can be triggered based on joiner, mover, or leaver scenarios. While Lifecycle Workflows provide several built-in tasks to automate common scenarios throughout the lifecycle of users, eventually you could reach the limits of these built-in tasks. With the extensibility feature, you're able to utilize the concept of custom task extensions to call-out to external systems as part of a Lifecycle Workflow. 
 
 The scenarios for how a custom task extension interacts with Lifecycle Workflows can be one of three ways:
 
@@ -263,7 +261,7 @@ For more information, see [Best practices for a pilot.](~/architecture/deploymen
 
 
 #### Test and run the workflow
-Once you've created a workflow, you should test it by running the workflow [on-demand](on-demand-workflow.md)
+Once you've created a workflow, you should test it by running the workflow [on-demand](on-demand-workflow.md).
 
 Using the on-demand feature allows you to test and evaluate whether the Lifecycle Workflow is working as intended.
 

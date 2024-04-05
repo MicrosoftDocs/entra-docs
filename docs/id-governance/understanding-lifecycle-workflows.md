@@ -121,13 +121,24 @@ On the Workflow basics screen you also get to set the first detail, the trigger,
 
 ## Trigger details
 
-The trigger of a workflow defines when a scheduled workflow runs for users in scope for the workflow. The trigger of a workflow depends on the type of workflow you want to run. For more information on workflow triggers, see: [Lifecycle workflow execution conditions and scheduling](lifecycle-workflow-execution-conditions.md)
+The trigger of a workflow defines when a scheduled workflow runs for users in scope for the workflow. The trigger of a workflow depends on the type of workflow you want to run. 
+
+The supported scheduled triggers are:
+- Attribute Changes (preview)
+- Group Membership change (preview)
+- Time based
+
+Depending on which type of workflow you choose will determine which trigger you use for it.
 
 ## Scope
 
 The scope defines for who the scheduled workflow runs. Configuring this parameter allows you to further narrow down the users for whom the workflow is to be executed. Lifecycle Workflows supports a [rich set of user properties](/graph/api/resources/identitygovernance-rulebasedsubjectset#supported-user-properties-and-query-parameters) for configuring the scope.
 
-The scope depends on the trigger that you use. For more information on the different triggers, and their scopes, see: [Lifecycle workflow execution conditions and scheduling](lifecycle-workflow-execution-conditions.md)
+The scope depends on the trigger that you use.
+
+- For **Attribute changes**, the trigger is rule based and triggered when the attribute you defined is changed for a user.
+- For **Group membership change**, the trigger is group-based and triggered if a user is added or removed from a specific group.
+- For Time based attribute, the trigger is rule based and triggered when the time value you defined is met by a user.
 
 For a detailed guide on setting the execution conditions for a workflow, see: [Create a lifecycle workflow.](create-lifecycle-workflow.md)
 
