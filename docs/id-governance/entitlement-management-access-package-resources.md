@@ -215,7 +215,7 @@ Follow these steps to include a Microsoft Entra role as a resource in an access 
 1. Select the Microsoft Entra roles you want to include in the access package.
     :::image type="content" source="media/entitlement-management-roles/select-role-access-package.png" alt-text="Screenshot of selecting role for access package.":::  
 
-1. In the **Role** list, select **Eligible** or **Member**. 
+1. In the **Role** list, select **Eligible Member** or **Active Member**. 
     :::image type="content" source="media/entitlement-management-roles/access-package-role.png" alt-text="Screenshot of choosing role for resource role in access package.":::
 1. Select **Add**.
 
