@@ -20,7 +20,7 @@ Mac users can join their new device to Microsoft Entra ID during the first-run o
 
 ## Prerequisites
 
-- A minimum requirement of macOS 13 Ventura (macOS 14 Somona is recommended) 
+- A minimum requirement of macOS 13 Ventura (macOS 14 Sonoma is recommended) 
 - [Automated Device Enrollment (ADE)](https://support.apple.com/HT204142) enrolled device. Check with your administrator if you're unsure if your device is enrolled with this requirement.
 - [Microsoft Intune Company Portal](/mem/intune/apps/apps-company-portal-macos) version 5.2401.2 or later
 - A Mac device enrolled in mobile device management (MDM) with Microsoft Intune.
@@ -51,7 +51,7 @@ It's recommended for your system administrator to have the Mac enrolled using se
 
 ### [Secure Enclave](#tab/secure-enclave)
 
-1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. For macOS 14 Somona users, you'll see a prompt to register your device with Microsoft Entra. This prompt doesn't appear for macOS 13 Ventura.
+1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. For macOS 14 Sonoma users, you'll see a prompt to register your device with Microsoft Entra. This prompt doesn't appear for macOS 13 Ventura.
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/macos-14-microsoft-entra-registration-required.png" alt-text="Screenshot of a Microsoft Entra registration prompt that appears on macOS 14 after the registration required notification is selected.":::
 
