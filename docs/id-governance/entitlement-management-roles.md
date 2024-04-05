@@ -7,7 +7,7 @@ editor: mamtakumar
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 03/28/2024
+ms.date: 04/05/2024
 ms.author: owinfrey
 ms.reviewer: sponnada
 
