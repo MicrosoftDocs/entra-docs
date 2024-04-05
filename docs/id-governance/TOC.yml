@@ -186,6 +186,8 @@
         href: entitlement-management-reprocess-access-package-assignments.md
       - name: Hide or delete
         href: entitlement-management-access-package-edit.md
+      - name: Assign Microsoft Entra Roles (Preview)
+        href: entitlement-management-access-package-edit.md  
     - name: Approvers
       items:
       - name: Approve requests
