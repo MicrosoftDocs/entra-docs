@@ -65,13 +65,6 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Configure company branding | [Organizational Branding Administrator](permissions-reference.md#organizational-branding-administrator) |  |
 > | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](~/fundamentals/users-default-permissions.md) |
 
-## Company properties
-
-> [!div class="mx-tableFixed"]
-> | Task | Least privileged role | Additional roles |
-> | ---- | --------------------- | ---------------- |
-> | Configure company properties | [Global Administrator](permissions-reference.md#global-administrator) |  |
-
 ## Connect
 
 > [!div class="mx-tableFixed"]
@@ -365,12 +358,13 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | View a Temporary Access Pass details for a user (without reading the code itself) | [Global Reader](permissions-reference.md#global-reader) |  |
 > | Configure or update the Temporary Access Pass authentication method policy | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
 
-## Tenant Creation
+## Tenant
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Create Microsoft Entra ID or Azure AD B2C Tenant | [Tenant Creator](permissions-reference.md#tenant-creator) |  |
+> | Update Microsoft Entra tenant properties | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
 
 ## Users
 
@@ -393,6 +387,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Reset password of privileged admins | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |  |
 > | Revoke license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Update all properties except User Principal Name | [User Administrator](permissions-reference.md#user-administrator) |  |
+> | Update On-premises sync enabled property | [Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator) |  |
 > | Update User Principal Name for limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Update User Principal Name property on privileged admins | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |  |
 > | Update user settings - Default user role permissions | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |
