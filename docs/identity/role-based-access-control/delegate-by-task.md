@@ -41,7 +41,6 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Create Azure AD B2C directories | [All non-guest users](~/fundamentals/users-default-permissions.md) |  |
-> | Create B2C applications | [Global Administrator](permissions-reference.md#global-administrator) |  |
 > | Create enterprise applications | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator) | [Application Administrator](permissions-reference.md#application-administrator) |
 > | Create, read, update, and delete B2C policies | [B2C IEF Policy Administrator](permissions-reference.md#b2c-ief-policy-administrator) |  |
 > | Create, read, update, and delete identity providers | [External Identity Provider Administrator](permissions-reference.md#external-identity-provider-administrator) |  |
