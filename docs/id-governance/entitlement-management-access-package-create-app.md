@@ -15,22 +15,18 @@ ms.reviewer: mwahl
 
 In Microsoft Entra entitlement management, an access package encompasses the policies for how users can obtain assignments for one or more resource roles. The resources can include groups, applications, and SharePoint Online sites.
 
-An organization which multiple resources or resources with multiple roles can choose how to model their access policies with access packages.
-
-This article describes how to create an access package for a single application with a single role, using Microsoft Graph PowerShell. This scenario is primarily applicable to environments that are using entitlement management for automating ongoing access for a specific business or middleware application.
+This article describes how to create an access package for a single application with a single role, using Microsoft Graph PowerShell. This scenario is primarily applicable to environments that are using entitlement management for automating ongoing access for a specific business or middleware application. An organization which has multiple resources or resources with multiple roles can also model their access policies with access packages:
 
 * If the organization already has an existing organizational role model for their business roles, they can migrate that model to Microsoft Entra ID Governance, and [govern access with an organizational role model](identity-governance-organizational-roles.md).
 * If the organization has applications with multiple roles, then they can [deploy organizational policies for governing access to applications integrated with Microsoft Entra ID](identity-governance-applications-deploy.md)
-* For more information on creating access packages for other scenarios, see [tutorial: Manage access to resources in entitlement management](entitlement-management-access-package-first.md) and how to 
-[create an access package in entitlement management](entitlement-management-access-package-create.md).
+* For more information on creating access packages for other scenarios, see [tutorial: Manage access to resources in entitlement management](entitlement-management-access-package-first.md) and how to [create an access package in entitlement management](entitlement-management-access-package-create.md).
 
 ## Prerequisites
 
 [!INCLUDE [active-directory-entra-governance-license.md](~/includes/entra-entra-governance-license.md)]
 
-First, ensure that your Microsoft Entra ID tenant has met the [prerequisites before configuring Microsoft Entra ID for identity governance](identity-governance-applications-prepare.md).
 
-Then, before you begin creating the access package, you must [integrate the application with Microsoft Entra ID](identity-governance-applications-integrate.md). If your application is not already present in your Microsoft Entra ID tenant, follow the instructions in that article to create an application and service principal for the object. For applications that don't support SCIM, Microsoft Entra ID can write users into an application's existing directory or SQL database, or add AD users into an AD group. 
+Before you begin creating the access package, you must [integrate the application with Microsoft Entra ID](identity-governance-applications-integrate.md). If your application is not already present in your Microsoft Entra ID tenant, follow the instructions in that article to create an application and service principal for the object. Also ensure that your Microsoft Entra ID tenant has met the [prerequisites before configuring Microsoft Entra ID for identity governance](identity-governance-applications-prepare.md).
 
 To create the access package and its associated policies and assignments, you will need to have the following information ready:
 
@@ -56,7 +52,7 @@ The first time your organization uses these cmdlets for this scenario, you need 
 - [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Open PowerShell.
-1. If you don't have the [Microsoft Graph PowerShell modules](https://www.powershellgallery.com/packages/Microsoft.Graph) already installed, install the `Microsoft.Graph.Users` module and others by using this command:
+1. If you don't have the [Microsoft Graph PowerShell modules](https://www.powershellgallery.com/packages/Microsoft.Graph) already installed, install the `Microsoft.Graph.Identity.Governance` module and others by using this command:
 
    ```powershell
    Install-Module Microsoft.Graph
@@ -213,7 +209,7 @@ Next you will use PowerShell to [create an access package in a catalog](entitlem
 Once you've created an access package, then you link the role of the resource in the catalog to the access package.
 
    ```powershell
-   $rrsparams = @{
+   $rrsParams = @{
     role = @{
         id =  $resourceRole.Id
         displayName =  $resourceRole.DisplayName
@@ -233,7 +229,7 @@ Once you've created an access package, then you link the role of the resource in
     }
    }
 
-   $roleAddRes = New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $accessPackageId -BodyParameter $rrsparams
+   $roleAddRes = New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $accessPackageId -BodyParameter $rrsParams
    ```
 
 ## Create access package assignment policies for direct assignment
@@ -375,9 +371,9 @@ This illustrates an input CSV file containing one column, `UserPrincipalName`, t
 
 1. Specify the name of the input file.
 
-```powershell
+   ```powershell
    $inputpath = "users.csv"
-```
+   ```
 
 1. Retrieve any existing assignments to the access package, to avoid creating duplicate assignments.
 
@@ -457,7 +453,7 @@ If your organization's policy for who can be assigned access to an application i
 
 ## Create additional policies to allow users to request access
 
-If users who don't already have access allowed to request to be assigned to the application, then you can also configure an entitlement management access package assignment policy to allow users to request an access package. You can [add additional policies to an access package](entitlement-management-access-package-request-policy.md#choose-between-one-or-multiple-policies), and in each policy specify which users can request and who must approve.
+If users who don't already have access allowed to request to be assigned to the application, then you can also configure an entitlement management access package assignment policy to allow users to request an access package. You can [add additional policies to an access package](entitlement-management-access-package-request-policy.md#choose-between-one-or-multiple-policies), and in each policy specify which users can request and who must approve. If you wish to only have users assigned access automatically or by an administrator, then continue at the next section.
 
 For more examples, see [Create an assignment policy through PowerShell](entitlement-management-access-package-request-policy.md#create-an-access-package-assignment-policy-through-powershell), [accessPackageAssignmentPolicy](/graph/api/resources/accesspackageassignmentpolicy) and [Create an assignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?tabs=http&view=graph-rest-1.0&preserve-view=true).
 
@@ -518,29 +514,35 @@ For more examples, see [Create an assignment policy through PowerShell](entitlem
 
 ## Configure lifecycle workflows tasks
 
-If you use Microsoft Entra [lifecycle workflows](what-are-lifecycle-workflows.md) for employee join and leave events, then you can also add tasks to those workflows to add or remove assignments to this access package. If you do not use lifecycle workflows, then continue at the next section.
+If you use Microsoft Entra [lifecycle workflows](what-are-lifecycle-workflows.md) for employee join, move leave events, then you can also add tasks to those workflows to add or remove assignments to this access package. If you do not use lifecycle workflows, then continue at the next section.
 
-To make a change to the join and leave event workflows, perform the following steps.
+This example illustrates how to make a change to the join and leave event workflows.
 
-1. Retrieve the join event workflow and its tasks, using [Get-MgIdentityGovernanceLifecycleWorkflow](/graph/api/identitygovernance-workflow-get?&tabs=powershell) command.
+1. Retrieve the `joiner` category workflow and its tasks, using [Get-MgIdentityGovernanceLifecycleWorkflow](/graph/api/identitygovernance-workflow-get?&tabs=powershell) command.
 1. Add a [task](/graph/api/resources/identitygovernance-task) to list of tasks in that workflow.
 
-| Task display name | taskDefinitionId | arguments |
-|--|--|--|
-| Request user access package assignment | `c1ec1e76-f374-4375-aaa6-0bb6bd4c60be` | **name**: `assignmentPolicyId`<br/>**value**: The assignment policy ID, such as the value from `$directAssignmentPolicyId` if no approval is required, for the access package you want to assign the user.<br/><br/>**name**: `accessPackageId`<br/>**value**: The access package ID, `$accessPackageId`, for the access package you want to assign to the user. |
+   | Task display name | taskDefinitionId | arguments |
+   |--|--|--|
+   | Request user access package assignment | `c1ec1e76-f374-4375-aaa6-0bb6bd4c60be` | **name**: `assignmentPolicyId`<br/>**value**: The assignment policy ID, such as the value from `$directAssignmentPolicyId` if no approval is required, for the access package you want to assign the user.<br/><br/>**name**: `accessPackageId`<br/>**value**: The access package ID, `$accessPackageId`, for the access package you want to assign to the user. |
 
-1. Create a new version of the join event workflow, including the new task, using [New-MgIdentityGovernanceLifecycleWorkflowNewVersion](/graph/api/identitygovernance-workflow-createnewversion?&tabs=powershell) command.
+1. Create a new version of the workflow, including the new task, using [New-MgIdentityGovernanceLifecycleWorkflowNewVersion](/graph/api/identitygovernance-workflow-createnewversion?&tabs=powershell) command.
 
-1. Retrieve the leave event workflow and its tasks, using [Get-MgIdentityGovernanceLifecycleWorkflow](/graph/api/identitygovernance-workflow-get?&tabs=powershell) command.
+1. Retrieve the `leaver` category workflow and its tasks, using [Get-MgIdentityGovernanceLifecycleWorkflow](/graph/api/identitygovernance-workflow-get?&tabs=powershell) command.
 1. Add a [task](/graph/api/resources/identitygovernance-task) to list of tasks in that workflow.
 
-| Task display name | taskDefinitionId | arguments |
-|--|--|--|
-| Remove access package assignment for user | `4a0b64f2-c7ec-46ba-b117-18f262946c50` | **name**: `accessPackageId`<br/>**value**: A valid access package ID, `accessPackageId` for the access package you want to unassign from the user. |
+   | Task display name | taskDefinitionId | arguments |
+   |--|--|--|
+   | Remove access package assignment for user | `4a0b64f2-c7ec-46ba-b117-18f262946c50` | **name**: `accessPackageId`<br/>**value**: A valid access package ID, `accessPackageId` for the access package you want to unassign from the user. |
 
-1. Create a new version of the leave event workflow, including the new task, using [New-MgIdentityGovernanceLifecycleWorkflowNewVersion](/graph/api/identitygovernance-workflow-createnewversion?&tabs=powershell) command.
+1. Create a new version of the workflow, including the new task, using [New-MgIdentityGovernanceLifecycleWorkflowNewVersion](/graph/api/identitygovernance-workflow-createnewversion?&tabs=powershell) command.
 
-## Monitor ongoing assignments
+## Manage assignments
+
+Once the access packages, policies and initial assignments have been created, then users will be assigned access to the application's role.
+
+Later, you can monitor for changes to the assignments, or programatically add or remove assignments.
+
+### Retrieve existing assignments
 
 This script illustrates using a filter to retrieve the assignments to the access package that are in state `Delivered`. The script will then generate a CSV file `assignments.csv` with a list of users that have assignments, with one row per assignment.
 
@@ -550,6 +552,23 @@ This script illustrates using a filter to retrieve the assignments to the access
    $sp = $assignments | select-object -Property Id,{$_.Target.id},{$_.Target.ObjectId},{$_.Target.DisplayName},{$_.Target.PrincipalName}
    $sp | Export-Csv -Encoding UTF8 -NoTypeInformation -Path ".\assignments.csv"
    ```
+
+### Remove an assignment
+
+You can remove a user's assignment with the `New-MgEntitlementManagementAssignmentRequest` cmdlet.
+
+```powershell
+$userId = "040a792f-4c5f-4395-902f-f0d9d192ab2c"
+$filter = "accessPackage/Id eq '" + $accessPackageId + "' and state eq 'Delivered' and target/objectId eq '" + $userId + "'"
+$assignment = Get-MgEntitlementManagementAssignment -Filter $filter -ExpandProperty target -all -ErrorAction stop
+if ($assignment -ne $null) {
+   $params = @{
+      requestType = "adminRemove"
+      assignment = @{ id = $assignment.id }
+   }
+   New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
+}
+```
 
 ## Next steps
 
