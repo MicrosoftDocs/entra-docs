@@ -234,7 +234,7 @@ Once you've created an access package, then you link the role of the resource in
 
 ## Create access package assignment policies for direct assignment
 
-In this section you will create the first access packaeg assignment policy in the access package, an [access package assignment policy for direct assignment](entitlement-management-access-package-request-policy.md#none-administrator-direct-assignments-only), that can be used to track the users who already have access to the application. In the example policy created in this section, only the administrators or access package assignment managers can assign access, users retain access indefinitely, and there are no approvals or access reviews.
+In this section you will create the first access package assignment policy in the access package, an [access package assignment policy for direct assignment](entitlement-management-access-package-request-policy.md#none-administrator-direct-assignments-only), that can be used to track the users who already have access to the application. In the example policy created in this section, only the administrators or access package assignment managers can assign access, users retain access indefinitely, and there are no approvals or access reviews.
 
 1. Create a policy.
 
