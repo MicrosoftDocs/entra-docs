@@ -8,7 +8,7 @@
   ],
   "MetadataDelimiter": "\"",
   "Include": [
-    "docs/identity/devices"
+    "docs/identity/multi-tenant-organizations"
   ],
   "Exclude": [],
   "RemoveTermSets": [
