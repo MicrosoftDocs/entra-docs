@@ -82,98 +82,98 @@ By default, when an administrator first interacts with entitlement management, t
 
 1. Specify the name of the catalog.
 
-```powershell
-$catalogName = "Business applications"
-```
+   ```powershell
+   $catalogName = "Business applications"
+   ```
 
 1. If you already have a catalog for your application governance scenario, then continue at step 4 of this section.
 1. If you don't already have a catalog for your application governance scenario, [create a catalog](entitlement-management-catalog-create.md#create-a-catalog-with-powershell).
 
-```powershell
-$catalog = New-MgEntitlementManagementCatalog -DisplayName $catalogName
-```
+   ```powershell
+   $catalog = New-MgEntitlementManagementCatalog -DisplayName $catalogName
+   ```
 
 1. Look up the ID of the catalog.
 
-```powershell
-$catalogFilter = "displayName eq '" + $catalogName + "'"
-$catalog = Get-MgEntitlementManagementCatalog -Filter $catalogFilter -All -expandProperty resources,accessPackages
-if ($catalog -eq $null) { throw "catalog $catalogName not found" }
-$catalogId = $catalog.Id
-```
+   ```powershell
+   $catalogFilter = "displayName eq '" + $catalogName + "'"
+   $catalog = Get-MgEntitlementManagementCatalog -Filter $catalogFilter -All -expandProperty resources,accessPackages
+   if ($catalog -eq $null) { throw "catalog $catalogName not found" }
+   $catalogId = $catalog.Id
+   ```
 
 ## Add the application as a resource to the catalog
 
 Once the catalog is created, add the application [as a resource in that catalog](entitlement-management-catalog-create.md#add-a-resource-to-a-catalog-with-powershell).
 
-1. Specify the name of the application and the name of the application role. In the example below, use the name of your application as the value of `servicePrincipalName`.
+1. Specify the name of the application and the name of the application role. Use the name of your application as the value of `servicePrincipalName`.
 
-```powershell
-$servicePrincipalName = "SAP Cloud Identity Services"
-$servicePrincipalRoleName = "User"
-```
+   ```powershell
+   $servicePrincipalName = "SAP Cloud Identity Services"
+   $servicePrincipalRoleName = "User"
+   ```
 
 1. Look up the ID of the application service principal.
 
-```powershell
-$servicePrincipalFilter = "displayName eq '" + $applicationName + "'"
-$servicePrincipal = Get-MgServicePrincipal -Filter $servicePrincipalFilter -all
- if ($servicePrincipal -eq $null) { throw "service principal $servicePrincipalName not found" }
-$servicePrincipalId = $servicePrincipal.Id
-```
+   ```powershell
+   $servicePrincipalFilter = "displayName eq '" + $applicationName + "'"
+   $servicePrincipal = Get-MgServicePrincipal -Filter $servicePrincipalFilter -all
+   if ($servicePrincipal -eq $null) { throw "service principal $servicePrincipalName not found" }
+   $servicePrincipalId = $servicePrincipal.Id
+   ```
 
 1. Check if the application is already present in the catalog as a resource. If it is already present, continue at step 6 of this section below.
 
-```powershell
-$resourceId = $null
-foreach ($r in $catalog.Resources) { if ($r.OriginId -eq $servicePrincipalId) { $resourceId = $r.id; break } }
-if ($resourceId -ne $null) { write-output "resource already in catalog" } else {write-output "resource not yet in catalog"}
-```
+   ```powershell
+   $resourceId = $null
+   foreach ($r in $catalog.Resources) { if ($r.OriginId -eq $servicePrincipalId) { $resourceId = $r.id; break } }
+   if ($resourceId -ne $null) { write-output "resource already in catalog" } else {write-output "resource not yet in catalog"}
+   ```
 
 1. Add the application's service principal as a resource to the catalog.
 
-```powershell
-$resourceAddParams = @{
-  requestType = "adminAdd"
-  resource = @{
-    originId = $servicePrincipalId
-    originSystem = "AadApplication"
-  }
-  catalog = @{ id = $catalogId }
-}
+   ```powershell
+   $resourceAddParams = @{
+     requestType = "adminAdd"
+     resource = @{
+       originId = $servicePrincipalId
+       originSystem = "AadApplication"
+     }
+     catalog = @{ id = $catalogId }
+   }
 
-$resourceAdd = New-MgEntitlementManagementResourceRequest -BodyParameter $resourceAddParams
-if ($resourceAdd -eq $null) { throw "resource could not be added" }
-sleep 5
-```
+   $resourceAdd = New-MgEntitlementManagementResourceRequest -BodyParameter $resourceAddParams
+   if ($resourceAdd -eq $null) { throw "resource could not be added" }
+   sleep 5
+   ```
 
 1. Retrieve the ID and the scope of the resource in that catalog.
 
-```powershell
-$resource = $null
-$resourceId = $null
-$resourceScope = $null
-$catalogResources = Get-MgEntitlementManagementCatalogResource -AccessPackageCatalogId $CatalogId -ExpandProperty "scopes" -all
+   ```powershell
+   $resource = $null
+   $resourceId = $null
+   $resourceScope = $null
+   $catalogResources = Get-MgEntitlementManagementCatalogResource -AccessPackageCatalogId $CatalogId -ExpandProperty "scopes" -all
 
-foreach ($r in $catalogResources) { if ($r.OriginId -eq $servicePrincipalId) { $resource = $r; $resourceId = $r.id; $resourceScope = $r.Scopes[0]; break } }
-if ($resourceId -eq $null) { throw "resource was not added" }
-```
+   foreach ($r in $catalogResources) { if ($r.OriginId -eq $servicePrincipalId) { $resource = $r; $resourceId = $r.id; $resourceScope = $r.Scopes[0]; break } }
+   if ($resourceId -eq $null) { throw "resource was not added" }
+   ```
 
 1. Retrieve the roles of the application.
 
-```powershell
-$resourceRoleFilter = "(originSystem eq 'AadApplication' and resource/id eq '" + $resourceId + "')"
-$resourceRoles = @(get-mgentitlementmanagementcatalogresourcerole  -AccessPackageCatalogId $catalogId -Filter $resourceRoleFilter -All -ExpandProperty "resource")
-if ($resourceRoles -eq $null -or $resourceRoles.count -eq 0) { throw "no roles available" }
-```
+   ```powershell
+   $resourceRoleFilter = "(originSystem eq 'AadApplication' and resource/id eq '" + $resourceId + "')"
+   $resourceRoles = @(get-mgentitlementmanagementcatalogresourcerole  -AccessPackageCatalogId $catalogId -Filter $resourceRoleFilter -All -ExpandProperty "resource")
+   if ($resourceRoles -eq $null -or $resourceRoles.count -eq 0) { throw "no roles available" }
+   ```
 
 1. Select the role that will be included in the access package.
 
-```powershell
-$resourceRole = $null
-foreach ($r in $resourceRoles) { if ($r.DisplayName -eq $servicePrincipalRoleName) { $resourceRole = $r; break; } }
-if ($resourceRole -eq $null) { throw "role $servicePrincipalRoleName not located" }
-```
+   ```powershell
+   $resourceRole = $null
+   foreach ($r in $resourceRoles) { if ($r.DisplayName -eq $servicePrincipalRoleName) { $resourceRole = $r; break; } }
+   if ($resourceRole -eq $null) { throw "role $servicePrincipalRoleName not located" }
+   ```
 
 ## Create the access package for the application
 
@@ -181,40 +181,39 @@ Next you will use PowerShell to [create an access package in a catalog](entitlem
 
 1. Specify the name and description of the access package.
 
-```powershell
-$accessPackageName = "SAP Cloud Identity Services"
-$accessPackageDescription = "A user of SAP Cloud Identity Services"
-$accessPackageHidden = $true
-```
+   ```powershell
+   $accessPackageName = "SAP Cloud Identity Services"
+   $accessPackageDescription = "A user of SAP Cloud Identity Services"
+   $accessPackageHidden = $true
+   ```
 
 1. Check that the access package does not already exist.
 
-```powershell
-foreach ($a in $catalog.AccessPackages) { if ($a.DisplayName -eq $accessPackageName) { throw "access package $accessPackageName already exists" } }
-```
+   ```powershell
+   foreach ($a in $catalog.AccessPackages) { if ($a.DisplayName -eq $accessPackageName) { throw "access package $accessPackageName already exists" } }
+   ```
 
 1. Create the access package.
 
-```powershell
-$accessPackageParams = @{
-    displayName = $accessPackageName
-    description = $accessPackageDescription
-    isHidden = $accessPackageHidden
-    catalog = @{
-        id = $catalog.id
-    }
-}
-$accessPackage = New-MgEntitlementManagementAccessPackage -BodyParameter $accessPackageParams
-$accessPackageId = $accessPackage.Id
-```
+   ```powershell
+   $accessPackageParams = @{
+       displayName = $accessPackageName
+       description = $accessPackageDescription
+       isHidden = $accessPackageHidden
+       catalog = @{
+           id = $catalog.id
+       }
+   }
+   $accessPackage = New-MgEntitlementManagementAccessPackage -BodyParameter $accessPackageParams
+   $accessPackageId = $accessPackage.Id
+   ```
 
 ## Add the application role to the access package
 
 Once you've created an access package, then you link the role of the resource in the catalog to the access package.
 
-```powershell
-
-$rrsparams = @{
+   ```powershell
+   $rrsparams = @{
     role = @{
         id =  $resourceRole.Id
         displayName =  $resourceRole.DisplayName
@@ -232,23 +231,22 @@ $rrsparams = @{
         originId = $resourceScope.OriginId
         originSystem = $resourceScope.OriginSystem
     }
-}
+   }
 
-$roleAddRes = New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $accessPackageId -BodyParameter $rrsparams
-```
+   $roleAddRes = New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $accessPackageId -BodyParameter $rrsparams
+   ```
 
 ## Create access package assignment policies for direct assignment
 
-In this section you will create the first policy in the access package, an [access package assignment policy for direct assignment](entitlement-management-access-package-request-policy.md#none-administrator-direct-assignments-only), that can be used to track the users who already have access to the app. In the example policy created in this section, only the administrators or access package assignment managers can assign access, and there are no access reviews.
+In this section you will create the first policy in the access package, an [access package assignment policy for direct assignment](entitlement-management-access-package-request-policy.md#none-administrator-direct-assignments-only), that can be used to track the users who already have access to the application. In the example policy created in this section, only the administrators or access package assignment managers can assign access, and there are no access reviews.
 
 1. Create a policy.
 
-```powershell
+   ```powershell
+   $policy1Name = "Direct assignment policy"
+   $policy1Description = "policy for administrative assignment"
 
-$policy1Name = "Direct assignment policy"
-$policy1Description = "policy for administrative assignment"
-
-$policy1params = @{
+   $policy1params = @{
     displayName = $policy1Name
     description = $policy1Description
     allowedTargetScope = "notSpecified"
@@ -279,12 +277,12 @@ $policy1params = @{
     accessPackage = @{
         id = $accessPackageId
     }
-}
+   }
 
-$policy1Res = New-MgEntitlementManagementAssignmentPolicy -BodyParameter $policy1params
-$directAssignmentPolicyId = $policy1Res.Id
+   $policy1Res = New-MgEntitlementManagementAssignmentPolicy -BodyParameter $policy1params
+   $directAssignmentPolicyId = $policy1Res.Id
 
-```
+   ```
 
 ## Configure separation of duties constraints
 
@@ -296,31 +294,29 @@ If you have separation of duties requirements, then configure the incompatible a
 
 For each access package that is to be marked as incompatible with another, you can use a PowerShell [configure access packages as incompatible](entitlement-management-access-package-incompatible.md#configure-incompatible-access-packages-through-microsoft-powershell).
 
-1. Specify the other access package which is incompatible with this one. In the example below, change the value of `incompatibleAccessPackageId` to the ID of another access package in Microsoft Entra entitlement management.
+1. Specify the other access package that is incompatible with this one. Change the value of `incompatibleAccessPackageId` to the ID of another access package in Microsoft Entra entitlement management.
 
-```powershell
-$incompatibleAccessPackageId = "67cc7175-7a3d-4cb2-860f-4d9217ba96ca"
-```
+   ```powershell
+   $incompatibleAccessPackageId = "67cc7175-7a3d-4cb2-860f-4d9217ba96ca"
+   ```
 
 1. Create the incompatible reference on this access package.
 
-```powershell
-
-$incompatible1params = @{
-   "@odata.id" = "https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/accessPackages/" + $incompatibleAccessPackageId
-}
-New-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef -AccessPackageId $accessPackageId -BodyParameter $incompatible1params
-```
+   ```powershell
+   $incompatible1params = @{
+    "@odata.id" = "https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/accessPackages/" + $incompatibleAccessPackageId
+   }
+   New-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef -AccessPackageId $accessPackageId -BodyParameter $incompatible1params
+   ```
 
 1. Create the incompatible reference on the other access package.
 
-```powershell
-
-$incompatible2params = @{
-   "@odata.id" = "https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/accessPackages/" + $accessPackageId
-}
-New-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef -AccessPackageId $incompatibleAccessPackageId -BodyParameter $incompatible2params
-```
+   ```powershell
+   $incompatible2params = @{
+    "@odata.id" = "https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/accessPackages/" + $accessPackageId
+   }
+   New-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef -AccessPackageId $incompatibleAccessPackageId -BodyParameter $incompatible2params
+   ```
 
 1. Repeat for any other access packages.
 
@@ -332,44 +328,44 @@ Add assignments of existing users, who already have access to the application, t
 
 1. Retrieve the existing application role assignments.
 
-```powershell
-$existingAppRoleAssignments = @(Get-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId -All)
-```
+   ```powershell
+   $existingAppRoleAssignments = @(Get-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId -All)
+   ```
 
 1. Retrieve any existing assignments to the access package, to avoid creating duplicate assignments.
 
-```powershell
-$existingAssignments1filter = "accessPackage/id eq '" + $accessPackageId + "' and state eq 'Delivered'"
-$existingassignments1 = @(Get-MgEntitlementManagementAssignment -Filter $existingAssignments1filter -ExpandProperty target -All -ErrorAction Stop)
-$existingusers1 = @()
-foreach ($a in $existingassignments1) { $existingusers1 += $a.Target.ObjectId}
-```
+   ```powershell
+   $existingAssignments1filter = "accessPackage/id eq '" + $accessPackageId + "' and state eq 'Delivered'"
+   $existingassignments1 = @(Get-MgEntitlementManagementAssignment -Filter $existingAssignments1filter -ExpandProperty target -All -ErrorAction Stop)
+   $existingusers1 = @()
+   foreach ($a in $existingassignments1) { $existingusers1 += $a.Target.ObjectId}
+   ```
 
 1. Create new assignments.
 
-```powershell
-foreach ($ar in $existingAppRoleAssignments) {
-   if ($ar.principalType -ne "User") {
+   ```powershell
+   foreach ($ar in $existingAppRoleAssignments) {
+    if ($ar.principalType -ne "User") {
       write-warning "non-user assigned to application role"
-   }
-   $arpid = $ar.principalId
-   if ($existingusers1.contains($arpId)) { continue }
+    }
+    $arpid = $ar.principalId
+    if ($existingusers1.contains($arpId)) { continue }
 
-   $params = @{
+    $params = @{
       requestType = "adminAdd"
       assignment = @{
          targetId = $arpId
          assignmentPolicyId = $directAssignmentPolicyId
          accessPackageId = $accessPackageId
       }
-   }
-   try {
+    }
+    try {
       New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
-   } catch {
+    } catch {
       write-error "cannot create request for user $upn"
+    }
    }
-}
-```
+   ```
 
 ## Add any additional users who should have access to the application
 
@@ -380,67 +376,67 @@ This illustrates an input CSV file containing one column, `UserPrincipalName`, t
 1. Specify the name of the input file.
 
 ```powershell
-$inputpath = "users.csv"
+   $inputpath = "users.csv"
 ```
 
 1. Retrieve any existing assignments to the access package, to avoid creating duplicate assignments.
 
-```powershell
-$existingAssignments2filter = "accessPackage/id eq '" + $accessPackageId + "' and state eq 'Delivered'"
-$existingassignments2 = @(Get-MgEntitlementManagementAssignment -Filter $existingAssignments2filter -ExpandProperty target -All -ErrorAction Stop)
-$existingusers2 = @()
-foreach ($a in $existingassignments2) { $existingusers2 += $a.Target.ObjectId}
-```
+   ```powershell
+   $existingAssignments2filter = "accessPackage/id eq '" + $accessPackageId + "' and state eq 'Delivered'"
+   $existingassignments2 = @(Get-MgEntitlementManagementAssignment -Filter $existingAssignments2filter -ExpandProperty target -All -ErrorAction Stop)
+   $existingusers2 = @()
+   foreach ($a in $existingassignments2) { $existingusers2 += $a.Target.ObjectId}
+   ```
 
 1. Create new assignments.
 
-```powershell
-$users = import-csv -Path $inputpath
-foreach ($userrecord in $users) {
-   $upn = $userrecord.UserPrincipalName
-   if ($null -eq $upn) {throw "no UserPrincipalName" }
-   $u = $null
-   try {
-      $u = Get-MgUser -UserId $upn
-   } catch {
-       write-error "no user $upn"
-   }
-   if ($u -eq $null) { continue }
-   if ($existingusers2.contains($u.Id)) { continue }
+   ```powershell
+   $users = import-csv -Path $inputpath
+   foreach ($userrecord in $users) {
+      $upn = $userrecord.UserPrincipalName
+      if ($null -eq $upn) {throw "no UserPrincipalName" }
+      $u = $null
+      try {
+         $u = Get-MgUser -UserId $upn
+      } catch {
+         write-error "no user $upn"
+      }
+      if ($u -eq $null) { continue }
+      if ($existingusers2.contains($u.Id)) { continue }
 
-   $params = @{
-      requestType = "adminAdd"
-      assignment = @{
-         targetId = $u.Id
-         assignmentPolicyId = $directAssignmentPolicyId
-         accessPackageId = $accessPackageId
+      $params = @{
+         requestType = "adminAdd"
+         assignment = @{
+            targetId = $u.Id
+            assignmentPolicyId = $directAssignmentPolicyId
+            accessPackageId = $accessPackageId
+         }
+      }
+      try {
+         New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
+      } catch {
+         write-error "cannot create request for user $upn"
       }
    }
-   try {
-      New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
-   } catch {
-      write-error "cannot create request for user $upn"
-   }
-}
-```
+   ```
 
 ## Add a policy to the access packages for auto assignment
 
 If your organization's policy for who can be assigned access to an application includes a rule based on user's attributes to assign and remove access automatically based on those attributes, you can represent this using an [automatic assignment policy](entitlement-management-access-package-auto-assignment-policy.md). An access package can have at most one automatic assignment policy. If you do not have a requirement for an automatic assignment, then continue at the next section.
 
-1. Specify the automatic assignment filter expression for users to receive an assignment. In the example below change the value of `autoAssignmentPolicyFilter` to be a filter for the users in your Microsoft Entra ID that are in scope. The syntax and allowable attributes are provided in [dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
+1. Specify the automatic assignment filter expression for users to receive an assignment. Change the value of `autoAssignmentPolicyFilter` to be a filter for the users in your Microsoft Entra ID that are in scope. The syntax and allowable attributes are provided in [dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
 
-```powershell
-$autoAssignmentPolicyFilter = '(user.city -eq "Redmond")'
-```
+   ```powershell
+   $autoAssignmentPolicyFilter = '(user.city -eq "Redmond")'
+   ```
 
 1. Use PowerShell to [create an automatic assignment policy](entitlement-management-access-package-auto-assignment-policy.md#create-an-access-package-assignment-policy-through-powershell) in the access package.
 
-```powershell
-$policy2Name = "Automatic assignment policy"
-$policy2Description = "policy for automatic assignment"
+   ```powershell
+   $policy2Name = "Automatic assignment policy"
+   $policy2Description = "policy for automatic assignment"
 
-$policy2Params = @{
+   $policy2Params = @{
     DisplayName = $policy2Name
     Description = $policy2Description
     AllowedTargetScope = "specificDirectoryUsers"
@@ -455,29 +451,29 @@ $policy2Params = @{
     AccessPackage = @{
       Id = $accessPackageId
     }
-}
-New-MgEntitlementManagementAssignmentPolicy -BodyParameter $policy2Params
-```
+   }
+   New-MgEntitlementManagementAssignmentPolicy -BodyParameter $policy2Params
+   ```
 
 ## Create additional policies to allow users to request access
 
-If users who don't already have access allowed to request and be assigned to the application, then you can also configure an entitlement management access package assignment policy to allow users to request an access package. You can [add additional policies to an access package](entitlement-management-access-package-request-policy.md#choose-between-one-or-multiple-policies), and in each policy specify which users can request and who must approve.
+If users who don't already have access allowed to request to be assigned to the application, then you can also configure an entitlement management access package assignment policy to allow users to request an access package. You can [add additional policies to an access package](entitlement-management-access-package-request-policy.md#choose-between-one-or-multiple-policies), and in each policy specify which users can request and who must approve.
 
 For more examples, see [Create an assignment policy through PowerShell](entitlement-management-access-package-request-policy.md#create-an-access-package-assignment-policy-through-powershell), [accessPackageAssignmentPolicy](/graph/api/resources/accesspackageassignmentpolicy) and [Create an assignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?tabs=http&view=graph-rest-1.0&preserve-view=true).
 
 
 1. Specify the name, description of the policy, and the ID of a Microsoft Entra user who will be the approver.
 
-```powershell
-$policy3Name = "example policy"
-$policy3Description = "example of a policy for users to request assignment"
-$policy3ApproverSingleUserId = "69971aca-3aed-4ab1-aaec-d617b7dbb27b"
-```
+   ```powershell
+   $policy3Name = "example policy"
+   $policy3Description = "example of a policy for users to request assignment"
+   $policy3ApproverSingleUserId = "69971aca-3aed-4ab1-aaec-d617b7dbb27b"
+   ```
 
 1. Create the policy.
 
-```powershell
-$policy3Params = @{
+   ```powershell
+   $policy3Params = @{
     displayName = $policy3Name
     description = $policy3Description
     allowedTargetScope = "allMemberUsers"
@@ -515,45 +511,45 @@ $policy3Params = @{
     accessPackage = @{
         id = $accessPackageId
     }
-}
+   }
 
-New-MgEntitlementManagementAssignmentPolicy -BodyParameter $policy3Params
-```
+   New-MgEntitlementManagementAssignmentPolicy -BodyParameter $policy3Params
+   ```
 
 ## Configure lifecycle workflows tasks
 
 If you use Microsoft Entra [lifecycle workflows](what-are-lifecycle-workflows.md) for employee join and leave events, then you can also add tasks to those workflows to add or remove assignments to this access package. If you do not use lifecycle workflows, then continue at the next section.
 
-To make a change to the join and leave workflows, perform the following steps.
+To make a change to the join and leave event workflows, perform the following steps.
 
-1. Retrieve the join workflow and its tasks, using [Get-MgIdentityGovernanceLifecycleWorkflow](/graph/api/identitygovernance-workflow-get?&tabs=powershell) command.
+1. Retrieve the join event workflow and its tasks, using [Get-MgIdentityGovernanceLifecycleWorkflow](/graph/api/identitygovernance-workflow-get?&tabs=powershell) command.
 1. Add a [task](/graph/api/resources/identitygovernance-task) to list of tasks in that workflow.
 
 | Task display name | taskDefinitionId | arguments |
 |--|--|--|
 | Request user access package assignment | `c1ec1e76-f374-4375-aaa6-0bb6bd4c60be` | **name**: `assignmentPolicyId`<br/>**value**: The assignment policy ID, such as the value from `$directAssignmentPolicyId` if no approval is required, for the access package you want to assign the user.<br/><br/>**name**: `accessPackageId`<br/>**value**: The access package ID, `$accessPackageId`, for the access package you want to assign to the user. |
 
-1. Create a new version of the join workflow, including the new task, using [New-MgIdentityGovernanceLifecycleWorkflowNewVersion](/graph/api/identitygovernance-workflow-createnewversion?&tabs=powershell) command.
+1. Create a new version of the join event workflow, including the new task, using [New-MgIdentityGovernanceLifecycleWorkflowNewVersion](/graph/api/identitygovernance-workflow-createnewversion?&tabs=powershell) command.
 
-1. Retrieve the leave workflow and its tasks, using [Get-MgIdentityGovernanceLifecycleWorkflow](/graph/api/identitygovernance-workflow-get?&tabs=powershell) command.
+1. Retrieve the leave event workflow and its tasks, using [Get-MgIdentityGovernanceLifecycleWorkflow](/graph/api/identitygovernance-workflow-get?&tabs=powershell) command.
 1. Add a [task](/graph/api/resources/identitygovernance-task) to list of tasks in that workflow.
 
 | Task display name | taskDefinitionId | arguments |
 |--|--|--|
 | Remove access package assignment for user | `4a0b64f2-c7ec-46ba-b117-18f262946c50` | **name**: `accessPackageId`<br/>**value**: A valid access package ID, `accessPackageId` for the access package you want to unassign from the user. |
 
-1. Create a new version of the leave workflow, including the new task, using [New-MgIdentityGovernanceLifecycleWorkflowNewVersion](/graph/api/identitygovernance-workflow-createnewversion?&tabs=powershell) command.
+1. Create a new version of the leave event workflow, including the new task, using [New-MgIdentityGovernanceLifecycleWorkflowNewVersion](/graph/api/identitygovernance-workflow-createnewversion?&tabs=powershell) command.
 
 ## Monitor ongoing assignments
 
 This script illustrates using a filter to retrieve the assignments to the access package that are in state `Delivered`. The script will then generate a CSV file `assignments.csv` with a list of users that have assignments, with one row per assignment.
 
-```powershell
-$assignmentFilter = "accessPackage/id eq '" + $accessPackageId + "' and state eq 'Delivered'"
-$assignments = @(Get-MgEntitlementManagementAssignment -Filter $assignmentFilter -ExpandProperty target -All -ErrorAction Stop)
-$sp = $assignments | select-object -Property Id,{$_.Target.id},{$_.Target.ObjectId},{$_.Target.DisplayName},{$_.Target.PrincipalName}
-$sp | Export-Csv -Encoding UTF8 -NoTypeInformation -Path ".\assignments.csv"
-```
+   ```powershell
+   $assignmentFilter = "accessPackage/id eq '" + $accessPackageId + "' and state eq 'Delivered'"
+   $assignments = @(Get-MgEntitlementManagementAssignment -Filter $assignmentFilter -ExpandProperty target -All -ErrorAction Stop)
+   $sp = $assignments | select-object -Property Id,{$_.Target.id},{$_.Target.ObjectId},{$_.Target.DisplayName},{$_.Target.PrincipalName}
+   $sp | Export-Csv -Encoding UTF8 -NoTypeInformation -Path ".\assignments.csv"
+   ```
 
 ## Next steps
 
