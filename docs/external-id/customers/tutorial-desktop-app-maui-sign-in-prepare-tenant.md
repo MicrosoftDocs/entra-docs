@@ -14,7 +14,7 @@ ms.date: 06/05/2023
 
 # Tutorial: Register and configure .NET MAUI app in a customer tenant
 
-This tutorial series demonstrates how to build a .NET multiplatform App UI (MAUI) desktop app that authenticates using Microsoft Entra ID for customers tenant. You'll register an app within the customer's tenant, create the .NET MAUI desktop app, and you implement the sign-in and sign-out code to enable secure authentication. The .NET MAUI app you create uses cross-platform code while enhancing the default application class with *Window* platform-specific code.
+This tutorial series demonstrates how to build a .NET Multi-platform App UI (.NET MAUI) desktop app that authenticates using Microsoft Entra ID for customers tenant. You'll register an app within the customer's tenant, create the .NET MAUI desktop app, and you implement the sign-in and sign-out code to enable secure authentication. The .NET MAUI app you create uses cross-platform code while enhancing the default application class with *Window* platform-specific code.
 
 In this tutorial, you'll;
 
