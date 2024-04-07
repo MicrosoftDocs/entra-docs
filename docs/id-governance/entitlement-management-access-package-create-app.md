@@ -15,7 +15,7 @@ ms.reviewer: mwahl
 
 In Microsoft Entra entitlement management, an access package encompasses the policies for how users can obtain assignments for one or more resource roles. The resources can include groups, applications, and SharePoint Online sites.
 
-This article describes how to create an access package for a single application with a single role, using Microsoft Graph PowerShell. This scenario is primarily applicable to environments that are using entitlement management for automating ongoing access for a specific business or middleware application. An organization which has multiple resources or resources with multiple roles can also model their access policies with access packages:
+This article describes how to create an access package for a single application with a single role, using Microsoft Graph PowerShell. This scenario is primarily applicable to environments that are using entitlement management for automating ongoing access for a specific business or middleware application. An organization that has multiple resources or resources with multiple roles can also model their access policies with access packages:
 
 * If the organization already has an existing organizational role model for their business roles, they can migrate that model to Microsoft Entra ID Governance, and [govern access with an organizational role model](identity-governance-organizational-roles.md).
 * If the organization has applications with multiple roles, then they can [deploy organizational policies for governing access to applications integrated with Microsoft Entra ID](identity-governance-applications-deploy.md)
@@ -118,7 +118,7 @@ Once the catalog is created, add the application [as a resource in that catalog]
    $servicePrincipalId = $servicePrincipal.Id
    ```
 
-1. Check if the application is already present in the catalog as a resource. If it is already present, continue at step 6 of this section below.
+1. Check if the application is already present in the catalog as a resource. If it is already present, continue at step 6 of this section.
 
    ```powershell
    $resourceId = $null
@@ -234,7 +234,7 @@ Once you've created an access package, then you link the role of the resource in
 
 ## Create access package assignment policies for direct assignment
 
-In this section you will create the first policy in the access package, an [access package assignment policy for direct assignment](entitlement-management-access-package-request-policy.md#none-administrator-direct-assignments-only), that can be used to track the users who already have access to the application. In the example policy created in this section, only the administrators or access package assignment managers can assign access, and there are no access reviews.
+In this section you will create the first access packaeg assignment policy in the access package, an [access package assignment policy for direct assignment](entitlement-management-access-package-request-policy.md#none-administrator-direct-assignments-only), that can be used to track the users who already have access to the application. In the example policy created in this section, only the administrators or access package assignment managers can assign access, users retain access indefinitely, and there are no approvals or access reviews.
 
 1. Create a policy.
 
@@ -328,7 +328,7 @@ Add assignments of existing users, who already have access to the application, t
    $existingAppRoleAssignments = @(Get-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId -All)
    ```
 
-1. Retrieve any existing assignments to the access package, to avoid creating duplicate assignments.
+1. To avoid creating duplicate assignments, retrieve any existing assignments to the access package.
 
    ```powershell
    $existingAssignments1filter = "accessPackage/id eq '" + $accessPackageId + "' and state eq 'Delivered'"
@@ -367,7 +367,7 @@ Add assignments of existing users, who already have access to the application, t
 
 This script illustrates using the Microsoft Graph PowerShell cmdlets to add additional users to the application. If you do not have any users that need access, and would not receive it automatically, then continue in the next section.
 
-This illustrates an input CSV file containing one column, `UserPrincipalName`, to assign those users to the access package via its direct assignment policy.
+This script assumes you have an input CSV file containing one column, `UserPrincipalName`, to assign those users to the access package via its direct assignment policy.
 
 1. Specify the name of the input file.
 
@@ -375,7 +375,7 @@ This illustrates an input CSV file containing one column, `UserPrincipalName`, t
    $inputpath = "users.csv"
    ```
 
-1. Retrieve any existing assignments to the access package, to avoid creating duplicate assignments.
+1. To avoid creating duplicate assignments, retrieve any existing assignments to the access package.
 
    ```powershell
    $existingAssignments2filter = "accessPackage/id eq '" + $accessPackageId + "' and state eq 'Delivered'"
@@ -453,7 +453,7 @@ If your organization's policy for who can be assigned access to an application i
 
 ## Create additional policies to allow users to request access
 
-If users who don't already have access allowed to request to be assigned to the application, then you can also configure an entitlement management access package assignment policy to allow users to request an access package. You can [add additional policies to an access package](entitlement-management-access-package-request-policy.md#choose-between-one-or-multiple-policies), and in each policy specify which users can request and who must approve. If you wish to only have users assigned access automatically or by an administrator, then continue at the next section.
+If users who don't already have access allowed to request to be assigned to the application, then you can also configure an access package assignment policy to allow users to request an access package. You can [add additional policies to an access package](entitlement-management-access-package-request-policy.md#choose-between-one-or-multiple-policies), and in each policy specify which users can request and who must approve. If you wish to only have users assigned access automatically or by an administrator, then continue at the next section.
 
 For more examples, see [Create an assignment policy through PowerShell](entitlement-management-access-package-request-policy.md#create-an-access-package-assignment-policy-through-powershell), [accessPackageAssignmentPolicy](/graph/api/resources/accesspackageassignmentpolicy) and [Create an assignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?tabs=http&view=graph-rest-1.0&preserve-view=true).
 
@@ -544,7 +544,7 @@ Later, you can monitor for changes to the assignments, or programatically add or
 
 ### Retrieve existing assignments
 
-This script illustrates using a filter to retrieve the assignments to the access package that are in state `Delivered`. The script will then generate a CSV file `assignments.csv` with a list of users that have assignments, with one row per assignment.
+This script illustrates using a filter to retrieve the assignments to the access package that are in state `Delivered`. The script generates a CSV file `assignments.csv` with a list of users that have assignments, with one row per assignment.
 
    ```powershell
    $assignmentFilter = "accessPackage/id eq '" + $accessPackageId + "' and state eq 'Delivered'"
