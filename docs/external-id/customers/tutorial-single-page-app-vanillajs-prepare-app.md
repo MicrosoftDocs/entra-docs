@@ -16,7 +16,7 @@ ms.date: 08/17/2023
 
 # Tutorial: Create a Vanilla JavaScript SPA for authentication in a customer tenant
 
-This tutorial is part 2 of a series that demonstrates building a Vanilla JavaScript (JS) single-page application (securing privileged access (SPA)) and preparing it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](tutorial-single-page-app-vanillajs-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to create a Vanilla JavaScript SPA using `npm` and create files needed for authentication and authorization.
+This tutorial is part 2 of a series that demonstrates building a Vanilla JavaScript (JS) single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](tutorial-single-page-app-vanillajs-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to create a Vanilla JavaScript SPA using `npm` and create files needed for authentication and authorization.
 
 In this tutorial;
 

@@ -16,7 +16,7 @@ ms.author: godonnell
 
 # Tutorial: Prepare your customer tenant to authenticate users in a React SPA
 
-This tutorial series demonstrates how to build a React single-page application (securing privileged access (SPA)) and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for JavaScript](/javascript/api/overview/msal-overview) library to authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
+This tutorial series demonstrates how to build a React single-page application (SPA) and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for JavaScript](/javascript/api/overview/msal-overview) library to authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
 
 In this tutorial;
 
