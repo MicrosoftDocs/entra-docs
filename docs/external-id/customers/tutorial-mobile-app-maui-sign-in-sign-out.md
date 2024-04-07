@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Sign in users in .NET MAUI shell app using a customer tenant"
-description: This tutorial demonstrates how to add sign-in and sign-out code in .NET multiplatform App UI (.NET MAUI) and how to run the app on the Android platform.
+description: This tutorial demonstrates how to add sign-in and sign-out code in .NET Multi-platform App UI (.NET MAUI) and how to run the app on the Android platform.
 author: henrymbuguakiarie
 manager: mwongerapk
 
@@ -14,7 +14,7 @@ ms.date: 06/05/2023
 
 # Tutorial: Sign in users in .NET MAUI shell app using a customer tenant
 
-This tutorial is the final part of a series that demonstrates how to create a .NET multiplatform App UI (.NET MAUI) shell app and prepare it for authentication using the Microsoft Entra admin center. In [Part 2 of this series](./tutorial-mobile-app-maui-sign-in-prepare-app.md) you added a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource. This final step demonstrates how to add sign-in and sign-out code in the .NET multiplatform App UI (.NET MAUI) and run the shell app on the Android platform.
+This tutorial is the final part of a series that demonstrates how to create a .NET Multi-platform App UI (.NET MAUI) shell app and prepare it for authentication using the Microsoft Entra admin center. In [Part 2 of this series](./tutorial-mobile-app-maui-sign-in-prepare-app.md) you added a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource. This final step demonstrates how to add sign-in and sign-out code in .NET MAUI and run the shell app on the Android platform.
 
 In this tutorial, you'll:
 

@@ -16,7 +16,7 @@ ms.date: 10/27/2023
 
 # Tutorial: Handle authentication flows in an Angular SPA
 
-This tutorial is part 3 of a series that demonstrates building an Angular single-page app (securing privileged access (SPA)) and preparing it for authentication. In [Part 2 of this series](./tutorial-single-page-app-angular-sign-in-prepare-app.md), you created an Angular SPA and prepared it for authentication with your Microsoft Entra External ID for customers tenant. In this tutorial, you'll learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
+This tutorial is part 3 of a series that demonstrates building an Angular single-page app (SPA) and preparing it for authentication. In [Part 2 of this series](./tutorial-single-page-app-angular-sign-in-prepare-app.md), you created an Angular SPA and prepared it for authentication with your Microsoft Entra External ID for customers tenant. In this tutorial, you'll learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
 
 In this tutorial;
 
