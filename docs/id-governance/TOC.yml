@@ -191,7 +191,7 @@
       - name: Hide or delete
         href: entitlement-management-access-package-edit.md
       - name: Assign Microsoft Entra Roles (Preview)
-        href: entitlement-management-access-package-edit.md  
+        href: entitlement-management-roles.md  
     - name: Approvers
       items:
       - name: Approve requests
