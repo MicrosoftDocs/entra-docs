@@ -19,7 +19,7 @@ ms.reviewer: calui, tilarso
 
 For enterprises that use passwords today, passkeys (FIDO2) provide a seamless way for workers to authenticate without entering a username or password. Passkeys provide improved productivity for workers, and have better security.
 
-This article lists requirements and steps to enable passkey. After completing these steps, you can then sign in to your Microsoft Entra account using a device-bound passkey, such as a FIDO2 security key.
+This article lists requirements and steps to enable passkeys in your organization. After completing these steps, you can then sign in to your Microsoft Entra account using a device-bound passkey, such as a FIDO2 security key.
 
 Users can also sign in with a passkey by using Microsoft Authenticator. For more information, see [How to enable Authenticator passkey](how-to-enable-authenticator-passkey.md).
 
