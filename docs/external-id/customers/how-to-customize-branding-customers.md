@@ -12,7 +12,7 @@ ms.date: 03/22/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
-#Customer intent: As an it admin, I want to learn about the options for customizing the look and feel of the customer sign-in and sing-up experience.
+#Customer intent: As an it admin, I want to learn about the options for customizing the look and feel of the customer sign-in and sign-up experience.
 ---
 
 # Customize the neutral branding in your customer tenant (preview)
@@ -191,5 +191,5 @@ You can use the Microsoft Graph API to customize a few items programmatically. F
 
 ## Next steps
 
-In this article we learned how to customize the look and feel of the customer sign-in and sing-up experience. To learn more about customizing the language of the tenant, see the [Language customization](how-to-customize-languages-customers.md) article.
+In this article we learned how to customize the look and feel of the customer sign-in and sign-up experience. To learn more about customizing the language of the tenant, see the [Language customization](how-to-customize-languages-customers.md) article.
 For an understanding of the differences in workforce tenant branding, see the article [How to customize branding for your workforce](~/fundamentals/how-to-customize-branding.md).
