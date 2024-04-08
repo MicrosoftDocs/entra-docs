@@ -27,9 +27,9 @@ Next, determine what is the source of the attribute and the topology for how tho
 
 |Source of attribute|Topology|Steps required|
 |------|--------|----------|
-|HR source|Workers from HR source are provisioned as users into Microsoft Entra ID.|[Create an extension attribute in Microsoft Entra ID](#create-an-extension-attribute-in-a-tenant-with-cloud-only-users).<br />Update the HR inbound mapping to populate the extension attribute on Microsoft Entra ID users from the HR source.|
-|HR source|Workers from HR source are provisioned as users into Windows Server AD.<br /> Microsoft Entra Connect cloud sync synchronizes them into Microsoft Entra ID |Extend the AD schema, if necessary.<br />[Create an extension attribute in Microsoft Entra ID using cloud sync](#create-an-extension-attribute-using-cloud-sync).<br />Update the HR inbound mapping to populate the extension attribute on the AD user from the HR source.|
-|HR source|Workers from HR source are provisioned as users into Windows Server AD.<br /> Microsoft Entra Connect synchronizes them into Microsoft Entra ID|Extend the AD schema, if necessary.<br />[Create an extension attribute in Microsoft Entra ID using Microsoft Entra Connect](#create-an-extension-attribute-using-microsoft-entra-connect).<br />Update the HR inbound mapping to populate the extension attribute on the AD user from the HR source.|
+|HR system|Workers from HR system are provisioned as users into Microsoft Entra ID.|[Create an extension attribute in Microsoft Entra ID](#create-an-extension-attribute-in-a-tenant-with-cloud-only-users).<br />Update the HR inbound mapping to populate the extension attribute on Microsoft Entra ID users from the HR system.|
+|HR system|Workers from HR system are provisioned as users into Windows Server AD.<br /> Microsoft Entra Connect cloud sync synchronizes them into Microsoft Entra ID. |Extend the AD schema, if necessary.<br />[Create an extension attribute in Microsoft Entra ID using cloud sync](#create-an-extension-attribute-using-cloud-sync).<br />Update the HR inbound mapping to populate the extension attribute on the AD user from the HR system.|
+|HR system|Workers from HR system are provisioned as users into Windows Server AD.<br /> Microsoft Entra Connect synchronizes them into Microsoft Entra ID.|Extend the AD schema, if necessary.<br />[Create an extension attribute in Microsoft Entra ID using Microsoft Entra Connect](#create-an-extension-attribute-using-microsoft-entra-connect).<br />Update the HR inbound mapping to populate the extension attribute on the AD user from the HR system.|
 
 If your organization's users are already in on-premises Active Directory, or are you creating them in Active Directory, you must sync the users from Active Directory to Microsoft Entra ID. You can sync users and attributes using [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md) or [Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md).
 
@@ -90,7 +90,7 @@ GET https://graph.microsoft.com/v1.0/users/{id}?$select=displayName,extension_in
 
 
 ### Create an extension attribute for cloud only users using PowerShell
-Create a custom extension using PowerShell and assign a value to a user.
+You can create a custom extension using PowerShell.
 
 [!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
@@ -108,7 +108,7 @@ New-AzureADServicePrincipal -AppId $App.AppId
 New-AzureADApplicationExtensionProperty -ObjectId $App.ObjectId -Name “TestAttributeName” -DataType “String” -TargetObjects “User”
 ```
 
-Then, you can test that you can set the extension property on a cloud only user.
+Optionally, you can test that you can set the extension property on a cloud only user.
 
 ```PowerShell
 #List users in your tenant to determine the objectid for your user
@@ -162,13 +162,13 @@ If users who access the applications originate in on-premises Active Directory, 
 
 ## Populate and use the new attribute
 
-In the Microsoft Entra admin center, while you’re [editing user attribute mappings](customize-application-attributes.md), the **Source attribute** list will now contain the added attribute in the format `<attributename> (extension_<appID>_<attributename>)`, where appID is the identifier of a placeholder application in your tenant. Select the attribute and map it to the target application for provisioning.
+In the Microsoft Entra admin center, while you’re [editing user attribute mappings](customize-application-attributes.md) for single-sign on or provisioning from Microsoft Entra ID to an application, the **Source attribute** list will now contain the added attribute in the format `<attributename> (extension_<appID>_<attributename>)`, where appID is the identifier of a placeholder application in your tenant. Select the attribute and map it to the target application for provisioning.
 
    ![Microsoft Entra Connect wizard Directory extensions selection page](./media/user-provisioning-sync-attributes-for-mapping/attribute-mapping-extensions.png)
 
 Then, you'll need to populate those users assigned to the application with the required attribute, before enabling provisioning to the application.  If the attribute does not originate in Active Directory, then there are five ways to populate the users in bulk:
 
- - If the properties originate in a HR system, and you are provisioning the workers from that HR system as users in Active Directory, then configure a mapping from [Workday](~/identity/saas-apps/workday-inbound-tutorial.md), [SAP SuccessFactors](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md), or if you're using a different HR system, using the [inbound HR API](inbound-provisioning-api-concepts.md) to the Active Directory attribute.  Then, Wait for Microsoft Entra Connect or Microsoft Entra Connect cloud sync to synchronize those updates you made in the Active Directory schema and the Active Directory users into Microsoft Entra ID.
+ - If the properties originate in a HR system, and you are provisioning the workers from that HR system as users in Active Directory, then configure a mapping from [Workday](~/identity/saas-apps/workday-inbound-tutorial.md), [SAP SuccessFactors](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md), or if you're using a different HR system, using the [inbound HR API](inbound-provisioning-api-concepts.md) to the Active Directory attribute.  Then, wait for Microsoft Entra Connect or Microsoft Entra Connect cloud sync to synchronize those updates you made in the Active Directory schema and the Active Directory users into Microsoft Entra ID.
  - If the properties originate in an HR system, and you are not using Active Directory, you can configure a mapping from [Workday](~/identity/saas-apps/workday-inbound-cloud-only-tutorial.md), [SAP SuccessFactors](~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md), or others via the [inbound API](inbound-provisioning-api-concepts.md) to the Microsoft Entra user attribute.
  - If the properties originate in another on-premises system, you can configure the [MIM Connector for Microsoft Graph](/microsoft-identity-manager/microsoft-identity-manager-2016-connector-graph) to create or update Microsoft Entra users.
  - If the properties originate from the users themselves, then you can ask the users to supply the values of the attribute when they request access to the application, by including the attribute requirements in [entitlement management catalog](~/id-governance/entitlement-management-catalog-create.md#add-resource-attributes-in-the-catalog).
