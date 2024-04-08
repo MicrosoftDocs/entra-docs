@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Prepare your customer tenant to authenticate users in an ASP.NET Core web app"
 description: Learn how to configure your Microsoft Entra ID for customers tenant for authentication with an ASP.NET web application
- 
+
 author: cilwerner
 manager: celestedg
 
@@ -11,7 +11,7 @@ ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.topic: tutorial
 ms.date: 05/23/2023
-#Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own ASP.NET web app with Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, DevOps, I want to learn about how to enable authentication in my own ASP.NET web app with Microsoft Entra ID for customers tenant
 ---
 
 # Tutorial: Prepare your customer tenant to authenticate users in an ASP.NET Core web app
@@ -21,20 +21,20 @@ This tutorial series demonstrates how to build an ASP.NET Core web application a
 In this tutorial, you'll;
 
 > [!div class="checklist"]
-> * Register a web application in the Microsoft Entra admin center, and record its identifiers
-> * Create a client secret for the web application
-> * Define the platform and URLs
-> * Grant permissions to the web application to access the Microsoft Graph API
-> * Create a sign in and sign out user flow in the Microsoft Entra admin center
-> * Associate your web application with the user flow
+> - Register a web application in the Microsoft Entra admin center, and record its identifiers
+> - Create a client secret for the web application
+> - Define the platform and URLs
+> - Grant permissions to the web application to access the Microsoft Graph API
+> - Create a sign in and sign out user flow in the Microsoft Entra admin center
+> - Associate your web application with the user flow
 
 ## Prerequisites
 
-* A Microsoft Entra ID for customers tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
-* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-    * Application Administrator
-    * Application Developer
-    * Cloud Application Administrator
+- A Microsoft Entra ID for customers tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+- This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+    - Application Administrator
+    - Application Developer
+    - Cloud Application Administrator
 
 ## Register the web app and record identifiers
 

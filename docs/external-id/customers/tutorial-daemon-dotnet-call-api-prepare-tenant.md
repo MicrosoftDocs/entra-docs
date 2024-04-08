@@ -25,11 +25,11 @@ In this tutorial series, you'll learn how to build a .NET daemon app that calls 
 
 ## Prerequisites
 
-* A Microsoft Entra ID for customer tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
-* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-    * Application Administrator
-    * Application Developer
-    * Cloud application administrator
+- A Microsoft Entra ID for customer tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+- This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+    - Application Administrator
+    - Application Developer
+    - Cloud Application Administrator
 
 ## Register a web API application
 
