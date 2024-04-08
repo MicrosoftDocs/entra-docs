@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 04/01/2024
+ms.date: 04/08/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.collection: ?
@@ -37,10 +37,6 @@ To view Activity Logs for applications, you will need:
 
 ## How to view permission audit logs for all applications in your directory
 
-:::zone pivot="portal"
-
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
 Only certain events recorded in the Activity Logs are needed to see application permission activity. To view all events using the Microsoft Entra admin center, do the following:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with at least a [Reports reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader) role
@@ -53,13 +49,8 @@ Only certain events recorded in the Activity Logs are needed to see application 
 
 1. Use **Manage view** on the top command bar to edit the columns shown. Select the **Date** column to view more detailed information per audit log.
 
-:::zone-end
 
 ## How to view permission audit logs for a specific resource application
-
-:::zone pivot="portal"
-
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 It can be helpful to deep dive into the activity of a resource application to see which applications have been granted access through API permissions. For example, you may want to monitor the activity logs for the MS Graph application, so you can see when permissions have been granted for the resources it protects.
 
@@ -77,7 +68,6 @@ To view the activity logs for a resource application:
 
 1. Use **Manage view** on the top command bar to edit the columns shown. Select the **Date** column to view more detailed information per audit log.
 
-:::zone-end
 
 
 ## Audit logs
