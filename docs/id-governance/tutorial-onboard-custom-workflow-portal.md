@@ -70,7 +70,7 @@ Use the following steps to create a pre-hire workflow that generates a TAP and s
 
     :::image type="content" source="media/tutorial-lifecycle-workflows/configure-scope.png" alt-text="Screenshot of selecting a configuration scope." lightbox="media/tutorial-lifecycle-workflows/configure-scope.png":::
 
-1. Next, you configure the scope. The scope determines which users this workflow runs against.  In this case, it is on all users in the Sales department. On the configure scope screen, under **Rule**, add the following settings and select **Next: Review tasks**. For a full list of supported user properties, see [Supported user properties and query parameters](/graph/api/resources/identitygovernance-rulebasedsubjectset?view=graph-rest-beta&preserve-view=true#supported-user-properties-and-query-parameters).
+1. Next, you configure the scope. The scope determines which users this workflow runs against. In this case, it is on all users in the Sales department. On the configure scope screen, under **Rule**, add the following settings and select **Next: Review tasks**. For a full list of supported user properties, see [Supported user properties and query parameters](/graph/api/resources/identitygovernance-rulebasedsubjectset?view=graph-rest-beta&preserve-view=true#supported-user-properties-and-query-parameters).
 
     :::image type="content" source="media/tutorial-lifecycle-workflows/review-tasks.png" alt-text="Screenshot of selecting review tasks." lightbox="media/tutorial-lifecycle-workflows/review-tasks.png":::
 
