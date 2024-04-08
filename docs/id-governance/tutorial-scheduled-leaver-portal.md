@@ -28,7 +28,7 @@ This post off-boarding scenario runs a scheduled workflow and accomplishes the f
 
 ##  Before you begin
 
-As part of the prerequisites for completing this tutorial, you'll need an account that has licenses and Teams memberships that can be deleted during the tutorial. For more comprehensive instructions on how to complete these prerequisite steps, you may refer to  the [Preparing user accounts for Lifecycle workflows tutorial](tutorial-prepare-user-accounts.md).
+To complete this tutorial, you must satisfy the prerequisites listed in this section before starting the tutorial as they aren't included in the actual tutorial. As part of the prerequisites for completing this tutorial, you'll need an account that has licenses and Teams memberships that can be deleted during the tutorial. For more comprehensive instructions on how to complete these prerequisite steps, you may refer to  the [Preparing user accounts for Lifecycle workflows tutorial](tutorial-prepare-user-accounts.md).
 
 The scheduled leaver scenario can be broken down into the following:
 -	**Prerequisite:** Create a user account that represents an employee leaving your organization

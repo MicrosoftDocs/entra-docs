@@ -31,7 +31,7 @@ For more information, see [Run a workflow on demand](on-demand-workflow.md).
 
 ## Before you begin
 
-As part of the prerequisites for completing this tutorial, you need an account that has group and Teams memberships and that can be deleted during the tutorial. For comprehensive instructions on how to complete these prerequisite steps, see [Prepare user accounts for lifecycle workflows](tutorial-prepare-user-accounts.md).
+To complete this tutorial, you must satisfy the prerequisites listed in this section before starting the tutorial as they aren't included in the actual tutorial. As part of the prerequisites for completing this tutorial, you need an account that has group and Teams memberships and that can be deleted during the tutorial. For comprehensive instructions on how to complete these prerequisite steps, see [Prepare user accounts for lifecycle workflows](tutorial-prepare-user-accounts.md).
 
 The leaver scenario includes the following steps:
 
