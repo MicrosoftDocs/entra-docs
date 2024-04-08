@@ -55,6 +55,26 @@ If you deregistered your device as a result of an error, and need to re-register
 
 ---
 
+### Enterprise SSO plug-in does not activate after system update
+
+If the Enterprise SSO plug-in fails to activate after system updates are applied to the device, you should reboot the software update daemon.
+
+1. Open the **Terminal** app and enter the following command to kill the `swcd` process.
+
+    ```console
+    sudo killall swcd
+    ```
+
+2. Then enter the following command to reset the process.
+
+    ```console
+    sudo swcutil reset
+    ```
+
+### Temporary passwords issued during password reset cannot be synced with Platform SSO
+
+Temporary passwords issued during password reset cannot be synced to the local device. Users are advised to complete the password reset process using their temporary password using the SSO extension.
+
 ### Device migration
 
 Confirm that a previously registered device (with a Workplace Join key in Keychain Access) removes the key after successful PSSO device registration.
