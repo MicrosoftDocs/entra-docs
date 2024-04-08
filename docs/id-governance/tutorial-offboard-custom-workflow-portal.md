@@ -86,7 +86,7 @@ Use the following steps to create a leaver on-demand workflow that executes a re
 
 ## Run the workflow
 
-After the workflow is created, it runs automatically every three hours. Lifecycle workflows check every three hours for users in the associated execution conditions, and executes the configured tasks for those users.
+After the workflow is created, it runs automatically every three hours. Lifecycle workflows check every three hours for users in the associated execution condition, and executes the configured tasks for those users.
 
 To run the workflow immediately, you can use the on-demand feature.
 
