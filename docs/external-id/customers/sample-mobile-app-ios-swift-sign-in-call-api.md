@@ -97,7 +97,7 @@ To build and run your app, follow these steps:
  
 1. To build and run your code, select **Run** from the **Product** menu in Xcode. After a successful build, Xcode will launch the sample app in the Simulator.
 1. Select **Acquire Token Interactively** to request an access token.
-1. Select **API - Perform GET** to call a protected ASP.NET Core web API. A successful call to the web API returns HTTP `200`, while HTTP `403` signifies unauthorized access.
+1. Select **API - Perform GET** to call the previously set up ASP.NET Core web API. A successful call to the web API returns HTTP `200`, while HTTP `403` signifies unauthorized access.
 
 ## Related content
 
