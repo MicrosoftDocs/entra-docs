@@ -74,10 +74,10 @@ Now that the workflow is created, it will automatically run the workflow every 3
 To run a workflow on-demand, for users using the Microsoft Entra admin center, do the following steps:
 
 1. On the workflow screen, select the specific workflow you want to run.
-2. Select **Run on demand**.
-3. On the **select users** tab, select **add users**.
-4. Add a user.
-5. Select **Run workflow**.
+1. Select **Run on demand**.
+1. On the **select users** tab, select **add users**.
+1. Add a user.
+1. Select **Run workflow**.
 
 ## Check tasks and workflow status
 
