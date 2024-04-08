@@ -9,5 +9,6 @@ ms.date: 04/04/2024
 ms.author: justinha
 ms.custom: include file
 ---
-
-You can't create and authenticate passkeys in Microsoft Authenticator from a Google Chrome or Microsoft Edge browser. Microsoft is working to support these browser scenarios as soon as the APIs are updated and made available. 
+> [!NOTE]
+> You can't create and authenticate passkeys from browsers on Android devices, including Google Chrome and Microsoft Edge. 
+Microsoft is working to support these browser scenarios as soon as the platform updates the APIs and makes them available. 
