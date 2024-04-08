@@ -1,13 +1,13 @@
 ---
 title: Test a protected web API
 description: Learn how to test a protected web API registered in a customer tenant
- 
+
 author: SHERMANOUKO
 manager: mwongerapk
 
 ms.author: shermanouko
 ms.service: entra-external-id
- 
+
 ms.custom: devx-track-dotnet
 ms.subservice: customers
 ms.topic: tutorial
@@ -17,7 +17,7 @@ ms.date: 07/27/2023
 
 # Test your protected API
 
-This tutorial is the final part of a series that demonstrates building and testing a protected web API that is registered in a Microsoft Entra ID for customers tenant. In [part 1 of this series](./tutorial-protect-web-api-dotnet-core-build-app.md), you created an ASP.NET Core web API and protected its endpoints. In this final step, you'll register the daemon app, and test your API.
+This tutorial is the final part of a series that demonstrates building and testing a protected web API that is registered in a Microsoft Entra ID for customers tenant. In [Part 1 of this series](./tutorial-protect-web-api-dotnet-core-build-app.md), you created an ASP.NET Core web API and protected its endpoints. In this final step, you'll register the daemon app, and test your API.
 
 In this tutorial, you learn how to:
 
@@ -29,7 +29,7 @@ In this tutorial, you learn how to:
 
 [Tutorial: Secure an ASP.NET Core web API registered in a customer tenant](./tutorial-protect-web-api-dotnet-core-build-app.md)
 
-## Register the daemon app 
+## Register the daemon app
 
 [!INCLUDE [Register daemon app](./includes/register-app/register-daemon-app.md)]
 
@@ -49,13 +49,15 @@ Apps authenticating by themselves require app permissions.
     dotnet new console -o MyTestApp
     cd MyTestApp
     ```
+
 1. Install MSAL to help you with handling authentication by running the following command:
-  
+
     ```dotnetcli
     dotnet add package Microsoft.Identity.Client
     ```
+
 1. Run your API project and note the port on which it's running.
-1. Open the *Program.cs* file and replace the "Hello world" code with the following code. 
+1. Open the *Program.cs* file and replace the "Hello world" code with the following code.
 
     ```csharp
     using System;
