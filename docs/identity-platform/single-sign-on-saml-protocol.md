@@ -1,6 +1,6 @@
 ---
 title: Single sign-on SAML protocol
-description: This article describes the single sign-on (SSO) SAML protocol in Microsoft Entra ID
+description: This article describes the single sign-on (SSO) SAML protocol in Microsoft Entra ID.
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
@@ -17,7 +17,7 @@ ms.topic: reference
 
 This article covers the SAML 2.0 authentication requests and responses that Microsoft Entra ID supports for single sign-on (SSO).
 
-The protocol diagram below describes the single sign-on sequence. The cloud service (the service provider) uses an HTTP Redirect binding to pass an `AuthnRequest` (authentication request) element to Microsoft Entra ID (the identity provider). Microsoft Entra ID then uses an HTTP post binding to post a `Response` element to the cloud service.
+The following protocol diagram describes the single sign-on sequence. The cloud service (the service provider) uses an HTTP Redirect binding to pass an `AuthnRequest` (authentication request) element to Microsoft Entra ID (the identity provider). Microsoft Entra ID then uses an HTTP post binding to post a `Response` element to the cloud service.
 
 ![Screenshot of the Single Sign-On (SSO) Workflow.](./media/single-sign-on-saml-protocol/saml-single-sign-on-workflow.png)
 
