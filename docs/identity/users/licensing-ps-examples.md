@@ -117,13 +117,13 @@ HTTP/1.1 200 OK
 
 You can find all groups with any license assigned by running the following command:
 ```powershell
-Get-MgGroup -All | Where {$_.Licenses}
+Get-MgGroup -All | Where {$_.AssignedLicenses}
 ```
 
 More details can be displayed about what products are assigned:
 
 ```powershell
-Get-MgGroup -All | Where {$_.Licenses} | Select `
+Get-MgGroup -All | Where {$_.AssignedLicenses} | Select `
     Id, `
     DisplayName, `
     @{Name="AssignedLicenses";Expression={$_.AssignedLicenses | Select -ExpandProperty SkuPartNumber}}
