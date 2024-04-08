@@ -39,7 +39,6 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
 <!---Phase 2 - add Authenticator screenshots of the flow above (by April 8)--->
 
-<!---Support for browser scenarios aren't yet supported 
 ## Same-device registration (iOS)
 
 1. Using your iOS device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
@@ -168,12 +167,9 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-delete.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for iOS devices.":::
 
-<!---Support for browser scenarios aren't yet supported 
-
 > [!NOTE]
 > You also need to delete the passkey from **Security Info**, using a web browser and logging in to [https://mysignins.microsoft.com/security-info](https://mysignins.microsoft.com/security-info ).  
 
---->
 # [:::image type="icon" source="media/icons/android-icon.png" border="false"::: **Android**](#tab/Android)
 
 ## Register passkey by signing into Authenticator (Android)
@@ -187,7 +183,6 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
 [!INCLUDE [Need APIs to support browsers](~/includes/passkeys-with-chrome-browser.md)]
 
-<!---Support for browser scenarios aren't yet supported 
 ## Same-device registration (Android)
 
 1. Using your Android device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
@@ -318,7 +313,6 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 1. Name the passkey something memorable to you and select **Done**. 
 
     :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/success.png" alt-text="Screenshot of the successful creation of a passkey in Microsoft Authenticator for Android devices.":::
---->
 
 ## Troubleshooting
 
@@ -330,10 +324,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-delete.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for Android devices.":::
 
-<!---Support for browser scenarios aren't yet supported 
-
 > [!NOTE]
 > You also need to delete the passkey from **Security Info**, using a web browser and logging in to [https://mysignins.microsoft.com/security-info](https://mysignins.microsoft.com/security-info ).  
---->
 
 ---

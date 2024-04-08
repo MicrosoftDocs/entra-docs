@@ -69,6 +69,9 @@ Note: You must have bluetooth enabled on both devices to successfully authentica
 
 To sign in with a passkey in Microsoft Authenticator, your Android device needs to run Android 14 or later.
 
+[!INCLUDE [Need APIs to support browsers](~/includes/passkeys-with-chrome-browser.md)]
+
+<!---Support for browser scenarios aren't yet supported 
 ### Same-device authentication (Android)
 
 Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft Authenticator on your Android device.
@@ -85,6 +88,7 @@ Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft 
 1. To select your passkey, follow the steps in the Android operating system dialog. Verify that it's you by scanning your face, fingerprint, or entering your device PIN or unlock gesture.
 
 1. You're now signed into Microsoft Entra ID.
+--->
 
 ### Cross-device authentication (Android)
 
