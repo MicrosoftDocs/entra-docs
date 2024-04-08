@@ -32,7 +32,7 @@ Common task parameters are the non-unique parameters contained in every task. Wh
 |isEnabled     | A boolean value that denotes whether the task is set to run or not. If set to “true" then the task runs. Defaults to true.       |
 |displayName     |  A unique string that identifies the task.       |
 |description     | A string that describes the purpose of the task for administrative use. (Optional)         |
-|executionSequence     | A read-only integer that states in what order the task runs in a workflow. For more information about executionSequence and workflow order, see: [Configure Scope](understanding-lifecycle-workflows.md#configure-scope).       |
+|executionSequence     | A read-only integer that states in what order the task runs in a workflow.      |
 |continueOnError     |  A boolean value that determines if the failure of this task stops the subsequent workflows from running.        |
 |arguments     |  Contains unique parameters relevant for the given task.       |
 
@@ -316,7 +316,7 @@ For Microsoft Graph, the parameters for the **Request user access package assign
 
 |Parameter |Definition  |
 |---------|---------|
-|category    |  joiner      |
+|category    |  joiner, mover      |
 |displayName     |  Request user access package assignment (Customizable by user)        |
 |description     |  Request user assignment to selected access package (Customizable by user)       |
 |taskDefinitionId     |   c1ec1e76-f374-4375-aaa6-0bb6bd4c60be      |
@@ -344,6 +344,41 @@ Example of usage within the workflow:
     ]
 }
 ```
+
+### Assign licenses to user (Preview)
+
+Allows Licenses to be assigned to users. For a license to be assigned to the user, they must have a "*usageLocation*" attribute set.
+
+:::image type="content" source="media/lifecycle-workflow-task/assign-license-user-task.png" alt-text="Screenshot of the assign licenses to user task.":::
+
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  joiner, mover      |
+|displayName     |  Assign licenses to user (Customizable by user)        |
+|description     |  Assign selected licenses to the user (Customizable by user)       |
+|taskDefinitionId     |   683c87a4-2ad4-420b-97d4-220d90afcd24      |
+|arguments     |  Argument contains one parameter that has the name "*licenses*"  thats accepts a "*Sku id*" value. For a full list of these values, see: [Product names and service plan identifiers for licensing](../identity/users/licensing-service-plan-reference.md).  |
+
+Example of usage within the workflow:
+
+```Example for usage within the workflow
+{
+            "category": "joiner,mover",
+            "continueOnError": false,
+            "description": "Assign selected licenses to the user",
+            "displayName": "Assign licenses to user (Preview)",
+            "isEnabled": true,
+            "taskDefinitionId": "683c87a4-2ad4-420b-97d4-220d90afcd24",
+            "arguments": [
+                {
+                    "name": "licenses",
+                    "value": "a403ebcc-fae0-4ca2-8c8c-7a907fd6c235"
+                }
+            ]
+        }
+```
+
 
 ### Add user to groups
 
@@ -674,7 +709,7 @@ For Microsoft Graph, the parameters for the **Remove access package assignment f
 
 |Parameter |Definition  |
 |---------|---------|
-|category    |  leaver      |
+|category    |  leaver, mover      |
 |displayName     |  Remove access package assignment for user (Customizable by user)        |
 |description     |  Remove user assignment of selected access package (Customizable by user)        |
 |taskDefinitionId     |   4a0b64f2-c7ec-46ba-b117-18f262946c50      |
@@ -760,6 +795,41 @@ Example of usage within the workflow:
 }
 ```
 
+### Remove selected license assignments from user (Preview)
+
+Remove selected license assignments from a user.
+
+You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+:::image type="content" source="media/lifecycle-workflow-task/remove-select-license-assignments-user-task.png" alt-text="Screenshot of the Remove selected license assignment from user task.":::
+
+For Microsoft Graph, the parameters for the **Remove selected license assignments from user** task are as follows:
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  leaver, mover      |
+|displayName     |  Remove licenses from user (Customizable by user)        |
+|description     |  Remove selected licenses assigned to the user (Customizable by user)        |
+|taskDefinitionId     |   5fc402a8-daaf-4b7b-9203-da868b05fc5f      |
+|arguments     |  Argument contains one parameter that has the name "*licenses*"  thats accepts a "Sku id" value. For a full list of these values, see: [Product names and service plan identifiers for licensing](../identity/users/licensing-service-plan-reference.md).  |
+
+Example of usage within the workflow:
+
+```Example for usage within the workflow 
+{
+            "category": "leaver,mover",
+            "description": "Remove selected licenses assigned to the user",
+            "displayName": "Remove licenses from user",
+            "id": "5fc402a8-daaf-4b7b-9203-da868b05fc5f",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "licenses",
+                    "values": [],
+                    "valueType": "string"
+                }
+            ]
+        }
+```
 
 ### Remove all license assignments from User
 
