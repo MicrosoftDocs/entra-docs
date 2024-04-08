@@ -124,28 +124,22 @@ To start the agent installation, double-click the *.exe* file that you downloade
 
 :::image type="content" source="media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install1.png" alt-text="Screenshot that shows the Microsoft Entra Connect Health agent for AD DS installation window.":::
 
-When the installation finishes, select **Configure Now**.
+When you're prompted, sign in by using a Microsoft Entra account that has permissions to register the agent. By default, the Hybrid Identity Administrator account has permissions.
 
-:::image type="content" source="media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install2.png" alt-text="Screenshot showing the window that finishes the installation of the Microsoft Entra Connect Health agent for AD Domain Services.":::
+:::image type="content" source="media/how-to-connect-health-agent-install/install3.png" alt-text="Screenshot that shows the sign-in window for Microsoft Entra Connect Health AD DS.":::
 
-A Command Prompt window opens. PowerShell runs `Register-MicrosoftEntraConnectHealthAgent`. When you're prompted, sign in to Azure.
+After you sign in, the installation process will complete and you can close the window.
 
-:::image type="content" source="media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install3.png" alt-text="Screenshot showing the sign-in window for the Microsoft Entra Connect Health agent for AD Domain Services.":::
+:::image type="content" source="media/how-to-connect-health-agent-install/install2.png" alt-text="Screenshot that shows the confirmation message for the Microsoft Entra Connect Health AD DS agent installation.":::
 
-After you sign in, PowerShell continues. When it finishes, you can close PowerShell. The configuration is complete.
+At this point, the agent services should start to automatically allow the agent to securely upload the required data to the cloud service.
 
-At this point, the services should be started automatically, allowing the agent to monitor and gather data. If you haven't met all the prerequisites outlined in the previous sections, warnings appear in the PowerShell window. Be sure to complete the [requirements](how-to-connect-health-agent-install.md#requirements) before you install the agent. The following screenshot shows an example of these warnings.
+To verify that the agent was installed, look for the following services on the server. If you completed the configuration, they should already be running. Otherwise, they're stopped until the configuration is complete.
 
-:::image type="content" source="media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install4.png" alt-text="Screenshot showing a warning for the Microsoft Entra Connect Health agent for AD Domain Services configuration.":::
+- Microsoft Entra Connect Agent Updater
+- Microsoft Entra Connect Health Agent
 
-To verify that the agent is installed, look for the following services on the domain controller:
-
-- Microsoft Entra Connect Health AD DS Insights Service
-- Microsoft Entra Connect Health AD DS Monitoring Service
-
-If you completed the configuration, these services should already be running. Otherwise, they're stopped until the configuration finishes.
-
-:::image type="content" source="media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install5.png" alt-text="Screenshot showing the running services on the domain controller.":::
+:::image type="content" source="media/how-to-connect-health-agent-install/install5.png" alt-text="Screenshot that shows Microsoft Entra Connect Health AD DS services.":::
 
 ### Quickly install the agent on multiple servers
 
