@@ -29,7 +29,7 @@ To sign in with a passkey in Microsoft Authenticator, your iOS device needs to r
 
 Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft Authenticator on your iOS device.
 
-1. On your iOS device, open your browser and go to `myaccount.microsoft.com`.
+1. On your iOS device, open your browser and navigate to the resource you're trying to access e.g. `myaccount.microsoft.com`.
 1. Select **Sign-in options**. 
 
     :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-microsoft.png" alt-text="Screenshot of the sign-in Microsoft in Microsoft Authenticator for iOS devices.":::
@@ -59,6 +59,7 @@ Follow these steps to sign in to Microsoft Entra ID on another device with a pas
 1. To initiate cross-device authentication, follow the steps in the operating system or browser prompt. On Windows 11 23H2 or later, select **iPhone, iPad, or Android device**.
 
 1. A QR code should be shown on screen. Now, on your iOS device, open the Camera app and scan the QR code. Select **Sign-in with passkey** when the option appears.
+Note: You must have bluetooth enabled on both devices to successfully authenticate with your passkey.
 
 1. To select your passkey, follow the steps in the iOS operating system dialog. Verify that it's you by using Face ID, Touch ID, or entering your device PIN.
 
@@ -72,7 +73,7 @@ To sign in with a passkey in Microsoft Authenticator, your Android device needs 
 
 Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft Authenticator on your Android device.
 
-1. On your Android device, open your browser and go to `login.microsoftonline.com`.
+1. On your Android device, open your browser and navigate the resource you want to access e.g. `myaccount.microsoftonline.com`.
 1. Select **Sign-in options**. 
 
     :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-microsoft.png" alt-text="Screenshot of the sign-in Microsoft in Microsoft Authenticator for Android devices.":::
@@ -102,6 +103,7 @@ Follow these steps to sign in to Microsoft Entra ID on another device with a pas
 1. To initiate cross-device authentication, follow the steps in the operating system or browser prompt. On Windows 11 23H2 or later, select **iPhone, iPad, or Android device**.
 
 1. A QR code should be shown on screen. Now, on your Android device, open the Camera app and scan the QR code. Select **Sign-in with passkey** when the option appears.
+Note: You must have bluetooth enabled on both devices to successfully authenticate with your passkey.
 
 1. To select your passkey, follow the steps in the Android operating system dialog. Verify that it's you by scanning your face, fingerprint, or entering your device PIN or unlock gesture.
 
