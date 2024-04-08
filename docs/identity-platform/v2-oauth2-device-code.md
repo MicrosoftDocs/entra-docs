@@ -37,7 +37,7 @@ From the moment the request is sent, the user has 15 minutes to sign in. This is
 POST https://login.microsoftonline.com/{tenant}/oauth2/v2.0/devicecode
 Content-Type: application/x-www-form-urlencoded
 
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &scope=user.read%20openid%20profile
 
 ```
