@@ -69,7 +69,7 @@ The value of `{tenant}` varies based on the application's sign-in audience as sh
 | `common` |Users with both a personal Microsoft account and a work or school account from Microsoft Entra ID can sign in to the application. |
 | `organizations` |Only users with work or school accounts from Microsoft Entra ID can sign in to the application. |
 | `consumers` |Only users with a personal Microsoft account can sign in to the application. |
-| `8eaef023-2b34-4da1-9baa-8bc8c9d6a490` or `contoso.onmicrosoft.com` | Only users from a specific Microsoft Entra tenant (directory members with a work or school account or directory guests with a personal Microsoft account) can sign in to the application. <br/><br/>The value can be the domain name of the Microsoft Entra tenant or the tenant ID in GUID format. You can also use the consumer tenant GUID, `9188040d-6c67-4c5b-b112-36a304b66dad`, in place of `consumers`.  |
+| `Directory (tenant) ID` or `contoso.onmicrosoft.com` | Only users from a specific Microsoft Entra tenant (directory members with a work or school account or directory guests with a personal Microsoft account) can sign in to the application. <br/><br/>The value can be the domain name of the Microsoft Entra tenant or the tenant ID in GUID format. |
 
 > [!TIP]
 > Note that when using the `common` or `consumers` authority for personal Microsoft accounts, the consuming resource application must be configured to support such type of accounts in accordance with [signInAudience](./supported-accounts-validation.md).
