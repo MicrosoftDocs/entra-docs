@@ -26,7 +26,7 @@ Explore the range of [Azure support options and choose the plan](https://azure.m
 
 - If you already have an Azure Support Plan, [open a support request here](https://entra.microsoft.com/#view/Microsoft_Azure_Support/NewSupportRequestV3Blade/callerName/ActiveDirectory/issueType/technical).
 
-- If you're using Microsoft Entra ID for customers (preview), the support request feature is currently unavailable in customer tenants. However, you can use the **Give Feedback** link on the **New support request** page to provide feedback. Or, you can switch to your Microsoft Entra workforce tenant and [open a support request](https://entra.microsoft.com/#view/Microsoft_Azure_Support/NewSupportRequestV3Blade/callerName/ActiveDirectory/issueType/technical).
+- If you're using Microsoft Entra ID for customers (preview), the support request feature is currently unavailable in external tenants. However, you can use the **Give Feedback** link on the **New support request** page to provide feedback. Or, you can switch to your Microsoft Entra workforce tenant and [open a support request](https://entra.microsoft.com/#view/Microsoft_Azure_Support/NewSupportRequestV3Blade/callerName/ActiveDirectory/issueType/technical).
 
 - If you're not an Azure customer, you can open a support request with [Microsoft Support for business](https://support.serviceshub.microsoft.com/supportforbusiness).
 

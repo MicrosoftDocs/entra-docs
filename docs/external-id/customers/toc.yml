@@ -290,7 +290,7 @@ items:
   items: 
     - name: Planning for customer identity and access
       href: concept-planning-your-solution.md
-    - name: Supported features in customer tenants
+    - name: Supported features in external tenants
       href: concept-supported-features-customers.md
     - name: User profile attributes
       href: concept-user-attributes.md
@@ -311,8 +311,8 @@ items:
   items:
     - name: Authenticate and authorize
       items:
-      - name: Create a customer tenant
-        href: how-to-create-customer-tenant-portal.md
+      - name: Create an external tenant
+        href: how-to-create-external-tenant-portal.md
       - name: Register an app
         href: how-to-register-ciam-app.md
       - name: Add a sign-up and sign-in flow
