@@ -7,7 +7,7 @@ manager: martinco
 ms.service: entra-workload-id
 
 ms.topic: faq
-ms.date: 04/04/2024
+ms.date: 04/09/2024
 ms.author: gasinh
 ms.custom: aaddev
 #Customer intent: I want to know about Microsoft Entra Workload ID licensing plans
@@ -72,23 +72,13 @@ The [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/bus
 
 ## How many licenses do I need to purchase? Do I need to license all workload identities including Microsoft applications and managed identities? 
 
-No, only the workload identities eligible for premium features require licensing. Specifically, you are required to license enterprise apps and service principals listed under the first category in the following screenshot from the Workload ID landing page in the Microsoft Entra admin center. If you want to utilize premium features for a subset of enterprise apps and service principals, you must procure licenses accordingly, tailored to your specific requirements. An exception arises if you intend to use [access reviews](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review) for managed identities. In such cases, licenses must be obtained based on the number of managed identities depicted in the graph.
+Only the workload identities eligible for premium features require licensing. Specifically, you are required to license enterprise apps and service principals listed under the first category in the following screenshot from the Workload ID landing page in the Microsoft Entra admin center. If you want to utilize premium features for a subset of enterprise apps and service principals, you must procure licenses accordingly, tailored to your specific requirements. An exception arises if you intend to use [access reviews](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review) for managed identities. In such cases, licenses must be obtained based on the number of managed identities depicted in the graph.
 
 Here are more details about which workload identities eligible for specific features. Currently, Conditional Access is applicable for workload identities for single-tenant applications and [ID Protection](~/id-protection/concept-workload-identity-risk.md) protects both single and multi-tenant applications under Enterprise apps/Service Principals. Microsoft apps and managed identities are not eligible for Conditional Access and ID Protection. Access reviews are applicable for service principals assigned to privileged roles including managed identities. This feature requires Entra ID P2 licenses for reviewers and Workload ID Premium licenses for service principles that they want to set access reviews for.  
 
 ## How do I purchase a Workload ID Premium plan?
 
 You need an Azure or Microsoft 365 subscription. You can use a current subscription or set up a new one. Then, sign into the [Microsoft Microsoft Entra admin center](https://entra.microsoft.com/) with your credentials to buy Workload ID licenses.
-
-## What do the numbers in each category on landing page mean?
-
-:::image type="content" source="media/workload-identities-faqs/categories.png" alt-text="Screenshot showing search categories of workload identities." border="false":::
-
-Category definitions:
-
-- **Enterprise apps/Service Principals**: This category includes multitenant apps, gallery apps, non-gallery apps and service principals.
-- **Microsoft apps**: Apps such as Outlook and Microsoft Teams.
-- **Managed Identities**: An identity for applications for connecting resources that support Microsoft Entra authentication.
 
 ## Do these licenses require individual workload identities assignment? 
 
@@ -98,7 +88,7 @@ No, license assignment isn't required.  One license in the tenant will unlock al
 
 Unfortunately, we don’t provide a dashboard to track that information. You can only track enabled Conditional Access policies targeting workload identities in the **Insights and reporting** blade. 
 
-:::image type="content" source="media/workload-identities-faqs/insights-and-reporting.png" alt-text="Screenshot showing Insights and Reporting in Condidtional Access." border="false":::
+:::image type="content" source="media/workload-identities-faqs/insights-and-reportin.png" alt-text="Screenshot showing Insights and Reporting in Condidtional Access." border="false":::
 
 - Total: Number of service principals in the Last 24 hours.
 - Success: Number of service principals where the selected polic(ies) granted access and the required controls were satisfied. 
@@ -122,7 +112,4 @@ Yes, customers can have a mixture of SKUs in one tenant.
 
 ## Next steps
 
-For more information, contact:
--
--
--
+Learn more about [workload identities](workload-identities-overview.md).
