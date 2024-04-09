@@ -58,7 +58,7 @@ Complete the following steps to create a policy that applies to all selected use
 
 ## Next steps
 
-If you need help, see [troubleshoot combined security info registration](howto-registration-mfa-sspr-combined-troubleshoot.md) or learn [What is the location condition in Microsoft Entra Conditional Access?](../identity/conditional-access/concept-assignment-network.md)
+If you need help, see [troubleshoot combined security info registration](howto-registration-mfa-sspr-combined-troubleshoot.md) or learn [What is the location condition in Microsoft Entra Conditional Access?](../conditional-access/concept-assignment-network.md)
 
 Review how you can [enable self-service password reset](tutorial-enable-sspr.md) and [enable Microsoft Entra multifactor authentication](tutorial-enable-azure-mfa.md) in your tenant.
 

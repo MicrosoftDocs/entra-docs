@@ -5,7 +5,7 @@ description: Create a custom Conditional Access policy to block access to resour
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 07/18/2023
+ms.date: 04/09/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,7 +14,7 @@ ms.reviewer: calebb, lhuangnorth
 ---
 # Conditional Access: Block access by location
 
-With the location condition in Conditional Access, you can control access to your cloud apps based on the network location of a user. The location condition is commonly used to block access from countries/regions where your organization knows traffic shouldn't come from. For more information about IPv6 support, see the article [IPv6 support in Microsoft Entra ID](/troubleshoot/azure/active-directory/azure-ad-ipv6-support).
+With the network assignment in Conditional Access, you can control access to your cloud apps based on the network location of a user. The condition is commonly used to block access from countries/regions where your organization knows traffic shouldn't come from.
 
 > [!NOTE]
 > Conditional Access policies are enforced after first-factor authentication is completed. Conditional Access isn't intended to be an organization's first line of defense for scenarios like denial-of-service (DoS) attacks, but it can use signals from these events to determine access.
@@ -28,11 +28,10 @@ With the location condition in Conditional Access, you can control access to you
 1. Give your location a name.
 1. Provide the **IP ranges** or select the **Countries/Regions** for the location you're specifying.
    - If you select IP ranges, you can optionally **Mark as trusted location**.
-   - If you choose Countries/Regions, you can optionally choose to include unknown areas.
+   - If you choose Countries/Regions, you can optionally choose to **Include unknown countries/regions**.
 1. Select **Create**
 
-More information about the location condition in Conditional Access can be found in the article, 
-[What is the location condition in Microsoft Entra Conditional Access](location-condition.md)
+More information about the location condition in Conditional Access can be found in the article, [What is the location condition in Microsoft Entra Conditional Access](concept-assignment-network.md#ipv4-and-ipv6-address-ranges)
 
 ## Create a Conditional Access policy
 
@@ -44,9 +43,9 @@ More information about the location condition in Conditional Access can be found
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
 1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
-1. Under **Conditions** > **Location**.
+1. Under **Network**:
    1. Set **Configure** to **Yes**
-   1. Under **Include**, select **Selected locations**
+   1. Under **Include**, select **Selected networks and locations**
    1. Select the blocked location you created for your organization.
    1. Click **Select**.
 1. Under **Access controls** > select **Block Access**, and click **Select**.
