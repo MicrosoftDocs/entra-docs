@@ -1,6 +1,6 @@
 ---
 title: Test a protected web API
-description: Learn how to test a protected web API registered in a customer tenant
+description: Learn how to test a protected web API registered in an external tenant
 
 author: SHERMANOUKO
 manager: mwongerapk
@@ -27,7 +27,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-[Tutorial: Secure an ASP.NET Core web API registered in a customer tenant](./tutorial-protect-web-api-dotnet-core-build-app.md)
+[Tutorial: Secure an ASP.NET Core web API registered in an external tenant](./tutorial-protect-web-api-dotnet-core-build-app.md)
 
 ## Register the daemon app
 

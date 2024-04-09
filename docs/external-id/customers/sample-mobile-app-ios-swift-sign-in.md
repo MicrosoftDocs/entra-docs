@@ -24,7 +24,7 @@ In this article, you do the following tasks:
 - Register an application in the Microsoft Entra admin center.
 - Add a platform redirect URL.
 - Enable public client flows.   
-- Update the iOS configuration code sample file to use your own Microsoft Entra External ID for customer tenant details.  
+- Update the iOS configuration code sample file to use your own Microsoft Entra External ID for external tenant details.  
 - Run and test the sample iOS mobile application.  
 
 ## Prerequisites  
@@ -87,7 +87,7 @@ To enable authentication and access to web API resources, configure the sample b
     - `Enter_the_Redirect_URI_Here` and replace it with the value of *kRedirectUri* in the Microsoft Authentication Library (MSAL) configuration file you downloaded earlier when you added the platform redirect URL.
     - `Enter_the_Protected_API_Full_URL_Here` and replace it with the URL to your web API. The *Enter_the_Protected_API_Full_URL_Here* should include the base URL (the deployed web API URL) and the endpoint (/api/todolist) for our ASP.NET web API.
     - `Enter_the_Protected_API_Scopes_Here` and replace it with the scopes recorded in [Grant web API permissions to the iOS sample app](#grant-web-api-permissions-to-the-ios-sample-app).
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 You've configured the app and it's ready to run.
 

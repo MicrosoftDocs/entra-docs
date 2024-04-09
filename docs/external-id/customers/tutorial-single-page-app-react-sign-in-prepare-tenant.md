@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Prepare your customer tenant to authenticate users in a React SPA"
+title: "Tutorial: Prepare your external tenant to authenticate users in a React SPA"
 description: Learn how to configure your Microsoft Entra ID for customers tenant for authentication with a React single-page app (SPA).
 
 author: garrodonnell
@@ -11,10 +11,10 @@ ms.topic: tutorial
 ms.date: 05/23/2023
 ms.author: godonnell
 
-#Customer intent: As a dev I want to prepare my customer tenant for building a single-page app (SPA) with React
+#Customer intent: As a dev I want to prepare my external tenant for building a single-page app (SPA) with React
 ---
 
-# Tutorial: Prepare your customer tenant to authenticate users in a React SPA
+# Tutorial: Prepare your external tenant to authenticate users in a React SPA
 
 This tutorial series demonstrates how to build a React single-page application (SPA) and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for JavaScript](/javascript/api/overview/msal-overview) library to authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
 
@@ -59,4 +59,4 @@ In this tutorial;
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Part 2: Create a React SPA project for authentication in a customer tenant](./tutorial-single-page-app-react-sign-in-prepare-app.md)
+> [Part 2: Create a React SPA project for authentication in an external tenant](./tutorial-single-page-app-react-sign-in-prepare-app.md)

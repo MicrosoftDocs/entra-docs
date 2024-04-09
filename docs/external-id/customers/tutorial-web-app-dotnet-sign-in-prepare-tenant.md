@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Prepare your customer tenant to authenticate users in an ASP.NET Core web app"
+title: "Tutorial: Prepare your external tenant to authenticate users in an ASP.NET Core web app"
 description: Learn how to configure your Microsoft Entra ID for customers tenant for authentication with an ASP.NET web application
 
 author: cilwerner
@@ -14,7 +14,7 @@ ms.date: 05/23/2023
 #Customer intent: As a dev, DevOps, I want to learn about how to enable authentication in my own ASP.NET web app with Microsoft Entra ID for customers tenant
 ---
 
-# Tutorial: Prepare your customer tenant to authenticate users in an ASP.NET Core web app
+# Tutorial: Prepare your external tenant to authenticate users in an ASP.NET Core web app
 
 This tutorial series demonstrates how to build an ASP.NET Core web application and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for .NET](/entra/msal/dotnet/) and [Microsoft Identity Web](/dotnet/api/microsoft-authentication-library-dotnet/confidentialclient) libraries to authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
 
@@ -63,4 +63,4 @@ In this tutorial, you'll;
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Part 2: Prepare an ASP.NET Core web app for authentication in a customer tenant](tutorial-web-app-dotnet-sign-in-prepare-app.md)
+> [Part 2: Prepare an ASP.NET Core web app for authentication in an external tenant](tutorial-web-app-dotnet-sign-in-prepare-app.md)

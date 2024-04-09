@@ -1,6 +1,6 @@
 ---
-title: 'Tutorial: Prepare your customer tenant to authorize a Node.js daemon application'
-description: Learn how to prepare your customer tenant to authorize your Node.js daemon application
+title: 'Tutorial: Prepare your external tenant to authorize a Node.js daemon application'
+description: Learn how to prepare your external tenant to authorize your Node.js daemon application
 
 author: kengaderdus
 manager: mwongerapk
@@ -14,7 +14,7 @@ ms.date: 07/26/2023
 ms.custom: developer, devx-track-js
 ---
 
-# Tutorial: Prepare your customer tenant to authorize a Node.js daemon application
+# Tutorial: Prepare your external tenant to authorize a Node.js daemon application
 
 This tutorial series demonstrates how to build a Node.js daemon client app and prepare it for authentication in the Microsoft Entra admin center. You'll be using the [Open Authorization (OAuth) 2.0 client credentials grant flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md), then configure it to acquire an access token for calling a web API.
 
@@ -62,7 +62,7 @@ If you've already registered a client daemon application and a web API in the Mi
 In the next step, you prepare your daemon app application. Make sure you've the following details:
 
 - The Application (client) ID of the client daemon app that you registered.
-- The Directory (tenant) subdomain where you registered your daemon app. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+- The Directory (tenant) subdomain where you registered your daemon app. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 - The application secret value for the daemon app you created.
 - The Application (client) ID of the web API app you registered.
 

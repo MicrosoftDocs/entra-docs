@@ -24,7 +24,7 @@ This feature obtains most of the values it needs to run from the application reg
 
 ## Prerequisites
 
-- A **Microsoft Entra customer tenant**: You can set up a <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">free trial</a>, or you can create a new customer tenant in Microsoft Entra ID.
+- A **Microsoft Entra external tenant**: You can set up a <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">free trial</a>, or you can create a new external tenant in Microsoft Entra ID.
 - A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 - Your application, which is [registered with Microsoft Entra](how-to-register-ciam-app.md), has a Redirect URI specified, and is [associated with your user flow](how-to-user-flow-add-application.md).
 
