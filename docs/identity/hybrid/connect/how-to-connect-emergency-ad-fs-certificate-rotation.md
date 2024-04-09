@@ -4,7 +4,7 @@ description: This article explains how to revoke and update AD FS certificates i
 author: billmath
 manager: amycolannino
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.subservice: hybrid-connect

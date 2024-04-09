@@ -14,7 +14,9 @@ ms.reviewer: calui
 ---
 # Native app and browser support of FIDO2 passwordless authentication
 
-Microsoft Entra ID allows [FIDO2 security keys](./concept-authentication-passwordless.md#fido2-security-keys) to be used as a passwordless device. The availability of FIDO2 authentication for Microsoft accounts was [announced in 2018](https://techcommunity.microsoft.com/t5/identity-standards-blog/all-about-fido2-ctap2-and-webauthn/ba-p/288910), and it became [generally available](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/passwordless-authentication-is-now-generally-available/ba-p/1994700) in March 2021. This topic covers which browsers, native apps, and operating systems support passwordless authentication using FIDO2 security keys with Microsoft Entra ID. Microsoft Entra ID currently supports only hardware FIDO2 keys and doesn't support passkeys for any platform.
+Microsoft Entra ID allows [FIDO2 security keys](./concept-authentication-passwordless.md#fido2-security-keys) to be used as a passwordless device. The availability of FIDO2 authentication for Microsoft accounts was [announced in 2018](https://techcommunity.microsoft.com/t5/identity-standards-blog/all-about-fido2-ctap2-and-webauthn/ba-p/288910), and it became [generally available](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/passwordless-authentication-is-now-generally-available/ba-p/1994700) in March 2021. This topic covers which browsers, native apps, and operating systems support passwordless authentication using FIDO2 security keys with Microsoft Entra ID. 
+
+Microsoft Entra ID currently supports only device bound passkeys stored primarily on hardware FIDO2 keys and the soon to be released updated Microsoft Authenticator app. Microsoft Entra ID doesn't support syncable passkeys created natively on iOS/macOS or Android.
 
 ## Native app support (preview)
 

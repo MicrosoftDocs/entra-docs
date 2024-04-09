@@ -19,4 +19,4 @@ val loyaltyNumber = accountState.getClaims()?.get("loyaltyNumber")
 
 The key you use to access the claim value is the name that you specify when yo add the user attribute as a token claim. 
 
-To learn how to specify which built-in or custom attributes to include as claims in the token [Add user attributes to token claims](../../how-to-add-attributes-to-token.md) article.
+To learn how to specify which built-in or custom attributes to include as claims in the token, use the [Add user attributes to token claims](../../how-to-add-attributes-to-token.md) article.
