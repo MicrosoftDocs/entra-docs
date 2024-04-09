@@ -184,7 +184,7 @@ If the error parameter has a value of *invalid_client*, Microsoft Entra includes
 |`nativeauthapi_disabled`| The client ID for an app that isn't enable for native authentication.|
 
 > [!NOTE]
-> If you submit all the required attributes, but not all the optional attributes via the `/signup/v1.0/start` endpoint, you won't be able to submit any additional optional attributes later via the  `/signup/v1.0/continue` endpoint. This is so because Microsoft Entra doesn't explicitly request for optional attributes. 
+> If you submit all the required attributes, but not all the optional attributes via the `/signup/v1.0/start` endpoint, you won't be able to submit any additional optional attributes later via the  `/signup/v1.0/continue` endpoint. This is so because Microsoft Entra doesn't explicitly request for optional attributes. See the table in the [Submitting user attributes to endpoints](#submitting-user-attributes-to-endpoints) section to learn which user attributes you can submit to the `/signup/v1.0/start` and `/signup/v1.0/continue` endpoints.
 
 ### Step 2: Select an authentication method
 
