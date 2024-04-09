@@ -101,7 +101,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 |    Parameter     | Required                     |           Description        |
 |-----------------------|-------------------------|------------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.                |
 | `username`          |    Yes   | Email of the customer user that they want to sign up with, such as *contoso-consumer@contoso.com*.  |
 | `challenge_type`    |   Yes  | A space-separated list of authorization challenge type strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password sign-up flow, the value is expected to contain `oob password redirect`.|
@@ -185,7 +185,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |----------------------|------------------------|
 |`invalid_request`  |Request parameter validation failed such as when the challenge_type parameter value contains an unsupported authentication method or the request didn't include `client_id` parameter the client ID value is empty or invalid. Use the `error_description` parameter to learn the exact cause of the error.|
 |`invalid_client`| The client ID that the app includes in the request is for an app that lacks native authentication configuration, such as it isn't a public client or isn't enabled for native authentication. Use the `suberror` parameter to learn the exact cause of the error.|
-|`unauthorized_client`| The client ID used in the request has a valid client ID format, but doesn't exist in the customer tenant or is incorrect. |
+|`unauthorized_client`| The client ID used in the request has a valid client ID format, but doesn't exist in the external tenant or is incorrect. |
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.| 
 |`user_already_exists` |  User already exists.  |
 |`invalid_grant`| The password that the app submits doesn't meet all the complexity requirements, such as the password is too short. Use the `suberror` parameter to learn the exact cause of the error.|
@@ -229,7 +229,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 |    Parameter     | Required                     |           Description        |
 |-----------------------|-------------------------|------------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-up-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password sign-up flow, the value is expected to contain `oob password redirect`.|
 |`continuation_token`| Yes |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous request.|
@@ -344,7 +344,7 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `continuation_token`  | Yes |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous request.|
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | A request to the  `/signup/v1.0/continue` endpoint can be used to submit OTP code, password, or user attributes. In this case, the `grant_type` value is used to differentiate between these three use cases. The possible values for the grant_type are *oob*, *password*, *attributes*. In this call, since we're sending OTP code, the value is expected to be *oob*.|
@@ -396,7 +396,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |    Error value     | Description        |
 |----------------------|------------------------|
 |`credential_required`|Authentication is required for account creation, so you have to make a call to the `/signup/v1.0/challenge` endpoint to determine the credential the user is required to provide.|
-|`invalid_request`  | Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid or the customer tenant administrator hasn't enabled email OTP for all tenant users.   |  
+|`invalid_request`  | Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid or the external tenant administrator hasn't enabled email OTP for all tenant users.   |  
 |`invalid_grant`|The grant type included in the request isn't valid or supported, or OTP value is incorrect.|
 |`expired_token`|The continuation token included in the request is expired. |
 
@@ -422,7 +422,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 |    Parameter     | Required                     |           Description        |
 |-----------------------|-------------------------|------------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-up-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password sign-up flow, the value is expected to contain `password redirect`.|
 |`continuation_token`| Yes |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous request.|
@@ -486,7 +486,7 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `continuation_token`  | Yes |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous step.|
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | A request to the `/signup/v1.0/continue` endpoint can be used to submit OTP code, password, or user attributes. In this case, the `grant_type` value is used to differentiate between these three use cases. The possible values for the grant_type are *oob*, *password*, *attributes*. In this call, since we're sending user's password, the value is expected to be *password*.|
@@ -657,7 +657,7 @@ Content-Type: application/x-www-form-urlencoded
 
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `continuation_token`  | Yes |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous request.  |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | A request to the `/signup/v1.0/continue` endpoint can be used to submit OTP code, password, or user attributes. In this case, the `grant_type` value is used to differentiate between these three use cases. The possible values for the grant_type are *oob*, *password*, *attributes*. In this call, since we're sending user attributes, the value is expected to be *attributes*.|
@@ -774,7 +774,7 @@ continuation_token=ABAAEAAAAtyo...
 
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | The parameter value must be *continuation token*. |
 |`continuation_token`|Yes    |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous step. |
@@ -902,7 +902,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 |    Parameter     | Required                     |           Description        |
 |-----------------------|-------------------------|------------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.                |
 | `username`          |    Yes   |   Email of the customer user such as *contoso-consumer@contoso.com*.  |
 | `challenge_type`    |   Yes  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password sign-in flow, the value is expected to contain `password redirect`.|
@@ -982,7 +982,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |    Error value     | Description        |
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type. or the request didn't include `client_id` parameter the client ID value is empty or invalid. Use the `error_description` parameter to learn the exact cause of the error.|  
-|`unauthorized_client`| The client ID used in the request has a valid client ID format, but doesn't exist in the customer tenant or is incorrect. |
+|`unauthorized_client`| The client ID used in the request has a valid client ID format, but doesn't exist in the external tenant or is incorrect. |
 |`invalid_client`| The client ID that the app includes in the request is for an app that lacks native authentication configuration, such as it isn't a public client or isn't enabled for native authentication. Use the `suberror` parameter to learn the exact cause of the error.|
 |`user_not_found`|The username doesn't exist.|
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.|
@@ -1011,7 +1011,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 |    Parameter     | Required                     |           Description        |
 |-----------------------|-------------------------|------------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `continuation_token` |    Yes   | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password flow, the value is expected to be `password redirect`.|
@@ -1118,7 +1118,7 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 
 |    Parameter     | Required                     |           Description        |
 |-----------------------|-------------------------|------------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `continuation_token`          |    Yes   |  [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
 |`grant_type`| Yes |The value must be *password*. |
@@ -1244,7 +1244,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 |    Parameter     | Required                     |           Description        |
 |-----------------------|-------------------------|------------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.                |
 | `username`          |    Yes   |   Email of the customer user such as *contoso-consumer@contoso.com*.  |
 | `challenge_type`    |   Yes  | A space-separated list of authorization [challenge type](#self-service-password-reset-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For this request, the value is expected to contain `oob redirect`.|
@@ -1326,7 +1326,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |`user_not_found`|The username doesn't exist.|
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.|
 |`invalid_client`| The client ID that the app includes in the request is for an app that lacks native authentication configuration, such as it isn't a public client or isn't enabled for native authentication. Use the `suberror` parameter to learn the exact cause of the error.|
-|`unauthorized_client`| The client ID used in the request has a valid client ID format, but doesn't exist in the customer tenant or is incorrect. |
+|`unauthorized_client`| The client ID used in the request has a valid client ID format, but doesn't exist in the external tenant or is incorrect. |
 
 If the error parameter has a value of *invalid_client*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_client* error:
 
@@ -1353,7 +1353,7 @@ client_id=client_id=111101-14a6-abcd-97bc-abcd1110011
 
 |    Parameter     | Required                     |           Description        |
 |-----------------------|-------------------------|------------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.                |
 | `continuation_token`          |    Yes   |   [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#self-service-password-reset-challenge-types) strings that the app supports such as `oob redirect`. The list must always include the `redirect` challenge type. For this request, the value is expected to contain `oob redirect`.|
@@ -1464,7 +1464,7 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `continuation_token`  | Yes | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | The only valid value is *oob*.  |
@@ -1527,7 +1527,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |  Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid or the customer tenant administrator hasn't enabled SSPR and email OTP for all tenant users. Use the `error_description` parameter to learn the exact cause of the error. |
+| `invalid_request`  |  Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid or the external tenant administrator hasn't enabled SSPR and email OTP for all tenant users. Use the `error_description` parameter to learn the exact cause of the error. |
 |`invalid_grant` |The grant type is unknown or doesn't match the expected grant type value. Use the `suberror` parameter to learn the exact cause of the error.|
 |`expired_token`|The continuation token is expired.    |
 
@@ -1557,7 +1557,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `continuation_token`  |Yes |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous request.  |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`new_password` | Yes | User’s new password. Replace `{new_password}` with the user's new password. It's your responsibility to confirm that the user is aware of the password they want to use by providing the password confirm field in the app's UI. You must also ensure that the user is aware of what constitutes a strong password per your organization's policy. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). |
@@ -1651,7 +1651,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 |    Parameter     | Required | Description        |
 |----------------------|------------------------|------------------|
-| `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
+| `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `continuation_token`  |Yes | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 

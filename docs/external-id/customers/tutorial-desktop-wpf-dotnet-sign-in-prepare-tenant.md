@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Prepare your customer tenant to sign in user in .NET WPF application"
+title: "Tutorial: Prepare your external tenant to sign in user in .NET WPF application"
 description: Learn about how to prepare your Microsoft Entra ID for customers tenant to sign in users to your .NET WPF application
 
 author: SHERMANOUKO
@@ -13,7 +13,7 @@ ms.topic: tutorial
 ms.date: 07/26/2023
 ---
 
-# Tutorial: Prepare your customer tenant to sign in user in .NET WPF application
+# Tutorial: Prepare your external tenant to sign in user in .NET WPF application
 
 This tutorial series demonstrates how to build a .NET Windows Presentation Form (WPF) desktop application and prepare it for authentication using the Microsoft Entra admin center. You'll register the app in the Microsoft Entra admin center, create a .NET WPF desktop app, add sign-in and sign-out components and run the application.
 

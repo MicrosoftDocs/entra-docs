@@ -72,17 +72,17 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
     | **Identifier** |
     |---------------|
-    |`https://<CustomerTenantID>.staging-api.chartdesk.net/saml/metadata` |
-    | `https://<CustomerTenantID>.prod-api.chartdesk.net/saml/metadata` |
-    | `https://<CustomerTenantID>.prod-api.chartdesk.de/saml/metadata` |
+    |`https://<externaltenantid>.staging-api.chartdesk.net/saml/metadata` |
+    | `https://<externaltenantid>.prod-api.chartdesk.net/saml/metadata` |
+    | `https://<externaltenantid>.prod-api.chartdesk.de/saml/metadata` |
 
     b. In the **Reply URL** textbox, type a URL using one of the following patterns:
 
     | **Reply URL** |
     |------------|
-    |`https://<CustomerTenantID>.staging-api.chartdesk.net/saml/consume` |
-    | `https://<CustomerTenantID>.prod-api.chartdesk.net/saml/consume` |
-    | `https://<CustomerTenantID>.prod-api.chartdesk.de/saml/consume` |
+    |`https://<externaltenantid>.staging-api.chartdesk.net/saml/consume` |
+    | `https://<externaltenantid>.prod-api.chartdesk.net/saml/consume` |
+    | `https://<externaltenantid>.prod-api.chartdesk.de/saml/consume` |
 
     > [!Note]
     > These values are not the real. Update these values with the actual Identifier and Reply URL. Contact [ChartDesk SSO Client support team](mailto:support@chartdesk.pro) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.

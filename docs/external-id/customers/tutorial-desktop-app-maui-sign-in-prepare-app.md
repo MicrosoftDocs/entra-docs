@@ -27,7 +27,7 @@ In this tutorial, you'll:
 
 ## Prerequisites
 
-- [Tutorial: Register and configure a .NET MAUI app in a customer tenant](./tutorial-desktop-app-maui-sign-in-prepare-tenant.md)
+- [Tutorial: Register and configure a .NET MAUI app in an external tenant](./tutorial-desktop-app-maui-sign-in-prepare-tenant.md)
 - [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
 - [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
   - [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)
@@ -111,4 +111,4 @@ Download the following image:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Part 3: Sign in users in .NET MAUI shell app using a customer tenant](tutorial-desktop-app-maui-sign-in-sign-out.md)
+> [Part 3: Sign in users in .NET MAUI shell app using an external tenant](tutorial-desktop-app-maui-sign-in-sign-out.md)

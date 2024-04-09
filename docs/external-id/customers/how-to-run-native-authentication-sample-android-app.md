@@ -24,7 +24,7 @@ In this article, you learn how to:
 - Enable public client and native authentication flows.  
 - Create user flow in the Microsoft Entra External ID for customers tenant.  
 - Associate your application with the user flow.  
-- Update the Android configuration code sample file to use your own Microsoft Entra External ID for customer tenant details.  
+- Update the Android configuration code sample file to use your own Microsoft Entra External ID for external tenant details.  
 - Run and test the sample native Android mobile application.  
  
 ## Prerequisites  
@@ -69,7 +69,7 @@ In this article, you learn how to:
 3. Find the placeholder: 
  
    - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier. 
-   - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
+   - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
    
 You've now configured the app and it's ready to run. 
  

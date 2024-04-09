@@ -1,6 +1,6 @@
 ---
 title: Add Facebook for customer sign-in
-description: Learn how to add Facebook as an identity provider for your customer tenant.
+description: Learn how to add Facebook as an identity provider for your external tenant.
  
 author: msmimart
 manager: celestedg
@@ -109,7 +109,7 @@ Use the client ID and client secret from the app you created in [Create a Facebo
 
 ## Add Facebook identity provider to a user flow
 
-At this point, the Facebook identity provider has been set up in your customer tenant, but it's not yet available in any of the sign-in pages. To add the Facebook identity provider to a user flow:
+At this point, the Facebook identity provider has been set up in your external tenant, but it's not yet available in any of the sign-in pages. To add the Facebook identity provider to a user flow:
 
 1. Browse to **Identity** > **External Identities** > **User flows**.
 1. Select the user flow where you want to add the Facebook identity provider.
