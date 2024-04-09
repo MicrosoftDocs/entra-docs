@@ -19,7 +19,7 @@ In this article, you learn how to call a web API from your Node.js client web ap
 
 ## Prerequisite
 
-- Complete the steps in the first part of this guide series, [Prepare customer tenant to call an API in a Node.js web application](how-to-web-app-node-sign-in-call-api-prepare-tenant.md).
+- Complete the steps in the first part of this guide series, [Prepare external tenant to call an API in a Node.js web application](how-to-web-app-node-sign-in-call-api-prepare-tenant.md).
 - Complete the steps in the second part of this guide series, [Prepare app to call an API in a Node.js web application](how-to-web-app-node-sign-in-call-api-prepare-app.md).
 - Complete the steps in third the part of this guide series [Acquire an access token in your Node.js web app](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md) article.
 

@@ -126,6 +126,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/imanage-work-saml-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/cloud-imanage-tutorial",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/striim-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/striim-cloud-tutorial",
       "redirect_document_id": false
@@ -425,8 +430,12 @@
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-cosmos-db.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-vm-managed-identities-cosmos",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-create-customer-tenant-portal.md",
+      "redirect_url": "/entra/external-id/customers/how-to-create-external-tenant-portal",
+      "redirect_document_id": true
     }
-
   ]
 }
 

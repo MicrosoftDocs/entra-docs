@@ -3,7 +3,7 @@ author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: include
-ms.date: 11/24/2023
+ms.date: 04/10/2024
 ms.author: kengaderdus
 ms.manager: mwongerapk
 ---
@@ -13,10 +13,10 @@ ms.manager: mwongerapk
  
 1. Under **Configured permissions**, select **Add a permission**.
 
-1. Select the **My APIs** tab.
+1. Select the **APIs my organization uses** tab.
  
-1. In the list of APIs, select the API such as *ciam-ToDoList-api*. If you don't see your API in the list, select the **APIs my organization uses** tab.
- 
+1. In the list of APIs, select the API such as *ciam-ToDoList-api*.
+
 1. Select **Delegated permissions** option.
  
 1. From the permissions list, select **ToDoList.Read, ToDoList.ReadWrite** (use the search box if necessary).

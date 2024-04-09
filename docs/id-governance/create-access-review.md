@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 06/30/2023
+ms.date: 04/09/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---
@@ -200,9 +200,9 @@ A multi-stage review allows the administrator to define two or three sets of rev
 
 1. Add the duration for the second stage.
  
-1. By default, you'll see two stages when you create a multi-stage review. However, you can add up to three stages. If you want to add a third stage, select **+ Add a stage** and complete the required fields.  
+1. By default, you see two stages when you create a multi-stage review. However, you can add up to three stages. If you want to add a third stage, select **+ Add a stage** and complete the required fields.  
 
-1. You can decide to allow 2nd and 3rd stage reviewers to the see decisions made in the previous stage(s).If you want to allow them to see the decisions made prior, select the box next to **Show previous stage(s) decisions to later stage reviewers** under **Reveal review results**. Leave the box unchecked to disable this setting if you’d like your reviewers to review independently. 
+1. You can decide to allow 2nd and 3rd stage reviewers to the see decisions made in the previous stage(s). If you want to allow them to see the decisions made prior, select the box next to **Show previous stage(s) decisions to later stage reviewers** under **Reveal review results**. Leave the box unchecked to disable this setting if you’d like your reviewers to review independently. 
 
     ![Screenshot that shows duration and show previous stages setting enabled for multi-stage review.](./media/create-access-review/reveal-multi-stage-results-and-duration.png)
 
@@ -225,7 +225,7 @@ A multi-stage review allows the administrator to define two or three sets of rev
 
 You can create access reviews for B2B direct connect users via shared channels in Microsoft Teams. As you collaborate externally, you can use Microsoft Entra access reviews to make sure external access to shared channels stays current. External users in the shared channels are called B2B direct connect users. To learn more about Teams Shared Channels and B2B direct connect users, read the [B2B direct connect](../external-id/b2b-direct-connect-overview.md) article.
 
-When you create an access review on a Team with shared channels, your reviewers can review continued need for access of those external users and Teams in the shared channels.  You can review access of B2B connect users and other supported B2B collaboration users and non-B2B internal users in the same review.
+When you create an access review on a Team with shared channels, your reviewers can review continued need for access of those external users and Teams in the shared channels. You can review access of B2B connect users and other supported B2B collaboration users and non-B2B internal users in the same review.
 
 >[!NOTE]
 > Currently, B2B direct connect users and teams are only included in single-stage reviews. If multi-stage reviews are enabled, the B2B direct connect users and teams won't be included in the access review.
