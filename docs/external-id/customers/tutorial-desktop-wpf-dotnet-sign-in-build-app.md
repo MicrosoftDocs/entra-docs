@@ -26,7 +26,7 @@ In this tutorial, you'll:
 
 ## Prerequisites
 
-- [Tutorial: Prepare your customer tenant to sign in user in .NET WPF application](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md).
+- [Tutorial: Prepare your external tenant to sign in user in .NET WPF application](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md).
 - [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later.
 - Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 

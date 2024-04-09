@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Prepare your customer tenant to authenticate users in an Angular single-page app (SPA)
+title: Tutorial - Prepare your external tenant to authenticate users in an Angular single-page app (SPA)
 description: Learn how to configure your Microsoft Entra External ID for customers tenant for authentication with an Angular single-page app (SPA).
 services: active-directory
 author: garrodonnell
@@ -10,10 +10,10 @@ ms.topic: tutorial
 ms.date: 10/27/2023
 ms.author: godonnell
 
-#Customer intent: As a dev I want to prepare my customer tenant for building a single-page app with Angular.
+#Customer intent: As a dev I want to prepare my external tenant for building a single-page app with Angular.
 ---
 
-# Tutorial: Prepare your customer tenant to authenticate users in an Angular single-page app
+# Tutorial: Prepare your external tenant to authenticate users in an Angular single-page app
 
 This tutorial series demonstrates how to build an Angular single-page application (SPA) and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for JavaScript](/javascript/api/%40azure/msal-angular/) to authenticate your app with your Microsoft Entra External ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
 
@@ -49,7 +49,7 @@ In this tutorial:
 ## Create a user flow
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External ID User Flow Administrator](~/identity/role-based-access-control/permissions-reference.md#external-id-user-flow-administrator).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="~/external-id/customers/media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="~/external-id/customers/media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **External Identities** > **User flows**.
 1. Select **+ New user flow**.
 1. On the **Create** page:
@@ -77,4 +77,4 @@ In this tutorial:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Part 2: Create an Angular SPA for authentication in a customer tenant](tutorial-single-page-app-angular-sign-in-prepare-app.md)
+> [Part 2: Create an Angular SPA for authentication in an external tenant](tutorial-single-page-app-angular-sign-in-prepare-app.md)

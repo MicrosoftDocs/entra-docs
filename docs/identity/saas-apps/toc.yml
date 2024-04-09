@@ -922,6 +922,8 @@
         href: enablon-tutorial.md
       - name: Encompass
         href: encompass-tutorial.md
+      - name: Enterprise Advantage
+        href: enterprise-advantage-tutorial.md
       - name: Envi MMIS
         href: envimmis-tutorial.md
       - name: Envoy
@@ -3708,8 +3710,6 @@
         href: secure-login-provisioning-tutorial.md
       - name: Sentry
         href: sentry-provisioning-tutorial.md
-      - name: Servicely
-        href: servicely-provisioning-tutorial.md
       - name: ServiceNow
         href: servicenow-provisioning-tutorial.md
       - name: Segment
