@@ -117,9 +117,9 @@ At the end of the tutorial, your project's file and directory structure should l
 ```
 NodeDaemonApp/
 ├── bin
-│   ├── auth.js
-│   ├── fetch.js
-│   ├── index.js
+│   ├── auth.js
+│   ├── fetch.js
+│   ├── index.js
 ├── package.json
 └── .env
 ```
