@@ -94,6 +94,11 @@ Cloud | MySecurityInfo URL |
 Azure commercial (includes GCC)   | https://aka.ms/MySecurityInfo 
 Azure for US Government (includes GCC High and DoD) | https://aka.ms/MySecurityInfo-us 
 
+## Updates to the Microsoft Authenticator App
+
+Microsoft continuously updates the Microsoft Authenticator App to maintain a high level of security. To ensure that your users are getting the best experience possible, we recommend having them continuously update their Authenticator App. In the case of critical security updates, app versions that are not up to date may cease to work and may block users from completing their authentications. If a user is using a version of the app that is not supported, they will be prompted to upgrade to the latest version before being able to proceed with authentications.
+
+Microsoft will also periodically retire older versions of the Authenticator App to maintain a high security bar for your organization. If a user’s device does not support modern versions of the Microsoft Authenticator App, they will not be able to complete authentications with the app. We recommend having these users use an OATH verification code in the Microsoft Authenticator App to complete two-factor authentication.
 
 ## Next steps
 
