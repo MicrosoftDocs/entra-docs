@@ -66,7 +66,7 @@ To determine if access to a URL and port is restricted in an environment such as
    Test-NetConnection -ComputerName <namespace>.servicebus.windows.net -Port 443
    ```
 
-Or run the following:
+   Or run the following:
 
    ```powershell
    Invoke-WebRequest -Uri https://<namespace>.servicebus.windows.net -Verbose
