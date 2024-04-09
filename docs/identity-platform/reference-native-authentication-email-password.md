@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: reference
-ms.date: 03/29/2024
+ms.date: 04/09/2024
 
 #Customer intent: As a dev, devops, I want to learn how to integrate customer apps with Native authentication's email and password API that Microsoft Entra ID for customers supports.
 ---
@@ -851,6 +851,10 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |`invalid_grant`|The continuation token included in the request  is invalid.|
 |`unauthorized_client`| The client ID included in the request is invalid or doesn't exist. |
 |`unsupported_grant_type`| The grant type included in the request isn't supported or is incorrect. |
+
+## ## Submitting user attributes to endpoints
+
+[!INCLUDE [submit-user-attributes-to-endpoints](./includes/native-auth-api/submit-user-attributes-to-endpoints.md)]
 
 ## Format of user attributes values
 

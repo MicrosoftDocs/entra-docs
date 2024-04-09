@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: reference
-ms.date: 03/29/2024
+ms.date: 04/09/2024
 
 #Customer intent: As a dev, devops, I want to learn how to integrate customer apps with Native authentication's email one-time passcode API that in Microsoft Entra ID for customers supports.
 ---
@@ -661,15 +661,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Submitting user attributes to endpoints
 
-In the Microsoft Entra admin center, you can configure user attributes as required or optional. This configuration determines how Microsoft Entra responds when you make a call to its endpoints. Optional attributes are not mandatory for the sign-up flow to complete. Therefore, when all attributes are optional, they must be submitted before the username is verified. Otherwise, the sign-up completes without the optional attributes.
- 
-The following table summarizes when it's possible to submit user attributes to Microsoft Entra endpoints. 
-
-|| Required attributes | Optional attributes | Both required and optional attributes |
-| ---- | --- |  --- | --- | 
-| `/signup/v1.0/start` endpoint | Yes  | Yes  | Yes |
-| `/signup/v1.0/continue` endpoint before username verification | Yes  | Yes  | Yes  |
-| `/signup/v1.0/continue` endpoint after username verification |  Yes | No  | Yes |
+[!INCLUDE [submit-user-attributes-to-endpoints](./includes/native-auth-api/submit-user-attributes-to-endpoints.md)]
 
 ## Format of user attributes values
 
