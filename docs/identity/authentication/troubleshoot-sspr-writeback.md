@@ -58,7 +58,7 @@ To determine if access to a URL and port is restricted in an environment such as
 1. On the Entra connect server, open the event viewer logs (Windows logs, application) and locate one of these event IDs: 31034 or 31019.
 1. From these Event IDs, identify the name of the service bus listener:
 
-   :::image type="content" source="./media/troubleshoot-sspr-writeback/heartbeat-event-viewer-log.png" alt-text="Screenshot of Event ID 31019 in the Application log of Event Viewer.":::
+   :::image type="content" source="./media/troubleshoot-sspr-writeback/heartbeat-event-viewer-log.png" alt-text="Screenshot of Event ID 31019 in the Application log of Event Viewer." lightbox="./media/troubleshoot-sspr-writeback/heartbeat-event-viewer-log.png":::
 
 1. Run the following cmdlet:
 
