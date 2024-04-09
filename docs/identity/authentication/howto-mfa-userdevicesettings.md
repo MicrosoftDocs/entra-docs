@@ -5,7 +5,6 @@ description: Learn how you can configure Microsoft Entra user settings for Micro
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 08/29/2023
 

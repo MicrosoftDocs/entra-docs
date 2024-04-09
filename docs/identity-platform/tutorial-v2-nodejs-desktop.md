@@ -87,14 +87,14 @@ You now have a simple GUI and interactions for your Electron app. After completi
 ```
 ElectronDesktopApp/
 ├── App
-│   ├── AuthProvider.js
-│   ├── constants.js
-│   ├── graph.js
-│   ├── index.html
+│   ├── AuthProvider.js
+│   ├── constants.js
+│   ├── graph.js
+│   ├── index.html
 |   ├── main.js
 |   ├── preload.js
 |   ├── renderer.js
-│   ├── authConfig.js
+│   ├── authConfig.js
 ├── package.json
 ```
 
