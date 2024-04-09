@@ -48,7 +48,7 @@ In this article, you learn how to:
 1. If you choose the 30-day free trial, an Azure subscription isn't required.
 1. If you choose **Use Azure Subscription** option, then the admin center displays the tenant creation page. On the **Basics** tab, in the **Create a tenant for customers** page, enter the following information:
 
-    :::image type="content" source="media/how-to-create-external-tenant-portal/add-basics-to-customer-tenant.png" alt-text="Screenshot of the Basics tab.":::
+    :::image type="content" source="media/how-to-create-external-tenant-portal/add-basics-to-external-tenant.png" alt-text="Screenshot of the Basics tab.":::
 
     - Type your desired **Tenant Name** (for example *Contoso Customers*).
 
