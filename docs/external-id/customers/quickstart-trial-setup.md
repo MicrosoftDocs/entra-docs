@@ -14,9 +14,9 @@ ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or IT admin, I want to set up the external tenant free trial.
 ---
-# Quickstart: Get started with Microsoft Entra ID for customers (preview)
+# Quickstart: Get started with Microsoft Entra External ID (preview)
 
-Get started with Microsoft Entra ID for customers (Preview) that lets you create secure, customized sign-in experiences for your customer-facing apps and services. With these built-in customer configuration features, Microsoft Entra ID for customers can serve as the identity provider and access management service for your customers. 
+Get started with Microsoft Entra External ID (Preview) that lets you create secure, customized sign-in experiences for your customer-facing apps and services. With these built-in customer configuration features, Microsoft Entra External ID can serve as the identity provider and access management service for your customers. 
 
 In this quickstart, you'll learn how to set up an external tenant free trial. If you're a developer using Visual Studio Code, you can also set up a free trial through the Microsoft Entra External ID extension ([learn more](visual-studio-code-extension.md)). If you already have an Azure subscription, you can create a tenant with customer configurations in the Microsoft Entra admin center. For more information about how to create a tenant, see [Set up a tenant](quickstart-tenant-setup.md).
 
@@ -27,7 +27,7 @@ Your free trial of a tenant with customer configurations provides you with the o
     
 During the free trial period, you'll have access to all product features with few exceptions. See the following table for comparison: 
 
-|  Features | Microsoft Entra ID for customers Trial (without credit card) | Microsoft Entra account includes Partners (needs credit card)  | 
+|  Features | Microsoft Entra External ID Trial (without credit card) | Microsoft Entra account includes Partners (needs credit card)  | 
 |----------|:-----------:|:------------:|
 | **Self-service account experiences** (Sign-up, sign-in, and password recovery.)   | :heavy_check_mark: |  :heavy_check_mark:  | 
 | **MFA** (With email OTP.)  | :x: |  :heavy_check_mark:  |  

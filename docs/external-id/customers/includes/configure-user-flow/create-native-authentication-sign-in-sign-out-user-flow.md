@@ -11,10 +11,10 @@ ms.manager: mwongerapk
 Follow these steps to create a user flow.  
  
 1. Sign in to the <a href="https://entra.microsoft.com/" target="_blank">Microsoft Entra admin center</a> as at least an [Application Developer](../../../../identity/role-based-access-control/permissions-reference.md#application-developer). 
-1. If you have access to multiple tenants, make sure you use the directory that contains your Microsoft Entra External ID for customers tenant: 
+1. If you have access to multiple tenants, make sure you use the directory that contains your external tenant: 
  
    1. Select the **Directories + subscriptions** icon in the toolbar. 
-   1. On the **Portal settings | Directories + subscriptions** page, find your Microsoft Entra External ID for customers directory in the **Directory name** list, and then select **Switch**. 
+   1. On the **Portal settings | Directories + subscriptions** page, find your external tenant directory in the **Directory name** list, and then select **Switch**. 
  
 1. On the sidebar menu, select **Identity**. 
 1. Select **External Identities** > **User flows**. 
