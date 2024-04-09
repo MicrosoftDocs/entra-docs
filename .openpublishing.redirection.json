@@ -431,7 +431,11 @@
       "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-vm-managed-identities-cosmos",
       "redirect_document_id": false
     }
-
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-create-customer-tenant-portal.md",
+      "redirect_url": "/entra/external-id/customers/how-to-create-external-tenant-portal",
+      "redirect_document_id": true
+    }
   ]
 }
 
