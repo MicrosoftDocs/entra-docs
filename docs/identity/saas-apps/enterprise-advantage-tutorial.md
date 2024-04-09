@@ -76,13 +76,13 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
-    In the **Sign-on URL** text box, type a URL using the following pattern:
+    In the **Sign-on URL** text box, type a url using one of the following patterns:
 
-    |**Sign-on URL**|
-    |---------------|
-    | `https://sso.screeningxchange.com/<CustomerLink>` |
-    | `https://ssotest.screeningxchange.com/<CustomerLink>`|
-
+    | Environment | URL |
+    |-------------|----|
+    | Production| ` https://sso.screeningxchange.com/<CustomerLink> ` |
+    | Staging | ` https://sso.screeningxchange.com/<CustomerLink> ` |
+    
 	> [!NOTE]
 	> The Sign-on URL value is not real. Update the value with the Sign on URL. Contact [Enterprise Advantage support team](mailto:globaladvantagesupport@fadv.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
