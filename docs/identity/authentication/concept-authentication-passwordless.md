@@ -116,7 +116,7 @@ The following providers offer FIDO2 security keys of different form factors that
 | [Composecure](https://www.composecure.com/arculus) | ![n] | ![n]| ![y]| ![n]|
 | [Crayonic](https://www.crayonic.com/keyvault) | ![y] | ![n]| ![y]| ![y]|
 | [Cryptnox](https://cryptnox.com/) | ![n] | ![y]| ![y]| ![n]|
-| [Ensurity](https://www.ensurity.com/contact) | ![y] | ![y]| ![n]| ![n]|
+| [Ensurity](https://www.ensurity.com) | ![y] | ![y]| ![n]| ![n]|
 | [Excelsecu](https://www.excelsecu.com/productdetail/esecufido2secu.html) | ![y] | ![y]| ![y]| ![y]|
 | [Feitian](https://shop.ftsafe.us/pages/microsoft) | ![y] | ![y]| ![y]| ![y]|
 | [Fortinet](https://www.fortinet.com/) | ![n] | ![y]| ![n]| ![n]|
