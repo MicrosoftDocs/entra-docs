@@ -189,7 +189,7 @@ The quickstart code also shows how to initialize the MSAL library:
   // Config object to be passed to Msal on creation
   const msalConfig = {
     auth: {
-      clientId: "75d84e7a-40bx-f0a2-91b9-0c82d4c556aa", // this is a fake id
+      clientId: "00001111-aaaa-2222-bbbb-3333cccc4444", // this is a fake id
       authority: "https://login.microsoftonline.com/common",
       redirectUri: "http://localhost:3000/",
     },
