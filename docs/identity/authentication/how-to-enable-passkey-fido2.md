@@ -19,22 +19,22 @@ ms.reviewer: calui, tilarso
 
 For enterprises that use passwords today, passkeys (FIDO2) provide a seamless way for workers to authenticate without entering a username or password. Passkeys provide improved productivity for workers, and have better security.
 
-This article lists requirements and steps to enable passkeys in your organization. After completing these steps, you can then sign in to your Microsoft Entra account using a device-bound passkey, such as a FIDO2 security key.
+This article lists requirements and steps to enable passkeys in your organization. After completing these steps, users in your organization can then register and sign in to their Microsoft Entra account using a passkey stored on a FIDO2 security key or in Microsoft Authenticator.
 
-Users can also sign in with a passkey by using Microsoft Authenticator. For more information, see [How to enable Authenticator passkey](how-to-enable-authenticator-passkey.md).
+For more information about enabling passkeys in Microsoft Authenticator, see [How to enable Authenticator passkey](how-to-enable-authenticator-passkey.md).
 
-For information about FIDO2 support, see [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md).
+For more information about passkey authentication, see [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md).
+
+> [!NOTE]
+> Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys. We are investing in both synced and device-bound passkeys for work accounts.
 
 ## Requirements
 
 - [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md)
 - Compatible [FIDO2 security keys](concept-authentication-passwordless.md#fido2-security-key-providers) or Microsoft Authenticator
-- Devices that support FIDO2 authentication. For Windows devices that are joined to Microsoft Entra ID, the best experience is on Windows 10 version 1903 or higher. Hybrid-joined devices must run Windows 10 version 2004 or higher.
+- Devices that support passkey (FIDO2) authentication. For Windows devices that are joined to Microsoft Entra ID, the best experience is on Windows 10 version 1903 or higher. Hybrid-joined devices must run Windows 10 version 2004 or higher.
 
 Passkeys are supported across major scenarios on Windows, macOS, Android, and iOS. For more information on supported scenarios, see [Support for FIDO2 authentication in Microsoft Entra ID](fido2-compatibility.md).
-
->[!NOTE]
->Entra ID supports only device-bound passkeys. Support for synced passkeys is coming soon.
 
 ## Enable passkey (FIDO2) authentication method
 
