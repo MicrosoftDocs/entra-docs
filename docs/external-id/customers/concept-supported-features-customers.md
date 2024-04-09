@@ -31,7 +31,7 @@ Although workforce tenants and external tenants are built on the same underlying
 > [!NOTE]
 > During preview, features or capabilities that require a premium license are unavailable in external tenants.
 
-|Feature  |Workforce tenant  | external tenant |
+|Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
 | **External identities scenario** | Allow business partners and other external users to collaborate with your workforce. Guests can securely access your business applications through invitations or self-service sign-up.  | Use External ID to secure your external-facing applications. Consumers and business customers can securely access your consumer apps through self-service sign-up. Invitations are also supported.  |
 | **Local accounts** | Local accounts are supported for *internal* members of your organization only.    | Local accounts are supported for:</br>- External users (consumers, business customers) who use self-service sign-up.</br>- Accounts created by admins. |
@@ -52,7 +52,7 @@ Although workforce tenants and external tenants are built on the same underlying
 
  The following table compares the features available for [Application registration](./how-to-register-ciam-app.md) in each type of tenant.
 
-|Feature  |Workforce tenant  | external tenant |
+|Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
 |   **Protocol**     |   SAML relying parties, OpenID Connect, and OAuth2    |   OpenID Connect and OAuth2    |
 | **Supported account types**| The following [account types](~/identity-platform/quickstart-register-app.md#register-an-application): <ul><li>Accounts in this organizational directory only (Single tenant)</li><li>Accounts in any organizational directory (Any Microsoft Entra tenant - Multitenant)</li><li>Accounts in any organizational directory (Any Microsoft Entra tenant - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)</li><li>Personal Microsoft accounts only</li></ul> | For customer-facing applications, always use *Accounts in this organizational directory only (Single tenant)*. |
@@ -74,7 +74,7 @@ Although workforce tenants and external tenants are built on the same underlying
 
 The following table compares the features available for OAuth 2.0 and OpenID Connect authorization flows in each type of tenant.
 
-|Feature  |Workforce tenant  | external tenant |
+|Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
 |[OpenID Connect](../../identity-platform/v2-protocols-oidc.md)| Yes| Yes|
 |[Authorization code](../../identity-platform/v2-oauth2-auth-code-flow.md)| Yes| Yes|
@@ -104,7 +104,7 @@ The following JSON shows an example of a .NET application app settings with an a
 
 The following table compares the features available for Conditional Access in each type of tenant.
 
-|Feature  |Workforce tenant  | external tenant |
+|Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
 | **Assignments**| [Users, groups](~/identity/conditional-access/concept-conditional-access-users-groups.md), and [workload identities](~/identity/conditional-access/concept-conditional-access-users-groups.md#workload-identities) | Include **all users**, and exclude users and groups. For more information, [Add multifactor authentication (MFA) to a customer-facing app](./how-to-multifactor-authentication-customers.md).|
 |**Target resources**|<ul><li>[Cloud apps](~/identity/conditional-access/concept-conditional-access-cloud-apps.md)</li><li>[User actions](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#user-actions)</li><li>[Global Secure Access](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#traffic-forwarding-profiles)</li><li>[Authentication context](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#authentication-context)</li></ul>|<ul><li>[All cloud apps, selected apps](./how-to-multifactor-authentication-customers.md), or [filter applications](~/identity/conditional-access/concept-filter-for-applications.md).</li><li>[Authentication context](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#authentication-context)</li></ul>|
@@ -116,7 +116,7 @@ The following table compares the features available for Conditional Access in ea
 
 The following table compares the features available for user management in each type of tenant. As noted in the table, certain account types are created through invitation or self-service sign-up. A user admin in the tenant can also create accounts via the admin center.
 
-|Feature  |Workforce tenant  | external tenant |
+|Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
 |**Types of accounts** | <ul><li>Internal members, for example employees and admins.</li><li>External users who are [invited](../what-is-b2b.md) or use self-service sign-up. | <ul><li>Internal users in your organization, for example employees and admins.</li><li>External consumers and business customers who use self-service sign-up or are created by admins.</li><li>External users who are invited.</li></ul>|
 | **Manage user profile info** | Programmatically and by [using the Microsoft Entra admin center](~/fundamentals/how-to-manage-user-profile-info.md). |Same as workforce.|
@@ -126,7 +126,7 @@ The following table compares the features available for user management in each 
 
 ## Password protection
 
-|Feature  |Workforce tenant  | external tenant |
+|Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
 |**Smart lockout**| [Smart lockout](~/identity/authentication/howto-password-smart-lockout.md) helps lock out bad actors that try to guess your users' passwords or use brute-force methods to get in|Same as workforce. |
 | **Custom banned passwords**| The Microsoft Entra custom banned password list lets you add specific strings to evaluate and block. | Not available. |

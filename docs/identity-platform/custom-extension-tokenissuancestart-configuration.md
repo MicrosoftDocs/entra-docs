@@ -226,7 +226,7 @@ The following JSON snippet demonstrates how to configure these properties.
 
 Continue to the next step, [Assign a custom claims provider to your app](#step-3-assign-a-custom-claims-provider-to-your-app).
 
-# [external tenant](#tab/external-tenant)
+# [External tenant](#tab/external-tenant)
 ### 3.4 Associate your app with a user flow
 
 For external tenants, you need to associate your app with a user flow. A user flow defines the authentication methods a customer can use to sign in to your application and the information they need to provide during sign-up. Ensure that you complete the steps in [Add an application to a user flow](~/external-id/customers/how-to-user-flow-add-application.md) before continuing to add *My Test application* to the user flow.
@@ -371,7 +371,7 @@ Use the following steps to add Microsoft Entra as an identity provider to your A
 
     :::image type="content" border="true"  source="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-workforce.png" alt-text="Screenshot that shows how to add authentication to your function app while in a workforce tenant." lightbox="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-workforce.png":::
 
-# [external tenant](#tab/external-tenant)
+# [External tenant](#tab/external-tenant)
 
 1. In the [Azure portal](https://portal.azure.com), find and select the function app you previously published.
 1. Under **Settings**, select **Authentication**.
@@ -437,7 +437,7 @@ To test your custom claims provider, follow these steps:
 1. Replace `{App_to_enrich_ID}` with the *My Test application* client ID.  
 1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `dateOfBirth`.
 
-# [external tenant](#tab/external-tenant)
+# [External tenant](#tab/external-tenant)
 
 1. Open a new private browser and navigate and sign-in through the following URL.
 
