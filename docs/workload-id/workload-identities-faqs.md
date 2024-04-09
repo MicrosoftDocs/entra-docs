@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra Workload ID license plans FAQ
 
-description: Learn about Microsoft Entra Workload ID license plans, features and capabilities.
+description: Learn about Microsoft Entra Workload ID license plans, features, and capabilities.
 author: gargi-sinha
 manager: martinco
 ms.service: entra-workload-id
@@ -29,7 +29,7 @@ Learn more about [Workload ID pricing](https://www.microsoft.com/security/busine
 
 This document addresses Microsoft Entra Workload ID most frequent customer questions.  
 
-[Microsoft Entra Workload ID](workload-identities-overview.md) (SKU name: Workload ID Premium) is generally available. It is available through a Microsoft representative, the Open Volume License Program, and the Cloud Solution Providers program. Azure and Office 365 subscribers can also buy the SKU online. Workload ID Premium is a standalone SKU ($3 per workload identity per month) that is not part of other existing SKUs like E5. 
+[Microsoft Entra Workload ID](workload-identities-overview.md) (SKU name: Workload ID Premium) is generally available. It's available through a Microsoft representative, the Open Volume License Program, and the Cloud Solution Providers program. Azure and Office 365 subscribers can also buy the SKU online. Workload ID Premium is a standalone SKU ($3 per workload identity per month) that isn't part of other existing SKUs like E5. 
 
 The free features, for example managed identities and workload identity federation, are included with a subscription of a commercial online service such as Azure, Power Platform, and others. 
 
@@ -38,7 +38,7 @@ The free features, for example managed identities and workload identity federati
 |Capabilities | Description | Free | Premium |                 
 |:--------|:----------|:------------|:-----------|
 | **Authentication and authorization**|  | | |
-| Create, read, update, delete workload identities  | Create and update identities for securing service to service access  | Yes |  Yes |
+| Create, read, update, and delete workload identities  | Create and update identities for securing service to service access  | Yes |  Yes |
 | Authenticate workload identities and tokens to access resources |  Use Microsoft Entra ID to protect resource access |  Yes|  Yes |
 | Workload identities sign-in activity and audit trail |   Monitor and track workload identity behavior  |  Yes |  Yes |
 | **Managed identities**| Use Microsoft Entra identities in Azure without handling credentials |  Yes| Yes |
@@ -72,9 +72,9 @@ The [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/bus
 
 ## How many licenses do I need to purchase? Do I need to license all workload identities including Microsoft applications and managed identities? 
 
-Only the workload identities eligible for premium features require licensing. Specifically, you are required to license enterprise apps and service principals listed under the first category in the following screenshot from the Workload ID landing page in the Microsoft Entra admin center. If you want to utilize premium features for a subset of enterprise apps and service principals, you must procure licenses accordingly, tailored to your specific requirements. An exception arises if you intend to use [access reviews](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review) for managed identities. In such cases, licenses must be obtained based on the number of managed identities depicted in the graph.
+Only the workload identities eligible for premium features require licensing. Specifically, you're required to license enterprise apps and service principals listed under the first category in the following screenshot from the Workload ID landing page in the Microsoft Entra admin center. If you want to utilize premium features for a subset of enterprise apps and service principals, you must procure licenses accordingly, tailored to your specific requirements. An exception arises if you intend to use [access reviews](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review) for managed identities. In such cases, licenses must be obtained based on the number of managed identities depicted in the graph.
 
-Here are more details about which workload identities eligible for specific features. Currently, Conditional Access is applicable for workload identities for single-tenant applications and [ID Protection](~/id-protection/concept-workload-identity-risk.md) protects both single and multi-tenant applications under Enterprise apps/Service Principals. Microsoft apps and managed identities are not eligible for Conditional Access and ID Protection. Access reviews are applicable for service principals assigned to privileged roles including managed identities. This feature requires Entra ID P2 licenses for reviewers and Workload ID Premium licenses for service principles that they want to set access reviews for.  
+Here are more details about which workload identities eligible for specific features. Currently, Conditional Access is applicable for workload identities for single-tenant applications and [ID Protection](~/id-protection/concept-workload-identity-risk.md) protects both single and multitenant applications under Enterprise apps/Service Principals. Microsoft apps and managed identities aren't eligible for Conditional Access and ID Protection. Access reviews are applicable for service principals assigned to privileged roles including managed identities. This feature requires Entra ID P2 licenses for reviewers and Workload ID Premium licenses for service principles that they want to set access reviews for.  
 
 ## How do I purchase a Workload ID Premium plan?
 
@@ -82,11 +82,11 @@ You need an Azure or Microsoft 365 subscription. You can use a current subscript
 
 ## Do these licenses require individual workload identities assignment? 
 
-No, license assignment isn't required.  One license in the tenant will unlock all features for all workload identities.
+No, license assignment isn't required.  One license in the tenant unlocks all features for all workload identities.
 
 ## How can I track which licenses are assigned to which workload identities? 
 
-Unfortunately, we don’t provide a dashboard to track that information. You can only track enabled Conditional Access policies targeting workload identities in the **Insights and reporting** blade. 
+Unfortunately, we don’t provide a dashboard to track that information. You can only track enabled Conditional Access policies targeting workload identities in the **Insights and reporting** area. 
 
 :::image type="content" source="media/workload-identities-faqs/insights-and-reportin.png" alt-text="Screenshot showing Insights and Reporting in Condidtional Access." border="false":::
 
@@ -97,7 +97,7 @@ Unfortunately, we don’t provide a dashboard to track that information. You can
 
 ## Can I get a free trial of Workload ID Premium? 
 
-Yes. you can get a [90-day free trial](https://entra.microsoft.com/#view/Microsoft_Azure_ManagedServiceIdentity/WorkloadIdentitiesBlade). In the Modern channel, a 30-day only trial is available. Free trial is
+Yes. You can get a [90-day free trial](https://entra.microsoft.com/#view/Microsoft_Azure_ManagedServiceIdentity/WorkloadIdentitiesBlade). In the Modern channel, a 30-day only trial is available. Free trial is
 unavailable in [Microsoft Azure Government](https://azure.microsoft.com/global-infrastructure/government/) clouds.
 
 ## Is the Workload ID Premium plan available on Azure Government clouds? 
