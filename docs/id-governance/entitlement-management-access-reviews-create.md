@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 05/31/2023
+ms.date: 04/09/2024
 ms.author: owinfrey
 #Customer intent: As an administrator, I want to create an access review for my access packages so I can review the active assignments of my users to ensure everyone has the appropriate access.
 ---
