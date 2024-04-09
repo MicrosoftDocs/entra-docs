@@ -84,7 +84,7 @@ If you choose to download the `.zip` file, extract the sample app file to a fold
     ```
 
 1. Open a web browser and navigate to `http://localhost:3000/`.
-1. Sign-in with an account registered to the customer tenant.
+1. Sign-in with an account registered to the external tenant.
 1. Once signed in the display name is shown next to the **Sign out** button as shown in the following screenshot.
 1. The SPA will now display a button saying **Request Profile Information**. Select it to display profile data.
 
