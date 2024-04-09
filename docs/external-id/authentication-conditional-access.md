@@ -97,7 +97,7 @@ When configuring a Conditional Access policy, you have granular control over the
 
 Learn more about [Conditional Access user assignments](~/identity/conditional-access/concept-conditional-access-users-groups.md).
 
-### Comparing External Identities Conditional Access policies
+### Comparing External ID Conditional Access policies
 
 The following table gives a detailed comparison of the security policy and compliance options in Microsoft Entra External ID. Security policy and compliance are managed by the host/inviting organization under Conditional Access policies.
 

@@ -1,5 +1,7 @@
 items:  
-- name: Microsoft Entra External ID documentation  
+- name: Microsoft Entra External ID documentation
+  href: ../index.yml
+- name: External ID for external-facing apps documentation
   href: index.yml  
 - name: Overview  
   expanded: true  

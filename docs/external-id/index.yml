@@ -69,7 +69,7 @@ additionalContent:
         - title: Customize the sign-in look and feel
           summary: Learn about how to personalize the end-user experience.
           url: ./customers/concept-branding-customers.md        
-    - title: Microsoft Entra External ID for partners (B2B)
+    - title: Microsoft Entra External ID for business guests (B2B)
       items:      
         # Card
         - title: Overview
@@ -95,7 +95,7 @@ additionalContent:
         - title: Self-service sign-up
           summary: Learn about the self-service sign-up user flow. 
           url: ./self-service-sign-up-overview.md 
-    - title: Quickstarts by app type in the external tenant 
+    - title: Quickstarts by app type in the external tenant
       items:
         # Card
         - title: Single-page app (SPA)

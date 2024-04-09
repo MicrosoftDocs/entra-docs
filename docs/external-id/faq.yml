@@ -186,7 +186,7 @@ sections:
       - question: |
           What licenses do we need to use Microsoft Entra B2B?
         answer: |
-          For information about what licenses your organization needs to use Microsoft Entra B2B, see [External Identities pricing](external-identities-pricing.md).
+          For information about what licenses your organization needs to use Microsoft Entra B2B, see [External ID pricing](external-identities-pricing.md).
 
       - question: |
           What happens if I invite a user whose email and UPN don’t match?

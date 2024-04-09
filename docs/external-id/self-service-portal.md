@@ -34,4 +34,4 @@ Organizations can use the [Microsoft Graph invitation manager API](/graph/api/re
 
 - [Self-service sign-up user flows](self-service-sign-up-overview.md)
 - [What is Microsoft Entra B2B collaboration?](what-is-b2b.md)
-- [External Identities pricing](external-identities-pricing.md)
+- [External ID pricing](external-identities-pricing.md)
