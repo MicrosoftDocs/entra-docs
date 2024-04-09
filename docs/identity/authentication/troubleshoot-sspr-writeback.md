@@ -74,9 +74,9 @@ Or run the following:
 
    Replace the \<namespace\> with the same you extracted from the event IDs above. For example, in the preceding case, the command is:
 
-    ```powershell
+   ```powershell
    Test-NetConnection -ComputerName ssprdedicatedsbprodfra-1.servicebus.windows.net -Port 443
-    ```
+   ```
 
 For more information, see the [connectivity prerequisites for Microsoft Entra Connect](~/identity/hybrid/connect/how-to-connect-install-prerequisites.md).
 
