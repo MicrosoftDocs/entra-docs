@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js, mode-api
-ms.date: 04/11/2019
+ms.date: 04/09/2024
 ms.service: identity-platform
 
 ms.topic: quickstart
