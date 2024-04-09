@@ -124,10 +124,7 @@ To remove a passkey associated with a user account, delete the key from the user
 
 To make users sign in with a passkey when they access a sensitive resource, you must do one of the following: 
 
-- Use the built-in phishing-resistant authentication strength
-  
-  Or 
-
+- Use the built-in phishing-resistant authentication strength, or
 - Create a custom authentication strength
 
 The following steps explain how to create a Conditional Access policy with a custom authentication strength.
@@ -140,11 +137,10 @@ The following steps explain how to create a Conditional Access policy with a cus
 1. Select **Passkeys (FIDO2)** and then select **Advanced options**.
 1. Add AAGUIDs for Authenticator passkey:
 
-  - Authenticator for Android: de1e552d-db1d-4423-a619-566b625cdc84
-  - Authenticator for iOS: 90a3ccdf-635c-4729-a248-9b709135078f
+   - Authenticator for Android: de1e552d-db1d-4423-a619-566b625cdc84
+   - Authenticator for iOS: 90a3ccdf-635c-4729-a248-9b709135078f
 
 1. Choose **Next** and review the policy configuration.
-
 
 ## Next steps
 

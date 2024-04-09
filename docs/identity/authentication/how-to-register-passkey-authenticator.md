@@ -156,7 +156,6 @@ Alternatively, you can add a passkey from your mobile device browser, or through
    
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/success.png" alt-text="Screenshot where user can change friendly name of the new sign-in method.":::   
 
-
 ## Troubleshooting
 
 If the passkey for your account is already registered in Authenticator, you see the following error: 
