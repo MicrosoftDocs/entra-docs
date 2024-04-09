@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Prepare your customer tenant to authenticate users in a React SPA"
 description: Learn how to configure your Microsoft Entra ID for customers tenant for authentication with a React single-page app (SPA).
- 
+
 author: garrodonnell
 manager: celestedg
 
@@ -22,20 +22,20 @@ In this tutorial;
 
 > [!div class="checklist"]
 >
-> * Register a SPA in the Microsoft Entra admin center, and record its identifiers
-> * Define the platform and URLs
-> * Grant permissions to the SPA to access the Microsoft Graph API
-> * Create a sign-in and sign-out user flow in the Microsoft Entra admin center
-> * Associate your SPA with a user flow
+> - Register a SPA in the Microsoft Entra admin center, and record its identifiers
+> - Define the platform and URLs
+> - Grant permissions to the SPA to access the Microsoft Graph API
+> - Create a sign-in and sign-out user flow in the Microsoft Entra admin center
+> - Associate your SPA with a user flow
 
 ## Prerequisites
 
-* A Microsoft Entra ID for customers tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
-* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-    * Application Administrator
-    * Application Developer
-    * Cloud Application Administrator
- 
+- A Microsoft Entra ID for customers tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+- This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+    - Application Administrator
+    - Application Developer
+    - Cloud Application Administrator
+
 ## Register the SPA and record identifiers
 
 [!INCLUDE [register-client-app-common](./includes/register-app/register-client-app-common.md)]

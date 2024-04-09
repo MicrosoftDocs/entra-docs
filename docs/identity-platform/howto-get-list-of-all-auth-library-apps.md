@@ -4,7 +4,7 @@ description: In this how-to guide, you get a complete list of all apps that are 
 author: SHERMANOUKO
 manager: CelesteDG
 ms.author: shermanouko
-ms.custom: has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-adal-ref
 ms.date: 01/15/2024
 ms.reviewer: dmwendia
 ms.service: identity-platform

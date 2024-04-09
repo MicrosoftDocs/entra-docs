@@ -5,7 +5,6 @@ description: This article has information about moving your hybrid identity envi
 
 ms.service: entra-id
 ms.subservice: hybrid-connect
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
 ms.date: 11/06/2023
 ms.author: billmath
@@ -29,7 +28,7 @@ Staged rollout is a great way to selectively test groups of users with cloud aut
 
 Refer to the staged rollout implementation plan to understand the [supported](how-to-connect-staged-rollout.md#supported-scenarios) and [unsupported scenarios](how-to-connect-staged-rollout.md#unsupported-scenarios). We recommend using staged rollout to test before cutting over domains.
 
-To learn how to configure staged rollout, see the [staged rollout interactive guide](https://mslearn.cloudguides.com/guides/Test%20migration%20to%20cloud%20authentication%20using%20staged%20rollout%20in%20Azure%20AD) migration to cloud authentication using staged rollout in Microsoft Entra ID).
+<!-- To learn how to configure staged rollout, see the [staged rollout interactive guide](`https://mslearn.cloudguides.com/guides/Test%20migration%20to%20cloud%20authentication%20using%20staged%20rollout%20in%20Azure%20AD`) migration to cloud authentication using staged rollout in Microsoft Entra ID). 
 
 ## Migration process flow
 
