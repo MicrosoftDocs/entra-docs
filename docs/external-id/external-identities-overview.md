@@ -73,6 +73,8 @@ With Azure AD B2C, customers can sign in with an identity they've already establ
 
 Although Azure AD B2C is built on the same technology as Microsoft Entra External ID, it's a separate service with some feature differences. For more information about how an Azure AD B2C tenant differs from a Microsoft Entra tenant, see [Supported Microsoft Entra features](/azure/active-directory-b2c/supported-azure-ad-features) in the [Azure AD B2C documentation](/azure/active-directory-b2c/).
 
+<a name='comparing-external-identities-feature-sets'></a>
+
 ## Comparing External ID feature sets
 
 The following table gives a detailed comparison of the scenarios you can enable with Microsoft Entra External ID. In the B2B scenarios, an external user is anyone who isn't homed in your Microsoft Entra organization.
