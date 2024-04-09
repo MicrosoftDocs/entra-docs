@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Prepare your customer tenant to authenticate users in a Vanilla JavaScript SPA"
+title: "Tutorial: Prepare your external tenant to authenticate users in a Vanilla JavaScript SPA"
 description: Learn how to configure your Microsoft Entra ID for customers tenant for authentication with a Vanilla JavaScript single-page app (SPA).
 
 author: OwenRichards1
@@ -14,7 +14,7 @@ ms.date: 08/17/2023
 #Customer intent: As a developer, I want to learn how to configure a Vanilla JavaScript single-page app (SPA) to sign in and sign out users with my Microsoft Entra ID for customers tenant.
 ---
 
-# Tutorial: Prepare your customer tenant to authenticate a Vanilla JavaScript SPA
+# Tutorial: Prepare your external tenant to authenticate a Vanilla JavaScript SPA
 
 This tutorial series demonstrates how to build a Vanilla JavaScript single-page application (SPA) and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for JavaScript](/javascript/api/overview/msal-overview) library to authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
 
@@ -58,4 +58,4 @@ In this tutorial;
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Part 2: Create a VanillaJS SPA project for authentication in a customer tenant](tutorial-single-page-app-Vanillajs-prepare-app.md)
+> [Part 2: Create a VanillaJS SPA project for authentication in an external tenant](tutorial-single-page-app-Vanillajs-prepare-app.md)

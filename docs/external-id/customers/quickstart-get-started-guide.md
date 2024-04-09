@@ -12,11 +12,11 @@ ms.date: 03/26/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
-#Customer intent: As a dev, devops, or IT admin, I want to personalize the customer tenant.
+#Customer intent: As a dev, devops, or IT admin, I want to personalize the external tenant.
 ---
 # Quickstart: Get started with our guide to run a sample app and sign in your users (preview)
 
-In this quickstart, we'll guide you through customizing the look and feel of your apps in the  customer tenant, setting up a user and configuring a sample app in only a few minutes. With these built-in customer configuration features, Microsoft Entra ID for customers can serve as the identity provider and access management service for your customers.
+In this quickstart, we'll guide you through customizing the look and feel of your apps in the  external tenant, setting up a user and configuring a sample app in only a few minutes. With these built-in customer configuration features, Microsoft Entra ID for customers can serve as the identity provider and access management service for your customers.
 
 ## Prerequisites
 
@@ -24,14 +24,14 @@ In this quickstart, we'll guide you through customizing the look and feel of you
 
 ## Customize your sign-in experience
 
-When you set up a customer tenant free trial, the guide will start automatically as part of the configuration of your new customer tenant. If you created your customer tenant with an Azure subscription, you can start the guide manually by following the steps below.
+When you set up an external tenant free trial, the guide will start automatically as part of the configuration of your new external tenant. If you created your external tenant with an Azure subscription, you can start the guide manually by following the steps below.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 1. Browse to **Home** > **Tenant overview**.
 1. On the **Get started** tab, select **Start the guide**.
 
-    :::image type="content" source="media/how-to-create-customer-tenant-portal/guide-link.png" alt-text="Screenshot that shows how to start the guide.":::
+    :::image type="content" source="media/how-to-create-external-tenant-portal/guide-link.png" alt-text="Screenshot that shows how to start the guide.":::
 
 You can customize your customer's sign-in and sign-up experience in the External ID for customers tenant. Follow the guide that will help you set up the tenant in three easy steps. First you must specify how would you like your customer to sign in. At this step you can choose between two options: **Email and password** or **Email and one-time passcode**. You can configure social accounts later, which would allow your customers to sign in using their [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md) account. You can also [define custom attributes](how-to-define-custom-attributes.md) to collect from the user during sign-up.
 
