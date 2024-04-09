@@ -112,7 +112,7 @@ a recommended access review where members of the group are reviewed.
 1. Each user needs to self-attest that they still need access from these blocked countries/regions, therefore they still need to be a member of the
     group.
 
-1. If the user doesn't respond to the review request, they are automatically removed from the group, and will no longer have access to the tenant while traveling to these countries/regions.
+1. If the user doesn't respond to the review request, they're automatically removed from the group, and no longer has access to the tenant while traveling to these countries/regions.
 
 1. Enable email notifications to let users know about the start and completion of the access review.
 
@@ -130,7 +130,7 @@ that is excluded from the policy. Here's a recommended access review where membe
 
 1. It could be configured to list the business unit owners as the selected reviewers.
 
-1. Auto-apply the results and remove users that have not been approved to continue using legacy authentication methods.
+1. Auto-apply the results and remove users that aren't approved to continue using legacy authentication methods.
 
 1. It might be beneficial to enable recommendations so reviewers of large groups can easily make their decisions.
 
@@ -147,7 +147,7 @@ Now that you have everything in place, group, Conditional Access policy, and acc
 
 1. Browse to **Identity governance** > **Access reviews**.
 
-1. Select the Access review you are using with the group you created an exclusion policy for.
+1. Select the Access review you're using with the group you created an exclusion policy for.
 
 1. Select **Results** to see who was approved to stay on the list and who was removed.
 
@@ -157,7 +157,7 @@ Now that you have everything in place, group, Conditional Access policy, and acc
 
     ![Access reviews audit logs listing actions](./media/conditional-access-exclusion/access-reviews-audit-logs.png)
 
-As an IT administrator, you know that managing exclusion groups to your policies is sometimes inevitable. However, maintaining these groups, reviewing them on a regular basis by the business owner or the users themselves, and auditing these changes can be made easier with access reviews.
+As an IT administrator, you know that managing exclusion groups to your policies is sometimes inevitable. However, maintaining these groups, reviewing them regularly by the business owner or the users themselves, and auditing these changes can be made easier with access reviews.
 
 ## Next steps
 
