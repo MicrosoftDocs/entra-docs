@@ -1,5 +1,5 @@
 ---
-title: "What's new in Microsoft Entra External ID"
+title: "What's new in Microsoft Entra External ID for external-facing apps"
 description: "New and updated documentation for the Microsoft Entra External ID documentation for external-facing apps."
 ms.date: 04/03/2024
 ms.service: entra-external-id
