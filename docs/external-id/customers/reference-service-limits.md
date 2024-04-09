@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: reference
-ms.date: 03/20/2024
+ms.date: 04/09/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -99,7 +99,7 @@ Microsoft Entra ID for customers uses throttling to protect the cloud service fr
 
 |Throttling identifier |Limit per tenant |
 |---------|---------|
-|Application (gateway level)        | NA - 2,500,000 requests per minute, EU - 1,500,000 requests per minute, APAC - 2,000,000 requests per minute, OC - 350000 requests per minute |
+|Application (gateway level)        | - Region: US - 2,500,000 requests per minute <br>- Region: EU - 1,500,000 requests per minute <br>- Region: APAC - 2,000,000 requests per minute <br>- Region: OC - 350000 requests per minute |
 |Tenant + Application + Fault Domain (gateway level)        |1,200,000 requests per minute       |
 |Tenant (gateway level)        |200 requests per second       |
 |IP  (gateway level)        |20 requests per second        |
