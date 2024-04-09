@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 02/26/2024
+ms.date: 04/01/2024
 ms.author: jeedes
 
 
@@ -100,13 +100,13 @@ Follow these steps to enable Microsoft Entra SSO.
 	![image](common/default-attributes.png)
 
     > [!Note]
-    > Here **username -> user.displayname** attribute gets auto-populated under **Required claim** section as per requirements of the Swit application.
+    >  From the above list of default attributes, please replace givenname with **firstname**, surname with **lastname**, name with **username** and delete **emailaddress** claim as per requirements of the Swit application.
 
 1. Below are the optional claims, which can be mapped to the user and passed back in the SAML response based on your requirements.
 	
 	| Name |  Source Attribute|
 	| -------------- | --------- |
-    | per | user.preferredlanguage |
+    | language | user.preferredlanguage |
     | tel | user.telephonenumber |
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.

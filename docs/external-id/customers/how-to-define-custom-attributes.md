@@ -27,7 +27,7 @@ Learn more about custom user attributes in [User profile attributes](concept-use
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
 1. Browse to **Identity** > **External Identities** > **Overview**.
 
@@ -49,7 +49,7 @@ Follow these steps to add custom user attributes to a user flow you've already c
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
 1. Browse to **Identity** > **External Identities** > **User flows**.
 

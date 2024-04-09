@@ -28,7 +28,7 @@ landingContent:
           - text: Node.js with MSAL
             url: quickstart-web-app-nodejs-msal-sign-in.md
           - text: Python
-            url: quickstart-web-app-python-sign-in.md
+            url: quickstart-web-app-python-flask.md
   - title: "Learn by building"
     linkLists:
       - linkListType: tutorial
