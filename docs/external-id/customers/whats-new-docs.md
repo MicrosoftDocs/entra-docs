@@ -1,6 +1,6 @@
 ---
 title: "What's new in Microsoft Entra External ID"
-description: "New and updated documentation for the Microsoft Entra External ID documentation."
+description: "New and updated documentation for the Microsoft Entra External ID documentation for external-facing apps."
 ms.date: 04/03/2024
 ms.service: entra-external-id
 ms.subservice: customers
@@ -11,7 +11,7 @@ author: csmulligan
 manager: CelesteDG
 ---
 
-# Microsoft Entra External ID: What's new
+# Microsoft Entra External ID for external-facing apps: What's new
 
 Welcome to what's new in Microsoft Entra External ID documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. 
 
