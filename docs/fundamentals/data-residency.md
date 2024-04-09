@@ -33,7 +33,7 @@ Microsoft Entra ID is available in the following clouds:
 - China*
 - US government*
 
-*\* Microsoft Entra ID for external configuration tenants are not currently available in this cloud.*
+*\* External configuration tenants are not currently available in this cloud.*
 
 In the public cloud, you're prompted to select a location at the time of tenant creation (for example, signing up for Office 365 or Azure, or creating more Microsoft Entra instances through the Azure portal). Microsoft Entra ID maps the selection to a geo-location and a single scale unit in it. Tenant location can't be changed after it's set.
 
@@ -46,7 +46,7 @@ The location selected during tenant creation will map to one of the following ge
 - North America
 - Worldwide
  
-*\* Not currently available for Microsoft Entra ID for external configuration tenants.*
+*\* Not currently available for external configuration tenants.*
 
 Microsoft Entra ID handles Core Store data based on usability, performance, residency or other requirements based on geo-location. Microsoft Entra ID replicates each tenant through its scale unit, across datacenters, based on the following criteria:
 
@@ -66,7 +66,7 @@ Use the following table to see Microsoft Entra cloud solution models based on in
 |Public worldwide|Worldwide|All locations|Operated by Microsoft. Microsoft datacenter personnel must pass a background check.|Tenant creation available via official support channel and subject to Microsoft discretion.|
 |Sovereign or national clouds|US government*, China*|At rest, in the target location. No exceptions.|Operated by a data custodian (1). Personnel are screened according to requirements.|Each national cloud instance has a sign-up experience.|
 
-*\* Not currently available for Microsoft Entra ID for external configuration tenants.*
+*\* Not currently available for external configuration tenants.*
 
 **Table references**:
 
