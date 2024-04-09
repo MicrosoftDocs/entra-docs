@@ -311,7 +311,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS90094 | AdminConsentRequired - Administrator consent is required. |
 | AADSTS900382 | Confidential Client isn't supported in Cross Cloud request. |
 | AADSTS90095  | AdminConsentRequiredRequestAccess-  In the Admin Consent Workflow experience, an interrupt that appears when the user is told they need to ask the admin for consent.  |
-| AADSTS90099 | The application '{appId}' ({appName}) has not been authorized in the tenant '{tenant}'. Applications must be authorized to access the customer tenant before partner delegated administrators can use them. Provide pre-consent or execute the appropriate Partner Center API to authorize the application. |
+| AADSTS90099 | The application '{appId}' ({appName}) has not been authorized in the tenant '{tenant}'. Applications must be authorized to access the external tenant before partner delegated administrators can use them. Provide pre-consent or execute the appropriate Partner Center API to authorize the application. |
 | AADSTS900971| No reply address provided.|
 | AADSTS90100 | InvalidRequestParameter - The parameter is empty or not valid. |
 | AADSTS901002 | AADSTS901002: The 'resource' request parameter isn't supported. |

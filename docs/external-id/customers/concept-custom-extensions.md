@@ -1,5 +1,5 @@
 ---
-title: Custom extensions in a customer tenant
+title: Custom extensions in an external tenant
 description: Learn about custom authentication extensions that let you enrich or customize application tokens with information from external systems and add logic, such as validation, to attribute collection. 
  
 author: msmimart

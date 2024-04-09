@@ -326,8 +326,8 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Manage custom controls | [Conditional Access Administrator](permissions-reference.md#conditional-access-administrator) | [Security Administrator](permissions-reference.md#security-administrator) |
 > | Manage named locations | [Conditional Access Administrator](permissions-reference.md#conditional-access-administrator) | [Security Administrator](permissions-reference.md#security-administrator) |
 > | Manage terms of use | [Conditional Access Administrator](permissions-reference.md#conditional-access-administrator) | [Security Administrator](permissions-reference.md#security-administrator) |
-> | Read all configuration | [Security Reader](permissions-reference.md#security-reader) | [Security Administrator](permissions-reference.md#security-administrator) |
-> | Read named locations | [Security Reader](permissions-reference.md#security-reader) | [Conditional Access Administrator](permissions-reference.md#conditional-access-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator) |
+> | Read all configuration | [Default user role](../../fundamentals/users-default-permissions.md) |  |
+> | Read named locations | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 
 ## Security - Identity security score
 
