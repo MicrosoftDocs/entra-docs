@@ -14,7 +14,10 @@ ms.reviewer: calui
 ---
 # Support for FIDO2 authentication with Microsoft Entra ID
 
-Microsoft Entra ID allows device-bound passkeys to be used for passwordless authentication. This article covers which native apps, web browsers, and operating systems support passwordless authentication using passkeys with Microsoft Entra ID. Microsoft Entra ID currently supports only device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator.
+Microsoft Entra ID allows passkeys to be used for passwordless authentication. This article covers which native apps, web browsers, and operating systems support passwordless authentication using passkeys with Microsoft Entra ID.
+
+> [!NOTE]
+> Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys. We are investing in both synced and device-bound passkeys for work accounts.
 
 ## Microsoft app support (preview)
 
