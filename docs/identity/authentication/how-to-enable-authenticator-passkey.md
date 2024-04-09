@@ -25,12 +25,12 @@ This article lists steps to enable and enforce Microsoft Authenticator passkey s
 - Latest version of Microsoft Authenticator
 
 > [!NOTE]
-> Users need to be sure they've installed the latest version of Authenticator for Android or iOS to be able to use passkey functionality. 
+> Users need to install the latest version of Authenticator for Android or iOS to use a passkey. 
 
 [!INCLUDE [Passkey roll out](~/includes/entra-authentication-passkey.md)]
 
-To use passkeys (FIDO2) for logging in to web apps and services, you must have a browser that supports the WebAuthN protocol. 
-These include Microsoft Edge, Chrome, Firefox, and Safari. For more information, see [Browser support of FIDO2 passwordless authentication](fido2-compatibility.md).
+To use any passkeys (FIDO2) for sign in to web apps and services, you need to use a browser that supports the WebAuthN protocol. 
+Supported browsers include Microsoft Edge, Chrome, Firefox, and Safari. For more information, see [Browser support of FIDO2 passwordless authentication](fido2-compatibility.md).
 
 ## Enable Authenticator passkey in the admin center
 
@@ -39,20 +39,12 @@ To enable Authenticator passkey, you edit the **Passkey (FIDO2)** method policy,
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
 1. Under the method **Passkey (FIDO2)**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
-
-
-   >[!NOTE]
-   >If you see an error when you try to save, the cause might be due to the number of users or groups being added. As a workaround, replace the users and groups you are trying to add with a single group, in the same operation, and then click **Save** again.
-
 1. On the **Configure** tab, set **Enforce key restrictions** to **Yes**, set **Restrict specific keys** to **Allow**. Select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. Otherwise, add the following AAGUIDs to enable the Authenticator passkey preview for iOS and Android:
 
    - Authenticator for Android: de1e552d-db1d-4423-a619-566b625cdc84
    - Authenticator for iOS: 90a3ccdf-635c-4729-a248-9b709135078f
 
    :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey.":::
-
-> [!NOTE]
-> Users need to be sure they've installed the latest version of Authenticator for Android or iOS to be able to use passkey functionality. 
 
 The following list describes other optional settings:
 
@@ -75,7 +67,7 @@ After you finish the configuration, select **Save**.
 
 ## Enable Authenticator passkey using Graph Explorer
 
-In addition to using the Microsoft Entra admin center, you can also enable Authenticator passkey by using Graph Explorer. **Global Administrators** and **Authentication Policy Administrators** can update the Authentication Methods Policy to allow the AAGUIDs for Authenticator. 
+In addition to using the Microsoft Entra admin center, you can also enable Authenticator passkey by using Graph Explorer. **Global Administrators** and **Authentication Policy Administrators** can update the Authentication methods policy to allow the AAGUIDs for Authenticator. 
 
 To configure the policy by using Graph Explorer:
 
@@ -118,21 +110,27 @@ To configure the policy by using Graph Explorer:
 
 ## Delete a passkey 
 
-To remove a passkey associated with a user account, delete the key from the user’s authentication method.
+To remove a passkey associated with a user account, delete the key from the user’s authentication methods.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and search for the user account that needs the passkey to be removed.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and search for the user whose passkey needs to be removed.
 1. Select **Authentication methods** > right-click **passkey (FIDO2)** and select **Delete**. 
 
     ![View Authentication Method details](media/howto-authentication-passwordless-deployment/security-key-view-details.png)
 
 > [!NOTE]
-> Users will also need to remove the passkey in Authenticator on their device.
+> Users also need to remove the passkey in Authenticator on their device.
 
 ## Enforce Authenticator passkey sign-in 
 
-To make users sign in with a passkey when they access a sensitive resource, you must do one of the following: 1) use a built-in phishing-resistant authentication strength, or 2) create a custom authentication strength. 
+To make users sign in with a passkey when they access a sensitive resource, you must do one of the following: 
 
-The following steps explain how to create a Conditional Access policy.
+- Use the built-in phishing-resistant authentication strength
+  
+  Or 
+
+- Create a custom authentication strength
+
+The following steps explain how to create a Conditional Access policy with a custom authentication strength.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Conditional Access Administrator.
 1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
