@@ -22,7 +22,7 @@ ms.collection: M365-identity-device-management
 This article shows how to register a passkey using a browser and sign-in with a passkey (FIDO2) on an Android or iOS device. 
 
 > [!NOTE]
-> Microsoft Entra ID supports only device-bound passkeys. Support for synced passkeys is coming soon.
+> Microsoft Entra ID currently supports device-bound passkeys. Microsoft is committed to securing customers and users with passkeys. We are investing in both synced and device-bound passkeys for work accounts. 
 
 ## Manual registration 
 
