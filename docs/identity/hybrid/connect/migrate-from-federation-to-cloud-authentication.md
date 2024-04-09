@@ -5,7 +5,6 @@ description: This article has information about moving your hybrid identity envi
 
 ms.service: entra-id
 ms.subservice: hybrid-connect
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
 ms.date: 11/06/2023
 ms.author: billmath

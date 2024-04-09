@@ -351,7 +351,7 @@ sections:
           If you need help upgrading to a newer version of Microsoft Entra Connect, open a support ticket at [Create a service request to contact Microsoft 365 support](/archive/blogs/praveenkumar/how-to-create-service-requests-to-contact-office-365-support).
           
       - question: |
-          Operational best practice	
+          Operational best practice
         answer: |
           Below are some best practices you should implement when syncing between Windows Server Active Directory and Microsoft Entra ID.
           

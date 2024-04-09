@@ -92,7 +92,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 |    Parameter     | Required                     |           Description        |
 |-----------------------|-------------------------|------------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the customer tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).|
-| `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.                |
+| `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.                |
 | `username`          |    Yes   | Email of the customer user that they want to sign up with, such as *contoso-consumer@contoso.com*.  |
 | `challenge_type`    |   Yes  | A space-separated list of authorization [challenge type](#challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email one-time passcode sign-up flow, the value is expected to contain `oob redirect`.|
 |`attributes`| No | The user attributes values that the app collects from the customer user. The value is a string, but formatted as a JSON object whose key values are names of user attributes. These attributes can be built in or custom, and required or optional. The key names of the object depend on the attributes that the administrator configured in Microsoft Entra admin center. You can submit some or all user attributes via the `/signup/v1.0/start` endpoint or later in the `/signup/v1.0/continue` endpoint. If you submit all the required attributes via the `/signup/v1.0/start` endpoint, you're required to submit any attributes. However, if you submit some required attributes via `/signup/v1.0/start` endpoint, you can submit the remaining required later in the `/signup/v1.0/continue` endpoint. Replace `{user_name}`, `{user_age}` and `{user_phone}` with the name, age and phone number values respectively that the app collects from the customer user. **Microsoft Entra ignores any attributes that you submit, but don't exist**.|
@@ -164,7 +164,7 @@ Content-Type: application/json
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
-| `invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This response is possible if the app submits user attributes, and the `suberror` parameter's value is *attribute_validation_failed*.    |
+| `invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This response is possible if the app submits user attributes, and the `suberror` parameter's value is *attribute_validation_failed*.    |
 |`suberror` | An error code string that can be used to further classify types of errors.|
 
 Here are the possible errors you can encounter (possible values of the `error` parameter):
@@ -296,9 +296,9 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type or continuation token validation failed.   |
-|`invalid_client`|The client ID included in the request doesn't exist or isn't for a public client. |
-|`expired_token`|The continuation token is expired. |
+| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type or continuation token validation failed.   |
+|`invalid_client`|The client ID included in the request doesn't exist or isn't for a public client. |
+|`expired_token`|The continuation token is expired. |
 |`unsupported_challenge_type`|The `challenge_type` parameter value isn't supported or doesn't include the `redirect` challenge type.|
 
 ### Step 3: Submit OTP
@@ -391,13 +391,13 @@ Here are the possible errors you can encounter (possible values of the `error` p
 | `invalid_request`  | Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid or the customer tenant administrator hasn't enabled email one-time passcode for all tenant users.|  
 |`invalid_grant`| The grant type included in the request isn't valid or supported. The possible values for the `grant_type` are *oob*, *password*, *attributes* |
 |`expired_token`| The continuation token included in the request is expired. |
-|`attributes_required`  |  One or more of user attributes is required.   |
+|`attributes_required`  |  One or more of user attributes is required.   |
 
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
-Content-Type: application/json 
+Content-Type: application/json 
 ```
 
 ```json
@@ -422,9 +422,9 @@ Content-Type: application/json
 ```
 
 ```json
-{  
+{  
     "error": "invalid_grant",
-    "error_description": "AADSTS50181: Unable to validate the otp.",  
+    "error_description": "AADSTS50181: Unable to validate the otp.",  
     "error_codes": [
         50181
     ], 
@@ -432,7 +432,7 @@ Content-Type: application/json
     "trace_id": "b386ad47-...-0000", 
     "correlation_id": "72f57f26-...-3fa6",
     "suberror": "invalid_oob_value"
-}  
+}  
 ```
 
 |    Parameter     | Description        |
@@ -452,8 +452,8 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as when the continuation token or OTP validation fails.|  
 |`invalid_grant`|The grant type provided isn't valid or supported, or OTP is incorrect. Use the `suberror` parameter to learn the exact cause of the error.|
-|`invalid_client`|The client ID included in the request doesn't exist. |
-|`expired_token`|The continuation token is expired. |
+|`invalid_client`|The client ID included in the request doesn't exist. |
+|`expired_token`|The continuation token is expired. |
 
 ### Step 4: Authenticate and get token to sign in
 
@@ -526,16 +526,16 @@ Content-Type: application/json
 ```
 
 ```json
-{  
+{  
     "error": "",
-    "error_description": "AADSTS901007: User already exists.  .\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...", 
+    "error_description": "AADSTS901007: User already exists.  .\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...", 
     "error_codes": [
         399246
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
     "trace_id": "b386ad47-...-0000", 
     "correlation_id": "72f57f26-...-3fa6" 
-}  
+}  
 ```
 
 |    Parameter     | Description        |
@@ -549,7 +549,7 @@ Content-Type: application/json
 |`continuation_token`| [Continuation token](#continuation-token) that Microsoft Entra returns. |
 | `unverified_attributes`  |  A list (array of objects) of attribute key names that must be verified. This parameter is included in the response when the `error` parameter's value is *verification_required*.|
 |`required_attributes`| A list (array of objects) of attributes that the app needs to be submit. Microsoft Entra includes this parameter in its response when the `error` parameter's value is equal to *attributes_required*.|
-| `invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This parameter is included in the response when the `suberror` parameter's value is *attribute_validation_failed*.    |
+| `invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This parameter is included in the response when the `suberror` parameter's value is *attribute_validation_failed*.    |
 |`suberror` | An error code string that can be used to further classify types of errors.|
 
 Here are the possible errors you can encounter (possible values of the `error` parameter):
@@ -557,11 +557,11 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |    Error value     | Description        |
 |----------------------|------------------------|
 |`invalid_request`  |Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty.|
-|`invalid_client`|The client ID included in the request doesn't exist.  |  
+|`invalid_client`|The client ID included in the request doesn't exist.  |  
 |`invalid_grant`|The grant type provided isn't valid or supported.|
 |`expired_token`|The continuation token included in the request is expired.|
 |`user_already_exists` |  User already exists.  |
-|`attributes_required`  |  One or more of user attributes is required.   |
+|`attributes_required`  |  One or more of user attributes is required.   |
 
 ### Step 5: Request for security tokens
 
@@ -602,11 +602,11 @@ Content-Type: application/json
 ```json
 {
     "token_type": "Bearer",
-    "scope": "openid profile",    
-    "expires_in": 4141,    
-    "access_token": "eyJ0eXAiOiJKV1Qi...",    
-    "refresh_token": "AwABAAAA...",    
-    "id_token": "eyJ0eXAiOiJKV1Q..."    
+    "scope": "openid profile",
+    "expires_in": 4141,
+    "access_token": "eyJ0eXAiOiJKV1Qi...",
+    "refresh_token": "AwABAAAA...",
+    "id_token": "eyJ0eXAiOiJKV1Q..."
 }
 ```
 
@@ -783,7 +783,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type or the request didn't include `client_id` parameter the client ID value is empty or invalid. Use the `error_description` parameter to learn the exact cause of the error.   |  
+| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type or the request didn't include `client_id` parameter the client ID value is empty or invalid. Use the `error_description` parameter to learn the exact cause of the error.   |  
 |`invalid_client`| The client ID that the app includes in the request is for an app that lacks native authentication configuration, such as it isn't a public client or isn't enabled for native authentication. Use the `suberror` parameter to learn the exact cause of the error.|
 |`unauthorized_client`| The client ID used in the request has a valid client ID format, but doesn't exist in the customer tenant or is incorrect. |
 |`user_not_found`|The username doesn't exist.|
@@ -851,7 +851,7 @@ If an app can't support a required authentication method by Microsoft Entra, a f
 
 ```http
 HTTP/1.1 200 OK
-Content-Type: application/json 
+Content-Type: application/json
 ```
 
 ```json
@@ -901,9 +901,9 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type or *continuation token* validation failed.   |
-|`invalid_grant`|The continuation token isn't valid. |
-|`expired_token`|The continuation token is expired. |
+| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type or *continuation token* validation failed.   |
+|`invalid_grant`|The continuation token isn't valid. |
+|`expired_token`|The continuation token is expired. |
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.|
 
 ### Step 3: Request for security tokens
@@ -945,11 +945,11 @@ Content-Type: application/json
 ```json
 {
     "token_type": "Bearer",
-    "scope": "openid profile",   
-    "expires_in": 4141,   
-    "access_token": "eyJ0eXAiOiJKV1Qi...",   
-    "refresh_token": "AwABAAAA...",   
-    "id_token": "eyJ0eXAiOiJKV1Q..."   
+    "scope": "openid profile",
+    "expires_in": 4141,
+    "access_token": "eyJ0eXAiOiJKV1Qi...",
+    "refresh_token": "AwABAAAA...",
+    "id_token": "eyJ0eXAiOiJKV1Q..."
 }
 ```
 

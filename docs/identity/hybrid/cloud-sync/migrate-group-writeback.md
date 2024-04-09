@@ -9,7 +9,6 @@ ms.topic: how-to
 ms.date: 11/06/2023
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ---
 
