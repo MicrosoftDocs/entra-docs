@@ -76,7 +76,7 @@ You'll need the [latest Microsoft Graph PowerShell module](/powershell/microsoft
 
 ```powershell
 Update-Module Microsoft.Graph
-Get-MgUser -UserId '11111111-aaaa-2222-bbbb-333333333333' 
+Get-MgUser -UserId '00aa00aa-bb11-cc22-dd33-44ee44ee44ee' 
 New-MgInvitation -InvitedUserEmailAddress John@contoso.com -SendInvitationMessage:$true -InviteRedirectUrl "https://myapplications.microsoft.com" -InvitedUser $msGraphUser
 ```
 
