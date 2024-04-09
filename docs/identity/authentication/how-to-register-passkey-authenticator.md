@@ -5,7 +5,7 @@ description: Registration and management of passkey with Authenticator on iOS in
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/27/2024
+ms.date: 04/09/2024
 
 ms.author: justinha
 author: justinha
@@ -123,7 +123,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
 1. Open your camera on your device and navigate back to **My security info**. 
 
-1. When ready, read the reminder that you must save the passkey in Microsoft authenticator and tap **Next** to continue. 
+1. When ready, read the reminder that you must save the passkey in Microsoft Authenticator, and tap **Next** to continue. 
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/scan.png" alt-text="Screenshot that notifies user to save another way.":::
    
@@ -159,16 +159,16 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
 ## Troubleshooting
 
-1. If the passkey for your account is already registered in Microsoft authenticator, you receive the following error: 
+If the passkey for your account is already registered in Authenticator, you see the following error: 
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-already-exists.png" alt-text="Screenshot of the passkey that already exists in Microsoft Authenticator for iOS devices.":::
+:::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-already-exists.png" alt-text="Screenshot of the passkey that already exists in Microsoft Authenticator for iOS devices.":::
 
-1. To re-register a passkey for your account, first remove the passkey from Authenticator by clicking the *Trash* icon, then tap **Delete** to confirm.
+To re-register a passkey for your account, first remove the passkey from Authenticator. Click the *Trash* icon, then tap **Delete** to confirm.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-delete.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for iOS devices.":::
+:::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-delete.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for iOS devices.":::
 
 > [!NOTE]
-> You also need to delete the passkey from **Security Info**, using a web browser and logging in to [https://mysignins.microsoft.com/security-info](https://mysignins.microsoft.com/security-info ).  
+> You also need to delete the passkey from **Security Info**. Use a web browser and sign in to [https://mysignins.microsoft.com/security-info](https://mysignins.microsoft.com/security-info).  
 
 # [:::image type="icon" source="media/icons/android-icon.png" border="false"::: **Android**](#tab/Android)
 
@@ -228,7 +228,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
       > [!NOTE]
       > Enabling passkey providers on Android may vary based on the make and model of your device. Search for passkey on your device settings or consult your device manufacturer for guidance.
    
-   1. When ready, read the reminder that you must save the passkey in Microsoft authenticator and tap **I understand** to continue.  
+   1. When ready, read the reminder that you must save the passkey in Microsoft Authenticator, and tap **I understand** to continue.  
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-understand.png" alt-text="Screenshot of the I understand option in Microsoft Authenticator for Android devices.":::
 
@@ -282,7 +282,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
 1. Open your camera app on your device and navigate back to **My Security info**. 
 
-1. When ready, read the reminder that you must save the passkey in Microsoft authenticator and tap **Next** to continue. 
+1. When ready, read the reminder that you must save the passkey in Microsoft Authenticator and tap **Next** to continue. 
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/scan.png" alt-text="Screenshot that notifies user to save another way for Android devices.":::
    
@@ -316,15 +316,15 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
 ## Troubleshooting
 
-1. If the passkey for your account is already registered in Microsoft authenticator, you receive the following error: 
+If the passkey for your account is already registered in Authenticator, you receive the following error: 
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-already-exists.png" alt-text="Screenshot of the passkey that already exists in Microsoft Authenticator for Android devices.":::
+:::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-already-exists.png" alt-text="Screenshot of the passkey that already exists in Microsoft Authenticator for Android devices.":::
 
-1. To re-register a passkey for your account, first remove the passkey from Authenticator by clicking the *Trash* icon, then tap **Delete** to confirm.
+To re-register a passkey for your account, first remove the passkey from Authenticator. Click the *Trash* icon, then tap **Delete** to confirm.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-delete.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for Android devices.":::
+:::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-delete.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for Android devices.":::
 
 > [!NOTE]
-> You also need to delete the passkey from **Security Info**, using a web browser and logging in to [https://mysignins.microsoft.com/security-info](https://mysignins.microsoft.com/security-info ).  
+> You also need to delete the passkey from **Security Info**, using a web browser and logging in to [My Security info](https://aka.ms/mysecurityinfo).  
 
 ---
