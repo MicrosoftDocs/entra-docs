@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Prepare a Python Flask web application for authentication in a customer tenant'
+title: 'Tutorial: Prepare a Python Flask web application for authentication in an external tenant'
 description: Learn how to create a Python Flask web app project, then prepare it for authentication
 author: SHERMANOUKO
 manager: mwongerapk
@@ -28,7 +28,7 @@ In this tutorial, you'll;
 
 ## Prerequisites
 
-- [Tutorial: Prepare your customer tenant to sign in users in a Python Flask web app](./tutorial-web-app-python-flask-prepare-tenant.md)
+- [Tutorial: Prepare your external tenant to sign in users in a Python Flask web app](./tutorial-web-app-python-flask-prepare-tenant.md)
 - [Python 3+](https://www.python.org/).
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 

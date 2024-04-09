@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Prepare a Node.js web application for authentication in a customer tenant'
+title: 'Tutorial: Prepare a Node.js web application for authentication in an external tenant'
 description: Learn how to create a Node web app project, then prepare it for authentication
  
 author: kengaderdus
@@ -29,7 +29,7 @@ In this tutorial you'll;
 
 ## Prerequisites
 
-- [Tutorial: Prepare your customer tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md)
+- [Tutorial: Prepare your external tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md)
 - Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 - [Node.js](https://nodejs.org).
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.

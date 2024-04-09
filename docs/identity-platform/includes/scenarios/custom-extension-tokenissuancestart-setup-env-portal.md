@@ -37,7 +37,7 @@ public async static Task<AuthenticationEventResponse> Run(
    | Name | Value |
    | ---- | ----- | 
    | *AuthenticationEvents__AudienceAppId* | *Custom authentication extension app ID* |
-   | *AuthenticationEvents__AuthorityUrl* | &#8226; Workforce tenant `https://login.microsoftonline.com/<tenantID>` <br> &#8226; Customer tenant `https://<mydomain>.ciamlogin.com` | 
+   | *AuthenticationEvents__AuthorityUrl* | &#8226; Workforce tenant `https://login.microsoftonline.com/<tenantID>` <br> &#8226; external tenant `https://<mydomain>.ciamlogin.com` | 
    | *AuthenticationEvents__AuthorizedPartyAppId* | `99045fe1-7639-4a75-9d4a-577b6ca3810f` | 
 
 1. Select **Save** to save the application settings.

@@ -1,6 +1,6 @@
 ---
-title: Code samples for customer tenants
-description: Find code samples for applications you can run in a customer tenant. Find samples by app type or language.
+title: Code samples for external tenants
+description: Find code samples for applications you can run in an external tenant. Find samples by app type or language.
  
 author: msmimart
 manager: celestedg
@@ -16,7 +16,7 @@ ms.custom: it-pro
 
 # Samples for customer identity and access management (CIAM) in Microsoft Entra External ID
 
-Microsoft maintains code samples that demonstrate how to integrate various application types with Microsoft Entra ID for customers. We provide instructions for downloading and using samples or building your own app based on common authentication and authorization scenarios, development languages, and platforms. Included are instructions for building the project (if applicable) and running the sample application. Within the sample code, comments help you understand how these libraries are used in the application to perform authentication and authorization in a customer tenant.
+Microsoft maintains code samples that demonstrate how to integrate various application types with Microsoft Entra ID for customers. We provide instructions for downloading and using samples or building your own app based on common authentication and authorization scenarios, development languages, and platforms. Included are instructions for building the project (if applicable) and running the sample application. Within the sample code, comments help you understand how these libraries are used in the application to perform authentication and authorization in an external tenant.
 
 ## Samples and guides
 

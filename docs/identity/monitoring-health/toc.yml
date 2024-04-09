@@ -73,6 +73,8 @@ items:
         href: recommendation-migrate-from-adal-to-msal.md
       - name: Migrate apps from AD FS to Microsoft Entra ID
         href: recommendation-migrate-apps-from-adfs-to-azure-ad.md
+      - name: Migrate apps and service principals to Microsoft Graph
+        href: recommendation-migrate-to-microsoft-graph-api.md
       - name: Migrate from MFA server to Microsoft Entra MFA
         href: recommendation-migrate-to-microsoft-entra-mfa.md
       - name: Migrate to Microsoft authenticator
