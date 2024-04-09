@@ -23,6 +23,11 @@ Users may receive a notification through the mobile app for them to approve or d
 > [!NOTE]
 > In preparation of passkey support in Microsoft Authenticator, users may see Authenticator as a passkey provider on iOS and Android devices. Passkeys aren't currently supported in Authenticator, but they will be supported in an upcoming release.
 
+
+Microsoft continuously updates the Microsoft Authenticator App to maintain a high level of security. To ensure that your users are getting the best experience possible, we recommend having them continuously update their Authenticator App. In the case of critical security updates, app versions that are not up to date may cease to work and may block users from completing their authentications. If a user is using a version of the app that is not supported, they will be prompted to upgrade to the latest version before being able to proceed with authentications. 
+
+Microsoft will also periodically retire older versions of the Authenticator app to maintain a high security bar for your organization. If a user’s device does not support modern versions of the Microsoft Authenticator App, they will not be able to complete authentications with the app. We recommend having these users use a time-based one-time password (TOTP) in the Microsoft Authenticator app to complete two-factor authentication.
+
 To use the Authenticator app at a sign-in prompt rather than a username and password combination, see [Enable passwordless sign-in with the Microsoft Authenticator](howto-authentication-passwordless-phone.md).
 
 > [!NOTE]
