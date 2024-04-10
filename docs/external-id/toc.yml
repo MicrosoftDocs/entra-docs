@@ -1,6 +1,4 @@
 items:
-- name: Microsoft Entra External ID documentation
-  href: index.yml
 - name: External ID for business guests documentation
   href: index-b2b.yml
 - name: Overview
