@@ -1218,7 +1218,6 @@ This release includes our first 3 recommendations:
 - Migration applications from AD FS to Azure AD
 - Minimize MFA prompts from known devices
 
-
 For more information, see: 
 
 - [What are Azure Active Directory recommendations?](~/identity/monitoring-health/overview-recommendations.md)
