@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: has-adal-ref
-ms.date: 02/27/2023
+ms.date: 04/10/2024
 ms.reviewer: jeedes
 ms.service: identity-platform
 
@@ -61,13 +61,13 @@ The signature is computed by applying the certificate as described in the [JSON 
 {
   "aud": "https: //login.microsoftonline.com/contoso.onmicrosoft.com/oauth2/v2.0/token",
   "exp": 1484593341,
-  "iss": "97e0a5b7-d745-40b6-94fe-5f77d35c6e05",
-  "jti": "22b3bb26-e046-42df-9c96-65dbd72c1c81",
+  "iss": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+  "jti": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
   "nbf": 1484592741,
-  "sub": "97e0a5b7-d745-40b6-94fe-5f77d35c6e05"
+  "sub": "aaaabbbb-0000-cccc-1111-dddd2222eeee"
 }
 .
-"Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
+"A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u..."
 ```
 
 ## Example of an encoded JWT assertion

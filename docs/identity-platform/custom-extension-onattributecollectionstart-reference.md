@@ -55,9 +55,9 @@ POST https://exampleAzureFunction.azureWebsites.net/api/functionName
   "source": "/tenants/30000000-0000-0000-0000-000000000003/applications/<resourceAppguid>",
   "data": {
     "@odata.type": "microsoft.graph.onAttributeCollectionStartCalloutData",
-    "tenantId": "30000000-0000-0000-0000-000000000003",
-    "authenticationEventListenerId": "10000000-0000-0000-0000-000000000001",
-    "customAuthenticationExtensionId": "10000000-0000-0000-0000-000000000002",
+    "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+    "authenticationEventListenerId": "00001111-aaaa-2222-bbbb-3333cccc4444",
+    "customAuthenticationExtensionId": "11112222-bbbb-3333-cccc-4444dddd5555",
     "authenticationContext": {
         "correlationId": "<GUID>",
         "client": {

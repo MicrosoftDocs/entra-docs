@@ -4,7 +4,7 @@ description: Explanation of claims challenges, claims requests, and client capab
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.date: 01/19/2023
+ms.date: 04/10/2024
 ms.reviewer: kylemar
 ms.service: identity-platform
 
@@ -55,8 +55,8 @@ When an application receives a claims challenge, it indicates that the prior acc
 Here's an example:
 
 ```https
-GET https://login.microsoftonline.com/14c2f153-90a7-4689-9db7-9543bf084dad/oauth2/v2.0/authorize
-?client_id=2810aca2-a927-4d26-8bca-5b32c1ef5ea9
+GET https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/oauth2/v2.0/authorize
+?client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &redirect_uri=https%3A%2F%contoso.com%3A44321%2Fsignin-oidc
 &response_type=code
 &scope=openid%20profile%20offline_access%20user.read%20Sites.Read.All
@@ -137,8 +137,8 @@ const msalInstance = new msal.PublicClientApplication(msalConfig);
 An example of how the request to Microsoft Entra ID will look like:
 
 ```https
-GET https://login.microsoftonline.com/14c2f153-90a7-4689-9db7-9543bf084dad/oauth2/v2.0/authorize
-?client_id=2810aca2-a927-4d26-8bca-5b32c1ef5ea9
+GET https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/oauth2/v2.0/authorize
+?client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &redirect_uri=https%3A%2F%contoso.com%3A44321%2Fsignin-oidc
 &response_type=code
 &scope=openid%20profile%20offline_access%20user.read%20Sites.Read.All
