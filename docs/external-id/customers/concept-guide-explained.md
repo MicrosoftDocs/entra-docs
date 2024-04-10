@@ -16,7 +16,7 @@ ms.custom: it-pro
 ---
 # Get started guide features
 
-After completing the get started guide, you can recreate, edit, and customize the initial configuration to meet your company’s needs. This helps you become familiar with the features and functions of Microsoft Entra ID for customers, better understand how to use them, and appreciate the value they provide. During this process, you may even discover new features that you want to use. 
+After completing the [get started guide](/entra/external-id/customers/quickstart-get-started-guide), you can recreate, edit, and customize the initial configuration to meet your company’s needs. This helps you become familiar with the features and functions of Microsoft Entra ID for customers, better understand how to use them, and appreciate the value they provide. During this process, you may even discover new features that you want to use. 
 
 The get started guide set up the below features for you automatically. This article explains these features and guide you on how to configure them manually.
 
@@ -26,9 +26,9 @@ The get started guide set up the below features for you automatically. This arti
 
 :::image type="content" source="media/concept-guide-explained/trial-creation.png" alt-text="Flowchart that shows the trial tenant creation step in the guide.":::
 
-A customer tenant is the first resource you need to create to get started with Microsoft Entra ID for customers. If you have an Azure subscription, you can create your new tenant in the Microsoft Entra admin center by following [these steps](how-to-create-customer-tenant-portal.md). 
+An external tenant is the first resource you need to create to get started with Microsoft Entra ID for customers. If you have an Azure subscription, you can create your new tenant in the Microsoft Entra admin center by following [these steps](how-to-create-external-tenant-portal.md). 
 
-If you don’t have an Azure subscription, you can sign up for a [free trial](quickstart-trial-setup.md#sign-up-to-your-customer-tenant-free-trial). The trial gives you access to a tenant for 30 days. During the free trial period, you have access to all product features, with few exceptions. For more information, see the [Start a free trial without Azure subscription](quickstart-trial-setup.md). 
+If you don’t have an Azure subscription, you can sign up for a [free trial](quickstart-trial-setup.md#sign-up-to-your-external-tenant-free-trial). The trial gives you access to a tenant for 30 days. During the free trial period, you have access to all product features, with few exceptions. For more information, see the [Start a free trial without Azure subscription](quickstart-trial-setup.md). 
 
 ## App registration
 
@@ -55,7 +55,7 @@ If your customer-facing app requires more information than the built-in user att
 The get started guide provided you with several basic options to customize the sign-in page, including adding your company logo, changing the background color, and adjusting the layout. 
 
 After the initial setup, you can manually edit these settings and add more branding options. You can refine the layout, add headers and footers, configure text, images, and hyperlinks, and add languages to your sign-in and sign-up pages. 
-For more details about the various branding options available in your new customer tenant, visit the [Branding options](how-to-customize-branding-customers.md) page.
+For more details about the various branding options available in your new external tenant, visit the [Branding options](how-to-customize-branding-customers.md) page.
  
 ## Sign-in preview with your first user
 

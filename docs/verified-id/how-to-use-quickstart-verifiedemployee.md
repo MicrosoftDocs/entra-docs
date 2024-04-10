@@ -68,11 +68,11 @@ If [https://aka.ms/mfasetup](https://aka.ms/mfasetup) launches without prompting
 
 When you select + Add credential in the portal, you get the option to launch two Quickstarts. Select **Verified employee** and select Next. 
 
-![Quickstart start screen](media/how-to-use-quickstart-verifiedemployee/verifiable-credentials-configure-verifiedemployee-quickstart.png)
+:::image type="content" source="media/how-to-use-quickstart-verifiedemployee/verifiable-credentials-configure-verifiedemployee-quickstart.png" alt-text="Screenshot of the quickstart start screen.":::
 
 In the next screen, you enter some of the Display definitions, like logo url, text and background color. Since the credential is a managed credential with directory based claims, rules definitions are predefined and can't be changed. You don't need to enter rule definition details. The credential type will be **VerifiedEmployee** and the claims from the user’s profile are pre-set. Select Create to create the credential.
 
-![Card styling](media/how-to-use-quickstart-verifiedemployee/verifiable-credentials-configure-verifiedemployee-styling.png)
+:::image type="content" source="media/how-to-use-quickstart-verifiedemployee/verifiable-credentials-configure-verifiedemployee-styling.png" alt-text="Screenshot of the create credential, verified employee, card styling section.":::
 
 ## Claims schema for Verified employee credential
 
@@ -97,7 +97,7 @@ If attribute values change in the user's Microsoft Entra profile, the VC isn't a
 
 Verifiable Credentials for directory based claims can be issued and verified just like any other credentials you create. All you need is your issuer DID for your tenant, the credential type and the manifest url to your credential. The easiest way to find these values for a Managed Credential is to view the credential in the portal, select **Issue credential** and you will get a header named **Custom issue**. These steps bring up a textbox with a skeleton JSON payload for the Request Service API.
 
-![Custom issue](media/how-to-use-quickstart-verifiedemployee/verifiable-credentials-configure-verifiedemployee-custom-issue.png)
+:::image type="content" source="media/how-to-use-quickstart-verifiedemployee/verifiable-credentials-configure-verifiedemployee-custom-issue.png" alt-text="Screenshot of the custom issuance request section.":::
 
 In this screen, you have values that you can copy and paste to your sample deployment’s configuration files. Issuer’s DID is the authority value.
 

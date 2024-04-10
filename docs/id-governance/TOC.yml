@@ -44,6 +44,8 @@
         href: entitlement-management-group-licenses.md
       - name: Onboard external users to Microsoft Entra ID through an approval process
         href: entitlement-management-onboard-external-user.md
+      - name: Create an access package for an application - PowerShell
+        href: entitlement-management-access-package-create-app.md
       - name: Migrate an organizational role model
         href: identity-governance-organizational-roles.md
       - name: Automated ServiceNow Ticket Creation Integration
@@ -74,6 +76,8 @@
         href: tutorial-scheduled-leaver-portal.md  
       - name: Automate employee offboarding tasks - Microsoft Graph
         href: /graph/tutorial-lifecycle-workflows-scheduled-leaver?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
+      - name: Automate employee mover tasks - Microsoft Entra admin center
+        href: tutorial-mover-custom-workflow-portal.md   
 - name: Concepts
   expanded: true
   items:
@@ -186,6 +190,8 @@
         href: entitlement-management-reprocess-access-package-assignments.md
       - name: Hide or delete
         href: entitlement-management-access-package-edit.md
+      - name: Assign Microsoft Entra Roles (Preview)
+        href: entitlement-management-roles.md  
     - name: Approvers
       items:
       - name: Approve requests
@@ -260,7 +266,7 @@
           href: customize-workflow-email.md
         - name: Check the status of a workflow
           href: check-status-workflow.md
-        - name: Download workflow history reports (Preview)
+        - name: Download workflow history reports
           href: download-workflow-history.md  
         - name: Check execution user scope
           href: check-workflow-execution-scope.md  
