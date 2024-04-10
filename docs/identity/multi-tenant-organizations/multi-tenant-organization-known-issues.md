@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: troubleshooting
-ms.date: 08/22/2023
+ms.date: 04/23/2024
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -41,9 +41,9 @@ The experiences and issues described in this article have the following scope.
 
 - If you followed the correct sequence of creating a multitenant organization, adding a tenant to the multitenant organization, and the added tenant's join request keeps failing, submit a support request to Microsoft Entra ID or Microsoft 365 admin center.
 
-- As part of a multitenant organization, newly invited B2B users receive an additional user property that includes the home tenant identifier of the B2B user. Already redeemed B2B users don't have this additional user property.
+- As part of a multitenant organization, B2B users receive an additional user property that includes the user's origin tenant information.
 
-- As part of a multitenant organization, [reset redemption status for a B2B user](~/external-id/reset-redemption-status.md) is currently unavailable and disabled.
+- As part of a multitenant organization, [reset redemption for an already redeemed B2B user](~/external-id/reset-redemption-status.md) is currently disabled.
 
 ## B2B user or B2B member related issues
 
@@ -51,7 +51,7 @@ The experiences and issues described in this article have the following scope.
 
 - To promote B2B guests to B2B members, a source tenant administrator can amend the [attribute mappings](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings), or a target tenant administrator can [change the userType](~/fundamentals/how-to-manage-user-profile-info.md#add-or-change-profile-information) if the property is not recurringly synchronized.
 
-- B2B user objects have a `originTenantID` property that is either set to null or a valid value when the B2B user object is synchronized or shared in a multitenant organization. If your B2B user object is missing this property, see [Reset redemption status for a guest user](../../external-id/reset-redemption-status.md).
+- B2B user objects have a `originTenantId` property that is either set to null or a valid value when the B2B user object is synchronized or shared in a multitenant organization. If your B2B user object is missing this property, [reset the redemption status for the user](../../external-id/reset-redemption-status.md) and then the user must redeem again to get the property.
 
 - In [SharePoint OneDrive](/sharepoint/), the promotion of B2B guests to B2B members might not happen automatically. If faced with a user type mismatch between Microsoft Entra ID and SharePoint OneDrive, try [Set-SPUser [-SyncFromAD]](/powershell/module/sharepoint-server/set-spuser).
 
