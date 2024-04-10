@@ -8,16 +8,16 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 01/07/2024
+ms.date: 03/22/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
-#Customer intent: As an it admin, I want to learn about the options for customizing the look and feel of the customer sign-in and sing-up experience.
+#Customer intent: As an it admin, I want to learn about the options for customizing the look and feel of the customer sign-in and sign-up experience.
 ---
 
-# Customize the neutral branding in your customer tenant (preview)
+# Customize the neutral branding in your external tenant (preview)
 
-After creating a new customer tenant, you can customize the end-user experience. Create a custom look and feel for users signing in to your apps by configuring **Company branding** settings for your tenant. With these settings, you can add your own background images, colors, company logos, and text to customize the sign-in experiences across your apps.  
+After creating a new external tenant, you can customize the end-user experience. Create a custom look and feel for users signing in to your apps by configuring **Company branding** settings for your tenant. With these settings, you can add your own background images, colors, company logos, and text to customize the sign-in experiences across your apps.  
 You can also create user flows programmatically using the Company Branding Graph API.
 
 > [!TIP]
@@ -27,14 +27,14 @@ You can also create user flows programmatically using the Company Branding Graph
 
 ## Prerequisites
 
-- If you haven't already created your own Microsoft Entra customer tenant, create one now.
+- If you haven't already created your own Microsoft Entra external tenant, create one now.
 - [Register an application](how-to-register-ciam-app.md).  
 - [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md)
 - Review the file size requirements for each image you want to add. You may need to use a photo editor to create the right-sized images. The preferred image type for all images is PNG, but JPG is accepted.
 
 [!INCLUDE [preview-alert](../customers/includes/preview-alert/preview-alert-ciam.md)]
 
-<a name='comparing-the-default-sign-in-experiences-between-the-customer-tenant-and-the-azure-ad-tenant'></a>
+<a name='comparing-the-default-sign-in-experiences-between-the-external-tenant-and-the-azure-ad-tenant'></a>
 
 ## Branding elements
 
@@ -55,8 +55,8 @@ The following image displays the neutral default branding of the tenant. You can
 
 Before you customize any settings, the neutral default branding will appear in your sign-in and sign-up pages. You can customize this default experience with a custom background image or color, favicon, layout, header, and footer. You can also upload a [custom CSS](~/fundamentals/reference-company-branding-css-template.md). 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant you created earlier from the **Directories + subscriptions** menu.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Organizational Branding Administrator](~/identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
 1. Browse to **Company Branding** either by using the search bar or by navigating to **Home** > **Tenant overview** > **Customize branding**.
 
    :::image type="content" source="media/how-to-customize-branding-customers/browse-to-company-branding.png" alt-text="Screenshot of the company branding option.":::
@@ -168,7 +168,7 @@ For your tenant, you might have different requirements for the information you w
 1. Select **Next: Review** to review all your modifications. Then select **Save** if you'd like to save your changes or **Previous** if you want to continue customizing.
 
 > [!IMPORTANT] 
-> In the customer tenant, we have two options to add custom text to the sign-up and sign-in experience.  The function is available under each user flow during language customization and also under Company branding. Although we have two ways to customize strings (via Company Branding and via User Flows), both ways modify the same JSON file. The most recent change made either via User flows or via Company branding  will always override the previous one.
+> In the external tenant, we have two options to add custom text to the sign-up and sign-in experience.  The function is available under each user flow during language customization and also under Company branding. Although we have two ways to customize strings (via Company Branding and via User Flows), both ways modify the same JSON file. The most recent change made either via User flows or via Company branding  will always override the previous one.
 
 ## How to customize the tenant name
 
@@ -176,8 +176,8 @@ You can customize your tenant name in the Microsoft Entra admin center to replac
 
 :::image type="content" source="media/how-to-customize-branding-customers/tenant-name.png" alt-text="Screenshot of the tenant name." lightbox="media/how-to-customize-branding-customers/tenant-name.png":::
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant you created earlier from the **Directories + subscriptions** menu.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Organizational Branding Administrator](~/identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
 1. In the search bar, type and select **Tenant properties**.
 1. Edit the **Name** field. 
 
@@ -191,5 +191,5 @@ You can use the Microsoft Graph API to customize a few items programmatically. F
 
 ## Next steps
 
-In this article we learned how to customize the look and feel of the customer sign-in and sing-up experience. To learn more about customizing the language of the tenant, see the [Language customization](how-to-customize-languages-customers.md) article.
+In this article we learned how to customize the look and feel of the customer sign-in and sign-up experience. To learn more about customizing the language of the tenant, see the [Language customization](how-to-customize-languages-customers.md) article.
 For an understanding of the differences in workforce tenant branding, see the article [How to customize branding for your workforce](~/fundamentals/how-to-customize-branding.md).

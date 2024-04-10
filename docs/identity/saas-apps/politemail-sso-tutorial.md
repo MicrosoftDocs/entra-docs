@@ -12,6 +12,8 @@ ms.topic: how-to
 ms.date: 10/25/2023
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and PoliteMail - SSO so that I can control who has access to PoliteMail - SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with PoliteMail - SSO
@@ -54,10 +56,10 @@ Configure and test Microsoft Entra SSO with PoliteMail - SSO using a test user c
 To configure and test Microsoft Entra SSO with PoliteMail - SSO, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure PoliteMail - SSO](#configure-politemail---sso)** - to configure the single sign-on settings on application side.
-    1. **[Create PoliteMail - SSO test user](#create-politemail---sso-test-user)** - to have a counterpart of B.Simon in PoliteMail - SSO that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create PoliteMail - SSO test user](#create-politemail---sso-test-user)** - to have a counterpart of B.Simon in PoliteMail - SSO that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -111,7 +113,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
-### Create a Microsoft Entra ID test user
+<a name='create-a-microsoft-entra-id-test-user'></a>
+
+### Create a Microsoft Entra test user
 
 In this section, you'll create a test user in the Microsoft Entra admin center called B.Simon.
 
@@ -125,7 +129,9 @@ In this section, you'll create a test user in the Microsoft Entra admin center c
    1. Select **Review + create**.
 1. Select **Create**.
 
-### Assign the Microsoft Entra ID test user
+<a name='assign-the-microsoft-entra-id-test-user'></a>
+
+### Assign the Microsoft Entra test user
 
 In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by granting access to PoliteMail - SSO.
 

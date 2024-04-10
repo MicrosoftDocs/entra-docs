@@ -5,7 +5,7 @@ description: Learn about using the Microsoft Authenticator in Microsoft Entra ID
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/07/2024
+ms.date: 02/29/2024
 
 ms.author: justinha
 author: justinha
@@ -68,9 +68,10 @@ Consistent with the guidelines outlined in [NIST SP 800-63B](https://pages.nist.
 FIPS 140 is a US government standard that defines minimum security requirements for cryptographic modules in information technology products and systems. Testing against the FIPS 140 standard is maintained by the [Cryptographic Module Validation Program (CMVP)](https://csrc.nist.gov/Projects/cryptographic-module-validation-program?azure-portal=true).
 
 ### Microsoft Authenticator for iOS
-Beginning with version 6.6.8, Microsoft Authenticator for iOS is compliant with Federal Information Processing Standard (FIPS) 140 for all Microsoft Entra authentications using phishing-resistant device-bound passkeys, push multi-factor authentications (MFA), passwordless Phone Sign-In (PSI), and time-based one-time passcodes (TOTP). 
 
-Authenticator leverages the native Apple iOS **FIPS 140 validated** cryptographic module(s) to achieve FIPS 140 compliance on Apple iOS devices. For more information about the **FIPS 140 validated** cryptographic modules being used, see: [Apple iOS security certifications](https://support.apple.com/guide/certifications/ios-security-certifications-apc3fa917cb49/1/web/1.0). 
+Beginning with version 6.6.8, Microsoft Authenticator for iOS uses the native Apple CoreCrypto module for FIPS validated cryptography on Apple iOS FIPS 140 compliant devices. All Microsoft Entra authentications using phishing-resistant device-bound passkeys, push multifactor authentications (MFA), passwordless phone sign-in (PSI), and time-based one-time passcodes (TOTP) use the FIPS cryptography.
+
+For more information about the FIPS 140 validated cryptographic modules being used and compliant iOS devices, see [Apple iOS security certifications](https://support.apple.com/guide/certifications/ios-security-certifications-apc3fa917cb49/1/web/1.0).
 
 
 >[!NOTE]
@@ -93,6 +94,11 @@ Cloud | MySecurityInfo URL |
 Azure commercial (includes GCC)   | https://aka.ms/MySecurityInfo 
 Azure for US Government (includes GCC High and DoD) | https://aka.ms/MySecurityInfo-us 
 
+## Updates to the Microsoft Authenticator App
+
+Microsoft continuously updates the Microsoft Authenticator App to maintain a high level of security. To ensure that your users are getting the best experience possible, we recommend having them continuously update their Authenticator App. In the case of critical security updates, app versions that are not up to date may cease to work and may block users from completing their authentications. If a user is using a version of the app that is not supported, they will be prompted to upgrade to the latest version before being able to proceed with authentications.
+
+Microsoft will also periodically retire older versions of the Authenticator App to maintain a high security bar for your organization. If a user’s device does not support modern versions of the Microsoft Authenticator App, they will not be able to complete authentications with the app. We recommend having these users use an OATH verification code in the Microsoft Authenticator App to complete two-factor authentication.
 
 ## Next steps
 

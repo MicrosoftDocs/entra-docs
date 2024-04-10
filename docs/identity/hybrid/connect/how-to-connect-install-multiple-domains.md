@@ -33,6 +33,8 @@ You can view the IssuerUri by using the PowerShell command `Get-MsolDomainFedera
 
 ![Screenshot that shows results after entering the "Get-MsolDomainFederationSettings" command in PowerShell.](./media/how-to-connect-install-multiple-domains/MsolDomainFederationSettings.png)
 
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
+
 A problem arises when you add more than one top-level domain.  For example, let's say you have set up federation between Microsoft Entra ID and your on-premises environment.  For this document, the domain, bmcontoso.com is being used.  Now a second, top-level domain, bmfabrikam.com has been added.
 
 ![A screenshot showing multiple top-level domains](./media/how-to-connect-install-multiple-domains/domains.png)

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 03/26/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -173,8 +173,6 @@ The Microsoft Entra Connect Health portal shows views of alerts, performance mon
 * **Active Directory Federation Services**: This option shows all the AD FS services that Microsoft Entra Connect Health is currently monitoring. When you select an instance, the blade that opens shows information about that service instance. This information includes an overview, properties, alerts, monitoring, and usage analytics. Read more about the capabilities at [Using Microsoft Entra Connect Health with AD FS](how-to-connect-health-adfs.md).
 * **Active Directory Domain Services**: This option shows all the AD DS forests that Microsoft Entra Connect Health is currently monitoring. When you select a forest, the blade that opens shows information about that forest. This information includes an overview of essential information, the Domain Controllers dashboard, the Replication Status dashboard, alerts, and monitoring. Read more about the capabilities at [Using Microsoft Entra Connect Health with AD DS](how-to-connect-health-adds.md).
 * **Configure**: This section includes options to turn the following on or off:
-
-   - The **automatic update** of the Microsoft Entra Connect Health agent to the latest version: the Microsoft Entra Connect Health agent is automatically updated whenever new versions are available. This option is enabled by default.
    - **Access to data** from the Microsoft Entra directory integrity by Microsoft only for troubleshooting purposes: if this option is enabled, Microsoft can access the same data viewed by the user. This information can be useful for troubleshooting and to provide the necessary assistance. This option is disabled by default
 * **Role based access control (IAM)** is the section to manage the access to Connect Health data in role base. 
 

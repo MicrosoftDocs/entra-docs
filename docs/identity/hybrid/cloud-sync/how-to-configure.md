@@ -16,9 +16,7 @@ ms.author: billmath
 
 The following document will guide you through configuring Microsoft Entra Cloud Sync.  
 
-The following documentation demonstrates the new guided user experience for Microsoft Entra Cloud Sync.  If you are not seeing the images below, you need to select the **Preview features** at the top.  You can select this again to revert back to the old experience.
-
- :::image type="content" source="media/how-to-configure/new-ux-configure-19.png" alt-text="Screenshot of enable preview features." lightbox="media/how-to-configure/new-ux-configure-19.png":::
+The following documentation demonstrates the new guided user experience for Microsoft Entra Cloud Sync.
 
 For additional information and an example of how to configure cloud sync, see the video below.
 

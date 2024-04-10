@@ -5,7 +5,7 @@ author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: whats-new
 ms.date: 05/31/2023
 ms.custom: template-concept 
 ---
@@ -414,7 +414,7 @@ You can now use administrative units to delegate management of specified devices
 **Service category:** Conditional Access          
 **Product capability:** Identity Security & Protection     
 
-Represents a tenant's customizable terms of use agreement that is created, and managed, with Azure Active Directory (Azure AD). You can use the following methods to create and manage the [Azure Active Directory Terms of Use feature](/graph/api/resources/agreement#json-representation) according to your scenario. For more information, see: [agreement resource type](/graph/api/resources/agreement).
+Represents a tenant's customizable terms of use agreement that is created, and managed, with Azure Active Directory (Azure AD). You can use the following methods to create and manage the [Azure Active Directory Terms of Use feature](/graph/api/resources/agreement#json-representation) according to your scenario. For more information, see: [`agreement` resource type](/graph/api/resources/agreement).
 
 ---
 

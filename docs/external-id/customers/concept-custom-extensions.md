@@ -1,5 +1,5 @@
 ---
-title: Custom extensions in a customer tenant
+title: Custom extensions in an external tenant
 description: Learn about custom authentication extensions that let you enrich or customize application tokens with information from external systems and add logic, such as validation, to attribute collection. 
  
 author: msmimart
@@ -7,7 +7,7 @@ manager: celestedg
 ms.service: entra-external-id
  
 ms.subservice: customers
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 10/27/2023
 ms.author: mimart
 ms.custom: it-pro
@@ -51,7 +51,7 @@ You can use custom authentication extensions to add workflows to attribute colle
 
 To configure the attribute collection start and submit events, you create a custom authentication extension REST API. When an event fires, Microsoft Entra ID sends an HTTP request to your REST API endpoint. The REST API can be an Azure Function, Azure Logic App, or another publicly available API endpoint. Your REST API endpoint is responsible for defining the workflow actions to take.
 
-For details, see [Add attribute collection custom extensions to your user flow](~/identity-platform/custom-extension-attribute-collection.md).
+For details, see [Add attribute collection custom extensions to your user flow](~/identity-platform/custom-extension-attribute-collection.md?context=/entra/external-id/customers/context/customers-context).
 
 ## Token issuance start event
 
@@ -71,12 +71,13 @@ A token issuance event extension involves the following components:
 
 For details, see:
 
-- [About custom authentication extensions](~/identity-platform/custom-extension-overview.md?context=/azure/active-directory/external-identities/customers/context/customers-context)  
-- [Configure a custom claims provider token issuance event](~/identity-platform/custom-extension-get-started.md?context=/azure/active-directory/external-identities/customers/context/customers-context) using a custom claims provider.
+ - [About custom authentication extensions](~/identity-platform/custom-extension-overview.md?context=/entra/external-id/customers/context/customers-context) 
+- [Configure a custom claims providerfor a token issuance event](~/identity-platform/custom-extension-tokenissuancestart-configuration.md?context=/azure/active-directory/external-identities/customers/context/customers-context) using a custom claims provider.
 
-## Next steps
+## See also
 
-- To learn more about how custom extensions work, see [Custom authentication extensions](~/identity-platform/custom-extension-overview.md?context=/azure/active-directory/external-identities/customers/context/customers-context).
-- Configure a [custom claims provider token issuance event](~/identity-platform/custom-extension-get-started.md?context=/azure/active-directory/external-identities/customers/context/customers-context).
-- Configure [custom authentication extensions for attribute collection start and submit events](~/identity-platform/custom-extension-attribute-collection.md) with a sample OpenID Connect application.
+- To learn more about how custom extensions work, see [Custom authentication extensions](~/identity-platform/custom-extension-overview.md?context=/entra/external-id/customers/context/customers-context).
+- [Create a REST API with a token issuance start event](~/identity-platform/custom-extension-tokenissuancestart-setup.md?context=/azure/active-directory/external-identities/customers/context/customers-context).
+- [Configure a custom claims provider for a token issuance event](~/identity-platform/custom-extension-tokenissuancestart-configuration.md?context=/azure/active-directory/external-identities/customers/context/customers-context).
+- Configure [custom authentication extensions for attribute collection start and submit events](~/identity-platform/custom-extension-attribute-collection.md?context=/entra/external-id/customers/context/customers-context) with a sample OpenID Connect application.
 - See the [Microsoft Entra ID for customers Developer Center](https://aka.ms/ciam/dev) for the latest developer content and resources.

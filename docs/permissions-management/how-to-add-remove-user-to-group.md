@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 11/30/2023
+ms.date: 03/15/2024
 ms.author: jfields
 ---
 
@@ -51,4 +51,4 @@ This article describes how you can add or remove a new user for a group in Permi
 ## Next steps
 
 - For more information on managing users and groups, see [Manage users and groups with the User management dashboard](ui-user-management.md).
-- For more information on setting group permissions, see [Select group-based permissions settings](how-to-create-group-based-permissions.md).
+

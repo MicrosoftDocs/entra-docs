@@ -168,7 +168,7 @@ The Audit logs for Authentication Methods can be used to make sure that your use
 
 Audit events related to GDPR and data protection are also found in this service and are found in the `DirectoryManagement` category. These events include strings like `MFA.CosmosDB.mfa-prd-cust-rpt-eu.activations` and `DSR Export: MFA.PostgreSQL.bypassed_users_creations`. 
 
-[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-dsr-and-stp-note.md)] 
+[!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-dsr-and-stp-note.md)] 
 
 |Audit Category|Activity|
 |---|---|
@@ -1309,7 +1309,6 @@ Users in your tenant can manage many aspects of their group memberships on their
 |GroupManagement|Approvals_ActOnApproval|
 |GroupManagement|Approvals_Post|
 |GroupManagement|Approve a pending request to join a group|
-|GroupManagement|Autorenew group|
 |GroupManagement|Cancel a pending request to join a group|
 |GroupManagement|Create lifecycle management policy|
 |GroupManagement|Delete a pending request to join a group|

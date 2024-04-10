@@ -12,9 +12,10 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
 ---
+
 # Microsoft Entra registered devices
 
-The goal of Microsoft Entra registered - also known as Workplace joined - devices is to provide your users with support for bring your own device (BYOD) or mobile device scenarios. In these scenarios, a user can access your organization’s resources using a personal device.
+The goal of Microsoft Entra registered - also known as Workplace joined - devices is to provide your users with support for bring your own device (BYOD) or mobile device scenarios. In these scenarios, a user can access your organization's resources using a personal device.
 
 | Microsoft Entra registered | Description |
 | --- | --- |
@@ -35,7 +36,7 @@ The goal of Microsoft Entra registered - also known as Workplace joined - device
 |   | Biometrics or pattern for other devices |
 | **Device management** | Mobile Device Management (example: Microsoft Intune) |
 |   | Mobile Application Management |
-| **Key capabilities** | SSO to cloud resources |
+| **Key capabilities** | single sign-on (SSO) to cloud resources |
 |   | Conditional Access when enrolled into Intune |
 |   | Conditional Access via App protection policy |
 |   | Enables Phone sign in with Microsoft Authenticator app |
@@ -44,9 +45,9 @@ The goal of Microsoft Entra registered - also known as Workplace joined - device
 
 Microsoft Entra registered devices are signed in to using a local account like a Microsoft account on a Windows 10 or newer device. These devices have a Microsoft Entra account for access to organizational resources. Access to resources in the organization can be limited based on that Microsoft Entra account and Conditional Access policies applied to the device identity.
 
-Microsoft Entra Registration isn't the same as device enrollment. If Administrators permit users to enroll their devices, organizations can further control these Microsoft Entra registered devices by enrolling them into Mobile Device Management (MDM) tools like Microsoft Intune. MDM provides a means to enforce organization-required configurations like requiring storage to be encrypted, password complexity, and security software kept updated. 
+Microsoft Entra Registration isn't the same as device enrollment. If Administrators permit users to enroll their devices, organizations can further control these Microsoft Entra registered devices by enrolling them into Mobile Device Management (MDM) tools like Microsoft Intune. MDM provides a means to enforce organization-required configurations like requiring storage to be encrypted, password complexity, and security software kept updated.
 
-Microsoft Entra registration can be accomplished when accessing a work application for the first time or manually using the Windows 10 or Windows 11 Settings menu. 
+Microsoft Entra registration can be accomplished when accessing a work application for the first time or manually using the Windows 10 or Windows 11 Settings menu.
 
 ## Scenarios
 

@@ -1,8 +1,8 @@
 ---
 title: How to use enriched Microsoft 365 logs
 description: Learn how to use enriched Microsoft 365 logs for Global Secure Access (preview).
-author: shlipsey3
-ms.author: sarahlipsey
+author: kenwith
+ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
 ms.date: 11/02/2023
@@ -120,3 +120,5 @@ The following example is sending the enriched logs to a Log Analytics workspace,
 
 - [Explore the Global Secure Access logs and monitoring options](concept-global-secure-access-logs-monitoring.md)
 - [Learn about Global Secure Access audit logs](how-to-access-audit-logs.md)
+- [Enriched Microsoft 365 audit logs](reference-event-enrichment-logs.md)
+
