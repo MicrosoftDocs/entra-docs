@@ -10,12 +10,12 @@ ms.subservice: customers
 ms.topic: how-to
 ms.date: 01/27/2024
 ms.custom: developer, devx-track-js
-#Customer intent: As a developer, I want to learn about how to call a web API that is protected by Microsoft Entra ID for customers by using an access token.
+#Customer intent: As a developer, I want to learn about how to call a web API that is protected by Microsoft Entra External ID by using an access token.
 ---
 
 # Call a web API in a Node.js web application
 
-In this article, you learn how to call a web API from your Node.js client web app using the access token you acquire in [Acquire access token](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md#acquire-access-token). The web API is protected by Microsoft Entra ID for customers. This article is the fourth and last part of a four-part guide series.
+In this article, you learn how to call a web API from your Node.js client web app using the access token you acquire in [Acquire access token](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md#acquire-access-token). The web API is protected by Microsoft Entra External ID. This article is the fourth and last part of a four-part guide series.
 
 ## Prerequisite
 

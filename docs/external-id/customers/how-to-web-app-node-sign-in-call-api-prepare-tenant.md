@@ -1,6 +1,6 @@
 ---
 title: Prepare external tenant to call an API in a Node.js web application
-description: Learn how to prepare your Microsoft Entra ID for customers tenant to sign in users and call an API in your Node.js web application. 
+description: Learn how to prepare your external tenant to sign in users and call an API in your Node.js web application. 
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
@@ -9,12 +9,12 @@ ms.subservice: customers
 ms.topic: how-to
 ms.date: 01/27/2024
 ms.custom: developer, devx-track-js
-#Customer intent: As a developer, devops or IT admin, I want to learn about how to configure my Microsoft Entra ID for customers tenant so that I can call a web API that is protected by Microsoft Entra ID for customers. 
+#Customer intent: As a developer, devops or IT admin, I want to learn about how to configure my external tenant so that I can call a web API that is protected by Microsoft Entra External ID. 
 ---
 
 # Prepare external tenant for calling an API in a Node.js web application
 
-In this article, you prepare your Microsoft Entra ID for customers tenant for authorization. This article is the first part of a four-part guide.
+In this article, you prepare your external tenant for authorization. This article is the first part of a four-part guide.
 
 ## Prerequisite
 
