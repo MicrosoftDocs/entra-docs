@@ -33,11 +33,11 @@ If you already have Microsoft Authenticator installed, you can skip this section
 
 - On iPhone, open the [App Store](https://support.apple.com/HT204266) app and search for **Microsoft Authenticator** and install the app.
 
-    ![Screenshot of Apple App Store.](media/using-authenticator/apple-appstore.png)
+    :::image type="content" source="media/using-authenticator/apple-appstore.png" alt-text="Screenshot of Apple App Store.":::
 
 - On Android, open the [Google Play](https://play.google.com/about/howplayworks/) app and search for **Microsoft Authenticator** and install the app.
 
-    ![Screenshot of Google Play.](media/using-authenticator/google-play.png)
+    :::image type="content" source="media/using-authenticator/google-play.png" alt-text="Screenshot of Google Play.":::
 
 ## Use the Microsoft Authenticator for the first time
 

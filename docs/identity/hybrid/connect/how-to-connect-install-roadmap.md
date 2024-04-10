@@ -5,7 +5,6 @@ description: This document provides an overview of the installation options and 
 author: billmath
 manager: amycolannino
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 03/26/2024

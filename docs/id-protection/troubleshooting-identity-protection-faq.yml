@@ -39,7 +39,7 @@ sections:
           
           ### Why can't I set my own risk levels for each risk detection?
 
-          Risk levels in ID Protection are based on the precision of the detection and powered by our supervised machine learning. To customize what experience users are presented, administrator can include/exclude certain users/groups from the User Risk and Sign-In Risk Policies.
+          Risk levels in ID Protection are based on the precision of the detection and powered by our supervised machine learning. To customize what experience users are presented, administrators can configure [risk-based Conditional Access policies](howto-identity-protection-configure-risk-policies.md).
 
           ### Why does the location of a sign-in not match where the user truly signed in from?
 

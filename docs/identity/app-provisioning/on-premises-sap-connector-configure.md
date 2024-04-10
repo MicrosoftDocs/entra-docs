@@ -13,7 +13,7 @@ ms.reviewer: arvinh
 ---
 
 # Configuring Microsoft Entra ID to provision users into SAP ECC with NetWeaver AS ABAP 7.0 or later
-The following documentation provides configuration and tutorial information demonstrating how to provision users from Microsoft Entra ID into SAP ERP Central Component (SAP ECC, formerly SAP R/3) with NetWeaver 7.0 or later. If you are using other versions such as SAP R/3, you can still use the guides provided in the [download center](https://www.microsoft.com/download/details.aspx?id=51495) as a reference to build your own template and configure provisioning.   
+The following documentation provides configuration and tutorial information demonstrating how to provision users from Microsoft Entra ID into SAP ERP Central Component (SAP ECC, formerly SAP R/3) with NetWeaver 7.0 or later. If you are using other versions of SAP R/3, you can still use the guides provided in the [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) download as a reference to build your own template for provisioning. If you are using SAP S/4HANA or other SAP SaaS applications, follow the [tutorial to configure SAP Cloud Identity Services for automatic user provisioning](~/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md) instead. For more information on the SAP integrations, see [manage access to your SAP applications](~/id-governance/sap.md).
 
 
 [!INCLUDE [app-provisioning-sap.md](~/includes/app-provisioning-sap.md)]
@@ -21,4 +21,4 @@ The following documentation provides configuration and tutorial information demo
 ## Next steps
 
 - [App provisioning](user-provisioning.md)
-- [Tutorial: ECMA Connector Host generic SQL connector](tutorial-ecma-sql-connector.md)
+- [Manage access to your SAP applications](~/id-governance/sap.md)

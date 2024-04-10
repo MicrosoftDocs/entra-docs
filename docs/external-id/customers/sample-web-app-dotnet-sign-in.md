@@ -33,6 +33,10 @@ This how-to guide uses a sample ASP.NET web application to show the fundamentals
 
 [!INCLUDE [ciam-redirect-url-dotnet](./includes/register-app/add-platform-redirect-url-dotnet.md)]
 
+## Enable implicit and hybrid flows
+
+[!INCLUDE [ciam-enable-implicit-flow](./includes/register-app/enable-implicit-hybrid-flows.md)]
+
 ## Add app client secret
 
 [!INCLUDE [ciam-add-client-secret](./includes/register-app/add-app-client-secret.md)]
@@ -83,7 +87,7 @@ To get the web app sample code, you can do either of the following tasks:
 
 1. Open your web browser and navigate to `https://localhost:7274`.
 
-1. Sign-in with an account registered to the customer tenant.
+1. Sign-in with an account registered to the external tenant.
 
 1. Once signed in the display name is shown next to the **Sign out** button as shown in the following screenshot.
 

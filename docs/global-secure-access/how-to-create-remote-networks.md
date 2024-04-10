@@ -1,14 +1,15 @@
 ---
-title: How to create remote networks for Global Secure Access (preview)
+title: How to create remote networks
 description: Learn how to create remote networks, such as branch office locations, for Global Secure Access (preview).
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 03/01/2024
+ms.date: 03/22/2024
 ms.service: global-secure-access
+# Customer intent: As an IT admin, I need to be able to create a remote network for a remote office so that my organization can connect to the Global Secure Access service.
 ---
-# How to create a remote network
+# How to create a remote network with Global Secure Access (preview)
 
 Remote networks are remote locations, such as a branch office, or networks that require internet connectivity. Setting up remote networks connects your users in remote locations to Global Secure Access (preview). Once a remote network is configured, you can assign a traffic forwarding profile to manage your corporate network traffic. Global Secure Access provides remote network connectivity so you can apply network security policies to your outbound traffic. 
 
@@ -23,7 +24,7 @@ To configure remote networks, you must have:
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
-- Customer premises equipment (CPE) must support the protocols.
+- Customer premises equipment (CPE) must support the following protocols:
     - Internet Protocol Security (IPSec)
     - GCMEAES128, GCMAES 192, or GCMAES256 algorithms for Internet Key Exchange (IKE) phase 2 negotiation
     - Internet Key Exchange Version 2 (IKEv2)
@@ -71,9 +72,9 @@ The first step is to provide the name and location of your remote network. Compl
 
 ### Connectivity
 
-The connectivity tab is where you add the device links for the remote network. You need to provide the device type, public IP address of your CPE, border gateway protocol (BGP) address, and autonomous system number (ASN) for each device link. You can also add device links after creating the remote network.
+The connectivity tab is where you add the device links for the remote network. You can add device links *after* creating the remote network. You need to provide the device type, public IP address of your CPE, border gateway protocol (BGP) address, and autonomous system number (ASN) for each device link. 
 
-This process is covered in detail in the [How to manage remote network device links](how-to-manage-remote-network-device-links.md).
+The details required to complete this tab can be complex, so this process is covered in detail in the [How to manage remote network device links](how-to-manage-remote-network-device-links.md).
 
 ![Screenshot of the general tab of the create device link process.](media/how-to-create-remote-networks/add-device-link.png)
 
@@ -173,13 +174,14 @@ There are a few things to consider and verify when creating remote networks. You
 - **Verify pre shared key**: Compare the pre shared key (PSK) you specified when creating the device link in Microsoft Global Secure Access with the PSK you specified on your CPE. This detail is added on the **Security** tab during the **Add a link** process. For more information, see [How to manage remote network device links.](how-to-manage-remote-network-device-links.md#add-a-link---security-tab).
 
 - **Verify local and peer BGP IP addresses**: The public IP and BGP address you use to configure the CPE must match what you use when you create a device link in Microsoft Global Secure Access.
+    - Refer to the [valid BGP addresses](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.
     - The local and peer BGP addresses are reversed between the CPE and what is entered in Global Secure Access.
         - **CPE**: Local BGP IP address = IP1, Peer BGP IP address = IP2
         - **Global Secure Access**: Local BGP IP address = IP2, Peer BGP IP address = IP1
     - Choose an IP address for Global Secure Access that doesn't overlap with your on-premises network.
-    - The same rule applies to Autonomous System Number (ASN).
 
 - **Verify ASN**: Global Secure Access uses BGP to advertise routes between two autonomous systems: your network and Microsoft's. These autonomous systems should have different Autonomous System Numbers (ASNs).
+    - Refer to the [valid ASN values](reference-remote-network-configurations.md#valid-asn) list for reserved values that can't be used.
     - When creating a remote network in the Microsoft Entra admin center, use your network's ASN.
     - When configuring your CPE, use Microsoft's ASN. Go to **Global Secure Access** > **Devices** > **Remote Networks**. Select **Links** and confirm the value in the **Link ASN** column.
 

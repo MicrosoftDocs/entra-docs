@@ -47,18 +47,18 @@ additionalContent:
       items:
         # Card
         - title: Overview
-          summary: Learn basic customer tenant concepts and processes.
+          summary: Learn basic external tenant concepts and processes.
           url: ./customers/overview-customers-ciam.md
         # Card
         - title: 30-day free trial
-          summary: Set up your customer tenant free trial.
+          summary: Set up your external tenant free trial.
           url: ./customers/quickstart-trial-setup.md
         # Card
         - title: Planning for customer identity and access management 
-          summary: Plan your customer tenant journey.
+          summary: Plan your external tenant journey.
           url: ./customers/concept-planning-your-solution.md
           # Card
-        - title: Code samples for customer tenants
+        - title: Code samples for external tenants
           summary: Learn about our code samples for customer identity and access management (CIAM) in Microsoft Entra External ID.
           url: ./customers/samples-ciam-all.md
           # Card
@@ -95,7 +95,7 @@ additionalContent:
         - title: Self-service sign-up
           summary: Learn about the self-service sign-up user flow. 
           url: ./self-service-sign-up-overview.md 
-    - title: Quickstarts by app type in the customer tenant 
+    - title: Quickstarts by app type in the external tenant 
       items:
         # Card
         - title: Single-page app (SPA)
