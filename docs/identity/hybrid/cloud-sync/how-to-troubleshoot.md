@@ -5,7 +5,7 @@ author: billmath
 ms.author: billmath
 manager: amycolannino
 ms.date: 11/06/2023
-ms.topic: how-to
+ms.topic: troubleshooting
 ms.service: entra-id
 ms.subservice: hybrid-cloud-sync
 ---
@@ -37,7 +37,7 @@ To verify that Azure detects the agent, and that the agent is healthy, follow th
 
 ### Verify the required open ports
 
-Verify that the Microsoft Entra Provisioning Agent is able to communicate successfully with Azure datacenters. If there's a firewall in the path, make sure that the following ports to outbound traffic are open:
+Verify that the Microsoft Entra provisioning agent is able to communicate successfully with Azure datacenters. If there's a firewall in the path, make sure that the following ports to outbound traffic are open:
 
 | Port number | How it's used |
 | ----------- | ------------------------------------------------------------ |
@@ -171,9 +171,11 @@ By default, the scoping rules exclude the following objects from being synchroni
 
 Additional restrictions can be present in the [synchronization schema](concept-attributes.md).
 
-#### Microsoft Entra ID object deletion threshold
+<a name='microsoft-entra-id-object-deletion-threshold'></a>
 
-If you have an implementation topology with Microsoft Entra Connect and Microsoft Entra Cloud Sync, both exporting to the same Microsoft Entra ID Tenant, or if you completely moved from using Microsoft Entra Connect to Microsoft Entra Cloud Sync, you might get the following export error message when you're deleting or moving multiple objects out of the defined scope:
+#### Microsoft Entra object deletion threshold
+
+If you have an implementation topology with Microsoft Entra Connect and Microsoft Entra Cloud Sync, both exporting to the same Microsoft Entra tenant, or if you completely moved from using Microsoft Entra Connect to Microsoft Entra Cloud Sync, you might get the following export error message when you're deleting or moving multiple objects out of the defined scope:
 
 ![Screenshot that shows the export error.](media/how-to-troubleshoot/log-4.png)
 
@@ -184,7 +186,7 @@ If you don't have a Microsoft Entra Connect server installed from which you coul
 Disable-AADCloudSyncToolsDirSyncAccidentalDeletionPrevention -tenantId "340ab039-c6b1-48a5-9ba7-28fe88f83980"
 ```
 
-During the next provisioning cycle, the objects that were marked for deletion should be deleted from the Azure AD directory successfully.
+During the next provisioning cycle, the objects that were marked for deletion should be deleted from the Microsoft Entra directory successfully.
 
 ## Provisioning quarantined problems
 

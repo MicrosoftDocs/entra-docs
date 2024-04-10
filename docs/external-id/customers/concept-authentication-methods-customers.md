@@ -7,7 +7,7 @@ manager: celestedg
 ms.service: entra-external-id
  
 ms.subservice: customers
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 05/31/2023
 ms.author: mimart
 ms.custom: it-pro
@@ -48,9 +48,9 @@ When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-
 
 ## Social identity providers: Facebook and Google
 
-For an optimal sign-in experience, federate with social identity providers whenever possible so you can give your customers a seamless sign-up and sign-in experience. In a customer tenant, you can allow a customer to sign up and sign in using their own Facebook or Google account. When a customer signs up for your app using their social account, the social identity provider creates, maintains, and manages identity information while providing authentication services to applications.
+For an optimal sign-in experience, federate with social identity providers whenever possible so you can give your customers a seamless sign-up and sign-in experience. In an external tenant, you can allow a customer to sign up and sign in using their own Facebook or Google account. When a customer signs up for your app using their social account, the social identity provider creates, maintains, and manages identity information while providing authentication services to applications.
 
-When you enable social identity providers, customers can select from the social identity providers options you've made available on the sign-up page. To set up social identity providers in your customer tenant, you create an application at the identity provider and configure credentials. You obtain a client or app ID and a client or app secret, which you can then add to your customer tenant.
+When you enable social identity providers, customers can select from the social identity providers options you've made available on the sign-up page. To set up social identity providers in your external tenant, you create an application at the identity provider and configure credentials. You obtain a client or app ID and a client or app secret, which you can then add to your external tenant.
 
 ### Google sign-in
 

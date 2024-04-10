@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 03/15/2024
 ms.author: jfields
 ---
 
@@ -65,5 +65,4 @@ This article describes how you can attach and detach permissions for users, role
 
 ## Next steps
 
-- To revoke high-risk and unused tasks or assign read-only status for Microsoft Azure and Google Cloud Platform (GCP) identities, see [Revoke high-risk and unused tasks or assign read-only status for Azure and GCP identities](how-to-revoke-task-readonly-status.md)
-To create or approve a request for permissions, see [Create or approve a request for permissions](how-to-create-approve-privilege-request.md).
+- To create or approve a request for permissions, see [Create or approve a request for permissions](how-to-create-approve-privilege-request.md).

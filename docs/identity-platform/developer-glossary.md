@@ -4,11 +4,11 @@ description: Definitions of terms commonly found in Microsoft identity platform 
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.date: 03/15/2023
+ms.date: 03/20/2024
 ms.reviewer:
 ms.service: identity-platform
 
-ms.topic: reference
+ms.topic: glossary
 #Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand the terminology and concepts related to authentication and authorization, so that I can effectively implement secure access to protected resources in my application.
 ---
 
@@ -225,7 +225,7 @@ A type of [client application](#client-application) that downloads code from a w
 
 ## User principal
 
-Similar to the way a service principal object is used to represent an application instance, a user principal object is another type of security principal, which represents a user. The Microsoft Graph [User resource type][Graph-User-Resource] defines the schema for a user object, including user-related properties like first and last name, user principal name, directory role membership, etc. This provides the user identity configuration for Microsoft Entra ID to establish a user principal at run-time. The user principal is used to represent an authenticated user for single sign-on, recording [consent](#consent) delegation, making access control decisions, etc.
+Similar to the way a service principal object is used to represent an application instance, a user principal object is another type of security principal, which represents a user. The Microsoft Graph [`User` resource type][Graph-User-Resource] defines the schema for a user object, including user-related properties like first and last name, user principal name, directory role membership, etc. This provides the user identity configuration for Microsoft Entra ID to establish a user principal at run-time. The user principal is used to represent an authenticated user for single sign-on, recording [consent](#consent) delegation, making access control decisions, etc.
 
 ## Web client
 

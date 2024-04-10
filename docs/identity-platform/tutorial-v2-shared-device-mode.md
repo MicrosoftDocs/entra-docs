@@ -4,7 +4,6 @@ description: In this tutorial, you learn how to prepare an Android device to run
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:
 ms.date: 10/24/2023
 ms.reviewer: negoe
 ms.service: identity-platform
@@ -205,7 +204,7 @@ private void onSignOutClicked()
 
 ### Receive broadcast to detect global sign out initiated from other applications
 
-To receive the account change broadcast, you need to register a broadcast receiver.  It’s recommended to register your broadcast receiver via the [Context-registered receivers](https://developer.android.com/guide/components/broadcasts#context-registered-receivers).
+To receive the account change broadcast, you need to register a broadcast receiver.  It’s recommended to register your broadcast receiver via the [Context-registered receivers](https://developer.android.com/guide/components/broadcasts#context-registered-receivers).
 
 When an account change broadcast is received, immediately [get the signed in user and determine if a user has changed on the device](#get-the-signed-in-user-and-determine-if-a-user-has-changed-on-the-device). If a change is detected, initiate data cleanup for previously signed-in account. It's recommended to properly stop any operations and do data cleanup.
 
@@ -215,16 +214,16 @@ The following code snippet shows how you could register a broadcast receiver.
 private static final String CURRENT_ACCOUNT_CHANGED_BROADCAST_IDENTIFIER = "com.microsoft.identity.client.sharedmode.CURRENT_ACCOUNT_CHANGED";
 private BroadcastReceiver mAccountChangedBroadcastReceiver;
 private void registerAccountChangeBroadcastReceiver(){
-    mAccountChangedBroadcastReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            //INVOKE YOUR PRIOR ACCOUNT CLEAN UP LOGIC HERE      
-        }
-    };
-    IntentFilter filter = new
+    mAccountChangedBroadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            //INVOKE YOUR PRIOR ACCOUNT CLEAN UP LOGIC HERE
+        }
+    };
+    IntentFilter filter = new
 
     IntentFilter(CURRENT_ACCOUNT_CHANGED_BROADCAST_IDENTIFIER);
-    this.registerReceiver(mAccountChangedBroadcastReceiver, filter);
+    this.registerReceiver(mAccountChangedBroadcastReceiver, filter);
 }
 ```
 

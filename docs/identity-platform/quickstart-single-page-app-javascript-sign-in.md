@@ -1,11 +1,11 @@
 ---
-title: "Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript"
+title: "Quickstart: Sign in to a SPA & call an API - JavaScript"
 description: In this quickstart, learn how a JavaScript single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow.
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.date: 01/31/2024
+ms.date: 03/05/2024
 ms.reviewer: OwenRichards1
 ms.service: identity-platform
 
@@ -38,16 +38,17 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 - To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
     ```console
-    git clone https://github.com/Azure-Samples/ms-identity-javascript-tutorial
+    git clone https://github.com/Azure-Samples/ms-identity-docs-code-javascript.git
     ```
-- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
+
+- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
 ## Configure the project
 
-1. In your IDE, open the project folder, *ms-identity-javascript-tutorial*, containing the sample.
-1. Open *1-Authentication/1-sign-in/App/authConfig.js* and update the following values with the information recorded earlier in the admin center.
+1. In your IDE, open the project folder, *ms-identity-docs-code-javascript*, containing the sample.
+1. Open *vanillajs-spa/App/public/authConfig.js* and update the following values with the information recorded earlier in the admin center.
 
-    :::code language="JavaScript" source="~/../ms-identity-docs-code-javascript/js-spa/App/authConfig.js":::
+    :::code language="JavaScript" source="~/../ms-identity-docs-code-javascript/vanillajs-spa/App/public/authConfig.js":::
 
     * `clientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the **Application (client) ID** value that was recorded earlier.
     * `authority` - The authority is a URL that indicates a directory that MSAL can request tokens from. Replace *Enter_the_Tenant_Info_Here* with the **Directory (tenant) ID** value that was recorded earlier.
@@ -68,7 +69,7 @@ Run the project with a web server by using Node.js:
 1. Follow the steps and enter the necessary details to sign in with your Microsoft account. You'll be requested an email address so a one time passcode can be sent to you. Enter the code when prompted.
 1. The application will request permission to maintain access to data you have given it access to, and to sign you in and read your profile. Select **Accept**. The following screenshot appears, indicating that you have signed in to the application and have accessed your profile details from the Microsoft Graph API.
 
-    :::image type="content" source="./media/quickstarts/js-spa/quickstart-js-spa-sign-in.png" alt-text="Screenshot of JavaScript App depicting the results of the API call.":::
+    :::image type="content" source="./media/quickstarts/js-spa/quickstart-js-spa-sign-in.png" alt-text="Screenshot of JavaScript App depicting the results of the API call." lightbox="./media/quickstarts/js-spa/quickstart-js-spa-sign-in.png":::
 
 ## Sign out from the application
 
@@ -81,4 +82,4 @@ A message appears indicating that you have signed out. You can now close the bro
 
 - [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](./quickstart-web-api-aspnet-core-protect-api.md).
 
-- Learn more by building this JavaScript SPA from scratch with the following series - [Tutorial: Sign in users and call Microsoft Graph](./tutorial-v2-javascript-spa.md)
+- Learn more by building this JavaScript SPA from scratch with the following series - [Tutorial: Sign in users and call Microsoft Graph](./tutorial-v2-javascript-auth-code.md)

@@ -9,7 +9,7 @@ ms.custom: scenarios:getting-started, "languages:js", devx-track-js, mode-api
 ms.date: 08/16/2022
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: quickstart
 #Customer intent: As an application developer, I want to know how to set up authentication in a web application built using Node.js and MSAL Node.
 ---
 # Quickstart: Sign in users and get an access token in a Node.js web app using the authorization code flow
@@ -36,7 +36,7 @@ ms.topic: conceptual
 > * [Node.js](https://nodejs.org/en/download/)
 > * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 > 
-> #### Step 1: Configure the application in Azure portal
+> #### Step 1: Configure the application in the Microsoft Entra admin center
 > For the code sample for this quickstart to work, you need to create a client secret and add the following reply URL: `http:/> /localhost:3000/redirect`.
 > 
 > <button id="makechanges" class="nextstepaction configure-app-button"> Make these changes for me </button>

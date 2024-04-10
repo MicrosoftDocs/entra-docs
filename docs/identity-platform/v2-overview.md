@@ -4,7 +4,7 @@ description: Learn about the components of the Microsoft identity platform and h
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.date: 11/10/2023
+ms.date: 03/20/2024
 ms.reviewer: saeeda, dmwendia
 ms.service: identity-platform
 
@@ -28,7 +28,7 @@ There are several components that make up the Microsoft identity platform:
   - Social or local accounts, by using Azure AD B2C
   - Social or local customer accounts, by using Microsoft Entra External ID
   
-- **Open-source libraries**: Microsoft Authentication Library (MSAL) and support for other standards-compliant libraries. The open source MSAL libraries are recommended as they provide built-in support for conditional access scenarios, single sign-on (SSO) experiences for your users, built-in token caching support, and more. MSAL supports the different authorization grants and token flows used in different application types and scenarios.
+- **Open-source libraries**: Microsoft Authentication Library (MSAL) and support for other standards-compliant libraries. The open source MSAL libraries are recommended as they provide built-in support for Conditional Access scenarios, single sign-on (SSO) experiences for your users, built-in token caching support, and more. MSAL supports the different authorization grants and token flows used in different application types and scenarios.
 - **Microsoft identity platform endpoint** - The Microsoft identity platform endpoint is OIDC certified. It works with the Microsoft Authentication Libraries (MSAL) or any other standards-compliant library. It implements human readable scopes, in accordance with industry standards.
 - **Application management portal**: A registration and configuration experience in the Microsoft Entra admin center, along with the other application management capabilities.
 - **Application configuration API and PowerShell**: Programmatic configuration of your applications through the Microsoft Graph API and PowerShell so you can automate your DevOps tasks.

@@ -67,7 +67,7 @@ You can specify which built-in or custom attributes you want to include as claim
 
     :::image type="content" source="media/how-to-add-attributes-to-token/manage-claim-directory-schema.png" alt-text="Screenshot of the Directory schema extension option.":::
 
-1. In the **Select Application** pane, select **b2c-extensions-app** (the app that contains all extension attributes for your customer tenant), and then choose **Select**.
+1. In the **Select Application** pane, select **b2c-extensions-app** (the app that contains all extension attributes for your external tenant), and then choose **Select**.
 
     :::image type="content" source="media/how-to-add-attributes-to-token/edit-select-application.png" alt-text="Screenshot of the Select Application pane.":::
 
@@ -85,6 +85,7 @@ You can specify which built-in or custom attributes you want to include as claim
 1. Find the **allowPublicClient** key and set its value to **true**.
 1. Select **Save**.
 
-## Next steps
+## See also
 
-Learn more about [adding claims from custom claims providers](~/identity-platform/custom-extension-get-started.md).
+- [Create a REST API with a token issuance start event](~/identity-platform/custom-extension-tokenissuancestart-setup.md)
+- [Configure a custom claims provider for a token issuance event](~/identity-platform/custom-extension-tokenissuancestart-configuration.md)

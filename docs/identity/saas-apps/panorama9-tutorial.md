@@ -11,6 +11,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Panorama9 so that I can control who has access to Panorama9, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Tutorial: Microsoft Entra integration with Panorama9
 
@@ -81,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://www.panorama9.com/saml20/<TENANT_NAME>`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Sign on URL and Identifier. Contact [Panorama9 Client support team](https://support.panorama9.com/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Sign on URL and Identifier. Contact the Panorama9 Client support team `https://support.panorama9.com` to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 5. In the **SAML Signing Certificate** section, click **Edit** button to open **SAML Signing Certificate** dialog.
 

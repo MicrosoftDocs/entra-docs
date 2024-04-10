@@ -1,30 +1,27 @@
 ---
 title: Register an app in Microsoft Entra ID for customers
-description: Learn about how to register an app in the customer tenant.
- 
+description: Learn about how to register an app in the external tenant. 
 author: csmulligan
 ms.author: cmulligan
 manager: CelesteDG
-ms.service: entra-external-id
- 
+ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 07/12/2023
-
+ms.date: 02/29/2024
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about how to register an app on the Microsoft Entra admin center.
 ---
-# Register your app in the customer tenant
+# Register your app in the external tenant
 
 Microsoft Entra ID for customers enables your organization to manage customers’ identities, and securely control access to your public facing applications and APIs. Applications where your customers can buy your products, subscribe to your services, or access their account and data.  Your customers only need to sign in on a device or a web browser once and have access to all your applications you granted them permissions.
 
 To enable your application to sign in with External ID for customers, you need to register your app with External ID for customers. The app registration establishes a trust relationship between the app and External ID for customers.
 During app registration, you specify the redirect URI. The redirect URI is the endpoint to which users are redirected by External ID for customers after they authenticate. The app registration process generates an application ID, also known as the client ID, that uniquely identifies your app.
 
-External ID for customers supports authentication for various modern application architectures, for example web app or single-page app. The interaction of each application type with the customer tenant is different, therefore, you must specify the type of application you want to register.
+External ID for customers supports authentication for various modern application architectures, for example web app or single-page app. The interaction of each application type with the external tenant is different, therefore, you must specify the type of application you want to register.
 
-In this article, you learn how to register an application in your customer tenant.
+In this article, you learn how to register an application in your external tenant.
 
 ## Prerequisites
 
@@ -42,7 +39,7 @@ The following steps show you how to register your SPA in the Microsoft Entra adm
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
 1. Browse to **Identity** > **Applications** > **App registrations**.
 
@@ -84,7 +81,7 @@ The following steps show you how to register your web app in the Microsoft Entra
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer). 
 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
 1. Browse to **Identity** > **Applications** > **App registrations**.
 
@@ -139,7 +136,7 @@ The following steps show you how to register your app in the Microsoft Entra adm
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer). 
 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
 1. Browse to **Identity** > **Applications** > **App registrations**.
 
@@ -172,7 +169,7 @@ If your mobile app needs to call an API, you must grant your mobile app API perm
 
 ### Grant API permissions
 
-A daemon app signs-in as itself using the [OAuth 2.0 client credentials flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md). You grant application permissions (app roles), which is required by apps that authenticate as themselves. You must also [register the web API](how-to-register-ciam-app.md?tabs=webapi) that your daemon app needs to call. 
+A daemon app signs in as itself using the [OAuth 2.0 client credentials flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md). You grant application permissions (app roles), which is required by apps that authenticate as themselves. You must also [register the web API](how-to-register-ciam-app.md?tabs=webapi) that your daemon app needs to call. 
 
 [!INCLUDE [register daemon app](../customers/includes/register-app/grant-api-permissions-app-permissions.md)]
 
@@ -186,6 +183,18 @@ A daemon app signs-in as itself using the [OAuth 2.0 client credentials flow](~/
 ### Create a client secret 
 [!INCLUDE [add app client secret](../customers/includes/register-app/add-app-client-secret.md)]
 
+# [Native authentication](#tab/nativeauthentication)
+## Register a native authentication application
+[!INCLUDE [register client app](../customers/includes/register-app/register-client-app-common.md)]
+
+### Add delegated permissions
+This app signs in users. You can add delegated permissions to it, by following the steps below:
+
+[!INCLUDE [grant permission for signing in users](../customers/includes/register-app/grant-api-permission-sign-in.md)]
+
+## Enable public client and native authentication flows
+
+[!INCLUDE [find the application ID](../customers/includes/native-auth/enable-native-authentication.md)] 
 ---
 
 [!INCLUDE [find the application ID](../customers/includes/register-app/find-application-id.md)] 
@@ -193,3 +202,5 @@ A daemon app signs-in as itself using the [OAuth 2.0 client credentials flow](~/
 ## Next steps
  
 - [Create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md)
+
+

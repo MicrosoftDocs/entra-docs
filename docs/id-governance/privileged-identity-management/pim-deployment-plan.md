@@ -159,7 +159,7 @@ First, ensure that all Global and Security admin roles are managed using PIM bec
 
 <a name='configure-pim-settings-for-azure-ad-roles'></a>
 
-You can use the Privileged label to identify roles with high privileges that you can manage with PIM. Privileged label is present on [**Roles and Administrator**](~/identity/role-based-access-control/privileged-roles-permissions.md?tabs=admin-center) in Microsoft Entra ID admin center. See the article, [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md) to learn more.
+You can use the Privileged label to identify roles with high privileges that you can manage with PIM. Privileged label is present on [**Roles and Administrator**](~/identity/role-based-access-control/privileged-roles-permissions.md?tabs=admin-center) in Microsoft Entra admin center. See the article, [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md) to learn more.
 
 ### Configure PIM settings for Microsoft Entra roles
 
@@ -305,7 +305,7 @@ You can [assign eligibility to members or owners of the PIM for Groups.](groups-
 >[!NOTE] 
 >You can assign the group to one or more Microsoft Entra ID and Azure resource roles in the same way as you assign roles to users. A maximum of 500 role-assignable groups can be created in a single Microsoft Entra organization (tenant).
 
-![Diagram of assign eligibility for PIM for Groups.](media/pim-deployment-plan/pim-for-groups.png)
+:::image type="content" source="media/pim-deployment-plan/pim-for-groups.png" alt-text="Diagram of assign eligibility for PIM for Groups.":::
 
 
 When group assignment nears its expiration, use [PIM to extend or renew the group assignment](groups-renew-extend.md). This operation requires group owner approval.

@@ -73,6 +73,8 @@ items:
         href: recommendation-migrate-from-adal-to-msal.md
       - name: Migrate apps from AD FS to Microsoft Entra ID
         href: recommendation-migrate-apps-from-adfs-to-azure-ad.md
+      - name: Migrate apps and service principals to Microsoft Graph
+        href: recommendation-migrate-to-microsoft-graph-api.md
       - name: Migrate from MFA server to Microsoft Entra MFA
         href: recommendation-migrate-to-microsoft-entra-mfa.md
       - name: Migrate to Microsoft authenticator
@@ -81,13 +83,13 @@ items:
         href: recommendation-turn-off-per-user-mfa.md
       - name: Minimize MFA prompts from known devices
         href: recommendation-mfa-from-known-devices.md
-      - name: Remove unused apps (preview)
+      - name: Remove unused apps
         href: recommendation-remove-unused-apps.md
-      - name: Remove unused credentials from apps (preview)
+      - name: Remove unused credentials from apps
         href: recommendation-remove-unused-credential-from-apps.md
-      - name: Renew expiring application credentials (preview)
+      - name: Renew expiring application credentials
         href: recommendation-renew-expiring-application-credential.md
-      - name: Renew expiring service principal credentials (preview)
+      - name: Renew expiring service principal credentials
         href: recommendation-renew-expiring-service-principal-credential.md
   - name: Workbooks
     expanded: false
@@ -136,20 +138,20 @@ items:
 - name: Common troubleshooting scenarios
   expanded: false
   items:
-  - name: Manage inactive user accounts in Microsoft Entra ID
-    href: howto-manage-inactive-user-accounts.md
-  - name: View applied Conditional Access policies
-    href: how-to-view-applied-conditional-access-policies.md
+  - name: Bulk changes to UserPrincipalName triggered by verified domain change
+    href: troubleshoot-audit-data-verified-domain.md
   - name: Flagged sign-ins
     href: overview-flagged-sign-ins.md
+  - name: Manage inactive user accounts in Microsoft Entra ID
+    href: howto-manage-inactive-user-accounts.md
   - name: Sign-in diagnostic
     href: howto-use-sign-in-diagnostics.md
   - name: Sign-in diagnostics scenarios
     href: concept-sign-in-diagnostics-scenarios.md
-  - name: Troubleshoot sign-in errors for a user
+  - name: Sign-in errors for a user
     href: howto-troubleshoot-sign-in-errors.md
-  - name: Audit data on verified domain change
-    href: troubleshoot-audit-data-verified-domain.md
+  - name: View applied Conditional Access policies
+    href: how-to-view-applied-conditional-access-policies.md
 
 - name: Reference
   expanded: false

@@ -1,13 +1,12 @@
 ---
 title: Access Microsoft Entra application proxy apps in Teams
 description: Use Microsoft Entra application proxy to access your on-premises application through Microsoft Teams.
-
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/06/2024
+ms.date: 02/27/2024
 ms.author: kenwith
 ms.reviewer: harshja
 ---
@@ -20,13 +19,13 @@ Your users can add cloud apps to their Teams channels [using tabs](https://suppo
 
 ## Install the application proxy connector and publish your app
 
-If you haven't already, [configure application proxy for your tenant and install the connector](~/identity/app-proxy/application-proxy-add-on-premises-application.md). Then, publish your on-premises application for remote access. Make note of the external URL because it's used to add the app to Teams.
+If you haven't already, [configure application proxy for your tenant and install the connector](~/identity/app-proxy/application-proxy-add-on-premises-application.md). Then, publish your on-premises application for remote access. Make note of the external URL because you use it to add the app to Teams.
 
 If you already have your apps published but don't remember their external URLs, look them up in the [Microsoft Entra admin center](https://entra.microsoft.com). Sign in, then browse to **Identity** > **Applications** > **Enterprise applications** > select your app > **Application proxy**.
 
 ## Add your app to Teams
 
-Once you publish the app through application proxy, let your users know that they can add it as a tab directly in their Teams channels, and then the app is available for everyone in the team to use. Have them follow these three steps:
+Let users know they add it as a tab directly in their Teams channels. The app is available for everyone in the team to use.
 
 1. Navigate to the Teams channel where you want to add this app and select **+** to add a tab.
 

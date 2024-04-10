@@ -7,7 +7,7 @@ manager: celestedg
 ms.service: entra-external-id
  
 ms.subservice: customers
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 01/18/2024
 ms.author: mimart
 ms.custom: it-pro
@@ -19,7 +19,7 @@ ms.custom: it-pro
 The integration of customer capabilities into Microsoft Entra ID means that your customer scenarios benefit from the advanced security and governance features available in Microsoft Entra ID. Your customers are able to self-service register for your applications using their preferred authentication methods, including social accounts through identity providers like Google and Facebook. And you can use features like multifactor authentication, Conditional Access, and Identity Protection to mitigate threats and detect risks.
 
 > [!NOTE]
-> In Conditional Access, MFA, and Identity Protection aren't available in free trial customer tenants.
+> In Conditional Access, MFA, and Identity Protection aren't available in free trial external tenants.
 
 ## Conditional Access
 
@@ -30,7 +30,7 @@ Conditional Access policies are enforced after the user has completed first-fact
 > [!TIP]
 > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CA)
 > 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Conditional Access and Multifactor authentication” use case.
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Conditional Access and multifactor authentication” use case.
 
 ## Multifactor authentication
 
@@ -43,7 +43,7 @@ Microsoft Entra multifactor authentication helps safeguard access to data and ap
 For details, see [how to enable multifactor authentication](how-to-multifactor-authentication-customers.md).
 ## Identity protection
 
-Microsoft Entra [Identity Protection](~/id-protection/overview-identity-protection.md) provides ongoing risk detection for your customer tenant. It allows you to discover, investigate, and remediate identity-based risks. Identity Protection allows organizations to accomplish three key tasks:
+Microsoft Entra [Identity Protection](~/id-protection/overview-identity-protection.md) provides ongoing risk detection for your external tenant. It allows you to discover, investigate, and remediate identity-based risks. Identity Protection allows organizations to accomplish three key tasks:
 
 - Automate the detection and remediation of identity-based risks.
 
@@ -51,7 +51,7 @@ Microsoft Entra [Identity Protection](~/id-protection/overview-identity-protecti
 
 - Export risk detection data to other tools.
 
-Identity Protection comes with risk reports that can be used to investigate identity risks in customer tenants. For details, see [Investigate risk with Identity Protection in Microsoft Entra ID for customers](how-to-identity-protection-customers.md).
+Identity Protection comes with risk reports that can be used to investigate identity risks in external tenants. For details, see [Investigate risk with Identity Protection in Microsoft Entra ID for customers](how-to-identity-protection-customers.md).
 
 ## Analyze user authentication trends for your apps
 

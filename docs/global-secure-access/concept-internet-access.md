@@ -4,8 +4,8 @@ description: Learn about how Microsoft Entra Internet Access secures access to t
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
-ms.topic: how-to
-ms.date: 11/02/2023
+ms.topic: conceptual
+ms.date: 02/29/2024
 ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
@@ -18,7 +18,7 @@ Microsoft Entra Internet Access provides an identity-centric Secure Web Gateway 
 
 ## Web content filtering
 
-The key introductory feature for Microsoft Entra Internet Access for all apps is **Web content filtering**. This feature provides granular access control for web categories and FQDNs. By explicitly blocking known inappropriate, malicious, or unsafe sites, you protect your users and their devices from any Internet connection whether they're remote or within the corporate network.
+The key introductory feature for Microsoft Entra Internet Access for all apps is **Web content filtering**. This feature provides granular access control for web categories and Fully Qualified Domain Names (FQDNs). By explicitly blocking known inappropriate, malicious, or unsafe sites, you protect your users and their devices from any Internet connection whether they're remote or within the corporate network.
 
 Web content filtering is implemented using filtering policies, which are grouped into security profiles, which can be linked to Conditional Access policies. To learn more about Conditional Access, see [Microsoft Entra Conditional Access](/azure/active-directory/conditional-access/).
 
@@ -39,7 +39,7 @@ Within a security profile, policies are enforced according to priority ordering 
 Once you link a security profile to a Conditional Access (CA) policy, if multiple CA policies match, both security profiles are processed in priority ordering of the matching security profiles.
 
 > [!IMPORTANT]
-> If you create a security profile with priority 65,000 then it will apply to all traffic even without linking it to a Conditional Access policy. This can be used to create a baseline policy applying to all Internet Access traffic routed through the service.
+> The baseline security profile applies to all traffic even without linking it to a Conditional Access policy. It enforces policy at the lowest priority in the policy stack, applying to all Internet Access traffic routed through the service as a 'catch-all' policy.
 
 ## Next steps
 

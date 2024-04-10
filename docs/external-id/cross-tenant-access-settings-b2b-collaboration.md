@@ -4,7 +4,7 @@ description: Use cross-tenant collaboration settings to manage how you collabora
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/24/2024
+ms.date: 03/26/2024
 
 ms.author: mimart
 author: msmimart
@@ -171,7 +171,18 @@ With inbound settings, you select which external users and groups are able to ac
 
 1. Select **Save**.
 
-### Configure redemption order (Preview)
+### Add the Microsoft Admin Portals app to B2B collaboration
+
+You can't directly add the [Microsoft Admin Portals app](/entra/identity/conditional-access/concept-conditional-access-cloud-apps#microsoft-admin-portals) to the inbound and outbound cross-tenant access settings in the Microsoft Entra admin center. However, you can add the apps listed below individually by using the [Microsoft Graph API](/graph/api/crosstenantaccesspolicy-post-partners).
+
+The following apps are part of the Microsoft Admin Portals app group: 
+- Azure Portal (c44b4083-3bb0-49c1-b47d-974e53cbdf3c)
+- Microsoft Entra Admin Center (c44b4083-3bb0-49c1-b47d-974e53cbdf3c)
+- Microsoft 365 Defender Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775)
+- Microsoft Intune Admin Center (80ccca67-54bd-44ab-8625-4b79c4dc7775)
+- Microsoft Purview Compliance Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775)
+
+### Configure redemption order
 
 To customize the order of identity providers that your guest users can use to sign in when they accept your invitation, follow these steps.
 
@@ -201,7 +212,7 @@ You can also customize the redemption order via the Microsoft Graph API.
    GET https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/default
    ```
 
-1. In this example, we'll move the SAML/WS-Fed IdP federation to the top of the redemption order above Azure AD identity provider. Patch the same URI with this request body:
+1. In this example, we'll move the SAML/WS-Fed IdP federation to the top of the redemption order above Microsoft Entra identity provider. Patch the same URI with this request body:
 
    ```http
    {
@@ -230,12 +241,14 @@ You can also customize the redemption order via the Microsoft Graph API.
       }
    ```
 
-### SAML/WS-Fed federation (Direct federation) for Azure AD verified domains (Preview)
+<a name='samlws-fed-federation-direct-federation-for-azure-ad-verified-domains-preview'></a>
 
-You can now add your enlisted Azure AD verified domain to set up the direct federation relationship. First you need to set up the Direct federation configuration in the [admin center](direct-federation.md) or via the [API](/graph/api/resources/samlorwsfedexternaldomainfederation). Make sure that the domain isn't verified in the same tenant. 
-Once the configuration is set up, you can customize the redemption order. The SAML/WS-Fed IdP is added to the redemption order as the last entry. You can move it up in the redemption order to set it above Azure Active Directory identity provider.
+### SAML/WS-Fed federation (Direct federation) for Microsoft Entra ID verified domains
 
-### Prevent your B2B users from redeeming an invite using Microsoft accounts (Preview)
+You can now add your enlisted Microsoft Entra ID verified domain to set up the direct federation relationship. First you need to set up the Direct federation configuration in the [admin center](direct-federation.md) or via the [API](/graph/api/resources/samlorwsfedexternaldomainfederation). Make sure that the domain isn't verified in the same tenant. 
+Once the configuration is set up, you can customize the redemption order. The SAML/WS-Fed IdP is added to the redemption order as the last entry. You can move it up in the redemption order to set it above Microsoft Entra identity provider.
+
+### Prevent your B2B users from redeeming an invite using Microsoft accounts
 
 To prevent your B2B guest users from redeeming their invite using their existing Microsoft accounts or creating a new one to accept the invitation, follow the steps below.
 

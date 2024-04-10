@@ -5,7 +5,7 @@ description: Learn how to enforce multifactor authentication policies for Micros
  
 ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 02/05/2024
 
 ms.author: mimart
@@ -154,6 +154,8 @@ Fabrikam must have sufficient premium Microsoft Entra ID licenses that support M
 #### Microsoft Entra multifactor authentication reset (proof up) for B2B collaboration users
 
 The following PowerShell cmdlets are available to *proof up* or request MFA registration from B2B collaboration users.
+
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 1. Connect to Microsoft Entra ID:
 

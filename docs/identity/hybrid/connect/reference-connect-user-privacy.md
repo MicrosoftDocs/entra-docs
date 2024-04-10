@@ -15,7 +15,7 @@ ms.author: billmath
 
 # User privacy and Microsoft Entra Connect 
 
-[!INCLUDE [Privacy](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]
+[!INCLUDE [Privacy](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]
 
 >[!NOTE] 
 >This article deals with Microsoft Entra Connect and user privacy.  For information on Microsoft Entra Connect Health and user privacy see the article [here](reference-connect-health-user-privacy.md).
