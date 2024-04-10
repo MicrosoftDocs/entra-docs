@@ -1204,7 +1204,6 @@ No functionalities are removed. The new PDF viewer adds functionality and the li
 
 ## February 2023
 
-
 ### General Availability - Follow Azure AD best practices with recommendations
 
 **Type:** New feature   
