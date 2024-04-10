@@ -25,7 +25,7 @@ The experiences and issues described in this article have the following scope.
 | In scope | - Microsoft Entra administrator experiences and issues related to multitenant organizations to support seamless collaboration experiences in new Teams, with reciprocally provisioned B2B members |
 | Related scope | - Microsoft 365 admin center experiences and issues related to multitenant organizations<br/>- Microsoft 365 multitenant organization people search experiences and issues<br/>- Cross-tenant synchronization issues related to Microsoft 365 |
 | Out of scope | - Cross-tenant synchronization unrelated to Microsoft 365<br/>- End user experiences in new Teams<br/>- End user experiences in Power BI<br/>- Tenant migration or consolidation |
-| Unsupported scenarios | - Seamless collaboration experience across multitenant organizations in classic Teams<br/>- Self-service for multitenant organizations larger than five tenants or 100,000 internal users per tenant<br/>- Multitenant organizations in Azure Government or Microsoft Azure operated by 21Vianet<br/>- Cross-cloud multitenant organizations |
+| Unsupported scenarios | - Seamless collaboration experience across multitenant organizations in classic Teams<br/>- Self-service for multitenant organizations larger than 100 tenants<br/>- Multitenant organizations in Azure Government or Microsoft Azure operated by 21Vianet<br/>- Cross-cloud multitenant organizations |
 
 ## Multitenant organization related issues
 
@@ -33,9 +33,9 @@ The experiences and issues described in this article have the following scope.
 
 - Allow for up to 4 hours between submission of a multitenant organization join request and the same join request to succeed and finish.
 
-- Self-service of multitenant organization functionality is limited to a maximum of five tenants and 100,000 internal users per tenant. To request a raise in these limits, submit a Microsoft Entra ID or Microsoft 365 admin center support request.
+- Self-service of multitenant organization functionality is limited to a maximum of 100 tenants. To request a raise in this limit, submit a Microsoft Entra ID or Microsoft 365 admin center support request.
 
-- In the Microsoft Graph APIs, the default limits of five tenants and 100,000 internal users per tenant are only enforced at the time of joining. In Microsoft 365 admin center, the default limits are enforced at multitenant organization creation time and at time of joining.
+- In the Microsoft Graph APIs, the default limit of 100 tenants is only enforced at the time of joining. In Microsoft 365 admin center, the default limit is enforced at multitenant organization creation time and at time of joining.
 
 - There are multiple reasons why a join request might fail. If Microsoft 365 admin center doesn't indicate why a join request isn't succeeding, try examining the join request response by using the Microsoft Graph APIs or Microsoft Graph Explorer.
 
