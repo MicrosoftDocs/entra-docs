@@ -5,7 +5,7 @@ author: markwahl-msft
 manager: amycolannino
 editor: markwahl-msft
 ms.service: entra-id-governance
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 04/10/2024
 ms.author: mwahl
 ms.reviewer: mwahl
@@ -15,24 +15,34 @@ ms.reviewer: mwahl
 
 SAP likely runs critical functions, such as HR and ERP, for your organization. At the same time, your organization relies on Microsoft for various Azure services or Microsoft 365. You can use Microsoft Entra to orchestrate the identities for your employees, contractors and others, and their access, across your SAP and non-SAP applications.
 
-This article describes how you can use Microsoft Entra features to manage identities across your SAP applications, based on properties of those identities originating from SAP HR sources. This tutorial assumes you are an administrator of a Microsoft Entra tenant in the commercial cloud with a license for at least Microsoft Entra ID P1 in that tenant.
+This article describes how you can use Microsoft Entra features to manage identities across your SAP applications, based on properties of those identities originating from SAP HR sources. This tutorial assumes
+
+* your organization has a Microsoft Entra tenant in the commercial cloud with a license for at least Microsoft Entra ID P1 in that tenant
+* you are an administrator of that tenant
+* your organization has SAP SuccessFactors, and optionally other system of record authoritative sources
+* your organization has SAP ECC, SAP S/4HANA or other SAP applications, and optionally other applications
 
 ## Overview
 
+This tutorial illustrates how to connect Microsoft Entra with authoritative sources for the list of workers in an organization, such as SAP SuccessFactors, use Microsoft Entra to set up identities for those workers, and then use Microsoft Entra to provide them with access to sign into one or more SAP applications, such as SAP ECC or SAP S/4HANA.
+
 The process is
- - Define the requirements for identities and access for these applications in your organization.
+ - Define the requirements for identities and access for applications in your organization.
  - Ensure Microsoft Entra ID and related Microsoft Online Services meet the organizational prerequisites for this scenario.
  - Bring the necessary users into Microsoft Entra ID and have a process to keep those users up-to-date with appropriate credentials.
  - Assign users with the necessary access rights in Microsoft Entra.
  - Provision users and their access rights to applications and enable them to sign in to those applications.
  - Monitor the identity flows to watch for errors, and to adjust policies and operations as needed.
 
-## Define the requirements for identities and access for these applications in your organization
+Once complete, then those individuals will be able to sign into SAP and non-SAP applications that they are authorized to use.
 
+:::image type="content" source="media/plan-sap-source-and-target/end-to-end-integrations.png" alt-text="Diagram showing end-to-end breadth of relevant Microsoft and SAP technologies and their integrations." lightbox="media/plan-sap-source-and-target/end-to-end-integration.png":::
+
+## Define the requirements for identities and access for applications in your organization
+
+Organizations with compliance requirements or risk management plans have sensitive or business-critical applications. If an application is an existing application in your environment, you may already have documented the access policies for who 'should have access' to this application. If not, you may need to consult with various stakeholders, such as compliance and risk management teams, to ensure that the policies being used to automate access decisions are appropriate for your scenario.  This section highlights the key decisions needed for integration with SAP applications. For non-SAP applications, see [define organizational policies for governing access to applications in your environment](~/id-governance/identity-governance-applications-define.md).
 
 ### Determine the sequence of application onboarding and how applications will integrate with Microsoft Entra
-
-Organizations with compliance requirements or risk management plans have sensitive or business-critical applications. If an application is an existing application in your environment, you may already have documented the access policies for who 'should have access' to this application. If not, you may need to consult with various stakeholders, such as compliance and risk management teams, to ensure that the policies being used to automate access decisions are appropriate for your scenario.
 
 1. **Establish a priority order for applications to be integrated with Microsoft Entra for single-sign on and for provisioning.**
 
@@ -83,9 +93,15 @@ Before you begin the process of provisioning business-critical application acces
 
 ## Bring the necessary users into Microsoft Entra ID and have a process to keep those users up-to-date with appropriate credentials
 
+:::image type="content" source="media/plan-sap-source-and-target/inbound-data-preparation.png" alt-text="Diagram showing Microsoft and SAP technologies relevant to bringing in data about workers to Microsoft Entra ID." lightbox="media/plan-sap-source-and-target/inbound-data-preparation.png":::
+
+
 ## Assign users with the necessary access rights in Microsoft Entra
 
 ## Provision users and their access rights to applications and enable them to sign in to those applications
+
+:::image type="content" source="media/plan-sap-source-and-target/outbound-provisioning-and-sso.png" alt-text="Diagram showing Microsoft and SAP technologies relevant to provisioning identities from Microsoft Entra ID." lightbox="media/plan-sap-source-and-target/outbound-provisioning-and-sso.png":::
+
 
 ## Monitor identity flows
 
@@ -103,11 +119,11 @@ Before you begin the process of provisioning business-critical application acces
 
 ### Identity Governance
 
-If you are using Microsoft Entra ID Governance, then you can report on how users are getting access.
+If you are using Microsoft Entra ID Governance, then you can report on how users are getting access using Microsoft ID Governance features.
 
 * An administrator, or a catalog owner, can [retrieve the list of users who have access package assignments](~/id-governance/entitlement-management-access-package-assignments.md), via the Microsoft Entra admin center, Graph or PowerShell.
 * You can also send the audit logs to Azure Monitor and view a history of [changes to the access package](~/id-governance/entitlement-management-logs-and-reporting.md#view-events-for-an-access-package), in the Microsoft Entra admin center, or via PowerShell.
-* For more information, see how to [monitor to adjust entitlement management policies and access as needed](~/id-governance/identity-governance-applications-deploy.md#monitor-to-adjust-entitlement-management-policies-and-access-as-needed).
+* For more information on these and other identity governance scenarios, see how to [monitor to adjust entitlement management policies and access as needed](~/id-governance/identity-governance-applications-deploy.md#monitor-to-adjust-entitlement-management-policies-and-access-as-needed).
 
 ## Next steps
 
