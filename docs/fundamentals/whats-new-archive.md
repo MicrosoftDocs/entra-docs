@@ -1206,24 +1206,7 @@ No functionalities are removed. The new PDF viewer adds functionality and the li
 
 ### General Availability - Follow Azure AD best practices with recommendations
 
-**Type:** New feature   
-**Service category:** Reporting                  
-**Product capability:** Monitoring & Reporting            
 
-Azure AD recommendations help you improve your tenant posture by surfacing opportunities to implement best practices. On a daily basis, Azure AD analyzes the configuration of your tenant. During this analysis, Azure AD compares the data of a recommendation with the actual configuration of your tenant. If a recommendation is flagged as applicable to your tenant, the recommendation appears in the Recommendations section of the Azure AD Overview. 
-
-This release includes our first 3 recommendations:
-
-- Convert from per-user MFA to Conditional Access MFA
-- Migration applications from AD FS to Azure AD
-- Minimize MFA prompts from known devices
-
-For more information, see: 
-
-- [What are Azure Active Directory recommendations?](~/identity/monitoring-health/overview-recommendations.md)
-- [Use the Azure AD recommendations API to implement Azure AD best practices for your tenant](/graph/api/resources/recommendations-api-overview)
-
----
 
 ### General Availability - More information on why a sign-in was flagged as "unfamiliar"
 
