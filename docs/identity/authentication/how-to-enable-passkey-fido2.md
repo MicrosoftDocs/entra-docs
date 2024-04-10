@@ -77,7 +77,7 @@ The FIDO2 specification requires each security key vendor to provide an Authenti
 
 There are two ways to get your AAGUID. You can either ask your security key or passkey provider vendor, or view the authentication method details of the key per user.
 
-![View AAGUID for passkey](media/howto-authentication-passwordless-deployment/security-key-aaguid-details.png)
+![Screenshot of View AAGUID for passkey](media/howto-authentication-passwordless-deployment/security-key-aaguid-details.png)
 
 ### Enable passkeys using Microsoft Graph API
 
@@ -128,7 +128,7 @@ To remove a passkey associated with a user account, delete the key from the user
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and search for the user account from which the passkey is to be removed.
 1. Select **Authentication methods** > right-click **Passkey (device-bound)** and select **Delete**. 
 
-    ![View Authentication Method details](media/howto-authentication-passwordless-deployment/security-key-view-details.png)
+    ![Screenshot of View Authentication Method details](media/howto-authentication-passwordless-deployment/security-key-view-details.png)
 
 ## Enforce passkey sign-in 
 

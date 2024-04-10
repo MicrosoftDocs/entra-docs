@@ -41,8 +41,6 @@ Authenticator is a free passkey solution that lets users do passwordless phishin
 
 [!INCLUDE [Passkey roll out](~/includes/entra-authentication-passkey.md)]
 
-<!---Add authapp passkey screenshot--->
-
 ### Device-bound passkey
 
 Passkeys in the Authenticator app are device-bound to ensure that they never leave the device they were created on. On an iOS device, Authenticator uses the Secure Enclave to create the passkey. On Android, we create the passkey in the Secure Element on devices that support it, or fall back to the Trusted Execution Environment (TEE).

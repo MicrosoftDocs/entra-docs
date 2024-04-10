@@ -24,7 +24,7 @@ This article shows how to register a passkey using a security key with your iOS 
 > [!NOTE]
 > Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys. We are investing in both synced and device-bound passkeys for work accounts.
 
-# [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
+# [**iOS**](#tab/iOS)
 
 ## Register a security key with iOS 
 
@@ -32,7 +32,7 @@ This article shows how to register a passkey using a security key with your iOS 
    
 1. Tap **+ Add sign-in method**.
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-add-method.png" alt-text="Screenshot of the Security Info screen showing add methods":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-add-method.png" alt-text="Screenshot of the Security Info screen showing add methods.":::
 
 1. Select **Passkey (preview)**.
 
@@ -48,18 +48,18 @@ This article shows how to register a passkey using a security key with your iOS 
 
 1. Select **Next**. 
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-start.png" alt-text="Screenshot of starting passkey registration":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-start.png" alt-text="Screenshot of starting passkey registration.":::
 
 1. Your device opens a security window. Choose **Other Options**. 
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-save-another-way.png" alt-text="Screenshot of where to save a passkey on iOS":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-save-another-way.png" alt-text="Screenshot of where to save a passkey on iOS.":::
 
 1. Select **Security key**. 
 
    > [!NOTE]
    > Depending on the screen size and orientation of your iOS device you may need to scroll down to see this option. 
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-select-security-key.png" alt-text="Screenshot of selecting to use a security key with iOS":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-select-security-key.png" alt-text="Screenshot of selecting to use a security key with iOS.":::
 
 1. Connect your security key to your iOS device. 
 
@@ -82,7 +82,7 @@ This article shows how to register a passkey using a security key with your iOS 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-finish.png" alt-text="Screenshot showing final passkey registration step on iOS.":::
 
-# [:::image type="icon" source="media/icons/android-icon.png" border="false"::: **Android**](#tab/Android)
+# [**Android**](#tab/Android)
 
 ## Register a security key with Android 
 
@@ -106,7 +106,7 @@ This article shows how to register a passkey using a security key with your iOS 
 
 1. Select **Next**.  
 
-   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-start.png" alt-text="Screenshot of starting passkey registration":::
+   :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-start.png" alt-text="Screenshot of starting passkey registration.":::
 
 1. A security window opens on your device asking where you want to create your passkey. 
 

@@ -26,7 +26,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
 [!INCLUDE [Passkey roll out](~/includes/entra-authentication-passkey.md)]
 
-# [:::image type="icon" source="media/icons/ios-icon.png" border="false"::: **iOS**](#tab/iOS)
+# [**iOS**](#tab/iOS)
 
 ## Register passkey by signing into Authenticator (iOS)
 
@@ -36,8 +36,6 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 1. Sign in.
 1. You need to complete multifactor authentication (MFA).
 1. Authenticator sets up passkey, passwordless, or MFA for sign-in according to your work or school account policies. 
-
-<!---Phase 2 - add Authenticator screenshots of the flow above (by April 8)--->
 
 ## Same-device registration (iOS)
 
@@ -169,7 +167,7 @@ To re-register a passkey for your account, first remove the passkey from Authent
 > [!NOTE]
 > You also need to delete the passkey from **Security Info**. Use a web browser and sign in to [https://mysignins.microsoft.com/security-info](https://mysignins.microsoft.com/security-info).  
 
-# [:::image type="icon" source="media/icons/android-icon.png" border="false"::: **Android**](#tab/Android)
+# [**Android**](#tab/Android)
 
 ## Register passkey by signing into Authenticator (Android)
 
@@ -251,7 +249,7 @@ To re-register a passkey for your account, first remove the passkey from Authent
    1. You can now see the Microsoft Authenticator managed passkey along with your other registered security info options.
 
 --->
- 
+
 ## Cross-device registration 
 
 1. Open a web browser and sign in to [My Security info](https://aka.ms/mysecurityinfo).

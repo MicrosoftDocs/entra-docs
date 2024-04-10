@@ -44,7 +44,7 @@ To enable Authenticator passkey, you edit the **Passkey (FIDO2)** method policy,
    - Authenticator for Android: de1e552d-db1d-4423-a619-566b625cdc84
    - Authenticator for iOS: 90a3ccdf-635c-4729-a248-9b709135078f
 
-   :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey.":::
+   :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey."lightbox="media/how-to-enable-authenticator-passkey/optional-settings.png":::
 
 The following list describes other optional settings:
 
@@ -115,7 +115,7 @@ To remove a passkey associated with a user account, delete the key from the user
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and search for the user whose passkey needs to be removed.
 1. Select **Authentication methods** > right-click **passkey (FIDO2)** and select **Delete**. 
 
-    ![View Authentication Method details](media/howto-authentication-passwordless-deployment/security-key-view-details.png)
+    ![Screenshot of View Authentication Method details](media/howto-authentication-passwordless-deployment/security-key-view-details.png)
 
 > [!NOTE]
 > Users also need to remove the passkey in Authenticator on their device.
