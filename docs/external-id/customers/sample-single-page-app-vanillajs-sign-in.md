@@ -70,9 +70,11 @@ If you choose to download the `.zip` file, extract the sample app file to a fold
 
 ## Configure the sample SPA
 
-1. Open `authConfig.js`.
-1. Find `Enter_the_Tenant_Name_Here` and replace it with the name of your tenant.
-1. In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is *caseyjensen@onmicrosoft.com*, the value you should enter is *casyjensen*.
+1. Open `App/public/authConfig.js` and replace the following with the values obtained from the Microsoft Entra admin center:
+
+     * `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
+     * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+
 1. Save the file.
 
 ## Run your project and sign in
