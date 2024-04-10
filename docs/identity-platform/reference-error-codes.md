@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
-ms.date: 10/17/2023
+ms.date: 04/10/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -36,13 +36,13 @@ Here's a sample error response:
 ```json
 {
   "error": "invalid_scope",
-  "error_description": "AADSTS70011: The provided value for the input parameter 'scope' isn't valid. The scope https://example.contoso.com/activity.read isn't valid.\r\nTrace ID: 255d1aef-8c98-452f-ac51-23d051240864\r\nCorrelation ID: fb3d2015-bc17-4bb9-bb85-30c5cf1aaaa7\r\nTimestamp: 2016-01-09 02:02:12Z",
+  "error_description": "AADSTS70011: The provided value for the input parameter 'scope' isn't valid. The scope https://example.contoso.com/activity.read isn't valid.\r\nTrace ID: 0000aaaa-11bb-cccc-dd33-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: 2016-01-09 02:02:12Z",
   "error_codes": [
     70011
   ],
   "timestamp": "2016-01-09 02:02:12Z",
-  "trace_id": "255d1aef-8c98-452f-ac51-23d051240864",
-  "correlation_id": "fb3d2015-bc17-4bb9-bb85-30c5cf1aaaa7", 
+  "trace_id": "0000aaaa-11bb-cccc-dd33-eeeeee333333",
+  "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd", 
   "error_uri":"https://login.microsoftonline.com/error?code=70011"
 }
 ```

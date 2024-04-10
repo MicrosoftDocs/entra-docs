@@ -180,7 +180,7 @@ namespace JWTValidation
             TokenValidationParameters validationParams = new TokenValidationParameters()
             {
                 AllowedAudience = "[Your App ID URI goes here]",
-                ValidIssuer = "[The issuer for the token goes here, such as https://sts.windows.net/68b98905-130e-4d7c-b6e1-a158a9ed8449/]",
+                ValidIssuer = "[The issuer for the token goes here, such as https://sts.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/]",
                 SigningTokens = GetSigningCertificates(MetadataAddress)
 
                 // Cache the signing tokens by your desired mechanism
@@ -274,7 +274,7 @@ Follow the steps below to verify that the key rollover logic is working.
 1. After you have verified that your application is using the code above, open the **Web.config** file and navigate to the **\<issuerNameRegistry>** block, specifically looking for the following few lines:
    ```
    <issuerNameRegistry type="System.IdentityModel.Tokens.ValidatingIssuerNameRegistry, System.IdentityModel.Tokens.ValidatingIssuerNameRegistry">
-        <authority name="https://sts.windows.net/ec4187af-07da-4f01-b18f-64c2f5abecea/">
+        <authority name="https://sts.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/">
           <keys>
             <add thumbprint="3A38FA984E8560F19AADC9F86FE9594BB6AD049B" />
           </keys>

@@ -1460,7 +1460,7 @@ Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
 continuation_token=uY29tL2F1dGhlbnRpY... 
-&client_id=6731de76-14a6-49ae-97bc-6eba6914391e 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=oob 
 &oob={otp_code}
 ```
