@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
-ms.date: 04/13/2023
+ms.date: 04/10/2024
 ms.reviewer: sureshja
 ms.service: identity-platform
 
@@ -46,7 +46,7 @@ The unique identifier for the app in the directory. This ID is not the identifie
 Example:
 
 ```json
-    "id": "f7f9acfc-ae0c-4d6c-b489-0a81dc1652dd",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
 ```
 
 ### acceptMappedClaims attribute
@@ -136,7 +136,7 @@ Specifies the unique identifier for the app that is assigned to an app by Micros
 Example:
 
 ```json
-    "appId": "601790de-b632-4f57-9523-ee7cb6ceba95",
+    "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
 ```
 
 ### appRoles attribute
@@ -223,7 +223,7 @@ When an application is used as a resource app, the identifierUri value is used t
 Example:
 
 ```json
-    "identifierUris": "https://contoso.onmicrosoft.com/fc4d2d73-d05a-4a9b-85a8-4f2b3a5f38ed",
+    "identifierUris": "https://contoso.onmicrosoft.com/00001111-aaaa-2222-bbbb-3333cccc4444",
 ```
 
 ### informationalUrls attribute
@@ -280,7 +280,7 @@ Used for bundling consent if you have a solution that contains two parts: a clie
 Example:
 
 ```json
-    "knownClientApplications": ["f7f9acfc-ae0c-4d6c-b489-0a81dc1652dd"],
+    "knownClientApplications": ["00001111-aaaa-2222-bbbb-3333cccc4444"],
 ```
 
 ### logoUrl attribute
@@ -447,7 +447,7 @@ Example:
 ```json
     "preAuthorizedApplications": [
        {
-          "appId": "abcdefg2-000a-1111-a0e5-812ed8dd72e8",
+          "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
           "permissionIds": [
              "8748f7db-21fe-4c83-8ab5-53033933c8f1"
             ]
