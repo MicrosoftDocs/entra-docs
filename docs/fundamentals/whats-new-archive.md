@@ -1225,19 +1225,6 @@ For more information, see:
 
 ---
 
-### Public Preview - Azure AD PIM + Conditional Access integration
-
-**Type:** New feature   
-**Service category:** Privileged Identity Management                    
-**Product capability:** Privileged Identity Management               
-
-Now you can require users who are eligible for a role to satisfy Conditional Access policy requirements for activation: use specific authentication method enforced through Authentication Strengths, activate from Intune compliant device, comply with Terms of Use, and use 3rd party MFA and satisfy location requirements.
-
-For more information, see: [Configure Azure AD role settings in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-how-to-change-default-settings.md).
-
-
----
-
 ### General Availability - More information on why a sign-in was flagged as "unfamiliar"
 
 **Type:** Changed feature   
