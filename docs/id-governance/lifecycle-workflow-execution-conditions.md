@@ -4,7 +4,7 @@ description: Conceptual article about Lifecycle Workflows execution conditions.
 author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.workload: identity
 ms.topic: conceptual 
