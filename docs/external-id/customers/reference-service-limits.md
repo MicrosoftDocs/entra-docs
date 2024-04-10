@@ -15,7 +15,7 @@ ms.custom: it-pro
 #Customer intent: As an IT admin, I want to know about the service limits and restrictions in my external tenant.
 ---
 <!-- Based on https://learn.microsoft.com/en-us/entra/identity/users/directory-service-limits-restrictions and https://learn.microsoft.com/en-us/azure/active-directory-b2c/service-limits?pivots=b2c-custom-policy and https://microsoft.sharepoint.com/:w:/t/aad/CPIM/EVlzWDYaozFBg-K8W2epuhoBN7rBryTH99MQTNmws_Oqyg?e=2F8Zf0 -->
-# Microsoft Entra ID for customers service limits and restrictions
+# Microsoft Entra External ID service limits and restrictions
 
 This article contains the usage constraints and other service limits for the Microsoft Entra ID for external configuration tenants, Microsoft’s new customer identity and access management (CIAM) solution. If you’re looking for the full set of Microsoft Entra ID service limits, see [Microsoft Entra service limits and restrictions](/entra/identity/users/directory-service-limits-restrictions).
 
@@ -33,7 +33,7 @@ The number of users able to authenticate through an external tenant is gated thr
 
 ## Endpoint request usage
 
-Microsoft Entra ID for customers is compliant with [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749), [OpenID Connect (OIDC)](https://openid.net/certification/) protocols. The following table lists the endpoints and the number of requests consumed by each endpoint.
+Microsoft Entra External ID is compliant with [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749), [OpenID Connect (OIDC)](https://openid.net/certification/) protocols. The following table lists the endpoints and the number of requests consumed by each endpoint.
 
 |Endpoint                 |Endpoint type     |Requests consumed |
 |-----------------------------|---------|------------------|
@@ -72,7 +72,7 @@ Tokens/sec = 200/requests-consumed
 
 ## Configuration limits for Microsoft Entra ID for external configuration tenants
 
-The following table lists the administrative configuration limits in the Microsoft Entra ID for customers service.
+The following table lists the administrative configuration limits in the Microsoft Entra External ID service.
 
 |Category  |Limit  |
 |---------|---------|
