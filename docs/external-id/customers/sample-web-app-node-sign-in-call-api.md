@@ -83,13 +83,15 @@ This API needs to expose permissions, which a client needs to acquire for callin
 
 ##  Clone or download sample web application and web API
 
-To get the web app and web API sample code, [download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
+
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
     ```console
     git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
     ```
 
-If you choose to download the `.zip` file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
+- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters. 
 
 ##  Install project dependencies 
 

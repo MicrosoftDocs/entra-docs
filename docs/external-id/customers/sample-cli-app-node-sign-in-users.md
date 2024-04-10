@@ -62,11 +62,16 @@ Since this app signs in users, add delegated permissions. These permissions allo
 
 ## Clone or download the sample Node.js CLI application
 
-To get the sample Node.js CLI app, you can either [download the sample apps .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip) or clone the sample CLI app from GitHub by running the following command:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
+
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
     ```console
     git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
     ```
+
+- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
+
 
 ## Configure the sample Node.js CLI application 
 

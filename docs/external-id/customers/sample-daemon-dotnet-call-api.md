@@ -54,17 +54,17 @@ In this step, you create the daemon and the web API application registrations, a
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permissions-app-permissions.md)]
 
-##  Clone or download sample daemon application and web API
+## Clone or download sample daemon application web app and API
 
-To get the web application sample code, you can do either of the following tasks:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
     ```console
     git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
     ```
 
-If you choose to download the *.zip* file, extract the sample application file to a folder where the total length of the path is 260 or fewer characters.
+- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
 ## Configure the sample daemon application and API
 

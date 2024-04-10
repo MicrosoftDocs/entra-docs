@@ -42,17 +42,15 @@ This how-to guide uses a sample vanilla JavaScript single-page Application (SPA)
 
 ## Clone or download sample SPA
 
-To get the sample SPA, you can choose one of the following options:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-* Clone the repository using Git:
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
     ```console
     git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
     ```
 
-* [Download the sample](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip)
-
-If you choose to download the `.zip` file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
+- [Download the sample](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip).Extract it to a file path where the length of the name is fewer than 260 characters. 
 
 ## Install project dependencies
 
