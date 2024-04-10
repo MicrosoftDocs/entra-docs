@@ -1,6 +1,6 @@
 ---
 title: Sign in users and call a web API in sample Android app 
-description: Learn how to authenticate users in a Microsoft Entra ID for customers tenant using a sample Android (Kotlin) app.
+description: Learn how to authenticate users in an external tenant using a sample Android (Kotlin) app.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,7 +12,7 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 04/04/2024
 ms.custom: developer
-#Customer intent: As a developer, I want to authenticate users and call a protected web API from a sample Android mobile app so that I can experience how Microsoft Entra ID for customers work.
+#Customer intent: As a developer, I want to authenticate users and call a protected web API from a sample Android mobile app so that I can experience how Microsoft Entra External ID works.
 ---
 
 # Sign in users and call a protected web API in sample Android (Kotlin) app
@@ -31,7 +31,7 @@ In this article, you do the following tasks:
 ## Prerequisites  
 
 - <a href="https://developer.android.com/studio" target="_blank">Android Studio</a>.
-- Microsoft Entra External ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
+- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
 - An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the instructions for [call an API in a sample Android mobile app](sample-native-authentication-android-sample-app-call-web-api.md) to have a functional protected ASP.NET Core web API. Make sure you complete the following steps:
 
     - Register a web API application

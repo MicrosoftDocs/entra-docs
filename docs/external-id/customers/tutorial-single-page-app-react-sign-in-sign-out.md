@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Add sign-in and sign-out to a React SPA for an external tenant"
-description: Learn how to configure a React single-page app (SPA) to sign in and sign out users with your Microsoft Entra ID for customers tenant.
+description: Learn how to configure a React single-page app (SPA) to sign in and sign out users with your external tenant.
  
 author: godonnell
 manager: celestedg

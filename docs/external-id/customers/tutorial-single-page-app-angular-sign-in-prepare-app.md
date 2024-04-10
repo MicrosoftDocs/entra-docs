@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Prepare an Angular SPA for authentication in an external tenant"
-description: Learn how to prepare an Angular single-page app (SPA) for authentication with your Microsoft Entra External ID for customers tenant.
+description: Learn how to prepare an Angular single-page app (SPA) for authentication with your external tenant.
 author: garrodonnell
 manager: celestedg
 ms.service: entra-external-id
@@ -13,7 +13,7 @@ ms.author: godonnell
 
 # Tutorial: Prepare an Angular SPA for authentication in an external tenant
 
-This tutorial is part 2 of a series that demonstrates building an Angular single-page application (securing privileged access (SPA)) and preparing it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](./tutorial-single-page-app-angular-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to create an Angular SPA using `npm` and create files needed for authentication and authorization.
+This tutorial is part 2 of a series that demonstrates building an Angular single-page application (securing privileged access (SPA)) and preparing it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](./tutorial-single-page-app-angular-sign-in-prepare-tenant.md), you registered an application and configured user flows in your external tenant. This tutorial demonstrates how to create an Angular SPA using `npm` and create files needed for authentication and authorization.
 
 In this tutorial;
 
@@ -200,8 +200,8 @@ In this section you'll configure the home and guarded components of the applicat
     ```html
     <mat-card class="card-section" *ngIf="!loginDisplay">
       <mat-card-title>Angular single-page application built with MSAL Angular</mat-card-title>
-      <mat-card-subtitle>Sign in with Microsoft Entra External ID for customers</mat-card-subtitle>
-      <mat-card-content>This sample demonstrates how to configure MSAL Angular to sign up, sign in and sign out with Microsoft Entra External ID for customers</mat-card-content>
+      <mat-card-subtitle>Sign in with Microsoft Entra External ID</mat-card-subtitle>
+      <mat-card-content>This sample demonstrates how to configure MSAL Angular to sign up, sign in and sign out with Microsoft Entra External ID</mat-card-content>
       <button mat-raised-button color="primary" (click)="signUp()">Sign up</button>
     </mat-card>
     <br>

@@ -1,6 +1,7 @@
 ---
 title: Call an API in a sample Node.js daemon application
-description: Learn how to configure a sample Node.js daemon application that calls an API protected Microsoft Entra ID 
+description: Learn how to configure a sample Node.js daemon application that calls an API protected by an Microsoft Entra External ID tenant
+
 author: kengaderdus
 manager: mwongerapk
 
@@ -11,7 +12,7 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 06/23/2023
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops, I want to configure a sample Node.js daemon application that calls an API protected by my Microsoft Entra external ID tenant
+#Customer intent: As a dev, devops, I want to configure a sample Node.js daemon application that calls an API protected by my Microsoft Entra External ID tenant
 ---
 
 # Call an API in a sample Node.js daemon application 

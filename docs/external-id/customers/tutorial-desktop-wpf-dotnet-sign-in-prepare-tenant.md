@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Prepare your external tenant to sign in user in .NET WPF application"
-description: Learn about how to prepare your Microsoft Entra ID for customers tenant to sign in users to your .NET WPF application
+description: Learn about how to prepare your external tenant to sign in users to your .NET WPF application
 
 author: SHERMANOUKO
 manager: mwongerapk

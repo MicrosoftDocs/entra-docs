@@ -10,7 +10,7 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 04/10/2024
 
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample React single-page app to sign in and sign out users with my Microsoft Entra  External ID tenant.
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample React single-page app to sign in and sign out users with my Microsoft Entra External ID tenant.
 ---
 
 # Sign in users in a sample React single-page app (SPA) 
@@ -21,7 +21,7 @@ This guide uses a sample React single-page application (SPA) to demonstrate how 
 
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Node.js](https://nodejs.org/en/download/).
-* Microsoft Entra  External ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* Microsoft Entra External ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register the SPA in the Microsoft Entra admin center
 
@@ -91,7 +91,7 @@ All the required code snippets have been added, so the application can now be ca
 
 1. Open a web browser and navigate to `http://localhost:3000/`.
 
-1. Sign-in with an account registered to the Microsoft Entra ID for customers tenant.
+1. Sign-in with an account registered to the external tenant.
 
 1. Once signed in the display name is shown next to the **Sign out** button.
 
