@@ -1204,20 +1204,6 @@ No functionalities are removed. The new PDF viewer adds functionality and the li
 
 ## February 2023
 
-### General Availability - More information on why a sign-in was flagged as "unfamiliar"
-
-**Type:** Changed feature   
-**Service category:** Identity Protection                    
-**Product capability:** Identity Security & Protection           
-
-Unfamiliar sign-in properties risk detection now provides risk reasons as to which properties are unfamiliar for customers to better investigate that risk. 
-
-Identity Protection now surfaces the unfamiliar properties in the Azure portal on UX and in API as *Additional Info* with a user-friendly description explaining that *the following properties are unfamiliar for this sign-in of the given user*. 
-
-There's no additional work to enable this feature, the unfamiliar properties are shown by default. For more information, see: [Sign-in risk](~/id-protection/concept-identity-protection-risks.md).
-
-
----
 
 
 ### Public Preview - New provisioning connectors in the Azure AD Application Gallery - February 2023
