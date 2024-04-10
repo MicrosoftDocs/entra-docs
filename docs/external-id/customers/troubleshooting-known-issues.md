@@ -14,9 +14,9 @@ ms.custom: it-pro
 
 ---
 
-# Known issues with Microsoft Entra External ID
+# Known issues with Microsoft Entra External ID for external-facing apps
 
-This article describes known issues that you may experience when you use Microsoft Entra External ID, and provides help to resolve these issues.
+This article describes known issues that you may experience when you use Microsoft Entra External ID for your external-facing apps, and provides help to resolve these issues.
 
 ## Tenant creation and management
 
@@ -28,9 +28,9 @@ During external tenant creation, the **Country/Region** dropdown menu lists coun
 
 **Workaround**: Select a different region and try again
 
-### Customer trial tenants can't be extended or linked with an existing Azure subscription
+### External trial tenants can't be extended or linked with an existing Azure subscription
 
-Customer trial tenants can't be supported beyond 30 days.
+External trial tenants can't be supported beyond 30 days.
 
 **Workaround**: Take one of the following actions.
 
