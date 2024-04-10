@@ -95,7 +95,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
 ## Cross-device registration 
 
-1. Using another device, such as a laptop, open a web browser and sign in to [My Security info](https://mysignins.microsoft.com/security-info).
+1. Using another device, such as a laptop, open a web browser and sign in to [My Security info](https://aka.ms/mysecurityinfo).
 1. Tap **+ Add sign-in method** > **Choose a method** > **Passkey in Microsoft Authenticator (preview)** > **Add**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/add-passkey-authenticator.png" alt-text="Screenshot of how to add passkey in Microsoft Authenticator as a sign-in method.":::
@@ -254,7 +254,7 @@ To re-register a passkey for your account, first remove the passkey from Authent
  
 ## Cross-device registration 
 
-1. Open a web browser and sign in to [My Security info](https://mysignins.microsoft.com/security-info).
+1. Open a web browser and sign in to [My Security info](https://aka.ms/mysecurityinfo).
 1. Tap **+ Add sign-in method** > **Choose a method** > **Passkey in Microsoft Authenticator (preview)** > **Add**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/add-passkey-authenticator.png" alt-text="Screenshot of how to add passkey in Microsoft Authenticator as a sign-in method for Android devices.":::

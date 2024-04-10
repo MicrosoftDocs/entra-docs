@@ -29,7 +29,8 @@ To sign in with a passkey in Microsoft Authenticator, your iOS device needs to r
 
 Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft Authenticator on your iOS device.
 
-1. On your iOS device, open your browser and navigate to the resource you're trying to access e.g. `myaccount.microsoft.com`.
+1. On your iOS device, open your browser and navigate to the resource you're trying to access at [My Security info](https://aka.ms/mysecurityinfo).
+
 1. Select **Sign-in options**. 
 
     :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-microsoft.png" alt-text="Screenshot of the sign-in Microsoft in Microsoft Authenticator for iOS devices.":::
@@ -94,7 +95,7 @@ Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft 
 
 Follow these steps to sign in to Microsoft Entra ID on another device with a passkey in Microsoft Authenticator on your Android device.
 
-1. On the other device where you're looking to sign in to Microsoft Entra ID, open your browser and go to `login.microsoftonline.com`.
+1. On the other device where you're looking to sign in to Microsoft Entra ID, open your browser and go to [My Security info](https://aka.ms/mysecurityinfo).
 
 1. Select **Sign-in options**. 
 

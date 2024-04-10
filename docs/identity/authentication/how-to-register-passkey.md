@@ -26,7 +26,7 @@ This article shows how to register a passkey using a browser and sign-in with a 
 
 ## Manual registration 
 
-1. Users can register a passkey (FIDO2) as an authentication method by navigating and completing the process from a browser at [My Security-Info](https://mysignins.microsoft.com/security-info).
+1. Users can register a passkey (FIDO2) as an authentication method by navigating and completing the process from a browser at [My Security info](https://aka.ms/mysecurityinfo).
 1. Tap **Add sign-in method** > **Choose a method** > **Passkey (preview)** > **Add**.
 1. Sign in with multifactor authentication (MFA) before adding a passkey, then tap **Next**.
    1. If you don't have at least one MFA method registered, you must add one.

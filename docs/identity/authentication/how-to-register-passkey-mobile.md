@@ -76,7 +76,7 @@ This article shows how to register a passkey using a security key with your iOS 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-reconnect.png" alt-text="Screenshot asking to confirm your pin for the security key connected to an iOS device.":::
     
-1. Upon completion, you're redirected back to [My Security info](https://mysignins.microsoft.com/security-info) and asked to rename your passkey. 
+1. Upon completion, you're redirected back to [My Security info](https://aka.ms/mysecurityinfo) and asked to rename your passkey. 
     
 1. Name the passkey something memorable to you and select **Done**. 
 
