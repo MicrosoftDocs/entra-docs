@@ -34,7 +34,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 > [!NOTE]
 > This integration is also available to use from the Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from the public cloud environment.
 
-If you are configuring provisioning into SAP Cloud Identity Services in a production environment, where you will be governing access to SAP workloads using Microsoft Entra ID Governance, then review the [prerequisites before configuring Microsoft Entra ID for identity governance](~/id-governance/identity-governance-applications-prepare.md#prerequisites-before-configuring-microsoft-entra-id-for-identity-governance) before proceeding.
+If you are configuring provisioning into SAP Cloud Identity Services in a production environment, where you will be governing access to SAP workloads using Microsoft Entra ID Governance, then review the [prerequisites before configuring Microsoft Entra ID for identity governance](~/id-governance/identity-governance-applications-prepare.md#prerequisites-before-configuring-microsoft-entra-id-and-microsoft-entra-id-governance-for-identity-governance) before proceeding.
 
 ## Set up SAP Cloud Identity Services for provisioning
 
