@@ -116,7 +116,9 @@
     - name: Workflow Audit logs
       href: lifecycle-workflow-audits.md
     - name: Workflow History
-      href: lifecycle-workflow-history.md     
+      href: lifecycle-workflow-history.md
+    - name: Workflow Execution conditions
+      href: lifecycle-workflow-execution-conditions.md         
 - name: How-to guides
   expanded: true
   items:
