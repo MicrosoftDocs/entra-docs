@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Microsoft Entra integration with Zscaler ZSCloud"
-description: Learn how to configure single sign-on between Microsoft Entra ID and Zscaler ZSCloud.
+title: "Tutorial: Microsoft Entra integration with Zscaler Internet Access ZSCloud"
+description: Learn how to configure single sign-on between Microsoft Entra ID and Zscaler Internet Access ZSCloud.
 
 author: jeevansd
 manager: CelesteDG
@@ -9,61 +9,61 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 04/10/2024
 ms.author: jeedes
 
-# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zscaler ZSCloud so that I can control who has access to Zscaler ZSCloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zscaler Internet Access ZSCloud so that I can control who has access to Zscaler Internet Access ZSCloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra integration with Zscaler ZSCloud
+# Tutorial: Microsoft Entra integration with Zscaler Internet Access ZSCloud
 
-In this tutorial, you'll learn how to integrate Zscaler ZSCloud with Microsoft Entra ID. When you integrate Zscaler ZSCloud with Microsoft Entra ID, you can:
+In this tutorial, you'll learn how to integrate Zscaler Internet Access ZSCloud with Microsoft Entra ID. When you integrate Zscaler Internet Access ZSCloud with Microsoft Entra ID, you can:
 
-* Control in Microsoft Entra ID who has access to Zscaler ZSCloud.
-* Enable your users to be automatically signed-in to Zscaler ZSCloud with their Microsoft Entra accounts.
+* Control in Microsoft Entra ID who has access to Zscaler Internet Access ZSCloud.
+* Enable your users to be automatically signed-in to Zscaler Internet Access ZSCloud with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
 
-To configure Microsoft Entra integration with Zscaler ZSCloud, you need the following items:
+To configure Microsoft Entra integration with Zscaler Internet Access ZSCloud, you need the following items:
 
 * A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
-* Zscaler ZSCloud single sign-on enabled subscription.
+* Zscaler Internet Access ZSCloud single sign-on enabled subscription.
 
 ## Scenario description
 
 In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
 
-* Zscaler ZSCloud supports **SP** initiated SSO.
+* Zscaler Internet Access ZSCloud supports **SP** initiated SSO.
 
-* Zscaler ZSCloud supports **Just In Time** user provisioning.
+* Zscaler Internet Access ZSCloud supports **Just In Time** user provisioning.
 
-* Zscaler ZSCloud supports [Automated user provisioning](zscaler-zscloud-provisioning-tutorial.md).
+* Zscaler Internet Access ZSCloud supports [Automated user provisioning](zscaler-zscloud-provisioning-tutorial.md).
 
-## Adding Zscaler ZSCloud from the gallery
+## Adding Zscaler Internet Access ZSCloud from the gallery
 
-To configure the integration of Zscaler ZSCloud into Microsoft Entra ID, you need to add Zscaler ZSCloud from the gallery to your list of managed SaaS apps.
+To configure the integration of Zscaler Internet Access ZSCloud into Microsoft Entra ID, you need to add Zscaler Internet Access ZSCloud from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the **Add from the gallery** section, type **Zscaler ZSCloud** in the search box.
-1. Select **Zscaler ZSCloud** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+1. In the **Add from the gallery** section, type **Zscaler Internet Access ZSCloud** in the search box.
+1. Select **Zscaler Internet Access ZSCloud** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
  Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-zscaler-zscloud'></a>
 
-## Configure and test Microsoft Entra SSO for Zscaler ZSCloud
+## Configure and test Microsoft Entra SSO for Zscaler Internet Access ZSCloud
 
-Configure and test Microsoft Entra SSO with Zscaler ZSCloud using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in Zscaler ZSCloud.
+Configure and test Microsoft Entra SSO with Zscaler Internet Access ZSCloud using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in Zscaler Internet Access ZSCloud.
 
-To configure and test Microsoft Entra SSO with Zscaler ZSCloud, perform the following steps:
+To configure and test Microsoft Entra SSO with Zscaler Internet Access ZSCloud, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure Zscaler ZSCloud SSO](#configure-zscaler-zscloud-sso)** - to configure the single sign-on settings on application side.
-   1. **[Create Zscaler ZSCloud test user](#create-zscaler-zscloud-test-user)** - to have a counterpart of B.Simon in Zscaler ZSCloud that is linked to the Microsoft Entra representation of user.
+1. **[Configure Zscaler Internet Access ZSCloud SSO](#configure-zscaler-internet-access-zscloud-sso)** - to configure the single sign-on settings on application side.
+   1. **[Create Zscaler Internet Access ZSCloud test user](#create-zscaler-internet-access-zscloud-test-user)** - to have a counterpart of B.Simon in Zscaler Internet Access ZSCloud that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -73,7 +73,7 @@ To configure and test Microsoft Entra SSO with Zscaler ZSCloud, perform the foll
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zscaler zscloud** > **Single sign-on**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zscaler Internet Access ZSCloud** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -81,16 +81,16 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, enter the values for the following fields:
 
-   In the **Sign-on URL** textbox, type the URL used by your users to sign-on to your ZScaler ZSCloud application.
+   In the **Sign-on URL** textbox, type the URL used by your users to sign-on to your Zscaler Internet Access ZSCloud application.
 
    > [!NOTE]
-   > You have to update the value with the actual Sign-On URL. Contact [Zscaler ZSCloud Client support team](https://help.zscaler.com/) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+   > You have to update the value with the actual Sign-On URL. Contact [Zscaler Internet Access ZSCloud Client support team](https://help.zscaler.com/) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Your Zscaler ZSCloud application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes. Click **Edit** icon to open **User Attributes** dialog.
+1. Your Zscaler Internet Access ZSCloud application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes. Click **Edit** icon to open **User Attributes** dialog.
 
    ![Screenshot shows User Attributes with the Edit icon selected.](common/edit-attribute.png)
 
-1. In addition to above, Zscaler ZSCloud application expects few more attributes to be passed back in SAML response. In the **User Claims** section on the **User Attributes** dialog, perform the following steps to add SAML token attribute as shown in the below table:
+1. In addition to above, Zscaler Internet Access ZSCloud application expects few more attributes to be passed back in SAML response. In the **User Claims** section on the **User Attributes** dialog, perform the following steps to add SAML token attribute as shown in the below table:
 
    | Name     | Source Attribute   |
    | -------- | ------------------ |
@@ -119,7 +119,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![The Certificate download link](common/certificatebase64.png)
 
-1. On the **Set up Zscaler ZSCloud** section, copy the appropriate URL(s) as per your requirement.
+1. On the **Set up Zscaler Internet Access ZSCloud** section, copy the appropriate URL(s) as per your requirement.
 
    ![Copy configuration URLs](common/copy-configuration-urls.png)
 
@@ -143,11 +143,11 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you enable Britta Simon to use Azure single sign-on by granting access to Zscaler ZSCloud.
+In this section, you enable Britta Simon to use Azure single sign-on by granting access to Zscaler Internet Access ZSCloud.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zscaler ZSCloud**.
-1. In the applications list, select **Zscaler ZSCloud**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zscaler Internet Access ZSCloud**.
+1. In the applications list, select **Zscaler Internet Access ZSCloud**.
 1. In the app's overview page, find the **Manage** section and select **Users and groups**.
 1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
 1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
@@ -165,8 +165,8 @@ In this section, you enable Britta Simon to use Azure single sign-on by granting
    > [!NOTE]
    > Default access role is not supported as this will break provisioning, so the default role cannot be selected while assigning user.
 
-## Configure Zscaler ZSCloud SSO
-1. In a different web browser window, sign in to your Zscaler ZSCloud company site as an administrator
+## Configure Zscaler Internet Access ZSCloud SSO
+1. In a different web browser window, sign in to your Zscaler Internet Access ZSCloud company site as an administrator
 
 1. Go to **Administration > Authentication > Authentication Settings** and perform the following steps:
 
@@ -236,26 +236,26 @@ In this section, you enable Britta Simon to use Azure single sign-on by granting
 
 6. Click **OK** to close the **Internet Options** dialog.
 
-### Create Zscaler ZSCloud test user
+### Create Zscaler Internet Access ZSCloud test user
 
-In this section, a user called Britta Simon is created in Zscaler ZSCloud. Zscaler ZSCloud supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Zscaler ZSCloud, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Zscaler Internet Access ZSCloud. Zscaler Internet Access ZSCloud supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Zscaler Internet Access ZSCloud, a new one is created after authentication.
 
 > [!Note]
-> If you need to create a user manually, contact [Zscaler ZSCloud support team](https://help.zscaler.com/).
+> If you need to create a user manually, contact [Zscaler Internet Access ZSCloud support team](https://help.zscaler.com/).
 
 > [!NOTE]
-> Zscaler ZSCloud also supports automatic user provisioning, you can find more details [here](./zscaler-zscloud-provisioning-tutorial.md) on how to configure automatic user provisioning.
+> Zscaler Internet Access ZSCloud also supports automatic user provisioning, you can find more details [here](./zscaler-zscloud-provisioning-tutorial.md) on how to configure automatic user provisioning.
 
 ### Test SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, this will redirect to Zscaler ZSCloud Sign-on URL where you can initiate the login flow.
+* Click on **Test this application**, this will redirect to Zscaler Internet Access ZSCloud Sign-on URL where you can initiate the login flow.
 
-* Go to Zscaler ZSCloud Sign-on URL directly and initiate the login flow from there.
+* Go to Zscaler Internet Access ZSCloud Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Zscaler ZSCloud tile in the My Apps, this will redirect to Zscaler ZSCloud Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you click the Zscaler Internet Access ZSCloud tile in the My Apps, this will redirect to Zscaler Internet Access ZSCloud Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Next steps
 
-Once you configure Zscaler ZSCloud you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
+Once you configure Zscaler Internet Access ZSCloud you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

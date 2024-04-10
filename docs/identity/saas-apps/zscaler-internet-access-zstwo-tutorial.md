@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Microsoft Entra integration with Zscaler Two"
-description: Learn how to configure single sign-on between Microsoft Entra ID and Zscaler Two.
+title: "Tutorial: Microsoft Entra integration with Zscaler Internet Access ZSTwo"
+description: Learn how to configure single sign-on between Microsoft Entra ID and Zscaler Internet Access ZSTwo.
 
 author: jeevansd
 manager: CelesteDG
@@ -9,64 +9,64 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 04/10/2024
 ms.author: jeedes
 
-# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zscaler Two so that I can control who has access to Zscaler Two, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zscaler Internet Access ZSTwo so that I can control who has access to Zscaler Internet Access ZSTwo, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra integration with Zscaler Two
+# Tutorial: Microsoft Entra integration with Zscaler Internet Access ZSTwo
 
-In this tutorial, you'll learn how to integrate Zscaler Two with Microsoft Entra ID. When you integrate Zscaler Two with Microsoft Entra ID, you can:
+In this tutorial, you'll learn how to integrate Zscaler Internet Access ZSTwo with Microsoft Entra ID. When you integrate Zscaler Internet Access ZSTwo with Microsoft Entra ID, you can:
 
-* Control in Microsoft Entra ID who has access to Zscaler Two.
-* Enable your users to be automatically signed-in to Zscaler Two with their Microsoft Entra accounts.
+* Control in Microsoft Entra ID who has access to Zscaler Internet Access ZSTwo.
+* Enable your users to be automatically signed-in to Zscaler Internet Access ZSTwo with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
 
-To configure Microsoft Entra integration with Zscaler Two, you need the following items:
+To configure Microsoft Entra integration with Zscaler Internet Access ZSTwo, you need the following items:
 
 * A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
-* Zscaler Two single sign-on enabled subscription.
+* Zscaler Internet Access ZSTwo single sign-on enabled subscription.
 
 ## Scenario description
 
 In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
 
-* Zscaler Two supports **SP** initiated SSO.
+* Zscaler Internet Access ZSTwo supports **SP** initiated SSO.
 
-* Zscaler Two supports **Just In Time** user provisioning.
+* Zscaler Internet Access ZSTwo supports **Just In Time** user provisioning.
 
-* Zscaler Two supports [Automated user provisioning](zscaler-two-provisioning-tutorial.md).
+* Zscaler Internet Access ZSTwo supports [Automated user provisioning](zscaler-two-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
 
-## Add Zscaler Two from the gallery
+## Add Zscaler Internet Access ZSTwo from the gallery
 
-To configure the integration of Zscaler Two into Microsoft Entra ID, you need to add Zscaler Two from the gallery to your list of managed SaaS apps.
+To configure the integration of Zscaler Internet Access ZSTwo into Microsoft Entra ID, you need to add Zscaler Internet Access ZSTwo from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the **Add from the gallery** section, type **Zscaler Two** in the search box.
-1. Select **Zscaler Two** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+1. In the **Add from the gallery** section, type **Zscaler Internet Access ZSTwo** in the search box.
+1. Select **Zscaler Internet Access ZSTwo** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
  Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-zscaler-two'></a>
 
-## Configure and test Microsoft Entra SSO for Zscaler Two
+## Configure and test Microsoft Entra SSO for Zscaler Internet Access ZSTwo
 
-Configure and test Microsoft Entra SSO with Zscaler Two using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in Zscaler Two.
+Configure and test Microsoft Entra SSO with Zscaler Internet Access ZSTwo using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in Zscaler Internet Access ZSTwo.
 
-To configure and test Microsoft Entra SSO with Zscaler Two, perform the following steps:
+To configure and test Microsoft Entra SSO with Zscaler Internet Access ZSTwo, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure Zscaler Two SSO](#configure-zscaler-two-sso)** - to configure the single sign-on settings on application side.
-   1. **[Create Zscaler Two test user](#create-zscaler-two-test-user)** - to have a counterpart of B.Simon in Zscaler Two that is linked to the Microsoft Entra representation of user.
+1. **[Configure Zscaler Internet Access ZSTwo SSO](#configure-zscaler-internet-access-zstwo-sso)** - to configure the single sign-on settings on application side.
+   1. **[Create Zscaler Internet Access ZSTwo test user](#create-zscaler-internet-access-zstwo-test-user)** - to have a counterpart of B.Simon in Zscaler Internet Access ZSTwo that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -76,7 +76,7 @@ To configure and test Microsoft Entra SSO with Zscaler Two, perform the followin
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zscaler Two** > **Single sign-on**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zscaler Internet Access ZSTwo** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -84,16 +84,16 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, enter the values for the following fields:
 
-   In the **Sign-on URL** textbox, type the URL used by your users to sign-on to your ZScaler Two application.
+   In the **Sign-on URL** textbox, type the URL used by your users to sign-on to your Zscaler Internet Access ZSTwo application.
 
    > [!NOTE]
-   > You update the value with the actual Sign-On URL. Contact [Zscaler Two Client support team](https://www.zscaler.com/company/contact) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+   > You update the value with the actual Sign-On URL. Contact [Zscaler Internet Access ZSTwo Client support team](https://www.zscaler.com/company/contact) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Your Zscaler Two application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes. Click **Edit** icon to open **User Attributes** dialog.
+1. Your Zscaler Internet Access ZSTwo application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes. Click **Edit** icon to open **User Attributes** dialog.
 
    ![Screenshot shows User Attributes with the Edit icon selected.](common/edit-attribute.png)
 
-1. In addition to above, Zscaler Two application expects few more attributes to be passed back in SAML response. In the **User Claims** section on the **User Attributes** dialog, perform the following steps to add SAML token attribute as shown in the below table:
+1. In addition to above, Zscaler Internet Access ZSTwo application expects few more attributes to be passed back in SAML response. In the **User Claims** section on the **User Attributes** dialog, perform the following steps to add SAML token attribute as shown in the below table:
 
    | Name     | Source Attribute   |
    | -------- | ------------------ |
@@ -122,7 +122,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![The Certificate download link](common/certificatebase64.png)
 
-1. On the **Set up Zscaler Two** section, copy the appropriate URL(s) as per your requirement.
+1. On the **Set up Zscaler Internet Access ZSTwo** section, copy the appropriate URL(s) as per your requirement.
 
    ![Copy configuration URLs](common/copy-configuration-urls.png)
 
@@ -148,18 +148,18 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Zscaler Two.
+In this section, you'll enable B.Simon to use single sign-on by granting access to Zscaler Internet Access ZSTwo.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zscaler Two**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zscaler Internet Access ZSTwo**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
    1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
    1. In the **Add Assignment** dialog, click the **Assign** button.
 
-## Configure Zscaler Two SSO
-1. In a different web browser window, sign in to your Zscaler Two company site as an administrator
+## Configure Zscaler Internet Access ZSTwo SSO
+1. In a different web browser window, sign in to your Zscaler Internet Access ZSTwo company site as an administrator
 
 1. Go to **Administration > Authentication > Authentication Settings** and perform the following steps:
 
@@ -229,26 +229,26 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 6. Click **OK** to close the **Internet Options** dialog.
 
-### Create Zscaler Two test user
+### Create Zscaler Internet Access ZSTwo test user
 
-In this section, a user called Britta Simon is created in Zscaler Two. Zscaler Two supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Zscaler Two, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Zscaler Internet Access ZSTwo. Zscaler Internet Access ZSTwo supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Zscaler Internet Access ZSTwo, a new one is created after authentication.
 
 > [!Note]
-> If you need to create a user manually, contact [Zscaler Two support team](https://www.zscaler.com/company/contact).
+> If you need to create a user manually, contact [Zscaler Internet Access ZSTwo support team](https://www.zscaler.com/company/contact).
 
 > [!NOTE]
-> Zscaler Two also supports automatic user provisioning, you can find more details [here](./zscaler-two-provisioning-tutorial.md) on how to configure automatic user provisioning.
+> Zscaler Internet Access ZSTwo also supports automatic user provisioning, you can find more details [here](./zscaler-two-provisioning-tutorial.md) on how to configure automatic user provisioning.
 
 ## Test SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, this will redirect to Zscaler Two Sign-on URL where you can initiate the login flow.
+* Click on **Test this application**, this will redirect to Zscaler Internet Access ZSTwo Sign-on URL where you can initiate the login flow.
 
-* Go to Zscaler Two Sign-on URL directly and initiate the login flow from there.
+* Go to Zscaler Internet Access ZSTwo Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Zscaler Two tile in the My Apps, this will redirect to Zscaler Two Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you click the Zscaler Internet Access ZSTwo tile in the My Apps, this will redirect to Zscaler Internet Access ZSTwo Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Next steps
 
-Once you configure Zscaler Two you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
+Once you configure Zscaler Internet Access ZSTwo you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

@@ -126,6 +126,31 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/zscaler-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/zscaler-internet-access-zsnet-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/zscaler-zscloud-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/zscaler-internet-access-zscloud-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/zscaler-one-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/zscaler-internet-access-zsone-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/zscaler-two-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/zscaler-internet-access-zstwo-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/zscaler-three-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/zscaler-internet-access-zsthree-tutorial",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/imanage-work-saml-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/cloud-imanage-tutorial",
       "redirect_document_id": false

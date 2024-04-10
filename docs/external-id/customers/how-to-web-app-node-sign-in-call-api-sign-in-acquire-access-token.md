@@ -10,7 +10,7 @@ ms.subservice: customers
 ms.topic: how-to
 ms.date: 01/27/2024
 ms.custom: developer, devx-track-js
-#Customer intent: As a developer, I want to learn about how to acquire an access token in my Node.js client web app, so that I can call a web API that's protected by Microsoft Entra ID for customers.
+#Customer intent: As a developer, I want to learn about how to acquire an access token in my Node.js client web app, so that I can call a web API that's protected by Microsoft Entra External ID.
 ---
 
 # Acquire an access token in your Node.js web app

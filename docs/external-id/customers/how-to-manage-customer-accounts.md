@@ -1,6 +1,6 @@
 ---
 title: Add and manage customer accounts
-description: Learn how to add and manage customer accounts in Microsoft Entra ID for customers.
+description: Learn how to add and manage customer accounts in Microsoft Entra External ID.
  
 author: msmimart
 manager: celestedg
@@ -22,7 +22,7 @@ To add or delete users, your account must be assigned the *User Administrator* o
 ## Prerequisites
 
 - If you haven't already created your own Microsoft Entra external tenant, create one now.
-- Understand user accounts in Microsoft Entra ID for customers.
+- Understand user accounts in Microsoft Entra External ID.
 - Understand user roles to control resource access.
 
 [!INCLUDE [preview-alert](../customers/includes/preview-alert/preview-alert-ciam.md)]
