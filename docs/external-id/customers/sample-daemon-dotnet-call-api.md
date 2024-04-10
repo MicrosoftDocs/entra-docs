@@ -1,5 +1,5 @@
 ---
-title: Call an API in a sample .NET daemon application 
+title: Call an API in a sample .NET daemon application
 description: Learn how to configure a sample .NET daemon application that calls an API protected with Microsoft Entra External ID
 
 author: SHERMANOUKO
@@ -11,14 +11,14 @@ ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.topic: sample
 ms.date: 07/13/2023
-#Customer intent: As a dev, devops, I want to configure a sample .NET daemon application that calls an API protected by my Microsoft Entra external ID tenant
+#Customer intent: As a dev, devops, I want to configure a sample .NET daemon application that calls an API protected by my Microsoft Entra External ID tenant
 ---
 
 # Call an API in a sample .NET daemon application 
 
-This article uses a sample .NET daemon application to show you how a daemon application acquires a token to call a protected web API. Microsoft Entra external protects the Web API.
+This article uses a sample .NET daemon application to show you how a daemon application acquires a token to call a protected web API. Microsoft Entra External ID protects the web API.
 
-A daemon application acquires a token on behalf of itself (not on behalf of a user). Users can't interact with a daemon application because it requires its own identity. This type of application requests an access token by using its application identity and presenting its application ID, credential (password or certificate), and application ID URI to External ID. 
+A daemon application acquires a token on behalf of itself (not on behalf of a user). Users can't interact with a daemon application because it requires its own identity. This type of application requests an access token by using its application identity and presenting its application ID, credential (password or certificate), and application ID URI to Microsoft Entra External ID. 
 
 ## Prerequisites
 
@@ -54,7 +54,7 @@ In this step, you create the daemon and the web API application registrations, a
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permissions-app-permissions.md)]
 
-## Clone or download sample daemon application web app and API
+## Clone or download sample daemon application and web API
 
 To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 

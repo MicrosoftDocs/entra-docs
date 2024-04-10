@@ -1,6 +1,6 @@
 ---
 title: Authenticate users in a Microsoft Entra external ID tenant using a sample Node.js CLI application. 
-description: Learn how to authenticate users in a Microsoft Entra ID for customers tenant using a sample Node.js CLI application
+description: Learn how to authenticate users in a Microsoft Entra External ID tenant using a sample Node.js CLI application
 
 author: Dickson-Mwendia
 manager: mwongerapk
@@ -17,7 +17,7 @@ ms.custom: developer, devx-track-js
 
 # Sign in users in a sample Node.js CLI application. 
 
-This guide uses a sample Node Command Line Interface (CLI) application to sign in users in a Microsoft Entra  External ID tenant. The sample application uses the [Microsoft Authentication Library for Node](/javascript/api/%40azure/msal-node/) (MSAL Node) to handle authentication.
+This guide uses a sample Node Command Line Interface (CLI) application to sign in users in a Microsoft Entra External ID tenant. The sample application uses the [Microsoft Authentication Library for Node](/javascript/api/%40azure/msal-node/) (MSAL Node) to handle authentication.
 
 In this article, you complete the following tasks:
 
