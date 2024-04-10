@@ -22,6 +22,8 @@ ms.reviewer: chmutali
 
 This article explains how the integration works and how you can customize the provisioning behavior for different HR scenarios. 
 
+Microsoft Entra also supports single-sign on to SuccessFactors. For more information, see [Microsoft Entra single sign-on (SSO) integration with SuccessFactors](~/identity/saas-apps/successfactors-tutorial.md).
+
 ## Establishing connectivity 
 Microsoft Entra provisioning service uses basic authentication to connect to Employee Central OData API endpoints. When setting up the SuccessFactors provisioning app, use the *Tenant URL* parameter in the *Admin Credentials* section to configure the [API data center URL](https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/d599f15995d348a1b45ba5603e2aba9b/af2b8d5437494b12be88fe374eba75b6.html). 
 
