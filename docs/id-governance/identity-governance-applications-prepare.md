@@ -22,7 +22,7 @@ Organizations with compliance requirements or risk management plans have sensiti
 * enforce access checks
 * produce reports to demonstrate how those controls are being used to meet your compliance and risk management objectives.
 
-In addition to the application access governance scenario, you can also use identity governance and the other Microsoft Entra features for other scenarios, such as [reviewing and removing users from other organizations](~/id-governance/access-reviews-external-users.md) or [managing users who are excluded from Conditional Access policies](~/id-governance/conditional-access-exclusion.md).  If your organization has multiple administrators in Microsoft Entra ID or Azure, uses B2B or self-service group management, then you should [plan an access reviews deployment](deploy-access-reviews.md) for those scenarios.
+In addition to the application access governance scenario, you can also use Microsoft Entra ID Governance features and the other Microsoft Entra features for other scenarios, such as [reviewing and removing users from other organizations](~/id-governance/access-reviews-external-users.md) or [managing users who are excluded from Conditional Access policies](~/id-governance/conditional-access-exclusion.md).  If your organization has multiple administrators in Microsoft Entra ID or Azure, uses B2B or self-service group management, then you should [plan an access reviews deployment](deploy-access-reviews.md) for those scenarios.
 
 ## License requirements
 [!INCLUDE [active-directory-entra-governance-license.md](~/includes/entra-entra-governance-license.md)]
@@ -37,9 +37,9 @@ Microsoft Entra ID Governance can be integrated with many applications, using [s
 
 <a name='prerequisites-before-configuring-azure-ad-for-identity-governance'></a>
 
-## Prerequisites before configuring Microsoft Entra ID for identity governance
+## Prerequisites before configuring Microsoft Entra ID and Microsoft Entra ID Governance for identity governance
 
-Before you begin the process of governing application access from Microsoft Entra ID, you should check your Microsoft Entra environment is appropriately configured.
+Before you begin the process of governing application access from Microsoft Entra ID Governance, you should check your Microsoft Entra environment is appropriately configured.
 
 * **Ensure your Microsoft Entra ID and Microsoft Online Services environment is ready for the [compliance requirements](~/standards/standards-overview.md) for the applications to be integrated and properly licensed**.  Compliance is a shared responsibility among Microsoft, cloud service providers (CSPs), and organizations.  To use Microsoft Entra ID to govern access to applications, you must have one of the following [license combinations](licensing-fundamentals.md) in your tenant:
 
