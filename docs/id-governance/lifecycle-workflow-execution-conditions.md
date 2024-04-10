@@ -1,6 +1,6 @@
 ---
-title: Lifecycle Workflow execution conditions and scheduling
-description: Conceptual article about Lifecycle Workflows execution conditions.
+title: Lifecycle workflow execution conditions and scheduling
+description: Conceptual article about lifecycle Workflows execution conditions.
 author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
@@ -14,7 +14,7 @@ ms.custom: template-concept
 
 # Lifecycle workflow execution conditions and scheduling
 
-Workflows created using Lifecycle workflows allows you to automate common tasks for users based on where they fall in the joiner, mover, and leaver model of their lifecycle within your organization. These workflows are able to run in two ways, manually(on-demand) for specific users, or based on a schedule if the user meets the defined execution conditions of a workflow. These execution conditions are defined by two parts, a trigger, and a scope. This article describes execution conditions, the difference between the workflow triggers and their scopes, the conditions for a scheduled workflow, and when they run for users.
+Workflows created using lifecycle workflows allows you to automate common tasks for users based on where they fall in the joiner, mover, and leaver model of their lifecycle within your organization. These workflows are able to run in two ways, manually(on-demand) for specific users, or based on a schedule if the user meets the defined execution conditions of a workflow. These execution conditions are defined by two parts, a trigger, and a scope. This article describes execution conditions, the difference between the workflow triggers and their scopes, the conditions for a scheduled workflow, and when they run for users.
 
 ## Workflow execution conditions
 
@@ -33,7 +33,7 @@ The trigger you choose depends on what type of workflow you want to run for user
 - **On-demand only**: The workflow is only triggered manually.
 
 > [!NOTE]
-> The **On-demand only** trigger is the default trigger of workflow templates that are on-demand only. For the full list of workflow templates, and their compatible triggers, see: [Lifecycle Workflows templates and categories](lifecycle-workflow-templates.md)
+> The **On-demand only** trigger is the default trigger of workflow templates that are on-demand only. For the full list of workflow templates, and their compatible triggers, see: [Lifecycle workflows templates and categories](lifecycle-workflow-templates.md)
 
 ## Time based attribute trigger
 
