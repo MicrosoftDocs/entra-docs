@@ -1,16 +1,15 @@
 ---
 title: 'What is Microsoft Entra Cloud Sync?'
 description: Describes Microsoft Entra Cloud Sync.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: overview
 ms.date: 01/18/2024
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # What is Microsoft Entra Cloud Sync?
@@ -55,7 +54,6 @@ The following table provides a comparison between Microsoft Entra Connect and Mi
 | Connect to multiple disconnected on-premises AD forests | |● |
 | Lightweight agent installation model | |● |
 | Multiple active agents for high availability | |● |
-| Connect to LDAP directories|●| | 
 | Support for user objects |● |● |
 | Support for group objects |● |● |
 | Support for contact objects |● |● |

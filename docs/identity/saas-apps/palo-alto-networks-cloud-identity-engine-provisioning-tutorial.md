@@ -8,13 +8,15 @@ writer: Thwimmer
 manager: jeedes
 
 ms.assetid: 48afc8f5-a030-42da-9ffa-14fe5f80e333
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: Thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service so that I can streamline the user management process and ensure that users have the appropriate access to Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service.
 ---
 
 # Tutorial: Configure Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service for automatic user provisioning

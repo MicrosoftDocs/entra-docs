@@ -1,14 +1,12 @@
 ---
 title: New name for Azure Active Directory
 description: Learn how we're unifying the Microsoft Entra product family and how we're renaming Azure Active Directory (Azure AD) to Microsoft Entra ID.
-services: active-directory
 author: CelesteDG
 manager: CelesteDG
-ms.service: active-directory
+ms.service: entra
 ms.subservice: fundamentals
-ms.custom: has-azure-ad-ps-ref
-ms.topic: overview
-ms.date: 01/05/2024
+ms.topic: concept-article
+ms.date: 03/05/2024
 ms.author: celested
 ms.reviewer: nicholepet
 
@@ -17,7 +15,7 @@ ms.reviewer: nicholepet
 
 # New name for Azure Active Directory
 
-Microsoft renamed Azure Active Directory (Azure AD) to Microsoft Entra ID for the following reasons: (1) to communicate the multicloud, multiplatform functionality of the products, (2) to alleviate confusion with Windows Server Active Directory, and (3) to unify the [Microsoft Entra](/entra) product family.  
+Microsoft renamed Azure Active Directory (Azure AD) to Microsoft Entra ID to communicate the multicloud, multiplatform functionality of the products, alleviate confusion with Windows Server Active Directory, and unify the [Microsoft Entra](/entra) product family.  
 
 ## No interruptions to usage or service
 
@@ -33,9 +31,9 @@ Service plan display names changed on October 1, 2023. Microsoft Entra ID Free, 
 
 :::image type="content" source="./media/new-name/azure-ad-new-name.png" alt-text="Diagram showing the new name for Azure AD and Azure AD External Identities." border="false" lightbox="./media/new-name/azure-ad-new-name-high-res.png":::
 
-During 2023, you may see both the current Azure AD name and the new Microsoft Entra ID name in support area paths. For self-service support, look for the topic path of `Microsoft Entra` or `Azure Active Directory/Microsoft Entra ID`.
+For self-service support, look for the topic path of `Microsoft Entra` or `Azure Active Directory/Microsoft Entra ID`.
 
-The product name and icons are changing, and features are now branded as Microsoft Entra instead of Azure AD. If you're updating the name to Microsoft Entra ID in your own content or experiences, see [How to: Rename Azure AD](how-to-rename-azure-ad.md).
+The product name and icons are changing, and features are now branded as Microsoft Entra instead of Azure AD. If you're updating the name to Microsoft Entra ID in your own content or experiences, see [How to: Rename Azure AD](how-to-rename-azure-ad.yml).
 
 ## Naming changes and exceptions
 
@@ -85,7 +83,7 @@ The following table lists terminology that's not impacted by the rename. Names a
 
 ### When is the name change happening?
 
-The name change will appear across Microsoft experiences starting August 15, 2023. Display names for SKUs and service plans will change on October 1, 2023. We expect most naming text string changes in Microsoft experiences and partner experiences to be completed by the end of 2023.  
+The name change across Microsoft experiences started on August 15, 2023. Display names for SKUs and service plans changed on October 1, 2023. Most naming text string changes in Microsoft experiences and partner experiences were completed at the end of 2023.  
 
 ### Why is the name being changed?
 
@@ -147,7 +145,7 @@ The naming of features changes to Microsoft Entra. For example:
 - Azure AD tenant -> Microsoft Entra tenant
 - Azure AD account -> Microsoft Entra account
 
-For more examples, see the glossary of feature name updates in [How to: Rename Azure AD](how-to-rename-azure-ad.md).
+For more examples, see the [glossary of updated terminology](#glossary-of-updated-terminology).
 
 ### Are licenses changing? Are there any changes to pricing?
 
@@ -167,7 +165,7 @@ There are no changes to the identity features and functionality available in Mic
 
 ### What's changing for Microsoft 365 E5?
 
-In addition to the capabilities they already have, Microsoft 365 E5 customers also get access to new identity protection capabilities like token protection, Conditional Access based on GPS-based location and step-up authentication for the most sensitive actions. Microsoft 365 E5 includes Microsoft Entra P2, previously known as Azure AD Premium P2.
+In addition to the capabilities they already have, Microsoft 365 E5 customers also get access to new identity protection capabilities like token protection, Conditional Access based on GPS-based location and step-up authentication for the most sensitive actions. Microsoft 365 E5 includes Microsoft Entra ID P2, previously known as Azure AD Premium P2.
 
 ### What's changing for identity developer and devops experiences?
 
@@ -195,7 +193,7 @@ Banners, alerts, and message center posts notified users of the name change. The
 
 ### What if I use the Azure AD name in my content or app?
 
-We'd like your help spreading the word about the name change and implementing it in your own experiences. If you're a content creator, author of internal documentation for IT or identity security admins, developer of Azure AD–enabled apps, independent software vendor, or Microsoft partner, we hope you use the naming guidance outlined in [How to: Rename Azure AD](how-to-rename-azure-ad.md) to make the name change in your content and product experiences by the end of 2023.
+We'd like your help spreading the word about the name change and implementing it in your own experiences. If you're a content creator, author of internal documentation for IT or identity security admins, developer of Azure AD–enabled apps, independent software vendor, or Microsoft partner, you can use the naming guidance outlined in [How to: Rename Azure AD](how-to-rename-azure-ad.yml) to make the name change in your content and product experiences.
 
 ## Glossary of updated terminology
 
@@ -286,16 +284,16 @@ Only official product names are capitalized, plus Conditional Access and My * ap
 
 | Date | Change description |
 |------|--------------------|
+| March 5, 2024 | Minor updates to statements that contained dates. |
 | October 12, 2023 | <br/>&#8226;Updated statement about availability of license plans.  <br/>&#8226; Added three other terms in the glossary: "Azure AD connector", "Azure AD license", and "Azure AD Premium" |
-| September 15, 2023 | Added a link to the how-to article on renaiming Azure AD, updated the description for Azure AD B2C, and added more info about why the name Azure AD is changing. |
+| September 15, 2023 | Added a link to the how-to article on renaming Azure AD, updated the description for Azure AD B2C, and added more info about why the name Azure AD is changing. |
 | August 29, 2023 | <br/>&#8226; In the glossary, corrected the entry for "Azure AD activity logs" to separate "Azure AD audit log", which is a distinct type of activity log. <br/>&#8226; Added Azure AD Sync and DirSync to the "What names aren't changing" section. |
 | August 18, 2023 | <br/>&#8226; Updated the article to include a new section, "Glossary of updated terminology", which includes the old and new terminology.<br/>&#8226; Updated info and added link to usage of the Microsoft Entra ID icon, and updates to verbiage in some sections.  |
 | July 11, 2023 | Published the original guidance as part of the [Microsoft Entra moment and related announcement](https://www.microsoft.com/security/blog/2023/07/11/microsoft-entra-expands-into-security-service-edge-and-azure-ad-becomes-microsoft-entra-id/?culture=en-us&country=us). |
 
 ## Next steps
 
-- [How to: Rename Azure AD](how-to-rename-azure-ad.md)
-- [Stay up-to-date with what's new in Microsoft Entra ID (formerly Azure AD)](./whats-new.md)
+- [How to: Rename Azure AD](how-to-rename-azure-ad.yml)
 - [Get started using Microsoft Entra ID at the Microsoft Entra admin center](https://entra.microsoft.com/)
 - [Learn more about the Microsoft Entra family with content from Microsoft Learn](/entra/)
 

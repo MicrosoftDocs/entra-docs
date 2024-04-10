@@ -8,13 +8,15 @@ writer: Thwimmer
 manager: jeedes
 
 ms.assetid: a1a4e5ab-87ae-4cad-b187-cc474a8ea185
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: Thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to BullseyeTDP so that I can streamline the user management process and ensure that users have the appropriate access to BullseyeTDP.
 ---
 
 # Tutorial: Configure BullseyeTDP for automatic user provisioning

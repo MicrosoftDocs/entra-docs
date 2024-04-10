@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 6c3b93cc-a858-4c21-b4df-b35dbd9e0116
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 06/05/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Xledger so that I can streamline the user management process and ensure that users have the appropriate access to Xledger.
 ---
 
 # Tutorial: Configure Xledger for automatic user provisioning

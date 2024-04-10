@@ -1,13 +1,12 @@
 ---
 title: Manage user-assigned managed identities
 description: Create user-assigned managed identities.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: how-to
-ms.workload: identity
 ms.date: 05/10/2023
 ms.author: barclayn
 ms.custom: devx-track-azurecli, devx-track-linux
@@ -84,7 +83,7 @@ In some environments, administrators choose to limit who can manage user-assigne
 1. Select **Access control (IAM)**.
 1. Choose **Add role assignment**.
 
-   ![Screenshot that shows the user-assigned managed identity access control screen](media/how-manage-user-assigned-managed-identities/role-assign.png)
+   :::image type="content" source="media/how-manage-user-assigned-managed-identities/role-assign.png" alt-text="Screenshot that shows the user-assigned managed identity access control screen.":::
 
 1. In the **Add role assignment** pane, choose the role to assign and choose **Next**.
 1. Choose who should have the role assigned.

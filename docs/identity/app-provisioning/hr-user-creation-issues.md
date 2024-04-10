@@ -3,10 +3,9 @@ title: Troubleshoot user creation issues with HR provisioning
 description: Learn how to troubleshoot user creation issues with HR provisioning
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.workload: identity
 ms.date: 01/30/2024
 ms.author: jfields
 ms.reviewer: chmutali
@@ -18,9 +17,9 @@ ms.reviewer: chmutali
 
 **Applies to:**
 * Workday to on-premises Active Directory user provisioning
-* Workday to Microsoft Entra user provisioning
+* Workday to Microsoft Entra ID user provisioning
 * SAP SuccessFactors to on-premises Active Directory user provisioning
-* SAP SuccessFactors to Microsoft Entra user provisioning
+* SAP SuccessFactors to Microsoft Entra ID user provisioning
 
 | Troubleshooting | Details |
 |-- | -- |

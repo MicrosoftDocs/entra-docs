@@ -1,20 +1,17 @@
 ---
 title: Change subdomain authentication type using PowerShell and Graph
 description: Change default subdomain authentication settings inherited from root domain settings in Microsoft Entra ID.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 ms.date: 01/09/2024
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro, has-azure-ad-ps-ref
 
-ms.collection: M365-identity-device-management
 ---
 
 # Change subdomain authentication type in Microsoft Entra ID
@@ -86,7 +83,10 @@ Invoking API with a subdomain whose parent domain is unverified | POST | 400 | U
 Invoking API with a federated verified subdomain with user references | POST | 400 | Promoting a subdomain with user references isn't allowed. Please migrate the users to the current root domain before promotion of the subdomain.
 
 
-### Change the subdomain authentication type
+### Change the subdomain authentication type to managed
+
+> [!IMPORTANT]
+> If you are changing the authentication type for a federated subdomain, you should take note of the existing federation configuration values before completing the steps below. This information may become necessary if you decide to reimplement federation prior to promoting a domain. 
 
 1. Use the following command to change the subdomain authentication type:
 

@@ -6,12 +6,16 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 48a929c5-6cfa-44ca-8471-641fa5a35ee0
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 07/17/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Airtable so that I can streamline the user management process and ensure that users have the appropriate access to Airtable.
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Airtable so that I can streamline the user management process and ensure that users have the appropriate access to Airtable.
 ---
 
 # Tutorial: Configure Airtable for automatic user provisioning

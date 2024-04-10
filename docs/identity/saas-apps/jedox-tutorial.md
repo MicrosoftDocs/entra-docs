@@ -5,13 +5,15 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/27/2022
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Jedox so that I can control who has access to Jedox, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Microsoft Entra single sign-on (SSO) integration with Jedox
@@ -33,7 +35,7 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Jedox supports **SP and IDP** initiated SSO
+* Jedox supports both **SP and IDP** initiated SSO.
 
 ## Adding Jedox from the gallery
 
@@ -44,7 +46,7 @@ To configure the integration of Jedox into Microsoft Entra ID, you need to add J
 1. In the **Add from the gallery** section, type **Jedox** in the search box.
 1. Select **Jedox** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 
 <a name='configure-and-test-azure-ad-sso-for-jedox'></a>
@@ -73,7 +75,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Edit Basic SAML Configuration](common/edit-urls.png)
+   ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
 1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, enter the values for the following fields:
 
@@ -89,11 +91,11 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<CUSTOMER_NAME>.cloud.jedox.com/ui/login/`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Jedox Client support team](mailto:support@jedox.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Jedox support team](https://my.jedox.com/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
-	![The Certificate download link](common/copy-metadataurl.png)
+	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 <a name='create-an-azure-ad-test-user'></a>
 
 ### Create a Microsoft Entra test user
@@ -126,11 +128,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Jedox SSO
 
-To configure single sign-on on **Jedox** side, you need to send the **App Federation Metadata Url** to [Jedox support team](mailto:support@jedox.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Jedox** side, you need to send the **App Federation Metadata Url** to [Jedox support team](https://my.jedox.com/). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Jedox test user
 
-In this section, you create a user called Britta Simon in Jedox. Work with [Jedox Client support team](mailto:support@jedox.com) to add the users in the Jedox platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Jedox. Work with [Jedox support team](https://my.jedox.com/) to add the users in the Jedox platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 

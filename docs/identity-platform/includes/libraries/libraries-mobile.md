@@ -1,3 +1,13 @@
+---
+author: henrymbuguakiarie
+ms.service: identity-platform
+ms.topic: include
+ms.date: 09/25/2023
+ms.author: henrymbugua
+manager: CelesteDG 
+---
+
+
 | Platform          | Project on<br/>GitHub                                                                          | Package                                                                               | Getting<br/>started                    | Sign in users                                         | Access web APIs                                                 | Generally available (GA) *or*<br/>Public preview<sup>1</sup> |
 |-------------------|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|:--------------------------------------:|:-----------------------------------------------------:|:---------------------------------------------------------------:|:------------------------------------------------------------:|
 | Android (Java)    | [MSAL Android](https://github.com/AzureAD/microsoft-authentication-library-for-android)        | [MSAL](https://mvnrepository.com/artifact/com.microsoft.identity.client/msal)         | [Quickstart](../../quickstart-mobile-app-android-sign-in.md) | ![Library can request ID tokens for user sign-in.][y] | ![Library can request access tokens for protected web APIs.][y] | GA                                                           |

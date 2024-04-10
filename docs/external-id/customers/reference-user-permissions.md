@@ -1,21 +1,20 @@
 ---
-title: User default permissions in customer tenants
-description: Learn about the default permissions for users in a customer tenant.
- 
+title: User default permissions in external tenants
+description: Learn about the default permissions for users in an external tenant. 
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: reference
 ms.date: 05/01/2023
 ms.author: mimart
 ms.custom: it-pro
 ---
 
-# Default user permissions in customer tenants
+# Default user permissions in external tenants
 
-A customer tenant provides clear separation between your corporate workforce directory and your customer-facing app directory. Furthermore, users created in your customer tenant are restricted from accessing information about other users in the customer tenant. By default, customers can’t access information about other users, groups, or devices.
+An external tenant provides clear separation between your corporate workforce directory and your customer-facing app directory. Furthermore, users created in your external tenant are restricted from accessing information about other users in the external tenant. By default, customers can’t access information about other users, groups, or devices.
 
 The following table describes the default permissions assigned to a customer.
 

@@ -1,11 +1,11 @@
 ---
 title: Configure LexisNexis Risk Solutions as an identity verification partner using Verified ID
 description: This article shows you the steps you need to follow to configure LexisNexis as your identity verification partner
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 ms.topic: how-to
 ms.date: 01/26/2023
 ms.author: barclayn
@@ -48,7 +48,7 @@ As a developer you'll provide the steps below to your tenant administrator. The 
 1. Select on **Select Issuer**.
 1. Look for LexisNexis in the Search/select issuers drop-down. 
    
-   [ ![Screenshot of the select issuer section of the portal showing LexisNexis as the choice.](./media/verified-id-partner-lexisnexis/select-issuer.png)](./media/verified-id-partner-lexisnexis/select-issuer.png#lightbox)
+   [ :::image type="content" source="./media/verified-id-partner-lexisnexis/select-issuer.png" alt-text="Screenshot of the select issuer section of the portal showing LexisNexis as the choice.":::](./media/verified-id-partner-lexisnexis/select-issuer.png#lightbox)
    
 1. Check the credential type you've discussed with LexisNexis Customer success manager for your specific needs.
 1. Choose **Add** and then choose **Review**.

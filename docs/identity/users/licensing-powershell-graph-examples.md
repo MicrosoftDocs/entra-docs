@@ -2,18 +2,15 @@
 
 title: Microsoft Graph PowerShell examples for group licensing
 description: Microsoft Graph PowerShell group based licensing examples
-services: active-directory
+
 keywords: Azure AD licensing
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
-ms.workload: identity
 ms.date: 01/08/2024
 ms.author: barclayn
-
 ---
 
 # Microsoft Graph PowerShell group-based licensing examples
@@ -66,8 +63,7 @@ Set-MgGroupLicense -GroupId $groupId -BodyParameter $params
 
 
 ```powershell
-Get-MgGroup -GroupId 99c4216a-56de-42c4-a4ac-1111cd8c7c41 -Property "AssignedLicenses" |
-    Select-Object -ExpandProperty AssignedLicenses.SkuId 
+Get-MgGroup -GroupId 99c4216a-56de-42c4-a4ac-1111cd8c7c41 -Property "AssignedLicenses" | Select-Object -ExpandProperty AssignedLicenses
 
 ```
 

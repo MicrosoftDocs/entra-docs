@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: devx-track-js
 ms.date: 12/12/2021
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As a developer, I want to build a Node.js console daemon app that calls the Microsoft Graph API using its own identity, and learn how to authenticate and make requests to the API in my own applications.
 ---
@@ -117,9 +117,9 @@ At the end of the tutorial, your project's file and directory structure should l
 ```
 NodeDaemonApp/
 ├── bin
-│   ├── auth.js
-│   ├── fetch.js
-│   ├── index.js
+│   ├── auth.js
+│   ├── fetch.js
+│   ├── index.js
 ├── package.json
 └── .env
 ```

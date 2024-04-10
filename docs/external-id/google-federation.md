@@ -4,15 +4,14 @@ title: Add Google as an identity provider for B2B
 description: Federate with Google to enable guest users to sign in to your Microsoft Entra apps with their own Gmail accounts.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro, has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 #customer intent: As a B2B collaboration administrator, I want to add Google as an identity provider, so that invited users can sign in to shared apps and resources using their Gmail accounts.
 ---
@@ -227,7 +226,7 @@ You'll now set the Google client ID and client secret. You can use the Microsoft
 
 ## Add Google identity provider to a user flow
 
-At this point, the Google identity provider is set up in your Microsoft Entra ID tenant. Users who redeem invitations from you can use Google to sign in. However, if you've created self-service sign-up user flows, you also need to add Google to your user flow sign-in pages. To add the Google identity provider to a user flow:
+At this point, the Google identity provider is set up in your Microsoft Entra tenant. Users who redeem invitations from you can use Google to sign in. However, if you've created self-service sign-up user flows, you also need to add Google to your user flow sign-in pages. To add the Google identity provider to a user flow:
 
 1. Browse to **Identity** > **External Identities** > **User flows**.
 

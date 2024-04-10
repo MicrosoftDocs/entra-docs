@@ -2,10 +2,10 @@
 title: What is Conditional Access in Microsoft Entra ID?
 description: Conditional Access is the Zero Trust policy engine at the heart of the new identity-driven control plane.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: overview
-ms.date: 11/09/2023
+ms.date: 03/19/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo

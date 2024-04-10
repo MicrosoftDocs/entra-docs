@@ -8,13 +8,15 @@ writer: Thwimmer
 manager: jeedes
 
 ms.assetid: 57511d3c-905a-4de5-9cc9-1a08bd7b8457
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: Thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to ProdPad so that I can streamline the user management process and ensure that users have the appropriate access to ProdPad.
 ---
 
 # Tutorial: Configure ProdPad for automatic user provisioning

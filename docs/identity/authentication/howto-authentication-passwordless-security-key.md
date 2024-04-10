@@ -2,18 +2,15 @@
 title: Passwordless security key sign-in
 description: Enable passwordless security key sign-in to Microsoft Entra ID using FIDO2 security keys
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 12/06/2023
+ms.date: 03/22/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: calui
-
-ms.collection: M365-identity-device-management
 ---
 # Enable passwordless security key sign-in 
 
@@ -139,10 +136,13 @@ If you'd like to share feedback or encounter issues with this feature, share via
 
 ## Known issues
 
+### B2B collaboration users 
+
+Registration of FIDO2 credentials isn't supported for B2B collaboration users in the resource tenant.
+
 ### Security key provisioning
 
 Administrator provisioning and de-provisioning of security keys isn't available.
-
 
 ### UPN changes
 

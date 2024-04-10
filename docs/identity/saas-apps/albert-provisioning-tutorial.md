@@ -6,12 +6,16 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: b5672366-08ad-40ba-9cdf-7a24feff6c66
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 07/05/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Albert so that I can streamline the user management process and ensure that users have the appropriate access to Albert.
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Albert so that I can streamline the user management process and ensure that users have the appropriate access to Albert.
 ---
 
 # Tutorial: Configure Albert for automatic user provisioning

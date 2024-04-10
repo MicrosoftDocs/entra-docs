@@ -8,13 +8,15 @@ writer: twimmers
 manager: jeedes
 
 ms.assetid: 5aaacb86-4fb0-49f3-9f7d-e9ea94829b2b
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Klaxoon SAML so that I can streamline the user management process and ensure that users have the appropriate access to Klaxoon SAML.
 ---
 
 # Tutorial: Configure Klaxoon SAML for automatic user provisioning

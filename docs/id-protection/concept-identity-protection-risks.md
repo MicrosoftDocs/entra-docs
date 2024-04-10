@@ -2,8 +2,8 @@
 title: What are risks in Microsoft Entra ID Protection
 description: Explaining risk in Microsoft Entra ID Protection
 
-ms.service: active-directory
-ms.subservice: identity-protection
+ms.service: entra-id-protection
+
 ms.topic: conceptual
 ms.date: 02/05/2024
 
@@ -46,7 +46,6 @@ Real-time detections might not show up in reporting for 5 to 10 minutes. Offline
 | Risk detection | Detection type | Type |
 | --- | --- | --- |
 | [Atypical travel](#atypical-travel) | Offline | Premium |
-| [Anomalous Token](#anomalous-token) | Offline | Premium |
 | [Anomalous Token](#anomalous-token) | Real-time or Offline | Premium |
 | [Suspicious browser](#suspicious-browser) | Offline | Premium |
 | [Unfamiliar sign-in properties](#unfamiliar-sign-in-properties) | Real-time | Premium |
@@ -315,4 +314,4 @@ Location in risk detections is determined using IP address lookup.
 - [Policies available to mitigate risks](concept-identity-protection-policies.md)
 - [Investigate risk](howto-identity-protection-investigate-risk.md)
 - [Remediate and unblock users](howto-identity-protection-remediate-unblock.md)
-- [Security overview](concept-identity-protection-security-overview.md)
+- [Microsoft Entra ID Protection dashboard](id-protection-dashboard.md)

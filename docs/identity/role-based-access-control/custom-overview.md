@@ -1,19 +1,18 @@
 ---
 title: Overview of Microsoft Entra role-based access control (RBAC)
 description: Learn how to understand the parts of a role assignment and restricted scope in Microsoft Entra ID.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: overview
 ms.date: 04/10/2023
 ms.author: rolyon
 ms.reviewer: abhijeetsinha
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
-ms.collection: M365-identity-device-management
+
 ---
 
 # Overview of role-based access control in Microsoft Entra ID
@@ -92,6 +91,8 @@ If you specify a Microsoft Entra resource as a scope, it can be one of the follo
 - Microsoft Entra groups
 - Enterprise applications
 - Application registrations
+
+When a role is assigned over a container scope, such as the Tenant or an Administrative Unit, it grants permissions over the objects they contain but not on the container itself. On the contrary, when a role is assigned over a resource scope, it grants permissions over the resource itself but it does not extend beyond (in particular, it does not extend to the members of a Microsoft Entra group).
 
 For more information, see [Assign Microsoft Entra roles at different scopes](assign-roles-different-scopes.md).
 

@@ -3,10 +3,10 @@ title: Learn about the audit logs in Microsoft Entra ID
 description: Learn about the types of activities and events that are captured in Microsoft Entra audit logs and how you can use the logs for troubleshooting.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
-ms.subservice: report-monitor
-ms.date: 02/01/2024
+ms.subservice: monitoring-health
+ms.date: 03/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -23,7 +23,7 @@ Two other activity logs are also available to help monitor the health of your te
 - **[Sign-ins](concept-sign-ins.md)** – Information about sign-ins and how your resources are used by your users.
 - **[Provisioning](concept-provisioning-logs.md)** – Activities performed by the provisioning service, such as the creation of a group in ServiceNow or a user imported from Workday.
 
-This article gives you an overview of the audit logs, including what's required to access them, what information they provide, and 
+This article gives you an overview of the audit logs, including what's required to access them and what information they provide.
 
 ## License and role requirements
 

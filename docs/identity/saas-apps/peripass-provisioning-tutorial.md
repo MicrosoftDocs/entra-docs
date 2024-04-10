@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 1d036aa3-4e07-4f48-a6ae-40fc6c066e42
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Peripass so that I can streamline the user management process and ensure that users have the appropriate access to Peripass.
 ---
 
 # Tutorial: Configure Peripass for automatic user provisioning

@@ -7,14 +7,16 @@ writer: twimmers
 manager: jeedes
 
 ms.assetid: f25122aa-4a23-4fb9-8d4e-9997b5ba5329
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Rouse Sales so that I can streamline the user management process and ensure that users have the appropriate access to Rouse Sales.
 ---
 
 # Tutorial: Configure Rouse Sales for automatic user provisioning

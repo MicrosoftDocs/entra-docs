@@ -3,9 +3,8 @@ title: MAU billing model for Microsoft Entra External ID
 description: Learn about Microsoft Entra External ID monthly active users (MAU) billing model for guest user collaboration (B2B) in Microsoft Entra External ID. Learn how to link your Microsoft Entra tenant to an Azure subscription.
 
  
-ms.service: active-directory
-ms.subservice: B2B
-ms.topic: conceptual
+ms.service: entra-external-id
+ms.topic: concept-article
 ms.date: 01/23/2024
 
 ms.author: mimart
@@ -31,12 +30,12 @@ To take advantage of MAU billing, your Microsoft Entra tenant must be linked to 
 
 |If your tenant is:  |You need to:  |
 |---------|---------|
-| A Microsoft Entra tenant already linked to a subscription     | Do nothing. When you use External Identities features to collaborate with guest users, you're automatically billed using the MAU model.        |
+| A Microsoft Entra tenant already linked to a subscription     | Do nothing. When you use External ID features to collaborate with guest users, you're automatically billed using the MAU model.        |
 | A Microsoft Entra tenant not yet linked to a subscription     | [Link your Microsoft Entra tenant to a subscription](#link-your-azure-ad-tenant-to-a-subscription) to activate MAU billing.        |
 
 ## About monthly active users (MAU) billing
 
-In your Microsoft Entra tenant, guest user collaboration usage is billed based on the count of unique guest users with authentication activity within a calendar month. This model replaces the 1:5 ratio billing model, which allowed up to five guest users for each Microsoft Entra ID P1 or P2 license in your tenant. When your tenant is linked to a subscription and you use External Identities features to collaborate with guest users, you're automatically billed using the MAU-based billing model.
+In your Microsoft Entra tenant, guest user collaboration usage is billed based on the count of unique guest users with authentication activity within a calendar month. This model replaces the 1:5 ratio billing model, which allowed up to five guest users for each Microsoft Entra ID P1 or P2 license in your tenant. When your tenant is linked to a subscription and you use External ID features to collaborate with guest users, you're automatically billed using the MAU-based billing model.
 
 Your first 50,000 MAUs per month are free for both Premium P1 and Premium P2 features. To determine the total number of MAUs, we combine MAUs from all your tenants (both External ID and Azure AD B2C) that are linked to the same subscription.
 

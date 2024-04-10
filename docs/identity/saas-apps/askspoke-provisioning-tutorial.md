@@ -8,13 +8,15 @@ writer: twimmers
 manager: jeedes
 
 ms.assetid: f9458aac-f576-49ce-aba4-fc8302ed6360
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 04/04/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to askSpoke so that I can streamline the user management process and ensure that users have the appropriate access to askSpoke.
 ---
 
 # Tutorial: Configure askSpoke for automatic user provisioning

@@ -2,8 +2,7 @@
 title: Sign-in risk-based multifactor authentication
 description: Create Conditional Access policies using Identity Protection sign-in risk
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 07/18/2023
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: calebb, lhuangnorth
-
-ms.collection: M365-identity-device-management
 ---
 # Common Conditional Access policy: Sign-in risk-based multifactor authentication
 
@@ -56,7 +53,7 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 
 ## Next steps
 
-- [Require reauthentication every time](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#require-reauthentication-every-time)
+- [Require reauthentication every time](~/identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time)
 - [Remediate risks and unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md)
 - [Conditional Access common policies](concept-conditional-access-policy-common.md)
 - [User risk-based Conditional Access](howto-conditional-access-policy-risk-user.md)

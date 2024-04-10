@@ -4,13 +4,13 @@ description: Call an API from a React single-page app.
 author: OwenRichards1
 ms.author: owenrichards
 ms.date: 09/25/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As a React developer, I want to know how to create a user interface and access the Microsoft Graph API
 ---
 
-# Tutorial: Call an API from a React single-page app
+# Tutorial: Call the Microsoft Graph API from a React single-page app
 
 Before being able to interact with the single-page app (SPA), we need to initiate an API call to Microsoft Graph and create the user interface (UI) for the application. After this is added, we can sign in to the application and get profile data information from the Microsoft Graph API.
 

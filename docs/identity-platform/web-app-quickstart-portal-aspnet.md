@@ -7,9 +7,9 @@ manager: CelesteDG
 ms.author: dmwendia
 ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:ASP.NET", mode-other
 ms.date: 08/16/2022
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: quickstart
 #Customer intent: As an application developer, I want to see a sample ASP.NET web app that can sign in Microsoft Entra users.
 ---
 
@@ -27,7 +27,7 @@ ms.topic: conceptual
 >
 > In this quickstart, you download and run a code sample that demonstrates an ASP.NET web application that can sign in users with Microsoft Entra accounts.
 > 
-> #### Step 1: Configure your application in the Azure portal
+> #### Step 1: Configure your application in the Microsoft Entra admin center
 > For the code sample in this quickstart to work, enter **https://localhost:44368/** for **Redirect URI**.
 > 
 > <button id="makechanges" class="nextstepaction configure-app-button"> Make these changes for me </button>
@@ -116,7 +116,7 @@ ms.topic: conceptual
 > 
 > > |Where  | Description |
 > > |---------|---------|
-> > | `ClientId`     | The application ID from the application registered in the Azure portal. |
+> > | `ClientId`     | The application ID from the application registered in the Microsoft Entra admin center. |
 > > | `Authority`    | The security token service (STS) endpoint for the user to authenticate. It's usually `https://login.microsoftonline.com/{tenant}/v2.0` for the public cloud. In that URL, *{tenant}* is the name of your tenant, your tenant ID, or `common` for a reference to the common endpoint. (The common endpoint is used for multitenant applications.) |
 > > | `RedirectUri`  | The URL where users are sent after authentication against the Microsoft identity platform. |
 > > | `PostLogoutRedirectUri`     | The URL where users are sent after signing off. |

@@ -1,21 +1,18 @@
 ---
 title: View audit log report for Microsoft Entra roles in Microsoft Entra PIM
 description: Learn how to view the audit log history for Microsoft Entra roles in Microsoft Entra Privileged Identity Management (PIM).
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-editor: ''
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: how-to
-ms.workload: identity
-ms.subservice: pim
+ms.subservice: privileged-identity-management
 ms.date: 09/13/2023
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
 
-ms.collection: M365-identity-device-management
+
 ---
 # View audit history for Microsoft Entra roles in Privileged Identity Management
 
@@ -37,7 +34,7 @@ Resource audit gives you a view of all activity associated with your Microsoft E
 
 1. Filter the history using a predefined date or custom range.
 
-    ![Microsoft Entra role audit list with filters](media/azure-pim-resource-rbac/rbac-resource-audit.png)
+    :::image type="content" source="media/azure-pim-resource-rbac/rbac-resource-audit.png" alt-text="Screenshot showing the Microsoft Entra role audit list with filters.":::
 
 ## View my audit
 
@@ -53,7 +50,7 @@ My audit enables you to view your personal role activity.
 
 1. Filter the history using a predefined date or custom range.
 
-    ![Audit list for the current user](media/azure-pim-resource-rbac/my-audit-time.png)
+    :::image type="content" source="media/azure-pim-resource-rbac/my-audit-time.png" alt-text="Screenshot showing the Audit list page for the current user.":::
 
 ## Next steps
 

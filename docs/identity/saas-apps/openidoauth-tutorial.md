@@ -5,13 +5,15 @@ description: Steps to Configure an OpenID Connect OAuth application from Microso
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
 ms.custom: 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OpenID Connect OAuth so that I can control who has access to OpenID Connect OAuth, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Configure an OpenID Connect OAuth application from Microsoft Entra app gallery
 
@@ -36,7 +38,7 @@ ms.custom:
     ![Add button](./media/openidoauth-tutorial/addbutton.png)
 
     > [!NOTE]
-    > Here the tenant admin should select the sign-up button and provide the consent to the application. The application is then added to the customer tenant, where you can do the configurations. There's no need to add the application explicitly.
+    > Here the tenant admin should select the sign-up button and provide the consent to the application. The application is then added to the external tenant, where you can do the configurations. There's no need to add the application explicitly.
 
 5. You're redirected to the Application Login page or Microsoft Entra ID page for sign-in credentials.
 
@@ -72,7 +74,7 @@ By default, Microsoft Entra ID promotes multitenant applications. They're easily
 
 ## Consent framework
 
-You can use the Microsoft Entra ID consent framework to develop multitenant web and native client applications. These applications allow sign-in by user accounts from a Microsoft Entra tenant, different from the one where the application is registered. They might also need to access web APIs such as:
+You can use the Microsoft Entra consent framework to develop multitenant web and native client applications. These applications allow sign-in by user accounts from a Microsoft Entra tenant, different from the one where the application is registered. They might also need to access web APIs such as:
 - The Microsoft Graph API, to access Microsoft Entra ID, Intune, and services in Microsoft 365.
 - Other Microsoft services' APIs.
 - Your own web APIs.

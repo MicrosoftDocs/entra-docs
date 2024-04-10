@@ -1,21 +1,19 @@
 ---
 title: Microsoft Entra Connect Health agents for AD FS
 description: This is the Microsoft Entra Connect Health page how to monitor your on-premises AD FS infrastructure.
-services: active-directory
-documentationcenter: ''
+
 ms.reviewer: zhiweiwangmsft
 author: billmath
 manager: amycolannino
 ms.assetid: dc0e53d8-403e-462a-9543-164eaa7dd8b3
-ms.service: active-directory
-ms.subservice: hybrid
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
-ms.collection: M365-identity-device-management
+
 ---
 
 # Microsoft Entra Connect Health agents for AD FS
@@ -110,7 +108,7 @@ At this point, the agent services should start to automatically allow the agent 
 
 To verify that the agent was installed, look for the following services on the server. If you completed the configuration, they should already be running. Otherwise, they're stopped until the configuration is complete.
 
-- Microsoft Azure AD Connect Agent Updater
+- Microsoft Entra Connect Agent Updater
 - Microsoft Entra Connect Health Agent
 
 :::image type="content" source="media/how-to-connect-health-agent-install/install5.png" alt-text="Screenshot that shows Microsoft Entra Connect Health AD FS services.":::

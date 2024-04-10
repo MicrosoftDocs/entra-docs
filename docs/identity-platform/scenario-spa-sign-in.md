@@ -6,9 +6,9 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom: 
 ms.date: 07/19/2022
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
 ---
 

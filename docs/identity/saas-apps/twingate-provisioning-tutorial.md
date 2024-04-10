@@ -8,13 +8,15 @@ writer: twimmers
 manager: jeedes
 
 ms.assetid: 39476198-1ade-4c22-b880-111f4c30d823
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Twingate so that I can streamline the user management process and ensure that users have the appropriate access to Twingate.
 ---
 
 # Tutorial: Configure Twingate for automatic user provisioning

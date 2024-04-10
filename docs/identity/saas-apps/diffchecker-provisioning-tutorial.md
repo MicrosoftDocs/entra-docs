@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: fe6b1d92-06e7-4933-9ef0-7aecd6b9b495
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 10/09/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Diffchecker so that I can streamline the user management process and ensure that users have the appropriate access to Diffchecker.
 ---
 
 # Tutorial: Configure Diffchecker for automatic user provisioning

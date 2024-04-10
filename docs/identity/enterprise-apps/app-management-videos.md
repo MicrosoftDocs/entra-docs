@@ -5,9 +5,9 @@ services: azure AD
 author: omondiatieno
 manager: CelesteDG
 
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.topic: conceptual
+ms.service: entra-id
+ms.subservice: enterprise-apps
+ms.topic: concept-article
 
 ms.date: 05/31/2022
 ms.author: jomondi

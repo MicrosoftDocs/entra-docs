@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 019f3aa5-f32f-40a0-9efc-f6f159450093
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 03/02/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Vault Platform so that I can streamline the user management process and ensure that users have the appropriate access to Vault Platform.
 ---
 
 # Tutorial: Configure Vault Platform for automatic user provisioning

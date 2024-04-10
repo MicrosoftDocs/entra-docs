@@ -1,16 +1,15 @@
 ---
 title: How to import and export Microsoft Entra Connect configuration settings
 description: This article describes frequently asked questions for cloud provisioning.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Import and export Microsoft Entra Connect configuration settings 
@@ -23,7 +22,7 @@ Each time the configuration is changed from the Microsoft Entra Connect wizard, 
 > Only changes made by Microsoft Entra Connect are automatically exported. Any changes made by using PowerShell, the Synchronization Service Manager, or the Synchronization Rules Editor must be exported on demand as needed to maintain an up-to-date copy. Export on demand can also be used to place a copy of the settings in a secure location for disaster recovery purposes.
 
 >[!NOTE]
->This feature cannot be used if the AADConnect installation was modified to include the G-SQL connector or the G-LDAP connector.
+>This feature cannot be used if the Microsoft Entra Connect installation was modified to include the G-SQL connector or the G-LDAP connector.
 
 >[!NOTE]
 > This feature cannot be combined with using an existing ADSync database. The use of import/export configuration and using existing database are mutually exclusive.

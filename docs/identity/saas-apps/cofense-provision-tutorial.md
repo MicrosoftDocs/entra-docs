@@ -8,13 +8,15 @@ writer: twimmers
 manager: jeedes
 
 ms.assetid: 84fe20ef-0de0-4f7c-9b42-6385f3d834db
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cofense Recipient Sync so that I can streamline the user management process and ensure that users have the appropriate access to Cofense Recipient Sync.
 ---
 
 # Tutorial: Configure Cofense Recipient Sync for automatic user provisioning

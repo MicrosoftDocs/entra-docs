@@ -8,13 +8,15 @@ writer: twimmers
 manager: jeedes
 
 ms.assetid: d9818c05-e279-45b4-8aad-0fa156abd74e
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GitHub AE so that I can streamline the user management process and ensure that users have the appropriate access to GitHub AE.
 ---
 
 # Tutorial: Configure GitHub AE for automatic user provisioning

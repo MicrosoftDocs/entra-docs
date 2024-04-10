@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 4ad9db26-2354-4e47-9dc3-2deb39222c87
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 08/03/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to VMware Identity Service so that I can streamline the user management process and ensure that users have the appropriate access to VMware Identity Service.
 ---
 
 # Tutorial: Configure VMware Identity Service for automatic user provisioning

@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: a024c7db-ffe6-4fc9-a0ec-7075930bbf75
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Real Links so that I can streamline the user management process and ensure that users have the appropriate access to Real Links.
 ---
 
 # Tutorial: Configure Real Links for automatic user provisioning

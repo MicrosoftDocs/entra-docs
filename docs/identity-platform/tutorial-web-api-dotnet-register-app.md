@@ -1,21 +1,19 @@
 ---
-title: "Tutorial:  Register a web API with the Microsoft identity platform"
+title: "Tutorial: Register a web API with the Microsoft identity platform"
 description: In this tutorial, you learn how to register a web API with the Microsoft identity platform.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.date: 11/1/2022
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As an application developer, I want to know how to register my application with the Microsoft identity platform so that the security token service can issue access tokens to client applications that request them.
 ---
 
 # Tutorial: Register a web API with the Microsoft identity platform
 
-To interact with the Microsoft identity platform, Microsoft Entra ID must be made aware of the application you create. This tutorial shows you how to register an application in a tenant on the Azure portal.
-
-In this tutorial:
+In this tutorial, you learn how to register a web API in a Microsoft Entra ID tenant. You must register an application in the Microsoft Entra admin center to enable your application to interact with the Microsoft identity platform. In this article, you;
 
 > [!div class="checklist"]
 > * Register a web API in a tenant
@@ -26,9 +24,9 @@ In this tutorial:
 
 * An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/).
 * This Azure account must have permissions to manage applications. Use any of the following roles needed to register the application:
-  * Application administrator
+  * Application Administrator
   * Application developer
-  * Cloud application administrator
+  * Cloud Application Administrator
 
 ## Register the application and record identifiers
 

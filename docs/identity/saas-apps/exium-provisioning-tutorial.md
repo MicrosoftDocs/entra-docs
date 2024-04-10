@@ -8,13 +8,15 @@ writer: twimmers
 manager: jeedes
 
 ms.assetid: fb9d03e1-4365-4932-9403-69acfc3b8671
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Exium so that I can streamline the user management process and ensure that users have the appropriate access to Exium.
 ---
 
 # Tutorial: Configure Exium for automatic user provisioning

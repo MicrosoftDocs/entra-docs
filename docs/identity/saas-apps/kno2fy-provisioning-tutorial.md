@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: beatrizd
 ms.assetid: 68cc23f3-000b-421b-9d23-41f2eb5db521
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 03/31/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to kno2fy so that I can streamline the user management process and ensure that users have the appropriate access to kno2fy.
 ---
 
 # Tutorial: Configure Kno2fy for automatic user provisioning

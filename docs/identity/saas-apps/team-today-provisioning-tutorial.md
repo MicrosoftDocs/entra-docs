@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 9d3f64dc-d18a-44e4-a13b-d5e37e2aac3a
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 10/09/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Team Today so that I can streamline the user management process and ensure that users have the appropriate access to Team Today.
 ---
 
 # Tutorial: Configure Team Today for automatic user provisioning

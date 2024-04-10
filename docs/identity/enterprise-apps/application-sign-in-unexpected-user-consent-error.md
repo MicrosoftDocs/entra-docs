@@ -4,8 +4,8 @@ description: Discusses errors that can occur during the process of consenting to
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: troubleshooting
 ms.date: 09/06/2022
@@ -87,7 +87,6 @@ End-users won't be able to grant consent to apps that have been detected as risk
 
 ## Next steps
 
-[Apps, permissions, and consent in Azure Active Directory (v1.0 endpoint)](~/identity-platform/quickstart-register-app.md)<br>
 
 [Scopes, permissions, and consent in the Microsoft identity platform (v2.0 endpoint)](~/identity-platform/permissions-consent-overview.md)
 

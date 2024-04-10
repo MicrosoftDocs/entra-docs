@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: d76e2482-4228-4907-8b4c-c75aa495a2ae
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 03/24/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to BIS so that I can streamline the user management process and ensure that users have the appropriate access to BIS.
 ---
 
 # Tutorial: Configure BIS for automatic user provisioning

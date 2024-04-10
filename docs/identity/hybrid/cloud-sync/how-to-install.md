@@ -1,27 +1,26 @@
 ---
-title: 'Install the Microsoft Entra Provisioning Agent'
-description: Learn how to install the Microsoft Entra Provisioning Agent and how to configure it in the Microsoft Entra admin center.
-services: active-directory
+title: 'Install the Microsoft Entra provisioning agent'
+description: Learn how to install the Microsoft Entra provisioning agent and how to configure it in the Microsoft Entra admin center.
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
-# Install the Microsoft Entra Provisioning Agent
+# Install the Microsoft Entra provisioning agent
 
-This article walks you through the installation process for the Microsoft Entra Provisioning Agent and how to initially configure it in the Microsoft Entra admin center.
+This article walks you through the installation process for the Microsoft Entra provisioning agent and how to initially configure it in the Microsoft Entra admin center.
 
 > [!IMPORTANT]
 > The following installation instructions assume that you've met all the [prerequisites](how-to-prerequisites.md).
 
 >[!NOTE]
->This article deals with installing the provisioning agent by using the wizard. For information about installing the Microsoft Entra Provisioning Agent by using a CLI, see [Install the Microsoft Entra Provisioning Agent by using a CLI and PowerShell](how-to-install-pshell.md).
+>This article deals with installing the provisioning agent by using the wizard. For information about installing the Microsoft Entra provisioning agent by using a CLI, see [Install the Microsoft Entra provisioning agent by using a CLI and PowerShell](how-to-install-pshell.md).
 
 For more information and an example, view the following video:
 
@@ -74,7 +73,7 @@ For more information about using password writeback with Microsoft Entra Cloud S
 
 ## Install an agent in the US government cloud
 
-By default, the Microsoft Entra Provisioning Agent is installed in the default Azure environment. If you're installing the agent for US government use, make this change in step 7 of the preceding installation procedure:
+By default, the Microsoft Entra provisioning agent is installed in the default Azure environment. If you're installing the agent for US government use, make this change in step 7 of the preceding installation procedure:
 
 - Instead of selecting **Open file**, select **Start** > **Run**, and then go to the *AADConnectProvisioningAgentSetup.exe* file.  In the **Run** box, after the executable, enter **ENVIRONMENTNAME=AzureUSGovernment**, and then select **OK**.
 

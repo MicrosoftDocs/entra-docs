@@ -2,8 +2,8 @@
 title: User self-remediation with Microsoft Entra ID Protection
 description: How can users self-remediate when administrators allow it? What is the experience when they don't?
 
-ms.service: active-directory
-ms.subservice: identity-protection
+ms.service: entra-id-protection
+
 ms.topic: conceptual
 ms.date: 02/05/2024
 
@@ -36,9 +36,7 @@ When an administrator enables the Identity Protection policy requiring Microsoft
 
 ## Risk self-remediation
 
-When an administrator configures risk-based Conditional Access policies allowing self-remediation, they appear to a user as a normal multifactor authentication prompt.
-
-When a sign-in is considered at risk and a risk based Conditional Access policy is enabled requiring multifactor authentication, then the user receives a multifactor authentication prompt.
+When an administrator configures risk-based Conditional Access policies, affected users are interrupted when they reach the configured risk level. If administrators allow self-remediation using multifactor authentication, this process appears to a user as a normal multifactor authentication prompt.
 
 If the user is able to complete multifactor authentication, their risk is remediated and they can sign in.
 

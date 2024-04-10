@@ -1,12 +1,12 @@
 ---
-title: Groups and app roles support in customer tenants
-description: Find out which core Microsoft Entra features related to the user and group management model and application assignment are available in customer tenants.
+title: Groups and app roles support in external tenants
+description: Find out which core Microsoft Entra features related to the user and group management model and application assignment are available in external tenants.
  
 author: msmimart
 manager: celestedg
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: reference
 ms.date: 05/01/2023
 ms.author: mimart
@@ -15,7 +15,7 @@ ms.custom: it-pro
 
 # Groups and application roles support
 
-A customer tenant follows the Microsoft Entra user and group management model and application assignment. Many of the core Microsoft Entra features are being phased into customer tenants. The following table shows which features are currently available.
+An external tenant follows the Microsoft Entra user and group management model and application assignment. Many of the core Microsoft Entra features are being phased into external tenants. The following table shows which features are currently available.
 
 | **Feature** | **Currently available?** |
 | ------------ | --------- |

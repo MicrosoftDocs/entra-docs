@@ -2,10 +2,9 @@
 title: Configure B2B collaboration cross-tenant access
 description: Use cross-tenant collaboration settings to manage how you collaborate with other Microsoft Entra organizations. Learn how to configure  outbound access to external organizations and inbound access from external Microsoft Entra organizations for B2B collaboration.
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/24/2024
+ms.date: 03/26/2024
 
 ms.author: mimart
 author: msmimart
@@ -41,7 +40,7 @@ Use External Identities cross-tenant access settings to manage how you collabora
 
  Default cross-tenant access settings apply to all external tenants for which you haven't created organization-specific customized settings.  If you want to modify the Microsoft Entra ID-provided default settings, follow these steps.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**, then select  **Cross-tenant access settings**.
 1. Select the **Default settings** tab and review the summary page.
 
@@ -60,7 +59,7 @@ Use External Identities cross-tenant access settings to manage how you collabora
 
 Follow these steps to configure customized settings for specific organizations.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**, then select **Organizational settings**.
 1. Select **Add organization**.
 1. On the **Add organization** pane, type the full domain name (or tenant ID) for the organization.
@@ -81,7 +80,7 @@ Follow these steps to configure customized settings for specific organizations.
 
 With inbound settings, you select which external users and groups are able to access the internal applications you choose. Whether you're configuring default settings or organization-specific settings, the steps for changing inbound cross-tenant access settings are the same. As described in this section, you navigate to either the **Default** tab or an organization on the **Organizational settings** tab, and then make your changes.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
 
@@ -96,7 +95,7 @@ With inbound settings, you select which external users and groups are able to ac
 
 ### To change inbound B2B collaboration settings
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**, then select **Organizational settings** 
 
@@ -172,11 +171,22 @@ With inbound settings, you select which external users and groups are able to ac
 
 1. Select **Save**.
 
-### Configure redemption order (Preview)
+### Add the Microsoft Admin Portals app to B2B collaboration
+
+You can't directly add the [Microsoft Admin Portals app](/entra/identity/conditional-access/concept-conditional-access-cloud-apps#microsoft-admin-portals) to the inbound and outbound cross-tenant access settings in the Microsoft Entra admin center. However, you can add the apps listed below individually by using the [Microsoft Graph API](/graph/api/crosstenantaccesspolicy-post-partners).
+
+The following apps are part of the Microsoft Admin Portals app group: 
+- Azure Portal (c44b4083-3bb0-49c1-b47d-974e53cbdf3c)
+- Microsoft Entra Admin Center (c44b4083-3bb0-49c1-b47d-974e53cbdf3c)
+- Microsoft 365 Defender Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775)
+- Microsoft Intune Admin Center (80ccca67-54bd-44ab-8625-4b79c4dc7775)
+- Microsoft Purview Compliance Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775)
+
+### Configure redemption order
 
 To customize the order of identity providers that your guest users can use to sign in when they accept your invitation, follow these steps.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) using a Global administrator or Security administrator account. Then open the **Identity** service on the left hand side.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) using a Global Administrator or Security Administrator account. Then open the **Identity** service on the left hand side.
 
 1. Select **External Identities** > **Cross-tenant access settings**.
 
@@ -194,7 +204,7 @@ You can also customize the redemption order via the Microsoft Graph API.
 
 1. Open the [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 
-1. Sign in with a Global administrator or Security administrator account to your resource tenant.
+1. Sign in with a Global Administrator or Security Administrator account to your resource tenant.
 
 1. Run the following query to get the current redemption order:
 
@@ -202,7 +212,7 @@ You can also customize the redemption order via the Microsoft Graph API.
    GET https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/default
    ```
 
-1. In this example, we'll move the SAML/WS-Fed IdP federation to the top of the redemption order above Azure AD identity provider. Patch the same URI with this request body:
+1. In this example, we'll move the SAML/WS-Fed IdP federation to the top of the redemption order above Microsoft Entra identity provider. Patch the same URI with this request body:
 
    ```http
    {
@@ -231,16 +241,18 @@ You can also customize the redemption order via the Microsoft Graph API.
       }
    ```
 
-### SAML/WS-Fed federation (Direct federation) for Azure AD verified domains (Preview)
+<a name='samlws-fed-federation-direct-federation-for-azure-ad-verified-domains-preview'></a>
 
-You can now add your enlisted Azure AD verified domain to set up the direct federation relationship. First you need to set up the Direct federation configuration in the [admin center](direct-federation.md) or via the [API](/graph/api/resources/samlorwsfedexternaldomainfederation). Make sure that the domain isn't verified in the same tenant. 
-Once the configuration is set up, you can customize the redemption order. The SAML/WS-Fed IdP is added to the redemption order as the last entry. You can move it up in the redemption order to set it above Azure Active Directory identity provider.
+### SAML/WS-Fed federation (Direct federation) for Microsoft Entra ID verified domains
 
-### Prevent your B2B users from redeeming an invite using Microsoft accounts (Preview)
+You can now add your enlisted Microsoft Entra ID verified domain to set up the direct federation relationship. First you need to set up the Direct federation configuration in the [admin center](direct-federation.md) or via the [API](/graph/api/resources/samlorwsfedexternaldomainfederation). Make sure that the domain isn't verified in the same tenant. 
+Once the configuration is set up, you can customize the redemption order. The SAML/WS-Fed IdP is added to the redemption order as the last entry. You can move it up in the redemption order to set it above Microsoft Entra identity provider.
+
+### Prevent your B2B users from redeeming an invite using Microsoft accounts
 
 To prevent your B2B guest users from redeeming their invite using their existing Microsoft accounts or creating a new one to accept the invitation, follow the steps below.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) using a Global administrator or Security administrator account. Then open the **Identity** service on the left hand side.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) using a Global Administrator or Security Administrator account. Then open the **Identity** service on the left hand side.
 
 1. Select **External Identities** > **Cross-tenant access settings**.
 
@@ -294,7 +306,7 @@ If you select **Inbound access** of the added organization, you see the **Cross-
 
 With outbound settings, you select which of your users and groups are able to access the external applications you choose. Whether you're configuring default settings or organization-specific settings, the steps for changing outbound cross-tenant access settings are the same. As described in this section, you navigate to either the **Default** tab or an organization on the **Organizational settings** tab, and then make your changes.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
 
@@ -391,7 +403,7 @@ When you remove an organization from your Organizational settings, the default c
 > [!NOTE]
 > If the organization is a cloud service provider for your organization (the isServiceProvider property in the Microsoft Graph [partner-specific configuration](/graph/api/resources/crosstenantaccesspolicyconfigurationpartner) is true), you won't be able to remove the organization.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
 

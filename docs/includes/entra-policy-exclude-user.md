@@ -1,5 +1,5 @@
 ---
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: include
 ms.date: 07/07/2023

@@ -1,18 +1,17 @@
 ---
+title: Sensitive operations report workbook
+description: Learn how to use the sensitive operations report workbook in Microsoft Entra ID to explore suspicious app and service principal activity.
 
-title: Sensitive operations report workbook in  Microsoft Entra ID
-description: Learn how to use the sensitive operations report workbook.
-services: active-directory
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
-ms.topic: reference
-ms.workload: identity
-ms.subservice: report-monitor
-ms.date: 10/03/2023
+ms.service: entra-id
+ms.topic: how-to
+ms.subservice: monitoring-health
+ms.date: 03/05/2024
 ms.author: sarahlipsey
-ms.reviewer: sarbar 
+ms.reviewer: sarbar
 
+#Customer intent: As an IT admin, I need to use the sensitive operations report workbook to explore suspicious app and service principal activity so I can identify compromises in my environment.
 ---
 
 # Sensitive operations report workbook
@@ -22,6 +21,10 @@ As an IT administrator, you need to be able to identify compromises in your envi
 The sensitive operations report workbook is intended to help identify suspicious application and service principal activity that may indicate compromises in your environment.
 
 This article provides you with an overview of the **Sensitive Operations Report** workbook.
+
+## Prerequisites
+
+[!INCLUDE [workbook prerequisites](../../includes/workbook-prerequisites.md)]
 
 ## Description
 
@@ -33,8 +36,11 @@ If your organization is new to Azure monitor workbooks, you need to integrate yo
  
 ## How to access the workbook
 
-[!INCLUDE [how to access workbooks](~/includes/how-to-access-workbooks.md)]
-3. Select the **Sensitive Operations Report** workbook from the **Troubleshoot** section.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the appropriate combination of roles.
+
+1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+
+1. Select the **Sensitive Operations Report** workbook from the **Troubleshoot** section.
 
 ## Sections
 
@@ -124,4 +130,3 @@ This paragraph lists the supported filters for each section.
 - **Use new permissions granted to service principals** to look out for broad or excessive permissions being added to service principals by actors that may be compromised.  
 
 - **Use modified federation settings** section to confirm that the added or modified target domain/URL is a legitimate admin behavior. Actions that modify or add domain federation trusts are rare and should be treated as high fidelity to be investigated as soon as possible.
-

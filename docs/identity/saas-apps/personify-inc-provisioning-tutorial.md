@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 99921da0-e7e2-4f30-90c1-d84722d2afbd
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 12/18/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Personify Inc so that I can streamline the user management process and ensure that users have the appropriate access to Personify Inc.
 ---
 
 # Tutorial: Configure Personify Inc for automatic user provisioning

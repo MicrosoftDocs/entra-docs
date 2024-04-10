@@ -7,13 +7,15 @@ author: twimmers
 writer: Thwimmer
 manager: jeedes
 ms.assetid: 7fa2a1b1-7ed3-4c51-ae17-f5d4ee88488c
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: Thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Slack so that I can streamline the user management process and ensure that users have the appropriate access to Slack.
 ---
 
 # Tutorial: Configure Slack for automatic user provisioning

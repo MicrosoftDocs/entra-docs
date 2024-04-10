@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 98d13d52-7f7e-4cfe-9ec3-c6a6b647dd80
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zero so that I can streamline the user management process and ensure that users have the appropriate access to Zero.
 ---
 
 # Tutorial: Configure Zero for automatic user provisioning

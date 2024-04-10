@@ -3,9 +3,8 @@ title: Microsoft Entra B2B in government and national clouds
 description: Learn what features are available in Microsoft Entra B2B collaboration in US Government and national clouds 
 
  
-ms.service: active-directory
-ms.subservice: B2B
-ms.topic: conceptual
+ms.service: entra-external-id
+ms.topic: concept-article
 ms.date: 01/23/2024
 
 ms.author: mimart

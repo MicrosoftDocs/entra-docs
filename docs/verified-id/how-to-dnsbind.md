@@ -4,9 +4,9 @@ description: Learn how to link your domain to your decentralized identifier (DID
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: how-to
-ms.subservice: verifiable-credentials
+
 ms.date: 12/06/2023
 ms.author: barclayn
 
@@ -33,13 +33,13 @@ The domain you verify ownership of to your DID is defined in the [overview secti
 
 1. Copy or download the `did-configuration.json` file.
 
-   ![Screenshot that shows downloading the well-known config.](media/how-to-dnsbind/verify-download.png)
+   :::image type="content" source="media/how-to-dnsbind/verify-download.png" alt-text="Screenshot that shows downloading the well-known configuration.":::
 
 1. Host the `did-configuration.json` file at the location specified. For example, if you specified domain `https://www.example.com`, the file needs to be hosted at `https://www.example.com/.well-known/did-configuration.json`. There can be no other path in the URL except the `.well-known path` name.
 
 1. When `did-configuration.json` is publicly available at the `.well-known/did-configuration.json` URL, verify it by selecting **Refresh verification status**.
 
-   ![Screenshot that shows the verified well-known config.](media/how-to-dnsbind/verify-download-verified.png)
+   :::image type="content" source="media/how-to-dnsbind/verify-download-verified.png" alt-text="Screenshot that shows the verified well-known configuration.":::
 
 1. Test out issuing or presenting with Microsoft Authenticator to validate. Make sure the **Warn about unsafe apps** setting in Authenticator is toggled on. The setting is on by default.
 
@@ -102,7 +102,7 @@ Before Authenticator displays a **Verified** icon, a few points must be true:
 
 If all the previously mentioned points are true, then Authenticator displays a verified page and includes the domain that was validated.
 
-![Screenshot that shows a new permission request.](media/how-to-dnsbind/new-permission-request.png)
+:::image type="content" source="media/how-to-dnsbind/new-permission-request.png" alt-text="Screenshot that shows a new permission request.":::
 
 ## Unverified domain
 
@@ -114,7 +114,7 @@ If any of the preceding points aren't true, Authenticator displays a full-page w
 
 It's highly important that you link your DID to a domain that's recognizable to the user.
 
-![Screenshot that shows the unverified domain warning on the Add a credential screen.](media/how-to-dnsbind/add-credential-not-verified-authenticated.png)
+:::image type="content" source="media/how-to-dnsbind/add-credential-not-verified-authenticated.png" alt-text="Screenshot that shows the unverified domain warning on the Add a credential screen.":::
 
 ## How do I update the linked domain on my DID?
 

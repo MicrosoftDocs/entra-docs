@@ -1,21 +1,18 @@
 ### YamlMime:FAQ
 metadata:
   title: 'Microsoft Entra Connect FAQ -'
-  description: This article answers frequently asked questions about Microsoft Entra Connect.
-  services: active-directory
-  documentationcenter: ''
+  description: This article answers frequently asked questions about Microsoft Entra Connect.  
   author: billmath
   manager: amycolannino
   ms.assetid: 4e47a087-ebcd-4b63-9574-0c31907a39a3
-  ms.service: active-directory
-  ms.workload: identity
+  ms.service: entra-id
   ms.tgt_pltfrm: na
   ms.topic: faq
   ms.date: 02/08/2023
-  ms.subservice: hybrid
+  ms.subservice: hybrid-connect
   ms.author: billmath
   
-  ms.collection: M365-identity-device-management
+  
 title: Microsoft Entra Connect FAQ
 summary: |
 
@@ -354,7 +351,7 @@ sections:
           If you need help upgrading to a newer version of Microsoft Entra Connect, open a support ticket at [Create a service request to contact Microsoft 365 support](/archive/blogs/praveenkumar/how-to-create-service-requests-to-contact-office-365-support).
           
       - question: |
-          Operational best practice	
+          Operational best practice
         answer: |
           Below are some best practices you should implement when syncing between Windows Server Active Directory and Microsoft Entra ID.
           

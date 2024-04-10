@@ -1,17 +1,15 @@
 ---
 title: 'Microsoft Entra Connect: Version release history archive'
 description: This article lists all archived releases of Microsoft Entra Connect and Azure AD Sync
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.assetid: 
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
-ms.workload: identity
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ms.custom: has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Microsoft Entra Connect: Version release history archive
@@ -500,7 +498,7 @@ Status: Released to select customers
 
 * Adding Privacy Settings for the General Data Protection Regulation (GDPR).  For more information, see the article [here](reference-connect-user-privacy.md).
 
-[!INCLUDE [Privacy](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]  
+[!INCLUDE [Privacy](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]  
 
 * application telemetry - admin can switch this class of data on/off at will
 
@@ -1088,7 +1086,7 @@ Pass-through Authentication
 * Fixed an issue which causes Microsoft Entra Connect wizard to bypass validation checks on sign-in method selected when Desktop SSO feature is enabled.
 
 Password Reset
-* Fixed an issue which may cause the Azure Microsoft Entra Connect server to not attempt to re-connect if the connection was killed by a firewall or proxy.
+* Fixed an issue which may cause the Microsoft Entra Connect server to not attempt to re-connect if the connection was killed by a firewall or proxy.
 
 **New features/improvements:**
 

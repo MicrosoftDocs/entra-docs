@@ -4,9 +4,8 @@ description: This tutorial describes how to use the Microsoft Entra SCIM Validat
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/15/2023
 ms.custom: template-tutorial
@@ -41,7 +40,7 @@ The first step is to select a testing method to validate your SCIM endpoint.
 
 **Use default attributes** - The system provides the default attributes, and you modify them to meet your need.
 
-**Discover schema** - If your end point supports /Schema, this option lets the tool discover the supported attributes. We recommend this option as it reduces the overhead of updating your app as you build it out.
+**Discover schema** - If your end point supports /Schemas, this option lets the tool discover the supported attributes. We recommend this option as it reduces the overhead of updating your app as you build it out.
 
 **Upload Microsoft Entra Schema** - Upload the schema you've downloaded from your sample app on Microsoft Entra ID.
 

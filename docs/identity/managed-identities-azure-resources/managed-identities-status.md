@@ -1,15 +1,15 @@
 ---
 title: Azure Services with managed identities support
 description: List of services supporting managed identities
-services: active-directory
+
 author: barclayn
 ms.author: barclayn
-ms.date: 05/25/2023
+ms.date: 03/14/2024
 ms.topic: conceptual
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 manager: amycolannino
-ms.collection: M365-identity-device-management
+
 ---
 
 # Azure services that can use managed identities to access other services
@@ -38,6 +38,7 @@ The following Azure services support managed identities for Azure resources:
 | Azure Blueprints                | [Stages of a blueprint deployment](/azure/governance/blueprints/concepts/deployment-stages)                              |
 | Azure Cache for Redis           | [Managed identity for storage accounts with Azure Cache for Redis](/azure/azure-cache-for-redis/cache-managed-identity) |
 | Azure Communications Gateway    | [Deploy Azure Communications Gateway](/azure/communications-gateway/deploy) |
+| Azure Communication Services    | [How to use Managed Identity with Azure Communication Services](/azure/communication-services/how-tos/managed-identity)
 | Azure Container Apps            | [Managed identities in Azure Container Apps](/azure/container-apps/managed-identity) |
 | Azure Container Instance        | [How to use managed identities with Azure Container Instances](/azure/container-instances/container-instances-managed-identity)                                                                                          |
 | Azure Container Registry        | [Use an Azure-managed identity in ACR Tasks](/azure/container-registry/container-registry-tasks-authentication-managed-identity)                                                                       |
@@ -81,7 +82,6 @@ The following Azure services support managed identities for Azure resources:
 | Azure Virtual Machine Scale Sets      | [Configure managed identities on virtual machine scale set - Azure CLI](qs-configure-cli-windows-vmss.md)                                                                  |
 | Azure Virtual Machines                | [Secure and use policies on virtual machines in Azure](/azure/virtual-machines/windows/security-policy#managed-identities-for-azure-resources)                                                                  |
 | Azure Web PubSub Service           | [Managed identities for Azure Web PubSub Service](/azure/azure-web-pubsub/howto-use-managed-identity)     |
-| Test Base for Microsoft 365| [Grant Test Base managed identities to your Key Vault account](/microsoft-365/test-base/managed-identity)|
 
 ## Next steps
 

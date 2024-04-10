@@ -1,19 +1,16 @@
 ---
 title: 'Configure your integration with Active Directory'
 description: This article describes how you can configure the synchronization tools with Active Directory.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Configure your integration with Active Directory
@@ -22,7 +19,7 @@ ms.collection: M365-identity-device-management
 How you configure your synchronization, depends on which synchronization tool you're using and what your business goals are.  Use the tables to determine which features you would
 
 ## Cloud sync
-After installing the Microsoft Entra Provisioning Agent, you'll need to configure cloud sync.  This configuration is done via the portal.  The following table provides a list of features you can use to meet your business goals.  
+After installing the Microsoft Entra provisioning agent, you'll need to configure cloud sync.  This configuration is done via the portal.  The following table provides a list of features you can use to meet your business goals.  
 
 |Task|Description|
 |-----|-----|

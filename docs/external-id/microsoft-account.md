@@ -4,8 +4,7 @@ title: Add Microsoft account (MSA) as an identity provider
 description: Use Microsoft Entra External ID to enable an external user (guest) to sign in to your Microsoft Entra apps with their Microsoft account (MSA).
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 01/23/2024
 
@@ -14,10 +13,10 @@ author: msmimart
 manager: celestedg
 ms.collection: M365-identity-device-management
 
-#  Customer intent: As a B2B collaboration administrator, I want to understand the built-in capability for using Microsoft account (MSA) as an identity provider for External Identities, so that guest users can use their personal Microsoft accounts to sign in without additional configuration.
+#  Customer intent: As a B2B collaboration administrator, I want to understand the built-in capability for using Microsoft account (MSA) as an identity provider for External ID, so that guest users can use their personal Microsoft accounts to sign in without additional configuration.
 ---
 
-# Add Microsoft account (MSA) as an identity provider for External Identities
+# Add Microsoft account (MSA) as an identity provider for External ID
 
 Your B2B guest users can use their own personal Microsoft accounts for B2B collaboration without further configuration. Guest users can redeem your B2B collaboration invitations or complete your sign-up user flows using their personal Microsoft account.
 
@@ -50,4 +49,4 @@ As of November 2020, new application registrations show up as unverified in the 
 ## Next steps
 
 - [Publisher verification overview](~/identity-platform/publisher-verification-overview.md)
-- [Add Microsoft Entra ID as an identity provider for External Identities](default-account.md)
+- [Add Microsoft Entra ID as an identity provider for External ID](default-account.md)

@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 16244680-205d-4763-960a-9bc7a6e915bc
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Plandisc so that I can streamline the user management process and ensure that users have the appropriate access to Plandisc.
 ---
 
 # Tutorial: Configure Plandisc for automatic user provisioning

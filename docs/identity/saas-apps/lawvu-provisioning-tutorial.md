@@ -8,13 +8,15 @@ writer: Thwimmer
 manager: jeedes
 
 ms.assetid: 37a258fe-b435-4bd8-88a8-8e93bb6f6b6b
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: Thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to LawVu so that I can streamline the user management process and ensure that users have the appropriate access to LawVu.
 ---
 
 # Tutorial: Configure LawVu for automatic user provisioning

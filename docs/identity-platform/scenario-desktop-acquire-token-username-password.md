@@ -5,9 +5,9 @@ author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
 ms.date: 01/15/2024
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---
 

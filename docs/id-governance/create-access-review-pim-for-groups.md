@@ -1,19 +1,15 @@
 ---
 title: Create an access review of PIM for Groups (preview)
-description: Learn how to create an access review of PIM for Groups in Microsoft Entra ID. 
-services: active-directory
+description: Learn how to create an access review of PIM for Groups in Microsoft Entra ID.
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: access-reviews
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 06/28/2023
 ms.author: owinfrey
 ms.reviewer: jgangadhar
-ms.collection: M365-identity-device-management
 ---
  
 # Create an access review of PIM for Groups in Microsoft Entra ID (preview)
@@ -23,17 +19,17 @@ This article describes how to create one or more access reviews for PIM for Grou
 ## Prerequisites
 
 - Microsoft Entra ID Governance License.
-- Only users in the Global Administrator role or Privileged Role Administrator role can create reviews on PIM for Groups. For more information, see [Use Microsoft Entra groups to manage role assignments](~/identity/role-based-access-control/groups-concept.md).
+- Only users in the Global Administrator role or Privileged Role Administrator role can create reviews on PIM for Groups. For more information, see [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md).
 
 For more information, see [License requirements](access-reviews-overview.md#license-requirements).
 
 ## Create a PIM for Groups access review
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 ### Scope
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Access Reviews** > **Review History**.
 
@@ -72,4 +68,4 @@ After you have reached this step, you may follow the instructions outlined under
 ## Next steps
 
 - [Create an access review of groups or applications](create-access-review.md)
-- [Approve activation requests for PIM for Groups members and owners (preview)](~/id-governance/privileged-identity-management/groups-approval-workflow.md)
+- [Approve activation requests for PIM for Groups members and owners (preview)](../id-governance/privileged-identity-management/groups-approval-workflow.md)

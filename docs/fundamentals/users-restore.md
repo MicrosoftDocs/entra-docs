@@ -1,16 +1,15 @@
 ---
 title: Restore or permanently remove recently deleted user
 description: How to view restorable users, restore a deleted user, or permanently delete a user with Microsoft Entra ID.
-services: active-directory
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra
 ms.subservice: fundamentals
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 12/01/2023
-ms.author: barclayn 
+ms.author: barclayn
 ms.reviewer: jeffsta
 ---
 # Restore or remove a recently deleted user

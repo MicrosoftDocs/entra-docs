@@ -1,17 +1,17 @@
 ---
 title: 'How to fix modified default rules - Microsoft Entra Connect'
 description: Learn how to fix modified default rules that come with Microsoft Entra Connect.
-services: active-directory
+
 author: billmath
 manager: amycolannino
 ms.reviewer: darora10
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: how-to
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Fix modified default rules in Microsoft Entra Connect

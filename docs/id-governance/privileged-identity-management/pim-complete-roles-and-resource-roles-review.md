@@ -1,21 +1,17 @@
 ---
 title: Complete an access review of Azure resource and Microsoft Entra roles in PIM
 description: Learn how to complete an access review of Azure resource and Microsoft Entra roles Privileged Identity Management.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-editor: ''
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: how-to
-ms.tgt_pltfrm: na
-ms.workload: identity
-ms.subservice: pim
+ms.subservice: privileged-identity-management
 ms.date: 09/12/2023
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
-ms.collection: M365-identity-device-management
+
 ---
 
 # Complete an access review of Azure resource and Microsoft Entra roles in PIM
@@ -40,7 +36,7 @@ Once the review has been created, follow the steps in this article to complete t
 
 On the detail page, the following options are available for managing the review of **Azure resources** and **Microsoft Entra roles**:
 
-![Options for managing a review in Azure resources - Stop, Reset, Apply, Delete screenshot.](media/pim-complete-azure-ad-roles-and-resource-roles-review/rbac-access-review-menu.png)
+:::image type="content" source="media/pim-complete-azure-ad-roles-and-resource-roles-review/rbac-access-review-menu.png" alt-text="Options for managing a review in Azure resources - Stop, Reset, Apply, Delete screenshot.":::
 
 ### Stop an access review
 

@@ -2,20 +2,17 @@
 
 title: PowerShell and Microsoft Graph examples for group licensing
 description: PowerShell + Graph examples and scenarios for Microsoft Entra group-based licensing
-services: active-directory
+
 keywords: Azure AD licensing
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
-ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.date: 12/02/2020
 ms.author: barclayn
 ms.reviewer: sumitp
-ms.collection: M365-identity-device-management
 ---
 
 # PowerShell and Microsoft Graph examples for group-based licensing in Microsoft Entra ID
@@ -70,6 +67,8 @@ location: https://graph.microsoft.com/v2/d056d009-17b3-4106-8173-cd3978ada898/di
 ## View product licenses assigned to a group
 
 The [Get-MsolGroup](/powershell/module/msonline/get-msolgroup) cmdlet can be used to retrieve the group object and check the *Licenses* property: it lists all product licenses currently assigned to the group.
+
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 ```powershell
 (Get-MsolGroup -ObjectId 99c4216a-56de-42c4-a4ac-e411cd8c7c41).Licenses

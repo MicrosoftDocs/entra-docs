@@ -6,7 +6,7 @@ author: OwenRichards1
 manager: CelesteDG
 editor: ''
 
-ms.service: active-directory
+ms.service: identity-platform
 
 ms.topic: include
 ms.tgt_pltfrm: na

@@ -8,13 +8,15 @@ writer: twimmers
 manager: jeedes
 
 ms.assetid: 87b4715b-c4b4-4e4b-aa25-21dfc5135a0a
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to H5mag so that I can streamline the user management process and ensure that users have the appropriate access to H5mag.
 ---
 
 # Tutorial: Configure H5mag for automatic user provisioning

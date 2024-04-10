@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: b788328b-10fd-4eaa-a4bc-909d738d8b8b
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Atea so that I can streamline the user management process and ensure that users have the appropriate access to Atea.
 ---
 
 # Tutorial: Configure Atea for automatic user provisioning

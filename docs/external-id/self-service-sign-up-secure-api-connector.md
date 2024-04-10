@@ -2,8 +2,7 @@
 title: Secure APIs used as API connectors in Microsoft Entra External ID self-service sign-up user flows
 description: Secure your custom RESTful APIs used as API connectors in self-service sign-up user flows.
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 01/23/2024
 
@@ -64,7 +63,7 @@ You can then [export the certificate](/azure/key-vault/certificates/how-to-expor
 
 #### Option 2: prepare a self-signed certificate using PowerShell
 
-[!INCLUDE [active-directory-b2c-create-self-signed-certificate](~/../azure-docs-pr/includes/active-directory-b2c-create-self-signed-certificate.md)]
+[!INCLUDE [active-directory-b2c-create-self-signed-certificate](~/includes/azure-docs-pr/active-directory-b2c-create-self-signed-certificate.md)]
 
 ### Configure your API Connector
 

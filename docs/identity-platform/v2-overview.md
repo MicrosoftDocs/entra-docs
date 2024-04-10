@@ -4,10 +4,10 @@ description: Learn about the components of the Microsoft identity platform and h
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.date: 11/10/2023
+ms.date: 03/20/2024
 ms.reviewer: saeeda, dmwendia
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: overview
 #Customer intent: As an application developer, I want a quick introduction to the Microsoft identity platform so I can decide if this platform meets my application development requirements.
 ---
@@ -28,7 +28,7 @@ There are several components that make up the Microsoft identity platform:
   - Social or local accounts, by using Azure AD B2C
   - Social or local customer accounts, by using Microsoft Entra External ID
   
-- **Open-source libraries**: Microsoft Authentication Library (MSAL) and support for other standards-compliant libraries. The open source MSAL libraries are recommended as they provide built-in support for conditional access scenarios, single sign-on (SSO) experiences for your users, built-in token caching support, and more. MSAL supports the different authorization grants and token flows used in different application types and scenarios.
+- **Open-source libraries**: Microsoft Authentication Library (MSAL) and support for other standards-compliant libraries. The open source MSAL libraries are recommended as they provide built-in support for Conditional Access scenarios, single sign-on (SSO) experiences for your users, built-in token caching support, and more. MSAL supports the different authorization grants and token flows used in different application types and scenarios.
 - **Microsoft identity platform endpoint** - The Microsoft identity platform endpoint is OIDC certified. It works with the Microsoft Authentication Libraries (MSAL) or any other standards-compliant library. It implements human readable scopes, in accordance with industry standards.
 - **Application management portal**: A registration and configuration experience in the Microsoft Entra admin center, along with the other application management capabilities.
 - **Application configuration API and PowerShell**: Programmatic configuration of your applications through the Microsoft Graph API and PowerShell so you can automate your DevOps tasks.
@@ -44,11 +44,9 @@ With the Microsoft identity platform, you can write code once and reach any user
 
 Choose your preferred [application scenario](authentication-flows-app-scenarios.md). Each of these scenario paths has an overview and links to a quickstart to help you get started:
 
-- [Single-page app (SPA)](scenario-spa-overview.md)
-- [Web app that signs in users](scenario-web-app-sign-user-overview.md)
-- [Web app that calls web APIs](scenario-web-app-call-api-overview.md)
-- [Protected web API](scenario-protected-web-api-overview.md)
-- [Web API that calls web APIs](scenario-web-api-call-api-overview.md)
+- [React Single-page app (SPA)](quickstart-single-page-app-react-sign-in.md)
+- [ASP.NET Core Web app](quickstart-web-app-dotnet-core-sign-in.md)
+- [ASP.NET Core API](quickstart-web-api-aspnet-core-protect-api.md)
 - [Desktop app](scenario-desktop-overview.md)
 - [Daemon app](scenario-daemon-overview.md)
 - [Mobile app](scenario-mobile-overview.md)
@@ -56,8 +54,8 @@ Choose your preferred [application scenario](authentication-flows-app-scenarios.
 For a more in-depth look at building applications using the Microsoft identity platform, see our multipart tutorial series for the following applications:
 
 - [React Single-page app (SPA)](tutorial-single-page-app-react-register-app.md)
-- [.NET Web app](tutorial-web-app-dotnet-register-app.md)
-- [.NET Web API](web-api-tutorial-01-register-app.md)
+- [ASP.NET Core Web app](tutorial-web-app-dotnet-register-app.md)
+- [ASP.NET Core API](tutorial-web-api-dotnet-register-app.md)
 
 As you work with the Microsoft identity platform to integrate authentication and authorization in your apps, you can refer to this image that outlines the most common app scenarios and their identity components. Select the image to view it full-size.
 

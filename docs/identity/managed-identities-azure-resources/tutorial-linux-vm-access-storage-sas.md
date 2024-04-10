@@ -1,19 +1,17 @@
 ---
 title: 'Tutorial: Access Azure Storage using a SAS credential - Linux'
 description: Tutorial showing how to use a Linux VM system-assigned managed identity to access Azure Storage using a SAS credential instead of a storage account access key.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
 ms.custom: subject-rbac-steps, devx-track-arm-template
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: tutorial
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 06/24/2022
 ms.author: barclayn
-ms.collection: M365-identity-device-management
+
 ---
 
 
@@ -50,7 +48,7 @@ If you don't already have one, you'll now create a storage account.  You can als
 5. Ensure the **Subscription** and **Resource Group** match the ones you specified when you created your VM in the previous step.
 6. Select **Create**.
 
-    ![Create new storage account](./media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png)
+    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png" alt-text="Screenshot showing the new storage account creation screen.":::
 
 ## Create a blob container in the storage account
 
@@ -61,7 +59,7 @@ Later we'll upload and download a file to the new storage account. Because files
 3. Select **+ Container** on the top of the page, and a "New container" panel slides out.
 4. Give the container a name, select an access level, then select **OK**. The name you specified will be used later in the tutorial. 
 
-    ![Create storage container](./media/msi-tutorial-linux-vm-access-storage/create-blob-container.png)
+    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/create-blob-container.png" alt-text="Screenshot showing storage container creation screen.":::
 
 ## Grant your VM's system-assigned managed identity access to use a storage SAS
 

@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 4ed2955b-3060-4530-b8c1-9e355dedf13e
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 06/02/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Markit Procurement Service so that I can streamline the user management process and ensure that users have the appropriate access to Markit Procurement Service.
 ---
 
 # Tutorial: Configure Markit Procurement Service for automatic user provisioning

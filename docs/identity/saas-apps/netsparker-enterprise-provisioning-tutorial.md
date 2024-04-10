@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 6e951318-213e-40d1-9947-88242059f877
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 03/02/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Netsparker Enterprise so that I can streamline the user management process and ensure that users have the appropriate access to Netsparker Enterprise.
 ---
 
 # Tutorial: Configure Netsparker Enterprise for automatic user provisioning

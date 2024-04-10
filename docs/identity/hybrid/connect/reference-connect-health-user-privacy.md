@@ -1,24 +1,23 @@
 ---
 title: Microsoft Entra Connect Health and user privacy
 description: Learn about user privacy and data collection with Microsoft Entra Connect Health.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: hybrid
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: reference
 ms.date: 11/06/2023
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # User privacy and Microsoft Entra Connect Health
 
 This article describes Microsoft Entra Connect Health and user privacy. For information about Microsoft Entra Connect and user privacy, see [User privacy and Microsoft Entra Connect](reference-connect-user-privacy.md).
 
-[!INCLUDE [Privacy](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]
+[!INCLUDE [Privacy](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]
 
 ## User privacy classification
 

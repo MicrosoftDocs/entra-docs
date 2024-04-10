@@ -1,20 +1,14 @@
 ---
 title: Govern access with an organizational role model
 description: Microsoft Entra ID Governance allows you to model organizational roles using access packages, so you can migrate your existing role definitions to entitlement management.
-services: active-directory
-documentationcenter: ''
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
 ms.topic: conceptual
-ms.subservice: compliance
 ms.date: 05/26/2023
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
-ms.collection: M365-identity-device-management
 ---
 
 # Govern access by migrating an organizational role model to Microsoft Entra ID Governance
@@ -24,7 +18,7 @@ Role-based access control (RBAC) provides a framework for classifying users and 
 In Microsoft Entra ID, you can use role models in several ways to manage access at scale through identity governance.
 
  * You can use access packages to represent organizational roles in your organization, such as "sales representative". An access package representing that organizational role would include all the access rights that a sales representative might typically need, across multiple resources.
- * Applications [can define their own roles](~/identity-platform/howto-add-app-roles-in-apps.md). For example, if you had a sales application, and that application included the app role "salesperson" in its manifest, you could then [include that role from the app manifest in an access package](entitlement-management-access-package-resources.md).  Applications can also use security groups in scenarios where a user could have multiple application-specific roles simultaneously.
+ * Applications [can define their own roles](../identity-platform/howto-add-app-roles-in-apps.md). For example, if you had a sales application, and that application included the app role "salesperson" in its manifest, you could then [include that role from the app manifest in an access package](entitlement-management-access-package-resources.md).  Applications can also use security groups in scenarios where a user could have multiple application-specific roles simultaneously.
  * You can use roles for [delegating administrative access](entitlement-management-delegate.md).  If you have a catalog for all the access packages needed by sales, you could assign someone to be responsible for that catalog, by assigning them a catalog-specific role.
 
 This article discusses how to model organizational roles, using entitlement management access packages, so you can migrate your role definitions to Microsoft Entra ID to enforce access.
@@ -80,7 +74,7 @@ If the application only has a single role, then you should still [integrated the
 
 If your role definitions include statements of the form "all users with these attribute values get assigned to the role automatically" or "users with these attribute values are allowed to request", then you'll need to ensure those attributes are present in Microsoft Entra ID.
 
-You can [extend the Microsoft Entra schema](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md) and then populate those attributes either from on-premises AD, via Microsoft Entra Connect, or from an HR system such as Workday or SuccessFactors.
+You can [extend the Microsoft Entra schema](../identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md) and then populate those attributes either from on-premises AD, via Microsoft Entra Connect, or from an HR system such as Workday or SuccessFactors.
 
 ### Create catalogs for delegation
 

@@ -8,13 +8,15 @@ writer: twimmers
 manager: jeedes
 
 ms.assetid: e2fa3ac8-a30f-4dcd-8073-ed7c65909feb
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Shopify Plus so that I can streamline the user management process and ensure that users have the appropriate access to Shopify Plus.
 ---
 
 # Tutorial: Configure Shopify Plus for automatic user provisioning

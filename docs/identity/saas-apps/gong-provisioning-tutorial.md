@@ -8,13 +8,15 @@ writer: Thwimmer
 manager: jeedes
 
 ms.assetid: 6c8285d3-4f35-4325-9adb-d1a44668a03a
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: Thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Gong so that I can streamline the user management process and ensure that users have the appropriate access to Gong.
 ---
 
 # Tutorial: Configure Gong for automatic user provisioning

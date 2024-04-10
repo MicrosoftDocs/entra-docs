@@ -5,10 +5,10 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 12/6/2022
+ms.date: 03/25/2024
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a web app that signs in users by using the Microsoft identity platform.
 ---
@@ -183,9 +183,7 @@ if ($owner -eq $null)
 Write-Host "Done creating the webApp application (WebApp)"
 ```
 
-
-
-## Next steps
+## Next step
 
 # [ASP.NET Core](#tab/aspnetcore)
 

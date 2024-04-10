@@ -8,13 +8,15 @@ writer: twimmers
 manager: jeedes
 
 ms.assetid: 224777cb-fc03-4e4a-8c8d-5befe1174233
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cloud Academy - SSO so that I can streamline the user management process and ensure that users have the appropriate access to Cloud Academy - SSO.
 ---
 
 # Tutorial: Configure Cloud Academy - SSO for automatic user provisioning

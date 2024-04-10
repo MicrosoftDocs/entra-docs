@@ -5,12 +5,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: ce8e918b-3a0c-43af-8cb2-3c810143e484
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Swit so that I can streamline the user management process and ensure that users have the appropriate access to Swit.
 ---
 
 # Tutorial: Configure Swit for automatic user provisioning

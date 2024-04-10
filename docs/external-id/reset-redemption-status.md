@@ -4,10 +4,9 @@ title: Reset redemption status for a guest user
 description: Learn how to reset the invitation redemption status for a Microsoft Entra B2B guest users in Microsoft Entra External ID.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 05/31/2023
+ms.date: 03/26/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -120,7 +119,7 @@ ContentType: application/json
 }
 ```
 
-## Next steps
+## Next step
 
 - [Properties of a Microsoft Entra B2B guest user](user-properties.md)
-- [Add Microsoft Entra B2B collaboration users by using PowerShell](customize-invitation-api.md#powershell)
+

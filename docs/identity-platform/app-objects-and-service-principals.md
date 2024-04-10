@@ -7,9 +7,9 @@ ms.author: ryanwi
 ms.custom: has-azure-ad-ps-ref
 ms.date: 12/15/2023
 ms.reviewer: sureshja
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: concept-article
 # Customer intent: As an application developer, I want to understand the relationship between application objects and service principal objects in Microsoft Entra ID, so that I can properly register and manage my application's identity and access management functions.
 ---
 

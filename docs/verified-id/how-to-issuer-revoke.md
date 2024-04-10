@@ -4,9 +4,9 @@ description: Learn how to revoke an issued verifiable credential.
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: how-to
-ms.subservice: verifiable-credentials
+
 ms.date: 07/28/2022
 ms.author: barclayn
 
@@ -33,10 +33,11 @@ By using the indexed claim in verifiable credentials, you can search for issued 
 1. Select the verifiable credential type.
 1. On the leftmost menu, select **Revoke a credential**.
 
-   ![Screenshot that shows revoking a credential.](media/how-to-issuer-revoke/settings-revoke.png)
+   :::image type="content" source="media/how-to-issuer-revoke/settings-revoke.png" alt-text="Screenshot that shows credential revocation.":::
+
 1. Search for the index claim of the user you want to revoke. Indexing a claim is a requirement for being able to search for a credential.
 
-   ![Screenshot that shows the credential to revoke.](media/how-to-issuer-revoke/revoke-search.png)
+   :::image type="content" source="media/how-to-issuer-revoke/revoke-search.png" alt-text="Screenshot that shows the credential to revoke.":::
   
     Because only a hash of the indexed claim from the verifiable credential is stored, only an exact match populates the search results. The information entered in the text box is hashed by using the same algorithm. It's used as a search criterion to match the hashed value that's stored.
   
@@ -44,11 +45,11 @@ By using the indexed claim in verifiable credentials, you can search for issued 
 
     The admin user who performs the revoke operation must have **sign** key permission for Key Vault or else the error message "Unable to access Key Vault resource with given credentials" appears.
 
-   ![Screenshot that shows a warning that tells you that after revocation the user still has the credential.](media/how-to-issuer-revoke/warning.png)
+   :::image type="content" source="media/how-to-issuer-revoke/warning.png" alt-text="Screenshot that shows a warning that tells you that after revocation the user still has the credential.":::
 
 1. After successful revocation, you see the status update and a green banner appears at the top of the page.
 
-   ![Screenshot that shows a successfully revoked verifiable credential message.](media/how-to-issuer-revoke/revoke-successful.png)
+   :::image type="content" source="media/how-to-issuer-revoke/revoke-successful.png" alt-text="Screenshot that shows a successfully revoked verifiable credential message.":::
 
 The Request Service API indicates a revoked credential in the `presentation_verified` [callback](presentation-request-api.md#callback-events) as `REVOKED`. Depending on if the presentation request specified that it [allows revoked credentials](presentation-request-api.md#configurationvalidation-type) to be presented, the presentation of a revoked credential either succeeds or fails.
 

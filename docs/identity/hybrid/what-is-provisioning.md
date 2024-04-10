@@ -1,23 +1,22 @@
 ---
 title: 'What is identity provisioning with Microsoft Entra ID?'
 description: Describes overview of identity provisioning.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: overview
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # What is identity provisioning?
 
-Today, businesses, and corporations are becoming more and more a mixture of on-premises and cloud applications.  Users require access to  applications both on-premises and in the cloud. There is need to have a single identity across these various applications (on-premises as well as cloud).
+Today, businesses, and corporations are becoming more of a mixture of on-premises and cloud applications. Users require access to  applications both on-premises and in the cloud. There's need to have a single identity across these various applications (on-premises and cloud).
 
-Provisioning is the process of creating an object based on certain conditions, keeping the object up to date and deleting the object when conditions are no longer met. For example, when a new user joins your organization, that user is entered in to the HR system.  At that point, provisioning can create a corresponding user account in the cloud, in Active Directory, and different applications that the user needs access to.  This allows the user to start work and have access to the applications and systems they need on day one. 
+Provisioning is the process of creating an object based on certain conditions, keeping the object up to date, and deleting the object when conditions are no longer met. For example, when a new user joins your organization, that user is entered in to the HR system. At that point, provisioning can create a corresponding user account in the cloud, in Active Directory, and different applications that the user needs access to. This allows the user to start work and have access to the applications and systems they need on day one. 
 
 ![Diagram that shows cloud provisioning with Microsoft Entra ID.](media/what-is-provisioning/cloud-1.png)
 
@@ -33,7 +32,7 @@ With regard to Microsoft Entra ID, provisioning can be broken down in to the fol
 
 Provisioning from HR to the cloud involves the creation of objects (users, roles, groups, etc.) based on the information that is in your HR system.  
 
-The most common scenario would be, when a new employee joins your company, they are entered into the HR system.  Once that occurs, they are provisioned to the cloud.  In this case, Microsoft Entra ID.  Provisioning from HR can cover the following scenarios. 
+The most common scenario would be, when a new employee joins your company, they're entered into the HR system. Once that occurs, they're provisioned to the cloud. In this case, Microsoft Entra ID. Provisioning from HR can cover the following scenarios. 
 
 - **Hiring new employees** - When a new employee is added to cloud HR, a user account is automatically created in Active Directory, Microsoft Entra ID, and optionally Microsoft 365 and other SaaS applications supported by Microsoft Entra ID, with write-back of the email address to Cloud HR.
 - **Employee attribute and profile updates** - When an employee record is updated in cloud HR (such as their name, title, or manager), their user account will be automatically updated in Active Directory, Microsoft Entra ID, and optionally Microsoft 365 and other SaaS applications supported by Microsoft Entra ID.

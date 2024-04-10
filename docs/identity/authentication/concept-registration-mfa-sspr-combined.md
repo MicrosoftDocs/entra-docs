@@ -2,18 +2,15 @@
 title: Combined registration for SSPR and Microsoft Entra multifactor authentication
 description: Learn about the combined registration experience for Microsoft Entra ID to let users register for both Microsoft Entra multifactor authentication and self-service password reset
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/26/2024
+ms.date: 03/25/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: tilarso
-
-ms.collection: M365-identity-device-management
 ---
 # Combined security information registration for Microsoft Entra overview
 
@@ -123,7 +120,7 @@ Users can access manage mode by going to [Security info](https://aka.ms/mysecuri
 
 ## Key usage scenarios
 
-### Update a password in MySignIns (preview)
+### Change a password in MySignIns
 A user navigates to [Security info](https://aka.ms/mysecurityinfo). After signing in, the user can change their password. If the user authenticates with a password and a multifactor authentication method, they will be able to use the enhanced user experience to change their password without entering their existing password. When finished, the user has the new password updated on the Security info page. Authentication methods such as Temporary Access Pass (TAP) aren't supported for password change unless the user knows their existing password.
 
 ### Protect Security info registration with Conditional Access

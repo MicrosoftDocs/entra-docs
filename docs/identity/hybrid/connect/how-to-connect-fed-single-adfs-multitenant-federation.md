@@ -2,22 +2,17 @@
 title: Federating multiple Microsoft Entra ID with single AD FS
 description: In this document, you will learn how to federate multiple Microsoft Entra ID with a single AD FS.
 keywords: federate, ADFS, AD FS, multiple tenants, single AD FS, one ADFS, multi-tenant federation, multi-forest adfs, aad connect, federation, cross-tenant federation
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
-
-ms.assetid: 
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Federate multiple instances of Microsoft Entra ID with single instance of AD FS
@@ -45,7 +40,9 @@ For AD FS in contoso.com to be able to authenticate users in fabrikam.com, a two
 ## Step 2: Modify contoso.com federation settings 
  
 The default issuer set for a single domain federated to AD FS is "http\://ADFSServiceFQDN/adfs/services/trust", for example, `http://fs.contoso.com/adfs/services/trust`. Microsoft Entra ID requires unique issuer for each federated domain. Because AD FS is going to federate two domains, the issuer value needs to be modified so that it is unique. 
- 
+
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
+
 On the AD FS server, open Azure AD PowerShell (ensure that the MSOnline module is installed) and do the following steps:
  
 Connect to the Microsoft Entra ID that contains the domain contoso.com

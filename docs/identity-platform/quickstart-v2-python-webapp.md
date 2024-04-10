@@ -7,9 +7,9 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: devx-track-python, scenarios:getting-started, "languages:Python", mode-api
 ms.date: 01/24/2023
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: quickstart
 #Customer intent: As a Python web app developer, I want to add sign-in with Microsoft functionality to my application, so that users can sign in with their Microsoft accounts and access the Microsoft Graph API.
 ---
 
@@ -19,7 +19,7 @@ ms.topic: conceptual
 > [!div renderon="docs"]
 > Welcome! This probably isn't the page you were expecting. While we work on a fix, this link should take you to the right article:
 >
-> > [Quickstart: Add sign-in with Microsoft to a Python web app](quickstart-web-app-python-sign-in.md)
+> > [Quickstart: Add sign-in with Microsoft to a Python web app](quickstart-web-app-python-flask.md)
 > 
 > We apologize for the inconvenience and appreciate your patience while we work to get this resolved.
 
@@ -102,4 +102,4 @@ ms.topic: conceptual
 > Learn more about web apps that sign in users in our multi-part scenario series.
 > 
 > > [!div class="nextstepaction"]
-> > [Scenario: Web app that signs in users](scenario-web-app-sign-user-overview.md)
+> > [Scenario: Web app that signs in users](scenario-web-app-sign-user-app-registration.md)

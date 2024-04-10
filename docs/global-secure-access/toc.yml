@@ -8,7 +8,7 @@ items:
     href: overview-what-is-global-secure-access.md
   - name: Get started with Global Secure Access
     href: how-to-get-started-with-global-secure-access.md
-  - name: Network traffic dashboard
+  - name: Global Secure Access dashboard
     href: concept-traffic-dashboard.md
 - name: Concepts
   expanded: true
@@ -111,6 +111,8 @@ items:
     items:
       - name: Deployment guide information
         href: ~/architecture/sse-deployment-guide-intro.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
+      - name: Deploying Microsoft Entra Internet Access
+        href: ~/architecture/sse-deployment-guide-internet-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
       - name: Deploying Microsoft Entra Internet Access for Microsoft 365
         href: ~/architecture/sse-deployment-guide-m365.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
       - name: Deploying Microsoft Entra Private Access
@@ -120,7 +122,7 @@ items:
   items:
   - name: Remote network valid configurations
     href: reference-remote-network-configurations.md
-  - name: Points of presence
+  - name: Points of presence and service addresses
     href: reference-points-of-presence.md
   - name: Data storage and privacy
     href: reference-data-storage-and-privacy.md

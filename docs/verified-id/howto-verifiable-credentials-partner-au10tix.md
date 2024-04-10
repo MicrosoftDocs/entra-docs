@@ -1,11 +1,11 @@
 ---
 title: Configure Verified ID by AU10TIX as your Identity Verification Partner 
 description: This article shows you the steps you need to follow to configure AU10TIX as your identity verification partner
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 ms.topic: how-to
 ms.date: 10/12/2023
 ms.author: barclayn
@@ -57,7 +57,8 @@ As a developer you can share these steps with your tenant administrator to obtai
 1. Choose **Select Issuer**.
 1. Look for AU10TIX in the **Search/select issuers** drop-down.
 
-   [ ![Screenshot of the portal section used to choose issuers.](./media/verified-id-partner-au10tix/select-issuers.png)](./media/verified-id-partner-au10tix/select-issuers.png#lightbox)
+   :::image type="content" source="./media/verified-id-partner-au10tix/select-issuers.png" alt-text="Screenshot of the portal section used to choose issuers.":::
+
 1. Check the **Government Issued ID – Global** or other credential type.
 1. Select **Add** and then select **Review**.
 1. Download the request body and Copy/paste POST API request URL.

@@ -8,13 +8,15 @@ writer: twimmers
 manager: jeedes
 
 ms.assetid: 08778fff-f252-45c2-95d4-cc640c288af3
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Bentley - Automatic User Provisioning so that I can streamline the user management process and ensure that users have the appropriate access to Bentley - Automatic User Provisioning.
 ---
 
 # Tutorial: Configure Bentley - Automatic User Provisioning for automatic user provisioning

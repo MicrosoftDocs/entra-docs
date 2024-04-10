@@ -131,6 +131,8 @@
           href: quickstart-single-page-app-angular-sign-in.md
         - name: JavaScript
           href: quickstart-single-page-app-javascript-sign-in.md
+        - name: Blazor WebAssembly
+          href: quickstart-single-page-app-blazor-wasm-sign-in.md
     - name: Tutorials
       items:
         - name: React
@@ -147,8 +149,6 @@
           href: tutorial-v2-angular-auth-code.md
         - name: JavaScript
           href: tutorial-v2-javascript-auth-code.md
-        - name: Blazor WebAssembly
-          href: tutorial-blazor-webassembly.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications
@@ -156,8 +156,6 @@
       items:
         - name: SPA that signs in users and calls web API
           items:
-            - name: Overview
-              href: scenario-spa-overview.md
             - name: App registration
               href: scenario-spa-app-registration.md
             - name: Code configuration
@@ -168,8 +166,6 @@
               href: scenario-spa-acquire-token.md
             - name: Call a web API
               href: scenario-spa-call-api.md
-            - name: Move to production
-              href: scenario-spa-production.md
 - name: Web app
   items:
     - name: Web app authentication
@@ -185,7 +181,9 @@
         - name: Java
           href: quickstart-web-app-java-sign-in.md
         - name: Python
-          href: quickstart-web-app-python-sign-in.md
+          items:
+            - name: Flask
+              href: quickstart-web-app-python-flask.md
     - name: Tutorials
       items:
         - name: ASP.NET Core
@@ -198,6 +196,16 @@
             href: tutorial-web-app-dotnet-sign-in-users.md
           - name: Get user data from web API
             href: tutorial-web-app-dotnet-call-api.md
+        - name: Python Flask
+          items:
+          - name: Register your app
+            href: tutorial-web-app-python-register-app.md
+          - name: Prepare your app
+            href: tutorial-web-app-python-prepare-app.md
+          - name: Sign in users
+            href: tutorial-web-app-python-sign-in-users.md
+          - name: Get user data from web API
+            href: tutorial-web-app-python-call-api.md
         - name: Node.js
           href: tutorial-v2-nodejs-webapp-msal.md
         - name: Spring
@@ -223,20 +231,14 @@
       items:
         - name: Web app that signs in users
           items:
-            - name: Overview
-              href: scenario-web-app-sign-user-overview.md
             - name: App registration
               href: scenario-web-app-sign-user-app-registration.md
             - name: Code configuration
               href: scenario-web-app-sign-user-app-configuration.md
             - name: Sign-in and sign-out
               href: scenario-web-app-sign-user-sign-in.md
-            - name: Move to production
-              href: scenario-web-app-sign-user-production.md
         - name: Web app that calls an API
           items:
-            - name: Overview
-              href: scenario-web-app-call-api-overview.md
             - name: App registration
               href: scenario-web-app-call-api-app-registration.md
             - name: Code configuration
@@ -247,8 +249,6 @@
               href: scenario-web-app-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-app-call-api-call-api.md
-            - name: Move to production
-              href: scenario-web-app-call-api-production.md
         - name: Deploy and setup App Service auth in a pipeline
           href: deploy-web-app-authentication-pipeline.md
 - name: Web API
@@ -276,26 +276,18 @@
       href: sample-v2-code.md#web-api
     - name: How-to
       items:
-        - name: Call a Web API with Postman
-          href: howto-call-a-web-api-with-postman.md
         - name: Call a Web API with cURL
           href: howto-call-a-web-api-with-curl.md
         - name: Protected web API
           items:
-            - name: Overview
-              href: scenario-protected-web-api-overview.md
             - name: App registration
               href: scenario-protected-web-api-app-registration.md
             - name: Code configuration
               href: scenario-protected-web-api-app-configuration.md
             - name: Verification of scopes or app roles
               href: scenario-protected-web-api-verification-scope-app-roles.md
-            - name: Move to production
-              href: scenario-protected-web-api-production.md
         - name: Web API that calls an API
           items:
-            - name: Overview
-              href: scenario-web-api-call-api-overview.md
             - name: App registration
               href: scenario-web-api-call-api-app-registration.md
             - name: Code configuration
@@ -304,8 +296,6 @@
               href: scenario-web-api-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-api-call-api-call-api.md
-            - name: Move to production
-              href: scenario-web-api-call-api-production.md
 - name: Desktop
   items:
     - name: Desktop app authentication
@@ -427,7 +417,7 @@
     - name: Quickstart
       items:
         - name: .NET
-          href: quickstart-console-app-netcore-acquire-token.md
+          href: quickstart-daemon-dotnet-acquire-token.md
         - name: Java
           href: quickstart-daemon-app-java-acquire-token.md
         - name: Node.js
@@ -518,8 +508,10 @@
           items:
             - name: Token issuance start event
               items:
-                - name: Create and register a custom claims provider API
-                  href: custom-extension-get-started.md
+                - name: Create a token issuance start event in a REST API
+                  href: custom-extension-tokenissuancestart-setup.md
+                - name: Configure a custom claims provider token issuance event
+                  href: custom-extension-tokenissuancestart-configuration.md
                 - name: Configure a SAML app to call a custom claims provider
                   href: custom-extension-configure-saml-app.md
                 - name: Troubleshoot your custom claims provider API
@@ -849,6 +841,10 @@
       href: /graph/api/resources/azure-ad-overview
     - name: Custom claims provider reference
       href: custom-claims-provider-reference.md
+    - name: MSA Server side API reference 
+      href: reference-msa-server-side-api.md
+    - name: Microsoft Entra ID WAM API reference
+      href: reference-entra-id-wam-api.md
     - name: Attribute collection start custom extension reference
       href: custom-extension-OnAttributeCollectionStart-reference.md
     - name: Attribute collection submit custom extension reference

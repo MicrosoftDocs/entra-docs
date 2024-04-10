@@ -6,9 +6,9 @@ manager: celesteDG
 ms.author: jomondi
 ms.date: 03/15/2023
 ms.reviewer: jawoods, ludwignick, phsignor
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: concept-article
 
 #Customer intent: As a developer integrating with Microsoft Entra ID, I want to understand how delegated access works, so that I can properly authorize my client app and ensure that the signed-in user has the necessary permissions to access resources on their behalf.
 ---

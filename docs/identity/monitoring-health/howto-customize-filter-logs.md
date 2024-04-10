@@ -3,9 +3,9 @@ title: Customize and filter activity logs in Microsoft Entra ID
 description: Learn how to customize the columns and filter of the Microsoft Entra activity logs so you can analyze the results.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: how-to
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 12/15/2023
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
@@ -230,6 +230,6 @@ In addition to the filters of the default view, you can set the following filter
 
 ## Next steps
 
-- [Analyze a sing-in error](quickstart-analyze-sign-in.md)
+- [Analyze a sign-in error](quickstart-analyze-sign-in.md)
 - [Troubleshoot sign-in errors](howto-troubleshoot-sign-in-errors.md)
 - [Explore all audit log categories and activities](reference-audit-activities.md)

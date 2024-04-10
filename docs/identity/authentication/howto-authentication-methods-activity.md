@@ -2,8 +2,7 @@
 title: Authentication Methods Activity
 description: Overview of the authentication methods that users register to sign in and reset passwords. 
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 09/13/2023
@@ -12,14 +11,12 @@ ms.author: justinha
 author: sopand
 manager: amycolannino
 ms.reviewer: dawoo
-
-ms.collection: M365-identity-device-management
 ---
 # Authentication Methods Activity 
 
 The new authentication methods activity dashboard enables admins to monitor authentication method registration and usage across their organization. This reporting capability provides your organization with the means to understand what methods are being registered and how they're being used.
 
-[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-dsr-and-stp-note.md)]
+[!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-dsr-and-stp-note.md)]
 
 ## Permissions and licenses
 

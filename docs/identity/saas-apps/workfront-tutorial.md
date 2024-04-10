@@ -5,12 +5,14 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Workfront so that I can control who has access to Workfront, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Tutorial: Microsoft Entra integration with Workfront
 
@@ -157,7 +159,7 @@ The objective of this section is to create a user called Britta Simon in Workfro
 
 4. On the New Person dialog, perform the following steps:
    
-    ![Create an Workfront test user](./media/workfront-tutorial/add-person.png)
+    ![Create a Workfront test user](./media/workfront-tutorial/add-person.png)
    
     a. In the **First Name** textbox, type "Britta."
    

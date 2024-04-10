@@ -8,13 +8,15 @@ writer: Thwimmer
 manager: jeedes
 
 ms.assetid: 1aace746-6f6d-4ac4-ad2c-7ba65bb86a72
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: Thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to BIC Cloud Design so that I can streamline the user management process and ensure that users have the appropriate access to BIC Cloud Design.
 ---
 
 # Tutorial: Configure BIC Cloud Design for automatic user provisioning

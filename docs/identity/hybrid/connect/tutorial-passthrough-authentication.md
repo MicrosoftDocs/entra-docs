@@ -1,17 +1,16 @@
 ---
 title: 'Tutorial: Use pass-through authentication for hybrid identity in a single Active Directory forest'
 description: Learn how to set up a hybrid identity environment by using pass-through authentication to integrate a Windows Server Active Directory forest with Microsoft Entra ID.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: tutorial
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 
 # Tutorial: Use pass-through authentication for hybrid identity in a single Active Directory forest
@@ -250,7 +249,6 @@ Now it's time to download and install Microsoft Entra Connect. After it's instal
 1. In **Install required components**, select **Install**.
 1. In **User sign-in**, select **Pass-through authentication** and **Enable single sign-on**, and then select **Next**.
 
-   :::image type="content" source="media/tutorial-passthrough-authentication/pta1.png" alt-text="Screenshot that shows where to select Pass-through authentication.":::
 1. In **Connect to Microsoft Entra ID**, enter the username and password of the Hybrid Identity Administrator account you created earlier, and then select **Next**.
 1. In **Connect your directories**, select **Add directory**. Then select **Create new AD account** and enter the contoso\Administrator username and password. Select **OK**.
 1. Select **Next**.

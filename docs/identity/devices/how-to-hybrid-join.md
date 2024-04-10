@@ -2,16 +2,17 @@
 title: Configure Microsoft Entra hybrid join
 description: Learn how to configure Microsoft Entra hybrid join.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 10/26/2022
+ms.date: 02/26/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
 ---
+
 # Configure Microsoft Entra hybrid join
 
 Bringing your devices to Microsoft Entra ID maximizes user productivity through single sign-on (SSO) across your cloud and on-premises resources. You can secure access to your resources with [Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md) at the same time.
@@ -30,7 +31,7 @@ Bringing your devices to Microsoft Entra ID maximizes user productivity through 
 
 ### Network connectivity requirements
 
-Microsoft Entra hybrid join requires devices to have access to the following Microsoft resources from inside your organization's network:  
+Microsoft Entra hybrid join requires devices to have access to the following Microsoft resources from inside your organization's network:
 
 - `https://enterpriseregistration.windows.net`
 - `https://login.microsoftonline.com`
@@ -39,7 +40,7 @@ Microsoft Entra hybrid join requires devices to have access to the following Mic
 - Your organization's Security Token Service (STS) (**For federated domains**)
 
 > [!WARNING]
-> If your organization uses proxy servers that intercept SSL traffic for scenarios like data loss prevention or Microsoft Entra tenant restrictions, ensure that traffic to `https://device.login.microsoftonline.com` is excluded from TLS break-and-inspect. Failure to exclude this URL may cause interference with client certificate authentication, cause issues with device registration, and device-based Conditional Access.
+> If your organization uses proxy servers that intercept SSL traffic for scenarios like data loss prevention or Microsoft Entra tenant restrictions, ensure that traffic to `https://device.login.microsoftonline.com` is excluded from TLS break-and-inspect. Failure to exclude this URL might cause interference with client certificate authentication, cause issues with device registration, and device-based Conditional Access.
 
 If your organization requires access to the internet via an outbound proxy, you can use [Web Proxy Auto-Discovery (WPAD)](/previous-versions/tn-archive/cc995261(v=technet.10)) to enable Windows 10 or newer computers for device registration with Microsoft Entra ID. To address issues configuring and managing WPAD, see [Troubleshooting Automatic Detection](/previous-versions/tn-archive/cc302643(v=technet.10)).
 
@@ -58,13 +59,13 @@ We think most organizations deploy Microsoft Entra hybrid join with managed doma
 
 Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a managed domain:
 
-1. Start Microsoft Entra Connect, and then select **Configure**.
+1. Open Microsoft Entra Connect, and then select **Configure**.
 1. In **Additional tasks**, select **Configure device options**, and then select **Next**.
 1. In **Overview**, select **Next**.
 1. In **Connect to Microsoft Entra ID**, enter the credentials of a Global Administrator for your Microsoft Entra tenant.
 1. In **Device options**, select **Configure Microsoft Entra hybrid join**, and then select **Next**.
 1. In **Device operating systems**, select the operating systems that devices in your Active Directory environment use, and then select **Next**.
-1. In **SCP configuration**, for each forest where you want Microsoft Entra Connect to configure the SCP, complete the following steps, and then select **Next**.
+1. In **SCP configuration**, for each forest where you want Microsoft Entra Connect to configure a service connection point (SCP), complete the following steps, and then select **Next**.
    1. Select the **Forest**.
    1. Select an **Authentication Service**.
    1. Select **Add** to enter the enterprise administrator credentials.
@@ -79,15 +80,15 @@ Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a man
 A federated environment should have an identity provider that supports the following requirements. If you have a federated environment using Active Directory Federation Services (AD FS), then the below requirements are already supported.
 
 - **WIAORMULTIAUTHN claim:** This claim is required to do Microsoft Entra hybrid join for Windows down-level devices.
-- **WS-Trust protocol:** This protocol is required to authenticate Windows current Microsoft Entra hybrid joined devices with Microsoft Entra ID. When you're using AD FS, you need to enable the following WS-Trust endpoints: 
+- **WS-Trust protocol:** This protocol is required to authenticate Windows current Microsoft Entra hybrid joined devices with Microsoft Entra ID. When you're using AD FS, you need to enable the following WS-Trust endpoints:
    - `/adfs/services/trust/2005/windowstransport`
    - `/adfs/services/trust/13/windowstransport`
    - `/adfs/services/trust/2005/usernamemixed`
    - `/adfs/services/trust/13/usernamemixed`
    - `/adfs/services/trust/2005/certificatemixed`
-   - `/adfs/services/trust/13/certificatemixed` 
+   - `/adfs/services/trust/13/certificatemixed`
 
-> [!WARNING] 
+> [!WARNING]
 > Both **adfs/services/trust/2005/windowstransport** and **adfs/services/trust/13/windowstransport** should be enabled as intranet facing endpoints only and must NOT be exposed as extranet facing endpoints through the Web Application Proxy. To learn more on how to disable WS-Trust Windows endpoints, see [Disable WS-Trust Windows endpoints on the proxy](/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet). You can see what endpoints are enabled through the AD FS management console under **Service** > **Endpoints**.
 
 Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a federated environment:
@@ -101,7 +102,7 @@ Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a fed
    1. Select the forest.
    1. Select the authentication service. You must select **AD FS server** unless your organization has exclusively Windows 10 or newer clients and you configure computer/device sync, or your organization uses seamless SSO.
    1. Select **Add** to enter the enterprise administrator credentials.
-   
+
    ![A screenshot showing Microsoft Entra Connect and options to for SCP configuration in a federated domain.](./media/how-to-hybrid-join/azure-ad-connect-scp-configuration-federated.png)
 
 1. On the **Device operating systems** page, select the operating systems that the devices in your Active Directory environment use, and then select **Next**.
@@ -111,7 +112,7 @@ Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a fed
 
 ### Federation caveats
 
-With Windows 10 1803 or newer, if instantaneous Microsoft Entra hybrid join for a federated environment using AD FS fails, we rely on Microsoft Entra Connect to sync the computer object in Microsoft Entra to complete the device registration for Microsoft Entra hybrid join.
+With Windows 10 1803 or newer, if instantaneous Microsoft Entra hybrid join for a federated environment using AD FS fails, we rely on Microsoft Entra Connect to sync the computer object in Microsoft Entra ID to complete the device registration for Microsoft Entra hybrid join.
 
 ## Other scenarios
 
@@ -121,7 +122,7 @@ Some organizations might not be able to use Microsoft Entra Connect to configure
 
 ### US Government cloud (inclusive of GCCHigh and DoD)
 
-For organizations in [Azure Government](https://azure.microsoft.com/global-infrastructure/government/), Microsoft Entra hybrid join requires devices to have access to the following Microsoft resources from inside your organization's network:  
+For organizations in [Azure Government](https://azure.microsoft.com/global-infrastructure/government/), Microsoft Entra hybrid join requires devices to have access to the following Microsoft resources from inside your organization's network:
 
 - `https://enterpriseregistration.windows.net` **and** `https://enterpriseregistration.microsoftonline.us`
 - `https://login.microsoftonline.us`
@@ -139,9 +140,8 @@ If you experience issues with completing Microsoft Entra hybrid join for domain-
 - [Troubleshoot Microsoft Entra hybrid join for Windows downlevel devices](troubleshoot-hybrid-join-windows-legacy.md)
 - [Troubleshoot pending device state](/troubleshoot/azure/active-directory/pending-devices)
 
-## Next steps
+## Related content
 
-- [Downlevel device enablement](how-to-hybrid-join-downlevel.md)
 - [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.md)
 - [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](../conditional-access/howto-conditional-access-policy-compliant-device.md)
 - [Planning a Windows Hello for Business Deployment](/windows/security/identity-protection/hello-for-business/hello-planning-guide)

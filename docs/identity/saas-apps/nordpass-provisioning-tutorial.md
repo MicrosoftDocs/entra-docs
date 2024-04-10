@@ -8,13 +8,15 @@ writer: Thwimmer
 manager: jeedes
 
 ms.assetid: ad92f598-f6f6-4ee4-8de4-a488d4e07126
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: Thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to NordPass so that I can streamline the user management process and ensure that users have the appropriate access to NordPass.
 ---
 
 # Tutorial: Configure NordPass for automatic user provisioning

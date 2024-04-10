@@ -7,7 +7,25 @@
     }
   ],
   "MetadataDelimiter": "\"",
-  "Exclude": [
+  "Include": [
+    "docs/identity/multi-tenant-organizations"
+  ],
+  "Exclude": [],
+  "RemoveTermSets": [
+    "*au-administrative-unit*",
+    "*guest-user*",
+    "*microsoft-brands-microsoft*",
+    "*right-click*",
+    "*and-then-click*",
+    "*had-had*",
+    "*single-backtick*",
+    "*incorrect-backtick-spacing*",
+    "*-caution-*",
+    "*-crm-*",
+    "*-crud-*",
+    "*-mvc-*",
+    "product-azure-app-service",
+    "invalid-product-microsoft-visual-studio-vs"
   ],
   "PreloadTOCFiles": [
   ],

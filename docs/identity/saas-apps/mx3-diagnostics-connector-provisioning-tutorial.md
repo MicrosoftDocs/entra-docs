@@ -8,13 +8,15 @@ writer: Thwimmer
 manager: jeedes
 
 ms.assetid: 6d54ea28-0208-45bc-8e29-c6cf9a912f00
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: Thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to MX3 Diagnostics so that I can streamline the user management process and ensure that users have the appropriate access to MX3 Diagnostics.
 ---
 
 # Tutorial: Configure MX3 Diagnostics Connector for automatic user provisioning

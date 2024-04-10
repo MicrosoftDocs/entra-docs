@@ -8,13 +8,15 @@ writer: Thwimmer
 manager: jeedes
 
 ms.assetid: 50c400a2-8dd9-41ba-b11d-b1516b9d2967
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 
 ms.topic: tutorial
 ms.date: 01/19/2023
 ms.author: Thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SurveyMonkey Enterprise so that I can streamline the user management process and ensure that users have the appropriate access to SurveyMonkey Enterprise.
 ---
 
 # Tutorial: Configure SurveyMonkey Enterprise for automatic user provisioning

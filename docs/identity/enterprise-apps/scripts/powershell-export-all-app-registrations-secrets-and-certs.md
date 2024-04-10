@@ -4,8 +4,8 @@ description: PowerShell example that exports all secrets and certificates for th
 
 author: mifarca
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.custom:
 ms.topic: sample
@@ -18,7 +18,7 @@ ms.reviewer: mifarca
 
 This PowerShell script example exports all secrets and certificates for the specified app registrations from your directory into a CSV file.
 
-[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
 This sample requires the [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) SDK module.
 

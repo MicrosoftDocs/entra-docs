@@ -1,21 +1,18 @@
 ### YamlMime:FAQ
 metadata:
   title: Microsoft Entra Connect Health FAQ - Azure
-  description: This FAQ answers questions about Microsoft Entra Connect Health. This FAQ covers questions about using the service, including the billing model, capabilities, limitations, and support.
-  services: active-directory
-  documentationcenter: ''
+  description: This FAQ answers questions about Microsoft Entra Connect Health. This FAQ covers questions about using the service, including the billing model, capabilities, limitations, and support.  
   author: billmath
   manager: amycolannino
   ms.assetid: f1b851aa-54d7-4cb4-8f5c-60680e2ce866
-  ms.service: active-directory
-  ms.subservice: hybrid
-  ms.workload: identity
+  ms.service: entra-id
+  ms.subservice: hybrid-connect
   ms.tgt_pltfrm: na
   ms.custom: has-azure-ad-ps-ref
   ms.topic: faq
   ms.date: 02/08/2023
   ms.author: billmath
-  ms.collection: M365-identity-device-management
+  
 title: Microsoft Entra Connect Health frequently asked questions
 summary: This article includes answers to frequently asked questions (FAQs) about Microsoft Entra Connect Health. These FAQs cover questions about how to use the service, which includes the billing model, capabilities, limitations, and support.
 
@@ -125,7 +122,7 @@ sections:
       - question: |
           Why do I see two servers with the same name in the Microsoft Entra Connect Health portal?
         answer: |
-          When you remove an agent from a server, the server isn't automatically removed from the Microsoft Entra Connect Health portal. If you manually remove an agent from a server or remove the server itself, you need to manually delete the server entry from the Microsoft Entra Connect Health portal.
+          When you remove an agent from a server, the server isn't automatically removed from the Microsoft Entra Connect Health portal. If you manually remove an agent from a server or remove the server itself, you need to manually delete the server entry from the Microsoft Entra Connect Health portal. To delete monitored servers from Microsoft Entra Connect Health, you must have either Microsoft Entra Global Administrator account permissions or the Contributor role in Azure role-based access control.
           
           You might reimage a server or create a new server with the same details (such as machine name). If you did not remove the already registered server from the Microsoft Entra Connect Health portal, and you installed the agent on the new server, you might see two entries with the same name.
           

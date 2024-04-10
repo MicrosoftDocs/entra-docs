@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: e5e53362-065c-4546-85f3-9454b8c0d4b1
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 07/05/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Rhombus Systems so that I can streamline the user management process and ensure that users have the appropriate access to Rhombus Systems.
 ---
 
 # Tutorial: Configure Rhombus Systems for automatic user provisioning

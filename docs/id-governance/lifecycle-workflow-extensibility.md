@@ -4,17 +4,15 @@ description: Conceptual article discussing workflow extensibility with Lifecycle
 author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: compliance
-ms.workload: identity
-ms.topic: conceptual 
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
+ms.topic: conceptual
 ms.date: 05/31/2023
-ms.custom: template-concept 
+ms.custom: template-concept
 ---
 
 
 # Lifecycle Workflows custom task extension
-
 
 Lifecycle Workflows allow you to create workflows that can be triggered based on joiner, mover, or leaver scenarios. While Lifecycle Workflows provide several built-in tasks to automate common scenarios throughout the lifecycle of users, eventually you may reach the limits of these built-in tasks. With the extensibility feature, you're able to utilize the concept of custom task extensions to call-out to external systems as part of a workflow. For example, when a user joins your organization you can have a workflow with a custom task extension that assigns a Teams number, or have a separate workflow that grants access to an email account for a manager when a user leaves. With the extensibility feature, Lifecycle Workflows currently support creating custom tasks extensions to call-out to [Azure Logic Apps](/azure/logic-apps/logic-apps-overview).
 
@@ -60,7 +58,7 @@ The response can be authorized in one of the following ways:
 
 - **System-assigned managed identity (Default)** - With this choice you enable and utilize the Logic Apps system-assigned managed identity. For more information, see: [Authenticate access to Azure resources with managed identities in Azure Logic Apps](/azure/logic-apps/create-managed-service-identity)
 - **No authorization** -  With this choice no authorization will be granted, and you separately have to assign an application permission (LifecycleWorkflows.ReadWrite.All), or role assignment (Lifecycle Workflows Administrator). If an application is responding we don't recommend this option, as it isn't following the principle of least privilege. This option may also be used if responses are only provided on behalf of a user (LifecycleWorkflows.ReadWrite.All delegated permission AND Lifecycle Workflows Administrator role assignment)
-- **Existing application** - With this choice you're able to choose an existing application to respond. This can be a regular application and a system or user-assigned managed identity. For more information on managed identity types, see: [Managed identity types](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types).
+- **Existing application** - With this choice you're able to choose an existing application to respond. This can be a regular application and a system or user-assigned managed identity. For more information on managed identity types, see: [Managed identity types](../identity/managed-identities-azure-resources/overview.md#managed-identity-types).
 
 ## Custom task extension integration with Azure Logic Apps high-level steps
 
@@ -78,6 +76,6 @@ The high-level steps for the Azure Logic Apps integration are as follows:
 
 ## Next steps
 
-- [customTaskExtension resource type](/graph/api/resources/identitygovernance-customtaskextension?view=graph-rest-beta&preserve-view=true)
+- [`customTaskExtension` resource type](/graph/api/resources/identitygovernance-customtaskextension?view=graph-rest-beta&preserve-view=true)
 - [Trigger Logic Apps based on custom task extensions](trigger-custom-task.md)
 - [Configure a Logic App for Lifecycle Workflow use](configure-logic-app-lifecycle-workflows.md)

@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 0339e63a-5262-4019-a85d-18c9617fc4b3
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 03/02/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Ardoq so that I can streamline the user management process and ensure that users have the appropriate access to Ardoq.
 ---
 
 # Tutorial: Configure Ardoq for automatic user provisioning

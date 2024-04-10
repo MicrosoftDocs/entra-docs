@@ -8,13 +8,15 @@ writer: twimmers
 manager: jeedes
 
 ms.assetid: d8021105-eb5b-4a20-8739-f02e0e22c147
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Clarizen One so that I can streamline the user management process and ensure that users have the appropriate access to Clarizen One.
 ---
 
 # Tutorial: Configure Clarizen One for automatic user provisioning

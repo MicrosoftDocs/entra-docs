@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: dc5e95c8-d878-43dd-918e-69e1686b4db6
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TimeClock 365 so that I can streamline the user management process and ensure that users have the appropriate access to TimeClock 365.
 ---
 
 # Tutorial: Configure TimeClock 365 for automatic user provisioning
