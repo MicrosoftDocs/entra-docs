@@ -23,7 +23,7 @@ Microsoft Entra ID also supports provisioning users into applications hosted on-
 
 |Protocol |Connector|
 |-----|-----|
-| SCIM | [SCIM - SaaS](use-scim-to-provision-users-and-groups.md) <br />[SCIM - On-prem / Private network](./on-premises-scim-provisioning.md) |
+| SCIM | [SCIM - SaaS](use-scim-to-provision-users-and-groups.md) <br />[SCIM - On-premises / Private network](./on-premises-scim-provisioning.md) |
 | LDAP | [LDAP](./on-premises-ldap-connector-configure.md)|
 | SQL  | [SQL](./tutorial-ecma-sql-connector.md) |
 | REST | [Web Services](./on-premises-web-services-connector.md)|
