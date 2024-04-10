@@ -442,8 +442,8 @@
       "redirect_document_id": false
     },
     {      
-      "source_path_from_root": "/docs/identity/authenticaion/concept-authentication-windows-hello-for-business.md",
-      "redirect_url": "/windows/security/identity-protection/hello-for-business.md",
+      "source_path_from_root": "/docs/identity/authentication/concept-authentication-windows-hello-for-business.md",
+      "redirect_url": "/windows/security/identity-protection/hello-for-business",
       "redirect_document_id": false
     },
     {            
