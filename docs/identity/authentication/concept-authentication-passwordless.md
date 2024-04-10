@@ -33,7 +33,7 @@ Each organization has different needs when it comes to authentication. Microsoft
 
 Windows Hello for Business is ideal for information workers that have their own designated Windows PC. The biometric and PIN credentials are directly tied to the user's PC, which prevents access from anyone other than the owner. With public key infrastructure (PKI) integration and built-in support for single sign-on (SSO), Windows Hello for Business provides a convenient method for seamlessly accessing corporate resources on-premises and in the cloud.
 
-![Example of a user sign-in with Windows Hello for Business](./media/concept-authentication-passwordless/windows-hellow-sign-in.jpeg)
+![Example of a user sign-in with Windows Hello for Business](./media/concept-authentication-passwordless/windows-hello-sign-in.jpg)
 
 The following steps show how the sign-in process works with Microsoft Entra ID:
 
