@@ -88,7 +88,7 @@ The following table lists the administrative configuration limits in the Microso
 |Maximum policy file size      |1,024 KB          |
 |Number of API connectors per tenant     |20         |
 
-<!-- Reviewed by Anushke Bukka in the word doc. The numbers are correct
+<!-- Reviewed by SME in the word doc. The numbers are correct.
 
 ## Throttle limits for Microsoft Entra ID for external configuration tenants
 
