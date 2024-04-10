@@ -1,7 +1,6 @@
 ---
 title: Call an API in a sample Node.js daemon application
-description: Learn how to configure a sample Node.js daemon application that calls an API protected Microsoft Entra ID for customers
- 
+description: Learn how to configure a sample Node.js daemon application that calls an API protected Microsoft Entra ID
 author: kengaderdus
 manager: mwongerapk
 
@@ -12,27 +11,23 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 06/23/2023
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops, I want to configure a sample Node.js daemon application that calls an API protected by Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to configure a sample Node.js daemon application that calls an API protected by my Microsoft Entra external ID tenant
 ---
 
 # Call an API in a sample Node.js daemon application 
 
-This article uses a sample Node.js daemon application to show you how a daemon app acquires a token to call a web API. Microsoft Entra ID for customers protects the Web API. 
+This article uses a sample Node.js daemon application to show you how a daemon app acquires a token to call a web API. Microsoft Entra external protects the Web API.
 
-A daemon application acquires a token on behalf of itself (not on behalf of a user). Users can't interact with a daemon application because it requires its own identity. This type of application requests an access token by using its application identity and presenting its application ID, credential (password or certificate), and application ID URI to External ID. 
+A daemon application acquires a token on behalf of itself (not on behalf of a user). Users can't interact with a daemon application because it requires its own identity. This type of application requests an access token by using its application identity and presenting its application ID, credential (password or certificate), and application ID URI to External ID.
 
 A daemon app uses the standard [OAuth 2.0 client credentials grant](~/identity-platform/v2-oauth2-client-creds-grant-flow.md). To simplify the process of acquiring the token, the sample we use in this article uses [Microsoft Authentication Library for Node (MSAL Node)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node).
 
-
 ## Prerequisites
 
-- [Node.js](https://nodejs.org).
-
-- [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later. 
-
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
-- Microsoft Entra ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+* [Node.js](https://nodejs.org).
+* [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later. 
+* Microsoft Entra external ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register a daemon application and a web API
 
@@ -69,7 +64,7 @@ To get the web app sample code, you can do either of the following tasks:
 - [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
 
     ```console
-        git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
+    git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
     ```
 If you choose to download the *.zip* file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
 
@@ -78,12 +73,12 @@ If you choose to download the *.zip* file, extract the sample app file to a fold
 1. Open a console window, and change to the directory that contains the Node.js sample app:
 
     ```console
-        cd 2-Authorization\3-call-api-node-daemon\App
+    cd 2-Authorization\3-call-api-node-daemon\App
     ```
 1. Run the following commands to install app dependencies:
 
     ```console
-        npm install && npm update
+    npm install && npm update
     ```
 
 ## Configure the sample daemon app and API
@@ -125,29 +120,29 @@ To use your app registration in the web API sample:
 1. Run the web app client by using the following commands:
 
     ```console
-        2-Authorization\3-call-api-node-daemon\App
-         node . --op getToDos
+    2-Authorization\3-call-api-node-daemon\App
+    node . --op getToDos
     ```
 
 If your daemon app and web API successfully run, you should see something similar to the following JSON array in your console window
 
-```json
-{
-    id: 1,
-    owner: '3e8....-db63-43a2-a767-5d7db...',
-    description: 'Pick up grocery'
-},
-{
-    id: 2,
-    owner: 'c3cc....-c4ec-4531-a197-cb919ed.....',
-    description: 'Finish invoice report'
-},
-{
-    id: 3,
-    owner: 'a35e....-3b8a-4632-8c4f-ffb840d.....',
-    description: 'Water plants'
-}
-```
+    ```json
+    {
+        "id": 1,
+        "owner": "3e8....-db63-43a2-a767-5d7db...",
+        "description": "Pick up grocery"
+    },
+    {
+        "id": 2,
+        "owner": "c3cc....-c4ec-4531-a197-cb919ed.....",
+        "description": "Finish invoice report"
+    },
+    {
+        "id": 3,
+        "owner": "a35e....-3b8a-4632-8c4f-ffb840d.....",
+        "description": "Water plants"
+    }
+    ```
 
 ### How it works
 

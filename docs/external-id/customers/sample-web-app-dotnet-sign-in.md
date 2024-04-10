@@ -12,7 +12,7 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 06/23/2023
 ms.custom: developer, devx-track-dotnet
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample ASP.NET web app to sign in and sign out users with my Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample ASP.NET web app to sign in and sign out users with my Microsoft Entra external ID tenant
 ---
 
 # Sign in users for a sample ASP.NET web app in a Microsoft Entra ID for customers tenant
@@ -23,7 +23,7 @@ This how-to guide uses a sample ASP.NET web application to show the fundamentals
 
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet).
-* Microsoft Entra ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* Microsoft Entra external ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register the web app
 
@@ -56,7 +56,7 @@ To get the web app sample code, you can do either of the following tasks:
 - [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip). Extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
 - Clone the sample web application from GitHub by running the following command:
 
-    ```powershell
+    ```console
     git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
     ```
 
@@ -64,7 +64,7 @@ To get the web app sample code, you can do either of the following tasks:
 
 1. Navigate to the root folder of the sample you have downloaded and directory that contains the ASP.NET sample app:
 
-    ```powershell
+    ```console
     cd 1-Authentication\1-sign-in-aspnet-core-mvc
     ```
 
@@ -77,7 +77,7 @@ To get the web app sample code, you can do either of the following tasks:
 
 1. From your shell or command line, execute the following commands:
 
-    ```powershell
+    ```console
     dotnet run
     ```
 

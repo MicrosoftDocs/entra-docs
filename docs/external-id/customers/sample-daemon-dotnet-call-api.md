@@ -1,7 +1,7 @@
 ---
-title: Call an API in a sample .NET daemon application
-description: Learn how to configure a sample .NET daemon application that calls an API protected with Microsoft Entra ID for customers
- 
+title: Call an API in a sample .NET daemon application 
+description: Learn how to configure a sample .NET daemon application that calls an API protected with Microsoft Entra External ID
+
 author: SHERMANOUKO
 manager: mwongerapk
 
@@ -11,22 +11,20 @@ ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.topic: sample
 ms.date: 07/13/2023
-#Customer intent: As a dev, devops, I want to configure a sample .NET daemon application that calls an API protected by Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to configure a sample .NET daemon application that calls an API protected by my Microsoft Entra external ID tenant
 ---
 
 # Call an API in a sample .NET daemon application 
 
-This article uses a sample .NET daemon application to show you how a daemon application acquires a token to call a protected web API. Microsoft Entra ID for customers protects the Web API. 
+This article uses a sample .NET daemon application to show you how a daemon application acquires a token to call a protected web API. Microsoft Entra external protects the Web API.
 
 A daemon application acquires a token on behalf of itself (not on behalf of a user). Users can't interact with a daemon application because it requires its own identity. This type of application requests an access token by using its application identity and presenting its application ID, credential (password or certificate), and application ID URI to External ID. 
 
 ## Prerequisites
 
-- [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
-
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
-- Microsoft Entra ID for customers tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl)</a>.
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
+* [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
+* Microsoft Entra external ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register a daemon application and a web API
 
@@ -63,8 +61,9 @@ To get the web application sample code, you can do either of the following tasks
 - [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
 
     ```console
-        git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
+    git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
     ```
+
 If you choose to download the *.zip* file, extract the sample application file to a folder where the total length of the path is 260 or fewer characters.
 
 ## Configure the sample daemon application and API
@@ -112,38 +111,38 @@ To use your app registration in the web API sample:
 
 If your daemon application and web API successfully run, you should see something similar to the following JSON array in your console window
 
-```bash
-Posting a to-do...
-Retrieving to-do's from server...
-To-do data:
-ID: 1
-User ID: 41b1e1a8-8e51-4514-8dab-e568afa2826c
-Message: Bake bread
-Posting a second to-do...
-Retrieving to-do's from server...
-To-do data:
-ID: 1
-User ID: 41b1e1a8-8e51-4514-8dab-e568afa2826c
-Message: Bake bread
-ID: 2
-User ID: 41b1e1a8-8e51-4514-8dab-e568afa2826c
-Message: Butter bread
-Deleting a to-do...
-Retrieving to-do's from server...
-To-do data:
-ID: 2
-User ID: 41b1e1a8-8e51-4514-8dab-e568afa2826c
-Message: Butter bread
-Editing a to-do...
-Retrieving to-do's from server...
-To-do data:
-ID: 2
-User ID: 41b1e1a8-8e51-4514-8dab-e568afa2826c
-Message: Eat bread
-Deleting remaining to-do...
-Retrieving to-do's from server...
-There are no to-do's in server
-```
+    ```console
+    Posting a to-do...
+    Retrieving to-do's from server...
+    To-do data:
+    ID: 1
+    User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
+    Message: Bake bread
+    Posting a second to-do...
+    Retrieving to-do's from server...
+    To-do data:
+    ID: 1
+    User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
+    Message: Bake bread
+    ID: 2
+    User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
+    Message: Butter bread
+    Deleting a to-do...
+    Retrieving to-do's from server...
+    To-do data:
+    ID: 2
+    User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
+    Message: Butter bread
+    Editing a to-do...
+    Retrieving to-do's from server...
+    To-do data:
+    ID: 2
+    User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
+    Message: Eat bread
+    Deleting remaining to-do...
+    Retrieving to-do's from server...
+    There are no to-do's in server
+    ```
 
 ## How it works
 

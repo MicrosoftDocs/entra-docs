@@ -12,7 +12,7 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 06/23/2023
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample web app to sign in and sign out users with my CIAM tenant
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample web app to sign in and sign out users with my Microsoft Entra external ID tenant
 ---
 
 # Sign in users and call an API in sample Node.js web application 
@@ -85,9 +85,9 @@ This API needs to expose permissions, which a client needs to acquire for callin
 
 To get the web app and web API sample code, [download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
 
-```powershell
-git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
-```
+    ```console
+    git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
+    ```
 
 If you choose to download the `.zip` file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
 
@@ -95,12 +95,12 @@ If you choose to download the `.zip` file, extract the sample app file to a fold
 
 1. Open a console window, and change to the directory that contains the Node.js/Express sample app:
 
-    ```powershell
+    ```console
     cd 2-Authorization\4-call-api-express\App
     ```
 1. Run the following commands to install web app dependencies:
 
-    ```powershell
+    ```console
     npm install && npm update
     ```
 
@@ -137,16 +137,16 @@ To use your app registration in the web API sample:
 
 1. Open a console window, then run the web API by using the following commands:
 
-    ```powershell
+    ```console
     cd 2-Authorization\4-call-api-express\API\ToDoListAPI
     dotnet run
     ``` 
 
 1. Run the web app client by using the following commands:
 
-    ```powershell
-        cd 2-Authorization\4-call-api-express\App
-        npm start
+    ```console
+    cd 2-Authorization\4-call-api-express\App
+    npm start
     ```
 
 1. Open your browser, then go to http://localhost:3000. 

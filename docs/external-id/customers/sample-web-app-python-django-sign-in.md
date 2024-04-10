@@ -10,7 +10,7 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 03/18/2024
 
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample Python Django web app to sign in and sign out users with my Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample Python Django web app to sign in and sign out users withMicrosoft Entra external ID tenant.
 ---
 
 # Sign in users in a sample Python Django web application
@@ -22,7 +22,7 @@ In this article, you explore a Python Django web app that is secured by Microsof
 
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Python 3+](https://www.python.org/).
-* Microsoft Entra external ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* Microsoft Entra external ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>..
 
 ## Register the web app
 
@@ -51,9 +51,9 @@ Since this app signs in users, add delegated permissions:
 
 To get the web app sample code, [download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
 
-```console
-git clone https://github.com/Azure-Samples/ms-identity-docs-code-python.git
-```
+    ```console
+    git clone https://github.com/Azure-Samples/ms-identity-docs-code-python.git
+    ```
 
 If you choose to download the *.zip* file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
 
@@ -69,14 +69,14 @@ If you choose to download the *.zip* file, extract the sample app file to a fold
 
     ### [Windows](#tab/windows)
     
-    ```bash
+    ```console
     py -m venv .venv
     .venv\scripts\activate
     ```
     
     ### [macOS/Linux](#tab/mac-linux)
     
-    ```Bash
+    ```console
     python3 -m venv .venv
     source .venv/bin/activate
     ```

@@ -10,7 +10,7 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 03/18/2024
 
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample Python Flask web app to sign in and sign out users with my Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample Python Flask web app to sign in and sign out users with my Microsoft Entra external ID tenant.
 ---
 
 # Sign in users in a sample Python Flask web application
@@ -50,9 +50,9 @@ Since this app signs in users, add delegated permissions:
 
 To get the web app sample code, [download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
 
-```console
-git clone https://github.com/Azure-Samples/ms-identity-docs-code-python.git
-```
+    ```console
+    git clone https://github.com/Azure-Samples/ms-identity-docs-code-python.git
+    ```
 
 If you choose to download the *.zip* file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
 
@@ -68,14 +68,14 @@ If you choose to download the *.zip* file, extract the sample app file to a fold
 
     ### [Windows](#tab/windows)
     
-    ```bash
+    ```console
     py -m venv .venv
     .venv\scripts\activate
     ```
     
     ### [macOS/Linux](#tab/mac-linux)
     
-    ```Bash
+    ```console
     python3 -m venv .venv
     source .venv/bin/activate
     ```
@@ -96,11 +96,11 @@ If you choose to download the *.zip* file, extract the sample app file to a fold
 
 1. In your *.env* file, provide the following environment variables:
 
-    1. `CLIENT_ID` which is the Application (client) ID of the app you registered earlier.
+    - `CLIENT_ID` which is the Application (client) ID of the app you registered earlier.
 
-    1. `CLIENT_SECRET` which is the app secret value you copied earlier.
+    - `CLIENT_SECRET` which is the app secret value you copied earlier.
 
-    1. `AUTHORITY` which is the URL that identifies a token authority. It should be of the format *https://{subdomain}.ciamlogin.com/{subdomain}.onmicrosoft.com*. Replace *subdomain* with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+    - `AUTHORITY` which is the URL that identifies a token authority. It should be of the format *https://{subdomain}.ciamlogin.com/{subdomain}.onmicrosoft.com*. Replace *subdomain* with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 
 1. Confirm that the redirect URI is well configured. The redirect URI you registered earlier should match your configuration. This sample by default sets the redirect URI path to `/getAToken`. This is configured in the *app_config.py* file as *REDIRECT_PATH*.
 

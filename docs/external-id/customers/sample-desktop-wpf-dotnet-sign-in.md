@@ -12,7 +12,7 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 07/26/2023
 ms.custom: developer, devx-track-dotnet
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample WPF desktop app to sign in and sign out users with my Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample WPF desktop app to sign in and sign out users with my Microsoft Entra external ID tenant.
 ---
 
 # Sign in users in a sample WPF desktop application 
@@ -21,11 +21,9 @@ This article uses a sample Windows Presentation Foundation (WPF) application to 
 
 ## Prerequisites
 
-- [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
-
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
-- Microsoft Entra ID for customers tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl).
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+* [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
+* Microsoft Entra external ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register the desktop app
 
@@ -56,7 +54,7 @@ To get the WPF desktop app sample code, you can do either of the following tasks
 - [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip) or clone the sample desktop application from GitHub by running the following command:
 
     ```console
-        git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
+    git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
     ```
 
 If you choose to download the *.zip* file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.

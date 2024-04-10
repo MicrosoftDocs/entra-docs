@@ -12,7 +12,7 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 06/23/2023
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample Node.js web app to sign in and sign out users with my Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample Node.js web app to sign in and sign out users with my Microsoft Entra external ID tenant
 ---
 
 # Sign in users in a sample Node.js web application
@@ -68,7 +68,7 @@ To get the web app sample code, you can do either of the following tasks:
 - [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
 
     ```console
-        git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
+    git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
     ```
 
 If you choose to download the *.zip* file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
@@ -78,13 +78,13 @@ If you choose to download the *.zip* file, extract the sample app file to a fold
 1. Open a console window, and change to the directory that contains the Node.js sample app:
 
     ```console
-        cd 1-Authentication\5-sign-in-express\App
+    cd 1-Authentication\5-sign-in-express\App
     ```
 
 1. Run the following commands to install app dependencies:
 
     ```console
-        npm install
+    npm install
     ```
 
 ## Configure the sample web app
@@ -93,11 +93,11 @@ If you choose to download the *.zip* file, extract the sample app file to a fold
 
 1. Find the placeholder:
 
-    1. `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
+    - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
 
-    1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 
-    1. `Enter_the_Client_Secret_Here` and replace it with the app secret value you copied earlier.
+    - `Enter_the_Client_Secret_Here` and replace it with the app secret value you copied earlier.
 
 ## Run and test sample web app
 
@@ -106,7 +106,7 @@ You can now test the sample Node.js web app. You need to start the Node.js serve
 1. In your terminal, run the following command:
 
     ```console
-        npm start 
+    npm start 
     ```
 
 1. Open your browser, then go to `http://localhost:3000`. You should see the page similar to the following screenshot:

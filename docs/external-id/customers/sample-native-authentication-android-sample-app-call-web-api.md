@@ -49,9 +49,9 @@ Once you've registered both your client app and web API and you've exposed the A
 
 To get the web API sample code, [download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
 
-```bash
-git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
-```
+    ```console
+    git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
+    ```
 
 If you choose to download the .zip file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
 

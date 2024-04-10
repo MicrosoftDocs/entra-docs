@@ -10,7 +10,7 @@ ms.subservice: customers
 ms.custom: devx-track-js
 ms.topic: sample
 ms.date: 04/10/2024
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample vanilla JS SPA to sign in and sign out users with my Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample vanilla JS SPA to sign in and sign out users with my Microsoft Entra external ID tenant.
 ---
 
 # Sign in users in a sample vanilla JavaScript single-page application
@@ -47,7 +47,7 @@ To get the sample SPA, you can choose one of the following options:
 * Clone the repository using Git:
 
     ```console
-        git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
+    git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
     ```
 
 * [Download the sample](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip)
@@ -59,13 +59,13 @@ If you choose to download the `.zip` file, extract the sample app file to a fold
 1. Open a terminal window in the root directory of the sample project, and enter the following snippet to navigate to the project folder:
 
     ```console
-        cd 1-Authentication\0-sign-in-vanillajs\App
+    cd 1-Authentication\0-sign-in-vanillajs\App
     ```
 
 1. Install the project dependencies:
 
     ```console
-        npm install
+    npm install
     ```
 
 ## Configure the sample SPA
