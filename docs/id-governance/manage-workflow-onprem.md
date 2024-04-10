@@ -1,5 +1,5 @@
 ---
-title: Manage synced on-premises users with workflows (preview)
+title: Manage synced on-premises users with workflows (Preview)
 description: An how to article on how to edit a user account related task to run for hybrid users with Lifecycle workflows.
 author: owinfreyATL
 ms.author: owinfrey
@@ -15,7 +15,7 @@ ms.custom: template-how-to
 
 ---
 
-# Manage synced on-premises users with workflows (preview)
+# Manage synced on-premises users with workflows (Preview)
 
 Workflows created by Lifecycle workflows can be used to manage the lifecycle of synced on-premises users. Synced on-premises support allows for greater, and simplified, control of the lifecycle of users within your organization in hybrid environments. In this article, you're walked through the steps of enabling a user account task to be run for a synced on-premises user.
 
@@ -23,7 +23,7 @@ Workflows created by Lifecycle workflows can be used to manage the lifecycle of 
 
 [!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
-To manage synced on-premises users with user account tasks with Lifecycle workflows, you must first set up prerequisites within your hybrid environment. For more information on these prerequisites, see:  [User account tasks](lifecycle-workflow-hybrid.md#user-account-tasks-preview).
+To manage synced on-premises users with user account tasks with Lifecycle workflows, you must first set up prerequisites within your hybrid environment. For more information on these prerequisites, see:  [User account tasks](lifecycle-workflow-onprem.md#user-account-tasks-preview).
 
 ## Edit a user account task to be compatible with synced on-premises users using the Microsoft Entra admin center
 

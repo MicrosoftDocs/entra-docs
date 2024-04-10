@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: compliance
 ms.workload: identity
 ms.topic: conceptual 
-ms.date: 02/13/2024
+ms.date: 04/10/2024
 ms.custom: template-concept 
 
 #CustomerIntent: As an IT administrator, I want to learn about managing synced on-premises users with Lifecycle workflows so that I can use workflows to manage these users in my environment.
