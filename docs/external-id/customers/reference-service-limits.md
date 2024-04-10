@@ -29,6 +29,7 @@ The number of users able to authenticate through an external tenant is gated thr
 |---------|---------|
 |Maximum requests per IP per external tenant       |  |  
 |Maximum requests per external tenant     |1000 per second          |
+|Maximum requests per external trial tenant     |20 per second          |
 
 ## Endpoint request usage
 
@@ -82,12 +83,14 @@ The following table lists the administrative configuration limits in the Microso
 |String Limit per Attribute      |250 Chars          |
 |Number of external tenants per subscription      |20         |
 |Total number of objects (user accounts and applications) per trial tenant (can't be extended)| 10000 |
-|Total number of objects (user accounts and applications) per tenant |50000 (can be extended up to 300000) |
+|Total number of objects (user accounts and applications) per tenant | 300000 |
 |Number of policies per external tenant |200          |
 |Maximum policy file size      |1,024 KB          |
 |Number of API connectors per tenant     |20         |
 
-<!-- ## Throttle limits for Microsoft Entra ID for external configuration tenants
+<!-- Reviewed by Anushke Bukka in the word doc. The numbers are correct
+
+## Throttle limits for Microsoft Entra ID for external configuration tenants
 
 Microsoft Entra ID for customers uses throttling to protect the cloud service from denial-of-service (DoS) attacks. The following table lists the throttle limits for the Microsoft Entra ID for customers service.
 
