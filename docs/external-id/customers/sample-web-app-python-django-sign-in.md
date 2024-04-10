@@ -10,7 +10,7 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 03/18/2024
 
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample Python Django web app to sign in and sign out users withMicrosoft Entra external ID tenant.
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample Python Django web app to sign in and sign out users with my Microsoft Entra external ID tenant.
 ---
 
 # Sign in users in a sample Python Django web application
