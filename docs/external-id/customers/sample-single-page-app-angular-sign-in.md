@@ -9,7 +9,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: sample
-ms.date: 06/23/2023
+ms.date: 04/10/2024
 ms.custom: developer
 
 #Customer intent: As a dev, devops, I want to learn about how to configure a sample Angular Single Page Application to sign in and sign out users with my Microsoft Entra ID for customers tenant

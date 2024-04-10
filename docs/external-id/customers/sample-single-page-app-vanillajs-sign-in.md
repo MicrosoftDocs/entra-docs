@@ -9,7 +9,7 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.custom: devx-track-js
 ms.topic: sample
-ms.date: 08/17/2023
+ms.date: 04/10/2024
 #Customer intent: As a dev, devops, I want to learn about how to configure a sample vanilla JS SPA to sign in and sign out users with my Microsoft Entra ID for customers tenant
 ---
 
