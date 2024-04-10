@@ -17,7 +17,7 @@ ms.custom: developer, devx-track-js
 
 # Call an API in a sample Node.js daemon application 
 
-This article uses a sample Node.js daemon application to show you how a daemon app acquires a token to call a web API. Microsoft Entra external protects the Web API.
+This article uses a sample Node.js daemon application to show you how a daemon app acquires a token to call a web API. Microsoft Entra protects the Web API.
 
 A daemon application acquires a token on behalf of itself (not on behalf of a user). Users can't interact with a daemon application because it requires its own identity. This type of application requests an access token by using its application identity and presenting its application ID, credential (password or certificate), and application ID URI to External ID.
 
@@ -58,7 +58,7 @@ In this step, you create the daemon and the web API application registrations, a
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permissions-app-permissions.md)]
 
-##  Clone or download the sample web app and API
+## Clone or download sample daemon application and web API
 
 To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 

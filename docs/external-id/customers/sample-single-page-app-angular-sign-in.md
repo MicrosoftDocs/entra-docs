@@ -12,18 +12,18 @@ ms.topic: sample
 ms.date: 04/10/2024
 ms.custom: developer
 
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample Angular Single Page Application to sign in and sign out users with my Microsoft Entra External ID tenant
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample Angular Single-page application to sign in and sign out users with my Microsoft Entra External ID tenant
 ---
 
 # Sign in users in a sample Angular single-page application 
 
-This how-to guide uses a sample Angular single-page application (SPA) to demonstrate how to add authentication users into a SPA. The SPA enables users to sign in and sign out by using your Microsoft Entra External ID for customers tenant. The sample uses the [Microsoft Authentication Library for JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) to handle authentication.
+This how-to guide uses a sample Angular single-page application (SPA) to demonstrate how to add authentication users into a SPA. The SPA enables users to sign in and sign out by using your Microsoft Entra External ID tenant. The sample uses the [Microsoft Authentication Library for JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) to handle authentication.
 
 ## Prerequisites
 
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Node.js](https://nodejs.org/en/download/).
-* Microsoft Entra  External ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* Microsoft Entra External ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register the SPA in the Microsoft Entra admin center
 

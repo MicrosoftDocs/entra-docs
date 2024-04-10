@@ -10,12 +10,12 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 04/10/2024
 
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample React single-page app to sign in and sign out users with my Microsoft Entra External ID tenant.
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample React Single-page app to sign in and sign out users with my Microsoft Entra External ID tenant.
 ---
 
 # Sign in users in a sample React single-page app (SPA) 
 
-This guide uses a sample React single-page application (SPA) to demonstrate how to add authentication to a SPA. This SPA enables users to sign in and sign out by using your Microsoft Entra ID for customers tenant. The sample uses the [Microsoft Authentication Library for JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) to handle authentication.
+This guide uses a sample React single-page application (SPA) to demonstrate how to add authentication to a SPA. This SPA enables users to sign in and sign out by using your Microsoft Entra External ID tenant. The sample uses the [Microsoft Authentication Library for JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) to handle authentication.
 
 ## Prerequisites
 

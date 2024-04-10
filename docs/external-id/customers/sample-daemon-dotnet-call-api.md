@@ -16,7 +16,7 @@ ms.date: 07/13/2023
 
 # Call an API in a sample .NET daemon application 
 
-This article uses a sample .NET daemon application to show you how a daemon application acquires a token to call a protected web API. Microsoft Entra External ID protects the web API.
+This article uses a sample .NET daemon application to show you how a daemon application acquires a token to call a protected web API. Microsoft Entra protects the web API.
 
 A daemon application acquires a token on behalf of itself (not on behalf of a user). Users can't interact with a daemon application because it requires its own identity. This type of application requests an access token by using its application identity and presenting its application ID, credential (password or certificate), and application ID URI to Microsoft Entra External ID. 
 

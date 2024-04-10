@@ -15,7 +15,7 @@ ms.date: 04/10/2024
 
 # Sign in users in a sample vanilla JavaScript single-page application
 
-This how-to guide uses a sample vanilla JavaScript single-page Application (SPA) to demonstrate how to add authentication to a SPA. The SPA enables users to sign in and sign out by using their own external tenant. The sample uses the [Microsoft Authentication Library for JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) to handle authentication.
+This guide uses a sample vanilla JavaScript (JS) single-page Application (SPA) to demonstrate how to add authentication to a SPA. The SPA enables users to sign in and sign out by using your Microsoft Entra External ID tenant. The sample uses the [Microsoft Authentication Library for JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) to handle authentication.
 
 ## Prerequisites
 
