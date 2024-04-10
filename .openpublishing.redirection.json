@@ -422,6 +422,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/authentication/fido2-compatibility.md",
+      "redirect_url": "/entra/identity/authentication/concept-fido2-compatibility",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/howto-authentication-passwordless-security-key.md",
+      "redirect_url": "/entra/identity/authentication/how-to-enable-passkey-fido2",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/hybrid/connect/how-to-connect-group-writeback-v2.md",
       "redirect_url": "/entra/identity/hybrid/group-writeback-cloud-sync",
       "redirect_document_id": false
@@ -456,10 +466,15 @@
       "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-vm-managed-identities-cosmos",
       "redirect_document_id": false
     },
-    {
+    {      
+      "source_path_from_root": "/docs/identity/authentication/concept-authentication-windows-hello-for-business.md",
+      "redirect_url": "/windows/security/identity-protection/hello-for-business",
+      "redirect_document_id": false
+    },
+    {            
       "source_path_from_root": "/docs/external-id/customers/how-to-create-customer-tenant-portal.md",
       "redirect_url": "/entra/external-id/customers/how-to-create-external-tenant-portal",
-      "redirect_document_id": true
+      "redirect_document_id": false
     }
   ]
 }
