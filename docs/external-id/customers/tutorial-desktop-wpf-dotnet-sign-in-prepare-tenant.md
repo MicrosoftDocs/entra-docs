@@ -27,7 +27,7 @@ In this tutorial, you'll;
 
 ## Prerequisites
 
-* Microsoft Entra external ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">
+* Microsoft Entra  External ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
     * Application Administrator
     * Application Developer

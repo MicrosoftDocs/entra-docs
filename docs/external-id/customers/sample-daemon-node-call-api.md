@@ -1,6 +1,6 @@
 ---
 title: Call an API in a sample Node.js daemon application
-description: Learn how to configure a sample Node.js daemon application that calls an API protected Microsoft Entra ID
+description: Learn how to configure a sample Node.js daemon application that calls an API protected Microsoft Entra ID 
 author: kengaderdus
 manager: mwongerapk
 
@@ -27,7 +27,7 @@ A daemon app uses the standard [OAuth 2.0 client credentials grant](~/identity-p
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Node.js](https://nodejs.org).
 * [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later. 
-* Microsoft Entra external ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* Microsoft Entra  External ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register a daemon application and a web API
 

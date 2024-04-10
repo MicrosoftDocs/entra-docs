@@ -10,7 +10,7 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 03/18/2024
 
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample Python Flask web app to sign in and sign out users with my Microsoft Entra external ID tenant.
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample Python Flask web app to sign in and sign out users with my Microsoft Entra  External ID tenant.
 ---
 
 # Sign in users in a sample Python Flask web application
@@ -21,7 +21,7 @@ In this article, you explore a Python Flask web app that is secured by Microsoft
 
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Python 3+](https://www.python.org/).
-* Microsoft Entra external ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* Microsoft Entra  External ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register the web app
 

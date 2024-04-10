@@ -23,7 +23,7 @@ This how-to guide uses a sample ASP.NET web application to show the fundamentals
 
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet).
-* Microsoft Entra external ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* Microsoft Entra  External ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register the web app
 

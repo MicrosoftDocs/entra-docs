@@ -24,7 +24,7 @@ A daemon application acquires a token on behalf of itself (not on behalf of a us
 
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 * [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
-* Microsoft Entra external ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* Microsoft Entra  External ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register a daemon application and a web API
 
