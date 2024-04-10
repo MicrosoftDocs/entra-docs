@@ -108,7 +108,11 @@ Run the following steps in each domain and forest in your organization that cont
 
 ### Select Azure Cloud (Default is Azure Commercial)
 
+<<<<<<< Updated upstream
 By default the `Set-AzureADKerberosSever` cmdlet will utilize the Commercial cloud endpoints. If you are configuring Kerberos in another cloud environment you will need to set the cmdlet to use the specified cloud.  
+=======
+By default the `Set-AzureADKerberosSever` cmdlet will use the Commercial cloud endpoints. If you are configuring Kerberos in another cloud environment, you need to set the cmdlet to use the specified cloud.  
+>>>>>>> Stashed changes
 
 To get a **list** of the available clouds and the numeric value needed to change, run the following:  
 `Get-AzureADKerberosServerEndpoint`  
