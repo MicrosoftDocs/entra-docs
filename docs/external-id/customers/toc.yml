@@ -11,7 +11,7 @@ items:
     - name: What's new in docs?
       href: whats-new-docs.md
 - name: Quickstarts
-  expanded: true
+  expanded: false
   items: 
     - name: Start a free trial without an Azure subscription
       href: quickstart-trial-setup.md 
@@ -22,7 +22,7 @@ items:
     - name: Use the Visual Studio Code extension
       href: visual-studio-code-extension.md
 - name: Samples
-  expanded: true
+  expanded: false
   items: 
     - name: Overview of CIAM samples
       href: samples-ciam-all.md
@@ -112,7 +112,7 @@ items:
             - name: Node.js - sign in users
               href: sample-cli-app-node-sign-in-users.md
 - name: Tutorials
-  expanded: true
+  expanded: false
   items:  
     - name: Single-page app (SPA)
       items: 
@@ -307,7 +307,7 @@ items:
     - name: Security and governance
       href: concept-security-customers.md
 - name: How-to guides
-  expanded: true
+  expanded: false
   items:
     - name: Authenticate and authorize
       items:
