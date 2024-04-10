@@ -4,7 +4,7 @@ items:
 - name: Overview  
   expanded: true  
   items:   
-    - name: What is Microsoft Entra External ID?  
+    - name: External ID for external-facing apps  
       href: overview-customers-ciam.md 
     - name: Demo overview
       href: overview-solutions-customers.md
