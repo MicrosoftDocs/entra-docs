@@ -1200,25 +1200,3 @@ Starting July 2023, we're modernizing the following Terms of Use end user experi
 No functionalities are removed. The new PDF viewer adds functionality and the limited visual changes in the end-user experiences will be communicated in a future update. If your organization has allow-listed only certain domains, you must ensure your allowlist includes the domains ‘myaccount.microsoft.com’ and ‘*.myaccount.microsoft.com’ for Terms of Use to continue working as expected.
 
 ---
-
-
-## February 2023
-
-
-
-### Public Preview - New provisioning connectors in the Azure AD Application Gallery - February 2023
-
-**Type:** New feature   
-**Service category:** App Provisioning               
-**Product capability:** 3rd Party Integration    
-      
-
-We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
-
-- [Atmos](~/identity/saas-apps/atmos-provisioning-tutorial.md)
-
-
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
-
-
----
