@@ -87,6 +87,10 @@ Microsoft Entra features preintegrated support for many popular SaaS apps and hu
 
 * **Applications that support SCIM 2.0**: For information on how to generically connect applications that implement SCIM 2.0-based user management APIs, see [Build a SCIM endpoint and configure user provisioning](use-scim-to-provision-users-and-groups.md).
 
+* **Applications that use an existing directory or database, or provide a provisioning interface**: See tutorials for how to provision to [LDAP](./on-premises-ldap-connector-configure.md) directory, a [SQL](./tutorial-ecma-sql-connector.md) database, have a [REST or SOAP](./on-premises-web-services-connector.md) interface, or can be reached through [PowerShell](./on-premises-powershell-connector.md), a [custom ECMA connector](./on-premises-custom-connector.md) or [connectors and gateways built by partners](./partner-driven-integrations.md).
+
+* **Applications that support Just-in-time provisioning via SAML**.
+
 ## How do I set up automatic provisioning to an application?
 
 For preintegrated applications listed in the gallery, use existing step-by-step guidance to set up automatic provisioning, see [Tutorials for integrating SaaS applications with Microsoft Entra ID](~/identity/saas-apps/tutorial-list.md). The following video shows you how to set up automatic user provisioning for SalesForce.
