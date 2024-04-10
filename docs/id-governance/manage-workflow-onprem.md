@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to 
 ms.date: 2/14/2024
-ms.subservice: compliance
+ms.subservice: lifecycle-workflows
 ms.custom: template-how-to 
 
 #CustomerIntent: As an administrator, I want to be able to edit user account tasks in workflows so that they will run for synced on-prem users.

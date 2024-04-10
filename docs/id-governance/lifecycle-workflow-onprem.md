@@ -5,7 +5,7 @@ author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
 ms.service: active-directory
-ms.subservice: compliance
+ms.subservice: lifecycle-workflows
 ms.workload: identity
 ms.topic: conceptual 
 ms.date: 04/10/2024

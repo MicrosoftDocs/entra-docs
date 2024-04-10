@@ -112,7 +112,7 @@
     - name: Workflow History
       href: lifecycle-workflow-history.md
     - name: Synced on-premises users (Preview)
-      href: lifecycle-workflow-hybrid.md         
+      href: lifecycle-workflow-onprem.md         
 - name: How-to guides
   expanded: true
   items:
