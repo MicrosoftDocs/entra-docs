@@ -238,7 +238,7 @@ Content-Type: application/x-www-form-urlencoded
 
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
-&client_secret=aaaaaaaa-0b0b-...
+&client_secret=A1b-C2d_E3f.H4i,J5k?L6m!N7o-P8q_R9s.T0u
 &grant_type=client_credentials
 ```
 
