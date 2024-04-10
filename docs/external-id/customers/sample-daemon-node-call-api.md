@@ -127,7 +127,7 @@ To use your app registration in the web API sample:
     node . --op getToDos
     ```
 
-If your daemon app and web API successfully run, you should see something similar to the following JSON array in your console window
+ - If your daemon app and web API successfully run, you should see something similar to the following JSON array in your console window
 
     ```json
     {
