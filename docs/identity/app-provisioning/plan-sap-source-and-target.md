@@ -36,7 +36,7 @@ The process is
 
 Once complete, then those individuals will be able to sign into SAP and non-SAP applications that they are authorized to use.
 
-:::image type="content" source="media/plan-sap-source-and-target/end-to-end-integrations.png" alt-text="Diagram showing end-to-end breadth of relevant Microsoft and SAP technologies and their integrations." lightbox="media/plan-sap-source-and-target/end-to-end-integration.png":::
+:::image type="content" source="media/plan-sap-source-and-target/end-to-end-integrations.png" alt-text="Diagram showing end-to-end breadth of relevant Microsoft and SAP technologies and their integrations." lightbox="media/plan-sap-source-and-target/end-to-end-integrations.png":::
 
 ## Define the requirements for identities and access for applications in your organization
 
@@ -95,12 +95,58 @@ Before you begin the process of provisioning business-critical application acces
 
 :::image type="content" source="media/plan-sap-source-and-target/inbound-data-preparation.png" alt-text="Diagram showing Microsoft and SAP technologies relevant to bringing in data about workers to Microsoft Entra ID." lightbox="media/plan-sap-source-and-target/inbound-data-preparation.png":::
 
+<!-- 
+Assume one SuccessFactors source, one Entra tenant, one SAP cloud directory services target; no governance, no on-prem SAP, no guests and everyone in SF is who needs to be in AD/Entra ID/SAP, at most one AD domain.   They want to get the workers from SuccessFactors into SAP cloud directory services, going through Entra and maybe AD.  The customer may or may not have existing users in SAP cloud directory services, or AD or AAD users, that correspond to their SuccessFactors workers.  In this flow, assume there’s no SAP IDM being migrated from, or on-prem SAP apps in this flow, those are added below.
+
+Step	Description	Where	Learn doc on how to do this	Status
+1.1	Ensure your SAP cloud directory has the user schema required by your SAP apps.	[SAP, TBD]		
+1.2	Ensure your SuccessFactors has the worker schema required by your SAP apps.	[SAP, TBD]		
+
+Flow 1A – with AD DS
+Step	Description	Where	Learn doc on how to do this	Status
+1.3	[If you plan to provision users to WS AD] For each user attribute required by 1.1 not already part of the AD User schema, either select a built-in AD schema extension or extend the AD schema for that attribute.	WS AD (AD PSh?)		
+1.4	[If you plan to provision users to WS AD] Ensure that any user already in AD representing a worker has the ‘join key’ attributes of SuccessFactors from 1.2 populated so that they will be ‘joined up’ during HR initial inbound and there won’t be duplicate users created. 	WS AD (AD PSh?)		
+1.5	[If you plan to provision users to WS AD and using Azure AD Connect ] Ensure all attributes from 1.3 are configured to be provisioned into Entra ID.  (This will extend the Entra ID user schema automatically)	AADC UI		
+1.6	[If you plan to provision users to WS AD and using Cloud Sync, or using not provisioning users to WS AD] For each user attribute required by 1.1 not already part of the Entra ID user schema, extend the Entra ID user schema with additional attributes. 	Graph PSh		
+1.7	[If you plan to provision users to WS AD and using Cloud Sync] configure the Cloud Sync mapping	Entra ; ?		
+1.8	[If you plan to provision users to WS AD] Ensure that any sync from WS AD to Entra ID (with any changes you made to users in AD in step 1.4) have completed. 	?		
+
+Flow 1B – not using AD DS
+Step	Description	Where	Learn doc on how to do this	Status
+1.6	[If you plan to provision users to WS AD and using Cloud Sync, or using not provisioning users to WS AD] For each user attribute required by 1.1 not already part of the Entra ID user schema, extend the Entra ID user schema with additional attributes. 	Graph PSh		
+
+Continued
+
+Step	Description	Where	Learn doc on how to do this	Status
+1.9	Ensure that any user already in Entra ID representing a worker has the ‘join key’ attributes of SuccessFactors from 1.2 populated so that they will be ‘joined up’ during HR initial inbound and there won’t be duplicate users created.	Is there Graph PSh script for this?		
+1.10	Configure the SuccessFactors inbound mapping of the worker schema from 1.2 to either the AD schema of 1.3 or the Entra ID schema of 1.6.  Perform the initial inbound sync.    Wait for all workers to be synched.	Entra > app for SF inbound 		
+1.11	[If provisioning into WS AD]. wait for new users created in WS AD  or those updated in WS AD to sync from WS AD to Entra ID.			
+1.12	Ensure that Entra ID has the right users for the workers in SuccessFactors and they are populated with the attributes required by SAP cloud directory in 1.1.  Ensure there are no users in Entra ID who do not correspond to SuccessFactors workers because they are orphan accounts.	Is there Graph PSh script for this?		
+-->
 
 ## Assign users with the necessary access rights in Microsoft Entra
 
 ## Provision users and their access rights to applications and enable them to sign in to those applications
 
 :::image type="content" source="media/plan-sap-source-and-target/outbound-provisioning-and-sso.png" alt-text="Diagram showing Microsoft and SAP technologies relevant to provisioning identities from Microsoft Entra ID." lightbox="media/plan-sap-source-and-target/outbound-provisioning-and-sso.png":::
+
+
+### SAP Cloud Identity Services
+
+<!-- 
+
+1.13	Compare the users in Entra ID with those already in SAP cloud directory. 	
+1.14A	Configure the SAP cloud directory outbound SCIM with user mapping.  Enable the initial outbound sync. OR 
+	Entra > app for SAP cloud directory > provisioning
+1.14B	Configure SAP cloud identity services inbound	
+1.15	Wait for sync from Entra ID to SAP cloud directory to complete.	
+1.16	Compare the users in SAP cloud directory with those in Entra ID.  Ensure that there are no orphan users in SAP cloud directory who are not originating from Entra ID.	Export from SAP and PSh
+1.17	Configure the SAP cloud directory federated SSO mapping.  	Entra >  app for SAP cloud directory > SSO
+1.18	Test that a user can connect to SAP cloud directory and is correctly joined.	myapps; SAP UI
+
+-->
+
+### SAP ECC
 
 
 ## Monitor identity flows
