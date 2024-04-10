@@ -1,6 +1,6 @@
 ---
 title: Using role-based access control for apps
-description: Learn how to define application roles for your customer-facing application and assign those roles to users and groups in customer tenants.
+description: Learn how to define application roles for your customer-facing application and assign those roles to users and groups in external tenants.
  
 author: msmimart
 manager: celestedg
@@ -33,7 +33,7 @@ When Microsoft Entra ID for customers issues a security token for an authenticat
 
 ## Groups
 
-Developers can also use security groups to implement RBAC in their applications, where the memberships of the user in specific groups are interpreted as their role memberships. When an organization uses security groups, a groups claim is included in the token. The groups claim specifies the identifiers of all of the groups to which the user is assigned within the current customer tenant.
+Developers can also use security groups to implement RBAC in their applications, where the memberships of the user in specific groups are interpreted as their role memberships. When an organization uses security groups, a groups claim is included in the token. The groups claim specifies the identifiers of all of the groups to which the user is assigned within the current external tenant.
 
 
 > [!TIP]
@@ -47,7 +47,7 @@ Though you can use app roles or groups for authorization, key differences betwee
 
 | App roles| Groups|
 | ----- | ----- |
-| They're specific to an application and are defined in the app registration. | They aren't specific to an app, but to a customer tenant. |
+| They're specific to an application and are defined in the app registration. | They aren't specific to an app, but to an external tenant. |
 | Can't be shared across applications.| Can be used in multiple applications.|
 | App roles are removed when their app registration is removed.| Groups remain intact even if the app is removed.|
 | Provided in the `roles` claim.| Provided in `groups` claim. |
@@ -80,7 +80,7 @@ To test your application, sign out, and then sign in again with the user you add
 
 ## Groups and application roles support
 
-A customer tenant follows the Microsoft Entra user and group management model and application assignment. Many of the core Microsoft Entra features are being phased into customer tenants.
+An external tenant follows the Microsoft Entra user and group management model and application assignment. Many of the core Microsoft Entra features are being phased into external tenants.
 
 The following table shows which features are currently available.
 

@@ -59,7 +59,7 @@ We think most organizations deploy Microsoft Entra hybrid join with managed doma
 
 Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a managed domain:
 
-1. Start Microsoft Entra Connect, and then select **Configure**.
+1. Open Microsoft Entra Connect, and then select **Configure**.
 1. In **Additional tasks**, select **Configure device options**, and then select **Next**.
 1. In **Overview**, select **Next**.
 1. In **Connect to Microsoft Entra ID**, enter the credentials of a Global Administrator for your Microsoft Entra tenant.

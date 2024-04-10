@@ -29,11 +29,11 @@ When getting started with Microsoft Entra ID for customers, you first create a t
 
 If you've worked with Microsoft Entra ID, you're already familiar with using a Microsoft Entra tenant that contains your employee directory, internal apps, and other organizational resources. With Microsoft Entra ID for customers, you create a distinct tenant that follows the standard Microsoft Entra tenant model but is configured for customer scenarios. This tenant contains:
 
-- **A directory**: The directory stores your customers' credentials and profile data. When a customer signs up for your app, a local account is created for them in your customer tenant.
+- **A directory**: The directory stores your customers' credentials and profile data. When a customer signs up for your app, a local account is created for them in your external tenant.
 
 - **Application registrations**: Microsoft Entra ID performs identity and access management only for registered applications. Registering your app establishes a trust relationship and allows you to integrate your app with Microsoft Entra
 
-- **User flows**: The customer tenant contains the self-service sign-up, sign-in, and password reset experiences that you enable for your customers.
+- **User flows**: The external tenant contains the self-service sign-up, sign-in, and password reset experiences that you enable for your customers.
 
 - **Extensions**: If you need to add user attributes and data from external systems, you can create custom authentication extensions for your user flows.
 
@@ -43,13 +43,13 @@ If you've worked with Microsoft Entra ID, you're already familiar with using a M
 
 Learn more about [password and one-time passcode](how-to-enable-password-reset-customers.md) sign-in, and about [Google](how-to-google-federation-customers.md) and [Facebook](how-to-facebook-federation-customers.md) federation.
 
-There are two types of user accounts you can manage in your customer tenant:
+There are two types of user accounts you can manage in your external tenant:
 
 - **Customer account**: Accounts that represent the customers who access your applications.
 
 - **Admin account**: Users with work accounts can manage resources in a tenant, and with an administrator role, can also manage tenants. Users with work accounts can create new consumer accounts, reset passwords, block/unblock accounts, and set permissions or assign an account to a security group.
 
-Learn more about managing [customer accounts](how-to-manage-customer-accounts.md) and [admin accounts](how-to-manage-admin-accounts.md) in your customer tenant.
+Learn more about managing [customer accounts](how-to-manage-customer-accounts.md) and [admin accounts](how-to-manage-admin-accounts.md) in your external tenant.
 ## Add customized sign-in to your customer-facing apps
 
 Microsoft Entra ID for customers is intended for businesses that want to make applications available to their customers using the Microsoft Entra platform for identity and access.
@@ -99,13 +99,13 @@ Microsoft Entra ID for customers represents the convergence of business-to-consu
 
 - **Microsoft Entra reliability and scalability**. Create highly customized sign-in experiences and manage customer accounts at a large scale. Ensure a good customer experience by taking advantage of Microsoft Entra performance, resiliency, business continuity, low-latency, and high throughput.
 
-Learn more about the [security and governance](concept-security-customers.md) features that are available in a customer tenant.
+Learn more about the [security and governance](concept-security-customers.md) features that are available in an external tenant.
 
 ## Analyze user activity and engagement
 
 The Application user activity (Preview) feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can use this feature to view, query, and analyze user activity data in the Microsoft Entra admin center. This can help you uncover valuable insights that can aid strategic decisions and drive business growth.
 
-Learn more about the [application user activity dashboards](how-to-user-insights.md) that are available in a customer tenant.
+Learn more about the [application user activity dashboards](how-to-user-insights.md) that are available in an external tenant.
 
 ## About Azure AD B2C
 
