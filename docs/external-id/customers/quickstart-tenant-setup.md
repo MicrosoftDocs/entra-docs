@@ -1,6 +1,6 @@
 ---
 title: Quickstart - Set up a tenant
-description: In this quickstart, you learn how to create a tenant with customer configurations.
+description: In this quickstart, you learn how to create a tenant with external configurations.
  
 author: csmulligan
 manager: CelesteDG
@@ -12,13 +12,13 @@ ms.date: 06/19/2023
 ms.author: cmulligan
 ms.custom: it-pro
 
-#Customer intent: As a dev, devops, or IT admin, I want to create a tenant with customer configurations.
+#Customer intent: As a dev, devops, or IT admin, I want to create a tenant with external configurations.
 ---
 # Quickstart: Create a tenant (preview)
 
-Microsoft Entra External ID offers a customer identity access management (CIAM) solution that lets you create secure, customized sign-in experiences for your customer-facing apps and services. You'll need to create a tenant with customer configurations in the Microsoft Entra admin center to get started. Once the tenant with customer configurations is created, you can access it in both the Microsoft Entra admin center and the Azure portal.
+Microsoft Entra External ID offers a customer identity access management (CIAM) solution that lets you create secure, customized sign-in experiences for your customer-facing apps and services. You'll need to create a tenant with external configurations in the Microsoft Entra admin center to get started. Once the tenant with external configurations is created, you can access it in both the Microsoft Entra admin center and the Azure portal.
 
-In this quickstart, you'll learn how to create a tenant with customer configurations if you already have an Azure subscription. If you don't have an Azure subscription, you can create an external tenant free trial. For more information about the free trial, see [Set up a free trial](quickstart-trial-setup.md).
+In this quickstart, you'll learn how to create a tenant with external configurations if you already have an Azure subscription. If you don't have an Azure subscription, you can create an external tenant free trial. For more information about the free trial, see [Set up a free trial](quickstart-trial-setup.md).
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ In this quickstart, you'll learn how to create a tenant with customer configurat
 
 [!INCLUDE [preview-alert](../customers/includes/preview-alert/preview-alert-ciam.md)]
 
-## Create a new tenant with customer configurations 
+## Create a new tenant with external configurations 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
 1. Browse to **Identity** > **Overview** > **Manage tenants**.
@@ -39,7 +39,7 @@ In this quickstart, you'll learn how to create a tenant with customer configurat
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/select-tenant-type.png" alt-text="Screenshot of the select tenant type screen.":::
 
-1. Select **Use an Azure Subscription**. If you're creating a tenant with customer configurations for the first time, you have the option to create a trial tenant that doesn't require an Azure subscription. For more information about the free trial, see [Set up a free trial](quickstart-trial-setup.md).
+1. Select **Use an Azure Subscription**. If you're creating a tenant with external configurations for the first time, you have the option to create a trial tenant that doesn't require an Azure subscription. For more information about the free trial, see [Set up a free trial](quickstart-trial-setup.md).
 1. On the **Basics** tab, in the **Create a tenant for customers** page, enter the following information:
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/add-basics-to-external-tenant.png" alt-text="Screenshot of the Basics tab.":::
