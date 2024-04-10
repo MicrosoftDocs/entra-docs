@@ -4,7 +4,7 @@ description: An how to article on how to edit a user account related task to run
 author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.workload: identity
 ms.topic: how-to 
 ms.date: 2/14/2024
