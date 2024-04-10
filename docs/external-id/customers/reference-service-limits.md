@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: reference
-ms.date: 04/09/2024
+ms.date: 04/10/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -23,10 +23,12 @@ This article contains the usage constraints and other service limits for the Mic
 
 The number of users able to authenticate through an external tenant is gated through request limits. The following table illustrates the request limits for your tenant.
 
+<!-- Maximum requests per IP per external tenant has to be added. -->
+
 |Category |Limit    |
 |---------|---------|
-|Maximum requests per IP per external tenant       |6,000 per 5 minutes           |
-|Maximum requests per external tenant     |200 per second          |
+|Maximum requests per IP per external tenant       |  |  
+|Maximum requests per external tenant     |1000 per second          |
 
 ## Endpoint request usage
 
@@ -36,34 +38,26 @@ Microsoft Entra ID for customers is compliant with [OAuth 2.0](https://datatrack
 |-----------------------------|---------|------------------|
 |/oauth2/v2.0/authorize       |Dynamic  |Varies |
 |/oauth2/v2.0/token           |Static   |1                 |
-|/openid/v2.0/userinfo        |Static   |1                 |
 |/.well-known/openid-config   |Static   |1                 |
 |/discovery/v2.0/keys         |Static   |1                 |
 |/oauth2/v2.0/logout          |Static   |1                 |
-|/samlp/sso/login             |Dynamic  |Varies |
-|/samlp/sso/logout            |Static   |1                 |
-
 
 ## Token issuance rate
 
 Each type of User Flow provides a unique user experience and will consume a different number of requests.
 The token issuance rate of a User Flow is dependent on the number of requests consumed by both the static and dynamic endpoints. The below table shows the number of requests consumed at a dynamic endpoint for each User Flow.
-
+<!-- Add MS Graph limits here.-->
 |User Flow |Requests consumed    |
 |---------|---------|
 |Sign up        |6  |
 |Sign in        |4   |
 |Password reset |4   |
-|Profile edit   |4   |
-
 
 When you add more features to a User Flow, such as multifactor authentication, more requests are consumed. The below table shows how many additional requests are consumed when a user interacts with one of these features.
 
 |Feature |Additional requests consumed    |
 |---------|---------|
-|Microsoft Entra multifactor authentication          |2   |
 |Email one-time password      |2   |
-|Federated identity provider  |2   |
 
 To obtain the token issuance rate per second for your User Flow:
 
@@ -93,7 +87,7 @@ The following table lists the administrative configuration limits in the Microso
 |Maximum policy file size      |1,024 KB          |
 |Number of API connectors per tenant     |20         |
 
-## Throttle limits for Microsoft Entra ID for external configuration tenants
+<!-- ## Throttle limits for Microsoft Entra ID for external configuration tenants
 
 Microsoft Entra ID for customers uses throttling to protect the cloud service from denial-of-service (DoS) attacks. The following table lists the throttle limits for the Microsoft Entra ID for customers service.
 
@@ -104,7 +98,7 @@ Microsoft Entra ID for customers uses throttling to protect the cloud service fr
 |Tenant (gateway level)        |200 requests per second       |
 |IP  (gateway level)        |20 requests per second        |
 |IP + Tenant (gateway level)        |20 requests per second        |
-
+--> 
 
 ## Next steps
 
