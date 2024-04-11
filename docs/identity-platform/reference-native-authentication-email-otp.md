@@ -211,9 +211,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 #### Success response
 
-If the tenant administrator configured email one-time passcode in the Microsoft Entra admin center as the user’s authentication method, Microsoft Entra sends an one-time passcode to the user’s email, then responds with a challenge type of *oob* and provides more information about the one-time passcode:
-
-
+If the tenant administrator configured email one-time passcode in the Microsoft Entra admin center as the user’s authentication method, Microsoft Entra sends a one-time passcode to the user’s email, then responds with a challenge type of *oob* and provides more information about the one-time passcode:
 
 ```http
 HTTP/1.1 200 OK
@@ -324,7 +322,7 @@ continuation_token = uY29tL2F1dGhlbnRpY...
 | `continuation_token`  | Yes | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | A request to the `/signup/v1.0/continue` endpoint can be used for submitting one-time passcode or user attributes. In this case, the `grant_type` value is used to differentiate between these two use cases. For email one-time passcode flow, the possible values for the `grant_type` are *oob* and *attributes*. In this request, since we're sending one-time passcode, the value is expected to be *oob*.|
-|`oob`| Yes | The one-time passcode that the customer user received in their email. Replace `{otp_code}` with the one-time passcode that the customer user received in their email. To **resend an one-time passcode**, the app needs to make a request to the `/signup/v1.0/challenge` endpoint again. |
+|`oob`| Yes | The one-time passcode that the customer user received in their email. Replace `{otp_code}` with the one-time passcode that the customer user received in their email. To **resend a one-time passcode**, the app needs to make a request to the `/signup/v1.0/challenge` endpoint again. |
 
 #### Success response
 
@@ -685,7 +683,7 @@ The sequence diagram demonstrates the basic flow of email one-time passcode sign
 
 :::image type="content" source="media/reference-native-auth-api/sign-in-email-otp.png" alt-text="Diagram of native authentication sign-in with email one-time passcode."::: 
 
-After the app verifies the user's email with OTP, it receives security tokens. If the delivery of the one-time passcode delays or is never delivered to the user's email, the user can request to be sent another one-time passcode. Microsoft Entra resends another one-time passcode if the previous one hasn't been verified. When Microsoft Entra resends an one-time passcode, it invalidates the previously sent code.
+After the app verifies the user's email with OTP, it receives security tokens. If the delivery of the one-time passcode delays or is never delivered to the user's email, the user can request to be sent another one-time passcode. Microsoft Entra resends another one-time passcode if the previous one hasn't been verified. When Microsoft Entra resends a one-time passcode, it invalidates the previously sent code.
 
 ### Step 1: Request to start the sign-in flow
 
@@ -820,7 +818,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 #### Success response
 
-If the tenant administrator configured email one-time passcode in the Microsoft Entra admin center as the user’s authentication method, Microsoft Entra sends an one-time passcode to the user’s email, then responds with a challenge type of *oob* and provides more information about the one-time passcode.
+If the tenant administrator configured email one-time passcode in the Microsoft Entra admin center as the user’s authentication method, Microsoft Entra sends a one-time passcode to the user’s email, then responds with a challenge type of *oob* and provides more information about the one-time passcode.
 
 ```http
 HTTP/1.1 200 OK
@@ -930,7 +928,7 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 | `continuation_token`  | Yes | [Continuation token](#continuation-token) that Microsoft Entra returned from the previous request. |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | Value must be *oob* for email one-time passcode flow.  |
-|`oob`| Yes |The one-time passcode that the customer user received in their email. Replace `{otp_code}` with the one-time passcode that the customer user received in their email. To **resend an one-time passcode**, the app needs to make a request to the `/challenge` endpoint again. |
+|`oob`| Yes |The one-time passcode that the customer user received in their email. Replace `{otp_code}` with the one-time passcode that the customer user received in their email. To **resend a one-time passcode**, the app needs to make a request to the `/challenge` endpoint again. |
 |`scope`| Yes |A space-separated list of scopes. All the scopes must be from a single resource, along with OpenID Connect (OIDC) scopes, such as *profile*, *openid, and *email*. The app needs to include *openid* scope for Microsoft Entra to issue an ID token. The app needs to include *offline_access* scope for Microsoft Entra to issue a refresh token. Learn more about [Permissions and consent in the Microsoft identity platform](permissions-consent-overview.md).|
 
 #### Successful response

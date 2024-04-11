@@ -238,7 +238,7 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 
 #### Success response
 
-Microsoft Entra sends an one-time passcode to the user's email, then responds with the challenge type with value of *oob* and additional information about the one-time passcode:
+Microsoft Entra sends a one-time passcode to the user's email, then responds with the challenge type with value of *oob* and additional information about the one-time passcode:
 
 ```http
 HTTP/1.1 200 OK
@@ -350,7 +350,7 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 | `continuation_token`  | Yes |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous request.|
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | A request to the  `/signup/v1.0/continue` endpoint can be used to submit one-time passcode, password, or user attributes. In this case, the `grant_type` value is used to differentiate between these three use cases. The possible values for the grant_type are *oob*, *password*, *attributes*. In this call, since we're sending one-time passcode, the value is expected to be *oob*.|
-|`oob`| Yes | The one-time passcode that the customer user received in their email. Replace `{otp_code}` with the one-time passcode that the customer user received in their email. To **resend an one-time passcode**, the app needs to make a request to the `/signup/v1.0/challenge` endpoint again. The one-time passcode |
+|`oob`| Yes | The one-time passcode that the customer user received in their email. Replace `{otp_code}` with the one-time passcode that the customer user received in their email. To **resend a one-time passcode**, the app needs to make a request to the `/signup/v1.0/challenge` endpoint again. The one-time passcode |
 
 
 Once the app successfully submits the one-time passcode, the sign-up flow depends on the scenarios as shown the table:
@@ -869,7 +869,7 @@ To request your security tokens, your app interacts with three endpoints, `/init
 |    Endpoint           | Description                                |
 |-----------------------|--------------------------------------------|
 | `/initiate`  | This endpoint initiates the sign-in flow. If your app calls it with a username of a user account that already exists, it returns a success response with a continuation token. If your app requests to use authentication methods that aren't supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.|
-|   `/challenge`   | your app calls this endpoint with a list of [challenge types](#sign-in-challenge-types) supported by the identity service. Our identity service generates, then sends an one-time passcode to the chosen challenge channel such as email. If your app calls this endpoint repeatedly, a new OTP is sent each time a call is made.|
+|   `/challenge`   | your app calls this endpoint with a list of [challenge types](#sign-in-challenge-types) supported by the identity service. Our identity service generates, then sends a one-time passcode to the chosen challenge channel such as email. If your app calls this endpoint repeatedly, a new OTP is sent each time a call is made.|
 |  `/token`  | This endpoint verifies the one-time passcode it receives from your app, then it issues security tokens to your app.|
 
 ### Sign-in challenge types
@@ -1344,7 +1344,7 @@ If the error parameter has a value of *invalid_client*, Microsoft Entra includes
 
 ### Step 2: Select an authentication method
 
-To continue with the flow, the app uses the continuation token acquired from the previous step to request Microsoft Entra to select one of the supported challenge types for the user to authenticate with. The app makes a POST request to the `/challenge` endpoint. If this request is successful, Microsoft Entra sends an one-time passcode to the user's account email. At the moment, we only support email OTP.
+To continue with the flow, the app uses the continuation token acquired from the previous step to request Microsoft Entra to select one of the supported challenge types for the user to authenticate with. The app makes a POST request to the `/challenge` endpoint. If this request is successful, Microsoft Entra sends a one-time passcode to the user's account email. At the moment, we only support email OTP.
 
 Here's an example (we present the example request in multiple lines for readability):
 
@@ -1475,7 +1475,7 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 | `continuation_token`  | Yes | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 |`grant_type` | Yes | The only valid value is *oob*.  |
-|`oob`| Yes |The one-time passcode that the customer user received in their email. Replace `{otp_code}` with the one-time passcode that the customer user received in their email. To **resend an one-time passcode**, the app needs to make a request to the `/challenge` endpoint again. |
+|`oob`| Yes |The one-time passcode that the customer user received in their email. Replace `{otp_code}` with the one-time passcode that the customer user received in their email. To **resend a one-time passcode**, the app needs to make a request to the `/challenge` endpoint again. |
 
 #### Success response
 
