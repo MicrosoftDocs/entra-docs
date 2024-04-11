@@ -30,22 +30,12 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
 ## Register passkey by signing into Authenticator (iOS)
 
-You can sign in to Authenticator with your username, and register a passkey for that specific account:
-
 1. Open Authenticator.
 1. Tap the **+** button.
 1. Select **Work or school account**.
 1. Sign in.
 1. You need to complete multifactor authentication (MFA).
 1. Authenticator sets up passkey, passwordless, or MFA for sign-in according to your work or school account policies.
-
-For convenience, you can also sign in without specifying your username:  
-
-1. Go to [login.microsoft.com](https://login.microsoft.com).
-1. Click **Sign-in options**.
-1. Select **iPhone, iPad, or Android device** and click **Next**.
-1. Open Authenticator and scan the QR code.
-1. If multiple passkeys are saved on the device, you can choose which passkey to use.
 
 [!INCLUDE [Need APIs to support browsers](~/includes/passkeys-with-chrome-browser.md)]
 
@@ -184,22 +174,12 @@ For convenience, you can also sign in without specifying your username:
 
 ## Register passkey by signing into Authenticator (Android)
 
-You can sign in to Authenticator with your username, and register a passkey for that specific account:
-
 1. Open Authenticator.
 1. Tap the **+** button.
 1. Select **Work or school account**.
 1. Sign in.
 1. You need to complete multifactor authentication (MFA).
 1. Authenticator sets up passkey, passwordless, or MFA for sign-in according to your work or school account policies.
-
-For convenience, you can also sign in without specifying your username:  
-
-1. Go to [login.microsoft.com](https://login.microsoft.com).
-1. Click **Sign-in options**.
-1. Select **iPhone, iPad, or Android device** and click **Next**.
-1. Open Authenticator and scan the QR code.
-1. If multiple passkeys are saved on the device, you can choose which passkey to use.
 
 [!INCLUDE [Need APIs to support browsers](~/includes/passkeys-with-chrome-browser.md)]
 
