@@ -291,8 +291,13 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity/authentication/multi-factor-authentication-wizard.md",
+      "source_path_from_root": "/docs/identity/conditional-access/howto-conditional-access-apis.md",
       "redirect_url": "/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/multi-factor-authentication-wizard.md",
+      "redirect_url": "/graph/api/resources/conditionalaccessroot",
       "redirect_document_id": false
     },
     {
