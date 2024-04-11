@@ -17,19 +17,19 @@ ms.custom: it-pro
 
 # Customize the neutral default authentication experience for the external tenant (preview)
 
-After creating a new external tenant, you can customize the appearance of your web-based applications for customers who sign in, sign up, or sign out to personalize their end-user experience. The external tenant comes with a default neutral branding that doesn’t include any existing Microsoft branding. However, this neutral default branding can be customized to meet your company’s specific needs. You have the flexibility to add a custom background image or color, favicon, layout, header, and footer to your authentication experience. For more information, see [Customize the neutral branding in your external tenant](how-to-customize-branding-customers.md).
+After creating a new external tenant, you can customize the appearance of your web-based applications for customers who sign in, sign up, or sign out to personalize their end-user experience. The external tenant comes with a default neutral branding that doesn’t include any existing Microsoft branding. However, this neutral default branding can be customized to meet your company’s specific needs. You have the flexibility to add a custom background image or color, favicon, layout, header, and footer to your authentication experience. You can add each custom branding property individually to the custom sign-in page, or you can upload a custom CSS. For more information, see [Customize the neutral branding in your external tenant](how-to-customize-branding-customers.md).
 
-If, for any reason, the custom company branding fails to load, the sign-in page will revert to this neutral branding. You can add each custom branding property individually to the custom sign-in page, or you can upload a custom CSS. 
+If the custom company branding fails to load, the sign-in page reverts to the neutral branding. 
 
-The following list and image outline the elements of the sign-in experience:
+The following list and image outline the elements of the neutral branding sign-in experience:
 
 1. Background image and color.
-2. Favicon.
-3. Banner logo.
-4. Footer as a page layout element.
-5. Footer hyperlinks, for example,  Privacy & cookies, Terms of use and troubleshooting details also known as ellipsis in the right bottom corner of the screen.
+1. Favicon.
+1. Banner logo.
+1. Footer as a page layout element.
+1. Footer hyperlinks, for example,  Privacy & cookies, Terms of use and troubleshooting details also known as ellipsis in the right bottom corner of the screen.
 
-   :::image type="content" source="media/how-to-customize-branding-customers/ciam-neutral-branding.png" alt-text="Screenshot of the CIAM neutral branding." lightbox="media/how-to-customize-branding-customers/ciam-neutral-branding.png":::
+   :::image type="content" source="media/how-to-customize-branding-customers/ciam-neutral-branding.png" alt-text="Screenshot of the neutral branding." lightbox="media/how-to-customize-branding-customers/ciam-neutral-branding.png":::
 
 As a comparison, here’s how the [default Microsoft sign-in experience](~/fundamentals/how-to-customize-branding.md) in a Microsoft Entra ID tenant looks:
 
