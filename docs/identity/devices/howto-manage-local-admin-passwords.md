@@ -12,7 +12,6 @@ author: sandeo-MSFT
 ms.reviewer: joflore
 ms.custom: references_regions
 ---
-
 # Windows Local Administrator Password Solution in Microsoft Entra ID
 
 Every Windows device comes with a built-in local administrator account that you must secure and protect to mitigate any Pass-the-Hash (PtH) and lateral traversal attacks. Many customers have been using our standalone, on-premises [Local Administrator Password Solution (LAPS)](https://www.microsoft.com/download/details.aspx?id=46899) product for local administrator password management of their domain joined Windows machines. With Microsoft Entra support for Windows LAPS, we're providing a consistent experience for both Microsoft Entra joined and Microsoft Entra hybrid joined devices.
@@ -69,7 +68,7 @@ LAPS is available to all customers with Microsoft Entra ID Free or higher licens
 
 ### Required roles or permission
 
-Other than the built-in Microsoft Entra roles of [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator) and [Intune Administrator](/role-based-access-control/permissions-reference.md#intune-administrator) that are granted *device.LocalCredentials.Read.All*, you can use [Microsoft Entra custom roles](../role-based-access-control/custom-create.md) or administrative units to authorize local administrator password recovery. For example:
+Other than the built-in Microsoft Entra roles of [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator) and [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator) that are granted *device.LocalCredentials.Read.All*, you can use [Microsoft Entra custom roles](../role-based-access-control/custom-create.md) or administrative units to authorize local administrator password recovery. For example:
 
 - Custom roles must be assigned the *microsoft.directory/deviceLocalCredentials/password/read* permission to authorize local administrator password recovery. You can create a custom role and grant permissions using the [Microsoft Entra admin center](https://entra.microsoft.com), [Microsoft Graph API](../role-based-access-control/custom-create.md#create-a-role-with-the-microsoft-graph-api) or [PowerShell](../role-based-access-control/custom-create.md#create-a-role-using-powershell). Once you create a custom role, you can assign it to users.
 

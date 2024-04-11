@@ -11,7 +11,7 @@ ms.date: 04/11/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: spunukol
+ms.reviewer:
 
 #Customer intent: As an IT admin, I want to understand how I can get rid of stale devices, so that I can I can cleanup my device registration data.
 ---
@@ -69,7 +69,7 @@ To efficiently clean up stale devices in your environment, you should define a r
 To update a device in Microsoft Entra ID, you need an account that has one of the following roles assigned:
 
 - [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator)
-- [Intune Administrator](/role-based-access-control/permissions-reference.md#intune-administrator)
+- [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator)
 
 In your cleanup policy, select accounts that have the required roles assigned. 
 
