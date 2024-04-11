@@ -95,10 +95,10 @@ To enable Microsoft Entra SSO in the Azure portal, follow these steps:
     
     | Reply URL |
     |-------------|
-    | Production : |
+    | Production: |
     | `https://<subdomain>.docusign.com/organizations/<OrganizationID>/saml2/login/<IDPID>` |
     | `https://<subdomain>.docusign.net/SAML/` |
-    | QA Instance :|
+    | QA Instance:|
     | `https://<SUBDOMAIN>.docusign.com/organizations/saml2` |
 
     c. In the **Sign on URL** textbox, type a URL using the following pattern:
@@ -185,7 +185,7 @@ In this section, you'll grant B.Simon access to DocuSign so that this user can u
 
 	d. Text: paste the **TXT Token** value, which you copied from the earlier step.
 
-	e. TTL: Default or 1 hour / 3600 seconds.
+	e. TTL: Default or 1 hour / 3,600 seconds.
 
 11. In the left navigation, click **Identity Providers** in **ACCESS MANAGEMENT**.
   
@@ -194,7 +194,6 @@ In this section, you'll grant B.Simon access to DocuSign so that this user can u
 12. In the **Identity Providers** section, select **ADD IDENTITY PROVIDER**.
 
     ![Screenshot of Add Identity Provider option.](media/docusign-tutorial/add-identity-provider-option.png)
-
 
 13. On the **Identity Provider Settings** page, follow these steps:
 
