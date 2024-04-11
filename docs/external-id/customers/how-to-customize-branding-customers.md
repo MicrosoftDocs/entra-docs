@@ -191,7 +191,7 @@ You can customize your tenant name in the Microsoft Entra admin center to replac
 
 ## Customize your branding with the Microsoft Graph API
 
-You can use the Microsoft Graph API to customize a few items programmatically. For example, you can use the API to upload a custom background image, change the color of the sign-in page, and add a custom logo.For more information, see the [update default branding](/graph/api/organizationalbranding-update) article. 
+You can use the Microsoft Graph API to customize a few items programmatically. For example, you can use the API to upload a custom background image, change the color of the sign-in page, and add a custom logo. For more information, see the [update default branding](/graph/api/organizationalbranding-update) article. 
 
 ## Next steps
 
