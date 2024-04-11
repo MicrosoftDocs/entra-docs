@@ -69,7 +69,7 @@ LAPS is available to all customers with Microsoft Entra ID Free or higher licens
 
 ### Required roles or permission
 
-Other than the built-in Microsoft Entra roles of Cloud Device Administrator, Intune Administrator, and Global Administrator that are granted *device.LocalCredentials.Read.All*, you can use [Microsoft Entra custom roles](../role-based-access-control/custom-create.md) or administrative units to authorize local administrator password recovery. For example,
+Other than the built-in Microsoft Entra roles of [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator) and [Intune Administrator](/role-based-access-control/permissions-reference.md#intune-administrator) that are granted *device.LocalCredentials.Read.All*, you can use [Microsoft Entra custom roles](../role-based-access-control/custom-create.md) or administrative units to authorize local administrator password recovery. For example:
 
 - Custom roles must be assigned the *microsoft.directory/deviceLocalCredentials/password/read* permission to authorize local administrator password recovery. You can create a custom role and grant permissions using the [Microsoft Entra admin center](https://entra.microsoft.com), [Microsoft Graph API](../role-based-access-control/custom-create.md#create-a-role-with-the-microsoft-graph-api) or [PowerShell](../role-based-access-control/custom-create.md#create-a-role-using-powershell). Once you create a custom role, you can assign it to users.
 
@@ -121,7 +121,7 @@ To view audit events, you can browse to **Identity** > **Devices** > **Overview*
 
 ## Conditional Access policies for local administrator password recovery
 
-Conditional Access policies can be scoped to the built-in roles like Cloud Device Administrator, Intune Administrator, and Global Administrator to protect access to recover local administrator passwords. You can find an example of a policy that requires multifactor authentication in the article, [Common Conditional Access policy: Require MFA for administrators](../conditional-access/howto-conditional-access-policy-admin-mfa.md).
+Conditional Access policies can be scoped to the built-in roles to protect access to recover local administrator passwords. You can find an example of a policy that requires multifactor authentication in the article, [Common Conditional Access policy: Require MFA for administrators](../conditional-access/howto-conditional-access-policy-admin-mfa.md).
 
 > [!NOTE]
 > Other role types including administrative unit-scoped roles and custom roles aren't supported
@@ -150,11 +150,11 @@ When a device is deleted in Microsoft Entra ID, the LAPS credential that was tie
 
 ### What roles are needed to recover LAPS passwords?
 
-The following built-in roles Microsoft Entra roles have permission to recover LAPS passwords: Global Administrator, Cloud Device Administrator, and Intune Administrator.
+The following built-in roles Microsoft Entra roles have permission to recover LAPS passwords: Cloud Device Administrator and Intune Administrator.
 
 ### What roles are needed to read LAPS metadata?
 
-The following built-in roles are supported to view metadata about LAPS including the device name, last password rotation, and next password rotation: Global Administrator, Cloud Device Administrator, Intune Administrator, Helpdesk Administrator, Security Reader, Security Administrator, and Global Reader.
+The following built-in roles are supported to view metadata about LAPS including the device name, last password rotation, and next password rotation: Cloud Device Administrator, Intune Administrator, Helpdesk Administrator, Security Reader and Security Administrator.
 
 ### Are custom roles supported?
 

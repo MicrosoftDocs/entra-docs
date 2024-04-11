@@ -68,9 +68,8 @@ To efficiently clean up stale devices in your environment, you should define a r
 
 To update a device in Microsoft Entra ID, you need an account that has one of the following roles assigned:
 
-- Global Administrator
-- Cloud Device Administrator
-- Intune Service Administrator
+- [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator)
+- [Intune Administrator](/role-based-access-control/permissions-reference.md#intune-administrator)
 
 In your cleanup policy, select accounts that have the required roles assigned. 
 
