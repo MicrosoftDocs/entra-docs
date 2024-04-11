@@ -36,7 +36,7 @@ For more information about passkey authentication, see [Support for FIDO2 authen
 
 Passkeys are supported across major scenarios on Windows, macOS, Android, and iOS. For more information on supported scenarios, see [Support for FIDO2 authentication in Microsoft Entra ID](fido2-compatibility.md).
 
-## Enable passkey (FIDO2) authentication method
+## Enable passkey (FIDO2) authentication method 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
@@ -130,7 +130,7 @@ To remove a passkey associated with a user account, delete the key from the user
 
     ![Screenshot of View Authentication Method details.](media/howto-authentication-passwordless-deployment/security-key-view-details.png)
 
-## Enforce passkey sign-in 
+## Enforce passkey sign-in (preview)
 
 To make users sign in with a passkey when they access a sensitive resource, you can: 
 
