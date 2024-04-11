@@ -170,6 +170,10 @@ For your tenant, you might have different requirements for the information you w
 > [!IMPORTANT] 
 > In the external tenant, we have two options to add custom text to the sign-up and sign-in experience.  The function is available under each user flow during language customization and also under Company branding. Although we have two ways to customize strings (via Company Branding and via User Flows), both ways modify the same JSON file. The most recent change made either via User flows or via Company branding  will always override the previous one.
 
+## How to customize the default sign-out experience
+
+You don’t need to customize the sign-out experience for your external tenant. If you’ve customized your branding for the sign-in experience, the sign-out experience will automatically match the sign-in experience. If you haven’t customized the sign-in experience, the sign-out experience will match the default neutral branding in your external tenant.
+
 ## How to customize the tenant name
 
 You can customize your tenant name in the Microsoft Entra admin center to replace the Microsoft banner logo in the neutral default sign-in experience. The new tenant name also appears in the verification email sent to the user.
