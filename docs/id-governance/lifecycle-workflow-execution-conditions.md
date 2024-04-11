@@ -12,7 +12,7 @@ ms.date: 04/10/2024
 ms.custom: template-concept 
 ---
 
-# Lifecycle workflow execution conditions and scheduling
+# Lifecycle workflows execution conditions and scheduling
 
 Workflows created using lifecycle workflows allow you to automate common tasks for users based on where they fall in the joiner, mover, and leaver model of their lifecycle within your organization. These workflows are able to run in two ways, manually(on-demand) for specific users, or based on a schedule if the user meets the defined execution conditions of a workflow. These execution conditions are defined by two parts, a trigger, and a scope. This article describes execution conditions, the difference between the workflow triggers and their scopes, the conditions for a scheduled workflow, and when they run for users.
 
