@@ -14,7 +14,7 @@ ms.custom: template-concept
 
 # Lifecycle workflow execution conditions and scheduling
 
-Workflows created using lifecycle workflows allows you to automate common tasks for users based on where they fall in the joiner, mover, and leaver model of their lifecycle within your organization. These workflows are able to run in two ways, manually(on-demand) for specific users, or based on a schedule if the user meets the defined execution conditions of a workflow. These execution conditions are defined by two parts, a trigger, and a scope. This article describes execution conditions, the difference between the workflow triggers and their scopes, the conditions for a scheduled workflow, and when they run for users.
+Workflows created using lifecycle workflows allow you to automate common tasks for users based on where they fall in the joiner, mover, and leaver model of their lifecycle within your organization. These workflows are able to run in two ways, manually(on-demand) for specific users, or based on a schedule if the user meets the defined execution conditions of a workflow. These execution conditions are defined by two parts, a trigger, and a scope. This article describes execution conditions, the difference between the workflow triggers and their scopes, the conditions for a scheduled workflow, and when they run for users.
 
 ## Workflow execution conditions
 
@@ -28,7 +28,7 @@ The trigger you choose depends on what type of workflow you want to run for user
 :::image type="content" source="media/lifecycle-workflow-execution-conditions/trigger-details.png" alt-text="Screenshot of the trigger details section of a workflow's execution conditions.":::
 
 - **Time based attribute**: The workflow is triggered on schedule when a time value is met.
-- **Attribute changes (Preview)**: The workflow is triggered on schedule when a change to an attribute is met.
+- **Attribute changes (Preview)**: The workflow is triggered on schedule when a change to an attribute happens.
 - **Group membership change (Preview)**: The workflow is triggered on schedule when a group membership change is met.
 - **On-demand only**: The workflow is only triggered manually.
 
@@ -123,7 +123,7 @@ When setting the scope of the group membership change trigger, the following det
 
 ## On-demand only trigger
 
-The **On-demand only** trigger is set to only run the workflow for users you manually select. Workflows with these triggers won't run on a schedule. The users are selected within the scope details section of the workflow.
+The **On-demand only** trigger is set to only run the workflow for users you manually select. Workflows with these triggers don't run on a schedule. The users are selected within the scope details section of the workflow.
 
 :::image type="content" source="media/lifecycle-workflow-execution-conditions/on-demand-select-users.png" alt-text="Screenshot of selecting users for manual workflow execution.":::
 
@@ -132,13 +132,13 @@ When setting a workflow where the trigger type is **On-demand only**, the follow
 |Trigger detail  |Description  |
 |---------|---------|
 |Scope type     |  The scope type determines how the scope of the workflow is defined to run. The default for this is *User selection*.       |
-|Selection type     |  The selection type of the workflow can be set as to either allowing you to choose users during its creation for who it runs as soon as the workflow is created, or by allowing you to choose which users to run the workflow for at a later date.       |
+|Selection type     |  The selection type of the workflow can be set as to either allow you to choose users during its creation for who it runs as soon as the workflow is created, or by allowing you to choose which users to run the workflow for at a later date.       |
 
 For a detailed guide on running a workflow on-demand for users, see: [Run a workflow on-demand](on-demand-workflow.md).
 
 ## Execution user scope
 
-After the workflow trigger and scope is set for an enabled workflow, you're able to see a list of users who currently meet it's execution conditions. This user list is made up of users who the workflow will run the next time it runs, and is based on the last time the workflow engine evaluated users within your tenant.
+After the workflow trigger and scope are set for an enabled workflow, you're able to see a list of users who currently meet it's execution conditions. This user list is made up of users who the workflow runs for the next time it executes, and is based on the last time the workflow engine evaluated users within your tenant.
 
 :::image type="content" source="media/lifecycle-workflow-execution-conditions/execution-user-scope.png" alt-text="Screenshot of a list of users in scope of the workflow's execution conditions.":::
 
