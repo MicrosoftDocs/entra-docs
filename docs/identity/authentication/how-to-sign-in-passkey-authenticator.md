@@ -66,6 +66,10 @@ Note: You must have bluetooth enabled on both devices to successfully authentica
 
 1. You're now signed into Microsoft Entra ID on your other device.
 
+### Single-sign on (iOS)
+
+
+
 # [**Android**](#tab/Android)
 
 To sign in with a passkey in Microsoft Authenticator, your Android device needs to run Android 14 or later.
