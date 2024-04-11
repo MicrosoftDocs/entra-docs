@@ -1,12 +1,12 @@
 ---
-title:  Sign in with a passkey (FIDO2)
+title:  Sign in with a passkey (FIDO2) (preview)
 description: Learn how users sign in with a passkey (FIDO2).
 
 services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/01/2024
+ms.date: 04/10/2024
 
 ms.author: justinha
 author: justinha
@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how users will sign in with a security key. 
 
 ---
-# Sign in with a passkey (FIDO2)
+# Sign in with a passkey (FIDO2) (preview)
 
 Passkeys are a replacement for your password. With passkeys, you can sign into your Microsoft personal, work or school account using your face, fingerprint, or PIN. Signing in with a passkey is simple, fast, and helps protect you against phishing attacks. For information about FIDO2 support, see [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md).
 
