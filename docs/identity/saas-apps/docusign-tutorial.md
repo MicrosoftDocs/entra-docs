@@ -178,13 +178,16 @@ In this section, you'll grant B.Simon access to DocuSign so that this user can u
 10. Configure your DNS provider with the **TXT Token** by following these steps:
 
 	a. Navigate to your domain's DNS record management page.
+
 	b. Add a new TXT record.
-	c. Name: @ or *
+
+	c. Name: @ or *.
+
 	d. Text: paste the **TXT Token** value, which you copied from the earlier step.
-	e. TTL: Default or 1 hour / 3600 seconds
 
+	e. TTL: Default or 1 hour / 3600 seconds.
 
-11. On the domain solutions page, select **Identity Providers**.
+11. In the left navigation, click **Identity Providers** in **ACCESS MANAGEMENT**.
   
     ![Screenshot of Identity Providers option.](media/docusign-tutorial/identity-providers.png)
 
