@@ -4,7 +4,7 @@ description: Create user flows for apps that your organization builds. Then, use
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 02/05/2024
+ms.date: 04/11/2024
 
 ms.author: mimart
 author: msmimart
@@ -105,13 +105,6 @@ Now you associate applications with the user flow to enable sign-up for those ap
 
 1. Select the application from the list. Or use the search box to find the application, and then select it.
 1. Choose **Select**.
-
-## Direct your B2B guests to the user flow
-
-Now that the application is associated with the user flow, your B2B guests will be directed to this user flow for authentication whenever they access the application. They can use:
-
-- The [redemption link](invitation-email-elements.md#accept-invitation-button-or-link-and-redirect-url) in their invitation
-- A [direct link](redemption-experience.md#redemption-process-through-a-direct-link) to the application
 
 ## Next steps
 
