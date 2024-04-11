@@ -17,7 +17,7 @@ ms.topic: reference
 
 The application manifest contains a definition of all the attributes of an application object in the Microsoft identity platform. It also serves as a mechanism for updating the application object. For more info on the Application entity and its schema, see the [Graph API Application entity documentation](/graph/api/resources/application).
 
-You can configure an app's attributes through the Microsoft Entra admin center or programmatically using [Microsoft Graph API](/graph/api/resources/application) or [Microsoft Graph PowerShell SDK](/powershell/module/microsoft.graph.applications/?view=graph-powershell-1.0&preserve-view=true). However, there are some scenarios where you'll need to edit the app manifest to configure an app's attribute. These scenarios include:
+You can configure an app's attributes through the Microsoft Entra admin center or programmatically using [Microsoft Graph API](/graph/api/resources/application) or [Microsoft Graph PowerShell SDK](/powershell/module/microsoft.graph.applications/?view=graph-powershell-1.0&preserve-view=true). However, there are some scenarios where you need to edit the app manifest to configure an app's attribute. These scenarios include:
 
 * If you registered the app as Microsoft Entra multi-tenant and personal Microsoft accounts, you can't change the supported Microsoft accounts in the UI. Instead, you must use the application manifest editor to change the supported account type.
 * To define permissions and roles that your app supports, you must modify the application manifest.
@@ -41,7 +41,7 @@ This section describes the attributes found in the application manifest.
 | :--- | :--- |
 | id | String |
 
-The unique identifier for the app in the directory. This ID is not the identifier used to identify the app in any protocol transaction. It's used for the referencing the object in directory queries.
+The unique identifier for the app in the directory. This ID is not the identifier used to identify the app in any protocol transaction. Use it for the referencing the object in directory queries.
 
 Example:
 
@@ -92,7 +92,7 @@ Example:
 | :--- | :--- |
 | addIns | Collection |
 
-Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the `addIns` property for its "FileHandler" functionality. This parameter  will let services like Microsoft 365 call the application in the context of a document the user is working on.
+Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the `addIns` property for its "FileHandler" functionality. This parameter lets services like Microsoft 365 call the application in the context of a document the user is working on.
 
 Example:
 
@@ -117,7 +117,7 @@ Example:
 | :--- | :--- |
 | allowPublicClient | Boolean |
 
-Specifies the fallback application type. Microsoft Entra ID infers the application type from the replyUrlsWithType by default. There are certain scenarios where Microsoft Entra ID can't determine the client app type. For example, one such scenario is the [ROPC](https://tools.ietf.org/html/rfc6749#section-4.3) flow where HTTP request happens without a URL redirection). In those cases, Microsoft Entra ID will interpret the application type based on the value of this property. If this value is set to true the fallback application type is set as public client, such as an installed app running on a mobile device. The default value is false which means the fallback application type is confidential client such as web app.
+Specifies the fallback application type. Microsoft Entra ID infers the application type from the replyUrlsWithType by default. There are certain scenarios where Microsoft Entra ID can't determine the client app type. For example, one such scenario is the [ROPC](https://tools.ietf.org/html/rfc6749#section-4.3) flow where HTTP request happens without a URL redirection). In those cases, Microsoft Entra ID interprets the application type based on the value of this property. If this value is set to true the fallback application type is set as public client, such as an installed app running on a mobile device. The default value is false, which means the fallback application type is confidential client such as web app.
 
 Example:
 
@@ -215,7 +215,7 @@ Example:
 | :--- | :--- |
 | identifierUris | String Array |
 
-User-defined URI(s) that uniquely identify a web app within its Microsoft Entra tenant or verified customer owned domain.
+User-defined URIs that uniquely identify a web app within its Microsoft Entra tenant or verified customer owned domain.
 When an application is used as a resource app, the identifierUri value is used to uniquely identify and access the resource.
 
 [!INCLUDE [active-directory-identifierUri](~/includes/entra-identifier-uri-patterns.md)]
@@ -275,7 +275,7 @@ Example:
 | :--- | :--- |
 | knownClientApplications | String Array |
 
-Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you enter the appID of the client app into this value, the user will only have to consent once to the client app. Microsoft Entra ID will know that consenting to the client means implicitly consenting to the web API. It will automatically provision service principals for both the client and web API at the same time. Both the client and the web API app must be registered in the same tenant.
+Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you enter the appID of the client app into this value, the user will only have to consent once to the client app. Microsoft Entra ID will know that consenting to the client means implicitly consenting to the web API. It automatically provisions service principals for both the client and web API at the same time. Both the client and the web API app must be registered in the same tenant.
 
 Example:
 
@@ -384,7 +384,7 @@ Example:
 | :--- | :--- |
 | oauth2RequiredPostResponse | Boolean |
 
-Specifies whether, as part of OAuth 2.0 token requests, Microsoft Entra ID will allow POST requests, as opposed to GET requests. The default is false, which specifies that only GET requests will be allowed.
+Specifies whether, as part of OAuth 2.0 token requests, Microsoft Entra ID will allow POST requests, as opposed to GET requests. The default is false, which specifies that only GET requests are allowed.
 
 Example:
 
@@ -440,7 +440,7 @@ Example:
 | :--- | :--- |
 | preAuthorizedApplications | Collection |
 
-Lists applications and requested permissions for implicit consent. Requires an admin to have provided consent to the application. preAuthorizedApplications do not require the user to consent to the requested permissions. Permissions listed in preAuthorizedApplications do not require user consent. However, any additional requested permissions not listed in preAuthorizedApplications require user consent.
+Lists applications and requested permissions for implicit consent. Requires an admin to provide consent to the application. preAuthorizedApplications do not require the user to consent to the requested permissions. Permissions listed in preAuthorizedApplications do not require user consent. However, any additional requested permissions not listed in preAuthorizedApplications require user consent.
 
 Example:
 
