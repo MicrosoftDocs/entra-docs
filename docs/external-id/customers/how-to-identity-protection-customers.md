@@ -13,7 +13,7 @@ ms.author: mimart
 ms.custom: it-pro
 
 ---
-# Investigate risk with Identity Protection in Microsoft Entra ID for customers
+# Investigate risk with Identity Protection in Microsoft Entra External ID
 
 Microsoft Entra [Identity Protection](~/id-protection/overview-identity-protection.md) provides ongoing risk detection for your external tenant. It allows organizations to discover, investigate, and remediate identity-based risks. Identity Protection comes with risk reports that can be used to investigate identity risks in external tenants. In this article, you learn how to investigate and mitigate risks.
 
@@ -30,7 +30,7 @@ Consider the following points when using Identity Protection:
 - Identity Protection is not available in trial tenants.
 - Identity Protection is on by default.
 - Identity Protection is available for both local and social identities, such as Google or Facebook. Detection is limited because the external identity provider manages the social account credentials.
-- Currently in Microsoft Entra external tenants, a subset of the [Microsoft Entra ID Protection risk detections](~/id-protection/overview-identity-protection.md) is available. Microsoft Entra ID for customers supports the following risk detections:  
+- Currently in Microsoft Entra external tenants, a subset of the [Microsoft Entra ID Protection risk detections](~/id-protection/overview-identity-protection.md) is available. Microsoft Entra External ID supports the following risk detections:  
 
 |Risk detection type  |Description  |
 |---------|---------|

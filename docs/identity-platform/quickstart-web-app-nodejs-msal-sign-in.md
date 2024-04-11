@@ -5,7 +5,7 @@ author: cilwerner
 manager: celested
 ms.author: cwerner
 ms.custom: scenarios:getting-started, languages:js, devx-track-js
-ms.date: 07/27/2023
+ms.date: 04/09/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -57,19 +57,19 @@ Extract the project, open the *ms-identity-node-main* folder, and then open the 
 | Variable  |  Description | Example(s) |
 |-----------|--------------|------------|
 | `Enter_the_Cloud_Instance_Id_Here` | The Azure cloud instance in which your application is registered | `https://login.microsoftonline.com/` (include the trailing forward-slash) |
-| `Enter_the_Tenant_Info_here` | Tenant ID or Primary domain | `contoso.microsoft.com` or `cbe899ec-5f5c-4efe-b7a0-599505d3d54f` |
-| `Enter_the_Application_Id_Here` | Client ID of the application you registered | `cbe899ec-5f5c-4efe-b7a0-599505d3d54f` |
-| `Enter_the_Client_Secret_Here` | Client secret of the application you registered | `WxvhStRfDXoEiZQj1qCy` |
+| `Enter_the_Tenant_Info_here` | Tenant ID or Primary domain | `contoso.microsoft.com` or `aaaabbbb-0000-cccc-1111-dddd2222eeee` |
+| `Enter_the_Application_Id_Here` | Client ID of the application you registered | `00001111-aaaa-2222-bbbb-3333cccc4444` |
+| `Enter_the_Client_Secret_Here` | Client secret of the application you registered | `A1b-C2d_E3f.H4i,J5k?L6m!N7o-P8q_R9s.T0u` |
 | `Enter_the_Graph_Endpoint_Here` | The Microsoft Graph API cloud instance that your app will call | `https://graph.microsoft.com/` (include the trailing forward-slash) |
-| `Enter_the_Express_Session_Secret_Here` | A random string of characters used to sign the Express session cookie | `WxvhStRfDXoEiZQj1qCy` |
+| `Enter_the_Express_Session_Secret_Here` | A random string of characters used to sign the Express session cookie | `A1b-C2d_E3f.H4...` |
 
 Your file should look similar to below:
 
 ```text
 CLOUD_INSTANCE=https://login.microsoftonline.com/
-TENANT_ID=cbe899ec-5f5c-4efe-b7a0-599505d3d54f
-CLIENT_ID=fa29b4c9-7675-4b61-8a0a-bf7b2b4fda91
-CLIENT_SECRET=WxvhStRfDXoEiZQj1qCy
+TENANT_ID=aaaabbbb-0000-cccc-1111-dddd2222eeee
+CLIENT_ID=00001111-aaaa-2222-bbbb-3333cccc4444
+CLIENT_SECRET=A1b-C2d_E3f.H4...
 
 REDIRECT_URI=http://localhost:3000/auth/redirect
 POST_LOGOUT_REDIRECT_URI=http://localhost:3000

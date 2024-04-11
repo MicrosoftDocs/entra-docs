@@ -118,4 +118,4 @@ See the following articles on Microsoft Entra B2B collaboration:
 - [What is Microsoft Entra B2B collaboration?](what-is-b2b.md)
 - [How do Microsoft Entra admins add B2B collaboration users?](add-users-administrator.md)
 - [B2B collaboration invitation redemption](redemption-experience.md)
-- [External Identities pricing](external-identities-pricing.md)
+- [External ID pricing](external-identities-pricing.md)
