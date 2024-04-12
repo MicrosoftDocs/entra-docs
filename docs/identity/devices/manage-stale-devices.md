@@ -5,9 +5,8 @@ description: Learn how to remove stale devices from your database of registered 
 
 ms.service: entra-id
 ms.subservice: devices
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 12/22/2023
+ms.date: 04/11/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -208,6 +207,8 @@ When you delete a Microsoft Entra device that was associated with a Windows Auto
 - With Windows Autopilot user-driven deployments without using pre-provisioning, a new Microsoft Entra device will be created, but it won’t be tagged with the ZTDID.
 - With Windows Autopilot self-deploying mode deployments, they'll fail because an associate Microsoft Entra device can’t be found.  (This failure is a security mechanism to make sure that no “imposter” devices try to join Microsoft Entra ID with no credentials.) The failure will indicate a ZTDID mismatch.
 - With Windows Autopilot pre-provisioning deployments, they'll fail because an associated Microsoft Entra device can’t be found. (Behind the scenes, pre-provisioning deployments use the same self-deploying mode process, so they enforce the same security mechanisms.)
+
+Use the [Get-MgDeviceManagementWindowsAutopilotDeviceIdentity](/powershell/module/microsoft.graph.devicemanagement.enrollment/get-mgdevicemanagementwindowsautopilotdeviceidentity) to list of Windows Autopilot devices in your organization and compare it to the list of devices to clean up.
 
 ### How do I know all the type of devices joined?
 

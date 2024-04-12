@@ -1,6 +1,6 @@
 ---
 title: Tutorial - Prepare your external tenant to authenticate users in an Angular single-page app (SPA)
-description: Learn how to configure your Microsoft Entra External ID for customers tenant for authentication with an Angular single-page app (SPA).
+description: Learn how to configure your external tenant for authentication with an Angular single-page app (SPA).
 services: active-directory
 author: garrodonnell
 manager: celestedg
@@ -15,7 +15,7 @@ ms.author: godonnell
 
 # Tutorial: Prepare your external tenant to authenticate users in an Angular single-page app
 
-This tutorial series demonstrates how to build an Angular single-page application (SPA) and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for JavaScript](/javascript/api/%40azure/msal-angular/) to authenticate your app with your Microsoft Entra External ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
+This tutorial series demonstrates how to build an Angular single-page application (SPA) and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for JavaScript](/javascript/api/%40azure/msal-angular/) to authenticate your app with your external tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
 
 In this tutorial:
 
@@ -28,7 +28,7 @@ In this tutorial:
 
 ## Prerequisites
 
-- A Microsoft Entra ID for customers tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+- An external tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
     - Application Administrator
     - Application Developer
