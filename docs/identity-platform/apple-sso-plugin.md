@@ -422,7 +422,7 @@ If you would like to enable Secure Enclave based storage of device identity keys
 
 The screenshot below shows the configuration page and settings for enabling Secure Enclave in Microsoft Intune. 
 
-:::image type="content" source="./media/apple-sso-plugin/secure-enclave.png" alt-text="Screenshot of the Entra admin centre showing the configuration profile page in Intune with the settings for enabling Secure Enclave highlighted." lightbox="./media/apple-sso-plugin/secure-enclave.png":::
+:::image type="content" source="./media/apple-sso-plugin/secure-enclave.png" alt-text="Screenshot of the Microsoft Entra admin centre showing the configuration profile page in Intune with the settings for enabling Secure Enclave highlighted." lightbox="./media/apple-sso-plugin/secure-enclave.png":::
 
 ### Scenarios impacted
 The list below contains some common scenarios that will be impacted by these changes. As a rule of thumb, any application that has a dependency on accessing device identity artifacts via Apple's Keychain will be affected.
