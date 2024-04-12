@@ -12,7 +12,6 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
 ---
-
 # Configure Microsoft Entra hybrid join
 
 Bringing your devices to Microsoft Entra ID maximizes user productivity through single sign-on (SSO) across your cloud and on-premises resources. You can secure access to your resources with [Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md) at the same time.
@@ -93,7 +92,7 @@ A federated environment should have an identity provider that supports the follo
 
 Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a federated environment:
 
-1. Start Microsoft Entra Connect, and then select **Configure**.
+1. Open Microsoft Entra Connect, and then select **Configure**.
 1. On the **Additional tasks** page, select **Configure device options**, and then select **Next**.
 1. On the **Overview** page, select **Next**.
 1. On the **Connect to Microsoft Entra ID** page, enter the credentials of a [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) of your Microsoft Entra tenant, and then select **Next**.
