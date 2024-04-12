@@ -30,13 +30,13 @@ Here's a list of related resources:
 
 April 2, 2024: Released for download. This version is only available for install via the download page in the Microsoft Entra admin center.
 
-### Rebranding
+### Updated brand
 
-The new name is now the Microsoft Entra private network connector. This rebranding emphasizes the connector as a common infrastructure for accessing any private network resource. The connector is used for both Microsoft Entra Private Access and Microsoft Entra application proxy. The new name appears in the user interface components.
+The new name is now the Microsoft Entra private network connector. The updated brand emphasizes the connector as a common infrastructure for accessing any private network resource. The connector is used for both Microsoft Entra Private Access and Microsoft Entra application proxy. The new name appears in the user interface components.
 
 ### New features and improvements
 
-- Support for UDP and Private DNS features. *Requires the Early Access Preview. 
+- Support for User Datagram Protocol (UDP) and Private Domain Name System (DNS) features. *Requires the Early Access Preview. 
 - Support for outbound proxy in connector for Private Access flow. *Requires the Early Access Preview. 
 - Improved resiliency and performance.
 - Improved logging and metrics reporting.
@@ -63,8 +63,8 @@ Refer to the table for updated paths.
 | PowerShell command | `Register-AppProxyConnector` | `Register-MicrosoftEntraPrivateNetworkConnector` |
 | Log file | `AadAppProxyConnector_{GUID}.log` | `MicrosoftEntraPrivateNetworkConnector_{GUID}.log` |
 | |	`AadAppProxyConnectorUpdater_{GUID}.log` | `MicrosoftEntraPrivateNetworkConnectorUpdater_{GUID}.log` | 
-| Services | `Microsoft AAD Application Proxy Connector` | Microsoft Entra private network connector |
-| |	Microsoft AAD Application Proxy Connector Updater | Microsoft Entra private network connector updater |
+| Services | `Microsoft AAD Application Proxy Connector` | `Microsoft Entra private network connector` |
+| |	`Microsoft AAD Application Proxy Connector Updater` | `Microsoft Entra private network connector` updater |
 | Registries | `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft AAD App Proxy Connector` | `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Entra private network connector` |
 | |	`Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft AAD App Proxy Connector Updater` | `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Entra private network connector Updater` |
 | Event logs | `Microsoft-AadApplicationProxy-Connector/Admin` | `Microsoft-Microsoft Entra private network-Connector/Admin` |
