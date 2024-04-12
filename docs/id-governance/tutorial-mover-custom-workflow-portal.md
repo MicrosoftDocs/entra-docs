@@ -44,7 +44,7 @@ Detailed breakdown of the relevant attributes:
 
 The mover scenario can be broken down into the following steps:
   - **Prerequisite:** Create two user accounts, one to represent an employee and one to represent a manager
-  - **Prerequisite:** Create a group to add the user to.
+  - **Prerequisite:** Create a group to add the user to
   - **Prerequisite:** Edit the attributes required for this scenario in the admin center
   - **Prerequisite:** Edit the attributes for this scenario using Microsoft Graph Explorer
   - Create the  workflow
