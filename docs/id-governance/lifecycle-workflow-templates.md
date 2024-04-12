@@ -42,7 +42,7 @@ For a complete guide on creating a new workflow from a template, see: [Tutorial:
 
 :::image type="content" source="media/lifecycle-workflow-templates/onboard-pre-hire-template.png" alt-text="Screenshot of a Lifecycle Workflow onboard pre-hire template.":::
 
-The specific parameters and properties for the **Onboard pre-hire employee** template are as follows:
+The default specific parameters and properties for the **Onboard pre-hire employee** template are as follows:
 
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
@@ -64,7 +64,7 @@ The **Onboard new-hire employee** template is designed to configure tasks that a
 
 :::image type="content" source="media/lifecycle-workflow-templates/onboard-new-hire-template.png" alt-text="Screenshot of a Lifecycle Workflow onboard new hire template.":::
 
-The specific parameters for the **Onboard new hire employee** template are as follows:
+The default specific parameters for the **Onboard new hire employee** template are as follows:
 
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
@@ -138,7 +138,7 @@ The **Pre-Offboarding of an employee** template is designed to configure tasks t
 
 :::image type="content" source="media/lifecycle-workflow-templates/offboard-pre-employee-template.png" alt-text="Screenshot of a pre offboarding employee template.":::
 
-The specific parameters for the **Pre-Offboarding of an employee** template are as follows:
+The default specific parameters for the **Pre-Offboarding of an employee** template are as follows:
 
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
