@@ -19,7 +19,7 @@ If errors occur in accessing a published application or in publishing applicatio
 
 * Open the Windows Services console. Verify that the **Microsoft Entra private network connector** service is enabled and running. Look at the application proxy service properties page, as shown in the image.  
   ![Microsoft Entra private network connector Properties window screenshot](./media/application-proxy-troubleshoot/connectorproperties.png)
-* Open Event Viewer and look for private network connector events in **Applications and Services Logs** > **Microsoft** > **AadApplicationProxy** > **Connector** > **Admin**.
+* Open Event Viewer and look for private network connector events in **Applications and Services Logs** > **Microsoft** > **Microsoft Entra private network** > **Connector** > **Admin**.
 * Review detailed logs. [Turn on private network connector session logs](application-proxy-connectors.md#under-the-hood).
 
 ## The page isn't rendered correctly
