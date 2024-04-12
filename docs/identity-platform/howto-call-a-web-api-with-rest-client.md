@@ -55,7 +55,7 @@ This article shows you how to call a protected ASP.NET Core web API using [Insom
 
 ::: zone-end
 
-## Register an application with the Microsoft identity platform
+## Register an application
 
 The Microsoft identity platform requires your application to be registered before providing identity and access management services. The application registration allows you to specify the name and type of the application and the sign-in audience. The sign-in audience specifies what types of user accounts are allowed to sign-in to a given application.
 
