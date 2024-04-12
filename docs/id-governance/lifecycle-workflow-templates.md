@@ -48,7 +48,7 @@ The specific parameters and properties for the **Onboard pre-hire employee** tem
 |---------|---------|---------|
 |Category     |  Joiner       |  ❌       |
 |Trigger Type     | Time based attribute, Attribute changes, Group Membership change        |  ✔️       |
-|Trigger details     | Depending on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group.     |   ✔️      |
+|Trigger details     | Depends on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group.     |   ✔️      |
 |Days from event     | -7        | ✔️        |
 |Event timing     | Before        |  ❌       |
 |Event User attribute     | EmployeeHireDate        |   ❌      |
@@ -70,7 +70,7 @@ The specific parameters for the **Onboard new hire employee** template are as fo
 |---------|---------|---------|
 |Category     |  Joiner       |  ❌       |
 |Trigger Type     | Time based attribute, Attribute changes, Group Membership change          |  ✔️       |
-|Trigger details     | Depending on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group.     |   ✔️      |
+|Trigger details     | Depends on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group.     |   ✔️      |
 |Days from event     | 0        | ❌        |
 |Event timing     | On        |  ❌       |
 |Event User attribute     | EmployeeHireDate, createdDateTime        |   ✔️      |
@@ -90,7 +90,7 @@ The default specific parameters for the **Post-Onboarding of an employee** templ
 |---------|---------|---------|
 |Category     |  Joiner       |  ❌       |
 |Trigger Type     | Time based attribute, Attribute changes, Group Membership change       |  ✔️       |
-|Trigger details     | Depending on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group.     |   ✔️      |
+|Trigger details     | Depends on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group.     |   ✔️      |
 |Days from event     | 7       | ✔️        |
 |Event timing     | After        |  ❌       |
 |Event User attribute     | EmployeeHireDate, createdDateTime        |   ✔️      |
@@ -144,7 +144,7 @@ The specific parameters for the **Pre-Offboarding of an employee** template are 
 |---------|---------|---------|
 |Category     |  Leaver       |  ❌       |
 |Trigger Type     | Time based attribute, Attribute changes, Group Membership change         |  ✔️       |
-|Trigger details     | Depending on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group.     |   ✔️      |
+|Trigger details     | Depends on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group.     |   ✔️      |
 |Days from event     | 7        | ✔️        |
 |Event timing     | Before        |  ❌       |
 |Event User attribute     | employeeLeaveDateTime        |   ❌      |
@@ -164,7 +164,7 @@ The default specific parameters for the **Offboard an employee** template are as
 |---------|---------|---------|
 |Category     |  Leaver       |  ❌       |
 |Trigger Type     | Time based attribute, Attribute changes, Group Membership change        |  ✔️       |
-|Trigger details     | Depending on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group.     |   ✔️      |
+|Trigger details     | Depends on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group.     |   ✔️      |
 |Days from event     | 0        | ✔️        |
 |Event timing     | On        |  ❌       |
 |Event User attribute     | employeeLeaveDateTime      |   ❌      |
@@ -184,7 +184,7 @@ The default specific parameters for the **Post-Offboarding of an employee** temp
 |---------|---------|---------|
 |Category     |  Leaver       |  ❌       |
 |Trigger Type     | Time based attribute, Attribute changes, Group Membership change        |  ✔️       |
-|Trigger details     | Depending on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group.     |   ✔️      |
+|Trigger details     | Depends on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group.     |   ✔️      |
 |Event User attribute     | employeeLeaveDateTime      |   ❌      |
 |Scope type     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ❌        |
 |Rule     | Rule based scope: (department eq 'Marketing')    |  ✔️       |
@@ -204,7 +204,7 @@ The default specific parameters for the **Employee group membership changes** te
 |---------|---------|---------|
 |Category     |  mover       |  ❌       |
 |Trigger Type     | Attribute changes, Group Membership change        |  ✔️       |
-|Trigger details     | Depending on trigger type selection. <br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group.     |   ✔️      |
+|Trigger details     | Depends on trigger type selection. <br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group.     |   ✔️      |
 |Scope type     | Depends on trigger. <br> **Rule based**: Attribute changes.<br> **Group membership change**: Group based.       | ❌        |
 |Rule     |      |  ✔️       |
 |Tasks     | **Remove access package assignment for user**, **Remove user from selected Teams**, **Send email to notify manager of user move**     |  ✔️       |
@@ -221,7 +221,7 @@ The default specific parameters for the **Employee job profile change** template
 |---------|---------|---------|
 |Category     |  mover       |  ❌       |
 |Trigger Type     | Attribute changes, Group Membership change        |  ✔️       |
-|Trigger details     | Depending on trigger type selection. <br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group.     |   ✔️      |
+|Trigger details     | Depends on trigger type selection. <br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group.     |   ✔️      |
 |Scope type     | Depends on trigger. <br> **Rule based**: Attribute changes.<br> **Group membership change**: Group based.         | ❌        |
 |Rule     | Rule based scope: (department eq 'Marketing')        |  ✔️       |
 |Tasks     | **Send email to notify manager of user move**, **Remove user from selected groups**, **Remove user from selected Teams**, **Request user access package assignment**    |  ✔️       |
