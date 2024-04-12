@@ -5,7 +5,7 @@ description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (F
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/10/2024
+ms.date: 04/12/2024
 
 ms.author: justinha
 author: justinha
@@ -49,7 +49,7 @@ Passkeys are supported across major scenarios on Windows, macOS, Android, and iO
 
 ### Passkey optional settings 
 
-There are some optional settings on the **Configure** tab to help manage how passkeys can be used for sign-in.  
+There are some optional settings on the **Configure** tab to help manage how passkeys can be used for sign-in. You can select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. Otherwise, you can any specific Authenticator Attestation GUID (AAGUID) that you want to restrict.
 
 :::image type="content" border="true" source="media/howto-authentication-passwordless-security-key/optional-settings-with-aaguid.png" alt-text="Screenshot of FIDO2 security key options.":::
 
