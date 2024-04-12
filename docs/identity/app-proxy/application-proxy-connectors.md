@@ -174,8 +174,8 @@ To avoid problems with the certificate renewal, ensure that the network communic
 If a connector isn't connected to the service for several months, its certificates could be outdated. In this case, uninstall and reinstall the connector to trigger registration. You can run the following PowerShell commands:
 
 ```
-Import-module AppProxyPSModule
-Register-AppProxyConnector -EnvironmentName "AzureCloud"
+Import-module MicrosoftEntraPrivateNetworkConnectorPSModule
+Register-MicrosoftEntraPrivateNetworkConnector -EnvironmentName "AzureCloud"
 ```
 
 For government, use `-EnvironmentName "AzureUSGovernment"`. For more information, see [Install Agent for the Azure Government Cloud](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).

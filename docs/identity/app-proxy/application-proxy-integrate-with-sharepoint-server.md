@@ -156,7 +156,7 @@ You can now access the SharePoint site externally through Microsoft Entra applic
 
 ## Step 3: Configure Kerberos Constrained Delegation
 
-Users initially authenticate in Microsoft Entra ID and then to SharePoint by using Kerberos through the Microsoft Entra ID Proxy connector. To allow the connector to obtain a Kerberos token on behalf of the Microsoft Entra user, you must configure Kerberos Constrained Delegation (KCD) with protocol transition. To learn more about KCD, see [Kerberos Constrained Delegation overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj553400(v=ws.11)).
+Users initially authenticate in Microsoft Entra ID and then to SharePoint by using Kerberos through the Microsoft Entra private network connector. To allow the connector to obtain a Kerberos token on behalf of the Microsoft Entra user, you must configure Kerberos Constrained Delegation (KCD) with protocol transition. To learn more about KCD, see [Kerberos Constrained Delegation overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj553400(v=ws.11)).
 
 ### Set the Service Principal Name (SPN) for the SharePoint service account
 
@@ -174,7 +174,7 @@ Configure the KCD so that the Microsoft Entra application proxy service can dele
 To configure the KCD, follow these steps for each connector machine:
 
 1. Sign in to a domain controller as a domain administrator, and then open Active Directory Users and Computers.
-1. Find the computer running the Microsoft Entra ID Proxy connector. In this example, it's the computer that's running SharePoint Server.
+1. Find the computer running the Microsoft Entra private network connector. In this example, it's the computer that's running SharePoint Server.
 1. Double-click the computer, and then select the **Delegation** tab.
 1. Make sure the delegation options are set to **Trust this computer for delegation to the specified services only**. Then, select **Use any authentication protocol**.
 1. Select the **Add** button, select **Users or Computers**, and locate the SharePoint application pool account. For example: `Contoso\spapppool`.

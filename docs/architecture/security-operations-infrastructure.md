@@ -122,7 +122,7 @@ Organizations might need to monitor for and alert on the creation of new Microso
 | - | - | - | - | - |
 | Creation of a new Microsoft Entra tenant, using an identity from your tenant. | Medium | Microsoft Entra audit logs | Category: Directory Management<br><br>Activity: Create Company | Target(s) shows the created TenantID |
 
-### AppProxy Connector
+### Private network connector
 
 Microsoft Entra ID and Microsoft Entra application proxy give remote users a single sign-on (SSO) experience. Users securely connect to on-premises apps without a virtual private network (VPN) or dual-homed servers and firewall rules. If your Microsoft Entra private network connector server is compromised, attackers could alter the SSO experience or change access to published applications.
 

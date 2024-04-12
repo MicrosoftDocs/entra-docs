@@ -62,7 +62,7 @@ Perform the following steps to download the Microsoft Entra private network conn
 With a VM ready to be used as the Microsoft Entra private network connector, now copy and run the setup file downloaded from the Microsoft Entra admin center.
 
 1. Copy the Microsoft Entra private network connector setup file to your VM.
-1. Run the setup file, such as *AADApplicationProxyConnectorInstaller.exe*. Accept the software license terms.
+1. Run the setup file, such as *MicrosoftEntraPrivateNetworkConnectorInstaller.exe*. Accept the software license terms.
 1. During the install, you're prompted to register the connector with the Application Proxy in your Microsoft Entra directory.
    * Provide the credentials for a global administrator in your Microsoft Entra directory. The Microsoft Entra Global Administrator credentials may be different from your  Azure credentials in the portal
 
@@ -73,7 +73,7 @@ With a VM ready to be used as the Microsoft Entra private network connector, now
 
    * If Internet Explorer Enhanced Security Configuration is turned on for the VM where you install the connector, the registration screen might be blocked. To allow access, follow the instructions in the error message, or turn off Internet Explorer Enhanced Security during the install process.
    * If connector registration fails, see [Troubleshoot Application Proxy](/azure/active-directory/app-proxy/application-proxy-troubleshoot).
-1. At the end of the setup, a note is shown for environments with an outbound proxy. To configure the Microsoft Entra private network connector to work through the outbound proxy, run the provided script, such as `C:\Program Files\Microsoft AAD App Proxy connector\ConfigureOutBoundProxy.ps1`.
+1. At the end of the setup, a note is shown for environments with an outbound proxy. To configure the Microsoft Entra private network connector to work through the outbound proxy, run the provided script, such as `C:\Program Files\Microsoft Entra private network connector\ConfigureOutBoundProxy.ps1`.
 1. On the Application proxy page in the Microsoft Entra admin center, the new connector is listed with a status of *Active*, as shown in the following example:
 
     ![The new Microsoft Entra private network connector shown as active in the Microsoft Entra admin center](./media/app-proxy/connected-app-proxy.png)
