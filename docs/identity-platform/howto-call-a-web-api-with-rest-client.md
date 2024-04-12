@@ -4,7 +4,7 @@ description: Learn how to call a protected ASP.NET Core web API using the Micros
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.date: 05/25/2023
+ms.date: 04/12/2024
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -241,29 +241,26 @@ You may also notice the **User.Read** permission for the Microsoft Graph API. Th
 ### Configure an authorized request to the web API in Insomnia
 
 1. Launch the **Insomnia** application.
-1. In the main Insomnia window, find **Create a new request** and select **HTTP Request**.
-1. In the top bar, select **GET** from the dropdown menu.
+1. Select **New HTTP Request**, or you can use _Ctrl + N_ to create a new HTTP Request.
+1. In the _New Request modal_, select a **GET** method from the dropdown.
 1. For the request URL, enter the URL of the endpoint exposed by the web API, `https://localhost:{port}/weatherforecast`.
-1. Select the **Authorization** tab to configure Insomnia to obtain a token from the Microsoft identity platform that will grant access to the web API.
-1. From the **Type** dropdown, select **OAuth 2.0**. This displays **Configure New Token** form.
-1. Enter the following values in the **Configure New Token** form:
+1. From **Auth** dropdown menu, select **OAuth 2.0**. This displays **OAuth 2.0** form.
+1. Enter the following values in the **OAuth 2.0** form:
 
    | Setting          | Value                                                                                                                                                                                                                                          |
    | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | Token Name       | Provide any name for the token. For example, enter `Bearer`                                                                                                                                                                                    |
-   | Grant Type       | Select **Authorization Code**                                                                                                                                                                                                                  |
-   | Callback URL     | Enter `http://localhost`, which sets the Callback URL to the Redirect URI registered with Microsoft Entra ID. DO NOT check the **Authorize using browser** checkbox.                                                                               |
-   | Auth URL         | `https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/authorize` <br/> Replace `{tenantId}` with the **Directory (tenant) ID**                                                                                                             |
-   | Access Token URL | `https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token` <br/> Replace `{tenantId}` with the **Directory (tenant) ID**                                                                                                                 |
-   | Client ID        | The **Application (client) ID** value of your web app registration                                                                                                                                                                             |
-   | Client Secret    | The client secret **Value** of your web app registration                                                                                                                                                                                       |
-   | Scope            | `api://{application_client_id}/Forecast.Read` <br/> Navigate to your web app registration, under **Manage**, select **API permissions**, then select **Forecast.Read** <br/> Copy the value in the textbox, which contains the **Scope** value |
+   | **GRANT TYPE**       | Select **Authorization Code**                                                                                                                                                                                                              | 
+   | **AUTHORIZATION URL**| `https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/authorize` <br/> Replace `{tenantId}` with the **Directory (tenant)ID**                                                                                                 |
+   | **ACCESS TOKEN URL** | `https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token` <br/> Replace `{tenantId}` with the **Directory (tenant) ID**                                                                                                                 |
+   | **CLIENT ID**        | The **Application (client) ID** value of your web app registration                                                                                                                                                                             |
+   | **CLIENT SECRET**    | The client secret **Value** of your web app registration                                                                                                                                                                                       |
+   | **REDIRECT URL**     | Enter `http://localhost`, which sets the REDIRECT URL to the Redirect URI registered with Microsoft Entra ID.                                                                                                                                  |
+   | **SCOPE**            | `api://{application_client_id}/Forecast.Read` <br/> Navigate to your web app registration, under **Manage**, select **API permissions**, then select **Forecast.Read** <br/> Copy the value in the textbox, which contains the **Scope** value |
 
 #### Get an access token and send a request to the web API
 
-1. Once these values are entered select the **Get New Access Token** button. This launches a Insomnia browser window where you authenticate with your user credentials. Be sure to allow pop ups from the Insomnia application in the browser.
-1. After authenticating, a new Insomnia generated pop-up window will appear. Select the **Use Token** button in Insomnia to provide the access token in the request.
-1. Select **Send** to send the request to the protected web API endpoint.
+1. Once these values are entered select the **Fetch Tokens** button. This launches a Insomnia browser window where you authenticate with your user credentials. Be sure to allow pop ups from the Insomnia application in the browser.
+1. After authenticating, select **Send** to send the request to the protected web API endpoint.
 
 With a valid access token included in the request, the expected response is 200 OK with output similar to:
 
