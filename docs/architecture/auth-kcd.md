@@ -17,7 +17,7 @@ Based on service principal Names, Kerberos Constrained Delegation (KCD) provides
 
 Microsoft Entra application proxy can provide single sign-on (SSO) and remote access to KCD-based applications that require a Kerberos ticket for access and Kerberos Constrained Delegation (KCD).
 
-To enable SSO to your on-premises KCD applications that use integrated Windows authentication (IWA), give Private network connectors permission to impersonate users in Active Directory. The Private network connector uses this permission to send and receive tokens on the users' behalf.
+To enable SSO to your on-premises KCD applications that use integrated Windows authentication (IWA), give private network connectors permission to impersonate users in Active Directory. The private network connector uses this permission to send and receive tokens on the users' behalf.
 
 ## When to use KCD
 
