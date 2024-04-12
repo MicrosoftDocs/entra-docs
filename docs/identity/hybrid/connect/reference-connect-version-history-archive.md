@@ -821,7 +821,7 @@ Status: July 2017
 ### Pass-through Authentication
 
 #### New features and improvements
-* The name of the agent required for Pass-through Authentication has been changed from *Microsoft Entra application proxy Connector* to *Microsoft Entra Connect Authentication Agent*.
+* The name of the agent required for Pass-through Authentication has been changed from *Microsoft Entra private network connector* to *Microsoft Entra Connect Authentication Agent*.
 
 * Enabling Pass-through Authentication no longer enables Password Hash Synchronization by default.
 
