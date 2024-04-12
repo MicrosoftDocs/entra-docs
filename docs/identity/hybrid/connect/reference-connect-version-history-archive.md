@@ -953,10 +953,10 @@ The issue that arises is that the **Sync all domains and OUs option** is always 
 #### Issues fixed
 
 * Following URLs are new WS-Federation endpoints introduced by Microsoft Entra ID to improve resiliency against authentication outage and will be added to on-premises AD FS replying party trust configuration:
-  * https:\//ests.login.microsoftonline.com/login.srf
-  * https:\//stamp2.login.microsoftonline.com/login.srf
-  * https://ccs.login.microsoftonline.com/login.srf
-  * https://ccs-sdf.login.microsoftonline.com/login.srf
+  * `https://ests.login.microsoftonline.com/login.srf`
+  * `https://stamp2.login.microsoftonline.com/login.srf`
+  * `https://ccs.login.microsoftonline.com/login.srf`
+  * `https://ccs-sdf.login.microsoftonline.com/login.srf`
 
 * Fixed an issue that caused AD FS to generate incorrect claim value for IssuerID. The issue occurs if there are multiple verified domains in the Microsoft Entra tenant and the domain suffix of the userPrincipalName attribute used to generate the IssuerID claim is at least 3-levels deep (for example, johndoe@us.contoso.com). The issue is resolved by updating the regex used by the claim rules.
 
