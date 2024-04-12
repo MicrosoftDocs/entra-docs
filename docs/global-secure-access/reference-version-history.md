@@ -6,13 +6,12 @@ manager: amycolannino
 ms.service: global-secure-access
 ms.topic: reference
 ms.date: 04/12/2024
-ms.subservice: app-proxy
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
 # Microsoft Entra private network connector: Version release history
-This article lists the versions and features of Microsoft Entra private network connector. The Microsoft Entra ID team regularly updates the private network connector with new features and functionality. Microsoft Entra private network connectors are [updated automatically when a new major version is released](application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-). 
+This article lists the versions and features of Microsoft Entra private network connector. The Microsoft Entra ID team regularly updates the private network connector with new features and functionality. Microsoft Entra private network connectors are [updated automatically when a new major version is released](../identity/app-proxy/application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-). 
 
 Make sure that auto updates are enabled for your connectors to get the latest features and bug fixes. Microsoft Support might ask you to install the latest connector version to resolve a problem.
 
@@ -21,7 +20,7 @@ Here's a list of related resources:
 | Resource                                         | Details                                                      |
 | ------------------------------------------------ | ------------------------------------------------------------ |
 | How to enable application proxy                  | Prerequisites for enabling application proxy and installing and registering a connector are described in this [tutorial](application-proxy-add-on-premises-application.md). |
-| Understand Microsoft Entra application proxy connectors | Find out more about [connector management](application-proxy-connectors.md) and how connectors [autoupgrade](application-proxy-connectors.md#automatic-updates). |
+| Understand Microsoft Entra application proxy connectors | Find out more about [connector management](../identity/app-proxy/application-proxy-connectors.md) and how connectors [autoupgrade](../identity/app-proxy/application-proxy-connectors.md#automatic-updates). |
 | Microsoft Entra application proxy connector Download    | [Download the latest connector](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download). |
 
 ## Version 1.5.3829.0
