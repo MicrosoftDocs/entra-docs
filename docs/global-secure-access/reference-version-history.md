@@ -213,5 +213,5 @@ April 15, 2017: Released for download.
 If you're using an application proxy connector version earlier than 1.5.36.0, update to the latest version to ensure you have the latest fully supported features.
 
 ## Next steps
-- [Using Microsoft Entra application proxy to publish on-premises apps for remote users](../identity/app-proxy/overview-what-is-app-proxy.md)
+- [What is application proxy?](../identity/app-proxy/overview-what-is-app-proxy.md)
 - [What is Global Secure Access?](overview-what-is-global-secure-access.md)
