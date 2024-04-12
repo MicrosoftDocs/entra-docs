@@ -52,7 +52,7 @@ The specific parameters and properties for the **Onboard pre-hire employee** tem
 |Days from event     | -7        | ✔️        |
 |Event timing     | Before        |  ❌       |
 |Event User attribute     | EmployeeHireDate        |   ❌      |
-|Scope type     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group based**: Group membership change.         | ❌        |
+|Scope type     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ❌        |
 |Rule     | Rule based scope: (department eq 'Marketing')      |  ✔️       |
 |Tasks     | **Generate TAP And Send Email**     |  ✔️       |
 
@@ -74,7 +74,7 @@ The specific parameters for the **Onboard new hire employee** template are as fo
 |Days from event     | 0        | ❌        |
 |Event timing     | On        |  ❌       |
 |Event User attribute     | EmployeeHireDate, createdDateTime        |   ✔️      |
-|Scope type     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group based**: Group membership change.        | ❌        |
+|Scope type     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ❌        |
 |Rule     | Rule based scope: (department eq 'Marketing')        |  ✔️       |
 |Tasks     | **Add User To Group**, **Enable User Account**, **Send Welcome Email**      |  ✔️       |
 
@@ -94,7 +94,7 @@ The default specific parameters for the **Post-Onboarding of an employee** templ
 |Days from event     | 7       | ✔️        |
 |Event timing     | After        |  ❌       |
 |Event User attribute     | EmployeeHireDate, createdDateTime        |   ✔️      |
-|Scope type     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group based**: Group membership change.         | ❌        |
+|Scope type     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ❌        |
 |Rule     | Rule based scope: (department eq 'Marketing')       |  ✔️       |
 |Tasks     | **Add User To Group**, **Add user to selected teams**    |  ✔️       |
 
@@ -148,7 +148,7 @@ The specific parameters for the **Pre-Offboarding of an employee** template are 
 |Days from event     | 7        | ✔️        |
 |Event timing     | Before        |  ❌       |
 |Event User attribute     | employeeLeaveDateTime        |   ❌      |
-|Scope type     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group based**: Group membership change.        | ❌        |
+|Scope type     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ❌        |
 |Rule     | Rule based scope: (department eq 'Marketing')       |  ✔️       |
 |Tasks     | **Remove user from selected groups**, **Remove user from selected Teams**     |  ✔️       |
 
@@ -168,7 +168,7 @@ The default specific parameters for the **Offboard an employee** template are as
 |Days from event     | 0        | ✔️        |
 |Event timing     | On        |  ❌       |
 |Event User attribute     | employeeLeaveDateTime      |   ❌      |
-|Scope type     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group based**: Group membership change.         | ❌        |
+|Scope type     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ❌        |
 |Rule     | Rule based scope: (department eq 'Marketing')     |  ✔️       |
 |Tasks     | **Disable User Account**, **Remove user from all groups**, **Remove user from all Teams**     |  ✔️       |
 
