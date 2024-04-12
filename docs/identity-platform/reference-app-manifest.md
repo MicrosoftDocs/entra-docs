@@ -99,7 +99,7 @@ Example:
 ```json
     "addIns": [
        {
-        "id": "968A844F-7A47-430C-9163-07AE7C31D407",
+        "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
         "type":" FileHandler",
         "properties": [
            {
@@ -157,7 +157,7 @@ Example:
            ],
            "description": "Read-only access to device information",
            "displayName": "Read Only",
-           "id": "601790de-b632-4f57-9523-ee7cb6ceba95",
+           "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
            "isEnabled": true,
            "value": "ReadOnly"
         }
@@ -449,7 +449,7 @@ Example:
        {
           "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
           "permissionIds": [
-             "8748f7db-21fe-4c83-8ab5-53033933c8f1"
+             "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
             ]
         }
     ],
