@@ -126,6 +126,31 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/zscaler-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/zscaler-internet-access-zsnet-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/zscaler-zscloud-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/zscaler-internet-access-zscloud-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/zscaler-one-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/zscaler-internet-access-zsone-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/zscaler-two-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/zscaler-internet-access-zstwo-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/zscaler-three-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/zscaler-internet-access-zsthree-tutorial",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/imanage-work-saml-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/cloud-imanage-tutorial",
       "redirect_document_id": false
@@ -163,6 +188,11 @@
     {
       "source_path_from_root": "/docs/identity/app-proxy/whats-new-docs.md",
       "redirect_url": "/entra/identity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-release-version-history.md",
+      "redirect_url": "/entra/global-secure-access/reference-version-history",
       "redirect_document_id": false
     },
     {
@@ -266,8 +296,13 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity/authentication/multi-factor-authentication-wizard.md",
+      "source_path_from_root": "/docs/identity/conditional-access/howto-conditional-access-apis.md",
       "redirect_url": "/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/multi-factor-authentication-wizard.md",
+      "redirect_url": "/graph/api/resources/conditionalaccessroot",
       "redirect_document_id": false
     },
     {
@@ -397,6 +432,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/authentication/fido2-compatibility.md",
+      "redirect_url": "/entra/identity/authentication/concept-fido2-compatibility",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/howto-authentication-passwordless-security-key.md",
+      "redirect_url": "/entra/identity/authentication/how-to-enable-passkey-fido2",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/hybrid/connect/how-to-connect-group-writeback-v2.md",
       "redirect_url": "/entra/identity/hybrid/group-writeback-cloud-sync",
       "redirect_document_id": false
@@ -431,10 +476,15 @@
       "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-vm-managed-identities-cosmos",
       "redirect_document_id": false
     },
-    {
+    {      
+      "source_path_from_root": "/docs/identity/authentication/concept-authentication-windows-hello-for-business.md",
+      "redirect_url": "/windows/security/identity-protection/hello-for-business",
+      "redirect_document_id": false
+    },
+    {            
       "source_path_from_root": "/docs/external-id/customers/how-to-create-customer-tenant-portal.md",
       "redirect_url": "/entra/external-id/customers/how-to-create-external-tenant-portal",
-      "redirect_document_id": true
+      "redirect_document_id": false
     }
   ]
 }

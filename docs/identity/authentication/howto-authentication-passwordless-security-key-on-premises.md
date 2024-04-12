@@ -5,7 +5,7 @@ description: Learn how to enable passwordless security key sign-in to on-premise
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/19/2024
+ms.date: 04/10/2024
 
 ms.author: justinha
 author: justinha
@@ -51,7 +51,7 @@ You must also meet the following system requirements:
    - An Active Directory user who is a member of the Domain Admins group for a domain and a member of the Enterprise Admins group for a forest. Referred to as **$domainCred**.
    - A Microsoft Entra user who is a member of the Global Administrators role. Referred to as **$cloudCred**.
 
-- Users must have the following Entra ID attributes populated through Microsoft Entra Connect:
+- Users must have the following Microsoft Entra ID attributes populated through Microsoft Entra Connect:
    - onPremisesSamAccountName (accountName in Entra Connect)
    - onPremisesDomainName (domainFQDN in Entra Connect)
    - onPremisesSecurityIdentifier (objectSID in Entra Connect)
@@ -108,7 +108,7 @@ Run the following steps in each domain and forest in your organization that cont
 
 ### Select Azure Cloud (Default is Azure Commercial)
 
-By default the `Set-AzureADKerberosSever` cmdlet will utlize the Commercial cloud endpoints. If you are configuring Kerberos in another cloud environment you will need to set the cmdlet to use the specified cloud.  
+By default the `Set-AzureADKerberosSever` cmdlet will use the Commercial cloud endpoints. If you are configuring Kerberos in another cloud environment, you need to set the cmdlet to use the specified cloud.  
 
 To get a **list** of the available clouds and the numeric value needed to change, run the following:  
 `Get-AzureADKerberosServerEndpoint`  
@@ -159,7 +159,7 @@ _(Example: For US Government Cloud)_
 
    # Create the new Azure AD Kerberos Server object in Active Directory
    # and then publish it to Azure Active Directory.
-   # Use the current windows login credential to access the on-prem AD.
+   # Use the current windows login credential to access the on-premises AD.
    Set-AzureADKerberosServer -Domain $domain -CloudCredential $cloudCred
    ```
 
@@ -271,7 +271,7 @@ Follow the instructions in [Create a Kerberos Server object](#create-a-kerberos-
 ## Known behavior
 
 If your password has expired, signing in with FIDO is blocked. The expectation is that users reset their passwords before they can log in by using FIDO.
-This is applicable for hybrid on-prem synced user sign-in with WHFB Cloud kerberos trust as well.
+This behavior also applies to hybrid on-premises synced user sign-in with Windows Hello for Business cloud kerberos trust.
 
 ## Troubleshooting and feedback
 
@@ -303,7 +303,7 @@ We are working on this capability for the general availability (GA) release of t
 
 ### Where can I go to find compliant security keys?
 
-For information about compliant security keys, see [FIDO2 security keys](concept-authentication-passwordless.md#fido2-security-keys).
+For information about compliant security keys, see [FIDO2 security keys](concept-authentication-passwordless.md#fido2-security-key-providers).
 
 ### What can I do if I lose my security key?
 
