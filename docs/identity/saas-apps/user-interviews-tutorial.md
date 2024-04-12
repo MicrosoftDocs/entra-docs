@@ -74,11 +74,12 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier** text box, type one of the following URL/Pattern:
+    a. In the **Identifier** text box, type a URL using one of the following patterns:
+
     | **Identifier** |
     | -------------- |
     | `https://www.userinterviews.com/saml/metadata?team_id=<team_id>` |
-    | `https://www.userinterviews.com/saml/metadata?team_id` |
+    | `https://www.userinterviews.com/saml/metadata?<team_id>` |
 
     b. In the **Reply URL** text box, type one of the following URL/Pattern:
 
