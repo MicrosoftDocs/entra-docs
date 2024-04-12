@@ -52,23 +52,9 @@ The free features, for example managed identities and workload identity federati
 |**Microsoft Entra ID Protection**  |  | |
 |ID Protection for workload identities  | Detect and remediate compromised workload identities | | Yes |
 
-
-
-[Conditional Access](~/identity/conditional-access/workload-identity.md)
-
-[Identity Protection](~/id-protection/concept-workload-identity-risk.md)
-
-[Access Reviews](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/introducing-azure-ad-access-reviews-for-service-principals/ba-p/1942488)
-
-[App health recommendations](~/identity/monitoring-health/howto-use-recommendations.md)
-
-[**Managed identities**](~/identity/managed-identities-azure-resources/overview.md)
-
-
-
 ## What is the cost of Workload ID Premium plan? 
 
-The [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-identities#office-StandaloneSKU-k3hubfz) is priced at $3/workload identity/month. There is a lead status SKU (Workload ID P1) at $2/workload identity/month which is available only to sellers for discounting but not visible to customers. (Note: The lead status SKU can only provide the [Conditional Access](~/identity/conditional-access/workload-identity.md) feature.)
+The [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-identities#office-StandaloneSKU-k3hubfz) is priced at $3/workload identity/month. There is a lead status SKU (Workload ID P1) at $2/workload identity/month, which is available only to sellers for discounting but not visible to customers. (Note: The lead status SKU can only provide the [Conditional Access](~/identity/conditional-access/workload-identity.md) feature.)
 
 ## How many licenses do I need to purchase? Do I need to license all workload identities including Microsoft applications and managed identities? 
 
@@ -88,7 +74,7 @@ No, license assignment isn't required.  One license in the tenant unlocks all fe
 
 Unfortunately, we don’t provide a dashboard to track that information. You can only track enabled Conditional Access policies targeting workload identities in the **Insights and reporting** area. 
 
-:::image type="content" source="media/workload-identities-faqs/insights-and-reportin.png" alt-text="Screenshot showing Insights and Reporting in Condidtional Access." border="false":::
+:::image type="content" source="media/workload-identities-faqs/insights-and-reportin.png" alt-text="Screenshot showing Insights and Reporting in Conditional Access." border="false":::
 
 - Total: Number of service principals in the Last 24 hours.
 - Success: Number of service principals where the selected polic(ies) granted access and the required controls were satisfied. 
