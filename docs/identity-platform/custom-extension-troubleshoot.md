@@ -161,7 +161,6 @@ To test your API directly using your preferred API testing tool, follow these st
                     "market": "en-us"
                 },
                 "protocol": "OAUTH2.0",
-                "requestType": "SignIn",
                 "clientServicePrincipal": {
                     "id": "<Your Test Applications servicePrincipal objectId>",
                     "appId": "<Your Test Application App Id>",
