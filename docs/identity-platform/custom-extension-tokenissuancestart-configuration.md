@@ -27,7 +27,7 @@ This article describes how to configure a custom claims provider for a [token is
 
 ## Step 1: Register a custom authentication extension
 
-You'll now configure a custom authentication extension, which will be used by Microsoft Entra ID to call your Azure function. The custom authentication extension contains information about your REST API endpoint, the claims that it parses from your REST API, and how to authenticate to your REST API. Follow these steps to register a custom authentication extension to your Azure Function app. 
+You'll now configure a custom authentication extension, which will be used by Microsoft Entra ID to call your Azure function. The custom authentication extension contains information about your REST API endpoint, the claims that it parses from your REST API, and how to authenticate to your REST API. You can have a maximum of 100 custom extension policies. Follow these steps to register a custom authentication extension to your Azure Function app. 
 
 # [Azure portal](#tab/azure-portal)
 
@@ -265,9 +265,17 @@ Next, assign the attributes from the custom claims provider, which should be iss
 1. Select **Save**.
 1. Repeat this process to add the *customClaimsProvider.customRoles*, *customClaimsProvider.apiVersion* and *customClaimsProvider.correlationId* attributes, and the corresponding name. It's a good idea to match the name of the claim to the name of the attribute.
 
+> [!NOTE]
+>
+> The Azure portal doesn't currently support the linking of multiple token augmentation listeners to a single application. Use the Microsoft Graph APIs to reuse a custom extension for multiple apps.
+
 # [Microsoft Graph](#tab/microsoft-graph)
 
-First create an event listener to trigger a custom authentication extension for the *My Test application* using the token issuance start event.
+First create an event listener to trigger a custom authentication extension for the *My Test application* using the token issuance start event. You can create a maximum of 250 listeners.
+
+> [!NOTE]
+>
+> If you wish to apply the same custom extension call to multiple apps, we recommend using the correct [Microsoft Graph API](/graph/api/resources/authenticationeventlistener?view=graph-rest-beta) to create listener with multiple included apps. This is not supported in the Azure portal.
 
 1. Sign in to [Graph Explorer](https://aka.ms/ge) using an account whose home tenant is the tenant you wish to manage your custom authentication extension in.
 1. Run the following request. Replace `{App_to_enrich_ID}` with the app ID of *My Test application* recorded earlier. Replace `{customExtensionObjectId}` with the custom authentication extension ID recorded earlier.
