@@ -15,7 +15,7 @@ ms.collection: M365-identity-device-management
 ---
 # What are the default user permissions in Microsoft Entra ID?
 
-In Microsoft Entra ID, all users are granted a set of default permissions. A user's access consists of the type of user, their [role assignments](./how-subscriptions-associated-directory.md), and their ownership of individual objects. 
+In Microsoft Entra ID, all users are granted a set of default permissions. A user's access consists of the type of user, their [role assignments](../identity/role-based-access-control/permissions-reference.md), and their ownership of individual objects. 
 
 This article describes those default permissions and compares the member and guest user defaults. The default user permissions can be changed only in user settings in Microsoft Entra ID.
 
