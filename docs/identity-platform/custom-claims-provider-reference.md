@@ -66,7 +66,6 @@ POST https://your-api.com/endpoint
                 "market": "en-us"
             },
             "protocol": "OAUTH2.0",
-            "requestType": "SignIn",
             "clientServicePrincipal": {
                 "id": "<Your Test Applications servicePrincipal objectId>",
                 "appId": "<Your Test Application App Id>",
