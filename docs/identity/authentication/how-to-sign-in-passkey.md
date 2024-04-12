@@ -48,7 +48,7 @@ To sign into your work or school account with a passkey, follow these steps on y
 
 1. Once you've signed in, you're device displays a screen similar to this one:
 
-    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct/welcome-page.png" alt-text="Screenshot of Microsoft Welcome page.":::
+    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct/welcome.png" alt-text="Screenshot of Microsoft Welcome page.":::
 
 >[!NOTE]
 > Biometric data stays on your device and is never shared with Microsoft.
