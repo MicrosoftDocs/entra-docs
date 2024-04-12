@@ -1,18 +1,18 @@
 ---
-title: 'Microsoft Entra application proxy: Version release history'
-description: This article lists all releases of Microsoft Entra application proxy and describes new features and fixed issues.
+title: Microsoft Entra private network connector version release notes
+description: This article lists all releases of Microsoft Entra private network connector and describes new features and fixed issues.
 author: kenwith
 manager: amycolannino
-ms.service: entra-id
+ms.service: global-secure-access
 ms.topic: reference
-ms.date: 04/02/2024
+ms.date: 04/12/2024
 ms.subservice: app-proxy
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Microsoft Entra application proxy: Version release history
-This article lists the versions and features of Microsoft Entra application proxy. The Microsoft Entra ID team regularly updates application proxy with new features and functionality. Application proxy connectors are [updated automatically when a new major version is released](application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-). 
+# Microsoft Entra private network connector: Version release history
+This article lists the versions and features of Microsoft Entra private network connector. The Microsoft Entra ID team regularly updates the private network connector with new features and functionality. Microsoft Entra private network connectors are [updated automatically when a new major version is released](application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-). 
 
 Make sure that auto updates are enabled for your connectors to get the latest features and bug fixes. Microsoft Support might ask you to install the latest connector version to resolve a problem.
 
