@@ -205,7 +205,7 @@ The default specific parameters for the **Employee group membership changes** te
 |Category     |  mover       |  ❌       |
 |Trigger Type     | Attribute changes, Group Membership change        |  ✔️       |
 |Trigger details     | Depending on trigger type selection. <br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group.     |   ✔️      |
-|Scope type     | Depending on trigger type selection. <br> **Rule based**: Attribute changes.<br> **Group based**: Group membership change.        | ❌        |
+|Scope type     | Depends on trigger. <br> **Rule based**: Attribute changes.<br> **Group membership change**: Group based.       | ❌        |
 |Rule     |      |  ✔️       |
 |Tasks     | **Remove access package assignment for user**, **Remove user from selected Teams**, **Send email to notify manager of user move**     |  ✔️       |
 
@@ -222,7 +222,7 @@ The default specific parameters for the **Employee job profile change** template
 |Category     |  mover       |  ❌       |
 |Trigger Type     | Attribute changes, Group Membership change        |  ✔️       |
 |Trigger details     | Depending on trigger type selection. <br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group.     |   ✔️      |
-|Scope type     | Depending on trigger type selection. <br> • Attribute changes: Rule based <br>• Group membership changes: Group based         | ❌        |
+|Scope type     | Depends on trigger. <br> **Rule based**: Attribute changes.<br> **Group membership change**: Group based.         | ❌        |
 |Rule     | Rule based scope: (department eq 'Marketing')        |  ✔️       |
 |Tasks     | **Send email to notify manager of user move**, **Remove user from selected groups**, **Remove user from selected Teams**, **Request user access package assignment**    |  ✔️       |
 
