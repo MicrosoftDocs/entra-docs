@@ -132,3 +132,5 @@ items:
     href: /graph/api/resources/networkaccess-global-secure-access-api-overview
   - name: FAQs
     href: resource-faq.yml
+  - name: Version History
+    href: reference-version-history.md

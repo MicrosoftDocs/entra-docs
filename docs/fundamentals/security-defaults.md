@@ -115,9 +115,6 @@ One common method to improve protection for all users is to require a stronger f
 > [!NOTE]
 > In case of [B2B direct connect](~/external-id/b2b-direct-connect-overview.md) users, any multifactor authentication requirement from security defaults enabled in resource tenant will need to be satisfied, including multifactor authentication registration by the direct connect user in their home tenant.
 
-> [!IMPORTANT]
-> For non-interactive sign ins that require MFA, there is a change that this will now require MFA to be fulfilled before proceeding. This change will be active on all tenants created after February 2, 2024 and all other impacted tenants will be contacted when we roll out the change for their tenant.
-
 ### Block legacy authentication protocols
 
 To give your users easy access to your cloud apps, we support various authentication protocols, including legacy authentication. *Legacy authentication* is a term that refers to an authentication request made by:
