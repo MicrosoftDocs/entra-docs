@@ -53,7 +53,7 @@ To summarize, the overall process is as follows:
 
 1. [Enable the Private access traffic forwarding profile](#enable-microsoft-entra-private-access).
 
-## Create an private network connector group
+## Create a private network connector group
 
 To configure Quick Access, you must have a connector group with at least one active private network connector.
 

@@ -53,7 +53,7 @@ To summarize, the overall process is as follows:
 
 1. [Enable Microsoft Entra Private Access](#enable-microsoft-entra-private-access).
 
-## Create an private network connector group
+## Create a private network connector group
 
 To configure a Global Secure Access app, you must have a connector group with at least one active private network connector.
 
