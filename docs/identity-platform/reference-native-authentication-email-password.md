@@ -1648,7 +1648,7 @@ Lastly, since updating of the user’s configuration with the new password incur
 Here's an example (we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com /resetpassword/v1.0/poll_completion HTTP/1.1
+POST /{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/poll_completion HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
