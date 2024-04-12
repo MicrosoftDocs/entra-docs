@@ -87,7 +87,7 @@ June 20, 2023: Released for download. This version is only available for install
 - Updated partner notices.
 
 ### Fixed issues
-- Silent registration of connector with credentials. For more information, see [Create an unattended installation script for the Microsoft Entra application proxy connector](application-proxy-register-connector-powershell.md).
+- Silent registration of connector with credentials. For more information, see [Create an unattended installation script for the Microsoft Entra application proxy connector](../identity/app-proxy/application-proxy-register-connector-powershell.md).
 - Fixed dropping of `Secure` and `HttpOnly` attributes on the cookies passed by backend servers when there are trailing spaces in these attributes.
 - Fixed services crash when back-end server of an application sets "Set-Cookie" header with empty value.
 
@@ -107,7 +107,7 @@ March 22, 2022: Released for download. This version is only available for instal
 
 - Increased the number of HTTP headers supported on HTTP requests from 41 to 60.
 - Improved error handling of TLS failures between the connector and Azure services.
-- Updated the default connection limit to 200 for connector traffic when going through outbound proxy. To learn more about outbound proxy, see [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md#use-the-outbound-proxy-server).
+- Updated the default connection limit to 200 for connector traffic when going through outbound proxy. To learn more about outbound proxy, see [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md#use-the-outbound-proxy-server).
 - Deprecated the use of Active Directory Authentication Library (ADAL) and implemented Microsoft Authentication Library (MSAL) as part of the connector installation flow.
 
 ### Fixed issues
@@ -122,9 +122,9 @@ This version is only available for install via the download page.
 
 ### New features and improvements
 -	Improved support for Azure Government cloud environments. For steps on how to properly install the connector for Azure Government cloud review the [prerequisites](~/identity/hybrid/connect/reference-connect-government-cloud.md#allow-access-to-urls) and [installation steps](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
-- Support for using the Remote Desktop Services web client with application proxy. For more information, see [Publish Remote Desktop with Microsoft Entra application proxy](application-proxy-integrate-with-remote-desktop-services.md).
+- Support for using the Remote Desktop Services web client with application proxy. For more information, see [Publish Remote Desktop with Microsoft Entra application proxy](../identity/app-proxy/application-proxy-integrate-with-remote-desktop-services.md).
 - Improved websocket extension negotiations. 
-- Support for optimized routing between connector groups and application proxy cloud services based on region. For more information, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-network-topology.md). 
+- Support for optimized routing between connector groups and application proxy cloud services based on region. For more information, see [Optimize traffic flow with Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md). 
 
 ### Fixed issues
 - Fixed a websocket issue that forced lowercase strings.
@@ -149,9 +149,9 @@ April 07, 2020: Released for download.
 This version is only available for install via the download page. 
 
 ### New features and improvements
-- Connectors only use Transport Layer Security (TLS) 1.2 for all connections. For more information, see [connector prerequisites](application-proxy-add-on-premises-application.md#prerequisites).
+- Connectors only use Transport Layer Security (TLS) 1.2 for all connections. For more information, see [connector prerequisites](../identity/app-proxy/application-proxy-add-on-premises-application.md#prerequisites).
 - Improved signaling between the connector and Azure services. The signaling supports reliable sessions for Windows Communication Foundation (WCF) communication between the connector and Azure services and Domain Name System (DNS) caching improvements for WebSocket communications.
-- Support for configuring a proxy between the connector and the backend application. For more information, see [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md).
+- Support for configuring a proxy between the connector and the backend application. For more information, see [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md).
 
 ### Fixed issues
 - Removed falling back to port 8080 for communications from the connector to Azure services.
@@ -166,7 +166,7 @@ September 20, 2018: Released for download.
 
 ### New features and improvements
 
-- Added WebSocket support for the QlikSense application. To learn more about how to integrate QlikSense with application proxy, see this [walkthrough](application-proxy-qlik.md). 
+- Added WebSocket support for the QlikSense application. To learn more about how to integrate QlikSense with application proxy, see this [walkthrough](../identity/app-proxy/application-proxy-qlik.md). 
 - Improved the installation wizard to make it easier to configure an outbound proxy. 
 - Set TLS 1.2 as the default protocol for connectors. 
 - Added a new End-User License Agreement (EULA).  
@@ -204,7 +204,7 @@ April 15, 2017: Released for download.
 
 ### New features and improvements
 
-- Simplified onboarding and management with fewer required ports. Application proxy now requires opening only two standard outbound ports: 443 and 80. Application proxy continues to use only outbound connections, so you still don't need any components in a public facing network. For more information, see our [configuration documentation](application-proxy-add-on-premises-application.md).  
+- Simplified onboarding and management with fewer required ports. Application proxy now requires opening only two standard outbound ports: 443 and 80. Application proxy continues to use only outbound connections, so you still don't need any components in a public facing network. For more information, see our [configuration documentation](../identity/app-proxy/application-proxy-add-on-premises-application.md).  
 - If supported by your external proxy or firewall, you can now open your network by DNS instead of IP range. Application proxy services require connections to `*.msappproxy.net` and `*.servicebus.windows.net` only.
 
 
@@ -213,5 +213,5 @@ April 15, 2017: Released for download.
 If you're using an application proxy connector version earlier than 1.5.36.0, update to the latest version to ensure you have the latest fully supported features.
 
 ## Next steps
-- [Remote access to on-premises applications through Microsoft Entra application proxy](overview-what-is-app-proxy.md)
-- [Tutorial: Add an on-premises application for remote access through application proxy](application-proxy-add-on-premises-application.md)
+- [Using Microsoft Entra application proxy to publish on-premises apps for remote users](../identity/app-proxy/overview-what-is-app-proxy.md)
+- [What is Global Secure Access?](overview-what-is-global-secure-access.md)
