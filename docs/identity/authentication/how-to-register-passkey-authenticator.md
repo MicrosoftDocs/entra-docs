@@ -155,20 +155,20 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 1. Name the passkey something memorable to you and select **Done**.
    
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/success.png" alt-text="Screenshot where user can change friendly name of the new sign-in method.":::   
---->
+
 
 ## Troubleshooting
 
-- If the passkey for your account is already registered in Authenticator, you receive the following error: 
+If the passkey for your account is already registered in Authenticator, you'll see this error: 
 
 :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-already-exists.png" alt-text="Screenshot of the passkey that already exists in Microsoft Authenticator for iOS devices.":::
 
-- To re-register a passkey for your account, first remove the passkey from Authenticator. Click the *Trash* icon, then tap **Delete** to confirm.
+To re-register a passkey for your account, first remove the passkey from Authenticator. Click the *Trash* icon, then tap **Delete** to confirm.
 
 :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-delete.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for iOS devices.":::
 
 > [!NOTE]
-> You also need to delete the passkey from **Security Info**, using a web browser and logging in to [My Security info](https://aka.ms/mysecurityinfo).  
+> You also need to delete the passkey from [My Security info](https://aka.ms/mysecurityinfo).  
 
 # [**Android**](#tab/Android)
 
