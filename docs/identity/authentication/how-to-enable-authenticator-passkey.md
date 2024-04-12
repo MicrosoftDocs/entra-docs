@@ -1,6 +1,6 @@
 ---
-title: How to enable Microsoft Authenticator passkey sign in for Microsoft Entra ID (preview)
-description: Learn about how to enable Microsoft Authenticator passkey sign in for Microsoft Entra ID.
+title: How to enable passkeys in Microsoft Authenticator sign in for Microsoft Entra ID (preview)
+description: Learn about how to enable passkeys in Microsoft Authenticator sign in for Microsoft Entra ID.
 
 ms.service: entra-id
 ms.subservice: authentication
@@ -12,11 +12,11 @@ author: justinha
 manager: amycolannino
 ms.reviewer: calui
 
-# Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and enforce Microsoft Authenticator passkey sign in for end users.
+# Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and enforce passkeys in Authenticator sign in for end users.
 ---
-# Enable Microsoft Authenticator passkey sign in (preview)
+# Enable passkeys in Microsoft Authenticator sign in (preview)
 
-This article lists steps to enable and enforce Microsoft Authenticator passkey sign-in for Microsoft Entra ID. First, you update the Authentication methods policy to allow end users to sign in with Authenticator passkey. Then you create a custom authentication strength to enforce passkey sign-in when users access a sensitive resource.
+This article lists steps to enable and enforce passkeys in Authenticator sign-in for Microsoft Entra ID. First, you update the Authentication methods policy to allow end users to sign in with passkeys in Authenticator. Then you create a custom authentication strength to enforce passkey sign-in when users access a sensitive resource.
 
 ## Requirements
 
@@ -32,14 +32,14 @@ This article lists steps to enable and enforce Microsoft Authenticator passkey s
 To use any passkeys (FIDO2) for sign in to web apps and services, you need to use a browser that supports the WC3 WebAuthn standard. 
 Supported browsers include Microsoft Edge, Chrome, Firefox, and Safari. For more information, see [Browser support of FIDO2 passwordless authentication](fido2-compatibility.md).
 
-## Enable Authenticator passkey in the admin center
+## Enable passkeys in Authenticator in the admin center
 
-To enable Authenticator passkey, you edit the **Passkey (FIDO2)** method policy, the same way you enable another passkey provider. The **Microsoft Authenticator** policy doesn't give you the option to enable a passkey. 
+To enable passkeys in Authenticator, you edit the **Passkey (FIDO2)** method policy, the same way you enable another passkey provider. The **Microsoft Authenticator** policy doesn't give you the option to enable a passkey. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
 1. Under the method **Passkey (FIDO2)**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
-1. On the **Configure** tab, set **Enforce key restrictions** to **Yes**, set **Restrict specific keys** to **Allow**. Select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. Otherwise, add the following AAGUIDs to enable the Authenticator passkey preview for iOS and Android:
+1. On the **Configure** tab, set **Enforce key restrictions** to **Yes**, set **Restrict specific keys** to **Allow**. Select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. Otherwise, add the following AAGUIDs to enable the passkeys in Authenticator (preview) for iOS and Android:
 
    - Authenticator for Android: de1e552d-db1d-4423-a619-566b625cdc84
    - Authenticator for iOS: 90a3ccdf-635c-4729-a248-9b709135078f
@@ -65,9 +65,9 @@ The following list describes other optional settings:
 
 After you finish the configuration, select **Save**.
 
-## Enable Authenticator passkey using Graph Explorer
+## Enable passkeys in Authenticator using Graph Explorer
 
-In addition to using the Microsoft Entra admin center, you can also enable Authenticator passkey by using Graph Explorer. **Global Administrators** and **Authentication Policy Administrators** can update the Authentication methods policy to allow the AAGUIDs for Authenticator. 
+In addition to using the Microsoft Entra admin center, you can also enable passkeys in Authenticator by using Graph Explorer. **Global Administrators** and **Authentication Policy Administrators** can update the Authentication methods policy to allow the AAGUIDs for Authenticator. 
 
 To configure the policy by using Graph Explorer:
 
@@ -120,7 +120,7 @@ To remove a passkey associated with a user account, delete the key from the user
 > [!NOTE]
 > Users also need to remove the passkey in Authenticator on their device.
 
-## Enforce Authenticator passkey sign-in 
+## Enforce passkeys in Authenticator sign-in 
 
 To make users sign in with a passkey when they access a sensitive resource, you must do one of the following: 
 
@@ -135,7 +135,7 @@ The following steps explain how to create a Conditional Access policy with a cus
 1. Provide a descriptive **Name** for your new authentication strength.
 1. Optionally provide a **Description**.
 1. Select **Passkeys (FIDO2)** and then select **Advanced options**.
-1. Add AAGUIDs for Authenticator passkey:
+1. Add AAGUIDs for passkeys in Authenticator:
 
    - Authenticator for Android: de1e552d-db1d-4423-a619-566b625cdc84
    - Authenticator for iOS: 90a3ccdf-635c-4729-a248-9b709135078f

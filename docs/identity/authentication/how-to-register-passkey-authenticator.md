@@ -1,5 +1,5 @@
 ---
-title: Register Microsoft Authenticator passkey on Android and iOS devices in MySecurityInfo (preview)
+title: Register passkeys in Authenticator on Android and iOS devices in MySecurityInfo (preview)
 description: Registration and management of passkey with Authenticator on iOS in MySecurityInfo (preview).
 
 ms.service: entra-id 
@@ -87,7 +87,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-success.png" alt-text="Screenshot of the successful creation of a passkey in Microsoft Authenticator for iOS devices.":::
 
-   1. You can now see the Microsoft Authenticator managed passkey along with your other registered security info options.
+   1. You can now see the passkeys in Authenticator along with your other registered security info options.
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-listed-security-info.png" alt-text="Screenshot of the Security Info user display of the successful passkey.":::
 
@@ -246,7 +246,7 @@ To re-register a passkey for your account, first remove the passkey from Authent
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/done.png" alt-text="Screenshot of choosing Authenticator App in Microsoft Authenticator for Android devices.":::
 
-   1. You can now see the Microsoft Authenticator managed passkey along with your other registered security info options.
+   1. You can now see the passkeys in Authenticator along with your other registered security info options.
 
 --->
 
