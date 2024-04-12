@@ -32,14 +32,14 @@ You need to meet the following prerequisites before beginning your implementatio
    * A VM hosted within any hypervisor solution
    * A VM hosted in Azure to enable outbound connection to the application proxy service.
 
-* See [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md) for a more detailed overview.
+* See [Understand Microsoft Entra private network connectors](application-proxy-connectors.md) for a more detailed overview.
 
      * Connector machines must [be enabled for TLS 1.2](application-proxy-add-on-premises-application.md) before installing the connectors.
 
      * If possible, deploy connectors in the [same network](application-proxy-network-topology.md) and segment as the back-end web application servers. It's best to deploy connectors after you complete a discovery of applications.
      * We recommend that each connector group has at least two connectors to provide high availability and scale. Having three connectors is optimal in case you may need to service a machine at any point. Review the [connector capacity table](./application-proxy-connectors.md#capacity-planning) to help with deciding what type of machine to install connectors on. The larger the machine the more buffer and performant the connector will be.
 
-* **Network access settings**: Microsoft Entra application proxy connectors [connect to Azure via HTTPS (TCP Port 443) and HTTP (TCP Port 80)](application-proxy-add-on-premises-application.md).
+* **Network access settings**: Microsoft Entra private network connectors [connect to Azure via HTTPS (TCP Port 443) and HTTP (TCP Port 80)](application-proxy-add-on-premises-application.md).
 
    * Terminating connector TLS traffic isn't supported and will prevent connectors from establishing a secure channel with their respective Microsoft Entra application proxy endpoints.
 
@@ -236,7 +236,7 @@ With pre-authentication enabled, Microsoft Entra ID will challenge users first f
 
 ### Enable single sign-on
 
-SSO provides the best possible user experience and security because users only need to sign in once when accessing Microsoft Entra ID. Once a user has pre-authenticated, SSO is performed by the application proxy connector authenticating to the on-premises application, on behalf of the user. The backend application processes the login as if it were the user themselves.
+SSO provides the best possible user experience and security because users only need to sign in once when accessing Microsoft Entra ID. Once a user has pre-authenticated, SSO is performed by the private network connector authenticating to the on-premises application, on behalf of the user. The backend application processes the login as if it were the user themselves.
 
 Choosing the **Passthrough** option allows users to access the published application without ever having to authenticate to Microsoft Entra ID.
 
@@ -291,15 +291,15 @@ Microsoft Entra ID provides additional insights into your organization’s appli
 
 These logs provide detailed information about logins to applications configured with application proxy and the device and the user accessing the application. [Audit logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context) are located in the Microsoft Entra admin center and in [Audit API](/graph/api/resources/directoryaudit) for export. Additionally, [usage and insights reports](~/identity/monitoring-health/concept-usage-insights-report.md?context=azure/active-directory/manage-apps/context/manage-apps-context) are also available for your application.
 
-#### Application proxy connector monitoring
+#### private network connector monitoring
 
-The connectors and the service take care of all the high availability tasks. You can monitor the status of your connectors from the application proxy page in the Microsoft Entra admin center. For more information about connector maintenance see [Understand Microsoft Entra application proxy connectors](./application-proxy-connectors.md#maintenance).
+The connectors and the service take care of all the high availability tasks. You can monitor the status of your connectors from the application proxy page in the Microsoft Entra admin center. For more information about connector maintenance see [Understand Microsoft Entra private network connectors](./application-proxy-connectors.md#maintenance).
 
-![Example: Microsoft Entra application proxy connectors](./media/application-proxy-connectors/app-proxy-connectors.png)
+![Example: Microsoft Entra private network connectors](./media/application-proxy-connectors/app-proxy-connectors.png)
 
 #### Windows event logs and performance counters
 
-Connectors have both admin and session logs. The admin logs include key events and their errors. The session logs include all the transactions and their processing details. Logs and counters are located in Windows Event Logs for more information see [Understand Microsoft Entra application proxy connectors](./application-proxy-connectors.md#under-the-hood). Follow this [tutorial to configure event log data sources in Azure Monitor](/azure/azure-monitor/agents/data-sources-windows-events).
+Connectors have both admin and session logs. The admin logs include key events and their errors. The session logs include all the transactions and their processing details. Logs and counters are located in Windows Event Logs for more information see [Understand Microsoft Entra private network connectors](./application-proxy-connectors.md#under-the-hood). Follow this [tutorial to configure event log data sources in Azure Monitor](/azure/azure-monitor/agents/data-sources-windows-events).
 
 ### Troubleshooting guide and steps
 

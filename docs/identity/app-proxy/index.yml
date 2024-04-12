@@ -26,7 +26,7 @@ landingContent:
         links:
           - text: Add an on-premises application for remote access through application proxy in Microsoft Entra ID
             url: application-proxy-add-on-premises-application.md
-          - text: Understand Microsoft Entra application proxy connectors
+          - text: Understand Microsoft Entra private network connectors
             url: application-proxy-connectors.md
   - title: Understand single sign-on
     linkLists:
