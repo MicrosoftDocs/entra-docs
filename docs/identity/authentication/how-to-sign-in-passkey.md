@@ -46,7 +46,7 @@ To sign into your work or school account with a passkey, follow these steps on y
 
     :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct/sign-in-with-passkey.png" alt-text="Screenshot showing that options for signing in with a passkey.":::
 
-1. Once you've signed in, you're device displays a screen similar to this one:
+1. Once you're signed in, your device displays a screen similar to this one:
 
     :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct/welcome.png" alt-text="Screenshot of Microsoft Welcome page.":::
 
