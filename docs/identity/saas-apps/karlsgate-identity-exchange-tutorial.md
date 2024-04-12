@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Karlsgate Identity Exchange (KIE)
+title: Tutorial Microsoft Entra SSO integration with Karlsgate Identity Exchange (KIE)
 description: Learn how to configure single sign-on between Microsoft Entra ID and Karlsgate Identity Exchange (KIE).
 
 author: jeevansd
@@ -16,7 +16,7 @@ ms.author: jeedes
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Karlsgate Identity Exchange (KIE) so that I can control who has access to Karlsgate Identity Exchange (KIE), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Karlsgate Identity Exchange (KIE)
+# Tutorial: Microsoft Entra SSO integration with Karlsgate Identity Exchange (KIE)
 
 In this article, you learn how to integrate the Karlsgate Identity Exchange (KIE) with Microsoft Entra ID. Karlsgate provides Privacy Enhancing Technology for protecting data at rest, in transit, & in use. Karlsgate’s zero-trust approach allows the free flow of insights while maintaining custody of sensitive data. When you integrate Karlsgate Identity Exchange (KIE) with Microsoft Entra ID, you can:
 
@@ -45,13 +45,13 @@ To integrate Microsoft Entra ID with Karlsgate Identity Exchange (KIE), you need
 
 ## Add application and assign a test user
 
-Before you begin the process of configuring single sign-on, you need to add the Karlsgate Identity Exchange (KIE) application from the Microsoft Entra gallery. You need a test user account to assign to the application and test the single sign-on configuration.
+Before you begin the process of configuring single sign-on, you need to add the Karlsgate Identity Exchange (KIE) SSO Add-on application from the Microsoft Entra gallery. You need a test user account to assign to the application and test the single sign-on configuration.
 
 <a name='add-karlsgate-identity-exchange-kie-from-the-azure-ad-gallery'></a>
 
-### Add Karlsgate Identity Exchange (KIE) from the Microsoft Entra gallery
+### Add Karlsgate Identity Exchange (KIE) SSO Add-on from the Microsoft Entra gallery
 
-Add Karlsgate Identity Exchange (KIE) from the Microsoft Entra application gallery to configure single sign-on with Karlsgate Identity Exchange (KIE). For more information on how to add application from the gallery, see the [Quickstart: Add application from the gallery](~/identity/enterprise-apps/add-application-portal.md).
+Add Karlsgate Identity Exchange (KIE) SSO Add-on from the Microsoft Entra application gallery to configure single sign-on with Karlsgate Identity Exchange (KIE). For more information on how to add application from the gallery, see the [Quickstart: Add application from the gallery](~/identity/enterprise-apps/add-application-portal.md).
 
 <a name='create-and-assign-azure-ad-test-user'></a>
 
@@ -137,4 +137,4 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 ## Next steps
 
-Once you configure Karlsgate Identity Exchange (KIE) you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).
+Once you configure Karlsgate Identity Exchange (KIE) SSO Add-on you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).
