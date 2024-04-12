@@ -57,7 +57,7 @@ The external user authenticating via a browser. The ability to pre authenticate 
 
 ### Delegation service
 
-The application proxy connector that gets a Kerberos service ticket for users from a Kerberos Key Distribution Center (KCD).
+The private network connector that gets a Kerberos service ticket for users from a Kerberos Key Distribution Center (KCD).
 
 The external communications between the client and the Azure front end have no bearing on KCD. These communications only make sure that KCD works. The application proxy service is provided a valid user ID that is used to get a Kerberos ticket. Without this ID, KCD isn't possible and fails.
 
@@ -103,7 +103,7 @@ The consumer of the Kerberos ticket the connector provided. At this stage, expec
 
    - Re-enable preauthentication in the portal. Authenticate through Azure by attempting to connect to the application via its external URL. If SSO fails, you see a forbidden error message in the browser and event 13022 in the log:
 
-     *Microsoft Entra application proxy connector can't authenticate the user because the backend server responds to Kerberos authentication attempts with an HTTP 401 error.*
+     *Microsoft Entra private network connector can't authenticate the user because the backend server responds to Kerberos authentication attempts with an HTTP 401 error.*
 
       ![Shows HTTTP 401 forbidden error](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic8.png)
 

@@ -23,7 +23,7 @@ To perform the configuration, you need the following resources:
 - A Microsoft Office Web Apps Server farm to properly launch Office files from the on-premises SharePoint farm.
 - A [custom, verified domain](~/fundamentals/add-custom-domain.md) in the Microsoft Entra tenant.
 - On-premises Active Directory synchronized with Microsoft Entra Connect, through which users can [sign in to Azure](~/identity/hybrid/connect/plan-connect-user-signin.md).
-- An application proxy connector installed and running on a machine within the corporate domain.
+- a private network connector installed and running on a machine within the corporate domain.
 
 Configuring SharePoint with application proxy requires two URLs:
 - An external URL, visible to end-users and determined in Microsoft Entra ID. This URL can use a custom domain. Learn more about [working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md).
@@ -57,7 +57,7 @@ In this step, you create an application in your Microsoft Entra tenant that uses
    1. On the application page in the portal, select **Single sign-on**.
    1. For **Single Sign-on Mode**, select **Integrated Windows Authentication**.
    1. Set **Internal Application Service Principal Name (SPN)** to the value you set earlier. For this example, the value is `HTTP/sharepoint`.
-   1. Under **Delegated Login Identity**, select the most suitable option for your Active Directory forest configuration. For example if you have a single Active Directory domain in your forest, select **On-premises SAM account name** (as shown in the following screenshot). But if your users aren't in the same domain as SharePoint and the application proxy connector servers, select **On-premises user principal name** (not shown in the screenshot).
+   1. Under **Delegated Login Identity**, select the most suitable option for your Active Directory forest configuration. For example if you have a single Active Directory domain in your forest, select **On-premises SAM account name** (as shown in the following screenshot). But if your users aren't in the same domain as SharePoint and the private network connector servers, select **On-premises user principal name** (not shown in the screenshot).
 
    ![Configure integrated Windows authentication for SSO](./media/application-proxy-integrate-with-sharepoint-server/configure-iwa.png)
 
@@ -169,7 +169,7 @@ The `Setspn` command searches for the SPN before it adds it. If the SPN already 
 
 ### Make sure the connector is trusted for delegation to the SPN that was added to the SharePoint application pool account
 
-Configure the KCD so that the Microsoft Entra application proxy service can delegate user identities to the SharePoint application pool account. Configure KCD by enabling the application proxy connector to retrieve Kerberos tickets for your users who are authenticated in Microsoft Entra ID. Then, that server passes the context to the target application (SharePoint in this case).
+Configure the KCD so that the Microsoft Entra application proxy service can delegate user identities to the SharePoint application pool account. Configure KCD by enabling the private network connector to retrieve Kerberos tickets for your users who are authenticated in Microsoft Entra ID. Then, that server passes the context to the target application (SharePoint in this case).
 
 To configure the KCD, follow these steps for each connector machine:
 
@@ -192,4 +192,4 @@ If sign-in to the site isn't working, you can get more information about the iss
 ## Next steps
 
 * [Working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md)
-* [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md)
+* [Understand Microsoft Entra private network connectors](application-proxy-connectors.md)

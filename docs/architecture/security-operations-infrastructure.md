@@ -124,7 +124,7 @@ Organizations might need to monitor for and alert on the creation of new Microso
 
 ### AppProxy Connector
 
-Microsoft Entra ID and Microsoft Entra application proxy give remote users a single sign-on (SSO) experience. Users securely connect to on-premises apps without a virtual private network (VPN) or dual-homed servers and firewall rules. If your Microsoft Entra application proxy connector server is compromised, attackers could alter the SSO experience or change access to published applications.
+Microsoft Entra ID and Microsoft Entra application proxy give remote users a single sign-on (SSO) experience. Users securely connect to on-premises apps without a virtual private network (VPN) or dual-homed servers and firewall rules. If your Microsoft Entra private network connector server is compromised, attackers could alter the SSO experience or change access to published applications.
 
 To configure monitoring for Application Proxy, see [Troubleshoot Application Proxy problems and error messages](~/identity/app-proxy/application-proxy-troubleshoot.md). The data file that logs information can be found in Applications and Services Logs\Microsoft\AadApplicationProxy\Connector\Admin. For a complete reference guide to audit activity, see [Microsoft Entra audit activity reference](~/identity/monitoring-health/reference-audit-activities.md). Specific things to monitor:
 

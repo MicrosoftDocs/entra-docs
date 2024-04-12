@@ -41,7 +41,7 @@ Use the following sections to remove personal data from connector event logs. Yo
 
 ### View or export specific data
 
-To view or export specific data, search for related entries in each of the connector event logs. The logs are located at `C:\ProgramData\Microsoft\Microsoft AAD application proxy connector\Trace`.
+To view or export specific data, search for related entries in each of the connector event logs. The logs are located at `C:\ProgramData\Microsoft\Microsoft AAD private network connector\Trace`.
 
 Since the logs are text files, you can use [findstr](/windows-server/administration/windows-commands/findstr) to search for text entries related to a user.  
 
@@ -58,7 +58,7 @@ To find personal data logged by an application that uses Kerberos Constrained De
 
 To delete specific data:
 
-1. Generate a new log file. Restart the Microsoft Entra application proxy connector service. The new log file enables you to delete or modify the old log files. 
+1. Generate a new log file. Restart the Microsoft Entra private network connector service. The new log file enables you to delete or modify the old log files. 
 1. Follow the [View or export specific data](#view-or-export-specific-data) process described previously to find information that needs to be deleted. Search all of the connector logs.
 1. Either delete the relevant log files or selectively delete the fields that contain personal data. You can also delete all old log files if you don’t need them anymore.
 
