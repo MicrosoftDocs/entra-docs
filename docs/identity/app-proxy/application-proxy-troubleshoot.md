@@ -13,14 +13,14 @@ ms.reviewer: ashishj
 
 # Troubleshoot application proxy problems and error messages
 
-First, make sure the application proxy connectors are configured correctly. For more information, see [Debug application proxy connector issues](application-proxy-debug-connectors.md) and [Debug application proxy application issues](./application-proxy-debug-apps.md).
+First, make sure the private network connectors are configured correctly. For more information, see [Debug private network connector issues](application-proxy-debug-connectors.md) and [Debug application proxy application issues](./application-proxy-debug-apps.md).
 
 If errors occur in accessing a published application or in publishing applications, check the following options to see if Microsoft Entra application proxy is working correctly:
 
-* Open the Windows Services console. Verify that the **Microsoft Entra application proxy connector** service is enabled and running. Look at the application proxy service properties page, as shown in the image.  
-  ![Microsoft Entra application proxy connector Properties window screenshot](./media/application-proxy-troubleshoot/connectorproperties.png)
-* Open Event Viewer and look for application proxy connector events in **Applications and Services Logs** > **Microsoft** > **AadApplicationProxy** > **Connector** > **Admin**.
-* Review detailed logs. [Turn on application proxy connector session logs](application-proxy-connectors.md#under-the-hood).
+* Open the Windows Services console. Verify that the **Microsoft Entra private network connector** service is enabled and running. Look at the application proxy service properties page, as shown in the image.  
+  ![Microsoft Entra private network connector Properties window screenshot](./media/application-proxy-troubleshoot/connectorproperties.png)
+* Open Event Viewer and look for private network connector events in **Applications and Services Logs** > **Microsoft** > **AadApplicationProxy** > **Connector** > **Admin**.
+* Review detailed logs. [Turn on private network connector session logs](application-proxy-connectors.md#under-the-hood).
 
 ## The page isn't rendered correctly
 You have problems with your application rendering or functioning incorrectly without receiving specific error messages. The problem occurs if you published the article path, but the application requires content that exists outside that path.
@@ -58,15 +58,15 @@ To do so, we recommend using the [custom domains](how-to-configure-custom-domain
 ## I'm having a problem when signing in to my application
 I get the error `Can't Access this Corporate Application`. To solve this issue, see [Bad gateway timeout error](application-proxy-sign-in-bad-gateway-timeout-error.md).
 
-## I'm having a problem with the application proxy connector
-[I have issues installing the application proxy connector](application-proxy-connector-installation-problem.md).
+## I'm having a problem with the private network connector
+[I have issues installing the private network connector](application-proxy-connector-installation-problem.md).
 
 ## Connector errors
 
-If registration fails during the connector wizard installation, there are two ways to view the reason for the failure. Either look in the event log under `Windows Logs\Application (filter by Source = "Microsoft Entra application proxy connector"` , or run the following Windows PowerShell command:
+If registration fails during the connector wizard installation, there are two ways to view the reason for the failure. Either look in the event log under `Windows Logs\Application (filter by Source = "Microsoft Entra private network connector"` , or run the following Windows PowerShell command:
 
 ```powershell
-Get-EventLog application –source "Microsoft AAD application proxy connector" –EntryType "Error" –Newest 1
+Get-EventLog application –source "Microsoft AAD private network connector" –EntryType "Error" –Newest 1
 ```
 
 Once you find the connector error from the event log, use this table of common errors to resolve the problem:
@@ -107,7 +107,7 @@ This list covers errors that your end users might encounter when they try to acc
 | `This corporate app can’t be accessed. You are not authorized to access this application. Authorization failed. Make sure that the user has a license for Microsoft Entra ID P1 or P2.` | Your user gets this error when trying to access the app you published if they weren't explicitly assigned with a Premium license by the subscriber’s administrator. Go to the subscriber’s Active Directory **Licenses** tab and make sure that this user or user group is assigned a Premium license. |
 | `A server with the specified host name could not be found.` | Your user gets this error when trying to access the app you published if the application's custom domain isn't configured correctly. Check the certificate for the domain and configure the Domain Name System (DNS) record correctly. For more information, see [Working with custom domains in Microsoft Entra application proxy](./how-to-configure-custom-domain.md). |
 | `Forbidden: This corporate app can't be accessed OR The user could not be authorized. Make sure the user is defined in your on-premises AD and that the user has access to the app in your on-premises AD.` | The issue could be a problem with access to authorization information. To learn more, see (https://support.microsoft.com/help/331951/some-applications-and-apis-require-access-to-authorization-information). In a nutshell, add the app proxy connector machine account to the "Windows Authorization Access Group" builtin domain group to resolve. |
-| `InternalServerError: This corporate app can’t be accessed right now. Please try again later… ConnectorError:Unauthorized.` | The connector secures outbound connections to the Microsoft Entra application proxy cloud service endpoints using a client certificate. The error occurs when the client certificate fails to reach the endpoint. For example, a network device performing Transport Layer Security (TLS) inspection or breaking the TLS connection. Avoid inline inspection and termination of outbound TLS communications. Inspection and termination must not happen between Microsoft Entra application proxy connectors and Microsoft Entra application proxy cloud services.|
+| `InternalServerError: This corporate app can’t be accessed right now. Please try again later… ConnectorError:Unauthorized.` | The connector secures outbound connections to the Microsoft Entra application proxy cloud service endpoints using a client certificate. The error occurs when the client certificate fails to reach the endpoint. For example, a network device performing Transport Layer Security (TLS) inspection or breaking the TLS connection. Avoid inline inspection and termination of outbound TLS communications. Inspection and termination must not happen between Microsoft Entra private network connectors and Microsoft Entra application proxy cloud services.|
 
 
 ## See also

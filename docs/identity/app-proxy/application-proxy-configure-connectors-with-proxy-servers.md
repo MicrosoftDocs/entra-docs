@@ -13,7 +13,7 @@ ms.reviewer: ashishj
 
 # Work with existing on-premises proxy servers
 
-Configure Microsoft Entra application proxy connectors to use outbound proxy servers. The article assumes the network environment already has a proxy server.
+Configure Microsoft Entra private network connectors to use outbound proxy servers. The article assumes the network environment already has a proxy server.
 
 We start by looking at these main deployment scenarios:
 
@@ -21,7 +21,7 @@ We start by looking at these main deployment scenarios:
 * Configure connectors to use an outbound proxy to access Microsoft Entra application proxy.
 * Configure using a proxy between the connector and backend application.
 
-For more information about how connectors work, see [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md).
+For more information about how connectors work, see [Understand Microsoft Entra private network connectors](application-proxy-connectors.md).
 
 ## Bypass outbound proxies
 
@@ -173,13 +173,13 @@ The following examples are specific to Message Analyzer, but the principles can 
 
 For initial troubleshooting, perform the following steps:
 
-1. From `services.msc`, stop the Microsoft Entra application proxy connector service.
+1. From `services.msc`, stop the Microsoft Entra private network connector service.
 
-   ![Microsoft Entra application proxy connector service in services.msc](./media/application-proxy-configure-connectors-with-proxy-servers/services-local.png)
+   ![Microsoft Entra private network connector service in services.msc](./media/application-proxy-configure-connectors-with-proxy-servers/services-local.png)
 
 1. Run *Message Analyzer* as an administrator.
 1. Select **Start local trace**.
-1. Start the Microsoft Entra application proxy connector service.
+1. Start the Microsoft Entra private network connector service.
 1. Stop the network capture.
 
    ![Screenshot shows the Stop network capture button](./media/application-proxy-configure-connectors-with-proxy-servers/stop-trace.png)
@@ -193,7 +193,7 @@ A synchronization (SYN) packet is the first packet sent to establish a TCP conne
 
 ### Check if the connector traffic uses outbound proxies
 
-If you configured your application proxy connector traffic to go through the proxy servers, look for failed `https` connections to your proxy.
+If you configured your private network connector traffic to go through the proxy servers, look for failed `https` connections to your proxy.
 
 Use the Message Analyzer filter to identify failed HTTPS connection attempts to your proxy. Enter `(https.Request or https.Response) and tcp.port==8080` in the Message Analyzer filter, replacing `8080` with your proxy service port. Select **Apply** to see the filter results.
 
@@ -203,5 +203,5 @@ If you see other response codes, such as 407 or 502, that means that the proxy i
 
 ## Next steps
 
-- [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md)
+- [Understand Microsoft Entra private network connectors](application-proxy-connectors.md)
 - [Visit the Microsoft Question and Answer (Q&A) page for Microsoft Entra ID](/answers/tags/455/entra-id)
