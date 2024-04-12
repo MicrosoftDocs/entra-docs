@@ -90,16 +90,14 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
  	1. Under **Identifier (Entity ID)**, click **Add identifier** link. Paste the ACS URL value on the Identifier field.
 
          > [!Note]
-         > Use below pattern if you are configuring SAML SSO on any of the following three Orchestrator products: "HPE Aruba Networking EdgeConnect Cloud Orchestrator", "HPE Aruba Networking EdgeConnect Service Provider Orchestrator" and "HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator"- `https://<SUBDOMAIN>.silverpeak.cloud/gms/rest/authentication/saml2/consume`.
-         
-         > Use below pattern if you are configuring SAML SSO on a self-deployed HPE Aruba Networking EdgeConnect Orchestrator (whether it's deployed on-premises or in a public cloud environment such as Microsoft Entra)- `https://<PUBLIC-IP-ADDRESS-OF-ORCHESTRATOR>/gms/rest/authentication/saml2/consume`.
+         > 1. Use below pattern if you are configuring SAML SSO on any of the following three Orchestrator products: "HPE Aruba Networking EdgeConnect Cloud Orchestrator", "HPE Aruba Networking EdgeConnect Service Provider Orchestrator" and "HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator"- `https://<SUBDOMAIN>.silverpeak.cloud/gms/rest/authentication/saml2/consume`.
+         > 1.  Use below pattern if you are configuring SAML SSO on a self-deployed HPE Aruba Networking EdgeConnect Orchestrator (whether it's deployed on-premises or in a public cloud environment such as Microsoft Entra)- `https://<PUBLIC-IP-ADDRESS-OF-ORCHESTRATOR>/gms/rest/authentication/saml2/consume`.
 
 	2. Under **Reply URL (Assertion Consumer Service URL)**, click **Add reply URL link**. Paste the same ACS URL value on the Reply URL field.
 
          > [!Note]
-         > Use below pattern if you are configuring SAML SSO on any of the following three Orchestrator products: "HPE Aruba Networking EdgeConnect Cloud Orchestrator", "HPE Aruba Networking EdgeConnect Service Provider Orchestrator" and "HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator"- `https://<SUBDOMAIN>.silverpeak.cloud/gms/rest/authentication/saml2/consume`.
-         
-         > Use below pattern if you are configuring SAML SSO on a self-deployed HPE Aruba Networking EdgeConnect Orchestrator (whether it's deployed on-premises or in a public cloud environment such as Microsoft Entra)- `https://<PUBLIC-IP-ADDRESS-OF-ORCHESTRATOR>/gms/rest/authentication/saml2/consume`.
+         > 1. Use below pattern if you are configuring SAML SSO on any of the following three Orchestrator products: "HPE Aruba Networking EdgeConnect Cloud Orchestrator", "HPE Aruba Networking EdgeConnect Service Provider Orchestrator" and "HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator"- `https://<SUBDOMAIN>.silverpeak.cloud/gms/rest/authentication/saml2/consume`.
+         > 1. Use below pattern if you are configuring SAML SSO on a self-deployed HPE Aruba Networking EdgeConnect Orchestrator (whether it's deployed on-premises or in a public cloud environment such as Microsoft Entra)- `https://<PUBLIC-IP-ADDRESS-OF-ORCHESTRATOR>/gms/rest/authentication/saml2/consume`.
 
 	3. Under **Logout URL (Optional)**, paste the **EdgeConnect SLO Endpoint** value from the Orchestrator’s Remote Authentication Server page as shown on the image below:
 
