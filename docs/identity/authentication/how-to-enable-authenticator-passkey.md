@@ -34,11 +34,11 @@ Supported browsers include Microsoft Edge, Chrome, Firefox, and Safari. For more
 
 ## Enable Authenticator passkey in the admin center
 
-To enable Authenticator passkey, you edit the **Passkey (FIDO2)** method policy, the same way you enable another passkey provider. The **Microsoft Authenticator** policy doesn't give you the option to enable a passkey. 
+To enable Authenticator passkey, you edit the **FIDO2 security key** method policy, the same way you enable another passkey provider. The **Microsoft Authenticator** policy doesn't give you the option to enable a passkey. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
-1. Under the method **Passkey (FIDO2)**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
+1. Under the method **FIDO2 security key**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
 1. On the **Configure** tab, set **Enforce key restrictions** to **Yes**, set **Restrict specific keys** to **Allow**. Select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. Otherwise, add the following AAGUIDs to enable the Authenticator passkey preview for iOS and Android:
 
    - Authenticator for Android: de1e552d-db1d-4423-a619-566b625cdc84
@@ -113,7 +113,7 @@ To configure the policy by using Graph Explorer:
 To remove a passkey associated with a user account, delete the key from the user’s authentication methods.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and search for the user whose passkey needs to be removed.
-1. Select **Authentication methods** > right-click **passkey (FIDO2)** and select **Delete**. 
+1. Select **Authentication methods** > right-click **FIDO2 security key** and select **Delete**. 
 
     ![Screenshot of View Authentication Method details.](media/howto-authentication-passwordless-deployment/security-key-view-details.png)
 

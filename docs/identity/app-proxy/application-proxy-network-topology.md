@@ -20,8 +20,8 @@ Learn how to optimize traffic flow and network topology considerations when usin
 When an application is published through Microsoft Entra application proxy, traffic from the users to the applications flows through three connections:
 
 1. The user connects to the Microsoft Entra application proxy service public endpoint on Azure
-1. The application proxy connector connects to the application proxy service (outbound)
-1. The application proxy connector connects to the target application
+1. The private network connector connects to the application proxy service (outbound)
+1. The private network connector connects to the target application
 
 :::image type="content" source="./media/application-proxy-network-topology/application-proxy-three-hops.png" alt-text="Diagram showing traffic flow from user to target application." lightbox="./media/application-proxy-network-topology/application-proxy-three-hops.png":::
 
@@ -29,7 +29,7 @@ When an application is published through Microsoft Entra application proxy, traf
 
 When you sign up for a Microsoft Entra tenant, the region of your tenant is set with the region you choose. The **default** application proxy cloud service instances use the same, or closest, region as your Microsoft Entra tenant.
 
-For example, if your Microsoft Entra tenant's region is the United Kingdom, all your application proxy connectors at **default** is assigned to use service instances in European data centers. When your users access published applications, their traffic goes through the application proxy cloud service instances in this location.
+For example, if your Microsoft Entra tenant's region is the United Kingdom, all your private network connectors at **default** is assigned to use service instances in European data centers. When your users access published applications, their traffic goes through the application proxy cloud service instances in this location.
 
 If you have connectors installed in regions different from your default region, it's beneficial to change which region your connector group is optimized for to improve performance accessing these applications. Once a region is specified for a connector group, it connects to application proxy cloud services in the designated region.
 
@@ -88,7 +88,7 @@ Consider using a dedicated VPN or ExpressRoute link between Microsoft and your c
 
 ## Focus your optimization strategy
 
-There's little that you can do to control the connection between your users and the application proxy service. Users access your apps from a home network, a coffee shop, or a different region. Instead, you can optimize the connections from the application proxy service to the application proxy connectors to the apps. Consider incorporating the following patterns in your environment.
+There's little that you can do to control the connection between your users and the application proxy service. Users access your apps from a home network, a coffee shop, or a different region. Instead, you can optimize the connections from the application proxy service to the private network connectors to the apps. Consider incorporating the following patterns in your environment.
 
 ### Pattern 1: Put the connector close to the application
 
@@ -123,8 +123,8 @@ In this section, we walk through a few common scenarios. Assume that the Microso
 For these scenarios, we call each connection a "hop" and number them for easier discussion:
 
 - **Hop 1**: User to the application proxy service
-- **Hop 2**: application proxy service to the application proxy connector
-- **Hop 3**: application proxy connector to the target application 
+- **Hop 2**: application proxy service to the private network connector
+- **Hop 3**: private network connector to the target application 
 
 ### Use case 1
 
