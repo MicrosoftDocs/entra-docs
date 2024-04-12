@@ -53,9 +53,9 @@ Refer to the table for updated paths.
 |Category  |Old name   |New name|
 |----------|-----------|------------|
 |Installer file   |`AADApplicationProxyConnectorInstaller.exe`     | `MicrosoftEntraPrivateNetworkConnectorInstaller.exe`      |
-| Install location | `C:\Program Files\ Microsoft AAD App Proxy Connector` | `C:\Program Files\Microsoft Entra private network connector` |
+| Install location | `C:\Program Files\Microsoft AAD App Proxy Connector` | `C:\Program Files\Microsoft Entra private network connector` |
 | | `C:\Program Files\Microsoft AAD App Proxy Connector\Modules\AppProxyPSModule`	| `C:\Program Files\Microsoft Entra private network connector\Modules\MicrosoftEntraPrivateNetworkConnectorPSModule` |
-| |	`C:\Program Files\ Microsoft AAD App Proxy Connector Updater` | `C:\Program Files\Microsoft Entra private network connector Updater` |
+| |	`C:\Program Files\Microsoft AAD App Proxy Connector Updater` | `C:\Program Files\Microsoft Entra private network connector Updater` |
 | |	`C:\ProgramData\Microsoft\Microsoft AAD Application Proxy Connector` | `C:\ProgramData\Microsoft\Microsoft Entra private network connector` |
 | Application | `ApplicationProxyConnectorService.exe` | `MicrosoftEntraPrivateNetworkConnectorService.exe` |
 | |	`ApplicationProxyConnectorUpdaterService.exe` | `MicrosoftEntraPrivateNetworkConnectorUpdaterService.exe` |
