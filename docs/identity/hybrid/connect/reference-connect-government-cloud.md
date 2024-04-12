@@ -61,7 +61,7 @@ Follow these steps to install the agent for the Azure Government cloud:
    For Application Proxy:
 
    ```
-   AADApplicationProxyConnectorInstaller.exe ENVIRONMENTNAME="AzureUSGovernment" 
+   MicrosoftEntraPrivateNetworkConnectorInstaller.exe ENVIRONMENTNAME="AzureUSGovernment" 
    ```
 
 ## Single sign-on

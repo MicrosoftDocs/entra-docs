@@ -65,7 +65,7 @@ The browser error messages provide some good clues about why things fail. Record
 
 ![Example: Incorrect KCD configuration error](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic3.png)
 
-The corresponding entries seen in the event log show as events 13019 or 12027. Find the connector event logs in **Applications and Services Logs** &gt; **Microsoft** &gt; **AadApplicationProxy** &gt; **Connector** &gt; **Admin**.
+The corresponding entries seen in the event log show as events 13019 or 12027. Find the connector event logs in **Applications and Services Logs** &gt; **Microsoft** &gt; **Microsoft Entra private network** &gt; **Connector** &gt; **Admin**.
 
 1. Use an **A** record in your internal Domain Name System (DNS) for the application’s address, not a **`CName`**.
 1. Reconfirm that the connector host has the right to delegate to the designated target account’s Service Principal Name (SPN). Reconfirm that **Use any authentication protocol** is selected. For more information, see the [SSO configuration article](how-to-configure-sso-with-kcd.md).

@@ -65,7 +65,7 @@ Verify the thumbprint of the current client certificate. The certificate store c
 </ConnectorTrustSettingsFile>
 ```
 
-The possible **IsInUserStore** values are **true** and **false**. A value of **true** means the certificate is automatically renewed and stored in the personal container in the user certificate store of the Network Service. A value of **false** means the client certificate is created during the installation or registration initiated by `Register-AppProxyConnector`. The certificate is stored in the personal container in the certificate store of the local machine.
+The possible **IsInUserStore** values are **true** and **false**. A value of **true** means the certificate is automatically renewed and stored in the personal container in the user certificate store of the Network Service. A value of **false** means the client certificate is created during the installation or registration initiated by `Register-MicrosoftEntraPrivateNetworkConnector`. The certificate is stored in the personal container in the certificate store of the local machine.
 
 If the value is **true**, follow these steps to verify the certificate:
 1. Download [PsTools.zip](/sysinternals/downloads/pstools).
@@ -83,16 +83,16 @@ If the value is **false**, follow these steps to verify the certificate:
 
 If a connector isn't connected to the service for several months, its certificates could be outdated. The failure of the certificate renewal leads to an expired certificate. The expired certificate causes the connector service to stop working. The event 1000 is recorded in the admin log of the connector:
 
-`Connector re-registration failed: The Connector trust certificate expired. Run the PowerShell cmdlet Register-AppProxyConnector on the computer on which the Connector is running to re-register your Connector.`
+`Connector re-registration failed: The Connector trust certificate expired. Run the PowerShell cmdlet Register-MicrosoftEntraPrivateNetworkConnector on the computer on which the Connector is running to re-register your Connector.`
 
 In this case, uninstall and reinstall the connector to trigger registration or you can run the following PowerShell commands:
 
 ```
-Import-module AppProxyPSModule
-Register-AppProxyConnector
+Import-module MicrosoftEntraPrivateNetworkConnectorPSModule
+Register-MicrosoftEntraPrivateNetworkConnector
 ```
 
-To learn more about the `Register-AppProxyConnector` command, see [Create an unattended installation script for the Microsoft Entra private network connector](application-proxy-register-connector-powershell.md).
+To learn more about the `Register-MicrosoftEntraPrivateNetworkConnector` command, see [Create an unattended installation script for the Microsoft Entra private network connector](application-proxy-register-connector-powershell.md).
 
 ## Verify admin is used to install the connector
 

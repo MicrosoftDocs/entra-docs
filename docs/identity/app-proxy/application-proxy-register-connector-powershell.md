@@ -36,7 +36,7 @@ Use the following steps to install the connector without registering it:
 2. Run the following command, the `/q` flag means quiet installation. A quiet installation doesn't prompt you to accept the End-User License Agreement.
 
    ```
-   AADApplicationProxyConnectorInstaller.exe REGISTERCONNECTOR="false" /q
+   MicrosoftEntraPrivateNetworkConnectorInstaller.exe REGISTERCONNECTOR="false" /q
    ```
 
 ## Register the connector with Microsoft Entra ID
@@ -55,10 +55,10 @@ There are two methods you can use to register the connector:
    $SecurePassword = $PlainPassword | ConvertTo-SecureString -AsPlainText -Force
    $cred = New-Object –TypeName System.Management.Automation.PSCredential –ArgumentList $User, $SecurePassword
    ```
-2. Go to `C:\Program Files\Microsoft Azure AD App Proxy Connector` and run the following script using the `$cred` object that you created:
+2. Go to `C:\Program Files\Microsoft Entra private network connector` and run the following script using the `$cred` object that you created:
 
    ```powershell
-   .\RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft AAD App Proxy Connector\Modules\" -moduleName "AppProxyPSModule" -Authenticationmode Credentials -Usercredentials $cred -Feature ApplicationProxy -TenantId $TenantId
+   .\RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft Entra private network connector\Modules\" -moduleName "MicrosoftEntraPrivateNetworkConnectorPSModule" -Authenticationmode Credentials -Usercredentials $cred -Feature ApplicationProxy -TenantId $TenantId
    ```
 
 ### Register the connector using a token created offline
@@ -190,7 +190,7 @@ There are two methods you can use to register the connector:
 3. Run the following Windows PowerShell command, replacing `<tenant GUID>` with your directory ID:
 
    ```powershell
-   .\RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft AAD App Proxy Connector\Modules\" -moduleName "AppProxyPSModule" -Authenticationmode Token -Token $SecureToken -TenantId <tenant GUID> -Feature ApplicationProxy
+   .\RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft Entra private network connector\Modules\" -moduleName "MicrosoftEntraPrivateNetworkConnectorPSModule" -Authenticationmode Token -Token $SecureToken -TenantId <tenant GUID> -Feature ApplicationProxy
    ```
 
 ## Next steps
