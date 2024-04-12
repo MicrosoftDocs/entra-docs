@@ -15,14 +15,13 @@ ms.custom: template-tutorial
 
 # Automate employee mover tasks when they change jobs using the Microsoft Entra admin center
 
-This tutorial provides a step-by-step guide on how to automate mover tasks with Lifecycle workflows using the Microsoft Entra admin center. An example of this scenario would be an admin automating tasks for a contractor that becomes to a full-time employee, and is removed from a specific department, and is granted access to new employee-specific resources.
+This tutorial provides a step-by-step guide on how to automate mover tasks with Lifecycle workflows using the Microsoft Entra admin center. The use case for this tutorial is an existing user being added to a new department.
+
 
 This Mover scenario runs a scheduled workflow and accomplishes the following tasks:
  
 1. Send email to notify manager of user move
 1. Remove user from selected groups
-1. Remove user from selected Teams
-1. Request user access package assignment
 
 ## Prerequisites
 
@@ -32,8 +31,9 @@ This Mover scenario runs a scheduled workflow and accomplishes the following tas
 
 To complete this tutorial, you must satisfy the prerequisites listed in this section before starting the tutorial as they won't be included in the actual tutorial. Two accounts are required, one account for the user becoming a full-time employee(job profile change), and another account that acts as it's manager. The user account must have the following attributes set:
 
-- An employee with a department set as "Sales". 
+- An employee you want to run the workflow on.
 - Manager attribute must be set, and the manager account should have a mailbox to receive an email
+
 Detailed breakdown of the relevant attributes:
 
  | Attribute | Description |Set on|
@@ -63,7 +63,7 @@ Use the following steps to create a mover workflow for a user making a job chang
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-template.png" alt-text="Screenshot of selecting the employee job profile change template.":::
 1. Next, you configure the basic information about the workflow. This information includes a name and description. You're also able to choose the **Trigger type** of the workflow, which in this case is the **Attribute changes (Preview)** trigger. For **Trigger attribute** you're able to define what attribute being changed will trigger the workflow, which in this case is **department**. After the trigger is set, select **Configure scope**.
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-template-basics.png" alt-text="Screenshot of setting attribute change membership trigger in template.":::
-1. On the next screen you configure the scope. The scope determines which users this workflow runs against.  In this case, it is on all users in the Sales department.  On the configure scope screen, under **Rule** add the following settings, and then select **Review tasks**. For a full list of supported user properties, see [Supported user properties and query parameters](/graph/api/resources/identitygovernance-rulebasedsubjectset?view=graph-rest-beta&preserve-view=true#supported-user-properties-and-query-parameters).
+1. On the next screen you configure the scope. The scope determines which users this workflow runs against.  In this case, it is on all users added to the Sales department.  On the configure scope screen, under **Rule** add the following settings, and then select **Review tasks**. For a full list of supported user properties, see [Supported user properties and query parameters](/graph/api/resources/identitygovernance-rulebasedsubjectset?view=graph-rest-beta&preserve-view=true#supported-user-properties-and-query-parameters).
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/group-scope.png" alt-text="Screenshot of setting attribute change scope.":::
 1. On the **Review tasks** screen, you're able to add, edit, or remove tasks. From the default tasks, **Remove user from selected groups**, **Remove user from Selected Teams**, and **Request user access package assignment** require that you select which groups or teams you want the user to be removed from, or which user access package assignment you want to request for the user. When you're finished editing the tasks, select **Review + create**. 
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-template-tasks.png" alt-text="Screenshot of job change template tasks.":::
@@ -73,7 +73,7 @@ Use the following steps to create a mover workflow for a user making a job chang
 
  ## Run the workflow 
 
-Now that the workflow is created, go to the user you want to run the workflow for, and remove them from the Sales department.  Within 30 minutes, the user appears in the scope of execution conditions for the workflow. Lifecycle workflows check every 3 hours for users in the associated execution condition, and execute the configured tasks for those users.
+Now that the workflow is created, go to the user you want to run the workflow for, and add them to the Sales department.  Within 30 minutes, the user appears in the scope of execution conditions for the workflow. Lifecycle workflows check every 3 hours for users in the associated execution condition, and execute the configured tasks for those users.
 
 ## Check workflow status and tasks
 
