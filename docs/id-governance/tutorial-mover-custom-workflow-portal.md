@@ -20,7 +20,7 @@ This tutorial provides a step-by-step guide on how to automate mover tasks with 
 
 This Mover scenario runs a scheduled workflow and accomplishes the following tasks:
  
-1. Send email to notify manager of user move
+1. Sends email to notify manager of user move
 1. Add users to groups
 
 ## Prerequisites
