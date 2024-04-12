@@ -100,7 +100,6 @@ The following built-in roles are granted these actions by default:
 |---|---|---|
 |[Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator)|Yes|Yes|
 |[Intune Service Administrator](../role-based-access-control/permissions-reference.md#intune-administrator)|Yes|Yes|
-|[Global Reader](../role-based-access-control/permissions-reference.md#global-reader)|No|Yes|
 |[Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator)|No|Yes|
 |[Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator)|No|Yes|
 |[Security Reader](../role-based-access-control/permissions-reference.md#security-reader)|No|Yes|

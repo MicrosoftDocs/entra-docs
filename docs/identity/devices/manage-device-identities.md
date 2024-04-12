@@ -2,7 +2,6 @@
 title: Manage devices in Microsoft Entra ID using the Microsoft Entra admin center
 description: This article describes how to use the Microsoft Entra admin center to manage device identities and monitor related event information.
 
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
@@ -12,7 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: myra-ramdenbourg
-
 ---
 # Manage device identities using the Microsoft Entra admin center
 
@@ -22,7 +20,7 @@ Microsoft Entra ID provides a central place to manage device identities and moni
 
 You can access the devices overview by completing these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user with at least [default user permissions](../../fundamentals/users-default-permissions.md).
 1. Go to **Identity** > **Devices** > **Overview**.
 
 In the devices overview, you can view the number of total devices, stale devices, noncompliant devices, and unmanaged devices. It provides links to Intune, Conditional Access, BitLocker keys, and basic monitoring. 
