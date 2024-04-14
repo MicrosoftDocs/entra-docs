@@ -96,7 +96,7 @@ Some identity and access management services require on-premises agents to enabl
 Adopting best practices can help the optimal operation of on-premises agents. Consider the following best practices:
 
 - Multiple Microsoft Entra private network connectors per connector group are recommended to provide seamless load balancing and high availability by avoiding single points of failure when accessing the proxy applications. If you presently have only one connector in a connector group that handles applications in production, you should deploy at least two connectors for redundancy.
-- Creating and using an app proxy connector group for debugging purposes can be useful for troubleshooting scenarios and when onboarding new on-premises applications. We also recommend installing networking tools such as Message Analyzer and Fiddler in the connector machines.
+- Creating and using a private network connector group for debugging purposes can be useful for troubleshooting scenarios and when onboarding new on-premises applications. We also recommend installing networking tools such as Message Analyzer and Fiddler in the connector machines.
 - Multiple pass-through authentication agents are recommended to provide seamless load balancing and high availability by avoiding single point of failure during the authentication flow. Be sure to deploy at least two pass-through authentication agents for redundancy.
 
 #### On-premises agents management recommended reading

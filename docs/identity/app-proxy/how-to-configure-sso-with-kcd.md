@@ -105,7 +105,7 @@ To enable SPNEGO:
 2. From the command prompt, run the following commands on the connector servers that need SPNEGO.
 
     ```
-    REG ADD "HKLM\SOFTWARE\Microsoft\Microsoft AAD App Proxy Connector" /v UseSpnegoAuthentication /t REG_DWORD /d 1
+    REG ADD "HKLM\SOFTWARE\Microsoft\Microsoft Entra private network connector" /v UseSpnegoAuthentication /t REG_DWORD /d 1
     net stop WAPCSvc & net start WAPCSvc
     ```
 

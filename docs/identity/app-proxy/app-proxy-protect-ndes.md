@@ -24,7 +24,7 @@ Learn how to use Microsoft Entra application proxy to protect your Network Devic
 1. Read the Terms of Service. When you're ready, select **Accept terms & Download**.
 1. Copy the Microsoft Entra private network connector setup file to your NDES server. 
    > You install the connector on any server within your corporate network with access to NDES. You don't have to install it on the NDES server itself.
-1. Run the setup file, such as *AADApplicationProxyConnectorInstaller.exe*. Accept the software license terms.
+1. Run the setup file, such as *MicrosoftEntraPrivateNetworkConnectorInstaller.exe*. Accept the software license terms.
 1. During the install, you're prompted to register the connector with application proxy in your Microsoft Entra directory.
     Provide the credentials for a global or application administrator in your Microsoft Entra directory. The Microsoft Entra global or application administrator credentials are often different from your Azure credentials in the portal.
 
@@ -36,7 +36,7 @@ Learn how to use Microsoft Entra application proxy to protect your Network Devic
    If Internet Explorer Enhanced Security Configuration is turned on for the server where you install the connector, the registration screen might be blocked. To allow access, follow the instructions in the error message, or turn off Internet Explorer Enhanced Security during the install process.
    
     If connector registration fails, see [Troubleshoot application proxy](application-proxy-troubleshoot.md).
-1. At the end of the setup, a note is shown for environments with an outbound proxy. To configure the Microsoft Entra private network connector to work through the outbound proxy, run the provided script, such as `C:\Program Files\Microsoft AAD App Proxy connector\ConfigureOutBoundProxy.ps1`.
+1. At the end of the setup, a note is shown for environments with an outbound proxy. To configure the Microsoft Entra private network connector to work through the outbound proxy, run the provided script, such as `C:\Program Files\Microsoft Entra private network connector\ConfigureOutBoundProxy.ps1`.
 1. On the Application proxy page in the Microsoft Entra admin center, the new connector is listed with a status of *Active*, as shown in the example.
     ![The new Microsoft Entra private network connector shown as active in the Microsoft Entra admin center](./media/app-proxy-protect-ndes/connected-app-proxy.png)
     > [!NOTE]
