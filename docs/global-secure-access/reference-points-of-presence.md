@@ -35,7 +35,7 @@ During the preview, Global Secure Access (preview) is available in limited point
 ## Internet Protocol (IP) addresses and Fully Qualified Domain Names (FQDNs) for Global Secure Access service
 The Global Secure Access service is accessed from the Global Secure Access client and is used for Microsoft Entra Internet Access (including Microsoft 365) and Microsoft Entra Private Access traffic.
 
-Add Anycast IP ranges for accessing the Global Secure Access service edge to your enterprise Access Control Lists (ACLs) and firewalls as well as any other Security Service Edge (SSE) clients when operating in side-by-side model to exclude Global Secure Access service destinations.
+Add Anycast IP ranges for accessing the Global Secure Access service edge to your enterprise Access Control Lists (ACLs) and firewalls. When operating in a side-by-side model with other Security Service Edge (SSE) clients, add the Anycast IP ranges to these other clients.
  
 The destinations include:
 - `*.globalsecureaccess.microsoft.com`
@@ -49,7 +49,7 @@ The destinations include:
 - `151.206.252.0/22`
  
 IP addresses from the Global Secure Access service
-As traffic egresses from the Global Secure Access service for Microsoft Entra Internet Access (including M365) towards the internet and Software as a Service (SaaS) endpoints, it carries a unique `Src IP` signature which is used to set up location-based access controls for your applications and resources.
+As traffic egresses from the Global Secure Access service for Microsoft Entra Internet Access (including Microsoft 365) towards the internet and Software as a Service (SaaS) endpoints, it carries a unique `Src IP` signature, which is used to set up location-based access controls for your applications and resources.
  
 The egress IP addresses include:
 - `128.94.0.0/19`
