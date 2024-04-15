@@ -173,7 +173,7 @@ The combination of the acr and amr values are used by Entra ID to validate that 
     },
     "amr": {
       "essential": true,
-      "values": [face", "fido", "fpt", "hwk", "iris", "otp", "pop", "retina", "sc", "sms", "swk", "tel", "vbm"]
+      "values": ["face", "fido", "fpt", "hwk", "iris", "otp", "pop", "retina", "sc", "sms", "swk", "tel", "vbm"]
     }
   }
 }
@@ -196,12 +196,9 @@ This section describes the required content of the token passed as id_token_hint
 
 To prevent the token for being used for anything else other than a hint, it will be issued as expired. The token will be signed, and can be verified using the published Entra ID discovery metadata.
 
-### Email and upn claims
+### Optional claims from Entra ID
 
-If a provider needs *upn* or *email* claims for discovery, then you can configure these optional claims for id_token. For more information, see [Optional claims](/azure/active-directory/develop/optional-claims). If requested, *email* will always be returned. If *upn* is requested, it will be returned for user accounts that are members of the directory, but not for guest accounts.
-
->[!NOTE]
->The email claim isn't guaranteed to be unique and using email in identification or authorization is an anti-pattern. Unique claims should be used to link accounts. For more information, see [Migrate away from using email claims for user identification or authorization](/entra/identity-platform/migrate-off-email-claim-authorization).
+If a provider needs optional claims from Entra ID then you can configure these optional claims for id_token. For more information, see [Optional claims](/azure/active-directory/develop/optional-claims).
 
 ### Recommended use of claims
 Microsoft recommends associating accounts on the provider side with the account in Azure AD via the oid and tid claims.  These two claims are guaranteed to be unique for the account in the tenant. 
@@ -289,7 +286,7 @@ aud   |       | Audience – the Entra ID client id. See ClientId in [Entra ID c
 exp   |       | Expiration time – set as usual.
 iat   |       | Issuing time – set as usual.
 sub   |       | Subject – must match the sub from the id_token_hint sent to initiate this request
-nonce |       | The same nonce that was passed in the request, if any. Otherwise, this should not be present.
+nonce |       | The same nonce that was passed in the request.
 acr   |       | The acr claims for the authentication request. This should match one of the values from the request sent to initiate this request. Only one acr claim should be returned. For the list of claims, see [Supported acr claims](#supported-acr-claims).
 amr   |       | The amr claims for the authentication method used in authentication. Only one method claim should be returned.	For the list of claims, see [Supported amr claims](#supported-amr-claims).
 
@@ -318,10 +315,10 @@ hwk   | Proof of possession of hardware-secured key
 iris  | Biometric via iris scan
 otp | One time password
 pop | Proof of possession
-retina | biometric of retina scan
-sc | smart card
+retina | Biometric of retina scan
+sc | Smart card
 sms | Confirmation by sms to registered number
-swk	 |  of presence of a software secured key
+swk	 | Confirmation of presence of a software secured key
 tel | Confirmation by telephone 
 vbm | Biometric via voiceprint
 
@@ -336,14 +333,14 @@ Entra ID will validate the type mapping based on the following table.
 |fpt |Inherence | Biometric via fingerprint |
 |hwk  | Possession | Proof of possession of hardware-secured key |
 |iris | Inherence  | Biometric via iris scan |
-| otp | Possession | One-time password |
+|otp | Possession | One-time password |
 |pop | Possession | Proof of possession |
 |retina | Inherence | Biometric of retina scan |
-|sc | Possession | smart card |
-|sms |Possession |Confirmation by SMS to registered number|
-| swk | Possession | Proof of presence of a software secured key
-|tel |Possession |Confirmation by telephone |
-|vbm |Inherence |Biometric via voiceprint |
+|sc | Possession | Smart card |
+|sms |Possession | Confirmation by SMS to registered number|
+|swk | Possession | Proof of presence of a software secured key
+|tel |Possession | Confirmation by telephone |
+|vbm |Inherence | Biometric via voiceprint |
 
 
 If no issues are found with the token, then Entra ID should consider MFA having been satisfied and issue a token to the end user. Otherwise, it should fail the end user’s request.
@@ -358,27 +355,3 @@ Error |           | An ASCII error code, such as access_denied or temporarily_un
 Entra ID will consider the request successful if the id_token parameter is present in the response and if the token is valid. Otherwise, the request will be considered unsuccessful and Entra ID will fail the original authentication attempt due to policy requirement as dictated by the conditional access policy.
 
 Entra ID will abandon the state of the authentication attempt on its end approximately 10 minutes after the redirection has occurred to the provider.
-
-### Transition period for acr and amr claims integration
-
-The initial preview support for external authentication methods replicated the values of the amr claim in the acr claim, and no values were provided by Entra ID in the amr claim. The provider needed to provide the same value in the amr and acr claims in the id token returned to Entra ID.  
-
-This guide provides the updated approach for preview, where:
-
-1. acr claim values align with the method type-based factor (inherence, possession, knowledge or the conjoined versions).
-1. Values the methods accepted for satisfying the authentication are included in the amr claim in the request.
-
-A transition period supporting providers and customers initial preview testing will be enabled to give providers time to update their integration.  During this transition period the following approach will be used:
-
-1. acr claim values will include the same values of the current integration and the method-type based values (e.g possessionorinherence) that will be used moving forward.
-
-1. The acceptable values for the amr claim will be included in the request from Entra ID.
-
-During this transition time, providers can return an acr value in the id_token that is either the method type-based value (possessionorinherence) or a method value. If the method value is returned, then the amr and acr values must match.
-
-
-| Phase	| acr values from Entra ID | amr values from Entra ID | acr values accepted by Entra ID | amr values accepted by Entra ID |
-|-------|--------------------------|--------------------------|---------------------|---------------------------------|
-|Current behavior | Values matching the acceptable methods for authentication |None | One value from the list emitted by Entra ID. Value must match what is returned in amr claim, appropriate for the method the user performed for authentication. | One value from the list of values emitted by Entra ID in the acr.  Value must match what is returned in acr claim, matching the method the user performed for authentication. |
-|Transition | Method type-based values (possession, inherence, possessionorinherence), as well as the list of value matching acceptable methods | Values that will be accepted for satisfying authentication. During this period, this list will match the method values included in the acr claim Entra ID populates. | One value from the acr values needs to be returned appropriate for the authentication the user performed. If a method-value is returned, it must match the value that is returned in amr.| One value from the list of values set by Entra ID as part of the request in the amr or acr, matching the method the user performed for authentication. |
-|Final behavior	| Method type-based values (possession, inherence, possessionorinherence) | Values matching the acceptable methods for authentication| One of the acr values set by Entra ID, matching the 'type' of method the user performed for authentication. | One value from the list of values set by Entra ID as part of the request in the amr, matching the method the user performed for authentication. |
