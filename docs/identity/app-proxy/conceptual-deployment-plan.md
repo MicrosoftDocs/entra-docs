@@ -1,6 +1,6 @@
 ---
 title: Plan a Microsoft Entra application proxy Deployment
-description: An end-to-end guide for planning the deployment of Application proxy within your organization
+description: An end-to-end guide for planning the deployment of application proxy within your organization
 
 author: kenwith
 manager: amycolannino
@@ -294,8 +294,6 @@ These logs provide detailed information about logins to applications configured 
 #### private network connector monitoring
 
 The connectors and the service take care of all the high availability tasks. You can monitor the status of your connectors from the application proxy page in the Microsoft Entra admin center. For more information about connector maintenance see [Understand Microsoft Entra private network connectors](./application-proxy-connectors.md#maintenance).
-
-![Example: Microsoft Entra private network connectors](./media/application-proxy-connectors/app-proxy-connectors.png)
 
 #### Windows event logs and performance counters
 

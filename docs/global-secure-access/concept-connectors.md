@@ -93,7 +93,7 @@ Connector groups enable you to assign specific connectors to serve specific appl
 
 Connector groups make it easier to manage large deployments. They also improve latency for tenants that have resources and applications hosted in different regions, because you can create location-based connector groups to serve only local applications.
 
-To learn more about connector groups, see [Publish applications on separate networks and locations using connector groups](concepts-connector-groups.md).
+To learn more about connector groups, see [Publish applications on separate networks and locations using connector groups](concept-connector-groups.md).
 
 ## Capacity planning
 
