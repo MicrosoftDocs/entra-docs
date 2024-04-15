@@ -27,7 +27,7 @@ Microsoft provides [security defaults](~/fundamentals/security-defaults.md) that
 ## Prerequisites
 
 - A working Microsoft Entra tenant with Microsoft Entra ID P1, P2, or trial license enabled. If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-   - Microsoft Entra ID P2 is required to include Identity Protection risk in Conditional Access policies.
+   - Microsoft Entra ID P2 is required to include Microsoft Entra ID Protection risk in Conditional Access policies.
 - Administrators who interact with Conditional Access must have one of the following role assignments depending on the tasks they're performing. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) to just-in-time activate privileged role assignments.
    - Read Conditional Access policies and configurations 
       - [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader)
@@ -281,5 +281,5 @@ Once you collect the information, see the following resources:
 ## Related content
 
 - [Learn more about Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
-- [Learn more about Identity Protection](~/id-protection/overview-identity-protection.md)
+- [Learn more about Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md)
 - [Manage Conditional Access policies with Microsoft Graph API](/graph/api/resources/conditionalaccesspolicy)
