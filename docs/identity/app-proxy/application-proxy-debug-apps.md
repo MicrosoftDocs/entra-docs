@@ -39,6 +39,5 @@ The flowchart contains the steps for debugging common issues. The table after th
 ## Next steps
 
 - [Understand private network connectors](application-proxy-connectors.md)
-- [Publish applications on separate networks and locations using connector groups](application-proxy-connector-groups.md)
 - [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md)
 - [Troubleshoot application proxy and connector errors](application-proxy-troubleshoot.md)
