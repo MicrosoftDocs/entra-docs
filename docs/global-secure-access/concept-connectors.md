@@ -1,30 +1,28 @@
 ---
 title: Understand Microsoft Entra private network connectors
-description: Learn how to use Microsoft Entra private network connectors.
+description: Learn how Microsoft Entra private network connectors work and are used by Microsoft Entra Private Access and application proxy.
 author: kenwith
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: app-proxy
-ms.topic: conceptual
-ms.date: 02/26/2024
 ms.author: kenwith
-ms.reviewer: ashishj
+manager: amycolannino
+ms.topic: conceptual
+ms.date: 04/15/2024
+ms.service: global-secure-access
 ---
 
 # Understand Microsoft Entra private network connectors
 
-Connectors are what make Microsoft Entra application proxy possible. They're simple, easy to deploy and maintain, and super powerful. This article discusses what connectors are, how they work, and some suggestions for how to optimize your deployment.
+Connectors are what make Microsoft Entra Private Access and application proxy possible. They're simple, easy to deploy and maintain, and super powerful. This article discusses what connectors are, how they work, and some suggestions for how to optimize your deployment.
 
 ## What is a private network connector?
 
-Connectors are lightweight agents that sit on-premises and facilitate the outbound connection to the application proxy service. Connectors must be installed on a Windows Server that has access to the backend application. You can organize connectors into connector groups, with each group handling traffic to specific applications. For more information on Application proxy and a diagrammatic representation of application proxy architecture, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](overview-what-is-app-proxy.md#private-network-connectors).
+Connectors are lightweight agents that sit in a private network and facilitate the outbound connection to the Microsoft Entra Private Access and application proxy services. Connectors must be installed on a Windows Server that has access to the backend resources. You can organize connectors into connector groups, with each group handling traffic to specific resources. For more information on application proxy and a diagrammatic representation of application proxy architecture, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](../identity/app-proxy/overview-what-is-app-proxy.md#private-network-connectors).
 
 ## Requirements and deployment
 
-To deploy application proxy successfully, you need at least one connector, but we recommend two or more for greater resiliency. Install the connector on a machine running Windows Server 2012 R2 or later. The connector needs to communicate with the application proxy service and the on-premises applications that you publish.
+To deploy Microsoft Entra Private Access or application proxy successfully, you need at least one connector, but we recommend two or more for greater resiliency. Install the connector on a machine running Windows Server 2012 R2 or later. The connector needs to communicate with Microsoft Entra Private Access or the application proxy service and the private resources and applications that you publish.
 
 ### Windows Server
-You need a server running Windows Server 2012 R2 or later on which you can install the private network connector. The server needs to connect to the application proxy services in Azure, and the on-premises applications that you're publishing.
+You need a server running Windows Server 2012 R2 or later on which you can install the private network connector. The server needs to connect to the Microsoft Entra services, and the private resources and applications that you're publishing.
 
 > [!IMPORTANT]
 > Version 1.5.3437.0+ requires .NET version 4.7.1 or greater for installation or upgrade.
@@ -58,7 +56,7 @@ The server needs to have Transport Layer Security (TLS) 1.2 enabled before you i
     
 1. Restart the server
 
-For more information about the network requirements for the connector server, see [Get started with application proxy and install a connector](application-proxy-add-on-premises-application.md).
+For more information about the network requirements for the connector server, see [Get started with application proxy and install a connector](../identity/app-proxy/application-proxy-add-on-premises-application.md).
 
 ## Maintenance
 
@@ -68,17 +66,15 @@ The connectors are stateless and have no configuration data on the machine. The 
 
 Connectors also poll the server to find out whether there's a newer version of the connector. If one is found, the connectors update themselves.
 
-You can monitor your connectors from the machine they're running on, using either the event log and performance counters. For more information, see [Monitor and review logs for on-premises Microsoft Entra](~/identity/authentication/howto-password-ban-bad-on-premises-monitor.md).
+You can monitor your connectors from the machine they're running on, using either the event log and performance counters. For more information, see [Monitor and review logs for on-premises Microsoft Entra](../identity/authentication/howto-password-ban-bad-on-premises-monitor.md).
 
-You can also view their status from the application proxy page of the Microsoft Entra admin center:
+You can also view their status in the Microsoft Entra admin center. For Microsoft Entra Private Access, navigate to Global Secure Access (preview), Connect, and select Connectors. For application proxy, navigate to Identity, Applications, Enterprise applications, and select the application. On the application page select application proxy.
 
-![Example: Microsoft Entra private network connectors](media/application-proxy-connectors/app-proxy-connectors.png)
-
-You don't have to manually delete connectors that are unused. When a connector is running, it remains active as it connects to the service. Unused connectors are tagged as _inactive_ and are removed after 10 days of inactivity. If you do want to uninstall a connector, though, uninstall both the Connector service and the Updater service from the server. Restart your computer to fully remove the service.
+You don't have to manually delete connectors that are unused. When a connector is running, it remains active as it connects to the service. Unused connectors are tagged as `_inactive_` and are removed after 10 days of inactivity. If you do want to uninstall a connector, though, uninstall both the Connector service and the Updater service from the server. Restart the computer to fully remove the service.
 
 ## Automatic updates
 
-Microsoft Entra ID provides automatic updates for all the connectors that you deploy. As long as the private network connector Updater service is running, your connectors [update with the latest major connector release](application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-) automatically. If you don’t see the Connector Updater service on your server, you need to [reinstall your connector](application-proxy-add-on-premises-application.md) to get any updates.
+Microsoft Entra ID provides automatic updates for all the connectors that you deploy. As long as the private network connector updater service is running, your connectors update with the latest major connector release automatically. If you don’t see the Connector Updater service on your server, you need to [reinstall your connector](../identity/app-proxy/application-proxy-add-on-premises-application.md) to get any updates. To learn more about connector updates, see [application proxy faq](application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-).
 
 If you don't want to wait for an automatic update to come to your connector, you can do a manual upgrade. Go to the [connector download page](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download) on the server where your connector is located and select **Download**. This process kicks off an upgrade for the local connector.
 
@@ -86,18 +82,18 @@ For tenants with multiple connectors, the automatic updates target one connector
 
 You could experience downtime when your connector updates if:
   
-- You only have one connector. A second connector and [create a connector group](application-proxy-connector-groups.md) are recommended to avoid downtime and provide higher availability.  
+- You only have one connector. A second connector and a connector group are recommended to avoid downtime and provide higher availability.  
 - A connector was in the middle of a transaction when the update began. Although the initial transaction is lost, your browser should automatically retry the operation or you can refresh your page. When the request is resent, the traffic is routed to a backup connector.
 
-To see information about previously released versions and what changes they include, see [Application proxy- Version Release History](application-proxy-release-version-history.md).
+To see information about previously released versions and what changes they include, see [Application proxy- Version Release History](reference-version-history.md).
 
 ## Creating connector groups
 
-Connector groups enable you to assign specific connectors to serve specific applications. You can group many connectors together, and then assign each application to a group.
+Connector groups enable you to assign specific connectors to serve specific applications. You can group many connectors together, and then assign each resource or application to a group.
 
-Connector groups make it easier to manage large deployments. They also improve latency for tenants that have applications hosted in different regions, because you can create location-based connector groups to serve only local applications.
+Connector groups make it easier to manage large deployments. They also improve latency for tenants that have resources and applications hosted in different regions, because you can create location-based connector groups to serve only local applications.
 
-To learn more about connector groups, see [Publish applications on separate networks and locations using connector groups](application-proxy-connector-groups.md).
+To learn more about connector groups, see [Publish applications on separate networks and locations using connector groups](concepts-connector-groups.md).
 
 ## Capacity planning
 
@@ -117,19 +113,19 @@ The table provides volume and expected latency for different machine specificati
 > [!NOTE]
 > There isn't much difference in the maximum TPS between 4, 8, and 16 core machines. The main difference is the expected latency.
 >
-> The table focuses on the expected performance of a connector based on the type of machine it's installed on. This is separate from the application proxy service's throttling limits, see [Service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
+> The table focuses on the expected performance of a connector based on the type of machine it's installed on. This is separate from the service's throttling limits, see [service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
 
 ## Security and networking
 
-Connectors can be installed anywhere on the network that allows them to send requests to the application proxy service. What's important is that the computer running the connector also has access to your apps. You can install connectors inside of your corporate network or on a virtual machine that runs in the cloud. Connectors can run within a perimeter network, also known as a demilitarized zone (DMZ), but it's not necessary because all traffic is outbound so your network stays secure.
+Connectors can be installed anywhere on the network that allows them to send requests to the Microsoft Entra Private Access and application proxy service. What's important is that the computer running the connector also has access to your apps and resources. You can install connectors inside of your corporate network or on a virtual machine that runs in the cloud. Connectors can run within a perimeter network, also known as a demilitarized zone (DMZ), but it's not necessary because all traffic is outbound so your network stays secure.
 
-Connectors only send outbound requests. The outbound traffic is sent to the application proxy service and to the published applications. You don't have to open inbound ports because traffic flows both ways once a session is established. You also don't have to configure inbound access through your firewalls.
+Connectors only send outbound requests. The outbound traffic is sent to the service and to the published resources and applications. You don't have to open inbound ports because traffic flows both ways once a session is established. You also don't have to configure inbound access through your firewalls.
 
-For more information about configuring outbound firewall rules, see [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md).
+For more information about configuring outbound firewall rules, see [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md).
 
 ## Performance and scalability
 
-Scale for the application proxy service is transparent, but scale is a factor for connectors. You need to have enough connectors to handle peak traffic. Connectors are stateless and the number of users or sessions don't affect them. Instead, they respond to the number of requests and their payload size. With standard web traffic, an average machine can handle 2,000 requests per second. The specific capacity depends on the exact machine characteristics.
+Scale for Microsoft Entra Private Access and the application proxy services is transparent, but scale is a factor for connectors. You need to have enough connectors to handle peak traffic. Connectors are stateless and the number of users or sessions don't affect them. Instead, they respond to the number of requests and their payload size. With standard web traffic, an average machine can handle 2,000 requests per second. The specific capacity depends on the exact machine characteristics.
 
 CPU and network define connector performance. CPU performance is needed for TLS encryption and decryption, while networking is important to get fast connectivity to the applications and the online service.
 
@@ -139,11 +135,11 @@ When connectors or machines are unavailable, traffic goes to another connector i
 
 Another factor that affects performance is the quality of the networking between the connectors, including:
 
-- **The online service**: Slow or high-latency connections to the application proxy service in Azure influence the connector performance. For the best performance, connect your organization to Azure with Express Route. Otherwise, have your networking team ensure that connections to Azure are handled as efficiently as possible.
-- **The backend applications**: In some cases, there are extra proxies between the connector and the backend applications that can slow or prevent connections. To troubleshoot this scenario, open a browser from the connector server and try to access the application. If you run the connectors in Azure but the applications are on-premises, the experience might not be what your users expect.
+- **The online service**: Slow or high-latency connections to the Microsoft Entra service influence the connector performance. For the best performance, connect your organization to Microsoft with Express Route. Otherwise, have your networking team ensure that connections to Microsoft are handled as efficiently as possible.
+- **The backend applications**: In some cases, there are extra proxies between the connector and the backend resources and applications that can slow or prevent connections. To troubleshoot this scenario, open a browser from the connector server and try to access the application or resource. If you run the connectors in cloud but the applications are on-premises, the experience might not be what your users expect.
 - **The domain controllers**: If the connectors perform single sign-on (SSO) using Kerberos Constrained Delegation, they contact the domain controllers before sending the request to the backend. The connectors have a cache of Kerberos tickets, but in a busy environment the responsiveness of the domain controllers can affect performance. This issue is more common for connectors that run in Azure but communicate with domain controllers that are on-premises.
 
-For more information about optimizing your network, see [Network topology considerations when using Microsoft Entra application proxy](application-proxy-network-topology.md).
+For more information about optimizing your network, see [Network topology considerations when using Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
 
 ## Domain joining
 
@@ -157,7 +153,7 @@ Usually, connector deployment is straightforward and requires no special configu
 
 However, there are some unique conditions that should be considered:
 
-- Outbound traffic requires specific ports to be open. To learn more, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment).
+- Outbound traffic requires specific ports to be open. To learn more, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](../identity/app-proxy/application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment).
 - FIPS-compliant machines might require a configuration change to allow the connector processes to generate and store a certificate.
 - Outbound forward proxies could break the two-way certificate authentication and cause communication to fail.
 
@@ -165,11 +161,11 @@ However, there are some unique conditions that should be considered:
 
 To provide a secure service, connectors have to authenticate toward the service, and the service has to authenticate toward the connector. This authentication is done using client and server certificates when the connectors initiate the connection. This way the administrator’s username and password aren't stored on the connector machine.
 
-The certificates used are specific to the application proxy service. They're created during the initial registration and automatically renewed every couple of months.
+The certificates used are specific to the service. They're created during the initial registration and automatically renewed every couple of months.
 
 After the first successful certificate renewal, the Microsoft Entra private network connector service (Network Service) has no permission to remove the old certificate from the local machine store. If the certificate expires or isn't used by the service, you can delete it safely.
 
-To avoid problems with the certificate renewal, ensure that the network communication from the connector towards the [documented destinations](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) is enabled.
+To avoid problems with certificate renewal, ensure that the network communication from the connector towards the [documented destinations](../identity/app-proxy/application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) is enabled.
 
 If a connector isn't connected to the service for several months, its certificates could be outdated. In this case, uninstall and reinstall the connector to trigger registration. You can run the following PowerShell commands:
 
@@ -178,19 +174,13 @@ Import-module MicrosoftEntraPrivateNetworkConnectorPSModule
 Register-MicrosoftEntraPrivateNetworkConnector -EnvironmentName "AzureCloud"
 ```
 
-For government, use `-EnvironmentName "AzureUSGovernment"`. For more information, see [Install Agent for the Azure Government Cloud](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
+For government, use `-EnvironmentName "AzureUSGovernment"`. For more information, see [Install Agent for the Azure Government Cloud](../identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
 
-To learn how to verify the certificate and troubleshoot problems see [Verify Machine and backend components support for application proxy trust certificate](application-proxy-connector-installation-problem.md).
+To learn how to verify the certificate and troubleshoot problems see [Verify Machine and backend components support for application proxy trust certificate](../identity/app-proxy/application-proxy-connector-installation-problem.md).
 
 ## Under the hood
 
-Connectors are based on Windows Server Web application proxy, so they have most of the same management tools including Windows Event Logs and Windows performance counters.
-
-![Manage event logs with the Event Viewer](media/application-proxy-connectors/event-view-window.png)
-
-
-
-![Add counters to the connector with the Performance Monitor](media/application-proxy-connectors/performance-monitor.png)
+Connectors are installed on Windows Server, so they have most of the same management tools including Windows Event Logs and Windows performance counters.
 
 The connectors have both **Admin** and **Session** logs. The **Admin** log includes key events and their errors. The **Session** log includes all the transactions and their processing details.
 
@@ -205,7 +195,7 @@ A common issue is that connectors appear as inactive in a connector group. A fir
 
 ## Next steps
 
-- [Publish applications on separate networks and locations using connector groups](application-proxy-connector-groups.md)
-- [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md)
-- [Troubleshoot application proxy and connector errors](application-proxy-troubleshoot.md)
-- [How to silently install the Microsoft Entra private network connector](application-proxy-register-connector-powershell.md)
+- [Publish applications on separate networks and locations using connector groups](../identity/app-proxy/application-proxy-connector-groups.md)
+- [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md)
+- [Troubleshoot application proxy and connector errors](../identity/app-proxy/application-proxy-troubleshoot.md)
+- [How to silently install the Microsoft Entra private network connector](../identity/app-proxy/application-proxy-register-connector-powershell.md)
