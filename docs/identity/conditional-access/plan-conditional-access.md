@@ -88,7 +88,7 @@ Will this policy apply to any application, user action, or authentication contex
    - What locations are included in or excluded from the policy?
 - What client app types are included in or excluded from the policy?
 - Do you need to target specific device attributes? 
-- If using [Identity Protection](~/id-protection/concept-identity-protection-risks.md), do you want to incorporate sign-in or user risk?
+- If using [Microsoft Entra ID Protection](~/id-protection/concept-identity-protection-risks.md), do you want to incorporate sign-in or user risk?
 
 ##### User and sign-in risk
 
