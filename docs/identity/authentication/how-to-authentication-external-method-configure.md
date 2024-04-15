@@ -15,7 +15,7 @@ ms.reviewer: gregkmsft, msgustavosa
 ---
 # Configure a new external authentication provider with Microsoft Entra ID
 
-An application representing the integration is required for external authentication methods to issue the id_token_hint.  This application can either be created in each tenant that will use the external provider, it can be created as single multi-tenant application that admins enabling the integration will consent for their tenant.  
+An application representing the integration is required for external authentication methods to issue the id_token_hint.  This application can either be created in each tenant that will use the external provider or it can be created as single multi-tenant application that admins enabling the integration will consent for their tenant.  
 
 Using a multi-tenant application reduces the liklihood of misconfiguration in each tenant and enables providers to make changes to metadata (for example, reply URLs) in one place, rather than requiring each tenant to make changes. To configure as a multi-tenant application, the provider admin must first:
 
