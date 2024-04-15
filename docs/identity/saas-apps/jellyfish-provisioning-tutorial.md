@@ -46,11 +46,11 @@ The scenario outlined in this tutorial assumes that you already have the followi
 1. Login to the **Jellyfish** portal and navigate to **Key Management > API Keys**.
 2. Click on **Generate New**
 
-![Screenshot of API Key management page.](common/api-key-page.png)
+![Screenshot of API Key management page.](./media/jellyfish-provisioning-tutorial/api-key-page.png)
 
 3. Search for the admin account created as part of the prerequisites and click **Create**. (Optionally) set an expiry, noting that the credential *must* be updated once expired.
 
-![Screenshot of Creating New API Key.](common/create-new-api-key.png)
+![Screenshot of Creating New API Key.](./media/jellyfish-provisioning-tutorial/create-new-api-key.png)
 
 4. The API key will be downloaded, ensure that this key is kept safe as this will grant access to the user account it was generated for. It is recommended to delete the downloaded API key once user provisioning is configured.
 
