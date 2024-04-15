@@ -152,6 +152,8 @@
         href: amazon-web-service-tutorial.md#how-to-configure-role-provisioning-in-aws-single-account-access
       - name: AMMS
         href: amms-tutorial.md
+      - name: Amplified
+        href: amplified-tutorial.md
       - name: Amplitude
         href: amplitude-tutorial.md
       - name: Anaplan
