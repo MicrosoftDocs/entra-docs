@@ -3,9 +3,9 @@ items:
   tocHref: /entra/
   topicHref: /entra/index
   items:
-  - name: External Identities
+  - name: External ID
     tocHref: /entra/external-id/
-    topicHref: /entra/external-id/
-  - name: Architecture
-    tocHref: /azure/active-directory-b2c/
-    topicHref: /entra/external-id/
+    topicHref: /entra/external-id/index
+  - name: External ID
+    tocHref: /entra/identity/
+    topicHref: /entra/external-id/index

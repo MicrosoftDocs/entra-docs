@@ -17,7 +17,7 @@ Microsoft and Tableau worked together so you can use application proxy to provid
 
 ## Prerequisites 
 - Configure [Tableau](https://onlinehelp.tableau.com/current/server/en-us/proxy.htm#azure). 
-- Install an [application proxy connector](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
+- Install an [private network connector](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
 
  
 ## Enabling application proxy for Tableau 

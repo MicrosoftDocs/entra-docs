@@ -1,6 +1,6 @@
 ---
-title: Understand Microsoft Entra application proxy connectors
-description: Learn how to use Microsoft Entra application proxy connectors.
+title: Understand Microsoft Entra private network connectors
+description: Learn how to use Microsoft Entra private network connectors.
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
@@ -11,25 +11,25 @@ ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Understand Microsoft Entra application proxy connectors
+# Understand Microsoft Entra private network connectors
 
 Connectors are what make Microsoft Entra application proxy possible. They're simple, easy to deploy and maintain, and super powerful. This article discusses what connectors are, how they work, and some suggestions for how to optimize your deployment.
 
-## What is an application proxy connector?
+## What is a private network connector?
 
-Connectors are lightweight agents that sit on-premises and facilitate the outbound connection to the application proxy service. Connectors must be installed on a Windows Server that has access to the backend application. You can organize connectors into connector groups, with each group handling traffic to specific applications. For more information on Application proxy and a diagrammatic representation of application proxy architecture, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](overview-what-is-app-proxy.md#application-proxy-connectors).
+Connectors are lightweight agents that sit on-premises and facilitate the outbound connection to the application proxy service. Connectors must be installed on a Windows Server that has access to the backend application. You can organize connectors into connector groups, with each group handling traffic to specific applications. For more information on Application proxy and a diagrammatic representation of application proxy architecture, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](overview-what-is-app-proxy.md#private-network-connectors).
 
 ## Requirements and deployment
 
 To deploy application proxy successfully, you need at least one connector, but we recommend two or more for greater resiliency. Install the connector on a machine running Windows Server 2012 R2 or later. The connector needs to communicate with the application proxy service and the on-premises applications that you publish.
 
 ### Windows Server
-You need a server running Windows Server 2012 R2 or later on which you can install the application proxy connector. The server needs to connect to the application proxy services in Azure, and the on-premises applications that you're publishing.
+You need a server running Windows Server 2012 R2 or later on which you can install the private network connector. The server needs to connect to the application proxy services in Azure, and the on-premises applications that you're publishing.
 
 > [!IMPORTANT]
 > Version 1.5.3437.0+ requires .NET version 4.7.1 or greater for installation or upgrade.
 
-The server needs to have Transport Layer Security (TLS) 1.2 enabled before you install the application proxy connector. To enable TLS 1.2 on the server:
+The server needs to have Transport Layer Security (TLS) 1.2 enabled before you install the private network connector. To enable TLS 1.2 on the server:
 
 1. Set the following registry keys:
 
@@ -72,13 +72,13 @@ You can monitor your connectors from the machine they're running on, using eithe
 
 You can also view their status from the application proxy page of the Microsoft Entra admin center:
 
-![Example: Microsoft Entra application proxy connectors](media/application-proxy-connectors/app-proxy-connectors.png)
+![Example: Microsoft Entra private network connectors](media/application-proxy-connectors/app-proxy-connectors.png)
 
 You don't have to manually delete connectors that are unused. When a connector is running, it remains active as it connects to the service. Unused connectors are tagged as _inactive_ and are removed after 10 days of inactivity. If you do want to uninstall a connector, though, uninstall both the Connector service and the Updater service from the server. Restart your computer to fully remove the service.
 
 ## Automatic updates
 
-Microsoft Entra ID provides automatic updates for all the connectors that you deploy. As long as the application proxy connector Updater service is running, your connectors [update with the latest major connector release](application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-) automatically. If you don’t see the Connector Updater service on your server, you need to [reinstall your connector](application-proxy-add-on-premises-application.md) to get any updates.
+Microsoft Entra ID provides automatic updates for all the connectors that you deploy. As long as the private network connector Updater service is running, your connectors [update with the latest major connector release](application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-) automatically. If you don’t see the Connector Updater service on your server, you need to [reinstall your connector](application-proxy-add-on-premises-application.md) to get any updates.
 
 If you don't want to wait for an automatic update to come to your connector, you can do a manual upgrade. Go to the [connector download page](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download) on the server where your connector is located and select **Download**. This process kicks off an upgrade for the local connector.
 
@@ -167,15 +167,15 @@ To provide a secure service, connectors have to authenticate toward the service,
 
 The certificates used are specific to the application proxy service. They're created during the initial registration and automatically renewed every couple of months.
 
-After the first successful certificate renewal, the Microsoft Entra application proxy connector service (Network Service) has no permission to remove the old certificate from the local machine store. If the certificate expires or isn't used by the service, you can delete it safely.
+After the first successful certificate renewal, the Microsoft Entra private network connector service (Network Service) has no permission to remove the old certificate from the local machine store. If the certificate expires or isn't used by the service, you can delete it safely.
 
 To avoid problems with the certificate renewal, ensure that the network communication from the connector towards the [documented destinations](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) is enabled.
 
 If a connector isn't connected to the service for several months, its certificates could be outdated. In this case, uninstall and reinstall the connector to trigger registration. You can run the following PowerShell commands:
 
 ```
-Import-module AppProxyPSModule
-Register-AppProxyConnector -EnvironmentName "AzureCloud"
+Import-module MicrosoftEntraPrivateNetworkConnectorPSModule
+Register-MicrosoftEntraPrivateNetworkConnector -EnvironmentName "AzureCloud"
 ```
 
 For government, use `-EnvironmentName "AzureUSGovernment"`. For more information, see [Install Agent for the Azure Government Cloud](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
@@ -194,7 +194,7 @@ Connectors are based on Windows Server Web application proxy, so they have most 
 
 The connectors have both **Admin** and **Session** logs. The **Admin** log includes key events and their errors. The **Session** log includes all the transactions and their processing details.
 
-To see the logs, open **Event Viewer** and go to **Applications and Services Logs** > **Microsoft** > **AadApplicationProxy** > **Connector**. To make the **Session** log visible, on the **View** menu, select **Show Analytic and Debug Logs**. The **Session** log is typically used for troubleshooting, and is disabled by default. Enable it to start collecting events and disable it when it's no longer needed.
+To see the logs, open **Event Viewer** and go to **Applications and Services Logs** > **Microsoft** > **Microsoft Entra private network** > **Connector**. To make the **Session** log visible, on the **View** menu, select **Show Analytic and Debug Logs**. The **Session** log is typically used for troubleshooting, and is disabled by default. Enable it to start collecting events and disable it when it's no longer needed.
 
 You can examine the state of the service in the Services window. The connector is made up of two Windows Services: the actual connector, and the updater. Both of them must run all the time.
 
@@ -208,4 +208,4 @@ A common issue is that connectors appear as inactive in a connector group. A fir
 - [Publish applications on separate networks and locations using connector groups](application-proxy-connector-groups.md)
 - [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md)
 - [Troubleshoot application proxy and connector errors](application-proxy-troubleshoot.md)
-- [How to silently install the Microsoft Entra application proxy connector](application-proxy-register-connector-powershell.md)
+- [How to silently install the Microsoft Entra private network connector](application-proxy-register-connector-powershell.md)

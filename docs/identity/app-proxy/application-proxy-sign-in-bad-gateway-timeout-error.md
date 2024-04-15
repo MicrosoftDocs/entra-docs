@@ -61,7 +61,7 @@ Verify that all required ports are open. For required ports, see the open ports 
 
 Look for issues or errors with the connector itself. For more information about common errors, see [application proxy troubleshooting](application-proxy-troubleshoot.md).
 
-Look directly at the connector logs to identify any errors. Many of the error messages share specific recommendations for fixes. To view the logs, see the [application proxy connectors](application-proxy-connectors.md).
+Look directly at the connector logs to identify any errors. Many of the error messages share specific recommendations for fixes. To view the logs, see the [private network connectors](application-proxy-connectors.md).
 
 ## Common solutions
 
@@ -75,4 +75,4 @@ If you can reach the application from that machine, to look for issues or errors
 
 ## Next steps
 
-- [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md)
+- [Understand Microsoft Entra private network connectors](application-proxy-connectors.md)

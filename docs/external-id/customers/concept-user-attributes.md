@@ -11,7 +11,7 @@ ms.date: 03/08/2024
 ms.author: mimart
 ms.custom: it-pro
 
-#Customer intent: As a developer, devops, IT admin, I want to learn about the built-in user profile attributes that I can collect from the user during sign-up, and how Microsoft Entra External ID for customers extends user profile attributes by using custom user attributes. 
+#Customer intent: As a developer, devops, IT admin, I want to learn about the built-in user profile attributes that I can collect from the user during sign-up, and how Microsoft Entra External ID extends user profile attributes by using custom user attributes. 
 ---
 
 # User profile attributes
@@ -86,7 +86,7 @@ Learn how to configure their user attributes input types in [Configure the user 
 
 ### Where custom user attributes are stored
 
-Custom user attributes are also known as directory extension attributes because they extend the user profile information stored in your directory. All extension attributes for your customer tenant are stored in an app named *b2c-extensions-app*. After a user enters a value for the custom attribute during sign-up, it's added to the user object and can be called via the Microsoft Graph API using the naming convention `extension_{appId-without-hyphens}_{custom-attribute-name}` where:
+Custom user attributes are also known as directory extension attributes because they extend the user profile information stored in your directory. All extension attributes for your external tenant are stored in an app named *b2c-extensions-app*. After a user enters a value for the custom attribute during sign-up, it's added to the user object and can be called via the Microsoft Graph API using the naming convention `extension_{appId-without-hyphens}_{custom-attribute-name}` where:
 
  - `{appId-without-hyphens}` is the stripped version of the client ID for the *b2c-extensions-app*. 
  - `{custom-attribute-name}` is the name you assigned to the custom attribute.
@@ -95,7 +95,7 @@ For example, if the client ID of the *b2c-extensions-app* is `2588a-bcdwh-tfeehj
 - *loyaltyNumber*, then the custom attribute is named as`extension_2588abcdwhtfeehjjeeqwertc_loyaltyNumber`.
 - *Loyalty Number* then the custom attribute is named as`extension_2588abcdwhtfeehjjeeqwertc_loyaltyNumber`. You remove the space and use camel case to separate the words.
 
-Use the [Find the application ID for the extensions app](how-to-define-custom-attributes.md) article to learn how to find the application ID for the *b2c-extensions-app* registered in your customer tenant.
+Use the [Find the application ID for the extensions app](how-to-define-custom-attributes.md) article to learn how to find the application ID for the *b2c-extensions-app* registered in your external tenant.
 
 ## Next steps
 
