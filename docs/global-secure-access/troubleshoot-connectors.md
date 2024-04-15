@@ -103,5 +103,24 @@ Connect to `https://login.microsoftonline.com` and use the same credentials. Mak
 
 Select your user account, then **Directory Role** in the resulting menu. Verify that the selected role is **Application Administrator**. If you're unable to access any of the pages along these steps, you don't have the required role.
 
+## Flowchart for connector issues
+
+This flowchart walks you through the steps for debugging some of the more common connector issues. For details about each step, see the table following the flowchart.
+
+![Flowchart showing steps for debugging a connector](media/troubleshoot-connectors/connector-debugging-flowchart.png)
+
+| Step | Action | Description |
+|---------|---------|---------|
+|1 | Find the connector group assigned to the app | You probably have a connector installed on multiple servers, in which case the connectors should be assigned to a connector group. To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](../../global-secure-access/concept-connector-groups.md).|
+|2 | Install the connector and assign a group | If you don't have a connector installed, see [Install and register a connector](../identity/app-proxy/application-proxy-add-on-premises-application.md#install-and-register-a-connector).<br></br> If the connector isn't assigned to a group, see [Assign the connector to a group](concept-connector-groups.md#create-connector-groups).<br></br>If the application isn't assigned to a connector group, see [Assign the application to a connector group](concept-connector-groups.md#assign-applications-to-your-connector-groups).|
+|3 | Run a port test on the connector server | On the connector server, run a port test by using [telnet](/windows-server/administration/windows-commands/telnet) or other port testing tool to check if ports [443 and 80 are open](../identity/app-proxy/application-proxy-add-on-premises-application.md#open-ports).|
+|4 | Configure the domains and ports | [Confirm that domains and ports are configured correctly](../identity/app-proxy/application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) for the connector. Certain ports must be open and URLs that your server must be able to access. For more information, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](../identity/app-proxy/application-proxy-add-on-premises-application.md#open-ports). |
+|5 | Check if a back-end proxy is in use | Check to see if the connectors are using back-end proxy servers or bypassing them. For details, see [Troubleshoot connector proxy problems and service connectivity issues](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md#troubleshoot-connector-proxy-problems-and-service-connectivity-issues). |
+|6 | Update the connector and updater settings with the back-end proxy information | If a back-end proxy is in use, make sure the connector is using the same proxy. For details about troubleshooting and configuring connectors to work with proxy servers, see [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md). |
+|7 | Load the app's internal URL on the connector server | On the connector server, load the app's internal URL. |
+|8 | Check internal network connectivity | There's a connectivity issue in your internal network that this debugging flow is unable to diagnose. The application must be accessible internally for the connectors to work. You can enable and view connector event logs as described in [private network connectors](concept-connectors.md#under-the-hood). |
+|9 | Lengthen the time-out value on the back end | In the **Additional Settings** for your application, change the **Backend Application Timeout** setting to **Long**. See [Add an on-premises app to Microsoft Entra ID](../identity/app-proxy/application-proxy-add-on-premises-application.md). |
+|10 | If issues persist, debug applications. | [Debug application proxy application issues](../identity/app-proxy/application-proxy-debug-apps.md). |
+
 ## Next steps
 - [Understand Microsoft Entra private network connectors](concept-connectors.md)
