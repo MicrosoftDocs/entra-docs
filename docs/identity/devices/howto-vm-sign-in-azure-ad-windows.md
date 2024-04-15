@@ -468,19 +468,6 @@ If the Microsoft Azure Windows Virtual Machine Sign-in application is missing fr
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Remove the filters to see all applications, and search for **VM**. If you don't see **Microsoft Azure Windows Virtual Machine Sign-in** as a result, the service principal is missing from the tenant.
 
-Another way to verify it is via Graph PowerShell:
-
-1. [Install the Graph PowerShell SDK](/powershell/microsoftgraph/installation) if you haven't already done so.
-1. Run `Connect-MgGraph -Scopes "ServicePrincipalEndpoint.ReadWrite.All"`, followed by `"Application.ReadWrite.All"`.
-1. Sign in with a Global Administrator account.
-1. Consent to the permission prompt.
-1. Run `Get-MgServicePrincipal -ConsistencyLevel eventual -Search '"DisplayName:Microsoft Azure Windows Virtual Machine Sign-in"'`.
-   - If this command results in no output and returns you to the PowerShell prompt, you can create the service principal with the following Graph PowerShell command:
-
-      `New-MgServicePrincipal -AppId 372140e0-b3b7-4226-8ef9-d57986796201`
-   - Successful output shows that the Microsoft Azure Windows Virtual Machine Sign-in app and its ID were created.
-1. Sign out of Graph PowerShell by using the `Disconnect-MgGraph` command.
-
 > [!TIP]
 > Some tenants might see the application named Azure Windows VM Sign-in instead of Microsoft Azure Windows Virtual Machine Sign-in. The application will have the same Application ID of 372140e0-b3b7-4226-8ef9-d57986796201.
 
