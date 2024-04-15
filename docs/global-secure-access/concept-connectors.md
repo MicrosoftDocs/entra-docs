@@ -17,46 +17,8 @@ Connectors are what make Microsoft Entra Private Access and application proxy po
 
 Connectors are lightweight agents that sit in a private network and facilitate the outbound connection to the Microsoft Entra Private Access and application proxy services. Connectors must be installed on a Windows Server that has access to the backend resources. You can organize connectors into connector groups, with each group handling traffic to specific resources. For more information on application proxy and a diagrammatic representation of application proxy architecture, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](../identity/app-proxy/overview-what-is-app-proxy.md#private-network-connectors).
 
-## Requirements and deployment
 
-To deploy Microsoft Entra Private Access or application proxy successfully, you need at least one connector, but we recommend two or more for greater resiliency. Install the connector on a machine running Windows Server 2012 R2 or later. The connector needs to communicate with Microsoft Entra Private Access or the application proxy service and the private resources and applications that you publish.
-
-### Windows Server
-You need a server running Windows Server 2012 R2 or later on which you can install the private network connector. The server needs to connect to the Microsoft Entra services, and the private resources and applications that you're publishing.
-
-> [!IMPORTANT]
-> Version 1.5.3437.0+ requires .NET version 4.7.1 or greater for installation or upgrade.
-
-The server needs to have Transport Layer Security (TLS) 1.2 enabled before you install the private network connector. To enable TLS 1.2 on the server:
-
-1. Set the following registry keys:
-
-    ```
-    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2]
-    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
-    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
-    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.8.4250.0] "SchUseStrongCrypto"=dword:00000001
-    ```
-
-    A `regedit` file you can use to set these values follows:
-    
-    ```
-    Windows Registry Editor Version 5.00
-
-    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2]
-    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client]
-    "DisabledByDefault"=dword:00000000
-    "Enabled"=dword:00000001
-    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server]
-    "DisabledByDefault"=dword:00000000
-    "Enabled"=dword:00000001
-    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.8.4250.0]
-    "SchUseStrongCrypto"=dword:00000001
-    ```
-    
-1. Restart the server
-
-For more information about the network requirements for the connector server, see [Get started with application proxy and install a connector](../identity/app-proxy/application-proxy-add-on-premises-application.md).
+To learn how to configure the Microsoft Entra private network connector, see [How to configure private network connectors for Microsoft Entra Private Access](how-to-configure-connectors.md).
 
 ## Maintenance
 
@@ -74,7 +36,7 @@ You don't have to manually delete connectors that are unused. When a connector i
 
 ## Automatic updates
 
-Microsoft Entra ID provides automatic updates for all the connectors that you deploy. As long as the private network connector updater service is running, your connectors update with the latest major connector release automatically. If you don’t see the Connector Updater service on your server, you need to [reinstall your connector](../identity/app-proxy/application-proxy-add-on-premises-application.md) to get any updates. To learn more about connector updates, see [application proxy faq](../identity/app-proxy/application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-).
+Microsoft Entra ID provides automatic updates for all the connectors that you deploy. As long as the private network connector updater service is running, your connectors update with the latest major connector release automatically. If you don’t see the Connector Updater service on your server, you need to reinstall your connector to get updates. To learn more about connector updates, see [application proxy faq](../identity/app-proxy/application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-).
 
 If you don't want to wait for an automatic update to come to your connector, you can do a manual upgrade. Go to the [connector download page](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download) on the server where your connector is located and select **Download**. This process kicks off an upgrade for the local connector.
 
