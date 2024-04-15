@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: reference
-ms.date: 11/27/2023
+ms.date: 04/15/2024
 ms.service: global-secure-access
 ms.custom: references_regions
 ---
@@ -32,13 +32,12 @@ During the preview, Global Secure Access (preview) is available in limited point
 | Warsaw, Poland                   |                        |                         |                          |
 | Zurich, Switzerland              |                        |                         |                          |
 
+## Internet Protocol (IP) addresses and Fully Qualified Domain Names (FQDNs) for Global Secure Access service
+The Global Secure Access service is accessed from the Global Secure Access client and is used for Microsoft Entra Internet Access (including Microsoft 365) and Microsoft Entra Private Access traffic.
 
-## Service addresses
-The Global Secure Access service is accessed from the Global Secure Access client and is used for Internet Access and Private Access traffic. 
-
-For the best performance and reliability, other Security Service Edge (SSE) clients should exclude the Global Secure Access service destinations.
-
-The destinations include: 
+Add Anycast IP ranges for accessing the Global Secure Access service edge to your enterprise Access Control Lists (ACLs) and firewalls as well as any other Security Service Edge (SSE) clients when operating in side-by-side model to exclude Global Secure Access service destinations.
+ 
+The destinations include:
 - `*.globalsecureaccess.microsoft.com`
 - `150.171.19.0/24`
 - `150.171.20.0/24`
@@ -46,4 +45,12 @@ The destinations include:
 - `13.107.233.0/24`
 - `150.171.15.0/24`
 - `150.171.18.0/24`
-- `151.206.0.0/16`
+- `151.206.250.0/23`
+- `151.206.252.0/22`
+ 
+IP addresses from the Global Secure Access service
+As traffic egresses from the Global Secure Access service for Microsoft Entra Internet Access (including M365) towards the internet and Software as a Service (SaaS) endpoints, it carries a unique `Src IP` signature which is used to set up location-based access controls for your applications and resources.
+ 
+The egress IP addresses include:
+- `128.94.0.0/19`
+` `151.206.0.0/16`
