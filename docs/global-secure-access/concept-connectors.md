@@ -55,7 +55,7 @@ Connector groups enable you to assign specific connectors to serve specific appl
 
 Connector groups make it easier to manage large deployments. They also improve latency for tenants that have resources and applications hosted in different regions, because you can create location-based connector groups to serve only local applications.
 
-To learn more about connector groups, see [Publish applications on separate networks and locations using connector groups](concept-connector-groups.md).
+To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).
 
 ## Capacity planning
 
@@ -157,7 +157,7 @@ A common issue is that connectors appear as inactive in a connector group. A fir
 
 ## Next steps
 
-- [Publish applications on separate networks and locations using connector groups](../identity/app-proxy/application-proxy-connector-groups.md)
+- [Understand Microsoft Entra private network connector groups](concept-connector-groups.md)
 - [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md)
 - [Troubleshoot application proxy and connector errors](../identity/app-proxy/application-proxy-troubleshoot.md)
 - [How to silently install the Microsoft Entra private network connector](../identity/app-proxy/application-proxy-register-connector-powershell.md)

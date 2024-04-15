@@ -140,7 +140,7 @@ To create as many connector groups as you want:
 1. Give your new connector group a name, then use the dropdown menu to select which connectors belong in this group.
 1. Select **Save**.
 
-To learn more about connector groups, see [Publish applications on separate networks and locations using connector groups](/azure/active-directory/app-proxy/application-proxy-connector-groups).
+To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 

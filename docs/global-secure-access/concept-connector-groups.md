@@ -9,7 +9,7 @@ ms.date: 04/15/2024
 ms.service: global-secure-access
 ---
 
-# Publish applications on separate networks and locations using connector groups
+# Understand Microsoft Entra private network connector groups
 
 Use private network connector groups to assign specific connectors to specific applications. Connector groups give you more control and let you optimize your deployments.
 
