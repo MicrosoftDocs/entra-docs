@@ -47,11 +47,11 @@ For applications installed on Infrastructure as a Service (IaaS) for cloud acces
 
 Take as an example an organization that has several virtual machines connected to their own IaaS hosted virtual network. To allow employees to use these applications, these private networks are connected to the corporate network using site-to-site Virtual Private Network (VPN). Site-to-site VPN provides a good experience for employees that are located on-premises. But, it isn't ideal for remote employees, because it requires more on-premises infrastructure to route access, as illustrated in the diagram:
 
-![Diagram that illustrates the Microsoft Entra IaaS network](./media/application-proxy-connector-groups/application-proxy-iaas-network.png)
+![Diagram that illustrates the Microsoft Entra IaaS network](./media/concept-connector-groups/application-proxy-iaas-network.png)
   
 With Microsoft Entra private network connector groups, you enable a common service to secure access to all applications without creating more dependencies on your corporate network:
 
-![Microsoft Entra IaaS Multiple Cloud Vendors](./media/application-proxy-connector-groups/application-proxy-multiple-cloud-vendors.png)
+![Microsoft Entra IaaS Multiple Cloud Vendors](./media/concept-connector-groups/application-proxy-multiple-cloud-vendors.png)
 
 ### Multi-forest – different connector groups for each forest
 
@@ -76,7 +76,7 @@ Consider these sample connector group configurations.
 
 If you don’t use connector groups, your configuration would look like this:
 
-![Example without connector groups](./media/application-proxy-connector-groups/application-proxy-sample-config-1.png)
+![Example without connector groups](./media/concept-connector-groups/application-proxy-sample-config-1.png)
 
 The configuration is sufficient for small deployments and tests. It also works if your organization has a flat network topology.
 
@@ -84,7 +84,7 @@ The configuration is sufficient for small deployments and tests. It also works i
 
 The configuration is an evolution of the default, a specific app runs in an isolated network such as IaaS virtual network:
 
-![Example Microsoft Entra without connector groups on an isolated network](./media/application-proxy-connector-groups/application-proxy-sample-config-2.png)
+![Example Microsoft Entra without connector groups on an isolated network](./media/concept-connector-groups/application-proxy-sample-config-2.png)
 
 ### Recommended configuration – several specific groups and a default group for idle
 
@@ -92,11 +92,10 @@ The recommended configuration for large and complex organizations is to have the
 
 In the example, the company has two datacenters, A, and B, with two connectors that serve each site. Each site has different applications that run on it.
 
-![Example of company with 2 datacenters and 2 connectors](./media/application-proxy-connector-groups/application-proxy-sample-config-3.png)
+![Example of company with 2 datacenters and 2 connectors](./media/concept-connector-groups/application-proxy-sample-config-3.png)
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 
 ## Next steps
 
-- [Understand Microsoft Entra private network connectors](application-proxy-connectors.md)
-- [Enable single-sign on](~/identity/enterprise-apps/what-is-single-sign-on.md)
+- [Understand Microsoft Entra private network connectors](concept-connectors.md)

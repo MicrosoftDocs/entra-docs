@@ -188,7 +188,7 @@ To see the logs, open **Event Viewer** and go to **Applications and Services Log
 
 You can examine the state of the service in the Services window. The connector is made up of two Windows Services: the actual connector, and the updater. Both of them must run all the time.
 
- ![Example: Services window showing Microsoft Entra services local](media/application-proxy-connectors/aad-connector-services.png)
+ ![Example: Services window showing Microsoft Entra services local](media/concept-connectors/aad-connector-services.png)
 
 ## Inactive connectors
 A common issue is that connectors appear as inactive in a connector group. A firewall blocking the required ports is a common cause for inactive connectors.
