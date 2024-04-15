@@ -156,7 +156,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 
 ```bash
 # Replace {tenant} with your tenant!
-curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'client_id=00001111-aaaa-2222-bbbb-3333cccc4444&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&client_secret=qWgdYAmab0YSkuL1qKv5bPX&grant_type=client_credentials' 'https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token'
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'client_id=00001111-aaaa-2222-bbbb-3333cccc4444&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&client_secret=A1bC2dE3f...&grant_type=client_credentials' 'https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token'
 ```
 
 |    Parameter    | Condition | Description |
