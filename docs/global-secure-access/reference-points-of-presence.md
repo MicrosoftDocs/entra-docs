@@ -1,6 +1,6 @@
 ---
-title: Global Secure Access points of presence and service addresses
-description: Global Secure Access points of presence and service addresses for Microsoft Entra Internet and Microsoft Entra Private Access.
+title: Global Secure Access points of presence and IP addresses
+description: Global Secure Access points of presence and IP addresses for Microsoft Entra Internet Access and Microsoft Entra Private Access.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -9,7 +9,7 @@ ms.date: 04/15/2024
 ms.service: global-secure-access
 ms.custom: references_regions
 ---
-# Global Secure Access (preview) points of presence and service addresses
+# Global Secure Access (preview) points of presence and IP addresses
 
 During the preview, Global Secure Access (preview) is available in limited points of presence, with new locations added periodically. The service routes traffic through one of the following nearby locations, so even if you're not in a listed location, you can still access the service. At this time, both Microsoft Entra Internet Access and Microsoft Entra Private Access are available in the same locations.
 
@@ -32,8 +32,8 @@ During the preview, Global Secure Access (preview) is available in limited point
 | Warsaw, Poland                   |                        |                         |                          |
 | Zurich, Switzerland              |                        |                         |                          |
 
-## Internet Protocol (IP) addresses and Fully Qualified Domain Names (FQDNs) for Global Secure Access service
-The Global Secure Access service is accessed from the Global Secure Access client and is used for Microsoft Entra Internet Access (including Microsoft 365) and Microsoft Entra Private Access traffic.
+## IP addresses and Fully Qualified Domain Names (FQDNs) for Global Secure Access service
+The Global Secure Access service is accessed from the Global Secure Access client and is used for Microsoft Entra Internet Access (including Microsoft 365) and Microsoft Entra Private Access traffic. The ingress and egress Internet Protocol (IP) addresses are listed.
 
 ### IP addresses for the Global Secure Access service
 Add Anycast IP ranges for accessing the Global Secure Access service edge to your enterprise Access Control Lists (ACLs) and firewalls. When operating in a side-by-side model with other Security Service Edge (SSE) clients, add the Anycast IP ranges to these other clients.
