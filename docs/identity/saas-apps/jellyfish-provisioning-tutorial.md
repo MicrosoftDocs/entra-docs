@@ -46,11 +46,11 @@ The scenario outlined in this tutorial assumes that you already have the followi
 1. Login to the **Jellyfish** portal and navigate to **Key Management > API Keys**.
 2. Click on **Generate New**
 
-![Screenshot of API Key management page.](./media/jellyfish-provisioning-tutorial/api-key-page.png)
+   ![Screenshot of API Key management page.](./media/jellyfish-provisioning-tutorial/api-key-page.png)
 
 3. Search for the admin account created as part of the prerequisites and click **Create**. (Optionally) set an expiry, noting that the credential *must* be updated once expired.
 
-![Screenshot of Creating New API Key.](./media/jellyfish-provisioning-tutorial/create-new-api-key.png)
+   ![Screenshot of Creating New API Key.](./media/jellyfish-provisioning-tutorial/create-new-api-key.png)
 
 4. The API key will be downloaded, ensure that this key is kept safe as this will grant access to the user account it was generated for. It is recommended to delete the downloaded API key once user provisioning is configured.
 
@@ -92,7 +92,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, enter the **Tenant Url** which will be in the form of **https://\<organisation\>.securesme.com**. This will be the same address used to login to the Jellyfish portal. For the *Secret Token* input the API key generated eariler in step 2. Then click on Authorize, make sure that you enter your Jellyfish account's Admin credentials. Click **Test Connection** to ensure Microsoft Entra ID can connect to Jellyfish. If the connection fails, ensure your Jellyfish account has Admin permissions and try again.
+1. In the **Admin Credentials** section, enter the **Tenant Url** which will be in the form of **https://\<organisation\>.securesme.com**. This will be the same address used to log in to the Jellyfish portal. For the *Secret Token* input the API key generated earlier in step 2. Then click on Authorize, make sure that you enter your Jellyfish account's Admin credentials. Click **Test Connection** to ensure Microsoft Entra ID can connect to Jellyfish. If the connection fails, ensure your Jellyfish account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
