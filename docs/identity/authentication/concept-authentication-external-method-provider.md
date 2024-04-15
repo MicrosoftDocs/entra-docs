@@ -90,5 +90,5 @@ If you have any issues building your external authentication methods integration
 ## Next steps
 
 - [Configure an external authentication method identity provider](how-to-authentication-external-method-configure.md)
-- [Add an external authentication method identity provider](how-to-authentication-external-method-add.md)
+- [Add an external authentication method provider](how-to-authentication-external-method-add.md)
 - [Entra ID interaction with provider](how-to-authentication-external-method-interaction.md)
