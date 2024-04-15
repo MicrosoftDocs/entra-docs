@@ -57,7 +57,7 @@ The external user authenticating via a browser. The ability to pre authenticate 
 
 ### Delegation service
 
-The application proxy connector that gets a Kerberos service ticket for users from a Kerberos Key Distribution Center (KCD).
+The private network connector that gets a Kerberos service ticket for users from a Kerberos Key Distribution Center (KCD).
 
 The external communications between the client and the Azure front end have no bearing on KCD. These communications only make sure that KCD works. The application proxy service is provided a valid user ID that is used to get a Kerberos ticket. Without this ID, KCD isn't possible and fails.
 
@@ -65,7 +65,7 @@ The browser error messages provide some good clues about why things fail. Record
 
 ![Example: Incorrect KCD configuration error](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic3.png)
 
-The corresponding entries seen in the event log show as events 13019 or 12027. Find the connector event logs in **Applications and Services Logs** &gt; **Microsoft** &gt; **AadApplicationProxy** &gt; **Connector** &gt; **Admin**.
+The corresponding entries seen in the event log show as events 13019 or 12027. Find the connector event logs in **Applications and Services Logs** &gt; **Microsoft** &gt; **Microsoft Entra private network** &gt; **Connector** &gt; **Admin**.
 
 1. Use an **A** record in your internal Domain Name System (DNS) for the application’s address, not a **`CName`**.
 1. Reconfirm that the connector host has the right to delegate to the designated target account’s Service Principal Name (SPN). Reconfirm that **Use any authentication protocol** is selected. For more information, see the [SSO configuration article](how-to-configure-sso-with-kcd.md).
@@ -103,7 +103,7 @@ The consumer of the Kerberos ticket the connector provided. At this stage, expec
 
    - Re-enable preauthentication in the portal. Authenticate through Azure by attempting to connect to the application via its external URL. If SSO fails, you see a forbidden error message in the browser and event 13022 in the log:
 
-     *Microsoft Entra application proxy connector can't authenticate the user because the backend server responds to Kerberos authentication attempts with an HTTP 401 error.*
+     *Microsoft Entra private network connector can't authenticate the user because the backend server responds to Kerberos authentication attempts with an HTTP 401 error.*
 
       ![Shows HTTTP 401 forbidden error](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic8.png)
 

@@ -527,10 +527,6 @@ An external identity can't perform multifactor authentication to the resource te
 
 For more information about how to enable **Trust multifactor authentication from Microsoft Entra tenants**, see [Configure B2B collaboration cross-tenant access](../../external-id/cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims).
 
-## Known issues
-
-- On iOS clients, there's a double prompt issue as part of the Microsoft Entra CBA flow where the user needs to select **Use the certificate or smart card** twice. We're aware of the UX experience issue and working on fixing this for a seamless UX experience.
-
 ## Next steps
 
 - [Overview of Microsoft Entra CBA](concept-certificate-based-authentication.md)

@@ -12,7 +12,7 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 07/26/2023
 ms.custom: developer, devx-track-dotnet
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample WPF desktop app to sign in and sign out users with my Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample WPF desktop app to sign in and sign out users with my external tenant
 ---
 
 # Sign in users in a sample WPF desktop application 
@@ -25,7 +25,7 @@ This article uses a sample Windows Presentation Foundation (WPF) application to 
 
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
-- Microsoft Entra ID for customers tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl).
+- An external tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl).
 
 ## Register the desktop app
 
@@ -69,7 +69,7 @@ If you choose to download the *.zip* file, extract the sample app file to a fold
 
 1. Replace `Enter_the_Application_Id_Here` with the Application (client) ID of the app you registered earlier.
  
-1. Replace `Enter_the_Tenant_Subdomain_Here` with the Directory (tenant) subdomain. For example, if your primary domain is *contoso.onmicrosoft.com*, replace `Enter_the_Tenant_Subdomain_Here` with *contoso*. If you don't have your primary domain, learn how to [read tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+1. Replace `Enter_the_Tenant_Subdomain_Here` with the Directory (tenant) subdomain. For example, if your primary domain is *contoso.onmicrosoft.com*, replace `Enter_the_Tenant_Subdomain_Here` with *contoso*. If you don't have your primary domain, learn how to [read tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 ## Run and test sample WPF desktop app 
 

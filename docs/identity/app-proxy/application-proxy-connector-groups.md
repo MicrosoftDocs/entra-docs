@@ -13,9 +13,9 @@ ms.reviewer: ashishj
 
 # Publish applications on separate networks and locations using connector groups
 
-Use application proxy connector groups to assign specific connectors to specific applications. Connector groups give you more control and let you optimize your deployments.
+Use private network connector groups to assign specific connectors to specific applications. Connector groups give you more control and let you optimize your deployments.
 
-Each application proxy connector is assigned to a connector group. All the connectors that belong to the same connector group act as a separate unit for high-availability and load balancing. All connectors belong to a connector group. If you don't create groups, then all your connectors are in a default group. You create new connector groups and assign connectors in the Microsoft Entra admin center.
+Each private network connector is assigned to a connector group. All the connectors that belong to the same connector group act as a separate unit for high-availability and load balancing. All connectors belong to a connector group. If you don't create groups, then all your connectors are in a default group. You create new connector groups and assign connectors in the Microsoft Entra admin center.
 
 Connector groups are useful if your applications are hosted in different locations. You create connector groups based on location. Applications use connectors that are physically close to them.
 
@@ -65,7 +65,7 @@ Take as an example an organization that has several virtual machines connected t
 
 ![Diagram that illustrates the Microsoft Entra IaaS network](./media/application-proxy-connector-groups/application-proxy-iaas-network.png)
   
-With Microsoft Entra application proxy connector groups, you enable a common service to secure access to all applications without creating more dependencies on your corporate network:
+With Microsoft Entra private network connector groups, you enable a common service to secure access to all applications without creating more dependencies on your corporate network:
 
 ![Microsoft Entra IaaS Multiple Cloud Vendors](./media/application-proxy-connector-groups/application-proxy-multiple-cloud-vendors.png)
 
@@ -112,5 +112,5 @@ In the example, the company has two datacenters, A, and B, with two connectors t
 
 ## Next steps
 
-- [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md)
+- [Understand Microsoft Entra private network connectors](application-proxy-connectors.md)
 - [Enable single-sign on](~/identity/enterprise-apps/what-is-single-sign-on.md)

@@ -31,7 +31,7 @@ You can create multiple user flows if you have multiple applications that you wa
 
 ## Prerequisites
 
-- **A Microsoft Entra customer tenant**: Before you begin, create your Microsoft Entra customer tenant. You can set up a <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">free trial</a>, or you can create a new customer tenant in Microsoft Entra ID.
+- **A Microsoft Entra external tenant**: Before you begin, create your Microsoft Entra external tenant. You can set up a <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">free trial</a>, or you can create a new external tenant in Microsoft Entra ID.
 - **Email one-time passcode enabled (optional)**: If you want customers to use their email address and a one-time passcode each time they sign in, make sure Email one-time passcode is enabled at the tenant level (in the [Microsoft Entra admin center](https://entra.microsoft.com/), navigate to **External Identities** > **All Identity Providers** > **Email One-time-passcode**).
 - **Custom attributes defined (optional)**: User attributes are values collected from the user during self-service sign-up. Microsoft Entra ID comes with a built-in set of attributes, but you can [define custom attributes to collect during sign-up](how-to-define-custom-attributes.md). Define custom attributes in advance so they're available when you set up your user flow. Or you can create and add them later.
 - **Identity providers defined (optional)**: You can set up federation with [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md) in advance, and then select them as sign-in options as you create the user flow.
@@ -44,7 +44,7 @@ Follow these steps to create a user flow a customer can use to sign in or sign u
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
 1. Browse to **Identity** > **External Identities** > **User flows**.
 
