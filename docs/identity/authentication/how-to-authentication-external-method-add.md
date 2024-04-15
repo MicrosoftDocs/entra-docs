@@ -15,7 +15,7 @@ ms.reviewer: gregkmsft, msgustavosa
 ---
 # Add an external authentication method to Entra ID
 
-External identity provider information will be stored in each tenant's authentication methods policy as an authentication method of externalAuthenticationMethod type.  Each provider will have one entry in the list object of the policy, and per the authentication method framework, will have state of whether it’s enabled, include groups capable to use the method, and exclude groups that are not allowed to use the method.  
+External identity provider information will be stored in each tenant's authentication methods policy as an authentication method of externalAuthenticationMethodConfiguration type.  Each provider will have one entry in the list object of the policy, and per the authentication method framework, will have state of whether it’s enabled, include groups capable to use the method, and exclude groups that are not allowed to use the method.  
 
 This authentication method will eventually be able to be included in authentication strengths, and then admins can use those authentication strengths as part of defining a Conditional Access policy requirement; this functionality will be added in the future.
 
@@ -32,7 +32,7 @@ Each time Entra ID loads a ExternalAuthenticationMethodConfiguration entry, it w
 
 ## Add an external authentication method by using Miccrosoft Graph
 
-To add the external authentication method, the customer admin will need the values listed in the previous section  (**ExternalAuthenticationMethod**: Name, AppId, ClientId, and DiscoveryUrl) and will call the Microsoft Graph authentication methods policy endpoint to post a new configuration. Note that the user will need the Policy.ReadWrite.AuthenticationMethod permission to manage this policy.
+To add the external authentication method, the customer admin will need the values listed in the previous section  (**ExternalAuthenticationMethodConfiguration**: Name, AppId, ClientId, and DiscoveryUrl) and will call the Microsoft Graph authentication methods policy endpoint to POST a new configuration. Note that the user will need the Policy.ReadWrite.AuthenticationMethod permission to manage this policy.
 
 >[!IMPORTANT]
 >The method will be targeted to all users when created unless specific include targets are specified during creation. For more information about how to get group IDs so that you can specify them in the method creation, see [Groups overview](/graph/api/resources/groups-overview).
@@ -74,7 +74,7 @@ HTTP/1.1 201 CREATED
 
 ## Add an external authentication method by using Entra admin center
 
-To add the external authentication method, the customer admin will need the values listed previously (**ExternalAuthenticationMethod**: Name, AppId, ClientId, and DiscoveryUrl). These values will be updated in the Entra admin center authentication methods policy (**Security** > **Authentication methods** > **Policies**), after selecting to add an external authentication method.
+To add the external authentication method, the customer admin will need the values listed previously (**ExternalAuthenticationMethodConfiguration**: Name, AppId, ClientId, and DiscoveryUrl). These values will be updated in the Entra admin center authentication methods policy (**Security** > **Authentication methods** > **Policies**), after selecting to add an external authentication method.
 
 :::image type="content" source="./media/how-to-authentication-external-method-add/add-external-method.png" alt-text="Screenshot of how to add an external authentication method.":::
 
