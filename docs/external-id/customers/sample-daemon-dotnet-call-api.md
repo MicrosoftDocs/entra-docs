@@ -1,6 +1,6 @@
 ---
 title: Call an API in a sample .NET daemon application
-description: Learn how to configure a sample .NET daemon application that calls an API protected with Microsoft Entra ID for customers
+description: Learn how to configure a sample .NET daemon application that calls an API protected with Microsoft Entra External ID
  
 author: SHERMANOUKO
 manager: mwongerapk
@@ -11,12 +11,12 @@ ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.topic: sample
 ms.date: 07/13/2023
-#Customer intent: As a dev, devops, I want to configure a sample .NET daemon application that calls an API protected by Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to configure a sample .NET daemon application that calls an API protected by an external tenant
 ---
 
 # Call an API in a sample .NET daemon application 
 
-This article uses a sample .NET daemon application to show you how a daemon application acquires a token to call a protected web API. Microsoft Entra ID for customers protects the Web API. 
+This article uses a sample .NET daemon application to show you how a daemon application acquires a token to call a protected web API. Microsoft Entra External ID protects the Web API. 
 
 A daemon application acquires a token on behalf of itself (not on behalf of a user). Users can't interact with a daemon application because it requires its own identity. This type of application requests an access token by using its application identity and presenting its application ID, credential (password or certificate), and application ID URI to External ID. 
 
@@ -26,7 +26,7 @@ A daemon application acquires a token on behalf of itself (not on behalf of a us
 
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
-- Microsoft Entra ID for customers tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl)</a>.
+- An external tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl)</a>.
 
 ## Register a daemon application and a web API
 
@@ -77,7 +77,7 @@ To use your app registration in the client web application sample:
 
     - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the daemon application you registered earlier.
      
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
     
     - `Enter_the_Client_Secret_Here` and replace it with the daemon application secret value you copied earlier.
     
@@ -93,7 +93,7 @@ To use your app registration in the web API sample:
     
     - `Enter_the_Tenant_Id_Here` and replace it with the Directory (tenant) ID you copied earlier.
     
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 ##  Run and test sample daemon application and API 
 
@@ -117,28 +117,28 @@ Posting a to-do...
 Retrieving to-do's from server...
 To-do data:
 ID: 1
-User ID: 41b1e1a8-8e51-4514-8dab-e568afa2826c
+User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 Message: Bake bread
 Posting a second to-do...
 Retrieving to-do's from server...
 To-do data:
 ID: 1
-User ID: 41b1e1a8-8e51-4514-8dab-e568afa2826c
+User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 Message: Bake bread
 ID: 2
-User ID: 41b1e1a8-8e51-4514-8dab-e568afa2826c
+User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 Message: Butter bread
 Deleting a to-do...
 Retrieving to-do's from server...
 To-do data:
 ID: 2
-User ID: 41b1e1a8-8e51-4514-8dab-e568afa2826c
+User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 Message: Butter bread
 Editing a to-do...
 Retrieving to-do's from server...
 To-do data:
 ID: 2
-User ID: 41b1e1a8-8e51-4514-8dab-e568afa2826c
+User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 Message: Eat bread
 Deleting remaining to-do...
 Retrieving to-do's from server...

@@ -66,7 +66,6 @@ POST https://your-api.com/endpoint
                 "market": "en-us"
             },
             "protocol": "OAUTH2.0",
-            "requestType": "SignIn",
             "clientServicePrincipal": {
                 "id": "<Your Test Applications servicePrincipal objectId>",
                 "appId": "<Your Test Application App Id>",
@@ -128,7 +127,7 @@ When a B2B user from Fabrikam organization authenticates to Contoso's organizati
     "companyName": "Fabrikam",
     "createdDateTime": "2022-07-15T00:00:00Z",
     "displayName": "John Wright",
-    "id": "12345678-0000-0000-0000-000000000000",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "mail": "johnwright@fabrikam.com",
     "preferredDataLocation": "EUR",
     "userPrincipalName": "johnwright_fabrikam.com#EXT#@contoso.onmicrosoft.com",

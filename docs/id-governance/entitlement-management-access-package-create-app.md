@@ -26,9 +26,9 @@ This article describes how to create an access package for a single application 
 [!INCLUDE [active-directory-entra-governance-license.md](~/includes/entra-entra-governance-license.md)]
 
 
-Before you begin creating the access package, you must [integrate the application with Microsoft Entra ID](identity-governance-applications-integrate.md). If your application is not already present in your Microsoft Entra ID tenant, follow the instructions in that article to create an application and service principal for the object. Also ensure that your Microsoft Entra ID tenant has met the [prerequisites before configuring Microsoft Entra ID for identity governance](identity-governance-applications-prepare.md).
+Before you begin creating the access package, you must [integrate the application with Microsoft Entra ID](identity-governance-applications-integrate.md). If your application isn't already present in your Microsoft Entra ID tenant, follow the instructions in that article to create an application and service principal for the object. Also ensure that your Microsoft Entra ID tenant has met the [prerequisites before configuring Microsoft Entra ID for identity governance](identity-governance-applications-prepare.md).
 
-To create the access package and its associated policies and assignments, you will need to have the following information ready:
+To create the access package and its associated policies and assignments, you'll need to have the following information ready:
 
 |Use case|Configuration setting|PowerShell variable|
 |--|--|--|
@@ -118,7 +118,7 @@ Once the catalog is created, add the application [as a resource in that catalog]
    $servicePrincipalId = $servicePrincipal.Id
    ```
 
-1. Check if the application is already present in the catalog as a resource. If it is already present, continue at step 6 of this section.
+1. Check if the application is already present in the catalog as a resource. If it's already present, continue at step 6 of this section.
 
    ```powershell
    $resourceId = $null
@@ -173,7 +173,8 @@ Once the catalog is created, add the application [as a resource in that catalog]
 
 ## Create the access package for the application
 
-Next you will use PowerShell to [create an access package in a catalog](entitlement-management-access-package-create.md#create-an-access-package-by-using-microsoft-powershell)  that will include the application's role.
+
+Next you'll use PowerShell to [create an access package in a catalog](entitlement-management-access-package-create.md#create-an-access-package-by-using-microsoft-powershell)  that includes the application's role.
 
 1. Specify the name and description of the access package.
 
@@ -183,7 +184,8 @@ Next you will use PowerShell to [create an access package in a catalog](entitlem
    $accessPackageHidden = $true
    ```
 
-1. Check that the access package does not already exist.
+1. Check that the access package doesn't already exist.
+
 
    ```powershell
    foreach ($a in $catalog.AccessPackages) { if ($a.DisplayName -eq $accessPackageName) { throw "access package $accessPackageName already exists" } }
@@ -234,7 +236,7 @@ Once you've created an access package, then you link the role of the resource in
 
 ## Create access package assignment policies for direct assignment
 
-In this section you will create the first access package assignment policy in the access package, an [access package assignment policy for direct assignment](entitlement-management-access-package-request-policy.md#none-administrator-direct-assignments-only), that can be used to track the users who already have access to the application. In the example policy created in this section, only the administrators or access package assignment managers can assign access, users retain access indefinitely, and there are no approvals or access reviews.
+In this section you'll create the first access package assignment policy in the access package, an [access package assignment policy for direct assignment](entitlement-management-access-package-request-policy.md#none-administrator-direct-assignments-only), that can be used to track the users who already have access to the application. In the example policy created in this section, only the administrators or access package assignment managers can assign access, users retain access indefinitely, and there are no approvals or access reviews.
 
 1. Create a policy.
 
@@ -284,7 +286,7 @@ In this section you will create the first access package assignment policy in th
 
 Microsoft Entra entitlement management can enforce [separation of duties](entitlement-management-access-package-incompatible.md) checks to prevent a user who already has an existing assignment to another designated access package, or membership of a designated group, from requesting an access package.
 
-If you do not have separation of duties requirements for this application, then continue at the next section.
+If you don't have separation of duties requirements for this application, then continue at the next section.
 
 If you have separation of duties requirements, then configure the incompatible access packages or existing groups for your access package.
 
@@ -365,7 +367,7 @@ Add assignments of existing users, who already have access to the application, t
 
 ## Add any additional users who should have access to the application
 
-This script illustrates using the Microsoft Graph PowerShell cmdlets to add additional users to the application. If you do not have any users that need access, and would not receive it automatically, then continue in the next section.
+This script illustrates using the Microsoft Graph PowerShell cmdlets to add additional users to the application. If you don't have any users that need access, and wouldn't receive it automatically, then continue in the next section.
 
 This script assumes you have an input CSV file containing one column, `UserPrincipalName`, to assign those users to the access package via its direct assignment policy.
 
@@ -418,7 +420,7 @@ This script assumes you have an input CSV file containing one column, `UserPrinc
 
 ## Add a policy to the access packages for auto assignment
 
-If your organization's policy for who can be assigned access to an application includes a rule based on user's attributes to assign and remove access automatically based on those attributes, you can represent this using an [automatic assignment policy](entitlement-management-access-package-auto-assignment-policy.md). An access package can have at most one automatic assignment policy. If you do not have a requirement for an automatic assignment, then continue at the next section.
+If your organization's policy for who can be assigned access to an application includes a rule based on user's attributes to assign and remove access automatically based on those attributes, you can represent this using an [automatic assignment policy](entitlement-management-access-package-auto-assignment-policy.md). An access package can have at most one automatic assignment policy. If you don't have a requirement for an automatic assignment, then continue at the next section.
 
 1. Specify the automatic assignment filter expression for users to receive an assignment. Change the value of `autoAssignmentPolicyFilter` to be a filter for the users in your Microsoft Entra ID that are in scope. The syntax and allowable attributes are provided in [dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
 
@@ -514,7 +516,7 @@ For more examples, see [Create an assignment policy through PowerShell](entitlem
 
 ## Configure lifecycle workflows tasks
 
-If you use Microsoft Entra [lifecycle workflows](what-are-lifecycle-workflows.md) for employee join, move leave events, then you can also add tasks to those workflows to add or remove assignments to this access package. If you do not use lifecycle workflows, then continue at the next section.
+If you use Microsoft Entra [lifecycle workflows](what-are-lifecycle-workflows.md) for employee join, move leave events, then you can also add tasks to those workflows to add or remove assignments to this access package. If you don't use lifecycle workflows, then continue at the next section.
 
 This example illustrates how to make a change to the join and leave event workflows.
 
@@ -538,7 +540,7 @@ This example illustrates how to make a change to the join and leave event workfl
 
 ## Manage assignments
 
-Once the access packages, policies and initial assignments have been created, then users will be assigned access to the application's role.
+Once the access packages, policies, and initial assignments have been created, then users are assigned access to the application's role.
 
 Later, you can monitor for changes to the assignments, or programatically add or remove assignments.
 
