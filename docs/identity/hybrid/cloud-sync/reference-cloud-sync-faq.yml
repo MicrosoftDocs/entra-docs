@@ -119,7 +119,7 @@ sections:
       - question: |
           Does Microsoft Entra Cloud Sync support nested groups with group scoping?
         answer: |
-          No. Nested objects beyond the first level aren 't' included when scoping using security groups. Only use group scope filtering for pilot scenarios, there are limitations to syncing large groups. 
+          No. Nested objects beyond the first level aren't included when scoping using security groups. Only use group scope filtering for pilot scenarios, there are limitations to syncing large groups. 
       - question: |
           Does the cloud provisioning agent load balance if I have multiple agents installed?
         answer: |

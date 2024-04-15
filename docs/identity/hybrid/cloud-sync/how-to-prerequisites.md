@@ -148,7 +148,7 @@ If there's a firewall between your servers and Microsoft Entra ID, configure the
 
 
 
-- If your unable to add connections, allow access to the [Azure datacenter IP ranges](https://www.microsoft.com/download/details.aspx?id=41653), which are updated weekly.
+- If you're unable to add connections, allow access to the [Azure datacenter IP ranges](https://www.microsoft.com/download/details.aspx?id=41653), which are updated weekly.
 
 ---
 

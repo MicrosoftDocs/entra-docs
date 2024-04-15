@@ -112,9 +112,9 @@ The accidental delete feature is designed to protect you from accidental configu
 
 This feature allows you to:
 
-- configure the ability to prevent accidental deletes automatically. 
+- Configure the ability to prevent accidental deletes automatically. 
 - Set the # of objects (threshold) beyond which the configuration will take effect 
-- set up a notification email address so they can get an email notification once the sync job in question is put in quarantine for this scenario 
+- Set up a notification email address so they can get an email notification once the sync job in question is put in quarantine for this scenario 
 
 For more information, see [Accidental deletes](how-to-accidental-deletes.md)
 

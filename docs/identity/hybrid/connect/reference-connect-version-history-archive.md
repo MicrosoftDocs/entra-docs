@@ -17,7 +17,7 @@ ms.custom: has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 The Microsoft Entra team regularly updates Microsoft Entra Connect with new features and functionality. Not all additions are applicable to all audiences.
 
 >[!NOTE] 
-> This article contains version reference information about all archived versions of Microsoft Entra ID - 1.5.42.0 and older. For current releases, see the [Microsoft Entra Connect Version release history](reference-connect-version-history.md)
+> This article contains version reference information about all archived versions of Microsoft Entra ID - 1.5.42.0 and older. For current releases, see the [Microsoft Entra Connect Version release history](reference-connect-version-history.md).
 
 ## 1.5.42.0
 
@@ -1074,7 +1074,7 @@ Released: March 2017
 Microsoft Entra Connect Sync
 * Fixed an issue which causes Microsoft Entra Connect wizard to fail if the display name of the Microsoft Entra Connector doesn't contain the initial onmicrosoft.com domain assigned to the Microsoft Entra tenant.
 * Fixed an issue which causes Microsoft Entra Connect wizard to fail while making connection to SQL database when the password of the Sync Service Account contains special characters such as apostrophe, colon and space.
-* Fixed an issue which causes the error “The dimage has an anchor that is different than the image” to occur on a Microsoft Entra Connect server in staging mode, after you have temporarily excluded an on-premises AD object from syncing and then included it again for syncing.
+* Fixed an issue which causes the error "The dimage has an anchor that is different than the image" to occur on a Microsoft Entra Connect server in staging mode, after you have temporarily excluded an on-premises AD object from syncing and then included it again for syncing.
 * Fixed an issue which causes the error “The object located by DN is a phantom” to occur on a Microsoft Entra Connect server in staging mode, after you have temporarily excluded an on-premises AD object from syncing and then included it again for syncing.
 
 AD FS management

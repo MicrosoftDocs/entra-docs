@@ -66,7 +66,7 @@ To create two groups, follow these steps.
 
 ## Create the CloudSyncCustomExtensionApp and service principal
 >[!Important]
-> Directory extension for Microsoft Entra Cloud Sync is only supported for applications with the identifier URI “api://&LT;tenantId&GT;/CloudSyncCustomExtensionsApp” and the [Tenant Schema Extension App](../connect/how-to-connect-sync-feature-directory-extensions.md#configuration-changes-in-azure-ad-made-by-the-wizard) created by Microsoft Entra Connect 
+> Directory extension for Microsoft Entra Cloud Sync is only supported for applications with the identifier URI “api://&LT;tenantId&GT;/CloudSyncCustomExtensionsApp” and the [Tenant Schema Extension App](../connect/how-to-connect-sync-feature-directory-extensions.md#configuration-changes-in-azure-ad-made-by-the-wizard) created by Microsoft Entra Connect. 
 
  1. On an on-premises machine, open PowerShell with Administrative privileges
  2. To set the execution policy, run (press [A] Yes to all when prompted):
@@ -108,7 +108,7 @@ To create two groups, follow these steps.
 
 ## Create our extension and cloud sync configuration
 
- 1. Now we create our custom attribute and assign it to the CloudSyncCustomExtensionApp. Replace &lt;id&gt; with your id. Use the object id of the application.
+ 1. Now we create our custom attribute and assign it to the CloudSyncCustomExtensionApp. Replace &lt;id&gt; with your id. Use the object ID of the application.
   
    ```powershell
    New-MgApplicationExtensionProperty -Id <id> -Name “SynchGroup” -DataType “Boolean” -TargetObjects “Group”
@@ -116,7 +116,7 @@ To create two groups, follow these steps.
  2. You may be prompted again to enter the ID.
   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-3.png" alt-text="Screenshot of PowerShell New-MgApplicationExtensionProperty." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-3.png":::
  
- 3. This cmdlet creates an attribute that looks like extenstion_&lt;guid&gt;_SynchGroup. You need this to associate it with a group, however the graph PowerShell cmdlet doesn't return this. 
+ 3. This cmdlet creates an attribute that looks like extension_&lt;guid&gt;_SynchGroup. You need this to associate it with a group, however the graph PowerShell cmdlet doesn't return this. 
  4. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
  5. Browse to **Identity** > **Hybrid Management** > **Microsoft Entra Connect** > **Cloud sync**.
  6. Select **New configuration**.
@@ -130,7 +130,7 @@ To create two groups, follow these steps.
  10. On the left, click **Scoping filters** select **Group scope** - **All groups**
  11. Click **Edit attribute mapping** and change the **Target Contaniner** to OU=Groups,DC=contoso,DC=com. Click **Save**.
  11. Click **Add Attribute scoping filter**
- 12. Under **Target Attribute** select the newly created attribute that looks like extenstion_&lt;guid&gt;_SynchGroup. Also, **write this down** because we need to use this in order to add this attribute to one of our groups.
+ 12. Under **Target Attribute** select the newly created attribute that looks like extension_&lt;guid&gt;_SynchGroup. Also, **write this down** because we need to use this in order to add this attribute to one of our groups.
   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-4.png" alt-text="Screenshot of available attributes." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-4.png":::
  
  13. Under **Operator** select **PRESENT**
