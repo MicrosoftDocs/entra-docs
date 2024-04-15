@@ -146,8 +146,6 @@ items:
         href: application-proxy-back-end-kerberos-constrained-delegation-how-to.md
       - name: Can't Access this Corporate Application error
         href: application-proxy-sign-in-bad-gateway-timeout-error.md
-      - name: Problem installing the private network connector
-        href: application-proxy-connector-installation-problem.md
       - name: CORS issues in application proxy
         href: application-proxy-understand-cors-issues.md
   - name: Reference

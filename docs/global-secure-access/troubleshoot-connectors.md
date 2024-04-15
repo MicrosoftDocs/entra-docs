@@ -1,19 +1,18 @@
 ---
 title: Troubleshoot problems installing the Microsoft Entra private network connector
-description: Troubleshoot problems installing the private network connector for Microsoft Entra ID.
+description: Troubleshoot problems installing the Microsoft Entra private network connector.
 author: kenwith
 manager: amycolannino
-ms.service: entra-id
-ms.subservice: app-proxy
+ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 02/26/2024
+ms.date: 04/15/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
 # Troubleshoot problems installing the private network connector
 
-Microsoft Entra private network connector is an internal domain component that uses outbound connections to establish the connectivity from the cloud available endpoint to the internal domain.
+Microsoft Entra private network connector is an internal domain component that uses outbound connections to establish the connectivity from the cloud available endpoint to the internal domain. The connector is used by both Microsoft Entra Private Access and Microsoft Entra application proxy.
 
 ## General problem areas with connector installation
 
@@ -26,7 +25,7 @@ When the installation of a connector fails, the root cause is usually one of the
 3.  **Authentication of the admin** – during installation, the user must provide admin credentials to complete the connector installation.
 
 > [!NOTE]
-> The connector installation logs can be found in the %TEMP% folder and can help provide additional information on what is causing an installation failure.
+> The connector installation logs can be found in the `%TEMP%` folder and can help provide additional information on what is causing an installation failure.
 
 ## Verify connectivity to the cloud application proxy service and Microsoft sign in page
 
@@ -34,7 +33,7 @@ When the installation of a connector fails, the root cause is usually one of the
 
 1.  On the connector server, run a port test by using [telnet](/windows-server/administration/windows-commands/telnet) or other port testing tool to verify that ports 443 and 80 are open.
 
-2.  Verify that the Firewall or backend proxy has access to the required domains and ports see, [Prepare your on-premises environment](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment).
+2.  Verify that the Firewall or backend proxy has access to the required domains and ports see, [Prepare your on-premises environment](../identity/app-proxy/application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment).
 
 3.  Open a browser tab and enter: `https://login.microsoftonline.com`. Make sure you can sign in.
 
@@ -105,4 +104,4 @@ Connect to `https://login.microsoftonline.com` and use the same credentials. Mak
 Select your user account, then **Directory Role** in the resulting menu. Verify that the selected role is **Application Administrator**. If you're unable to access any of the pages along these steps, you don't have the required role.
 
 ## Next steps
-- [Understand Microsoft Entra private network connectors](application-proxy-connectors.md)
+- [Understand Microsoft Entra private network connectors](concept-connectors.md)
