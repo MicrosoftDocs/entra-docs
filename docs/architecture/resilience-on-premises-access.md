@@ -10,12 +10,12 @@ ms.author: jricketts
 ---
 # Build resilience in application access with Application Proxy
 
-Application Proxy is a feature of Microsoft Entra ID that enables users to access on premises web applications from a remote client. Application Proxy includes the Application Proxy service in the cloud and the Application Proxy connectors that run on an on-premises server. 
+Application Proxy is a feature of Microsoft Entra ID that enables users to access on premises web applications from a remote client. Application Proxy includes the Application Proxy service in the cloud and the private network connectors that run on an on-premises server. 
 
-Users access on premises resources through a URL published via Application Proxy. They're redirected to the Microsoft Entra sign-in page. The Application Proxy service in Microsoft Entra ID then sends a token to the Application Proxy connector in the corporate network that passes the token to the on-premises Active Directory. The authenticated user can then access the on-premises resource. In the diagram below, [connectors](~/identity/app-proxy/application-proxy-connectors.md) are shown in a [connector group](~/identity/app-proxy/application-proxy-connector-groups.md).
+Users access on premises resources through a URL published via Application Proxy. They're redirected to the Microsoft Entra sign-in page. The Application Proxy service in Microsoft Entra ID then sends a token to the private network connector in the corporate network that passes the token to the on-premises Active Directory. The authenticated user can then access the on-premises resource. In the diagram below, [connectors](~/identity/app-proxy/application-proxy-connectors.md) are shown in a [connector group](~/identity/app-proxy/application-proxy-connector-groups.md).
 
 > [!IMPORTANT]
-> When you publish your applications via Application Proxy, you must implement [capacity planning and appropriate redundancy for the Application Proxy connectors](~/identity/app-proxy/application-proxy-connectors.md#capacity-planning).
+> When you publish your applications via Application Proxy, you must implement [capacity planning and appropriate redundancy for the private network connectors](~/identity/app-proxy/application-proxy-connectors.md#capacity-planning).
 
 ![Architecture diagram of Application y](./media/resilience-on-prem-access/admin-resilience-app-proxy.png))
 

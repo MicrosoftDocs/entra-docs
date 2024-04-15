@@ -44,8 +44,8 @@ To request a user authentication, cloud services send an `AuthnRequest` element 
 | `Version` | Required | This parameter should be set to `2.0`. |
 | `IssueInstant` | Required | This is a DateTime string with a UTC value and [round-trip format ("o")](/dotnet/standard/base-types/standard-date-and-time-format-strings). Microsoft Entra ID expects a DateTime value of this type, but doesn't evaluate or use the value. |
 | `AssertionConsumerServiceURL` | Optional | If provided, this parameter must match the `RedirectUri` of the cloud service in Microsoft Entra ID. |
-| `ForceAuthn` | Optional | This is a boolean value. If true, it means that the user will be forced to re-authenticate, even if they have a valid session with Microsoft Entra ID. |
-| `IsPassive` | Optional | This is a boolean value that specifies whether Microsoft Entra ID should authenticate the user silently, without user interaction, using the session cookie if one exists. If this is true, Microsoft Entra ID will attempt to authenticate the user using  the session cookie. |
+| `ForceAuthn` | Optional | This is a boolean value. If true, it means that the user will be forced to reauthenticate, even if they have a valid session with Microsoft Entra ID. |
+| `IsPassive` | Optional | This is a boolean value that specifies whether Microsoft Entra ID should authenticate the user silently, without user interaction, using the session cookie if one exists. If this is true, Microsoft Entra ID attempts to authenticate the user using  the session cookie. |
 
 All other `AuthnRequest` attributes, such as `Consent`, `Destination`, `AssertionConsumerServiceIndex`, `AttributeConsumerServiceIndex`, and `ProviderName` are **ignored**.
 
@@ -76,15 +76,15 @@ If `NameIDPolicy` is provided, you can include its optional `Format` attribute. 
 * `urn:oasis:names:tc:SAML:2.0:nameid-format:persistent`: Microsoft Entra ID issues the `NameID` claim as a pairwise identifier.
 * `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`: Microsoft Entra ID issues the `NameID` claim in e-mail address format.
 * `urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`: This value permits Microsoft Entra ID to select the claim format. Microsoft Entra ID issues the `NameID` claim as a pairwise identifier.
-* `urn:oasis:names:tc:SAML:2.0:nameid-format:transient`: Microsoft Entra ID issues the `NameID` claim as a randomly generated value that is unique to the current SSO operation. This means that the value is temporary and cannot be used to identify the authenticating user.
+* `urn:oasis:names:tc:SAML:2.0:nameid-format:transient`: Microsoft Entra ID issues the `NameID` claim as a randomly generated value that is unique to the current SSO operation. This means that the value is temporary and can't be used to identify the authenticating user.
 
-If `SPNameQualifier` is specified, Microsoft Entra ID will include the same `SPNameQualifier` in the response.
+If `SPNameQualifier` is specified, Microsoft Entra ID includes the same `SPNameQualifier` in the response.
 
 Microsoft Entra ID ignores the `AllowCreate` attribute.
 
 ### RequestedAuthnContext
 
-The `RequestedAuthnContext` element specifies the desired authentication methods. It is optional in `AuthnRequest` elements sent to Microsoft Entra ID. Microsoft Entra ID supports `AuthnContextClassRef` values such as `urn:oasis:names:tc:SAML:2.0:ac:classes:Password`.
+The `RequestedAuthnContext` element specifies the desired authentication methods. It's optional in `AuthnRequest` elements sent to Microsoft Entra ID. Microsoft Entra ID supports `AuthnContextClassRef` values such as `urn:oasis:names:tc:SAML:2.0:ac:classes:Password`.
 
 ### Scoping
 
@@ -153,7 +153,7 @@ When a requested sign-on completes successfully, Microsoft Entra ID posts a resp
 
 The `Response` element includes the result of the authorization request. Microsoft Entra ID sets the `ID`, `Version` and `IssueInstant` values in the `Response` element. It also sets the following attributes:
 
-* `Destination`: When sign-on completes successfully, this is set to the `RedirectUri` of the service provider (cloud service).
+* `Destination`: When sign on completes successfully, this is set to the `RedirectUri` of the service provider (cloud service).
 * `InResponseTo`: This is set to the `ID` attribute of the `AuthnRequest` element that initiated the response.
 
 ### Issuer
@@ -182,7 +182,7 @@ The following sample is a SAML response to an unsuccessful sign-on attempt.
       <samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:RequestUnsupported" />
     </samlp:StatusCode>
     <samlp:StatusMessage>AADSTS75006: An error occurred while processing a SAML2 Authentication request. AADSTS90011: The SAML authentication request property 'NameIdentifierPolicy/SPNameQualifier' is not supported.
-    Trace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333
+    Trace ID: 0000aaaa-11bb-cccc-dd33-eeeeee333333
     Timestamp: 2013-03-18 08:49:24Z</samlp:StatusMessage>
     </samlp:Status>
 </samlp:Response>
