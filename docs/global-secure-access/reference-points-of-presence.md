@@ -46,8 +46,7 @@ The destinations include:
 - `13.107.233.0/24`
 - `150.171.15.0/24`
 - `150.171.18.0/24`
-- `151.206.250.0/23`
-- `151.206.252.0/22`
+- `151.206.0.0/16`
  
 ### IP addresses from the Global Secure Access service
 Network traffic egresses from the Global Secure Access service for Microsoft Entra Internet Access (including Microsoft 365) towards the internet and Software as a Service (SaaS) endpoints. The traffic carries a unique `Src IP` signature. Use the signature to set up location-based access controls for your applications and resources.
