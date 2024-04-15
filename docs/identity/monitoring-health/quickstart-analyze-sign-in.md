@@ -23,7 +23,7 @@ With the information in the Microsoft Entra sign-in log, you can figure out what
 To complete the scenario in this quickstart, you need:
 
 - A Microsoft Entra tenant with a [Premium P1 license](~/fundamentals/get-started-premium.md)
-- A user with the **Reports Reader**, **Security Reader**, **Security Administrator**, or **Global Administrator** role for the tenant.
+- A user with the **Reports Reader**, **Security Reader**, or **Security Administrator** role for the tenant.
 - **A test account called Isabella Simonsen** - If you don't know how to create a test account, see [Add cloud-based users](~/fundamentals/add-users.md#add-a-new-user).
 
 ## Perform a failed sign-in
