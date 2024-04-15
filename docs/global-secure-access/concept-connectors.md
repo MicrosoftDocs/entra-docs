@@ -1,5 +1,5 @@
 ---
-title: Understand Microsoft Entra private network connectors
+title: Understand the Microsoft Entra private network connector
 description: Learn how Microsoft Entra private network connectors work and how they are used by Microsoft Entra Private Access and application proxy.
 author: kenwith
 ms.author: kenwith
@@ -9,7 +9,7 @@ ms.date: 04/15/2024
 ms.service: global-secure-access
 ---
 
-# Understand Microsoft Entra private network connectors
+# Understand the Microsoft Entra private network connector
 
 Connectors are what make Microsoft Entra Private Access and application proxy possible. They're simple, easy to deploy and maintain, and super powerful. This article discusses what connectors are, how they work, and some suggestions for how to optimize your deployment.
 
@@ -187,8 +187,6 @@ The connectors have both **Admin** and **Session** logs. The **Admin** log inclu
 To see the logs, open **Event Viewer** and go to **Applications and Services Logs** > **Microsoft** > **Microsoft Entra private network** > **Connector**. To make the **Session** log visible, on the **View** menu, select **Show Analytic and Debug Logs**. The **Session** log is typically used for troubleshooting, and is disabled by default. Enable it to start collecting events and disable it when it's no longer needed.
 
 You can examine the state of the service in the Services window. The connector is made up of two Windows Services: the actual connector, and the updater. Both of them must run all the time.
-
- ![Example: Services window showing Microsoft Entra services local](media/concept-connectors/aad-connector-services.png)
 
 ## Inactive connectors
 A common issue is that connectors appear as inactive in a connector group. A firewall blocking the required ports is a common cause for inactive connectors.
