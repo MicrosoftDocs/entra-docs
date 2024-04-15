@@ -60,7 +60,7 @@ items:
     - name: Connectors
       href: /entra/global-secure-access/concept-connectors.md?toc=/entra/identity/app-proxy/toc.json&bc=/entra/identity/app-proxy/breadcrumb/toc.json
     - name: Connector groups
-      href: application-proxy-connector-groups.md
+      href: /entra/global-secure-access/concept-connector-groups.md?toc=/entra/identity/app-proxy/toc.json&bc=/entra/identity/app-proxy/breadcrumb/toc.json
     - name: High availability and load balancing
       href: application-proxy-high-availability-load-balancing.md
     - name: SAML-based SSO (on-premises apps)

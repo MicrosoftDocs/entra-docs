@@ -1,6 +1,6 @@
 ---
 title: Understand Microsoft Entra private network connectors
-description: Learn how Microsoft Entra private network connectors work and are used by Microsoft Entra Private Access and application proxy.
+description: Learn how Microsoft Entra private network connectors work and how they are used by Microsoft Entra Private Access and application proxy.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -74,7 +74,7 @@ You don't have to manually delete connectors that are unused. When a connector i
 
 ## Automatic updates
 
-Microsoft Entra ID provides automatic updates for all the connectors that you deploy. As long as the private network connector updater service is running, your connectors update with the latest major connector release automatically. If you don’t see the Connector Updater service on your server, you need to [reinstall your connector](../identity/app-proxy/application-proxy-add-on-premises-application.md) to get any updates. To learn more about connector updates, see [application proxy faq](application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-).
+Microsoft Entra ID provides automatic updates for all the connectors that you deploy. As long as the private network connector updater service is running, your connectors update with the latest major connector release automatically. If you don’t see the Connector Updater service on your server, you need to [reinstall your connector](../identity/app-proxy/application-proxy-add-on-premises-application.md) to get any updates. To learn more about connector updates, see [application proxy faq](../identity/app-proxy/application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-).
 
 If you don't want to wait for an automatic update to come to your connector, you can do a manual upgrade. Go to the [connector download page](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download) on the server where your connector is located and select **Download**. This process kicks off an upgrade for the local connector.
 
@@ -192,6 +192,8 @@ You can examine the state of the service in the Services window. The connector i
 
 ## Inactive connectors
 A common issue is that connectors appear as inactive in a connector group. A firewall blocking the required ports is a common cause for inactive connectors.
+
+[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 
 ## Next steps
 

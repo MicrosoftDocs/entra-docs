@@ -1,14 +1,12 @@
 ---
-title: Publish apps on separate networks via connector groups
-description: Covers how to create and manage groups of connectors in Microsoft Entra application proxy.
+title: Understand Microsoft Entra private network connector groups
+description: Learn how Microsoft Entra private network connector groups work and how they are used by Microsoft Entra Private Access and application proxy.
 author: kenwith
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: app-proxy
-ms.topic: conceptual
-ms.date: 02/26/2024
 ms.author: kenwith
-ms.reviewer: ashishj
+manager: amycolannino
+ms.topic: conceptual
+ms.date: 04/15/2024
+ms.service: global-secure-access
 ---
 
 # Publish applications on separate networks and locations using connector groups
@@ -24,26 +22,12 @@ Connector groups are useful if your applications are hosted in different locatio
 
 ## Prerequisites
 
-You must have multiple connectors to use connector groups. New connectors are automatically added to the **Default** connector group. For more information on installing connectors, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md).
+You must have multiple connectors to use connector groups. New connectors are automatically added to the **Default** connector group. For more information on installing connectors, see [configure connectorsD](how-to-configure-connectors.md).
 
-## Create connector groups
-To create a connector group:
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **enterprise applications** > **application proxy**.
-1. Select **New connector group**.
-
-   ![Shows the screen to select a new connector group](./media/application-proxy-connector-groups/new-group.png)
-
-1. Give your new connector group a name, then use the dropdown menu to select which connectors belong in the group.
-1. Select **Save**.
 
 ## Assign applications to your connector groups
 
-You assign an application to a connector group when you first publish it. You can also update the group a connector is assigned. To update the group a connector is in:
-
-1. From the management dashboard for your directory, select **Enterprise applications** > **All applications** > the application you want to assign to a connector group > **application proxy**.
-1. Use the **Connector Group** dropdown menu to select the group you want the application to use.
-1. Select **Save** to apply the change.
+You assign an application to a connector group when you first publish it. You can also update the group a connector is assigned.
 
 ## Use cases for connector groups
 
@@ -109,6 +93,8 @@ The recommended configuration for large and complex organizations is to have the
 In the example, the company has two datacenters, A, and B, with two connectors that serve each site. Each site has different applications that run on it.
 
 ![Example of company with 2 datacenters and 2 connectors](./media/application-proxy-connector-groups/application-proxy-sample-config-3.png)
+
+[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 
 ## Next steps
 
