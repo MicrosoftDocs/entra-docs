@@ -1,5 +1,4 @@
 ---
-
 title: Microsoft Entra audit log activity reference
 description: Get an overview of the audit activities that can be logged in your audit logs in Microsoft Entra ID.
 
@@ -8,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health
-ms.date: 09/14/2023
+ms.date: 04/15/2024
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk
 ---
@@ -1297,6 +1296,8 @@ Many of the activities captured in the PIM audit logs are similar, so take note 
 ## Self-service group management
 
 Users in your tenant can manage many aspects of their group memberships on their own. Use the Self-service group management logs to help troubleshoot issues with these scenarios.
+
+Many of the activities in this group are associated with background processes related to a user's activity. For example, you might see multiple `Features_GetFeaturesAsync` instances in your logs when a user accesses the MyAps or MyGroups portal. This activity doesn't indicate if the user made any changes. Other activities such as `GroupsODataV4_Get` often occur in groups for similar user actions.
 
 |Audit Category|Activity|
 |---|---|
