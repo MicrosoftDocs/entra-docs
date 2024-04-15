@@ -48,7 +48,7 @@ The flow to satisfy authentication that includes an external method is as follow
 1. The external authentication provider redirects the user back to Entra ID with a valid token, including all required claims.
 1. Entra ID validates that the token's signature came from the configured external authentication provider and then checks the contents of the token.
 1. Entra ID compares the claims in the token to the claims required.
-1. If the claims meet the required claims list, the user has satisfied the requirement. If the user satisfies any additional policy requirements, authentication succeeds and the access token is issued satisfying MFA.
+1. If the validation succeeds, the user has satisfied the requirement. The user might have to satisfy additional policy requirements, authentication succeeds satisfying MFA.
 
 :::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram of how external method authentication works.":::
 
