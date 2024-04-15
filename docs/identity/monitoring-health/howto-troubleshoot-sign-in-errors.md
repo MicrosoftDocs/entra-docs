@@ -29,7 +29,7 @@ In addition, the sign-in logs can also help you troubleshoot sign-in failures fo
 You need:
 
 - A Microsoft Entra tenant with a P1 or P2 license.
-- A user with the **Reports Reader**, **Security Reader**, or **Security Administrator**role for the tenant.
+- A user with the **Reports Reader**, **Security Reader**, or **Security Administrator** role for the tenant.
 - In addition, any user can access their own sign-ins from https://mysignins.microsoft.com.
 
 ## Gather sign-in details
