@@ -54,4 +54,4 @@ Network traffic egresses from the Global Secure Access service for Microsoft Ent
  
 The egress IP addresses are:
 - `128.94.0.0/19`
-` `151.206.0.0/16`
+- `151.206.0.0/16`
