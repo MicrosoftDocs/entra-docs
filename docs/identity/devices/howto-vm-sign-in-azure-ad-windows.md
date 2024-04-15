@@ -474,7 +474,7 @@ Another way to verify it is via Graph PowerShell:
 1. Run `Connect-MgGraph -Scopes "ServicePrincipalEndpoint.ReadWrite.All"`, followed by `"Application.ReadWrite.All"`.
 1. Sign in with a Global Administrator account.
 1. Consent to the permission prompt.
-1. Run `Get-MgServicePrincipal -ConsistencyLevel eventual -Search '"DisplayName:Microsoft Azure Windows Virtual Machine Sign-in"'`.
+1. Run `Get-MgServicePrincipal -ConsistencyLevel eventual -Search '"DisplayName:Azure Windows VM Sign-In"'`.
    - If this command results in no output and returns you to the PowerShell prompt, you can create the service principal with the following Graph PowerShell command:
 
       `New-MgServicePrincipal -AppId 372140e0-b3b7-4226-8ef9-d57986796201`
