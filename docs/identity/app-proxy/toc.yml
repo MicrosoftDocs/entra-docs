@@ -59,7 +59,6 @@ items:
       href: conceptual-deployment-plan.md
     - name: Connectors
       href: /entra/global-secure-access/concept-connectors.md?toc=/entra/identity/app-proxy/toc.json&bc=/entra/identity/app-proxy/breadcrumb/toc.json
-      href: application-proxy-connectors.md
     - name: Connector groups
       href: application-proxy-connector-groups.md
     - name: High availability and load balancing
