@@ -9,9 +9,11 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/12/2024
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Keystone so that I can control who has access to Keystone, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Microsoft Entra SSO integration with Keystone
@@ -79,24 +81,20 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier** textbox, type a value using the following pattern:
-    `urn:auth0:irdeto:<InstanceName>`
+    `urn:amazon:cognito:sp:<UserPoolID>`
 
     b. In the **Reply URL** textbox, type a URL using the following pattern:
-    `https://irdeto.auth0.com/login/callback?connection=<InstanceName>`
+    `https://<UserPoolName>.auth.<Region>.amazoncognito.com/saml2/idpresponse`
 
-    c. In the **Sign-on URL** text box, type the URL:
-    `https://fms.live.fm.ks.irdeto.com/`
+    c. In the **Sign on URL** text box, type a URL using the following pattern:
+    `https://irca.<Environment>.fm.ks.irdeto.com/`
 
     > [!Note]
-    > These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Keystone support team](mailto:soc@irdeto.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Keystone support team](mailto:soc@irdeto.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer
 
-    ![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
-
-1. On the **Set up Keystone** section, copy the appropriate URL(s) based on your requirement.
-
-	![Screenshot shows to copy configuration appropriate URL.](common/copy-configuration-urls.png "Metadata")  
+    ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")  
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -130,7 +128,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Keystone SSO
 
-To configure single sign-on on **Keystone** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [Keystone support team](mailto:soc@irdeto.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Keystone** side, you need to send the **App Federation Metadata Url** to [Keystone support team](mailto:soc@irdeto.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Keystone test user
 

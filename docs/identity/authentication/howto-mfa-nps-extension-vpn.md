@@ -5,7 +5,6 @@ description: Integrate your VPN infrastructure with Microsoft Entra multifactor 
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 02/10/2024
 
@@ -394,8 +393,6 @@ To use the script, provide the extension with your Microsoft Entra administrativ
     After the script verifies the installation of the PowerShell module, it displays the Graph PowerShell module sign-in window.
 
 4. Enter your Microsoft Entra administrator credentials and password, and then select **Sign in**.
-
-    ![Authenticate to Graph PowerShell](./media/howto-mfa-nps-extension-vpn/image39.png)
 
 5. At the command prompt, paste the tenant ID that you copied earlier, and then select Enter.
 

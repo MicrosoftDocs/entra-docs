@@ -8,7 +8,7 @@ items:
     href: overview-what-is-global-secure-access.md
   - name: Get started with Global Secure Access
     href: how-to-get-started-with-global-secure-access.md
-  - name: Network traffic dashboard
+  - name: Global Secure Access dashboard
     href: concept-traffic-dashboard.md
 - name: Concepts
   expanded: true
@@ -122,7 +122,7 @@ items:
   items:
   - name: Remote network valid configurations
     href: reference-remote-network-configurations.md
-  - name: Points of presence
+  - name: Points of presence and service addresses
     href: reference-points-of-presence.md
   - name: Data storage and privacy
     href: reference-data-storage-and-privacy.md
@@ -132,3 +132,5 @@ items:
     href: /graph/api/resources/networkaccess-global-secure-access-api-overview
   - name: FAQs
     href: resource-faq.yml
+  - name: Version History
+    href: reference-version-history.md

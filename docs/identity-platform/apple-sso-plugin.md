@@ -1,15 +1,15 @@
 ---
 title: Microsoft Enterprise SSO plug-in for Apple devices
-description: Learn about the Microsoft Entra SSO plug-in for iOS, iPadOS, and macOS devices.
+description: Learn about the Microsoft Entra SSO plug-in for Apple devices using iOS, iPadOS, and macOS devices.
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom:
-ms.date: 09/05/2023
+ms.date: 03/22/2024
 ms.reviewer: brianmel
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an IT admin managing Apple devices in my organization, I want to enable single sign-on (SSO) for Microsoft Enterprise accounts on macOS, iOS, and iPadOS, so that users can have a seamless authentication experience across all applications that support Apple's enterprise SSO feature.
 ---
 
@@ -32,10 +32,10 @@ The Microsoft Enterprise SSO plug-in for Apple devices offers the following bene
 - It extends SSO to applications that use OAuth 2, OpenID Connect, and SAML.
 - It is natively integrated with the MSAL, which provides a smooth native experience to the end user when the Microsoft Enterprise SSO plug-in is enabled. 
 
->[!IMPORTANT]
-> In August of 2023, [Microsoft announced that Platform SSO for macOS devices is coming soon to Entra ID.](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/coming-soon-platform-sso-for-macos/ba-p/3902280).
+>[!NOTE]
+> On August 2023, [Microsoft announced that platform SSO for macOS devices is coming to Microsoft Entra ID.](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/coming-soon-platform-sso-for-macos/ba-p/3902280).
 >
-> As these features are still under development, the use of Platform SSO features is not yet supported on the Entra ID platform. Limited customer support will be provided once these features enter public preview. 
+> Features are still under development, so the use of platform SSO features is not yet supported on Microsoft Entra. Limited customer support will be provided once these features enter public preview. 
 
 
 ## Requirements
@@ -404,8 +404,38 @@ Compared to MSAL-based apps, the SSO plug-in acts more transparently for non-MSA
 
 The end user sees the familiar experience and doesn't have to sign in again in each application. For example, instead of displaying the native account picker, the SSO plug-in adds SSO sessions to the web-based account picker experience. 
 
-## Next steps
+## Upcoming changes to device identity key storage
+Announced in March 2024, Microsoft Entra ID will be moving away from Apple’s Keychain for storing device identity keys. Starting in Q3 2026, all new device registrations will use Apple’s Secure Enclave by default. 
+
+Applications and MDM integrations that have a dependency on accessing Workplace Join keys via Keychain will need to start using MSAL and the Enterprise SSO plug-in to ensure compatibility with the Microsoft identity platform. 
+
+### Enable Secure Enclave based storage of device identity keys
+
+If you would like to enable Secure Enclave based storage of device identity keys before it becomes the default, you can add the following Extension Data attribute to your Apple devices’ MDM configuration profile. 
+
+> [!NOTE]
+> For this flag to take effect, it must be applied to a new registration. It will not impact devices that have already been registered unless they re-register.
+
+- **Key**: `use_most_secure_storage`
+- **Type**: `Boolean`
+- **Value**: True
+
+The screenshot below shows the configuration page and settings for enabling Secure Enclave in Microsoft Intune. 
+
+:::image type="content" source="./media/apple-sso-plugin/secure-enclave.png" alt-text="Screenshot of the Microsoft Entra admin centre showing the configuration profile page in Intune with the settings for enabling Secure Enclave highlighted." lightbox="./media/apple-sso-plugin/secure-enclave.png":::
+
+### Scenarios impacted
+The list below contains some common scenarios that will be impacted by these changes. As a rule of thumb, any application that has a dependency on accessing device identity artifacts via Apple's Keychain will be affected.
+
+This is not an exhaustive list and we do advise both consumers and vendors of applications to test their software for compatibility with this new datastore.
+
+#### Registered/Enrolled Device Conditional Access Policy Support in Chrome
+To support device Conditional Access policies in Google Chrome with Secure Enclave based storage enabled, you will need to have the [Windows Accounts](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension installed and enabled.
+
+
+## See also
 
 Learn about [Shared device mode for iOS devices](msal-ios-shared-devices.md).
 
 Learn about [troubleshooting the Microsoft Enterprise SSO Extension](~/identity/devices/troubleshoot-mac-sso-extension-plugin.md).
+

@@ -9,8 +9,8 @@ metadata:
    ms.service: global-secure-access
    ms.topic: landing-page
    ms.date: 02/27/2024
-   author: shlipsey3
-   ms.author: sarahlipsey
+   author: kenwith
+   ms.author: kenwith
    manager: amycolannino
 
 landingContent:
@@ -57,7 +57,7 @@ landingContent:
         links:
           - text: Learn about Private Access
             url: concept-private-access.md
-          - text: Configure Microsoft Entra application proxy connectors
+          - text: Configure Microsoft Entra private network connectors
             url: how-to-configure-connectors.md
           - text: Configure a Quick Access app
             url: how-to-configure-quick-access.md

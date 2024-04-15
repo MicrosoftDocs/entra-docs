@@ -5,7 +5,7 @@ description: Learn how to enforce multifactor authentication policies for Micros
  
 ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 02/05/2024
 
 ms.author: mimart
@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 # Authentication and Conditional Access for External ID
 
 > [!TIP]
-> This article applies to B2B collaboration and B2B direct connect. If your tenant is configured for customer identity and access management, see [Security and governance in Microsoft Entra ID for customers](customers/concept-security-customers.md).
+> This article applies to B2B collaboration and B2B direct connect. If your tenant is configured for customer identity and access management, see [Security and governance in Microsoft Entra External ID](customers/concept-security-customers.md).
 
 When an external user accesses resources in your organization, the authentication flow is determined by the collaboration method (B2B collaboration or B2B direct connect), user's identity provider (an external Microsoft Entra tenant, social identity provider, etc.), Conditional Access policies, and the [cross-tenant access settings](cross-tenant-access-overview.md) configured both in the user's home tenant and the tenant hosting resources.
 
@@ -97,7 +97,7 @@ When configuring a Conditional Access policy, you have granular control over the
 
 Learn more about [Conditional Access user assignments](~/identity/conditional-access/concept-conditional-access-users-groups.md).
 
-### Comparing External Identities Conditional Access policies
+### Comparing External ID Conditional Access policies
 
 The following table gives a detailed comparison of the security policy and compliance options in Microsoft Entra External ID. Security policy and compliance are managed by the host/inviting organization under Conditional Access policies.
 
@@ -154,6 +154,8 @@ Fabrikam must have sufficient premium Microsoft Entra ID licenses that support M
 #### Microsoft Entra multifactor authentication reset (proof up) for B2B collaboration users
 
 The following PowerShell cmdlets are available to *proof up* or request MFA registration from B2B collaboration users.
+
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 1. Connect to Microsoft Entra ID:
 

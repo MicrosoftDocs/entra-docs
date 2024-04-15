@@ -12,6 +12,8 @@ ms.topic: how-to
 ms.date: 10/06/2023
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Treasury Intelligence Solutions (TIS) so that I can control who has access to Treasury Intelligence Solutions (TIS), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with Treasury Intelligence Solutions (TIS)
@@ -53,10 +55,10 @@ Configure and test Microsoft Entra SSO with Treasury Intelligence Solutions (TIS
 To configure and test Microsoft Entra SSO with Treasury Intelligence Solutions (TIS), perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Treasury Intelligence Solutions (TIS) SSO](#configure-treasury-intelligence-solutions-tis-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Treasury Intelligence Solutions (TIS) test user](#create-treasury-intelligence-solutions-tis-test-user)** - to have a counterpart of B.Simon in Treasury Intelligence Solutions (TIS) that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create Treasury Intelligence Solutions (TIS) test user](#create-treasury-intelligence-solutions-tis-test-user)** - to have a counterpart of B.Simon in Treasury Intelligence Solutions (TIS) that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -99,7 +101,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	![Certificate shows the Certificate download link.](common/certificate-base64-download.png "Certificate")
 
-### Create a Microsoft Entra ID test user
+<a name='create-a-microsoft-entra-id-test-user'></a>
+
+### Create a Microsoft Entra test user
 
 In this section, you'll create a test user in the Microsoft Entra admin center called B.Simon.
 
@@ -113,7 +117,9 @@ In this section, you'll create a test user in the Microsoft Entra admin center c
    1. Select **Review + create**.
 1. Select **Create**.
 
-### Assign the Microsoft Entra ID test user
+<a name='assign-the-microsoft-entra-id-test-user'></a>
+
+### Assign the Microsoft Entra test user
 
 In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by granting access to Treasury Intelligence Solutions (TIS).
 
@@ -129,7 +135,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 To configure single sign-on on **Treasury Intelligence Solutions** side:
 1. In TIS, navigate to **Administration** > **Security** > **Single Sign-On Configuration** and select either **IdP-initiated Single Sign-On** or **SP-initiatedd Single Sign-On**
-1. Provide the **Identity Provider (Entity ID)**. This is the value that is provided by Microsoft Entra SSO in the field **Microsoft Entra ID Identifier**.
+1. Provide the **Identity Provider (Entity ID)**. This is the value that is provided by Microsoft Entra SSO in the field **Microsoft Entra Identifier**.
 1. For the Certificate, select the **PEM certificate** downloaded on your computer.
 1. For **SP-initiatedd Single Sign-On**, provide the **Identity Provider Login URL** which was shown in the field **Login URL**. For the **IdP-initiated Single Sign-On**, both fields **User Login URL** and **User Logout URL** are optional and can be left blank. 
 
@@ -138,7 +144,7 @@ To configure single sign-on on **Treasury Intelligence Solutions** side:
 In this section, you create a user called B.Simon in Treasury Intelligence Solutions (TIS). 
 1. For the new user, SSO has to be enabled by selecting the new user and then choose **Edit** > **SSO user** > **Enable SSO Login**.
 1. The value for **SSO** id is provided by Microsoft Entra. By default this is the user's attribute **user.userprincipalname** (can be changed by choosing another attribute for **Unique User Identifier** in Microsoft Entra SSO).
-1. Select the test user in Microsoft Entra and copy the value for **User principal name** and paste it into the field **SSO id** in TIS.
+1. Select the test user in Microsoft Entra ID and copy the value for **User principal name** and paste it into the field **SSO id** in TIS.
 
 ## Test SSO 
 

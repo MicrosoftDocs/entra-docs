@@ -5,13 +5,15 @@ description: Learn how to automatically provision and deprovision user accounts 
 author: twimmers
 writer: twimmers
 manager: jeedes
-ms.assetid: f666af23-f97f-4df8-8580-6124f47ea840
+ms.assetid: 796cdf42-6744-4f49-9a10-92c13d50a814
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 02/26/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to CultureHQ so that I can streamline the user management process and ensure that users have the appropriate access to CultureHQ.
 ---
 
 # Tutorial: Configure CultureHQ for automatic user provisioning

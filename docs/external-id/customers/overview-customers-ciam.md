@@ -15,9 +15,9 @@ ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to learn about identity solutions for customer-facing apps
 ---
 
-# What is Microsoft Entra ID for customers?
+# Introduction to Microsoft Entra External ID for external-facing apps
 
-Microsoft Entra ID for customers is Microsoft’s new customer identity and access management (CIAM) solution. For organizations and businesses that want to make their public-facing applications available to consumers, Microsoft Entra ID makes it easy to add CIAM features like self-service registration, personalized sign-in experiences, and customer account management. Because these CIAM capabilities are built into Microsoft Entra ID, you also benefit from platform features like enhanced security, compliance, and scalability.
+Microsoft Entra External ID provides a customer identity and access management (CIAM) solution for your external-facing apps. For organizations and businesses that want to make their public-facing applications available to consumers, Microsoft Entra ID makes it easy to add CIAM features like self-service registration, personalized sign-in experiences, and customer account management. Because these CIAM capabilities are built into Microsoft Entra ID, you also benefit from platform features like enhanced security, compliance, and scalability.
 
 :::image type="content" source="media/overview-customers-ciam/overview-ciam.png" alt-text="Diagram showing an overview customer identity and access management." border="false":::
 
@@ -25,15 +25,15 @@ Microsoft Entra ID for customers is Microsoft’s new customer identity and acce
 
 ## Create a dedicated tenant for your customer scenarios
 
-When getting started with Microsoft Entra ID for customers, you first create a tenant that will contain your customer-facing apps, resources, and directory of customer accounts.
+When getting started with Microsoft Entra External ID, you first create a tenant that will contain your customer-facing apps, resources, and directory of customer accounts.
 
-If you've worked with Microsoft Entra ID, you're already familiar with using a Microsoft Entra tenant that contains your employee directory, internal apps, and other organizational resources. With Microsoft Entra ID for customers, you create a distinct tenant that follows the standard Microsoft Entra tenant model but is configured for customer scenarios. This tenant contains:
+If you've worked with Microsoft Entra ID, you're already familiar with using a Microsoft Entra tenant that contains your employee directory, internal apps, and other organizational resources. With Microsoft Entra External ID, you create a distinct tenant that follows the standard Microsoft Entra tenant model but is configured for customer scenarios. This tenant contains:
 
-- **A directory**: The directory stores your customers' credentials and profile data. When a customer signs up for your app, a local account is created for them in your customer tenant.
+- **A directory**: The directory stores your customers' credentials and profile data. When a customer signs up for your app, a local account is created for them in your external tenant.
 
 - **Application registrations**: Microsoft Entra ID performs identity and access management only for registered applications. Registering your app establishes a trust relationship and allows you to integrate your app with Microsoft Entra
 
-- **User flows**: The customer tenant contains the self-service sign-up, sign-in, and password reset experiences that you enable for your customers.
+- **User flows**: The external tenant contains the self-service sign-up, sign-in, and password reset experiences that you enable for your customers.
 
 - **Extensions**: If you need to add user attributes and data from external systems, you can create custom authentication extensions for your user flows.
 
@@ -41,18 +41,18 @@ If you've worked with Microsoft Entra ID, you're already familiar with using a M
 
 - **Encryption keys**: Add and manage encryption keys for signing and validating tokens, client secrets, certificates, and passwords.
 
-Learn more about [password and one-time passcode](how-to-enable-password-reset-customers.md) login, and about [Google](how-to-google-federation-customers.md) and [Facebook](how-to-facebook-federation-customers.md) federation.
+Learn more about [password and one-time passcode](how-to-enable-password-reset-customers.md) sign-in, and about [Google](how-to-google-federation-customers.md) and [Facebook](how-to-facebook-federation-customers.md) federation.
 
-There are two types of user accounts you can manage in your customer tenant:
+There are two types of user accounts you can manage in your external tenant:
 
 - **Customer account**: Accounts that represent the customers who access your applications.
 
 - **Admin account**: Users with work accounts can manage resources in a tenant, and with an administrator role, can also manage tenants. Users with work accounts can create new consumer accounts, reset passwords, block/unblock accounts, and set permissions or assign an account to a security group.
 
-Learn more about managing [customer accounts](how-to-manage-customer-accounts.md) and [admin accounts](how-to-manage-admin-accounts.md) in your customer tenant.
+Learn more about managing [customer accounts](how-to-manage-customer-accounts.md) and [admin accounts](how-to-manage-admin-accounts.md) in your external tenant.
 ## Add customized sign-in to your customer-facing apps
 
-Microsoft Entra ID for customers is intended for businesses that want to make applications available to their customers using the Microsoft Entra platform for identity and access.
+Microsoft Entra External ID is intended for businesses that want to make applications available to their customers using the Microsoft Entra platform for identity and access.
 
 - **Add sign-up and sign-in pages to your apps.** Quickly add intuitive, user-friendly sign-up and sign-up experiences for your customer apps. With a single identity, a customer can securely access all the applications you want them to use.
 
@@ -63,6 +63,8 @@ Microsoft Entra ID for customers is intended for businesses that want to make ap
 - **Easily customize and extend your sign-up flows.** Tailor your identity user flows to your needs. Choose the attributes you want to collect from a customer during sign-up, or add your own custom attributes. If the information your app needs is contained in an external system, create custom authentication extensions to collect and add data to authentication tokens.
 
 - **Integrate multiple app languages and platforms.** With Microsoft Entra, you can quickly set up and deliver secure, branded authentication flows for multiple app types, platforms, and languages.
+
+- **Use native authentication for your apps.** Create seamless authentication experiences for customer-facing mobile and desktop applications using the preview Microsoft Authentication Library (MSAL) for iOS and Android. 
 
 - **Provide self-service account management.** Customers can register for your online services by themselves, manage their profile, delete their account, enroll in a multifactor authentication (MFA) method, or reset their password with no admin or help desk assistance.
 
@@ -84,28 +86,30 @@ For details about configuring a user flow, see [Create a sign-up and sign-in use
 
 ## Add your own business logic
 
-Microsoft Entra ID for customers is designed for flexibility by allowing you to define additional actions at certain points within the authentication flow. Using a custom authentication extension, you can add claims from external systems to the token just before it's issued to your application.
+Microsoft Entra External ID is designed for flexibility by allowing you to define additional actions at certain points within the authentication flow. Using a custom authentication extension, you can add claims from external systems to the token just before it's issued to your application.
 
 Learn more about [adding your own business logic](concept-custom-extensions.md)  with custom authentication extensions.
 
 
 ## Microsoft Entra security and reliability
 
-Microsoft Entra ID for customers represents the convergence of business-to-consumer (B2C) features into the Microsoft Entra platform. You benefit from platform features like enhanced security, compliance with regulations, and the ability to scale your identity and access management processes.
+Microsoft Entra External ID represents the convergence of business-to-consumer (B2C) features into the Microsoft Entra platform. You benefit from platform features like enhanced security, compliance with regulations, and the ability to scale your identity and access management processes.
 
 - **Microsoft Entra security.** Get all the security and data privacy benefits of Microsoft Entra, including Conditional Access, multifactor authentication, and governance. Protect access to your apps using strong authentication and risk-based adaptive access policies. Because customers are managed in a separate tenant, you can tailor your access policies to users who typically use personal and shared devices instead of managed ones.
 
 - **Microsoft Entra reliability and scalability**. Create highly customized sign-in experiences and manage customer accounts at a large scale. Ensure a good customer experience by taking advantage of Microsoft Entra performance, resiliency, business continuity, low-latency, and high throughput.
 
-Learn more about the [security and governance](concept-security-customers.md) features that are available in a customer tenant.
+Learn more about the [security and governance](concept-security-customers.md) features that are available in an external tenant.
 
 ## Analyze user activity and engagement
 
 The Application user activity (Preview) feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can use this feature to view, query, and analyze user activity data in the Microsoft Entra admin center. This can help you uncover valuable insights that can aid strategic decisions and drive business growth.
 
-Learn more about the [application user activity dashboards](how-to-user-insights.md) that are available in a customer tenant.
+Learn more about the [application user activity dashboards](how-to-user-insights.md) that are available in an external tenant.
 
 ## About Azure AD B2C
+
+
 
 If you're a new customer, you might be wondering which solution is a better fit, [Azure AD B2C](/azure/active-directory-b2c/) or Microsoft Entra External ID (preview). Opt for the current Azure AD B2C product if:
 
@@ -121,5 +125,5 @@ Opt for the next generation Microsoft Entra External ID platform if:
 
 ## Next steps
 
-- Learn more about [planning for Microsoft Entra ID for customers](concept-planning-your-solution.md).
-- See also the [Microsoft Entra ID for customers Developer Center](https://aka.ms/ciam/dev) for the latest developer content and resources.
+- Learn more about [planning for Microsoft Entra External ID](concept-planning-your-solution.md).
+- See also the [Microsoft Entra External ID Developer Center](https://aka.ms/ciam/dev) for the latest developer content and resources.

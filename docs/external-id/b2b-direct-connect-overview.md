@@ -4,8 +4,8 @@ description: Microsoft Entra B2B direct connect lets users from other Microsoft 
 
  
 ms.service: entra-external-id
-ms.topic: conceptual
-ms.date: 12/19/2023
+ms.topic: concept-article
+ms.date: 03/18/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -110,7 +110,7 @@ In the resource organization, the Teams shared channel owner can search within T
 
 ## B2B direct connect vs. B2B collaboration
 
-B2B collaboration and B2B direct connect are two different approaches to sharing with users outside of your organization. You can find a [feature-to-feature comparison](external-identities-overview.md#comparing-external-identities-feature-sets) in the External Identities overview, where we discuss some key differences in how users are managed, and how they access resources.
+B2B collaboration and B2B direct connect are two different approaches to sharing with users outside of your organization. You can find a [feature-to-feature comparison](external-identities-overview.md#comparing-external-identities-feature-sets) in the External ID overview, where we discuss some key differences in how users are managed, and how they access resources.
 
 ### User access and management
 

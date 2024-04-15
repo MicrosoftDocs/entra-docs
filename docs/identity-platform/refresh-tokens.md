@@ -9,7 +9,7 @@ ms.date: 06/02/2023
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand how refresh tokens work, so that I can securely manage access to protected resources and obtain new access tokens when needed.
 ---
 
@@ -49,6 +49,10 @@ The server can revoke refresh tokens because of a change in credentials, user ac
 | User revokes their refresh tokens | Revoked | Revoked | Revoked | Revoked | Revoked |
 | Admin revokes all refresh tokens for a user | Revoked | Revoked | Revoked | Revoked | Revoked |
 | Single sign-out | Revoked | Stays alive | Revoked | Stays alive | Stays alive |
+
+> [!NOTE]
+>
+> Refresh tokens are not revoked for B2B users in their resource tenant. The token needs to be revoked in the home tenant.
 
 ## See also
 

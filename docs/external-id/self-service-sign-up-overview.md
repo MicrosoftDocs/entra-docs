@@ -1,10 +1,10 @@
 ---
-title: Self-service sign-up for External Identities
+title: Self-service sign-up for External ID
 description: Learn how to allow external users to sign up for your applications themselves by enabling self-service sign-up. Create a personalized sign-up experience by customizing the self-service sign-up user flow. 
 
  
 ms.service: entra-external-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 01/23/2024
 
 ms.author: mimart

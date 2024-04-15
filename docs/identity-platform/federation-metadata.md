@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 09/07/2023
 ms.reviewer: ludwignick
 ms.service: identity-platform
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer integrating with Microsoft Entra ID, I want to understand the federation metadata document format and endpoints, so that I can configure my application to validate the issuer and token signing certificates of security tokens issued by Microsoft Entra ID.
 ---
 
@@ -31,7 +31,7 @@ Microsoft Entra ID publishes federation metadata at `https://login.microsoftonli
 For **tenant-specific endpoints**, the `TenantDomainName` can be one of the following types:
 
 * A registered domain name of a Microsoft Entra tenant, such as: `contoso.onmicrosoft.com`.
-* The immutable tenant ID of the domain, such as `72f988bf-86f1-41af-91ab-2d7cd011db45`.
+* The immutable tenant ID of the domain, such as `aaaabbbb-0000-cccc-1111-dddd2222eeee`.
 
 For **tenant-independent endpoints**, the `TenantDomainName` is `common`. This document lists only the Federation Metadata elements that are common to all Microsoft Entra tenants that are hosted at login.microsoftonline.com.
 
@@ -50,8 +50,8 @@ The following metadata shows a sample tenant-specific `EntityDescriptor` element
 ```xml
 <EntityDescriptor
 xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
-ID="_b827a749-cfcb-46b3-ab8b-9f6d14a1294b"
-entityID="https://sts.windows.net/72f988bf-86f1-41af-91ab-2d7cd011db45/">
+ID="_00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
+entityID="https://sts.windows.net/11bb11bb-cc22-dd33-ee44-55ff55ff55ff/">
 ```
 
 You can replace the tenant ID in the tenant-independent endpoint with your tenant ID to create a tenant-specific `EntityID` value. The resulting value will be the same as the token issuer. The strategy allows a multi-tenant application to validate the issuer for a given tenant.
@@ -61,7 +61,7 @@ The following metadata shows a sample tenant-independent `EntityID` element. Ple
 ```xml
 <EntityDescriptor
 xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
-ID="="_0e5bd9d0-49ef-4258-bc15-21ce143b61bd"
+ID="="_11bb11bb-cc22-dd33-ee44-55ff55ff55ff"
 entityID="https://sts.windows.net/{tenant}/">
 ```
 
@@ -114,7 +114,7 @@ The following metadata shows a sample `PassiveRequestorEndpoint` element for a t
 <fed:PassiveRequestorEndpoint>
 <EndpointReference xmlns="https://www.w3.org/2005/08/addressing">
 <Address>
-https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db45/wsfed
+https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/wsfed
 </Address>
 </EndpointReference>
 </fed:PassiveRequestorEndpoint>

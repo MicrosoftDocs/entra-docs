@@ -5,13 +5,15 @@ services: active-directory
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
-ms.date: 02/28/2024
+ms.date: 03/27/2024
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Onyxia so that I can control who has access to Onyxia, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with Onyxia
@@ -57,10 +59,10 @@ Configure and test Microsoft Entra SSO with Onyxia using a test user called **B.
 To configure and test Microsoft Entra SSO with Onyxia, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Onyxia SSO](#configure-onyxia-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Onyxia test user](#create-onyxia-test-user)** - to have a counterpart of B.Simon in Onyxia that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create Onyxia test user](#create-onyxia-test-user)** - to have a counterpart of B.Simon in Onyxia that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -89,7 +91,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
-### Create a Microsoft Entra ID test user
+<a name='create-a-microsoft-entra-id-test-user'></a>
+
+### Create a Microsoft Entra test user
 
 In this section, you'll create a test user in the Microsoft Entra admin center called B.Simon.
 
@@ -103,7 +107,9 @@ In this section, you'll create a test user in the Microsoft Entra admin center c
    1. Select **Review + create**.
 1. Select **Create**.
 
-### Assign the Microsoft Entra ID test user
+<a name='assign-the-microsoft-entra-id-test-user'></a>
+
+### Assign the Microsoft Entra test user
 
 In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by granting access to Onyxia.
 
@@ -117,7 +123,31 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure Onyxia SSO
 
-To configure single sign-on on **Onyxia** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from Microsoft Entra admin center to [Onyxia support team](mailto:support@onyxia.io). They set this setting to have the SAML SSO connection set properly on both sides.
+1. Log in to Onyxia company site as an administrator.
+
+1. Go to **Settings** and click **Account Settings**.
+
+    ![Screenshot shows navigation to the settings.](./media/onyxia-tutorial/navigate.png "Settings")
+
+1. Navigate to **SSO** section and click **+ Add New Connection**.
+
+    ![Screenshot shows to add new connection.](./media/onyxia-tutorial/connection.png "Add")
+
+1. In the **SSO Configuration** section, perform the following steps:
+
+    ![Screenshot shows the configuration.](./media/onyxia-tutorial/configure.png "Configure")
+
+    1. In the **Domain Name** text box, enter a valid Domain name.
+
+    1. In the **SSO URL** textbox, paste the **Login URL** which you have copied from the Microsoft Entra admin center.
+
+    1. Open the downloaded **Certificate (Base64)** into Notepad and paste the content into the **Public Certificate** textbox.
+
+    1. Copy the **ACS URL** and paste it in the **Reply URL** textbox in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+
+    1. Copy the **SP Entity ID** and paste it in the **Identifier (Entity ID)** textbox in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+
+    1. Click **+ Create**.
 
 ### Create Onyxia test user
 

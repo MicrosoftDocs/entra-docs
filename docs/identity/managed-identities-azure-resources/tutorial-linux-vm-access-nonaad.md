@@ -21,7 +21,7 @@ ms.author: barclayn
 
 [!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
-This tutorial shows you how a Linux virtual machine (VM) can use a system-assigned managed identity to access [Azure Key Vault](/azure/key-vault/general/overview). Serving as a bootstrap, Key Vault makes it possible for your client application to then use a secret to access resources not secured by Microsoft Entra ID. Managed Service Identities are automatically managed by Azure and enable you to authenticate to services that support Microsoft Entra authentication, without including authentication information in your code.
+This tutorial shows you how a Linux virtual machine (VM) can use a system-assigned managed identity to access [Azure Key Vault](/azure/key-vault/general/overview). Key Vault makes it possible for your client application to then use a secret to access resources not secured by Microsoft Entra ID. Managed Service Identities are automatically managed by Azure and enable you to authenticate to services that support Microsoft Entra authentication, without including authentication information in your code.
 
 You learn how to:
 
@@ -46,14 +46,14 @@ This section shows how to grant your VM access to a secret stored in a Key Vault
 
 First, we need to create a Key Vault and grant our VM's system-assigned managed identity access to the Key Vault.
 
-1. Sign in to the [Azure portal]portal](https://portal.azure.com/)
-1. At the top of the left navigation bar, select **Create a resource**  
-1. In the **Search the Marketplace** box type in **Key Vault** and hit **Enter**.  
+1. Sign in to the [Azure portal](https://portal.azure.com/).
+1. At the top of the left navigation bar, select **Create a resource**.
+1. In the **Search the Marketplace** box type in **Key Vault** and hit **Enter**.
 1. Select **Key Vault** from the results.
-1. Select **Create**
-1. Provide a **Name** for the new Key Vault.
+1. Select **Create**.
+1. Provide a **Name** for the new key vault.
 
-    ![Create a Key vault screen](./media/tutorial-linux-vm-access-nonaad/create-key-vault.png)
+    :::image type="content" source="./media/tutorial-linux-vm-access-nonaad/create-key-vault.png" alt-text="Screenshot showing the Azure Key vault creation screen.":::
 
 1. Fill out all required information making sure that you choose the subscription and resource group where you created the virtual machine that you are using for this tutorial.
 1. Select **Review+ create**
@@ -64,24 +64,24 @@ First, we need to create a Key Vault and grant our VM's system-assigned managed 
 Next, add a secret to the Key Vault, so you can retrieve it later using code running in your VM. In this tutorial, we are using PowerShell but the same concepts apply to any code executing in this virtual machine.
 
 1. Navigate to your newly created Key Vault.
-1. Select **Secrets**, and click **Add**.
+1. Select **Secrets**, and select **Add**.
 1. Select **Generate/Import**
 1. In the **Create a secret** screen from **Upload options** leave **Manual** selected.
 1. Enter a name and value for the secret.  The value can be anything you want. 
 1. Leave the activation date and expiration date clear, and leave **Enabled** as **Yes**. 
-1. Click **Create** to create the secret.
+1. Select **Create** to create the secret.
 
-   ![Create a secret](./media/tutorial-linux-vm-access-nonaad/create-secret.png)
+   :::image type="content" source="./media/tutorial-linux-vm-access-nonaad/create-secret.png" alt-text="Screenshot showing secret creation.":::
 
 ## Grant access
 
-The managed identity used by the virtual machine needs to be granted access to read the secret that we will store in the Key Vault.
+The managed identity used by the virtual machine needs access to read the secret stored in Key Vault.
 
 1. Navigate to your newly created Key Vault
 1. Select **Access Policy** from the menu on the left side.
 1. Select **Add Access Policy**
 
-   ![Key vault create access policy screen](./media/tutorial-linux-vm-access-nonaad/key-vault-access-policy.png)
+   :::image type="content" source="./media/tutorial-linux-vm-access-nonaad/key-vault-access-policy.png" alt-text="Screenshot of the key vault create access policy screen.":::
 
 1. In the **Add access policy** section under **Configure from template (optional)** choose **Secret Management** from the pull-down menu.
 1. Choose **Select Principal**, and in the search field enter the name of the VM you created earlier.  Select the VM in the result list and choose **Select**.
@@ -100,7 +100,7 @@ To complete these steps, you need an SSH client.  If you are using Windows, you
 > - [Python](/python/api/overview/azure/identity-readme)
 
 
-1. In the portal, navigate to your Linux VM and in the **Overview**, click **Connect**. 
+1. In the portal, navigate to your Linux VM and in the **Overview**, select **Connect**. 
 2. **Connect** to the VM with the SSH client of your choice. 
 3. In the terminal window, use CURL to make a request to the local managed identities for Azure resources endpoint to get an access token for Azure Key Vault.  
  
@@ -124,25 +124,25 @@ To complete these steps, you need an SSH client.  If you are using Windows, you
     "token_type":"Bearer"} 
     ```
     
-    You can use this access token to authenticate to Azure Key Vault.  The next CURL request shows how to read a secret from Key Vault using CURL and the Key Vault REST API.  You'll need the URL of your Key Vault, which is in the **Essentials** section of the **Overview** page of the Key Vault.  You will also need the access token you obtained on the previous call. 
+    You can use this access token to authenticate to Azure Key Vault.  The next CURL request shows how to read a secret from Key Vault using CURL and the Key Vault REST API.  You need the URL of your Key Vault, which is in the **Essentials** section of the **Overview** page of the Key Vault.  You also need the access token you obtained on the previous call. 
         
     ```bash
     curl 'https://<YOUR-KEY-VAULT-URL>/secrets/<secret-name>?api-version=2016-10-01' -H "Authorization: Bearer <ACCESS TOKEN>" 
     ```
     
-    The response will look like this: 
+    The response looks like this: 
     
     ```bash
     {"value":"p@ssw0rd!","id":"https://mytestkeyvault.vault.azure.net/secrets/MyTestSecret/7c2204c6093c4d859bc5b9eff8f29050","attributes":{"enabled":true,"created":1505088747,"updated":1505088747,"recoveryLevel":"Purgeable"}} 
     ```
     
-Once you've retrieved the secret from the Key Vault, you can use it to authenticate to a service that requires a name and password.
+Once you retrieved the secret from the Key Vault, you can use it to authenticate to a service that requires a name and password.
 
 ## Clean up resources
 
 When you want to clean up the resources, sign in to the [Azure portal](https://portal.azure.com), select **Resource groups**, locate, and select the resource group that was created in the process of this tutorial (such as `mi-test`), and then use the **Delete resource group** command.
 
-Alternatively you may also do this via [PowerShell or the CLI](/azure/azure-resource-manager/management/delete-resource-group)
+Alternatively you can also do this via [PowerShell or the CLI.](/azure/azure-resource-manager/management/delete-resource-group)
 
 ## Next steps
 

@@ -42,11 +42,11 @@ Then once the access package is created, you can [change the hidden setting](ent
 
 ## Start the creation process
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 To complete the following steps, you need a role of global Administrator, Identity Governance Administrator, catalog owner, or access package manager.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
@@ -108,9 +108,9 @@ On the **Requests** tab, you create the first policy to specify who can request 
 
 Depending on which users you want to be able to request this access package, perform the steps in one of the following sections.
 
-[!INCLUDE [Entitlement management request policy](~/includes/entra-entitlement-management-request-policy.md)]
+[!INCLUDE [Entitlement management request policy](../includes/entra-entitlement-management-request-policy.md)]
 
-[!INCLUDE [Entitlement management lifecycle policy](~/includes/entra-entitlement-management-lifecycle-policy.md)]
+[!INCLUDE [Entitlement management lifecycle policy](../includes/entra-entitlement-management-lifecycle-policy.md)]
 
 ## Review and create the access package
 

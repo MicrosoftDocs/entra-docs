@@ -7,7 +7,7 @@ author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
-ms.topic: conceptual
+ms.topic: concept-article
 
 ms.date: 04/05/2021
 ms.author: jomondi
@@ -94,7 +94,7 @@ Each of your applications may have different authentication requirements. With M
 
 ### Enabling SSO with Microsoft Entra application proxy
 
-With Microsoft Entra application proxy, you can provide access to applications located inside your private network securely, from anywhere and on any device. After you have installed an application proxy connector within your environment, it can be easily configured with Microsoft Entra ID.
+With Microsoft Entra application proxy, you can provide access to applications located inside your private network securely, from anywhere and on any device. After you have installed a private network connector within your environment, it can be easily configured with Microsoft Entra ID.
 
 ### Integrating custom applications
 

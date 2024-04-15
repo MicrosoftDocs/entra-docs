@@ -25,7 +25,7 @@ Microsoft Entra pass-through authentication allows your users to sign in to both
 
 >[!VIDEO https://www.youtube.com/embed/PyeAC85Gm7w]
 
-This feature is an alternative to [Microsoft Entra Password Hash Synchronization](how-to-connect-password-hash-synchronization.md), which provides the same benefit of cloud authentication to organizations. However, certain organizations wanting to enforce their on-premises Active Directory security and password policies, can choose to use Pass-through Authentication instead. Review [this guide](./choose-ad-authn.md) for a comparison of the various Microsoft Entra sign-in methods and how to choose the right sign-in method for your organization.
+This feature is an alternative to [Microsoft Entra password hash synchronization](how-to-connect-password-hash-synchronization.md), which provides the same benefit of cloud authentication to organizations. However, certain organizations wanting to enforce their on-premises Active Directory security and password policies, can choose to use Pass-through Authentication instead. Review [this guide](./choose-ad-authn.md) for a comparison of the various Microsoft Entra sign-in methods and how to choose the right sign-in method for your organization.
 
 ![Microsoft Entra pass-through authentication](./media/how-to-connect-pta/pta1.png)
 
