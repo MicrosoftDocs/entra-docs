@@ -22,11 +22,11 @@ This topic describes how external authentication providers connect to Entra ID, 
 
 Entra ID external authentication methods are the way to allow customers to integrate external authentication providers as a method to satisfy the authentication requirements for the resource/application being requested.  
 
-When a user signs in, that tenant's policies are evaluated. The authentication requirements are determined based on the resource being accessed. Any number of policies may apply to a given sign-in given the parameters of each policy. Those parameters include users and groups, applications, platform, sign-in risk level, and others. Based on the authentication requirements, the user may need use an additional factor that satisfies the MFA requirement.  This factor will need to complement the type of first factor. In other words, if the user has to satisfy MFA for the sign-in, then the user must use a factor of a different type from "something you know", "something you have", "something you are" compared to what was used for first factor. 
+When a user signs in, that tenant's policies are evaluated. The authentication requirements are determined based on the resource being accessed. Any number of policies may apply to a given sign-in given the parameters of each policy. Those parameters include users and groups, applications, platform, sign-in risk level, and others. Based on the authentication requirements, the user may need use an additional factor that satisfies the MFA requirement.  This factor will need to complement the type of first factor. 
 
-The user’s authentication will be treated as having met the MFA requirement once Entra ID has validated that the first factor completed with Entra ID and the second factor completed with the external provider satisfy the requirement for two or more types of methods.  
+The user’s authentication will be treated as having met the MFA requirement once Entra ID has validated that the first factor completed with Entra ID and the second factor completed with the external provider satisfy the requirement for two or more types of methods from "something you know", "something you have", "something you are."
 
-This document describes integration of authentication methods provided by external authentication providers, called external authentication methods, to satisfy the second factor, in addition to the built-in authentication methods.External authentication methods are added to Entra ID by the tenant admin.
+This document describes integration of authentication methods provided by external authentication providers, called external authentication methods, to satisfy the second factor, in addition to the built-in authentication methods. External authentication methods are added to Entra ID by the tenant admin.
 
 External authentication methods are implemented on top of Open ID Connect. This implementation requires at least three publicly facing endpoints: 
 
