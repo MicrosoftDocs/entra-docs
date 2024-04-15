@@ -18,7 +18,7 @@ items:
   - name: Private network connector
     href: concept-connectors.md
   - name: Private network connector groups
-    href: concept-connectors-groups.md
+    href: concept-connector-groups.md
 - name: How-to guides
   expanded: true
   items:
