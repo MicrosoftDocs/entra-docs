@@ -48,11 +48,11 @@ For each method, note whether or not it's enabled for the tenant. The following 
 
 ### Review the legacy SSPR policy
 
-To get the authentication methods available in the legacy SSPR policy, go to **Identity** > **Users** > **Password reset** > **Authentication methods**. The following table lists the available methods in the legacy SSPR policy and corresponding methods in the Authentication method policy. 
+To get the authentication methods available in the legacy SSPR policy, go to **Identity** > **Users** > **All users** > **Password reset** > **Authentication methods**. The following table lists the available methods in the legacy SSPR policy and corresponding methods in the Authentication method policy. 
 
 :::image type="content" border="false" source="media/how-to-authentication-methods-manage/legacy-sspr-policy.png" alt-text="Screenshot that shows the legacy Microsoft Entra SSPR policy." lightbox="media/how-to-authentication-methods-manage/legacy-sspr-policy.png":::
 
-Record which users are in scope for SSPR (either all users, one specific group, or no users) and the authentication methods they can use. While security questions aren't yet available to manage in the Authentication methods policy, make sure you record them for later when they are. 
+Record which users are in scope for SSPR (either all users, one specific group, or no users) and the authentication methods they can use. While security questions aren't yet available to manage in the Authentication methods policy, make sure you record them for later when they are. You can find this information by going to **Identity** > **Users** > **All users** > **Password reset** > **Properties**
 
 | SSPR authentication methods | Authentication method policy |
 |-----------------------------|------------------------------|
