@@ -15,7 +15,7 @@ ms.custom: H1Hack27Feb2017
 
 ---
 
-# The Risky IP report (preview)
+# The Risky IP report 
 
 Active Directory Federation Services (AD FS) customers may expose password authentication endpoints to the internet to provide authentication services for end users to access SaaS applications such as Microsoft 365. 
 
