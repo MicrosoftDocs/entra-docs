@@ -89,6 +89,15 @@ Primary identity providers are the ones that have federations with other sources
 
 Fallback identity providers can be either Microsoft account (MSA), email one-time passcode, or both. You can't disable both fallback identity providers, but you can disable all primary identity providers and only use fallback identity providers for redemption options. 
 
+
+Below are known limitations in the feature: 
+
+- If a Microsoft Entra ID user who has an existing single sign-on (SSO) session is authenticating using email one-time passcode (OTP), they'll need to choose **Use another account** and reenter their username to trigger the OTP flow. Otherwise the user will get an error indicating their account doesn’t exist in the resource tenant.
+
+- If your guest users can only use email one time passcode to redeem an invite, they'll currently be blocked from using SharePoint. This is specific to Microsoft Entra ID users redeeming via OTP. All other users are unaffected.
+
+- In scenarios where a user has the same email in both their Microsoft Entra ID and Microsoft accounts, even after the admin has disabled the Microsoft account as a redemption method, the user is prompted to choose between using their Microsoft Entra ID or their Microsoft account. If they choose Microsoft account it will be allowed as a redemption option even if disabled.
+
 ### Direct federation for Microsoft Entra ID verified domains
 
 SAML/WS-Fed identity provider federation (Direct federation) is now supported for Microsoft Entra ID verified domains. This feature allows you to set up a Direct federation with an external identity provider for a domain that is verified in Microsoft Entra.

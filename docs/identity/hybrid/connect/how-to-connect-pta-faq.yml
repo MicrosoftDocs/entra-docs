@@ -52,7 +52,7 @@ sections:
           When you use Microsoft Entra Connect to switch the sign-in method from password hash synchronization to Pass-through Authentication, Pass-through Authentication becomes the primary sign-in method for your users in managed domains. All users' password hashes that are previously synchronized by password hash synchronization remain stored on Microsoft Entra ID.
 
       - question: |
-          Can I install a Microsoft Entra application proxy connector on the same server as a Pass-through Authentication Agent?
+          Can I install a Microsoft Entra private network connector on the same server as a Pass-through Authentication Agent?
         answer: |
           Yes. The rebranded versions of the Pass-through Authentication Agent, version 1.5.193.0 or later, support this configuration.
 

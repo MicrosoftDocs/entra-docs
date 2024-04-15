@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: reference
-ms.date: 02/29/2024
+ms.date: 03/29/2024
 
 #Customer intent: As a dev, devops, I want to learn how to integrate apps with Native authentication APIs that Microsoft Entra External ID for customers supports.
 ---
@@ -22,7 +22,7 @@ Currently, our identity platform's Native authentication API supports sign-up an
 
 - [Email with password](reference-native-authentication-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), which supports sign-up and sign-in with an email and password, and self-service password reset (SSPR).
 
-- [Email one-time password or passcode (OTP)](reference-native-authentication-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), which supports sign-up and sign-in with email OTP.
+- [Email one-time password or passcode](reference-native-authentication-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), which supports sign-up and sign-in with email one-time passcode.
 
 
 [!INCLUDE [native-auth-api-cors-note](./includes/native-auth-api/native-auth-api-cors-note.md)]
@@ -30,7 +30,7 @@ Currently, our identity platform's Native authentication API supports sign-up an
 
 ## Next steps
 
-- [Native authentication API reference with Email OTP](reference-native-authentication-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
+- [Native authentication API reference with email one-time passcode](reference-native-authentication-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 
 - [Native authentication API reference with Email and password](reference-native-authentication-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 
