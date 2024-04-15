@@ -2,8 +2,7 @@
 title: Deploy macOS Platform Single Sign-on as an administrator (preview)
 description: How admins can enroll a macOS device into Microsoft Entra ID using Platform SSO.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: tutorial
 ms.date: 12/13/2023
