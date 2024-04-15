@@ -116,7 +116,7 @@ Here are some resources to guide you rename your own product experiences or cont
 
 ---
 
-### General Availability - End users will no longer be able to add password SSO apps in My Apps. 
+### General Availability - End users will no longer be able to add password SSO apps in My Apps  
 
 **Type:** Deprecated   
 **Service category:** My Apps                     
@@ -992,7 +992,7 @@ For more information, see: [How to enable Microsoft Authenticator Lite for Outlo
 **Service category:** Provisioning                          
 **Product capability:** Outbound to On-premises Applications               
 
-The Azure AD on-premises application provisioning feature now supports both the [PowerShell](~/identity/app-provisioning/on-premises-powershell-connector.md) and [web services](~/identity/app-provisioning/on-premises-web-services-connector.md) connectors. you can now provision users into a flat file using the PowerShell connector or an app such as SAP ECC using the web services connector. For more information, see: [Provisioning users into applications using PowerShell](~/identity/app-provisioning/on-premises-powershell-connector.md).
+The Azure AD on-premises application provisioning feature now supports both the [PowerShell](~/identity/app-provisioning/on-premises-powershell-connector.md) and [web services](~/identity/app-provisioning/on-premises-web-services-connector.md) connectors. You can now provision users into a flat file using the PowerShell connector or an app such as SAP ECC using the web services connector. For more information, see: [Provisioning users into applications using PowerShell](~/identity/app-provisioning/on-premises-powershell-connector.md).
 
 ---
 

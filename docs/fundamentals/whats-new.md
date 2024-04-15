@@ -222,15 +222,15 @@ Conditional access policies can now be filtered on actor, target resources, cond
 **Service category:** Microsoft Identity Manager    
 **Product capability:** Inbound to Microsoft Entra ID    
 
-The Windows Azure Active Directory Connector for Forefront Identity Manager(FIM WAAD Connector) from 2014 was deprecated in 2021. The standard support for this connector ends in April 2024. Customers should remove this connector from their MIM sync deployment, and instead use an alternative provisioning mechanism. For more information, see: [Migrate a Microsoft Entra provisioning scenario from the FIM Connector for Microsoft Entra ID](/microsoft-identity-manager/migrate-from-the-fim-connector-for-azure-active-directory).
+The Windows Azure Active Directory Connector for Forefront Identity Manager (FIM WAAD Connector) from 2014 was deprecated in 2021. The standard support for this connector ends in April 2024. Customers should remove this connector from their MIM sync deployment, and instead use an alternative provisioning mechanism. For more information, see: [Migrate a Microsoft Entra provisioning scenario from the FIM Connector for Microsoft Entra ID](/microsoft-identity-manager/migrate-from-the-fim-connector-for-azure-active-directory).
 
 ---
 
 ### General Availability - New provisioning connectors in the Microsoft Entra Application Gallery - February 2024
 
-**Type:** New feature
-**Service category:** App Provisioning
-**Product capability:** 3rd Party Integration
+**Type:** New feature    
+**Service category:** App Provisioning    
+**Product capability:** 3rd Party Integration    
 
 We added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
 
