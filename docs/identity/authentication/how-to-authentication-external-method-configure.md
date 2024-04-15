@@ -22,10 +22,6 @@ Using a multi-tenant application reduces the liklihood of misconfiguration in ea
 1. Create an Entra ID tenant if they don't have one yet.
 1. Using that tenant, register an application in Entra ID. 
 1. Set the app’s Supported Account types to: Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant). 
-
-   Failure to set up the app as multitenant causes the following error:
-   AADSTS900491: Service principal `<your App id>` not found.
-
 1. Add the delegated permission openid and profile of Microsoft.Graph to the app.
 1. Do not publish any scopes in this application. 
 1. Add the external identity provider’s valid authorization_endpoint URLs to that application as Reply URLs. 
@@ -43,7 +39,12 @@ Object Id | This can be used with Microsoft Graph to query the application info.
 Application ID | This will be used by the external identity provider as their app’s ClientId.
 Home page URL | The provider home page url. This is not used for anything but is required as part of application registration.
 Reply URLs | Valid redirect URLs for the provider. One of these should match the provider host URL that was set for the provider’s Entra ID tenant. One of the reply URLs registered must match the prefix of the authorization_endpoint that Entra ID will retrieve through OIDC discovery for the host url.
- 
+
+An app per tenant is also a valid model to support the integration.  If using a single-tenant app registration than the tenant admin will create an app registration for a single-tenant application with the properties documented above.
+
+>[!NOTE]
+>Admin consent for the application is required in the tenant that will use the external authentication method.  If this is not completed then the following error will be seen when attempting to use the external authentication method:
+>AADSTS900491: Service principal <your App id> not found.
 
 ## Configure optional claims
 
