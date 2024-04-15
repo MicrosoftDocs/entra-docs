@@ -415,7 +415,7 @@
       - name: bswift
         href: bswift-tutorial.md
       - name: Bugcrowd
-      - href: bugcrowd-tutorial.md
+        href: bugcrowd-tutorial.md
       - name: Bugsnag
         href: bugsnag-tutorial.md
       - name: BullseyeTDP
