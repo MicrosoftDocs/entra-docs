@@ -33,12 +33,12 @@ During the preview, Global Secure Access (preview) is available in limited point
 | Zurich, Switzerland              |                        |                         |                          |
 
 ## IP addresses and Fully Qualified Domain Names (FQDNs) for Global Secure Access service
-The Global Secure Access service is accessed from the Global Secure Access client and is used for Microsoft Entra Internet Access (including Microsoft 365) and Microsoft Entra Private Access traffic. The ingress and egress Internet Protocol (IP) addresses are listed.
+The Global Secure Access service is accessed from the Global Secure Access client and is used for Microsoft Entra Internet Access (including Microsoft 365) and Microsoft Entra Private Access traffic. The Internet Protocol (IP) addresses are listed.
 
-### IP addresses for the Global Secure Access service
+### FQDN and IP addresses where Global Secure Access service receives traffic
 Add Anycast IP ranges for accessing the Global Secure Access service edge to your enterprise Access Control Lists (ACLs) and firewalls. When operating in a side-by-side model with other Security Service Edge (SSE) clients, add the Anycast IP ranges to these other clients.
  
-The destinations include:
+The Global Secure Access service receives traffic on these FQDNs and IP addresses:
 - `*.globalsecureaccess.microsoft.com`
 - `150.171.19.0/24`
 - `150.171.20.0/24`
@@ -48,9 +48,9 @@ The destinations include:
 - `150.171.18.0/24`
 - `151.206.0.0/16`
  
-### IP addresses from the Global Secure Access service
-Network traffic egresses from the Global Secure Access service for Microsoft Entra Internet Access (including Microsoft 365) towards the internet and Software as a Service (SaaS) endpoints. The traffic carries a unique `Src IP` signature. Use the signature to set up location-based access controls for your applications and resources.
+### IP addresses the Global Secure Access services sends traffic from
+Network traffic leaves the Global Secure Access service for Microsoft Entra Internet Access (including Microsoft 365) towards the internet and Software as a Service (SaaS) endpoints. The traffic carries a unique `Src IP` signature. Use the signature to set up location-based access controls for your applications and resources.
  
-The egress IP addresses are:
+The Global Secure Access service sends traffic on these IP addresses:
 - `128.94.0.0/19`
 - `151.206.0.0/16`
