@@ -38,7 +38,6 @@ To make use of workload identity risk, including the new **Risky workload identi
    - Security Administrator
    - Security Operator
    - Security Reader Users assigned the Conditional Access administrator role can create policies that use risk as a condition.
-   - Global Administrator
 
 ## Workload identity risk detections
 

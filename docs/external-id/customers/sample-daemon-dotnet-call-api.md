@@ -109,40 +109,40 @@ To use your app registration in the web API sample:
     dotnet run
     ```
 
- - If your daemon application and web API successfully run, you should see something similar to the following JSON array in your console window
+If your daemon application and web API successfully run, you should see something similar to the following JSON array in your console window
 
-    ```console
-    Posting a to-do...
-    Retrieving to-do's from server...
-    To-do data:
-    ID: 1
-    User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
-    Message: Bake bread
-    Posting a second to-do...
-    Retrieving to-do's from server...
-    To-do data:
-    ID: 1
-    User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
-    Message: Bake bread
-    ID: 2
-    User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
-    Message: Butter bread
-    Deleting a to-do...
-    Retrieving to-do's from server...
-    To-do data:
-    ID: 2
-    User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
-    Message: Butter bread
-    Editing a to-do...
-    Retrieving to-do's from server...
-    To-do data:
-    ID: 2
-    User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
-    Message: Eat bread
-    Deleting remaining to-do...
-    Retrieving to-do's from server...
-    There are no to-do's in server
-    ```
+```bash
+Posting a to-do...
+Retrieving to-do's from server...
+To-do data:
+ID: 1
+User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
+Message: Bake bread
+Posting a second to-do...
+Retrieving to-do's from server...
+To-do data:
+ID: 1
+User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
+Message: Bake bread
+ID: 2
+User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
+Message: Butter bread
+Deleting a to-do...
+Retrieving to-do's from server...
+To-do data:
+ID: 2
+User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
+Message: Butter bread
+Editing a to-do...
+Retrieving to-do's from server...
+To-do data:
+ID: 2
+User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
+Message: Eat bread
+Deleting remaining to-do...
+Retrieving to-do's from server...
+There are no to-do's in server
+```
 
 ## How it works
 

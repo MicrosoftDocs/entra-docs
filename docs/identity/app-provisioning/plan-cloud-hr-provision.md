@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.date: 09/15/2023
+ms.date: 04/15/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -16,9 +16,9 @@ ms.reviewer: arvinh
 
 Historically, IT staff has relied on manual methods to create, update, and delete employees. They've used methods such as uploading CSV files or custom scripts to sync employee data. These provisioning processes are error prone, insecure, and hard to manage.
 
-To manage the identity lifecycles of employees, vendors, or contingent workers, [Microsoft Entra user provisioning service](~/identity/app-provisioning/user-provisioning.md) offers integration with cloud-based human resources (HR) applications. Examples of applications include Workday or SuccessFactors.
+To manage the identity lifecycle of employees, vendors, or contingent workers, [Microsoft Entra user provisioning service](~/identity/app-provisioning/user-provisioning.md) offers integration with cloud-based human resources (HR) applications. Examples of applications include Workday and SuccessFactors.
 
-Microsoft Entra ID uses this integration to enable the following cloud HR application (app) workflows:
+Microsoft Entra ID uses this integration to enable the following cloud HR application (app) processes:
 
 - **Provision users to Active Directory:** Provision selected sets of users from a cloud HR app into one or more Active Directory domains.
 - **Provision cloud-only users to Microsoft Entra ID:** In scenarios where Active Directory isn't used, provision users directly from the cloud HR app to Microsoft Entra ID.
@@ -29,7 +29,7 @@ The following video provides guidance on planning your HR-driven provisioning in
 > [!VIDEO https://www.youtube-nocookie.com/embed/HsdBt40xEHs]
 
 > [!NOTE]
-> This deployment plan shows you how to deploy your cloud HR app workflows with Microsoft Entra user provisioning. For information on how to deploy automatic user provisioning to software as a service (SaaS) apps, see [Plan an automatic user provisioning deployment](./plan-auto-user-provisioning.md).
+> This deployment plan shows you how to deploy your cloud HR app with Microsoft Entra user provisioning. For information on how to deploy automatic user provisioning to software as a service (SaaS) apps, see [Plan an automatic user provisioning deployment](./plan-auto-user-provisioning.md).
 
 ## Enabled HR scenarios
 
@@ -75,7 +75,9 @@ This capability of HR-driven IT provisioning offers the following significant bu
 
 To configure the cloud HR app to Microsoft Entra user provisioning integration, you require a valid [Microsoft Entra ID P1 or P2 license](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) and a license for the cloud HR app, such as Workday or SuccessFactors.
 
-You also need a valid Microsoft Entra ID P1 or higher subscription license for every user that is sourced from the cloud HR app and provisioned to either Active Directory or Microsoft Entra ID. Any improper number of licenses owned in the cloud HR app might lead to errors during user provisioning.
+You also need a valid Microsoft Entra ID P1 or higher subscription license for every user that is sourced from the cloud HR app and provisioned to either Active Directory or Microsoft Entra ID.
+
+Use of [Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md) and other Microsoft Entra ID Governance features in the provisioning process requires a [Microsoft Entra ID Governance license](~/id-governance/licensing-fundamentals.md).
 
 ### Prerequisites
 
@@ -107,7 +109,7 @@ The following example describes the end-to-end user provisioning solution archit
 
 ![Workflow diagram](media/plan-cloud-hr-provision/plan-cloudhr-provisioning-img1.png)
 
-#### Description of workflow
+#### Description of the provisioning process
 
 The following key steps are indicated in the diagram:
 
@@ -141,7 +143,7 @@ Run the initial configuration in a [pilot environment](~/architecture/deployment
 
 ## Select cloud HR provisioning connector apps
 
-To facilitate Microsoft Entra provisioning workflows between the cloud HR app and Active Directory, you can add multiple provisioning connector apps from the Microsoft Entra app gallery:
+To facilitate Microsoft Entra provisioning from the cloud HR app into Active Directory, you can add multiple provisioning connector apps from the Microsoft Entra app gallery:
 
 - **Cloud HR app to Active Directory user provisioning**: This provisioning connector app facilitates user account provisioning from the cloud HR app to a single Active Directory domain. If you have multiple domains, you can add one instance of this app from the Microsoft Entra app gallery for each Active Directory domain you need to provision to.
 - **Cloud HR app to Microsoft Entra user provisioning**: Microsoft Entra Connect is the tool used to synchronize Active Directory on premises users to Microsoft Entra ID. The Cloud HR app to Microsoft Entra user provisioning is a connector you use to provision cloud-only users from the cloud HR app to a single Microsoft Entra tenant.
