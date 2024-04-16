@@ -151,6 +151,29 @@ To unblock an account based on sign-in risk, administrators have the following o
 1. **Exclude the user from policy** - If you think that the current configuration of your sign-in policy is causing issues for specific users, you can exclude the users from it. For more information, see the section Exclusions in the article [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md#policy-exclusions).
 1. **Disable policy** - If you think that your policy configuration is causing issues for all your users, you can disable the policy. For more information, see the article [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md).
 
+## Token theft related detections
+
+With a recent update to our detection architecture, we no longer autoremediate sessions with MFA claims when a token theft related or the Microsoft Threat Intelligence Center (MSTIC) Nation State IP detection triggers during sign-in. 
+
+The following ID Protection detections that identify suspicious token activity or the MSTIC Nation State IP detection are no longer autoremediated: 
+
+- Microsoft Entra threat intelligence  
+- Anomalous token  
+- Token issuer anomaly  
+- MSTIC Nation State IP
+
+ID Protection now surfaces session details in the Risk Detection Details pane for detections that emit sign-in data. This change ensures we don't close sessions containing detections where there's MFA-related risk. Providing session details with user level risk details provides valuable information to assist with investigation. This information includes:
+
+- Token Issuer type
+- Sign-in time
+- IP address
+- Sign-in location
+- Sign-in client
+- Sign-in request ID
+- Sign-in correlation ID
+
+If you have [user risk-based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#user-risk-policy-in-conditional-access) configured and one of these detections that denotes suspicious token activity is fired on a user, the end user will be required to perform secure password change and reauthenticate their account with multifactor authentication to clear the risk.
+
 ## PowerShell preview
 
 Using the Microsoft Graph PowerShell SDK Preview module, organizations can manage risk using PowerShell. The preview modules and sample code can be found in the [Microsoft Entra GitHub repo](https://github.com/AzureAD/IdentityProtectionTools).
