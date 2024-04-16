@@ -1,21 +1,19 @@
 ---
-title: Publish apps on separate networks via connector groups
-description: Covers how to create and manage groups of connectors in Microsoft Entra application proxy.
+title: Understand Microsoft Entra private network connector groups
+description: Learn how Microsoft Entra private network connector groups work and how they are used by Microsoft Entra Private Access and application proxy.
 author: kenwith
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: app-proxy
-ms.topic: conceptual
-ms.date: 02/26/2024
 ms.author: kenwith
-ms.reviewer: ashishj
+manager: amycolannino
+ms.topic: conceptual
+ms.date: 04/15/2024
+ms.service: global-secure-access
 ---
 
-# Publish applications on separate networks and locations using connector groups
+# Understand Microsoft Entra private network connector groups
 
-Use application proxy connector groups to assign specific connectors to specific applications. Connector groups give you more control and let you optimize your deployments.
+Use private network connector groups to assign specific connectors to specific applications. Connector groups give you more control and let you optimize your deployments.
 
-Each application proxy connector is assigned to a connector group. All the connectors that belong to the same connector group act as a separate unit for high-availability and load balancing. All connectors belong to a connector group. If you don't create groups, then all your connectors are in a default group. You create new connector groups and assign connectors in the Microsoft Entra admin center.
+Each private network connector is assigned to a connector group. All the connectors that belong to the same connector group act as a separate unit for high-availability and load balancing. All connectors belong to a connector group. If you don't create groups, then all your connectors are in a default group. You create new connector groups and assign connectors in the Microsoft Entra admin center.
 
 Connector groups are useful if your applications are hosted in different locations. You create connector groups based on location. Applications use connectors that are physically close to them.
 
@@ -24,26 +22,12 @@ Connector groups are useful if your applications are hosted in different locatio
 
 ## Prerequisites
 
-You must have multiple connectors to use connector groups. New connectors are automatically added to the **Default** connector group. For more information on installing connectors, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md).
+You must have multiple connectors to use connector groups. New connectors are automatically added to the **Default** connector group. For more information on installing connectors, see [configure connectorsD](how-to-configure-connectors.md).
 
-## Create connector groups
-To create a connector group:
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **enterprise applications** > **application proxy**.
-1. Select **New connector group**.
-
-   ![Shows the screen to select a new connector group](./media/application-proxy-connector-groups/new-group.png)
-
-1. Give your new connector group a name, then use the dropdown menu to select which connectors belong in the group.
-1. Select **Save**.
 
 ## Assign applications to your connector groups
 
-You assign an application to a connector group when you first publish it. You can also update the group a connector is assigned. To update the group a connector is in:
-
-1. From the management dashboard for your directory, select **Enterprise applications** > **All applications** > the application you want to assign to a connector group > **application proxy**.
-1. Use the **Connector Group** dropdown menu to select the group you want the application to use.
-1. Select **Save** to apply the change.
+You assign an application to a connector group when you first publish it. You can also update the group a connector is assigned.
 
 ## Use cases for connector groups
 
@@ -63,11 +47,11 @@ For applications installed on Infrastructure as a Service (IaaS) for cloud acces
 
 Take as an example an organization that has several virtual machines connected to their own IaaS hosted virtual network. To allow employees to use these applications, these private networks are connected to the corporate network using site-to-site Virtual Private Network (VPN). Site-to-site VPN provides a good experience for employees that are located on-premises. But, it isn't ideal for remote employees, because it requires more on-premises infrastructure to route access, as illustrated in the diagram:
 
-![Diagram that illustrates the Microsoft Entra IaaS network](./media/application-proxy-connector-groups/application-proxy-iaas-network.png)
+![Diagram that illustrates the Microsoft Entra IaaS network](./media/concept-connector-groups/application-proxy-iaas-network.png)
   
-With Microsoft Entra application proxy connector groups, you enable a common service to secure access to all applications without creating more dependencies on your corporate network:
+With Microsoft Entra private network connector groups, you enable a common service to secure access to all applications without creating more dependencies on your corporate network:
 
-![Microsoft Entra IaaS Multiple Cloud Vendors](./media/application-proxy-connector-groups/application-proxy-multiple-cloud-vendors.png)
+![Microsoft Entra IaaS Multiple Cloud Vendors](./media/concept-connector-groups/application-proxy-multiple-cloud-vendors.png)
 
 ### Multi-forest – different connector groups for each forest
 
@@ -92,7 +76,7 @@ Consider these sample connector group configurations.
 
 If you don’t use connector groups, your configuration would look like this:
 
-![Example without connector groups](./media/application-proxy-connector-groups/application-proxy-sample-config-1.png)
+![Example without connector groups](./media/concept-connector-groups/application-proxy-sample-config-1.png)
 
 The configuration is sufficient for small deployments and tests. It also works if your organization has a flat network topology.
 
@@ -100,7 +84,7 @@ The configuration is sufficient for small deployments and tests. It also works i
 
 The configuration is an evolution of the default, a specific app runs in an isolated network such as IaaS virtual network:
 
-![Example Microsoft Entra without connector groups on an isolated network](./media/application-proxy-connector-groups/application-proxy-sample-config-2.png)
+![Example Microsoft Entra without connector groups on an isolated network](./media/concept-connector-groups/application-proxy-sample-config-2.png)
 
 ### Recommended configuration – several specific groups and a default group for idle
 
@@ -108,9 +92,10 @@ The recommended configuration for large and complex organizations is to have the
 
 In the example, the company has two datacenters, A, and B, with two connectors that serve each site. Each site has different applications that run on it.
 
-![Example of company with 2 datacenters and 2 connectors](./media/application-proxy-connector-groups/application-proxy-sample-config-3.png)
+![Example of company with 2 datacenters and 2 connectors](./media/concept-connector-groups/application-proxy-sample-config-3.png)
+
+[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 
 ## Next steps
 
-- [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md)
-- [Enable single-sign on](~/identity/enterprise-apps/what-is-single-sign-on.md)
+- [Understand Microsoft Entra private network connectors](concept-connectors.md)

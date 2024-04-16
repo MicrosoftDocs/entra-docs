@@ -122,11 +122,11 @@ Organizations might need to monitor for and alert on the creation of new Microso
 | - | - | - | - | - |
 | Creation of a new Microsoft Entra tenant, using an identity from your tenant. | Medium | Microsoft Entra audit logs | Category: Directory Management<br><br>Activity: Create Company | Target(s) shows the created TenantID |
 
-### AppProxy Connector
+### Private network connector
 
-Microsoft Entra ID and Microsoft Entra application proxy give remote users a single sign-on (SSO) experience. Users securely connect to on-premises apps without a virtual private network (VPN) or dual-homed servers and firewall rules. If your Microsoft Entra application proxy connector server is compromised, attackers could alter the SSO experience or change access to published applications.
+Microsoft Entra ID and Microsoft Entra application proxy give remote users a single sign-on (SSO) experience. Users securely connect to on-premises apps without a virtual private network (VPN) or dual-homed servers and firewall rules. If your Microsoft Entra private network connector server is compromised, attackers could alter the SSO experience or change access to published applications.
 
-To configure monitoring for Application Proxy, see [Troubleshoot Application Proxy problems and error messages](~/identity/app-proxy/application-proxy-troubleshoot.md). The data file that logs information can be found in Applications and Services Logs\Microsoft\AadApplicationProxy\Connector\Admin. For a complete reference guide to audit activity, see [Microsoft Entra audit activity reference](~/identity/monitoring-health/reference-audit-activities.md). Specific things to monitor:
+To configure monitoring for Application Proxy, see [Troubleshoot Application Proxy problems and error messages](~/identity/app-proxy/application-proxy-troubleshoot.md). The data file that logs information can be found in Applications and Services Logs\Microsoft\Microsoft Entra private network\Connector\Admin. For a complete reference guide to audit activity, see [Microsoft Entra audit activity reference](~/identity/monitoring-health/reference-audit-activities.md). Specific things to monitor:
 
 | What to monitor| Risk level| Where| Filter/sub-filter| Notes |
 | - | - | - | - | - |
@@ -258,7 +258,7 @@ Detailed information for planning and implementing on-premises password protecti
 
 The DC agent Admin log is the primary source of information for how the software is behaving. By default, the Trace log is off and must be enabled before data is logged. To troubleshoot application proxy problems and error messages, detailed information is available at [Troubleshoot Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-troubleshoot.md). Information for these events is logged in:
 
-* Applications and Services Logs\Microsoft\AadApplicationProxy\Connector\Admin
+* Applications and Services Logs\Microsoft\Microsoft Entra private network\Connector\Admin
 
 * Microsoft Entra audit log, Category Application Proxy
 
