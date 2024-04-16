@@ -66,7 +66,12 @@ Note: You must have bluetooth enabled on both devices to successfully authentica
 
 1. You're now signed into Microsoft Entra ID on your other device.
 
-### Single-sign on (iOS)
+### Single-sign on to native applications (iOS)
+
+Native applications like Microsoft OneDrive, SharePoint, and Outlook don't support passkey sign-in directly, but you can use Authenticator passkey for single sign-on (SSO) to native applications on your iOS device. Similar support for Android is coming during preview. To use Authenticator passkey for SSO, you need to register the passkey by using the WebAuthN flow where you scan the QR code. 
+
+1. Register Authenticator passkey on your mobile device. 
+2. Sign in to Authenticator?
 
 
 
