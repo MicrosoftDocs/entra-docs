@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 12/15/2023
+ms.date: 04/15/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -30,7 +30,6 @@ The following built-in roles grant permissions to *read Conditional Access polic
 - Global Reader
 - Security Administrator
 - Conditional Access Administrator
-- Global Administrator
 
 The following built-in roles grant permission to *view sign-in logs*:
 
@@ -38,7 +37,6 @@ The following built-in roles grant permission to *view sign-in logs*:
 - Security Reader
 - Global Reader
 - Security Administrator
-- Global Administrator
 
 ### Permissions for client apps
 

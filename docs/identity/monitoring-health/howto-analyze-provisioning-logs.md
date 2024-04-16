@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 02/15/2023
+ms.date: 04/15/2024
 ms.author: sarahlipsey
 ms.reviewer: arvinh
 
@@ -32,7 +32,6 @@ Application owners can view logs for their own applications. The following roles
 - Security Administrator
 - Application Administrator
 - Cloud Application Administrator
-- Global Administrator
 - Users in a custom role with the [provisioningLogs permission](../role-based-access-control/custom-enterprise-app-permissions.md#full-list-of-permissions)
 
 ## How to view the provisioning logs
