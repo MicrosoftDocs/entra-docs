@@ -1,12 +1,14 @@
 ---
 title: How to access Global Secure Access (preview) audit logs
-description: Learn how to access Global Secure Access (preview) audit logs.
+description: Learn how to access, archive, and analyze the audit logs for Microsoft's Security Service Edge solution.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 06/01/2023
+ms.date: 04/15/2024
 ms.service: global-secure-access
+
+#Customer intent: As an IT admin, I need to view the logs specific to network access so I can better manage the solution.
 
 ---
 
@@ -21,8 +23,6 @@ To access the audit log for your tenant, you must have one of the following role
 - Reports Reader
 - Security Reader
 - Security Administrator
-- Global Reader
-- Global Administrator
 
 Audit logs are available in [all editions of Microsoft Entra](/azure/active-directory/reports-monitoring/concept-audit-logs). Storage and integration with analysis and monitoring tools may require additional licenses and roles.
 
