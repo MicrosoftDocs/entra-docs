@@ -1,6 +1,6 @@
 ---
-title: Troubleshoot problems installing the Microsoft Entra application proxy connector
-description: Troubleshoot problems installing the application proxy connector for Microsoft Entra ID.
+title: Troubleshoot problems installing the Microsoft Entra private network connector
+description: Troubleshoot problems installing the private network connector for Microsoft Entra ID.
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
@@ -11,9 +11,9 @@ ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Troubleshoot problems installing the application proxy connector
+# Troubleshoot problems installing the private network connector
 
-Microsoft Entra application proxy connector is an internal domain component that uses outbound connections to establish the connectivity from the cloud available endpoint to the internal domain.
+Microsoft Entra private network connector is an internal domain component that uses outbound connections to establish the connectivity from the cloud available endpoint to the internal domain.
 
 ## General problem areas with connector installation
 
@@ -53,7 +53,7 @@ When the installation of a connector fails, the root cause is usually one of the
 
 **To verify the client certificate:**
 
-Verify the thumbprint of the current client certificate. The certificate store can be found in `%ProgramData%\microsoft\Microsoft AAD Application Proxy Connector\Config\TrustSettings.xml`.
+Verify the thumbprint of the current client certificate. The certificate store can be found in `%ProgramData%\microsoft\Microsoft AAD private network connector\Config\TrustSettings.xml`.
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -65,7 +65,7 @@ Verify the thumbprint of the current client certificate. The certificate store c
 </ConnectorTrustSettingsFile>
 ```
 
-The possible **IsInUserStore** values are **true** and **false**. A value of **true** means the certificate is automatically renewed and stored in the personal container in the user certificate store of the Network Service. A value of **false** means the client certificate is created during the installation or registration initiated by `Register-AppProxyConnector`. The certificate is stored in the personal container in the certificate store of the local machine.
+The possible **IsInUserStore** values are **true** and **false**. A value of **true** means the certificate is automatically renewed and stored in the personal container in the user certificate store of the Network Service. A value of **false** means the client certificate is created during the installation or registration initiated by `Register-MicrosoftEntraPrivateNetworkConnector`. The certificate is stored in the personal container in the certificate store of the local machine.
 
 If the value is **true**, follow these steps to verify the certificate:
 1. Download [PsTools.zip](/sysinternals/downloads/pstools).
@@ -83,16 +83,16 @@ If the value is **false**, follow these steps to verify the certificate:
 
 If a connector isn't connected to the service for several months, its certificates could be outdated. The failure of the certificate renewal leads to an expired certificate. The expired certificate causes the connector service to stop working. The event 1000 is recorded in the admin log of the connector:
 
-`Connector re-registration failed: The Connector trust certificate expired. Run the PowerShell cmdlet Register-AppProxyConnector on the computer on which the Connector is running to re-register your Connector.`
+`Connector re-registration failed: The Connector trust certificate expired. Run the PowerShell cmdlet Register-MicrosoftEntraPrivateNetworkConnector on the computer on which the Connector is running to re-register your Connector.`
 
 In this case, uninstall and reinstall the connector to trigger registration or you can run the following PowerShell commands:
 
 ```
-Import-module AppProxyPSModule
-Register-AppProxyConnector
+Import-module MicrosoftEntraPrivateNetworkConnectorPSModule
+Register-MicrosoftEntraPrivateNetworkConnector
 ```
 
-To learn more about the `Register-AppProxyConnector` command, see [Create an unattended installation script for the Microsoft Entra application proxy connector](application-proxy-register-connector-powershell.md).
+To learn more about the `Register-MicrosoftEntraPrivateNetworkConnector` command, see [Create an unattended installation script for the Microsoft Entra private network connector](application-proxy-register-connector-powershell.md).
 
 ## Verify admin is used to install the connector
 
@@ -105,4 +105,4 @@ Connect to `https://login.microsoftonline.com` and use the same credentials. Mak
 Select your user account, then **Directory Role** in the resulting menu. Verify that the selected role is **Application Administrator**. If you're unable to access any of the pages along these steps, you don't have the required role.
 
 ## Next steps
-- [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md)
+- [Understand Microsoft Entra private network connectors](application-proxy-connectors.md)

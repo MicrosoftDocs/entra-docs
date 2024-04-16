@@ -44,7 +44,7 @@ To check the versions of your Authentication Agents, on each server identified i
 
 1. Go to **Control Panel -> Programs -> Programs and Features** on the on-premises server.
 2. If there's an entry for "**Microsoft Entra Connect Authentication Agent**", you don't need to take any action on this server.
-3. If there's an entry for "**Microsoft Entra application proxy Connector**", you need to manually upgrade on this server.
+3. If there's an entry for "**Microsoft Entra private network connector**", you need to manually upgrade on this server.
 
 ![Preview version of Authentication Agent](./media/how-to-connect-pta-upgrade-preview-authentication-agents/pta6.png)
 
