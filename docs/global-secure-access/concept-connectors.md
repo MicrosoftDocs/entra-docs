@@ -1,6 +1,6 @@
 ---
 title: Understand the Microsoft Entra private network connector
-description: Learn how Microsoft Entra private network connectors work and how they are used by Microsoft Entra Private Access and application proxy.
+description: Learn how Microsoft Entra private network connectors work and how they're used by Microsoft Entra Private Access and application proxy.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -31,7 +31,7 @@ Setup and registration between a connector and the application proxy service is 
 
 It's recommended that you always deploy multiple connectors for redundancy and scale. The connectors, in conjunction with the service, take care of all the high availability tasks and can be added or removed dynamically. Each time a new request arrives it's routed to one of the connectors that is available. When a connector is running, it remains active as it connects to the service. If a connector is temporarily unavailable, it doesn't respond to this traffic. Unused connectors are tagged as inactive and removed after 10 days of inactivity.
 
-Connectors also poll the server to find out if there is a newer version of the connector. Although you can do a manual update, connectors will update automatically as long as the private network connector Updater service is running. For tenants with multiple connectors, the automatic updates target one connector at a time in each group to prevent downtime in your environment.
+Connectors also poll the server to find out if there's a newer version of the connector. Although you can do a manual update, connectors will update automatically as long as the private network connector Updater service is running. For tenants with multiple connectors, the automatic updates target one connector at a time in each group to prevent downtime in your environment.
 
 > [!NOTE]
 > You can monitor the [version history page](reference-version-history.md) to stay informed on the latest updates.
@@ -62,7 +62,7 @@ You don't have to manually delete connectors that are unused. When a connector i
 
 ## Automatic updates
 
-Microsoft Entra ID provides automatic updates for all the connectors that you deploy. As long as the private network connector updater service is running, your connectors update with the latest major connector release automatically. If you don’t see the Connector Updater service on your server, you need to reinstall your connector to get updates. To learn more about connector updates, see [application proxy faq](../identity/app-proxy/application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-).
+Microsoft Entra ID provides automatic updates for all the connectors that you deploy. As long as the private network connector updater service is running, your connectors update with the latest major connector release automatically. If you don’t see the Connector Updater service on your server, you need to reinstall your connector to get updates.
 
 If you don't want to wait for an automatic update to come to your connector, you can do a manual upgrade. Go to the [connector download page](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download) on the server where your connector is located and select **Download**. This process kicks off an upgrade for the local connector.
 
@@ -99,7 +99,7 @@ The table provides volume and expected latency for different machine specificati
 \* The machine used a custom setting to raise some of the default connection limits beyond .NET recommended settings. We recommend running a test with the default settings before contacting support to get this limit changed for your tenant.
 
 > [!NOTE]
-> There isn't much difference in the maximum TPS between 4, 8, and 16 core machines. The main difference is the expected latency.
+> There's not much difference in the maximum TPS between 4, 8, and 16 core machines. The main difference is the expected latency.
 >
 > The table focuses on the expected performance of a connector based on the type of machine it's installed on. This is separate from the service's throttling limits, see [service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
 
