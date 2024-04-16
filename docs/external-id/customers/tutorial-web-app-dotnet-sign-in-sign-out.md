@@ -1,6 +1,6 @@
 ---
-title: Tutorial - Add sign-in and sign-out to an ASP.NET Core web application for a customer tenant
-description: Learn how to configure an ASP.NET Core web application to sign in and sign out users with your Microsoft Entra ID for customers tenant.
+title: Tutorial - Add sign-in and sign-out to an ASP.NET Core web application for an external tenant
+description: Learn how to configure an ASP.NET Core web application to sign in and sign out users with your external tenant.
  
 author: cilwerner
 ms.author: cwerner
@@ -9,10 +9,10 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: tutorial
 ms.date: 05/23/2023
-#Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own ASP.NET Core web app with Microsoft Entra ID for customers tenant.
+#Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own ASP.NET Core web app with external tenant.
 ---
 
-# Tutorial: Add sign-in and sign-out to an ASP.NET Core web application for a customer tenant
+# Tutorial: Add sign-in and sign-out to an ASP.NET Core web application for an external tenant
 
 This tutorial is the final part of a series that demonstrates building an ASP.NET Core web application and prepare it for authentication using the Microsoft Entra admin center. In the [part 2 of this series](./tutorial-web-app-dotnet-sign-in-prepare-app.md), you created an ASP.NET Core project in Visual Studio Code and configured it for authentication. In this final step, you'll add sign-in and sign-out experiences and sign-in and sign-out of the application.
 
@@ -25,7 +25,7 @@ In this tutorial you'll;
 
 ## Prerequisites
 
-* [Tutorial: Prepare your customer tenant for building an ASP.NET Core web app](./tutorial-web-app-dotnet-sign-in-prepare-tenant.md).
+* [Tutorial: Prepare your external tenant for building an ASP.NET Core web app](./tutorial-web-app-dotnet-sign-in-prepare-tenant.md).
 
 ## Add the sign-in and sign out experience
 
@@ -123,8 +123,8 @@ The web app is now configured to sign in users with the Microsoft identity platf
 
 1. Open a new private browser, and enter the application URI into the browser, in this case `https://localhost:7274`.
 1. To test the sign-up user flow you configured earlier, select **No account? Create one**.
-1. In the **Create account** window, enter the email address registered to your customer tenant, which will start the sign-up flow as a user for your application.
-1. After entering a one-time passcode from the customer tenant, enter a new password and more account details, this sign-up flow is completed.
+1. In the **Create account** window, enter the email address registered to your external tenant, which will start the sign-up flow as a user for your application.
+1. After entering a one-time passcode from the external tenant, enter a new password and more account details, this sign-up flow is completed.
     1. If a window appears prompting you to **Stay signed in**, choose either **Yes** or **No**.
 1. The ASP.NET Core Welcome page appears in your browser as depicted in the following screenshot:
 

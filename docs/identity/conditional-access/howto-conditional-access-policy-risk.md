@@ -1,6 +1,6 @@
 ---
 title: Sign-in risk-based multifactor authentication
-description: Create Conditional Access policies using Identity Protection sign-in risk.
+description: Create Conditional Access policies using Microsoft Entra ID Protection sign-in risk
 
 ms.service: entra-id
 ms.subservice: conditional-access

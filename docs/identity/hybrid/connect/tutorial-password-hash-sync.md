@@ -225,7 +225,6 @@ Now it's time to download and install Microsoft Entra Connect. After it's instal
 1. In **Welcome**, select the checkbox to agree to the licensing terms and select **Continue**.
 1. In **Express settings**, select **Use express settings**.
 
-   :::image type="content" source="media/tutorial-password-hash-sync/express1.png" alt-text="Screenshot that shows the Express settings screen and the Use express settings button.":::
 1. In **Connect to Microsoft Entra ID**, enter the username and password for the Hybrid Identity Administrator account for Microsoft Entra ID. Select **Next**.  
 1. In **Connect to AD DS**, enter the username and password for an enterprise admin account. Select **Next**.  
 1. In **Ready to configure**, select **Install**.

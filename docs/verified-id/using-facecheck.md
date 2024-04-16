@@ -71,42 +71,42 @@ The JSON payload to the [Request Service API](get-started-request-api.md?tabs=ht
 The claim containing the photo must be named and you may optionally specify your confidence threshold as an integer between 50-100. The default is 70.
 
 ```json
-POST https://verifiedid.did.msidentity.com/v1.0/verifiableCredentials/createPresentationRequest
+// POST https://verifiedid.did.msidentity.com/v1.0/verifiableCredentials/createPresentationRequest
 ...
-  "requestedCredentials": [ 
-    { 
-      "type": "VerifiedEmployee", 
-      "acceptedIssuers": [ "did:web:yourdomain.com" ], 
-      "configuration": { 
-        "validation": { 
-          "allowRevoked": false, 
-          "validateLinkedDomain": true, 
-          "faceCheck": { 
-            "sourcePhotoClaimName": "photo", 
-            "matchConfidenceThreshold": 70 
-          } 
-        }     
+  "requestedCredentials": [
+    {
+      "type": "VerifiedEmployee",
+      "acceptedIssuers": [ "did:web:yourdomain.com" ],
+      "configuration": {
+        "validation": {
+          "allowRevoked": false,
+          "validateLinkedDomain": true,
+          "faceCheck": {
+            "sourcePhotoClaimName": "photo",
+            "matchConfidenceThreshold": 70
+          }
+        }
 ```
-  
+
 #### Successful Face Check presentation_verified callback event
 
 The JSON payload for the `presentation_verified` has more data when a Face Check was successfully during a Verified ID credential presentation. The faceCheck section is added which contains a matchConfidenceScore. Note, that it isn't possible to request and receive the presentation receipt when the request includes faceCheck.
 
 ```json
-  "verifiedCredentialsData": [ 
-    { 
-      "issuer": "did:web:yourdomain.com", 
-      "type": [ "VerifiableCredential", "VerifiedEmployee" ], 
-      "claims": { 
-        ... 
-      }, 
-      ... 
-      "faceCheck": { 
-        "matchConfidenceScore": 86.314159,
+  "verifiedCredentialsData": [ 
+    { 
+      "issuer": "did:web:yourdomain.com", 
+      "type": [ "VerifiableCredential", "VerifiedEmployee" ], 
+      "claims": { 
+        ... 
+      }, 
+      ... 
+      "faceCheck": { 
+        "matchConfidenceScore": 86.314159,
         "sourcePhotoQuality": "HIGH"
-      } 
-    } 
-  ], 
+      } 
+    } 
+  ], 
 ```
  
 #### Failed Face Check callback event
@@ -115,13 +115,13 @@ When the confidence score is lower than the threshold, the presentation request 
 
 ```json
 { 
-  "requestId": "...", 
-  "requestStatus": "presentation_error", 
-  "state": "...", 
-  "error": { 
-    "code": "claimValidationError", 
-    "message": "Match confidence score failing to meet the threshold." 
-  } 
+  "requestId": "...", 
+  "requestStatus": "presentation_error", 
+  "state": "...", 
+  "error": { 
+    "code": "claimValidationError", 
+    "message": "Match confidence score failing to meet the threshold." 
+  } 
 } 
 ```
 

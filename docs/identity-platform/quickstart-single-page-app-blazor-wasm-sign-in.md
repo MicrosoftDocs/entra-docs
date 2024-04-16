@@ -1,5 +1,5 @@
 ---
-title: "Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using Blazor WebAssembly"
+title: "Quickstart: Sign in to a SPA & call an API - Blazor WebAssembly"
 description: In this quickstart, learn how a .NET Blazor WebAssembly single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow and call Microsoft Graph.
 author: henrymbuguakiarie
 manager: CelesteDG

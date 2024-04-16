@@ -1,6 +1,6 @@
 ---
 title: User risk-based password change
-description: Create Conditional Access policies using Identity Protection user risk.
+description: Create Conditional Access policies using Microsoft Entra ID Protection user risk
 
 ms.service: entra-id
 ms.subservice: conditional-access

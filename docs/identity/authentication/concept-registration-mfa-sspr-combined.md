@@ -5,7 +5,7 @@ description: Learn about the combined registration experience for Microsoft Entr
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/26/2024
+ms.date: 03/25/2024
 
 ms.author: justinha
 author: justinha
@@ -45,7 +45,7 @@ Combined registration supports the authentication methods and actions in the fol
 | Security questions | Yes | No | Yes |
 | Passwords | No | Yes | No |
 | App passwords* | Yes | No | Yes |
-| FIDO2 security keys*| Yes | No | Yes |
+| Passkey (FIDO2)*| Yes | No | Yes |
 
 > [!NOTE]
 > If you enable Microsoft Authenticator for passwordless authentication mode in the Authentication methods policy, users need to also enable passwordless sign-in in the Authenticator app.
@@ -56,7 +56,7 @@ Combined registration supports the authentication methods and actions in the fol
 >
 > App passwords are available only to users who have been enforced for per-user MFA. App passwords aren't available to users who are enabled for Microsoft Entra multifactor authentication by a Conditional Access policy.
 >
-> FIDO2 security keys, can only be added in *Manage mode* on [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo).
+> Passkey (FIDO2), can only be added in *Manage mode* on [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo).
 
 Users can set one of the following options as the default multifactor authentication method. 
 
@@ -120,7 +120,7 @@ Users can access manage mode by going to [Security info](https://aka.ms/mysecuri
 
 ## Key usage scenarios
 
-### Update a password in MySignIns (preview)
+### Change a password in MySignIns
 A user navigates to [Security info](https://aka.ms/mysecurityinfo). After signing in, the user can change their password. If the user authenticates with a password and a multifactor authentication method, they will be able to use the enhanced user experience to change their password without entering their existing password. When finished, the user has the new password updated on the Security info page. Authentication methods such as Temporary Access Pass (TAP) aren't supported for password change unless the user knows their existing password.
 
 ### Protect Security info registration with Conditional Access

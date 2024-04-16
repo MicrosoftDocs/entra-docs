@@ -5,24 +5,24 @@ author: barclayn
 manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: quickstart
-ms.date: 11/29/2023
+ms.date: 03/23/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ---
 
 # Quickstart: Create a group with members and view all groups and members
 
-You can view your organization's existing groups and group members using the Microsoft Entra Admin Center. Groups are used to manage users that all need the same access and permissions for potentially restricted apps and services.
-
 In this quickstart, you'll set up a new group and assign members to the group. Then you'll view your organization's group and assigned members. Throughout this guide, you'll create a user and group that you can use in other quickstarts and tutorials.
 
-If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
+You can view your organization's existing groups and group members using the Microsoft Entra admin center. Groups are used to manage users that all need the same access and permissions for potentially restricted apps and services.
 
 ## Prerequisites
 
 Before you begin, you'll need to:
 
+- Have an Azure subscription. If you don't have one, create a [free account](https://azure.microsoft.com/free/).
 - Create a Microsoft Entra tenant. For more information, see [Access the portal and create a new tenant](./create-new-tenant.md).
 
 ## Create a new group

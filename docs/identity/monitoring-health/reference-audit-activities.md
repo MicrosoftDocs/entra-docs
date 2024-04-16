@@ -1,5 +1,4 @@
 ---
-
 title: Microsoft Entra audit log activity reference
 description: Get an overview of the audit activities that can be logged in your audit logs in Microsoft Entra ID.
 
@@ -8,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health
-ms.date: 09/14/2023
+ms.date: 04/15/2024
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk
 ---
@@ -16,14 +15,14 @@ ms.reviewer: dhanyahk
 
 Microsoft Entra audit logs collect all traceable activities within your Microsoft Entra tenant. Audit logs can be used to determine who made a change to service, user, group, or other item.
 
-This article provides a comprehensive list of the audit categories and their related activities. Use the "In this article" section to jump to a specific audit category. 
+This article provides a comprehensive list of the audit categories and their related activities. To jump to a specific audit category, use the "In this article" section. 
 
 Audit log activities and categories change periodically. The tables are updated regularly, but might not be in sync with what is available in Microsoft Entra ID. Provide us with feedback if you think there's a missing audit category or activity.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Audit logs**.
 1. Adjust the filters accordingly.
-1. Select a row from the resulting table to view the details.
+1. To view the details, select a row from the resulting table.
 
 <a name='aad-management-ux'></a>
 
@@ -901,7 +900,7 @@ If you need to manage [Microsoft Entra ID and Microsoft Entra hybrid joined devi
 
 ## Entitlement Management
 
-If you're using Entitlement Management to streamline how you assign members of Microsoft Entra security groups, grant licenses for Microsoft 365, or provide access to applications, you can use these logs to monitor changes to those settings. [Access reviews](#access-reviews) and [Lifecycle workflows](#lifecycle-workflows) have separate logs.
+Use these logs to monitor changes to Entitlement Management settings. Entitlement Management can be used to streamline how you assign members of Microsoft Entra security groups, grant licenses for Microsoft 365, or provide access to applications. [Access reviews](#access-reviews) and [Lifecycle workflows](#lifecycle-workflows) have separate logs.
 
 |Audit Category|Activity|
 |---|---|
@@ -1298,6 +1297,8 @@ Many of the activities captured in the PIM audit logs are similar, so take note 
 
 Users in your tenant can manage many aspects of their group memberships on their own. Use the Self-service group management logs to help troubleshoot issues with these scenarios.
 
+Many of the activities in this group are associated with background processes related to a user's activity. For example, you might see multiple `Features_GetFeaturesAsync` instances in your logs when a user accesses the MyApps or MyGroups portal. This activity doesn't indicate if the user made any changes. Other activities such as `GroupsODataV4_Get` often occur in groups for similar user actions.
+
 |Audit Category|Activity|
 |---|---|
 |GroupManagement|ApprovalNotification_Create
@@ -1309,7 +1310,6 @@ Users in your tenant can manage many aspects of their group memberships on their
 |GroupManagement|Approvals_ActOnApproval|
 |GroupManagement|Approvals_Post|
 |GroupManagement|Approve a pending request to join a group|
-|GroupManagement|Autorenew group|
 |GroupManagement|Cancel a pending request to join a group|
 |GroupManagement|Create lifecycle management policy|
 |GroupManagement|Delete a pending request to join a group|

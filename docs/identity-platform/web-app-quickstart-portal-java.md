@@ -36,7 +36,7 @@ ms.topic: quickstart
 > - [Maven](https://maven.apache.org/).
 > 
 > 
-> #### Step 1: Configure your application in the Azure portal
+> #### Step 1: Configure your application in the Microsoft Entra admin center
 > 
 > To use the code sample in this quickstart:
 > 

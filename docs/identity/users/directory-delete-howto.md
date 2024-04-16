@@ -69,10 +69,6 @@ You can use the Microsoft admin center to put a subscription into the **Deprovis
 
 1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com) with an account that is a global administrator in your organization. If you're trying to delete the Contoso organization that has the initial default domain `contoso.onmicrosoft.com`, sign in with a User Principal Name (UPN) such as `admin@contoso.onmicrosoft.com`.
 
-1. Preview the new Microsoft 365 admin center by turning on the **Try the new admin center** toggle.
-
-   :::image type="content" source="./media/directory-delete-howto/preview-toggle.png" alt-text="Screenshot that shows the toggle for previewing the new admin center.":::
-
 1. You need to cancel a subscription before you can delete it. Select **Billing** > **Your products**, and then select **Cancel subscription** for the subscription that you want to cancel. 
 
    :::image type="content" source="./media/directory-delete-howto/cancel-choose-subscription.png" alt-text="Screenshot that shows choosing a subscription to cancel.":::

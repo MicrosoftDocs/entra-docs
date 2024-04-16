@@ -23,7 +23,7 @@ Microsoft Entra ID also supports provisioning users into applications hosted on-
 
 |Protocol |Connector|
 |-----|-----|
-| SCIM | [SCIM - SaaS](use-scim-to-provision-users-and-groups.md) <br />[SCIM - On-prem / Private network](./on-premises-scim-provisioning.md) |
+| SCIM | [SCIM - SaaS](use-scim-to-provision-users-and-groups.md) <br />[SCIM - On-premises / Private network](./on-premises-scim-provisioning.md) |
 | LDAP | [LDAP](./on-premises-ldap-connector-configure.md)|
 | SQL  | [SQL](./tutorial-ecma-sql-connector.md) |
 | REST | [Web Services](./on-premises-web-services-connector.md)|
@@ -86,6 +86,10 @@ Microsoft Entra features preintegrated support for many popular SaaS apps and hu
    To request a new application for provisioning, see [Submit a request to publish your application in Microsoft Entra application gallery](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md). For a user provisioning request, we require the application to have a SCIM-compliant endpoint. Request that the application vendor follows the SCIM standard so we can onboard the app to our platform quickly.
 
 * **Applications that support SCIM 2.0**: For information on how to generically connect applications that implement SCIM 2.0-based user management APIs, see [Build a SCIM endpoint and configure user provisioning](use-scim-to-provision-users-and-groups.md).
+
+* **Applications that use an existing directory or database, or provide a provisioning interface**: See tutorials for how to provision to [LDAP](./on-premises-ldap-connector-configure.md) directory, a [SQL](./tutorial-ecma-sql-connector.md) database, have a [REST or SOAP](./on-premises-web-services-connector.md) interface, or can be reached through [PowerShell](./on-premises-powershell-connector.md), a [custom ECMA connector](./on-premises-custom-connector.md) or [connectors and gateways built by partners](./partner-driven-integrations.md).
+
+* **Applications that support Just-in-time provisioning via SAML**.
 
 ## How do I set up automatic provisioning to an application?
 
