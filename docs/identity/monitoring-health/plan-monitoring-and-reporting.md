@@ -1,5 +1,4 @@
 ---
-
 title: Plan reports & monitoring deployment
 description: Describes how to plan and execute implementation of reporting and monitoring.
 
@@ -45,7 +44,7 @@ You'll need a Microsoft Entra ID P1 or P2 license to access the Microsoft Entra 
 
 For detailed feature and licensing information, see the [Microsoft Entra pricing guide](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
-To deploy Microsoft Entra monitoring and health, you'll need a user who is a Global Administrator or Security Administrator for the Microsoft Entra tenant.
+To deploy Microsoft Entra monitoring and health, you'll need a user who is a Security Administrator for the Microsoft Entra tenant.
 
 * [Azure Monitor data platform](/azure/azure-monitor/data-platform)
 * [Azure Monitor naming and terminology changes](/azure/azure-monitor/overview)
@@ -70,7 +69,6 @@ Microsoft Entra roles enable you to delegate the ability to configure and view M
 
 The following roles can read Microsoft Entra reports:
 
-* Global Administrator
 * Security Administrator
 * Security Reader
 * Reports Reader
