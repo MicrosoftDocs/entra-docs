@@ -21,7 +21,7 @@ This article covers the sign-in experience when using passkeys in Microsoft Auth
 
 [!INCLUDE [Passkey roll out](~/includes/entra-authentication-passkey.md)]
 
-# [**iOS**](#tab/iOS)
+## [**iOS**](#tab/iOS)
 
 To sign in with a passkey in Microsoft Authenticator, your iOS device needs to run iOS 17 or later.
 

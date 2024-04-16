@@ -71,8 +71,6 @@ Now open a browser and try to access the application again. You should be prompt
 
 If you continue to see the error, go to the machine where the connector is installed, open a browser and attempt to reach the internal URL used for the application. The connector acts like another client from the same machine. If you can't reach the application, investigate why that machine is unable to reach the application, or use a connector on a server that is able to access the application.
 
-If you can reach the application from that machine, to look for issues or errors with the connector itself. You can see some common errors in the [Troubleshoot document](application-proxy-troubleshoot.md#connector-errors). You can also look directly at the connector logs to identify any errors. Many of our error messages be able to share more specific recommendations for fixes. To learn how to view the logs, see [our connectors documentation](application-proxy-connectors.md#under-the-hood).
-
 ## Next steps
 
-- [Understand Microsoft Entra private network connectors](application-proxy-connectors.md)
+- [Understand Microsoft Entra private network connectors](../../global-secure-access/concept-connectors.md)

@@ -12,7 +12,7 @@ ms.reviewer: katabish
 ---
 # How to configure private network connectors for Microsoft Entra Private Access
 
-Connectors are lightweight agents that sit on-premises and facilitate the outbound connection to the Global Secure Access service. Connectors must be installed on a Windows Server that has access to the backend application. You can organize connectors into connector groups, with each group handling traffic to specific applications. To learn more about connectors, see [Understand Microsoft Entra private network connectors](/azure/active-directory/app-proxy/application-proxy-connectors).
+Connectors are lightweight agents that sit on a server in a private network and facilitate the outbound connection to the Global Secure Access service. Connectors must be installed on a Windows Server that has access to the backend resources and applications. You can organize connectors into connector groups, with each group handling traffic to specific applications. To learn more about connectors, see [Understand Microsoft Entra private network connectors](concept-connectors.md).
 
 ## Prerequisites
 
@@ -127,7 +127,7 @@ To confirm the connector installed and registered correctly:
     * *Microsoft Entra private network connector Updater* is an automated update service.
     * The updater checks for new versions of the connector and updates the connector as needed.
 
-    ![Screenshot of the App proxy connector and connector updater services in Windows Services Manager.](media/how-to-configure-connectors/app-proxy-services.png)
+    ![Screenshot of the private network connector and connector updater services in Windows Services Manager.](media/how-to-configure-connectors/app-proxy-services.png)
 
 1. If the status for the services isn't **Running**, right-click to select each service and choose **Start**.
 
@@ -140,7 +140,7 @@ To create as many connector groups as you want:
 1. Give your new connector group a name, then use the dropdown menu to select which connectors belong in this group.
 1. Select **Save**.
 
-To learn more about connector groups, see [Publish applications on separate networks and locations using connector groups](/azure/active-directory/app-proxy/application-proxy-connector-groups).
+To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 

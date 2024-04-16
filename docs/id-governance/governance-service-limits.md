@@ -36,7 +36,7 @@ This article contains the default usage constraints for the Microsoft Entra ID G
 
 |Category  |Limit  |
 |---------|---------|
-|Number of Workflows     |   50 per tenant      |
+|Number of Workflows     |   100 per tenant      |
 |Number of Tasks     |  25 per workflow       |
 |Number of Custom Task Extensions     |  100 per tenant       |
 |offsetInDays range of triggerAndScopeBasedConditions executionConditions     |  180 days       |

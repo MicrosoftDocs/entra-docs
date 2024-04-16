@@ -53,7 +53,7 @@ sections:
         answer: |
               This may be due to either the updater service not working correctly or if there are no new updates available that the service can install.
           
-              The updater service is healthy if it’s running and there are no errors recorded in the event log (Applications and Services logs -> Microsoft -> AadApplicationProxy -> Updater -> Admin). 
+              The updater service is healthy if it’s running and there are no errors recorded in the event log (Applications and Services logs -> Microsoft -> Microsoft Entra private network -> Updater -> Admin). 
           
               > [!IMPORTANT]
               > Only major versions are released for auto-upgrade. We recommend updating your connector manually only if it's necessary. For example, you cannot wait for a major release, because you must fix a known problem or you want to use a new feature. For more information on new releases, the type of the release (download, auto-upgrade), bug fixes and new features see, [Microsoft Entra application proxy: Version release history](./application-proxy-release-version-history.md).

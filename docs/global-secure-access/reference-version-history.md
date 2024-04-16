@@ -53,9 +53,9 @@ Refer to the table for updated paths.
 |Category  |Old name   |New name|
 |----------|-----------|------------|
 |Installer file   |`AADApplicationProxyConnectorInstaller.exe`     | `MicrosoftEntraPrivateNetworkConnectorInstaller.exe`      |
-| Install location | `C:\Program Files\ Microsoft AAD App Proxy Connector` | `C:\Program Files\Microsoft Entra private network connector` |
+| Install location | `C:\Program Files\Microsoft AAD App Proxy Connector` | `C:\Program Files\Microsoft Entra private network connector` |
 | | `C:\Program Files\Microsoft AAD App Proxy Connector\Modules\AppProxyPSModule`	| `C:\Program Files\Microsoft Entra private network connector\Modules\MicrosoftEntraPrivateNetworkConnectorPSModule` |
-| |	`C:\Program Files\ Microsoft AAD App Proxy Connector Updater` | `C:\Program Files\Microsoft Entra private network connector Updater` |
+| |	`C:\Program Files\Microsoft AAD App Proxy Connector Updater` | `C:\Program Files\Microsoft Entra private network connector Updater` |
 | |	`C:\ProgramData\Microsoft\Microsoft AAD Application Proxy Connector` | `C:\ProgramData\Microsoft\Microsoft Entra private network connector` |
 | Application | `ApplicationProxyConnectorService.exe` | `MicrosoftEntraPrivateNetworkConnectorService.exe` |
 | |	`ApplicationProxyConnectorUpdaterService.exe` | `MicrosoftEntraPrivateNetworkConnectorUpdaterService.exe` |
@@ -66,7 +66,7 @@ Refer to the table for updated paths.
 | Log file | `AadAppProxyConnector_{GUID}.log` | `MicrosoftEntraPrivateNetworkConnector_{GUID}.log` |
 | |	`AadAppProxyConnectorUpdater_{GUID}.log` | `MicrosoftEntraPrivateNetworkConnectorUpdater_{GUID}.log` | 
 | Services | `Microsoft AAD Application Proxy Connector` | `Microsoft Entra private network connector` |
-| |	`Microsoft AAD Application Proxy Connector Updater` | `Microsoft Entra private network connector` updater |
+| |	`Microsoft AAD Application Proxy Connector Updater` | `Microsoft Entra private network connector updater` |
 | Registries | `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft AAD App Proxy Connector` | `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Entra private network connector` |
 | |	`Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft AAD App Proxy Connector Updater` | `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Entra private network connector Updater` |
 | Event logs | `Microsoft-AadApplicationProxy-Connector/Admin` | `Microsoft-Microsoft Entra private network-Connector/Admin` |
@@ -213,7 +213,7 @@ April 15, 2017: Released for download.
 
 ## Earlier versions
 
-If you're using an private network connector version earlier than 1.5.36.0, update to the latest version to ensure you have the latest fully supported features.
+If you're using a private network connector version earlier than 1.5.36.0, update to the latest version to ensure you have the latest fully supported features.
 
 ## Next steps
 - [What is application proxy?](../identity/app-proxy/overview-what-is-app-proxy.md)
