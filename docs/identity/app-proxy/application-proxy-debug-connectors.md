@@ -23,7 +23,7 @@ This flowchart walks you through the steps for debugging some of the more common
 
 | Step | Action | Description |
 |---------|---------|---------|
-|1 | Find the connector group assigned to the app | You probably have a connector installed on multiple servers, in which case the connectors should be [assigned to connector groups](application-proxy-connector-groups.md#assign-applications-to-your-connector-groups). To learn more about connector groups, see [Publish applications on separate networks and locations using connector groups](application-proxy-connector-groups.md). |
+|1 | Find the connector group assigned to the app | You probably have a connector installed on multiple servers, in which case the connectors should be assigned to a connector group. To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](../../global-secure-access/concept-connector-groups.md).|
 |2 | Install the connector and assign a group | If you don't have a connector installed, see [Install and register a connector](application-proxy-add-on-premises-application.md#install-and-register-a-connector).<br></br> If you're having issues installing the connector, see [Problem installing the connector](application-proxy-connector-installation-problem.md).<br></br> If the connector isn't assigned to a group, see [Assign the connector to a group](application-proxy-connector-groups.md#create-connector-groups).<br></br>If the application isn't assigned to a connector group, see [Assign the application to a connector group](application-proxy-connector-groups.md#assign-applications-to-your-connector-groups).|
 |3 | Run a port test on the connector server | On the connector server, run a port test by using [telnet](/windows-server/administration/windows-commands/telnet) or other port testing tool to check if ports [443 and 80 are open](application-proxy-add-on-premises-application.md#open-ports).|
 |4 | Configure the domains and ports | [Confirm that domains and ports are configured correctly](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) for the connector. Certain ports must be open and URLs that your server must be able to access. For more information, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md#open-ports). |
@@ -37,7 +37,6 @@ This flowchart walks you through the steps for debugging some of the more common
 ## Next steps
 
 - [Debug application proxy application issues](application-proxy-debug-apps.md)
-- [Publish applications on separate networks and locations using connector groups](application-proxy-connector-groups.md)
 - [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md)
 - [Understand private network connectors](application-proxy-connectors.md)
 - [Install and register a connector](application-proxy-add-on-premises-application.md)

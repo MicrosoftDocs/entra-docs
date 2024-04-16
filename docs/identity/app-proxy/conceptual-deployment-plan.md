@@ -1,6 +1,6 @@
 ---
 title: Plan a Microsoft Entra application proxy Deployment
-description: An end-to-end guide for planning the deployment of Application proxy within your organization
+description: An end-to-end guide for planning the deployment of application proxy within your organization
 
 author: kenwith
 manager: amycolannino
@@ -173,7 +173,7 @@ You can also publish applications by using [PowerShell](/powershell/module/azure
 
 Below are some best practices to follow when publishing an application:
 
-* **Use Connector Groups**: Assign a connector group that has been designated for publishing each respective application. We recommend that each connector group has at least two connectors to provide high availability and scale. Having three connectors is optimal in case you may need to service a machine at any point. Additionally, see [Publish applications on separate networks and locations using connector groups](application-proxy-connector-groups.md) to see how you can also use connector groups to segment your connectors by network or location.
+* **Use Connector Groups**: Assign a connector group that has been designated for publishing each respective application. We recommend that each connector group has at least two connectors to provide high availability and scale. Having three connectors is optimal in case you may need to service a machine at any point. Additionally, see [Understand Microsoft Entra private network connector groups](../../global-secure-access/concept-connector-groups.md) to see how you can also use connector groups to segment your connectors by network or location.
 
 * **Set Backend Application Timeout**: This setting is useful in scenarios where the application might require more than 75 seconds to process a client transaction. For example when a client sends a query to a web application that acts as a front end to a database. The front end sends this query to its back-end database server and waits for a response, but by the time it receives a response, the client side of the conversation times out. Setting the timeout to Long provides 180 seconds for longer transactions to complete.
 
@@ -294,8 +294,6 @@ These logs provide detailed information about logins to applications configured 
 #### private network connector monitoring
 
 The connectors and the service take care of all the high availability tasks. You can monitor the status of your connectors from the application proxy page in the Microsoft Entra admin center. For more information about connector maintenance see [Understand Microsoft Entra private network connectors](./application-proxy-connectors.md#maintenance).
-
-![Example: Microsoft Entra private network connectors](./media/application-proxy-connectors/app-proxy-connectors.png)
 
 #### Windows event logs and performance counters
 
