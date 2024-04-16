@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual
-ms.date: 02/12/2024
+ms.date: 04/16/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ms.custom:
@@ -95,8 +95,7 @@ The diagram shows how Microsoft Entra ID and application proxy work together to 
 6. The response is sent through the connector and application proxy service to the user.
 
 > [!NOTE]
-> Like most Microsoft Entra hybrid agents, the private network connector doesn't require you to open inbound connections through your firewall. User traffic in step 3 terminates at the application proxy Service (in Microsoft Entra ID). The private network connector (on-premises) is responsible for the rest of the communication.
->
+> Like most Microsoft Entra hybrid agents, the private network connector doesn't require you to open inbound connections through your firewall. User traffic in step 3 terminates at the application proxy service. The private network connector, which resides in your private network, is responsible for the rest of the communication.
 
 
 | Component | Description |
@@ -104,12 +103,9 @@ The diagram shows how Microsoft Entra ID and application proxy work together to 
 | Endpoint  | The endpoint is a URL or an [end-user portal](~/identity/enterprise-apps/end-user-experiences.md). Users can reach applications while outside of your network by accessing an external URL. Users within your network can access the application through a URL or an end-user portal. When users go to one of these endpoints, they authenticate in Microsoft Entra ID and then are routed through the connector to the on-premises application.|
 | Microsoft Entra ID | Microsoft Entra ID performs the authentication using the tenant directory stored in the cloud. |
 | Application proxy service | This application proxy service runs in the cloud as part of Microsoft Entra ID. It passes the sign-on token from the user to the private network connector. Application proxy forwards any accessible headers on the request and sets the headers as per its protocol, to the client IP address. If the incoming request to the proxy already has that header, the client IP address is added to the end of the comma separated list that is the value of the header.|
-| private network connector | The connector is a lightweight agent that runs on a Windows Server inside your network. The connector manages communication between the application proxy service in the cloud and the on-premises application. The connector only uses outbound connections, so you don't have to open inbound ports in Internet facing networks. The connectors are stateless and pull information from the cloud as necessary. For more information about connectors, like how they load-balance and authenticate, see [Understand Microsoft Entra private network connectors](application-proxy-connectors.md).|
+| Private network connector | The connector is a lightweight agent that runs on a Windows Server inside your network. The connector manages communication between the application proxy service in the cloud and the on-premises application. The connector only uses outbound connections, so you don't have to open inbound ports in internet facing networks. The connectors are stateless and pull information from the cloud as necessary. For more information about connectors, like how they load-balance and authenticate, see [Understand Microsoft Entra private network connectors](application-proxy-connectors.md).|
 | Active Directory (AD) | Active Directory runs on-premises to perform authentication for domain accounts. When single sign-on is configured, the connector communicates with AD to perform any extra authentication required.
 | On-premises application | Finally, the user is able to access an on-premises application.
-
-
-
 
 Application proxy is a Microsoft Entra service you configure in the Microsoft Entra admin center. It enables you to publish an external public HTTP/HTTPS URL endpoint in the Azure Cloud, which connects to an internal application server URL in your organization. These on-premises web apps can be integrated with Microsoft Entra ID to support single sign-on. Users can then access on-premises web apps in the same way they access Microsoft 365 and other SaaS apps.
 
@@ -128,7 +124,7 @@ There are several ways to configure an application for single sign-on, and the m
 * Applications hosted behind a Remote Desktop Gateway
 * Rich client apps that are integrated with the [Microsoft Authentication Library (MSAL)](~/identity-platform/v2-overview.md)
 
-application proxy works with apps that use the following native authentication protocol:
+Application proxy works with apps that use the following native authentication protocol:
 
 * [**Integrated Windows authentication (IWA)**](./how-to-configure-sso-with-kcd.md). For IWA, the private network connectors use Kerberos Constrained Delegation (KCD) to authenticate users to the Kerberos application.
 
@@ -162,60 +158,22 @@ To learn more about migrating your apps to Microsoft Entra ID, see the [Migratin
 
 ## Architecture
 
-The following diagram illustrates in general how Microsoft Entra authentication services and application proxy work together to provide single sign-on to on-premises applications to users.
+The diagram illustrates in general how Microsoft Entra authentication services and application proxy work together to provide single sign-on to on-premises applications to users.
 
 ![Microsoft Entra application proxy authentication flow](media/what-is-application-proxy/azure-ad-application-proxy-authentication-flow.png)
 
 1. After the user has accessed the application through an endpoint, the user is redirected to the Microsoft Entra sign-in page. If you've configured Conditional Access policies, specific conditions are checked at this time to ensure that you comply with your organization's security requirements.
 2. After a successful sign-in, Microsoft Entra ID sends a token to the user's client device.
 3. The client sends the token to the application proxy service, which retrieves the user principal name (UPN) and security principal name (SPN) from the token.
-4. Application proxy forwards the request, which is picked up by the application proxy [connector](./application-proxy-connectors.md).
+4. Application proxy forwards the request, which is picked up by the [private network connector](./application-proxy-connectors.md).
 5. The connector performs any additional authentication required on behalf of the user (*Optional depending on authentication method*), requests the internal endpoint of the application server and sends the request to the on-premises application.
 6. The response from the application server is sent through the connector to the application proxy service.
 7. The response is sent from the application proxy service to the user.
 
-|**Component**|**Description**|
-|:-|:-|
-|Endpoint|The endpoint is a URL or an [user portal](~/identity/enterprise-apps/end-user-experiences.md). Users can reach applications while outside of your network by accessing an external URL. Users within your network can access the application through a URL or a user portal. When users go to one of these endpoints, they authenticate in Microsoft Entra ID and then are routed through the connector to the on-premises application.|
-|Microsoft Entra ID|Microsoft Entra ID performs the authentication using the tenant directory stored in the cloud.|
-|Application proxy service|This application proxy service runs in the cloud as part of Microsoft Entra ID. It passes the sign-on token from the user to the private network connector. Application proxy forwards any accessible headers on the request and sets the headers as per its protocol, to the client IP address. If the incoming request to the proxy already has that header, the client IP address is added to the end of the comma-separated list that is the value of the header.|
-|private network connector|The connector is a lightweight agent that runs on a Windows Server inside your network. The connector manages communication between the application proxy service in the cloud and the on-premises application. The connector only uses outbound connections, so you don't have to open any inbound ports or put anything in the DMZ. The connectors are stateless and pull information from the cloud as necessary. For more information about connectors, like how they load-balance and authenticate, see [Understand Microsoft Entra private network connectors](./application-proxy-connectors.md).|
-|Active Directory (AD)|Active Directory runs on-premises to perform authentication for domain accounts. When single sign-on is configured, the connector communicates with AD to perform any additional authentication required.|
-|On-premises application|Finally, the user is able to access an on-premises application.|
-
 Microsoft Entra application proxy consists of the cloud-based application proxy service and an on-premises connector. The connector listens for requests from the application proxy service and handles connections to the internal applications. It's important to note that all communications occur over TLS, and always originate at the connector to the application proxy service. That is, communications are outbound only. The connector uses a client certificate to authenticate to the application proxy service for all calls. The only exception to the connection security is the initial setup step where the client certificate is established. See the application proxy [Under the hood](./application-proxy-security.md#under-the-hood) for more details.
 
-### private network connectors
-
-[private network connectors](./application-proxy-connectors.md) are lightweight agents deployed on-premises that facilitate the outbound connection to the application proxy service in the cloud. The connectors must be installed on a Windows Server that has access to the backend application. Users connect to the application proxy cloud service that routes their traffic to the apps via the connectors as illustrated below.
-
-![Microsoft Entra application proxy network connections](media/what-is-application-proxy/azure-ad-application-proxy-network-connections.png)
-
-Setup and registration between a connector and the application proxy service is accomplished as follows:
-
-1. The IT administrator opens ports 80 and 443 to outbound traffic and allows access to several URLs that are needed by the connector, the application proxy service, and Microsoft Entra ID.
-2. The admin signs into the Microsoft Entra admin center and runs an executable to install the connector on an on-premises Windows server.
-3. The connector starts to "listen" to the application proxy service.
-4. The admin adds the on-premises application to Microsoft Entra ID and configures settings such as the URLs users need to connect to their apps.
-
-For more information, see [Plan a Microsoft Entra application proxy deployment](./conceptual-deployment-plan.md).
-
-It's recommended that you always deploy multiple connectors for redundancy and scale. The connectors, in conjunction with the service, take care of all the high availability tasks and can be added or removed dynamically. Each time a new request arrives it's routed to one of the connectors that is available. When a connector is running, it remains active as it connects to the service. If a connector is temporarily unavailable, it doesn't respond to this traffic. Unused connectors are tagged as inactive and removed after 10 days of inactivity.
-
-Connectors also poll the server to find out if there is a newer version of the connector. Although you can do a manual update, connectors will update automatically as long as the private network connector Updater service is running. For tenants with multiple connectors, the automatic updates target one connector at a time in each group to prevent downtime in your environment.
-
-> [!NOTE]
-> You can monitor the application proxy [version history page](./application-proxy-release-version-history.md) to be notified when updates have been released by subscribing to its RSS feed.
-
-Each private network connector is assigned to a [connector group](./application-proxy-connector-groups.md). Connectors in the same connector group act as a single unit for high availability and load balancing. You can create new groups, assign connectors to them in the Microsoft Entra admin center, then assign specific connectors to serve specific applications. It's recommended to have at least two connectors in each connector group for high availability.
-
-Connector groups are useful when you need to support the following scenarios:
-
-* Geographical app publishing
-* Application segmentation/isolation
-* Publishing web apps running in the cloud or on-premises
-
-For more information about choosing where to install your connectors and optimizing your network, see [Network topology considerations when using Microsoft Entra application proxy](application-proxy-network-topology.md).
+### Microsoft Entra private network connector
+Application proxy uses the Microsoft Entra private network connector. The same connector is used by Microoft Entra Private Access. To learn more about connectors, see [Microsoft Entra private network connector](../../global-secure-access/concept-connectors.md).
 
 ## Other use cases
 

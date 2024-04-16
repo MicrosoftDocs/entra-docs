@@ -20,6 +20,32 @@ Connectors are lightweight agents that sit in a private network and facilitate t
 
 To learn how to configure the Microsoft Entra private network connector, see [How to configure private network connectors for Microsoft Entra Private Access](how-to-configure-connectors.md).
 
+[Private network connectors](./application-proxy-connectors.md) are lightweight agents deployed on-premises that facilitate the outbound connection to the application proxy service in the cloud. The connectors must be installed on a Windows Server that has access to the backend application. Users connect to the application proxy cloud service that routes their traffic to the apps via the connectors.
+
+Setup and registration between a connector and the application proxy service is accomplished as follows:
+
+1. The IT administrator opens ports 80 and 443 to outbound traffic and allows access to several URLs that are needed by the connector, the application proxy service, and Microsoft Entra ID.
+2. The admin signs into the Microsoft Entra admin center and runs an executable to install the connector on an on-premises Windows server.
+3. The connector starts to "listen" to the application proxy service.
+4. The admin adds the on-premises application to Microsoft Entra ID and configures settings such as the URLs users need to connect to their apps.
+
+It's recommended that you always deploy multiple connectors for redundancy and scale. The connectors, in conjunction with the service, take care of all the high availability tasks and can be added or removed dynamically. Each time a new request arrives it's routed to one of the connectors that is available. When a connector is running, it remains active as it connects to the service. If a connector is temporarily unavailable, it doesn't respond to this traffic. Unused connectors are tagged as inactive and removed after 10 days of inactivity.
+
+Connectors also poll the server to find out if there is a newer version of the connector. Although you can do a manual update, connectors will update automatically as long as the private network connector Updater service is running. For tenants with multiple connectors, the automatic updates target one connector at a time in each group to prevent downtime in your environment.
+
+> [!NOTE]
+> You can monitor the [version history page](reference-version-history.md) to stay informed on the latest updates.
+
+Each private network connector is assigned to a [connector group](concept-connector-groups.md). Connectors in the same connector group act as a single unit for high availability and load balancing. You can create new groups, assign connectors to them in the Microsoft Entra admin center, then assign specific connectors to serve specific applications. It's recommended to have at least two connectors in each connector group for high availability.
+
+Connector groups are useful when you need to support the following scenarios:
+
+* Geographical app publishing
+* Application segmentation/isolation
+* Publishing web apps running in the cloud or on-premises
+
+For more information about choosing where to install your connectors and optimizing your network, see [Network topology considerations when using Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
+
 ## Maintenance
 
 The connectors and the service take care of all the high availability tasks. They can be added or removed dynamically. New requests are routed to one of the available connectors. If a connector is temporarily unavailable, it doesn't respond to this traffic.
