@@ -18,18 +18,16 @@ Microsoft Entra private network connector is an internal domain component that u
 
 When the installation of a connector fails, the root cause is usually one of the following areas. **As a precursor to any troubleshooting, be sure to reboot the connector.**
 
-1.  **Connectivity** – to complete a successful installation, the new connector needs to register and establish future trust properties. Trust is established by connecting to the Microsoft Entra application proxy cloud service.
-
-2.  **Trust Establishment** – the new connector creates a self-signed cert and registers to the cloud service.
-
-3.  **Authentication of the admin** – during installation, the user must provide admin credentials to complete the connector installation.
+- **Connectivity** – to complete a successful installation, the new connector needs to register and establish future trust properties. Trust is established by connecting to the Microsoft Entra application proxy cloud service.
+- **Trust Establishment** – the new connector creates a self-signed cert and registers to the cloud service.
+- **Authentication of the admin** – during installation, the user must provide admin credentials to complete the connector installation.
 
 > [!NOTE]
 > The connector installation logs can be found in the `%TEMP%` folder and can help provide additional information on what is causing an installation failure.
 
 ## Verify connectivity to the cloud application proxy service and Microsoft sign in page
 
-**Objective:** Verify that the connector machine can connect to the application proxy registration endpoint and the Microsoft sign in page.
+**Objective:** Verify that the connector machine can connect to the application proxy registration endpoint and the Microsoft sign-in page.
 
 1.  On the connector server, run a port test by using [telnet](/windows-server/administration/windows-commands/telnet) or other port testing tool to verify that ports 443 and 80 are open.
 
@@ -128,7 +126,7 @@ Once you find the connector error from the event log, use this table of common e
 
 This flowchart walks you through the steps for debugging some of the more common connector issues. For details about each step, see the table following the flowchart.
 
-![Flowchart showing steps for debugging a connector](media/troubleshoot-connectors/connector-debugging-flowchart.png)
+![Flowchart showing steps for debugging a connector.](media/troubleshoot-connectors/connector-debugging-flowchart.png)
 
 | Step | Action | Description |
 |---------|---------|---------|

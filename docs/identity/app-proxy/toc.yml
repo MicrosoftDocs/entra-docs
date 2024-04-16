@@ -136,8 +136,6 @@ items:
       items:
       - name: Application proxy troubleshooting
         href: application-proxy-troubleshoot.md
-      - name: Connector troubleshooting flowchart
-        href: application-proxy-debug-connectors.md
       - name: Application troubleshooting flowchart
         href: application-proxy-debug-apps.md
       - name: Links on application page not working

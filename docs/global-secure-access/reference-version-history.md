@@ -213,7 +213,7 @@ April 15, 2017: Released for download.
 
 ## Earlier versions
 
-If you're using an private network connector version earlier than 1.5.36.0, update to the latest version to ensure you have the latest fully supported features.
+If you're using a private network connector version earlier than 1.5.36.0, update to the latest version to ensure you have the latest fully supported features.
 
 ## Next steps
 - [What is application proxy?](../identity/app-proxy/overview-what-is-app-proxy.md)
