@@ -149,7 +149,7 @@
         items:  
         - name: Provision Microsoft Entra ID to AD - Configuration
           href: cloud-sync/how-to-configure-entra-to-active-directory.md
-        - name: Attribute mapping - Microsoft Entra ID to AD
+        - name: Scoping filter and Attribute mapping - Microsoft Entra ID to AD
           href: cloud-sync/how-to-attribute-mapping-entra-to-active-directory.md 
         - name: Directory extensions and custom attributes - Microsoft Entra ID to AD
           href: cloud-sync/custom-attribute-mapping-entra-to-active-directory.md
