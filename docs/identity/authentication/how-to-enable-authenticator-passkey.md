@@ -5,7 +5,7 @@ description: Learn about how to enable Microsoft Authenticator passkey sign in f
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/10/2024
+ms.date: 04/16/2024
 
 ms.author: justinha
 author: justinha
@@ -22,7 +22,8 @@ This article lists steps to enable and enforce Microsoft Authenticator passkey s
 
 - [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md)
 - Android 14 and later or iOS 17 and later
-- Latest version of Microsoft Authenticator
+- For Android, Authenticator version 6.2404.2444 or later
+- For iOS, Authenticator version 6.8.7 or later
 
 > [!NOTE]
 > Users need to install the latest version of Authenticator for Android or iOS to use a passkey. 
