@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 05/02/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
+ms.custom: not-enterprise-apps, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 #customer intent:As an administrator configuring access policies in Cloudflare Access, I want to learn how to integrate Cloudflare with Microsoft Entra ID, so that I can enforce organizational policies and provide secure access to self-hosted, SaaS, or nonweb applications.
 ---
@@ -55,14 +55,8 @@ Integrate Cloudflare Zero Trust account with an instance of Microsoft Entra ID.
    ![Screenshot of the Login methods option on Authentication.](./media/cloudflare-integration/login-methods.png)
 
 5. Under **Select an identity provider**, select **Microsoft Entra ID**.
-
-   ![Screenshot of the Microsoft Entra option under Select an identity provider.](./media/cloudflare-integration/idp.png)
-
 6. The **Add Azure ID** dialog appears. 
 7. Enter Microsoft Entra instance credentials and make needed selections.
-
-   ![Screenshot of options and selections for Add Microsoft Entra ID.](./media/cloudflare-integration/add-idp.png)
-
 8. Select **Save**.
 
 <a name='register-cloudflare-with-azure-ad'></a>
@@ -149,9 +143,6 @@ See the [team domain](https://developers.cloudflare.com/cloudflare-one/glossary#
 
 1. On the Cloudflare Zero Trust dashboard, navigate to **Settings** > **Authentication**.
 2. Under **Login methods**, for Microsoft Entra ID select **Test**.
-
-   ![Screenshot of login methods.](./media/cloudflare-integration/login-methods-test.png)
-
 3. Enter Microsoft Entra credentials.
 4. The **Your connection works** message appears.
 
