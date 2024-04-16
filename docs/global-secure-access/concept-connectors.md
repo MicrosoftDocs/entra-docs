@@ -15,12 +15,12 @@ Connectors are what make Microsoft Entra Private Access and application proxy po
 
 ## What is a private network connector?
 
-Connectors are lightweight agents that sit in a private network and facilitate the outbound connection to the Microsoft Entra Private Access and application proxy services. Connectors must be installed on a Windows Server that has access to the backend resources. You can organize connectors into connector groups, with each group handling traffic to specific resources. For more information on application proxy and a diagrammatic representation of application proxy architecture, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](../identity/app-proxy/overview-what-is-app-proxy.md#private-network-connectors).
+Connectors are lightweight agents that sit in a private network and facilitate the outbound connection to the Microsoft Entra Private Access and application proxy services. Connectors must be installed on a Windows Server that has access to the backend resources. You can organize connectors into connector groups, with each group handling traffic to specific resources. For more information on application proxy and a diagrammatic representation of application proxy architecture, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](../identity/app-proxy/overview-what-is-app-proxy.md).
 
 
 To learn how to configure the Microsoft Entra private network connector, see [How to configure private network connectors for Microsoft Entra Private Access](how-to-configure-connectors.md).
 
-[Private network connectors](./application-proxy-connectors.md) are lightweight agents deployed on-premises that facilitate the outbound connection to the application proxy service in the cloud. The connectors must be installed on a Windows Server that has access to the backend application. Users connect to the application proxy cloud service that routes their traffic to the apps via the connectors.
+Private network connectors are lightweight agents deployed on-premises that facilitate the outbound connection to the application proxy service in the cloud. The connectors must be installed on a Windows Server that has access to the backend application. Users connect to the application proxy cloud service that routes their traffic to the apps via the connectors.
 
 Setup and registration between a connector and the application proxy service is accomplished as follows:
 
