@@ -74,10 +74,17 @@ Note: You must have bluetooth enabled on both devices to successfully authentica
 
 ### Single-sign on to native applications (iOS)
 
-Native applications like Microsoft OneDrive, SharePoint, and Outlook don't support passkey sign-in directly, but you can use Authenticator passkey for single sign-on (SSO) to native applications on your iOS device. Similar support for Android is coming during preview. To use Authenticator passkey for SSO, you need to register the passkey by using the WebAuthN flow where you scan the QR code. 
+You can use the Microsoft Authenticator app on your iOS device to create a seamless passkey sign without being prompted again to use single sign-in (SSO) to sign in to other Microsoft apps, such as Microsoft OneDrive, SharePoint, and Outlook. 
+
+Once you've created the passkey, you can use the Authenticator passkey for single sign-on (SSO) for logging into native Microsoft application. Similar support for Android devices is coming during preview. 
+
+First, you need to register a passkey using the WebAuthN flow where you scan a QR code by completing the following steps: 
 
 1. Register Authenticator passkey on your mobile device. 
-2. Sign in to Authenticator?
+1. Sign in to Authenticator. 
+1. Setup passkey on you iOS device using the available QR code.
+1. Open a Microsoft app, such as Outlook, using the username you created the passkey for.
+1. Now you can access other Microsoft apps on your device, and you'll be automatically authenticated. 
 
 
 ## [**Android**](#tab/Android)
