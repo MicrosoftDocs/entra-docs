@@ -36,11 +36,11 @@ Users may register for authentication methods for which they are enabled, and in
 
 ## How an authentication strength policy is evaluated during sign-in 
 
-The authentication strength Conditional Access policy defines which methods can be used. Microsoft Entra ID checks the policy during sign-in to determine the user’s access to the resource. For example, an administrator configures a Conditional Access policy with a custom authentication strength that requires FIDO2 Security Key or Password + text message. The user accesses a resource protected by this policy. During sign-in, all settings are checked to determine which methods are allowed, which methods are registered, and which methods are required by the Conditional Access policy. To be used, a method must be allowed, registered by the user (either before or as part of the access request), and satisfy the authentication strength. 
+The authentication strength Conditional Access policy defines which methods can be used. Microsoft Entra ID checks the policy during sign-in to determine the user’s access to the resource. For example, an administrator configures a Conditional Access policy with a custom authentication strength that requires a passkey (FIDO2 Security Key) or Password + text message. The user accesses a resource protected by this policy. During sign-in, all settings are checked to determine which methods are allowed, which methods are registered, and which methods are required by the Conditional Access policy. To be used, a method must be allowed, registered by the user (either before or as part of the access request), and satisfy the authentication strength. 
 
 ## How multiple Conditional Access authentication strength policies are evaluated 
 
-In general, when there are multiple Conditional Access policies applicable for a single sign-in, all conditions from all policies must be met. In the same vein, when there are multiple Conditional Access policies which apply authentication strengths to the sign-in, the user must satisfy all of the authentication strength policies. For example, if two different authentication strength policies both require FIDO2, the user can use their FIDO2 security key and satisfy both policies. If the two authentication strength policies have different sets of methods, the user must use multiple methods to satisfy both policies. 
+In general, when there are multiple Conditional Access policies applicable for a single sign-in, all conditions from all policies must be met. In the same vein, when there are multiple Conditional Access policies which apply authentication strengths to the sign-in, the user must satisfy all of the authentication strength policies. For example, if two different authentication strength policies both require passkey (FIDO2), the user can use their passkey (FIDO2 security key) and satisfy both policies. If the two authentication strength policies have different sets of methods, the user must use multiple methods to satisfy both policies. 
 
 ### How multiple Conditional Access authentication strength policies are evaluated for registering security info 
 
@@ -84,7 +84,7 @@ The following authentication methods can't be registered as part of combined reg
 | Method | Registration requirements |
 |--------|---------------------------|
 |[Microsoft Authenticator (phone sign-in)](https://support.microsoft.com/account-billing/add-your-work-or-school-account-to-the-microsoft-authenticator-app-43a73ab5-b4e8-446d-9e54-2a4cb8e4e93c) | Can be registered from the Authenticator app.|
-|[FIDO2 security key](howto-authentication-passwordless-security-key.md) | Can be registered using [combined registration managed mode](concept-registration-mfa-sspr-combined.md#manage-mode). |
+|[Passkey(FIDO2)](howto-authentication-passwordless-security-key.md) | Can be registered using [combined registration managed mode](concept-registration-mfa-sspr-combined.md#manage-mode). and enforced by Authentication strengths using [combined registration wizard mode](how-to-register-passkey.md#guided-registration) |
 |[Certificate-based authentication](concept-certificate-based-authentication.md) | Requires administrator setup; can't be registered by the user. |
 |[Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-prepare-people-to-use) | Can be registered in the Windows Out of Box Experience (OOBE) or the Windows Settings menu.|
 
