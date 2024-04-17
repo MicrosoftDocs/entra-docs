@@ -1381,7 +1381,6 @@ Starting July 2023, we're modernizing the following Terms of Use end user experi
 No functionalities are removed. The new PDF viewer adds functionality and the limited visual changes in the end-user experiences will be communicated in a future update. If your organization has allow-listed only certain domains, you must ensure your allowlist includes the domains ‘myaccount.microsoft.com’ and ‘*.myaccount.microsoft.com’ for Terms of Use to continue working as expected.
 
 ---
-<<<<<<< HEAD
 
 
 ## February 2023
@@ -1567,5 +1566,3 @@ For more information on how to enable this feature, see [Directory extensions an
 
 
 ---
-=======
->>>>>>> 4f46fc293f7bb715bc1c3a98f2defd3b0ca56251
