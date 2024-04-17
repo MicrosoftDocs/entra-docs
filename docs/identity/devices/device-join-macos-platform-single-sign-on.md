@@ -20,12 +20,12 @@ Mac users can join their new device to Microsoft Entra ID during the first-run o
 
 ## Prerequisites
 
-- A minimum requirement of macOS 13 Ventura (macOS 14 Sonoma is recommended) 
+- A recommended minimum version of macOS 14 Sonoma. While macOS 13 Ventura is supported, we strongly recommend using macOS 14 Sonoma for the best experience.
 - [Automated Device Enrollment (ADE)](https://support.apple.com/HT204142) enrolled device. Check with your administrator if you're unsure if your device is enrolled with this requirement.
 - [Microsoft Intune Company Portal](/mem/intune/apps/apps-company-portal-macos) version 5.2404.0 or later
 - A Mac device enrolled in mobile device management (MDM) with Microsoft Intune.
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended): The user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) on their mobile device to complete device registration.
-- A smart card loaded with a certificate for authentication with Microsoft Entra (smart card setup only).
+- For smart card setup, [certificate based authentication](/entra/identity/authentication/how-to-certificate-based-authentication) configured and enabled. A smart card loaded with a certificate for authentication with Microsoft Entra and the smart card paired with local account.
 
 ## Set up your macOS device
 
