@@ -1,6 +1,6 @@
 ---
 title: Secure hybrid access with Microsoft Entra ID and Silverfort
-description: In this tutorial, learn how to integrate Silverfort with Microsoft Entra ID for secure hybrid access 
+description: In this tutorial, learn how to integrate Silverfort with Microsoft Entra ID for secure hybrid access (SHA).
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
@@ -34,9 +34,9 @@ Silverfort connects assets with Microsoft Entra ID. These bridged assets appear 
 - File shares and databases
 - Infrastructure and industrial systems
 
-Silverfort integrates your corporate assets and third-party Identity and Access Management (IAM) platforms. This includes Active Directory, Active Directory Federation Services (AD FS), and Remote Authentication Dial-In User Service (RADIUS) in Microsoft Entra ID, including hybrid and multicloud environments.
+Silverfort integrates corporate assets and third-party Identity and Access Management (IAM) platforms, which includes Active Directory Federation Services (AD FS), and Remote Authentication Dial-In User Service (RADIUS) in Microsoft Entra ID. The scenario includes hybrid and multicloud environments.
 
-Use this tutorial to configure and test the Silverfort Entra ID bridge in your Microsoft Entra tenant to communicate with your Silverfort implementation. After configuration, you can create Silverfort authentication policies that bridge authentication requests from identity sources to Microsoft Entra ID for SSO. After an application is bridged, you can manage it in Microsoft Entra ID.
+Use this tutorial to configure and test the Silverfort Microsoft Entra ID bridge in your Microsoft Entra tenant to communicate with your Silverfort implementation. After configuration, you can create Silverfort authentication policies that bridge authentication requests from identity sources to Microsoft Entra ID for SSO. After an application is bridged, you can manage it in Microsoft Entra ID.
 
 <a name='silverfort-with-azure-ad-authentication-architecture'></a>
 
@@ -48,13 +48,13 @@ The following diagram shows the authentication architecture orchestrated by Silv
 
 ### User flow
 
-1. User sends authentication request to the original Identity Provider (IdP) through protocols such as Kerberos, SAML, NTLM, OIDC, and LDAP(s)
-2. The response is routed as-is to Silverfort for validation to check authentication state
+1. Users send authentication request to the original identity provider (IdP) through protocols such as Kerberos, SAML, NTLM, OIDC, and LDAPs
+2. Responses are routed as-is to Silverfort for validation to check authentication state
 3. Silverfort provides visibility, discovery, and a bridge to Microsoft Entra ID
 4. If the application is bridged, the authentication decision passes to Microsoft Entra ID. Microsoft Entra ID evaluates Conditional Access policies and validates authentication.
 5. The authentication state response goes as-is from Silverfort to the IdP
 6. IdP grants or denies access to the resource
-7. User is notified if access request is granted or denied 
+7. Users are notified if access request is granted or denied 
 
 ## Prerequisites
 
@@ -69,12 +69,12 @@ Set up Silverfort Microsoft Entra Adapter in your Microsoft Entra tenant:
   - Cloud Application Administrator
   - Application Administrator
   - Service Principal Owner
-- The Silverfort Microsoft Entra Adapter application in the Microsoft Entra gallery is pre-configured to support SSO. From the gallery, add the Silverfort Microsoft Entra Adapter to your tenant as an Enterprise application.
+- The Silverfort Microsoft Entra Adapter application in the Microsoft Entra gallery is preconfigured to support SSO. From the gallery, add the Silverfort Microsoft Entra Adapter to your tenant as an Enterprise application.
 
 ## Configure Silverfort and create a policy
 
 1. From a browser, sign in to the Silverfort admin console.
-2. In the main menu, navigate to **Settings** and then scroll to **Entra ID Bridge Connector** in the General section. 
+2. In the main menu, navigate to **Settings** and then scroll to **Microsoft Entra ID Bridge Connector** in the General section. 
 3. Confirm your tenant ID, and then select **Authorize**.
 4. Select **Save Changes**.
 5. On the **Permissions requested** dialog, select **Accept**.
@@ -91,7 +91,7 @@ Set up Silverfort Microsoft Entra Adapter in your Microsoft Entra tenant:
 
 11. Select the **Auth Type**, and **Protocol**.
 
-12. In the **Users and Groups** field, select the **edit** icon to configure users affected by the policy. These users' authentication bridges to Microsoft Entra ID.
+12. In the **Users and Groups** field, select the **Edit** icon to configure users affected by the policy. These users' authentication bridges to Microsoft Entra ID.
 
    ![image shows user and groups](./media/silverfort-integration/user-groups.png)
 
@@ -103,7 +103,7 @@ Set up Silverfort Microsoft Entra Adapter in your Microsoft Entra tenant:
 
    ![image shows selected user](./media/silverfort-integration/select-user.png)
 
-15. Select the **Source** for which the policy will apply. In this example, **All Devices** is selected.
+15. Select the **Source** for which the policy applies. In this example, **All Devices** is selected.
 
     ![image shows source](./media/silverfort-integration/source.png)
 
