@@ -22,10 +22,9 @@ This article covers the manual configuration of requirements for Microsoft Entra
 
 ## Prerequisites
 
-- [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) version 1.1.819.0 or later.
+- [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594)
    - To get device registration sync join to succeed, as part of the device registration configuration, don't exclude the default device attributes from your Microsoft Entra Connect Sync configuration. To learn more about default device attributes synced to Microsoft Entra ID, see [Attributes synchronized by Microsoft Entra Connect](~/identity/hybrid/connect/reference-connect-sync-attributes-synchronized.md#windows-10).
    - If the computer objects of the devices you want to be Microsoft Entra hybrid joined belong to specific organizational units (OUs), configure the correct OUs to sync in Microsoft Entra Connect. To learn more about how to sync computer objects by using Microsoft Entra Connect, see [Organizational unit–based filtering](~/identity/hybrid/connect/how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering).
-- Global Administrator credentials for your Microsoft Entra tenant.
 - Enterprise administrator credentials for each of the on-premises Active Directory Domain Services forests.
 - (**For federated domains**) Windows Server with Active Directory Federation Services installed.
 - Users can register their devices with Microsoft Entra ID. More information about this setting can be found under the heading **Configure device settings**, in the article, [Configure device settings](manage-device-identities.md#configure-device-settings).

@@ -38,7 +38,7 @@ The `<extensions-app-id>` is specific to your tenant. To find this identifier, n
 1. Browse to **Identity** > **External Identities** > **Overview**.
 1. Select **Custom user attributes**. The available user attributes are listed.
 
-   :::image type="content" source="media/user-flow-add-custom-attributes/user-attributes.png" alt-text="Screenshot of selecting custom user attributes for sign-up." lightbox="media/user-flow-add-custom-attributes/user-attributes-large-image.png":::
+   :::image type="content" source="media/user-flow-add-custom-attributes/user-attributes.png" alt-text="Screenshot of selecting custom user attributes for sign-up." lightbox="media/user-flow-add-custom-attributes/user-attributes.png":::
 
 
 1. To add an attribute, select **Add**.

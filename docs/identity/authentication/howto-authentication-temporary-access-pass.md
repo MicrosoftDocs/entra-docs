@@ -5,8 +5,7 @@ description: Learn how to configure and enable users to register passwordless au
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/19/2024
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.date: 04/16/2024
 
 ms.author: justinha
 author: tilarso 
@@ -17,7 +16,7 @@ ms.reviewer: tilarso
 
 Passwordless authentication methods, such as FIDO2 and passwordless phone sign-in through the Microsoft Authenticator app, enable users to sign in securely without a password. 
 
-Users can bootstrap Passwordless methods in one of two ways:
+Users can bootstrap passwordless methods in one of two ways:
 
 - Use existing Microsoft Entra multifactor authentication methods 
 - Use a Temporary Access Pass 
@@ -160,7 +159,7 @@ For hybrid-joined devices, users must first authenticate with another method suc
 
 ### Passwordless phone sign-in
 
-Users can also use their TAP to register for Passwordless phone sign-in directly from the Authenticator app. 
+Users can also use their TAP to register for passwordless phone sign-in directly from the Authenticator app. 
 
 For more information, see [Add your work or school account to the Microsoft Authenticator app](https://support.microsoft.com/account-billing/add-your-work-or-school-account-to-the-microsoft-authenticator-app-43a73ab5-b4e8-446d-9e54-2a4cb8e4e93c).
 
@@ -210,11 +209,12 @@ For more information about NIST standards for onboarding and recovery, see [NIST
 
 Keep these limitations in mind:
 
-- When using a one-time TAP to register a Passwordless method such as FIDO2 or Phone sign-in, the user must complete the registration within 10 minutes of sign-in with the one-time TAP. This limitation doesn't apply to a TAP that can be used more than once.
+- When using a one-time TAP to register a passwordless method such as a FIDO2 security key or phone sign-in, the user must complete the registration within 10 minutes of sign-in with the one-time TAP. This limitation doesn't apply to a TAP that can be used more than once.
+- A one-time TAP can't be used with [guided passkey (FIDO2) registration](/entra/identity/authentication/how-to-register-passkey#guided-registration).
 - Users in scope for self service password reset (SSPR) registration policy *or* [Identity Protection multifactor authentication registration policy](~/id-protection/howto-identity-protection-configure-mfa-policy.md) are required to register authentication methods after they've signed in with a TAP using a browser. 
-Users in scope for these policies are redirected to the [Interrupt mode of the combined registration](concept-registration-mfa-sspr-combined.md#combined-registration-modes). This experience doesn't currently support FIDO2 and Phone Sign-in registration. 
+Users in scope for these policies are redirected to the [Interrupt mode of the combined registration](concept-registration-mfa-sspr-combined.md#combined-registration-modes). This experience doesn't currently support FIDO2 and phone sign-in registration. 
 - A TAP can't be used with the Network Policy Server (NPS) extension and Active Directory Federation Services (AD FS) adapter.
-- It can take a few minutes for changes to replicate. Because of this, after a TAP is added to an account it can take a while for the prompt to appear. For the same reason, after a TAP expires, users may still see a prompt for TAP. 
+- It can take a few minutes for changes to replicate. Because of this, after a TAP is added to an account, it can take a while for the prompt to appear. For the same reason, after a TAP expires, users may still see a prompt for TAP. 
 
 ## Troubleshooting    
 

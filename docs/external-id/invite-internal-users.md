@@ -27,7 +27,7 @@ Sending an invitation to an existing internal account lets you retain that user�
 
 - **Access to on-premises resources**: After the user is invited to B2B collaboration, they can still use their internal credentials to access on-premises resources. You can prevent this by resetting or changing the password on the internal account. The exception is email one-time passcode authentication; if the user's authentication method is changed to one-time passcode, they won't be able to use their internal credentials anymore.
 
-- **Billing**: This feature doesn't change the UserType for the user, so it doesn't automatically switch the user's billing model to [External Identities monthly active user (MAU) pricing](external-identities-pricing.md). To activate MAU pricing for the user, change the UserType for the user to `guest`. Also note that your Microsoft Entra tenant must be linked to an Azure subscription to activate MAU billing.
+- **Billing**: This feature doesn't change the UserType for the user, so it doesn't automatically switch the user's billing model to [External ID monthly active user (MAU) pricing](external-identities-pricing.md). To activate MAU pricing for the user, change the UserType for the user to `guest`. Also note that your Microsoft Entra tenant must be linked to an Azure subscription to activate MAU billing.
 
 - **Invitation is one-way**: You can invite internal users to use B2B collaboration, but you can’t remove the B2B credentials once they’re added. To change the user back to an internal-only user, you’ll need to delete the user object and create a new one.
 
@@ -76,7 +76,7 @@ You'll need the [latest Microsoft Graph PowerShell module](/powershell/microsoft
 
 ```powershell
 Update-Module Microsoft.Graph
-Get-MgUser -UserId '11111111-aaaa-2222-bbbb-333333333333' 
+Get-MgUser -UserId '00aa00aa-bb11-cc22-dd33-44ee44ee44ee' 
 New-MgInvitation -InvitedUserEmailAddress John@contoso.com -SendInvitationMessage:$true -InviteRedirectUrl "https://myapplications.microsoft.com" -InvitedUser $msGraphUser
 ```
 

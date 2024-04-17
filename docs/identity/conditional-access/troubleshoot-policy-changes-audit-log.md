@@ -184,12 +184,7 @@ Updated policy example:
 
 In the previous example, the updated policy doesn't include terms of use in grant controls.
 
-### Restoring Conditional Access policies
-
-For more information about programmatically updating your Conditional Access policies using the Microsoft Graph API, see the article [Conditional Access: Programmatic access](howto-conditional-access-apis.md).
-
 ## Next steps
 
 - [What is Microsoft Entra monitoring?](~/identity/monitoring-health/overview-monitoring-health.md)
 - [Install and use the log analytics views for Microsoft Entra ID](/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview)
-- [Conditional Access: Programmatic access](howto-conditional-access-apis.md)

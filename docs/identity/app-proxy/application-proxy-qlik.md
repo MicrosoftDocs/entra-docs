@@ -16,7 +16,7 @@ Microsoft and Qlik Sense worked together to provide remote access using Microsof
 
 ## Prerequisites 
 - Set up [Qlik Sense](https://community.qlik.com/docs/DOC-19822). 
-- [Install an application proxy connector](application-proxy-add-on-premises-application.md).
+- [Install a private network connector](application-proxy-add-on-premises-application.md).
  
 ## Publish your applications in Microsoft Entra
 To publish Qlik Sense, publish two applications in Azure.
@@ -55,4 +55,4 @@ For more information about publishing Qlik Sense with application proxy, see fol
 ## Next steps
 
 - [Publish applications with application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md)
-- [Working with application proxy connectors](~/identity/app-proxy/application-proxy-connector-groups.md)
+- [Working with private network connectors](~/identity/app-proxy/application-proxy-connector-groups.md)

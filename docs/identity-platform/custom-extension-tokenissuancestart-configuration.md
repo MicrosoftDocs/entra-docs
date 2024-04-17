@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 03/14/2024
+ms.date: 04/10/2024
 ms.reviewer: stsoneff
 ms.service: identity-platform
 ms.topic: how-to
@@ -23,7 +23,7 @@ This article describes how to configure a custom claims provider for a [token is
 - An Azure Function app with an HTTP trigger function configured for a token issuance start event. If you don't have one, follow the steps in [create a token issuance start event HTTP trigger function](./custom-extension-tokenissuancestart-setup.md).
 - A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md).
 - A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.
-    - For customer tenants, use a [sign-up and sign-in user flow](~/external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md).
+    - For external tenants, use a [sign-up and sign-in user flow](~/external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md).
 
 ## Step 1: Register a custom authentication extension
 
@@ -91,7 +91,7 @@ Update the newly created application to set the application ID URI value, the ac
 In Graph Explorer, run the following request. 
    - Set the application ID URI value in the *identifierUris* property. Replace `{Function_Url_Hostname}` with the hostname of the `{Function_Url}` you recorded earlier.
    - Set the `{authenticationeventsAPI_AppId}` value with the **appId** that you recorded earlier.
-   - An example value is `api://authenticationeventsAPI.azurewebsites.net/f4a70782-3191-45b4-b7e5-dd415885dd80`. Take note of this value as you'll use it later in this article in place of `{functionApp_IdentifierUri}`.
+   - An example value is `api://authenticationeventsAPI.azurewebsites.net/00001111-aaaa-2222-bbbb-3333cccc4444`. Take note of this value as you'll use it later in this article in place of `{functionApp_IdentifierUri}`.
 
 ```http
 POST https://graph.microsoft.com/v1.0/applications/{authenticationeventsAPI_ObjectId}
@@ -113,7 +113,7 @@ Content-type: application/json
         "resourceAppId": "00000003-0000-0000-c000-000000000000",
         "resourceAccess": [
             {
-                "id": "214e810f-fda8-4fd7-a475-29461495eb00",
+                "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
                 "type": "Role"
             }
         ]
@@ -226,10 +226,10 @@ The following JSON snippet demonstrates how to configure these properties.
 
 Continue to the next step, [Assign a custom claims provider to your app](#step-3-assign-a-custom-claims-provider-to-your-app).
 
-# [Customer tenant](#tab/customer-tenant)
+# [External tenant](#tab/external-tenant)
 ### 3.4 Associate your app with a user flow
 
-For customer tenants, you need to associate your app with a user flow. A user flow defines the authentication methods a customer can use to sign in to your application and the information they need to provide during sign-up. Ensure that you complete the steps in [Add an application to a user flow](~/external-id/customers/how-to-user-flow-add-application.md) before continuing to add *My Test application* to the user flow.
+For external tenants, you need to associate your app with a user flow. A user flow defines the authentication methods a customer can use to sign in to your application and the information they need to provide during sign-up. Ensure that you complete the steps in [Add an application to a user flow](~/external-id/customers/how-to-user-flow-add-application.md) before continuing to add *My Test application* to the user flow.
 
 ---
 
@@ -371,7 +371,7 @@ Use the following steps to add Microsoft Entra as an identity provider to your A
 
     :::image type="content" border="true"  source="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-workforce.png" alt-text="Screenshot that shows how to add authentication to your function app while in a workforce tenant." lightbox="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-workforce.png":::
 
-# [Customer tenant](#tab/customer-tenant)
+# [External tenant](#tab/external-tenant)
 
 1. In the [Azure portal](https://portal.azure.com), find and select the function app you previously published.
 1. Under **Settings**, select **Authentication**.
@@ -380,13 +380,13 @@ Use the following steps to add Microsoft Entra as an identity provider to your A
 1. Select **Customer** as the tenant type.
 1. Under **App registration**, enter the `client_id` of the *Azure Functions authentication events API* app registration you [previously created](#step-1-register-a-custom-authentication-extension) when registering the custom claims provider.
 1. For the **Issuer URL**, enter the following URL `https://{domainName}.ciamlogin.com/{tenant_id}/v2.0`, where
-    - `{domainName}` is the domain name of your customer tenant, in the form `{domainName}.contoso.com`.
-    - `{tenantId}` is the tenant ID of your customer tenant.
+    - `{domainName}` is the domain name of your external tenant, in the form `{domainName}.contoso.com`.
+    - `{tenantId}` is the tenant ID of your external tenant.
 1. Under **Unauthenticated requests**, select **HTTP 401 Unauthorized** as the identity provider.
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
 
-    :::image type="content" border="true"  source="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-customer.png" alt-text="Screenshot that shows how to add authentication to your function app while in a customer tenant." lightbox="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-customer.png":::
+    :::image type="content" border="true"  source="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-customer.png" alt-text="Screenshot that shows how to add authentication to your function app while in a external tenant." lightbox="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-customer.png":::
 
 ---
 
@@ -437,7 +437,7 @@ To test your custom claims provider, follow these steps:
 1. Replace `{App_to_enrich_ID}` with the *My Test application* client ID.  
 1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `dateOfBirth`.
 
-# [Customer tenant](#tab/customer-tenant)
+# [External tenant](#tab/external-tenant)
 
 1. Open a new private browser and navigate and sign-in through the following URL.
 

@@ -73,7 +73,7 @@ Organizations might store data for longer periods by changing the diagnostic set
 
 ## Required roles
 
-Identity Protection requires users be a Security Reader, Security Operator, Security Administrator, Global Reader, or Global Administrator in order to access.
+Identity Protection requires users be assigned one of the following roles in order to access.
 
 | Role | Can do | Can't do |
 | --- | --- | --- |
