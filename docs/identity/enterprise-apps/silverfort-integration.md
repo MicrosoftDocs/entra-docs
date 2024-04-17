@@ -1,19 +1,17 @@
 ---
 title: Secure hybrid access with Microsoft Entra ID and Silverfort
 description: In this tutorial, learn how to integrate Silverfort with Microsoft Entra ID for secure hybrid access 
-
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-
-ms.date: 12/14/2022
+ms.date: 04/17/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
 
-#customer intent: As an IT admin, I want to configure secure hybrid access with Microsoft Entra ID and Silverfort, so that I can apply identity protection, visibility, and user experience across on-premises and cloud environments and prevent threats.
+#customer intent: I'm an IT admin, and I want to configure secure hybrid access (SHA) with Microsoft Entra ID and Silverfort. I need to apply identity protection, visibility, and create a positive user experience across on-premises and cloud environments. This work needs to help prevent threats.
 
 ---
 
