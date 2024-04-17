@@ -101,7 +101,7 @@ To enable Platform Credential for macOS;
 
 ### macOS Platform single sign-on with SmartCard
 
-To enable macOS Platform single sign-on (PSSO) with SmartCard, your Mac must have an operating system of at least macOS 14 Sonoma, and that the configuration steps are done through the [Microsoft Intune admin center](https://intune.microsoft.com/#home).
+To enable macOS Platform single sign-on (PSSO) with SmartCard, your Mac must have an operating system of at least macOS 14 Sonoma, and that the configuration steps are done through the [Microsoft Intune admin center](https://intune.microsoft.com/#home). Administrators also need to configure and enable the certificate-based authentication method using the [Authentication Methods Policies](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/~/AdminAuthMethods/fromNav/) in the Microsoft Entra admin center. Refer to [How to configure Microsoft Entra certificate-based authentication](./how-to-certificate-based-authentication.md) for more information.
 
 ## Plan the project
 
