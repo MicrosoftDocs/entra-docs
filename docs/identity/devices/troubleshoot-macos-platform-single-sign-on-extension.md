@@ -40,7 +40,7 @@ On macOS 14 Sonoma, if there are problems with your device registration, you can
 You can also deregister the device completely by doing the following steps.
 
 1. Open the **Company Portal** app and navigate to **Preferences**.
-1. To unregister the device, select **Unregister**.
+1. To deregister the device, select **Deregister**.
 1. Alternatively, to sign out your work account on the device, select **Sign out**. This is done silently and there's no confirmation that your device is deregistered.
 
 ### [macOS 13](#tab/macOS13)
@@ -48,7 +48,7 @@ You can also deregister the device completely by doing the following steps.
 On macOS 13 Ventura, if there are problems with your device PSSO registration, or you need to deregister your device, use Company Portal and remove the device from your organization.
 
 1. Open the **Company Portal** app and navigate to **Preferences**.
-1. To unregister the device, select **Unregister**.
+1. To Deregister the device, select **Deregister**.
 1. Alternatively, to sign out your work account on the device, select **Sign out**. This is done silently and there's no confirmation that your device is deregistered.
 
 If you deregistered your device as a result of an error, and need to re-register it, refer to [Join a Mac device with Microsoft Entra ID during the out of box experience](./device-join-macos-platform-single-sign-on.md) or [Join a Mac device with Microsoft Entra ID using Company Portal](./device-join-microsoft-entra-company-portal.md).
