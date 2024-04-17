@@ -113,9 +113,9 @@ To configure the policy using Graph Explorer:
 
    ![Screenshot of the API response.](media/how-to-mfa-registration-campaign/response.png)
    
-         To update the policy, perform a PATCH on the Authentication Methods Policy with only the updated registrationEnforcement section: 
+   To update the policy, perform a PATCH on the Authentication Methods Policy with only the updated registrationEnforcement section: 
 
-         ```json
+   ```json
    PATCH https://graph.microsoft.com/v1.0/policies/authenticationmethodspolicy
    ```
 
