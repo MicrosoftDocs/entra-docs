@@ -87,8 +87,7 @@ Setting up your device using secure enclave method enables you to use the result
 
 ### [Password](#tab/password)
 
-1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. 
-    - For macOS 13 Ventura users, you'll see a prompt to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**. 
+1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**.
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-registration-required-popup.png" alt-text="Screenshot of a desktop screen with a registration required popup in the top right of the screen.":::
 
