@@ -31,6 +31,7 @@ This article lists steps to enable and enforce Microsoft Authenticator passkey s
 [!INCLUDE [Passkey roll out](~/includes/entra-authentication-passkey.md)]
 
 To use any passkeys (FIDO2) for sign in to web apps and services, you need to use a browser that supports the WC3 WebAuthn standard. 
+
 Supported browsers include Microsoft Edge, Chrome, Firefox, and Safari. For more information, see [Browser support of FIDO2 passwordless authentication](fido2-compatibility.md).
 
 ## Enable Authenticator passkey in the admin center
@@ -40,7 +41,7 @@ To enable Authenticator passkey, you edit the **FIDO2 security key** method poli
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
 1. Under the method **FIDO2 security key**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
-1. On the **Configure** tab, set **Enforce key restrictions** to **Yes**, set **Restrict specific keys** to **Allow**. Select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. Otherwise, add the following AAGUIDs to enable the Authenticator passkey preview for iOS and Android:
+1. On the **Configure** tab, set **Enforce key restrictions** to **Yes**, set **Restrict specific keys** to **Allow**. Select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. This will automatically populate the Authenticator app AAGUIDs for you in the key restriction list:
 
    - Authenticator for Android: de1e552d-db1d-4423-a619-566b625cdc84
    - Authenticator for iOS: 90a3ccdf-635c-4729-a248-9b709135078f

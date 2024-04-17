@@ -31,13 +31,19 @@ Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft 
 
 1. On your iOS device, open your browser and navigate to the resource you're trying to access at [My Security info](https://aka.ms/mysecurityinfo).
 
-1. Select **Sign-in options**. 
+1. When prompted to sign-in, you have two options as shown here: 
 
-    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-microsoft.png" alt-text="Screenshot of the sign-in Microsoft in Microsoft Authenticator for iOS devices.":::
+   1. Type your username. 
 
-1. Select **Face**, **Fingerprint**, **PIN**, or **Security key**.
+       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-user-name.png" alt-text="Screenshot of the sign-in with username in Microsoft Authenticator for iOS devices.":::
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-options.png" alt-text="Screenshot of the sign-in options in Microsoft Authenticator for iOS devices.":::
+   1. Select **Sign-in options**. 
+
+       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-microsoft.png" alt-text="Screenshot of the sign-in Microsoft in Microsoft Authenticator for iOS devices.":::
+
+   1. If you chose **Sign-in options**, select **Face**, **Fingerprint**, **PIN**, or **Security key**. Otherwise, skip to next step.
+
+      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-options.png" alt-text="Screenshot of the sign-in options in Microsoft Authenticator for iOS devices.":::
 
 1. To select your passkey, follow the steps in the iOS operating system dialog. Verify that it's you by using Face ID, Touch ID, or entering your device PIN.
 
@@ -74,8 +80,7 @@ Native applications like Microsoft OneDrive, SharePoint, and Outlook don't suppo
 2. Sign in to Authenticator?
 
 
-
-# [**Android**](#tab/Android)
+## [**Android**](#tab/Android)
 
 To sign in with a passkey in Microsoft Authenticator, your Android device needs to run Android 14 or later.
 
@@ -86,14 +91,21 @@ To sign in with a passkey in Microsoft Authenticator, your Android device needs 
 
 Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft Authenticator on your Android device.
 
-1. On your Android device, open your browser and navigate the resource you want to access e.g. `myaccount.microsoftonline.com`.
-1. Select **Sign-in options**. 
+1. On your Android device, open your browser and navigate to the resource you're trying to access at [My Security info](https://aka.ms/mysecurityinfo).
 
-    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-microsoft.png" alt-text="Screenshot of the sign-in Microsoft in Microsoft Authenticator for Android devices.":::
+1. When prompted to sign-in, you have two options as shown here: 
 
-1. Select **Face**, **Fingerprint**, **PIN**, or **Security key**.
+   1. Type your username. 
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-options.png" alt-text="Screenshot of the sign-in options in Microsoft Authenticator for Android devices.":::
+       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-user-name.png" alt-text="Screenshot of the sign-in with username in Microsoft Authenticator for Android devices.":::
+
+   1. Select **Sign-in options**. 
+
+       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-microsoft.png" alt-text="Screenshot of the sign-in Microsoft in Microsoft Authenticator for AndroidS devices.":::
+
+   1. If you chose **Sign-in options**, select **Face**, **Fingerprint**, **PIN**, or **Security key**. Otherwise, skip to next step.
+
+      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-options.png" alt-text="Screenshot of the sign-in options in Microsoft Authenticator for Android devices.":::
 
 1. To select your passkey, follow the steps in the Android operating system dialog. Verify that it's you by scanning your face, fingerprint, or entering your device PIN or unlock gesture.
 

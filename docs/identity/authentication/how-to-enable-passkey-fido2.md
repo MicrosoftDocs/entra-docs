@@ -49,7 +49,7 @@ Passkeys are supported across major scenarios on Windows, macOS, Android, and iO
 
 ### Passkey optional settings 
 
-There are some optional settings on the **Configure** tab to help manage how passkeys can be used for sign-in. You can select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. Otherwise, you can add any specific Authenticator Attestation GUID (AAGUID) that you want to restrict.
+There are some optional settings on the **Configure** tab to help manage how passkeys can be used for sign-in. You can select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. This will automatically populate the Authenticator app AAGUIDs for you in the key restriction list.
 
 :::image type="content" border="true" source="media/howto-authentication-passwordless-security-key/optional-settings-with-aaguid.png" alt-text="Screenshot of FIDO2 security key options.":::
 
