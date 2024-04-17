@@ -48,6 +48,9 @@ where:
 
 - `{client-id}` is the application's client ID (also known as appId).
 
+>[!NOTE]
+>If you are attempting to use an enterprise application, and the service principal is not yet created in your tenant, Entra will respond with a (401) Unauthorized error stating: “The client application {appId} is missing service principal in the tenant {tenantId}." To resolve this, performing consent with the admin consent URL as mentioned above will instantiate the service principal in your tenant and resolve the issue.  
+
 :::zone-end
 
 :::zone pivot="msgraph-powershell"
