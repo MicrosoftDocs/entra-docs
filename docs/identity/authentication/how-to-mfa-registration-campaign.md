@@ -113,9 +113,9 @@ To configure the policy using Graph Explorer:
 
    ![Screenshot of the API response.](media/how-to-mfa-registration-campaign/response.png)
    
-      To update the policy, perform a PATCH on the Authentication Methods Policy with only the updated registrationEnforcement section: 
+   To update the policy, perform a PATCH on the Authentication Methods Policy with only the updated registrationEnforcement section: 
 
-      ```json
+   ```json
    PATCH https://graph.microsoft.com/v1.0/policies/authenticationmethodspolicy
    ```
 
@@ -284,9 +284,9 @@ The nudge won't appear on mobile devices that run Android or iOS.
 
 No, the registration campaign is available only for users using Microsoft Entra multifactor authentication. 
 
-**Can users be nudged within an application?** 
+**Can users be nudged within an application?**
 
-The registration campaign is available only on browsers and not on applications.
+Yes, we support embedded browser views in certain applications. We don't nudge users in out of the box experiences or in browser views embedded in Windows settings.
 
 **Can users be nudged on a mobile device?** 
 
