@@ -52,8 +52,7 @@ The default specific parameters and properties for the **Onboard pre-hire employ
 |Days from event     | -7        | ✔️        |
 |Event timing     | Before        |  ❌       |
 |Event User attribute     | EmployeeHireDate        |   ❌      |
-|Scope type     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ❌        |
-|Rule     | Rule based scope: (department eq 'Marketing')      |  ✔️       |
+|Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
 |Tasks     | **Generate TAP And Send Email**     |  ✔️       |
 
 For a tutorial on setting up a workflow that uses the **Onboard pre-hire employee** template, see: [Automate employee onboarding tasks before their first day of work with the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md).
@@ -74,8 +73,7 @@ The default specific parameters for the **Onboard new hire employee** template a
 |Days from event     | 0        | ❌        |
 |Event timing     | On        |  ❌       |
 |Event User attribute     | EmployeeHireDate, createdDateTime        |   ✔️      |
-|Scope type     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ❌        |
-|Rule     | Rule based scope: (department eq 'Marketing')        |  ✔️       |
+|Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
 |Tasks     | **Add User To Group**, **Enable User Account**, **Send Welcome Email**      |  ✔️       |
 
 ### Post-Onboarding of an employee
@@ -94,8 +92,7 @@ The default specific parameters for the **Post-Onboarding of an employee** templ
 |Days from event     | 7       | ✔️        |
 |Event timing     | After        |  ❌       |
 |Event User attribute     | EmployeeHireDate, createdDateTime        |   ✔️      |
-|Scope type     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ❌        |
-|Rule     | Rule based scope: (department eq 'Marketing')       |  ✔️       |
+|Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
 |Tasks     | **Add User To Group**, **Add user to selected teams**    |  ✔️       |
 
 ### Real-time employee change
@@ -148,8 +145,7 @@ The default specific parameters for the **Pre-Offboarding of an employee** templ
 |Days from event     | 7        | ✔️        |
 |Event timing     | Before        |  ❌       |
 |Event User attribute     | employeeLeaveDateTime        |   ❌      |
-|Scope type     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ❌        |
-|Rule     | Rule based scope: (department eq 'Marketing')       |  ✔️       |
+|Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
 |Tasks     | **Remove user from selected groups**, **Remove user from selected Teams**     |  ✔️       |
 
 ### Offboard an employee
@@ -168,8 +164,7 @@ The default specific parameters for the **Offboard an employee** template are as
 |Days from event     | 0        | ✔️        |
 |Event timing     | On        |  ❌       |
 |Event User attribute     | employeeLeaveDateTime      |   ❌      |
-|Scope type     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ❌        |
-|Rule     | Rule based scope: (department eq 'Marketing')     |  ✔️       |
+|Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
 |Tasks     | **Disable User Account**, **Remove user from all groups**, **Remove user from all Teams**     |  ✔️       |
 
 ### Post-Offboarding of an employee
@@ -186,8 +181,7 @@ The default specific parameters for the **Post-Offboarding of an employee** temp
 |Trigger Type     | Time based attribute, Attribute changes, Group Membership change        |  ✔️       |
 |Trigger details     | Depends on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group     |   ✔️      |
 |Event User attribute     | employeeLeaveDateTime      |   ❌      |
-|Scope type     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ❌        |
-|Rule     | Rule based scope: (department eq 'Marketing')    |  ✔️       |
+|Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
 |Tasks     | **Remove all licenses for user**, **Remove user from all Teams**, **Delete User Account**     |  ✔️       |
 
 For a tutorial on setting up a workflow that uses the **Post-Offboarding of an employee** template, see: [Automate employee offboarding tasks after their last day of work with the Microsoft Entra admin center](tutorial-scheduled-leaver-portal.md).
@@ -205,8 +199,7 @@ The default specific parameters for the **Employee group membership changes** te
 |Category     |  mover       |  ❌       |
 |Trigger Type     | Attribute changes, Group Membership change        |  ✔️       |
 |Trigger details     | Depends on trigger type selection. <br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
-|Scope type     | Depends on trigger. <br> **Rule based**: Attribute changes.<br> **Group membership change**: Group based.       | ❌        |
-|Rule     |      |  ✔️       |
+|Scope     | Depends on trigger. <br> **Rule based**: Attribute changes.<br> **Group membership change**: Group based.       | ✔️        |
 |Tasks     | **Remove access package assignment for user**, **Remove user from selected Teams**, **Send email to notify manager of user move**     |  ✔️       |
 
 ### Employee job profile change
@@ -222,8 +215,7 @@ The default specific parameters for the **Employee job profile change** template
 |Category     |  mover       |  ❌       |
 |Trigger Type     | Attribute changes, Group Membership change        |  ✔️       |
 |Trigger details     | Depends on trigger type selection. <br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
-|Scope type     | Depends on trigger. <br> **Rule based**: Attribute changes.<br> **Group membership change**: Group based.         | ❌        |
-|Rule     | Rule based scope: (department eq 'Marketing')        |  ✔️       |
+|Scope     | Depends on trigger. <br> **Rule based**: Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
 |Tasks     | **Send email to notify manager of user move**, **Remove user from selected groups**, **Remove user from selected Teams**, **Request user access package assignment**    |  ✔️       |
 
 For a tutorial on setting up a workflow that uses the **Employer job profile change** template, see: [Automate employee mover tasks when they change jobs using the Microsoft Entra admin center](tutorial-mover-custom-workflow-portal.md).
