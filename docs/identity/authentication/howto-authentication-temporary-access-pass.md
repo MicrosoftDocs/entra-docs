@@ -72,7 +72,7 @@ After you enable a TAP policy, you can create TAPs for users in Microsoft Entra 
 - Authentication Administrators can create, delete, and view a TAP for members (except themselves).
 - Global Readers can view TAP details for the user (without reading the code itself).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Browse to **Identity** > **Users**.
 1. Select the user you would like to create a TAP for. 
 1. Select **Authentication methods** and click **Add authentication method**. 
