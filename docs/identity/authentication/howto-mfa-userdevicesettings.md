@@ -2,7 +2,6 @@
 title: Manage authentication methods for Microsoft Entra multifactor authentication
 description: Learn how you can configure Microsoft Entra user settings for Microsoft Entra multifactor authentication
 
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
