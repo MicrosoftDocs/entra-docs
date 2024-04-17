@@ -31,7 +31,7 @@ Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft 
 
 1. On your iOS device, open your browser and navigate to the resource you're trying to access at [My Security info](https://aka.ms/mysecurityinfo).
 
-1. When prompted to sign in, you have two options. The *usernameless* option can be easier than entering your user name. 
+1. When prompted to sign in, you have two options. The *usernameless* option can be easier than entering your username. 
 
    1. Type your username. 
 
@@ -107,7 +107,7 @@ Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft 
 
 1. On your Android device, open your browser and navigate to the resource you're trying to access at [My Security info](https://aka.ms/mysecurityinfo).
 
-1. When prompted to sign in, you have two options. The *usernameless* option can be easier than entering your user name.
+1. When prompted to sign in, you have two options. The *usernameless* option can be easier than entering your username.
 
    1. Type your username. 
 
