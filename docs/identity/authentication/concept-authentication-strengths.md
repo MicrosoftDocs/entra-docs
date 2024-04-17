@@ -104,6 +104,8 @@ Conditional Access Administrators can also create custom authentication strength
 
 - **FIDO2 security key Advanced options** - Advanced options aren't supported for external users with a home tenant that is located in a different Microsoft cloud than the resource tenant.
 
+- **Authentication strength blade double representation** - The [Authentication Strength](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/~/AuthStrengths/fromNav/) blade currently represents both Platform Credential for macOS and Windows Hello For Business with the same Authentication method name, **Windows Hello For Business**. Work is in progress to represent Platform Credential for macOS separately. While configuring custom authentication strength that needs to use Platform Credential for macOS, please use "Windows Hello For Business" until this is fixed.
+
 ## FAQ
 
 ### Should I use authentication strength or the Authentication methods policy?
