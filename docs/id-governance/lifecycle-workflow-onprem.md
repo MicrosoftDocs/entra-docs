@@ -16,12 +16,12 @@ ms.custom: template-concept
 
 # Managing synced on-premises users with lifecycle workflows
 
-Lifecycle workflows allow you to create workflows that can be triggered for users based on where they fall in the joiner, mover, or leaver(JML) lifecycle within your organization. With these workflows you can also streamline the process of managing cloud-based, and synced on-premises users in your environment via tasks. For example, you're able to enable synced on-premises user accounts, onboard users while also sending required information to their manager, automatically add users to groups or teams when their job role changes, disable accounts when users are no longer active, and even delete the user account. These capabilities work either out of the box, or with some configuration. In this article, you learn what is needed to use workflow features on synced on-premises users in your environment.
+Lifecycle workflows allow you to create workflows that can be triggered for users based on where they fall in the joiner, mover, or leaver(JML) lifecycle within your organization. With these workflows, you can also streamline the process of managing cloud-based, and synced on-premises users in your environment via tasks. For example, you're able to enable synced on-premises user accounts, onboard users while also sending required information to their manager, automatically add users to groups or teams when their job role changes, disable accounts when users are no longer active, and even delete the user account. These capabilities work either out of the box, or with some configuration. In this article, you learn what is needed to use lifecycle workflow tasks on synced on-premises users in your environment.
 
 
 ## Synced on-premises user capabilities compatibility with workflow triggers
 
-In lifecycle workflows, a workflow runs based on if a user meets its execution conditions. Each execution condition must have a trigger, which defines when a user meets the execution condition of a workflow, and a scope, which defines which users the workflow runs for. The trigger you set for an execution condition depends on the user situation for which you want the workflow to run.
+In lifecycle workflows, a workflow runs based on if a user meets its execution conditions. Each execution condition must have a trigger, which defines when a user meets the execution condition of a workflow, and a scope, which defines which users for who the workflow runs. The trigger you set for an execution condition depends on the user situation for which you want the workflow to run.
 
 The following table shows what is required to use each workflow trigger with synced on-premises users:
 
