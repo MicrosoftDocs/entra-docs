@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 04/17/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SECURE DELIVER so that I can control who has access to SECURE DELIVER, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -37,8 +37,6 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
 
 * SECURE DELIVER supports **SP** initiated SSO.
-
-* SECURE DELIVER supports [Automated user provisioning](secure-deliver-provisioning-tutorial.md).
 
 ## Add SECURE DELIVER from the gallery
 
@@ -131,8 +129,6 @@ To configure single sign-on on **SECURE DELIVER** side, you need to send the dow
 ### Create SECURE DELIVER test user
 
 In this section, you create a user called Britta Simon in SECURE DELIVER. Work with [SECURE DELIVER support team](mailto:iw-sd-support@fujifilm.com) to add the users in the SECURE DELIVER platform. Users must be created and activated before you use single sign-on.
-
-SECURE DELIVER also supports automatic user provisioning, you can find more details [here](./secure-deliver-provisioning-tutorial.md) on how to configure automatic user provisioning.
 
 ## Test SSO 
 
