@@ -36,7 +36,7 @@ To enable it, an administrator needs to configure PSSO through Microsoft Intune 
 
 To deploy Platform SSO for macOS, you need the meet following minimum requirements.
 
-* macOS 13 Ventura or newer (smart card authentication only valid for macOS 14 Sonoma or later).
+* A recommended minimum version of macOS 14 Sonoma. While macOS 13 Ventura is supported, we strongly recommend using macOS 14 Sonoma for the best experience.
 * [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc)
 * Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos) version 5.2404.0 or later installed. This version is required before users are targeted for PSSO.
 
