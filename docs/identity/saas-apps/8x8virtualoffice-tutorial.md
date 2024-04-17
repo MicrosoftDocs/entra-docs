@@ -41,7 +41,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 * 8x8 supports [**Automated** user provisioning and deprovisioning](8x8-provisioning-tutorial.md) (recommended).
 
 > [!NOTE]
-> Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
+> The Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
 
 ## Adding 8x8 from the gallery
 
@@ -131,14 +131,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
 1. In the **Add Assignment** dialog, click the **Assign** button.
 
-## Configure 8x8 SSO
-
-The next part of the tutorial depends on what kind of subscription you have with 8x8.
-
-* For 8x8 Editions and X Series customers using Configuration Manager for administration, refer to [Configure 8x8 Admin Console](#configure-8x8-admin-console).
-* For Virtual Office customers using Account Manager for administration, refer to [Configure 8x8 Account Manager](#configure-8x8-account-manager).
-
-### Configure 8x8 Admin Console
+## Configure 8x8 SSO in 8x8 Admin Console
 
 1. In a different web browser window, sign in to the 8x8 [Admin Console](https://admin.8x8.com/) as an administrator.
 
@@ -158,57 +151,20 @@ The next part of the tutorial depends on what kind of subscription you have with
 
     b. Copy **Microsoft Entra Identifier** to **IDP Issuer URL/URN**.
 
-    c. Copy **Logout URL** to **IDP Logout URL**.
+    c. Copy **Logout URL** to **IDP Logout URL** (optional).
 
     d. Download **Certificate (Base64)** and upload to **Certificate**.
 
     e. Click **Save**.
 
-### Configure 8x8 Account Manager
-
-1. Sign-on to your 8x8 Virtual Office tenant as an administrator.
-
-1. Select **Virtual Office Account Mgr** on Application Panel.
-
-    ![Screenshot that highlights the Virtual Office Account Mgr tile.](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_001.png)
-
-1. Select **Business** account to manage and click **Sign In** button.
-
-    ![Screenshot that highlights the Business option and Sign In button.](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_002.png)
-
-1. Click **ACCOUNTS** tab in the menu list.
-
-    ![Screenshot that highlights the ACCOUNTS tab in the menu list.](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_003.png)
-
-1. Click **Single Sign On** in the list of Accounts.
-
-    ![Screenshot that highlights the Single Sign On option.](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_004.png)
-
-1. Select **Single Sign On** under Authentication methods and click **SAML**.
-
-    ![Screenshot that highlights the SAML under Single Sign On.](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_005.png)
-
-1. In the **SAML Single Sign on** section, perform the following steps:
-
-    ![Configure On App Side](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_006.png)
-
-    a. In the **Sign In URL** textbox, paste **Login URL** value which you copied previously.
-
-    b. In the **Sign Out URL** textbox, paste **Logout URL** value which you copied previously.
-
-    c. In the **Issuer URL** textbox, paste **Microsoft Entra Identifier** value which you copied previously.
-
-    d. Click **Browse** button to upload the certificate which you downloaded previously.
-
-    e. Click the **Save** button.
-
-### Create 8x8 test user
-
-In this section, you create a user called Britta Simon in 8x8. Work with [8x8 support team](https://www.8x8.com/about-us/contact-us) to add the users in the 8x8 platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
-In this section, you test your Microsoft Entra single sign-on configuration with following options. 
+In this section, you test your Microsoft Entra single sign-on configuration with either an SP initiated flow which starts at the 8x8 login page, or an IDP initiated flow which starts at the Microsoft Access Panel. 
+
+### Create 8x8 test user
+
+Create a user called Britta Simon in 8x8 Admin Console. Users must be created in 8x8 Admin Console before you can use single sign-on.
 
 #### SP initiated:
 
