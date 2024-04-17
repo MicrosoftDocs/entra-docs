@@ -42,14 +42,14 @@ To use Microsoft Entra Connect, you need to sign in with one of the following ro
 
 ## Confirm ImmutableID attribute synchronized by Okta
 
-The ImmutableID attribute ties synchronized objects to their on-premises counterparts. Okta takes the Active Directory objectGUID of an on-premises object and converts it to a Base64-encoded string. By default, it then stamps that string to the ImmutableID field in Microsoft Entra ID.
+The ImmutableID attribute ties synchronized objects to their on-premises counterparts. Okta takes the Active Directory objectGUID of an on-premises object and converts it to a Base-64-encoded string. By default, it then stamps that string to the ImmutableID field in Microsoft Entra ID.
 
-You can connect to Microsoft Graph PowerShell and examine the current ImmutableID value. If you've never used the Microsoft Graph PowerShell module, run
+You can connect to Microsoft Graph PowerShell and examine the current ImmutableID value. If you haven't used the Microsoft Graph PowerShell module, run
 it in an administrative session before you run commands:
 
 If you have the module, a warning might appear to update to the latest version.
 
-1. Import the module after it's installed.
+1. Import the installed module.
 2. In the authentication window, sign in as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 3. Connect to the tenant.
 4. Verify ImmutableID value settings. The following example is the default of converting the objectGUID into the ImmutableID.
@@ -93,7 +93,7 @@ After you prepare your list of source and destination targets, install a Microso
 1. Download and install Microsoft Entra Connect on a server. See, [Custom installation of Microsoft Entra Connect](~/identity/hybrid/connect/how-to-connect-install-custom.md).
 2. In the left panel, select **Identifying users**.
 3. On the **Uniquely identifying your users** page, under **Select how users should be identified with Microsoft Entra ID**, select **Choose a specific attribute**. 
-4. If you haven't modified the Okta default, select **mS-DS-ConsistencyGUID**.
+4. If you didn't modify the Okta default, select **mS-DS-ConsistencyGUID**.
 
    >[!WARNING]
    >This step is critical. Ensure the attribute you select for a source anchor populates your Microsoft Entra users. If you select the wrong attribute, uninstall and reinstall Microsoft Entra Connect to reselect this option.
