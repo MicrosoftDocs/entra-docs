@@ -7,7 +7,6 @@ ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
 ms.date: 09/30/2022
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
