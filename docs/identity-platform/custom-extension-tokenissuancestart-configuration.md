@@ -243,7 +243,7 @@ For tokens to be issued with claims incoming from the custom authentication exte
 
 > [!NOTE]
 >
-> You can only create 250 unique assignments between applications and custom extensions. If you wish to apply the same custom extension call to multiple apps, we recommend using [authenticationEventListeners](/graph/api/identitycontainer-post-authenticationeventlisteners) to create listeners for multiple applications. This is not supported in the Azure portal.
+> You can only create 250 unique assignments between applications and custom extensions. If you wish to apply the same custom extension call to multiple apps, we recommend using [authenticationEventListeners](/graph/api/identitycontainer-post-authenticationeventlisteners) Microsoft Graph API to create listeners for multiple applications. This is not supported in the Azure portal.
 
 Follow these steps to connect the *My Test application* with your custom authentication extension:
 
@@ -272,10 +272,6 @@ Next, assign the attributes from the custom claims provider, which should be iss
 
 1. Select **Save**.
 1. Repeat this process to add the *customClaimsProvider.customRoles*, *customClaimsProvider.apiVersion* and *customClaimsProvider.correlationId* attributes, and the corresponding name. It's a good idea to match the name of the claim to the name of the attribute.
-
-> [!NOTE]
->
-> The Azure portal doesn't currently support the linking of multiple token augmentation listeners to a single application. Use the Microsoft Graph APIs to reuse a custom extension for multiple apps.
 
 # [Microsoft Graph](#tab/microsoft-graph)
 
