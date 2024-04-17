@@ -15,7 +15,7 @@ titleSuffix: Microsoft identity platform
 #Customer intent: As a developer integrating external systems with Microsoft Entra ID, I want to troubleshoot issues with my custom claims provider API, so that I can identify and resolve any errors or performance problems affecting the authentication experience.
 ---
 
-# Troubleshoot your custom claims provider API (preview)
+# Troubleshoot your custom claims provider API
 
 Authentication events and [custom claims providers](custom-claims-provider-overview.md) allow you to customize the Microsoft Entra authentication experience by integrating with external systems.  For example, you can create a custom claims provider API and configure an [OpenID Connect app](./custom-extension-tokenissuancestart-configuration.md) or [SAML app](custom-extension-configure-saml-app.md) to receive tokens with claims from an external store.
 
