@@ -756,8 +756,6 @@
         - name: Microsoft.Identity.Web (MSAL wrapper)
           displayName: auth, library, .NET, msal
           href: /entra/msal/dotnet/microsoft-identity-web/
-        - name: Application configuration
-          href: msal-client-application-configuration.md
         - name: MSAL Node
           displayName: Node.js
           items:
