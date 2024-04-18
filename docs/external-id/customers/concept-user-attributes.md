@@ -97,6 +97,10 @@ For example, if the client ID of the *b2c-extensions-app* is `2588a-bcdwh-tfeehj
 
 Use the [Find the application ID for the extensions app](how-to-define-custom-attributes.md) article to learn how to find the application ID for the *b2c-extensions-app* registered in your external tenant.
 
+## Microsoft Graph APIs
+
+User attributes are referred to as *user flow attributes* in Microsoft Graph. Use the [identityUserFlowAttribute resource type](/graph/api/resources/identityuserflowattribute) and its associated methods to manage both built-in and custom user flow attributes.
+
 ## Next steps
 
 - [Add attributes to the ID token returned to your application](how-to-add-attributes-to-token.md).
