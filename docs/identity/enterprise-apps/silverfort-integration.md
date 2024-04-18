@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-ms.date: 04/17/2024
+ms.date: 04/18/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
@@ -69,7 +69,7 @@ Set up Silverfort Microsoft Entra Adapter in your Microsoft Entra tenant:
   - Cloud Application Administrator
   - Application Administrator
   - Service Principal Owner
-- The Silverfort Microsoft Entra Adapter application in the Microsoft Entra gallery is preconfigured to support SSO. From the gallery, add the Silverfort Microsoft Entra Adapter to your tenant as an Enterprise application.
+- The Silverfort Microsoft Entra Adapter application in the Microsoft Entra application gallery is preconfigured to support SSO. From the gallery, add the Silverfort Microsoft Entra Adapter to your tenant as an Enterprise application.
 
 ## Configure Silverfort and create a policy
 
@@ -116,7 +116,7 @@ Set up Silverfort Microsoft Entra Adapter in your Microsoft Entra tenant:
 19. In the Entra ID Bridge section, the policy appears on the Policies page.
 20. Return to the Microsoft Entra account, and navigate to **Enterprise applications**. The new Silverfort application appears. You can include this application in Conditional Access policies. 
 
-Learn more: [Tutorial: Secure user sign-in events with Microsoft Entra MFA](~/identity/authentication/tutorial-enable-azure-mfa.md?bc=/azure/active-directory/conditional-access/breadcrumb/toc.json&toc=/azure/active-directory/conditional-access/toc.json#create-a-conditional-access-policy).
+Learn more: [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](~/identity/authentication/tutorial-enable-azure-mfa.md?bc=/azure/active-directory/conditional-access/breadcrumb/toc.json&toc=/azure/active-directory/conditional-access/toc.json#create-a-conditional-access-policy).
 
 ## Next steps
 
