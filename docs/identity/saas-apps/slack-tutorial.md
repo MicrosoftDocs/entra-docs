@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 02/02/2024
+ms.date: 04/18/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Slack so that I can control who has access to Slack, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -195,6 +195,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
    > [!NOTE]
    > In order to set up the service provider (SP) configuration, you must click on **Expand** next to **Advanced Options** in the SAML configuration page. In the **Service Provider Issuer** box, enter the workspace URL. The default is slack.com. 
+
+   > [!NOTE]
+   > Set the **AuthnContextClassRef** to **Don't send this value** to resolve the error message, "Error - AADSTS75011 Authentication method by which the user authenticated with the service doesn't match requested authentication method AuthnContextClassRef".
 
 1. Under **Settings**, decide if members can edit their profile information (like their email or display name) after SSO is enabled. You can also choose whether SSO is required, partially required or optional.
 
