@@ -117,6 +117,12 @@ The multitenant organization capability has been designed with the following con
 - Any active tenant may leave a multitenant organization by removing themselves from it.
 - A multitenant organization is deleted when the only remaining active (owner) tenant leaves.
 
+## Limits
+
+| Resource | Limit | Notes |
+| --- | --- | --- |
+| Maximum number of active tenants, including the owner tenant | 100 | The owner tenant can add more than 100 pending tenants, but they won't be able to join the multitenant organization if the limit is exceeded. This limit is applied at the time a pending tenant joins a multitenant organization. This limit is specific to the number of tenants in a multitenant organization. It does not apply to cross-tenant synchronization by itself. To increase this limit, submit a support request in the Microsoft Entra or Microsoft 365 admin center.<br/>In the Microsoft Graph APIs, the default limit of 100 tenants is only enforced at the time of joining. In Microsoft 365 admin center, the default limit is enforced at multitenant organization creation time and at time of joining. |
+
 ## External user segmentation
 
 By defining a multitenant organization, as well as pivoting on the Microsoft Entra user property of userType, [external identities](~/external-id/user-properties.md) are segmented as follows:
@@ -131,6 +137,12 @@ This segmentation of external users, due to the definition of a multitenant orga
 External members originating from within a multitenant organization are called multitenant organization members.
 
 Multitenant collaboration capabilities in Microsoft 365 aim to provide a seamless collaboration experience across tenant boundaries when collaborating with multitenant organization member users.
+
+## Choosing between Microsoft 365 admin center and cross-tenant synchronization
+
+- If you haven't previously used Microsoft Entra cross-tenant synchronization, and you intend to establish a [collaborating user set](multi-tenant-organization-microsoft-365.md#collaborating-user-set) topology where the same set of users is shared to all multitenant organization tenants, you might want to use the Microsoft 365 admin center share users functionality.
+
+- If you're already using Microsoft Entra cross-tenant synchronization, for various [multi-hub multi-spoke topologies](cross-tenant-synchronization-topology.md), you don't need to use the Microsoft 365 admin center share users functionality. Instead, you might want to continue using your existing Microsoft Entra cross-tenant synchronization jobs.
 
 ## Get started
 
@@ -164,15 +176,6 @@ Depending on your use case, you may want to synchronize users using one of the f
 - [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md)
 - [Configure cross-tenant synchronization using PowerShell or Microsoft Graph API](cross-tenant-synchronization-configure-graph.md)
 - Your alternative bulk provisioning engine
-
-## Limits
-
-Multitenant organizations have the following limits:
-
-- A maximum of 100 active tenants per multitenant organization
-  - This limit is specific to the number of tenants in a multitenant organization. It does not apply to cross-tenant synchronization by itself. 
-
-If you want to add more than 100 tenants, contact Microsoft support.
 
 ## License requirements
 
