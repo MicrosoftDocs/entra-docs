@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 06/07/2023
+ms.date: 04/10/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -99,7 +99,7 @@ Some optional claims can be configured to change the way the claim is returned. 
 | | `include_externally_authenticated_upn` | Includes the guest UPN as stored in the resource tenant. For example, `foo_hometenant.com#EXT#@resourcetenant.com`. |
 | | `include_externally_authenticated_upn_without_hash` | Same as listed previously, except that the hash marks (`#`) are replaced with underscores (`_`), for example `foo_hometenant.com_EXT_@resourcetenant.com`. |
 | `aud` | | In v1 access tokens, this claim is used to change the format of the `aud` claim.  This claim has no effect in v2 tokens or either version's ID tokens, where the `aud` claim is always the client ID. Use this configuration to ensure that your API can more easily perform audience validation. Like all optional claims that affect the access token, the resource in the request must set this optional claim, since resources own the access token. |
-| | `use_guid` | Emits the client ID of the resource (API) in GUID format as the `aud` claim always instead of it being runtime dependent. For example, if a resource sets this flag, and its client ID is `bb0a297b-6a42-4a55-ac40-09a501456577`, any app that requests an access token for that resource receives an access token with `aud` : `bb0a297b-6a42-4a55-ac40-09a501456577`. Without this claim set, an API could get tokens with an `aud` claim of `api://MyApi.com`, `api://MyApi.com/`, `api://myapi.com/AdditionalRegisteredField` or any other value set as an app ID URI for that API, and the client ID of the resource. |
+| | `use_guid` | Emits the client ID of the resource (API) in GUID format as the `aud` claim always instead of it being runtime dependent. For example, if a resource sets this flag, and its client ID is `00001111-aaaa-2222-bbbb-3333cccc4444`, any app that requests an access token for that resource receives an access token with `aud` : `00001111-aaaa-2222-bbbb-3333cccc4444`. Without this claim set, an API could get tokens with an `aud` claim of `api://MyApi.com`, `api://MyApi.com/`, `api://myapi.com/AdditionalRegisteredField` or any other value set as an app ID URI for that API, and the client ID of the resource. |
 | `idtyp` | | This claim is used to get the type of token (app, user, device). By default it's only emitted for app-only tokens. Like all optional claims that affect the access token, the resource in the request must set this optional claim, since resources own the access token. |
 | | `include_user_token` | Emits the `idtyp` claim for users token. Without this optional additional property for the idtyp claim set, an API only gets the claim for app tokens. |
 

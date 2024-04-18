@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.date: 09/15/2023
+ms.date: 04/15/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -75,7 +75,7 @@ This capability of HR-driven IT provisioning offers the following significant bu
 
 To configure the cloud HR app to Microsoft Entra user provisioning integration, you require a valid [Microsoft Entra ID P1 or P2 license](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) and a license for the cloud HR app, such as Workday or SuccessFactors.
 
-You also need a valid Microsoft Entra ID P1 or higher subscription license for every user that is sourced from the cloud HR app and provisioned to either Active Directory or Microsoft Entra ID. Any improper number of licenses owned in the cloud HR app might lead to errors during user provisioning.
+You also need a valid Microsoft Entra ID P1 or higher subscription license for every user that is sourced from the cloud HR app and provisioned to either Active Directory or Microsoft Entra ID.
 
 Use of [Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md) and other Microsoft Entra ID Governance features in the provisioning process requires a [Microsoft Entra ID Governance license](~/id-governance/licensing-fundamentals.md).
 
