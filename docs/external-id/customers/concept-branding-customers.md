@@ -46,6 +46,12 @@ You might have different requirements for the information you want to collect du
 You can create a personalized sign-in experience for users who sign in using a specific browser language by customizing the branding elements. If you don't make any changes to the elements, the default elements will be displayed.
 In the tenant you can add a custom language to the sign-in experience under **Company Branding** or to a specific user flow under **User flows**. The language customization is available for a list of languages. For more information, see [Customize the language of the authentication experience](how-to-customize-languages-customers.md).
 
+## Microsoft Graph APIs
+
+You can also manage company branding and configure all assets programmatically. 
+- For the default branding, use the [organizationalBranding resource type](/graph/api/resources/organizationalbranding) and its associated methods.
+- To customize branding based on locale, using the [organizationalBrandingLocalization resource type](/graph/api/resources/organizationalbrandinglocalization) resource type and its associated methods.
+
 ## Next steps
 - [Customize the user experience for your customers](how-to-customize-branding-customers.md)
 - [Customize the language of the authentication experience](how-to-customize-languages-customers.md)
