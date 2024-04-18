@@ -60,9 +60,9 @@ As an Application Delivery Controller (ADC) and secure socket layer virtual priv
 
 BIG-IP Local Traffic Manager (LTM) is for secure service publishing, while an Access Policy Manager (APM) extends BIG-IP functions that enable identity federation and single sign-on (SSO).
 
-With integration, you achieve the protocol transition to secure legacy, or non-Azure AD integrated services, with controls such as: 
+With integration, you achieve the protocol transition to secure legacy, or non-Microsoft Entra ID integrated services, with controls such as: 
 
-* [Password-less authentication](https://www.microsoft.com/security/business/identity/passwordless)
+* [Passwordless authentication](https://www.microsoft.com/security/business/identity/passwordless)
 * [Conditional Access](~/identity/conditional-access/overview.md)
 
 In the scenario, a BIG-IP is a reverse proxy that hands off service pre-authentication and authorization to Microsoft Entra ID. The integration is based on a standard federation trust between the APM and Microsoft Entra ID. This scenario is common with SHA. Learn more: [Configure F5 BIG-IP SSL-VPN for Microsoft Entra SSO](f5-passwordless-vpn.md). With SHA you can secure Security Assertion Markup Language (SAML), Open Authorization (OAuth), and OpenID Connect (OIDC) resources. 
@@ -189,10 +189,6 @@ You can conduct a proof-of-concept for SHA using your BIG-IP infrastructure, or 
 Identify one or two applications to be published with BIG-IP and protected with SHA.
 
 Our recommendation is to start with an application that isn't published via a BIG-IP. This action avoids potential disruption to production services. The guidelines in this article can help you learn about the procedure to create BIG-IP configuration objects and setting up SHA. You can then convert BIG-IP published services to SHA with minimal effort.
-
-The following interactive guide illustrates implementing SHA with a template, and the end-user experience.
-
-   [![Main page and start button for the interactive guide.](media/f5-integration/interactive-guide.png)](https://aka.ms/Secure-Hybrid-Access-F5-Interactive-Guide)
 
 ## Resources
 
