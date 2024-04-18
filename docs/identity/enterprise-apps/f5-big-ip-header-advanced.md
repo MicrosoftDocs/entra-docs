@@ -98,7 +98,7 @@ Learn more: [What is Conditional Access?](~/identity/conditional-access/overview
 2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 3. On the top ribbon, select **+ New application**.
 4. In the gallery, search for **F5**.
-5. Select **F5 BIG-IP APM Azure AD integration**.
+5. Select **F5 BIG-IP APM Microsoft Entra ID integration**.
 
 6. Enter an application **Name**.
 7. Select **Add/Create**. 
@@ -201,7 +201,7 @@ Create the BIG-IP SAML service provider and corresponding SAML IdP objects to fe
    ![Screenshot of the From Metadata option in the Create New IdP Connection drop-down menu.](./media/f5-big-ip-header-advanced/edit-saml-idp.png)
 
 9. Browse to the federation metadata XML file you downloaded.
-10. Enter an **Identity Provider Name** for the APM object for the external SAML IdP. For example, `MyTravel_AzureAD`
+10. Enter an **Identity Provider Name** for the APM object for the external SAML IdP. For example, `MyTravel_EntraID`
 
    ![Screenshot of Select File and Identity Provider Name input under Create New SAML IdP Connector.](./media/f5-big-ip-header-advanced/idp-name.png)
 
