@@ -46,8 +46,9 @@ To request a user authentication, cloud services send an `AuthnRequest` element 
 | `AssertionConsumerServiceURL` | Optional | If provided, this parameter must match the `RedirectUri` of the cloud service in Microsoft Entra ID. |
 | `ForceAuthn` | Optional | This is a boolean value. If true, it means that the user will be forced to reauthenticate, even if they have a valid session with Microsoft Entra ID. |
 | `IsPassive` | Optional | This is a boolean value that specifies whether Microsoft Entra ID should authenticate the user silently, without user interaction, using the session cookie if one exists. If this is true, Microsoft Entra ID attempts to authenticate the user using  the session cookie. |
+| `Destination` | Optional | If provided, this parameter must match `https://login.microsoftonline.com/<TenantIDGUID>/saml2` or `https://login.windows.net/<TenantIDGUID>/saml2`. |
 
-All other `AuthnRequest` attributes, such as `Consent`, `Destination`, `AssertionConsumerServiceIndex`, `AttributeConsumerServiceIndex`, and `ProviderName` are **ignored**.
+All other `AuthnRequest` attributes, such as `Consent`, `AssertionConsumerServiceIndex`, `AttributeConsumerServiceIndex`, and `ProviderName` are **ignored**.
 
 Microsoft Entra ID also ignores the `Conditions` element in `AuthnRequest`.
 
