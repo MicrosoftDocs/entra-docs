@@ -170,7 +170,7 @@ The optional **Security Settings** specify whether Microsoft Entra ID encrypts i
 
 This section defines properties to manually configure a new BIG-IP SAML application in your Microsoft Entra tenant. Easy Button has application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP, and an SHA template for other apps. 
 
-For this scenario, select **F5 BIG-IP APM Azure AD Integration > Add.**
+For this scenario, select **F5 BIG-IP APM Microsoft Entra ID Integration > Add.**
 
 #### Azure Configuration
 
@@ -190,7 +190,7 @@ For this scenario, select **F5 BIG-IP APM Azure AD Integration > Add.**
 
 When a user authenticates to Microsoft Entra ID, it issues a SAML token with a default set of claims and attributes identifying the user. The **User Attributes & Claims** tab shows the default claims to issue for the new application. Use it to configure more claims.
 
-The AD infrastructure is based on a .com domain suffix used internally and externally. More attributes aren't required to achieve a functional KCD SSO implementation. See the [advanced tutorial](./f5-big-ip-kerberos-advanced.md) for multiple domains or user sign-in using an alternate suffix. 
+The infrastructure is based on a .com domain suffix used internally and externally. More attributes aren't required to achieve a functional KCD SSO implementation. See the [advanced tutorial](./f5-big-ip-kerberos-advanced.md) for multiple domains or user sign-in using an alternate suffix. 
 
    ![Screenshot of User Attributes and Claims.](./media/f5-big-ip-kerberos-easy-button/user-attributes-claims.png)
 
