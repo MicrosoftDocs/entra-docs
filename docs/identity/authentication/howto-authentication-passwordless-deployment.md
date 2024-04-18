@@ -99,6 +99,12 @@ To enable Platform Credential for macOS;
 - Your Mac must have an operating system of at least macOS 13 Ventura (macOS 14 Sonoma is recommended), and that the configuration steps are done through the [Microsoft Intune admin center](https://intune.microsoft.com/#home).
 - The device must be MDM enrolled with SSO extension payload configured to support Platform Single Sign-On (PSSO) with the UserSecureEnclaveKey.
 
+> [!NOTE]
+>
+> There is a known issue that the Authentication Strength blade currently represents both Platform Credential for macOS and Windows Hello For Business with the same Authentication method name, **Windows Hello For Business**. Work is in progress to represent Platform Credential for macOS separately. While configuring custom authentication strength that needs to use Platform Credential for macOS, please use "Windows Hello For Business" until this is fixed.
+
+To enable use of Platform Credential as a phishing resistant passkey , enable FIDO2 security key authentication method in Authentication Methods Policies
+
 ### macOS Platform single sign-on with SmartCard
 
 To enable macOS Platform single sign-on (PSSO) with SmartCard, your Mac must have an operating system of at least macOS 14 Sonoma, and that the configuration steps are done through the [Microsoft Intune admin center](https://intune.microsoft.com/#home). Administrators also need to configure and enable the certificate-based authentication method using the [Authentication Methods Policies](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/~/AdminAuthMethods/fromNav/) in the Microsoft Entra admin center. Refer to [How to configure Microsoft Entra certificate-based authentication](./how-to-certificate-based-authentication.md) for more information.
