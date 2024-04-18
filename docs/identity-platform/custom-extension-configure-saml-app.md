@@ -16,7 +16,6 @@ titleSuffix: Microsoft identity platform
 ---
 
 # Configure a SAML app to receive tokens with claims from an external store (preview)
-
 This article describes how to configure a SAML application to receive tokens with external claims from your custom claims provider.
 
 ## Prerequisites

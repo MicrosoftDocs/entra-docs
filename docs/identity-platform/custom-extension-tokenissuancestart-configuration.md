@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 03/14/2024
+ms.date: 04/10/2024
 ms.reviewer: stsoneff
 ms.service: identity-platform
 ms.topic: how-to
@@ -13,7 +13,7 @@ ms.topic: how-to
 #Customer intent: As a developer, I want to configure a custom claims provider token issuance event in the Azure portal, so that I can add custom claims to a token before it is issued.
 ---
 
-# Configure a custom claim provider for a token issuance event (preview)
+# Configure a custom claim provider for a token issuance event
 
 This article describes how to configure a custom claims provider for a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener). Using an existing Azure Functions REST API, you'll register a custom authentication extension and add attributes that you expect it to parse from your REST API. To test the custom authentication extension, you'll register a sample OpenID Connect application to get a token and view the claims.
 
@@ -91,7 +91,7 @@ Update the newly created application to set the application ID URI value, the ac
 In Graph Explorer, run the following request. 
    - Set the application ID URI value in the *identifierUris* property. Replace `{Function_Url_Hostname}` with the hostname of the `{Function_Url}` you recorded earlier.
    - Set the `{authenticationeventsAPI_AppId}` value with the **appId** that you recorded earlier.
-   - An example value is `api://authenticationeventsAPI.azurewebsites.net/f4a70782-3191-45b4-b7e5-dd415885dd80`. Take note of this value as you'll use it later in this article in place of `{functionApp_IdentifierUri}`.
+   - An example value is `api://authenticationeventsAPI.azurewebsites.net/00001111-aaaa-2222-bbbb-3333cccc4444`. Take note of this value as you'll use it later in this article in place of `{functionApp_IdentifierUri}`.
 
 ```http
 POST https://graph.microsoft.com/v1.0/applications/{authenticationeventsAPI_ObjectId}
@@ -113,7 +113,7 @@ Content-type: application/json
         "resourceAppId": "00000003-0000-0000-c000-000000000000",
         "resourceAccess": [
             {
-                "id": "214e810f-fda8-4fd7-a475-29461495eb00",
+                "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
                 "type": "Role"
             }
         ]

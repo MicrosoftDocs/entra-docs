@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 03/06/2023
+ms.date: 04/10/2024
 ms.reviewer: JasSuri
 ms.service: identity-platform
 
@@ -15,7 +15,7 @@ titleSuffix: Microsoft identity platform
 #Customer intent: As a developer integrating external systems with Microsoft Entra ID, I want to troubleshoot issues with my custom claims provider API, so that I can identify and resolve any errors or performance problems affecting the authentication experience.
 ---
 
-# Troubleshoot your custom claims provider API (preview)
+# Troubleshoot your custom claims provider API
 
 Authentication events and [custom claims providers](custom-claims-provider-overview.md) allow you to customize the Microsoft Entra authentication experience by integrating with external systems.  For example, you can create a custom claims provider API and configure an [OpenID Connect app](./custom-extension-tokenissuancestart-configuration.md) or [SAML app](custom-extension-configure-saml-app.md) to receive tokens with claims from an external store.
 
@@ -103,7 +103,7 @@ After you acquire an access token, pass it the HTTP `Authorization` header. To o
     1. Select an expiration for the secret or specify a custom lifetime.
     1. Select **Add**.
     1. Record the **secret's value** for use in your client application code. This secret value is never displayed again after you leave this page.
-1. From the menu, select **Expose an API** and copy the value of the **Application ID URI**. For example, `api://contoso.azurewebsites.net/11111111-0000-0000-0000-000000000000`.
+1. From the menu, select **Expose an API** and copy the value of the **Application ID URI**. For example, `api://contoso.azurewebsites.net/00001111-aaaa-2222-bbbb-3333cccc4444`.
 1. Open your preferred API testing tool and create a new HTTP query.
 1. Change the **HTTP method** to `POST`.
 1. Enter the following URL. Replace the `{tenantID}` with your tenant ID.
@@ -119,7 +119,7 @@ After you acquire an access token, pass it the HTTP `Authorization` header. To o
     |`grant_type`| `client_credentials`|
     |`client_id`| The **Client ID** of your application.|
     |`client_secret`|The **Client Secret** of your application.|
-    |`scope`| The **Application ID URI** of your application, then add `.default`. For example, `api://contoso.azurewebsites.net/11111111-0000-0000-0000-000000000000/.default`|
+    |`scope`| The **Application ID URI** of your application, then add `.default`. For example, `api://contoso.azurewebsites.net/00001111-aaaa-2222-bbbb-3333cccc4444/.default`|
 
 1. Run the HTTP query and copy the `access_token` into the <https://jwt.ms> web app.
 1. Compare the `iss` with the issuer name you [configured in your API](custom-extension-tokenissuancestart-configuration.md#step-4-protect-your-azure-function).
@@ -161,7 +161,6 @@ To test your API directly using your preferred API testing tool, follow these st
                     "market": "en-us"
                 },
                 "protocol": "OAUTH2.0",
-                "requestType": "SignIn",
                 "clientServicePrincipal": {
                     "id": "<Your Test Applications servicePrincipal objectId>",
                     "appId": "<Your Test Application App Id>",

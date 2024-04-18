@@ -126,6 +126,7 @@ When a Conditional Access policy targets the Microsoft Admin Portals cloud app, 
 - Microsoft Entra admin center
 - Microsoft Intune admin center
 - Microsoft Purview compliance portal
+- Microsoft Teams admin center
 
 We're continually adding more administrative portals to the list.
 
