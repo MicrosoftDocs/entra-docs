@@ -55,7 +55,8 @@ It's recommended for your system administrator to have the Mac enrolled using se
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/macos-14-microsoft-entra-registration-required.png" alt-text="Screenshot of a Microsoft Entra registration prompt that appears on macOS 14 after the registration required notification is selected.":::
 
-1. Once your account is unlocked with touch ID or password, select the account to sign in to, enter your sign-in credentials and select **Next**.
+1. A prompt appears to enter your local account password. Enter your password and select **Ok**.
+1. Once your account is unlocked, select the account to sign in to, enter your sign-in credentials and select **Next**.
 1. MFA is required as part of this sign in flow. Open your **Authenticator app** (recommended) or use your other MFA methods you have registered, and enter the number displayed on the screen to finish registration.
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-2fa-challenge.png" alt-text="Screenshot of a two-factor authentication window, prompting the user to open the Authenticator app.":::
@@ -91,14 +92,7 @@ Setting up your device using secure enclave method enables you to use the result
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-registration-required-popup.png" alt-text="Screenshot of a desktop screen with a registration required popup in the top right of the screen.":::
 
-1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**.
-    1. Your administrator may have configured MFA for the device registration flow. If so, open your **Authenticator** app on your mobile device and complete the MFA flow.
-
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-register-device-prompt.png" alt-text="Screenshot of the registration window prompting sign in with Microsoft.":::
-
-1. When a **Single Sign-On** window appears, enter your local account password and select **OK**. If you're on macOS 14, <!--you'll be prompted to unlock your local account before this.-->
-
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-enter-local-password.png" alt-text="Screenshot of a single sign-on window prompting the user to enter their local account password.":::
+1. A prompt appears to enter your local account password. Enter your password and select **Ok**.
 
 1. If your local password differs to your Microsoft Entra ID password, an **Authentication Required** popup appears on the top right of the screen. Hover over the banner and select **Sign-in**.
 1. When a **Microsoft Entra** window appears, enter your Microsoft Entra ID password and select **Sign In**. 
