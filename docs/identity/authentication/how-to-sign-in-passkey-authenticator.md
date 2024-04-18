@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/10/2024
+ms.date: 04/18/2024
 
 ms.author: justinha
 author: justinha
@@ -31,22 +31,20 @@ Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft 
 
 1. On your iOS device, open your browser and navigate to the resource you're trying to access at [My Security info](https://aka.ms/mysecurityinfo).
 
-1. When prompted to sign in, you have two options. The *usernameless* option can be easier than entering your username. 
+1. You can enter your username to sign in: 
 
-   1. Type your username. 
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-user-name.png" alt-text="Screenshot of the sign-in with username in Microsoft Authenticator for iOS devices.":::
 
-       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-user-name.png" alt-text="Screenshot of the sign-in with username in Microsoft Authenticator for iOS devices.":::
+   Or click **Sign-in options** to sign in more conveniently without having to enter a username. 
 
-   1. To sign in with the *usernameless* option, select **Sign-in options**. 
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-microsoft.png" alt-text="Screenshot of the sign-in Microsoft in Microsoft Authenticator for iOS devices.":::
 
-       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-microsoft.png" alt-text="Screenshot of the sign-in Microsoft in Microsoft Authenticator for iOS devices.":::
+   If you chose **Sign-in options**, select **Face**, **Fingerprint**, **PIN**, or **Security key**. Otherwise, skip to next step.
 
-   1. If you chose **Sign-in options**, select **Face**, **Fingerprint**, **PIN**, or **Security key**. Otherwise, skip to next step.
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-options.png" alt-text="Screenshot of the sign-in options in Microsoft Authenticator for iOS devices.":::
 
-      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-options.png" alt-text="Screenshot of the sign-in options in Microsoft Authenticator for iOS devices.":::
-
-    > [!NOTE]
-    > If you have more than one passkey saved to your device, you're prompted to choose a passkey. 
+   > [!NOTE]
+   > If you signed in without a username and multiple passkeys are saved to your device, you're prompted to choose which passkey to use for sign-in. 
 
 1. To select your passkey, follow the steps in the iOS operating system dialog. Verify that it's you by using Face ID, Touch ID, or entering your device PIN.
 
@@ -79,13 +77,11 @@ Follow these steps to sign in to Microsoft Entra ID on another device with a pas
 
 ### Single-sign on to native Microsoft applications (iOS)
 
-You can use the Microsoft Authenticator app on your iOS device to create a seamless passkey sign without being prompted again to use single sign-in (SSO) to sign in to other Microsoft apps, such as Microsoft OneDrive, SharePoint, and Outlook. 
-
-Once you create a passkey, you can use the Authenticator passkey for single sign-on (SSO) for logging into native Microsoft applications. Similar support for Android devices is coming during preview. 
+You can use Authenticator on your iOS device to seamlessly sign in with a passkey to other Microsoft apps, such as Microsoft OneDrive, SharePoint, and Outlook. Similar support for Android devices is coming during preview. 
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-options-passkey.png" alt-text="Screenshot of the passkey option in Microsoft Authenticator for iOS devices.":::
 
-First, you need to register a passkey using the WebAuthN flow where you scan a QR code by completing the following steps: 
+To use SSO for native applications, you need to register the passkey in Authenticator by using the WebAuthN flow where you scan a QR code: 
 
 1. Register Authenticator passkey on your mobile device. 
 1. Sign in to Authenticator. 
