@@ -6,8 +6,7 @@ manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-
-ms.date: 12/13/2022
+ms.date: 04/18/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
