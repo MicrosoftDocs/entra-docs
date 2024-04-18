@@ -64,7 +64,7 @@ Devices must be registered in Microsoft Entra ID before they can be marked as co
 The **Require device to be marked as compliant** control:
 
 - Only supports Windows 10+, iOS, Android, macOS, and Linux Ubuntu devices registered with Microsoft Entra ID and enrolled with Intune.
-- Microsoft Edge in InPrivate mode is considered a noncompliant device.
+- Microsoft Edge in InPrivate mode on Windows is considered a noncompliant device.
 
 > [!NOTE]
 > On Windows, iOS, Android, macOS, and some third-party web browsers, Microsoft Entra ID identifies the device by using a client certificate that is provisioned when the device is registered with Microsoft Entra ID. When a user first signs in through the browser, the user is prompted to select the certificate. The user must select this certificate before they can continue to use the browser.
