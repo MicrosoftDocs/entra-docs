@@ -32,7 +32,7 @@ Learn more:
 
 ## Scenario description
 
-For this scenario, there's a legacy application using HTTP authorization headers to control access to protected content. Ideally, Microsoft Entra ID manages application access, however legacy lacks a modern authentication protocol. Modernization takes effort and time, while introducing downtime costs and risks. Instead, deploy a BIG-IP between the public internet and the internal application to gate inbound access to the application.
+For this scenario, there's a legacy application using HTTP authorization headers to control access to protected content. Ideally, Microsoft Entra ID manages application access. However, legacy lacks a modern authentication protocol. Modernization takes effort and time, while introducing downtime costs and risks. Instead, deploy a BIG-IP between the public internet and the internal application to gate inbound access to the application.
 
 A BIG-IP in front of the application enables overlay of the service with Microsoft Entra preauthentication and header-based SSO. The configuration improves the application security posture.
 
@@ -75,7 +75,6 @@ For the scenario you need:
 * An SSL certificate to publish services over HTTPS, or use default certificates while testing
   * See, [SSL profile](./f5-bigip-deployment-guide.md#ssl-profile)
 * A header-based application or an IIS header app for testing
-  * See, [Set up a simple IIS header app](/previous-versions/iis/6.0-sdk/ms525396(v=vs.90))
 
 ## BIG-IP configuration method
 
@@ -290,7 +289,7 @@ An access profile binds many APM elements managing access to BIG-IP virtual serv
 
 ### Attribute mapping
 
-The following instructions are optional. With a LogonID_Mapping configuration, the BIG-IP active sessions list has the signed-in user princial name (UPN), not a session number. Use this data when analyzing logs or troubleshooting.
+The following instructions are optional. With a LogonID_Mapping configuration, the BIG-IP active sessions list has the signed-in user principal name (UPN), not a session number. Use this data when analyzing logs or troubleshooting.
 
 1. For the SAML Auth **Successful** branch, select the **+** symbol.
 
@@ -394,7 +393,7 @@ Perform the following test as a user.
 
 1. Select the application external URL, or in the MyApps portal select the application icon. 
 2. Authenticate to Microsoft Entra ID.
-3. You're redirected to the BIG-IP virtual server for the app and signed in with SSO.
+3. A redirection occurs to the BIG-IP virtual server for the app and signed in with SSO.
 4. The injected header output appears by the header-based application.
 
    ![Screenshot of Server Variables, such as UPN, Employee ID, and Group Authorization.](./media/f5-big-ip-header-advanced/mytravel-example.png)
