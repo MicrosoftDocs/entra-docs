@@ -21,7 +21,7 @@ For enterprises that use passwords today, passkeys (FIDO2) provide a seamless wa
 
 This article lists requirements and steps to enable passkeys in your organization. After completing these steps, users in your organization can then register and sign in to their Microsoft Entra account using a passkey stored on a FIDO2 security key or in Microsoft Authenticator.
 
-For more information about enabling passkeys in Microsoft Authenticator, see [How to enable Authenticator passkey](how-to-enable-authenticator-passkey.md).
+For more information about enabling passkeys in Microsoft Authenticator, see [How to enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md).
 
 For more information about passkey authentication, see [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md).
 

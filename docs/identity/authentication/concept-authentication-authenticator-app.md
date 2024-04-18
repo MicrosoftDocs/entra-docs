@@ -47,7 +47,7 @@ Passkeys in the Authenticator app are device-bound to ensure that they never lea
 
 ### How passkey attestation works with Authenticator
 
-For now, Authenticator passkeys are unattested. Attestation support for passkeys in Authenticator is planned for a future release.
+For now, passkeys in Authenticator are unattested. Attestation support for passkeys in Authenticator is planned for a future release.
 
 ### Back up and restore passkeys in Authenticator
 
@@ -126,7 +126,7 @@ Microsoft will also periodically retire older versions of the Authenticator App 
 
 ## Next steps
 
-- To get started with passkeys, see [Enable Microsoft Authenticator passkey sign in (preview)](how-to-enable-authenticator-passkey.md).
+- To get started with passkeys, see [Enable passkeys in Microsoft Authenticator sign in (preview)](how-to-enable-authenticator-passkey.md).
 
 - For more information about passwordless sign-in, see [Enable passwordless sign-in with the Microsoft Authenticator](howto-authentication-passwordless-phone.md).
 
