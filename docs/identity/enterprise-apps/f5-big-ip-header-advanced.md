@@ -45,7 +45,7 @@ The secure hybrid access solution for this scenario is made up of:
   * With SSO, Microsoft Entra ID provides the BIG-IP required session attributes, including user identifiers
 * **BIG-IP** - reverse-proxy and SAML service provider (SP) to the application, delegating authentication to the SAML IdP, before header-based SSO to the back-end application
 
-The following diagram illustrates the user flow with Microsoft Entra ID, BIG-IP, APM and an application.
+The following diagram illustrates the user flow with Microsoft Entra ID, BIG-IP, APM, and an application.
 
    ![Diagram of the user flow with Microsoft Entra ID, BIG-IP, APM and an application](./media/f5-big-ip-easy-button-header/sp-initiated-flow.png)
 
@@ -64,8 +64,8 @@ For the scenario you need:
   * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
 * One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator
 * A BIG-IP or deploy a BIG-IP Virtual Edition (VE) in Azure
-  * See, [Deploy F5 BIG-IP Virtual Edition VM in Azure](./f5-bigip-deployment-guide.md)
-* Any of the following F5 BIG-IP license SKUs:
+  * See, [Deploy F5 BIG-IP Virtual Edition Virtual Machine in Azure](./f5-bigip-deployment-guide.md)
+* Any of the following F5 BIG-IP licenses:
   * F5 BIG-IP® Best bundle
   * F5 BIG-IP Access Policy Manager™ (APM) standalone license
   * F5 BIG-IP Access Policy Manager™ (APM) add-on license on a BIG-IP F5 BIG-IP® Local Traffic Manager™ (LTM)
@@ -178,7 +178,7 @@ Use the following sections to configure SAML, header SSO, access profile, and mo
 
 ### SAML configuration
 
-Create the BIG-IP SAML service provider and corresponding SAML IdP objects to federate the published application, with Microsoft Entra ID.
+To federate the published application with Microsoft Entra ID, create the BIG-IP SAML service provider and corresponding SAML IdP objects.
 
 1. Select **Access** > **Federation** > **SAML Service Provider** > **Local SP Services** > **Create**.
 
@@ -290,7 +290,7 @@ An access profile binds many APM elements managing access to BIG-IP virtual serv
 
 ### Attribute mapping
 
-The following instructions are optional. With a LogonID_Mapping configuration, the BIG-IP active sessions list has the signed-in user UPN, not a session number. Use this data when analyzing logs or troubleshooting.
+The following instructions are optional. With a LogonID_Mapping configuration, the BIG-IP active sessions list has the signed-in user princial name (UPN), not a session number. Use this data when analyzing logs or troubleshooting.
 
 1. For the SAML Auth **Successful** branch, select the **+** symbol.
 
@@ -390,7 +390,9 @@ If you can't change the app, enable the BIG-IP to listen for the app sign-out ca
 
 ## Test
 
-1. As a user, select the application external URL, or in the MyApps portal select the application icon. 
+Perform the following test as a user.
+
+1. Select the application external URL, or in the MyApps portal select the application icon. 
 2. Authenticate to Microsoft Entra ID.
 3. You're redirected to the BIG-IP virtual server for the app and signed in with SSO.
 4. The injected header output appears by the header-based application.
