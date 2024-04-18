@@ -110,6 +110,9 @@ Update-MgDirectoryOnPremiseSynchronization `
   -OnPremisesDirectorySynchronizationId $OnPremSync.Id `
   -Features $OnPremSync.Features 
 ```
+> [!NOTE]
+> You'll need to install the MSGraph powershell module for the about script to work. If you get any errors related to insufficient privileges please assure that you have consented the API scope correctly using the following command when connecting `Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"`
+
 
 Once enabled, Microsoft Entra ID does not go to each synchronized user to remove the `DisablePasswordExpiration` value from the PasswordPolicies attribute. Instead, the `DisablePasswordExpiration` value is removed from PasswordPolicies during the next password hash sync for each user, upon their next password change in on-premises AD.
 
