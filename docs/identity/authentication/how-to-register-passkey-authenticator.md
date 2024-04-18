@@ -26,9 +26,9 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
 [!INCLUDE [Passkey roll out](~/includes/entra-authentication-passkey.md)]
 
-# [**iOS**](#tab/iOS)
+## [**iOS**](#tab/iOS)
 
-## Register passkey by signing into Authenticator (iOS)
+### Register passkey by signing into Authenticator (iOS)
 
 1. Open Authenticator.
 1. Tap the **+** button.
@@ -37,7 +37,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 1. You need to complete multifactor authentication (MFA).
 1. Authenticator sets up passkey, passwordless, or MFA for sign-in according to your work or school account policies. 
 
-## Same-device registration (iOS)
+### Same-device registration (iOS)
 
 1. Using your iOS device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
 
@@ -91,7 +91,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-listed-security-info.png" alt-text="Screenshot of the Security Info user display of the successful passkey.":::
 
-## Cross-device registration 
+### Cross-device registration (iOS)
 
 1. Using another device, such as a laptop, open a web browser and sign in to [My Security info](https://aka.ms/mysecurityinfo).
 1. Tap **+ Add sign-in method** > **Choose a method** > **Passkey in Microsoft Authenticator (preview)** > **Add**.
@@ -154,7 +154,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
    
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/success.png" alt-text="Screenshot where user can change friendly name of the new sign-in method.":::   
 
-## Troubleshooting
+### Troubleshooting
 
 If the passkey for your account is already registered in Authenticator, you see the following error: 
 
@@ -167,9 +167,9 @@ To re-register a passkey for your account, first remove the passkey from Authent
 > [!NOTE]
 > You also need to delete the passkey from **Security Info**. Use a web browser and sign in to [https://mysignins.microsoft.com/security-info](https://mysignins.microsoft.com/security-info).  
 
-# [**Android**](#tab/Android)
+## [**Android**](#tab/Android)
 
-## Register passkey by signing into Authenticator (Android)
+### Register passkey by signing into Authenticator (Android)
 
 1. Open Authenticator.
 1. Tap the **+** button.
@@ -250,7 +250,7 @@ To re-register a passkey for your account, first remove the passkey from Authent
 
 --->
 
-## Cross-device registration 
+## Cross-device registration (Android)
 
 1. Open a web browser and sign in to [My Security info](https://aka.ms/mysecurityinfo).
 1. Tap **+ Add sign-in method** > **Choose a method** > **Passkey in Microsoft Authenticator (preview)** > **Add**.
@@ -314,7 +314,7 @@ To re-register a passkey for your account, first remove the passkey from Authent
 
     :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/success.png" alt-text="Screenshot of the successful creation of a passkey in Microsoft Authenticator for Android devices.":::
 
-## Troubleshooting
+### Troubleshooting
 
 If the passkey for your account is already registered in Authenticator, you receive the following error: 
 

@@ -1464,7 +1464,7 @@ Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
 continuation_token=uY29tL2F1dGhlbnRpY... 
-&client_id=6731de76-14a6-49ae-97bc-6eba6914391e 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=oob 
 &oob={otp_code}
 ```
@@ -1648,7 +1648,7 @@ Lastly, since updating of the user’s configuration with the new password incur
 Here's an example (we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com /resetpassword/v1.0/poll_completion HTTP/1.1
+POST /{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/poll_completion HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
