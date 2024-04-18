@@ -5,7 +5,7 @@ description: Learn about how to enable passkeys in Microsoft Authenticator sign 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/10/2024
+ms.date: 04/16/2024
 
 ms.author: justinha
 author: justinha
@@ -22,7 +22,6 @@ This article lists steps to enable and enforce passkeys in Authenticator sign-in
 
 - [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md)
 - Android 14 and later or iOS 17 and later
-- Latest version of Microsoft Authenticator
 
 > [!NOTE]
 > Users need to install the latest version of Authenticator for Android or iOS to use a passkey. 
@@ -30,6 +29,7 @@ This article lists steps to enable and enforce passkeys in Authenticator sign-in
 [!INCLUDE [Passkey roll out](~/includes/entra-authentication-passkey.md)]
 
 To use any passkeys (FIDO2) for sign in to web apps and services, you need to use a browser that supports the WC3 WebAuthn standard. 
+
 Supported browsers include Microsoft Edge, Chrome, Firefox, and Safari. For more information, see [Browser support of FIDO2 passwordless authentication](fido2-compatibility.md).
 
 ## Enable passkeys in Authenticator in the admin center
@@ -38,8 +38,8 @@ To enable passkeys in Authenticator, you edit the **Passkey (FIDO2)** method pol
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
-1. Under the method **Passkey (FIDO2)**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
-1. On the **Configure** tab, set **Enforce key restrictions** to **Yes**, set **Restrict specific keys** to **Allow**. Select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. Otherwise, add the following AAGUIDs to enable the passkeys in Authenticator (preview) for iOS and Android:
+1. Under the method **FIDO2 security key**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
+1. On the **Configure** tab, set **Enforce key restrictions** to **Yes**, set **Restrict specific keys** to **Allow**. Select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. This setting automatically populates the Authenticator app AAGUIDs for you in the key restriction list. Otherwise, you can manually add the following AAGUIDs to enable the Authenticator passkey preview:
 
    - Authenticator for Android: de1e552d-db1d-4423-a619-566b625cdc84
    - Authenticator for iOS: 90a3ccdf-635c-4729-a248-9b709135078f
@@ -55,7 +55,7 @@ The following list describes other optional settings:
 
 **Key Restriction Policy**
 
-- **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain passkeys, which are identified by their Authenticator Attestation GUID (AAGUID). If you want to manually add the Authenticator app AAGUIDs, or specifically restrict only Android or iOS devices, you can manually enter their AAGUID:
+- **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain passkeys, which are identified by their Authenticator Attestation GUID (AAGUID). If you want, you can manually enter the Authenticator app AAGUIDs or specifically restrict only Android or iOS devices. Otherwise, you can manually add the following AAGUIDs to enable the Authenticator passkey preview:
 
   - Authenticator for Android: de1e552d-db1d-4423-a619-566b625cdc84
   - Authenticator for iOS: 90a3ccdf-635c-4729-a248-9b709135078f
