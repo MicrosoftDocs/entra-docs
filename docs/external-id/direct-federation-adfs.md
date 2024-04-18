@@ -79,7 +79,7 @@ An AD FS server must already be set up and functioning before you begin this pro
 1. In the **Identifiers** tab, enter ``https://login.microsoftonline.com/<tenant ID>/`` in the **Relying party identifier** text box using the tenant ID of the service partner’s Microsoft Entra tenant. Select **Add**.
 
    > [!NOTE]
-   > Be sure to include a slash (/) after the tenant ID, for example: `https://login.microsoftonline.com/00000000-27d4-489f-a23b-00000000084d/`.
+   > Be sure to include a slash (/) after the tenant ID, for example: `https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/`.
 
 1. Select **OK**.
 
@@ -150,7 +150,7 @@ An AD FS server must already be set up and functioning before you begin this pro
       - `https://login.microsoftonline.com/<tenant ID>/` 
 
    > [!NOTE]
-   > Be sure to include a slash (/) after the tenant ID, for example: `https://login.microsoftonline.com/00000000-27d4-489f-a23b-00000000084d/`.
+   > Be sure to include a slash (/) after the tenant ID, for example: `https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/`.
 
 1. Select **Next**.
 1. In the **Choose Access Control Policy** page, select a policy, and then select **Next**.

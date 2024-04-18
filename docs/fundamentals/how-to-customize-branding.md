@@ -187,7 +187,7 @@ Microsoft Entra ID supports right-to-left functionality for languages such as Ar
 
 ## User experience
 
-There are some scenarios you to consider when you customize the sign-in pages for your organization's tenant-specific applications.
+There are some scenarios for you to consider when you customize the sign-in pages for your organization's tenant-specific applications.
 
 ### Software as a Service (SaaS) and multitenant applications
 

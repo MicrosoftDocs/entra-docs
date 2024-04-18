@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: devx-track-csharp,  'scenarios:getting-started', 'languages:aspnet-core', mode-other, devx-track-dotnet
-ms.date: 03/28/2024
+ms.date: 04/09/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -78,9 +78,9 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     ```console
     {
     "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications/$entity",
-    "id": "0aa1b222-3ccc-4d55-e666-f7g888h9i000",
+    "id": "00001111-aaaa-2222-bbbb-3333cccc4444",
     "deletedDateTime": null,
-    "appId": "0aa1b222-3ccc-4d55-e666-f7g888h9i000",
+    "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
     "applicationTemplateId": null,
     "disabledByMicrosoftStatus": null,
     "createdDateTime": "2021-01-17T15:30:55Z",

@@ -78,7 +78,7 @@ Remove-MgUser -UserId 'john_contoso.com#EXT#@fabrikam.onmicrosoft.com'
 ``` 
 or 
 ```powershell 
-Remove-MgUser -UserId '3f80a75e-750b-49aa-a6b0-d9bf6df7b4c6'
+Remove-MgUser -UserId '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 ```
 
 

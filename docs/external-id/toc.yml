@@ -1,12 +1,10 @@
 items:
-- name: Microsoft Entra External ID documentation
-  href: index.yml
-- name: External Identities documentation
+- name: External ID for business guests documentation
   href: index-b2b.yml
 - name: Overview
   expanded: true
   items:
-  - name: External Identities overview
+  - name: External ID overview
     href: external-identities-overview.md
   - name: What's new in docs?
     href: whats-new-docs.md
@@ -31,9 +29,9 @@ items:
   - name: Code and Azure PowerShell samples
     href: code-samples.md
 - name: Concepts
-  expanded: true
+  expanded: false
   items:
-  - name: External Identities pricing
+  - name: External ID pricing
     href: external-identities-pricing.md
   - name: Best practices
     href: b2b-fundamentals.md
@@ -67,7 +65,7 @@ items:
       href: api-connectors-overview.md
     - name: Microsoft Entra entitlement management
       href: self-service-portal.md
-  - name: Identity providers for External Identities
+  - name: Identity providers for External ID
     href: identity-providers.md
   - name: Authentication and Conditional Access
     href: authentication-conditional-access.md
