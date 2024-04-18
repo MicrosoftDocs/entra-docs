@@ -126,7 +126,7 @@ If there's a firewall between your servers and Microsoft Entra ID, configure the
   |URL |How it's used|
   |-----|-----|
   |`*.msappproxy.net`</br>`*.servicebus.windows.net`|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
-  |`*.microsoftonline.com`</br>`*.microsoft.com`</br>`*.msappproxy.com`</br>`*.windowsazure.com`|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
+  |`*.microsoftonline.com`</br>`*.microsoft.com`</br>`*.msappproxy.com`</br>`*.windowsazure.com`</br>`*.cloudwebappproxy.net`|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
    |`mscrl.microsoft.com:80` </br>`crl.microsoft.com:80` </br>`ocsp.msocsp.com:80` </br>`www.microsoft.com:80`| The agent uses these URLs to verify certificates.|
    |`login.windows.net`|The agent uses these URLs during the registration process.
 
