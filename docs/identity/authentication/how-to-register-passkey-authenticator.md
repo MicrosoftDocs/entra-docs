@@ -237,7 +237,7 @@ To re-register a passkey for your account, first remove the passkey from Authent
 
    1. Your device opens a security window. Follow the prompts on your device to save the passkey to Authenticator. 
       
-      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/choose-auth-app.png" alt-text="Screenshot of selecting Authenticator App in Microsoft Authenticator for Android devices.":::
+      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/choose-auth-app.png" alt-text="Screenshot of selecting Authenticator for Android devices.":::
 
    1. Name the passkey something memorable to you and select **Done**. 
 
@@ -245,7 +245,7 @@ To re-register a passkey for your account, first remove the passkey from Authent
 
    1. Once the passkey is successfully created on your device, you're directed back to **My Security info**.
 
-      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/done.png" alt-text="Screenshot of choosing Authenticator App in Microsoft Authenticator for Android devices.":::
+      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/done.png" alt-text="Screenshot of passkey saved in MySecurityInfo.":::
 
    1. You can now see the passkeys in Authenticator along with your other registered security info options.
   
