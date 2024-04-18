@@ -177,7 +177,7 @@ If you want to add more than 100 tenants, contact Microsoft support.
 
 ## License requirements
 
-The multitenant organization capability requires Microsoft Entra ID P1 licenses or above in all multitenant organization tenants. To find the right license for your requirements, see [Compare generally available features of Microsoft Entra ID](https://www.microsoft.com/security/business/microsoft-entra-pricing).
+The multitenant organization capability requires Microsoft Entra ID P1 licenses. Only one Microsoft Entra ID P1 license is required per person per multitenant organization. Also, you must have at least one Microsoft Entra ID P1 license per tenant. To find the right license for your requirements, see [Compare generally available features of Microsoft Entra ID](https://www.microsoft.com/security/business/microsoft-entra-pricing).
 
 ## Next steps
 
