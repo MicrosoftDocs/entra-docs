@@ -188,7 +188,7 @@ In Service Provider settings, define SAML SP instance settings for the SHA-prote
 
 Use the following instructions to configure a new BIG-IP SAML application in your Microsoft Entra tenant. Easy Button has application templates for Oracle PeopleSoft, Oracle E-Business Suite, Oracle JD Edwards, SAP ERP, and a generic SHA template.
 
-1. In **Azure Configuration**, under **Configuration Properties**, select **F5 BIG-IP APM Azure AD Integration**.
+1. In **Azure Configuration**, under **Configuration Properties**, select **F5 BIG-IP APM Microsoft Entra ID Integration**.
 2. Select **Add**.
 
 #### Azure Configuration
