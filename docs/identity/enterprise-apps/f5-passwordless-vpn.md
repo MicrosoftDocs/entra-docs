@@ -1,20 +1,18 @@
 ---
 title: Configure F5 BIG-IP SSL-VPN solution in Microsoft Entra ID
-description: Tutorial to configure F5's BIG-IP based  Secure socket layer Virtual private network (SSL-VPN) solution with Microsoft Entra ID for Secure Hybrid Access (SHA) 
-
+description: Tutorial to configure F5 BIG-IP based secure socket layer virtual private network (SSL-VPN) solution with Microsoft Entra ID for secure hybrid access (SHA).
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-
-ms.date: 12/13/2022
+ms.date: 04/18/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.reviewer: v-nisba
 ms.custom: not-enterprise-apps
 
-#customer intent: As an IT admin, I want to integrate F5 BIG-IP SSL-VPN with Microsoft Entra SSO, so that I can provide improved zero trust governance, passwordless authentication, and manage identities and access from a single control plane.
+#customer intent: I'm an IT admin, and I want to integrate F5 BIG-IP SSL-VPN with Microsoft Entra SSO. I want to provide improved Zero Trust governance, passwordless authentication. My goal is to manage identities and access from a single control plane.
 ---
 
 # Tutorial: Configure F5 BIG-IP SSL-VPN for Microsoft Entra SSO
