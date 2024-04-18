@@ -57,7 +57,7 @@ SHA supports SP- and IdP-initiated flows. The following diagram illustrates the 
 3. Microsoft Entra preauthenticates user and applies enforced Conditional Access policies.
 4. User is redirected to BIG-IP (SAML SP) and SSO occurs using issued SAML token. 
 5. BIG-IP prompts the user for an application password and stores it in the cache.
-6. BIG-IP sends a request to the application and receives a sign on form.
+6. BIG-IP sends a request to the application and receives a sign-on form.
 7. The APM scripting fills in the username and password, then submits the form.
 8. The web server serves application payload and sends it to the client. 
 
@@ -69,8 +69,8 @@ You need the following components:
   * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
 * One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator
 * A BIG-IP or deploy a BIG-IP Virtual Edition (VE) in Azure
-  * See [Deploy F5 BIG-IP Virtual Edition VM in Azure](./f5-bigip-deployment-guide.md)
-* Any of the following F5 BIG-IP license SKUs:
+  * See [Deploy F5 BIG-IP Virtual Edition Virtual Machine in Azure](./f5-bigip-deployment-guide.md)
+* Any of the following F5 BIG-IP licenses:
   * F5 BIG-IP® Best bundle
   * F5 BIG-IP Access Policy Manager™ (APM) standalone license
   * F5 BIG-IP Access Policy Manager™ (APM) add-on license on a BIG-IP F5 BIG-IP® Local Traffic Manager™ (LTM)
@@ -207,15 +207,15 @@ To configure the connector:
 
 Create an APM SSO object for FBA SSO to back-end applications. 
 
-Perform FBA SSO in client-initiated mode or BIG-IP-initiated mode. Both methods emulate a user sign-on by injecting credentials into the username and password tags. The form is then autosubmitted. Users provide password to access an FBA application. The password is cached and reused for other FBA applications.
+Perform FBA SSO in client-initiated mode or BIG-IP-initiated mode. Both methods emulate a user sign-on by injecting credentials into the username and password tags. The form is submitted. Users provide password to access an FBA application. The password is cached and reused for other FBA applications.
 
 1. Select **Access** > **Single Sign-on**.
 2. Select **Forms Based**.
 3. Select **Create**.
 4. For **Name**, enter a descriptive name. For example, Contoso\FBA\sso.
 5. For **Use SSO Template**, select **None**.
-6. For **Username Source**, enter the username source to prefill the password collection form. The default `session.sso.token.last.username` works well, because it has the signed-in user Microsoft Entra UPN.
-7. For **Password Source**, keep the default `session.sso.token.last.password`, the APM variable BIG-IP uses to cache user passwords. 
+6. For **Username Source**, enter the username source to prefill the password collection form. The default `session.sso.token.last.username` works well, because it has the signed-in user Microsoft Entra User Principal Name (UPN).
+7. For **Password Source**, keep the default `session.sso.token.last.password` the APM variable BIG-IP uses to cache user passwords. 
 
    ![Screenshot of Name and Use SSO Template options under New SSO Configuration.](./media/f5-big-ip-forms-advanced/new-sso-configuration.png)
 
@@ -271,7 +271,7 @@ An access profile binds the APM elements that manage access to BIG-IP virtual se
 
    ![Screenshot of the Logon Page option on the Logon tab.](./media/f5-big-ip-forms-advanced/logon-page.png)
 
-20. For **usesrname**, in the **Read Only** column, select **Yes**.
+20. For **username**, in the **Read Only** column, select **Yes**.
 
    ![Screenshot of the Yes option in the username row on the Properties tab.](./media/f5-big-ip-forms-advanced/set-read-only-as-yes.png)
 
@@ -418,15 +418,15 @@ For increased security, block direct access to the application, enforcing a path
 
 ## Troubleshoot
 
-When troubleshooting, consider the following information
+When troubleshooting, consider the following information:
 
 * BIG-IP performs FBA SSO as it parses the sign in form at the URI
   * BIG-IP seeks the username and password element tags from your configuration
-* Ensure element tags are consistent, or SSO fails
+* Confirm element tags are consistent, or SSO fails
 * Complex forms generated dynamically might require dev tool analysis to understand the sign in form
-* Client-initiated is better for sign in pages with multiple forms
+* Client initiation is better for sign in pages with multiple forms
   * You can specify form name and customize the JavaScript form handler logic
-* Both FBA SSO methods optimize user experience and security by hiding form interactions:
+* FBA SSO methods optimize user experience and security by hiding form interactions:
   * You can validate if the credentials are injected 
   * In client-initiated mode, disable form autosubmission in your SSO profile
   * Use dev tools to disable the two style properties that prevent the sign in page from appearing
