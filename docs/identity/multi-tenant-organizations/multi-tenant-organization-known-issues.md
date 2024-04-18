@@ -29,9 +29,7 @@ The experiences and issues described in this article have the following scope.
 
 ## Multitenant organization related issues
 
-- Allow for at least 2 hours between the creation of a multitenant organization and any tenant joining the multitenant organization.
-
-- Allow for up to 4 hours between submission of a multitenant organization join request and the same join request to succeed and finish.
+- Allow for up to 2 hours between submission of a multitenant organization join request and the same join request to succeed and finish.
 
 - Self-service of multitenant organization functionality is limited to a maximum of 100 tenants. To request a raise in this limit, submit a Microsoft Entra ID or Microsoft 365 admin center support request.
 

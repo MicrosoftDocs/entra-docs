@@ -146,14 +146,13 @@ Create your multitenant organization using [Microsoft 365 admin center](/microso
 
 - First tenant, soon-to-be owner tenant, creates a multitenant organization.
 - Owner tenant adds one or more joiner tenants.
-- To allow for asynchronous processing, wait a **minimum of 2 hours**.
 
 ### Step 3: Join a multitenant organization
 
 Join a multitenant organization using [Microsoft 365 admin center](/microsoft-365/enterprise/join-leave-multi-tenant-org) or [Microsoft Graph API](multi-tenant-organization-configure-graph.md):
 
 - Joiner tenants submit a join request to join the multitenant organization of owner tenant.
-- To allow for asynchronous processing, wait **up to 4 hours**.
+- To allow for asynchronous processing, wait **up to 2 hours**.
 
 Your multitenant organization is formed.
 
