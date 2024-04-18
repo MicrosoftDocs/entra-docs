@@ -1,17 +1,16 @@
 ---
 title: Configure F5 BIG-IP Access Policy Manager for form-based SSO
-description: Learn how to configure F5's BIG-IP Access Policy Manager and Microsoft Entra ID for secure hybrid access to form-based applications.
+description: Learn how to configure F5 BIG-IP Access Policy Manager and Microsoft Entra ID for secure hybrid access (SHA) to form-based applications.
 author: gargi-sinha
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-
-ms.date: 03/27/2023
+ms.date: 04/18/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
 
-#customer intent: As an IT admin responsible for securing hybrid access to form-based applications, I want to learn how to configure F5 BIG-IP Access Policy Manager (APM) and Microsoft Entra ID for secure access, so that I can improve Zero Trust governance and implement SSO between Microsoft Entra ID and BIG-IP published services.
+#customer intent: I'm an IT admin responsible for securing hybrid access to form-based applications. I need to learn how to configure F5 BIG-IP Access Policy Manager (APM) and Microsoft Entra ID for secure access. My goal is to improve Zero Trust governance and implement SSO between Microsoft Entra ID and BIG-IP published services.
 ---
 
 # Configure F5 BIG-IP Access Policy Manager for form-based SSO
@@ -104,7 +103,7 @@ BIG-IP registration is the first step for SSO between entities. The app you crea
 4. The **Browse Microsoft Entra Gallery** pane opens.
 5. Tiles appear for cloud platforms, on-premises applications, and featured applications. **Featured applications** icons indicate support of federated SSO and provisioning. 
 6. In the Azure gallery, search for **F5**.
-7. Select **F5 BIG-IP APM Azure AD integration**.
+7. Select **F5 BIG-IP APM Microsoft Entra ID integration**.
 8. Enter a **Name** the new application uses to recognize the application instance. 
 9. Select **Add**.
 10. Select **Create**.
@@ -190,7 +189,7 @@ To configure the connector:
    ![Screenshot of the From Metadata option in the Create New IdP Connector dropdown list.](./media/f5-big-ip-forms-advanced/from-metadata.png)
   
 4. On the **Create New SAML IdP Connector** pane, browse for the Federation Metadata XML file you downloaded.
-5. Enter an **Identity Provider Name** for the APM object that represents the external SAML IdP. For example, MyVacation\_AzureAD.
+5. Enter an **Identity Provider Name** for the APM object that represents the external SAML IdP. For example, MyVacation_EntraID.
 
    ![Screenshot of Select File and Identity Provider name fields on Create New SAML IdP Connector.](./media/f5-big-ip-forms-advanced/new-idp-saml-connector.png)
 
