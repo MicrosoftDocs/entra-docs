@@ -11,7 +11,6 @@ ms.topic: how-to
 ms.date: 04/08/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
-ms.collection: ?
 ms.custom: enterprise-apps
 
 #customer intent: As an admin, I want to understand how to view the activity logs of what permissions are being granted and revoked for applications in my directory so that I can review permissions granted to apps and remediate risks due to overprivileged apps.
